@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>ألغاز الأدوات · أنوس</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+
+<link rel="stylesheet" href="../styles/tokens.css" />
+<link rel="stylesheet" href="../styles/dashboard.css" />
+<link rel="stylesheet" href="../styles/wheel.css" />
+<link rel="stylesheet" href="../styles/riddles.css" />
+</head>
+<body>
+
+<div class="bg-decor" aria-hidden="true"></div>
+
+<div class="activity-shell">
+
+  <nav class="activity-nav">
+    <a class="back-link" href="../dashboard.html">
+      الرجوع للوحة الأنشطة
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg>
+    </a>
+    <div class="activity-crumb">
+      <span>اللغة والمعرفة</span>
+      <span class="sep">/</span>
+      <span class="cur">ألغاز الأدوات</span>
+    </div>
+    <div class="activity-actions">
+      <button class="icon-btn" id="reset-btn" title="إعادة الضبط" aria-label="إعادة الضبط">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 3-6.7L3 8"/><path d="M3 3v5h5"/></svg>
+      </button>
+    </div>
+  </nav>
+
+  <div class="activity-layout">
+
+    <section class="riddles-panel">
+      <header class="wheel-header">
+        <span class="activity-tag">Activity 17 · Riddles Engine</span>
+        <h1 class="activity-title">ألغاز الأدوات</h1>
+        <p class="activity-desc">
+          اِقرأ اللُّغز بِتأنٍّ، ثم اختَر الإجابةَ الصحيحة من بين أربعة احتمالات.
+          في كل لغزٍ نَتعرَّفُ على شَيءٍ من حَولِنا في حياتنا أو في ديننا.
+        </p>
+      </header>
+
+      <div class="rid-hud">
+        <div class="hud-block">الحالي <strong><span id="r-idx">1</span><small>/10</small></strong></div>
+        <div class="hud-block">صحيح <strong id="r-correct">0</strong></div>
+        <div class="hud-block">خاطئ <strong id="r-wrong">0</strong></div>
+        <div class="hud-block">نجوم <strong id="r-stars">0</strong></div>
+      </div>
+
+      <div class="rid-stage">
+        <span class="rid-num" id="rid-num">لغز 01</span>
+
+        <div class="rid-clue" id="rid-clue">
+          <span class="quote-mark">”</span>
+          <span id="clue-text">…</span>
+          <span class="quote-mark">“</span>
+        </div>
+
+        <div class="rid-options" id="options"></div>
+
+        <div class="rid-reveal" id="reveal">
+          <strong id="rev-title">الإجابة:</strong>
+          <span id="rev-explain"></span>
+        </div>
+
+        <div class="rid-actions">
+          <button class="rid-btn warning" id="btn-fifty">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h6M15 12h6M9 12l3 3 3-3"/></svg>
+            ٥٠/٥٠
+          </button>
+          <button class="rid-btn" id="btn-skip">تَخَطّى</button>
+          <button class="rid-btn primary" id="btn-next" style="display:none;">
+            التالي
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M15 6l-6 6 6 6"/></svg>
+          </button>
+        </div>
+      </div>
+
+      <div class="wheel-controls">
+        <div class="wheel-stat">أفضل نتيجة <strong id="best">—</strong></div>
+        <div class="wheel-stat" style="text-align:center;">جولات <strong id="plays">0</strong></div>
+        <button class="wheel-mute-toggle" id="mute-btn" aria-pressed="false">
+          <span class="mute-icon"></span>
+          <span class="mute-label">كتم الصوت</span>
+        </button>
+      </div>
+    </section>
+
+    <aside class="side-panel">
+      <div class="panel-card">
+        <div class="panel-head">
+          <h3>الألغاز العشرة</h3>
+          <span class="pill" id="prog-pill">0/10</span>
+        </div>
+        <div class="rid-list" id="riddles-list"></div>
+      </div>
+
+      <div class="panel-card">
+        <div class="panel-head"><h3>كيف ألعب؟</h3></div>
+        <div style="font-size: 14px; line-height: 1.7; color: var(--ink-2);">
+          ١. اقرأ اللُّغز جيداً.<br/>
+          ٢. اختر أحد الخيارات الأربعة.<br/>
+          ٣. الإجابة الصحيحة من أوّل محاولة = نَجمتان.<br/>
+          ٤. إذا استخدمت «٥٠/٥٠» تَخسرُ نصف نجمة.
+        </div>
+        <div class="tip-card" style="margin-top: var(--s-3);">
+          <span class="tip-icon">!</span>
+          <span>كلّ لغزٍ يَفتح بابَ معرفةٍ جديدة. لا بأس بالخطأ، فالخطأ مُعَلِّمٌ ماهر.</span>
+        </div>
+      </div>
+
+      <div class="panel-card">
+        <div class="panel-head"><h3>التَّفَكُّرُ عبادة</h3></div>
+        <div class="hadith-card">
+          <div class="quote">«إِنَّ فِي خَلْقِ السَّمَاوَاتِ وَالْأَرْضِ وَاخْتِلَافِ اللَّيْلِ وَالنَّهَارِ لَآيَاتٍ لِأُولِي الْأَلْبَابِ»</div>
+          <span class="src">آل عمران، آية 190</span>
+        </div>
+      </div>
+    </aside>
+  </div>
+</div>
+
+<!-- مودال النصر -->
+<div class="modal-backdrop" id="win-modal" role="dialog" aria-modal="true">
+  <div class="modal">
+    <button class="modal-close" data-close aria-label="إغلاق">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M6 6l12 12M18 6l-12 12"/></svg>
+    </button>
+    <div class="modal-deco" aria-hidden="true">
+      <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M9.5 9.5a2.5 2.5 0 1 1 4 2c-1 .6-1.5 1.2-1.5 2.5"/><circle cx="12" cy="17.5" r=".7" fill="currentColor"/></svg>
+    </div>
+    <div class="modal-eyebrow">جولةُ الألغاز</div>
+    <h2 class="modal-title">عَقلٌ مُفَكِّر!</h2>
+    <div class="modal-meaning" id="win-summary"></div>
+    <div class="modal-actions">
+      <button class="btn-ghost" data-close>انتهيت</button>
+      <button class="btn-primary" id="win-replay">جولة جديدة</button>
+    </div>
+  </div>
+</div>
+
+<div class="particles" id="particles" aria-hidden="true"></div>
+
+<script src="../scripts/activity-common.js"></script>
+<script src="../scripts/riddles.js"></script>
+
+<script>
+window.PAGE_DICT = {
+  "ألغاز الأدوات": "Tool Riddles",
+  "اِقرأ اللُّغز بِتأنٍّ، ثم اختَر الإجابةَ الصحيحة من بين أربعة احتمالات. في كل لغزٍ نَتعرَّفُ على شَيءٍ من حَولِنا في حياتنا أو في ديننا.": "Read the riddle carefully, then choose the right answer from four options. In each riddle we learn about something around us in our life or our religion.",
+  "الحالي": "Current",
+  "صحيح": "Correct",
+  "خاطئ": "Wrong",
+  "نجوم": "Stars",
+  "لغز 01": "Riddle 01",
+  "الإجابة:": "Answer:",
+  "تَخَطّى": "Skip",
+  "التالي": "Next",
+  "أفضل نتيجة": "Best score",
+  "جولات": "Rounds",
+  "الألغاز العشرة": "The ten riddles",
+  "١. اقرأ اللُّغز جيداً.": "1. Read the riddle carefully.",
+  "٢. اختر أحد الخيارات الأربعة.": "2. Choose one of the four options.",
+  "٣. الإجابة الصحيحة من أوّل محاولة = نَجمتان.": "3. A correct answer on the first try = two stars.",
+  "٤. إذا استخدمت «٥٠/٥٠» تَخسرُ نصف نجمة.": "4. If you use “50/50” you lose half a star.",
+  "كلّ لغزٍ يَفتح بابَ معرفةٍ جديدة. لا بأس بالخطأ، فالخطأ مُعَلِّمٌ ماهر.": "Each riddle opens a door to new knowledge. Mistakes are fine — a mistake is a skilled teacher.",
+  "التَّفَكُّرُ عبادة": "Reflection is worship",
+  "آل عمران، آية 190": "Aal Imran, verse 190",
+  "جولةُ الألغاز": "Riddle round",
+  "عَقلٌ مُفَكِّر!": "A thinking mind!"
+};
+</script>
+<script>
+Object.assign(window.PAGE_DICT, {
+  "لغز 02":"Riddle 02","لغز 03":"Riddle 03","لغز 04":"Riddle 04","لغز 05":"Riddle 05","لغز 06":"Riddle 06","لغز 07":"Riddle 07","لغز 08":"Riddle 08","لغز 09":"Riddle 09","لغز 10":"Riddle 10",
+  "أَنا كتابٌ كَريم، أَحمِلُ كلامَ ربِّي، فيَّ هُدًى للناس وشِفاءٌ للقُلوب. مَن أنا؟":"I am a noble book, I carry the words of my Lord; in me is guidance for people and healing for hearts. Who am I?",
+  "أَطيرُ في السماء بِجَناحَين، وأَنزِلُ على الأنبياء بالوحي. مَن أنا؟":"I fly in the sky with two wings, and descend upon the prophets with revelation. Who am I?",
+  "أَنا أوَّل بَيتٍ وُضِعَ للنَّاس، يَطوفُ حَولي الحُجَّاج، أَلبسُ ثَوباً أَسود. مَن أنا؟":"I am the first house built for people; pilgrims circle around me, and I wear a black cloth. Who am I?",
+  "خَمسٌ في اليوم والليلة، فيَّ رُكوعٌ وسُجود، وأنا عَمودُ الدِّين. مَن أنا؟":"Five times in the day and night, in me are bowing and prostration, and I am the pillar of the religion. Who am I?",
+  "أَتَنَزَّلُ من السماء فأُحيي الأرضَ بَعدَ مَوتها، وفيَّ سِرُّ الحياة. مَن أنا؟":"I come down from the sky and revive the earth after its death, and in me is the secret of life. Who am I?",
+  "شَهرٌ كَريم، أَصومُ نَهاره وأُصلِّي ليله، فيَّ ليلةٌ خَيرٌ من ألفِ شَهر. مَن أنا؟":"A noble month — I fast its days and pray its nights; in me is a night better than a thousand months. Who am I?",
+  "أَنا أُمُّك، وجَنَّتُكَ تَحت قَدَمَيَّ، أَوصاكَ بي ربُّك ثلاث مَرَّات. مَن أنا؟":"I am your mother; your paradise is under my feet, and your Lord enjoined you to honor me three times. Who am I?",
+  "أَنا أَعمى لكنِّي أُبصِر الحقّ بقَلبي، أَذَّنتُ للنَّاس في المدينة بصَوتي الجَميل. مَن أنا؟":"I am blind, but I see the truth with my heart; I called people to prayer in Medina with my beautiful voice. Who am I?",
+  "أَنا أَخفِيها فأَزداد ثَواباً، يُسلِّمها صاحِبُها لأخيهِ الفقير، وأُطَهِّر بها المال. مَن أنا؟":"I am hidden so my reward grows; the giver hands me to his poor brother, and through me wealth is purified. Who am I?",
+  "أَنا أَوَّل من آمَن من الرِّجال، صاحِبُ النبي ﷺ في الغار، خَليفته الأوَّل. مَن أنا؟":"I am the first man to believe, the Prophet's ﷺ companion in the cave, and his first successor. Who am I?",
+  "القرآن":"The Quran","القاموس":"The dictionary","المُعجَم":"The lexicon","القِصَّة":"The story",
+  "الفَراشة":"The butterfly","جِبريل ﷺ":"Jibril ﷺ","الحَمامة":"The dove","النَّجم":"The star",
+  "المسجد النبوي":"The Prophet's Mosque","قُبَّة الصَّخرة":"The Dome of the Rock","الكعبة المُشَرَّفة":"The Holy Kaaba","غار حِراء":"Cave of Hira",
+  "الصلاة":"Prayer","الصِّيام":"Fasting","الزكاة":"Zakah","الحجّ":"Hajj",
+  "الشمس":"The sun","النَّسيم":"The breeze","الرعد":"The thunder","المَطر":"The rain",
+  "شَوَّال":"Shawwal","ذو الحِجَّة":"Dhul-Hijjah","رَمَضان":"Ramadan","مُحَرَّم":"Muharram",
+  "الجَدَّة":"The grandmother","الأُمّ":"The mother","الخالة":"The aunt","الأُخت":"The sister",
+  "أبو هريرة":"Abu Hurayrah","بِلال بن رَباح":"Bilal ibn Rabah","ابن أُمّ مَكتوم":"Ibn Umm Maktum","حَسَّان بن ثابت":"Hassan ibn Thabit",
+  "الهَدِيَّة":"The gift","الميراث":"The inheritance","الصَّدقة":"Charity","الرُّشوة":"The bribe",
+  "عُمَر بن الخطَّاب":"Umar ibn al-Khattab","أبو بَكر الصدِّيق":"Abu Bakr as-Siddiq","عُثمان بن عفَّان":"Uthman ibn Affan","عَلِيّ بن أبي طالب":"Ali ibn Abi Talib",
+  "القرآن هو كلام الله، أُنزِل على نبيّنا محمد ﷺ، فيه هُدًى ورحمة.":"The Quran is the word of Allah, revealed to our Prophet Muhammad ﷺ; in it is guidance and mercy.",
+  "جبريل ﷺ هو أمين الوحي، يُنزِّل كلام الله على الأنبياء.":"Jibril ﷺ is the trustee of revelation, bringing down the word of Allah to the prophets.",
+  "الكعبة المشرَّفة في مكَّة، أول بيت بُني لعبادة الله، يَكسوها ثوبٌ أسود.":"The Holy Kaaba in Mecca is the first house built for the worship of Allah, covered with a black cloth.",
+  "الصلاة عمودُ الدين، من أقامها أقام الدين ومن هَدمها هَدم الدين.":"Prayer is the pillar of the religion; whoever upholds it upholds the religion, and whoever abandons it ruins it.",
+  "المَطر رَحمةٌ من الله، يُحيي به الأرض والزَّرع والإنسان.":"Rain is a mercy from Allah, by which He gives life to the earth, the crops, and people.",
+  "رمضان شَهر القرآن، فيه ليلةُ القَدر التي هي خيرٌ من ألف شَهر.":"Ramadan is the month of the Quran; in it is the Night of Decree, which is better than a thousand months.",
+  "بِرُّ الأمّ من أعظم القُربات. قال ﷺ لرجلٍ سأله عن الجهاد ولهُ أمٌّ حيّة: «فالزمها، فإنّ الجنة تحت رجليها» — رواه النسائي.":"Honoring one's mother is among the greatest acts of devotion. The Prophet ﷺ said to a man who asked about jihad while his mother was alive: «Stay with her, for Paradise lies beneath her feet» — an-Nasa'i.",
+  "ابن أمّ مكتوم رضي الله عنه كان أعمى، ومُؤذِّن النبي ﷺ مع بِلال.":"Ibn Umm Maktum (RA) was blind, and a caller to prayer for the Prophet ﷺ alongside Bilal.",
+  "الصَّدقةُ تُطفئُ غضَب الرَّبّ كما يُطفئ الماءُ النار، وتُطهِّر المال.":"Charity extinguishes the Lord's anger as water extinguishes fire, and it purifies wealth.",
+  "أبو بَكر الصدِّيق رضي الله عنه، صاحِبُ النبي ﷺ في الهجرة وأوَّل خلفاء المسلمين.":"Abu Bakr as-Siddiq (RA), the Prophet's ﷺ companion in the migration and the first caliph of the Muslims."
+});
+</script>
+<script src="../scripts/i18n.js"></script>
+<script src="../../shared/nav-fix.js"></script>
+</body>
+</html>

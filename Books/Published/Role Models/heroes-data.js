@@ -1,0 +1,100 @@
+/* ════════════════════════════════════════════════════════════════
+   heroes-data.js — «قدوات أطفال المسلمين · Muslim Kids' Role Models».
+   9 posters: 5 companions + 4 female role models.
+   Each: a symbolic crest (no faces), one defining QUALITY to copy,
+   and a famous saying / lesson. Bilingual (ar/en).
+   window.HEROES = [...]
+   ════════════════════════════════════════════════════════════════ */
+(function () {
+  window.HEROES = [
+    { id:'abubakr', key:'cave', c:'#1F8A5B', tint:'#e8f5ee', ic:['web','arch','heart'],
+      ar:{ name:'أبو بكرٍ الصدّيق', title:'الخليفةُ الأوّل · صاحبُ الغار',
+        quality:'الصِّدْق', qLabel:'تعلَّمْ منه',
+        saying:'«إنْ كان قال فقد صَدَق» — صدَّق النبيَّ ﷺ في رحلة الإسراء بلا ترُّدد، فلُقِّب بالصدّيق.',
+        icL:['الوفاء','الغار','المحبّة'] },
+      en:{ name:'Abū Bakr aṣ-Ṣiddīq', title:'The First Caliph · Companion of the Cave',
+        quality:'Truthfulness', qLabel:'Learn from him',
+        saying:'\u201cIf he said it, then he spoke the truth.\u201d \u2014 he believed the Prophet \uFDFA at once, and was named \u201cthe Truthful.\u201d',
+        icL:['Loyalty','The Cave','Love'] } },
+
+    { id:'umar', key:'scales', c:'#2E6FBF', tint:'#e7eefb', ic:['scales','lamp','shield'],
+      ar:{ name:'عمرُ بنُ الخطّاب', title:'الخليفةُ الثاني · الفاروق',
+        quality:'العَدْل', qLabel:'تعلَّمْ منه',
+        saying:'«متى استعبدتُمُ الناسَ وقد ولدَتْهُم أمهاتُهم أحرارًا؟» — حاميةُ العدلِ بين الناس.',
+        icL:['العدل','حارسُ الليل','القوّة'] },
+      en:{ name:'Umar ibn al-Khaṭṭāb', title:'The Second Caliph · Al-Fārūq',
+        quality:'Justice', qLabel:'Learn from him',
+        saying:'\u201cWhen did you enslave people, when their mothers bore them free?\u201d \u2014 the guardian of justice.',
+        icL:['Justice','Night-watch','Strength'] } },
+
+    { id:'ali', key:'book', c:'#0F8C7E', tint:'#e6f4f1', ic:['book','sword','arch'],
+      ar:{ name:'عليُّ بنُ أبي طالب', title:'الخليفةُ الرابع · بابُ مدينةِ العلم',
+        quality:'العِلمُ والشجاعة', qLabel:'تعلَّمْ منه',
+        saying:'«قيمةُ كلِّ امرئٍ ما يُحسِنُه» — جمع بين علمٍ غزيرٍ وشجاعةٍ نادرة.',
+        icL:['العِلم','الشجاعة','بابُ خيبر'] },
+      en:{ name:'Alī ibn Abī Ṭālib', title:'The Fourth Caliph · Gate of the City of Knowledge',
+        quality:'Knowledge & Courage', qLabel:'Learn from him',
+        saying:'\u201cEvery person\u2019s worth is what they do well.\u201d \u2014 he joined deep knowledge with rare courage.',
+        icL:['Knowledge','Courage','Khaybar\u2019s gate'] } },
+
+    { id:'bilal', key:'minaret', c:'#E08A1E', tint:'#fdf0dd', ic:['minaret','rock','star'],
+      ar:{ name:'بلالُ بنُ رباح', title:'مؤذّنُ النبيِّ ﷺ الأوّل',
+        quality:'الثَّبات', qLabel:'تعلَّمْ منه',
+        saying:'«أحدٌ... أحد» — ردَّدها تحت العذاب فما تخلَّى عن إيمانه بربٍّ واحد.',
+        icL:['الأذان','الصبر','التوحيد'] },
+      en:{ name:'Bilāl ibn Rabāḥ', title:'The Prophet\u2019s \uFDFA first muezzin',
+        quality:'Steadfastness', qLabel:'Learn from him',
+        saying:'\u201cOne\u2026 One!\u201d \u2014 he repeated it under torture, never letting go of his faith in the One God.',
+        icL:['The Adhan','Patience','Tawheed'] } },
+
+    { id:'khalid', key:'swords', c:'#C0392B', tint:'#fbe8e5', ic:['sword','banner','shield'],
+      ar:{ name:'خالدُ بنُ الوليد', title:'سيفُ اللهِ المسلول',
+        quality:'الشَّجاعة', qLabel:'تعلَّمْ منه',
+        saying:'لقّبه النبيُّ ﷺ بأنه «سيفٌ من سيوفِ الله» — قائدٌ شجاعٌ لم يُهزَمْ في معركة.',
+        icL:['الشجاعة','الراية','الحماية'] },
+      en:{ name:'Khālid ibn al-Walīd', title:'The Drawn Sword of Allah',
+        quality:'Courage', qLabel:'Learn from him',
+        saying:'The Prophet \uFDFA named him \u201ca sword among the swords of Allah\u201d \u2014 a brave commander, never defeated in battle.',
+        icL:['Courage','The Banner','Protection'] } },
+
+    { id:'khadijah', key:'kaaba', c:'#B43A6E', tint:'#f8e6ee', ic:['kaaba','heart','star'],
+      ar:{ name:'خديجةُ بنتُ خويلد', title:'أمُّ المؤمنين · أوّلُ مَن آمن',
+        quality:'السَّنَدُ والكَرَم', qLabel:'تعلَّمْ منها',
+        saying:'«كلَّا واللهِ لا يُخزيكَ اللهُ أبدًا» — ثبَّتت النبيَّ ﷺ في أصعبِ لحظاته، وأنفقت مالها كلَّه في سبيل الله.',
+        icL:['أوّلُ مؤمنة','المحبّة','السَّبْق'] },
+      en:{ name:'Khadījah bint Khuwaylid', title:'Mother of the Believers · First to believe',
+        quality:'Support & Generosity', qLabel:'Learn from her',
+        saying:'\u201cNever! By Allah, Allah will never disgrace you.\u201d \u2014 she steadied the Prophet \uFDFA in his hardest moment and gave all her wealth for Allah.',
+        icL:['First believer','Love','Foremost'] } },
+
+    { id:'aisha', key:'pen', c:'#7E4FC0', tint:'#efe7fa', ic:['pen','book','lamp'],
+      ar:{ name:'عائشةُ بنتُ أبي بكر', title:'أمُّ المؤمنين · عالِمةُ الأمّة',
+        quality:'العِلم', qLabel:'تعلَّمْ منها',
+        saying:'كانت من أفقهِ الناسِ وأعلمِهم، أخذ عنها الصحابةُ كثيرًا من العلمِ والحديث.',
+        icL:['القلم','الفقه','التعليم'] },
+      en:{ name:'Āishah bint Abī Bakr', title:'Mother of the Believers · Scholar of the Ummah',
+        quality:'Knowledge', qLabel:'Learn from her',
+        saying:'Among the most knowledgeable of people \u2014 the companions learned much of their knowledge and hadith from her.',
+        icL:['The Pen','Understanding','Teaching'] } },
+
+    { id:'sumayyah', key:'pillar', c:'#0E8A6E', tint:'#e4f3ef', ic:['pillar','palm','star'],
+      ar:{ name:'سُميّةُ بنتُ خيّاط', title:'أوّلُ شهيدةٍ في الإسلام',
+        quality:'التَّضحية', qLabel:'تعلَّمْ منها',
+        saying:'صبرت على أشدِّ العذابِ ولم تترك دينها، فكانت أوّلَ مَن ضحَّى بروحه في سبيلِ الله.',
+        icL:['الثبات','الصبر','الفداء'] },
+      en:{ name:'Sumayyah bint Khayyāṭ', title:'The first martyr of Islam',
+        quality:'Sacrifice', qLabel:'Learn from her',
+        saying:'She bore the harshest torture and never left her faith \u2014 the first to give her life for the sake of Allah.',
+        icL:['Steadfast','Patience','Sacrifice'] } },
+
+    { id:'fatimah', key:'flower', c:'#C13B7E', tint:'#f9e7f0', ic:['flower','beads','heart'],
+      ar:{ name:'فاطمةُ الزهراء', title:'بنتُ النبيِّ ﷺ · سيّدةُ نساءِ الجنّة',
+        quality:'الطُّهرُ والعبادة', qLabel:'تعلَّمْ منها',
+        saying:'كانت أحبَّ الناسِ إلى النبيِّ ﷺ، ووصفها بأنها سيّدةُ نساءِ أهلِ الجنّة.',
+        icL:['الطُّهر','العبادة','المحبّة'] },
+      en:{ name:'Fāṭimah az-Zahrā\u2019', title:'Daughter of the Prophet \uFDFA · Leader of the women of Paradise',
+        quality:'Purity & Devotion', qLabel:'Learn from her',
+        saying:'The most beloved of people to the Prophet \uFDFA; he called her the leader of the women of Paradise.',
+        icL:['Purity','Devotion','Love'] } }
+  ];
+})();

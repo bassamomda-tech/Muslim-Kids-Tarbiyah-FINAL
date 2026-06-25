@@ -1,0 +1,122 @@
+/* ashara-book.css — «العشرة المبشّرون بالجنّة» — سدرة-style warm magazine */
+@import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&family=Amiri:wght@400;700&display=swap');
+:root{--sand:#e9d9b6;--sand2:#dcc594;--cream:#fdf8ec;--ink:#3a2c18;--ink2:#5a4424;
+  --terra:#b5532c;--terra2:#c0392b;--gold:#b88a2e;--gold2:#caa544;--olive:#6a6a2e;--shield:#9a7430}
+*{box-sizing:border-box}
+html,body{margin:0}
+body{font-family:'Tajawal',sans-serif;color:var(--ink);
+  background:#cdb78d;background-image:radial-gradient(circle at 50% 0,#e4d2ab,#c7ad7f);}
+.amiri{font-family:'Amiri',serif}
+.toolbar{position:fixed;top:14px;inset-inline-end:14px;z-index:60;display:flex;gap:.5rem}
+.toolbar button{background:linear-gradient(135deg,#caa544,#b88a2e);color:#3a2c18;border:none;border-radius:2rem;
+  padding:.6rem 1.2rem;font-weight:900;font-family:inherit;font-size:.92rem;cursor:pointer;box-shadow:0 6px 18px rgba(0,0,0,.3)}
+
+/* A4 sheet */
+.sheet{position:relative;width:820px;min-height:1160px;margin:22px auto;background:var(--cream);
+  box-shadow:0 14px 40px rgba(0,0,0,.4);overflow:hidden;display:flex;flex-direction:column}
+/* warm framed border like the reference */
+.sheet::before{content:"";position:absolute;inset:0;border:14px solid transparent;
+  border-image:linear-gradient(135deg,#caa544,#9a7430,#caa544) 1;pointer-events:none;z-index:5}
+.sheet .pad{position:relative;z-index:2;padding:46px 50px 60px;display:flex;flex-direction:column;flex:1}
+
+/* sheet decorative top wave (parchment) */
+.wave-top{position:absolute;inset-inline:0;top:0;height:120px;background:linear-gradient(180deg,var(--sand2),transparent);z-index:1}
+
+/* shield emblem */
+.shield{position:absolute;top:18px;inset-inline-start:30px;width:64px;height:74px;z-index:6;
+  background:radial-gradient(circle at 40% 30%,#d7b25a,#9a7430);border:2px solid #7a5a20;
+  border-radius:14px 14px 50% 50%;display:grid;place-items:center;font-size:1.7rem;box-shadow:0 4px 12px rgba(0,0,0,.3)}
+.brand{position:absolute;top:22px;inset-inline-end:34px;z-index:6;font-weight:900;color:var(--shield);
+  display:flex;align-items:center;gap:.4rem;font-size:.9rem;opacity:.9}
+.brand .bb{font-size:1.3rem}
+.pageno{position:absolute;bottom:20px;inset-inline-start:50%;transform:translateX(50%);z-index:6;
+  color:var(--shield);font-weight:800;font-size:.82rem;background:rgba(255,255,255,.6);border:1px solid #d8c089;border-radius:2rem;padding:.15rem .8rem}
+
+/* ── hero banner ── */
+.hero-banner{text-align:center;margin:30px 0 8px}
+.hero-tt{display:inline-block;background:linear-gradient(180deg,#caa544,#a87f28);color:#fff;
+  font-weight:900;font-size:1.5rem;padding:.5rem 2rem;border-radius:14px;border:2px solid #e3c878;
+  box-shadow:0 6px 16px rgba(0,0,0,.25);clip-path:polygon(5% 0,95% 0,100% 50%,95% 100%,5% 100%,0 50%)}
+.hero-name{font-family:'Amiri',serif;font-weight:700;font-size:2.5rem;color:var(--terra);margin:.5rem 0 .1rem}
+.hero-laqab{font-size:1rem;font-weight:700;color:var(--ink2);opacity:.85}
+
+/* scene frame */
+.scene{margin:18px 0;border:3px solid var(--gold2);border-radius:18px;padding:6px;background:rgba(154,116,48,.08);position:relative}
+.scene image-slot{display:block;width:100%;height:300px;border-radius:12px;overflow:hidden}
+.nano{margin-top:8px;border:1.5px solid #d8c089;border-radius:12px;background:#fffdf5;overflow:hidden}
+.nano-bar{display:flex;align-items:center;gap:8px;padding:8px 12px;cursor:pointer}
+.nano-bar .nb-t{flex:1;font-weight:800;font-size:.82rem;color:var(--shield)}
+.nano-bar .nb-c{background:var(--gold2);color:#3a2c18;border:none;border-radius:8px;padding:4px 11px;font-weight:800;font-size:.74rem;cursor:pointer;font-family:inherit}
+.nano-bar .nb-c.done{background:var(--olive);color:#fff}
+.nano-bar .chev{color:var(--gold);font-weight:900;transition:.2s}
+.nano.open .chev{transform:rotate(180deg)}
+.nano-body{display:none;padding:0 12px 11px;font-size:.78rem;line-height:1.6;color:#6a5a32;direction:ltr;text-align:left}
+.nano.open .nano-body{display:block}
+
+/* story */
+.story h3{font-family:'Amiri',serif;color:var(--terra);font-size:1.4rem;margin:18px 0 6px;font-weight:700;
+  display:flex;align-items:center;gap:10px}
+.story h3::before{content:"❁";color:var(--gold2);font-size:1.1rem}
+.story p{font-size:1.12rem;line-height:2.1;color:var(--ink);margin:0 0 8px;text-align:justify}
+.story b{color:var(--terra);font-weight:800}
+
+/* pull quote */
+.pull{margin:18px 0;background:linear-gradient(135deg,rgba(202,165,68,.18),rgba(181,83,44,.12));
+  border:2px solid var(--gold2);border-radius:16px;padding:16px 22px;text-align:center;position:relative}
+.pull .q{font-family:'Amiri',serif;font-size:1.5rem;font-weight:700;color:var(--ink);line-height:1.9}
+.pull .deco{font-size:1.6rem;color:var(--gold2)}
+
+/* ── سيرة infographic card ── */
+.siyar{margin:14px 0;background:linear-gradient(160deg,#f2e6c8,#e7d3a6);border:2.5px solid var(--shield);border-radius:18px;padding:18px 18px 22px;position:relative}
+.siyar::after{content:"";position:absolute;inset:7px;border:1px solid rgba(154,116,48,.35);border-radius:12px;pointer-events:none}
+.siyar h2{font-family:'Amiri',serif;text-align:center;color:var(--shield);font-size:1.5rem;margin:0 0 4px;font-weight:700}
+.siyar .sub{text-align:center;font-size:.8rem;color:var(--ink2);margin-bottom:16px;font-weight:700}
+.siyar-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.scell{background:rgba(255,255,255,.55);border:1px solid #d3b878;border-radius:12px;padding:11px 13px;position:relative}
+.scell .stt{display:inline-flex;align-items:center;gap:6px;background:linear-gradient(180deg,#8a5a2a,#6a4420);color:#fff;
+  font-weight:800;font-size:.78rem;border-radius:2rem;padding:.22rem .8rem;margin-bottom:7px}
+.scell .sic{font-size:1.05rem}
+.scell p{margin:0;font-size:.9rem;line-height:1.65;color:var(--ink)}
+
+/* lessons */
+.lessons{margin-top:16px;background:linear-gradient(135deg,rgba(106,106,46,.12),rgba(202,165,68,.12));
+  border:1.5px dashed var(--olive);border-radius:16px;padding:14px 18px}
+.lessons h4{margin:0 0 8px;font-family:'Amiri',serif;color:var(--olive);font-size:1.25rem;font-weight:700}
+.lessons ul{margin:0;padding-inline-start:20px}
+.lessons li{font-size:1rem;line-height:1.85;color:var(--ink);margin-bottom:3px}
+
+/* ── cover / index / closing (dark warm) ── */
+.cover{position:relative;align-items:center;justify-content:center;text-align:center;flex:1;display:flex;flex-direction:column;gap:14px;
+  background:linear-gradient(180deg,#f3ead0 0%,#e4cea0 45%,#c89a5e 100%)}
+.cover .pub{display:flex;align-items:center;gap:.5rem;font-weight:900;color:var(--shield);font-size:1.05rem}
+.cover h1{font-family:'Amiri',serif;font-size:3.6rem;font-weight:700;color:var(--terra);margin:.2rem 0;line-height:1.2;text-shadow:0 2px 0 rgba(255,255,255,.4)}
+.cover .ct-sub{font-size:1.3rem;font-weight:800;color:var(--ink2)}
+.cover .ct-note{font-size:1rem;color:var(--ink2);max-width:520px;line-height:1.9;opacity:.9}
+.cover .horses{font-size:3rem;letter-spacing:-6px;opacity:.5;margin-top:10px}
+.cover-scene{width:70%;max-width:480px;margin:6px auto}
+.cover-scene image-slot{display:block;width:100%;height:300px;border:3px solid var(--gold2);border-radius:16px;overflow:hidden}
+
+.intro{flex:1;display:flex;flex-direction:column;justify-content:center;gap:14px}
+.intro h2{font-family:'Amiri',serif;color:var(--terra);font-size:2rem;text-align:center;margin:0}
+.intro p{font-size:1.12rem;line-height:2.1;color:var(--ink);text-align:justify;margin:0 0 4px}
+.intro .ayah{font-family:'Amiri',serif;font-size:1.5rem;color:var(--olive);text-align:center;line-height:2;background:rgba(106,106,46,.1);border-radius:14px;padding:14px;margin:8px 0}
+.roster{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:10px}
+.ritem{display:flex;align-items:center;gap:10px;background:rgba(255,255,255,.5);border:1px solid #d3b878;border-radius:12px;padding:9px 12px}
+.ritem .rn{width:30px;height:30px;border-radius:50%;background:var(--shield);color:#fff;display:grid;place-items:center;font-weight:900;flex:0 0 auto}
+.ritem b{color:var(--terra);font-size:.95rem}.ritem span{font-size:.82rem;color:var(--ink2);display:block}
+
+.closing{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:16px}
+.closing .seal{font-size:3.4rem}
+.closing h2{font-family:'Amiri',serif;color:var(--terra);font-size:2.2rem;margin:0}
+.closing .grid10{display:grid;grid-template-columns:repeat(2,1fr);gap:8px;max-width:560px;width:100%;margin-top:6px}
+.closing .g10{background:rgba(255,255,255,.55);border:1.5px solid var(--gold2);border-radius:12px;padding:9px;font-weight:800;color:var(--ink)}
+.closing .g10 b{color:var(--terra)}
+.closing .g10 span{display:block;font-size:.78rem;color:var(--ink2)}
+
+@media print{
+  body{background:#fff}
+  .toolbar{display:none}
+  .sheet{margin:0;box-shadow:none;width:auto;min-height:auto;page-break-after:always}
+  .nano{display:none!important}
+  @page{size:A4;margin:0}
+}

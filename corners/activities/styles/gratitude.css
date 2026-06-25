@@ -1,0 +1,249 @@
+/* ============================================================
+   GRATITUDE — مفكرة الامتنان
+   ============================================================ */
+
+.gr-panel {
+  background:
+    radial-gradient(140% 80% at 50% 0%, rgba(224,213,242,0.35), transparent 60%),
+    var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--r-2xl);
+  padding: var(--s-8);
+  display: flex; flex-direction: column;
+  box-shadow: var(--shadow-card);
+}
+.gr-panel .activity-tag { background: var(--lavender); color: var(--lavender-ink); }
+.gr-panel .activity-tag::before { background: var(--lavender-ink); }
+
+.gr-hud {
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--s-3);
+  margin-bottom: var(--s-4);
+}
+.gr-hud .hud-block {
+  background: var(--bg-soft); border: 1px solid var(--line);
+  border-radius: var(--r-md); padding: 10px 14px;
+  display: flex; flex-direction: column; gap: 2px;
+  font-size: 11px; color: var(--muted); font-weight: 600;
+}
+.gr-hud .hud-block strong {
+  font-size: 20px; color: var(--ink);
+  font-family: var(--font-en); font-weight: 800;
+}
+
+.gr-stage {
+  background: linear-gradient(180deg, #FFFBF3 0%, #F5EEDF 100%);
+  border-radius: var(--r-xl);
+  border: 1px solid var(--line);
+  padding: var(--s-5);
+  display: flex; flex-direction: column;
+  gap: var(--s-4);
+  min-height: 460px;
+  position: relative;
+}
+
+.gr-date-row {
+  display: flex; gap: 6px; align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.gr-date-row button {
+  width: 32px; height: 32px; border-radius: 50%;
+  background: var(--bg-soft); border: 1px solid var(--line);
+  font-size: 16px;
+}
+.gr-date-row .date-pill {
+  padding: 8px 18px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--r-pill);
+  font-weight: 700;
+  font-size: 14px;
+}
+.gr-date-row .today-btn {
+  background: var(--lavender);
+  color: var(--lavender-ink);
+  border: 1px solid var(--lavender-ink);
+  width: auto; height: auto; border-radius: var(--r-pill);
+  padding: 8px 16px;
+  font-weight: 700;
+  font-size: 13px;
+}
+
+/* مُؤلِّف */
+.gr-compose {
+  background: var(--surface);
+  border: 1.5px solid var(--lavender);
+  border-radius: var(--r-lg);
+  padding: var(--s-4);
+  display: flex; flex-direction: column;
+  gap: var(--s-3);
+  box-shadow: var(--shadow-sm);
+}
+.gr-prompt { text-align: center; line-height: 1.5; }
+.gr-prompt .bism {
+  display: block;
+  font-family: 'Amiri', serif;
+  font-size: 18px;
+  color: var(--lavender-ink);
+  margin-bottom: 4px;
+}
+.gr-prompt strong {
+  font-size: 15px; font-weight: 800;
+}
+
+.gr-emojis {
+  display: flex; gap: 6px; justify-content: center; flex-wrap: wrap;
+}
+.gr-emoji {
+  width: 38px; height: 38px;
+  border-radius: 50%;
+  background: var(--bg-soft);
+  border: 1.5px solid var(--line);
+  display: grid; place-items: center;
+  font-size: 18px;
+  cursor: pointer;
+  transition: transform 0.15s ease, background 0.18s ease, border-color 0.18s ease;
+}
+.gr-emoji:hover { transform: translateY(-2px) scale(1.05); background: var(--surface); }
+.gr-emoji.active {
+  background: var(--lavender);
+  border-color: var(--lavender-ink);
+  transform: scale(1.1);
+}
+
+.gr-input-row {
+  display: flex; gap: 8px;
+}
+.gr-input-row input {
+  flex: 1;
+  padding: 11px 14px;
+  border: 1.5px solid var(--line);
+  border-radius: var(--r-pill);
+  font-family: inherit;
+  font-size: 14px;
+  background: var(--bg-soft);
+  color: var(--ink);
+  outline: none;
+  transition: border-color 0.18s ease, background 0.18s ease;
+}
+.gr-input-row input:focus {
+  border-color: var(--lavender-ink);
+  background: var(--surface);
+}
+.gr-add {
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 0 16px;
+  background: var(--lavender-ink);
+  color: #fff;
+  border-radius: var(--r-pill);
+  font-weight: 800; font-size: 13px;
+  transition: background 0.18s ease, transform 0.15s ease;
+}
+.gr-add:hover:not(:disabled) { background: var(--ink); transform: translateY(-1px); }
+.gr-add:disabled { opacity: 0.45; cursor: not-allowed; }
+
+.gr-quick {
+  display: flex; gap: 6px; align-items: center; flex-wrap: wrap;
+  font-size: 12px; color: var(--muted); font-weight: 600;
+}
+.gr-quick .qb {
+  padding: 5px 10px;
+  background: var(--bg-soft);
+  border: 1px solid var(--line);
+  border-radius: var(--r-pill);
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--ink-2);
+  transition: background 0.18s ease;
+}
+.gr-quick .qb:hover { background: var(--lavender); color: var(--lavender-ink); }
+
+/* قائمة الإدخالات */
+.gr-entries {
+  display: flex; flex-direction: column; gap: var(--s-2);
+}
+.gr-entry {
+  display: flex; align-items: center; gap: var(--s-3);
+  padding: 12px 14px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--r-md);
+  box-shadow: var(--shadow-sm);
+  animation: gr-slide 0.35s cubic-bezier(0.2, 1.4, 0.4, 1);
+}
+@keyframes gr-slide {
+  from { opacity: 0; transform: translateY(-8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.gr-entry .ic {
+  width: 40px; height: 40px; border-radius: 50%;
+  background: var(--lavender);
+  display: grid; place-items: center;
+  font-size: 18px;
+  flex-shrink: 0;
+}
+.gr-entry .body {
+  flex: 1;
+  font-size: 14px; font-weight: 600; color: var(--ink);
+  line-height: 1.45;
+}
+.gr-entry .time {
+  font-size: 11px;
+  color: var(--muted);
+  font-family: var(--font-en);
+  font-weight: 700;
+}
+.gr-entry .del {
+  width: 26px; height: 26px;
+  border-radius: 50%;
+  background: var(--bg-soft);
+  border: 1px solid var(--line);
+  color: var(--muted);
+  display: grid; place-items: center;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background 0.18s ease, color 0.18s ease;
+}
+.gr-entry .del:hover { background: var(--rose); color: var(--ink); }
+
+.gr-empty {
+  text-align: center;
+  padding: var(--s-6);
+  color: var(--muted);
+  font-size: 14px;
+}
+.gr-empty .empty-ic {
+  font-size: 36px;
+  color: var(--lavender-ink);
+  margin-bottom: 8px;
+}
+
+/* أسبوع جانبي */
+.gr-week {
+  display: grid; grid-template-columns: repeat(7, 1fr); gap: 6px;
+}
+.gr-week .day {
+  background: var(--bg-soft);
+  border: 1px solid var(--line);
+  border-radius: var(--r-md);
+  padding: 8px 4px;
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.15s ease, background 0.18s ease;
+}
+.gr-week .day:hover { transform: translateY(-2px); background: var(--surface); }
+.gr-week .day.today { border-color: var(--lavender-ink); border-width: 2px; }
+.gr-week .day.selected { background: var(--lavender); border-color: var(--lavender-ink); }
+.gr-week .day .dn { font-size: 10px; color: var(--muted); font-weight: 700; }
+.gr-week .day .dd {
+  font-family: var(--font-en); font-size: 14px; font-weight: 800;
+  color: var(--ink); margin: 2px 0;
+}
+.gr-week .day .pips {
+  display: flex; gap: 2px; justify-content: center;
+}
+.gr-week .day .pips .p {
+  width: 5px; height: 5px; border-radius: 50%;
+  background: rgba(31,37,64,0.15);
+}
+.gr-week .day .pips .p.on { background: var(--lavender-ink); }

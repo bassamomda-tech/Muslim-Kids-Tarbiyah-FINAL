@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="dark">
+<title>جلسة منارة العقيدة · من خلق كل هذا؟</title>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&display=swap">
+<style>
+  :root{
+    --navy:#0A2540; --navy2:#12375A; --navy3:#1C4A78;
+    --crimson:#C0392B; --crimson-d:#A93226;
+    --gold:#D4A017; --gold-l:#F5CC5A;
+    --cream:#FEF5DC; --cream-dim:rgba(254,245,220,.72);
+    --green:#3FA66A;
+  }
+  *,*::before,*::after{box-sizing:border-box}
+  html,body{margin:0;padding:0;background:#06192c}
+  deck-stage:not(:defined){visibility:hidden}
+
+  /* ===== base slide ===== */
+  section{
+    font-family:'Tajawal',sans-serif;
+    color:var(--cream);
+    background:radial-gradient(1200px 700px at 80% -10%, #16436e 0%, transparent 60%),
+               linear-gradient(160deg,var(--navy) 0%,var(--navy2) 100%);
+    overflow:hidden;
+    display:flex; flex-direction:column;
+    align-items:center; justify-content:center;
+    text-align:center;
+    padding:96px 120px;
+  }
+  /* subtle starfield */
+  section::before{
+    content:""; position:absolute; inset:0; pointer-events:none; opacity:.5;
+    background-image:radial-gradient(2px 2px at 12% 22%, rgba(245,204,90,.5) 50%, transparent),
+      radial-gradient(2px 2px at 78% 16%, rgba(254,245,220,.4) 50%, transparent),
+      radial-gradient(1.5px 1.5px at 34% 74%, rgba(254,245,220,.35) 50%, transparent),
+      radial-gradient(2px 2px at 64% 64%, rgba(245,204,90,.4) 50%, transparent),
+      radial-gradient(1.5px 1.5px at 90% 50%, rgba(254,245,220,.3) 50%, transparent),
+      radial-gradient(1.5px 1.5px at 20% 88%, rgba(245,204,90,.35) 50%, transparent);
+  }
+  section > *{position:relative;z-index:1}
+
+  .bg-crimson{
+    background:radial-gradient(1100px 700px at 20% -10%, #d6543f 0%, transparent 55%),
+               linear-gradient(160deg,var(--crimson) 0%,var(--crimson-d) 100%);
+  }
+  .bg-gold{
+    background:radial-gradient(1100px 700px at 80% -10%, #ffd766 0%, transparent 55%),
+               linear-gradient(160deg,#e0ad1d 0%,#c79214 100%);
+    color:#3a2402;
+  }
+  .bg-gold .kicker{color:#7a4d05}
+  .bg-gold .seg-badge{background:rgba(58,36,2,.16);color:#3a2402;border-color:rgba(58,36,2,.25)}
+
+  /* ===== type ===== */
+  .kicker{font-size:34px;font-weight:800;letter-spacing:.04em;color:var(--gold-l);margin:0 0 18px}
+  .bg-crimson .kicker{color:var(--cream)}
+  h1{font-size:118px;line-height:1.05;font-weight:900;margin:0;text-wrap:balance}
+  h2{font-size:84px;line-height:1.08;font-weight:900;margin:0;text-wrap:balance}
+  .lead{font-size:46px;font-weight:500;line-height:1.5;color:var(--cream-dim);max-width:24ch;margin:30px auto 0;text-wrap:pretty}
+  .bg-gold .lead{color:#5c3c07}
+  .huge-emoji{font-size:230px;line-height:1;filter:drop-shadow(0 18px 30px rgba(0,0,0,.4))}
+
+  /* segment badge (top corner, teacher cue) */
+  .seg-badge{
+    position:absolute; top:54px; inset-inline-start:64px; z-index:3;
+    display:flex; align-items:center; gap:14px;
+    background:rgba(212,160,23,.16); border:1.5px solid rgba(212,160,23,.45);
+    color:var(--gold-l); border-radius:999px; padding:14px 30px;
+    font-size:30px; font-weight:800;
+  }
+  .seg-badge .clock{font-size:34px}
+
+  .pill{
+    display:inline-flex;align-items:center;gap:14px;
+    background:rgba(254,245,220,.1);border:1.5px solid rgba(254,245,220,.25);
+    border-radius:999px;padding:16px 34px;font-size:38px;font-weight:800;color:var(--cream);
+  }
+
+  /* ===== agenda ===== */
+  .agenda{display:flex;flex-direction:column;gap:18px;width:100%;max-width:1280px;margin-top:18px}
+  .agenda-row{
+    display:grid;grid-template-columns:120px 1fr auto;align-items:center;gap:30px;
+    background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);
+    border-inline-start:8px solid var(--gold);border-radius:22px;padding:22px 34px;text-align:start;
+  }
+  .agenda-row .num{font-size:46px}
+  .agenda-row .ttl{font-size:40px;font-weight:800}
+  .agenda-row .ttl small{display:block;font-size:27px;font-weight:500;color:var(--cream-dim)}
+  .agenda-row .time{font-size:34px;font-weight:800;color:var(--gold-l);white-space:nowrap}
+  .agenda-row.accent{border-inline-start-color:var(--crimson)}
+  .agenda-row.accent .time{color:#ffb3a6}
+
+  /* ===== cards / grids ===== */
+  .grid{display:grid;gap:34px;width:100%;max-width:1380px;margin-top:20px}
+  .g3{grid-template-columns:repeat(3,1fr)}
+  .g2{grid-template-columns:repeat(2,1fr)}
+  .card{
+    background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);
+    border-radius:30px;padding:42px 30px;display:flex;flex-direction:column;align-items:center;gap:16px;
+  }
+  .card .ico{font-size:120px;line-height:1}
+  .card .cname{font-size:42px;font-weight:800}
+  .card .cdesc{font-size:30px;color:var(--cream-dim);line-height:1.45}
+
+  /* reveal / flip cards (wonders) */
+  .reveal-card{
+    perspective:1400px;cursor:pointer;height:430px;
+  }
+  .reveal-inner{
+    position:relative;width:100%;height:100%;transition:transform .6s cubic-bezier(.4,0,.2,1);
+    transform-style:preserve-3d;
+  }
+  .reveal-card.flipped .reveal-inner{transform:rotateY(180deg)}
+  .reveal-face{
+    position:absolute;inset:0;backface-visibility:hidden;border-radius:30px;
+    display:flex;flex-direction:column;align-items:center;justify-content:center;gap:18px;padding:34px;
+  }
+  .reveal-front{background:rgba(255,255,255,.07);border:2px solid rgba(212,160,23,.4)}
+  .reveal-front .q{font-size:40px;font-weight:800;line-height:1.35}
+  .reveal-front .tap{font-size:27px;color:var(--gold-l);font-weight:700}
+  .reveal-back{background:linear-gradient(155deg,var(--crimson),var(--crimson-d));transform:rotateY(180deg);border:2px solid rgba(245,204,90,.5)}
+  .reveal-back .a-ico{font-size:120px}
+  .reveal-back .a{font-size:38px;font-weight:800;line-height:1.35}
+
+  /* ===== timer ===== */
+  .timer{display:flex;flex-direction:column;align-items:center;gap:22px;margin-top:26px}
+  .timer-num{
+    font-size:160px;font-weight:900;line-height:1;font-variant-numeric:tabular-nums;
+    color:var(--gold-l);text-shadow:0 8px 30px rgba(0,0,0,.4);min-width:5ch;
+  }
+  .timer.is-running .timer-num{color:var(--cream)}
+  .timer.is-done .timer-num{color:#ffd2c9;animation:pulse 1s ease-in-out infinite}
+  @keyframes pulse{50%{opacity:.4}}
+  .timer-btn,.btn{
+    font-family:inherit;cursor:pointer;border:none;border-radius:999px;
+    background:var(--gold);color:#3a2402;font-size:40px;font-weight:800;padding:20px 52px;
+    box-shadow:0 12px 26px rgba(0,0,0,.35);transition:transform .15s,background .2s;
+  }
+  .timer-btn:hover,.btn:hover{transform:translateY(-3px);background:var(--gold-l)}
+  .timer-btn:active,.btn:active{transform:translateY(0)}
+
+  /* call & response steps */
+  .steps{display:flex;flex-direction:column;gap:22px;width:100%;max-width:1200px;margin-top:24px;text-align:start}
+  .step{
+    display:flex;align-items:center;gap:28px;
+    background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);
+    border-radius:24px;padding:26px 36px;font-size:38px;font-weight:600;line-height:1.4;
+  }
+  .step .sn{
+    flex:0 0 auto;width:74px;height:74px;border-radius:50%;background:var(--crimson);
+    display:flex;align-items:center;justify-content:center;font-size:40px;font-weight:900;color:#fff;
+  }
+  .bg-gold .step{background:rgba(58,36,2,.08);border-color:rgba(58,36,2,.16)}
+  .bg-gold .step .sn{background:var(--crimson)}
+
+  .say{color:var(--gold-l);font-weight:800}
+  .bg-gold .say{color:var(--crimson-d)}
+  .kids{color:#ffd2c9;font-weight:800}
+
+  /* story beats */
+  .beat{display:flex;flex-direction:column;align-items:center;gap:24px;max-width:1080px}
+  .beat .bemoji{font-size:150px;line-height:1}
+  .beat .btext{font-size:42px;font-weight:700;line-height:1.4;text-wrap:pretty}
+  .hidden-answer{
+    margin-top:26px;opacity:0;transform:translateY(20px);transition:opacity .5s,transform .5s;
+    background:rgba(63,166,106,.16);border:2px solid var(--green);border-radius:26px;
+    padding:24px 40px;font-size:38px;font-weight:800;max-width:30ch;line-height:1.4;
+  }
+  .hidden-answer.show{opacity:1;transform:none}
+
+  /* quiz */
+  .quiz-q{font-size:64px;font-weight:900;line-height:1.2;max-width:22ch;margin:0 auto}
+  .quiz-opts{display:flex;flex-direction:column;gap:24px;width:100%;max-width:1100px;margin-top:46px}
+  .quiz-opt{
+    font-family:inherit;cursor:pointer;text-align:start;
+    display:flex;align-items:center;gap:28px;
+    background:rgba(255,255,255,.08);border:2.5px solid rgba(255,255,255,.16);
+    border-radius:26px;padding:28px 40px;font-size:46px;font-weight:800;color:var(--cream);
+    transition:transform .15s,background .2s,border-color .2s;
+  }
+  .quiz-opt .opt-letter{
+    flex:0 0 auto;width:80px;height:80px;border-radius:20px;background:rgba(212,160,23,.25);
+    color:var(--gold-l);display:flex;align-items:center;justify-content:center;font-size:46px;font-weight:900;
+  }
+  .quiz-opt:hover:not(.is-locked){transform:translateX(-8px);background:rgba(255,255,255,.13);border-color:var(--gold)}
+  .quiz-opt.is-locked{cursor:default}
+  .quiz-opt.is-correct{background:rgba(63,166,106,.22);border-color:var(--green)}
+  .quiz-opt.is-correct .opt-letter{background:var(--green);color:#fff}
+  .quiz-opt.chose-wrong{background:rgba(192,57,43,.25);border-color:var(--crimson);opacity:.92}
+  .quiz-opt.chose-wrong .opt-letter{background:var(--crimson);color:#fff}
+  .quiz-feedback{
+    margin-top:38px;opacity:0;transform:translateY(16px);transition:.45s;
+    font-size:40px;font-weight:800;color:var(--gold-l);max-width:30ch;
+  }
+  .quiz-feedback.show{opacity:1;transform:none}
+  .q-counter{position:absolute;top:54px;inset-inline-end:64px;font-size:34px;font-weight:800;color:var(--gold-l);z-index:3}
+
+  .score-stars{font-size:90px;letter-spacing:10px;line-height:1.2}
+  .score-big{font-size:120px;font-weight:900;color:var(--gold-l)}
+
+  /* nasheed / chant lines */
+  .chant{display:flex;flex-direction:column;gap:20px;margin-top:20px}
+  .chant .line{
+    font-size:60px;font-weight:800;line-height:1.3;
+    background:rgba(255,255,255,.06);border-radius:20px;padding:18px 40px;
+  }
+  .bg-crimson .chant .line{background:rgba(255,255,255,.12)}
+
+  .note{margin-top:34px;font-size:30px;color:var(--cream-dim);font-weight:600;max-width:40ch;line-height:1.5}
+  .bg-gold .note{color:#6b4708}
+
+  .dua{font-size:58px;font-weight:800;line-height:1.6;max-width:24ch;color:var(--cream)}
+
+  /* confetti */
+  .confetti{position:absolute;z-index:40;pointer-events:none;animation:fly 1.2s ease-out forwards}
+  @keyframes fly{
+    0%{opacity:1;transform:translate(0,0) rotate(0)}
+    100%{opacity:0;transform:translate(var(--dx),var(--dy)) rotate(var(--rot))}
+  }
+
+  /* entrance */
+  @media (prefers-reduced-motion:no-preference){
+    [data-deck-active] .anim{animation:rise .6s both}
+    [data-deck-active] .anim2{animation:rise .6s .12s both}
+    [data-deck-active] .anim3{animation:rise .6s .24s both}
+    @keyframes rise{from{opacity:0;transform:translateY(34px)}to{opacity:1;transform:none}}
+  }
+  .min-row{display:flex;align-items:center;gap:26px;justify-content:center;flex-wrap:wrap;margin-top:8px}
+</style>
+</head>
+<body>
+<deck-stage width="1920" height="1080">
+
+  <!-- 01 · العنوان -->
+  <section data-label="الغلاف">
+    <div class="huge-emoji anim">🕋</div>
+    <p class="kicker anim2">منارة العقيدة · حلقة الأطفال</p>
+    <h1 class="anim2">مَن خَلَقَ كُلَّ هذا؟</h1>
+    <p class="lead anim3">رحلةٌ نتعرّف فيها على الله، ونرى عجائبَ خلقه، ونسمع قصصَ الأبطال — للأعمار ٥ إلى ٩ سنوات</p>
+  </section>
+
+  <!-- 02 · خطة الجلسة (للمعلّم) -->
+  <section data-label="خطة الجلسة">
+    <div class="seg-badge"><span class="clock">🧭</span> للمعلّم</div>
+    <p class="kicker">خطة الجلسة · ٦٠ دقيقة</p>
+    <div class="agenda">
+      <div class="agenda-row anim"><span class="num">١</span><span class="ttl">ترحيب وتمهيد<small>تحيّة، قاعدة الحلقة، تنشيط</small></span><span class="time">٥ د</span></div>
+      <div class="agenda-row anim"><span class="num">٢</span><span class="ttl">مَن خلق كلَّ هذا؟<small>التوحيد · الله واحدٌ خالق</small></span><span class="time">١٠ د</span></div>
+      <div class="agenda-row anim2"><span class="num">٣</span><span class="ttl">عجائبُ المخلوقات<small>اليقين · بطاقات الكشف</small></span><span class="time">١٢ د</span></div>
+      <div class="agenda-row accent anim2"><span class="num">٤</span><span class="ttl">لعبة التماثيل الحركية<small>نشاط حركة بمؤقّت</small></span><span class="time">٨ د</span></div>
+      <div class="agenda-row anim3"><span class="num">٥</span><span class="ttl">قصة بطل · إبراهيم في النار<small>قصة تفاعلية</small></span><span class="time">١٠ د</span></div>
+      <div class="agenda-row accent anim3"><span class="num">٦</span><span class="ttl">مسابقة منارة العقيدة<small>٥ أسئلة على الشاشة</small></span><span class="time">١٠ د</span></div>
+      <div class="agenda-row anim3"><span class="num">٧</span><span class="ttl">نشيد وختام ودعاء<small>بطاقة للبيت</small></span><span class="time">٥ د</span></div>
+    </div>
+  </section>
+
+  <!-- 03 · ترحيب -->
+  <section data-label="ترحيب">
+    <div class="seg-badge"><span class="clock">⏱️</span> ١ · ترحيب — ٥ د</div>
+    <div class="huge-emoji anim">👋</div>
+    <h2 class="anim2">السلامُ عليكم يا أبطال!</h2>
+    <div class="steps anim3">
+      <div class="step"><span class="sn">١</span><div>نسلّم على بعضنا: <span class="say">«السلامُ عليكم ورحمة الله»</span></div></div>
+      <div class="step"><span class="sn">٢</span><div>قاعدةُ الحلقة: <span class="say">يدي في حِجري، وأذني تسمع، وفمي يهمس حتى يأتي دوري</span></div></div>
+      <div class="step"><span class="sn">٣</span><div>سؤالُ اليوم الكبير: <span class="kids">مَن خلقني؟ ومَن خلق كلَّ شيء؟</span></div></div>
+    </div>
+  </section>
+
+  <!-- 04 · فاصل التوحيد -->
+  <section class="bg-crimson" data-label="فاصل · التوحيد">
+    <p class="kicker">الجزء الأول</p>
+    <div class="huge-emoji anim">🕋</div>
+    <h1 class="anim2">مَن خَلَقَ كُلَّ هذا؟</h1>
+    <p class="lead anim3">اللهُ وحدَه خلق كلَّ شيء — لا شريكَ له</p>
+  </section>
+
+  <!-- 05 · من خلق...؟ تفاعل شفهي -->
+  <section data-label="من خلق؟">
+    <div class="seg-badge"><span class="clock">💬</span> ٢ · التوحيد — ١٠ د</div>
+    <p class="kicker">اسألِ الأطفال — ودَعهم يُجيبون بصوتٍ واحد</p>
+    <h2 class="anim">مَن خَلَقَ...؟</h2>
+    <div class="grid g3 anim2">
+      <div class="card"><div class="ico">☀️</div><div class="cname">الشمس؟</div></div>
+      <div class="card"><div class="ico">🌊</div><div class="cname">البحر؟</div></div>
+      <div class="card"><div class="ico">🧒</div><div class="cname">أنتَ؟</div></div>
+    </div>
+    <p class="lead anim3">الجواب دائمًا: <span class="say">اللهُ خَلَقَها!</span> 🙌</p>
+  </section>
+
+  <!-- 06 · الله واحد -->
+  <section data-label="الله واحد">
+    <div class="seg-badge"><span class="clock">💬</span> ٢ · التوحيد — ١٠ د</div>
+    <div class="huge-emoji anim">☝️</div>
+    <h1 class="anim2">اللهُ واحدٌ أحَد</h1>
+    <p class="lead anim3">إلهٌ واحد، لا شريكَ له، لم يلِد ولم يولَد — هو الذي خلقنا ويرزقنا ويحبّنا</p>
+    <div class="min-row anim3">
+      <span class="pill">🤲 نعبدُه وحده</span>
+      <span class="pill">❤️ نحبّه</span>
+      <span class="pill">🙏 ندعوه</span>
+    </div>
+  </section>
+
+  <!-- 07 · لعبة: من خلقها؟ -->
+  <section data-label="لعبة · من خلقها؟">
+    <div class="seg-badge"><span class="clock">🎮</span> نشاط سريع · ٣ د</div>
+    <p class="kicker">لعبةُ النداء والجواب</p>
+    <h2 class="anim">«اللهُ خَلَقَها!»</h2>
+    <div class="steps anim2">
+      <div class="step"><span class="sn">١</span><div>أنا أقول اسمَ شيء: <span class="say">القمر… النملة… الجبل… أنت!</span></div></div>
+      <div class="step"><span class="sn">٢</span><div>أنتم تقفزون وتقولون معًا: <span class="kids">«اللهُ خَلَقَها!»</span> 🦘</div></div>
+      <div class="step"><span class="sn">٣</span><div>كلّما أسرعتُ… أسرعتم! آخرُ كلمة: <span class="say">«مَن يستحقّ العبادة؟» → اللهُ وحده 🤲</span></div></div>
+    </div>
+  </section>
+
+  <!-- 08 · فاصل العجائب -->
+  <section class="bg-gold" data-label="فاصل · العجائب">
+    <p class="kicker">الجزء الثاني</p>
+    <div class="huge-emoji anim">🔍</div>
+    <h1 class="anim2">عجائبُ المخلوقات</h1>
+    <p class="lead anim3">كلُّ شيءٍ حولنا يهمسُ: «اللهُ خلقني!» — هيّا نكتشف</p>
+  </section>
+
+  <!-- 09 · بطاقات الكشف -->
+  <section data-label="بطاقات الكشف">
+    <div class="seg-badge"><span class="clock">🃏</span> ٣ · العجائب — ١٢ د</div>
+    <p class="kicker">اضغطْ على البطاقة لتنكشف العجيبة 👆</p>
+    <div class="grid g3 anim2">
+      <div class="reveal-card"><div class="reveal-inner">
+        <div class="reveal-face reveal-front"><div class="ico" style="font-size:96px">🐝</div><div class="q">مَن علّم النحلةَ صناعةَ العسل؟</div><div class="tap">اضغط للكشف</div></div>
+        <div class="reveal-face reveal-back"><div class="a-ico">🍯</div><div class="a">اللهُ ألهمَها! تصنع لنا شفاءً حلوًا</div></div>
+      </div></div>
+      <div class="reveal-card"><div class="reveal-inner">
+        <div class="reveal-face reveal-front"><div class="ico" style="font-size:96px">👁️</div><div class="q">مَن صنع عينَك التي ترى الألوان؟</div><div class="tap">اضغط للكشف</div></div>
+        <div class="reveal-face reveal-back"><div class="a-ico">✨</div><div class="a">اللهُ صوّرها — أدقُّ من أيّ كاميرا!</div></div>
+      </div></div>
+      <div class="reveal-card"><div class="reveal-inner">
+        <div class="reveal-face reveal-front"><div class="ico" style="font-size:96px">🌙</div><div class="q">مَن يرفع السماءَ بلا أعمدة؟</div><div class="tap">اضغط للكشف</div></div>
+        <div class="reveal-face reveal-back"><div class="a-ico">🌌</div><div class="a">اللهُ يمسكها — والنجومُ زينةٌ بأمره</div></div>
+      </div></div>
+    </div>
+  </section>
+
+  <!-- 10 · المزيد من العجائب -->
+  <section data-label="عجائب · جسمك">
+    <div class="seg-badge"><span class="clock">🃏</span> ٣ · العجائب — ١٢ د</div>
+    <p class="kicker">اكتشفوا المزيد 👆</p>
+    <div class="grid g3 anim2">
+      <div class="reveal-card"><div class="reveal-inner">
+        <div class="reveal-face reveal-front"><div class="ico" style="font-size:96px">🌱</div><div class="q">مَن يُخرج الشجرةَ الكبيرة من بذرةٍ صغيرة؟</div><div class="tap">اضغط للكشف</div></div>
+        <div class="reveal-face reveal-back"><div class="a-ico">🌳</div><div class="a">اللهُ يُحييها بالماء والشمس</div></div>
+      </div></div>
+      <div class="reveal-card"><div class="reveal-inner">
+        <div class="reveal-face reveal-front"><div class="ico" style="font-size:96px">❤️</div><div class="q">مَن يجعل قلبَك ينبضُ وأنت نائم؟</div><div class="tap">اضغط للكشف</div></div>
+        <div class="reveal-face reveal-back"><div class="a-ico">💓</div><div class="a">اللهُ يحفظك — بلا أن تتعب!</div></div>
+      </div></div>
+      <div class="reveal-card"><div class="reveal-inner">
+        <div class="reveal-face reveal-front"><div class="ico" style="font-size:96px">🐦</div><div class="q">مَن علّم الطيرَ كيف يطير ويرجع لبيته؟</div><div class="tap">اضغط للكشف</div></div>
+        <div class="reveal-face reveal-back"><div class="a-ico">🕊️</div><div class="a">اللهُ يمسكها في السماء</div></div>
+      </div></div>
+    </div>
+  </section>
+
+  <!-- 11 · الخلاصة: سبحان الله -->
+  <section class="bg-crimson" data-label="سبحان الله">
+    <div class="huge-emoji anim">🌟</div>
+    <h1 class="anim2">سُبحانَ الله!</h1>
+    <p class="lead anim3">كلّما رأينا شيئًا عجيبًا من خلق الله نقول: <strong>«سُبحانَ الله»</strong> — أي ما أعظمَ خالقي!</p>
+    <span class="pill anim3" style="margin-top:30px;font-size:44px">🤲 سُبْحَانَ اللهِ وبِحَمْدِه</span>
+  </section>
+
+  <!-- 12 · لعبة التماثيل -->
+  <section data-label="لعبة التماثيل">
+    <div class="seg-badge"><span class="clock">🤸</span> ٤ · لعبة حركية — ٨ د</div>
+    <p class="kicker">لعبةُ التماثيل</p>
+    <h2 class="anim">تحرّكوا… ثم تَجمّدوا!</h2>
+    <div class="steps anim2" style="max-width:1100px">
+      <div class="step"><span class="sn">١</span><div>أُشغّل المؤقّت ونردّد نشيدًا — والكلُّ يتحرّك ويقفز 🕺</div></div>
+      <div class="step"><span class="sn">٢</span><div>حين أقول <span class="say">«تجمّدوا!»</span> يصير الكلُّ تمثالًا 🗿 — مَن يتحرّك يجلس ويشجّع</div></div>
+      <div class="step"><span class="sn">٣</span><div>كلَّ مرّة نتجمّد على وضعِ <span class="kids">دعاءٍ 🤲</span> ونقول «سبحان الله»</div></div>
+    </div>
+    <div class="timer anim3" data-seconds="60">
+      <div class="timer-num">١:٠٠</div>
+      <button class="timer-btn">▶ ابدأ</button>
+    </div>
+  </section>
+
+  <!-- 13 · فاصل القصة -->
+  <section class="bg-crimson" data-label="فاصل · قصة بطل">
+    <p class="kicker">الجزء الثالث</p>
+    <div class="huge-emoji anim">🦁</div>
+    <h1 class="anim2">قصةُ بطل</h1>
+    <p class="lead anim3">إبراهيمُ عليه السلام — الذي لم يخفْ إلا من الله</p>
+  </section>
+
+  <!-- 14 · القصة بيت 1 -->
+  <section data-label="القصة · التمثال">
+    <div class="seg-badge"><span class="clock">📖</span> ٥ · قصة تفاعلية — ١٠ د</div>
+    <div class="beat anim">
+      <div class="bemoji">🗿❌</div>
+      <p class="btext">قومُ إبراهيم كانوا يعبدون أصنامًا لا تسمع ولا تنفع. فقال لهم إبراهيم: <span class="say">اعبدوا اللهَ وحده!</span></p>
+    </div>
+    <p class="note anim3">اسألْ: هل الصنمُ يسمع؟ هل يقدر أن يخلق شيئًا؟ 🤔</p>
+  </section>
+
+  <!-- 15 · القصة بيت 2 (النار) -->
+  <section data-label="القصة · النار">
+    <div class="seg-badge"><span class="clock">📖</span> ٥ · قصة تفاعلية — ١٠ د</div>
+    <div class="beat anim">
+      <div class="bemoji">🔥</div>
+      <p class="btext">غضبوا منه وأشعلوا نارًا ضخمة ليُلقوه فيها. لكنّ إبراهيم اطمأنّ وقال: <span class="say">«حَسبِيَ اللهُ»</span> — اللهُ يكفيني!</p>
+    </div>
+    <button class="btn anim3" data-reveal="fireAnswer" data-after="✅ سبحان الله!" style="margin-top:36px">ماذا فعل الله؟ 👆 اكشف</button>
+    <div class="hidden-answer" id="fireAnswer">❄️ قال الله للنار: «كوني بردًا وسلامًا» — فصارت بردًا، وخرج إبراهيمُ سالمًا! 🌳</div>
+  </section>
+
+  <!-- 16 · درس القصة -->
+  <section class="bg-gold" data-label="درس القصة">
+    <div class="huge-emoji anim">🛡️</div>
+    <h2 class="anim2">مَن توكّلَ على الله… حماهُ الله</h2>
+    <p class="lead anim3">إبراهيمُ لم يخفْ، لأنه يعلم أن اللهَ أقوى من كلِّ شيء. ونحن نقول عند الخوف: <strong>«حَسبِيَ اللهُ»</strong></p>
+  </section>
+
+  <!-- 17 · فاصل المسابقة -->
+  <section class="bg-crimson" data-label="فاصل · المسابقة">
+    <p class="kicker">حان وقتُ التحدّي!</p>
+    <div class="huge-emoji anim">🏆</div>
+    <h1 class="anim2">مسابقةُ منارة العقيدة</h1>
+    <p class="lead anim3">٥ أسئلة — ارفعوا أيديكم قبل أن نضغط على الجواب</p>
+  </section>
+
+  <!-- 18 · س1 -->
+  <section class="quiz-slide" data-label="سؤال ١" data-q="q1">
+    <div class="q-counter">سؤال ١ / ٥</div>
+    <p class="quiz-q anim">مَن خلق الشمسَ والقمرَ والنجوم؟</p>
+    <div class="quiz-opts anim2">
+      <button class="quiz-opt" data-correct="1"><span class="opt-letter">أ</span> اللهُ وحده 🌟</button>
+      <button class="quiz-opt"><span class="opt-letter">ب</span> الناسُ صنعوها 🔧</button>
+      <button class="quiz-opt"><span class="opt-letter">ج</span> جاءت وحدَها بالصدفة 🎲</button>
+    </div>
+    <p class="quiz-feedback">✅ اللهُ وحده خلقها — لا أحدَ يقدر على ذلك غيرُه!</p>
+  </section>
+
+  <!-- 19 · س2 -->
+  <section class="quiz-slide" data-label="سؤال ٢" data-q="q2">
+    <div class="q-counter">سؤال ٢ / ٥</div>
+    <p class="quiz-q anim">كم إلهًا نعبد؟</p>
+    <div class="quiz-opts anim2">
+      <button class="quiz-opt" data-correct="1"><span class="opt-letter">أ</span> إلهٌ واحد هو الله ☝️</button>
+      <button class="quiz-opt"><span class="opt-letter">ب</span> إلهان 🤲🤲</button>
+      <button class="quiz-opt"><span class="opt-letter">ج</span> آلهةٌ كثيرة</button>
+    </div>
+    <p class="quiz-feedback">✅ إلهٌ واحدٌ أحد، لا شريكَ له</p>
+  </section>
+
+  <!-- 20 · س3 -->
+  <section class="quiz-slide" data-label="سؤال ٣" data-q="q3">
+    <div class="q-counter">سؤال ٣ / ٥</div>
+    <p class="quiz-q anim">النحلةُ تصنع لنا شيئًا حلوًا وفيه شفاء، ما هو؟</p>
+    <div class="quiz-opts anim2">
+      <button class="quiz-opt"><span class="opt-letter">أ</span> الحليب 🥛</button>
+      <button class="quiz-opt" data-correct="1"><span class="opt-letter">ب</span> العسل 🍯</button>
+      <button class="quiz-opt"><span class="opt-letter">ج</span> الخبز 🍞</button>
+    </div>
+    <p class="quiz-feedback">✅ العسل — واللهُ هو الذي ألهمَ النحلة!</p>
+  </section>
+
+  <!-- 21 · س4 -->
+  <section class="quiz-slide" data-label="سؤال ٤" data-q="q4">
+    <div class="q-counter">سؤال ٤ / ٥</div>
+    <p class="quiz-q anim">لمّا أُلقيَ إبراهيمُ في النار، ماذا فعل الله؟</p>
+    <div class="quiz-opts anim2">
+      <button class="quiz-opt"><span class="opt-letter">أ</span> أطفأها أحدٌ بالماء 💧</button>
+      <button class="quiz-opt" data-correct="1"><span class="opt-letter">ب</span> جعلها بردًا وسلامًا ❄️</button>
+      <button class="quiz-opt"><span class="opt-letter">ج</span> هربَ إبراهيمُ بسرعة 🏃</button>
+    </div>
+    <p class="quiz-feedback">✅ «كوني بردًا وسلامًا» — فحماه الله</p>
+  </section>
+
+  <!-- 22 · س5 -->
+  <section class="quiz-slide" data-label="سؤال ٥" data-q="q5">
+    <div class="q-counter">سؤال ٥ / ٥</div>
+    <p class="quiz-q anim">ماذا نقول عندما نرى شيئًا عجيبًا من خلق الله؟</p>
+    <div class="quiz-opts anim2">
+      <button class="quiz-opt" data-correct="1"><span class="opt-letter">أ</span> سُبحانَ الله 🌟</button>
+      <button class="quiz-opt"><span class="opt-letter">ب</span> لا نقولُ شيئًا 🤐</button>
+      <button class="quiz-opt"><span class="opt-letter">ج</span> هذا عاديّ 😐</button>
+    </div>
+    <p class="quiz-feedback">✅ سُبحانَ الله — ما أعظمَ خالقي!</p>
+  </section>
+
+  <!-- 23 · النتيجة -->
+  <section class="bg-gold" data-label="النتيجة">
+    <p class="kicker">أحسنتم يا أبطال! 👏</p>
+    <div class="score-stars" data-max="5">☆☆☆☆☆</div>
+    <h2 class="anim2" style="margin-top:10px">نتيجتُنا: <span class="score-big"><span class="score-num">٠</span></span> / <span class="score-total">٥</span></h2>
+    <p class="lead anim3">كلُّكم أبطالُ منارة العقيدة — تعرّفتم على الله وعجائبِ خلقه ❤️</p>
+  </section>
+
+  <!-- 24 · نشيد الختام -->
+  <section class="bg-crimson" data-label="نشيد الختام">
+    <div class="seg-badge"><span class="clock">🎵</span> ٧ · نشيد وختام — ٥ د</div>
+    <p class="kicker">نردّدُ معًا — جملةً جملة</p>
+    <div class="chant anim2">
+      <div class="line">اللهُ رَبّي 🤲 لا شَريكَ لَه</div>
+      <div class="line">خَلَقَ الكَونَ 🌍 وأنا أُحِبُّه</div>
+      <div class="line">أرى عَجائِبَه 🌟 فأقولُ: سُبحانَه</div>
+      <div class="line">حَسبيَ اللهُ 🛡️ لا أخافُ مَعَه</div>
+    </div>
+  </section>
+
+  <!-- 25 · ما تعلّمناه -->
+  <section data-label="ما تعلّمناه">
+    <p class="kicker">قبل أن نذهب — ثلاثُ كنوز نحملها معنا</p>
+    <div class="grid g3 anim2">
+      <div class="card"><div class="ico">☝️</div><div class="cname">اللهُ واحد</div><div class="cdesc">خلقني ويحبّني، أعبدُه وحده</div></div>
+      <div class="card"><div class="ico">🌟</div><div class="cname">سُبحانَ الله</div><div class="cdesc">كلُّ شيءٍ عجيبٍ يدلُّ عليه</div></div>
+      <div class="card"><div class="ico">🛡️</div><div class="cname">حَسبيَ الله</div><div class="cdesc">مَن توكّل عليه حماه كإبراهيم</div></div>
+    </div>
+  </section>
+
+  <!-- 26 · للبيت + دعاء -->
+  <section class="bg-gold" data-label="للبيت ودعاء">
+    <div class="huge-emoji anim">🎨</div>
+    <h2 class="anim2">مهمّةُ البيت</h2>
+    <p class="lead anim3">لوّنْ بطاقةَ «سُبحانَ الله»، واكتشفْ عجيبةً جديدة من خلق الله، وأخبرنا بها في اللقاء القادم 💛</p>
+    <p class="dua anim3" style="margin-top:34px">🤲 سُبْحَانَكَ اللَّهُمَّ وبِحَمْدِكَ، أَشْهَدُ أنْ لا إلهَ إلَّا أنْت</p>
+  </section>
+
+</deck-stage>
+
+<script src="deck-stage.js"></script>
+<script src="session.js"></script>
+</body>
+</html>

@@ -1,0 +1,143 @@
+/* behavior-book.css — components for «مفاتيح السلوك» (layered on plan-book.css) */
+
+.cover{justify-content:center;align-items:center;text-align:center;background:linear-gradient(160deg,#0A2540,#143a5e)}
+.cover .flow{align-items:center;text-align:center;color:#fff}
+.cover .crest{font-size:4.4rem;margin-bottom:.4rem}
+.cover .ckick{font-size:.84rem;font-weight:800;letter-spacing:.5px;color:var(--gold-l);margin-bottom:.6rem}
+.cover h1{font-size:3.2rem;font-weight:900;margin:0;color:#fff;letter-spacing:1px}
+.cover .csub{font-size:1.1rem;font-weight:700;color:#e7eef6;margin:.7rem 0 1.3rem;max-width:86%}
+.cover .cdesc{font-size:.95rem;line-height:2;color:rgba(255,255,255,.9);max-width:84%;text-align:justify}
+.cover .crow{font-size:2rem;display:flex;gap:.8rem;margin:1.6rem 0 .4rem}
+.cover .cdiv{width:60%;height:2px;background:linear-gradient(90deg,transparent,var(--gold),transparent);margin:1rem 0}
+.cover .cbadge{font-size:.82rem;font-weight:700;color:#0f2740;background:var(--gold-l);border-radius:2rem;padding:.5rem 1.2rem;max-width:82%;line-height:1.6}
+
+/* footer */
+.pfoot{margin-top:auto;padding-top:.7rem;border-top:1px solid var(--line);display:flex;justify-content:space-between;
+  font-size:.72rem;color:var(--mut);font-weight:700}
+
+.note{background:#f3f7f5;border:1px solid #cfe0d8;border-radius:.7rem;padding:.7rem .9rem;font-size:.88rem;line-height:1.7;color:#2b4a3f;margin:.3rem 0 1rem}
+.note.danger{background:#fcf2f0;border-color:#e6c9c2;color:#8a3a2e}
+.tip{background:#fdfaef;border:1px solid #e9dcb0;border-radius:.7rem;padding:.7rem .9rem;font-size:.86rem;line-height:1.7;color:#5b4e22;margin:.3rem 0 1rem}
+
+/* 4-lens grid */
+.lensgrid{display:grid;grid-template-columns:1fr 1fr;gap:.6rem;margin:.4rem 0 1rem}
+.lensgrid.two{grid-template-columns:1fr 1fr}
+.lens{border:1px solid var(--line);border-inline-start:4px solid var(--lc,var(--gold));border-radius:.7rem;padding:.65rem .8rem;background:#fcfcfa}
+.lens .l-ic{font-size:1.4rem}
+.lens .l-n{font-size:.95rem;font-weight:900;color:var(--navy);margin:.2rem 0}
+.lens .l-d{font-size:.8rem;line-height:1.55;color:#46535f}
+
+/* six-step method */
+.steps6{display:flex;flex-direction:column;gap:.55rem;margin:.4rem 0 1rem}
+.s6{display:flex;gap:.7rem;border:1px solid var(--line);border-radius:.7rem;padding:.6rem .85rem;background:#fcfcfa}
+.s6 .s6n{flex:0 0 auto;width:1.7rem;height:1.7rem;border-radius:50%;background:var(--navy);color:var(--gold-l);display:grid;place-items:center;font-weight:900}
+.s6 .s6t{font-size:.92rem;font-weight:900;color:var(--navy)}
+.s6 .s6d{font-size:.82rem;line-height:1.55;color:#3a4856;margin-top:.12rem}
+
+/* problem divider */
+.prob-div{display:flex;flex:1;flex-direction:column;justify-content:center;align-items:center;text-align:center;
+  min-height:100%;color:#fff;padding:48px 7%;background:linear-gradient(150deg,var(--sc,#C0392B),color-mix(in srgb,var(--sc,#C0392B) 50%,#0A2540))}
+.prob-div .pd-ic{font-size:3.4rem}
+.prob-div .pd-nm{font-size:2.1rem;font-weight:900;margin-top:.4rem}
+.prob-div .pd-sub{font-size:1rem;font-weight:700;opacity:.93;margin-top:.3rem}
+.prob-div .pd-intro{max-width:88%;font-size:.92rem;line-height:1.9;margin-top:1.1rem;color:rgba(255,255,255,.95);text-align:justify}
+.glance{display:grid;grid-template-columns:1fr 1fr;gap:.6rem;margin-top:1.2rem;width:88%}
+.glance .gl{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.25);border-radius:.7rem;padding:.55rem .7rem;text-align:start}
+.glance .gl-k{font-size:.72rem;font-weight:800;color:rgba(255,255,255,.78)}
+.glance .gl-v{font-size:.88rem;font-weight:800;margin-top:.2rem;line-height:1.4}
+
+/* problem running banner */
+.pbanner{display:flex;align-items:center;gap:.7rem;border-radius:.7rem;padding:.5rem .9rem;margin-bottom:1rem;color:#fff;
+  background:linear-gradient(135deg,var(--sc,#C0392B),color-mix(in srgb,var(--sc,#C0392B) 58%,#0A2540))}
+.pbanner .pb-ic{font-size:1.4rem}
+.pbanner .pb-nm{font-size:1.05rem;font-weight:900}
+.pbanner .pb-tag{margin-inline-start:auto;font-size:.74rem;font-weight:800;opacity:.92;background:rgba(255,255,255,.16);padding:.2rem .65rem;border-radius:1rem}
+
+/* normal vs abnormal table */
+.nvtable{width:100%;border-collapse:collapse;font-size:.84rem;margin:.2rem 0 1rem}
+.nvtable th{padding:.5rem .65rem;font-weight:800;text-align:start;font-size:.82rem;color:#fff}
+.nvtable th.nat{background:#1d7a55}.nvtable th.abn{background:#b1442f}
+.nvtable thead th:first-child{background:var(--navy)}
+.nvtable td{padding:.5rem .65rem;border:1px solid var(--line);line-height:1.55;color:#35414e;vertical-align:top}
+.nvtable td.asp{font-weight:800;color:var(--navy);background:#f4f7fa;white-space:nowrap}
+.nvtable tbody tr:nth-child(even) td{background:#fafafa}
+.nvtable tbody tr:nth-child(even) td.asp{background:#eef2f6}
+.whenbox{border:1.5px solid #b1442f;border-radius:.7rem;overflow:hidden}
+.whenbox .wb-h{background:#b1442f;color:#fff;padding:.45rem .85rem;font-weight:900;font-size:.9rem}
+.whenbox ul{margin:0;padding:.6rem .9rem .6rem 0;list-style:none}
+.whenbox li{font-size:.84rem;line-height:1.6;color:#5a2a22;padding-inline-start:1.2rem;position:relative;margin-bottom:.3rem}
+.whenbox li::before{content:'🩺';position:absolute;inset-inline-start:0;font-size:.7rem;top:.15rem}
+.whenbox li:last-child{margin-bottom:0}
+
+/* prose lens boxes */
+.vbox{border:1px solid var(--line);border-radius:.7rem;padding:.8rem 1rem;background:#fcfcfa;margin:.2rem 0 .9rem}
+.vbox.rel{border-inline-start:5px solid var(--gold)}
+.vbox.edu{border-inline-start:5px solid #1A9B7B}
+.vbox.psy{border-inline-start:5px solid #2A6FDB}
+.vbox.med{border-inline-start:5px solid #C0392B}
+.vbox h3{margin:0 0 .5rem;font-size:1.02rem;font-weight:900;color:var(--navy);display:flex;align-items:center;gap:.45rem}
+.vbox p{margin:0 0 .6rem;font-size:.89rem;line-height:1.9;color:#33404e;text-align:justify}
+.vbox p:last-child{margin-bottom:0}
+
+/* causes */
+.causes{display:grid;grid-template-columns:1fr 1fr;gap:.5rem;margin:.3rem 0 1rem}
+.cause{display:flex;gap:.55rem;align-items:flex-start;border:1px solid var(--line);border-radius:.6rem;padding:.5rem .7rem;background:#fcfcfa;font-size:.83rem;line-height:1.55;color:#3a4856}
+.cause .c-ic{font-size:1.1rem;flex:0 0 auto}
+
+/* evidence */
+.evbox{border:1px solid var(--line);border-radius:.7rem;overflow:hidden;margin-bottom:.7rem}
+.evbox .ev-h{display:flex;align-items:center;gap:.5rem;background:var(--navy);color:#fff;padding:.35rem .8rem;font-size:.74rem;font-weight:800}
+.evbox .ev-h .tag{margin-inline-start:auto;background:var(--gold);color:var(--navy);border-radius:1rem;padding:.05rem .55rem;font-size:.68rem}
+.evbox .ev-txt{padding:.6rem .9rem;font-size:1.02rem;font-weight:800;line-height:1.8;color:var(--navy);text-align:center;background:#fdfbf3}
+.evbox .ev-note{padding:.35rem .9rem .5rem;font-size:.78rem;color:#5a6675;font-weight:600;text-align:center;border-top:1px dashed var(--line)}
+
+/* worked examples */
+.exs{display:flex;flex-direction:column;gap:.75rem;margin:.3rem 0 1rem}
+.ex{border:1px solid var(--line);border-radius:.8rem;overflow:hidden}
+.ex .ex-h{background:color-mix(in srgb,var(--sc,#C0392B) 14%,#fff);padding:.5rem .85rem;font-weight:900;color:var(--navy);font-size:.92rem}
+.ex .ex-scene{padding:.5rem .85rem;font-size:.82rem;color:#444f5b;font-style:italic;background:#fcfcfa;border-bottom:1px dashed var(--line)}
+.ex .ex-grid{display:grid;grid-template-columns:1fr 1fr}
+.ex .ex-do,.ex .ex-dont{padding:.55rem .85rem;font-size:.81rem;line-height:1.6}
+.ex .ex-do{background:#f1f9f4;color:#1d4a3c;border-inline-end:1px solid var(--line)}
+.ex .ex-dont{background:#fcf2f0;color:#8a3a2e}
+.ex .ex-do b,.ex .ex-dont b{display:block;margin-bottom:.2rem;font-size:.74rem}
+.ex .ex-root{padding:.5rem .85rem;font-size:.79rem;color:var(--gold-d);font-weight:700;background:#fdfbf3;border-top:1px solid var(--line)}
+
+/* program */
+.prog{border:1.5px solid var(--sc,var(--navy));border-radius:.85rem;overflow:hidden;margin:.2rem 0 1rem}
+.prog .prog-h{background:var(--sc,var(--navy));color:#fff;padding:.55rem .9rem;font-weight:900;font-size:1rem}
+.prog .prog-b{padding:.7rem .9rem;background:#fff}
+.prog .prog-intro{margin:0 0 .7rem;font-size:.85rem;line-height:1.7;color:#46535f}
+.prog .prow{display:flex;gap:.6rem;margin-bottom:.55rem}
+.prog .prow:last-child{margin-bottom:0}
+.prog .prow .pn{flex:0 0 auto;width:1.6rem;height:1.6rem;border-radius:.45rem;background:color-mix(in srgb,var(--sc,#0A2540) 16%,#fff);color:var(--sc,var(--navy));display:grid;place-items:center;font-weight:900;font-size:.84rem}
+.prog .prow .pt{font-size:.88rem;font-weight:900;color:var(--navy)}
+.prog .prow .pd{font-size:.82rem;line-height:1.55;color:#3a4856;margin-top:.1rem}
+
+/* checklist */
+.clbox{border:1.5px solid var(--sc,var(--navy));border-radius:.8rem;padding:.7rem .9rem;background:#fcfcfa}
+.clbox h4{margin:.1rem 0 .6rem;font-size:1rem;font-weight:900;color:var(--navy);display:flex;align-items:center;gap:.5rem}
+.clrow{display:flex;align-items:flex-start;gap:.6rem;padding:.4rem .1rem;border-bottom:1px dashed var(--line)}
+.clrow:last-child{border-bottom:none}
+.clrow .cbx{width:1.15rem;height:1.15rem;border:2px solid var(--sc,var(--navy));border-radius:.3rem;flex:0 0 auto;margin-top:.05rem}
+.clrow .clt{font-size:.84rem;line-height:1.5;font-weight:600;color:#2a3744}
+
+/* TOC */
+.toc{display:flex;flex-direction:column;gap:.45rem;margin:.4rem 0 1rem}
+.toc .trow{display:flex;align-items:center;gap:.8rem;border:1px solid var(--line);border-inline-start:5px solid var(--tc);border-radius:.7rem;padding:.5rem .85rem;background:#fcfcfa}
+.toc .ti{font-size:1.5rem}
+.toc .tn{font-weight:900;color:var(--navy);font-size:.96rem}
+.toc .td{font-size:.76rem;color:var(--mut);font-weight:700}
+
+.srclist{display:flex;flex-direction:column;gap:.55rem;margin:.4rem 0 1rem;padding:0;list-style:none;counter-reset:src}
+.srclist li{position:relative;padding-inline-start:2.2rem;font-size:.85rem;line-height:1.7;color:#374251}
+.srclist li::before{counter-increment:src;content:counter(src);position:absolute;inset-inline-start:0;top:.05rem;width:1.5rem;height:1.5rem;background:var(--navy);color:var(--gold-l);border-radius:50%;display:grid;place-items:center;font-weight:900;font-size:.78rem}
+
+/* narrow screens: collapse columns so text never overlaps */
+@media(max-width:840px){
+  .lensgrid,.lensgrid.two,.causes,.glance{grid-template-columns:1fr}
+  .ex-grid{grid-template-columns:1fr}
+  .ex .ex-do{border-inline-end:none;border-bottom:1px solid var(--line)}
+  .cover h1{font-size:2.2rem}.cover .csub,.cover .cdesc{max-width:100%}
+  .glance{width:100%}
+}

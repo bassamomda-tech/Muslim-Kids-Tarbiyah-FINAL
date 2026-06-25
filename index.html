@@ -1,0 +1,1682 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta name="color-scheme" content="dark">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>تربية الطفل المسلم | Muslim Kids’ Tarbiyah</title>
+<link rel="icon" type="image/svg+xml" href="assets/logo-mark.svg">
+<link rel="apple-touch-icon" href="assets/logo-mark.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700;800;900&family=Nunito:wght@400;700;800&display=swap" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700;800;900&family=Nunito:wght@400;700;800&display=swap"></noscript>
+<style>
+/* ══════════════════════ ROOT ══════════════════════ */
+:root{
+  --gold:#D4A017;--gold-lt:#F5CC5A;--gold-dk:#A07810;
+  --green:#0D6B54;--green-lt:#1A9B7B;
+  --sky:#0A2540;--sky2:#122E50;
+  --cream:#FEF5DC;--sand:#E8C97A;
+  --r:1.3rem;
+  --glow:0 0 22px rgba(212,160,23,.55);
+  --shadow:0 12px 40px rgba(0,0,0,.38);
+}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Tajawal','Nunito',sans-serif;background:var(--sky);color:var(--cream);min-height:100vh;overflow-x:hidden;direction:rtl}
+html[dir="ltr"] body{direction:ltr;font-family:'Nunito','Tajawal',sans-serif}
+
+/* ══════════════════════ ANIMATIONS ══════════════════════ */
+@keyframes twinkle{0%,100%{opacity:.2;transform:scale(1)}50%{opacity:1;transform:scale(1.6)}}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+@keyframes bob{0%,100%{transform:translateY(0) rotate(-1deg)}50%{transform:translateY(-7px) rotate(1deg)}}
+@keyframes fadeUp{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}
+@keyframes ticker{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+@keyframes glow-pulse{0%,100%{box-shadow:0 0 0 0 rgba(212,160,23,.4)}50%{box-shadow:0 0 0 8px rgba(212,160,23,0)}}
+@keyframes moon-glow{0%,100%{filter:drop-shadow(0 0 10px rgba(255,230,140,.55))}50%{filter:drop-shadow(0 0 22px rgba(255,230,140,.9))}}
+@keyframes lantern-sway{0%,100%{transform:rotate(-3deg)}50%{transform:rotate(3deg)}}
+@keyframes soundBar{0%,100%{transform:scaleY(.35)}50%{transform:scaleY(1)}}
+@keyframes progress-glow{0%,100%{opacity:.7}50%{opacity:1}}
+@keyframes shoot{0%{opacity:1;transform:translate(0,0)}100%{opacity:0;transform:translate(-350px,350px)}}
+@keyframes charEntrance{from{opacity:0;transform:translateY(12px) scale(.9)}to{opacity:1;transform:translateY(0) scale(1)}}
+
+/* ══════════════════════ STARS ══════════════════════ */
+.stars-bg{position:fixed;inset:0;pointer-events:none;z-index:0;background:
+  
+    radial-gradient(ellipse at 22% 8%,rgba(212,160,23,.18) 0%,transparent 50%),
+    radial-gradient(ellipse at 78% 5%,rgba(30,110,200,.22) 0%,transparent 50%),
+    linear-gradient(180deg,#060D1A 0%,#0A2540 38%,#0D3B2F 100%)}
+.star{position:absolute;border-radius:50%;background:#fff;opacity:.7}
+
+/* ══════════════════════ HEADER ══════════════════════ */
+header{
+  position:sticky;top:0;z-index:60;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:.65rem 1.3rem;background:
+  rgba(6,13,26,.96);
+  border-bottom:1px solid rgba(212,160,23,.25);
+  box-shadow:0 2px 20px rgba(0,0,0,.45);
+}
+.brand{display:flex;align-items:center;gap:.5rem;font-size:1.12rem;font-weight:900;color:var(--gold)}
+.brand-icon{width:2rem;height:2rem;display:block;animation:float 4s ease-in-out infinite}
+.header-right{display:flex;align-items:center;gap:.65rem}
+.lang-toggle{display:flex;border:1px solid rgba(212,160,23,.38);border-radius:2rem;overflow:hidden}
+.lang-btn{background:transparent;border:none;color:var(--cream);font-weight:700;padding:.25rem .7rem;font-size:.76rem;cursor:pointer;font-family:inherit;transition:.2s}
+.lang-btn.active{background:var(--gold);color:#060D1A}
+.about-btn{
+  display:flex;align-items:center;justify-content:center;
+  width:34px;height:34px;border-radius:50%;background:
+  rgba(255,255,255,.08);border:1px solid rgba(212,160,23,.35);
+  color:var(--cream);font-size:1.1rem;cursor:pointer;transition:.2s;
+}
+.about-btn:hover{background:rgba(212,160,23,.2)}
+.sidebar-open-btn{
+  display:flex;align-items:center;justify-content:center;
+  width:34px;height:34px;border-radius:.65rem;background:
+  rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.1);
+  color:var(--cream);font-size:1.2rem;cursor:pointer;transition:.2s;
+}
+.sidebar-open-btn:hover{background:rgba(212,160,23,.18);border-color:rgba(212,160,23,.4)}
+
+/* ══════════════════════ VERSE TICKER ══════════════════════ */
+.verse-ticker{background:
+  linear-gradient(135deg,rgba(13,107,84,.45),rgba(10,37,64,.65));
+  border-bottom:1px solid rgba(26,155,123,.22);
+  padding:.35rem 0;overflow:hidden;position:relative;z-index:5;
+}
+.ticker-track{display:flex;white-space:nowrap;animation:ticker 26s linear infinite}
+.ticker-item{padding:0 2.5rem;font-size:.76rem;font-weight:700;color:var(--gold-lt);opacity:.88}
+.ticker-dot{color:rgba(212,160,23,.35);padding:0 .8rem}
+
+/* ══════════════════════ PANORAMA ══════════════════════ */
+.panorama{
+  position:relative;z-index:5;width:100%;height:230px;overflow:hidden;background:
+  linear-gradient(180deg,#060D1A 0%,#0C1E38 55%,#0D3B2F 100%);
+}
+.panorama svg{width:100%;height:100%}
+.panorama-overlay{
+  position:absolute;inset:0;display:flex;flex-direction:column;
+  align-items:center;justify-content:center;pointer-events:none;
+}
+.city-title{
+  font-size:clamp(1.9rem,5.5vw,3.4rem);font-weight:900;line-height:1.1;background:
+  linear-gradient(135deg,var(--gold-lt),var(--gold),#fff8e0);
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+}
+.city-subtitle{font-size:clamp(.78rem,1.8vw,.96rem);color:rgba(254,245,220,.65);margin-top:.32rem}
+
+/* ══════════════════════ HOST CHARACTERS ══════════════════════ */
+.host-row{
+  position:relative;z-index:5;
+  display:flex;align-items:flex-end;justify-content:center;gap:1.8rem;
+  padding:.9rem 1rem .3rem;
+}
+.host-char{display:flex;flex-direction:column;align-items:center;gap:.22rem;animation:bob 4.5s ease-in-out infinite}
+.host-char:nth-child(3){animation-delay:2s}
+.host-avatar{font-size:2.8rem;filter:drop-shadow(0 4px 8px rgba(0,0,0,.4))}
+.host-name{font-size:.72rem;font-weight:800;color:var(--sand);background:rgba(0,0,0,.38);border-radius:1rem;padding:.06rem .45rem}
+.host-speech{background:
+  rgba(254,245,220,.96);color:#1a1a2e;
+  border-radius:1rem;padding:.28rem .65rem;font-size:.7rem;font-weight:700;
+  max-width:145px;text-align:center;position:relative;line-height:1.4;
+  box-shadow:0 4px 12px rgba(0,0,0,.2);
+}
+.host-speech::after{content:'';position:absolute;bottom:-6px;left:50%;transform:translateX(-50%);border:6px solid transparent;border-top-color:rgba(254,245,220,.96);border-bottom:0}
+
+.map-badge{
+  display:flex;flex-direction:column;align-items:center;gap:.22rem;
+  cursor:pointer;animation:float 4s ease-in-out infinite;animation-delay:1s;background:
+  linear-gradient(135deg,var(--gold),#A07810);
+  padding:.5rem 1.1rem;border-radius:2rem;
+  box-shadow:0 0 18px rgba(212,160,23,.55),var(--shadow);
+  transition:transform .22s;border:none;font-family:inherit;
+}
+.map-badge:hover{transform:scale(1.1)}
+.map-icon{font-size:1.8rem}
+.map-label{font-size:.68rem;font-weight:800;color:#060D1A}
+
+/* ══════════════════════ GROUND ══════════════════════ */
+.ground-strip{
+  position:relative;z-index:4;height:5px;background:
+  linear-gradient(90deg,var(--green),var(--gold) 40%,var(--green-lt) 65%,var(--gold) 82%,var(--green));
+  opacity:.6;
+}
+
+/* ══════════════════════ CHILD CHARACTERS PARADE ══════════════════════ */
+.chars-parade{
+  position:relative;z-index:5;
+  display:flex;justify-content:center;align-items:flex-end;flex-wrap:wrap;gap:.5rem .7rem;
+  padding:.75rem 1rem .35rem;
+  max-width:1100px;margin:0 auto;
+}
+.char-pin{
+  display:flex;flex-direction:column;align-items:center;gap:.12rem;
+  animation:bob var(--bd,4s) ease-in-out infinite var(--bdl,0s);
+  cursor:pointer;position:relative;
+}
+.char-pin:hover .char-face{transform:scale(1.16)}
+.char-face{
+  width:46px;height:46px;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;font-size:1.75rem;
+  box-shadow:0 4px 14px rgba(0,0,0,.45);transition:transform .22s;
+  border:2.5px solid rgba(255,255,255,.18);
+}
+.char-tag{font-size:.6rem;font-weight:800;color:#fff;background:rgba(0,0,0,.5);border-radius:1rem;padding:.04rem .38rem;white-space:nowrap}
+.char-tooltip{
+  position:absolute;bottom:calc(100% + 8px);left:50%;transform:translateX(-50%);background:
+  rgba(254,245,220,.97);color:#1a1a2e;
+  border-radius:.75rem;padding:.22rem .5rem;font-size:.62rem;font-weight:700;
+  white-space:nowrap;pointer-events:none;opacity:0;transition:.2s;
+  box-shadow:0 4px 12px rgba(0,0,0,.3);z-index:30;
+}
+.char-tooltip::after{content:'';position:absolute;top:100%;left:50%;transform:translateX(-50%);border:5px solid transparent;border-top-color:rgba(254,245,220,.97);border-bottom:0}
+.char-pin:hover .char-tooltip{opacity:1}
+
+/* ══════════════════════ SECTION LABEL ══════════════════════ */
+.section-lbl{
+  display:flex;align-items:center;gap:.6rem;position:relative;z-index:5;
+  font-size:.7rem;font-weight:800;color:rgba(254,245,220,.38);
+  letter-spacing:.08em;text-transform:uppercase;
+  padding:.8rem 1.2rem .4rem;max-width:1100px;margin:0 auto;
+}
+.section-lbl::after{content:'';flex:1;height:1px;background:rgba(255,255,255,.07)}
+
+/* ══════════════════════ CITY MAP GRID ══════════════════════ */
+.city-map{
+  position:relative;z-index:5;
+  display:grid;grid-template-columns:repeat(3,1fr);gap:.9rem;
+  padding:0 1.1rem 1.5rem;max-width:1100px;margin:0 auto;
+}
+
+/* ══════════════════════ BUILDING CARD ══════════════════════ */
+.building{
+  position:relative;background:
+  rgba(255,255,255,.04);
+  border:1px solid rgba(255,255,255,.09);
+  border-radius:var(--r);
+  padding:1rem .9rem .85rem;
+  cursor:pointer;text-align:center;
+  display:flex;flex-direction:column;align-items:center;
+  transition:transform .3s,box-shadow .3s,border-color .3s,background .3s;
+  overflow:hidden;
+}
+.building::before{
+  content:'';position:absolute;inset:0;border-radius:inherit;background:
+  var(--b-grad,linear-gradient(160deg,rgba(212,160,23,.1),transparent));z-index:0;
+}
+.building:hover{
+  transform:translateY(-9px) scale(1.028);
+  box-shadow:0 26px 55px rgba(0,0,0,.5),0 0 28px rgba(var(--b-rgb,212,160,23),.18);
+  border-color:rgba(212,160,23,.48);background:rgba(255,255,255,.07);
+}
+.building:hover .b-glow{opacity:1}
+.building:hover .b-icon{transform:scale(1.14) rotate(-5deg)}
+.b-glow{position:absolute;inset:-1px;border-radius:inherit;background:conic-gradient(from 0deg,var(--b-accent,#D4A017),transparent 52%,var(--b-accent,#D4A017));opacity:0;transition:.4s;z-index:-1;filter:blur(10px)}
+.b-badge{position:absolute;top:.5rem;right:.5rem;background:var(--b-accent,var(--gold));color:#fff;border-radius:.7rem;padding:.08rem .38rem;font-size:.6rem;font-weight:800;box-shadow:0 2px 8px rgba(0,0,0,.3);z-index:2}
+.b-icon{font-size:2.6rem;margin-bottom:.28rem;position:relative;z-index:1;transition:transform .3s;filter:drop-shadow(0 4px 10px rgba(0,0,0,.45))}
+
+/* Progress ring around icon */
+.b-icon-wrap{position:relative;z-index:1;display:flex;align-items:center;justify-content:center;margin-bottom:.28rem}
+.b-prog-ring{position:absolute;width:56px;height:56px;top:50%;left:50%;transform:translate(-50%,-50%)}
+.b-prog-ring svg{transform:rotate(-90deg)}
+.b-prog-ring circle{transition:stroke-dashoffset .6s ease}
+
+/* Character mini on card */
+.b-char-mini{
+  display:flex;align-items:center;gap:.35rem;z-index:1;background:
+  rgba(255,255,255,.07);border-radius:1rem;padding:.22rem .6rem;
+  margin:.22rem 0 .3rem;font-size:.68rem;color:var(--cream);
+  border:1px solid rgba(255,255,255,.08);
+}
+.b-char-emoji{font-size:1.1rem}
+.b-char-name-mini{font-weight:800}
+.b-char-quote-mini{opacity:.72;font-size:.62rem;line-height:1.3}
+
+.b-name-ar{font-size:clamp(.86rem,1.45vw,1.06rem);font-weight:900;color:var(--cream);position:relative;z-index:1;line-height:1.2}
+.b-name-en{font-size:.62rem;color:rgba(254,245,220,.46);margin-top:.07rem;position:relative;z-index:1}
+.b-desc{font-size:.65rem;color:rgba(254,245,220,.62);margin-top:.26rem;line-height:1.45;position:relative;z-index:1}
+
+/* Progress bar */
+.b-progress{display:flex;align-items:center;gap:.45rem;margin-top:.6rem;width:100%;z-index:1;font-size:.66rem;color:rgba(254,245,220,.65)}
+.b-prog-bg{flex:1;height:5px;background:rgba(255,255,255,.12);border-radius:3px;overflow:hidden}
+.b-prog-fill{height:100%;border-radius:3px;transition:width .5s ease;animation:progress-glow 3s ease-in-out infinite}
+.b-prog-pct{white-space:nowrap;font-weight:700}
+
+.b-enter-btn{
+  display:inline-flex;align-items:center;gap:.3rem;
+  margin-top:.55rem;background:var(--b-accent,var(--gold));color:#fff;
+  border:none;border-radius:2rem;padding:.26rem .82rem;font-size:.68rem;font-weight:800;
+  cursor:pointer;font-family:inherit;transition:.22s;position:relative;z-index:1;
+  box-shadow:0 4px 10px rgba(0,0,0,.3);
+}
+.b-enter-btn:hover{filter:brightness(1.22);transform:scale(1.06)}
+
+/* Parents corner */
+/* Special corners (parents + activities) sit side by side */
+.special-corners{
+  grid-column:1/-1;display:flex;gap:.9rem;flex-wrap:wrap;
+}
+.special-corners > .building{flex:1 1 320px;margin:0}
+.building.parents-corner{
+  flex-direction:row;text-align:right;padding:.85rem 1.2rem;gap:1.1rem;
+  align-items:center;
+}
+html[dir="ltr"] .building.parents-corner{text-align:left}
+.building.parents-corner .b-icon-wrap{margin:0;flex-shrink:0}
+.building.parents-corner .b-icon{font-size:2.2rem;margin:0}
+.parents-chars-row{display:flex;gap:.4rem;flex-shrink:0}
+.parents-chars-row .b-char-emoji{font-size:1.55rem}
+.parents-text{flex:1;display:flex;flex-direction:column;gap:.2rem}
+.parents-text .b-name-ar{font-size:1rem}
+
+/* ══════════════════════ MODAL ══════════════════════ */
+.modal-overlay{
+  position:fixed;inset:0;z-index:400;background:
+  rgba(3,8,20,.92);backdrop-filter:blur(16px);
+  display:flex;align-items:center;justify-content:center;
+  opacity:0;pointer-events:none;transition:.3s;padding:1rem;
+}
+.modal-overlay.open{opacity:1;pointer-events:all}
+.modal-box{background:
+  linear-gradient(165deg,#0E1D35,#0A2D22);
+  border:1px solid rgba(212,160,23,.38);
+  border-radius:1.8rem;padding:1.6rem;
+  max-width:490px;width:100%;position:relative;
+  transform:translateY(28px) scale(.94);
+  transition:.38s cubic-bezier(.175,.885,.32,1.275);
+  box-shadow:0 50px 100px rgba(0,0,0,.7),var(--glow);
+  max-height:92vh;overflow-y:auto;
+}
+.modal-overlay.open .modal-box{transform:translateY(0) scale(1)}
+.modal-box::-webkit-scrollbar{width:4px}
+.modal-box::-webkit-scrollbar-thumb{background:rgba(212,160,23,.3);border-radius:2px}
+.modal-close{
+  position:absolute;top:.9rem;left:.9rem;background:
+  rgba(255,255,255,.1);border:none;color:var(--cream);
+  border-radius:50%;width:32px;height:32px;font-size:.9rem;
+  cursor:pointer;transition:.2s;display:flex;align-items:center;justify-content:center;
+}
+html[dir="ltr"] .modal-close{left:auto;right:.9rem}
+.modal-close:hover{background:rgba(255,255,255,.2)}
+
+/* Char hero in modal */
+.modal-char-hero{
+  display:flex;align-items:center;gap:.85rem;margin-bottom:.9rem;background:
+  rgba(255,255,255,.05);border-radius:1rem;padding:.75rem;
+  border-inline-end:3px solid var(--ch-color,#D4A017);position:relative;overflow:hidden;
+}
+html[dir="ltr"] .modal-char-hero{border-inline-end:none;border-inline-start:3px solid var(--ch-color,#D4A017)}
+.modal-char-hero::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(var(--ch-rgb,212,160,23),.07),transparent);z-index:0}
+.modal-char-avi{width:60px;height:60px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:2.3rem;flex-shrink:0;box-shadow:0 6px 18px rgba(0,0,0,.45);border:2.5px solid rgba(255,255,255,.18);position:relative;z-index:1}
+.modal-char-info{flex:1;min-width:0;position:relative;z-index:1}
+.modal-char-name{font-size:1.08rem;font-weight:900;color:var(--gold-lt)}
+.modal-char-role{font-size:.74rem;color:rgba(254,245,220,.55);margin-top:.06rem}
+.modal-char-quote{font-size:.75rem;color:var(--cream);margin-top:.28rem;font-style:italic;line-height:1.5;opacity:.88}
+
+.modal-icon{font-size:3.2rem;text-align:center;margin-bottom:.5rem}
+.modal-title{font-size:1.4rem;font-weight:900;color:var(--gold-lt);text-align:center}
+.modal-subtitle{font-size:.82rem;color:rgba(254,245,220,.55);text-align:center;margin:.2rem 0 .9rem;line-height:1.5}
+.modal-features{display:flex;flex-direction:column;gap:.4rem;margin-bottom:1.1rem}
+.modal-feature{display:flex;align-items:flex-start;gap:.55rem;background:rgba(255,255,255,.05);border-radius:.75rem;padding:.52rem .72rem;font-size:.8rem;line-height:1.45}
+.feat-icon{font-size:1.05rem;flex-shrink:0}
+.modal-cta{
+  display:block;width:100%;padding:.65rem;color:#fff;border:none;border-radius:2rem;
+  font-size:.95rem;font-weight:900;cursor:pointer;font-family:inherit;
+  transition:.22s;box-shadow:0 8px 22px rgba(0,0,0,.35);
+}
+.modal-cta:hover{transform:scale(1.025);filter:brightness(1.12)}
+.modal-soon{font-size:.7rem;text-align:center;color:rgba(254,245,220,.35);margin-top:.48rem}
+
+/* ══════════════════════ ABOUT MODAL ══════════════════════ */
+#aboutModalOverlay .modal-box{max-width:460px}
+
+/* ══════════════════════ SIDEBAR DRAWER ══════════════════════ */
+.sidebar-overlay{position:fixed;inset:0;background:rgba(0,0,0,.62);z-index:500;opacity:0;pointer-events:none;transition:opacity .3s;backdrop-filter:blur(3px)}
+.sidebar-overlay.open{opacity:1;pointer-events:all}
+.sidebar-drawer{
+  position:fixed;top:0;right:0;width:290px;height:100%;background:
+  linear-gradient(180deg,#0C1A30,#081828);
+  z-index:501;transform:translateX(100%);
+  transition:transform .38s cubic-bezier(.4,0,.2,1);
+  box-shadow:-6px 0 30px rgba(0,0,0,.6);
+  display:flex;flex-direction:column;overflow:hidden;
+  border-inline-start:1px solid rgba(212,160,23,.18);
+}
+html[dir="ltr"] .sidebar-drawer{right:auto;left:0;transform:translateX(-100%);border-inline-start:none;border-inline-end:1px solid rgba(212,160,23,.18)}
+.sidebar-drawer.open{transform:translateX(0)}
+html[dir="ltr"] .sidebar-drawer.open{transform:translateX(0)}
+.sb-header{
+  display:flex;align-items:center;justify-content:space-between;
+  padding:1rem 1.1rem .8rem;
+  border-bottom:1px solid rgba(212,160,23,.15);flex-shrink:0;
+}
+.sb-logo{display:flex;align-items:center;gap:.5rem}
+.sb-logo-icon{width:1.9rem;height:1.9rem;display:block;animation:float 4s ease-in-out infinite}
+.sb-logo-name{font-size:1.05rem;font-weight:900;color:var(--gold)}
+.sb-close{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.1);border-radius:.6rem;color:var(--cream);width:30px;height:30px;display:flex;align-items:center;justify-content:center;font-size:.9rem;cursor:pointer;transition:.2s}
+.sb-close:hover{background:rgba(255,255,255,.16)}
+.sb-section{padding:.55rem 1.1rem .25rem;font-size:.63rem;font-weight:800;color:rgba(254,245,220,.35);letter-spacing:.08em;text-transform:uppercase}
+.sb-nav{flex:1;overflow-y:auto;padding:.3rem 0}
+.sb-nav::-webkit-scrollbar{width:3px}
+.sb-nav::-webkit-scrollbar-thumb{background:rgba(212,160,23,.3);border-radius:2px}
+.sb-item{
+  display:flex;align-items:center;gap:.65rem;padding:.55rem 1.1rem;
+  cursor:pointer;transition:.18s;position:relative;
+  border-inline-end:3px solid transparent;text-decoration:none;color:var(--cream);
+}
+html[dir="ltr"] .sb-item{border-inline-end:none;border-inline-start:3px solid transparent}
+.sb-item:hover{background:rgba(255,255,255,.05);border-inline-end-color:var(--item-color,var(--gold))}
+html[dir="ltr"] .sb-item:hover{border-inline-end-color:transparent;border-inline-start-color:var(--item-color,var(--gold))}
+.sb-icon{width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1rem;flex-shrink:0;background:rgba(255,255,255,.06);border:1.5px solid rgba(255,255,255,.1)}
+.sb-item-name{font-size:.78rem;font-weight:700;flex:1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.sb-item-pct{font-size:.64rem;font-weight:800;color:var(--item-color,var(--gold-lt));flex-shrink:0}
+.sb-prog-mini{width:28px;height:3px;background:rgba(255,255,255,.1);border-radius:2px;overflow:hidden;flex-shrink:0}
+.sb-prog-mini-fill{height:100%;border-radius:2px;transition:.4s}
+.sb-footer{padding:.7rem 1.1rem;border-top:1px solid rgba(212,160,23,.12);flex-shrink:0}
+.sb-about-btn{
+  display:flex;align-items:center;gap:.6rem;padding:.55rem .8rem;background:
+  rgba(212,160,23,.1);border:1px solid rgba(212,160,23,.22);
+  border-radius:1rem;cursor:pointer;font-family:inherit;color:var(--gold-lt);
+  font-size:.8rem;font-weight:700;width:100%;transition:.2s;
+}
+.sb-about-btn:hover{background:rgba(212,160,23,.2)}
+
+/* ══════════════════════ SOUND TOAST ══════════════════════ */
+.sound-toast{
+  position:fixed;bottom:1.2rem;left:50%;transform:translateX(-50%) translateY(70px);background:
+  rgba(8,22,42,.96);border:1px solid rgba(26,155,123,.42);
+  border-radius:2rem;padding:.4rem 1rem;
+  display:flex;align-items:center;gap:.5rem;
+  font-size:.76rem;font-weight:700;color:var(--cream);
+  z-index:350;transition:transform .4s cubic-bezier(.175,.885,.32,1.275);
+  backdrop-filter:blur(12px);box-shadow:0 8px 24px rgba(0,0,0,.4);
+}
+.sound-toast.show{transform:translateX(-50%) translateY(0)}
+.st-bars{display:flex;align-items:flex-end;gap:2px;height:12px}
+.st-b{width:3px;background:var(--green-lt);border-radius:2px;animation:soundBar .5s ease-in-out infinite}
+.st-b:nth-child(2){animation-delay:.1s}.st-b:nth-child(3){animation-delay:.2s}
+
+/* ══════════════════════ FOOTER ══════════════════════ */
+.site-footer{position:relative;z-index:5;margin-top:1.5rem;border-top:1px solid rgba(212,160,23,.18);background:linear-gradient(180deg,rgba(8,24,42,0),rgba(6,18,32,.6))}
+.ft-cols{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1.5fr 1fr 1fr 1.2fr;gap:1.6rem;padding:2rem 1.4rem 1.4rem}
+.ft-col h4{font-size:.92rem;font-weight:900;color:var(--gold-lt,#F5CC5A);margin-bottom:.7rem}
+.ft-col a{display:block;color:rgba(254,245,220,.72);text-decoration:none;font-size:.84rem;font-weight:700;padding:.28rem 0;transition:color .15s}
+.ft-col a:hover{color:var(--gold,#E8B530)}
+.ft-brand .ft-logo{display:flex;align-items:center;gap:.5rem;font-size:1.05rem;font-weight:900;color:var(--cream,#FEF5DC);margin-bottom:.5rem}
+.ft-brand .ft-logo-ic{width:1.7rem;height:1.7rem;display:block}
+.ft-brand p{color:rgba(254,245,220,.6);font-size:.82rem;line-height:1.7;margin-bottom:.9rem;max-width:280px}
+.ft-social{display:flex;gap:.55rem;justify-content:flex-start}
+@media(max-width:760px){ .ft-brand{text-align:center} .ft-brand p{margin-inline:auto} .ft-social{justify-content:center} }
+/* footer marquee — examples of what's inside */
+.ft-marquee{border-top:1px solid rgba(255,255,255,.06);overflow:hidden;padding:.7rem 0;-webkit-mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent)}
+.ft-mq-track{display:flex;gap:.7rem;width:max-content;animation:ftMq 140s linear infinite}
+.ft-marquee:hover .ft-mq-track{animation-play-state:paused}
+.ft-chip{display:inline-flex;align-items:center;gap:.45rem;background:rgba(255,255,255,.05);border:1px solid rgba(212,160,23,.22);border-radius:2rem;padding:.4rem 1rem;font-size:.82rem;font-weight:800;color:rgba(254,245,220,.82);white-space:nowrap}
+.ft-chip .fc-ic{font-size:1.05rem}
+@keyframes ftMq{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+html[dir="ltr"] .ft-mq-track{animation-name:ftMqL}
+@keyframes ftMqL{from{transform:translateX(0)}to{transform:translateX(50%)}}
+@media(prefers-reduced-motion:reduce){.ft-mq-track{animation:none}}
+.ft-soc{display:grid;place-items:center;width:38px;height:38px;border-radius:50%;background:rgba(255,255,255,.07);border:1px solid rgba(212,160,23,.25);color:var(--gold-lt,#F5CC5A);transition:transform .15s,background .2s}
+.ft-soc:hover{transform:translateY(-3px);background:rgba(232,181,48,.18)}
+.ft-partners-note{color:rgba(254,245,220,.6);font-size:.8rem;line-height:1.65;margin-bottom:.7rem}
+.ft-partner-slots{display:flex;gap:.5rem;margin-bottom:.7rem}
+.ft-slot{width:40px;height:40px;border-radius:.7rem;background:rgba(255,255,255,.05);border:1px dashed rgba(212,160,23,.35);display:grid;place-items:center;font-size:1.2rem;opacity:.7}
+.ft-partner-cta{display:inline-block;background:rgba(232,181,48,.14);border:1px solid rgba(232,181,48,.4);color:var(--gold-lt,#F5CC5A)!important;border-radius:2rem;padding:.4rem 1rem!important;font-size:.8rem;font-weight:800}
+.ft-partner-cta:hover{background:rgba(232,181,48,.24)}
+.ft-bar{max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap;padding:1rem 1.4rem 1.6rem;border-top:1px solid rgba(255,255,255,.06);font-size:.74rem;color:rgba(254,245,220,.4)}
+.ft-bar .ft-ayah{color:rgba(212,160,23,.6);font-weight:700}
+@media(max-width:760px){ .ft-cols{grid-template-columns:1fr 1fr;gap:1.3rem} .ft-brand{grid-column:1/-1} }
+@media(max-width:440px){ .ft-cols{grid-template-columns:1fr} }
+footer b{color:rgba(212,160,23,.55);font-weight:700}
+
+/* ══════════════════════ RESPONSIVE ══════════════════════ */
+@media(max-width:680px){
+  .city-map{grid-template-columns:repeat(2,1fr);gap:.65rem;padding:0 .7rem 1rem}
+  .special-corners{flex-direction:column;gap:.65rem}
+  .building.parents-corner{grid-column:1/-1;flex-direction:column;text-align:center}
+  .panorama{height:170px}
+  .chars-parade{gap:.4rem .55rem}
+  .char-face{width:40px;height:40px;font-size:1.55rem}
+  .b-icon{font-size:2.1rem}
+  .b-name-ar{font-size:.84rem}
+  .b-char-quote-mini{display:none}
+}
+@media(max-width:400px){
+  .city-map{grid-template-columns:1fr 1fr;gap:.5rem;padding:0 .5rem .8rem}
+}
+</style>
+<style id="__antiflash">html{background:#0A2540;color-scheme:dark}</style>
+</head>
+<body>
+
+<!-- FIXED STARS -->
+<div class="stars-bg" id="starsBg"></div>
+
+<!-- ═══ HEADER ═══ -->
+<header>
+  <div class="brand">
+    <img class="brand-icon" src="assets/logo-mark.svg" alt="">
+    <span id="hBrand">تربية الطفل المسلم</span>
+  </div>
+  <div class="header-right">
+    <button class="login-icon" id="loginIcon" onclick="goLogin()" title="" style="display:none">
+      <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"></path><polyline points="10 17 15 12 10 7"></polyline><line x1="15" y1="12" x2="3" y2="12"></line></svg>
+      <span class="li-txt" id="loginIconTxt"></span>
+    </button>
+    <button class="child-chip" id="childChip" onclick="openBag()" title="" style="display:none">
+      <span class="cc-avi" id="ccAvi">🧒</span><span class="cc-name" id="ccName"></span>
+    </button>
+    <div class="lang-toggle">
+      <button class="lang-btn" id="btnEn" onclick="setLang('en')">EN</button>
+      <button class="lang-btn active" id="btnAr" onclick="setLang('ar')">عربي</button>
+    </div>
+    <button class="about-btn" onclick="showAboutModal()" title="من نحن">🌟</button>
+    <button class="sidebar-open-btn" onclick="toggleSidebar()">☰</button>
+  </div>
+</header>
+
+<!-- ═══ VERSE TICKER ═══ -->
+<div class="verse-ticker">
+  <div class="ticker-track" id="tickerTrack"><!-- JS --></div>
+</div>
+
+<!-- ═══ PANORAMA SVG ═══ -->
+<div class="panorama">
+  <svg viewBox="0 0 1200 230" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <radialGradient id="mg" cx="50%" cy="50%"><stop offset="0%" stop-color="#FFFDE7"/><stop offset="100%" stop-color="#FFD54F"/></radialGradient>
+      <filter id="gf"><feGaussianBlur stdDeviation="3" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+    </defs>
+    <!-- Sky -->
+    <rect width="1200" height="230" fill="#060D1A"/>
+    <!-- Stars -->
+    <circle cx="80" cy="22" r="1" fill="white" opacity=".7"/><circle cx="195" cy="35" r="1.5" fill="white" opacity=".5"/><circle cx="310" cy="14" r="1" fill="white" opacity=".8"/><circle cx="460" cy="28" r="1" fill="white" opacity=".6"/><circle cx="610" cy="10" r="1.5" fill="white" opacity=".7"/><circle cx="760" cy="32" r="1" fill="white" opacity=".5"/><circle cx="910" cy="18" r="1" fill="white" opacity=".8"/><circle cx="1060" cy="26" r="1.5" fill="white" opacity=".6"/><circle cx="1155" cy="13" r="1" fill="white" opacity=".7"/><circle cx="155" cy="55" r="1" fill="white" opacity=".4"/><circle cx="415" cy="52" r="1" fill="white" opacity=".5"/><circle cx="715" cy="45" r="1" fill="white" opacity=".4"/><circle cx="965" cy="55" r="1" fill="white" opacity=".6"/>
+    <!-- Moon -->
+    <circle class="moon-glow" cx="1080" cy="46" r="28" fill="url(#mg)" filter="url(#gf)"/>
+    <circle cx="1092" cy="38" r="18" fill="#060D1A" opacity=".42"/>
+    <!-- Far mountains -->
+    <path d="M0,165 Q140,110 290,138 Q440,108 590,125 Q740,100 890,130 Q1040,105 1200,120 L1200,230 L0,230Z" fill="#091626" opacity=".85"/>
+    <!-- Ground & grass -->
+    <rect x="0" y="200" width="1200" height="30" fill="#0D3B2F"/>
+    <rect x="0" y="196" width="1200" height="7" fill="#145A3D" opacity=".9"/>
+    <!-- Left buildings -->
+    <rect x="40" y="142" width="62" height="68" fill="#0F2A4A" rx="2"/><rect x="46" y="132" width="50" height="14" fill="#0D2440" rx="1"/>
+    <rect x="130" y="132" width="46" height="78" fill="#0E2845" rx="2"/>
+    <rect x="215" y="128" width="37" height="82" fill="#0F2A4A" rx="2"/>
+    <!-- Central Mosque -->
+    <rect x="528" y="108" width="144" height="102" fill="#0C2340" rx="3"/>
+    <ellipse cx="600" cy="108" rx="46" ry="30" fill="#0A1E38"/>
+    <rect x="595" y="62" width="10" height="50" fill="#0A1E38"/><!-- minaret -->
+    <ellipse cx="600" cy="62" rx="12" ry="8" fill="#0C2340"/>
+    <path d="M598,53 L600,44 L602,53Z" fill="#D4A017" opacity=".8"/>
+    <rect x="535" y="82" width="7" height="62" fill="#0A1E38"/><ellipse cx="538" cy="82" rx="8" ry="5" fill="#0C2340"/>
+    <rect x="656" y="82" width="7" height="62" fill="#0A1E38"/><ellipse cx="660" cy="82" rx="8" ry="5" fill="#0C2340"/>
+    <!-- Mosque windows (warm) -->
+    <rect x="558" y="132" width="14" height="18" fill="#E8C97A" opacity=".3" rx="7"/>
+    <rect x="589" y="132" width="14" height="18" fill="#E8C97A" opacity=".35" rx="7"/>
+    <rect x="620" y="132" width="14" height="18" fill="#E8C97A" opacity=".28" rx="7"/>
+    <rect x="652" y="132" width="14" height="18" fill="#E8C97A" opacity=".22" rx="7"/>
+    <!-- Right buildings -->
+    <rect x="805" y="138" width="52" height="72" fill="#0F2A4A" rx="2"/><rect x="875" y="122" width="42" height="88" fill="#0E2845" rx="2"/>
+    <rect x="952" y="132" width="68" height="78" fill="#0F2A4A" rx="2"/><rect x="1055" y="142" width="46" height="68" fill="#0E2845" rx="2"/>
+    <rect x="1112" y="126" width="58" height="84" fill="#0F2A4A" rx="2"/>
+    <!-- Warm windows on side buildings -->
+    <rect x="815" y="150" width="8" height="10" fill="#E8C97A" opacity=".23" rx="1"/><rect x="833" y="150" width="8" height="10" fill="#E8C97A" opacity=".2" rx="1"/>
+    <rect x="885" y="138" width="8" height="10" fill="#E8C97A" opacity=".28" rx="1"/><rect x="903" y="138" width="8" height="10" fill="#E8C97A" opacity=".22" rx="1"/>
+    <rect x="964" y="148" width="8" height="10" fill="#E8C97A" opacity=".23" rx="1"/><rect x="986" y="148" width="8" height="10" fill="#E8C97A" opacity=".2" rx="1"/>
+    <!-- Lanterns -->
+    <g style="transform-origin:205px 90px"><line x1="205" y1="78" x2="205" y2="90" stroke="#D4A017" stroke-width="1" opacity=".5"/><rect x="201" y="90" width="8" height="12" fill="#D4A017" opacity=".4" rx="2"/></g>
+    <g style="transform-origin:390px 74px"><line x1="390" y1="72" x2="390" y2="84" stroke="#D4A017" stroke-width="1" opacity=".45"/><rect x="386" y="84" width="8" height="12" fill="#D4A017" opacity=".35" rx="2"/></g>
+    <g style="transform-origin:828px 82px"><line x1="828" y1="80" x2="828" y2="92" stroke="#D4A017" stroke-width="1" opacity=".42"/><rect x="824" y="92" width="8" height="12" fill="#D4A017" opacity=".32" rx="2"/></g>
+    <!-- Shooting star removed for performance -->
+  </svg>
+  <div class="panorama-overlay">
+    <div class="city-title" id="cityTitle">تربية الطفل المسلم</div>
+    <div class="city-subtitle" id="citySubtitle">اختر ركناً وابدأ رحلة البناء مع المربي والمربية</div>
+  </div>
+</div>
+
+<!-- ═══ HOST CHARACTERS (Al-Murabbi & Al-Murabbiyah) ═══ -->
+<div class="host-row">
+  <div class="host-char">
+    <div class="host-speech" id="charSpeech1">أنا المربي، معاً نبني جيلاً واعياً!</div>
+    <div class="host-avatar">🧔</div>
+    <div class="host-name" id="charName1">المربي</div>
+  </div>
+  <button class="map-badge" onclick="toggleSidebar()">
+    <span class="map-icon">🗺️</span>
+    <span class="map-label" id="mapLabel">خريطة المدينة</span>
+  </button>
+  <div class="host-char" style="animation-delay:2s">
+    <div class="host-speech" id="charSpeech2">وأنا المربية، لنجعل الرحلة هادفة وممتعة!</div>
+    <div class="host-avatar">🧕</div>
+    <div class="host-name" id="charName2">المربية</div>
+  </div>
+</div>
+
+<!-- GROUND -->
+<div class="ground-strip"></div>
+
+<!-- ═══ CHILD CHARACTERS PARADE ═══ -->
+<div class="chars-parade" id="charsParade"></div>
+
+<!-- SECTION LABEL -->
+<div class="section-lbl" id="sectionLbl">أركان تربية الطفل المسلم</div>
+
+<!-- ═══ CITY MAP ═══ -->
+<div class="city-map" id="cityMap"></div>
+
+<footer class="site-footer">
+  <div class="ft-cols">
+    <div class="ft-col ft-brand">
+      <div class="ft-logo"><img class="ft-logo-ic" src="assets/logo-mark.svg" alt=""><b id="ftBrand">تربية الطفل المسلم</b></div>
+      <p id="ftTagline">منصّةٌ تربويّةٌ إسلاميّةٌ مجّانيّةٌ للأطفال — صدقةٌ جارية.</p>
+      <div class="ft-social">
+        <a class="ft-soc" href="https://facebook.com" target="_blank" rel="noopener" aria-label="Facebook" title="Facebook"><svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M22 12a10 10 0 1 0-11.6 9.9v-7H7.9V12h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.4h-1.2c-1.2 0-1.6.8-1.6 1.6V12h2.7l-.4 2.9h-2.3v7A10 10 0 0 0 22 12Z"/></svg></a>
+        <a class="ft-soc" href="https://wa.me/" target="_blank" rel="noopener" aria-label="WhatsApp" title="WhatsApp"><svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M.06 24l1.7-6.16A11.86 11.86 0 0 1 12 0a11.9 11.9 0 0 1 8.4 20.32A11.9 11.9 0 0 1 6.2 22.3L.06 24Zm6.45-3.8.37.22a9.86 9.86 0 0 0 5.12 1.4 9.9 9.9 0 1 0-9.9-9.9c0 1.86.52 3.66 1.5 5.22l.24.38-1 3.66 3.67-.98ZM17.4 14.3c-.2-.1-1.18-.58-1.36-.65-.18-.07-.32-.1-.46.1-.13.2-.52.65-.64.78-.12.13-.24.15-.44.05a5.46 5.46 0 0 1-2.72-2.38c-.2-.35.2-.33.59-1.1.06-.13.03-.24-.02-.34-.05-.1-.46-1.1-.63-1.51-.16-.4-.33-.34-.46-.34l-.39-.01c-.13 0-.34.05-.52.25-.18.2-.68.67-.68 1.63s.7 1.9.8 2.03c.1.13 1.38 2.1 3.34 2.95 1.96.85 1.96.57 2.32.53.35-.03 1.18-.48 1.35-.95.16-.46.16-.86.11-.94-.04-.08-.18-.13-.38-.23Z"/></svg></a>
+        <a class="ft-soc" href="mailto:bassamomda91@gmail.com" aria-label="Email" title="Email"><svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M2 4h20a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1Zm10 7.1 8-5.3V5l-8 5.3L4 5v.8l8 5.3Z"/></svg></a>
+        <a class="ft-soc" href="https://www.linkedin.com/in/bassam-mohamed-646a50116/" target="_blank" rel="noopener" aria-label="LinkedIn" title="LinkedIn"><svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M4.98 3.5A2.5 2.5 0 1 1 0 3.5a2.5 2.5 0 0 1 4.98 0ZM.4 8h4.2v13H.4V8Zm7 0h4v1.8h.06c.56-1 1.93-2.06 3.97-2.06 4.25 0 5.03 2.8 5.03 6.43V21h-4.2v-5.6c0-1.33-.02-3.05-1.86-3.05-1.86 0-2.14 1.45-2.14 2.95V21H7.4V8Z"/></svg></a>
+      </div>
+    </div>
+
+    <div class="ft-col">
+      <h4 id="ftQuickT">روابط سريعة</h4>
+      <a href="corners/shared/account.html" data-ft="register"></a>
+      <a href="corners/shared/community.html" data-ft="community"></a>
+      <a href="corners/shared/store.html" data-ft="store"></a>
+      <a href="corners/shared/downloads.html" data-ft="downloads"></a>
+    </div>
+
+    <div class="ft-col">
+      <h4 id="ftContactT">تواصل معنا</h4>
+      <a href="mailto:bassamomda91@gmail.com" data-ft="email"></a>
+      <a href="https://wa.me/" target="_blank" rel="noopener" data-ft="whatsapp"></a>
+      <a href="https://facebook.com" target="_blank" rel="noopener" data-ft="facebook"></a>
+      <a href="https://www.linkedin.com/in/bassam-mohamed-646a50116/" target="_blank" rel="noopener" data-ft="linkedin"></a>
+    </div>
+
+    <div class="ft-col">
+      <h4 id="ftPartnersT">شركاؤنا</h4>
+      <p class="ft-partners-note" id="ftPartnersNote">نفخر بالتعاون مع المؤسّسات التربويّة. كُن شريكًا في النفع.</p>
+      <div class="ft-partner-slots">
+        <span class="ft-slot">🤝</span><span class="ft-slot">🏫</span><span class="ft-slot">📚</span>
+      </div>
+      <a class="ft-partner-cta" href="mailto:bassamomda91@gmail.com?subject=Partnership" data-ft="becomePartner"></a>
+    </div>
+  </div>
+
+  <div class="ft-bar">
+    <span id="footerTxt">صُنع بحب ❤️ لأطفال الأمة — تربية الطفل المسلم © 2026</span>
+    <b class="ft-ayah">﴿ كَأَنَّهُم بُنْيَانٌ مَّرْصُوصٌ ﴾</b>
+  </div>
+</footer>
+
+<!-- ═══ CORNER MODAL ═══ -->
+<div class="modal-overlay" id="modalOverlay" onclick="closeModal(event)">
+  <div class="modal-box" id="modalBox">
+    <button class="modal-close" onclick="closeModalBtn()">✕</button>
+    <div class="modal-char-hero" id="mCharHero" style="display:none">
+      <div class="modal-char-avi" id="mCharAvi"></div>
+      <div class="modal-char-info">
+        <div class="modal-char-name" id="mCharName"></div>
+        <div class="modal-char-role" id="mCharRole"></div>
+        <div class="modal-char-quote" id="mCharQuote"></div>
+      </div>
+    </div>
+    <div class="modal-icon" id="mIcon"></div>
+    <div class="modal-title" id="mTitle"></div>
+    <div class="modal-subtitle" id="mSubtitle"></div>
+    <div class="modal-features" id="mFeatures"></div>
+    <button class="modal-cta" id="mCta" onclick="enterBuilding()"></button>
+    <p class="modal-soon" id="mSoon"></p>
+  </div>
+</div>
+
+<!-- ═══ ABOUT MODAL ═══ -->
+<div class="modal-overlay" id="aboutModalOverlay" onclick="closeAboutModal(event)">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeAboutModalBtn()">✕</button>
+    <div class="modal-icon">🌟</div>
+    <div class="modal-title" id="aboutModalTitle">من نحن</div>
+    <div class="modal-subtitle" id="aboutModalSubtitle">تعرف على رؤيتنا وهدفنا</div>
+    <div class="modal-features" id="aboutModalContent"></div>
+    <button class="modal-cta" onclick="closeAboutModalBtn()" id="aboutModalCloseBtn" style="background:linear-gradient(135deg,#D4A017,#1A9B7B)">حسناً</button>
+  </div>
+</div>
+
+<!-- ═══ SIDEBAR ═══ -->
+<div class="sidebar-overlay" id="sidebarOverlay" onclick="closeSidebar()"></div>
+<div class="sidebar-drawer" id="sidebarDrawer">
+  <div class="sb-header">
+    <div class="sb-logo">
+      <img class="sb-logo-icon" src="assets/logo-mark.svg" alt="">
+      <span class="sb-logo-name" id="sidebarTitle">تربية الطفل المسلم</span>
+    </div>
+    <button class="sb-close" onclick="closeSidebar()">✕</button>
+  </div>
+  <div class="sb-section" id="sbNavTitle">خريطة المدينة</div>
+  <nav class="sb-nav" id="sidebarNav"></nav>
+  <div class="sb-footer">
+    <button class="sb-about-btn" onclick="showAboutModal();closeSidebar()">
+      <span>🌟</span><span id="sbAboutTxt">عن الموقع</span>
+    </button>
+  </div>
+</div>
+
+<!-- ═══ SOUND TOAST ═══ -->
+<div class="sound-toast" id="soundToast">
+  <div class="st-bars"><div class="st-b" style="height:4px"></div><div class="st-b" style="height:10px"></div><div class="st-b" style="height:6px"></div></div>
+  <span id="soundToastTxt">صوت المنارة</span>
+</div>
+
+<!-- ═══ LOCKED-CORNER PIN MODAL ═══ -->
+<div class="modal-overlay" id="lockOverlay" onclick="if(event.target===this)closeLock()">
+  <div class="lock-box">
+    <div class="lock-ic">🔒</div>
+    <h3 id="lockTitle"></h3>
+    <p id="lockMsg"></p>
+    <input id="lockPin" class="lock-pin" inputmode="numeric" maxlength="6" autocomplete="off">
+    <div class="lock-err" id="lockErr"></div>
+    <div class="lock-acts">
+      <button class="lk-btn cancel" id="lockCancel" onclick="closeLock()"></button>
+      <button class="lk-btn go" id="lockGo"></button>
+    </div>
+  </div>
+</div>
+
+<script>
+/* mk-system (inlined into homepage to avoid 2 extra network round-trips on load) */
+(function () {
+  'use strict';
+  var LS = window.localStorage;
+  var K = { profiles:'mk:profiles', active:'mk:active', pin:'mk:parentPin', locks:'mk:locks', data:'mk:data:', lang:'bunyanLang' };
+  function isSystemKey(k){ return k===K.lang || k.indexOf('mk:')===0; }
+  function jget(key,fb){ try{ var v=LS.getItem(key); return v==null?fb:JSON.parse(v); }catch(e){ return fb; } }
+  function jset(key,val){ try{ LS.setItem(key,JSON.stringify(val)); }catch(e){} }
+  function uid(){ return 'p'+Date.now().toString(36)+Math.random().toString(36).slice(2,6); }
+  var CORNERS=[
+    { id:'aqeeda',  icon:'🕋', color:'#C0392B', name:{ar:'منارة العقيدة',     en:'Faith Minaret'},        base:'corners/faith-minaret/aqeeda.html' },
+    { id:'ibada',   icon:'🌙', color:'#117A8B', name:{ar:'واحة العبادة',      en:'Worship Oasis'},        base:'corners/little-district/pages/ibada.html' },
+    { id:'quran',   icon:'📖', color:'#1A9B7B', name:{ar:'بستان القرآن والسنة', en:'Quran & Sunnah Garden'}, base:'corners/little-district/pages/quran.html' },
+    { id:'social',  icon:'🏘️', color:'#D4A017', name:{ar:'حيّنا الصغير',      en:'Our Little District'},   base:'corners/little-district/pages/social.html' },
+    { id:'heart',   icon:'💚', color:'#6C3483', name:{ar:'ركن القلب السليم',  en:'Pure Heart Corner'},     base:'corners/heroes-fortress/heart.html' },
+    { id:'history', icon:'🏰', color:'#E67E22', name:{ar:'حصن الأبطال',       en:"Heroes' Fortress"},      base:'corners/heroes-fortress/fortress.html' },
+    { id:'sport',   icon:'🏊', color:'#27AE60', name:{ar:'النادي الرياضي',    en:'Sports Club'},           base:'corners/little-district/pages/sport.html' },
+    { id:'academy', icon:'🔭', color:'#2980B9', name:{ar:'أكاديمية المبدعين', en:"Innovators' Academy"},   base:'corners/heroes-fortress/academy.html' },
+    { id:'quds',    icon:'🕌', color:'#2E8B57', name:{ar:'ركن القدس والأمة',  en:'Al-Quds & Ummah'},       base:'corners/little-district/pages/quds.html' },
+  ];
+  function profiles(){ return jget(K.profiles,[]); }
+  function activeId(){ return LS.getItem(K.active)||null; }
+  function activeProfile(){ var id=activeId(); return profiles().filter(function(p){return p.id===id;})[0]||null; }
+  function snapshotInto(id){ if(!id)return; var b={}; for(var i=0;i<LS.length;i++){var k=LS.key(i); if(!isSystemKey(k)) b[k]=LS.getItem(k);} jset(K.data+id,b); }
+  function restoreFrom(id){ var d=[]; for(var i=0;i<LS.length;i++){var k=LS.key(i); if(!isSystemKey(k)) d.push(k);} d.forEach(function(k){LS.removeItem(k);}); var b=jget(K.data+id,{}); Object.keys(b).forEach(function(k){try{LS.setItem(k,b[k]);}catch(e){}}); }
+  function addProfile(name,avatar,color){ var l=profiles(); var p={id:uid(),name:(name||'').trim()||(window.MK&&MK.lang()==='en'?'Child':'طفل'),avatar:avatar||'🧒',color:color||'#D4A017',createdAt:Date.now()}; l.push(p); jset(K.profiles,l); return p; }
+  function setActive(id){ var cur=activeId(); if(cur===id)return; if(cur)snapshotInto(cur); restoreFrom(id); LS.setItem(K.active,id); }
+  function removeProfile(id){ var l=profiles().filter(function(p){return p.id!==id;}); jset(K.profiles,l); LS.removeItem(K.data+id); if(activeId()===id){ LS.removeItem(K.active); var d=[]; for(var i=0;i<LS.length;i++){var k=LS.key(i); if(!isSystemKey(k)) d.push(k);} d.forEach(function(k){LS.removeItem(k);}); } }
+  function renameProfile(id,name){ var l=profiles(); l.forEach(function(p){if(p.id===id)p.name=(name||'').trim()||p.name;}); jset(K.profiles,l); }
+  function hasPin(){ return !!LS.getItem(K.pin); }
+  function setPin(pin){ if(pin)LS.setItem(K.pin,String(pin)); else LS.removeItem(K.pin); }
+  function checkPin(pin){ return hasPin()?String(pin)===LS.getItem(K.pin):true; }
+  function locks(){ return jget(K.locks,{}); }
+  function isLocked(c){ return !!locks()[c]; }
+  function setLock(c,on){ var L=locks(); if(on)L[c]=true; else delete L[c]; jset(K.locks,L); }
+  function lang(){ return LS.getItem(K.lang)||'ar'; }
+  window.MK={ CORNERS:CORNERS, corner:function(id){return CORNERS.filter(function(c){return c.id===id;})[0];}, profiles:profiles, activeId:activeId, activeProfile:activeProfile, addProfile:addProfile, setActive:setActive, removeProfile:removeProfile, renameProfile:renameProfile, snapshotActive:function(){snapshotInto(activeId());}, hasPin:hasPin, setPin:setPin, checkPin:checkPin, locks:locks, isLocked:isLocked, setLock:setLock, lang:lang };
+})();
+</script>
+<script defer src="corners/shared/mk-journeys.js" onload="try{if(window.refreshProgress)refreshProgress();}catch(e){}"></script>
+<style>
+  .child-chip{display:flex;align-items:center;gap:.45rem;background:rgba(255,255,255,.08);border:1.5px solid rgba(212,160,23,.4);border-radius:2rem;padding:.28rem .8rem .28rem .35rem;cursor:pointer;font-family:inherit;color:var(--text,#FEF5DC);transition:border-color .2s,background .2s}
+  .login-icon{display:flex;align-items:center;gap:.4rem;background:rgba(255,255,255,.08);border:1.5px solid rgba(212,160,23,.4);border-radius:2rem;padding:.4rem .9rem;cursor:pointer;font-family:inherit;color:var(--text,#FEF5DC);font-weight:800;font-size:.84rem;transition:border-color .2s,background .2s}
+  .login-icon:hover{border-color:#D4A017;background:rgba(212,160,23,.16)}
+  .login-icon svg{display:block}
+  .child-chip:hover{border-color:#D4A017;background:rgba(212,160,23,.16)}
+  .child-chip .cc-avi{width:30px;height:30px;border-radius:50%;display:grid;place-items:center;font-size:1.05rem;background:var(--cc-col,#D4A017)}
+  .b-lock{position:absolute;top:.6rem;inset-inline-start:.6rem;width:30px;height:30px;border-radius:50%;display:grid;place-items:center;font-size:.95rem;background:rgba(8,24,42,.82);border:1.5px solid rgba(212,160,23,.45);z-index:3}
+  .child-chip .cc-name{font-weight:800;font-size:.86rem;max-width:90px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+  html[dir="ltr"] .child-chip{padding:.28rem .35rem .28rem .8rem}
+  .lock-box{position:relative;max-width:380px;width:92%;margin:auto;background:linear-gradient(170deg,#0e2c49,#0a2138);border:1.5px solid rgba(212,160,23,.3);border-radius:1.4rem;padding:1.8rem 1.5rem;text-align:center;box-shadow:0 24px 60px rgba(0,0,0,.55)}
+  .lock-ic{font-size:2.6rem;margin-bottom:.4rem}
+  .lock-box h3{margin:.2rem 0 .5rem;font-size:1.3rem;font-weight:900;color:#F5CC5A}
+  .lock-box p{margin:0 0 1rem;color:rgba(254,245,220,.72);font-size:.95rem;line-height:1.6}
+  .lock-pin{width:100%;border:1.5px solid rgba(212,160,23,.4);background:rgba(255,255,255,.07);color:#FEF5DC;border-radius:1rem;padding:.8rem;font-size:1.5rem;font-weight:800;text-align:center;letter-spacing:.5em;font-family:inherit}
+  .lock-pin:focus{outline:none;border-color:#D4A017}
+  .lock-err{min-height:1.1rem;color:#ff9b8e;font-weight:700;font-size:.84rem;margin:.5rem 0}
+  .lock-acts{display:flex;gap:.6rem}
+  .lk-btn{flex:1;border:none;border-radius:1rem;padding:.8rem;font-weight:900;font-size:.98rem;cursor:pointer;font-family:inherit}
+  .lk-btn.go{background:linear-gradient(135deg,#E8B530,#c79518);color:#10243d}
+  .lk-btn.cancel{background:rgba(255,255,255,.08);color:#FEF5DC;border:1px solid rgba(212,160,23,.3)}
+</style>
+<script>
+/* ═══ Child profile gate + chip + corner-lock enforcement ═══ */
+(function(){
+  if(!window.MK) return;
+  // No gate: the home page always shows first. Header reflects login state.
+  window.__renderChildChip = function(){
+    var chip = document.getElementById('childChip');
+    var login = document.getElementById('loginIcon');
+    var p = MK.activeProfile();
+    var ar = (MK.lang()==='ar');
+    // Family Account login (→ account.html) is ALWAYS available.
+    if(login){
+      login.style.display = 'flex';
+      login.title = ar ? 'حساب العائلة' : 'Family Account';
+      var t = document.getElementById('loginIconTxt'); if(t) t.textContent = ar ? 'الحساب' : 'Account';
+    }
+    // The child chip (→ switch child) shows additionally when a profile is active.
+    if(p){
+      document.getElementById('ccAvi').textContent = p.avatar;
+      document.getElementById('ccAvi').style.setProperty('--cc-col', p.color);
+      document.getElementById('ccName').textContent = p.name;
+      chip.style.display = 'flex';
+      chip.title = ar ? 'حقيبتي — تقدّمي وجوائزي' : 'My Bag — progress & rewards';
+    } else {
+      chip.style.display = 'none';
+    }
+  };
+})();
+function goLogin(){
+  location.href = 'corners/shared/account.html?lang=' + (window.MK?MK.lang():'ar');
+}
+function switchChild(){
+  if(window.MK) MK.snapshotActive();
+  location.href = 'corners/shared/login.html?lang=' + (window.MK?MK.lang():'ar');
+}
+function openBag(){
+  if(window.MK) MK.snapshotActive();
+  location.href = 'corners/shared/bag.html?lang=' + (window.MK?MK.lang():'ar');
+}
+/* lock enforcement */
+var _pendingLockTarget = null;
+var _examGate = false;
+/* Activities corner opens only when the child passed a corner's EXAM (>=75%).
+   quiz-engine writes mkUnlocked[corner] only at that score, so any real corner
+   present there means an exam was passed (the 'parents' grant is ignored). */
+function activitiesUnlockedByExam(){
+  try{
+    var u = JSON.parse(localStorage.getItem('mkUnlocked')||'{}');
+    var ids = (window.MK && MK.CORNERS) ? MK.CORNERS.map(function(c){return c.id;}) : [];
+    return ids.some(function(id){ return Array.isArray(u[id]) && u[id].length; });
+  }catch(e){ return false; }
+}
+function activitiesParentUnlocked(){
+  try{ return localStorage.getItem('mkActivitiesParentUnlock')==='1'; }catch(e){ return false; }
+}
+function activitiesUnlocked(){ return activitiesUnlockedByExam() || activitiesParentUnlocked(); }
+function showExamGate(building){
+  var ar = (window.MK && MK.lang()==='ar');
+  _examGate = true; _pendingLockTarget = building || null;
+  var hasPin = !!(window.MK && MK.hasPin());
+  var ic=document.querySelector('#lockOverlay .lock-ic'); if(ic) ic.textContent='🎓';
+  document.getElementById('lockTitle').textContent = ar ? 'ركنُ الأنشطة مُقفَل' : 'Activities locked';
+  document.getElementById('lockMsg').textContent = ar
+    ? (hasPin
+        ? 'يُفتَحُ ركنُ الأنشطة عندما يجتازُ الطفلُ اختبارَ أيِّ ركن — أو يَفتحُه الأهلُ الآن بإدخالِ رمزِ الأهل.'
+        : 'يُفتَحُ ركنُ الأنشطة عندما يجتازُ الطفلُ اختبارَ أيِّ ركن. ولِيفتحَه الأهلُ برمز، أنشئوا رمزَ الأهل أوّلاً من ركن الأهل.')
+    : (hasPin
+        ? 'The Activities corner opens once your child passes any corner exam (75%+) \u2014 or a parent can open it now with the parents\u2019 code.'
+        : 'The Activities corner opens once your child passes any corner exam (75%+). To let a parent open it with a code, set a parents\u2019 code first from the Parents area.');
+  var pinEl = document.getElementById('lockPin');
+  document.getElementById('lockErr').textContent = '';
+  if(hasPin){
+    pinEl.style.display=''; pinEl.value=''; pinEl.placeholder = ar ? 'رمز الأهل' : "Parents' code";
+    document.getElementById('lockGo').textContent = ar ? 'فتحٌ بإذنِ الأهل ←' : 'Open with parent code →';
+    document.getElementById('lockCancel').textContent = ar ? 'إلغاء' : 'Cancel';
+    document.getElementById('lockCancel').style.display = '';
+  } else {
+    pinEl.style.display = 'none';
+    document.getElementById('lockGo').textContent = ar ? 'حسناً' : 'Got it';
+    document.getElementById('lockCancel').style.display = 'none';
+  }
+  document.getElementById('lockOverlay').classList.add('open');
+  document.body.style.overflow='hidden';
+  if(hasPin) setTimeout(function(){ pinEl.focus(); }, 80);
+}
+function tryEnterCorner(building){
+  // Activities corner is gated by EXAMS (quizzes) — or by the parents' code.
+  if(building && building.id==='activities' && !activitiesUnlocked()){
+    showExamGate(building);
+    return false;
+  }
+  if(window.MK && MK.isLocked(building.id) && MK.hasPin()){
+    _pendingLockTarget = building;
+    _examGate = false;
+    var ar = (MK.lang()==='ar');
+    var ic2=document.querySelector('#lockOverlay .lock-ic'); if(ic2) ic2.textContent='🔒';
+    document.getElementById('lockTitle').textContent = ar ? 'ركنٌ مُقفَل' : 'Locked corner';
+    document.getElementById('lockMsg').textContent = ar
+      ? 'هذا الركن أقفلَه أحدُ والديك. أدخِل رمزَ الأهل لِفتحِه.'
+      : 'A parent locked this corner. Enter the parents\u2019 PIN to open it.';
+    document.getElementById('lockGo').textContent = ar ? 'دخول ←' : 'Enter →';
+    document.getElementById('lockCancel').textContent = ar ? 'إلغاء' : 'Cancel';
+    document.getElementById('lockCancel').style.display = '';
+    document.getElementById('lockErr').textContent = '';
+    document.getElementById('lockPin').style.display = '';
+    document.getElementById('lockPin').value = '';
+    document.getElementById('lockOverlay').classList.add('open');
+    document.body.style.overflow='hidden';
+    setTimeout(function(){ document.getElementById('lockPin').focus(); }, 80);
+    return false;
+  }
+  return true;
+}
+function closeLock(){ document.getElementById('lockOverlay').classList.remove('open'); document.body.style.overflow=''; _pendingLockTarget=null; _examGate=false; }
+function _lockSubmit(){
+  if(_examGate){
+    var arx = (window.MK && MK.lang()==='ar');
+    if(!(window.MK && MK.hasPin())){ closeLock(); return; }
+    var pin0 = (document.getElementById('lockPin').value||'').trim();
+    if(!pin0){ document.getElementById('lockErr').textContent = arx?'أدخِل رمزَ الأهل':"Enter the parents' code"; return; }
+    if(MK.checkPin(pin0)){
+      try{ localStorage.setItem('mkActivitiesParentUnlock','1'); }catch(e){}
+      var b = _pendingLockTarget; closeLock();
+      if(b && b.url) window.location.href = b.url + '?lang=' + MK.lang();
+    } else {
+      document.getElementById('lockErr').textContent = arx?'رمزٌ غير صحيح':'Wrong code';
+      document.getElementById('lockPin').value='';
+    }
+    return;
+  }
+  var pin = document.getElementById('lockPin').value.trim();
+  if(window.MK && MK.checkPin(pin) && _pendingLockTarget){
+    var t = _pendingLockTarget; closeLock();
+    window.location.href = t.url + '?lang=' + (window.MK?MK.lang():'ar');
+  } else {
+    document.getElementById('lockErr').textContent = (MK.lang()==='ar'?'رمزٌ غير صحيح':'Wrong PIN');
+    document.getElementById('lockPin').value='';
+  }
+}
+document.getElementById('lockGo').onclick=_lockSubmit;
+document.getElementById('lockPin').addEventListener('keydown',function(e){ if(e.key==='Enter') _lockSubmit(); });
+</script>
+<script>
+/* ══════════════════════════════════════════════════
+   BUILDINGS DATA (preserved from original)
+══════════════════════════════════════════════════ */
+const buildings = [ // home corners — order: faith, worship, quran, district, pure-heart, fortress, sports, academy, quds
+  {id:'aqeeda',icon:'🕋',nameAr:'منارة العقيدة',nameEn:'Faith Minaret',descAr:'البناء العقدي والروحي',descEn:'Spiritual & Creedal Foundation',accent:'#C0392B',gradient:'linear-gradient(160deg,rgba(192,57,43,.2),transparent)',badge:'🔥 جديد',progress:0,character:{charNameAr:'يوسف',charNameEn:'Yusuf',emoji:'👦',charQuoteAr:'أنا يوسف، هيا نراقب الله!',charQuoteEn:"I'm Yusuf, let's watch for Allah!"},featuresAr:[{icon:'🕋',text:'رحلة التوحيد ورحلة اليقين — براهين وجود الله ووحدانيته'},{icon:'✨',text:'رحلة جنود النور ورحلة البلاغ — الملائكة والكتب والرسل'},{icon:'🌉',text:'رحلة العبور وسر التقدير والأبطال — اليوم الآخر والقدر وقصص الثبات'}],featuresEn:[{icon:'🕋',text:'Journey of Tawheed & Certainty — proofs of Allah\'s existence & oneness'},{icon:'✨',text:'Soldiers of Light & the Message — angels, books & prophets'},{icon:'🌉',text:'The Crossing, the Decree & the Heroes — the Last Day, qadar & steadfastness'}],url:'corners/faith-minaret/aqeeda.html',ready:true},
+  {id:'ibada',icon:'🌙',nameAr:'واحة العبادة',nameEn:'Worship Oasis',descAr:'البناء العبادي',descEn:'Acts of Worship',accent:'#117A8B',gradient:'linear-gradient(160deg,rgba(17,122,139,.2),transparent)',badge:'💧',progress:0,character:{charNameAr:'مريم',charNameEn:'Mariam',emoji:'👧',charQuoteAr:'معاً نتعلم الصلاة والوضوء!',charQuoteEn:'Together we learn prayer and wudu!'},featuresAr:[{icon:'🤲',text:'تعلم الوضوء والصلاة خطوة بخطوة بصور تفاعلية'},{icon:'📚',text:'مدرسة الصيام — تدريب الصغار على الصوم'},{icon:'🛡️',text:'درع البطل: أذكاري تحميني في كل وقت'},{icon:'💡',text:'خيط النور: كيف أتحدث مع الله؟ فقه الدعاء'},{icon:'🎁',text:'كنز العطاء: سر الزكاة وبركة الصدقة'},{icon:'🕋',text:'الرحلة الكبرى: مغامرة إلى بيت الله الحرام'}],featuresEn:[{icon:'🤲',text:'Interactive step-by-step Wudu & Prayer'},{icon:'📚',text:'Little Fasting School'},{icon:'🛡️',text:"Hero's Shield: My Adhkar Protect Me"},{icon:'💡',text:'Thread of Light: How Do I Speak to Allah?'},{icon:'🎁',text:'Treasure of Giving: Zakat & Charity'},{icon:'🕋',text:'The Grand Journey: Adventure to Makkah'}],url:'corners/little-district/pages/ibada.html',ready:true},
+  {id:'quran',icon:'📖',nameAr:'بستان القرآن والسنة',nameEn:'Quran & Sunnah Garden',descAr:'البناء القرآني والتدبر',descEn:'Quranic Learning & Reflection',accent:'#1A9B7B',gradient:'linear-gradient(160deg,rgba(26,155,123,.22),transparent)',badge:'🌿',progress:0,character:{charNameAr:'أنس',charNameEn:'Anas',emoji:'👦',charQuoteAr:'تعال نتدبر آيات القرآن!',charQuoteEn:"Let's reflect on the Quran together!"},featuresAr:[{icon:'📖',text:'سور القرآن — اقرأ بالتجويد وتدبّر المعاني'},{icon:'📜',text:'قصص القرآن — لقمان وأصحاب الكهف وغيرهم'},{icon:'🕌',text:'الأربعون النووية — احفظ وافهم واعمل'},{icon:'🤝',text:'أنا صاحبك القرآن — قصص الصالحين مع كتاب الله'}],featuresEn:[{icon:'📖',text:'Quran Surahs — read with tajweed & reflect'},{icon:'📜',text:'Quran Stories — Luqman, the Cave & more'},{icon:'🕌',text:'40 Hadith of Nawawi — memorize, understand & act'},{icon:'🤝',text:'I Am Your Companion — the righteous with the Quran'}],url:'corners/little-district/pages/quran.html',ready:true},
+  {id:'social',icon:'🏘️',nameAr:'حيّنا الصغير',nameEn:'Our Little District',descAr:'البناء الاجتماعي والأخلاقي',descEn:'Social & Moral Building',accent:'#D4A017',gradient:'linear-gradient(160deg,rgba(212,160,23,.2),transparent)',badge:'👋',progress:0,character:{charNameAr:'نسيبة',charNameEn:'Nusaybah',emoji:'👧',charQuoteAr:'أنا نسيبة، لنحسن أخلاقنا!',charQuoteEn:"I'm Nusaybah, let's improve our manners!"},featuresAr:[{icon:'🗣️',text:'آداب الطفل المسلم — السلام والاستئذان والمجلس'},{icon:'🏠',text:'أخلاق الطفل المسلم — بيت الصدق وحصن الأمانة'},{icon:'🌟',text:'رحلة البحث عن الكنز — الإحسان والتواضع'}],featuresEn:[{icon:'🗣️',text:'Muslim Child Manners — greetings & etiquette'},{icon:'🏠',text:'Muslim Child Character — truth & trust'},{icon:'🌟',text:'Treasure Hunt — kindness & humility'}],url:'corners/little-district/pages/social.html',ready:true},
+  {id:'heart',icon:'💚',nameAr:'ركن القلب السليم',nameEn:'Pure Heart Corner',descAr:'البناء العاطفي والنفسي',descEn:'Emotional & Spiritual Growth',accent:'#6C3483',gradient:'linear-gradient(160deg,rgba(108,52,131,.2),transparent)',badge:'🕊️',progress:0,character:{charNameAr:'رقية',charNameEn:'Ruqayyah',emoji:'👧',charQuoteAr:'أنا رقية، تعال نحب الله ونرضى!',charQuoteEn:"I'm Ruqayyah, let's love Allah and be content!"},featuresAr:[{icon:'🌙',text:'حبُّ الله — تعرّفْ إلى ربك بأسمائه الحسنى'},{icon:'🤍',text:'حبُّ الرسول ﷺ — اعرفه في ثماني محطّات فتحبّه'},{icon:'👨‍👩‍👧',text:'برُّ الوالدين — بابٌ إلى الجنّة'},{icon:'🤝',text:'الحبُّ في الله — أوثقُ عُرى الإيمان'},{icon:'💎',text:'سلامةُ القلب — قلبٌ مطمئنٌّ صافٍ'}],featuresEn:[{icon:'🌙',text:'Love of Allah — know your Lord by His Beautiful Names'},{icon:'🤍',text:'Love of the Prophet ﷺ — in eight stations'},{icon:'👨‍👩‍👧',text:'Honoring Parents — a gate to Paradise'},{icon:'🤝',text:"Love for Allah's Sake — the firmest handhold of faith"},{icon:'💎',text:'A Sound Heart — tranquil & pure'}],url:'corners/heroes-fortress/heart.html',ready:true},
+  {id:'history',icon:'🏰',nameAr:'حصن الأبطال',nameEn:"Heroes' Fortress",descAr:'تاريخ الإسلام والقدوات',descEn:'Islamic History & Role Models',accent:'#E67E22',gradient:'linear-gradient(160deg,rgba(230,126,34,.2),transparent)',badge:'⚔️',progress:0,character:{charNameAr:'محمد',charNameEn:'Muhammad',emoji:'👦',charQuoteAr:'هيا نتعلم سيرة أبطالنا!',charQuoteEn:"Let's learn about our heroes!"},featuresAr:[{icon:'🕊️',text:'عصر الأنبياء — من آدم إلى عيسى عليهم السلام'},{icon:'📜',text:'السيرة النبوية — رحلة الـ ٢٣ عاماً التي غيّرت الأرض'},{icon:'🦅',text:'الأبطال — سير الصحابة والصحابيات الكرام'},{icon:'🌍',text:'المعارك والفتوحات — القادسية واليرموك وغيرها'}],featuresEn:[{icon:'🕊️',text:'Era of the Prophets — from Adam to Isa'},{icon:'📜',text:'The Seerah — the 23-year journey that changed the world'},{icon:'🦅',text:'The Heroes — lives of the noble Companions'},{icon:'🌍',text:'Battles & Conquests — Qadisiyyah, Yarmouk & more'}],url:'corners/heroes-fortress/fortress.html',ready:true},
+  {id:'sport',icon:'🏊',nameAr:'النادي الرياضي',nameEn:'Sports Club',descAr:'البناء الجسدي والصحي',descEn:'Physical & Health Building',accent:'#27AE60',gradient:'linear-gradient(160deg,rgba(39,174,96,.2),transparent)',badge:'💪',progress:0,character:{charNameAr:'عمر',charNameEn:'Omar',emoji:'👦',charQuoteAr:'أنا عمر، الرياضة سنة وقوة!',charQuoteEn:"I'm Omar, sports are Sunnah and strength!"},featuresAr:[{icon:'🎯',text:'الرماية والسباحة والخيل — توجيهات النبي ﷺ'},{icon:'🪥',text:'سنن الفطرة والنظافة الشخصية'},{icon:'📋',text:'تحدي النظافة اليومي — جدول السواك والتحصين'}],featuresEn:[{icon:'🎯',text:'Archery, swimming & horse — Prophetic guidance'},{icon:'🪥',text:'Sunnah of cleanliness & hygiene'},{icon:'📋',text:'Daily Cleanliness Challenge'}],url:'corners/little-district/pages/sport.html',ready:true},
+  {id:'academy',icon:'🔭',nameAr:'أكاديمية المبدعين',nameEn:"Innovators' Academy",descAr:'البناء العلمي والفكري',descEn:'Intellectual & Creative Building',accent:'#2980B9',gradient:'linear-gradient(160deg,rgba(41,128,185,.2),transparent)',badge:'💡',progress:0,character:{charNameAr:'لين',charNameEn:'Lynn',emoji:'👧',charQuoteAr:'أنا لين، لنكتشف ونفكر معاً!',charQuoteEn:"I'm Lynn, let's discover and think together!"},featuresAr:[{icon:'💡',text:'كن أنت المبدع — رحلة الوعي (١٥ محطة)'},{icon:'📜',text:'لغتي العربية — كنز الهوية (١٥ محطة)'},{icon:'🗼',text:'منارة العالم — حين كانت حضارتنا منارة الدنيا'},{icon:'🔭',text:'رحلة المستكشفين — ١٤ عالِماً في العلوم التجريبية'},{icon:'📖',text:'عقول منيرة — ١٨ عالِماً في الفقه والحديث والتفسير'}],featuresEn:[{icon:'💡',text:'Be the Creator — awareness journey (15 stations)'},{icon:'📜',text:'My Arabic Language — treasure of identity (15 stations)'},{icon:'🗼',text:"The World's Lighthouse — when our civilization lit the world"},{icon:'🔭',text:"The Explorers' Journey — 14 scientists of the empirical sciences"},{icon:'📖',text:'Illuminating Minds — 18 scholars of fiqh, hadith & tafsir'}],url:'corners/heroes-fortress/academy.html',ready:true},
+  {id:'quds',icon:`<svg viewBox="0 0 64 58" width="52" height="52" xmlns="http://www.w3.org/2000/svg">
+    <!-- Ground platform -->
+    <rect x="0" y="50" width="64" height="8" fill="#9B8A68" rx="2"/>
+    <!-- Left minaret -->
+    <rect x="3" y="24" width="5" height="28" fill="#C8B88A" rx="1"/>
+    <path d="M1,24 L5.5,17 L10,24Z" fill="#C8A020"/>
+    <rect x="4.5" y="14" width="2" height="4" fill="#C8A020"/>
+    <!-- Right minaret -->
+    <rect x="56" y="24" width="5" height="28" fill="#C8B88A" rx="1"/>
+    <path d="M54,24 L58.5,17 L63,24Z" fill="#C8A020"/>
+    <rect x="57.5" y="14" width="2" height="4" fill="#C8A020"/>
+    <!-- Octagonal base — blue tile -->
+    <rect x="11" y="37" width="42" height="15" fill="#1A6EA8" rx="2"/>
+    <rect x="11" y="37" width="42" height="5"  fill="#2E8FCE" rx="1"/>
+    <!-- Arched windows on base -->
+    <path d="M18,37 L18,44 Q18,47 21,47 Q24,47 24,44 L24,37Z" fill="#145888"/>
+    <path d="M29,37 L29,44 Q29,47 32,47 Q35,47 35,44 L35,37Z" fill="#145888"/>
+    <path d="M40,37 L40,44 Q40,47 43,47 Q46,47 46,44 L46,37Z" fill="#145888"/>
+    <!-- Drum of dome — gold band -->
+    <rect x="17" y="29" width="30" height="10" fill="#C8A020" rx="1"/>
+    <!-- Arched windows on drum -->
+    <path d="M21,29 L21,35 Q21,38 23.5,38 Q26,38 26,35 L26,29Z" fill="#9A7A10"/>
+    <path d="M30,29 L30,35 Q30,38 32.5,38 Q35,38 35,35 L35,29Z" fill="#9A7A10"/>
+    <path d="M38,29 L38,35 Q38,38 40.5,38 Q43,38 43,35 L43,29Z" fill="#9A7A10"/>
+    <!-- The Golden Dome — main shape -->
+    <path d="M13,30 Q13,8 32,5 Q51,8 51,30Z" fill="#D4A017"/>
+    <path d="M15,30 Q15,10 32,7 Q49,10 49,30Z" fill="#F5CC5A"/>
+    <!-- Dome highlight shimmer -->
+    <ellipse cx="26" cy="16" rx="5" ry="7" fill="#FFE57A" opacity="0.42"/>
+    <!-- Drum-dome transition ring -->
+    <ellipse cx="32" cy="30" rx="19" ry="3.5" fill="#C8A020"/>
+    <!-- Finial spire -->
+    <rect x="31" y="1" width="2" height="5" fill="#C8A020"/>
+    <!-- Crescent on top -->
+    <path d="M32,0 Q35.5,3 32,6 Q29.5,3.5 32,0Z" fill="#D4A017"/>
+  </svg>`,nameAr:'ركن القدس والأمة',nameEn:'Corner of Al-Quds & Ummah',descAr:'حب القدس والوعي بقضايا الأمة',descEn:'Love of Al-Quds & Ummah awareness',accent:'#2E8B57',gradient:'linear-gradient(160deg,rgba(46,139,87,.2),transparent)',badge:'🕌',progress:5,character:{charNameAr:'حنظلة',charNameEn:'Hanzalah',emoji:'👦',charQuoteAr:'أنا حنظلة، حارس الأقصى الصغير!',charQuoteEn:'I am Hanzalah, the little guardian of Al-Aqsa!'},featuresAr:[{icon:'🕌',text:'رحلة الأقصى — ١٠ محطات: كن أنت فاتح القدس'},{icon:'🤝',text:'الأمّة الواحدة — ١٠ محطات: الوحدة والخلافة'},{icon:'🌅',text:'رحلة التغيير — ١٠ محطات: بناء المسلم القوي'}],featuresEn:[{icon:'🕌',text:'Journey of Al-Aqsa — 10 stations: be the liberator of Al-Quds'},{icon:'🤝',text:'The One Ummah — 10 stations: unity & the caliphate'},{icon:'🌅',text:'Journey of Change — 10 stations: building the strong Muslim'}],url:'corners/little-district/pages/quds.html',ready:true},
+];
+
+/* Curriculum display order on the city map (holistic development of the child).
+   Excludes nothing here — social stays; "Learn with Anous" exclusions are separate. */
+(function(){
+  var ORDER=['aqeeda','ibada','quran','history','social','heart','sport','academy','quds'];
+  buildings.sort(function(a,b){ var ia=ORDER.indexOf(a.id), ib=ORDER.indexOf(b.id); return (ia<0?99:ia)-(ib<0?99:ib); });
+})();
+
+const parentsCorner = {
+  id:'parents',icon:'🧔',nameAr:'ركن الأهل',nameEn:"Parents' Corner",
+  descAr:'لوحة تحكم المربي — متابعة التقدم ومقالات التربية المتوازنة',
+  descEn:'Educator Dashboard — progress tracking & parenting articles',
+  accent:'#8E44AD',gradient:'linear-gradient(160deg,rgba(142,68,173,.2),transparent)',badge:'🎓',progress:60,
+  characters:[{charNameAr:'المربي',charNameEn:'Al-Murabbi',emoji:'🧔'},{charNameAr:'المربية',charNameEn:'Al-Murabbiyah',emoji:'🧕'}],
+  featuresAr:[{icon:'📊',text:'متابعة دقيقة لتقدم الطفل في الأركان التسعة'},{icon:'📰',text:'مقالات إرشادية حول التربية الإسلامية المتوازنة'},{icon:'🖨️',text:'شهادات تميز PDF بالاسم — جاهزة للطباعة والاحتفاء'}],
+  featuresEn:[{icon:'📊',text:"Track your child's progress across all 9 pillars"},{icon:'📰',text:'Guidance articles on balanced Islamic Tarbiyah'},{icon:'🖨️',text:'Personalised PDF achievement certificates'}],
+  url:'corners/little-district/pages/parents.html',ready:true,
+};
+
+const anosCorner = {
+  id:'activities',icon:'🎲',nameAr:'ركن الأنشطة',nameEn:'Activities Corner',
+  descAr:'لوحة أنشطة «أنوس» — ألعابٌ وتحدّياتٌ تفاعلية ممتعة لكلِّ الأركان',
+  descEn:"Anos' activity dashboard — fun interactive games & challenges across the corners",
+  accent:'#C9A961',gradient:'linear-gradient(160deg,rgba(201,169,97,.22),transparent)',badge:'🎲',progress:0,
+  characters:[{charNameAr:'أنوس',charNameEn:'Anos',emoji:'🧒'}],
+  featuresAr:[{icon:'🎯',text:'ألعابٌ وتحدّياتٌ تفاعلية تجمع أنشطة الأركان'},{icon:'🏆',text:'اجمع النقاط والأوسمة وأنت تلعب وتتعلّم'},{icon:'🧩',text:'لوحةُ تحكّمٍ ممتعة يقودها صديقك «أنوس»'}],
+  featuresEn:[{icon:'🎯',text:'Interactive games & challenges across the corners'},{icon:'🏆',text:'Collect points & medals as you play and learn'},{icon:'🧩',text:'A fun dashboard led by your friend Anos'}],
+  url:'corners/activities/dashboard.html',ready:true,
+};
+
+/* ══════════════════════════════════════════════════
+   TRANSLATIONS
+══════════════════════════════════════════════════ */
+const T = {
+  ar:{
+    brand:'تربية الطفل المسلم',
+    cityTitle:'تربية الطفل المسلم',
+    citySubtitle:'اختر ركناً وابدأ رحلة البناء مع المربي والمربية',
+    charName1:'المربي', charSpeech1:'أنا المربي، معاً نبني جيلاً واعياً!',
+    charName2:'المربية', charSpeech2:'وأنا المربية، لنجعل الرحلة هادفة وممتعة!',
+    mapLabel:'خريطة المدينة',
+    sbTitle:'تربية الطفل المسلم', sbNav:'خريطة المدينة', sbAbout:'عن الموقع',
+    ftBrand:'تربية الطفل المسلم', ftTagline:'منصّةٌ تربويّةٌ إسلاميّةٌ مجّانيّةٌ للأطفال — صدقةٌ جارية.',
+    ftQuickT:'روابط سريعة', ftContactT:'تواصل معنا', ftPartnersT:'شركاؤنا',
+    ftPartnersNote:'نفخر بالتعاون مع المؤسّسات التربويّة. كُن شريكًا في النفع.',
+    ft:{register:'👤 التسجيل / دخول', community:'👥 مجتمع العائلات', store:'🛍️ متجر الدعم', support:'🤝 ادعَمْنا', downloads:'📥 ركن التنزيلات',
+      email:'✉️ البريد الإلكتروني', whatsapp:'💬 واتساب', facebook:'👍 فيسبوك', linkedin:'🔗 لينكدإن', becomePartner:'🤝 كن شريكًا'},
+    sectionLbl:'أركان تربية الطفل المسلم',
+    enter:'ادخل الركن ←', progressText:'أُنجز',
+    footer:'صُنع بحب ❤️ لأطفال الأمة — تربية الطفل المسلم © 2026',
+    charLeads:'يقودك في هذا الركن',
+    parentsHere:'معكم دوماً',
+    verses:[
+      '﴿ إِنَّ اللَّهَ يُحِبُّ الَّذِينَ يُقَاتِلُونَ فِي سَبِيلِهِ صَفًّا كَأَنَّهُم بُنْيَانٌ مَّرْصُوصٌ ﴾ — الصف:4',
+      '«إنما بُعثت لأُتمِّم مكارم الأخلاق» — النبي ﷺ',
+      '﴿ وَتَعَاوَنُوا عَلَى الْبِرِّ وَالتَّقْوَىٰ ﴾ — المائدة:2',
+      '«طلب العلم فريضة على كل مسلم» — النبي ﷺ',
+      '﴿ إِنَّ اللَّهَ مَعَ الَّذِينَ اتَّقَوا وَّالَّذِينَ هُم مُّحْسِنُونَ ﴾ — النحل:128',
+    ],
+    soundTxt:'الصوت الطبيعي لهذا الركن',
+  },
+  en:{
+    brand:'Muslim Kids’ Tarbiyah',
+    cityTitle:'Muslim Kids’ Tarbiyah',
+    citySubtitle:'Choose a corner and start building with Al-Murabbi & Al-Murabbiyah',
+    charName1:'Al-Murabbi', charSpeech1:'I am Al-Murabbi, together we build a conscious generation!',
+    charName2:'Al-Murabbiyah', charSpeech2:'And I am Al-Murabbiyah, let\'s make the journey meaningful and fun!',
+    mapLabel:'City Map',
+    sbTitle:'Muslim Kids’ Tarbiyah', sbNav:'City Map', sbAbout:'About Us',
+    ftBrand:'Muslim Kids’ Tarbiyah', ftTagline:'A free Islamic learning platform for children — an ongoing charity.',
+    ftQuickT:'Quick Links', ftContactT:'Contact Us', ftPartnersT:'Our Partners',
+    ftPartnersNote:'We’re proud to collaborate with educational institutions. Be a partner in benefit.',
+    ft:{register:'👤 Register / Log in', community:'👥 Family Community', store:'🛍️ Support Store', support:'🤝 Support Us', downloads:'📥 Downloads',
+      email:'✉️ Email', whatsapp:'💬 WhatsApp', facebook:'👍 Facebook', linkedin:'🔗 LinkedIn', becomePartner:'🤝 Become a partner'},
+    sectionLbl:'Corners of Muslim Kids’ Tarbiyah',
+    enter:'Enter Corner →', progressText:'Done',
+    footer:'Made with ❤️ for the children of the Ummah — Muslim Kids’ Tarbiyah © 2026',
+    charLeads:'Your guide in this corner',
+    parentsHere:'Here for you always',
+    verses:[
+      '﴿ Indeed Allah loves those who fight in His cause in a row as though they are a single structure firmly cemented ﴾ — As-Saff:4',
+      '"I was sent to perfect noble character." — The Prophet ﷺ',
+      '﴿ Cooperate in righteousness and piety ﴾ — Al-Ma\'idah:2',
+      '"Seeking knowledge is an obligation upon every Muslim." — The Prophet ﷺ',
+      '﴿ Indeed Allah is with those who fear Him and those who do good ﴾ — An-Nahl:128',
+    ],
+    soundTxt:'Natural sound of this corner',
+  }
+};
+
+/* ══════════════════════════════════════════════════
+   ABOUT DATA (preserved)
+══════════════════════════════════════════════════ */
+const aboutData = {
+  ar:{title:'من نحن',subtitle:'تعرف على تربية الطفل المسلم',sections:[{icon:'👤',title:'من نحن',text:'نحن منصة تربوية إسلامية تهدف إلى بناء شخصية الطفل المسلم المتوازنة من خلال أنشطة تفاعلية ومحتوى هادف.'},{icon:'🎯',title:'هدفنا',text:'غرس القيم الإسلامية بأسلوب ممتع، ومساعدة الأطفال على حب دينهم وهويتهم من خلال اللعب والاستكشاف.'},{icon:'🔭',title:'رؤيتنا',text:'نحو جيل قرآني واعٍ، مبدع، ومتصل بتاريخه وأمته، يساهم في نهضة المجتمع.'},{icon:'📧',title:'التواصل والدعم',text:'للاستفسار أو الدعم الفني:<br>البريد: <a href="mailto:bassamomda91@gmail.com" style="color:var(--gold-lt)">bassamomda91@gmail.com</a>'}],closeBtn:'حسناً'},
+  en:{title:'About Us',subtitle:'Discover Muslim Kids’ Tarbiyah',sections:[{icon:'👤',title:'Who We Are',text:'We are an Islamic educational platform dedicated to building a balanced Muslim child personality through interactive activities and purposeful content.'},{icon:'🎯',title:'Our Goal',text:'To instill Islamic values in a fun way, and help children love their religion and identity through play and exploration.'},{icon:'🔭',title:'Our Vision',text:'Towards a conscious Quranic generation, creative and connected to its history and Ummah, contributing to the advancement of society.'},{icon:'📧',title:'Contact & Support',text:'For inquiries or technical support:<br>Email: <a href="mailto:bassamomda91@gmail.com" style="color:var(--gold-lt)">bassamomda91@gmail.com</a>'}],closeBtn:'Okay'},
+};
+
+/* ══════════════════════════════════════════════════
+   WEB AUDIO (enhanced — longer ambient sounds)
+══════════════════════════════════════════════════ */
+let audioCtx = null;
+let currentNodes = [];
+let soundTimer = null;
+
+function getCtx() {
+  if (!audioCtx) audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+  if (audioCtx.state === 'suspended') audioCtx.resume();
+  return audioCtx;
+}
+
+function createNoiseBuffer(ctx, dur, color) {
+  const sr=ctx.sampleRate, len=sr*dur, buf=ctx.createBuffer(1,len,sr), data=buf.getChannelData(0);
+  if (color==='white') { for(let i=0;i<len;i++) data[i]=Math.random()*2-1; }
+  else if (color==='pink') {
+    let b0=0,b1=0,b2=0,b3=0,b4=0,b5=0,b6=0;
+    for(let i=0;i<len;i++){const w=Math.random()*2-1;b0=0.99886*b0+w*0.0555179;b1=0.99332*b1+w*0.0750759;b2=0.96900*b2+w*0.1538520;b3=0.86650*b3+w*0.3104856;b4=0.55000*b4+w*0.5329522;b5=-0.7616*b5-w*0.0168980;data[i]=(b0+b1+b2+b3+b4+b5+b6+w*0.5362)*0.11;b6=w*0.115926;}
+  } else if (color==='brown') {
+    let last=0; for(let i=0;i<len;i++){const w=Math.random()*2-1;last=(last+w*0.02)*0.99;data[i]=last*3;}
+  }
+  return buf;
+}
+
+function stopAllSounds() {
+  currentNodes.forEach(n => { try { n.stop && n.stop(0); n.disconnect && n.disconnect(); } catch(e){} });
+  currentNodes = [];
+  if (soundTimer) { clearTimeout(soundTimer); soundTimer = null; }
+}
+
+function playNode(ctx, src, gainNode, dest) {
+  src.connect(gainNode); gainNode.connect(dest || ctx.destination);
+  currentNodes.push(src, gainNode);
+  return { src, g: gainNode };
+}
+
+const soundFuncs = {
+  aqeeda: () => {
+    const c=getCtx(), n=c.currentTime;
+    // Long desert wind
+    const buf=createNoiseBuffer(c,5,'brown'), s=c.createBufferSource(); s.buffer=buf;
+    const f=c.createBiquadFilter(); f.type='lowpass'; f.frequency.setValueAtTime(180,n); f.frequency.linearRampToValueAtTime(320,n+2); f.frequency.linearRampToValueAtTime(160,n+4.5);
+    const g=c.createGain(); g.gain.setValueAtTime(0,n); g.gain.linearRampToValueAtTime(0.12,n+0.5); g.gain.linearRampToValueAtTime(0.09,n+3); g.gain.exponentialRampToValueAtTime(0.001,n+5);
+    s.connect(f); f.connect(g); g.connect(c.destination); s.start(n); s.stop(n+5.2);
+    currentNodes.push(s,f,g);
+    // Spiritual tone overtone
+    [220,330].forEach((fr,i) => {
+      const o=c.createOscillator(), og=c.createGain(); o.type='sine'; o.frequency.value=fr;
+      og.gain.setValueAtTime(0,n+i*0.4); og.gain.linearRampToValueAtTime(0.04,n+i*0.4+0.8); og.gain.linearRampToValueAtTime(0,n+4.5);
+      o.connect(og); og.connect(c.destination); o.start(n+i*0.4); o.stop(n+5);
+      currentNodes.push(o,og);
+    });
+  },
+  ibada: () => {
+    const c=getCtx(), n=c.currentTime;
+    // Spiritual call tone — pure sine waves only, smooth hall reverb, zero harshness
+    // Build a smooth, long reverb tail
+    const irLen=Math.floor(c.sampleRate*2.8);
+    const ir=c.createBuffer(1,irLen,c.sampleRate);
+    const d=ir.getChannelData(0);
+    for(let i=0;i<irLen;i++) d[i]=(Math.random()*2-1)*Math.exp(-i/(c.sampleRate*0.9))*0.4;
+    const conv=c.createConvolver(); conv.buffer=ir;
+    const rv=c.createGain(); rv.gain.value=0.38;
+    conv.connect(rv); rv.connect(c.destination);
+    currentNodes.push(conv,rv);
+    // Only two pure sine waves: G3 (196Hz) + D4 (294Hz) — a perfect fifth, warm and clean
+    [[196,0.16],[294,0.07]].forEach(([freq,vol])=>{
+      const o=c.createOscillator(), g=c.createGain();
+      o.type='sine'; o.frequency.value=freq;
+      // Very slow, gentle attack and long decay — no abrupt changes
+      g.gain.setValueAtTime(0,n);
+      g.gain.linearRampToValueAtTime(vol, n+0.55);   // soft attack
+      g.gain.setValueAtTime(vol, n+1.8);             // hold
+      g.gain.linearRampToValueAtTime(0, n+3.8);      // slow decay
+      o.connect(g); g.connect(c.destination); g.connect(conv);
+      o.start(n); o.stop(n+4.0);
+      currentNodes.push(o,g);
+    });
+  },
+  quran: () => {
+    const c=getCtx(), n=c.currentTime;
+    const chirp=(freq,t,dur=0.1)=>{const o=c.createOscillator(),g=c.createGain();o.type='sine';o.frequency.setValueAtTime(freq,t);o.frequency.linearRampToValueAtTime(freq*1.35,t+dur*0.4);o.frequency.linearRampToValueAtTime(freq*0.88,t+dur);g.gain.setValueAtTime(0,t);g.gain.linearRampToValueAtTime(0.13,t+0.012);g.gain.exponentialRampToValueAtTime(0.001,t+dur+0.06);o.connect(g);g.connect(c.destination);o.start(t);o.stop(t+dur+0.1);currentNodes.push(o,g)};
+    [[2400,2800,2200],[3000,2600,3300],[2200,2600,3000,2400]].forEach((p,pi)=>p.forEach((fr,fi)=>chirp(fr,n+pi*1.5+fi*0.12)));
+    // Light breeze underneath
+    const buf=createNoiseBuffer(c,5,'pink'),s=c.createBufferSource();s.buffer=buf;
+    const f=c.createBiquadFilter();f.type='highpass';f.frequency.value=2500;
+    const g=c.createGain();g.gain.setValueAtTime(0,n);g.gain.linearRampToValueAtTime(0.05,n+0.5);g.gain.linearRampToValueAtTime(0,n+5);
+    s.connect(f);f.connect(g);g.connect(c.destination);s.start(n);s.stop(n+5.2);currentNodes.push(s,f,g);
+  },
+  social: () => {
+    const c=getCtx(), n=c.currentTime;
+    [0,0.18,0.36].forEach(o=>{const osc=c.createOscillator(),g=c.createGain();osc.type='sine';osc.frequency.setValueAtTime(180,n+o);osc.frequency.exponentialRampToValueAtTime(80,n+o+0.09);g.gain.setValueAtTime(0,n+o);g.gain.linearRampToValueAtTime(0.2,n+o+0.01);g.gain.exponentialRampToValueAtTime(0.001,n+o+0.14);osc.connect(g);g.connect(c.destination);osc.start(n+o);osc.stop(n+o+0.15);currentNodes.push(osc,g)});
+    // Birds
+    const chirp=(freq,t)=>{const o=c.createOscillator(),g=c.createGain();o.type='sine';o.frequency.setValueAtTime(freq,t);o.frequency.linearRampToValueAtTime(freq*1.3,t+0.08);g.gain.setValueAtTime(0,t);g.gain.linearRampToValueAtTime(0.1,t+0.01);g.gain.exponentialRampToValueAtTime(0.001,t+0.1);o.connect(g);g.connect(c.destination);o.start(t);o.stop(t+0.12);currentNodes.push(o,g)};
+    [2300,2700,2100].forEach((fr,i)=>chirp(fr,n+1.2+i*0.15));
+  },
+  heart: () => {
+    const c=getCtx(), n=c.currentTime;
+    for(let i=0;i<5;i++){[0,0.14].forEach(offset=>{
+      const o=c.createOscillator(),g=c.createGain();
+      o.type='sine';o.frequency.value=58;
+      const t=n+i*0.9+offset;
+      g.gain.setValueAtTime(0,t);g.gain.linearRampToValueAtTime(0.55,t+0.03);g.gain.exponentialRampToValueAtTime(0.001,t+0.24);
+      // Sub-bass body thump
+      const o2=c.createOscillator(),g2=c.createGain();
+      o2.type='sine';o2.frequency.value=38;
+      g2.gain.setValueAtTime(0,t);g2.gain.linearRampToValueAtTime(0.3,t+0.02);g2.gain.exponentialRampToValueAtTime(0.001,t+0.18);
+      o.connect(g);g.connect(c.destination);o.start(t);o.stop(t+0.28);
+      o2.connect(g2);g2.connect(c.destination);o2.start(t);o2.stop(t+0.22);
+      currentNodes.push(o,g,o2,g2);
+    })}
+  },
+  history: () => {
+    const c=getCtx(), n=c.currentTime;
+    const buf=createNoiseBuffer(c,5,'brown'),s=c.createBufferSource();s.buffer=buf;
+    const f=c.createBiquadFilter();f.type='lowpass';f.frequency.value=260;f.Q.value=0.5;
+    const g=c.createGain();g.gain.setValueAtTime(0,n);g.gain.linearRampToValueAtTime(0.2,n+0.6);g.gain.linearRampToValueAtTime(0.08,n+4);g.gain.exponentialRampToValueAtTime(0.001,n+5);
+    s.connect(f);f.connect(g);g.connect(c.destination);s.start(n);s.stop(n+5.2);currentNodes.push(s,f,g);
+  },
+  sport: () => {
+    const c=getCtx(), n=c.currentTime;
+    const buf=createNoiseBuffer(c,4,'pink'),s=c.createBufferSource();s.buffer=buf;
+    const f=c.createBiquadFilter();f.type='bandpass';f.frequency.value=700;f.Q.value=0.55;
+    const g=c.createGain();g.gain.setValueAtTime(0,n);g.gain.linearRampToValueAtTime(0.1,n+0.4);g.gain.linearRampToValueAtTime(0.07,n+3);g.gain.exponentialRampToValueAtTime(0.001,n+4);
+    s.connect(f);f.connect(g);g.connect(c.destination);s.start(n);s.stop(n+4.2);currentNodes.push(s,f,g);
+  },
+  academy: () => {
+    const c=getCtx(), n=c.currentTime;
+    // Smooth book page turns — 4 soft paper swooshes, each bandpass-swept from high to low
+    [0, 0.52, 1.04, 1.56].forEach(delay => {
+      const buf=createNoiseBuffer(c,0.32,'white'), s=c.createBufferSource(); s.buffer=buf;
+      const f=c.createBiquadFilter(); f.type='bandpass'; f.Q.value=1.1;
+      f.frequency.setValueAtTime(3000, n+delay);
+      f.frequency.linearRampToValueAtTime(650,  n+delay+0.28); // high→low = natural page turn
+      const g=c.createGain();
+      g.gain.setValueAtTime(0,    n+delay);
+      g.gain.linearRampToValueAtTime(0.08, n+delay+0.04);  // gentle peak
+      g.gain.linearRampToValueAtTime(0,    n+delay+0.32);  // smooth fade
+      s.connect(f); f.connect(g); g.connect(c.destination);
+      s.start(n+delay); s.stop(n+delay+0.38);
+      currentNodes.push(s,f,g);
+    });
+    // Soft book-close thud at end
+    const buf2=createNoiseBuffer(c,0.28,'brown'), s2=c.createBufferSource(); s2.buffer=buf2;
+    const f2=c.createBiquadFilter(); f2.type='lowpass'; f2.frequency.value=280;
+    const g2=c.createGain();
+    g2.gain.setValueAtTime(0, n+2.15);
+    g2.gain.linearRampToValueAtTime(0.11, n+2.17);
+    g2.gain.exponentialRampToValueAtTime(0.001, n+2.43);
+    s2.connect(f2); f2.connect(g2); g2.connect(c.destination);
+    s2.start(n+2.15); s2.stop(n+2.5);
+    currentNodes.push(s2,f2,g2);
+  },
+  quds: () => {
+    const c=getCtx(), n=c.currentTime;
+    // Gentle wind through ancient stone corridors — calm, evocative, no harsh tones
+    const buf=createNoiseBuffer(c,5,'pink'), s=c.createBufferSource(); s.buffer=buf;
+    const f=c.createBiquadFilter(); f.type='lowpass';
+    f.frequency.setValueAtTime(380, n);
+    f.frequency.linearRampToValueAtTime(550, n+2.0);
+    f.frequency.linearRampToValueAtTime(320, n+4.5);
+    const g=c.createGain();
+    g.gain.setValueAtTime(0,   n);
+    g.gain.linearRampToValueAtTime(0.1,  n+0.9);   // slow fade in
+    g.gain.setValueAtTime(0.09, n+3.5);
+    g.gain.linearRampToValueAtTime(0,    n+5.0);
+    s.connect(f); f.connect(g); g.connect(c.destination);
+    s.start(n); s.stop(n+5.2);
+    currentNodes.push(s,f,g);
+    // Soft deep stone resonance underneath — A1 (55Hz), barely audible, adds depth
+    const o=c.createOscillator(), og=c.createGain();
+    o.type='sine'; o.frequency.value=55;
+    og.gain.setValueAtTime(0,    n);
+    og.gain.linearRampToValueAtTime(0.04, n+1.2);
+    og.gain.linearRampToValueAtTime(0,    n+4.5);
+    o.connect(og); og.connect(c.destination);
+    o.start(n); o.stop(n+5.0);
+    currentNodes.push(o,og);
+  },
+  parents: () => {
+    const c=getCtx(), n=c.currentTime;
+    // Children's laughter — pink noise shaped by bandpass (voice-like), rhythmic "ha ha ha"
+    // Using noise, NOT oscillators, gives a far more natural, breathy quality
+    const buf=createNoiseBuffer(c,2.8,'pink');
+    // [startTime, centerFreq, duration, gain] — three children overlapping
+    [
+      [0.00,  920, 0.13, 0.20],  // child 1 "ha"
+      [0.22,  880, 0.12, 0.18],  // child 1 "ha"
+      [0.44,  940, 0.13, 0.19],  // child 1 "ha"
+      [0.28,  680, 0.11, 0.16],  // child 2 "ha"
+      [0.50,  720, 0.12, 0.17],  // child 2 "ha"
+      [0.72,  660, 0.12, 0.15],  // child 2 "ha"
+      [0.78, 1150, 0.08, 0.14],  // child 3 giggle
+      [0.88, 1200, 0.08, 0.13],  // child 3 giggle
+      [0.98, 1080, 0.09, 0.14],  // child 3 giggle
+      [1.25,  850, 0.14, 0.16],  // group laugh continues
+      [1.42,  780, 0.13, 0.14],
+      [1.60,  920, 0.12, 0.13],
+      [1.80,  700, 0.16, 0.10],  // trailing off
+      [2.00,  800, 0.14, 0.08],
+    ].forEach(([t,freq,dur,vol])=>{
+      const s=c.createBufferSource(); s.buffer=buf;
+      const f=c.createBiquadFilter(); f.type='bandpass'; f.frequency.value=freq; f.Q.value=2.8;
+      const g=c.createGain();
+      g.gain.setValueAtTime(0,      n+t);
+      g.gain.linearRampToValueAtTime(vol,  n+t+0.016);
+      g.gain.linearRampToValueAtTime(vol*0.6, n+t+dur*0.55);
+      g.gain.exponentialRampToValueAtTime(0.001, n+t+dur+0.04);
+      s.connect(f); f.connect(g); g.connect(c.destination);
+      s.start(n+t); s.stop(n+t+dur+0.08);
+      currentNodes.push(s,f,g);
+    });
+  }
+};
+
+function playSound(id) {
+  stopAllSounds();
+  const fn = soundFuncs[id];
+  if (fn) { try { fn(); } catch(e) { console.warn('Sound:', e); } }
+  // Toast
+  const b = buildings.find(b=>b.id===id);
+  const name = b ? (lang==='ar'?b.nameAr:b.nameEn) : (lang==='ar'?'ركن الأهل':"Parents' Corner");
+  document.getElementById('soundToastTxt').textContent = name + ' — ' + T[lang].soundTxt;
+  const toast = document.getElementById('soundToast');
+  toast.classList.add('show');
+  if (soundTimer) clearTimeout(soundTimer);
+  soundTimer = setTimeout(() => { toast.classList.remove('show'); stopAllSounds(); }, 5500);
+}
+
+/* ══════════════════════════════════════════════════
+   STARS
+══════════════════════════════════════════════════ */
+function makeStars() {
+  const bg = document.getElementById('starsBg');
+  const frag = document.createDocumentFragment();
+  for (let i=0; i<45; i++) {
+    const s = document.createElement('div'); s.className='star';
+    const sz = Math.random()*2.8+0.4;
+    s.style.cssText=`width:${sz}px;height:${sz}px;top:${Math.random()*48}%;left:${Math.random()*100}%;--dl:${Math.random()*5}s;--d:${2+Math.random()*4}s`;
+    frag.appendChild(s);
+  }
+  bg.appendChild(frag);
+}
+
+/* ══════════════════════════════════════════════════
+   SHOOTING STAR
+══════════════════════════════════════════════════ */
+function triggerShootingStar() {
+  const el = document.getElementById('shootingStar');
+  if (!el) return;
+  el.style.transition='none'; el.style.opacity='1'; el.style.transform='translate(0,0)';
+  setTimeout(()=>{ el.style.transition='all 2s ease-out'; el.style.opacity='0'; el.style.transform='translate(-380px,380px)'; },60);
+  setTimeout(triggerShootingStar, 9000+Math.random()*12000);
+}
+
+/* ══════════════════════════════════════════════════
+   TICKER
+══════════════════════════════════════════════════ */
+function renderTicker() {
+  const el = document.getElementById('tickerTrack');
+  const items = T[lang].verses.map(v=>`<span class="ticker-item">${v}</span><span class="ticker-dot">✦</span>`).join('');
+  el.innerHTML = items + items;
+}
+
+/* ══════════════════════════════════════════════════
+   CHARACTER PARADE (9 children)
+══════════════════════════════════════════════════ */
+function renderParade() {
+  const parade = document.getElementById('charsParade');
+  if(!window.__bSorted){window.__bSorted=1;var __o=['aqeeda','ibada','quran','social','heart','history','sport','academy','quds'];buildings.sort(function(a,b){return __o.indexOf(a.id)-__o.indexOf(b.id);});}
+  parade.innerHTML = buildings.map((b,i) => {
+    const c = b.character;
+    const name = lang==='ar' ? c.charNameAr : c.charNameEn;
+    const tip = lang==='ar' ? `${name} — ${b.nameAr}` : `${name} — ${b.nameEn}`;
+    return `<div class="char-pin" style="--bd:${3.5+i*0.28}s;--bdl:${i*0.4}s" onclick="scrollToBuilding('${b.id}')">
+      <div class="char-tooltip">${tip}</div>
+      <div class="char-face" style="background:linear-gradient(160deg,${b.accent}44,${b.accent}18);border-color:${b.accent}88">${c.emoji}</div>
+      <div class="char-tag" style="border-color:${b.accent}44">${name}</div>
+    </div>`;
+  }).join('');
+}
+
+function scrollToBuilding(id) {
+  const el = document.getElementById('card-'+id);
+  if (el) el.scrollIntoView({behavior:'smooth',block:'center'});
+}
+
+/* ══════════════════════════════════════════════════
+   SIDEBAR
+══════════════════════════════════════════════════ */
+function toggleSidebar(){document.getElementById('sidebarDrawer').classList.toggle('open');document.getElementById('sidebarOverlay').classList.toggle('open')}
+function closeSidebar(){document.getElementById('sidebarDrawer').classList.remove('open');document.getElementById('sidebarOverlay').classList.remove('open')}
+
+function renderSidebar() {
+  const nav = document.getElementById('sidebarNav');
+  const t = T[lang];
+  nav.innerHTML = [...buildings, parentsCorner, anosCorner].map(b => {
+    const name = lang==='ar' ? b.nameAr : b.nameEn;
+    const pct = b.progress || 0;
+    const locked = !!(window.MK && MK.isLocked(b.id));
+    return `<a href="${b.url}?lang=${lang}" class="sb-item" style="--item-color:${b.accent}" data-cid="${b.id}" onclick="return sbGuard(event,'${b.id}','${b.url}')">
+      <div class="sb-icon">${b.icon.startsWith('<svg') ? '🕌' : b.icon}</div>
+      <span class="sb-item-name">${name}${locked?' 🔒':''}</span>
+      <div class="sb-prog-mini"><div class="sb-prog-mini-fill" style="width:${pct}%;${b.accent}"></div></div>
+      <span class="sb-item-pct">${pct}%</span>
+    </a>`;
+  }).join('') + `<a href="corners/shared/downloads.html?lang=${lang}" class="sb-item" style="--item-color:#3FA796" onclick="closeSidebar()">
+      <div class="sb-icon">📥</div>
+      <span class="sb-item-name">${lang==='ar'?'ركن التنزيلات':'Downloads'}</span>
+    </a>` + `<a href="corners/shared/store.html?lang=${lang}" class="sb-item" style="--item-color:#1F8A5B" onclick="closeSidebar()">
+      <div class="sb-icon">🛍️</div>
+      <span class="sb-item-name">${lang==='ar'?'متجر الدعم':'Support Store'}</span>
+    </a>` + `<a href="corners/shared/community.html?lang=${lang}" class="sb-item" style="--item-color:#2980B9" onclick="closeSidebar()">
+      <div class="sb-icon">👥</div>
+      <span class="sb-item-name">${lang==='ar'?'مجتمع العائلات':'Community'}</span>
+    </a>`;
+}
+/* honor corner locks from the sidebar too */
+function sbGuard(e, id, url){
+  if(window.MK && MK.isLocked(id) && MK.hasPin()){
+    e.preventDefault();
+    closeSidebar();
+    var b = [...buildings, parentsCorner, anosCorner].find(x=>x.id===id) || {id:id, url:url};
+    tryEnterCorner(b);
+    return false;
+  }
+  closeSidebar();
+  return true;
+}
+
+/* ══════════════════════════════════════════════════
+   MAP RENDER
+══════════════════════════════════════════════════ */
+/* Pull live progress saved by corners into their cards.
+   حيّنا الصغير (social) persists its real % under ld:overallPct. */
+function syncLiveProgress() {
+  try {
+    // Each card mirrors its corner's real score (same data as the corner headers/bag).
+    if (window.MK_J && window.MK && window.MK.CORNERS) {
+      var ERA = { heart: ['heart'], history: ['prophets','seerah','heroes','battles'], academy: ['creativity','minds','explorers'] };
+      function eraDone(e){ try{ var o=JSON.parse(localStorage.getItem('hisn-acts-'+e)||'{}'); var n=0; for(var k in o) if(o[k]) n++; return n; }catch(x){ return 0; } }
+      buildings.forEach(function(b){
+        var st = MK_J.cornerStats(b.id);
+        var done = (st && st.total) ? st.done : 0;
+        var total = (st && st.total) ? st.total : 0;
+        var eras = ERA[b.id];
+        if (eras) eras.forEach(function(e){ var pk=window.HISN&&HISN.activities&&HISN.activities[e]; var t=pk&&pk.list?pk.list.length*3:0; if(t){ done+=eraDone(e); total+=t; } });
+        var FIXED2 = { academy:72, aqeeda:130 };
+        if (FIXED2[b.id] && total) { var p = done/total; total = FIXED2[b.id]; done = Math.round(p*total); }
+        if (total > 0) b.progress = Math.max(0, Math.min(100, Math.round(done/total*100)));
+      });
+    }
+    // حيّنا الصغير (social) uses its test-based % persisted under ld:overallPct.
+    var v = localStorage.getItem('ld:overallPct');
+    if (v !== null) {
+      var s = buildings.find(function(b){ return b.id === 'social'; });
+      if (s) s.progress = Math.max(0, Math.min(100, parseInt(v, 10) || 0));
+    }
+  } catch (e) {}
+}
+
+/* lightweight progress-only refresh — updates fills/percentages in place,
+   NO DOM rebuild (avoids the city-map redraw flash once MK_J loads) */
+function refreshProgress() {
+  try {
+    syncLiveProgress();
+    var t = T[lang];
+    buildings.forEach(function(b){
+      var card = document.getElementById('card-' + b.id);
+      if (!card) return;
+      var pct = b.progress || 0;
+      var fill = card.querySelector('.b-prog-fill');
+      var lbl  = card.querySelector('.b-prog-pct');
+      var ring = card.querySelector('.b-prog-ring circle:last-child');
+      if (fill) fill.style.width = pct + '%';
+      if (lbl)  lbl.textContent = (t && t.progressText ? t.progressText + ' ' : '') + pct + '%';
+      if (ring) { var C = 2*Math.PI*25; ring.style.strokeDasharray = C; ring.style.strokeDashoffset = C*(1-pct/100); }
+    });
+  } catch (e) {}
+}
+
+function renderMap() {
+  const map = document.getElementById('cityMap');
+  syncLiveProgress();
+  map.innerHTML = '';
+  const t = T[lang];
+
+  if(!window.__bSorted){window.__bSorted=1;var __o=['aqeeda','ibada','quran','social','heart','history','sport','academy','quds'];buildings.sort(function(a,b){return __o.indexOf(a.id)-__o.indexOf(b.id);});}
+  buildings.forEach((b, i) => {
+    const name = lang==='ar' ? b.nameAr : b.nameEn;
+    const nameAlt = lang==='ar' ? b.nameEn : b.nameAr;
+    const desc = lang==='ar' ? b.descAr : b.descEn;
+    const c = b.character;
+    const charName = lang==='ar' ? c.charNameAr : c.charNameEn;
+    const charQuote = lang==='ar' ? c.charQuoteAr : c.charQuoteEn;
+    const pct = b.progress || 0;
+    // Progress ring values
+    const r = 26, circ = 2 * Math.PI * r;
+    const dash = circ - (pct / 100) * circ;
+
+    const div = document.createElement('div');
+    div.className = 'building';
+    div.id = 'card-' + b.id;
+    div.style.cssText = `--b-accent:${b.accent};--b-grad:${b.gradient};animation-delay:${i*0.07}s`;
+
+    div.innerHTML = `
+      <div class="b-glow"></div>
+      <span class="b-badge" style="${b.accent}">${b.badge}</span>
+      ${(window.MK && MK.isLocked(b.id)) ? `<span class="b-lock" title="">🔒</span>` : ''}
+      <div class="b-icon-wrap">
+        <div class="b-icon" style="${b.icon.startsWith('<svg') ? 'font-size:0;line-height:0' : ''}">${b.icon}</div>
+        <div class="b-prog-ring">
+          <svg width="56" height="56" viewBox="0 0 56 56">
+            <circle cx="28" cy="28" r="${r}" fill="none" stroke="rgba(255,255,255,.08)" stroke-width="3"/>
+            <circle cx="28" cy="28" r="${r}" fill="none" stroke="${b.accent}" stroke-width="3"
+              stroke-dasharray="${circ.toFixed(2)}" stroke-dashoffset="${dash.toFixed(2)}"
+              stroke-linecap="round" opacity=".8"/>
+          </svg>
+        </div>
+      </div>
+      <div class="b-char-mini" style="animation-delay:${i*0.2}s">
+        <span class="b-char-emoji">${c.emoji}</span>
+        <div>
+          <div class="b-char-name-mini" style="color:${b.accent}">${charName}</div>
+          <div class="b-char-quote-mini">${charQuote}</div>
+        </div>
+      </div>
+      <div class="b-name-ar">${name}</div>
+      <div class="b-name-en">${nameAlt}</div>
+      <div class="b-desc">${desc}</div>
+      <div class="b-progress">
+        <div class="b-prog-bg"><div class="b-prog-fill" style="width:${pct}%;${b.accent}"></div></div>
+        <span class="b-prog-pct">${t.progressText} ${pct}%</span>
+      </div>
+      <button class="b-enter-btn" style="${b.accent}">${t.enter}</button>`;
+
+    div.addEventListener('click', () => { playSound(b.id); openModal(b); });
+    map.appendChild(div);
+  });
+
+  // Special corners (parents + activities) — side by side
+  const special = document.createElement('div');
+  special.className = 'special-corners';
+
+  function makeSpecialCard(p, idx) {
+    const pName = lang==='ar' ? p.nameAr : p.nameEn;
+    const pDesc = lang==='ar' ? p.descAr : p.descEn;
+    const pChars = p.characters.map(c => `${c.emoji} ${lang==='ar'?c.charNameAr:c.charNameEn}`).join(' & ');
+    const pDiv = document.createElement('div');
+    pDiv.className = 'building parents-corner';
+    pDiv.id = 'card-'+p.id;
+    pDiv.style.cssText = `--b-accent:${p.accent};--b-grad:${p.gradient};animation-delay:${(buildings.length+idx)*0.07}s`;
+    pDiv.innerHTML = `
+      <div class="b-glow"></div>
+      <span class="b-badge" style="${p.accent}">${p.badge}</span>
+      <div class="b-icon-wrap"><div class="b-icon">${p.icon}</div></div>
+      <div class="parents-text">
+        <div class="b-name-ar">${pName}</div>
+        <div class="b-desc">${pDesc}</div>
+        <div class="b-char-mini" style="margin-top:.3rem;justify-content:flex-start">
+          <span>${p.characters.map(c=>c.emoji).join(' ')}</span>
+          <div>
+            <div class="b-char-name-mini" style="color:${p.accent}">${pChars}</div>
+            <div class="b-char-quote-mini">${T[lang].parentsHere}</div>
+          </div>
+        </div>
+        <div class="b-progress">
+          <div class="b-prog-bg"><div class="b-prog-fill" style="width:${p.progress}%;${p.accent}"></div></div>
+          <span class="b-prog-pct">${T[lang].progressText} ${p.progress}%</span>
+        </div>
+        <button class="b-enter-btn" style="${p.accent};margin-top:.5rem">${T[lang].enter}</button>
+      </div>`;
+    pDiv.addEventListener('click', () => { playSound(p.id); openModal(p); });
+    return pDiv;
+  }
+
+  special.appendChild(makeSpecialCard(parentsCorner, 0));
+  special.appendChild(makeSpecialCard(anosCorner, 1));
+  map.appendChild(special);
+
+  renderSidebar();
+  setTimeout(renderParade, 0);   // defer decorative character row past first paint
+}
+
+/* ══════════════════════════════════════════════════
+   MODAL
+══════════════════════════════════════════════════ */
+let activeBuilding = null;
+
+function openModal(b) {
+  activeBuilding = b;
+  // Character hero
+  const hero = document.getElementById('mCharHero');
+  if (b.character) {
+    const c = b.character;
+    const cName = lang==='ar' ? c.charNameAr : c.charNameEn;
+    const cQuote = lang==='ar' ? c.charQuoteAr : c.charQuoteEn;
+    hero.style.display = 'flex';
+    hero.style.setProperty('--ch-color', b.accent);
+    document.getElementById('mCharAvi').textContent = c.emoji;
+    document.getElementById('mCharAvi').style.background = `linear-gradient(160deg,${b.accent}44,${b.accent}18)`;
+    document.getElementById('mCharAvi').style.borderColor = b.accent+'88';
+    document.getElementById('mCharName').textContent = cName;
+    document.getElementById('mCharRole').textContent = T[lang].charLeads;
+    document.getElementById('mCharQuote').textContent = `"${cQuote}"`;
+  } else if (b.characters) {
+    hero.style.display = 'flex';
+    hero.style.setProperty('--ch-color', b.accent);
+    const chars = b.characters.map(c=>`${c.emoji} ${lang==='ar'?c.charNameAr:c.charNameEn}`).join(' & ');
+    document.getElementById('mCharAvi').textContent = '👨‍👩‍👦';
+    document.getElementById('mCharAvi').style.background = `linear-gradient(160deg,${b.accent}44,${b.accent}18)`;
+    document.getElementById('mCharAvi').style.borderColor = b.accent+'88';
+    document.getElementById('mCharName').textContent = chars;
+    document.getElementById('mCharRole').textContent = T[lang].parentsHere;
+    document.getElementById('mCharQuote').textContent = '';
+  } else {
+    hero.style.display = 'none';
+  }
+  const mIconEl = document.getElementById('mIcon');
+  if(b.icon && b.icon.startsWith('<svg')){ mIconEl.innerHTML = b.icon; mIconEl.style.lineHeight='1'; }
+  else { mIconEl.textContent = b.icon || ''; mIconEl.style.lineHeight=''; }
+  document.getElementById('mTitle').textContent = lang==='ar' ? b.nameAr : b.nameEn;
+  document.getElementById('mSubtitle').textContent = lang==='ar' ? b.descAr : b.descEn;
+  const features = lang==='ar' ? b.featuresAr : b.featuresEn;
+  document.getElementById('mFeatures').innerHTML = features.map(f=>`<div class="modal-feature"><span class="feat-icon">${f.icon}</span><span>${f.text}</span></div>`).join('');
+  const cta = document.getElementById('mCta');
+  cta.textContent = T[lang].enter;
+  cta.style.background = `linear-gradient(135deg,${b.accent},${b.accent}cc)`;
+  document.getElementById('mSoon').textContent = '';
+  document.getElementById('modalOverlay').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeModal(e) { if (e.target===document.getElementById('modalOverlay')) closeModalBtn(); }
+function closeModalBtn() { document.getElementById('modalOverlay').classList.remove('open'); document.body.style.overflow=''; activeBuilding=null; }
+function enterBuilding() { if (activeBuilding) { if(!tryEnterCorner(activeBuilding)) { closeModalBtn(); return; } window.location.href = activeBuilding.url + '?lang=' + lang; } }
+
+/* ══════════════════════════════════════════════════
+   ABOUT MODAL
+══════════════════════════════════════════════════ */
+function showAboutModal() {
+  const L = (window.MK&&MK.lang&&MK.lang())||localStorage.getItem('bunyanLang')||'ar';
+  const data = aboutData[L] || aboutData.ar;
+  document.getElementById('aboutModalTitle').textContent = data.title;
+  document.getElementById('aboutModalSubtitle').textContent = data.subtitle;
+  document.getElementById('aboutModalContent').innerHTML = data.sections.map(s=>`<div class="modal-feature"><span class="feat-icon">${s.icon}</span><div><strong>${s.title}</strong><br><span style="font-size:.8rem;opacity:.82">${s.text}</span></div></div>`).join('');
+  document.getElementById('aboutModalCloseBtn').textContent = data.closeBtn;
+  document.getElementById('aboutModalOverlay').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function closeAboutModal(e) { if (e.target===document.getElementById('aboutModalOverlay')) closeAboutModalBtn(); }
+function closeAboutModalBtn() { document.getElementById('aboutModalOverlay').classList.remove('open'); document.body.style.overflow=''; }
+
+/* ══════════════════════════════════════════════════
+   FOOTER MARQUEE — examples of what's inside
+══════════════════════════════════════════════════ */
+function renderMarquee(){
+  var ar = lang==='ar';
+  var items = [
+    ['🕋', ar?'قصص الأنبياء':'Prophets\u2019 stories'],
+    ['🎯', ar?'اختبارات تفاعلية':'Interactive quizzes'],
+    ['🎤', ar?'أناشيد ومنظومات':'Nasheeds & poems'],
+    ['📖', ar?'حفظ القرآن':'Qur\u2019an memorizing'],
+    ['🤝', ar?'صلة الرحم والأخلاق':'Kinship & manners'],
+    ['🏰', ar?'أبطال الإسلام':'Heroes of Islam'],
+    ['🔭', ar?'علماء مسلمون':'Muslim scientists'],
+    ['🕌', ar?'تعلّم الصلاة':'Learning prayer'],
+    ['📿', ar?'الأذكار':'Daily adhkar'],
+    ['🎨', ar?'أنشطة وألعاب':'Activities & games'],
+    ['🏅', ar?'شهادات وجوائز':'Certificates & rewards'],
+    ['👨‍👩‍👧', ar?'برامج تربية الأبناء':'Parenting programs'],
+  ];
+  var html = items.map(function(it){ return '<span class="ft-chip"><span class="fc-ic">'+it[0]+'</span>'+it[1]+'</span>'; }).join('');
+  var el = document.getElementById('ftMqTrack');
+  if(el) el.innerHTML = html + html;   // duplicate for seamless loop
+}
+
+/* ══════════════════════════════════════════════════
+   LANGUAGE
+══════════════════════════════════════════════════ */let lang = localStorage.getItem('bunyanLang') || 'ar';
+
+function setLang(l) {
+  lang = l;
+  localStorage.setItem('bunyanLang', l);
+  document.documentElement.lang = l;
+  document.documentElement.dir = l==='ar' ? 'rtl' : 'ltr';
+  document.getElementById('btnAr').classList.toggle('active', l==='ar');
+  document.getElementById('btnEn').classList.toggle('active', l==='en');
+  const t = T[l];
+  document.getElementById('hBrand').textContent = t.brand;
+  document.getElementById('cityTitle').textContent = t.cityTitle;
+  document.getElementById('citySubtitle').textContent = t.citySubtitle;
+  document.getElementById('charName1').textContent = t.charName1;
+  document.getElementById('charSpeech1').textContent = t.charSpeech1;
+  document.getElementById('charName2').textContent = t.charName2;
+  document.getElementById('charSpeech2').textContent = t.charSpeech2;
+  document.getElementById('mapLabel').textContent = t.mapLabel;
+  document.getElementById('sidebarTitle').textContent = t.sbTitle;
+  document.getElementById('sbNavTitle').textContent = t.sbNav;
+  document.getElementById('sbAboutTxt').textContent = t.sbAbout;
+  document.getElementById('sectionLbl').textContent = t.sectionLbl;
+  document.getElementById('footerTxt').textContent = t.footer;
+  // rich footer labels
+  var ftMap={ftBrand:'ftBrand',ftTagline:'ftTagline',ftQuickT:'ftQuickT',ftContactT:'ftContactT',ftPartnersT:'ftPartnersT',ftPartnersNote:'ftPartnersNote'};
+  Object.keys(ftMap).forEach(function(id){ var el=document.getElementById(id); if(el&&t[id]!=null) el.textContent=t[id]; });
+  if(t.ft) document.querySelectorAll('[data-ft]').forEach(function(a){ var k=a.getAttribute('data-ft'); if(t.ft[k]) a.textContent=t.ft[k]; });
+  renderTicker();
+  renderMap();
+  if(window.__renderChildChip) __renderChildChip();
+}
+
+/* ══════════════════════════════════════════════════
+   INIT
+══════════════════════════════════════════════════ */
+setLang(lang);                                  // map + cards paint first
+setTimeout(function(){                           // decorative work after first paint
+  makeStars();
+}, 0);
+document.addEventListener('keydown', e => { if (e.key==='Escape') { closeModalBtn(); closeAboutModalBtn(); closeSidebar(); } });
+</script>
+<template id="__bundler_thumbnail" data-bg-color="#081E36">
+  <svg viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
+    <rect width="1200" height="800" fill="#081E36"/>
+    <rect y="560" width="1200" height="240" fill="#0E3A2E"/>
+    <g fill="#E8B530">
+      <path d="M600 210c40 0 70 30 70 70v40h-140v-40c0-40 30-70 70-70z" opacity=".9"/>
+      <circle cx="600" cy="185" r="26"/>
+      <rect x="470" y="320" width="260" height="240" rx="14" opacity=".85"/>
+      <rect x="250" y="380" width="150" height="180" rx="12" opacity=".5"/>
+      <rect x="800" y="380" width="150" height="180" rx="12" opacity=".5"/>
+    </g>
+    <g fill="#F5CC5A" opacity=".9">
+      <circle cx="200" cy="160" r="5"/><circle cx="980" cy="120" r="6"/><circle cx="420" cy="110" r="4"/>
+      <circle cx="760" cy="200" r="4"/><circle cx="1040" cy="240" r="5"/><circle cx="150" cy="300" r="4"/>
+    </g>
+    <text x="600" y="700" font-family="Tajawal,Arial,sans-serif" font-size="60" font-weight="900" fill="#F5CC5A" text-anchor="middle">تربية الطفل المسلم</text>
+  </svg>
+</template>
+</body>
+</html>

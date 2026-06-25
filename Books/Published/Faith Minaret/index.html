@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="dark">
+<title>مكتبة منارة العقيدة | Faith Minaret Library</title>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&family=Nunito:wght@400;600;700;800&display=swap">
+<style>
+  :root{--navy:#0A2540;--navy2:#12375A;--gold:#D4A017;--gold-lt:#F5CC5A;--purple:#8E44AD;--teal:#1A9B7B;--cream:#FEF5DC;--muted:rgba(254,245,220,.6)}
+  *{box-sizing:border-box}
+  body{margin:0;font-family:'Tajawal','Nunito',sans-serif;color:var(--cream);
+    background:radial-gradient(circle at 50% -8%,#163b5e,#0A2540 62%);background-attachment:fixed;min-height:100vh}
+  body[dir="ltr"]{font-family:'Nunito','Tajawal',sans-serif}
+  .lat{font-family:'Nunito','Tajawal',sans-serif}
+  .ar-only{display:inline}.en-only{display:none}
+  html[dir="ltr"] .ar-only{display:none}html[dir="ltr"] .en-only{display:inline}
+  .top{position:sticky;top:0;z-index:20;display:flex;align-items:center;justify-content:space-between;gap:1rem;
+    padding:.85rem 1.3rem;background:rgba(10,37,64,.9);backdrop-filter:blur(12px);border-bottom:1px solid rgba(212,160,23,.3)}
+  .top .bk{display:flex;align-items:center;gap:.6rem;font-weight:900;color:var(--gold-lt)}
+  .top .bk .i{font-size:1.5rem}
+  .lang-switch{display:flex;border:1.5px solid rgba(212,160,23,.4);border-radius:2rem;overflow:hidden}
+  .lang-switch button{background:transparent;border:none;color:var(--cream);font-weight:800;padding:.34rem .85rem;font-size:.78rem;cursor:pointer;font-family:inherit}
+  .lang-switch button.active{background:var(--purple);color:#fff}
+  .wrap{max-width:1080px;margin:0 auto;padding:1.8rem 1.1rem 4rem}
+  .hero{text-align:center;margin-bottom:1.8rem}
+  .hero .crest{font-size:3rem}
+  .hero h1{font-size:2rem;font-weight:900;margin:.3rem 0;color:var(--gold-lt)}
+  .hero p{opacity:.85;max-width:640px;margin:.4rem auto;line-height:1.7}
+  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(310px,1fr));gap:1.1rem}
+  .card{position:relative;background:rgba(255,255,255,.05);border:1px solid rgba(212,160,23,.22);border-radius:1.2rem;
+    border-top:4px solid var(--cc,var(--gold));padding:1.1rem 1.15rem 1.05rem;display:flex;flex-direction:column;transition:.18s}
+  .card:hover{transform:translateY(-3px);box-shadow:0 16px 34px rgba(0,0,0,.4);border-color:rgba(212,160,23,.5)}
+  .card .ctop{display:flex;align-items:center;gap:.7rem;margin-bottom:.55rem}
+  .card .cic{width:50px;height:50px;border-radius:14px;display:grid;place-items:center;font-size:1.7rem;
+    background:rgba(255,255,255,.07);border:1.5px solid var(--cc,var(--gold))}
+  .card .cnum{margin-inline-start:auto;font-size:.72rem;font-weight:800;color:#10243d;background:var(--gold-lt);border-radius:1rem;padding:.16rem .6rem}
+  .card h2{margin:0;font-size:1.18rem;font-weight:900;color:var(--cream);line-height:1.3}
+  .card .en{font-size:.8rem;color:var(--muted);font-weight:700;margin-top:1px}
+  .card .desc{font-size:.85rem;line-height:1.55;color:rgba(254,245,220,.78);margin:.5rem 0 .9rem;flex:1}
+  .card .acts{display:flex;gap:.5rem}
+  .btn{flex:1;text-decoration:none;text-align:center;border-radius:.8rem;padding:.55rem .6rem;font-weight:900;font-size:.86rem;font-family:inherit;transition:.15s}
+  .btn.book{background:linear-gradient(135deg,var(--gold),#c79518);color:#10243d}
+  .btn.book:hover{filter:brightness(1.06)}
+  .btn.prompts{background:rgba(255,255,255,.07);border:1.5px solid rgba(212,160,23,.4);color:var(--cream)}
+  .btn.prompts:hover{background:rgba(212,160,23,.16)}
+  .foot{text-align:center;margin-top:2rem;font-size:.82rem;color:var(--muted);line-height:1.7}
+  .note{max-width:760px;margin:1.4rem auto 0;background:linear-gradient(135deg,rgba(212,160,23,.12),rgba(142,68,173,.14));
+    border:1.5px solid rgba(212,160,23,.3);border-radius:1rem;padding:.9rem 1.1rem;font-size:.86rem;line-height:1.7}
+  .note b{color:var(--gold-lt)}
+</style>
+</head>
+<body dir="rtl">
+<div class="top">
+  <div class="bk"><span class="i">🕋</span><span class="ar-only">مكتبة منارة العقيدة</span><span class="en-only">Faith Minaret Library</span></div>
+  <div class="lang-switch"><button id="btnEn" onclick="setLang('en')">EN</button><button id="btnAr" class="active" onclick="setLang('ar')">عربي</button></div>
+</div>
+
+<div class="wrap">
+  <div class="hero">
+    <div class="crest">📚</div>
+    <h1><span class="ar-only">كُتُبُ القصصِ والأنشطة</span><span class="en-only">Story &amp; Activity Books</span></h1>
+    <p><span class="ar-only">عشرُ رحلاتٍ من منارةِ العقيدة، كلٌّ منها كتابٌ جاهزٌ للنشر (قصة · نشاط · تلوين لكلِّ محطة) مع ملفِّ أوصافِ الرسومات لتوليدها عبر Nano Banana.</span>
+       <span class="en-only">Ten journeys from the Faith Minaret — each a publish-ready book (Story · Activity · Coloring per station) plus an art-prompts file to generate the pictures with Nano Banana.</span></p>
+  </div>
+
+  <div class="grid" id="grid"></div>
+
+  <div class="note">
+    <span class="ar-only">🖼️ <b>طريقة العمل:</b> افتح «الكتاب»، ثم افتح «أوصاف الرسومات» وولِّد كلَّ صورةٍ عبر Nano Banana واسحبها إلى إطارِها في الصفحةِ نفسِها. بعد ملءِ الصور، اطبع الكتابَ أو احفظه PDF (صفحةٌ واحدةٌ لكلِّ A4). املأ الصورَ واحفظ الـ PDF على الجهازِ نفسِه.</span>
+    <span class="en-only">🖼️ <b>How it works:</b> Open the <b>Book</b>, then open <b>Art Prompts</b>, generate each picture with Nano Banana, and drop it into its frame on the matching page. Once filled, print or Save as PDF (one page per A4). Fill and export on the same device.</span>
+  </div>
+  <div class="foot"><span class="ar-only">منارة العقيدة · مشروع تربية الأطفال المسلمين</span><span class="en-only">Faith Minaret · Muslim Kids' Tarbiyah</span></div>
+</div>
+
+<script>
+  var JOURNEYS = [
+    { cc:'#C0392B', ic:'🐝', ar:'عجائب الخلق', en:'Wonders of Creation', n:20,
+      dAr:'رحلةُ اليقين: ٢٠ أعجوبةً من خلقِ الله تُثبتُ وجودَ الخالق.', dEn:'The Journey of Certainty: 20 wonders of creation pointing to the Creator.',
+      book:'Wonders of Creation Book Publish.html', prompts:'Wonders of Creation - Art Prompts.html' },
+    { cc:'#6C5CE7', ic:'👑', ar:'قصرُ الملكِ الواحد', en:'City of Tawheed', n:10,
+      dAr:'براهينُ التوحيدِ بالعقل: اللهُ واحدٌ لا شريكَ له.', dEn:'Logical proofs that Allah is One, with no partner.',
+      book:'Tawheed Book.html', prompts:'Tawheed - Art Prompts.html' },
+    { cc:'#5B7FD4', ic:'✨', ar:'جنودُ النور', en:'Soldiers of Light', n:10,
+      dAr:'الإيمانُ بالملائكةِ وعظمتِهم وكيف تدلُّ على خالقِهم.', dEn:'Belief in the angels, their greatness and what it points to.',
+      book:'Malaika Book.html', prompts:'Malaika - Art Prompts.html' },
+    { cc:'#2980B9', ic:'📖', ar:'رحلةُ البلاغ', en:'The Revealed Books', n:10,
+      dAr:'الكتبُ السماويةُ ومعجزاتُ الرسل حتى القرآنِ الخاتم.', dEn:'The revealed Books and the prophets\u2019 miracles, up to the Quran.',
+      book:'Kutub Book.html', prompts:'Kutub - Art Prompts.html' },
+    { cc:'#1ABC9C', ic:'🛡️', ar:'سلسلةُ الأمان بالله', en:'Security with Allah', n:17,
+      dAr:'ثمرةُ الإيمان: السكينةُ والطمأنينةُ في القلب.', dEn:'The fruit of faith: deep peace and security in the heart.',
+      book:'Aman Book.html', prompts:'Aman - Art Prompts.html' },
+    { cc:'#2980B9', ic:'🌉', ar:'رحلةُ العبور', en:'The Last Day', n:11,
+      dAr:'الإيمانُ باليومِ الآخرِ بأملٍ ورجاء.', dEn:'Faith in the Last Day, told with hope.',
+      book:'Akhira Book.html', prompts:'Akhira - Art Prompts.html' },
+    { cc:'#8E44AD', ic:'✍️', ar:'سرُّ التقدير', en:'The Decree (Qadar)', n:10,
+      dAr:'فهمُ القضاءِ والقدرِ فيرتاحُ القلبُ ويطمئنّ.', dEn:'Understanding Allah\u2019s decree so the heart finds rest.',
+      book:'Qadar Book.html', prompts:'Qadar - Art Prompts.html' },
+    { cc:'#C0392B', ic:'🦁', ar:'رحلةُ الأبطال', en:'Heroes of Steadfastness', n:12,
+      dAr:'قصصُ أبطالِ الإيمانِ والثباتِ على الحق.', dEn:'Stories of the heroes of faith and steadfastness.',
+      book:'Thabat Book.html', prompts:'Thabat - Art Prompts.html' },
+    { cc:'#16A085', ic:'🔬', ar:'مختبرُ كشفِ الحقائق', en:'The Truth-Revealing Lab', n:10,
+      dAr:'براهينُ قويةٌ تكشفُ الحقَّ وتردُّ الشبهات.', dEn:'Strong proofs that reveal the truth and answer doubts.',
+      book:'Lab Book.html', prompts:'Lab - Art Prompts.html' },
+    { cc:'#D4A017', ic:'🪜', ar:'كيف عرفنا الله؟', en:'How We Knew Allah', n:20,
+      dAr:'سُلَّمٌ من عشرِ خطواتٍ يقودُ إلى معرفةِ اللهِ ومحبّتِه.', dEn:'A ten-step staircase to knowing — and loving — Allah.',
+      book:'Maarifa Book.html', prompts:'Maarifa - Art Prompts.html' }
+  ];
+  var lang = localStorage.getItem('bunyanLang') || 'ar';
+  function esc(s){return String(s).replace(/[&<>"]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];});}
+  function enc(s){return s.split('/').map(encodeURIComponent).join('/');}
+  function setLang(l){
+    lang=l; localStorage.setItem('bunyanLang',l);
+    document.documentElement.lang=l; document.documentElement.dir=l==='ar'?'rtl':'ltr'; document.body.dir=l==='ar'?'rtl':'ltr';
+    document.getElementById('btnEn').classList.toggle('active',l==='en');
+    document.getElementById('btnAr').classList.toggle('active',l==='ar');
+    render();
+  }
+  function render(){
+    var g=document.getElementById('grid'); g.innerHTML='';
+    JOURNEYS.forEach(function(j,i){
+      var c=document.createElement('div'); c.className='card'; c.style.setProperty('--cc',j.cc);
+      c.innerHTML=
+        '<div class="ctop"><div class="cic">'+j.ic+'</div>'+
+          '<div><h2>'+esc(lang==='ar'?j.ar:j.en)+'</h2><div class="en">'+esc(lang==='ar'?j.en:j.ar)+'</div></div>'+
+          '<span class="cnum">'+j.n+' '+(lang==='ar'?'محطة':'st.')+'</span></div>'+
+        '<div class="desc">'+esc(lang==='ar'?j.dAr:j.dEn)+'</div>'+
+        '<div class="acts">'+
+          '<a class="btn book" href="'+enc(j.book)+'">📖 '+(lang==='ar'?'الكتاب':'Book')+'</a>'+
+          '<a class="btn prompts" href="'+enc(j.prompts)+'">🍌 '+(lang==='ar'?'الرسومات':'Prompts')+'</a>'+
+        '</div>';
+      g.appendChild(c);
+    });
+  }
+  setLang(lang);
+</script>
+</body>
+</html>

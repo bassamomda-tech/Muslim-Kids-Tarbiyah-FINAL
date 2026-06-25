@@ -1,0 +1,56 @@
+/* data/stories/malik.js — Scholars · Malik ibn Anas — sources: سير أعلام النبلاء · البداية والنهاية · إسلام ويب · الدرر السنية */
+window.HISN_STORIES = window.HISN_STORIES || {};
+HISN_STORIES.malik = [
+  { icon:'📜', scene:'mihrab', character:'🧔',
+    title:{ ar:'كيف يُحترَمُ حديثُ النبيِّ ﷺ', en:'How the Prophet\u2019s ﷺ Hadith Is Honored' },
+    pages:[
+      { scene:'mihrab', character:'🧔',
+        text:{ ar:'كان <b>الإمامُ مالك</b> يُحِبُّ النبيَّ ﷺ حبّاً عظيماً، ويُعظِّمُ كلامَه وحديثَه أشدَّ التعظيم. فكان إذا أرادَ أن يُحدِّثَ الناسَ بحديثِ رسولِ الله ﷺ، <b>يتوضّأُ ويلبسُ أحسنَ ثيابِه ويتطيّبُ ويجلسُ في وقارٍ وهيبة</b>، ثمّ يبدأُ بروايةِ الحديث.<br><br>سُئِلَ مرّةً عن سببِ ذلك، فقال: «أُحِبُّ أن أُعظِّمَ حديثَ رسولِ الله ﷺ». بل كان أحياناً إذا لُدِغَ أو آلمه شيءٌ وهو يُحدِّثُ، يصبرُ ولا يتحرّكُ احتراماً لحديثِ النبيِّ ﷺ! علّمنا مالكٌ أنّ <b>كلامَ النبيِّ ﷺ يُحترَمُ ويُعظَّم</b>، وأنّ محبّةَ النبيِّ ﷺ تظهرُ في تعظيمِ سنّتِه والأدبِ معها.',
+          en:'<b>Imam Malik</b> loved the Prophet ﷺ greatly and revered his words and hadith most intensely. So when he wanted to narrate a hadith of Allah\u2019s Messenger ﷺ to people, he would <b>make wudu, wear his best clothes, perfume himself, and sit with dignity and solemnity</b>, then begin narrating the hadith.<br><br>He was once asked why, and said: "I love to revere the hadith of Allah\u2019s Messenger ﷺ." Sometimes, if he was stung or pained by something while narrating, he would endure it and not move, out of respect for the Prophet\u2019s ﷺ hadith! Malik taught us that <b>the Prophet\u2019s ﷺ words are respected and revered</b>, and that love of the Prophet ﷺ shows in revering his Sunnah and being courteous toward it.' },
+        choice:{ q:{ar:'لماذا كان مالكٌ يتطيّبُ ويتهيّأُ قبلَ روايةِ الحديث؟',en:'Why did Malik perfume and prepare himself before narrating hadith?'},
+          opts:[
+            { t:{ar:'تعظيماً واحتراماً لحديثِ النبيِّ ﷺ',en:'Out of reverence and respect for the Prophet\u2019s ﷺ hadith'},c:true,exp:{ar:'نعم! محبّةُ النبيِّ ﷺ تظهرُ في تعظيمِ سنّتِه.',en:'Yes! Love of the Prophet ﷺ shows in revering his Sunnah.'} },
+            { t:{ar:'ليبدوَ أمامَ الناس',en:'To look good before people'},c:false,exp:{ar:'لا، بل تعظيماً لحديثِ النبيِّ ﷺ.',en:'No — out of reverence for the Prophet\u2019s ﷺ hadith.'} },
+            { t:{ar:'بلا سبب',en:'For no reason'},c:false,exp:{ar:'لا، بل احتراماً لكلامِ رسولِ الله ﷺ.',en:'No — out of respect for the Messenger\u2019s ﷺ words.'} },
+          ] } },
+    ],
+    quiz:[
+      { q:{ar:'كيف كان مالكٌ يتهيّأُ لروايةِ الحديث؟',en:'How did Malik prepare to narrate hadith?'},
+        opts:[ {t:{ar:'يتوضّأُ ويتطيّبُ ويجلسُ بوقار',en:'He made wudu, perfumed, and sat with dignity'},c:true}, {t:{ar:'مسرعاً غيرَ مهتم',en:'Hurriedly and carelessly'},c:false}, {t:{ar:'وهو نائم',en:'While sleeping'},c:false} ] },
+      { q:{ar:'ماذا قال مالكٌ عن سببِ ذلك؟',en:'What did Malik say was the reason?'},
+        opts:[ {t:{ar:'أُحِبُّ أن أُعظِّمَ حديثَ رسولِ الله ﷺ',en:'I love to revere the Messenger\u2019s ﷺ hadith'},c:true}, {t:{ar:'لأتباهى',en:'To boast'},c:false}, {t:{ar:'عادةٌ فقط',en:'Just a habit'},c:false} ] },
+      { q:{ar:'ما الدرسُ من تعظيمِ مالكٍ للحديث؟',en:'What is the lesson from Malik\u2019s reverence for hadith?'},
+        opts:[ {t:{ar:'محبّةُ النبيِّ ﷺ تظهرُ في تعظيمِ سنّتِه',en:'Love of the Prophet ﷺ shows in revering his Sunnah'},c:true}, {t:{ar:'الحديثُ غيرُ مهم',en:'Hadith is unimportant'},c:false}, {t:{ar:'المظهرُ هو الأهم',en:'Appearance is what matters most'},c:false} ] },
+    ],
+    moral:{ar:'محبّةُ النبيِّ ﷺ تظهرُ في تعظيمِ سنّتِه والأدبِ معها، وكلامُ النبيِّ ﷺ يُحترَمُ ويُعظَّم.',en:'Love of the Prophet ﷺ shows in revering his Sunnah and being courteous toward it; the Prophet\u2019s ﷺ words are respected and revered.'},
+    badge:{icon:'📜',title:{ar:'وِسامُ تعظيمِ السنّة',en:'Badge of Revering the Sunnah'}},
+    reflect:[ {ar:'كيف تُظهِرُ احترامَك وحبَّك لسنّةِ النبيِّ ﷺ؟',en:'How do you show your respect and love for the Prophet\u2019s ﷺ Sunnah?'}, {ar:'هل تتأدّبُ حين تقرأُ القرآنَ أو حديثَ النبيِّ ﷺ؟',en:'Are you courteous when you read the Quran or the Prophet\u2019s ﷺ hadith?'} ],
+    didYouKnow:[ {ar:'كان مالكٌ لا يُحدِّثُ بحديثِ النبيِّ ﷺ إلّا على طهارةٍ وفي هيئةٍ حسنةٍ تعظيماً له — المصدر: سير أعلام النبلاء',en:'Malik would only narrate the Prophet\u2019s ﷺ hadith in a state of purity and good appearance, revering it — Source: Siyar A\u2019lam an-Nubala\u2019'}, {ar:'«الموطّأ» من أوّلِ كتبِ الحديثِ تأليفاً وأصحِّها، أثنى عليه العلماءُ كثيراً — المصدر: البداية والنهاية',en:'"Al-Muwatta" is among the earliest and most authentic hadith books, highly praised by scholars — Source: Al-Bidaya wa an-Nihaya'} ],
+  },
+  { icon:'🌿', scene:'throne', character:'🤲',
+    title:{ ar:'تواضعُ العالمِ الكبير', en:'The Humility of the Great Scholar' },
+    pages:[
+      { scene:'throne', character:'🤲',
+        text:{ ar:'صارَ <b>الإمامُ مالك</b> مشهوراً في العالمِ الإسلاميِّ كلِّه، وصارَ كتابُه «الموطّأ» يُدرَّسُ في كلِّ مكان. وذاتَ يومٍ أرادَ <b>الخليفةُ</b> أن يأمرَ المسلمينَ جميعاً أن يأخذوا بكتابِ مالكٍ وحدَه ويتركوا غيرَه!<br><br>لكنّ مالكاً — رغمَ أنّ هذا كان سيرفعُ شأنَه — <b>رفضَ ذلك بتواضعٍ عظيم</b>! وقال للخليفة: لا تفعلْ، فإنّ الصحابةَ تفرّقوا في البلادِ وعند كلِّ قومٍ علمٌ، والناسُ قد أخذوا بأقوالٍ مختلفةٍ صحيحة، فلا تُجبِرْهم على قولٍ واحد. تأمّلْ: عالمٌ يرفضُ أن يُفرَضَ كتابُه على الناس تواضعاً واحتراماً لعلمِ غيرِه! علّمنا مالكٌ أنّ <b>العالمَ الحقَّ متواضعٌ يحترمُ آراءَ الآخرين</b>، ولا يرى نفسَه فوقَ الجميع.',
+          en:'<b>Imam Malik</b> became famous throughout the Muslim world, and his book "al-Muwatta" came to be studied everywhere. One day the <b>caliph</b> wanted to order all Muslims to follow Malik\u2019s book alone and abandon others!<br><br>But Malik — though this would have raised his standing — <b>refused with great humility</b>! He told the caliph: Do not do this, for the companions spread out to the lands and each people has knowledge, and people have taken sound differing views, so do not force them onto one view. Consider: a scholar refusing to have his book imposed on people, out of humility and respect for others\u2019 knowledge! Malik taught us that <b>a true scholar is humble and respects others\u2019 views</b>, and does not see himself above everyone.' },
+        choice:{ q:{ar:'لماذا رفضَ مالكٌ أن يُفرَضَ كتابُه على جميعِ الناس؟',en:'Why did Malik refuse to have his book imposed on all people?'},
+          opts:[
+            { t:{ar:'تواضعاً واحتراماً لعلمِ غيرِه واختلافِ الناس',en:'Out of humility and respect for others\u2019 knowledge and people\u2019s differences'},c:true,exp:{ar:'نعم! العالمُ الحقُّ متواضعٌ يحترمُ آراءَ الآخرين.',en:'Yes! A true scholar is humble and respects others\u2019 views.'} },
+            { t:{ar:'لأنّه يكرهُ كتابَه',en:'Because he hated his book'},c:false,exp:{ar:'لا، بل تواضعاً واحتراماً للعلماء.',en:'No — out of humility and respect for scholars.'} },
+            { t:{ar:'كسلاً',en:'Out of laziness'},c:false,exp:{ar:'لا، بل تواضعاً ورحمةً بالناس.',en:'No — out of humility and mercy for people.'} },
+          ] } },
+    ],
+    quiz:[
+      { q:{ar:'ماذا أرادَ الخليفةُ أن يفعلَ بكتابِ مالك؟',en:'What did the caliph want to do with Malik\u2019s book?'},
+        opts:[ {t:{ar:'أن يُجبِرَ الناسَ على الأخذِ به وحدَه',en:'To force people to follow it alone'},c:true}, {t:{ar:'أن يحرقَه',en:'To burn it'},c:false}, {t:{ar:'أن يخفيَه',en:'To hide it'},c:false} ] },
+      { q:{ar:'ماذا كان جوابُ مالك؟',en:'What was Malik\u2019s answer?'},
+        opts:[ {t:{ar:'رفضَ تواضعاً واحتراماً لعلمِ غيرِه',en:'He refused out of humility and respect for others\u2019 knowledge'},c:true}, {t:{ar:'وافقَ بفرح',en:'He happily agreed'},c:false}, {t:{ar:'طلبَ مالاً',en:'He asked for money'},c:false} ] },
+      { q:{ar:'ما الدرسُ من موقفِ مالك؟',en:'What is the lesson from Malik\u2019s stance?'},
+        opts:[ {t:{ar:'العالمُ الحقُّ متواضعٌ يحترمُ آراءَ الآخرين',en:'A true scholar is humble and respects others\u2019 views'},c:true}, {t:{ar:'حبُّ الظهور',en:'Loving prominence'},c:false}, {t:{ar:'فرضُ الرأي',en:'Imposing one\u2019s view'},c:false} ] },
+    ],
+    moral:{ar:'العالمُ الحقُّ متواضعٌ يحترمُ آراءَ الآخرينَ ولا يرى نفسَه فوقَ الجميع، والتواضعُ زينةُ أهلِ العلم.',en:'A true scholar is humble, respects others\u2019 views, and does not see himself above everyone; humility is the adornment of people of knowledge.'},
+    badge:{icon:'🌿',title:{ar:'وِسامُ تواضعِ العلماء',en:'Badge of Scholars\u2019 Humility'}},
+    reflect:[ {ar:'هل تتواضعُ وتحترمُ رأيَ غيرِك حتى لو خالفك؟',en:'Are you humble and respect others\u2019 views even if they differ from you?'}, {ar:'كيف تتجنّبُ التكبّرَ بما تعرفُه أو تملكُه؟',en:'How do you avoid arrogance about what you know or own?'} ],
+    didYouKnow:[ {ar:'رفضَ مالكٌ أن يُحمَلَ الناسُ على «الموطّأ» وحدَه، احتراماً لتنوّعِ علمِ الصحابةِ في الأمصار — المصدر: سير أعلام النبلاء',en:'Malik refused to have people compelled to follow "al-Muwatta" alone, respecting the diversity of the companions\u2019 knowledge across the lands — Source: Siyar A\u2019lam an-Nubala\u2019'}, {ar:'كان مالكٌ كثيراً ما يقولُ «لا أدري» إذا سُئِلَ عمّا لا يعلمُه، تورّعاً — المصدر: البداية والنهاية',en:'Malik often said "I don\u2019t know" when asked about what he didn\u2019t know, out of scrupulousness — Source: Al-Bidaya wa an-Nihaya'} ],
+  },
+];

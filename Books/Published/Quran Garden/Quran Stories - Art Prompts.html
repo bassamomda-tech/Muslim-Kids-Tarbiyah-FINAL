@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="dark">
+<title>أوصاف رسومات «قصص القرآن» | Quran Stories Art Prompts</title>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&family=Nunito:wght@400;600;700;800&display=swap">
+<link rel="stylesheet" href="../../../corners/faith-minaret/rihla-prompts.css">
+</head>
+<body dir="rtl">
+<header class="header">
+  <div class="brand"><span>🍌</span><span class="ar-only">أوصاف رسومات «قصص القرآن»</span><span class="en-only">Quran Stories — Art Prompts</span></div>
+  <div class="hactions">
+    <div class="lang-switch"><button id="btnEn" onclick="setLang('en')">EN</button><button id="btnAr" class="active" onclick="setLang('ar')">عربي</button></div>
+    <button class="copyall" id="copyAllBtn" onclick="copyAll()">📋 <span class="ar-only">انسخ الكل</span><span class="en-only">Copy all</span></button>
+    <a class="back" href="Quran Stories Book.html">📕 <span class="ar-only">الكتاب</span><span class="en-only">Book</span></a>
+  </div>
+</header>
+<div class="wrap">
+  <div class="hero">
+    <div class="ic">🎨</div>
+    <h1><span class="ar-only">أوصاف الرسومات — بترتيب صفحات الكتاب</span><span class="en-only">Art Prompts — in book-page order</span></h1>
+    <p><span class="ar-only">كل صفّ يقابل صفحةً في الكتاب. وَلِّد الرسمة عبر Nano Banana، ثم اسحبها إلى الإطار في الصفحة نفسها.</span>
+       <span class="en-only">Each row matches a page in the book. Generate the art in Nano Banana, then drop it into the frame on that same page.</span></p>
+  </div>
+  <div class="howto">
+    <span class="ar-only">⚠️ <b>النص العربي داخل الصورة</b> قد يخرج مشوّهاً — وَلِّد ٢–٣ نسخ. ⚠️ <b>لا تُصوّر نبيّاً ولا مَلَكاً</b> (موسى، الخضر، هاروت وماروت، آدم…)؛ صوّر المكانَ والأشياءَ والنورَ والأشخاصَ العاديّينَ بلا وجوه.</span>
+    <span class="en-only">⚠️ <b>Arabic text</b> may distort — generate a few versions. ⚠️ <b>Never depict a prophet or angel</b> (Musa, al-Khidr, Harut & Marut, Adam…) — show settings, objects, light and faceless ordinary people.</span>
+    <div class="stylerow">
+      <span class="ar-only" style="color:var(--muted);font-size:.84rem">النمط الموحّد:</span><span class="en-only" style="color:var(--muted);font-size:.84rem">House styles:</span>
+      <button class="stylebtn" id="styleBtn" onclick="copyStyle()">📋 <span class="ar-only">نمط القصة</span><span class="en-only">Story style</span></button>
+      <button class="stylebtn" id="lineBtn" onclick="copyLine()">📋 <span class="ar-only">نمط التلوين</span><span class="en-only">Coloring style</span></button>
+    </div>
+  </div>
+  <div class="count" id="count"></div>
+  <div id="results"></div>
+</div>
+<div class="toast" id="toast"></div>
+
+<script src="../../../corners/little-district/pages/qstories-data/_index.js"></script>
+<script src="../../../corners/little-district/pages/qstories-data/luqman.js"></script>
+<script src="../../../corners/little-district/pages/qstories-data/kahf.js"></script>
+<script src="../../../corners/little-district/pages/qstories-data/qarun.js"></script>
+<script src="../../../corners/little-district/pages/qstories-data/dhulqarnayn.js"></script>
+<script src="../../../corners/little-district/pages/qstories-data/twogardens.js"></script>
+<script src="../../../corners/little-district/pages/qstories-data/uzayr.js"></script>
+<script src="../../../corners/little-district/pages/qstories-data/gardenowners.js"></script>
+<script src="../../../corners/little-district/pages/qstories-data/elephant.js"></script>
+<script src="../../../corners/little-district/pages/qstories-data/saba.js"></script>
+<script src="../../../corners/little-district/pages/qstories-data/fleedeath.js"></script>
+<script src="../../../corners/little-district/pages/qstories-data/rass.js"></script>
+<script src="../../../corners/little-district/pages/qstories-data/harutmarut.js"></script>
+<script src="../../../corners/little-district/pages/qstories-data/khidr.js"></script>
+<script src="../../../corners/little-district/pages/qstories-data/ukhdud.js"></script>
+<script src="../../../corners/little-district/pages/qstories-data/adamsons.js"></script>
+<script src="../../../corners/little-district/pages/qstories-data/sabt.js"></script>
+<script src="../../../corners/little-district/pages/qstories-data/cow.js"></script>
+<script src="../../../corners/little-district/pages/qstories-data/dirar.js"></script>
+<script src="../../../corners/little-district/pages/qstories-data/fitna.js"></script>
+<script src="../../../corners/little-district/pages/qstories-data/adam.js"></script>
+<script src="../../../corners/little-district/pages/qstories-core.js"></script>
+<script>
+  window.RIHLA = { titleAr:'قصصُ القرآن', titleEn:'Quran Stories',
+    coverPrompt:"A beautiful children's-book COVER for «قصصُ القرآن» (Quran Stories): a magical open storybook glowing with golden light, from which gentle symbols of famous Quran stories drift out — a cave, an elephant, a garden, a well, stars — over a lush emerald garden under a starry sky. No people, no prophets, warm and wondrous. "+window.QSCore.STYLE };
+</script>
+<script src="../../../corners/faith-minaret/rihla-prompts.js"></script>
+</body>
+</html>

@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>تلوين الزخارف الإسلامية · أنوس</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+
+<link rel="stylesheet" href="../styles/tokens.css" />
+<link rel="stylesheet" href="../styles/dashboard.css" />
+<link rel="stylesheet" href="../styles/wheel.css" />
+<link rel="stylesheet" href="../styles/pattern-color.css" />
+</head>
+<body>
+
+<div class="bg-decor" aria-hidden="true"></div>
+
+<div class="activity-shell">
+
+  <nav class="activity-nav">
+    <a class="back-link" href="../dashboard.html">
+      الرجوع للوحة الأنشطة
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg>
+    </a>
+    <div class="activity-crumb">
+      <span>الفن والإبداع</span>
+      <span class="sep">/</span>
+      <span class="cur">تلوين الزخارف الإسلامية</span>
+    </div>
+    <div class="activity-actions">
+      <button class="icon-btn" id="reset-btn" title="إعادة الضبط" aria-label="إعادة الضبط">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 3-6.7L3 8"/><path d="M3 3v5h5"/></svg>
+      </button>
+    </div>
+  </nav>
+
+  <div class="activity-layout">
+
+    <section class="pc-panel">
+      <header class="wheel-header">
+        <span class="activity-tag">Activity 21 · Flood Fill</span>
+        <h1 class="activity-title">تلوين الزخارف الإسلامية</h1>
+        <p class="activity-desc">
+          الزخرفة الإسلاميَّة فنٌّ هندسيٌّ مُبدِع. اختر لوناً من اللوحة، ثم انقُر
+          على أيِّ قِطعةٍ في الزَّخرفة لِتُلَوِّنها. كَوِّن تَناغُماً جَميلاً بين الألوان.
+        </p>
+      </header>
+
+      <div class="pc-hud">
+        <div class="hud-block">قِطَع مُلَوَّنة <strong id="p-filled">0</strong></div>
+        <div class="hud-block">المُتَبَقّي <strong id="p-remaining">0</strong></div>
+        <div class="hud-block">اللَّوحات المَحفوظة <strong id="p-saved">0</strong></div>
+      </div>
+
+      <div class="pc-stage">
+        <div class="pc-canvas-wrap">
+          <svg id="pattern-svg" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg"></svg>
+        </div>
+
+        <!-- color palette -->
+        <div class="pc-palette" id="palette"></div>
+
+        <!-- tools -->
+        <div class="pc-tools">
+          <button class="pc-btn" id="btn-clear">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6h18M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6"/></svg>
+            مَحو الكُلّ
+          </button>
+          <button class="pc-btn" id="btn-fill">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3h18v18H3z"/><path d="M3 12h18M12 3v18"/></svg>
+            تَلوينٌ تِلقائيّ
+          </button>
+          <button class="pc-btn primary" id="btn-save">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"/><path d="M17 21v-8H7v8M7 3v5h8"/></svg>
+            احفظ اللَّوحة
+          </button>
+        </div>
+      </div>
+
+      <div class="wheel-controls" style="margin-top:var(--s-4);">
+        <div class="wheel-stat">تَصاميمي <strong id="best">0</strong></div>
+        <button class="wheel-mute-toggle" id="mute-btn" aria-pressed="false">
+          <span class="mute-icon"></span>
+          <span class="mute-label">كتم الصوت</span>
+        </button>
+      </div>
+    </section>
+
+    <aside class="side-panel">
+      <div class="panel-card">
+        <div class="panel-head"><h3>اختَر زَخرفة</h3></div>
+        <div class="pc-presets" id="presets"></div>
+      </div>
+
+      <div class="panel-card">
+        <div class="panel-head">
+          <h3>تَصاميمك المَحفوظة</h3>
+          <span class="pill" id="gallery-pill">0</span>
+        </div>
+        <div id="gallery" style="display:grid; grid-template-columns: repeat(3, 1fr); gap: 8px;"></div>
+        <div class="tip-card" style="margin-top:var(--s-3);">
+          <span class="tip-icon">!</span>
+          <span>كل تَصميمٍ تَحفظهُ يُسجَّل في مَعرضك الشَّخصي. انقر صورة لِتَستعيدَها للتَّعديل.</span>
+        </div>
+      </div>
+
+      <div class="panel-card">
+        <div class="panel-head"><h3>سرّ الزَّخرفة</h3></div>
+        <div class="hadith-card">
+          <div class="quote">«إنَّ اللهَ جَميلٌ يُحِبُّ الجَمال»</div>
+          <span class="src">رواه مسلم<span class="hadith-grade ok">صحيح</span></span>
+        </div>
+        <div class="tip-card" style="margin-top:var(--s-3);">
+          <span class="tip-icon">!</span>
+          <span>الزخارف الإسلاميَّة تَعتمد على التَّناسُق والتَّكرار. جَرِّب ألواناً مُتَجاورةً في عَجلة الألوان لِتَنال تَوازُناً جَميلاً.</span>
+        </div>
+      </div>
+    </aside>
+  </div>
+</div>
+
+<div class="particles" id="particles" aria-hidden="true"></div>
+
+<script src="../scripts/activity-common.js"></script>
+<script src="../scripts/pattern-color.js"></script>
+
+<script>
+window.PAGE_DICT = {
+  "تلوين الزخارف الإسلامية": "Color Islamic Patterns",
+  "الزخرفة الإسلاميَّة فنٌّ هندسيٌّ مُبدِع. اختر لوناً من اللوحة، ثم انقُر على أيِّ قِطعةٍ في الزَّخرفة لِتُلَوِّنها. كَوِّن تَناغُماً جَميلاً بين الألوان.": "Islamic ornamentation is a creative geometric art. Pick a color from the palette, then tap any piece of the pattern to color it. Build a beautiful harmony between the colors.",
+  "قِطَع مُلَوَّنة": "Pieces colored",
+  "المُتَبَقّي": "Remaining",
+  "اللَّوحات المَحفوظة": "Saved artworks",
+  "مَحو الكُلّ": "Clear all",
+  "تَلوينٌ تِلقائيّ": "Auto color",
+  "احفظ اللَّوحة": "Save the artwork",
+  "تَصاميمي": "My designs",
+  "اختَر زَخرفة": "Choose a pattern",
+  "تَصاميمك المَحفوظة": "Your saved designs",
+  "كل تَصميمٍ تَحفظهُ يُسجَّل في مَعرضك الشَّخصي. انقر صورة لِتَستعيدَها للتَّعديل.": "Every design you save is added to your personal gallery. Tap an image to restore it for editing.",
+  "سرّ الزَّخرفة": "The secret of ornament",
+  "الزخارف الإسلاميَّة تَعتمد على التَّناسُق والتَّكرار. جَرِّب ألواناً مُتَجاورةً في عَجلة الألوان لِتَنال تَوازُناً جَميلاً.": "Islamic patterns rely on symmetry and repetition. Try adjacent colors on the color wheel for a beautiful balance."
+};
+</script>
+<script src="../scripts/i18n.js"></script>
+<script src="../../shared/nav-fix.js"></script>
+</body>
+</html>

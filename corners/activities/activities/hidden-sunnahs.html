@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>تحدي السنن المنسية · أنوس</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+
+<link rel="stylesheet" href="../styles/tokens.css" />
+<link rel="stylesheet" href="../styles/dashboard.css" />
+<link rel="stylesheet" href="../styles/wheel.css" />
+<link rel="stylesheet" href="../styles/sunnahs.css" />
+</head>
+<body>
+
+<div class="bg-decor" aria-hidden="true"></div>
+
+<div class="activity-shell">
+
+  <nav class="activity-nav">
+    <a class="back-link" href="../dashboard.html">
+      الرجوع للوحة الأنشطة
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg>
+    </a>
+    <div class="activity-crumb">
+      <span>العبادات والإيمان</span>
+      <span class="sep">/</span>
+      <span class="cur">تحدي السنن المنسية</span>
+    </div>
+    <div class="activity-actions">
+      <button class="icon-btn" id="reset-btn" title="إعادة الضبط" aria-label="إعادة الضبط">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 3-6.7L3 8"/><path d="M3 3v5h5"/></svg>
+      </button>
+    </div>
+  </nav>
+
+  <div class="activity-layout">
+
+    <!-- ============ لوحة المشاهد ============ -->
+    <section class="sunnah-panel">
+      <header class="wheel-header">
+        <span class="activity-tag">Activity 10 · Hidden Object</span>
+        <h1 class="activity-title">تحدي السنن المنسية</h1>
+        <p class="activity-desc">
+          في يومك الكثير من السنن النبوية الصغيرة، فأَين هي؟ تجوّل في ثلاثة مشاهد:
+          <strong>البيت</strong>، <strong>المسجد</strong>، و<strong>الطريق</strong>، واكتشف
+          اثنتي عشرة سنّةً مخفية. لكل سنّةٍ معنى وأَجر.
+        </p>
+      </header>
+
+      <!-- تبويبات المشاهد -->
+      <div class="scene-tabs" id="scene-tabs"></div>
+
+      <!-- HUD -->
+      <div class="sunnah-hud">
+        <div class="hud-block">
+          المُكتشَف
+          <strong><span id="found">0</span><small>/12</small></strong>
+        </div>
+        <div class="hud-block">
+          القرائن
+          <div class="hint-pips-row" id="hints-row"></div>
+        </div>
+        <div class="hud-block">
+          المحاولات الخاطئة
+          <strong id="misses">0</strong>
+        </div>
+        <div style="display:flex; align-items: center; gap: 8px;">
+          <button class="hint-action" id="hint-btn">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2"/></svg>
+            قرينة
+          </button>
+          <button class="wheel-mute-toggle" id="mute-btn" aria-pressed="false">
+            <span class="mute-icon"></span>
+            <span class="mute-label">كتم الصوت</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- منطقة المشهد -->
+      <div class="sunnah-scene-wrap">
+        <div class="sunnah-scene" id="scene">
+          <div id="scene-svg"></div>
+          <div id="scene-spots"></div>
+          <div class="sunnah-toast" id="toast"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ اللوحة الجانبية ============ -->
+    <aside class="side-panel">
+
+      <div class="panel-card">
+        <div class="panel-head">
+          <h3 id="side-title">سُنن البيت</h3>
+          <span class="pill" id="side-pill">0/4</span>
+        </div>
+        <div class="sunnah-list" id="sunnah-list"></div>
+      </div>
+
+      <div class="panel-card">
+        <div class="panel-head">
+          <h3>حديث اليوم</h3>
+        </div>
+        <div class="hadith-card">
+          <div class="quote">«مَنْ أَحْيَا سُنَّةً مِنْ سُنَّتي فَعَمِلَ بِهَا النَّاسُ كَانَ لَهُ مِثْلُ أَجْرِهِمْ»</div>
+          <span class="src">رواه ابن ماجه<span class="hadith-grade hasan">حسن</span></span>
+        </div>
+        <div class="tip-card" style="margin-top: var(--s-3);">
+          <span class="tip-icon">!</span>
+          <span>السنن النبوية ليست صلاةً فقط، بل في الأكل والشرب والنوم والمشي والكلام. هي حياةٌ كاملة على هَدي النبي ﷺ.</span>
+        </div>
+      </div>
+
+    </aside>
+  </div>
+</div>
+
+<!-- مودال النصر -->
+<div class="modal-backdrop" id="win-modal" role="dialog" aria-modal="true">
+  <div class="modal">
+    <button class="modal-close" data-close aria-label="إغلاق">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M6 6l12 12M18 6l-12 12"/></svg>
+    </button>
+
+    <div class="modal-deco" aria-hidden="true">
+      <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l2.4 6.6L21 9l-5 4.6L17.2 21 12 17.4 6.8 21 8 13.6 3 9l6.6-.4z"/></svg>
+    </div>
+
+    <div class="modal-eyebrow">سُنن مَوصولة</div>
+    <h2 class="modal-title">رائع! اكتشفتَ السنن الاثنتي عشرة</h2>
+
+    <div class="modal-meaning" style="text-align:right;">
+      كل سنّةٍ تُحييها في يومك تُكتب لك حسنات. ابدأ منذ غدٍ بسنّةٍ واحدة فقط،
+      مثل التسمية عند الأكل، واستمرّ عليها. قال النبي ﷺ:
+      «أَحَبُّ الأعمال إلى الله أَدْوَمها وإن قَلَّ».
+    </div>
+
+    <div class="final-stats-grid">
+      <div><strong id="win-misses">0</strong><small>محاولة خاطئة</small></div>
+      <div><strong id="win-hints">0</strong><small>قرينة استعملتَ</small></div>
+      <div><strong id="win-time">0:00</strong><small>الوقت</small></div>
+    </div>
+
+    <div class="modal-actions" style="margin-top: var(--s-5);">
+      <button class="btn-ghost" data-close>انتهيت</button>
+      <button class="btn-primary" id="win-replay">جولة جديدة</button>
+    </div>
+  </div>
+</div>
+
+<div class="particles" id="particles" aria-hidden="true"></div>
+
+<script src="../scripts/activity-common.js"></script>
+<script src="../scripts/sunnahs.js"></script>
+
+<script>
+window.PAGE_DICT = {
+  "تحدي السنن المنسية": "Forgotten Sunnahs Challenge",
+  "في يومك الكثير من السنن النبوية الصغيرة، فأَين هي؟ تجوّل في ثلاثة مشاهد:": "Your day is full of small prophetic sunnahs — but where are they? Explore three scenes:",
+  "البيت": "Home",
+  "المسجد": "Mosque",
+  "الطريق": "Street",
+  "، واكتشف اثنتي عشرة سنّةً مخفية. لكل سنّةٍ معنى وأَجر.": ", and discover twelve hidden sunnahs. Each sunnah has a meaning and a reward.",
+  "المحاولات الخاطئة": "Wrong attempts",
+  "قرينة": "Clue",
+  "سُنن البيت": "Home sunnahs",
+  "سُنن المسجد": "Mosque sunnahs",
+  "سُنن الطريق": "Street sunnahs",
+  "حديث اليوم": "Hadith of the day",
+  "رواه ابن ماجه": "Narrated by Ibn Majah",
+  "السنن النبوية ليست صلاةً فقط، بل في الأكل والشرب والنوم والمشي والكلام. هي حياةٌ كاملة على هَدي النبي ﷺ.": "The prophetic sunnahs aren't only prayer — they're in eating, drinking, sleeping, walking and speaking. They're a whole life following the guidance of the Prophet ﷺ.",
+  "سُنن مَوصولة": "Sunnahs revived",
+  "رائع! اكتشفتَ السنن الاثنتي عشرة": "Wonderful! You discovered all twelve sunnahs",
+  "كل سنّةٍ تُحييها في يومك تُكتب لك حسنات. ابدأ منذ غدٍ بسنّةٍ واحدة فقط، مثل التسمية عند الأكل، واستمرّ عليها. قال النبي ﷺ: «أَحَبُّ الأعمال إلى الله أَدْوَمها وإن قَلَّ».": "Every sunnah you revive in your day earns you good deeds. Starting tomorrow, begin with just one — like saying bismillah before eating — and keep at it. The Prophet ﷺ said: «The most beloved deeds to Allah are the most constant, even if few».",
+  "محاولة خاطئة": "wrong attempts",
+  "قرينة استعملتَ": "clues used"
+};
+</script>
+<script>
+Object.assign(window.PAGE_DICT, {
+  "ذِكر الاستيقاظ من النوم": "Dhikr upon waking from sleep",
+  "التسمية عند الأكل": "Saying bismillah before eating",
+  "شُرب الماء بثلاث": "Drinking water in three sips",
+  "النوم على الجانب الأيمن": "Sleeping on the right side",
+  "الدخول باليُمنى ودعاء المسجد": "Entering with the right foot & the mosque du'a",
+  "صلاة تحيّة المسجد": "Praying the mosque greeting (tahiyyah)",
+  "تسوية الصفوف": "Straightening the rows",
+  "أذكار بعد الصلاة": "Dhikr after prayer",
+  "إماطة الأذى عن الطريق": "Removing harm from the path",
+  "إفشاء السلام": "Spreading the greeting of peace",
+  "دعاء ركوب الدّابّة/السيارة": "Du'a for riding a mount/car",
+  "ابتسامة في وجه أخيك": "Smiling at your brother",
+  "«الحمدُ لله الذي أحيانا بعد ما أماتنا وإليه النشور»": "«All praise to Allah who gave us life after death, and to Him is the resurrection»",
+  "قُل «بسم الله» قبل أن تأكل، وكُلْ بيمينك ومما يليك": "Say «Bismillah» before you eat, and eat with your right hand from what is near you",
+  "النبي ﷺ كان يشرب على ثلاث، ويسمّي في أوّله ويحمد في آخره": "The Prophet ﷺ would drink in three sips, saying bismillah at the start and alhamdulillah at the end",
+  "ضع يدَك اليمنى تحت خدّك، ونم على شِقّك الأيمن": "Place your right hand under your cheek and sleep on your right side",
+  "ادخل بقدمك اليمنى وقُل: «اللهمَّ افتح لي أبوابَ رحمتك»": "Enter with your right foot and say: «O Allah, open for me the doors of Your mercy»",
+  "إذا دخلتَ المسجد فلا تجلس حتى تُصلّي ركعتين": "When you enter the mosque, don't sit until you pray two rak'ahs",
+  "«سَوُّوا صفوفَكم فإنّ تسوية الصفوف من تمام الصلاة»": "«Straighten your rows, for straightening the rows is part of completing the prayer»",
+  "سبحان الله ٣٣، الحمد لله ٣٣، الله أكبر ٣٤، ثم آية الكرسي": "SubhanAllah ×33, alhamdulillah ×33, Allahu akbar ×34, then Ayat al-Kursi",
+  "ارفع الحجر أو القمامة من طريق الناس، فهي شُعبة من الإيمان": "Remove the stone or rubbish from people's path — it is a branch of faith",
+  "ابدأ بالسلام على من تعرف ومن لا تعرف": "Greet with salam those you know and those you don't",
+  "«سُبحان الذي سَخَّر لنا هذا وما كنّا له مُقرنين، وإنّا إلى ربّنا لمنقلبون»": "«Glory to the One who subjected this to us, for we could not have done so, and to our Lord we shall return»",
+  "«تَبَسُّمُكَ في وجه أخيك صدقة»": "«Your smile in your brother's face is a charity»",
+  "أوّل ما تستيقظ، قُل هذا الذكر قبل أن تنزل من السرير.": "As soon as you wake, say this dhikr before getting out of bed.",
+  "ولو نسيت في البداية فقل: «بسم الله أوّله وآخره» وأنت في وسط الطعام.": "If you forget at the start, say «Bismillah, its beginning and its end» while in the middle of your meal.",
+  "اجلس واشرب على ثلاث جرعات، ولا تنفخ في الإناء.": "Sit and drink in three sips, and don't blow into the cup.",
+  "قُل قبل النوم: «بِاسمِكَ اللهمَّ أموتُ وأحيا».": "Before sleeping say: «In Your name, O Allah, I die and I live».",
+  "وحين الخروج: ادخل باليسرى وقل: «اللهم إني أسألك من فضلك».": "When leaving: step out with the left foot and say «O Allah, I ask You of Your bounty».",
+  "هي ركعتان خفيفتان شُكراً لله على نِعمة بيوته.": "They are two light rak'ahs, thanking Allah for the blessing of His houses.",
+  "اجعل كتفك بكتف من بجانبك، وقدمك بقدمه.": "Place your shoulder to your neighbor's shoulder, and your foot to his foot.",
+  "أذكار بعد الصلاة تُغفر بها الذنوب ولو كانت مثل زبد البحر.": "Dhikr after prayer through which sins are forgiven, even if like the foam of the sea.",
+  "«الإيمانُ بضعٌ وسبعون شعبةً، أَدناها إماطةُ الأذى عن الطريق».": "«Faith has over seventy branches, the least of which is removing harm from the path».",
+  "«أَلا أَدلُّكم على شيء إذا فعلتموه تَحاببتم؟ أَفشُوا السلامَ بينكم».": "«Shall I show you something that, if you do it, you will love one another? Spread peace among you».",
+  "قُل التكبير ثلاثاً قبل الدعاء عند ركوب أي وسيلة.": "Say the takbir three times before the du'a when boarding any vehicle.",
+  "ابتسامة بسيطة قد تُغيّر يومَ شخصٍ كاملاً.": "A simple smile can change someone's entire day."
+});
+</script>
+<script src="../scripts/i18n.js"></script>
+<script src="../../shared/nav-fix.js"></script>
+</body>
+</html>

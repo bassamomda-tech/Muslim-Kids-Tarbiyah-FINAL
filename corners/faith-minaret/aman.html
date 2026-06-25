@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta name="color-scheme" content="dark">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>سلسلة الأمان بالله | Chain of Security with Allah</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Amiri+Quran&family=Tajawal:wght@400;500;700;800;900&family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+<link rel="stylesheet" href="yaqeen.css">
+<style>
+/* ── Safe-harbor theme: deep emerald + warm gold (sakeenah) ── */
+:root{
+  --primary:#1E8A5E; --primary-dark:#176E4A;
+  --bg1:#04231A; --bg2:#073528; --bg3:#0B4A37;
+  --gold:#E8C66B; --gold-soft:#F2D88A;
+  --text:#EAF7F0; --muted:rgba(234,247,240,.74);
+  --line:rgba(232,198,107,.28);
+}
+body{background:
+  
+    radial-gradient(1300px 760px at 78% -12%, rgba(30,138,94,.30), transparent 58%),
+    radial-gradient(1000px 620px at 0% 100%, rgba(232,198,107,.13), transparent 55%),
+    linear-gradient(165deg,var(--bg1),var(--bg2) 55%,var(--bg3));
+  background-attachment:fixed;
+}
+.guide .who{background:linear-gradient(160deg,#1ABC9C,#11806c)}
+.coll-cert{background:linear-gradient(160deg,rgba(232,198,107,.16),rgba(30,138,94,.20))!important}
+/* dark ink for legibility on gold surfaces */
+.lang button.active{color:#04231A}
+.stampbtn{color:#04231A}
+</style>
+<script>(function(){try{var l=localStorage.getItem('bunyanLang');if(l==='en'){var h=document.documentElement;h.dir='ltr';h.lang='en';}}catch(e){}})();</script>
+<style id="__antiflash">html{background:#04231A;color-scheme:dark}</style>
+</head>
+<body>
+
+<!-- ═══ HEADER ═══ -->
+<header class="hdr">
+  <a class="back" href="aqeeda.html">
+    <span>↩️</span><span class="lng-ar">المنارة</span><span class="lng-en">Minaret</span>
+  </a>
+  <span class="hdr-badge"><span class="l">🛡️</span><span class="lng-ar">سِلسِلةُ الأمان</span><span class="lng-en">Chain of Security</span></span>
+  <div class="lang">
+    <button data-lang="en">EN</button>
+    <button data-lang="ar" class="active">عربي</button>
+  </div>
+</header>
+
+<!-- ═══ INTRO ═══ -->
+<section class="intro">
+  <h1>
+    <span class="lng-ar">🛡️ سِلسِلةُ الأمانِ <span class="hl">بِالله</span></span>
+    <span class="lng-en">🛡️ The Chain of <span class="hl">Security with Allah</span></span>
+  </h1>
+  <p class="sub">
+    <span class="lng-ar">خَمسَ عَشْرةَ حَلقةً نَبني بِها حِصنَ الطُّمَأنينةِ حَولَ قَلبِك: مَعِيّةُ الله، والإيمانُ بِالقَدَرِ واليَومِ الآخِرِ والمَلائِكةِ الحافِظة، وأنَّ الدُّنيا مَحَطّةُ انتِظارٍ لِلجَنّةِ نَلتَقي فيها الأحِبّةَ والرُّسُلَ ونَرى اللهَ — فَتَحمي قَلبَكَ مِنَ الخَوفِ والقَلَقِ واليَأسِ ووَساوِسِ الشَّيطان.</span>
+    <span class="lng-en">Fifteen links to build a fortress of peace around your heart: Allah being with you, faith in His decree, the Last Day, the guardian angels, and that this world is a waiting-stop for Paradise where we'll meet our loved ones and the messengers and see Allah — protecting your heart from fear, anxiety, despair, and Satan's whispers.</span>
+  </p>
+  <div class="guide">
+    <div class="who">🧑</div>
+    <div class="say">
+      <span class="lng-ar">أنا «يوسُف»، رَفيقُك. سنَبني مَعاً حِصناً يَملأُ قَلبَكَ سَكينةً وأماناً… هَيّا! 🏰</span>
+      <span class="lng-en">I'm Yusuf, your companion. Together we'll build a fortress that fills your heart with peace and security… let's go! 🏰</span>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ METER ═══ -->
+<div class="pbar-wrap">
+  <div class="pbar-top">
+    <span><span class="lng-ar">مِيزانُ الطُّمَأنينة</span><span class="lng-en">Tranquility Meter</span></span>
+    <span class="stars" id="pCount">0 / 15</span>
+  </div>
+  <div class="pbar"><div class="pbar-fill" id="pFill"></div></div>
+  <div class="meter-label" id="meterLabel"></div>
+</div>
+
+<!-- ═══ COLLECTIONS ═══ -->
+<div class="collections">
+  <div class="coll-card" id="collStickers"></div>
+  <div class="coll-card" id="collNames"></div>
+  <div class="coll-card" id="collKeys"></div>
+  <div class="coll-card coll-cert" id="collCert"></div>
+</div>
+
+<!-- ═══ MAP ═══ -->
+<div class="map" id="map"><div class="road"></div></div>
+
+<footer class="foot">
+  <span class="lng-ar">صُنع بِحُبٍّ 🧡 لِأطفالِ الأُمّة — <b>سِلسِلةُ الأمانِ بِالله</b> · منارةُ العقيدة · على نَهجِ أهلِ السُّنّة</span>
+  <span class="lng-en">Made with 🧡 for the children of the Ummah — <b>The Chain of Security with Allah</b> · Faith Minaret · Upon the way of Ahl al-Sunnah</span>
+</footer>
+
+<!-- ═══ READER ═══ -->
+<div class="reader" id="reader">
+  <div class="sheet">
+    <div class="r-top">
+      <button class="r-close" id="rClose">✕</button>
+      <span class="r-count" id="rCount"></span>
+      <div class="r-arrows">
+        <button id="rPrev">‹</button>
+        <button id="rNext">›</button>
+      </div>
+    </div>
+    <div id="rBody"></div>
+  </div>
+</div>
+
+<!-- ═══ COLLECTIONS DRAWER ═══ -->
+<div class="drawer" id="drawer">
+  <div class="drawer-sheet">
+    <div class="dw-top">
+      <h3 id="dwTitle"></h3>
+      <button class="r-close" id="dwClose">✕</button>
+    </div>
+    <div class="dw-body" id="dwBody"></div>
+  </div>
+</div>
+
+<!-- ═══ CERTIFICATE ═══ -->
+<div class="cert-overlay" id="certOverlay">
+  <div class="cert-tools">
+    <input id="certName" type="text" placeholder="✍️ اكتُب اسمَك هنا / Type your name" maxlength="40">
+    <button class="cprint" id="certPrint">🖨️ <span class="lng-ar">اطبَع</span><span class="lng-en">Print</span></button>
+    <button class="cclose" id="certClose">✕</button>
+  </div>
+  <div class="certificate" id="certBox"></div>
+</div>
+
+<div id="confetti"></div>
+<div class="toast" id="toast"></div>
+
+<script defer src="nav-fix.js"></script>
+<script src="data/aman-stations.js"></script>
+<script src="aman-app.js"></script>
+<script defer src="../shared/mk-tts.js"></script>
+<script defer src="../quiz/quiz-engine.js"></script>
+<script defer src="../shared/mk-system.js"></script>
+<script defer src="../shared/mk-journeys.js"></script>
+<script defer src="../shared/mk-bag.js"></script>
+<script defer src="../shared/mk-train.js"></script>
+</body>
+</html>

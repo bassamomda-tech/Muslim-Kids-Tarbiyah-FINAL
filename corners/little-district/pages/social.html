@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta name="color-scheme" content="dark">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<title>حيّنا الصغير | Little District</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+<link rel="stylesheet" href="assets/social.css">
+<link rel="stylesheet" href="assets/features.css">
+<link rel="stylesheet" href="assets/knowledge.css">
+<style id="dscore-css">
+.dscore{max-width:1080px;margin:1.1rem auto .2rem;padding:0 1rem;font-family:'Tajawal',sans-serif}
+.dscore-card{position:relative;background:linear-gradient(160deg,#ffffff,#fdf4dd);border:2px solid #F1D27E;border-radius:1.5rem;padding:1.15rem 1.3rem 1.3rem;box-shadow:0 12px 34px rgba(150,110,20,.16)}
+.dscore-top{display:flex;align-items:center;gap:1.15rem;flex-wrap:wrap}
+.dscore-ring{flex:0 0 auto;width:92px;height:92px;border-radius:50%;display:grid;place-items:center;background:conic-gradient(var(--rc,#D4A017) calc(var(--p,0)*1%),#efe6cf 0)}
+.dscore-ring b{width:70px;height:70px;border-radius:50%;background:#fff;display:grid;place-items:center;font-size:1.3rem;font-weight:900;color:var(--rc,#D4A017)}
+.dscore-meta{flex:1;min-width:210px}
+.dscore-meta h3{margin:0 0 .25rem;font-size:1.18rem;font-weight:900;color:#7a5a12}
+.dscore-sub{margin:0 0 .55rem;font-size:.92rem;color:#6b5a36;font-weight:600;line-height:1.6}
+.dscore-sub b{color:#3a2f12}
+.dscore-bar{height:10px;background:#efe6cf;border-radius:6px;overflow:hidden}
+.dscore-bar i{display:block;height:100%;border-radius:6px;transition:width .6s ease}
+.dscore-rewards-head{display:flex;align-items:center;justify-content:space-between;gap:.6rem;margin:1rem 0 .5rem;font-weight:900;color:#7a5a12;font-size:1rem;flex-wrap:wrap}
+.dscore-status{font-size:.78rem;font-weight:800;padding:.22rem .7rem;border-radius:1rem}
+.dscore-status.on{background:rgba(46,158,91,.16);color:#1f7a44}
+.dscore-status.off{background:rgba(212,160,23,.16);color:#9a7414}
+.dscore-rewards{display:grid;grid-template-columns:repeat(5,1fr);gap:.55rem}
+@media(max-width:640px){.dscore-rewards{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:420px){.dscore-rewards{grid-template-columns:repeat(2,1fr)}}
+.dscore-rw{display:flex;flex-direction:column;align-items:center;gap:.3rem;text-align:center;text-decoration:none;background:#fffaf0;border:1.5px solid #F1D27E;border-radius:1rem;padding:.7rem .4rem;color:#5a4a22;transition:transform .15s,box-shadow .2s}
+.dscore-rw:not(.lock):hover{transform:translateY(-3px);box-shadow:0 8px 20px rgba(150,110,20,.18)}
+.dscore-rw .rw-ic{font-size:1.7rem}
+.dscore-rw .rw-t{font-size:.74rem;font-weight:800;line-height:1.35}
+.dscore-rw.lock{opacity:.55;border-style:dashed;background:#f6efe0;cursor:default}
+.mkcs-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:.55rem;margin-top:.9rem}
+@media(max-width:520px){.mkcs-stats{grid-template-columns:repeat(2,1fr)}}
+.mkcs-stat{display:flex;flex-direction:column;align-items:center;gap:.18rem;background:#fffaf0;border:1.5px solid #F1D27E;border-radius:1rem;padding:.7rem .3rem}
+.mkcs-stat .mkcs-st-ic{font-size:1.4rem}
+.mkcs-stat .mkcs-st-v{font-weight:900;font-size:1.3rem;color:#9a7414}
+.mkcs-stat .mkcs-st-v small{font-size:.74rem;font-weight:800;color:#b79a55}
+.mkcs-stat .mkcs-st-l{font-size:.72rem;font-weight:800;color:#7a5a12;text-align:center}
+.dtests{max-width:1080px;margin:.9rem auto .2rem;padding:0 1rem;display:grid;grid-template-columns:1fr 1fr;gap:.8rem;font-family:'Tajawal',sans-serif}
+@media(max-width:560px){.dtests{grid-template-columns:1fr}}
+.dtest-btn{display:flex;align-items:center;gap:.7rem;padding:.85rem 1.1rem;border-radius:1.3rem;text-decoration:none;cursor:pointer;transition:transform .18s,box-shadow .18s}
+.dtest-btn:hover{transform:translateY(-3px)}
+.dtest-btn .dt-ic{font-size:1.9rem;flex:0 0 auto}
+.dtest-btn .dt-tx{flex:1;display:flex;flex-direction:column;line-height:1.3}
+.dtest-btn .dt-tx b{color:#fff;font-size:1.05rem;font-weight:900}
+.dtest-btn .dt-tx small{color:rgba(255,255,255,.85);font-size:.76rem;font-weight:700}
+.dtest-btn .dt-go{flex:0 0 auto;background:#fff;font-family:'Tajawal',sans-serif;font-weight:900;font-size:.82rem;border-radius:2rem;padding:.38rem .85rem;white-space:nowrap}
+.dtest-btn.akhlaq{background:linear-gradient(135deg,#D4A017,#9a7414);border:2px solid #F0CE73;box-shadow:0 7px 0 #7a5a12}
+.dtest-btn.akhlaq .dt-go{color:#9a7414}
+.dtest-btn.adab{background:linear-gradient(135deg,#2E8B57,#1d6b40);border:2px solid #7FD0A8;box-shadow:0 7px 0 #155232}
+.dtest-btn.adab .dt-go{color:#1d6b40}
+</style>
+<script>(function(){try{var l=localStorage.getItem('bunyanLang');if(l==='en'){var h=document.documentElement;h.dir='ltr';h.lang='en';}}catch(e){}})();</script>
+<style id="__antiflash">html{background:#0A2540;color-scheme:dark}</style>
+</head>
+<body>
+
+<!-- ═══ HEADER ═══ -->
+<header class="app-hdr">
+  <a class="brand-link" href="../../../index.html" id="btnBack" title="تربية الطفل المسلم">
+    <span class="ico">🏘️</span>
+    <span><span class="lng-ar">المدينة</span><span class="lng-en">City</span></span>
+  </a>
+  <span class="page-badge">
+    <span>🌳</span>
+    <span class="lng-ar">حيّنا الصغير</span>
+    <span class="lng-en">Little District</span>
+  </span>
+  <div class="hdr-actions">
+    <div class="lang-toggle">
+      <button data-lang="en">EN</button>
+      <button data-lang="ar" class="active">عربي</button>
+    </div>
+    <button class="icon-btn" id="btnBackpack" title="حقيبتي">🎒</button>
+  </div>
+</header>
+
+<!-- ═══ DISTRICT VIEW (default) ═══ -->
+<div class="district-view">
+
+  <!-- HERO STREET -->
+  <section class="district-hero">
+    <div class="sun"></div>
+    <div class="cloud c1"></div>
+    <div class="cloud c2"></div>
+    <div class="cloud c3"></div>
+    <span class="bird b1">🕊️</span>
+    <span class="bird b2">🐦</span>
+
+    <div class="hero-inner">
+      <h1 class="hero-title">
+        <span class="lng-ar">🏘️ حيّنا الصغير</span>
+        <span class="lng-en">🏘️ Our Little District</span>
+      </h1>
+      <p class="hero-sub">
+        <span class="lng-ar">٣٤ بيتاً جميلاً — كل بيت يعلِّمك خُلقاً عظيماً!</span>
+        <span class="lng-en">34 cheerful houses — each teaches a beautiful character!</span>
+      </p>
+    </div>
+
+    <div class="hero-mascot">
+      <div class="speech">
+        <span class="lng-ar">أنا «نسيبة»، اختر بيتاً!</span>
+        <span class="lng-en">I'm Nusaybah — pick a house!</span>
+      </div>
+      <div style="font-size:2.6rem">👧</div>
+    </div>
+
+    <div class="hero-grass"></div>
+    <span class="walker w1">👦</span>
+    <span class="walker w2">🐈</span>
+    <span class="walker w3">🚲</span>
+    <div class="hero-road">
+      <div class="dash"></div><div class="dash"></div><div class="dash"></div>
+      <div class="dash"></div><div class="dash"></div><div class="dash"></div>
+      <div class="dash"></div><div class="dash"></div><div class="dash"></div>
+      <div class="dash"></div>
+    </div>
+  </section>
+
+  <main>
+    <div id="map" style="max-width:1080px;margin:0 auto;padding:0 1rem"></div>
+
+    <!-- INTRO STRIP -->
+    <div class="district-intro">
+      <div class="ico">📍</div>
+      <div class="info">
+        <h2><span class="lng-ar">رحلتك في الحيِّ تبدأ هنا!</span><span class="lng-en">Your journey starts here!</span></h2>
+        <p><span class="lng-ar">اضغط بيتاً لتدخله — وجمِّع الكنوز في حقيبتك 🎒</span>
+           <span class="lng-en">Tap a house to enter — and collect treasures in your backpack 🎒</span></p>
+      </div>
+      <button class="bp-pill" onclick="App.openBackpack()" type="button">
+        <span>🎒</span>
+        <span class="lng-ar">حقيبتي</span>
+        <span class="lng-en">My bag</span>
+        <span class="n" id="bagCount">0</span>
+      </button>
+    </div>
+
+    <!-- District content (built by JS) -->
+    <div id="districtBody"></div>
+
+    <!-- 3-LEVEL TESTS (akhlaq + adab) -->
+    <section class="dtests" aria-label="tests">
+      <a class="dtest-btn akhlaq" href="#" onclick="event.preventDefault(); if(window.MKQ&&MKQ.openTest)MKQ.openTest('akhlaq');">
+        <span class="dt-ic">💎</span>
+        <span class="dt-tx"><b class="lng-ar">اختبار الأخلاق</b><b class="lng-en">Manners Test</b>
+          <small class="lng-ar">٣ مستويات · ٢٤ خُلُقًا</small><small class="lng-en">3 levels · 24 manners</small></span>
+        <span class="dt-go lng-ar">ابدأ ←</span><span class="dt-go lng-en">Start →</span>
+      </a>
+      <a class="dtest-btn adab" href="#" onclick="event.preventDefault(); if(window.MKQ&&MKQ.openTest)MKQ.openTest('adab');">
+        <span class="dt-ic">📜</span>
+        <span class="dt-tx"><b class="lng-ar">اختبار الآداب</b><b class="lng-en">Etiquette Test</b>
+          <small class="lng-ar">٣ مستويات · ١٠ آداب</small><small class="lng-en">3 levels · 10 etiquettes</small></span>
+        <span class="dt-go lng-ar">ابدأ ←</span><span class="dt-go lng-en">Start →</span>
+      </a>
+    </section>
+
+    <!-- FINAL SCORE — moved BELOW the two tests -->
+    <section id="districtScore" class="dscore" aria-live="polite"></section>
+
+    <!-- next-corner train anchor -->
+    <div id="map2train"></div>
+
+  </main>
+
+  <footer class="app-foot">
+    <span class="lng-ar">صُنع بحب ❤️ لأطفال الأمة — <b>حيّنا الصغير</b> © 2026</span>
+    <span class="lng-en">Made with ❤️ for the children of the Ummah — <b>Little District</b> © 2026</span>
+  </footer>
+</div>
+
+<!-- ═══ HOUSE VIEW ═══ -->
+<div class="house-view">
+  <div class="house-nav">
+    <button class="hn-back" id="hnBack">
+      <span>←</span>
+      <span class="lng-ar">الحي</span>
+      <span class="lng-en">District</span>
+    </button>
+    <div class="hn-center">
+      <div class="hn-name" id="hnName"></div>
+      <div class="hn-sub" id="hnSub"></div>
+    </div>
+    <div class="hn-pager">
+      <button class="hn-arrow" id="hnPrev">‹</button>
+      <button class="hn-arrow" id="hnNext">›</button>
+    </div>
+  </div>
+
+  <div class="hp-hero">
+    <div class="hp-art" id="hpArt"></div>
+    <div class="hp-info">
+      <div class="hp-name" id="hpName"></div>
+      <div class="hp-desc" id="hpDesc"></div>
+      <div class="hp-score">
+        <span>⭐</span>
+        <span class="n" id="hpScoreN">0</span>
+        <span>/</span>
+        <span id="hpScoreMax">180</span>
+        <span class="lng-ar">نقطة</span>
+        <span class="lng-en">pts</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="rooms-bar" id="roomsBar"></div>
+
+  <div class="rooms-wrap">
+    <section class="room active" id="r1"></section>
+    <section class="room" id="r2"></section>
+    <section class="room" id="r3"></section>
+    <section class="room" id="r4"></section>
+    <section class="room" id="r5"></section>
+  </div>
+</div>
+
+<!-- ═══ STORY READER MODAL (paginated · interactive) ═══ -->
+<div class="story-reader" id="storyReader">
+  <div class="sr-box">
+    <button class="sr-close" id="srClose">✕</button>
+    <div class="sr-progress" id="srProgress"></div>
+    <div class="sr-scene" id="srScene"></div>
+    <div class="sr-page" id="srPage"></div>
+    <div class="sr-foot" id="srFoot"></div>
+  </div>
+</div>
+
+<!-- Print area (for certificate) -->
+<div id="printArea" style="display:none"></div>
+
+<!-- ═══ BACKPACK DRAWER ═══ -->
+<div class="bp-overlay" id="bpOverlay"></div>
+<aside class="bp-drawer" id="bpDrawer">
+  <div class="bp-hdr">
+    <h3>🎒 <span class="lng-ar">حقيبة الكنوز</span><span class="lng-en">Treasure Bag</span></h3>
+    <button class="icon-btn" id="bpClose">✕</button>
+  </div>
+  <div class="bp-body"></div>
+</aside>
+
+<!-- ═══ CONFETTI + TOAST ═══ -->
+<div id="confetti"></div>
+<div class="toast" id="toast"></div>
+
+<!-- ═══ SCRIPTS ═══ -->
+<script src="assets/houses-art.js"></script>
+<script src="data/_index.js"></script>
+<!-- House data files — one per house, in district order.
+     (dua.js not yet authored — its house shows a placeholder.) -->
+<!-- akhlaq -->
+<script src="data/truth.js"></script>
+<script src="data/trust.js"></script>
+<script src="data/courage.js"></script>
+<script src="data/ihsan.js"></script>
+<script src="data/tongue.js"></script>
+<script src="data/pardon.js"></script>
+<script src="data/forbearance.js"></script>
+<script src="data/respect.js"></script>
+<script src="data/sincerity.js"></script>
+<script src="data/humility.js"></script>
+<script src="data/haya.js"></script>
+<script src="data/striving.js"></script>
+<script src="data/patience.js"></script>
+<script src="data/loyalty.js"></script>
+<script src="data/gratitude.js"></script>
+<script src="data/generosity.js"></script>
+<script src="data/knowledge.js"></script>
+<script src="data/chivalry.js"></script>
+<script src="data/contentment.js"></script>
+<script src="data/mercy.js"></script>
+<script src="data/justice.js"></script>
+<script src="data/altruism.js"></script>
+<script src="data/goodthink.js"></script>
+<script src="data/mastery.js"></script>
+<!-- adab -->
+<script src="data/greeting.js"></script>
+<script src="data/eating.js"></script>
+<script src="data/permission.js"></script>
+<script src="data/dua.js"></script>
+<script src="data/sleep.js"></script>
+<script src="data/hospitality.js"></script>
+<script src="data/bathroom.js"></script>
+<script src="data/masjid.js"></script>
+<script src="data/friendship.js"></script>
+<script src="data/majlis.js"></script>
+<!-- Engine -->
+<script src="assets/activities.js"></script>
+<script src="assets/story-reader.js"></script>
+<script src="assets/render.js"></script>
+<script src="assets/app.js"></script>
+<script>
+/* ── حيّنا الصغير: final score header · syncs index bar · unlocks 5 Anous activities at ≥75% ── */
+(function(){
+  var REWARDS=[
+    {href:'akhlaq-bag.html',     icon:'🎒', ar:'حقيبة الأخلاق', en:'The Akhlaq Bag'},
+    {href:'good-bingo.html',     icon:'🏅', ar:'بنغو الصالحات', en:'Good Deeds Bingo'},
+    {href:'honesty-pledge.html', icon:'✍️', ar:'تعهّد الصدق',   en:'Honesty Pledge'},
+    {href:'what-if.html',        icon:'🤔', ar:'ماذا لو؟',        en:'What If?'},
+    {href:'paradise-post.html',  icon:'💌', ar:'بريد الجنة',     en:'Paradise Post'}
+  ];
+  var ANOUS='../../activities/activities/';
+  function ldGet(k){ try{return localStorage.getItem('ld:'+k);}catch(e){return null;} }
+  /* Corner evaluation = the 3-level TESTS (akhlaq + adab), 34 houses → max 340.
+     NOT the internal per-manner activity points. */
+  function testScore(){
+    var s={}; try{ s=JSON.parse(localStorage.getItem('mkQuiz')||'{}'); }catch(e){}
+    var c=s.social||{};
+    function avg(a){ return a.length? a.reduce(function(x,y){return x+y;},0)/a.length : null; }
+    function jScore(jid){
+      var j=c[jid]||{}, lv=['beginner','intermediate','advanced'].map(function(l){
+        var o=j[l]||{}, v=Object.keys(o).map(function(k){return o[k];});
+        return v.length? avg(v):null;
+      }).filter(function(x){return x!==null;});
+      return lv.length? avg(lv):null;
+    }
+    var ak=jScore('akhlaq'), ad=jScore('adab');
+    var parts=[ak,ad].filter(function(x){return x!==null;});
+    return parts.length? Math.round(avg(parts)) : 0;   // 0–100
+  }
+  function compute(){
+    var total=34, max=340;            // 34 houses × 10
+    var pct=testScore();
+    var done=Math.round(pct/100*total);
+    var points=Math.round(pct/100*max);
+    // unified stats: journeys (akhlaq + adab) + real station completion via MK_J
+    var jCount=2, jDone=0, stDone=done, stTotal=total;
+    try{
+      var s={}; try{ s=JSON.parse(localStorage.getItem('mkQuiz')||'{}'); }catch(e){}
+      var c=s.social||{};
+      ['akhlaq','adab'].forEach(function(jid){
+        var j=c[jid]||{}, vals=[];
+        ['beginner','intermediate','advanced'].forEach(function(l){ var o=j[l]||{}; Object.keys(o).forEach(function(k){ vals.push(o[k]); }); });
+        if(vals.length){ var a=vals.reduce(function(x,y){return x+y;},0)/9; if(a>=75) jDone++; }
+      });
+      if(window.MK_J && MK_J.cornerStats){ var cs=MK_J.cornerStats('social'); if(cs&&cs.total){ stDone=cs.done; stTotal=cs.total; } }
+    }catch(e){}
+    return {pct:pct, points:points, max:max, done:done, total:total, jDone:jDone, jCount:jCount, stDone:stDone, stTotal:stTotal};
+  }
+  function ensureUnlock(pct){
+    try{
+      var u=JSON.parse(localStorage.getItem('mkUnlocked')||'{}');
+      if(pct>=75 && !u.social){
+        u.social=REWARDS.map(function(r){return {href:'activities/'+r.href,icon:r.icon,t:{ar:r.ar,en:r.en}};});
+        localStorage.setItem('mkUnlocked', JSON.stringify(u));
+      }
+      return !!u.social;
+    }catch(e){ return pct>=75; }
+  }
+  function render(){
+    var el=document.getElementById('districtScore'); if(!el) return;
+    var s=compute();
+    try{ localStorage.setItem('ld:overallPct', String(s.pct)); }catch(e){}
+    var unlocked=ensureUnlock(s.pct);
+    try {
+      var snap = JSON.parse(localStorage.getItem('mk:cornerCard') || '{}');
+      snap.social = { pct: s.pct, cert: [s.stDone, s.stTotal], medal: [s.stDone, s.stTotal],
+        station: [s.stDone, s.stTotal], journey: [s.jDone, s.jCount], ts: Date.now() };
+      localStorage.setItem('mk:cornerCard', JSON.stringify(snap));
+    } catch (e) {}
+    var rc = s.pct>=75 ? '#2E9E5B' : '#D4A017';
+    var lang = document.documentElement.lang==='en' ? 'en':'ar';
+    var rw = REWARDS.map(function(r){
+      var label='<span class="rw-t"><span class="lng-ar">'+r.ar+'</span><span class="lng-en">'+r.en+'</span></span>';
+      if(unlocked) return '<a class="dscore-rw" href="'+ANOUS+r.href+'?lang='+lang+'"><span class="rw-ic">'+r.icon+'</span>'+label+'</a>';
+      return '<div class="dscore-rw lock"><span class="rw-ic">🔒</span>'+label+'</div>';
+    }).join('');
+    var statusHtml = unlocked
+      ? '<span class="dscore-status on"><span class="lng-ar">مفتوحة ✓</span><span class="lng-en">Unlocked ✓</span></span>'
+      : '<span class="dscore-status off"><span class="lng-ar">تحتاج ٧٥٪</span><span class="lng-en">Reach 75%</span></span>';
+    el.innerHTML =
+      '<div class="dscore-card">'
+      + '<div class="dscore-top">'
+      +   '<div class="dscore-ring" style="--p:'+s.pct+';--rc:'+rc+'"><b>'+s.pct+'%</b></div>'
+      +   '<div class="dscore-meta">'
+      +     '<h3><span class="lng-ar">🏆 درجتُك في الحيّ</span><span class="lng-en">🏆 Your score in the District</span></h3>'
+      +     '<p class="dscore-sub"><span class="lng-ar">نسبةُ إنجازِك في هذا الركن من الاختبارات</span><span class="lng-en">Your completion in this corner from the tests</span></p>'
+      +     '<div class="dscore-bar"><i style="width:'+s.pct+'%;background:'+rc+'"></i></div>'
+      +   '</div>'
+      + '</div>'
+      + '<div class="mkcs-stats">'
+      +   '<div class="mkcs-stat"><span class="mkcs-st-ic">📜</span><span class="mkcs-st-v">'+s.stDone+'<small>/'+s.stTotal+'</small></span><span class="mkcs-st-l"><span class="lng-ar">الشهادات</span><span class="lng-en">Certificates</span></span></div>'
+      +   '<div class="mkcs-stat"><span class="mkcs-st-ic">🏅</span><span class="mkcs-st-v">'+s.stDone+'<small>/'+s.stTotal+'</small></span><span class="mkcs-st-l"><span class="lng-ar">الأوسمة</span><span class="lng-en">Medals</span></span></div>'
+      +   '<div class="mkcs-stat"><span class="mkcs-st-ic">📍</span><span class="mkcs-st-v">'+s.stDone+'<small>/'+s.stTotal+'</small></span><span class="mkcs-st-l"><span class="lng-ar">المحطات</span><span class="lng-en">Stations</span></span></div>'
+      +   '<div class="mkcs-stat"><span class="mkcs-st-ic">🧭</span><span class="mkcs-st-v">'+s.jDone+'<small>/'+s.jCount+'</small></span><span class="mkcs-st-l"><span class="lng-ar">الرحلات</span><span class="lng-en">Journeys</span></span></div>'
+      + '</div>'
+      + '<div class="dscore-rewards-head">'
+      +   '<span><span class="lng-ar">🎁 ٥ أنشطة من ركن أنوس</span><span class="lng-en">🎁 5 Anous activities</span></span>'
+      +   statusHtml
+      + '</div>'
+      + '<div class="dscore-rewards">'+rw+'</div>'
+      + '</div>';
+  }
+  function boot(){
+    render();
+    var body=document.getElementById('districtBody');
+    if(body && window.MutationObserver){ new MutationObserver(function(){render();}).observe(body,{childList:true,subtree:false}); }
+    window.addEventListener('focus', render);
+    document.querySelectorAll('.lang-toggle button').forEach(function(b){ b.addEventListener('click', function(){ setTimeout(render,80); }); });
+  }
+  if(document.readyState==='loading') document.addEventListener('DOMContentLoaded', boot); else boot();
+})();
+</script>
+
+<script defer src="../../shared/mk-system.js"></script>
+<script defer src="../../shared/mk-journeys.js"></script>
+<script defer src="../../shared/mk-bag.js"></script>
+<script defer src="../../shared/mk-train.js"></script>
+<script defer src="../../shared/nav-fix.js"></script>
+<script src="data/district-quiz.js"></script>
+<script>window.MKQ_NO_AUTOBANNER = true;/* this page has its own test buttons (below) — no injected top banner */</script>
+<script defer src="../../quiz/quiz-engine.js"></script>
+<script src="../../shared/mk-citynav.js"></script>
+</body>
+</html>

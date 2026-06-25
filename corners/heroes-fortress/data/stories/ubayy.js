@@ -1,0 +1,56 @@
+/* data/stories/ubayy.js — Heroes · Ubayy ibn Ka'b — sources: صور من حياة الصحابة (الباشا) · إسلام ويب · الدرر السنية · صحيح البخاري ومسلم */
+window.HISN_STORIES = window.HISN_STORIES || {};
+HISN_STORIES.ubayy = [
+  { icon:'📖', scene:'mihrab', character:'😢',
+    title:{ ar:'اللهُ يذكرُك باسمِك!', en:'Allah Mentions You by Name!' },
+    pages:[
+      { scene:'mihrab', character:'🕌',
+        text:{ ar:'كان <b>أُبَيُّ بنُ كعب</b> أحفظَ الصحابةِ لكتابِ الله وأحسنَهم تلاوة. وفي يومٍ عظيمٍ دعاه النبيُّ ﷺ وقال له كلمةً لم يتوقّعْها أبداً: <b>«يا أُبَيّ، إنّ اللهَ أمرني أن أقرأَ عليك القرآن»</b>.<br><br>فُوجِئَ أُبَيٌّ وقال متعجّباً: يا رسولَ الله، <b>آللهُ سمّاني لك باسمي؟!</b> قال النبيُّ ﷺ: «نعم، اللهُ سمّاك لي باسمِك». فلم يتمالكْ أُبَيٌّ نفسَه — <b>بكى من الفرح</b>! أيُّ شرفٍ أعظمُ من أن يذكرَك اللهُ في السماءِ باسمِك ويأمرَ نبيَّه أن يقرأَ عليك؟ وكانتِ السورةُ التي قرأها النبيُّ ﷺ عليه سورةَ <b>«البيّنة»</b>.',
+          en:'<b>Ubayy ibn Ka\u2019b</b> was the companion who most memorized the Book of Allah and recited it most beautifully. On a momentous day the Prophet ﷺ called him and said something he never expected: <b>"O Ubayy, Allah has commanded me to recite the Quran to you."</b><br><br>Ubayy was astonished and asked: O Messenger of Allah, <b>did Allah name me to you by my name?!</b> The Prophet ﷺ said: "Yes, Allah named you to me by your name." Ubayy could not contain himself — <b>he wept with joy</b>! What honor is greater than for Allah to mention you in the heavens by name and command His Prophet to recite to you? The surah the Prophet ﷺ recited to him was <b>Surat al-Bayyina</b>.' },
+        choice:{ q:{ar:'لماذا بكى أُبَيٌّ حين أخبره النبيُّ ﷺ؟',en:'Why did Ubayy weep when the Prophet ﷺ told him?'},
+          opts:[
+            { t:{ar:'فرحاً بأنّ اللهَ ذكره باسمِه وأمرَ بالقراءةِ عليه',en:'With joy that Allah named him and commanded recitation to him'},c:true,exp:{ar:'نعم! شرفٌ عظيمٌ أن يذكرَك اللهُ في السماء.',en:'Yes! A great honor that Allah mentions you in the heavens.'} },
+            { t:{ar:'حزناً',en:'Out of sadness'},c:false,exp:{ar:'لا، بل بكى فرحاً بهذا الشرفِ العظيم.',en:'No — he wept from joy at this great honor.'} },
+            { t:{ar:'خوفاً',en:'Out of fear'},c:false,exp:{ar:'لا، بل تأثّراً وفرحاً بمحبّةِ اللهِ له.',en:'No — moved and joyful at Allah\u2019s love for him.'} },
+          ] } },
+    ],
+    quiz:[
+      { q:{ar:'ماذا أمرَ اللهُ النبيَّ ﷺ أن يفعلَ مع أُبَيّ؟',en:'What did Allah command the Prophet ﷺ to do with Ubayy?'},
+        opts:[ {t:{ar:'أن يقرأَ عليه القرآن',en:'To recite the Quran to him'},c:true}, {t:{ar:'أن يُعطيَه مالاً',en:'To give him wealth'},c:false}, {t:{ar:'أن يُؤمِّرَه',en:'To make him a commander'},c:false} ] },
+      { q:{ar:'أيُّ سورةٍ قرأها النبيُّ ﷺ عليه؟',en:'Which surah did the Prophet ﷺ recite to him?'},
+        opts:[ {t:{ar:'البيّنة',en:'Al-Bayyina'},c:true}, {t:{ar:'الفيل',en:'Al-Fil'},c:false}, {t:{ar:'الكوثر',en:'Al-Kawthar'},c:false} ] },
+      { q:{ar:'ماذا نتعلّمُ من حبِّ أُبَيٍّ للقرآن؟',en:'What do we learn from Ubayy\u2019s love of the Quran?'},
+        opts:[ {t:{ar:'حبُّ القرآنِ وإتقانُه يرفعُ صاحبَه',en:'Loving and mastering the Quran elevates a person'},c:true}, {t:{ar:'القرآنُ صعب',en:'The Quran is too hard'},c:false}, {t:{ar:'يكفي الحفظُ بلا فهم',en:'Memorizing without understanding is enough'},c:false} ] },
+    ],
+    moral:{ar:'حبُّ القرآنِ وإتقانُه شرفٌ يرفعُ صاحبَه، وأعظمُ تكريمٍ أن يُحِبَّك اللهُ ويذكرَك.',en:'Loving and mastering the Quran is an honor that elevates a person; the greatest honor is that Allah loves and mentions you.'},
+    badge:{icon:'📖',title:{ar:'وِسامُ سيّدِ القُرّاء',en:'Badge of the Master Reciter'}},
+    reflect:[ {ar:'كم تُحِبُّ القرآنَ وتحرصُ على حفظِه وتلاوتِه؟',en:'How much do you love the Quran and strive to memorize and recite it?'}, {ar:'كيف تجعلُ القرآنَ رفيقَ يومِك؟',en:'How do you make the Quran your daily companion?'} ],
+    didYouKnow:[ {ar:'حديثُ «إنّ اللهَ أمرني أن أقرأَ عليك» رواه البخاريُّ ومسلم — المصدر: صحيح البخاري ومسلم',en:'The hadith "Allah commanded me to recite to you" is reported by al-Bukhari and Muslim — Source: Sahih al-Bukhari & Muslim'}, {ar:'قال النبيُّ ﷺ: «أقرؤُهم لكتابِ اللهِ أُبَيُّ بنُ كعب» — المصدر: سنن الترمذي',en:'The Prophet ﷺ said: "The best reciter of Allah\u2019s Book is Ubayy ibn Ka\u2019b" — Source: Sunan at-Tirmidhi'} ],
+  },
+  { icon:'🎓', scene:'mosque', character:'📚',
+    title:{ ar:'معلّمُ القرآنِ للأمّة', en:'Teacher of the Quran to the Nation' },
+    pages:[
+      { scene:'mosque', character:'📚',
+        text:{ ar:'لم يحتفظْ <b>أُبَيٌّ</b> بعلمِه لنفسِه، بل <b>أقرأَ الناسَ القرآنَ وعلّمهم</b> حتى صار مرجعاً للقُرّاء. كان كبارُ الصحابةِ يأتونه ليتعلّموا منه القراءةَ الصحيحة، وأخذَ عنه كثيرٌ من التابعينَ علمَ القرآن.<br><br>وفي زمنِ <b>عمرَ بنِ الخطّاب</b> كان أُبَيٌّ من كبارِ العلماءِ الذين يُرجَعُ إليهم، وشاركَ في حفظِ القرآنِ وضبطِه. ومع كلِّ هذا الفضلِ بقيَ <b>متواضعاً خاشعاً</b>، يذكِّرُ الناسَ بالآخرةِ ويبكي عند تلاوةِ كتابِ الله. علّمنا أُبَيٌّ أنّ <b>خيرَنا من تعلّمَ القرآنَ وعلّمه</b>، وأنّ العلمَ يزدادُ بالعطاء.',
+          en:'<b>Ubayy</b> did not keep his knowledge to himself; he <b>taught the Quran to the people</b> until he became a reference for reciters. Senior companions would come to learn correct recitation from him, and many successors took the knowledge of the Quran from him.<br><br>In the time of <b>Umar ibn al-Khattab</b>, Ubayy was among the great scholars consulted, and he took part in preserving and verifying the Quran. With all this merit he remained <b>humble and devout</b>, reminding people of the Hereafter and weeping at the recitation of Allah\u2019s Book. Ubayy taught us that <b>the best of us is the one who learns the Quran and teaches it</b>, and that knowledge grows by giving.' },
+        choice:{ q:{ar:'ماذا فعلَ أُبَيٌّ بعلمِه بالقرآن؟',en:'What did Ubayy do with his knowledge of the Quran?'},
+          opts:[
+            { t:{ar:'علّمه الناسَ وأقرأهم',en:'He taught and instructed people in it'},c:true,exp:{ar:'نعم! خيرُكم من تعلّمَ القرآنَ وعلّمه.',en:'Yes! The best of you is one who learns the Quran and teaches it.'} },
+            { t:{ar:'احتفظَ به لنفسِه',en:'He kept it to himself'},c:false,exp:{ar:'لا، بل شاركه وعلّمه الأمّة.',en:'No — he shared and taught it to the nation.'} },
+            { t:{ar:'نسيه',en:'He forgot it'},c:false,exp:{ar:'لا، بل حفظه وعلّمه ونشره.',en:'No — he preserved, taught, and spread it.'} },
+          ] } },
+    ],
+    quiz:[
+      { q:{ar:'ماذا كان دورُ أُبَيٍّ مع الناس؟',en:'What was Ubayy\u2019s role with the people?'},
+        opts:[ {t:{ar:'معلّمٌ ومُقرئٌ للقرآن',en:'A teacher and instructor of the Quran'},c:true}, {t:{ar:'تاجر',en:'A merchant'},c:false}, {t:{ar:'قائدُ جيش',en:'An army commander'},c:false} ] },
+      { q:{ar:'كيف بقيَ أُبَيٌّ مع فضلِه الكبير؟',en:'How did Ubayy remain despite his great merit?'},
+        opts:[ {t:{ar:'متواضعاً خاشعاً',en:'Humble and devout'},c:true}, {t:{ar:'متكبّراً',en:'Arrogant'},c:false}, {t:{ar:'بخيلاً بعلمِه',en:'Withholding his knowledge'},c:false} ] },
+      { q:{ar:'ما القاعدةُ التي علّمنا إيّاها؟',en:'What rule did he teach us?'},
+        opts:[ {t:{ar:'خيرُكم من تعلّمَ القرآنَ وعلّمه',en:'The best of you learns the Quran and teaches it'},c:true}, {t:{ar:'اكتمِ العلم',en:'Hide your knowledge'},c:false}, {t:{ar:'العلمُ للقليلِ فقط',en:'Knowledge is for the few only'},c:false} ] },
+    ],
+    moral:{ar:'خيرُ الناسِ من تعلّمَ القرآنَ وعلّمه، والعلمُ يزدادُ بالعطاءِ والتواضع.',en:'The best of people is the one who learns the Quran and teaches it; knowledge grows through giving and humility.'},
+    badge:{icon:'🎓',title:{ar:'وِسامُ معلّمِ القرآن',en:'Badge of the Quran Teacher'}},
+    reflect:[ {ar:'هل تُشارِكُ ما تعلّمتَه مع إخوانِك وأصحابِك؟',en:'Do you share what you learn with your brothers and friends?'}, {ar:'كيف تبقى متواضعاً كلّما زادَ علمُك؟',en:'How do you stay humble as your knowledge grows?'} ],
+    didYouKnow:[ {ar:'أخذَ كثيرٌ من القُرّاءِ قراءتَهم بسندٍ يتّصلُ بأُبَيِّ بنِ كعبٍ عن النبيِّ ﷺ — المصدر: الدرر السنية',en:'Many reciters trace their recitation through a chain reaching Ubayy ibn Ka\u2019b from the Prophet ﷺ — Source: ad-Durar as-Saniyya'}, {ar:'كان عمرُ بنُ الخطّابِ يقول: «أُبَيٌّ سيّدُ المسلمين» تقديراً لعلمِه — المصدر: صحيح البخاري',en:'Umar ibn al-Khattab used to say: "Ubayy is the master of the Muslims," honoring his knowledge — Source: Sahih al-Bukhari'} ],
+  },
+];

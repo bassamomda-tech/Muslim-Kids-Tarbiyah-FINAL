@@ -1,0 +1,56 @@
+/* data/stories/uways.js — Successors · Uways al-Qarani — sources: صحيح مسلم · صور من حياة التابعين · إسلام ويب · الدرر السنية */
+window.HISN_STORIES = window.HISN_STORIES || {};
+HISN_STORIES.uways = [
+  { icon:'❤️', scene:'desert', character:'🤲',
+    title:{ ar:'البِرُّ الذي رفعه عند الله', en:'The Devotion That Raised Him With Allah' },
+    pages:[
+      { scene:'desert', character:'👵',
+        text:{ ar:'كان <b>أويسٌ القرني</b> يعيشُ في اليمنِ في زمنِ النبيِّ ﷺ، وآمنَ به وأحبَّه حبّاً شديداً، وتمنّى لو يُسافِرُ إلى المدينةِ ليراه. لكنّه كان له <b>أمٌّ كبيرةٌ في السنِّ ضعيفة</b>، لا أحدَ يخدمُها غيرُه!<br><br>فماذا اختارَ أويس؟ لقد <b>فضّلَ البقاءَ لخدمةِ أمِّه وبِرِّها</b> على السفرِ لرؤيةِ النبيِّ ﷺ — مع أنّ رؤيةَ النبيِّ ﷺ أمنيةُ كلِّ مؤمن! لم يكنْ هذا تقصيراً، بل كان <b>بِرّاً عظيماً</b> أحبَّه اللهُ منه. فرفعه اللهُ بهذا البِرِّ حتى صارَ خيرَ التابعين، وذكره النبيُّ ﷺ لأصحابِه قبلَ أن يولَد كثيرٌ منهم!',
+          en:'<b>Uways al-Qarani</b> lived in Yemen in the time of the Prophet ﷺ; he believed in him and loved him deeply, and wished to travel to Madinah to see him. But he had an <b>elderly, frail mother</b> whom no one served but him!<br><br>What did Uways choose? He <b>preferred to stay and serve and honor his mother</b> over traveling to see the Prophet ﷺ — though seeing the Prophet ﷺ is the wish of every believer! This was no shortcoming; it was a <b>great devotion</b> that Allah loved from him. So Allah raised him by this devotion until he became the best of the successors, and the Prophet ﷺ mentioned him to his companions before many of them were even born!' },
+        choice:{ q:{ar:'لماذا لم يُسافرْ أويسٌ لرؤيةِ النبيِّ ﷺ؟',en:'Why did Uways not travel to see the Prophet ﷺ?'},
+          opts:[
+            { t:{ar:'لأنّه آثرَ خدمةَ أمِّه وبِرَّها',en:'Because he preferred serving and honoring his mother'},c:true,exp:{ar:'نعم! بِرُّ الوالدينِ من أحبِّ الأعمالِ إلى الله.',en:'Yes! Honoring parents is among the deeds most beloved to Allah.'} },
+            { t:{ar:'لأنّه لم يُحبَّ النبيَّ ﷺ',en:'Because he did not love the Prophet ﷺ'},c:false,exp:{ar:'لا، بل أحبَّه، لكنّه قدّمَ بِرَّ أمِّه.',en:'No — he loved him, but put his mother\u2019s care first.'} },
+            { t:{ar:'لأنّه كسول',en:'Because he was lazy'},c:false,exp:{ar:'لا، بل بِرّاً عظيماً بأمِّه.',en:'No — out of great devotion to his mother.'} },
+          ] } },
+    ],
+    quiz:[
+      { q:{ar:'أين كان يعيشُ أويسٌ القرني؟',en:'Where did Uways al-Qarani live?'},
+        opts:[ {t:{ar:'في اليمن',en:'In Yemen'},c:true}, {t:{ar:'في مصر',en:'In Egypt'},c:false}, {t:{ar:'في الشام',en:'In Sham'},c:false} ] },
+      { q:{ar:'ما الذي قدّمه أويسٌ على رؤيةِ النبيِّ ﷺ؟',en:'What did Uways prioritize over seeing the Prophet ﷺ?'},
+        opts:[ {t:{ar:'بِرَّ أمِّه وخدمتَها',en:'Honoring and serving his mother'},c:true}, {t:{ar:'التجارة',en:'Trade'},c:false}, {t:{ar:'المال',en:'Wealth'},c:false} ] },
+      { q:{ar:'ماذا نتعلّمُ من أويس؟',en:'What do we learn from Uways?'},
+        opts:[ {t:{ar:'بِرُّ الوالدينِ يرفعُ صاحبَه عند الله',en:'Honoring parents raises a person with Allah'},c:true}, {t:{ar:'الشهرةُ أهم',en:'Fame matters most'},c:false}, {t:{ar:'إهمالُ الأهل',en:'Neglecting family'},c:false} ] },
+    ],
+    moral:{ar:'بِرُّ الوالدينِ من أحبِّ الأعمالِ إلى الله، وقد يرفعُ صاحبَه فوقَ ما يتخيّل.',en:'Honoring parents is among the deeds most beloved to Allah, and may raise a person beyond what they imagine.'},
+    badge:{icon:'❤️',title:{ar:'وِسامُ بِرِّ الوالدين',en:'Badge of Honoring Parents'}},
+    reflect:[ {ar:'كيف تخدمُ والديك وتُدخِلُ السرورَ على قلبِهما؟',en:'How do you serve your parents and bring joy to their hearts?'}, {ar:'هل تُقدِّمُ رضا والديك على رغباتِك أحياناً؟',en:'Do you sometimes put your parents\u2019 pleasure before your own wishes?'} ],
+    didYouKnow:[ {ar:'حديثُ النبيِّ ﷺ عن أويسٍ خيرِ التابعينَ ثابتٌ في صحيحِ مسلم — المصدر: صحيح مسلم',en:'The Prophet\u2019s ﷺ hadith about Uways being the best of the successors is established in Sahih Muslim — Source: Sahih Muslim'}, {ar:'كان بأويسٍ أثرُ مرضٍ (بَرَص) فدعا اللهَ فشفاه إلّا موضعَ درهمٍ علامةً يُعرَفُ بها — المصدر: صحيح مسلم',en:'Uways had a trace of illness (leprosy); he prayed and Allah healed him except a coin-sized mark as a sign to know him by — Source: Sahih Muslim'} ],
+  },
+  { icon:'🤲', scene:'kaaba', character:'⭐',
+    title:{ ar:'عمرُ يبحثُ عن الرجلِ الخفي', en:'Umar Searches for the Hidden Man' },
+    pages:[
+      { scene:'kaaba', character:'👳',
+        text:{ ar:'قبلَ وفاتِه، أخبرَ النبيُّ ﷺ <b>عمرَ بنَ الخطّاب</b> عن رجلٍ سيأتي من اليمنِ اسمُه أويس، وقال: <b>«إن استطعتَ أن يستغفرَ لك فافعلْ»</b> — لأنّ دعاءَه مستجاب! فصارَ عمرُ، أميرُ المؤمنينَ العظيم، <b>يبحثُ عن هذا الرجلِ الخفيِّ المجهول</b> كلَّ عامٍ بين حجّاجِ اليمن!<br><br>وذاتَ يومٍ وجده عمرُ، فسأله: أأنتَ أويسُ بنُ عامر؟ قال: نعم. قال: أكان بك بَرَصٌ فبرأتَ منه إلّا موضعَ درهم؟ قال: نعم. ثمّ طلبَ منه عمرُ — <b>الخليفةُ الذي يهابُه الملوك</b> — أن يدعوَ له ويستغفرَ! فدعا له أويس. تأمّلْ: رجلٌ لا يعرفُه أحدٌ في الأرض، لكنّه عظيمٌ في السماء، يطلبُ منه أميرُ المؤمنينَ الدعاء! <b>العبرةُ بمنزلتِك عند اللهِ لا بشهرتِك بين الناس</b>.',
+          en:'Before his death, the Prophet ﷺ told <b>Umar ibn al-Khattab</b> about a man who would come from Yemen named Uways, and said: <b>"If you can have him seek forgiveness for you, do so"</b> — for his prayer is answered! So Umar, the great Commander of the Faithful, <b>searched for this hidden, unknown man</b> every year among the pilgrims of Yemen!<br><br>One day Umar found him and asked: are you Uways ibn Amir? He said yes. Umar asked: did you have leprosy from which you were healed except a coin-sized spot? He said yes. Then Umar — <b>the caliph whom kings feared</b> — asked him to pray and seek forgiveness for him! Uways prayed for him. Consider: a man no one on earth knew, yet great in the heavens, whom the Commander of the Faithful asked for prayer! <b>What counts is your rank with Allah, not your fame among people.</b>' },
+        choice:{ q:{ar:'لماذا طلبَ عمرُ من أويسٍ أن يدعوَ له؟',en:'Why did Umar ask Uways to pray for him?'},
+          opts:[
+            { t:{ar:'لأنّ النبيَّ ﷺ أخبره أنّ دعاءَه مستجاب',en:'Because the Prophet ﷺ told him Uways\u2019 prayer is answered'},c:true,exp:{ar:'نعم! العبرةُ بالمنزلةِ عند اللهِ لا بالشهرة.',en:'Yes! What counts is rank with Allah, not fame.'} },
+            { t:{ar:'لأنّه غني',en:'Because he was wealthy'},c:false,exp:{ar:'لا، بل لمنزلتِه العظيمةِ عند الله.',en:'No — for his great rank with Allah.'} },
+            { t:{ar:'لأنّه مشهور',en:'Because he was famous'},c:false,exp:{ar:'لا، بل كان مجهولاً عند الناسِ معروفاً في السماء.',en:'No — he was unknown to people but known in the heavens.'} },
+          ] } },
+    ],
+    quiz:[
+      { q:{ar:'من أوصى بطلبِ دعاءِ أويس؟',en:'Who advised seeking Uways\u2019 prayer?'},
+        opts:[ {t:{ar:'النبيُّ ﷺ',en:'The Prophet ﷺ'},c:true}, {t:{ar:'أبو جهل',en:'Abu Jahl'},c:false}, {t:{ar:'كسرى',en:'Khosrow'},c:false} ] },
+      { q:{ar:'من بحثَ عن أويسٍ بين الحجّاج؟',en:'Who searched for Uways among the pilgrims?'},
+        opts:[ {t:{ar:'عمرُ بنُ الخطّاب',en:'Umar ibn al-Khattab'},c:true}, {t:{ar:'خالد',en:'Khalid'},c:false}, {t:{ar:'بلال',en:'Bilal'},c:false} ] },
+      { q:{ar:'ما العبرةُ من قصّةِ أويسٍ وعمر؟',en:'What is the lesson of Uways and Umar\u2019s story?'},
+        opts:[ {t:{ar:'العبرةُ بالمنزلةِ عند اللهِ لا بالشهرة',en:'What counts is rank with Allah, not fame'},c:true}, {t:{ar:'الشهرةُ أهمُّ شيء',en:'Fame is most important'},c:false}, {t:{ar:'المالُ يرفعُ القدر',en:'Wealth raises one\u2019s status'},c:false} ] },
+    ],
+    moral:{ar:'كثيرٌ من الناسِ خاملٌ خفيٌّ عند الخلق، لكنّه عظيمٌ رفيعُ القدرِ عند الله — فاطلبْ منزلتَك عند ربِّك.',en:'Many people are obscure and hidden among creation, yet great and lofty with Allah — so seek your rank with your Lord.'},
+    badge:{icon:'🤲',title:{ar:'وِسامُ المنزلةِ عند الله',en:'Badge of Rank With Allah'}},
+    reflect:[ {ar:'هل تعملُ الخيرَ لله ولو لم يعرفْه أحد؟',en:'Do you do good for Allah even if no one knows?'}, {ar:'هل تطلبُ الدعاءَ من الصالحينَ وتدعو لإخوانِك؟',en:'Do you seek the prayer of the righteous and pray for your brothers?'} ],
+    didYouKnow:[ {ar:'قصّةُ لقاءِ عمرَ بأويسٍ وطلبِ الاستغفارِ منه ثابتةٌ في صحيحِ مسلم — المصدر: صحيح مسلم',en:'The story of Umar meeting Uways and asking him for forgiveness is established in Sahih Muslim — Source: Sahih Muslim'}, {ar:'كان أويسٌ يتصدّقُ بفضلِ طعامِه ولباسِه ويعيشُ زاهداً متواضعاً — المصدر: صور من حياة التابعين',en:'Uways gave away his extra food and clothing in charity and lived ascetic and humble — Source: Suwar min Hayat at-Tabi\u2019in'} ],
+  },
+];

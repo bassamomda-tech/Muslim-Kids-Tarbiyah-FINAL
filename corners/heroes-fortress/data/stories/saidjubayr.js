@@ -1,0 +1,56 @@
+/* data/stories/saidjubayr.js — Successors · Sa'id ibn Jubayr — sources: صور من حياة التابعين · إسلام ويب · الدرر السنية · سير أعلام النبلاء */
+window.HISN_STORIES = window.HISN_STORIES || {};
+HISN_STORIES.saidjubayr = [
+  { icon:'📚', scene:'mosque', character:'📖',
+    title:{ ar:'تلميذُ حبرِ الأمّة', en:'The Student of the Scholar of the Nation' },
+    pages:[
+      { scene:'mosque', character:'📖',
+        text:{ ar:'في مكّةَ والمدينة، كان <b>عبدُ الله بنُ عبّاس</b> حبرُ الأمّةِ وترجمانُ القرآنِ يُعلِّمُ الناسَ العلم. ومن بين تلاميذِه النابغين كان شابٌّ ذكيٌّ مجتهدٌ اسمُه <b>سعيدُ بنُ جبير</b>. لازمَ سعيدٌ شيخَه وحفظَ عنه التفسيرَ والفقهَ والحديث، حتى صار من أعلمِ الناس.<br><br>بلغَ علمُ سعيدٍ مبلغاً عظيماً، حتى كان أهلُ الكوفةِ إذا جاءهم يستفتونَه يقولون: «أعندكم سعيدُ بنُ جبيرٍ وتسألوني؟!» وقال العلماء: <b>ما على الأرضِ أحدٌ إلّا وهو محتاجٌ إلى علمِ سعيدِ بنِ جبير</b>. ومع كلِّ هذا العلمِ كان <b>عابداً تقيّاً</b> يُكثِرُ من تلاوةِ القرآنِ والبكاءِ من خشيةِ الله. جمعَ بين العلمِ والعمل، فكان قدوةً حقيقية.',
+          en:'In Makkah and Madinah, <b>Abdullah ibn Abbas</b>, the scholar of the nation and interpreter of the Quran, taught people knowledge. Among his brilliant students was a clever, diligent young man named <b>Sa\u2019id ibn Jubayr</b>. Sa\u2019id stayed close to his teacher and memorized from him tafsir, jurisprudence, and hadith, until he became among the most learned of people.<br><br>Sa\u2019id\u2019s knowledge reached such heights that when people of Kufa came to ask him for verdicts, scholars would say: "You have Sa\u2019id ibn Jubayr among you and you ask me?!" And it was said: <b>there is no one on earth but is in need of Sa\u2019id ibn Jubayr\u2019s knowledge</b>. With all this knowledge he was a <b>devout, pious worshipper</b>, much given to reciting the Quran and weeping from awe of Allah. He combined knowledge with action, a true role model.' },
+        choice:{ q:{ar:'كيف صار سعيدٌ من أعلمِ الناس؟',en:'How did Sa\u2019id become among the most learned of people?'},
+          opts:[
+            { t:{ar:'بلزومِ شيخِه ابنِ عبّاسٍ والاجتهادِ في العلم',en:'By staying close to his teacher Ibn Abbas and striving in knowledge'},c:true,exp:{ar:'نعم! صُحبةُ العلماءِ والاجتهادُ طريقُ العلم.',en:'Yes! Keeping company with scholars and striving is the path to knowledge.'} },
+            { t:{ar:'بالمالِ والجاه',en:'Through wealth and status'},c:false,exp:{ar:'لا، بل بالعلمِ والاجتهادِ والصُّحبةِ الصالحة.',en:'No — through knowledge, striving, and good company.'} },
+            { t:{ar:'بالصدفة',en:'By chance'},c:false,exp:{ar:'لا، بل بطلبِ العلمِ على يدِ أهلِه.',en:'No — by seeking knowledge from its people.'} },
+          ] } },
+    ],
+    quiz:[
+      { q:{ar:'من شيخُ سعيدِ بنِ جبير؟',en:'Who was Sa\u2019id ibn Jubayr\u2019s teacher?'},
+        opts:[ {t:{ar:'عبدُ الله بنُ عبّاس',en:'Abdullah ibn Abbas'},c:true}, {t:{ar:'الحجّاج',en:'Al-Hajjaj'},c:false}, {t:{ar:'أبو هريرة',en:'Abu Hurayra'},c:false} ] },
+      { q:{ar:'ماذا قال العلماءُ عن علمِ سعيد؟',en:'What did scholars say about Sa\u2019id\u2019s knowledge?'},
+        opts:[ {t:{ar:'الناسُ محتاجونَ إلى علمِه',en:'People are in need of his knowledge'},c:true}, {t:{ar:'لا علمَ له',en:'He had no knowledge'},c:false}, {t:{ar:'علمُه قليل',en:'His knowledge was little'},c:false} ] },
+      { q:{ar:'بمَ جمعَ سعيدٌ مع العلم؟',en:'What did Sa\u2019id combine with knowledge?'},
+        opts:[ {t:{ar:'العبادةَ والتقوى',en:'Worship and piety'},c:true}, {t:{ar:'حبَّ المال',en:'Love of wealth'},c:false}, {t:{ar:'الكسل',en:'Laziness'},c:false} ] },
+    ],
+    moral:{ar:'صُحبةُ العلماءِ والاجتهادُ طريقُ العلم، والعالمُ الحقُّ يجمعُ بين العلمِ والعملِ والتقوى.',en:'Keeping company with scholars and striving is the path to knowledge; a true scholar combines knowledge, action, and piety.'},
+    badge:{icon:'📚',title:{ar:'وِسامُ طالبِ العلم',en:'Badge of the Knowledge-Seeker'}},
+    reflect:[ {ar:'هل تحرصُ على صُحبةِ أهلِ العلمِ والخير؟',en:'Do you keep the company of people of knowledge and good?'}, {ar:'كيف تجمعُ بين تعلّمِك والعملِ بما تعلّمت؟',en:'How do you combine learning with acting on what you learn?'} ],
+    didYouKnow:[ {ar:'كان سعيدُ بنُ جبيرٍ من أبرزِ تلاميذِ ابنِ عبّاسٍ في التفسير — المصدر: سير أعلام النبلاء',en:'Sa\u2019id ibn Jubayr was among the foremost students of Ibn Abbas in tafsir — Source: Siyar A\u2019lam an-Nubala\u2019'}, {ar:'قيلَ إنّه كان يختمُ القرآنَ في ركعةٍ في الكعبةِ من كثرةِ عبادتِه — المصدر: صور من حياة التابعين',en:'It is said he would complete the Quran in a single prayer in the Ka\u2019ba, from his much worship — Source: Suwar min Hayat at-Tabi\u2019in'} ],
+  },
+  { icon:'🪨', scene:'throne', character:'⚖️',
+    title:{ ar:'كلمةُ الحقِّ أمامَ الطاغية', en:'A Word of Truth Before the Tyrant' },
+    pages:[
+      { scene:'throne', character:'⚖️',
+        text:{ ar:'كان <b>الحجّاجُ بنُ يوسف</b> والياً ظالماً سفّاكاً للدماء. ولمّا وقفَ <b>سعيدُ بنُ جبير</b> مع المنادينَ بالعدلِ ضدَّ ظلمِه، طلبه الحجّاجُ حتى أُسِرَ وجيءَ به إليه. لم يكنْ سعيدٌ خائفاً، بل ثبتَ ثباتَ الجبال.<br><br>سأله الحجّاجُ أسئلةً يريدُ أن يُذِلَّه بها، لكنّ سعيداً أجابه <b>بكلماتِ الحقِّ والإيمانِ بثباتٍ عجيب</b>. قال له الحجّاج: لأقتلنّك! قال سعيد: <b>«إذاً تُفسِدُ عليّ دنياي وأُفسِدُ عليك آخرتَك»</b>. ولمّا أرادوا قتلَه استقبلَ القبلةَ وقال: <b>﴿ إنّي وجّهتُ وجهيَ للذي فطرَ السماواتِ والأرض ﴾</b>، ثمّ دعا: «اللّهُمَّ لا تُسلِّطْه على أحدٍ بعدي». فاستُشهِدَ سعيدٌ ثابتاً — ولم يعِشِ الحجّاجُ بعدَه إلّا أيّاماً قليلةً ماتَ فيها بمرضٍ شديد! علّمنا سعيدٌ أنّ <b>الثباتَ على الحقِّ أغلى من الحياة</b>.',
+          en:'<b>Al-Hajjaj ibn Yusuf</b> was an unjust, bloodthirsty governor. When <b>Sa\u2019id ibn Jubayr</b> stood with those calling for justice against his tyranny, al-Hajjaj sought him until he was captured and brought before him. Sa\u2019id was not afraid; he stood firm like the mountains.<br><br>Al-Hajjaj asked him questions meant to humiliate him, but Sa\u2019id answered with <b>words of truth and faith, with astonishing steadfastness</b>. Al-Hajjaj said: I will surely kill you! Sa\u2019id said: <b>"Then you ruin my worldly life, and I ruin your Hereafter."</b> When they meant to kill him he faced the qibla and said: <b>"Indeed, I have turned my face toward He who created the heavens and the earth,"</b> then prayed: "O Allah, do not give him power over anyone after me." Sa\u2019id was martyred steadfast — and al-Hajjaj lived only a few days after, dying in severe illness! Sa\u2019id taught us that <b>steadfastness on the truth is dearer than life</b>.' },
+        choice:{ q:{ar:'كيف واجهَ سعيدٌ الحجّاجَ الظالم؟',en:'How did Sa\u2019id face the tyrant al-Hajjaj?'},
+          opts:[
+            { t:{ar:'بثباتٍ وكلمةِ الحقِّ ولم يخفْ',en:'With steadfastness and the word of truth, without fear'},c:true,exp:{ar:'نعم! الثباتُ على الحقِّ أغلى من الحياة.',en:'Yes! Steadfastness on the truth is dearer than life.'} },
+            { t:{ar:'بالخوفِ والتراجع',en:'With fear and retreat'},c:false,exp:{ar:'لا، بل ثبتَ ثباتَ الجبال.',en:'No — he stood firm like the mountains.'} },
+            { t:{ar:'بمدحِ الحجّاج',en:'By praising al-Hajjaj'},c:false,exp:{ar:'لا، بل واجهه بكلمةِ الحق.',en:'No — he faced him with the word of truth.'} },
+          ] } },
+    ],
+    quiz:[
+      { q:{ar:'من الوالي الظالمُ الذي قتلَ سعيداً؟',en:'Who was the tyrant governor who killed Sa\u2019id?'},
+        opts:[ {t:{ar:'الحجّاجُ بنُ يوسف',en:'Al-Hajjaj ibn Yusuf'},c:true}, {t:{ar:'أبو جهل',en:'Abu Jahl'},c:false}, {t:{ar:'عمرُ',en:'Umar'},c:false} ] },
+      { q:{ar:'ماذا قال سعيدٌ للحجّاجِ حين هدّده بالقتل؟',en:'What did Sa\u2019id say to al-Hajjaj when threatened with death?'},
+        opts:[ {t:{ar:'تُفسِدُ دنياي وأُفسِدُ آخرتَك',en:'You ruin my world; I ruin your Hereafter'},c:true}, {t:{ar:'أرجوكَ اعفُ عنّي',en:'Please pardon me'},c:false}, {t:{ar:'سأطيعُك',en:'I will obey you'},c:false} ] },
+      { q:{ar:'ماذا حدثَ للحجّاجِ بعدَ قتلِ سعيد؟',en:'What happened to al-Hajjaj after killing Sa\u2019id?'},
+        opts:[ {t:{ar:'لم يعِشْ بعدَه إلّا قليلاً ماتَ بمرض',en:'He lived only a short time, dying of illness'},c:true}, {t:{ar:'عاشَ طويلاً سعيداً',en:'He lived long and happily'},c:false}, {t:{ar:'صار عالماً',en:'He became a scholar'},c:false} ] },
+    ],
+    moral:{ar:'الثباتُ على الحقِّ أغلى من الحياة، ومن خافَ اللهَ لم يخفْ طاغيةً، والظالمُ إلى زوال.',en:'Steadfastness on the truth is dearer than life; whoever fears Allah fears no tyrant, and the oppressor is bound to perish.'},
+    badge:{icon:'🪨',title:{ar:'وِسامُ العالمِ الشهيد',en:'Badge of the Martyred Scholar'}},
+    reflect:[ {ar:'هل تثبُتُ على الحقِّ ولو واجهتَ من هو أقوى منك؟',en:'Do you hold to the truth even facing someone stronger than you?'}, {ar:'كيف تستمدُّ الشجاعةَ من خوفِك من اللهِ وحدَه؟',en:'How do you draw courage from fearing Allah alone?'} ],
+    didYouKnow:[ {ar:'قصّةُ ثباتِ سعيدِ بنِ جبيرٍ أمامَ الحجّاجِ واستشهادِه مشهورةٌ عند أهلِ السير — المصدر: سير أعلام النبلاء',en:'The story of Sa\u2019id ibn Jubayr\u2019s steadfastness before al-Hajjaj and his martyrdom is famous among the biographers — Source: Siyar A\u2019lam an-Nubala\u2019'}, {ar:'رُوِيَ أنّ الحجّاجَ ماتَ بعدَ سعيدٍ بنحوِ خمسةَ عشرَ يوماً يُعذَّبُ بمرضٍ شديد — المصدر: البداية والنهاية',en:'It is reported al-Hajjaj died about fifteen days after Sa\u2019id, tormented by a severe illness — Source: Al-Bidaya wa an-Nihaya'} ],
+  },
+];

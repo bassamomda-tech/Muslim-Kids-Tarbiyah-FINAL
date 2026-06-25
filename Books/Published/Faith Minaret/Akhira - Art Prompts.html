@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="dark">
+<title>أوصاف رسومات «رحلة العبور» — بحسب رقم الصفحة | Akhira Art Prompts</title>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&family=Nunito:wght@400;600;700;800&display=swap">
+<link rel="stylesheet" href="../../../corners/faith-minaret/rihla-prompts.css">
+</head>
+<body dir="rtl">
+<header class="header">
+  <div class="brand"><span>🍌</span><span class="ar-only">أوصاف رسومات «رحلة العبور»</span><span class="en-only">Journey of the Crossing — Art Prompts</span></div>
+  <div class="hactions">
+    <div class="lang-switch"><button id="btnEn" onclick="setLang('en')">EN</button><button id="btnAr" class="active" onclick="setLang('ar')">عربي</button></div>
+    <button class="copyall" id="copyAllBtn" onclick="copyAll()">📋 <span class="ar-only">انسخ الكل</span><span class="en-only">Copy all</span></button>
+    <a class="back" href="Akhira Book.html">📕 <span class="ar-only">الكتاب</span><span class="en-only">Book</span></a>
+  </div>
+</header>
+<div class="wrap">
+  <div class="hero">
+    <div class="ic">🎨</div>
+    <h1><span class="ar-only">أوصاف الرسومات — بترتيب صفحات الكتاب</span><span class="en-only">Art Prompts — in book-page order</span></h1>
+    <p><span class="ar-only">كل صفّ يقابل صفحةً في الكتاب. وَلِّد الرسمة عبر Nano Banana، ثم اسحبها إلى الإطار في الصفحة نفسها.</span>
+       <span class="en-only">Each row matches a page in the book. Generate the art in Nano Banana, then drop it into the frame on that same page.</span></p>
+  </div>
+  <div class="howto">
+    <span class="ar-only">⚠️ <b>النص العربي داخل الصورة</b> قد يخرج مشوّهاً — وَلِّد ٢–٣ نسخ. صوّر المشاهدَ رمزيّاً بالنورِ والطبيعةِ دونَ تصويرِ أيِّ نبيٍّ أو مَلَك.</span>
+    <span class="en-only">⚠️ <b>Arabic text</b> may distort — generate a few versions. Depict scenes symbolically with light and nature; never draw a prophet or angel.</span>
+    <div class="stylerow">
+      <span class="ar-only" style="color:var(--muted);font-size:.84rem">النمط الموحّد:</span><span class="en-only" style="color:var(--muted);font-size:.84rem">House styles:</span>
+      <button class="stylebtn" id="styleBtn" onclick="copyStyle()">📋 <span class="ar-only">نمط القصة</span><span class="en-only">Story style</span></button>
+      <button class="stylebtn" id="lineBtn" onclick="copyLine()">📋 <span class="ar-only">نمط التلوين</span><span class="en-only">Coloring style</span></button>
+    </div>
+  </div>
+  <div class="count" id="count"></div>
+  <div id="results"></div>
+</div>
+<div class="toast" id="toast"></div>
+
+<script src="../../../corners/faith-minaret/data/akhira-stations.js"></script>
+<script src="../../../corners/faith-minaret/rihla-core.js"></script>
+<script>
+  window.RIHLA = { key:'akhira', stations:window.AKHIRA_STATIONS, titleAr:'رِحلةُ العُبور', titleEn:'Journey of the Crossing',
+    coverPrompt:"A beautiful children's-book COVER for «رِحلةُ العُبور» (Journey of the Crossing): a glowing bridge of light arching over darkness toward a radiant, blossoming garden-home under a starry sky — hopeful and reassuring. No people, no figures. "+window.RihlaCore.STYLE };
+</script>
+<script src="../../../corners/faith-minaret/rihla-prompts.js"></script>
+</body>
+</html>

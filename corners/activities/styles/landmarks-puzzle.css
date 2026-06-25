@@ -1,0 +1,272 @@
+/* ============================================================
+   LANDMARKS PUZZLE — أحجية المعالم
+   3x3 swap puzzle with Islamic landmark imagery
+   ============================================================ */
+
+.lp-panel {
+  background:
+    radial-gradient(140% 80% at 50% 0%, rgba(205,235,215,0.32), transparent 60%),
+    var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--r-2xl);
+  padding: var(--s-8);
+  display: flex; flex-direction: column;
+  box-shadow: var(--shadow-card);
+}
+.lp-panel .activity-tag { background: var(--mint); color: var(--mint-ink); }
+.lp-panel .activity-tag::before { background: var(--mint-ink); }
+
+.lp-hud {
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--s-3);
+  margin-bottom: var(--s-4);
+}
+.lp-hud .hud-block {
+  background: var(--bg-soft); border: 1px solid var(--line);
+  border-radius: var(--r-md); padding: 10px 14px;
+  display: flex; flex-direction: column; gap: 2px;
+  font-size: 11px; color: var(--muted); font-weight: 600;
+}
+.lp-hud .hud-block strong {
+  font-size: 20px; color: var(--ink);
+  font-family: var(--font-en); font-weight: 800;
+}
+.lp-hud small { color: var(--muted); font-family: var(--font-en); margin-right: 2px; }
+
+/* مُحَدِّد المَعالِم */
+.lp-picker {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--s-3);
+  margin-bottom: var(--s-4);
+}
+.lp-picker-card {
+  background: var(--bg-soft);
+  border: 1.5px solid var(--line);
+  border-radius: var(--r-md);
+  padding: var(--s-3);
+  text-align: right;
+  cursor: pointer;
+  transition: background 0.18s ease, border-color 0.18s ease, transform 0.15s ease;
+  display: flex; gap: var(--s-3); align-items: center;
+}
+.lp-picker-card:hover { background: var(--surface); border-color: var(--brand); transform: translateY(-2px); }
+.lp-picker-card.active {
+  background: var(--brand-soft);
+  border-color: var(--brand);
+}
+.lp-picker-card.solved {
+  background: linear-gradient(180deg, var(--surface) 0%, #ECFAEF 100%);
+  border-color: var(--mint-ink);
+}
+.lp-picker-card .thumb {
+  width: 48px; height: 48px;
+  border-radius: var(--r-sm);
+  background: var(--surface);
+  display: grid; place-items: center;
+  flex-shrink: 0;
+  font-size: 22px;
+  border: 1px solid var(--line);
+  overflow: hidden;
+}
+.lp-picker-card .thumb svg { width: 100%; height: 100%; display: block; }
+.lp-picker-card.solved .thumb {
+  border-color: var(--mint-ink);
+  background: var(--mint);
+}
+.lp-picker-card .meta strong {
+  display: block; font-size: 14px; font-weight: 800;
+}
+.lp-picker-card .meta small {
+  display: block; font-size: 11px; color: var(--muted);
+  margin-top: 2px; font-weight: 600;
+}
+.lp-picker-card.solved .meta small::after {
+  content: " ✓"; color: var(--mint-ink); font-weight: 900;
+}
+
+/* المَسرَح */
+.lp-stage {
+  background:
+    radial-gradient(80% 60% at 50% 0%, rgba(255,233,168,0.5), transparent 70%),
+    linear-gradient(180deg, #FFFBF3 0%, #F5EEDF 100%);
+  border-radius: var(--r-xl);
+  border: 1px solid var(--line);
+  padding: var(--s-5);
+  display: flex; flex-direction: column;
+  gap: var(--s-4);
+  align-items: center;
+}
+
+.lp-board-wrap {
+  position: relative;
+  width: 360px; max-width: 100%;
+  aspect-ratio: 1 / 1;
+}
+.lp-board {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  width: 100%; height: 100%;
+  gap: 2px;
+  background: var(--line);
+  border: 2px solid var(--ink);
+  border-radius: var(--r-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+}
+.lp-tile {
+  background-color: var(--bg-soft);
+  background-size: 300% 300%;
+  background-repeat: no-repeat;
+  cursor: pointer;
+  transition: outline-color 0.15s ease, transform 0.2s ease, filter 0.2s ease;
+  position: relative;
+  outline: 2px solid transparent;
+  outline-offset: -2px;
+}
+.lp-tile:hover:not(.locked):not(.correct) {
+  filter: brightness(1.1);
+}
+.lp-tile.selected {
+  outline-color: var(--butter);
+  z-index: 2;
+  transform: scale(0.92);
+  filter: brightness(1.15);
+}
+.lp-tile.swapping {
+  animation: lp-swap 0.35s ease;
+}
+@keyframes lp-swap {
+  0% { transform: scale(1); }
+  50% { transform: scale(0.85); filter: brightness(1.2); }
+  100% { transform: scale(1); }
+}
+.lp-tile.correct {
+  outline-color: rgba(47,122,82,0.5);
+}
+.lp-tile.solved {
+  outline: 0;
+  cursor: default;
+}
+.lp-tile.peeked {
+  animation: lp-pulse 0.6s ease;
+}
+@keyframes lp-pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
+
+/* بِطاقَة الكَشف فَوقَ اللَّوحَة */
+.lp-reveal {
+  position: absolute;
+  inset: 0;
+  display: flex; align-items: flex-end;
+  padding: var(--s-3);
+  pointer-events: none;
+  z-index: 3;
+}
+.lp-reveal .card {
+  background: rgba(255,255,255,0.96);
+  border: 1.5px solid var(--brand-ink);
+  border-radius: var(--r-md);
+  padding: 14px 16px;
+  width: 100%;
+  box-shadow: var(--shadow-lg);
+  pointer-events: auto;
+  animation: lp-reveal-in 0.5s cubic-bezier(.2,1.6,.4,1);
+}
+@keyframes lp-reveal-in {
+  0% { transform: translateY(20px); opacity: 0; }
+  100% { transform: translateY(0); opacity: 1; }
+}
+.lp-reveal .label {
+  font-size: 10px; font-weight: 800;
+  color: var(--brand-ink);
+  letter-spacing: 0.06em;
+  font-family: var(--font-en);
+  text-transform: uppercase;
+}
+.lp-reveal .title {
+  margin: 4px 0 6px;
+  font-size: 18px; font-weight: 800;
+  color: var(--ink);
+}
+.lp-reveal .body {
+  margin: 0 0 6px;
+  font-size: 13px; line-height: 1.55; color: var(--ink-2);
+}
+.lp-reveal .quote {
+  font-family: 'Amiri', serif;
+  font-size: 13px; line-height: 1.7;
+  padding: 6px 10px;
+  background: var(--bg-soft);
+  border-radius: var(--r-sm);
+  border-right: 3px solid var(--brand);
+  color: var(--brand-ink);
+}
+
+/* أزرار */
+.lp-controls {
+  display: flex; gap: 8px; justify-content: center;
+  flex-wrap: wrap;
+}
+.lp-btn {
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 10px 16px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--r-pill);
+  font-weight: 700; font-size: 13px;
+  color: var(--ink-2);
+  transition: background 0.18s ease, transform 0.15s ease;
+}
+.lp-btn:hover:not(:disabled) { background: var(--bg-soft); transform: translateY(-1px); }
+.lp-btn.primary {
+  background: var(--mint-ink); color: #fff; border-color: var(--mint-ink);
+}
+.lp-btn.primary:hover:not(:disabled) { background: var(--ink); border-color: var(--ink); }
+.lp-btn:disabled { opacity: 0.4; cursor: not-allowed; }
+
+/* مَكتَشَفات الجانِبيَّة */
+.lp-discovered {
+  display: flex; flex-direction: column; gap: 8px;
+}
+.lp-disc-row {
+  display: grid;
+  grid-template-columns: 44px 1fr;
+  gap: 12px;
+  align-items: center;
+  padding: 10px 12px;
+  background: var(--bg-soft);
+  border: 1px solid var(--line);
+  border-radius: var(--r-md);
+}
+.lp-disc-row.found {
+  background: linear-gradient(180deg, var(--surface) 0%, #ECFAEF 100%);
+  border-color: var(--mint-ink);
+}
+.lp-disc-row .ic {
+  width: 44px; height: 44px;
+  border-radius: var(--r-sm);
+  background: var(--surface);
+  display: grid; place-items: center;
+  border: 1px solid var(--line);
+  overflow: hidden;
+  flex-shrink: 0;
+}
+.lp-disc-row .ic svg { width: 100%; height: 100%; }
+.lp-disc-row.found .ic { border-color: var(--mint-ink); }
+.lp-disc-row .meta strong {
+  display: block; font-size: 13px; font-weight: 800;
+}
+.lp-disc-row .meta small {
+  display: block; font-size: 11px; color: var(--muted);
+  margin-top: 2px; font-weight: 600;
+}
+.lp-disc-row.found .meta small::after {
+  content: " ✓"; color: var(--mint-ink); font-weight: 900;
+}
+
+@media (max-width: 720px) {
+  .lp-picker { grid-template-columns: 1fr; }
+}

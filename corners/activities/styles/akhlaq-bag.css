@@ -1,0 +1,283 @@
+/* ============================================================
+   AKHLAQ BAG — حقيبة الأخلاق
+   Card deck logic: draw a moral scenario, pick the prophetic response
+   ============================================================ */
+
+.ak-panel {
+  background:
+    radial-gradient(140% 80% at 50% 0%, rgba(205,235,215,0.32), transparent 60%),
+    var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--r-2xl);
+  padding: var(--s-8);
+  display: flex; flex-direction: column;
+  box-shadow: var(--shadow-card);
+}
+.ak-panel .activity-tag { background: var(--mint); color: var(--mint-ink); }
+.ak-panel .activity-tag::before { background: var(--mint-ink); }
+
+.ak-hud {
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--s-3);
+  margin-bottom: var(--s-4);
+}
+.ak-hud .hud-block {
+  background: var(--bg-soft); border: 1px solid var(--line);
+  border-radius: var(--r-md); padding: 10px 14px;
+  display: flex; flex-direction: column; gap: 2px;
+  font-size: 11px; color: var(--muted); font-weight: 600;
+}
+.ak-hud .hud-block strong {
+  font-size: 20px; color: var(--ink);
+  font-family: var(--font-en); font-weight: 800;
+}
+.ak-hud small { color: var(--muted); font-family: var(--font-en); margin-right: 2px; }
+
+.ak-stage {
+  background:
+    radial-gradient(60% 50% at 50% 0%, rgba(224,213,242,0.5), transparent 70%),
+    linear-gradient(180deg, #FFFBF3 0%, #F5EEDF 100%);
+  border-radius: var(--r-xl);
+  border: 1px solid var(--line);
+  padding: var(--s-5);
+  display: flex; flex-direction: column;
+  gap: var(--s-4);
+  min-height: 540px;
+}
+
+/* مَنطِقَة السَّحب */
+.ak-draw-area {
+  display: flex; align-items: center; justify-content: center;
+  gap: var(--s-5);
+  padding: var(--s-3);
+}
+.ak-bag {
+  position: relative;
+  width: 88px; height: 88px;
+  color: var(--lavender-ink);
+}
+.ak-bag svg { width: 100%; height: 100%; }
+.ak-bag-glow {
+  position: absolute; inset: -10px;
+  background: radial-gradient(circle, rgba(224,213,242,0.6) 0%, transparent 65%);
+  border-radius: 50%;
+  z-index: -1;
+  animation: ak-glow 2.4s ease-in-out infinite;
+}
+@keyframes ak-glow {
+  0%, 100% { transform: scale(0.95); opacity: 0.75; }
+  50% { transform: scale(1.1); opacity: 1; }
+}
+.ak-bag.shaking { animation: ak-shake 0.5s ease; }
+@keyframes ak-shake {
+  0%, 100% { transform: rotate(0); }
+  20%, 60% { transform: rotate(-8deg); }
+  40%, 80% { transform: rotate(8deg); }
+}
+
+.ak-draw-btn {
+  padding: 14px 24px;
+  background: var(--lavender-ink);
+  color: #fff;
+  border-radius: var(--r-pill);
+  font-weight: 800; font-size: 15px;
+  display: inline-flex; align-items: center; gap: 8px;
+  transition: background 0.2s ease, transform 0.15s ease;
+  box-shadow: 0 6px 16px rgba(90,63,148,0.3);
+}
+.ak-draw-btn:hover:not(:disabled) { background: var(--ink); transform: translateY(-2px); }
+.ak-draw-btn:disabled { opacity: 0.45; cursor: not-allowed; }
+
+/* البِطاقَة */
+.ak-card-slot {
+  background: var(--surface);
+  border: 1.5px solid var(--line);
+  border-radius: var(--r-lg);
+  padding: var(--s-5);
+  min-height: 140px;
+  display: flex; align-items: center; justify-content: center;
+  position: relative;
+  box-shadow: var(--shadow-sm);
+}
+.ak-card-slot.has-card {
+  background: linear-gradient(180deg, #FFFBF3 0%, #FFFFFF 100%);
+  border-color: var(--brand);
+  animation: ak-card-in 0.5s cubic-bezier(.2,1.6,.4,1);
+}
+@keyframes ak-card-in {
+  0% { transform: translateY(-10px) scale(0.95) rotate(-2deg); opacity: 0; }
+  60% { transform: translateY(2px) scale(1.02) rotate(0.5deg); opacity: 1; }
+  100% { transform: translateY(0) scale(1) rotate(0); opacity: 1; }
+}
+.ak-empty {
+  font-size: 14px; color: var(--muted);
+  font-weight: 600;
+}
+.ak-card-content {
+  width: 100%;
+  display: flex; flex-direction: column; gap: var(--s-3);
+}
+.ak-card-content .label {
+  display: inline-flex; align-self: flex-start;
+  align-items: center; gap: 6px;
+  padding: 4px 10px;
+  background: var(--brand-soft);
+  color: var(--brand-ink);
+  border-radius: var(--r-pill);
+  font-size: 11px; font-weight: 800;
+  font-family: var(--font-en);
+}
+.ak-card-content .scene {
+  font-size: 17px; font-weight: 700; line-height: 1.6;
+  color: var(--ink);
+}
+
+/* الخَيارات */
+.ak-choices {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--s-3);
+}
+.ak-choice {
+  background: var(--surface);
+  border: 1.5px solid var(--line);
+  border-radius: var(--r-md);
+  padding: var(--s-4);
+  text-align: right;
+  cursor: pointer;
+  transition: background 0.18s ease, border-color 0.18s ease, transform 0.15s ease;
+  font-weight: 700; font-size: 14px;
+  line-height: 1.5;
+  color: var(--ink);
+  display: flex; flex-direction: column; gap: 6px;
+  position: relative;
+  min-height: 110px;
+}
+.ak-choice .pick {
+  font-size: 11px; font-weight: 800;
+  color: var(--muted);
+  font-family: var(--font-en);
+}
+.ak-choice:hover:not(:disabled):not(.locked) {
+  background: var(--bg-soft); border-color: var(--brand);
+  transform: translateY(-2px);
+}
+.ak-choice.locked { cursor: default; }
+.ak-choice.correct {
+  background: linear-gradient(180deg, #ECFAEF 0%, #CDEBD7 100%);
+  border-color: var(--mint-ink);
+  color: var(--ink);
+}
+.ak-choice.correct::after {
+  content: "✓"; position: absolute; top: 6px; left: 6px;
+  width: 22px; height: 22px;
+  background: var(--mint-ink); color: #fff;
+  border-radius: 50%;
+  display: grid; place-items: center;
+  font-size: 13px; font-weight: 900;
+}
+.ak-choice.wrong {
+  background: linear-gradient(180deg, #FFF0EE 0%, #FFD9C2 100%);
+  border-color: var(--peach-ink);
+  opacity: 0.7;
+}
+.ak-choice.wrong::after {
+  content: "×"; position: absolute; top: 6px; left: 6px;
+  width: 22px; height: 22px;
+  background: var(--peach-ink); color: #fff;
+  border-radius: 50%;
+  display: grid; place-items: center;
+  font-size: 14px; font-weight: 900;
+}
+.ak-choice:disabled { opacity: 0.4; }
+
+.ak-feedback {
+  min-height: 64px;
+  border-radius: var(--r-md);
+  padding: 12px 16px;
+  background: transparent;
+  font-size: 13px;
+  line-height: 1.6;
+  display: flex; align-items: center;
+  gap: 10px;
+  border: 1px dashed transparent;
+}
+.ak-feedback.good {
+  background: var(--brand-soft);
+  border-color: var(--brand);
+  color: var(--brand-ink);
+}
+.ak-feedback.bad {
+  background: #FFF0EE;
+  border-color: var(--peach-ink);
+  color: var(--peach-ink);
+}
+.ak-feedback .ic {
+  width: 28px; height: 28px; flex-shrink: 0;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.7);
+  display: grid; place-items: center;
+  font-weight: 900;
+}
+
+.ak-controls {
+  display: flex; gap: 8px; justify-content: center;
+}
+.ak-btn {
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 10px 18px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--r-pill);
+  font-weight: 700; font-size: 13px;
+  color: var(--ink-2);
+  transition: background 0.18s ease, transform 0.15s ease;
+}
+.ak-btn:hover:not(:disabled) { background: var(--bg-soft); transform: translateY(-1px); }
+.ak-btn.primary {
+  background: var(--mint-ink); color: #fff; border-color: var(--mint-ink);
+}
+.ak-btn.primary:hover:not(:disabled) { background: var(--ink); border-color: var(--ink); }
+.ak-btn:disabled { opacity: 0.4; cursor: not-allowed; }
+
+/* المَجموعة */
+.ak-collection {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 8px;
+}
+.virtue-chip {
+  display: flex; align-items: center; gap: 8px;
+  padding: 8px 10px;
+  background: var(--bg-soft);
+  border: 1px dashed var(--line);
+  border-radius: var(--r-md);
+  font-size: 12px; font-weight: 700;
+  color: var(--muted);
+}
+.virtue-chip.collected {
+  background: linear-gradient(180deg, var(--surface) 0%, var(--brand-soft) 100%);
+  border: 1px solid var(--brand);
+  color: var(--brand-ink);
+  animation: ak-virtue-in 0.45s cubic-bezier(.2,1.6,.4,1);
+}
+@keyframes ak-virtue-in {
+  0% { transform: scale(0.7) rotate(-4deg); opacity: 0; }
+  100% { transform: scale(1) rotate(0); opacity: 1; }
+}
+.virtue-chip .seal {
+  width: 24px; height: 24px;
+  border-radius: 50%;
+  background: var(--bg-soft);
+  display: grid; place-items: center;
+  flex-shrink: 0;
+  font-size: 13px;
+}
+.virtue-chip.collected .seal {
+  background: var(--brand);
+  color: #fff;
+}
+
+@media (max-width: 720px) {
+  .ak-choices { grid-template-columns: 1fr; }
+  .ak-collection { grid-template-columns: 1fr; }
+}

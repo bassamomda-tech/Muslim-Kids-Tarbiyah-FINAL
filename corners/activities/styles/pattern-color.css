@@ -1,0 +1,156 @@
+/* ============================================================
+   PATTERN COLORING — تلوين الزخارف الإسلامية
+   ============================================================ */
+
+.pc-panel {
+  background:
+    radial-gradient(140% 80% at 50% 0%, rgba(224, 213, 242, 0.32), transparent 60%),
+    var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--r-2xl);
+  padding: var(--s-8);
+  display: flex; flex-direction: column;
+  box-shadow: var(--shadow-card);
+}
+.pc-panel .activity-tag { background: var(--lavender); color: var(--lavender-ink); }
+.pc-panel .activity-tag::before { background: var(--lavender-ink); }
+
+/* HUD */
+.pc-hud {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--s-3);
+  margin-bottom: var(--s-4);
+}
+.pc-hud .hud-block {
+  background: var(--bg-soft); border: 1px solid var(--line);
+  border-radius: var(--r-md); padding: 10px 14px;
+  display: flex; flex-direction: column; gap: 2px;
+  font-size: 11px; color: var(--muted); font-weight: 600;
+}
+.pc-hud .hud-block strong {
+  font-size: 20px; color: var(--ink);
+  font-family: var(--font-en); font-weight: 800;
+}
+
+/* Stage with canvas */
+.pc-stage {
+  flex-grow: 1;
+  background: linear-gradient(180deg, #FFFBF3 0%, #F5EEDF 100%);
+  border-radius: var(--r-xl);
+  border: 1px solid var(--line);
+  padding: var(--s-5);
+  display: flex; flex-direction: column;
+  align-items: center;
+  gap: var(--s-4);
+}
+.pc-canvas-wrap {
+  position: relative;
+  width: 100%;
+  max-width: 420px;
+  aspect-ratio: 1;
+  background: var(--surface);
+  border-radius: var(--r-lg);
+  box-shadow: var(--shadow-md);
+  overflow: hidden;
+}
+.pc-canvas-wrap svg {
+  width: 100%; height: 100%;
+  display: block;
+}
+.pc-paintable {
+  cursor: pointer;
+  stroke: rgba(31, 37, 64, 0.4);
+  stroke-width: 1.2;
+  fill: #FFFFFF;
+  transition: filter 0.18s ease;
+}
+.pc-paintable:hover {
+  filter: brightness(0.92);
+}
+
+/* color palette */
+.pc-palette {
+  display: flex; flex-wrap: wrap; gap: 8px;
+  align-items: center; justify-content: center;
+  padding: var(--s-3);
+  background: var(--bg-soft);
+  border-radius: var(--r-lg);
+  width: 100%;
+  max-width: 420px;
+}
+.pc-swatch {
+  width: 38px; height: 38px;
+  border-radius: 50%;
+  cursor: pointer;
+  border: 2.5px solid transparent;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1), inset 0 0 0 1px rgba(0,0,0,0.05);
+  transition: transform 0.18s ease;
+  position: relative;
+}
+.pc-swatch:hover { transform: scale(1.1); }
+.pc-swatch.active {
+  border-color: var(--ink);
+  transform: scale(1.15);
+}
+.pc-swatch.eraser {
+  background: repeating-linear-gradient(45deg, #fff 0 4px, #ddd 4px 8px);
+}
+.pc-swatch.active::after {
+  content: "✓";
+  position: absolute; inset: 0;
+  display: grid; place-items: center;
+  color: rgba(255,255,255,0.95);
+  font-weight: 900;
+  font-size: 16px;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.4);
+  pointer-events: none;
+}
+.pc-swatch.eraser.active::after { color: var(--ink); text-shadow: none; }
+
+/* tools */
+.pc-tools {
+  display: flex; gap: 8px; justify-content: center;
+  margin-top: var(--s-3); flex-wrap: wrap;
+}
+.pc-btn {
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 10px 16px;
+  border-radius: var(--r-pill);
+  font-size: 13px; font-weight: 700;
+  border: 1px solid var(--line);
+  background: var(--surface);
+}
+.pc-btn:hover { background: var(--bg-soft); }
+.pc-btn.primary { background: var(--ink); color: #FBF6EC; border-color: var(--ink); }
+
+/* preset selector */
+.pc-presets {
+  display: flex; gap: 8px; flex-wrap: wrap;
+}
+.pc-preset {
+  flex: 1;
+  display: flex; align-items: center; gap: 10px;
+  padding: 10px 14px;
+  background: var(--bg-soft);
+  border: 1px solid var(--line);
+  border-radius: var(--r-md);
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--ink-2);
+  transition: border-color 0.18s ease, background 0.18s ease;
+}
+.pc-preset:hover { background: var(--surface); }
+.pc-preset.active {
+  background: var(--lavender);
+  border-color: var(--lavender-ink);
+  color: var(--lavender-ink);
+}
+.pc-preset svg {
+  width: 32px; height: 32px;
+  flex-shrink: 0;
+}
+.pc-preset svg path, .pc-preset svg circle {
+  stroke: currentColor;
+  stroke-width: 1.5;
+  fill: none;
+}

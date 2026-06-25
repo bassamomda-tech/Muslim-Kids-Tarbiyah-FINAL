@@ -1,0 +1,56 @@
+/* data/stories/ibnqasim.js — Leaders · Muhammad ibn al-Qasim — sources: البداية والنهاية · فتوح البلدان · إسلام ويب · الدرر السنية */
+window.HISN_STORIES = window.HISN_STORIES || {};
+HISN_STORIES.ibnqasim = [
+  { icon:'❤️', scene:'desert', character:'🐎',
+    title:{ ar:'القائدُ الشابُّ الذي فتحَ القلوب', en:'The Young Commander Who Won Hearts' },
+    pages:[
+      { scene:'desert', character:'🐎',
+        text:{ ar:'كان <b>محمدُ بنُ القاسم</b> شابّاً صغيراً في نحوِ السابعةَ عشرةَ من عمرِه، لكنّه كان موهوباً ذكيّاً شجاعاً. أُرسِلَ على رأسِ جيشٍ لفتحِ <b>بلادِ السند</b> (باكستانَ وغربِ الهند)، حيثُ كان مَلِكٌ ظالمٌ يضطهدُ شعبَه.<br><br>دخلَ ابنُ القاسمِ البلادَ منتصراً، لكنّه لم يتصرّفْ كفاتحٍ متكبّر! بل عاملَ الناسَ بـ<b>العدلِ والرحمةِ واللطف</b>. أمّنهم على دينِهم وأموالِهم وبيوتِهم، ومنعَ جنودَه من الظلمِ والنهب، وأقامَ العدلَ بين الجميع. فتعجّبَ أهلُ السند: لم يرَوا حاكماً عادلاً رحيماً مثلَه من قبل! فأحبّوه حبّاً عظيماً، ورأوا في الإسلامِ دينَ العدلِ والرحمة، <b>فدخلَ كثيرٌ منهم في الإسلامِ طوعاً</b> عن محبّةٍ واقتناع.',
+          en:'<b>Muhammad ibn al-Qasim</b> was a young man of about seventeen, but gifted, clever, and brave. He was sent at the head of an army to conquer the <b>land of Sindh</b> (Pakistan and western India), where an unjust king oppressed his people.<br><br>Ibn al-Qasim entered the land victorious, but did not act like an arrogant conqueror! Instead he treated the people with <b>justice, mercy, and gentleness</b>. He secured their faith, property, and homes, prevented his soldiers from oppression and plunder, and established justice among all. The people of Sindh marveled — they had never seen so just and merciful a ruler before! So they loved him deeply, and saw in Islam the religion of justice and mercy, so <b>many of them entered Islam willingly</b>, out of love and conviction.' },
+        choice:{ q:{ar:'كيف عاملَ ابنُ القاسمِ أهلَ السندِ بعدَ الفتح؟',en:'How did Ibn al-Qasim treat the people of Sindh after the conquest?'},
+          opts:[
+            { t:{ar:'بالعدلِ والرحمةِ وأمّنهم على حقوقِهم',en:'With justice and mercy, securing their rights'},c:true,exp:{ar:'نعم! فأحبّوه ودخلوا في الإسلامِ طوعاً.',en:'Yes! So they loved him and entered Islam willingly.'} },
+            { t:{ar:'بالظلمِ والقهر',en:'With oppression and force'},c:false,exp:{ar:'لا، بل بالعدلِ والرحمةِ فأحبّوه.',en:'No — with justice and mercy, so they loved him.'} },
+            { t:{ar:'بالنهبِ والسلب',en:'With plunder and looting'},c:false,exp:{ar:'لا، بل منعَ جنودَه من الظلم.',en:'No — he prevented his soldiers from oppression.'} },
+          ] } },
+    ],
+    quiz:[
+      { q:{ar:'كم كان عمرُ ابنِ القاسمِ حين فتحَ السند؟',en:'How old was Ibn al-Qasim when he conquered Sindh?'},
+        opts:[ {t:{ar:'نحوَ السابعةَ عشرة',en:'About seventeen'},c:true}, {t:{ar:'خمسون',en:'Fifty'},c:false}, {t:{ar:'ثمانون',en:'Eighty'},c:false} ] },
+      { q:{ar:'لماذا أحبَّه أهلُ السند؟',en:'Why did the people of Sindh love him?'},
+        opts:[ {t:{ar:'لعدلِه ورحمتِه وحُسنِ معاملتِه',en:'For his justice, mercy, and good treatment'},c:true}, {t:{ar:'لأنّه ظلمَهم',en:'Because he oppressed them'},c:false}, {t:{ar:'لأنّه أخذَ أموالَهم',en:'Because he took their money'},c:false} ] },
+      { q:{ar:'ماذا نتعلّمُ من ابنِ القاسم؟',en:'What do we learn from Ibn al-Qasim?'},
+        opts:[ {t:{ar:'العدلُ والرحمةُ يفتحانِ القلوب',en:'Justice and mercy win hearts'},c:true}, {t:{ar:'الظلمُ ينفع',en:'Oppression benefits'},c:false}, {t:{ar:'القوّةُ وحدَها تكفي',en:'Force alone suffices'},c:false} ] },
+    ],
+    moral:{ar:'العدلُ والرحمةُ يفتحانِ القلوبَ قبلَ البلاد، والمعاملةُ الحسنةُ خيرُ دعوةٍ إلى الإسلام.',en:'Justice and mercy win hearts before lands; good treatment is the best call to Islam.'},
+    badge:{icon:'❤️',title:{ar:'وِسامُ فاتحِ القلوب',en:'Badge of the Heart-Conqueror'}},
+    reflect:[ {ar:'كيف تكسبُ محبّةَ الناسِ بعدلِك ورفقِك؟',en:'How do you earn people\u2019s love through your justice and gentleness?'}, {ar:'هل تكونُ قدوةً حسنةً تجذبُ الناسَ إلى الخير؟',en:'Are you a good example that draws people to good?'} ],
+    didYouKnow:[ {ar:'حزِنَ أهلُ السندِ حين عُزِلَ محمدُ بنُ القاسمِ، ورُوِيَ أنّهم بنَوا له تمثالاً تقديراً لعدلِه — المصدر: فتوح البلدان',en:'The people of Sindh grieved when Muhammad ibn al-Qasim was removed; it is reported they built him a statue honoring his justice — Source: Futuh al-Buldan'}, {ar:'انتشرَ الإسلامُ في شبهِ القارّةِ الهنديّةِ بسببِ عدلِ الفاتحينَ وحُسنِ معاملتِهم — المصدر: البداية والنهاية',en:'Islam spread in the Indian subcontinent due to the justice of the conquerors and their good treatment — Source: Al-Bidaya wa an-Nihaya'} ],
+  },
+  { icon:'⚖️', scene:'throne', character:'🕊️',
+    title:{ ar:'العدلُ حتى مع الخصوم', en:'Justice Even With Foes' },
+    pages:[
+      { scene:'throne', character:'🕊️',
+        text:{ ar:'بعدَ فتحِ <b>السند</b>، أرادَ <b>محمدُ بنُ القاسم</b> أن يحكمَ البلادَ بالعدلِ الكامل. فلم يُفرِّقْ بين مسلمٍ وغيرِه في الحقوق، بل أعطى كلَّ ذي حقٍّ حقَّه. سمحَ لأهلِ البلادِ بـ<b>ممارسةِ دينِهم</b> وحفظَ معابدَهم وأموالَهم، وعيّنَ منهم في إدارةِ شؤونِهم، فعمَّ الأمنُ والرخاء.<br><br>وحين كان يُحاكِمُ أحداً، كان يحرصُ على <b>العدلِ التامِّ ولو كان الخصمُ من غيرِ المسلمين</b>. فرأى الناسُ في الإسلامِ دينَ العدلِ والرحمةِ الذي يُنصِفُ الجميع. ورُوِيَ أنّه لمّا عُزِلَ ورحلَ عنهم، <b>حزِنَ أهلُ السندِ حزناً شديداً</b> وبكوا لفراقِه، حتى قيلَ إنّهم صنعوا له تمثالاً تخليداً لذكرى عدلِه! علّمنا ابنُ القاسمِ أنّ <b>العدلَ مع الجميعِ — حتى الخصوم — هو جوهرُ الإسلام</b>، وأنّ الحاكمَ العادلَ يبقى في قلوبِ الناسِ ولو رحل.',
+          en:'After conquering <b>Sindh</b>, <b>Muhammad ibn al-Qasim</b> wanted to rule the land with complete justice. He did not differentiate between Muslim and others in rights, but gave each their due. He allowed the people of the land to <b>practice their religion</b>, protected their temples and property, and appointed some of them to manage their own affairs, so security and prosperity spread.<br><br>When he judged anyone, he insisted on <b>complete justice even if the opponent was non-Muslim</b>. So people saw in Islam the religion of justice and mercy that treats everyone fairly. It is reported that when he was removed and departed from them, <b>the people of Sindh grieved intensely</b> and wept at his parting — so much that it is said they made a statue of him to commemorate his justice! Ibn al-Qasim taught us that <b>justice with everyone — even foes — is the essence of Islam</b>, and that a just ruler remains in people\u2019s hearts even after he leaves.' },
+        choice:{ q:{ar:'كيف حكمَ ابنُ القاسمِ بلادَ السند؟',en:'How did Ibn al-Qasim rule the land of Sindh?'},
+          opts:[
+            { t:{ar:'بالعدلِ التامِّ مع الجميعِ حتى غيرِ المسلمين',en:'With complete justice for all, even non-Muslims'},c:true,exp:{ar:'نعم! العدلُ مع الجميعِ جوهرُ الإسلام.',en:'Yes! Justice with everyone is the essence of Islam.'} },
+            { t:{ar:'ظلمَ غيرَ المسلمين',en:'He oppressed non-Muslims'},c:false,exp:{ar:'لا، بل عدلَ مع الجميعِ وحفظَ حقوقَهم.',en:'No — he was just with all and protected their rights.'} },
+            { t:{ar:'منعهم من دينِهم',en:'He forbade them their religion'},c:false,exp:{ar:'لا، بل سمحَ لهم بممارسةِ دينِهم.',en:'No — he allowed them to practice their religion.'} },
+          ] } },
+    ],
+    quiz:[
+      { q:{ar:'كيف عاملَ ابنُ القاسمِ غيرَ المسلمينَ في السند؟',en:'How did Ibn al-Qasim treat non-Muslims in Sindh?'},
+        opts:[ {t:{ar:'بالعدلِ وحفظِ حقوقِهم ودينِهم',en:'With justice, protecting their rights and religion'},c:true}, {t:{ar:'بالظلم',en:'With oppression'},c:false}, {t:{ar:'بالطرد',en:'By expelling them'},c:false} ] },
+      { q:{ar:'ماذا فعلَ أهلُ السندِ حين عُزِلَ ورحل؟',en:'What did the people of Sindh do when he was removed and left?'},
+        opts:[ {t:{ar:'حزِنوا وبكوا لفراقِه',en:'They grieved and wept at his parting'},c:true}, {t:{ar:'فرحوا',en:'They rejoiced'},c:false}, {t:{ar:'نسوه',en:'They forgot him'},c:false} ] },
+      { q:{ar:'ما جوهرُ الإسلامِ كما علّمنا ابنُ القاسم؟',en:'What is the essence of Islam as Ibn al-Qasim taught?'},
+        opts:[ {t:{ar:'العدلُ مع الجميعِ حتى الخصوم',en:'Justice with everyone, even foes'},c:true}, {t:{ar:'الظلمُ للضعفاء',en:'Oppressing the weak'},c:false}, {t:{ar:'التفريقُ بين الناس',en:'Discriminating between people'},c:false} ] },
+    ],
+    moral:{ar:'العدلُ مع الجميعِ حتى الخصومِ جوهرُ الإسلام، والحاكمُ العادلُ يبقى في قلوبِ الناسِ ولو رحل.',en:'Justice with everyone, even foes, is the essence of Islam; a just ruler remains in people\u2019s hearts even after he leaves.'},
+    badge:{icon:'⚖️',title:{ar:'وِسامُ العدلِ الشامل',en:'Badge of Universal Justice'}},
+    reflect:[ {ar:'هل تعدلُ حتى مع من يخالفُك أو لا تحبُّه؟',en:'Are you just even with those who differ from you or whom you dislike?'}, {ar:'كيف تتركُ أثراً طيّباً يبقى في قلوبِ الناس؟',en:'How do you leave a good mark that remains in people\u2019s hearts?'} ],
+    didYouKnow:[ {ar:'كان العدلُ مع أهلِ البلادِ المفتوحةِ سبباً رئيساً في انتشارِ الإسلامِ في كثيرٍ من البلدان — المصدر: فتوح البلدان',en:'Justice toward the people of conquered lands was a main reason for Islam\u2019s spread in many countries — Source: Futuh al-Buldan'}, {ar:'قال تعالى: ﴿ اعْدِلُوا هُوَ أَقْرَبُ لِلتَّقْوَىٰ ﴾ — المصدر: المائدة ٨',en:'Allah said: "Be just; that is nearer to righteousness" — Source: Al-Ma\u2019ida 8'} ],
+  },
+];

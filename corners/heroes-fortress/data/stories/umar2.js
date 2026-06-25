@@ -1,0 +1,56 @@
+/* data/stories/umar2.js — Successors · Umar ibn Abdulaziz — sources: صور من حياة التابعين · إسلام ويب · الدرر السنية · سير أعلام النبلاء */
+window.HISN_STORIES = window.HISN_STORIES || {};
+HISN_STORIES.umar2 = [
+  { icon:'🕯️', scene:'throne', character:'👑',
+    title:{ ar:'شمعةُ بيتِ المال', en:'The Candle of the Treasury' },
+    pages:[
+      { scene:'throne', character:'👑',
+        text:{ ar:'حين تولّى <b>عمرُ بنُ عبد العزيز</b> الخلافةَ، تغيّرَ تماماً عن حياتِه السابقةِ في الترف. صارَ يفرّقُ بين <b>مالِ المسلمينَ (بيتِ المال)</b> ومالِه الخاصِّ تفريقاً دقيقاً عجيباً!<br><br>وذاتَ ليلةٍ جاءه ابنُه يُكلِّمُه في أمرٍ من أمورِ المسلمينَ على ضوءِ <b>شمعةٍ من بيتِ المال</b>. فلمّا انتهى من حديثِ المسلمين وأرادَ ابنُه أن يُكلِّمَه في أمرٍ خاصٍّ بالعائلة، <b>أطفأَ عمرُ الشمعةَ</b> وأشعلَ شمعةً أخرى من مالِه الخاص! فتعجّبَ ابنُه، فقال عمر: «يا بنيّ، تلك شمعةُ المسلمين، وكنّا نتحدّثُ في أمرِهم، فلمّا صِرنا في أمرِنا الخاصِّ أطفأتُها — لا يحلُّ لي أن أُنفِقَ من زيتِهم في أمري الخاص». أيُّ أمانةٍ وأيُّ ورع!',
+          en:'When <b>Umar ibn Abdulaziz</b> took the caliphate, he changed completely from his former life of luxury. He would distinguish between the <b>wealth of the Muslims (the treasury)</b> and his own private wealth with astonishing precision!<br><br>One night his son came to speak with him about a matter of the Muslims by the light of a <b>candle from the treasury</b>. When he finished the Muslims\u2019 affairs and his son wanted to discuss a private family matter, <b>Umar put out the candle</b> and lit another from his own money! His son was amazed, so Umar said: "My son, that was the Muslims\u2019 candle, and we were discussing their affairs; when we turned to our private matter, I put it out — it is not lawful for me to spend from their oil on my private affair." What trust and what scruple!' },
+        choice:{ q:{ar:'لماذا أطفأَ عمرُ شمعةَ بيتِ المال؟',en:'Why did Umar put out the treasury candle?'},
+          opts:[
+            { t:{ar:'لأنّه لا يحلُّ له أن يُنفِقَ مالَ المسلمينَ في أمرِه الخاص',en:'Because he could not spend the Muslims\u2019 wealth on his private matter'},c:true,exp:{ar:'نعم! الأمانةُ في المالِ العامِّ من أعظمِ العدل.',en:'Yes! Trustworthiness with public wealth is among the greatest justice.'} },
+            { t:{ar:'لأنّها انطفأتْ وحدَها',en:'Because it went out on its own'},c:false,exp:{ar:'لا، بل أطفأها عمداً ورعاً وأمانة.',en:'No — he put it out deliberately out of scruple and trust.'} },
+            { t:{ar:'لأنّه أرادَ النوم',en:'Because he wanted to sleep'},c:false,exp:{ar:'لا، بل ليُفرِّقَ بين مالِ المسلمينَ ومالِه.',en:'No — to separate the Muslims\u2019 wealth from his own.'} },
+          ] } },
+    ],
+    quiz:[
+      { q:{ar:'بِمَ كان عمرُ يُفرِّقُ بدقّة؟',en:'What did Umar distinguish precisely?'},
+        opts:[ {t:{ar:'مالَ المسلمينَ ومالَه الخاص',en:'The Muslims\u2019 wealth and his own'},c:true}, {t:{ar:'الطعامَ والشراب',en:'Food and drink'},c:false}, {t:{ar:'الليلَ والنهار',en:'Night and day'},c:false} ] },
+      { q:{ar:'ماذا فعلَ حين انتقلَ للحديثِ الخاص؟',en:'What did he do when moving to a private matter?'},
+        opts:[ {t:{ar:'أطفأَ شمعةَ بيتِ المالِ وأشعلَ شمعتَه',en:'He put out the treasury candle and lit his own'},c:true}, {t:{ar:'تركها مشتعلة',en:'He left it burning'},c:false}, {t:{ar:'أطفأَ كلَّ الشموع',en:'He put out all candles'},c:false} ] },
+      { q:{ar:'ما الدرسُ من القصّة؟',en:'What is the lesson?'},
+        opts:[ {t:{ar:'الأمانةُ في المالِ العامّ',en:'Trustworthiness with public wealth'},c:true}, {t:{ar:'البخل',en:'Stinginess'},c:false}, {t:{ar:'حبُّ المال',en:'Love of money'},c:false} ] },
+    ],
+    moral:{ar:'المالُ العامُّ أمانةٌ عظيمة، والعادلُ الأمينُ لا يأخذُ منه شيئاً لنفسِه ولو قَلَّ.',en:'Public wealth is a great trust; the just and trustworthy take nothing from it for themselves, however small.'},
+    badge:{icon:'🕯️',title:{ar:'وِسامُ الأمانةِ في المالِ العام',en:'Badge of Trust With Public Wealth'}},
+    reflect:[ {ar:'هل تُفرِّقُ بين ما هو لك وما هو لغيرِك بأمانة؟',en:'Do you distinguish faithfully between what is yours and what belongs to others?'}, {ar:'كيف تحفظُ أمانةَ ما يُوكَلُ إليك؟',en:'How do you guard the trust of what is entrusted to you?'} ],
+    didYouKnow:[ {ar:'اشتُهِرَ عمرُ بنُ عبد العزيزِ بالدقّةِ المتناهيةِ في التعاملِ مع مالِ المسلمين — المصدر: سير أعلام النبلاء',en:'Umar ibn Abdulaziz was famed for utmost precision in dealing with the Muslims\u2019 wealth — Source: Siyar A\u2019lam an-Nubala\u2019'}, {ar:'ردَّ عمرُ مزارعَ وأموالاً كثيرةً كانت بيدِ بني أميّةَ إلى بيتِ المال — المصدر: صور من حياة التابعين',en:'Umar returned many estates and properties held by the Umayyads to the treasury — Source: Suwar min Hayat at-Tabi\u2019in'} ],
+  },
+  { icon:'⚖️', scene:'madinah', character:'🤲',
+    title:{ ar:'سنتانِ غيّرتا الأمّة', en:'Two Years That Changed the Nation' },
+    pages:[
+      { scene:'madinah', character:'🤲',
+        text:{ ar:'لم يحكمِ <b>عمرُ بنُ عبد العزيز</b> إلّا نحوَ <b>سنتَين ونصف</b> فقط، لكنّه أحدثَ فيها من الخيرِ ما لم يحدثْه غيرُه في سنينَ طويلة! كيف؟ بالعدلِ والتقوى. ردَّ المظالمَ، وأنصفَ المظلوم، ورفعَ الظلمَ عن الناس، وحرصَ على راحةِ رعيّتِه.<br><br>فعمَّ الرخاءُ والخيرُ في بلادِ المسلمين، حتى رُوِيَ أنّ الرجلَ كان يخرجُ بزكاةِ مالِه <b>فلا يجدُ فقيراً يأخذُها</b> — لأنّ الناسَ استغنَوا بعدلِه! وكان عمرُ مع كلِّ هذا <b>يبكي من خوفِ الحساب</b>، يقول: «إنّ لي نفساً تَوّاقة، تاقتْ إلى الإمارةِ فنالتها، وها هي تتوقُ إلى ما هو أعلى — الجنّة». مات عمرُ زاهداً تقيّاً، فبكاه المسلمونَ وذكروه بالخيرِ إلى اليوم. علّمنا أنّ <b>العدلَ القليلَ خيرٌ من الظلمِ الكثير</b>.',
+          en:'<b>Umar ibn Abdulaziz</b> ruled only about <b>two and a half years</b>, yet he brought about more good than others did in many long years! How? Through justice and piety. He returned wrongs, gave the oppressed their due, lifted injustice off people, and cared for his subjects\u2019 ease.<br><br>So prosperity and goodness spread across the Muslim lands, until it is reported a man would go out with the zakat of his wealth and <b>find no poor person to take it</b> — because people had become self-sufficient through his justice! With all this, Umar would <b>weep from fear of the reckoning</b>, saying: "I have a yearning soul — it yearned for leadership and attained it, and now it yearns for what is higher: Paradise." Umar died ascetic and pious; the Muslims wept for him and remember him with good to this day. He taught us that <b>a little justice is better than much injustice</b>.' },
+        choice:{ q:{ar:'كيف غيّرَ عمرُ الأمّةَ في سنتَين فقط؟',en:'How did Umar change the nation in just two years?'},
+          opts:[
+            { t:{ar:'بالعدلِ والتقوى ورفعِ الظلمِ عن الناس',en:'Through justice, piety, and lifting injustice off people'},c:true,exp:{ar:'نعم! العدلُ يُصلِحُ الأمّةَ في زمنٍ قصير.',en:'Yes! Justice reforms a nation in a short time.'} },
+            { t:{ar:'بجمعِ الجيوش',en:'By gathering armies'},c:false,exp:{ar:'لا، بل بالعدلِ والإصلاحِ الداخلي.',en:'No — through justice and internal reform.'} },
+            { t:{ar:'بفرضِ الضرائب',en:'By imposing taxes'},c:false,exp:{ar:'لا، بل بالعدلِ ورفعِ الظلم.',en:'No — through justice and lifting injustice.'} },
+          ] } },
+    ],
+    quiz:[
+      { q:{ar:'كم حكمَ عمرُ بنُ عبد العزيز؟',en:'How long did Umar ibn Abdulaziz rule?'},
+        opts:[ {t:{ar:'نحوَ سنتَين ونصف',en:'About two and a half years'},c:true}, {t:{ar:'أربعينَ سنة',en:'Forty years'},c:false}, {t:{ar:'يوماً واحداً',en:'One day'},c:false} ] },
+      { q:{ar:'ماذا رُوِيَ عن الزكاةِ في عهدِه؟',en:'What is reported about zakat in his reign?'},
+        opts:[ {t:{ar:'لم يجدوا فقيراً يأخذُها',en:'They found no poor person to take it'},c:true}, {t:{ar:'مُنِعتْ',en:'It was banned'},c:false}, {t:{ar:'زادتْ على الناس',en:'It was increased on people'},c:false} ] },
+      { q:{ar:'ما الدرسُ من عهدِه؟',en:'What is the lesson of his reign?'},
+        opts:[ {t:{ar:'العدلُ يُصلِحُ الأمّةَ ولو في زمنٍ قصير',en:'Justice reforms a nation even in a short time'},c:true}, {t:{ar:'المُلكُ غاية',en:'Power is the goal'},c:false}, {t:{ar:'الظلمُ ينفع',en:'Injustice benefits'},c:false} ] },
+    ],
+    moral:{ar:'العدلُ يُصلِحُ الأمّةَ ولو في زمنٍ قصير، ومن خافَ الحسابَ أحسنَ في ولايتِه وعملِه.',en:'Justice reforms a nation even in a short time; whoever fears the reckoning excels in his charge and his deeds.'},
+    badge:{icon:'⚖️',title:{ar:'وِسامُ العدلِ المُصلِح',en:'Badge of Reforming Justice'}},
+    reflect:[ {ar:'كيف تُصلِحُ ما حولَك بالعدلِ وحُسنِ التصرّف؟',en:'How do you reform what is around you through justice and good conduct?'}, {ar:'هل تتذكّرُ أنّك مسؤولٌ عمّا تحتَ يدِك؟',en:'Do you remember you are responsible for what is under your charge?'} ],
+    didYouKnow:[ {ar:'رُوِيَ في عهدِ عمرَ بنِ عبد العزيزِ أنّ الزكاةَ كانت تُعرَضُ فلا تُوجَدُ يدٌ فقيرةٌ تأخذُها — المصدر: سير أعلام النبلاء',en:'In Umar ibn Abdulaziz\u2019s reign it is reported the zakat was offered but no poor hand was found to take it — Source: Siyar A\u2019lam an-Nubala\u2019'}, {ar:'يُعدُّ عمرُ بنُ عبد العزيزِ نموذجاً للحاكمِ العادلِ في تاريخِ الإسلام — المصدر: البداية والنهاية',en:'Umar ibn Abdulaziz is regarded as a model of the just ruler in Islamic history — Source: Al-Bidaya wa an-Nihaya'} ],
+  },
+];

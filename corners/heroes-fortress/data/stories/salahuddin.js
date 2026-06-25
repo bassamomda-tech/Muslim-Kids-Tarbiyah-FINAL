@@ -1,0 +1,56 @@
+/* data/stories/salahuddin.js — Leaders · Salahuddin al-Ayyubi — sources: البداية والنهاية · النوادر السلطانية (ابن شداد) · إسلام ويب · الدرر السنية */
+window.HISN_STORIES = window.HISN_STORIES || {};
+HISN_STORIES.salahuddin = [
+  { icon:'🕌', scene:'kaaba', character:'⚔️',
+    title:{ ar:'يومُ تحريرِ القدس', en:'The Day Jerusalem Was Liberated' },
+    pages:[
+      { scene:'peaks', character:'⚔️',
+        text:{ ar:'كان <b>بيتُ المقدس</b> — أولى القبلتينِ وثالثُ الحرمين — تحتَ احتلالِ الصليبيينَ نحوَ <b>تسعينَ سنة</b>. حزِنَ المسلمونَ حزناً شديداً، وحلموا بتحريرِه. فقامَ البطلُ <b>صلاحُ الدينِ الأيوبي</b> بمهمّةٍ عظيمة: أوّلاً <b>وحّدَ المسلمينَ المتفرّقين</b> في مصرَ والشام، لأنّه عرفَ أنّ التفرّقَ سببُ الضعف.<br><br>ثمّ التقى بالصليبيينَ في معركةِ <b>حطّين</b> الفاصلةِ سنةَ ٥٨٣هـ، فنصرهُ اللهُ نصراً عظيماً. وبعدها زحفَ إلى <b>القدس</b> وحاصرها حتى فتحها وحرّرها! دخلَ المسلمونَ المسجدَ الأقصى وكبّروا وصلّوا فيه بعدَ تسعينَ سنةً من الحرمان. كان يوماً عظيماً فرِحَ به المسلمونَ في كلِّ مكان. علّمنا صلاحُ الدينِ أنّ <b>الوحدةَ طريقُ النصر</b>، وأنّ الحلمَ الكبيرَ يتحقّقُ بالعزيمةِ والإيمان.',
+          en:'<b>Jerusalem</b> — the first qibla and third holy sanctuary — was under Crusader occupation for about <b>ninety years</b>. The Muslims grieved deeply and dreamed of liberating it. So the hero <b>Salahuddin al-Ayyubi</b> undertook a great mission: first he <b>united the scattered Muslims</b> in Egypt and Sham, because he knew that division was the cause of weakness.<br><br>Then he met the Crusaders at the decisive Battle of <b>Hattin</b> in 583 AH, and Allah granted him a great victory. After it he marched on <b>Jerusalem</b> and besieged it until he conquered and liberated it! The Muslims entered al-Aqsa Mosque, proclaimed Allah\u2019s greatness, and prayed in it after ninety years of deprivation. It was a great day rejoiced over by Muslims everywhere. Salahuddin taught us that <b>unity is the path to victory</b>, and that a great dream comes true through resolve and faith.' },
+        choice:{ q:{ar:'ما أوّلُ ما فعله صلاحُ الدينِ قبلَ تحريرِ القدس؟',en:'What did Salahuddin do first before liberating Jerusalem?'},
+          opts:[
+            { t:{ar:'وحّدَ المسلمينَ المتفرّقينَ لأنّ التفرّقَ ضعف',en:'He united the scattered Muslims, since division is weakness'},c:true,exp:{ar:'نعم! الوحدةُ طريقُ النصر.',en:'Yes! Unity is the path to victory.'} },
+            { t:{ar:'هاجمَ القدسَ مباشرةً وحدَه',en:'He attacked Jerusalem directly, alone'},c:false,exp:{ar:'لا، بل وحّدَ الصفَّ أوّلاً.',en:'No — he united the ranks first.'} },
+            { t:{ar:'انتظرَ سنوات',en:'He waited years doing nothing'},c:false,exp:{ar:'لا، بل عملَ على التوحيدِ ثمّ الجهاد.',en:'No — he worked on unity, then struggle.'} },
+          ] } },
+    ],
+    quiz:[
+      { q:{ar:'كم سنةً بقيتِ القدسُ تحتَ الاحتلالِ قبلَ صلاحِ الدين؟',en:'How long was Jerusalem occupied before Salahuddin?'},
+        opts:[ {t:{ar:'نحوَ تسعينَ سنة',en:'About ninety years'},c:true}, {t:{ar:'سنة',en:'One year'},c:false}, {t:{ar:'يوماً',en:'A day'},c:false} ] },
+      { q:{ar:'ما المعركةُ الفاصلةُ قبلَ تحريرِ القدس؟',en:'What was the decisive battle before liberating Jerusalem?'},
+        opts:[ {t:{ar:'حطّين',en:'Hattin'},c:true}, {t:{ar:'بدر',en:'Badr'},c:false}, {t:{ar:'اليرموك',en:'Yarmouk'},c:false} ] },
+      { q:{ar:'ما الذي علّمنا إيّاه صلاحُ الدين؟',en:'What did Salahuddin teach us?'},
+        opts:[ {t:{ar:'الوحدةُ طريقُ النصر',en:'Unity is the path to victory'},c:true}, {t:{ar:'التفرّقُ قوّة',en:'Division is strength'},c:false}, {t:{ar:'الاستسلامُ راحة',en:'Surrender is comfort'},c:false} ] },
+    ],
+    moral:{ar:'الوحدةُ طريقُ النصر، والحلمُ الكبيرُ يتحقّقُ بالعزيمةِ والإيمانِ والعملِ بعدَ توحيدِ الصف.',en:'Unity is the path to victory; a great dream comes true through resolve, faith, and action after uniting the ranks.'},
+    badge:{icon:'🕌',title:{ar:'وِسامُ تحريرِ القدس',en:'Badge of Liberating Al-Quds'}},
+    reflect:[ {ar:'لماذا الوحدةُ مهمّةٌ لتحقيقِ الأهدافِ الكبيرة؟',en:'Why is unity important for achieving great goals?'}, {ar:'كيف تُسهِمُ في جمعِ الكلمةِ بين أهلِك وأصحابِك؟',en:'How do you contribute to unity among your family and friends?'} ],
+    didYouKnow:[ {ar:'حرّرَ صلاحُ الدينِ القدسَ سنةَ ٥٨٣هـ/١١٨٧م بعدَ انتصارِه في حطّين — المصدر: البداية والنهاية',en:'Salahuddin liberated Jerusalem in 583 AH/1187 CE after his victory at Hattin — Source: Al-Bidaya wa an-Nihaya'}, {ar:'كان توحيدُ مصرَ والشامِ تحتَ رايةٍ واحدةٍ مفتاحَ انتصارِ صلاحِ الدين — المصدر: النوادر السلطانية',en:'Uniting Egypt and Sham under one banner was the key to Salahuddin\u2019s victory — Source: an-Nawadir as-Sultaniyya'} ],
+  },
+  { icon:'💚', scene:'kaaba', character:'🕊️',
+    title:{ ar:'رحمةٌ أذهلتِ العالم', en:'A Mercy That Astonished the World' },
+    pages:[
+      { scene:'kaaba', character:'🕊️',
+        text:{ ar:'حين دخلَ الصليبيونَ القدسَ قبلَ تسعينَ سنة، فعلوا أمراً فظيعاً: قتلوا أهلَها بوحشيّةٍ شديدة. والآنَ، وقد انتصرَ <b>صلاحُ الدين</b> وصارَ بإمكانِه أن ينتقمَ — فماذا فعل؟<br><br>لقد فاجأَ العالمَ كلَّه! <b>عفا صلاحُ الدينِ عن أهلِ القدسِ من النصارى</b>، وأمّنهم على أنفسِهم وأموالِهم، وسمحَ لهم بالخروجِ بسلام، بل ساعدَ الضعفاءَ والفقراءَ منهم! لم يقتلْ ولم ينتقمْ، بل عاملهم بـ<b>الرحمةِ والعدلِ والكرم</b> الذي علّمه إيّاه دينُه. ذُهِلَ الأعداءُ من أخلاقِه حتى صاروا يحترمونَه ويذكرونه بالخير. وهكذا قدّمَ صلاحُ الدينِ أجملَ صورةٍ للإسلام: <b>دينِ العدلِ والرحمةِ حتى مع الأعداء</b>. علّمنا أنّ <b>القويَّ الحقيقيَّ من يعفو عند المقدرة</b>.',
+          en:'When the Crusaders entered Jerusalem ninety years earlier, they did something terrible: they slaughtered its people brutally. Now that <b>Salahuddin</b> had triumphed and could take revenge — what did he do?<br><br>He astonished the whole world! <b>Salahuddin pardoned the Christian people of Jerusalem</b>, secured their lives and property, allowed them to leave in peace, and even helped the weak and poor among them! He did not kill or take revenge, but treated them with the <b>mercy, justice, and generosity</b> his religion had taught him. The enemies were stunned by his character, so they came to respect him and remember him with good. Thus Salahuddin presented the most beautiful image of Islam: <b>the religion of justice and mercy even with enemies</b>. He taught us that <b>the truly strong is one who pardons when able</b>.' },
+        choice:{ q:{ar:'كيف عاملَ صلاحُ الدينِ أهلَ القدسِ رغمَ ما فعله الصليبيونَ من قبل؟',en:'How did Salahuddin treat Jerusalem\u2019s people despite what the Crusaders had done?'},
+          opts:[
+            { t:{ar:'عفا عنهم وأمّنهم ورحمهم',en:'He pardoned, secured, and showed mercy to them'},c:true,exp:{ar:'نعم! القويُّ الحقيقيُّ من يعفو عند المقدرة.',en:'Yes! The truly strong is one who pardons when able.'} },
+            { t:{ar:'انتقمَ منهم',en:'He took revenge on them'},c:false,exp:{ar:'لا، بل عفا ورحمَ فأذهلَ العالم.',en:'No — he pardoned and showed mercy, astonishing the world.'} },
+            { t:{ar:'طردهم بقسوة',en:'He expelled them harshly'},c:false,exp:{ar:'لا، بل أمّنهم وساعدَ ضعفاءهم.',en:'No — he secured them and helped their weak.'} },
+          ] } },
+    ],
+    quiz:[
+      { q:{ar:'ماذا فعلَ صلاحُ الدينِ بأهلِ القدسِ بعدَ النصر؟',en:'What did Salahuddin do with Jerusalem\u2019s people after victory?'},
+        opts:[ {t:{ar:'عفا عنهم وأمّنهم ورحمهم',en:'He pardoned, secured, and showed mercy to them'},c:true}, {t:{ar:'انتقمَ منهم',en:'He took revenge'},c:false}, {t:{ar:'سجنهم',en:'He imprisoned them'},c:false} ] },
+      { q:{ar:'ماذا فعلَ الصليبيونَ حين دخلوا القدسَ قبلَه؟',en:'What did the Crusaders do when they entered Jerusalem before him?'},
+        opts:[ {t:{ar:'قتلوا أهلَها بوحشية',en:'They slaughtered its people brutally'},c:true}, {t:{ar:'عفوا عنهم',en:'They pardoned them'},c:false}, {t:{ar:'تركوها',en:'They left it'},c:false} ] },
+      { q:{ar:'من القويُّ الحقيقي؟',en:'Who is the truly strong?'},
+        opts:[ {t:{ar:'من يعفو عند المقدرة',en:'One who pardons when able'},c:true}, {t:{ar:'من ينتقم',en:'One who takes revenge'},c:false}, {t:{ar:'من يقسو',en:'One who is harsh'},c:false} ] },
+    ],
+    moral:{ar:'العفوُ عند المقدرةِ أعظمُ القوّة، والرحمةُ والعدلُ حتى مع الأعداءِ من أجملِ أخلاقِ الإسلام.',en:'Pardon when able is the greatest strength; mercy and justice even with enemies are among the most beautiful traits of Islam.'},
+    badge:{icon:'💚',title:{ar:'وِسامُ العفوِ والرحمة',en:'Badge of Pardon & Mercy'}},
+    reflect:[ {ar:'هل تعفو عمّن أساءَ إليك حين تقدرُ على الانتقام؟',en:'Do you pardon those who wronged you when you could take revenge?'}, {ar:'كيف تُظهِرُ جمالَ أخلاقِك حتى مع من يخالفُك؟',en:'How do you show the beauty of your character even with those who oppose you?'} ],
+    didYouKnow:[ {ar:'عفوُ صلاحِ الدينِ عن أهلِ القدسِ ذُكِرَ في كتبِ المؤرّخينَ المسلمينَ والغربيين كمثالٍ نادرٍ للرحمة — المصدر: النوادر السلطانية',en:'Salahuddin\u2019s pardon of Jerusalem\u2019s people is recorded by Muslim and Western historians as a rare example of mercy — Source: an-Nawadir as-Sultaniyya'}, {ar:'ماتَ صلاحُ الدينِ ولم يتركْ من المالِ ما يكفي لتجهيزِه، فقد أنفقَ كلَّه في الجهادِ والخير — المصدر: البداية والنهاية',en:'Salahuddin died without leaving enough wealth to prepare his burial, having spent it all on struggle and good — Source: Al-Bidaya wa an-Nihaya'} ],
+  },
+];

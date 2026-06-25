@@ -1,0 +1,56 @@
+/* data/stories/suleiman.js — Leaders · Suleiman the Magnificent — sources: البداية والنهاية · إسلام ويب · الدرر السنية · كتب التاريخ العثماني */
+window.HISN_STORIES = window.HISN_STORIES || {};
+HISN_STORIES.suleiman = [
+  { icon:'⚖️', scene:'throne', character:'👑',
+    title:{ ar:'السلطانُ الذي أحبَّ العدل', en:'The Sultan Who Loved Justice' },
+    pages:[
+      { scene:'throne', character:'👑',
+        text:{ ar:'كان <b>سليمانُ القانوني</b> سلطاناً عظيماً، امتدّتْ دولتُه في ثلاثِ قارّات: آسيا وأوروبا وإفريقيا. لكنّه لم يكنْ مشغولاً بالحروبِ والتوسّعِ فقط، بل كان <b>حريصاً على العدلِ بين الناس</b> أكثرَ من أيِّ شيءٍ آخر.<br><br>اهتمَّ سليمانُ بـ<b>تنظيمِ شؤونِ الدولة</b> ووضعِ الأنظمةِ العادلةِ التي تحفظُ حقوقَ كلِّ الناس — الغنيِّ والفقير، القويِّ والضعيف. كان يُتابِعُ شكاوى الرعيّةِ بنفسِه، ويُحاسِبُ الولاةَ الظالمين. ولشدّةِ عنايتِه بالعدلِ والقانونِ العادل، لُقِّبَ بـ<b>«القانوني»</b>. علّمنا أنّ <b>القوّةَ الحقيقيّةَ ليست في اتّساعِ المُلكِ فقط، بل في العدلِ بين الناس</b>. فالحاكمُ العادلُ يُحِبُّه الناسُ وتدومُ دولتُه.',
+          en:'<b>Suleiman the Magnificent</b> was a great sultan whose state stretched across three continents: Asia, Europe, and Africa. But he was not occupied only with wars and expansion — he was <b>keen on justice among people</b> more than anything else.<br><br>Suleiman cared for <b>organizing the state\u2019s affairs</b> and establishing just systems that protected the rights of all people — rich and poor, strong and weak. He would follow the subjects\u2019 complaints himself and hold unjust governors to account. For his great care for justice and fair law, he was titled <b>"the Lawgiver" (al-Qanuni)</b>. He taught us that <b>true power is not only in the expanse of dominion, but in justice among people</b>. A just ruler is loved by the people and his state endures.' },
+        choice:{ q:{ar:'لماذا لُقِّبَ سليمانُ بـ«القانوني»؟',en:'Why was Suleiman titled "the Lawgiver"?'},
+          opts:[
+            { t:{ar:'لعنايتِه بالعدلِ وتنظيمِ شؤونِ الدولةِ بما يحفظُ الحقوق',en:'For his care for justice and organizing the state to protect rights'},c:true,exp:{ar:'نعم! القوّةُ الحقيقيّةُ في العدلِ بين الناس.',en:'Yes! True power is in justice among people.'} },
+            { t:{ar:'لأنّه جمعَ مالاً كثيراً',en:'Because he gathered much wealth'},c:false,exp:{ar:'لا، بل لعدلِه وتنظيمِه العادل.',en:'No — for his justice and fair organization.'} },
+            { t:{ar:'لأنّه أحبَّ الراحة',en:'Because he loved leisure'},c:false,exp:{ar:'لا، بل لحرصِه على العدلِ والقانون.',en:'No — for his keenness on justice and law.'} },
+          ] } },
+    ],
+    quiz:[
+      { q:{ar:'في كم قارّةٍ امتدّتْ دولةُ سليمان؟',en:'Across how many continents did Suleiman\u2019s state stretch?'},
+        opts:[ {t:{ar:'ثلاث',en:'Three'},c:true}, {t:{ar:'واحدة',en:'One'},c:false}, {t:{ar:'خمس',en:'Five'},c:false} ] },
+      { q:{ar:'بِمَ كان سليمانُ حريصاً أكثرَ من غيرِه؟',en:'What was Suleiman keen on most?'},
+        opts:[ {t:{ar:'العدلِ بين الناس',en:'Justice among people'},c:true}, {t:{ar:'جمعِ المال',en:'Hoarding wealth'},c:false}, {t:{ar:'اللهو',en:'Amusement'},c:false} ] },
+      { q:{ar:'ما القوّةُ الحقيقيّةُ كما علّمنا سليمان؟',en:'What is true power as Suleiman taught?'},
+        opts:[ {t:{ar:'العدلُ بين الناسِ لا اتّساعُ المُلكِ فقط',en:'Justice among people, not just the expanse of dominion'},c:true}, {t:{ar:'كثرةُ الجيوش',en:'Many armies'},c:false}, {t:{ar:'المالُ فقط',en:'Wealth alone'},c:false} ] },
+    ],
+    moral:{ar:'القوّةُ الحقيقيّةُ في العدلِ بين الناسِ وحفظِ حقوقِهم، والحاكمُ العادلُ يُحِبُّه الناسُ وتدومُ دولتُه.',en:'True power is in justice among people and protecting their rights; a just ruler is loved by the people and his state endures.'},
+    badge:{icon:'⚖️',title:{ar:'وِسامُ القانونِ العادل',en:'Badge of Just Law'}},
+    reflect:[ {ar:'هل تعدلُ بين الناسِ ولو كانوا مختلفين عنك؟',en:'Are you just among people even if they differ from you?'}, {ar:'كيف تُنظِّمُ أمورَك بالعدلِ والإنصاف؟',en:'How do you organize your affairs with justice and fairness?'} ],
+    didYouKnow:[ {ar:'بلغتِ الدولةُ العثمانيّةُ في عهدِ سليمانَ القانونيِّ أوجَ اتّساعِها وقوّتِها — المصدر: كتب التاريخ العثماني',en:'The Ottoman state reached the peak of its expanse and power in Suleiman the Magnificent\u2019s era — Source: Ottoman history works'}, {ar:'لُقِّبَ في الغربِ بـ«العظيم» وفي الشرقِ بـ«القانوني» لعدلِه وتنظيمِه — المصدر: كتب التاريخ',en:'He was called "the Magnificent" in the West and "the Lawgiver" in the East for his justice and organization — Source: history works'} ],
+  },
+  { icon:'🏛️', scene:'mosque', character:'🕌',
+    title:{ ar:'باني المساجدِ والحضارة', en:'Builder of Mosques and Civilization' },
+    pages:[
+      { scene:'mosque', character:'🕌',
+        text:{ ar:'لم يكتفِ <b>سليمانُ القانوني</b> بتوسيعِ الدولةِ وتنظيمِها، بل أرادَ أن يتركَ <b>أثراً حضاريّاً جميلاً</b> ينفعُ الناسَ ويُجمِّلُ بلادَهم. فأمرَ ببناءِ المساجدِ الفخمةِ والمدارسِ والمستشفياتِ والجسورِ والقلاعِ في أنحاءِ الدولة.<br><br>تعاونَ مع المهندسِ العبقريِّ <b>سنان باشا</b>، فبنيا معاً روائعَ معماريّةً ما زالتْ قائمةً إلى اليوم، مثلَ <b>مسجدِ السليمانية</b> العظيم في إسطنبول. اهتمَّ كذلك بالعلمِ والشعرِ والفنون، فازدهرتِ الحضارةُ الإسلاميّةُ في عهدِه ازدهاراً عظيماً. علّمنا سليمانُ أنّ <b>القائدَ العظيمَ يبني ويُعمِّرُ ويترکُ خلفَه نفعاً للأجيال</b>، لا يهتمُّ بالحربِ وحدَها. فالأثرُ الطيّبُ الباقي خيرٌ من المُلكِ الزائل.',
+          en:'<b>Suleiman the Magnificent</b> was not content with expanding and organizing the state — he wanted to leave a <b>beautiful civilizational mark</b> that benefits people and beautifies their lands. So he ordered the building of grand mosques, schools, hospitals, bridges, and fortresses throughout the state.<br><br>He worked with the genius architect <b>Sinan Pasha</b>, and together they built architectural masterpieces still standing today, like the great <b>Suleymaniye Mosque</b> in Istanbul. He also cared for knowledge, poetry, and the arts, so Islamic civilization flourished magnificently in his era. Suleiman taught us that <b>a great leader builds, develops, and leaves behind benefit for generations</b>, not concerning himself with war alone. A lasting good mark is better than fleeting dominion.' },
+        choice:{ q:{ar:'بماذا أرادَ سليمانُ أن يتركَ أثراً ينفعُ الناس؟',en:'How did Suleiman want to leave a mark benefiting people?'},
+          opts:[
+            { t:{ar:'ببناءِ المساجدِ والمدارسِ ورعايةِ العلمِ والفنون',en:'By building mosques, schools, and nurturing knowledge and the arts'},c:true,exp:{ar:'نعم! الأثرُ الطيّبُ الباقي خيرٌ من المُلكِ الزائل.',en:'Yes! A lasting good mark is better than fleeting dominion.'} },
+            { t:{ar:'بهدمِ المباني',en:'By demolishing buildings'},c:false,exp:{ar:'لا، بل ببناءِ الحضارةِ وعمارتِها.',en:'No — by building civilization.'} },
+            { t:{ar:'بجمعِ الكنوزِ لنفسِه',en:'By hoarding treasures for himself'},c:false,exp:{ar:'لا، بل بالبناءِ النافعِ للناس.',en:'No — by beneficial building for the people.'} },
+          ] } },
+    ],
+    quiz:[
+      { q:{ar:'مع من تعاونَ سليمانُ في البناء؟',en:'With whom did Suleiman cooperate in building?'},
+        opts:[ {t:{ar:'المهندسِ سنان باشا',en:'The architect Sinan Pasha'},c:true}, {t:{ar:'أبي جهل',en:'Abu Jahl'},c:false}, {t:{ar:'لا أحد',en:'No one'},c:false} ] },
+      { q:{ar:'أيُّ مسجدٍ عظيمٍ بُنِيَ في عهدِه؟',en:'What great mosque was built in his era?'},
+        opts:[ {t:{ar:'مسجدُ السليمانية',en:'The Suleymaniye Mosque'},c:true}, {t:{ar:'المسجدُ الأقصى',en:'Al-Aqsa Mosque'},c:false}, {t:{ar:'مسجدُ قرطبة',en:'The Cordoba Mosque'},c:false} ] },
+      { q:{ar:'ما الدرسُ من بناءِ سليمان؟',en:'What is the lesson from Suleiman\u2019s building?'},
+        opts:[ {t:{ar:'القائدُ العظيمُ يبني ويُعمِّرُ وينفعُ الأجيال',en:'A great leader builds, develops, and benefits generations'},c:true}, {t:{ar:'الحربُ وحدَها مهمّة',en:'War alone matters'},c:false}, {t:{ar:'لا قيمةَ للعمران',en:'Building has no value'},c:false} ] },
+    ],
+    moral:{ar:'القائدُ العظيمُ يبني ويُعمِّرُ ويرعى العلمَ والحضارة، فالأثرُ الطيّبُ الباقي خيرٌ من المُلكِ الزائل.',en:'A great leader builds, develops, and nurtures knowledge and civilization; a lasting good mark is better than fleeting dominion.'},
+    badge:{icon:'🏛️',title:{ar:'وِسامُ باني الحضارة',en:'Badge of the Civilization-Builder'}},
+    reflect:[ {ar:'ما الأثرُ الطيّبُ الذي تتمنّى أن تتركَه من بعدِك؟',en:'What good mark do you wish to leave behind you?'}, {ar:'كيف تبني وتُصلِحُ ما حولَك لينتفعَ غيرُك؟',en:'How do you build and improve around you so others benefit?'} ],
+    didYouKnow:[ {ar:'بنى المهندسُ سنان باشا في العصرِ العثمانيِّ مئاتِ المساجدِ والمنشآتِ ومنها السليمانية — المصدر: كتب التاريخ العثماني',en:'The architect Sinan Pasha built hundreds of mosques and structures in the Ottoman era, including the Suleymaniye — Source: Ottoman history works'}, {ar:'ازدهرتِ العمارةُ والفنونُ والعلومُ ازدهاراً عظيماً في عصرِ سليمانَ القانوني — المصدر: كتب التاريخ',en:'Architecture, the arts, and the sciences flourished greatly in Suleiman the Magnificent\u2019s era — Source: history works'} ],
+  },
+];

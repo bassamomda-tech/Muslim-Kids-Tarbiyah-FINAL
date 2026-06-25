@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>مصمم السجادة · أنوس</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+
+<link rel="stylesheet" href="../styles/tokens.css" />
+<link rel="stylesheet" href="../styles/dashboard.css" />
+<link rel="stylesheet" href="../styles/wheel.css" />
+<link rel="stylesheet" href="../styles/carpet-designer.css" />
+</head>
+<body>
+
+<div class="bg-decor" aria-hidden="true"></div>
+
+<div class="activity-shell">
+
+  <nav class="activity-nav">
+    <a class="back-link" href="../dashboard.html">
+      الرجوع للوحة الأنشطة
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg>
+    </a>
+    <div class="activity-crumb">
+      <span>الفن والإبداع</span>
+      <span class="sep">/</span>
+      <span class="cur">مصمم السجادة</span>
+    </div>
+    <div class="activity-actions">
+      <button class="icon-btn" id="reset-btn" title="إعادة الضبط" aria-label="إعادة الضبط">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 3-6.7L3 8"/><path d="M3 3v5h5"/></svg>
+      </button>
+    </div>
+  </nav>
+
+  <div class="activity-layout">
+
+    <section class="cd-panel">
+      <header class="wheel-header">
+        <span class="activity-tag">Activity 24 · Canvas Drawing</span>
+        <h1 class="activity-title">مصمم السجادة</h1>
+        <p class="activity-desc">
+          صَمِّم سجَّادتَك الإسلاميَّة الخاصَّة! اختر لوناً، ثم انقُر على الخلايا لِترسم.
+          فَعِّل التَّناظُر، فتتكرَّر نَقرتُك تِلقائياً في الأركان لِتُكَوِّن نَمَطاً جَميلاً.
+        </p>
+      </header>
+
+      <div class="cd-hud">
+        <div class="hud-block">خلايا مَلوَّنة <strong id="c-filled">0</strong></div>
+        <div class="hud-block">الألوان المُستَخدَمة <strong id="c-colors">0</strong></div>
+        <div class="hud-block">سجَّاداتي <strong id="c-saved">0</strong></div>
+      </div>
+
+      <!-- Controls -->
+      <div class="cd-controls">
+        <div class="cd-control-group">
+          <div class="label">تَناظُر</div>
+          <div class="cd-symmetry-row" id="symmetry-row"></div>
+        </div>
+        <div class="cd-control-group">
+          <div class="label">حَجم الشَّبكة</div>
+          <div class="cd-symmetry-row" id="size-row"></div>
+        </div>
+      </div>
+
+      <div class="cd-stage">
+        <div class="cd-carpet-wrap">
+          <div class="cd-tassels top" id="tassels-top"></div>
+          <div class="cd-grid" id="grid"></div>
+          <div class="cd-tassels bot" id="tassels-bot"></div>
+        </div>
+
+        <div class="cd-palette" id="palette"></div>
+
+        <div class="cd-tools">
+          <button class="cd-btn danger" id="btn-clear">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6h18M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg>
+            مَحو الكُلّ
+          </button>
+          <button class="cd-btn" id="btn-random">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3h7v7h-7zM14 3h7v7h-7zM3 14h7v7h-7zM14 14h7v7h-7z"/></svg>
+            تَصميم عَشوائيّ
+          </button>
+          <button class="cd-btn primary" id="btn-save">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"/></svg>
+            احفَظ السَّجَّادة
+          </button>
+        </div>
+      </div>
+
+      <div class="wheel-controls" style="margin-top:var(--s-4);">
+        <div class="wheel-stat">سَجَّاداتي <strong id="best">0</strong></div>
+        <button class="wheel-mute-toggle" id="mute-btn" aria-pressed="false">
+          <span class="mute-icon"></span>
+          <span class="mute-label">كتم الصوت</span>
+        </button>
+      </div>
+    </section>
+
+    <aside class="side-panel">
+      <div class="panel-card">
+        <div class="panel-head">
+          <h3>مَعرض السَّجَّاد</h3>
+          <span class="pill" id="gallery-pill">0</span>
+        </div>
+        <div class="cd-gallery" id="gallery"></div>
+        <div class="tip-card" style="margin-top: var(--s-3);">
+          <span class="tip-icon">!</span>
+          <span>انقر على سَجَّادةٍ من المَعرض لِتَستعيدها للتَّعديل.</span>
+        </div>
+      </div>
+
+      <div class="panel-card">
+        <div class="panel-head"><h3>أَسرار الزَّخرفة</h3></div>
+        <div style="font-size: 14px; line-height: 1.7; color: var(--ink-2);">
+          <strong>التَّناظُر الرَّباعيّ:</strong> كلّ نَقرةٍ تَتكرَّر 4 مَرَّات حول المَركز.<br/>
+          <strong>التَّناظُر الثُّماني:</strong> كلّ نَقرةٍ تَتكرَّر 8 مَرَّات — يُكَوِّن نَجمة.<br/>
+          <strong>مِرآة:</strong> النَّقرة تَنعكس على الجانب الآخَر.
+        </div>
+      </div>
+
+      <div class="panel-card">
+        <div class="panel-head"><h3>الجَمالُ في الإسلام</h3></div>
+        <div class="hadith-card">
+          <div class="quote">«إنَّ اللهَ كَتَب الإحسانَ على كلّ شَيء»</div>
+          <span class="src">رواه مسلم<span class="hadith-grade ok">صحيح</span></span>
+        </div>
+      </div>
+    </aside>
+  </div>
+</div>
+
+<div class="particles" id="particles" aria-hidden="true"></div>
+
+<script src="../scripts/activity-common.js"></script>
+<script src="../scripts/carpet-designer.js"></script>
+
+<script>
+window.PAGE_DICT = {
+  "مصمم السجادة": "Carpet Designer",
+  "صَمِّم سجَّادتَك الإسلاميَّة الخاصَّة! اختر لوناً، ثم انقُر على الخلايا لِترسم. فَعِّل التَّناظُر، فتتكرَّر نَقرتُك تِلقائياً في الأركان لِتُكَوِّن نَمَطاً جَميلاً.": "Design your own Islamic carpet! Pick a color, then tap the cells to draw. Turn on symmetry and your tap repeats automatically in the corners to form a beautiful pattern.",
+  "خلايا مَلوَّنة": "Cells colored",
+  "الألوان المُستَخدَمة": "Colors used",
+  "سجَّاداتي": "My carpets",
+  "تَناظُر": "Symmetry",
+  "حَجم الشَّبكة": "Grid size",
+  "مَحو الكُلّ": "Clear all",
+  "تَصميم عَشوائيّ": "Random design",
+  "احفَظ السَّجَّادة": "Save the carpet",
+  "مَعرض السَّجَّاد": "Carpet gallery",
+  "انقر على سَجَّادةٍ من المَعرض لِتَستعيدها للتَّعديل.": "Tap a carpet from the gallery to restore it for editing.",
+  "أَسرار الزَّخرفة": "Ornament secrets",
+  "التَّناظُر الرَّباعيّ:": "Four-fold symmetry:",
+  "كلّ نَقرةٍ تَتكرَّر 4 مَرَّات حول المَركز.": "each tap repeats 4 times around the center.",
+  "التَّناظُر الثُّماني:": "Eight-fold symmetry:",
+  "كلّ نَقرةٍ تَتكرَّر 8 مَرَّات — يُكَوِّن نَجمة.": "each tap repeats 8 times — forming a star.",
+  "مِرآة:": "Mirror:",
+  "النَّقرة تَنعكس على الجانب الآخَر.": "the tap reflects to the other side.",
+  "الجَمالُ في الإسلام": "Beauty in Islam"
+};
+</script>
+<script src="../scripts/i18n.js"></script>
+<script src="../../shared/nav-fix.js"></script>
+</body>
+</html>

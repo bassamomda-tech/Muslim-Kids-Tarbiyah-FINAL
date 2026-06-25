@@ -1,0 +1,56 @@
+/* data/stories/qutayba.js — Leaders · Qutayba ibn Muslim — sources: البداية والنهاية · فتوح البلدان · إسلام ويب · الدرر السنية */
+window.HISN_STORIES = window.HISN_STORIES || {};
+HISN_STORIES.qutayba = [
+  { icon:'🌍', scene:'peaks', character:'🐎',
+    title:{ ar:'الإسلامُ يصلُ أطرافَ الصين', en:'Islam Reaches the Edges of China' },
+    pages:[
+      { scene:'peaks', character:'🐎',
+        text:{ ar:'كان <b>قتيبةُ بنُ مسلم</b> قائداً عظيمَ الهمّة، لم يقفْ عند حدٍّ في نشرِ الإسلام. تقدّمَ بجيشِه شرقاً نحوَ بلادِ <b>ما وراءَ النهر</b> في وسطِ آسيا، وهي بلادٌ بعيدةٌ كانت تعبدُ الأصنامَ والنار. فتحَ مدينةً بعدَ مدينة: <b>بخارى</b>، ثمّ <b>سمرقند</b>، ثمّ <b>خوارزم</b>، حتى وصلتْ جيوشُه إلى <b>أطرافِ الصين</b>!<br><br>لكنّ قتيبةَ لم يكنْ يريدُ الأرضَ فقط، بل أرادَ أن <b>يحملَ نورَ الإسلامِ إلى تلك الشعوب</b>. فبنى المساجدَ، وأرسلَ العلماءَ والمعلّمينَ يُعلِّمونَ الناسَ القرآنَ وأمورَ دينِهم. فدخلَ أهلُ تلك البلادِ في الإسلامِ، وتركوا عبادةَ الأصنام. علّمنا قتيبةُ أنّ <b>الهمّةَ العاليةَ تحملُ الخيرَ إلى أبعدِ مكان</b>.',
+          en:'<b>Qutayba ibn Muslim</b> was a commander of great ambition who stopped at no limit in spreading Islam. He advanced with his army eastward toward the lands of <b>Transoxiana</b> in Central Asia — distant lands that worshipped idols and fire. He conquered city after city: <b>Bukhara</b>, then <b>Samarkand</b>, then <b>Khwarazm</b>, until his armies reached the <b>edges of China</b>!<br><br>But Qutayba did not want land alone — he wanted to <b>carry the light of Islam to those peoples</b>. So he built mosques and sent scholars and teachers to instruct people in the Quran and their religion. The people of those lands entered Islam and abandoned idol worship. Qutayba taught us that <b>high ambition carries good to the farthest place</b>.' },
+        choice:{ q:{ar:'ماذا أرادَ قتيبةُ من فتوحاتِه غيرَ الأرض؟',en:'What did Qutayba want from his conquests besides land?'},
+          opts:[
+            { t:{ar:'أن يحملَ نورَ الإسلامِ والعلمِ إلى الشعوب',en:'To carry the light of Islam and knowledge to the peoples'},c:true,exp:{ar:'نعم! الهمّةُ العاليةُ تحملُ الخيرَ إلى أبعدِ مكان.',en:'Yes! High ambition carries good to the farthest place.'} },
+            { t:{ar:'جمعَ الغنائمِ فقط',en:'Only gathering spoils'},c:false,exp:{ar:'لا، بل نشرَ الإسلامَ والعلم.',en:'No — he spread Islam and knowledge.'} },
+            { t:{ar:'الشهرةَ فقط',en:'Only fame'},c:false,exp:{ar:'لا، بل حملَ الخيرَ للناس.',en:'No — he carried good to the people.'} },
+          ] } },
+    ],
+    quiz:[
+      { q:{ar:'أيَّ المدنِ فتحَ قتيبةُ في وسطِ آسيا؟',en:'Which cities did Qutayba conquer in Central Asia?'},
+        opts:[ {t:{ar:'بخارى وسمرقندَ وخوارزم',en:'Bukhara, Samarkand, and Khwarazm'},c:true}, {t:{ar:'مكّةَ والمدينة',en:'Makkah and Madinah'},c:false}, {t:{ar:'القاهرةَ ودمشق',en:'Cairo and Damascus'},c:false} ] },
+      { q:{ar:'ماذا فعلَ قتيبةُ بعدَ الفتح؟',en:'What did Qutayba do after the conquest?'},
+        opts:[ {t:{ar:'بنى المساجدَ وأرسلَ المعلّمين',en:'He built mosques and sent teachers'},c:true}, {t:{ar:'هدمَ كلَّ شيء',en:'He destroyed everything'},c:false}, {t:{ar:'رحلَ وتركهم',en:'He left them'},c:false} ] },
+      { q:{ar:'ما الذي تحملُه الهمّةُ العالية؟',en:'What does high ambition carry?'},
+        opts:[ {t:{ar:'الخيرَ إلى أبعدِ مكان',en:'Good to the farthest place'},c:true}, {t:{ar:'الكسلَ',en:'Laziness'},c:false}, {t:{ar:'الشرَّ',en:'Evil'},c:false} ] },
+    ],
+    moral:{ar:'الهمّةُ العاليةُ تحملُ الخيرَ والعلمَ إلى أبعدِ مكان، والقائدُ الحقُّ ينشرُ النورَ ويبني.',en:'High ambition carries good and knowledge to the farthest place; a true leader spreads light and builds.'},
+    badge:{icon:'🌍',title:{ar:'وِسامُ الهمّةِ العالية',en:'Badge of High Ambition'}},
+    reflect:[ {ar:'كيف ترفعُ همّتَك لتنفعَ أكبرَ عددٍ من الناس؟',en:'How do you raise your ambition to benefit the most people?'}, {ar:'كيف تنشرُ ما تعلّمتَه من خيرٍ بين غيرِك؟',en:'How do you spread the good you learned among others?'} ],
+    didYouKnow:[ {ar:'أصبحتْ بخارى وسمرقندُ بعدَ الفتحِ من أعظمِ مراكزِ العلمِ في العالمِ الإسلامي، ومنها الإمامُ البخاري — المصدر: البداية والنهاية',en:'After the conquest Bukhara and Samarkand became among the greatest centers of knowledge in the Muslim world — Imam al-Bukhari was from there — Source: Al-Bidaya wa an-Nihaya'}, {ar:'وصلتْ فتوحاتُ قتيبةَ إلى حدودِ الصينِ ونشرتِ الإسلامَ في وسطِ آسيا — المصدر: فتوح البلدان',en:'Qutayba\u2019s conquests reached the borders of China and spread Islam in Central Asia — Source: Futuh al-Buldan'} ],
+  },
+  { icon:'🕌', scene:'mosque', character:'📖',
+    title:{ ar:'بلادٌ أنجبتْ كبارَ العلماء', en:'Lands That Produced Great Scholars' },
+    pages:[
+      { scene:'mosque', character:'📖',
+        text:{ ar:'لم تكنْ فتوحاتُ <b>قتيبةَ بنِ مسلم</b> مجرّدَ انتصاراتٍ عسكريّة، بل كانت <b>بذوراً لحضارةٍ عظيمة</b>. فالبلادُ التي فتحها — بخارى وسمرقندُ وغيرُهما — كانت قبلَ الإسلامِ تعيشُ في الجهلِ وعبادةِ الأصنام.<br><br>لكن بعدَ أن دخلها الإسلامُ وانتشرَ فيها العلمُ، تحوّلتْ إلى <b>منائرَ مضيئةٍ للعلمِ والمعرفة</b>! وبعدَ أجيالٍ، أنجبتْ هذه البلادُ نفسُها بعضَ أعظمِ علماءِ الإسلامِ على الإطلاق، ومنهم <b>الإمامُ البخاري</b> صاحبُ أصحِّ كتابٍ بعدَ القرآن، والإمامُ مسلم، وكثيرٌ من أئمّةِ الحديثِ والفقه! تأمّلْ: قائدٌ فتحَ بلاداً، فصارتْ بعدَ قرونٍ مصدراً للعلمِ الذي ينتفعُ به المسلمونَ إلى اليوم. علّمنا قتيبةُ أنّ <b>العملَ الصالحَ تمتدُّ ثمارُه إلى أجيالٍ بعدَك</b>.',
+          en:'<b>Qutayba ibn Muslim\u2019s</b> conquests were not mere military victories — they were <b>seeds of a great civilization</b>. The lands he conquered — Bukhara, Samarkand, and others — before Islam lived in ignorance and idol worship.<br><br>But after Islam entered them and knowledge spread, they transformed into <b>shining beacons of knowledge and learning</b>! After generations, these very lands produced some of the greatest scholars of Islam ever — among them <b>Imam al-Bukhari</b>, author of the most authentic book after the Quran, Imam Muslim, and many imams of hadith and jurisprudence! Consider: a commander conquered lands, and after centuries they became a source of knowledge that Muslims benefit from to this day. Qutayba taught us that <b>a good deed\u2019s fruits extend to generations after you</b>.' },
+        choice:{ q:{ar:'ماذا صارتِ البلادُ التي فتحها قتيبةُ بعدَ أجيال؟',en:'What did the lands Qutayba conquered become after generations?'},
+          opts:[
+            { t:{ar:'منائرَ للعلمِ أنجبتْ كبارَ العلماءِ كالبخاري',en:'Beacons of knowledge that produced great scholars like al-Bukhari'},c:true,exp:{ar:'نعم! العملُ الصالحُ تمتدُّ ثمارُه لأجيال.',en:'Yes! A good deed\u2019s fruits extend for generations.'} },
+            { t:{ar:'بقيتْ في جهل',en:'They stayed in ignorance'},c:false,exp:{ar:'لا، بل صارتْ منائرَ للعلم.',en:'No — they became beacons of knowledge.'} },
+            { t:{ar:'خراباً',en:'Ruins'},c:false,exp:{ar:'لا، بل ازدهرتْ بالعلمِ والحضارة.',en:'No — they flourished with knowledge and civilization.'} },
+          ] } },
+    ],
+    quiz:[
+      { q:{ar:'أيُّ إمامٍ عظيمٍ خرجَ من بخارى؟',en:'Which great imam came from Bukhara?'},
+        opts:[ {t:{ar:'الإمامُ البخاري',en:'Imam al-Bukhari'},c:true}, {t:{ar:'أبو جهل',en:'Abu Jahl'},c:false}, {t:{ar:'الحجّاج',en:'Al-Hajjaj'},c:false} ] },
+      { q:{ar:'ماذا كانت تلك البلادُ قبلَ الإسلام؟',en:'What were those lands before Islam?'},
+        opts:[ {t:{ar:'تعيشُ في الجهلِ وعبادةِ الأصنام',en:'Living in ignorance and idol worship'},c:true}, {t:{ar:'مراكزَ للعلم',en:'Centers of knowledge'},c:false}, {t:{ar:'مسلمةً أصلاً',en:'Already Muslim'},c:false} ] },
+      { q:{ar:'ما الدرسُ من فتوحاتِ قتيبة؟',en:'What is the lesson from Qutayba\u2019s conquests?'},
+        opts:[ {t:{ar:'العملُ الصالحُ تمتدُّ ثمارُه لأجيال',en:'A good deed\u2019s fruits extend for generations'},c:true}, {t:{ar:'لا فائدةَ من العمل',en:'There is no benefit in action'},c:false}, {t:{ar:'النتائجُ فوريّةٌ فقط',en:'Results are only immediate'},c:false} ] },
+    ],
+    moral:{ar:'العملُ الصالحُ تمتدُّ ثمارُه إلى أجيالٍ بعدَك، فازرعِ الخيرَ ولو لم ترَ ثمرتَه في حياتِك.',en:'A good deed\u2019s fruits extend to generations after you; so plant good even if you do not see its fruit in your lifetime.'},
+    badge:{icon:'🕌',title:{ar:'وِسامُ الأثرِ الممتد',en:'Badge of the Lasting Impact'}},
+    reflect:[ {ar:'كيف تزرعُ خيراً ينتفعُ به الناسُ بعدَك؟',en:'How do you plant good that people benefit from after you?'}, {ar:'هل تُفكِّرُ في الأثرِ البعيدِ لأعمالِك؟',en:'Do you think about the long-term impact of your deeds?'} ],
+    didYouKnow:[ {ar:'الإمامُ البخاريُّ ومسلمٌ وكثيرٌ من أئمّةِ الحديثِ خرجوا من بلادِ ما وراءَ النهرِ بعدَ دخولِها الإسلام — المصدر: سير أعلام النبلاء',en:'Imam al-Bukhari, Muslim, and many imams of hadith came from Transoxiana after it embraced Islam — Source: Siyar A\u2019lam an-Nubala\u2019'}, {ar:'صارتْ سمرقندُ وبخارى من أجملِ مدنِ العالمِ الإسلاميِّ علماً وعمارةً لقرون — المصدر: البداية والنهاية',en:'Samarkand and Bukhara became among the most beautiful cities of the Muslim world in knowledge and architecture for centuries — Source: Al-Bidaya wa an-Nihaya'} ],
+  },
+];

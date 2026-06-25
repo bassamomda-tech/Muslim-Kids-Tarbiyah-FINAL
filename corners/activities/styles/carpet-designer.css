@@ -1,0 +1,190 @@
+/* ============================================================
+   CARPET DESIGNER — مصمم السجادة
+   ============================================================ */
+
+.cd-panel {
+  background:
+    radial-gradient(140% 80% at 50% 0%, rgba(224, 213, 242, 0.32), transparent 60%),
+    var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--r-2xl);
+  padding: var(--s-8);
+  display: flex; flex-direction: column;
+  box-shadow: var(--shadow-card);
+}
+.cd-panel .activity-tag { background: var(--lavender); color: var(--lavender-ink); }
+.cd-panel .activity-tag::before { background: var(--lavender-ink); }
+
+.cd-hud {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--s-3);
+  margin-bottom: var(--s-4);
+}
+.cd-hud .hud-block {
+  background: var(--bg-soft); border: 1px solid var(--line);
+  border-radius: var(--r-md); padding: 10px 14px;
+  display: flex; flex-direction: column; gap: 2px;
+  font-size: 11px; color: var(--muted); font-weight: 600;
+}
+.cd-hud .hud-block strong {
+  font-size: 20px; color: var(--ink);
+  font-family: var(--font-en); font-weight: 800;
+}
+
+/* Stage */
+.cd-stage {
+  flex-grow: 1;
+  background:
+    radial-gradient(circle at center, #4a3a18 0%, #2a1a08 100%);
+  border-radius: var(--r-xl);
+  border: 1px solid var(--line);
+  padding: var(--s-5);
+  display: flex; flex-direction: column;
+  align-items: center;
+  gap: var(--s-4);
+}
+
+/* Carpet wrap with tassels */
+.cd-carpet-wrap {
+  position: relative;
+  background: #1a0e04;
+  padding: 22px;
+  border-radius: var(--r-md);
+  box-shadow: 0 18px 40px rgba(0,0,0,0.4);
+  max-width: 460px;
+  width: 100%;
+}
+.cd-tassels {
+  display: flex; gap: 4px; justify-content: center;
+  height: 14px;
+}
+.cd-tassels.top { margin-bottom: 8px; }
+.cd-tassels.bot { margin-top: 8px; }
+.cd-tassels span {
+  flex: 1;
+  background: linear-gradient(180deg, #c8b27a 0%, #a09060 100%);
+  border-radius: 1px;
+  max-width: 8px;
+}
+
+.cd-grid {
+  width: 100%;
+  display: grid;
+  background: #E8DCC0;
+  border-radius: 4px;
+  overflow: hidden;
+  border: 4px solid #C9A961;
+  box-shadow: inset 0 0 0 1px #1F2540;
+}
+.cd-cell {
+  aspect-ratio: 1;
+  cursor: pointer;
+  background: #E8DCC0;
+  position: relative;
+  outline: 0.5px solid rgba(31, 37, 64, 0.05);
+}
+.cd-cell:hover {
+  filter: brightness(1.15);
+  z-index: 1;
+  outline: 1.5px solid rgba(255, 233, 168, 0.6);
+}
+
+/* Palette */
+.cd-palette {
+  display: flex; flex-wrap: wrap; gap: 8px;
+  align-items: center; justify-content: center;
+  padding: var(--s-3);
+  background: var(--bg-soft);
+  border-radius: var(--r-lg);
+  width: 100%; max-width: 460px;
+}
+.cd-swatch {
+  width: 32px; height: 32px;
+  border-radius: 8px;
+  cursor: pointer;
+  border: 2.5px solid transparent;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.15), inset 0 0 0 1px rgba(0,0,0,0.1);
+}
+.cd-swatch:hover { transform: scale(1.1); }
+.cd-swatch.active { border-color: #FFE9A8; transform: scale(1.1); }
+
+/* Symmetry / tools */
+.cd-controls {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--s-3);
+  margin-bottom: var(--s-3);
+}
+.cd-control-group {
+  background: var(--bg-soft);
+  border: 1px solid var(--line);
+  border-radius: var(--r-md);
+  padding: 10px 12px;
+}
+.cd-control-group .label {
+  font-size: 11px; font-weight: 700;
+  color: var(--muted); letter-spacing: 0.05em;
+  margin-bottom: 6px;
+  text-transform: uppercase;
+}
+.cd-symmetry-row {
+  display: flex; gap: 4px; flex-wrap: wrap;
+}
+.cd-sym-btn {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 6px 10px;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--ink-2);
+  cursor: pointer;
+}
+.cd-sym-btn:hover { background: var(--lavender); color: var(--lavender-ink); }
+.cd-sym-btn.active {
+  background: var(--lavender-ink);
+  color: var(--lavender);
+  border-color: var(--lavender-ink);
+}
+
+/* tools */
+.cd-tools {
+  display: flex; gap: 8px; justify-content: center; flex-wrap: wrap;
+  margin-top: var(--s-3);
+}
+.cd-btn {
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 10px 16px;
+  border-radius: var(--r-pill);
+  font-size: 13px; font-weight: 700;
+  border: 1px solid var(--line);
+  background: var(--surface);
+}
+.cd-btn:hover { background: var(--bg-soft); }
+.cd-btn.primary { background: var(--ink); color: #FBF6EC; border-color: var(--ink); }
+.cd-btn.danger { background: #FAD5D5; color: #7C3030; border-color: #B85555; }
+
+.cd-gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 6px;
+}
+.cd-gallery-item {
+  aspect-ratio: 1;
+  background: #1a0e04;
+  border-radius: 6px;
+  padding: 3px;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.cd-gallery-item .mini {
+  width: 100%; height: 100%;
+  display: grid;
+  border: 1px solid #C9A961;
+}
+.cd-gallery-item .mini > div {
+  width: 100%; height: 100%;
+}

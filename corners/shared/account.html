@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta name="color-scheme" content="dark">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>حساب العائلة | Family Account</title>
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+<style>
+  :root{ --bg1:#081E36; --bg2:#0E2E4E; --gold:#E8B530; --gold-lt:#F5CC5A; --ink:#FEF5DC; --muted:rgba(254,245,220,.66); --card:rgba(255,255,255,.06); --line:rgba(232,181,48,.28); --green:#1F8A5B; }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:'Tajawal','Nunito',sans-serif;color:var(--ink);direction:rtl;min-height:100vh;display:flex;flex-direction:column;align-items:center;padding:1.4rem 1rem 3rem;background:
+    radial-gradient(1100px 640px at 80% -8%,rgba(232,181,48,.14),transparent 60%),radial-gradient(800px 520px at 0% 108%,rgba(31,138,91,.13),transparent 55%),linear-gradient(165deg,var(--bg1),var(--bg2))}
+  html[dir="ltr"] body{direction:ltr;font-family:'Nunito','Tajawal',sans-serif}
+  .top{width:100%;max-width:460px;display:flex;align-items:center;justify-content:space-between;margin-bottom:1.4rem}
+  .back-btn{background:rgba(255,255,255,.08);border:1px solid var(--line);color:var(--ink);border-radius:2rem;padding:.45rem 1rem;text-decoration:none;font-weight:800;font-size:.82rem}
+  .lang{display:flex;border:1.5px solid var(--line);border-radius:2rem;overflow:hidden}
+  .lang button{background:transparent;border:none;color:var(--ink);font-weight:800;padding:.3rem .8rem;font-size:.78rem;cursor:pointer;font-family:inherit}
+  .lang button.active{background:var(--gold);color:#10243d}
+
+  .card{width:100%;max-width:460px;background:linear-gradient(170deg,#0e2c49,#0a2138);border:1.5px solid var(--line);border-radius:1.6rem;padding:1.8rem 1.5rem;box-shadow:0 24px 60px rgba(0,0,0,.5)}
+  .logo{text-align:center;font-size:2.6rem}
+  .card h1{text-align:center;font-size:1.5rem;font-weight:900;margin:.2rem 0 .2rem}
+  .card .sub{text-align:center;color:var(--muted);font-size:.9rem;margin-bottom:1.2rem;line-height:1.6}
+  .tabs{display:flex;background:rgba(255,255,255,.05);border-radius:1rem;padding:.25rem;margin-bottom:1.2rem}
+  .tabs button{flex:1;background:transparent;border:none;color:var(--muted);font-weight:800;padding:.6rem;border-radius:.8rem;cursor:pointer;font-family:inherit;font-size:.95rem}
+  .tabs button.active{background:var(--gold);color:#10243d}
+  .fld{margin-bottom:.9rem}
+  .fld label{display:block;font-size:.82rem;font-weight:800;color:var(--muted);margin-bottom:.35rem}
+  .fld input,.fld select{width:100%;border:1.5px solid var(--line);background:rgba(255,255,255,.07);color:var(--ink);border-radius:1rem;padding:.8rem 1rem;font-size:1rem;font-family:inherit}
+  .fld input:focus,.fld select:focus{outline:none;border-color:var(--gold)}
+  .avi-row{display:flex;gap:.4rem;flex-wrap:wrap}
+  .avi{width:42px;height:42px;border-radius:50%;border:2px solid transparent;background:rgba(255,255,255,.07);font-size:1.3rem;cursor:pointer;display:grid;place-items:center}
+  .avi.sel{border-color:var(--gold);background:rgba(232,181,48,.18)}
+  .err{min-height:1.1rem;color:#ff9b8e;font-weight:700;font-size:.84rem;margin:.3rem 0}
+  .go{width:100%;background:linear-gradient(135deg,var(--gold),#c79518);color:#10243d;border:none;border-radius:1rem;padding:.9rem;font-weight:900;font-size:1.05rem;cursor:pointer;font-family:inherit}
+  .go:disabled{opacity:.6;cursor:default}
+  .forgot{display:block;width:100%;text-align:center;background:none;border:none;color:var(--muted);font-family:inherit;font-size:.82rem;font-weight:700;margin-top:.8rem;cursor:pointer;text-decoration:underline}
+  .signed{text-align:center}
+  .signed .avi-big{width:80px;height:80px;border-radius:50%;background:var(--green);display:grid;place-items:center;font-size:2.4rem;margin:0 auto .6rem}
+  .signed h2{font-size:1.3rem;font-weight:900}
+  .signed .email{color:var(--muted);font-size:.86rem;margin-bottom:1.2rem}
+  .row-btn{display:block;width:100%;text-align:center;border-radius:1rem;padding:.8rem;font-weight:800;font-family:inherit;cursor:pointer;text-decoration:none;margin-bottom:.6rem;font-size:.95rem}
+  .row-btn.primary{background:var(--green);color:#fff;border:none}
+  .row-btn.ghost{background:transparent;border:1.5px solid var(--line);color:var(--ink)}
+  .badge{display:flex;align-items:center;gap:.6rem;justify-content:center;background:rgba(232,181,48,.1);border:1px solid var(--line);border-radius:1rem;padding:.7rem;margin-bottom:1.2rem;font-size:.84rem;color:var(--muted);line-height:1.5}
+
+  /* children manager */
+  .kids-sec{text-align:start;margin-bottom:1.2rem}
+  .kids-h{font-size:.92rem;font-weight:900;color:var(--gold-lt);margin-bottom:.7rem}
+  .kids-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(96px,1fr));gap:.7rem}
+  .kid-card{position:relative;display:flex;flex-direction:column;align-items:center;gap:.45rem;background:rgba(255,255,255,.05);border:1.5px solid rgba(255,255,255,.1);border-radius:1.1rem;padding:.9rem .5rem;cursor:pointer;font-family:inherit;color:var(--ink);transition:transform .15s,border-color .2s}
+  .kid-card:hover{transform:translateY(-3px);border-color:var(--gold)}
+  .kid-card.active{border-color:var(--gold);background:rgba(232,181,48,.12)}
+  .kid-avi{width:48px;height:48px;border-radius:50%;display:grid;place-items:center;font-size:1.6rem;box-shadow:inset 0 0 0 2px rgba(255,255,255,.18)}
+  .kid-avi.add{background:transparent;border:1.5px dashed var(--line);color:var(--gold-lt);font-size:1.7rem}
+  .kid-card.add{border-style:dashed;border-color:var(--line);color:var(--gold-lt)}
+  .kid-nm{font-weight:800;font-size:.84rem;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+  .kid-badge{position:absolute;top:.4rem;inset-inline-end:.4rem;background:var(--gold);color:#10243d;font-size:.6rem;font-weight:900;padding:.08rem .4rem;border-radius:1rem}
+
+  .hint{text-align:center;font-size:.78rem;color:var(--muted);margin-top:1.2rem;line-height:1.6;max-width:460px}
+  .en-only{display:none}
+  html[dir="ltr"] .ar-only{display:none}
+  html[dir="ltr"] .en-only{display:inline}
+</style>
+<style id="__antiflash">html{background:#081E36;color-scheme:dark}</style>
+</head>
+<body>
+  <div class="top">
+    <a class="back-btn" href="../../index.html"><span class="ar-only">↩️ المدينة</span><span class="en-only">↩️ City</span></a>
+    <div class="lang"><button data-lang="en">EN</button><button data-lang="ar" class="active">عربي</button></div>
+  </div>
+
+  <div class="card" id="card"></div>
+
+  <div class="hint">
+    <span class="ar-only">☁️ سجِّل بحسابِ العائلة لِيُحفَظَ تقدّمُ أطفالِك ومشترياتُك على كلِّ أجهزتك. تُضيفُ أطفالَك من داخلِ حسابك بعدَ الدخول.</span>
+    <span class="en-only">☁️ Sign in with your family account to save your children\u2019s progress &amp; purchases across all your devices. Add your children from inside the account after you log in.</span>
+  </div>
+
+<script src="https://www.gstatic.com/firebasejs/10.12.5/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.5/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.5/firebase-firestore-compat.js"></script>
+<script src="firebase-config.js"></script>
+<script defer src="mk-system.js"></script>
+<script>
+  var lang=(window.MK&&MK.lang&&MK.lang())||localStorage.getItem('bunyanLang')||'ar';
+  var AVIS=['🧑','🧔','🧕','👩','👨','👵','👴'];
+  var mode='login', selAvi=AVIS[0];
+  var auth=null, db=null, currentUser=null, profileCache=null, booted=false;
+  function t(a,e){ return lang==='ar'?a:e; }
+
+  function applyLang(){
+    document.documentElement.lang=lang; document.documentElement.dir=lang==='ar'?'rtl':'ltr';
+    document.querySelectorAll('.ar-only').forEach(function(e){e.style.display=lang==='ar'?'':'none';});
+    document.querySelectorAll('.en-only').forEach(function(e){e.style.display=lang==='en'?'':'none';});
+    document.querySelectorAll('.lang button').forEach(function(b){b.classList.toggle('active',b.dataset.lang===lang);});
+    render();
+  }
+  document.querySelectorAll('.lang button').forEach(function(b){ b.onclick=function(){ lang=b.dataset.lang; try{localStorage.setItem('bunyanLang',lang);}catch(e){} applyLang(); }; });
+
+  function initFirebase(){
+    if(!window.firebase||!window.firebaseConfig){ booted=true; render(); return; }
+    try{
+      if(!firebase.apps.length) firebase.initializeApp(window.firebaseConfig);
+      auth=firebase.auth();
+      try{ db=firebase.firestore(); }catch(e){}
+      auth.onAuthStateChanged(function(u){
+        currentUser=u; profileCache=null; booted=true;
+        if(u && db){
+          db.collection('users').doc(u.uid).get()
+            .then(function(d){ if(d.exists) profileCache=d.data(); render(); })
+            .catch(function(){ render(); });
+        } else { render(); }
+      });
+    }catch(e){ booted=true; render(); }
+  }
+
+  /* friendly, bilingual Firebase error messages */
+  function authError(code){
+    switch(code){
+      case 'auth/invalid-email':         return t('البريد الإلكتروني غير صحيح','That email address isn\u2019t valid');
+      case 'auth/missing-password':      return t('أدخِل كلمة المرور','Please enter your password');
+      case 'auth/weak-password':         return t('كلمة المرور قصيرة — استخدم ٦ أحرف على الأقل','Password too short — use at least 6 characters');
+      case 'auth/email-already-in-use':  return t('هذا البريد مسجَّل بالفعل — سجِّل الدخول بدلاً من ذلك','This email is already registered — try logging in instead');
+      case 'auth/user-not-found':
+      case 'auth/wrong-password':
+      case 'auth/invalid-credential':    return t('البريد أو كلمة المرور غير صحيحة','Wrong email or password');
+      case 'auth/too-many-requests':     return t('محاولاتٌ كثيرة — انتظر قليلاً ثم أعد المحاولة','Too many attempts — wait a moment and try again');
+      case 'auth/network-request-failed':return t('تعذّر الاتصال — تحقّق من الإنترنت','Connection problem — check your internet');
+      case 'auth/operation-not-allowed': return t('تسجيل الدخول بالبريد غير مُفعَّل بعد','Email login isn\u2019t enabled yet');
+      default:                           return t('تعذّر تسجيل الدخول — حاول مرة أخرى','Couldn\u2019t sign in — please try again');
+    }
+  }
+
+  function render(){
+    var card=document.getElementById('card');
+    if(!booted){ card.innerHTML='<div class="logo">⏳</div><div class="sub">'+t('لحظة من فضلك…','One moment…')+'</div>'; return; }
+
+    /* ── SIGNED IN: account + children manager ── */
+    if(currentUser){
+      var name = (profileCache&&profileCache.name) || (currentUser.displayName) || (currentUser.email||'').split('@')[0];
+      var avatar = (profileCache&&profileCache.avatar) || '🧑';
+      var kids = (window.MK?MK.profiles():[]);
+      var activeId = (window.MK?MK.activeId():null);
+      var kidsHtml = kids.map(function(p){
+        return '<button class="kid-card'+(p.id===activeId?' active':'')+'" data-kid="'+p.id+'">'
+          +'<span class="kid-avi" style="background:'+p.color+'">'+p.avatar+'</span>'
+          +'<span class="kid-nm">'+escapeHtml(p.name)+'</span>'
+          +(p.id===activeId?'<span class="kid-badge">'+t('نشط','active')+'</span>':'')
+          +'</button>';
+      }).join('');
+      card.innerHTML =
+        '<div class="signed">'
+        +'<div class="avi-big">'+avatar+'</div>'
+        +'<h2>'+t('أهلاً، ','Welcome, ')+escapeHtml(name)+'</h2>'
+        +'<div class="email">'+escapeHtml(currentUser.email||'')+'</div>'
+        +'<div class="badge">☁️ '+t('حسابُك متّصلٌ بالسحابة — تقدّمُ أطفالك ومشترياتك محفوظةٌ على كلِّ أجهزتك.','Your account is connected — your children\u2019s progress &amp; purchases are saved across all your devices.')+'</div>'
+        +'<div class="kids-sec"><div class="kids-h">👨‍👩‍👧 '+t('أطفالُك على هذا الجهاز','Your children on this device')+'</div>'
+        +'<div class="kids-grid">'+kidsHtml
+        +'<button class="kid-card add" id="addKid"><span class="kid-avi add">＋</span><span class="kid-nm">'+t('إضافة طفل','Add child')+'</span></button>'
+        +'</div></div>'
+        +'<a class="row-btn primary" href="../../index.html?lang='+lang+'">🏙️ '+t('ادخُل المدينة','Enter the City')+'</a>'
+        +'<a class="row-btn ghost" href="community.html?lang='+lang+'">👥 '+t('مجتمعُ العائلات','Family Community')+'</a>'
+        +'<button class="row-btn ghost" id="logoutBtn">🚪 '+t('تسجيل الخروج','Log out')+'</button>'
+        +'</div>';
+      card.querySelectorAll('.kid-card[data-kid]').forEach(function(b){
+        b.onclick=function(){ if(window.MK){ MK.snapshotActive&&MK.snapshotActive(); MK.setActive(b.dataset.kid); } location.href='../../index.html?lang='+lang; };
+      });
+      var addK=document.getElementById('addKid');
+      if(addK) addK.onclick=function(){ if(window.MK)MK.snapshotActive&&MK.snapshotActive(); location.href='login.html?lang='+lang; };
+      document.getElementById('logoutBtn').onclick=function(){ if(auth){ auth.signOut(); } };
+      return;
+    }
+
+    /* ── SIGNED OUT: login / register form ── */
+    var isReg=mode==='register';
+    card.innerHTML =
+      '<div class="logo">👨‍👩‍👧‍👦</div>'
+      +'<h1>'+t('حسابُ العائلة','Family Account')+'</h1>'
+      +'<div class="sub">'+t('سجِّل لِتحفظَ تقدّمَ أطفالِك ومشترياتك على كلِّ أجهزتك','Sign in to save your children\u2019s progress & purchases across all your devices')+'</div>'
+      +'<div class="tabs"><button id="tabLogin" class="'+(!isReg?'active':'')+'">'+t('دخول','Log in')+'</button>'
+        +'<button id="tabReg" class="'+(isReg?'active':'')+'">'+t('حساب جديد','Sign up')+'</button></div>'
+      +(isReg?(
+        '<div class="fld"><label>'+t('اسمُ العائلة','Family name')+'</label><input id="inName" placeholder="'+t('مثال: عائلة عبدالله','e.g. The Abdullah Family')+'"></div>'
+        +'<div class="fld"><label>'+t('الصورة','Avatar')+'</label><div class="avi-row" id="aviRow"></div></div>'
+      ):'')
+      +'<div class="fld"><label>'+t('البريد الإلكتروني','Email')+'</label><input id="inEmail" type="email" inputmode="email" autocomplete="email" placeholder="name@email.com"></div>'
+      +'<div class="fld"><label>'+t('كلمة المرور','Password')+'</label><input id="inPass" type="password" autocomplete="'+(isReg?'new-password':'current-password')+'" placeholder="••••••"></div>'
+      +'<div class="err" id="err"></div>'
+      +'<button class="go" id="goBtn">'+(isReg?t('إنشاء الحساب ←','Create account →'):t('دخول ←','Log in →'))+'</button>'
+      +(isReg?'':'<button class="forgot" id="forgotBtn">'+t('نسيتَ كلمة المرور؟','Forgot your password?')+'</button>');
+    document.getElementById('tabLogin').onclick=function(){ mode='login'; render(); };
+    document.getElementById('tabReg').onclick=function(){ mode='register'; render(); };
+    if(isReg){
+      var row=document.getElementById('aviRow');
+      row.innerHTML=AVIS.map(function(a){return '<button class="avi'+(a===selAvi?' sel':'')+'" data-a="'+a+'">'+a+'</button>';}).join('');
+      row.querySelectorAll('.avi').forEach(function(b){ b.onclick=function(){ selAvi=b.dataset.a; render(); }; });
+    }
+    document.getElementById('goBtn').onclick=submit;
+    var fb=document.getElementById('forgotBtn'); if(fb) fb.onclick=resetPassword;
+    var pw=document.getElementById('inPass'); if(pw) pw.addEventListener('keydown',function(e){ if(e.key==='Enter') submit(); });
+  }
+
+  function submit(){
+    var err=document.getElementById('err'); err.textContent='';
+    var email=(document.getElementById('inEmail').value||'').trim();
+    var pass=(document.getElementById('inPass').value||'').trim();
+    if(!email||!pass){ err.textContent=t('أدخِل البريدَ وكلمةَ المرور','Enter email and password'); return; }
+    if(!auth){ err.textContent=t('الخدمة غير متاحة الآن — حاول لاحقاً','Service unavailable right now — try again later'); return; }
+    var btn=document.getElementById('goBtn'); btn.disabled=true;
+    btn.textContent=t('لحظة…','One moment…');
+    if(mode==='register'){
+      var famName=((document.getElementById('inName')||{}).value||'').trim();
+      auth.createUserWithEmailAndPassword(email,pass).then(function(cred){
+        if(db&&cred&&cred.user){
+          db.collection('users').doc(cred.user.uid).set(
+            { name: famName||email.split('@')[0], role:'parent', avatar:selAvi, email:email, updated:Date.now() },
+            { merge:true }
+          ).catch(function(){});
+        }
+        /* onAuthStateChanged re-renders into the signed-in view */
+      }).catch(function(e){ btn.disabled=false; err.textContent=authError(e&&e.code); render2err(err.textContent); });
+    } else {
+      auth.signInWithEmailAndPassword(email,pass).catch(function(e){ btn.disabled=false; err.textContent=authError(e&&e.code); render2err(err.textContent); });
+    }
+  }
+  /* keep the error visible if a re-render hasn't happened */
+  function render2err(msg){ var e=document.getElementById('err'); if(e) e.textContent=msg; var b=document.getElementById('goBtn'); if(b){ b.disabled=false; b.textContent=(mode==='register'?t('إنشاء الحساب ←','Create account →'):t('دخول ←','Log in →')); } }
+
+  function resetPassword(){
+    var email=((document.getElementById('inEmail')||{}).value||'').trim();
+    var err=document.getElementById('err'); err.textContent='';
+    if(!email){ err.textContent=t('اكتُب بريدَك أوّلاً ثم اضغط نسيتُ كلمة المرور','Type your email first, then tap forgot password'); return; }
+    if(!auth) return;
+    auth.sendPasswordResetEmail(email).then(function(){
+      err.style.color='#7FE0A8'; err.textContent=t('أرسلنا رابطَ إعادة التعيين إلى بريدك ✓','Sent a reset link to your email ✓');
+    }).catch(function(e){ err.style.color=''; err.textContent=authError(e&&e.code); });
+  }
+
+  function escapeHtml(s){ return String(s).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];}); }
+
+  applyLang();
+  initFirebase();
+</script>
+<script defer src="nav-fix.js"></script>
+<script src="mk-citynav.js"></script>
+</body>
+</html>

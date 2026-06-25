@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>بناء المسجد · أنوس</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+
+<link rel="stylesheet" href="../styles/tokens.css" />
+<link rel="stylesheet" href="../styles/dashboard.css" />
+<link rel="stylesheet" href="../styles/wheel.css" />
+<link rel="stylesheet" href="../styles/builder.css" />
+
+<style>
+  .save-flash {
+    position: fixed;
+    top: 80px; left: 50%;
+    transform: translateX(-50%) translateY(-30px);background:
+     var(--brand);
+    color: #fff;
+    padding: 10px 22px;
+    border-radius: var(--r-pill);
+    font-weight: 700; font-size: 13px;
+    box-shadow: var(--shadow-lg);
+    opacity: 0;
+    transition: all 0.4s ease;
+    z-index: 100;
+    pointer-events: none;
+  }
+  .save-flash.show {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+</style>
+</head>
+<body>
+
+<div class="bg-decor" aria-hidden="true"></div>
+
+<div class="activity-shell">
+
+  <nav class="activity-nav">
+    <a class="back-link" href="../dashboard.html">
+      الرجوع للوحة الأنشطة
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg>
+    </a>
+    <div class="activity-crumb">
+      <span>العبادات والإيمان</span>
+      <span class="sep">/</span>
+      <span class="cur">بناء المسجد</span>
+    </div>
+    <div class="activity-actions">
+      <button class="icon-btn" id="reset-btn" title="إعادة الضبط" aria-label="إعادة الضبط">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 3-6.7L3 8"/><path d="M3 3v5h5"/></svg>
+      </button>
+    </div>
+  </nav>
+
+  <div class="activity-layout">
+
+    <!-- ============ لوحة البناء ============ -->
+    <section class="builder-panel">
+      <header class="wheel-header">
+        <span class="activity-tag">Activity 05 · Sticker Book</span>
+        <h1 class="activity-title">بناء المسجد</h1>
+        <p class="activity-desc">
+          اختر العناصر من لوحة الملصقات أسفل المشهد، اسحبها لمكانها، كبّرها وأدِرها.
+          اصنع مسجدك الخاص واحفظه في معرضك!
+        </p>
+      </header>
+
+      <!-- المشهد -->
+      <div class="scene" id="scene">
+        <div class="scene-empty-hint">اضغط على ملصق من الأسفل لإضافته إلى المشهد</div>
+      </div>
+
+      <!-- شريط الحالة -->
+      <div class="builder-actions">
+        <div class="builder-status">
+          <span class="dot"></span>
+          العناصر في المشهد: <strong style="color:var(--ink); font-family:var(--font-en);" id="sticker-count">0</strong>
+        </div>
+        <div style="display:flex; gap:var(--s-2);">
+          <button class="btn-ghost" id="clear-btn">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6h18M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2M19 6l-2 14a2 2 0 0 1-2 2H9a2 2 0 0 1-2-2L5 6"/></svg>
+            مسح الكل
+          </button>
+          <button class="btn-primary" id="save-btn">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"/><path d="M17 21v-8H7v8M7 3v5h8"/></svg>
+            احفظ المسجد
+          </button>
+        </div>
+      </div>
+
+      <!-- لوحة الملصقات -->
+      <div class="palette">
+        <div class="palette-head">
+          <h4>الملصقات</h4>
+          <span style="font-size:12px; color:var(--muted);">12 عنصراً متاحاً</span>
+        </div>
+        <div class="palette-grid" id="palette"></div>
+      </div>
+
+      <div class="memory-stats-bar">
+        <button class="wheel-mute-toggle" id="mute-btn" aria-pressed="false" style="margin:0 auto;">
+          <span class="mute-icon"></span>
+          <span class="mute-label">كتم الصوت</span>
+        </button>
+      </div>
+    </section>
+
+    <!-- ============ اللوحة الجانبية ============ -->
+    <aside class="side-panel">
+
+      <div class="panel-card">
+        <div class="panel-head">
+          <h3>كيف أبني؟</h3>
+        </div>
+        <div class="tip-card">
+          <span class="tip-icon">!</span>
+          <span><strong>1.</strong> اضغط على ملصق من الأسفل لإضافته.<br/>
+          <strong>2.</strong> اسحبه لتحريكه.<br/>
+          <strong>3.</strong> انقر عليه ليظهر شريط الأدوات: <code>+</code> تكبير، <code>−</code> تصغير، <code>↻</code> تدوير، <code>×</code> حذف.<br/>
+          <strong>4.</strong> اضغط «احفظ» لإضافة مسجدك إلى المعرض.</span>
+        </div>
+      </div>
+
+      <div class="panel-card">
+        <div class="panel-head">
+          <h3>معرضك</h3>
+          <span class="pill">6 مسجد كحد أقصى</span>
+        </div>
+        <div class="saved-list" id="saved-list"></div>
+      </div>
+
+      <div class="panel-card">
+        <div class="panel-head">
+          <h3>المسجد بيت الله</h3>
+        </div>
+        <div class="hadith-card">
+          <div class="quote">«من بنى مسجداً يبتغي به وجه الله، بنى الله له بيتاً في الجنة»</div>
+          <span class="src">رواه البخاري ومسلم<span class="hadith-grade ok">صحيح</span></span>
+        </div>
+      </div>
+
+    </aside>
+  </div>
+</div>
+
+<div class="save-flash" id="save-flash">✓ تم حفظ مسجدك في المعرض</div>
+<div class="particles" id="particles" aria-hidden="true"></div>
+
+<script src="../scripts/activity-common.js"></script>
+<script src="../scripts/builder.js"></script>
+
+<script>
+window.PAGE_DICT = {
+  "بناء المسجد": "Build the Mosque",
+  "اختر العناصر من لوحة الملصقات أسفل المشهد، اسحبها لمكانها، كبّرها وأدِرها. اصنع مسجدك الخاص واحفظه في معرضك!": "Pick elements from the sticker palette below the scene, drag them into place, resize and rotate them. Build your own mosque and save it to your gallery!",
+  "اضغط على ملصق من الأسفل لإضافته إلى المشهد": "Tap a sticker below to add it to the scene",
+  "العناصر في المشهد:": "Items in scene:",
+  "مسح الكل": "Clear all",
+  "احفظ المسجد": "Save the mosque",
+  "الملصقات": "Stickers",
+  "12 عنصراً متاحاً": "12 items available",
+  "كيف أبني؟": "How to build?",
+  "اضغط على ملصق من الأسفل لإضافته.": "Tap a sticker below to add it.",
+  "اسحبه لتحريكه.": "Drag it to move it.",
+  "انقر عليه ليظهر شريط الأدوات:": "Tap it to reveal the toolbar:",
+  "تكبير،": "enlarge,",
+  "تصغير،": "shrink,",
+  "تدوير،": "rotate,",
+  "حذف.": "delete.",
+  "اضغط «احفظ» لإضافة مسجدك إلى المعرض.": "Press “Save” to add your mosque to the gallery.",
+  "معرضك": "Your gallery",
+  "6 مسجد كحد أقصى": "6 mosques max",
+  "المسجد بيت الله": "The mosque is Allah's house",
+  "✓ تم حفظ مسجدك في المعرض": "✓ Your mosque was saved to the gallery"
+};
+</script>
+<script src="../scripts/i18n.js"></script>
+<script src="../../shared/nav-fix.js"></script>
+</body>
+</html>

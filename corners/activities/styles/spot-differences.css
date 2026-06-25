@@ -1,0 +1,154 @@
+/* ============================================================
+   SPOT DIFFERENCES — الفوارق الخمسة
+   ============================================================ */
+
+.diff-panel {
+  background:
+    radial-gradient(140% 80% at 50% 0%, rgba(207, 235, 215, 0.32), transparent 60%),
+    var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--r-2xl);
+  padding: var(--s-8);
+  display: flex; flex-direction: column;
+  box-shadow: var(--shadow-card);
+}
+.diff-panel .activity-tag { background: var(--mint); color: var(--mint-ink); }
+.diff-panel .activity-tag::before { background: var(--mint-ink); }
+
+.diff-hud {
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--s-3);
+  margin-bottom: var(--s-4);
+}
+.diff-hud .hud-block {
+  background: var(--bg-soft); border: 1px solid var(--line);
+  border-radius: var(--r-md); padding: 10px 14px;
+  display: flex; flex-direction: column; gap: 2px;
+  font-size: 11px; color: var(--muted); font-weight: 600;
+}
+.diff-hud .hud-block strong {
+  font-size: 20px; color: var(--ink);
+  font-family: var(--font-en); font-weight: 800;
+}
+
+/* ============ Stage ============ */
+.diff-stage {
+  display: flex;
+  flex-direction: column;
+  gap: var(--s-3);
+  margin-bottom: var(--s-4);
+}
+
+.diff-pair {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+.diff-side {
+  position: relative;
+  background: var(--surface);
+  border-radius: var(--r-lg);
+  border: 1px solid var(--line);
+  overflow: hidden;
+  aspect-ratio: 4/3;
+  box-shadow: var(--shadow-sm);
+}
+.diff-side .side-label {
+  position: absolute;
+  top: 10px; right: 10px;
+  background: rgba(31, 37, 64, 0.85);
+  color: #FBF6EC;
+  padding: 4px 10px;
+  border-radius: var(--r-pill);
+  font-family: var(--font-en);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  z-index: 2;
+}
+.diff-side svg { display: block; width: 100%; height: 100%; }
+
+.diff-side { direction: ltr; }
+.diff-hit {
+  position: absolute;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 3;
+  transform: translate(-50%, -50%);
+}
+.diff-hit.found {
+  background: rgba(47, 122, 82, 0.15);
+  border: 3px solid var(--mint-ink);
+  box-shadow: 0 0 0 4px rgba(207, 235, 215, 0.5);
+  cursor: default;
+  animation: diff-pop 0.5s cubic-bezier(0.2, 1.6, 0.4, 1);
+}
+@keyframes diff-pop {
+  0% { transform: translate(-50%, -50%) scale(0.4); opacity: 0; }
+  100% { transform: translate(-50%, -50%) scale(1); opacity: 1; }
+}
+.diff-hit.wrong {
+  animation: diff-wrong 0.5s ease-out forwards;
+}
+@keyframes diff-wrong {
+  0% { background: rgba(184, 85, 85, 0.4); border: 3px solid #B85555; transform: translate(-50%, -50%) scale(1); }
+  100% { background: transparent; border: 3px solid transparent; transform: translate(-50%, -50%) scale(1.4); opacity: 0; }
+}
+
+/* differences dots row */
+.diff-progress {
+  display: flex; align-items: center; gap: 8px;
+  background: var(--bg-soft);
+  border: 1px solid var(--line);
+  border-radius: var(--r-pill);
+  padding: 8px 14px;
+  align-self: center;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--ink-2);
+}
+.diff-progress .pills { display: flex; gap: 6px; }
+.diff-progress .pill-dot {
+  width: 14px; height: 14px;
+  border-radius: 50%;
+  background: var(--surface);
+  border: 1.5px solid var(--line);
+}
+.diff-progress .pill-dot.found {
+  background: var(--mint);
+  border-color: var(--mint-ink);
+}
+
+/* tools */
+.diff-tools {
+  display: flex; gap: 8px; justify-content: center; flex-wrap: wrap;
+}
+.diff-btn {
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 10px 16px;
+  border-radius: var(--r-pill);
+  font-size: 13px; font-weight: 700;
+  border: 1px solid var(--line);
+  background: var(--surface);
+}
+.diff-btn:hover { background: var(--bg-soft); }
+.diff-btn.primary { background: var(--ink); color: #FBF6EC; border-color: var(--ink); }
+.diff-btn.warning { background: var(--butter); color: var(--butter-ink); }
+
+/* scenes list (side) */
+.diff-scenes { display: flex; flex-direction: column; gap: 6px; }
+.diff-scene-row {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 10px 14px;
+  background: var(--bg-soft);
+  border: 1px solid var(--line);
+  border-radius: var(--r-md);
+  font-size: 13px;
+}
+.diff-scene-row.done { background: var(--mint); color: var(--mint-ink); border-color: var(--mint-ink); }
+.diff-scene-row.current { background: var(--surface); border-color: var(--mint-ink); }
+.diff-scene-row .scene-name { font-weight: 700; }
+.diff-scene-row .scene-stars { font-size: 14px; }
+
+@media (max-width: 720px) {
+  .diff-pair { grid-template-columns: 1fr; }
+}

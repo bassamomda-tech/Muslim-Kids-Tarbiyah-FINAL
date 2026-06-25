@@ -1,0 +1,56 @@
+/* data/stories/ghafiqi.js — Leaders · Abdurrahman al-Ghafiqi — sources: البداية والنهاية · نفح الطيب · إسلام ويب · الدرر السنية */
+window.HISN_STORIES = window.HISN_STORIES || {};
+HISN_STORIES.ghafiqi = [
+  { icon:'⚖️', scene:'madinah', character:'🤝',
+    title:{ ar:'القائدُ الذي بدأَ بالعدل', en:'The Commander Who Began With Justice' },
+    pages:[
+      { scene:'madinah', character:'⚖️',
+        text:{ ar:'حين تولّى <b>عبد الرحمن الغافقي</b> قيادةَ المسلمينَ في الأندلس، لم يبدأْ بجمعِ الجيوشِ والاستعدادِ للحربِ مباشرةً. بل بدأَ بشيءٍ أهمَّ في نظرِه: <b>إصلاحِ حالِ المسلمينَ أنفسِهم</b>!<br><br>كان بعضُ الولاةِ قبلَه قد ظلموا الناسَ وأخذوا أموالاً بغيرِ حق. فقامَ الغافقيُّ بـ<b>ردِّ المظالمِ إلى أصحابِها</b>، وأنصفَ المظلوم، وأصلحَ بين المتخاصمين، وعدلَ بين الناسِ جميعاً. فلمّا رأى الناسُ عدلَه وتقواه، <b>أحبّوه والتفّوا حولَه</b> بقلوبٍ صادقة. علّمنا الغافقيُّ أنّ <b>القوّةَ الحقيقيّةَ تبدأُ من العدلِ والإصلاحِ الداخلي</b>، فالأمّةُ العادلةُ المتماسكةُ أقوى من أيِّ جيش.',
+          en:'When <b>Abdurrahman al-Ghafiqi</b> took command of the Muslims in Andalusia, he did not begin by gathering armies and preparing for war directly. He began with something more important in his view: <b>reforming the state of the Muslims themselves</b>!<br><br>Some governors before him had wronged the people and taken wealth unjustly. So al-Ghafiqi <b>returned the wrongfully-taken to their owners</b>, gave the oppressed their due, reconciled the disputing, and was just among all people. When people saw his justice and piety, <b>they loved him and rallied around him</b> with sincere hearts. Al-Ghafiqi taught us that <b>true strength begins with justice and inner reform</b> — a just, cohesive nation is stronger than any army.' },
+        choice:{ q:{ar:'بماذا بدأَ الغافقيُّ قبلَ الاستعدادِ للحرب؟',en:'What did al-Ghafiqi begin with before preparing for war?'},
+          opts:[
+            { t:{ar:'بردِّ المظالمِ والعدلِ بين الناس',en:'Returning wrongs and justice among the people'},c:true,exp:{ar:'نعم! القوّةُ الحقيقيّةُ تبدأُ من العدلِ والإصلاح.',en:'Yes! True strength begins with justice and reform.'} },
+            { t:{ar:'بجمعِ الأموالِ لنفسِه',en:'Gathering wealth for himself'},c:false,exp:{ar:'لا، بل بالعدلِ وردِّ الحقوق.',en:'No — with justice and returning rights.'} },
+            { t:{ar:'بالظلمِ كمن سبقه',en:'With injustice like those before him'},c:false,exp:{ar:'لا، بل أصلحَ ما أفسده غيرُه.',en:'No — he reformed what others had corrupted.'} },
+          ] } },
+    ],
+    quiz:[
+      { q:{ar:'بماذا بدأَ الغافقيُّ قيادتَه؟',en:'How did al-Ghafiqi begin his command?'},
+        opts:[ {t:{ar:'بردِّ المظالمِ والعدل',en:'By returning wrongs and justice'},c:true}, {t:{ar:'بالحربِ مباشرة',en:'By war directly'},c:false}, {t:{ar:'بجمعِ المال',en:'By hoarding wealth'},c:false} ] },
+      { q:{ar:'لماذا أحبَّه الناسُ والتفّوا حولَه؟',en:'Why did people love him and rally around him?'},
+        opts:[ {t:{ar:'لعدلِه وتقواه',en:'For his justice and piety'},c:true}, {t:{ar:'لقوّتِه فقط',en:'For his strength alone'},c:false}, {t:{ar:'لمالِه',en:'For his wealth'},c:false} ] },
+      { q:{ar:'من أين تبدأُ القوّةُ الحقيقية؟',en:'Where does true strength begin?'},
+        opts:[ {t:{ar:'من العدلِ والإصلاحِ الداخلي',en:'From justice and inner reform'},c:true}, {t:{ar:'من كثرةِ السلاح',en:'From abundant weapons'},c:false}, {t:{ar:'من المال',en:'From wealth'},c:false} ] },
+    ],
+    moral:{ar:'القوّةُ الحقيقيّةُ تبدأُ من العدلِ والإصلاحِ الداخلي، والأمّةُ العادلةُ المتماسكةُ أقوى من أيِّ جيش.',en:'True strength begins with justice and inner reform; a just, cohesive nation is stronger than any army.'},
+    badge:{icon:'⚖️',title:{ar:'وِسامُ العدلِ والإصلاح',en:'Badge of Justice & Reform'}},
+    reflect:[ {ar:'هل تُصلِحُ نفسَك أوّلاً قبلَ أن تطلبَ إصلاحَ غيرِك؟',en:'Do you reform yourself first before seeking to reform others?'}, {ar:'كيف يكسبُك العدلُ ثقةَ الناسِ ومحبّتَهم؟',en:'How does justice earn you people\u2019s trust and love?'} ],
+    didYouKnow:[ {ar:'عُرِفَ عبد الرحمن الغافقيُّ بالصلاحِ والعدلِ حتى أثنى عليه المؤرّخونَ المسلمونَ وغيرُهم — المصدر: نفح الطيب',en:'Abdurrahman al-Ghafiqi was known for righteousness and justice, praised by Muslim and other historians — Source: Nafh at-Tib'}, {ar:'كان ردُّ المظالمِ من أوّلِ ما يفعلُه القادةُ الصالحونَ عند تولّيهم — المصدر: البداية والنهاية',en:'Returning wrongs was among the first things righteous leaders did upon taking power — Source: Al-Bidaya wa an-Nihaya'} ],
+  },
+  { icon:'🦁', scene:'peaks', character:'⚔️',
+    title:{ ar:'الثباتُ في بلاطِ الشهداء', en:'Steadfastness at the Court of Martyrs' },
+    pages:[
+      { scene:'peaks', character:'⚔️',
+        text:{ ar:'قادَ <b>عبد الرحمن الغافقي</b> جيشاً عظيماً من المسلمينَ متوغّلاً في <b>أعماقِ أوروبا</b> (بلادِ الفرنجة) لنشرِ الإسلام، حتى بلغَ قربَ مدينةِ <b>تور</b> في فرنسا — وهي أبعدُ نقطةٍ وصلها المسلمونَ في غربِ أوروبا!<br><br>وهناك واجههُ جيشٌ كبيرٌ من الفرنجة. دارتْ معركةٌ شرسةٌ استمرّتْ أيّاماً، قاتلَ فيها المسلمونَ بشجاعةٍ وإيمان. ثبتَ الغافقيُّ في ساحةِ القتالِ يقودُ جنودَه بنفسِه، لا يتراجعُ ولا يخاف، حتى <b>استُشهِدَ رضي الله عنه</b> وهو يُقاتِلُ في سبيلِ الله. ولكثرةِ الشهداءِ في تلك المعركةِ سُمِّيتْ <b>«بلاطَ الشهداء»</b>. علّمنا الغافقيُّ أنّ <b>البطلَ يثبتُ على مبدئِه ويلقى ربَّه مجاهداً صادقاً</b>، فالشهداءُ أحياءٌ عند ربِّهم يُرزَقون.',
+          en:'<b>Abdurrahman al-Ghafiqi</b> led a great army of Muslims advancing <b>deep into Europe</b> (the land of the Franks) to spread Islam, until he reached near the city of <b>Tours</b> in France — the farthest point the Muslims reached in Western Europe!<br><br>There a large Frankish army faced him. A fierce battle raged for days, in which the Muslims fought with courage and faith. Al-Ghafiqi stood firm on the battlefield leading his soldiers himself, not retreating or fearing, until he was <b>martyred</b> while fighting for Allah\u2019s sake. For the many martyrs in that battle it was called <b>"Balat ash-Shuhada" (the Court of Martyrs)</b>. Al-Ghafiqi taught us that <b>a hero stands firm on his principle and meets his Lord as a sincere striver</b> — the martyrs are alive with their Lord, provided for.' },
+        choice:{ q:{ar:'كيف واجهَ الغافقيُّ المعركةَ الصعبة؟',en:'How did al-Ghafiqi face the hard battle?'},
+          opts:[
+            { t:{ar:'ثبتَ يقودُ جنودَه حتى استُشهِد',en:'He stood firm leading his soldiers until martyred'},c:true,exp:{ar:'نعم! البطلُ يثبتُ على مبدئِه ويلقى ربَّه مجاهداً.',en:'Yes! A hero stands firm on his principle and meets his Lord as a striver.'} },
+            { t:{ar:'فرَّ وتركَ جنودَه',en:'He fled and abandoned his soldiers'},c:false,exp:{ar:'لا، بل ثبتَ وقادهم بنفسِه.',en:'No — he stood firm and led them himself.'} },
+            { t:{ar:'استسلمَ',en:'He surrendered'},c:false,exp:{ar:'لا، بل قاتلَ حتى الشهادة.',en:'No — he fought until martyrdom.'} },
+          ] } },
+    ],
+    quiz:[
+      { q:{ar:'إلى أينَ وصلَ الغافقيُّ بجيشِه؟',en:'How far did al-Ghafiqi reach with his army?'},
+        opts:[ {t:{ar:'أعماقِ أوروبا قربَ تور',en:'Deep into Europe near Tours'},c:true}, {t:{ar:'الصين',en:'China'},c:false}, {t:{ar:'الهند',en:'India'},c:false} ] },
+      { q:{ar:'لماذا سُمِّيتِ المعركةُ بلاطَ الشهداء؟',en:'Why was the battle called Balat ash-Shuhada?'},
+        opts:[ {t:{ar:'لكثرةِ من استُشهِدَ فيها',en:'For the many martyred in it'},c:true}, {t:{ar:'لأنّها قصيرة',en:'Because it was short'},c:false}, {t:{ar:'بلا سبب',en:'For no reason'},c:false} ] },
+      { q:{ar:'ما الدرسُ من ثباتِ الغافقي؟',en:'What is the lesson from al-Ghafiqi\u2019s steadfastness?'},
+        opts:[ {t:{ar:'البطلُ يثبتُ ويلقى ربَّه مجاهداً صادقاً',en:'A hero stands firm and meets his Lord as a sincere striver'},c:true}, {t:{ar:'الفرارُ عند الشدّة',en:'Fleeing in hardship'},c:false}, {t:{ar:'الخوفُ من الموت',en:'Fearing death'},c:false} ] },
+    ],
+    moral:{ar:'البطلُ يثبتُ على مبدئِه ويلقى ربَّه مجاهداً صادقاً، والشهداءُ أحياءٌ عند ربِّهم يُرزَقون.',en:'A hero stands firm on his principle and meets his Lord as a sincere striver; the martyrs are alive with their Lord, provided for.'},
+    badge:{icon:'🦁',title:{ar:'وِسامُ الثباتِ والشهادة',en:'Badge of Steadfastness & Martyrdom'}},
+    reflect:[ {ar:'هل تثبُتُ على ما تؤمنُ به حتى في أصعبِ الظروف؟',en:'Do you stand firm on what you believe even in the hardest circumstances?'}, {ar:'كيف تكونُ قدوةً تقودُ غيرَك إلى الخيرِ بفعلِك؟',en:'How are you an example that leads others to good by your action?'} ],
+    didYouKnow:[ {ar:'معركةُ بلاطِ الشهداء (تور/بواتييه) كانت أبعدَ توغّلٍ للمسلمينَ في غربِ أوروبا — المصدر: البداية والنهاية',en:'The Battle of Tours (Balat ash-Shuhada) was the Muslims\u2019 deepest advance into Western Europe — Source: Al-Bidaya wa an-Nihaya'}, {ar:'استُشهِدَ عبد الرحمن الغافقيُّ في المعركةِ، وأثنى المؤرّخونَ على صلاحِه وشجاعتِه — المصدر: نفح الطيب',en:'Abdurrahman al-Ghafiqi was martyred in the battle, and historians praised his righteousness and courage — Source: Nafh at-Tib'} ],
+  },
+];

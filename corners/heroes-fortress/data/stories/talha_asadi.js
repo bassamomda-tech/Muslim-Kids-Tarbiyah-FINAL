@@ -1,0 +1,56 @@
+/* data/stories/talha_asadi.js — Heroes · Tulayha al-Asadi — sources: صور من حياة الصحابة (الباشا) · إسلام ويب · الدرر السنية · تاريخ الطبري */
+window.HISN_STORIES = window.HISN_STORIES || {};
+HISN_STORIES.talha_asadi = [
+  { icon:'🚪', scene:'desert', character:'😔',
+    title:{ ar:'الزلّةُ الكبرى ثمّ التوبة', en:'The Great Error, Then Repentance' },
+    pages:[
+      { scene:'desert', character:'😔',
+        text:{ ar:'بعدَ وفاةِ النبيِّ ﷺ ارتدَّ بعضُ القبائلِ عن الإسلام، وكان من بينهم <b>طُليحةُ الأسدي</b> الذي ارتكبَ زلّةً عظيمة: <b>ادّعى النبوّةَ كذباً</b>! فأرسلَ إليه أبو بكرٍ جيشاً بقيادةِ <b>خالدِ بنِ الوليد</b>، فهُزِمَ طُليحةُ هزيمةً ساحقةً وفرَّ هارباً.<br><br>لكنّ القصّةَ لم تنتهِ هنا! ففي وحدتِه وهزيمتِه، فكّرَ طُليحةُ في حالِه وعرفَ أنّه على باطل. فماذا فعل؟ <b>تابَ إلى اللهِ توبةً صادقةً من قلبِه</b> ورجعَ إلى الإسلام نادماً. لم ييأسْ من رحمةِ الله رغمَ عِظَمِ ذنبِه — لأنّ بابَ التوبةِ مفتوحٌ لمن صدقَ في رجوعِه.',
+          en:'After the Prophet\u2019s ﷺ death some tribes apostatized from Islam, among them <b>Tulayha al-Asadi</b>, who committed a great error: <b>he falsely claimed prophethood</b>! Abu Bakr sent against him an army led by <b>Khalid ibn al-Walid</b>, and Tulayha was crushingly defeated and fled.<br><br>But the story did not end there! In his solitude and defeat, Tulayha reflected on his condition and realized he was upon falsehood. What did he do? <b>He repented to Allah sincerely from his heart</b> and returned to Islam in remorse. He did not despair of Allah\u2019s mercy despite the gravity of his sin — for the door of repentance is open to whoever is sincere in returning.' },
+        choice:{ q:{ar:'ماذا فعلَ طُليحةُ بعدَ هزيمتِه وإدراكِه خطأه؟',en:'What did Tulayha do after his defeat and realizing his error?'},
+          opts:[
+            { t:{ar:'تابَ إلى اللهِ توبةً صادقةً ورجعَ للإسلام',en:'He repented to Allah sincerely and returned to Islam'},c:true,exp:{ar:'نعم! لم ييأسْ من رحمةِ اللهِ رغمَ عِظَمِ ذنبِه.',en:'Yes! He did not despair of Allah\u2019s mercy despite his great sin.'} },
+            { t:{ar:'استمرَّ في باطلِه',en:'He continued in his falsehood'},c:false,exp:{ar:'لا، بل أدركَ خطأه وتابَ بصدق.',en:'No — he realized his error and repented sincerely.'} },
+            { t:{ar:'يئسَ من رحمةِ الله',en:'He despaired of Allah\u2019s mercy'},c:false,exp:{ar:'لا، بل رجا رحمةَ اللهِ وتاب.',en:'No — he hoped for Allah\u2019s mercy and repented.'} },
+          ] } },
+    ],
+    quiz:[
+      { q:{ar:'ما الزلّةُ الكبرى التي ارتكبها طُليحة؟',en:'What great error did Tulayha commit?'},
+        opts:[ {t:{ar:'ادّعى النبوّةَ كذباً',en:'He falsely claimed prophethood'},c:true}, {t:{ar:'سرقَ مالاً',en:'He stole money'},c:false}, {t:{ar:'تركَ الصلاة',en:'He abandoned prayer'},c:false} ] },
+      { q:{ar:'من هزمَ طُليحةَ في الرِّدّة؟',en:'Who defeated Tulayha in the Ridda?'},
+        opts:[ {t:{ar:'خالدُ بنُ الوليد',en:'Khalid ibn al-Walid'},c:true}, {t:{ar:'عمرٌو',en:'Amr'},c:false}, {t:{ar:'بلال',en:'Bilal'},c:false} ] },
+      { q:{ar:'ماذا تعلّمنا من توبتِه؟',en:'What do we learn from his repentance?'},
+        opts:[ {t:{ar:'بابُ التوبةِ مفتوحٌ لمن صدق',en:'The door of repentance is open to the sincere'},c:true}, {t:{ar:'الذنبُ لا يُغتفر',en:'Sin is unforgivable'},c:false}, {t:{ar:'اليأسُ من الله',en:'Despair of Allah'},c:false} ] },
+    ],
+    moral:{ar:'مهما عظُمَ الذنبُ فبابُ التوبةِ مفتوح، واللهُ يقبلُ من رجعَ إليه صادقاً نادماً.',en:'However great the sin, the door of repentance is open; Allah accepts whoever returns to Him sincerely and remorseful.'},
+    badge:{icon:'🚪',title:{ar:'وِسامُ بابِ التوبة',en:'Badge of the Door of Repentance'}},
+    reflect:[ {ar:'هل تُسارِعُ إلى التوبةِ إذا أخطأتَ خطأً كبيراً؟',en:'Do you hasten to repent if you make a big mistake?'}, {ar:'هل تثقُ أنّ اللهَ يقبلُ توبةَ الصادقين؟',en:'Do you trust that Allah accepts the repentance of the sincere?'} ],
+    didYouKnow:[ {ar:'كانت حروبُ الرِّدّةِ من أصعبِ ما واجهَ أبو بكرٍ، فثبّتَ اللهُ به الإسلام — المصدر: البداية والنهاية',en:'The Ridda wars were among the hardest trials Abu Bakr faced, and through him Allah steadied Islam — Source: Al-Bidaya wa an-Nihaya'}, {ar:'بعدَ توبتِه استشارَ عمرُ بنُ الخطّابِ طُليحةَ في أمورِ الحربِ لخبرتِه — المصدر: تاريخ الطبري',en:'After his repentance, Umar ibn al-Khattab consulted Tulayha on matters of war for his expertise — Source: Tarikh at-Tabari'} ],
+  },
+  { icon:'⚔️', scene:'peaks', character:'🐎',
+    title:{ ar:'البطلُ في القادسيّةِ ونهاوند', en:'The Hero at Qadisiyya and Nahawand' },
+    pages:[
+      { scene:'peaks', character:'🐎',
+        text:{ ar:'بعدَ توبتِه الصادقة، لم يعِشْ <b>طُليحةُ</b> على ذكرى ماضيه، بل أرادَ أن <b>يُصحِّحَ خطأه بالعمل</b>. فلمّا جاءَ زمنُ الفتوحِ الكبرى في عهدِ عمرَ بنِ الخطّاب، انطلقَ طُليحةُ مجاهداً في سبيلِ الله بكلِّ قوّتِه.<br><br>شارك في معركةِ <b>القادسيّةِ</b> ضدَّ الفرسِ وأبلى بلاءً عظيماً، وكان من <b>أشجعِ الفرسان</b>. ثمّ في معركةِ <b>نهاوند</b> الكبرى قاتلَ ببطولةٍ نادرةٍ حتى <b>استُشهِدَ في سبيلِ الله</b>! هكذا حوّلَ طُليحةُ قوّتَه التي ضلَّ بها مرّةً إلى بطولةٍ في خدمةِ الحق. علّمنا أنّ <b>التوبةَ الصادقةَ يتبعُها عملٌ صالح</b>، وأنّ اللهَ يُبدِّلُ سيّئاتِ التائبِ حسنات.',
+          en:'After his sincere repentance, <b>Tulayha</b> did not live in the memory of his past; he wanted to <b>correct his error with action</b>. When the time of the great conquests came in Umar ibn al-Khattab\u2019s era, Tulayha set out striving for Allah\u2019s sake with all his strength.<br><br>He fought in the Battle of <b>Qadisiyya</b> against the Persians and performed magnificently, among the <b>bravest of knights</b>. Then at the great Battle of <b>Nahawand</b> he fought with rare valor until he was <b>martyred for Allah\u2019s sake</b>! Thus Tulayha turned the strength by which he had once gone astray into heroism in the service of truth. He taught us that <b>sincere repentance is followed by good deeds</b>, and that Allah turns the repentant\u2019s sins into good deeds.' },
+        choice:{ q:{ar:'كيف صحّحَ طُليحةُ خطأه القديم؟',en:'How did Tulayha correct his old error?'},
+          opts:[
+            { t:{ar:'بالجهادِ والبطولةِ في سبيلِ الله',en:'With striving and heroism for Allah\u2019s sake'},c:true,exp:{ar:'نعم! التوبةُ الصادقةُ يتبعُها عملٌ صالح.',en:'Yes! Sincere repentance is followed by good deeds.'} },
+            { t:{ar:'بالكلامِ فقط',en:'With words only'},c:false,exp:{ar:'لا، بل بعملٍ صالحٍ وجهادٍ حقيقي.',en:'No — with real good deeds and striving.'} },
+            { t:{ar:'لم يفعلْ شيئاً',en:'He did nothing'},c:false,exp:{ar:'لا، بل صارَ بطلاً في الفتوح.',en:'No — he became a hero in the conquests.'} },
+          ] } },
+    ],
+    quiz:[
+      { q:{ar:'في أيِّ المعاركِ أبلى طُليحةُ بعدَ توبتِه؟',en:'In which battles did Tulayha excel after repenting?'},
+        opts:[ {t:{ar:'القادسيّةِ ونهاوند',en:'Qadisiyya and Nahawand'},c:true}, {t:{ar:'بدرٍ فقط',en:'Only Badr'},c:false}, {t:{ar:'لم يُقاتلْ',en:'He never fought'},c:false} ] },
+      { q:{ar:'كيف انتهتْ حياةُ طُليحة؟',en:'How did Tulayha\u2019s life end?'},
+        opts:[ {t:{ar:'استُشهِدَ في سبيلِ الله',en:'He was martyred for Allah\u2019s sake'},c:true}, {t:{ar:'هربَ ثانيةً',en:'He fled again'},c:false}, {t:{ar:'تركَ الإسلام',en:'He left Islam'},c:false} ] },
+      { q:{ar:'ما القاعدةُ التي نتعلّمُها؟',en:'What rule do we learn?'},
+        opts:[ {t:{ar:'التوبةُ الصادقةُ يتبعُها عملٌ صالح',en:'Sincere repentance is followed by good deeds'},c:true}, {t:{ar:'الندمُ وحدَه يكفي',en:'Regret alone is enough'},c:false}, {t:{ar:'الماضي يحكمُ المستقبل',en:'The past rules the future'},c:false} ] },
+    ],
+    moral:{ar:'التوبةُ الصادقةُ يتبعُها عملٌ صالح، واللهُ يُبدِّلُ سيّئاتِ التائبِ حسنات، ويصنعُ منه بطلاً.',en:'Sincere repentance is followed by good deeds; Allah turns the repentant\u2019s sins into good deeds and makes a hero of him.'},
+    badge:{icon:'⚔️',title:{ar:'وِسامُ العودةِ بالبطولة',en:'Badge of Return Through Heroism'}},
+    reflect:[ {ar:'كيف تُحوِّلُ طاقتَك إلى عملٍ نافعٍ يُرضي الله؟',en:'How do you turn your energy into beneficial work that pleases Allah?'}, {ar:'هل تُتبِعُ الندمَ بعملٍ صالحٍ يُصلِحُ ما فات؟',en:'Do you follow regret with a good deed that mends the past?'} ],
+    didYouKnow:[ {ar:'استُشهِدَ طُليحةُ في معركةِ نهاوندَ سنةَ ٢١هـ، وهي «فتحُ الفتوح» على الفرس — المصدر: تاريخ الطبري',en:'Tulayha was martyred at the Battle of Nahawand in 21 AH, the "Conquest of Conquests" over the Persians — Source: Tarikh at-Tabari'}, {ar:'قصّةُ طُليحةَ مثالٌ مشهورٌ على أنّ حُسنَ الخاتمةِ يمحو سوءَ البداية — المصدر: صور من حياة الصحابة',en:'Tulayha\u2019s story is a famous example that a good ending erases a bad beginning — Source: Suwar min Hayat as-Sahaba'} ],
+  },
+];

@@ -1,0 +1,56 @@
+/* data/stories/tawus.js — Successors · Tawus ibn Kaysan — sources: صور من حياة التابعين · إسلام ويب · الدرر السنية · سير أعلام النبلاء */
+window.HISN_STORIES = window.HISN_STORIES || {};
+HISN_STORIES.tawus = [
+  { icon:'🦁', scene:'throne', character:'⚖️',
+    title:{ ar:'موعظةٌ أبكتِ الخليفة', en:'A Sermon That Made the Caliph Weep' },
+    pages:[
+      { scene:'throne', character:'⚖️',
+        text:{ ar:'كان <b>طاووسُ بنُ كيسان</b> لا يهابُ الحكّامَ ولا يخافُهم في قولِ الحق، لأنّه يخافُ اللهَ وحدَه. وذاتَ مرّةٍ دخلَ على أحدِ الخلفاءِ، وكان الناسُ يتملّقونَه ويمدحونَه طمعاً في عطائِه.<br><br>لكنّ طاووساً لم يفعلْ مثلَهم! بل وقفَ ووعظه موعظةً صادقةً جريئةً، يُذكِّرُه بالموتِ والحسابِ ومسؤوليّتِه أمامَ الله. قال له كلماتٍ عن عذابِ الظالمين يومَ القيامة، حتى <b>تأثّرَ الخليفةُ وبكى</b>! لم يطلبْ طاووسٌ مالاً ولا جاهاً، بل أرادَ أن يُذكِّرَ الحاكمَ بالحقِّ نُصحاً له. علّمنا أنّ <b>الناصحَ الصادقَ لا يخافُ ولا يُنافِق</b>، وأنّ كلمةَ الحقِّ قد تُلِينُ أقسى القلوب.',
+          en:'<b>Tawus ibn Kaysan</b> did not dread rulers nor fear them in speaking the truth, because he feared Allah alone. Once he entered upon one of the caliphs, while people were flattering and praising him, coveting his gifts.<br><br>But Tawus did not act like them! He stood and admonished him with a sincere, bold sermon, reminding him of death, the reckoning, and his responsibility before Allah. He spoke to him of the punishment of the unjust on the Day of Resurrection, until <b>the caliph was moved and wept</b>! Tawus sought no wealth nor status; he wanted to remind the ruler of the truth as sincere advice. He taught us that <b>a sincere advisor neither fears nor flatters</b>, and that a word of truth can soften the hardest hearts.' },
+        choice:{ q:{ar:'لماذا وعظَ طاووسٌ الخليفةَ بدلَ أن يتملّقَه؟',en:'Why did Tawus admonish the caliph instead of flattering him?'},
+          opts:[
+            { t:{ar:'لأنّه يخافُ اللهَ ويريدُ نصحَه بالحق',en:'Because he feared Allah and wanted to sincerely advise him'},c:true,exp:{ar:'نعم! الناصحُ الصادقُ لا يخافُ ولا يُنافِق.',en:'Yes! A sincere advisor neither fears nor flatters.'} },
+            { t:{ar:'ليطلبَ مالاً',en:'To ask for money'},c:false,exp:{ar:'لا، بل نصحاً خالصاً لوجهِ الله.',en:'No — purely as advice for Allah\u2019s sake.'} },
+            { t:{ar:'ليُغضِبَه',en:'To anger him'},c:false,exp:{ar:'لا، بل ليُذكِّرَه بالله رحمةً به.',en:'No — to remind him of Allah, out of mercy for him.'} },
+          ] } },
+    ],
+    quiz:[
+      { q:{ar:'ممّن كان يخافُ طاووسٌ في قولِ الحق؟',en:'Whom did Tawus fear in speaking the truth?'},
+        opts:[ {t:{ar:'اللهَ وحدَه',en:'Allah alone'},c:true}, {t:{ar:'الخليفة',en:'The caliph'},c:false}, {t:{ar:'الناس',en:'The people'},c:false} ] },
+      { q:{ar:'ماذا فعلَ طاووسٌ أمامَ الخليفة؟',en:'What did Tawus do before the caliph?'},
+        opts:[ {t:{ar:'وعظه موعظةً صادقةً أبكتْه',en:'He admonished him sincerely until he wept'},c:true}, {t:{ar:'مدحه',en:'He praised him'},c:false}, {t:{ar:'طلبَ مالاً',en:'He asked for money'},c:false} ] },
+      { q:{ar:'ماذا نتعلّمُ من طاووس؟',en:'What do we learn from Tawus?'},
+        opts:[ {t:{ar:'الناصحُ الصادقُ لا يخافُ ولا يُنافِق',en:'A sincere advisor neither fears nor flatters'},c:true}, {t:{ar:'المداهنةُ للحكّام',en:'Flattering rulers'},c:false}, {t:{ar:'السكوتُ عن الحق',en:'Silence about the truth'},c:false} ] },
+    ],
+    moral:{ar:'من خافَ اللهَ لم يخشَ سواه، والناصحُ الصادقُ يقولُ الحقَّ بأدبٍ ولا يُنافِق طمعاً في دنيا.',en:'Whoever fears Allah fears no one else; a sincere advisor speaks the truth politely and does not flatter coveting worldly gain.'},
+    badge:{icon:'🦁',title:{ar:'وِسامُ الناصحِ الصادق',en:'Badge of the Sincere Advisor'}},
+    reflect:[ {ar:'هل تقولُ الحقَّ بأدبٍ ولو كان الطرفُ الآخرُ أقوى منك؟',en:'Do you speak the truth politely even when the other is stronger than you?'}, {ar:'هل تنصحُ من تحبُّ بصدقٍ بدلَ المجاملة؟',en:'Do you sincerely advise those you love instead of flattering?'} ],
+    didYouKnow:[ {ar:'اشتُهِرَ طاووسٌ بجرأتِه في نصحِ الخلفاءِ والولاةِ وعدمِ خوفِه منهم — المصدر: سير أعلام النبلاء',en:'Tawus was famed for his boldness in advising caliphs and governors and his fearlessness of them — Source: Siyar A\u2019lam an-Nubala\u2019'}, {ar:'كان طاووسٌ يتجنّبُ قبولَ عطايا السلاطينِ ورعاً وحفاظاً على استقلالِ كلمتِه — المصدر: صور من حياة التابعين',en:'Tawus avoided accepting rulers\u2019 gifts out of scruple, to keep his word independent — Source: Suwar min Hayat at-Tabi\u2019in'} ],
+  },
+  { icon:'🕋', scene:'kaaba', character:'🤲',
+    title:{ ar:'أربعونَ حجّةً وقلبٌ خاشع', en:'Forty Pilgrimages and a Humble Heart' },
+    pages:[
+      { scene:'kaaba', character:'🤲',
+        text:{ ar:'لم يكنْ <b>طاووسُ بنُ كيسان</b> عالماً فقط، بل كان <b>عابداً زاهداً</b> من الطرازِ الرفيع. أحبَّ بيتَ اللهِ الحرامَ حبّاً عظيماً، فحجَّ <b>أربعينَ حجّة</b> في حياتِه! وكان يقفُ في الصلاةِ خاشعاً كأنّه يرى اللهَ، ويُكثِرُ من ذكرِه ودعائِه.<br><br>ومع علمِه الواسعِ وعبادتِه الكثيرة، كان <b>زاهداً متواضعاً</b> لا يطلبُ من الدنيا إلّا الكفاف. كان يتجنّبُ أبوابَ الأمراءِ والسلاطينِ خشيةَ أن يفتنوه عن دينِه أو يُؤثِّروا على كلمتِه. عاشَ حياتَه بين العلمِ والعبادةِ والحجّ، فصار قدوةً يُقتَدى بها في اليمنِ وغيرِها. علّمنا أنّ <b>العالمَ الحقَّ يجمعُ بين العلمِ والعملِ والخشية</b>، وأنّ العبادةَ الصادقةَ تُورِثُ القلبَ نوراً.',
+          en:'<b>Tawus ibn Kaysan</b> was not only a scholar — he was a <b>devout ascetic</b> of the highest order. He loved the Sacred House of Allah deeply, performing <b>forty pilgrimages</b> in his life! He would stand in prayer humbly as if he saw Allah, abundant in His remembrance and supplication.<br><br>Despite his vast knowledge and abundant worship, he was <b>ascetic and humble</b>, seeking from the world only what sufficed. He avoided the doors of princes and rulers, fearing they might tempt him from his faith or sway his word. He spent his life between knowledge, worship, and pilgrimage, becoming a role model followed in Yemen and beyond. He taught us that <b>a true scholar combines knowledge, action, and reverence</b>, and that sincere worship bequeaths the heart a light.' },
+        choice:{ q:{ar:'بِمَ جمعَ طاووسٌ مع علمِه الواسع؟',en:'What did Tawus combine with his vast knowledge?'},
+          opts:[
+            { t:{ar:'العبادةَ الكثيرةَ والزهدَ والتواضع',en:'Abundant worship, asceticism, and humility'},c:true,exp:{ar:'نعم! العالمُ الحقُّ يجمعُ بين العلمِ والعمل.',en:'Yes! A true scholar combines knowledge and action.'} },
+            { t:{ar:'حبَّ المالِ والجاه',en:'Love of wealth and status'},c:false,exp:{ar:'لا، بل الزهدَ والعبادةَ والتواضع.',en:'No — asceticism, worship, and humility.'} },
+            { t:{ar:'مجالسةَ الأمراء',en:'Sitting with princes'},c:false,exp:{ar:'لا، بل كان يتجنّبُ أبوابَهم.',en:'No — he avoided their doors.'} },
+          ] } },
+    ],
+    quiz:[
+      { q:{ar:'كم حجّةً حجَّ طاووس؟',en:'How many pilgrimages did Tawus perform?'},
+        opts:[ {t:{ar:'أربعينَ حجّة',en:'Forty pilgrimages'},c:true}, {t:{ar:'حجّةً واحدة',en:'One pilgrimage'},c:false}, {t:{ar:'لم يحجّ',en:'He never performed Hajj'},c:false} ] },
+      { q:{ar:'لماذا تجنّبَ طاووسٌ أبوابَ الأمراء؟',en:'Why did Tawus avoid the doors of princes?'},
+        opts:[ {t:{ar:'خشيةَ الفتنةِ والتأثيرِ على كلمتِه',en:'Fearing temptation and influence on his word'},c:true}, {t:{ar:'لأنّه يكرهُهم',en:'Because he hated them'},c:false}, {t:{ar:'بلا سبب',en:'For no reason'},c:false} ] },
+      { q:{ar:'ما صفةُ العالمِ الحقِّ كما علّمنا طاووس؟',en:'What is a true scholar\u2019s quality as Tawus taught?'},
+        opts:[ {t:{ar:'يجمعُ بين العلمِ والعملِ والخشية',en:'Combining knowledge, action, and reverence'},c:true}, {t:{ar:'العلمُ بلا عمل',en:'Knowledge without action'},c:false}, {t:{ar:'حبُّ الدنيا',en:'Love of the world'},c:false} ] },
+    ],
+    moral:{ar:'العالمُ الحقُّ يجمعُ بين العلمِ والعملِ والخشية، والعبادةُ الصادقةُ تُورِثُ القلبَ نوراً.',en:'A true scholar combines knowledge, action, and reverence; sincere worship bequeaths the heart a light.'},
+    badge:{icon:'🕋',title:{ar:'وِسامُ العبادةِ والإخلاص',en:'Badge of Worship & Sincerity'}},
+    reflect:[ {ar:'كيف تجعلُ لعبادتِك نصيباً ثابتاً في يومِك؟',en:'How do you make worship a steady part of your day?'}, {ar:'هل تبتعدُ عمّا يفتنُك عن دينِك؟',en:'Do you stay away from what tempts you from your faith?'} ],
+    didYouKnow:[ {ar:'ذكرَ أهلُ السيرِ أنّ طاووساً حجَّ نحوَ أربعينَ حجّةً وكان من أعبدِ أهلِ زمانِه — المصدر: سير أعلام النبلاء',en:'The biographers noted Tawus performed about forty pilgrimages and was among the most devout of his time — Source: Siyar A\u2019lam an-Nubala\u2019'}, {ar:'كان طاووسٌ يُعَدُّ من أئمّةِ الفقهِ والتفسيرِ في اليمنِ ومكّة — المصدر: صور من حياة التابعين',en:'Tawus was counted among the imams of jurisprudence and tafsir in Yemen and Makkah — Source: Suwar min Hayat at-Tabi\u2019in'} ],
+  },
+];

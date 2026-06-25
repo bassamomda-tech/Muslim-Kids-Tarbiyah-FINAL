@@ -1,0 +1,56 @@
+/* data/stories/baybars.js — Leaders · Az-Zahir Baybars — sources: البداية والنهاية · إسلام ويب · الدرر السنية · كتب التاريخ */
+window.HISN_STORIES = window.HISN_STORIES || {};
+HISN_STORIES.baybars = [
+  { icon:'💪', scene:'throne', character:'🦁',
+    title:{ ar:'من مملوكٍ إلى سلطان', en:'From a Mamluk to a Sultan' },
+    pages:[
+      { scene:'desert', character:'🧒',
+        text:{ ar:'بدأتْ قصّةُ <b>بيبرس</b> بدايةً صعبةً جدّاً. كان غلاماً صغيراً، فأُسِرَ وبيعَ في سوقِ الرقيقِ كـ<b>مملوك</b>! لم يكنْ يملكُ مالاً ولا جاهاً ولا عائلةً تحميه. لكنّ اللهَ وهبه <b>قلباً شجاعاً وعقلاً ذكيّاً وعزيمةً لا تلين</b>.<br><br>تدرّبَ بيبرس على الفروسيّةِ والقتالِ والعلمِ حتى برزَ بين أقرانِه. لم يجعلْ بدايتَه المتواضعةَ عذراً للفشل، بل جعلها دافعاً ليجتهدَ أكثر. وشيئاً فشيئاً، بفضلِ شجاعتِه وإخلاصِه وذكائِه، ارتقى في المناصبِ حتى صارَ قائداً كبيراً، ثمّ <b>سلطاناً على مصرَ والشام</b>! علّمنا بيبرس أنّ <b>البدايةَ المتواضعةَ لا تمنعُ النجاحَ العظيم</b>، وأنّ العزيمةَ والاجتهادَ يرفعانِ الإنسانَ مهما كانت ظروفُه.',
+          en:'<b>Baybars\u2019</b> story began very hard. He was a young boy, captured and sold in the slave market as a <b>Mamluk</b>! He had no wealth, status, or family to protect him. But Allah granted him <b>a brave heart, a sharp mind, and an unbending resolve</b>.<br><br>Baybars trained in horsemanship, combat, and knowledge until he stood out among his peers. He did not make his humble start an excuse for failure, but made it a motivation to strive harder. Bit by bit, through his courage, sincerity, and intelligence, he rose through the ranks until he became a great commander, then <b>sultan over Egypt and Sham</b>! Baybars taught us that <b>a humble start does not prevent great success</b>, and that resolve and effort elevate a person whatever his circumstances.' },
+        choice:{ q:{ar:'كيف ارتقى بيبرس من مملوكٍ إلى سلطان؟',en:'How did Baybars rise from a Mamluk to a sultan?'},
+          opts:[
+            { t:{ar:'بشجاعتِه وذكائِه وعزيمتِه واجتهادِه',en:'Through his courage, intelligence, resolve, and effort'},c:true,exp:{ar:'نعم! البدايةُ المتواضعةُ لا تمنعُ النجاحَ العظيم.',en:'Yes! A humble start does not prevent great success.'} },
+            { t:{ar:'بالمالِ والجاه',en:'By wealth and status'},c:false,exp:{ar:'لا، بل لم يملكْ شيئاً، فاجتهدَ بنفسِه.',en:'No — he had nothing, so he strove himself.'} },
+            { t:{ar:'بالحظِّ وحدَه',en:'By luck alone'},c:false,exp:{ar:'لا، بل بالعزيمةِ والعملِ الجادّ.',en:'No — by resolve and hard work.'} },
+          ] } },
+    ],
+    quiz:[
+      { q:{ar:'كيف بدأَ بيبرس حياتَه؟',en:'How did Baybars begin his life?'},
+        opts:[ {t:{ar:'مملوكاً بِيعَ في السوق',en:'A Mamluk sold in the market'},c:true}, {t:{ar:'ملكاً غنيّاً',en:'A wealthy king'},c:false}, {t:{ar:'تاجراً كبيراً',en:'A great merchant'},c:false} ] },
+      { q:{ar:'ما الذي رفعَ بيبرس إلى السلطنة؟',en:'What raised Baybars to the sultanate?'},
+        opts:[ {t:{ar:'عزيمتُه وشجاعتُه واجتهادُه',en:'His resolve, courage, and effort'},c:true}, {t:{ar:'مالُه',en:'His wealth'},c:false}, {t:{ar:'نسبُه',en:'His lineage'},c:false} ] },
+      { q:{ar:'ما الدرسُ من بدايةِ بيبرس؟',en:'What is the lesson from Baybars\u2019 start?'},
+        opts:[ {t:{ar:'البدايةُ المتواضعةُ لا تمنعُ النجاحَ العظيم',en:'A humble start does not prevent great success'},c:true}, {t:{ar:'الفقرُ يمنعُ النجاح',en:'Poverty prevents success'},c:false}, {t:{ar:'النسبُ كلُّ شيء',en:'Lineage is everything'},c:false} ] },
+    ],
+    moral:{ar:'البدايةُ المتواضعةُ لا تمنعُ النجاحَ العظيم، والعزيمةُ والاجتهادُ يرفعانِ الإنسانَ مهما كانت ظروفُه.',en:'A humble start does not prevent great success; resolve and effort elevate a person whatever his circumstances.'},
+    badge:{icon:'💪',title:{ar:'وِسامُ العزيمةِ والارتقاء',en:'Badge of Resolve & Rising'}},
+    reflect:[ {ar:'هل تجعلُ ظروفَك الصعبةَ دافعاً أم عذراً؟',en:'Do you make your hard circumstances a motivation or an excuse?'}, {ar:'كيف تجتهدُ لتتقدّمَ من حيثُ أنت الآن؟',en:'How do you strive to advance from where you are now?'} ],
+    didYouKnow:[ {ar:'كثيرٌ من سلاطينِ المماليكِ بدؤوا حياتَهم مماليكَ ثمّ ارتقَوا بالكفاءةِ والشجاعةِ إلى الحكم — المصدر: البداية والنهاية',en:'Many Mamluk sultans began life as Mamluks then rose by competence and courage to rule — Source: Al-Bidaya wa an-Nihaya'}, {ar:'كان للظاهرِ بيبرس دورٌ كبيرٌ في معركةِ عينِ جالوتَ ضدَّ المغولِ قبلَ أن يصيرَ سلطاناً — المصدر: كتب التاريخ',en:'Az-Zahir Baybars played a major role at the Battle of Ayn Jalut against the Mongols before becoming sultan — Source: history works'} ],
+  },
+  { icon:'🏗️', scene:'mosque', character:'📯',
+    title:{ ar:'سلطانٌ يحمي ويبني', en:'A Sultan Who Protects and Builds' },
+    pages:[
+      { scene:'mosque', character:'📯',
+        text:{ ar:'لمّا صارَ <b>بيبرس</b> سلطاناً، لم ينشغلْ بالملذّاتِ والراحة، بل حملَ همَّ أمّتِه. كان المغولُ والصليبيونَ ما زالوا خطراً، فـ<b>قوّى الجيشَ والحصونَ</b> وواصلَ جهادَهم حتى حرّرَ كثيراً من المدن، وحمى المسلمينَ من أعدائِهم.<br><br>لكنّ بيبرس عرفَ أنّ القوّةَ العسكريّةَ وحدَها لا تكفي. فاهتمَّ بـ<b>بناءِ الدولةِ من الداخل</b>: شقَّ الطرقَ، وبنى الجسورَ والقناطرَ، وأنشأَ المساجدَ والمدارس، وحفرَ الترعَ لريِّ الأرض. حتى إنّه نظّمَ <b>بريداً سريعاً</b> ينقلُ الرسائلَ بين المدنِ في أيّامٍ قليلةٍ عبرَ الخيلِ المتتابعة! وأقامَ العدلَ بين الناس. علّمنا بيبرس أنّ <b>القائدَ العظيمَ يحمي أمّتَه ويبنيها في الوقتِ نفسِه</b> — قوّةٌ تردعُ الأعداء، وعمرانٌ ينفعُ الناس.',
+          en:'When <b>Baybars</b> became sultan, he did not busy himself with pleasures and rest, but carried the concern of his nation. The Mongols and Crusaders were still a danger, so he <b>strengthened the army and fortresses</b> and continued struggling against them until he liberated many cities and protected the Muslims from their enemies.<br><br>But Baybars knew that military strength alone is not enough. So he cared for <b>building the state from within</b>: he laid roads, built bridges and aqueducts, established mosques and schools, and dug canals to irrigate the land. He even organized a <b>fast postal service</b> that carried letters between cities in a few days via relays of horses! And he established justice among the people. Baybars taught us that <b>a great leader protects his nation and builds it at the same time</b> — strength that deters enemies, and building that benefits people.' },
+        choice:{ q:{ar:'بماذا اهتمَّ بيبرس إلى جانبِ حمايةِ الدولة؟',en:'What did Baybars care for alongside protecting the state?'},
+          opts:[
+            { t:{ar:'بناءِ الطرقِ والجسورِ والمدارسِ وتنظيمِ البريد',en:'Building roads, bridges, schools, and organizing the post'},c:true,exp:{ar:'نعم! القائدُ العظيمُ يحمي ويبني معاً.',en:'Yes! A great leader protects and builds together.'} },
+            { t:{ar:'الراحةِ والملذّات',en:'Rest and pleasures'},c:false,exp:{ar:'لا، بل حملَ همَّ أمّتِه وبناها.',en:'No — he carried his nation\u2019s concern and built it.'} },
+            { t:{ar:'جمعِ المالِ لنفسِه',en:'Hoarding wealth for himself'},c:false,exp:{ar:'لا، بل بنى ما ينفعُ الناس.',en:'No — he built what benefits people.'} },
+          ] } },
+    ],
+    quiz:[
+      { q:{ar:'ماذا فعلَ بيبرس لحمايةِ المسلمين؟',en:'What did Baybars do to protect the Muslims?'},
+        opts:[ {t:{ar:'قوّى الجيشَ وجاهدَ المغولَ والصليبيين',en:'He strengthened the army and fought the Mongols and Crusaders'},c:true}, {t:{ar:'استسلمَ',en:'He surrendered'},c:false}, {t:{ar:'تركهم',en:'He abandoned them'},c:false} ] },
+      { q:{ar:'أيُّ خدمةٍ سريعةٍ نظّمها بين المدن؟',en:'What fast service did he organize between cities?'},
+        opts:[ {t:{ar:'البريدَ عبرَ الخيلِ المتتابعة',en:'The post via horse relays'},c:true}, {t:{ar:'الطائرات',en:'Airplanes'},c:false}, {t:{ar:'القطارات',en:'Trains'},c:false} ] },
+      { q:{ar:'ما صفةُ القائدِ العظيمِ كما علّمنا بيبرس؟',en:'What is a great leader\u2019s trait as Baybars taught?'},
+        opts:[ {t:{ar:'يحمي أمّتَه ويبنيها معاً',en:'He protects his nation and builds it together'},c:true}, {t:{ar:'يهتمُّ بنفسِه فقط',en:'He cares only for himself'},c:false}, {t:{ar:'يكتفي بالحرب',en:'He only wages war'},c:false} ] },
+    ],
+    moral:{ar:'القائدُ العظيمُ يحمي أمّتَه ويبنيها معاً: قوّةٌ تردعُ الأعداء، وعمرانٌ وعدلٌ ينفعانِ الناس.',en:'A great leader protects his nation and builds it together: strength that deters enemies, and building and justice that benefit people.'},
+    badge:{icon:'🏗️',title:{ar:'وِسامُ الحمايةِ والبناء',en:'Badge of Protection & Building'}},
+    reflect:[ {ar:'كيف توازِنُ بين حمايةِ ما تحبُّ وتطويرِه؟',en:'How do you balance protecting what you love with developing it?'}, {ar:'كيف تنفعُ من حولَك بعملٍ يبقى أثرُه؟',en:'How do you benefit those around you with work whose effect lasts?'} ],
+    didYouKnow:[ {ar:'نظّمَ الظاهرُ بيبرس بريداً سريعاً (البريدَ السلطاني) ينقلُ الأخبارَ بين القاهرةِ ودمشقَ في نحوِ أربعةِ أيّام — المصدر: كتب التاريخ',en:'Az-Zahir Baybars organized a fast postal service carrying news between Cairo and Damascus in about four days — Source: history works'}, {ar:'اهتمَّ بيبرس بالعمرانِ فبنى المساجدَ والمدارسَ والقناطرَ وأصلحَ الطرق — المصدر: البداية والنهاية',en:'Baybars cared for building, constructing mosques, schools, aqueducts, and repairing roads — Source: Al-Bidaya wa an-Nihaya'} ],
+  },
+];

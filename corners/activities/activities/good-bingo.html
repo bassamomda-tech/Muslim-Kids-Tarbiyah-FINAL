@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>بنغو الصالحات · أنوس</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Amiri:wght@400;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+
+<link rel="stylesheet" href="../styles/tokens.css" />
+<link rel="stylesheet" href="../styles/dashboard.css" />
+<link rel="stylesheet" href="../styles/wheel.css" />
+<link rel="stylesheet" href="../styles/good-bingo.css" />
+</head>
+<body>
+
+<div class="bg-decor" aria-hidden="true"></div>
+
+<div class="activity-shell">
+
+  <nav class="activity-nav">
+    <a class="back-link" href="../dashboard.html">
+      الرجوع للوحة الأنشطة
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg>
+    </a>
+    <div class="activity-crumb">
+      <span>الفن والإبداع</span>
+      <span class="sep">/</span>
+      <span class="cur">بنغو الصالحات</span>
+    </div>
+    <div class="activity-actions">
+      <button class="icon-btn" id="reset-btn" title="إعادة الضبط" aria-label="إعادة الضبط">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 3-6.7L3 8"/><path d="M3 3v5h5"/></svg>
+      </button>
+      <button class="icon-btn" id="new-card" title="بِطاقَةٌ جَديدة" aria-label="بطاقة جديدة">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 1 1-3-6.7"/><path d="M21 3v6h-6"/></svg>
+      </button>
+    </div>
+  </nav>
+
+  <div class="activity-layout">
+
+    <section class="gb-panel">
+      <header class="wheel-header">
+        <span class="activity-tag">Activity 30 · 5×5 Grid Checker</span>
+        <h1 class="activity-title">بنغو الصالحات</h1>
+        <p class="activity-desc">
+          خَمسٌ في خَمس مِنَ الأَعمالِ الطَّيِّبة. اِفعَل العَمَل، ثُمَّ اِنقُر مُربَّعَه لِتَضَع عَلَيه عَلامة.
+          صُفٌّ كامِلٌ — أُفقي أو عَمودي أو قُطْري — يَمنَحُك <em>بِنغو!</em>
+        </p>
+      </header>
+
+      <div class="gb-hud">
+        <div class="hud-block">المَفعول <strong><span id="marks">1</span><small>/25</small></strong></div>
+        <div class="hud-block">صُفوفُ بِنغو <strong id="lines">0</strong></div>
+        <div class="hud-block">بِطاقات <strong id="cards">1</strong></div>
+        <div class="hud-block">إجمالي البِنغو <strong id="total-bingos">0</strong></div>
+      </div>
+
+      <div class="gb-stage">
+        <div class="gb-banner" id="banner" hidden>
+          <span class="bg-glow"></span>
+          <strong id="banner-text">بِنغو!</strong>
+        </div>
+
+        <div class="gb-board" id="board"></div>
+
+        <div class="gb-actions">
+          <button class="gb-btn" id="btn-newcard">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 1 1-3-6.7"/><path d="M21 3v6h-6"/></svg>
+            بِطاقَةٌ جَديدة
+          </button>
+          <button class="gb-btn primary" id="btn-claim" disabled>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5 9-10"/></svg>
+            إِعلانُ البِنغو
+          </button>
+        </div>
+      </div>
+
+      <div class="wheel-controls" style="margin-top:var(--s-4);">
+        <div class="wheel-stat">أَفضَلُ بِطاقة <strong id="best">— صَفّ</strong></div>
+        <button class="wheel-mute-toggle" id="mute-btn" aria-pressed="false">
+          <span class="mute-icon"></span>
+          <span class="mute-label">كتم الصوت</span>
+        </button>
+      </div>
+    </section>
+
+    <aside class="side-panel">
+      <div class="panel-card">
+        <div class="panel-head">
+          <h3>أَعمالُ هذِه البِطاقة</h3>
+          <span class="pill" id="deeds-pill">24 عَمَل</span>
+        </div>
+        <div class="gb-deeds" id="deeds-list"></div>
+      </div>
+
+      <div class="panel-card">
+        <div class="panel-head"><h3>كيف ألعب؟</h3></div>
+        <div style="font-size: 14px; line-height: 1.7; color: var(--ink-2);">
+          ١. اِقرأ العَمَلَ في كلِّ مُربَّع.<br/>
+          ٢. اِفعَلهُ في يَومِك.<br/>
+          ٣. اِنقُر المُربَّع لِتُعَلِّمَه.<br/>
+          ٤. اِجمَع خَمسةً في صَفٍّ لِتَفوزَ بِبِنغو.
+        </div>
+        <div class="tip-card" style="margin-top: var(--s-3);">
+          <span class="tip-icon">!</span>
+          <span>المَركَزُ هَدِيَّةٌ مَجَّانيَّة (★). الصَّلاةُ كَنزٌ، فاجعَل صَلاتَكَ في مَركَزِ يَومِك.</span>
+        </div>
+      </div>
+
+      <div class="panel-card">
+        <div class="panel-head"><h3>قَولُ النَّبيِّ ﷺ</h3></div>
+        <div class="hadith-card">
+          <div class="quote">«لا تَحقِرَنَّ مِنَ المَعروفِ شَيئاً، ولَو أن تَلْقى أَخاكَ بِوَجهٍ طَلْق»</div>
+          <span class="src">رواه مسلم<span class="hadith-grade ok">صحيح</span></span>
+        </div>
+      </div>
+    </aside>
+  </div>
+</div>
+
+<div class="modal-backdrop" id="bingo-modal" role="dialog" aria-modal="true">
+  <div class="modal">
+    <button class="modal-close" data-close aria-label="إغلاق">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M6 6l12 12M18 6l-12 12"/></svg>
+    </button>
+    <div class="modal-deco" aria-hidden="true">
+      <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l2.4 6.6L21 9l-5 4.6L17.2 21 12 17.4 6.8 21 8 13.6 3 9l6.6-.4z"/></svg>
+    </div>
+    <div class="modal-eyebrow">صَفٌّ كامِل!</div>
+    <h2 class="modal-title">بِنغو!</h2>
+    <div class="modal-meaning" id="bingo-summary"></div>
+    <div class="modal-actions">
+      <button class="btn-ghost" data-close>تَابِع البِطاقة</button>
+      <button class="btn-primary" id="bingo-newcard">بِطاقَةٌ جَديدة</button>
+    </div>
+  </div>
+</div>
+
+<div class="particles" id="particles" aria-hidden="true"></div>
+
+<script src="../scripts/activity-common.js"></script>
+<script src="../scripts/good-bingo.js"></script>
+
+<script>
+window.PAGE_DICT = {
+  "بنغو الصالحات": "Good Deeds Bingo",
+  "خَمسٌ في خَمس مِنَ الأَعمالِ الطَّيِّبة. اِفعَل العَمَل، ثُمَّ اِنقُر مُربَّعَه لِتَضَع عَلَيه عَلامة. صُفٌّ كامِلٌ — أُفقي أو عَمودي أو قُطْري — يَمنَحُك": "Five by five of good deeds. Do the deed, then tap its square to mark it. A complete row — across, down, or diagonal — gives you a",
+  "المَفعول": "Marked",
+  "صُفوفُ بِنغو": "Bingo rows",
+  "بِطاقات": "Cards",
+  "إجمالي البِنغو": "Total bingos",
+  "بِطاقَةٌ جَديدة": "New card",
+  "بِنغو!": "Bingo!",
+  "إِعلانُ البِنغو": "Claim Bingo",
+  "أَفضَلُ بِطاقة": "Best card",
+  "— صَفّ": "— rows",
+  "أَعمالُ هذِه البِطاقة": "Deeds on this card",
+  "24 عَمَل": "24 deeds",
+  "١. اِقرأ العَمَلَ في كلِّ مُربَّع.": "1. Read the deed in each square.",
+  "٢. اِفعَلهُ في يَومِك.": "2. Do it in your day.",
+  "٣. اِنقُر المُربَّع لِتُعَلِّمَه.": "3. Tap the square to mark it.",
+  "٤. اِجمَع خَمسةً في صَفٍّ لِتَفوزَ بِبِنغو.": "4. Collect five in a row to win a Bingo.",
+  "المَركَزُ هَدِيَّةٌ مَجَّانيَّة (★). الصَّلاةُ كَنزٌ، فاجعَل صَلاتَكَ في مَركَزِ يَومِك.": "The center is a free gift (★). Prayer is a treasure, so make your prayer the center of your day.",
+  "قَولُ النَّبيِّ ﷺ": "The Prophet's ﷺ saying",
+  "صَفٌّ كامِل!": "A complete row!",
+  "تَابِع البِطاقة": "Continue the card"
+};
+</script>
+<script>
+Object.assign(window.PAGE_DICT, {
+  "قُلتُ بسم الله قَبلَ الأَكل":"I said bismillah before eating",
+  "ذَكَرتُ اللهَ عَشرَ مَرَّات":"I remembered Allah ten times",
+  "سَلَّمتُ على شَخصٍ اليَوم":"I greeted someone today",
+  "تَوَضَّأتُ بِإِتقان":"I made wudu properly",
+  "قَرَأتُ آيَةً مِنَ القرآن":"I read a verse of the Quran",
+  "ساعَدتُ والِدَيَّ في عَمَل":"I helped my parents with a task",
+  "أَطعَمتُ جائِعاً أو طَيرًا":"I fed someone hungry or a bird",
+  "ابتَسَمتُ في وَجهِ أَخي":"I smiled at my brother",
+  "رَتَّبتُ سَريري":"I made my bed",
+  "نَظَّفتُ يَدَيَّ قَبلَ الطَّعام":"I cleaned my hands before food",
+  "اعتَنَيتُ بِنَبتَةٍ أو شَجَرة":"I cared for a plant or tree",
+  "قَرأتُ كِتاباً نافِعاً":"I read a beneficial book",
+  "كَفَفتُ لِسانيَ عَن سُوء":"I held my tongue from bad speech",
+  "صالَحتُ مَن خاصَمتُ":"I made peace with someone I argued with",
+  "أَهدَيتُ شَيئاً لِأَخي":"I gave a gift to my brother",
+  "أَطَعتُ والِدَيَّ بِلا تَأَفُّف":"I obeyed my parents without grumbling",
+  "تَصَدَّقتُ ولَو بِقَليل":"I gave charity, even a little",
+  "مَشَيتُ إلى المَسجِد":"I walked to the mosque",
+  "نِمتُ على وُضوء":"I slept in a state of wudu",
+  "قُلتُ كَلِمَةَ شُكرٍ لِمَن أَحسَنَ إِلَيّ":"I thanked someone who was kind to me",
+  "وَفَّرتُ ماءً أو كَهرَباء":"I saved water or electricity",
+  "أَتمَمتُ واجِبي اليَوم":"I finished my homework today",
+  "أَجَبتُ مَن سَأَلَ عَن طَريق":"I answered someone asking for directions",
+  "صَلَّيتُ الفَجرَ في وَقتِه":"I prayed Fajr on time",
+  "أَطَعتُ مُعَلِّمي وأَكرَمتُه":"I obeyed and honored my teacher",
+  "نَوَيتُ نِيَّةً صالِحَة":"I made a good intention",
+  "حَمِدتُ اللهَ على نِعمَة":"I praised Allah for a blessing",
+  "اِستَغفَرتُ اللهَ":"I sought Allah's forgiveness"
+});
+</script>
+<script src="../scripts/i18n.js"></script>
+<script src="../../shared/nav-fix.js"></script>
+</body>
+</html>

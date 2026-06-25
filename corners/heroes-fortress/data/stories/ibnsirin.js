@@ -1,0 +1,56 @@
+/* data/stories/ibnsirin.js — Successors · Muhammad ibn Sirin — sources: صور من حياة التابعين · إسلام ويب · الدرر السنية · سير أعلام النبلاء */
+window.HISN_STORIES = window.HISN_STORIES || {};
+HISN_STORIES.ibnsirin = [
+  { icon:'🛑', scene:'madinah', character:'⚖️',
+    title:{ ar:'الورعُ الذي تركَ التجارة', en:'The Scruple That Left the Trade' },
+    pages:[
+      { scene:'madinah', character:'💼',
+        text:{ ar:'كان <b>محمدُ بنُ سيرين</b> تاجراً أميناً يبيعُ ويشتري في سوقِ البصرة. وكان شديدَ الحرصِ على أن يكونَ مالُه كلُّه حلالاً طيّباً، يبتعدُ عن كلِّ ما فيه شكٌّ أو شبهة.<br><br>وذاتَ مرّةٍ اشترى زيتاً (سمناً) ليبيعَه، فوجدَ فيه <b>فأرةً ميتة</b>! ففكّرَ ابنُ سيرين: الفأرةُ وقعتْ في الزيت، والزيتُ ربّما أصلُه من معصرةٍ فيها شبهة. فماذا فعل؟ مع أنّ بعضَ العلماءِ قد يُجيزونَ بيعَه بعدَ إزالةِ النجاسة، <b>تركَ الزيتَ كلَّه ولم يبِعْه</b> تورّعاً وخوفاً من الوقوعِ في الحرام، وخسِرَ مالَه! قال: لا أُحِبُّ أن يدخلَ بطونَ الناسِ شيءٌ أشكُّ فيه. هكذا كان ورعُه يفوقُ حرصَه على المال.',
+          en:'<b>Muhammad ibn Sirin</b> was an honest merchant who bought and sold in the market of Basra. He was extremely keen that all his wealth be lawful and pure, avoiding anything containing doubt or suspicion.<br><br>Once he bought oil (clarified butter) to sell and found in it a <b>dead mouse</b>! Ibn Sirin thought: the mouse fell into the oil, and the oil may have come from a press with something doubtful about it. What did he do? Although some scholars might permit selling it after removing the impurity, he <b>left all the oil and did not sell it</b> out of scruple and fear of falling into the forbidden — and he lost his money! He said: I do not like for something I doubt to enter people\u2019s stomachs. Thus his scruple outweighed his concern for wealth.' },
+        choice:{ q:{ar:'لماذا تركَ ابنُ سيرين الزيتَ ولم يبِعْه؟',en:'Why did Ibn Sirin leave the oil and not sell it?'},
+          opts:[
+            { t:{ar:'تورّعاً وخوفاً من إطعامِ الناسِ ما فيه شبهة',en:'Out of scruple and fear of feeding people something doubtful'},c:true,exp:{ar:'نعم! الورعُ تركُ ما يريبُك إلى ما لا يريبُك.',en:'Yes! Scruple is to leave what makes you doubt for what does not.'} },
+            { t:{ar:'لأنّه لا يحتاجُ المال',en:'Because he had no need for money'},c:false,exp:{ar:'لا، بل خسِرَ المالَ تورّعاً وخوفاً من الحرام.',en:'No — he lost the money out of scruple and fear of the forbidden.'} },
+            { t:{ar:'لأنّه نسيَه',en:'Because he forgot it'},c:false,exp:{ar:'لا، بل تركه عمداً تورّعاً.',en:'No — he left it deliberately out of scruple.'} },
+          ] } },
+    ],
+    quiz:[
+      { q:{ar:'ماذا كانت مهنةُ ابنِ سيرين؟',en:'What was Ibn Sirin\u2019s profession?'},
+        opts:[ {t:{ar:'تاجرٌ أمين',en:'An honest merchant'},c:true}, {t:{ar:'قائدُ جيش',en:'An army commander'},c:false}, {t:{ar:'شاعر',en:'A poet'},c:false} ] },
+      { q:{ar:'ماذا فعلَ حين شكَّ في حِلِّ الزيت؟',en:'What did he do when he doubted the oil\u2019s lawfulness?'},
+        opts:[ {t:{ar:'تركه ولم يبِعْه تورّعاً',en:'He left it and did not sell it out of scruple'},c:true}, {t:{ar:'باعه بسرعة',en:'He sold it quickly'},c:false}, {t:{ar:'خبّأه',en:'He hid it'},c:false} ] },
+      { q:{ar:'ما الورعُ الذي علّمنا إيّاه؟',en:'What scruple did he teach us?'},
+        opts:[ {t:{ar:'تركُ ما يريبُك إلى ما لا يريبُك',en:'Leaving what makes you doubt for what does not'},c:true}, {t:{ar:'حبُّ المال',en:'Love of money'},c:false}, {t:{ar:'الغش',en:'Cheating'},c:false} ] },
+    ],
+    moral:{ar:'الورعُ تركُ ما يريبُك إلى ما لا يريبُك، والتقيُّ يُقدِّمُ رضا اللهِ على المال.',en:'Scruple is leaving what makes you doubt for what does not; the pious put Allah\u2019s pleasure before wealth.'},
+    badge:{icon:'🛑',title:{ar:'وِسامُ الورع',en:'Badge of Scruple'}},
+    reflect:[ {ar:'هل تبتعدُ عمّا تشكُّ في حِلِّه ولو خسِرتَ شيئاً؟',en:'Do you avoid what you doubt is lawful even if you lose something?'}, {ar:'كيف تحرصُ على أن يكونَ ما تأكلُه وتكسبُه حلالاً؟',en:'How do you ensure what you eat and earn is lawful?'} ],
+    didYouKnow:[ {ar:'اشتُهِرَ ابنُ سيرين بالورعِ حتى قيلَ إنّه كان إذا ذُكِرَ الحرامُ تغيّرَ لونُه — المصدر: سير أعلام النبلاء',en:'Ibn Sirin was so famed for scruple that it was said his color would change when the forbidden was mentioned — Source: Siyar A\u2019lam an-Nubala\u2019'}, {ar:'قال النبيُّ ﷺ: «دعْ ما يريبُك إلى ما لا يريبُك» — المصدر: سنن الترمذي',en:'The Prophet ﷺ said: "Leave what makes you doubt for what does not" — Source: Sunan at-Tirmidhi'} ],
+  },
+  { icon:'🌙', scene:'mihrab', character:'😊',
+    title:{ ar:'يضحكُ نهاراً ويبكي ليلاً', en:'Laughing by Day, Weeping by Night' },
+    pages:[
+      { scene:'mihrab', character:'🌙',
+        text:{ ar:'كان <b>محمدُ بنُ سيرين</b> رجلاً بشوشاً لطيفاً مع الناسِ في النهار، يبتسمُ ويمزحُ ويُدخِلُ السرورَ على من حولَه. لكنّ الناسَ كانوا يتعجّبون: هذا الرجلُ الضاحكُ بالنهار، إذا جاءَ الليلُ <b>تحوّلَ حالُه تماماً</b>!<br><br>فإذا خلا بربِّه في جوفِ الليل، قامَ يُصلّي ويذكرُ اللهَ، و<b>بكى من خشيةِ الله</b> حتى الصباح، كأنّه رجلٌ آخر. كان قلبُه معلّقاً بالآخرة، يخافُ الحسابَ ويرجو رحمةَ الله. علّمنا ابنُ سيرين أنّ المؤمنَ يكونُ <b>طيّباً مرِحاً مع الناس</b>، وفي الوقتِ نفسِه <b>خاشعاً باكياً مع ربِّه</b>. فالبشاشةُ مع الخلقِ لا تُنافي الخشيةَ من الخالق. كان يجمعُ بين حُسنِ الخُلُقِ وصدقِ العبادة.',
+          en:'<b>Muhammad ibn Sirin</b> was a cheerful, gentle man with people by day — smiling, joking, and bringing joy to those around him. But people would marvel: this man who laughs by day, when night came <b>his state would change entirely</b>!<br><br>When he was alone with his Lord in the depths of night, he would rise to pray and remember Allah, and <b>weep from awe of Allah</b> until morning, as if he were another man. His heart was attached to the Hereafter; he feared the reckoning and hoped for Allah\u2019s mercy. Ibn Sirin taught us that a believer can be <b>kind and cheerful with people</b>, and at the same time <b>humble and tearful with his Lord</b>. Cheerfulness with creation does not contradict awe of the Creator. He combined good character with sincere worship.' },
+        choice:{ q:{ar:'ماذا نتعلّمُ من حالِ ابنِ سيرين نهاراً وليلاً؟',en:'What do we learn from Ibn Sirin\u2019s state by day and night?'},
+          opts:[
+            { t:{ar:'البشاشةُ مع الناسِ لا تُنافي الخشيةَ من الله',en:'Cheerfulness with people does not contradict awe of Allah'},c:true,exp:{ar:'نعم! المؤمنُ طيّبٌ مع الخلقِ خاشعٌ مع الخالق.',en:'Yes! A believer is kind with creation and humble with the Creator.'} },
+            { t:{ar:'العبوسُ دائماً',en:'Always frowning'},c:false,exp:{ar:'لا، بل كان بشوشاً مع الناسِ خاشعاً مع ربِّه.',en:'No — he was cheerful with people and humble with his Lord.'} },
+            { t:{ar:'ترکُ العبادة',en:'Abandoning worship'},c:false,exp:{ar:'لا، بل جمعَ بين حُسنِ الخُلُقِ والعبادة.',en:'No — he combined good character with worship.'} },
+          ] } },
+    ],
+    quiz:[
+      { q:{ar:'كيف كان ابنُ سيرين مع الناسِ نهاراً؟',en:'How was Ibn Sirin with people by day?'},
+        opts:[ {t:{ar:'بشوشاً لطيفاً',en:'Cheerful and gentle'},c:true}, {t:{ar:'عبوساً',en:'Frowning'},c:false}, {t:{ar:'غاضباً',en:'Angry'},c:false} ] },
+      { q:{ar:'ماذا كان يفعلُ في جوفِ الليل؟',en:'What did he do in the depths of night?'},
+        opts:[ {t:{ar:'يُصلّي ويبكي خشيةَ الله',en:'He prayed and wept from awe of Allah'},c:true}, {t:{ar:'ينامُ فقط',en:'He just slept'},c:false}, {t:{ar:'يلهو',en:'He played around'},c:false} ] },
+      { q:{ar:'ما القاعدةُ التي علّمنا إيّاها؟',en:'What rule did he teach us?'},
+        opts:[ {t:{ar:'حُسنُ الخُلُقِ مع الناسِ والخشيةُ مع الله',en:'Good character with people, awe with Allah'},c:true}, {t:{ar:'العبوسُ علامةُ التقوى',en:'Frowning is a sign of piety'},c:false}, {t:{ar:'لا داعيَ للعبادة',en:'No need for worship'},c:false} ] },
+    ],
+    moral:{ar:'المؤمنُ يجمعُ بين حُسنِ الخُلُقِ والبشاشةِ مع الناسِ، والخشيةِ والعبادةِ الصادقةِ مع الله.',en:'A believer combines good character and cheerfulness with people, with reverence and sincere worship of Allah.'},
+    badge:{icon:'🌙',title:{ar:'وِسامُ البشاشةِ والخشية',en:'Badge of Cheer & Reverence'}},
+    reflect:[ {ar:'هل تكونُ بشوشاً مع الناسِ خاشعاً في عبادتِك؟',en:'Are you cheerful with people and humble in your worship?'}, {ar:'كيف تجعلُ لك خلوةً مع اللهِ تذكرُه فيها؟',en:'How do you make a private time with Allah to remember Him?'} ],
+    didYouKnow:[ {ar:'اشتُهِرَ عن ابنِ سيرين جمعُه بين المزاحِ اللطيفِ نهاراً والعبادةِ والبكاءِ ليلاً — المصدر: صور من حياة التابعين',en:'Ibn Sirin was known for combining gentle humor by day with worship and weeping by night — Source: Suwar min Hayat at-Tabi\u2019in'}, {ar:'كان ابنُ سيرين ثقةً ثبتاً في الحديث، يتحرّى الدقّةَ في النقلِ عن النبيِّ ﷺ — المصدر: سير أعلام النبلاء',en:'Ibn Sirin was a trustworthy, precise narrator who sought accuracy in transmitting from the Prophet ﷺ — Source: Siyar A\u2019lam an-Nubala\u2019'} ],
+  },
+];

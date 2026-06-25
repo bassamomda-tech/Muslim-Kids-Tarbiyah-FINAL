@@ -1,0 +1,56 @@
+/* data/stories/saidzayd.js — Heroes · Sa'id ibn Zayd — sources: صور من حياة الصحابة (الباشا) · إسلام ويب · الدرر السنية · البداية والنهاية */
+window.HISN_STORIES = window.HISN_STORIES || {};
+HISN_STORIES.saidzayd = [
+  { icon:'📖', scene:'madinah', character:'📜',
+    title:{ ar:'الصفحةُ التي غيّرتْ عمر', en:'The Page That Changed Umar' },
+    pages:[
+      { scene:'madinah', character:'📜',
+        text:{ ar:'كان <b>سعيدُ بنُ زيد</b> وزوجتُه <b>فاطمةُ بنتُ الخطّاب</b> (أختُ عمر) قد أسلما سرّاً في أوّلِ الإسلام. وفي يومٍ مشهور، خرجَ <b>عمرُ بنُ الخطّاب</b> غاضباً مُصلِتاً سيفَه يريدُ أذى النبيِّ ﷺ، فقيلَ له: ابدأْ بأهلِ بيتِك! أختُك وزوجُها قد أسلما!<br><br>فذهبَ إليهما وهما يقرآنِ صحيفةً فيها <b>سورةُ طه</b>. فلمّا دخلَ أخفياها، فلمّا عرفَ غضِبَ وضربَ، فلمّا رأى الدمَ على أختِه ندِمَ ولانَ قلبُه وقال: <b>أرُوني الكتابَ الذي تقرؤون</b>. فلمّا قرأ: <b>﴿ إِنَّنِي أَنَا اللَّهُ لَا إِلَٰهَ إِلَّا أَنَا فَاعْبُدْنِي ﴾</b> اهتزَّ قلبُه وقال: دُلّوني على محمّد! فأسلمَ عمر، وكان بيتُ سعيدٍ سببَ هدايتِه.',
+          en:'<b>Sa\u2019id ibn Zayd</b> and his wife <b>Fatima bint al-Khattab</b> (Umar\'s sister) had secretly embraced Islam in its early days. On a famous day, <b>Umar ibn al-Khattab</b> set out furious, sword drawn, intending harm to the Prophet ﷺ. He was told: start with your own household! Your sister and her husband have become Muslim!<br><br>He went to them as they were reading a page containing <b>Surat Ta-Ha</b>. They hid it when he entered; when he learned the truth he struck out in anger, but when he saw blood on his sister he regretted it and his heart softened. He said: <b>show me the writing you are reading</b>. When he read: <b>"Indeed, I am Allah. There is no god but Me, so worship Me"</b> his heart trembled and he said: take me to Muhammad! Umar embraced Islam — and Sa\u2019id\'s home was a cause of his guidance.' },
+        choice:{ q:{ar:'ما الذي لانَ به قلبُ عمرَ في بيتِ سعيد؟',en:'What softened Umar\'s heart in Sa\u2019id\'s home?'},
+          opts:[
+            { t:{ar:'سماعُه آياتِ القرآنِ (سورةَ طه)',en:'Hearing the verses of the Quran (Surat Ta-Ha)'},c:true,exp:{ar:'نعم! كلامُ اللهِ يُغيّرُ أقسى القلوب، فأسلمَ عمر.',en:'Yes! Allah\'s words change the hardest hearts, and Umar believed.'} },
+            { t:{ar:'هديّةٌ من سعيد',en:'A gift from Sa\u2019id'},c:false,exp:{ar:'لا، بل آياتُ القرآنِ هي التي أثّرتْ فيه.',en:'No — it was the verses of the Quran that moved him.'} },
+            { t:{ar:'تهديدُ سعيدٍ له',en:'Sa\u2019id threatening him'},c:false,exp:{ar:'لا، بل تأثّرَ بكلامِ اللهِ ولينِ القلب.',en:'No — he was moved by Allah\'s words and a softened heart.'} },
+          ] } },
+    ],
+    quiz:[
+      { q:{ar:'من زوجةُ سعيدِ بنِ زيد؟',en:'Who was Sa\u2019id ibn Zayd\'s wife?'},
+        opts:[ {t:{ar:'فاطمةُ بنتُ الخطّابِ أختُ عمر',en:'Fatima bint al-Khattab, Umar\'s sister'},c:true}, {t:{ar:'خديجة',en:'Khadija'},c:false}, {t:{ar:'عائشة',en:'A\u2019isha'},c:false} ] },
+      { q:{ar:'أيُّ سورةٍ كانا يقرآنِها؟',en:'Which surah were they reading?'},
+        opts:[ {t:{ar:'سورةُ طه',en:'Surat Ta-Ha'},c:true}, {t:{ar:'سورةُ الفيل',en:'Surat al-Fil'},c:false}, {t:{ar:'سورةُ الناس',en:'Surat an-Nas'},c:false} ] },
+      { q:{ar:'ماذا حدثَ بعدَ أن قرأ عمرُ الآيات؟',en:'What happened after Umar read the verses?'},
+        opts:[ {t:{ar:'أسلمَ وذهبَ إلى النبيِّ ﷺ',en:'He embraced Islam and went to the Prophet ﷺ'},c:true}, {t:{ar:'هربَ',en:'He fled'},c:false}, {t:{ar:'كفرَ أكثر',en:'He disbelieved more'},c:false} ] },
+    ],
+    moral:{ar:'كلامُ اللهِ يُلِينُ أقسى القلوبِ ويهدي مَن أرادَ اللهُ به خيراً.',en:'Allah\'s words soften the hardest hearts and guide whomever Allah wills good for.'},
+    badge:{icon:'📖',title:{ar:'وِسامُ صفحةِ الهداية',en:'Badge of the Page of Guidance'}},
+    reflect:[ {ar:'متى لمستْ آيةٌ من القرآنِ قلبَك؟',en:'When has a verse of the Quran touched your heart?'}, {ar:'كيف تجعلُ بيتَك بيتَ خيرٍ وقرآن؟',en:'How do you make your home a home of good and Quran?'} ],
+    didYouKnow:[ {ar:'كان أبو سعيدٍ زيدُ بنُ عمرٍو يرفضُ عبادةَ الأصنامِ ويبحثُ عن دينِ إبراهيمَ قبلَ البعثة — المصدر: صحيح البخاري',en:'Sa\u2019id\'s father Zayd ibn Amr rejected idol worship and sought the religion of Ibrahim before the message came — Source: Sahih al-Bukhari'}, {ar:'كان إسلامُ عمرَ عزّاً للمسلمين أعلنوا به صلاتَهم عندَ الكعبة — المصدر: البداية والنهاية',en:'Umar\'s Islam was a strength for the Muslims, who then prayed openly at the Ka\u2019ba — Source: Al-Bidaya wa an-Nihaya'} ],
+  },
+  { icon:'🤲', scene:'desert', character:'⚖️',
+    title:{ ar:'دعوةُ المظلومِ الصادق', en:'The Prayer of the Wronged and Truthful' },
+    pages:[
+      { scene:'desert', character:'⚖️',
+        text:{ ar:'كان <b>سعيدُ بنُ زيد</b> صادقاً تقيّاً، وكان <b>مستجابَ الدعوة</b>. في آخرِ عمرِه ادّعتِ امرأةٌ اسمُها <b>أَرْوى</b> أنّ سعيداً أخذَ شيئاً من أرضِها ظُلماً، وشكتْه إلى الناس — وهو بريءٌ صادق!<br><br>فلم ينتقمْ سعيدٌ لنفسِه، بل قال: <b>«اللّهُمَّ إن كانت كاذبةً فأعمِ بصرَها، واجعلْ موتَها في أرضِها»</b> ثقةً بأنّ اللهَ ينصرُ المظلوم. فاستجابَ اللهُ دعاءَه: <b>عَمِيَتْ أَرْوى</b>، وبينما هي تمشي في أرضِها سقطتْ في حفرةٍ فماتتْ فيها! علّمنا سعيدٌ أنّ الصادقَ المظلومَ سلاحُه الدعاء، وأنّ اللهَ لا يُضيعُ الحق.',
+          en:'<b>Sa\u2019id ibn Zayd</b> was truthful and pious, and his <b>prayers were answered</b>. Late in his life a woman named <b>Arwa</b> claimed Sa\u2019id had wrongfully taken part of her land, and complained about him to the people — while he was innocent and truthful!<br><br>Sa\u2019id did not avenge himself. Instead he said: <b>"O Allah, if she is lying, take away her sight and make her death be in her land,"</b> trusting that Allah supports the wronged. Allah answered his prayer: <b>Arwa went blind</b>, and while walking in that very land she fell into a pit and died in it! Sa\u2019id taught us that the truthful, wronged person\'s weapon is du\'a, and that Allah never lets the truth be lost.' },
+        choice:{ q:{ar:'ماذا فعلَ سعيدٌ حين اتُّهِمَ ظُلماً؟',en:'What did Sa\u2019id do when wrongly accused?'},
+          opts:[
+            { t:{ar:'لجأَ إلى اللهِ بالدعاءِ ولم ينتقمْ بنفسِه',en:'He turned to Allah in du\'a and did not avenge himself'},c:true,exp:{ar:'نعم! المؤمنُ المظلومُ يرفعُ أمرَه إلى الله.',en:'Yes! The wronged believer raises his affair to Allah.'} },
+            { t:{ar:'ضربَ المرأة',en:'He struck the woman'},c:false,exp:{ar:'لا، بل دعا اللهَ بثقةٍ أنّه ينصرُ المظلوم.',en:'No — he prayed to Allah trusting He supports the wronged.'} },
+            { t:{ar:'أخذَ أرضَها فعلاً',en:'He actually took her land'},c:false,exp:{ar:'لا، بل كان بريئاً صادقاً.',en:'No — he was innocent and truthful.'} },
+          ] } },
+    ],
+    quiz:[
+      { q:{ar:'بِمَ وُصِفَ سعيدٌ في دعائِه؟',en:'How was Sa\u2019id described regarding his prayers?'},
+        opts:[ {t:{ar:'مستجابُ الدعوة',en:'His prayers were answered'},c:true}, {t:{ar:'لا يُجابُ له دعاء',en:'His prayers were unanswered'},c:false}, {t:{ar:'لا يدعو',en:'He never prayed'},c:false} ] },
+      { q:{ar:'ماذا فعلَ بدلَ أن ينتقمَ لنفسِه؟',en:'What did he do instead of avenging himself?'},
+        opts:[ {t:{ar:'دعا اللهَ ولجأَ إليه',en:'He prayed to and relied on Allah'},c:true}, {t:{ar:'حاربَها',en:'He fought her'},c:false}, {t:{ar:'سكتَ وتركَ حقَّه',en:'He stayed silent and abandoned his right'},c:false} ] },
+      { q:{ar:'ماذا نتعلّمُ من القصّة؟',en:'What do we learn from the story?'},
+        opts:[ {t:{ar:'اللهُ ينصرُ الصادقَ المظلوم',en:'Allah supports the truthful, wronged person'},c:true}, {t:{ar:'الكذبُ ينفع',en:'Lying benefits'},c:false}, {t:{ar:'الانتقامُ بالنفس',en:'Take revenge yourself'},c:false} ] },
+    ],
+    moral:{ar:'سلاحُ المظلومِ الصادقِ دعاؤه، واللهُ لا يُضيعُ الحقَّ ولو بعدَ حين.',en:'The weapon of the truthful, wronged person is du\'a — and Allah never lets the truth be lost, even after a while.'},
+    badge:{icon:'🤲',title:{ar:'وِسامُ الدعوةِ المستجابة',en:'Badge of the Answered Prayer'}},
+    reflect:[ {ar:'إذا ظُلِمتَ، هل تلجأُ إلى اللهِ بالدعاء؟',en:'When wronged, do you turn to Allah in du\'a?'}, {ar:'هل تثقُ أنّ اللهَ ينصرُ الصادقين؟',en:'Do you trust that Allah supports the truthful?'} ],
+    didYouKnow:[ {ar:'قصّةُ سعيدٍ وأَرْوى ودعوتُه عليها ثابتةٌ في صحيحِ مسلم — المصدر: صحيح مسلم',en:'The account of Sa\u2019id, Arwa, and his prayer against her is established in Sahih Muslim — Source: Sahih Muslim'}, {ar:'كان سعيدٌ يكرهُ أن يُمدَحَ أو يتقدّمَ، تواضعاً وزهداً — المصدر: صور من حياة الصحابة',en:'Sa\u2019id disliked being praised or put forward, out of humility and detachment — Source: Suwar min Hayat as-Sahaba'} ],
+  },
+];

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="color-scheme" content="dark">
+<title>The Successors — Art Prompts</title>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&family=Nunito:wght@400;600;700;800&display=swap">
+<link rel="stylesheet" href="../../../corners/faith-minaret/rihla-prompts.css">
+</head>
+<body dir="rtl">
+<header class="header">
+  <div class="brand"><span>🍌</span><span class="ar-only">أوصاف رسومات «التابعونَ ومَن بعدهم»</span><span class="en-only">The Successors — Art Prompts</span></div>
+  <div class="hactions">
+    <div class="lang-switch"><button id="btnEn" onclick="setLang('en')">EN</button><button id="btnAr" class="active" onclick="setLang('ar')">عربي</button></div>
+    <button class="copyall" id="copyAllBtn" onclick="copyAll()">📋 <span class="ar-only">انسخ الكل</span><span class="en-only">Copy all</span></button>
+    <a class="back" href="Successors Book.html">📕 <span class="ar-only">الكتاب</span><span class="en-only">Book</span></a>
+  </div>
+</header>
+<div class="wrap">
+  <div class="hero"><div class="ic">🎨</div>
+    <h1><span class="ar-only">أوصاف الرسومات — بترتيب صفحات الكتاب</span><span class="en-only">Art Prompts — in book-page order</span></h1>
+    <p><span class="ar-only">كل صفّ يقابل صفحةً في الكتاب. وَلِّد الرسمة عبر Nano Banana، ثم اسحبها إلى الإطار في الصفحة نفسها.</span><span class="en-only">Each row matches a page in the book. Generate the art in Nano Banana, then drop it into the frame on that same page.</span></p>
+  </div>
+  <div class="howto">
+    <span class="ar-only">⚠️ <b>لا تُصوّر الصحابةَ ولا أيَّ شخصيةٍ مقدّسة</b> — عبِّر بالمكانِ والرموزِ والأشياءِ والنورِ فقط. والنصُّ العربيُّ قد يخرج مشوّهاً — وَلِّد ٢–٣ نسخ.</span>
+    <span class="en-only">⚠️ <b>Never depict the companions or any sacred figure</b> — use settings, symbols, objects and light only. Arabic text may distort — generate a few versions.</span>
+    <div class="stylerow">
+      <span class="ar-only" style="color:var(--muted);font-size:.84rem">النمط الموحّد:</span><span class="en-only" style="color:var(--muted);font-size:.84rem">House styles:</span>
+      <button class="stylebtn" id="styleBtn" onclick="copyStyle()">📋 <span class="ar-only">نمط القصة</span><span class="en-only">Story style</span></button>
+      <button class="stylebtn" id="lineBtn" onclick="copyLine()">📋 <span class="ar-only">نمط التلوين</span><span class="en-only">Coloring style</span></button>
+    </div>
+  </div>
+  <div class="count" id="count"></div>
+  <div id="results"></div>
+</div>
+<div class="toast" id="toast"></div>
+<script>window.HISN=window.HISN||{};HISN.chapters=HISN.chapters||{};</script>
+<script src="../../../corners/heroes-fortress/data/chapters/uways.js"></script>
+<script src="../../../corners/heroes-fortress/data/chapters/hasanbasri.js"></script>
+<script src="../../../corners/heroes-fortress/data/chapters/ibnsirin.js"></script>
+<script src="../../../corners/heroes-fortress/data/chapters/saidjubayr.js"></script>
+<script src="../../../corners/heroes-fortress/data/chapters/umar2.js"></script>
+<script src="../../../corners/heroes-fortress/data/chapters/tawus.js"></script>
+<script src="../../../corners/heroes-fortress/data/chapters/zaynabidin.js"></script>
+<script src="../../../corners/heroes-fortress/data/chapters/khawlani.js"></script>
+<script src="../../../corners/heroes-fortress/chapter-core.js"></script>
+<script>window.RIHLA={key:"tabieen",ids:["uways","hasanbasri","ibnsirin","saidjubayr","umar2","tawus","zaynabidin","khawlani"],titleAr:"التابعونَ ومَن بعدهم",titleEn:"The Successors",coverPrompt:"A beautiful children's-book COVER for «التابعونَ» (The Successors): glowing lanterns and open books of light on the steps of a grand mosque library at dawn. ABSOLUTELY NO people or figures, only symbols and light. Warm and scholarly. "+window.ChapterCore.STYLE};</script>
+<script src="../../../corners/faith-minaret/rihla-prompts.js"></script>
+</body></html>

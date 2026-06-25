@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta name="color-scheme" content="dark">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>رحلة جنود النور | Journey of the Soldiers of Light</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Amiri+Quran&family=Tajawal:wght@400;500;700;800;900&family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+<link rel="stylesheet" href="yaqeen.css">
+<style>
+/* ── Soldiers-of-Light theme: midnight indigo + luminous gold ── */
+:root{
+  --primary:#8E7CC3; --primary-dark:#71619F;
+  --bg1:#0B0E2A; --bg2:#141B45; --bg3:#1B2660;
+  --gold:#F2D88A; --gold-soft:#F8E7B0;
+  --text:#F0F1FA; --muted:rgba(240,241,250,.74);
+  --line:rgba(242,216,138,.28);
+}
+body{background:
+  
+    radial-gradient(1300px 760px at 78% -12%, rgba(142,124,195,.32), transparent 58%),
+    radial-gradient(1000px 620px at 0% 100%, rgba(242,216,138,.12), transparent 55%),
+    linear-gradient(165deg,var(--bg1),var(--bg2) 55%,var(--bg3));
+  background-attachment:fixed;
+}
+.guide .who{background:linear-gradient(160deg,#8E7CC3,#5B4E8C)}
+.coll-cert{background:linear-gradient(160deg,rgba(242,216,138,.16),rgba(142,124,195,.20))!important}
+.lang button.active{color:#0B0E2A}
+.stampbtn{color:#0B0E2A}
+</style>
+<script>(function(){try{var l=localStorage.getItem('bunyanLang');if(l==='en'){var h=document.documentElement;h.dir='ltr';h.lang='en';}}catch(e){}})();</script>
+<style id="__antiflash">html{background:#0B0E2A;color-scheme:dark}</style>
+</head>
+<body>
+
+<!-- ═══ HEADER ═══ -->
+<header class="hdr">
+  <a class="back" href="aqeeda.html">
+    <span>↩️</span><span class="lng-ar">المنارة</span><span class="lng-en">Minaret</span>
+  </a>
+  <span class="hdr-badge"><span class="l">✨</span><span class="lng-ar">جُنودُ النّور</span><span class="lng-en">Soldiers of Light</span></span>
+  <div class="lang">
+    <button data-lang="en">EN</button>
+    <button data-lang="ar" class="active">عربي</button>
+  </div>
+</header>
+
+<!-- ═══ INTRO ═══ -->
+<section class="intro">
+  <h1>
+    <span class="lng-ar">✨ رِحلةُ <span class="hl">جُنودِ النّور</span> — الإيمانُ بِالمَلائِكة</span>
+    <span class="lng-en">✨ Journey of the <span class="hl">Soldiers of Light</span> — Belief in the Angels</span>
+  </h1>
+  <p class="sub">
+    <span class="lng-ar">عَشرُ مَحطّاتٍ نَكتَشِفُ فيها أسرارَ المَلائِكة: مِمَّ خُلِقوا، وكَم هُم عِظام، ومَن جِبريلُ وميكائيلُ وإسرافيل، ومَنِ الحَفَظةُ والكِرامُ الكاتِبون، وكَيفَ يُحِبّونَنا ويَدعونَ لَنا، وكَيفَ نُحِسُّ بِهِم ونُحِبُّهُم — حتّى نَزدادَ تَعظيماً لِمَن خَلَقَهُم سُبحانَه.</span>
+    <span class="lng-en">Ten stations discovering the secrets of the angels: what they were created from, how mighty they are, who Jibril, Mika'il, and Israfil are, who the guardians and noble scribes are, how they love us and pray for us, and how we sense and love them — so our hearts magnify their Creator even more.</span>
+  </p>
+  <div class="guide">
+    <div class="who">🧑</div>
+    <div class="say">
+      <span class="lng-ar">أنا «يوسُف»، رَفيقُك. سنَفتَحُ اللَّيلةَ نافِذةً على عالَمٍ مِن نورٍ يَعيشُ حَولَنا ولا نَراه… هَيّا! ✨</span>
+      <span class="lng-en">I'm Yusuf, your companion. Tonight we'll open a window onto a world of light living unseen all around us… let's go! ✨</span>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ METER ═══ -->
+<div class="pbar-wrap">
+  <div class="pbar-top">
+    <span><span class="lng-ar">مِيزانُ النّور</span><span class="lng-en">Light Meter</span></span>
+    <span class="stars" id="pCount">0 / 10</span>
+  </div>
+  <div class="pbar"><div class="pbar-fill" id="pFill"></div></div>
+  <div class="meter-label" id="meterLabel"></div>
+</div>
+
+<!-- ═══ COLLECTIONS ═══ -->
+<div class="collections">
+  <div class="coll-card" id="collStickers"></div>
+  <div class="coll-card" id="collNames"></div>
+  <div class="coll-card" id="collKeys"></div>
+  <div class="coll-card coll-cert" id="collCert"></div>
+</div>
+
+<!-- ═══ MAP ═══ -->
+<div class="map" id="map"><div class="road"></div></div>
+
+<footer class="foot">
+  <span class="lng-ar">صُنع بِحُبٍّ 🧡 لِأطفالِ الأُمّة — <b>رِحلةُ جُنودِ النّور</b> · منارةُ العقيدة · على نَهجِ أهلِ السُّنّة</span>
+  <span class="lng-en">Made with 🧡 for the children of the Ummah — <b>Journey of the Soldiers of Light</b> · Faith Minaret · Upon the way of Ahl al-Sunnah</span>
+</footer>
+
+<!-- ═══ READER ═══ -->
+<div class="reader" id="reader">
+  <div class="sheet">
+    <div class="r-top">
+      <button class="r-close" id="rClose">✕</button>
+      <span class="r-count" id="rCount"></span>
+      <div class="r-arrows">
+        <button id="rPrev">‹</button>
+        <button id="rNext">›</button>
+      </div>
+    </div>
+    <div id="rBody"></div>
+  </div>
+</div>
+
+<!-- ═══ COLLECTIONS DRAWER ═══ -->
+<div class="drawer" id="drawer">
+  <div class="drawer-sheet">
+    <div class="dw-top">
+      <h3 id="dwTitle"></h3>
+      <button class="r-close" id="dwClose">✕</button>
+    </div>
+    <div class="dw-body" id="dwBody"></div>
+  </div>
+</div>
+
+<!-- ═══ CERTIFICATE ═══ -->
+<div class="cert-overlay" id="certOverlay">
+  <div class="cert-tools">
+    <input id="certName" type="text" placeholder="✍️ اكتُب اسمَك هنا / Type your name" maxlength="40">
+    <button class="cprint" id="certPrint">🖨️ <span class="lng-ar">اطبَع</span><span class="lng-en">Print</span></button>
+    <button class="cclose" id="certClose">✕</button>
+  </div>
+  <div class="certificate" id="certBox"></div>
+</div>
+
+<div id="confetti"></div>
+<div class="toast" id="toast"></div>
+
+<script defer src="nav-fix.js"></script>
+<script src="data/malaika-stations.js"></script>
+<script>
+window.RIHLA_CFG = {
+  stations: window.MALAIKA_STATIONS,
+  prefix: 'malaika',
+  confetti: ['#F2D88A','#8E7CC3','#5B7FD4','#1ABC9C','#FFFFFF','#C0905C'],
+  T: {
+    finishTitle:{ar:'وِسامُ جُنودِ النّور',en:'Soldiers of Light Medal'},
+    meterStart:{ar:'ابدَأ الرِّحلة… كُلُّ مَحطّةٍ تَكشِفُ سِرّاً مِن أسرارِ النّور',en:'Begin the journey… each station reveals a secret of the light'},
+    meterMid:{ar:'أحسَنت! أضَأتَ {n} مِن {t} مَحطّاتِ النّور',en:'Great! You lit {n} of {t} stations of light'},
+    meterDone:{ar:'🎉 اكتَمَلَ النّور! عَرَفتَ جُنودَ اللهِ فازدَدتَ حُبّاً لِمَلِكِهِم',en:'🎉 The light is complete! You met Allah\'s soldiers and grew in love for their King'},
+    coll1:{icon:'🎖️',title:{ar:'أوسِمةُ النّور',en:'Light Badges'},unit:{ar:'وِسام',en:'badges'}},
+    coll2:{icon:'🪽',title:{ar:'بِطاقاتُ المَلائِكة',en:'Angel Cards'},unit:{ar:'بِطاقة',en:'cards'}},
+    coll3:{title:{ar:'مَفاتيحُ النّور',en:'Keys of Light'}},
+    collCert:{title:{ar:'شَهادةُ النّور',en:'Light Diploma'}},
+    kick:{ar:'المَحطّة {n} مِن {t}',en:'Station {n} of {t}'},
+    hLogic:{ar:'الدَّليلُ المُنير',en:'The Illuminating Proof'},
+    hMyth:{ar:'بَطاقةُ تَصحيحِ الصّورة',en:'Picture-Fixer Card'},
+    hCard:{ar:'بِطاقةٌ مِن جُنودِ النّور',en:'A Soldiers-of-Light Card'},
+    hKey:{ar:'مِفتاحُ النّور',en:'Key of Light'},
+    hJournal:{ar:'دَفتَرُ النّور',en:'Light Journal'},
+    journalPh:{ar:'اكتُب ما أضاءَ قَلبَكَ اليوم…',en:'Write what lit up your heart today…'},
+    stampDo:{ar:'✨ أضِئ هذه المَحطّة',en:'✨ Light up this station'},
+    stampDone:{ar:'✓ مَحطّةٌ مُضيئة',en:'✓ Station lit'},
+    drawer1:{ar:'🎖️ أوسِمةُ النّور',en:'🎖️ Light Badges'},
+    drawer2:{ar:'🪽 بِطاقاتُ المَلائِكة',en:'🪽 Angel Cards'},
+    drawer3:{ar:'🔑 مَفاتيحُ النّور',en:'🔑 Keys of Light'},
+    certSeal:'✨',
+    certKick:{ar:'رِحلةُ جُنودِ النّور · منارةُ العقيدة',en:'Journey of the Soldiers of Light · Faith Minaret'},
+    certTitle:{ar:'شَهادةُ القَلبِ المُستَنير',en:'Certificate of the Enlightened Heart'},
+    certStatement:{
+      ar:'أتَمَّ هذا القَلبُ الصَّغيرُ <b>{n}</b> مِن {t} مَحطّاتٍ في رِحلةِ جُنودِ النّور، فَعَرَفَ — على نَهجِ أهلِ السُّنّةِ والجَماعة — أنَّ المَلائِكةَ خَلقٌ مِن نورٍ لا يَعصونَ اللهَ أبَداً، يَحرُسونَهُ ويَكتُبونَ حَسَناتِهِ ويَدعونَ لَهُ، فامتَلَأ قَلبُهُ حَياءً ومَسؤوليّةً ومَحَبّةً وتَعظيماً لِخالِقِهِم سُبحانَه.',
+      en:'This young heart completed <b>{n}</b> of {t} stations in the Journey of the Soldiers of Light, learning — upon the way of Ahl al-Sunnah — that the angels are creatures of light who never disobey Allah, who guard him, record his good deeds, and pray for him; so his heart filled with modesty, responsibility, love, and reverence for their Creator.'},
+  }
+};
+</script>
+<script src="rihla-engine.js"></script>
+<script defer src="../quiz/quiz-engine.js"></script>
+<script defer src="../shared/mk-system.js"></script>
+<script defer src="../shared/mk-journeys.js"></script>
+<script defer src="../shared/mk-bag.js"></script>
+<script defer src="../shared/mk-train.js"></script>
+</body>
+</html>

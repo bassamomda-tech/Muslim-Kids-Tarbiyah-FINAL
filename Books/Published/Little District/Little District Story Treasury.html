@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="dark">
+<title>كنزُ القصص · حيّنا الصغير | Story Treasury</title>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&family=Nunito:wght@400;600;700;800&family=Amiri:wght@400;700&display=swap">
+<link rel="stylesheet" href="stories-assets/yaqeen-book.css">
+<link rel="stylesheet" href="stories-assets/stories-treasury.css">
+<style>
+  .pub-print{position:fixed;top:16px;inset-inline-end:16px;z-index:60;background:linear-gradient(135deg,#D4A017,#c79518);color:#10243d;border:none;border-radius:2rem;padding:11px 22px;font-weight:900;font-family:'Tajawal',sans-serif;font-size:.95rem;cursor:pointer;box-shadow:0 8px 22px rgba(0,0,0,.45)}
+  .pub-link{position:fixed;top:16px;inset-inline-start:16px;z-index:60;text-decoration:none;background:rgba(10,37,64,.85);color:#FEF5DC;border:1px solid rgba(212,160,23,.45);border-radius:2rem;padding:9px 16px;font-weight:800;font-size:.82rem;font-family:'Tajawal',sans-serif}
+  @media print{.pub-print,.pub-link{display:none!important}}
+</style>
+</head>
+<body dir="rtl">
+<a class="pub-link" href="index.html">← المكتبة · Library</a>
+<button class="pub-print" onclick="window.print()">🖨️ احفظ PDF</button>
+<div id="stage"><div id="book"></div></div>
+
+<!-- corner story data (self-contained copies) -->
+<script src="stories-assets/_index.js"></script>
+<script src="stories-assets/truth.js"></script>
+<script src="stories-assets/trust.js"></script>
+<script src="stories-assets/courage.js"></script>
+<script src="stories-assets/ihsan.js"></script>
+<script src="stories-assets/tongue.js"></script>
+<script src="stories-assets/pardon.js"></script>
+<script src="stories-assets/treasury-art.js"></script>
+
+<script>
+  window.STORYBOOK = {
+    ids: ['truth','trust','courage','ihsan','tongue','pardon'],
+    titleAr: 'كنزُ القصص',
+    titleEn: 'The Story Treasury',
+    kicker: 'حيّنا الصغير · OUR LITTLE DISTRICT',
+    subAr: 'كلُّ قصةٍ كاملةً ومُصوَّرة — من أخلاقِ حيِّنا الصغير، لكلِّ العائلة.',
+    subEn: 'Every story in full and illustrated — from the manners of Our Little District, for the whole family.',
+    certAr: 'صديقُ القصص',
+    certEn: 'Friend of the Stories',
+    ageAr: 'كتابُ قصصٍ مُصوَّر · لكلِّ العائلة'
+  };
+</script>
+<script src="stories-assets/stories-treasury.js"></script>
+</body>
+</html>

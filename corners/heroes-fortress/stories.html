@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" data-theme="dusk" data-path="rampart">
+<head>
+<meta name="color-scheme" content="dark">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+<title>قصص الأنبياء · حِصن الأبطال</title>
+<meta name="theme-color" content="#0C0A1C">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Tajawal:wght@400;500;700;800;900&family=Amiri:wght@400;700&family=Nunito:wght@600;700;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+<link rel="stylesheet" href="styles/base.css">
+<link rel="stylesheet" href="styles/stories.css">
+<script>(function(){try{var p=JSON.parse(localStorage.getItem('hisn-prefs2')||'{}');var r=document.documentElement;if(p.theme)r.dataset.theme=p.theme;if(p.path)r.dataset.path=p.path;}catch(e){}})();</script>
+<style id="__antiflash">html{background:#0A2540;color-scheme:dark}</style>
+</head>
+<body>
+<div class="stars" id="stars"></div>
+
+<header class="topbar">
+  <a class="tb-back" id="backLink" href="era.html?era=prophets"><span>←</span><span id="backTxt">المرحلة</span></a>
+  <div class="brand">
+    <span class="brand-badge" id="brandBadge"></span>
+    <div><h1 id="brandName">قصص الأنبياء</h1><p class="ar-only" id="brandSubAr">المرحلة الأولى · الأنبياء</p><p class="en-only" id="brandSubEn">Era I · Prophets</p></div>
+  </div>
+  <div class="tb-right">
+    <div class="xp-wrap"><div class="xp-top"><span class="lvl" id="lvl">LVL 1</span><span class="xp" id="xp">0 XP</span></div><div class="xp-track"><div class="xp-fill" id="xpfill"></div></div></div>
+    <div class="lang"><button id="langAr" class="on" onclick="setLang('ar')">عربي</button><button id="langEn" onclick="setLang('en')">EN</button></div>
+  </div>
+</header>
+
+<div id="storyStage">
+  <div class="st-hero" id="stHero"></div>
+  <div class="st-track-wrap">
+    <div class="st-track-lbl" id="stTrackLbl"></div>
+    <div class="st-track"><i id="stTrackFill"></i></div>
+  </div>
+  <div class="story-grid" id="storyGrid"></div>
+</div>
+
+<!-- ═══ STORY READER MODAL ═══ -->
+<div id="storyReader">
+  <div class="sr-box" style="--hc:#E67E22">
+    <button class="sr-x" onclick="StoryReader.close()" aria-label="close">✕</button>
+    <div id="srProgress"></div>
+    <div class="sr-scene" id="srScene"></div>
+    <div id="srPage"></div>
+    <div id="srFoot"></div>
+  </div>
+</div>
+
+<script src="engine/icons.js"></script>
+<script src="engine/svg.js"></script>
+<script src="data/index.js"></script>
+<script src="engine/progress.js"></script>
+<script src="engine/story-reader.js"></script>
+<script src="engine/stories.js"></script>
+<script defer src="../shared/mk-system.js"></script>
+<script defer src="../shared/mk-journeys.js"></script>
+<script defer src="../shared/mk-bag.js"></script>
+<script defer src="../shared/mk-train.js"></script>
+<script defer src="../shared/nav-fix.js"></script>
+</body>
+</html>

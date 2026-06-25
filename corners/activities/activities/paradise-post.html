@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>ساعي بريد الجنة · أنوس</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+
+<link rel="stylesheet" href="../styles/tokens.css" />
+<link rel="stylesheet" href="../styles/dashboard.css" />
+<link rel="stylesheet" href="../styles/wheel.css" />
+<link rel="stylesheet" href="../styles/postman.css" />
+</head>
+<body>
+
+<div class="bg-decor" aria-hidden="true"></div>
+
+<div class="activity-shell">
+
+  <nav class="activity-nav">
+    <a class="back-link" href="../dashboard.html">
+      الرجوع للوحة الأنشطة
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg>
+    </a>
+    <div class="activity-crumb">
+      <span>العبادات والإيمان</span>
+      <span class="sep">/</span>
+      <span class="cur">ساعي بريد الجنة</span>
+    </div>
+    <div class="activity-actions">
+      <button class="icon-btn" id="reset-btn" title="إعادة الضبط" aria-label="إعادة الضبط">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 3-6.7L3 8"/><path d="M3 3v5h5"/></svg>
+      </button>
+    </div>
+  </nav>
+
+  <div class="activity-layout">
+
+    <!-- ============ لوحة البريد ============ -->
+    <section class="postman-panel">
+      <header class="wheel-header">
+        <span class="activity-tag">Activity 08 · Form Handling</span>
+        <h1 class="activity-title">ساعي بريد الجنة</h1>
+        <p class="activity-desc">
+          أنت ساعي البريد الصغير! في حقيبتك ستّ رسائل، كل رسالة لها مستلِم مختلف.
+          اقرأ الرسالة بتمعّن واختر صاحبها الصحيح، ثم اكتب رسالتك الخاصة في النهاية.
+        </p>
+      </header>
+
+      <!-- مرحلة الرسالة الحالية -->
+      <div class="envelope-stage" id="stage">
+        <div class="envelope" id="envelope">
+          <div class="envelope-card">✉</div>
+        </div>
+        <div class="message-body">
+          <span class="message-from" id="msg-from">من: ساعي البريد</span>
+          <p class="message-text" id="msg-text">حمّل أوّل رسالةٍ من حقيبتك…</p>
+          <p class="message-prompt" id="msg-prompt">اختر المستلِم المناسب من الأسفل ↓</p>
+        </div>
+      </div>
+
+      <!-- المستلمون -->
+      <div class="recipients-row" id="recipients"></div>
+
+      <!-- المعطيات -->
+      <div class="postman-hud">
+        <div class="hud-block">
+          الرسائل المسلَّمة
+          <strong><span id="delivered">0</span><small>/6</small></strong>
+        </div>
+        <div class="hud-block">
+          محاولات خاطئة
+          <strong id="errors">0</strong>
+        </div>
+        <div class="hud-block">
+          أوسمة البريد
+          <strong id="badges">0</strong>
+        </div>
+        <button class="wheel-mute-toggle" id="mute-btn" aria-pressed="false">
+          <span class="mute-icon"></span>
+          <span class="mute-label">كتم الصوت</span>
+        </button>
+      </div>
+    </section>
+
+    <!-- ============ اللوحة الجانبية ============ -->
+    <aside class="side-panel">
+
+      <div class="panel-card">
+        <div class="panel-head">
+          <h3>حقيبة البريد</h3>
+          <span class="pill" id="bag-pill">6 رسائل</span>
+        </div>
+        <div class="mailbag" id="mailbag"></div>
+      </div>
+
+      <div class="panel-card" id="compose-card" style="display:none;">
+        <div class="panel-head">
+          <h3>اكتب رسالتك أنت</h3>
+        </div>
+        <div class="compose-section">
+          <label for="my-message">اكتب جملةً طيّبة لمن تُحبّ (سَنحفظها في حقيبتك):</label>
+          <textarea id="my-message" placeholder="مثلاً: أمي، أُحبّك في الله، أنتِ نعمةٌ كبيرة من نِعَم ربي."></textarea>
+          <select id="my-recipient" style="width:100%; margin-top:8px; padding:10px 12px; border-radius: var(--r-md); border:1px solid var(--line); font-family: var(--font-ar); font-size: 14px;background:  var(--surface);">
+            <option value="">إلى من؟ — اختر…</option>
+            <option value="أمي">إلى أمّي</option>
+            <option value="أبي">إلى أبي</option>
+            <option value="أخي">إلى أخي</option>
+            <option value="أختي">إلى أختي</option>
+            <option value="جدتي">إلى جدّتي</option>
+            <option value="جدّي">إلى جدّي</option>
+            <option value="معلّمي">إلى معلّمي</option>
+            <option value="صديقي">إلى صديقي</option>
+          </select>
+          <button class="btn-primary" id="save-msg" style="margin-top: 12px; width: 100%; justify-content: center;">
+            ضَعها في الحقيبة
+          </button>
+        </div>
+        <div id="my-saved-msgs" style="margin-top: var(--s-3); display: flex; flex-direction: column; gap: 6px;"></div>
+      </div>
+
+      <div class="panel-card">
+        <div class="panel-head">
+          <h3>كنزٌ من السنّة</h3>
+        </div>
+        <div class="hadith-card">
+          <div class="quote">«أَحَبَّ النَّاسِ إِلَى اللَّهِ أَنْفَعُهُمْ لِلنَّاسِ»</div>
+          <span class="src">رواه الطبراني<span class="hadith-grade hasan">حسن</span></span>
+        </div>
+        <div class="tip-card" style="margin-top: var(--s-3);">
+          <span class="tip-icon">!</span>
+          <span>الكلمة الطيّبة صدقة. ابعث اليوم برسالةٍ حقيقيّةٍ لأحد أحبابك، واكتُبها بخطّ يدك.</span>
+        </div>
+      </div>
+
+    </aside>
+  </div>
+</div>
+
+<!-- مودال النصر -->
+<div class="modal-backdrop" id="win-modal" role="dialog" aria-modal="true">
+  <div class="modal">
+    <button class="modal-close" data-close aria-label="إغلاق">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M6 6l12 12M18 6l-12 12"/></svg>
+    </button>
+
+    <div class="modal-deco" aria-hidden="true">
+      <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7l9 6 9-6M3 7v10a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V7M3 7l2-2h14l2 2"/></svg>
+    </div>
+
+    <div class="modal-eyebrow">حقيبةٌ مُسَلَّمة</div>
+    <h2 class="modal-title">أنتَ خيرُ ساعي بريد!</h2>
+
+    <div class="modal-meaning" style="text-align:right;">
+      لقد سلّمتَ كلّ الرسائل إلى أصحابها. هل تعلم؟ كلّ كلمةٍ طيّبةٍ تقولها لأحد أحبابك،
+      تكون صدقةً تُكتب لك. الآن اكتبْ رسالتك الخاصة لمن تحب — وأرسلها فعلاً!
+    </div>
+
+    <div class="modal-actions">
+      <button class="btn-ghost" data-close>انتهيت</button>
+      <button class="btn-primary" id="win-replay">جولة جديدة</button>
+    </div>
+  </div>
+</div>
+
+<div class="particles" id="particles" aria-hidden="true"></div>
+
+<script src="../scripts/activity-common.js"></script>
+<script src="../scripts/postman.js"></script>
+
+<script>
+window.PAGE_DICT = {
+  "ساعي بريد الجنة": "Paradise Postman",
+  "أنت ساعي البريد الصغير! في حقيبتك ستّ رسائل، كل رسالة لها مستلِم مختلف. اقرأ الرسالة بتمعّن واختر صاحبها الصحيح، ثم اكتب رسالتك الخاصة في النهاية.": "You're the little postman! Your bag holds six letters, each with a different recipient. Read each letter carefully and choose its rightful owner, then write your own letter at the end.",
+  "من: ساعي البريد": "From: the postman",
+  "حمّل أوّل رسالةٍ من حقيبتك…": "Load the first letter from your bag…",
+  "اختر المستلِم المناسب من الأسفل ↓": "Choose the right recipient below ↓",
+  "الرسائل المسلَّمة": "Letters delivered",
+  "محاولات خاطئة": "Wrong attempts",
+  "أوسمة البريد": "Post badges",
+  "حقيبة البريد": "Mail bag",
+  "6 رسائل": "6 letters",
+  "اكتب رسالتك أنت": "Write your own letter",
+  "اكتب جملةً طيّبة لمن تُحبّ (سَنحفظها في حقيبتك):": "Write a kind sentence to someone you love (we'll keep it in your bag):",
+  "مثلاً: أمي، أُحبّك في الله، أنتِ نعمةٌ كبيرة من نِعَم ربي.": "e.g. Mom, I love you for Allah's sake, you are a great blessing from my Lord.",
+  "إلى من؟ — اختر…": "To whom? — choose…",
+  "إلى أمّي": "To my mother",
+  "إلى أبي": "To my father",
+  "إلى أخي": "To my brother",
+  "إلى أختي": "To my sister",
+  "إلى جدّتي": "To my grandmother",
+  "إلى جدّي": "To my grandfather",
+  "إلى معلّمي": "To my teacher",
+  "إلى صديقي": "To my friend",
+  "ضَعها في الحقيبة": "Put it in the bag",
+  "كنزٌ من السنّة": "A treasure from the Sunnah",
+  "رواه الطبراني": "Narrated by at-Tabarani",
+  "الكلمة الطيّبة صدقة. ابعث اليوم برسالةٍ حقيقيّةٍ لأحد أحبابك، واكتُبها بخطّ يدك.": "A kind word is charity. Today, send a real letter to someone you love — and write it in your own hand.",
+  "حقيبةٌ مُسَلَّمة": "Bag delivered",
+  "أنتَ خيرُ ساعي بريد!": "You're the best postman!",
+  "لقد سلّمتَ كلّ الرسائل إلى أصحابها. هل تعلم؟ كلّ كلمةٍ طيّبةٍ تقولها لأحد أحبابك، تكون صدقةً تُكتب لك. الآن اكتبْ رسالتك الخاصة لمن تحب — وأرسلها فعلاً!": "You delivered every letter to its owner. Did you know? Every kind word you say to someone you love is a charity recorded for you. Now write your own letter to someone you love — and actually send it!"
+};
+</script>
+<script>
+Object.assign(window.PAGE_DICT, {
+  "أمّك": "Your mother", "أبوك": "Your father", "أخوك": "Your brother", "أختك": "Your sister",
+  "جدّتك": "Your grandmother", "جدّك": "Your grandfather", "معلّمك": "Your teacher", "صديقك": "Your friend",
+  "أُمّك الحبيبة": "Your beloved mother", "أَبوك العزيز": "Your dear father", "أخوك الصغير": "Your little brother", "أختك الكبيرة": "Your big sister",
+  "جَدّتك الغالية": "Your precious grandmother", "جَدّك الحكيم": "Your wise grandfather", "معلّمك في المدرسة": "Your teacher at school", "صديقك المُقرَّب": "Your close friend",
+  "أحمد · ابنُكِ": "Ahmad · your son", "أحمد · ابنك": "Ahmad · your son", "أحمد · أخوك": "Ahmad · your brother",
+  "أحمد · حفيدك": "Ahmad · your grandchild", "أحمد · تلميذك": "Ahmad · your pupil", "أحمد · رفيقك": "Ahmad · your friend",
+  "شكراً لكِ على الطعام الذي حضّرتِهِ اليوم. لقد كان لذيذاً جداً، وأحببتُهُ كثيراً.": "Thank you for the food you made today. It was so delicious, and I loved it a lot.",
+  "أرجو أن تَسأل الله أن يُبارك لي في دراستي. أُحبّك يا أبي وأفتخر بك.": "Please ask Allah to bless my studies. I love you, dad, and I'm proud of you.",
+  "عَجِّلْ بالعودة من المدرسة، لقد جهّزتُ لنا لعبةً جديدة لنلعبها معاً!": "Hurry back from school — I've set up a new game for us to play together!",
+  "بارك الله لكِ في حفظ القرآن، أنتِ قدوتي في الصبر والاجتهاد.": "May Allah bless you in memorizing the Quran; you're my role model in patience and diligence.",
+  "أَفتقدُ قصصكِ قبل النوم يا حبيبتي. متى تأتين لزيارتنا مرة أخرى؟": "I miss your bedtime stories, my dear. When will you visit us again?",
+  "علِّمني كيف كنتَ تحفظ القرآن في صِغرك. أريدُ أن أكونَ مثلك يوماً ما.": "Teach me how you memorized the Quran when you were young. I want to be like you one day.",
+  "شكراً لك على الدرس الذي شرحتَهُ اليوم. فهمتُ الآنَ كيف نحسب الجمع!": "Thank you for the lesson you explained today. Now I understand how to add!",
+  "اعتذِر إن كنتُ أزعجتُك في الفسحة، وأَتمنَّى أن نلعب معاً غداً.": "Sorry if I bothered you at recess, and I hope we can play together tomorrow.",
+  "دعائي لكِ في كل صلاة: ربِّ ارحمها كما ربَّتني صغيرا.": "My prayer for you in every prayer: My Lord, have mercy on her as she raised me when I was small.",
+  "متى ستُعيد دراجتي الجديدة؟ أَعدُكَ أن أُشاركك بها كلَّ يوم.": "When will you return my new bike? I promise to share it with you every day.",
+  "حلوياتُك التي صنعتِها يوم الجمعة كانت أَلذَّ شيءٍ تذوّقتُهُ في حياتي!": "The sweets you made on Friday were the most delicious thing I've ever tasted!",
+  "شكراً على الكتاب الذي أَهديتَني إيّاه. سأقرأهُ قبل النوم كلَّ ليلة.": "Thank you for the book you gave me. I'll read it before bed every night."
+});
+</script>
+<script src="../scripts/i18n.js"></script>
+<script src="../../shared/nav-fix.js"></script>
+</body>
+</html>

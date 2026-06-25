@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>سودوكو إسلامي · أنوس</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+
+<link rel="stylesheet" href="../styles/tokens.css" />
+<link rel="stylesheet" href="../styles/dashboard.css" />
+<link rel="stylesheet" href="../styles/wheel.css" />
+<link rel="stylesheet" href="../styles/sudoku.css" />
+</head>
+<body>
+
+<div class="bg-decor" aria-hidden="true"></div>
+
+<div class="activity-shell">
+
+  <nav class="activity-nav">
+    <a class="back-link" href="../dashboard.html">
+      الرجوع للوحة الأنشطة
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg>
+    </a>
+    <div class="activity-crumb">
+      <span>تحديات السيرة واللغة</span>
+      <span class="sep">/</span>
+      <span class="cur">سودوكو إسلامي</span>
+    </div>
+    <div class="activity-actions">
+      <button class="icon-btn" id="reset-btn" title="إعادة الضبط" aria-label="إعادة الضبط">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 3-6.7L3 8"/><path d="M3 3v5h5"/></svg>
+      </button>
+    </div>
+  </nav>
+
+  <div class="activity-layout">
+
+    <!-- ============ لوحة اللعبة ============ -->
+    <section class="sd-panel">
+      <header class="wheel-header">
+        <span class="activity-tag">Activity 47 · Logical Grid</span>
+        <h1 class="activity-title">سودوكو إسلامي</h1>
+        <p class="activity-desc">
+          املأ الشبكة بحيث يحوي كلُّ صفٍّ وعمودٍ ومربّعٍ صغير الرموزَ الأربعة
+          مرّةً واحدة فقط: المسجد، المصحف، النجمة، والهلال.
+        </p>
+      </header>
+
+      <div class="sd-hud">
+        <div class="hud-block">ممتلئ <strong id="s-filled">0/16</strong></div>
+        <div class="hud-block">تعارُضات <strong id="s-mistakes">0</strong></div>
+      </div>
+
+      <div class="sd-stage">
+        <div class="sd-grid" id="sd-grid"></div>
+
+        <div class="sd-palette">
+          <button class="sd-sbtn" data-s="0">🕌<span class="cnt">0</span></button>
+          <button class="sd-sbtn" data-s="1">📖<span class="cnt">0</span></button>
+          <button class="sd-sbtn" data-s="2">⭐<span class="cnt">0</span></button>
+          <button class="sd-sbtn" data-s="3">🌙<span class="cnt">0</span></button>
+          <button class="sd-sbtn erase" id="sd-erase" title="ممحاة">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 16l8-8 6 6-6 6H8z"/><path d="M14 22H4"/></svg>
+          </button>
+        </div>
+
+        <div class="sd-actions">
+          <button class="sd-btn" id="sd-hint">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 8v.01M12 12v4"/></svg>
+            تلميح
+          </button>
+          <button class="sd-btn" id="sd-new">لغز جديد</button>
+        </div>
+      </div>
+
+      <div class="wheel-controls">
+        <div class="wheel-stat">أسرع حلّ <strong id="best">—</strong></div>
+        <div class="wheel-stat" style="text-align:center;">الألغاز <strong id="plays">0</strong></div>
+        <button class="wheel-mute-toggle" id="mute-btn" aria-pressed="false">
+          <span class="mute-icon"></span>
+          <span class="mute-label">كتم الصوت</span>
+        </button>
+      </div>
+    </section>
+
+    <!-- ============ اللوحة الجانبية ============ -->
+    <aside class="side-panel">
+      <div class="panel-card">
+        <div class="panel-head"><h3>الرموز</h3></div>
+        <div class="sd-legend">
+          <div class="sd-legend-row"><span class="lg">🕌</span><div>المسجد<small>بيتُ الله</small></div></div>
+          <div class="sd-legend-row"><span class="lg">📖</span><div>المصحف<small>كتابُ الله</small></div></div>
+          <div class="sd-legend-row"><span class="lg">⭐</span><div>النجمة<small>زينةُ السماء</small></div></div>
+          <div class="sd-legend-row"><span class="lg">🌙</span><div>الهلال<small>بدايةُ الشهر</small></div></div>
+        </div>
+      </div>
+
+      <div class="panel-card">
+        <div class="panel-head"><h3>مستوى الصعوبة</h3></div>
+        <div class="sd-diff">
+          <button data-reveal="8">سهل</button>
+          <button class="active" data-reveal="6">متوسط</button>
+          <button data-reveal="4">صعب</button>
+        </div>
+        <div style="font-size: 13px; line-height: 1.7; color: var(--ink-2); margin-top: var(--s-4);">
+          اختَر رمزاً من اللوحة ثم انقُر خانةً فارغة. الخاناتُ ذاتُ الخلفيّةِ الداكنة
+          ثابتةٌ لا تُغيَّر. التعارُضاتُ تظهَرُ بالأحمر.
+        </div>
+      </div>
+
+      <div class="panel-card">
+        <div class="panel-head"><h3>نعمةُ العقل</h3></div>
+        <div class="hadith-card">
+          <div class="quote">«إنَّ في خَلقِ السماواتِ والأرضِ… لآياتٍ لأولي الألباب»</div>
+          <span class="src">سورة آل عمران — آية ١٩٠</span>
+        </div>
+      </div>
+    </aside>
+  </div>
+</div>
+
+<!-- مودال النصر -->
+<div class="modal-backdrop" id="win-modal" role="dialog" aria-modal="true">
+  <div class="modal">
+    <button class="modal-close" data-close aria-label="إغلاق">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M6 6l12 12M18 6l-12 12"/></svg>
+    </button>
+    <div class="modal-deco" aria-hidden="true">
+      <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l2.4 6.6L21 9l-5 4.6L17.2 21 12 17.4 6.8 21 8 13.6 3 9l6.6-.4z"/></svg>
+    </div>
+    <div class="modal-eyebrow">سودوكو إسلامي</div>
+    <h2 class="modal-title">عقلٌ منطقيّ!</h2>
+    <div class="modal-meaning" id="win-summary"></div>
+    <div class="modal-actions">
+      <button class="btn-ghost" data-close>انتهيت</button>
+      <button class="btn-primary" id="win-replay">لغز جديد</button>
+    </div>
+  </div>
+</div>
+
+<div class="particles" id="particles" aria-hidden="true"></div>
+
+<script src="../scripts/activity-common.js"></script>
+<script src="../scripts/sudoku.js"></script>
+
+<script>
+window.PAGE_DICT = {
+  "سودوكو إسلامي": "Islamic Sudoku",
+  "املأ الشبكة بحيث يحوي كلُّ صفٍّ وعمودٍ ومربّعٍ صغير الرموزَ الأربعة مرّةً واحدة فقط: المسجد، المصحف، النجمة، والهلال.": "Fill the grid so each row, column, and small box contains the four symbols just once: the mosque, the mushaf, the star, and the crescent.",
+  "ممتلئ": "Filled",
+  "تعارُضات": "Conflicts",
+  "ممحاة": "Eraser",
+  "تلميح": "Hint",
+  "لغز جديد": "New puzzle",
+  "أسرع حلّ": "Fastest solve",
+  "الألغاز": "Puzzles",
+  "الرموز": "Symbols",
+  "المسجد": "Mosque",
+  "بيتُ الله": "House of Allah",
+  "المصحف": "Mushaf",
+  "كتابُ الله": "Book of Allah",
+  "النجمة": "Star",
+  "زينةُ السماء": "Adornment of the sky",
+  "الهلال": "Crescent",
+  "بدايةُ الشهر": "Start of the month",
+  "مستوى الصعوبة": "Difficulty level",
+  "سهل": "Easy",
+  "متوسط": "Medium",
+  "صعب": "Hard",
+  "اختَر رمزاً من اللوحة ثم انقُر خانةً فارغة. الخاناتُ ذاتُ الخلفيّةِ الداكنة ثابتةٌ لا تُغيَّر. التعارُضاتُ تظهَرُ بالأحمر.": "Choose a symbol from the palette then tap an empty cell. Cells with a dark background are fixed and can't be changed. Conflicts appear in red.",
+  "نعمةُ العقل": "The blessing of the mind",
+  "سورة آل عمران — آية ١٩٠": "Surat Aal Imran — verse 190",
+  "عقلٌ منطقيّ!": "A logical mind!"
+};
+</script>
+<script src="../scripts/i18n.js"></script>
+<script src="../../shared/nav-fix.js"></script>
+</body>
+</html>

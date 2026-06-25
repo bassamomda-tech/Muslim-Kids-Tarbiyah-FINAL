@@ -1,0 +1,412 @@
+/* ============================================================
+   STAR TELESCOPE — منظار النجوم
+   Parallax sky scroll with reticle observation
+   ============================================================ */
+
+.ts-panel {
+  background:
+    radial-gradient(140% 80% at 50% 0%, rgba(205,235,215,0.28), transparent 60%),
+    var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--r-2xl);
+  padding: var(--s-8);
+  display: flex; flex-direction: column;
+  box-shadow: var(--shadow-card);
+}
+.ts-panel .activity-tag { background: var(--mint); color: var(--mint-ink); }
+.ts-panel .activity-tag::before { background: var(--mint-ink); }
+
+.ts-hud {
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--s-3);
+  margin-bottom: var(--s-4);
+}
+.ts-hud .hud-block {
+  background: var(--bg-soft); border: 1px solid var(--line);
+  border-radius: var(--r-md); padding: 10px 14px;
+  display: flex; flex-direction: column; gap: 2px;
+  font-size: 11px; color: var(--muted); font-weight: 600;
+}
+.ts-hud .hud-block strong {
+  font-size: 20px; color: var(--ink);
+  font-family: var(--font-en); font-weight: 800;
+}
+.ts-hud small { color: var(--muted); font-family: var(--font-en); margin-right: 2px; }
+
+/* المَشهَد */
+.ts-stage {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  background: radial-gradient(120% 80% at 50% 0%, #1a1f3a 0%, #0c1024 100%);
+  border-radius: var(--r-xl);
+  overflow: hidden;
+  cursor: grab;
+  user-select: none;
+  box-shadow: inset 0 0 0 1px rgba(255,255,255,0.06), 0 8px 24px rgba(0,0,0,0.2);
+}
+.ts-stage:active { cursor: grabbing; }
+
+.ts-night {
+  position: absolute; inset: 0;
+  background:
+    radial-gradient(90% 60% at 50% 30%, rgba(46,95,138,0.5), transparent 70%),
+    radial-gradient(60% 50% at 80% 60%, rgba(90,63,148,0.35), transparent 70%);
+  pointer-events: none;
+}
+.ts-haze {
+  position: absolute;
+  top: 25%; left: -20%;
+  width: 140%; height: 50%;
+  background:
+    radial-gradient(ellipse at 30% 50%, rgba(207,227,242,0.15) 0%, transparent 55%),
+    radial-gradient(ellipse at 70% 50%, rgba(255,233,168,0.08) 0%, transparent 55%);
+  filter: blur(20px);
+  opacity: 0.85;
+}
+
+/* الطَّبَقات */
+.ts-layer {
+  position: absolute;
+  top: 0; bottom: 0;
+  width: 200%;
+  will-change: transform;
+  pointer-events: none;
+}
+.ts-layer-near { pointer-events: auto; }
+
+/* نُجومُ الطَّبَقات */
+.ts-star {
+  position: absolute;
+  background: #fff;
+  border-radius: 50%;
+  box-shadow: 0 0 6px rgba(255,255,255,0.6);
+}
+.ts-star.warm { background: #FFE9A8; box-shadow: 0 0 8px rgba(255,233,168,0.7); }
+.ts-star.cool { background: #CFE3F2; box-shadow: 0 0 8px rgba(207,227,242,0.6); }
+.ts-star.twinkle { animation: ts-twinkle 2.4s ease-in-out infinite; }
+@keyframes ts-twinkle {
+  0%,100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.5; transform: scale(0.7); }
+}
+
+/* أَجرامُ مُسَمَّاة (Targets) */
+.ts-target {
+  position: absolute;
+  display: grid; place-items: center;
+  cursor: pointer;
+  pointer-events: auto;
+  transition: transform 0.25s ease;
+}
+.ts-target .glow {
+  position: absolute;
+  border-radius: 50%;
+  background: radial-gradient(circle, currentColor 0%, transparent 65%);
+  opacity: 0.35;
+  filter: blur(6px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+.ts-target .body {
+  position: relative;
+  border-radius: 50%;
+  background: currentColor;
+  box-shadow: 0 0 14px currentColor;
+  z-index: 1;
+}
+.ts-target .nm {
+  position: absolute;
+  bottom: -22px; left: 50%; transform: translateX(-50%);
+  font-size: 11px; font-weight: 800;
+  color: rgba(255,255,255,0.75);
+  background: rgba(0,0,0,0.5);
+  padding: 2px 8px;
+  border-radius: var(--r-pill);
+  white-space: nowrap;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  letter-spacing: 0.02em;
+}
+.ts-target.in-scope {
+  transform: scale(1.4);
+}
+.ts-target.in-scope .glow { opacity: 0.9; transform: scale(1.5); }
+.ts-target.in-scope .nm { opacity: 1; }
+.ts-target.found {
+  cursor: default;
+}
+.ts-target.found .body {
+  background: var(--mint);
+  box-shadow: 0 0 14px var(--mint), 0 0 0 3px rgba(205,235,215,0.4);
+}
+.ts-target.found .nm {
+  opacity: 1;
+  background: var(--mint-ink); color: #fff;
+}
+.ts-target.found::after {
+  content: "✓"; position: absolute; top: -10px; right: -10px;
+  width: 18px; height: 18px;
+  background: var(--mint-ink); color: #fff;
+  border-radius: 50%;
+  display: grid; place-items: center;
+  font-size: 11px; font-weight: 900;
+  z-index: 2;
+}
+
+/* أُفُق */
+.ts-horizon {
+  position: absolute;
+  bottom: 0; left: 0;
+  width: 100%; height: 18%;
+  pointer-events: none;
+  z-index: 3;
+}
+
+/* مَنظار + حَلَقَة الرَّصد */
+.ts-scope {
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  z-index: 5;
+}
+.ts-scope-ring {
+  width: 180px; height: 180px;
+  border: 2px solid rgba(255,255,255,0.55);
+  border-radius: 50%;
+  position: relative;
+  box-shadow:
+    inset 0 0 0 6px rgba(31,37,64,0.5),
+    inset 0 0 20px rgba(255,255,255,0.1),
+    0 0 0 1px rgba(255,255,255,0.2),
+    0 0 60px rgba(207,227,242,0.18);
+}
+.ts-scope-ring::before {
+  content: ""; position: absolute; inset: -36px;
+  border-radius: 50%;
+  background: radial-gradient(circle, transparent 36%, rgba(8,12,28,0.85) 60%);
+  pointer-events: none;
+}
+.ts-crosshair {
+  position: absolute; inset: 0;
+  pointer-events: none;
+}
+.ts-crosshair .cx-h,
+.ts-crosshair .cx-v {
+  position: absolute;
+  background: rgba(255,255,255,0.4);
+}
+.ts-crosshair .cx-h {
+  top: 50%; left: 20%; right: 20%; height: 1px;
+}
+.ts-crosshair .cx-v {
+  left: 50%; top: 20%; bottom: 20%; width: 1px;
+}
+.ts-crosshair .cx-dot {
+  position: absolute;
+  top: 50%; left: 50%; transform: translate(-50%, -50%);
+  width: 6px; height: 6px;
+  border: 1.5px solid rgba(255,255,255,0.85);
+  border-radius: 50%;
+}
+.ts-tick-top, .ts-tick-bottom, .ts-tick-left, .ts-tick-right {
+  position: absolute;
+  font-size: 10px;
+  font-family: var(--font-en);
+  font-weight: 800;
+  color: rgba(255,255,255,0.6);
+  letter-spacing: 0.04em;
+}
+.ts-tick-top    { top: 6px;    left: 50%; transform: translateX(-50%); }
+.ts-tick-bottom { bottom: 6px; left: 50%; transform: translateX(-50%); }
+.ts-tick-left   { left: 8px;   top: 50%; transform: translateY(-50%); }
+.ts-tick-right  { right: 8px;  top: 50%; transform: translateY(-50%); }
+
+.ts-scope.locked .ts-scope-ring {
+  border-color: var(--butter);
+  box-shadow:
+    inset 0 0 0 6px rgba(31,37,64,0.5),
+    inset 0 0 20px rgba(255,233,168,0.2),
+    0 0 0 1px rgba(255,233,168,0.5),
+    0 0 80px rgba(255,233,168,0.5);
+}
+.ts-scope.locked .cx-dot {
+  border-color: var(--butter);
+  background: var(--butter);
+}
+
+.ts-scope-tag {
+  position: absolute;
+  top: calc(100% + 12px);
+  left: 50%; transform: translateX(-50%);
+  font-size: 11px; font-weight: 800;
+  color: rgba(255,255,255,0.7);
+  background: rgba(0,0,0,0.5);
+  padding: 4px 12px;
+  border-radius: var(--r-pill);
+  white-space: nowrap;
+  letter-spacing: 0.04em;
+}
+
+/* زِرُّ الرَّصد */
+.ts-observe {
+  position: absolute;
+  top: 16px; left: 16px;
+  z-index: 6;
+  padding: 10px 18px;
+  background: var(--butter);
+  color: var(--butter-ink);
+  border-radius: var(--r-pill);
+  font-weight: 800; font-size: 13px;
+  display: inline-flex; align-items: center; gap: 8px;
+  box-shadow: 0 6px 14px rgba(0,0,0,0.35);
+  transition: transform 0.18s ease, background 0.18s ease, opacity 0.2s ease;
+}
+.ts-observe:hover:not(:disabled) { transform: translateY(-2px); background: #fff; }
+.ts-observe:disabled { opacity: 0.4; cursor: not-allowed; }
+
+/* مَلاحَة سُفلى */
+.ts-controls {
+  position: absolute;
+  bottom: 16px; left: 50%;
+  transform: translateX(-50%);
+  z-index: 6;
+  display: flex; align-items: center; gap: 12px;
+  background: rgba(0,0,0,0.45);
+  border: 1px solid rgba(255,255,255,0.15);
+  padding: 8px 12px;
+  border-radius: var(--r-pill);
+  backdrop-filter: blur(6px);
+}
+.ts-arrow {
+  width: 32px; height: 32px;
+  display: grid; place-items: center;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.1);
+  color: #fff;
+  transition: background 0.18s ease;
+}
+.ts-arrow:hover { background: rgba(255,255,255,0.25); }
+.ts-compass {
+  position: relative;
+  width: 180px; height: 22px;
+  display: flex; align-items: center;
+}
+.ts-compass .needle-track {
+  position: absolute; left: 0; right: 0; top: 50%;
+  height: 1px; background: rgba(255,255,255,0.25);
+}
+.ts-compass .needle {
+  position: absolute; top: 50%;
+  width: 12px; height: 12px;
+  background: var(--butter);
+  border: 1.5px solid var(--butter-ink);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  transition: left 0.15s linear;
+  box-shadow: 0 0 8px rgba(255,233,168,0.6);
+}
+.ts-compass .needle-tick {
+  position: absolute;
+  font-size: 9px;
+  font-family: var(--font-en);
+  font-weight: 700;
+  color: rgba(255,255,255,0.5);
+  transform: translateX(50%);
+  top: -2px;
+}
+.ts-compass .needle-tick[data-x="0"]    { right: 0; }
+.ts-compass .needle-tick[data-x="0.25"] { right: 25%; }
+.ts-compass .needle-tick[data-x="0.5"]  { right: 50%; }
+.ts-compass .needle-tick[data-x="0.75"] { right: 75%; }
+.ts-compass .needle-tick[data-x="1"]    { right: 100%; }
+.ts-compass .needle-tick::after {
+  content: "";
+  position: absolute; top: 18px; left: 50%;
+  transform: translateX(-50%);
+  width: 1px; height: 6px;
+  background: rgba(255,255,255,0.35);
+}
+
+/* بِطاقَة الكَشف */
+.ts-reveal {
+  position: absolute;
+  bottom: 64px; right: 16px;
+  z-index: 6;
+  max-width: 280px;
+  pointer-events: none;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+.ts-reveal:empty { display: none; }
+.ts-reveal .card {
+  background: rgba(255,255,255,0.96);
+  border: 1px solid var(--butter-ink);
+  border-radius: var(--r-md);
+  padding: 12px 14px;
+  box-shadow: var(--shadow-md);
+  animation: ts-reveal-in 0.35s cubic-bezier(.2,1.6,.4,1);
+  pointer-events: auto;
+}
+@keyframes ts-reveal-in {
+  0% { transform: translateY(20px); opacity: 0; }
+  100% { transform: translateY(0); opacity: 1; }
+}
+.ts-reveal .label {
+  font-size: 10px; font-weight: 800; color: var(--butter-ink);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  font-family: var(--font-en);
+}
+.ts-reveal h4 {
+  margin: 4px 0 6px;
+  font-size: 18px; font-weight: 800;
+  color: var(--ink);
+}
+.ts-reveal .ayah {
+  font-family: 'Amiri', serif;
+  font-size: 14px; line-height: 1.7;
+  color: var(--brand-ink);
+  padding: 8px 10px;
+  background: var(--bg-soft);
+  border-radius: var(--r-sm);
+  border-right: 3px solid var(--brand);
+  margin-bottom: 6px;
+}
+.ts-reveal .desc {
+  font-size: 12px; color: var(--ink-2); line-height: 1.55;
+}
+
+/* الكَتالوج (الجانِبي) */
+.ts-catalog {
+  display: flex; flex-direction: column; gap: 8px;
+}
+.ts-cat-row {
+  display: grid;
+  grid-template-columns: 28px 1fr auto;
+  align-items: center; gap: 10px;
+  padding: 10px 12px;
+  background: var(--bg-soft);
+  border: 1px solid var(--line);
+  border-radius: var(--r-md);
+  font-size: 13px;
+}
+.ts-cat-row.found {
+  background: linear-gradient(180deg, var(--surface) 0%, #ECFAEF 100%);
+  border-color: var(--mint-ink);
+}
+.ts-cat-row .dot {
+  width: 16px; height: 16px;
+  border-radius: 50%;
+  background: rgba(122,122,140,0.3);
+}
+.ts-cat-row.found .dot {
+  background: var(--mint-ink);
+}
+.ts-cat-row .nm { font-weight: 800; color: var(--ink); }
+.ts-cat-row .nm small { display: block; font-size: 11px; color: var(--muted); font-weight: 600; margin-top: 2px; }
+.ts-cat-row .pt {
+  font-size: 11px; font-weight: 800; padding: 3px 8px;
+  border-radius: var(--r-pill);
+  background: rgba(0,0,0,0.06); color: var(--muted);
+}
+.ts-cat-row.found .pt {
+  background: var(--mint); color: var(--mint-ink);
+}

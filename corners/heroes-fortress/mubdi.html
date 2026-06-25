@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta name="color-scheme" content="dark">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>رحلة كن أنت المبدع | Be the Creator</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Amiri+Quran&family=Tajawal:wght@400;500;700;800;900&family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+<link rel="stylesheet" href="yaqeen.css">
+<style>
+/* ── Innovators' Academy theme: deep emerald-teal + bright gold (knowledge & building) ── */
+:root{
+  --primary:#1FAE8C; --primary-dark:#0E6B57;
+  --bg1:#06231E; --bg2:#0A3A30; --bg3:#0E5142;
+  --gold:#F0C868; --gold-soft:#F7DC9E;
+  --text:#EEF6F2; --muted:rgba(238,246,242,.74);
+  --line:rgba(240,200,104,.26);
+}
+body{background:
+  
+    radial-gradient(1300px 760px at 78% -12%, rgba(31,174,140,.30), transparent 58%),
+    radial-gradient(1000px 620px at 0% 100%, rgba(240,200,104,.13), transparent 55%),
+    linear-gradient(165deg,var(--bg1),var(--bg2) 55%,var(--bg3));
+  background-attachment:fixed;
+}
+.guide .who{background:linear-gradient(160deg,#1FAE8C,#0B5645)}
+.coll-cert{background:linear-gradient(160deg,rgba(240,200,104,.16),rgba(31,174,140,.20))!important}
+.lang button.active{color:#06231E}
+.stampbtn{color:#06231E}
+</style>
+<script>(function(){try{var l=localStorage.getItem('bunyanLang');if(l==='en'){var h=document.documentElement;h.dir='ltr';h.lang='en';}}catch(e){}})();</script>
+<style id="__antiflash">html{background:#06231E;color-scheme:dark}</style>
+</head>
+<body>
+
+<!-- ═══ HEADER ═══ -->
+<header class="hdr">
+  <a class="back" href="academy.html">
+    <span>↩️</span><span class="lng-ar">الأكاديمية</span><span class="lng-en">Academy</span>
+  </a>
+  <span class="hdr-badge"><span class="l">💡</span><span class="lng-ar">كُن أنتَ المُبدِع</span><span class="lng-en">Be the Creator</span></span>
+  <div class="lang">
+    <button data-lang="en">EN</button>
+    <button data-lang="ar" class="active">عربي</button>
+  </div>
+</header>
+
+<!-- ═══ INTRO ═══ -->
+<section class="intro">
+  <h1>
+    <span class="lng-ar">💡 رِحلةُ <span class="hl">كُن أنتَ المُبدِع</span> — لِبِناءِ جيلِ المُستَقبَل</span>
+    <span class="lng-en">💡 Journey of <span class="hl">Be the Creator</span> — Building the Future Generation</span>
+  </h1>
+  <p class="sub">
+    <span class="lng-ar">خَمسَ عَشرةَ مَحطّةً تَبني الوَعيَ وتُعَدِّلُ المَسار: لِماذا خُلِقت، وأنَّكَ خَليفةٌ بانٍ صانِع، وأنَّ الوَقتَ هو حَياتُك، وحَربُ التَّفاهة، وكَيفَ يُريدُكَ عَدُوُّكَ لاهِياً بِالكُرةِ والأفلامِ والأغاني عن عِمارةِ الكَونِ وعِبادةِ الله، وأنَّ العِلمَ عِبادة، وحَديثُ السَّبعةِ الذينَ يُظِلُّهُمُ الله — لِتَكونَ مُبدِعاً عالِماً صانِعاً، لَبِنةً في جيلٍ واعٍ يُعيدُ لِلأُمّةِ مَجدَها.</span>
+    <span class="lng-en">Fifteen stations that build awareness and correct the course: why you were created, that you are a steward-builder-maker, that time is your life, the war of triviality, how your enemy wants you distracted by the ball, films, and songs away from building the world and worshipping Allah, that knowledge is worship, and the hadith of the seven Allah shades — so you become a creative scholar and maker, a brick in an aware generation that restores the nation's glory.</span>
+  </p>
+  <div class="guide">
+    <div class="who">🧑‍🔬</div>
+    <div class="say">
+      <span class="lng-ar">أنا «لِين»، رَفيقَتُكِ في الأكاديمية. هذِهِ الرِّحلةُ تَصنَعُ مِنكَ مُبدِعَ الغَد… هَيّا نَبني الوَعيَ ونُعَدِّلَ المَسار! 💡</span>
+      <span class="lng-en">I'm Lyn, your academy companion. This journey makes you tomorrow's creator… let's build awareness and correct the course! 💡</span>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ METER ═══ -->
+<div class="pbar-wrap">
+  <div class="pbar-top">
+    <span><span class="lng-ar">مِيزانُ الإبداع</span><span class="lng-en">Creativity Meter</span></span>
+    <span class="stars" id="pCount">0 / 15</span>
+  </div>
+  <div class="pbar"><div class="pbar-fill" id="pFill"></div></div>
+  <div class="meter-label" id="meterLabel"></div>
+</div>
+
+<!-- ═══ COLLECTIONS ═══ -->
+<div class="collections">
+  <div class="coll-card" id="collStickers"></div>
+  <div class="coll-card" id="collNames"></div>
+  <div class="coll-card" id="collKeys"></div>
+  <div class="coll-card coll-cert" id="collCert"></div>
+</div>
+
+<!-- ═══ MAP ═══ -->
+<div class="map" id="map"><div class="road"></div></div>
+
+<footer class="foot">
+  <span class="lng-ar">صُنع بِحُبٍّ 🧡 لِأطفالِ الأُمّة — <b>كُن أنتَ المُبدِع</b> · أكاديميةُ المبدعين · على نَهجِ أهلِ السُّنّة</span>
+  <span class="lng-en">Made with 🧡 for the children of the Ummah — <b>Be the Creator</b> · The Innovators' Academy · Upon the way of Ahl al-Sunnah</span>
+</footer>
+
+<!-- ═══ READER ═══ -->
+<div class="reader" id="reader">
+  <div class="sheet">
+    <div class="r-top">
+      <button class="r-close" id="rClose">✕</button>
+      <span class="r-count" id="rCount"></span>
+      <div class="r-arrows">
+        <button id="rPrev">‹</button>
+        <button id="rNext">›</button>
+      </div>
+    </div>
+    <div id="rBody"></div>
+  </div>
+</div>
+
+<!-- ═══ COLLECTIONS DRAWER ═══ -->
+<div class="drawer" id="drawer">
+  <div class="drawer-sheet">
+    <div class="dw-top">
+      <h3 id="dwTitle"></h3>
+      <button class="r-close" id="dwClose">✕</button>
+    </div>
+    <div class="dw-body" id="dwBody"></div>
+  </div>
+</div>
+
+<!-- ═══ CERTIFICATE ═══ -->
+<div class="cert-overlay" id="certOverlay">
+  <div class="cert-tools">
+    <input id="certName" type="text" placeholder="✍️ اكتُب اسمَك هنا / Type your name" maxlength="40">
+    <button class="cprint" id="certPrint">🖨️ <span class="lng-ar">اطبَع</span><span class="lng-en">Print</span></button>
+    <button class="cclose" id="certClose">✕</button>
+  </div>
+  <div class="certificate" id="certBox"></div>
+</div>
+
+<div id="confetti"></div>
+<div class="toast" id="toast"></div>
+
+<script defer src="nav-fix.js"></script>
+<script src="data/mubdi-stations.js"></script>
+<script>
+window.RIHLA_CFG = {
+  stations: window.MUBDI_STATIONS,
+  prefix: 'mubdi',
+  confetti: ['#F0C868','#1FAE8C','#1F7AAE','#C44A6A','#FFFFFF','#7E4FA3'],
+  T: {
+    mapEnter:{ar:'ادخُل المَحطّة ←',en:'Enter →'},
+    finishTitle:{ar:'وِسامُ المُبدِع',en:'Creator\'s Medal'},
+    meterStart:{ar:'ابدَأ الرِّحلة… كُلُّ مَحطّةٍ تَبني وَعيَكَ خُطوة',en:'Begin the journey… each station builds your awareness one step'},
+    meterMid:{ar:'أحسَنت! بَنَيتَ وَعيَكَ في {n} مِن {t} مَحطّات',en:'Great! You built your awareness in {n} of {t} stations'},
+    meterDone:{ar:'🎉 اكتَمَلَ الوَعي! صِرتَ مُبدِعاً عالِماً صانِعاً، لَبِنةً في جيلِ المُستَقبَل',en:'🎉 Awareness complete! You\'ve become a creative scholar and maker, a brick in the future generation'},
+    coll1:{icon:'🎖️',title:{ar:'أوسِمةُ المُبدِع',en:'Maker Badges'},unit:{ar:'وِسام',en:'badges'}},
+    coll2:{icon:'💡',title:{ar:'بِطاقاتُ الوَعي',en:'Awareness Cards'},unit:{ar:'بِطاقة',en:'cards'}},
+    coll3:{title:{ar:'مَفاتيحُ الإبداع',en:'Creativity Keys'}},
+    collCert:{title:{ar:'ميثاقُ المُبدِع',en:'Maker\'s Charter'}},
+    kick:{ar:'المَحطّة {n} مِن {t}',en:'Station {n} of {t}'},
+    hNarr:{ar:'لِين تَحكي',en:'Lyn Tells It'},
+    hLogic:{ar:'الحَقيقةُ المُنيرة',en:'The Illuminating Truth'},
+    hMyth:{ar:'بَطاقةُ تَصحيحِ الفِكرة',en:'Idea-Fixer Card'},
+    hCard:{ar:'بِطاقةُ الوَعي',en:'Awareness Card'},
+    hKey:{ar:'مِفتاحُ الإبداع',en:'Creativity Key'},
+    hJournal:{ar:'دَفتَرُ المُبدِع',en:'Maker\'s Journal'},
+    shSays:{ar:'فِكرةٌ يَهمِسُ بِها كَثيرون:',en:'A thought many whisper:'},
+    rebut:{ar:'والحَقيقة ↓',en:'The truth ↓'},
+    mythFront:{ar:'الفِكرةُ الخاطِئة',en:'The Wrong Idea'},
+    mythBack:{ar:'الحَقيقة',en:'The Truth'},
+    journalPh:{ar:'اكتُب ما بَنى وَعيَكَ اليوم…',en:'Write what built your awareness today…'},
+    stampDo:{ar:'💡 أتمِم هذه المَحطّة',en:'💡 Complete this station'},
+    stampDone:{ar:'✓ مَحطّةٌ مُكتَمِلة',en:'✓ Station complete'},
+    drawer1:{ar:'🎖️ أوسِمةُ المُبدِع',en:'🎖️ Maker Badges'},
+    drawer2:{ar:'💡 بِطاقاتُ الوَعي',en:'💡 Awareness Cards'},
+    drawer3:{ar:'🔑 مَفاتيحُ الإبداع',en:'🔑 Creativity Keys'},
+    certSeal:'💡',
+    certKick:{ar:'رِحلةُ كُن أنتَ المُبدِع · أكاديميةُ المبدعين',en:'Be the Creator · The Innovators\u2019 Academy'},
+    certTitle:{ar:'ميثاقُ المُبدِعِ الواعي',en:'Charter of the Aware Creator'},
+    certStatement:{
+      ar:'أتَمَّ هذا القَلبُ الصَّغيرُ <b>{n}</b> مِن {t} مَحطّاتٍ في رِحلةِ «كُن أنتَ المُبدِع»، فَعَرَفَ — على نَهجِ أهلِ السُّنّةِ والجَماعة — أنه خُلِقَ لِعِبادةِ اللهِ وعِمارةِ الأرض، وأنَّ الوَقتَ حَياتُهُ فَلا يُضَيِّعُهُ في التَّفاهة، وأنَّ العِلمَ عِبادةٌ والإتقانَ بَصمةُ المُسلِم — فَعاهَدَ اللهَ أن يَكونَ مُبدِعاً عالِماً صانِعاً، لَبِنةً في جيلٍ واعٍ يُعيدُ لِلأُمّةِ مَجدَها.',
+      en:'This young heart completed <b>{n}</b> of {t} stations in the "Be the Creator" journey, learning — upon the way of Ahl al-Sunnah — that he was created to worship Allah and build the earth, that time is his life so he wastes it not on triviality, and that knowledge is worship and mastery the Muslim\'s mark — pledging to Allah to be a creative scholar and maker, a brick in an aware generation that restores the nation\'s glory.'},
+  }
+};
+</script>
+<script src="rihla-engine.js"></script>
+<script defer src="../quiz/quiz-engine.js"></script>
+<script defer src="../shared/mk-system.js"></script>
+<script defer src="../shared/mk-journeys.js"></script>
+<script defer src="../shared/mk-bag.js"></script>
+<script defer src="../shared/mk-train.js"></script>
+</body>
+</html>

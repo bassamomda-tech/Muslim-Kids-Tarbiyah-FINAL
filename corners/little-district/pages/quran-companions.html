@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta name="color-scheme" content="dark">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>أنا صاحبك القرآن | I Am Your Companion, the Quran</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Amiri+Quran&family=Tajawal:wght@400;500;700;800;900&family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+<link rel="stylesheet" href="yaqeen.css">
+<style>
+/* ── Quran Garden theme: deep garden green + warm gold (companionship & light) ── */
+:root{
+  --primary:#1A9B7B; --primary-dark:#0E6B53;
+  --bg1:#072B22; --bg2:#0C3F30; --bg3:#11553F;
+  --gold:#EEC868; --gold-soft:#F5DCA0;
+  --text:#EEF6F1; --muted:rgba(238,246,241,.74);
+  --line:rgba(238,200,104,.26);
+}
+body{background:
+  
+    radial-gradient(1300px 760px at 78% -12%, rgba(26,155,123,.30), transparent 58%),
+    radial-gradient(1000px 620px at 0% 100%, rgba(238,200,104,.13), transparent 55%),
+    linear-gradient(165deg,var(--bg1),var(--bg2) 55%,var(--bg3));
+  background-attachment:fixed;
+}
+.guide .who{background:linear-gradient(160deg,#1A9B7B,#0B5240)}
+.coll-cert{background:linear-gradient(160deg,rgba(238,200,104,.16),rgba(26,155,123,.20))!important}
+.lang button.active{color:#072B22}
+.stampbtn{color:#072B22}
+</style>
+<script>(function(){try{var l=localStorage.getItem('bunyanLang');if(l==='en'){var h=document.documentElement;h.dir='ltr';h.lang='en';}}catch(e){}})();</script>
+<style id="__antiflash">html{background:#072B22;color-scheme:dark}</style>
+</head>
+<body>
+
+<!-- ═══ HEADER ═══ -->
+<header class="hdr">
+  <a class="back" href="quran.html">
+    <span>↩️</span><span class="lng-ar">البستان</span><span class="lng-en">Garden</span>
+  </a>
+  <span class="hdr-badge"><span class="l">📖</span><span class="lng-ar">أنا صاحِبُكَ القُرآن</span><span class="lng-en">Your Companion</span></span>
+  <div class="lang">
+    <button data-lang="en">EN</button>
+    <button data-lang="ar" class="active">عربي</button>
+  </div>
+</header>
+
+<!-- ═══ INTRO ═══ -->
+<section class="intro">
+  <h1>
+    <span class="lng-ar">📖 رِحلةُ <span class="hl">أنا صاحِبُكَ القُرآن</span> — الصّالِحونَ مَعَ القُرآن</span>
+    <span class="lng-en">📖 Journey of <span class="hl">I Am Your Companion, the Quran</span> — the Righteous & the Quran</span>
+  </h1>
+  <p class="sub">
+    <span class="lng-ar">خَمسَ عَشرةَ قِصّةً حَقيقيّةً نَكتَشِفُ فيها أهمِّيّةَ تَدَبُّرِ القُرآن، ومَدى تَأثيرِهِ في القُلوب، وكَيفَ يُغَيِّرُ النُّفوسَ إذا قَرَأناهُ وتَدَبَّرناهُ وعَمِلنا بِه: عُمَرُ وسورةُ طه، والفُضَيلُ التّائِب، والجِنُّ المُستَمِعون، ودُموعُ النَّجاشي، وشِفاءُ الفاتِحة، وجيلُ الصَّحابةِ الذي عاشَ القُرآن — لِيَصيرَ القُرآنُ صاحِبَكَ الذي يُغَيِّرُ حَياتَك.</span>
+    <span class="lng-en">Fifteen true stories discovering the importance of pondering the Quran, how deeply it moves hearts, and how it changes souls when we read, reflect on, and live by it: Umar & Surah Ta-Ha, al-Fudayl the penitent, the listening jinn, An-Najashi's tears, the healing of Al-Fatihah, and the companion-generation that lived the Quran — so the Quran becomes the companion that changes your life.</span>
+  </p>
+  <div class="guide">
+    <div class="who">🧑</div>
+    <div class="say">
+      <span class="lng-ar">أنا «أنَس»، رَفيقُك. في كُلِّ مَحطّةٍ قِصّةٌ حَقيقيّةٌ لِقَلبٍ غَيَّرَهُ القُرآن… لِنَكتَشِفَ كَيفَ نَجعَلُ القُرآنَ صاحِبَنا! 📖</span>
+      <span class="lng-en">I'm Anas, your companion. Each station is a true story of a heart the Quran changed… let's discover how to make the Quran our companion! 📖</span>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ METER ═══ -->
+<div class="pbar-wrap">
+  <div class="pbar-top">
+    <span><span class="lng-ar">مِيزانُ التَّدَبُّر</span><span class="lng-en">Reflection Meter</span></span>
+    <span class="stars" id="pCount">0 / 15</span>
+  </div>
+  <div class="pbar"><div class="pbar-fill" id="pFill"></div></div>
+  <div class="meter-label" id="meterLabel"></div>
+</div>
+
+<!-- ═══ COLLECTIONS ═══ -->
+<div class="collections">
+  <div class="coll-card" id="collStickers"></div>
+  <div class="coll-card" id="collNames"></div>
+  <div class="coll-card" id="collKeys"></div>
+  <div class="coll-card coll-cert" id="collCert"></div>
+</div>
+
+<!-- ═══ MAP ═══ -->
+<div class="map" id="map"><div class="road"></div></div>
+
+<a class="sec-testbtn companions" href="quran-tests.html?j=companions">
+  <span class="stb-ic">🎯</span>
+  <span class="stb-tx">
+    <b class="lng-ar">اختبارُ صحابة القرآن</b><b class="lng-en">Companions of the Qur’an Test</b>
+    <small class="lng-ar">٣ مستويات · ٩ أنشطة متنوّعة</small><small class="lng-en">3 levels · 9 varied activities</small>
+  </span>
+  <span class="stb-go lng-ar">ابدأ ←</span><span class="stb-go lng-en">Start →</span>
+</a>
+
+<footer class="foot">
+  <span class="lng-ar">صُنع بِحُبٍّ 💚 لِأطفالِ الأُمّة — <b>أنا صاحِبُكَ القُرآن</b> · بستانُ القرآن · على نَهجِ أهلِ السُّنّة</span>
+  <span class="lng-en">Made with 💚 for the children of the Ummah — <b>I Am Your Companion, the Quran</b> · The Quran Garden · Upon the way of Ahl al-Sunnah</span>
+</footer>
+
+<!-- ═══ READER ═══ -->
+<div class="reader" id="reader">
+  <div class="sheet">
+    <div class="r-top">
+      <button class="r-close" id="rClose">✕</button>
+      <span class="r-count" id="rCount"></span>
+      <div class="r-arrows">
+        <button id="rPrev">‹</button>
+        <button id="rNext">›</button>
+      </div>
+    </div>
+    <div id="rBody"></div>
+  </div>
+</div>
+
+<!-- ═══ COLLECTIONS DRAWER ═══ -->
+<div class="drawer" id="drawer">
+  <div class="drawer-sheet">
+    <div class="dw-top">
+      <h3 id="dwTitle"></h3>
+      <button class="r-close" id="dwClose">✕</button>
+    </div>
+    <div class="dw-body" id="dwBody"></div>
+  </div>
+</div>
+
+<!-- ═══ CERTIFICATE ═══ -->
+<div class="cert-overlay" id="certOverlay">
+  <div class="cert-tools">
+    <input id="certName" type="text" placeholder="✍️ اكتُب اسمَك هنا / Type your name" maxlength="40">
+    <button class="cprint" id="certPrint">🖨️ <span class="lng-ar">اطبَع</span><span class="lng-en">Print</span></button>
+    <button class="cclose" id="certClose">✕</button>
+  </div>
+  <div class="certificate" id="certBox"></div>
+</div>
+
+<div id="confetti"></div>
+<div class="toast" id="toast"></div>
+
+<script defer src="nav-fix.js"></script>
+<script src="qstories-data/qsahib-stations.js"></script>
+<script>
+window.RIHLA_CFG = {
+  stations: window.QSAHIB_STATIONS,
+  prefix: 'qsahib',
+  confetti: ['#EEC868','#1A9B7B','#C0392B','#5B4E8C','#FFFFFF','#1F7AAE'],
+  T: {
+    mapEnter:{ar:'اقرَأ القِصّة ←',en:'Read the story →'},
+    mapDone:{ar:'مُكتَمِلة ✓ — أعِد القِراءة',en:'Done ✓ — reread'},
+    finishTitle:{ar:'وِسامُ صاحِبِ القُرآن',en:'Companion of the Quran Medal'},
+    meterStart:{ar:'ابدَأ الرِّحلة… كُلُّ قِصّةٍ قَلبٌ غَيَّرَهُ القُرآن',en:'Begin the journey… each story is a heart the Quran changed'},
+    meterMid:{ar:'أحسَنت! تَدَبَّرتَ {n} مِن {t} قِصَص',en:'Great! You reflected on {n} of {t} stories'},
+    meterDone:{ar:'🎉 اكتَمَلَتِ الرِّحلة! صارَ القُرآنُ صاحِبَكَ الذي يُغَيِّرُ حَياتَك',en:'🎉 The journey is complete! The Quran has become the companion that changes your life'},
+    coll1:{icon:'🎖️',title:{ar:'أوسِمةُ التَّدَبُّر',en:'Reflection Badges'},unit:{ar:'وِسام',en:'badges'}},
+    coll2:{icon:'📖',title:{ar:'بِطاقاتُ القُرآن',en:'Quran Cards'},unit:{ar:'بِطاقة',en:'cards'}},
+    coll3:{title:{ar:'مَفاتيحُ التَّدَبُّر',en:'Reflection Keys'}},
+    collCert:{title:{ar:'ميثاقُ القُرآن',en:'Quran Charter'}},
+    kick:{ar:'القِصّة {n} مِن {t}',en:'Story {n} of {t}'},
+    hNarr:{ar:'القِصّة — أنَس يَحكي',en:'The Story — Anas Tells It'},
+    hLogic:{ar:'ماذا نَتَعَلَّمُ؟',en:'What Do We Learn?'},
+    hMyth:{ar:'بَطاقةُ تَصحيحِ الفِكرة',en:'Idea-Fixer Card'},
+    hMatch:{ar:'لُعبةُ الوَصل',en:'Match-Up Game'},
+    hWahy:{ar:'آيةٌ نَتَدَبَّرُها',en:'A Verse to Reflect On'},
+    hCard:{ar:'بِطاقةُ القُرآن',en:'Quran Card'},
+    hKey:{ar:'مِفتاحُ التَّدَبُّر',en:'Reflection Key'},
+    hDua:{ar:'دُعاءٌ تَحفَظُه',en:'A Dua to Memorize'},
+    hMission:{ar:'مُهِمّةُ المُتَدَبِّر',en:'Reflector\u2019s Mission'},
+    hJournal:{ar:'دَفتَرُ التَّدَبُّر',en:'Reflection Journal'},
+    shSays:{ar:'سُؤالٌ يَخطُرُ بِبالِك:',en:'A question crosses your mind:'},
+    rebut:{ar:'والجَوابُ ↓',en:'The answer ↓'},
+    journalPh:{ar:'اكتُب ما تَدَبَّرَهُ قَلبُكَ اليوم…',en:'Write what your heart reflected on today…'},
+    stampDo:{ar:'📖 أتمِم هذه القِصّة',en:'📖 Complete this story'},
+    stampDone:{ar:'✓ قِصّةٌ مُكتَمِلة',en:'✓ Story complete'},
+    nextBtn:{ar:'القِصّةُ التّالية ←',en:'Next story →'},
+    drawer1:{ar:'🎖️ أوسِمةُ التَّدَبُّر',en:'🎖️ Reflection Badges'},
+    drawer2:{ar:'📖 بِطاقاتُ القُرآن',en:'📖 Quran Cards'},
+    drawer3:{ar:'🔑 مَفاتيحُ التَّدَبُّر',en:'🔑 Reflection Keys'},
+    fromStation:{ar:'مِن قِصّة: ',en:'From: '},
+    certSeal:'📖',
+    certKick:{ar:'رِحلةُ أنا صاحِبُكَ القُرآن · بستانُ القرآن',en:'I Am Your Companion the Quran · The Quran Garden'},
+    certTitle:{ar:'ميثاقُ صاحِبِ القُرآن',en:'Charter of the Companion of the Quran'},
+    certStatement:{
+      ar:'تَدَبَّرَ هذا القَلبُ الصَّغيرُ <b>{n}</b> مِن {t} قِصّةً في رِحلةِ «أنا صاحِبُكَ القُرآن»، فَعَرَفَ — على نَهجِ أهلِ السُّنّةِ والجَماعة — كَيفَ غَيَّرَ القُرآنُ قُلوبَ عُمَرَ والفُضَيلِ والنَّجاشيِّ وغَيرِهِم، وكَيفَ يُحَوِّلُ النُّفوسَ إذا قَرَأناهُ وتَدَبَّرناهُ وعَمِلنا بِه — فَعاهَدَ اللهَ أن يَجعَلَ القُرآنَ صاحِبَهُ: يَقرَؤُهُ كُلَّ يَومٍ بِتَدَبُّر، ويَعمَلُ بِه، ويُحِبُّهُ ويُعَظِّمُه.',
+      en:'This young heart reflected on <b>{n}</b> of {t} stories in the "I Am Your Companion, the Quran" journey, learning — upon the way of Ahl al-Sunnah — how the Quran changed the hearts of Umar, al-Fudayl, An-Najashi, and others, and how it transforms souls when we read, reflect on, and live by it — pledging to Allah to make the Quran its companion: reading it daily with reflection, acting on it, and loving and revering it.'},
+  }
+};
+</script>
+<script src="rihla-engine.js"></script>
+<style>
+.sec-testbtn{position:relative;z-index:8;display:flex;align-items:center;gap:.8rem;max-width:520px;margin:1.4rem auto 2rem;padding:.85rem 1.2rem;text-decoration:none;cursor:pointer;border-radius:1.3rem;font-family:'Tajawal',sans-serif;transition:transform .18s,box-shadow .18s}
+.sec-testbtn:hover{transform:translateY(-3px)}
+.sec-testbtn .stb-ic{font-size:2rem;flex:0 0 auto}
+.sec-testbtn .stb-tx{flex:1;display:flex;flex-direction:column;line-height:1.35}
+.sec-testbtn .stb-tx b{color:#fff;font-size:1.08rem;font-weight:900}
+.sec-testbtn .stb-tx small{color:rgba(255,255,255,.85);font-size:.78rem;font-weight:700}
+.sec-testbtn .stb-go{flex:0 0 auto;background:#fff;font-family:'Tajawal',sans-serif;font-weight:900;font-size:.85rem;border-radius:2rem;padding:.4rem .9rem;white-space:nowrap}
+.sec-testbtn.companions{background:linear-gradient(135deg,#1A9B7B,#0E6B53);border:2px solid #7FE0C8;box-shadow:0 8px 0 #0a5740,0 14px 28px rgba(10,60,40,.4)}
+.sec-testbtn.companions .stb-go{color:#0E6B53}
+</style>
+<script defer src="../../shared/mk-system.js"></script>
+<script defer src="../../shared/mk-journeys.js"></script>
+<script defer src="../../shared/mk-bag.js"></script>
+<script defer src="../../shared/mk-train.js"></script>
+</body>
+</html>

@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta name="color-scheme" content="dark">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>حقيبتي | My Bag</title>
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+<style>
+  :root{ --bg1:#081E36; --bg2:#0E2E4E; --gold:#E8B530; --gold-lt:#F5CC5A; --ink:#FEF5DC; --muted:rgba(254,245,220,.66); --card:rgba(255,255,255,.06); --line:rgba(232,181,48,.28); --green:#1F8A5B; }
+  *{box-sizing:border-box}
+  body{margin:0;font-family:'Tajawal','Nunito',sans-serif;color:var(--ink);direction:rtl;min-height:100vh;background:
+    radial-gradient(1100px 640px at 82% -8%,rgba(232,181,48,.14),transparent 60%),
+    radial-gradient(900px 520px at 12% 8%,rgba(31,138,91,.16),transparent 60%),
+    linear-gradient(165deg,var(--bg1),var(--bg2))}
+  html[dir="ltr"] body{direction:ltr;font-family:'Nunito','Tajawal',sans-serif}
+  .header{display:flex;align-items:center;justify-content:space-between;padding:1rem 1.4rem;border-bottom:1px solid var(--line);background:rgba(8,24,42,.7);position:sticky;top:0;z-index:10;backdrop-filter:blur(8px)}
+  .back-btn{background:var(--gold);color:#10243d;border:none;border-radius:2rem;padding:.5rem 1.2rem;font-weight:800;text-decoration:none;font-size:.88rem;font-family:inherit}
+  .lang{display:flex;border:1.5px solid var(--line);border-radius:2rem;overflow:hidden}
+  .lang button{background:transparent;border:none;color:var(--ink);font-weight:800;padding:.32rem .85rem;font-size:.8rem;cursor:pointer;font-family:inherit}
+  .lang button.active{background:var(--gold);color:#10243d}
+  .wrap{max-width:1000px;margin:0 auto;padding:1.6rem 1rem 4rem}
+
+  /* HERO: child + points */
+  .bag-hero{display:flex;align-items:center;gap:1.1rem;flex-wrap:wrap;background:linear-gradient(150deg,rgba(232,181,48,.16),rgba(255,255,255,.03));border:1.5px solid var(--line);border-radius:1.6rem;padding:1.3rem 1.4rem;margin-bottom:1.3rem}
+  .bag-avi{width:84px;height:84px;border-radius:50%;display:grid;place-items:center;font-size:2.8rem;background:var(--avi-col,#D4A017);box-shadow:0 8px 22px rgba(0,0,0,.4);flex:0 0 auto}
+  .bag-id{flex:1;min-width:160px}
+  .bag-id .hi{color:var(--muted);font-weight:700;font-size:.9rem}
+  .bag-id h1{margin:.1rem 0 .5rem;font-size:1.9rem;font-weight:900}
+  .bag-id .switch{display:inline-flex;align-items:center;gap:.35rem;background:rgba(255,255,255,.08);border:1px solid var(--line);color:var(--gold-lt);border-radius:2rem;padding:.32rem .9rem;font-size:.8rem;font-weight:800;text-decoration:none}
+  .bag-points{text-align:center;background:rgba(8,24,42,.45);border:1.5px solid var(--line);border-radius:1.3rem;padding:.8rem 1.5rem;flex:0 0 auto}
+  .bag-points .pn{font-size:2.6rem;font-weight:900;color:var(--gold-lt);line-height:1}
+  .bag-points .ps{font-weight:800;color:var(--muted);font-size:.85rem}
+
+  /* STAT TILES */
+  .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:.8rem;margin-bottom:1.6rem}
+  @media(max-width:560px){.stats{grid-template-columns:repeat(2,1fr)}}
+  .stat{background:var(--card);border:1.5px solid var(--line);border-radius:1.2rem;padding:1rem .6rem;text-align:center;display:flex;flex-direction:column;gap:.2rem}
+  .stat .si{font-size:1.7rem}
+  .stat b{font-size:1.6rem;font-weight:900;color:var(--gold-lt)}
+  .stat span:last-child{font-size:.82rem;color:var(--muted);font-weight:700}
+
+  .sec{margin-bottom:2rem}
+  .sec-h{display:flex;align-items:center;gap:.6rem;margin-bottom:1rem}
+  .sec-h .si{font-size:1.5rem}
+  .sec-h h2{margin:0;font-size:1.3rem;font-weight:900;color:var(--gold-lt)}
+  .sec-h .sn{color:var(--muted);font-size:.86rem;margin-inline-start:auto;font-weight:700}
+
+  /* CORNER PROGRESS */
+  .corner-list{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:.7rem}
+  .crow{display:flex;align-items:center;gap:.7rem;background:var(--card);border:1px solid var(--line);border-radius:1rem;padding:.7rem .9rem}
+  .crow .c-ic{font-size:1.5rem;flex:0 0 auto}
+  .crow .c-mid{flex:1;min-width:0}
+  .crow .c-nm{font-weight:800;font-size:.92rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .crow .c-bar{height:8px;background:rgba(255,255,255,.1);border-radius:5px;overflow:hidden;margin-top:.35rem}
+  .crow .c-bar i{display:block;height:100%;border-radius:5px}
+  .crow .c-pct{font-weight:900;color:var(--gold-lt);font-size:.95rem;min-width:42px;text-align:end}
+
+  /* GRID cards (certs + rewards) */
+  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:1rem}
+  .card{background:var(--card);border:1.5px solid var(--line);border-radius:1.2rem;padding:1.1rem;display:flex;flex-direction:column;gap:.5rem}
+  .card .c-ic{font-size:1.9rem}
+  .card .c-t{font-weight:800;font-size:1rem;line-height:1.4}
+  .card .c-s{color:var(--muted);font-size:.82rem;flex:1}
+  .btn{margin-top:.3rem;background:linear-gradient(135deg,var(--gold),#c79518);color:#10243d;border:none;border-radius:.9rem;padding:.6rem;font-weight:800;cursor:pointer;font-family:inherit;font-size:.88rem;text-decoration:none;text-align:center;display:block}
+  .btn.green{background:linear-gradient(135deg,var(--green),#176b46);color:#fff}
+  .empty{color:var(--muted);font-size:.92rem;background:var(--card);border:1px dashed var(--line);border-radius:1rem;padding:1.4rem;text-align:center}
+
+  .toolbar{display:flex;gap:.7rem;flex-wrap:wrap;margin-top:1rem}
+  .tool-link{flex:1;min-width:200px;display:flex;align-items:center;gap:.7rem;justify-content:center;background:rgba(255,255,255,.05);border:1.5px solid var(--line);border-radius:1.1rem;padding:.85rem;color:var(--ink);font-weight:800;text-decoration:none}
+  .tool-link:hover{border-color:var(--gold)}
+  .tool-link.green{background:linear-gradient(135deg,rgba(31,138,91,.25),rgba(31,138,91,.08));border-color:rgba(31,138,91,.5)}
+
+  /* PRINT overlay (certificate / summary) */
+  .print-ov{position:fixed;inset:0;background:rgba(4,14,26,.82);backdrop-filter:blur(8px);display:none;align-items:flex-start;justify-content:center;z-index:60;overflow-y:auto;padding:1.2rem}
+  .print-ov.open{display:flex}
+  .print-tools{position:fixed;top:1rem;inset-inline-end:1rem;display:flex;gap:.5rem;z-index:61}
+  .pt-btn{border:none;border-radius:.9rem;padding:.6rem 1rem;font-weight:800;cursor:pointer;font-family:inherit}
+  .pt-btn.print{background:var(--gold);color:#10243d}
+  .pt-btn.close{background:#c0392b;color:#fff}
+  .sheet-paper{background:#fff;color:#222;max-width:780px;width:100%;margin:auto;border-radius:1rem;overflow:hidden}
+  .cert{padding:2.6rem 2rem;text-align:center;background:radial-gradient(700px 360px at 50% 0%,#fff8e6,#fffdf7);border:10px solid #C8A020;position:relative}
+  .cert .seal{font-size:3.2rem}
+  .cert .kick{color:#9a7414;font-weight:800;letter-spacing:.08em;margin:.4rem 0}
+  .cert .title{font-size:1.9rem;font-weight:900;color:#7a5a12;margin:.3rem 0}
+  .cert .name{font-size:2.1rem;font-weight:900;color:#10243d;border-bottom:3px dashed #C8A020;display:inline-block;padding:.2rem 2rem;margin:.7rem 0}
+  .cert .state{font-size:1.05rem;line-height:1.9;color:#3a2f12;margin:.7rem auto;max-width:560px}
+  .cert .foot{margin-top:1rem;color:#9a7414;font-weight:800}
+  .summary{padding:2rem;color:#222;background:#fff}
+  .summary h2{color:#7a5a12;margin:.2rem 0 1rem;text-align:center}
+  .summary table{width:100%;border-collapse:collapse}
+  .summary th,.summary td{padding:.5rem .7rem;border-bottom:1px solid #e7dcc0;text-align:start;font-size:.92rem}
+  .summary th{color:#9a7414;font-weight:800}
+  .summary .corner-h td{background:#fbf3dd;font-weight:900;color:#7a5a12}
+  @media print{ body *{visibility:hidden} .print-ov,.print-ov *{visibility:visible} .print-ov{position:absolute;inset:0;background:#fff;padding:0} .print-tools{display:none} .sheet-paper{box-shadow:none;max-width:100%} }
+</style>
+<style id="__antiflash">html{background:#081E36;color-scheme:dark}</style>
+</head>
+<body>
+  <div class="header">
+    <a href="../../index.html" class="back-btn" id="backBtn">↩️ <span class="lng-ar">المدينة</span><span class="lng-en">City</span></a>
+    <div class="lang"><button data-lang="en">EN</button><button data-lang="ar" class="active">عربي</button></div>
+  </div>
+
+  <div class="wrap">
+    <!-- HERO -->
+    <div class="bag-hero">
+      <span class="bag-avi" id="bagAvi">🧒</span>
+      <div class="bag-id">
+        <div class="hi"><span class="lng-ar">🎒 حقيبةُ كنوزي</span><span class="lng-en">🎒 My Treasure Bag</span></div>
+        <h1 id="bagName">—</h1>
+        <a class="switch" id="switchLink" href="login.html"><span class="lng-ar">🔄 تبديل الطفل</span><span class="lng-en">🔄 Switch child</span></a>
+      </div>
+      <div class="bag-points">
+        <div class="pn" id="ptsN">0</div>
+        <div class="ps">⭐ <span class="lng-ar">نقطة</span><span class="lng-en">points</span></div>
+      </div>
+    </div>
+
+    <!-- STAT TILES -->
+    <div class="stats">
+      <div class="stat"><span class="si">🎖️</span><b id="stBadges">0</b><span><span class="lng-ar">أوسمة</span><span class="lng-en">Badges</span></span></div>
+      <div class="stat"><span class="si">📜</span><b id="stCerts">0</b><span><span class="lng-ar">شهادات</span><span class="lng-en">Certificates</span></span></div>
+      <div class="stat"><span class="si">🗺️</span><b id="stJourneys">0</b><span><span class="lng-ar">رحلات</span><span class="lng-en">Journeys</span></span></div>
+      <div class="stat"><span class="si">🎁</span><b id="stRewards">0</b><span><span class="lng-ar">جوائز</span><span class="lng-en">Rewards</span></span></div>
+    </div>
+
+    <!-- CORNER PROGRESS -->
+    <div class="sec">
+      <div class="sec-h"><span class="si">🏙️</span><h2><span class="lng-ar">تقدّمي في الأركان</span><span class="lng-en">My Progress</span></h2></div>
+      <div class="corner-list" id="cornerList"></div>
+    </div>
+
+    <!-- CERTIFICATES -->
+    <div class="sec">
+      <div class="sec-h"><span class="si">🏅</span><h2><span class="lng-ar">شهاداتي</span><span class="lng-en">My Certificates</span></h2><span class="sn" id="certCount"></span></div>
+      <div id="certGrid"></div>
+    </div>
+
+    <!-- REWARDS -->
+    <div class="sec">
+      <div class="sec-h"><span class="si">🎁</span><h2><span class="lng-ar">جوائزي وأنشطتي المفتوحة</span><span class="lng-en">My Rewards &amp; Unlocked Activities</span></h2><span class="sn" id="rewCount"></span></div>
+      <div class="grid" id="rewGrid"></div>
+    </div>
+
+    <!-- MORE -->
+    <div class="sec">
+      <div class="sec-h"><span class="si">🧭</span><h2><span class="lng-ar">المزيد</span><span class="lng-en">More</span></h2></div>
+      <div class="toolbar">
+        <a class="tool-link green" href="#" onclick="openSummary();return false">🧾 <span class="lng-ar">تقرير تقدّمي الكامل (طباعة / PDF)</span><span class="lng-en">Full progress report (print / PDF)</span></a>
+        <a class="tool-link" id="dlLink" href="downloads.html">📥 <span class="lng-ar">ركن التنزيلات وأوراق الأنشطة</span><span class="lng-en">Downloads &amp; activity sheets</span></a>
+      </div>
+    </div>
+  </div>
+
+  <!-- print overlay -->
+  <div class="print-ov" id="printOv" onclick="if(event.target===this)closePrint()">
+    <div class="print-tools">
+      <button class="pt-btn print" onclick="window.print()">🖨️ <span class="lng-ar">طباعة / PDF</span><span class="lng-en">Print / PDF</span></button>
+      <button class="pt-btn close" onclick="closePrint()">✕</button>
+    </div>
+    <div class="sheet-paper" id="printPaper"></div>
+  </div>
+
+<script defer src="mk-system.js"></script>
+<script defer src="mk-journeys.js"></script>
+<script>
+  var lang = (window.MK&&MK.lang())||localStorage.getItem('bunyanLang')||'ar';
+
+  function txo(o){ return o?(o[lang]||o.ar):''; }
+  function CN(id){ var c=MK.corner(id); return c?c.name:{ar:id,en:id}; }
+  function CIC(id){ var c=MK.corner(id); return c?c.icon:'🏛️'; }
+
+  /* ── data: mirror of mk-bag.js collect() so numbers match the floating bag ── */
+  function bpsPoints(pid){ try{ var o=JSON.parse(localStorage.getItem('mk:bps')||'{}'); return (o.child&&o.child[pid]&&o.child[pid].points)||0; }catch(e){ return 0; } }
+  function rewardsList(){
+    var seen={}, out=[];
+    try{ var u=JSON.parse(localStorage.getItem('mkUnlocked')||'{}');
+      Object.keys(u).forEach(function(k){ if(Array.isArray(u[k])) u[k].forEach(function(a){ if(a&&a.href&&!seen[a.href]){ seen[a.href]=1; out.push(a); } }); });
+    }catch(e){}
+    return out;
+  }
+  var ERA_MAP={ heart:['heart'], history:['prophets','seerah','heroes','battles'], academy:['creativity','minds','explorers'] };
+  function eraSolved(era){ try{ var o=JSON.parse(localStorage.getItem('hisn-acts-'+era)||'{}'); var n=0; for(var k in o) if(o[k]) n++; return n; }catch(e){ return 0; } }
+  function eraTotal(era){ var pack=window.HISN&&HISN.activities&&HISN.activities[era]; return pack&&pack.list?pack.list.length*3:0; }
+  function collect(){
+    var prof=(window.MK&&MK.activeProfile&&MK.activeProfile())||null;
+    var perCorner=[],badges=0,totalStations=0,certs=0,journeysDone=0,stationPts=0;
+    var snap={}; try{ snap=JSON.parse(localStorage.getItem('mk:cornerCard')||'{}'); }catch(e){}
+    if(window.MK&&window.MK.CORNERS){
+      MK.CORNERS.forEach(function(c){
+        var cs=snap[c.id];
+        if(cs&&cs.station){
+          var sd=cs.station[0],stt=cs.station[1];
+          badges+=(cs.medal?cs.medal[0]:sd); totalStations+=stt; certs+=(cs.cert?cs.cert[0]:0);
+          journeysDone+=(cs.journey?cs.journey[0]:0); stationPts+=sd*10;
+          perCorner.push({id:c.id,icon:c.icon,name:c.name,color:c.color,done:sd,total:stt,pct:cs.pct!=null?cs.pct:(stt?Math.round(sd/stt*100):0)});
+          return;
+        }
+        if(!window.MK_J) return;
+        var st=MK_J.cornerStats(c.id); var done=0,total=0,jDone=0,jCount=0;
+        if(st&&st.total>0){ done=st.done; total=st.total; jDone=st.journeysDone; jCount=st.count; }
+        var eras=ERA_MAP[c.id];
+        if(eras){ eras.forEach(function(e){ var d=eraSolved(e),t=eraTotal(e); if(t){ done+=d; total+=t; if(d>=t) jDone++; jCount++; } else if(d){ done+=d; total+=d; } }); }
+        if(total===0) return;
+        var FIXED={academy:72,aqeeda:130};
+        if(FIXED[c.id]){ var fp=total?done/total:0; total=FIXED[c.id]; done=Math.round(fp*total); jCount=jCount||5; }
+        badges+=done; totalStations+=total; stationPts+=done*10; journeysDone+=jDone; certs+=jCount;
+        perCorner.push({id:c.id,icon:c.icon,name:c.name,color:c.color,done:done,total:total,pct:total?Math.round(done/total*100):0});
+      });
+    }
+    var rew=rewardsList();
+    var pts=stationPts+(prof?bpsPoints(prof.id):0);
+    return { prof:prof, perCorner:perCorner, badges:badges, certs:certs, journeysDone:journeysDone, points:pts, rewards:rew };
+  }
+
+  function earned(){ return (window.MK_JOURNEYS||[]).map(function(j){ return Object.assign({},j,{done:MK_J.completedOf(j)}); }).filter(function(j){ return j.done>0; }); }
+
+  function applyLang(){
+    document.documentElement.lang=lang; document.documentElement.dir=lang==='ar'?'rtl':'ltr';
+    document.querySelectorAll('.lng-ar').forEach(function(e){e.style.display=lang==='ar'?'':'none';});
+    document.querySelectorAll('.lng-en').forEach(function(e){e.style.display=lang==='en'?'':'none';});
+    document.querySelectorAll('.lang button').forEach(function(b){b.classList.toggle('active',b.dataset.lang===lang);});
+    document.getElementById('switchLink').href='login.html?lang='+lang;
+    document.getElementById('dlLink').href='downloads.html?lang='+lang;
+    render();
+  }
+  document.querySelectorAll('.lang button').forEach(function(b){ b.onclick=function(){ lang=b.dataset.lang; try{localStorage.setItem('bunyanLang',lang);}catch(e){} applyLang(); }; });
+
+  function render(){
+    var ar=lang==='ar', d=collect();
+    // hero
+    if(d.prof){
+      document.getElementById('bagAvi').textContent=d.prof.avatar||'🧒';
+      document.getElementById('bagAvi').style.setProperty('--avi-col', d.prof.color||'#D4A017');
+      document.getElementById('bagName').textContent=d.prof.name;
+    } else {
+      document.getElementById('bagAvi').textContent='🧒';
+      document.getElementById('bagName').textContent=ar?'ضيف':'Guest';
+    }
+    document.getElementById('ptsN').textContent=d.points;
+    // Certificates stat must equal the actual downloadable certificate cards below.
+    var es=earned();
+    document.getElementById('stBadges').textContent=d.badges;
+    document.getElementById('stCerts').textContent=es.length;
+    document.getElementById('stJourneys').textContent=d.journeysDone;
+    document.getElementById('stRewards').textContent=d.rewards.length;
+
+    // corners
+    document.getElementById('cornerList').innerHTML = d.perCorner.length
+      ? d.perCorner.map(function(c){
+          return '<div class="crow"><span class="c-ic">'+c.icon+'</span><div class="c-mid"><div class="c-nm">'+(ar?c.name.ar:c.name.en)+'</div>'
+            +'<div class="c-bar"><i style="width:'+c.pct+'%;background:'+c.color+'"></i></div></div>'
+            +'<span class="c-pct">'+c.pct+'%</span></div>';
+        }).join('')
+      : '<div class="empty">'+(ar?'لم تبدأ أيّ ركنٍ بعد — اختر ركناً من المدينة وابدأ رحلتك! 🗺️':'No corner started yet — pick a corner from the city and begin! 🗺️')+'</div>';
+
+    // certificates
+    document.getElementById('certCount').textContent = ar?(es.length+' شهادة'):(es.length+' certificates');
+    document.getElementById('certGrid').innerHTML = es.length
+      ? '<div class="grid">'+es.map(function(j){
+          var full=j.done>=j.total;
+          return '<div class="card"><div class="c-ic">'+j.icon+'</div>'
+            +'<div class="c-t">'+txo(j.name)+'</div>'
+            +'<div class="c-s">'+txo(CN(j.corner))+' · '+j.done+'/'+j.total+(full?(ar?' · مكتملة 🎉':' · complete 🎉'):'')+'</div>'
+            +'<button class="btn" onclick=\'openCert("'+j.id+'")\'>'+(ar?'🏅 عرض الشهادة':'🏅 View certificate')+'</button></div>';
+        }).join('')+'</div>'
+      : '<div class="empty">'+(ar?'لا توجد شهادات بعد — أكمِل محطات في أي ركن لتظهر هنا. ✨':'No certificates yet — complete stations in any corner and they\'ll appear here. ✨')+'</div>';
+
+    // rewards
+    document.getElementById('rewCount').textContent = ar?(d.rewards.length+' جائزة'):(d.rewards.length+' rewards');
+    document.getElementById('rewGrid').innerHTML = d.rewards.length
+      ? d.rewards.map(function(a){
+          var url='../activities/'+a.href;
+          return '<div class="card"><div class="c-ic">'+(a.icon||'🎮')+'</div>'
+            +'<div class="c-t">'+txo(a.t)+'</div>'
+            +'<a class="btn green" href="'+url+'?lang='+lang+'">'+(ar?'افتح النشاط ←':'Open activity →')+'</a></div>';
+        }).join('')
+      : '<div class="empty">'+(ar?'لا توجد جوائز مفتوحة بعد — تُفتَح عند اجتياز اختبارات الأركان، أو يمنحُها لك الأهل. 🎁':'No rewards unlocked yet — they open when you pass corner tests, or when a parent grants them. 🎁')+'</div>';
+  }
+
+  function openCert(id){
+    var j=(window.MK_JOURNEYS||[]).find(function(x){return x.id===id;}); if(!j) return;
+    var done=MK_J.completedOf(j), ar=lang==='ar';
+    var nm=(MK.activeProfile()?MK.activeProfile().name:'')||localStorage.getItem('parentChildName')||(ar?'اسم الطفل':'Child Name');
+    var stmt = ar
+      ? 'أتمّ هذا البطلُ الصغيرُ <b>'+done+'</b> من '+j.total+' محطةً في «'+txo(j.name)+'» ضمن '+txo(CN(j.corner))+'، فاستحقّ هذا التكريم. بارك الله فيه وزاده علماً وإيماناً.'
+      : 'This young hero completed <b>'+done+'</b> of '+j.total+' stations in "'+txo(j.name)+'" within '+txo(CN(j.corner))+', earning this honor. May Allah bless him.';
+    document.getElementById('printPaper').innerHTML =
+      '<div class="cert"><div class="seal">'+j.icon+'</div>'
+      +'<div class="kick">'+(ar?'تربية الطفل المسلم · حقيبتي':'Muslim Kids’ Tarbiyah · My Bag')+'</div>'
+      +'<div class="title">'+(ar?'شهادة تميّز':'Certificate of Excellence')+'</div>'
+      +'<div class="name">'+nm+'</div>'
+      +'<div class="state">'+stmt+'</div>'
+      +'<div class="foot">'+done+' 🎖️ · '+txo(j.name)+'</div></div>';
+    document.getElementById('printOv').classList.add('open');
+  }
+  function openSummary(){
+    var ar=lang==='ar';
+    var order=MK.CORNERS.map(function(c){return c.id;});
+    var groups={}; (window.MK_JOURNEYS||[]).forEach(function(j){ (groups[j.corner]=groups[j.corner]||[]).push(j); });
+    var nm=(MK.activeProfile()?MK.activeProfile().name:'')||localStorage.getItem('parentChildName')||'';
+    var totalDone=0,totalAll=0,rows='';
+    order.filter(function(id){return groups[id];}).forEach(function(cid){
+      var js=groups[cid],cd=0,ct=0;
+      var jr=js.map(function(j){ var c=MK_J.completedOf(j); cd+=c; ct+=j.total; totalDone+=c; totalAll+=j.total;
+        return '<tr><td>'+j.icon+' '+txo(j.name)+'</td><td>'+c+' / '+j.total+'</td><td>'+(j.total?Math.round(c/j.total*100):0)+'%</td></tr>'; }).join('');
+      rows += '<tr class="corner-h"><td>'+CIC(cid)+' '+txo(CN(cid))+'</td><td>'+cd+' / '+ct+'</td><td>'+(ct?Math.round(cd/ct*100):0)+'%</td></tr>'+jr;
+    });
+    document.getElementById('printPaper').innerHTML =
+      '<div class="summary"><h2>'+(ar?'📊 تقرير تقدّم':'📊 Progress Report')+(nm?(' · '+nm):'')+'</h2>'
+      +'<table><thead><tr><th>'+(ar?'الرحلة / الركن':'Journey / Corner')+'</th><th>'+(ar?'المحطات':'Stations')+'</th><th>%</th></tr></thead>'
+      +'<tbody>'+rows+'</tbody>'
+      +'<tfoot><tr style="border-top:2px solid #C8A020"><td><b>'+(ar?'الإجمالي':'Total')+'</b></td><td><b>'+totalDone+' / '+totalAll+'</b></td><td><b>'+(totalAll?Math.round(totalDone/totalAll*100):0)+'%</b></td></tr></tfoot>'
+      +'</table><p style="text-align:center;color:#9a7414;margin-top:1rem;font-weight:700">'+(ar?'تربية الطفل المسلم':'Muslim Kids’ Tarbiyah')+'</p></div>';
+    document.getElementById('printOv').classList.add('open');
+  }
+  function closePrint(){ document.getElementById('printOv').classList.remove('open'); }
+
+  function boot(){ applyLang(); }
+  if(window.MK&&window.MK_J){ boot(); }
+  else { var t=setInterval(function(){ if(window.MK&&window.MK_J){ clearInterval(t); boot(); } },60); setTimeout(function(){ clearInterval(t); boot(); },2000); }
+</script>
+<script defer src="nav-fix.js"></script>
+<script src="mk-citynav.js"></script>
+</body>
+</html>

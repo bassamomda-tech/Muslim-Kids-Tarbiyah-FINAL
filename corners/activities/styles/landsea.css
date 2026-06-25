@@ -1,0 +1,197 @@
+/* ============================================================
+   LAND/SEA — فرز البر والبحر
+   ============================================================ */
+
+.ls-panel {
+  background:
+    radial-gradient(140% 80% at 50% 0%, rgba(205,235,215,0.35), transparent 60%),
+    var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--r-2xl);
+  padding: var(--s-8);
+  display: flex; flex-direction: column;
+  box-shadow: var(--shadow-card);
+}
+.ls-panel .activity-tag { background: var(--mint); color: var(--mint-ink); }
+.ls-panel .activity-tag::before { background: var(--mint-ink); }
+
+.ls-hud {
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--s-3);
+  margin-bottom: var(--s-4);
+}
+.ls-hud .hud-block {
+  background: var(--bg-soft); border: 1px solid var(--line);
+  border-radius: var(--r-md); padding: 10px 14px;
+  display: flex; flex-direction: column; gap: 2px;
+  font-size: 11px; color: var(--muted); font-weight: 600;
+}
+.ls-hud .hud-block strong {
+  font-size: 20px; color: var(--ink);
+  font-family: var(--font-en); font-weight: 800;
+}
+
+.ls-stage {
+  background: linear-gradient(180deg, #E0EEF7 0%, #FFE9A8 60%, #DEEFE2 100%);
+  border-radius: var(--r-xl);
+  border: 1px solid var(--line);
+  padding: var(--s-5);
+  display: flex; flex-direction: column;
+  gap: var(--s-4);
+  min-height: 480px;
+}
+
+/* صَناديق */
+.ls-buckets {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--s-3);
+}
+.bucket {
+  background: var(--surface);
+  border: 2px dashed var(--line);
+  border-radius: var(--r-lg);
+  padding: var(--s-4) var(--s-3);
+  display: flex; flex-direction: column; align-items: center;
+  gap: 6px;
+  cursor: pointer;
+  transition: background 0.18s ease, border-color 0.18s ease, transform 0.15s ease;
+  position: relative;
+}
+.bucket .b-art {
+  width: 56px; height: 56px;
+  display: grid; place-items: center;
+  border-radius: 50%;
+  background: var(--bg-soft);
+}
+.bucket .b-art svg { width: 70%; height: 70%; }
+.bucket .b-label {
+  font-weight: 800; font-size: 16px; color: var(--ink);
+}
+.bucket .b-count {
+  font-family: var(--font-en); font-weight: 800; font-size: 13px;
+  padding: 3px 10px; border-radius: var(--r-pill);
+  background: var(--bg-soft); color: var(--ink-2);
+}
+.bucket.sea  { border-color: var(--sky-ink); }
+.bucket.sea  .b-art { background: var(--sky); color: var(--sky-ink); }
+.bucket.land { border-color: var(--peach-ink); }
+.bucket.land .b-art { background: var(--peach); color: var(--peach-ink); }
+.bucket.both { border-color: var(--mint-ink); }
+.bucket.both .b-art { background: var(--mint); color: var(--mint-ink); }
+
+.bucket:hover { transform: translateY(-2px); }
+.bucket.armed {
+  background: var(--bg-soft);
+  border-style: solid;
+  box-shadow: 0 0 0 3px rgba(31,37,64,0.08);
+}
+.bucket.hover-target {
+  background: var(--surface);
+  box-shadow: 0 0 0 3px var(--mint-ink);
+}
+.bucket.flash-good {
+  animation: ls-good 0.45s ease;
+}
+.bucket.flash-bad {
+  animation: ls-bad 0.45s ease;
+}
+@keyframes ls-good {
+  0%, 100% { background: var(--surface); }
+  50% { background: var(--mint); }
+}
+@keyframes ls-bad {
+  0%, 100% { background: var(--surface); }
+  50% { background: var(--rose); }
+}
+
+/* صَيدُ المَخلوقات */
+.ls-tray {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--r-lg);
+  padding: var(--s-4);
+  display: flex; flex-direction: column; gap: var(--s-3);
+  flex-grow: 1;
+}
+.tray-label {
+  font-size: 12px;
+  color: var(--muted);
+  font-weight: 700;
+}
+.tray-creatures {
+  display: flex; gap: 8px; flex-wrap: wrap;
+  justify-content: center;
+}
+
+.creature {
+  display: flex; flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  padding: 8px 14px;
+  background: var(--bg-soft);
+  border: 1.5px solid var(--line);
+  border-radius: var(--r-md);
+  cursor: grab;
+  user-select: none;
+  font-weight: 700; font-size: 13px;
+  color: var(--ink);
+  min-width: 78px;
+  transition: transform 0.15s ease, background 0.18s ease, border-color 0.18s ease, opacity 0.3s ease;
+}
+.creature:hover { background: var(--surface); transform: translateY(-2px); }
+.creature .e { font-size: 26px; line-height: 1; }
+.creature .nm { font-size: 12px; font-weight: 700; }
+.creature.selected {
+  background: var(--ink); color: var(--bg);
+  border-color: var(--ink);
+  transform: scale(1.05);
+}
+.creature.dragging {
+  opacity: 0.55;
+}
+.creature.gone {
+  animation: ls-gone 0.4s ease forwards;
+}
+@keyframes ls-gone {
+  to { opacity: 0; transform: scale(0.3) rotate(15deg); }
+}
+
+.ls-controls {
+  display: flex; gap: 8px; justify-content: center;
+}
+.ls-btn {
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 10px 16px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--r-pill);
+  font-weight: 700; font-size: 13px;
+  color: var(--ink-2);
+  transition: background 0.18s ease, transform 0.15s ease;
+}
+.ls-btn:hover { background: var(--bg-soft); transform: translateY(-1px); }
+.ls-btn.primary {
+  background: var(--mint-ink); color: #fff; border-color: var(--mint-ink);
+}
+.ls-btn.primary:hover { background: var(--ink); border-color: var(--ink); }
+
+/* سجل الجولات */
+.ls-recs {
+  display: flex; flex-direction: column; gap: 6px;
+}
+.ls-recs .empty {
+  color: var(--muted); font-size: 13px; padding: 10px; text-align: center;
+}
+.ls-recs .rec {
+  display: flex; align-items: center; gap: 10px;
+  padding: 8px 12px;
+  background: var(--bg-soft);
+  border: 1px solid var(--line);
+  border-radius: var(--r-md);
+  font-size: 12px;
+}
+.ls-recs .rec .nm { flex: 1; font-weight: 800; }
+.ls-recs .rec .score {
+  font-family: var(--font-en); font-weight: 800;
+  background: var(--mint); color: var(--mint-ink);
+  padding: 2px 8px; border-radius: var(--r-pill);
+  font-size: 11px;
+}

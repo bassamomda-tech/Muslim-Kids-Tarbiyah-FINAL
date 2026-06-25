@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>تلوين الآيات · أنوس</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Amiri:wght@400;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+
+<link rel="stylesheet" href="../styles/tokens.css" />
+<link rel="stylesheet" href="../styles/dashboard.css" />
+<link rel="stylesheet" href="../styles/wheel.css" />
+<link rel="stylesheet" href="../styles/ayah-color.css" />
+</head>
+<body>
+
+<div class="bg-decor" aria-hidden="true"></div>
+
+<div class="activity-shell">
+
+  <nav class="activity-nav">
+    <a class="back-link" href="../dashboard.html">
+      الرجوع للوحة الأنشطة
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg>
+    </a>
+    <div class="activity-crumb">
+      <span>الفن والإبداع</span>
+      <span class="sep">/</span>
+      <span class="cur">تلوين الآيات</span>
+    </div>
+    <div class="activity-actions">
+      <button class="icon-btn" id="reset-btn" title="إعادة الضبط" aria-label="إعادة الضبط">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 3-6.7L3 8"/><path d="M3 3v5h5"/></svg>
+      </button>
+    </div>
+  </nav>
+
+  <div class="activity-layout">
+
+    <section class="ac-panel">
+      <header class="wheel-header">
+        <span class="activity-tag">Activity 26 · Pattern Fill</span>
+        <h1 class="activity-title">تلوين الآيات</h1>
+        <p class="activity-desc">
+          اختَر لَوناً من الباليتة، ثمَّ انقر على أيِّ زُخرفةٍ حول الآية لِتُلَوِّنها.
+          صَمِّم لَوحَتك الخاصَّة بِأَلوانٍ هادِئة، واحفَظها لِتَبدأ لَوحةً جَديدة.
+        </p>
+      </header>
+
+      <div class="ac-hud">
+        <div class="hud-block">اللَّوحة <strong><span id="a-idx">1</span><small>/4</small></strong></div>
+        <div class="hud-block">المُلَوَّن <strong><span id="a-filled">0</span><small>/—</small></strong></div>
+        <div class="hud-block">لَوحاتٌ مُكتَمِلة <strong id="a-done">0</strong></div>
+        <div class="hud-block">اللَّون <strong id="a-color">—</strong></div>
+      </div>
+
+      <div class="ac-stage" id="stage">
+        <div class="ac-frame">
+          <div class="ac-ayah" id="ayah-text">…</div>
+          <div class="ac-source" id="ayah-source">—</div>
+          <svg id="canvas" viewBox="0 0 600 240" preserveAspectRatio="xMidYMid meet"></svg>
+        </div>
+
+        <div class="ac-palette" id="palette" aria-label="باليتة الألوان"></div>
+
+        <div class="ac-actions">
+          <button class="ac-btn" id="btn-undo">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 14l-5-5 5-5"/><path d="M4 9h11a6 6 0 0 1 0 12h-3"/></svg>
+            تراجُع
+          </button>
+          <button class="ac-btn" id="btn-clear">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6h18"/><path d="M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6"/></svg>
+            مَسح الكُل
+          </button>
+          <button class="ac-btn primary" id="btn-save">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2Z"/><path d="M17 21v-8H7v8M7 3v5h8"/></svg>
+            حِفظ اللَّوحة
+          </button>
+        </div>
+      </div>
+
+      <div class="wheel-controls" style="margin-top:var(--s-4);">
+        <div class="wheel-stat">المُجمَّع <strong id="best">—</strong></div>
+        <button class="wheel-mute-toggle" id="mute-btn" aria-pressed="false">
+          <span class="mute-icon"></span>
+          <span class="mute-label">كتم الصوت</span>
+        </button>
+      </div>
+    </section>
+
+    <aside class="side-panel">
+      <div class="panel-card">
+        <div class="panel-head">
+          <h3>اختَر لَوحة</h3>
+          <span class="pill" id="list-pill">4</span>
+        </div>
+        <div class="ac-list" id="ayah-list"></div>
+      </div>
+
+      <div class="panel-card">
+        <div class="panel-head"><h3>أَدَب التَّلوين</h3></div>
+        <div style="font-size: 14px; line-height: 1.7; color: var(--ink-2);">
+          ١. اقرَأ الآية أوَّلاً وتَأَمَّلها.<br/>
+          ٢. اختر لَوناً يُشبه إِحساسك بالآية.<br/>
+          ٣. لَوِّن الزَّخارف فَقط، لا تَكتب على الآية.<br/>
+          ٤. احفَظ لَوحتك قَبل الانتِقال.
+        </div>
+        <div class="tip-card" style="margin-top: var(--s-3);">
+          <span class="tip-icon">!</span>
+          <span>الزَّخرفة في الفنِّ الإسلاميِّ تُكرِم النَّصَّ ولا تُنافِسه. اجعَل ألوانك هادِئةً وقَلْبك حاضِراً.</span>
+        </div>
+      </div>
+
+      <div class="panel-card">
+        <div class="panel-head"><h3>لَوحاتُكَ المَحفوظة</h3></div>
+        <div class="ac-gallery" id="gallery"></div>
+      </div>
+    </aside>
+  </div>
+</div>
+
+<div class="modal-backdrop" id="save-modal" role="dialog" aria-modal="true">
+  <div class="modal">
+    <button class="modal-close" data-close aria-label="إغلاق">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M6 6l12 12M18 6l-12 12"/></svg>
+    </button>
+    <div class="modal-deco" aria-hidden="true">
+      <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2Z"/><path d="M17 21v-8H7v8M7 3v5h8"/></svg>
+    </div>
+    <div class="modal-eyebrow">لَوحَةٌ مَحفوظة</div>
+    <h2 class="modal-title">بَارَكَ اللهُ في يَدَيك</h2>
+    <div class="modal-meaning" id="save-summary"></div>
+    <div class="modal-actions">
+      <button class="btn-ghost" data-close>أَكمِل التَّلوين</button>
+      <button class="btn-primary" id="save-next">لَوحَةٌ جَديدة</button>
+    </div>
+  </div>
+</div>
+
+<div class="particles" id="particles" aria-hidden="true"></div>
+
+<script src="../scripts/activity-common.js"></script>
+<script src="../scripts/ayah-color.js"></script>
+
+<script>
+window.PAGE_DICT = {
+  "تلوين الآيات": "Color the Ayahs",
+  "اختَر لَوناً من الباليتة، ثمَّ انقر على أيِّ زُខرفةٍ حول الآية لِتُلَوِّنها. صَمِّم لَوحَتك الخاصَّة بِأَلوانٍ هادِئة، واحفَظها لِتَبدأ لَوحةً جَديدة.": "Pick a color from the palette, then tap any ornament around the ayah to color it. Design your own artwork with calm colors, and save it to start a new one.",
+  "اختَر لَوناً من الباليتة، ثمَّ انقر على أيِّ زُخرفةٍ حول الآية لِتُلَوِّنها. صَمِّم لَوحَتك الخاصَّة بِأَلوانٍ هادِئة، واحفَظها لِتَبدأ لَوحةً جَديدة.": "Pick a color from the palette, then tap any ornament around the ayah to color it. Design your own artwork with calm colors, and save it to start a new one.",
+  "اللَّوحة": "Canvas",
+  "المُلَوَّن": "Colored",
+  "لَوحاتٌ مُكتَمِلة": "Artworks completed",
+  "اللَّون": "Color",
+  "باليتة الألوان": "Color palette",
+  "تراجُع": "Undo",
+  "مَسح الكُل": "Clear all",
+  "حِفظ اللَّوحة": "Save the artwork",
+  "المُجمَّع": "Collected",
+  "اختَر لَوحة": "Choose an artwork",
+  "أَدَب التَّلوين": "Coloring etiquette",
+  "١. اقرَأ الآية أوَّلاً وتَأَمَّلها.": "1. Read the ayah first and reflect on it.",
+  "٢. اختر لَوناً يُشبه إِحساسك بالآية.": "2. Choose a color that matches your feeling of the ayah.",
+  "٣. لَوِّن الزَّخارف فَقط، لا تَكتب على الآية.": "3. Color only the ornaments, don't write on the ayah.",
+  "٤. احفَظ لَوحتك قَبل الانتِقال.": "4. Save your artwork before moving on.",
+  "الزَّخرفة في الفنِّ الإسلاميِّ تُكرِم النَّصَّ ولا تُنافِسه. اجعَل ألوانك هادِئةً وقَلْبك حاضِراً.": "Ornamentation in Islamic art honors the text without competing with it. Keep your colors calm and your heart present.",
+  "لَوحاتُكَ المَحفوظة": "Your saved artworks",
+  "لَوحَةٌ مَحفوظة": "Artwork saved",
+  "بَارَكَ اللهُ في يَدَيك": "May Allah bless your hands",
+  "أَكمِل التَّلوين": "Continue coloring",
+  "لَوحَةٌ جَديدة": "New artwork"
+};
+</script>
+<script src="../scripts/i18n.js"></script>
+<script src="../../shared/nav-fix.js"></script>
+</body>
+</html>

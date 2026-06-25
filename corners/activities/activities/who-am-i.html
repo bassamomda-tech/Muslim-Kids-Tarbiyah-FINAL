@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>من أنا؟ · أنوس</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+
+<link rel="stylesheet" href="../styles/tokens.css" />
+<link rel="stylesheet" href="../styles/dashboard.css" />
+<link rel="stylesheet" href="../styles/wheel.css" />
+<link rel="stylesheet" href="../styles/who.css" />
+</head>
+<body>
+
+<div class="bg-decor" aria-hidden="true"></div>
+
+<div class="activity-shell">
+
+  <nav class="activity-nav">
+    <a class="back-link" href="../dashboard.html">
+      الرجوع للوحة الأنشطة
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg>
+    </a>
+    <div class="activity-crumb">
+      <span>تحديات السيرة واللغة</span>
+      <span class="sep">/</span>
+      <span class="cur">من أنا؟</span>
+    </div>
+    <div class="activity-actions">
+      <button class="icon-btn" id="reset-btn" title="إعادة الضبط" aria-label="إعادة الضبط">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 3-6.7L3 8"/><path d="M3 3v5h5"/></svg>
+      </button>
+    </div>
+  </nav>
+
+  <div class="activity-layout">
+
+    <!-- ============ لوحة اللعبة ============ -->
+    <section class="wh-panel">
+      <header class="wheel-header">
+        <span class="activity-tag">Activity 49 · Hint System</span>
+        <h1 class="activity-title">من أنا؟</h1>
+        <p class="activity-desc">
+          شخصيّةٌ غامضةٌ من قصصِ الأنبياءِ والصحابة. اقرأ تلميحاتِها واكشِفها.
+          كلَّما خمّنتَ بتلميحاتٍ أقل، زادت نقاطُك!
+        </p>
+      </header>
+
+      <div class="wh-hud">
+        <div class="hud-block">السؤال <strong><span id="w-idx">1</span><small>/6</small></strong></div>
+        <div class="hud-block">النقاط <strong id="w-score">0</strong></div>
+        <div class="hud-block">عرَفتها <strong id="w-solved">0</strong></div>
+      </div>
+
+      <div class="wh-stage">
+        <div class="wh-mystery">
+          <div class="wh-silhouette" id="wh-silhouette">؟</div>
+          <div class="q" id="wh-q">من أنا؟ <small>اقرأ التلميحات واختَر الإجابة</small></div>
+        </div>
+
+        <div class="wh-hints" id="wh-hints"></div>
+
+        <button class="wh-reveal-hint" id="wh-reveal">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 8v.01M12 12v4"/></svg>
+          تلميحٌ آخر <span class="cnt" style="font-family:var(--font-en);opacity:.7;">1/4</span>
+        </button>
+
+        <div class="wh-options" id="wh-options"></div>
+
+        <button class="wh-next btn-primary" id="wh-next">
+          السؤال التالي
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M15 6l-6 6 6 6"/></svg>
+        </button>
+      </div>
+
+      <div class="wheel-controls">
+        <div class="wheel-stat">أفضل نتيجة <strong id="best">—</strong></div>
+        <div class="wheel-stat" style="text-align:center;">الجولات <strong id="plays">0</strong></div>
+        <button class="wheel-mute-toggle" id="mute-btn" aria-pressed="false">
+          <span class="mute-icon"></span>
+          <span class="mute-label">كتم الصوت</span>
+        </button>
+      </div>
+    </section>
+
+    <!-- ============ اللوحة الجانبية ============ -->
+    <aside class="side-panel">
+      <div class="panel-card">
+        <div class="panel-head">
+          <h3>تقدُّمك</h3>
+          <span class="pill" id="wh-pill">0/6</span>
+        </div>
+        <div class="wh-progress" id="wh-progress"></div>
+      </div>
+
+      <div class="panel-card">
+        <div class="panel-head"><h3>كيف ألعب؟</h3></div>
+        <div style="font-size: 14px; line-height: 1.7; color: var(--ink-2);">
+          ١. اقرأ التلميحَ الأوّل، فهو الأصعب.<br/>
+          ٢. خمّنِ الشخصيّةَ من الخيارات الأربعة.<br/>
+          ٣. إن احتجتَ مساعدةً، اكشِف تلميحاً آخر.<br/>
+          ٤. كلَّما قلَّت التلميحات، زادت نقاطُك.
+        </div>
+      </div>
+
+      <div class="panel-card">
+        <div class="panel-head"><h3>في القصصِ عِبرة</h3></div>
+        <div class="hadith-card">
+          <div class="quote">«لَقَدْ كَانَ فِي قَصَصِهِمْ عِبْرَةٌ لِأُولِي الْأَلْبَابِ»</div>
+          <span class="src">سورة يوسف — آية ١١١</span>
+        </div>
+      </div>
+    </aside>
+  </div>
+</div>
+
+<!-- مودال النصر -->
+<div class="modal-backdrop" id="win-modal" role="dialog" aria-modal="true">
+  <div class="modal">
+    <button class="modal-close" data-close aria-label="إغلاق">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M6 6l12 12M18 6l-12 12"/></svg>
+    </button>
+    <div class="modal-deco" aria-hidden="true">
+      <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l2.4 6.6L21 9l-5 4.6L17.2 21 12 17.4 6.8 21 8 13.6 3 9l6.6-.4z"/></svg>
+    </div>
+    <div class="modal-eyebrow">من أنا؟</div>
+    <h2 class="modal-title">عارفٌ بالسِّيَر!</h2>
+    <div class="modal-meaning" id="win-summary"></div>
+    <div class="modal-actions">
+      <button class="btn-ghost" data-close>انتهيت</button>
+      <button class="btn-primary" id="win-replay">جولة جديدة</button>
+    </div>
+  </div>
+</div>
+
+<div class="particles" id="particles" aria-hidden="true"></div>
+
+<script src="../scripts/activity-common.js"></script>
+<script src="../scripts/who.js"></script>
+
+<script>
+window.PAGE_DICT = {
+  "من أنا؟": "Who Am I?",
+  "شخصيّةٌ غامضةٌ من قصصِ الأنبياءِ والصحابة. اقرأ تلميحاتِها واكشِفها. كلَّما خمّنتَ بتلميحاتٍ أقل، زادت نقاطُك!": "A mystery figure from the stories of the prophets and companions. Read its hints and reveal it. The fewer hints you use to guess, the more points you earn!",
+  "السؤال": "Question",
+  "النقاط": "Points",
+  "عرَفتها": "Identified",
+  "اقرأ التلميحات واختَر الإجابة": "Read the hints and choose the answer",
+  "تلميحٌ آخر": "Another hint",
+  "السؤال التالي": "Next question",
+  "أفضل نتيجة": "Best score",
+  "الجولات": "Rounds",
+  "تقدُّمك": "Your progress",
+  "١. اقرأ التلميحَ الأوّل، فهو الأصعب.": "1. Read the first hint — it's the hardest.",
+  "٢. خمّنِ الشخصيّةَ من الخيارات الأربعة.": "2. Guess the figure from the four options.",
+  "٣. إن احتجتَ مساعدةً، اكشِف تلميحاً آخر.": "3. If you need help, reveal another hint.",
+  "٤. كلَّما قلَّت التلميحات، زادت نقاطُك.": "4. The fewer hints, the more points.",
+  "في القصصِ عِبرة": "In the stories is a lesson",
+  "سورة يوسف — آية ١١١": "Surat Yusuf — verse 111",
+  "عارفٌ بالسِّيَر!": "A knower of the biographies!"
+};
+</script>
+<script>
+Object.assign(window.PAGE_DICT, {
+  "آدم":"Adam","نوح":"Nuh","إبراهيم":"Ibrahim","يوسف":"Yusuf","موسى":"Musa","يونس":"Yunus","سليمان":"Sulayman","أبو بكر":"Abu Bakr",
+  "خلقني اللهُ بيدِه ونفخَ فيَّ من رُوحه.":"Allah created me with His hand and breathed into me of His spirit.",
+  "أمرَ اللهُ الملائكةَ أن تسجُدَ لي.":"Allah commanded the angels to prostrate to me.",
+  "عَلَّمني اللهُ أسماءَ كلِّ شيء.":"Allah taught me the names of everything.",
+  "أنا أوّلُ البشر، وأبو الأنبياءِ جميعاً.":"I am the first human, and the father of all the prophets.",
+  "لبِثتُ في قومي أدعوهم ألفَ سنةٍ إلا خمسين عاماً.":"I stayed among my people calling them for nine hundred and fifty years.",
+  "أمرني اللهُ أن أصنعَ شيئاً عظيماً من الخشب.":"Allah commanded me to build something great from wood.",
+  "حمَلتُ من كلِّ زوجين اثنين.":"I carried a pair of every kind.",
+  "نجوتُ ومن آمنَ معي من الطوفان العظيم.":"I and those who believed with me were saved from the great flood.",
+  "اتّخذني اللهُ خليلاً.":"Allah took me as a close friend.",
+  "حطّمتُ أصنامَ قومي ووضعتُ الفأسَ على كبيرِها.":"I smashed my people's idols and placed the axe on the biggest one.",
+  "ألقَوني في النار فجعلها اللهُ برداً وسلاماً.":"They threw me into the fire, and Allah made it cool and safe.",
+  "بنيتُ الكعبةَ مع ابني إسماعيل.":"I built the Kaaba with my son Ismail.",
+  "رأيتُ في المنامِ أحدَ عشرَ كوكباً والشمسَ والقمرَ ساجدين.":"I saw in a dream eleven stars and the sun and the moon prostrating.",
+  "ألقاني إخوتي في قاعِ البئر.":"My brothers threw me into the bottom of the well.",
+  "كنتُ أُعبِّرُ الأحلامَ في السجن.":"I used to interpret dreams in prison.",
+  "صِرتُ عزيزاً على خزائنِ مصر.":"I became the treasurer over the storehouses of Egypt.",
+  "كلّمني اللهُ تكليماً.":"Allah spoke to me directly.",
+  "تحوّلت عصايَ إلى ثعبانٍ يسعى.":"My staff turned into a moving serpent.",
+  "أُرسِلتُ إلى فرعونَ الطاغية.":"I was sent to Pharaoh the tyrant.",
+  "فلقَ اللهُ لي البحرَ فعبَرتُ ببني إسرائيل.":"Allah split the sea for me and I crossed with the Children of Israel.",
+  "غاضبتُ قومي وذهبتُ مُغاضِباً.":"I grew angry with my people and left in anger.",
+  "ركبتُ سفينةً فأُلقيتُ في البحر.":"I boarded a ship and was cast into the sea.",
+  "التقمني الحوتُ فمكثتُ في بطنِه.":"The whale swallowed me and I remained in its belly.",
+  "ناديتُ في الظلمات: لا إله إلا أنت سبحانك إني كنتُ من الظالمين.":"I called out in the darkness: There is no god but You, glory be to You, I was among the wrongdoers.",
+  "سخّر اللهُ لي الريحَ تجري بأمري.":"Allah made the wind subservient to me, running by my command.",
+  "عُلِّمتُ منطقَ الطير وكلامَ النمل.":"I was taught the speech of birds and the words of ants.",
+  "سخّر اللهُ لي الجنَّ يعملون بين يدَيّ.":"Allah made the jinn subservient to me, working before me.",
+  "كنتُ نبيّاً ومَلِكاً عظيماً، ووالدي داود.":"I was a prophet and a great king, and my father is Dawud.",
+  "صدّقتُ النبيَّ ﷺ حين كذّبه الناس.":"I believed the Prophet ﷺ when people denied him.",
+  "رافقتُه في الهجرةِ وكنّا في الغار.":"I accompanied him in the migration and we were in the cave.",
+  "أنفقتُ مالي كلَّه في سبيلِ الله.":"I spent all my wealth in the cause of Allah.",
+  "أنا أوّلُ الخلفاءِ الراشدين، ولُقّبتُ بالصدّيق.":"I am the first of the Rightly-Guided Caliphs, and I was called as-Siddiq (the Truthful)."
+});
+</script>
+<script src="../scripts/i18n.js"></script>
+<script src="../../shared/nav-fix.js"></script>
+</body>
+</html>

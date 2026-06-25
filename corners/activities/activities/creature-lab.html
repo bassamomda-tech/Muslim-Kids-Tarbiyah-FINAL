@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>مختبر المخلوقات · أنوس</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Amiri:wght@400;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+
+<link rel="stylesheet" href="../styles/tokens.css" />
+<link rel="stylesheet" href="../styles/dashboard.css" />
+<link rel="stylesheet" href="../styles/wheel.css" />
+<link rel="stylesheet" href="../styles/creature-lab.css" />
+</head>
+<body>
+
+<div class="bg-decor" aria-hidden="true"></div>
+
+<div class="activity-shell">
+
+  <nav class="activity-nav">
+    <a class="back-link" href="../dashboard.html">
+      الرجوع للوحة الأنشطة
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg>
+    </a>
+    <div class="activity-crumb">
+      <span>العلوم والاستكشاف</span>
+      <span class="sep">/</span>
+      <span class="cur">مختبر المخلوقات</span>
+    </div>
+    <div class="activity-actions">
+      <button class="icon-btn" id="reset-btn" title="إعادة الضبط" aria-label="إعادة الضبط">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 3-6.7L3 8"/><path d="M3 3v5h5"/></svg>
+      </button>
+    </div>
+  </nav>
+
+  <div class="activity-layout">
+
+    <section class="cl-panel">
+      <header class="wheel-header">
+        <span class="activity-tag">Activity 31 · Step Animation</span>
+        <h1 class="activity-title">مختبر المخلوقات</h1>
+        <p class="activity-desc">
+          كَيف تَنمو النَّحلة؟ ومَتى تَخرُج الفَراشة مِنَ الشَّرنَقة؟
+          اضغط زِرَّ التَّقَدُّم لِتُشاهِدَ مَراحِلَ خَلقِ المَخلوقات الَّتي صَنَعَها اللهُ بِإِبداعٍ عَجيب.
+        </p>
+      </header>
+
+      <div class="cl-hud">
+        <div class="hud-block">المَرحَلة <strong><span id="cl-step">1</span><small>/4</small></strong></div>
+        <div class="hud-block">المَخلوق <strong id="cl-creature">…</strong></div>
+        <div class="hud-block">المُدَوَّن <strong id="cl-logged">0</strong></div>
+        <div class="hud-block">دَوراتٌ كامِلَة <strong id="cl-cycles">0</strong></div>
+      </div>
+
+      <div class="cl-stage">
+        <div class="cl-scene" id="scene">
+          <svg id="cl-art" viewBox="0 0 480 280" preserveAspectRatio="xMidYMid meet"></svg>
+        </div>
+
+        <div class="cl-step-info">
+          <div class="step-name" id="step-name">…</div>
+          <div class="step-desc" id="step-desc">…</div>
+          <div class="step-ayah" id="step-ayah">…</div>
+        </div>
+
+        <div class="cl-timeline" id="timeline"></div>
+
+        <div class="cl-controls">
+          <button class="cl-btn" id="btn-back">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M15 6l-6 6 6 6"/></svg>
+            خَلف
+          </button>
+          <button class="cl-btn primary" id="btn-next">
+            تَقَدَّم
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg>
+          </button>
+          <button class="cl-btn" id="btn-auto">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 3l14 9-14 9z"/></svg>
+            تَشغيل تِلقائي
+          </button>
+        </div>
+      </div>
+
+      <div class="wheel-controls" style="margin-top:var(--s-4);">
+        <div class="wheel-stat">المُكتَشَف <strong id="best">0/5</strong></div>
+        <button class="wheel-mute-toggle" id="mute-btn" aria-pressed="false">
+          <span class="mute-icon"></span>
+          <span class="mute-label">كتم الصوت</span>
+        </button>
+      </div>
+    </section>
+
+    <aside class="side-panel">
+      <div class="panel-card">
+        <div class="panel-head">
+          <h3>المَخلوقات</h3>
+          <span class="pill" id="cr-pill">5</span>
+        </div>
+        <div class="cl-list" id="creature-list"></div>
+      </div>
+
+      <div class="panel-card">
+        <div class="panel-head"><h3>تَأَمَّل</h3></div>
+        <div style="font-size: 14px; line-height: 1.7; color: var(--ink-2);">
+          كلُّ مَخلوقٍ في الأرضِ آيَةٌ مِن آياتِ اللهِ. نَحلَةٌ تَصنَع العَسَل، نَملَةٌ تَنقُل الطَّعام، فَراشَةٌ تَخرُج مِن شَرنَقة…
+          سُبحانَ الَّذي خَلَقَ فأَبدَع.
+        </div>
+        <div class="tip-card" style="margin-top: var(--s-3);">
+          <span class="tip-icon">!</span>
+          <span>اضغط على أيِّ مَرحَلَةٍ في الشَّريط لِتَنتَقِل إليها فَوراً.</span>
+        </div>
+      </div>
+
+      <div class="panel-card">
+        <div class="panel-head"><h3>قَولُ اللهِ تَعالى</h3></div>
+        <div class="hadith-card">
+          <div class="quote">«وَفِي الْأَرْضِ آيَاتٌ لِّلْمُوقِنِينَ · وَفِي أَنفُسِكُمْ ۚ أَفَلَا تُبْصِرُونَ»</div>
+          <span class="src">سورة الذاريات · 20-21</span>
+        </div>
+      </div>
+    </aside>
+  </div>
+</div>
+
+<div class="particles" id="particles" aria-hidden="true"></div>
+
+<script src="../scripts/activity-common.js"></script>
+<script src="../scripts/creature-lab.js"></script>
+
+<script>
+window.PAGE_DICT = {
+  "مختبر المخلوقات": "Creatures Lab",
+  "كَيف تَنمو النَّحلة؟ ومَتى تَخرُج الفَراشة مِنَ الشَّرنَقة؟ اضغط زِرَّ التَّقَدُّم لِتُشاهِدَ مَراحِلَ خَلقِ المَخلوقات الَّتي صَنَعَها اللهُ بِإِبداعٍ عَجيب.": "How does a bee grow? When does the butterfly leave its cocoon? Press the advance button to watch the creation stages of creatures Allah made with wondrous craft.",
+  "المَرحَلة": "Stage",
+  "المَخلوق": "Creature",
+  "المُدَوَّن": "Logged",
+  "دَوراتٌ كامِلَة": "Full cycles",
+  "خَلف": "Back",
+  "تَقَدَّم": "Advance",
+  "تَشغيل تِلقائي": "Auto play",
+  "المُكتَشَف": "Discovered",
+  "المَخلوقات": "Creatures",
+  "تَأَمَّل": "Reflect",
+  "كلُّ مَخلوقٍ في الأرضِ آيَةٌ مِن آياتِ اللهِ. نَحلَةٌ تَصنَع العَسَل، نَملَةٌ تَنقُل الطَّعام، فَراشَةٌ تَخرُج مِن شَرنَقة… سُبحانَ الَّذي خَلَقَ فأَبدَع.": "Every creature on earth is a sign of Allah. A bee makes honey, an ant carries food, a butterfly emerges from a cocoon… Glory to the One who created and perfected.",
+  "اضغط على أيِّ مَرحَلَةٍ في الشَّريط لِتَنتَقِل إليها فَوراً.": "Tap any stage on the timeline to jump straight to it.",
+  "قَولُ اللهِ تَعالى": "The words of Allah the Exalted",
+  "سورة الذاريات · 20-21": "Surat adh-Dhariyat · 20-21"
+};
+</script>
+<script>
+Object.assign(window.PAGE_DICT, {
+  "النَّحلة":"The bee","الفَراشة":"The butterfly","الضِّفدَع":"The frog","الكَتكوت":"The chick","النَّخلَة":"The palm tree",
+  "الخَلِيَّة":"The hive","الحَديقَة":"The garden","البِركَة":"The pond","العُشّ":"The nest","البُستان":"The orchard",
+  "«وَأَوْحَىٰ رَبُّكَ إِلَى النَّحْلِ» — النحل 68":"«And your Lord inspired the bee» — An-Nahl 68",
+  "«صُنْعَ اللَّهِ الَّذِي أَتْقَنَ كُلَّ شَيْءٍ» — النمل 88":"«The work of Allah who perfected everything» — An-Naml 88",
+  "«وَجَعَلْنَا مِنَ الْمَاءِ كُلَّ شَيْءٍ حَيٍّ» — الأنبياء 30":"«And We made from water every living thing» — Al-Anbiya 30",
+  "«وَهُوَ الَّذِي خَلَقَ مِنَ الْمَاءِ بَشَرًا» — الفرقان 54":"«It is He who created from water a human» — Al-Furqan 54",
+  "«فَأَنبَتْنَا فِيهَا حَبًّا وعِنَبًا» — عبس 27-28":"«And We caused to grow within it grain and grapes» — Abasa 27-28",
+  "بَيضَة":"Egg","يَرَقَة":"Larva","شَرنَقَة":"Cocoon","نَحلَةٌ بالِغة":"Adult bee","يَرَقَة (دودة)":"Larva (caterpillar)","فَراشَة":"Butterfly","بَيضٌ في الماء":"Eggs in water","شَرغوف":"Tadpole","تَنمو أرجُل":"Legs grow","ضِفدَعٌ بالِغ":"Adult frog","بَيضَةٌ في العُشّ":"Egg in the nest","نُمُوُّ الجَنين":"The embryo grows","كَسرُ القِشرة":"Breaking the shell","كَتكوتٌ يَركَض":"A running chick","نَواةٌ في التُّراب":"A seed in the soil","بُرعُمٌ يَخرُج":"A bud emerges","نَخلَةٌ شابَّة":"A young palm","نَخلَةٌ بِالتَّمر":"A palm with dates",
+  "تَضَع المَلِكَة بَيضَةً صَغيرة في خَلِيَّةٍ شَمعِيَّة.":"The queen lays a tiny egg in a wax cell.",
+  "يَفقِسُ البَيضُ يَرَقَةً تُطعِمُها العامِلات بالغِذاء المَلَكي.":"The egg hatches into a larva fed royal jelly by the workers.",
+  "تَتَحَوَّل اليَرَقةُ داخِل غَطاءِ شَمع، وتَكتَمِل أَجزاؤها.":"The larva transforms inside a wax cap, and its parts complete.",
+  "تَخرُج نَحلَةٌ جاهِزَة لِجَمع الرَّحيق وصُنع العَسَل.":"An adult bee emerges, ready to gather nectar and make honey.",
+  "تَضَع الفَراشةُ بَيضةً صَغيرَةً على وَرَقَة.":"The butterfly lays a tiny egg on a leaf.",
+  "تَفقِسُ يَرَقةٌ تَأكُل الأوراقَ وتَكبُر بِسُرعة.":"A larva hatches, eats leaves, and grows quickly.",
+  "تَلتَفُّ في شَرنَقَةٍ مُعَلَّقة، فتَتَغَيَّر داخِلَها.":"It wraps in a hanging cocoon and transforms inside.",
+  "تَخرُج فَراشَةٌ بِأَجنِحَةٍ مُلَوَّنة تَطير بَين الأزهار.":"A butterfly emerges with colorful wings, flying among the flowers.",
+  "تَضَع الضِّفدَعةُ مِئاتِ البَيضِ كَهُلامٍ في الماء.":"The frog lays hundreds of eggs like jelly in the water.",
+  "يَخرُج شَرغوفٌ صَغير له ذَيلٌ يَسبَح بِه.":"A small tadpole emerges with a tail it swims with.",
+  "تَنمو الأَرجُل ويَختَفي الذَّيلُ تَدريجياً.":"Legs grow and the tail gradually disappears.",
+  "ضِفدَعٌ كامِل يَقفِزُ بَينَ الماءِ واليابِسة.":"A full frog hops between water and land.",
+  "تَضَع الأُمّ بَيضةً وتَحتَضِنُها بِدِفءٍ شَديد.":"The mother lays an egg and incubates it with great warmth.",
+  "يَنمو الكَتكوت داخِل البَيضَة في 21 يَوماً.":"The chick grows inside the egg in 21 days.",
+  "يَكسِرُ الكَتكوتُ القِشرةَ بِمِنقارِه الصَّغير.":"The chick breaks the shell with its little beak.",
+  "يَخرُج كَتكوتٌ مُغطًّى بِرِيشٍ أَصفَر يَركض ويُغَرِّد.":"A chick covered in yellow down emerges, running and chirping.",
+  "تُغرَس نَواةُ تَمر في الأرضِ مع الماء.":"A date seed is planted in the soil with water.",
+  "يَخرُج بُرعُمٌ أَخضَرُ صَغير يَتَّجِه نَحوَ الشَّمس.":"A small green bud emerges, turning toward the sun.",
+  "تَطول النَّخلَة وتَنمو لها سَعَفاتٌ خَضراء.":"The palm grows tall and green fronds develop.",
+  "تُثمِرُ النَّخلَة عُذوقاً مِنَ التَّمر اللَّذيذ.":"The palm bears clusters of delicious dates."
+});
+</script>
+<script src="../scripts/i18n.js"></script>
+<script src="../../shared/nav-fix.js"></script>
+</body>
+</html>

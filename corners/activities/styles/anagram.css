@@ -1,0 +1,190 @@
+/* ============================================================
+   ANAGRAM — ترتيب الحروف المبعثرة
+   ============================================================ */
+
+.anagram-panel {
+  background:
+    radial-gradient(140% 80% at 50% 0%, rgba(255,217,194,0.35), transparent 60%),
+    var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--r-2xl);
+  padding: var(--s-8);
+  display: flex; flex-direction: column;
+  box-shadow: var(--shadow-card);
+}
+.anagram-panel .activity-tag { background: var(--peach); color: var(--peach-ink); }
+.anagram-panel .activity-tag::before { background: var(--peach-ink); }
+
+.ana-hud {
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--s-3);
+  margin-bottom: var(--s-4);
+}
+.ana-hud .hud-block {
+  background: var(--bg-soft); border: 1px solid var(--line);
+  border-radius: var(--r-md); padding: 10px 14px;
+  display: flex; flex-direction: column; gap: 2px;
+  font-size: 11px; color: var(--muted); font-weight: 600;
+}
+.ana-hud .hud-block strong {
+  font-size: 20px; color: var(--ink);
+  font-family: var(--font-en); font-weight: 800;
+}
+
+/* ===== Stage ===== */
+.ana-stage {
+  background: linear-gradient(180deg, #FFFBF0 0%, #FFE9CC 100%);
+  border-radius: var(--r-xl);
+  border: 1px solid var(--line);
+  padding: var(--s-6);
+  margin-bottom: var(--s-4);
+  flex-grow: 1;
+  display: flex; flex-direction: column;
+  gap: var(--s-5);
+  min-height: 360px;
+}
+.ana-clue {
+  text-align: center;
+  background: rgba(255,255,255,0.65);
+  border: 1px dashed var(--peach-ink);
+  border-radius: var(--r-lg);
+  padding: var(--s-5);
+}
+.ana-clue .label {
+  font-family: var(--font-en);
+  font-size: 11px; font-weight: 800;
+  letter-spacing: 0.15em; text-transform: uppercase;
+  color: var(--peach-ink); margin-bottom: 6px;
+}
+.ana-clue .hint-text {
+  font-size: 18px; font-weight: 700;
+  color: var(--ink); line-height: 1.5;
+}
+.ana-clue .icon-stage {
+  font-size: 56px;
+  margin-bottom: var(--s-2);
+  filter: drop-shadow(0 4px 8px rgba(31,37,64,0.1));
+}
+
+/* ===== Drop slots ===== */
+.ana-slots {
+  display: flex; justify-content: center; gap: 8px;
+  flex-wrap: wrap;
+  min-height: 80px;
+  align-items: center;
+}
+.ana-slot {
+  width: 56px; height: 64px;
+  background: var(--surface);
+  border: 2px dashed var(--peach-ink);
+  border-radius: 12px;
+  display: grid; place-items: center;
+  font-family: var(--font-ar);
+  font-size: 28px;
+  font-weight: 800;
+  color: var(--ink);
+  cursor: pointer;
+  position: relative;
+  unicode-bidi: isolate;
+  transition: background 0.18s ease, border-color 0.18s ease, transform 0.18s ease;
+}
+.ana-slot:hover { background: var(--bg-soft); }
+.ana-slot.filled {
+  background: var(--peach);
+  border-style: solid;
+  color: var(--peach-ink);
+}
+.ana-slot.correct {
+  background: var(--mint);
+  border-color: var(--mint-ink);
+  color: var(--mint-ink);
+  animation: slot-pop 0.5s cubic-bezier(0.2, 1.6, 0.4, 1);
+}
+@keyframes slot-pop {
+  0% { transform: scale(1); }
+  40% { transform: scale(1.18); }
+  100% { transform: scale(1); }
+}
+.ana-slot.wrong {
+  background: #FAD5D5;
+  border-color: #B85555;
+  animation: slot-shake 0.4s;
+}
+@keyframes slot-shake {
+  0%,100% { transform: translateX(0); }
+  25% { transform: translateX(-5px); }
+  75% { transform: translateX(5px); }
+}
+.ana-slot .pos {
+  position: absolute;
+  top: 4px; right: 6px;
+  font-family: var(--font-en);
+  font-weight: 800;
+  font-size: 9px;
+  color: var(--muted);
+}
+
+/* ===== Source letters ===== */
+.ana-bank {
+  display: flex; justify-content: center; gap: 8px;
+  flex-wrap: wrap;
+  min-height: 80px;
+  align-items: center;
+}
+.ana-letter {
+  width: 52px; height: 56px;
+  background: var(--surface);
+  border: 1.5px solid var(--line);
+  border-radius: 10px;
+  display: grid; place-items: center;
+  font-family: var(--font-ar);
+  font-size: 26px;
+  font-weight: 800;
+  color: var(--ink);
+  cursor: pointer;
+  unicode-bidi: isolate;
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
+  box-shadow: var(--shadow-sm);
+}
+.ana-letter:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--peach-ink);
+}
+.ana-letter.placed { visibility: hidden; }
+
+/* tools */
+.ana-tools {
+  display: flex; gap: 8px; flex-wrap: wrap; justify-content: center;
+}
+.ana-btn {
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 10px 16px;
+  border-radius: var(--r-pill);
+  font-size: 13px; font-weight: 700;
+  border: 1px solid var(--line);
+  background: var(--surface);
+}
+.ana-btn:hover { background: var(--bg-soft); }
+.ana-btn.primary { background: var(--ink); color: #FBF6EC; border-color: var(--ink); }
+.ana-btn.warning { background: var(--butter); color: var(--butter-ink); border-color: rgba(138,101,16,0.2); }
+
+/* progress chips on side */
+.ana-list {
+  display: flex; flex-wrap: wrap; gap: 6px;
+}
+.ana-chip {
+  padding: 6px 12px;
+  background: var(--bg-soft);
+  border-radius: var(--r-pill);
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--ink-2);
+  border: 1px solid var(--line);
+  font-family: var(--font-en);
+}
+.ana-chip.solved {
+  background: var(--mint); color: var(--mint-ink); border-color: var(--mint-ink);
+}
+.ana-chip.current {
+  background: var(--peach); color: var(--peach-ink); border-color: var(--peach-ink);
+}

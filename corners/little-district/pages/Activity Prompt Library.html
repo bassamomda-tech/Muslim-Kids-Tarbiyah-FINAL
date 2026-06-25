@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="dark">
+<title>بنك الأنشطة | Activity Prompt Library</title>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&family=Nunito:wght@400;600;700;800&display=swap">
+<style>
+  :root{
+    --primary:#8E44AD;--primary-dark:#7D3C98;--bg1:#0A2540;--bg2:#12375A;
+    --gold:#D4A017;--gold-lt:#F5CC5A;--text:#FEF5DC;
+    --card:rgba(255,255,255,.06);--card-bd:rgba(255,255,255,.12);--radius:1.2rem;
+    --muted:rgba(254,245,220,.62);
+  }
+  *{box-sizing:border-box}
+  body{font-family:'Tajawal','Nunito',sans-serif;background:linear-gradient(160deg,var(--bg1),var(--bg2));background-attachment:fixed;color:var(--text);min-height:100vh;margin:0;direction:rtl}
+  html[dir="ltr"] body{direction:ltr;font-family:'Nunito','Tajawal',sans-serif}
+  a{color:inherit}
+  .en-only{display:none}
+  html[dir="ltr"] .en-only{display:inline}
+  html[dir="ltr"] .ar-only{display:none}
+
+  /* Header */
+  .header{position:sticky;top:0;z-index:30;background:rgba(10,37,64,.93);backdrop-filter:blur(12px);padding:.85rem 1.3rem;display:flex;align-items:center;justify-content:space-between;gap:1rem;border-bottom:1px solid rgba(212,160,23,.3)}
+  .brand{display:flex;align-items:center;gap:.6rem;font-weight:900}
+  .brand .bi{font-size:1.5rem}
+  .brand .bt{font-size:1.05rem;color:var(--gold-lt)}
+  .lang-switch{display:flex;border:1.5px solid rgba(212,160,23,.4);border-radius:2rem;overflow:hidden}
+  .lang-btn{background:transparent;border:none;color:var(--text);font-weight:800;padding:.32rem .85rem;font-size:.8rem;cursor:pointer;font-family:inherit}
+  .lang-btn.active{background:var(--primary);color:#fff}
+
+  .wrap{max-width:1180px;margin:0 auto;padding:1.6rem 1.1rem 4rem;width:100%}
+
+  /* Hero */
+  .hero{text-align:center;margin-bottom:1.4rem}
+  .hero .ic{font-size:3rem}
+  .hero h1{font-size:2rem;font-weight:900;margin:.25rem 0 .35rem;color:var(--gold-lt)}
+  .hero p{opacity:.85;font-size:1.05rem;margin:.2rem auto;max-width:680px;line-height:1.7}
+
+  /* How-to / Nano Banana tips */
+  .howto{background:linear-gradient(135deg,rgba(212,160,23,.14),rgba(142,68,173,.16));border:1.5px solid rgba(212,160,23,.34);border-radius:1.3rem;padding:1.1rem 1.3rem;margin-bottom:1.3rem}
+  .howto h2{margin:0 0 .6rem;font-size:1.08rem;font-weight:900;color:var(--gold-lt);display:flex;align-items:center;gap:.5rem}
+  .howto ol{margin:.2rem 0 0;padding-inline-start:1.3rem;display:flex;flex-direction:column;gap:.4rem}
+  .howto li{line-height:1.7;font-size:.92rem}
+  .howto li b{color:var(--gold-lt)}
+  .howto .stylebar{display:flex;align-items:center;gap:.7rem;flex-wrap:wrap;margin-top:.9rem;padding-top:.85rem;border-top:1px solid rgba(255,255,255,.1)}
+  .howto .stylebar span{font-size:.86rem;color:var(--muted);flex:1;min-width:200px;line-height:1.5}
+  .mini-btn{background:rgba(255,255,255,.08);border:1.5px solid var(--card-bd);color:var(--text);border-radius:1rem;padding:.45rem .9rem;font-weight:800;font-family:inherit;font-size:.84rem;cursor:pointer;white-space:nowrap;transition:.18s}
+  .mini-btn:hover{border-color:var(--gold);background:rgba(212,160,23,.12)}
+  .mini-btn.done{background:var(--gold);color:#10243d;border-color:var(--gold)}
+
+  /* Filters */
+  .filters{display:flex;flex-direction:column;gap:.7rem;margin-bottom:1.1rem}
+  .frow{display:flex;align-items:center;gap:.5rem;flex-wrap:wrap}
+  .frow > .flabel{font-size:.78rem;font-weight:800;color:var(--muted);min-width:64px}
+  .chip{display:inline-flex;align-items:center;gap:.4rem;background:var(--card);border:1.5px solid var(--card-bd);color:var(--text);border-radius:2rem;padding:.4rem .85rem;font-weight:800;font-size:.85rem;cursor:pointer;font-family:inherit;transition:.16s;line-height:1}
+  .chip:hover{border-color:rgba(212,160,23,.5)}
+  .chip .ci{font-size:1rem}
+  .chip .cdot{width:.7rem;height:.7rem;border-radius:50%;flex:0 0 auto}
+  .chip.on{background:var(--primary);border-color:var(--primary);color:#fff;box-shadow:0 6px 16px rgba(142,68,173,.35)}
+  .chip.on.corner{background:var(--cc);border-color:var(--cc);box-shadow:0 6px 16px rgba(0,0,0,.3)}
+  .searchbar{display:flex;align-items:center;gap:.6rem;flex-wrap:wrap;margin-top:.2rem}
+  .search{flex:1;min-width:200px;background:rgba(255,255,255,.07);border:1.5px solid var(--card-bd);color:var(--text);border-radius:1rem;padding:.6rem 1rem;font-family:inherit;font-size:.95rem}
+  .search:focus{outline:none;border-color:var(--gold)}
+  .search::placeholder{color:var(--muted)}
+  .count{font-size:.85rem;font-weight:800;color:var(--gold-lt);white-space:nowrap}
+  .clear-btn{background:transparent;border:1.5px solid var(--card-bd);color:var(--muted);border-radius:1rem;padding:.55rem .9rem;font-weight:800;font-family:inherit;font-size:.84rem;cursor:pointer}
+  .clear-btn:hover{border-color:var(--gold);color:var(--text)}
+
+  /* Corner section headers */
+  .corner-sec{margin:1.6rem 0 .2rem}
+  .corner-head{display:flex;align-items:center;gap:.7rem;padding:.55rem .9rem;border-radius:1rem;background:var(--card);border:1px solid var(--card-bd);border-inline-start:5px solid var(--cc);margin-bottom:1rem}
+  .corner-head .chi{font-size:1.7rem}
+  .corner-head .chn{font-weight:900;font-size:1.2rem;color:var(--gold-lt)}
+  .corner-head .chs{font-size:.8rem;color:var(--muted);font-weight:700}
+  .corner-head .chc{margin-inline-start:auto;font-size:.78rem;font-weight:800;background:rgba(255,255,255,.08);border-radius:1rem;padding:.2rem .7rem;color:var(--text)}
+
+  /* Cards */
+  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(330px,1fr));gap:1rem}
+  .pcard{display:flex;flex-direction:column;background:var(--card);border:1px solid var(--card-bd);border-radius:var(--radius);border-top:4px solid var(--cc);padding:1.1rem 1.1rem 1rem;transition:.2s}
+  .pcard:hover{transform:translateY(-3px);box-shadow:0 16px 32px rgba(0,0,0,.4)}
+  .pc-tags{display:flex;align-items:center;gap:.4rem;flex-wrap:wrap;margin-bottom:.6rem}
+  .tag{display:inline-flex;align-items:center;gap:.3rem;font-size:.72rem;font-weight:800;border-radius:1rem;padding:.18rem .6rem;line-height:1}
+  .tag.type{background:rgba(212,160,23,.16);color:var(--gold-lt);border:1px solid rgba(212,160,23,.3)}
+  .tag.age{background:rgba(142,68,173,.2);color:#e3c6f5;border:1px solid rgba(142,68,173,.4)}
+  .pc-title{margin:.1rem 0 .55rem}
+  .pc-title .ar{font-weight:900;font-size:1.1rem;line-height:1.4;display:block}
+  .pc-title .en{font-weight:700;font-size:.84rem;color:var(--muted);display:block;margin-top:.1rem}
+  .pc-body{font-size:.86rem;line-height:1.65;color:rgba(254,245,220,.9);direction:ltr;text-align:left;background:rgba(0,0,0,.16);border:1px solid rgba(255,255,255,.06);border-radius:.8rem;padding:.7rem .8rem;max-height:8.4em;overflow:hidden;position:relative;transition:max-height .3s ease}
+  .pc-body.open{max-height:60em}
+  .pc-body::after{content:"";position:absolute;inset-inline:0;bottom:0;height:2.4em;background:linear-gradient(transparent,rgba(13,34,56,.92));pointer-events:none;transition:opacity .2s}
+  .pc-body.open::after{opacity:0}
+  .pc-acts{display:flex;align-items:center;gap:.5rem;margin-top:.7rem}
+  .copy-btn{flex:1;background:linear-gradient(135deg,var(--gold),#c79518);color:#10243d;border:none;border-radius:.9rem;padding:.6rem 1rem;font-weight:900;font-family:inherit;font-size:.9rem;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:.4rem;transition:.18s}
+  .copy-btn:hover{filter:brightness(1.05)}
+  .copy-btn.done{background:#27ae60;color:#fff}
+  .expand-btn{background:rgba(255,255,255,.08);border:1.5px solid var(--card-bd);color:var(--text);border-radius:.9rem;padding:.6rem .8rem;font-weight:800;font-family:inherit;font-size:.82rem;cursor:pointer;white-space:nowrap}
+  .expand-btn:hover{border-color:var(--gold)}
+
+  .empty{text-align:center;padding:3rem 1rem;color:var(--muted)}
+  .empty .ei{font-size:2.6rem;margin-bottom:.5rem}
+
+  /* toast */
+  .toast{position:fixed;bottom:1.4rem;inset-inline:0;margin:auto;width:max-content;max-width:90%;background:#27ae60;color:#fff;font-weight:800;padding:.7rem 1.3rem;border-radius:2rem;box-shadow:0 10px 30px rgba(0,0,0,.45);opacity:0;transform:translateY(14px);transition:.25s;pointer-events:none;z-index:80;font-size:.92rem}
+  .toast.show{opacity:1;transform:translateY(0)}
+
+  @media(max-width:540px){
+    .hero h1{font-size:1.6rem}
+    .grid{grid-template-columns:1fr}
+    .frow > .flabel{min-width:100%;margin-bottom:-.2rem}
+  }
+</style>
+</head>
+<body>
+<header class="header">
+  <div class="brand"><span class="bi">🍌</span><span class="bt"><span class="ar-only">بنك أنشطة أركان الأهل</span><span class="en-only">Parents' Corner Activity Bank</span></span></div>
+  <div class="lang-switch">
+    <button class="lang-btn" id="btnEn" onclick="setLang('en')">EN</button>
+    <button class="lang-btn active" id="btnAr" onclick="setLang('ar')">عربي</button>
+  </div>
+</header>
+
+<div class="wrap">
+  <div class="hero">
+    <div class="ic">🎨</div>
+    <h1><span class="ar-only">بنك أنشطة الأطفال</span><span class="en-only">Children's Activity Prompt Bank</span></h1>
+    <p>
+      <span class="ar-only">٩٠ وصفًا إبداعيًا جاهزًا لتوليد أنشطة ومطبوعات للأطفال عبر «Nano Banana» — تغطّي الأركان التسعة وكل الأعمار. انسخ أي وصف والصقه في المولّد.</span>
+      <span class="en-only">90 ready-to-use creative prompts for generating kids' activities &amp; printables with Nano Banana — covering all nine corners and every age. Copy any prompt and paste it into the generator.</span>
+    </p>
+  </div>
+
+  <!-- How to use -->
+  <div class="howto">
+    <h2>💡 <span class="ar-only">كيف تستخدم البنك</span><span class="en-only">How to use this bank</span></h2>
+    <ol>
+      <li><span class="ar-only"><b>انسخ</b> أي وصف بزرّ «نسخ» — يُنسخ كاملًا مع <b>نمط الموقع الموحّد</b> (الألوان، الطابع المرسوم، والضوابط) ملحقًا تلقائيًّا.</span><span class="en-only"><b>Copy</b> any prompt with the Copy button — it is copied complete, with the <b>shared house-style</b> (palette, flat look, safety rules) appended automatically.</span></li>
+      <li><span class="ar-only"><b>الصقه في Nano Banana</b> (مولّد صور Gemini) واطلب صيغة A4 للطباعة.</span><span class="en-only"><b>Paste into Nano Banana</b> (Gemini's image model) and ask for an A4 printable.</span></li>
+      <li><span class="ar-only">⚠️ <b>النص العربي:</b> المولّد قد يخطئ في رسم الحروف. وَلِّد ٢–٣ نسخ واختر الأفضل، أو احذف النص وأضِفه لاحقًا بنفسك.</span><span class="en-only">⚠️ <b>Arabic text:</b> the model may distort letters. Generate 2–3 versions and pick the best, or omit the text and add it yourself afterwards.</span></li>
+      <li><span class="ar-only">🔁 لِنتائج متّسقة: ولّد ورقة، ثم اطلب «نفس النمط» للأوراق التالية في الركن نفسه.</span><span class="en-only">🔁 For a consistent set: generate one sheet, then ask for "same style" for the next sheets in that corner.</span></li>
+    </ol>
+    <div class="stylebar">
+      <span class="ar-only">النمط الموحّد مُضمَّن في كل نسخة — يمكنك نسخه وحده هنا:</span>
+      <span class="en-only">The house-style clause is included in every copy — grab it on its own here:</span>
+      <button class="mini-btn" id="copyStyleBtn" onclick="copyStyle()">📋 <span class="ar-only">انسخ النمط الموحّد</span><span class="en-only">Copy house style</span></button>
+    </div>
+  </div>
+
+  <!-- Filters -->
+  <div class="filters">
+    <div class="frow" id="cornerChips"><span class="flabel"><span class="ar-only">الأركان</span><span class="en-only">Corners</span></span></div>
+    <div class="frow" id="typeChips"><span class="flabel"><span class="ar-only">النوع</span><span class="en-only">Type</span></span></div>
+    <div class="frow" id="ageChips"><span class="flabel"><span class="ar-only">العمر</span><span class="en-only">Age</span></span></div>
+    <div class="searchbar">
+      <input class="search" id="search" placeholder="🔎 ابحث في الأوصاف…" oninput="render()">
+      <span class="count" id="count"></span>
+      <button class="clear-btn" onclick="clearAll()"><span class="ar-only">مسح الفلاتر</span><span class="en-only">Clear filters</span></button>
+    </div>
+  </div>
+
+  <div id="results"></div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script src="activity-prompts.js"></script>
+<script>
+  var lang = localStorage.getItem('bunyanLang') || 'ar';
+  var sel = { corner:new Set(), type:new Set(), age:new Set() };
+  var openBodies = new Set();
+
+  function tx(o){ return o ? (o[lang]||o.ar) : ''; }
+  function esc(s){ return String(s).replace(/[&<>"]/g, function(c){ return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]; }); }
+
+  /* ----- language ----- */
+  function setLang(l){
+    lang=l; localStorage.setItem('bunyanLang',l);
+    document.documentElement.lang=l;
+    document.documentElement.dir = l==='ar'?'rtl':'ltr';
+    document.getElementById('btnEn').classList.toggle('active',l==='en');
+    document.getElementById('btnAr').classList.toggle('active',l==='ar');
+    document.getElementById('search').placeholder = l==='ar' ? '🔎 ابحث في الأوصاف…' : '🔎 Search prompts…';
+    buildChips(); render();
+  }
+
+  /* ----- chips ----- */
+  function chipEl(label, on, onclick, opts){
+    opts=opts||{};
+    var b=document.createElement('button');
+    b.className='chip'+(on?' on':'')+(opts.corner?' corner':'');
+    if(opts.color){ b.style.setProperty('--cc',opts.color); }
+    b.innerHTML=(opts.icon?'<span class="ci">'+opts.icon+'</span>':'')+(opts.dot?'<span class="cdot" style="background:'+opts.dot+'"></span>':'')+'<span>'+esc(label)+'</span>';
+    b.onclick=onclick;
+    return b;
+  }
+  function buildChips(){
+    var cc=document.getElementById('cornerChips');
+    cc.querySelectorAll('.chip').forEach(function(n){n.remove();});
+    AP.CORNERS.forEach(function(c){
+      cc.appendChild(chipEl((lang==='ar'?c.ar:c.en), sel.corner.has(c.id),
+        function(){ toggle(sel.corner,c.id); }, {corner:true,color:c.color,icon:c.icon}));
+    });
+    var tc=document.getElementById('typeChips');
+    tc.querySelectorAll('.chip').forEach(function(n){n.remove();});
+    Object.keys(AP.TYPES).forEach(function(k){
+      var t=AP.TYPES[k];
+      tc.appendChild(chipEl((lang==='ar'?t.ar:t.en), sel.type.has(k),
+        function(){ toggle(sel.type,k); }, {icon:t.icon}));
+    });
+    var ac=document.getElementById('ageChips');
+    ac.querySelectorAll('.chip').forEach(function(n){n.remove();});
+    AP.AGES.forEach(function(a){
+      ac.appendChild(chipEl((lang==='ar'?a.ar:a.en), sel.age.has(a.id),
+        function(){ toggle(sel.age,a.id); }));
+    });
+  }
+  function toggle(set,v){ if(set.has(v)) set.delete(v); else set.add(v); buildChips(); render(); }
+  function clearAll(){ sel.corner.clear(); sel.type.clear(); sel.age.clear(); document.getElementById('search').value=''; buildChips(); render(); }
+
+  /* ----- filtering ----- */
+  function matches(p){
+    if(sel.corner.size && !sel.corner.has(p.corner)) return false;
+    if(sel.type.size && !sel.type.has(p.type)) return false;
+    if(sel.age.size && !sel.age.has(p.age)) return false;
+    var q=document.getElementById('search').value.trim().toLowerCase();
+    if(q){
+      var hay=(p.titleAr+' '+p.titleEn+' '+p.body).toLowerCase();
+      if(hay.indexOf(q)<0) return false;
+    }
+    return true;
+  }
+
+  /* ----- render ----- */
+  function render(){
+    var list=AP.PROMPTS.filter(matches);
+    var root=document.getElementById('results');
+    root.innerHTML='';
+    document.getElementById('count').textContent = (lang==='ar'? list.length+' وصف' : list.length+' prompts');
+
+    if(!list.length){
+      root.innerHTML='<div class="empty"><div class="ei">🔍</div>'+(lang==='ar'?'لا توجد أوصاف مطابقة. جرّب تعديل الفلاتر.':'No prompts match. Try adjusting the filters.')+'</div>';
+      return;
+    }
+    AP.CORNERS.forEach(function(c){
+      var items=list.filter(function(p){return p.corner===c.id;});
+      if(!items.length) return;
+      var sec=document.createElement('section');
+      sec.className='corner-sec';
+      sec.style.setProperty('--cc',c.color);
+      var head=document.createElement('div');
+      head.className='corner-head';
+      head.innerHTML='<span class="chi">'+c.icon+'</span>'+
+        '<div><div class="chn">'+esc(lang==='ar'?c.ar:c.en)+'</div>'+
+        '<div class="chs">'+esc(tx(c.sub))+'</div></div>'+
+        '<span class="chc">'+items.length+'</span>';
+      sec.appendChild(head);
+      var grid=document.createElement('div');
+      grid.className='grid';
+      items.forEach(function(p){ grid.appendChild(card(p,c)); });
+      sec.appendChild(grid);
+      root.appendChild(sec);
+    });
+  }
+
+  function card(p,c){
+    var t=AP.TYPES[p.type];
+    var el=document.createElement('div');
+    el.className='pcard';
+    el.style.setProperty('--cc',c.color);
+    var key=p.corner+'|'+p.titleEn;
+    var isOpen=openBodies.has(key);
+    el.innerHTML=
+      '<div class="pc-tags">'+
+        '<span class="tag type">'+t.icon+' '+esc(lang==='ar'?t.ar:t.en)+'</span>'+
+        '<span class="tag age">'+esc(ageLabel(p.age))+'</span>'+
+      '</div>'+
+      '<div class="pc-title"><span class="ar">'+esc(lang==='ar'?p.titleAr:p.titleEn)+'</span>'+
+        '<span class="en">'+esc(lang==='ar'?p.titleEn:p.titleAr)+'</span></div>'+
+      '<div class="pc-body'+(isOpen?' open':'')+'">'+esc(p.body)+'</div>'+
+      '<div class="pc-acts">'+
+        '<button class="copy-btn">📋 <span>'+(lang==='ar'?'نسخ الوصف':'Copy prompt')+'</span></button>'+
+        '<button class="expand-btn">'+(isOpen?(lang==='ar'?'طيّ':'Less'):(lang==='ar'?'المزيد':'More'))+'</button>'+
+      '</div>';
+    var body=el.querySelector('.pc-body');
+    el.querySelector('.expand-btn').onclick=function(){
+      var nowOpen=body.classList.toggle('open');
+      if(nowOpen) openBodies.add(key); else openBodies.delete(key);
+      this.textContent = nowOpen?(lang==='ar'?'طيّ':'Less'):(lang==='ar'?'المزيد':'More');
+    };
+    el.querySelector('.copy-btn').onclick=function(){ copyPrompt(p,this); };
+    return el;
+  }
+  function ageLabel(id){ var a=AP.AGES.filter(function(x){return x.id===id;})[0]; return a?(lang==='ar'?a.ar:a.en):id; }
+
+  /* ----- copy ----- */
+  function copyText(str){
+    if(navigator.clipboard && navigator.clipboard.writeText) return navigator.clipboard.writeText(str);
+    return new Promise(function(res){
+      var ta=document.createElement('textarea'); ta.value=str; ta.style.position='fixed'; ta.style.opacity='0';
+      document.body.appendChild(ta); ta.select();
+      try{ document.execCommand('copy'); }catch(e){}
+      document.body.removeChild(ta); res();
+    });
+  }
+  function copyPrompt(p,btn){
+    var full=p.body+"\n\n"+AP.STYLE;
+    copyText(full).then(function(){
+      btn.classList.add('done');
+      var span=btn.querySelector('span');
+      var old=span.textContent; span.textContent=(lang==='ar'?'✓ تم النسخ':'✓ Copied');
+      toast(lang==='ar'?'✓ نُسخ الوصف كاملًا مع النمط':'✓ Prompt copied with house style');
+      setTimeout(function(){ btn.classList.remove('done'); span.textContent=old; },1600);
+    });
+  }
+  function copyStyle(){
+    copyText(AP.STYLE).then(function(){
+      var b=document.getElementById('copyStyleBtn'); b.classList.add('done');
+      toast(lang==='ar'?'✓ نُسخ النمط الموحّد':'✓ House style copied');
+      setTimeout(function(){ b.classList.remove('done'); },1500);
+    });
+  }
+  var toastTimer;
+  function toast(msg){
+    var t=document.getElementById('toast'); t.textContent=msg; t.classList.add('show');
+    clearTimeout(toastTimer); toastTimer=setTimeout(function(){ t.classList.remove('show'); },1900);
+  }
+
+  /* init */
+  setLang(lang);
+</script>
+</body>
+</html>

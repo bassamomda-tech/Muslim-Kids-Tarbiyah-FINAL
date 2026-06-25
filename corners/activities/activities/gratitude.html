@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>مفكرة الامتنان · أنوس</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Amiri:wght@400;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+
+<link rel="stylesheet" href="../styles/tokens.css" />
+<link rel="stylesheet" href="../styles/dashboard.css" />
+<link rel="stylesheet" href="../styles/wheel.css" />
+<link rel="stylesheet" href="../styles/gratitude.css" />
+</head>
+<body>
+
+<div class="bg-decor" aria-hidden="true"></div>
+
+<div class="activity-shell">
+
+  <nav class="activity-nav">
+    <a class="back-link" href="../dashboard.html">
+      الرجوع للوحة الأنشطة
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg>
+    </a>
+    <div class="activity-crumb">
+      <span>الفن والإبداع</span>
+      <span class="sep">/</span>
+      <span class="cur">مفكرة الامتنان</span>
+    </div>
+    <div class="activity-actions">
+      <button class="icon-btn" id="reset-btn" title="إعادة الضبط" aria-label="إعادة الضبط">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 3-6.7L3 8"/><path d="M3 3v5h5"/></svg>
+      </button>
+    </div>
+  </nav>
+
+  <div class="activity-layout">
+
+    <section class="gr-panel">
+      <header class="wheel-header">
+        <span class="activity-tag">Activity 27 · CRUD Operations</span>
+        <h1 class="activity-title">مفكرة الامتنان</h1>
+        <p class="activity-desc">
+          في نِهايةِ كلِّ يَوم، اُكتُب ثَلاثَ نِعَمٍ شَكَرتَ اللهَ علَيها. الشُّكر يُنمي القَلب،
+          ويُذَكِّرُك أنَّ خَيراً كثيراً يُحيطُ بك.
+        </p>
+      </header>
+
+      <div class="gr-hud">
+        <div class="hud-block">اليوم <strong><span id="today-count">0</span><small>/3</small></strong></div>
+        <div class="hud-block">السِّلسلة <strong id="streak">0</strong></div>
+        <div class="hud-block">إجمالي النِّعَم <strong id="total">0</strong></div>
+        <div class="hud-block">أيَّامٌ مَكتوبة <strong id="days">0</strong></div>
+      </div>
+
+      <div class="gr-stage">
+
+        <div class="gr-date-row">
+          <button id="prev-day" aria-label="السابق">‹</button>
+          <span class="date-pill" id="date-pill">اليوم</span>
+          <button id="next-day" aria-label="التالي">›</button>
+          <button class="today-btn" id="today-btn">اليوم</button>
+        </div>
+
+        <div class="gr-compose" id="compose">
+          <div class="gr-prompt">
+            <span class="bism">بِسْمِ اللهِ الرَّحْمَٰنِ الرَّحِيمِ</span>
+            <strong>اليوم أَشكُر اللهَ على…</strong>
+          </div>
+          <div class="gr-emojis" id="emojis"></div>
+          <div class="gr-input-row">
+            <input id="entry-text" type="text" placeholder="مَثَلاً: نِعمَةُ الأُمِّ، تَفاحة لَذيذة، صَديقٌ طيِّب…" maxlength="80" />
+            <button class="gr-add" id="add-btn" disabled>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg>
+              أَضِف
+            </button>
+          </div>
+          <div class="gr-quick">
+            <span>اقتِراحات سَريعة:</span>
+            <button class="qb" data-suggest="نِعمَةُ الإسلام">الإسلام</button>
+            <button class="qb" data-suggest="صِحَّةُ جَسَدي">الصِّحَّة</button>
+            <button class="qb" data-suggest="حُبُّ أُمِّي وأبي">الأُسرة</button>
+            <button class="qb" data-suggest="بَيتٌ آمِن">البَيت</button>
+            <button class="qb" data-suggest="رِزقُ اليَوم">الطَّعام</button>
+            <button class="qb" data-suggest="صَديقٌ وَفيّ">الصَّداقة</button>
+          </div>
+        </div>
+
+        <div class="gr-entries" id="entries"></div>
+
+        <div class="gr-empty" id="empty-state" hidden>
+          <div class="empty-ic">♡</div>
+          <div>لا نِعَمَ مَكتوبَةٌ اليوم. اُكتُب أوَّلَ نِعمَةٍ لِتَبدأ يَومَك.</div>
+        </div>
+      </div>
+
+      <div class="wheel-controls" style="margin-top:var(--s-4);">
+        <div class="wheel-stat">أَطوَل سِلسلة <strong id="best">—</strong></div>
+        <button class="wheel-mute-toggle" id="mute-btn" aria-pressed="false">
+          <span class="mute-icon"></span>
+          <span class="mute-label">كتم الصوت</span>
+        </button>
+      </div>
+    </section>
+
+    <aside class="side-panel">
+      <div class="panel-card">
+        <div class="panel-head">
+          <h3>أيَّامُكَ الأَخيرة</h3>
+          <span class="pill" id="week-pill">7 أيام</span>
+        </div>
+        <div class="gr-week" id="week-grid"></div>
+      </div>
+
+      <div class="panel-card">
+        <div class="panel-head"><h3>كيف أَكتُب؟</h3></div>
+        <div style="font-size: 14px; line-height: 1.7; color: var(--ink-2);">
+          ١. اختَر شُعوراً يَصِفُ نِعمَتك.<br/>
+          ٢. اكتُب النِّعمَة في سَطرٍ واحِد.<br/>
+          ٣. اضغط «أَضِف» لِتُسَجِّلها.<br/>
+          ٤. ثلاثُ نِعَمٍ يَومياً = يَومٌ كامِل.
+        </div>
+        <div class="tip-card" style="margin-top: var(--s-3);">
+          <span class="tip-icon">!</span>
+          <span>الشُّكر سِرُّ الزِّيادة. قال تَعالى: «لَئِنْ شَكَرْتُمْ لَأَزِيدَنَّكُمْ».</span>
+        </div>
+      </div>
+
+      <div class="panel-card">
+        <div class="panel-head"><h3>قَولٌ نَبَوي</h3></div>
+        <div class="hadith-card">
+          <div class="quote">«انظُروا إلى مَن هو أَسفَلَ مِنكُم، ولا تَنظُروا إلى مَن هو فَوقَكُم، فَهو أَجدَر أن لا تَزدَروا نِعمَةَ اللهِ عَلَيكُم»</div>
+          <span class="src">رواه مسلم<span class="hadith-grade ok">صحيح</span></span>
+        </div>
+      </div>
+    </aside>
+  </div>
+</div>
+
+<div class="modal-backdrop" id="day-modal" role="dialog" aria-modal="true">
+  <div class="modal">
+    <button class="modal-close" data-close aria-label="إغلاق">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M6 6l12 12M18 6l-12 12"/></svg>
+    </button>
+    <div class="modal-deco" aria-hidden="true">
+      <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-4.6-7-11a5 5 0 0 1 9-3 5 5 0 0 1 9 3c0 6.4-7 11-7 11z"/></svg>
+    </div>
+    <div class="modal-eyebrow">يَومٌ كامِلٌ بالشُّكر</div>
+    <h2 class="modal-title">الحَمدُ للهِ كَثيرا</h2>
+    <div class="modal-meaning" id="day-summary"></div>
+    <div class="modal-actions">
+      <button class="btn-primary" data-close>تَابِع</button>
+    </div>
+  </div>
+</div>
+
+<div class="particles" id="particles" aria-hidden="true"></div>
+
+<script src="../scripts/activity-common.js"></script>
+<script src="../scripts/gratitude.js"></script>
+
+<script>
+window.PAGE_DICT = {
+  "مفكرة الامتنان": "Gratitude Journal",
+  "في نِهايةِ كلِّ يَوم، اُكتُب ثَلاثَ نِعَمٍ شَكَرتَ اللهَ علَيها. الشُّكر يُنمي القَلب، ويُذَكِّرُك أنَّ خَيراً كثيراً يُحيطُ بك.": "At the end of each day, write three blessings you thanked Allah for. Gratitude grows the heart and reminds you that much good surrounds you.",
+  "اليوم": "Today",
+  "السِّلسلة": "Streak",
+  "إجمالي النِّعَم": "Total blessings",
+  "أيَّامٌ مَكتوبة": "Days written",
+  "السابق": "Previous",
+  "التالي": "Next",
+  "اليوم أَشكُر اللهَ على…": "Today I thank Allah for…",
+  "مَثَلاً: نِعمَةُ الأُمِّ، تَفاحة لَذيذة، صَديقٌ طيِّب…": "e.g. the blessing of a mother, a tasty apple, a good friend…",
+  "أَضِف": "Add",
+  "اقتِراحات سَريعة:": "Quick suggestions:",
+  "الإسلام": "Islam",
+  "الصِّحَّة": "Health",
+  "الأُسرة": "Family",
+  "البَيت": "Home",
+  "الطَّعام": "Food",
+  "الصَّداقة": "Friendship",
+  "لا نِعَمَ مَكتوبَةٌ اليوم. اُكتُب أوَّلَ نِعمَةٍ لِتَبدأ يَومَك.": "No blessings written today. Write your first blessing to start your day.",
+  "أَطوَل سِلسلة": "Longest streak",
+  "أيَّامُكَ الأَخيرة": "Your recent days",
+  "7 أيام": "7 days",
+  "كيف أَكتُب؟": "How do I write?",
+  "١. اختَر شُعوراً يَصِفُ نِعمَتك.": "1. Choose a feeling that describes your blessing.",
+  "٢. اكتُب النِّعمَة في سَطرٍ واحِد.": "2. Write the blessing in one line.",
+  "٣. اضغط «أَضِف» لِتُسَجِّلها.": "3. Press “Add” to record it.",
+  "٤. ثلاثُ نِعَمٍ يَومياً = يَومٌ كامِل.": "4. Three blessings a day = a full day.",
+  "الشُّكر سِرُّ الزِّيادة. قال تَعالى: «لَئِنْ شَكَرْتُمْ لَأَزِيدَنَّكُمْ».": "Gratitude is the secret of increase. Allah said: «If you are grateful, I will surely increase you».",
+  "قَولٌ نَبَوي": "A prophetic saying",
+  "يَومٌ كامِلٌ بالشُّكر": "A full day of gratitude",
+  "الحَمدُ للهِ كَثيرا": "Much praise be to Allah",
+  "تَابِع": "Continue"
+};
+</script>
+<script src="../scripts/i18n.js"></script>
+<script src="../../shared/nav-fix.js"></script>
+</body>
+</html>

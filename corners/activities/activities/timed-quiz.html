@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>اختبار المعلومات السريع · أنوس</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+
+<link rel="stylesheet" href="../styles/tokens.css" />
+<link rel="stylesheet" href="../styles/dashboard.css" />
+<link rel="stylesheet" href="../styles/wheel.css" />
+<link rel="stylesheet" href="../styles/timed-quiz.css" />
+</head>
+<body>
+
+<div class="bg-decor" aria-hidden="true"></div>
+
+<div class="activity-shell">
+
+  <nav class="activity-nav">
+    <a class="back-link" href="../dashboard.html">
+      الرجوع للوحة الأنشطة
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg>
+    </a>
+    <div class="activity-crumb">
+      <span>اللغة والمعرفة</span>
+      <span class="sep">/</span>
+      <span class="cur">اختبار المعلومات السريع</span>
+    </div>
+    <div class="activity-actions">
+      <button class="icon-btn" id="reset-btn" title="إعادة الضبط" aria-label="إعادة الضبط">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 3-6.7L3 8"/><path d="M3 3v5h5"/></svg>
+      </button>
+    </div>
+  </nav>
+
+  <div class="activity-layout">
+
+    <section class="tq-panel">
+      <header class="wheel-header">
+        <span class="activity-tag">Activity 20 · Timer-based Quiz</span>
+        <h1 class="activity-title">اختبار المعلومات السريع</h1>
+        <p class="activity-desc">
+          عَشرة أسئلة، لِكلِّ سؤالٍ <strong>١٥ ثانية</strong>! أَجِب بسُرعةٍ ودقَّةٍ لِتَحصَل
+          على نُقاطٍ إضافيَّة لِلسُّرعة. كلّ سؤالٍ يَختبرُ شيئاً من ديننا أو لُغتنا.
+        </p>
+      </header>
+
+      <div class="tq-hud">
+        <div class="hud-block">السؤال <strong><span id="q-idx">0</span><small>/10</small></strong></div>
+        <div class="hud-block">نُقاط <strong id="q-score">0</strong></div>
+        <div class="hud-block">صحيح <strong id="q-correct">0</strong></div>
+        <div class="hud-block danger">خَطأ <strong id="q-wrong">0</strong></div>
+      </div>
+
+      <div class="tq-stage">
+        <!-- start overlay -->
+        <div class="tq-start" id="start-overlay">
+          <h2>هَلْ أنتَ مُسْتَعِدّ؟</h2>
+          <div style="text-align:center; max-width: 360px; color: var(--ink-2);">
+            ١٠ أسئلة · لِكلّ سؤال ١٥ ثانية · كلّما أَجبتَ أسرَع، كَسبتَ نُقاطاً أكثر.
+          </div>
+          <button class="start-btn" id="start-btn">
+            ابدأ التَّحَدّي
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M5 4v16l14-8z"/></svg>
+          </button>
+        </div>
+
+        <!-- timer row -->
+        <div class="tq-timer-wrap">
+          <div class="tq-timer" id="timer">
+            <svg width="72" height="72" viewBox="0 0 72 72">
+              <circle class="ring-bg" cx="36" cy="36" r="30" fill="none" stroke-width="6"/>
+              <circle class="ring-fg" id="ring-fg" cx="36" cy="36" r="30" fill="none" stroke-width="6"
+                stroke-dasharray="188.5" stroke-dashoffset="0"/>
+            </svg>
+            <div class="time-text" id="time-text">15</div>
+          </div>
+          <div class="tq-q-meta">
+            <div class="q-num" id="q-num-label">السؤال 1</div>
+            <div class="score-line">النَّقاط: <strong id="score-line">0</strong> · أعلى نَتيجة: <strong id="best-line">—</strong></div>
+          </div>
+        </div>
+
+        <!-- question -->
+        <div class="tq-question" id="question-text">…</div>
+
+        <!-- answers -->
+        <div class="tq-answers" id="answers"></div>
+
+        <!-- progress -->
+        <div class="tq-progress" id="progress"></div>
+      </div>
+
+      <div class="wheel-controls" style="margin-top:var(--s-4);">
+        <div class="wheel-stat">أعلى نتيجة <strong id="best">—</strong></div>
+        <div class="wheel-stat" style="text-align:center;">جولات <strong id="plays">0</strong></div>
+        <button class="wheel-mute-toggle" id="mute-btn" aria-pressed="false">
+          <span class="mute-icon"></span>
+          <span class="mute-label">كتم الصوت</span>
+        </button>
+      </div>
+    </section>
+
+    <aside class="side-panel">
+      <div class="panel-card">
+        <div class="panel-head"><h3>قواعد اللُّعبة</h3></div>
+        <div style="font-size: 14px; line-height: 1.7; color: var(--ink-2);">
+          ١. كلّ سؤالٍ من اختيار واحد من أربعة.<br/>
+          ٢. ١٥ ثانية لكلّ سؤال.<br/>
+          ٣. إجابة صحيحة + <strong>سَرعة</strong> = نُقاطٌ مُضاعَفة:<br/>
+          <span style="color: var(--mint-ink);">- إجابة في ٥ ثوانٍ = 15 نقطة</span><br/>
+          <span style="color: var(--mint-ink);">- إجابة في 10 ثوانٍ = 10 نقاط</span><br/>
+          <span style="color: var(--mint-ink);">- إجابة قبل النهاية = 5 نقاط</span><br/>
+          ٤. إجابة خاطئة أو وَقت ضائع = <strong>0</strong> نقطة.
+        </div>
+      </div>
+
+      <div class="panel-card">
+        <div class="panel-head"><h3>نَصيحة</h3></div>
+        <div class="tip-card">
+          <span class="tip-icon">!</span>
+          <span>اقرأ السؤال بِسرعة، ولكنْ بِفَهم. التَّسَرُّعُ بدون فَهمٍ يَقودك للخطأ.</span>
+        </div>
+      </div>
+
+      <div class="panel-card">
+        <div class="panel-head"><h3>كَنزٌ نَبَويّ</h3></div>
+        <div class="hadith-card">
+          <div class="quote">«مَن سَلَكَ طَريقاً يَلتَمِسُ فيهِ عِلماً، سَهَّلَ اللهُ له بهِ طَريقاً إلى الجنَّة»</div>
+          <span class="src">رواه مسلم<span class="hadith-grade ok">صحيح</span></span>
+        </div>
+      </div>
+    </aside>
+  </div>
+</div>
+
+<!-- مودال النصر -->
+<div class="modal-backdrop" id="win-modal" role="dialog" aria-modal="true">
+  <div class="modal">
+    <button class="modal-close" data-close aria-label="إغلاق">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M6 6l12 12M18 6l-12 12"/></svg>
+    </button>
+    <div class="modal-deco" aria-hidden="true">
+      <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+    </div>
+    <div class="modal-eyebrow">نتيجة الاختبار</div>
+    <h2 class="modal-title" id="win-title">أَجَبتَ بِسُرعةٍ ودقَّة!</h2>
+    <div class="modal-meaning" id="win-summary"></div>
+    <div class="modal-actions">
+      <button class="btn-ghost" data-close>انتهيت</button>
+      <button class="btn-primary" id="win-replay">جَولة جديدة</button>
+    </div>
+  </div>
+</div>
+
+<div class="particles" id="particles" aria-hidden="true"></div>
+
+<script src="../scripts/activity-common.js"></script>
+<script src="../scripts/timed-quiz.js"></script>
+
+<script>
+window.PAGE_DICT = {
+  "اختبار المعلومات السريع": "Quick Knowledge Quiz",
+  "عَشرة أسئلة، لِكلِّ سؤالٍ": "Ten questions, each with",
+  "١٥ ثانية": "15 seconds",
+  "! أَجِب بسُرعةٍ ودقَّةٍ لِتَحصَل على نُقاطٍ إضافيَّة لِلسُّرعة. كلّ سؤالٍ يَختبرُ شيئاً من ديننا أو لُغتنا.": "! Answer quickly and accurately to earn bonus speed points. Each question tests something from our religion or our language.",
+  "السؤال": "Question",
+  "نُقاط": "Points",
+  "صحيح": "Correct",
+  "خَطأ": "Wrong",
+  "هَلْ أنتَ مُسْتَعِدّ؟": "Are you ready?",
+  "١٠ أسئلة · لِكلّ سؤال ١٥ ثانية · كلّما أَجبتَ أسرَع، كَسبتَ نُقاطاً أكثر.": "10 questions · 15 seconds each · the faster you answer, the more points you earn.",
+  "ابدأ التَّحَدّي": "Start the challenge",
+  "السؤال 1": "Question 1",
+  "النَّقاط:": "Points:",
+  "· أعلى نَتيجة:": "· Best:",
+  "أعلى نتيجة": "Best score",
+  "جولات": "Rounds",
+  "قواعد اللُّعبة": "Game rules",
+  "١. كلّ سؤالٍ من اختيار واحد من أربعة.": "1. Each question is one choice of four.",
+  "٢. ١٥ ثانية لكلّ سؤال.": "2. 15 seconds per question.",
+  "٣. إجابة صحيحة +": "3. A correct answer +",
+  "سَرعة": "speed",
+  "= نُقاطٌ مُضاعَفة:": "= bonus points:",
+  "- إجابة في ٥ ثوانٍ = 15 نقطة": "- Answer within 5 seconds = 15 points",
+  "- إجابة في 10 ثوانٍ = 10 نقاط": "- Answer within 10 seconds = 10 points",
+  "- إجابة قبل النهاية = 5 نقاط": "- Answer before time's up = 5 points",
+  "٤. إجابة خاطئة أو وَقت ضائع =": "4. A wrong answer or lost time =",
+  "نقطة.": "points.",
+  "نَصيحة": "Tip",
+  "اقرأ السؤال بِسرعة، ولكنْ بِفَهم. التَّسَرُّعُ بدون فَهمٍ يَقودك للخطأ.": "Read the question quickly, but with understanding. Rushing without understanding leads to mistakes.",
+  "كَنزٌ نَبَويّ": "A prophetic treasure",
+  "نتيجة الاختبار": "Quiz result",
+  "أَجَبتَ بِسُرعةٍ ودقَّة!": "You answered fast and accurately!"
+};
+</script>
+<script>
+Object.assign(window.PAGE_DICT, {
+  "كم عَدَدُ أركان الإسلام؟":"How many pillars of Islam are there?",
+  "أربعة":"Four","خمسة":"Five","ستَّة":"Six","سبعة":"Seven",
+  "ما اسمُ أُمِّ النبي محمد ﷺ؟":"What was the name of Prophet Muhammad's ﷺ mother?",
+  "فاطمة":"Fatima","خديجة":"Khadija","آمِنة بنت وَهْب":"Amina bint Wahb","حليمة":"Halima",
+  "في أيّ مدينةٍ وُلِدَ النبي ﷺ؟":"In which city was the Prophet ﷺ born?",
+  "المدينة":"Medina","الطَّائف":"Ta'if","مَكَّة":"Mecca","الكوفة":"Kufa",
+  "في أيّ شَهرٍ يَصومُ المسلمون؟":"In which month do Muslims fast?",
+  "رَجَب":"Rajab","شَعبان":"Sha'ban","رَمضان":"Ramadan",
+  "كَمْ عَدَدُ أسماء الله الحُسنى؟":"How many of Allah's Beautiful Names are there?",
+  "ما هي أوَّل سورة في القرآن الكَريم؟":"What is the first surah in the Noble Quran?",
+  "البَقرة":"Al-Baqarah","الفاتحة":"Al-Fatihah","الإخلاص":"Al-Ikhlas","النَّاس":"An-Nas",
+  "أيُّ هذه الكلمات جَمْعُ «كِتاب»؟":"Which of these words is the plural of «kitab» (book)?",
+  "كاتب":"katib (writer)","كُتُب":"kutub (books)","مَكتبة":"maktaba (library)","كَتَبَة":"kataba (scribes)",
+  "كَمْ عَدَدُ رَكَعاتِ صلاة الفَجر؟":"How many rak'ahs are in the Fajr prayer?",
+  "رَكعتان":"Two rak'ahs","ثلاث":"Three","أربع":"Four","خمس":"Five",
+  "في أيّ غارٍ نَزل أوَّل الوَحي؟":"In which cave did the first revelation descend?",
+  "ثَور":"Thawr","حِراء":"Hira","الكَهف":"Al-Kahf","حُنَين":"Hunayn",
+  "ما اسمُ الخليفة الذي جَمعَ القرآنَ في مُصحفٍ واحد؟":"Which caliph compiled the Quran into one mushaf?",
+  "أبو بكر":"Abu Bakr","عُمر":"Umar","عُثمان":"Uthman","عَلِيّ":"Ali",
+  "كَمْ مَرَّةً في اليَوم يَرفعُ المسلمُ يَدَيهِ لِلوُضوء؟":"How often does a Muslim need to make wudu in a day?",
+  "مَرَّة":"Once","مَرَّتان":"Twice","خَمسة":"Five times","حسب الحاجة":"As needed",
+  "أيُّ هذه ليست من أيَّام التَّشريق؟":"Which of these is not one of the days of Tashriq?",
+  "11 ذي الحجَّة":"11 Dhul-Hijjah","12 ذي الحجَّة":"12 Dhul-Hijjah","13 ذي الحجَّة":"13 Dhul-Hijjah","14 ذي الحجَّة":"14 Dhul-Hijjah"
+});
+</script>
+<script src="../scripts/i18n.js"></script>
+<script src="../../shared/nav-fix.js"></script>
+</body>
+</html>

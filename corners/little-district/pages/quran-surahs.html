@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta name="color-scheme" content="dark">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<title>بستان القرآن والسنة | Quran & Sunnah Garden</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Amiri+Quran&family=Amiri:wght@400;700&family=Tajawal:wght@400;500;700;800;900&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+<link rel="stylesheet" href="assets/quran.css">
+<script>(function(){try{var l=localStorage.getItem('bunyanLang');if(l==='en'){var h=document.documentElement;h.dir='ltr';h.lang='en';}}catch(e){}})();</script>
+<style id="__antiflash">html{background:#0A2540;color-scheme:dark}</style>
+</head>
+<body>
+
+<!-- ═══ HEADER ═══ -->
+<header class="q-hdr">
+  <a class="q-brand" href="quran.html" title="بستان القرآن والسنة">
+    <span class="ico">←</span>
+    <span><span class="lng-ar">بستان القرآن والسنة</span><span class="lng-en">Quran & Sunnah Garden</span></span>
+  </a>
+  <span class="q-badge">
+    <span>📖</span>
+    <span class="lng-ar">سُوَر القرآن</span>
+    <span class="lng-en">Quran Surahs</span>
+  </span>
+  <div class="q-actions">
+    <div class="q-lang">
+      <button data-lang="en">EN</button>
+      <button data-lang="ar" class="active">عربي</button>
+    </div>
+  </div>
+</header>
+
+<!-- ═══ GARDEN VIEW ═══ -->
+<div class="garden">
+  <div class="g-sun"></div>
+  <div class="g-cloud c1"></div>
+  <div class="g-cloud c2"></div>
+  <span class="g-bird b1">🕊️</span>
+  <span class="g-bird b2">🐦</span>
+
+  <div class="g-intro">
+    <h1 class="g-title">
+      <span class="lng-ar">🌿 بُستان القرآن</span>
+      <span class="lng-en">🌿 The Quran & Sunnah Garden</span>
+    </h1>
+    <p class="g-sub">
+      <span class="lng-ar">المُصحفُ الساحر — اقطف سورةً واغرسها في قلبك!</span>
+      <span class="lng-en">The Magic Book — pick a surah and plant it in your heart!</span>
+    </p>
+  </div>
+
+  <div class="g-guide">
+    <div class="speech">
+      <span class="lng-ar">أنا «أنس»، تعال نتدبّر آيات القرآن!</span>
+      <span class="lng-en">I'm Anas — let's reflect on the Quran together!</span>
+    </div>
+    <div class="who">👦</div>
+  </div>
+
+  <!-- surah fruits -->
+  <div class="g-shelf">
+    <div class="shelf-grid" id="shelfGrid"></div>
+  </div>
+
+  <a class="sec-testbtn surahs" href="quran-tests.html?j=surahs">
+    <span class="stb-ic">🎯</span>
+    <span class="stb-tx">
+      <b class="lng-ar">اختبارُ سُوَر القرآن</b><b class="lng-en">Quran Surahs Test</b>
+      <small class="lng-ar">٣ مستويات · ٩ أنشطة متنوّعة</small><small class="lng-en">3 levels · 9 varied activities</small>
+    </span>
+    <span class="stb-go lng-ar">ابدأ ←</span><span class="stb-go lng-en">Start →</span>
+  </a>
+
+  <!-- progress garden -->
+  <div class="g-progress">
+    <div class="gp-card">
+      <div class="gp-hdr">
+        <div class="ic">🌳</div>
+        <div>
+          <h3><span class="lng-ar">حديقة الحفظ</span><span class="lng-en">My Memory Garden</span></h3>
+          <p id="gpCount"></p>
+        </div>
+      </div>
+      <div class="gp-row" id="gpRow"></div>
+    </div>
+  </div>
+
+  <div class="g-ground"></div>
+  <div class="g-flowers"><span>🌷</span><span>🌻</span><span>🌱</span><span>🌼</span><span>🌷</span><span>🌿</span></div>
+
+  <footer class="q-foot">
+    <span class="lng-ar">صُنع بحب 💚 لأطفال الأمة — <b>بستان القرآن والسنة</b></span>
+    <span class="lng-en">Made with 💚 for the children of the Ummah — <b>Quran & Sunnah Garden</b></span>
+  </footer>
+</div>
+
+<!-- ═══ BOOK READER ═══ -->
+<div class="reader" id="reader">
+  <div class="r-nav">
+    <button class="r-back" id="rBack">
+      <span>←</span>
+      <span class="lng-ar">البستان</span>
+      <span class="lng-en">Garden</span>
+    </button>
+    <div class="r-center">
+      <div class="nm quran-ar" id="rNm"></div>
+      <div class="mt" id="rMt"></div>
+    </div>
+    <div class="r-tools">
+      <div class="r-lang" id="rLang">
+        <button data-lang="ar" class="active">ع</button>
+        <button data-lang="en">EN</button>
+      </div>
+      <div class="r-pager">
+      <button class="r-arrow" id="rPrev">‹</button>
+      <button class="r-arrow" id="rNext">›</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="book-stage">
+    <div class="book" id="book"></div>
+  </div>
+</div>
+
+<!-- ═══ CONFETTI + TOAST ═══ -->
+<div id="confetti"></div>
+<div class="toast" id="toast"></div>
+<div id="qPrintArea"></div>
+
+<!-- ═══ SCRIPTS ═══ -->
+<script src="quran-data/index_data.js"></script>
+<script src="quran-data/fatihah.js"></script>
+<script src="quran-data/naba.js"></script>
+<script src="quran-data/naziat.js"></script>
+<script src="quran-data/abasa.js"></script>
+<script src="quran-data/takwir.js"></script>
+<script src="quran-data/infitar.js"></script>
+<script src="quran-data/mutaffifin.js"></script>
+<script src="quran-data/inshiqaq.js"></script>
+<script src="quran-data/buruj.js"></script>
+<script src="quran-data/tariq.js"></script>
+<script src="quran-data/ala.js"></script>
+<script src="quran-data/ghashiyah.js"></script>
+<script src="quran-data/fajr.js"></script>
+<script src="quran-data/balad.js"></script>
+<script src="quran-data/shams.js"></script>
+<script src="quran-data/layl.js"></script>
+<script src="quran-data/duha.js"></script>
+<script src="quran-data/sharh.js"></script>
+<script src="quran-data/tin.js"></script>
+<script src="quran-data/alaq.js"></script>
+<script src="quran-data/qadr.js"></script>
+<script src="quran-data/bayyinah.js"></script>
+<script src="quran-data/zalzalah.js"></script>
+<script src="quran-data/adiyat.js"></script>
+<script src="quran-data/qariah.js"></script>
+<script src="quran-data/takathur.js"></script>
+<script src="quran-data/asr.js"></script>
+<script src="quran-data/humazah.js"></script>
+<script src="quran-data/fil.js"></script>
+<script src="quran-data/quraysh.js"></script>
+<script src="quran-data/maun.js"></script>
+<script src="quran-data/kawthar.js"></script>
+<script src="quran-data/kafirun.js"></script>
+<script src="quran-data/nasr.js"></script>
+<script src="quran-data/masad.js"></script>
+<script src="quran-data/ikhlas.js"></script>
+<script src="quran-data/falaq.js"></script>
+<script src="quran-data/nas.js"></script>
+<script src="assets/quran.js"></script>
+
+<style>
+.sec-testbtn{position:relative;z-index:8;display:flex;align-items:center;gap:.8rem;max-width:520px;margin:1.4rem auto 1.6rem;padding:.85rem 1.2rem;text-decoration:none;cursor:pointer;border-radius:1.3rem;font-family:'Tajawal',sans-serif;transition:transform .18s,box-shadow .18s}
+.sec-testbtn:hover{transform:translateY(-3px)}
+.sec-testbtn .stb-ic{font-size:2rem;flex:0 0 auto}
+.sec-testbtn .stb-tx{flex:1;display:flex;flex-direction:column;line-height:1.35}
+.sec-testbtn .stb-tx b{color:#fff;font-size:1.08rem;font-weight:900}
+.sec-testbtn .stb-tx small{color:rgba(255,255,255,.85);font-size:.78rem;font-weight:700}
+.sec-testbtn .stb-go{flex:0 0 auto;background:#fff;font-family:'Tajawal',sans-serif;font-weight:900;font-size:.85rem;border-radius:2rem;padding:.4rem .9rem;white-space:nowrap}
+.sec-testbtn.surahs{background:linear-gradient(135deg,#1FAE8C,#0E6B53);border:2px solid #7FE0C8;box-shadow:0 8px 0 #0a5740,0 14px 28px rgba(10,60,40,.4)}
+.sec-testbtn.surahs .stb-go{color:#0E6B53}
+</style>
+<script defer src="../../shared/mk-system.js"></script>
+<script defer src="../../shared/mk-journeys.js"></script>
+<script defer src="../../shared/mk-bag.js"></script>
+<script defer src="../../shared/mk-train.js"></script>
+<script defer src="../../shared/nav-fix.js"></script>
+</body>
+</html>

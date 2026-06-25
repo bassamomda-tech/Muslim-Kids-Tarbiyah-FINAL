@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>المحقّق الذكي · أنوس</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+
+<link rel="stylesheet" href="../styles/tokens.css" />
+<link rel="stylesheet" href="../styles/dashboard.css" />
+<link rel="stylesheet" href="../styles/wheel.css" />
+<link rel="stylesheet" href="../styles/detective.css" />
+</head>
+<body>
+
+<div class="bg-decor" aria-hidden="true"></div>
+
+<div class="activity-shell">
+
+  <nav class="activity-nav">
+    <a class="back-link" href="../dashboard.html">
+      الرجوع للوحة الأنشطة
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg>
+    </a>
+    <div class="activity-crumb">
+      <span>العبادات والإيمان</span>
+      <span class="sep">/</span>
+      <span class="cur">المحقّق الذكي</span>
+    </div>
+    <div class="activity-actions">
+      <button class="icon-btn" id="reset-btn" title="إعادة الضبط" aria-label="إعادة الضبط">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 3-6.7L3 8"/><path d="M3 3v5h5"/></svg>
+      </button>
+    </div>
+  </nav>
+
+  <div class="activity-layout">
+
+    <!-- ============ لوحة المحقق ============ -->
+    <section class="detective-panel">
+      <header class="wheel-header">
+        <span class="activity-tag">Activity 06 · Coordinate Mapping</span>
+        <h1 class="activity-title">المحقّق الذكي</h1>
+        <p class="activity-desc">
+          في هذا الحي ثمانية أعمالٍ صالحة خفية. حرّك العدسة فوق المشهد
+          واضغط على المواقع لتكتشفها واحداً تلو الآخر — استعن بالقرائن.
+        </p>
+      </header>
+
+      <!-- مشهد التحقيق -->
+      <div class="scene-wrap">
+        <div class="scene" id="scene" aria-label="مشهد الحي">
+          <div class="scene-bg" id="scene-bg"></div>
+          <div class="scene-hits" id="scene-hits"></div>
+          <div class="scene-overlay" id="scene-overlay">
+            <div class="start-card">
+              <h3>تحدّي المحقّق</h3>
+              <p>اعثر على ثمانية أعمالٍ صالحة خفية في الحي. تنفعك ثلاث قرائن إذا احتجت إليها.</p>
+              <button class="btn-primary" id="start-btn">ابدأ التحقيق</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="detective-hud">
+        <div class="hud-block">
+          الاكتشافات
+          <strong id="d-found">0/8</strong>
+        </div>
+        <div class="hud-block">
+          القرائن
+          <div class="hint-pips" id="hint-pips"></div>
+        </div>
+        <div class="hud-block">
+          الأخطاء
+          <strong id="d-misses">0</strong>
+        </div>
+        <button class="hint-btn" id="hint-btn">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v2M2 12h2M22 12h-2M12 22v-2"/><circle cx="12" cy="12" r="5"/></svg>
+          أعطني قرينة
+        </button>
+        <button class="wheel-mute-toggle" id="mute-btn" aria-pressed="false">
+          <span class="mute-icon"></span>
+          <span class="mute-label">كتم الصوت</span>
+        </button>
+      </div>
+    </section>
+
+    <!-- ============ اللوحة الجانبية ============ -->
+    <aside class="side-panel">
+
+      <div class="panel-card">
+        <div class="panel-head">
+          <h3>قائمة الأعمال الصالحة</h3>
+          <span class="pill" id="checklist-pill">0/8</span>
+        </div>
+        <div class="deeds-list" id="deeds-list"></div>
+      </div>
+
+      <div class="panel-card">
+        <div class="panel-head">
+          <h3>دفتر المحقّق</h3>
+        </div>
+        <div class="tip-card">
+          <span class="tip-icon">!</span>
+          <span>قال النبي ﷺ: «أحبُّ الناسِ إلى الله أنفعهم للناس». الأعمال الصالحة الصغيرة قد تُخفى عن الناس، لكنها لا تخفى على الله.</span>
+        </div>
+        <div class="hadith-card">
+          <div class="quote">«الدّالُّ على الخير كفاعِله»</div>
+          <span class="src">رواه الترمذي<span class="hadith-grade ok">صحيح</span></span>
+        </div>
+      </div>
+
+    </aside>
+  </div>
+</div>
+
+<!-- مودال النصر -->
+<div class="modal-backdrop" id="win-modal" role="dialog" aria-modal="true">
+  <div class="modal">
+    <button class="modal-close" data-close aria-label="إغلاق">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M6 6l12 12M18 6l-12 12"/></svg>
+    </button>
+
+    <div class="modal-deco" aria-hidden="true">
+      <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/>
+      </svg>
+    </div>
+
+    <div class="modal-eyebrow">قضية مَحلولة</div>
+    <h2 class="modal-title">أحسنتَ يا محقّق!</h2>
+
+    <div class="modal-meaning" style="text-align:right;">
+      <strong>ماذا تعلّمت اليوم؟</strong>
+      وَجدتَ ثمانية أعمالٍ صالحة قد يفعلها الناس في الخفاء.
+      الله يرى كل شيء، وكل عمل صالح يُضاف إلى ميزانك يوم القيامة.
+    </div>
+
+    <div class="modal-meaning" style="text-align:right; display:grid; grid-template-columns:repeat(3,1fr); gap:var(--s-2);">
+      <div><strong>الأخطاء</strong><span id="win-misses">0</span></div>
+      <div><strong>القرائن</strong><span id="win-hints">0</span></div>
+      <div><strong>الوقت</strong><span id="win-time">0:00</span></div>
+    </div>
+
+    <div class="modal-actions">
+      <button class="btn-ghost" data-close>انتهيت</button>
+      <button class="btn-primary" id="win-replay">قضية جديدة</button>
+    </div>
+  </div>
+</div>
+
+<div class="particles" id="particles" aria-hidden="true"></div>
+
+<script src="../scripts/activity-common.js"></script>
+<script src="../scripts/detective.js"></script>
+
+<script>
+window.PAGE_DICT = {
+  "المحقّق الذكي": "The Smart Detective",
+  "في هذا الحي ثمانية أعمالٍ صالحة خفية. حرّك العدسة فوق المشهد واضغط على المواقع لتكتشفها واحداً تلو الآخر — استعن بالقرائن.": "Eight hidden good deeds are in this neighborhood. Move the lens over the scene and tap spots to uncover them one by one — use the clues to help.",
+  "مشهد الحي": "Neighborhood scene",
+  "تحدّي المحقّق": "The detective's challenge",
+  "اعثر على ثمانية أعمالٍ صالحة خفية في الحي. تنفعك ثلاث قرائن إذا احتجت إليها.": "Find eight hidden good deeds in the neighborhood. You have three clues if you need them.",
+  "ابدأ التحقيق": "Start investigating",
+  "الاكتشافات": "Discoveries",
+  "القرائن": "Clues",
+  "الأخطاء": "Mistakes",
+  "أعطني قرينة": "Give me a clue",
+  "قائمة الأعمال الصالحة": "Good deeds checklist",
+  "دفتر المحقّق": "Detective's notebook",
+  "قال النبي ﷺ: «أحبُّ الناسِ إلى الله أنفعهم للناس». الأعمال الصالحة الصغيرة قد تُخفى عن الناس، لكنها لا تخفى على الله.": "The Prophet ﷺ said: «The most beloved people to Allah are those most beneficial to others». Small good deeds may be hidden from people, but never from Allah.",
+  "قضية مَحلولة": "Case solved",
+  "أحسنتَ يا محقّق!": "Well done, detective!",
+  "ماذا تعلّمت اليوم؟": "What did you learn today?",
+  "وَجدتَ ثمانية أعمالٍ صالحة قد يفعلها الناس في الخفاء. الله يرى كل شيء، وكل عمل صالح يُضاف إلى ميزانك يوم القيامة.": "You found eight good deeds people may do in secret. Allah sees everything, and every good deed is added to your scale on the Day of Judgement."
+};
+</script>
+<script>
+Object.assign(window.PAGE_DICT, {
+  "إماطة الأذى عن الطريق": "Removing harm from the path",
+  "ابحث قرب الرصيف الأمامي": "Look near the front curb",
+  "رفع علبةٍ ساقطة من الطريق": "Picking up a fallen can from the road",
+  "مساعدة كبير السن": "Helping an elderly person",
+  "قرب باب المنزل الأخضر": "Near the green house door",
+  "حمل حقيبة العمّ الكبير": "Carrying the old man's bag",
+  "إطعام قطة": "Feeding a cat",
+  "خلف الصندوق على الرصيف": "Behind the box on the curb",
+  "وضْع طعام لقطة صغيرة": "Putting food out for a little cat",
+  "زرع شجرة": "Planting a tree",
+  "في الحديقة على اليسار": "In the garden on the left",
+  "زرع شتلةٍ صغيرة": "Planting a small seedling",
+  "ابتسامة في وجه أخيك": "Smiling at your brother",
+  "في نافذة الطابق الأول": "At the first-floor window",
+  "السلام والابتسام للجار": "Greeting and smiling at the neighbor",
+  "صدقة خفيّة": "Secret charity",
+  "إلى يسار النافذة الزرقاء": "To the left of the blue window",
+  "إدخال نقودٍ في صندوق التبرع": "Putting money in the donation box",
+  "قراءة القرآن": "Reading the Quran",
+  "في الطابق العلوي": "On the upper floor",
+  "طفلٌ يقرأ المصحف بهدوء": "A child quietly reading the mushaf",
+  "سقي الطير": "Giving water to birds",
+  "على حافة السطح": "On the edge of the roof",
+  "وضع ماءٍ للعصافير": "Putting out water for the sparrows"
+});
+</script>
+<script src="../scripts/i18n.js"></script>
+<script src="../../shared/nav-fix.js"></script>
+</body>
+</html>

@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>شجرة تتبع الصلاة · أنوس</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+
+<link rel="stylesheet" href="../styles/tokens.css" />
+<link rel="stylesheet" href="../styles/dashboard.css" />
+<link rel="stylesheet" href="../styles/wheel.css" />
+<link rel="stylesheet" href="../styles/prayer-tree.css" />
+</head>
+<body>
+
+<div class="bg-decor" aria-hidden="true"></div>
+
+<div class="activity-shell">
+
+  <nav class="activity-nav">
+    <a class="back-link" href="../dashboard.html">
+      الرجوع للوحة الأنشطة
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg>
+    </a>
+    <div class="activity-crumb">
+      <span>الفن والإبداع</span>
+      <span class="sep">/</span>
+      <span class="cur">شجرة تتبع الصلاة</span>
+    </div>
+    <div class="activity-actions">
+      <button class="icon-btn" id="reset-btn" title="إعادة الضبط" aria-label="إعادة الضبط">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 3-6.7L3 8"/><path d="M3 3v5h5"/></svg>
+      </button>
+    </div>
+  </nav>
+
+  <div class="activity-layout">
+
+    <section class="pt-panel">
+      <header class="wheel-header">
+        <span class="activity-tag">Activity 22 · Interactive SVG</span>
+        <h1 class="activity-title">شجرة تتبع الصلاة</h1>
+        <p class="activity-desc">
+          كلَّما صلَّيتَ فَرضاً، اضغط عليه لِيُزهر بُرعمٌ في شَجرتك.
+          خَمس صَلواتٍ في اليوم = شَجرةٌ مُكتمِلة. حافِظ على سِلسلتك أيَّاماً مُتتاليةً
+          لِتُصبحَ شَجرتك بُستاناً كاملاً.
+        </p>
+      </header>
+
+      <div class="pt-hud">
+        <div class="hud-block">اليوم <strong><span id="t-today-count">0</span>/5</strong></div>
+        <div class="hud-block">السِّلسلة <strong id="t-streak">0</strong></div>
+        <div class="hud-block">أيَّامٌ كامِلة <strong id="t-full">0</strong></div>
+        <div class="hud-block">مَجموع صَلوات <strong id="t-total">0</strong></div>
+      </div>
+
+      <div class="pt-stage">
+        <div class="pt-date-row">
+          <button id="prev-day" aria-label="السابق">‹</button>
+          <span class="date-pill" id="date-pill">اليوم</span>
+          <button id="next-day" aria-label="التالي">›</button>
+          <button class="today-btn" id="today-btn">اليوم</button>
+        </div>
+
+        <div class="pt-tree-wrap">
+          <svg id="tree-svg" viewBox="0 0 500 400" preserveAspectRatio="xMidYMid meet"></svg>
+        </div>
+
+        <div class="pt-prayers" id="prayers"></div>
+      </div>
+
+      <div class="wheel-controls" style="margin-top:var(--s-4);">
+        <div class="wheel-stat">أفضل سِلسلة <strong id="best">—</strong></div>
+        <button class="wheel-mute-toggle" id="mute-btn" aria-pressed="false">
+          <span class="mute-icon"></span>
+          <span class="mute-label">كتم الصوت</span>
+        </button>
+      </div>
+    </section>
+
+    <aside class="side-panel">
+      <div class="panel-card">
+        <div class="panel-head">
+          <h3>الأسبوع الحاليّ</h3>
+          <span class="pill" id="week-pill">0/35</span>
+        </div>
+        <div class="pt-week" id="week-grid"></div>
+      </div>
+
+      <div class="panel-card">
+        <div class="panel-head"><h3>كيف ألعب؟</h3></div>
+        <div style="font-size: 14px; line-height: 1.7; color: var(--ink-2);">
+          ١. صلِّ صلاتك في وَقتها.<br/>
+          ٢. اضغط على الصلاة لِتُسَجِّلها.<br/>
+          ٣. شَجرتك تَنمو مع كلّ صلاة!<br/>
+          ٤. حافِظ على ٥ صلواتٍ يومياً لِتَزيد سِلسلتك.
+        </div>
+        <div class="tip-card" style="margin-top: var(--s-3);">
+          <span class="tip-icon">!</span>
+          <span>أَعلى مَنزلةٍ يُحِبُّها اللهُ هي الصلاة في وَقتها. سَجِّلها فَور أدائها لِتَكونَ أَحفظَ لها.</span>
+        </div>
+      </div>
+
+      <div class="panel-card">
+        <div class="panel-head"><h3>أُعجوبةُ الصلاة</h3></div>
+        <div class="hadith-card">
+          <div class="quote">«وأَقِمِ الصَّلاةَ إنَّ الصَّلاةَ تَنهى عَنِ الفَحشاءِ وَالمُنكَر»</div>
+          <span class="src">سورة العنكبوت، آية 45</span>
+        </div>
+      </div>
+    </aside>
+  </div>
+</div>
+
+<!-- مودال النصر -->
+<div class="modal-backdrop" id="win-modal" role="dialog" aria-modal="true">
+  <div class="modal">
+    <button class="modal-close" data-close aria-label="إغلاق">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M6 6l12 12M18 6l-12 12"/></svg>
+    </button>
+    <div class="modal-deco" aria-hidden="true">
+      <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v6M12 21v-6M3 12h6M21 12h-6M5.6 5.6l4.2 4.2M14.2 14.2l4.2 4.2M5.6 18.4l4.2-4.2M14.2 9.8l4.2-4.2"/></svg>
+    </div>
+    <div class="modal-eyebrow">يَومٌ كامِل</div>
+    <h2 class="modal-title">شَجرتُكَ اكتَمَلَتْ!</h2>
+    <div class="modal-meaning" id="win-summary"></div>
+    <div class="modal-actions">
+      <button class="btn-primary" data-close>بَارَكَ اللهُ فيكَ</button>
+    </div>
+  </div>
+</div>
+
+<div class="particles" id="particles" aria-hidden="true"></div>
+
+<script src="../scripts/activity-common.js"></script>
+<script src="../scripts/prayer-tree.js"></script>
+
+<script>
+window.PAGE_DICT = {
+  "شجرة تتبع الصلاة": "Prayer Tracking Tree",
+  "كلَّما صلَّيتَ فَرضاً، اضغط عليه لِيُزهر بُرعمٌ في شَجرتك. خَمس صَلواتٍ في اليوم = شَجرةٌ مُكتمِلة. حافِظ على سِلسلتك أيَّاماً مُتتاليةً لِتُصبحَ شَجرتك بُستاناً كاملاً.": "Each time you pray an obligatory prayer, tap it and a bud blossoms on your tree. Five prayers a day = a complete tree. Keep your streak going day after day so your tree becomes a full garden.",
+  "اليوم": "Today",
+  "السِّلسلة": "Streak",
+  "أيَّامٌ كامِلة": "Full days",
+  "مَجموع صَلوات": "Total prayers",
+  "السابق": "Previous",
+  "التالي": "Next",
+  "أفضل سِلسلة": "Best streak",
+  "الأسبوع الحاليّ": "This week",
+  "١. صلِّ صلاتك في وَقتها.": "1. Pray your prayer on time.",
+  "٢. اضغط على الصلاة لِتُسَجِّلها.": "2. Tap the prayer to log it.",
+  "٣. شَجرتك تَنمو مع كلّ صلاة!": "3. Your tree grows with every prayer!",
+  "٤. حافِظ على ٥ صلواتٍ يومياً لِتَزيد سِلسلتك.": "4. Keep 5 prayers daily to grow your streak.",
+  "أَعلى مَنزلةٍ يُحِبُّها اللهُ هي الصلاة في وَقتها. سَجِّلها فَور أدائها لِتَكونَ أَحفظَ لها.": "The deed Allah loves most is prayer on time. Log it right after you pray to stay mindful of it.",
+  "أُعجوبةُ الصلاة": "The wonder of prayer",
+  "سورة العنكبوت، آية 45": "Surat al-Ankabut, verse 45",
+  "يَومٌ كامِل": "A full day",
+  "شَجرتُكَ اكتَمَلَتْ!": "Your tree is complete!",
+  "بَارَكَ اللهُ فيكَ": "May Allah bless you"
+};
+</script>
+<script>
+Object.assign(window.PAGE_DICT, {
+  "الفَجر":"Fajr","الظُّهر":"Dhuhr","العَصر":"Asr","المَغرب":"Maghrib","العِشاء":"Isha",
+  "الأمس":"Yesterday",
+  "يناير":"January","فبراير":"February","مارس":"March","أبريل":"April","مايو":"May","يونيو":"June",
+  "يوليو":"July","أغسطس":"August","سبتمبر":"September","أكتوبر":"October","نوفمبر":"November","ديسمبر":"December"
+});
+</script>
+<script src="../scripts/i18n.js"></script>
+<script src="../../shared/nav-fix.js"></script>
+</body>
+</html>

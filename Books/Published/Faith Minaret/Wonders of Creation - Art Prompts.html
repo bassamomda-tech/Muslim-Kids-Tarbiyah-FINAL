@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="dark">
+<title>أوصاف رسومات «عجائب الخلق» — بحسب رقم الصفحة | Art Prompts by Page</title>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&family=Nunito:wght@400;600;700;800&display=swap">
+<style>
+  :root{--navy:#0A2540;--navy2:#12375A;--gold:#D4A017;--gold-lt:#F5CC5A;--purple:#8E44AD;--teal:#1A9B7B;--cream:#FEF5DC;--muted:rgba(254,245,220,.62)}
+  *{box-sizing:border-box}
+  body{margin:0;font-family:'Tajawal','Nunito',sans-serif;color:var(--cream);background:linear-gradient(160deg,var(--navy),var(--navy2));background-attachment:fixed;min-height:100vh}
+  body[dir="ltr"]{font-family:'Nunito','Tajawal',sans-serif}
+  .lat{font-family:'Nunito','Tajawal',sans-serif}
+  .ar-only{display:inline}.en-only{display:none}
+  html[dir="ltr"] .ar-only{display:none}html[dir="ltr"] .en-only{display:inline}
+  .header{position:sticky;top:0;z-index:30;background:rgba(10,37,64,.93);backdrop-filter:blur(12px);padding:.8rem 1.2rem;display:flex;align-items:center;justify-content:space-between;gap:1rem;border-bottom:1px solid rgba(212,160,23,.3);flex-wrap:wrap}
+  .brand{display:flex;align-items:center;gap:.55rem;font-weight:900;color:var(--gold-lt);font-size:1rem}
+  .hactions{display:flex;gap:.55rem;align-items:center;flex-wrap:wrap}
+  .back{text-decoration:none;background:rgba(255,255,255,.08);border:1.5px solid rgba(212,160,23,.4);color:var(--cream);border-radius:2rem;padding:.42rem 1rem;font-weight:800;font-size:.82rem}
+  .lang-switch{display:flex;border:1.5px solid rgba(212,160,23,.4);border-radius:2rem;overflow:hidden}
+  .lang-switch button{background:transparent;border:none;color:var(--cream);font-weight:800;padding:.34rem .8rem;font-size:.78rem;cursor:pointer;font-family:inherit}
+  .lang-switch button.active{background:var(--purple);color:#fff}
+  .copyall{background:var(--gold);border:none;color:#10243d;border-radius:2rem;padding:.44rem 1rem;font-weight:900;font-size:.82rem;cursor:pointer;font-family:inherit}
+  .copyall.done{background:var(--teal);color:#fff}
+  .wrap{max-width:980px;margin:0 auto;padding:1.5rem 1.1rem 4rem}
+  .hero{text-align:center;margin-bottom:1.2rem}
+  .hero .ic{font-size:2.4rem}
+  .hero h1{font-size:1.6rem;font-weight:900;margin:.3rem 0;color:var(--gold-lt)}
+  .hero p{opacity:.85;max-width:660px;margin:.3rem auto;line-height:1.7;font-size:.95rem}
+  .howto{background:linear-gradient(135deg,rgba(212,160,23,.13),rgba(142,68,173,.15));border:1.5px solid rgba(212,160,23,.32);border-radius:1.1rem;padding:.9rem 1.1rem;margin-bottom:1.1rem;line-height:1.7;font-size:.9rem}
+  .howto b{color:var(--gold-lt)}
+  .stylerow{display:flex;align-items:center;gap:.7rem;flex-wrap:wrap;margin-top:.7rem;padding-top:.7rem;border-top:1px solid rgba(255,255,255,.1)}
+  .stylebtn{background:rgba(255,255,255,.08);border:1.5px solid rgba(212,160,23,.45);color:var(--cream);border-radius:1rem;padding:.45rem .9rem;font-weight:800;font-family:inherit;font-size:.82rem;cursor:pointer}
+  .stylebtn.done{background:var(--teal);border-color:var(--teal);color:#fff}
+  .count{font-weight:800;color:var(--gold-lt);font-size:.88rem;margin-bottom:.7rem;text-align:center}
+  .prow{display:flex;gap:.9rem;background:rgba(255,255,255,.05);border:1px solid rgba(212,160,23,.2);border-radius:1rem;border-inline-start:5px solid var(--cc,var(--gold));padding:.85rem .95rem;margin-bottom:.75rem}
+  .pnum{flex:0 0 auto;width:54px;display:flex;flex-direction:column;align-items:center;gap:2px}
+  .pnum .pn-lbl{font-size:.6rem;color:var(--muted);font-weight:800}
+  .pnum .pn-val{width:42px;height:42px;border-radius:50%;background:var(--cc,var(--gold));color:#10243d;display:grid;place-items:center;font-weight:900;font-size:1.2rem}
+  .pmid{flex:1;min-width:0}
+  .ptop{display:flex;align-items:center;gap:.5rem;flex-wrap:wrap;margin-bottom:.45rem}
+  .ptag{font-size:.7rem;font-weight:800;border-radius:1rem;padding:.16rem .6rem;line-height:1}
+  .ptag.kind{background:rgba(212,160,23,.18);color:var(--gold-lt);border:1px solid rgba(212,160,23,.35)}
+  .ptag.slot{background:rgba(255,255,255,.08);color:var(--muted);font-family:monospace;font-size:.64rem}
+  .ptitle{font-weight:900;font-size:.98rem;color:var(--cream)}
+  .ptitle .en{display:block;font-size:.74rem;color:var(--muted);font-weight:700}
+  .pbody{font-size:.8rem;line-height:1.6;color:rgba(254,245,220,.88);direction:ltr;text-align:left;background:rgba(0,0,0,.2);border:1px solid rgba(255,255,255,.06);border-radius:.6rem;padding:.6rem .7rem;margin-top:.4rem}
+  .pacts{margin-top:.5rem}
+  .copy-btn{background:linear-gradient(135deg,var(--gold),#c79518);color:#10243d;border:none;border-radius:.6rem;padding:.42rem 1.1rem;font-weight:900;font-family:inherit;font-size:.8rem;cursor:pointer}
+  .copy-btn.done{background:var(--teal);color:#fff}
+  .toast{position:fixed;bottom:1.3rem;left:50%;transform:translateX(-50%) translateY(14px);background:var(--teal);color:#fff;font-weight:800;padding:.7rem 1.3rem;border-radius:2rem;box-shadow:0 10px 30px rgba(0,0,0,.5);opacity:0;transition:.25s;pointer-events:none;z-index:80}
+  .toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+  @media print{.header,.howto,.hactions,.pacts,.toast,.stylerow{display:none!important}body{background:#fff;color:#111}.prow{break-inside:avoid;border-color:#ccc}.pbody{color:#222;background:#f4f4f4}}
+</style>
+</head>
+<body dir="rtl">
+<header class="header">
+  <div class="brand"><span>🍌</span><span class="ar-only">أوصاف رسومات «عجائب الخلق» — بحسب رقم الصفحة</span><span class="en-only">Wonders of Creation — Art Prompts by Page</span></div>
+  <div class="hactions">
+    <div class="lang-switch"><button id="btnEn" onclick="setLang('en')">EN</button><button id="btnAr" class="active" onclick="setLang('ar')">عربي</button></div>
+    <button class="copyall" id="copyAllBtn" onclick="copyAll()">📋 <span class="ar-only">انسخ الكل</span><span class="en-only">Copy all</span></button>
+    <a class="back" href="Wonders of Creation Book Publish.html">📕 <span class="ar-only">الكتاب</span><span class="en-only">Book</span></a>
+  </div>
+</header>
+
+<div class="wrap">
+  <div class="hero">
+    <div class="ic">🎨</div>
+    <h1><span class="ar-only">كل أوصاف الرسومات — بترتيب صفحات الكتاب</span><span class="en-only">All Art Prompts — in book-page order</span></h1>
+    <p><span class="ar-only">كل صفّ يقابل صفحةً في «نسخة النشر». وَلِّد الرسمة عبر Nano Banana، ثم افتح الكتاب واسحبها إلى الإطار في الصفحة نفسها.</span>
+       <span class="en-only">Each row matches a page in the Publish book. Generate the art in Nano Banana, then drop it into the frame on that same page.</span></p>
+  </div>
+
+  <div class="howto">
+    <span class="ar-only">⚠️ <b>النص العربي داخل الصورة</b> قد يخرج مشوّهاً — وَلِّد ٢–٣ نسخ واختر الأفضل، أو اطلب الرسمة بلا نصّ وأضِف العنوان بنفسك. النمطُ الموحّد مُضاف تلقائيًّا في نهاية كل وصف عند النسخ.</span>
+    <span class="en-only">⚠️ <b>Arabic text inside the image</b> may come out distorted — generate 2–3 versions and pick the best, or omit the text and add titles yourself. The house style is auto-appended to each prompt on copy.</span>
+    <div class="stylerow">
+      <span class="ar-only" style="color:var(--muted);font-size:.84rem">النمط الموحّد مُضمَّن في كل نسخة:</span>
+      <span class="en-only" style="color:var(--muted);font-size:.84rem">House style included in every copy:</span>
+      <button class="stylebtn" id="styleBtn" onclick="copyStyle()">📋 <span class="ar-only">انسخ نمط القصة</span><span class="en-only">Story style</span></button>
+      <button class="stylebtn" id="lineBtn" onclick="copyLine()">📋 <span class="ar-only">انسخ نمط التلوين</span><span class="en-only">Coloring style</span></button>
+    </div>
+  </div>
+
+  <div class="count" id="count"></div>
+  <div id="results"></div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script>
+  var lang=localStorage.getItem('bunyanLang')||'ar';
+  var DATA={items:[],style:'',lineStyle:''};
+
+  function setLang(l){
+    lang=l; localStorage.setItem('bunyanLang',l);
+    document.documentElement.lang=l; document.documentElement.dir=l==='ar'?'rtl':'ltr'; document.body.dir=l==='ar'?'rtl':'ltr';
+    document.getElementById('btnEn').classList.toggle('active',l==='en');
+    document.getElementById('btnAr').classList.toggle('active',l==='ar');
+    render();
+  }
+  function esc(s){return String(s).replace(/[&<>"]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];});}
+  function styleFor(it){ return /Coloring|تلوين|Maze|Find|dots|Connect|Search|نقاط|الفروق|متاهة|ابحث/.test(it.kind.en+it.kind.ar) ? DATA.lineStyle : DATA.style; }
+  // NOTE: prompts already include their style; copy returns the prompt as-is (style already embedded).
+  function fullPrompt(it){ return it.prompt; }
+
+  function render(){
+    var root=document.getElementById('results'); root.innerHTML='';
+    document.getElementById('count').textContent=(lang==='ar'? DATA.items.length+' وصف · بترتيب الصفحات' : DATA.items.length+' prompts · in page order');
+    DATA.items.forEach(function(it){
+      var cover=it.station==='—';
+      var cc=cover?'#8E44AD':(it.kind.en.indexOf('Story')>-1?'#1A9B7B':it.kind.en.indexOf('Coloring')>-1?'#D4A017':'#2980B9');
+      var row=document.createElement('div'); row.className='prow'; row.style.setProperty('--cc',cc);
+      row.innerHTML=
+        '<div class="pnum"><span class="pn-lbl">'+(lang==='ar'?'صفحة':'page')+'</span><span class="pn-val">'+it.page+'</span></div>'+
+        '<div class="pmid"><div class="ptop">'+
+          '<span class="ptag kind">'+it.ic+' '+esc(lang==='ar'?it.kind.ar:it.kind.en)+'</span>'+
+          (cover?'':'<span class="ptag kind">'+(lang==='ar'?'محطة ':'Station ')+it.station+'</span>')+
+          '<span class="ptag slot">'+esc(it.slot)+'</span></div>'+
+          '<div class="ptitle">'+esc(lang==='ar'?it.titleAr:it.titleEn)+'<span class="en lat">'+esc(lang==='ar'?it.titleEn:it.titleAr)+'</span></div>'+
+          '<div class="pbody">'+esc(it.prompt)+'</div>'+
+          '<div class="pacts"><button class="copy-btn">📋 '+(lang==='ar'?'نسخ الوصف':'Copy prompt')+'</button></div>'+
+        '</div>';
+      row.querySelector('.copy-btn').onclick=function(){ var b=this; copyText(fullPrompt(it)).then(function(){ b.classList.add('done'); var t=b.textContent; b.textContent='✓ '+(lang==='ar'?'تم':'Copied'); toast(lang==='ar'?'✓ نُسخ وصف الصفحة '+it.page:'✓ Page '+it.page+' prompt copied'); setTimeout(function(){b.classList.remove('done');b.textContent=t;},1500); }); };
+      root.appendChild(row);
+    });
+  }
+  function copyStyle(){ copyText(DATA.style).then(function(){ flash('styleBtn'); toast(lang==='ar'?'✓ نُسخ نمط القصة':'✓ Story style copied'); }); }
+  function copyLine(){ copyText(DATA.lineStyle).then(function(){ flash('lineBtn'); toast(lang==='ar'?'✓ نُسخ نمط التلوين':'✓ Coloring style copied'); }); }
+  function copyAll(){
+    var txt=DATA.items.map(function(it){ return '═══ '+(lang==='ar'?'صفحة ':'PAGE ')+it.page+' · '+it.kind.en+' · '+it.titleEn+' ['+it.slot+'] ═══\n'+it.prompt; }).join('\n\n');
+    copyText(txt).then(function(){ flash('copyAllBtn'); toast(lang==='ar'?'✓ نُسخت كل الأوصاف ('+DATA.items.length+')':'✓ All '+DATA.items.length+' prompts copied'); });
+  }
+  function flash(id){ var b=document.getElementById(id); b.classList.add('done'); setTimeout(function(){b.classList.remove('done');},1400); }
+  function copyText(str){
+    if(navigator.clipboard&&navigator.clipboard.writeText) return navigator.clipboard.writeText(str);
+    return new Promise(function(res){var ta=document.createElement('textarea');ta.value=str;ta.style.position='fixed';ta.style.opacity='0';document.body.appendChild(ta);ta.select();try{document.execCommand('copy');}catch(e){}document.body.removeChild(ta);res();});
+  }
+  var tt; function toast(m){var t=document.getElementById('toast');t.textContent=m;t.classList.add('show');clearTimeout(tt);tt=setTimeout(function(){t.classList.remove('show');},1800);}
+
+  fetch('../../../corners/faith-minaret/wonders-prompts.json').then(function(r){return r.json();}).then(function(j){ DATA=j; setLang(lang); })
+    .catch(function(e){ document.getElementById('results').innerHTML='<p style="text-align:center;color:#f88">تعذّر تحميل الأوصاف.</p>'; });
+</script>
+</body>
+</html>

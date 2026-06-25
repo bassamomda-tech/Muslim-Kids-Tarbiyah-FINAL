@@ -1,0 +1,127 @@
+/* ════════════════════════════════════════════════════════════════
+   stories-treasury.css — add-on for the «كنزُ القصص» Story Treasury book.
+   Layers on top of yaqeen-book.css. Adds: chapter dividers, styled
+   illustration placeholders (with captions), choice cards, moral &
+   reflect blocks. Same navy/gold parchment language as the corner books.
+   ════════════════════════════════════════════════════════════════ */
+
+/* ───────── chapter divider (one per house) ───────── */
+.chapter-mid{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:16px}
+.chapter-crest{width:120px;height:120px;border-radius:50%;display:grid;place-items:center;font-size:3.6rem;
+  background:radial-gradient(circle at 50% 35%,rgba(255,255,255,.14),rgba(255,255,255,.04));
+  border:3px solid var(--acc,var(--gold));box-shadow:0 14px 40px rgba(0,0,0,.45)}
+.chapter-kick{font-size:.82rem;font-weight:800;letter-spacing:4px;color:var(--gold-lt)}
+.chapter-no{font-size:.78rem;font-weight:800;letter-spacing:2px;color:rgba(254,245,220,.55)}
+.chapter-title{font-size:2.9rem;font-weight:900;color:var(--cream);line-height:1.12;margin:0}
+.chapter-title .en{font-size:1.2rem;color:var(--gold-lt);margin-top:8px;font-weight:700}
+.chapter-tag{font-size:1.06rem;color:rgba(254,245,220,.85);line-height:1.75;max-width:540px}
+.chapter-tag .en{display:block;font-size:.86rem;color:rgba(254,245,220,.6);margin-top:6px}
+.chapter-count{display:inline-flex;align-items:center;gap:8px;background:rgba(212,160,23,.16);
+  border:1.5px solid rgba(212,160,23,.4);color:var(--gold-lt);border-radius:2rem;padding:7px 20px;font-weight:800;font-size:.92rem}
+.chapter-dots{display:flex;gap:9px;margin-top:2px}
+.chapter-dots i{width:11px;height:11px;border-radius:50%;background:rgba(254,245,220,.25)}
+.chapter-dots i.on{background:var(--acc,var(--gold))}
+
+/* ───────── story chrome ───────── */
+.story-tag{display:inline-flex;align-items:center;gap:7px;font-weight:800;font-size:.74rem;letter-spacing:.5px;
+  color:#fff;background:var(--acc,var(--gold));border-radius:2rem;padding:4px 14px}
+.story-name{font-size:1.5rem;font-weight:900;color:var(--ink);line-height:1.3;margin:10px 0 0}
+.story-name .en{display:block;font-family:'Nunito',sans-serif;font-size:.92rem;color:var(--ink-soft);font-weight:700;margin-top:2px}
+.cont-pill{margin-inline-start:auto;font-size:.7rem;font-weight:800;color:var(--ink-soft);
+  background:rgba(0,0,0,.05);border:1.5px solid var(--paper-line);border-radius:2rem;padding:4px 12px}
+
+/* ───────── styled illustration placeholder (caption, no drop-slot) ───────── */
+.art-ph{position:relative;border:3px dashed var(--acc,var(--gold));border-radius:18px;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;
+  padding:22px 26px;text-align:center;overflow:hidden;background:#f6efda}
+.art-ph::before{content:"";position:absolute;inset:9px;border:1.5px solid rgba(180,150,80,.28);border-radius:12px;pointer-events:none}
+.art-ph .ap-ic{font-size:2.4rem;line-height:1;filter:saturate(.85)}
+.art-ph .ap-lbl{font-weight:900;font-size:.78rem;letter-spacing:2px;color:var(--acc,var(--gold-dk));text-transform:uppercase}
+.art-ph .ap-cap{font-size:.96rem;line-height:1.6;color:var(--ink);font-weight:600;max-width:90%}
+.art-ph .ap-cap .en{display:block;font-family:'Nunito',sans-serif;font-size:.8rem;color:var(--ink-soft);font-weight:600;margin-top:5px;direction:ltr}
+.art-ph .ap-style{font-family:'Nunito',ui-monospace,monospace;font-size:.64rem;letter-spacing:.3px;color:rgba(19,49,79,.5);
+  background:rgba(255,255,255,.55);border:1px solid rgba(180,150,80,.3);border-radius:8px;padding:4px 10px;direction:ltr}
+
+/* ───────── story page text ───────── */
+.spage{margin:0 0 14px;font-size:1.04rem;line-height:1.95;color:var(--ink)}
+.spage .en{display:block;font-family:'Nunito',sans-serif;font-size:.86rem;line-height:1.7;color:var(--ink-soft);
+  margin-top:8px;padding-top:8px;border-top:1px dashed var(--paper-line);direction:ltr;text-align:left}
+.spage b{color:var(--gold-dk);background:linear-gradient(transparent 62%,rgba(212,160,23,.22) 62%);font-weight:800}
+.spage .pg-dot{display:inline-grid;place-items:center;width:26px;height:26px;border-radius:50%;margin-inline-end:8px;
+  background:var(--acc,var(--gold));color:#fff;font-size:.92rem;font-weight:900;vertical-align:middle}
+
+/* ───────── "what would you do?" choice card ───────── */
+.choice{margin:6px 0 14px;background:rgba(255,255,255,.5);border:1.5px solid var(--paper-line);border-radius:16px;padding:15px 17px}
+.choice .ch-q{display:flex;gap:9px;align-items:flex-start;font-weight:900;font-size:1rem;color:var(--ink);margin-bottom:11px}
+.choice .ch-q .qic{flex:0 0 auto;font-size:1.3rem}
+.choice .ch-q .en{display:block;font-family:'Nunito',sans-serif;font-size:.8rem;color:var(--ink-soft);font-weight:700;margin-top:3px}
+.ch-opt{display:flex;gap:10px;align-items:flex-start;border:1.5px solid var(--paper-line);background:#fff;border-radius:12px;
+  padding:9px 12px;margin-bottom:8px;font-size:.92rem;color:var(--ink);line-height:1.5}
+.ch-opt .mk{flex:0 0 auto;width:24px;height:24px;border-radius:50%;display:grid;place-items:center;font-weight:900;font-size:.82rem;
+  background:rgba(0,0,0,.06);color:var(--ink-soft)}
+.ch-opt .en{display:block;font-family:'Nunito',sans-serif;font-size:.76rem;color:var(--ink-soft);font-weight:600;margin-top:2px}
+.ch-key{margin-top:8px;padding-top:7px;border-top:1px dashed var(--paper-line);font-size:.62rem;color:var(--ink-soft);
+  font-family:'Nunito',sans-serif;letter-spacing:.4px;direction:ltr;text-align:center;opacity:.55;transform:rotate(180deg);line-height:1.5}
+.ch-key .ch-key-lbl{font-weight:800;color:var(--ink-soft)}
+.ch-key .ck-exp{opacity:.85}
+
+/* ───────── closing: moral · reflect · badge ───────── */
+.moral{display:flex;gap:13px;align-items:flex-start;background:linear-gradient(120deg,rgba(212,160,23,.14),rgba(26,155,123,.12));
+  border:1.5px solid rgba(212,160,23,.4);border-radius:16px;padding:16px 18px;margin:2px 0 16px}
+.moral .m-ic{font-size:2rem;flex:0 0 auto}
+.moral .m-lbl{font-size:.72rem;font-weight:900;letter-spacing:1px;color:var(--gold-dk);text-transform:uppercase}
+.moral .m-tx{font-size:1.06rem;font-weight:800;line-height:1.6;color:var(--ink);margin-top:3px}
+.moral .m-tx .en{display:block;font-family:'Nunito',sans-serif;font-size:.84rem;font-weight:600;color:var(--ink-soft);margin-top:5px}
+
+.reflect-box{background:rgba(41,128,185,.07);border:1.5px solid rgba(41,128,185,.28);border-radius:16px;padding:14px 17px;margin-bottom:16px}
+.reflect-box h4{margin:0 0 10px;font-size:.96rem;font-weight:900;color:#1f6aa8}
+.reflect-box h4 .en{font-family:'Nunito',sans-serif;font-size:.76rem;color:var(--ink-soft);font-weight:700;margin-inline-start:6px}
+.reflect-q{display:flex;gap:10px;align-items:flex-start;margin-bottom:10px;font-size:.95rem;line-height:1.6;color:var(--ink)}
+.reflect-q:last-child{margin-bottom:0}
+.reflect-q .rq-n{flex:0 0 auto;width:24px;height:24px;border-radius:8px;display:grid;place-items:center;font-weight:900;font-size:.82rem;background:#1f6aa8;color:#fff}
+.reflect-q .en{display:block;font-family:'Nunito',sans-serif;font-size:.78rem;color:var(--ink-soft);margin-top:2px}
+
+.badge-row{display:flex;align-items:center;gap:16px;margin-top:auto;background:linear-gradient(120deg,rgba(142,68,173,.1),rgba(212,160,23,.1));
+  border:1.5px solid rgba(142,68,173,.28);border-radius:16px;padding:14px 18px}
+.badge-row .br-circle{width:78px;height:78px;border-radius:50%;flex:0 0 auto;display:grid;place-items:center;font-size:2.3rem;
+  border:3px dashed var(--acc,var(--gold));background:repeating-conic-gradient(rgba(0,0,0,.03) 0 15deg,transparent 0 30deg)}
+.badge-row .br-lbl{font-size:.7rem;font-weight:900;letter-spacing:1px;color:var(--purple);text-transform:uppercase}
+.badge-row .br-name{font-size:1.2rem;font-weight:900;color:var(--ink);margin-top:2px}
+.badge-row .br-name .en{display:block;font-family:'Nunito',sans-serif;font-size:.8rem;color:var(--ink-soft);font-weight:700;margin-top:1px}
+.badge-row .br-hint{font-size:.72rem;color:var(--ink-soft);margin-top:4px}
+
+/* ───────── printable per-story quiz activity ───────── */
+.qz-box{background:rgba(255,255,255,.5);border:1.5px solid var(--paper-line);border-left:4px solid var(--acc,var(--gold));border-radius:16px;padding:15px 17px;margin:2px 0 16px}
+.qz-h{margin:0 0 12px;font-size:1rem;font-weight:900;color:var(--ink)}
+.qz-h .en{display:block;font-family:'Nunito',sans-serif;font-size:.76rem;color:var(--ink-soft);font-weight:700;margin-top:3px;direction:ltr}
+.qz-item{margin-bottom:13px}
+.qz-item:last-of-type{margin-bottom:8px}
+.qz-q{display:flex;gap:9px;align-items:flex-start;font-weight:800;font-size:.96rem;color:var(--ink);margin-bottom:8px}
+.qz-q .qz-n{flex:0 0 auto;width:23px;height:23px;border-radius:50%;display:grid;place-items:center;font-weight:900;font-size:.8rem;background:var(--acc,var(--gold));color:#fff}
+.qz-q .en{display:block;font-family:'Nunito',sans-serif;font-size:.78rem;color:var(--ink-soft);font-weight:600;margin-top:2px}
+.qz-opts{display:flex;flex-direction:column;gap:6px;padding-inline-start:32px}
+.qz-opt{display:flex;gap:9px;align-items:flex-start;font-size:.9rem;color:var(--ink);line-height:1.45}
+.qz-opt .qz-bub{flex:0 0 auto;width:22px;height:22px;border-radius:50%;display:grid;place-items:center;font-weight:800;font-size:.78rem;border:1.5px solid var(--ink-soft);color:var(--ink-soft);background:#fff}
+.qz-opt .en{display:block;font-family:'Nunito',sans-serif;font-size:.74rem;color:var(--ink-soft);font-weight:600;margin-top:1px;direction:ltr}
+.qz-key{margin-top:10px;padding-top:8px;border-top:1px dashed var(--paper-line);font-size:.62rem;color:var(--ink-soft);font-family:'Nunito',sans-serif;letter-spacing:.5px;direction:ltr;text-align:center;opacity:.55;transform:rotate(180deg)}
+.qz-key .qz-key-lbl{font-weight:800;color:var(--ink-soft)}
+
+/* ───────── performance: virtualize off-screen leaves ─────────
+   In publish/scroll mode only visible leaves are laid out & painted.
+   Print forces every leaf back to full render so no page is blank. */
+body.publish .leaf{content-visibility:auto;contain-intrinsic-size:880px 1180px;
+  box-shadow:0 1px 6px rgba(0,0,0,.22)!important}
+body.publish .leaf:not(.dark){background-image:none;background:var(--paper)}
+@media print{.leaf{content-visibility:visible!important;contain-intrinsic-size:auto!important;box-shadow:none!important}}
+
+/* contents page */
+.toc{flex:1;display:flex;flex-direction:column;gap:0}
+.toc h2{font-size:1.7rem;font-weight:900;color:var(--gold-lt);margin:0 0 4px}
+.toc .toc-sub{font-size:.86rem;color:rgba(254,245,220,.6);margin-bottom:16px}
+.toc-row{display:flex;align-items:center;gap:13px;padding:11px 4px;border-bottom:1px dashed rgba(212,160,23,.25)}
+.toc-row .tr-ic{width:42px;height:42px;border-radius:12px;flex:0 0 auto;display:grid;place-items:center;font-size:1.4rem;
+  background:rgba(255,255,255,.06);border:1.5px solid var(--acc,var(--gold))}
+.toc-row .tr-mid{flex:1;min-width:0}
+.toc-row .tr-mid b{display:block;font-size:1.04rem;font-weight:900;color:var(--cream)}
+.toc-row .tr-mid .en{font-family:'Nunito',sans-serif;font-size:.76rem;color:rgba(254,245,220,.55);font-weight:600}
+.toc-row .tr-ct{font-size:.74rem;font-weight:800;color:#10243d;background:var(--gold-lt);border-radius:2rem;padding:3px 11px;white-space:nowrap}

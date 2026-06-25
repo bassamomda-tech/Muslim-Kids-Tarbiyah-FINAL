@@ -1,0 +1,85 @@
+/* styles/hub.css — corner landing: crest + era gateways + Hall of Heroes */
+.wrap{position:relative;z-index:2;max-width:760px;margin:0 auto;padding:0 clamp(.8rem,3vw,1.2rem)}
+
+/* crest */
+.crest{text-align:center;padding:clamp(1.2rem,4vw,2.4rem) 1rem .6rem}
+.crest-shield{width:clamp(78px,16vw,108px);height:clamp(78px,16vw,108px);margin:0 auto .7rem;animation:floaty 5s ease-in-out infinite}
+.crest-shield svg{width:100%;height:100%;filter:drop-shadow(0 10px 22px rgba(0,0,0,.4))}
+.crest h2{font-size:clamp(1.8rem,6.5vw,3rem);line-height:1.05;
+  background:linear-gradient(135deg,var(--gold-lt),var(--accent2),var(--gold-lt));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.crest .crest-en{font-family:'Fredoka',sans-serif;font-weight:600;letter-spacing:.04em}
+.crest p{font-size:clamp(.84rem,2.2vw,1rem);color:var(--fg-dim);margin-top:.4rem;max-width:34rem;margin-inline:auto;line-height:1.65}
+.crest-meta{display:flex;gap:.5rem;justify-content:center;flex-wrap:wrap;margin-top:.9rem}
+.crest-chip{display:flex;align-items:center;gap:.35rem;font-size:.72rem;font-weight:700;color:var(--gold-lt);
+  background:rgba(245,160,74,.1);border:1px solid var(--line);padding:.3rem .75rem;border-radius:2rem}
+
+.section-lbl{display:flex;align-items:center;gap:.6rem;font-size:.7rem;font-weight:800;color:var(--fg-faint);
+  letter-spacing:.08em;text-transform:uppercase;padding:1.4rem .2rem .6rem}
+.section-lbl::after{content:'';flex:1;height:1px;background:var(--line)}
+
+/* era gateways */
+.gateways{display:flex;flex-direction:column;gap:1rem;padding-bottom:.5rem}
+.gateway{position:relative;display:flex;align-items:stretch;gap:0;border-radius:1.4rem;overflow:hidden;cursor:pointer;text-align:start;
+  background:linear-gradient(180deg,var(--stone-lt),var(--stone));border:1px solid var(--stone-line);
+  box-shadow:0 16px 40px rgba(0,0,0,.3);transition:transform .25s var(--ease-out),box-shadow .25s,border-color .25s;
+  animation:gwIn .6s var(--ease-out) both}
+@keyframes gwIn{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+.gateway:hover{transform:translateY(-5px);border-color:var(--ec);box-shadow:0 26px 56px rgba(0,0,0,.42),0 0 26px -6px var(--ec)}
+[data-theme="parchment"] .gateway{box-shadow:0 12px 30px rgba(120,90,40,.16)}
+.gw-side{position:relative;flex:0 0 96px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.4rem;
+  padding:1rem .6rem;background:linear-gradient(160deg,var(--ec2),var(--ec));color:#fff;overflow:hidden}
+.gw-side::before{content:'';position:absolute;top:0;left:0;right:0;height:14px;
+  background:repeating-linear-gradient(90deg,rgba(255,255,255,.5) 0 12px,transparent 12px 22px);-webkit-mask:linear-gradient(180deg,#000,transparent);mask:linear-gradient(180deg,#000,transparent)}
+.gw-romnum{font-family:'Fredoka',sans-serif;font-weight:700;font-size:1.5rem;opacity:.9;line-height:1}
+.gw-emblem{width:48px;height:48px}.gw-emblem svg{width:100%;height:100%}
+.gw-main{flex:1;min-width:0;padding:1rem 1.2rem;display:flex;flex-direction:column;justify-content:center}
+.gw-tier{font-size:.62rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--ec)}
+.gw-main h3{font-size:clamp(1.15rem,3.6vw,1.5rem);color:var(--fg);line-height:1.12}
+.gw-main h3 .gw-en{font-family:'Fredoka',sans-serif;font-weight:500;font-size:.62em;color:var(--fg-dim);letter-spacing:.02em;margin-inline-start:.3rem}
+.gw-sub{font-size:.74rem;color:var(--fg-dim);font-family:'Amiri',serif;margin-top:.1rem}
+[dir="ltr"] .gw-sub{font-family:'Nunito',sans-serif}
+.gw-blurb{font-size:.76rem;color:var(--fg-dim);line-height:1.5;margin-top:.5rem}
+.gw-foot{display:flex;align-items:center;gap:.7rem;margin-top:.8rem}
+.gw-bar{flex:1;height:7px;border-radius:4px;background:rgba(255,255,255,.12);overflow:hidden}
+[data-theme="parchment"] .gw-bar{background:rgba(120,90,40,.15)}
+.gw-bar i{display:block;height:100%;border-radius:4px;background:linear-gradient(90deg,var(--ec2),var(--ec));transition:width .8s var(--ease-out)}
+.gw-count{font-size:.66rem;font-weight:800;color:var(--fg-dim);white-space:nowrap}
+.gw-cta{display:inline-flex;align-items:center;gap:.3rem;align-self:flex-start;margin-top:.8rem;
+  background:linear-gradient(135deg,var(--ec2),var(--ec));color:#fff;font-weight:800;font-family:'Fredoka',sans-serif;font-size:.78rem;
+  padding:.4rem .9rem;border-radius:2rem;box-shadow:0 6px 16px -5px var(--ec)}
+.gateway:hover .gw-cta{filter:brightness(1.08)}
+
+.gw-pts{margin-inline-start:.5rem;font-weight:900;color:var(--gold-lt);font-size:.85rem;white-space:nowrap}
+
+/* certificate-earned badge (era fully complete) */
+.gw-cert{position:absolute;top:0;inset-inline-end:0;z-index:3;
+  display:inline-flex;align-items:center;gap:.25rem;
+  background:linear-gradient(135deg,var(--gold-lt),var(--gold-dk));color:#1a1208;
+  font-weight:900;font-size:.64rem;font-family:'Fredoka','Tajawal',sans-serif;
+  padding:.28rem .65rem;border-radius:0 1.4rem 0 .9rem;
+  box-shadow:0 4px 12px rgba(0,0,0,.3)}
+.gateway.certified{border-color:var(--gold);box-shadow:0 16px 40px rgba(0,0,0,.3),0 0 0 1px var(--gold) inset}
+/* hall of heroes */
+.hall{padding:1rem 0 3rem}
+.hall-card{border-radius:1.6rem;overflow:hidden;border:1px solid var(--line);background:linear-gradient(180deg,var(--stone-lt),var(--stone));box-shadow:0 18px 44px rgba(0,0,0,.3)}
+.hall-head{text-align:center;padding:1.4rem 1rem .5rem;position:relative}
+.hall-head .glow{position:absolute;inset:0;background:radial-gradient(60% 80% at 50% 0,var(--halo),transparent 70%);opacity:.5}
+.hall-head h3{font-size:clamp(1.3rem,4vw,1.8rem);color:var(--gold-lt);position:relative}
+.hall-head .hall-en{font-family:'Fredoka',sans-serif;font-weight:600;font-size:.82rem;letter-spacing:.04em}
+.hall-head p{font-size:.78rem;color:var(--fg-dim);position:relative;margin-top:.25rem}
+.hall-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(82px,1fr));gap:.7rem;padding:1rem clamp(.8rem,3vw,1.4rem) 1.5rem}
+.medal{aspect-ratio:1;border-radius:1rem;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.25rem;
+  background:rgba(255,255,255,.04);border:1px dashed var(--fg-faint);transition:.25s}
+[data-theme="parchment"] .medal{background:rgba(120,90,40,.05)}
+.medal.locked{opacity:.5}
+.medal.won{background:linear-gradient(160deg,rgba(245,160,74,.16),transparent);border:1px solid var(--accent);box-shadow:0 6px 18px -6px var(--halo)}
+.medal .ribbon{width:34px;height:34px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,#5E586E,#3a3548)}
+.medal.won .ribbon{background:linear-gradient(135deg,var(--gold-lt),var(--gold-dk));box-shadow:0 0 14px var(--halo)}
+.medal .ribbon svg{width:20px;height:20px}
+.medal small{font-size:.56rem;font-weight:700;color:var(--fg-dim);text-align:center;line-height:1.15;padding:0 .2rem}
+.medal.won small{color:var(--gold-lt)}
+
+@media(min-width:620px){
+  .gw-side{flex-basis:120px}
+  .gw-main{padding:1.2rem 1.5rem}
+}

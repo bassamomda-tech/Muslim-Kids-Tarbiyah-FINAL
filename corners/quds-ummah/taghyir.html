@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta name="color-scheme" content="dark">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>رحلة التغيير | Journey of Change</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Amiri+Quran&family=Tajawal:wght@400;500;700;800;900&family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+<link rel="stylesheet" href="yaqeen.css">
+<style>
+/* ── Change theme: dawn indigo rising to gold (awakening) ── */
+:root{
+  --primary:#C0902E; --primary-dark:#8A6418;
+  --bg1:#141A33; --bg2:#22284A; --bg3:#33375F;
+  --gold:#F0C055; --gold-soft:#F8DA92;
+  --text:#F1F0F8; --muted:rgba(241,240,248,.74);
+  --line:rgba(240,192,85,.26);
+}
+body{background:
+  
+    radial-gradient(1300px 760px at 78% -12%, rgba(192,144,46,.30), transparent 58%),
+    radial-gradient(1000px 620px at 0% 100%, rgba(61,90,128,.30), transparent 55%),
+    linear-gradient(165deg,var(--bg1),var(--bg2) 55%,var(--bg3));
+  background-attachment:fixed;
+}
+.guide .who{background:linear-gradient(160deg,#C0902E,#7E5A18)}
+.coll-cert{background:linear-gradient(160deg,rgba(240,192,85,.16),rgba(61,90,128,.26))!important}
+.lang button.active{color:#141A33}
+.stampbtn{color:#141A33}
+</style>
+<script>(function(){try{var l=localStorage.getItem('bunyanLang');if(l==='en'){var h=document.documentElement;h.dir='ltr';h.lang='en';}}catch(e){}})();</script>
+<style id="__antiflash">html{background:#141A33;color-scheme:dark}</style>
+</head>
+<body>
+
+<header class="hdr">
+  <a class="back" href="../little-district/pages/quds.html">
+    <span>↩️</span><span class="lng-ar">الرُّكن</span><span class="lng-en">Corner</span>
+  </a>
+  <span class="hdr-badge"><span class="l">🌅</span><span class="lng-ar">رِحلةُ التَّغيير</span><span class="lng-en">Change</span></span>
+  <div class="lang">
+    <button data-lang="en">EN</button>
+    <button data-lang="ar" class="active">عربي</button>
+  </div>
+</header>
+
+<section class="intro">
+  <h1>
+    <span class="lng-ar">🌅 رِحلةُ <span class="hl">التَّغيير</span> — بِناءُ المُسلِمِ القَوِيّ</span>
+    <span class="lng-en">🌅 Journey of <span class="hl">Change</span> — Building the Strong Muslim</span>
+  </h1>
+  <p class="sub">
+    <span class="lng-ar">عَشرُ مَحطّاتٍ تَنتَهي بِبِناءِ المُسلِمِ القَوِيّ الذي يَقودُ التَّغيير: نَفهَمُ أنَّ الأُمّةَ نائِمةٌ يُمكِنُ أن تَستَيقِظ، وأنَّ التَّغييرَ يَبدَأُ مِنَ النَّفس، ونَبني قُوّةَ الإيمانِ والعِلمِ والجَسَدِ والأخلاق — لِتَحمِلَ رايةَ الحَقِّ والتَّحرير، وتوقِظَ الأُمّةَ مِن سُباتِها.</span>
+    <span class="lng-en">Ten stations ending with building the strong Muslim who leads the change: we understand the ummah is asleep and can awaken, that change begins with the self, and we build the strength of faith, knowledge, body, and character — so you carry the banner of truth and liberation and awaken the ummah from its slumber.</span>
+  </p>
+  <div class="guide">
+    <div class="who">🧑</div>
+    <div class="say">
+      <span class="lng-ar">أنا «حنظلة»، رَفيقُك. في هذِهِ الرِّحلةِ نَبني المُسلِمَ القَوِيَّ الذي يُغَيِّرُ… كُن أنتَ التَّغيير! 🌅</span>
+      <span class="lng-en">I'm Hanzalah, your companion. In this journey we build the strong Muslim who changes… be the change! 🌅</span>
+    </div>
+  </div>
+</section>
+
+<div class="pbar-wrap">
+  <div class="pbar-top">
+    <span><span class="lng-ar">مِيزانُ القُوّة</span><span class="lng-en">Strength Meter</span></span>
+    <span class="stars" id="pCount">0 / 10</span>
+  </div>
+  <div class="pbar"><div class="pbar-fill" id="pFill"></div></div>
+  <div class="meter-label" id="meterLabel"></div>
+</div>
+
+<div class="collections">
+  <div class="coll-card" id="collStickers"></div>
+  <div class="coll-card" id="collNames"></div>
+  <div class="coll-card" id="collKeys"></div>
+  <div class="coll-card coll-cert" id="collCert"></div>
+</div>
+
+<div class="map" id="map"><div class="road"></div></div>
+
+<footer class="foot">
+  <span class="lng-ar">صُنع بِحُبٍّ 🤍 لِأطفالِ الأُمّة — <b>رِحلةُ التَّغيير</b> · ركنُ القُدسِ والأُمّة · على نَهجِ أهلِ السُّنّة</span>
+  <span class="lng-en">Made with 🤍 for the children of the Ummah — <b>Journey of Change</b> · Al-Quds & the Ummah · Upon the way of Ahl al-Sunnah</span>
+</footer>
+
+<div class="reader" id="reader">
+  <div class="sheet">
+    <div class="r-top">
+      <button class="r-close" id="rClose">✕</button>
+      <span class="r-count" id="rCount"></span>
+      <div class="r-arrows">
+        <button id="rPrev">‹</button>
+        <button id="rNext">›</button>
+      </div>
+    </div>
+    <div id="rBody"></div>
+  </div>
+</div>
+
+<div class="drawer" id="drawer">
+  <div class="drawer-sheet">
+    <div class="dw-top">
+      <h3 id="dwTitle"></h3>
+      <button class="r-close" id="dwClose">✕</button>
+    </div>
+    <div class="dw-body" id="dwBody"></div>
+  </div>
+</div>
+
+<div class="cert-overlay" id="certOverlay">
+  <div class="cert-tools">
+    <input id="certName" type="text" placeholder="✍️ اكتُب اسمَك هنا / Type your name" maxlength="40">
+    <button class="cprint" id="certPrint">🖨️ <span class="lng-ar">اطبَع</span><span class="lng-en">Print</span></button>
+    <button class="cclose" id="certClose">✕</button>
+  </div>
+  <div class="certificate" id="certBox"></div>
+</div>
+
+<div id="confetti"></div>
+<div class="toast" id="toast"></div>
+
+<script defer src="nav-fix.js"></script>
+<script src="data/taghyir-stations.js"></script>
+<script>
+window.RIHLA_CFG = {
+  stations: window.TAGHYIR_STATIONS,
+  prefix: 'taghyir',
+  confetti: ['#F0C055','#C0902E','#1F7AAE','#B5453B','#FFFFFF','#1A9B7B'],
+  T: {
+    mapEnter:{ar:'ادخُل المَحطّة ←',en:'Enter →'},
+    finishTitle:{ar:'وِسامُ القائِد',en:'Leader\'s Medal'},
+    meterStart:{ar:'ابدَأ الرِّحلة… كُلُّ مَحطّةٍ تَبني قُوّةً فيك',en:'Begin… each station builds a strength in you'},
+    meterMid:{ar:'أحسَنت! بَنَيتَ {n} مِن {t} مَحطّات',en:'Great! You built {n} of {t} stations'},
+    meterDone:{ar:'🎉 اكتَمَلَتِ الرِّحلة! صِرتَ المُسلِمَ القَوِيَّ الذي يَقودُ التَّغيير',en:'🎉 Journey complete! You\'ve become the strong Muslim who leads the change'},
+    coll1:{icon:'🎖️',title:{ar:'أوسِمةُ القُوّة',en:'Strength Badges'},unit:{ar:'وِسام',en:'badges'}},
+    coll2:{icon:'🌅',title:{ar:'بِطاقاتُ التَّغيير',en:'Change Cards'},unit:{ar:'بِطاقة',en:'cards'}},
+    coll3:{title:{ar:'مَفاتيحُ القُوّة',en:'Strength Keys'}},
+    collCert:{title:{ar:'عَهدُ القائِد',en:'Leader\'s Pledge'}},
+    kick:{ar:'المَحطّة {n} مِن {t}',en:'Station {n} of {t}'},
+    hNarr:{ar:'نور تَحكي',en:'Nur Tells It'},
+    hLogic:{ar:'الحَقيقةُ المُنيرة',en:'The Illuminating Truth'},
+    hMyth:{ar:'بَطاقةُ تَصحيحِ الفِكرة',en:'Idea-Fixer Card'},
+    hCard:{ar:'بِطاقةُ التَّغيير',en:'Change Card'},
+    hKey:{ar:'مِفتاحُ القُوّة',en:'Strength Key'},
+    hJournal:{ar:'دَفتَرُ القائِد',en:'Leader\'s Journal'},
+    shSays:{ar:'سُؤالٌ يَخطُرُ بِبالِك:',en:'A question crosses your mind:'},
+    rebut:{ar:'والحَقيقة ↓',en:'The truth ↓'},
+    journalPh:{ar:'اكتُب كَيفَ ستَبني نَفسَكَ قَوِيّاً لِأُمّتِك…',en:'Write how you\'ll build yourself strong for your ummah…'},
+    stampDo:{ar:'🌅 أتمِم هذه المَحطّة',en:'🌅 Complete this station'},
+    stampDone:{ar:'✓ مَحطّةٌ مُكتَمِلة',en:'✓ Station complete'},
+    drawer1:{ar:'🎖️ أوسِمةُ القُوّة',en:'🎖️ Strength Badges'},
+    drawer2:{ar:'🌅 بِطاقاتُ التَّغيير',en:'🌅 Change Cards'},
+    drawer3:{ar:'🔑 مَفاتيحُ القُوّة',en:'🔑 Strength Keys'},
+    fromStation:{ar:'مِن مَحطّة: ',en:'From: '},
+    certSeal:'🌅',
+    certKick:{ar:'رِحلةُ التَّغيير · ركنُ القُدسِ والأُمّة',en:'Journey of Change · Al-Quds & the Ummah'},
+    certTitle:{ar:'عَهدُ قائِدِ التَّغيير',en:'Pledge of the Leader of Change'},
+    certStatement:{
+      ar:'أتَمَّ هذا القَلبُ الصَّغيرُ <b>{n}</b> مِن {t} مَحطّاتٍ في رِحلةِ التَّغيير، فَعَرَفَ — على نَهجِ أهلِ السُّنّةِ والجَماعة — أنَّ التَّغييرَ يَبدَأُ مِنَ النَّفس، وبَنى قُوّةَ الإيمانِ والعِلمِ والجَسَدِ والأخلاق — فَعاهَدَ اللهَ أن يَكونَ مُسلِماً قَوِيّاً يَحمِلُ رايةَ الحَقّ، يوقِظُ أُمّتَهُ ويَعمَلُ لِنَهضَتِها، ويَبدَأَ بِنَفسِهِ الآن.',
+      en:'This young heart completed <b>{n}</b> of {t} stations in the Journey of Change, learning — upon the way of Ahl al-Sunnah — that change begins with the self, and built the strength of faith, knowledge, body, and character — pledging to Allah to be a strong Muslim carrying the banner of truth, awakening his ummah and working for its revival, and starting with himself now.'},
+  }
+};
+</script>
+<script src="rihla-engine.js"></script>
+<script defer src="../quiz/quiz-engine.js"></script>
+<script defer src="../shared/mk-system.js"></script>
+<script defer src="../shared/mk-journeys.js"></script>
+<script defer src="../shared/mk-bag.js"></script>
+<script defer src="../shared/mk-train.js"></script>
+</body>
+</html>

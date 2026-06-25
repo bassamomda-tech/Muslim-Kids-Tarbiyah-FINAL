@@ -1,0 +1,56 @@
+/* data/stories/amribnas.js — Heroes · Amr ibn al-As — sources: صور من حياة الصحابة (الباشا) · إسلام ويب · الدرر السنية · البداية والنهاية */
+window.HISN_STORIES = window.HISN_STORIES || {};
+HISN_STORIES.amribnas = [
+  { icon:'🧭', scene:'kaaba', character:'🤝',
+    title:{ ar:'من خصمٍ إلى قائد', en:'From Adversary to Commander' },
+    pages:[
+      { scene:'desert', character:'🧭',
+        text:{ ar:'كان <b>عمرُو بنُ العاص</b> قبلَ إسلامِه من أشدِّ رجالِ قريشٍ ذكاءً ودهاءً، وكان يقفُ ضدَّ الإسلام. لكنّه كان <b>عاقلاً يبحثُ عن الحق</b>، وكلّما رأى انتصارَ المسلمينَ وثباتَهم ازدادَ تفكيراً.<br><br>وفي النهايةِ قرّرَ أن يذهبَ إلى النبيِّ ﷺ ليُسلِم. فلمّا وصلَ مدَّ النبيُّ ﷺ يدَه، فقال عمرٌو: «يا رسولَ الله، أُبايعُك على أن يُغفَرَ لي ما تقدّمَ من ذنبي». فابتسمَ النبيُّ ﷺ وقال: <b>«يا عمرُو، إنّ الإسلامَ يهدِمُ ما كان قبلَه، وإنّ الهجرةَ تهدِمُ ما كان قبلَها»</b>. ففرِحَ عمرٌو فرحاً عظيماً — بدأَ صفحةً جديدةً نظيفة!',
+          en:'Before his Islam, <b>Amr ibn al-As</b> was among the cleverest and shrewdest men of Quraysh, and he stood against Islam. But he was <b>intelligent and a seeker of truth</b>, and the more he saw the Muslims\u2019 victories and steadfastness, the more he reflected.<br><br>In the end he decided to go to the Prophet ﷺ to embrace Islam. When he arrived the Prophet ﷺ extended his hand, and Amr said: "O Messenger of Allah, I pledge to you on the condition that my past sins be forgiven." The Prophet ﷺ smiled and said: <b>"O Amr, Islam wipes out what came before it, and migration wipes out what came before it."</b> Amr rejoiced greatly — he began a fresh, clean page!' },
+        choice:{ q:{ar:'ماذا تعلّمنا من إسلامِ عمرِو بنِ العاص؟',en:'What do we learn from Amr ibn al-As embracing Islam?'},
+          opts:[
+            { t:{ar:'أنّ الإسلامَ يهدِمُ ما قبلَه ويمنحُ بدايةً جديدة',en:'That Islam wipes out the past and gives a fresh start'},c:true,exp:{ar:'نعم! لا تيأسْ من إصلاحِ نفسِك مهما كان ماضيك.',en:'Yes! Never despair of bettering yourself whatever your past.'} },
+            { t:{ar:'أنّ الماضيَ يلاحقُ الإنسانَ أبداً',en:'That the past follows a person forever'},c:false,exp:{ar:'لا، بل الإسلامُ يهدِمُ ما قبلَه ويفتحُ صفحةً جديدة.',en:'No — Islam wipes out the past and opens a new page.'} },
+            { t:{ar:'أنّ الذكاءَ وحدَه يكفي',en:'That cleverness alone is enough'},c:false,exp:{ar:'لا، بل الذكاءُ معَ الإيمانِ هو الخير.',en:'No — cleverness with faith is the good combination.'} },
+          ] } },
+    ],
+    quiz:[
+      { q:{ar:'بِمَ اشتهرَ عمرٌو قبلَ الإسلام؟',en:'What was Amr known for before Islam?'},
+        opts:[ {t:{ar:'الذكاءِ والدهاء',en:'Cleverness and shrewdness'},c:true}, {t:{ar:'الكسل',en:'Laziness'},c:false}, {t:{ar:'الجهل',en:'Ignorance'},c:false} ] },
+      { q:{ar:'ماذا قال النبيُّ ﷺ لعمرٍو حين أسلم؟',en:'What did the Prophet ﷺ say to Amr when he embraced Islam?'},
+        opts:[ {t:{ar:'الإسلامُ يهدِمُ ما كان قبلَه',en:'Islam wipes out what came before it'},c:true}, {t:{ar:'لا غُفرانَ لك',en:'There is no forgiveness for you'},c:false}, {t:{ar:'ارجعْ لقومك',en:'Go back to your people'},c:false} ] },
+      { q:{ar:'ما الدرسُ من قصّةِ إسلامِه؟',en:'What is the lesson of his Islam?'},
+        opts:[ {t:{ar:'يمكنُ التغييرُ للأفضلِ دائماً',en:'Change for the better is always possible'},c:true}, {t:{ar:'الماضي لا يُمحى',en:'The past can never be erased'},c:false}, {t:{ar:'اليأسُ من النفس',en:'Despair of oneself'},c:false} ] },
+    ],
+    moral:{ar:'الإسلامُ يهدِمُ ما قبلَه، ولا ييأسُ المرءُ من إصلاحِ نفسِه والرجوعِ إلى الحقِّ مهما كان ماضيه.',en:'Islam wipes out the past; one should never despair of bettering oneself and returning to the truth, whatever the past.'},
+    badge:{icon:'🧭',title:{ar:'وِسامُ البدايةِ الجديدة',en:'Badge of the Fresh Start'}},
+    reflect:[ {ar:'هل تُصلِحُ نفسَك وترجعُ للحقِّ متى عرفتَ خطأك؟',en:'Do you better yourself and return to truth when you realize a mistake?'}, {ar:'كيف تستخدمُ عقلَك في معرفةِ الحقِّ واتّباعِه؟',en:'How do you use your mind to know and follow the truth?'} ],
+    didYouKnow:[ {ar:'أسلمَ عمرُو بنُ العاصِ وخالدُ بنُ الوليدِ وعثمانُ بنُ طلحةَ معاً قبلَ فتحِ مكّة — المصدر: البداية والنهاية',en:'Amr ibn al-As, Khalid ibn al-Walid, and Uthman ibn Talha embraced Islam together before the conquest of Makkah — Source: Al-Bidaya wa an-Nihaya'}, {ar:'أمّره النبيُّ ﷺ على غزوةِ ذاتِ السلاسلِ وفيها أبو بكرٍ وعمرُ ثقةً بقيادتِه — المصدر: صحيح البخاري',en:'The Prophet ﷺ made him commander at Dhat as-Salasil, which included Abu Bakr and Umar, trusting his leadership — Source: Sahih al-Bukhari'} ],
+  },
+  { icon:'🏛️', scene:'desert', character:'🕌',
+    title:{ ar:'فتحُ مصرَ وبناءُ الفُسطاط', en:'The Conquest of Egypt and Building Fustat' },
+    pages:[
+      { scene:'desert', character:'🐎',
+        text:{ ar:'في عهدِ أميرِ المؤمنينَ <b>عمرَ بنِ الخطّاب</b>، رأى <b>عمرُو بنُ العاص</b> أنّ فتحَ مصرَ خيرٌ لأهلِها لينعموا بالعدلِ والإسلام. فاستأذنَ عمرَ، ثمّ سارَ بجيشِه بحكمةٍ وحُسنِ تدبير، يتلطّفُ بالناسِ ولا يظلمُهم. ففتحَ اللهُ على يديه مصرَ، ودخلَ كثيرٌ من أهلِها في الإسلامِ عن رضاً ومحبّة.<br><br>ولم يكتفِ عمرٌو بالفتح، بل <b>بنى مدينةً جديدةً اسمُها «الفُسطاط»</b> لتكونَ عاصمةً للمسلمين، وأقامَ فيها <b>أوّلَ مسجدٍ في مصرَ وإفريقيا كلِّها</b> — وهو مسجدُ عمرِو بنِ العاص. وحكمَ مصرَ بالعدلِ، فأحبَّه أهلُها. علّمنا عمرٌو أنّ القائدَ الحقَّ يبني ويُعمِّرُ ويعدلُ، لا يهدِمُ ويظلم.',
+          en:'In the era of the Commander of the Faithful <b>Umar ibn al-Khattab</b>, <b>Amr ibn al-As</b> saw that conquering Egypt would be good for its people, to enjoy justice and Islam. He sought Umar\u2019s permission, then marched with his army with wisdom and good planning, being gentle with people and not oppressing them. Allah granted him the conquest of Egypt, and many of its people entered Islam willingly and with love.<br><br>Amr did not stop at conquest — he <b>built a new city called "Fustat"</b> as a capital for the Muslims, and established in it <b>the first mosque in Egypt and all of Africa</b> — the Mosque of Amr ibn al-As. He governed Egypt with justice, so its people loved him. Amr taught us that a true leader builds, develops, and is just — he does not destroy and oppress.' },
+        choice:{ q:{ar:'كيف تعاملَ عمرٌو مع أهلِ مصرَ بعدَ الفتح؟',en:'How did Amr treat the people of Egypt after the conquest?'},
+          opts:[
+            { t:{ar:'بالعدلِ وحُسنِ المعاملةِ فأحبّوه',en:'With justice and good treatment, so they loved him'},c:true,exp:{ar:'نعم! القائدُ الحقُّ يعدلُ ويبني فيُحِبُّه الناس.',en:'Yes! A true leader is just and builds, so people love him.'} },
+            { t:{ar:'بالظلمِ والقهر',en:'With oppression and force'},c:false,exp:{ar:'لا، بل بالعدلِ واللطف.',en:'No — with justice and gentleness.'} },
+            { t:{ar:'بهدمِ مدنِهم',en:'By destroying their cities'},c:false,exp:{ar:'لا، بل بنى مدينةً جديدةً ومسجداً.',en:'No — he built a new city and a mosque.'} },
+          ] } },
+    ],
+    quiz:[
+      { q:{ar:'في عهدِ من فتحَ عمرٌو مصر؟',en:'In whose era did Amr conquer Egypt?'},
+        opts:[ {t:{ar:'عمرَ بنِ الخطّاب',en:'Umar ibn al-Khattab'},c:true}, {t:{ar:'أبي بكر',en:'Abu Bakr'},c:false}, {t:{ar:'عليٍّ',en:'Ali'},c:false} ] },
+      { q:{ar:'ما اسمُ المدينةِ التي بناها في مصر؟',en:'What is the name of the city he built in Egypt?'},
+        opts:[ {t:{ar:'الفُسطاط',en:'Fustat'},c:true}, {t:{ar:'البصرة',en:'Basra'},c:false}, {t:{ar:'الكوفة',en:'Kufa'},c:false} ] },
+      { q:{ar:'ماذا بنى عمرٌو في الفُسطاط؟',en:'What did Amr build in Fustat?'},
+        opts:[ {t:{ar:'أوّلَ مسجدٍ في مصرَ وإفريقيا',en:'The first mosque in Egypt and Africa'},c:true}, {t:{ar:'سوقاً فقط',en:'Only a market'},c:false}, {t:{ar:'قصراً له',en:'A palace for himself'},c:false} ] },
+    ],
+    moral:{ar:'القائدُ الحقُّ يبني ويُعمِّرُ ويعدلُ بين الناس، فيُحِبّونه ويدخلونَ في الخيرِ عن رضا.',en:'A true leader builds, develops, and judges justly among people — so they love him and embrace good willingly.'},
+    badge:{icon:'🏛️',title:{ar:'وِسامُ البناءِ والعدل',en:'Badge of Building & Justice'}},
+    reflect:[ {ar:'كيف تكونُ قائداً يبني ويُصلِحُ لا يهدِمُ ويُفسِد؟',en:'How can you be a leader who builds and improves, not destroys and corrupts?'}, {ar:'هل تعدلُ مع من تحت يدِك وتُحسِنُ إليهم؟',en:'Are you just and kind to those under your care?'} ],
+    didYouKnow:[ {ar:'مسجدُ عمرِو بنِ العاصِ في الفُسطاطِ هو أوّلُ مسجدٍ بُنِيَ في مصرَ وإفريقيا، ولا يزالُ قائماً — المصدر: البداية والنهاية',en:'The Mosque of Amr ibn al-As in Fustat is the first mosque built in Egypt and Africa, and still stands — Source: Al-Bidaya wa an-Nihaya'}, {ar:'كتبَ عمرٌو إلى عمرَ يصفُ مصرَ وصفاً بديعاً يدلُّ على فصاحتِه وذكائِه — المصدر: صور من حياة الصحابة',en:'Amr wrote to Umar a wonderful description of Egypt, showing his eloquence and cleverness — Source: Suwar min Hayat as-Sahaba'} ],
+  },
+];

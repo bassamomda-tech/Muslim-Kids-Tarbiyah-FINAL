@@ -1,0 +1,56 @@
+/* data/stories/usama.js — Heroes · Usama ibn Zayd — sources: صور من حياة الصحابة (الباشا) · إسلام ويب · الدرر السنية · البداية والنهاية */
+window.HISN_STORIES = window.HISN_STORIES || {};
+HISN_STORIES.usama = [
+  { icon:'🫧', scene:'peaks', character:'⚔️',
+    title:{ ar:'هل شققتَ عن قلبِه؟', en:'Did You Open His Heart?' },
+    pages:[
+      { scene:'peaks', character:'⚔️',
+        text:{ ar:'في إحدى السرايا لحِقَ <b>أسامةُ</b> رجلاً من العدوِّ في القتال، فلمّا أدركه ورفعَ سيفَه قال الرجلُ فجأة: <b>«لا إله إلّا الله!»</b> لكنّ أسامةَ ظنَّ أنّه قالها خوفاً من السيفِ فقط، فضربه فقتله.<br><br>فلمّا رجعوا وبلغَ النبيَّ ﷺ الخبرُ تغيّرَ وجهُه وقال: <b>«يا أسامةُ، أقتلتَه بعدَ أن قال لا إله إلّا الله؟!»</b> فقال أسامة: يا رسولَ الله، إنّما قالها متعوّذاً من القتل! فقال النبيُّ ﷺ: <b>«أفلا شققتَ عن قلبِه حتى تعلمَ أقالها أم لا؟»</b> وكرّرها حتى تمنّى أسامةُ لو أنّه لم يكنْ أسلمَ إلّا ذلك اليوم — من شدّةِ ندمِه!',
+          en:'On one expedition <b>Usama</b> pursued an enemy man in battle. When he reached him and raised his sword, the man suddenly said: <b>"There is no god but Allah!"</b> But Usama thought he said it only out of fear of the sword, so he struck and killed him.<br><br>When they returned and the news reached the Prophet ﷺ, his face changed and he said: <b>"O Usama, did you kill him after he said \'There is no god but Allah\'?!"</b> Usama said: O Messenger of Allah, he only said it to escape being killed! The Prophet ﷺ said: <b>"Did you open his heart to know whether he meant it or not?"</b> and repeated it until Usama wished he had only become Muslim that very day — from the depth of his regret!' },
+        choice:{ q:{ar:'ما الدرسُ الذي علّمه النبيُّ ﷺ لأسامة؟',en:'What lesson did the Prophet ﷺ teach Usama?'},
+          opts:[
+            { t:{ar:'ألّا يحكمَ على نيّةِ القلبِ — الظاهرُ لنا والقلوبُ لله',en:'Not to judge the heart\'s intention — the outward is ours, hearts are Allah\'s'},c:true,exp:{ar:'نعم! نحكمُ بالظاهرِ ونَكِلُ السرائرَ إلى الله.',en:'Yes! We judge by the apparent and leave hidden matters to Allah.'} },
+            { t:{ar:'أن يقتلَ المزيد',en:'To kill more'},c:false,exp:{ar:'لا، بل عاتبه على الحكمِ على القلب.',en:'No — he rebuked him for judging the heart.'} },
+            { t:{ar:'ألّا يقاتلَ أبداً',en:'Never to fight at all'},c:false,exp:{ar:'لا، بل ألّا يحكمَ على نيّةِ من نطقَ بالشهادة.',en:'No — not to judge the intention of one who declares faith.'} },
+          ] } },
+    ],
+    quiz:[
+      { q:{ar:'ماذا قال الرجلُ قبلَ أن يقتلَه أسامة؟',en:'What did the man say before Usama killed him?'},
+        opts:[ {t:{ar:'لا إله إلّا الله',en:'There is no god but Allah'},c:true}, {t:{ar:'لا شيء',en:'Nothing'},c:false}, {t:{ar:'استسلمتُ',en:'I surrender'},c:false} ] },
+      { q:{ar:'بِمَ عاتبه النبيُّ ﷺ؟',en:'For what did the Prophet ﷺ rebuke him?'},
+        opts:[ {t:{ar:'هل شققتَ عن قلبِه؟',en:'Did you open his heart?'},c:true}, {t:{ar:'لماذا تأخّرت؟',en:'Why were you late?'},c:false}, {t:{ar:'أين الغنيمة؟',en:'Where is the spoil?'},c:false} ] },
+      { q:{ar:'ما القاعدةُ التي نتعلّمُها؟',en:'What principle do we learn?'},
+        opts:[ {t:{ar:'الظاهرُ لنا والقلوبُ إلى الله',en:'The apparent is ours; hearts to Allah'},c:true}, {t:{ar:'نحكمُ على النيّات',en:'We judge intentions'},c:false}, {t:{ar:'سوءُ الظن',en:'Thinking ill'},c:false} ] },
+    ],
+    moral:{ar:'لا نحكمُ على ما في القلوب — نأخذُ الناسَ بظاهرِهم ونَكِلُ سرائرَهم إلى الله.',en:'We do not judge what is in hearts — we take people by their outward state and leave their inner secrets to Allah.'},
+    badge:{icon:'🫧',title:{ar:'وِسامُ حُسنِ الظن',en:'Badge of Good Assumption'}},
+    reflect:[ {ar:'هل تُحسِنُ الظنَّ بالناسِ ولا تحكمُ على نواياهم؟',en:'Do you think well of people and not judge their intentions?'}, {ar:'كيف تتعلّمُ من خطئِك كما تعلّمَ أسامة؟',en:'How do you learn from your mistakes as Usama did?'} ],
+    didYouKnow:[ {ar:'قصّةُ أسامةَ والرجلِ الذي قال الشهادةَ ثابتةٌ في صحيحِ مسلم — المصدر: صحيح مسلم',en:'The account of Usama and the man who said the shahada is established in Sahih Muslim — Source: Sahih Muslim'}, {ar:'كان أسامةُ بعدَها يتورّعُ عن القتالِ في الفتنةِ خشيةَ الدماء — المصدر: البداية والنهاية',en:'Afterward Usama was scrupulous about fighting in civil strife, fearing bloodshed — Source: Al-Bidaya wa an-Nihaya'} ],
+  },
+  { icon:'🏴', scene:'madinah', character:'🐎',
+    title:{ ar:'قائدٌ في الثامنةَ عشرة', en:'A Commander at Eighteen' },
+    pages:[
+      { scene:'madinah', character:'🐎',
+        text:{ ar:'في آخرِ حياةِ النبيِّ ﷺ جهّزَ جيشاً كبيراً لغزوِ الرومِ في الشام، وجعلَ قائدَه <b>أسامةَ بنَ زيد</b> وهو شابٌّ في نحوِ الثامنةَ عشرة! وكان في الجيشِ كبارُ المهاجرينَ والأنصار. فتكلّمَ بعضُ الناسِ مستغربين: كيف يُؤمَّرُ شابٌّ على الكبار؟<br><br>فغضِبَ النبيُّ ﷺ وخطبَ وقال: <b>«إن تطعنوا في إمارتِه فقد كنتم تطعنونَ في إمارةِ أبيه من قبل، وايمُ اللهِ إن كان لخليقاً للإمارة، وإنّ ابنَه من بعدِه لمن أحبِّ الناسِ إليّ»</b>. فعرفَ الناسُ أنّ العبرةَ <b>بالكفاءةِ والأمانةِ لا بالسنّ</b>.',
+          en:'Near the end of his life the Prophet ﷺ prepared a great army to fight the Romans in Sham, and made its commander <b>Usama ibn Zayd</b> — a youth of about eighteen! The army included senior Muhajirun and Ansar. Some people spoke in surprise: how can a youth command the elders?<br><br>The Prophet ﷺ grew displeased and addressed them: <b>"If you criticize his command, you criticized his father\'s command before; and by Allah, he was worthy of command, and his son after him is among the dearest of people to me."</b> So the people understood that what matters is <b>ability and trustworthiness, not age</b>.' },
+        choice:{ q:{ar:'لماذا أمّر النبيُّ ﷺ أسامةَ الشابَّ على الكبار؟',en:'Why did the Prophet ﷺ put young Usama over the elders?'},
+          opts:[
+            { t:{ar:'لأنّ العبرةَ بالكفاءةِ والأمانةِ لا بالسن',en:'Because what matters is ability and trust, not age'},c:true,exp:{ar:'نعم! الشابُّ الكفءُ الأمينُ يستحقُّ القيادة.',en:'Yes! A capable, trustworthy youth deserves to lead.'} },
+            { t:{ar:'محاباةً له فقط',en:'Out of favoritism only'},c:false,exp:{ar:'لا، بل لكفاءتِه وأهليّتِه للإمارة.',en:'No — for his ability and fitness to command.'} },
+            { t:{ar:'لأنّه لا يوجدُ غيرُه',en:'Because there was no one else'},c:false,exp:{ar:'لا، بل كان في الجيشِ كبارُ الصحابة، لكنّه أهلٌ لها.',en:'No — the army had senior companions, but he was fit for it.'} },
+          ] } },
+    ],
+    quiz:[
+      { q:{ar:'كم كان عمرُ أسامةَ حين قادَ الجيش؟',en:'How old was Usama when he led the army?'},
+        opts:[ {t:{ar:'نحو الثامنةَ عشرة',en:'About eighteen'},c:true}, {t:{ar:'ستّون',en:'Sixty'},c:false}, {t:{ar:'أربعون',en:'Forty'},c:false} ] },
+      { q:{ar:'من كان في جيشِ أسامة؟',en:'Who was in Usama\'s army?'},
+        opts:[ {t:{ar:'كبارُ المهاجرينَ والأنصار',en:'Senior Muhajirun and Ansar'},c:true}, {t:{ar:'الأطفالُ فقط',en:'Only children'},c:false}, {t:{ar:'لا أحد',en:'No one'},c:false} ] },
+      { q:{ar:'ما العبرةُ في تأميرِه؟',en:'What is the lesson in his appointment?'},
+        opts:[ {t:{ar:'الكفاءةُ والأمانةُ لا السن',en:'Ability and trust, not age'},c:true}, {t:{ar:'الكبرُ في السن',en:'Old age'},c:false}, {t:{ar:'كثرةُ المال',en:'Much wealth'},c:false} ] },
+    ],
+    moral:{ar:'العبرةُ بالكفاءةِ والأمانةِ لا بالسن، والشابُّ المؤهّلُ يستحقُّ القيادةَ والثقة.',en:'What matters is ability and trustworthiness, not age — a qualified youth deserves leadership and trust.'},
+    badge:{icon:'🏴',title:{ar:'وِسامُ القائدِ الشاب',en:'Badge of the Young Commander'}},
+    reflect:[ {ar:'كيف تُثبِتُ أنّك أهلٌ للمسؤوليةِ رغمَ صِغَرِ سنِّك؟',en:'How do you prove you are fit for responsibility despite your youth?'}, {ar:'هل تتقنُ ما يُوكَلُ إليك حتى يثقَ بك الناس؟',en:'Do you master what is entrusted to you so people trust you?'} ],
+    didYouKnow:[ {ar:'أصرَّ أبو بكرٍ على إنفاذِ جيشِ أسامةَ بعدَ وفاةِ النبيِّ ﷺ تنفيذاً لأمرِه — المصدر: البداية والنهاية',en:'Abu Bakr insisted on dispatching Usama\'s army after the Prophet\'s ﷺ death, fulfilling his command — Source: Al-Bidaya wa an-Nihaya'}, {ar:'رجعَ جيشُ أسامةَ منتصراً سالماً، وكان أوّلَ انتصارٍ في خلافةِ أبي بكر — المصدر: الدرر السنية',en:'Usama\'s army returned victorious and safe — the first victory of Abu Bakr\'s caliphate — Source: ad-Durar as-Saniyya'} ],
+  },
+];

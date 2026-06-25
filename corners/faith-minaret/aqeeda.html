@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta name="color-scheme" content="dark">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>منارة العقيدة | Faith Minaret</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&family=Nunito:wght@400;600;700;800&display=swap" media="print" onload="this.media='all'"><noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&family=Nunito:wght@400;600;700;800&display=swap" media="print" onload="this.media='all'"></noscript>
+    <style>
+        :root { --primary: #C0392B; --primary-dark: #A93226; --bg1: #0A2540; --bg2: #12375A; --text: #FEF5DC; --card-bg: rgba(255,255,255,0.08); --radius: 1.5rem; }
+        body{font-family:'Tajawal','Nunito',sans-serif;background:linear-gradient(160deg,var(--bg1),var(--bg2));color:var(--text);min-height:100vh;margin:0;display:flex;flex-direction:column;direction:rtl}
+        html[dir="ltr"] body{direction:ltr;font-family:'Nunito','Tajawal',sans-serif}
+        .header{background:rgba(10,37,64,0.9);backdrop-filter:blur(12px);padding:1rem 1.5rem;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid rgba(212,160,23,0.3)}
+        .back-btn{background:var(--primary);color:white;border:none;border-radius:2rem;padding:0.5rem 1.2rem;font-weight:700;cursor:pointer;text-decoration:none;font-size:0.9rem}
+        .back-btn:hover{background:var(--primary-dark)}
+        .lang-switch{display:flex;border:1.5px solid rgba(212,160,23,0.4);border-radius:2rem;overflow:hidden}
+        .lang-btn{background:transparent;border:none;color:var(--text);font-weight:700;padding:0.3rem 0.8rem;font-size:0.8rem;cursor:pointer}
+        .lang-btn.active{background:var(--primary);color:white}
+        .content{flex:1;padding:2rem 1rem;max-width:1000px;margin:0 auto;width:100%}
+        .page-icon{font-size:4rem;text-align:center;margin-bottom:1rem}
+        .page-title{font-size:2rem;font-weight:900;text-align:center;margin-bottom:0.5rem;color:var(--primary)}
+        .page-subtitle{text-align:center;font-size:1.1rem;opacity:0.8;margin-bottom:2rem}
+        .feature-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:1.5rem}
+        .feature-card{background:var(--card-bg);backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,0.1);border-radius:var(--radius);padding:1.8rem 1.5rem;text-align:center;transition:transform 0.3s,box-shadow 0.3s;display:flex;flex-direction:column;align-items:center}
+        .feature-card:hover{transform:translateY(-5px);box-shadow:0 20px 35px rgba(0,0,0,0.5)}
+        .feature-icon{font-size:2.8rem;margin-bottom:1rem;background:rgba(255,255,255,0.1);border-radius:50%;width:80px;height:80px;display:flex;align-items:center;justify-content:center}
+        .feature-title{font-weight:800;font-size:1.3rem;margin-bottom:0.6rem}
+        .feature-desc{font-size:0.9rem;opacity:0.8;margin-bottom:1.5rem;flex:1}
+        .feature-btn{background:var(--primary);color:white;border:none;border-radius:2rem;padding:0.5rem 1.5rem;font-weight:700;text-decoration:none;transition:background 0.2s;display:inline-block;margin-top:auto}
+        .feature-btn:hover{background:var(--primary-dark)}
+
+        /* القائمة الجانبية العائمة */
+        .float-map-btn{position:fixed;bottom:2rem;left:2rem;z-index:1000;width:50px;height:50px;border-radius:50%;background:#D4A017;color:#0A2540;font-size:1.5rem;display:flex;align-items:center;justify-content:center;cursor:pointer;box-shadow:0 8px 25px rgba(0,0,0,0.5);transition:transform 0.3s,background 0.3s;border:none}
+        html[dir="ltr"] .float-map-btn{left:auto;right:2rem}
+        .float-map-btn:hover{transform:scale(1.1);background:#F5CC5A}
+        .sidebar-overlay{position:fixed;inset:0;background:rgba(0,0,0,0.6);z-index:999;opacity:0;pointer-events:none;transition:opacity 0.3s}
+        .sidebar-overlay.open{opacity:1;pointer-events:all}
+        .sidebar-drawer{position:fixed;top:0;right:0;width:280px;height:100%;background:linear-gradient(180deg,#112240,#0A2540);z-index:1000;transform:translateX(100%);transition:transform 0.4s cubic-bezier(.4,0,.2,1);padding:2rem 1rem;overflow-y:auto;box-shadow:-5px 0 25px rgba(0,0,0,0.5);display:flex;flex-direction:column;gap:1rem}
+        html[dir="ltr"] .sidebar-drawer{right:auto;left:0;transform:translateX(-100%)}
+        .sidebar-drawer.open{transform:translateX(0)}
+        .sidebar-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:1.5rem}
+        .sidebar-title{font-size:1.4rem;font-weight:900;color:#D4A017;margin:0}
+        .sidebar-close{background:none;border:none;color:#FEF5DC;font-size:1.8rem;cursor:pointer;padding:0;line-height:1}
+        .sidebar-nav{display:flex;flex-direction:column;gap:0.8rem}
+        .sidebar-item{display:flex;align-items:center;gap:0.8rem;padding:0.8rem 1rem;border-radius:1rem;text-decoration:none;color:#FEF5DC;font-weight:600;background:rgba(255,255,255,0.03);transition:background 0.2s}
+        .sidebar-item:hover{background:rgba(212,160,23,0.15);color:#D4A017}
+        .sidebar-item i{font-size:1.5rem;width:2rem;text-align:center}
+        .sidebar-item .item-text{flex:1}
+    </style>
+<style id="__antiflash">html{background:#0A2540;color-scheme:dark}</style>
+<style id="__noshift">*,*::before,*::after{box-sizing:border-box}html,body{overflow-x:hidden;max-width:100%}</style>
+</head>
+<body>
+    <div class="header">
+        <a href="../../index.html" class="back-btn" id="backBtn">↩️ العودة للمدينة</a>
+        <div class="lang-switch">
+            <button class="lang-btn" id="btnEn" onclick="setLang('en')">EN</button>
+            <button class="lang-btn active" id="btnAr" onclick="setLang('ar')">عربي</button>
+        </div>
+    </div>
+
+    <main class="content">
+        <div class="page-icon">🕋</div>
+        <h1 class="page-title" id="pageTitle">منارة العقيدة</h1>
+        <p class="page-subtitle" id="pageSubtitle">البناء العقدي والروحي</p>
+
+        <div class="feature-grid">
+            <!-- بطاقة 1 · اليقين (إثبات الوجود وعدم الإلحاد) -->
+            <div class="feature-card">
+                <div class="feature-icon">🧭</div>
+                <div class="feature-title" id="card1Title">رحلة اليقين</div>
+                <div class="feature-desc" id="card1Desc">إثباتُ الخالق وهدمُ الإلحاد في فصلين: عجائبُ المخلوقات (٢٠ محطة) ومختبرُ كشفِ الحقائق (١٠ محطات)</div>
+                <a href="yaqeen.html" class="feature-btn" id="card1Btn">ابدأ الرحلة ←</a>
+            </div>
+            <!-- بطاقة 2 · التوحيد ومعرفة الله -->
+            <div class="feature-card">
+                <div class="feature-icon">🕋</div>
+                <div class="feature-title" id="card2Title">رحلة التوحيد</div>
+                <div class="feature-desc" id="card2Desc">أنه واحدٌ أحد ومعرفتُه في فصلين: براهينُ التوحيد (١٠ محطات) وكيف عرفنا الله؟ (٢٠ درجة)</div>
+                <a href="tawheed.html" class="feature-btn" id="card2Btn">ابدأ الرحلة ←</a>
+            </div>
+            <!-- بطاقة 3 · الأمان بالله -->
+            <div class="feature-card">
+                <div class="feature-icon">🛡️</div>
+                <div class="feature-title" id="card5Title">سلسلة الأمان بالله</div>
+                <div class="feature-desc" id="card5Desc">١٥ حلقة تبني حصن الطمأنينة: معية الله، القضاء والقدر، اليوم الآخر، وأن الدنيا محطة انتظار للجنة نلتقي فيها الأحبة ونرى الله</div>
+                <a href="aman.html" class="feature-btn" id="card5Btn">ابنِ حصنك ←</a>
+            </div>
+            <!-- بطاقة 6 · جنود النور (الملائكة) -->
+            <div class="feature-card">
+                <div class="feature-icon">✨</div>
+                <div class="feature-title" id="card6Title">رحلة جنود النور</div>
+                <div class="feature-desc" id="card6Desc">١٠ محطات نكتشف فيها أسرار الملائكة: خلقُهم من نور، وعظمتُهم، وجبريلُ والحفظةُ والكرامُ الكاتبون، وكيف يحبوننا ونحبهم</div>
+                <a href="malaika.html" class="feature-btn" id="card6Btn">ابدأ الرحلة ←</a>
+            </div>
+            <!-- بطاقة 7 · البلاغ (الكتب والمعجزات) -->
+            <div class="feature-card">
+                <div class="feature-icon">📜</div>
+                <div class="feature-title" id="card7Title">رحلة البلاغ</div>
+                <div class="feature-desc" id="card7Desc">١٠ محطات في كتب الله ومعجزات الرسل: الصحفُ والتوراةُ والزبورُ والإنجيلُ والقرآن، وأن المعجزة من أمر الله وحده لا قدرةَ للبشر</div>
+                <a href="kutub.html" class="feature-btn" id="card7Btn">ابدأ الرحلة ←</a>
+            </div>
+            <!-- بطاقة 8 · العبور (اليوم الآخر) -->
+            <div class="feature-card">
+                <div class="feature-icon">🌉</div>
+                <div class="feature-title" id="card8Title">رحلة العبور</div>
+                <div class="feature-desc" id="card8Desc">١١ محطة في اليوم الآخر بكل تفاصيله: من القبر مروراً بالبعث والميزان والصراط، وصولاً إلى الجنة والتحذير من النار</div>
+                <a href="akhira.html" class="feature-btn" id="card8Btn">ابدأ الرحلة ←</a>
+            </div>
+            <!-- بطاقة 9 · سر التقدير (القضاء والقدر) -->
+            <div class="feature-card">
+                <div class="feature-icon">📜</div>
+                <div class="feature-title" id="card9Title">رحلة سر التقدير</div>
+                <div class="feature-desc" id="card9Desc">١٠ محطات في الإيمان بالقضاء والقدر: القلمُ واللوح، ومراتبُ القدر، وأنك تختارُ ولست مجبوراً، و«اعقِل وتوكّل» — حتى تنال قلباً مطمئنّاً لا يعرف القلق</div>
+                <a href="qadar.html" class="feature-btn" id="card9Btn">ابدأ الرحلة ←</a>
+            </div>
+            <!-- بطاقة 10 · الأبطال (قصص الإيمان والثبات) -->
+            <div class="feature-card">
+                <div class="feature-icon">🦁</div>
+                <div class="feature-title" id="card10Title">رحلة الأبطال</div>
+                <div class="feature-desc" id="card10Desc">١٢ قصة حقيقية عن الإيمان والثبات: الغلامُ وأصحابُ الأخدود، وفتيةُ الكهف، وسحرةُ فرعون، وآسيةُ، وإبراهيمُ في النار، وبلالٌ، وماشِطةُ فرعون، والثابِتُ أمامَ الدجّال — ليدرك الأطفال كم هو غالٍ هذا الدين</div>
+                <a href="thabat.html" class="feature-btn" id="card10Btn">ابدأ الرحلة ←</a>
+            </div>
+        </div>
+    </main>
+
+    <!-- زر الخريطة العائم -->
+    <button class="float-map-btn" onclick="toggleSidebar()" title="خريطة المدينة">🗺️</button>
+    <div class="sidebar-overlay" id="sidebarOverlay" onclick="closeSidebar()"></div>
+    <div class="sidebar-drawer" id="sidebarDrawer">
+        <div class="sidebar-header">
+            <h2 class="sidebar-title" id="sidebarTitle">🗺️ خريطة المدينة</h2>
+            <button class="sidebar-close" onclick="closeSidebar()">✕</button>
+        </div>
+        <nav class="sidebar-nav" id="sidebarNav"></nav>
+    </div>
+
+    <script defer src="nav-fix.js"></script>
+    <script>
+        // url is resolved relative to this Faith Minaret folder.
+        // aqeeda = self (in-project); history = the upgraded in-project corner;
+        // the rest live in the shared city copy under ../little-district/pages/.
+        // Menu data comes from the ONE list (MK.CORNERS) in corners/shared/mk-system.js — edit it there.
+        function getCorners(){ return (window.MK && MK.cornerNav) ? MK.cornerNav() : []; }
+
+        const translations = {
+            ar: {
+                backBtn: '↩️ العودة للمدينة',
+                pageTitle: 'منارة العقيدة',
+                pageSubtitle: 'البناء العقدي والروحي',
+                card1Title: 'رحلة اليقين', card1Desc: 'إثباتُ الخالق وهدمُ الإلحاد في فصلين: عجائبُ المخلوقات (٢٠ محطة) ومختبرُ كشفِ الحقائق (١٠ محطات)', card1Btn: 'ابدأ الرحلة ←',
+                card2Title: 'رحلة التوحيد', card2Desc: 'أنه واحدٌ أحد ومعرفتُه في فصلين: براهينُ التوحيد (١٠ محطات) وكيف عرفنا الله؟ (٢٠ درجة)', card2Btn: 'ابدأ الرحلة ←',
+                card3Title: 'مختبر كشف الحقائق', card3Desc: '٠١ تجربة ذهنية تهدم خرافة الصدفة والتطور وتفضح خداع الشيطان', card3Btn: 'ادخل المختبر ←',
+                card4Title: 'كيف عرفنا الله؟', card4Desc: '٢٠ درجة نصعدها بالعقل: من إثبات الخالق وأنه واحد، إلى كيف عرّفنا بنفسه، حتى اليقين', card4Btn: 'ابدأ الصعود ←',
+                card5Title: 'سلسلة الأمان بالله', card5Desc: '١٥ حلقة تبني حصن الطمأنينة: معية الله، القضاء والقدر، اليوم الآخر، وأن الدنيا محطة انتظار للجنة نلتقي فيها الأحبة ونرى الله', card5Btn: 'ابنِ حصنك ←',
+                card6Title: 'رحلة جنود النور', card6Desc: '١٠ محطات نكتشف فيها أسرار الملائكة: خلقُهم من نور، وعظمتُهم، وجبريلُ والحفظةُ والكرامُ الكاتبون، وكيف يحبوننا ونحبهم', card6Btn: 'ابدأ الرحلة ←',
+                card7Title: 'رحلة البلاغ', card7Desc: '١٠ محطات في كتب الله ومعجزات الرسل: الصحفُ والتوراةُ والزبورُ والإنجيلُ والقرآن، وأن المعجزة من أمر الله وحده لا قدرةَ للبشر', card7Btn: 'ابدأ الرحلة ←',
+                card8Title: 'رحلة العبور', card8Desc: '١١ محطة في اليوم الآخر بكل تفاصيله: من القبر مروراً بالبعث والميزان والصراط، وصولاً إلى الجنة والتحذير من النار', card8Btn: 'ابدأ الرحلة ←',
+                card9Title: 'رحلة سر التقدير', card9Desc: '١٠ محطات في الإيمان بالقضاء والقدر: القلمُ واللوح، ومراتبُ القدر، وأنك تختارُ ولست مجبوراً، و«اعقِل وتوكّل» — حتى تنال قلباً مطمئنّاً لا يعرف القلق', card9Btn: 'ابدأ الرحلة ←',
+                card10Title: 'رحلة الأبطال', card10Desc: '١٢ قصة حقيقية عن الإيمان والثبات: الغلامُ وأصحابُ الأخدود، وفتيةُ الكهف، وسحرةُ فرعون، وآسيةُ، وإبراهيمُ في النار، وبلالٌ، وماشِطةُ فرعون، والثابِتُ أمامَ الدجّال — ليدرك الأطفال كم هو غالٍ هذا الدين', card10Btn: 'ابدأ الرحلة ←'
+            },
+            en: {
+                backBtn: '↩️ Back to City',
+                pageTitle: 'Faith Minaret',
+                pageSubtitle: 'Spiritual & Creedal Foundation',
+                card1Title: 'Journey of Certainty', card1Desc: 'Proving the Creator & refuting atheism in two chapters: Wonders of Creation (20 stations) & The Truth Lab (10 stations)', card1Btn: 'Start the Journey →',
+                card2Title: 'Journey of Tawheed', card2Desc: 'He is One — and how we know Him — in two chapters: Proofs of Tawheed (10 stations) & How Did We Know Allah? (20 steps)', card2Btn: 'Start the Journey →',
+                card3Title: 'The Truth-Revealing Lab', card3Desc: '10 thought-experiments demolishing the myth of chance & evolution and exposing Satan’s deception', card3Btn: 'Enter the Lab →',
+                card4Title: 'How Did We Know Allah?', card4Desc: '20 steps climbed with reason: from proving the Creator and His Oneness, to how He made Himself known, to certainty', card4Btn: 'Start the Climb →',
+                card5Title: 'Chain of Security with Allah', card5Desc: '15 links building a fortress of peace: Allah’s closeness, divine decree, the Last Day, and that this world is a waiting-stop for Paradise where we meet loved ones and see Allah', card5Btn: 'Build Your Fortress →',
+                card6Title: 'Journey of the Soldiers of Light', card6Desc: '10 stations uncovering the secrets of the angels: created from light, their greatness, Jibril, the guardians and noble scribes, and how they love us and we love them', card6Btn: 'Start the Journey →',
+                card7Title: 'Journey of the Message', card7Desc: '10 stations on Allah’s books & the prophets’ miracles: the Scriptures, Tawrah, Zabur, Injil & Quran — and that a miracle is from Allah’s command alone, beyond human power', card7Btn: 'Start the Journey →',
+                card8Title: 'Journey of the Crossing', card8Desc: '11 stations on the Last Day in full: from the grave through the resurrection, the Scale & the Sirat, to Paradise and the warning of the Fire', card8Btn: 'Start the Journey →',
+                card9Title: 'Journey of the Secret of the Decree', card9Desc: '10 stations on belief in al-Qadar: the Pen & the Tablet, the levels of the decree, that you truly choose and aren’t forced, and “tie your camel and trust” — reaching a tranquil heart that knows no anxiety', card9Btn: 'Start the Journey →',
+                card10Title: 'Journey of the Heroes', card10Desc: '12 true stories of faith & steadfastness: the Boy & the People of the Ditch, the Youth of the Cave, Pharaoh’s sorcerers, Asiya, Ibrahim in the fire, Bilal, the hair-comber of Pharaoh, the man firm before the Dajjal — so children realize how precious this religion is', card10Btn: 'Start the Journey →'
+            }
+        };
+
+        let lang = localStorage.getItem('bunyanLang') || 'ar';
+
+        function setLang(l) {
+            lang = l; localStorage.setItem('bunyanLang', l);
+            document.documentElement.lang = l; document.documentElement.dir = l === 'ar' ? 'rtl' : 'ltr';
+            document.getElementById('btnAr').classList.toggle('active', l === 'ar');
+            document.getElementById('btnEn').classList.toggle('active', l === 'en');
+            const t = translations[l];
+            document.getElementById('backBtn').textContent = t.backBtn;
+            document.getElementById('pageTitle').textContent = t.pageTitle;
+            document.getElementById('pageSubtitle').textContent = t.pageSubtitle;
+            document.getElementById('card1Title').textContent = t.card1Title;
+            document.getElementById('card1Desc').textContent = t.card1Desc;
+            document.getElementById('card1Btn').textContent = t.card1Btn;
+            document.getElementById('card2Title').textContent = t.card2Title;
+            document.getElementById('card2Desc').textContent = t.card2Desc;
+            document.getElementById('card2Btn').textContent = t.card2Btn;
+            ['card5','card6','card7','card8','card9','card10'].forEach(c => {
+                document.getElementById(c+'Title').textContent = t[c+'Title'];
+                document.getElementById(c+'Desc').textContent = t[c+'Desc'];
+                document.getElementById(c+'Btn').textContent = t[c+'Btn'];
+            });
+            buildSidebar();
+        }
+
+        function toggleSidebar() { document.getElementById('sidebarDrawer').classList.toggle('open'); document.getElementById('sidebarOverlay').classList.toggle('open'); }
+        function closeSidebar() { document.getElementById('sidebarDrawer').classList.remove('open'); document.getElementById('sidebarOverlay').classList.remove('open'); }
+        function buildSidebar() {
+            const nav = document.getElementById('sidebarNav');
+            if (!nav || !(window.MK && MK.cornerNav)) return;
+            const isAr = lang === 'ar';
+            nav.innerHTML = getCorners().map(c => {
+                const name = isAr ? c.nameAr : c.nameEn;
+                const url = c.url + (c.url.includes('?') ? '&' : '?') + 'lang=' + (isAr ? 'ar' : 'en');
+                return `<a href="${url}" class="sidebar-item"><i>${c.icon}</i><span class="item-text">${name}</span></a>`;
+            }).join('');
+            nav.innerHTML += `<a href="${MK.rel('corners/little-district/pages/parents.html')}?lang=${isAr?'ar':'en'}" class="sidebar-item"><i>🧔</i><span class="item-text">${isAr?'ركن الأهل':"Parents' Corner"}</span></a>`;
+            nav.innerHTML += `<a href="../../index.html" class="sidebar-item" style="margin-top:1rem; border-right:4px solid #D4A017;">
+                <i>🏠</i><span class="item-text">${isAr ? 'الصفحة الرئيسية' : 'Main Page'}</span>
+            </a>`;
+            document.getElementById('sidebarTitle').textContent = isAr ? '🗺️ خريطة المدينة' : '🗺️ City Map';
+        }
+
+        setLang(lang);
+        buildSidebar();
+        document.addEventListener('DOMContentLoaded', buildSidebar);
+    </script>
+<script defer src="../quiz/quiz-engine.js"></script>
+<script>window.MK_CORNER='aqeeda';</script>
+<script defer src="../shared/mk-system.js"></script>
+<script defer src="../shared/mk-journeys.js"></script>
+<script defer src="../shared/mk-corner-score.js"></script>
+<script defer src="../shared/mk-bag.js"></script>
+<script defer src="../shared/mk-train.js"></script>
+</body>
+</html>

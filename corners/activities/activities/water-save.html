@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>توفير المياه · أنوس</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Amiri:wght@400;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+
+<link rel="stylesheet" href="../styles/tokens.css" />
+<link rel="stylesheet" href="../styles/dashboard.css" />
+<link rel="stylesheet" href="../styles/wheel.css" />
+<link rel="stylesheet" href="../styles/water-save.css" />
+</head>
+<body>
+
+<div class="bg-decor" aria-hidden="true"></div>
+
+<div class="activity-shell">
+
+  <nav class="activity-nav">
+    <a class="back-link" href="../dashboard.html">
+      الرجوع للوحة الأنشطة
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg>
+    </a>
+    <div class="activity-crumb">
+      <span>العلوم والاستكشاف</span>
+      <span class="sep">/</span>
+      <span class="cur">توفير المياه</span>
+    </div>
+    <div class="activity-actions">
+      <button class="icon-btn" id="reset-btn" title="إعادة الضبط" aria-label="إعادة الضبط">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 3-6.7L3 8"/><path d="M3 3v5h5"/></svg>
+      </button>
+    </div>
+  </nav>
+
+  <div class="activity-layout">
+
+    <section class="ws-panel">
+      <header class="wheel-header">
+        <span class="activity-tag">Activity 33 · Timing Game</span>
+        <h1 class="activity-title">توفير المياه</h1>
+        <p class="activity-desc">
+          الوُضوء، شُربُ الماء، غَسلُ اليَدَين — كلُّها نِعَمٌ تَستَحِقُّ الحِفاظ.
+          أَغلِق الصُّنبور في الوَقتِ المُناسِب لِكلِّ مَهَمَّة، ولا تَدَع نُقطَةً تَضيع.
+        </p>
+      </header>
+
+      <div class="ws-hud">
+        <div class="hud-block">المَهَمَّة <strong><span id="ws-task">1</span><small>/5</small></strong></div>
+        <div class="hud-block">مَنسوب الكأس <strong><span id="ws-pct">0</span><small>%</small></strong></div>
+        <div class="hud-block">المُسرَّب <strong><span id="ws-waste">0</span><small> مل</small></strong></div>
+        <div class="hud-block">النَّقَطات <strong id="ws-points">0</strong></div>
+      </div>
+
+      <div class="ws-stage">
+
+        <div class="ws-task-card">
+          <span class="task-icon" id="task-icon">💧</span>
+          <div>
+            <strong id="task-title">…</strong>
+            <p id="task-hint">…</p>
+          </div>
+          <span class="task-target" id="task-target">—</span>
+        </div>
+
+        <div class="ws-scene">
+          <!-- صنبور + كأس -->
+          <div class="ws-tap-wrap">
+            <svg class="ws-tap" viewBox="0 0 220 120" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
+              <!-- جِدار -->
+              <rect x="0" y="0" width="220" height="40" fill="#F5EEDF" stroke="#7A7A8C" stroke-width="0" opacity="0.4"/>
+              <!-- ماسورة -->
+              <rect x="86" y="0" width="20" height="24" fill="#7A7A8C"/>
+              <rect x="60" y="24" width="72" height="14" fill="#7A7A8C"/>
+              <rect x="60" y="38" width="22" height="36" fill="#7A7A8C"/>
+              <!-- مَقبَض -->
+              <circle id="tap-handle" cx="155" cy="20" r="14" fill="#C9A961" stroke="#8A6510" stroke-width="2"/>
+              <rect x="148" y="6" width="14" height="28" fill="#C9A961" stroke="#8A6510" stroke-width="2"/>
+              <rect x="132" y="14" width="32" height="14" fill="#C9A961"/>
+              <!-- فُوَّهة -->
+              <rect x="58" y="70" width="26" height="8" fill="#5A5A6A"/>
+            </svg>
+
+            <!-- جَريان الماء (Canvas) -->
+            <canvas id="ws-flow" width="220" height="260"></canvas>
+
+            <!-- كَأس -->
+            <div class="ws-glass">
+              <div class="glass-water" id="glass-water">
+                <span class="glass-fill" id="glass-fill" style="height:0%"></span>
+              </div>
+              <div class="glass-target-line" id="glass-target-line"></div>
+              <div class="glass-target-label" id="glass-target-label">هَدَف</div>
+            </div>
+
+            <!-- ماء يَسيل إلى الأرض -->
+            <div class="ws-puddle" id="puddle"></div>
+          </div>
+
+          <!-- زِرّ الفَتح / الإغلاق -->
+          <button class="ws-action" id="tap-btn">
+            <span class="state-off">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+              اِفتَح الصُّنبور
+            </span>
+            <span class="state-on">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><rect x="6" y="5" width="4" height="14"/><rect x="14" y="5" width="4" height="14"/></svg>
+              أَغلِق الآن!
+            </span>
+          </button>
+
+          <div class="ws-result" id="result"></div>
+        </div>
+
+        <div class="ws-controls">
+          <button class="ws-btn" id="btn-skip">تَخَطّى</button>
+          <button class="ws-btn primary" id="btn-finish" disabled>أَنهي الجَولة</button>
+        </div>
+      </div>
+
+      <div class="wheel-controls" style="margin-top:var(--s-4);">
+        <div class="wheel-stat">أَفضَل نَقَطات <strong id="best">—</strong></div>
+        <button class="wheel-mute-toggle" id="mute-btn" aria-pressed="false">
+          <span class="mute-icon"></span>
+          <span class="mute-label">كتم الصوت</span>
+        </button>
+      </div>
+    </section>
+
+    <aside class="side-panel">
+      <div class="panel-card">
+        <div class="panel-head">
+          <h3>مَهَمَّات الجَولة</h3>
+          <span class="pill" id="task-pill">5</span>
+        </div>
+        <div class="ws-tasks" id="task-list"></div>
+      </div>
+
+      <div class="panel-card">
+        <div class="panel-head"><h3>كَيف ألعب؟</h3></div>
+        <div style="font-size: 14px; line-height: 1.7; color: var(--ink-2);">
+          ١. اقرَأ المَهَمَّة والكَمِّيَّة المُستَهدَفة.<br/>
+          ٢. اضغط «اِفتَح» لِيَبدأ الماء.<br/>
+          ٣. اضغط «أَغلِق» بِالضَّبط عند الهَدَف.<br/>
+          ٤. كلَّما اقتَرَبتَ، زادَت نَقَطاتُك.
+        </div>
+        <div class="tip-card" style="margin-top: var(--s-3);">
+          <span class="tip-icon">!</span>
+          <span>قال النَّبيُّ ﷺ لِسَعد لَمَّا تَوَضَّأ: «ما هذا السَّرف؟» — قال: أَفي الوُضوءِ سَرفٌ؟ قال: «نَعَم، وإن كُنتَ على نَهرٍ جارٍ».</span>
+        </div>
+      </div>
+
+      <div class="panel-card">
+        <div class="panel-head"><h3>قَولُ اللهِ تَعالى</h3></div>
+        <div class="hadith-card">
+          <div class="quote">«وَلَا تُسْرِفُوا ۚ إِنَّهُ لَا يُحِبُّ الْمُسْرِفِينَ» — الأعراف · 31</div>
+          <span class="src">سُبحانَ الَّذي خَلَق</span>
+        </div>
+      </div>
+    </aside>
+  </div>
+</div>
+
+<div class="modal-backdrop" id="done-modal" role="dialog" aria-modal="true">
+  <div class="modal">
+    <button class="modal-close" data-close aria-label="إغلاق">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M6 6l12 12M18 6l-12 12"/></svg>
+    </button>
+    <div class="modal-deco" aria-hidden="true">
+      <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2s8 9 8 14a8 8 0 0 1-16 0c0-5 8-14 8-14z"/></svg>
+    </div>
+    <div class="modal-eyebrow">جَولَةُ الماء</div>
+    <h2 class="modal-title" id="done-title">أحسَنتَ التَّوفير</h2>
+    <div class="modal-meaning" id="done-summary"></div>
+    <div class="modal-actions">
+      <button class="btn-ghost" data-close>إنهاء</button>
+      <button class="btn-primary" id="done-next">جَولَةٌ جَديدة</button>
+    </div>
+  </div>
+</div>
+
+<div class="particles" id="particles" aria-hidden="true"></div>
+
+<script src="../scripts/activity-common.js"></script>
+<script src="../scripts/water-save.js"></script>
+
+<script>
+window.PAGE_DICT = {
+  "توفير المياه": "Save the Water",
+  "الوُضوء، شُربُ الماء، غَسلُ اليَدَين — كلُّها نِعَمٌ تَستَحِقُّ الحِفاظ. أَغلِق الصُّنبور في الوَقتِ المُناسِب لِكلِّ مَهَمَّة، ولا تَدَع نُقطَةً تَضيع.": "Wudu, drinking water, washing hands — all blessings worth preserving. Close the tap at the right time for each task, and don't let a drop go to waste.",
+  "المَهَمَّة": "Task",
+  "مَنسوب الكأس": "Glass level",
+  "المُسرَّب": "Wasted",
+  "مل": "ml",
+  "النَّقَطات": "Drops",
+  "اِفتَح الصُّنبور": "Open the tap",
+  "أَغلِق الآن!": "Close now!",
+  "تَخَطّى": "Skip",
+  "أَنهي الجَولة": "Finish the round",
+  "أَفضَل نَقَطات": "Best drops",
+  "هَدَف": "Target",
+  "مَهَمَّات الجَولة": "Round tasks",
+  "كَيف ألعب؟": "How to play?",
+  "١. اقرَأ المَهَمَّة والكَمِّيَّة المُستَهدَفة.": "1. Read the task and the target amount.",
+  "٢. اضغط «اِفتَح» لِيَبدأ الماء.": "2. Press “Open” to start the water.",
+  "٣. اضغط «أَغلِق» بِالضَّبط عند الهَدَف.": "3. Press “Close” exactly at the target.",
+  "٤. كلَّما اقتَرَبتَ، زادَت نَقَطاتُك.": "4. The closer you get, the more drops you earn.",
+  "قال النَّبيُّ ﷺ لِسَعد لَمَّا تَوَضَّأ: «ما هذا السَّرف؟» — قال: أَفي الوُضوءِ سَرفٌ؟ قال: «نَعَم، وإن كُنتَ على نَهرٍ جارٍ».": "The Prophet ﷺ said to Sa'd when he made wudu: «What is this extravagance?» He said: Is there extravagance in wudu? He said: «Yes, even if you are by a flowing river».",
+  "قَولُ اللهِ تَعالى": "The words of Allah the Exalted",
+  "سُبحانَ الَّذي خَلَق": "Glory to the One who created",
+  "جَولَةُ الماء": "Water round",
+  "أحسَنتَ التَّوفير": "Well saved!",
+  "إنهاء": "Finish"
+};
+</script>
+<script>
+Object.assign(window.PAGE_DICT, {
+  "شُربُ كَأس":"Drinking a glass","املأ الكأسَ ثَلاثَةَ أَرباعِها مِن غَيرِ سَكب.":"Fill the glass three-quarters without spilling.",
+  "غَسلُ اليَدَين":"Washing hands","كَمِّيَّةٌ خَفيفة تَكفي لِغَسلِ يَدَيك بِالصَّابون.":"A small amount is enough to wash your hands with soap.",
+  "سَقيُ نَبتَة":"Watering a plant","النَّبتَة تَحتاج نِصفَ كَأسٍ فَقَط.":"The plant needs only half a glass.",
+  "وُضوءُ الذِّراع":"Washing the arms (wudu)","اِغسِل ذِراعَيك ثَلاثاً، الكَأس يَكفي.":"Wash your arms three times — a glass is enough.",
+  "إِبريقُ شاي":"A teapot","الإبريق صَغير، يَأخُذ كَأساً كامِلة.":"The pot is small; it takes a full glass."
+});
+</script>
+<script src="../scripts/i18n.js"></script>
+<script src="../../shared/nav-fix.js"></script>
+</body>
+</html>

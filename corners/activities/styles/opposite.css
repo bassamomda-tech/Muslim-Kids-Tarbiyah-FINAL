@@ -1,0 +1,90 @@
+/* ============================================================
+   OPPOSITE — الكلمة وعكسها (Connection Logic)
+   ============================================================ */
+
+.opp-panel {
+  background:
+    radial-gradient(140% 80% at 50% 0%, rgba(255,233,168,0.45), transparent 60%),
+    var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--r-2xl);
+  padding: var(--s-8);
+  display: flex; flex-direction: column;
+  box-shadow: var(--shadow-card);
+  position: relative; overflow: hidden;
+}
+.opp-panel .activity-tag { background: var(--butter); color: var(--butter-ink); }
+.opp-panel .activity-tag::before { background: var(--butter-ink); }
+
+.opp-hud { display: flex; gap: var(--s-3); flex-wrap: wrap; margin-bottom: var(--s-5); }
+.opp-hud .hud-block {
+  background: var(--bg-soft); border: 1px solid var(--line);
+  border-radius: var(--r-md); padding: 10px 14px;
+  display: flex; flex-direction: column; gap: 2px;
+  font-size: 11px; color: var(--muted); font-weight: 600; flex: 1; min-width: 84px;
+}
+.opp-hud .hud-block strong { font-size: 20px; color: var(--ink); font-family: var(--font-en); font-weight: 800; }
+
+/* board */
+.opp-stage { position: relative; flex-grow: 1; }
+.opp-svg { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; z-index: 1; }
+.opp-cols {
+  position: relative; z-index: 2;
+  display: grid; grid-template-columns: 1fr 1fr; gap: var(--s-8) var(--s-12);
+  align-content: start;
+}
+.opp-col { display: flex; flex-direction: column; gap: var(--s-3); }
+.opp-col-label {
+  font-size: 12px; font-weight: 800; color: var(--muted);
+  text-align: center; margin-bottom: 2px; letter-spacing: 0.04em;
+}
+
+.opp-word {
+  position: relative;
+  padding: 16px 18px;
+  background: var(--surface);
+  border: 2px solid var(--line);
+  border-radius: var(--r-lg);
+  font-size: 20px; font-weight: 800; color: var(--ink);
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.14s ease, border-color 0.14s ease, background 0.14s ease, box-shadow 0.14s ease;
+  box-shadow: var(--shadow-sm);
+}
+.opp-word:hover:not(.matched) { transform: translateY(-2px); box-shadow: var(--shadow-md); }
+.opp-word.selected { border-color: var(--ink); background: var(--butter); transform: translateY(-2px); }
+.opp-word.matched { cursor: default; border-style: solid; color: #fff; }
+.opp-word.matched .dot {
+  position: absolute; top: 50%; transform: translateY(-50%);
+  width: 12px; height: 12px; border-radius: 50%; background: #fff;
+  box-shadow: 0 0 0 3px rgba(255,255,255,0.4);
+}
+.opp-col:first-child .opp-word .dot { left: -6px; }
+.opp-col:last-child  .opp-word .dot { right: -6px; }
+.opp-word.wrong { animation: opp-shake 0.4s ease; border-color: var(--rose); }
+@keyframes opp-shake {
+  0%,100% { transform: translateX(0); }
+  25% { transform: translateX(-7px); }
+  75% { transform: translateX(7px); }
+}
+
+/* round dots */
+.opp-rounds { display: flex; gap: 8px; align-items: center; margin-top: var(--s-5);
+  padding-top: var(--s-5); border-top: 1px dashed var(--line); }
+.opp-rounds .lbl { font-size: 12px; color: var(--muted); font-weight: 700; }
+.opp-rounds .pips { display: flex; gap: 6px; }
+.opp-rounds .pip { width: 10px; height: 10px; border-radius: 50%; background: var(--bg-soft); }
+.opp-rounds .pip.on { background: var(--brand); }
+
+/* side list */
+.opp-pairlist { display: flex; flex-direction: column; gap: 8px; }
+.opp-pair-row {
+  display: flex; align-items: center; gap: 10px;
+  padding: 9px 12px; border-radius: var(--r-md);
+  background: var(--bg-soft); font-size: 14px; font-weight: 700;
+  opacity: 0.45; transition: opacity 0.3s ease;
+}
+.opp-pair-row.done { opacity: 1; }
+.opp-pair-row .swatch { width: 10px; height: 22px; border-radius: 4px; background: var(--line); flex-shrink: 0; }
+.opp-pair-row.done .swatch { background: var(--brand); }
+.opp-pair-row .arrow { color: var(--muted); }

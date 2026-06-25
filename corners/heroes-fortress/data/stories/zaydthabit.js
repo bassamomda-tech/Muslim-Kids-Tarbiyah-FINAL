@@ -1,0 +1,56 @@
+/* data/stories/zaydthabit.js — Heroes · Zayd ibn Thabit — sources: صور من حياة الصحابة (الباشا) · إسلام ويب · الدرر السنية · البداية والنهاية */
+window.HISN_STORIES = window.HISN_STORIES || {};
+HISN_STORIES.zaydthabit = [
+  { icon:'🌍', scene:'pen', character:'📜',
+    title:{ ar:'الغلامُ الذي تعلّمَ لغةً في نصفِ شهر', en:'The Boy Who Learned a Language in Half a Month' },
+    pages:[
+      { scene:'madinah', character:'👦',
+        text:{ ar:'كان <b>زيدُ بنُ ثابت</b> غلاماً صغيراً ذكيّاً، حفظَ سبعَ عشرةَ سورةً من القرآنِ قبلَ أن يبلغ! أرادَ أن يخرجَ مع النبيِّ ﷺ يومَ بدرٍ ليُقاتِل، لكنّ النبيَّ ﷺ ردَّه <b>لِصِغَرِ سنِّه</b>. حزِنَ زيد، لكنّه قرّرَ أن يخدمَ الإسلامَ بطريقةٍ أخرى: <b>بالعلمِ والقلم</b>!<br><br>وذاتَ يومٍ قال له النبيُّ ﷺ: «يا زيد، إنّي أكاتبُ أقواماً، وأخافُ أن يزيدوا فيها أو ينقصوا، <b>فتعلّمْ كتابةَ اليهود</b>». فأقبلَ زيدٌ على تعلُّمِها بجدٍّ واجتهاد، فأتقنها في <b>نحوِ نصفِ شهرٍ فقط</b>! فصار يكتبُ للنبيِّ ﷺ ويقرأُ له ما يأتيه. الذكاءُ مع الجدِّ يصنعُ العجائب.',
+          en:'<b>Zayd ibn Thabit</b> was a clever young boy who had memorized seventeen surahs of the Quran before reaching maturity! He wished to join the Prophet ﷺ at Badr to fight, but the Prophet ﷺ turned him back <b>for his young age</b>. Zayd was saddened, but resolved to serve Islam another way: <b>with knowledge and the pen</b>!<br><br>One day the Prophet ﷺ said to him: "Zayd, I correspond with certain peoples, and I fear they may add to or take from it — so <b>learn the writing of the Jews</b>." Zayd set about learning it with diligence and mastered it in <b>only about half a month</b>! He then wrote for the Prophet ﷺ and read to him what came. Cleverness with diligence works wonders.' },
+        choice:{ q:{ar:'كيف خدمَ زيدٌ الإسلامَ بعدما رُدَّ عن القتالِ لِصِغَرِه؟',en:'How did Zayd serve Islam after being turned from fighting for his youth?'},
+          opts:[
+            { t:{ar:'بالعلمِ والكتابةِ وخدمةِ النبيِّ ﷺ',en:'With knowledge, writing, and serving the Prophet ﷺ'},c:true,exp:{ar:'نعم! لكلِّ موهبةٍ بابٌ للخير — وزيدٌ خدمَ بالعلم.',en:'Yes! Every talent has a door to good — Zayd served with knowledge.'} },
+            { t:{ar:'حزِنَ وتركَ كلَّ شيء',en:'He despaired and gave up'},c:false,exp:{ar:'لا، بل وجدَ طريقاً آخرَ لخدمةِ الإسلام.',en:'No — he found another way to serve Islam.'} },
+            { t:{ar:'انتظرَ حتى يكبر',en:'He just waited to grow up'},c:false,exp:{ar:'لا، بل بدأَ يخدمُ فوراً بالعلمِ والقلم.',en:'No — he began serving at once with knowledge and the pen.'} },
+          ] } },
+    ],
+    quiz:[
+      { q:{ar:'لماذا رُدَّ زيدٌ عن غزوةِ بدر؟',en:'Why was Zayd turned away from Badr?'},
+        opts:[ {t:{ar:'لِصِغَرِ سنِّه',en:'For his young age'},c:true}, {t:{ar:'لمرضِه',en:'For illness'},c:false}, {t:{ar:'لجُبنِه',en:'For cowardice'},c:false} ] },
+      { q:{ar:'ماذا أمره النبيُّ ﷺ أن يتعلّم؟',en:'What did the Prophet ﷺ order him to learn?'},
+        opts:[ {t:{ar:'كتابةَ اليهود',en:'The writing of the Jews'},c:true}, {t:{ar:'الفروسية',en:'Horsemanship'},c:false}, {t:{ar:'الطب',en:'Medicine'},c:false} ] },
+      { q:{ar:'كم استغرقَ زيدٌ ليُتقِنها؟',en:'How long did Zayd take to master it?'},
+        opts:[ {t:{ar:'نحوَ نصفِ شهر',en:'About half a month'},c:true}, {t:{ar:'سنوات',en:'Years'},c:false}, {t:{ar:'يوماً',en:'A day'},c:false} ] },
+    ],
+    moral:{ar:'لكلِّ موهبةٍ بابٌ للخير، والذكاءُ مع الجدِّ والاجتهادِ يصنعُ العجائب.',en:'Every talent has a door to good, and cleverness with diligence and effort works wonders.'},
+    badge:{icon:'🌍',title:{ar:'وِسامُ التعلّمِ السريع',en:'Badge of Swift Learning'}},
+    reflect:[ {ar:'كيف تخدمُ الخيرَ بموهبتِك الخاصّة؟',en:'How do you serve good with your own talent?'}, {ar:'هل تجتهدُ في تعلُّمِ ما ينفعُك وينفعُ غيرَك؟',en:'Do you strive to learn what benefits you and others?'} ],
+    didYouKnow:[ {ar:'تعلّمَ زيدٌ كتابةَ اليهودِ (السريانيّةَ أو العبريّة) ليأمنَ النبيُّ ﷺ على مراسلاتِه — المصدر: سنن أبي داود والترمذي',en:'Zayd learned the Jews\u2019 writing (Syriac or Hebrew) so the Prophet ﷺ could trust his correspondence — Source: Sunan Abi Dawud & at-Tirmidhi'}, {ar:'كان زيدٌ من أصغرِ كُتّابِ الوحيِ سنّاً وأكثرِهم ملازمةً للنبيِّ ﷺ — المصدر: البداية والنهاية',en:'Zayd was among the youngest scribes of revelation and most constant in attending the Prophet ﷺ — Source: Al-Bidaya wa an-Nihaya'} ],
+  },
+  { icon:'📖', scene:'pen', character:'🤲',
+    title:{ ar:'الأمانةُ الكبرى: جمعُ القرآن', en:'The Greatest Trust: Gathering the Quran' },
+    pages:[
+      { scene:'pen', character:'🤲',
+        text:{ ar:'بعدَ وفاةِ النبيِّ ﷺ، استُشهِدَ كثيرٌ من حفّاظِ القرآنِ في معركةِ <b>اليمامة</b>. فخافَ عمرُ أن يضيعَ شيءٌ من القرآنِ بموتِ الحفّاظ، فأشارَ على أبي بكرٍ أن يُجمَعَ القرآنُ في مصحفٍ واحد. فاختارَ أبو بكرٍ لهذه المهمّةِ العظيمةِ شابّاً أميناً عالماً: <b>زيدَ بنَ ثابت</b>.<br><br>قال زيد: «واللهِ لو كلّفوني نقلَ جبلٍ ما كان أثقلَ عليّ من جمعِ القرآن!» — لأنّها أمانةٌ عظيمة. فجمعه بدقّةٍ بالغة، لا يقبلُ آيةً إلّا بشاهدَين. ثمّ في عهدِ <b>عثمان</b> نسخَ المصاحفَ الموحّدةَ التي بين أيدينا اليوم. هكذا حفظَ اللهُ كتابَه على يدِ هذا الشابِّ الأمين: <b>﴿ إِنَّا نَحْنُ نَزَّلْنَا الذِّكْرَ وَإِنَّا لَهُ لَحَافِظُونَ ﴾</b>.',
+          en:'After the Prophet\u2019s ﷺ death, many memorizers of the Quran were martyred at the Battle of <b>Yamama</b>. Umar feared some of the Quran might be lost with their deaths, so he advised Abu Bakr to gather the Quran into a single book. Abu Bakr chose for this great task a trustworthy, learned young man: <b>Zayd ibn Thabit</b>.<br><br>Zayd said: "By Allah, had they charged me with moving a mountain, it would not have been heavier on me than gathering the Quran!" — for it was an immense trust. He gathered it with utmost precision, accepting no verse without two witnesses. Then in <b>Uthman\u2019s</b> era he copied the unified master texts we have today. Thus Allah preserved His Book through this faithful young man: <b>"Indeed, it is We who sent down the Reminder, and indeed, We will be its guardian."</b>' },
+        choice:{ q:{ar:'لماذا كان جمعُ القرآنِ ثقيلاً على زيد؟',en:'Why was gathering the Quran so heavy on Zayd?'},
+          opts:[
+            { t:{ar:'لأنّها أمانةٌ عظيمةٌ تحتاجُ دقّةً تامّة',en:'Because it was an immense trust needing total precision'},c:true,exp:{ar:'نعم! وقد جمعه بحرصٍ شديدٍ لا يقبلُ آيةً إلّا بشاهدَين.',en:'Yes! He gathered it with great care, accepting no verse without two witnesses.'} },
+            { t:{ar:'لأنّه لا يُحِبُّ القرآن',en:'Because he disliked the Quran'},c:false,exp:{ar:'لا، بل لعِظَمِ المسؤوليةِ والأمانة.',en:'No — for the magnitude of the responsibility and trust.'} },
+            { t:{ar:'لأنّه كسول',en:'Because he was lazy'},c:false,exp:{ar:'لا، بل لشعورِه بثِقَلِ الأمانة.',en:'No — for his sense of the weight of the trust.'} },
+          ] } },
+    ],
+    quiz:[
+      { q:{ar:'من اختارَ زيداً لجمعِ القرآن؟',en:'Who chose Zayd to gather the Quran?'},
+        opts:[ {t:{ar:'أبو بكرٍ بمشورةِ عمر',en:'Abu Bakr, on Umar\u2019s advice'},c:true}, {t:{ar:'خالد',en:'Khalid'},c:false}, {t:{ar:'بلال',en:'Bilal'},c:false} ] },
+      { q:{ar:'كيف جمعَ زيدٌ القرآن؟',en:'How did Zayd gather the Quran?'},
+        opts:[ {t:{ar:'بدقّةٍ بالغةٍ لا يقبلُ آيةً إلّا بشاهدَين',en:'With great precision, no verse without two witnesses'},c:true}, {t:{ar:'بسرعةٍ بلا تدقيق',en:'Quickly, without checking'},c:false}, {t:{ar:'من حفظِه فقط',en:'From his memory alone'},c:false} ] },
+      { q:{ar:'في عهدِ من نسخَ المصاحفَ الموحّدة؟',en:'In whose era did he copy the unified texts?'},
+        opts:[ {t:{ar:'عثمانَ بنِ عفّان',en:'Uthman ibn Affan'},c:true}, {t:{ar:'عليٍّ',en:'Ali'},c:false}, {t:{ar:'معاوية',en:'Mu\u2019awiya'},c:false} ] },
+    ],
+    moral:{ar:'حفظَ اللهُ كتابَه ووعدَ بحفظِه، وجعلَ من عبادِه الأُمَناءَ سبباً في ذلك الحفظ.',en:'Allah preserved His Book and promised to guard it, making His trustworthy servants a means of that preservation.'},
+    badge:{icon:'📖',title:{ar:'وِسامُ حفظِ القرآن',en:'Badge of Preserving the Quran'}},
+    reflect:[ {ar:'كيف تحفظُ أمانةً كبيرةً تُوكَلُ إليك بإتقان؟',en:'How do you faithfully guard a great trust given to you?'}, {ar:'كم تُحِبُّ القرآنَ وتحرصُ على حفظِه وتلاوتِه؟',en:'How much do you love the Quran and care to memorize and recite it?'} ],
+    didYouKnow:[ {ar:'المصاحفُ التي بين أيدي المسلمينَ اليومَ ترجعُ إلى المصحفِ الذي كتبه زيدٌ في عهدِ عثمان — المصدر: صحيح البخاري',en:'The copies of the Quran Muslims hold today trace back to the text Zayd wrote in Uthman\u2019s era — Source: Sahih al-Bukhari'}, {ar:'قال زيد: «فتتبّعتُ القرآنَ أجمعُه من الرِّقاعِ والعُسُبِ وصدورِ الرجال» — المصدر: صحيح البخاري',en:'Zayd said: "I traced the Quran, gathering it from parchments, palm-stalks, and the hearts of men" — Source: Sahih al-Bukhari'} ],
+  },
+];

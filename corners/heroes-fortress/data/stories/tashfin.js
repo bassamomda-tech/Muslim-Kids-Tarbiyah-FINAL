@@ -1,0 +1,56 @@
+/* data/stories/tashfin.js — Leaders · Yusuf ibn Tashfin — sources: البداية والنهاية · نفح الطيب · إسلام ويب · الدرر السنية */
+window.HISN_STORIES = window.HISN_STORIES || {};
+HISN_STORIES.tashfin = [
+  { icon:'🤝', scene:'desert', character:'🌊',
+    title:{ ar:'استغاثةٌ عبرَ البحر', en:'A Cry for Help Across the Sea' },
+    pages:[
+      { scene:'desert', character:'😟',
+        text:{ ar:'في القرنِ الخامسِ الهجري، ضعُفَ المسلمونَ في <b>الأندلس</b> وتفرّقوا إلى ممالكَ صغيرةٍ متنازعة، فطمعتْ فيهم ممالكُ النصارى في الشمالِ وأخذتْ تستولي على مدنِهم واحدةً بعدَ أخرى. وخافَ المسلمونَ أن تسقطَ الأندلسُ كلُّها!<br><br>فأرسلوا يستغيثونَ بالقائدِ الزاهدِ <b>يوسفِ بنِ تاشفين</b> في المغرب. تردّدَ بعضُ مستشاريه: لماذا تعبرُ البحرَ وتُخاطِرُ بجيشِك من أجلِ بلادٍ بعيدة؟ لكنّ يوسفَ كان مخلصاً لله، يرى نصرةَ المسلمينَ واجباً، فقال: لا أتركُ إخواني المسلمينَ يُذَلّون وأنا أقدرُ على نصرتِهم! <b>وعبرَ البحرَ بجيشِه</b> لإغاثتِهم، لا يطلبُ مُلكاً ولا مالاً.',
+          en:'In the fifth Islamic century, the Muslims in <b>Andalusia</b> grew weak and split into small, quarreling kingdoms, so the Christian kingdoms in the north coveted them and began seizing their cities one after another. The Muslims feared all of Andalusia would fall!<br><br>So they sent appealing for help to the ascetic leader <b>Yusuf ibn Tashfin</b> in the Maghrib. Some of his advisors hesitated: why cross the sea and risk your army for a distant land? But Yusuf was sincere to Allah, seeing the support of Muslims as a duty, and said: I will not leave my Muslim brothers humiliated while I am able to support them! <b>He crossed the sea with his army</b> to aid them, seeking neither dominion nor wealth.' },
+        choice:{ q:{ar:'لماذا عبرَ يوسفُ البحرَ لنصرةِ أهلِ الأندلس؟',en:'Why did Yusuf cross the sea to support the people of Andalusia?'},
+          opts:[
+            { t:{ar:'لأنّه رأى نصرةَ المسلمينَ واجباً ابتغاءَ وجهِ الله',en:'Because he saw supporting Muslims as a duty, seeking Allah\u2019s pleasure'},c:true,exp:{ar:'نعم! نصرةُ المظلومِ والمحتاجِ واجبٌ وشرف.',en:'Yes! Supporting the wronged and needy is a duty and an honor.'} },
+            { t:{ar:'طمعاً في مُلكِ الأندلس',en:'Coveting the rule of Andalusia'},c:false,exp:{ar:'لا، بل إخلاصاً لنصرةِ الدينِ والمسلمين.',en:'No — out of sincerity to support the religion and Muslims.'} },
+            { t:{ar:'طلباً للمال',en:'Seeking wealth'},c:false,exp:{ar:'لا، بل لله ونصرةً لإخوانِه.',en:'No — for Allah and to support his brothers.'} },
+          ] } },
+    ],
+    quiz:[
+      { q:{ar:'ما حالُ مسلمي الأندلسِ حين استغاثوا بيوسف؟',en:'What was the state of Andalusia\u2019s Muslims when they appealed to Yusuf?'},
+        opts:[ {t:{ar:'ضعفاءُ متفرّقونَ تطمعُ فيهم ممالكُ النصارى',en:'Weak and divided, coveted by the Christian kingdoms'},c:true}, {t:{ar:'أقوياءُ موحّدون',en:'Strong and united'},c:false}, {t:{ar:'لا يحتاجونَ أحداً',en:'In need of no one'},c:false} ] },
+      { q:{ar:'بماذا أجابَ يوسفُ المتردّدين؟',en:'How did Yusuf answer the hesitant?'},
+        opts:[ {t:{ar:'لا أترکُ إخواني يُذَلّون وأنا أقدرُ على نصرتِهم',en:'I will not leave my brothers humiliated while able to help'},c:true}, {t:{ar:'دعوهم يسقطون',en:'Let them fall'},c:false}, {t:{ar:'لا يهمّني أمرُهم',en:'Their affair does not concern me'},c:false} ] },
+      { q:{ar:'ما الدرسُ من موقفِ يوسف؟',en:'What is the lesson from Yusuf\u2019s stance?'},
+        opts:[ {t:{ar:'نصرةُ المحتاجِ واجبٌ وشرف',en:'Supporting the needy is a duty and honor'},c:true}, {t:{ar:'الانشغالُ بالنفسِ فقط',en:'Concern only for oneself'},c:false}, {t:{ar:'التردّدُ عن الخير',en:'Hesitating from good'},c:false} ] },
+    ],
+    moral:{ar:'نصرةُ المسلمِ المظلومِ والمحتاجِ واجبٌ وشرف، والمخلصُ يُعينُ غيرَه ابتغاءَ وجهِ اللهِ لا طمعاً.',en:'Supporting the wronged and needy Muslim is a duty and honor; the sincere help others seeking Allah\u2019s pleasure, not out of greed.'},
+    badge:{icon:'🤝',title:{ar:'وِسامُ نصرةِ الإخوان',en:'Badge of Supporting Brothers'}},
+    reflect:[ {ar:'هل تُساعدُ من يحتاجُ مساعدتَك ولو كلّفك جهداً؟',en:'Do you help those who need you even if it costs you effort?'}, {ar:'كيف تنصرُ المظلومَ من حولِك؟',en:'How do you support the wronged around you?'} ],
+    didYouKnow:[ {ar:'استغاثَ ملوكُ الطوائفِ في الأندلسِ بيوسفِ بنِ تاشفينَ لمّا اشتدَّ عليهم ضغطُ ممالكِ الشمال — المصدر: نفح الطيب',en:'The petty kings of Andalusia appealed to Yusuf ibn Tashfin when the pressure of the northern kingdoms intensified — Source: Nafh at-Tib'}, {ar:'كان المرابطونَ حركةَ إصلاحٍ دينيٍّ بدأتْ في الصحراءِ ثمّ وحّدتِ المغرب — المصدر: البداية والنهاية',en:'The Almoravids were a religious reform movement that began in the desert and then united the Maghrib — Source: Al-Bidaya wa an-Nihaya'} ],
+  },
+  { icon:'⚔️', scene:'peaks', character:'🐎',
+    title:{ ar:'يومُ الزلّاقةِ العظيم', en:'The Great Day of Zallaqa' },
+    pages:[
+      { scene:'peaks', character:'🐎',
+        text:{ ar:'في سنةِ ٤٧٩هـ، التقى جيشُ <b>يوسفِ بنِ تاشفين</b> ومسلمي الأندلسِ بجيشِ ممالكِ النصارى الضخمِ بقيادةِ مَلِكِهم في مكانٍ اسمُه <b>الزلّاقة</b>. كان الموقفُ خطيراً، فإن خسِرَ المسلمونَ سقطتِ الأندلسُ كلُّها!<br><br>قاتلَ المسلمونَ بشجاعةٍ وإيمانٍ، وأظهرَ يوسفُ حكمةً عسكريّةً عظيمة، فحقّقَ اللهُ لهم <b>نصراً عظيماً ساحقاً</b> في الزلّاقة! تراجعَ النصارى وتوقّفَ زحفُهم، و<b>نجتِ الأندلسُ من السقوط</b> وبقيتْ بلادَ إسلامٍ قروناً أخرى. والعجيبُ أنّ يوسفَ بعدَ هذا النصرِ العظيمِ لم يطلبْ لنفسِه شيئاً، بل عادَ زاهداً كما كان، يلبسُ الصوفَ ويأكلُ الطعامَ البسيط. علّمنا أنّ <b>القائدَ العظيمَ ينصرُ الحقَّ بإخلاصٍ ثمّ يبقى متواضعاً زاهداً</b>.',
+          en:'In 479 AH, the army of <b>Yusuf ibn Tashfin</b> and the Muslims of Andalusia met the vast army of the Christian kingdoms led by their king at a place called <b>Zallaqa</b>. The situation was grave — if the Muslims lost, all of Andalusia would fall!<br><br>The Muslims fought with courage and faith, and Yusuf displayed great military wisdom, so Allah granted them a <b>great, crushing victory</b> at Zallaqa! The Christians retreated and their advance halted, and <b>Andalusia was saved from collapse</b>, remaining a land of Islam for further centuries. The wondrous thing is that after this great victory Yusuf sought nothing for himself, but returned ascetic as he was, wearing wool and eating simple food. He taught us that <b>a great leader supports the truth sincerely, then remains humble and ascetic</b>.' },
+        choice:{ q:{ar:'ماذا فعلَ يوسفُ بعدَ النصرِ العظيمِ في الزلّاقة؟',en:'What did Yusuf do after the great victory at Zallaqa?'},
+          opts:[
+            { t:{ar:'بقيَ زاهداً متواضعاً ولم يطلبْ لنفسِه شيئاً',en:'He remained ascetic and humble, seeking nothing for himself'},c:true,exp:{ar:'نعم! القائدُ العظيمُ ينصرُ الحقَّ بإخلاصٍ ويبقى متواضعاً.',en:'Yes! A great leader supports the truth sincerely and stays humble.'} },
+            { t:{ar:'طلبَ مُلكَ الأندلسِ لنفسِه',en:'He demanded the rule of Andalusia for himself'},c:false,exp:{ar:'لا، بل عادَ زاهداً كما كان.',en:'No — he returned ascetic as he was.'} },
+            { t:{ar:'تكبّرَ بالنصر',en:'He became arrogant with victory'},c:false,exp:{ar:'لا، بل بقيَ متواضعاً.',en:'No — he remained humble.'} },
+          ] } },
+    ],
+    quiz:[
+      { q:{ar:'في أيِّ معركةٍ انتصرَ يوسفُ ونجتِ الأندلس؟',en:'In which battle did Yusuf win and Andalusia was saved?'},
+        opts:[ {t:{ar:'الزلّاقة',en:'Zallaqa'},c:true}, {t:{ar:'القادسية',en:'Qadisiyya'},c:false}, {t:{ar:'اليرموك',en:'Yarmouk'},c:false} ] },
+      { q:{ar:'ماذا لو خسِرَ المسلمونَ في الزلّاقة؟',en:'What if the Muslims had lost at Zallaqa?'},
+        opts:[ {t:{ar:'لسقطتِ الأندلسُ كلُّها',en:'All of Andalusia would have fallen'},c:true}, {t:{ar:'لم يكنْ مهمّاً',en:'It wouldn\u2019t matter'},c:false}, {t:{ar:'لازدادوا قوّة',en:'They would grow stronger'},c:false} ] },
+      { q:{ar:'كيف كان يوسفُ بعدَ النصر؟',en:'How was Yusuf after the victory?'},
+        opts:[ {t:{ar:'زاهداً متواضعاً مخلصاً',en:'Ascetic, humble, and sincere'},c:true}, {t:{ar:'متكبّراً طامعاً',en:'Arrogant and greedy'},c:false}, {t:{ar:'تاركاً للجهاد',en:'Abandoning the struggle'},c:false} ] },
+    ],
+    moral:{ar:'القائدُ العظيمُ ينصرُ الحقَّ بإخلاصٍ وحكمة، ثمّ يبقى متواضعاً زاهداً لا يطلبُ لنفسِه شيئاً.',en:'A great leader supports the truth sincerely and wisely, then remains humble and ascetic, seeking nothing for himself.'},
+    badge:{icon:'⚔️',title:{ar:'وِسامُ نصرِ الزلّاقة',en:'Badge of the Victory of Zallaqa'}},
+    reflect:[ {ar:'هل تبقى متواضعاً بعدَ أن تنجحَ أو تنتصر؟',en:'Do you stay humble after you succeed or win?'}, {ar:'كيف تعملُ الخيرَ بإخلاصٍ دون أن تطلبَ مقابلاً؟',en:'How do you do good sincerely without seeking a reward?'} ],
+    didYouKnow:[ {ar:'معركةُ الزلّاقةِ سنةَ ٤٧٩هـ من أعظمِ انتصاراتِ المسلمينَ في الأندلسِ وأنقذتْها قروناً — المصدر: البداية والنهاية',en:'The Battle of Zallaqa in 479 AH was among the greatest Muslim victories in Andalusia and saved it for centuries — Source: Al-Bidaya wa an-Nihaya'}, {ar:'عُرِفَ عن يوسفِ بنِ تاشفينَ زهدُه الشديدُ وبساطةُ عيشِه رغمَ سعةِ مُلكِه — المصدر: نفح الطيب',en:'Yusuf ibn Tashfin was known for intense asceticism and simple living despite his vast rule — Source: Nafh at-Tib'} ],
+  },
+];

@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta name="color-scheme" content="dark">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<title>بستان القرآن والسنة | Quran & Sunnah Garden</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Amiri+Quran&family=Amiri:wght@400;700&family=Tajawal:wght@400;500;700;800;900&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+<link rel="stylesheet" href="assets/quran.css">
+<style>
+/* ─────────── HUB (three gates) ─────────── */
+.hub-grid{
+  position:relative;z-index:6;max-width:1000px;margin:1.4rem auto 0;
+  padding:0 1.1rem;display:grid;grid-template-columns:1fr 1fr 1fr;gap:1.1rem;
+}
+@media(max-width:760px){.hub-grid{grid-template-columns:1fr;gap:1rem;max-width:460px}}
+
+.gate{
+  --acc:var(--teal); --acc-dk:var(--teal-dk); --acc-lt:var(--teal-lt);
+  text-decoration:none;color:var(--ink);background:
+  linear-gradient(180deg,var(--paper),var(--cream));
+  border:3px solid var(--acc-lt);border-radius:var(--r-xl);
+  padding:1.5rem 1.1rem 1.2rem;position:relative;overflow:hidden;
+  display:flex;flex-direction:column;align-items:center;text-align:center;
+  box-shadow:0 8px 0 var(--paper-edge),0 12px 28px rgba(60,40,10,.12);
+  transition:transform .24s cubic-bezier(.34,1.56,.64,1),box-shadow .24s;
+  animation:fadeUp .5s ease both;
+}
+.gate:nth-child(2){animation-delay:.08s}
+.gate:nth-child(3){animation-delay:.16s}
+.gate:hover{transform:translateY(-7px);box-shadow:0 14px 0 var(--paper-edge),0 20px 38px rgba(60,40,10,.18)}
+.gate::before{
+  content:'';position:absolute;inset:0;border-radius:inherit;z-index:0;background:
+  radial-gradient(120% 80% at 50% -10%,color-mix(in srgb,var(--acc) 16%,transparent),transparent 60%);
+}
+.gate>*{position:relative;z-index:1}
+
+.gate .emblem{
+  width:92px;height:92px;border-radius:50%;display:flex;align-items:center;justify-content:center;
+  font-size:2.8rem;margin-bottom:.7rem;border:4px solid #fff;background:
+  radial-gradient(circle at 35% 28%,var(--acc-lt),var(--acc));
+  box-shadow:0 6px 0 var(--acc-dk);animation:bob 4s ease-in-out infinite;
+}
+.gate:nth-child(2) .emblem{animation-delay:1.2s}
+.gate:nth-child(3) .emblem{animation-delay:2s}
+.gate .g-name{font-size:1.4rem;font-weight:900;color:var(--ink);line-height:1.2}
+.gate .g-name-en{font-size:.88rem;font-weight:800;color:var(--acc-dk);margin-top:.12rem}
+.gate .g-desc{font-size:.82rem;color:var(--ink-2);font-weight:700;margin-top:.55rem;line-height:1.6;max-width:26ch}
+
+.gate .g-bar{margin-top:.85rem;width:100%;display:flex;align-items:center;gap:.45rem;font-size:.68rem;color:var(--ink-3);font-weight:800}
+.gate .g-bar .track{flex:1;height:8px;background:#EFE3C6;border-radius:5px;overflow:hidden}
+.gate .g-bar .fill{height:100%;background:var(--acc);border-radius:5px;transition:width .6s ease}
+
+.gate .g-enter{
+  margin-top:.95rem;display:inline-flex;align-items:center;gap:.4rem;background:
+  var(--acc);color:#fff;border-radius:2rem;
+  padding:.5rem 1.2rem;font-size:.9rem;font-weight:900;
+  box-shadow:0 5px 0 var(--acc-dk);transition:.18s;
+}
+.gate:hover .g-enter{filter:brightness(1.06);transform:translateY(-1px)}
+
+/* stories gate = warm fortress accent */
+.gate.stories{--acc:#E08A3C;--acc-dk:#B5681F;--acc-lt:#F4C77E}
+/* hadith gate = deep indigo/violet accent */
+.gate.hadith{--acc:#7E6BD4;--acc-dk:#5B49A8;--acc-lt:#B7AAEB}
+
+.hub-note{
+  position:relative;z-index:6;text-align:center;max-width:620px;margin:1.3rem auto 90px;
+  padding:0 1.2rem;font-size:.84rem;font-weight:700;color:var(--teal-dk);line-height:1.7;
+}
+.hub-note .verse{font-family:'Amiri Quran','Amiri',serif;font-size:1.15rem;color:#1c5e4a;display:block;margin-bottom:.3rem}
+html[dir="ltr"] .hub-note .verse{font-family:inherit;font-style:italic}
+</style>
+<script>(function(){try{var l=localStorage.getItem('bunyanLang');if(l==='en'){var h=document.documentElement;h.dir='ltr';h.lang='en';}}catch(e){}})();</script>
+<style id="__antiflash">html{background:#0A2540;color-scheme:dark}</style>
+</head>
+<body>
+
+<!-- ═══ HEADER ═══ -->
+<header class="q-hdr">
+  <a class="q-brand" href="../../../index.html" title="تربية الطفل المسلم">
+    <span class="ico">←</span>
+    <span><span class="lng-ar">المدينة</span><span class="lng-en">City</span></span>
+  </a>
+  <span class="q-badge">
+    <span>🌿</span>
+    <span class="lng-ar">بستان القرآن والسنة</span>
+    <span class="lng-en">Quran & Sunnah Garden</span>
+  </span>
+  <div class="q-actions">
+    <div class="q-lang">
+      <button data-lang="en">EN</button>
+      <button data-lang="ar" class="active">عربي</button>
+    </div>
+  </div>
+</header>
+
+<!-- ═══ GARDEN HUB ═══ -->
+<div class="garden">
+  <div class="g-sun"></div>
+  <div class="g-cloud c1"></div>
+  <div class="g-cloud c2"></div>
+  <span class="g-bird b1">🕊️</span>
+  <span class="g-bird b2">🐦</span>
+
+  <div class="g-intro">
+    <h1 class="g-title">
+      <span class="lng-ar">🌿 بُستان القرآن والسنة</span>
+      <span class="lng-en">🌿 The Quran & Sunnah Garden</span>
+    </h1>
+    <p class="g-sub">
+      <span class="lng-ar">اختر بابك: السُّوَر، أم القصص، أم أحاديث النبي ﷺ؟</span>
+      <span class="lng-en">Choose your path: surahs, stories, or the Prophet's ﷺ hadiths?</span>
+    </p>
+  </div>
+
+  <div class="g-guide">
+    <div class="speech">
+      <span class="lng-ar">أنا «أنس»، تعال نختار بابًا ونبدأ الرحلة!</span>
+      <span class="lng-en">I'm Anas — let's pick a gate and begin!</span>
+    </div>
+    <div class="who">👦</div>
+  </div>
+
+  <!-- three gates -->
+  <div class="hub-grid">
+    <a class="gate surahs" href="quran-surahs.html">
+      <div class="emblem">📖</div>
+      <div class="g-name">
+        <span class="lng-ar">سُوَر القرآن</span>
+        <span class="lng-en">Quran Surahs</span>
+      </div>
+      <div class="g-name-en">
+        <span class="lng-ar">اقرأ · تدبّر · احفظ</span>
+        <span class="lng-en">Read · Reflect · Memorize</span>
+      </div>
+      <p class="g-desc">
+        <span class="lng-ar">اقطف سورةً، اقرأها بالتجويد واستمع للتلاوة، وافهم معانيها.</span>
+        <span class="lng-en">Pick a surah, read it with tajweed, listen to the recitation, and understand it.</span>
+      </p>
+      <div class="g-bar">
+        <span class="lng-ar">السُّوَر</span><span class="lng-en">Surahs</span>
+        <div class="track"><div class="fill" id="surahFill" style="width:0%"></div></div>
+        <span id="surahCount">0/0</span>
+      </div>
+      <span class="g-enter">
+        <span class="lng-ar">ادخل البستان 🌳</span>
+        <span class="lng-en">Enter the garden 🌳</span>
+      </span>
+    </a>
+
+    <a class="gate stories" href="quran-stories.html">
+      <div class="emblem">📜</div>
+      <div class="g-name">
+        <span class="lng-ar">قصص القرآن</span>
+        <span class="lng-en">Quran Stories</span>
+      </div>
+      <div class="g-name-en">
+        <span class="lng-ar">عِبَرٌ · أبطال · مغامرات</span>
+        <span class="lng-en">Lessons · Heroes · Adventures</span>
+      </div>
+      <p class="g-desc">
+        <span class="lng-ar">عِش قصص القرآن العجيبة — لقمان وأصحاب الكهف وغيرهم.</span>
+        <span class="lng-en">Live the Quran's wondrous stories — Luqman, the People of the Cave & more.</span>
+      </p>
+      <div class="g-bar">
+        <span class="lng-ar">القصص</span><span class="lng-en">Stories</span>
+        <div class="track"><div class="fill" id="storyFill" style="width:0%"></div></div>
+        <span id="storyCount">0/0</span>
+      </div>
+      <span class="g-enter">
+        <span class="lng-ar">ادخل الحصن 🏰</span>
+        <span class="lng-en">Enter the fortress 🏰</span>
+      </span>
+    </a>
+
+    <a class="gate hadith" href="hadith.html">
+      <div class="emblem">🕌</div>
+      <div class="g-name">
+        <span class="lng-ar">الأربعون النووية</span>
+        <span class="lng-en">40 Hadith of Nawawi</span>
+      </div>
+      <div class="g-name-en">
+        <span class="lng-ar">احفظ · افهم · اعمل</span>
+        <span class="lng-en">Memorize · Understand · Act</span>
+      </div>
+      <p class="g-desc">
+        <span class="lng-ar">احفظ أحاديث النبي ﷺ الجامعة، وافهم شرحها، واعمل بها في حياتك.</span>
+        <span class="lng-en">Memorize the Prophet's ﷺ comprehensive hadiths, understand them, and live by them.</span>
+      </p>
+      <div class="g-bar">
+        <span class="lng-ar">الأحاديث</span><span class="lng-en">Hadiths</span>
+        <div class="track"><div class="fill" id="hadithFill" style="width:0%"></div></div>
+        <span id="hadithCount">0/0</span>
+      </div>
+      <span class="g-enter">
+        <span class="lng-ar">ادخل المسجد 🕌</span>
+        <span class="lng-en">Enter the masjid 🕌</span>
+      </span>
+    </a>
+
+    <a class="gate companions" href="quran-companions.html" style="--g1:#1A9B7B;--g2:#0E6B53;">
+      <div class="emblem">🤝</div>
+      <div class="g-name">
+        <span class="lng-ar">أنا صاحبك القرآن</span>
+        <span class="lng-en">I Am Your Companion</span>
+      </div>
+      <div class="g-name-en">
+        <span class="lng-ar">تدبَّر · تأثَّر · تغيَّر</span>
+        <span class="lng-en">Reflect · Be Moved · Change</span>
+      </div>
+      <p class="g-desc">
+        <span class="lng-ar">قصصُ الصالحين مع القرآن — كيف غيَّر القرآنُ قلوبَ عمرَ والفُضيلِ والنجاشيِّ وغيرهم.</span>
+        <span class="lng-en">The righteous & the Quran — how it changed the hearts of Umar, al-Fudayl, An-Najashi & more.</span>
+      </p>
+      <div class="g-bar">
+        <span class="lng-ar">القصص</span><span class="lng-en">Stories</span>
+        <div class="track"><div class="fill" id="compFill" style="width:0%"></div></div>
+        <span id="compCount">0/15</span>
+      </div>
+      <span class="g-enter">
+        <span class="lng-ar">ابدأ الرحلة 📖</span>
+        <span class="lng-en">Start the journey 📖</span>
+      </span>
+    </a>
+  </div>
+
+  <div class="hub-note">
+    <span class="verse">﴿ وَمَا آتَاكُمُ الرَّسُولُ فَخُذُوهُ وَمَا نَهَاكُمْ عَنْهُ فَانتَهُوا ﴾</span>
+    <span class="lng-ar">القرآنُ والسنةُ نورانِ يهديانِنا — تعلَّمْهما وعِشْ بهما.</span>
+    <span class="lng-en">The Quran and Sunnah are two lights that guide us — learn them and live by them.</span>
+  </div>
+
+  <div class="g-ground"></div>
+  <div class="g-flowers"><span>🌷</span><span>🌻</span><span>🌱</span><span>🌼</span><span>🌷</span><span>🌿</span></div>
+
+  <footer class="q-foot">
+    <span class="lng-ar">صُنع بحب 💚 لأطفال الأمة — <b>بستان القرآن والسنة</b></span>
+    <span class="lng-en">Made with 💚 for the children of the Ummah — <b>Quran & Sunnah Garden</b></span>
+  </footer>
+</div>
+
+<!-- ═══ INDEX DATA (for progress counts) ═══ -->
+<script src="quran-data/index_data.js"></script>
+<script src="qstories-data/_index.js"></script>
+<script src="hadith-data/_index.js"></script>
+<script>
+(function(){
+  function getLang(){
+    try{ return localStorage.getItem('qg:lang') || localStorage.getItem('qs:lang') || localStorage.getItem('hd:lang') || 'ar'; }
+    catch(e){ return 'ar'; }
+  }
+  function setLang(l){
+    try{ localStorage.setItem('qg:lang',l); localStorage.setItem('qs:lang',l); localStorage.setItem('hd:lang',l); }catch(e){}
+    document.documentElement.lang=l;
+    document.documentElement.dir = l==='ar'?'rtl':'ltr';
+    document.querySelectorAll('.q-lang button').forEach(b=>b.classList.toggle('active',b.dataset.lang===l));
+  }
+  document.querySelectorAll('.q-lang button').forEach(b=>b.addEventListener('click',()=>setLang(b.dataset.lang)));
+  setLang(getLang());
+
+  function doneCount(list,prefix){
+    if(!list) return 0;
+    let n=0;
+    list.forEach(s=>{ try{ if(localStorage.getItem(prefix+'done:'+s.slug)==='1') n++; }catch(e){} });
+    return n;
+  }
+  function fill(list,prefix,fillId,countId){
+    const total=(list||[]).length;
+    const done=doneCount(list,prefix);
+    const pct=total?Math.round(done/total*100):0;
+    const f=document.getElementById(fillId); if(f)f.style.width=pct+'%';
+    const c=document.getElementById(countId); if(c)c.textContent=done+'/'+total;
+  }
+  fill(window.SURAH_INDEX,'qg:','surahFill','surahCount');
+  fill(window.QS_INDEX,'qs:','storyFill','storyCount');  fill(window.HADITH_INDEX,'hd:','hadithFill','hadithCount');
+  // 4th gate — "I Am Your Companion, the Quran" (rihla-engine tracks its own progress)
+  try{
+    var cdone = JSON.parse(localStorage.getItem('qsahibDone')||'[]').length;
+    var ctot = 15;
+    var cf=document.getElementById('compFill'); if(cf)cf.style.width=(ctot?Math.round(cdone/ctot*100):0)+'%';
+    var cc=document.getElementById('compCount'); if(cc)cc.textContent=cdone+'/'+ctot;
+  }catch(e){}
+})();
+</script>
+
+
+<script defer src="../../quiz/quiz-engine.js"></script>
+<script>window.MK_CORNER='quran';</script>
+<script defer src="../../shared/mk-system.js"></script>
+<script defer src="../../shared/mk-journeys.js"></script>
+<script defer src="../../shared/mk-corner-score.js"></script>
+<script defer src="../../shared/mk-bag.js"></script>
+<script defer src="../../shared/mk-train.js"></script>
+<script defer src="../../shared/nav-fix.js"></script>
+<script src="../../shared/mk-citynav.js"></script>
+</body>
+</html>

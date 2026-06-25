@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>من هو النبي؟ · أنوس</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+
+<link rel="stylesheet" href="../styles/tokens.css" />
+<link rel="stylesheet" href="../styles/dashboard.css" />
+<link rel="stylesheet" href="../styles/wheel.css" />
+<link rel="stylesheet" href="../styles/prophet-quiz.css" />
+</head>
+<body>
+
+<div class="bg-decor" aria-hidden="true"></div>
+
+<div class="activity-shell">
+
+  <nav class="activity-nav">
+    <a class="back-link" href="../dashboard.html">
+      الرجوع للوحة الأنشطة
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg>
+    </a>
+    <div class="activity-crumb">
+      <span>العبادات والإيمان</span>
+      <span class="sep">/</span>
+      <span class="cur">من هو النبي؟</span>
+    </div>
+    <div class="activity-actions">
+      <button class="icon-btn" id="reset-btn" title="إعادة الضبط" aria-label="إعادة الضبط">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 3-6.7L3 8"/><path d="M3 3v5h5"/></svg>
+      </button>
+    </div>
+  </nav>
+
+  <div class="activity-layout">
+
+    <!-- ============ لوحة الاختبار ============ -->
+    <section class="quiz-panel">
+      <header class="wheel-header">
+        <span class="activity-tag">Activity 09 · Quiz Engine</span>
+        <h1 class="activity-title">من هو النبي؟</h1>
+        <p class="activity-desc">
+          هذه قصة نبيّ مُرسَل، أمامكَ أربع قرائن. كلَّما خمَّنتَ مبكّراً
+          حصلتَ على نجوم أكثر. ست أسئلة في الجولة الواحدة، حظاً مباركاً!
+        </p>
+      </header>
+
+      <!-- HUD -->
+      <div class="quiz-hud">
+        <div class="hud-block">
+          السؤال
+          <strong><span id="q-idx">1</span><small>/6</small></strong>
+        </div>
+        <div class="hud-block">
+          النجوم في هذا السؤال
+          <div class="score-meter" id="q-score"></div>
+        </div>
+        <div class="hud-block">
+          المجموع
+          <strong id="total-score">0</strong>
+        </div>
+        <div class="hud-block">
+          أنبياء حُلّوا
+          <strong id="solved">0</strong>
+        </div>
+      </div>
+
+      <!-- مرحلة القرائن -->
+      <div class="clue-stage" id="clue-stage">
+        <div class="clue-counter" id="clue-counter">
+          <span></span><span></span><span></span><span></span>
+        </div>
+        <div class="clue-eyebrow">القرائن</div>
+        <div class="clue-list-display" id="clue-list"></div>
+
+        <div class="clue-actions">
+          <button class="next-clue-btn" id="next-clue-btn">
+            اطلب قرينةً أخرى
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l-6 6 6 6"/></svg>
+          </button>
+          <span style="font-size:12px; color: var(--ink-2); font-weight:600;">كلُّ قرينةٍ إضافيّةٍ تُنقِص نجمةً</span>
+        </div>
+      </div>
+
+      <!-- الخيارات -->
+      <div class="prophet-options" id="prophet-options"></div>
+
+      <!-- بطاقة الحل -->
+      <div class="reveal-card" id="reveal-card">
+        <h4 id="reveal-name">—</h4>
+        <div id="reveal-summary"></div>
+        <div class="fact" id="reveal-fact"></div>
+        <div style="display:flex; gap: var(--s-2); margin-top: var(--s-4);">
+          <button class="btn-primary" id="next-q-btn" style="flex:1; justify-content: center;">
+            السؤال التالي
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M15 6l-6 6 6 6"/></svg>
+          </button>
+        </div>
+      </div>
+
+      <div class="wheel-controls" style="margin-top:var(--s-3);">
+        <div class="wheel-stat">
+          أعلى نتيجة
+          <strong id="best-score">—</strong>
+        </div>
+        <button class="wheel-mute-toggle" id="mute-btn" aria-pressed="false">
+          <span class="mute-icon"></span>
+          <span class="mute-label">كتم الصوت</span>
+        </button>
+      </div>
+    </section>
+
+    <!-- ============ اللوحة الجانبية ============ -->
+    <aside class="side-panel">
+
+      <div class="panel-card">
+        <div class="panel-head">
+          <h3>الأنبياء في هذه الجولة</h3>
+          <span class="pill" id="round-pill">0/6</span>
+        </div>
+        <div class="prophet-list" id="prophet-list"></div>
+      </div>
+
+      <div class="panel-card">
+        <div class="panel-head">
+          <h3>تعليمات اللعبة</h3>
+        </div>
+        <ol style="margin:0; padding-right: 20px; font-size: 14px; color: var(--ink-2); line-height: 1.8;">
+          <li>اقرأ القرينة الأولى بتأنٍّ، وفكّر في أنبياء تعرفهم.</li>
+          <li>إن لم تعرف، اطلب قرينةً أخرى — لكنّك ستخسر نجمة.</li>
+          <li>اختر النبي الصحيح من بين أربعة اختيارات.</li>
+          <li>الإجابة الخاطئة تكشف الجواب بدون نجوم.</li>
+        </ol>
+      </div>
+
+      <div class="panel-card">
+        <div class="panel-head">
+          <h3>قاعدة الإيمان</h3>
+        </div>
+        <div class="hadith-card">
+          <div class="quote">«الأنبياءُ إخوةٌ لِعَلَّاتٍ، أمَّهاتُهم شَتَّى ودِينُهُم واحدٌ»</div>
+          <span class="src">رواه البخاري ومسلم<span class="hadith-grade ok">صحيح</span></span>
+        </div>
+        <div class="tip-card" style="margin-top: var(--s-3);">
+          <span class="tip-icon">!</span>
+          <span>كل الأنبياء جاؤوا بدعوة واحدة: <strong>عبادة الله وحده</strong>. وآدم أوَّلُهم، ومحمدٌ ﷺ خاتمُهم.</span>
+        </div>
+      </div>
+
+    </aside>
+  </div>
+</div>
+
+<!-- مودال النصر -->
+<div class="modal-backdrop" id="win-modal" role="dialog" aria-modal="true">
+  <div class="modal">
+    <button class="modal-close" data-close aria-label="إغلاق">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M6 6l12 12M18 6l-12 12"/></svg>
+    </button>
+
+    <div class="modal-deco" aria-hidden="true">
+      <svg width="36" height="36" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.4 6.6L21 9l-5 4.6L17.2 21 12 17.4 6.8 21 8 13.6 3 9l6.6-.4z"/></svg>
+    </div>
+
+    <div class="modal-eyebrow" id="win-eyebrow">جولةٌ مَكتَملة</div>
+    <h2 class="modal-title" id="win-title">أحسنتَ يا فاهم!</h2>
+
+    <div class="modal-meaning" style="text-align:right;" id="win-summary"></div>
+
+    <div class="modal-actions">
+      <button class="btn-ghost" data-close>انتهيت</button>
+      <button class="btn-primary" id="win-replay">جولة جديدة</button>
+    </div>
+  </div>
+</div>
+
+<div class="particles" id="particles" aria-hidden="true"></div>
+
+<script src="../scripts/activity-common.js"></script>
+<script src="../scripts/prophet-quiz.js"></script>
+
+<script>
+window.PAGE_DICT = {
+  "من هو النبي؟": "Who Is the Prophet?",
+  "هذه قصة نبيّ مُرسَل، أمامكَ أربع قرائن. كلَّما خمَّنتَ مبكّراً حصلتَ على نجوم أكثر. ست أسئلة في الجولة الواحدة، حظاً مباركاً!": "This is the story of a sent prophet, with four clues before you. The earlier you guess, the more stars you earn. Six questions per round — good luck!",
+  "السؤال": "Question",
+  "النجوم في هذا السؤال": "Stars this question",
+  "المجموع": "Total",
+  "أنبياء حُلّوا": "Prophets solved",
+  "القرائن": "Clues",
+  "اطلب قرينةً أخرى": "Ask for another clue",
+  "كلُّ قرينةٍ إضافيّةٍ تُنقِص نجمةً": "Each extra clue costs a star",
+  "السؤال التالي": "Next question",
+  "أعلى نتيجة": "Best score",
+  "الأنبياء في هذه الجولة": "Prophets this round",
+  "تعليمات اللعبة": "Game instructions",
+  "اقرأ القرينة الأولى بتأنٍّ، وفكّر في أنبياء تعرفهم.": "Read the first clue carefully and think of prophets you know.",
+  "إن لم تعرف، اطلب قرينةً أخرى — لكنّك ستخسر نجمة.": "If you don't know, ask for another clue — but you'll lose a star.",
+  "اختر النبي الصحيح من بين أربعة اختيارات.": "Choose the correct prophet from four options.",
+  "الإجابة الخاطئة تكشف الجواب بدون نجوم.": "A wrong answer reveals the answer with no stars.",
+  "قاعدة الإيمان": "Article of faith",
+  "كل الأنبياء جاؤوا بدعوة واحدة:": "All prophets came with one call:",
+  "عبادة الله وحده": "worshipping Allah alone",
+  ". وآدم أوَّلُهم، ومحمدٌ ﷺ خاتمُهم.": ". Adam was the first of them, and Muhammad ﷺ the last.",
+  "جولةٌ مَكتَملة": "Round complete",
+  "أحسنتَ يا فاهم!": "Well done, clever one!"
+};
+</script>
+<script>
+Object.assign(window.PAGE_DICT, {
+  "آدم": "Adam", "نوح": "Nuh", "إبراهيم": "Ibrahim", "يوسف": "Yusuf", "موسى": "Musa",
+  "يونس": "Yunus", "سليمان": "Sulayman", "أيوب": "Ayyub", "عيسى": "Isa", "محمد ﷺ": "Muhammad ﷺ",
+  "أنا أبو البشر، خَلَقَني الله بِيدِه ونفخَ فيَّ من روحه.": "I am the father of mankind; Allah created me with His hand and breathed into me of His spirit.",
+  "علَّمني الله الأسماءَ كلَّها، فعجِب الملائكة من علمي.": "Allah taught me all the names, so the angels marveled at my knowledge.",
+  "زوجتي حواء، وأمر الله الملائكة أن يسجدوا لي، فسجدوا إلا واحداً.": "My wife is Hawwa; Allah commanded the angels to prostrate to me, and they did except one.",
+  "أكلتُ من الشجرة فأُهبِطتُ إلى الأرض، ثم تاب الله عليَّ.": "I ate from the tree and was sent down to earth, then Allah accepted my repentance.",
+  "آدم هو أوّل إنسان، وأبو الأنبياء جميعاً. خلقَهُ الله من تراب.": "Adam is the first human and the father of all the prophets. Allah created him from dust.",
+  "صنعتُ سفينةً كبيرة بأمر ربي قبل أن يأتي طوفان عظيم.": "I built a great ark by my Lord's command before a mighty flood came.",
+  "دعوتُ قومي ألفَ سنةٍ إلا خمسين عاماً، لكنّهم لم يؤمنوا.": "I called my people for nine hundred and fifty years, but they did not believe.",
+  "حملتُ في السفينة من كلِّ زوجين اثنين، وأَنجى الله المؤمنين.": "I carried in the ark a pair of every kind, and Allah saved the believers.",
+  "غرِق ابني الكافر مع الكافرين، وقال لي ربي: «إنه ليس من أهلِك».": "My disbelieving son drowned with the disbelievers, and my Lord told me: «He is not of your family».",
+  "نوح أوّل رسولٍ بَعَثه الله إلى أهل الأرض، ومن أُولي العزم من الرسل.": "Nuh was the first messenger Allah sent to the people of the earth, and one of the messengers of strong resolve.",
+  "كسرتُ أصنامَ قومي وعلّقتُ الفأسَ في عنق أكبرها.": "I broke my people's idols and hung the axe on the neck of the biggest one.",
+  "ألقى قومي بي في النار العظيمة، فقال الله لها: «يا نار كوني برداً وسلاماً».": "My people threw me into the great fire, and Allah said to it: «O fire, be coolness and peace».",
+  "بنيتُ الكعبة المُشرَّفة مع ابني إسماعيل.": "I built the Holy Kaaba with my son Ismail.",
+  "رأيتُ في المنام أنّي أذبح ابني، فأطعتُ ربي، ففداهُ الله بكبشٍ عظيم.": "I saw in a dream that I was to sacrifice my son, so I obeyed my Lord, and Allah ransomed him with a great ram.",
+  "إبراهيم خليلُ الرحمن، أبو الأنبياء، ومن أُولي العزم. مَلَّةُ الإسلام مَلَّتُهُ.": "Ibrahim is the friend of the Most Merciful, the father of the prophets, and one of strong resolve. The way of Islam is his way.",
+  "رأيتُ في المنام أحدَ عشَر كوكباً والشمسَ والقمر يسجدون لي.": "I saw in a dream eleven stars and the sun and the moon prostrating to me.",
+  "ألقاني إخوتي في بئرٍ من الحسد، فالتقطتني قافلة وباعتني في مصر.": "My brothers threw me into a well out of envy; a caravan picked me up and sold me in Egypt.",
+  "سَجَنوني ظُلماً، ففسَّرتُ في السجن رؤيا الملك فأصبحتُ عزيز مصر.": "They imprisoned me unjustly; in prison I interpreted the king's dream and became the treasurer of Egypt.",
+  "ابنُ يعقوب، ومن أجمل البشر، وقصتي «أحسنُ القصص» في القرآن.": "Son of Yaqub, one of the most beautiful of people, and my story is «the best of stories» in the Quran.",
+  "ليوسف سورةٌ كاملة بِاسمه. عَفا عن إخوته رغم ظلمهم له، وجعله الله عزيز مصر.": "Yusuf has a whole surah named after him. He forgave his brothers despite their wrong, and Allah made him the treasurer of Egypt.",
+  "تربَّيتُ في قصر فرعون، وعصاي تتحوّل إلى ثعبانٍ بإذن الله.": "I was raised in Pharaoh's palace, and my staff turns into a serpent by Allah's leave.",
+  "كلَّمَني ربي مباشرةً على جبل الطور، فأنا «كليم الله».": "My Lord spoke to me directly on Mount Tur, so I am «the one Allah spoke to».",
+  "ضربتُ البحر بعصاي فانفلق إلى اثني عشر طريقاً يبسا.": "I struck the sea with my staff and it split into twelve dry paths.",
+  "أهلَك الله فرعون وجنودَه في البحر بعد ما تكبَّر وادَّعى الألوهية.": "Allah destroyed Pharaoh and his soldiers in the sea after he grew arrogant and claimed divinity.",
+  "موسى كليم الله، من أُولي العزم، أنزل الله عليه التوراة وأَنجى به بني إسرائيل.": "Musa is the one Allah spoke to, of strong resolve; Allah revealed the Torah to him and saved the Children of Israel through him.",
+  "غضبتُ من قومي وخرجتُ من بلدي قبل أن يأذن لي ربي.": "I grew angry with my people and left my town before my Lord permitted me.",
+  "ركبتُ سفينةً فاقترَعنا فوقعتْ القُرعة عليَّ، فألقَوني في البحر.": "I boarded a ship; we drew lots and it fell on me, so they cast me into the sea.",
+  "ابتلَعَني حوتٌ عظيم وبقيتُ في بطنه في ثلاث ظلمات.": "A great whale swallowed me, and I remained in its belly amid three layers of darkness.",
+  "ناديتُ ربي: «لا إله إلا أنتَ سبحانَك إنّي كنتُ من الظالمين»، فنَجَّاني.": "I called my Lord: «There is no god but You, glory be to You, I was among the wrongdoers», so He saved me.",
+  "دعاء يونس عليه السلام في بطن الحوت من أعظم الأدعية لتفريج الكَرب.": "The supplication of Yunus (peace be upon him) in the whale's belly is among the greatest for relieving distress.",
+  "علَّمَني الله منطق الطير، فكنتُ أفهم لُغة كل دابة.": "Allah taught me the speech of birds, so I understood the language of every creature.",
+  "سخَّر الله لي الجِنّ يَعملون لي ما أشاء من المحاريب والقدور.": "Allah made the jinn subservient to me, building whatever I wished of sanctuaries and cauldrons.",
+  "سَخَّر الله لي الريح، تجري بأمري حيثُ شئتُ، شهراً غُدوَّاً وشهراً رواحاً.": "Allah made the wind subservient to me, running by my command wherever I wished — a month's travel by morning and a month by evening.",
+  "جاءني الهدهد بنبأ ملكة سبأ، فأرسلتُ إليها كتاباً فأَسلَمتْ معي لله.": "The hoopoe brought me news of the Queen of Sheba; I sent her a letter and she submitted to Allah with me.",
+  "سليمان ابن داود، نبيٌّ ومَلِك، آتاه الله مُلكاً لم يُؤتَه أحدٌ من بعده.": "Sulayman son of Dawud, a prophet and king; Allah gave him a kingdom granted to no one after him.",
+  "ابتلاني الله بمرضٍ شديد في جسدي سنواتٍ طويلة، فصبرتُ على بَلائه.": "Allah tested me with a severe illness in my body for many years, and I was patient with His trial.",
+  "فقدتُ مالي وأبنائي وصحَّتي، ولم أَشكُ إلا إلى ربي.": "I lost my wealth, my children, and my health, and I complained only to my Lord.",
+  "قال الله عنّي: «نِعمَ العبدُ إنّه أوَّاب».": "Allah said of me: «What an excellent servant — he was ever returning to Allah».",
+  "ضربتُ الأرضَ برِجلي فنبَع ماءٌ بارد، فاغتسلتُ به فعافاني الله.": "I struck the ground with my foot and cool water gushed out; I bathed in it and Allah healed me.",
+  "أيوب عليه السلام مَضرِبُ المثل في الصبر على البلاء. أعاد الله إليه أهلَه ومالَه أضعافاً.": "Ayyub (peace be upon him) is the very example of patience in trial. Allah restored his family and wealth to him many times over.",
+  "وُلِدتُ من غير أبٍ، وأمي مريم العذراء الصدّيقة.": "I was born without a father, and my mother is Maryam, the chaste and truthful.",
+  "تكلَّمتُ في المهد صبياً فقلتُ: «إنّي عبدُ الله».": "I spoke in the cradle as an infant and said: «I am the servant of Allah».",
+  "أُحيي الموتى وأُبرئُ الأَكْمَه والأبرص بإذن الله.": "I revive the dead and heal the blind and the leper by Allah's leave.",
+  "رَفَعَني الله إلى السماء، ولم يَقتلوني ولم يَصلبوني، وسأنزل آخر الزمان.": "Allah raised me to the heaven; they did not kill me nor crucify me, and I will descend at the end of time.",
+  "عيسى بن مريم رسول الله وكلمتُه ألقاها إلى مريم، ومن أُولي العزم من الرسل.": "Isa son of Maryam is a messenger of Allah and His word that He cast to Maryam, and one of the messengers of strong resolve.",
+  "أنا خاتَمُ الأنبياء، لا نبيَّ بعدي.": "I am the seal of the prophets; there is no prophet after me.",
+  "وُلِدتُ في مكة عام الفيل، يَتيماً، ربَّتني حليمة السعدية.": "I was born in Mecca in the Year of the Elephant, an orphan, and Halima as-Sa'diyya nursed me.",
+  "أنزَل الله عليَّ القرآن في غار حراء، وأَوّلُ ما نزل: «اقرأ».": "Allah revealed the Quran to me in the Cave of Hira, and the first to descend was: «Read».",
+  "هاجَرتُ إلى المدينة، وفتحتُ مكة بغير قتال، ودُفِنتُ في المسجد النبوي.": "I migrated to Medina, conquered Mecca without fighting, and was buried in the Prophet's Mosque.",
+  "محمد ﷺ سيّدُ الأنبياء وخاتَمُهم، رحمةُ الله للعالمين. عليه أفضلُ الصلاة والسلام.": "Muhammad ﷺ is the master of the prophets and their seal, Allah's mercy to the worlds. Upon him be the best of blessings and peace."
+});
+</script>
+<script>
+Object.assign(window.PAGE_DICT, {
+  "هود":"Hud","صالح":"Salih","لوط":"Lut","إدريس":"Idris","يعقوب":"Yaqub","إسماعيل":"Ismail","إسحاق":"Ishaq",
+  "داود":"Dawud","زكريّا":"Zakariya","زكريا":"Zakariya","يحيى":"Yahya","هارون":"Harun","شعيب":"Shu'ayb",
+  "إلياس":"Ilyas","اليسع":"Al-Yasa","ذو الكفل":"Dhul-Kifl","إدريس ﷺ":"Idris ﷺ"
+});
+</script>
+<script src="../scripts/i18n.js"></script>
+<script src="../../shared/nav-fix.js"></script>
+</body>
+</html>

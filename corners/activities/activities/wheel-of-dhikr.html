@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>عجلة الأذكار · أنوس</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+
+<link rel="stylesheet" href="../styles/tokens.css" />
+<link rel="stylesheet" href="../styles/dashboard.css" />
+<link rel="stylesheet" href="../styles/wheel.css" />
+</head>
+<body>
+
+<!-- خلفية زخرفية ناعمة -->
+<div class="bg-decor" aria-hidden="true"></div>
+
+<div class="activity-shell">
+
+  <!-- ============================================================
+       شريط التنقل
+       ============================================================ -->
+  <nav class="activity-nav">
+    <a class="back-link" href="../dashboard.html">
+      الرجوع للوحة الأنشطة
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg>
+    </a>
+
+    <div class="activity-crumb">
+      <span>العبادات والإيمان</span>
+      <span class="sep">/</span>
+      <span class="cur">عجلة الأذكار</span>
+    </div>
+
+    <div class="activity-actions">
+      <button class="icon-btn" id="reset-btn" title="إعادة الضبط" aria-label="إعادة الضبط">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M3 12a9 9 0 1 0 3-6.7L3 8"/><path d="M3 3v5h5"/>
+        </svg>
+      </button>
+      <button class="icon-btn" title="مفضلة" aria-label="حفظ كمفضلة">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round"><path d="M12 21s-7-4.6-7-11a5 5 0 0 1 9-3 5 5 0 0 1 9 3c0 6.4-7 11-7 11z" stroke-linecap="round"/></svg>
+      </button>
+      <button class="icon-btn" title="مشاركة" aria-label="مشاركة">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="12" r="3"/><circle cx="18" cy="6" r="3"/><circle cx="18" cy="18" r="3"/><path d="M8.6 13.5l6.8 3M15.4 7.5l-6.8 3"/></svg>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ============================================================
+       التخطيط الرئيسي
+       ============================================================ -->
+  <div class="activity-layout">
+
+    <!-- ========== العجلة ========== -->
+    <section class="wheel-panel">
+      <header class="wheel-header">
+        <span class="activity-tag">Activity 01 · Wheel Logic</span>
+        <h1 class="activity-title">عجلة الأذكار</h1>
+        <p class="activity-desc">
+          أدِر العجلة، واكتشف ذكراً مباركاً تقوله في يومك. كل دورة تُسجَّل لك،
+          واهدف إلى 10 دورات يومياً لتكمل تحدي اليوم وتكسب وساماً.
+        </p>
+      </header>
+
+      <!-- منصة العجلة -->
+      <div class="wheel-stage">
+        <!-- المؤشر -->
+        <svg class="wheel-pointer" viewBox="0 0 36 48" aria-hidden="true">
+          <path d="M18 48 L4 14 Q4 4 18 4 Q32 4 32 14 Z" fill="#1F2540"/>
+          <circle cx="18" cy="14" r="4" fill="#FBF6EC"/>
+        </svg>
+
+        <!-- العجلة (Canvas) -->
+        <canvas id="wheel" class="wheel-canvas" width="500" height="500"></canvas>
+
+        <!-- زر التدوير في المركز -->
+        <button id="spin-btn" class="spin-button" aria-label="أدر العجلة">
+          <span class="label-idle">أدِر العجلة</span>
+          <span class="label-spinning">جارٍ الدوران…</span>
+        </button>
+      </div>
+
+      <!-- شريط التحكم السفلي -->
+      <div class="wheel-controls">
+        <div class="wheel-stat">
+          إجمالي الدورات
+          <strong id="stat-total">0</strong>
+        </div>
+        <div class="wheel-stat" style="text-align:center;">
+          دورات اليوم
+          <strong id="stat-today">0</strong>
+        </div>
+        <button class="wheel-mute-toggle" id="mute-btn" aria-pressed="false">
+          <span class="mute-icon"></span>
+          <span class="mute-label">كتم الصوت</span>
+        </button>
+      </div>
+    </section>
+
+    <!-- ========== اللوحة الجانبية ========== -->
+    <aside class="side-panel">
+
+      <!-- تقدم اليوم -->
+      <div class="panel-card">
+        <div class="panel-head">
+          <h3>تحدي اليوم</h3>
+          <span class="pill"><span id="session-count">0/10</span></span>
+        </div>
+        <div class="session-progress">
+          <div class="session-progress-top">
+            <span>أكمل 10 أذكار اليوم</span>
+            <span>+1 وسام</span>
+          </div>
+          <div class="session-bar"><span id="session-bar" style="width:0%"></span></div>
+        </div>
+        <div class="tip-card">
+          <span class="tip-icon">!</span>
+          <span>اضغط على <strong>زر المسافة</strong> من لوحة المفاتيح لإدارة العجلة بسرعة. كل دورة تَنفعك ولو نسيتها أحياناً، فقد قال النبي ﷺ: «أحبّ الأعمال إلى الله أدوَمها وإن قلّ».</span>
+        </div>
+      </div>
+
+      <!-- قائمة الأذكار -->
+      <div class="panel-card">
+        <div class="panel-head">
+          <h3>الأذكار الثمانية</h3>
+          <span class="pill">8 أذكار</span>
+        </div>
+        <div class="dhikr-list" id="dhikr-list"></div>
+      </div>
+
+      <!-- الأوسمة -->
+      <div class="panel-card">
+        <div class="panel-head">
+          <h3>الأوسمة</h3>
+          <span class="pill" id="badges-pill">0/6</span>
+        </div>
+        <div class="achievements" id="achievements"></div>
+      </div>
+
+    </aside>
+  </div>
+
+</div>
+
+<!-- ============================================================
+     النافذة المنبثقة (نتيجة العجلة)
+     ============================================================ -->
+<div class="modal-backdrop" id="modal-backdrop" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+  <div class="modal">
+    <button class="modal-close" id="modal-close" aria-label="إغلاق">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M6 6l12 12M18 6l-12 12"/></svg>
+    </button>
+
+    <div class="modal-deco" aria-hidden="true">
+      <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M12 2l2.4 6.6L21 9l-5 4.6L17.2 21 12 17.4 6.8 21 8 13.6 3 9l6.6-.4z"/>
+      </svg>
+    </div>
+
+    <div class="modal-eyebrow">ذِكْرُكَ اليوم</div>
+    <h2 class="modal-title" id="modal-title">سُبْحَانَ اللَّهِ</h2>
+    <p class="modal-translit" id="modal-translit">Subḥān Allāh</p>
+
+    <div class="modal-meaning" id="modal-meaning"></div>
+
+    <div class="modal-progress" id="modal-progress"></div>
+
+    <div class="modal-actions">
+      <button class="btn-ghost" id="modal-dismiss">إغلاق</button>
+      <button class="btn-primary" id="modal-again">أدِر مرة أخرى</button>
+    </div>
+  </div>
+</div>
+
+<!-- طبقة الجسيمات -->
+<div class="particles" id="particles" aria-hidden="true"></div>
+
+<!-- ============================================================
+     السكربتات
+     ============================================================ -->
+<script src="../scripts/wheel.js"></script>
+
+<script>
+window.PAGE_DICT = {
+  "عجلة الأذكار": "Wheel of Dhikr",
+  "أدِر العجلة، واكتشف ذكراً مباركاً تقوله في يومك. كل دورة تُسجَّل لك، واهدف إلى 10 دورات يومياً لتكمل تحدي اليوم وتكسب وساماً.": "Spin the wheel and discover a blessed dhikr to say in your day. Every spin is counted — aim for 10 spins a day to finish today's challenge and earn a badge.",
+  "أدِر العجلة": "Spin the wheel",
+  "أدر العجلة": "Spin the wheel",
+  "جارٍ الدوران…": "Spinning…",
+  "إجمالي الدورات": "Total spins",
+  "دورات اليوم": "Today's spins",
+  "تحدي اليوم": "Today's challenge",
+  "أكمل 10 أذكار اليوم": "Complete 10 dhikr today",
+  "+1 وسام": "+1 badge",
+  "اضغط على": "Press the",
+  "زر المسافة": "spacebar",
+  "من لوحة المفاتيح لإدارة العجلة بسرعة. كل دورة تَنفعك ولو نسيتها أحياناً، فقد قال النبي ﷺ: «أحبّ الأعمال إلى الله أدوَمها وإن قلّ».": "on your keyboard to spin the wheel quickly. Every spin benefits you even if you sometimes forget — the Prophet ﷺ said: «The most beloved deeds to Allah are the most constant, even if few».",
+  "الأذكار الثمانية": "The Eight Dhikr",
+  "8 أذكار": "8 dhikr",
+  "الأوسمة": "Badges",
+  "ذِكْرُكَ اليوم": "Your dhikr today",
+  "أدِر مرة أخرى": "Spin again",
+  "مفضلة": "Favorite",
+  "حفظ كمفضلة": "Save as favorite",
+  "مشاركة": "Share"
+};
+</script>
+<script>
+Object.assign(window.PAGE_DICT, {
+  "المعنى": "Meaning",
+  "تنزيهٌ لله عن كل نقص. يُقال 33 مرة بعد الصلاة وهي من أحب الكلام إلى الله.": "Declaring Allah free of every imperfection. Said 33 times after prayer, it is among the most beloved words to Allah.",
+  "الثناء على الله بصفاته الجميلة ونعمه العظيمة. تملأ الميزان كما ورد في الحديث.": "Praising Allah for His beautiful attributes and great blessings. It fills the scale, as mentioned in the hadith.",
+  "الله أعظم من كل شيء. كلمة تُذكِّر الطفل أن الله أكبر من أي مخاوف أو مشاكل.": "Allah is greater than everything. A word that reminds the child that Allah is greater than any fears or problems.",
+  "أعظم كلمة، وهي شهادة التوحيد التي يدخل بها المسلم في دين الإسلام.": "The greatest word — the testimony of monotheism by which a person enters the religion of Islam.",
+  "أطلب من الله أن يغفر لي. كلمة سهلة تُذكِّرك بأن الله يحب التوّابين.": "I ask Allah to forgive me. An easy word that reminds you Allah loves those who repent.",
+  "لا تغيير في حال، ولا قوة على فعل، إلا بالله. كنزٌ من كنوز الجنة.": "There is no change of state, nor power to act, except by Allah. A treasure from the treasures of Paradise.",
+  "دعاء بأن يرفع الله ذكر النبي ﷺ. من صلى عليّ صلى الله عليه عشراً.": "A prayer that Allah elevate the mention of the Prophet ﷺ. Whoever sends blessings upon me once, Allah sends ten upon him.",
+  "الله كافينا، ونِعمَ الذي نُوكِّل إليه أمورنا. تُقال عند الخوف والشدائد.": "Allah is sufficient for us, and the best to whom we entrust our affairs. Said in times of fear and hardship.",
+  "البداية المباركة": "The blessed beginning",
+  "أول دورة": "First spin",
+  "عشرٌ في السباق": "Ten in the race",
+  "10 دورات": "10 spins",
+  "هدف اليوم": "Today's goal",
+  "10 في يوم": "10 in a day",
+  "ثمانية أذكار": "Eight dhikr",
+  "تعرّفت على الكل": "Discovered them all",
+  "نصف المئة": "Half a hundred",
+  "50 دورة": "50 spins",
+  "ذاكر مئوي": "Centurion of dhikr",
+  "100 دورة": "100 spins"
+});
+</script>
+<script src="../scripts/i18n.js"></script>
+<script src="../../shared/nav-fix.js"></script>
+</body>
+</html>

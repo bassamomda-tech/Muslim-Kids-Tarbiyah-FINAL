@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta name="color-scheme" content="dark">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ادعمنا | Support Us</title>
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+<style>
+  :root{ --bg1:#081E36; --bg2:#0E2E4E; --gold:#E8B530; --gold-lt:#F5CC5A; --ink:#FEF5DC; --muted:rgba(254,245,220,.7); --card:rgba(255,255,255,.06); --line:rgba(232,181,48,.28); }
+  *{box-sizing:border-box}
+  body{margin:0;font-family:'Tajawal','Nunito',sans-serif;color:var(--ink);direction:rtl;min-height:100vh;background:
+    radial-gradient(1100px 640px at 80% -8%,rgba(232,181,48,.14),transparent 60%),radial-gradient(800px 500px at 0% 110%,rgba(46,139,87,.13),transparent 55%),linear-gradient(165deg,var(--bg1),var(--bg2))}
+  html[dir="ltr"] body{direction:ltr;font-family:'Nunito','Tajawal',sans-serif}
+  .header{display:flex;align-items:center;justify-content:space-between;padding:1rem 1.4rem;border-bottom:1px solid var(--line)}
+  .back-btn{background:var(--gold);color:#10243d;border:none;border-radius:2rem;padding:.5rem 1.2rem;font-weight:800;text-decoration:none;font-size:.88rem;font-family:inherit}
+  .lang{display:flex;border:1.5px solid var(--line);border-radius:2rem;overflow:hidden}
+  .lang button{background:transparent;border:none;color:var(--ink);font-weight:800;padding:.32rem .85rem;font-size:.8rem;cursor:pointer;font-family:inherit}
+  .lang button.active{background:var(--gold);color:#10243d}
+  .wrap{max-width:840px;margin:0 auto;padding:2rem 1rem 4rem}
+  .hero{text-align:center;margin-bottom:2rem}
+  .hero .ic{font-size:3.4rem}
+  .hero h1{margin:.4rem 0 .3rem;font-size:2.1rem;font-weight:900}
+  .hero p{margin:0 auto;color:var(--muted);max-width:560px;line-height:1.8}
+  .verse{background:var(--card);border:1.5px solid var(--line);border-radius:1.3rem;padding:1.3rem 1.5rem;text-align:center;margin-bottom:2rem;font-size:1.15rem;line-height:2;color:var(--gold-lt);font-weight:700}
+  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:1.1rem}
+  .way{background:var(--card);border:1.5px solid var(--line);border-radius:1.3rem;padding:1.4rem;display:flex;flex-direction:column;gap:.5rem;text-align:center;align-items:center}
+  .way .w-ic{font-size:2.4rem}
+  .way h3{margin:.2rem 0;font-size:1.15rem;font-weight:900}
+  .way p{margin:0;color:var(--muted);font-size:.88rem;line-height:1.6;flex:1}
+  .w-btn{margin-top:.5rem;background:linear-gradient(135deg,var(--gold),#c79518);color:#10243d;border:none;border-radius:1rem;padding:.65rem 1.3rem;font-weight:800;cursor:pointer;font-family:inherit;font-size:.92rem;text-decoration:none;display:inline-block}
+  .w-btn.ghost{background:transparent;border:1.5px solid var(--line);color:var(--gold-lt)}
+  .sponsor{margin-top:2rem;background:linear-gradient(160deg,rgba(232,181,48,.14),rgba(255,255,255,.03));border:1.5px solid var(--line);border-radius:1.4rem;padding:1.6rem;text-align:center}
+  .sponsor h2{margin:.2rem 0 .5rem;color:var(--gold-lt)}
+  .sponsor p{color:var(--muted);max-width:520px;margin:0 auto 1rem;line-height:1.8}
+  .sponsor .tiers{display:flex;gap:.7rem;justify-content:center;flex-wrap:wrap;margin-bottom:1rem}
+  .tier{background:rgba(255,255,255,.05);border:1px solid var(--line);border-radius:1rem;padding:.7rem 1.1rem;font-weight:800}
+  .tier b{display:block;color:var(--gold-lt);font-size:1.2rem}
+  .note{font-family:ui-monospace,monospace;font-size:.74rem;color:#90A4AE;background:rgba(0,0,0,.22);border-radius:.7rem;padding:.5rem .8rem;display:inline-block;margin-top:.3rem}
+  .toast{position:fixed;left:50%;bottom:2rem;transform:translateX(-50%) translateY(140%);background:#0c2238;border:1.5px solid var(--gold);color:var(--ink);font-weight:800;padding:.7rem 1.3rem;border-radius:2rem;transition:transform .3s;z-index:20}
+  .toast.show{transform:translateX(-50%) translateY(0)}
+</style>
+<style id="__antiflash">html{background:#081E36;color-scheme:dark}</style>
+</head>
+<body>
+  <div class="header">
+    <a href="../../index.html" class="back-btn"><span class="lng-ar">↩️ المدينة</span><span class="lng-en">↩️ City</span></a>
+    <div class="lang"><button data-lang="en">EN</button><button data-lang="ar" class="active">عربي</button></div>
+  </div>
+
+  <div class="wrap">
+    <div class="hero">
+      <div class="ic">🤝</div>
+      <h1><span class="lng-ar">ادعَمْنا</span><span class="lng-en">Support Us</span></h1>
+      <p><span class="lng-ar">هذا المشروع صدقةٌ جاريةٌ لتربية جيلٍ مسلمٍ واعٍ. دعمُك — بأيّ صورة — يُبقيه مجّانيًّا ويُنمّيه ليصل إلى كل طفل.</span><span class="lng-en">This project is an ongoing charity for raising an aware Muslim generation. Your support — in any form — keeps it free and helps it reach every child.</span></p>
+    </div>
+
+    <div class="verse">
+      <span class="lng-ar">﴿ مَّن ذَا الَّذِي يُقْرِضُ اللَّهَ قَرْضًا حَسَنًا فَيُضَاعِفَهُ لَهُ أَضْعَافًا كَثِيرَةً ﴾</span>
+      <span class="lng-en">"Who is it that will lend Allah a goodly loan, so He may multiply it for him manifold?"</span>
+    </div>
+
+    <div class="grid">
+      <div class="way">
+        <div class="w-ic">🤲</div>
+        <h3><span class="lng-ar">ادعُ لنا</span><span class="lng-en">Make Du'a</span></h3>
+        <p><span class="lng-ar">أصدقُ دعمٍ دعوةٌ بظهر الغيب أن يبارك الله في هذا العمل ويتقبّله.</span><span class="lng-en">The truest support is a sincere prayer that Allah blesses and accepts this work.</span></p>
+        <button class="w-btn ghost" onclick="dua()"><span class="lng-ar">آمين 🤍</span><span class="lng-en">Ameen 🤍</span></button>
+      </div>
+      <div class="way">
+        <div class="w-ic">📤</div>
+        <h3><span class="lng-ar">انشُر الخير</span><span class="lng-en">Share the Good</span></h3>
+        <p><span class="lng-ar">شارِك الموقع مع أهلك وأصدقائك — «الدالُّ على الخير كفاعله».</span><span class="lng-en">Share the site with family and friends — "the one who guides to good is like its doer."</span></p>
+        <button class="w-btn" onclick="shareSite()"><span class="lng-ar">مشاركة ←</span><span class="lng-en">Share →</span></button>
+      </div>
+      <div class="way">
+        <div class="w-ic">✉️</div>
+        <h3><span class="lng-ar">تواصَل معنا</span><span class="lng-en">Contact Us</span></h3>
+        <p><span class="lng-ar">اقتراح، ملاحظة، أو رغبة في المساهمة بالمحتوى؟ راسِلنا.</span><span class="lng-en">A suggestion, note, or wish to contribute content? Write to us.</span></p>
+        <a class="w-btn ghost" href="mailto:bassamomda91@gmail.com"><span class="lng-ar">راسِلنا ✉️</span><span class="lng-en">Email us ✉️</span></a>
+      </div>
+    </div>
+
+    <div class="sponsor">
+      <h2>💛 <span class="lng-ar">الرعاية والتبرّع</span><span class="lng-en">Sponsor &amp; Donate</span></h2>
+      <p><span class="lng-ar">كُن شريكًا في أجرِ كلِّ طفلٍ يتعلّم. تكفّل بشهر، أو بركنٍ جديد، أو بترجمةِ المحتوى.</span><span class="lng-en">Be a partner in the reward of every child who learns. Sponsor a month, a new corner, or content translation.</span></p>
+      <div class="tiers">
+        <div class="tier"><b>☕</b><span class="lng-ar">داعمٌ صغير</span><span class="lng-en">Small supporter</span></div>
+        <div class="tier"><b>🌱</b><span class="lng-ar">كفالة ركن</span><span class="lng-en">Sponsor a corner</span></div>
+        <div class="tier"><b>🌳</b><span class="lng-ar">راعٍ سنوي</span><span class="lng-en">Annual patron</span></div>
+      </div>
+      <a class="w-btn" id="donateBtn" href="mailto:bassamomda91@gmail.com?subject=Support%20Muslim%20Kids%20Tarbiyah"><span class="lng-ar">أريد أن أتبرّع / أرعى ←</span><span class="lng-en">I want to donate / sponsor →</span></a>
+      <div><span class="note"><span class="lng-ar">ضع هنا رابط التبرّع (PayPal / تحويل) عند توفّره</span><span class="lng-en">Add your donation link (PayPal / transfer) here when ready</span></span></div>
+    </div>
+  </div>
+
+  <div class="toast" id="toast"></div>
+
+<script defer src="mk-system.js"></script>
+<script>
+  var lang=(window.MK&&MK.lang())||'ar';
+  function applyLang(){
+    document.documentElement.lang=lang; document.documentElement.dir=lang==='ar'?'rtl':'ltr';
+    document.querySelectorAll('.lng-ar').forEach(function(e){e.style.display=lang==='ar'?'':'none';});
+    document.querySelectorAll('.lng-en').forEach(function(e){e.style.display=lang==='en'?'':'none';});
+    document.querySelectorAll('.lang button').forEach(function(b){b.classList.toggle('active',b.dataset.lang===lang);});
+  }
+  document.querySelectorAll('.lang button').forEach(function(b){ b.onclick=function(){ lang=b.dataset.lang; try{localStorage.setItem('bunyanLang',lang);}catch(e){} applyLang(); }; });
+  function toast(m){ var t=document.getElementById('toast'); t.textContent=m; t.classList.add('show'); setTimeout(function(){t.classList.remove('show');},2600); }
+  function dua(){ toast(lang==='ar'?'تقبّل الله منك 🤍 جزاك الله خيرًا':'May Allah accept it from you 🤍'); }
+  function shareSite(){
+    var url=location.origin+location.pathname.replace(/corners\/shared\/support\.html$/,'index.html');
+    var data={title: lang==='ar'?'تربية الطفل المسلم':'Muslim Kids\u2019 Tarbiyah', text: lang==='ar'?'منصّة تربوية إسلامية ممتعة للأطفال':'A fun Islamic learning platform for kids', url:url};
+    if(navigator.share){ navigator.share(data).catch(function(){}); }
+    else if(navigator.clipboard){ navigator.clipboard.writeText(url); toast(lang==='ar'?'تم نسخ الرابط ✓':'Link copied ✓'); }
+    else { toast(url); }
+  }
+  applyLang();
+</script>
+<script defer src="nav-fix.js"></script>
+<script src="mk-citynav.js"></script>
+</body>
+</html>

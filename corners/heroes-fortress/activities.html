@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" data-theme="dusk" data-path="rampart">
+<head>
+<meta name="color-scheme" content="dark">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+<title>التحدّيات · حِصن الأبطال</title>
+<meta name="theme-color" content="#0C0A1C">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Tajawal:wght@400;500;700;800;900&family=Amiri:wght@400;700&family=Nunito:wght@600;700;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+<link rel="stylesheet" href="styles/base.css">
+<link rel="stylesheet" href="styles/chapter.css">
+<link rel="stylesheet" href="styles/activities.css">
+<script>(function(){try{var p=JSON.parse(localStorage.getItem('hisn-prefs2')||'{}');var r=document.documentElement;if(p.theme)r.dataset.theme=p.theme;if(p.path)r.dataset.path=p.path;}catch(e){}})();</script>
+<style id="__antiflash">html{background:#0A2540;color-scheme:dark}</style>
+</head>
+<body>
+<div class="stars" id="stars"></div>
+
+<header class="topbar">
+  <a class="tb-back" id="backLink" href="era.html?era=prophets"><span>←</span><span id="backTxt">المرحلة</span></a>
+  <div class="brand">
+    <span class="brand-badge" id="brandBadge"></span>
+    <div><h1 id="brandName">التحدّيات</h1><p class="ar-only">ركنُ التاريخ</p><p class="en-only">History Corner</p></div>
+  </div>
+  <div class="tb-right">
+    <div class="xp-wrap"><div class="xp-top"><span class="lvl" id="lvl">LVL 1</span><span class="xp" id="xp">0 XP</span></div><div class="xp-track"><div class="xp-fill" id="xpfill"></div></div></div>
+    <div class="lang"><button id="langAr" class="on" onclick="setLang('ar')">عربي</button><button id="langEn" onclick="setLang('en')">EN</button></div>
+  </div>
+</header>
+
+<main class="acts-wrap">
+  <div id="hall"></div>
+</main>
+
+<div class="guide" id="guide">
+  <div class="guide-avatar" id="guideAvatar"></div>
+  <div class="guide-bubble"><button class="guide-x" onclick="tuckGuide()">✕</button><b id="guideName">بَطَل</b><p id="guideLine"></p></div>
+</div>
+
+<div id="tweaks-root"></div>
+
+<!-- App scripts (plain JS): download in parallel, execute in dependency order -->
+<script defer src="engine/icons.js"></script>
+<script defer src="engine/svg.js"></script>
+<script defer src="data/index.js"></script>
+<script defer src="data/prophets.js"></script>
+<script defer src="data/seerah.js"></script>
+<script defer src="data/heroes.js"></script>
+<script defer src="data/battles.js"></script>
+<script defer src="data/creativity.js"></script>
+<script defer src="data/heart.js"></script>
+<script defer src="data/activities.js"></script>
+<script defer src="data/activities-seerah.js"></script>
+<script defer src="data/activities-heroes.js"></script>
+<script defer src="data/activities-battles.js"></script>
+<script defer src="data/activities-heart.js"></script>
+<script defer src="data/activities-creativity.js"></script>
+<script defer src="data/rewards.js"></script>
+<script defer src="engine/progress.js"></script>
+<script defer src="engine/activities.js"></script>
+<!-- Tweaks panel is an editing tool — its React+Babel stack loads ONLY when edit mode is activated -->
+<script defer src="engine/tweaks-loader.js"></script>
+<script defer src="../shared/mk-system.js"></script>
+<script defer src="../shared/mk-journeys.js"></script>
+<script defer src="../shared/mk-bag.js"></script>
+<script defer src="../shared/mk-train.js"></script>
+<script defer src="../shared/nav-fix.js"></script>
+</body>
+</html>

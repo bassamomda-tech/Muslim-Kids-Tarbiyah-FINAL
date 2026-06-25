@@ -1,0 +1,110 @@
+/* ============================================================
+   SUDOKU — سودوكو إسلامي (Logical Grid 4×4)
+   ============================================================ */
+
+.sd-panel {
+  background:
+    radial-gradient(140% 80% at 50% 0%, rgba(255,233,168,0.45), transparent 60%),
+    var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--r-2xl);
+  padding: var(--s-8);
+  display: flex; flex-direction: column;
+  box-shadow: var(--shadow-card);
+  position: relative; overflow: hidden;
+}
+.sd-panel .activity-tag { background: var(--butter); color: var(--butter-ink); }
+.sd-panel .activity-tag::before { background: var(--butter-ink); }
+
+.sd-hud { display: flex; gap: var(--s-3); flex-wrap: wrap; margin-bottom: var(--s-5); }
+.sd-hud .hud-block {
+  background: var(--bg-soft); border: 1px solid var(--line);
+  border-radius: var(--r-md); padding: 10px 14px;
+  display: flex; flex-direction: column; gap: 2px;
+  font-size: 11px; color: var(--muted); font-weight: 600; flex: 1; min-width: 84px;
+}
+.sd-hud .hud-block strong { font-size: 20px; color: var(--ink); font-family: var(--font-en); font-weight: 800; }
+
+.sd-stage { flex-grow: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: var(--s-6); }
+
+/* grid */
+.sd-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 4px;
+  background: var(--ink);
+  padding: 6px;
+  border-radius: var(--r-lg);
+  box-shadow: var(--shadow-lg);
+  width: min(380px, 82vw);
+  aspect-ratio: 1;
+}
+.sd-cell {
+  background: var(--surface);
+  border-radius: 6px;
+  display: grid; place-items: center;
+  font-size: clamp(26px, 7vw, 40px);
+  cursor: pointer;
+  position: relative;
+  transition: background 0.14s ease, transform 0.1s ease;
+  user-select: none;
+}
+/* فواصل الصناديق 2×2 */
+.sd-cell[data-c="1"] { margin-left: 3px; }
+.sd-cell[data-r="1"] { margin-top: 3px; }
+.sd-cell.given { background: var(--bg-soft); cursor: default; }
+.sd-cell.given .sym { opacity: 0.95; }
+.sd-cell.sel { background: var(--butter); box-shadow: inset 0 0 0 3px var(--butter-ink); }
+.sd-cell.conflict { background: rgba(232,165,165,0.4); }
+.sd-cell.conflict .sym { animation: sd-buzz 0.4s ease; }
+@keyframes sd-buzz { 0%,100%{transform:scale(1);} 50%{transform:scale(1.18);} }
+.sd-cell .sym { line-height: 1; pointer-events: none; }
+.sd-cell.pop .sym { animation: sd-pop 0.25s ease; }
+@keyframes sd-pop { 0%{transform:scale(0.4);} 70%{transform:scale(1.2);} 100%{transform:scale(1);} }
+
+/* palette */
+.sd-palette { display: flex; gap: var(--s-3); flex-wrap: wrap; justify-content: center; }
+.sd-sbtn {
+  width: 64px; height: 64px; border-radius: var(--r-md);
+  background: var(--surface); border: 2px solid var(--line);
+  display: grid; place-items: center; font-size: 32px;
+  transition: transform 0.12s ease, border-color 0.12s ease;
+  position: relative;
+}
+.sd-sbtn:hover { transform: translateY(-2px); border-color: var(--butter-ink); }
+.sd-sbtn.active { border-color: var(--ink); box-shadow: 0 0 0 3px rgba(255,233,168,0.6); }
+.sd-sbtn.erase { font-size: 22px; color: var(--muted); }
+.sd-sbtn .cnt {
+  position: absolute; top: -7px; left: -7px;
+  width: 22px; height: 22px; border-radius: 50%;
+  background: var(--ink); color: #fff; font-family: var(--font-en);
+  font-size: 11px; font-weight: 800; display: grid; place-items: center;
+}
+.sd-sbtn.full .cnt { background: var(--brand); }
+
+.sd-actions { display: flex; gap: var(--s-3); justify-content: center; }
+.sd-btn {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 11px 20px; border-radius: var(--r-pill);
+  font-weight: 700; font-size: 13px; border: 1px solid var(--line);
+  background: var(--surface); color: var(--ink-2);
+}
+.sd-btn:hover { background: var(--bg-soft); }
+
+/* legend */
+.sd-legend { display: flex; flex-direction: column; gap: 10px; }
+.sd-legend-row { display: flex; align-items: center; gap: 12px; font-size: 14px; font-weight: 700; }
+.sd-legend-row .lg {
+  width: 40px; height: 40px; border-radius: 10px; flex-shrink: 0;
+  background: var(--bg-soft); border: 1px solid var(--line);
+  display: grid; place-items: center; font-size: 24px;
+}
+.sd-legend-row small { display: block; color: var(--muted); font-weight: 500; font-size: 12px; }
+
+.sd-diff { display: flex; gap: 8px; }
+.sd-diff button {
+  flex: 1; padding: 9px; border-radius: var(--r-md);
+  border: 1px solid var(--line); background: var(--bg-soft);
+  font-size: 13px; font-weight: 700; color: var(--ink-2);
+}
+.sd-diff button.active { background: var(--ink); color: #fff; border-color: var(--ink); }

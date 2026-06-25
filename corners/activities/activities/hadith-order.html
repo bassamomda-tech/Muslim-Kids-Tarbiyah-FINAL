@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>ترتيب الحديث الشريف · أنوس</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+
+<link rel="stylesheet" href="../styles/tokens.css" />
+<link rel="stylesheet" href="../styles/dashboard.css" />
+<link rel="stylesheet" href="../styles/wheel.css" />
+<link rel="stylesheet" href="../styles/hadith-order.css" />
+</head>
+<body>
+
+<div class="bg-decor" aria-hidden="true"></div>
+
+<div class="activity-shell">
+
+  <nav class="activity-nav">
+    <a class="back-link" href="../dashboard.html">
+      الرجوع للوحة الأنشطة
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg>
+    </a>
+    <div class="activity-crumb">
+      <span>اللغة والمعرفة</span>
+      <span class="sep">/</span>
+      <span class="cur">ترتيب الحديث الشريف</span>
+    </div>
+    <div class="activity-actions">
+      <button class="icon-btn" id="reset-btn" title="إعادة الضبط" aria-label="إعادة الضبط">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 3-6.7L3 8"/><path d="M3 3v5h5"/></svg>
+      </button>
+    </div>
+  </nav>
+
+  <div class="activity-layout">
+
+    <!-- ============ لوحة الحديث ============ -->
+    <section class="hadith-panel">
+      <header class="wheel-header">
+        <span class="activity-tag">Activity 14 · Sortable List</span>
+        <h1 class="activity-title">ترتيب الحديث الشريف</h1>
+        <p class="activity-desc">
+          كلمات الحديث الشريف اختلطت! اِسحب الكلمات من الحقيبة إلى الشريط المنقَّط
+          بالترتيب الصحيح. ستة أحاديث، كلّها قِصار وسهلة الحفظ.
+        </p>
+      </header>
+
+      <!-- HUD -->
+      <div class="hadith-hud">
+        <div class="hud-block">
+          الحديث
+          <strong><span id="h-idx">1</span><small>/6</small></strong>
+        </div>
+        <div class="hud-block">
+          محاولات
+          <strong id="h-attempts">0</strong>
+        </div>
+        <div class="hud-block">
+          أحاديث مُكتمَلة
+          <strong id="h-done">0</strong>
+        </div>
+        <div class="hud-block">
+          النقاط
+          <strong id="h-points">0</strong>
+        </div>
+      </div>
+
+      <!-- بطاقة الحديث الحالي -->
+      <div class="hadith-prompt">
+        <div class="src">Hadith</div>
+        <div class="topic" id="h-topic">رتِّب كلمات الحديث</div>
+        <div class="meta" id="h-meta">عدد الكلمات: 0</div>
+      </div>
+
+      <!-- صفّ التركيب -->
+      <div class="hadith-track" id="track" aria-label="الترتيب الصحيح"></div>
+
+      <!-- حقيبة الكلمات -->
+      <div class="hadith-bag" id="bag" aria-label="حقيبة الكلمات"></div>
+
+      <!-- أزرار -->
+      <div class="hadith-controls" style="margin-top:var(--s-4);">
+        <button class="h-btn primary" id="check-btn">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5 9-10"/></svg>
+          تحقَّق
+        </button>
+        <button class="h-btn warning" id="hint-btn">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v3M12 19v3M2 12h3M19 12h3"/><circle cx="12" cy="12" r="5"/></svg>
+          ضع كلمةً صحيحة
+        </button>
+        <button class="h-btn" id="shuffle-btn">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M16 3h5v5"/><path d="M4 20L21 3"/><path d="M21 16v5h-5"/><path d="M15 15l6 6"/><path d="M4 4l5 5"/></svg>
+          اخلِط
+        </button>
+        <button class="h-btn" id="clear-btn">
+          إعادة
+        </button>
+      </div>
+
+      <!-- معنى الحديث (يظهر بعد الإنجاز) -->
+      <div class="hadith-meaning" id="meaning">
+        <strong>المعنى:</strong>
+        <span id="meaning-text">…</span>
+      </div>
+
+      <div class="wheel-controls" style="margin-top:var(--s-3);">
+        <div class="wheel-stat">
+          أعلى نقاط
+          <strong id="best">—</strong>
+        </div>
+        <button class="wheel-mute-toggle" id="mute-btn" aria-pressed="false">
+          <span class="mute-icon"></span>
+          <span class="mute-label">كتم الصوت</span>
+        </button>
+      </div>
+    </section>
+
+    <!-- ============ اللوحة الجانبية ============ -->
+    <aside class="side-panel">
+
+      <div class="panel-card">
+        <div class="panel-head">
+          <h3>أحاديث الجولة</h3>
+          <span class="pill" id="round-pill">0/6</span>
+        </div>
+        <div class="hadith-progress" id="progress"></div>
+      </div>
+
+      <div class="panel-card">
+        <div class="panel-head">
+          <h3>كيف ألعب؟</h3>
+        </div>
+        <ol style="margin:0; padding-right:18px; font-size:13px; line-height:1.8; color: var(--ink-2);">
+          <li>اضغط على كلمةٍ في الحقيبة لِنَقلها إلى الشريط (أو اسحَبها).</li>
+          <li>اضغط على كلمةٍ في الشريط لتعيدها للحقيبة.</li>
+          <li>عند انتهاء التركيب، اضغط <strong>تحقَّق</strong>.</li>
+          <li>كلّ محاولةٍ خاطئة تنقص نقطة، فاحرص على التأنّي.</li>
+        </ol>
+      </div>
+
+      <div class="panel-card">
+        <div class="panel-head">
+          <h3>فضل حفظ السنّة</h3>
+        </div>
+        <div class="hadith-card">
+          <div class="quote">«نَضَّر الله امرَأً سَمِع منَّا حديثاً فحَفِظَه حتى يُبلِّغَه»</div>
+          <span class="src">رواه أحمد والترمذي<span class="hadith-grade ok">صحيح</span></span>
+        </div>
+        <div class="tip-card" style="margin-top: var(--s-3);">
+          <span class="tip-icon">!</span>
+          <span>الأحاديث القصيرة سهلة الحفظ. احفظ من كلّ نشاطٍ حديثاً واحداً وعَلِّمهُ لأخيك.</span>
+        </div>
+      </div>
+
+    </aside>
+  </div>
+</div>
+
+<!-- مودال النصر -->
+<div class="modal-backdrop" id="win-modal" role="dialog" aria-modal="true">
+  <div class="modal">
+    <button class="modal-close" data-close aria-label="إغلاق">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M6 6l12 12M18 6l-12 12"/></svg>
+    </button>
+    <div class="modal-deco" aria-hidden="true">
+      <svg width="36" height="36" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.4 6.6L21 9l-5 4.6L17.2 21 12 17.4 6.8 21 8 13.6 3 9l6.6-.4z"/></svg>
+    </div>
+    <div class="modal-eyebrow">سِتُّ أحاديث مُكتمَلة</div>
+    <h2 class="modal-title">أحسنتَ يا حافظ السنّة!</h2>
+    <div class="modal-meaning" style="text-align:right;" id="win-summary">
+      رتّبتَ ستّةَ أحاديث قِصار. حاول أن تحفظ واحداً منها هذه الليلة قبل النوم،
+      وستجده يدور على لسانك أيّاماً.
+    </div>
+    <div class="modal-actions">
+      <button class="btn-ghost" data-close>انتهيت</button>
+      <button class="btn-primary" id="win-replay">جولة جديدة</button>
+    </div>
+  </div>
+</div>
+
+<div class="particles" id="particles" aria-hidden="true"></div>
+
+<script src="../scripts/activity-common.js"></script>
+<script src="../scripts/hadith-order.js"></script>
+
+<script>
+window.PAGE_DICT = {
+  "ترتيب الحديث الشريف": "Order the Hadith",
+  "كلمات الحديث الشريف اختلطت! اِسحب الكلمات من الحقيبة إلى الشريط المنقَّط بالترتيب الصحيح. ستة أحاديث، كلّها قِصار وسهلة الحفظ.": "The words of the hadith are jumbled! Drag the words from the bag onto the dotted track in the correct order. Six hadiths, all short and easy to memorize.",
+  "أحاديث مُكتمَلة": "Hadiths completed",
+  "النقاط": "Points",
+  "رتِّب كلمات الحديث": "Arrange the hadith words",
+  "عدد الكلمات: 0": "Word count: 0",
+  "الترتيب الصحيح": "The correct order",
+  "حقيبة الكلمات": "Word bag",
+  "تحقَّق": "Check",
+  "ضع كلمةً صحيحة": "Place a correct word",
+  "اخلِط": "Shuffle",
+  "إعادة": "Reset",
+  "المعنى:": "Meaning:",
+  "أعلى نقاط": "Best points",
+  "أحاديث الجولة": "Round hadiths",
+  "اضغط على كلمةٍ في الحقيبة لِنَقلها إلى الشريط (أو اسحَبها).": "Tap a word in the bag to move it to the track (or drag it).",
+  "اضغط على كلمةٍ في الشريط لتعيدها للحقيبة.": "Tap a word on the track to return it to the bag.",
+  "عند انتهاء التركيب، اضغط": "When you finish, press",
+  "كلّ محاولةٍ خاطئة تنقص نقطة، فاحرص على التأنّي.": "Each wrong attempt loses a point, so take your time.",
+  "فضل حفظ السنّة": "The virtue of preserving the Sunnah",
+  "رواه أحمد والترمذي": "Narrated by Ahmad & at-Tirmidhi",
+  "الأحاديث القصيرة سهلة الحفظ. احفظ من كلّ نشاطٍ حديثاً واحداً وعَلِّمهُ لأخيك.": "Short hadiths are easy to memorize. From each activity, memorize one hadith and teach it to your brother.",
+  "سِتُّ أحاديث مُكتمَلة": "Six hadiths completed",
+  "أحسنتَ يا حافظ السنّة!": "Well done, keeper of the Sunnah!",
+  "رتّبتَ ستّةَ أحاديث قِصار. حاول أن تحفظ واحداً منها هذه الليلة قبل النوم، وستجده يدور على لسانك أيّاماً.": "You ordered six short hadiths. Try to memorize one of them tonight before sleep, and you'll find it on your tongue for days."
+};
+</script>
+<script>
+Object.assign(window.PAGE_DICT, {
+  "النِّيّة":"Intention","الكلمةُ الطيِّبة":"The kind word","الابتسامة":"The smile","الغِشّ":"Cheating",
+  "حُبُّ الخير":"Loving good for others","أحبُّ الأعمال":"The most beloved deeds","حُسن الخلق":"Good character","الجمال":"Beauty",
+  "الحياء":"Modesty","بِرّ الأمّ":"Honoring the mother","النظافة":"Cleanliness","المسلم الحقّ":"The true Muslim","السلام":"Peace",
+  "رواه النسائي وغيره":"Narrated by an-Nasa'i and others",
+  "كلُّ عملٍ نقومُ به يُكتَب لنا بحسب نيَّتنا. فإذا نويتَ الخير كُتب لك خير، ولو لم تستطعْ فِعلَه.":"Every deed we do is recorded for us according to our intention. If you intend good, good is written for you, even if you couldn't do it.",
+  "كلُّ كلمةٍ جميلةٍ تقولها لأمّك أو صديقك أو معلّمك تُكتب لك صدقة، مثل التي تتصدّق بها بالمال.":"Every kind word you say to your mother, friend, or teacher is recorded as a charity for you, like giving charity with money.",
+  "ابتسامتُك أمام أخيك المسلم صدقةٌ يُكتَب لك بها أَجر. الإسلام دين البِشر والمرح.":"Your smile before your Muslim brother is a charity for which you are rewarded. Islam is a religion of cheerfulness.",
+  "الذي يغُشّ غيره — في البيع أو الاختبار أو غيرها — فعمَلُهُ ليس من أخلاق المسلمين الصالحين.":"Whoever cheats others — in selling, in a test, or otherwise — his act is not of the character of righteous Muslims.",
+  "الإيمان الكامل أن تُحبّ الخير لأخيك المسلم مثل ما تحبّه لنفسك تماماً، لا أقلّ.":"Complete faith is to love good for your Muslim brother exactly as you love it for yourself, no less.",
+  "العمل الصالح القليل الذي تواظب عليه كلّ يوم، أحبُّ إلى الله من العمل الكثير الذي تتركه بعد يومين.":"A small good deed you keep up every day is more beloved to Allah than a large one you abandon after two days.",
+  "الله جميلٌ في ذاته وأفعاله، وهو يُحبّ من عبده أن يكون نظيفاً جميل المظهر والخُلُق.":"Allah is beautiful in His essence and actions, and He loves His servant to be clean and beautiful in appearance and character.",
+  "الحياء — أي الخجل من فِعل القبيح — جزءٌ مهمّ من إيمان المسلم. والحياء يَجعل صاحبه يبتعد عن الكلام السيّئ.":"Modesty — shyness from doing what is shameful — is an important part of a Muslim's faith. It keeps its owner away from bad speech.",
+  "خِدمة الأم وطاعتها وإسعادها سببٌ مباشر لدخول الجنة. لذلك لا تَغضب أمّك يوماً.":"Serving, obeying, and pleasing your mother is a direct cause for entering Paradise. So never anger your mother.",
+  "الوضوء والنظافة والاهتمام بطهارة الجسد والملابس نِصفُ الإيمان عند الله.":"Wudu, cleanliness, and caring for the purity of body and clothes is half of faith with Allah.",
+  "المسلم الحقيقي هو الذي لا يؤذي إخوته المسلمين، لا بكلامٍ سيّء ولا بِفعلٍ سيّء.":"The true Muslim is the one who does not harm his fellow Muslims, neither with bad words nor bad deeds.",
+  "إذا انتشرت تحيّة «السلام عليكم» بين الناس، انتشر الحبّ والأمان. ابدأ بالسلام مع كل مَن تلقاه.":"When the greeting «as-salamu alaykum» spreads among people, love and security spread. Greet first everyone you meet."
+});
+</script>
+<script src="../scripts/i18n.js"></script>
+<script src="../../shared/nav-fix.js"></script>
+</body>
+</html>

@@ -1,0 +1,799 @@
+{
+  "style": "Style: warm, friendly modern flat-vector children's-storybook illustration with rounded shapes, soft shadows and wonder. Palette: deep navy #0A2540, gold #D4A017, royal purple #8E44AD and teal #1A9B7B on a cream #FEF5DC background. Any human characters are faceless and modestly dressed; never depict a prophet or sacred figure. High-resolution, clean and print-ready with generous margins. Render any Arabic text exactly as written and clearly legible.",
+  "lineStyle": "Pure crisp BLACK outlines on a WHITE background, no colour and no grey shading, bold clean lines, large simple areas for a child to colour. Any human characters are faceless and modest; never depict a prophet or sacred figure. Print-ready A4.",
+  "items": [
+    {
+      "page": 1,
+      "station": "—",
+      "kind": {
+        "ar": "الغلاف",
+        "en": "Cover"
+      },
+      "ic": "📕",
+      "slot": "slot-cover",
+      "titleAr": "عجائب الخلق",
+      "titleEn": "Wonders of Creation",
+      "prompt": "A beautiful children's-book COVER «عجائب الخلق» (Wonders of Creation): a wonder-filled collage of a honeybee, a woodpecker, a camel, a penguin and stars around a glowing minaret of light. Joyful and magical. Style: warm, friendly modern flat-vector children's-storybook illustration with rounded shapes, soft shadows and wonder. Palette: deep navy #0A2540, gold #D4A017, royal purple #8E44AD and teal #1A9B7B on a cream #FEF5DC background. Any human characters are faceless and modestly dressed; never depict a prophet or sacred figure. High-resolution, clean and print-ready with generous margins. Render any Arabic text exactly as written and clearly legible."
+    },
+    {
+      "page": 2,
+      "station": 1,
+      "kind": {
+        "ar": "قصة",
+        "en": "Story scene"
+      },
+      "ic": "📖",
+      "slot": "slot-dna-scene",
+      "titleAr": "الشِّفرةُ السِّرّيّة — الحَمضُ النَّوَوي",
+      "titleEn": "The Secret Code — Your DNA",
+      "prompt": "A warm children's-storybook illustration about the wonders of Allah's creation. Scene «الشِّفرةُ السِّرّيّة — الحَمضُ النَّوَوي» (The Secret Code — Your DNA). Show Your DNA inside a glowing, friendly living cell as the joyful hero of the page, full of wonder. Portrait composition with calm space at the top for a title. Style: warm, friendly modern flat-vector children's-storybook illustration with rounded shapes, soft shadows and wonder. Palette: deep navy #0A2540, gold #D4A017, royal purple #8E44AD and teal #1A9B7B on a cream #FEF5DC background. Any human characters are faceless and modestly dressed; never depict a prophet or sacred figure. High-resolution, clean and print-ready with generous margins. Render any Arabic text exactly as written and clearly legible."
+    },
+    {
+      "page": 3,
+      "station": 1,
+      "kind": {
+        "ar": "نشاط · متاهة",
+        "en": "Activity · Maze"
+      },
+      "ic": "🧩",
+      "slot": "slot-dna-puz",
+      "titleAr": "الشِّفرةُ السِّرّيّة — الحَمضُ النَّوَوي",
+      "titleEn": "The Secret Code — Your DNA",
+      "prompt": "A printable children's MAZE themed around Your DNA, with a clear START and FINISH and Your DNA at the goal. Add the Arabic instruction «ابدأ من هنا وصِل إلى النهاية». Pure crisp BLACK outlines on a WHITE background, no colour and no grey shading, bold clean lines, large simple areas for a child to colour. Any human characters are faceless and modest; never depict a prophet or sacred figure. Print-ready A4."
+    },
+    {
+      "page": 4,
+      "station": 1,
+      "kind": {
+        "ar": "تلوين",
+        "en": "Coloring"
+      },
+      "ic": "🖍️",
+      "slot": "slot-dna-color",
+      "titleAr": "الشِّفرةُ السِّرّيّة — الحَمضُ النَّوَوي",
+      "titleEn": "The Secret Code — Your DNA",
+      "prompt": "A full-page COLORING line-art of Your DNA inside a glowing, friendly living cell, for children to colour, with a decorative border and the Arabic title «الشِّفرةُ السِّرّيّة — الحَمضُ النَّوَوي» in a clean outline font at the top. Pure crisp BLACK outlines on a WHITE background, no colour and no grey shading, bold clean lines, large simple areas for a child to colour. Any human characters are faceless and modest; never depict a prophet or sacred figure. Print-ready A4."
+    },
+    {
+      "page": 5,
+      "station": 2,
+      "kind": {
+        "ar": "قصة",
+        "en": "Story scene"
+      },
+      "ic": "📖",
+      "slot": "slot-woodpecker-scene",
+      "titleAr": "خُوذةُ الأمان — نَقّارُ الخَشَب",
+      "titleEn": "The Safety Helmet — The Woodpecker",
+      "prompt": "A warm children's-storybook illustration about the wonders of Allah's creation. Scene «خُوذةُ الأمان — نَقّارُ الخَشَب» (The Safety Helmet — The Woodpecker). Show The Woodpecker in a sunny green forest on a tree trunk as the joyful hero of the page, full of wonder. Portrait composition with calm space at the top for a title. Style: warm, friendly modern flat-vector children's-storybook illustration with rounded shapes, soft shadows and wonder. Palette: deep navy #0A2540, gold #D4A017, royal purple #8E44AD and teal #1A9B7B on a cream #FEF5DC background. Any human characters are faceless and modestly dressed; never depict a prophet or sacred figure. High-resolution, clean and print-ready with generous margins. Render any Arabic text exactly as written and clearly legible."
+    },
+    {
+      "page": 6,
+      "station": 2,
+      "kind": {
+        "ar": "نشاط · اكتشف الفروق",
+        "en": "Activity · Find the 8 differences"
+      },
+      "ic": "🧩",
+      "slot": "slot-woodpecker-puz",
+      "titleAr": "خُوذةُ الأمان — نَقّارُ الخَشَب",
+      "titleEn": "The Safety Helmet — The Woodpecker",
+      "prompt": "A printable FIND-THE-DIFFERENCE puzzle: two nearly identical friendly pictures of The Woodpecker in a sunny green forest on a tree trunk with exactly 8 small differences and a row of 8 circles to tick. Arabic title «اكتشف الفروق». Style: warm, friendly modern flat-vector children's-storybook illustration with rounded shapes, soft shadows and wonder. Palette: deep navy #0A2540, gold #D4A017, royal purple #8E44AD and teal #1A9B7B on a cream #FEF5DC background. Any human characters are faceless and modestly dressed; never depict a prophet or sacred figure. High-resolution, clean and print-ready with generous margins. Render any Arabic text exactly as written and clearly legible."
+    },
+    {
+      "page": 7,
+      "station": 2,
+      "kind": {
+        "ar": "تلوين",
+        "en": "Coloring"
+      },
+      "ic": "🖍️",
+      "slot": "slot-woodpecker-color",
+      "titleAr": "خُوذةُ الأمان — نَقّارُ الخَشَب",
+      "titleEn": "The Safety Helmet — The Woodpecker",
+      "prompt": "A full-page COLORING line-art of The Woodpecker in a sunny green forest on a tree trunk, for children to colour, with a decorative border and the Arabic title «خُوذةُ الأمان — نَقّارُ الخَشَب» in a clean outline font at the top. Pure crisp BLACK outlines on a WHITE background, no colour and no grey shading, bold clean lines, large simple areas for a child to colour. Any human characters are faceless and modest; never depict a prophet or sacred figure. Print-ready A4."
+    },
+    {
+      "page": 8,
+      "station": 3,
+      "kind": {
+        "ar": "قصة",
+        "en": "Story scene"
+      },
+      "ic": "📖",
+      "slot": "slot-bat-scene",
+      "titleAr": "الرُّؤيةُ بِالصَّوت — الخُفّاش",
+      "titleEn": "Seeing with Sound — The Bat",
+      "prompt": "A warm children's-storybook illustration about the wonders of Allah's creation. Scene «الرُّؤيةُ بِالصَّوت — الخُفّاش» (Seeing with Sound — The Bat). Show The Bat flying through a starry night sky as the joyful hero of the page, full of wonder. Portrait composition with calm space at the top for a title. Style: warm, friendly modern flat-vector children's-storybook illustration with rounded shapes, soft shadows and wonder. Palette: deep navy #0A2540, gold #D4A017, royal purple #8E44AD and teal #1A9B7B on a cream #FEF5DC background. Any human characters are faceless and modestly dressed; never depict a prophet or sacred figure. High-resolution, clean and print-ready with generous margins. Render any Arabic text exactly as written and clearly legible."
+    },
+    {
+      "page": 9,
+      "station": 3,
+      "kind": {
+        "ar": "نشاط · صِل النقاط",
+        "en": "Activity · Connect the dots"
+      },
+      "ic": "🧩",
+      "slot": "slot-bat-puz",
+      "titleAr": "الرُّؤيةُ بِالصَّوت — الخُفّاش",
+      "titleEn": "Seeing with Sound — The Bat",
+      "prompt": "A printable DOT-TO-DOT that reveals The Bat when connected, numbered with Eastern-Arabic numerals ١ ٢ ٣ …, with faint guides. Arabic instruction «صِل النقاط». Pure crisp BLACK outlines on a WHITE background, no colour and no grey shading, bold clean lines, large simple areas for a child to colour. Any human characters are faceless and modest; never depict a prophet or sacred figure. Print-ready A4."
+    },
+    {
+      "page": 10,
+      "station": 3,
+      "kind": {
+        "ar": "تلوين",
+        "en": "Coloring"
+      },
+      "ic": "🖍️",
+      "slot": "slot-bat-color",
+      "titleAr": "الرُّؤيةُ بِالصَّوت — الخُفّاش",
+      "titleEn": "Seeing with Sound — The Bat",
+      "prompt": "A full-page COLORING line-art of The Bat flying through a starry night sky, for children to colour, with a decorative border and the Arabic title «الرُّؤيةُ بِالصَّوت — الخُفّاش» in a clean outline font at the top. Pure crisp BLACK outlines on a WHITE background, no colour and no grey shading, bold clean lines, large simple areas for a child to colour. Any human characters are faceless and modest; never depict a prophet or sacred figure. Print-ready A4."
+    },
+    {
+      "page": 11,
+      "station": 4,
+      "kind": {
+        "ar": "قصة",
+        "en": "Story scene"
+      },
+      "ic": "📖",
+      "slot": "slot-penguin-scene",
+      "titleAr": "مِعطَفُ الجَليد — البطريق",
+      "titleEn": "The Ice Coat — The Penguin",
+      "prompt": "A warm children's-storybook illustration about the wonders of Allah's creation. Scene «مِعطَفُ الجَليد — البطريق» (The Ice Coat — The Penguin). Show The Penguin on bright Antarctic ice and snow as the joyful hero of the page, full of wonder. Portrait composition with calm space at the top for a title. Style: warm, friendly modern flat-vector children's-storybook illustration with rounded shapes, soft shadows and wonder. Palette: deep navy #0A2540, gold #D4A017, royal purple #8E44AD and teal #1A9B7B on a cream #FEF5DC background. Any human characters are faceless and modestly dressed; never depict a prophet or sacred figure. High-resolution, clean and print-ready with generous margins. Render any Arabic text exactly as written and clearly legible."
+    },
+    {
+      "page": 12,
+      "station": 4,
+      "kind": {
+        "ar": "نشاط · ابحث وعُدّ",
+        "en": "Activity · Search & count"
+      },
+      "ic": "🧩",
+      "slot": "slot-penguin-puz",
+      "titleAr": "مِعطَفُ الجَليد — البطريق",
+      "titleEn": "The Ice Coat — The Penguin",
+      "prompt": "A printable 'search and count' busy scene full of The Penguin and ice items to find and count, with a small checklist. Arabic title «ابحث وعُدّ». Style: warm, friendly modern flat-vector children's-storybook illustration with rounded shapes, soft shadows and wonder. Palette: deep navy #0A2540, gold #D4A017, royal purple #8E44AD and teal #1A9B7B on a cream #FEF5DC background. Any human characters are faceless and modestly dressed; never depict a prophet or sacred figure. High-resolution, clean and print-ready with generous margins. Render any Arabic text exactly as written and clearly legible."
+    },
+    {
+      "page": 13,
+      "station": 4,
+      "kind": {
+        "ar": "تلوين",
+        "en": "Coloring"
+      },
+      "ic": "🖍️",
+      "slot": "slot-penguin-color",
+      "titleAr": "مِعطَفُ الجَليد — البطريق",
+      "titleEn": "The Ice Coat — The Penguin",
+      "prompt": "A full-page COLORING line-art of The Penguin on bright Antarctic ice and snow, for children to colour, with a decorative border and the Arabic title «مِعطَفُ الجَليد — البطريق» in a clean outline font at the top. Pure crisp BLACK outlines on a WHITE background, no colour and no grey shading, bold clean lines, large simple areas for a child to colour. Any human characters are faceless and modest; never depict a prophet or sacred figure. Print-ready A4."
+    },
+    {
+      "page": 14,
+      "station": 5,
+      "kind": {
+        "ar": "قصة",
+        "en": "Story scene"
+      },
+      "ic": "📖",
+      "slot": "slot-spider-scene",
+      "titleAr": "أقوى مِنَ الفولاذ — العَنكَبوت",
+      "titleEn": "Stronger Than Steel — The Spider",
+      "prompt": "A warm children's-storybook illustration about the wonders of Allah's creation. Scene «أقوى مِنَ الفولاذ — العَنكَبوت» (Stronger Than Steel — The Spider). Show The Spider on a sparkling dew-covered web at dawn as the joyful hero of the page, full of wonder. Portrait composition with calm space at the top for a title. Style: warm, friendly modern flat-vector children's-storybook illustration with rounded shapes, soft shadows and wonder. Palette: deep navy #0A2540, gold #D4A017, royal purple #8E44AD and teal #1A9B7B on a cream #FEF5DC background. Any human characters are faceless and modestly dressed; never depict a prophet or sacred figure. High-resolution, clean and print-ready with generous margins. Render any Arabic text exactly as written and clearly legible."
+    },
+    {
+      "page": 15,
+      "station": 5,
+      "kind": {
+        "ar": "نشاط · متاهة",
+        "en": "Activity · Maze"
+      },
+      "ic": "🧩",
+      "slot": "slot-spider-puz",
+      "titleAr": "أقوى مِنَ الفولاذ — العَنكَبوت",
+      "titleEn": "Stronger Than Steel — The Spider",
+      "prompt": "A printable children's MAZE themed around The Spider, with a clear START and FINISH and The Spider at the goal. Add the Arabic instruction «ابدأ من هنا وصِل إلى النهاية». Pure crisp BLACK outlines on a WHITE background, no colour and no grey shading, bold clean lines, large simple areas for a child to colour. Any human characters are faceless and modest; never depict a prophet or sacred figure. Print-ready A4."
+    },
+    {
+      "page": 16,
+      "station": 5,
+      "kind": {
+        "ar": "تلوين",
+        "en": "Coloring"
+      },
+      "ic": "🖍️",
+      "slot": "slot-spider-color",
+      "titleAr": "أقوى مِنَ الفولاذ — العَنكَبوت",
+      "titleEn": "Stronger Than Steel — The Spider",
+      "prompt": "A full-page COLORING line-art of The Spider on a sparkling dew-covered web at dawn, for children to colour, with a decorative border and the Arabic title «أقوى مِنَ الفولاذ — العَنكَبوت» in a clean outline font at the top. Pure crisp BLACK outlines on a WHITE background, no colour and no grey shading, bold clean lines, large simple areas for a child to colour. Any human characters are faceless and modest; never depict a prophet or sacred figure. Print-ready A4."
+    },
+    {
+      "page": 17,
+      "station": 6,
+      "kind": {
+        "ar": "قصة",
+        "en": "Story scene"
+      },
+      "ic": "📖",
+      "slot": "slot-birds-scene",
+      "titleAr": "جِهازُ التَّوجيهِ السِّرّيّ — الطُّيورُ المُهاجِرة",
+      "titleEn": "The Secret GPS — Migratory Birds",
+      "prompt": "A warm children's-storybook illustration about the wonders of Allah's creation. Scene «جِهازُ التَّوجيهِ السِّرّيّ — الطُّيورُ المُهاجِرة» (The Secret GPS — Migratory Birds). Show Migratory Birds high in an open sky above seas and deserts as the joyful hero of the page, full of wonder. Portrait composition with calm space at the top for a title. Style: warm, friendly modern flat-vector children's-storybook illustration with rounded shapes, soft shadows and wonder. Palette: deep navy #0A2540, gold #D4A017, royal purple #8E44AD and teal #1A9B7B on a cream #FEF5DC background. Any human characters are faceless and modestly dressed; never depict a prophet or sacred figure. High-resolution, clean and print-ready with generous margins. Render any Arabic text exactly as written and clearly legible."
+    },
+    {
+      "page": 18,
+      "station": 6,
+      "kind": {
+        "ar": "نشاط · اكتشف الفروق",
+        "en": "Activity · Find the 8 differences"
+      },
+      "ic": "🧩",
+      "slot": "slot-birds-puz",
+      "titleAr": "جِهازُ التَّوجيهِ السِّرّيّ — الطُّيورُ المُهاجِرة",
+      "titleEn": "The Secret GPS — Migratory Birds",
+      "prompt": "A printable FIND-THE-DIFFERENCE puzzle: two nearly identical friendly pictures of Migratory Birds high in an open sky above seas and deserts with exactly 8 small differences and a row of 8 circles to tick. Arabic title «اكتشف الفروق». Style: warm, friendly modern flat-vector children's-storybook illustration with rounded shapes, soft shadows and wonder. Palette: deep navy #0A2540, gold #D4A017, royal purple #8E44AD and teal #1A9B7B on a cream #FEF5DC background. Any human characters are faceless and modestly dressed; never depict a prophet or sacred figure. High-resolution, clean and print-ready with generous margins. Render any Arabic text exactly as written and clearly legible."
+    },
+    {
+      "page": 19,
+      "station": 6,
+      "kind": {
+        "ar": "تلوين",
+        "en": "Coloring"
+      },
+      "ic": "🖍️",
+      "slot": "slot-birds-color",
+      "titleAr": "جِهازُ التَّوجيهِ السِّرّيّ — الطُّيورُ المُهاجِرة",
+      "titleEn": "The Secret GPS — Migratory Birds",
+      "prompt": "A full-page COLORING line-art of Migratory Birds high in an open sky above seas and deserts, for children to colour, with a decorative border and the Arabic title «جِهازُ التَّوجيهِ السِّرّيّ — الطُّيورُ المُهاجِرة» in a clean outline font at the top. Pure crisp BLACK outlines on a WHITE background, no colour and no grey shading, bold clean lines, large simple areas for a child to colour. Any human characters are faceless and modest; never depict a prophet or sacred figure. Print-ready A4."
+    },
+    {
+      "page": 20,
+      "station": 7,
+      "kind": {
+        "ar": "قصة",
+        "en": "Story scene"
+      },
+      "ic": "📖",
+      "slot": "slot-octopus-scene",
+      "titleAr": "البَدلةُ المُخفِية — الأخطَبوط",
+      "titleEn": "The Invisible Suit — The Octopus",
+      "prompt": "A warm children's-storybook illustration about the wonders of Allah's creation. Scene «البَدلةُ المُخفِية — الأخطَبوط» (The Invisible Suit — The Octopus). Show The Octopus in a colourful coral reef under the sea as the joyful hero of the page, full of wonder. Portrait composition with calm space at the top for a title. Style: warm, friendly modern flat-vector children's-storybook illustration with rounded shapes, soft shadows and wonder. Palette: deep navy #0A2540, gold #D4A017, royal purple #8E44AD and teal #1A9B7B on a cream #FEF5DC background. Any human characters are faceless and modestly dressed; never depict a prophet or sacred figure. High-resolution, clean and print-ready with generous margins. Render any Arabic text exactly as written and clearly legible."
+    },
+    {
+      "page": 21,
+      "station": 7,
+      "kind": {
+        "ar": "نشاط · صِل النقاط",
+        "en": "Activity · Connect the dots"
+      },
+      "ic": "🧩",
+      "slot": "slot-octopus-puz",
+      "titleAr": "البَدلةُ المُخفِية — الأخطَبوط",
+      "titleEn": "The Invisible Suit — The Octopus",
+      "prompt": "A printable DOT-TO-DOT that reveals The Octopus when connected, numbered with Eastern-Arabic numerals ١ ٢ ٣ …, with faint guides. Arabic instruction «صِل النقاط». Pure crisp BLACK outlines on a WHITE background, no colour and no grey shading, bold clean lines, large simple areas for a child to colour. Any human characters are faceless and modest; never depict a prophet or sacred figure. Print-ready A4."
+    },
+    {
+      "page": 22,
+      "station": 7,
+      "kind": {
+        "ar": "تلوين",
+        "en": "Coloring"
+      },
+      "ic": "🖍️",
+      "slot": "slot-octopus-color",
+      "titleAr": "البَدلةُ المُخفِية — الأخطَبوط",
+      "titleEn": "The Invisible Suit — The Octopus",
+      "prompt": "A full-page COLORING line-art of The Octopus in a colourful coral reef under the sea, for children to colour, with a decorative border and the Arabic title «البَدلةُ المُخفِية — الأخطَبوط» in a clean outline font at the top. Pure crisp BLACK outlines on a WHITE background, no colour and no grey shading, bold clean lines, large simple areas for a child to colour. Any human characters are faceless and modest; never depict a prophet or sacred figure. Print-ready A4."
+    },
+    {
+      "page": 23,
+      "station": 8,
+      "kind": {
+        "ar": "قصة",
+        "en": "Story scene"
+      },
+      "ic": "📖",
+      "slot": "slot-camel-scene",
+      "titleAr": "سيّارةُ الصَّحراء — الجَمَل",
+      "titleEn": "The Desert Car — The Camel",
+      "prompt": "A warm children's-storybook illustration about the wonders of Allah's creation. Scene «سيّارةُ الصَّحراء — الجَمَل» (The Desert Car — The Camel). Show The Camel in a golden sand desert under a warm sun as the joyful hero of the page, full of wonder. Portrait composition with calm space at the top for a title. Style: warm, friendly modern flat-vector children's-storybook illustration with rounded shapes, soft shadows and wonder. Palette: deep navy #0A2540, gold #D4A017, royal purple #8E44AD and teal #1A9B7B on a cream #FEF5DC background. Any human characters are faceless and modestly dressed; never depict a prophet or sacred figure. High-resolution, clean and print-ready with generous margins. Render any Arabic text exactly as written and clearly legible."
+    },
+    {
+      "page": 24,
+      "station": 8,
+      "kind": {
+        "ar": "نشاط · ابحث وعُدّ",
+        "en": "Activity · Search & count"
+      },
+      "ic": "🧩",
+      "slot": "slot-camel-puz",
+      "titleAr": "سيّارةُ الصَّحراء — الجَمَل",
+      "titleEn": "The Desert Car — The Camel",
+      "prompt": "A printable 'search and count' busy scene full of The Camel and desert items to find and count, with a small checklist. Arabic title «ابحث وعُدّ». Style: warm, friendly modern flat-vector children's-storybook illustration with rounded shapes, soft shadows and wonder. Palette: deep navy #0A2540, gold #D4A017, royal purple #8E44AD and teal #1A9B7B on a cream #FEF5DC background. Any human characters are faceless and modestly dressed; never depict a prophet or sacred figure. High-resolution, clean and print-ready with generous margins. Render any Arabic text exactly as written and clearly legible."
+    },
+    {
+      "page": 25,
+      "station": 8,
+      "kind": {
+        "ar": "تلوين",
+        "en": "Coloring"
+      },
+      "ic": "🖍️",
+      "slot": "slot-camel-color",
+      "titleAr": "سيّارةُ الصَّحراء — الجَمَل",
+      "titleEn": "The Desert Car — The Camel",
+      "prompt": "A full-page COLORING line-art of The Camel in a golden sand desert under a warm sun, for children to colour, with a decorative border and the Arabic title «سيّارةُ الصَّحراء — الجَمَل» in a clean outline font at the top. Pure crisp BLACK outlines on a WHITE background, no colour and no grey shading, bold clean lines, large simple areas for a child to colour. Any human characters are faceless and modest; never depict a prophet or sacred figure. Print-ready A4."
+    },
+    {
+      "page": 26,
+      "station": 9,
+      "kind": {
+        "ar": "قصة",
+        "en": "Story scene"
+      },
+      "ic": "📖",
+      "slot": "slot-beaver-scene",
+      "titleAr": "مُهَندِسُ المياه — القُندُس",
+      "titleEn": "The Water Engineer — The Beaver",
+      "prompt": "A warm children's-storybook illustration about the wonders of Allah's creation. Scene «مُهَندِسُ المياه — القُندُس» (The Water Engineer — The Beaver). Show The Beaver beside a flowing river with a wooden dam as the joyful hero of the page, full of wonder. Portrait composition with calm space at the top for a title. Style: warm, friendly modern flat-vector children's-storybook illustration with rounded shapes, soft shadows and wonder. Palette: deep navy #0A2540, gold #D4A017, royal purple #8E44AD and teal #1A9B7B on a cream #FEF5DC background. Any human characters are faceless and modestly dressed; never depict a prophet or sacred figure. High-resolution, clean and print-ready with generous margins. Render any Arabic text exactly as written and clearly legible."
+    },
+    {
+      "page": 27,
+      "station": 9,
+      "kind": {
+        "ar": "نشاط · متاهة",
+        "en": "Activity · Maze"
+      },
+      "ic": "🧩",
+      "slot": "slot-beaver-puz",
+      "titleAr": "مُهَندِسُ المياه — القُندُس",
+      "titleEn": "The Water Engineer — The Beaver",
+      "prompt": "A printable children's MAZE themed around The Beaver, with a clear START and FINISH and The Beaver at the goal. Add the Arabic instruction «ابدأ من هنا وصِل إلى النهاية». Pure crisp BLACK outlines on a WHITE background, no colour and no grey shading, bold clean lines, large simple areas for a child to colour. Any human characters are faceless and modest; never depict a prophet or sacred figure. Print-ready A4."
+    },
+    {
+      "page": 28,
+      "station": 9,
+      "kind": {
+        "ar": "تلوين",
+        "en": "Coloring"
+      },
+      "ic": "🖍️",
+      "slot": "slot-beaver-color",
+      "titleAr": "مُهَندِسُ المياه — القُندُس",
+      "titleEn": "The Water Engineer — The Beaver",
+      "prompt": "A full-page COLORING line-art of The Beaver beside a flowing river with a wooden dam, for children to colour, with a decorative border and the Arabic title «مُهَندِسُ المياه — القُندُس» in a clean outline font at the top. Pure crisp BLACK outlines on a WHITE background, no colour and no grey shading, bold clean lines, large simple areas for a child to colour. Any human characters are faceless and modest; never depict a prophet or sacred figure. Print-ready A4."
+    },
+    {
+      "page": 29,
+      "station": 10,
+      "kind": {
+        "ar": "قصة",
+        "en": "Story scene"
+      },
+      "ic": "📖",
+      "slot": "slot-bees-scene",
+      "titleAr": "مَصنَعُ السُّداسِيّات — النَّحل",
+      "titleEn": "The Hexagon Factory — The Bees",
+      "prompt": "A warm children's-storybook illustration about the wonders of Allah's creation. Scene «مَصنَعُ السُّداسِيّات — النَّحل» (The Hexagon Factory — The Bees). Show The Bees inside a golden honeycomb of perfect hexagons as the joyful hero of the page, full of wonder. Portrait composition with calm space at the top for a title. Style: warm, friendly modern flat-vector children's-storybook illustration with rounded shapes, soft shadows and wonder. Palette: deep navy #0A2540, gold #D4A017, royal purple #8E44AD and teal #1A9B7B on a cream #FEF5DC background. Any human characters are faceless and modestly dressed; never depict a prophet or sacred figure. High-resolution, clean and print-ready with generous margins. Render any Arabic text exactly as written and clearly legible."
+    },
+    {
+      "page": 30,
+      "station": 10,
+      "kind": {
+        "ar": "نشاط · اكتشف الفروق",
+        "en": "Activity · Find the 8 differences"
+      },
+      "ic": "🧩",
+      "slot": "slot-bees-puz",
+      "titleAr": "مَصنَعُ السُّداسِيّات — النَّحل",
+      "titleEn": "The Hexagon Factory — The Bees",
+      "prompt": "A printable FIND-THE-DIFFERENCE puzzle: two nearly identical friendly pictures of The Bees inside a golden honeycomb of perfect hexagons with exactly 8 small differences and a row of 8 circles to tick. Arabic title «اكتشف الفروق». Style: warm, friendly modern flat-vector children's-storybook illustration with rounded shapes, soft shadows and wonder. Palette: deep navy #0A2540, gold #D4A017, royal purple #8E44AD and teal #1A9B7B on a cream #FEF5DC background. Any human characters are faceless and modestly dressed; never depict a prophet or sacred figure. High-resolution, clean and print-ready with generous margins. Render any Arabic text exactly as written and clearly legible."
+    },
+    {
+      "page": 31,
+      "station": 10,
+      "kind": {
+        "ar": "تلوين",
+        "en": "Coloring"
+      },
+      "ic": "🖍️",
+      "slot": "slot-bees-color",
+      "titleAr": "مَصنَعُ السُّداسِيّات — النَّحل",
+      "titleEn": "The Hexagon Factory — The Bees",
+      "prompt": "A full-page COLORING line-art of The Bees inside a golden honeycomb of perfect hexagons, for children to colour, with a decorative border and the Arabic title «مَصنَعُ السُّداسِيّات — النَّحل» in a clean outline font at the top. Pure crisp BLACK outlines on a WHITE background, no colour and no grey shading, bold clean lines, large simple areas for a child to colour. Any human characters are faceless and modest; never depict a prophet or sacred figure. Print-ready A4."
+    },
+    {
+      "page": 32,
+      "station": 11,
+      "kind": {
+        "ar": "قصة",
+        "en": "Story scene"
+      },
+      "ic": "📖",
+      "slot": "slot-ants-scene",
+      "titleAr": "المدينةُ تَحتَ الأرض — النَّمل",
+      "titleEn": "The Underground City — The Ants",
+      "prompt": "A warm children's-storybook illustration about the wonders of Allah's creation. Scene «المدينةُ تَحتَ الأرض — النَّمل» (The Underground City — The Ants). Show The Ants in a cross-section underground city of tunnels as the joyful hero of the page, full of wonder. Portrait composition with calm space at the top for a title. Style: warm, friendly modern flat-vector children's-storybook illustration with rounded shapes, soft shadows and wonder. Palette: deep navy #0A2540, gold #D4A017, royal purple #8E44AD and teal #1A9B7B on a cream #FEF5DC background. Any human characters are faceless and modestly dressed; never depict a prophet or sacred figure. High-resolution, clean and print-ready with generous margins. Render any Arabic text exactly as written and clearly legible."
+    },
+    {
+      "page": 33,
+      "station": 11,
+      "kind": {
+        "ar": "نشاط · صِل النقاط",
+        "en": "Activity · Connect the dots"
+      },
+      "ic": "🧩",
+      "slot": "slot-ants-puz",
+      "titleAr": "المدينةُ تَحتَ الأرض — النَّمل",
+      "titleEn": "The Underground City — The Ants",
+      "prompt": "A printable DOT-TO-DOT that reveals The Ants when connected, numbered with Eastern-Arabic numerals ١ ٢ ٣ …, with faint guides. Arabic instruction «صِل النقاط». Pure crisp BLACK outlines on a WHITE background, no colour and no grey shading, bold clean lines, large simple areas for a child to colour. Any human characters are faceless and modest; never depict a prophet or sacred figure. Print-ready A4."
+    },
+    {
+      "page": 34,
+      "station": 11,
+      "kind": {
+        "ar": "تلوين",
+        "en": "Coloring"
+      },
+      "ic": "🖍️",
+      "slot": "slot-ants-color",
+      "titleAr": "المدينةُ تَحتَ الأرض — النَّمل",
+      "titleEn": "The Underground City — The Ants",
+      "prompt": "A full-page COLORING line-art of The Ants in a cross-section underground city of tunnels, for children to colour, with a decorative border and the Arabic title «المدينةُ تَحتَ الأرض — النَّمل» in a clean outline font at the top. Pure crisp BLACK outlines on a WHITE background, no colour and no grey shading, bold clean lines, large simple areas for a child to colour. Any human characters are faceless and modest; never depict a prophet or sacred figure. Print-ready A4."
+    },
+    {
+      "page": 35,
+      "station": 12,
+      "kind": {
+        "ar": "قصة",
+        "en": "Story scene"
+      },
+      "ic": "📖",
+      "slot": "slot-immune-scene",
+      "titleAr": "الجَيشُ الصَّغير — جِهازُ المَناعة",
+      "titleEn": "The Tiny Army — The Immune System",
+      "prompt": "A warm children's-storybook illustration about the wonders of Allah's creation. Scene «الجَيشُ الصَّغير — جِهازُ المَناعة» (The Tiny Army — The Immune System). Show The Immune System in a wondrous glowing world inside the human body as the joyful hero of the page, full of wonder. Portrait composition with calm space at the top for a title. Style: warm, friendly modern flat-vector children's-storybook illustration with rounded shapes, soft shadows and wonder. Palette: deep navy #0A2540, gold #D4A017, royal purple #8E44AD and teal #1A9B7B on a cream #FEF5DC background. Any human characters are faceless and modestly dressed; never depict a prophet or sacred figure. High-resolution, clean and print-ready with generous margins. Render any Arabic text exactly as written and clearly legible."
+    },
+    {
+      "page": 36,
+      "station": 12,
+      "kind": {
+        "ar": "نشاط · ابحث وعُدّ",
+        "en": "Activity · Search & count"
+      },
+      "ic": "🧩",
+      "slot": "slot-immune-puz",
+      "titleAr": "الجَيشُ الصَّغير — جِهازُ المَناعة",
+      "titleEn": "The Tiny Army — The Immune System",
+      "prompt": "A printable 'search and count' busy scene full of The Immune System and body items to find and count, with a small checklist. Arabic title «ابحث وعُدّ». Style: warm, friendly modern flat-vector children's-storybook illustration with rounded shapes, soft shadows and wonder. Palette: deep navy #0A2540, gold #D4A017, royal purple #8E44AD and teal #1A9B7B on a cream #FEF5DC background. Any human characters are faceless and modestly dressed; never depict a prophet or sacred figure. High-resolution, clean and print-ready with generous margins. Render any Arabic text exactly as written and clearly legible."
+    },
+    {
+      "page": 37,
+      "station": 12,
+      "kind": {
+        "ar": "تلوين",
+        "en": "Coloring"
+      },
+      "ic": "🖍️",
+      "slot": "slot-immune-color",
+      "titleAr": "الجَيشُ الصَّغير — جِهازُ المَناعة",
+      "titleEn": "The Tiny Army — The Immune System",
+      "prompt": "A full-page COLORING line-art of The Immune System in a wondrous glowing world inside the human body, for children to colour, with a decorative border and the Arabic title «الجَيشُ الصَّغير — جِهازُ المَناعة» in a clean outline font at the top. Pure crisp BLACK outlines on a WHITE background, no colour and no grey shading, bold clean lines, large simple areas for a child to colour. Any human characters are faceless and modest; never depict a prophet or sacred figure. Print-ready A4."
+    },
+    {
+      "page": 38,
+      "station": 13,
+      "kind": {
+        "ar": "قصة",
+        "en": "Story scene"
+      },
+      "ic": "📖",
+      "slot": "slot-sunmoon-scene",
+      "titleAr": "السّاعةُ المُتقَنة — الشَّمسُ والقَمَر",
+      "titleEn": "The Perfect Clock — The Sun & Moon",
+      "prompt": "A warm children's-storybook illustration about the wonders of Allah's creation. Scene «السّاعةُ المُتقَنة — الشَّمسُ والقَمَر» (The Perfect Clock — The Sun & Moon). Show The Sun & Moon among planets and stars in outer space as the joyful hero of the page, full of wonder. Portrait composition with calm space at the top for a title. Style: warm, friendly modern flat-vector children's-storybook illustration with rounded shapes, soft shadows and wonder. Palette: deep navy #0A2540, gold #D4A017, royal purple #8E44AD and teal #1A9B7B on a cream #FEF5DC background. Any human characters are faceless and modestly dressed; never depict a prophet or sacred figure. High-resolution, clean and print-ready with generous margins. Render any Arabic text exactly as written and clearly legible."
+    },
+    {
+      "page": 39,
+      "station": 13,
+      "kind": {
+        "ar": "نشاط · متاهة",
+        "en": "Activity · Maze"
+      },
+      "ic": "🧩",
+      "slot": "slot-sunmoon-puz",
+      "titleAr": "السّاعةُ المُتقَنة — الشَّمسُ والقَمَر",
+      "titleEn": "The Perfect Clock — The Sun & Moon",
+      "prompt": "A printable children's MAZE themed around The Sun & Moon, with a clear START and FINISH and The Sun & Moon at the goal. Add the Arabic instruction «ابدأ من هنا وصِل إلى النهاية». Pure crisp BLACK outlines on a WHITE background, no colour and no grey shading, bold clean lines, large simple areas for a child to colour. Any human characters are faceless and modest; never depict a prophet or sacred figure. Print-ready A4."
+    },
+    {
+      "page": 40,
+      "station": 13,
+      "kind": {
+        "ar": "تلوين",
+        "en": "Coloring"
+      },
+      "ic": "🖍️",
+      "slot": "slot-sunmoon-color",
+      "titleAr": "السّاعةُ المُتقَنة — الشَّمسُ والقَمَر",
+      "titleEn": "The Perfect Clock — The Sun & Moon",
+      "prompt": "A full-page COLORING line-art of The Sun & Moon among planets and stars in outer space, for children to colour, with a decorative border and the Arabic title «السّاعةُ المُتقَنة — الشَّمسُ والقَمَر» in a clean outline font at the top. Pure crisp BLACK outlines on a WHITE background, no colour and no grey shading, bold clean lines, large simple areas for a child to colour. Any human characters are faceless and modest; never depict a prophet or sacred figure. Print-ready A4."
+    },
+    {
+      "page": 41,
+      "station": 14,
+      "kind": {
+        "ar": "قصة",
+        "en": "Story scene"
+      },
+      "ic": "📖",
+      "slot": "slot-water-scene",
+      "titleAr": "توصيلُ السَّحاب — دَورةُ الماء",
+      "titleEn": "The Cloud Delivery — The Water Cycle",
+      "prompt": "A warm children's-storybook illustration about the wonders of Allah's creation. Scene «توصيلُ السَّحاب — دَورةُ الماء» (The Cloud Delivery — The Water Cycle). Show The Water Cycle among soft rain clouds and a rainbow as the joyful hero of the page, full of wonder. Portrait composition with calm space at the top for a title. Style: warm, friendly modern flat-vector children's-storybook illustration with rounded shapes, soft shadows and wonder. Palette: deep navy #0A2540, gold #D4A017, royal purple #8E44AD and teal #1A9B7B on a cream #FEF5DC background. Any human characters are faceless and modestly dressed; never depict a prophet or sacred figure. High-resolution, clean and print-ready with generous margins. Render any Arabic text exactly as written and clearly legible."
+    },
+    {
+      "page": 42,
+      "station": 14,
+      "kind": {
+        "ar": "نشاط · اكتشف الفروق",
+        "en": "Activity · Find the 8 differences"
+      },
+      "ic": "🧩",
+      "slot": "slot-water-puz",
+      "titleAr": "توصيلُ السَّحاب — دَورةُ الماء",
+      "titleEn": "The Cloud Delivery — The Water Cycle",
+      "prompt": "A printable FIND-THE-DIFFERENCE puzzle: two nearly identical friendly pictures of The Water Cycle among soft rain clouds and a rainbow with exactly 8 small differences and a row of 8 circles to tick. Arabic title «اكتشف الفروق». Style: warm, friendly modern flat-vector children's-storybook illustration with rounded shapes, soft shadows and wonder. Palette: deep navy #0A2540, gold #D4A017, royal purple #8E44AD and teal #1A9B7B on a cream #FEF5DC background. Any human characters are faceless and modestly dressed; never depict a prophet or sacred figure. High-resolution, clean and print-ready with generous margins. Render any Arabic text exactly as written and clearly legible."
+    },
+    {
+      "page": 43,
+      "station": 14,
+      "kind": {
+        "ar": "تلوين",
+        "en": "Coloring"
+      },
+      "ic": "🖍️",
+      "slot": "slot-water-color",
+      "titleAr": "توصيلُ السَّحاب — دَورةُ الماء",
+      "titleEn": "The Cloud Delivery — The Water Cycle",
+      "prompt": "A full-page COLORING line-art of The Water Cycle among soft rain clouds and a rainbow, for children to colour, with a decorative border and the Arabic title «توصيلُ السَّحاب — دَورةُ الماء» in a clean outline font at the top. Pure crisp BLACK outlines on a WHITE background, no colour and no grey shading, bold clean lines, large simple areas for a child to colour. Any human characters are faceless and modest; never depict a prophet or sacred figure. Print-ready A4."
+    },
+    {
+      "page": 44,
+      "station": 15,
+      "kind": {
+        "ar": "قصة",
+        "en": "Story scene"
+      },
+      "ic": "📖",
+      "slot": "slot-trees-scene",
+      "titleAr": "المَصنَعُ الأخضَر — الأشجارُ والأُكسِجين",
+      "titleEn": "The Green Factory — Trees & Oxygen",
+      "prompt": "A warm children's-storybook illustration about the wonders of Allah's creation. Scene «المَصنَعُ الأخضَر — الأشجارُ والأُكسِجين» (The Green Factory — Trees & Oxygen). Show Trees & Oxygen in a sunny green forest on a tree trunk as the joyful hero of the page, full of wonder. Portrait composition with calm space at the top for a title. Style: warm, friendly modern flat-vector children's-storybook illustration with rounded shapes, soft shadows and wonder. Palette: deep navy #0A2540, gold #D4A017, royal purple #8E44AD and teal #1A9B7B on a cream #FEF5DC background. Any human characters are faceless and modestly dressed; never depict a prophet or sacred figure. High-resolution, clean and print-ready with generous margins. Render any Arabic text exactly as written and clearly legible."
+    },
+    {
+      "page": 45,
+      "station": 15,
+      "kind": {
+        "ar": "نشاط · صِل النقاط",
+        "en": "Activity · Connect the dots"
+      },
+      "ic": "🧩",
+      "slot": "slot-trees-puz",
+      "titleAr": "المَصنَعُ الأخضَر — الأشجارُ والأُكسِجين",
+      "titleEn": "The Green Factory — Trees & Oxygen",
+      "prompt": "A printable DOT-TO-DOT that reveals Trees & Oxygen when connected, numbered with Eastern-Arabic numerals ١ ٢ ٣ …, with faint guides. Arabic instruction «صِل النقاط». Pure crisp BLACK outlines on a WHITE background, no colour and no grey shading, bold clean lines, large simple areas for a child to colour. Any human characters are faceless and modest; never depict a prophet or sacred figure. Print-ready A4."
+    },
+    {
+      "page": 46,
+      "station": 15,
+      "kind": {
+        "ar": "تلوين",
+        "en": "Coloring"
+      },
+      "ic": "🖍️",
+      "slot": "slot-trees-color",
+      "titleAr": "المَصنَعُ الأخضَر — الأشجارُ والأُكسِجين",
+      "titleEn": "The Green Factory — Trees & Oxygen",
+      "prompt": "A full-page COLORING line-art of Trees & Oxygen in a sunny green forest on a tree trunk, for children to colour, with a decorative border and the Arabic title «المَصنَعُ الأخضَر — الأشجارُ والأُكسِجين» in a clean outline font at the top. Pure crisp BLACK outlines on a WHITE background, no colour and no grey shading, bold clean lines, large simple areas for a child to colour. Any human characters are faceless and modest; never depict a prophet or sacred figure. Print-ready A4."
+    },
+    {
+      "page": 47,
+      "station": 16,
+      "kind": {
+        "ar": "قصة",
+        "en": "Story scene"
+      },
+      "ic": "📖",
+      "slot": "slot-eye-scene",
+      "titleAr": "الكاميرا المُذهِلة — العَين",
+      "titleEn": "The Ultimate Camera — The Eye",
+      "prompt": "A warm children's-storybook illustration about the wonders of Allah's creation. Scene «الكاميرا المُذهِلة — العَين» (The Ultimate Camera — The Eye). Show The Eye in a wondrous glowing world inside the human body as the joyful hero of the page, full of wonder. Portrait composition with calm space at the top for a title. Style: warm, friendly modern flat-vector children's-storybook illustration with rounded shapes, soft shadows and wonder. Palette: deep navy #0A2540, gold #D4A017, royal purple #8E44AD and teal #1A9B7B on a cream #FEF5DC background. Any human characters are faceless and modestly dressed; never depict a prophet or sacred figure. High-resolution, clean and print-ready with generous margins. Render any Arabic text exactly as written and clearly legible."
+    },
+    {
+      "page": 48,
+      "station": 16,
+      "kind": {
+        "ar": "نشاط · ابحث وعُدّ",
+        "en": "Activity · Search & count"
+      },
+      "ic": "🧩",
+      "slot": "slot-eye-puz",
+      "titleAr": "الكاميرا المُذهِلة — العَين",
+      "titleEn": "The Ultimate Camera — The Eye",
+      "prompt": "A printable 'search and count' busy scene full of The Eye and body items to find and count, with a small checklist. Arabic title «ابحث وعُدّ». Style: warm, friendly modern flat-vector children's-storybook illustration with rounded shapes, soft shadows and wonder. Palette: deep navy #0A2540, gold #D4A017, royal purple #8E44AD and teal #1A9B7B on a cream #FEF5DC background. Any human characters are faceless and modestly dressed; never depict a prophet or sacred figure. High-resolution, clean and print-ready with generous margins. Render any Arabic text exactly as written and clearly legible."
+    },
+    {
+      "page": 49,
+      "station": 16,
+      "kind": {
+        "ar": "تلوين",
+        "en": "Coloring"
+      },
+      "ic": "🖍️",
+      "slot": "slot-eye-color",
+      "titleAr": "الكاميرا المُذهِلة — العَين",
+      "titleEn": "The Ultimate Camera — The Eye",
+      "prompt": "A full-page COLORING line-art of The Eye in a wondrous glowing world inside the human body, for children to colour, with a decorative border and the Arabic title «الكاميرا المُذهِلة — العَين» in a clean outline font at the top. Pure crisp BLACK outlines on a WHITE background, no colour and no grey shading, bold clean lines, large simple areas for a child to colour. Any human characters are faceless and modest; never depict a prophet or sacred figure. Print-ready A4."
+    },
+    {
+      "page": 50,
+      "station": 17,
+      "kind": {
+        "ar": "قصة",
+        "en": "Story scene"
+      },
+      "ic": "📖",
+      "slot": "slot-butterfly-scene",
+      "titleAr": "التَّحوُّلُ السِّحريّ — الفَراشة",
+      "titleEn": "The Magical Transformation — The Butterfly",
+      "prompt": "A warm children's-storybook illustration about the wonders of Allah's creation. Scene «التَّحوُّلُ السِّحريّ — الفَراشة» (The Magical Transformation — The Butterfly). Show The Butterfly in its wonderful natural home as the joyful hero of the page, full of wonder. Portrait composition with calm space at the top for a title. Style: warm, friendly modern flat-vector children's-storybook illustration with rounded shapes, soft shadows and wonder. Palette: deep navy #0A2540, gold #D4A017, royal purple #8E44AD and teal #1A9B7B on a cream #FEF5DC background. Any human characters are faceless and modestly dressed; never depict a prophet or sacred figure. High-resolution, clean and print-ready with generous margins. Render any Arabic text exactly as written and clearly legible."
+    },
+    {
+      "page": 51,
+      "station": 17,
+      "kind": {
+        "ar": "نشاط · متاهة",
+        "en": "Activity · Maze"
+      },
+      "ic": "🧩",
+      "slot": "slot-butterfly-puz",
+      "titleAr": "التَّحوُّلُ السِّحريّ — الفَراشة",
+      "titleEn": "The Magical Transformation — The Butterfly",
+      "prompt": "A printable children's MAZE themed around The Butterfly, with a clear START and FINISH and The Butterfly at the goal. Add the Arabic instruction «ابدأ من هنا وصِل إلى النهاية». Pure crisp BLACK outlines on a WHITE background, no colour and no grey shading, bold clean lines, large simple areas for a child to colour. Any human characters are faceless and modest; never depict a prophet or sacred figure. Print-ready A4."
+    },
+    {
+      "page": 52,
+      "station": 17,
+      "kind": {
+        "ar": "تلوين",
+        "en": "Coloring"
+      },
+      "ic": "🖍️",
+      "slot": "slot-butterfly-color",
+      "titleAr": "التَّحوُّلُ السِّحريّ — الفَراشة",
+      "titleEn": "The Magical Transformation — The Butterfly",
+      "prompt": "A full-page COLORING line-art of The Butterfly in its wonderful natural home, for children to colour, with a decorative border and the Arabic title «التَّحوُّلُ السِّحريّ — الفَراشة» in a clean outline font at the top. Pure crisp BLACK outlines on a WHITE background, no colour and no grey shading, bold clean lines, large simple areas for a child to colour. Any human characters are faceless and modest; never depict a prophet or sacred figure. Print-ready A4."
+    },
+    {
+      "page": 53,
+      "station": 18,
+      "kind": {
+        "ar": "قصة",
+        "en": "Story scene"
+      },
+      "ic": "📖",
+      "slot": "slot-seed-scene",
+      "titleAr": "حياةٌ مِن خَشَبٍ ميّت — البِذرة",
+      "titleEn": "Life from Dead Wood — The Seed",
+      "prompt": "A warm children's-storybook illustration about the wonders of Allah's creation. Scene «حياةٌ مِن خَشَبٍ ميّت — البِذرة» (Life from Dead Wood — The Seed). Show The Seed in a cross-section underground city of tunnels as the joyful hero of the page, full of wonder. Portrait composition with calm space at the top for a title. Style: warm, friendly modern flat-vector children's-storybook illustration with rounded shapes, soft shadows and wonder. Palette: deep navy #0A2540, gold #D4A017, royal purple #8E44AD and teal #1A9B7B on a cream #FEF5DC background. Any human characters are faceless and modestly dressed; never depict a prophet or sacred figure. High-resolution, clean and print-ready with generous margins. Render any Arabic text exactly as written and clearly legible."
+    },
+    {
+      "page": 54,
+      "station": 18,
+      "kind": {
+        "ar": "نشاط · اكتشف الفروق",
+        "en": "Activity · Find the 8 differences"
+      },
+      "ic": "🧩",
+      "slot": "slot-seed-puz",
+      "titleAr": "حياةٌ مِن خَشَبٍ ميّت — البِذرة",
+      "titleEn": "Life from Dead Wood — The Seed",
+      "prompt": "A printable FIND-THE-DIFFERENCE puzzle: two nearly identical friendly pictures of The Seed in a cross-section underground city of tunnels with exactly 8 small differences and a row of 8 circles to tick. Arabic title «اكتشف الفروق». Style: warm, friendly modern flat-vector children's-storybook illustration with rounded shapes, soft shadows and wonder. Palette: deep navy #0A2540, gold #D4A017, royal purple #8E44AD and teal #1A9B7B on a cream #FEF5DC background. Any human characters are faceless and modestly dressed; never depict a prophet or sacred figure. High-resolution, clean and print-ready with generous margins. Render any Arabic text exactly as written and clearly legible."
+    },
+    {
+      "page": 55,
+      "station": 18,
+      "kind": {
+        "ar": "تلوين",
+        "en": "Coloring"
+      },
+      "ic": "🖍️",
+      "slot": "slot-seed-color",
+      "titleAr": "حياةٌ مِن خَشَبٍ ميّت — البِذرة",
+      "titleEn": "Life from Dead Wood — The Seed",
+      "prompt": "A full-page COLORING line-art of The Seed in a cross-section underground city of tunnels, for children to colour, with a decorative border and the Arabic title «حياةٌ مِن خَشَبٍ ميّت — البِذرة» in a clean outline font at the top. Pure crisp BLACK outlines on a WHITE background, no colour and no grey shading, bold clean lines, large simple areas for a child to colour. Any human characters are faceless and modest; never depict a prophet or sacred figure. Print-ready A4."
+    },
+    {
+      "page": 56,
+      "station": 19,
+      "kind": {
+        "ar": "قصة",
+        "en": "Story scene"
+      },
+      "ic": "📖",
+      "slot": "slot-blood-scene",
+      "titleAr": "جِدارُ الطَّوارئ — تَخَثُّرُ الدَّم",
+      "titleEn": "The Emergency Wall — Blood Clotting",
+      "prompt": "A warm children's-storybook illustration about the wonders of Allah's creation. Scene «جِدارُ الطَّوارئ — تَخَثُّرُ الدَّم» (The Emergency Wall — Blood Clotting). Show Blood Clotting in a wondrous glowing world inside the human body as the joyful hero of the page, full of wonder. Portrait composition with calm space at the top for a title. Style: warm, friendly modern flat-vector children's-storybook illustration with rounded shapes, soft shadows and wonder. Palette: deep navy #0A2540, gold #D4A017, royal purple #8E44AD and teal #1A9B7B on a cream #FEF5DC background. Any human characters are faceless and modestly dressed; never depict a prophet or sacred figure. High-resolution, clean and print-ready with generous margins. Render any Arabic text exactly as written and clearly legible."
+    },
+    {
+      "page": 57,
+      "station": 19,
+      "kind": {
+        "ar": "نشاط · صِل النقاط",
+        "en": "Activity · Connect the dots"
+      },
+      "ic": "🧩",
+      "slot": "slot-blood-puz",
+      "titleAr": "جِدارُ الطَّوارئ — تَخَثُّرُ الدَّم",
+      "titleEn": "The Emergency Wall — Blood Clotting",
+      "prompt": "A printable DOT-TO-DOT that reveals Blood Clotting when connected, numbered with Eastern-Arabic numerals ١ ٢ ٣ …, with faint guides. Arabic instruction «صِل النقاط». Pure crisp BLACK outlines on a WHITE background, no colour and no grey shading, bold clean lines, large simple areas for a child to colour. Any human characters are faceless and modest; never depict a prophet or sacred figure. Print-ready A4."
+    },
+    {
+      "page": 58,
+      "station": 19,
+      "kind": {
+        "ar": "تلوين",
+        "en": "Coloring"
+      },
+      "ic": "🖍️",
+      "slot": "slot-blood-color",
+      "titleAr": "جِدارُ الطَّوارئ — تَخَثُّرُ الدَّم",
+      "titleEn": "The Emergency Wall — Blood Clotting",
+      "prompt": "A full-page COLORING line-art of Blood Clotting in a wondrous glowing world inside the human body, for children to colour, with a decorative border and the Arabic title «جِدارُ الطَّوارئ — تَخَثُّرُ الدَّم» in a clean outline font at the top. Pure crisp BLACK outlines on a WHITE background, no colour and no grey shading, bold clean lines, large simple areas for a child to colour. Any human characters are faceless and modest; never depict a prophet or sacred figure. Print-ready A4."
+    },
+    {
+      "page": 59,
+      "station": 20,
+      "kind": {
+        "ar": "قصة",
+        "en": "Story scene"
+      },
+      "ic": "📖",
+      "slot": "slot-glowfish-scene",
+      "titleAr": "مَصابيحُ في الظَّلام — أسماكُ الأعماق",
+      "titleEn": "Lanterns in the Dark — Deep-Sea Fish",
+      "prompt": "A warm children's-storybook illustration about the wonders of Allah's creation. Scene «مَصابيحُ في الظَّلام — أسماكُ الأعماق» (Lanterns in the Dark — Deep-Sea Fish). Show Deep-Sea Fish on the dark ocean floor lit by glowing creatures as the joyful hero of the page, full of wonder. Portrait composition with calm space at the top for a title. Style: warm, friendly modern flat-vector children's-storybook illustration with rounded shapes, soft shadows and wonder. Palette: deep navy #0A2540, gold #D4A017, royal purple #8E44AD and teal #1A9B7B on a cream #FEF5DC background. Any human characters are faceless and modestly dressed; never depict a prophet or sacred figure. High-resolution, clean and print-ready with generous margins. Render any Arabic text exactly as written and clearly legible."
+    },
+    {
+      "page": 60,
+      "station": 20,
+      "kind": {
+        "ar": "نشاط · ابحث وعُدّ",
+        "en": "Activity · Search & count"
+      },
+      "ic": "🧩",
+      "slot": "slot-glowfish-puz",
+      "titleAr": "مَصابيحُ في الظَّلام — أسماكُ الأعماق",
+      "titleEn": "Lanterns in the Dark — Deep-Sea Fish",
+      "prompt": "A printable 'search and count' busy scene full of Deep-Sea Fish and deep items to find and count, with a small checklist. Arabic title «ابحث وعُدّ». Style: warm, friendly modern flat-vector children's-storybook illustration with rounded shapes, soft shadows and wonder. Palette: deep navy #0A2540, gold #D4A017, royal purple #8E44AD and teal #1A9B7B on a cream #FEF5DC background. Any human characters are faceless and modestly dressed; never depict a prophet or sacred figure. High-resolution, clean and print-ready with generous margins. Render any Arabic text exactly as written and clearly legible."
+    },
+    {
+      "page": 61,
+      "station": 20,
+      "kind": {
+        "ar": "تلوين",
+        "en": "Coloring"
+      },
+      "ic": "🖍️",
+      "slot": "slot-glowfish-color",
+      "titleAr": "مَصابيحُ في الظَّلام — أسماكُ الأعماق",
+      "titleEn": "Lanterns in the Dark — Deep-Sea Fish",
+      "prompt": "A full-page COLORING line-art of Deep-Sea Fish on the dark ocean floor lit by glowing creatures, for children to colour, with a decorative border and the Arabic title «مَصابيحُ في الظَّلام — أسماكُ الأعماق» in a clean outline font at the top. Pure crisp BLACK outlines on a WHITE background, no colour and no grey shading, bold clean lines, large simple areas for a child to colour. Any human characters are faceless and modest; never depict a prophet or sacred figure. Print-ready A4."
+    }
+  ]
+}

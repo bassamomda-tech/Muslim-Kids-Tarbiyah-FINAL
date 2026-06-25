@@ -1,0 +1,240 @@
+/* ============================================================
+   NASHEED KARAOKE — كاريوكي الأناشيد
+   ============================================================ */
+
+.nk-panel {
+  background:
+    radial-gradient(140% 80% at 50% 0%, rgba(224, 213, 242, 0.32), transparent 60%),
+    var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--r-2xl);
+  padding: var(--s-8);
+  display: flex; flex-direction: column;
+  box-shadow: var(--shadow-card);
+}
+.nk-panel .activity-tag { background: var(--lavender); color: var(--lavender-ink); }
+.nk-panel .activity-tag::before { background: var(--lavender-ink); }
+
+.nk-hud {
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--s-3);
+  margin-bottom: var(--s-4);
+}
+.nk-hud .hud-block {
+  background: var(--bg-soft); border: 1px solid var(--line);
+  border-radius: var(--r-md); padding: 10px 14px;
+  display: flex; flex-direction: column; gap: 2px;
+  font-size: 11px; color: var(--muted); font-weight: 600;
+}
+.nk-hud .hud-block strong {
+  font-size: 20px; color: var(--ink);
+  font-family: var(--font-en); font-weight: 800;
+}
+
+/* Stage */
+.nk-stage {
+  flex-grow: 1;
+  background:
+    radial-gradient(circle at 30% 20%, rgba(224, 213, 242, 0.6), transparent 50%),
+    radial-gradient(circle at 70% 80%, rgba(207, 227, 242, 0.5), transparent 50%),
+    linear-gradient(180deg, #2A2645 0%, #1F2540 100%);
+  border-radius: var(--r-xl);
+  padding: var(--s-8);
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: space-between;
+  gap: var(--s-5);
+  min-height: 420px;
+  position: relative;
+  overflow: hidden;
+  color: #FBF6EC;
+}
+/* Decorative stars in background */
+.nk-stage::before {
+  content: "";
+  position: absolute; inset: 0;
+  background-image:
+    radial-gradient(2px 2px at 12% 18%, #FFE9A8 50%, transparent),
+    radial-gradient(2px 2px at 82% 28%, #FFE9A8 50%, transparent),
+    radial-gradient(1.5px 1.5px at 60% 12%, #FFE9A8 50%, transparent),
+    radial-gradient(1.5px 1.5px at 22% 80%, #FFE9A8 50%, transparent),
+    radial-gradient(2px 2px at 88% 70%, #FFE9A8 50%, transparent);
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+/* Now playing badge */
+.nk-now-playing {
+  font-family: var(--font-en);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  background: rgba(224, 213, 242, 0.2);
+  border: 1px solid rgba(224, 213, 242, 0.4);
+  color: #E0D5F2;
+  padding: 6px 14px;
+  border-radius: var(--r-pill);
+  position: relative; z-index: 1;
+}
+
+.nk-title {
+  margin: 0;
+  font-size: clamp(20px, 2vw, 26px);
+  font-weight: 800;
+  color: #FBF6EC;
+  text-align: center;
+  position: relative; z-index: 1;
+}
+
+/* Three-line lyric stack */
+.nk-lyrics {
+  display: flex; flex-direction: column;
+  align-items: center; gap: var(--s-3);
+  width: 100%;
+  position: relative; z-index: 1;
+}
+.nk-line {
+  text-align: center;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1.6;
+  color: rgba(251, 246, 236, 0.3);
+  transition: color 0.3s ease, transform 0.3s ease;
+  max-width: 90%;
+}
+.nk-line.current {
+  font-size: clamp(22px, 2.4vw, 30px);
+  color: #FBF6EC;
+  font-weight: 800;
+  transform: scale(1.03);
+  text-shadow: 0 2px 16px rgba(224, 213, 242, 0.4);
+}
+.nk-line .word {
+  display: inline-block;
+  padding: 2px 4px;
+  border-radius: 6px;
+  transition: color 0.18s ease, background 0.18s ease;
+}
+.nk-line.current .word.sung {
+  color: #FFE9A8;
+}
+.nk-line.current .word.now {
+  color: #FFE9A8;
+  background: rgba(255, 233, 168, 0.18);
+  animation: nk-pulse 0.6s ease-in-out;
+}
+@keyframes nk-pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+}
+
+/* Progress bar */
+.nk-progress-wrap {
+  width: 100%;
+  display: flex; align-items: center; gap: var(--s-3);
+  position: relative; z-index: 1;
+}
+.nk-progress {
+  flex-grow: 1;
+  height: 6px;
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: var(--r-pill);
+  overflow: hidden;
+}
+.nk-progress > span {
+  display: block; height: 100%;
+  background: linear-gradient(90deg, #E0D5F2 0%, #FFE9A8 100%);
+  border-radius: var(--r-pill);
+  transition: width 0.1s linear;
+}
+.nk-time-text {
+  font-family: var(--font-en);
+  font-size: 13px;
+  font-weight: 700;
+  color: rgba(251, 246, 236, 0.75);
+  min-width: 80px;
+  text-align: center;
+}
+
+/* Controls */
+.nk-controls {
+  display: flex; align-items: center; justify-content: center;
+  gap: var(--s-3);
+  position: relative; z-index: 1;
+}
+.nk-ctrl {
+  width: 44px; height: 44px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #FBF6EC;
+  display: grid; place-items: center;
+  cursor: pointer;
+  transition: background 0.18s ease;
+}
+.nk-ctrl:hover { background: rgba(255, 255, 255, 0.2); }
+.nk-ctrl.play {
+  width: 60px; height: 60px;
+  background: #FBF6EC;
+  color: #1F2540;
+  border-color: #FBF6EC;
+}
+.nk-ctrl.play:hover { background: #FFE9A8; }
+.nk-ctrl.play.playing svg { transform: translateX(0); }
+
+/* speed */
+.nk-speed {
+  display: inline-flex; align-items: center; gap: 4px;
+  padding: 6px 12px;
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: var(--r-pill);
+  font-family: var(--font-en);
+  font-size: 12px;
+  font-weight: 700;
+  color: #FBF6EC;
+  cursor: pointer;
+}
+.nk-speed:hover { background: rgba(255, 255, 255, 0.2); }
+
+/* Nasheed list */
+.nk-list { display: flex; flex-direction: column; gap: 6px; }
+.nk-list-row {
+  padding: 10px 12px;
+  background: var(--bg-soft);
+  border: 1px solid var(--line);
+  border-radius: var(--r-md);
+  cursor: pointer;
+  display: flex; align-items: center; gap: 10px;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--ink-2);
+  transition: background 0.18s ease, border-color 0.18s ease;
+}
+.nk-list-row:hover { background: var(--surface); }
+.nk-list-row.active {
+  background: var(--lavender);
+  color: var(--lavender-ink);
+  border-color: var(--lavender-ink);
+}
+.nk-list-row .nk-num {
+  width: 26px; height: 26px;
+  display: grid; place-items: center;
+  border-radius: 50%;
+  background: var(--surface);
+  font-family: var(--font-en);
+  font-size: 12px;
+  font-weight: 800;
+}
+.nk-list-row.active .nk-num {
+  background: var(--lavender-ink);
+  color: var(--lavender);
+}
+.nk-list-row .nk-info {
+  display: flex; flex-direction: column;
+  gap: 1px;
+}
+.nk-list-row .nk-info small {
+  color: var(--muted);
+  font-weight: 500;
+  font-size: 11px;
+}

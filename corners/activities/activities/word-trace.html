@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>تتبع الكلمات · أنوس</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+
+<link rel="stylesheet" href="../styles/tokens.css" />
+<link rel="stylesheet" href="../styles/dashboard.css" />
+<link rel="stylesheet" href="../styles/wheel.css" />
+<link rel="stylesheet" href="../styles/word-trace.css" />
+</head>
+<body>
+
+<div class="bg-decor" aria-hidden="true"></div>
+
+<div class="activity-shell">
+
+  <nav class="activity-nav">
+    <a class="back-link" href="../dashboard.html">
+      الرجوع للوحة الأنشطة
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg>
+    </a>
+    <div class="activity-crumb">
+      <span>اللغة والمعرفة</span>
+      <span class="sep">/</span>
+      <span class="cur">تتبع الكلمات</span>
+    </div>
+    <div class="activity-actions">
+      <button class="icon-btn" id="reset-btn" title="إعادة الضبط" aria-label="إعادة الضبط">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 3-6.7L3 8"/><path d="M3 3v5h5"/></svg>
+      </button>
+    </div>
+  </nav>
+
+  <div class="activity-layout">
+
+    <!-- ============ لوحة التتبع ============ -->
+    <section class="trace-panel">
+      <header class="wheel-header">
+        <span class="activity-tag">Activity 11 · SVG Path Tracing</span>
+        <h1 class="activity-title">تتبع الكلمات</h1>
+        <p class="activity-desc">
+          ارسم بإصبعك (أو بالفأرة) فوق الحرف أو الكلمة باللون البرتقالي.
+          كلَّما اتَّبعتَ المسار بدقّة، اكتمل تتبُّع الكلمة وانتقلتَ إلى التالية.
+        </p>
+      </header>
+
+      <!-- HUD -->
+      <div class="trace-hud">
+        <div class="hud-block">
+          الحالي
+          <strong><span id="t-idx">1</span><small>/8</small></strong>
+        </div>
+        <div class="hud-block">
+          مكتمَل
+          <strong id="t-done">0</strong>
+        </div>
+        <div class="hud-block">
+          نجوم
+          <strong id="t-stars">0</strong>
+        </div>
+        <div class="hud-block">
+          سَكَتاتٌ خاطئة
+          <strong id="t-slips">0</strong>
+        </div>
+      </div>
+
+      <!-- ساحة الرسم -->
+      <div class="trace-stage">
+        <div class="trace-label" id="trace-label">
+          <span class="badge" id="label-num">1</span>
+          <div>
+            <div id="label-name">حرف</div>
+            <small id="label-sub">اِكتُب فوق الحرف</small>
+          </div>
+        </div>
+
+        <div class="trace-canvas-wrap">
+          <canvas id="guide-canvas" width="600" height="320"></canvas>
+          <canvas id="user-canvas" width="600" height="320"></canvas>
+        </div>
+
+        <div class="trace-progress-ribbon">
+          <span class="label">التغطية</span>
+          <div class="bar"><span id="cov-bar" style="width:0%"></span></div>
+          <span class="pct" id="cov-pct">0%</span>
+        </div>
+      </div>
+
+      <!-- أدوات -->
+      <div class="trace-tools">
+        <button class="t-btn" id="clear-canvas">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6h18M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6"/></svg>
+          مَحْو
+        </button>
+        <button class="t-btn primary" id="check-btn">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5 9-10"/></svg>
+          أَكْمَلتُ
+        </button>
+        <button class="t-btn" id="skip-btn">
+          أَتَخَطَّى
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4l10 8-10 8V4z"/><line x1="19" y1="5" x2="19" y2="19"/></svg>
+        </button>
+
+        <div class="brush-select" style="margin-right: auto;">
+          <span>الفُرشاة:</span>
+          <button class="brush-btn" data-size="14"><span class="dot"></span></button>
+          <button class="brush-btn active" data-size="22"><span class="dot"></span></button>
+          <button class="brush-btn" data-size="32"><span class="dot"></span></button>
+        </div>
+      </div>
+
+      <div class="wheel-controls" style="margin-top:var(--s-3);">
+        <div class="wheel-stat">
+          أعلى نجوم
+          <strong id="best">—</strong>
+        </div>
+        <button class="wheel-mute-toggle" id="mute-btn" aria-pressed="false">
+          <span class="mute-icon"></span>
+          <span class="mute-label">كتم الصوت</span>
+        </button>
+      </div>
+    </section>
+
+    <!-- ============ اللوحة الجانبية ============ -->
+    <aside class="side-panel">
+
+      <div class="panel-card">
+        <div class="panel-head">
+          <h3>الدُّروس الثمانية</h3>
+          <span class="pill" id="lessons-pill">0/8</span>
+        </div>
+        <div class="lessons-list" id="lessons-list"></div>
+      </div>
+
+      <div class="panel-card">
+        <div class="panel-head">
+          <h3>سرّ الكتابة الجميلة</h3>
+        </div>
+        <div class="tip-card">
+          <span class="tip-icon">!</span>
+          <span>اكتب بهدوء، ولا تُسرع. الخطّ الجميل لا يأتي إلا بالتمرين اليومي.
+          وقديماً قيل: «الخطّ الحسن يَزيد الحقَّ وُضوحاً».</span>
+        </div>
+      </div>
+
+      <div class="panel-card">
+        <div class="panel-head">
+          <h3>لِمَ نَتعلَّم الكتابة؟</h3>
+        </div>
+        <div class="hadith-card">
+          <div class="quote">«ن وَالقَلَمِ وَما يَسطُرون»</div>
+          <span class="src">سورة القلم، الآية 1</span>
+        </div>
+      </div>
+
+    </aside>
+  </div>
+</div>
+
+<!-- مودال النصر -->
+<div class="modal-backdrop" id="win-modal" role="dialog" aria-modal="true">
+  <div class="modal">
+    <button class="modal-close" data-close aria-label="إغلاق">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M6 6l12 12M18 6l-12 12"/></svg>
+    </button>
+    <div class="modal-deco" aria-hidden="true">
+      <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/><path d="M2 2l7.586 7.586"/><circle cx="11" cy="11" r="2"/></svg>
+    </div>
+    <div class="modal-eyebrow">دُروسُ التتبُّع</div>
+    <h2 class="modal-title">أحسنتَ يا كاتباً جميلاً!</h2>
+    <div class="modal-meaning" style="text-align:right;" id="win-summary">…</div>
+    <div class="modal-actions">
+      <button class="btn-ghost" data-close>انتهيت</button>
+      <button class="btn-primary" id="win-replay">جولة جديدة</button>
+    </div>
+  </div>
+</div>
+
+<div class="particles" id="particles" aria-hidden="true"></div>
+
+<script src="../scripts/activity-common.js"></script>
+<script src="../scripts/word-trace.js"></script>
+
+<script>
+window.PAGE_DICT = {
+  "تتبع الكلمات": "Word Tracing",
+  "ارسم بإصبعك (أو بالفأرة) فوق الحرف أو الكلمة باللون البرتقالي. كلَّما اتَّبعتَ المسار بدقّة، اكتمل تتبُّع الكلمة وانتقلتَ إلى التالية.": "Draw with your finger (or mouse) over the letter or word in orange. The more accurately you follow the path, the sooner the word is complete and you move to the next.",
+  "الحالي": "Current",
+  "مكتمَل": "Completed",
+  "نجوم": "Stars",
+  "سَكَتاتٌ خاطئة": "Wrong strokes",
+  "حرف": "Letter",
+  "اِكتُب فوق الحرف": "Write over the letter",
+  "التغطية": "Coverage",
+  "مَحْو": "Erase",
+  "أَكْمَلتُ": "I'm done",
+  "أَتَخَطَّى": "Skip",
+  "الفُرشاة:": "Brush:",
+  "أعلى نجوم": "Best stars",
+  "الدُّروس الثمانية": "The eight lessons",
+  "سرّ الكتابة الجميلة": "The secret of beautiful writing",
+  "اكتب بهدوء، ولا تُسرع. الخطّ الجميل لا يأتي إلا بالتمرين اليومي. وقديماً قيل: «الخطّ الحسن يَزيد الحقَّ وُضوحاً».": "Write calmly, don't rush. Beautiful handwriting only comes with daily practice. It was wisely said: «Good handwriting makes the truth clearer».",
+  "لِمَ نَتعلَّم الكتابة؟": "Why do we learn to write?",
+  "سورة القلم، الآية 1": "Surat al-Qalam, verse 1",
+  "دُروسُ التتبُّع": "Tracing lessons",
+  "أحسنتَ يا كاتباً جميلاً!": "Well done, beautiful writer!"
+};
+</script>
+<script src="../scripts/i18n.js"></script>
+<script src="../../shared/nav-fix.js"></script>
+</body>
+</html>

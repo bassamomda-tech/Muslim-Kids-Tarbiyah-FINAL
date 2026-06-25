@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>قدوات أطفال المسلمين — ملصقات الأبطال | Muslim Kids' Role Models</title>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&family=Nunito:wght@400;600;700;800;900&family=Amiri:wght@400;700&display=swap">
+<link rel="stylesheet" href="plan-book.css">
+<style>
+  .poster{padding:0;--pa:#1F8A5B;--tint:#eef5f1}
+  .poster::after{inset:18px;border:3px solid var(--pa);border-radius:14px}
+  .poster .flow{padding:46px 52px 38px;align-items:center;text-align:center;justify-content:flex-start}
+  .pk{display:flex;align-items:center;gap:.6rem;justify-content:center;font-size:.8rem;font-weight:800;letter-spacing:1.2px;color:var(--pa);text-transform:uppercase}
+  .pk .num{background:var(--pa);color:#fff;border-radius:2rem;padding:.12rem .8rem;font-size:.82rem;letter-spacing:0}
+  .pname{font-size:2.7rem;font-weight:900;color:var(--navy);margin:.7rem 0 .15rem;line-height:1.12}
+  .ptitle{font-size:1.02rem;font-weight:700;color:var(--mut);max-width:560px}
+  .medwrap{margin:.9rem 0 .4rem;width:336px;height:336px;display:grid;place-items:center;filter:drop-shadow(0 10px 22px rgba(10,37,64,.16))}
+  .medwrap svg{width:100%;height:100%}
+  .qual .ql{font-size:.9rem;font-weight:800;color:var(--mut);letter-spacing:1.5px;text-transform:uppercase}
+  .qual .qv{font-size:2.9rem;font-weight:900;color:var(--pa);line-height:1.12;margin-top:.1rem}
+  .saying{margin:1rem auto 0;max-width:600px;background:var(--tint);border:1.5px solid var(--pa);border-radius:1rem;padding:.95rem 1.3rem;font-size:1.04rem;line-height:1.85;color:#2a3642;position:relative}
+  .saying .qa{font-family:'Amiri',serif;font-weight:700}
+  .picons{display:flex;gap:1.7rem;justify-content:center;margin-top:auto;padding-top:1.1rem}
+  .picon{display:flex;flex-direction:column;align-items:center;gap:.34rem}
+  .picon .ibx{width:62px;height:62px;border-radius:50%;background:var(--tint);border:1.5px solid var(--pa);display:grid;place-items:center}
+  .picon .ibx svg{width:40px;height:40px}
+  .picon span{font-size:.8rem;font-weight:800;color:var(--navy)}
+  .pbrand{margin-top:.9rem;font-size:.74rem;font-weight:800;color:#9aa6b0;letter-spacing:.5px}
+  .corner-star{position:absolute;width:30px;height:30px;z-index:1}
+  .cs-tl{top:30px;inset-inline-start:30px}.cs-tr{top:30px;inset-inline-end:30px}
+  .cs-bl{bottom:30px;inset-inline-start:30px}.cs-br{bottom:30px;inset-inline-end:30px}
+  /* cover grid */
+  .hcover .flow{padding:54px 50px}
+  .hgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin:1.6rem 0 .4rem;width:100%;max-width:520px}
+  .hgrid .gcell{aspect-ratio:1;background:rgba(255,255,255,.06);border:1.5px solid rgba(212,160,23,.4);border-radius:1rem;padding:.5rem;display:grid;place-items:center}
+  .hgrid .gcell svg{width:100%;height:100%}
+</style>
+</head>
+<body dir="rtl">
+<div class="toolbar">
+  <div class="seg">
+    <button id="segAr" class="on" onclick="setLang('ar')">عربي</button>
+    <button id="segEn" onclick="setLang('en')">EN</button>
+  </div>
+  <button class="prim" onclick="window.print()">🖨️ <span class="ar-only">طباعة / PDF</span><span class="en-only">Print / PDF</span></button>
+</div>
+<div id="book"></div>
+
+<script src="heroes-art.js"></script>
+<script src="heroes-data.js"></script>
+<script>
+var H = window.HEROES, lang = localStorage.getItem('bunyanLang') || 'ar';
+function tx(o){ return o ? (o[lang]||o.ar) : ''; }
+var AR = function(){ return lang==='ar'; };
+function toAr(n){ return AR()? String(n).replace(/[0-9]/g,function(d){return '٠١٢٣٤٥٦٧٨٩'[+d];}) : n; }
+var goldStar = '<svg class="corner-star {c}" viewBox="0 0 32 32"><path d="M16 2 L19.6 12.4 L30.5 12.4 L21.7 19 L25.1 29.4 L16 23 L6.9 29.4 L10.3 19 L1.5 12.4 L12.4 12.4 Z" fill="#C9A227"/></svg>';
+function corners(){ return goldStar.replace('{c}','cs-tl')+goldStar.replace('{c}','cs-tr')+goldStar.replace('{c}','cs-bl')+goldStar.replace('{c}','cs-br'); }
+
+function poster(h, i){
+  var d = h[lang];
+  var icons = h.ic.map(function(k,n){
+    return '<div class="picon"><div class="ibx">'+ART.icon(k, h.c)+'</div><span>'+d.icL[n]+'</span></div>';
+  }).join('');
+  return '<div class="sheet poster" data-screen-label="'+h.id+'" style="--pa:'+h.c+';--tint:'+h.tint+'">'+corners()+
+    '<div class="flow">'+
+      '<div class="pk"><span>'+(AR()?'قدواتُ أطفالِ المسلمين':'Muslim Kids\u2019 Role Models')+'</span><span class="num">'+toAr(i)+' / '+toAr(H.length)+'</span></div>'+
+      '<div class="pname">'+d.name+'</div>'+
+      '<div class="ptitle">'+d.title+'</div>'+
+      '<div class="medwrap">'+ART.emblem(h.key, h.c, h.tint)+'</div>'+
+      '<div class="qual"><div class="ql">'+d.qLabel+'</div><div class="qv">'+d.quality+'</div></div>'+
+      '<div class="saying"><span class="qa">'+d.saying+'</span></div>'+
+      '<div class="picons">'+icons+'</div>'+
+      '<div class="pbrand">'+(AR()?'تربية الطفل المسلم · اقتدِ بهم':'Muslim Kids\u2019 Tarbiyah · Follow their example')+'</div>'+
+    '</div></div>';
+}
+
+function build(){
+  var pages = [];
+
+  /* COVER */
+  pages.push('<div class="sheet cover hcover"><div class="flow">'+
+    '<div class="crest">⭐</div>'+
+    '<div class="ckick">'+(AR()?'تربية الطفل المسلم':'Muslim Kids\u2019 Tarbiyah')+'</div>'+
+    '<h1>'+(AR()?'قدواتُ أطفالِ المسلمين':'Heroes of Islam')+'</h1>'+
+    '<div class="csub">'+(AR()?'أبطالٌ نسيرُ على خُطاهم':'Role models whose footsteps we follow')+'</div>'+
+    '<div class="hgrid">'+H.map(function(h){return '<div class="gcell">'+ART.emblem(h.key,h.c,'#fff')+'</div>';}).join('')+'</div>'+
+    '<div class="cdesc">'+(AR()?'تسعةُ ملصقاتٍ لتعليقها في غرفة طفلك — كلُّ بطلٍ بصفةٍ يقتدي بها، وكلمةٍ خالدةٍ يحفظها. اطبَعْها، علِّقها، وتحدَّثا عنها معًا.':'Nine posters for your child\u2019s wall \u2014 each hero a quality to copy and a timeless saying to remember. Print them, hang them, and talk about them together.')+'</div>'+
+    '<div class="cbadge">'+(AR()?'اطبع على A4 أو A3 · علِّقها في غرفته':'Print on A4 or A3 · hang them in the room')+'</div>'+
+  '</div></div>');
+
+  /* PARENT NOTE */
+  pages.push('<div class="sheet"><div class="flow">'+
+    '<div class="ph"><div class="ph-ic">🧭</div><div class="ph-tx"><div class="ph-k">'+(AR()?'للأهل':'For parents')+'</div><h2>'+(AR()?'كيف تستفيد من الملصقات':'How to use these posters')+'</h2></div></div>'+
+    '<p class="lead">'+(AR()?'الطفلُ يصير ما يراه كلَّ يوم. حين يستيقظ على وجهِ قدوةٍ عظيمة — لا صورةً، بل صفةً وقيمة — تَنغرسُ في قلبه دون درسٍ ولا وعظ.':'A child becomes what he sees daily. When he wakes to a great role model \u2014 not a face, but a quality and a value \u2014 it plants itself in his heart with no lecture needed.')+'</p>'+
+    '<ol class="steps">'+
+      '<li>'+(AR()?'<b>اطبع</b> الملصقات (A4 أو A3 لمظهرٍ أكبر) على ورقٍ سميك.':'<b>Print</b> the posters (A4, or A3 for a bigger feel) on thick paper.')+'</li>'+
+      '<li>'+(AR()?'<b>اختر معه</b> بطلَ هذا الشهر، وعلِّق ملصقَه فوق سريره أو مكتبه.':'<b>Choose together</b> this month\u2019s hero, and hang his poster above the bed or desk.')+'</li>'+
+      '<li>'+(AR()?'<b>تحدَّثا</b> عن صفتِه: «كيف نكونُ صادقين مثل أبي بكر اليوم؟»':'<b>Talk</b> about the quality: \u201cHow can we be truthful like Abū Bakr today?\u201d')+'</li>'+
+      '<li>'+(AR()?'<b>اربِطها</b> بنقاطِ السلوك في الموقع: نقطةٌ كلّما عاش طفلُك صفةَ بطله.':'<b>Link</b> it to the site\u2019s behaviour points: a point whenever your child lives the hero\u2019s quality.')+'</li>'+
+      '<li>'+(AR()?'<b>بدِّل البطل</b> كلَّ شهرٍ ليجمعَ طفلُك صفاتِهم جميعًا.':'<b>Rotate the hero</b> each month so your child gathers all their qualities.')+'</li>'+
+    '</ol>'+
+    '<div class="tip">'+(AR()?'<b>لماذا بلا وجوه؟</b> توقيرًا للصحابةِ الكرام، نُمثّلُ كلَّ بطلٍ برمزٍ وزخرفةٍ تدلُّ على سيرته، فيبقى التركيزُ على القيمةِ لا الصورة.':'<b>Why no faces?</b> Out of respect for the noble companions, each hero is shown by a symbol and ornament from his story \u2014 keeping the focus on the value, not an image.')+'</div>'+
+    '<div class="pfoot"><span class="brand">'+(AR()?'تربية الطفل المسلم · قدوات الأطفال':'Muslim Kids\u2019 Tarbiyah · Role Models')+'</span><span></span></div>'+
+  '</div></div>');
+
+  /* POSTERS */
+  H.forEach(function(h,idx){ pages.push(poster(h, idx+1)); });
+
+  document.getElementById('book').innerHTML = pages.join('');
+}
+
+function setLang(l){
+  lang=l; localStorage.setItem('bunyanLang', l);
+  document.documentElement.lang=l; document.documentElement.dir=l==='ar'?'rtl':'ltr';
+  document.getElementById('segAr').classList.toggle('on', l==='ar');
+  document.getElementById('segEn').classList.toggle('on', l==='en');
+  build();
+}
+setLang(lang);
+</script>
+</body>
+</html>

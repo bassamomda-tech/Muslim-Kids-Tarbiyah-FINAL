@@ -1,0 +1,105 @@
+/* ============================================================
+   ACTIVITIES — البيانات الكاملة لـ 50 نشاطاً
+   كل نشاط: رقم، عنوان، آلية، أيقونة، صعوبة، حالة
+   حالات: featured | normal | done | locked
+   ============================================================ */
+
+const SECTIONS = [
+  {
+    id: "worship",
+    color: "peach",
+    title: "العبادات والإيمان", titleEn: "Worship & Faith",
+    sub: "الأركان، الأذكار، السنن، والقيم الإيمانية", subEn: "Pillars, dhikr, sunnahs & faith values",
+    icon: "1",
+    activities: [
+      { n: 1,  t: "عجلة الأذكار", te: "Wheel of Dhikr",        m: "Wheel Spin Logic",     g: "wheel",    d: 1, status: "featured", href: "activities/wheel-of-dhikr.html" },
+      { n: 2,  t: "ذاكرة الأسماء الحسنى", te: "Memory of the Beautiful Names", m: "Card Flip Engine",     g: "memory",   d: 2, status: "normal", href: "activities/memory-names.html" },
+      { n: 3,  t: "ترتيب الوضوء", te: "Wudu Order",        m: "Drag & Drop API",      g: "wudu",     d: 1, status: "normal", href: "activities/wudu-order.html" },
+      { n: 4,  t: "فرز حلال وحرام", te: "Sort Halal & Haram",      m: "Collision Detection",  g: "sort",     d: 2, status: "normal", href: "activities/sort-halal.html" },
+      { n: 5,  t: "بناء المسجد", te: "Build the Mosque",         m: "Sticker Book Logic",   g: "mosque",   d: 2, status: "normal", href: "activities/build-mosque.html" },
+      { n: 6,  t: "المحقّق الذكي", te: "The Smart Detective",        m: "Coordinates Mapping",  g: "spy",      d: 2, status: "normal", href: "activities/smart-detective.html" },
+      { n: 7,  t: "متاهة الصدق", te: "Honesty Maze",         m: "Canvas Maze Gen",      g: "maze",     d: 3, status: "normal", href: "activities/honesty-maze.html" },
+      { n: 8,  t: "ساعي بريد الجنة", te: "Paradise Postman",     m: "Form Handling",        g: "mail",     d: 1, status: "normal", href: "activities/paradise-post.html" },
+      { n: 9,  t: "من هو النبي؟", te: "Who Is the Prophet?",        m: "Quiz Engine",          g: "quiz",     d: 2, status: "normal", href: "activities/prophet-quiz.html" },
+      { n: 10, t: "تحدي السنن المنسية", te: "Forgotten Sunnahs Challenge",   m: "Hidden Object Logic",  g: "sunnah",   d: 3, status: "normal", href: "activities/hidden-sunnahs.html" },
+    ],
+  },
+  {
+    id: "language",
+    color: "sky",
+    title: "اللغة والمعرفة", titleEn: "Language & Knowledge",
+    sub: "الكلمات، الحروف، الأحاديث والمعلومات", subEn: "Words, letters, hadith & knowledge",
+    icon: "2",
+    activities: [
+      { n: 11, t: "تتبع الكلمات", te: "Word Tracing",         m: "SVG Path Tracing",    g: "trace",       d: 1, status: "normal", href: "activities/word-trace.html" },
+      { n: 12, t: "كلمات متقاطعة مصورة", te: "Picture Crossword",   m: "Grid Logic",          g: "crossword",   d: 2, status: "normal", href: "activities/picture-crossword.html" },
+      { n: 13, t: "شيفرة الأرقام", te: "Number Cipher",         m: "Mapping Logic",       g: "cipher",      d: 2, status: "normal", href: "activities/number-cipher.html" },
+      { n: 14, t: "ترتيب الحديث الشريف", te: "Order the Hadith",   m: "Sortable List",       g: "hadith",      d: 2, status: "normal", href: "activities/hadith-order.html" },
+      { n: 15, t: "شبكة البحث عن الكلمات", te: "Word Search Grid", m: "2D Array Grid",       g: "wordsearch",  d: 2, status: "normal", href: "activities/word-search.html" },
+      { n: 16, t: "ترتيب الحروف المبعثرة", te: "Anagram Letters", m: "Anagram Solver",      g: "anagram",     d: 1, status: "normal", href: "activities/anagram.html" },
+      { n: 17, t: "ألغاز الأدوات", te: "Tool Riddles",        m: "Riddles Engine",      g: "riddle",      d: 3, status: "normal", href: "activities/riddles.html" },
+      { n: 18, t: "الحروف المختبئة", te: "Hidden Letters",      m: "Opacity & Seek",      g: "hidden",      d: 2, status: "normal", href: "activities/hidden-letters.html" },
+      { n: 19, t: "الفوارق الخمسة", te: "Spot the Differences",      m: "Compare & Detect",    g: "diff",        d: 2, status: "normal", href: "activities/spot-differences.html" },
+      { n: 20, t: "اختبار المعلومات السريع", te: "Quick Knowledge Quiz", m: "Timer-based Quiz",   g: "timedquiz",   d: 3, status: "normal", href: "activities/timed-quiz.html" },
+    ],
+  },
+  {
+    id: "art",
+    color: "lavender",
+    title: "الفن والإبداع", titleEn: "Art & Creativity",
+    sub: "التلوين، التصميم، الأناشيد، والقصص", subEn: "Coloring, design, nasheeds & stories",
+    icon: "3",
+    activities: [
+      { n: 21, t: "تلوين الزخارف الإسلامية", te: "Color Islamic Patterns", m: "Flood Fill Algorithm", g: "pattern",     d: 2, status: "normal", href: "activities/pattern-color.html" },
+      { n: 22, t: "شجرة تتبع الصلاة", te: "Prayer Tracking Tree",      m: "Interactive SVG",     g: "tree",        d: 1, status: "normal", href: "activities/prayer-tree.html" },
+      { n: 23, t: "مسرح العرائس", te: "Puppet Theater",         m: "Z-index Stage",       g: "theater",     d: 2, status: "normal", href: "activities/puppet-theater.html" },
+      { n: 24, t: "مصمم السجادة", te: "Carpet Designer",          m: "Canvas Drawing",      g: "carpet",      d: 2, status: "normal", href: "activities/carpet-designer.html" },
+      { n: 25, t: "كاريوكي الأناشيد", te: "Nasheed Karaoke",       m: "Synchronized Text",   g: "karaoke",     d: 1, status: "normal", href: "activities/nasheed-karaoke.html" },
+      { n: 26, t: "تلوين الآيات", te: "Color the Ayahs",          m: "Pattern Fill",        g: "ayah",        d: 1, status: "normal", href: "activities/ayah-color.html" },
+      { n: 27, t: "مفكرة الامتنان", te: "Gratitude Journal",        m: "CRUD Operations",     g: "gratitude",   d: 1, status: "normal", href: "activities/gratitude.html" },
+      { n: 28, t: "خريطة الأنبياء", te: "Prophets' Map",        m: "Map Hotspots",        g: "map",         d: 3, status: "normal", href: "activities/prophet-map.html" },
+      { n: 29, t: "تعهّد الصدق", te: "Honesty Pledge",           m: "Certificate Gen",     g: "certificate", d: 1, status: "normal", href: "activities/honesty-pledge.html" },
+      { n: 30, t: "بنغو الصالحات", te: "Good Deeds Bingo",         m: "5×5 Grid Checker",    g: "bingo",       d: 2, status: "normal", href: "activities/good-bingo.html" },
+    ],
+  },
+  {
+    id: "science",
+    color: "mint",
+    title: "العلوم والاستكشاف", titleEn: "Science & Discovery",
+    sub: "العالم من حولنا، المخلوقات، والكون", subEn: "The world around us, creatures & cosmos",
+    icon: "4",
+    activities: [
+      { n: 31, t: "مختبر المخلوقات", te: "Creatures Lab",       m: "Step Animation",      g: "lab",         d: 2, status: "normal", href: "activities/creature-lab.html" },
+      { n: 32, t: "فرز البر والبحر", te: "Land & Sea Sorting",       m: "Bucket Sorting",      g: "landsea",     d: 1, status: "normal", href: "activities/landsea.html" },
+      { n: 33, t: "توفير المياه", te: "Save the Water",          m: "Timing Game",         g: "water",       d: 2, status: "normal", href: "activities/water-save.html" },
+      { n: 34, t: "منظار النجوم", te: "Star Telescope",         m: "Parallax Scroll",     g: "telescope",   d: 3, status: "normal", href: "activities/star-telescope.html" },
+      { n: 35, t: "دورة المطر", te: "The Rain Cycle",            m: "Flowchart Logic",     g: "cycle",       d: 2, status: "normal", href: "activities/rain-cycle.html" },
+      { n: 36, t: "حقيبة الأخلاق", te: "The Akhlaq Bag",         m: "Card Deck Logic",     g: "bag",         d: 1, status: "normal", href: "activities/akhlaq-bag.html" },
+      { n: 37, t: "أصحاب المهن النبوية", te: "Prophets' Professions",   m: "Matching Pairs",      g: "tool",        d: 2, status: "normal", href: "activities/prophet-professions.html" },
+      { n: 38, t: "ماذا لو؟", te: "What If?",              m: "Scenario Branching",  g: "branch",      d: 3, status: "normal", href: "activities/what-if.html" },
+      { n: 39, t: "أحجية المعالم", te: "Landmarks Puzzle",         m: "Jigsaw Puzzle",       g: "puzzle",      d: 3, status: "normal", href: "activities/landmarks-puzzle.html" },
+      { n: 40, t: "شريط الزمن الهجري", te: "Hijri Timeline",     m: "Timeline Drag",       g: "timeline",    d: 2, status: "normal", href: "activities/hijri-timeline.html" },
+    ],
+  },
+  {
+    id: "challenges",
+    color: "butter",
+    title: "تحديات السيرة واللغة", titleEn: "Seerah & Language Challenges",
+    sub: "ألعاب سريعة، تحديات، وألغاز ممتعة", subEn: "Quick games, challenges & fun puzzles",
+    icon: "5",
+    activities: [
+      { n: 41, t: "صيد حروف المد", te: "Catch the Madd Letters",        m: "Falling Objects",     g: "catch",       d: 2, status: "normal", href: "activities/catch-madd.html" },
+      { n: 42, t: "الكلمة وعكسها", te: "Word & Opposite",         m: "Connection Logic",    g: "opposite",    d: 1, status: "normal", href: "activities/opposite-words.html" },
+      { n: 43, t: "لعبة الحركات", te: "Tashkeel Game",          m: "Vowel Placement",     g: "tashkeel",    d: 1, status: "normal", href: "activities/tashkeel-game.html" },
+      { n: 44, t: "المقرأة الذكية", te: "Smart Reciter",        m: "Audio Comparison",    g: "speaker",     d: 3, status: "normal", href: "activities/smart-reciter.html" },
+      { n: 45, t: "شجرة العائلة النبوية", te: "Prophetic Family Tree", m: "Hierarchy Tree",      g: "family",      d: 2, status: "normal", href: "activities/family-tree.html" },
+      { n: 46, t: "بطل الأركان الخمسة", te: "Five Pillars Hero",    m: "2D Platformer",       g: "hero",        d: 3, status: "normal", href: "activities/pillars-hero.html" },
+      { n: 47, t: "سودوكو إسلامي", te: "Islamic Sudoku",         m: "Logical Grid",        g: "sudoku",      d: 3, status: "normal", href: "activities/islamic-sudoku.html" },
+      { n: 48, t: "تحدي الـ 30 ثانية", te: "30-Second Challenge",     m: "Click Counter",       g: "stopwatch",   d: 1, status: "normal", href: "activities/thirty-second.html" },
+      { n: 49, t: "من أنا؟", te: "Who Am I?",               m: "Hint System",         g: "who",         d: 2, status: "normal", href: "activities/who-am-i.html" },
+      { n: 50, t: "حقيبة المسافر", te: "Traveler's Bag",         m: "Inventory Mgmt",      g: "suitcase",    d: 2, status: "normal", href: "activities/traveler-bag.html" },
+    ],
+  },
+];
+
+window.SECTIONS = SECTIONS;

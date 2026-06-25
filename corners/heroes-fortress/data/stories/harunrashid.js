@@ -1,0 +1,56 @@
+/* data/stories/harunrashid.js — Leaders · Harun ar-Rashid — sources: البداية والنهاية · تاريخ الطبري · إسلام ويب · سير أعلام النبلاء */
+window.HISN_STORIES = window.HISN_STORIES || {};
+HISN_STORIES.harunrashid = [
+  { icon:'📚', scene:'throne', character:'👑',
+    title:{ ar:'عاصمةُ العلمِ في العالم', en:'The World\u2019s Capital of Knowledge' },
+    pages:[
+      { scene:'throne', character:'👑',
+        text:{ ar:'في عهدِ <b>هارونَ الرشيد</b>، صارتْ مدينةُ <b>بغداد</b> أعظمَ مدينةٍ في العالمِ كلِّه! لم تكنْ عظيمةً بقصورِها وأسواقِها فحسب، بل بـ<b>العلمِ والعلماء</b>. كان الرشيدُ يُحِبُّ العلمَ حبّاً عظيماً، فجمعَ حولَه أهلَ العلمِ والأدبِ والطبِّ من كلِّ مكان.<br><br>أنفقَ الرشيدُ الأموالَ الطائلةَ على <b>ترجمةِ كتبِ العلمِ</b> من اللغاتِ الأخرى إلى العربيّة، وشجّعَ العلماءَ على البحثِ والتأليف. فازدهرتِ العلومُ: الطبُّ والرياضياتُ والفلكُ والكيمياء، حتى صارتْ بغدادُ <b>منارةً للعالم</b> يأتي إليها طلّابُ العلمِ من كلِّ البلاد. علّمنا الرشيدُ أنّ <b>الأممَ تُبنى بالعلم</b>، وأنّ تقديرَ العلماءِ والإنفاقَ على العلمِ سببٌ لنهضةِ الأمّة.',
+          en:'In <b>Harun ar-Rashid\u2019s</b> era, the city of <b>Baghdad</b> became the greatest city in the entire world! It was great not only for its palaces and markets, but for <b>knowledge and scholars</b>. Ar-Rashid loved knowledge deeply, gathering around him people of learning, literature, and medicine from everywhere.<br><br>Ar-Rashid spent vast sums on <b>translating books of knowledge</b> from other languages into Arabic, and encouraged scholars to research and write. So the sciences flourished — medicine, mathematics, astronomy, and chemistry — until Baghdad became <b>a beacon for the world</b>, to which students of knowledge came from every land. Ar-Rashid taught us that <b>nations are built by knowledge</b>, and that valuing scholars and spending on learning is a cause of a nation\u2019s rise.' },
+        choice:{ q:{ar:'لماذا ازدهرتْ بغدادُ في عهدِ الرشيد؟',en:'Why did Baghdad flourish in ar-Rashid\u2019s era?'},
+          opts:[
+            { t:{ar:'لأنّه أكرمَ العلمَ والعلماءَ وأنفقَ عليهم',en:'Because he honored knowledge and scholars and funded them'},c:true,exp:{ar:'نعم! الأممُ تُبنى بالعلمِ وتقديرِ أهلِه.',en:'Yes! Nations are built by knowledge and valuing its people.'} },
+            { t:{ar:'بالقصورِ فقط',en:'By palaces alone'},c:false,exp:{ar:'لا، بل بالعلمِ والعلماءِ والترجمة.',en:'No — by knowledge, scholars, and translation.'} },
+            { t:{ar:'بالصدفة',en:'By chance'},c:false,exp:{ar:'لا، بل برعايةِ العلمِ والإنفاقِ عليه.',en:'No — by patronizing and funding knowledge.'} },
+          ] } },
+    ],
+    quiz:[
+      { q:{ar:'ما المدينةُ التي صارتْ مركزَ العالمِ في عهدِ الرشيد؟',en:'Which city became the world\u2019s center in ar-Rashid\u2019s era?'},
+        opts:[ {t:{ar:'بغداد',en:'Baghdad'},c:true}, {t:{ar:'مكّة',en:'Makkah'},c:false}, {t:{ar:'القاهرة',en:'Cairo'},c:false} ] },
+      { q:{ar:'على ماذا أنفقَ الرشيدُ الأموال؟',en:'What did ar-Rashid spend money on?'},
+        opts:[ {t:{ar:'ترجمةِ العلمِ ورعايةِ العلماء',en:'Translating knowledge and patronizing scholars'},c:true}, {t:{ar:'اللهوِ فقط',en:'Amusement only'},c:false}, {t:{ar:'الحروبِ فقط',en:'Wars only'},c:false} ] },
+      { q:{ar:'ماذا نتعلّمُ من الرشيد؟',en:'What do we learn from ar-Rashid?'},
+        opts:[ {t:{ar:'الأممُ تُبنى بالعلم',en:'Nations are built by knowledge'},c:true}, {t:{ar:'العلمُ غيرُ مهم',en:'Knowledge is unimportant'},c:false}, {t:{ar:'المالُ وحدَه يكفي',en:'Wealth alone suffices'},c:false} ] },
+    ],
+    moral:{ar:'الأممُ تُبنى بالعلمِ وتقديرِ أهلِه، والإنفاقُ على العلمِ استثمارٌ لنهضةِ الأمّة.',en:'Nations are built by knowledge and valuing its people; spending on learning is an investment in a nation\u2019s rise.'},
+    badge:{icon:'📚',title:{ar:'وِسامُ راعي العلم',en:'Badge of the Patron of Knowledge'}},
+    reflect:[ {ar:'كيف تجعلُ طلبَ العلمِ من أولويّاتِك؟',en:'How do you make seeking knowledge a priority?'}, {ar:'كيف تُشجّعُ من حولَك على التعلّمِ والقراءة؟',en:'How do you encourage those around you to learn and read?'} ],
+    didYouKnow:[ {ar:'ازدهرتْ حركةُ الترجمةِ والعلومِ في عهدِ الرشيدِ ثمّ ابنِه المأمونِ في بغداد — المصدر: البداية والنهاية',en:'The movement of translation and the sciences flourished in the era of ar-Rashid and then his son al-Ma\u2019mun in Baghdad — Source: Al-Bidaya wa an-Nihaya'}, {ar:'بلغتِ الدولةُ العبّاسيّةُ في عهدِ الرشيدِ قمّةَ اتّساعِها وقوّتِها وثرائِها — المصدر: تاريخ الطبري',en:'The Abbasid state in ar-Rashid\u2019s era reached the peak of its expanse, power, and wealth — Source: Tarikh at-Tabari'} ],
+  },
+  { icon:'🤲', scene:'mihrab', character:'😢',
+    title:{ ar:'خليفةٌ قويٌّ يبكي خشيةَ الله', en:'A Powerful Caliph Who Wept From Awe of Allah' },
+    pages:[
+      { scene:'throne', character:'☁️',
+        text:{ ar:'كان <b>هارونُ الرشيد</b> من أقوى حكّامِ زمانِه، حتى يُروى أنّه نظرَ إلى سحابةٍ تمرُّ في السماءِ فقال: <b>«أمطري حيثُ شئتِ، فسيأتيني خراجُك»</b> — لأنّ دولتَه كانت تمتدُّ في معظمِ الأرضِ المعمورة! كانت لديه القوّةُ والمالُ والمُلكُ العظيم.<br><br>لكنّ هذه القوّةَ لم تُنسِه ربَّه! كان الرشيدُ <b>عابداً تقيّاً يُصلّي في اليومِ مئةَ ركعة</b>، وكان <b>يبكي من خشيةِ الله</b> ويتذكّرُ الموتَ والآخرة. كان يستمعُ إلى مواعظِ العلماءِ فتدمعُ عيناه. علّمنا الرشيدُ أنّ <b>القوّةَ والمُلكَ لا يجوزُ أن يُنسيا العبدَ ربَّه</b>، وأنّ أعظمَ الناسِ من جمعَ بين قوّةِ الدنيا وخشيةِ الله. فالقويُّ الحقيقيُّ من خافَ اللهَ مع قدرتِه.',
+          en:'<b>Harun ar-Rashid</b> was among the most powerful rulers of his time — it is even reported he looked at a cloud passing in the sky and said: <b>"Rain wherever you wish, for your tribute will come to me"</b> — because his state stretched across most of the inhabited earth! He had power, wealth, and great dominion.<br><br>But this power did not make him forget his Lord! Ar-Rashid was a <b>devout, pious worshipper who prayed a hundred rak\u2019ahs a day</b>, and he <b>wept from awe of Allah</b>, remembering death and the Hereafter. He would listen to scholars\u2019 sermons until his eyes flowed with tears. Ar-Rashid taught us that <b>power and dominion must not make a servant forget his Lord</b>, and that the greatest people are those who combine worldly power with awe of Allah. The truly strong is one who fears Allah despite his ability.' },
+        choice:{ q:{ar:'ماذا نتعلّمُ من جمعِ الرشيدِ بين القوّةِ والعبادة؟',en:'What do we learn from ar-Rashid combining power and worship?'},
+          opts:[
+            { t:{ar:'أنّ القوّةَ يجبُ ألّا تُنسيَ العبدَ ربَّه',en:'That power must not make a servant forget his Lord'},c:true,exp:{ar:'نعم! القويُّ الحقيقيُّ من خافَ اللهَ مع قدرتِه.',en:'Yes! The truly strong is one who fears Allah despite his ability.'} },
+            { t:{ar:'أنّ القوّةَ تُغني عن العبادة',en:'That power dispenses with worship'},c:false,exp:{ar:'لا، بل جمعَ بين القوّةِ والخشية.',en:'No — he combined power with reverence.'} },
+            { t:{ar:'أنّ المُلكَ هو الغاية',en:'That dominion is the goal'},c:false,exp:{ar:'لا، بل الآخرةُ هي الغاية.',en:'No — the Hereafter is the goal.'} },
+          ] } },
+    ],
+    quiz:[
+      { q:{ar:'بِمَ خاطبَ الرشيدُ السحابة؟',en:'What did ar-Rashid say to the cloud?'},
+        opts:[ {t:{ar:'أمطري حيثُ شئتِ فسيأتيني خراجُك',en:'Rain wherever you wish, your tribute will reach me'},c:true}, {t:{ar:'ابتعدي',en:'Go away'},c:false}, {t:{ar:'لا شيء',en:'Nothing'},c:false} ] },
+      { q:{ar:'كيف كان الرشيدُ في عبادتِه؟',en:'How was ar-Rashid in his worship?'},
+        opts:[ {t:{ar:'عابداً يبكي خشيةَ الله',en:'A worshipper who wept from awe of Allah'},c:true}, {t:{ar:'تاركاً للصلاة',en:'Abandoning prayer'},c:false}, {t:{ar:'غافلاً',en:'Heedless'},c:false} ] },
+      { q:{ar:'من القويُّ الحقيقي؟',en:'Who is the truly strong?'},
+        opts:[ {t:{ar:'من خافَ اللهَ مع قدرتِه',en:'One who fears Allah despite his ability'},c:true}, {t:{ar:'من جمعَ المال',en:'One who hoards wealth'},c:false}, {t:{ar:'من تكبّر',en:'One who is arrogant'},c:false} ] },
+    ],
+    moral:{ar:'القوّةُ والمُلكُ لا يجوزُ أن يُنسيا العبدَ ربَّه، والقويُّ الحقيقيُّ من خشيَ اللهَ مع قدرتِه.',en:'Power and dominion must not make a servant forget his Lord; the truly strong is one who fears Allah despite his ability.'},
+    badge:{icon:'🤲',title:{ar:'وِسامُ القوّةِ والخشية',en:'Badge of Power & Reverence'}},
+    reflect:[ {ar:'حين تنالُ نجاحاً أو قوّة، هل تتذكّرُ فضلَ اللهِ عليك؟',en:'When you gain success or strength, do you remember Allah\u2019s favor upon you?'}, {ar:'كيف توازِنُ بين طموحِك في الدنيا وعبادتِك لله؟',en:'How do you balance worldly ambition with worship of Allah?'} ],
+    didYouKnow:[ {ar:'رُوِيَ أنّ هارونَ الرشيدَ كان يُصلّي كلَّ يومٍ نوافلَ كثيرةً ويتصدّقُ بمالٍ كثير — المصدر: سير أعلام النبلاء',en:'It is reported Harun ar-Rashid prayed many voluntary prayers daily and gave much in charity — Source: Siyar A\u2019lam an-Nubala\u2019'}, {ar:'كان الرشيدُ يحبُّ مجالسةَ العلماءِ والوعّاظِ ويتأثّرُ بمواعظِهم كثيراً — المصدر: البداية والنهاية',en:'Ar-Rashid loved sitting with scholars and preachers and was deeply moved by their sermons — Source: Al-Bidaya wa an-Nihaya'} ],
+  },
+];

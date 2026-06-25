@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>خريطة الأنبياء · أنوس</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Amiri:wght@400;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+
+<link rel="stylesheet" href="../styles/tokens.css" />
+<link rel="stylesheet" href="../styles/dashboard.css" />
+<link rel="stylesheet" href="../styles/wheel.css" />
+<link rel="stylesheet" href="../styles/prophet-map.css" />
+</head>
+<body>
+
+<div class="bg-decor" aria-hidden="true"></div>
+
+<div class="activity-shell">
+
+  <nav class="activity-nav">
+    <a class="back-link" href="../dashboard.html">
+      الرجوع للوحة الأنشطة
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg>
+    </a>
+    <div class="activity-crumb">
+      <span>الفن والإبداع</span>
+      <span class="sep">/</span>
+      <span class="cur">خريطة الأنبياء</span>
+    </div>
+    <div class="activity-actions">
+      <button class="icon-btn" id="reset-btn" title="إعادة الضبط" aria-label="إعادة الضبط">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 3-6.7L3 8"/><path d="M3 3v5h5"/></svg>
+      </button>
+    </div>
+  </nav>
+
+  <div class="activity-layout">
+
+    <section class="pm-panel">
+      <header class="wheel-header">
+        <span class="activity-tag">Activity 28 · Map Hotspots</span>
+        <h1 class="activity-title">خريطة الأنبياء</h1>
+        <p class="activity-desc">
+          تَجَوَّل في خريطة العالَم القَديم، وانقُر على المواقع لِتَتَعَرَّفَ على الأنبياء
+          الَّذين أَرسَلهم اللهُ هناك. كلَّما زُرتَ مَوقِعاً جَديداً، أُضيفَت نَجمَتك.
+        </p>
+      </header>
+
+      <div class="pm-hud">
+        <div class="hud-block">المُكتَشَف <strong><span id="visited">0</span><small>/10</small></strong></div>
+        <div class="hud-block">آخِر زِيارة <strong id="last-visit">—</strong></div>
+        <div class="hud-block">القارَّات <strong id="continents">0</strong></div>
+        <div class="hud-block">المَنطِقة <strong id="region-name">—</strong></div>
+      </div>
+
+      <div class="pm-stage">
+        <svg id="map-svg" viewBox="0 0 800 460" preserveAspectRatio="xMidYMid meet" aria-label="خريطة"></svg>
+
+        <div class="pm-legend">
+          <span><span class="dot visited"></span> مَوقِعٌ مَكتَشف</span>
+          <span><span class="dot new"></span> اِنقُر لِلاكتِشاف</span>
+        </div>
+      </div>
+
+      <div class="wheel-controls" style="margin-top:var(--s-4);">
+        <div class="wheel-stat">المَجموع <strong id="best">0/10</strong></div>
+        <button class="wheel-mute-toggle" id="mute-btn" aria-pressed="false">
+          <span class="mute-icon"></span>
+          <span class="mute-label">كتم الصوت</span>
+        </button>
+      </div>
+    </section>
+
+    <aside class="side-panel">
+      <div class="panel-card">
+        <div class="panel-head">
+          <h3>الأَنبياءُ والمَواقِع</h3>
+          <span class="pill" id="list-pill">10</span>
+        </div>
+        <div class="pm-list" id="prophet-list"></div>
+      </div>
+
+      <div class="panel-card">
+        <div class="panel-head"><h3>كيف ألعب؟</h3></div>
+        <div style="font-size: 14px; line-height: 1.7; color: var(--ink-2);">
+          ١. حَرِّك بَصَرَك على الخَريطة.<br/>
+          ٢. النِّقاطُ النَّابِضةُ مَواقِعُ لم تَكتَشِفها.<br/>
+          ٣. اِنقُر النَّقطةَ لِتَعرِفَ النَّبيَّ وقِصَّتَه.<br/>
+          ٤. اِكتَشِف العَشَرة لِتُكمِل الخَريطة.
+        </div>
+        <div class="tip-card" style="margin-top: var(--s-3);">
+          <span class="tip-icon">!</span>
+          <span>الأَنبياءُ جَميعُهم إِخوَة، ودِينُهم واحِد: الإسلام. اخْتَلَفَت شَرائِعُهم، واتَّفَقَ تَوحيدُهم.</span>
+        </div>
+      </div>
+
+      <div class="panel-card">
+        <div class="panel-head"><h3>قَولُ اللهِ تَعالى</h3></div>
+        <div class="hadith-card">
+          <div class="quote">«وَلَقَدْ بَعَثْنَا فِي كُلِّ أُمَّةٍ رَّسُولًا أَنِ اعْبُدُوا اللَّهَ وَاجْتَنِبُوا الطَّاغُوتَ»</div>
+          <span class="src">سورة النحل · 36</span>
+        </div>
+      </div>
+    </aside>
+  </div>
+</div>
+
+<div class="modal-backdrop" id="prophet-modal" role="dialog" aria-modal="true">
+  <div class="modal pm-modal">
+    <button class="modal-close" data-close aria-label="إغلاق">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M6 6l12 12M18 6l-12 12"/></svg>
+    </button>
+    <div class="pm-modal-place" id="m-place">—</div>
+    <div class="modal-eyebrow">النَّبيُّ الكَريم</div>
+    <h2 class="modal-title" id="m-name">…</h2>
+    <p class="pm-modal-arabic" id="m-arabic">عليه السلام</p>
+
+    <div class="pm-modal-section">
+      <div class="pm-row"><span class="lbl">قَومُه</span><span class="val" id="m-people">—</span></div>
+      <div class="pm-row"><span class="lbl">آيتُه</span><span class="val" id="m-miracle">—</span></div>
+      <div class="pm-row"><span class="lbl">ذُكِرَ في القرآن</span><span class="val" id="m-times">—</span></div>
+    </div>
+
+    <div class="pm-modal-story" id="m-story">…</div>
+
+    <div class="modal-actions">
+      <button class="btn-ghost" data-close>عُدْ للخَريطة</button>
+      <button class="btn-primary" id="next-prophet">المَوقِع التَّالي</button>
+    </div>
+  </div>
+</div>
+
+<div class="particles" id="particles" aria-hidden="true"></div>
+
+<script src="../scripts/activity-common.js"></script>
+<script src="../scripts/prophet-map.js"></script>
+
+<script>
+window.PAGE_DICT = {
+  "خريطة الأنبياء": "Prophets' Map",
+  "تَجَوَّل في خريطة العالَم القَديم، وانقُر على المواقع لِتَتَعَرَّفَ على الأنبياء الَّذين أَرسَلهم اللهُ هناك. كلَّما زُرتَ مَوقِعاً جَديداً، أُضيفَت نَجمَتك.": "Explore the map of the ancient world and tap the locations to learn about the prophets Allah sent there. Each time you visit a new location, your star is added.",
+  "المُكتَشَف": "Discovered",
+  "آخِر زِيارة": "Last visit",
+  "القارَّات": "Continents",
+  "المَنطِقة": "Region",
+  "خريطة": "Map",
+  "مَوقِعٌ مَكتَشف": "Discovered location",
+  "اِنقُر لِلاكتِشاف": "Tap to discover",
+  "المَجموع": "Total",
+  "الأَنبياءُ والمَواقِع": "Prophets & locations",
+  "١. حَرِّك بَصَرَك على الخَريطة.": "1. Move your eyes across the map.",
+  "٢. النِّقاطُ النَّابِضةُ مَواقِعُ لم تَكتَشِفها.": "2. The pulsing dots are locations you haven't discovered.",
+  "٣. اِنقُر النَّقطةَ لِتَعرِفَ النَّبيَّ وقِصَّتَه.": "3. Tap a dot to learn the prophet and his story.",
+  "٤. اِكتَشِف العَشَرة لِتُكمِل الخَريطة.": "4. Discover all ten to complete the map.",
+  "الأَنبياءُ جَميعُهم إِخوَة، ودِينُهم واحِد: الإسلام. اخْتَلَفَت شَرائِعُهم، واتَّفَقَ تَوحيدُهم.": "All prophets are brothers, and their religion is one: Islam. Their laws differed, but their monotheism was one.",
+  "قَولُ اللهِ تَعالى": "The words of Allah the Exalted",
+  "سورة النحل · 36": "Surat an-Nahl · 36",
+  "النَّبيُّ الكَريم": "The noble prophet",
+  "قَومُه": "His people",
+  "آيتُه": "His sign",
+  "ذُكِرَ في القرآن": "Mentioned in the Quran",
+  "عُدْ للخَريطة": "Back to the map",
+  "المَوقِع التَّالي": "Next location"
+};
+</script>
+<script>
+Object.assign(window.PAGE_DICT, {
+  "إبراهيم":"Ibrahim","إسماعيل":"Ismail","موسى":"Musa","يوسف":"Yusuf","عيسى":"Isa","نوح":"Nuh","هُود":"Hud","صالح":"Salih","شعيب":"Shu'ayb","مُحَمَّد":"Muhammad",
+  "عليه السلام":"(peace be upon him)","ﷺ صَلَّى اللهُ عَلَيهِ وسَلَّم":"ﷺ (peace and blessings be upon him)",
+  "إفريقيا":"Africa","الجزيرة":"Arabia","الشَّام":"Levant","العراق":"Iraq","فارس":"Persia","الأناضول":"Anatolia","اليمن":"Yemen","آسيا":"Asia",
+  "أُور · بِلاد الرَّافِدَين":"Ur · Mesopotamia","مَكَّة المُكَرَّمَة":"Makkah al-Mukarramah","مِصر · جَبَل الطُّور":"Egypt · Mount Tur","مِصر القَديمة":"Ancient Egypt","بَيتُ لَحم · فِلَسطين":"Bethlehem · Palestine","الجُودِيُّ · شَمال":"Mount Judi · North","الأَحقاف · اليَمَن":"Al-Ahqaf · Yemen","الحِجْر · شَمال الجَزيرة":"Al-Hijr · Northern Arabia","مَدْيَن · شَمال":"Madyan · North","مَكَّة والمَدينة":"Mecca & Medina",
+  "قَومُ نَمرود":"The people of Nimrod","جُرهُم وأهلُ مَكَّة":"Jurhum and the people of Mecca","بَنو إسرائيل · فِرعَون":"Children of Israel · Pharaoh","أَهلُ مِصرَ زَمَنَ المَلِك":"The people of Egypt in the king's time","بَنو إسرائيل":"Children of Israel","قَومُه الَّذين كَذَّبوه":"His people who denied him","قَومُ عَاد":"The people of 'Ad","قَومُ ثَمود":"The people of Thamud","أَهلُ مَدْيَنَ وَأَيكَة":"The people of Madyan and Aykah","العَرَبُ ثُمَّ النَّاسُ كُلُّهم":"The Arabs, then all of mankind",
+  "النَّارُ بَرداً وسَلاما":"The fire became cool and safe","تَفجيرُ زَمزَم":"The gushing of Zamzam","العَصا واليَدُ البَيضاء":"The staff and the white hand","تَأويلُ الرُّؤيا":"Interpreting dreams","إِحياءُ المَوتى بِإِذنِ اللهِ":"Reviving the dead by Allah's leave","السَّفينة · الطُّوفان":"The ark · the flood","الرِّيحُ العَقيم":"The barren wind","ناقَةُ اللهِ":"The she-camel of Allah","الظُّلَّةُ المُحرِقَة":"The scorching cloud","القُرآنُ الكَريم":"The Noble Quran",
+  "ذُكِرَ 69 مَرَّة":"Mentioned 69 times","ذُكِرَ 12 مَرَّة":"Mentioned 12 times","ذُكِرَ 136 مَرَّة":"Mentioned 136 times","ذُكِرَ 27 مَرَّة":"Mentioned 27 times","ذُكِرَ 25 مَرَّة":"Mentioned 25 times","ذُكِرَ 43 مَرَّة":"Mentioned 43 times","ذُكِرَ 7 مَرَّات":"Mentioned 7 times","ذُكِرَ 9 مَرَّات":"Mentioned 9 times","ذُكِرَ 11 مَرَّة":"Mentioned 11 times","آخِرُ الأنبياءِ والمُرسَلين":"The last of the prophets and messengers",
+  "خَليلُ الرَّحمن. حَطَّمَ أَصنامَ قَومِه، ثمَّ هاجَر إلى الشَّام، وبَنى مع ابنِه إسماعيل بَيتَ اللهِ الحَرام في مَكَّة.":"The friend of the Most Merciful. He smashed his people's idols, then migrated to the Levant, and built the Sacred House of Allah in Mecca with his son Ismail.",
+  "بِكْرُ إبراهيم. صَبَر على الذَّبح، وسَكَنَ مَكَّةَ مع أُمِّه هاجَر، ومنه جاء العَرَب، ومنه نَسَبُ النبيِّ مُحَمَّد ﷺ.":"Ibrahim's firstborn. He was patient with the sacrifice, settled in Mecca with his mother Hajar; from him came the Arabs, and from him the lineage of Prophet Muhammad ﷺ.",
+  "كَلَّمَه اللهُ تَكليما. أَنجاه اللهُ مِن فِرعَون، وفَلَقَ له البَحر، وأَنزَلَ عليه التَّوراة.":"Allah spoke to him directly. Allah saved him from Pharaoh, split the sea for him, and revealed the Torah to him.",
+  "أَلقاه إخوتُه في الجُبّ، فبِيعَ في مِصر، فسَجَنَه المَلِك، ثمَّ صار خازِناً على الأرض، ولَمَّ شَملَ الأَهل.":"His brothers threw him into the well, he was sold in Egypt, the king imprisoned him, then he became treasurer of the land and reunited his family.",
+  "ابنُ مَريَمَ العَذراء. تَكَلَّمَ في المَهد، وأَنزَلَ اللهُ علَيه الإنجيل، ورَفَعه إلَيه، وسَيَنزِل آخِرَ الزَّمان.":"Son of the Virgin Maryam. He spoke in the cradle, Allah revealed the Gospel to him, raised him to Himself, and he will descend at the end of time.",
+  "دَعا قَومَه ألفَ سَنَةٍ إلَّا خَمسين. صَنَع السَّفينة بِأَمر اللهِ، فأَغرَقَ اللهُ الكافِرين، ونَجا المُؤمِنون.":"He called his people for nine hundred and fifty years. He built the ark by Allah's command; Allah drowned the disbelievers and saved the believers.",
+  "أُرسِل إلى قَوم عَاد، وكانوا أَقوياءَ بَنَوا بِكلِّ ريعٍ آيَة. كَذَّبوه فأَهلَكَهم اللهُ بِريحٍ صَرصَرٍ عاتِيَة.":"He was sent to the people of 'Ad, who were strong and built a monument on every height. They denied him, so Allah destroyed them with a furious howling wind.",
+  "نَحَتَ قَومُه الجِبالَ بُيوتاً. طَلَبوا آيَةً فأَخرَجَ اللهُ ناقَةً مِن صَخرة، فعَقَروها، فأَهلَكَهم اللهُ بِالصَّيحَة.":"His people carved homes into the mountains. They asked for a sign, so Allah brought a she-camel out of a rock; they hamstrung it, so Allah destroyed them with the blast.",
+  "خَطيبُ الأَنبياء. دَعا قَومَه إلى تَوحيدِ اللهِ وإيفاءِ الكَيلِ والمِيزان، فأَهلَكَهم اللهُ بِالرَّجفَة.":"The orator of the prophets. He called his people to the oneness of Allah and to give full measure and weight; so Allah destroyed them with the earthquake.",
+  "خاتَمُ النَّبيِّين. وُلِدَ في مَكَّة، وأُنزِلَ علَيه القُرآنُ في غارِ حِراء، وهاجَرَ إلى المَدينة، وَأَتَمَّ اللهُ بِه الدِّين.":"The seal of the prophets. He was born in Mecca, the Quran was revealed to him in the Cave of Hira, he migrated to Medina, and Allah perfected the religion through him."
+});
+</script>
+<script src="../scripts/i18n.js"></script>
+<script src="../../shared/nav-fix.js"></script>
+</body>
+</html>

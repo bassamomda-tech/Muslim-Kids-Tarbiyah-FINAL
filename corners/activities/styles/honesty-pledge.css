@@ -1,0 +1,329 @@
+/* ============================================================
+   HONESTY PLEDGE — تعهّد الصدق
+   ============================================================ */
+
+.hp-panel {
+  background:
+    radial-gradient(140% 80% at 50% 0%, rgba(224,213,242,0.35), transparent 60%),
+    var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--r-2xl);
+  padding: var(--s-8);
+  display: flex; flex-direction: column;
+  box-shadow: var(--shadow-card);
+}
+.hp-panel .activity-tag { background: var(--lavender); color: var(--lavender-ink); }
+.hp-panel .activity-tag::before { background: var(--lavender-ink); }
+
+.hp-hud {
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--s-3);
+  margin-bottom: var(--s-4);
+}
+.hp-hud .hud-block {
+  background: var(--bg-soft); border: 1px solid var(--line);
+  border-radius: var(--r-md); padding: 10px 14px;
+  display: flex; flex-direction: column; gap: 2px;
+  font-size: 11px; color: var(--muted); font-weight: 600;
+}
+.hp-hud .hud-block strong {
+  font-size: 16px; color: var(--ink); font-weight: 800;
+}
+.hp-hud .hud-block strong#picked,
+.hp-hud .hud-block strong#cert-count,
+.hp-hud .hud-block strong#commit-days {
+  font-family: var(--font-en); font-size: 20px;
+}
+
+.hp-stage {
+  display: flex; flex-direction: column; gap: var(--s-4);
+  min-height: 460px;
+}
+
+/* النَّموذج */
+.hp-form {
+  background: var(--bg-soft);
+  border: 1px solid var(--line);
+  border-radius: var(--r-lg);
+  padding: var(--s-4);
+  display: flex; flex-direction: column;
+  gap: var(--s-3);
+}
+.hp-field {
+  display: flex; flex-direction: column;
+  gap: 6px;
+}
+.hp-field > span {
+  font-size: 12px; font-weight: 700; color: var(--muted);
+}
+.hp-field input {
+  padding: 11px 14px;
+  border: 1.5px solid var(--line);
+  border-radius: var(--r-md);
+  font-family: inherit;
+  font-size: 14px;
+  background: var(--surface);
+  color: var(--ink);
+  outline: none;
+  transition: border-color 0.18s ease;
+}
+.hp-field input:focus { border-color: var(--lavender-ink); }
+.hp-sign {
+  font-family: 'Amiri', serif !important;
+  font-size: 22px !important;
+  font-weight: 700;
+  text-align: center;
+  color: var(--lavender-ink);
+  letter-spacing: 0.02em;
+}
+
+.hp-pledges .pledge-label {
+  font-size: 12px; font-weight: 700; color: var(--muted);
+  margin-bottom: 6px;
+}
+.pledge-grid {
+  display: grid; grid-template-columns: repeat(2, 1fr); gap: 6px;
+}
+.pledge {
+  display: flex; align-items: center; gap: 10px;
+  padding: 10px 12px;
+  background: var(--surface);
+  border: 1.5px solid var(--line);
+  border-radius: var(--r-md);
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--ink-2);
+  transition: background 0.18s ease, border-color 0.18s ease, transform 0.15s ease;
+  text-align: right;
+}
+.pledge:hover { transform: translateY(-1px); background: var(--bg-soft); }
+.pledge.on {
+  background: var(--lavender);
+  border-color: var(--lavender-ink);
+  color: var(--lavender-ink);
+}
+.pledge .box {
+  width: 18px; height: 18px;
+  border-radius: 4px;
+  background: var(--surface);
+  border: 1.5px solid var(--line);
+  display: grid; place-items: center;
+  flex-shrink: 0;
+  transition: background 0.18s ease, border-color 0.18s ease;
+}
+.pledge.on .box {
+  background: var(--lavender-ink); border-color: var(--lavender-ink); color: #fff;
+}
+.pledge.on .box::after { content: "✓"; font-size: 12px; }
+
+/* الشَّهادة (مُعايَنة) */
+.hp-certificate {
+  position: relative;
+  background:
+    radial-gradient(120% 80% at 0% 0%, rgba(255,217,194,0.18), transparent 60%),
+    radial-gradient(120% 80% at 100% 100%, rgba(205,235,215,0.18), transparent 60%),
+    #FFFBF3;
+  border: 1.5px solid var(--lavender-ink);
+  border-radius: var(--r-lg);
+  padding: var(--s-8) var(--s-6) var(--s-6);
+  text-align: center;
+  box-shadow:
+    0 0 0 6px #FFFBF3,
+    0 0 0 7px var(--lavender),
+    var(--shadow-md);
+  overflow: hidden;
+}
+.cert-deco-tl, .cert-deco-tr, .cert-deco-bl, .cert-deco-br {
+  position: absolute;
+  width: 56px; height: 56px;
+  background:
+    linear-gradient(45deg, transparent 38%, var(--lavender) 38% 42%, transparent 42% 58%, var(--lavender) 58% 62%, transparent 62%);
+  opacity: 0.5;
+}
+.cert-deco-tl { top: 8px; right: 8px; transform: scaleX(-1); }
+.cert-deco-tr { top: 8px; left: 8px; }
+.cert-deco-bl { bottom: 8px; right: 8px; transform: scale(-1, -1); }
+.cert-deco-br { bottom: 8px; left: 8px; transform: scaleY(-1); }
+
+.cert-seal {
+  position: absolute;
+  top: var(--s-3); left: var(--s-3);
+  width: 56px; height: 56px;
+  color: var(--lavender-ink);
+  opacity: 0.85;
+  transform: rotate(-12deg);
+}
+.cert-seal svg { width: 100%; height: 100%; }
+
+.cert-tag {
+  display: inline-block;
+  padding: 4px 14px;
+  background: var(--lavender-ink);
+  color: #FFFBF3;
+  border-radius: var(--r-pill);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  margin-bottom: var(--s-3);
+}
+.cert-bism {
+  font-family: 'Amiri', serif;
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--lavender-ink);
+  margin: 0 0 var(--s-3);
+}
+.cert-body {
+  font-size: 16px; line-height: 1.8;
+  color: var(--ink); margin: 0 0 var(--s-3);
+  text-wrap: balance;
+}
+.cert-name {
+  font-family: 'Reem Kufi', 'Tajawal', sans-serif;
+  font-size: 22px;
+  color: var(--lavender-ink);
+  font-weight: 700;
+  border-bottom: 2px dashed var(--lavender-ink);
+  padding: 0 8px;
+}
+.cert-body em {
+  font-style: normal;
+  color: var(--brand-ink);
+  font-weight: 800;
+}
+.cert-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 var(--s-4);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6px 24px;
+  text-align: right;
+}
+.cert-list li {
+  padding: 6px 0 6px 24px;
+  position: relative;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--ink);
+}
+.cert-list li::before {
+  content: "✦";
+  position: absolute;
+  right: 0; top: 6px;
+  color: var(--lavender-ink);
+}
+.cert-list li.cert-empty {
+  grid-column: 1 / -1;
+  text-align: center;
+  color: var(--muted);
+  font-weight: 600;
+  font-style: italic;
+}
+.cert-list li.cert-empty::before { display: none; }
+.cert-ayah {
+  font-family: 'Amiri', serif;
+  font-size: 17px;
+  color: var(--ink-2);
+  background: rgba(224,213,242,0.35);
+  border: 1px dashed var(--lavender-ink);
+  border-radius: var(--r-md);
+  padding: 10px 14px;
+  margin: 0 auto var(--s-4);
+  max-width: 460px;
+  line-height: 1.6;
+}
+.cert-ayah .cert-src {
+  display: block;
+  font-family: var(--font-ar);
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--muted);
+  margin-top: 4px;
+}
+
+.cert-sign-row {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: var(--s-6);
+  align-items: end;
+}
+.cert-sign-block {
+  display: flex; flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+.cert-sign-block .line {
+  width: 80%; height: 1px;
+  background: var(--ink); opacity: 0.5;
+  margin-bottom: 4px;
+}
+.cert-sign-block .lbl {
+  font-size: 11px;
+  color: var(--muted);
+  font-weight: 700;
+}
+.cert-sign {
+  font-family: 'Amiri', serif;
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--lavender-ink);
+}
+.cert-date {
+  font-family: var(--font-en);
+  font-size: 13px;
+  color: var(--ink);
+  font-weight: 700;
+}
+
+.hp-actions {
+  display: flex; gap: var(--s-2); justify-content: center; flex-wrap: wrap;
+}
+.hp-btn {
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 10px 16px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--r-pill);
+  font-weight: 700; font-size: 13px;
+  color: var(--ink-2);
+  transition: background 0.18s ease, color 0.18s ease, transform 0.15s ease;
+}
+.hp-btn:hover:not(:disabled) { background: var(--bg-soft); transform: translateY(-1px); }
+.hp-btn.primary {
+  background: var(--lavender-ink); color: #fff; border-color: var(--lavender-ink);
+}
+.hp-btn.primary:hover:not(:disabled) { background: var(--ink); border-color: var(--ink); }
+.hp-btn:disabled { opacity: 0.45; cursor: not-allowed; }
+
+/* السِّجل */
+.hp-history {
+  display: flex; flex-direction: column; gap: 6px;
+}
+.hp-history .empty {
+  color: var(--muted); font-size: 13px; padding: 10px; text-align: center;
+}
+.hp-history .row {
+  display: flex; align-items: center; gap: var(--s-3);
+  padding: 10px 12px;
+  background: var(--bg-soft);
+  border: 1px solid var(--line);
+  border-radius: var(--r-md);
+}
+.hp-history .row .ic {
+  width: 26px; height: 26px; border-radius: 50%;
+  background: var(--lavender); color: var(--lavender-ink);
+  display: grid; place-items: center;
+  font-size: 12px;
+}
+.hp-history .row .nm { flex-grow: 1; font-weight: 800; font-size: 13px; }
+.hp-history .row .dt { font-size: 11px; color: var(--muted); font-family: var(--font-en); font-weight: 700; }
+
+/* طباعة */
+@media print {
+  body * { visibility: hidden; }
+  .hp-certificate, .hp-certificate * { visibility: visible; }
+  .hp-certificate {
+    position: absolute; left: 0; right: 0; top: 0; margin: 20px;
+    box-shadow: none;
+  }
+}

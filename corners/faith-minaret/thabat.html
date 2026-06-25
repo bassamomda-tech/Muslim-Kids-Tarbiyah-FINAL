@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta name="color-scheme" content="dark">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>رحلة الأبطال | Journey of the Heroes</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Amiri+Quran&family=Tajawal:wght@400;500;700;800;900&family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+<link rel="stylesheet" href="yaqeen.css">
+<style>
+/* ── Heroes theme: deep ember crimson + courageous gold (faith & sacrifice) ── */
+:root{
+  --primary:#C0392B; --primary-dark:#9E2D22;
+  --bg1:#2B0E12; --bg2:#43151A; --bg3:#5C1E22;
+  --gold:#F0C868; --gold-soft:#F7DC9E;
+  --text:#F8EFEC; --muted:rgba(248,239,236,.74);
+  --line:rgba(240,200,104,.28);
+}
+body{background:
+  
+    radial-gradient(1300px 760px at 78% -12%, rgba(192,57,43,.34), transparent 58%),
+    radial-gradient(1000px 620px at 0% 100%, rgba(240,200,104,.13), transparent 55%),
+    linear-gradient(165deg,var(--bg1),var(--bg2) 55%,var(--bg3));
+  background-attachment:fixed;
+}
+.guide .who{background:linear-gradient(160deg,#C0392B,#7E2018)}
+.coll-cert{background:linear-gradient(160deg,rgba(240,200,104,.16),rgba(192,57,43,.22))!important}
+.lang button.active{color:#2B0E12}
+.stampbtn{color:#2B0E12}
+</style>
+<script>(function(){try{var l=localStorage.getItem('bunyanLang');if(l==='en'){var h=document.documentElement;h.dir='ltr';h.lang='en';}}catch(e){}})();</script>
+<style id="__antiflash">html{background:#2B0E12;color-scheme:dark}</style>
+</head>
+<body>
+
+<!-- ═══ HEADER ═══ -->
+<header class="hdr">
+  <a class="back" href="aqeeda.html">
+    <span>↩️</span><span class="lng-ar">المنارة</span><span class="lng-en">Minaret</span>
+  </a>
+  <span class="hdr-badge"><span class="l">🦁</span><span class="lng-ar">قِصَصُ الثَّبات</span><span class="lng-en">Heroes</span></span>
+  <div class="lang">
+    <button data-lang="en">EN</button>
+    <button data-lang="ar" class="active">عربي</button>
+  </div>
+</header>
+
+<!-- ═══ INTRO ═══ -->
+<section class="intro">
+  <h1>
+    <span class="lng-ar">🦁 رِحلةُ <span class="hl">الأبطال</span> — قِصَصُ الإيمانِ والثَّبات</span>
+    <span class="lng-en">🦁 Journey of the <span class="hl">Heroes</span> — Stories of Faith & Steadfastness</span>
+  </h1>
+  <p class="sub">
+    <span class="lng-ar">اثنتا عَشرةَ قِصّةً حَقيقيّةً تُلهِبُ القَلبَ بِحُبِّ الدّينِ والثَّباتِ علَيه: الغُلامُ وأصحابُ الأُخدود، وفِتيةُ الكَهف، وسَحَرةُ فِرعَون، وآسِيةُ امرَأةُ فِرعَون، وإبراهيمُ في النّار، وبِلال، وآلُ ياسِر، وماشِطةُ بِنتِ فِرعَون، وخُبَيب، ومُؤمِنُ يس، والرَّجُلُ الذي يُكَذِّبُ الدَّجّالَ في آخِرِ الزَّمان، ومُصعَبُ بنُ عُمَير — لِيُدرِكَ كُلُّ طِفلٍ كَم هو غالٍ هذا الدّينُ الذي ضَحّى الأبطالُ بِكُلِّ شَيءٍ لِأجلِه.</span>
+    <span class="lng-en">Twelve true stories that set the heart ablaze with love of the faith and steadfastness upon it: the Boy & the People of the Ditch, the Youth of the Cave, Pharaoh's sorcerers, Asiya, Ibrahim in the fire, Bilal, the family of Yasir, the hair-comber of Pharaoh, Khubayb, the believer of Ya-Sin, the man who defies the Dajjal at the end of time, and Mus'ab ibn Umayr — so every child realizes how precious this religion is, for which the heroes sacrificed everything.</span>
+  </p>
+  <div class="guide">
+    <div class="who">🧑</div>
+    <div class="say">
+      <span class="lng-ar">أنا «يوسُف»، رَفيقُك. خِتامُ رِحلاتِنا مَعَ أبطالٍ حَقيقيّينَ ثَبَتوا على الإيمانِ مَهما كانَ الثَّمَن… هَيّا نَتَعَلَّم مِنهُمُ الشَّجاعة! 🦁</span>
+      <span class="lng-en">I'm Yusuf, your companion. We close our journeys with real heroes who held firm to faith whatever the price… let's learn courage from them! 🦁</span>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ METER ═══ -->
+<div class="pbar-wrap">
+  <div class="pbar-top">
+    <span><span class="lng-ar">مِيزانُ الثَّبات</span><span class="lng-en">Steadfastness Meter</span></span>
+    <span class="stars" id="pCount">0 / 10</span>
+  </div>
+  <div class="pbar"><div class="pbar-fill" id="pFill"></div></div>
+  <div class="meter-label" id="meterLabel"></div>
+</div>
+
+<!-- ═══ COLLECTIONS ═══ -->
+<div class="collections">
+  <div class="coll-card" id="collStickers"></div>
+  <div class="coll-card" id="collNames"></div>
+  <div class="coll-card" id="collKeys"></div>
+  <div class="coll-card coll-cert" id="collCert"></div>
+</div>
+
+<!-- ═══ MAP ═══ -->
+<div class="map" id="map"><div class="road"></div></div>
+
+<footer class="foot">
+  <span class="lng-ar">صُنع بِحُبٍّ 🧡 لِأطفالِ الأُمّة — <b>رِحلةُ الأبطال</b> · منارةُ العقيدة · على نَهجِ أهلِ السُّنّة</span>
+  <span class="lng-en">Made with 🧡 for the children of the Ummah — <b>Journey of the Heroes</b> · Faith Minaret · Upon the way of Ahl al-Sunnah</span>
+</footer>
+
+<!-- ═══ READER ═══ -->
+<div class="reader" id="reader">
+  <div class="sheet">
+    <div class="r-top">
+      <button class="r-close" id="rClose">✕</button>
+      <span class="r-count" id="rCount"></span>
+      <div class="r-arrows">
+        <button id="rPrev">‹</button>
+        <button id="rNext">›</button>
+      </div>
+    </div>
+    <div id="rBody"></div>
+  </div>
+</div>
+
+<!-- ═══ COLLECTIONS DRAWER ═══ -->
+<div class="drawer" id="drawer">
+  <div class="drawer-sheet">
+    <div class="dw-top">
+      <h3 id="dwTitle"></h3>
+      <button class="r-close" id="dwClose">✕</button>
+    </div>
+    <div class="dw-body" id="dwBody"></div>
+  </div>
+</div>
+
+<!-- ═══ CERTIFICATE ═══ -->
+<div class="cert-overlay" id="certOverlay">
+  <div class="cert-tools">
+    <input id="certName" type="text" placeholder="✍️ اكتُب اسمَك هنا / Type your name" maxlength="40">
+    <button class="cprint" id="certPrint">🖨️ <span class="lng-ar">اطبَع</span><span class="lng-en">Print</span></button>
+    <button class="cclose" id="certClose">✕</button>
+  </div>
+  <div class="certificate" id="certBox"></div>
+</div>
+
+<div id="confetti"></div>
+<div class="toast" id="toast"></div>
+
+<script defer src="nav-fix.js"></script>
+<script src="data/thabat-stations.js"></script>
+<script>
+window.RIHLA_CFG = {
+  stations: window.THABAT_STATIONS,
+  prefix: 'thabat',
+  confetti: ['#F0C868','#C0392B','#8E44AD','#2E8B57','#FFFFFF','#A03050'],
+  T: {
+    mapEnter:{ar:'اقرَأ القِصّة ←',en:'Read the story →'},
+    mapDone:{ar:'مُكتَمِلة ✓ — أعِد القِراءة',en:'Done ✓ — reread'},
+    finishTitle:{ar:'وِسامُ الأبطال',en:'Heroes\' Medal'},
+    meterStart:{ar:'ابدَأ الرِّحلة… كُلُّ قِصّةٍ بَطَلٌ يُعَلِّمُكَ الثَّبات',en:'Begin the journey… each story is a hero teaching you steadfastness'},
+    meterMid:{ar:'أحسَنت! تَعَرَّفتَ على {n} مِن {t} أبطال',en:'Great! You\'ve met {n} of {t} heroes'},
+    meterDone:{ar:'🎉 اكتَمَلَت رِحلةُ الأبطال! تَعَلَّمتَ الثَّباتَ مِن خَيرِ القُدوات',en:'🎉 The Journey of the Heroes is complete! You learned steadfastness from the best role models'},
+    coll1:{icon:'🎖️',title:{ar:'أوسِمةُ الثَّبات',en:'Steadfastness Badges'},unit:{ar:'وِسام',en:'badges'}},
+    coll2:{icon:'🦁',title:{ar:'بِطاقاتُ الأبطال',en:'Hero Cards'},unit:{ar:'بَطَل',en:'heroes'}},
+    coll3:{title:{ar:'مَفاتيحُ الثَّبات',en:'Steadfastness Keys'}},
+    collCert:{title:{ar:'شَهادةُ البَطَل',en:'Hero Diploma'}},
+    kick:{ar:'القِصّة {n} مِن {t}',en:'Story {n} of {t}'},
+    hNarr:{ar:'القِصّة — يوسُف يَحكي',en:'The Story — Yusuf Tells It'},
+    hLogic:{ar:'ماذا نَتَعَلَّمُ مِنَ البَطَل؟',en:'What Do We Learn From the Hero?'},
+    hMyth:{ar:'بَطاقةُ تَصحيحِ الفِكرة',en:'Idea-Fixer Card'},
+    hMatch:{ar:'لُعبةُ الوَصل',en:'Match-Up Game'},
+    hWahy:{ar:'آيةٌ مِنَ القِصّة',en:'A Verse From the Story'},
+    hCard:{ar:'بِطاقةُ البَطَل',en:'Hero Card'},
+    hKey:{ar:'مِفتاحُ الثَّبات',en:'Key of Steadfastness'},
+    hDua:{ar:'دُعاءٌ تَحفَظُه',en:'A Dua to Memorize'},
+    hMission:{ar:'مُهِمّةُ البُطولة',en:'Hero Mission'},
+    hJournal:{ar:'دَفتَرُ الأبطال',en:'Heroes\' Journal'},
+    shSays:{ar:'سُؤالٌ يَخطُرُ بِبالِك:',en:'A question crosses your mind:'},
+    rebut:{ar:'والجَوابُ ↓',en:'The answer ↓'},
+    journalPh:{ar:'اكتُب ما تَعَلَّمتَهُ مِن هذا البَطَل…',en:'Write what you learned from this hero…'},
+    stampDo:{ar:'🦁 أتمِم هذه القِصّة',en:'🦁 Complete this story'},
+    stampDone:{ar:'✓ قِصّةٌ مُكتَمِلة',en:'✓ Story complete'},
+    nextBtn:{ar:'القِصّةُ التّالية ←',en:'Next story →'},
+    drawer1:{ar:'🎖️ أوسِمةُ الثَّبات',en:'🎖️ Steadfastness Badges'},
+    drawer2:{ar:'🦁 بِطاقاتُ الأبطال',en:'🦁 Hero Cards'},
+    drawer3:{ar:'🔑 مَفاتيحُ الثَّبات',en:'🔑 Steadfastness Keys'},
+    fromStation:{ar:'مِن قِصّة: ',en:'From: '},
+    certSeal:'🦁',
+    certKick:{ar:'رِحلةُ الأبطال · منارةُ العقيدة',en:'Journey of the Heroes · Faith Minaret'},
+    certTitle:{ar:'شَهادةُ بَطَلِ الثَّبات',en:'Certificate of a Hero of Steadfastness'},
+    certStatement:{
+      ar:'تَعَرَّفَ هذا القَلبُ الصَّغيرُ على <b>{n}</b> مِن {t} أبطالٍ في رِحلةِ الأبطال، فَعَرَفَ — على نَهجِ أهلِ السُّنّةِ والجَماعة — كَيفَ ثَبَتَ الغُلامُ وفِتيةُ الكَهفِ وسَحَرةُ فِرعَونَ وآسِيةُ وإبراهيمُ وبِلالٌ وآلُ ياسِرٍ وخُبَيبٌ ومُؤمِنُ يس ومُصعَبٌ على إيمانِهِم مَهما كانَ الثَّمَن، فَأدرَكَ كَم هو غالٍ هذا الدّين، وعاهَدَ اللهَ أن يَتَمَسَّكَ بِهِ كَالأبطال.',
+      en:'This young heart met <b>{n}</b> of {t} heroes in the Journey of the Heroes, learning — upon the way of Ahl al-Sunnah — how the boy, the youth of the cave, Pharaoh\'s sorcerers, Asiya, Ibrahim, Bilal, the family of Yasir, Khubayb, the believer of Ya-Sin, and Mus\'ab held firm to their faith whatever the price; realizing how precious this religion is, and pledging to Allah to hold to it like the heroes.'},
+  }
+};
+</script>
+<script src="rihla-engine.js"></script>
+<script defer src="../quiz/quiz-engine.js"></script>
+<script defer src="../shared/mk-system.js"></script>
+<script defer src="../shared/mk-journeys.js"></script>
+<script defer src="../shared/mk-bag.js"></script>
+<script defer src="../shared/mk-train.js"></script>
+</body>
+</html>

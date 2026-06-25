@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>خريطة الأهل — خطة بلوغ أهداف المدينة | Parent Roadmap</title>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&family=Nunito:wght@400;600;700;800;900&display=swap">
+<link rel="stylesheet" href="plan-book.css">
+</head>
+<body dir="rtl">
+<div class="toolbar">
+  <div class="seg">
+    <button id="segAr" class="on" onclick="setLang('ar')">عربي</button>
+    <button id="segEn" onclick="setLang('en')">EN</button>
+  </div>
+  <button class="prim" onclick="window.print()">🖨️ <span class="ar-only">طباعة / PDF</span><span class="en-only">Print / PDF</span></button>
+</div>
+<div id="book"></div>
+
+<script src="roadmap-data.js"></script>
+<script>
+var R = window.ROADMAP;
+var lang = localStorage.getItem('bunyanLang') || 'ar';
+function tx(o){ return o ? (o[lang]||o.ar) : ''; }
+var AR = function(){ return lang==='ar'; };
+
+/* ---- generic sheet shell ---- */
+function sheet(opts, body){
+  var cls = 'sheet' + (opts.cls? ' '+opts.cls : '');
+  var head = '';
+  if(opts.h){
+    head = '<div class="ph">'+
+      '<div class="ph-ic">'+opts.h.ic+'</div>'+
+      '<div class="ph-tx"><div class="ph-k">'+tx(opts.h.k)+'</div><h2>'+tx(opts.h.t)+'</h2></div>'+
+      (opts.h.n?'<div class="ph-n">'+opts.h.n+'</div>':'')+'</div>';
+  }
+  var foot = opts.nofoot? '' :
+    '<div class="pfoot"><span class="brand">'+(AR()?'تربية الطفل المسلم · خريطة الأهل':'Muslim Kids\u2019 Tarbiyah · Parent Roadmap')+'</span><span>'+(opts.pg||'')+'</span></div>';
+  return '<div class="'+cls+'"><div class="flow">'+head+body+foot+'</div></div>';
+}
+
+/* ---- plan table ---- */
+function planTable(rows){
+  var head = '<thead><tr>'+
+    '<th style="width:78px">'+(AR()?'الفترة':'Period')+'</th>'+
+    '<th style="width:150px">'+(AR()?'المحور':'Focus')+'</th>'+
+    '<th>'+(AR()?'أركان الموقع والأهداف':'Site corners & goals')+'</th>'+
+    '<th style="width:150px">'+(AR()?'المحطة / الإنجاز':'Milestone')+'</th></tr></thead>';
+  var body = rows.map(function(r){
+    return '<tr><td class="c-period">'+tx(r.p)+'</td>'+
+      '<td><span class="c-ic">'+r.ic+'</span> <b>'+tx(r.f)+'</b></td>'+
+      '<td>'+tx(r.g)+'</td>'+
+      '<td class="acc">'+tx(r.m)+'</td></tr>';
+  }).join('');
+  return '<table class="ptable">'+head+'<tbody>'+body+'</tbody></table>';
+}
+
+function build(){
+  var pages = [], pg = 0;
+  function P(n){ return (AR()?'صفحة ':'p. ')+n; }
+
+  /* ── COVER ── */
+  pages.push(sheet({cls:'cover', nofoot:true}, 
+    '<div class="crest">🗺️</div>'+
+    '<div class="ckick">'+(AR()?'تربية الطفل المسلم · مدينة الأركان':'Muslim Kids\u2019 Tarbiyah · The City of Corners')+'</div>'+
+    '<h1>'+(AR()?'خريطةُ الأهل':'The Parent Roadmap')+'</h1>'+
+    '<div class="csub">'+(AR()?'خطّةٌ عمليّةٌ لبلوغ أهداف المدينة العشرة':'A practical plan to reach the City\u2019s ten goals')+'</div>'+
+    '<div class="cdesc">'+(AR()?'ثلاثةُ مساراتٍ حسب العمر (٤–٦ · ٧–٩ · ١٠–١٢)، لكلٍّ منها خطّةُ سنةٍ وخطّةُ سنتين، تأخذ بيد طفلك خطوةً خطوة عبر أركان الموقع: العقيدة، العبادة، القرآن، الأخلاق، القلب، الأبطال، الجسد، العقل، والأمّة.':'Three age tracks (4\u20136 \u00b7 7\u20139 \u00b7 10\u201312), each with a one-year and a two-year plan, taking your child step by step through the site\u2019s corners: creed, worship, Qur\u2019an, manners, the heart, heroes, body, mind & ummah.')+'</div>'+
+    '<div class="crow"><span>🕋</span><span>📖</span><span>🏘️</span><span>🏰</span><span>🕌</span></div>'+
+    '<div class="cdiv"></div>'+
+    '<div class="cname">'+(AR()?'اسمُ الطفل:':'Child\u2019s name:')+' <b></b></div>'+
+    '<div class="cname" style="margin-top:.7rem">'+(AR()?'المسارُ المختار:':'Chosen track:')+' <b></b></div>'+
+    '<div class="cbadge">'+(AR()?'افتح الموقع · سجّل التقدّم في «ركن الأهل»':'Open the site · track progress in the Parents\u2019 Corner')+'</div>'));
+
+  /* ── HOW TO USE + ANCHORS ── */
+  pages.push(sheet({pg:P(++pg), h:{ic:'🧭', k:{ar:'ابدأ من هنا',en:'Start here'}, t:{ar:'كيف تستخدم هذا الكتاب',en:'How to use this book'}}},
+    '<p class="lead">'+(AR()?'هذا الكتابُ هو خارطةُ طريقك أنت — الأب أو الأم. الموقعُ يقدّم المحتوى التفاعلي للطفل، وهذا الكتابُ يخبرك <b>ماذا تختار، ومتى، وبأيّ ترتيب</b>، حتى يصل طفلك إلى أهداف المدينة دون تشتّت.':'This book is <b>your</b> roadmap \u2014 the parent\u2019s. The website gives your child the interactive content; this book tells you <b>what to pick, when, and in what order</b> so your child reaches the City\u2019s goals without scattering.')+'</p>'+
+    '<ol class="steps">'+
+      '<li>'+(AR()?'<b>اختر المسار</b> المناسب لعمر طفلك (صفحة المسارات).':'<b>Pick the track</b> that fits your child\u2019s age (the tracks page).')+'</li>'+
+      '<li>'+(AR()?'<b>اختر المدى</b>: خطّة سنةٍ (مكثّفة) أو سنتين (متأنّية).':'<b>Pick the horizon</b>: a one-year (intensive) or two-year (relaxed) plan.')+'</li>'+
+      '<li>'+(AR()?'<b>كلَّ شهر</b>، افتح الركن المذكور في الموقع وأنجزا محطّاته معًا.':'<b>Each month</b>, open the named corner on the site and complete its stations together.')+'</li>'+
+      '<li>'+(AR()?'<b>كلَّ يوم</b>، حافِظا على الثوابت الأربعة أدناه مهما كان المحور.':'<b>Each day</b>, keep the four anchors below, whatever the monthly focus.')+'</li>'+
+      '<li>'+(AR()?'<b>سجّل التقدّم</b> ونقاط السلوك في «ركن الأهل» بالموقع، واطبع الشهادة عند كل إنجاز.':'<b>Log progress</b> & behaviour points in the site\u2019s Parents\u2019 Corner, and print a certificate at each milestone.')+'</li>'+
+    '</ol>'+
+    '<div class="subh">'+(AR()?'الثوابتُ اليوميّة الأربعة':'The four daily anchors')+'</div>'+
+    '<div class="goalgrid">'+R.anchors.map(function(a){
+      return '<div class="goal" style="--gc:#1A9B7B"><div class="g-ic">'+a.ic+'</div><div><div class="g-n">'+tx(a.n)+'</div><div class="g-d">'+tx(a.d)+'</div></div></div>';
+    }).join('')+'</div>'+
+    '<div class="tip">'+(AR()?'<b>قاعدة:</b> الثوابتُ يوميّة، والمحورُ شهريّ. الثوابتُ تبني العادة، والمحورُ يفتح بابًا جديدًا كلَّ شهر.':'<b>Rule:</b> anchors are daily, the focus is monthly. Anchors build the habit; the focus opens a new door each month.')+'</div>'));
+
+  /* ── THE 10 GOALS ── */
+  pages.push(sheet({pg:P(++pg), h:{ic:'🎯', k:{ar:'الوجهة',en:'The destination'}, t:{ar:'أهدافُ المدينة العشرة',en:'The City\u2019s ten goals'}}},
+    '<p class="lead">'+(AR()?'هذه هي الأركانُ التي ستعبرها مع طفلك. لا تُنجَز دفعةً واحدة؛ المساراتُ التالية توزّعها على الشهور بترتيبٍ مدروس.':'These are the corners you\u2019ll cross with your child. They\u2019re not done all at once; the tracks ahead spread them across the months in a considered order.')+'</p>'+
+    '<div class="goalgrid">'+R.corners.map(function(c){
+      return '<div class="goal" style="--gc:'+c.c+'"><div class="g-ic">'+c.ic+'</div><div>'+
+        '<div class="g-n">'+tx(c.n)+'</div><div class="g-d">'+tx(c.d)+'</div>'+
+        '<div class="g-t">'+tx(c.t)+'</div></div></div>';
+    }).join('')+'</div>'));
+
+  /* ── CHOOSE YOUR TRACK + RULES ── */
+  pages.push(sheet({pg:P(++pg), h:{ic:'🚸', k:{ar:'لكلِّ عمرٍ بابه',en:'A door for each age'}, t:{ar:'اختر مسارَ طفلك',en:'Choose your child\u2019s track'}}},
+    '<div class="goalgrid" style="grid-template-columns:1fr">'+R.tracks.map(function(t){
+      return '<div class="goal" style="--gc:'+t.c+'"><div class="g-ic">'+t.ic+'</div><div>'+
+        '<div class="g-n">'+tx(t.nm)+' <span style="color:'+t.c+'">· '+t.age+' '+(AR()?'سنوات':'yrs')+'</span></div>'+
+        '<div class="g-d">'+tx(t.about)+'</div>'+
+        '<div class="g-t">⏱️ '+tx(t.pace)+'</div></div></div>';
+    }).join('')+'</div>'+
+    '<div class="subh">'+(AR()?'ستُّ قواعد ذهبيّة لكلِّ أب وأمّ':'Six golden rules for every parent')+'</div>'+
+    '<div class="goalgrid">'+R.rules.map(function(r){
+      return '<div class="goal" style="--gc:#C9A227"><div class="g-ic">'+r.ic+'</div><div><div class="g-n">'+tx(r.t)+'</div><div class="g-d">'+tx(r.d)+'</div></div></div>';
+    }).join('')+'</div>'));
+
+  /* ── WEEKLY RHYTHM TEMPLATE ── */
+  var days = AR()
+    ? ['السبت','الأحد','الإثنين','الثلاثاء','الأربعاء','الخميس','الجمعة']
+    : ['Sat','Sun','Mon','Tue','Wed','Thu','Fri'];
+  var rowsName = AR()
+    ? ['📖 وِرد القرآن','🕌 صلاة وأذكار','🏘️ خُلُق الأسبوع','🎯 محور الشهر','⭐ نقاط السلوك']
+    : ['📖 Qur\u2019an portion','🕌 Prayer & adhkar','🏘️ Manner of the week','🎯 Monthly focus','⭐ Behaviour points'];
+  var weekHead = '<thead><tr><th class="day">'+(AR()?'المهمّة \\ اليوم':'Task \\ Day')+'</th>'+days.map(function(d){return '<th>'+d+'</th>';}).join('')+'</tr></thead>';
+  var weekBody = rowsName.map(function(n){
+    return '<tr><td class="day" style="text-align:start">'+n+'</td>'+days.map(function(){return '<td class="cell"></td>';}).join('')+'</tr>';
+  }).join('');
+  pages.push(sheet({pg:P(++pg), h:{ic:'🗓️', k:{ar:'إيقاعُ الأسبوع',en:'Weekly rhythm'}, t:{ar:'جدولُ الأسبوع — املأه معًا',en:'The weekly grid — fill it together'}}},
+    '<p class="lead">'+(AR()?'صوّر هذه الصفحة أو اطبعها كلَّ أسبوع. ضع ✓ في كلِّ خانةٍ أنجزها طفلك. الفراغُ يُملأ بالعمل لا بالكلام.':'Copy or print this page weekly. Put a \u2713 in each box your child completes. The blanks are filled by action, not talk.')+'</p>'+
+    '<table class="week">'+weekHead+'<tbody>'+weekBody+'</tbody></table>'+
+    '<div class="note" style="margin-top:1.2rem">'+(AR()?'<b>الجمعة</b> يومُ مراجعةٍ واحتفال: راجِعا حِفظَ الأسبوع، واطبعا شهادةً إن اكتمل محورٌ أو رحلة.':'<b>Friday</b> is review & celebration: revise the week\u2019s memorization, and print a certificate if a focus or journey was completed.')+'</div>'+
+    '<div class="legend">'+
+      '<span class="it"><span class="sw" style="background:#1A9B7B"></span>'+(AR()?'أنجِز ✓':'Done \u2713')+'</span>'+
+      '<span class="it"><span class="sw" style="background:#C9A227"></span>'+(AR()?'جزئيّ ◐':'Partial \u25d0')+'</span>'+
+      '<span class="it"><span class="sw" style="background:#dfe5ec"></span>'+(AR()?'لاحقًا':'Later')+'</span>'+
+    '</div>'));
+
+  /* ── PER-TRACK PAGES ── */
+  R.tracks.forEach(function(t){
+    // divider
+    pages.push(sheet({cls:'divider', nofoot:true},
+      '<div class="d-ic">'+t.ic+'</div>'+
+      '<div class="d-k">'+(AR()?'المسار':'Track')+' · '+t.age+' '+(AR()?'سنوات':'years')+'</div>'+
+      '<h2>'+tx(t.nm)+'</h2>'+
+      '<p>'+tx(t.about)+'</p>'+
+      '<p style="color:#F5CC5A;font-weight:800;margin-top:.4rem">⏱️ '+tx(t.pace)+'</p>'));
+    // 1-year
+    pages.push(sheet({pg:P(++pg), h:{ic:t.ic, k:{ar:tx(t.nm)+' · '+t.age,en:tx(t.nm)+' · '+t.age}, t:{ar:'خطّةُ السنة الواحدة',en:'The one-year plan'}, n:(AR()?'١٢ شهرًا':'12 months')}},
+      '<p class="lead">'+(AR()?'خطّةٌ مكثّفةٌ تعبر أركان المدينة في عامٍ واحد، محورٌ كلَّ شهر، مع الثوابت اليوميّة الأربعة.':'An intensive plan crossing the City\u2019s corners in one year \u2014 one focus per month, alongside the four daily anchors.')+'</p>'+
+      planTable(t.one)));
+    // 2-year
+    pages.push(sheet({pg:P(++pg), h:{ic:t.ic, k:{ar:tx(t.nm)+' · '+t.age,en:tx(t.nm)+' · '+t.age}, t:{ar:'خطّةُ السنتين',en:'The two-year plan'}, n:(AR()?'سنتان':'2 years')}},
+      '<div class="note"><b>'+(AR()?'السنة الأولى':'Year 1')+':</b> '+tx(t.two.note)+'</div>'+
+      '<div class="subh">'+(AR()?'السنةُ الثانية — تعميقٌ ورحلاتٌ جديدة':'Year 2 \u2014 depth & new journeys')+'</div>'+
+      planTable(t.two.y2)+
+      '<div class="tip">'+(AR()?'المدى الأطول يعني محطّاتٍ أقلَّ في الأسبوع وفهمًا أعمق — مثاليٌّ لمن يبدأ صغيرًا أو ينشغل في الدراسة.':'A longer horizon means fewer stations per week and deeper understanding \u2014 ideal for an early start or a busy school year.')+'</div>'));
+  });
+
+  /* ── MASTER TRACKER ── */
+  pages.push(sheet({pg:P(++pg), h:{ic:'✅', k:{ar:'لوحةُ المتابعة',en:'Master tracker'}, t:{ar:'متابعةُ الأركان العشرة',en:'Tracking the ten corners'}}},
+    '<p class="lead">'+(AR()?'علّم ✓ على كلِّ ركنٍ يكتمل. هذه نسخةٌ ورقيّةٌ مختصرة؛ المتابعةُ التفصيليّة (المحطات والرحلات والشهادات) في «ركن الأهل» بالموقع.':'Tick \u2713 each corner as it\u2019s completed. This is a short paper copy; detailed tracking (stations, journeys & certificates) lives in the site\u2019s Parents\u2019 Corner.')+'</p>'+
+    '<div class="chk">'+R.corners.map(function(c){
+      return '<div class="row"><span class="box"></span><span class="lb">'+c.ic+' '+tx(c.n)+'</span><span class="meta">'+tx(c.t)+'</span></div>';
+    }).join('')+'</div>'+
+    '<div class="note">'+(AR()?'عند اكتمال الأركان العشرة، يكون طفلك قد عبر المدينة كاملة — اطبع له شهادةَ «خرّيج المدينة».':'When all ten corners are complete, your child has crossed the whole City \u2014 print the \u201cCity Graduate\u201d certificate.')+'</div>'));
+
+  /* ── CERTIFICATE ── */
+  pages.push(sheet({cls:'cover', nofoot:true},
+    '<div class="crest">🏅</div>'+
+    '<div class="ckick">'+(AR()?'تربية الطفل المسلم · ركن الأهل':'Muslim Kids\u2019 Tarbiyah · Parents\u2019 Corner')+'</div>'+
+    '<h1 style="font-size:2.4rem">'+(AR()?'شهادةُ خرّيج المدينة':'City Graduate Certificate')+'</h1>'+
+    '<div class="cdiv"></div>'+
+    '<div class="cdesc">'+(AR()?'نَشهدُ أنّ الطفلَ البطل':'We certify that the young hero')+'</div>'+
+    '<div class="cname" style="font-size:1.5rem;margin:1rem 0"><b style="min-width:300px"></b></div>'+
+    '<div class="cdesc">'+(AR()?'قد عبر أركانَ مدينة تربية الطفل المسلم العشرة، وأتمّ خطّةَ النموّ بإذن الله. بارك الله فيه وجعله من حَمَلة هذا الدين.':'has crossed the ten corners of the Muslim Kids\u2019 Tarbiyah City and completed the growth plan, by Allah\u2019s leave. May Allah bless him and make him a bearer of this faith.')+'</div>'+
+    '<div class="crow" style="font-size:1.6rem"><span>🕋</span><span>📖</span><span>⭐</span><span>🕌</span></div>'+
+    '<div class="cname" style="margin-top:1.4rem">'+(AR()?'التاريخ:':'Date:')+' <b style="min-width:160px"></b> &nbsp;&nbsp; '+(AR()?'توقيع الأهل:':'Parent:')+' <b style="min-width:160px"></b></div>'));
+
+  document.getElementById('book').innerHTML = pages.join('');
+}
+
+function setLang(l){
+  lang = l; localStorage.setItem('bunyanLang', l);
+  document.documentElement.lang = l; document.documentElement.dir = l==='ar'?'rtl':'ltr';
+  document.getElementById('segAr').classList.toggle('on', l==='ar');
+  document.getElementById('segEn').classList.toggle('on', l==='en');
+  build();
+}
+setLang(lang);
+</script>
+</body>
+</html>

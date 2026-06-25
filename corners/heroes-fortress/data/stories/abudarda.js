@@ -1,0 +1,56 @@
+/* data/stories/abudarda.js — Heroes · Abu ad-Darda' — sources: صور من حياة الصحابة (الباشا) · إسلام ويب · الدرر السنية · البداية والنهاية */
+window.HISN_STORIES = window.HISN_STORIES || {};
+HISN_STORIES.abudarda = [
+  { icon:'📚', scene:'mosque', character:'🕌',
+    title:{ ar:'التاجرُ الذي اختارَ العلم', en:'The Merchant Who Chose Knowledge' },
+    pages:[
+      { scene:'madinah', character:'💰',
+        text:{ ar:'كان <b>أبو الدرداء</b> قبلَ الإسلامِ تاجراً ناجحاً في المدينة، يُحِبُّ البيعَ والشراءَ وجمعَ المال. وكان من آخرِ قومِه إسلاماً، لكنّه حين أسلمَ <b>أسلمَ بقلبٍ كامل</b>.<br><br>فلمّا دخلَ الإيمانُ قلبَه، نظرَ إلى دكّانِه وتجارتِه ثمّ قال كلمةً عظيمة: «لا أُحِبُّ أن تشغلَني التجارةُ عن ذكرِ اللهِ والصلاة». <b>فتركَ تجارتَه وأقبلَ على العلمِ والعبادة</b>! قالوا له: ألا تخشى الفقر؟ قال: العلمُ والإيمانُ أغلى من كلِّ مال.',
+          en:'Before Islam, <b>Abu ad-Darda\u2019</b> was a successful merchant in Madinah who loved buying, selling, and gathering wealth. He was among the last of his people to embrace Islam — but when he did, he <b>embraced it with a whole heart</b>.<br><br>When faith entered his heart, he looked at his shop and trade and said something great: "I do not want trade to distract me from the remembrance of Allah and prayer." So he <b>left his trade and turned to knowledge and worship</b>! They asked him: do you not fear poverty? He said: knowledge and faith are dearer than all wealth.' },
+        choice:{ q:{ar:'لماذا تركَ أبو الدرداءِ تجارتَه؟',en:'Why did Abu ad-Darda\u2019 leave his trade?'},
+          opts:[
+            { t:{ar:'لئلّا تشغلَه عن ذكرِ اللهِ والعلم',en:'So it would not distract him from Allah and knowledge'},c:true,exp:{ar:'نعم! آثرَ ما يبقى (العلمَ والإيمان) على ما يفنى (المال).',en:'Yes! He chose the lasting (knowledge and faith) over the fleeting (wealth).'} },
+            { t:{ar:'لأنّه أفلسَ',en:'Because he went bankrupt'},c:false,exp:{ar:'لا، بل تركها باختيارِه ليطلبَ العلم.',en:'No — he left it by choice to seek knowledge.'} },
+            { t:{ar:'لأنّه كسول',en:'Because he was lazy'},c:false,exp:{ar:'لا، بل انشغلَ بما هو أنفعُ وأبقى.',en:'No — he busied himself with what is more useful and lasting.'} },
+          ] } },
+    ],
+    quiz:[
+      { q:{ar:'ماذا كان أبو الدرداءِ قبلَ الإسلام؟',en:'What was Abu ad-Darda\u2019 before Islam?'},
+        opts:[ {t:{ar:'تاجراً ناجحاً',en:'A successful merchant'},c:true}, {t:{ar:'قائدَ جيش',en:'An army commander'},c:false}, {t:{ar:'شاعراً',en:'A poet'},c:false} ] },
+      { q:{ar:'بماذا انشغلَ بعدَ أن تركَ التجارة؟',en:'What did he busy himself with after leaving trade?'},
+        opts:[ {t:{ar:'العلمِ والعبادة',en:'Knowledge and worship'},c:true}, {t:{ar:'الزراعة',en:'Farming'},c:false}, {t:{ar:'السفر',en:'Travel'},c:false} ] },
+      { q:{ar:'ماذا نتعلّمُ من اختيارِه؟',en:'What do we learn from his choice?'},
+        opts:[ {t:{ar:'العلمُ والإيمانُ أبقى من المال',en:'Knowledge and faith outlast wealth'},c:true}, {t:{ar:'المالُ أهمُّ شيء',en:'Wealth is most important'},c:false}, {t:{ar:'الكسلُ راحة',en:'Laziness is comfort'},c:false} ] },
+    ],
+    moral:{ar:'مَن آثرَ العلمَ والإيمانَ على المالِ نالَ خيرَ الدنيا والآخرة، فالعلمُ يبقى والمالُ يفنى.',en:'Whoever chooses knowledge and faith over wealth gains the good of this world and the next — knowledge endures while wealth fades.'},
+    badge:{icon:'📚',title:{ar:'وِسامُ إيثارِ العلم',en:'Badge of Choosing Knowledge'}},
+    reflect:[ {ar:'ما الذي تُقدِّمُه على اللعبِ ومتاعِ الدنيا؟',en:'What do you put before play and worldly comforts?'}, {ar:'كيف تحرصُ على وقتِك فلا يضيعُ فيما لا ينفع؟',en:'How do you guard your time from being wasted on what does not benefit?'} ],
+    didYouKnow:[ {ar:'كان أبو الدرداءِ يقول: «نِعمَ صومعةُ الرجلِ بيتُه يكفُّ فيها بصرَه ولسانَه» — المصدر: الزهد لأحمد',en:'Abu ad-Darda\u2019 used to say: "How excellent a man\'s retreat is his home, where he restrains his sight and tongue" — Source: az-Zuhd by Ahmad'}, {ar:'صار أبو الدرداءِ من كبارِ علماءِ الصحابةِ ومعلِّمَ القرآنِ في دمشق — المصدر: البداية والنهاية',en:'Abu ad-Darda\u2019 became a major scholar among the companions and a teacher of the Quran in Damascus — Source: Al-Bidaya wa an-Nihaya'} ],
+  },
+  { icon:'⚖️', scene:'mosque', character:'🤝',
+    title:{ ar:'لكلِّ ذي حقٍّ حقُّه', en:'Give Each Its Due Right' },
+    pages:[
+      { scene:'mosque', character:'🤝',
+        text:{ ar:'آخى النبيُّ ﷺ بين <b>أبي الدرداءِ</b> و<b>سلمانَ الفارسي</b>. فزارَ سلمانُ أخاه، فرأى زوجتَه في ثيابٍ رثّةٍ مهملة، فسألها: ما شأنُكِ؟ قالت: أخوكَ أبو الدرداءِ <b>لا حاجةَ له في الدنيا</b> — يصومُ النهارَ ويقومُ الليلَ ولا يكادُ يلتفتُ إلينا!<br><br>فلمّا جاءَ أبو الدرداءِ صنعَ له سلمانُ طعاماً وقال: كُلْ معي. قال: إنّي صائم. قال سلمان: <b>أُقسِمُ عليكَ لتُفطِرَنّ</b>. وفي الليلِ أرادَ أبو الدرداءِ أن يقومَ يُصلّي فمنعه سلمانُ حتى ينامَ، ثمّ قاما آخرَ الليلِ فصلّيا معاً. ثمّ قال سلمانُ كلمتَه الحكيمة: <b>«إنّ لربِّك عليكَ حقّاً، ولنفسِك عليكَ حقّاً، ولأهلِك عليكَ حقّاً، فأعطِ كلَّ ذي حقٍّ حقَّه»</b>.',
+          en:'The Prophet ﷺ made <b>Abu ad-Darda\u2019</b> and <b>Salman al-Farisi</b> brothers. Salman visited his brother and saw his wife in worn, neglected clothes. He asked her: what is the matter? She said: your brother Abu ad-Darda\u2019 <b>has no interest in this world</b> — he fasts by day and prays by night and hardly turns to us!<br><br>When Abu ad-Darda\u2019 came, Salman prepared food and said: eat with me. He said: I am fasting. Salman said: <b>I swear you must break your fast</b>. At night Abu ad-Darda\u2019 wished to rise and pray, but Salman stopped him until he slept; then they rose at the end of the night and prayed together. Then Salman spoke his wise words: <b>"Your Lord has a right over you, your soul has a right over you, and your family has a right over you — so give each its due."</b>' },
+        choice:{ q:{ar:'ماذا علّمَ سلمانُ أبا الدرداءِ في التوازن؟',en:'What did Salman teach Abu ad-Darda\u2019 about balance?'},
+          opts:[
+            { t:{ar:'أن يُعطيَ ربَّه ونفسَه وأهلَه كلَّ ذي حقٍّ حقَّه',en:'To give his Lord, himself, and his family each their due'},c:true,exp:{ar:'نعم! وأقرَّ النبيُّ ﷺ ذلك وقال: صدقَ سلمان.',en:'Yes! And the Prophet ﷺ approved, saying: Salman has spoken the truth.'} },
+            { t:{ar:'أن يتركَ العبادةَ كلَّها',en:'To abandon worship entirely'},c:false,exp:{ar:'لا، بل أن يوازِنَ بين العبادةِ وحقوقِ نفسِه وأهلِه.',en:'No — to balance worship with the rights of his body and family.'} },
+            { t:{ar:'أن يجمعَ المال',en:'To gather wealth'},c:false,exp:{ar:'لا، بل التوازنُ بين الحقوق.',en:'No — balance between the various rights.'} },
+          ] } },
+    ],
+    quiz:[
+      { q:{ar:'من آخى النبيُّ ﷺ بينه وبين أبي الدرداء؟',en:'Whom did the Prophet ﷺ pair with Abu ad-Darda\u2019?'},
+        opts:[ {t:{ar:'سلمانَ الفارسي',en:'Salman al-Farisi'},c:true}, {t:{ar:'أبا هريرة',en:'Abu Hurayra'},c:false}, {t:{ar:'بلالاً',en:'Bilal'},c:false} ] },
+      { q:{ar:'ما الحقوقُ الثلاثةُ التي ذكرَها سلمان؟',en:'What three rights did Salman mention?'},
+        opts:[ {t:{ar:'حقُّ الربِّ والنفسِ والأهل',en:'The rights of the Lord, the self, and the family'},c:true}, {t:{ar:'حقُّ المالِ فقط',en:'Only the right of wealth'},c:false}, {t:{ar:'حقُّ الجيرانِ فقط',en:'Only the right of neighbors'},c:false} ] },
+      { q:{ar:'بماذا حكمَ النبيُّ ﷺ على كلامِ سلمان؟',en:'How did the Prophet ﷺ judge Salman\'s words?'},
+        opts:[ {t:{ar:'صدقَ سلمان',en:'Salman spoke the truth'},c:true}, {t:{ar:'أخطأ',en:'He was wrong'},c:false}, {t:{ar:'سكتَ عنه',en:'He said nothing'},c:false} ] },
+    ],
+    moral:{ar:'الدِّينُ توازن: لربِّك حقٌّ ولبدنِك حقٌّ ولأهلِك حقّ، فأعطِ كلَّ ذي حقٍّ حقَّه.',en:'Religion is balance: your Lord has a right, your body has a right, your family has a right — so give each its due.'},
+    badge:{icon:'⚖️',title:{ar:'وِسامُ التوازن',en:'Badge of Balance'}},
+    reflect:[ {ar:'هل توازِنُ بين عبادتِك وراحتِك ووقتِك مع أهلِك؟',en:'Do you balance your worship, rest, and time with your family?'}, {ar:'كيف تُعطي كلَّ واجبٍ في يومِك حقَّه؟',en:'How do you give each duty in your day its due?'} ],
+    didYouKnow:[ {ar:'قصّةُ سلمانَ وأبي الدرداءِ في التوازنِ ثابتةٌ في صحيحِ البخاري — المصدر: صحيح البخاري',en:'The account of Salman and Abu ad-Darda\u2019 on balance is established in Sahih al-Bukhari — Source: Sahih al-Bukhari'}, {ar:'كان أبو الدرداءِ يحبُّ الحكمةَ ويقول: «تفكُّرُ ساعةٍ خيرٌ من قيامِ ليلة» — المصدر: الزهد',en:'Abu ad-Darda\u2019 loved wisdom and said: "An hour\'s reflection is better than a night\'s standing in prayer" — Source: az-Zuhd'} ],
+  },
+];

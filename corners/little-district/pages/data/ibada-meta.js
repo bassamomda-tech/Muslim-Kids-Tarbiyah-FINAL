@@ -1,0 +1,21 @@
+/* ════ واحةُ العبادة — journey index (meta for chapter-bar + hub) ════ */
+window.IBADA_META = [
+  { id:'salah',   icon:'🤲', emoji:'🕌', color:'#117A8B',
+    title:{ ar:'الصَّلاة',  en:'Prayer' },
+    tagline:{ ar:'أربَعٌ وثَلاثونَ مَحطّةً تُتَوَّجُ بِقِصَصِ الصّالِحينَ مَعَ الصَّلاة', en:'Thirty-four stations crowned with stories of the righteous' } },
+  { id:'fasting', icon:'🌙', emoji:'🛡️', color:'#8E44AD',
+    title:{ ar:'الصِّيام',  en:'Fasting' },
+    tagline:{ ar:'مَدرَسةُ الأبطالِ في الصَّبرِ والقُوّة', en:'The heroes\' school of patience and strength' } },
+  { id:'adhkar',  icon:'🛡️', emoji:'✨', color:'#2980B9',
+    title:{ ar:'الأذكار',  en:'Adhkar' },
+    tagline:{ ar:'عِشرونَ مَحطّةً: مَعنى كُلِّ ذِكرٍ وأجرُهُ وكيفَ تَعيشُه', en:'Twenty stations: each dhikr\'s meaning, reward, and how to live it' } },
+  { id:'dua',     icon:'💡', emoji:'🌟', color:'#E67E22',
+    title:{ ar:'الدُّعاء',  en:'Du\'a' },
+    tagline:{ ar:'خَيطُ النّورِ المُباشِرُ مَعَ الله', en:'The direct thread of light to Allah' } },
+  { id:'zakah',   icon:'🎁', emoji:'🌱', color:'#27AE60',
+    title:{ ar:'الزَّكاةُ والصَّدَقة', en:'Zakah & Charity' },
+    tagline:{ ar:'كَنزٌ كُلَّما أعطَيتَ مِنهُ زاد', en:'A treasure that grows the more you give' } },
+  { id:'hajj',    icon:'🕋', emoji:'🏆', color:'#C0392B',
+    title:{ ar:'الحَجّ',   en:'Hajj' },
+    tagline:{ ar:'الرِّحلةُ الكُبرى إلى بَيتِ اللهِ الحَرام', en:'The grand journey to Allah\'s Sacred House' } },
+];

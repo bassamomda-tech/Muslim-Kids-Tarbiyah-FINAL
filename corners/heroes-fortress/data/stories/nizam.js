@@ -1,0 +1,56 @@
+/* data/stories/nizam.js — Leaders · Nizam al-Mulk — sources: البداية والنهاية · سير أعلام النبلاء · إسلام ويب · الدرر السنية */
+window.HISN_STORIES = window.HISN_STORIES || {};
+HISN_STORIES.nizam = [
+  { icon:'🏫', scene:'mihrab', character:'📚',
+    title:{ ar:'مدارسُ تُضيءُ العالم', en:'Schools That Light Up the World' },
+    pages:[
+      { scene:'mihrab', character:'📚',
+        text:{ ar:'كان <b>نظامُ الملك</b> وزيراً عظيماً يُديرُ دولةً واسعة، لكنّه عرفَ سرّاً مهمّاً: أنّ <b>الأمّةَ لا تقوى إلّا بالعلم</b>. فقرّرَ أن يفعلَ شيئاً يبقى أثرُه قروناً — أن يبنيَ <b>المدارس</b>.<br><br>أنشأَ نظامُ الملكِ المدارسَ <b>«النظاميّة»</b> في بغدادَ ونيسابورَ ومدنٍ كثيرة. وكانت عجيبةً في زمانِها: <b>التعليمُ فيها مجّانيّ</b>، والطالبُ يحصلُ على السكنِ والطعامِ والكتبِ دونَ مقابل! وأحضرَ لها أعظمَ العلماءِ ليُدرِّسوا فيها وأكرمهم. فأقبلَ طلّابُ العلمِ من كلِّ مكان. علّمنا نظامُ الملكِ أنّ <b>الاستثمارَ في العلمِ أعظمُ استثمارٍ لمستقبلِ الأمّة</b>.',
+          en:'<b>Nizam al-Mulk</b> was a great vizier governing a vast state, but he knew an important secret: that <b>a nation grows strong only through knowledge</b>. So he decided to do something whose effect would last centuries — to build <b>schools</b>.<br><br>Nizam al-Mulk founded the <b>"Nizamiyya"</b> schools in Baghdad, Nishapur, and many cities. They were a wonder in their time: <b>education in them was free</b>, and students received housing, food, and books at no cost! He brought the greatest scholars to teach in them and honored them. So students of knowledge came from everywhere. Nizam al-Mulk taught us that <b>investing in knowledge is the greatest investment in a nation\u2019s future</b>.' },
+        choice:{ q:{ar:'لماذا بنى نظامُ الملكِ المدارسَ النظامية؟',en:'Why did Nizam al-Mulk build the Nizamiyya schools?'},
+          opts:[
+            { t:{ar:'لأنّ الأمّةَ لا تقوى إلّا بالعلمِ والتعليم',en:'Because a nation grows strong only through knowledge and education'},c:true,exp:{ar:'نعم! الاستثمارُ في العلمِ أعظمُ استثمارٍ للمستقبل.',en:'Yes! Investing in knowledge is the greatest investment in the future.'} },
+            { t:{ar:'ليجمعَ المال',en:'To collect money'},c:false,exp:{ar:'لا، بل جعلها مجّانيّةً للطلّاب.',en:'No — he made them free for students.'} },
+            { t:{ar:'للشهرةِ فقط',en:'For fame only'},c:false,exp:{ar:'لا، بل لنفعِ الأمّةِ بالعلم.',en:'No — to benefit the nation through knowledge.'} },
+          ] } },
+    ],
+    quiz:[
+      { q:{ar:'ما اسمُ المدارسِ التي بناها نظامُ الملك؟',en:'What were the schools Nizam al-Mulk built called?'},
+        opts:[ {t:{ar:'النظامية',en:'The Nizamiyya'},c:true}, {t:{ar:'المستنصرية',en:'The Mustansiriyya'},c:false}, {t:{ar:'القرويين',en:'The Qarawiyyin'},c:false} ] },
+      { q:{ar:'بماذا تميّزتِ النظاميّةُ في زمانِها؟',en:'What distinguished the Nizamiyya in its time?'},
+        opts:[ {t:{ar:'التعليمُ المجّانيُّ مع السكنِ والطعامِ والكتب',en:'Free education with housing, food, and books'},c:true}, {t:{ar:'كانت للأغنياءِ فقط',en:'Only for the rich'},c:false}, {t:{ar:'لا أحدَ يدرسُ فيها',en:'No one studied in them'},c:false} ] },
+      { q:{ar:'ما الدرسُ من مدارسِ نظامِ الملك؟',en:'What is the lesson from Nizam al-Mulk\u2019s schools?'},
+        opts:[ {t:{ar:'الاستثمارُ في العلمِ أعظمُ استثمارٍ للمستقبل',en:'Investing in knowledge is the greatest investment in the future'},c:true}, {t:{ar:'العلمُ غيرُ مهم',en:'Knowledge is unimportant'},c:false}, {t:{ar:'المالُ أهمُّ شيء',en:'Wealth is the most important thing'},c:false} ] },
+    ],
+    moral:{ar:'الاستثمارُ في العلمِ والتعليمِ أعظمُ استثمارٍ لمستقبلِ الأمّة، والعلمُ النافعُ صدقةٌ جاريةٌ يبقى أجرُها.',en:'Investing in knowledge and education is the greatest investment in a nation\u2019s future; beneficial knowledge is an ongoing charity whose reward endures.'},
+    badge:{icon:'🏫',title:{ar:'وِسامُ باني المدارس',en:'Badge of the School-Builder'}},
+    reflect:[ {ar:'كيف تُسهِمُ في نشرِ العلمِ ودعمِ التعليمِ من حولِك؟',en:'How do you contribute to spreading knowledge and supporting education around you?'}, {ar:'ما العملُ الذي يبقى أثرُه بعدَك؟',en:'What deed leaves an effect that lasts after you?'} ],
+    didYouKnow:[ {ar:'كانت المدرسةُ النظاميّةُ في بغدادَ من أشهرِ جامعاتِ العالمِ الإسلامي، ودرّسَ فيها الإمامُ الغزالي — المصدر: سير أعلام النبلاء',en:'The Nizamiyya school in Baghdad was among the most famous universities of the Muslim world; Imam al-Ghazali taught there — Source: Siyar A\u2019lam an-Nubala\u2019'}, {ar:'وفّرتِ المدارسُ النظاميّةُ السكنَ والطعامَ والرواتبَ للطلّابِ والأساتذة — المصدر: البداية والنهاية',en:'The Nizamiyya schools provided housing, food, and stipends for students and teachers — Source: Al-Bidaya wa an-Nihaya'} ],
+  },
+  { icon:'⚖️', scene:'throne', character:'🤝',
+    title:{ ar:'الوزيرُ العادلُ المتواضع', en:'The Just and Humble Vizier' },
+    pages:[
+      { scene:'throne', character:'🤝',
+        text:{ ar:'مع أنّ <b>نظامَ الملك</b> كان أقوى رجلٍ في الدولةِ بعدَ السلطان، إلّا أنّه كان <b>عادلاً متواضعاً تقيّاً</b>. كان يستمعُ لشكاوى الناسِ ويُنصِفُ المظلوم، ويُحِبُّ مجالسةَ العلماءِ والصالحينَ ويتواضعُ لهم.<br><br>أدارَ الدولةَ السلجوقيّةَ نحوَ <b>ثلاثينَ سنة</b> بحكمةٍ وعدل، فعمَّ الأمنُ والرخاء. وكان يُكثِرُ من الصدقةِ والإحسانِ إلى الفقراء، ويخافُ اللهَ في كلِّ قرار. لم تُفسِدْه القوّةُ ولا المنصب، بل ظلَّ متواضعاً يذكرُ أنّه عبدٌ لله. علّمنا أنّ <b>القائدَ الحقَّ يجمعُ بين القوّةِ والعدلِ والتواضعِ وخشيةِ الله</b>، وأنّ المنصبَ أمانةٌ تُؤدّى لا مغنمٌ يُستغَلّ.',
+          en:'Although <b>Nizam al-Mulk</b> was the most powerful man in the state after the sultan, he was <b>just, humble, and pious</b>. He would listen to people\u2019s complaints and give the wronged their due, and loved sitting with scholars and the righteous, humbling himself to them.<br><br>He governed the Seljuk state for about <b>thirty years</b> with wisdom and justice, so security and prosperity spread. He gave much in charity and kindness to the poor, and feared Allah in every decision. Power and office did not corrupt him; he remained humble, remembering he was a servant of Allah. He taught us that <b>a true leader combines power with justice, humility, and awe of Allah</b>, and that office is a trust to be fulfilled, not spoils to be exploited.' },
+        choice:{ q:{ar:'كيف كان نظامُ الملكِ رغمَ قوّتِه ومنصبِه؟',en:'How was Nizam al-Mulk despite his power and office?'},
+          opts:[
+            { t:{ar:'عادلاً متواضعاً تقيّاً يخافُ الله',en:'Just, humble, pious, fearing Allah'},c:true,exp:{ar:'نعم! المنصبُ أمانةٌ تُؤدّى لا مغنمٌ يُستغَلّ.',en:'Yes! Office is a trust to fulfill, not spoils to exploit.'} },
+            { t:{ar:'متكبّراً ظالماً',en:'Arrogant and unjust'},c:false,exp:{ar:'لا، بل تواضعَ وعدلَ.',en:'No — he was humble and just.'} },
+            { t:{ar:'مشغولاً بنفسِه',en:'Concerned only with himself'},c:false,exp:{ar:'لا، بل أنصفَ الناسَ وأحسنَ للفقراء.',en:'No — he gave people their due and was kind to the poor.'} },
+          ] } },
+    ],
+    quiz:[
+      { q:{ar:'كم سنةً أدارَ نظامُ الملكِ الدولةَ تقريباً؟',en:'About how many years did Nizam al-Mulk govern the state?'},
+        opts:[ {t:{ar:'نحوَ ثلاثينَ سنة',en:'About thirty years'},c:true}, {t:{ar:'سنةً واحدة',en:'One year'},c:false}, {t:{ar:'مئةَ سنة',en:'A hundred years'},c:false} ] },
+      { q:{ar:'كيف عاملَ نظامُ الملكِ الفقراءَ والمظلومين؟',en:'How did Nizam al-Mulk treat the poor and wronged?'},
+        opts:[ {t:{ar:'أنصفَ المظلومَ وأحسنَ للفقراء',en:'He gave the wronged their due and was kind to the poor'},c:true}, {t:{ar:'ظلمهم',en:'He oppressed them'},c:false}, {t:{ar:'تجاهلهم',en:'He ignored them'},c:false} ] },
+      { q:{ar:'ما المنصبُ كما علّمنا نظامُ الملك؟',en:'What is office, as Nizam al-Mulk taught?'},
+        opts:[ {t:{ar:'أمانةٌ تُؤدّى لا مغنمٌ يُستغَلّ',en:'A trust to fulfill, not spoils to exploit'},c:true}, {t:{ar:'فرصةٌ للثراء',en:'A chance for wealth'},c:false}, {t:{ar:'وسيلةٌ للتكبّر',en:'A means for arrogance'},c:false} ] },
+    ],
+    moral:{ar:'القائدُ الحقُّ يجمعُ بين القوّةِ والعدلِ والتواضعِ وخشيةِ الله، والمنصبُ أمانةٌ تُؤدّى لا مغنمٌ يُستغَلّ.',en:'A true leader combines power with justice, humility, and awe of Allah; office is a trust to be fulfilled, not spoils to be exploited.'},
+    badge:{icon:'⚖️',title:{ar:'وِسامُ الأمانةِ والتواضع',en:'Badge of Trust & Humility'}},
+    reflect:[ {ar:'إذا تولّيتَ مسؤوليّةً، هل تؤدّيها بأمانةٍ وعدل؟',en:'If you take on a responsibility, do you fulfill it with trust and justice?'}, {ar:'هل تبقى متواضعاً مهما علا شأنُك؟',en:'Do you stay humble however high your standing?'} ],
+    didYouKnow:[ {ar:'كان نظامُ الملكِ يُكثِرُ مجالسةَ العلماءِ والصالحينَ ويتأثّرُ بمواعظِهم — المصدر: سير أعلام النبلاء',en:'Nizam al-Mulk often sat with scholars and the righteous and was moved by their counsel — Source: Siyar A\u2019lam an-Nubala\u2019'}, {ar:'كتبَ نظامُ الملكِ كتابَ «سياست نامه» (سياسةَ المُلك) في حُسنِ الإدارةِ والعدل — المصدر: كتب التاريخ',en:'Nizam al-Mulk wrote the book "Siyasatnama" (The Book of Government) on good governance and justice — Source: history works'} ],
+  },
+];

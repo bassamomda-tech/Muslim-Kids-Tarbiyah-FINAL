@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta name="color-scheme" content="dark">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ركن التنزيلات | Downloads</title>
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+<style>
+  :root{ --bg1:#081E36; --bg2:#0E2E4E; --gold:#E8B530; --gold-lt:#F5CC5A; --ink:#FEF5DC; --muted:rgba(254,245,220,.66); --card:rgba(255,255,255,.06); --line:rgba(232,181,48,.28); }
+  *{box-sizing:border-box}
+  body{margin:0;font-family:'Tajawal','Nunito',sans-serif;color:var(--ink);direction:rtl;min-height:100vh;background:
+    radial-gradient(1100px 640px at 82% -8%,rgba(232,181,48,.13),transparent 60%),linear-gradient(165deg,var(--bg1),var(--bg2))}
+  html[dir="ltr"] body{direction:ltr;font-family:'Nunito','Tajawal',sans-serif}
+  .header{display:flex;align-items:center;justify-content:space-between;padding:1rem 1.4rem;border-bottom:1px solid var(--line);background:rgba(8,24,42,.7);position:sticky;top:0;z-index:10;backdrop-filter:blur(8px)}
+  .back-btn{background:var(--gold);color:#10243d;border:none;border-radius:2rem;padding:.5rem 1.2rem;font-weight:800;text-decoration:none;font-size:.88rem;font-family:inherit}
+  .lang{display:flex;border:1.5px solid var(--line);border-radius:2rem;overflow:hidden}
+  .lang button{background:transparent;border:none;color:var(--ink);font-weight:800;padding:.32rem .85rem;font-size:.8rem;cursor:pointer;font-family:inherit}
+  .lang button.active{background:var(--gold);color:#10243d}
+  .wrap{max-width:1000px;margin:0 auto;padding:1.8rem 1rem 4rem}
+  .hero{text-align:center;margin-bottom:1.8rem}
+  .hero .ic{font-size:3rem}
+  .hero h1{margin:.3rem 0 .2rem;font-size:2rem;font-weight:900}
+  .hero p{margin:0;color:var(--muted)}
+  .sec{margin-bottom:2.2rem}
+  .sec-h{display:flex;align-items:center;gap:.6rem;margin-bottom:1rem}
+  .sec-h .si{font-size:1.5rem}
+  .sec-h h2{margin:0;font-size:1.3rem;font-weight:900;color:var(--gold-lt)}
+  .sec-h .sn{color:var(--muted);font-size:.86rem;margin-inline-start:auto}
+  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:1rem}
+  .dl-card{background:var(--card);border:1.5px solid var(--line);border-radius:1.2rem;padding:1.1rem;display:flex;flex-direction:column;gap:.5rem}
+  .dl-card .dc-ic{font-size:1.8rem}
+  .dl-card .dc-t{font-weight:800;font-size:1rem;line-height:1.4}
+  .dl-card .dc-s{color:var(--muted);font-size:.82rem;flex:1}
+  .dl-btn{margin-top:.3rem;background:linear-gradient(135deg,var(--gold),#c79518);color:#10243d;border:none;border-radius:.9rem;padding:.6rem;font-weight:800;cursor:pointer;font-family:inherit;font-size:.88rem;text-decoration:none;text-align:center;display:block}
+  .dl-btn.ghost{background:transparent;border:1.5px solid var(--line);color:var(--gold-lt)}
+  .dl-btn.locked{background:rgba(255,255,255,.06);color:var(--muted);border:1px dashed var(--line);cursor:default}
+  .empty{color:var(--muted);font-size:.92rem;background:var(--card);border:1px dashed var(--line);border-radius:1rem;padding:1.2rem;text-align:center}
+  .book-slot{background:var(--card);border:1.5px dashed var(--line);border-radius:1.2rem;padding:1rem;display:flex;align-items:center;gap:.8rem}
+  .book-slot .bs-ic{font-size:1.8rem}
+  .book-slot .bs-t{flex:1}
+  .book-slot .bs-t b{display:block;font-weight:800}
+  .book-slot .bs-t span{color:var(--muted);font-size:.8rem}
+  .book-slot .bs-note{font-family:ui-monospace,monospace;font-size:.7rem;color:#90A4AE;background:rgba(0,0,0,.25);border-radius:.6rem;padding:.4rem .6rem}
+
+  /* PRINT overlay (certificate / summary) */
+  .print-ov{position:fixed;inset:0;background:rgba(4,14,26,.82);backdrop-filter:blur(8px);display:none;align-items:flex-start;justify-content:center;z-index:60;overflow-y:auto;padding:1.2rem}
+  .print-ov.open{display:flex}
+  .print-tools{position:fixed;top:1rem;inset-inline-end:1rem;display:flex;gap:.5rem;z-index:61}
+  .pt-btn{border:none;border-radius:.9rem;padding:.6rem 1rem;font-weight:800;cursor:pointer;font-family:inherit}
+  .pt-btn.print{background:var(--gold);color:#10243d}
+  .pt-btn.close{background:#c0392b;color:#fff}
+  .sheet-paper{background:#fff;color:#222;max-width:780px;width:100%;margin:auto;border-radius:1rem;overflow:hidden}
+  .cert{padding:2.6rem 2rem;text-align:center;background:radial-gradient(700px 360px at 50% 0%,#fff8e6,#fffdf7);border:10px solid #C8A020;position:relative}
+  .cert .seal{font-size:3.2rem}
+  .cert .kick{color:#9a7414;font-weight:800;letter-spacing:.08em;margin:.4rem 0}
+  .cert .title{font-size:1.9rem;font-weight:900;color:#7a5a12;margin:.3rem 0}
+  .cert .name{font-size:2.1rem;font-weight:900;color:#10243d;border-bottom:3px dashed #C8A020;display:inline-block;padding:.2rem 2rem;margin:.7rem 0}
+  .cert .state{font-size:1.05rem;line-height:1.9;color:#3a2f12;margin:.7rem auto;max-width:560px}
+  .cert .foot{margin-top:1rem;color:#9a7414;font-weight:800}
+  .summary{padding:2rem;color:#222;background:#fff}
+  .summary h2{color:#7a5a12;margin:.2rem 0 1rem;text-align:center}
+  .summary table{width:100%;border-collapse:collapse}
+  .summary th,.summary td{padding:.5rem .7rem;border-bottom:1px solid #e7dcc0;text-align:start;font-size:.92rem}
+  .summary th{color:#9a7414;font-weight:800}
+  .summary .corner-h td{background:#fbf3dd;font-weight:900;color:#7a5a12}
+  @media print{ body *{visibility:hidden} .print-ov,.print-ov *{visibility:visible} .print-ov{position:absolute;inset:0;background:#fff;padding:0} .print-tools{display:none} .sheet-paper{box-shadow:none;max-width:100%} }
+</style>
+<style id="__antiflash">html{background:#081E36;color-scheme:dark}</style>
+</head>
+<body>
+  <div class="header">
+    <a href="../../index.html" class="back-btn" id="backBtn">↩️ <span class="lng-ar">المدينة</span><span class="lng-en">City</span></a>
+    <div class="lang"><button data-lang="en">EN</button><button data-lang="ar" class="active">عربي</button></div>
+  </div>
+
+  <div class="wrap">
+    <div class="hero">
+      <div class="ic">📥</div>
+      <h1><span class="lng-ar">ركن التنزيلات</span><span class="lng-en">Downloads Corner</span></h1>
+      <p><span class="lng-ar">شهاداتُ طفلك · ملخّص تقدّمه · أوراق أنشطة · الأنشطة المفتوحة</span><span class="lng-en">Your child's certificates · progress summary · activity sheets · unlocked activities</span></p>
+    </div>
+
+    <!-- CERTIFICATES -->
+    <div class="sec">
+      <div class="sec-h"><span class="si">🏅</span><h2><span class="lng-ar">الشهادات المكتسبة</span><span class="lng-en">Earned Certificates</span></h2><span class="sn" id="certCount"></span></div>
+      <div id="certGrid"></div>
+    </div>
+
+    <!-- PROGRESS SUMMARY -->
+    <div class="sec">
+      <div class="sec-h"><span class="si">📊</span><h2><span class="lng-ar">ملخّص التقدّم</span><span class="lng-en">Progress Summary</span></h2></div>
+      <div class="dl-card" style="max-width:380px">
+        <div class="dc-ic">🧾</div>
+        <div class="dc-t"><span class="lng-ar">تقرير تقدّم الطفل الكامل</span><span class="lng-en">Full child progress report</span></div>
+        <div class="dc-s"><span class="lng-ar">كل الأركان والرحلات والنسب في صفحة واحدة جاهزة للطباعة أو الحفظ PDF.</span><span class="lng-en">All corners, journeys & percentages on one printable page (save as PDF).</span></div>
+        <button class="dl-btn" onclick="openSummary()"><span class="lng-ar">عرض وطباعة ←</span><span class="lng-en">View & print →</span></button>
+      </div>
+    </div>
+
+    <!-- ACTIVITY SHEETS -->
+    <div class="sec">
+      <div class="sec-h"><span class="si">✏️</span><h2><span class="lng-ar">أوراق الأنشطة</span><span class="lng-en">Activity Sheets</span></h2></div>
+      <div class="grid" id="actGrid"></div>
+    </div>
+
+    <!-- UNLOCKED ACTIVITIES (what the parent unlocked / the child earned) -->
+    <div class="sec">
+      <div class="sec-h"><span class="si">🎁</span><h2><span class="lng-ar">الأنشطة المفتوحة</span><span class="lng-en">Unlocked Activities</span></h2><span class="sn" id="actUnlockCount"></span></div>
+      <div class="grid" id="unlockedGrid"></div>
+    </div>
+  </div>
+
+  <!-- print overlay -->
+  <div class="print-ov" id="printOv" onclick="if(event.target===this)closePrint()">
+    <div class="print-tools">
+      <button class="pt-btn print" onclick="window.print()">🖨️ <span class="lng-ar">طباعة / PDF</span><span class="lng-en">Print / PDF</span></button>
+      <button class="pt-btn close" onclick="closePrint()">✕</button>
+    </div>
+    <div class="sheet-paper" id="printPaper"></div>
+  </div>
+
+<script defer src="mk-system.js"></script>
+<script defer src="mk-journeys.js"></script>
+<script>
+  var lang = (window.MK&&MK.lang())||'ar';
+  var ACTS = [
+    { icon:'🔤', href:'../activities/activities/anagram.html',       t:{ar:'رتّب الحروف',  en:'Anagram'} },
+    { icon:'🧩', href:'../activities/activities/riddles.html',       t:{ar:'ألغاز الأذكياء', en:'Riddles'} },
+    { icon:'🎨', href:'../activities/activities/carpet-designer.html', t:{ar:'مصمّم الزخارف', en:'Pattern Designer'} },
+    { icon:'🏅', href:'../activities/activities/good-bingo.html',     t:{ar:'بنغو الصالحات', en:'Good Deeds Bingo'} },
+    { icon:'✍️', href:'../activities/activities/honesty-pledge.html', t:{ar:'تعهّد الصدق',   en:'Honesty Pledge'} },
+    { icon:'🗺️', href:'../activities/activities/family-tree.html',    t:{ar:'شجرة العائلة',  en:'Family Tree'} },
+  ];
+  function txo(o){ return o?(o[lang]||o.ar):''; }
+  function CN(id){ var c=MK.corner(id); return c?c.name:{ar:id,en:id}; }
+  function CIC(id){ var c=MK.corner(id); return c?c.icon:'🏛️'; }
+
+  function applyLang(){
+    document.documentElement.lang=lang; document.documentElement.dir=lang==='ar'?'rtl':'ltr';
+    document.querySelectorAll('.lng-ar').forEach(function(e){e.style.display=lang==='ar'?'':'none';});
+    document.querySelectorAll('.lng-en').forEach(function(e){e.style.display=lang==='en'?'':'none';});
+    document.querySelectorAll('.lang button').forEach(function(b){b.classList.toggle('active',b.dataset.lang===lang);});
+    render();
+  }
+  document.querySelectorAll('.lang button').forEach(function(b){ b.onclick=function(){ lang=b.dataset.lang; try{localStorage.setItem('bunyanLang',lang);}catch(e){} applyLang(); }; });
+
+  function earned(){ return (window.MK_JOURNEYS||[]).map(function(j){ return Object.assign({},j,{done:MK_J.completedOf(j)}); }).filter(function(j){ return j.done>0; }); }
+
+  function render(){
+    var ar=lang==='ar';
+    // certificates
+    var es=earned();
+    document.getElementById('certCount').textContent = ar? (es.length+' شهادة') : (es.length+' certificates');
+    document.getElementById('certGrid').innerHTML = es.length
+      ? '<div class="grid">'+es.map(function(j){
+          var full=j.done>=j.total;
+          return '<div class="dl-card"><div class="dc-ic">'+j.icon+'</div>'
+            +'<div class="dc-t">'+txo(j.name)+'</div>'
+            +'<div class="dc-s">'+txo(CN(j.corner))+' · '+j.done+'/'+j.total+(full?(ar?' · مكتملة 🎉':' · complete 🎉'):'')+'</div>'
+            +'<button class="dl-btn" onclick=\'openCert("'+j.id+'")\'>'+(ar?'🏅 الشهادة':'🏅 Certificate')+'</button></div>';
+        }).join('')+'</div>'
+      : '<div class="empty">'+(ar?'لا توجد شهادات بعد — أكمِل محطات في أي ركن لتظهر هنا.':'No certificates yet — complete stations in any corner and they\'ll appear here.')+'</div>';
+    // activity sheets
+    document.getElementById('actGrid').innerHTML = ACTS.map(function(a){
+      return '<div class="dl-card"><div class="dc-ic">'+a.icon+'</div><div class="dc-t">'+txo(a.t)+'</div>'
+        +'<a class="dl-btn ghost" href="'+a.href+'?lang='+lang+'">'+(ar?'افتح النشاط ←':'Open activity →')+'</a></div>';
+    }).join('');
+    // unlocked activities — replaces the old static books list.
+    // mkUnlocked is an object keyed by corner id; each value is an array of
+    // { href:'activities/<file>', icon, t:{ar,en} } unlocked for the child
+    // (by passing a corner's tests, or granted by the parent in the Parents corner).
+    var seen={}, unlocked=[];
+    try{
+      var u=JSON.parse(localStorage.getItem('mkUnlocked')||'{}');
+      Object.keys(u).forEach(function(k){
+        if(Array.isArray(u[k])) u[k].forEach(function(a){
+          if(a && a.href && !seen[a.href]){ seen[a.href]=1; unlocked.push(a); }
+        });
+      });
+    }catch(e){}
+    document.getElementById('actUnlockCount').textContent = ar ? (unlocked.length+' نشاط') : (unlocked.length+' activities');
+    document.getElementById('unlockedGrid').innerHTML = unlocked.length
+      ? unlocked.map(function(a){
+          var url='../activities/'+a.href; // a.href is relative to the Anous root (corners/activities/)
+          return '<div class="dl-card"><div class="dc-ic">'+(a.icon||'🎮')+'</div>'
+            +'<div class="dc-t">'+txo(a.t)+'</div>'
+            +'<a class="dl-btn" href="'+url+'?lang='+lang+'">'+(ar?'افتح النشاط ←':'Open activity →')+'</a></div>';
+        }).join('')
+      : '<div class="empty">'+(ar?'لا توجد أنشطة مفتوحة بعد — تُفتَح عند إتمام الطفل اختبارات الأركان، أو يمنحُها الأهل من «ركن الأهل».':'No unlocked activities yet — they open when your child passes corner tests, or when a parent grants them from the Parents corner.')+'</div>';
+  }
+
+  function openCert(id){
+    var j=(window.MK_JOURNEYS||[]).find(function(x){return x.id===id;}); if(!j) return;
+    var done=MK_J.completedOf(j), ar=lang==='ar';
+    var nm = localStorage.getItem('parentChildName') || (MK.activeProfile()?MK.activeProfile().name:'') || (ar?'اسم الطفل':'Child Name');
+    var stmt = ar
+      ? 'أتمّ هذا البطلُ الصغيرُ <b>'+done+'</b> من '+j.total+' محطةً في «'+txo(j.name)+'» ضمن '+txo(CN(j.corner))+'، فاستحقّ هذا التكريم. بارك الله فيه وزاده علماً وإيماناً.'
+      : 'This young hero completed <b>'+done+'</b> of '+j.total+' stations in "'+txo(j.name)+'" within '+txo(CN(j.corner))+', earning this honor. May Allah bless him.';
+    document.getElementById('printPaper').innerHTML =
+      '<div class="cert"><div class="seal">'+j.icon+'</div>'
+      +'<div class="kick">'+(ar?'تربية الطفل المسلم · ركن التنزيلات':'Muslim Kids’ Tarbiyah · Downloads')+'</div>'
+      +'<div class="title">'+(ar?'شهادة تميّز':'Certificate of Excellence')+'</div>'
+      +'<div class="name">'+nm+'</div>'
+      +'<div class="state">'+stmt+'</div>'
+      +'<div class="foot">'+done+' 🎖️ · '+txo(j.name)+'</div></div>';
+    document.getElementById('printOv').classList.add('open');
+  }
+  function openSummary(){
+    var ar=lang==='ar';
+    var order=MK.CORNERS.map(function(c){return c.id;});
+    var groups={}; (window.MK_JOURNEYS||[]).forEach(function(j){ (groups[j.corner]=groups[j.corner]||[]).push(j); });
+    var nm = localStorage.getItem('parentChildName') || (MK.activeProfile()?MK.activeProfile().name:'') || '';
+    var totalDone=0, totalAll=0;
+    var rows='';
+    order.filter(function(id){return groups[id];}).forEach(function(cid){
+      var js=groups[cid], cd=0, ct=0;
+      var jr=js.map(function(j){ var c=MK_J.completedOf(j); cd+=c; ct+=j.total; totalDone+=c; totalAll+=j.total;
+        return '<tr><td>'+j.icon+' '+txo(j.name)+'</td><td>'+c+' / '+j.total+'</td><td>'+(j.total?Math.round(c/j.total*100):0)+'%</td></tr>'; }).join('');
+      rows += '<tr class="corner-h"><td>'+CIC(cid)+' '+txo(CN(cid))+'</td><td>'+cd+' / '+ct+'</td><td>'+(ct?Math.round(cd/ct*100):0)+'%</td></tr>'+jr;
+    });
+    document.getElementById('printPaper').innerHTML =
+      '<div class="summary"><h2>'+(ar?'📊 تقرير تقدّم':'📊 Progress Report')+(nm?(' · '+nm):'')+'</h2>'
+      +'<table><thead><tr><th>'+(ar?'الرحلة / الركن':'Journey / Corner')+'</th><th>'+(ar?'المحطات':'Stations')+'</th><th>%</th></tr></thead>'
+      +'<tbody>'+rows+'</tbody>'
+      +'<tfoot><tr style="border-top:2px solid #C8A020"><td><b>'+(ar?'الإجمالي':'Total')+'</b></td><td><b>'+totalDone+' / '+totalAll+'</b></td><td><b>'+(totalAll?Math.round(totalDone/totalAll*100):0)+'%</b></td></tr></tfoot>'
+      +'</table><p style="text-align:center;color:#9a7414;margin-top:1rem;font-weight:700">'+(ar?'تربية الطفل المسلم':'Muslim Kids’ Tarbiyah')+'</p></div>';
+    document.getElementById('printOv').classList.add('open');
+  }
+  function closePrint(){ document.getElementById('printOv').classList.remove('open'); }
+
+  applyLang();
+</script>
+<script defer src="nav-fix.js"></script>
+<script src="mk-citynav.js"></script>
+</body>
+</html>

@@ -1,0 +1,56 @@
+/* data/stories/ibnsina.js — Scientists · Ibn Sina — sources: عيون الأنباء · إسلام ويب · موسوعات تاريخ العلوم · الدرر السنية */
+window.HISN_STORIES = window.HISN_STORIES || {};
+HISN_STORIES.ibnsina = [
+  { icon:'📖', scene:'mihrab', character:'👦',
+    title:{ ar:'النابغةُ الذي حفظَ القرآنَ في العاشرة', en:'The Prodigy Who Memorized the Quran at Ten' },
+    pages:[
+      { scene:'mihrab', character:'👦',
+        text:{ ar:'منذ صِغَرِه، ظهرَ على <b>ابنِ سينا</b> ذكاءٌ نادرٌ عجيب. كان يحفظُ بسرعةٍ ويفهمُ بعمق. وقبلَ أن يُتِمَّ <b>العاشرةَ من عمرِه، كان قد حفظَ القرآنَ الكريمَ كلَّه</b>! ثمّ لم يتوقّفْ، بل أقبلَ على العلومِ يتعلّمُها واحداً بعدَ آخر: الرياضياتِ والمنطقَ والفلسفةَ ثمّ الطب.<br><br>أحبَّ ابنُ سينا الطبَّ حبّاً عظيماً، ودرسَه بجدٍّ واجتهاد، حتى صارَ <b>طبيباً ماهراً وهو لا يزالُ شابّاً صغيراً</b>! بل كان الأطبّاءُ الكبارُ يأتونَ ليتعلّموا منه. لم يُضِعْ ابنُ سينا وقتَه في اللهو، بل ملأه بالعلمِ النافع. علّمنا أنّ <b>الصِّغَرَ ليس عذراً، وأنّ من بدأَ بالقرآنِ وجدَّ في العلمِ بلغَ مبلغاً عظيماً</b>.',
+          en:'From his youth, <b>Ibn Sina</b> displayed rare, amazing intelligence. He memorized quickly and understood deeply. Before he completed <b>the age of ten, he had memorized the entire Quran</b>! Then he did not stop, but devoted himself to the sciences, learning them one after another: mathematics, logic, philosophy, then medicine.<br><br>Ibn Sina loved medicine greatly and studied it with diligence, until he became a <b>skilled physician while still a young man</b>! Even senior doctors came to learn from him. Ibn Sina did not waste his time in amusement but filled it with beneficial knowledge. He taught us that <b>youth is no excuse, and whoever begins with the Quran and strives in knowledge reaches a great rank</b>.' },
+        choice:{ q:{ar:'ماذا فعلَ ابنُ سينا قبلَ أن يُتِمَّ العاشرة؟',en:'What did Ibn Sina do before completing age ten?'},
+          opts:[
+            { t:{ar:'حفظَ القرآنَ الكريمَ كلَّه',en:'He memorized the entire Quran'},c:true,exp:{ar:'نعم! البدايةُ بالقرآنِ بركةٌ وأساسٌ متين.',en:'Yes! Beginning with the Quran is a blessing and firm foundation.'} },
+            { t:{ar:'لعِبَ ولم يتعلّمْ',en:'He played and didn\u2019t learn'},c:false,exp:{ar:'لا، بل حفظَ القرآنَ وتعلّمَ العلوم.',en:'No — he memorized the Quran and learned sciences.'} },
+            { t:{ar:'لا شيء',en:'Nothing'},c:false,exp:{ar:'لا، بل حفظَ القرآنَ كلَّه.',en:'No — he memorized the whole Quran.'} },
+          ] } },
+    ],
+    quiz:[
+      { q:{ar:'بأيِّ صفةٍ تميّزَ ابنُ سينا منذ صِغَرِه؟',en:'What distinguished Ibn Sina from his youth?'},
+        opts:[ {t:{ar:'الذكاءِ النادرِ وسرعةِ الحفظ',en:'Rare intelligence and quick memorization'},c:true}, {t:{ar:'الكسل',en:'Laziness'},c:false}, {t:{ar:'حبِّ اللهو',en:'Love of amusement'},c:false} ] },
+      { q:{ar:'ماذا صارَ ابنُ سينا وهو شابٌّ صغير؟',en:'What did Ibn Sina become while a young man?'},
+        opts:[ {t:{ar:'طبيباً ماهراً يتعلّمُ منه الكبار',en:'A skilled physician from whom elders learned'},c:true}, {t:{ar:'تاجراً',en:'A merchant'},c:false}, {t:{ar:'جنديّاً',en:'A soldier'},c:false} ] },
+      { q:{ar:'ما الدرسُ من طفولةِ ابنِ سينا؟',en:'What is the lesson from Ibn Sina\u2019s childhood?'},
+        opts:[ {t:{ar:'الصِّغَرُ ليس عذراً ومن بدأَ بالقرآنِ وجدَّ بلغَ مبلغاً عظيماً',en:'Youth is no excuse; whoever begins with the Quran and strives reaches greatness'},c:true}, {t:{ar:'العلمُ للكبارِ فقط',en:'Knowledge is for adults only'},c:false}, {t:{ar:'اللهوُ أفضل',en:'Amusement is better'},c:false} ] },
+    ],
+    moral:{ar:'الصِّغَرُ ليس عذراً عن طلبِ العلم، ومن بدأَ بالقرآنِ وجدَّ واجتهدَ بلغَ مبلغاً عظيماً ونفعَ البشرية.',en:'Youth is no excuse from seeking knowledge; whoever begins with the Quran and strives diligently reaches a great rank and benefits humanity.'},
+    badge:{icon:'📖',title:{ar:'وِسامُ النبوغِ المبكّر',en:'Badge of Early Genius'}},
+    reflect:[ {ar:'كيف تستغلُّ صِغَرَك في حفظِ القرآنِ وطلبِ العلم؟',en:'How do you use your youth to memorize the Quran and seek knowledge?'}, {ar:'هل تملأُ وقتَك بالنافعِ أم تُضيّعُه في اللهو؟',en:'Do you fill your time with the beneficial or waste it in amusement?'} ],
+    didYouKnow:[ {ar:'حفظَ ابنُ سينا القرآنَ في العاشرةِ ثمّ نبغَ في الطبِّ وهو دونَ العشرين — المصدر: عيون الأنباء',en:'Ibn Sina memorized the Quran at ten then excelled in medicine before twenty — Source: Uyun al-Anba\u2019'}, {ar:'كتابُ «القانونِ في الطب» تُرجِمَ إلى اللاتينيّةِ وظلَّ يُدرَّسُ في أوروبا قروناً طويلة — المصدر: موسوعات تاريخ العلوم',en:'"The Canon of Medicine" was translated into Latin and remained taught in Europe for long centuries — Source: history of science encyclopedias'} ],
+  },
+  { icon:'🩺', scene:'madinah', character:'🌿',
+    title:{ ar:'الطبيبُ الذي داوى أهلَ زمانِه', en:'The Doctor Who Healed the People of His Time' },
+    pages:[
+      { scene:'madinah', character:'🌿',
+        text:{ ar:'لم يكنِ <b>ابنُ سينا</b> يحفظُ العلمَ لنفسِه فقط، بل استخدمه ليُداويَ المرضى ويُخفّفَ آلامَهم. كان طبيباً ماهراً يفحصُ المريضَ بدقّةٍ ويصفُ له الدواءَ المناسب، فشُفِيَ على يدِه كثيرٌ من الناس بإذنِ الله.<br><br>ثمّ أرادَ أن ينفعَ الناسَ بعدَه أيضاً، فجمعَ علمَه الطبيَّ كلَّه في كتابٍ موسوعيٍّ عظيمٍ اسمُه <b>«القانونُ في الطب»</b>. وكان هذا الكتابُ مرجعاً للأطبّاءِ في الشرقِ والغرب، حتى إنّ جامعاتِ أوروبا ظلّتْ تُدرِّسُه أكثرَ من <b>ستِّ مئةِ سنة</b>! تخيّلْ كم مريضاً شُفِيَ، وكم طبيباً تعلّمَ، بفضلِ علمِ هذا العالمِ المسلم. لكنّ ابنَ سينا كان يعلمُ أنّ الطبيبَ يأخذُ بالأسباب، أمّا <b>الشفاءُ الحقيقيُّ فبيدِ اللهِ وحدَه</b>. علّمنا أنّ <b>العلمَ النافعَ يُداوي الناسَ ويبقى أثرُه للأجيال</b>.',
+          en:'<b>Ibn Sina</b> did not keep knowledge for himself alone but used it to treat the sick and ease their pain. He was a skilled physician who examined the patient precisely and prescribed the right medicine, so many people were healed at his hands by Allah\u2019s leave.<br><br>Then he wanted to benefit people after him too, so he gathered all his medical knowledge in a great encyclopedic book called <b>"the Canon of Medicine."</b> This book was a reference for physicians in the East and West — the universities of Europe kept teaching it for over <b>six hundred years</b>! Imagine how many patients were healed, and how many doctors learned, thanks to this Muslim scholar\u2019s knowledge. But Ibn Sina knew that a doctor takes the means, while <b>true healing is in Allah\u2019s hands alone</b>. He taught us that <b>beneficial knowledge heals people and leaves a lasting impact for generations</b>.' },
+        choice:{ q:{ar:'لماذا ألّفَ ابنُ سينا كتابَ «القانون»؟',en:'Why did Ibn Sina author "the Canon"?'},
+          opts:[
+            { t:{ar:'ليجمعَ علمَه الطبيَّ وينفعَ الأطبّاءَ والمرضى بعدَه',en:'To gather his medical knowledge and benefit doctors and patients after him'},c:true,exp:{ar:'نعم! العلمُ النافعُ يبقى أثرُه للأجيال.',en:'Yes! Beneficial knowledge leaves a lasting impact for generations.'} },
+            { t:{ar:'ليتباهى',en:'To boast'},c:false,exp:{ar:'لا، بل لينفعَ الناس.',en:'No — to benefit people.'} },
+            { t:{ar:'بلا سبب',en:'For no reason'},c:false,exp:{ar:'لا، بل لخدمةِ الطبِّ والمرضى.',en:'No — to serve medicine and the sick.'} },
+          ] } },
+    ],
+    quiz:[
+      { q:{ar:'كيف استخدمَ ابنُ سينا علمَه في الطب؟',en:'How did Ibn Sina use his medical knowledge?'},
+        opts:[ {t:{ar:'داوى المرضى وألّفَ كتاباً ينفعُ الأطبّاء',en:'He treated the sick and authored a book benefiting doctors'},c:true}, {t:{ar:'أخفاه',en:'He hid it'},c:false}, {t:{ar:'لم يستخدمْه',en:'He didn\u2019t use it'},c:false} ] },
+      { q:{ar:'كم سنةً دُرِّسَ «القانون» في أوروبا؟',en:'How long was "the Canon" taught in Europe?'},
+        opts:[ {t:{ar:'أكثرَ من ستِّ مئةِ سنة',en:'Over six hundred years'},c:true}, {t:{ar:'سنةً واحدة',en:'One year'},c:false}, {t:{ar:'شهراً',en:'A month'},c:false} ] },
+      { q:{ar:'من بيدِه الشفاءُ الحقيقي؟',en:'In whose hands is true healing?'},
+        opts:[ {t:{ar:'اللهِ وحدَه، والطبيبُ يأخذُ بالأسباب',en:'Allah alone; the doctor takes the means'},c:true}, {t:{ar:'الطبيبِ وحدَه',en:'The doctor alone'},c:false}, {t:{ar:'الدواءِ وحدَه',en:'The medicine alone'},c:false} ] },
+    ],
+    moral:{ar:'العلمُ النافعُ يُداوي الناسَ ويبقى أثرُه للأجيال، والطبيبُ يأخذُ بالأسبابِ والشفاءُ بيدِ اللهِ وحدَه.',en:'Beneficial knowledge heals people and leaves a lasting impact for generations; the doctor takes the means, and healing is in Allah\u2019s hands alone.'},
+    badge:{icon:'🩺',title:{ar:'وِسامُ الطبيبِ النافع',en:'Badge of the Beneficial Physician'}},
+    reflect:[ {ar:'كيف تتعلّمُ علماً تنفعُ به الناسَ وتُخفّفُ عنهم؟',en:'How do you learn knowledge to benefit people and ease their burdens?'}, {ar:'هل تأخذُ بالأسبابِ وتتوكّلُ على اللهِ في الشفاء؟',en:'Do you take the means and rely on Allah for healing?'} ],
+    didYouKnow:[ {ar:'كان ابنُ سينا يُداوي المرضى ويُعلِّمُ الطبَّ، وصارَ مرجعاً للأطبّاءِ في عصرِه — المصدر: عيون الأنباء',en:'Ibn Sina treated the sick and taught medicine, becoming a reference for physicians of his age — Source: Uyun al-Anba\u2019'}, {ar:'«القانونُ في الطب» موسوعةٌ ضخمةٌ شملتْ الأمراضَ وعلاجاتِها والأدويةَ، وبقيَ مرجعاً قروناً — المصدر: موسوعات تاريخ العلوم',en:'"The Canon of Medicine" is a vast encyclopedia covering diseases, treatments, and medicines, remaining a reference for centuries — Source: history of science encyclopedias'} ],
+  },
+];

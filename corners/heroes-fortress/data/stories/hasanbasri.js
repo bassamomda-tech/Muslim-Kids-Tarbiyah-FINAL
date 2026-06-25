@@ -1,0 +1,56 @@
+/* data/stories/hasanbasri.js — Successors · Al-Hasan al-Basri — sources: صور من حياة التابعين · إسلام ويب · الدرر السنية · سير أعلام النبلاء */
+window.HISN_STORIES = window.HISN_STORIES || {};
+HISN_STORIES.hasanbasri = [
+  { icon:'💬', scene:'mosque', character:'🕌',
+    title:{ ar:'كلماتٌ تُلِينُ القلوبَ القاسية', en:'Words That Soften Hard Hearts' },
+    pages:[
+      { scene:'mosque', character:'🗣️',
+        text:{ ar:'كان <b>الحسنُ البصري</b> من أبلغِ الناسِ موعظةً وأصدقِهم كلمة. إذا جلسَ يَعِظُ الناسَ في مسجدِ البصرة، اجتمعَ حولَه <b>آلافٌ</b> يستمعونَ بخشوع، فتدمعُ العيونُ وتلينُ القلوب، ويتذكّرُ الناسُ الآخرةَ والموتَ والحساب.<br><br>لم تكنْ كلماتُه مجرّدَ كلامٍ جميل، بل كانت <b>صادقةً تخرجُ من قلبٍ يخشى الله</b>، فتصلُ إلى القلوب. كان يقول: <b>«يا ابنَ آدم، إنّما أنت أيّام، كلّما ذهبَ يومٌ ذهبَ بعضُك»</b>، ويقول: «ابنَ آدم، الدنيا ثلاثةُ أيّام: أمسٌ ذهبَ بما فيه، وغدٌ لعلّك لا تُدرِكُه، واليومُ لك فاعملْ فيه». فكان الناسُ يتغيّرونَ ويُقبِلونَ على الخيرِ بكلماتِه.',
+          en:'<b>Al-Hasan al-Basri</b> was among the most eloquent of people in counsel and the most sincere in word. When he sat to admonish people in the mosque of Basra, <b>thousands</b> would gather around him listening humbly; eyes would tear and hearts would soften, and people would remember the Hereafter, death, and the reckoning.<br><br>His words were not mere beautiful speech — they were <b>sincere, coming from a heart that feared Allah</b>, so they reached hearts. He used to say: <b>"O son of Adam, you are but days — whenever a day passes, part of you passes,"</b> and: "Son of Adam, the world is three days: yesterday has gone with what was in it, tomorrow you may not reach, and today is yours — so act in it." So people changed and turned to good through his words.' },
+        choice:{ q:{ar:'لماذا كانت مواعظُ الحسنِ تُؤثِّرُ في القلوب؟',en:'Why did al-Hasan\u2019s sermons affect hearts?'},
+          opts:[
+            { t:{ar:'لأنّها صادقةٌ تخرجُ من قلبٍ يخشى الله',en:'Because they were sincere, from a heart that feared Allah'},c:true,exp:{ar:'نعم! الكلمةُ الصادقةُ تصلُ إلى القلب.',en:'Yes! A sincere word reaches the heart.'} },
+            { t:{ar:'لأنّها كلامٌ منمّقٌ فقط',en:'Because they were just embellished speech'},c:false,exp:{ar:'لا، بل لصدقِها وخروجِها من قلبٍ خاشع.',en:'No — for their sincerity, from a humble heart.'} },
+            { t:{ar:'لأنّه كان غنيّاً',en:'Because he was wealthy'},c:false,exp:{ar:'لا، بل لصدقِه وعلمِه وخشيتِه.',en:'No — for his sincerity, knowledge, and reverence.'} },
+          ] } },
+    ],
+    quiz:[
+      { q:{ar:'أين كان الحسنُ يَعِظُ الناس؟',en:'Where did al-Hasan admonish people?'},
+        opts:[ {t:{ar:'في مسجدِ البصرة',en:'In the mosque of Basra'},c:true}, {t:{ar:'في السوق',en:'In the market'},c:false}, {t:{ar:'في القصر',en:'In the palace'},c:false} ] },
+      { q:{ar:'ماذا قال الحسنُ عن الأيّام؟',en:'What did al-Hasan say about days?'},
+        opts:[ {t:{ar:'أنت أيّامٌ كلّما ذهبَ يومٌ ذهبَ بعضُك',en:'You are days — each passing day takes part of you'},c:true}, {t:{ar:'الأيّامُ لا تنتهي',en:'Days never end'},c:false}, {t:{ar:'لا قيمةَ للوقت',en:'Time has no value'},c:false} ] },
+      { q:{ar:'ما سرُّ تأثيرِ كلماتِه؟',en:'What was the secret of his words\u2019 effect?'},
+        opts:[ {t:{ar:'الصدقُ والخشية',en:'Sincerity and reverence'},c:true}, {t:{ar:'الصوتُ العالي',en:'A loud voice'},c:false}, {t:{ar:'الشهرة',en:'Fame'},c:false} ] },
+    ],
+    moral:{ar:'الكلمةُ الصادقةُ التي تخرجُ من قلبٍ يخشى اللهَ تصلُ إلى القلوبِ وتُغيّرُها.',en:'A sincere word that comes from a heart fearing Allah reaches hearts and changes them.'},
+    badge:{icon:'💬',title:{ar:'وِسامُ الكلمةِ الصادقة',en:'Badge of the Sincere Word'}},
+    reflect:[ {ar:'كيف تجعلُ كلامَك صادقاً نافعاً يُؤثِّرُ في غيرِك؟',en:'How do you make your speech sincere and beneficial so it affects others?'}, {ar:'كيف تغتنمُ يومَك قبلَ أن يذهب؟',en:'How do you seize your day before it passes?'} ],
+    didYouKnow:[ {ar:'كان الحسنُ البصريُّ من أعلمِ التابعينَ وأبلغِهم، أخذَ العلمَ عن جمعٍ من الصحابة — المصدر: سير أعلام النبلاء',en:'Al-Hasan al-Basri was among the most learned and eloquent successors, taking knowledge from many companions — Source: Siyar A\u2019lam an-Nubala\u2019'}, {ar:'كان مجلسُ الحسنِ مدرسةً تخرّجَ منها كثيرٌ من العلماءِ والزهّاد — المصدر: صور من حياة التابعين',en:'Al-Hasan\u2019s gathering was a school from which many scholars and ascetics graduated — Source: Suwar min Hayat at-Tabi\u2019in'} ],
+  },
+  { icon:'🦁', scene:'mosque', character:'⚖️',
+    title:{ ar:'كلمةُ الحقِّ أمامَ الحاكم', en:'A Word of Truth Before the Ruler' },
+    pages:[
+      { scene:'throne', character:'⚖️',
+        text:{ ar:'في زمنِ الحسنِ البصري، كان بعضُ الولاةِ يظلمونَ الناسَ ويبنونَ القصورَ من أموالِهم. وكان كثيرٌ من الناسِ يخافونَ أن يقولوا كلمةَ الحقِّ خشيةَ بطشِ الحكّام. لكنّ الحسنَ كان <b>شجاعاً لا يخافُ في اللهِ لومةَ لائم</b>.<br><br>بنى أحدُ الولاةِ قصراً فخماً، فوقفَ الحسنُ يَعِظُ الناسَ عنده وقال كلمةَ حقٍّ جريئةً تنتقدُ الإسرافَ والظلم، رغمَ أنّ ذلك قد يُعرِّضُه للخطر! حين حُذِّرَ من الوالي قال: <b>«إنّ اللهَ أخذَ على العلماءِ أن يُبيِّنوا الحقَّ للناسِ ولا يكتموه»</b>. كان يرى أنّ <b>أفضلَ الجهادِ كلمةُ حقٍّ عند سلطانٍ جائر</b>. علّمنا أنّ العالمَ الصادقَ لا يسكتُ عن الحقِّ خوفاً.',
+          en:'In al-Hasan al-Basri\u2019s time, some governors oppressed people and built palaces from their wealth. Many feared to speak a word of truth, dreading the rulers\u2019 force. But al-Hasan was <b>brave, fearing no blame for Allah\u2019s sake</b>.<br><br>When one governor built a lavish palace, al-Hasan stood admonishing people near it and spoke a bold word of truth criticizing extravagance and injustice, though it could expose him to danger! When warned of the governor he said: <b>"Allah has taken a covenant from scholars to make the truth clear to people and not conceal it."</b> He held that <b>the best struggle is a word of truth before a tyrannical ruler</b>. He taught us that a sincere scholar does not stay silent about the truth out of fear.' },
+        choice:{ q:{ar:'لماذا قال الحسنُ كلمةَ الحقِّ رغمَ الخطر؟',en:'Why did al-Hasan speak the truth despite the danger?'},
+          opts:[
+            { t:{ar:'لأنّ اللهَ أخذَ على العلماءِ بيانَ الحقِّ وعدمَ كتمانِه',en:'Because Allah took a covenant from scholars to clarify the truth, not conceal it'},c:true,exp:{ar:'نعم! أفضلُ الجهادِ كلمةُ حقٍّ عند سلطانٍ جائر.',en:'Yes! The best struggle is a word of truth before a tyrant.'} },
+            { t:{ar:'ليُمدَحَ ويُشتهَر',en:'To be praised and famous'},c:false,exp:{ar:'لا، بل أداءً لأمانةِ العلمِ ونصرةً للحق.',en:'No — to fulfill the trust of knowledge and support truth.'} },
+            { t:{ar:'لأنّه يكرهُ الوالي',en:'Because he hated the governor'},c:false,exp:{ar:'لا، بل نصحاً وبياناً للحق.',en:'No — out of sincere advice and clarifying the truth.'} },
+          ] } },
+    ],
+    quiz:[
+      { q:{ar:'كيف كان الحسنُ مع الولاةِ الظالمين؟',en:'How was al-Hasan with oppressive governors?'},
+        opts:[ {t:{ar:'يصدعُ بالحقِّ ولا يخاف',en:'He boldly spoke truth without fear'},c:true}, {t:{ar:'يسكتُ خوفاً',en:'He stayed silent out of fear'},c:false}, {t:{ar:'يُنافِقُهم',en:'He flattered them'},c:false} ] },
+      { q:{ar:'ما الذي أخذه اللهُ على العلماء؟',en:'What covenant did Allah take from scholars?'},
+        opts:[ {t:{ar:'بيانَ الحقِّ وعدمَ كتمانِه',en:'To clarify the truth and not conceal it'},c:true}, {t:{ar:'كتمانَ العلم',en:'To hide knowledge'},c:false}, {t:{ar:'مجاملةَ الحكّام',en:'To flatter rulers'},c:false} ] },
+      { q:{ar:'ما أفضلُ الجهادِ كما رأى الحسن؟',en:'What is the best struggle as al-Hasan held?'},
+        opts:[ {t:{ar:'كلمةُ حقٍّ عند سلطانٍ جائر',en:'A word of truth before a tyrannical ruler'},c:true}, {t:{ar:'جمعُ المال',en:'Gathering wealth'},c:false}, {t:{ar:'الصمتُ دائماً',en:'Always staying silent'},c:false} ] },
+    ],
+    moral:{ar:'العالمُ الصادقُ يُبيِّنُ الحقَّ ولا يكتمُه خوفاً، وأفضلُ الجهادِ كلمةُ حقٍّ عند سلطانٍ جائر.',en:'A sincere scholar clarifies the truth and does not conceal it out of fear; the best struggle is a word of truth before a tyrannical ruler.'},
+    badge:{icon:'🦁',title:{ar:'وِسامُ الصدعِ بالحق',en:'Badge of Bold Truth'}},
+    reflect:[ {ar:'هل تقولُ الحقَّ بأدبٍ ولو كان صعباً؟',en:'Do you speak the truth politely even when it is hard?'}, {ar:'كيف تنصحُ من أخطأَ بحكمةٍ وشجاعة؟',en:'How do you advise someone who erred, with wisdom and courage?'} ],
+    didYouKnow:[ {ar:'كان الحسنُ البصريُّ يُعَدُّ من أجرأِ التابعينَ في قولِ الحقِّ ووعظِ الولاة — المصدر: سير أعلام النبلاء',en:'Al-Hasan al-Basri was considered among the boldest successors in speaking truth and admonishing governors — Source: Siyar A\u2019lam an-Nubala\u2019'}, {ar:'قال النبيُّ ﷺ: «أفضلُ الجهادِ كلمةُ عدلٍ عند سلطانٍ جائر» — المصدر: سنن أبي داود والترمذي',en:'The Prophet ﷺ said: "The best struggle is a word of justice before a tyrannical ruler" — Source: Sunan Abi Dawud & at-Tirmidhi'} ],
+  },
+];

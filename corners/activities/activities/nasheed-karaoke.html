@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>كاريوكي الأناشيد · أنوس</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+
+<link rel="stylesheet" href="../styles/tokens.css" />
+<link rel="stylesheet" href="../styles/dashboard.css" />
+<link rel="stylesheet" href="../styles/wheel.css" />
+<link rel="stylesheet" href="../styles/nasheed-karaoke.css" />
+</head>
+<body>
+
+<div class="bg-decor" aria-hidden="true"></div>
+
+<div class="activity-shell">
+
+  <nav class="activity-nav">
+    <a class="back-link" href="../dashboard.html">
+      الرجوع للوحة الأنشطة
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg>
+    </a>
+    <div class="activity-crumb">
+      <span>الفن والإبداع</span>
+      <span class="sep">/</span>
+      <span class="cur">كاريوكي الأناشيد</span>
+    </div>
+    <div class="activity-actions">
+      <button class="icon-btn" id="reset-btn" title="إعادة الضبط" aria-label="إعادة الضبط">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 3-6.7L3 8"/><path d="M3 3v5h5"/></svg>
+      </button>
+    </div>
+  </nav>
+
+  <div class="activity-layout">
+
+    <section class="nk-panel">
+      <header class="wheel-header">
+        <span class="activity-tag">Activity 25 · Synchronized Text</span>
+        <h1 class="activity-title">كاريوكي الأناشيد</h1>
+        <p class="activity-desc">
+          غَنِّ مع كَلِمات النَّشيد كلمةً كلمة! الكَلِمات تُضاءُ في وَقتها لِتُساعِدك على المُتابَعة.
+          اختر سُرعةً تُناسِبك، ورَدِّد مع الإيقاع.
+        </p>
+      </header>
+
+      <div class="nk-hud">
+        <div class="hud-block">النَّشيد <strong><span id="n-idx">1</span><small>/4</small></strong></div>
+        <div class="hud-block">السَّطر <strong><span id="n-line">0</span><small>/—</small></strong></div>
+        <div class="hud-block">إجمالي المَرَّات <strong id="n-plays">0</strong></div>
+        <div class="hud-block">سُرعة <strong id="n-speed">1×</strong></div>
+      </div>
+
+      <div class="nk-stage">
+        <span class="nk-now-playing">قَيْدُ التَّشغيل</span>
+        <h2 class="nk-title" id="nasheed-title">…</h2>
+
+        <div class="nk-lyrics" id="lyrics"></div>
+
+        <div class="nk-progress-wrap">
+          <span class="nk-time-text" id="time-current">0:00</span>
+          <div class="nk-progress"><span id="prog-bar" style="width: 0%"></span></div>
+          <span class="nk-time-text" id="time-total">0:00</span>
+        </div>
+
+        <div class="nk-controls">
+          <button class="nk-ctrl" id="btn-prev" title="السَّابق">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M6 6h2v12H6zM10 12l9-7v14z"/></svg>
+          </button>
+          <button class="nk-ctrl" id="btn-restart" title="مِن البَداية">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 3-6.7L3 8"/><path d="M3 3v5h5"/></svg>
+          </button>
+          <button class="nk-ctrl play" id="btn-play" title="تَشغيل / إيقاف">
+            <svg id="play-icon" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M6 4v16l14-8z"/></svg>
+          </button>
+          <button class="nk-ctrl" id="btn-next" title="التَّالي">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M16 6h2v12h-2zM14 12L5 5v14z"/></svg>
+          </button>
+          <button class="nk-speed" id="btn-speed">1×</button>
+        </div>
+      </div>
+
+      <div class="wheel-controls" style="margin-top:var(--s-4);">
+        <div class="wheel-stat">المُفَضَّل <strong id="best">—</strong></div>
+        <button class="wheel-mute-toggle" id="mute-btn" aria-pressed="false">
+          <span class="mute-icon"></span>
+          <span class="mute-label">كتم الصوت</span>
+        </button>
+      </div>
+    </section>
+
+    <aside class="side-panel">
+      <div class="panel-card">
+        <div class="panel-head">
+          <h3>قائمة الأناشيد</h3>
+          <span class="pill" id="list-pill">4</span>
+        </div>
+        <div class="nk-list" id="nasheed-list"></div>
+      </div>
+
+      <div class="panel-card">
+        <div class="panel-head"><h3>كيف ألعب؟</h3></div>
+        <div style="font-size: 14px; line-height: 1.7; color: var(--ink-2);">
+          ١. اختر نَشيداً من القائمة.<br/>
+          ٢. اضغط زر التَّشغيل.<br/>
+          ٣. تابِع الكلمات وهي تُضاءُ كلمةً كلمة.<br/>
+          ٤. غيِّر السُّرعة إذا كانت بطيئةً جدّاً أو سَريعة.
+        </div>
+        <div class="tip-card" style="margin-top: var(--s-3);">
+          <span class="tip-icon">!</span>
+          <span>الأناشيد الإسلاميَّة تَزرع المَعاني الجَميلة في القَلب. ردِّد مع نَفسك، ولا تَخجل لو غَنَّيتَ بِصوتٍ مَسموع.</span>
+        </div>
+      </div>
+
+      <div class="panel-card">
+        <div class="panel-head"><h3>الإِنشاد سُنَّة</h3></div>
+        <div class="hadith-card">
+          <div class="quote">«طَلَعَ البَدرُ علَيْنا … مِن ثَنِيَّاتِ الوَدَاع» — أَنشَدها الأنصار يوم استَقبَلوا النبيَّ ﷺ في المَدينة.</div>
+          <span class="src">السِّيرة النَّبوية</span>
+        </div>
+      </div>
+    </aside>
+  </div>
+</div>
+
+<div class="particles" id="particles" aria-hidden="true"></div>
+
+<script src="../scripts/activity-common.js"></script>
+<script src="../scripts/nasheed-karaoke.js"></script>
+
+<script>
+window.PAGE_DICT = {
+  "كاريوكي الأناشيد": "Nasheed Karaoke",
+  "غَنِّ مع كَلِمات النَّشيد كلمةً كلمة! الكَلِمات تُضاءُ في وَقتها لِتُساعِدك على المُتابَعة. اختر سُرعةً تُناسِبك، ورَدِّد مع الإيقاع.": "Sing along with the nasheed word by word! The words light up in time to help you follow. Choose a speed that suits you and sing along with the rhythm.",
+  "النَّشيد": "Nasheed",
+  "السَّطر": "Line",
+  "إجمالي المَرَّات": "Total plays",
+  "سُرعة": "Speed",
+  "قَيْدُ التَّشغيل": "Now playing",
+  "السَّابق": "Previous",
+  "مِن البَداية": "From the start",
+  "تَشغيل / إيقاف": "Play / Pause",
+  "التَّالي": "Next",
+  "المُفَضَّل": "Favorite",
+  "قائمة الأناشيد": "Nasheed list",
+  "١. اختر نَشيداً من القائمة.": "1. Choose a nasheed from the list.",
+  "٢. اضغط زر التَّشغيل.": "2. Press the play button.",
+  "٣. تابِع الكلمات وهي تُضاءُ كلمةً كلمة.": "3. Follow the words as they light up one by one.",
+  "٤. غيِّر السُّرعة إذا كانت بطيئةً جدّاً أو سَريعة.": "4. Change the speed if it's too slow or too fast.",
+  "الأناشيد الإسلاميَّة تَزرع المَعاني الجَميلة في القَلب. ردِّد مع نَفسك، ولا تَخجل لو غَنَّيتَ بِصوتٍ مَسموع.": "Islamic nasheeds plant beautiful meanings in the heart. Sing along to yourself, and don't be shy to sing out loud.",
+  "الإِنشاد سُنَّة": "Singing nasheeds is a sunnah",
+  "السِّيرة النَّبوية": "The Prophetic Biography"
+};
+</script>
+<script src="../scripts/i18n.js"></script>
+<script src="../../shared/nav-fix.js"></script>
+</body>
+</html>

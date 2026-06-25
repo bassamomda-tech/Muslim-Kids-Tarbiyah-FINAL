@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>تحدي الـ 30 ثانية · أنوس</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+
+<link rel="stylesheet" href="../styles/tokens.css" />
+<link rel="stylesheet" href="../styles/dashboard.css" />
+<link rel="stylesheet" href="../styles/wheel.css" />
+<link rel="stylesheet" href="../styles/stopwatch.css" />
+</head>
+<body>
+
+<div class="bg-decor" aria-hidden="true"></div>
+
+<div class="activity-shell">
+
+  <nav class="activity-nav">
+    <a class="back-link" href="../dashboard.html">
+      الرجوع للوحة الأنشطة
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg>
+    </a>
+    <div class="activity-crumb">
+      <span>تحديات السيرة واللغة</span>
+      <span class="sep">/</span>
+      <span class="cur">تحدي الـ 30 ثانية</span>
+    </div>
+    <div class="activity-actions">
+      <button class="icon-btn" id="reset-btn" title="إعادة الضبط" aria-label="إعادة الضبط">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 3-6.7L3 8"/><path d="M3 3v5h5"/></svg>
+      </button>
+    </div>
+  </nav>
+
+  <div class="activity-layout">
+
+    <!-- ============ لوحة اللعبة ============ -->
+    <section class="sw-panel">
+      <header class="wheel-header">
+        <span class="activity-tag">Activity 48 · Click Counter</span>
+        <h1 class="activity-title">تحدي الـ 30 ثانية</h1>
+        <p class="activity-desc">
+          سبِّحْ أكبرَ عددٍ ممكن خلال ٣٠ ثانية! كلُّ نقرةٍ ذِكر،
+          وكلُّ ٣٣ ذِكراً تُكمِلُ سُبحةً كاملة.
+        </p>
+      </header>
+
+      <div class="sw-hud">
+        <div class="hud-block timer" id="timer-block">الوقت <strong><span id="s-time">30</span></strong></div>
+        <div class="hud-block">السُّبَح <strong id="s-rounds">0</strong></div>
+        <div class="hud-block">إجمالي تسبيحك <strong id="s-total">0</strong></div>
+      </div>
+
+      <div class="sw-stage" id="sw-stage">
+        <div class="sw-count-big" id="sw-count">0 <small>ذِكر</small></div>
+
+        <div class="sw-ring-wrap">
+          <div class="sw-beads" id="sw-beads"></div>
+          <div class="sw-tap disabled" id="sw-tap">
+            <span class="dhikr" id="sw-dhikr">سُبْحَانَ الله</span>
+            <span class="hint">انقُر للتسبيح</span>
+          </div>
+        </div>
+
+        <div class="sw-overlay" id="sw-overlay">
+          <div class="sw-overlay-card">
+            <h2>مستعدّ للتسبيح؟</h2>
+            <p>عندك ٣٠ ثانية. انقُر الحبّةَ الكبيرة بأسرعِ ما تستطيع،
+            ولاحِظ كيف يتغيّر الذِّكرُ مع كلِّ نقرة.</p>
+            <button class="sw-go" id="sw-go">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+              ابدأ التحدي
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="wheel-controls">
+        <div class="wheel-stat">أفضل نتيجة <strong id="best">—</strong></div>
+        <div class="wheel-stat" style="text-align:center;">المحاولات <strong id="plays">0</strong></div>
+        <button class="wheel-mute-toggle" id="mute-btn" aria-pressed="false">
+          <span class="mute-icon"></span>
+          <span class="mute-label">كتم الصوت</span>
+        </button>
+      </div>
+    </section>
+
+    <!-- ============ اللوحة الجانبية ============ -->
+    <aside class="side-panel">
+      <div class="panel-card">
+        <div class="panel-head"><h3>أذكارُ التسبيح</h3></div>
+        <div class="sw-dhikr-list">
+          <div class="sw-dhikr-row"><span class="b"></span><div>سُبْحَانَ الله<small>تنزيهُ الله عن كلِّ نقص</small></div></div>
+          <div class="sw-dhikr-row"><span class="b"></span><div>الْحَمْدُ لله<small>الثناءُ على الله بنعمه</small></div></div>
+          <div class="sw-dhikr-row"><span class="b"></span><div>اللهُ أَكْبَر<small>الله أعظمُ من كلِّ شيء</small></div></div>
+        </div>
+      </div>
+
+      <div class="panel-card">
+        <div class="panel-head"><h3>سُبحةُ ما بعد الصلاة</h3></div>
+        <div style="font-size: 14px; line-height: 1.7; color: var(--ink-2);">
+          كان النبيُّ ﷺ يُسبِّحُ دُبُرَ كلِّ صلاةٍ ثلاثاً وثلاثين، ويحمَدُ ثلاثاً
+          وثلاثين، ويُكبِّرُ ثلاثاً وثلاثين، فتلك تسعٌ وتسعون.
+        </div>
+        <div class="tip-card" style="margin-top: var(--s-4);">
+          <span class="tip-icon">!</span>
+          <span>اللعبةُ للتدرُّبِ على عدِّ التسبيح؛ والذِّكرُ الحقيقيُّ يكون بقلبٍ حاضر.</span>
+        </div>
+      </div>
+
+      <div class="panel-card">
+        <div class="panel-head"><h3>فضلُ الذِّكر</h3></div>
+        <div class="hadith-card">
+          <div class="quote">«ألا أُنبِّئُكم بخيرِ أعمالِكم… ذِكرُ اللهِ تعالى»</div>
+          <span class="src">رواه الترمذي وابن ماجه<span class="hadith-grade ok">صحيح</span></span>
+        </div>
+      </div>
+    </aside>
+  </div>
+</div>
+
+<!-- مودال النصر -->
+<div class="modal-backdrop" id="win-modal" role="dialog" aria-modal="true">
+  <div class="modal">
+    <button class="modal-close" data-close aria-label="إغلاق">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M6 6l12 12M18 6l-12 12"/></svg>
+    </button>
+    <div class="modal-deco" aria-hidden="true">
+      <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l2.4 6.6L21 9l-5 4.6L17.2 21 12 17.4 6.8 21 8 13.6 3 9l6.6-.4z"/></svg>
+    </div>
+    <div class="modal-eyebrow">تحدي الـ 30 ثانية</div>
+    <h2 class="modal-title">لسانٌ رطبٌ بالذِّكر!</h2>
+    <div class="modal-meaning" id="win-summary"></div>
+    <div class="modal-actions">
+      <button class="btn-ghost" data-close>انتهيت</button>
+      <button class="btn-primary" id="win-replay">تحدٍّ جديد</button>
+    </div>
+  </div>
+</div>
+
+<div class="particles" id="particles" aria-hidden="true"></div>
+
+<script src="../scripts/activity-common.js"></script>
+<script src="../scripts/stopwatch.js"></script>
+
+<script>
+window.PAGE_DICT = {
+  "تحدي الـ 30 ثانية": "30-Second Challenge",
+  "سبِّحْ أكبرَ عددٍ ممكن خلال ٣٠ ثانية! كلُّ نقرةٍ ذِكر، وكلُّ ٣٣ ذِكراً تُكمِلُ سُبحةً كاملة.": "Say tasbih as many times as you can in 30 seconds! Each tap is a dhikr, and every 33 dhikr completes a full tasbih cycle.",
+  "السُّبَح": "Tasbih cycles",
+  "إجمالي تسبيحك": "Your total tasbih",
+  "ذِكر": "dhikr",
+  "انقُر للتسبيح": "Tap to say tasbih",
+  "مستعدّ للتسبيح؟": "Ready for tasbih?",
+  "عندك ٣٠ ثانية. انقُر الحبّةَ الكبيرة بأسرعِ ما تستطيع، ولاحِظ كيف يتغيّر الذِّكرُ مع كلِّ نقرة.": "You have 30 seconds. Tap the big bead as fast as you can, and notice how the dhikr changes with each tap.",
+  "ابدأ التحدي": "Start the challenge",
+  "أفضل نتيجة": "Best score",
+  "المحاولات": "Attempts",
+  "أذكارُ التسبيح": "Tasbih dhikr",
+  "تنزيهُ الله عن كلِّ نقص": "declaring Allah free of every flaw",
+  "الثناءُ على الله بنعمه": "praising Allah for His blessings",
+  "الله أعظمُ من كلِّ شيء": "Allah is greater than everything",
+  "سُبحةُ ما بعد الصلاة": "Tasbih after prayer",
+  "كان النبيُّ ﷺ يُسبِّحُ دُبُرَ كلِّ صلاةٍ ثلاثاً وثلاثين، ويحمَدُ ثلاثاً وثلاثين، ويُكبِّرُ ثلاثاً وثلاثين، فتلك تسعٌ وتسعون.": "The Prophet ﷺ would say subhanallah after each prayer thirty-three times, alhamdulillah thirty-three times, and Allahu akbar thirty-three times — that is ninety-nine.",
+  "اللعبةُ للتدرُّبِ على عدِّ التسبيح؛ والذِّكرُ الحقيقيُّ يكون بقلبٍ حاضر.": "The game is for practicing counting tasbih; real dhikr is done with a present heart.",
+  "فضلُ الذِّكر": "The virtue of dhikr",
+  "رواه الترمذي وابن ماجه": "Narrated by at-Tirmidhi & Ibn Majah",
+  "لسانٌ رطبٌ بالذِّكر!": "A tongue moist with dhikr!",
+  "تحدٍّ جديد": "New challenge"
+};
+</script>
+<script src="../scripts/i18n.js"></script>
+<script src="../../shared/nav-fix.js"></script>
+</body>
+</html>

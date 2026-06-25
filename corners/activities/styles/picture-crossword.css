@@ -1,0 +1,274 @@
+/* ============================================================
+   PICTURE CROSSWORD — كلمات متقاطعة مصورة
+   ============================================================ */
+
+.crossword-panel {
+  background:
+    radial-gradient(140% 80% at 50% 0%, rgba(207,227,242,0.35), transparent 60%),
+    var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--r-2xl);
+  padding: var(--s-8);
+  display: flex; flex-direction: column;
+  box-shadow: var(--shadow-card);
+}
+.crossword-panel .activity-tag { background: var(--sky); color: var(--sky-ink); }
+.crossword-panel .activity-tag::before { background: var(--sky-ink); }
+
+/* HUD */
+.cw-hud {
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--s-3);
+  margin-bottom: var(--s-4);
+}
+.cw-hud .hud-block {
+  background: var(--bg-soft); border: 1px solid var(--line);
+  border-radius: var(--r-md); padding: 10px 14px;
+  display: flex; flex-direction: column; gap: 2px;
+  font-size: 11px; color: var(--muted); font-weight: 600;
+}
+.cw-hud .hud-block strong {
+  font-size: 20px; color: var(--ink);
+  font-family: var(--font-en); font-weight: 800;
+}
+
+/* ============ شبكة الكلمات المتقاطعة ============ */
+.cw-stage {
+  display: flex; gap: var(--s-6);
+  background: linear-gradient(180deg, #F6FAFD 0%, #E7F0F7 100%);
+  border: 1px solid var(--line);
+  border-radius: var(--r-xl);
+  padding: var(--s-6);
+  margin-bottom: var(--s-4);
+  flex-grow: 1;
+  align-items: flex-start;
+}
+@media (max-width: 720px) { .cw-stage { flex-direction: column; align-items: stretch; } }
+
+.cw-grid-section {
+  flex-shrink: 0;
+}
+
+.cw-grid {
+  display: grid;
+  gap: 4px;
+  direction: rtl;
+  user-select: none;
+}
+.cw-cell {
+  position: relative;
+  width: 52px;
+  height: 52px;
+  border-radius: 8px;
+  font-family: var(--font-ar);
+  font-size: 22px;
+  font-weight: 800;
+  display: grid; place-items: center;
+  unicode-bidi: isolate;
+  transition: background 0.15s ease, border 0.15s ease, transform 0.15s ease;
+}
+.cw-cell.blocked {
+  background: transparent;
+  visibility: hidden;
+}
+.cw-cell.active {
+  background: var(--surface);
+  border: 1.5px solid var(--line);
+  color: var(--ink);
+  cursor: pointer;
+}
+.cw-cell.active:hover { background: var(--sky); border-color: var(--sky-ink); }
+.cw-cell.active.focus {
+  background: var(--butter);
+  border-color: var(--butter-ink);
+  box-shadow: 0 0 0 3px rgba(255,233,168,0.55);
+}
+.cw-cell.active.in-word {
+  background: rgba(207,227,242,0.4);
+}
+.cw-cell.active.solved {
+  background: var(--mint);
+  border-color: var(--mint-ink);
+  color: var(--mint-ink);
+}
+.cw-cell.active.solved-2 { background: #FFCFB0; border-color: #B5612A; color: #B5612A; }
+.cw-cell.active.solved-3 { background: #E0D5F2; border-color: #5A3F94; color: #5A3F94; }
+.cw-cell.active.solved-4 { background: #FFE9A8; border-color: #8A6510; color: #8A6510; }
+
+.cw-cell .num-badge {
+  position: absolute;
+  top: 2px; right: 4px;
+  font-family: var(--font-en);
+  font-weight: 800;
+  font-size: 10px;
+  color: var(--muted);
+}
+.cw-cell.active.solved .num-badge { color: var(--mint-ink); }
+.cw-cell.active.solved-2 .num-badge { color: #B5612A; }
+.cw-cell.active.solved-3 .num-badge { color: #5A3F94; }
+.cw-cell.active.solved-4 .num-badge { color: #8A6510; }
+
+/* clues column */
+.cw-clues {
+  flex-grow: 1;
+  display: flex; flex-direction: column; gap: var(--s-4);
+}
+.cw-clues-section {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--r-md);
+  padding: var(--s-4);
+}
+.cw-clues-head {
+  display: flex; justify-content: space-between; align-items: center;
+  margin-bottom: var(--s-3);
+  font-size: 14px;
+  font-weight: 800;
+  color: var(--ink);
+}
+.cw-clues-head .badge {
+  font-size: 11px;
+  padding: 3px 10px;
+  border-radius: var(--r-pill);
+  background: var(--bg-soft);
+  color: var(--muted);
+  font-family: var(--font-en);
+  font-weight: 800;
+}
+
+.cw-clue-row {
+  display: flex; gap: 10px; align-items: center;
+  padding: 8px 10px;
+  border-radius: var(--r-md);
+  font-size: 13px;
+  cursor: pointer;
+  transition: background 0.15s ease;
+  border: 1px solid transparent;
+}
+.cw-clue-row:hover { background: var(--bg-soft); }
+.cw-clue-row.active {
+  background: var(--butter);
+  border-color: var(--butter-ink);
+  font-weight: 700;
+}
+.cw-clue-row.solved {
+  background: var(--mint);
+  color: var(--mint-ink);
+  border-color: var(--mint-ink);
+  text-decoration: line-through;
+  text-decoration-color: rgba(47,122,82,0.4);
+}
+.cw-clue-row .icon {
+  width: 36px; height: 36px;
+  border-radius: 10px;
+  background: var(--bg-soft);
+  display: grid; place-items: center;
+  flex-shrink: 0;
+  color: var(--sky-ink);
+}
+.cw-clue-row.solved .icon { background: var(--mint-ink); color: #fff; }
+.cw-clue-row .num {
+  width: 22px; height: 22px;
+  border-radius: 50%;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  font-family: var(--font-en);
+  font-size: 11px;
+  font-weight: 800;
+  display: grid; place-items: center;
+  flex-shrink: 0;
+  color: var(--ink-2);
+}
+.cw-clue-row.active .num { background: var(--butter-ink); color: #fff; border-color: var(--butter-ink); }
+.cw-clue-row.solved .num { background: var(--mint-ink); color: #fff; border-color: var(--mint-ink); }
+.cw-clue-row .text {
+  flex-grow: 1;
+  line-height: 1.4;
+}
+.cw-clue-row .text small {
+  display: block; font-size: 11px; color: var(--muted);
+  font-family: var(--font-en);
+  font-weight: 700;
+  margin-bottom: 2px;
+  letter-spacing: 0.05em;
+}
+
+/* keyboard */
+.cw-keyboard-section {
+  background: var(--surface-2);
+  border: 1px solid var(--line);
+  border-radius: var(--r-lg);
+  padding: var(--s-4);
+  margin-bottom: var(--s-3);
+}
+.cw-keyboard {
+  display: flex; flex-wrap: wrap;
+  gap: 6px;
+  justify-content: center;
+}
+.cw-kbd-key {
+  width: 40px; height: 40px;
+  border-radius: 8px;
+  background: var(--surface);
+  border: 1.5px solid var(--line);
+  display: grid; place-items: center;
+  font-family: var(--font-ar);
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--ink);
+  cursor: pointer;
+  unicode-bidi: isolate;
+}
+.cw-kbd-key:hover { background: var(--sky); border-color: var(--sky-ink); }
+.cw-kbd-key.special {
+  width: auto; padding: 0 14px;
+  font-family: var(--font-en);
+  font-size: 11px;
+  letter-spacing: 0.05em;
+  background: var(--bg-soft);
+  color: var(--ink-2);
+}
+
+.cw-tools {
+  display: flex; gap: 8px; flex-wrap: wrap;
+}
+.cw-btn {
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 10px 16px;
+  border-radius: var(--r-pill);
+  font-size: 13px; font-weight: 700;
+  border: 1px solid var(--line);
+  background: var(--surface);
+  color: var(--ink-2);
+}
+.cw-btn:hover { background: var(--bg-soft); }
+.cw-btn.primary { background: var(--ink); color: #FBF6EC; border-color: var(--ink); }
+.cw-btn.warning { background: var(--butter); color: var(--butter-ink); border-color: rgba(138,101,16,0.2); }
+
+/* بطاقات الكلمات المكتشفة */
+.cw-discovered-section {
+  background: var(--bg-soft);
+  border-radius: var(--r-md);
+  padding: var(--s-3);
+}
+.cw-discovered-row {
+  display: flex; gap: 12px;
+  align-items: center;
+  padding: 8px 10px;
+  background: var(--surface);
+  border-radius: 8px;
+  font-size: 13px;
+  margin-bottom: 6px;
+}
+.cw-discovered-row:last-child { margin-bottom: 0; }
+.cw-discovered-row .word {
+  font-size: 18px;
+  font-weight: 800;
+  color: var(--mint-ink);
+  font-family: var(--font-ar);
+  unicode-bidi: isolate;
+}
+.cw-discovered-row .meaning {
+  font-size: 12px;
+  color: var(--ink-2);
+  flex-grow: 1;
+}

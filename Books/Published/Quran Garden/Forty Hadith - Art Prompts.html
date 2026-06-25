@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="dark">
+<title>أوصاف رسومات «الأربعون النووية» | Forty Hadith Art Prompts</title>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&family=Nunito:wght@400;600;700;800&display=swap">
+<link rel="stylesheet" href="../../../corners/faith-minaret/rihla-prompts.css">
+</head>
+<body dir="rtl">
+<header class="header">
+  <div class="brand"><span>🍌</span><span class="ar-only">أوصاف رسومات «الأربعون النووية»</span><span class="en-only">The Forty Hadith — Art Prompts</span></div>
+  <div class="hactions">
+    <div class="lang-switch"><button id="btnEn" onclick="setLang('en')">EN</button><button id="btnAr" class="active" onclick="setLang('ar')">عربي</button></div>
+    <button class="copyall" id="copyAllBtn" onclick="copyAll()">📋 <span class="ar-only">انسخ الكل</span><span class="en-only">Copy all</span></button>
+    <a class="back" href="Forty Hadith Book.html">📕 <span class="ar-only">الكتاب</span><span class="en-only">Book</span></a>
+  </div>
+</header>
+<div class="wrap">
+  <div class="hero">
+    <div class="ic">🎨</div>
+    <h1><span class="ar-only">أوصاف الرسومات — بترتيب صفحات الكتاب</span><span class="en-only">Art Prompts — in book-page order</span></h1>
+    <p><span class="ar-only">كل صفّ يقابل صفحةً في الكتاب. وَلِّد الرسمة عبر Nano Banana، ثم اسحبها إلى الإطار في الصفحة نفسها.</span>
+       <span class="en-only">Each row matches a page in the book. Generate the art in Nano Banana, then drop it into the frame on that same page.</span></p>
+  </div>
+  <div class="howto">
+    <span class="ar-only">⚠️ <b>النص العربي داخل الصورة</b> قد يخرج مشوّهاً — وَلِّد ٢–٣ نسخ. ⚠️ <b>لا تُصوّر النبيَّ ﷺ ولا أيَّ نبيٍّ أو مَلَك</b>؛ صوّر الدرسَ بمشاهدَ يوميةٍ وأشخاصٍ عاديّينَ بلا وجوه.</span>
+    <span class="en-only">⚠️ <b>Arabic text</b> may distort — generate a few versions. ⚠️ <b>Never depict the Prophet ﷺ or any prophet/angel</b> — show the lesson with everyday scenes and faceless ordinary people.</span>
+    <div class="stylerow">
+      <span class="ar-only" style="color:var(--muted);font-size:.84rem">النمط الموحّد:</span><span class="en-only" style="color:var(--muted);font-size:.84rem">House styles:</span>
+      <button class="stylebtn" id="styleBtn" onclick="copyStyle()">📋 <span class="ar-only">نمط القصة</span><span class="en-only">Story style</span></button>
+      <button class="stylebtn" id="lineBtn" onclick="copyLine()">📋 <span class="ar-only">نمط التلوين</span><span class="en-only">Coloring style</span></button>
+    </div>
+  </div>
+  <div class="count" id="count"></div>
+  <div id="results"></div>
+</div>
+<div class="toast" id="toast"></div>
+
+<script src="../../../corners/little-district/pages/hadith-data/_index.js"></script>
+<script src="../../../corners/little-district/pages/hadith-data/h01.js"></script>
+<script src="../../../corners/little-district/pages/hadith-data/h02.js"></script>
+<script src="../../../corners/little-district/pages/hadith-data/h03.js"></script>
+<script src="../../../corners/little-district/pages/hadith-data/h04.js"></script>
+<script src="../../../corners/little-district/pages/hadith-data/h05.js"></script>
+<script src="../../../corners/little-district/pages/hadith-data/h06.js"></script>
+<script src="../../../corners/little-district/pages/hadith-data/h07.js"></script>
+<script src="../../../corners/little-district/pages/hadith-data/h08.js"></script>
+<script src="../../../corners/little-district/pages/hadith-data/h09.js"></script>
+<script src="../../../corners/little-district/pages/hadith-data/h10.js"></script>
+<script src="../../../corners/little-district/pages/hadith-data/h11.js"></script>
+<script src="../../../corners/little-district/pages/hadith-data/h12.js"></script>
+<script src="../../../corners/little-district/pages/hadith-data/h13.js"></script>
+<script src="../../../corners/little-district/pages/hadith-data/h14.js"></script>
+<script src="../../../corners/little-district/pages/hadith-data/h15.js"></script>
+<script src="../../../corners/little-district/pages/hadith-data/h16.js"></script>
+<script src="../../../corners/little-district/pages/hadith-data/h17.js"></script>
+<script src="../../../corners/little-district/pages/hadith-data/h18.js"></script>
+<script src="../../../corners/little-district/pages/hadith-data/h19.js"></script>
+<script src="../../../corners/little-district/pages/hadith-data/h20.js"></script>
+<script src="../../../corners/little-district/pages/hadith-data/h21.js"></script>
+<script src="../../../corners/little-district/pages/hadith-data/h22.js"></script>
+<script src="../../../corners/little-district/pages/hadith-data/h23.js"></script>
+<script src="../../../corners/little-district/pages/hadith-data/h24.js"></script>
+<script src="../../../corners/little-district/pages/hadith-data/h25.js"></script>
+<script src="../../../corners/little-district/pages/hadith-data/h26.js"></script>
+<script src="../../../corners/little-district/pages/hadith-data/h27.js"></script>
+<script src="../../../corners/little-district/pages/hadith-data/h28.js"></script>
+<script src="../../../corners/little-district/pages/hadith-data/h29.js"></script>
+<script src="../../../corners/little-district/pages/hadith-data/h30.js"></script>
+<script src="../../../corners/little-district/pages/hadith-data/h31.js"></script>
+<script src="../../../corners/little-district/pages/hadith-data/h32.js"></script>
+<script src="../../../corners/little-district/pages/hadith-data/h33.js"></script>
+<script src="../../../corners/little-district/pages/hadith-data/h34.js"></script>
+<script src="../../../corners/little-district/pages/hadith-data/h35.js"></script>
+<script src="../../../corners/little-district/pages/hadith-data/h36.js"></script>
+<script src="../../../corners/little-district/pages/hadith-data/h37.js"></script>
+<script src="../../../corners/little-district/pages/hadith-data/h38.js"></script>
+<script src="../../../corners/little-district/pages/hadith-data/h39.js"></script>
+<script src="../../../corners/little-district/pages/hadith-data/h40.js"></script>
+<script src="../../../corners/little-district/pages/hadith-data/h41.js"></script>
+<script src="../../../corners/little-district/pages/hadith-data/h42.js"></script>
+<script src="../../../corners/little-district/pages/hadith-core.js"></script>
+<script>
+  window.RIHLA = { titleAr:'الأربعون النووية', titleEn:'The Forty Hadith',
+    coverPrompt:"A beautiful children's-book COVER for «الأربعون النووية» (The Forty Hadith): a glowing open book of light surrounded by forty small golden stars and gentle symbols of good character — a heart, a helping hand, a smile, a shield — over a lush emerald garden under a starry sky. No people, no prophets, warm and inviting. "+window.HadithCore.STYLE };
+</script>
+<script src="../../../corners/faith-minaret/rihla-prompts.js"></script>
+</body>
+</html>

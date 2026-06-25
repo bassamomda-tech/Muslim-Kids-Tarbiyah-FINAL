@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta name="color-scheme" content="dark">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>رحلة البلاغ | Journey of the Message</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Amiri+Quran&family=Tajawal:wght@400;500;700;800;900&family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+<link rel="stylesheet" href="yaqeen.css">
+<style>
+/* ── Message theme: deep sea-teal + parchment amber (maps & letters) ── */
+:root{
+  --primary:#C0905C; --primary-dark:#A07647;
+  --bg1:#062A35; --bg2:#0A3D4A; --bg3:#0F5160;
+  --gold:#EBC684; --gold-soft:#F4DBA8;
+  --text:#F2F6F4; --muted:rgba(242,246,244,.74);
+  --line:rgba(235,198,132,.28);
+}
+body{background:
+  
+    radial-gradient(1300px 760px at 78% -12%, rgba(192,144,92,.26), transparent 58%),
+    radial-gradient(1000px 620px at 0% 100%, rgba(235,198,132,.12), transparent 55%),
+    linear-gradient(165deg,var(--bg1),var(--bg2) 55%,var(--bg3));
+  background-attachment:fixed;
+}
+.guide .who{background:linear-gradient(160deg,#C0905C,#8C6537)}
+.coll-cert{background:linear-gradient(160deg,rgba(235,198,132,.16),rgba(192,144,92,.20))!important}
+.lang button.active{color:#062A35}
+.stampbtn{color:#062A35}
+</style>
+<script>(function(){try{var l=localStorage.getItem('bunyanLang');if(l==='en'){var h=document.documentElement;h.dir='ltr';h.lang='en';}}catch(e){}})();</script>
+<style id="__antiflash">html{background:#062A35;color-scheme:dark}</style>
+</head>
+<body>
+
+<!-- ═══ HEADER ═══ -->
+<header class="hdr">
+  <a class="back" href="aqeeda.html">
+    <span>↩️</span><span class="lng-ar">المنارة</span><span class="lng-en">Minaret</span>
+  </a>
+  <span class="hdr-badge"><span class="l">📜</span><span class="lng-ar">رِحلةُ البَلاغ</span><span class="lng-en">The Message</span></span>
+  <div class="lang">
+    <button data-lang="en">EN</button>
+    <button data-lang="ar" class="active">عربي</button>
+  </div>
+</header>
+
+<!-- ═══ INTRO ═══ -->
+<section class="intro">
+  <h1>
+    <span class="lng-ar">📜 رِحلةُ <span class="hl">البَلاغ</span> — الكُتُبُ ومُعجِزاتُ الرُّسُل</span>
+    <span class="lng-en">📜 Journey of the <span class="hl">Message</span> — the Books & the Prophets' Miracles</span>
+  </h1>
+  <p class="sub">
+    <span class="lng-ar">عَشرُ مَحطّاتٍ نَفتَحُ فيها رَسائِلَ السَّماء: صُحُفُ إبراهيمَ وموسى، والتَّوراةُ والزَّبورُ والإنجيلُ والقُرآنُ المَحفوظ، ثُمَّ نَكشِفُ سِرَّ المُعجِزات: خَتمُ المَلِكِ الذي يُجريهِ اللهُ على أيدي رُسُلِهِ — فالقُدرةُ للهِ وَحدَهُ ولَيسَت لِلبَشَر — حتّى نَرى الرُّسُلَ بُنياناً واحِداً اكتَمَلَ بِمُحَمَّدٍ ﷺ.</span>
+    <span class="lng-en">Ten stations opening heaven's letters: the scriptures of Ibrahim and Musa, the Tawrah, Zabur, Injil, and the protected Quran — then uncovering the secret of miracles: the King's seal that Allah carries out at His messengers' hands (the power is Allah's alone, never man's) — until we see the messengers as one building completed by Muhammad ﷺ.</span>
+  </p>
+  <div class="guide">
+    <div class="who">🧑</div>
+    <div class="say">
+      <span class="lng-ar">أنا «يوسُف»، رَفيقُك. مَعَنا اليومَ حَقيبةُ بَريدِ السَّماء… لِنَفتَح الرَّسائِلَ واحِدةً واحِدة! 📜</span>
+      <span class="lng-en">I'm Yusuf, your companion. Today we carry heaven's mailbag… let's open the letters one by one! 📜</span>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ METER ═══ -->
+<div class="pbar-wrap">
+  <div class="pbar-top">
+    <span><span class="lng-ar">مِيزانُ البَلاغ</span><span class="lng-en">Message Meter</span></span>
+    <span class="stars" id="pCount">0 / 10</span>
+  </div>
+  <div class="pbar"><div class="pbar-fill" id="pFill"></div></div>
+  <div class="meter-label" id="meterLabel"></div>
+</div>
+
+<!-- ═══ COLLECTIONS ═══ -->
+<div class="collections">
+  <div class="coll-card" id="collStickers"></div>
+  <div class="coll-card" id="collNames"></div>
+  <div class="coll-card" id="collKeys"></div>
+  <div class="coll-card coll-cert" id="collCert"></div>
+</div>
+
+<!-- ═══ MAP ═══ -->
+<div class="map" id="map"><div class="road"></div></div>
+
+<footer class="foot">
+  <span class="lng-ar">صُنع بِحُبٍّ 🧡 لِأطفالِ الأُمّة — <b>رِحلةُ البَلاغ</b> · منارةُ العقيدة · على نَهجِ أهلِ السُّنّة</span>
+  <span class="lng-en">Made with 🧡 for the children of the Ummah — <b>Journey of the Message</b> · Faith Minaret · Upon the way of Ahl al-Sunnah</span>
+</footer>
+
+<!-- ═══ READER ═══ -->
+<div class="reader" id="reader">
+  <div class="sheet">
+    <div class="r-top">
+      <button class="r-close" id="rClose">✕</button>
+      <span class="r-count" id="rCount"></span>
+      <div class="r-arrows">
+        <button id="rPrev">‹</button>
+        <button id="rNext">›</button>
+      </div>
+    </div>
+    <div id="rBody"></div>
+  </div>
+</div>
+
+<!-- ═══ COLLECTIONS DRAWER ═══ -->
+<div class="drawer" id="drawer">
+  <div class="drawer-sheet">
+    <div class="dw-top">
+      <h3 id="dwTitle"></h3>
+      <button class="r-close" id="dwClose">✕</button>
+    </div>
+    <div class="dw-body" id="dwBody"></div>
+  </div>
+</div>
+
+<!-- ═══ CERTIFICATE ═══ -->
+<div class="cert-overlay" id="certOverlay">
+  <div class="cert-tools">
+    <input id="certName" type="text" placeholder="✍️ اكتُب اسمَك هنا / Type your name" maxlength="40">
+    <button class="cprint" id="certPrint">🖨️ <span class="lng-ar">اطبَع</span><span class="lng-en">Print</span></button>
+    <button class="cclose" id="certClose">✕</button>
+  </div>
+  <div class="certificate" id="certBox"></div>
+</div>
+
+<div id="confetti"></div>
+<div class="toast" id="toast"></div>
+
+<script defer src="nav-fix.js"></script>
+<script src="data/kutub-stations.js"></script>
+<script>
+window.RIHLA_CFG = {
+  stations: window.KUTUB_STATIONS,
+  prefix: 'kutub',
+  confetti: ['#EBC684','#C0905C','#16A085','#2980B9','#FFFFFF','#E67E22'],
+  T: {
+    finishTitle:{ar:'وِسامُ البَلاغِ المُبين',en:'Clear Message Medal'},
+    meterStart:{ar:'ابدَأ الرِّحلة… كُلُّ مَحطّةٍ رِسالةٌ مِنَ السَّماءِ تُفتَح',en:'Begin the journey… each station opens a letter from heaven'},
+    meterMid:{ar:'أحسَنت! فَتَحتَ {n} مِن {t} رَسائِلِ السَّماء',en:'Great! You opened {n} of {t} of heaven\'s letters'},
+    meterDone:{ar:'🎉 بَلَغَتكَ الرِّسالةُ كامِلة! عَرَفتَ كُتُبَ اللهِ ومُعجِزاتِ رُسُلِه',en:'🎉 The message reached you complete! You know Allah\'s books and His messengers\' miracles'},
+    coll1:{icon:'🎖️',title:{ar:'أوسِمةُ البَلاغ',en:'Message Badges'},unit:{ar:'وِسام',en:'badges'}},
+    coll2:{icon:'📜',title:{ar:'رَسائِلُ السَّماء',en:'Heaven\'s Letters'},unit:{ar:'رِسالة',en:'letters'}},
+    coll3:{title:{ar:'مَفاتيحُ البَلاغ',en:'Message Keys'}},
+    collCert:{title:{ar:'شَهادةُ البَلاغ',en:'Message Diploma'}},
+    kick:{ar:'المَحطّة {n} مِن {t}',en:'Station {n} of {t}'},
+    hLogic:{ar:'الدَّليلُ المُبين',en:'The Clear Proof'},
+    hMyth:{ar:'بَطاقةُ تَصحيحِ الفِكرة',en:'Idea-Fixer Card'},
+    hCard:{ar:'رِسالةٌ مِنَ السَّماء',en:'A Letter From Heaven'},
+    hKey:{ar:'مِفتاحُ البَلاغ',en:'Message Key'},
+    hJournal:{ar:'دَفتَرُ البَلاغ',en:'Message Journal'},
+    journalPh:{ar:'اكتُب ما وَصَلَ قَلبَكَ مِن رِسالةِ اليوم…',en:'Write what today\'s letter delivered to your heart…'},
+    stampDo:{ar:'📬 افتَح هذه الرِّسالة',en:'📬 Open this letter'},
+    stampDone:{ar:'✓ رِسالةٌ مَفتوحة',en:'✓ Letter opened'},
+    drawer1:{ar:'🎖️ أوسِمةُ البَلاغ',en:'🎖️ Message Badges'},
+    drawer2:{ar:'📜 رَسائِلُ السَّماء',en:'📜 Heaven\'s Letters'},
+    drawer3:{ar:'🔑 مَفاتيحُ البَلاغ',en:'🔑 Message Keys'},
+    certSeal:'📜',
+    certKick:{ar:'رِحلةُ البَلاغ · منارةُ العقيدة',en:'Journey of the Message · Faith Minaret'},
+    certTitle:{ar:'شَهادةُ مَن بَلَغَتهُ الرِّسالة',en:'Certificate of One Whom the Message Reached'},
+    certStatement:{
+      ar:'أتَمَّ هذا القَلبُ الصَّغيرُ <b>{n}</b> مِن {t} مَحطّاتٍ في رِحلةِ البَلاغ، فَعَرَفَ — على نَهجِ أهلِ السُّنّةِ والجَماعة — أنَّ اللهَ أنزَلَ الكُتُبَ هِدايةً لِلنّاس، وأنَّ القُرآنَ خاتَمُها المَحفوظ، وأنَّ المُعجِزاتِ مِن أمرِ اللهِ وَحدَهُ يُصَدِّقُ بِها رُسُلَه، وأنَّ الأنبِياءَ بُنيانٌ واحِدٌ خُتِمَ بِمُحَمَّدٍ ﷺ.',
+      en:'This young heart completed <b>{n}</b> of {t} stations in the Journey of the Message, learning — upon the way of Ahl al-Sunnah — that Allah sent down the books as guidance, that the Quran is their protected seal, that miracles are from Allah\'s command alone to verify His messengers, and that the prophets are one building sealed by Muhammad ﷺ.'},
+  }
+};
+</script>
+<script src="rihla-engine.js"></script>
+<script defer src="../quiz/quiz-engine.js"></script>
+<script defer src="../shared/mk-system.js"></script>
+<script defer src="../shared/mk-journeys.js"></script>
+<script defer src="../shared/mk-bag.js"></script>
+<script defer src="../shared/mk-train.js"></script>
+</body>
+</html>

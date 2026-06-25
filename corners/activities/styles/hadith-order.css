@@ -1,0 +1,260 @@
+/* ============================================================
+   HADITH ORDER — ترتيب الحديث الشريف
+   ============================================================ */
+
+.hadith-panel {
+  background:
+    radial-gradient(140% 80% at 50% 0%, rgba(207,227,242,0.35), transparent 60%),
+    var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--r-2xl);
+  padding: var(--s-8);
+  display: flex; flex-direction: column;
+  box-shadow: var(--shadow-card);
+}
+.hadith-panel .activity-tag { background: var(--sky); color: var(--sky-ink); }
+.hadith-panel .activity-tag::before { background: var(--sky-ink); }
+
+/* ====== مرجع الحديث الجاري ====== */
+.hadith-prompt {
+  background: var(--surface-2);
+  border: 1px dashed var(--gold);
+  border-radius: var(--r-lg);
+  padding: var(--s-5) var(--s-6);
+  margin-bottom: var(--s-4);
+  text-align: center;
+}
+.hadith-prompt .src {
+  font-family: var(--font-en);
+  font-size: 11px; font-weight: 700;
+  color: var(--butter-ink);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 4px;
+}
+.hadith-prompt .topic {
+  font-size: 18px; font-weight: 800;
+  color: var(--ink);
+  letter-spacing: -0.01em;
+  margin-bottom: 4px;
+}
+.hadith-prompt .meta { font-size: 12px; color: var(--muted); }
+
+/* ====== صفّ الإسقاط (الترتيب الصحيح) ====== */
+.hadith-track {
+  display: flex; flex-wrap: wrap;
+  gap: 8px;
+  background: linear-gradient(180deg, #FCFAF3 0%, #F3EAD2 100%);
+  border: 2px dashed var(--gold);
+  border-radius: var(--r-lg);
+  padding: var(--s-5);
+  min-height: 130px;
+  align-content: flex-start;
+  align-items: flex-start;
+  position: relative;
+  margin-bottom: var(--s-4);
+  transition: background 0.3s ease, border-color 0.3s ease;
+}
+.hadith-track::before {
+  content: "اِسحبْ كلماتك هُنا";
+  position: absolute;
+  top: 50%; right: 50%;
+  transform: translate(50%, -50%);
+  font-size: 14px; color: var(--muted);
+  font-weight: 700;
+  pointer-events: none;
+  opacity: 0.6;
+}
+.hadith-track:not(:empty)::before { display: none; }
+.hadith-track.correct {
+  background: linear-gradient(180deg, var(--mint) 0%, var(--brand-soft) 100%);
+  border-color: var(--mint-ink);
+  animation: track-celebrate 0.6s ease;
+}
+@keyframes track-celebrate {
+  0% { transform: scale(1); }
+  40% { transform: scale(1.02); }
+  100% { transform: scale(1); }
+}
+
+/* ====== حقيبة الكلمات ====== */
+.hadith-bag {
+  display: flex; flex-wrap: wrap;
+  gap: 8px;
+  padding: var(--s-4);
+  background: var(--bg-soft);
+  border-radius: var(--r-lg);
+  border: 1px solid var(--line);
+  min-height: 90px;
+  align-items: flex-start;
+}
+.hadith-bag:empty::after {
+  content: "أحسنتَ! جميع الكلمات في مكانها";
+  display: block;
+  text-align: center;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--mint-ink);
+  width: 100%;
+  padding: 12px;
+}
+
+/* رقاقة الكلمة */
+.word-chip {
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 10px 16px;
+  background: var(--surface);
+  border: 1.5px solid var(--line);
+  border-radius: var(--r-pill);
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--ink);
+  cursor: grab;
+  user-select: none;
+  transition: transform 0.18s ease, box-shadow 0.18s ease, background 0.18s ease, border-color 0.18s ease;
+  position: relative;
+  box-shadow: var(--shadow-sm);
+}
+.word-chip:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--sky-ink);
+}
+.word-chip:active { cursor: grabbing; }
+.word-chip.dragging {
+  opacity: 0.4;
+  cursor: grabbing;
+}
+.word-chip.in-track {
+  background: var(--sky);
+  border-color: var(--sky-ink);
+  color: var(--sky-ink);
+}
+.word-chip.correct {
+  background: var(--mint);
+  border-color: var(--mint-ink);
+  color: var(--mint-ink);
+  animation: chip-pulse 0.5s cubic-bezier(0.2, 1.6, 0.4, 1);
+}
+@keyframes chip-pulse {
+  0% { transform: scale(1); }
+  40% { transform: scale(1.12); }
+  100% { transform: scale(1); }
+}
+.word-chip .pos {
+  width: 22px; height: 22px;
+  border-radius: 50%;
+  background: rgba(0,0,0,0.06);
+  font-family: var(--font-en);
+  font-weight: 800;
+  font-size: 11px;
+  display: grid; place-items: center;
+  color: var(--ink-2);
+}
+.word-chip.correct .pos { background: var(--mint-ink); color: #fff; }
+
+/* مساحات الإفلات (drop indicators) */
+.drop-indicator {
+  width: 6px;
+  height: 36px;
+  background: var(--brand);
+  border-radius: 3px;
+  margin: 0;
+  display: inline-block;
+  vertical-align: middle;
+  animation: drop-pulse 1s ease-in-out infinite;
+}
+@keyframes drop-pulse {
+  0%, 100% { opacity: 0.6; }
+  50% { opacity: 1; }
+}
+
+/* ====== HUD ====== */
+.hadith-hud {
+  display: grid; grid-template-columns: repeat(4, 1fr);
+  gap: var(--s-3);
+  margin-bottom: var(--s-4);
+}
+.hadith-hud .hud-block {
+  background: var(--bg-soft); border: 1px solid var(--line);
+  border-radius: var(--r-md); padding: 10px 14px;
+  display: flex; flex-direction: column; gap: 2px;
+  font-size: 11px; color: var(--muted); font-weight: 600;
+}
+.hadith-hud .hud-block strong {
+  font-size: 20px; color: var(--ink);
+  font-family: var(--font-en); font-weight: 800;
+}
+
+/* ====== أزرار التحكم ====== */
+.hadith-controls {
+  display: flex; gap: 8px;
+  margin-bottom: var(--s-3);
+}
+.h-btn {
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 10px 16px;
+  border-radius: var(--r-pill);
+  font-size: 13px; font-weight: 700;
+  border: 1px solid var(--line);
+  background: var(--surface);
+  color: var(--ink-2);
+  transition: background 0.18s ease, color 0.18s ease, transform 0.18s ease;
+}
+.h-btn:hover { background: var(--bg-soft); transform: translateY(-1px); }
+.h-btn.primary { background: var(--ink); color: #FBF6EC; border-color: var(--ink); }
+.h-btn.primary:hover { background: var(--brand-ink); border-color: var(--brand-ink); }
+.h-btn.warning { background: var(--butter); color: var(--butter-ink); border-color: rgba(138,101,16,0.2); }
+
+/* ====== تذييل المعنى ====== */
+.hadith-meaning {
+  background: var(--brand-soft);
+  border-radius: var(--r-md);
+  padding: var(--s-4) var(--s-5);
+  margin-top: var(--s-3);
+  font-size: 14px;
+  color: var(--brand-ink);
+  line-height: 1.6;
+  display: none;
+}
+.hadith-meaning.open { display: block; animation: fade-up 0.5s ease; }
+.hadith-meaning strong { display: block; margin-bottom: 4px; color: var(--ink); }
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ====== قائمة الأحاديث الجانبية ====== */
+.hadith-progress {
+  display: flex; flex-direction: column; gap: 8px;
+}
+.h-prog-item {
+  display: flex; align-items: center; gap: 10px;
+  padding: 10px 12px;
+  border: 1px solid var(--line);
+  border-radius: var(--r-md);
+  background: var(--bg-soft);
+  font-size: 13px;
+}
+.h-prog-item.done {
+  background: var(--mint);
+  border-color: var(--mint-ink);
+  color: var(--mint-ink);
+}
+.h-prog-item.current {
+  background: var(--butter);
+  border-color: var(--butter-ink);
+  font-weight: 700;
+}
+.h-prog-item .idx {
+  width: 24px; height: 24px;
+  border-radius: 50%;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  font-family: var(--font-en);
+  font-size: 11px; font-weight: 800;
+  display: grid; place-items: center;
+  flex-shrink: 0;
+}
+.h-prog-item.done .idx { background: var(--mint-ink); color: #fff; border-color: var(--mint-ink); }
+.h-prog-item.current .idx { background: var(--butter-ink); color: #fff; border-color: var(--butter-ink); }

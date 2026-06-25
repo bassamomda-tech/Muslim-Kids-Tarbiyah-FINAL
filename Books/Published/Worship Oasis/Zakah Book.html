@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="dark">
+<title>رحلة الزكاة والصدقة | Zakah & Charity Journey</title>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&family=Nunito:wght@400;600;700;800&display=swap">
+<link rel="stylesheet" href="../../../corners/faith-minaret/yaqeen-book.css">
+<style>
+  .pub-print{position:fixed;top:16px;inset-inline-end:16px;z-index:60;background:linear-gradient(135deg,#D4A017,#c79518);color:#10243d;border:none;border-radius:2rem;padding:11px 22px;font-weight:900;font-family:'Tajawal',sans-serif;font-size:.95rem;cursor:pointer;box-shadow:0 8px 22px rgba(0,0,0,.45)}
+  .pub-link{position:fixed;top:16px;inset-inline-start:16px;z-index:60;text-decoration:none;background:rgba(10,37,64,.85);color:#FEF5DC;border:1px solid rgba(212,160,23,.45);border-radius:2rem;padding:9px 16px;font-weight:800;font-size:.82rem;font-family:'Tajawal',sans-serif}
+  @media print{.pub-print,.pub-link{display:none!important}}
+</style>
+</head>
+<body dir="rtl">
+<a class="pub-link" href="Zakah - Art Prompts.html">🍌 أوصاف الرسومات</a>
+<button class="pub-print" onclick="window.print()">🖨️ احفظ PDF</button>
+<div id="stage"><div id="book"></div></div>
+
+<script src="../../../corners/faith-minaret/image-slot.js"></script>
+<script src="../../../corners/little-district/pages/data/ibada-zakah.js"></script>
+<script src="../../../corners/little-district/pages/oasis-core.js"></script>
+<script>
+  var J = window.IBADA_JOURNEYS.zakah;
+  window.RIHLA = {
+    key:'zakah', stations:J.stations, color:J.color, icon:J.icon,
+    titleAr:'رحلةُ الزَّكاةِ والصَّدَقة', titleEn:'The Zakah & Charity Journey',
+    kicker:'واحة العبادة · WORSHIP OASIS',
+    subAr:'كنزٌ كلّما أعطيتَ منه زاد: كيف يطهّرُ مالُكَ وقلبُكَ بالعطاء.',
+    subEn:'A treasure that grows the more you give: how giving purifies your wealth and heart.',
+    certAr:'كنزُ العطاء', certEn:'Treasure of Giving',
+    coverPrompt:"A beautiful children's-book COVER for «رحلةُ الزَّكاةِ والصَّدَقة» (Zakah & Charity): a giving faceless hand dropping a glowing golden coin that sprouts into a flourishing tree of light and a small garden, warm and joyful under a starry sky. Modest, faceless. "+window.OasisCore.STYLE
+  };
+</script>
+<script src="../../../corners/little-district/pages/oasis-book.js"></script>
+<script src="../../../corners/shared/book-art.js"></script>
+</body>
+</html>

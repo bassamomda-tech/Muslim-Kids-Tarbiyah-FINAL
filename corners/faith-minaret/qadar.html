@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta name="color-scheme" content="dark">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>رحلة سر التقدير | Journey of the Secret of the Decree</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Amiri+Quran&family=Tajawal:wght@400;500;700;800;900&family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+<link rel="stylesheet" href="yaqeen.css">
+<style>
+/* ── Decree theme: deep starlit navy + serene jade-gold (pen & tablet) ── */
+:root{
+  --primary:#3E7CB1; --primary-dark:#2E5E89;
+  --bg1:#0A1A2F; --bg2:#102842; --bg3:#163655;
+  --gold:#E6C878; --gold-soft:#F2DCA0;
+  --text:#EEF3F8; --muted:rgba(238,243,248,.74);
+  --line:rgba(230,200,120,.26);
+}
+body{background:
+  
+    radial-gradient(1300px 760px at 78% -12%, rgba(62,124,177,.30), transparent 58%),
+    radial-gradient(1000px 620px at 0% 100%, rgba(63,167,150,.14), transparent 55%),
+    linear-gradient(165deg,var(--bg1),var(--bg2) 55%,var(--bg3));
+  background-attachment:fixed;
+}
+.guide .who{background:linear-gradient(160deg,#3E7CB1,#2A5074)}
+.coll-cert{background:linear-gradient(160deg,rgba(230,200,120,.16),rgba(62,124,177,.20))!important}
+.lang button.active{color:#0A1A2F}
+.stampbtn{color:#0A1A2F}
+</style>
+<script>(function(){try{var l=localStorage.getItem('bunyanLang');if(l==='en'){var h=document.documentElement;h.dir='ltr';h.lang='en';}}catch(e){}})();</script>
+<style id="__antiflash">html{background:#0A1A2F;color-scheme:dark}</style>
+</head>
+<body>
+
+<!-- ═══ HEADER ═══ -->
+<header class="hdr">
+  <a class="back" href="aqeeda.html">
+    <span>↩️</span><span class="lng-ar">المنارة</span><span class="lng-en">Minaret</span>
+  </a>
+  <span class="hdr-badge"><span class="l">📜</span><span class="lng-ar">سِرُّ التَّقدير</span><span class="lng-en">The Decree</span></span>
+  <div class="lang">
+    <button data-lang="en">EN</button>
+    <button data-lang="ar" class="active">عربي</button>
+  </div>
+</header>
+
+<!-- ═══ INTRO ═══ -->
+<section class="intro">
+  <h1>
+    <span class="lng-ar">📜 رِحلةُ <span class="hl">سِرِّ التَّقدير</span> — الإيمانُ بِالقَضاءِ والقَدَر</span>
+    <span class="lng-en">📜 Journey of the <span class="hl">Secret of the Decree</span> — Belief in Qada' & Qadar</span>
+  </h1>
+  <p class="sub">
+    <span class="lng-ar">عَشرُ مَحطّاتٍ نَكتَشِفُ فيها أعظَمَ أسرارِ الطُّمَأنينة: القَلَمُ واللَّوح، ومَراتِبُ القَدَرِ الأربَع، وأنَّكَ تَختارُ حَقّاً ولَستَ مَجبوراً، و«اعقِل ناقَتَكَ وتَوَكَّل»، وأنَّ ما أخطَأكَ لم يَكُن لِيُصيبَك، والخَيرُ المُختَبِئُ في البَلاء، وكَلِمةُ «قَدَّرَ اللهُ» السِّحرِيّة، وكَنزُ الدُّعاء — حتّى نَصِلَ إلى أعظَمِ هَدِيّة: قَلبٌ مُطمَئِنٌّ لا يَعرِفُ القَلَق.</span>
+    <span class="lng-en">Ten stations discovering the greatest secrets of inner peace: the Pen & the Tablet, the four levels of Qadar, that you truly choose and are not forced, "tie your camel and trust," that what missed you was never yours, the good hidden in hardship, the magic word "Qadarullah," and the treasure of du'a — reaching the greatest gift: a tranquil heart that knows no anxiety.</span>
+  </p>
+  <div class="guide">
+    <div class="who">🧑</div>
+    <div class="say">
+      <span class="lng-ar">أنا «يوسُف»، رَفيقُك. هذِهِ الرِّحلةُ تُريحُ القَلبَ أكثَرَ مِن أيِّ رِحلةٍ مَضَت… تَعالَ نَكتَشِفُ سِرَّ الطُّمَأنينة! 📜</span>
+      <span class="lng-en">I'm Yusuf, your companion. This journey rests the heart more than any before it… come, let's uncover the secret of peace! 📜</span>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ METER ═══ -->
+<div class="pbar-wrap">
+  <div class="pbar-top">
+    <span><span class="lng-ar">مِيزانُ الطُّمَأنينة</span><span class="lng-en">Peace Meter</span></span>
+    <span class="stars" id="pCount">0 / 10</span>
+  </div>
+  <div class="pbar"><div class="pbar-fill" id="pFill"></div></div>
+  <div class="meter-label" id="meterLabel"></div>
+</div>
+
+<!-- ═══ COLLECTIONS ═══ -->
+<div class="collections">
+  <div class="coll-card" id="collStickers"></div>
+  <div class="coll-card" id="collNames"></div>
+  <div class="coll-card" id="collKeys"></div>
+  <div class="coll-card coll-cert" id="collCert"></div>
+</div>
+
+<!-- ═══ MAP ═══ -->
+<div class="map" id="map"><div class="road"></div></div>
+
+<footer class="foot">
+  <span class="lng-ar">صُنع بِحُبٍّ 🧡 لِأطفالِ الأُمّة — <b>رِحلةُ سِرِّ التَّقدير</b> · منارةُ العقيدة · على نَهجِ أهلِ السُّنّة</span>
+  <span class="lng-en">Made with 🧡 for the children of the Ummah — <b>Journey of the Secret of the Decree</b> · Faith Minaret · Upon the way of Ahl al-Sunnah</span>
+</footer>
+
+<!-- ═══ READER ═══ -->
+<div class="reader" id="reader">
+  <div class="sheet">
+    <div class="r-top">
+      <button class="r-close" id="rClose">✕</button>
+      <span class="r-count" id="rCount"></span>
+      <div class="r-arrows">
+        <button id="rPrev">‹</button>
+        <button id="rNext">›</button>
+      </div>
+    </div>
+    <div id="rBody"></div>
+  </div>
+</div>
+
+<!-- ═══ COLLECTIONS DRAWER ═══ -->
+<div class="drawer" id="drawer">
+  <div class="drawer-sheet">
+    <div class="dw-top">
+      <h3 id="dwTitle"></h3>
+      <button class="r-close" id="dwClose">✕</button>
+    </div>
+    <div class="dw-body" id="dwBody"></div>
+  </div>
+</div>
+
+<!-- ═══ CERTIFICATE ═══ -->
+<div class="cert-overlay" id="certOverlay">
+  <div class="cert-tools">
+    <input id="certName" type="text" placeholder="✍️ اكتُب اسمَك هنا / Type your name" maxlength="40">
+    <button class="cprint" id="certPrint">🖨️ <span class="lng-ar">اطبَع</span><span class="lng-en">Print</span></button>
+    <button class="cclose" id="certClose">✕</button>
+  </div>
+  <div class="certificate" id="certBox"></div>
+</div>
+
+<div id="confetti"></div>
+<div class="toast" id="toast"></div>
+
+<script defer src="nav-fix.js"></script>
+<script src="data/qadar-stations.js"></script>
+<script>
+window.RIHLA_CFG = {
+  stations: window.QADAR_STATIONS,
+  prefix: 'qadar',
+  confetti: ['#E6C878','#3E7CB1','#3FA796','#7E6BB0','#FFFFFF','#5E9C4E'],
+  T: {
+    finishTitle:{ar:'وِسامُ القَلبِ المُطمَئِنّ',en:'Tranquil Heart Medal'},
+    meterStart:{ar:'ابدَأ الرِّحلة… كُلُّ مَحطّةٍ تُريحُ قَلبَكَ خُطوةً جَديدة',en:'Begin the journey… each station rests your heart one step more'},
+    meterMid:{ar:'أحسَنت! اطمَأنَّ قَلبُكَ في {n} مِن {t} مَحطّات',en:'Great! Your heart found peace in {n} of {t} stations'},
+    meterDone:{ar:'🎉 اكتَمَلَتِ الطُّمَأنينة! صِرتَ شَجَرةً راسِخةً لا تَكسِرُها العَواصِف',en:'🎉 Peace is complete! You\'ve become a rooted tree that storms cannot break'},
+    coll1:{icon:'🎖️',title:{ar:'أوسِمةُ التَّقدير',en:'Decree Badges'},unit:{ar:'وِسام',en:'badges'}},
+    coll2:{icon:'💎',title:{ar:'كُنوزُ الطُّمَأنينة',en:'Peace Treasures'},unit:{ar:'كَنز',en:'treasures'}},
+    coll3:{title:{ar:'مَفاتيحُ التَّقدير',en:'Decree Keys'}},
+    collCert:{title:{ar:'شَهادةُ الطُّمَأنينة',en:'Peace Diploma'}},
+    kick:{ar:'المَحطّة {n} مِن {t}',en:'Station {n} of {t}'},
+    hLogic:{ar:'الدَّليلُ المُطمئِن',en:'The Reassuring Proof'},
+    hMyth:{ar:'بَطاقةُ تَصحيحِ الفِكرة',en:'Idea-Fixer Card'},
+    hCard:{ar:'كَنزٌ مِن كُنوزِ التَّقدير',en:'A Treasure of the Decree'},
+    hKey:{ar:'مِفتاحُ التَّقدير',en:'Decree Key'},
+    hJournal:{ar:'دَفتَرُ الطُّمَأنينة',en:'Peace Journal'},
+    journalPh:{ar:'اكتُب ما اطمَأنَّ بِهِ قَلبُكَ اليوم…',en:'Write what gave your heart peace today…'},
+    stampDo:{ar:'💎 اطمَئِنَّ في هذه المَحطّة',en:'💎 Find peace at this station'},
+    stampDone:{ar:'✓ مَحطّةُ طُمَأنينة',en:'✓ Station of peace'},
+    drawer1:{ar:'🎖️ أوسِمةُ التَّقدير',en:'🎖️ Decree Badges'},
+    drawer2:{ar:'💎 كُنوزُ الطُّمَأنينة',en:'💎 Peace Treasures'},
+    drawer3:{ar:'🔑 مَفاتيحُ التَّقدير',en:'🔑 Decree Keys'},
+    certSeal:'💎',
+    certKick:{ar:'رِحلةُ سِرِّ التَّقدير · منارةُ العقيدة',en:'Journey of the Secret of the Decree · Faith Minaret'},
+    certTitle:{ar:'شَهادةُ القَلبِ المُطمَئِنّ',en:'Certificate of the Tranquil Heart'},
+    certStatement:{
+      ar:'أتَمَّ هذا القَلبُ الصَّغيرُ <b>{n}</b> مِن {t} مَحطّاتٍ في رِحلةِ سِرِّ التَّقدير، فَعَرَفَ — على نَهجِ أهلِ السُّنّةِ والجَماعة — أنَّ اللهَ يَعلَمُ ويَكتُبُ ويَشاءُ ويَخلُق، وأنَّ العَبدَ مُختارٌ مَسؤولٌ لا مَجبور، وأنه يَأخُذُ بِالأسبابِ ويَتَوَكَّلُ ويَرضى بِقَدَرِ اللهِ خَيرِهِ وشَرِّه — فَنالَ أعظَمَ هَدِيّة: قَلباً مُطمَئِنّاً لا يَعرِفُ القَلَق.',
+      en:'This young heart completed <b>{n}</b> of {t} stations in the Journey of the Secret of the Decree, learning — upon the way of Ahl al-Sunnah — that Allah knows, writes, wills, and creates; that the servant is a responsible chooser, not forced; and that he takes the means, trusts, and is content with Allah\'s decree, its good and its trial — gaining the greatest gift: a tranquil heart that knows no anxiety.'},
+  }
+};
+</script>
+<script src="rihla-engine.js"></script>
+<script defer src="../quiz/quiz-engine.js"></script>
+<script defer src="../shared/mk-system.js"></script>
+<script defer src="../shared/mk-journeys.js"></script>
+<script defer src="../shared/mk-bag.js"></script>
+<script defer src="../shared/mk-train.js"></script>
+</body>
+</html>

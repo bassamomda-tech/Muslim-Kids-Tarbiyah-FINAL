@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>خطة حفظ القرآن — من سنة إلى خمس | Qur'an Memorization Plan</title>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&family=Nunito:wght@400;600;700;800;900&family=Amiri:wght@400;700&display=swap">
+<link rel="stylesheet" href="plan-book.css">
+<style>
+  .qa{font-family:'Amiri',serif;font-size:1.05em}
+  .planrow td{vertical-align:middle}
+  .amma-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:.4rem .7rem;margin:.4rem 0 1rem}
+  .amma{display:flex;align-items:center;gap:.5rem;border:1px solid var(--line);border-radius:.5rem;padding:.34rem .5rem;background:#fff}
+  .amma .box{width:1rem;height:1rem;border:2px solid var(--navy);border-radius:.25rem;flex:0 0 auto}
+  .amma .num{font-size:.7rem;font-weight:800;color:var(--gold-d);min-width:1.4rem}
+  .amma .nm{font-size:.8rem;font-weight:700;line-height:1.2}
+  .tier{display:flex;gap:.7rem;align-items:flex-start;border:1px solid var(--line);border-inline-start:5px solid var(--tc);border-radius:.7rem;padding:.7rem .8rem;background:#fcfcfa;margin-bottom:.5rem}
+  .tier .t-ic{font-size:1.7rem;flex:0 0 auto}
+  .tier .t-n{font-weight:900;font-size:.98rem;color:var(--navy)}
+  .tier .t-d{font-size:.82rem;color:#455260;line-height:1.6;margin-top:.15rem}
+  @media(max-width:840px){ .amma-grid{grid-template-columns:1fr 1fr} }
+  /* journey + problems clinic */
+  .qprob{border:1.5px solid var(--line);border-radius:.8rem;overflow:hidden;margin-bottom:.85rem}
+  .qprob .qp-h{background:#8a3a2e;color:#fff;padding:.5rem .85rem;font-weight:900;font-size:.98rem;display:flex;align-items:center;gap:.45rem}
+  .qprob .qp-why{padding:.5rem .85rem;font-size:.86rem;color:#54606d;background:#fcfcfa;border-bottom:1px dashed var(--line);line-height:1.65}
+  .qprob .qp-why b{color:#8a3a2e}
+  .qprob .qp-fix{padding:.55rem .85rem .6rem;background:#fff;display:flex;flex-direction:column;gap:.4rem}
+  .qprob .qp-row{display:flex;gap:.55rem;font-size:.86rem;line-height:1.6;color:#32404d}
+  .qprob .qp-row .qp-c{flex:0 0 auto;color:#1A9B7B;font-weight:900}
+  .teachvoice{display:flex;gap:.7rem;background:#f3f7f5;border:1px solid #cfe0d8;border-inline-start:4px solid #1A9B7B;border-radius:.7rem;padding:.8rem .95rem;margin:.2rem 0 1rem;font-size:.92rem;line-height:1.85;color:#27463c;font-weight:600}
+  .teachvoice .tv-ic{font-size:1.5rem;flex:0 0 auto}
+</style>
+</head>
+<body dir="rtl">
+<div class="toolbar">
+  <div class="seg">
+    <button id="segAr" class="on" onclick="setLang('ar')">عربي</button>
+    <button id="segEn" onclick="setLang('en')">EN</button>
+  </div>
+  <button class="prim" onclick="window.print()">🖨️ <span class="ar-only">طباعة / PDF</span><span class="en-only">Print / PDF</span></button>
+</div>
+<div id="book"></div>
+
+<script src="quran-plan-data.js"></script>
+<script src="quran-plan-guide.js"></script>
+<script>
+var Q = window.QPLAN;
+var lang = localStorage.getItem('bunyanLang') || 'ar';
+function tx(o){ return o ? (o[lang]||o.ar) : ''; }
+var AR = function(){ return lang==='ar'; };
+
+function sheet(opts, body){
+  var cls = 'sheet' + (opts.cls? ' '+opts.cls : '');
+  var head = '';
+  if(opts.h){
+    head = '<div class="ph"><div class="ph-ic">'+opts.h.ic+'</div>'+
+      '<div class="ph-tx"><div class="ph-k">'+tx(opts.h.k)+'</div><h2>'+tx(opts.h.t)+'</h2></div>'+
+      (opts.h.n?'<div class="ph-n">'+opts.h.n+'</div>':'')+'</div>';
+  }
+  var foot = opts.nofoot? '' :
+    '<div class="pfoot"><span class="brand">'+(AR()?'تربية الطفل المسلم · خطة حفظ القرآن':'Muslim Kids\u2019 Tarbiyah · Qur\u2019an Memorization Plan')+'</span><span>'+(opts.pg||'')+'</span></div>';
+  return '<div class="'+cls+'"><div class="flow">'+head+body+foot+'</div></div>';
+}
+
+function build(){
+  var pages=[], pg=0;
+  function P(n){ return (AR()?'صفحة ':'p. ')+n; }
+
+  /* COVER */
+  pages.push(sheet({cls:'cover', nofoot:true},
+    '<div class="crest">📖</div>'+
+    '<div class="ckick">'+(AR()?'تربية الطفل المسلم':'Muslim Kids\u2019 Tarbiyah')+'</div>'+
+    '<h1>'+(AR()?'خطّةُ حفظِ القرآن':'The Qur\u2019an Memorization Plan')+'</h1>'+
+    '<div class="csub">'+(AR()?'من سنةٍ إلى خمس · مع المراجعة':'From one year to five \u00b7 with revision')+'</div>'+
+    '<div class="cdesc">'+(AR()?'خمسُ خططٍ متدرّجةٍ لحفظ كتاب الله، تبدأ من جزء عمّ ثم تتدرّج إلى الوراء حتى البقرة — بمقاديرَ يوميّةٍ محسوبة، ونظامِ مراجعةٍ ثلاثيٍّ يُثبّت المحفوظ فلا ينفلت.':'Five graded plans to memorize the Book of Allah \u2014 beginning with Juz \u2019Amma then moving backward to Al-Baqarah \u2014 with calculated daily portions and a three-tier revision system that holds the memorized firm.')+'</div>'+
+    '<div class="crow"><span>🌱</span><span>🔄</span><span>🏔️</span></div>'+
+    '<div class="cdiv"></div>'+
+    '<div class="cname">'+(AR()?'اسمُ الحافظ:':'Memorizer\u2019s name:')+' <b></b></div>'+
+    '<div class="cname" style="margin-top:.7rem">'+(AR()?'الخطّةُ المختارة:':'Chosen plan:')+' <b></b></div>'+
+    '<div class="cbadge">'+(AR()?'الترتيب: جزء عمّ ← تبارك ← ... ← البقرة':'Order: Juz \u2019Amma \u2190 Tabārak \u2190 \u2026 \u2190 Al-Baqarah')+'</div>'));
+
+  /* METHOD */
+  pages.push(sheet({pg:P(++pg), h:{ic:'🧠', k:{ar:'الأساس',en:'The foundation'}, t:{ar:'طريقةُ الحفظ: ثلاثُ طبقات',en:'The method: three layers'}}},
+    '<div class="teachvoice"><span class="tv-ic">🎓</span><span>'+tx(Q.teacher)+'</span></div>'+
+    '<p class="lead">'+tx(Q.method.intro)+'</p>'+
+    Q.method.tiers.map(function(t){
+      return '<div class="tier" style="--tc:'+t.c+'"><div class="t-ic">'+t.ic+'</div><div><div class="t-n">'+tx(t.name)+'</div><div class="t-d">'+tx(t.d)+'</div></div></div>';
+    }).join('')+
+    '<div class="subh">'+(AR()?'خمسُ قواعدَ تصنع الفرق':'Five rules that make the difference')+'</div>'+
+    '<ol class="steps">'+Q.method.steps.map(function(s){return '<li>'+tx(s)+'</li>';}).join('')+'</ol>'));
+
+  /* JOURNEY: 5 stages start → itqan */
+  pages.push(sheet({pg:P(++pg), h:{ic:'🧗', k:{ar:'الطريق',en:'The path'}, t:{ar:'رحلةُ المقطع: خمسُ مراحلَ إلى الإتقان',en:'A portion’s journey: five stages to mastery'}}},
+    '<p class="lead">'+tx(Q.journey.intro)+'</p>'+
+    Q.journey.stages.map(function(s){
+      return '<div class="tier" style="--tc:'+s.c+'"><div class="t-ic">'+s.ic+'</div><div><div class="t-n">'+tx(s.n)+'</div><div class="t-d">'+tx(s.d)+'</div></div></div>';
+    }).join('')+
+    '<div class="note">'+tx(Q.journey.note)+'</div>'));
+
+  /* DAILY PROCESS: how to memorize one portion */
+  pages.push(sheet({pg:P(++pg), h:{ic:'📝', k:{ar:'الدليلُ العمليّ',en:'Practical guide'}, t:{ar:'كيف تحفظ مقطعَ اليوم — خطوةً بخطوة',en:'How to memorize today’s portion — step by step'}}},
+    '<p class="lead">'+tx(Q.dailyProcess.intro)+'</p>'+
+    '<ol class="steps">'+Q.dailyProcess.steps.map(function(s){return '<li>'+tx(s)+'</li>';}).join('')+'</ol>'+
+    '<div class="tip">'+tx(Q.dailyProcess.flex)+'</div>'));
+
+  /* ITQAN: criteria + path */
+  pages.push(sheet({pg:P(++pg), h:{ic:'💎', k:{ar:'الإتقان',en:'Mastery'}, t:{ar:'متى تُتقن؟ وكيف تصل إليه',en:'When is it mastered? And how to get there'}}},
+    '<p class="lead">'+tx(Q.itqan.intro)+'</p>'+
+    '<div class="subh">'+(AR()?'علاماتُ الإتقانِ الخمس':'The five signs of mastery')+'</div>'+
+    '<div class="chk">'+Q.itqan.criteria.map(function(c){return '<div class="row"><span class="box" style="border-color:#C0392B"></span><span class="lb" style="font-weight:600">'+tx(c)+'</span></div>';}).join('')+'</div>'+
+    '<div class="subh">'+(AR()?'طريقُ الإتقان':'The path to mastery')+'</div>'+
+    '<div class="goalgrid">'+Q.itqan.path.map(function(p){return '<div class="goal" style="--gc:#C0392B"><div class="g-ic">'+p.ic+'</div><div><div class="g-n">'+tx(p.t)+'</div><div class="g-d">'+tx(p.d)+'</div></div></div>';}).join('')+'</div>'));
+
+  /* THE 5 PLANS */
+  pages.push(sheet({pg:P(++pg), h:{ic:'📅', k:{ar:'اختر مداك',en:'Choose your horizon'}, t:{ar:'الخططُ الخمس في لمحة',en:'The five plans at a glance'}}},
+    '<table class="ptable center"><thead><tr>'+
+      '<th>'+(AR()?'الخطّة':'Plan')+'</th>'+
+      '<th>'+(AR()?'الحفظ اليومي':'Daily new')+'</th>'+
+      '<th>'+(AR()?'الأيام':'Days')+'</th>'+
+      '<th>'+(AR()?'لكلِّ جزء':'Per juz')+'</th>'+
+      '<th>'+(AR()?'العمر المناسب':'Best age')+'</th>'+
+    '</tr></thead><tbody>'+
+    Q.plans.map(function(p){
+      return '<tr class="planrow"><td class="h-name" style="text-align:center">'+p.ic+' <b style="color:'+p.c+'">'+tx(p.label)+'</b></td>'+
+        '<td>'+tx(p.daily)+'</td><td>'+tx(p.days)+'</td><td>'+tx(p.perJuz)+'</td><td>'+tx(p.age)+'</td></tr>';
+    }).join('')+'</tbody></table>'+
+    '<div class="goalgrid">'+Q.plans.map(function(p){
+      return '<div class="goal" style="--gc:'+p.c+'"><div class="g-ic">'+p.ic+'</div><div>'+
+        '<div class="g-n">'+tx(p.label)+'</div><div class="g-d">'+tx(p.note)+'</div>'+
+        '<div class="g-t">🌙 '+tx(p.amma)+'</div></div></div>';
+    }).join('')+'</div>'+
+    '<div class="note">'+tx(Q.paceNote)+'</div>'));
+
+  /* FLEXIBLE LIFESTYLE PLANS */
+  pages.push(sheet({pg:P(++pg), h:{ic:'🧩', k:{ar:'المرونة',en:'Flexibility'}, t:{ar:'خططٌ مرنةٌ بحسب نمطِ حياتك',en:'Flexible plans for your lifestyle'}}},
+    '<p class="lead">'+tx(Q.flexPlans.intro)+'</p>'+
+    '<div class="goalgrid">'+Q.flexPlans.plans.map(function(p){
+      return '<div class="goal" style="--gc:'+p.c+'"><div class="g-ic">'+p.ic+'</div><div><div class="g-n">'+tx(p.n)+'</div><div class="g-d">'+tx(p.d)+'</div></div></div>';
+    }).join('')+'</div>'));
+
+  /* MEMORIZATION ORDER (split) */
+  function orderTable(slice){
+    return '<table class="ptable center"><thead><tr>'+
+      '<th style="width:48px">'+(AR()?'الترتيب':'Order')+'</th>'+
+      '<th style="width:60px">'+(AR()?'الجزء':'Juz')+'</th>'+
+      '<th>'+(AR()?'يبدأ بـ':'Begins with')+'</th>'+
+      '<th style="width:64px">'+(AR()?'صفحات':'Pages')+'</th></tr></thead><tbody>'+
+      slice.map(function(j){
+        var nm = j.nm? ' <span class="pill">'+tx(j.nm)+'</span>':'';
+        return '<tr><td class="acc"><b>'+(AR()?toAr(j.ord):j.ord)+'</b></td>'+
+          '<td>'+(AR()?toAr(j.juz):j.juz)+'</td>'+
+          '<td style="text-align:start">'+(AR()? '<span class="qa">'+j.sa+'</span>' : j.se)+nm+'</td>'+
+          '<td>'+(AR()?toAr(j.pages):j.pages)+'</td></tr>';
+      }).join('')+'</tbody></table>';
+  }
+  pages.push(sheet({pg:P(++pg), h:{ic:'🧭', k:{ar:'الترتيب',en:'The order'}, t:{ar:'ترتيبُ الحفظ: جزء عمّ ثم إلى الوراء',en:'Order: Juz \u2019Amma, then backward'}, n:(AR()?'١ – ١٥':'1 \u2013 15')}},
+    '<p class="lead">'+(AR()?'نبدأ بأقصرِ السور وأكثرِها تكرارًا في الصلاة (جزء عمّ)، ثم نتدرّج إلى الوراء جزءًا جزءًا حتى نختم بالبقرة والفاتحة. هذا الترتيبُ يبني الثقةَ مبكّرًا ويُيسّر على الصغار.':'We start with the shortest, most-recited surahs (Juz \u2019Amma), then move backward juz by juz, finishing with Al-Baqarah & Al-Fātihah. This order builds early confidence and suits young memorizers.')+'</p>'+
+    orderTable(Q.juzOrder.slice(0,15))));
+  pages.push(sheet({pg:P(++pg), h:{ic:'🧭', k:{ar:'الترتيب',en:'The order'}, t:{ar:'تتمّةُ ترتيب الحفظ',en:'Order (continued)'}, n:(AR()?'١٦ – ٣٠':'16 \u2013 30')}},
+    orderTable(Q.juzOrder.slice(15))+
+    '<div class="tip">'+(AR()?'<b>الفاتحة</b> تُحفَظ أولًا (فهي ركنُ الصلاة)، ثم يسير الطفل في الترتيب أعلاه. الأجزاءُ الأخيرة (البقرة وآل عمران) هي الأطول، فاترك لها أوسعَ وقتٍ وأكثرَ مراجعة.':'<b>Al-Fātihah</b> is memorized first (it is a pillar of prayer); then the child follows the order above. The last juz (Al-Baqarah, Āl ʿImrān) are the longest \u2014 give them the most time and review.')+'</div>'));
+
+  /* JUZ AMMA CHECKLIST */
+  pages.push(sheet({pg:P(++pg), h:{ic:'🌙', k:{ar:'الهدفُ الأول',en:'The first goal'}, t:{ar:'قائمةُ جزء عمّ — ٣٧ سورة',en:'Juz \u2019Amma checklist \u2014 37 surahs'}}},
+    '<p class="lead">'+(AR()?'هذا هو هدفُك الأول وأجملُ بداية. علّم ✓ على كلِّ سورةٍ يُتقنها طفلك ويعرضها عليك. عند اكتمالها، اطبع له شهادةَ «حافظِ جزء عمّ».':'This is your first goal and the sweetest start. Tick \u2713 each surah your child masters and recites to you. When complete, print the \u201cJuz \u2019Amma Hāfiz\u201d certificate.')+'</p>'+
+    '<div class="amma-grid">'+Q.juzAmma.map(function(s){
+      return '<div class="amma"><span class="box"></span><span class="num">'+(AR()?toAr(s.n):s.n)+'</span><span class="nm">'+(AR()? s.ar : s.en)+'</span></div>';
+    }).join('')+'</div>'+
+    '<div class="note">'+(AR()?'ابدأ من قِصار السور (الناس، الفلق، الإخلاص...) صعودًا إلى النبأ — فالأقصرُ أوّلًا أيسرُ وأكثرُ تشجيعًا.':'Start from the shortest (An-Nās, Al-Falaq, Al-Ikhlās\u2026) up to An-Naba\u2019 \u2014 shortest first is easier and more encouraging.')+'</div>'));
+
+  /* WEEKLY 3-TIER */
+  var wh = AR()? Q.weekly.head.ar : Q.weekly.head.en;
+  pages.push(sheet({pg:P(++pg), h:{ic:'🗓️', k:{ar:'الإيقاعُ الأسبوعي',en:'Weekly rhythm'}, t:{ar:'جدولُ المراجعة الثلاثي',en:'The three-tier weekly schedule'}}},
+    '<p class="lead">'+(AR()?'هكذا يبدو أسبوعٌ نموذجي: قسمٌ جديدٌ كلَّ يوم، مع مراجعةٍ قريبةٍ تتراكم خلال الأسبوع، ومراجعةٍ بعيدةٍ تدور على جزءٍ قديمٍ كلَّ يوم. الجمعةُ للتثبيت والاختبار.':'Here is a model week: a new portion each day, a near-review that accumulates through the week, and a far-review rotating an old juz daily. Friday is for consolidation & testing.')+'</p>'+
+    '<table class="ptable center"><thead><tr>'+wh.map(function(h,i){return '<th'+(i===0?' style="width:80px"':'')+'>'+h+'</th>';}).join('')+'</tr></thead><tbody>'+
+    Q.weekly.rows.map(function(r){
+      return '<tr><td class="h-name" style="text-align:center">'+tx(r.d)+'</td>'+r.c.map(function(c){return '<td>'+tx(c)+'</td>';}).join('')+'</tr>';
+    }).join('')+'</tbody></table>'+
+    '<div class="legend">'+
+      '<span class="it"><span class="sw" style="background:#1A9B7B"></span>'+(AR()?'الجديد':'New')+'</span>'+
+      '<span class="it"><span class="sw" style="background:#C9A227"></span>'+(AR()?'مراجعة قريبة':'Near review')+'</span>'+
+      '<span class="it"><span class="sw" style="background:#2980B9"></span>'+(AR()?'مراجعة بعيدة':'Far review')+'</span>'+
+    '</div>'+
+    '<div class="tip">'+(AR()?'<b>القاعدة الذهبية:</b> ثلثُ الجلسة للجديد، وثلثاها للمراجعة. لا تنتقل لجزءٍ جديدٍ حتى تُتقن مراجعةَ ما قبله.':'<b>Golden rule:</b> a third of the session for the new, two-thirds for review. Don\u2019t move to a new juz until you can review the previous one well.')+'</div>'));
+
+  /* PROBLEMS CLINIC (2 pages) */
+  function probCard(p){
+    return '<div class="qprob"><div class="qp-h">'+p.ic+' '+tx(p.t)+'</div>'+
+      '<div class="qp-why"><b>'+(AR()?'السبب: ':'Cause: ')+'</b>'+tx(p.why)+'</div>'+
+      '<div class="qp-fix">'+p.fix.map(function(f){return '<div class="qp-row"><span class="qp-c">✓</span><span>'+tx(f)+'</span></div>';}).join('')+'</div></div>';
+  }
+  pages.push(sheet({pg:P(++pg), h:{ic:'🩺', k:{ar:'عيادةُ الحفظ',en:'The hifdh clinic'}, t:{ar:'مشكلاتُ الحفظ وحلولُها',en:'Memorization problems & their solutions'}, n:(AR()?'١ – ٤':'1 – 4')}},
+    '<div class="teachvoice"><span class="tv-ic">🎓</span><span>'+tx(Q.problems.intro)+'</span></div>'+
+    Q.problems.items.slice(0,4).map(probCard).join('')));
+  pages.push(sheet({pg:P(++pg), h:{ic:'🩺', k:{ar:'عيادةُ الحفظ',en:'The hifdh clinic'}, t:{ar:'مشكلاتُ الحفظ وحلولُها',en:'Memorization problems & their solutions'}, n:(AR()?'٥ – ٨':'5 – 8')}},
+    Q.problems.items.slice(4).map(probCard).join('')+
+    '<div class="note">'+tx(Q.closing)+'</div>'));
+
+  /* ROUTINE · DUA · ETIQUETTE · TIPS */
+  pages.push(sheet({pg:P(++pg), h:{ic:'🤲', k:{ar:'الروحُ والأدب',en:'Spirit & manners'}, t:{ar:'آدابُ الحفظ ودعاؤه',en:'Etiquette & du\u2019a of memorization'}}},
+    '<div class="goalgrid">'+Q.etiquette.map(function(e){
+      return '<div class="goal" style="--gc:#1A9B7B"><div class="g-ic">'+e.ic+'</div><div><div class="g-n">'+tx(e.t)+'</div><div class="g-d">'+tx(e.d)+'</div></div></div>';
+    }).join('')+'</div>'+
+    '<div class="note"><b>'+(AR()?'دعاءٌ قبل الحفظ:':'A du\u2019a before memorizing:')+'</b><br><span class="qa" style="font-size:1.1em">'+(AR()? Q.dua.ar : '')+'</span>'+(AR()?'':'<span>'+Q.dua.en+'</span>')+'<br><span style="opacity:.85">'+tx(Q.dua.tip)+'</span></div>'+
+    '<div class="subh">'+(AR()?'ستُّ نصائحَ لكلِّ أبٍ ومُحفِّظ':'Six tips for every parent & teacher')+'</div>'+
+    '<div class="chk">'+Q.tips.map(function(t){
+      return '<div class="row"><span class="box" style="border-color:#C9A227"></span><span class="lb" style="font-weight:600">'+tx(t)+'</span></div>';
+    }).join('')+'</div>'));
+
+  /* CERTIFICATE */
+  pages.push(sheet({cls:'cover', nofoot:true},
+    '<div class="crest">🏅</div>'+
+    '<div class="ckick">'+(AR()?'تربية الطفل المسلم':'Muslim Kids\u2019 Tarbiyah')+'</div>'+
+    '<h1 style="font-size:2.3rem">'+(AR()?'شهادةُ حفظِ القرآن':'Qur\u2019an Memorization Certificate')+'</h1>'+
+    '<div class="cdiv"></div>'+
+    '<div class="cdesc">'+(AR()?'نَشهدُ أنّ الحافظَ البطل':'We certify that the young hāfiz')+'</div>'+
+    '<div class="cname" style="font-size:1.5rem;margin:1rem 0"><b style="min-width:300px"></b></div>'+
+    '<div class="cdesc">'+(AR()?'قد أتمّ بفضل الله حفظَ':'has, by Allah\u2019s grace, completed the memorization of')+' <b style="color:#F5CC5A;border-bottom:2px dashed rgba(212,160,23,.7);padding:0 1.4rem">&nbsp;</b> '+(AR()?'(جزء / أجزاء)':'(juz / ajzā\u2019)')+(AR()?'، فبارك الله فيه وجعله من أهل القرآن الذين هم أهلُ الله وخاصّته.':', so may Allah bless him and make him of the People of the Qur\u2019an, who are Allah\u2019s own and His elect.')+'</div>'+
+    '<div class="crow" style="font-size:1.5rem"><span>🌱</span><span>📖</span><span>⭐</span></div>'+
+    '<div class="cname" style="margin-top:1.4rem">'+(AR()?'التاريخ:':'Date:')+' <b style="min-width:150px"></b> &nbsp; '+(AR()?'المُستمِع:':'Listener:')+' <b style="min-width:150px"></b></div>'));
+
+  document.getElementById('book').innerHTML = pages.join('');
+}
+
+/* arabic-indic digit helper */
+function toAr(n){ return String(n).replace(/[0-9]/g, function(d){ return '٠١٢٣٤٥٦٧٨٩'[+d]; }); }
+
+function setLang(l){
+  lang=l; localStorage.setItem('bunyanLang', l);
+  document.documentElement.lang=l; document.documentElement.dir=l==='ar'?'rtl':'ltr';
+  document.getElementById('segAr').classList.toggle('on', l==='ar');
+  document.getElementById('segEn').classList.toggle('on', l==='en');
+  build();
+}
+setLang(lang);
+</script>
+</body>
+</html>

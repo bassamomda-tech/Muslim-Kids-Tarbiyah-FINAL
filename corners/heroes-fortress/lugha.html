@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta name="color-scheme" content="dark">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>رحلة لغتي العربية | My Arabic Language</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Amiri+Quran&family=Tajawal:wght@400;500;700;800;900&family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+<link rel="stylesheet" href="yaqeen.css">
+<style>
+/* ── Arabic Language theme: warm manuscript gold + ink teal (heritage & calligraphy) ── */
+:root{
+  --primary:#C9962E; --primary-dark:#9A6F18;
+  --bg1:#241A08; --bg2:#352711; --bg3:#473518;
+  --gold:#F0C868; --gold-soft:#F7DC9E;
+  --text:#F6EFDD; --muted:rgba(246,239,221,.74);
+  --line:rgba(240,200,104,.28);
+}
+body{background:
+  
+    radial-gradient(1300px 760px at 78% -12%, rgba(201,150,46,.30), transparent 58%),
+    radial-gradient(1000px 620px at 0% 100%, rgba(43,140,126,.14), transparent 55%),
+    linear-gradient(165deg,var(--bg1),var(--bg2) 55%,var(--bg3));
+  background-attachment:fixed;
+}
+.guide .who{background:linear-gradient(160deg,#C9962E,#7E5A14)}
+.coll-cert{background:linear-gradient(160deg,rgba(240,200,104,.16),rgba(201,150,46,.22))!important}
+.lang button.active{color:#241A08}
+.stampbtn{color:#241A08}
+/* ── Interactive letter board (huruf station) ── */
+.hl-board{display:flex;flex-direction:column;gap:14px;margin-top:6px;padding:18px;border-radius:18px;background:
+  rgba(21,119,166,.12);border:1.5px solid rgba(240,200,104,.32)}
+.hl-hint{font-weight:800;color:var(--gold-soft);font-size:1.02rem;text-align:center}
+.hl-haraka{display:flex;flex-wrap:wrap;gap:10px;justify-content:center}
+.hk{font-family:'Amiri Quran',serif;font-weight:700;font-size:1.25rem;cursor:pointer;user-select:none;
+  border:1.6px solid rgba(240,200,104,.4);background:rgba(255,255,255,.06);color:var(--text);
+  border-radius:999px;padding:6px 18px;transition:transform .12s,background .15s}
+.hk:hover{background:rgba(240,200,104,.16)}
+.hk.active{background:var(--gold);color:#241A08;border-color:var(--gold);transform:scale(1.05)}
+.hl-grid{display:flex;flex-wrap:wrap;gap:9px;justify-content:center}
+.hletter{font-family:'Amiri Quran',serif;font-size:1.7rem;line-height:1;width:54px;height:58px;cursor:pointer;
+  display:flex;align-items:center;justify-content:center;user-select:none;
+  border:1.5px solid var(--line);background:rgba(255,255,255,.05);color:var(--text);
+  border-radius:13px;transition:transform .1s,background .15s,box-shadow .15s}
+.hletter:hover{background:rgba(240,200,104,.18);transform:translateY(-2px)}
+.hletter.ring{animation:hbring .45s ease}
+@keyframes hbring{0%{transform:scale(1);box-shadow:0 0 0 0 rgba(240,200,104,.5)}
+  45%{transform:scale(1.22);box-shadow:0 0 0 7px rgba(240,200,104,.35);background:var(--gold);color:#241A08}
+  100%{transform:scale(1);box-shadow:0 0 0 0 transparent}}
+.hl-note{font-size:.82rem;color:var(--muted);text-align:center}
+/* ── interactive letter pad (huruf station) ── */
+.huruf-pad-wrap{margin:18px 0;padding:16px;border:1.5px solid var(--line);border-radius:16px;background:rgba(240,200,104,.07)}
+.huruf-hint{text-align:center;font-weight:800;color:var(--gold-soft);margin-bottom:14px;font-size:1.02rem}
+.huruf-demo{display:flex;gap:10px;justify-content:center;margin-bottom:16px;flex-wrap:wrap}
+.huruf-demo-lbl{width:100%;text-align:center;color:var(--muted);font-size:.85rem;margin-bottom:2px}
+.huruf-pad{display:flex;flex-wrap:wrap;gap:8px;justify-content:center}
+.hbtn{display:inline-flex;align-items:center;justify-content:center;min-width:48px;height:48px;padding:0 8px;border-radius:12px;background:linear-gradient(160deg,#F0C868,#C9962E);color:#241A08;font-family:'Amiri Quran','Tajawal',serif;font-size:1.55rem;font-weight:700;cursor:pointer;border:2px solid transparent;transition:transform .15s,box-shadow .15s,border-color .15s;-webkit-user-select:none;user-select:none}
+.hbtn:hover{transform:translateY(-2px)}
+.hbtn:active{transform:scale(.94)}
+.hbtn.hbig{min-width:60px;height:60px;font-size:2rem}
+.hbtn.hbtn-on{border-color:#fff;transform:scale(1.12);box-shadow:0 8px 20px rgba(240,200,104,.55)}
+</style>
+<script>(function(){try{var l=localStorage.getItem('bunyanLang');if(l==='en'){var h=document.documentElement;h.dir='ltr';h.lang='en';}}catch(e){}})();</script>
+<style id="__antiflash">html{background:#241A08;color-scheme:dark}</style>
+</head>
+<body>
+
+<header class="hdr">
+  <a class="back" href="academy.html">
+    <span>↩️</span><span class="lng-ar">الأكاديمية</span><span class="lng-en">Academy</span>
+  </a>
+  <span class="hdr-badge"><span class="l">📜</span><span class="lng-ar">لُغَتي العَرَبيّة</span><span class="lng-en">My Arabic</span></span>
+  <div class="lang">
+    <button data-lang="en">EN</button>
+    <button data-lang="ar" class="active">عربي</button>
+  </div>
+</header>
+
+<section class="intro">
+  <h1>
+    <span class="lng-ar">📜 رِحلةُ <span class="hl">لُغَتي العَرَبيّة</span> — كَنزُ الهُوِيّة ولُغةُ القُرآن</span>
+    <span class="lng-en">📜 Journey of <span class="hl">My Arabic Language</span> — Treasure of Identity & Language of the Quran</span>
+  </h1>
+  <p class="sub">
+    <span class="lng-ar">خَمسَ عَشرةَ مَحطّةً مُمتِعةً نَكتَشِفُ فيها لِماذا اختارَ اللهُ العَرَبيّةَ لُغةً لِكِتابِه، وكَيفَ هي مِفتاحُ فَهمِ الدّين، ولِماذا لا نَترُكُها كَما يُريدُ أعداءُ الهُوِيّة، وخَطَرَ تَقليدِ «الموضة» في إهمالِها — مَعَ تَذَوُّقِ جَمالِها وثَراءِ كَلِماتِها، وكَنزِ شِعرِها، وحِكمةِ أمثالِها، وعَمالِقَتِها، حتّى تَكونَ أنتَ حارِسَ لُغَتِك.</span>
+    <span class="lng-en">Fifteen delightful stations discovering why Allah chose Arabic for His Book, how it's the key to understanding religion, why we don't abandon it as the enemies of identity wish, and the danger of imitating "fashion" in neglecting it — while tasting its beauty and rich words, the treasure of its poetry, the wisdom of its proverbs, and its giants, so that you become the guardian of your language.</span>
+  </p>
+  <div class="guide">
+    <div class="who">🧑‍🏫</div>
+    <div class="say">
+      <span class="lng-ar">أنا «ضِياء»، رَفيقُك. سنُبحِرُ في بَحرِ جَمالِ العَرَبيّةِ وكُنوزِها… هَيّا نَكتَشِف لِماذا لُغَتُكَ كَنز! 📜</span>
+      <span class="lng-en">I'm Diya, your companion. We'll sail in the sea of Arabic's beauty and treasures… let's discover why your language is a treasure! 📜</span>
+    </div>
+  </div>
+</section>
+
+<div class="pbar-wrap">
+  <div class="pbar-top">
+    <span><span class="lng-ar">مِيزانُ اللُّغة</span><span class="lng-en">Language Meter</span></span>
+    <span class="stars" id="pCount">0 / 15</span>
+  </div>
+  <div class="pbar"><div class="pbar-fill" id="pFill"></div></div>
+  <div class="meter-label" id="meterLabel"></div>
+</div>
+
+<div class="collections">
+  <div class="coll-card" id="collStickers"></div>
+  <div class="coll-card" id="collNames"></div>
+  <div class="coll-card" id="collKeys"></div>
+  <div class="coll-card coll-cert" id="collCert"></div>
+</div>
+
+<div class="map" id="map"><div class="road"></div></div>
+
+<footer class="foot">
+  <span class="lng-ar">صُنع بِحُبٍّ 🧡 لِأطفالِ الأُمّة — <b>لُغَتي العَرَبيّة</b> · أكاديميةُ المبدعين · على نَهجِ أهلِ السُّنّة</span>
+  <span class="lng-en">Made with 🧡 for the children of the Ummah — <b>My Arabic Language</b> · The Innovators' Academy · Upon the way of Ahl al-Sunnah</span>
+</footer>
+
+<div class="reader" id="reader">
+  <div class="sheet">
+    <div class="r-top">
+      <button class="r-close" id="rClose">✕</button>
+      <span class="r-count" id="rCount"></span>
+      <div class="r-arrows">
+        <button id="rPrev">‹</button>
+        <button id="rNext">›</button>
+      </div>
+    </div>
+    <div id="rBody"></div>
+  </div>
+</div>
+
+<div class="drawer" id="drawer">
+  <div class="drawer-sheet">
+    <div class="dw-top">
+      <h3 id="dwTitle"></h3>
+      <button class="r-close" id="dwClose">✕</button>
+    </div>
+    <div class="dw-body" id="dwBody"></div>
+  </div>
+</div>
+
+<div class="cert-overlay" id="certOverlay">
+  <div class="cert-tools">
+    <input id="certName" type="text" placeholder="✍️ اكتُب اسمَك هنا / Type your name" maxlength="40">
+    <button class="cprint" id="certPrint">🖨️ <span class="lng-ar">اطبَع</span><span class="lng-en">Print</span></button>
+    <button class="cclose" id="certClose">✕</button>
+  </div>
+  <div class="certificate" id="certBox"></div>
+</div>
+
+<div id="confetti"></div>
+<div class="toast" id="toast"></div>
+
+<script defer src="nav-fix.js"></script>
+<script src="data/lugha-stations.js"></script>
+<script>
+window.RIHLA_CFG = {
+  stations: window.LUGHA_STATIONS,
+  prefix: 'lugha',
+  confetti: ['#F0C868','#C9962E','#1577A6','#2E8B57','#FFFFFF','#B5762B'],
+  T: {
+    mapEnter:{ar:'ادخُل المَحطّة ←',en:'Enter →'},
+    finishTitle:{ar:'وِسامُ حارِسِ اللُّغة',en:'Language Guardian Medal'},
+    meterStart:{ar:'ابدَأ الرِّحلة… كُلُّ مَحطّةٍ تُقَرِّبُكَ مِن كُنوزِ لُغَتِك',en:'Begin… each station brings you closer to your language\u2019s treasures'},
+    meterMid:{ar:'أحسَنت! اكتَشَفتَ {n} مِن {t} مَحطّات',en:'Great! You discovered {n} of {t} stations'},
+    meterDone:{ar:'🎉 اكتَمَلَتِ الرِّحلة! صِرتَ حارِسَ لُغَتِكَ العَرَبيّة',en:'🎉 Journey complete! You\u2019ve become the guardian of your Arabic language'},
+    coll1:{icon:'🎖️',title:{ar:'أوسِمةُ اللُّغة',en:'Language Badges'},unit:{ar:'وِسام',en:'badges'}},
+    coll2:{icon:'📜',title:{ar:'بِطاقاتُ اللُّغة',en:'Language Cards'},unit:{ar:'بِطاقة',en:'cards'}},
+    coll3:{title:{ar:'مَفاتيحُ العَرَبيّة',en:'Arabic Keys'}},
+    collCert:{title:{ar:'عَهدُ الحارِس',en:'Guardian\u2019s Pledge'}},
+    kick:{ar:'المَحطّة {n} مِن {t}',en:'Station {n} of {t}'},
+    hNarr:{ar:'ضِياء يَحكي',en:'Diya Tells It'},
+    hLogic:{ar:'الحَقيقةُ المُنيرة',en:'The Illuminating Truth'},
+    hMyth:{ar:'بَطاقةُ تَصحيحِ الفِكرة',en:'Idea-Fixer Card'},
+    hCard:{ar:'بِطاقةُ اللُّغة',en:'Language Card'},
+    hKey:{ar:'مِفتاحُ العَرَبيّة',en:'Arabic Key'},
+    hJournal:{ar:'دَفتَرُ اللُّغة',en:'Language Journal'},
+    shSays:{ar:'سُؤالٌ يَخطُرُ بِبالِك:',en:'A question crosses your mind:'},
+    rebut:{ar:'والحَقيقة ↓',en:'The truth ↓'},
+    journalPh:{ar:'اكتُب ما تَعَلَّمتَهُ عن لُغَتِكَ اليوم…',en:'Write what you learned about your language today…'},
+    stampDo:{ar:'📜 أتمِم هذه المَحطّة',en:'📜 Complete this station'},
+    stampDone:{ar:'✓ مَحطّةٌ مُكتَمِلة',en:'✓ Station complete'},
+    drawer1:{ar:'🎖️ أوسِمةُ اللُّغة',en:'🎖️ Language Badges'},
+    drawer2:{ar:'📜 بِطاقاتُ اللُّغة',en:'📜 Language Cards'},
+    drawer3:{ar:'🔑 مَفاتيحُ العَرَبيّة',en:'🔑 Arabic Keys'},
+    fromStation:{ar:'مِن مَحطّة: ',en:'From: '},
+    certSeal:'📜',
+    certKick:{ar:'رِحلةُ لُغَتي العَرَبيّة · أكاديميةُ المبدعين',en:'My Arabic Language · The Innovators\u2019 Academy'},
+    certTitle:{ar:'عَهدُ حارِسِ اللُّغة',en:'The Language Guardian\u2019s Pledge'},
+    certStatement:{
+      ar:'أتَمَّ هذا القَلبُ الصَّغيرُ <b>{n}</b> مِن {t} مَحطّاتٍ في رِحلةِ لُغَتي العَرَبيّة، فَعَرَفَ — على نَهجِ أهلِ السُّنّةِ والجَماعة — أنَّ العَرَبيّةَ لُغةٌ اختارَها اللهُ لِكِتابِه، ومِفتاحُ فَهمِ الدّين، ووِعاءُ الهُوِيّة، وتَذَوَّقَ جَمالَها وشِعرَها وأمثالَها — فَعاهَدَ اللهَ أن يُتقِنَ لُغَتَهُ ويُحِبَّها ويَعتَزَّ بِها ويَحرُسَها ويَنشُرَها.',
+      en:'This young heart completed <b>{n}</b> of {t} stations in the My Arabic Language journey, learning — upon the way of Ahl al-Sunnah — that Arabic is a language Allah chose for His Book, the key to understanding the religion, and the vessel of identity, and tasted its beauty, poetry, and proverbs — pledging to Allah to master his language, love it, take pride in it, guard it, and spread it.'},
+  }
+};
+</script>
+<script src="rihla-engine.js"></script>
+<script>
+/* ── Interactive letter pronunciation (huruf station) ── */
+(function(){
+  if(!('speechSynthesis' in window)) return;
+  let curHaraka = '\u064E'; // fatha by default
+  let arVoice = null;
+  function loadVoice(){
+    const vs = speechSynthesis.getVoices() || [];
+    arVoice = vs.find(v=>/^ar/i.test(v.lang)) || null;
+  }
+  loadVoice();
+  speechSynthesis.onvoiceschanged = loadVoice;
+  function speak(txt){
+    try{
+      speechSynthesis.cancel();
+      const u = new SpeechSynthesisUtterance(txt);
+      u.lang = 'ar-SA'; u.rate = 0.65; u.pitch = 1.05;
+      if(arVoice) u.voice = arVoice;
+      speechSynthesis.speak(u);
+    }catch(e){}
+  }
+  document.addEventListener('click', function(e){
+    const hk = e.target.closest('.hk');
+    if(hk){
+      curHaraka = hk.dataset.h || '';
+      const wrap = hk.closest('.hl-haraka');
+      if(wrap) wrap.querySelectorAll('.hk').forEach(x=>x.classList.toggle('active', x===hk));
+      return;
+    }
+    const lt = e.target.closest('.hletter');
+    if(lt){
+      const form = (lt.dataset.l||'') + curHaraka;
+      lt.classList.remove('ring'); void lt.offsetWidth; lt.classList.add('ring');
+      speak(form);
+    }
+  });
+})();
+</script>
+<style>
+.hl-board{display:block;margin-top:16px;padding:16px;border-radius:16px;background:rgba(240,200,104,.07);border:1px solid var(--line)}
+.hl-hint{display:block;font-weight:800;color:var(--gold-soft);margin-bottom:12px;font-size:.96em}
+.hl-haraka{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;margin-bottom:14px}
+.hk{display:inline-block;cursor:pointer;font-family:'Amiri Quran',serif;font-size:1.3rem;padding:5px 16px;border-radius:12px;background:rgba(255,255,255,.06);border:1.5px solid var(--line);color:var(--text);transition:.15s}
+.hk.active{background:var(--primary);border-color:var(--primary);color:#241A08;font-weight:900}
+.hl-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(50px,1fr));gap:8px;direction:rtl}
+.hletter{cursor:pointer;display:flex;align-items:center;justify-content:center;aspect-ratio:1;font-family:'Amiri Quran',serif;font-size:1.7rem;border-radius:12px;background:rgba(255,255,255,.05);border:1.5px solid var(--line);color:var(--gold-soft);transition:transform .12s,background .15s;user-select:none}
+.hletter:hover{background:rgba(240,200,104,.15)}
+.hletter.hbtn-on{transform:scale(1.18);background:var(--primary);color:#241A08;border-color:var(--primary)}
+.hl-note{display:block;text-align:center;margin-top:12px;font-size:.82em;color:var(--muted)}
+</style>
+<script>
+/* ── letter pronunciation (huruf station) via Web Speech API ── */
+(function(){
+  var hasTTS = ('speechSynthesis' in window);
+  function arVoice(){ var vs=(hasTTS&&speechSynthesis.getVoices())||[]; return vs.find(function(v){return /^ar/i.test(v.lang);})||vs.find(function(v){return /arab/i.test(v.name);})||null; }
+  if(hasTTS){ try{ speechSynthesis.getVoices(); speechSynthesis.onvoiceschanged=function(){}; }catch(e){} }
+  var curH='\u064E';
+  function speak(t){ if(!hasTTS)return; try{ speechSynthesis.cancel();
+    var u=new SpeechSynthesisUtterance(t); u.lang='ar-SA'; u.rate=0.55; u.pitch=1;
+    var v=arVoice(); if(v)u.voice=v; speechSynthesis.speak(u);
+  }catch(e){} }
+  function refresh(){ var ls=document.querySelectorAll('.hletter'); for(var i=0;i<ls.length;i++){ ls[i].textContent = ls[i].getAttribute('data-l') + curH; } }
+  document.addEventListener('click',function(e){
+    var hk=e.target.closest?e.target.closest('.hk'):null;
+    if(hk){ curH=hk.getAttribute('data-h'); var all=document.querySelectorAll('.hk'); for(var i=0;i<all.length;i++){ all[i].classList.toggle('active',all[i]===hk); } refresh();
+      speak('بْتْ'.charAt(0)+curH); return; }
+    var lt=e.target.closest?e.target.closest('.hletter'):null;
+    if(lt){ speak(lt.getAttribute('data-l')+curH); lt.classList.add('hbtn-on'); setTimeout(function(){lt.classList.remove('hbtn-on');},600); return; }
+  });
+  var mo=new MutationObserver(function(){
+    var b=document.querySelector('.hl-board');
+    if(b && !b.hasAttribute('data-rdy')){ b.setAttribute('data-rdy','1'); refresh(); }
+  });
+  try{ mo.observe(document.body,{childList:true,subtree:true}); }catch(e){}
+})();
+</script>
+<script defer src="../quiz/quiz-engine.js"></script>
+<script defer src="../shared/mk-system.js"></script>
+<script defer src="../shared/mk-journeys.js"></script>
+<script defer src="../shared/mk-bag.js"></script>
+<script defer src="../shared/mk-train.js"></script>
+</body>
+</html>

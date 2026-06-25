@@ -1,0 +1,56 @@
+/* data/stories/muslim.js — Scholars · Imam Muslim — sources: سير أعلام النبلاء · البداية والنهاية · إسلام ويب · الدرر السنية */
+window.HISN_STORIES = window.HISN_STORIES || {};
+HISN_STORIES.muslim = [
+  { icon:'🙏', scene:'mihrab', character:'🧔',
+    title:{ ar:'أدبُ التلميذِ مع شيخِه', en:'A Student\u2019s Courtesy Toward His Teacher' },
+    pages:[
+      { scene:'mihrab', character:'🧔',
+        text:{ ar:'كان <b>الإمامُ مسلم</b> عالماً كبيراً، لكنّه لم ينسَ فضلَ شيخِه <b>الإمامِ البخاري</b> عليه. كان يُحبُّه حبّاً عظيماً ويُجِلُّه غايةَ الإجلال، لأنّه تعلّمَ منه الكثير.<br><br>وذاتَ يوم، جاءَ مسلمٌ إلى البخاريِّ في مجلسِه، فاقتربَ منه بأدبٍ وتواضعٍ شديد، وقبّلَ بين عينيه، وقال له كلمةً تدلُّ على محبّتِه وتقديرِه: <b>«دعني أُقبِّلْ قدميك يا أستاذَ الأستاذين، وسيّدَ المحدّثين، وطبيبَ الحديثِ في عللِه»</b>! انظرْ كيف يتواضعُ عالمٌ كبيرٌ أمامَ شيخِه ويعترفُ بفضلِه! علّمنا الإمامُ مسلمٌ أنّ <b>توقيرَ المعلّمِ والاعترافَ بفضلِه من أعظمِ الأدب</b>، وأنّ العالمَ الحقَّ لا يتكبّرُ بل يعرفُ لأهلِ الفضلِ فضلَهم.',
+          en:'<b>Imam Muslim</b> was a great scholar, but he never forgot the favor of his teacher <b>Imam al-Bukhari</b> upon him. He loved him greatly and revered him deeply, for he had learned much from him.<br><br>One day, Muslim came to al-Bukhari in his gathering, approached him with great courtesy and humility, kissed his forehead, and said words showing his love and esteem: <b>"Let me kiss your feet, O teacher of teachers, master of hadith scholars, and physician of hadith in its hidden flaws!"</b> See how a great scholar humbles himself before his teacher and acknowledges his favor! Imam Muslim taught us that <b>honoring one\u2019s teacher and acknowledging his favor is among the greatest courtesy</b>, and that a true scholar is not arrogant but recognizes the merit of those of merit.' },
+        choice:{ q:{ar:'كيف عاملَ مسلمٌ شيخَه البخاري؟',en:'How did Muslim treat his teacher al-Bukhari?'},
+          opts:[
+            { t:{ar:'بالحبِّ والتواضعِ والإجلالِ والاعترافِ بفضلِه',en:'With love, humility, reverence, and acknowledging his favor'},c:true,exp:{ar:'نعم! توقيرُ المعلّمِ من أعظمِ الأدب.',en:'Yes! Honoring one\u2019s teacher is among the greatest courtesy.'} },
+            { t:{ar:'بالتكبّرِ والتجاهل',en:'With arrogance and disregard'},c:false,exp:{ar:'لا، بل أجلَّه وأحبَّه.',en:'No — he revered and loved him.'} },
+            { t:{ar:'بالمنافسةِ والحسد',en:'With rivalry and envy'},c:false,exp:{ar:'لا، بل اعترفَ بفضلِه عليه.',en:'No — he acknowledged his favor upon him.'} },
+          ] } },
+    ],
+    quiz:[
+      { q:{ar:'من كان شيخُ الإمامِ مسلم؟',en:'Who was Imam Muslim\u2019s teacher?'},
+        opts:[ {t:{ar:'الإمامُ البخاري',en:'Imam al-Bukhari'},c:true}, {t:{ar:'أبو حنيفة',en:'Abu Hanifa'},c:false}, {t:{ar:'مالك',en:'Malik'},c:false} ] },
+      { q:{ar:'كيف عبّرَ مسلمٌ عن محبّتِه لشيخِه؟',en:'How did Muslim express his love for his teacher?'},
+        opts:[ {t:{ar:'قبّلَ بين عينيه واعترفَ بفضلِه',en:'He kissed his forehead and acknowledged his favor'},c:true}, {t:{ar:'تجاهله',en:'He ignored him'},c:false}, {t:{ar:'نافسه',en:'He competed with him'},c:false} ] },
+      { q:{ar:'ما الدرسُ من أدبِ مسلمٍ مع شيخِه؟',en:'What is the lesson from Muslim\u2019s courtesy to his teacher?'},
+        opts:[ {t:{ar:'توقيرُ المعلّمِ والاعترافُ بفضلِه من أعظمِ الأدب',en:'Honoring a teacher and acknowledging his favor is among the greatest courtesy'},c:true}, {t:{ar:'التكبّرُ على المعلّم',en:'Being arrogant toward a teacher'},c:false}, {t:{ar:'نسيانُ الفضل',en:'Forgetting favors'},c:false} ] },
+    ],
+    moral:{ar:'توقيرُ المعلّمِ والاعترافُ بفضلِه من أعظمِ الأدب، والعالمُ الحقُّ يعرفُ لأهلِ الفضلِ فضلَهم.',en:'Honoring one\u2019s teacher and acknowledging his favor is among the greatest courtesy; a true scholar recognizes the merit of those of merit.'},
+    badge:{icon:'🙏',title:{ar:'وِسامُ أدبِ طالبِ العلم',en:'Badge of the Knowledge-Seeker\u2019s Courtesy'}},
+    reflect:[ {ar:'كيف تُظهِرُ احترامَك وشكرَك لمعلّميك؟',en:'How do you show your respect and gratitude to your teachers?'}, {ar:'هل تعترفُ بفضلِ من علّمك وساعدك؟',en:'Do you acknowledge the favor of those who taught and helped you?'} ],
+    didYouKnow:[ {ar:'رُوِيَ أنّ مسلماً قبّلَ بين عينَي البخاريِّ وأثنى عليه أعظمَ الثناءِ إجلالاً له — المصدر: سير أعلام النبلاء',en:'It is related that Muslim kissed al-Bukhari\u2019s forehead and praised him most highly, out of reverence — Source: Siyar A\u2019lam an-Nubala\u2019'}, {ar:'يُذكَرُ «صحيحُ البخاري» و«صحيحُ مسلم» معاً باسمِ «الصحيحين» وهما أصحُّ كتابَين بعدَ القرآن — المصدر: البداية والنهاية',en:'"Sahih al-Bukhari" and "Sahih Muslim" are together called "the two Sahihs," the most authentic books after the Quran — Source: Al-Bidaya wa an-Nihaya'} ],
+  },
+  { icon:'📂', scene:'mihrab', character:'📚',
+    title:{ ar:'كتابٌ مرتّبٌ ينفعُ الناس', en:'An Organized Book That Benefits People' },
+    pages:[
+      { scene:'mihrab', character:'📚',
+        text:{ ar:'أرادَ <b>الإمامُ مسلم</b> أن يجمعَ الأحاديثَ الصحيحةَ في كتاب، مثلما فعلَ شيخُه البخاري. لكنّه فكّرَ: كيف أجعلُ كتابي <b>سهلاً على الناسِ يجدونَ فيه ما يبحثونَ عنه بسرعة</b>؟<br><br>فاهتمَّ مسلمٌ اهتماماً كبيراً بـ<b>حُسنِ الترتيب</b>: جمعَ كلَّ الأحاديثِ في الموضوعِ الواحدِ في مكانٍ واحد، ورتّبَ طرقَ الحديثِ المختلفةَ بجانبِ بعضِها، فصارَ كتابُه منظّماً واضحاً يسهلُ على طالبِ العلمِ أن يستفيدَ منه. ولذلك أحبَّ كثيرٌ من العلماءِ <b>ترتيبَ «صحيحِ مسلم»</b> وقالوا إنّه أحسنُ ترتيباً. علّمنا مسلمٌ أنّ <b>العملَ الجيّدَ لا يكفي أن يكونَ صحيحاً، بل ينبغي أن يكونَ منظّماً واضحاً لينفعَ أكثر</b>، وأنّ حُسنَ التنظيمِ من الإتقان.',
+          en:'<b>Imam Muslim</b> wanted to gather authentic hadiths in a book, as his teacher al-Bukhari did. But he thought: how do I make my book <b>easy for people to find what they\u2019re looking for quickly</b>?<br><br>So Muslim gave great attention to <b>fine organization</b>: he gathered all the hadiths on a single topic in one place, and arranged the different chains of a hadith beside each other, so his book became organized and clear, easy for a knowledge-seeker to benefit from. For this, many scholars loved <b>the organization of "Sahih Muslim"</b> and said it was better arranged. Muslim taught us that <b>good work being correct is not enough — it should also be organized and clear to benefit more</b>, and that good organization is part of excellence.' },
+        choice:{ q:{ar:'بماذا اهتمَّ مسلمٌ في تأليفِ كتابِه؟',en:'What did Muslim focus on in authoring his book?'},
+          opts:[
+            { t:{ar:'حُسنِ الترتيبِ وجمعِ الطرقِ ليسهلَ نفعُه',en:'Fine organization and gathering chains so its benefit is easy'},c:true,exp:{ar:'نعم! حُسنُ التنظيمِ من الإتقانِ ويُضاعِفُ النفع.',en:'Yes! Good organization is part of excellence and multiplies the benefit.'} },
+            { t:{ar:'كثرةِ الأوراقِ فقط',en:'Just many pages'},c:false,exp:{ar:'لا، بل الترتيبِ والوضوح.',en:'No — organization and clarity.'} },
+            { t:{ar:'لا شيء',en:'Nothing'},c:false,exp:{ar:'لا، بل اعتنى بالترتيبِ كثيراً.',en:'No — he cared greatly about organization.'} },
+          ] } },
+    ],
+    quiz:[
+      { q:{ar:'بماذا امتازَ «صحيحُ مسلم»؟',en:'What distinguished "Sahih Muslim"?'},
+        opts:[ {t:{ar:'حُسنُ الترتيبِ وجمعُ طرقِ الحديث',en:'Fine organization and gathering hadith chains'},c:true}, {t:{ar:'قلّةُ الأحاديث',en:'Few hadiths'},c:false}, {t:{ar:'عدمُ الدقّة',en:'Lack of precision'},c:false} ] },
+      { q:{ar:'لماذا اهتمَّ مسلمٌ بترتيبِ كتابِه؟',en:'Why did Muslim care about organizing his book?'},
+        opts:[ {t:{ar:'ليسهلَ على الناسِ الاستفادةُ منه',en:'So people could easily benefit from it'},c:true}, {t:{ar:'ليطول',en:'To make it long'},c:false}, {t:{ar:'بلا سبب',en:'For no reason'},c:false} ] },
+      { q:{ar:'ما الدرسُ من ترتيبِ مسلمٍ لكتابِه؟',en:'What is the lesson from Muslim\u2019s organization of his book?'},
+        opts:[ {t:{ar:'حُسنُ التنظيمِ من الإتقانِ ويُضاعِفُ النفع',en:'Good organization is part of excellence and multiplies benefit'},c:true}, {t:{ar:'الفوضى أفضل',en:'Chaos is better'},c:false}, {t:{ar:'الترتيبُ غيرُ مهم',en:'Organization is unimportant'},c:false} ] },
+    ],
+    moral:{ar:'العملُ الجيّدُ ينبغي أن يكونَ صحيحاً ومنظّماً واضحاً لينفعَ أكثر، وحُسنُ التنظيمِ من الإتقان.',en:'Good work should be correct, organized, and clear to benefit more; good organization is part of excellence.'},
+    badge:{icon:'📂',title:{ar:'وِسامُ حُسنِ الترتيب',en:'Badge of Fine Organization'}},
+    reflect:[ {ar:'هل تُنظِّمُ أغراضَك وأعمالَك ليسهلَ استخدامُها؟',en:'Do you organize your things and work so they are easy to use?'}, {ar:'كيف يجعلُ التنظيمُ عملَك أنفعَ للآخرين؟',en:'How does organization make your work more beneficial to others?'} ],
+    didYouKnow:[ {ar:'اشتهرَ «صحيحُ مسلم» بجمعِه طرقَ الحديثِ في موضعٍ واحدٍ وحُسنِ ترتيبِه — المصدر: سير أعلام النبلاء',en:'"Sahih Muslim" is famed for gathering a hadith\u2019s chains in one place and its fine arrangement — Source: Siyar A\u2019lam an-Nubala\u2019'}, {ar:'قال بعضُ العلماءِ إنّ ترتيبَ مسلمٍ أسهلُ تناولاً لطالبِ الحديث — المصدر: مقدّمة شرح النووي على مسلم',en:'Some scholars said Muslim\u2019s arrangement is easier to access for the hadith student — Source: an-Nawawi\u2019s intro to his commentary on Muslim'} ],
+  },
+];

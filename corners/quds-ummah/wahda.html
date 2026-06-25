@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta name="color-scheme" content="dark">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>رحلة الأمة الواحدة | Journey of the One Ummah</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Amiri+Quran&family=Tajawal:wght@400;500;700;800;900&family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+<link rel="stylesheet" href="yaqeen.css">
+<style>
+/* ── Unity theme: deep teal + warm amber (one body, one banner) ── */
+:root{
+  --primary:#1577A6; --primary-dark:#0D5077;
+  --bg1:#06222E; --bg2:#0A3344; --bg3:#0E465C;
+  --gold:#E8B54B; --gold-soft:#F3D38A;
+  --text:#EDF4F8; --muted:rgba(237,244,248,.74);
+  --line:rgba(232,181,75,.26);
+}
+body{background:
+  
+    radial-gradient(1300px 760px at 78% -12%, rgba(21,119,166,.32), transparent 58%),
+    radial-gradient(1000px 620px at 0% 100%, rgba(232,181,75,.14), transparent 55%),
+    linear-gradient(165deg,var(--bg1),var(--bg2) 55%,var(--bg3));
+  background-attachment:fixed;
+}
+.guide .who{background:linear-gradient(160deg,#1577A6,#0B4A6E)}
+.coll-cert{background:linear-gradient(160deg,rgba(232,181,75,.16),rgba(21,119,166,.20))!important}
+.lang button.active{color:#06222E}
+.stampbtn{color:#06222E}
+</style>
+<script>(function(){try{var l=localStorage.getItem('bunyanLang');if(l==='en'){var h=document.documentElement;h.dir='ltr';h.lang='en';}}catch(e){}})();</script>
+<style id="__antiflash">html{background:#06222E;color-scheme:dark}</style>
+</head>
+<body>
+
+<header class="hdr">
+  <a class="back" href="../little-district/pages/quds.html">
+    <span>↩️</span><span class="lng-ar">الرُّكن</span><span class="lng-en">Corner</span>
+  </a>
+  <span class="hdr-badge"><span class="l">🤝</span><span class="lng-ar">الأُمّةُ الواحِدة</span><span class="lng-en">One Ummah</span></span>
+  <div class="lang">
+    <button data-lang="en">EN</button>
+    <button data-lang="ar" class="active">عربي</button>
+  </div>
+</header>
+
+<section class="intro">
+  <h1>
+    <span class="lng-ar">🤝 رِحلةُ <span class="hl">الأُمّةِ الواحِدة</span> — الوَحدةُ والخِلافة</span>
+    <span class="lng-en">🤝 Journey of the <span class="hl">One Ummah</span> — Unity & the Caliphate</span>
+  </h1>
+  <p class="sub">
+    <span class="lng-ar">عَشرُ مَحطّاتٍ نَتَعَلَّمُ فيها أنَّ المُسلِمينَ أُمّةٌ واحِدةٌ كَالجَسَد، وتاريخَ الوَحدةِ والخِلافةِ وأهمِّيَّتَها، وكَيفَ يُحارِبُ الأعداءُ اتِّحادَنا بِالقَومِيّةِ والتَّفريق — مَعَ قِصّةِ الثَّورِ الأبيَضِ ودُروسِ المُؤاخاةِ وعامِ الرَّمادة، لِنَعرِفَ أنَّ في التَّعاوُنِ والتَّجَمُّعِ قُوّة.</span>
+    <span class="lng-en">Ten stations on Muslims being one ummah like a body, the history and importance of unity and the caliphate, and how the enemies fight our union through nationalism and division — with the story of the white bull and the lessons of the Brotherhood and the Year of Ashes, so we learn that in cooperation and gathering there is strength.</span>
+  </p>
+  <div class="guide">
+    <div class="who">🧑</div>
+    <div class="say">
+      <span class="lng-ar">أنا «حنظلة»، رَفيقُك. سنَكتَشِفُ سِرَّ قُوّةِ الأُمّة: الوَحدة… هَيّا! 🤝</span>
+      <span class="lng-en">I'm Hanzalah, your companion. We'll discover the secret of the ummah's strength: unity… let's go! 🤝</span>
+    </div>
+  </div>
+</section>
+
+<div class="pbar-wrap">
+  <div class="pbar-top">
+    <span><span class="lng-ar">مِيزانُ الوَحدة</span><span class="lng-en">Unity Meter</span></span>
+    <span class="stars" id="pCount">0 / 10</span>
+  </div>
+  <div class="pbar"><div class="pbar-fill" id="pFill"></div></div>
+  <div class="meter-label" id="meterLabel"></div>
+</div>
+
+<div class="collections">
+  <div class="coll-card" id="collStickers"></div>
+  <div class="coll-card" id="collNames"></div>
+  <div class="coll-card" id="collKeys"></div>
+  <div class="coll-card coll-cert" id="collCert"></div>
+</div>
+
+<div class="map" id="map"><div class="road"></div></div>
+
+<footer class="foot">
+  <span class="lng-ar">صُنع بِحُبٍّ 🤍 لِأطفالِ الأُمّة — <b>الأُمّةُ الواحِدة</b> · ركنُ القُدسِ والأُمّة · على نَهجِ أهلِ السُّنّة</span>
+  <span class="lng-en">Made with 🤍 for the children of the Ummah — <b>The One Ummah</b> · Al-Quds & the Ummah · Upon the way of Ahl al-Sunnah</span>
+</footer>
+
+<div class="reader" id="reader">
+  <div class="sheet">
+    <div class="r-top">
+      <button class="r-close" id="rClose">✕</button>
+      <span class="r-count" id="rCount"></span>
+      <div class="r-arrows">
+        <button id="rPrev">‹</button>
+        <button id="rNext">›</button>
+      </div>
+    </div>
+    <div id="rBody"></div>
+  </div>
+</div>
+
+<div class="drawer" id="drawer">
+  <div class="drawer-sheet">
+    <div class="dw-top">
+      <h3 id="dwTitle"></h3>
+      <button class="r-close" id="dwClose">✕</button>
+    </div>
+    <div class="dw-body" id="dwBody"></div>
+  </div>
+</div>
+
+<div class="cert-overlay" id="certOverlay">
+  <div class="cert-tools">
+    <input id="certName" type="text" placeholder="✍️ اكتُب اسمَك هنا / Type your name" maxlength="40">
+    <button class="cprint" id="certPrint">🖨️ <span class="lng-ar">اطبَع</span><span class="lng-en">Print</span></button>
+    <button class="cclose" id="certClose">✕</button>
+  </div>
+  <div class="certificate" id="certBox"></div>
+</div>
+
+<div id="confetti"></div>
+<div class="toast" id="toast"></div>
+
+<script defer src="nav-fix.js"></script>
+<script src="data/wahda-stations.js"></script>
+<script>
+window.RIHLA_CFG = {
+  stations: window.WAHDA_STATIONS,
+  prefix: 'wahda',
+  confetti: ['#E8B54B','#1577A6','#2E8B6F','#C0392B','#FFFFFF','#7E4FA3'],
+  T: {
+    mapEnter:{ar:'ادخُل المَحطّة ←',en:'Enter →'},
+    finishTitle:{ar:'وِسامُ الوَحدة',en:'Unity Medal'},
+    meterStart:{ar:'ابدَأ الرِّحلة… كُلُّ مَحطّةٍ تُقَوّي رابِطَتَكَ بِأُمّتِك',en:'Begin… each station strengthens your bond with your ummah'},
+    meterMid:{ar:'أحسَنت! أنجَزتَ {n} مِن {t} مَحطّات',en:'Great! You completed {n} of {t} stations'},
+    meterDone:{ar:'🎉 اكتَمَلَتِ الرِّحلة! صِرتَ جِسرَ وَحدةٍ لِأُمّتِك',en:'🎉 Journey complete! You\'ve become a bridge of unity for your ummah'},
+    coll1:{icon:'🎖️',title:{ar:'أوسِمةُ الوَحدة',en:'Unity Badges'},unit:{ar:'وِسام',en:'badges'}},
+    coll2:{icon:'🤝',title:{ar:'بِطاقاتُ الوَحدة',en:'Unity Cards'},unit:{ar:'بِطاقة',en:'cards'}},
+    coll3:{title:{ar:'مَفاتيحُ الوَحدة',en:'Unity Keys'}},
+    collCert:{title:{ar:'عَهدُ الأُخُوّة',en:'Pledge of Brotherhood'}},
+    kick:{ar:'المَحطّة {n} مِن {t}',en:'Station {n} of {t}'},
+    hNarr:{ar:'صَلاح يَحكي',en:'Salah Tells It'},
+    hLogic:{ar:'الحَقيقةُ المُنيرة',en:'The Illuminating Truth'},
+    hMyth:{ar:'بَطاقةُ تَصحيحِ الفِكرة',en:'Idea-Fixer Card'},
+    hCard:{ar:'بِطاقةُ الوَحدة',en:'Unity Card'},
+    hKey:{ar:'مِفتاحُ الوَحدة',en:'Unity Key'},
+    hJournal:{ar:'دَفتَرُ الوَحدة',en:'Unity Journal'},
+    shSays:{ar:'سُؤالٌ يَخطُرُ بِبالِك:',en:'A question crosses your mind:'},
+    rebut:{ar:'والحَقيقة ↓',en:'The truth ↓'},
+    journalPh:{ar:'اكتُب ما تَعَلَّمتَهُ عن وَحدةِ أُمّتِك…',en:'Write what you learned about your ummah\'s unity…'},
+    stampDo:{ar:'🤝 أتمِم هذه المَحطّة',en:'🤝 Complete this station'},
+    stampDone:{ar:'✓ مَحطّةٌ مُكتَمِلة',en:'✓ Station complete'},
+    drawer1:{ar:'🎖️ أوسِمةُ الوَحدة',en:'🎖️ Unity Badges'},
+    drawer2:{ar:'🤝 بِطاقاتُ الوَحدة',en:'🤝 Unity Cards'},
+    drawer3:{ar:'🔑 مَفاتيحُ الوَحدة',en:'🔑 Unity Keys'},
+    fromStation:{ar:'مِن مَحطّة: ',en:'From: '},
+    certSeal:'🤝',
+    certKick:{ar:'رِحلةُ الأُمّةِ الواحِدة · ركنُ القُدسِ والأُمّة',en:'The One Ummah · Al-Quds & the Ummah'},
+    certTitle:{ar:'عَهدُ الأُخُوّةِ والوَحدة',en:'Pledge of Brotherhood & Unity'},
+    certStatement:{
+      ar:'أتَمَّ هذا القَلبُ الصَّغيرُ <b>{n}</b> مِن {t} مَحطّاتٍ في رِحلةِ الأُمّةِ الواحِدة، فَعَرَفَ — على نَهجِ أهلِ السُّنّةِ والجَماعة — أنَّ المُسلِمينَ أُمّةٌ واحِدةٌ كَالجَسَد، وتاريخَ الوَحدةِ والخِلافةِ وأهمِّيَّتَها، وأنَّ القَومِيّةَ والتَّفريقَ سِلاحُ الأعداء — فَعاهَدَ اللهَ أن يُحِبَّ كُلَّ مُسلِم، ويَجمَعَ ولا يُفَرِّق، ويَنبِذَ العَصَبِيّة، ويَكونَ جِسرَ وَحدةٍ لِأُمّتِه.',
+      en:'This young heart completed <b>{n}</b> of {t} stations in the Journey of the One Ummah, learning — upon the way of Ahl al-Sunnah — that Muslims are one ummah like a body, the history and importance of unity and the caliphate, and that nationalism and division are the enemies\' weapon — pledging to Allah to love every Muslim, to unite and not divide, to reject tribalism, and to be a bridge of unity for his ummah.'},
+  }
+};
+</script>
+<script src="rihla-engine.js"></script>
+<script defer src="../quiz/quiz-engine.js"></script>
+<script defer src="../shared/mk-system.js"></script>
+<script defer src="../shared/mk-journeys.js"></script>
+<script defer src="../shared/mk-bag.js"></script>
+<script defer src="../shared/mk-train.js"></script>
+</body>
+</html>

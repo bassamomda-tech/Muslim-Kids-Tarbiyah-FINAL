@@ -1,0 +1,56 @@
+/* data/stories/zaynabidin.js — Successors · Zayn al-Abidin — sources: صور من حياة التابعين · إسلام ويب · الدرر السنية · سير أعلام النبلاء */
+window.HISN_STORIES = window.HISN_STORIES || {};
+HISN_STORIES.zaynabidin = [
+  { icon:'🌙', scene:'night', character:'🤲',
+    title:{ ar:'صاحبُ الجِرابِ في الليل', en:'The Man of the Sack in the Night' },
+    pages:[
+      { scene:'night', character:'🌙',
+        text:{ ar:'كان فقراءُ <b>المدينة</b> يعيشونَ على طعامٍ يأتيهم في جوفِ الليلِ من شخصٍ مجهول! كان رجلٌ يحملُ على ظهرِه <b>جِراباً مملوءاً بالطعام</b> ويطوفُ على بيوتِ الفقراءِ والأراملِ في الظلامِ، يضعُ الطعامَ عند أبوابِهم ثمّ يختفي قبلَ أن يعرفوه.<br><br>تساءلَ الفقراءُ طويلاً: مَن هذا الكريمُ الخفي؟ ظلَّ سرُّه مكتوماً سنينَ طويلة. حتى <b>ماتَ زينُ العابدين</b>، فانقطعَ الطعامُ عن بيوتِهم فجأة! وحين غسّلوه لدفنِه، وجدوا <b>أثراً أسودَ على ظهرِه</b> من حملِ الجِرابِ ليلاً إلى بيوتِ الفقراء طوالَ تلك السنين! حينها عرفوا: كان هو صاحبَ الجِراب! أخفى صدقتَه عن الناسِ ليكونَ أجرُه عند اللهِ خالصاً.',
+          en:'The poor of <b>Madinah</b> lived on food that came to them in the dead of night from an unknown person! A man would carry on his back a <b>sack full of food</b> and go around the homes of the poor and widows in the dark, placing food at their doors then vanishing before they recognized him.<br><br>The poor long wondered: who is this hidden, generous one? His secret stayed hidden for many years. Until <b>Zayn al-Abidin died</b>, and the food suddenly stopped coming to their homes! When they washed him for burial, they found a <b>dark mark on his back</b> from carrying the sack at night to the homes of the poor all those years! Then they knew: he was the man of the sack! He hid his charity from people so his reward would be purely with Allah.' },
+        choice:{ q:{ar:'لماذا أخفى زينُ العابدينَ صدقتَه؟',en:'Why did Zayn al-Abidin hide his charity?'},
+          opts:[
+            { t:{ar:'ليكونَ أجرُه عند اللهِ خالصاً بعيداً عن الرياء',en:'So his reward would be purely with Allah, far from showing off'},c:true,exp:{ar:'نعم! الصدقةُ الخفيّةُ أعظمُ أجراً وأبعدُ عن الرياء.',en:'Yes! Secret charity is greater in reward and farther from showing off.'} },
+            { t:{ar:'لأنّه يخجلُ من الفقراء',en:'Because he was embarrassed by the poor'},c:false,exp:{ar:'لا، بل إخلاصاً وبُعداً عن الرياء.',en:'No — out of sincerity and avoiding showing off.'} },
+            { t:{ar:'لأنّه لا يملكُ إلّا قليلاً',en:'Because he had only a little'},c:false,exp:{ar:'لا، بل أخفاها إخلاصاً لله.',en:'No — he hid it out of sincerity to Allah.'} },
+          ] } },
+    ],
+    quiz:[
+      { q:{ar:'ماذا كان يحملُ زينُ العابدينَ في الليل؟',en:'What did Zayn al-Abidin carry at night?'},
+        opts:[ {t:{ar:'جِراباً من الطعامِ للفقراء',en:'A sack of food for the poor'},c:true}, {t:{ar:'سلاحاً',en:'Weapons'},c:false}, {t:{ar:'مالاً لنفسِه',en:'Money for himself'},c:false} ] },
+      { q:{ar:'متى عرفَ الناسُ أنّه صاحبُ الجِراب؟',en:'When did people learn he was the man of the sack?'},
+        opts:[ {t:{ar:'بعدَ موتِه حين رأوا أثرَ الجِرابِ على ظهرِه',en:'After his death when they saw the mark on his back'},c:true}, {t:{ar:'في حياتِه',en:'During his life'},c:false}, {t:{ar:'لم يعرفوا أبداً',en:'They never knew'},c:false} ] },
+      { q:{ar:'ما فضلُ الصدقةِ الخفيّة؟',en:'What is the merit of secret charity?'},
+        opts:[ {t:{ar:'أعظمُ أجراً وأبعدُ عن الرياء',en:'Greater in reward and farther from showing off'},c:true}, {t:{ar:'لا أجرَ لها',en:'It has no reward'},c:false}, {t:{ar:'للشهرةِ فقط',en:'For fame only'},c:false} ] },
+    ],
+    moral:{ar:'الصدقةُ الخفيّةُ أعظمُ أجراً وأبعدُ عن الرياء، والإخلاصُ يجعلُ العملَ خالصاً لله.',en:'Secret charity is greater in reward and farther from showing off; sincerity makes a deed purely for Allah.'},
+    badge:{icon:'🌙',title:{ar:'وِسامُ صدقةِ السرّ',en:'Badge of Secret Charity'}},
+    reflect:[ {ar:'هل تفعلُ الخيرَ في السرِّ دون أن يراك أحد؟',en:'Do you do good in secret without anyone seeing you?'}, {ar:'كيف تُخلِصُ عملَك لله وحدَه؟',en:'How do you make your deeds purely for Allah?'} ],
+    didYouKnow:[ {ar:'رُوِيَ أنّ أهلَ المدينةِ فقدوا صدقةً سرّيّةً كانت تأتيهم حين ماتَ زينُ العابدين — المصدر: سير أعلام النبلاء',en:'It is reported the people of Madinah lost a secret charity that used to reach them when Zayn al-Abidin died — Source: Siyar A\u2019lam an-Nubala\u2019'}, {ar:'قال النبيُّ ﷺ في السبعةِ الذين يُظِلُّهم اللهُ: «ورجلٌ تصدّقَ بصدقةٍ فأخفاها» — المصدر: صحيح البخاري',en:'The Prophet ﷺ said among the seven Allah will shade: "a man who gives charity and conceals it" — Source: Sahih al-Bukhari'} ],
+  },
+  { icon:'😌', scene:'madinah', character:'💧',
+    title:{ ar:'الحلمُ الذي أطفأَ الغضب', en:'The Forbearance That Quenched Anger' },
+    pages:[
+      { scene:'madinah', character:'💧',
+        text:{ ar:'كان <b>زينُ العابدين</b> مثالاً في الحلمِ وكظمِ الغيظ. وذاتَ يومٍ أرادَ أن يتوضّأ، فجاءتْ خادمتُه تصبُّ عليه الماءَ من إبريق، فسقطَ الإبريقُ من يدِها <b>فأصابه وجرحَه</b>! فرفعَ رأسَه إليها غاضباً.<br><br>فقالتِ الخادمةُ بذكاءٍ تتلو قولَ الله: <b>﴿ وَالْكَاظِمِينَ الْغَيْظَ ﴾</b>، فقال زينُ العابدينَ فوراً: <b>«كظمتُ غيظي»</b>. فقالت: <b>﴿ وَالْعَافِينَ عَنِ النَّاسِ ﴾</b>، فقال: <b>«عفا اللهُ عنكِ»</b>. فقالت: <b>﴿ وَاللَّهُ يُحِبُّ الْمُحْسِنِينَ ﴾</b>، فقال: <b>«اذهبي فأنتِ حرّةٌ لوجهِ الله»</b>! لم يكتفِ بكظمِ غضبِه والعفوِ عنها، بل أعتقها وكافأها! هكذا كان زينُ العابدينَ يتعاملُ مع الآياتِ عملاً لا قولاً. علّمنا أنّ <b>الحلمَ والعفوَ من أجملِ الأخلاق</b>.',
+          en:'<b>Zayn al-Abidin</b> was a model of forbearance and restraining anger. One day he wished to make wudu, and his servant came pouring water on him from a pitcher, but the pitcher fell from her hand and <b>struck and wounded him</b>! He raised his head to her in anger.<br><br>The servant cleverly recited Allah\u2019s words: <b>"And those who restrain anger,"</b> so Zayn al-Abidin immediately said: <b>"I have restrained my anger."</b> She said: <b>"And those who pardon people,"</b> he said: <b>"May Allah pardon you."</b> She said: <b>"And Allah loves the doers of good,"</b> he said: <b>"Go, for you are free for Allah\u2019s sake"</b>! He did not merely restrain his anger and pardon her — he freed and rewarded her! Thus Zayn al-Abidin dealt with the verses as action, not just words. He taught us that <b>forbearance and forgiveness are among the most beautiful of traits</b>.' },
+        choice:{ q:{ar:'ماذا فعلَ زينُ العابدينَ حين جرحته الخادمةُ خطأً؟',en:'What did Zayn al-Abidin do when the servant accidentally wounded him?'},
+          opts:[
+            { t:{ar:'كظمَ غيظَه وعفا عنها بل أعتقها',en:'He restrained his anger, pardoned her, and even freed her'},c:true,exp:{ar:'نعم! الحلمُ والعفوُ من أجملِ الأخلاق.',en:'Yes! Forbearance and forgiveness are among the most beautiful traits.'} },
+            { t:{ar:'عاقبها بشدّة',en:'He punished her severely'},c:false,exp:{ar:'لا، بل كظمَ غيظَه وعفا وأحسنَ إليها.',en:'No — he restrained his anger, pardoned, and was kind to her.'} },
+            { t:{ar:'طردها',en:'He drove her out'},c:false,exp:{ar:'لا، بل أعتقها وكافأها.',en:'No — he freed and rewarded her.'} },
+          ] } },
+    ],
+    quiz:[
+      { q:{ar:'بماذا ذكّرتِ الخادمةُ زينَ العابدين؟',en:'What did the servant remind Zayn al-Abidin of?'},
+        opts:[ {t:{ar:'آياتِ كظمِ الغيظِ والعفو',en:'The verses on restraining anger and pardoning'},c:true}, {t:{ar:'المال',en:'Money'},c:false}, {t:{ar:'الطعام',en:'Food'},c:false} ] },
+      { q:{ar:'ماذا كان جوابُه النهائي؟',en:'What was his final response?'},
+        opts:[ {t:{ar:'أعتقها لوجهِ الله',en:'He freed her for Allah\u2019s sake'},c:true}, {t:{ar:'عاقبها',en:'He punished her'},c:false}, {t:{ar:'تجاهلها',en:'He ignored her'},c:false} ] },
+      { q:{ar:'ما الدرسُ من القصّة؟',en:'What is the lesson?'},
+        opts:[ {t:{ar:'الحلمُ والعفوُ من أجملِ الأخلاق',en:'Forbearance and forgiveness are among the most beautiful traits'},c:true}, {t:{ar:'الغضبُ والانتقام',en:'Anger and revenge'},c:false}, {t:{ar:'القسوة',en:'Harshness'},c:false} ] },
+    ],
+    moral:{ar:'كظمُ الغيظِ والعفوُ عن الناسِ من أحبِّ الأخلاقِ إلى الله، والمؤمنُ يعملُ بالقرآنِ لا يكتفي بتلاوتِه.',en:'Restraining anger and pardoning people are among the traits most beloved to Allah; a believer acts on the Quran, not just recites it.'},
+    badge:{icon:'😌',title:{ar:'وِسامُ الحلمِ والعفو',en:'Badge of Forbearance & Pardon'}},
+    reflect:[ {ar:'هل تتحكّمُ في غضبِك وتعفو عمّن أخطأَ عليك؟',en:'Do you control your anger and pardon those who err against you?'}, {ar:'كيف تعملُ بما تقرؤه من القرآنِ في حياتِك؟',en:'How do you act on what you read of the Quran in your life?'} ],
+    didYouKnow:[ {ar:'قصّةُ زينِ العابدينَ مع الخادمةِ مشهورةٌ في كتبِ السيرِ كمثالٍ للحلمِ والعفو — المصدر: صور من حياة التابعين',en:'The story of Zayn al-Abidin and the servant is famous in biography books as an example of forbearance and pardon — Source: Suwar min Hayat at-Tabi\u2019in'}, {ar:'كان زينُ العابدينَ يُعَدُّ من أجلِّ التابعينَ علماً وعبادةً وخُلُقاً — المصدر: سير أعلام النبلاء',en:'Zayn al-Abidin was counted among the noblest successors in knowledge, worship, and character — Source: Siyar A\u2019lam an-Nubala\u2019'} ],
+  },
+];

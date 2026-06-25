@@ -1,0 +1,56 @@
+/* data/stories/awf.js — Heroes · Abdurrahman ibn Awf — sources: صور من حياة الصحابة (الباشا) · إسلام ويب · الدرر السنية · البداية والنهاية */
+window.HISN_STORIES = window.HISN_STORIES || {};
+HISN_STORIES.awf = [
+  { icon:'🤝', scene:'madinah', character:'💼',
+    title:{ ar:'دُلَّني على السوق', en:'Show Me the Marketplace' },
+    pages:[
+      { scene:'madinah', character:'💼',
+        text:{ ar:'حين هاجرَ <b>عبد الرحمن بنُ عوف</b> إلى المدينةِ وصلَ فقيراً قد تركَ مالَه كلَّه في مكّة. فآخى النبيُّ ﷺ بينه وبين <b>سعدِ بنِ الربيع</b> الأنصاريّ. وكان سعدٌ كريماً جدّاً فقال له: «يا أخي، أنا أكثرُ الأنصارِ مالاً، <b>فانظرْ شطرَ مالي فخُذْه</b>، ولي زوجتان فانظرْ أيَّتَهما أعجبتْك أُطلِّقُها لك لتتزوّجَها».<br><br>فما كان جوابُ عبد الرحمن؟ شكرَه شكراً جميلاً وقال: <b>«باركَ اللهُ لك في أهلِك ومالِك — دُلَّني على السوق!»</b> أرادَ أن يكسبَ بعرقِ جبينِه لا أن يعيشَ على مالِ غيرِه.',
+          en:'When <b>Abdurrahman ibn Awf</b> emigrated to Madinah he arrived poor, having left all his wealth in Makkah. The Prophet ﷺ made him a brother to <b>Sa\'d ibn ar-Rabi\'</b> of the Ansar. Sa\'d was extremely generous and said: "My brother, I am the wealthiest of the Ansar — <b>take half of my wealth</b>; I have two wives, so look and whichever pleases you, I will divorce her so you may marry her."<br><br>What was Abdurrahman\'s answer? He thanked him beautifully and said: <b>"May Allah bless your family and wealth for you — just show me the marketplace!"</b> He wanted to earn by his own effort, not live off another\'s wealth.' },
+        choice:{ q:{ar:'لماذا طلبَ عبد الرحمنِ السوقَ بدلاً من نصفِ مالِ أخيه؟',en:'Why did Abdurrahman ask for the marketplace instead of half his brother\'s wealth?'},
+          opts:[
+            { t:{ar:'أرادَ أن يكسبَ بنفسِه ولا يعتمدَ على غيرِه',en:'He wanted to earn for himself and not depend on others'},c:true,exp:{ar:'نعم! العزّةُ في العملِ والكسبِ الحلالِ بعرقِ الجبين.',en:'Yes! Dignity is in working and earning lawfully by one\'s own effort.'} },
+            { t:{ar:'لأنّه لم يُحبَّ أخاه',en:'Because he disliked his brother'},c:false,exp:{ar:'لا، بل شكرَه شكراً جميلاً ودعا له.',en:'No — he thanked him beautifully and prayed for him.'} },
+            { t:{ar:'لأنّه كان غنيّاً بالفعل',en:'Because he was already wealthy'},c:false,exp:{ar:'لا، بل وصلَ فقيراً وأرادَ أن يكسبَ بنفسِه.',en:'No — he arrived poor and wanted to earn by himself.'} },
+          ] } },
+    ],
+    quiz:[
+      { q:{ar:'ماذا عرضَ سعدُ بنُ الربيعِ على عبد الرحمن؟',en:'What did Sa\'d ibn ar-Rabi\' offer Abdurrahman?'},
+        opts:[ {t:{ar:'نصفَ مالِه',en:'Half his wealth'},c:true}, {t:{ar:'سيفَه',en:'His sword'},c:false}, {t:{ar:'بيتَه فقط',en:'Only his house'},c:false} ] },
+      { q:{ar:'بِمَ أجابَ عبد الرحمن؟',en:'How did Abdurrahman answer?'},
+        opts:[ {t:{ar:'دُلَّني على السوق',en:'Show me the marketplace'},c:true}, {t:{ar:'أعطني كلَّ مالِك',en:'Give me all your wealth'},c:false}, {t:{ar:'لن أعمل',en:'I will not work'},c:false} ] },
+      { q:{ar:'ماذا نتعلّمُ من جوابِه؟',en:'What do we learn from his answer?'},
+        opts:[ {t:{ar:'العزّةُ في الكسبِ بالنفس',en:'Dignity is in earning by oneself'},c:true}, {t:{ar:'الاتّكالُ على الناس',en:'Depending on people'},c:false}, {t:{ar:'حبُّ الراحة',en:'Love of idleness'},c:false} ] },
+    ],
+    moral:{ar:'العزّةُ في العملِ والكسبِ الحلال، والمؤمنُ يدُه العُليا تُعطي خيرٌ من السُّفلى تأخذ.',en:'Dignity lies in work and lawful earning; the believer\'s giving hand is better than the receiving one.'},
+    badge:{icon:'🤝',title:{ar:'وِسامُ اليدِ العُليا',en:'Badge of the Giving Hand'}},
+    reflect:[ {ar:'هل تُحِبُّ أن تعملَ وتكسبَ بنفسِك؟',en:'Do you love to work and earn for yourself?'}, {ar:'كيف تشكرُ من يعرضُ عليك مساعدةً بأدب؟',en:'How do you thank someone who offers help, with good manners?'} ],
+    didYouKnow:[ {ar:'بدأ عبد الرحمنِ بالتجارةِ في السمنِ والأقطِ، وما لبثَ أن أثرى ببركةِ الله وأمانتِه — المصدر: صحيح البخاري',en:'Abdurrahman began trading in clarified butter and cheese, and soon grew wealthy by Allah\'s blessing and his honesty — Source: Sahih al-Bukhari'}, {ar:'قال عن نفسِه: «لقد رأيتُني لو رفعتُ حجراً لرجوتُ أن أُصيبَ تحته ذهباً أو فضّة» — المصدر: صحيح البخاري',en:'He said of himself: "I saw that if I lifted a stone I expected to find gold or silver under it" — Source: Sahih al-Bukhari'} ],
+  },
+  { icon:'🐫', scene:'desert', character:'🎁',
+    title:{ ar:'قافلةٌ كلُّها لله', en:'A Whole Caravan for Allah' },
+    pages:[
+      { scene:'desert', character:'🎁',
+        text:{ ar:'بارَكَ اللهُ في تجارةِ <b>عبد الرحمن</b> حتى صارَ من أغنى الصحابة — لكنّه لم يجمعِ المالَ لنفسِه، بل جعلَه في سبيلِ الله. ذاتَ يومٍ دخلتِ المدينةَ <b>قافلتُه</b> وفيها سبعُمئةِ بعيرٍ تحملُ الطعامَ والبضائع، حتى ارتجّتِ المدينةُ من صوتِها!<br><br>فلمّا سألته أمُّ المؤمنينَ عائشةُ عن ذلك، تذكّرَ حديثَ النبيِّ ﷺ، <b>فتصدّقَ بالقافلةِ كلِّها — بأحمالِها وأقتابِها — في سبيلِ الله!</b> وكان يقول: «أُريدُ أن أدخلَ الجنّةَ زحفاً» — يخافُ أن يحبسَه مالُه. كان يُحرِّرُ العبيدَ ويُنفِقُ على المجاهدينَ وأمّهاتِ المؤمنين.',
+          en:'Allah blessed <b>Abdurrahman\'s</b> trade until he became one of the wealthiest companions — yet he did not gather wealth for himself, but placed it in Allah\'s path. One day his <b>caravan</b> of seven hundred camels entered Madinah carrying food and goods, until the city trembled with its sound!<br><br>When Mother of the Believers A\'isha asked about it, he remembered the Prophet\'s ﷺ words and <b>gave the entire caravan away — loads, saddles and all — for Allah\'s sake!</b> He used to say: "I wish to enter Paradise crawling" — fearing his wealth might hold him back. He freed slaves and supported the warriors and the Mothers of the Believers.' },
+        choice:{ q:{ar:'ماذا فعلَ عبد الرحمنِ بقافلةِ السبعِمئةِ بعير؟',en:'What did Abdurrahman do with the caravan of 700 camels?'},
+          opts:[
+            { t:{ar:'تصدّقَ بها كلِّها في سبيلِ الله',en:'He gave it all away for Allah\'s sake'},c:true,exp:{ar:'نعم! بحمولتِها وأقتابِها، خوفاً أن يحبسَه المالُ عن الجنّة.',en:'Yes! Loads and saddles included, fearing wealth would hold him from Paradise.'} },
+            { t:{ar:'باعها واشترى قصراً',en:'He sold it and bought a palace'},c:false,exp:{ar:'لا، بل تصدّقَ بها كلِّها لله.',en:'No — he gave it all away for Allah.'} },
+            { t:{ar:'خبّأها لنفسِه',en:'He hoarded it for himself'},c:false,exp:{ar:'لا، بل أنفقَها في الخير.',en:'No — he spent it in good.'} },
+          ] } },
+    ],
+    quiz:[
+      { q:{ar:'كم بعيراً كانت في قافلةِ عبد الرحمن؟',en:'How many camels were in Abdurrahman\'s caravan?'},
+        opts:[ {t:{ar:'سبعُمئة',en:'Seven hundred'},c:true}, {t:{ar:'عشرة',en:'Ten'},c:false}, {t:{ar:'مئة',en:'A hundred'},c:false} ] },
+      { q:{ar:'لماذا تصدّقَ بمالِه الكثير؟',en:'Why did he give away so much wealth?'},
+        opts:[ {t:{ar:'خوفاً أن يحبسَه المالُ عن الجنّة',en:'Fearing wealth would hold him from Paradise'},c:true}, {t:{ar:'ليُمدَحَ فقط',en:'Only to be praised'},c:false}, {t:{ar:'لأنّه لا يحتاجُه',en:'Because he had no use for it'},c:false} ] },
+      { q:{ar:'ماذا تعلّمنا من عبد الرحمن؟',en:'What do we learn from Abdurrahman?'},
+        opts:[ {t:{ar:'المالُ خادمٌ للخيرِ لا سيّد',en:'Wealth serves good, it is not a master'},c:true}, {t:{ar:'الجمعُ والمنع',en:'Hoarding and withholding'},c:false}, {t:{ar:'البخل',en:'Stinginess'},c:false} ] },
+    ],
+    moral:{ar:'بركةُ المالِ في إنفاقِه لا في جمعِه، والمؤمنُ يخافُ أن تشغلَه الدنيا عن الآخرة.',en:'The blessing of wealth is in spending it, not hoarding it; the believer fears the world distracting him from the Hereafter.'},
+    badge:{icon:'🐫',title:{ar:'وِسامُ القافلة',en:'Badge of the Caravan'}},
+    reflect:[ {ar:'حين تنالُ نعمةً كبيرة، هل تتذكّرُ المحتاجين؟',en:'When you receive a great blessing, do you remember the needy?'}, {ar:'كيف تجعلُ ما تملكُه وسيلةً للخير؟',en:'How do you make what you own a means for good?'} ],
+    didYouKnow:[ {ar:'رُوِيَ أنّ عبد الرحمنِ أوصى بمالٍ عظيمٍ في سبيلِ الله، وتصدّقَ في حياتِه بأموالٍ طائلةٍ على أمّهاتِ المؤمنين — المصدر: البداية والنهاية',en:'It is reported Abdurrahman bequeathed great wealth for Allah\'s sake and in his life gave vast sums to the Mothers of the Believers — Source: Al-Bidaya wa an-Nihaya'}, {ar:'مع غناه كان لا يتميّزُ عن عبيدِه في مجلسِه تواضعاً — المصدر: صور من حياة الصحابة',en:'Despite his wealth, he was so humble he could not be told apart from his servants in his gathering — Source: Suwar min Hayat as-Sahaba'} ],
+  },
+];

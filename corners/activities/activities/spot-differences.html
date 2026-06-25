@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>الفوارق الخمسة · أنوس</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+
+<link rel="stylesheet" href="../styles/tokens.css" />
+<link rel="stylesheet" href="../styles/dashboard.css" />
+<link rel="stylesheet" href="../styles/wheel.css" />
+<link rel="stylesheet" href="../styles/spot-differences.css" />
+</head>
+<body>
+
+<div class="bg-decor" aria-hidden="true"></div>
+
+<div class="activity-shell">
+
+  <nav class="activity-nav">
+    <a class="back-link" href="../dashboard.html">
+      الرجوع للوحة الأنشطة
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg>
+    </a>
+    <div class="activity-crumb">
+      <span>اللغة والمعرفة</span>
+      <span class="sep">/</span>
+      <span class="cur">الفوارق الخمسة</span>
+    </div>
+    <div class="activity-actions">
+      <button class="icon-btn" id="reset-btn" title="إعادة الضبط" aria-label="إعادة الضبط">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 3-6.7L3 8"/><path d="M3 3v5h5"/></svg>
+      </button>
+    </div>
+  </nav>
+
+  <div class="activity-layout">
+
+    <section class="diff-panel">
+      <header class="wheel-header">
+        <span class="activity-tag">Activity 19 · Compare &amp; Detect</span>
+        <h1 class="activity-title">الفوارق الخمسة</h1>
+        <p class="activity-desc">
+          الصُّورتانِ تَكادان تَتطابقان! ابحَث بدقَّة عن الخَمسة فوارقٍ بينهما،
+          وانقُر على كلّ فارقٍ في أيٍّ من الجانبين لِتُحدِّده.
+        </p>
+      </header>
+
+      <div class="diff-hud">
+        <div class="hud-block">مَشهد <strong><span id="d-scene">1</span><small>/3</small></strong></div>
+        <div class="hud-block">وُجِد <strong><span id="d-found">0</span>/5</strong></div>
+        <div class="hud-block">خطأ <strong id="d-miss">0</strong></div>
+        <div class="hud-block">نجوم <strong id="d-stars">0</strong></div>
+      </div>
+
+      <div class="diff-stage">
+        <div class="diff-pair">
+          <div class="diff-side" id="side-A">
+            <span class="side-label">A</span>
+          </div>
+          <div class="diff-side" id="side-B">
+            <span class="side-label">B</span>
+          </div>
+        </div>
+
+        <div class="diff-progress">
+          <span>الفوارق:</span>
+          <div class="pills" id="prog-pills"></div>
+        </div>
+      </div>
+
+      <div class="diff-tools">
+        <button class="diff-btn warning" id="btn-hint">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 8v.01M12 12v4"/></svg>
+          تَلميح
+        </button>
+        <button class="diff-btn primary" id="btn-skip">تَخَطّى المَشهد</button>
+      </div>
+
+      <div class="wheel-controls" style="margin-top:var(--s-3);">
+        <div class="wheel-stat">أفضل نتيجة <strong id="best">—</strong></div>
+        <div class="wheel-stat" style="text-align:center;">جولات <strong id="plays">0</strong></div>
+        <button class="wheel-mute-toggle" id="mute-btn" aria-pressed="false">
+          <span class="mute-icon"></span>
+          <span class="mute-label">كتم الصوت</span>
+        </button>
+      </div>
+    </section>
+
+    <aside class="side-panel">
+      <div class="panel-card">
+        <div class="panel-head">
+          <h3>المَشاهد الثَّلاثة</h3>
+          <span class="pill" id="scenes-pill">0/3</span>
+        </div>
+        <div class="diff-scenes" id="scenes-list"></div>
+      </div>
+
+      <div class="panel-card">
+        <div class="panel-head"><h3>كيف ألعب؟</h3></div>
+        <div style="font-size: 14px; line-height: 1.7; color: var(--ink-2);">
+          ١. انظُر إلى الصُّورتين A و B.<br/>
+          ٢. ابحَث عن خمسة فوارقٍ.<br/>
+          ٣. انقر على الفارق لِتُحدِّده.<br/>
+          ٤. كل خطأ يُكلِّفُك نَقطة.
+        </div>
+        <div class="tip-card" style="margin-top: var(--s-3);">
+          <span class="tip-icon">!</span>
+          <span>التَّبَصُّر دَأبُ العلماء. قال ابن عبَّاس: «العَين تُبصِر والعَقل يَفهم».</span>
+        </div>
+      </div>
+
+      <div class="panel-card">
+        <div class="panel-head"><h3>تَأمَّل في خَلق الله</h3></div>
+        <div class="hadith-card">
+          <div class="quote">«إنَّ في خَلقِ السماواتِ والأرضِ واختلافِ الليلِ والنَّهارِ لآياتٍ لأُولي الألباب»</div>
+          <span class="src">سورة آل عمران</span>
+        </div>
+      </div>
+    </aside>
+  </div>
+</div>
+
+<!-- مودال النصر -->
+<div class="modal-backdrop" id="win-modal" role="dialog" aria-modal="true">
+  <div class="modal">
+    <button class="modal-close" data-close aria-label="إغلاق">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M6 6l12 12M18 6l-12 12"/></svg>
+    </button>
+    <div class="modal-deco" aria-hidden="true">
+      <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
+    </div>
+    <div class="modal-eyebrow">عَينُ المُتَأمِّل</div>
+    <h2 class="modal-title">عَينٌ حادَّةٌ ومُتَفَكِّر!</h2>
+    <div class="modal-meaning" id="win-summary"></div>
+    <div class="modal-actions">
+      <button class="btn-ghost" data-close>انتهيت</button>
+      <button class="btn-primary" id="win-replay">جولة جديدة</button>
+    </div>
+  </div>
+</div>
+
+<div class="particles" id="particles" aria-hidden="true"></div>
+
+<script src="../scripts/activity-common.js"></script>
+<script src="../scripts/spot-differences.js"></script>
+
+<script>
+window.PAGE_DICT = {
+  "الفوارق الخمسة": "Spot the Differences",
+  "الصُّورتانِ تَكادان تَتطابقان! ابحَث بدقَّة عن الخَمسة فوارقٍ بينهما، وانقُر على كلّ فارقٍ في أيٍّ من الجانبين لِتُحدِّده.": "The two pictures almost match! Look carefully for the five differences between them, and tap each difference on either side to mark it.",
+  "مَشهد": "Scene",
+  "وُجِد": "Found",
+  "خطأ": "Wrong",
+  "نجوم": "Stars",
+  "الفوارق:": "Differences:",
+  "تَلميح": "Hint",
+  "تَخَطّى المَشهد": "Skip scene",
+  "أفضل نتيجة": "Best score",
+  "جولات": "Rounds",
+  "المَشاهد الثَّلاثة": "The three scenes",
+  "١. انظُر إلى الصُّورتين A و B.": "1. Look at pictures A and B.",
+  "٢. ابحَث عن خمسة فوارقٍ.": "2. Find five differences.",
+  "٣. انقر على الفارق لِتُحدِّده.": "3. Tap a difference to mark it.",
+  "٤. كل خطأ يُكلِّفُك نَقطة.": "4. Each mistake costs you a point.",
+  "التَّبَصُّر دَأبُ العلماء. قال ابن عبَّاس: «العَين تُبصِر والعَقل يَفهم».": "Insight is the way of scholars. Ibn Abbas said: «The eye sees and the mind understands».",
+  "تَأمَّل في خَلق الله": "Reflect on Allah's creation",
+  "سورة آل عمران": "Surat Aal Imran",
+  "عَينُ المُتَأمِّل": "The reflective eye",
+  "عَينٌ حادَّةٌ ومُتَفَكِّر!": "Sharp eyes and a thoughtful mind!"
+};
+</script>
+<script src="../scripts/i18n.js"></script>
+<script src="../../shared/nav-fix.js"></script>
+</body>
+</html>

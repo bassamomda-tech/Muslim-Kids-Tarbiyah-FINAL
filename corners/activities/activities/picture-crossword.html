@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>كلمات متقاطعة مصورة · أنوس</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+
+<link rel="stylesheet" href="../styles/tokens.css" />
+<link rel="stylesheet" href="../styles/dashboard.css" />
+<link rel="stylesheet" href="../styles/wheel.css" />
+<link rel="stylesheet" href="../styles/picture-crossword.css" />
+</head>
+<body>
+
+<div class="bg-decor" aria-hidden="true"></div>
+
+<div class="activity-shell">
+
+  <nav class="activity-nav">
+    <a class="back-link" href="../dashboard.html">
+      الرجوع للوحة الأنشطة
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg>
+    </a>
+    <div class="activity-crumb">
+      <span>اللغة والمعرفة</span>
+      <span class="sep">/</span>
+      <span class="cur">كلمات متقاطعة مصورة</span>
+    </div>
+    <div class="activity-actions">
+      <button class="icon-btn" id="reset-btn" title="إعادة الضبط" aria-label="إعادة الضبط">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 3-6.7L3 8"/><path d="M3 3v5h5"/></svg>
+      </button>
+    </div>
+  </nav>
+
+  <div class="activity-layout">
+
+    <!-- ============ لوحة الكلمات المتقاطعة ============ -->
+    <section class="crossword-panel">
+      <header class="wheel-header">
+        <span class="activity-tag">Activity 12 · Grid Logic</span>
+        <h1 class="activity-title">كلمات متقاطعة مصورة</h1>
+        <p class="activity-desc">
+          اقرأ الدليل المُصوَّر، خمِّن الكلمة، ثم اضغط على أول حرفٍ من الخانة المناسبة
+          واكتب الحروف. الكلمات تتقاطع عند نفس الحرف.
+        </p>
+      </header>
+
+      <!-- HUD -->
+      <div class="cw-hud">
+        <div class="hud-block">
+          الأحجية
+          <strong><span id="puzzle-idx">1</span><small>/2</small></strong>
+        </div>
+        <div class="hud-block">
+          مكتشَف
+          <strong><span id="solved-count">0</span><small>/<span id="total-words">4</span></small></strong>
+        </div>
+        <div class="hud-block">
+          محاولات
+          <strong id="attempts">0</strong>
+        </div>
+        <div class="hud-block">
+          النقاط
+          <strong id="points">0</strong>
+        </div>
+      </div>
+
+      <!-- الستيج: الشبكة + الأدلة -->
+      <div class="cw-stage">
+        <div class="cw-grid-section">
+          <div class="cw-grid" id="grid"></div>
+        </div>
+
+        <div class="cw-clues">
+          <div class="cw-clues-section">
+            <div class="cw-clues-head">
+              <span>أفقي ⬅</span>
+              <span class="badge" id="across-count">0/0</span>
+            </div>
+            <div id="clues-across"></div>
+          </div>
+
+          <div class="cw-clues-section">
+            <div class="cw-clues-head">
+              <span>رأسي ⬇</span>
+              <span class="badge" id="down-count">0/0</span>
+            </div>
+            <div id="clues-down"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- لوحة المفاتيح -->
+      <div class="cw-keyboard-section">
+        <div class="cw-keyboard" id="keyboard"></div>
+      </div>
+
+      <!-- أدوات -->
+      <div class="cw-tools">
+        <button class="cw-btn warning" id="reveal-letter">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3"/></svg>
+          اكشِف حرفاً
+        </button>
+        <button class="cw-btn" id="clear-cell">حذف الحرف</button>
+        <button class="cw-btn primary" id="next-puzzle-btn" style="display:none;">
+          الأحجية التالية
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M15 6l-6 6 6 6"/></svg>
+        </button>
+        <button class="wheel-mute-toggle" id="mute-btn" aria-pressed="false" style="margin-right: auto;">
+          <span class="mute-icon"></span>
+          <span class="mute-label">كتم الصوت</span>
+        </button>
+      </div>
+
+      <!-- كلمات مكتشفة -->
+      <div class="cw-discovered-section" id="discovered" style="margin-top: var(--s-3); display:none;">
+        <div style="font-size:11px; font-weight:800; color:var(--ink-2); margin-bottom: 8px; letter-spacing: 0.1em;">كلماتٌ مَكشُوفة</div>
+        <div id="discovered-list"></div>
+      </div>
+    </section>
+
+    <!-- ============ اللوحة الجانبية ============ -->
+    <aside class="side-panel">
+
+      <div class="panel-card">
+        <div class="panel-head">
+          <h3>كيف تَلعب؟</h3>
+        </div>
+        <ol style="margin:0; padding-right:18px; font-size:13px; line-height:1.8; color: var(--ink-2);">
+          <li>اضغط على دليلٍ من الجانب → سيُحدِّد لك مكان الكلمة.</li>
+          <li>اضغط الحروف من لوحة المفاتيح أو من كيبورد جهازك.</li>
+          <li>الكلمات تتقاطع، فبعض الحروف تظهر تلقائياً.</li>
+          <li>كل كلمةٍ صحيحة تَتَلَوَّن باللون الأخضر.</li>
+        </ol>
+      </div>
+
+      <div class="panel-card">
+        <div class="panel-head">
+          <h3>قاعدة الكلمات</h3>
+        </div>
+        <div class="hadith-card">
+          <div class="quote">«نَحْنُ نَقُصُّ عَلَيْكَ أَحْسَنَ الْقَصَصِ»</div>
+          <span class="src">سورة يوسف، الآية 3</span>
+        </div>
+        <div class="tip-card" style="margin-top:var(--s-3);">
+          <span class="tip-icon">!</span>
+          <span>كلّ كلمةٍ تتعلّمها في هذه الأحجيات لها قِيمة في دينك. خُذ وقتك في فهم معناها.</span>
+        </div>
+      </div>
+
+    </aside>
+  </div>
+</div>
+
+<!-- مودال النصر -->
+<div class="modal-backdrop" id="win-modal" role="dialog" aria-modal="true">
+  <div class="modal">
+    <button class="modal-close" data-close aria-label="إغلاق">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M6 6l12 12M18 6l-12 12"/></svg>
+    </button>
+    <div class="modal-deco" aria-hidden="true">
+      <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 3v18"/></svg>
+    </div>
+    <div class="modal-eyebrow">الأحجيات مَكشُوفة</div>
+    <h2 class="modal-title">عقلٌ لُغوي ذكي!</h2>
+    <div class="modal-meaning" style="text-align:right;" id="win-summary">…</div>
+    <div class="modal-actions">
+      <button class="btn-ghost" data-close>انتهيت</button>
+      <button class="btn-primary" id="win-replay">إعادة من البداية</button>
+    </div>
+  </div>
+</div>
+
+<div class="particles" id="particles" aria-hidden="true"></div>
+
+<script src="../scripts/activity-common.js"></script>
+<script src="../scripts/picture-crossword.js"></script>
+
+<script>
+window.PAGE_DICT = {
+  "كلمات متقاطعة مصورة": "Picture Crossword",
+  "اقرأ الدليل المُصوَّر، خمِّن الكلمة، ثم اضغط على أول حرفٍ من الخانة المناسبة واكتب الحروف. الكلمات تتقاطع عند نفس الحرف.": "Read the picture clue, guess the word, then tap the first cell of the right slot and type the letters. Words cross at the same letter.",
+  "الأحجية": "Puzzle",
+  "مكتشَف": "Solved",
+  "النقاط": "Points",
+  "أفقي ⬅": "Across ⬅",
+  "رأسي ⬇": "Down ⬇",
+  "اكشِف حرفاً": "Reveal a letter",
+  "حذف الحرف": "Delete letter",
+  "الأحجية التالية": "Next puzzle",
+  "كلماتٌ مَكشُوفة": "Words revealed",
+  "كيف تَلعب؟": "How to play?",
+  "اضغط على دليلٍ من الجانب → سيُحدِّد لك مكان الكلمة.": "Tap a clue on the side → it highlights where the word goes.",
+  "اضغط الحروف من لوحة المفاتيح أو من كيبورد جهازك.": "Tap the letters from the keyboard or your device keyboard.",
+  "الكلمات تتقاطع، فبعض الحروف تظهر تلقائياً.": "Words intersect, so some letters appear automatically.",
+  "كل كلمةٍ صحيحة تَتَلَوَّن باللون الأخضر.": "Each correct word turns green.",
+  "قاعدة الكلمات": "Rule of words",
+  "سورة يوسف، الآية 3": "Surat Yusuf, verse 3",
+  "كلّ كلمةٍ تتعلّمها في هذه الأحجيات لها قِيمة في دينك. خُذ وقتك في فهم معناها.": "Every word you learn in these puzzles has value in your religion. Take your time to understand its meaning.",
+  "الأحجيات مَكشُوفة": "Puzzles solved",
+  "عقلٌ لُغوي ذكي!": "A clever linguistic mind!"
+};
+</script>
+<script>
+Object.assign(window.PAGE_DICT, {
+  "أحجية المعرفة":"Knowledge puzzle","أحجية الأخلاق":"Character puzzle",
+  "كلام الله المُنزَّل":"The revealed word of Allah","التصديق بالقلب":"Belief with the heart","نور العقل":"The light of the mind","راحة الجسد بالليل":"The body's rest at night",
+  "ضِدّ الكذب":"The opposite of lying","حِلمٌ عند الانتظار":"Forbearance while waiting","اللُّطف بمن حولك":"Kindness to those around you","صاحب المُلك والقرار":"The owner of dominion and decree"
+});
+</script>
+<script src="../scripts/i18n.js"></script>
+<script src="../../shared/nav-fix.js"></script>
+</body>
+</html>

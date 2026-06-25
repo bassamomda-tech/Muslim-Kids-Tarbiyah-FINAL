@@ -1,0 +1,194 @@
+/* ============================================================
+   MAZE — تنسيقات نشاط متاهة الصدق
+   ============================================================ */
+
+.maze-panel {
+  background:
+    radial-gradient(140% 80% at 50% 0%, rgba(224,213,242,0.35), transparent 60%),
+    var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--r-2xl);
+  padding: var(--s-8);
+  display: flex; flex-direction: column;
+  box-shadow: var(--shadow-card);
+}
+.maze-panel .activity-tag { background: var(--lavender); color: var(--lavender-ink); }
+.maze-panel .activity-tag::before { background: var(--lavender-ink); }
+
+/* HUD */
+.maze-hud {
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--s-3);
+  margin-bottom: var(--s-4);
+}
+.maze-hud .hud-block {
+  background: var(--bg-soft); border: 1px solid var(--line);
+  border-radius: var(--r-md); padding: 10px 14px;
+  display: flex; flex-direction: column; gap: 2px;
+  font-size: 11px; color: var(--muted); font-weight: 600;
+}
+.maze-hud .hud-block strong {
+  font-size: 20px; color: var(--ink);
+  font-family: var(--font-en); font-weight: 800;
+}
+
+/* ساحة المتاهة */
+.maze-arena {
+  position: relative;
+  flex-grow: 1;
+  display: grid; place-items: center;
+  padding: var(--s-3);
+  background: linear-gradient(160deg, #F2EAFB 0%, #E8D9F2 100%);
+  border-radius: var(--r-xl);
+  border: 1px solid var(--line);
+  min-height: 380px;
+}
+.maze-canvas {
+  display: block;
+  background: var(--surface);
+  border-radius: var(--r-lg);
+  box-shadow: var(--shadow-card);
+  max-width: 100%;
+  height: auto;
+  cursor: grab;
+}
+.maze-canvas.dragging { cursor: grabbing; }
+
+/* لوحة المفاتيح للهاتف */
+.maze-keypad {
+  position: absolute;
+  bottom: 14px; left: 14px;
+  display: grid;
+  grid-template-columns: repeat(3, 44px);
+  grid-template-rows: repeat(3, 44px);
+  gap: 4px;
+  z-index: 3;
+}
+.maze-keypad button {
+  background: rgba(255,255,255,0.92);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  display: grid; place-items: center;
+  color: var(--ink); box-shadow: var(--shadow-sm);
+}
+.maze-keypad button:active { background: var(--lavender); }
+.maze-keypad button.kup    { grid-column: 2; grid-row: 1; }
+.maze-keypad button.kdown  { grid-column: 2; grid-row: 3; }
+.maze-keypad button.kleft  { grid-column: 1; grid-row: 2; }
+.maze-keypad button.kright { grid-column: 3; grid-row: 2; }
+
+/* بطاقة الصدق */
+.honesty-card {
+  position: absolute;
+  bottom: 14px; right: 14px;
+  background: rgba(255,255,255,0.95);
+  border: 1px solid var(--line);
+  border-radius: var(--r-md);
+  padding: var(--s-3) var(--s-4);
+  max-width: 280px;
+  font-size: 12px; color: var(--ink-2);
+  line-height: 1.5;
+  box-shadow: var(--shadow-md);
+  z-index: 3;
+}
+.honesty-card .who { font-weight: 800; color: var(--lavender-ink); display: block; margin-bottom: 2px; font-size: 13px; }
+
+/* الخيار */
+.choice-overlay {
+  position: absolute; inset: 0;
+  background: rgba(20,24,40,0.55);
+  backdrop-filter: blur(6px);
+  display: none;
+  align-items: center; justify-content: center;
+  padding: var(--s-4);
+  z-index: 6;
+}
+.choice-overlay.open { display: flex; animation: fade-in 0.25s ease; }
+.choice-card {
+  background: var(--surface);
+  border-radius: var(--r-xl);
+  padding: var(--s-6);
+  max-width: 480px;
+  width: 100%;
+  text-align: center;
+  box-shadow: var(--shadow-lg);
+  animation: pop-in 0.4s cubic-bezier(0.2, 1.4, 0.4, 1);
+}
+@keyframes pop-in { from { transform: scale(0.85); opacity: 0; } to { transform: scale(1); opacity: 1; } }
+@keyframes fade-in { from { opacity: 0; } to { opacity: 1; } }
+
+.choice-card .eyebrow {
+  font-size: 11px; font-weight: 800;
+  letter-spacing: 0.1em; text-transform: uppercase;
+  color: var(--lavender-ink); margin-bottom: 6px;
+  font-family: var(--font-en);
+}
+.choice-card h3 { margin: 0 0 var(--s-3); font-size: 22px; font-weight: 800; line-height: 1.35; }
+.choice-card p { color: var(--ink-2); font-size: 14px; margin: 0 0 var(--s-5); }
+.choice-options { display: flex; flex-direction: column; gap: var(--s-2); }
+.choice-options button {
+  padding: 14px 16px;
+  border: 1.5px solid var(--line);
+  border-radius: var(--r-md);
+  background: var(--bg-soft);
+  font-weight: 700; font-size: 14px;
+  color: var(--ink); text-align: right;
+  transition: border-color 0.18s ease, background 0.18s ease, transform 0.18s ease;
+}
+.choice-options button:hover { border-color: var(--lavender-ink); background: var(--lavender); transform: translateX(-3px); }
+.choice-options button.correct { background: var(--mint); border-color: var(--mint-ink); color: var(--mint-ink); }
+.choice-options button.wrong   { background: #FAD5D5; border-color: #B85555; color: #7A2F2F; }
+
+.choice-feedback {
+  margin-top: var(--s-4);
+  padding: var(--s-3) var(--s-4);
+  background: var(--bg-soft);
+  border-radius: var(--r-md);
+  font-size: 13px; color: var(--ink-2);
+  text-align: right; line-height: 1.55;
+  display: none;
+}
+.choice-feedback.open { display: block; animation: fade-in 0.3s ease; }
+.choice-feedback strong { color: var(--ink); display: block; margin-bottom: 4px; }
+
+/* بدء */
+.maze-start-overlay {
+  position: absolute; inset: 0;
+  background: rgba(20,24,40,0.5);
+  backdrop-filter: blur(6px);
+  display: grid; place-items: center;
+  z-index: 5; transition: opacity 0.3s ease;
+}
+.maze-start-overlay.hidden { opacity: 0; pointer-events: none; }
+
+/* legend */
+.legend-list {
+  display: flex; flex-direction: column; gap: 10px;
+}
+.legend-row {
+  display: flex; align-items: center; gap: 12px;
+  font-size: 13px; font-weight: 600;
+}
+.legend-swatch {
+  width: 28px; height: 28px;
+  border-radius: 8px;
+  display: grid; place-items: center;
+  flex-shrink: 0;
+  color: #fff;
+}
+.legend-swatch.start { background: var(--brand); }
+.legend-swatch.goal  { background: var(--gold); color: #fff; }
+.legend-swatch.coin  { background: var(--butter); color: var(--butter-ink); }
+.legend-swatch.trap  { background: #E8A5A5; color: #7A2F2F; }
+.legend-swatch.wall  { background: #6E5C8E; }
+
+/* نقاط الصدق */
+.honesty-meter {
+  display: flex; gap: 6px; padding-top: 4px;
+}
+.honesty-meter span {
+  width: 18px; height: 22px;
+  border-radius: 4px;
+  background: var(--lavender);
+  box-shadow: inset 0 -3px 0 rgba(0,0,0,0.1);
+}
+.honesty-meter span.off { background: var(--bg-soft); box-shadow: none; }

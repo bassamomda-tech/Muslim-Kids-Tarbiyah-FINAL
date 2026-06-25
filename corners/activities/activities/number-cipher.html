@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>شيفرة الأرقام · أنوس</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+
+<link rel="stylesheet" href="../styles/tokens.css" />
+<link rel="stylesheet" href="../styles/dashboard.css" />
+<link rel="stylesheet" href="../styles/wheel.css" />
+<link rel="stylesheet" href="../styles/number-cipher.css" />
+</head>
+<body>
+
+<div class="bg-decor" aria-hidden="true"></div>
+
+<div class="activity-shell">
+
+  <nav class="activity-nav">
+    <a class="back-link" href="../dashboard.html">
+      الرجوع للوحة الأنشطة
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg>
+    </a>
+    <div class="activity-crumb">
+      <span>اللغة والمعرفة</span>
+      <span class="sep">/</span>
+      <span class="cur">شيفرة الأرقام</span>
+    </div>
+    <div class="activity-actions">
+      <button class="icon-btn" id="reset-btn" title="إعادة الضبط" aria-label="إعادة الضبط">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 3-6.7L3 8"/><path d="M3 3v5h5"/></svg>
+      </button>
+    </div>
+  </nav>
+
+  <div class="activity-layout">
+
+    <!-- ============ لوحة الشفرة ============ -->
+    <section class="cipher-panel">
+      <header class="wheel-header">
+        <span class="activity-tag">Activity 13 · Mapping Logic</span>
+        <h1 class="activity-title">شيفرة الأرقام</h1>
+        <p class="activity-desc">
+          كلّ رقم في الشاشة يُمثِّل حرفاً عربياً. اضغط على رقم لتختاره، ثم اختر الحرف
+          المُناسب من لوحة المفاتيح. إذا أصبتَ، يُكتب الحرف في كلّ مكانٍ يظهر فيه ذلك الرقم.
+        </p>
+      </header>
+
+      <!-- HUD -->
+      <div class="cipher-hud">
+        <div class="hud-block">
+          الشفرة
+          <strong><span id="puzzle-idx">1</span><small>/5</small></strong>
+        </div>
+        <div class="hud-block">
+          المُكتشَف
+          <strong><span id="found-letters">0</span><small>/<span id="total-letters">0</span></small></strong>
+        </div>
+        <div class="hud-block">
+          أخطاء
+          <strong id="wrong-guesses">0</strong>
+        </div>
+        <div class="hud-block">
+          النقاط
+          <strong id="points">0</strong>
+        </div>
+      </div>
+
+      <!-- منصة الشفرة -->
+      <div class="cipher-stage">
+        <div class="stage-eyebrow">رِسالةٌ مُشفَّرة</div>
+        <div class="stage-topic" id="topic">فُكَّ رمز الحديث الشريف</div>
+        <div class="cipher-words" id="cipher-words"></div>
+      </div>
+
+      <!-- لوحة المفاتيح -->
+      <div class="keyboard-section">
+        <div class="keyboard-head">
+          <span>اِخْتَر الحرفَ المناسب للرقم المُحدَّد</span>
+          <span class="toggle" id="selected-hint">حدّد رقماً أوّلاً</span>
+        </div>
+        <div class="arabic-keyboard" id="keyboard"></div>
+      </div>
+
+      <!-- أدوات -->
+      <div class="cipher-tools">
+        <button class="c-btn warning" id="hint-btn">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3"/></svg>
+          اكشِف حرفاً
+        </button>
+        <button class="c-btn primary" id="reveal-btn" disabled>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5 9-10"/></svg>
+          الشفرة التالية
+        </button>
+      </div>
+
+      <!-- بطاقة الكشف -->
+      <div class="cipher-reveal" id="reveal">
+        <div class="src" id="reveal-src">حديث</div>
+        <div class="quote" id="reveal-quote">—</div>
+        <div class="meaning" id="reveal-meaning">—</div>
+      </div>
+
+      <div class="wheel-controls" style="margin-top:var(--s-3);">
+        <div class="wheel-stat">
+          أعلى نقاط
+          <strong id="best">—</strong>
+        </div>
+        <button class="wheel-mute-toggle" id="mute-btn" aria-pressed="false">
+          <span class="mute-icon"></span>
+          <span class="mute-label">كتم الصوت</span>
+        </button>
+      </div>
+    </section>
+
+    <!-- ============ اللوحة الجانبية ============ -->
+    <aside class="side-panel">
+
+      <div class="panel-card">
+        <div class="panel-head">
+          <h3>مفتاح الشفرة</h3>
+          <span class="pill" id="key-pill">0 / 0</span>
+        </div>
+        <div class="cipher-key">
+          <div class="cipher-key-head">
+            <span>الحروف المكتشَفة في هذه الشفرة</span>
+          </div>
+          <div class="cipher-key-grid" id="key-grid"></div>
+        </div>
+      </div>
+
+      <div class="panel-card">
+        <div class="panel-head">
+          <h3>كيف تَفُكُّ الشفرة؟</h3>
+        </div>
+        <ol style="margin:0; padding-right:18px; font-size:13px; line-height:1.8; color: var(--ink-2);">
+          <li>ابدأ بالحروف الشائعة: <strong>ا ل م ن ر</strong></li>
+          <li>الحرف الذي يتكرَّر كثيراً في الجملة غالباً <strong>ا</strong> أو <strong>ل</strong>.</li>
+          <li>كلمة قصيرة من حرفين قد تكون <strong>في</strong> أو <strong>من</strong> أو <strong>لا</strong>.</li>
+          <li>اضغط <strong>اكشِف حرفاً</strong> إذا احتجتَ مساعدة (تُخصَم نقاط).</li>
+        </ol>
+      </div>
+
+      <div class="panel-card">
+        <div class="panel-head">
+          <h3>قاعدة العقل</h3>
+        </div>
+        <div class="hadith-card">
+          <div class="quote">«طَلَبُ العِلمِ فَريضَةٌ على كلِّ مسلم»</div>
+          <span class="src">رواه ابن ماجه<span class="hadith-grade ok">صحيح</span></span>
+        </div>
+        <div class="tip-card" style="margin-top: var(--s-3);">
+          <span class="tip-icon">!</span>
+          <span>فكُّ الشفرات يُقوّي ذاكرتك ويُعلّمك التفكير المنطقي — وهي مهارةٌ مهمّة لطالب العلم.</span>
+        </div>
+      </div>
+
+    </aside>
+  </div>
+</div>
+
+<!-- مودال النصر -->
+<div class="modal-backdrop" id="win-modal" role="dialog" aria-modal="true">
+  <div class="modal">
+    <button class="modal-close" data-close aria-label="إغلاق">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M6 6l12 12M18 6l-12 12"/></svg>
+    </button>
+
+    <div class="modal-deco" aria-hidden="true">
+      <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+    </div>
+
+    <div class="modal-eyebrow">جميع الشفرات مَفكُوكة</div>
+    <h2 class="modal-title">عقلٌ حادّ يا فاكَّ الشفرات!</h2>
+
+    <div class="modal-meaning" style="text-align:right;" id="win-summary"></div>
+
+    <div class="modal-actions">
+      <button class="btn-ghost" data-close>انتهيت</button>
+      <button class="btn-primary" id="win-replay">جولة جديدة</button>
+    </div>
+  </div>
+</div>
+
+<div class="particles" id="particles" aria-hidden="true"></div>
+
+<script src="../scripts/activity-common.js"></script>
+<script src="../scripts/number-cipher.js"></script>
+
+<script>
+window.PAGE_DICT = {
+  "شيفرة الأرقام": "Number Cipher",
+  "كلّ رقم في الشاشة يُمثِّل حرفاً عربياً. اضغط على رقم لتختاره، ثم اختر الحرف المُناسب من لوحة المفاتيح. إذا أصبتَ، يُكتب الحرف في كلّ مكانٍ يظهر فيه ذلك الرقم.": "Each number on the screen represents an Arabic letter. Tap a number to select it, then choose the matching letter from the keyboard. If you're right, the letter is filled in everywhere that number appears.",
+  "الشفرة": "Cipher",
+  "أخطاء": "Errors",
+  "النقاط": "Points",
+  "رِسالةٌ مُشفَّرة": "An encrypted message",
+  "فُكَّ رمز الحديث الشريف": "Decode the hadith",
+  "اِخْتَر الحرفَ المناسب للرقم المُحدَّد": "Choose the right letter for the selected number",
+  "حدّد رقماً أوّلاً": "Select a number first",
+  "اكشِف حرفاً": "Reveal a letter",
+  "الشفرة التالية": "Next cipher",
+  "حديث": "Hadith",
+  "أعلى نقاط": "Best points",
+  "مفتاح الشفرة": "Cipher key",
+  "الحروف المكتشَفة في هذه الشفرة": "Letters found in this cipher",
+  "كيف تَفُكُّ الشفرة؟": "How to crack the cipher?",
+  "ابدأ بالحروف الشائعة:": "Start with common letters:",
+  "الحرف الذي يتكرَّر كثيراً في الجملة غالباً": "The letter that repeats most is often",
+  "أو": "or",
+  "كلمة قصيرة من حرفين قد تكون": "A short two-letter word might be",
+  "اضغط": "Press",
+  "إذا احتجتَ مساعدة (تُخصَم نقاط).": "if you need help (points deducted).",
+  "قاعدة العقل": "Rule of the mind",
+  "رواه ابن ماجه": "Narrated by Ibn Majah",
+  "فكُّ الشفرات يُقوّي ذاكرتك ويُعلّمك التفكير المنطقي — وهي مهارةٌ مهمّة لطالب العلم.": "Cracking ciphers strengthens your memory and teaches logical thinking — an important skill for a seeker of knowledge.",
+  "جميع الشفرات مَفكُوكة": "All ciphers cracked",
+  "عقلٌ حادّ يا فاكَّ الشفرات!": "Sharp mind, codebreaker!"
+};
+</script>
+<script>
+Object.assign(window.PAGE_DICT, {
+  "حديث شريف · رواه ابن ماجه":"A hadith · Narrated by Ibn Majah",
+  "حديث شريف · رواه البخاري":"A hadith · Narrated by al-Bukhari",
+  "حديث شريف · رواه الترمذي":"A hadith · Narrated by at-Tirmidhi",
+  "مَثَلٌ مشهور":"A well-known proverb",
+  "حِكمة":"A saying of wisdom",
+  "حِكمة مأخوذة من السنّة":"A wisdom drawn from the Sunnah",
+  "تعلُّم العلم النافع واجبٌ على كل مسلمٍ ومسلمة. وأوَّل العلم تعلُّم القرآن وأمور الدّين.":"Seeking beneficial knowledge is obligatory on every Muslim man and woman. The first knowledge is learning the Quran and matters of religion.",
+  "كلمة لطيفة لأمّك أو أخيك أو صديقك تُكتب لك صدقة، مثل تماماً كتلك التي تتصدق بها بالمال.":"A kind word to your mother, brother, or friend is recorded as a charity, exactly like giving charity with money.",
+  "إذا صبرتَ على ما تكره، فتح الله لك أبواب الخير من حيث لا تَحتسب.":"If you are patient with what you dislike, Allah opens for you doors of good from where you don't expect.",
+  "أفضل الناس هو من يُحسن إلى أهله وأقربائه قبل غيرهم. والنبي ﷺ قال هذا عن نفسه.":"The best of people is the one who is good to his family and relatives before others. The Prophet ﷺ said this of himself.",
+  "اِجعل ابتسامتك دائمة لأنّ الله أكرمك بنِعَمٍ كثيرة، والابتسامة عبادة في الإسلام.":"Keep your smile constant, for Allah has blessed you with many favors, and smiling is an act of worship in Islam.",
+  "من اجتهد في عمله ودِراسته، حصل على ما يريد. الاجتهاد طريق النجاح.":"Whoever strives in their work and study attains what they want. Effort is the path to success.",
+  "العلم يُضيء الطريق للإنسان ويُريه الصواب، والجهل يَجعله يتخبَّط في الخطأ.":"Knowledge lights a person's path and shows them what is right, while ignorance leaves them stumbling in error.",
+  "الإسلام يحبّ النظافة في الجسد والملابس والبيت والقلب. والمؤمن نظيفٌ في كل شيء.":"Islam loves cleanliness in body, clothes, home, and heart. The believer is clean in everything."
+});
+</script>
+<script src="../scripts/i18n.js"></script>
+<script src="../../shared/nav-fix.js"></script>
+</body>
+</html>

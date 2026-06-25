@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>شريط الزمن الهجري · أنوس</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Amiri:wght@400;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+
+<link rel="stylesheet" href="../styles/tokens.css" />
+<link rel="stylesheet" href="../styles/dashboard.css" />
+<link rel="stylesheet" href="../styles/wheel.css" />
+<link rel="stylesheet" href="../styles/hijri-timeline.css" />
+</head>
+<body>
+
+<div class="bg-decor" aria-hidden="true"></div>
+
+<div class="activity-shell">
+
+  <nav class="activity-nav">
+    <a class="back-link" href="../dashboard.html">
+      الرجوع للوحة الأنشطة
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg>
+    </a>
+    <div class="activity-crumb">
+      <span>العلوم والاستكشاف</span>
+      <span class="sep">/</span>
+      <span class="cur">شريط الزمن الهجري</span>
+    </div>
+    <div class="activity-actions">
+      <button class="icon-btn" id="reset-btn" title="إعادة الضبط" aria-label="إعادة الضبط">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 3-6.7L3 8"/><path d="M3 3v5h5"/></svg>
+      </button>
+    </div>
+  </nav>
+
+  <div class="activity-layout">
+
+    <section class="ht-panel">
+      <header class="wheel-header">
+        <span class="activity-tag">Activity 40 · Timeline Drag</span>
+        <h1 class="activity-title">شريط الزمن الهجري</h1>
+        <p class="activity-desc">
+          مِنَ البِعثَةِ إلى حَجَّةِ الوَداع — رَتِّب أَهَمَّ أَحداثِ السِّيرَة على
+          شَريطِ السَّنَواتِ الهِجريَّة، واكتَشِف كَيفَ تَشَكَّلَتِ الأُمَّة.
+        </p>
+      </header>
+
+      <div class="ht-hud">
+        <div class="hud-block">المَوضوعَة <strong><span id="ht-placed">0</span><small>/8</small></strong></div>
+        <div class="hud-block">صَحيح <strong id="ht-correct">0</strong></div>
+        <div class="hud-block">المُحاوَلات <strong id="ht-tries">0</strong></div>
+        <div class="hud-block">النَّقَطات <strong id="ht-points">0</strong></div>
+      </div>
+
+      <div class="ht-stage">
+        <!-- الشَّريط الزَّمَني -->
+        <div class="ht-timeline-wrap">
+          <div class="ht-era era-mecca">عَهدُ مَكَّة</div>
+          <div class="ht-era era-medina">عَهدُ المَدينَة</div>
+
+          <div class="ht-timeline" id="ht-timeline">
+            <!-- يُولَّد بِالـ JS -->
+            <span class="ht-axis"></span>
+            <span class="ht-axis-arrow"></span>
+            <span class="ht-zero-marker">
+              <span class="zero-label">١ هـ</span>
+              <span class="zero-tick"></span>
+            </span>
+          </div>
+
+          <div class="ht-scan" id="ht-scan" aria-hidden="true"></div>
+        </div>
+
+        <!-- صَينيَّة الأَحداث -->
+        <div class="ht-tray-wrap">
+          <div class="ht-tray-label">اِسحَب الحَدَثَ إلى سَنَتِه</div>
+          <div class="ht-tray" id="ht-tray"></div>
+        </div>
+
+        <div class="ht-controls">
+          <button class="ht-btn" id="btn-hint">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 8v4M12 16h.01"/></svg>
+            تَلميح
+          </button>
+          <button class="ht-btn" id="btn-reset-board">إعادَة المُحاوَلة</button>
+          <button class="ht-btn primary" id="btn-check" disabled>
+            تَحَقَّق وَأَعرِض التَّقدُّم
+          </button>
+        </div>
+      </div>
+
+      <div class="wheel-controls" style="margin-top:var(--s-4);">
+        <div class="wheel-stat">أَفضَل نَقَطات <strong id="best">—</strong></div>
+        <button class="wheel-mute-toggle" id="mute-btn" aria-pressed="false">
+          <span class="mute-icon"></span>
+          <span class="mute-label">كتم الصوت</span>
+        </button>
+      </div>
+    </section>
+
+    <aside class="side-panel">
+      <div class="panel-card">
+        <div class="panel-head">
+          <h3>الأَحداث الثَّمانِيَة</h3>
+          <span class="pill" id="ev-pill">8</span>
+        </div>
+        <div class="ht-events-list" id="events-list"></div>
+      </div>
+
+      <div class="panel-card">
+        <div class="panel-head"><h3>كَيف ألعب؟</h3></div>
+        <div style="font-size: 14px; line-height: 1.7; color: var(--ink-2);">
+          ١. اِسحَب الحَدَثَ مِنَ الصّينيَّةِ إلى السَّنَة.<br/>
+          ٢. السَّنَواتُ السّالِبَة قَبلَ الهِجرَة، والمُوجَبَة بَعدَها.<br/>
+          ٣. اضغط <strong>تَحَقَّق</strong> لِتَرى تَقدُّمَك.<br/>
+          ٤. اِستَخدِم التَّلميحَ عِندَ الحاجَة، يُنقِصُ النَّقَطات قَليلاً.
+        </div>
+        <div class="tip-card" style="margin-top: var(--s-3);">
+          <span class="tip-icon">!</span>
+          <span>التَّقويمُ الهِجريُّ بَدَأَ بِالخَليفَةِ عُمَرَ بنِ الخَطّاب رضي الله عنه، وَجَعَلَ بِدايَتَهُ هِجرَةَ النَّبيِّ ﷺ.</span>
+        </div>
+      </div>
+
+      <div class="panel-card">
+        <div class="panel-head"><h3>قَولُ اللهِ تَعالى</h3></div>
+        <div class="hadith-card">
+          <div class="quote">«إِنَّ عِدَّةَ الشُّهُورِ عِندَ اللَّهِ اثْنَا عَشَرَ شَهْرًا فِي كِتَابِ اللَّهِ» — التوبة · 36</div>
+          <span class="src">شُهورُ السَّنَةِ الهِجريَّة</span>
+        </div>
+      </div>
+    </aside>
+  </div>
+</div>
+
+<div class="modal-backdrop" id="done-modal" role="dialog" aria-modal="true">
+  <div class="modal">
+    <button class="modal-close" data-close aria-label="إغلاق">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M6 6l12 12M18 6l-12 12"/></svg>
+    </button>
+    <div class="modal-deco" aria-hidden="true">
+      <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>
+    </div>
+    <div class="modal-eyebrow">شَريطُ الزَّمَن</div>
+    <h2 class="modal-title">رَتَّبتَ مَسيرَةَ الأُمَّة</h2>
+    <div class="modal-meaning" id="done-summary"></div>
+    <div class="modal-actions">
+      <button class="btn-ghost" data-close>إنهاء</button>
+      <button class="btn-primary" id="done-next">جَولَةٌ جَديدة</button>
+    </div>
+  </div>
+</div>
+
+<div class="particles" id="particles" aria-hidden="true"></div>
+
+<script src="../scripts/activity-common.js"></script>
+<script src="../scripts/hijri-timeline.js"></script>
+
+<script>
+window.PAGE_DICT = {
+  "شريط الزمن الهجري": "Hijri Timeline",
+  "مِنَ البِعثَةِ إلى حَجَّةِ الوَداع — رَتِّب أَهَمَّ أَحداثِ السِّيرَة على شَريطِ السَّنَواتِ الهِجريَّة، واكتَشِف كَيفَ تَشَكَّلَتِ الأُمَّة.": "From the call to prophethood to the Farewell Pilgrimage — arrange the key events of the seerah on the timeline of Hijri years, and discover how the ummah took shape.",
+  "المَوضوعَة": "Placed",
+  "صَحيح": "Correct",
+  "المُحاوَلات": "Attempts",
+  "النَّقَطات": "Points",
+  "عَهدُ مَكَّة": "The Meccan era",
+  "عَهدُ المَدينَة": "The Medinan era",
+  "١ هـ": "1 AH",
+  "اِسحَب الحَدَثَ إلى سَنَتِه": "Drag the event to its year",
+  "تَلميح": "Hint",
+  "إعادَة المُحاوَلة": "Retry",
+  "تَحَقَّق وَأَعرِض التَّقدُّم": "Check & show progress",
+  "أَفضَل نَقَطات": "Best points",
+  "الأَحداث الثَّمانِيَة": "The eight events",
+  "كَيف ألعب؟": "How to play?",
+  "١. اِسحَب الحَدَثَ مِنَ الصّينيَّةِ إلى السَّنَة.": "1. Drag the event from the tray to its year.",
+  "٢. السَّنَواتُ السّالِبَة قَبلَ الهِجرَة، والمُوجَبَة بَعدَها.": "2. Negative years are before the Hijrah, positive ones after.",
+  "٣. اضغط": "3. Press",
+  "تَحَقَّق": "Check",
+  "لِتَرى تَقدُّمَك.": "to see your progress.",
+  "٤. اِستَخدِم التَّلميحَ عِندَ الحاجَة، يُنقِصُ النَّقَطات قَليلاً.": "4. Use the hint when needed; it slightly reduces points.",
+  "التَّقويمُ الهِجريُّ بَدَأَ بِالخَليفَةِ عُمَرَ بنِ الخَطّاب رضي الله عنه، وَجَعَلَ بِدايَتَهُ هِجرَةَ النَّبيِّ ﷺ.": "The Hijri calendar began with the Caliph Umar ibn al-Khattab (RA), who made the Prophet's ﷺ migration its start.",
+  "قَولُ اللهِ تَعالى": "The words of Allah the Exalted",
+  "شُهورُ السَّنَةِ الهِجريَّة": "The months of the Hijri year",
+  "شَريطُ الزَّمَن": "The timeline",
+  "رَتَّبتَ مَسيرَةَ الأُمَّة": "You arranged the ummah's journey",
+  "إنهاء": "Finish",
+  "جَولَةٌ جَديدة": "New round"
+};
+</script>
+<script>
+Object.assign(window.PAGE_DICT, {
+  "البِعثَة المُحَمَّديَّة":"The Prophetic Call","الإسراءُ والمِعراج":"The Night Journey & Ascension","الهِجرَة إلى المَدينَة":"The Migration to Medina","غَزوَة بَدر":"The Battle of Badr","غَزوَة أُحُد":"The Battle of Uhud","صُلحُ الحُدَيبيَة":"The Treaty of Hudaybiyyah","فَتحُ مَكَّة":"The Conquest of Mecca","حَجَّةُ الوَداع":"The Farewell Pilgrimage",
+  "نُزولُ الوَحيِ على الجَبَل":"Revelation descended on the mountain","رِحلَةُ السَّماء":"The journey through the heavens","بِدايَةُ التَّقويمِ الهِجري":"The start of the Hijri calendar","أَوَّلُ نَصرٍ كَبير":"The first great victory","دُروسٌ في الثَّبات":"Lessons in steadfastness","فَتحٌ مُبين":"A clear victory","دُخولُ النَّبيِّ مَكَّة":"The Prophet's entry into Mecca","آخِرُ خُطبَةٍ كُبرى":"The last great sermon"
+});
+</script>
+<script src="../scripts/i18n.js"></script>
+<script src="../../shared/nav-fix.js"></script>
+</body>
+</html>

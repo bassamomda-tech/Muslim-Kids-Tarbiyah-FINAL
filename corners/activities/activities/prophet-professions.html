@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>أصحاب المهن النبوية · أنوس</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Amiri:wght@400;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+
+<link rel="stylesheet" href="../styles/tokens.css" />
+<link rel="stylesheet" href="../styles/dashboard.css" />
+<link rel="stylesheet" href="../styles/wheel.css" />
+<link rel="stylesheet" href="../styles/professions.css" />
+</head>
+<body>
+
+<div class="bg-decor" aria-hidden="true"></div>
+
+<div class="activity-shell">
+
+  <nav class="activity-nav">
+    <a class="back-link" href="../dashboard.html">
+      الرجوع للوحة الأنشطة
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg>
+    </a>
+    <div class="activity-crumb">
+      <span>العلوم والاستكشاف</span>
+      <span class="sep">/</span>
+      <span class="cur">أصحاب المهن النبوية</span>
+    </div>
+    <div class="activity-actions">
+      <button class="icon-btn" id="reset-btn" title="إعادة الضبط" aria-label="إعادة الضبط">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 3-6.7L3 8"/><path d="M3 3v5h5"/></svg>
+      </button>
+    </div>
+  </nav>
+
+  <div class="activity-layout">
+
+    <section class="pp-panel">
+      <header class="wheel-header">
+        <span class="activity-tag">Activity 37 · Matching Pairs</span>
+        <h1 class="activity-title">أصحاب المهن النبوية</h1>
+        <p class="activity-desc">
+          عَمِلَ الأَنبياءُ بِأَيديهم: داودُ في الحَديد، ونوحٌ في النَّجارة، وآدمُ في الزِّراعة.
+          وَفِّقْ بين كلِّ نَبِيٍّ ومِهنَتِه — اِفتَح بِطاقَتَين، فإذا تَطابَقَتا ثَبَتَت.
+        </p>
+      </header>
+
+      <div class="pp-hud">
+        <div class="hud-block">المُحاوَلات <strong id="pp-moves">0</strong></div>
+        <div class="hud-block">الأَزواج <strong><span id="pp-pairs">0</span><small>/6</small></strong></div>
+        <div class="hud-block">الزَّمَن <strong id="pp-time">0:00</strong></div>
+        <div class="hud-block">النَّقَطات <strong id="pp-points">0</strong></div>
+      </div>
+
+      <div class="pp-stage">
+        <div class="pp-grid" id="pp-grid"></div>
+
+        <div class="pp-controls">
+          <button class="pp-btn" id="btn-shuffle">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M16 3h5v5"/><path d="M21 3l-8 8"/><path d="M8 21H3v-5"/><path d="M3 21l8-8"/></svg>
+            خَلْط جَديد
+          </button>
+          <button class="pp-btn primary" id="btn-peek">
+            نَظرة خاطِفَة (3 ثوان)
+          </button>
+        </div>
+      </div>
+
+      <div class="wheel-controls" style="margin-top:var(--s-4);">
+        <div class="wheel-stat">أَفضَل مُحاوَلات <strong id="best">—</strong></div>
+        <button class="wheel-mute-toggle" id="mute-btn" aria-pressed="false">
+          <span class="mute-icon"></span>
+          <span class="mute-label">كتم الصوت</span>
+        </button>
+      </div>
+    </section>
+
+    <aside class="side-panel">
+      <div class="panel-card">
+        <div class="panel-head">
+          <h3>المِهَن المُكتَشَفَة</h3>
+          <span class="pill" id="disc-pill">0 / 6</span>
+        </div>
+        <div class="pp-discovered" id="discovered">
+          <div class="pp-empty">ابحث عن الأَزواج لِتَكشِف عن كلِّ نَبِيٍّ ومِهنَتِه.</div>
+        </div>
+      </div>
+
+      <div class="panel-card">
+        <div class="panel-head"><h3>كَيف ألعب؟</h3></div>
+        <div style="font-size: 14px; line-height: 1.7; color: var(--ink-2);">
+          ١. انقُر بِطاقَة لِتَكشِفَها.<br/>
+          ٢. اِفتَح أُخرى لِتُحاوِلَ المُطابَقَة.<br/>
+          ٣. النَّبيُّ يُطابِقُ مِهنَتَه.<br/>
+          ٤. كلَّما قَلَّت المُحاوَلات، زادَت النَّقَطات.
+        </div>
+        <div class="tip-card" style="margin-top: var(--s-3);">
+          <span class="tip-icon">!</span>
+          <span>قال ﷺ: «ما أَكَلَ أَحَدٌ طَعاماً قَطُّ خَيراً مِن أن يَأكُلَ مِن عَمَلِ يَدِه، وإِنَّ نَبيَّ اللهِ داودَ كانَ يَأكُلُ مِن عَمَلِ يَدِه».</span>
+        </div>
+      </div>
+
+      <div class="panel-card">
+        <div class="panel-head"><h3>قَولُ اللهِ تَعالى</h3></div>
+        <div class="hadith-card">
+          <div class="quote">«وَعَلَّمْنَاهُ صَنْعَةَ لَبُوسٍ لَّكُمْ لِتُحْصِنَكُم مِّن بَأْسِكُمْ ۖ فَهَلْ أَنتُمْ شَاكِرُونَ» — الأنبياء · 80</div>
+          <span class="src">في حَقِّ نَبِيِّ اللهِ داود عَلَيهِ السَّلام</span>
+        </div>
+      </div>
+    </aside>
+  </div>
+</div>
+
+<div class="modal-backdrop" id="done-modal" role="dialog" aria-modal="true">
+  <div class="modal">
+    <button class="modal-close" data-close aria-label="إغلاق">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M6 6l12 12M18 6l-12 12"/></svg>
+    </button>
+    <div class="modal-deco" aria-hidden="true">
+      <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5 9-10"/></svg>
+    </div>
+    <div class="modal-eyebrow">جَولَةٌ مُكتَمِلَة</div>
+    <h2 class="modal-title">عَرَفتَ الأَنبياءَ بِمِهنَتِهم</h2>
+    <div class="modal-meaning" id="done-summary"></div>
+    <div class="modal-actions">
+      <button class="btn-ghost" data-close>إنهاء</button>
+      <button class="btn-primary" id="done-next">جَولَةٌ جَديدة</button>
+    </div>
+  </div>
+</div>
+
+<div class="particles" id="particles" aria-hidden="true"></div>
+
+<script src="../scripts/activity-common.js"></script>
+<script src="../scripts/glyphs.js"></script>
+<script src="../scripts/professions.js"></script>
+
+<script>
+window.PAGE_DICT = {
+  "أصحاب المهن النبوية": "Prophets' Professions",
+  "عَمِلَ الأَنبياءُ بِأَيديهم: داودُ في الحَديد، ونوحٌ في النَّجارة، وآدمُ في الزِّراعة. وَفِّقْ بين كلِّ نَبِيٍّ ومِهنَتِه — اِفتَح بِطاقَتَين، فإذا تَطابَقَتا ثَبَتَت.": "The prophets worked with their hands: Dawud in ironwork, Nuh in carpentry, Adam in farming. Match each prophet with his profession — flip two cards, and if they match, they stay.",
+  "المُحاوَلات": "Attempts",
+  "الأَزواج": "Pairs",
+  "الزَّمَن": "Time",
+  "النَّقَطات": "Points",
+  "خَلْط جَديد": "New shuffle",
+  "نَظرة خاطِفَة (3 ثوان)": "Quick peek (3 sec)",
+  "أَفضَل مُحاوَلات": "Best attempts",
+  "المِهَن المُكتَشَفَة": "Discovered professions",
+  "ابحث عن الأَزواج لِتَكشِف عن كلِّ نَبِيٍّ ومِهنَتِه.": "Find the pairs to reveal each prophet and his profession.",
+  "كَيف ألعب؟": "How to play?",
+  "١. انقُر بِطاقَة لِتَكشِفَها.": "1. Tap a card to flip it.",
+  "٢. اِفتَح أُخرى لِتُحاوِلَ المُطابَقَة.": "2. Flip another to try to match.",
+  "٣. النَّبيُّ يُطابِقُ مِهنَتَه.": "3. The prophet matches his profession.",
+  "٤. كلَّما قَلَّت المُحاوَلات، زادَت النَّقَطات.": "4. The fewer your attempts, the more points.",
+  "قال ﷺ: «ما أَكَلَ أَحَدٌ طَعاماً قَطُّ خَيراً مِن أن يَأكُلَ مِن عَمَلِ يَدِه، وإِنَّ نَبيَّ اللهِ داودَ كانَ يَأكُلُ مِن عَمَلِ يَدِه».": "He ﷺ said: «No one ever ate food better than what he earns with his own hands, and the Prophet of Allah Dawud used to eat from the work of his hands».",
+  "قَولُ اللهِ تَعالى": "The words of Allah the Exalted",
+  "في حَقِّ نَبِيِّ اللهِ داود عَلَيهِ السَّلام": "Regarding the Prophet of Allah Dawud (peace be upon him)",
+  "جَولَةٌ مُكتَمِلَة": "Round complete",
+  "عَرَفتَ الأَنبياءَ بِمِهنَتِهم": "You knew the prophets by their professions",
+  "إنهاء": "Finish",
+  "جَولَةٌ جَديدة": "New round"
+};
+</script>
+<script>
+Object.assign(window.PAGE_DICT, {
+  "داود ﷺ":"Dawud ﷺ","نوح ﷺ":"Nuh ﷺ","إدريس ﷺ":"Idris ﷺ","موسى ﷺ":"Musa ﷺ","آدم ﷺ":"Adam ﷺ","يوسف ﷺ":"Yusuf ﷺ",
+  "صانِعُ الدُّروع":"Armor maker","نَجّارُ السَّفينة":"Shipbuilder","خَيّاطُ الثِّياب":"Tailor","راعِي الغَنَم":"Shepherd","حارِثُ الأَرض":"Farmer","خازِنُ الأَرض":"Treasurer of the land",
+  "الحَدّاد":"The blacksmith","النَّجّار":"The carpenter","الخَيّاط":"The tailor","الرّاعي":"The shepherd","الزّارع":"The planter","وَزيرُ الاقتِصاد":"Minister of economy",
+  "«وَعَلَّمْنَاهُ صَنْعَةَ لَبُوسٍ لَّكُمْ» — الأنبياء 80":"«And We taught him the making of armor for you» — Al-Anbiya 80",
+  "«وَاصْنَعِ الْفُلْكَ بِأَعْيُنِنَا» — هود 37":"«And build the ark under Our observation» — Hud 37",
+  "أَوَّلُ مَن خاطَ الثَّوبَ ولَبِسَه — عن ابن عباس":"The first to sew a garment and wear it — from Ibn Abbas",
+  "«ما بَعَثَ اللهُ نَبِيّاً إِلاّ رَعى الغَنَم» — البخاري":"«Allah did not send a prophet without his having herded sheep» — al-Bukhari",
+  "أَوَّلُ مَن حَرَثَ الأَرضَ ودَعا لَها بِالبَركة":"The first to plow the earth and pray for its blessing",
+  "«اجْعَلْنِي عَلَىٰ خَزَائِنِ الْأَرْضِ» — يوسف 55":"«Appoint me over the storehouses of the land» — Yusuf 55"
+});
+</script>
+<script src="../scripts/i18n.js"></script>
+<script src="../../shared/nav-fix.js"></script>
+</body>
+</html>

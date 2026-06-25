@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>مسرح العرائس · أنوس</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+
+<link rel="stylesheet" href="../styles/tokens.css" />
+<link rel="stylesheet" href="../styles/dashboard.css" />
+<link rel="stylesheet" href="../styles/wheel.css" />
+<link rel="stylesheet" href="../styles/puppet-theater.css" />
+</head>
+<body>
+
+<div class="bg-decor" aria-hidden="true"></div>
+
+<div class="activity-shell">
+
+  <nav class="activity-nav">
+    <a class="back-link" href="../dashboard.html">
+      الرجوع للوحة الأنشطة
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg>
+    </a>
+    <div class="activity-crumb">
+      <span>الفن والإبداع</span>
+      <span class="sep">/</span>
+      <span class="cur">مسرح العرائس</span>
+    </div>
+    <div class="activity-actions">
+      <button class="icon-btn" id="reset-btn" title="إعادة الضبط" aria-label="إعادة الضبط">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 3-6.7L3 8"/><path d="M3 3v5h5"/></svg>
+      </button>
+    </div>
+  </nav>
+
+  <div class="activity-layout">
+
+    <section class="pp-panel">
+      <header class="wheel-header">
+        <span class="activity-tag">Activity 23 · Z-index Stage</span>
+        <h1 class="activity-title">مسرح العرائس</h1>
+        <p class="activity-desc">
+          أنتَ المُخرِج الآن! اختر خَلفية، اسحَب الشَّخصيَّات إلى المسرح،
+          ثم انقُر عليها لِتُكتَب لها كلامها. كَوِّن مَشهداً قَصيراً واحفَظه في مَكتبتك.
+        </p>
+      </header>
+
+      <!-- Bin -->
+      <div class="pp-bin" id="bin"></div>
+
+      <!-- Stage -->
+      <div class="pp-stage-wrap">
+        <div class="pp-stage" id="stage"></div>
+        <div class="pp-curtain-left"></div>
+        <div class="pp-curtain-right"></div>
+      </div>
+
+      <!-- Speech Editor -->
+      <div class="pp-speech-editor" id="speech-editor">
+        <h4>كلام <span id="ed-name">الشَّخصيَّة</span>:</h4>
+        <input id="speech-input" type="text" placeholder="اكتُب ما تَقوله الشَّخصيَّة هنا…" maxlength="80" />
+        <div class="pp-speech-presets">
+          <button data-preset="السَّلامُ عليكم">السَّلامُ عليكم</button>
+          <button data-preset="بسم الله الرَّحمن الرَّحيم">بسم الله</button>
+          <button data-preset="الحَمدُ لله">الحَمدُ لله</button>
+          <button data-preset="إن شاء الله">إن شاء الله</button>
+          <button data-preset="بارك الله فيك">بارك الله فيك</button>
+          <button data-preset="جزاك الله خيراً">جزاك الله خيراً</button>
+        </div>
+        <div class="editor-actions">
+          <button class="pp-btn-sm danger" id="ed-delete">🗑 حذف</button>
+          <button class="pp-btn-sm" id="ed-front">↑ للأمام</button>
+          <button class="pp-btn-sm" id="ed-back">↓ للخلف</button>
+          <button class="pp-btn-sm" id="ed-clear-speech">إخفاء الكلام</button>
+          <button class="pp-btn-sm primary" id="ed-done">تَمّ</button>
+        </div>
+      </div>
+
+      <div class="pp-tools">
+        <button class="pp-btn danger" id="btn-clear">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6h18M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg>
+          تَنظيف المسرح
+        </button>
+        <button class="pp-btn primary" id="btn-save">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"/></svg>
+          احفَظ المَشهد
+        </button>
+      </div>
+
+      <div class="wheel-controls" style="margin-top:var(--s-3);">
+        <div class="wheel-stat">شَخصيَّات على المَسرح <strong id="stat-count">0</strong></div>
+        <div class="wheel-stat" style="text-align:center;">مَشاهد مَحفوظة <strong id="stat-saved">0</strong></div>
+        <button class="wheel-mute-toggle" id="mute-btn" aria-pressed="false">
+          <span class="mute-icon"></span>
+          <span class="mute-label">كتم الصوت</span>
+        </button>
+      </div>
+    </section>
+
+    <aside class="side-panel">
+      <div class="panel-card">
+        <div class="panel-head"><h3>اختَر خَلفية المَسرح</h3></div>
+        <div class="pp-backdrops" id="backdrops"></div>
+      </div>
+
+      <div class="panel-card">
+        <div class="panel-head">
+          <h3>مَكتبة المَشاهد</h3>
+          <span class="pill" id="lib-pill">0</span>
+        </div>
+        <div id="library" style="display:grid; grid-template-columns: 1fr 1fr; gap: 8px;"></div>
+      </div>
+
+      <div class="panel-card">
+        <div class="panel-head"><h3>أَدبُ الكَلام</h3></div>
+        <div class="hadith-card">
+          <div class="quote">«مَن كانَ يُؤمِنُ باللهِ واليومِ الآخِرِ فَلْيَقُلْ خَيراً أوْ ليَصمُت»</div>
+          <span class="src">مُتَّفَقٌ عليه<span class="hadith-grade ok">صحيح</span></span>
+        </div>
+        <div class="tip-card" style="margin-top:var(--s-3);">
+          <span class="tip-icon">!</span>
+          <span>ابتَكِر قِصصاً عن السَّلام، بِرّ الوالدين، الصِّدق. الفنُّ النَّافع يَتركُ أَثَراً.</span>
+        </div>
+      </div>
+    </aside>
+  </div>
+</div>
+
+<div class="particles" id="particles" aria-hidden="true"></div>
+
+<script src="../scripts/activity-common.js"></script>
+<script src="../scripts/puppet-theater.js"></script>
+
+<script>
+window.PAGE_DICT = {
+  "مسرح العرائس": "Puppet Theater",
+  "أنتَ المُخرِج الآن! اختر خَلفية، اسحَب الشَّخصيَّات إلى المسرح، ثم انقُر عليها لِتُكتَب لها كلامها. كَوِّن مَشهداً قَصيراً واحفَظه في مَكتبتك.": "You're the director now! Choose a backdrop, drag the characters onto the stage, then tap them to write their lines. Build a short scene and save it to your library.",
+  "كلام": "Lines for",
+  "الشَّخصيَّة": "the character",
+  "اكتُب ما تَقوله الشَّخصيَّة هنا…": "Write what the character says here…",
+  "🗑 حذف": "🗑 Delete",
+  "↑ للأمام": "↑ Forward",
+  "↓ للخلف": "↓ Back",
+  "إخفاء الكلام": "Hide speech",
+  "تَمّ": "Done",
+  "تَنظيف المسرح": "Clear the stage",
+  "احفَظ المَشهد": "Save the scene",
+  "شَخصيَّات على المَسرح": "Characters on stage",
+  "مَشاهد مَحفوظة": "Saved scenes",
+  "اختَر خَلفية المَسرح": "Choose a stage backdrop",
+  "مَكتبة المَشاهد": "Scene library",
+  "أَدبُ الكَلام": "Etiquette of speech",
+  "ابتَكِر قِصصاً عن السَّلام، بِرّ الوالدين، الصِّدق. الفنُّ النَّافع يَتركُ أَثَراً.": "Create stories about peace, kindness to parents, and honesty. Beneficial art leaves a mark."
+};
+</script>
+<script src="../scripts/i18n.js"></script>
+<script src="../../shared/nav-fix.js"></script>
+</body>
+</html>

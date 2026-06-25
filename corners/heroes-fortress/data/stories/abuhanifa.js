@@ -1,0 +1,56 @@
+/* data/stories/abuhanifa.js — Scholars · Abu Hanifa — sources: سير أعلام النبلاء · البداية والنهاية · إسلام ويب · الدرر السنية */
+window.HISN_STORIES = window.HISN_STORIES || {};
+HISN_STORIES.abuhanifa = [
+  { icon:'💰', scene:'madinah', character:'🧔',
+    title:{ ar:'التاجرُ الأمينُ الكريم', en:'The Honest, Generous Merchant' },
+    pages:[
+      { scene:'madinah', character:'🧔',
+        text:{ ar:'لم يكنْ <b>أبو حنيفة</b> عالماً فقط، بل كان <b>تاجراً ناجحاً أميناً</b> يبيعُ الثياب. وكان أمينُه في التجارةِ مضرباً للمثل. مرّةً باعَ شريكُه ثوباً فيه عيبٌ ونسيَ أن يُخبِرَ المشتري بالعيب، فلمّا علمَ أبو حنيفةَ بذلك، <b>تصدّقَ بثمنِ تلك التجارةِ كلِّها</b> — وكانت مبلغاً كبيراً — لأنّه لا يرضى أن يأكلَ مالاً فيه شبهةُ غشٍّ أو خداع!<br><br>وكان أبو حنيفةَ <b>كريماً جدّاً</b>، يتصدّقُ بأرباحِه على الفقراءِ وطلّابِ العلم، ويتفقّدُ جيرانَه وأصحابَه ويُعطيهم في السرّ. جمعَ بين <b>العلمِ والعملِ والكسبِ الحلالِ والكرم</b>. علّمنا أبو حنيفةَ أنّ <b>العالمَ الحقَّ أمينٌ في كسبِه كريمٌ في إنفاقِه</b>، وأنّ التقوى تظهرُ في المالِ كما تظهرُ في العبادة.',
+          en:'<b>Abu Hanifa</b> was not only a scholar — he was a <b>successful, honest merchant</b> who sold cloth. His honesty in trade was proverbial. Once his partner sold a garment with a defect and forgot to tell the buyer about it; when Abu Hanifa learned of this, he <b>gave the entire proceeds of that trade in charity</b> — a large sum — because he would not accept money tainted by deception or cheating!<br><br>Abu Hanifa was <b>very generous</b>, giving his profits in charity to the poor and students, checking on his neighbors and companions and giving to them secretly. He combined <b>knowledge, action, lawful earning, and generosity</b>. Abu Hanifa taught us that <b>a true scholar is honest in his earning and generous in his spending</b>, and that piety shows in wealth just as it shows in worship.' },
+        choice:{ q:{ar:'ماذا فعلَ أبو حنيفةَ حين بِيعَ ثوبٌ معيبٌ بلا إخبار؟',en:'What did Abu Hanifa do when a defective garment was sold without disclosure?'},
+          opts:[
+            { t:{ar:'تصدّقَ بثمنِ التجارةِ كلِّها كراهيةً للغش',en:'He gave the entire proceeds in charity, hating deception'},c:true,exp:{ar:'نعم! العالمُ الحقُّ أمينٌ في كسبِه.',en:'Yes! A true scholar is honest in his earning.'} },
+            { t:{ar:'احتفظَ بالمال',en:'He kept the money'},c:false,exp:{ar:'لا، بل تخلّصَ منه كراهيةً للشبهة.',en:'No — he gave it away, hating the doubtful.'} },
+            { t:{ar:'تجاهلَ الأمر',en:'He ignored the matter'},c:false,exp:{ar:'لا، بل عالجه بالصدقةِ والأمانة.',en:'No — he addressed it with charity and honesty.'} },
+          ] } },
+    ],
+    quiz:[
+      { q:{ar:'ما عملُ أبي حنيفةَ إلى جانبِ العلم؟',en:'What was Abu Hanifa\u2019s work besides knowledge?'},
+        opts:[ {t:{ar:'تاجرٌ أمين',en:'An honest merchant'},c:true}, {t:{ar:'جندي',en:'A soldier'},c:false}, {t:{ar:'طبيب',en:'A doctor'},c:false} ] },
+      { q:{ar:'ماذا فعلَ بثمنِ التجارةِ التي فيها شبهة؟',en:'What did he do with the proceeds of the doubtful trade?'},
+        opts:[ {t:{ar:'تصدّقَ بها كلِّها',en:'He gave it all in charity'},c:true}, {t:{ar:'أنفقها على نفسِه',en:'He spent it on himself'},c:false}, {t:{ar:'خبّأها',en:'He hid it'},c:false} ] },
+      { q:{ar:'ما الدرسُ من تجارةِ أبي حنيفة؟',en:'What is the lesson from Abu Hanifa\u2019s trade?'},
+        opts:[ {t:{ar:'العالمُ الحقُّ أمينٌ في كسبِه كريمٌ في إنفاقِه',en:'A true scholar is honest in earning and generous in spending'},c:true}, {t:{ar:'الغشُّ مقبول',en:'Cheating is acceptable'},c:false}, {t:{ar:'المالُ أهمُّ شيء',en:'Wealth is the most important thing'},c:false} ] },
+    ],
+    moral:{ar:'العالمُ الحقُّ أمينٌ في كسبِه كريمٌ في إنفاقِه، والتقوى تظهرُ في المالِ كما تظهرُ في العبادة.',en:'A true scholar is honest in his earning and generous in his spending; piety shows in wealth just as it shows in worship.'},
+    badge:{icon:'💰',title:{ar:'وِسامُ الكسبِ الحلال',en:'Badge of Lawful Earning'}},
+    reflect:[ {ar:'هل تكونُ أميناً تماماً حتى لو خسِرتَ بعضَ المال؟',en:'Are you completely honest even if you lose some money?'}, {ar:'كيف تُشارِكُ ما عندَك مع المحتاجين؟',en:'How do you share what you have with the needy?'} ],
+    didYouKnow:[ {ar:'اشتهرَ أبو حنيفةَ بالورعِ الشديدِ في كسبِه والكرمِ على الفقراءِ وطلّابِ العلم — المصدر: سير أعلام النبلاء',en:'Abu Hanifa was famed for intense scrupulousness in his earning and generosity to the poor and students — Source: Siyar A\u2019lam an-Nubala\u2019'}, {ar:'كان أبو حنيفةَ يُكثِرُ قيامَ الليلِ وقراءةَ القرآنِ حتى لُقِّبَ بالوتد لكثرةِ عبادتِه — المصدر: البداية والنهاية',en:'Abu Hanifa prayed much at night and recited much Quran, earning a reputation for abundant worship — Source: Al-Bidaya wa an-Nihaya'} ],
+  },
+  { icon:'🧠', scene:'mihrab', character:'📚',
+    title:{ ar:'ذكاءٌ في خدمةِ الدين', en:'Intelligence in Service of the Religion' },
+    pages:[
+      { scene:'mihrab', character:'📚',
+        text:{ ar:'وهبَ اللهُ <b>أبا حنيفةَ</b> عقلاً ذكيّاً وفهماً عميقاً. كان إذا عرضتْ مسألةٌ صعبةٌ في الدينِ يُفكِّرُ فيها ويناقشُها مع طلّابِه حتى يصلوا إلى الحكمِ الصحيحِ من القرآنِ والسنّة. وكان يجمعُ حولَه تلاميذَه فيتدارسونَ المسائلَ معاً — فكانت مدرستُه أشبهَ بـ<b>مجلسِ شورى للعلم</b>!<br><br>بهذا الذكاءِ والعملِ الجماعيِّ، وضعَ أبو حنيفةَ <b>قواعدَ الفقهِ</b> التي تساعدُ المسلمينَ على معرفةِ الحلالِ والحرامِ في كلِّ زمان. ومن مدرستِه تخرّجَ علماءُ كبارٌ نشروا علمَه. واليومَ، بعدَ أكثرَ من ألفِ سنة، ما زالَ <b>المذهبُ الحنفي</b> يتبعُه ملايينُ المسلمينَ حولَ العالم! علّمنا أبو حنيفةَ أنّ <b>العقلَ نعمةٌ عظيمةٌ إذا استُخدِمَ في فهمِ الدينِ ونفعِ الناس</b>، وأنّ العلمَ النافعَ صدقةٌ جاريةٌ يبقى أجرُها.',
+          en:'Allah gave <b>Abu Hanifa</b> a sharp mind and deep understanding. When a difficult matter of religion arose, he would reflect on it and discuss it with his students until they reached the correct ruling from the Quran and Sunnah. He gathered his students and they studied questions together — so his school was like a <b>consultation council for knowledge</b>!<br><br>With this intelligence and teamwork, Abu Hanifa laid down <b>principles of jurisprudence</b> that help Muslims know the lawful and forbidden in every age. From his school graduated great scholars who spread his knowledge. Today, more than a thousand years later, the <b>Hanafi school</b> is still followed by millions of Muslims around the world! Abu Hanifa taught us that <b>the mind is a great blessing when used to understand the religion and benefit people</b>, and that beneficial knowledge is an ongoing charity whose reward endures.' },
+        choice:{ q:{ar:'كيف استخدمَ أبو حنيفةَ ذكاءه؟',en:'How did Abu Hanifa use his intelligence?'},
+          opts:[
+            { t:{ar:'في فهمِ الدينِ ووضعِ قواعدِ الفقهِ لنفعِ الناس',en:'To understand the religion and lay down principles of jurisprudence to benefit people'},c:true,exp:{ar:'نعم! العقلُ نعمةٌ إذا استُخدِمَ في الخير.',en:'Yes! The mind is a blessing when used for good.'} },
+            { t:{ar:'في جمعِ المال',en:'To gather wealth'},c:false,exp:{ar:'لا، بل في خدمةِ الدينِ والعلم.',en:'No — to serve the religion and knowledge.'} },
+            { t:{ar:'في اللهو',en:'For amusement'},c:false,exp:{ar:'لا، بل في فهمِ الدينِ ونفعِ الناس.',en:'No — to understand the religion and benefit people.'} },
+          ] } },
+    ],
+    quiz:[
+      { q:{ar:'كيف كان أبو حنيفةَ يحلُّ المسائلَ الصعبة؟',en:'How did Abu Hanifa solve difficult questions?'},
+        opts:[ {t:{ar:'يُفكِّرُ ويناقشُها مع طلّابِه من القرآنِ والسنّة',en:'He reflected and discussed them with his students from Quran and Sunnah'},c:true}, {t:{ar:'يتركها',en:'He left them'},c:false}, {t:{ar:'يخمّن',en:'He guessed'},c:false} ] },
+      { q:{ar:'ماذا وضعَ أبو حنيفةَ ليُساعِدَ المسلمين؟',en:'What did Abu Hanifa lay down to help Muslims?'},
+        opts:[ {t:{ar:'قواعدَ الفقه',en:'Principles of jurisprudence'},c:true}, {t:{ar:'قوانينَ التجارة',en:'Trade laws'},c:false}, {t:{ar:'لا شيء',en:'Nothing'},c:false} ] },
+      { q:{ar:'ما الدرسُ من علمِ أبي حنيفة؟',en:'What is the lesson from Abu Hanifa\u2019s knowledge?'},
+        opts:[ {t:{ar:'العقلُ نعمةٌ إذا استُخدِمَ في فهمِ الدينِ ونفعِ الناس',en:'The mind is a blessing when used to understand religion and benefit people'},c:true}, {t:{ar:'الذكاءُ بلا فائدة',en:'Intelligence is useless'},c:false}, {t:{ar:'العلمُ للنفسِ فقط',en:'Knowledge is for oneself only'},c:false} ] },
+    ],
+    moral:{ar:'العقلُ نعمةٌ عظيمةٌ إذا استُخدِمَ في فهمِ الدينِ ونفعِ الناس، والعلمُ النافعُ صدقةٌ جاريةٌ يبقى أجرُها.',en:'The mind is a great blessing when used to understand the religion and benefit people; beneficial knowledge is an ongoing charity whose reward endures.'},
+    badge:{icon:'🧠',title:{ar:'وِسامُ العقلِ النافع',en:'Badge of the Beneficial Mind'}},
+    reflect:[ {ar:'كيف تستخدمُ عقلَك ومواهبَك في الخير؟',en:'How do you use your mind and talents for good?'}, {ar:'هل تتعلّمُ مع غيرِك وتتناقشُ لتفهمَ أفضل؟',en:'Do you learn with others and discuss to understand better?'} ],
+    didYouKnow:[ {ar:'كان أبو حنيفةَ يبني فقهَه بالتشاورِ مع تلاميذِه الكبارِ حتى يصلوا للحكمِ الصحيح — المصدر: سير أعلام النبلاء',en:'Abu Hanifa built his jurisprudence by consulting his senior students until they reached the correct ruling — Source: Siyar A\u2019lam an-Nubala\u2019'}, {ar:'المذهبُ الحنفيُّ من أوسعِ المذاهبِ انتشاراً، يتبعُه مسلمونَ في تركيا والهندِ وآسيا الوسطى وغيرِها — المصدر: كتب التاريخ',en:'The Hanafi school is among the most widespread, followed by Muslims in Turkey, India, Central Asia, and beyond — Source: history works'} ],
+  },
+];

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" data-theme="dusk" data-path="rampart">
+<head>
+<meta name="color-scheme" content="dark">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+<title>حِصن الأبطال · Hero's Fortress</title>
+<meta name="theme-color" content="#0C0A1C">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Tajawal:wght@400;500;700;800;900&family=Amiri:wght@400;700&family=Nunito:wght@600;700;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+<link rel="stylesheet" href="styles/base.css">
+<link rel="stylesheet" href="styles/hub.css">
+<script>(function(){try{var p=JSON.parse(localStorage.getItem('hisn-prefs2')||'{}');var r=document.documentElement;if(p.theme)r.dataset.theme=p.theme;if(p.path)r.dataset.path=p.path;}catch(e){}})();</script>
+<style id="__antiflash">html{background:#0A2540;color-scheme:dark}</style>
+</head>
+<style>
+  #learnGrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:.7rem;padding:.4rem}
+  .learn-tile{display:flex;align-items:center;gap:.5rem;text-decoration:none;background:rgba(255,255,255,.06);border:1.5px solid var(--ec,#7E5BD0);border-radius:1rem;padding:.7rem .8rem;color:inherit;font-weight:800;font-family:'Tajawal',sans-serif;transition:transform .15s,background .2s}
+  .learn-tile:hover{transform:translateY(-3px);background:rgba(126,91,208,.16)}
+  .learn-tile .lt-ic{font-size:1.3rem;width:1.6rem;display:inline-flex;justify-content:center}
+  .learn-tile .lt-ic svg{width:1.3rem;height:1.3rem}
+  .learn-tile .lt-nm{flex:1;font-size:.92rem}
+  .learn-tile .lt-ct{font-size:.74rem;font-weight:800;opacity:.7;background:rgba(0,0,0,.25);border-radius:1rem;padding:.1rem .5rem}
+  .learn-tile .lt-ct.full{background:rgba(46,158,91,.3);color:#bff7d4;opacity:1}
+</style>
+</head>
+<body>
+<div class="stars" id="stars"></div>
+
+<header class="topbar">
+  <a class="tb-back" href="../../index.html"><span>←</span><span id="backTxt">المدينة</span></a>
+  <div class="brand">
+    <span class="brand-badge" id="brandBadge"></span>
+    <div><h1 id="brandName">حِصن الأبطال</h1><p class="ar-only">ركنُ التاريخ</p><p class="en-only">History Corner</p></div>
+  </div>
+  <div class="tb-right">
+    <div class="xp-wrap"><div class="xp-top"><span class="lvl" id="lvl">LVL 1</span><span class="xp" id="xp">0 XP</span></div><div class="xp-track"><div class="xp-fill" id="xpfill"></div></div></div>
+    <div class="lang"><button id="langAr" class="on" onclick="setLang('ar')">عربي</button><button id="langEn" onclick="setLang('en')">EN</button></div>
+  </div>
+</header>
+
+<div class="wrap">
+  <section class="crest">
+    <div class="crest-shield" id="crestShield"></div>
+    <h2><span class="ar-only">حِصن الأبطال</span><span class="crest-en en-only">Hero's Fortress</span></h2>
+    <p id="crestSub">اصعدْ عبرَ الزمن في أربعِ مراحل. اختَر مرحلةً وابدأِ الرحلة.</p>
+    <div class="crest-meta" id="crestMeta"></div>
+  </section>
+
+  <div class="section-lbl" id="secEras">مراحلُ الحصن</div>
+  <nav class="gateways" id="gateways"></nav>
+
+  <!-- "تعلّم مع أنوس" hub launcher removed (owner request, Jun 2026):
+       redundant — each era already surfaces its activities inside the era map. -->
+
+  <section class="hall">
+    <div class="hall-card">
+      <div class="hall-head"><div class="glow"></div>
+        <h3><span class="ar-only">قاعةُ الأبطال</span><span class="hall-en en-only">Hall of Heroes</span></h3>
+        <p id="hallSub">اجمعْ وسامَ كلِّ بطلٍ تُكملُ قصّتَه</p>
+      </div>
+      <div class="hall-grid" id="hallGrid"></div>
+    </div>
+  </section>
+</div>
+
+<div class="guide" id="guide">
+  <div class="guide-avatar" id="guideAvatar"></div>
+  <div class="guide-bubble"><button class="guide-x" onclick="tuckGuide()">✕</button><b id="guideName">بَطَل</b><p id="guideLine"></p></div>
+</div>
+
+<!-- App scripts (plain JS): download in parallel, execute in dependency order -->
+<script defer src="engine/icons.js"></script>
+<script defer src="engine/svg.js"></script>
+<script defer src="data/index.js"></script>
+<script defer src="data/prophets.js"></script>
+<script defer src="data/seerah.js"></script>
+<script defer src="data/heroes.js"></script>
+<script defer src="data/battles.js"></script>
+<script defer src="data/creativity.js"></script>
+<script defer src="data/activities.js"></script>
+<script defer src="data/activities-seerah.js"></script>
+<script defer src="data/activities-heroes.js"></script>
+<script defer src="data/activities-battles.js"></script>
+<script defer src="data/heart.js"></script>
+<script defer src="data/heart-medals.js"></script>
+<script defer src="engine/progress.js"></script>
+<script defer src="engine/hub.js"></script>
+<script>window.MK_CORNER='history';window.MK_SCORE_ERAS=['prophets','seerah','heroes','battles'];</script>
+<script defer src="../shared/mk-system.js"></script>
+<script defer src="../shared/mk-journeys.js"></script>
+<script defer src="../shared/mk-corner-score.js"></script>
+<script defer src="../shared/mk-bag.js"></script>
+<script defer src="../shared/mk-train.js"></script>
+<script defer src="../shared/nav-fix.js"></script>
+<script src="../shared/mk-citynav.js"></script>
+</body>
+</html>

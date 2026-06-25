@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta name="color-scheme" content="dark">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>من يلعب اليوم؟ | Who's Playing?</title>
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+<style>
+  :root{
+    --bg1:#081E36; --bg2:#0E2E4E; --bg3:#123a5e;
+    --gold:#E8B530; --gold-lt:#F5CC5A; --gold-soft:#F7DC9E;
+    --ink:#FEF5DC; --muted:rgba(254,245,220,.66);
+    --card:rgba(255,255,255,.06); --line:rgba(232,181,48,.28);
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;min-height:100%}
+  body{
+    font-family:'Tajawal','Nunito',sans-serif;color:var(--ink);direction:rtl;background:
+    
+      radial-gradient(1200px 700px at 80% -10%, rgba(232,181,48,.14), transparent 60%),
+      radial-gradient(900px 600px at 0% 110%, rgba(46,139,87,.14), transparent 55%),
+      linear-gradient(165deg,var(--bg1),var(--bg2) 60%,var(--bg3));
+    min-height:100vh;display:flex;flex-direction:column;align-items:center;
+    padding:1.5rem 1rem 3rem;
+  }
+  html[dir="ltr"] body{direction:ltr;font-family:'Nunito','Tajawal',sans-serif}
+  .topbar{width:100%;max-width:920px;display:flex;align-items:center;justify-content:space-between;gap:1rem;margin-bottom:1.4rem}
+  .brand{display:flex;align-items:center;gap:.6rem;font-weight:900;font-size:1.05rem;color:var(--gold-soft);text-decoration:none;cursor:pointer}
+  .brand:hover{color:var(--gold)}
+  .brand .logo{width:40px;height:40px;border-radius:50%;display:grid;place-items:center;font-size:1.3rem;background:linear-gradient(160deg,var(--gold),#b8901a);color:#10243d}
+  .lang{display:flex;border:1.5px solid var(--line);border-radius:2rem;overflow:hidden}
+  .lang button{background:transparent;border:none;color:var(--ink);font-weight:800;padding:.35rem .9rem;font-size:.82rem;cursor:pointer;font-family:inherit}
+  .lang button.active{background:var(--gold);color:#10243d}
+
+  .hero{text-align:center;margin:1.2rem 0 2rem}
+  .hero h1{margin:.2rem 0;font-size:2.1rem;font-weight:900}
+  .hero p{margin:0;color:var(--muted);font-size:1.02rem}
+
+  .grid{width:100%;max-width:920px;display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:1.1rem}
+  .pcard{position:relative;background:var(--card);border:1.5px solid rgba(255,255,255,.1);border-radius:1.4rem;padding:1.5rem 1rem 1.2rem;text-align:center;cursor:pointer;transition:transform .18s,border-color .2s,box-shadow .25s}
+  .pcard:hover{transform:translateY(-5px);border-color:var(--gold);box-shadow:0 16px 34px rgba(0,0,0,.35)}
+  .pavi{width:84px;height:84px;border-radius:50%;margin:0 auto .7rem;display:grid;place-items:center;font-size:2.7rem;background:var(--pc,#D4A017);box-shadow:0 8px 20px rgba(0,0,0,.3),inset 0 0 0 3px rgba(255,255,255,.18)}
+  .pname{font-weight:900;font-size:1.12rem}
+  .pmeta{font-size:.72rem;color:var(--muted);margin-top:.15rem}
+  .pedit{position:absolute;top:.5rem;inset-inline-start:.5rem;width:30px;height:30px;border-radius:50%;border:1px solid var(--line);background:rgba(0,0,0,.35);color:var(--gold-soft);font-size:.85rem;cursor:pointer;opacity:0;transition:opacity .2s}
+  .pcard:hover .pedit{opacity:1}
+  .pcard.add{display:flex;flex-direction:column;align-items:center;justify-content:center;border-style:dashed;border-color:var(--line);min-height:200px;color:var(--gold-soft)}
+  .pcard.add .plus{font-size:2.6rem;line-height:1;margin-bottom:.4rem}
+  .pcard.add .at{font-weight:800}
+
+  .parent-link{margin-top:2.4rem;background:transparent;border:1.5px solid var(--line);color:var(--gold-soft);border-radius:2rem;padding:.6rem 1.4rem;font-weight:800;font-family:inherit;font-size:.9rem;cursor:pointer}
+  .parent-link:hover{background:rgba(232,181,48,.12)}
+
+  /* modal */
+  .ov{position:fixed;inset:0;background:rgba(4,14,26,.72);backdrop-filter:blur(7px);display:none;align-items:center;justify-content:center;z-index:50;padding:1rem}
+  .ov.open{display:flex}
+  .sheet{width:100%;max-width:440px;background:linear-gradient(170deg,#0e2c49,#0a2138);border:1.5px solid var(--line);border-radius:1.5rem;padding:1.6rem 1.4rem;box-shadow:0 24px 60px rgba(0,0,0,.5)}
+  .sheet h2{margin:.1rem 0 1.1rem;text-align:center;font-size:1.4rem;font-weight:900;color:var(--gold-soft)}
+  .fld-lbl{font-size:.82rem;font-weight:800;color:var(--muted);margin:.9rem 0 .45rem}
+  .nm-in{width:100%;border:1.5px solid var(--line);background:rgba(255,255,255,.07);color:var(--ink);border-radius:1rem;padding:.8rem 1rem;font-size:1.05rem;font-weight:700;font-family:inherit;text-align:center}
+  .nm-in:focus{outline:none;border-color:var(--gold)}
+  .picker{display:flex;flex-wrap:wrap;gap:.45rem;justify-content:center}
+  .opt{width:46px;height:46px;border-radius:50%;border:2px solid transparent;background:rgba(255,255,255,.07);display:grid;place-items:center;font-size:1.5rem;cursor:pointer;transition:transform .12s,border-color .15s}
+  .opt:hover{transform:scale(1.08)}
+  .opt.sel{border-color:var(--gold);background:rgba(232,181,48,.18)}
+  .opt.col{font-size:0}
+  .acts{display:flex;gap:.6rem;margin-top:1.5rem}
+  .btn{flex:1;border:none;border-radius:1rem;padding:.85rem;font-weight:900;font-size:1rem;cursor:pointer;font-family:inherit}
+  .btn.go{background:linear-gradient(135deg,var(--gold),#c79518);color:#10243d}
+  .btn.cancel{background:rgba(255,255,255,.08);color:var(--ink);border:1px solid var(--line)}
+  .btn.del{background:rgba(192,57,43,.85);color:#fff;margin-top:.6rem;width:100%}
+  .hint{text-align:center;font-size:.78rem;color:var(--muted);margin-top:1.4rem}
+</style>
+<style id="__antiflash">html{background:#081E36;color-scheme:dark}</style>
+</head>
+<body>
+  <div class="topbar">
+    <a class="brand" href="../../index.html" title="الصفحة الرئيسية · Home"><span class="logo">🏙️</span><span class="lng-ar">تربية الطفل المسلم</span><span class="lng-en">Muslim Kids' Tarbiyah</span></a>
+    <div class="lang">
+      <button data-lang="en">EN</button>
+      <button data-lang="ar" class="active">عربي</button>
+    </div>
+  </div>
+
+  <div class="hero">
+    <h1><span class="lng-ar">مَن يَلعَبُ اليوم؟ 👋</span><span class="lng-en">Who's playing today? 👋</span></h1>
+    <p><span class="lng-ar">اختَر بِطاقَتَك، أو أنشِئ واحِدةً جَديدة</span><span class="lng-en">Pick your card, or create a new one</span></p>
+  </div>
+
+  <div class="grid" id="grid"></div>
+
+  <button class="parent-link" id="parentLink">🧔 <span class="lng-ar">دُخولُ الأهل</span><span class="lng-en">Parents' entrance</span></button>
+
+  <!-- create / edit modal -->
+  <div class="ov" id="ov">
+    <div class="sheet">
+      <h2 id="ovTitle"></h2>
+      <div class="fld-lbl"><span class="lng-ar">الاسم</span><span class="lng-en">Name</span></div>
+      <input class="nm-in" id="nmIn" maxlength="20" placeholder="">
+      <div class="fld-lbl"><span class="lng-ar">اختَر شَخصِيَّتَك</span><span class="lng-en">Choose your character</span></div>
+      <div class="picker" id="aviPick"></div>
+      <div class="fld-lbl"><span class="lng-ar">اللَّون</span><span class="lng-en">Color</span></div>
+      <div class="picker" id="colPick"></div>
+      <div class="acts">
+        <button class="btn cancel" id="btnCancel"></button>
+        <button class="btn go" id="btnGo"></button>
+      </div>
+      <button class="btn del" id="btnDel" style="display:none"></button>
+    </div>
+  </div>
+
+  <div class="hint"><span class="lng-ar">يَعمَلُ دونَ إنترنت · بَياناتُ كُلِّ طِفلٍ مَحفوظةٌ على هذا الجِهاز</span><span class="lng-en">Works offline · each child's data is saved on this device</span></div>
+
+<script defer src="mk-system.js"></script>
+<script defer src="mk-journeys.js"></script>
+<script defer src="mk-bag.js"></script>
+<script>
+  var AVIS = ['🧒','👦','👧','🧕','👶','🦁','🐯','🦊','🐼','🦉','🐨','🦄','🐢','🦋','⭐','🌙','🚀','🌷'];
+  var COLS = ['#D4A017','#C0392B','#117A8B','#2E8B57','#6C3483','#E67E22','#2980B9','#1A9B7B','#D81B60','#5D4037'];
+
+  var lang = (window.MK && MK.lang()) || 'ar';
+  function applyLang(){
+    document.documentElement.lang = lang;
+    document.documentElement.dir = lang==='ar' ? 'rtl' : 'ltr';
+    document.querySelectorAll('.lng-ar').forEach(function(e){ e.style.display = lang==='ar'?'':'none'; });
+    document.querySelectorAll('.lng-en').forEach(function(e){ e.style.display = lang==='en'?'':'none'; });
+    document.querySelectorAll('.lang button').forEach(function(b){ b.classList.toggle('active', b.dataset.lang===lang); });
+    document.getElementById('nmIn').placeholder = lang==='ar' ? 'اكتُب اسمَك هنا' : 'Type your name';
+    document.getElementById('btnGo').textContent = lang==='ar' ? 'ابدَأ ←' : 'Start →';
+    document.getElementById('btnCancel').textContent = lang==='ar' ? 'إلغاء' : 'Cancel';
+    document.getElementById('btnDel').textContent = lang==='ar' ? '🗑️ حَذفُ هذا الطِّفل' : '🗑️ Delete this child';
+    render();
+  }
+  document.querySelectorAll('.lang button').forEach(function(b){
+    b.onclick = function(){ lang=b.dataset.lang; try{localStorage.setItem('bunyanLang',lang);}catch(e){} applyLang(); };
+  });
+
+  var EDIT = null; // null = create mode, else profile id
+  var selAvi = AVIS[0], selCol = COLS[0];
+
+  function render(){
+    var grid = document.getElementById('grid');
+    var ps = MK.profiles();
+    grid.innerHTML = ps.map(function(p){
+      return '<div class="pcard" data-id="'+p.id+'" style="--pc:'+p.color+'">'
+        + '<button class="pedit" data-edit="'+p.id+'" title="edit">✎</button>'
+        + '<div class="pavi" style="'+p.color+'">'+p.avatar+'</div>'
+        + '<div class="pname">'+escapeHtml(p.name)+'</div>'
+        + '<div class="pmeta">'+(lang==='ar'?'اضغَط للدُّخول':'tap to enter')+'</div>'
+        + '</div>';
+    }).join('') + '<div class="pcard add" id="addCard"><div class="plus">+</div><div class="at">'+(lang==='ar'?'طِفلٌ جَديد':'New child')+'</div></div>';
+
+    grid.querySelectorAll('.pcard[data-id]').forEach(function(card){
+      card.onclick = function(e){ if(e.target.closest('.pedit')) return; enter(card.dataset.id); };
+    });
+    grid.querySelectorAll('.pedit').forEach(function(b){
+      b.onclick = function(e){ e.stopPropagation(); openEdit(b.dataset.edit); };
+    });
+    document.getElementById('addCard').onclick = function(){ openCreate(); };
+  }
+
+  function enter(id){
+    MK.setActive(id);
+    window.location.href = '../../index.html?lang=' + lang;
+  }
+
+  function openCreate(){
+    EDIT = null; selAvi = AVIS[Math.floor(Math.random()*8)]; selCol = COLS[Math.floor(Math.random()*COLS.length)];
+    document.getElementById('ovTitle').textContent = lang==='ar' ? '✨ طِفلٌ جَديد' : '✨ New child';
+    document.getElementById('nmIn').value = '';
+    document.getElementById('btnDel').style.display = 'none';
+    buildPickers(); openOv();
+    setTimeout(function(){ document.getElementById('nmIn').focus(); }, 100);
+  }
+  function openEdit(id){
+    var p = MK.profiles().filter(function(x){return x.id===id;})[0]; if(!p) return;
+    EDIT = id; selAvi = p.avatar; selCol = p.color;
+    document.getElementById('ovTitle').textContent = lang==='ar' ? '✎ تَعديل' : '✎ Edit';
+    document.getElementById('nmIn').value = p.name;
+    document.getElementById('btnDel').style.display = '';
+    buildPickers(); openOv();
+  }
+  function buildPickers(){
+    document.getElementById('aviPick').innerHTML = AVIS.map(function(a){
+      return '<button class="opt'+(a===selAvi?' sel':'')+'" data-avi="'+a+'">'+a+'</button>';
+    }).join('');
+    document.getElementById('colPick').innerHTML = COLS.map(function(c){
+      return '<button class="opt col'+(c===selCol?' sel':'')+'" data-col="'+c+'" style="'+c+'"></button>';
+    }).join('');
+    document.querySelectorAll('#aviPick .opt').forEach(function(b){ b.onclick=function(){ selAvi=b.dataset.avi; buildPickers(); }; });
+    document.querySelectorAll('#colPick .opt').forEach(function(b){ b.onclick=function(){ selCol=b.dataset.col; buildPickers(); }; });
+  }
+  function openOv(){ document.getElementById('ov').classList.add('open'); }
+  function closeOv(){ document.getElementById('ov').classList.remove('open'); }
+
+  document.getElementById('btnCancel').onclick = closeOv;
+  document.getElementById('ov').onclick = function(e){ if(e.target.id==='ov') closeOv(); };
+  document.getElementById('btnGo').onclick = function(){
+    var name = document.getElementById('nmIn').value.trim();
+    if(EDIT){
+      MK.renameProfile(EDIT, name);
+      var list = MK.profiles(); list.forEach(function(p){ if(p.id===EDIT){ p.avatar=selAvi; p.color=selCol; } });
+      try{ localStorage.setItem('mk:profiles', JSON.stringify(list)); }catch(e){}
+      closeOv(); render();
+    } else {
+      var p = MK.addProfile(name, selAvi, selCol);
+      closeOv(); enter(p.id);
+    }
+  };
+  document.getElementById('btnDel').onclick = function(){
+    if(!EDIT) return;
+    var msg = lang==='ar' ? 'حذف هذا الطفل وكل تقدّمه؟ لا يمكن التراجع.' : 'Delete this child and all their progress? This cannot be undone.';
+    if(window.confirm(msg)){ MK.removeProfile(EDIT); closeOv(); render(); }
+  };
+
+  document.getElementById('parentLink').onclick = function(){
+    window.location.href = '../little-district/pages/parents.html?lang=' + lang;
+  };
+
+  function escapeHtml(s){ return String(s).replace(/[&<>"]/g, function(c){ return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]; }); }
+
+  (function boot(){ if(!window.MK){ return setTimeout(boot, 30); } applyLang(); })();
+</script>
+<script defer src="nav-fix.js"></script>
+</body>
+</html>

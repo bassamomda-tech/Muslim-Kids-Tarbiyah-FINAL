@@ -1,0 +1,56 @@
+/* data/stories/fatima.js — Heroes · Fatima az-Zahra — sources: صور من حياة الصحابة (الباشا) · إسلام ويب · الدرر السنية · صحيح البخاري ومسلم */
+window.HISN_STORIES = window.HISN_STORIES || {};
+HISN_STORIES.fatima = [
+  { icon:'❤️', scene:'kaaba', character:'👧',
+    title:{ ar:'البنتُ التي دافعتْ عن أبيها', en:'The Daughter Who Defended Her Father' },
+    pages:[
+      { scene:'kaaba', character:'👧',
+        text:{ ar:'كانت <b>فاطمةُ</b> صغيرةً حين كان أبوها النبيُّ ﷺ يدعو إلى الإسلامِ في مكّة. وذاتَ يومٍ بينما كان النبيُّ ﷺ ساجداً يُصلّي عندَ الكعبة، جاءَ بعضُ سفهاءِ قريشٍ وألقَوا على ظهرِه <b>فَرْثَ جزورٍ</b> (أوساخَ بهيمةٍ مذبوحة) استهزاءً وأذى، وضحكوا!<br><br>فمن الذي هبَّ لنصرتِه؟ <b>ابنتُه الصغيرةُ فاطمة</b>! جاءتْ مسرعةً، فأزالتِ الأذى عن ظهرِ أبيها بيديها الصغيرتين، و<b>واجهتْ أولئكَ الرجالَ وأنّبتْهم</b> رغمَ صِغَرِها! لم تخفْ ولم تتردّدْ في الدفاعِ عن أبيها وعن الحق. كانت بارّةً شجاعةً تُحِبُّ أباها حبّاً عظيماً.',
+          en:'<b>Fatima</b> was young when her father the Prophet ﷺ called people to Islam in Makkah. One day, while the Prophet ﷺ was prostrating in prayer at the Ka\u2019ba, some foolish men of Quraysh threw onto his back the <b>filth of a slaughtered camel</b> in mockery and harm, and laughed!<br><br>Who rushed to his aid? <b>His young daughter Fatima</b>! She came hurrying, removed the filth from her father\u2019s back with her small hands, and <b>faced those men and rebuked them</b> despite her youth! She did not fear or hesitate to defend her father and the truth. She was devoted, brave, and loved her father dearly.' },
+        choice:{ q:{ar:'ماذا فعلتْ فاطمةُ حين رأتِ الأذى يقعُ على أبيها؟',en:'What did Fatima do when she saw harm befall her father?'},
+          opts:[
+            { t:{ar:'أزالتِ الأذى ودافعتْ عنه بشجاعة',en:'She removed the harm and bravely defended him'},c:true,exp:{ar:'نعم! البِرُّ والشجاعةُ في نصرةِ من تحب.',en:'Yes! Devotion and courage in defending whom you love.'} },
+            { t:{ar:'خافتْ وهربتْ',en:'She fled in fear'},c:false,exp:{ar:'لا، بل هبّتْ لنصرتِه فوراً.',en:'No — she rushed to his aid at once.'} },
+            { t:{ar:'ضحكتْ معهم',en:'She laughed with them'},c:false,exp:{ar:'لا، بل أنّبتْهم ودافعتْ عن أبيها.',en:'No — she rebuked them and defended her father.'} },
+          ] } },
+    ],
+    quiz:[
+      { q:{ar:'من دافعَ عن النبيِّ ﷺ عندَ الكعبة؟',en:'Who defended the Prophet ﷺ at the Ka\u2019ba?'},
+        opts:[ {t:{ar:'ابنتُه فاطمة',en:'His daughter Fatima'},c:true}, {t:{ar:'أبو جهل',en:'Abu Jahl'},c:false}, {t:{ar:'أبو لهب',en:'Abu Lahab'},c:false} ] },
+      { q:{ar:'كيف واجهتْ فاطمةُ سفهاءَ قريش؟',en:'How did Fatima face the foolish men of Quraysh?'},
+        opts:[ {t:{ar:'بشجاعةٍ أزالتِ الأذى وأنّبتْهم',en:'Bravely removed the harm and rebuked them'},c:true}, {t:{ar:'بالخوف',en:'With fear'},c:false}, {t:{ar:'بالهروب',en:'By fleeing'},c:false} ] },
+      { q:{ar:'ماذا نتعلّمُ من موقفِ فاطمة؟',en:'What do we learn from Fatima\u2019s stance?'},
+        opts:[ {t:{ar:'البِرُّ والشجاعةُ في نصرةِ الحق',en:'Devotion and courage in supporting the truth'},c:true}, {t:{ar:'السكوتُ عن الظلم',en:'Staying silent before wrong'},c:false}, {t:{ar:'الخوفُ من الناس',en:'Fearing people'},c:false} ] },
+    ],
+    moral:{ar:'البِرُّ بالوالدينِ والشجاعةُ في نصرةِ الحقِّ خُلُقانِ عظيمانِ مهما صَغُرَ سنُّك.',en:'Devotion to parents and courage in supporting the truth are two great virtues, however young you are.'},
+    badge:{icon:'❤️',title:{ar:'وِسامُ البنتِ البارّة',en:'Badge of the Devoted Daughter'}},
+    reflect:[ {ar:'هل تدافعُ عن والديك وعمّن تحبُّ بأدبٍ وشجاعة؟',en:'Do you defend your parents and loved ones with courtesy and courage?'}, {ar:'كيف تُدخِلُ السرورَ على قلبِ والديك؟',en:'How do you bring joy to your parents\u2019 hearts?'} ],
+    didYouKnow:[ {ar:'حادثةُ إلقاءِ الأذى على النبيِّ ﷺ وهو ساجدٌ ثابتةٌ في صحيحِ البخاري — المصدر: صحيح البخاري',en:'The incident of filth thrown on the Prophet ﷺ while prostrating is established in Sahih al-Bukhari — Source: Sahih al-Bukhari'}, {ar:'لُقِّبتْ فاطمةُ بـ«أمِّ أبيها» لشدّةِ بِرِّها وعنايتِها بالنبيِّ ﷺ — المصدر: سير أعلام النبلاء',en:'Fatima was nicknamed "the mother of her father" for her great devotion and care for the Prophet ﷺ — Source: Siyar A\u2019lam an-Nubala\u2019'} ],
+  },
+  { icon:'🌿', scene:'madinah', character:'🤲',
+    title:{ ar:'القناعةُ والصبرُ في بيتِ الزهراء', en:'Contentment and Patience in Fatima\u2019s Home' },
+    pages:[
+      { scene:'madinah', character:'🤲',
+        text:{ ar:'تزوّجتْ <b>فاطمةُ</b> ابنَ عمِّها <b>عليَّ بنَ أبي طالب</b>، وكانا فقيرَين يعيشانِ حياةً بسيطة. كانت فاطمةُ — مع أنّها بنتُ النبيِّ ﷺ — <b>تطحنُ الحَبَّ بيدِها</b> حتى أثّرتِ الرّحى في يدِها، وتستقي الماءَ وتخدمُ بيتَها، دون أن تشكوَ أو تطلبَ الترف.<br><br>وفي مرّةٍ جاءتْ تطلبُ من أبيها خادماً يُعينُها، فلم يُعطِها — بل علّمها ما هو خيرٌ من الدنيا كلِّها! قال لها ولعليّ: <b>«ألا أُعلِّمُكما خيراً ممّا سألتُما؟ إذا أويتُما إلى فراشِكما فسبِّحا ثلاثاً وثلاثين، واحمَدا ثلاثاً وثلاثين، وكبِّرا أربعاً وثلاثين»</b>. فرضيتْ فاطمةُ وقنعتْ، لأنّها تعلمُ أنّ كنوزَ الآخرةِ خيرٌ من راحةِ الدنيا. كانت قدوةً في القناعةِ والصبرِ والرضا.',
+          en:'<b>Fatima</b> married her cousin <b>Ali ibn Abi Talib</b>, and they were poor, living a simple life. Although she was the Prophet\u2019s ﷺ daughter, Fatima <b>ground grain with her own hand</b> until the millstone marked her hand, drew water, and served her home, without complaining or asking for luxury.<br><br>Once she came to ask her father for a servant to help her, but he did not give her one — instead he taught her something better than all the world! He told her and Ali: <b>"Shall I teach you something better than what you asked for? When you go to bed, say SubhanAllah thirty-three times, Alhamdulillah thirty-three times, and Allahu Akbar thirty-four times."</b> Fatima accepted and was content, knowing the treasures of the Hereafter are better than worldly comfort. She was a model of contentment, patience, and acceptance.' },
+        choice:{ q:{ar:'بماذا علّمها النبيُّ ﷺ بدلَ الخادم؟',en:'What did the Prophet ﷺ teach her instead of a servant?'},
+          opts:[
+            { t:{ar:'التسبيحَ والحمدَ والتكبيرَ عند النوم',en:'Glorification, praise, and magnification before sleep'},c:true,exp:{ar:'نعم! كنوزُ الآخرةِ خيرٌ من راحةِ الدنيا.',en:'Yes! The treasures of the Hereafter are better than worldly comfort.'} },
+            { t:{ar:'أعطاها مالاً كثيراً',en:'He gave her much wealth'},c:false,exp:{ar:'لا، بل علّمها ذكراً خيراً من الدنيا.',en:'No — he taught her a remembrance better than the world.'} },
+            { t:{ar:'أعطاها قصراً',en:'He gave her a palace'},c:false,exp:{ar:'لا، بل علّمها ما ينفعُها في الآخرة.',en:'No — he taught her what benefits her in the Hereafter.'} },
+          ] } },
+    ],
+    quiz:[
+      { q:{ar:'من زوجُ فاطمةَ رضي الله عنها؟',en:'Who was Fatima\u2019s husband?'},
+        opts:[ {t:{ar:'عليُّ بنُ أبي طالب',en:'Ali ibn Abi Talib'},c:true}, {t:{ar:'عثمان',en:'Uthman'},c:false}, {t:{ar:'أبو بكر',en:'Abu Bakr'},c:false} ] },
+      { q:{ar:'ماذا كانت فاطمةُ تفعلُ في بيتِها؟',en:'What did Fatima do in her home?'},
+        opts:[ {t:{ar:'تطحنُ وتستقي وتخدمُ بصبر',en:'She ground grain, drew water, and served patiently'},c:true}, {t:{ar:'لا تعملُ شيئاً',en:'She did nothing'},c:false}, {t:{ar:'تأمرُ الخدم',en:'She ordered servants about'},c:false} ] },
+      { q:{ar:'ما الذي قنعتْ به فاطمةُ بدلَ الترف؟',en:'What did Fatima content herself with instead of luxury?'},
+        opts:[ {t:{ar:'الذكرُ وكنوزُ الآخرة',en:'Remembrance and the treasures of the Hereafter'},c:true}, {t:{ar:'المالُ والقصور',en:'Wealth and palaces'},c:false}, {t:{ar:'الراحةُ الدائمة',en:'Constant rest'},c:false} ] },
+    ],
+    moral:{ar:'القناعةُ غنى القلب، وكنوزُ الآخرةِ خيرٌ من راحةِ الدنيا، والصبرُ على العملِ شرفٌ لا عيب.',en:'Contentment is the heart\u2019s richness; the treasures of the Hereafter are better than worldly comfort, and patience in work is an honor, not a shame.'},
+    badge:{icon:'🌿',title:{ar:'وِسامُ القناعةِ والرضا',en:'Badge of Contentment & Acceptance'}},
+    reflect:[ {ar:'هل تقنعُ بما عندَك وتشكرُ اللهَ بدلَ أن تطلبَ المزيد؟',en:'Are you content with what you have and thank Allah instead of asking for more?'}, {ar:'هل تُحافِظُ على أذكارِ النومِ التي علّمها النبيُّ ﷺ فاطمة؟',en:'Do you keep the bedtime remembrances the Prophet ﷺ taught Fatima?'} ],
+    didYouKnow:[ {ar:'حديثُ تعليمِ النبيِّ ﷺ فاطمةَ وعليّاً أذكارَ النومِ ثابتٌ في صحيحِ البخاري ومسلم — المصدر: صحيح البخاري ومسلم',en:'The hadith of the Prophet ﷺ teaching Fatima and Ali the bedtime remembrances is established in Sahih al-Bukhari and Muslim — Source: Sahih al-Bukhari & Muslim'}, {ar:'كان النبيُّ ﷺ إذا قدِمَ من سفرٍ بدأَ بزيارةِ فاطمةَ قبلَ بيتِه — المصدر: سنن أبي داود',en:'When the Prophet ﷺ returned from a journey, he would begin by visiting Fatima before his own home — Source: Sunan Abi Dawud'} ],
+  },
+];

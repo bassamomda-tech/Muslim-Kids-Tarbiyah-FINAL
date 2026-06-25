@@ -1,0 +1,56 @@
+/* data/stories/ala_hadrami.js — Heroes · Al-Ala' ibn al-Hadrami — sources: صور من حياة الصحابة (الباشا) · إسلام ويب · الدرر السنية · البداية والنهاية */
+window.HISN_STORIES = window.HISN_STORIES || {};
+HISN_STORIES.ala_hadrami = [
+  { icon:'💧', scene:'desert', character:'🤲',
+    title:{ ar:'ماءٌ ينبعُ في قلبِ الصحراء', en:'Water Gushing in the Heart of the Desert' },
+    pages:[
+      { scene:'desert', character:'🐫',
+        text:{ ar:'كان <b>العلاءُ بنُ الحضرمي</b> والياً صالحاً وقائداً يقودُ جيشاً في الصحراء. وفي إحدى المسيرات، <b>ضلَّ الجيشُ الطريقَ ونفدَ الماء</b> تماماً! اشتدّ العطشُ على الناسِ والدوابِّ حتى خافوا الهلاك، ولم يكنْ حولَهم بئرٌ ولا نهر.<br><br>فماذا فعلَ العلاء؟ لم ييأسْ، بل توضّأَ وصلّى ركعتين، ثمّ رفعَ يديه إلى السماءِ ودعا بقلبٍ صادق: <b>«يا عليمُ يا حليمُ يا عليُّ يا عظيم، إنّا عبيدُك وفي سبيلِك نقاتلُ عدوَّك، فاسقِنا ماءً نتطهّرُ به ونشربُ»</b>. فما هي إلّا لحظاتٌ حتى ظهرَ لهم <b>غديرٌ عظيمٌ من الماء</b> فشربوا وتوضّؤوا وسقَوا دوابَّهم! صدقَ مع اللهِ فأغاثه.',
+          en:'<b>Al-Ala\u2019 ibn al-Hadrami</b> was a righteous governor and a commander leading an army in the desert. On one march, <b>the army lost its way and ran completely out of water</b>! Thirst pressed hard on the people and animals until they feared death, and there was no well or river around them.<br><br>What did al-Ala\u2019 do? He did not despair — he made wudu, prayed two rak\u2019ahs, then raised his hands to the sky and prayed with a sincere heart: <b>"O All-Knowing, O Forbearing, O Most High, O Magnificent — we are Your servants and for Your sake we fight Your enemy, so give us water to purify ourselves and to drink."</b> In mere moments, <b>a great pool of water</b> appeared, and they drank, made wudu, and watered their animals! He was true to Allah, so Allah relieved him.' },
+        choice:{ q:{ar:'ماذا فعلَ العلاءُ حين نفدَ الماءُ بدلَ أن ييأس؟',en:'What did al-Ala\u2019 do when water ran out, instead of despairing?'},
+          opts:[
+            { t:{ar:'صلّى ودعا اللهَ بصدقٍ وتوكّل',en:'He prayed and called on Allah with sincerity and reliance'},c:true,exp:{ar:'نعم! الدعاءُ الصادقُ مع التوكّلِ مفتاحُ الفرج.',en:'Yes! Sincere prayer with reliance is a key to relief.'} },
+            { t:{ar:'استسلمَ للعطش',en:'He gave in to thirst'},c:false,exp:{ar:'لا، بل لجأَ إلى اللهِ بالدعاء.',en:'No — he turned to Allah in prayer.'} },
+            { t:{ar:'رجعَ هارباً',en:'He fled back'},c:false,exp:{ar:'لا، بل صبرَ ودعا فأُغيث.',en:'No — he was patient and prayed, and was relieved.'} },
+          ] } },
+    ],
+    quiz:[
+      { q:{ar:'ما المشكلةُ التي واجهتْ جيشَ العلاء؟',en:'What problem did al-Ala\u2019\u2019s army face?'},
+        opts:[ {t:{ar:'نفادُ الماءِ في الصحراء',en:'Running out of water in the desert'},c:true}, {t:{ar:'نقصُ الطعام',en:'Lack of food'},c:false}, {t:{ar:'البرد',en:'The cold'},c:false} ] },
+      { q:{ar:'بماذا استجابَ اللهُ لدعائِه؟',en:'How did Allah answer his prayer?'},
+        opts:[ {t:{ar:'ظهرَ غديرٌ من الماء',en:'A pool of water appeared'},c:true}, {t:{ar:'نزلَ الثلج',en:'Snow fell'},c:false}, {t:{ar:'جاءتْ سفينة',en:'A ship came'},c:false} ] },
+      { q:{ar:'ما الدرسُ من القصّة؟',en:'What is the lesson of the story?'},
+        opts:[ {t:{ar:'الدعاءُ الصادقُ مع التوكّلِ مفتاحُ الفرج',en:'Sincere prayer with reliance is a key to relief'},c:true}, {t:{ar:'اليأسُ عند الشدّة',en:'Despair in hardship'},c:false}, {t:{ar:'الاعتمادُ على النفسِ فقط',en:'Relying on self alone'},c:false} ] },
+    ],
+    moral:{ar:'الدعاءُ الصادقُ مع التوكّلِ على اللهِ مفتاحُ الفرج، ومَن صدقَ مع ربِّه أغاثه.',en:'Sincere prayer with reliance on Allah is a key to relief; whoever is true to his Lord, He relieves him.'},
+    badge:{icon:'💧',title:{ar:'وِسامُ الغديرِ المبارك',en:'Badge of the Blessed Pool'}},
+    reflect:[ {ar:'حين تواجهُ صعوبةً هل تلجأُ إلى اللهِ بالدعاء؟',en:'When you face hardship, do you turn to Allah in prayer?'}, {ar:'كيف تجمعُ بين الأخذِ بالأسبابِ والتوكّلِ على الله؟',en:'How do you combine taking your means and relying on Allah?'} ],
+    didYouKnow:[ {ar:'دعواتُ العلاءِ المستجابةُ ذكرها أهلُ السيرِ كآياتٍ على صدقِه مع الله — المصدر: البداية والنهاية',en:'Al-Ala\u2019\u2019s answered prayers are recorded by the biographers as signs of his sincerity with Allah — Source: Al-Bidaya wa an-Nihaya'}, {ar:'كان العلاءُ والياً على البحرينِ في عهدِ النبيِّ ﷺ وأبي بكرٍ وعمر — المصدر: صور من حياة الصحابة',en:'Al-Ala\u2019 was governor of Bahrain under the Prophet ﷺ, Abu Bakr, and Umar — Source: Suwar min Hayat as-Sahaba'} ],
+  },
+  { icon:'🌊', scene:'desert', character:'🐎',
+    title:{ ar:'جيشٌ يمشي على البحر', en:'An Army Walking on the Sea' },
+    pages:[
+      { scene:'desert', character:'🐎',
+        text:{ ar:'في حروبِ الرِّدّةِ، فرَّ بعضُ الأعداءِ إلى <b>جزيرةٍ في البحر</b>، وحالَ بينهم وبين <b>العلاءِ</b> وجيشِه خليجٌ واسعٌ من ماءِ البحر، ولا سفنَ لهم! فبدا أنّ الأعداءَ قد نجَوا.<br><br>لكنّ العلاءَ كان صادقاً مع الله، فجمعَ جيشَه ودعا ربَّه بنفسِ أسمائِه: <b>«يا عليمُ يا حليمُ يا عليُّ يا عظيم»</b>، ثمّ قال للجيش: «امضوا بسمِ الله!» فاقتحموا الخليجَ على خيلِهم — <b>فإذا الماءُ لا يصلُ إلّا إلى حوافرِ الخيلِ كأنّهم على أرضٍ صلبة</b>! عبرَ الجيشُ كلُّه بسلامٍ وفاجأَ الأعداء. ثمّ كانت له دعوةٌ ثالثة: أن لا يُرى جسدُه بعدَ موتِه — فاستُجيبَ له. ثلاثُ دعواتٍ صادقاتٍ استجابَها اللهُ لعبدِه المخلص.',
+          en:'In the Ridda wars, some enemies fled to <b>an island in the sea</b>, and a wide gulf of seawater stood between them and <b>al-Ala\u2019</b> and his army — and they had no ships! It seemed the enemy had escaped.<br><br>But al-Ala\u2019 was true to Allah. He gathered his army and prayed to his Lord by the same names: <b>"O All-Knowing, O Forbearing, O Most High, O Magnificent,"</b> then told the army: "Proceed in the name of Allah!" They plunged into the gulf on their horses — and <b>the water reached only the horses\u2019 hooves, as if they were on solid ground</b>! The whole army crossed safely and surprised the enemy. Then he had a third prayer: that his body not be seen after death — and it was granted. Three sincere prayers Allah answered for His devoted servant.' },
+        choice:{ q:{ar:'كيف عبرَ جيشُ العلاءِ البحرَ بلا سفن؟',en:'How did al-Ala\u2019\u2019s army cross the sea without ships?'},
+          opts:[
+            { t:{ar:'بدعاءِ العلاءِ الصادقِ مشَوا فوقَ الماء',en:'By al-Ala\u2019\u2019s sincere prayer they walked over the water'},c:true,exp:{ar:'نعم! مَن صدقَ مع اللهِ رأى عجائبَ قدرتِه.',en:'Yes! Whoever is true with Allah witnesses the wonders of His power.'} },
+            { t:{ar:'بنَوا جسراً',en:'They built a bridge'},c:false,exp:{ar:'لا، بل عبروا بدعاءِ العلاءِ ومعجزةٍ من الله.',en:'No — they crossed by al-Ala\u2019\u2019s prayer and a sign from Allah.'} },
+            { t:{ar:'انتظروا الجزر',en:'They waited for low tide'},c:false,exp:{ar:'لا، بل عبروا فوقَ الماءِ بإذنِ الله.',en:'No — they crossed over the water by Allah\u2019s leave.'} },
+          ] } },
+    ],
+    quiz:[
+      { q:{ar:'ما الذي حالَ بين العلاءِ والأعداء؟',en:'What stood between al-Ala\u2019 and the enemy?'},
+        opts:[ {t:{ar:'خليجٌ من ماءِ البحر',en:'A gulf of seawater'},c:true}, {t:{ar:'جبل',en:'A mountain'},c:false}, {t:{ar:'صحراء',en:'A desert'},c:false} ] },
+      { q:{ar:'كم دعوةً مستجابةً عُرِفَتْ للعلاء؟',en:'How many answered prayers are known for al-Ala\u2019?'},
+        opts:[ {t:{ar:'ثلاث',en:'Three'},c:true}, {t:{ar:'واحدة',en:'One'},c:false}, {t:{ar:'عشر',en:'Ten'},c:false} ] },
+      { q:{ar:'ما سرُّ إجابةِ دعائِه؟',en:'What was the secret of his answered prayers?'},
+        opts:[ {t:{ar:'صدقُه وإخلاصُه مع الله',en:'His sincerity and devotion to Allah'},c:true}, {t:{ar:'قوّتُه الجسديّة',en:'His physical strength'},c:false}, {t:{ar:'مالُه',en:'His wealth'},c:false} ] },
+    ],
+    moral:{ar:'مَن صدقَ مع اللهِ في إيمانِه ودعائِه أراه اللهُ عجائبَ قدرتِه ولم يَرُدَّه خائباً.',en:'Whoever is true with Allah in faith and prayer, Allah shows him the wonders of His power and never turns him away disappointed.'},
+    badge:{icon:'🌊',title:{ar:'وِسامُ عبورِ البحر',en:'Badge of Crossing the Sea'}},
+    reflect:[ {ar:'هل تثقُ أنّ اللهَ قادرٌ على كلِّ شيءٍ مهما بدا صعباً؟',en:'Do you trust that Allah is able to do anything, however hard it seems?'}, {ar:'كيف تُقوّي صدقَك وإخلاصَك مع الله؟',en:'How do you strengthen your sincerity and devotion to Allah?'} ],
+    didYouKnow:[ {ar:'قصّةُ عبورِ جيشِ العلاءِ فوقَ الماءِ في حروبِ الرِّدّةِ مشهورةٌ عند أهلِ السير — المصدر: البداية والنهاية',en:'The account of al-Ala\u2019\u2019s army crossing over the water in the Ridda wars is well known among the biographers — Source: Al-Bidaya wa an-Nihaya'}, {ar:'استجابةُ الدعاءِ كرامةٌ يُكرِمُ اللهُ بها عبادَه الصالحينَ الصادقين — المصدر: الدرر السنية',en:'Answered prayer is a noble gift with which Allah honors His righteous, sincere servants — Source: ad-Durar as-Saniyya'} ],
+  },
+];

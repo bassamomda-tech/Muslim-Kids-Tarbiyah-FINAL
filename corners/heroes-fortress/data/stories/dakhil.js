@@ -1,0 +1,56 @@
+/* data/stories/dakhil.js — Leaders · Abdurrahman ad-Dakhil — sources: البداية والنهاية · نفح الطيب · إسلام ويب · الدرر السنية */
+window.HISN_STORIES = window.HISN_STORIES || {};
+HISN_STORIES.dakhil = [
+  { icon:'🏊', scene:'desert', character:'🦅',
+    title:{ ar:'رحلةُ النجاةِ الكبرى', en:'The Great Journey of Survival' },
+    pages:[
+      { scene:'desert', character:'😰',
+        text:{ ar:'كان <b>عبد الرحمن</b> أميراً شابّاً من البيتِ الأمويِّ الحاكم. وحين سقطتْ دولةُ بني أميّةَ، طُورِدَ أفرادُ البيتِ الحاكمِ ليُقتَلوا. فهربَ عبد الرحمن، وكان الجنودُ يطاردونه! وصلَ إلى نهرِ <b>الفرات</b>، فألقى بنفسِه في الماءِ وسبحَ إلى الضفّةِ الأخرى لينجوَ بحياتِه.<br><br>كان أخوه الصغيرُ معه، لكنّ الجنودَ خدعوه ووعدوه بالأمانِ فعادَ — فقتلوه أمامَ عينَي عبد الرحمن! حزِنَ حزناً شديداً، لكنّه لم يستسلمْ لليأس. بدأَ <b>رحلةً طويلةً عبرَ الصحاري والبلدان</b>، وحيداً غريباً مطارَداً، يقطعُ آلافَ الأميالِ من الشرقِ إلى أقصى الغرب، متوكّلاً على اللهِ وحدَه.',
+          en:'<b>Abdurrahman</b> was a young prince of the ruling Umayyad house. When the Umayyad state fell, members of the ruling house were hunted to be killed. Abdurrahman fled, with soldiers chasing him! He reached the <b>Euphrates</b> river, threw himself into the water, and swam to the other bank to save his life.<br><br>His young brother was with him, but the soldiers deceived him, promising safety so he returned — then killed him before Abdurrahman\u2019s eyes! He grieved deeply, but did not give in to despair. He began a <b>long journey across deserts and lands</b>, alone, a hunted stranger, crossing thousands of miles from the East to the far West, relying on Allah alone.' },
+        choice:{ q:{ar:'ماذا فعلَ عبد الرحمن حين طُورِدَ ليُقتَل؟',en:'What did Abdurrahman do when he was hunted to be killed?'},
+          opts:[
+            { t:{ar:'نجا وبدأَ رحلةً طويلةً متوكّلاً على الله',en:'He escaped and began a long journey, relying on Allah'},c:true,exp:{ar:'نعم! لم يستسلمْ لليأسِ رغمَ المحنة.',en:'Yes! He did not give in to despair despite the ordeal.'} },
+            { t:{ar:'استسلمَ',en:'He surrendered'},c:false,exp:{ar:'لا، بل نجا وواصلَ بعزيمة.',en:'No — he escaped and pressed on with resolve.'} },
+            { t:{ar:'يئسَ وتوقّف',en:'He despaired and stopped'},c:false,exp:{ar:'لا، بل صبرَ وتوكّلَ على الله.',en:'No — he was patient and relied on Allah.'} },
+          ] } },
+    ],
+    quiz:[
+      { q:{ar:'من أيِّ بيتٍ كان عبد الرحمن؟',en:'From which house was Abdurrahman?'},
+        opts:[ {t:{ar:'البيتِ الأموي',en:'The Umayyad house'},c:true}, {t:{ar:'العبّاسي',en:'The Abbasid'},c:false}, {t:{ar:'الفاطمي',en:'The Fatimid'},c:false} ] },
+      { q:{ar:'أيَّ نهرٍ عبرَ سباحةً لينجو؟',en:'Which river did he swim across to survive?'},
+        opts:[ {t:{ar:'الفرات',en:'The Euphrates'},c:true}, {t:{ar:'النيل',en:'The Nile'},c:false}, {t:{ar:'دجلة',en:'The Tigris'},c:false} ] },
+      { q:{ar:'ماذا نتعلّمُ من بدايةِ رحلتِه؟',en:'What do we learn from the start of his journey?'},
+        opts:[ {t:{ar:'عدمُ الاستسلامِ والتوكّلُ على الله',en:'Not surrendering and relying on Allah'},c:true}, {t:{ar:'اليأسُ عند المصيبة',en:'Despair in calamity'},c:false}, {t:{ar:'الخوفُ الدائم',en:'Constant fear'},c:false} ] },
+    ],
+    moral:{ar:'الشدائدُ لا توقفُ صاحبَ العزيمة، ومن توكّلَ على اللهِ وصبرَ فتحَ اللهُ له الأبواب.',en:'Hardships do not stop a person of resolve; whoever relies on Allah and is patient, Allah opens doors for him.'},
+    badge:{icon:'🏊',title:{ar:'وِسامُ النجاةِ والعزيمة',en:'Badge of Survival & Resolve'}},
+    reflect:[ {ar:'كيف تتصرّفُ حين تواجهُ محنةً كبيرة؟',en:'How do you act when you face a great ordeal?'}, {ar:'هل تتوكّلُ على اللهِ وتُواصِلُ رغمَ الصعاب؟',en:'Do you rely on Allah and press on despite difficulties?'} ],
+    didYouKnow:[ {ar:'قطعَ عبد الرحمن الداخلُ نحوَ خمسةِ آلافِ ميلٍ من الشامِ إلى الأندلسِ هرباً من العبّاسيين — المصدر: نفح الطيب',en:'Abdurrahman ad-Dakhil crossed about five thousand miles from Sham to Andalusia, fleeing the Abbasids — Source: Nafh at-Tib'}, {ar:'استمرّتْ رحلةُ هروبِه ولجوئِه نحوَ ستِّ سنواتٍ قبلَ أن يستقرَّ في الأندلس — المصدر: البداية والنهاية',en:'His journey of flight and refuge lasted about six years before he settled in Andalusia — Source: Al-Bidaya wa an-Nihaya'} ],
+  },
+  { icon:'🏛️', scene:'madinah', character:'👑',
+    title:{ ar:'من لاجئٍ إلى مؤسّسِ دولة', en:'From Refugee to State-Founder' },
+    pages:[
+      { scene:'madinah', character:'👑',
+        text:{ ar:'وأخيراً وصلَ <b>عبد الرحمن</b> إلى <b>الأندلس</b> بعدَ رحلةٍ مذهلةٍ استمرّتْ سنوات. لكنّ الأندلسَ كانت مضطربةً تتنازعُها القبائلُ والولاةُ، فكان أمامَ عبد الرحمن تحدٍّ هائل: كيف يُوحِّدُ هذه البلادَ وهو غريبٌ قادمٌ من بعيد؟<br><br>استخدمَ عبد الرحمن <b>ذكاءَه وحكمتَه وشجاعتَه</b>، فجمعَ حولَه أنصاراً، ووحّدَ المسلمينَ المتفرّقين، وأقامَ <b>دولةً أمويّةً قويّةً</b> عاصمتُها قرطبة. ولم يكتفِ بالحكم، بل بنى المساجدَ والمدارسَ وشجّعَ العلم، فبدأتِ الأندلسُ رحلتَها لتصيرَ <b>منارةً للعلمِ والحضارةِ</b> في العالمِ قروناً طويلة. أعجبَ به حتى خصمُه الخليفةُ العبّاسيُّ المنصورُ فلقّبه <b>«صقرَ قريش»</b>. علّمنا الداخلُ أنّ <b>المحنةَ قد تكونُ بدايةَ مجدٍ عظيمٍ لمن صبرَ وعزم</b>.',
+          en:'At last <b>Abdurrahman</b> reached <b>Andalusia</b> after an astonishing journey of years. But Andalusia was in turmoil, contested by tribes and governors, so Abdurrahman faced an enormous challenge: how could he unite this land as a stranger come from afar?<br><br>Abdurrahman used his <b>intelligence, wisdom, and courage</b>, gathering supporters, uniting the scattered Muslims, and establishing a <b>strong Umayyad state</b> with Cordoba as its capital. He did not stop at ruling — he built mosques and schools and encouraged knowledge, so Andalusia began its journey to become <b>a beacon of knowledge and civilization</b> in the world for long centuries. Even his rival, the Abbasid caliph al-Mansur, admired him and titled him <b>"the Falcon of Quraysh."</b> Ad-Dakhil taught us that <b>an ordeal can be the beginning of great glory for whoever is patient and resolute</b>.' },
+        choice:{ q:{ar:'كيف وحّدَ عبد الرحمن الأندلسَ وأسّسَ دولته؟',en:'How did Abdurrahman unite Andalusia and found his state?'},
+          opts:[
+            { t:{ar:'بذكائِه وحكمتِه وشجاعتِه وجمعِ الأنصار',en:'With intelligence, wisdom, courage, and gathering supporters'},c:true,exp:{ar:'نعم! المحنةُ قد تكونُ بدايةَ مجدٍ لمن عزم.',en:'Yes! An ordeal can be the start of glory for the resolute.'} },
+            { t:{ar:'بالحظِّ وحدَه',en:'By luck alone'},c:false,exp:{ar:'لا، بل بالعزيمةِ والحكمةِ والعمل.',en:'No — through resolve, wisdom, and effort.'} },
+            { t:{ar:'بالقوّةِ والظلم',en:'By force and injustice'},c:false,exp:{ar:'لا، بل بالحكمةِ وجمعِ القلوب.',en:'No — through wisdom and winning hearts.'} },
+          ] } },
+    ],
+    quiz:[
+      { q:{ar:'ما عاصمةُ دولةِ عبد الرحمن في الأندلس؟',en:'What was the capital of Abdurrahman\u2019s state in Andalusia?'},
+        opts:[ {t:{ar:'قرطبة',en:'Cordoba'},c:true}, {t:{ar:'بغداد',en:'Baghdad'},c:false}, {t:{ar:'دمشق',en:'Damascus'},c:false} ] },
+      { q:{ar:'من لقّبه «صقرَ قريش»؟',en:'Who titled him "the Falcon of Quraysh"?'},
+        opts:[ {t:{ar:'خصمُه الخليفةُ العبّاسيُّ المنصور',en:'His rival, the Abbasid caliph al-Mansur'},c:true}, {t:{ar:'أبو جهل',en:'Abu Jahl'},c:false}, {t:{ar:'جنودُه',en:'His soldiers'},c:false} ] },
+      { q:{ar:'ما الدرسُ من قصّةِ الداخل؟',en:'What is the lesson of ad-Dakhil\u2019s story?'},
+        opts:[ {t:{ar:'المحنةُ قد تكونُ بدايةَ مجدٍ لمن صبرَ وعزم',en:'An ordeal can be the start of glory for the patient and resolute'},c:true}, {t:{ar:'اليأسُ عند الغربة',en:'Despair in exile'},c:false}, {t:{ar:'الاستسلامُ للظروف',en:'Surrendering to circumstances'},c:false} ] },
+    ],
+    moral:{ar:'المحنةُ قد تكونُ بدايةَ مجدٍ عظيمٍ لمن صبرَ وعزمَ وتوكّلَ على الله، والبناءُ خيرٌ من اليأس.',en:'An ordeal can be the beginning of great glory for whoever is patient, resolute, and reliant on Allah; building is better than despair.'},
+    badge:{icon:'🏛️',title:{ar:'وِسامُ مؤسّسِ الحضارة',en:'Badge of the Civilization-Founder'}},
+    reflect:[ {ar:'كيف تُحوِّلُ تحدّياً صعباً إلى فرصةٍ للنجاح؟',en:'How do you turn a hard challenge into an opportunity for success?'}, {ar:'هل تبني وتُصلِحُ بعدَ أن تتجاوزَ الصعاب؟',en:'Do you build and improve after overcoming difficulties?'} ],
+    didYouKnow:[ {ar:'أسّسَ عبد الرحمن الداخلُ الدولةَ الأمويّةَ في الأندلسِ التي دامتْ نحوَ ثلاثةِ قرون — المصدر: نفح الطيب',en:'Abdurrahman ad-Dakhil founded the Umayyad state in Andalusia, which lasted about three centuries — Source: Nafh at-Tib'}, {ar:'بدأَ ببناءِ مسجدِ قرطبةَ الكبيرِ الذي صارَ من أعظمِ مساجدِ العالم — المصدر: البداية والنهاية',en:'He began building the Great Mosque of Cordoba, which became one of the world\u2019s greatest mosques — Source: Al-Bidaya wa an-Nihaya'} ],
+  },
+];

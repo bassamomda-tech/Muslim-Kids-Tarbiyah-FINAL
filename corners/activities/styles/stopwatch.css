@@ -1,0 +1,106 @@
+/* ============================================================
+   STOPWATCH — تحدي الـ30 ثانية (Click Counter / Tasbeeh)
+   ============================================================ */
+
+.sw-panel {
+  background:
+    radial-gradient(140% 80% at 50% 0%, rgba(255,233,168,0.45), transparent 60%),
+    var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--r-2xl);
+  padding: var(--s-8);
+  display: flex; flex-direction: column;
+  box-shadow: var(--shadow-card);
+  position: relative; overflow: hidden;
+}
+.sw-panel .activity-tag { background: var(--butter); color: var(--butter-ink); }
+.sw-panel .activity-tag::before { background: var(--butter-ink); }
+
+.sw-hud { display: flex; gap: var(--s-3); flex-wrap: wrap; margin-bottom: var(--s-5); }
+.sw-hud .hud-block {
+  background: var(--bg-soft); border: 1px solid var(--line);
+  border-radius: var(--r-md); padding: 10px 14px;
+  display: flex; flex-direction: column; gap: 2px;
+  font-size: 11px; color: var(--muted); font-weight: 600; flex: 1; min-width: 84px;
+}
+.sw-hud .hud-block strong { font-size: 22px; color: var(--ink); font-family: var(--font-en); font-weight: 800; }
+.sw-hud .hud-block.timer strong { color: var(--brand-ink); }
+.sw-hud .hud-block.timer.low strong { color: #B85555; }
+
+/* main tap zone */
+.sw-stage {
+  flex-grow: 1;
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  gap: var(--s-5);
+  position: relative;
+}
+
+.sw-ring-wrap { position: relative; width: min(320px, 78vw); aspect-ratio: 1; }
+.sw-beads { position: absolute; inset: 0; }
+.sw-bead {
+  position: absolute; width: 13px; height: 13px; border-radius: 50%;
+  background: var(--bg-soft); border: 1px solid var(--line);
+  transform: translate(-50%, -50%);
+  transition: background 0.15s ease, transform 0.15s ease;
+}
+.sw-bead.on { background: var(--gold); border-color: var(--gold); box-shadow: 0 0 6px rgba(201,169,97,0.6); }
+
+.sw-tap {
+  position: absolute; inset: 16%;
+  border-radius: 50%;
+  background: radial-gradient(circle at 50% 35%, #7FA593, var(--brand-ink));
+  color: #fff;
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  gap: 4px; cursor: pointer; user-select: none;
+  box-shadow: 0 14px 30px rgba(46,74,63,0.4), inset 0 2px 0 rgba(255,255,255,0.25);
+  border: 5px solid rgba(255,255,255,0.9);
+  transition: transform 0.06s ease;
+  text-align: center;
+}
+.sw-tap:active, .sw-tap.press { transform: scale(0.94); }
+.sw-tap .dhikr { font-size: clamp(22px, 5vw, 30px); font-weight: 900; line-height: 1.2; }
+.sw-tap .hint { font-size: 12px; opacity: 0.85; font-weight: 600; }
+.sw-tap.disabled { filter: grayscale(0.5) brightness(0.92); cursor: default; }
+
+.sw-count-big {
+  font-family: var(--font-en); font-size: 56px; font-weight: 800; color: var(--ink);
+  line-height: 1; letter-spacing: -0.02em;
+}
+.sw-count-big small { font-size: 16px; color: var(--muted); font-weight: 600; font-family: var(--font-ar); }
+
+/* floating +1 */
+.sw-pop {
+  position: absolute; font-family: var(--font-en); font-weight: 800; font-size: 22px;
+  color: var(--brand-ink); pointer-events: none; z-index: 3;
+}
+
+/* overlay */
+.sw-overlay {
+  position: absolute; inset: 0; z-index: 5;
+  display: grid; place-items: center; text-align: center; padding: var(--s-6);
+  background: rgba(255,251,243,0.86); backdrop-filter: blur(2px); cursor: pointer;
+  border-radius: var(--r-xl);
+}
+.sw-overlay.hidden { display: none; }
+.sw-overlay-card { max-width: 360px; }
+.sw-overlay-card h2 { margin: 0 0 var(--s-3); font-size: 26px; }
+.sw-overlay-card p { margin: 0 0 var(--s-5); color: var(--ink-2); font-size: 14px; line-height: 1.7; }
+.sw-go {
+  display: inline-flex; align-items: center; gap: 10px;
+  padding: 14px 30px; border-radius: var(--r-pill);
+  background: var(--ink); color: #fff; font-weight: 800; font-size: 16px;
+}
+.sw-go:hover { filter: brightness(1.1); }
+
+.sw-rounds { display: flex; align-items: center; gap: 8px; justify-content: center; margin-top: var(--s-3); }
+.sw-rounds .star { font-size: 18px; color: var(--gold); }
+
+/* side */
+.sw-dhikr-list { display: flex; flex-direction: column; gap: 8px; }
+.sw-dhikr-row {
+  display: flex; align-items: center; gap: 12px;
+  padding: 10px 12px; border-radius: var(--r-md); background: var(--bg-soft);
+  font-size: 16px; font-weight: 800; color: var(--ink);
+}
+.sw-dhikr-row small { display: block; font-size: 11px; color: var(--muted); font-weight: 500; }
+.sw-dhikr-row .b { width: 10px; height: 26px; border-radius: 4px; background: var(--gold); flex-shrink: 0; }

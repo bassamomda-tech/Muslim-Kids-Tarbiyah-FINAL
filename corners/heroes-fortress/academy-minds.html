@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" data-theme="dusk" data-path="academy">
+<head>
+<meta name="color-scheme" content="dark">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+<title>عقول منيرة · Illuminating Minds</title>
+<meta name="theme-color" content="#0C0A1C">
+<!-- Always renders the minds section. If opened without the param, add it. -->
+<script>(function(){var p=new URLSearchParams(location.search);if(p.get('era')!=='minds'){p.set('era','minds');location.replace('academy-minds.html?'+p.toString());}})();</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Tajawal:wght@400;500;700;800;900&family=Amiri:wght@400;700&family=Nunito:wght@600;700;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+<link rel="stylesheet" href="styles/base.css">
+<link rel="stylesheet" href="styles/map.css">
+<link rel="stylesheet" href="styles/timeline.css">
+<link rel="stylesheet" href="styles/cert.css">
+<script>(function(){try{var p=JSON.parse(localStorage.getItem('hisn-prefs2')||'{}');var r=document.documentElement;if(p.theme)r.dataset.theme=p.theme;}catch(e){}})();</script>
+<style id="__antiflash">html{background:#0A2540;color-scheme:dark}</style>
+</head>
+<body>
+<div class="stars" id="stars"></div>
+
+<header class="topbar">
+  <a class="tb-back" href="academy.html"><span>←</span><span id="backTxt">الأكاديمية</span></a>
+  <div class="brand">
+    <span class="brand-badge" id="brandBadge"></span>
+    <div><h1 id="brandName">عُقولٌ مُنيرة</h1><p class="ar-only">علماءُ الفقهِ والحديثِ والتفسير</p><p class="en-only">Scholars of Fiqh, Hadith & Tafsir</p></div>
+  </div>
+  <div class="tb-right">
+    <div class="xp-wrap"><div class="xp-top"><span class="lvl" id="lvl">LVL 1</span><span class="xp" id="xp">0 XP</span></div><div class="xp-track"><div class="xp-fill" id="xpfill"></div></div></div>
+    <div class="lang"><button id="langAr" class="on" onclick="setLang('ar')">عربي</button><button id="langEn" onclick="setLang('en')">EN</button></div>
+  </div>
+</header>
+
+<main class="era-wrap">
+  <div class="era-plate" id="eraPlate"></div>
+  <div class="view-toggle" id="viewToggle" hidden></div>
+  <div class="view" id="viewMap">
+    <div class="field">
+      <div class="field-battlement"></div>
+      <div class="field-bg" id="fieldBg"></div>
+      <svg class="path-svg" viewBox="0 0 100 100" preserveAspectRatio="none"><g id="pathSeg"></g></svg>
+      <div class="field-stations" id="stations"></div>
+    </div>
+  </div>
+  <div class="view" id="viewTimeline" hidden></div>
+  <section class="cats" id="viewCats" hidden></section>
+  <section class="aspects" id="eraAspects" hidden></section>
+  <section class="cert" id="eraCert" hidden></section>
+  <nav class="era-nav" id="eraNav"></nav>
+</main>
+
+<div id="printArea" style="display:none"></div>
+
+<div class="guide" id="guide">
+  <div class="guide-avatar" id="guideAvatar"></div>
+  <div class="guide-bubble"><button class="guide-x" onclick="tuckGuide()">✕</button><b id="guideName">لين</b><p id="guideLine"></p></div>
+</div>
+
+<!-- App scripts (plain JS): download in parallel, execute in dependency order -->
+<script defer src="engine/icons.js"></script>
+<script defer src="engine/svg.js"></script>
+<script defer src="data/index.js"></script>
+<script defer src="data/creativity.js"></script>
+<script defer src="data/activities-creativity.js"></script>
+<script defer src="engine/progress.js"></script>
+<script defer src="engine/era.js"></script>
+<script defer src="../shared/mk-system.js"></script>
+<script defer src="../shared/mk-journeys.js"></script>
+<script defer src="../shared/mk-bag.js"></script>
+<script defer src="../shared/mk-train.js"></script>
+<script defer src="../shared/nav-fix.js"></script>
+</body>
+</html>

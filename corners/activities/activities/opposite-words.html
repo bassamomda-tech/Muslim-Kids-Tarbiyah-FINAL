@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>الكلمة وعكسها · أنوس</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+
+<link rel="stylesheet" href="../styles/tokens.css" />
+<link rel="stylesheet" href="../styles/dashboard.css" />
+<link rel="stylesheet" href="../styles/wheel.css" />
+<link rel="stylesheet" href="../styles/opposite.css" />
+</head>
+<body>
+
+<div class="bg-decor" aria-hidden="true"></div>
+
+<div class="activity-shell">
+
+  <nav class="activity-nav">
+    <a class="back-link" href="../dashboard.html">
+      الرجوع للوحة الأنشطة
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg>
+    </a>
+    <div class="activity-crumb">
+      <span>تحديات السيرة واللغة</span>
+      <span class="sep">/</span>
+      <span class="cur">الكلمة وعكسها</span>
+    </div>
+    <div class="activity-actions">
+      <button class="icon-btn" id="reset-btn" title="إعادة الضبط" aria-label="إعادة الضبط">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 3-6.7L3 8"/><path d="M3 3v5h5"/></svg>
+      </button>
+    </div>
+  </nav>
+
+  <div class="activity-layout">
+
+    <!-- ============ لوحة اللعبة ============ -->
+    <section class="opp-panel">
+      <header class="wheel-header">
+        <span class="activity-tag">Activity 42 · Connection Logic</span>
+        <h1 class="activity-title">الكلمة وعكسها</h1>
+        <p class="activity-desc">
+          لِكلِّ كلمةٍ ضِدٌّ يُقابِلها. انقُر كلمةً من العمود الأيمن ثم ضِدَّها
+          من العمود الأيسر لِتَصِلَ بينهما.
+        </p>
+      </header>
+
+      <div class="opp-hud">
+        <div class="hud-block">الجولة <strong><span id="o-round">1</span><small>/3</small></strong></div>
+        <div class="hud-block">أزواج موصولة <strong id="o-matched">0</strong></div>
+        <div class="hud-block">أخطاء <strong id="o-mistakes">0</strong></div>
+      </div>
+
+      <div class="opp-stage" id="opp-stage">
+        <svg class="opp-svg" id="opp-svg"></svg>
+        <div class="opp-cols">
+          <div class="opp-col">
+            <div class="opp-col-label">الكلمة</div>
+            <div id="col-left" style="display:flex;flex-direction:column;gap:var(--s-3);"></div>
+          </div>
+          <div class="opp-col">
+            <div class="opp-col-label">الضدّ</div>
+            <div id="col-right" style="display:flex;flex-direction:column;gap:var(--s-3);"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="opp-rounds">
+        <span class="lbl">التقدّم</span>
+        <span class="pips">
+          <span class="pip"></span><span class="pip"></span><span class="pip"></span>
+        </span>
+        <div style="flex-grow:1;"></div>
+      </div>
+
+      <div class="wheel-controls">
+        <div class="wheel-stat">أقل الأخطاء <strong id="best">—</strong></div>
+        <div class="wheel-stat" style="text-align:center;">الجولات <strong id="plays">0</strong></div>
+        <button class="wheel-mute-toggle" id="mute-btn" aria-pressed="false">
+          <span class="mute-icon"></span>
+          <span class="mute-label">كتم الصوت</span>
+        </button>
+      </div>
+    </section>
+
+    <!-- ============ اللوحة الجانبية ============ -->
+    <aside class="side-panel">
+      <div class="panel-card">
+        <div class="panel-head">
+          <h3>أضدادُ هذه الجولة</h3>
+        </div>
+        <div class="opp-pairlist" id="pair-list"></div>
+      </div>
+
+      <div class="panel-card">
+        <div class="panel-head"><h3>كيف ألعب؟</h3></div>
+        <div style="font-size: 14px; line-height: 1.7; color: var(--ink-2);">
+          ١. انقُر كلمةً من عمود «الكلمة».<br/>
+          ٢. ثم انقُر ضِدَّها من عمود «الضدّ».<br/>
+          ٣. إذا صحَّ الوصلُ ظهر خطٌّ مُلوَّن.<br/>
+          ٤. أكمِل الجولات الثلاث بأقلِّ أخطاء.
+        </div>
+      </div>
+
+      <div class="panel-card">
+        <div class="panel-head"><h3>لطيفةٌ لُغوية</h3></div>
+        <div class="hadith-card">
+          <div class="quote">«وبِضدِّها تَتَميَّزُ الأشياءُ»</div>
+          <span class="src">مَثَلٌ عربيٌّ في بلاغة المعاني</span>
+        </div>
+      </div>
+    </aside>
+  </div>
+</div>
+
+<!-- مودال النصر -->
+<div class="modal-backdrop" id="win-modal" role="dialog" aria-modal="true">
+  <div class="modal">
+    <button class="modal-close" data-close aria-label="إغلاق">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M6 6l12 12M18 6l-12 12"/></svg>
+    </button>
+    <div class="modal-deco" aria-hidden="true">
+      <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l2.4 6.6L21 9l-5 4.6L17.2 21 12 17.4 6.8 21 8 13.6 3 9l6.6-.4z"/></svg>
+    </div>
+    <div class="modal-eyebrow">الكلمة وعكسها</div>
+    <h2 class="modal-title">عقلٌ لُغويٌّ متّقد!</h2>
+    <div class="modal-meaning" id="win-summary"></div>
+    <div class="modal-actions">
+      <button class="btn-ghost" data-close>انتهيت</button>
+      <button class="btn-primary" id="win-replay">جولة جديدة</button>
+    </div>
+  </div>
+</div>
+
+<div class="particles" id="particles" aria-hidden="true"></div>
+
+<script src="../scripts/activity-common.js"></script>
+<script src="../scripts/opposite.js"></script>
+
+<script>
+window.PAGE_DICT = {
+  "الكلمة وعكسها": "Word & Opposite",
+  "لِكلِّ كلمةٍ ضِدٌّ يُقابِلها. انقُر كلمةً من العمود الأيمن ثم ضِدَّها من العمود الأيسر لِتَصِلَ بينهما.": "Every word has an opposite that matches it. Tap a word from the right column then its opposite from the left column to connect them.",
+  "الجولة": "Round",
+  "أزواج موصولة": "Pairs connected",
+  "أخطاء": "Mistakes",
+  "الكلمة": "Word",
+  "الضدّ": "Opposite",
+  "التقدّم": "Progress",
+  "أقل الأخطاء": "Fewest mistakes",
+  "الجولات": "Rounds",
+  "أضدادُ هذه الجولة": "This round's opposites",
+  "١. انقُر كلمةً من عمود «الكلمة».": "1. Tap a word from the “Word” column.",
+  "٢. ثم انقُر ضِدَّها من عمود «الضدّ».": "2. Then tap its opposite from the “Opposite” column.",
+  "٣. إذا صحَّ الوصلُ ظهر خطٌّ مُلوَّن.": "3. If the link is correct, a colored line appears.",
+  "٤. أكمِل الجولات الثلاث بأقلِّ أخطاء.": "4. Complete the three rounds with the fewest mistakes.",
+  "لطيفةٌ لُغوية": "A language gem",
+  "مَثَلٌ عربيٌّ في بلاغة المعاني": "An Arabic saying on the eloquence of meanings",
+  "عقلٌ لُغويٌّ متّقد!": "A sharp linguistic mind!"
+};
+</script>
+<script>
+Object.assign(window.PAGE_DICT, {
+  "كبير":"Big","صغير":"Small","ليل":"Night","نهار":"Day","حارّ":"Hot","بارد":"Cold","فوق":"Up","تحت":"Down",
+  "سعيد":"Happy","حزين":"Sad","قويّ":"Strong","ضعيف":"Weak","قريب":"Near","بعيد":"Far","جديد":"New","قديم":"Old",
+  "طويل":"Tall","قصير":"Short","سريع":"Fast","بطيء":"Slow","مفتوح":"Open","مغلق":"Closed","نظيف":"Clean","متّسخ":"Dirty",
+  "صحيح":"Right","خطأ":"Wrong","كثير":"Many","قليل":"Few","أوّل":"First","آخِر":"Last","صعب":"Hard","سهل":"Easy",
+  "غنيّ":"Rich","فقير":"Poor","واسع":"Wide","ضيّق":"Narrow"
+});
+</script>
+<script src="../scripts/i18n.js"></script>
+<script src="../../shared/nav-fix.js"></script>
+</body>
+</html>

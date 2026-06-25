@@ -1,0 +1,184 @@
+/* ============================================================
+   GOOD BINGO — بنغو الصالحات
+   ============================================================ */
+
+.gb-panel {
+  background:
+    radial-gradient(140% 80% at 50% 0%, rgba(224,213,242,0.35), transparent 60%),
+    var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--r-2xl);
+  padding: var(--s-8);
+  display: flex; flex-direction: column;
+  box-shadow: var(--shadow-card);
+}
+.gb-panel .activity-tag { background: var(--lavender); color: var(--lavender-ink); }
+.gb-panel .activity-tag::before { background: var(--lavender-ink); }
+
+.gb-hud {
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--s-3);
+  margin-bottom: var(--s-4);
+}
+.gb-hud .hud-block {
+  background: var(--bg-soft); border: 1px solid var(--line);
+  border-radius: var(--r-md); padding: 10px 14px;
+  display: flex; flex-direction: column; gap: 2px;
+  font-size: 11px; color: var(--muted); font-weight: 600;
+}
+.gb-hud .hud-block strong {
+  font-size: 20px; color: var(--ink);
+  font-family: var(--font-en); font-weight: 800;
+}
+
+.gb-stage {
+  background: linear-gradient(180deg, #FFFBF3 0%, #F5EEDF 100%);
+  border-radius: var(--r-xl);
+  border: 1px solid var(--line);
+  padding: var(--s-5);
+  display: flex; flex-direction: column;
+  align-items: center;
+  gap: var(--s-4);
+  position: relative;
+}
+
+.gb-banner {
+  position: absolute;
+  top: 14px; right: 14px;
+  background: var(--ink);
+  color: var(--butter);
+  padding: 6px 18px;
+  border-radius: var(--r-pill);
+  font-weight: 800; font-size: 14px;
+  letter-spacing: 0.06em;
+  z-index: 3;
+  display: flex; align-items: center; gap: 6px;
+  box-shadow: 0 4px 12px rgba(31,37,64,0.25);
+  animation: gb-bounce 0.5s cubic-bezier(.2,1.4,.4,1);
+}
+@keyframes gb-bounce {
+  0% { transform: scale(0.4); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
+}
+.gb-banner .bg-glow {
+  width: 8px; height: 8px; border-radius: 50%;
+  background: var(--butter);
+  box-shadow: 0 0 0 0 var(--butter);
+  animation: gb-glow 1.4s ease-in-out infinite;
+}
+@keyframes gb-glow {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(255,233,168,0.7); }
+  50%      { box-shadow: 0 0 0 6px rgba(255,233,168,0); }
+}
+
+.gb-board {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+  gap: 8px;
+  width: 100%;
+  max-width: 560px;
+  aspect-ratio: 1;
+}
+
+.gb-cell {
+  background: var(--surface);
+  border: 1.5px solid var(--line);
+  border-radius: var(--r-md);
+  padding: 8px 6px;
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+  text-align: center;
+  cursor: pointer;
+  font-size: 11px;
+  font-weight: 700;
+  line-height: 1.3;
+  color: var(--ink-2);
+  position: relative;
+  transition: background 0.18s ease, border-color 0.18s ease, transform 0.15s ease;
+  overflow: hidden;
+}
+.gb-cell:hover { transform: translateY(-2px); border-color: var(--lavender-ink); }
+.gb-cell .ic {
+  font-size: 18px;
+  margin-bottom: 4px;
+  color: var(--lavender-ink);
+}
+.gb-cell.done {
+  background: var(--lavender);
+  border-color: var(--lavender-ink);
+  color: var(--lavender-ink);
+}
+.gb-cell.done::after {
+  content: "";
+  position: absolute; inset: 0;
+  background:
+    radial-gradient(circle at center, rgba(255,255,255,0.55) 0%, transparent 40%);
+  pointer-events: none;
+}
+.gb-cell.done .ic {
+  color: var(--ink);
+}
+.gb-cell.center {
+  background: linear-gradient(135deg, var(--butter), var(--peach));
+  border-color: var(--butter-ink);
+  color: var(--butter-ink);
+}
+.gb-cell.center .ic { color: var(--butter-ink); font-size: 22px; }
+
+.gb-cell.on-line {
+  box-shadow: 0 0 0 2px var(--ink), 0 6px 18px rgba(31,37,64,0.18);
+  animation: gb-pop 0.4s cubic-bezier(.2,1.4,.4,1);
+}
+@keyframes gb-pop {
+  0% { transform: scale(0.92); }
+  100% { transform: scale(1); }
+}
+
+.gb-actions {
+  display: flex; gap: var(--s-2); justify-content: center; flex-wrap: wrap;
+}
+.gb-btn {
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 10px 16px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--r-pill);
+  font-weight: 700; font-size: 13px;
+  color: var(--ink-2);
+  transition: background 0.18s ease, transform 0.15s ease;
+}
+.gb-btn:hover:not(:disabled) { background: var(--bg-soft); transform: translateY(-1px); }
+.gb-btn.primary {
+  background: var(--lavender-ink); color: #fff; border-color: var(--lavender-ink);
+}
+.gb-btn.primary:hover:not(:disabled) { background: var(--ink); border-color: var(--ink); }
+.gb-btn:disabled { opacity: 0.45; cursor: not-allowed; }
+
+/* قائمة الأعمال */
+.gb-deeds {
+  display: flex; flex-direction: column; gap: 4px;
+  max-height: 360px; overflow-y: auto;
+}
+.gb-deeds .row {
+  display: flex; align-items: center; gap: 10px;
+  padding: 8px 10px;
+  background: var(--bg-soft);
+  border: 1px solid var(--line);
+  border-radius: var(--r-sm);
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--ink-2);
+  transition: background 0.18s ease;
+}
+.gb-deeds .row.done {
+  background: var(--lavender);
+  color: var(--lavender-ink);
+  text-decoration: line-through;
+  text-decoration-thickness: 1.5px;
+}
+.gb-deeds .row .dot {
+  width: 8px; height: 8px; border-radius: 50%;
+  background: var(--line);
+  flex-shrink: 0;
+}
+.gb-deeds .row.done .dot { background: var(--lavender-ink); }

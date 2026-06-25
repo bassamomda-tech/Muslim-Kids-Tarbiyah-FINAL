@@ -1,0 +1,56 @@
+/* data/stories/nasir.js — Leaders · Abdurrahman an-Nasir — sources: البداية والنهاية · نفح الطيب · إسلام ويب · الدرر السنية */
+window.HISN_STORIES = window.HISN_STORIES || {};
+HISN_STORIES.nasir = [
+  { icon:'💡', scene:'madinah', character:'🏙️',
+    title:{ ar:'قرطبةُ تُضيءُ والعالمُ في ظلام', en:'Cordoba Shines While the World Is Dark' },
+    pages:[
+      { scene:'madinah', character:'🏙️',
+        text:{ ar:'حين تولّى <b>عبد الرحمن الناصر</b> حكمَ الأندلس، كانت البلادُ مفكّكةً يتنازعُها المتمرّدونَ والفِتَن. لكنّه بحكمتِه وعزمِه <b>وحّدَ البلادَ وأعادَ الأمنَ</b>، ثمّ أخذَ يبني حضارةً عظيمة.<br><br>صارتْ عاصمتُه <b>قرطبةُ</b> أعجوبةَ زمانِها! كانت شوارعُها <b>مرصوفةً ومُضاءةً بالمصابيحِ ليلاً</b>، وفيها مكتباتٌ تضمُّ مئاتِ آلافِ الكتب، وجامعاتٌ ومستشفياتٌ وحمّاماتٌ عامّة. كان طلّابُ العلمِ يأتونها من أوروبا كلِّها ليتعلّموا — في وقتٍ كانت فيه مدنُ أوروبا غارقةً في الظلامِ والجهل! علّمنا الناصرُ أنّ <b>الوحدةَ والعلمَ والعملَ تبني حضارةً تُنيرُ العالم</b>.',
+          en:'When <b>Abdurrahman an-Nasir</b> took rule of Andalusia, the land was fragmented, contested by rebels and strife. But with his wisdom and resolve he <b>united the land and restored security</b>, then set about building a great civilization.<br><br>His capital <b>Cordoba</b> became the wonder of its time! Its streets were <b>paved and lit with lamps at night</b>, with libraries holding hundreds of thousands of books, universities, hospitals, and public baths. Students of knowledge came to it from all of Europe to learn — at a time when Europe\u2019s cities were sunk in darkness and ignorance! An-Nasir taught us that <b>unity, knowledge, and action build a civilization that lights up the world</b>.' },
+        choice:{ q:{ar:'بماذا تميّزتْ قرطبةُ في عهدِ الناصر؟',en:'What distinguished Cordoba in an-Nasir\u2019s era?'},
+          opts:[
+            { t:{ar:'شوارعُ مضاءةٌ ومكتباتٌ وجامعاتٌ تجذبُ طلّابَ العلم',en:'Lit streets, libraries, and universities drawing students of knowledge'},c:true,exp:{ar:'نعم! الوحدةُ والعلمُ يبنيان حضارةً تُنيرُ العالم.',en:'Yes! Unity and knowledge build a civilization that lights the world.'} },
+            { t:{ar:'الفوضى والظلام',en:'Chaos and darkness'},c:false,exp:{ar:'لا، بل كانت منارةً للعلمِ والحضارة.',en:'No — it was a beacon of knowledge and civilization.'} },
+            { t:{ar:'الفقرُ والجهل',en:'Poverty and ignorance'},c:false,exp:{ar:'لا، بل ازدهرتْ بالعلمِ والعمران.',en:'No — it flourished with knowledge and building.'} },
+          ] } },
+    ],
+    quiz:[
+      { q:{ar:'ماذا فعلَ الناصرُ بالأندلسِ المفكّكة؟',en:'What did an-Nasir do with fragmented Andalusia?'},
+        opts:[ {t:{ar:'وحّدها وأعادَ الأمنَ والحضارة',en:'He united it and restored security and civilization'},c:true}, {t:{ar:'تركها',en:'He left it'},c:false}, {t:{ar:'زادها فوضى',en:'He added to its chaos'},c:false} ] },
+      { q:{ar:'بماذا اشتهرتْ قرطبةُ في عهدِه؟',en:'What was Cordoba famed for in his era?'},
+        opts:[ {t:{ar:'الشوارعِ المضاءةِ والمكتباتِ والجامعات',en:'Lit streets, libraries, and universities'},c:true}, {t:{ar:'الخراب',en:'Ruin'},c:false}, {t:{ar:'الجهل',en:'Ignorance'},c:false} ] },
+      { q:{ar:'ما الذي يبني حضارةً تُنيرُ العالم؟',en:'What builds a civilization that lights the world?'},
+        opts:[ {t:{ar:'الوحدةُ والعلمُ والعمل',en:'Unity, knowledge, and action'},c:true}, {t:{ar:'الفُرقةُ والكسل',en:'Division and laziness'},c:false}, {t:{ar:'الحربُ فقط',en:'War alone'},c:false} ] },
+    ],
+    moral:{ar:'الوحدةُ والعلمُ والعملُ تبني حضارةً تُنيرُ العالم، والقائدُ الحكيمُ يجمعُ بين الأمنِ والعمران.',en:'Unity, knowledge, and action build a civilization that lights the world; a wise leader combines security with building.'},
+    badge:{icon:'💡',title:{ar:'وِسامُ المنارة',en:'Badge of the Beacon'}},
+    reflect:[ {ar:'كيف تُسهِمُ في بناءِ بيئةٍ مزدهرةٍ من حولِك؟',en:'How do you contribute to building a flourishing environment around you?'}, {ar:'لماذا الوحدةُ مهمّةٌ لتقدّمِ أيِّ مجموعة؟',en:'Why is unity important for any group\u2019s progress?'} ],
+    didYouKnow:[ {ar:'كانت مكتبةُ قرطبةَ تضمُّ مئاتِ آلافِ المجلّداتِ في عصرِ الناصرِ وابنِه الحكم — المصدر: نفح الطيب',en:'Cordoba\u2019s library held hundreds of thousands of volumes in the era of an-Nasir and his son al-Hakam — Source: Nafh at-Tib'}, {ar:'بلغتِ الأندلسُ في عهدِ الناصرِ ذروةَ القوّةِ والازدهارِ الحضاري — المصدر: البداية والنهاية',en:'Andalusia reached the height of power and civilizational flourishing in an-Nasir\u2019s era — Source: Al-Bidaya wa an-Nihaya'} ],
+  },
+  { icon:'📿', scene:'throne', character:'🤲',
+    title:{ ar:'أيّامُ السرورِ المعدودة', en:'The Few Days of True Joy' },
+    pages:[
+      { scene:'throne', character:'🤲',
+        text:{ ar:'حكمَ <b>عبد الرحمن الناصر</b> نحوَ خمسينَ سنةً في عزٍّ ونصرٍ وقوّةٍ وثروةٍ لم تكنْ لأحدٍ قبلَه في الأندلس. كان عندَه كلُّ ما يتمنّاه إنسان: المُلكُ والمالُ والصحّةُ والانتصارات.<br><br>وقبلَ موتِه، كتبَ ورقةً عجيبةً عُثِرَ عليها، أحصى فيها <b>أيّامَ السرورِ الحقيقيِّ الصافي</b> التي عاشها طوالَ نصفِ قرنٍ من المُلك، فكانت <b>أربعةَ عشرَ يوماً فقط!</b> قال: «أحصيتُ الأيّامَ التي صفا لي فيها السرورُ دونَ كَدَرٍ فكانت أربعةَ عشرَ يوماً». علّمنا الناصرُ درساً عميقاً: أنّ <b>السعادةَ الحقيقيّةَ ليست في المُلكِ والمالِ والدنيا، بل في القربِ من اللهِ وطمأنينةِ القلب</b>. فمهما جمعَ الإنسانُ من الدنيا، تبقى السعادةُ الكاملةُ في الآخرة.',
+          en:'<b>Abdurrahman an-Nasir</b> ruled about fifty years in glory, victory, power, and wealth that none before him in Andalusia had. He had everything a person could wish: dominion, money, health, and victories.<br><br>Before his death, he wrote a remarkable note that was found, in which he counted the <b>days of pure, true joy</b> he had lived throughout half a century of rule — they were <b>only fourteen days!</b> He said: "I counted the days in which my joy was pure without any disturbance, and they were fourteen days." An-Nasir taught us a deep lesson: that <b>true happiness is not in dominion, wealth, and the world, but in nearness to Allah and the heart\u2019s tranquility</b>. However much a person gathers of the world, complete happiness remains in the Hereafter.' },
+        choice:{ q:{ar:'ماذا علّمتنا ورقةُ الناصرِ عن السعادة؟',en:'What did an-Nasir\u2019s note teach us about happiness?'},
+          opts:[
+            { t:{ar:'السعادةُ الحقيقيّةُ في القربِ من اللهِ لا في المُلكِ والمال',en:'True happiness is in nearness to Allah, not dominion and wealth'},c:true,exp:{ar:'نعم! مهما جمعَ الإنسانُ تبقى السعادةُ الكاملةُ في الآخرة.',en:'Yes! However much one gathers, complete happiness remains in the Hereafter.'} },
+            { t:{ar:'السعادةُ في كثرةِ المال',en:'Happiness is in much wealth'},c:false,exp:{ar:'لا، فقد ملكَ كلَّ شيءٍ ولم يسعدْ إلّا أيّاماً.',en:'No — he owned everything yet was happy only a few days.'} },
+            { t:{ar:'السعادةُ في المُلك',en:'Happiness is in dominion'},c:false,exp:{ar:'لا، بل في طمأنينةِ القلبِ والقربِ من الله.',en:'No — in the heart\u2019s tranquility and nearness to Allah.'} },
+          ] } },
+    ],
+    quiz:[
+      { q:{ar:'كم سنةً حكمَ الناصرُ تقريباً؟',en:'About how many years did an-Nasir rule?'},
+        opts:[ {t:{ar:'نحوَ خمسينَ سنة',en:'About fifty years'},c:true}, {t:{ar:'سنةً واحدة',en:'One year'},c:false}, {t:{ar:'مئةَ سنة',en:'A hundred years'},c:false} ] },
+      { q:{ar:'كم يوماً من السرورِ الصافي أحصى؟',en:'How many days of pure joy did he count?'},
+        opts:[ {t:{ar:'أربعةَ عشرَ يوماً فقط',en:'Only fourteen days'},c:true}, {t:{ar:'كلَّ الأيّام',en:'All the days'},c:false}, {t:{ar:'ألفَ يوم',en:'A thousand days'},c:false} ] },
+      { q:{ar:'أين السعادةُ الحقيقيّة؟',en:'Where is true happiness?'},
+        opts:[ {t:{ar:'في القربِ من اللهِ وطمأنينةِ القلب',en:'In nearness to Allah and the heart\u2019s tranquility'},c:true}, {t:{ar:'في المالِ فقط',en:'In wealth alone'},c:false}, {t:{ar:'في المُلكِ فقط',en:'In dominion alone'},c:false} ] },
+    ],
+    moral:{ar:'السعادةُ الحقيقيّةُ ليست في المُلكِ والمالِ بل في القربِ من اللهِ وطمأنينةِ القلب.',en:'True happiness is not in dominion and wealth but in nearness to Allah and the heart\u2019s tranquility.'},
+    badge:{icon:'📿',title:{ar:'وِسامُ طمأنينةِ القلب',en:'Badge of the Heart\u2019s Tranquility'}},
+    reflect:[ {ar:'ما الذي يجعلُك سعيداً حقّاً في حياتِك؟',en:'What truly makes you happy in your life?'}, {ar:'هل تبحثُ عن السعادةِ في القربِ من اللهِ أم في الدنيا فقط؟',en:'Do you seek happiness in nearness to Allah or only in worldly things?'} ],
+    didYouKnow:[ {ar:'ورقةُ الناصرِ في عددِ أيّامِ سرورِه (١٤ يوماً) مشهورةٌ في كتبِ التاريخِ كعبرةٍ بليغة — المصدر: نفح الطيب · البداية والنهاية',en:'An-Nasir\u2019s note counting his days of joy (14 days) is famous in history books as a profound lesson — Source: Nafh at-Tib · Al-Bidaya wa an-Nihaya'}, {ar:'قال تعالى: ﴿ أَلَا بِذِكْرِ اللَّهِ تَطْمَئِنُّ الْقُلُوبُ ﴾ — المصدر: الرعد ٢٨',en:'Allah said: "Verily, in the remembrance of Allah do hearts find rest" — Source: Ar-Ra\u2019d 28'} ],
+  },
+];

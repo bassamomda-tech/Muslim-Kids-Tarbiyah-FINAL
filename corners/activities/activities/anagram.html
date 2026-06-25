@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>ترتيب الحروف المبعثرة · أنوس</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+
+<link rel="stylesheet" href="../styles/tokens.css" />
+<link rel="stylesheet" href="../styles/dashboard.css" />
+<link rel="stylesheet" href="../styles/wheel.css" />
+<link rel="stylesheet" href="../styles/anagram.css" />
+</head>
+<body>
+
+<div class="bg-decor" aria-hidden="true"></div>
+
+<div class="activity-shell">
+
+  <nav class="activity-nav">
+    <a class="back-link" href="../dashboard.html">
+      الرجوع للوحة الأنشطة
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg>
+    </a>
+    <div class="activity-crumb">
+      <span>اللغة والمعرفة</span>
+      <span class="sep">/</span>
+      <span class="cur">ترتيب الحروف المبعثرة</span>
+    </div>
+    <div class="activity-actions">
+      <button class="icon-btn" id="reset-btn" title="إعادة الضبط" aria-label="إعادة الضبط">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 3-6.7L3 8"/><path d="M3 3v5h5"/></svg>
+      </button>
+    </div>
+  </nav>
+
+  <div class="activity-layout">
+
+    <!-- ============ لوحة اللعبة ============ -->
+    <section class="anagram-panel">
+      <header class="wheel-header">
+        <span class="activity-tag">Activity 16 · Anagram Solver</span>
+        <h1 class="activity-title">ترتيب الحروف المبعثرة</h1>
+        <p class="activity-desc">
+          الحروف ضاعت! انقُر عليها بالترتيب الصحيح لِتُعيدَ بناء الكلمة.
+          كل كلمة لها صورةٌ تَدلُّك على المعنى.
+        </p>
+      </header>
+
+      <!-- HUD -->
+      <div class="ana-hud">
+        <div class="hud-block">الكلمة <strong><span id="a-idx">1</span><small>/8</small></strong></div>
+        <div class="hud-block">صحيح <strong id="a-correct">0</strong></div>
+        <div class="hud-block">نجوم <strong id="a-stars">0</strong></div>
+        <div class="hud-block">محاولات <strong id="a-slips">0</strong></div>
+      </div>
+
+      <!-- Stage -->
+      <div class="ana-stage">
+        <div class="ana-clue">
+          <div class="icon-stage" id="clue-icon">🕌</div>
+          <div class="label">المعنى</div>
+          <div class="hint-text" id="clue-hint">…</div>
+        </div>
+
+        <div class="ana-slots" id="slots"></div>
+        <div class="ana-bank" id="bank"></div>
+
+        <div class="ana-tools">
+          <button class="ana-btn" id="btn-shuffle">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M16 3h5v5"/><path d="M21 3l-8 8"/><path d="M8 21H3v-5"/><path d="M3 21l8-8"/></svg>
+            خَلْط
+          </button>
+          <button class="ana-btn warning" id="btn-hint">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 8v.01M12 12v4"/></svg>
+            تَلميح
+          </button>
+          <button class="ana-btn primary" id="btn-check">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5 9-10"/></svg>
+            تَحقَّق
+          </button>
+          <button class="ana-btn" id="btn-skip">تَخَطّى</button>
+        </div>
+      </div>
+
+      <div class="wheel-controls">
+        <div class="wheel-stat">أعلى نجوم <strong id="best">—</strong></div>
+        <div class="wheel-stat" style="text-align:center;">الجولات <strong id="plays">0</strong></div>
+        <button class="wheel-mute-toggle" id="mute-btn" aria-pressed="false">
+          <span class="mute-icon"></span>
+          <span class="mute-label">كتم الصوت</span>
+        </button>
+      </div>
+    </section>
+
+    <!-- ============ اللوحة الجانبية ============ -->
+    <aside class="side-panel">
+      <div class="panel-card">
+        <div class="panel-head">
+          <h3>كَلِماتُ الجولة</h3>
+          <span class="pill" id="words-pill">0/8</span>
+        </div>
+        <div class="ana-list" id="words-list"></div>
+      </div>
+
+      <div class="panel-card">
+        <div class="panel-head"><h3>كيف ألعب؟</h3></div>
+        <div style="font-size: 14px; line-height: 1.7; color: var(--ink-2);">
+          ١. اقرأ الصورة والمعنى.<br/>
+          ٢. انقر الحروف من البنك بالترتيب لِتَملأ الخانات.<br/>
+          ٣. لإرجاع حرف، انقُر على الخانة.<br/>
+          ٤. كلَّما أقلَّتْ محاولاتك، زادت نُجومك.
+        </div>
+        <div class="tip-card" style="margin-top: var(--s-3);">
+          <span class="tip-icon">!</span>
+          <span>إذا تَعَثَّرتَ، اضغط «تَلميح» لِيظهَر أوَّل حرف، لكنَّك ستَخسر نجمةً.</span>
+        </div>
+      </div>
+
+      <div class="panel-card">
+        <div class="panel-head"><h3>فضلُ تعلُّم اللغة</h3></div>
+        <div class="hadith-card">
+          <div class="quote">«تَعَلَّمُوا العَرَبيَّةَ فإنَّها مِن دِينِكُم»</div>
+          <span class="src">قول عمر بن الخطاب رضي الله عنه</span>
+        </div>
+      </div>
+    </aside>
+  </div>
+</div>
+
+<!-- مودال النصر -->
+<div class="modal-backdrop" id="win-modal" role="dialog" aria-modal="true">
+  <div class="modal">
+    <button class="modal-close" data-close aria-label="إغلاق">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M6 6l12 12M18 6l-12 12"/></svg>
+    </button>
+    <div class="modal-deco" aria-hidden="true">
+      <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l2.4 6.6L21 9l-5 4.6L17.2 21 12 17.4 6.8 21 8 13.6 3 9l6.6-.4z"/></svg>
+    </div>
+    <div class="modal-eyebrow">جولةُ الكلمات</div>
+    <h2 class="modal-title">أحسنت يا قارئاً ماهراً!</h2>
+    <div class="modal-meaning" id="win-summary"></div>
+    <div class="modal-actions">
+      <button class="btn-ghost" data-close>انتهيت</button>
+      <button class="btn-primary" id="win-replay">جولة جديدة</button>
+    </div>
+  </div>
+</div>
+
+<div class="particles" id="particles" aria-hidden="true"></div>
+
+<script src="../scripts/activity-common.js"></script>
+<script src="../scripts/anagram.js"></script>
+
+<script>
+window.PAGE_DICT = {
+  "ترتيب الحروف المبعثرة": "Anagram Letters",
+  "الحروف ضاعت! انقُر عليها بالترتيب الصحيح لِتُعيدَ بناء الكلمة. كل كلمة لها صورةٌ تَدلُّك على المعنى.": "The letters are scattered! Tap them in the right order to rebuild the word. Each word has a picture hinting at its meaning.",
+  "الكلمة": "Word",
+  "صحيح": "Correct",
+  "نجوم": "Stars",
+  "المعنى": "Meaning",
+  "خَلْط": "Shuffle",
+  "تَلميح": "Hint",
+  "تَحقَّق": "Check",
+  "تَخَطّى": "Skip",
+  "أعلى نجوم": "Best stars",
+  "الجولات": "Rounds",
+  "كَلِماتُ الجولة": "Round words",
+  "١. اقرأ الصورة والمعنى.": "1. Read the picture and the meaning.",
+  "٢. انقر الحروف من البنك بالترتيب لِتَملأ الخانات.": "2. Tap the letters from the bank in order to fill the slots.",
+  "٣. لإرجاع حرف، انقُر على الخانة.": "3. To return a letter, tap the slot.",
+  "٤. كلَّما أقلَّتْ محاولاتك، زادت نُجومك.": "4. The fewer your attempts, the more stars you earn.",
+  "إذا تَعَثَّرتَ، اضغط «تَلميح» لِيظهَر أوَّل حرف، لكنَّك ستَخسر نجمةً.": "If you're stuck, press “Hint” to reveal the first letter, but you'll lose a star.",
+  "فضلُ تعلُّم اللغة": "The virtue of learning the language",
+  "قول عمر بن الخطاب رضي الله عنه": "Saying of Umar ibn al-Khattab (RA)",
+  "جولةُ الكلمات": "Word round",
+  "أحسنت يا قارئاً ماهراً!": "Well done, skilled reader!"
+};
+</script>
+<script>
+Object.assign(window.PAGE_DICT, {
+  "ركنٌ من أركان الإسلام، خَمسٌ في اليوم والليلة": "A pillar of Islam — five times a day and night",
+  "نُخرِجها للفقراء، وهي طُهرةٌ للمال": "We give it to the poor; it purifies wealth",
+  "نَترُك فيه الطعام والشراب من الفجر إلى المغرب": "In it we abstain from food and drink from dawn to sunset",
+  "أوّل بيتٍ وُضِع للناس، نَطوف حوله في الحجّ": "The first house built for people; we circle it in Hajj",
+  "كلامُ الله، فيه هُدًى للمتَّقين": "The word of Allah; in it is guidance for the God-conscious",
+  "بيتُ الله في الأرض، نُصلِّي فيه جماعة": "Allah's house on earth; we pray in it in congregation",
+  "صفةُ ربِّنا، وما أُرسِل النبي ﷺ إلا بها": "An attribute of our Lord; the Prophet ﷺ was sent only with it",
+  "ضِدُّ الكذب، نَجاةٌ وطمأنينة": "The opposite of lying; salvation and peace of mind"
+});
+</script>
+<script src="../scripts/i18n.js"></script>
+<script src="../../shared/nav-fix.js"></script>
+</body>
+</html>

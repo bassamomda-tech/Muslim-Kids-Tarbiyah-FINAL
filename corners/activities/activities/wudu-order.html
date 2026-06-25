@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>ترتيب الوضوء · أنوس</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+
+<link rel="stylesheet" href="../styles/tokens.css" />
+<link rel="stylesheet" href="../styles/dashboard.css" />
+<link rel="stylesheet" href="../styles/wheel.css" />
+<link rel="stylesheet" href="../styles/wudu.css" />
+</head>
+<body>
+
+<div class="bg-decor" aria-hidden="true"></div>
+
+<div class="activity-shell">
+
+  <nav class="activity-nav">
+    <a class="back-link" href="../dashboard.html">
+      الرجوع للوحة الأنشطة
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg>
+    </a>
+
+    <div class="activity-crumb">
+      <span>العبادات والإيمان</span>
+      <span class="sep">/</span>
+      <span class="cur">ترتيب الوضوء</span>
+    </div>
+
+    <div class="activity-actions">
+      <button class="icon-btn" id="reset-btn" title="إعادة الضبط" aria-label="إعادة الضبط">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 3-6.7L3 8"/><path d="M3 3v5h5"/></svg>
+      </button>
+    </div>
+  </nav>
+
+  <div class="activity-layout">
+
+    <!-- ============ لوحة اللعب ============ -->
+    <section class="wudu-panel">
+      <header class="wheel-header">
+        <span class="activity-tag">Activity 03 · Drag & Drop API</span>
+        <h1 class="activity-title">ترتيب الوضوء</h1>
+        <p class="activity-desc">
+          الخطوات السبع للوضوء مبعثرة في الأعلى. اسحبها إلى مواقعها الصحيحة
+          من 1 إلى 7، ثم اضغط «تحقق» لترى نتيجتك.
+        </p>
+      </header>
+
+      <div class="wudu-workspace">
+
+        <!-- الخزانة (Pool) -->
+        <div>
+          <div class="zone-label">الخطوات المبعثرة</div>
+          <div class="wudu-pool" id="wudu-pool" aria-label="مجمع الخطوات"></div>
+        </div>
+
+        <!-- خانات الترتيب -->
+        <div>
+          <div class="zone-label">رتّب الخطوات (من 1 إلى 7)</div>
+          <div class="wudu-slots" id="wudu-slots" aria-label="خانات الترتيب"></div>
+        </div>
+
+      </div>
+
+      <!-- شريط الإجراءات -->
+      <div class="wudu-actions">
+        <div class="feedback-line" id="feedback">اسحب الخطوات إلى الترتيب الصحيح، أو انقر على خطوة ثم على الخانة.</div>
+        <button class="btn-ghost" id="shuffle-btn">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6l4 4-4 4M3 6h6a6 6 0 0 1 6 6M21 18l-4-4 4-4M21 18h-6a6 6 0 0 1-6-6"/></svg>
+          خلط
+        </button>
+        <button class="btn-primary" id="verify-btn" disabled>
+          تحقق من الترتيب
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5 9-10"/></svg>
+        </button>
+      </div>
+
+      <div class="memory-stats-bar">
+        <div class="wheel-stat">
+          المحاولات
+          <strong id="stat-tries">0</strong>
+        </div>
+        <div class="wheel-stat" style="text-align:center;">
+          الخطوات المثبتة
+          <strong id="stat-placed">0/7</strong>
+        </div>
+        <div class="wheel-stat" style="text-align:center;">
+          أفضل نتيجة
+          <strong id="stat-best">—</strong>
+        </div>
+        <button class="wheel-mute-toggle" id="mute-btn" aria-pressed="false">
+          <span class="mute-icon"></span>
+          <span class="mute-label">كتم الصوت</span>
+        </button>
+      </div>
+    </section>
+
+    <!-- ============ اللوحة الجانبية ============ -->
+    <aside class="side-panel">
+
+      <div class="panel-card">
+        <div class="panel-head">
+          <h3>الحديث الشريف</h3>
+          <span class="pill">رواه البخاري</span>
+        </div>
+        <div class="hadith-card">
+          <div class="quote">«من توضأ نحو وضوئي هذا، ثم صلى ركعتين لا يحدّث فيهما نفسه، غُفر له ما تقدّم من ذنبه»</div>
+          <span class="src">رواه البخاري ومسلم<span class="hadith-grade ok">صحيح</span></span>
+        </div>
+      </div>
+
+      <div class="panel-card">
+        <div class="panel-head">
+          <h3>دليل الخطوات</h3>
+          <span class="pill">7 خطوات</span>
+        </div>
+        <div class="steps-guide" id="steps-guide">
+          <div class="name-row matched"><span class="swatch" style="background:var(--peach)"></span><div style="flex-grow:1;"><div class="name-ar">1 · النية والتسمية</div><div class="name-meaning">«إنما الأعمال بالنيات»</div></div></div>
+          <div class="name-row matched"><span class="swatch" style="background:var(--mint)"></span><div style="flex-grow:1;"><div class="name-ar">2 · غسل اليدين ثلاثاً</div><div class="name-meaning">من الكفين إلى الرسغين</div></div></div>
+          <div class="name-row matched"><span class="swatch" style="background:var(--lavender)"></span><div style="flex-grow:1;"><div class="name-ar">3 · المضمضة والاستنشاق</div><div class="name-meaning">إدخال الماء في الفم والأنف</div></div></div>
+          <div class="name-row matched"><span class="swatch" style="background:var(--sky)"></span><div style="flex-grow:1;"><div class="name-ar">4 · غسل الوجه</div><div class="name-meaning">من منابت الشعر للذقن</div></div></div>
+          <div class="name-row matched"><span class="swatch" style="background:var(--butter)"></span><div style="flex-grow:1;"><div class="name-ar">5 · غسل اليدين إلى المرفقين</div><div class="name-meaning">اليمنى ثم اليسرى</div></div></div>
+          <div class="name-row matched"><span class="swatch" style="background:var(--rose)"></span><div style="flex-grow:1;"><div class="name-ar">6 · مسح الرأس</div><div class="name-meaning">مرة واحدة بماء جديد</div></div></div>
+          <div class="name-row matched"><span class="swatch" style="background:var(--brand)"></span><div style="flex-grow:1;"><div class="name-ar">7 · غسل القدمين إلى الكعبين</div><div class="name-meaning">اليمنى ثم اليسرى</div></div></div>
+        </div>
+        <div class="tip-card" style="margin-top: var(--s-4);">
+          <span class="tip-icon">!</span>
+          <span>الترتيب ركن من أركان الوضوء. اضغط على بطاقة من الخزانة، ثم على خانة، أو اسحب البطاقة مباشرة. النقر المزدوج على بطاقة موضوعة يعيدها للخزانة.</span>
+        </div>
+      </div>
+
+    </aside>
+  </div>
+</div>
+
+<!-- مودال الفوز -->
+<div class="modal-backdrop" id="win-modal" role="dialog" aria-modal="true">
+  <div class="modal">
+    <button class="modal-close" data-close aria-label="إغلاق">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M6 6l12 12M18 6l-12 12"/></svg>
+    </button>
+
+    <div class="modal-deco" aria-hidden="true">
+      <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5 9-10"/></svg>
+    </div>
+
+    <div class="modal-eyebrow">رائع</div>
+    <h2 class="modal-title">رتّبتَ خطوات الوضوء كاملة</h2>
+    <p class="modal-translit">من أتمّ الوضوء على وجهه فإن نوره يبلغ يوم القيامة مواضع الوضوء</p>
+
+    <div class="modal-meaning" style="text-align:right; display:grid; grid-template-columns:1fr 1fr; gap:var(--s-2);">
+      <div><strong>عدد المحاولات</strong><span id="win-tries">1</span></div>
+      <div><strong>أفضل نتيجة</strong><span id="win-best">1</span> محاولة</div>
+    </div>
+
+    <div class="modal-actions">
+      <button class="btn-ghost" data-close id="win-dismiss">انتهيت</button>
+      <button class="btn-primary" id="win-replay">جولة جديدة</button>
+    </div>
+  </div>
+</div>
+
+<div class="particles" id="particles" aria-hidden="true"></div>
+
+<script src="../scripts/activity-common.js"></script>
+<script src="../scripts/wudu.js"></script>
+
+<script>
+window.PAGE_DICT = {
+  "ترتيب الوضوء": "Wudu Order",
+  "الخطوات السبع للوضوء مبعثرة في الأعلى. اسحبها إلى مواقعها الصحيحة من 1 إلى 7، ثم اضغط «تحقق» لترى نتيجتك.": "The seven steps of wudu are scrambled above. Drag them into their correct order from 1 to 7, then press “Check” to see your result.",
+  "الخطوات المبعثرة": "Scrambled steps",
+  "مجمع الخطوات": "Steps pool",
+  "رتّب الخطوات (من 1 إلى 7)": "Arrange the steps (1 to 7)",
+  "خانات الترتيب": "Order slots",
+  "اسحب الخطوات إلى الترتيب الصحيح، أو انقر على خطوة ثم على الخانة.": "Drag the steps into the correct order, or tap a step then a slot.",
+  "خلط": "Shuffle",
+  "تحقق من الترتيب": "Check the order",
+  "المحاولات": "Attempts",
+  "الخطوات المثبتة": "Steps placed",
+  "أفضل نتيجة": "Best score",
+  "دليل الخطوات": "Steps guide",
+  "7 خطوات": "7 steps",
+  "1 · النية والتسمية": "1 · Intention & basmalah",
+  "2 · غسل اليدين ثلاثاً": "2 · Wash hands three times",
+  "من الكفين إلى الرسغين": "From palms to wrists",
+  "3 · المضمضة والاستنشاق": "3 · Rinse mouth & nose",
+  "إدخال الماء في الفم والأنف": "Take water into mouth and nose",
+  "4 · غسل الوجه": "4 · Wash the face",
+  "من منابت الشعر للذقن": "From hairline to chin",
+  "5 · غسل اليدين إلى المرفقين": "5 · Wash arms to elbows",
+  "اليمنى ثم اليسرى": "Right then left",
+  "6 · مسح الرأس": "6 · Wipe the head",
+  "مرة واحدة بماء جديد": "Once, with fresh water",
+  "7 · غسل القدمين إلى الكعبين": "7 · Wash feet to ankles",
+  "الترتيب ركن من أركان الوضوء. اضغط على بطاقة من الخزانة، ثم على خانة، أو اسحب البطاقة مباشرة. النقر المزدوج على بطاقة موضوعة يعيدها للخزانة.": "Order is a pillar of wudu. Tap a card from the pool then a slot, or drag the card directly. Double-tap a placed card to return it to the pool.",
+  "رائع": "Excellent",
+  "رتّبتَ خطوات الوضوء كاملة": "You ordered all the wudu steps",
+  "عدد المحاولات": "Attempts",
+  "محاولة": "attempts"
+};
+</script>
+<script src="../scripts/i18n.js"></script>
+<script src="../../shared/nav-fix.js"></script>
+</body>
+</html>

@@ -1,0 +1,56 @@
+/* data/stories/tirmidhi.js — Scholars · At-Tirmidhi — sources: سير أعلام النبلاء · البداية والنهاية · إسلام ويب · الدرر السنية */
+window.HISN_STORIES = window.HISN_STORIES || {};
+HISN_STORIES.tirmidhi = [
+  { icon:'🏷️', scene:'mihrab', character:'🧔',
+    title:{ ar:'العالمُ الذي يُبيِّنُ قوّةَ الحديث', en:'The Scholar Who Showed a Hadith\u2019s Strength' },
+    pages:[
+      { scene:'mihrab', character:'🧔',
+        text:{ ar:'حين ألّفَ <b>الإمامُ الترمذي</b> كتابَه «الجامع»، فعلَ شيئاً مفيداً جدّاً لم يكثرْ غيرُه منه: لم يكتفِ بجمعِ الأحاديث، بل كان <b>يُخبِرُ القارئَ عن درجةِ كلِّ حديث</b> — هل هو <b>صحيحٌ</b> قويٌّ جدّاً، أم <b>حسنٌ</b> جيّد، أم <b>ضعيفٌ</b> فيه كلام؟<br><br>تخيّلْ أنّ معك صندوقاً من الجواهر، وبجانبِ كلِّ جوهرةٍ بطاقةٌ تُخبِرُك بقيمتِها! هكذا كان كتابُ الترمذي: يُساعِدُ الناسَ على معرفةِ <b>أيُّ الأحاديثِ أقوى</b> ليعملوا بها باطمئنان. وكان الترمذيُّ أوّلَ من أكثرَ من استعمالِ كلمةِ «حديثٌ حسن». علّمنا الترمذيُّ أنّ <b>توضيحَ الحقِّ وبيانَ قوّتِه للناس خدمةٌ عظيمة</b>، وأنّ العلمَ يُقدَّمُ بأمانةٍ ووضوح.',
+          en:'When <b>Imam at-Tirmidhi</b> authored his book "the Jami\u2019," he did something very useful that few others did much of: he did not merely gather hadiths but <b>told the reader the grade of each hadith</b> — is it <b>sahih</b> (very strong), <b>hasan</b> (good), or <b>weak</b> (with some issue)?<br><br>Imagine you have a box of jewels, and beside each jewel a label telling you its value! That is what at-Tirmidhi\u2019s book was like: it helps people know <b>which hadiths are stronger</b> so they may act on them with confidence. At-Tirmidhi was the first to extensively use the term "hasan hadith." At-Tirmidhi taught us that <b>clarifying the truth and showing its strength to people is a great service</b>, and that knowledge is presented with honesty and clarity.' },
+        choice:{ q:{ar:'ما الشيءُ المفيدُ الذي فعله الترمذيُّ في كتابِه؟',en:'What useful thing did at-Tirmidhi do in his book?'},
+          opts:[
+            { t:{ar:'بيّنَ درجةَ كلِّ حديثٍ ليعرفَ الناسُ قوّتَه',en:'He stated the grade of each hadith so people would know its strength'},c:true,exp:{ar:'نعم! توضيحُ الحقِّ وبيانُ قوّتِه خدمةٌ عظيمة.',en:'Yes! Clarifying the truth and showing its strength is a great service.'} },
+            { t:{ar:'أخفى المعلومات',en:'He hid the information'},c:false,exp:{ar:'لا، بل بيّنها بوضوحٍ وأمانة.',en:'No — he clarified it with clarity and honesty.'} },
+            { t:{ar:'خلطَ الصحيحَ بالضعيفِ بلا بيان',en:'He mixed authentic and weak without explanation'},c:false,exp:{ar:'لا، بل بيّنَ درجةَ كلِّ حديث.',en:'No — he stated the grade of each hadith.'} },
+          ] } },
+    ],
+    quiz:[
+      { q:{ar:'بِمَ تميّزَ كتابُ الترمذي؟',en:'What distinguished at-Tirmidhi\u2019s book?'},
+        opts:[ {t:{ar:'يُبيِّنُ درجةَ كلِّ حديث',en:'It states the grade of each hadith'},c:true}, {t:{ar:'بلا ترتيب',en:'No organization'},c:false}, {t:{ar:'بلا فائدة',en:'No benefit'},c:false} ] },
+      { q:{ar:'أيَّ مصطلحٍ أكثرَ الترمذيُّ من استعمالِه؟',en:'What term did at-Tirmidhi use extensively?'},
+        opts:[ {t:{ar:'الحديثُ الحسن',en:'The hasan hadith'},c:true}, {t:{ar:'الحديثُ الطويل',en:'The long hadith'},c:false}, {t:{ar:'الحديثُ الجديد',en:'The new hadith'},c:false} ] },
+      { q:{ar:'ما الدرسُ من عملِ الترمذي؟',en:'What is the lesson from at-Tirmidhi\u2019s work?'},
+        opts:[ {t:{ar:'توضيحُ الحقِّ وبيانُ قوّتِه للناسِ خدمةٌ عظيمة',en:'Clarifying the truth and its strength for people is a great service'},c:true}, {t:{ar:'إخفاءُ العلم',en:'Hiding knowledge'},c:false}, {t:{ar:'الخلطُ والغموض',en:'Confusion and vagueness'},c:false} ] },
+    ],
+    moral:{ar:'توضيحُ الحقِّ وبيانُ قوّتِه للناس خدمةٌ عظيمة، والعلمُ يُقدَّمُ بأمانةٍ ووضوحٍ لينتفعَ به.',en:'Clarifying the truth and showing its strength to people is a great service; knowledge is presented with honesty and clarity so it can benefit.'},
+    badge:{icon:'🏷️',title:{ar:'وِسامُ بيانِ الحق',en:'Badge of Clarifying the Truth'}},
+    reflect:[ {ar:'هل تُوضِّحُ المعلومةَ الصحيحةَ بأمانةٍ لمن حولَك؟',en:'Do you clarify correct information honestly to those around you?'}, {ar:'كيف تُميِّزُ بين المعلومةِ القويّةِ والضعيفة؟',en:'How do you distinguish between strong and weak information?'} ],
+    didYouKnow:[ {ar:'«جامعُ الترمذي» أحدُ الكتبِ الستّة، اشتهرَ ببيانِ درجاتِ الأحاديثِ وذكرِ أقوالِ الفقهاء — المصدر: سير أعلام النبلاء',en:'"Jami\u2019 at-Tirmidhi" is one of the six books, famed for stating hadith grades and citing jurists\u2019 views — Source: Siyar A\u2019lam an-Nubala\u2019'}, {ar:'كان الترمذيُّ تلميذاً للبخاريِّ وأخذَ عنه علمَ العللِ والرجال — المصدر: البداية والنهاية',en:'At-Tirmidhi was a student of al-Bukhari and learned from him the science of defects and narrators — Source: Al-Bidaya wa an-Nihaya'} ],
+  },
+  { icon:'💪', scene:'mihrab', character:'🤲',
+    title:{ ar:'صبرٌ بعدَ فقدِ البصر', en:'Patience After Losing His Sight' },
+    pages:[
+      { scene:'mihrab', character:'🤲',
+        text:{ ar:'بعدَ سنواتٍ طويلةٍ قضاها <b>الإمامُ الترمذي</b> في طلبِ العلمِ وكتابتِه ونفعِ الناس، ابتلاه اللهُ بأمرٍ صعب: <b>فقدَ بصرَه</b> وصارَ لا يرى! كان هذا اختباراً عظيماً لعالمٍ يحبُّ القراءةَ والكتابة.<br><br>فماذا فعلَ الترمذي؟ لم يجزعْ ولم ييأسْ ولم يَشكُ، بل <b>صبرَ واحتسبَ الأجرَ عند الله</b>. ظلَّ يُعلِّمُ الناسَ ويذكرُ اللهَ ويبكي من خشيتِه، راضياً بقضاءِ الله. لقد عرفَ أنّ المؤمنَ إذا صبرَ على البلاءِ كُتِبَ له أجرٌ عظيم، وأنّ فقدَ البصرِ في الدنيا قد يُعوّضُه اللهُ بالجنّةِ في الآخرة. علّمنا الترمذيُّ أنّ <b>المؤمنَ يصبرُ على البلاءِ ويرضى بقضاءِ الله</b>، وأنّ الصبرَ بابٌ عظيمٌ للأجرِ والرفعة.',
+          en:'After long years that <b>Imam at-Tirmidhi</b> spent seeking knowledge, writing it, and benefiting people, Allah tested him with something hard: <b>he lost his sight</b> and could no longer see! This was a great test for a scholar who loved reading and writing.<br><br>So what did at-Tirmidhi do? He did not panic, despair, or complain — he <b>was patient and hoped for the reward with Allah</b>. He kept teaching people, remembering Allah, and weeping from awe of Him, content with Allah\u2019s decree. He knew that when a believer is patient through a trial, a great reward is written for him, and that the loss of sight in this world may be compensated by Allah with Paradise in the Hereafter. At-Tirmidhi taught us that <b>a believer is patient through trials and content with Allah\u2019s decree</b>, and that patience is a great door to reward and elevation.' },
+        choice:{ q:{ar:'كيف واجهَ الترمذيُّ فقدَ بصرِه؟',en:'How did at-Tirmidhi face the loss of his sight?'},
+          opts:[
+            { t:{ar:'صبرَ واحتسبَ الأجرَ ورضيَ بقضاءِ الله',en:'He was patient, hoped for reward, and was content with Allah\u2019s decree'},c:true,exp:{ar:'نعم! المؤمنُ يصبرُ على البلاءِ ويرضى بقضاءِ الله.',en:'Yes! A believer is patient through trials and content with Allah\u2019s decree.'} },
+            { t:{ar:'جزِعَ ويئسَ',en:'He panicked and despaired'},c:false,exp:{ar:'لا، بل صبرَ واحتسب.',en:'No — he was patient and hopeful.'} },
+            { t:{ar:'تركَ العلمَ والتعليم',en:'He abandoned knowledge and teaching'},c:false,exp:{ar:'لا، بل ظلَّ يُعلِّمُ ويذكرُ الله.',en:'No — he kept teaching and remembering Allah.'} },
+          ] } },
+    ],
+    quiz:[
+      { q:{ar:'ما الابتلاءُ الذي أصابَ الترمذيَّ في آخرِ حياتِه؟',en:'What trial befell at-Tirmidhi at the end of his life?'},
+        opts:[ {t:{ar:'فقدَ بصرَه',en:'He lost his sight'},c:true}, {t:{ar:'فقدَ مالَه',en:'He lost his wealth'},c:false}, {t:{ar:'نسيَ الحديث',en:'He forgot hadith'},c:false} ] },
+      { q:{ar:'كيف تعاملَ مع هذا الابتلاء؟',en:'How did he deal with this trial?'},
+        opts:[ {t:{ar:'صبرَ واحتسبَ ورضيَ بقضاءِ الله',en:'He was patient, hopeful, and content with Allah\u2019s decree'},c:true}, {t:{ar:'يئسَ وشكا',en:'He despaired and complained'},c:false}, {t:{ar:'غضِبَ',en:'He became angry'},c:false} ] },
+      { q:{ar:'ما الدرسُ من صبرِ الترمذي؟',en:'What is the lesson from at-Tirmidhi\u2019s patience?'},
+        opts:[ {t:{ar:'المؤمنُ يصبرُ على البلاءِ ويرضى بقضاءِ الله',en:'A believer is patient through trials and content with Allah\u2019s decree'},c:true}, {t:{ar:'الجزعُ عند البلاء',en:'Panicking in trials'},c:false}, {t:{ar:'اليأسُ من رحمةِ الله',en:'Despairing of Allah\u2019s mercy'},c:false} ] },
+    ],
+    moral:{ar:'المؤمنُ يصبرُ على البلاءِ ويرضى بقضاءِ الله، والصبرُ بابٌ عظيمٌ للأجرِ والرفعةِ في الدنيا والآخرة.',en:'A believer is patient through trials and content with Allah\u2019s decree; patience is a great door to reward and elevation in this world and the next.'},
+    badge:{icon:'💪',title:{ar:'وِسامُ الصبرِ والرضا',en:'Badge of Patience & Contentment'}},
+    reflect:[ {ar:'كيف تصبرُ وترضى حين يصيبُك ما تكره؟',en:'How do you stay patient and content when something you dislike befalls you?'}, {ar:'هل تثقُ أنّ اللهَ يُعوّضُ الصابرينَ خيراً؟',en:'Do you trust that Allah compensates the patient with good?'} ],
+    didYouKnow:[ {ar:'كُفَّ بصرُ الإمامِ الترمذيِّ في أواخرِ عمرِه، فصبرَ واحتسبَ — المصدر: سير أعلام النبلاء',en:'Imam at-Tirmidhi went blind in his later years and was patient and hopeful of reward — Source: Siyar A\u2019lam an-Nubala\u2019'}, {ar:'في الحديثِ القدسي أنّ اللهَ يُعوّضُ من صبرَ على فقدِ بصرِه الجنّة — المصدر: صحيح البخاري',en:'In a hadith qudsi, Allah compensates whoever patiently bears the loss of his sight with Paradise — Source: Sahih al-Bukhari'} ],
+  },
+];

@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>شجرة العائلة النبوية · أنوس</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+
+<link rel="stylesheet" href="../styles/tokens.css" />
+<link rel="stylesheet" href="../styles/dashboard.css" />
+<link rel="stylesheet" href="../styles/wheel.css" />
+<link rel="stylesheet" href="../styles/family-tree.css" />
+</head>
+<body>
+
+<div class="bg-decor" aria-hidden="true"></div>
+
+<div class="activity-shell">
+
+  <nav class="activity-nav">
+    <a class="back-link" href="../dashboard.html">
+      الرجوع للوحة الأنشطة
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg>
+    </a>
+    <div class="activity-crumb">
+      <span>تحديات السيرة واللغة</span>
+      <span class="sep">/</span>
+      <span class="cur">شجرة العائلة النبوية</span>
+    </div>
+    <div class="activity-actions">
+      <button class="icon-btn" id="reset-btn" title="إعادة الضبط" aria-label="إعادة الضبط">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 3-6.7L3 8"/><path d="M3 3v5h5"/></svg>
+      </button>
+    </div>
+  </nav>
+
+  <div class="activity-layout">
+
+    <!-- ============ لوحة اللعبة ============ -->
+    <section class="fm-panel">
+      <header class="wheel-header">
+        <span class="activity-tag">Activity 45 · Hierarchy Tree</span>
+        <h1 class="activity-title">شجرة العائلة النبوية</h1>
+        <p class="activity-desc">
+          تعرَّف على نَسَبِ النبيِّ ﷺ وأهلِ بيته. اختَر اسماً من البنك،
+          ثم ضَعه في موضعه الصحيح من الشجرة.
+        </p>
+      </header>
+
+      <div class="fm-hud">
+        <div class="hud-block">المواضع <strong><span id="f-placed">0</span><small id="f-total">/8</small></strong></div>
+        <div class="hud-block">أخطاء <strong id="f-mistakes">0</strong></div>
+      </div>
+
+      <div class="fm-tree" id="fm-tree"></div>
+
+      <div class="fm-bank-label">اختَر اسماً ثم ضَعه في موضعه:</div>
+      <div class="fm-bank" id="fm-bank"></div>
+
+      <div class="wheel-controls">
+        <div class="wheel-stat">أقل الأخطاء <strong id="best">—</strong></div>
+        <div class="wheel-stat" style="text-align:center;">الجولات <strong id="plays">0</strong></div>
+        <button class="wheel-mute-toggle" id="mute-btn" aria-pressed="false">
+          <span class="mute-icon"></span>
+          <span class="mute-label">كتم الصوت</span>
+        </button>
+      </div>
+    </section>
+
+    <!-- ============ اللوحة الجانبية ============ -->
+    <aside class="side-panel">
+      <div class="panel-card">
+        <div class="panel-head">
+          <h3>الصِّلات</h3>
+          <span class="pill" id="fm-pill">0/8</span>
+        </div>
+        <div class="fm-rel" id="fm-rel"></div>
+      </div>
+
+      <div class="panel-card">
+        <div class="panel-head"><h3>كيف ألعب؟</h3></div>
+        <div style="font-size: 14px; line-height: 1.7; color: var(--ink-2);">
+          ١. عُقدةُ النبيِّ ﷺ ثابتةٌ في الوسط.<br/>
+          ٢. اختَر اسماً من البنك (يُضيءُ مختاراً).<br/>
+          ٣. انقُر الموضعَ المناسب لِصِلَتِه.<br/>
+          ٤. لإفراغ موضعٍ ممتلئ، انقُر عليه.
+        </div>
+      </div>
+
+      <div class="panel-card">
+        <div class="panel-head"><h3>محبّةُ آلِ البيت</h3></div>
+        <div class="hadith-card">
+          <div class="quote">«أُذكِّرُكم اللهَ في أهلِ بيتي»</div>
+          <span class="src">رواه مسلم<span class="hadith-grade ok">صحيح</span></span>
+        </div>
+      </div>
+    </aside>
+  </div>
+</div>
+
+<!-- مودال النصر -->
+<div class="modal-backdrop" id="win-modal" role="dialog" aria-modal="true">
+  <div class="modal">
+    <button class="modal-close" data-close aria-label="إغلاق">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M6 6l12 12M18 6l-12 12"/></svg>
+    </button>
+    <div class="modal-deco" aria-hidden="true">
+      <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l2.4 6.6L21 9l-5 4.6L17.2 21 12 17.4 6.8 21 8 13.6 3 9l6.6-.4z"/></svg>
+    </div>
+    <div class="modal-eyebrow">شجرة العائلة النبوية</div>
+    <h2 class="modal-title">عارفٌ بالنَّسَب!</h2>
+    <div class="modal-meaning" id="win-summary"></div>
+    <div class="modal-actions">
+      <button class="btn-ghost" data-close>انتهيت</button>
+      <button class="btn-primary" id="win-replay">جولة جديدة</button>
+    </div>
+  </div>
+</div>
+
+<div class="particles" id="particles" aria-hidden="true"></div>
+
+<script src="../scripts/activity-common.js"></script>
+<script src="../scripts/family-tree.js"></script>
+
+<script>
+window.PAGE_DICT = {
+  "شجرة العائلة النبوية": "Prophetic Family Tree",
+  "تعرَّف على نَسَبِ النبيِّ ﷺ وأهلِ بيته. اختَر اسماً من البنك، ثم ضَعه في موضعه الصحيح من الشجرة.": "Learn the lineage of the Prophet ﷺ and his household. Choose a name from the bank, then place it in its correct position on the tree.",
+  "المواضع": "Positions",
+  "أخطاء": "Mistakes",
+  "اختَر اسماً ثم ضَعه في موضعه:": "Choose a name then place it in its position:",
+  "أقل الأخطاء": "Fewest mistakes",
+  "الجولات": "Rounds",
+  "الصِّلات": "Relations",
+  "١. عُقدةُ النبيِّ ﷺ ثابتةٌ في الوسط.": "1. The Prophet's ﷺ node is fixed in the center.",
+  "٢. اختَر اسماً من البنك (يُضيءُ مختاراً).": "2. Choose a name from the bank (it lights up when selected).",
+  "٣. انقُر الموضعَ المناسب لِصِلَتِه.": "3. Tap the position matching its relation.",
+  "٤. لإفراغ موضعٍ ممتلئ، انقُر عليه.": "4. To empty a filled position, tap it.",
+  "محبّةُ آلِ البيت": "Love of the Prophet's household",
+  "عارفٌ بالنَّسَب!": "A knower of lineage!"
+};
+</script>
+<script>
+Object.assign(window.PAGE_DICT, {
+  "الجَدّ":"Grandfather","الأب":"Father","الأم":"Mother","النبيّ ﷺ":"The Prophet ﷺ","الزوجة":"Wife","الابنة":"Daughter","الحفيد":"Grandson",
+  "عبد المطّلب":"Abdul-Muttalib","عبد الله":"Abdullah","آمنة بنت وهب":"Amina bint Wahb","محمد ﷺ":"Muhammad ﷺ","خديجة بنت خويلد":"Khadija bint Khuwaylid","فاطمة الزهراء":"Fatima az-Zahra","الحَسَن":"Al-Hasan","الحُسَين":"Al-Husayn",
+  "أبو جهل":"Abu Jahl","سلمان الفارسي":"Salman al-Farisi"
+});
+</script>
+<script src="../scripts/i18n.js"></script>
+<script src="../../shared/nav-fix.js"></script>
+</body>
+</html>

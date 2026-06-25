@@ -1,0 +1,254 @@
+/* ============================================================
+   WATER SAVE — توفير المياه
+   ============================================================ */
+
+.ws-panel {
+  background:
+    radial-gradient(140% 80% at 50% 0%, rgba(205,235,215,0.32), transparent 60%),
+    var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--r-2xl);
+  padding: var(--s-8);
+  display: flex; flex-direction: column;
+  box-shadow: var(--shadow-card);
+}
+.ws-panel .activity-tag { background: var(--mint); color: var(--mint-ink); }
+.ws-panel .activity-tag::before { background: var(--mint-ink); }
+
+.ws-hud {
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--s-3);
+  margin-bottom: var(--s-4);
+}
+.ws-hud .hud-block {
+  background: var(--bg-soft); border: 1px solid var(--line);
+  border-radius: var(--r-md); padding: 10px 14px;
+  display: flex; flex-direction: column; gap: 2px;
+  font-size: 11px; color: var(--muted); font-weight: 600;
+}
+.ws-hud .hud-block strong {
+  font-size: 20px; color: var(--ink);
+  font-family: var(--font-en); font-weight: 800;
+}
+
+.ws-stage {
+  background: linear-gradient(180deg, #E0EEF7 0%, #CFE3F2 60%, #DEEFE2 100%);
+  border-radius: var(--r-xl);
+  border: 1px solid var(--line);
+  padding: var(--s-5);
+  display: flex; flex-direction: column;
+  gap: var(--s-4);
+  min-height: 460px;
+}
+
+.ws-task-card {
+  display: flex; gap: var(--s-4); align-items: center;
+  background: var(--surface);
+  border: 1.5px solid var(--mint-ink);
+  border-radius: var(--r-lg);
+  padding: var(--s-4);
+}
+.ws-task-card .task-icon {
+  font-size: 36px; flex-shrink: 0;
+}
+.ws-task-card strong {
+  display: block; font-size: 17px; font-weight: 800; margin-bottom: 4px;
+}
+.ws-task-card p {
+  margin: 0; font-size: 13px; color: var(--ink-2); line-height: 1.5;
+}
+.ws-task-card .task-target {
+  flex-shrink: 0;
+  padding: 8px 14px;
+  background: var(--mint);
+  color: var(--mint-ink);
+  border-radius: var(--r-pill);
+  font-family: var(--font-en);
+  font-weight: 800;
+  font-size: 13px;
+  min-width: 90px; text-align: center;
+}
+
+/* المَشهَد */
+.ws-scene {
+  display: flex; flex-direction: column;
+  align-items: center;
+  gap: var(--s-3);
+  padding: var(--s-3);
+  background: rgba(255,255,255,0.55);
+  border: 1px dashed var(--line);
+  border-radius: var(--r-lg);
+}
+
+.ws-tap-wrap {
+  position: relative;
+  width: 220px; height: 360px;
+  margin: 0 auto;
+}
+.ws-tap {
+  position: absolute; top: 0; left: 0;
+  width: 100%; height: auto;
+  z-index: 2;
+}
+#tap-handle {
+  transition: transform 0.25s cubic-bezier(.2,1.4,.4,1);
+  transform-origin: center;
+  transform-box: fill-box;
+}
+.tap-on #tap-handle { transform: rotate(60deg); }
+
+#ws-flow {
+  position: absolute; top: 0; left: 0;
+  width: 100%; height: 100%;
+  z-index: 1; pointer-events: none;
+}
+
+.ws-glass {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px; height: 130px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.4), rgba(255,255,255,0.25));
+  border: 3px solid #fff;
+  border-top: none;
+  border-radius: 0 0 14px 14px;
+  z-index: 2;
+  box-shadow: inset 0 0 8px rgba(31,37,64,0.08), 0 4px 8px rgba(31,37,64,0.06);
+  overflow: hidden;
+}
+.glass-water {
+  position: absolute; inset: 0;
+  display: flex; align-items: flex-end;
+}
+.glass-fill {
+  display: block;
+  width: 100%;
+  background: linear-gradient(180deg, #CFE3F2 0%, #2E5F8A 100%);
+  transition: height 0.05s linear;
+  position: relative;
+}
+.glass-fill::before {
+  content: ""; position: absolute; top: -4px; left: 0; right: 0;
+  height: 8px;
+  background:
+    radial-gradient(circle at 20% 50%, rgba(255,255,255,0.6) 0%, transparent 50%),
+    radial-gradient(circle at 60% 50%, rgba(255,255,255,0.4) 0%, transparent 50%),
+    #2E5F8A;
+  border-radius: 50% 50% 0 0 / 80% 80% 0 0;
+  animation: ws-wave 1.4s ease-in-out infinite;
+}
+@keyframes ws-wave {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(2px); }
+}
+.glass-target-line {
+  position: absolute;
+  left: -8px; right: -8px;
+  height: 2px;
+  background: var(--rose);
+  z-index: 3;
+}
+.glass-target-line::before, .glass-target-line::after {
+  content: ""; position: absolute; top: -3px;
+  width: 8px; height: 8px; border-radius: 50%;
+  background: var(--rose);
+}
+.glass-target-line::before { left: -8px; }
+.glass-target-line::after { right: -8px; }
+
+.glass-target-label {
+  position: absolute;
+  font-size: 9px;
+  font-weight: 800;
+  font-family: var(--font-en);
+  color: var(--rose);
+  background: #fff;
+  padding: 1px 4px;
+  border-radius: 4px;
+  border: 1px solid var(--rose);
+  z-index: 4;
+}
+
+.ws-puddle {
+  position: absolute;
+  bottom: 0; left: 50%;
+  transform: translateX(-50%);
+  width: 0; height: 8px;
+  background: radial-gradient(ellipse at center, rgba(46,95,138,0.5) 0%, rgba(46,95,138,0.0) 70%);
+  border-radius: 50%;
+  transition: width 0.2s ease;
+  z-index: 1;
+}
+
+.ws-action {
+  padding: 14px 28px;
+  background: var(--mint-ink);
+  color: #fff;
+  border-radius: var(--r-pill);
+  font-weight: 800; font-size: 16px;
+  display: inline-flex; align-items: center; gap: 8px;
+  transition: background 0.2s ease, transform 0.15s ease;
+  box-shadow: 0 6px 16px rgba(47,122,82,0.3);
+}
+.ws-action:hover { transform: translateY(-2px); }
+.ws-action .state-off { display: inline-flex; align-items: center; gap: 8px; }
+.ws-action .state-on  { display: none; }
+.ws-action.on {
+  background: var(--rose); color: var(--ink);
+  box-shadow: 0 6px 16px rgba(232,165,165,0.4);
+}
+.ws-action.on .state-off { display: none; }
+.ws-action.on .state-on  { display: inline-flex; align-items: center; gap: 8px; }
+
+.ws-result {
+  min-height: 26px;
+  font-size: 13px;
+  font-weight: 800;
+  color: var(--ink);
+  text-align: center;
+}
+.ws-result.good { color: var(--mint-ink); }
+.ws-result.bad { color: var(--peach-ink); }
+
+.ws-controls {
+  display: flex; gap: 8px; justify-content: center;
+}
+.ws-btn {
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 10px 16px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--r-pill);
+  font-weight: 700; font-size: 13px;
+  color: var(--ink-2);
+  transition: background 0.18s ease, transform 0.15s ease;
+}
+.ws-btn:hover:not(:disabled) { background: var(--bg-soft); transform: translateY(-1px); }
+.ws-btn.primary {
+  background: var(--mint-ink); color: #fff; border-color: var(--mint-ink);
+}
+.ws-btn.primary:hover:not(:disabled) { background: var(--ink); border-color: var(--ink); }
+.ws-btn:disabled { opacity: 0.45; cursor: not-allowed; }
+
+/* قائمة المَهَمَّات */
+.ws-tasks {
+  display: flex; flex-direction: column; gap: 6px;
+}
+.ws-tasks .row {
+  display: flex; align-items: center; gap: 10px;
+  padding: 8px 12px;
+  background: var(--bg-soft);
+  border: 1px solid var(--line);
+  border-radius: var(--r-md);
+  font-size: 12px;
+  font-weight: 700;
+}
+.ws-tasks .row.current { background: var(--mint); border-color: var(--mint-ink); color: var(--mint-ink); }
+.ws-tasks .row.done { opacity: 0.7; text-decoration: line-through; }
+.ws-tasks .row .ic { font-size: 16px; }
+.ws-tasks .row .nm { flex: 1; }
+.ws-tasks .row .sc {
+  font-family: var(--font-en); font-weight: 800;
+  background: rgba(255,255,255,0.7); padding: 2px 8px; border-radius: var(--r-pill);
+  font-size: 11px;
+}

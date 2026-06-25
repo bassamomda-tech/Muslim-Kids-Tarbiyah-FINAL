@@ -1,0 +1,218 @@
+/* ============================================================
+   PROPHET MAP — خريطة الأنبياء
+   ============================================================ */
+
+.pm-panel {
+  background:
+    radial-gradient(140% 80% at 50% 0%, rgba(224,213,242,0.35), transparent 60%),
+    var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--r-2xl);
+  padding: var(--s-8);
+  display: flex; flex-direction: column;
+  box-shadow: var(--shadow-card);
+}
+.pm-panel .activity-tag { background: var(--lavender); color: var(--lavender-ink); }
+.pm-panel .activity-tag::before { background: var(--lavender-ink); }
+
+.pm-hud {
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--s-3);
+  margin-bottom: var(--s-4);
+}
+.pm-hud .hud-block {
+  background: var(--bg-soft); border: 1px solid var(--line);
+  border-radius: var(--r-md); padding: 10px 14px;
+  display: flex; flex-direction: column; gap: 2px;
+  font-size: 11px; color: var(--muted); font-weight: 600;
+}
+.pm-hud .hud-block strong {
+  font-size: 18px; color: var(--ink);
+  font-family: var(--font-en); font-weight: 800;
+}
+.pm-hud .hud-block strong#region-name,
+.pm-hud .hud-block strong#last-visit {
+  font-family: var(--font-ar);
+  font-size: 14px;
+}
+
+.pm-stage {
+  background:
+    radial-gradient(120% 80% at 30% 30%, #FFF6E0 0%, transparent 60%),
+    radial-gradient(120% 80% at 80% 80%, #E0EEF7 0%, transparent 60%),
+    #F5EEDF;
+  border-radius: var(--r-xl);
+  border: 1px solid var(--line);
+  padding: var(--s-4);
+  position: relative;
+  overflow: hidden;
+}
+.pm-stage svg { width: 100%; height: auto; display: block; }
+
+/* أراضٍ */
+.pm-land {
+  fill: #DCE9DC;
+  stroke: #6A8E7F;
+  stroke-width: 0.8;
+  stroke-linejoin: round;
+}
+.pm-water {
+  fill: rgba(207, 227, 242, 0.55);
+}
+.pm-river {
+  fill: none; stroke: #C3DDEE; stroke-width: 2.2; stroke-linecap: round;
+}
+.pm-label {
+  font-family: var(--font-ar);
+  font-size: 9px;
+  font-weight: 700;
+  fill: var(--mint-ink);
+  opacity: 0.55;
+  pointer-events: none;
+  text-anchor: middle;
+}
+
+/* النِّقاط النَّابِضة */
+.pm-spot {
+  cursor: pointer;
+}
+.pm-spot .pulse {
+  fill: var(--rose);
+  opacity: 0.45;
+  transform-origin: center;
+  transform-box: fill-box;
+  animation: pm-pulse 1.8s ease-in-out infinite;
+}
+@keyframes pm-pulse {
+  0%, 100% { transform: scale(0.7); opacity: 0.0; }
+  50% { transform: scale(1.6); opacity: 0.55; }
+}
+.pm-spot .pin {
+  fill: #E8A5A5;
+  stroke: #fff;
+  stroke-width: 2;
+  transition: fill 0.2s ease, transform 0.18s ease;
+  transform-origin: center;
+  transform-box: fill-box;
+}
+.pm-spot:hover .pin {
+  transform: scale(1.2);
+}
+.pm-spot.visited .pin { fill: var(--lavender-ink); }
+.pm-spot.visited .pulse { display: none; }
+.pm-spot.visited .check {
+  fill: #fff; font-family: var(--font-en); font-weight: 800; font-size: 9px;
+  text-anchor: middle; dominant-baseline: middle;
+  pointer-events: none;
+}
+
+.pm-spot-label {
+  font-family: var(--font-ar);
+  font-size: 10px;
+  font-weight: 800;
+  fill: var(--ink);
+  text-anchor: middle;
+  pointer-events: none;
+}
+.pm-spot-label-bg {
+  fill: rgba(255,255,255,0.85);
+  rx: 4;
+  pointer-events: none;
+}
+
+.pm-legend {
+  position: absolute;
+  bottom: var(--s-3);
+  left: var(--s-3);
+  display: flex; gap: var(--s-4);
+  background: rgba(255,255,255,0.85);
+  border: 1px solid var(--line);
+  border-radius: var(--r-pill);
+  padding: 6px 12px;
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--ink-2);
+}
+.pm-legend .dot {
+  display: inline-block; width: 8px; height: 8px; border-radius: 50%;
+  margin-left: 4px; vertical-align: middle;
+}
+.pm-legend .dot.visited { background: var(--lavender-ink); }
+.pm-legend .dot.new { background: var(--rose); }
+
+/* قائمة الأنبياء */
+.pm-list {
+  display: flex; flex-direction: column; gap: 6px;
+  max-height: 360px; overflow-y: auto;
+}
+.pm-list .item {
+  display: flex; align-items: center; gap: var(--s-3);
+  padding: 10px 12px;
+  background: var(--bg-soft);
+  border: 1px solid var(--line);
+  border-radius: var(--r-md);
+  cursor: pointer;
+  transition: background 0.18s ease, transform 0.15s ease;
+}
+.pm-list .item:hover { background: var(--surface); transform: translateX(-2px); }
+.pm-list .item.visited {
+  background: var(--lavender); border-color: var(--lavender-ink);
+}
+.pm-list .item .name {
+  flex-grow: 1; font-weight: 800; font-size: 13px;
+}
+.pm-list .item .place {
+  font-size: 11px; color: var(--muted); font-weight: 600;
+}
+.pm-list .item .pin-ic {
+  width: 22px; height: 22px; border-radius: 50%;
+  background: rgba(31,37,64,0.06);
+  display: grid; place-items: center;
+  color: var(--muted);
+}
+.pm-list .item.visited .pin-ic { background: var(--lavender-ink); color: #fff; }
+
+/* مودال النَّبي */
+.pm-modal {
+  max-width: 480px;
+  text-align: right;
+}
+.pm-modal-place {
+  display: inline-block;
+  padding: 4px 12px;
+  background: var(--lavender);
+  color: var(--lavender-ink);
+  border-radius: var(--r-pill);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+  margin-bottom: var(--s-3);
+}
+.pm-modal-arabic {
+  font-family: 'Amiri', serif;
+  font-size: 16px;
+  color: var(--lavender-ink);
+  margin: 0 0 var(--s-4);
+}
+.pm-modal-section {
+  background: var(--bg-soft);
+  border: 1px solid var(--line);
+  border-radius: var(--r-md);
+  padding: 12px 16px;
+  margin-bottom: var(--s-3);
+}
+.pm-row {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 6px 0;
+  font-size: 13px;
+}
+.pm-row + .pm-row { border-top: 1px dashed var(--line); }
+.pm-row .lbl { color: var(--muted); font-weight: 600; }
+.pm-row .val { color: var(--ink); font-weight: 800; max-width: 65%; text-align: left; }
+
+.pm-modal-story {
+  font-size: 14px;
+  line-height: 1.7;
+  color: var(--ink-2);
+  margin-bottom: var(--s-4);
+  text-wrap: pretty;
+}

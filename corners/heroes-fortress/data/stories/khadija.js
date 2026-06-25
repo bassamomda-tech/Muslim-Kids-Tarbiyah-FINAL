@@ -1,0 +1,56 @@
+/* data/stories/khadija.js — Heroes · Khadija bint Khuwaylid — sources: صور من حياة الصحابة (الباشا) · إسلام ويب · الدرر السنية · صحيح البخاري ومسلم */
+window.HISN_STORIES = window.HISN_STORIES || {};
+HISN_STORIES.khadija = [
+  { icon:'🤝', scene:'night', character:'❤️',
+    title:{ ar:'كلماتٌ ثبّتتْ نبيّاً', en:'Words That Steadied a Prophet' },
+    pages:[
+      { scene:'peaks', character:'🕊️',
+        text:{ ar:'في غارِ حِراء، نزلَ الوحيُ على النبيِّ ﷺ أوّلَ مرّةٍ بقولِ جبريل: «اقرأْ!». فرجعَ النبيُّ ﷺ إلى بيتِه <b>يرتجفُ من شدّةِ الموقف</b> ويقول: «زمّلوني زمّلوني!». فمن الذي كان بجانبِه يطمئنُه؟ زوجتُه الوفيّةُ <b>خديجة</b>.<br><br>لم تخفْ ولم تشكَّ، بل دثّرتْه وهدّأتْه، ثمّ قالت له كلماتٍ خالدةً ثبّتتْ قلبَه: <b>«واللهِ لا يُخزيك اللهُ أبداً، إنّك لتصِلُ الرحِم، وتحملُ الكَلَّ، وتكسِبُ المعدوم، وتقري الضيف، وتُعينُ على نوائبِ الحق»</b>. كانت أوّلَ من آمنَ به وصدّقه، فكانت سندَه ونورَه في أصعبِ لحظةٍ في حياتِه.',
+          en:'In the Cave of Hira, revelation came to the Prophet ﷺ for the first time with Jibril\u2019s word: "Read!" The Prophet ﷺ returned home <b>trembling from the intensity of the moment</b>, saying: "Wrap me up, wrap me up!" Who was at his side to reassure him? His loyal wife <b>Khadija</b>.<br><br>She did not fear or doubt; she covered and calmed him, then spoke eternal words that steadied his heart: <b>"By Allah, Allah will never disgrace you. You keep ties of kinship, carry the burdened, give to the destitute, honor the guest, and help against the calamities of truth."</b> She was the first to believe in him and affirm him — his support and light in the hardest moment of his life.' },
+        choice:{ q:{ar:'ماذا فعلتْ خديجةُ حين رجعَ النبيُّ ﷺ خائفاً من الغار؟',en:'What did Khadija do when the Prophet ﷺ returned afraid from the cave?'},
+          opts:[
+            { t:{ar:'ثبّتته وآمنتْ به وطمأنتْه',en:'She steadied him, believed in him, and reassured him'},c:true,exp:{ar:'نعم! كانت أوّلَ من آمنَ وسندَه في أصعبِ لحظة.',en:'Yes! She was the first to believe and his support in the hardest moment.'} },
+            { t:{ar:'خافتْ وهربتْ',en:'She panicked and fled'},c:false,exp:{ar:'لا، بل ثبّتتْه بكلماتٍ عظيمة.',en:'No — she steadied him with great words.'} },
+            { t:{ar:'شكّتْ فيه',en:'She doubted him'},c:false,exp:{ar:'لا، بل صدّقتْه فوراً وآمنتْ به.',en:'No — she affirmed him at once and believed in him.'} },
+          ] } },
+    ],
+    quiz:[
+      { q:{ar:'أين نزلَ الوحيُ على النبيِّ ﷺ أوّلَ مرّة؟',en:'Where did revelation first come to the Prophet ﷺ?'},
+        opts:[ {t:{ar:'غارِ حِراء',en:'The Cave of Hira'},c:true}, {t:{ar:'المسجد',en:'The mosque'},c:false}, {t:{ar:'السوق',en:'The market'},c:false} ] },
+      { q:{ar:'من ثبّتَ النبيَّ ﷺ في ذلك الموقف؟',en:'Who steadied the Prophet ﷺ in that moment?'},
+        opts:[ {t:{ar:'خديجة',en:'Khadija'},c:true}, {t:{ar:'أبو لهب',en:'Abu Lahab'},c:false}, {t:{ar:'الناس',en:'The people'},c:false} ] },
+      { q:{ar:'ماذا نتعلّمُ من موقفِ خديجة؟',en:'What do we learn from Khadija\u2019s stance?'},
+        opts:[ {t:{ar:'الكلمةُ الطيّبةُ تُثبِّتُ القلوب',en:'A kind word steadies hearts'},c:true}, {t:{ar:'الخوفُ ينفع',en:'Fear is useful'},c:false}, {t:{ar:'الشكُّ مطلوب',en:'Doubt is required'},c:false} ] },
+    ],
+    moral:{ar:'الكلمةُ الطيّبةُ والدعمُ الصادقُ يُثبّتان القلوبَ في أصعبِ الأوقات.',en:'A kind word and sincere support steady hearts in the hardest of times.'},
+    badge:{icon:'🤝',title:{ar:'وِسامُ السندِ الوفي',en:'Badge of the Loyal Support'}},
+    reflect:[ {ar:'كيف تُثبِّتُ من تحبُّ بكلمةٍ طيّبةٍ وقتَ الشدّة؟',en:'How do you steady those you love with a kind word in hard times?'}, {ar:'هل تُصدِّقُ وتُساندُ أهلَ الخيرِ من حولِك؟',en:'Do you affirm and support the good people around you?'} ],
+    didYouKnow:[ {ar:'كلماتُ خديجةَ «واللهِ لا يُخزيك اللهُ أبداً» ثابتةٌ في صحيحِ البخاري — المصدر: صحيح البخاري',en:'Khadija\u2019s words "By Allah, Allah will never disgrace you" are established in Sahih al-Bukhari — Source: Sahih al-Bukhari'}, {ar:'كانت خديجةُ تُلقَّبُ في الجاهليّةِ بـ«الطاهرة» لشرفِها وعفّتِها — المصدر: البداية والنهاية',en:'Khadija was called "the Pure" in pre-Islamic times for her nobility and chastity — Source: Al-Bidaya wa an-Nihaya'} ],
+  },
+  { icon:'🏠', scene:'kaaba', character:'🎁',
+    title:{ ar:'بيتٌ في الجنّةِ من قصب', en:'A House in Paradise of Reeds' },
+    pages:[
+      { scene:'kaaba', character:'🎁',
+        text:{ ar:'وقفتْ <b>خديجة</b> مع النبيِّ ﷺ في أصعبِ سنوات الدعوة. حين قاطعتْ قريشٌ المسلمينَ في <b>شِعبِ أبي طالب</b> ثلاثَ سنوات، صبرتْ على الجوعِ والحصار، و<b>أنفقتْ مالَها كلَّه</b> في نصرةِ الإسلامِ وإطعامِ المسلمين، حتى لم يبقَ من ثروتِها العظيمةِ شيءٌ تقريباً — كلُّه في سبيلِ الله!<br><br>فكافأها اللهُ أعظمَ مكافأة. جاءَ جبريلُ إلى النبيِّ ﷺ وقال: <b>«يا رسولَ الله، هذه خديجةُ قد أتتْ، فاقرأْ عليها السلامَ من ربِّها، وبشِّرها ببيتٍ في الجنّةِ من قصبٍ لا صخبَ فيه ولا نصب»</b>. أيُّ شرفٍ أعظمُ من أن يُرسِلَ اللهُ لكِ سلامَه من فوقِ سبعِ سماوات؟ بقيَ النبيُّ ﷺ يُحِبُّها ويذكرُها بالخيرِ حتى بعدَ وفاتِها.',
+          en:'<b>Khadija</b> stood with the Prophet ﷺ through the hardest years of the message. When Quraysh boycotted the Muslims in the <b>valley of Abu Talib</b> for three years, she endured hunger and siege, and <b>spent all her wealth</b> to support Islam and feed the Muslims — until almost nothing remained of her great fortune, all for Allah\u2019s sake!<br><br>So Allah rewarded her with the greatest reward. Jibril came to the Prophet ﷺ and said: <b>"O Messenger of Allah, here is Khadija coming — convey to her greetings of peace from her Lord, and give her glad tidings of a house in Paradise of reeds, with no clamor or fatigue in it."</b> What honor is greater than for Allah to send you His peace from above the seven heavens? The Prophet ﷺ kept loving her and remembering her with good even after her death.' },
+        choice:{ q:{ar:'لماذا نالتْ خديجةُ هذه المكانةَ العظيمة؟',en:'Why did Khadija attain this great rank?'},
+          opts:[
+            { t:{ar:'لإيمانِها ووفائِها وبذلِها مالَها لله',en:'For her faith, loyalty, and giving her wealth for Allah'},c:true,exp:{ar:'نعم! الجزاءُ من جنسِ العمل، فأكرمها اللهُ بأعظمِ كرامة.',en:'Yes! Reward matches deeds, so Allah honored her with the greatest honor.'} },
+            { t:{ar:'لجمالِها فقط',en:'For her beauty alone'},c:false,exp:{ar:'لا، بل لإيمانِها وعملِها الصالح.',en:'No — for her faith and good deeds.'} },
+            { t:{ar:'بالصدفة',en:'By chance'},c:false,exp:{ar:'لا، بل جزاءً لإيمانِها وتضحيتِها.',en:'No — as reward for her faith and sacrifice.'} },
+          ] } },
+    ],
+    quiz:[
+      { q:{ar:'ماذا فعلتْ خديجةُ بمالِها في حصارِ الشِّعب؟',en:'What did Khadija do with her wealth during the boycott?'},
+        opts:[ {t:{ar:'أنفقتْه في نصرةِ الإسلام',en:'She spent it to support Islam'},c:true}, {t:{ar:'خبّأتْه',en:'She hid it'},c:false}, {t:{ar:'هربتْ به',en:'She fled with it'},c:false} ] },
+      { q:{ar:'بأيِّ بشارةٍ أرسلَ اللهُ إليها؟',en:'What glad tidings did Allah send her?'},
+        opts:[ {t:{ar:'بيتٌ في الجنّةِ وسلامٌ من ربِّها',en:'A house in Paradise and peace from her Lord'},c:true}, {t:{ar:'مالٌ جديد',en:'New wealth'},c:false}, {t:{ar:'مُلكٌ في الدنيا',en:'A worldly kingdom'},c:false} ] },
+      { q:{ar:'ماذا نتعلّمُ من تضحيةِ خديجة؟',en:'What do we learn from Khadija\u2019s sacrifice?'},
+        opts:[ {t:{ar:'الجزاءُ من جنسِ العمل',en:'Reward matches the deed'},c:true}, {t:{ar:'البخلُ ينفع',en:'Stinginess benefits'},c:false}, {t:{ar:'حبُّ الدنيا',en:'Love of the world'},c:false} ] },
+    ],
+    moral:{ar:'مَن بذلَ لله بصدقٍ أكرمه اللهُ بأعظمِ كرامة، والجزاءُ من جنسِ العمل.',en:'Whoever gives sincerely for Allah, Allah honors with the greatest honor — and reward matches the deed.'},
+    badge:{icon:'🏠',title:{ar:'وِسامُ بيتِ الجنّة',en:'Badge of the House in Paradise'}},
+    reflect:[ {ar:'هل تصبرُ وتُضحّي في سبيلِ الخيرِ كما فعلتْ خديجة؟',en:'Do you endure and sacrifice for the sake of good as Khadija did?'}, {ar:'كيف تُنفِقُ مما تحبُّ ابتغاءَ رضا الله؟',en:'How do you give from what you love, seeking Allah\u2019s pleasure?'} ],
+    didYouKnow:[ {ar:'بشارةُ خديجةَ ببيتٍ في الجنّةِ ثابتةٌ في صحيحِ البخاري ومسلم — المصدر: صحيح البخاري ومسلم',en:'The tidings of Khadija\u2019s house in Paradise are established in Sahih al-Bukhari and Muslim — Source: Sahih al-Bukhari & Muslim'}, {ar:'كان النبيُّ ﷺ يُكرِمُ صديقاتِ خديجةَ بعدَ وفاتِها وفاءً لها — المصدر: صحيح مسلم',en:'The Prophet ﷺ would honor Khadija\u2019s friends after her death, in loyalty to her — Source: Sahih Muslim'} ],
+  },
+];

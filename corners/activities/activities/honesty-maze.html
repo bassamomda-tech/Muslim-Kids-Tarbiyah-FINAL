@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>متاهة الصدق · أنوس</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+
+<link rel="stylesheet" href="../styles/tokens.css" />
+<link rel="stylesheet" href="../styles/dashboard.css" />
+<link rel="stylesheet" href="../styles/wheel.css" />
+<link rel="stylesheet" href="../styles/maze.css" />
+</head>
+<body>
+
+<div class="bg-decor" aria-hidden="true"></div>
+
+<div class="activity-shell">
+
+  <nav class="activity-nav">
+    <a class="back-link" href="../dashboard.html">
+      الرجوع للوحة الأنشطة
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg>
+    </a>
+    <div class="activity-crumb">
+      <span>العبادات والإيمان</span>
+      <span class="sep">/</span>
+      <span class="cur">متاهة الصدق</span>
+    </div>
+    <div class="activity-actions">
+      <button class="icon-btn" id="reset-btn" title="إعادة الضبط" aria-label="إعادة الضبط">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 3-6.7L3 8"/><path d="M3 3v5h5"/></svg>
+      </button>
+    </div>
+  </nav>
+
+  <div class="activity-layout">
+
+    <!-- ============ لوحة المتاهة ============ -->
+    <section class="maze-panel">
+      <header class="wheel-header">
+        <span class="activity-tag">Activity 07 · Canvas Maze</span>
+        <h1 class="activity-title">متاهة الصدق</h1>
+        <p class="activity-desc">
+          أنت في متاهة، وفي طريقك خمسة مواقفَ يومية، في كل موقف خياران: الصدق أو الكذب.
+          اِجمع نجوم الصدق وتجنّب الفِخاخ، ثم اصِل إلى الباب الذهبي.
+          استخدم الأسهم أو لوحة المفاتيح للتحرّك.
+        </p>
+      </header>
+
+      <!-- HUD -->
+      <div class="maze-hud">
+        <div class="hud-block">
+          الصدق
+          <div class="honesty-meter" id="honesty-meter"></div>
+        </div>
+        <div class="hud-block">
+          النجوم
+          <strong><span id="stars">0</span><small>/5</small></strong>
+        </div>
+        <div class="hud-block">
+          الخطوات
+          <strong id="steps">0</strong>
+        </div>
+        <div class="hud-block">
+          المرحلة
+          <strong id="level">1</strong>
+        </div>
+      </div>
+
+      <!-- ساحة -->
+      <div class="maze-arena" id="maze-arena">
+        <canvas id="maze" width="640" height="540"></canvas>
+
+        <!-- لوحة الاتجاهات (للجوال + اختياري لسطح المكتب) -->
+        <div class="maze-keypad" id="keypad">
+          <button class="kup" data-dir="up" aria-label="أعلى">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M6 14l6-6 6 6"/></svg>
+          </button>
+          <button class="kdown" data-dir="down" aria-label="أسفل">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M6 10l6 6 6-6"/></svg>
+          </button>
+          <button class="kleft" data-dir="left" aria-label="يسار">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M14 6l-6 6 6 6"/></svg>
+          </button>
+          <button class="kright" data-dir="right" aria-label="يمين">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M10 6l6 6-6 6"/></svg>
+          </button>
+        </div>
+
+        <!-- بطاقة موقف الصدق -->
+        <div class="honesty-card" id="hint-card">
+          <span class="who">القائد الصغير يقول</span>
+          استخدم الأسهم ← ↑ → ↓ للحركة. اقترب من النجمة لتسمع موقفاً جديداً.
+        </div>
+
+        <!-- بدء -->
+        <div class="maze-start-overlay" id="start-overlay">
+          <div class="start-card">
+            <h3>هل أنت صادق؟</h3>
+            <p>في الطريق ستجد خمسة مواقف، في كل موقف اختر الإجابة الصادقة لتأخذ النجمة، ثم اصِل إلى الباب الذهبي.</p>
+            <button class="btn-primary" id="start-btn">ابدأ الرحلة</button>
+          </div>
+        </div>
+
+        <!-- خيار -->
+        <div class="choice-overlay" id="choice-overlay" role="dialog" aria-modal="true">
+          <div class="choice-card">
+            <div class="eyebrow">موقف من حياتك</div>
+            <h3 id="choice-q">—</h3>
+            <p id="choice-sub">اختَر ما يقوله الصادق.</p>
+            <div class="choice-options" id="choice-options"></div>
+            <div class="choice-feedback" id="choice-feedback"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="wheel-controls" style="margin-top:var(--s-3);">
+        <div class="wheel-stat">
+          أفضل عدد خطوات
+          <strong id="best">—</strong>
+        </div>
+        <button class="wheel-mute-toggle" id="mute-btn" aria-pressed="false">
+          <span class="mute-icon"></span>
+          <span class="mute-label">كتم الصوت</span>
+        </button>
+      </div>
+    </section>
+
+    <!-- ============ اللوحة الجانبية ============ -->
+    <aside class="side-panel">
+
+      <div class="panel-card">
+        <div class="panel-head">
+          <h3>الأيقونات</h3>
+        </div>
+        <div class="legend-list">
+          <div class="legend-row">
+            <span class="legend-swatch start">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><circle cx="12" cy="12" r="4"/></svg>
+            </span>
+            <div><strong>أنت</strong><br><small style="color:var(--muted);">القائد الصغير</small></div>
+          </div>
+          <div class="legend-row">
+            <span class="legend-swatch coin">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.4 6.6L21 9l-5 4.6L17.2 21 12 17.4 6.8 21 8 13.6 3 9l6.6-.4z"/></svg>
+            </span>
+            <div><strong>نجمة الصدق</strong><br><small style="color:var(--muted);">موقف يومي يحتاج قراراً</small></div>
+          </div>
+          <div class="legend-row">
+            <span class="legend-swatch goal">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 21V5l8-3 8 3v16"/><path d="M9 21v-8h6v8"/></svg>
+            </span>
+            <div><strong>الباب الذهبي</strong><br><small style="color:var(--muted);">هدف الرحلة</small></div>
+          </div>
+          <div class="legend-row">
+            <span class="legend-swatch wall"></span>
+            <div><strong>الجدار</strong><br><small style="color:var(--muted);">لا يمكن العبور</small></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="panel-card">
+        <div class="panel-head">
+          <h3>قاعدة الرحلة</h3>
+        </div>
+        <div class="hadith-card">
+          <div class="quote">«عليكُم بالصِّدقِ، فإنّ الصِّدقَ يَهدي إلى البِرِّ، وإنّ البِرَّ يَهدي إلى الجنّةِ»</div>
+          <span class="src">رواه البخاري ومسلم<span class="hadith-grade ok">صحيح</span></span>
+        </div>
+        <div class="tip-card" style="margin-top: var(--s-3);">
+          <span class="tip-icon">!</span>
+          <span>كلما اخترتَ الصدق ارتفع مقياس الصدق إلى الأعلى، وإذا اخترتَ الكذب نقص ولا تأخذ النجمة.</span>
+        </div>
+      </div>
+    </aside>
+  </div>
+</div>
+
+<!-- مودال النصر -->
+<div class="modal-backdrop" id="win-modal" role="dialog" aria-modal="true">
+  <div class="modal">
+    <button class="modal-close" data-close aria-label="إغلاق">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M6 6l12 12M18 6l-12 12"/></svg>
+    </button>
+
+    <div class="modal-deco" aria-hidden="true">
+      <svg width="36" height="36" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.4 6.6L21 9l-5 4.6L17.2 21 12 17.4 6.8 21 8 13.6 3 9l6.6-.4z"/></svg>
+    </div>
+
+    <div class="modal-eyebrow" id="win-eyebrow">وصلتَ إلى الباب الذهبي</div>
+    <h2 class="modal-title" id="win-title">رحلةُ صدقٍ مباركة</h2>
+
+    <div class="modal-meaning" style="text-align:right;" id="win-summary"></div>
+
+    <div class="modal-actions">
+      <button class="btn-ghost" data-close>انتهيت</button>
+      <button class="btn-primary" id="win-replay">رحلة جديدة</button>
+    </div>
+  </div>
+</div>
+
+<div class="particles" id="particles" aria-hidden="true"></div>
+
+<script src="../scripts/activity-common.js"></script>
+<script src="../scripts/maze.js"></script>
+
+<script>
+window.PAGE_DICT = {
+  "متاهة الصدق": "Honesty Maze",
+  "أنت في متاهة، وفي طريقك خمسة مواقفَ يومية، في كل موقف خياران: الصدق أو الكذب. اِجمع نجوم الصدق وتجنّب الفِخاخ، ثم اصِل إلى الباب الذهبي. استخدم الأسهم أو لوحة المفاتيح للتحرّك.": "You're in a maze, and along the way are five everyday situations, each with two choices: truth or a lie. Collect honesty stars, avoid the traps, then reach the golden door. Use the arrows or keyboard to move.",
+  "الصدق": "Honesty",
+  "النجوم": "Stars",
+  "الخطوات": "Steps",
+  "المرحلة": "Level",
+  "أعلى": "Up",
+  "أسفل": "Down",
+  "يسار": "Left",
+  "يمين": "Right",
+  "القائد الصغير يقول": "The Little Leader says",
+  "استخدم الأسهم ← ↑ → ↓ للحركة. اقترب من النجمة لتسمع موقفاً جديداً.": "Use the arrows ← ↑ → ↓ to move. Approach a star to hear a new situation.",
+  "هل أنت صادق؟": "Are you honest?",
+  "في الطريق ستجد خمسة مواقف، في كل موقف اختر الإجابة الصادقة لتأخذ النجمة، ثم اصِل إلى الباب الذهبي.": "Along the way you'll find five situations; in each, choose the honest answer to take the star, then reach the golden door.",
+  "ابدأ الرحلة": "Start the journey",
+  "موقف من حياتك": "A situation from your life",
+  "اختَر ما يقوله الصادق.": "Choose what an honest person would say.",
+  "أفضل عدد خطوات": "Best step count",
+  "الأيقونات": "Legend",
+  "أنت": "You",
+  "القائد الصغير": "The Little Leader",
+  "نجمة الصدق": "Honesty star",
+  "موقف يومي يحتاج قراراً": "A daily situation needing a choice",
+  "الباب الذهبي": "The golden door",
+  "هدف الرحلة": "Goal of the journey",
+  "الجدار": "Wall",
+  "لا يمكن العبور": "Cannot pass",
+  "قاعدة الرحلة": "Rule of the journey",
+  "كلما اخترتَ الصدق ارتفع مقياس الصدق إلى الأعلى، وإذا اخترتَ الكذب نقص ولا تأخذ النجمة.": "Each time you choose honesty the honesty meter rises; if you choose lying it drops and you don't take the star.",
+  "وصلتَ إلى الباب الذهبي": "You reached the golden door",
+  "رحلةُ صدقٍ مباركة": "A blessed journey of honesty"
+};
+</script>
+<script>
+Object.assign(window.PAGE_DICT, {
+  "وجدتَ محفظة فيها نقود في الطريق، ماذا تفعل؟": "You found a wallet with money on the road — what do you do?",
+  "أبحث عن صاحبها أو أسلّمها للشرطة، فهي ليست لي.": "I look for its owner or hand it to the police — it's not mine.",
+  "أحتفظ بها لنفسي، فلن يعرف أحد.": "I keep it for myself; no one will know.",
+  "الصادقُ يَردّ الأمانة لأهلها ولو لم يره أحد، لأنّ الله يراه.": "An honest person returns a trust to its owner even if no one sees, because Allah sees him.",
+  "كسرتَ كأساً في المطبخ بالخطأ. ماذا تقول لأمّك؟": "You accidentally broke a glass in the kitchen. What do you tell your mother?",
+  "أنا الذي كسرته بالخطأ، أنا آسف يا أمّي.": "I broke it by accident — I'm sorry, mom.",
+  "ما أعلم، ربما القطّة قفزت فكسرته.": "I don't know, maybe the cat jumped and broke it.",
+  "الاعتراف بالخطأ شجاعة، والصادقُ لا يَخاف من قول الحقّ.": "Admitting a mistake is courage, and an honest person isn't afraid to tell the truth.",
+  "حصلتَ على درجة منخفضة في الاختبار، وأبوك يسأل: لماذا؟": "You got a low grade on the test, and your father asks: why?",
+  "لم أُذاكِر جيّداً، سأبذل جهداً أكبر.": "I didn't study well; I'll try harder.",
+  "المعلّم وضع أسئلةً صعبةً جداً، والجميع رسبوا.": "The teacher set very hard questions and everyone failed.",
+  "الاعتراف بالتقصير أوّل خطوة في التحسّن، أما الكذب فيُكرّر الخطأ.": "Admitting a shortcoming is the first step to improvement, while lying repeats the mistake.",
+  "زميلك أراد أن ينسخ من ورقتك في الاختبار، ماذا تفعل؟": "Your classmate wanted to copy from your paper in the test — what do you do?",
+  "أعتذر بلطف وأبتعد، فالغشّ ظُلم لنا وله.": "I politely decline and move away — cheating wrongs us both.",
+  "أتركه ينسخ، فهو صديقي ولا أريد أن أُحرجه.": "I let him copy; he's my friend and I don't want to embarrass him.",
+  "«من غَشَّ فليس منَّا». الصدق هو ألا نُعين أحداً على الظلم.": "«Whoever cheats is not one of us». Honesty means not helping anyone do wrong.",
+  "سألك أبوك: هل غسلتَ يديك قبل الأكل؟ ولم تفعل بعد.": "Your father asked: did you wash your hands before eating? And you haven't yet.",
+  "لا، نسيتُ، سأذهبُ الآن لأغسلهما.": "No, I forgot — I'll go wash them now.",
+  "نعم غسلتهما، لا تَقلق.": "Yes, I washed them, don't worry.",
+  "الكَذِب الصغير عادةٌ سيّئة، والصادقُ يَصدُق ولو في الأمور البسيطة.": "A small lie is a bad habit, and an honest person is truthful even in simple matters."
+});
+</script>
+<script src="../scripts/i18n.js"></script>
+<script src="../../shared/nav-fix.js"></script>
+</body>
+</html>
+</content>

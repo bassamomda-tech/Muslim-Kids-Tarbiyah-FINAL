@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>دورة المطر · أنوس</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Amiri:wght@400;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+
+<link rel="stylesheet" href="../styles/tokens.css" />
+<link rel="stylesheet" href="../styles/dashboard.css" />
+<link rel="stylesheet" href="../styles/wheel.css" />
+<link rel="stylesheet" href="../styles/rain-cycle.css" />
+</head>
+<body>
+
+<div class="bg-decor" aria-hidden="true"></div>
+
+<div class="activity-shell">
+
+  <nav class="activity-nav">
+    <a class="back-link" href="../dashboard.html">
+      الرجوع للوحة الأنشطة
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg>
+    </a>
+    <div class="activity-crumb">
+      <span>العلوم والاستكشاف</span>
+      <span class="sep">/</span>
+      <span class="cur">دورة المطر</span>
+    </div>
+    <div class="activity-actions">
+      <button class="icon-btn" id="reset-btn" title="إعادة الضبط" aria-label="إعادة الضبط">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 3-6.7L3 8"/><path d="M3 3v5h5"/></svg>
+      </button>
+    </div>
+  </nav>
+
+  <div class="activity-layout">
+
+    <section class="rc-panel">
+      <header class="wheel-header">
+        <span class="activity-tag">Activity 35 · Flowchart Logic</span>
+        <h1 class="activity-title">دورة المطر</h1>
+        <p class="activity-desc">
+          الماءُ نِعمَةٌ تَدورُ دائِماً: مِنَ البَحرِ إلى السَّماء، ومِنَ السَّماءِ إلى البَحر.
+          رَتِّب مَراحِلَ الدَّورَة الخَمسَة في مَواضِعِها الصَّحيحَة لِتَنطَلِقَ بِها الحَياة.
+        </p>
+      </header>
+
+      <div class="rc-hud">
+        <div class="hud-block">المَواضِع <strong><span id="rc-placed">0</span><small>/5</small></strong></div>
+        <div class="hud-block">صَحيح <strong id="rc-correct">0</strong></div>
+        <div class="hud-block">المُحاوَلات <strong id="rc-tries">0</strong></div>
+        <div class="hud-block">النَّقَطات <strong id="rc-points">0</strong></div>
+      </div>
+
+      <div class="rc-stage">
+        <!-- خَلفيَّة المَشهَد -->
+        <div class="rc-scene-wrap">
+        <svg class="rc-scene" viewBox="0 0 600 400" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
+          <!-- خَلفيَّة سَماء -->
+          <defs>
+            <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#CFE3F2"/>
+              <stop offset="60%" stop-color="#E0EEF7"/>
+              <stop offset="100%" stop-color="#DEEFE2"/>
+            </linearGradient>
+            <linearGradient id="sea" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#2E5F8A"/>
+              <stop offset="100%" stop-color="#1F2540"/>
+            </linearGradient>
+          </defs>
+          <rect width="600" height="400" fill="url(#sky)"/>
+
+          <!-- جَبَل بَعيد -->
+          <path d="M 0 290 L 90 200 L 170 270 L 240 220 L 340 300 L 420 240 L 520 290 L 600 240 L 600 320 L 0 320 Z" fill="#A8C8B8" opacity="0.55"/>
+          <!-- جَبَل قَريب -->
+          <path d="M 0 320 L 70 270 L 160 310 L 230 280 L 330 320 L 420 290 L 520 320 L 600 295 L 600 340 L 0 340 Z" fill="#7BAB91" opacity="0.65"/>
+
+          <!-- شَجَر صَغير -->
+          <g fill="#2F7A52" opacity="0.9">
+            <circle cx="45" cy="332" r="6"/><rect x="44" y="332" width="2" height="6"/>
+            <circle cx="120" cy="334" r="5"/><rect x="119" y="334" width="2" height="5"/>
+            <circle cx="440" cy="332" r="6"/><rect x="439" y="332" width="2" height="6"/>
+          </g>
+
+          <!-- البَحر -->
+          <path d="M 0 340 L 600 340 L 600 400 L 0 400 Z" fill="url(#sea)"/>
+          <!-- مَوجات -->
+          <g stroke="rgba(255,255,255,0.35)" stroke-width="1.5" fill="none">
+            <path d="M 10 355 q 20 -4 40 0 t 40 0 t 40 0 t 40 0 t 40 0 t 40 0 t 40 0 t 40 0 t 40 0 t 40 0 t 40 0 t 40 0 t 40 0 t 40 0"/>
+            <path d="M 0 372 q 20 -4 40 0 t 40 0 t 40 0 t 40 0 t 40 0 t 40 0 t 40 0 t 40 0 t 40 0 t 40 0 t 40 0 t 40 0 t 40 0 t 40 0 t 40 0"/>
+          </g>
+
+          <!-- أَسهُم الدَّورَة -->
+          <g id="arrows" fill="none" stroke="rgba(31,37,64,0.32)" stroke-width="2" stroke-dasharray="4 4">
+            <!-- من 1 (شمس) إلى 2 (تبخّر) -->
+            <path d="M 130 85 Q 145 140 175 200"/>
+            <polygon points="170,195 178,212 184,198" fill="rgba(31,37,64,0.32)" stroke="none"/>
+            <!-- من 2 إلى 3 (سحب) -->
+            <path d="M 230 200 Q 280 140 330 110"/>
+            <polygon points="325,108 340,113 333,123" fill="rgba(31,37,64,0.32)" stroke="none"/>
+            <!-- من 3 إلى 4 (مطر) -->
+            <path d="M 380 145 Q 410 200 425 240"/>
+            <polygon points="420,235 430,252 437,238" fill="rgba(31,37,64,0.32)" stroke="none"/>
+            <!-- من 4 إلى 5 (بحر) -->
+            <path d="M 425 295 Q 360 330 270 340"/>
+            <polygon points="280,335 263,335 270,348" fill="rgba(31,37,64,0.32)" stroke="none"/>
+            <!-- من 5 إلى 1 (عودة) -->
+            <path d="M 200 340 Q 100 280 105 115"/>
+            <polygon points="100,120 110,108 117,118" fill="rgba(31,37,64,0.32)" stroke="none"/>
+          </g>
+
+          <!-- مَوضِع الشَّمس -->
+          <circle cx="125" cy="80" r="38" fill="#FFE9A8" stroke="#C9A961" stroke-width="2"/>
+          <g stroke="#C9A961" stroke-width="2" stroke-linecap="round">
+            <line x1="125" y1="20" x2="125" y2="30"/>
+            <line x1="125" y1="130" x2="125" y2="140"/>
+            <line x1="65" y1="80" x2="75" y2="80"/>
+            <line x1="175" y1="80" x2="185" y2="80"/>
+            <line x1="80" y1="35" x2="88" y2="42"/>
+            <line x1="170" y1="35" x2="162" y2="42"/>
+            <line x1="80" y1="125" x2="88" y2="118"/>
+            <line x1="170" y1="125" x2="162" y2="118"/>
+          </g>
+
+          <!-- مَوضِع السَّحاب -->
+          <g transform="translate(360 100)">
+            <ellipse cx="0" cy="0" rx="55" ry="22" fill="#fff" opacity="0.92"/>
+            <ellipse cx="-30" cy="-8" rx="22" ry="16" fill="#fff" opacity="0.92"/>
+            <ellipse cx="25" cy="-10" rx="26" ry="18" fill="#fff" opacity="0.92"/>
+          </g>
+
+          <!-- قَطَرات المَطَر (مَخفيَّة افتراضياً، تَظهَر عند الحَلّ) -->
+          <g id="rain-drops" fill="#2E5F8A" opacity="0">
+            <ellipse cx="340" cy="155" rx="2.5" ry="5"/>
+            <ellipse cx="360" cy="170" rx="2.5" ry="5"/>
+            <ellipse cx="380" cy="155" rx="2.5" ry="5"/>
+            <ellipse cx="400" cy="175" rx="2.5" ry="5"/>
+            <ellipse cx="345" cy="195" rx="2.5" ry="5"/>
+            <ellipse cx="385" cy="200" rx="2.5" ry="5"/>
+          </g>
+
+          <!-- نَبتَة تَنمو على الأَرض (تَظهَر عند الحَلّ) -->
+          <g id="growth" opacity="0" transform="translate(80 330)">
+            <path d="M 0 0 C -3 -8 3 -16 0 -22" stroke="#2F7A52" stroke-width="2" fill="none"/>
+            <ellipse cx="-5" cy="-14" rx="4" ry="2" fill="#7BAB91" transform="rotate(-30 -5 -14)"/>
+            <ellipse cx="4" cy="-20" rx="4" ry="2" fill="#7BAB91" transform="rotate(30 4 -20)"/>
+          </g>
+
+          <!-- قَطرَة مُتَحَرِّكَة على المَسار -->
+          <circle id="trail-drop" r="6" fill="#CFE3F2" stroke="#2E5F8A" stroke-width="1.5" opacity="0"/>
+        </svg>
+
+        <!-- خَمسَة سلوتس فَوقَ المَشهَد -->
+        <div class="rc-slots" id="rc-slots">
+          <!-- يُولَّد بِالـ JS -->
+        </div>
+        </div>
+
+        <!-- صَينيَّة المَلصَقات -->
+        <div class="rc-tray-wrap">
+          <div class="rc-tray-label">اسحَب المَرحَلَة إلى مَوضِعِها</div>
+          <div class="rc-tray" id="rc-tray"></div>
+        </div>
+
+        <div class="rc-controls">
+          <button class="rc-btn" id="btn-hint">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 8v4M12 16h.01"/></svg>
+            تَلميح
+          </button>
+          <button class="rc-btn" id="btn-reset-board">إعادَة المُحاوَلة</button>
+          <button class="rc-btn primary" id="btn-flow" disabled>
+            ▶ شَغِّل الدَّورَة
+          </button>
+        </div>
+      </div>
+
+      <div class="wheel-controls" style="margin-top:var(--s-4);">
+        <div class="wheel-stat">أَفضَل نَقَطات <strong id="best">—</strong></div>
+        <button class="wheel-mute-toggle" id="mute-btn" aria-pressed="false">
+          <span class="mute-icon"></span>
+          <span class="mute-label">كتم الصوت</span>
+        </button>
+      </div>
+    </section>
+
+    <aside class="side-panel">
+      <div class="panel-card">
+        <div class="panel-head">
+          <h3>المَراحِلُ الخَمسَة</h3>
+          <span class="pill" id="step-pill">5</span>
+        </div>
+        <div class="rc-stages-list" id="stages-list"></div>
+      </div>
+
+      <div class="panel-card">
+        <div class="panel-head"><h3>كَيف ألعب؟</h3></div>
+        <div style="font-size: 14px; line-height: 1.7; color: var(--ink-2);">
+          ١. اسحَب اسمَ المَرحَلَةِ إلى دائِرَتِها أَو انقُر دائِرَة ثُمَّ مَلصَقاً.<br/>
+          ٢. الأَرقام تَدُلُّ على تَسلسُلِ الدَّورَة.<br/>
+          ٣. عِندَ اكتِمالِ الخَمسَة، اضغط <strong>شَغِّل الدَّورَة</strong> لِتَراها تَدور.
+        </div>
+        <div class="tip-card" style="margin-top: var(--s-3);">
+          <span class="tip-icon">!</span>
+          <span>ماءُ المَطَرِ الذي تَشرَبُهُ اليَومَ، قَد يَكونُ تَبَخَّرَ مِن بَحرٍ شَرِبَ مِنه نَبِيٌّ أو صَحابِيّ.</span>
+        </div>
+      </div>
+
+      <div class="panel-card">
+        <div class="panel-head"><h3>قَولُ اللهِ تَعالى</h3></div>
+        <div class="hadith-card">
+          <div class="quote">«وَأَنزَلْنَا مِنَ السَّمَاءِ مَاءً بِقَدَرٍ فَأَسْكَنَّاهُ فِي الْأَرْضِ» — المؤمنون · 18</div>
+          <span class="src">سُبحانَ مَن دَبَّرَ الكَون</span>
+        </div>
+      </div>
+    </aside>
+  </div>
+</div>
+
+<div class="modal-backdrop" id="done-modal" role="dialog" aria-modal="true">
+  <div class="modal">
+    <button class="modal-close" data-close aria-label="إغلاق">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M6 6l12 12M18 6l-12 12"/></svg>
+    </button>
+    <div class="modal-deco" aria-hidden="true">
+      <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2s8 9 8 14a8 8 0 0 1-16 0c0-5 8-14 8-14z"/></svg>
+    </div>
+    <div class="modal-eyebrow">دَورَةُ الماء</div>
+    <h2 class="modal-title">رَتَّبتَ نِظامَ السَّماء</h2>
+    <div class="modal-meaning" id="done-summary"></div>
+    <div class="modal-actions">
+      <button class="btn-ghost" data-close>إنهاء</button>
+      <button class="btn-primary" id="done-next">جَولَةٌ جَديدة</button>
+    </div>
+  </div>
+</div>
+
+<div class="particles" id="particles" aria-hidden="true"></div>
+
+<script src="../scripts/activity-common.js"></script>
+<script src="../scripts/rain-cycle.js"></script>
+
+<script>
+window.PAGE_DICT = {
+  "دورة المطر": "The Rain Cycle",
+  "الماءُ نِعمَةٌ تَدورُ دائِماً: مِنَ البَحرِ إلى السَّماء، ومِنَ السَّماءِ إلى البَحر. رَتِّب مَراحِلَ الدَّورَة الخَمسَة في مَواضِعِها الصَّحيحَة لِتَنطَلِقَ بِها الحَياة.": "Water is a blessing that always cycles: from the sea to the sky, and from the sky to the sea. Arrange the five stages of the cycle in their correct places so life can flow.",
+  "المَواضِع": "Positions",
+  "صَحيح": "Correct",
+  "المُحاوَلات": "Attempts",
+  "النَّقَطات": "Points",
+  "اسحَب المَرحَلَة إلى مَوضِعِها": "Drag the stage to its place",
+  "تَلميح": "Hint",
+  "إعادَة المُحاوَلة": "Retry",
+  "▶ شَغِّل الدَّورَة": "▶ Run the cycle",
+  "شَغِّل الدَّورَة": "Run the cycle",
+  "أَفضَل نَقَطات": "Best points",
+  "المَراحِلُ الخَمسَة": "The five stages",
+  "كَيف ألعب؟": "How to play?",
+  "١. اسحَب اسمَ المَرحَلَةِ إلى دائِرَتِها أَو انقُر دائِرَة ثُمَّ مَلصَقاً.": "1. Drag the stage name to its circle, or tap a circle then a sticker.",
+  "٢. الأَرقام تَدُلُّ على تَسلسُلِ الدَّورَة.": "2. The numbers show the cycle's sequence.",
+  "٣. عِندَ اكتِمالِ الخَمسَة، اضغط": "3. When all five are complete, press",
+  "ماءُ المَطَرِ الذي تَشرَبُهُ اليَومَ، قَد يَكونُ تَبَخَّرَ مِن بَحرٍ شَرِبَ مِنه نَبِيٌّ أو صَحابِيّ.": "The rainwater you drink today may have evaporated from a sea a prophet or companion once drank from.",
+  "قَولُ اللهِ تَعالى": "The words of Allah the Exalted",
+  "سُبحانَ مَن دَبَّرَ الكَون": "Glory to the One who orders the universe",
+  "دَورَةُ الماء": "The water cycle",
+  "رَتَّبتَ نِظامَ السَّماء": "You arranged the order of the sky",
+  "إنهاء": "Finish",
+  "جَولَةٌ جَديدة": "New round"
+};
+</script>
+<script>
+Object.assign(window.PAGE_DICT, {
+  "الشَّمسُ تُسَخِّن":"The sun heats","بِدايَةُ الدَّورَة":"Start of the cycle","تُرسِلُ الشَّمسُ حَرارَتَها فَتَبدَأ المياهُ تَسخُن.":"The sun sends its heat and the water begins to warm.",
+  "تَبَخُّر الماء":"Water evaporates","صُعودٌ خَفِيّ":"A hidden rise","يَتَحَوَّلُ الماءُ إلى بُخارٍ يَصعَدُ إلى السَّماء.":"Water turns into vapor that rises to the sky.",
+  "تَكاثُفٌ وسُحُب":"Condensation & clouds","اِجتِماعُ القَطرات":"Droplets gather","البُخارُ يَبرُد ويَتَجَمَّع، فَتَتَكَوَّنُ السُّحُب.":"The vapor cools and gathers, forming clouds.",
+  "نُزولُ المَطَر":"Rain falls","رِزقٌ نازِل":"Provision descending","تَثقُلُ السُّحُب فَتَنزِلُ القَطرات على الأَرض.":"The clouds grow heavy and the drops fall to the earth.",
+  "أَنهارٌ وبَحر":"Rivers & sea","عَودَةٌ لِلبَدء":"Return to the start","تَجري المياهُ في أَنهارٍ وتَعودُ إلى البَحر، لِتَبدَأَ الدَّورَةُ مَرَّةً أُخرى.":"The water flows in rivers and returns to the sea, so the cycle begins again."
+});
+</script>
+<script src="../scripts/i18n.js"></script>
+<script src="../../shared/nav-fix.js"></script>
+</body>
+</html>

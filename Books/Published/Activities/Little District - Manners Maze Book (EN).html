@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Little District — The Manners Maze Book</title>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&family=Nunito:wght@400;600;700;800;900&display=swap">
+<style>
+  :root{--navy:#0A2540;--gold:#C9A227;--gold-d:#9a7414;--teal:#1A8A5B;--purple:#8E44AD;--ink:#1c2a36;--line:#cfd6dd;--paper:#fff;--soft:#f4f1e6}
+  *{box-sizing:border-box}
+  body{margin:0;background:#e7e2d4;font-family:'Nunito','Tajawal',sans-serif;color:var(--ink)}
+  .toolbar{position:fixed;top:12px;inset-inline-end:12px;z-index:50;display:flex;gap:.5rem}
+  .toolbar button{background:linear-gradient(135deg,var(--gold),#b8901a);color:#10243d;border:none;border-radius:2rem;padding:.6rem 1.2rem;font-weight:900;font-family:inherit;font-size:.92rem;cursor:pointer;box-shadow:0 6px 18px rgba(0,0,0,.25)}
+  .sheet{width:794px;min-height:1123px;background:var(--paper);margin:20px auto;padding:48px 54px 54px;position:relative;box-shadow:0 8px 28px rgba(0,0,0,.18);display:flex;flex-direction:column}
+  .sh-head{display:flex;align-items:center;gap:14px;border-bottom:3px solid var(--acc,var(--gold));padding-bottom:12px;margin-bottom:14px}
+  .sh-num{flex:0 0 auto;width:54px;height:54px;border-radius:14px;background:var(--acc,var(--gold));color:#fff;display:grid;place-items:center;font-weight:900;font-size:1.5rem;font-family:'Nunito',sans-serif}
+  .sh-tt{flex:1}
+  .sh-tt .ti{font-weight:900;font-size:1.7rem;line-height:1.25;color:var(--navy)}
+  .sh-tt .sub{font-weight:700;font-size:.95rem;color:#6a7785;margin-top:2px}
+  .sh-diff{flex:0 0 auto;text-align:center;font-weight:800;font-size:.72rem;color:#fff;background:var(--acc,var(--gold));border-radius:12px;padding:.35rem .7rem;line-height:1.5}
+  .sh-diff .stars{font-size:.8rem;letter-spacing:1px}
+  .hint{background:var(--soft);border:1.5px solid #e4ddc4;border-radius:12px;padding:.75rem 1rem;font-size:1.02rem;line-height:1.7;margin-bottom:14px}
+  .hint b{color:var(--gold-d)}
+  .maze-wrap{flex:1;display:flex;align-items:center;justify-content:center}
+  .legend{display:flex;justify-content:center;gap:24px;margin-top:10px;font-size:.86rem;color:#6a7785;font-weight:700}
+  .grid-svg{display:block;background:#fff}
+  .sh-foot{margin-top:14px;padding-top:12px;border-top:1px dashed var(--line);display:flex;justify-content:space-between;font-size:.72rem;color:#9aa6b0;font-weight:700}
+  .cover{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:14px;border:6px double var(--gold);border-radius:20px;margin:6px}
+  .cover .kick{font-size:.9rem;font-weight:800;letter-spacing:3px;color:var(--gold-d)}
+  .cover .mascot{font-size:4rem}
+  .cover h1{font-size:2.8rem;color:var(--navy);margin:0;line-height:1.15}
+  .cover .sub{font-size:1.2rem;color:#6a7785}
+  .cover .note{max-width:540px;line-height:1.8;color:#6a7785}
+  .cover .houses{font-size:2rem;letter-spacing:6px}
+  .cert{flex:1;border:6px double var(--gold);border-radius:20px;margin:6px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:16px;padding:36px}
+  .cert .seal{font-size:3.6rem}
+  .cert h2{font-size:2.3rem;color:var(--navy);margin:0}
+  .cert .nm{border-bottom:2px dashed var(--gold);min-width:340px;height:2.6rem}
+  @media print{body{background:#fff}.toolbar{display:none}.sheet{margin:0;box-shadow:none;width:auto;min-height:auto;page-break-after:always}@page{size:A4;margin:9mm}}
+</style>
+</head>
+<body dir="ltr">
+<div class="toolbar"><button onclick="window.print()">🖨️ <span>Print / Save PDF</span></button></div>
+<div id="book"></div>
+<script>
+/* ════ Little District — 34 manner mazes, increasing difficulty (English) ════ */
+var MANNERS=[
+ ['Hero of Truth','Truthfulness — Abu Bakr as-Siddiq','The truthful speak the truth even against themselves, so Allah and people love them.'],
+ ['The Trustworthy','Trustworthiness','A trustworthy person returns what is entrusted to them, untouched, and never betrays it.'],
+ ['Knight of Courage','Courage — Ali ibn Abi Talib','The brave speak the truth and fear none but Allah alone.'],
+ ['The Generous','Generosity','The generous love to give and help others, expecting nothing in return.'],
+ ['Guard of the Tongue','Guarding Speech','Hold your tongue from bad words; a kind word is a charity.'],
+ ['The Merciful','Mercy','The merciful are gentle with the small, the weak, and even animals.'],
+ ['The Humble','Humility','The humble never boast; people love them and Allah raises them high.'],
+ ['The Forgiving','Forgiveness','One who forgives a wrongdoer earns great reward and a calm heart.'],
+ ['The Patient','Patience','The patient endure without despair, for relief comes after hardship.'],
+ ['The Grateful','Gratitude','The grateful thank Allah for blessings, so they grow and last.'],
+ ['The Loyal','Loyalty','One who makes a promise keeps it; a believer never breaks a vow.'],
+ ['The Modest','Modesty (Haya)','Modesty is the manner of Islam, and all of it is good.'],
+ ['The Sincere','Sincerity','The sincere act for Allah alone, not to be seen by people.'],
+ ['The Just','Justice','The just give everyone their right and never wrong anyone.'],
+ ['The Selfless','Altruism','The selfless put others before themselves, even in their own need.'],
+ ['The Content','Contentment','The content are pleased with the share Allah gave them, and live happy.'],
+ ['Keeper of Kinship','Keeping Family Ties','One who keeps ties with relatives is blessed in life and provision.'],
+ ['Seeker of Knowledge','Seeking Knowledge','Whoever seeks knowledge, Allah eases for them a path to Paradise.'],
+ ['The Greeter','Spreading Salaam','Spread the greeting of peace among people to grow love and friendship.'],
+ ['The Host','Honouring Guests','Whoever believes in Allah, let them honour their guest and treat them well.'],
+ ['Honourer of Parents','Honouring Parents','Honouring parents is among the greatest deeds and most beloved to Allah.'],
+ ['The Good Neighbour','Good Neighbourliness','Be good to your neighbour; the neighbour has a great right in Islam.'],
+ ['The Orderly','Order & Cleanliness','A believer orders their time and belongings; cleanliness is part of faith.'],
+ ['The Diligent','Excellence at Work','Allah loves that when one of you does a task, he does it with excellence.'],
+ ['Manners of Eating','Eating Etiquette','Say Bismillah, eat with your right hand, eat from what is near you, and thank Allah after.'],
+ ['Manners of Permission','Seeking Permission','Ask permission up to three times before entering; if refused, return politely.'],
+ ['Manners of Sleep','Sleep Etiquette','Sleep in a state of purity, remember Allah, and lie on your right side.'],
+ ['Manners of the Mosque','Mosque Etiquette','Enter with your right foot, say the entry dua, and keep the mosque calm and quiet.'],
+ ['Manners of Friendship','Choosing Friends','Choose a righteous friend, for a person follows the way of their close companion.'],
+ ['Manners of Gatherings','Gathering Etiquette','Make room for your brother, and do not whisper with one excluding a third.'],
+ ['Manners of the Road','Road Etiquette','Lower your gaze, remove harm from the path, and return greetings on the road.'],
+ ['Manners of Speech','Speech Etiquette','Say something good or stay silent, and speak gently and kindly with people.'],
+ ['Manners of Sneezing','Sneezing Etiquette','When you sneeze, praise Allah; your brother replies: may Allah have mercy on you.'],
+ ['Visiting the Sick','Visiting the Sick','Visit the sick, pray for their healing, and bring joy to their heart.']
+];
+
+var ACCENTS=['#1A8A5B','#2980B9','#8E44AD','#C0392B','#E67E22','#117A8B','#16A085','#D4A017'];
+
+function maze(cols,rows,cell){
+  var c=[],i;for(i=0;i<cols*rows;i++)c.push({n:1,e:1,s:1,w:1,v:0});
+  function id(x,y){return y*cols+x;}
+  var st=[],x=0,y=0;c[0].v=1;var vis=1,tot=cols*rows;
+  while(vis<tot){
+    var nb=[];
+    if(y>0&&!c[id(x,y-1)].v)nb.push('n');
+    if(x<cols-1&&!c[id(x+1,y)].v)nb.push('e');
+    if(y<rows-1&&!c[id(x,y+1)].v)nb.push('s');
+    if(x>0&&!c[id(x-1,y)].v)nb.push('w');
+    if(nb.length){var d=nb[Math.floor(Math.random()*nb.length)];st.push(id(x,y));
+      if(d==='n'){c[id(x,y)].n=0;y--;c[id(x,y)].s=0;}
+      else if(d==='e'){c[id(x,y)].e=0;x++;c[id(x,y)].w=0;}
+      else if(d==='s'){c[id(x,y)].s=0;y++;c[id(x,y)].n=0;}
+      else{c[id(x,y)].w=0;x--;c[id(x,y)].e=0;}
+      c[id(x,y)].v=1;vis++;
+    }else{var p=st.pop();x=p%cols;y=Math.floor(p/cols);}
+  }
+  var cs=cell,pad=4,W=cols*cs+pad*2,H=rows*cs+pad*2,p2='';
+  for(y=0;y<rows;y++)for(x=0;x<cols;x++){var cc=c[id(x,y)],px=pad+x*cs,py=pad+y*cs;
+    if(cc.n)p2+='M'+px+' '+py+'h'+cs;
+    if(cc.w)p2+='M'+px+' '+py+'v'+cs;}
+  p2+='M'+(pad+cs)+' '+pad+'h'+((cols-1)*cs);
+  p2+='M'+pad+' '+pad+'v'+(rows*cs);
+  p2+='M'+pad+' '+(pad+rows*cs)+'h'+((cols-1)*cs);
+  p2+='M'+(pad+cols*cs)+' '+pad+'v'+((rows-1)*cs);
+  var sw=cols>16?2:2.4;
+  return '<svg class="grid-svg" width="'+W+'" height="'+H+'" viewBox="0 0 '+W+' '+H+'">'+
+    '<path d="'+p2+'" stroke="#0A2540" stroke-width="'+sw+'" fill="none" stroke-linecap="square"/>'+
+    '<text x="'+(pad+cs/2)+'" y="'+(pad+cs/2+cs*0.18)+'" font-size="'+(cs*0.6)+'" text-anchor="middle" fill="#1A8A5B">★</text>'+
+    '<text x="'+(pad+(cols-0.5)*cs)+'" y="'+(pad+(rows-0.5)*cs+cs*0.18)+'" font-size="'+(cs*0.55)+'" text-anchor="middle">🏁</text></svg>';
+}
+
+function stars(n){return '★★★★★'.slice(0,n)+'☆☆☆☆☆'.slice(0,5-n);}
+
+function render(){
+  var N=MANNERS.length;
+  var cover='<div class="sheet" style="--acc:#0A2540"><div class="cover">'+
+    '<div class="kick">OUR LITTLE DISTRICT</div>'+
+    '<div class="mascot">🏘️🧩</div>'+
+    '<h1>The Manners<br>Maze Book</h1>'+
+    '<div class="sub">Little District · Mazes of Good Character</div>'+
+    '<div class="note">'+N+' named manner mazes that grow harder page by page. Start at the star ★ and find your way to the finish 🏁 — and learn a beautiful manner on every page.</div>'+
+    '<div class="houses">🤝 🌟 💚 📿 🕌</div>'+
+    '<div class="note">Name: ____________________</div></div></div>';
+  var pages=MANNERS.map(function(m,i){
+    var acc=ACCENTS[i%ACCENTS.length];
+    var diff=Math.min(5,1+Math.floor(i/7));
+    var cols=9+Math.floor(i*0.5), rows=Math.round((9+Math.floor(i*0.5))*0.74);
+    if(cols>26)cols=26; if(rows>20)rows=20;
+    var cell=cols>20?28:(cols>15?34:40);
+    var diffLbl=['Easy','Easy','Medium','Hard','Very Hard'][diff-1];
+    return '<div class="sheet" style="--acc:'+acc+'">'+
+      '<div class="sh-head"><div class="sh-num">'+(i+1)+'</div>'+
+        '<div class="sh-tt"><span class="ti">'+m[0]+'</span><span class="sub">'+m[1]+'</span></div>'+
+        '<div class="sh-diff"><div class="stars">'+stars(diff)+'</div>'+diffLbl+'</div></div>'+
+      '<div class="hint">💡 <b>Did you know?</b> '+m[2]+'</div>'+
+      '<div class="maze-wrap">'+maze(cols,rows,cell)+'</div>'+
+      '<div class="legend"><span>★ Start</span><span>🏁 Finish</span></div>'+
+      '<div class="sh-foot"><span>Little District · Mazes of Good Character</span><span>Maze '+(i+1)+' / '+N+'</span></div></div>';
+  }).join('');
+  var cert='<div class="sheet" style="--acc:#C9A227"><div class="cert"><div class="seal">🏅</div>'+
+    '<div class="kick" style="font-size:.84rem;font-weight:800;letter-spacing:2px;color:#9a7414">OUR LITTLE DISTRICT</div>'+
+    '<h2>Champion of the Manners Mazes</h2>'+
+    '<div style="font-size:1rem;color:#6a7785">This certificate is proudly awarded to</div>'+
+    '<div class="nm"></div>'+
+    '<div style="max-width:500px;line-height:1.8;color:#6a7785">for completing all thirty-four mazes of good character, and learning a beautiful manner on every page.</div>'+
+    '<div style="font-size:1.8rem;letter-spacing:6px">🌟 🏅 🤝 💚 ⭐</div>'+
+    '<div style="display:flex;gap:40px;margin-top:8px;font-size:.84rem;color:#6a7785"><span>Date: ______</span><span>Signature: ______</span></div></div></div>';
+  document.getElementById('book').innerHTML=cover+pages+cert;
+}
+render();
+</script>
+</body>
+</html>

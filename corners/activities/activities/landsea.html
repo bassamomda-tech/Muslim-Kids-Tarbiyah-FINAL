@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>فرز البر والبحر · أنوس</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Amiri:wght@400;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+
+<link rel="stylesheet" href="../styles/tokens.css" />
+<link rel="stylesheet" href="../styles/dashboard.css" />
+<link rel="stylesheet" href="../styles/wheel.css" />
+<link rel="stylesheet" href="../styles/landsea.css" />
+</head>
+<body>
+
+<div class="bg-decor" aria-hidden="true"></div>
+
+<div class="activity-shell">
+
+  <nav class="activity-nav">
+    <a class="back-link" href="../dashboard.html">
+      الرجوع للوحة الأنشطة
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg>
+    </a>
+    <div class="activity-crumb">
+      <span>العلوم والاستكشاف</span>
+      <span class="sep">/</span>
+      <span class="cur">فرز البر والبحر</span>
+    </div>
+    <div class="activity-actions">
+      <button class="icon-btn" id="reset-btn" title="إعادة الضبط" aria-label="إعادة الضبط">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 3-6.7L3 8"/><path d="M3 3v5h5"/></svg>
+      </button>
+    </div>
+  </nav>
+
+  <div class="activity-layout">
+
+    <section class="ls-panel">
+      <header class="wheel-header">
+        <span class="activity-tag">Activity 32 · Bucket Sorting</span>
+        <h1 class="activity-title">فرز البر والبحر</h1>
+        <p class="activity-desc">
+          خَلَقَ اللهُ مَخلوقاتٍ في البَرّ، وأُخرى في البَحر، وبَعضُها يَعيشُ بَينَهُما.
+          اِسحَب كلَّ مَخلوقٍ إلى بَيتِه الصَّحيح، أو انقُره ثُمَّ اِنقُر صُندوقَ التَّصنيف.
+        </p>
+      </header>
+
+      <div class="ls-hud">
+        <div class="hud-block">صَحيح <strong id="ls-correct">0</strong></div>
+        <div class="hud-block">خَطأ <strong id="ls-wrong">0</strong></div>
+        <div class="hud-block">المُتَبَقّي <strong id="ls-left">12</strong></div>
+        <div class="hud-block">الجَولة <strong id="ls-round">1</strong></div>
+      </div>
+
+      <div class="ls-stage">
+        <div class="ls-buckets">
+          <button class="bucket sea" data-bucket="sea" id="bucket-sea">
+            <span class="b-art" aria-hidden="true">
+              <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round">
+                <path d="M6 44c6-4 10 4 16 0s10 4 16 0 10 4 16 0M6 52c6-4 10 4 16 0s10 4 16 0 10 4 16 0"/>
+                <path d="M22 30a8 8 0 0 1 16 0M30 14v10"/>
+              </svg>
+            </span>
+            <span class="b-label">البَحر</span>
+            <span class="b-count" id="count-sea">0</span>
+          </button>
+
+          <button class="bucket both" data-bucket="both" id="bucket-both">
+            <span class="b-art" aria-hidden="true">
+              <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round">
+                <path d="M8 36L20 20l10 10 8-6 14 12"/>
+                <path d="M8 50c6-3 10 3 16 0s10 3 16 0 10 3 16 0"/>
+              </svg>
+            </span>
+            <span class="b-label">بَينَ بَينَ</span>
+            <span class="b-count" id="count-both">0</span>
+          </button>
+
+          <button class="bucket land" data-bucket="land" id="bucket-land">
+            <span class="b-art" aria-hidden="true">
+              <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round">
+                <path d="M6 50L18 30l10 12 8-8 14 16"/>
+                <path d="M30 16c2-4 6-4 8 0M50 22c2-4 6-4 8 0"/>
+              </svg>
+            </span>
+            <span class="b-label">البَرّ</span>
+            <span class="b-count" id="count-land">0</span>
+          </button>
+        </div>
+
+        <div class="ls-tray" id="tray">
+          <div class="tray-label">اِسحَب أو اِنقُر مَخلوقاً</div>
+          <div class="tray-creatures" id="creatures"></div>
+        </div>
+
+        <div class="ls-controls">
+          <button class="ls-btn" id="btn-shuffle">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M16 3h5v5"/><path d="M21 3l-8 8"/><path d="M8 21H3v-5"/><path d="M3 21l8-8"/></svg>
+            خَلْط
+          </button>
+          <button class="ls-btn primary" id="btn-newround">جَولَةٌ جَديدة</button>
+        </div>
+      </div>
+
+      <div class="wheel-controls" style="margin-top:var(--s-4);">
+        <div class="wheel-stat">أَفضَل دِقَّة <strong id="best">—</strong></div>
+        <button class="wheel-mute-toggle" id="mute-btn" aria-pressed="false">
+          <span class="mute-icon"></span>
+          <span class="mute-label">كتم الصوت</span>
+        </button>
+      </div>
+    </section>
+
+    <aside class="side-panel">
+      <div class="panel-card">
+        <div class="panel-head"><h3>كيف ألعب؟</h3></div>
+        <div style="font-size: 14px; line-height: 1.7; color: var(--ink-2);">
+          ١. اِقرأ اِسمَ المَخلوق.<br/>
+          ٢. اِسحَبه إلى الصُّندوق المُناسِب أو انقُره ثُمَّ انقُر الصُّندوق.<br/>
+          ٣. إِذا أَصَبتَ، يَختَفي ويُحسَب لك.<br/>
+          ٤. صَنِّف الـ12 جَميعاً لِتُكمِل الجَولة.
+        </div>
+        <div class="tip-card" style="margin-top: var(--s-3);">
+          <span class="tip-icon">!</span>
+          <span>«بَينَ بَينَ» لِلمَخلوقات الَّتي تَعيشُ في الماء وعَلى اليابِسة، كالضِّفدَع والسُّلَحفاة.</span>
+        </div>
+      </div>
+
+      <div class="panel-card">
+        <div class="panel-head"><h3>قَولُ اللهِ تَعالى</h3></div>
+        <div class="hadith-card">
+          <div class="quote">«وَهُوَ الَّذِي سَخَّرَ الْبَحْرَ لِتَأْكُلُوا مِنْهُ لَحْمًا طَرِيًّا» — النحل · 14</div>
+          <span class="src">سُبحانَ مَن خَلَقَ ودَبَّر</span>
+        </div>
+      </div>
+
+      <div class="panel-card">
+        <div class="panel-head">
+          <h3>سَجِلُّ الجَولات</h3>
+          <span class="pill" id="rec-pill">0</span>
+        </div>
+        <div class="ls-recs" id="recs"></div>
+      </div>
+    </aside>
+  </div>
+</div>
+
+<div class="modal-backdrop" id="done-modal" role="dialog" aria-modal="true">
+  <div class="modal">
+    <button class="modal-close" data-close aria-label="إغلاق">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M6 6l12 12M18 6l-12 12"/></svg>
+    </button>
+    <div class="modal-deco" aria-hidden="true">
+      <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5 9-10"/></svg>
+    </div>
+    <div class="modal-eyebrow">جَولَةٌ مُكتَمِلَة</div>
+    <h2 class="modal-title">عالِمُ المَخلوقات الصَّغير</h2>
+    <div class="modal-meaning" id="done-summary"></div>
+    <div class="modal-actions">
+      <button class="btn-ghost" data-close>إنهاء</button>
+      <button class="btn-primary" id="done-next">جَولَةٌ جَديدة</button>
+    </div>
+  </div>
+</div>
+
+<div class="particles" id="particles" aria-hidden="true"></div>
+
+<script src="../scripts/activity-common.js"></script>
+<script src="../scripts/landsea.js"></script>
+
+<script>
+window.PAGE_DICT = {
+  "فرز البر والبحر": "Land & Sea Sorting",
+  "خَلَقَ اللهُ مَخلوقاتٍ في البَرّ، وأُخرى في البَحر، وبَعضُها يَعيشُ بَينَهُما. اِسحَب كلَّ مَخلوقٍ إلى بَيتِه الصَّحيح، أو انقُره ثُمَّ اِنقُر صُندوقَ التَّصنيف.": "Allah created creatures on land, others in the sea, and some that live between both. Drag each creature to its correct home, or tap it then tap the sorting box.",
+  "صَحيح": "Correct",
+  "خَطأ": "Wrong",
+  "المُتَبَقّي": "Remaining",
+  "الجَولة": "Round",
+  "البَحر": "Sea",
+  "بَينَ بَينَ": "In between",
+  "البَرّ": "Land",
+  "اِسحَب أو اِنقُر مَخلوقاً": "Drag or tap a creature",
+  "خَلْط": "Shuffle",
+  "جَولَةٌ جَديدة": "New round",
+  "أَفضَل دِقَّة": "Best accuracy",
+  "١. اِقرأ اِسمَ المَخلوق.": "1. Read the creature's name.",
+  "٢. اِسحَبه إلى الصُّندوق المُناسِب أو انقُره ثُمَّ انقُر الصُّندوق.": "2. Drag it to the right box, or tap it then tap the box.",
+  "٣. إِذا أَصَبتَ، يَختَفي ويُحسَب لك.": "3. If you're right, it disappears and counts for you.",
+  "٤. صَنِّف الـ12 جَميعاً لِتُكمِل الجَولة.": "4. Sort all 12 to complete the round.",
+  "«بَينَ بَينَ» لِلمَخلوقات الَّتي تَعيشُ في الماء وعَلى اليابِسة، كالضِّفدَع والسُّلَحفاة.": "“In between” is for creatures that live in water and on land, like the frog and the turtle.",
+  "قَولُ اللهِ تَعالى": "The words of Allah the Exalted",
+  "سُبحانَ مَن خَلَقَ ودَبَّر": "Glory to the One who created and ordained",
+  "سَجِلُّ الجَولات": "Rounds log",
+  "جَولَةٌ مُكتَمِلَة": "Round complete",
+  "عالِمُ المَخلوقات الصَّغير": "Little creature scientist",
+  "إنهاء": "Finish"
+};
+</script>
+<script>
+Object.assign(window.PAGE_DICT, {
+  "زَرافة":"Giraffe","جَمَل":"Camel","أَسَد":"Lion","فِيل":"Elephant","حِصان":"Horse","خَروف":"Sheep","غَزال":"Gazelle","أَرنَب":"Rabbit","ذِئب":"Wolf","ثَعلَب":"Fox",
+  "دُولفين":"Dolphin","حُوت":"Whale","سَمَكَة":"Fish","أُخطُبوط":"Octopus","حَبَّار":"Cuttlefish","قِرش":"Shark","كَركَند":"Lobster","تُونة":"Tuna","جَمبَري":"Shrimp","مَرجان":"Coral",
+  "ضِفدَع":"Frog","سُلَحفاة":"Turtle","تِمساح":"Crocodile","بَطّة":"Duck","قُندُس":"Beaver","فُقمة":"Seal"
+});
+</script>
+<script src="../scripts/i18n.js"></script>
+<script src="../../shared/nav-fix.js"></script>
+</body>
+</html>

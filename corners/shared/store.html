@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta name="color-scheme" content="dark">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>متجر الدعم | Support Store</title>
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+<style>
+  :root{ --bg1:#081E36; --bg2:#0E2E4E; --gold:#E8B530; --gold-lt:#F5CC5A; --ink:#FEF5DC; --muted:rgba(254,245,220,.68); --card:rgba(255,255,255,.06); --line:rgba(232,181,48,.28); --green:#1F8A5B; }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:'Tajawal','Nunito',sans-serif;color:var(--ink);direction:rtl;min-height:100vh;background:
+    radial-gradient(1100px 640px at 82% -8%,rgba(232,181,48,.14),transparent 60%),
+      radial-gradient(800px 520px at 0% 108%,rgba(31,138,91,.13),transparent 55%),
+      linear-gradient(165deg,var(--bg1),var(--bg2))}
+  html[dir="ltr"] body{direction:ltr;font-family:'Nunito','Tajawal',sans-serif}
+  .header{display:flex;align-items:center;justify-content:space-between;padding:1rem 1.3rem;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:10;background:rgba(8,24,42,.72);backdrop-filter:blur(8px)}
+  .back-btn{background:var(--gold);color:#10243d;border-radius:2rem;padding:.5rem 1.2rem;text-decoration:none;font-weight:800;font-size:.88rem}
+  .lang{display:flex;border:1.5px solid var(--line);border-radius:2rem;overflow:hidden}
+  .lang button{background:transparent;border:none;color:var(--ink);font-weight:800;padding:.32rem .85rem;font-size:.8rem;cursor:pointer;font-family:inherit}
+  .lang button.active{background:var(--gold);color:#10243d}
+  .wrap{max-width:1000px;margin:0 auto;padding:1.8rem 1rem 4rem}
+
+  .banner{background:linear-gradient(160deg,rgba(31,138,91,.2),rgba(232,181,48,.08));border:1.5px solid var(--line);border-radius:1.6rem;padding:1.6rem 1.5rem;text-align:center;margin-bottom:2rem}
+  .banner .ic{font-size:3rem}
+  .banner h1{font-size:1.9rem;font-weight:900;margin:.3rem 0}
+  .banner p{color:var(--muted);max-width:640px;margin:.4rem auto 0;line-height:1.85}
+  .banner .why{display:inline-block;margin-top:.9rem;background:rgba(31,138,91,.18);border:1px solid rgba(31,138,91,.5);color:#a8f0c4;border-radius:2rem;padding:.45rem 1.2rem;font-weight:800;font-size:.86rem}
+
+  .sec-h{display:flex;align-items:center;gap:.5rem;margin:1.8rem 0 1rem}
+  .sec-h .si{font-size:1.4rem}
+  .sec-h h2{font-size:1.3rem;color:var(--gold-lt)}
+  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:1.1rem}
+  .item{position:relative;background:var(--card);border:1.5px solid var(--line);border-radius:1.3rem;padding:1.2rem;display:flex;flex-direction:column;gap:.5rem}
+  .item .it-ic{font-size:2rem}
+  .item .it-t{font-weight:900;font-size:1.05rem;line-height:1.4}
+  .item .it-d{color:var(--muted);font-size:.84rem;line-height:1.6;flex:1}
+  .item .it-tag{position:absolute;top:.8rem;inset-inline-end:.8rem;font-size:.7rem;font-weight:800;border-radius:1rem;padding:.18rem .6rem}
+  .it-tag.free{background:rgba(31,138,91,.2);color:#a8f0c4}
+  .it-tag.supp{background:rgba(232,181,48,.18);color:var(--gold-lt)}
+  .it-price{font-weight:900;color:var(--gold-lt);font-size:1.05rem}
+  .it-btn{margin-top:.3rem;border:none;border-radius:.9rem;padding:.65rem;font-weight:800;cursor:pointer;font-family:inherit;font-size:.9rem;text-decoration:none;text-align:center;display:block}
+  .it-btn.get{background:linear-gradient(135deg,var(--green),#176b46);color:#fff}
+  .it-btn.supp{background:linear-gradient(135deg,var(--gold),#c79518);color:#10243d}
+  /* corner bundles */
+  .bundle{gap:.45rem}
+  .bundle-meta{color:var(--muted);font-size:.78rem;font-weight:700;margin-top:-.15rem}
+  .bk-ul{list-style:none;margin:.45rem 0 .25rem;padding:0;display:flex;flex-direction:column;gap:.35rem;flex:1}
+  .bk-li{display:flex;align-items:center;justify-content:space-between;gap:.5rem;background:rgba(255,255,255,.04);border:1px solid var(--line);border-radius:.6rem;padding:.4rem .6rem;font-size:.84rem;font-weight:700}
+  .bk-nm{line-height:1.45}
+  .bk-act{flex:0 0 auto;border:none;border-radius:.5rem;width:1.9rem;height:1.9rem;cursor:pointer;font-size:.95rem;line-height:1}
+  .bk-act.dl{background:linear-gradient(135deg,var(--green),#176b46);color:#fff}
+  .bk-act.pv{background:rgba(255,255,255,.08);color:var(--ink)}
+  .bundle-owned{margin-top:.3rem;text-align:center;color:#a8f0c4;font-weight:800;font-size:.85rem}
+
+  .ways{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1rem;margin-top:.5rem}
+  .way{background:var(--card);border:1.5px solid var(--line);border-radius:1.3rem;padding:1.3rem;text-align:center}
+  .way .w-ic{font-size:2.2rem}
+  .way h3{margin:.3rem 0;font-size:1.05rem}
+  .way p{color:var(--muted);font-size:.84rem;line-height:1.6}
+  .way a,.way button{margin-top:.6rem;display:inline-block;background:var(--gold);color:#10243d;border:none;border-radius:2rem;padding:.5rem 1.2rem;font-weight:800;font-family:inherit;cursor:pointer;text-decoration:none;font-size:.86rem}
+  .note{font-family:ui-monospace,monospace;font-size:.72rem;color:#90A4AE;background:rgba(0,0,0,.22);border-radius:.6rem;padding:.4rem .7rem;display:inline-block;margin-top:.4rem}
+
+  .toast{position:fixed;left:50%;bottom:2rem;transform:translateX(-50%) translateY(140%);background:#0c2238;border:1.5px solid var(--gold);color:var(--ink);font-weight:800;padding:.7rem 1.3rem;border-radius:2rem;transition:transform .3s;z-index:30}
+  .toast.show{transform:translateX(-50%) translateY(0)}
+  .en-only{display:none}
+  html[dir="ltr"] .ar-only{display:none}
+  html[dir="ltr"] .en-only{display:inline}
+  .cart-btn{display:flex;align-items:center;gap:.35rem;background:var(--gold);color:#10243d;border:none;border-radius:2rem;padding:.4rem .9rem;font-weight:800;font-family:inherit;font-size:.82rem;cursor:pointer}
+  .cart-count{background:#10243d;color:var(--gold-lt);border-radius:1rem;min-width:1.3rem;height:1.3rem;display:inline-flex;align-items:center;justify-content:center;font-size:.72rem;padding:0 .3rem}
+  .cart-ov{position:fixed;inset:0;background:rgba(4,14,26,.82);backdrop-filter:blur(8px);display:none;align-items:center;justify-content:center;z-index:60;padding:1.2rem}
+  .cart-ov.open{display:flex}
+  .cart-card{background:#0c2238;border:1.5px solid var(--line);border-radius:1.4rem;padding:1.5rem;max-width:440px;width:100%;max-height:88vh;overflow-y:auto}
+  .cart-card h2{color:var(--gold-lt);font-size:1.3rem;margin-bottom:.3rem;display:flex;align-items:center;justify-content:space-between;gap:.5rem}
+  .cart-card .x{background:none;border:none;color:var(--ink);font-size:1.2rem;cursor:pointer}
+  .cart-row{display:flex;align-items:center;justify-content:space-between;gap:.6rem;background:var(--card);border:1px solid var(--line);border-radius:.8rem;padding:.6rem .8rem;margin:.4rem 0;font-weight:700;font-size:.9rem}
+  .cart-row button{background:rgba(192,57,43,.85);color:#fff;border:none;border-radius:.6rem;width:1.7rem;height:1.7rem;cursor:pointer;font-weight:800;flex:0 0 auto}
+  .cart-pay{margin-top:1rem;border-top:1px solid var(--line);padding-top:1rem}
+  .cart-note{color:var(--muted);font-size:.78rem;line-height:1.6;margin:.2rem 0 .9rem}
+  .auth-btn{display:flex;align-items:center;gap:.3rem;background:transparent;border:1.5px solid var(--line);color:var(--ink);border-radius:2rem;padding:.4rem .9rem;font-weight:800;font-family:inherit;font-size:.82rem;cursor:pointer;max-width:9rem;overflow:hidden;white-space:nowrap;text-overflow:ellipsis}
+  .auth-tabs{display:flex;gap:.5rem;margin:.5rem 0 .8rem}
+  .auth-tabs button{flex:1;background:var(--card);border:1.5px solid var(--line);color:var(--ink);border-radius:.7rem;padding:.55rem;font-weight:800;font-family:inherit;cursor:pointer;font-size:.9rem}
+  .auth-tabs button.active{background:var(--gold);color:#10243d}
+  .auth-field{width:100%;background:var(--card);border:1.5px solid var(--line);border-radius:.8rem;padding:.7rem .9rem;color:var(--ink);font-family:inherit;font-size:.95rem;margin:.4rem 0}
+  .auth-field:focus{outline:none;border-color:var(--gold)}
+  .auth-submit{width:100%;background:linear-gradient(135deg,var(--gold),#c79518);color:#10243d;border:none;border-radius:.9rem;padding:.75rem;font-weight:900;font-family:inherit;font-size:1rem;cursor:pointer;margin-top:.5rem}
+  /* print sheet */
+  .print-ov{position:fixed;inset:0;background:rgba(4,14,26,.82);backdrop-filter:blur(8px);display:none;align-items:flex-start;justify-content:center;z-index:60;overflow-y:auto;padding:1.2rem}
+  .print-ov.open{display:flex}
+  .print-tools{position:fixed;top:1rem;inset-inline-end:1rem;display:flex;gap:.5rem;z-index:61}
+  .pt-btn{border:none;border-radius:.9rem;padding:.6rem 1rem;font-weight:800;cursor:pointer;font-family:inherit}
+  .pt-btn.print{background:var(--gold);color:#10243d}
+  .pt-btn.close{background:#c0392b;color:#fff}
+  .paper{background:#fff;color:#222;max-width:780px;width:100%;margin:auto;border-radius:1rem;padding:2.2rem;line-height:1.9}
+  .paper h2{color:#7a5a12;text-align:center;margin-bottom:1rem}
+  .paper h3{color:#9a7414;margin:1.2rem 0 .4rem}
+  .paper ul{padding-inline-start:1.4rem}
+  .paper .wk{border:1px solid #e7dcc0;border-radius:.7rem;padding:.8rem 1rem;margin:.6rem 0}
+  @media print{ body *{visibility:hidden} .print-ov,.print-ov *{visibility:visible} .print-ov{position:absolute;inset:0;background:#fff;padding:0} .print-tools{display:none} }
+</style>
+<style id="__antiflash">html{background:#081E36;color-scheme:dark}</style>
+</head>
+<body>
+  <div class="header">
+    <a href="../../index.html" class="back-btn"><span class="ar-only">↩️ المدينة</span><span class="en-only">↩️ City</span></a>
+    <div style="display:flex;align-items:center;gap:.6rem">
+      <button class="cart-btn" onclick="openCart()">🛒 <span class="ar-only">السلة</span><span class="en-only">Cart</span> <span class="cart-count" id="cartCount">0</span></button>
+      <button class="auth-btn" id="authBtn" onclick="onAuthBtn()">👤 <span id="authLabel"><span class="ar-only">دخول</span><span class="en-only">Login</span></span></button>
+      <div class="lang"><button data-lang="en">EN</button><button data-lang="ar" class="active">عربي</button></div>
+    </div>
+  </div>
+
+  <div class="wrap">
+    <div class="banner">
+      <div class="ic">🛍️</div>
+      <h1><span class="ar-only">متجرُ الدعم</span><span class="en-only">Support Store</span></h1>
+      <p>
+        <span class="ar-only">هذا الموقعُ مجّانيٌّ بالكامل وصدقةٌ جارية. حمِّل ما تشاءُ من الموادِّ المجّانية، ودعمُك للموادِّ المميّزةِ يُبقي الموقعَ مجّانيًّا للجميعِ ويُنمّيه.</span>
+        <span class="en-only">This site is completely free and an ongoing charity. Download the free materials, and your support for the premium ones keeps the site free for everyone and helps it grow.</span>
+      </p>
+      <span class="why"><span class="ar-only">💚 كلُّ دعمٍ يُبقي الموقعَ مجّانيًّا ويُضيفُ محتوًى جديدًا</span><span class="en-only">💚 Every bit of support keeps the site free & adds new content</span></span>
+    </div>
+
+    <div class="sec-h"><span class="si">📦</span><h2><span class="ar-only">موادُّ للتحميل</span><span class="en-only">Downloadable Materials</span></h2></div>
+    <div class="grid" id="itemGrid"></div>
+
+    <div class="sec-h"><span class="si">📚</span><h2><span class="ar-only">حزمُ الكتب — لكلِّ ركنٍ حزمة</span><span class="en-only">Book Bundles — one per corner</span></h2></div>
+    <p class="banner" style="text-align:center;margin:-.3rem 0 1rem;padding:.7rem 1rem;font-size:.86rem;color:var(--muted)"><span class="ar-only">كلُّ حزمةٍ تفتحُ <b style="color:var(--gold-lt)">جميعَ كتبِ الركن</b> دفعةً واحدة — <b style="color:var(--gold-lt)">£٥ للحزمة</b>.</span><span class="en-only">Each bundle unlocks <b style="color:var(--gold-lt)">all of that corner's books</b> at once — <b style="color:var(--gold-lt)">£5 per bundle</b>.</span></p>
+    <div id="bookGroups"></div>
+
+    <div class="sec-h"><span class="si">💚</span><h2><span class="ar-only">طرقُ الدعم</span><span class="en-only">Ways to Support</span></h2></div>
+    <div class="ways">
+      <div class="way">
+        <div class="w-ic">📤</div>
+        <h3><span class="ar-only">انشُر الموقع</span><span class="en-only">Share the site</span></h3>
+        <p><span class="ar-only">الدالُّ على الخيرِ كفاعلِه — شاركه مع غيرك.</span><span class="en-only">Guiding to good is like doing it — share it.</span></p>
+        <button onclick="shareSite()"><span class="ar-only">مشاركة ←</span><span class="en-only">Share →</span></button>
+      </div>
+    </div>
+  </div>
+
+  <div class="toast" id="toast"></div>
+
+  <div class="cart-ov" id="cartOv" onclick="if(event.target===this)closeCart()">
+    <div class="cart-card">
+      <h2><span><span class="ar-only">🛒 سلّة الدعم</span><span class="en-only">🛒 Support Cart</span></span><button class="x" onclick="closeCart()">✕</button></h2>
+      <div id="cartList"></div>
+      <div class="cart-pay">
+        <p class="cart-note"><span class="ar-only">راجِع موادّك المختارة، ثمّ أكمِل الدعمَ عبر الزرّ الآمن أدناه. بعد الدفعِ تُفتَح الموادّ المميّزة.</span><span class="en-only">Review your selected materials, then complete your support via the secure button below. Premium materials unlock after payment.</span></p>
+        <div style="display:flex;align-items:center;justify-content:space-between;font-weight:900;font-size:1.05rem;margin:.2rem 0 .9rem"><span><span class="ar-only">الإجمالي</span><span class="en-only">Total</span> <span style="color:var(--muted);font-weight:600;font-size:.78rem">(£5 × <span class="ar-only">حزمة</span><span class="en-only">bundle</span>)</span></span><b id="cartTotal" style="color:var(--gold-lt)">£0.00</b></div>
+        <div id="authHint" class="cart-note" style="margin:.2rem 0 .8rem"></div>
+        <div id="paypal-btns"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="cart-ov" id="authOv" onclick="if(event.target===this)closeAuth()">
+    <div class="cart-card" style="max-width:380px">
+      <h2><span><span class="ar-only">👤 الحساب</span><span class="en-only">👤 Account</span></span><button class="x" onclick="closeAuth()">✕</button></h2>
+      <div class="auth-tabs">
+        <button id="tabLogin" class="active" onclick="setAuthMode('login')"><span class="ar-only">دخول</span><span class="en-only">Login</span></button>
+        <button id="tabReg" onclick="setAuthMode('register')"><span class="ar-only">حساب جديد</span><span class="en-only">Register</span></button>
+      </div>
+      <input id="authEmail" class="auth-field" type="email" autocomplete="email" placeholder="Email">
+      <input id="authPw" class="auth-field" type="password" autocomplete="current-password" placeholder="Password">
+      <button class="auth-submit" id="authSubmitBtn" onclick="authSubmit()"><span class="ar-only">دخول</span><span class="en-only">Login</span></button>
+      <p class="cart-note" style="text-align:center;margin-top:.8rem"><span class="ar-only">يحفظ مشترياتِك ويفتحها على كلِّ أجهزتك.</span><span class="en-only">Saves your purchases and unlocks them on all your devices.</span></p>
+    </div>
+  </div>
+
+<script src="https://www.gstatic.com/firebasejs/10.12.5/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.5/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.5/firebase-firestore-compat.js"></script>
+<script src="../shared/firebase-config.js"></script>
+<script src="https://www.paypal.com/sdk/js?client-id=AdDKk6Oh6nL0fOQdXMGj_ca2Hb3GG3VZcXAJ5XnaYZAODhx_uuZsgyBBE8O8u7StIGVZ6ZQfp3KEycUd&disable-funding=venmo&currency=GBP"></script>
+
+  <div class="print-ov" id="printOv" onclick="if(event.target===this)closePrint()">
+    <div class="print-tools">
+      <button class="pt-btn print" onclick="window.print()">🖨️ <span class="ar-only">طباعة / PDF</span><span class="en-only">Print / PDF</span></button>
+      <button class="pt-btn close" onclick="closePrint()">✕</button>
+    </div>
+    <div class="paper" id="paper"></div>
+  </div>
+
+<script defer src="../shared/mk-system.js"></script>
+<script src="../little-district/pages/parents-programs.js" onerror="this.remove()"></script>
+<script>
+  var lang=(window.MK&&MK.lang&&MK.lang())||localStorage.getItem('bunyanLang')||'ar';
+  function txo(o){ return o?(lang==='ar'?o.ar:o.en):''; }
+  var ITEMS=[
+    { id:'plans', icon:'🗓️', kind:'free', t:{ar:'حزمةُ الخطط التربوية (٦ برامج)',en:'Parenting Plans Pack (6 programs)'},
+      d:{ar:'برامجُ التعامل مع: العناد · الخوف · الغضب · الكذب · الصلاة · التشتّت — قابلةٌ للطباعة.',en:'Programs for: stubbornness, fear, anger, lying, prayer & focus — printable.'}, action:'plans' },
+    { id:'certs', icon:'🏅', kind:'free', t:{ar:'شهاداتُ الإنجاز',en:'Achievement Certificates'},
+      d:{ar:'شهاداتُ طفلِك من ركن التنزيلات، جاهزةٌ للطباعة والتأطير.',en:"Your child's certificates from the Downloads corner, ready to print & frame."}, action:'downloads' },
+  ];
+
+  // Complete, self-contained print-ready books (no extra inputs needed), divided by content.
+  var AB='../../Books/Published/Activities/';
+  var CB='../../Books/Published/';
+  // 11 bundles — one per corner (exact corner names). Empty corners stay listed for later.
+  var BOOKS=[
+    { grp:{ar:'منارة العقيدة',en:'Faith Minaret'}, icon:'🕋', items:[
+      {t:{ar:'قَصرُ المَلِكِ الواحِد — التوحيد',en:'City of Tawheed'}, p:CB+'Faith Minaret/Tawheed Book.html'},
+      {t:{ar:'جُنودُ النّور — الملائكة',en:'Soldiers of Light'}, p:CB+'Faith Minaret/Malaika Book.html'},
+      {t:{ar:'رِحلةُ البَلاغ — الكتب السماوية',en:'The Revealed Books'}, p:CB+'Faith Minaret/Kutub Book.html'},
+      {t:{ar:'سِلسِلةُ الأمان بالله',en:'The Chain of Security with Allah'}, p:CB+'Faith Minaret/Aman Book.html'},
+      {t:{ar:'رِحلةُ العُبور — الآخرة',en:'Journey of the Crossing'}, p:CB+'Faith Minaret/Akhira Book.html'},
+      {t:{ar:'سِرُّ التَّقدير — القَدَر',en:'The Secret of the Decree'}, p:CB+'Faith Minaret/Qadar Book.html'},
+      {t:{ar:'مُختبرُ كشفِ الحقائق',en:'The Truth-Revealing Lab'}, p:CB+'Faith Minaret/Lab Book.html'},
+      {t:{ar:'كيف عَرَفْنا الله؟',en:'How We Knew Allah'}, p:CB+'Faith Minaret/Maarifa Book.html'},
+      {t:{ar:'رِحلةُ الأبطال — الثبات',en:'Journey of the Heroes'}, p:CB+'Faith Minaret/Thabat Book.html'},
+      {t:{ar:'بدائعُ الخلق',en:'Wonders of Creation'}, p:CB+'Faith Minaret/Wonders of Creation Book Publish.html'},
+      {t:{ar:'أنشطةُ العقيدة — المستوى ١',en:'Aqeeda Activity Book — Level 1'}, p:AB+'Aqeeda Activity Book - Level 1.html'},
+      {t:{ar:'أنشطةُ العقيدة — المستوى ٢',en:'Aqeeda Activity Book — Level 2'}, p:AB+'Aqeeda Activity Book - Level 2.html'},
+      {t:{ar:'أنشطةُ العقيدة — المستوى ٣',en:'Aqeeda Activity Book — Level 3'}, p:AB+'Aqeeda Activity Book - Level 3.html'},
+      {t:{ar:'أنشطةُ العقيدة (إنجليزي) — المستوى ١',en:'Faith Minaret Activity (EN) — Level 1'}, p:AB+'Faith Minaret Activity Book -EN- - Level 1.html'},
+      {t:{ar:'أنشطةُ العقيدة (إنجليزي) — المستوى ٢',en:'Faith Minaret Activity (EN) — Level 2'}, p:AB+'Faith Minaret Activity Book -EN- - Level 2.html'},
+      {t:{ar:'أنشطةُ العقيدة (إنجليزي) — المستوى ٣',en:'Faith Minaret Activity (EN) — Level 3'}, p:AB+'Faith Minaret Activity Book -EN- - Level 3.html'},
+    ]},
+    { grp:{ar:'واحة العبادة',en:'Worship Oasis'}, icon:'🌙', items:[
+      {t:{ar:'رحلةُ الصَّلاة',en:'The Prayer Journey'}, p:CB+'Worship Oasis/Salah Book.html'},
+      {t:{ar:'رحلةُ الصِّيام',en:'The Fasting Journey'}, p:CB+'Worship Oasis/Fasting Book.html'},
+      {t:{ar:'رحلةُ الزَّكاةِ والصَّدَقة',en:'The Zakah & Charity Journey'}, p:CB+'Worship Oasis/Zakah Book.html'},
+      {t:{ar:'رحلةُ الحَجّ',en:'The Hajj Journey'}, p:CB+'Worship Oasis/Hajj Book.html'},
+      {t:{ar:'رحلةُ الدُّعاء',en:"The Du'a Journey"}, p:CB+'Worship Oasis/Dua Book.html'},
+      {t:{ar:'رحلةُ الأذكار',en:'The Adhkar Journey'}, p:CB+'Worship Oasis/Adhkar Book.html'},
+      {t:{ar:'أنشطةُ العبادة — المستوى ١',en:'Worship Oasis Activity Book — Level 1'}, p:AB+'Worship Oasis Activity Book - Level 1.html'},
+      {t:{ar:'أنشطةُ العبادة — المستوى ٢',en:'Worship Oasis Activity Book — Level 2'}, p:AB+'Worship Oasis Activity Book - Level 2.html'},
+      {t:{ar:'أنشطةُ العبادة — المستوى ٣',en:'Worship Oasis Activity Book — Level 3'}, p:AB+'Worship Oasis Activity Book - Level 3.html'},
+      {t:{ar:'أنشطةُ العبادة (إنجليزي) — المستوى ١',en:'Worship Oasis Activity (EN) — Level 1'}, p:AB+'Worship Oasis Activity Book -EN- - Level 1.html'},
+      {t:{ar:'أنشطةُ العبادة (إنجليزي) — المستوى ٢',en:'Worship Oasis Activity (EN) — Level 2'}, p:AB+'Worship Oasis Activity Book -EN- - Level 2.html'},
+      {t:{ar:'أنشطةُ العبادة (إنجليزي) — المستوى ٣',en:'Worship Oasis Activity (EN) — Level 3'}, p:AB+'Worship Oasis Activity Book -EN- - Level 3.html'},
+    ]},
+    { grp:{ar:'بستان القرآن والسنة',en:'Quran & Sunnah Garden'}, icon:'📖', items:[
+      {t:{ar:'قصصُ القرآن',en:'Quran Stories'}, p:CB+'Quran Garden/Quran Stories Book.html'},
+      {t:{ar:'بستانُ السور — قِصار السور',en:'Short Surahs'}, p:CB+'Quran Garden/Short Surahs Book.html'},
+      {t:{ar:'الأربعون النووية',en:'The Forty Hadith'}, p:CB+'Quran Garden/Forty Hadith Book.html'},
+      {t:{ar:'أنشطةُ القرآن — المستوى ١',en:'Quran Garden Activity Book — Level 1'}, p:AB+'Quran Garden Activity Book - Level 1.html'},
+      {t:{ar:'أنشطةُ القرآن — المستوى ٢',en:'Quran Garden Activity Book — Level 2'}, p:AB+'Quran Garden Activity Book - Level 2.html'},
+      {t:{ar:'أنشطةُ القرآن — المستوى ٣',en:'Quran Garden Activity Book — Level 3'}, p:AB+'Quran Garden Activity Book - Level 3.html'},
+      {t:{ar:'أنشطةُ القرآن (إنجليزي) — المستوى ١',en:'Quran Garden Activity (EN) — Level 1'}, p:AB+'Quran Garden Activity Book -EN- - Level 1.html'},
+      {t:{ar:'أنشطةُ القرآن (إنجليزي) — المستوى ٢',en:'Quran Garden Activity (EN) — Level 2'}, p:AB+'Quran Garden Activity Book -EN- - Level 2.html'},
+      {t:{ar:'أنشطةُ القرآن (إنجليزي) — المستوى ٣',en:'Quran Garden Activity (EN) — Level 3'}, p:AB+'Quran Garden Activity Book -EN- - Level 3.html'},
+    ]},
+    { grp:{ar:'حيّنا الصغير',en:'Our Little District'}, icon:'🏘️', items:[
+      {t:{ar:'كنزُ قصص الحيّ الصغير',en:'Little District Story Treasury'}, p:'../../Books/Published/Little District/Little District Story Treasury.html'},
+      {t:{ar:'أخلاقُ الحيّ',en:'Manners of the District'}, p:CB+'Little District/Manners Book.html'},
+      {t:{ar:'آدابُ الحيّ',en:'Etiquettes of the District'}, p:CB+'Little District/Etiquette Book.html'},
+      {t:{ar:'أنشطةُ الأخلاق — المستوى ١',en:'Little District Activity — Level 1'}, p:AB+'Little District Activity Book - Level 1.html'},
+      {t:{ar:'أنشطةُ الأخلاق — المستوى ٢',en:'Little District Activity — Level 2'}, p:AB+'Little District Activity Book - Level 2.html'},
+      {t:{ar:'أنشطةُ الأخلاق — المستوى ٣',en:'Little District Activity — Level 3'}, p:AB+'Little District Activity Book - Level 3.html'},
+      {t:{ar:'أنشطةُ الحيّ (إنجليزي) — المستوى ١',en:'Little District Activity (EN) — Level 1'}, p:AB+'Little District Activity Book -EN- - Level 1.html'},
+      {t:{ar:'أنشطةُ الحيّ (إنجليزي) — المستوى ٢',en:'Little District Activity (EN) — Level 2'}, p:AB+'Little District Activity Book -EN- - Level 2.html'},
+      {t:{ar:'أنشطةُ الحيّ (إنجليزي) — المستوى ٣',en:'Little District Activity (EN) — Level 3'}, p:AB+'Little District Activity Book -EN- - Level 3.html'},
+      {t:{ar:'متاهاتُ الأخلاق — الحيّ الصغير',en:'Manners Maze — Little District'}, p:AB+'Little District - Manners Maze Book.html'},
+      {t:{ar:'متاهاتُ الأخلاق (إنجليزي)',en:'Manners Maze (EN)'}, p:AB+'Little District - Manners Maze Book (EN).html'},
+    ]},
+    { grp:{ar:'ركن القلب السليم',en:'Pure Heart Corner'}, icon:'💚', items:[
+      {t:{ar:'بِرُّ الوالدَين والحُبُّ في الله',en:'Honoring Parents & Love for Allah'}, p:CB+'Pure Heart/Parents and Love for Allah Book.html'},
+      {t:{ar:'أسماءُ اللهِ الحُسنى',en:'The Beautiful Names of Allah'}, p:CB+'Pure Heart/Beautiful Names Book.html'},
+      {t:{ar:'القلبُ السليم',en:'The Sound Heart'}, p:CB+'Pure Heart/Sound Heart Book.html'},
+      {t:{ar:'أنشطةُ القلب السليم — المستوى ١',en:'Pure Heart Activity — Level 1'}, p:AB+'Pure Heart Activity Book - Level 1.html'},
+      {t:{ar:'أنشطةُ القلب السليم — المستوى ٢',en:'Pure Heart Activity — Level 2'}, p:AB+'Pure Heart Activity Book - Level 2.html'},
+      {t:{ar:'أنشطةُ القلب السليم — المستوى ٣',en:'Pure Heart Activity — Level 3'}, p:AB+'Pure Heart Activity Book - Level 3.html'},
+      {t:{ar:'أنشطةُ القلب السليم (إنجليزي) — المستوى ١',en:'Pure Heart Activity (EN) — Level 1'}, p:AB+'Pure Heart Activity Book -EN- - Level 1.html'},
+      {t:{ar:'أنشطةُ القلب السليم (إنجليزي) — المستوى ٢',en:'Pure Heart Activity (EN) — Level 2'}, p:AB+'Pure Heart Activity Book -EN- - Level 2.html'},
+      {t:{ar:'أنشطةُ القلب السليم (إنجليزي) — المستوى ٣',en:'Pure Heart Activity (EN) — Level 3'}, p:AB+'Pure Heart Activity Book -EN- - Level 3.html'},
+    ]},
+    { grp:{ar:'حصن الأبطال',en:"Heroes' Fortress"}, icon:'🏰', items:[
+      {t:{ar:'سيرةُ النبيّ ﷺ',en:'The Prophet ﷺ'}, p:CB+'Heroes Fortress/Seerah Book.html'},
+      {t:{ar:'قصصُ الأنبياء',en:'Stories of the Prophets'}, p:CB+'Heroes Fortress/Prophets Book.html'},
+      {t:{ar:'الصحابةُ الكرام',en:'The Noble Companions'}, p:CB+'Heroes Fortress/Companions Book.html'},
+      {t:{ar:'العشرةُ المبشّرونَ بالجنّة',en:'The Ten Promised Paradise'}, p:CB+'Heroes Fortress/Ashara Mubashara - The Ten Promised Paradise.html'},
+      {t:{ar:'التابعونَ ومَن بعدهم',en:'The Successors'}, p:CB+'Heroes Fortress/Successors Book.html'},
+      {t:{ar:'القادةُ والفاتِحون',en:'Leaders & Rulers'}, p:CB+'Heroes Fortress/Leaders Book.html'},
+      {t:{ar:'أيّامٌ خالدة — المعارك',en:'Immortal Days'}, p:CB+'Heroes Fortress/Battles Book.html'},
+      {t:{ar:'أنشطةُ الأبطال — المستوى ١',en:'Heroes Fortress Activity Book — Level 1'}, p:AB+'Heroes Fortress Activity Book - Level 1.html'},
+      {t:{ar:'أنشطةُ الأبطال — المستوى ٢',en:'Heroes Fortress Activity Book — Level 2'}, p:AB+'Heroes Fortress Activity Book - Level 2.html'},
+      {t:{ar:'أنشطةُ الأبطال — المستوى ٣',en:'Heroes Fortress Activity Book — Level 3'}, p:AB+'Heroes Fortress Activity Book - Level 3.html'},
+      {t:{ar:'أنشطةُ الأبطال (إنجليزي) — المستوى ١',en:'Heroes Fortress Activity (EN) — Level 1'}, p:AB+'Heroes Fortress Activity Book -EN- - Level 1.html'},
+      {t:{ar:'أنشطةُ الأبطال (إنجليزي) — المستوى ٢',en:'Heroes Fortress Activity (EN) — Level 2'}, p:AB+'Heroes Fortress Activity Book -EN- - Level 2.html'},
+      {t:{ar:'أنشطةُ الأبطال (إنجليزي) — المستوى ٣',en:'Heroes Fortress Activity (EN) — Level 3'}, p:AB+'Heroes Fortress Activity Book -EN- - Level 3.html'},
+      {t:{ar:'ملصقاتُ أبطال الإسلام',en:'Heroes of Islam Posters'}, p:'../../Books/Published/Role Models/Heroes of Islam Posters.html'},
+    ]},
+    { grp:{ar:'النادي الرياضي',en:'Sports Club'}, icon:'🏊', items:[
+      {t:{ar:'سُنَنُ الفِطرة',en:'The Fitrah Sunnahs'}, p:CB+'Sports Club/Fitrah Sunnahs Book.html'},
+      {t:{ar:'الرِّياضةُ والقُوّة',en:'Sport & Strength'}, p:CB+'Sports Club/Sport and Strength Book.html'},
+      {t:{ar:'احذَر هذِهِ الآفات',en:'Beware These Dangers'}, p:CB+'Sports Club/Beware These Dangers Book.html'},
+      {t:{ar:'القُوّةُ والشَّخصيّةُ القِياديّة',en:'Strength & Leadership'}, p:CB+'Sports Club/Strength and Leadership Book.html'},
+      {t:{ar:'أنشطةُ الرياضة — المستوى ١',en:'Sports Club Activity Book — Level 1'}, p:AB+'Sports Club Activity Book - Level 1.html'},
+      {t:{ar:'أنشطةُ الرياضة — المستوى ٢',en:'Sports Club Activity Book — Level 2'}, p:AB+'Sports Club Activity Book - Level 2.html'},
+      {t:{ar:'أنشطةُ الرياضة — المستوى ٣',en:'Sports Club Activity Book — Level 3'}, p:AB+'Sports Club Activity Book - Level 3.html'},
+      {t:{ar:'أنشطةُ الرياضة (إنجليزي) — المستوى ١',en:'Sports Club Activity (EN) — Level 1'}, p:AB+'Sports Club Activity Book -EN- - Level 1.html'},
+      {t:{ar:'أنشطةُ الرياضة (إنجليزي) — المستوى ٢',en:'Sports Club Activity (EN) — Level 2'}, p:AB+'Sports Club Activity Book -EN- - Level 2.html'},
+      {t:{ar:'أنشطةُ الرياضة (إنجليزي) — المستوى ٣',en:'Sports Club Activity (EN) — Level 3'}, p:AB+'Sports Club Activity Book -EN- - Level 3.html'},
+    ]},
+    { grp:{ar:'أكاديمية المبدعين',en:"Innovators' Academy"}, icon:'🔭', items:[
+      {t:{ar:'صانعُ المستقبل',en:'Maker of the Future'}, p:CB+'Innovators Academy/Future Maker Book.html'},
+      {t:{ar:'رِحلةُ المُستَكْشِفين',en:"The Explorers' Journey"}, p:CB+'Innovators Academy/Explorers Journey Book.html'},
+      {t:{ar:'عُقولٌ مُنيرة',en:'Illuminating Minds'}, p:CB+'Innovators Academy/Illuminating Minds Book.html'},
+      {t:{ar:'كنزُ اللغة',en:'Treasure of the Language'}, p:CB+'Innovators Academy/Language Book.html'},
+      {t:{ar:'منارةُ الحضارة',en:'Lighthouse of Civilization'}, p:CB+'Innovators Academy/Lighthouse Book.html'},
+      {t:{ar:'أنشطةُ المبدعين — المستوى ١',en:'Innovators Academy Activity Book — Level 1'}, p:AB+'Innovators Academy Activity Book - Level 1.html'},
+      {t:{ar:'أنشطةُ المبدعين — المستوى ٢',en:'Innovators Academy Activity Book — Level 2'}, p:AB+'Innovators Academy Activity Book - Level 2.html'},
+      {t:{ar:'أنشطةُ المبدعين — المستوى ٣',en:'Innovators Academy Activity Book — Level 3'}, p:AB+'Innovators Academy Activity Book - Level 3.html'},
+      {t:{ar:'أنشطةُ المبدعين (إنجليزي) — المستوى ١',en:'Innovators Academy Activity (EN) — Level 1'}, p:AB+'Innovators Academy Activity Book -EN- - Level 1.html'},
+      {t:{ar:'أنشطةُ المبدعين (إنجليزي) — المستوى ٢',en:'Innovators Academy Activity (EN) — Level 2'}, p:AB+'Innovators Academy Activity Book -EN- - Level 2.html'},
+      {t:{ar:'أنشطةُ المبدعين (إنجليزي) — المستوى ٣',en:'Innovators Academy Activity (EN) — Level 3'}, p:AB+'Innovators Academy Activity Book -EN- - Level 3.html'},
+    ]},
+    { grp:{ar:'ركن القدس والأمة',en:'Al-Quds & Ummah'}, icon:'🕌', items:[
+      {t:{ar:'رحلةُ الأقصى',en:'Journey of Al-Aqsa'}, p:CB+'Al-Quds and Ummah/Aqsa Book.html'},
+      {t:{ar:'رحلةُ التَّغيير',en:'Journey of Change'}, p:CB+'Al-Quds and Ummah/Taghyir Book.html'},
+      {t:{ar:'رحلةُ الوَحدة',en:'Journey of Unity'}, p:CB+'Al-Quds and Ummah/Wahda Book.html'},
+      {t:{ar:'أنشطةُ القدس — المستوى ١',en:'Al-Quds & Ummah Activity Book — Level 1'}, p:AB+'Al-Quds - Ummah Activity Book - Level 1.html'},
+      {t:{ar:'أنشطةُ القدس — المستوى ٢',en:'Al-Quds & Ummah Activity Book — Level 2'}, p:AB+'Al-Quds - Ummah Activity Book - Level 2.html'},
+      {t:{ar:'أنشطةُ القدس — المستوى ٣',en:'Al-Quds & Ummah Activity Book — Level 3'}, p:AB+'Al-Quds - Ummah Activity Book - Level 3.html'},
+      {t:{ar:'أنشطةُ القدس (إنجليزي) — المستوى ١',en:'Al-Quds & Ummah Activity (EN) — Level 1'}, p:AB+'Al-Quds - Ummah Activity Book -EN- - Level 1.html'},
+      {t:{ar:'أنشطةُ القدس (إنجليزي) — المستوى ٢',en:'Al-Quds & Ummah Activity (EN) — Level 2'}, p:AB+'Al-Quds - Ummah Activity Book -EN- - Level 2.html'},
+      {t:{ar:'أنشطةُ القدس (إنجليزي) — المستوى ٣',en:'Al-Quds & Ummah Activity (EN) — Level 3'}, p:AB+'Al-Quds - Ummah Activity Book -EN- - Level 3.html'},
+    ]},
+    { grp:{ar:'ركن الأهل',en:'Parents Corner'}, icon:'🧔', items:[
+      {t:{ar:'بوصلةُ التربية — دليلُ المراحل العمريّة',en:'The Tarbiyah Compass — Age-Stages Guide'}, p:'../../Books/Published/Parent Plans/Tarbiyah Compass Guide Book.html'},
+      {t:{ar:'خارطةُ طريق المربّي',en:'Parent Roadmap'}, p:'../../Books/Published/Parent Plans/Parent Roadmap Book.html'},
+      {t:{ar:'خطةُ حفظ القرآن',en:'Quran Memorization Plan'}, p:'../../Books/Published/Parent Plans/Quran Memorization Plan Book.html'},
+      {t:{ar:'حلُّ المشكلاتِ السلوكيّة — دليلُ الأهل',en:'Solving Behaviour Problems — Parents\u2019 Guide'}, p:'../../Books/Published/Parent Plans/Behavior Solutions Guide Book.html'},
+      {t:{ar:'بوسترات البيت المسلم — جاهزة للطباعة',en:'Muslim Home Posters — Print-Ready'}, p:'../../Books/Published/Parent Plans/Home Posters Book.html'},
+    ]},
+    { grp:{ar:'ركن الأنشطة',en:'Activities Corner'}, icon:'🎲', items:[
+      {t:{ar:'كتابُ التلوين — الأركان',en:'Corners Coloring Book'}, p:AB+'Corners Coloring Book.html'},
+      {t:{ar:'كتابُ التلوين — الأركان (إنجليزي)',en:'Corners Coloring Book (EN)'}, p:AB+'Corners Coloring Book (EN).html'},
+      {t:{ar:'تلوينُ الحروف العربية',en:'Arabic Letters Colouring Book'}, p:AB+'كتاب-تلوين-الحروف-العربية.pdf', pdf:true},
+      {t:{ar:'تدريبُ كتابةِ الحروف العربية',en:'Arabic Letters — Trace & Write'}, p:AB+'كتاب-الحروف-العربية-تدريب-الكتابة.pdf', pdf:true},
+      {t:{ar:'تلوينُ الأرقام العربية',en:'Arabic Numbers Colouring Book'}, p:AB+'كتاب-تلوين-الأرقام-العربية.pdf', pdf:true},
+      {t:{ar:'تدريبُ كتابةِ الأرقام العربية',en:'Arabic Numbers — Trace & Write'}, p:AB+'كتاب-الأرقام-العربية-تدريب-الكتابة.pdf', pdf:true},
+      {t:{ar:'تلوينُ الحروف الإنجليزية',en:'English Letters Colouring Book'}, p:AB+'English-Letters-Colouring-Book.pdf', pdf:true},
+      {t:{ar:'تدريبُ كتابةِ الحروف الإنجليزية',en:'English Letters — Trace & Write'}, p:AB+'English-Letters-Trace-and-Write.pdf', pdf:true},
+      {t:{ar:'تلوينُ الأرقام ١–٢٠',en:'Numbers 1–20 Colouring Book'}, p:AB+'Numbers-Colouring-Book-1-20.pdf', pdf:true},
+      {t:{ar:'تدريبُ كتابةِ الأرقام ١–٢٠',en:'Numbers 1–20 — Trace & Write'}, p:AB+'Numbers-Trace-and-Write-1-20.pdf', pdf:true},
+    ]},
+  ];
+
+  function applyLang(){
+    document.documentElement.lang=lang; document.documentElement.dir=lang==='ar'?'rtl':'ltr';
+    document.querySelectorAll('.ar-only').forEach(function(e){e.style.display=lang==='ar'?'':'none';});
+    document.querySelectorAll('.en-only').forEach(function(e){e.style.display=lang==='en'?'':'none';});
+    document.querySelectorAll('.lang button').forEach(function(b){b.classList.toggle('active',b.dataset.lang===lang);});
+    updateAuthTexts();
+    render();
+  }
+  document.querySelectorAll('.lang button').forEach(function(b){ b.onclick=function(){ lang=b.dataset.lang; try{localStorage.setItem('bunyanLang',lang);}catch(e){} applyLang(); }; });
+
+  function render(){
+    var ar=lang==='ar';
+    ITEMS.forEach(function(it){ REG[it.id]=it.t; });
+    document.getElementById('itemGrid').innerHTML = ITEMS.map(function(it){
+      var tag = it.kind==='free'
+        ? '<span class="it-tag free">'+(ar?'مجّاني':'Free')+'</span>'
+        : '<span class="it-tag supp">'+(ar?'دعم':'Support')+'</span>';
+      var btn = it.kind==='free'
+        ? '<button class="it-btn get" onclick="doAction(\''+it.action+'\',\''+it.id+'\')">'+(ar?'⬇ تحميل / طباعة':'⬇ Download / Print')+'</button>'
+        : '<div class="it-price">'+txo(it.price)+'</div><button class="it-btn supp" onclick="addToCart(\''+it.id+'\')">'+(ar?'🛒 أضِف إلى السلة':'🛒 Add to cart')+'</button>';
+      return '<div class="item">'+tag+'<div class="it-ic">'+it.icon+'</div>'
+        +'<div class="it-t">'+txo(it.t)+'</div><div class="it-d">'+txo(it.d)+'</div>'+btn+'</div>';
+    }).join('');
+    renderBooks();
+  }
+
+  function renderBooks(){
+    var ar=lang==='ar';
+    document.getElementById('bookGroups').innerHTML = '<div class="grid">'+BOOKS.map(function(g,gi){
+      var bundleId='bundle'+gi; REG[bundleId]=g.grp;
+      var owned=isPaid(bundleId);
+      var n=g.items.length;
+      var rows=g.items.map(function(b,bi){
+        var safe=encodeURI(b.p).replace(/'/g,"%27");
+        var rel=encodeURIComponent(b.p.replace('../../Books/',''));
+        var pbid=bundleId+'_'+bi; REG[pbid]=b.t;
+        var right = owned
+          ? '<button class="bk-act dl" title="'+(ar?'تحميل':'Download')+'" onclick="'+(b.pdf?'downloadBook':'openBook')+'(\''+safe+'\')">⬇</button>'
+          : b.pdf
+            ? '<button class="bk-act pv" title="'+(ar?'معاينة':'Preview')+'" onclick="openBook(\''+safe+'\')">👁️</button>'
+            : '<button class="bk-act pv" title="'+(ar?'معاينة':'Preview')+'" onclick="openPreview(\''+rel+'\',\''+bundleId+'\')">👁️</button>';
+        return '<li class="bk-li"><span class="bk-nm">'+txo(b.t)+'</span>'+right+'</li>';
+      }).join('');
+      var tag = (n===0)
+        ? '<span class="it-tag" style="background:rgba(255,255,255,.07);color:var(--muted)">'+(ar?'قريباً':'Soon')+'</span>'
+        : owned
+          ? '<span class="it-tag free">'+(ar?'مملوكة ✓':'Owned ✓')+'</span>'
+          : '<span class="it-tag supp">£5</span>';
+      var foot = (n===0)
+        ? '<div class="bundle-owned" style="color:var(--muted)">'+(ar?'تُضافُ كتبُ هذا الركن قريباً بإذن الله':'Books for this corner are coming soon')+'</div>'
+        : owned
+          ? '<div class="bundle-owned">'+(ar?'✓ مفتوحة — حمِّل كلَّ الكتب':'✓ Unlocked — download all')+'</div>'
+          : '<button class="it-btn supp" onclick="addToCart(\''+bundleId+'\')">🛒 '+(ar?'أضِف الحزمة — £٥':'Add bundle — £5')+'</button>';
+      return '<div class="item bundle">'+tag
+        +'<div class="it-ic">'+g.icon+'</div>'
+        +'<div class="it-t">'+txo(g.grp)+'</div>'
+        +'<div class="bundle-meta">'+(n===0?(ar?'لا كتبَ بعد':'No books yet'):(ar?(n+' كتب في الحزمة'):(n+(n===1?' book':' books')+' in this bundle')))+'</div>'
+        +'<ul class="bk-ul">'+rows+'</ul>'
+        +foot+'</div>';
+    }).join('')+'</div>';
+  }
+  function openBook(p){ window.open(p,'_blank','noopener'); }
+  // Force a real download (used for owned PDFs, which otherwise just preview in-tab).
+  function downloadBook(p){
+    var a=document.createElement('a');
+    a.href=p; a.download=p.split('/').pop(); a.rel='noopener';
+    document.body.appendChild(a); a.click(); a.remove();
+  }
+  // Unpurchased books open a limited sample (first 3 pages) via the preview viewer.
+  function openPreview(rel,bid){
+    var t = REG[bid]?txo(REG[bid]):'';
+    var url='../../Books/book-preview.html?src='+rel+'&n=3&bid='+encodeURIComponent(bid)+'&lang='+lang+'&t='+encodeURIComponent(t);
+    window.open(url,'_blank','noopener');
+  }
+
+  function doAction(action,id){
+    if(action==='downloads'){ location.href='downloads.html?lang='+lang; return; }
+    if(action==='supp'){ supportFor(id); return; }
+    if(action==='plans'){ printPlans(); return; }
+    if(action==='weekly'){ printWeekly(); return; }
+  }
+  function supportFor(id){
+    // PayPal donate to the owner's account; item name carries what is being unlocked.
+    var url='https://www.paypal.com/donate/?business=bassamomda91@gmail.com&currency_code=USD&no_recurring=1&item_name='+encodeURIComponent('Unlock: '+id);
+    window.open(url,'_blank','noopener');
+  }
+
+  function printPlans(){
+    var ar=lang==='ar';
+    var P=window.PARENTS_PROGRAMS||[];
+    var body=P.map(function(p){
+      var weeks=p.weeks.map(function(w,i){
+        var steps=w.steps.map(function(s){return '<li>'+txo(s)+'</li>';}).join('');
+        return '<div class="wk"><b>'+(ar?'الأسبوع ':'Week ')+(i+1)+' · '+txo(w.t)+'</b><div>🎯 '+txo(w.goal)+'</div><ul>'+steps+'</ul></div>';
+      }).join('');
+      return '<h3>'+p.icon+' '+txo(p.title)+'</h3><p>'+txo(p.understand)+'</p>'+weeks;
+    }).join('<hr style="margin:1.4rem 0;border:none;border-top:1px solid #e7dcc0">');
+    document.getElementById('paper').innerHTML='<h2>'+(ar?'🗓️ حزمةُ الخطط التربوية':'🗓️ Parenting Plans Pack')+'</h2>'
+      +(body||('<p>'+(ar?'حمِّل صفحة ركن الأهل لعرض البرامج.':'Open the Parents corner to view the programs.')+'</p>'))
+      +'<p style="text-align:center;color:#9a7414;margin-top:1.4rem;font-weight:700">'+(ar?'تربية الطفل المسلم — صدقةٌ جارية':'Muslim Kids\u2019 Tarbiyah — an ongoing charity')+'</p>';
+    document.getElementById('printOv').classList.add('open');
+  }
+  function printWeekly(){
+    var ar=lang==='ar';
+    var days=ar?['السبت','الأحد','الإثنين','الثلاثاء','الأربعاء','الخميس','الجمعة']:['Sat','Sun','Mon','Tue','Wed','Thu','Fri'];
+    var tasks=ar?['صلاة الفجر','أذكار الصباح','قرآن','أخلاق حسنة','مساعدة الأهل','أذكار المساء']:['Fajr prayer','Morning adhkar','Qur\u2019an','Good manners','Helping family','Evening adhkar'];
+    var rows=tasks.map(function(t){ return '<tr><td style="text-align:start;font-weight:700">'+t+'</td>'+days.map(function(){return '<td style="border:1px solid #ccc;width:34px;height:30px"></td>';}).join('')+'</tr>'; }).join('');
+    document.getElementById('paper').innerHTML='<h2>'+(ar?'📅 جدولُ مهامِّ الأسبوع':'📅 Weekly Task Chart')+'</h2>'
+      +'<table style="width:100%;border-collapse:collapse;text-align:center"><thead><tr><th></th>'+days.map(function(d){return '<th style="font-size:.8rem">'+d+'</th>';}).join('')+'</tr></thead><tbody>'+rows+'</tbody></table>'
+      +'<p style="text-align:center;color:#9a7414;margin-top:1.2rem;font-weight:700">'+(ar?'⭐ ضع نجمةً عند كلِّ إنجاز':'⭐ Add a star for each completed task')+'</p>';
+    document.getElementById('printOv').classList.add('open');
+  }
+  function closePrint(){ document.getElementById('printOv').classList.remove('open'); }
+
+  function toast(m){ var t=document.getElementById('toast'); t.textContent=m; t.classList.add('show'); setTimeout(function(){t.classList.remove('show');},2600); }
+  function shareSite(){
+    var url=location.origin+location.pathname.replace(/corners\/shared\/store\.html$/,'index.html');
+    var data={title:lang==='ar'?'تربية الطفل المسلم':'Muslim Kids\u2019 Tarbiyah',text:lang==='ar'?'منصّة تربوية إسلامية ممتعة للأطفال':'A fun Islamic learning platform for kids',url:url};
+    if(navigator.share){ navigator.share(data).catch(function(){}); }
+    else if(navigator.clipboard){ navigator.clipboard.writeText(url); toast(lang==='ar'?'تم نسخ الرابط ✓':'Link copied ✓'); }
+    else { toast(url); }
+  }
+  // ---- Firebase Auth + Firestore (login / register / per-account unlocks) ----
+  var auth=null, db=null, currentUser=null, authMode='login';
+  var PAID=[]; try{ PAID=JSON.parse(localStorage.getItem('mkPaid'))||[]; }catch(e){ PAID=[]; }
+  function savePaidLocal(){ try{localStorage.setItem('mkPaid',JSON.stringify(PAID));}catch(e){} }
+  function isPaid(id){ return PAID.indexOf(id)>=0; }
+  function initFirebase(){
+    if(!window.firebase||!window.firebaseConfig){ return; }
+    try{
+      firebase.initializeApp(window.firebaseConfig);
+      auth=firebase.auth(); db=firebase.firestore();
+      auth.onAuthStateChanged(function(u){ currentUser=u; updateAuthUI(); if(u){ loadUnlocks(); } });
+    }catch(e){}
+  }
+  function updateAuthUI(){
+    var label=document.getElementById('authLabel');
+    if(!label) return;
+    if(currentUser){ label.textContent='👋 '+((currentUser.email||'').split('@')[0]); }
+    else { label.innerHTML='<span class="ar-only">دخول</span><span class="en-only">Login</span>'; }
+  }
+  function onAuthBtn(){ if(currentUser){ location.href='account.html?lang='+lang; } else { openAuth(); } }
+  function openAuth(){ updateAuthTexts(); document.getElementById('authOv').classList.add('open'); }
+  function closeAuth(){ document.getElementById('authOv').classList.remove('open'); }
+  function doLogout(){ if(auth){ auth.signOut(); } toast(lang==='ar'?'تمّ تسجيل الخروج':'Signed out'); }
+  function setAuthMode(m){
+    authMode=m;
+    document.getElementById('tabLogin').classList.toggle('active',m==='login');
+    document.getElementById('tabReg').classList.toggle('active',m==='register');
+    document.getElementById('authSubmitBtn').innerHTML = m==='register'
+      ? '<span class="ar-only">إنشاء حساب</span><span class="en-only">Create account</span>'
+      : '<span class="ar-only">دخول</span><span class="en-only">Login</span>';
+  }
+  function updateAuthTexts(){
+    var ar=lang==='ar';
+    var em=document.getElementById('authEmail'), pw=document.getElementById('authPw');
+    if(em) em.placeholder=ar?'البريد الإلكتروني':'Email';
+    if(pw) pw.placeholder=ar?'كلمة المرور':'Password';
+  }
+  function authSubmit(){
+    var ar=lang==='ar';
+    var em=(document.getElementById('authEmail').value||'').trim();
+    var pw=document.getElementById('authPw').value||'';
+    if(!em||!pw){ toast(ar?'أدخل البريد وكلمة المرور':'Enter email and password'); return; }
+    if(!auth){ toast(ar?'الخدمة غير متاحة الآن':'Service unavailable'); return; }
+    var p = authMode==='register' ? auth.createUserWithEmailAndPassword(em,pw) : auth.signInWithEmailAndPassword(em,pw);
+    p.then(function(){ closeAuth(); document.getElementById('authPw').value=''; toast(ar?'مرحبًا بك ✓':'Welcome ✓'); })
+     .catch(function(e){ toast(authError(e&&e.code, ar)); });
+  }
+  /* turn raw Firebase error codes into friendly, bilingual messages */
+  function authError(code, ar){
+    switch(code){
+      case 'auth/invalid-email':        return ar?'البريد الإلكتروني غير صحيح':'That email address isn\u2019t valid';
+      case 'auth/missing-password':     return ar?'أدخل كلمة المرور':'Please enter your password';
+      case 'auth/weak-password':        return ar?'كلمة المرور قصيرة — استخدم ٦ أحرف على الأقل':'Password is too short — use at least 6 characters';
+      case 'auth/email-already-in-use': return ar?'هذا البريد مسجَّل بالفعل — سجّل الدخول بدلاً من ذلك':'This email is already registered — try logging in instead';
+      case 'auth/user-not-found':
+      case 'auth/wrong-password':
+      case 'auth/invalid-credential':   return ar?'البريد أو كلمة المرور غير صحيحة':'Wrong email or password';
+      case 'auth/too-many-requests':    return ar?'محاولاتٌ كثيرة — انتظر قليلاً ثم أعد المحاولة':'Too many attempts — please wait a moment and try again';
+      case 'auth/network-request-failed':return ar?'تعذّر الاتصال — تحقّق من الإنترنت':'Connection problem — check your internet';
+      case 'auth/operation-not-allowed':return ar?'تسجيل الدخول بالبريد غير مُفعَّل بعد':'Email login isn\u2019t enabled yet';
+      default:                          return ar?'تعذّر تسجيل الدخول — حاول مرة أخرى':'Couldn\u2019t sign in — please try again';
+    }
+  }
+  function loadUnlocks(){
+    if(!db||!currentUser) return;
+    db.collection('users').doc(currentUser.uid).get().then(function(d){
+      var server=(d.exists&&d.data().unlocks)||[];
+      var merged=[]; server.concat(PAID).forEach(function(x){ if(merged.indexOf(x)<0) merged.push(x); });
+      var changed = merged.length!==server.length;
+      PAID=merged; savePaidLocal();
+      if(changed) saveUnlocks();
+      render();
+    }).catch(function(){});
+  }
+  function saveUnlocks(){
+    if(!db||!currentUser) return;
+    db.collection('users').doc(currentUser.uid).set({unlocks:PAID,email:currentUser.email||'',updated:Date.now()},{merge:true}).catch(function(){});
+  }
+  function grantPaid(ids){
+    ids.forEach(function(id){ if(PAID.indexOf(id)<0) PAID.push(id); });
+    savePaidLocal();
+    if(currentUser) saveUnlocks();
+    render();
+  }
+  var CART=[]; var REG={}; var ppRendered=false;
+  try{ CART=JSON.parse(localStorage.getItem('mkCart'))||[]; }catch(e){ CART=[]; }
+  function saveCart(){ try{localStorage.setItem('mkCart',JSON.stringify(CART));}catch(e){} }
+  function addToCart(id){ if(CART.indexOf(id)<0){ CART.push(id); saveCart(); } updateCartUI(); toast(lang==='ar'?'أُضيف إلى السلة ✓':'Added to cart ✓'); }
+  function removeFromCart(id){ var i=CART.indexOf(id); if(i>=0){ CART.splice(i,1); saveCart(); } updateCartUI(); renderCart(); }
+  function updateCartUI(){ var c=document.getElementById('cartCount'); if(c) c.textContent=CART.length; }
+  function renderCart(){
+    var ar=lang==='ar', box=document.getElementById('cartList');
+    updateTotal();
+    if(!CART.length){ box.innerHTML='<p style="color:var(--muted);text-align:center;padding:1rem 0">'+(ar?'سلّتك فارغة':'Your cart is empty')+'</p>'; return; }
+    box.innerHTML=CART.map(function(id){
+      var t=REG[id]?txo(REG[id]):id;
+      return '<div class="cart-row"><span>'+t+'</span><button onclick="removeFromCart(\''+id+'\')" aria-label="remove">✕</button></div>';
+    }).join('');
+  }
+  function openCart(){ renderCart(); updateAuthHint(); document.getElementById('cartOv').classList.add('open'); renderPaypal(); }
+  function updateAuthHint(){
+    var h=document.getElementById('authHint'); if(!h) return; var ar=lang==='ar';
+    h.innerHTML = currentUser
+      ? (ar?'✓ مسجّلٌ الدخول — ستُحفَظ مشترياتُك وتُفتَح على كلِّ أجهزتك.':'✓ Signed in — your purchases will be saved and unlocked on all devices.')
+      : (ar?'💡 <a href="#" onclick="closeCart();openAuth();return false" style="color:var(--gold-lt);font-weight:800">سجِّل الدخول</a> لحفظِ مشترياتك على كلِّ أجهزتك.':'💡 <a href="#" onclick="closeCart();openAuth();return false" style="color:var(--gold-lt);font-weight:800">Log in</a> to save your purchases across devices.');
+  }
+  function closeCart(){ document.getElementById('cartOv').classList.remove('open'); }
+  function cartTotal(){ return CART.length * 5; }
+  function updateTotal(){ var e=document.getElementById('cartTotal'); if(e) e.textContent='£'+cartTotal().toFixed(2); }
+  function renderPaypal(){
+    if(ppRendered) return;
+    if(!window.paypal||!paypal.Buttons){ setTimeout(renderPaypal,300); return; }
+    paypal.Buttons({
+      style:{ layout:'vertical', color:'gold', shape:'pill', label:'paypal' },
+      onClick:function(data,actions){ if(!CART.length){ toast(lang==='ar'?'سلّتك فارغة':'Your cart is empty'); return actions.reject(); } return actions.resolve(); },
+      createOrder:function(data,actions){
+        return actions.order.create({ purchase_units:[{
+          amount:{ currency_code:'GBP', value:cartTotal().toFixed(2), breakdown:{ item_total:{ currency_code:'GBP', value:cartTotal().toFixed(2) } } },
+          items: CART.map(function(id){ return { name:((REG[id]?txo(REG[id]):id)||'item').slice(0,127), quantity:'1', unit_amount:{ currency_code:'GBP', value:'5.00' } }; })
+        }] });
+      },
+      onApprove:function(data,actions){ return actions.order.capture().then(function(){ grantPaid(CART.slice()); CART=[]; saveCart(); updateCartUI(); renderCart(); updateAuthHint(); toast(lang==='ar'?'تمّ الدفع، جزاك الله خيرًا ✓':'Payment complete — JazakAllah khayr ✓'); }); }
+    }).render('#paypal-btns');
+    ppRendered=true;
+  }
+  applyLang();
+  updateCartUI();
+  initFirebase();
+  // Returning from a book preview with ?add=<bid> re-adds that book to the cart.
+  (function(){
+    try{
+      var add=new URLSearchParams(location.search).get('add');
+      if(add && !isPaid(add)){ addToCart(add); openCart(); }
+    }catch(e){}
+  })();
+</script>
+<script defer src="../shared/nav-fix.js"></script>
+<script src="mk-citynav.js"></script>
+</body>
+</html>

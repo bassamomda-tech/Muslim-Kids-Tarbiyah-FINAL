@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>بطل الأركان الخمسة · أنوس</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+
+<link rel="stylesheet" href="../styles/tokens.css" />
+<link rel="stylesheet" href="../styles/dashboard.css" />
+<link rel="stylesheet" href="../styles/wheel.css" />
+<link rel="stylesheet" href="../styles/hero.css" />
+</head>
+<body>
+
+<div class="bg-decor" aria-hidden="true"></div>
+
+<div class="activity-shell">
+
+  <nav class="activity-nav">
+    <a class="back-link" href="../dashboard.html">
+      الرجوع للوحة الأنشطة
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg>
+    </a>
+    <div class="activity-crumb">
+      <span>تحديات السيرة واللغة</span>
+      <span class="sep">/</span>
+      <span class="cur">بطل الأركان الخمسة</span>
+    </div>
+    <div class="activity-actions">
+      <button class="icon-btn" id="reset-btn" title="إعادة الضبط" aria-label="إعادة الضبط">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 3-6.7L3 8"/><path d="M3 3v5h5"/></svg>
+      </button>
+    </div>
+  </nav>
+
+  <div class="activity-layout">
+
+    <!-- ============ لوحة اللعبة ============ -->
+    <section class="hr-panel">
+      <header class="wheel-header">
+        <span class="activity-tag">Activity 46 · 2D Platformer</span>
+        <h1 class="activity-title">بطل الأركان الخمسة</h1>
+        <p class="activity-desc">
+          اقفِز فوق المنصّات واحذَرِ الحُفَر، واجمَع <strong>أركانَ الإسلامِ الخمسة</strong>
+          بالترتيب حتى تَصِلَ إلى الراية.
+        </p>
+      </header>
+
+      <div class="hr-hud">
+        <div class="hud-block">الأركان <strong><span id="h-got">0</span>/5</strong></div>
+        <div class="hud-block">التالي <strong id="h-pillar">الشهادة</strong></div>
+        <div class="hud-block">الأرواح <strong class="lives" id="h-lives">♥♥♥</strong></div>
+      </div>
+
+      <div class="hr-pillars">
+        <div class="hr-pill-chip"><span class="ic">☝️</span>الشهادة</div>
+        <div class="hr-pill-chip"><span class="ic">🕌</span>الصلاة</div>
+        <div class="hr-pill-chip"><span class="ic">🤲</span>الزكاة</div>
+        <div class="hr-pill-chip"><span class="ic">🌙</span>الصوم</div>
+        <div class="hr-pill-chip"><span class="ic">🕋</span>الحج</div>
+      </div>
+
+      <div class="hr-stage" id="hr-stage">
+        <canvas id="hr-canvas"></canvas>
+
+        <div class="hr-touch">
+          <div class="pad-group">
+            <div class="hr-tbtn" id="t-left">◀</div>
+            <div class="hr-tbtn" id="t-right">▶</div>
+          </div>
+          <div class="pad-group">
+            <div class="hr-tbtn" id="t-jump">▲</div>
+          </div>
+        </div>
+
+        <div class="hr-overlay" id="hr-overlay">
+          <div class="hr-overlay-card">
+            <h2>هيّا أيُّها البطل!</h2>
+            <p>
+              تحرَّك بـ <span class="hr-key">←</span> <span class="hr-key">→</span>
+              واقفِز بـ <span class="hr-key">مسافة</span> أو <span class="hr-key">↑</span><br/>
+              اجمَع الأركانَ الخمسة بالترتيب وتجنَّب الحُفَر.
+            </p>
+            <button class="btn-primary" id="ov-btn" style="width:100%;justify-content:center;">ابدأ المغامرة</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="wheel-controls">
+        <div class="wheel-stat">أقل السَّقَطات <strong id="best">—</strong></div>
+        <div class="wheel-stat" style="text-align:center;">المحاولات <strong id="plays">0</strong></div>
+        <button class="wheel-mute-toggle" id="mute-btn" aria-pressed="false">
+          <span class="mute-icon"></span>
+          <span class="mute-label">كتم الصوت</span>
+        </button>
+      </div>
+    </section>
+
+    <!-- ============ اللوحة الجانبية ============ -->
+    <aside class="side-panel">
+      <div class="panel-card">
+        <div class="panel-head"><h3>أركانُ الإسلام</h3></div>
+        <div class="hr-pillar-list">
+          <div class="hr-pillar-item"><span class="num">١</span><div>الشهادة<small>أشهدُ أن لا إله إلا الله</small></div></div>
+          <div class="hr-pillar-item"><span class="num">٢</span><div>الصلاة<small>خمسُ صلواتٍ في اليوم</small></div></div>
+          <div class="hr-pillar-item"><span class="num">٣</span><div>الزكاة<small>طُهرةٌ للمالِ وعَونٌ للفقير</small></div></div>
+          <div class="hr-pillar-item"><span class="num">٤</span><div>الصوم<small>صومُ شهرِ رمضان</small></div></div>
+          <div class="hr-pillar-item"><span class="num">٥</span><div>الحج<small>حجُّ البيتِ لمن استطاع</small></div></div>
+        </div>
+      </div>
+
+      <div class="panel-card">
+        <div class="panel-head"><h3>التحكُّم</h3></div>
+        <div class="hr-help">
+          <div class="hr-help-row"><span class="pk">← →</span><span>الحركة يميناً ويساراً</span></div>
+          <div class="hr-help-row"><span class="pk">مسافة</span><span>القفز فوق المنصّات والحُفَر</span></div>
+        </div>
+        <div class="tip-card" style="margin-top: var(--s-4);">
+          <span class="tip-icon">!</span>
+          <span>اجمَع الأركانَ بالترتيب؛ الرُّكنُ المُضيءُ هو هدفُك التالي.</span>
+        </div>
+      </div>
+
+      <div class="panel-card">
+        <div class="panel-head"><h3>أساسُ الدين</h3></div>
+        <div class="hadith-card">
+          <div class="quote">«بُنِيَ الإسلامُ على خمسٍ»</div>
+          <span class="src">رواه البخاري ومسلم<span class="hadith-grade ok">صحيح</span></span>
+        </div>
+      </div>
+    </aside>
+  </div>
+</div>
+
+<!-- مودال النصر -->
+<div class="modal-backdrop" id="win-modal" role="dialog" aria-modal="true">
+  <div class="modal">
+    <button class="modal-close" data-close aria-label="إغلاق">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M6 6l12 12M18 6l-12 12"/></svg>
+    </button>
+    <div class="modal-deco" aria-hidden="true">
+      <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l2.4 6.6L21 9l-5 4.6L17.2 21 12 17.4 6.8 21 8 13.6 3 9l6.6-.4z"/></svg>
+    </div>
+    <div class="modal-eyebrow">بطل الأركان الخمسة</div>
+    <h2 class="modal-title">بطلٌ حقيقي!</h2>
+    <div class="modal-meaning" id="win-summary"></div>
+    <div class="modal-actions">
+      <button class="btn-ghost" data-close>انتهيت</button>
+      <button class="btn-primary" id="win-replay">العب من جديد</button>
+    </div>
+  </div>
+</div>
+
+<div class="particles" id="particles" aria-hidden="true"></div>
+
+<script src="../scripts/activity-common.js"></script>
+<script src="../scripts/hero.js"></script>
+
+<script>
+window.PAGE_DICT = {
+  "بطل الأركان الخمسة": "Five Pillars Hero",
+  "اقفِز فوق المنصّات واحذَرِ الحُفَر، واجمَع": "Jump over the platforms and beware the pits, and collect",
+  "أركانَ الإسلامِ الخمسة": "the five pillars of Islam",
+  "بالترتيب حتى تَصِلَ إلى الراية.": "in order until you reach the flag.",
+  "الأركان": "Pillars",
+  "التالي": "Next",
+  "الأرواح": "Lives",
+  "الشهادة": "Shahada",
+  "الصلاة": "Prayer",
+  "الزكاة": "Zakah",
+  "الصوم": "Fasting",
+  "الحج": "Hajj",
+  "هيّا أيُّها البطل!": "Come on, hero!",
+  "تحرَّك بـ": "Move with",
+  "واقفِز بـ": "and jump with",
+  "مسافة": "Space",
+  "أو": "or",
+  "اجمَع الأركانَ الخمسة بالترتيب وتجنَّب الحُفَر.": "Collect the five pillars in order and avoid the pits.",
+  "ابدأ المغامرة": "Start the adventure",
+  "أقل السَّقَطات": "Fewest falls",
+  "المحاولات": "Attempts",
+  "أركانُ الإسلام": "The pillars of Islam",
+  "خمسُ صلواتٍ في اليوم": "Five prayers a day",
+  "طُهرةٌ للمالِ وعَونٌ للفقير": "Purification of wealth and help for the poor",
+  "صومُ شهرِ رمضان": "Fasting the month of Ramadan",
+  "حجُّ البيتِ لمن استطاع": "Pilgrimage to the House for those able",
+  "التحكُّم": "Controls",
+  "الحركة يميناً ويساراً": "Move right and left",
+  "القفز فوق المنصّات والحُفَر": "Jump over platforms and pits",
+  "اجمَع الأركانَ بالترتيب؛ الرُّكنُ المُضيءُ هو هدفُك التالي.": "Collect the pillars in order; the glowing pillar is your next target.",
+  "أساسُ الدين": "The foundation of the religion",
+  "بطلٌ حقيقي!": "A true hero!",
+  "العب من جديد": "Play again"
+};
+</script>
+<script src="../scripts/i18n.js"></script>
+<script src="../../shared/nav-fix.js"></script>
+</body>
+</html>

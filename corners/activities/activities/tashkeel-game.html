@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>لعبة الحركات · أنوس</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+
+<link rel="stylesheet" href="../styles/tokens.css" />
+<link rel="stylesheet" href="../styles/dashboard.css" />
+<link rel="stylesheet" href="../styles/wheel.css" />
+<link rel="stylesheet" href="../styles/tashkeel.css" />
+</head>
+<body>
+
+<div class="bg-decor" aria-hidden="true"></div>
+
+<div class="activity-shell">
+
+  <nav class="activity-nav">
+    <a class="back-link" href="../dashboard.html">
+      الرجوع للوحة الأنشطة
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg>
+    </a>
+    <div class="activity-crumb">
+      <span>تحديات السيرة واللغة</span>
+      <span class="sep">/</span>
+      <span class="cur">لعبة الحركات</span>
+    </div>
+    <div class="activity-actions">
+      <button class="icon-btn" id="reset-btn" title="إعادة الضبط" aria-label="إعادة الضبط">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 3-6.7L3 8"/><path d="M3 3v5h5"/></svg>
+      </button>
+    </div>
+  </nav>
+
+  <div class="activity-layout">
+
+    <!-- ============ لوحة اللعبة ============ -->
+    <section class="tk-panel">
+      <header class="wheel-header">
+        <span class="activity-tag">Activity 43 · Vowel Placement</span>
+        <h1 class="activity-title">لعبة الحركات</h1>
+        <p class="activity-desc">
+          الكلمةُ بلا حركات! اسمَع نُطقَها، ثم ضَع الحركةَ الصحيحة على كلِّ حرف:
+          فَتْحةً أو ضَمّةً أو كَسْرةً أو سُكوناً.
+        </p>
+      </header>
+
+      <div class="tk-hud">
+        <div class="hud-block">الكلمة <strong><span id="t-idx">1</span><small>/8</small></strong></div>
+        <div class="hud-block">نجوم <strong id="t-stars">0</strong></div>
+        <div class="hud-block">أخطاء <strong id="t-mistakes">0</strong></div>
+      </div>
+
+      <div class="tk-clue">
+        <span class="icon" id="tk-icon">✍️</span>
+        <div>
+          <div class="meaning" id="tk-meaning">كَتَبَ</div>
+          <div class="translit" id="tk-translit">(kataba)</div>
+        </div>
+        <button class="tk-listen" id="tk-listen">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10v4h4l5 4V6L7 10H3Z"/><path d="M16 8a6 6 0 0 1 0 8"/></svg>
+          اسمَع
+        </button>
+      </div>
+
+      <div class="tk-word" id="tk-word"></div>
+
+      <div class="tk-palette">
+        <button class="tk-hbtn" data-h="fatha"><span class="mark">بَ</span><span class="name">فَتْحة</span><span class="sound">a</span></button>
+        <button class="tk-hbtn" data-h="damma"><span class="mark">بُ</span><span class="name">ضَمّة</span><span class="sound">u</span></button>
+        <button class="tk-hbtn" data-h="kasra"><span class="mark">بِ</span><span class="name">كَسْرة</span><span class="sound">i</span></button>
+        <button class="tk-hbtn" data-h="sukoon"><span class="mark">بْ</span><span class="name">سُكون</span><span class="sound">—</span></button>
+      </div>
+
+      <div class="tk-actions">
+        <button class="tk-btn" id="tk-clear">مسح</button>
+        <button class="tk-btn warning" id="tk-hint">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 8v.01M12 12v4"/></svg>
+          تلميح
+        </button>
+        <button class="tk-btn primary" id="tk-check">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5 9-10"/></svg>
+          تحقّق
+        </button>
+      </div>
+
+      <div class="wheel-controls">
+        <div class="wheel-stat">أعلى نجوم <strong id="best">—</strong></div>
+        <div class="wheel-stat" style="text-align:center;">الجولات <strong id="plays">0</strong></div>
+        <button class="wheel-mute-toggle" id="mute-btn" aria-pressed="false">
+          <span class="mute-icon"></span>
+          <span class="mute-label">كتم الصوت</span>
+        </button>
+      </div>
+    </section>
+
+    <!-- ============ اللوحة الجانبية ============ -->
+    <aside class="side-panel">
+      <div class="panel-card">
+        <div class="panel-head">
+          <h3>كلماتُ الجولة</h3>
+          <span class="pill" id="tk-pill">0/8</span>
+        </div>
+        <div class="tk-list" id="tk-list"></div>
+      </div>
+
+      <div class="panel-card">
+        <div class="panel-head"><h3>دليلُ الحركات</h3></div>
+        <div class="tk-guide">
+          <div class="tk-guide-row"><span class="gm">بَ</span><div><b>الفَتْحة</b><small>صوتُ «أَ» — خطٌّ فوق الحرف</small></div></div>
+          <div class="tk-guide-row"><span class="gm">بُ</span><div><b>الضَمّة</b><small>صوتُ «أُ» — واوٌ صغيرة فوق الحرف</small></div></div>
+          <div class="tk-guide-row"><span class="gm">بِ</span><div><b>الكَسْرة</b><small>صوتُ «إِ» — خطٌّ تحت الحرف</small></div></div>
+          <div class="tk-guide-row"><span class="gm">بْ</span><div><b>السُكون</b><small>وقفٌ بلا حركة — دائرةٌ فوق الحرف</small></div></div>
+        </div>
+      </div>
+
+      <div class="panel-card">
+        <div class="panel-head"><h3>لماذا الحركات؟</h3></div>
+        <div class="hadith-card">
+          <div class="quote">«إنَّ الذي يَقرأُ القرآنَ وهو ماهرٌ به مع السَّفَرةِ الكِرامِ البَرَرة»</div>
+          <span class="src">متفق عليه — وضبطُ الحركات أوّلُ المهارة<span class="hadith-grade ok">صحيح</span></span>
+        </div>
+      </div>
+    </aside>
+  </div>
+</div>
+
+<!-- مودال النصر -->
+<div class="modal-backdrop" id="win-modal" role="dialog" aria-modal="true">
+  <div class="modal">
+    <button class="modal-close" data-close aria-label="إغلاق">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M6 6l12 12M18 6l-12 12"/></svg>
+    </button>
+    <div class="modal-deco" aria-hidden="true">
+      <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l2.4 6.6L21 9l-5 4.6L17.2 21 12 17.4 6.8 21 8 13.6 3 9l6.6-.4z"/></svg>
+    </div>
+    <div class="modal-eyebrow">لعبة الحركات</div>
+    <h2 class="modal-title">ضابطُ الحركات!</h2>
+    <div class="modal-meaning" id="win-summary"></div>
+    <div class="modal-actions">
+      <button class="btn-ghost" data-close>انتهيت</button>
+      <button class="btn-primary" id="win-replay">جولة جديدة</button>
+    </div>
+  </div>
+</div>
+
+<div class="particles" id="particles" aria-hidden="true"></div>
+
+<script src="../scripts/activity-common.js"></script>
+<script src="../scripts/tashkeel.js"></script>
+
+<script>
+window.PAGE_DICT = {
+  "لعبة الحركات": "Tashkeel Game",
+  "الكلمةُ بلا حركات! اسمَع نُطقَها، ثم ضَع الحركةَ الصحيحة على كلِّ حرف: فَتْحةً أو ضَمّةً أو كَسْرةً أو سُكوناً.": "The word has no vowel marks! Listen to its pronunciation, then place the correct mark on each letter: fatha, damma, kasra, or sukoon.",
+  "الكلمة": "Word",
+  "نجوم": "Stars",
+  "أخطاء": "Mistakes",
+  "اسمَع": "Listen",
+  "فَتْحة": "Fatha",
+  "ضَمّة": "Damma",
+  "كَسْرة": "Kasra",
+  "سُكون": "Sukoon",
+  "مسح": "Clear",
+  "تلميح": "Hint",
+  "تحقّق": "Check",
+  "أعلى نجوم": "Best stars",
+  "الجولات": "Rounds",
+  "كلماتُ الجولة": "Round words",
+  "دليلُ الحركات": "Guide to the marks",
+  "الفَتْحة": "Fatha",
+  "صوتُ «أَ» — خطٌّ فوق الحرف": "the “a” sound — a line above the letter",
+  "الضَمّة": "Damma",
+  "صوتُ «أُ» — واوٌ صغيرة فوق الحرف": "the “u” sound — a small waw above the letter",
+  "الكَسْرة": "Kasra",
+  "صوتُ «إِ» — خطٌّ تحت الحرف": "the “i” sound — a line below the letter",
+  "السُكون": "Sukoon",
+  "وقفٌ بلا حركة — دائرةٌ فوق الحرف": "a stop with no vowel — a circle above the letter",
+  "لماذا الحركات؟": "Why the marks?",
+  "متفق عليه — وضبطُ الحركات أوّلُ المهارة": "Agreed upon — mastering the marks is the start of skill",
+  "ضابطُ الحركات!": "Master of the marks!"
+};
+</script>
+<script src="../scripts/i18n.js"></script>
+<script src="../../shared/nav-fix.js"></script>
+</body>
+</html>

@@ -1,0 +1,279 @@
+/* ============================================================
+   POSTMAN — تنسيقات نشاط ساعي بريد الجنة
+   ============================================================ */
+
+.postman-panel {
+  background:
+    radial-gradient(140% 80% at 50% 0%, rgba(205,235,215,0.35), transparent 60%),
+    var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--r-2xl);
+  padding: var(--s-8);
+  display: flex; flex-direction: column;
+  box-shadow: var(--shadow-card);
+}
+.postman-panel .activity-tag { background: var(--mint); color: var(--mint-ink); }
+.postman-panel .activity-tag::before { background: var(--mint-ink); }
+
+/* ============ الرسالة (المظروف) ============ */
+.envelope-stage {
+  position: relative;
+  background: linear-gradient(150deg, #FFF6E0 0%, #FFE9A8 100%);
+  border-radius: var(--r-xl);
+  padding: var(--s-6);
+  margin-bottom: var(--s-4);
+  overflow: hidden;
+  min-height: 220px;
+  display: flex;
+  align-items: center;
+  gap: var(--s-5);
+}
+.envelope-stage::before {
+  content: "";
+  position: absolute;
+  inset: 12px;
+  border: 2px dashed rgba(138,101,16,0.25);
+  border-radius: calc(var(--r-xl) - 8px);
+  pointer-events: none;
+}
+
+.envelope {
+  width: 180px;
+  height: 130px;
+  flex-shrink: 0;
+  position: relative;
+  perspective: 900px;
+}
+.envelope-card {
+  position: absolute; inset: 0;
+  background: var(--surface-2);
+  border: 1.5px solid var(--gold);
+  border-radius: 8px;
+  box-shadow: var(--shadow-md);
+  display: flex; align-items: center; justify-content: center;
+  transform-style: preserve-3d;
+  transition: transform 0.6s cubic-bezier(0.2, 1.2, 0.4, 1);
+  font-size: 38px;
+  font-family: var(--font-ar);
+  color: var(--gold);
+}
+.envelope-card::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 50%;
+  background: linear-gradient(180deg, #FFF1C8, #FFE9A8);
+  clip-path: polygon(0 0, 100% 0, 50% 100%);
+  border-bottom: 1.5px solid var(--gold);
+}
+.envelope-card::after {
+  content: "";
+  position: absolute;
+  width: 36px; height: 36px;
+  background: var(--ink);
+  border-radius: 50%;
+  bottom: -8px; right: -8px;
+  border: 4px solid #FFE9A8;
+}
+.envelope.delivered .envelope-card {
+  transform: translateY(-180px) rotateZ(-20deg) scale(0.4);
+  opacity: 0;
+}
+
+.message-body {
+  flex-grow: 1;
+}
+.message-from {
+  display: inline-flex; align-items: center; gap: 6px;
+  font-size: 12px; font-weight: 700;
+  color: var(--butter-ink);
+  background: rgba(255,255,255,0.65);
+  padding: 4px 12px;
+  border-radius: var(--r-pill);
+  margin-bottom: var(--s-3);
+}
+.message-text {
+  font-size: 18px; font-weight: 700;
+  color: var(--ink);
+  line-height: 1.55;
+  margin: 0 0 var(--s-3);
+}
+.message-prompt {
+  font-size: 13px; color: var(--ink-2);
+  font-weight: 600;
+}
+
+/* ============ صفّ المستلمين ============ */
+.recipients-row {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--s-3);
+  margin-bottom: var(--s-4);
+}
+.recipient {
+  position: relative;
+  background: var(--surface);
+  border: 2px solid var(--line);
+  border-radius: var(--r-lg);
+  padding: var(--s-4) var(--s-3);
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.18s ease, border-color 0.18s ease, background 0.18s ease;
+}
+.recipient:hover {
+  transform: translateY(-3px);
+  border-color: var(--mint-ink);
+  background: var(--mint);
+}
+.recipient.correct {
+  background: var(--mint);
+  border-color: var(--mint-ink);
+  animation: rec-pop 0.5s cubic-bezier(0.2, 1.6, 0.4, 1);
+}
+.recipient.wrong {
+  background: #FAD5D5;
+  border-color: #B85555;
+  animation: rec-shake 0.45s;
+}
+@keyframes rec-pop {
+  0% { transform: scale(1); }
+  40% { transform: scale(1.12); }
+  100% { transform: scale(1); }
+}
+@keyframes rec-shake {
+  0%, 100% { transform: translateX(0); }
+  20% { transform: translateX(-6px); }
+  60% { transform: translateX(6px); }
+}
+.recipient .avatar {
+  width: 64px; height: 64px;
+  margin: 0 auto var(--s-2);
+  border-radius: 50%;
+  display: grid; place-items: center;
+  background: var(--bg-soft);
+  color: var(--ink);
+}
+.recipient.color-a .avatar { background: linear-gradient(135deg, #FFD9C2, #FFCFB0); color: #B5612A; }
+.recipient.color-b .avatar { background: linear-gradient(135deg, #CFE3F2, #B7D2E8); color: #2E5F8A; }
+.recipient.color-c .avatar { background: linear-gradient(135deg, #CDEBD7, #A8D4B5); color: #2F7A52; }
+.recipient.color-d .avatar { background: linear-gradient(135deg, #E0D5F2, #C9B6E8); color: #5A3F94; }
+.recipient.color-e .avatar { background: linear-gradient(135deg, #FFE9A8, #FFD98B); color: #8A6510; }
+.recipient.color-f .avatar { background: linear-gradient(135deg, #FFCFB0, #FFA98B); color: #7A2F1A; }
+.recipient.color-g .avatar { background: linear-gradient(135deg, #DCE9DC, #B5CEB5); color: #2E4A3F; }
+.recipient.color-h .avatar { background: linear-gradient(135deg, #E8A5A5, #D08585); color: #7A2F2F; }
+
+.recipient .name { font-size: 14px; font-weight: 800; color: var(--ink); line-height: 1.25; }
+.recipient .role { font-size: 11px; color: var(--muted); margin-top: 2px; }
+.recipient .stamp {
+  position: absolute;
+  top: 8px; left: 8px;
+  width: 22px; height: 22px;
+  border-radius: 50%;
+  background: var(--mint-ink); color: #fff;
+  display: none; align-items: center; justify-content: center;
+}
+.recipient.correct .stamp { display: flex; }
+
+/* عداد */
+.postman-hud {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--s-3);
+  padding-top: var(--s-3);
+  border-top: 1px dashed var(--line);
+}
+.postman-hud .hud-block {
+  background: var(--bg-soft); border: 1px solid var(--line);
+  border-radius: var(--r-md); padding: 8px 12px;
+  display: flex; flex-direction: column; gap: 2px;
+  font-size: 11px; color: var(--muted); font-weight: 600;
+}
+.postman-hud .hud-block strong {
+  font-size: 18px; color: var(--ink);
+  font-family: var(--font-en); font-weight: 800;
+}
+
+/* قائمة الرسائل في الجانب */
+.mailbag {
+  display: flex; flex-direction: column; gap: 8px;
+}
+.mailbag-item {
+  display: flex; align-items: center; gap: 10px;
+  padding: 10px 12px;
+  border: 1px solid var(--line);
+  border-radius: var(--r-md);
+  background: var(--bg-soft);
+  font-size: 13px;
+  transition: background 0.2s ease;
+}
+.mailbag-item.delivered {
+  background: var(--mint);
+  color: var(--mint-ink);
+  border-color: var(--mint-ink);
+}
+.mailbag-item.current {
+  background: var(--butter);
+  border-color: var(--butter-ink);
+  animation: current-pulse 1.6s ease-in-out infinite;
+}
+@keyframes current-pulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(201,169,97,0.4); }
+  50%      { box-shadow: 0 0 0 6px rgba(201,169,97,0); }
+}
+.mailbag-item .num {
+  width: 22px; height: 22px; border-radius: 50%;
+  background: var(--surface); border: 1px solid var(--line);
+  display: grid; place-items: center;
+  font-family: var(--font-en); font-weight: 800; font-size: 11px;
+  color: var(--ink-2);
+  flex-shrink: 0;
+}
+.mailbag-item.delivered .num { background: var(--mint-ink); color: #fff; border-color: var(--mint-ink); }
+.mailbag-item.current .num { background: var(--butter-ink); color: #fff; border-color: var(--butter-ink); }
+.mailbag-item .snippet { flex-grow: 1; line-height: 1.35; }
+
+/* ============ نص الكتابة (لرسالتك الخاصة) ============ */
+.compose-section {
+  background: var(--surface-2);
+  border: 1px dashed var(--gold);
+  border-radius: var(--r-md);
+  padding: var(--s-4);
+  margin-top: var(--s-3);
+}
+.compose-section label {
+  display: block; font-size: 12px; font-weight: 700;
+  color: var(--butter-ink); margin-bottom: 6px;
+}
+.compose-section textarea {
+  width: 100%;
+  border: 1px solid var(--line);
+  border-radius: var(--r-md);
+  padding: 10px 12px;
+  font-family: var(--font-ar);
+  font-size: 14px;
+  background: var(--surface);
+  resize: vertical;
+  min-height: 64px;
+  color: var(--ink);
+}
+.compose-section textarea:focus { outline: 2px solid var(--gold); }
+
+/* رسالة ترحيب */
+.flying-letter {
+  position: fixed;
+  width: 80px; height: 60px;
+  background: var(--surface-2);
+  border: 2px solid var(--gold);
+  border-radius: 6px;
+  z-index: 100;
+  pointer-events: none;
+  box-shadow: var(--shadow-lg);
+}
+.flying-letter::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 50%;
+  background: #FFE9A8;
+  clip-path: polygon(0 0, 100% 0, 50% 100%);
+}

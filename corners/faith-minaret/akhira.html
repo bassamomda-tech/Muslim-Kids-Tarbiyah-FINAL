@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta name="color-scheme" content="dark">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>رحلة العبور | Journey of the Crossing</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Amiri+Quran&family=Tajawal:wght@400;500;700;800;900&family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+<link rel="stylesheet" href="yaqeen.css">
+<style>
+/* ── Crossing theme: dawn plum + sunrise apricot (the great morning) ── */
+:root{
+  --primary:#B0578D; --primary-dark:#92426F;
+  --bg1:#22102E; --bg2:#341A44; --bg3:#46255C;
+  --gold:#F4C98A; --gold-soft:#F9DFB4;
+  --text:#F8F2FA; --muted:rgba(248,242,250,.74);
+  --line:rgba(244,201,138,.28);
+}
+body{background:
+  
+    radial-gradient(1300px 760px at 78% -12%, rgba(176,87,141,.30), transparent 58%),
+    radial-gradient(1000px 620px at 0% 100%, rgba(244,201,138,.14), transparent 55%),
+    linear-gradient(165deg,var(--bg1),var(--bg2) 55%,var(--bg3));
+  background-attachment:fixed;
+}
+.guide .who{background:linear-gradient(160deg,#B0578D,#7E3A63)}
+.coll-cert{background:linear-gradient(160deg,rgba(244,201,138,.16),rgba(176,87,141,.20))!important}
+.lang button.active{color:#22102E}
+.stampbtn{color:#22102E}
+</style>
+<script>(function(){try{var l=localStorage.getItem('bunyanLang');if(l==='en'){var h=document.documentElement;h.dir='ltr';h.lang='en';}}catch(e){}})();</script>
+<style id="__antiflash">html{background:#22102E;color-scheme:dark}</style>
+</head>
+<body>
+
+<!-- ═══ HEADER ═══ -->
+<header class="hdr">
+  <a class="back" href="aqeeda.html">
+    <span>↩️</span><span class="lng-ar">المنارة</span><span class="lng-en">Minaret</span>
+  </a>
+  <span class="hdr-badge"><span class="l">🌉</span><span class="lng-ar">رِحلةُ العُبور</span><span class="lng-en">The Crossing</span></span>
+  <div class="lang">
+    <button data-lang="en">EN</button>
+    <button data-lang="ar" class="active">عربي</button>
+  </div>
+</header>
+
+<!-- ═══ INTRO ═══ -->
+<section class="intro">
+  <h1>
+    <span class="lng-ar">🌉 رِحلةُ <span class="hl">العُبور</span> — الإيمانُ بِاليَومِ الآخِر</span>
+    <span class="lng-en">🌉 Journey of the <span class="hl">Crossing</span> — Belief in the Last Day</span>
+  </h1>
+  <p class="sub">
+    <span class="lng-ar">إحدى عَشرةَ مَحطّةً نَعبُرُ فيها الرِّحلةَ الكُبرى بِقَلبٍ مُطمَئِنّ: مِنَ القَبرِ «مَحَطّةِ الانتِظار»، إلى البَعثِ والمَحشَرِ وظِلِّ العَرش، فالشَّفاعةِ والصُّحُفِ والميزانِ والحَوض، ثُمَّ الصِّراطِ «جِسرِ الثَّبات»، وُصولاً إلى الجَنّةِ «البَيتِ الذي لا حُزنَ فيه» — وتَحذيرِ الرَّحيمِ مِنَ النّار.</span>
+    <span class="lng-en">Eleven stations crossing the greatest journey with a tranquil heart: from the grave — "the waiting station" — to the resurrection, the gathering, and the Throne's shade; the intercession, the records, the Scale, and the Hawd; then the Sirat — "the bridge of steadfastness" — arriving at Paradise, "the home where no sadness lives" — and the Merciful's warning of the Fire.</span>
+  </p>
+  <div class="guide">
+    <div class="who">🧑</div>
+    <div class="say">
+      <span class="lng-ar">أنا «يوسُف»، رَفيقُك. مَعَنا اليومَ خَريطةُ أعظَمِ سَفَرٍ سَتَقومُ بِهِ يَوماً… لِنَستَعِدَّ لَهُ مِنَ الآنَ بِفَرَح! 🌉</span>
+      <span class="lng-en">I'm Yusuf, your companion. Today we carry the map of the greatest voyage you'll ever take… let's prepare for it now, with joy! 🌉</span>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ METER ═══ -->
+<div class="pbar-wrap">
+  <div class="pbar-top">
+    <span><span class="lng-ar">مِيزانُ العُبور</span><span class="lng-en">Crossing Meter</span></span>
+    <span class="stars" id="pCount">0 / 11</span>
+  </div>
+  <div class="pbar"><div class="pbar-fill" id="pFill"></div></div>
+  <div class="meter-label" id="meterLabel"></div>
+</div>
+
+<!-- ═══ COLLECTIONS ═══ -->
+<div class="collections">
+  <div class="coll-card" id="collStickers"></div>
+  <div class="coll-card" id="collNames"></div>
+  <div class="coll-card" id="collKeys"></div>
+  <div class="coll-card coll-cert" id="collCert"></div>
+</div>
+
+<!-- ═══ MAP ═══ -->
+<div class="map" id="map"><div class="road"></div></div>
+
+<footer class="foot">
+  <span class="lng-ar">صُنع بِحُبٍّ 🧡 لِأطفالِ الأُمّة — <b>رِحلةُ العُبور</b> · منارةُ العقيدة · على نَهجِ أهلِ السُّنّة</span>
+  <span class="lng-en">Made with 🧡 for the children of the Ummah — <b>Journey of the Crossing</b> · Faith Minaret · Upon the way of Ahl al-Sunnah</span>
+</footer>
+
+<!-- ═══ READER ═══ -->
+<div class="reader" id="reader">
+  <div class="sheet">
+    <div class="r-top">
+      <button class="r-close" id="rClose">✕</button>
+      <span class="r-count" id="rCount"></span>
+      <div class="r-arrows">
+        <button id="rPrev">‹</button>
+        <button id="rNext">›</button>
+      </div>
+    </div>
+    <div id="rBody"></div>
+  </div>
+</div>
+
+<!-- ═══ COLLECTIONS DRAWER ═══ -->
+<div class="drawer" id="drawer">
+  <div class="drawer-sheet">
+    <div class="dw-top">
+      <h3 id="dwTitle"></h3>
+      <button class="r-close" id="dwClose">✕</button>
+    </div>
+    <div class="dw-body" id="dwBody"></div>
+  </div>
+</div>
+
+<!-- ═══ CERTIFICATE ═══ -->
+<div class="cert-overlay" id="certOverlay">
+  <div class="cert-tools">
+    <input id="certName" type="text" placeholder="✍️ اكتُب اسمَك هنا / Type your name" maxlength="40">
+    <button class="cprint" id="certPrint">🖨️ <span class="lng-ar">اطبَع</span><span class="lng-en">Print</span></button>
+    <button class="cclose" id="certClose">✕</button>
+  </div>
+  <div class="certificate" id="certBox"></div>
+</div>
+
+<div id="confetti"></div>
+<div class="toast" id="toast"></div>
+
+<script defer src="nav-fix.js"></script>
+<script src="data/akhira-stations.js"></script>
+<script>
+window.RIHLA_CFG = {
+  stations: window.AKHIRA_STATIONS,
+  prefix: 'akhira',
+  confetti: ['#F4C98A','#B0578D','#27AE60','#5B7FD4','#FFFFFF','#D4A017'],
+  T: {
+    finishTitle:{ar:'وِسامُ العُبورِ الآمِن',en:'Safe Crossing Medal'},
+    meterStart:{ar:'ابدَأ الرِّحلة… كُلُّ مَحطّةٍ خُطوةٌ نَحوَ البَيتِ الذي لا حُزنَ فيه',en:'Begin the journey… every station is a step toward the home of no-sadness'},
+    meterMid:{ar:'أحسَنت! عَبَرتَ {n} مِن {t} مَحطّاتِ الرِّحلةِ الكُبرى',en:'Great! You crossed {n} of {t} stations of the great journey'},
+    meterDone:{ar:'🎉 اكتَمَلَت خَريطةُ العُبور! قَلبُكَ الآنَ مُستَعِدٌّ مُطمَئِنّ',en:'🎉 The crossing map is complete! Your heart is now prepared and at peace'},
+    coll1:{icon:'🎖️',title:{ar:'أوسِمةُ العُبور',en:'Crossing Badges'},unit:{ar:'وِسام',en:'badges'}},
+    coll2:{icon:'🎒',title:{ar:'زادُ المُسافِر',en:'Traveler\'s Provisions'},unit:{ar:'زاد',en:'items'}},
+    coll3:{title:{ar:'مَفاتيحُ العُبور',en:'Crossing Keys'}},
+    collCert:{title:{ar:'جَوازُ العُبور',en:'Crossing Passport'},cta:{ar:'اطبَع جَوازَك ←',en:'Print yours →'}},
+    kick:{ar:'المَحطّة {n} مِن {t}',en:'Station {n} of {t}'},
+    hLogic:{ar:'الدَّليلُ المُطمئِن',en:'The Reassuring Proof'},
+    hMyth:{ar:'بَطاقةُ تَصحيحِ الفِكرة',en:'Idea-Fixer Card'},
+    hCard:{ar:'زادٌ لِلرِّحلةِ الكُبرى',en:'Provision for the Great Journey'},
+    hKey:{ar:'مِفتاحُ العُبور',en:'Crossing Key'},
+    hJournal:{ar:'دَفتَرُ المُسافِر',en:'Traveler\'s Journal'},
+    journalPh:{ar:'اكتُب ما حَمَلتَهُ مِن زادٍ في هذه المَحطّة…',en:'Write the provision you packed at this station…'},
+    stampDo:{ar:'🌉 اعبُر هذه المَحطّة',en:'🌉 Cross this station'},
+    stampDone:{ar:'✓ مَحطّةٌ مَعبورة',en:'✓ Station crossed'},
+    drawer1:{ar:'🎖️ أوسِمةُ العُبور',en:'🎖️ Crossing Badges'},
+    drawer2:{ar:'🎒 زادُ المُسافِر',en:'🎒 Traveler\'s Provisions'},
+    drawer3:{ar:'🔑 مَفاتيحُ العُبور',en:'🔑 Crossing Keys'},
+    certSeal:'🌉',
+    certKick:{ar:'رِحلةُ العُبور · منارةُ العقيدة',en:'Journey of the Crossing · Faith Minaret'},
+    certTitle:{ar:'جَوازُ العُبورِ الآمِن',en:'Passport of the Safe Crossing'},
+    certStatement:{
+      ar:'أتَمَّ هذا القَلبُ الصَّغيرُ <b>{n}</b> مِن {t} مَحطّاتٍ في رِحلةِ العُبور، فَعَرَفَ — على نَهجِ أهلِ السُّنّةِ والجَماعة — أنَّ الدُّنيا مَزرَعةُ الآخِرة، وأنَّ القَبرَ مَحَطّةُ انتِظارٍ لِلمُؤمِن، وأنَّ الميزانَ عَدلٌ لا يَظلِمُ ذَرّة، وأنَّ الجَنّةَ بَيتُ اللاحُزنِ وأعظَمُ نَعيمِها النَّظَرُ إلى وَجهِ الله — فاستَعَدَّ لِلرِّحلةِ الكُبرى بِقَلبٍ راضٍ مُطمَئِنّ.',
+      en:'This young heart completed <b>{n}</b> of {t} stations in the Journey of the Crossing, learning — upon the way of Ahl al-Sunnah — that this world is the farm of the Hereafter, that the grave is a waiting station for the believer, that the Scale wrongs no one by an atom, and that Paradise is the home of no-sadness whose greatest bliss is gazing upon Allah\'s Face — preparing for the great journey with a content, tranquil heart.'},
+  }
+};
+</script>
+<script src="rihla-engine.js"></script>
+<script defer src="../quiz/quiz-engine.js"></script>
+<script defer src="../shared/mk-system.js"></script>
+<script defer src="../shared/mk-journeys.js"></script>
+<script defer src="../shared/mk-bag.js"></script>
+<script defer src="../shared/mk-train.js"></script>
+</body>
+</html>

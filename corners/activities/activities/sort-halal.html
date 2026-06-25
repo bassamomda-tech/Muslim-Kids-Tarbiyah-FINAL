@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>فرز حلال وحرام · أنوس</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+
+<link rel="stylesheet" href="../styles/tokens.css" />
+<link rel="stylesheet" href="../styles/dashboard.css" />
+<link rel="stylesheet" href="../styles/wheel.css" />
+<link rel="stylesheet" href="../styles/sort.css" />
+</head>
+<body>
+
+<div class="bg-decor" aria-hidden="true"></div>
+
+<div class="activity-shell">
+
+  <nav class="activity-nav">
+    <a class="back-link" href="../dashboard.html">
+      الرجوع للوحة الأنشطة
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg>
+    </a>
+    <div class="activity-crumb">
+      <span>العبادات والإيمان</span>
+      <span class="sep">/</span>
+      <span class="cur">فرز حلال وحرام</span>
+    </div>
+    <div class="activity-actions">
+      <button class="icon-btn" id="reset-btn" title="إعادة الضبط" aria-label="إعادة الضبط">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 3-6.7L3 8"/><path d="M3 3v5h5"/></svg>
+      </button>
+    </div>
+  </nav>
+
+  <div class="activity-layout">
+
+    <!-- ============ لوحة اللعب ============ -->
+    <section class="sort-panel">
+      <header class="wheel-header">
+        <span class="activity-tag">Activity 04 · Collision Detection</span>
+        <h1 class="activity-title">فرز حلال وحرام</h1>
+        <p class="activity-desc">
+          الأطعمة تسقط من السماء! صنّف كل صنف في خانته قبل أن يصل إلى الأرض.
+          استخدم الفأرة أو أزرار الأسهم (← حرام · → حلال).
+        </p>
+      </header>
+
+      <!-- شريط الحالة -->
+      <div class="sort-hud">
+        <div class="hud-block">
+          النقاط
+          <strong id="score">0</strong>
+        </div>
+        <div class="hud-block">
+          المستوى
+          <strong id="level">1</strong>
+        </div>
+        <div class="hud-block">
+          الحياة
+          <div class="lives" id="lives"></div>
+        </div>
+        <div class="hud-block">
+          الأعلى
+          <strong id="high">0</strong>
+        </div>
+      </div>
+
+      <!-- الساحة -->
+      <div class="sort-arena" id="arena">
+        <div class="arena-overlay" id="arena-overlay">
+          <div class="start-card">
+            <h3>هيّا نبدأ</h3>
+            <p>صنِّف الأطعمة الساقطة. اضغط على الصندوق الأخضر للحلال أو الأحمر للحرام قبل أن تصل الشريحة للأرض.</p>
+            <button class="btn-primary" id="start-btn">ابدأ اللعب</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- الصندوقان -->
+      <div class="sort-bins">
+        <div class="bin haram" role="button" tabindex="0" aria-label="حرام">
+          <span class="bin-key">←</span>
+          <div class="bin-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M6 6l12 12M18 6l-12 12"/></svg>
+          </div>
+          <div class="bin-label">حرام</div>
+          <div class="bin-sub">لا يجوز أكله</div>
+        </div>
+        <div class="bin halal" role="button" tabindex="0" aria-label="حلال">
+          <span class="bin-key">→</span>
+          <div class="bin-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5 9-10"/></svg>
+          </div>
+          <div class="bin-label">حلال</div>
+          <div class="bin-sub">يجوز أكله</div>
+        </div>
+      </div>
+
+      <div class="memory-stats-bar">
+        <div class="wheel-stat" style="flex-grow:1; text-align:center;">
+          <button class="wheel-mute-toggle" id="mute-btn" aria-pressed="false">
+            <span class="mute-icon"></span>
+            <span class="mute-label">كتم الصوت</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ اللوحة الجانبية ============ -->
+    <aside class="side-panel">
+
+      <div class="panel-card">
+        <div class="panel-head">
+          <h3>كيف ألعب؟</h3>
+        </div>
+        <div class="tip-card">
+          <span class="tip-icon">!</span>
+          <span>كل شريحة طعام تسقط من أعلى الساحة. عندك ثلاث حيوات. كل تصنيف صحيح يمنحك 10 نقاط × المستوى. سيزداد السقوط سرعة كلما تقدّمتَ.</span>
+        </div>
+      </div>
+
+      <div class="panel-card">
+        <div class="panel-head">
+          <h3>أمثلة للأطعمة</h3>
+          <span class="pill">معلومات</span>
+        </div>
+        <div class="items-list">
+          <div class="name-row halal-tag"><div style="flex-grow:1;"><div class="name-ar">تفاحة، تمر، عسل</div></div></div>
+          <div class="name-row halal-tag"><div style="flex-grow:1;"><div class="name-ar">سمك، خروف، ماء</div></div></div>
+          <div class="name-row halal-tag"><div style="flex-grow:1;"><div class="name-ar">حليب، خبز، عنب</div></div></div>
+          <div class="name-row halal-tag"><div style="flex-grow:1;"><div class="name-ar">جزر، زيتون، بيض</div></div></div>
+          <div class="name-row haram-tag"><div style="flex-grow:1;"><div class="name-ar">لحم خنزير</div></div></div>
+          <div class="name-row haram-tag"><div style="flex-grow:1;"><div class="name-ar">خمر / مسكرات</div></div></div>
+          <div class="name-row haram-tag"><div style="flex-grow:1;"><div class="name-ar">ميتة (غير مذبوحة)</div></div></div>
+          <div class="name-row haram-tag"><div style="flex-grow:1;"><div class="name-ar">دم مسفوح</div></div></div>
+        </div>
+      </div>
+
+      <div class="panel-card">
+        <div class="panel-head">
+          <h3>قاعدة ذهبية</h3>
+        </div>
+        <div class="hadith-card">
+          <div class="quote">«إنّ الله طيّب لا يَقبَل إلاّ طيِّباً»</div>
+          <span class="src">رواه مسلم<span class="hadith-grade ok">صحيح</span></span>
+        </div>
+      </div>
+
+    </aside>
+  </div>
+</div>
+
+<!-- مودال نهاية اللعبة -->
+<div class="modal-backdrop" id="end-modal" role="dialog" aria-modal="true">
+  <div class="modal">
+    <button class="modal-close" data-close aria-label="إغلاق">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M6 6l12 12M18 6l-12 12"/></svg>
+    </button>
+
+    <div class="modal-deco" aria-hidden="true">
+      <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M12 2l2.4 6.6L21 9l-5 4.6L17.2 21 12 17.4 6.8 21 8 13.6 3 9l6.6-.4z"/>
+      </svg>
+    </div>
+
+    <div class="modal-eyebrow" id="end-record" style="color: var(--gold); display:none;">★ رقم قياسي جديد ★</div>
+    <h2 class="modal-title">انتهت الجولة</h2>
+
+    <div class="modal-meaning" style="text-align:right; display:grid; grid-template-columns:repeat(3,1fr); gap:var(--s-2);">
+      <div><strong>النقاط</strong><span id="end-score">0</span></div>
+      <div><strong>المستوى</strong><span id="end-level">1</span></div>
+      <div><strong>الأعلى</strong><span id="end-high">0</span></div>
+    </div>
+
+    <div class="modal-actions">
+      <button class="btn-ghost" data-close id="end-dismiss">انتهيت</button>
+      <button class="btn-primary" id="end-replay">العب مرة أخرى</button>
+    </div>
+  </div>
+</div>
+
+<div class="particles" id="particles" aria-hidden="true"></div>
+
+<script src="../scripts/activity-common.js"></script>
+<script src="../scripts/sort.js"></script>
+
+<script>
+window.PAGE_DICT = {
+  "فرز حلال وحرام": "Sort Halal & Haram",
+  "الأطعمة تسقط من السماء! صنّف كل صنف في خانته قبل أن يصل إلى الأرض. استخدم الفأرة أو أزرار الأسهم (← حرام · → حلال).": "Foods are falling from the sky! Sort each one into its bin before it reaches the ground. Use the mouse or the arrow keys (← haram · → halal).",
+  "النقاط": "Score",
+  "المستوى": "Level",
+  "الحياة": "Lives",
+  "الأعلى": "Best",
+  "هيّا نبدأ": "Let's begin",
+  "صنِّف الأطعمة الساقطة. اضغط على الصندوق الأخضر للحلال أو الأحمر للحرام قبل أن تصل الشريحة للأرض.": "Sort the falling foods. Press the green box for halal or the red one for haram before the slice reaches the ground.",
+  "ابدأ اللعب": "Start playing",
+  "حرام": "Haram",
+  "لا يجوز أكله": "Not allowed to eat",
+  "حلال": "Halal",
+  "يجوز أكله": "Allowed to eat",
+  "كل شريحة طعام تسقط من أعلى الساحة. عندك ثلاث حيوات. كل تصنيف صحيح يمنحك 10 نقاط × المستوى. سيزداد السقوط سرعة كلما تقدّمتَ.": "Each food slice falls from the top of the arena. You have three lives. Every correct sort gives you 10 points × the level. Things speed up as you progress.",
+  "أمثلة للأطعمة": "Food examples",
+  "معلومات": "Info",
+  "تفاحة، تمر، عسل": "Apple, dates, honey",
+  "سمك، خروف، ماء": "Fish, lamb, water",
+  "حليب، خبز، عنب": "Milk, bread, grapes",
+  "جزر، زيتون، بيض": "Carrots, olives, eggs",
+  "لحم خنزير": "Pork",
+  "خمر / مسكرات": "Wine / intoxicants",
+  "ميتة (غير مذبوحة)": "Carrion (not slaughtered)",
+  "دم مسفوح": "Flowing blood",
+  "قاعدة ذهبية": "Golden rule",
+  "انتهت الجولة": "Round over"
+};
+</script>
+<script src="../scripts/i18n.js"></script>
+<script src="../../shared/nav-fix.js"></script>
+</body>
+</html>

@@ -1,0 +1,56 @@
+/* data/stories/ummsalama.js — Heroes · Umm Salama — sources: صور من حياة الصحابة (الباشا) · إسلام ويب · الدرر السنية · صحيح البخاري ومسلم */
+window.HISN_STORIES = window.HISN_STORIES || {};
+HISN_STORIES.ummsalama = [
+  { icon:'🤲', scene:'madinah', character:'😔',
+    title:{ ar:'دعاءٌ عوّضها اللهُ به خيراً', en:'A Prayer by Which Allah Gave Her Better' },
+    pages:[
+      { scene:'madinah', character:'😔',
+        text:{ ar:'كانت <b>أمُّ سلمة</b> متزوّجةً من صحابيٍّ كريمٍ هو <b>أبو سلمة</b>، وكانا يُحِبّانِ بعضَهما حبّاً عظيماً وهاجرا معاً في سبيلِ الله. وذاتَ يومٍ سمِعتْ من النبيِّ ﷺ دعاءً جميلاً: <b>«ما من عبدٍ تُصيبُه مصيبةٌ فيقول: إنّا لله وإنّا إليه راجعون، اللّهُمَّ أجِرني في مصيبتي واخلُفْ لي خيراً منها — إلّا أخلفَ اللهُ له خيراً منها»</b>.<br><br>فلمّا تُوفِّيَ زوجُها أبو سلمةَ متأثّراً بجراحِه، حزِنتْ حزناً شديداً. وقالت في نفسِها: مَن خيرٌ من أبي سلمة؟! لكنّها <b>دعتْ بالدعاءِ كما علّمها النبيُّ ﷺ</b> رغمَ حزنِها. فماذا حدث؟ <b>عوّضها اللهُ خيراً عظيماً: تزوّجها النبيُّ ﷺ نفسُه</b> فصارتْ أمّاً للمؤمنين! صدقتْ مع اللهِ وصبرتْ فأكرمها بأعظمِ عِوَض.',
+          en:'<b>Umm Salama</b> was married to a noble companion, <b>Abu Salama</b>; they loved one another greatly and emigrated together for Allah\u2019s sake. One day she heard a beautiful supplication from the Prophet ﷺ: <b>"No servant is struck by a calamity and says: \'To Allah we belong and to Him we return; O Allah, reward me in my affliction and replace it for me with something better\' — but Allah replaces it for him with something better."</b><br><br>When her husband Abu Salama died of his wounds, she grieved deeply. She thought to herself: who is better than Abu Salama?! Yet she <b>made the supplication as the Prophet ﷺ had taught her</b>, despite her grief. What happened? <b>Allah gave her a tremendous replacement: the Prophet ﷺ himself married her</b>, and she became a Mother of the Believers! She was true to Allah and patient, so He honored her with the greatest recompense.' },
+        choice:{ q:{ar:'ماذا فعلتْ أمُّ سلمةَ حين تُوفِّيَ زوجُها رغمَ حزنِها؟',en:'What did Umm Salama do when her husband died, despite her grief?'},
+          opts:[
+            { t:{ar:'دعتْ بدعاءِ النبيِّ ﷺ وصبرتْ واحتسبتْ',en:'She made the Prophet\u2019s ﷺ du\u2019a, was patient, and hoped for reward'},c:true,exp:{ar:'نعم! فعوّضها اللهُ خيراً عظيماً.',en:'Yes! So Allah gave her a tremendous replacement.'} },
+            { t:{ar:'يئستْ وتركتِ الدعاء',en:'She despaired and abandoned prayer'},c:false,exp:{ar:'لا، بل دعتْ وصبرتْ رغمَ حزنِها.',en:'No — she prayed and was patient despite her grief.'} },
+            { t:{ar:'غضبتْ من قدرِ الله',en:'She was angry at Allah\u2019s decree'},c:false,exp:{ar:'لا، بل رضيتْ ودعتْ واحتسبتْ.',en:'No — she accepted, prayed, and hoped for reward.'} },
+          ] } },
+    ],
+    quiz:[
+      { q:{ar:'من كان زوجُ أمِّ سلمةَ الأوّل؟',en:'Who was Umm Salama\u2019s first husband?'},
+        opts:[ {t:{ar:'أبو سلمة',en:'Abu Salama'},c:true}, {t:{ar:'أبو بكر',en:'Abu Bakr'},c:false}, {t:{ar:'عثمان',en:'Uthman'},c:false} ] },
+      { q:{ar:'ماذا فعلتْ عند المصيبة؟',en:'What did she do in her calamity?'},
+        opts:[ {t:{ar:'دعتْ بدعاءِ النبيِّ ﷺ وصبرتْ',en:'She made the Prophet\u2019s ﷺ du\u2019a and was patient'},c:true}, {t:{ar:'يئستْ',en:'She despaired'},c:false}, {t:{ar:'غضبتْ',en:'She was angry'},c:false} ] },
+      { q:{ar:'بماذا عوّضها اللهُ تعالى؟',en:'How did Allah recompense her?'},
+        opts:[ {t:{ar:'تزوّجها النبيُّ ﷺ فصارتْ أمَّ المؤمنين',en:'The Prophet ﷺ married her; she became a Mother of the Believers'},c:true}, {t:{ar:'مالٌ كثير',en:'Much wealth'},c:false}, {t:{ar:'لم تُعوَّض',en:'She was not recompensed'},c:false} ] },
+    ],
+    moral:{ar:'الصبرُ والدعاءُ عند المصيبةِ بابُ الفرج، ومن صدقَ مع اللهِ عوّضه خيراً ممّا فقد.',en:'Patience and prayer in calamity are a door to relief; whoever is true with Allah, He replaces what was lost with something better.'},
+    badge:{icon:'🤲',title:{ar:'وِسامُ الصبرِ والاحتساب',en:'Badge of Patience & Hope'}},
+    reflect:[ {ar:'هل تصبرُ وتدعو اللهَ عند المصيبةِ بدلَ اليأس؟',en:'Do you stay patient and pray to Allah in calamity instead of despairing?'}, {ar:'هل تحفظُ دعاءَ المصيبةِ الذي علّمه النبيُّ ﷺ؟',en:'Do you memorize the du\u2019a of calamity the Prophet ﷺ taught?'} ],
+    didYouKnow:[ {ar:'دعاءُ المصيبةِ وقصّةُ أمِّ سلمةَ ثابتانِ في صحيحِ مسلم — المصدر: صحيح مسلم',en:'The du\u2019a of calamity and Umm Salama\u2019s story are established in Sahih Muslim — Source: Sahih Muslim'}, {ar:'عاشتْ أمُّ سلمةَ طويلاً وكانت من آخرِ أمّهاتِ المؤمنينَ وفاةً — المصدر: سير أعلام النبلاء',en:'Umm Salama lived long and was among the last of the Mothers of the Believers to pass away — Source: Siyar A\u2019lam an-Nubala\u2019'} ],
+  },
+  { icon:'💡', scene:'desert', character:'🕊️',
+    title:{ ar:'الرأيُ الذي أنقذَ يومَ الحديبية', en:'The Counsel That Saved the Day at Hudaybiyya' },
+    pages:[
+      { scene:'desert', character:'🕊️',
+        text:{ ar:'في صلحِ <b>الحديبية</b>، اتّفقَ النبيُّ ﷺ مع قريشٍ على شروطٍ صعبةٍ ظاهرُها فيه إجحافٌ على المسلمين، فحزِنَ الصحابةُ حزناً شديداً. ثمّ أمرَهم النبيُّ ﷺ أن يَنحَروا هَدْيَهم ويحلِقوا رؤوسَهم ويتحلّلوا من الإحرام — لكنّهم من شدّةِ الحزنِ <b>لم يتحرّكْ أحدٌ منهم!</b> كرّرَ النبيُّ ﷺ الأمرَ ثلاثاً ولم يقمْ أحد.<br><br>فدخلَ النبيُّ ﷺ على زوجتِه <b>أمِّ سلمة</b> حزيناً وأخبرها. فأشارتْ عليه برأيٍ حكيمٍ بالغِ الذكاء: <b>«يا رسولَ الله، اخرجْ ولا تُكلِّمْ أحداً، ثمّ انحَرْ بُدْنَك واحلِقْ رأسَك»</b>. ففعلَ النبيُّ ﷺ، فلمّا رآه الصحابةُ قد نحرَ وحلق، <b>قاموا جميعاً يتسابقونَ ينحرونَ ويحلِقون</b>! بحكمةِ امرأةٍ واحدةٍ انحلّتِ الأزمةُ كلُّها. الرأيُ الحكيمُ كنزٌ لا يُقدَّرُ بثمن.',
+          en:'At the treaty of <b>Hudaybiyya</b>, the Prophet ﷺ agreed with Quraysh on hard terms that seemed unfair to the Muslims, and the companions grieved deeply. Then the Prophet ﷺ ordered them to sacrifice their offerings, shave their heads, and exit the state of ihram — but from their intense grief <b>none of them moved!</b> The Prophet ﷺ repeated the order three times and no one rose.<br><br>The Prophet ﷺ went to his wife <b>Umm Salama</b>, distressed, and told her. She advised him with brilliantly wise counsel: <b>"O Messenger of Allah, go out and speak to no one, then sacrifice your offering and shave your head."</b> The Prophet ﷺ did so, and when the companions saw he had sacrificed and shaved, <b>they all rose, racing to sacrifice and shave</b>! By the wisdom of one woman, the entire crisis was resolved. Wise counsel is a priceless treasure.' },
+        choice:{ q:{ar:'بماذا أشارتْ أمُّ سلمةَ على النبيِّ ﷺ؟',en:'What did Umm Salama advise the Prophet ﷺ?'},
+          opts:[
+            { t:{ar:'أن يبدأَ بنفسِه بالنحرِ والحلقِ فيتبعَه الناس',en:'To begin himself with the sacrifice and shaving so people would follow'},c:true,exp:{ar:'نعم! القدوةُ بالفعلِ أبلغُ من الأمرِ بالكلام.',en:'Yes! Leading by example is more effective than commanding with words.'} },
+            { t:{ar:'أن يُعاقبَ الصحابة',en:'To punish the companions'},c:false,exp:{ar:'لا، بل أن يبدأَ بنفسِه قدوةً لهم.',en:'No — to begin himself as an example for them.'} },
+            { t:{ar:'أن يلغيَ الصلح',en:'To cancel the treaty'},c:false,exp:{ar:'لا، بل رأيٌ حكيمٌ في تنفيذِ الأمر.',en:'No — wise counsel on carrying out the order.'} },
+          ] } },
+    ],
+    quiz:[
+      { q:{ar:'في أيِّ صلحٍ كان رأيُ أمِّ سلمةَ الحكيم؟',en:'At which treaty was Umm Salama\u2019s wise counsel given?'},
+        opts:[ {t:{ar:'صلحِ الحديبية',en:'The treaty of Hudaybiyya'},c:true}, {t:{ar:'صلحِ بدر',en:'The treaty of Badr'},c:false}, {t:{ar:'صلحِ خيبر',en:'The treaty of Khaybar'},c:false} ] },
+      { q:{ar:'ماذا اقترحتْ أن يفعلَ النبيُّ ﷺ؟',en:'What did she suggest the Prophet ﷺ do?'},
+        opts:[ {t:{ar:'يبدأُ بنفسِه فيتبعُه الناس',en:'Begin himself so people follow'},c:true}, {t:{ar:'يصرخُ عليهم',en:'Shout at them'},c:false}, {t:{ar:'يتركُهم',en:'Leave them'},c:false} ] },
+      { q:{ar:'ما الدرسُ من حكمةِ أمِّ سلمة؟',en:'What is the lesson from Umm Salama\u2019s wisdom?'},
+        opts:[ {t:{ar:'القدوةُ بالفعلِ والرأيُ الحكيمُ يحلّانِ الأزمات',en:'Leading by example and wise counsel resolve crises'},c:true}, {t:{ar:'الصراخُ ينفع',en:'Shouting works'},c:false}, {t:{ar:'لا قيمةَ للرأي',en:'Counsel has no value'},c:false} ] },
+    ],
+    moral:{ar:'الرأيُ الحكيمُ كنزٌ، والقدوةُ بالفعلِ أبلغُ من الكلام — واستشارةُ أهلِ العقلِ بابُ التوفيق.',en:'Wise counsel is a treasure, and leading by example is more eloquent than words — consulting wise people is a door to success.'},
+    badge:{icon:'💡',title:{ar:'وِسامُ الرأيِ السديد',en:'Badge of Sound Counsel'}},
+    reflect:[ {ar:'هل تُعطي رأياً حكيماً يساعدُ من حولَك؟',en:'Do you give wise counsel that helps those around you?'}, {ar:'هل تكونُ قدوةً بالفعلِ لا بالكلامِ فقط؟',en:'Are you an example through action, not just words?'} ],
+    didYouKnow:[ {ar:'قصّةُ مشورةِ أمِّ سلمةَ يومَ الحديبيةِ ثابتةٌ في صحيحِ البخاري — المصدر: صحيح البخاري',en:'The story of Umm Salama\u2019s counsel at Hudaybiyya is established in Sahih al-Bukhari — Source: Sahih al-Bukhari'}, {ar:'كان صلحُ الحديبيةِ فتحاً عظيماً نزلتْ فيه سورةُ الفتحِ رغمَ شدّةِ شروطِه — المصدر: البداية والنهاية',en:'The treaty of Hudaybiyya was a great victory, about which Surat al-Fath was revealed, despite its hard terms — Source: Al-Bidaya wa an-Nihaya'} ],
+  },
+];

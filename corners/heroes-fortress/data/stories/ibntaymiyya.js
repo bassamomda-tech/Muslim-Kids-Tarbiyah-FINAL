@@ -1,0 +1,56 @@
+/* data/stories/ibntaymiyya.js — Scholars · Ibn Taymiyya — sources: العقود الدرية · البداية والنهاية · إسلام ويب · الدرر السنية */
+window.HISN_STORIES = window.HISN_STORIES || {};
+HISN_STORIES.ibntaymiyya = [
+  { icon:'⚔️', scene:'peaks', character:'🧔',
+    title:{ ar:'عالمٌ يحملُ السيفَ والقلم', en:'A Scholar Who Carried Both Sword and Pen' },
+    pages:[
+      { scene:'peaks', character:'⚔️',
+        text:{ ar:'كان <b>ابنُ تيمية</b> عالماً عظيماً يجلسُ في المسجدِ يُعلِّمُ الناسَ ويؤلّفُ الكتب. لكنّ امتحاناً كبيراً جاءَ حين هاجمَ <b>المغولُ (التتار)</b> بلادَ الشام، وأرعبوا الناسَ، وخافَ كثيرٌ من الحكّامِ والجنود.<br><br>فهل بقيَ ابنُ تيميةَ في بيتِه يكتفي بالكتب؟ لا! بل <b>خرجَ بنفسِه إلى الميدان</b>، يُحرِّضُ الناسَ على الجهادِ والدفاعِ عن بلادِهم، ويذهبُ إلى الحكّامِ يشجّعُهم على القتال، حتى ذهبَ إلى ملكِ المغولِ نفسِه يُكلِّمُه بشجاعةٍ عجيبة! وشاركَ في معركةِ <b>شَقحَب</b> التي انتصرَ فيها المسلمونَ على المغول. علّمنا ابنُ تيميةَ أنّ <b>العالمَ الحقَّ يعملُ بعلمِه</b>، ولا يكتفي بالكلامِ بل يكونُ في مقدّمةِ الصفوفِ عند الحاجة.',
+          en:'<b>Ibn Taymiyya</b> was a great scholar who sat in the mosque teaching people and authoring books. But a great test came when the <b>Mongols (Tatars)</b> attacked Sham, terrifying people, and many rulers and soldiers were afraid.<br><br>Did Ibn Taymiyya stay home content with books? No! He <b>went out himself to the battlefield</b>, rousing people to struggle and defend their land, going to the rulers to encourage them to fight — he even went to the Mongol king himself and spoke to him with astonishing courage! He took part in the Battle of <b>Shaqhab</b>, in which the Muslims defeated the Mongols. Ibn Taymiyya taught us that <b>a true scholar acts on his knowledge</b>, not sufficing with words but being at the front of the ranks when needed.' },
+        choice:{ q:{ar:'ماذا فعلَ ابنُ تيميةَ حين هاجمَ المغولُ بلادَ الشام؟',en:'What did Ibn Taymiyya do when the Mongols attacked Sham?'},
+          opts:[
+            { t:{ar:'خرجَ بنفسِه يُحرِّضُ على الجهادِ وشاركَ في القتال',en:'He went out himself to rouse the struggle and took part in the fighting'},c:true,exp:{ar:'نعم! العالمُ الحقُّ يعملُ بعلمِه.',en:'Yes! A true scholar acts on his knowledge.'} },
+            { t:{ar:'بقيَ في بيتِه خائفاً',en:'He stayed home, afraid'},c:false,exp:{ar:'لا، بل خرجَ شجاعاً للميدان.',en:'No — he went out bravely to the field.'} },
+            { t:{ar:'هرب',en:'He fled'},c:false,exp:{ar:'لا، بل حرّضَ الناسَ وقاتل.',en:'No — he roused the people and fought.'} },
+          ] } },
+    ],
+    quiz:[
+      { q:{ar:'من هاجمَ بلادَ الشامِ في زمنِ ابنِ تيمية؟',en:'Who attacked Sham in Ibn Taymiyya\u2019s time?'},
+        opts:[ {t:{ar:'المغولُ (التتار)',en:'The Mongols (Tatars)'},c:true}, {t:{ar:'الصحابة',en:'The companions'},c:false}, {t:{ar:'الأنصار',en:'The Ansar'},c:false} ] },
+      { q:{ar:'ماذا فعلَ ابنُ تيميةَ غيرَ التعليمِ والتأليف؟',en:'What did Ibn Taymiyya do besides teaching and writing?'},
+        opts:[ {t:{ar:'خرجَ للجهادِ وحرّضَ الناسَ على الدفاع',en:'He went out to struggle and roused the people to defend'},c:true}, {t:{ar:'نامَ',en:'He slept'},c:false}, {t:{ar:'هرب',en:'He fled'},c:false} ] },
+      { q:{ar:'ما الدرسُ من موقفِ ابنِ تيمية؟',en:'What is the lesson from Ibn Taymiyya\u2019s stance?'},
+        opts:[ {t:{ar:'العالمُ الحقُّ يعملُ بعلمِه ولا يكتفي بالكلام',en:'A true scholar acts on his knowledge, not just words'},c:true}, {t:{ar:'الخوفُ والهروب',en:'Fear and fleeing'},c:false}, {t:{ar:'الاكتفاءُ بالكلام',en:'Sufficing with words'},c:false} ] },
+    ],
+    moral:{ar:'العالمُ الحقُّ يعملُ بعلمِه ويكونُ في مقدّمةِ الصفوفِ عند الحاجة، فالعلمُ بلا عملٍ ناقص.',en:'A true scholar acts on his knowledge and is at the front of the ranks when needed; knowledge without action is incomplete.'},
+    badge:{icon:'⚔️',title:{ar:'وِسامُ العلمِ والعمل',en:'Badge of Knowledge & Action'}},
+    reflect:[ {ar:'هل تعملُ بما تتعلّمُه أم تكتفي بالكلام؟',en:'Do you act on what you learn, or suffice with words?'}, {ar:'كيف تكونُ شجاعاً في نصرةِ الحقِّ والدفاعِ عنه؟',en:'How are you courageous in supporting and defending the truth?'} ],
+    didYouKnow:[ {ar:'شاركَ ابنُ تيميةَ في تحريضِ الناسِ والحكّامِ على قتالِ المغولِ في معركةِ شقحب — المصدر: البداية والنهاية',en:'Ibn Taymiyya took part in rousing the people and rulers to fight the Mongols at the Battle of Shaqhab — Source: Al-Bidaya wa an-Nihaya'}, {ar:'كان ابنُ تيميةَ يُتقِنُ فنوناً كثيرةً من العلمِ وألّفَ مئاتِ الكتبِ والرسائل — المصدر: العقود الدرية',en:'Ibn Taymiyya mastered many fields of knowledge and authored hundreds of books and treatises — Source: al-Uqud ad-Durriyya'} ],
+  },
+  { icon:'😊', scene:'night', character:'🤲',
+    title:{ ar:'جنّتي في صدري', en:'My Garden Is in My Chest' },
+    pages:[
+      { scene:'night', character:'🤲',
+        text:{ ar:'بسببِ ثباتِ <b>ابنِ تيمية</b> على الحقِّ وعدمِ خوفِه من أحد، حسده بعضُ الناسِ وكادوا له، حتى سُجِنَ مراتٍ عديدةً ظلماً. لكنّ السجنَ لم يكسرْ روحَه أبداً!<br><br>قال كلماتٍ خالدةً تدلُّ على قوّةِ إيمانِه: <b>«ما يصنعُ أعدائي بي؟ أنا جنّتي وبستاني في صدري؛ إن قتلوني فقتلي شهادة، وإن أخرجوني (نفوني) فإخراجي سياحة، وإن سجنوني فسجني خلوةٌ (مع الله)»</b>! كان في السجنِ يكتبُ ويُؤلِّفُ ويذكرُ اللهَ ويتعبّدُ، سعيداً مطمئنّاً لأنّ سعادتَه في قلبِه وإيمانِه لا في الدنيا. وأخيراً ماتَ في سجنِه صابراً محتسباً. علّمنا ابنُ تيميةَ أنّ <b>السعادةَ الحقيقيّةَ في القلبِ والإيمان، ولا يقدرُ أحدٌ أن يسلبَها منك</b>.',
+          en:'Because of <b>Ibn Taymiyya\u2019s</b> steadfastness on the truth and his fear of no one, some people envied and plotted against him, so he was unjustly imprisoned many times. But prison never broke his spirit!<br><br>He spoke immortal words showing the strength of his faith: <b>"What can my enemies do to me? My garden and orchard are in my chest; if they kill me it is martyrdom, if they expel (exile) me it is travel, and if they imprison me my prison is seclusion (with Allah)!"</b> In prison he wrote, authored, remembered Allah, and worshipped — happy and at peace, because his happiness was in his heart and faith, not in the world. Finally he died in his prison, patient and hopeful of reward. Ibn Taymiyya taught us that <b>true happiness is in the heart and faith, and no one can take it from you</b>.' },
+        choice:{ q:{ar:'لماذا لم يكسرِ السجنُ روحَ ابنِ تيمية؟',en:'Why did prison not break Ibn Taymiyya\u2019s spirit?'},
+          opts:[
+            { t:{ar:'لأنّ سعادتَه في قلبِه وإيمانِه لا في الدنيا',en:'Because his happiness was in his heart and faith, not the world'},c:true,exp:{ar:'نعم! السعادةُ الحقيقيّةُ في القلبِ لا يقدرُ أحدٌ على سلبِها.',en:'Yes! True happiness is in the heart; no one can take it.'} },
+            { t:{ar:'لأنّه كان قويّاً جسديّاً',en:'Because he was physically strong'},c:false,exp:{ar:'لا، بل لقوّةِ إيمانِه وقلبِه.',en:'No — for the strength of his faith and heart.'} },
+            { t:{ar:'لأنّ السجنَ كان مريحاً',en:'Because prison was comfortable'},c:false,exp:{ar:'لا، بل لأنّ جنّتَه في صدرِه.',en:'No — because his garden was in his chest.'} },
+          ] } },
+    ],
+    quiz:[
+      { q:{ar:'لماذا سُجِنَ ابنُ تيميةَ مراتٍ؟',en:'Why was Ibn Taymiyya jailed several times?'},
+        opts:[ {t:{ar:'بسببِ ثباتِه على الحقِّ وكيدِ الحاسدين',en:'For his steadfastness on the truth and the envious plotting'},c:true}, {t:{ar:'لأنّه سرق',en:'Because he stole'},c:false}, {t:{ar:'لأنّه ظلمَ الناس',en:'Because he wronged people'},c:false} ] },
+      { q:{ar:'ماذا قال عن سجنِه؟',en:'What did he say about his prison?'},
+        opts:[ {t:{ar:'سجني خلوةٌ وجنّتي في صدري',en:'My prison is seclusion and my garden is in my chest'},c:true}, {t:{ar:'لا أحتمل',en:'I cannot bear it'},c:false}, {t:{ar:'سأتراجع',en:'I will retreat'},c:false} ] },
+      { q:{ar:'أين السعادةُ الحقيقيّة؟',en:'Where is true happiness?'},
+        opts:[ {t:{ar:'في القلبِ والإيمان',en:'In the heart and faith'},c:true}, {t:{ar:'في المالِ فقط',en:'In wealth only'},c:false}, {t:{ar:'في الحريّةِ فقط',en:'In freedom only'},c:false} ] },
+    ],
+    moral:{ar:'السعادةُ الحقيقيّةُ في القلبِ والإيمانِ والقربِ من الله، ولا يقدرُ أحدٌ أن يسلبَها منك مهما فعل.',en:'True happiness is in the heart, faith, and nearness to Allah; no one can take it from you whatever they do.'},
+    badge:{icon:'😊',title:{ar:'وِسامُ سعادةِ القلب',en:'Badge of the Heart\u2019s Happiness'}},
+    reflect:[ {ar:'هل تجدُ سعادتَك في إيمانِك وقربِك من الله؟',en:'Do you find your happiness in your faith and nearness to Allah?'}, {ar:'كيف تثبُتُ وتبقى مطمئنّاً وقتَ الشدّة؟',en:'How do you stay firm and at peace in times of hardship?'} ],
+    didYouKnow:[ {ar:'مقولةُ ابنِ تيميةَ «جنّتي في صدري» من أشهرِ كلماتِ الثباتِ والرضا في التاريخِ الإسلامي — المصدر: العقود الدرية',en:'Ibn Taymiyya\u2019s saying "My garden is in my chest" is among the most famous words of steadfastness and contentment in Islamic history — Source: al-Uqud ad-Durriyya'}, {ar:'تُوفِّيَ ابنُ تيميةَ في سجنِ قلعةِ دمشقَ صابراً محتسباً، وشهِدَ جنازتَه خلقٌ كثير — المصدر: البداية والنهاية',en:'Ibn Taymiyya died in the prison of the Damascus citadel, patient and hopeful, and a great multitude attended his funeral — Source: Al-Bidaya wa an-Nihaya'} ],
+  },
+];

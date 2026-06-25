@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>صيد حروف المد · أنوس</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+
+<link rel="stylesheet" href="../styles/tokens.css" />
+<link rel="stylesheet" href="../styles/dashboard.css" />
+<link rel="stylesheet" href="../styles/wheel.css" />
+<link rel="stylesheet" href="../styles/catch.css" />
+</head>
+<body>
+
+<div class="bg-decor" aria-hidden="true"></div>
+
+<div class="activity-shell">
+
+  <nav class="activity-nav">
+    <a class="back-link" href="../dashboard.html">
+      الرجوع للوحة الأنشطة
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg>
+    </a>
+    <div class="activity-crumb">
+      <span>تحديات السيرة واللغة</span>
+      <span class="sep">/</span>
+      <span class="cur">صيد حروف المد</span>
+    </div>
+    <div class="activity-actions">
+      <button class="icon-btn" id="reset-btn" title="إعادة الضبط" aria-label="إعادة الضبط">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 3-6.7L3 8"/><path d="M3 3v5h5"/></svg>
+      </button>
+    </div>
+  </nav>
+
+  <div class="activity-layout">
+
+    <!-- ============ لوحة اللعبة ============ -->
+    <section class="catch-panel">
+      <header class="wheel-header">
+        <span class="activity-tag">Activity 41 · Falling Objects</span>
+        <h1 class="activity-title">صيد حروف المد</h1>
+        <p class="activity-desc">
+          الحروف تتساقط من السماء! حرِّك السلَّة لِتَصطاد <strong>حروف المدِّ</strong>
+          الثلاثة: الألفَ والواوَ والياء، وتَجنَّب باقي الحروف.
+        </p>
+      </header>
+
+      <div class="catch-hud">
+        <div class="hud-block">حروف المد <strong><span id="c-score">0</span><small id="c-goal">/15</small></strong></div>
+        <div class="hud-block">الأرواح <strong class="lives" id="c-lives">♥♥♥</strong></div>
+        <div class="hud-block">فات منك <strong id="c-missed">0</strong></div>
+      </div>
+
+      <div class="catch-stage" id="stage">
+        <!-- غيوم زخرفية -->
+        <svg class="cloud" style="top:12%; left:8%; width:70px;" viewBox="0 0 64 32" fill="currentColor"><path d="M16 28a10 10 0 0 1 0-20 12 12 0 0 1 23 3 8 8 0 0 1 1 17H16Z"/></svg>
+        <svg class="cloud" style="top:24%; right:12%; width:54px;" viewBox="0 0 64 32" fill="currentColor"><path d="M16 28a10 10 0 0 1 0-20 12 12 0 0 1 23 3 8 8 0 0 1 1 17H16Z"/></svg>
+
+        <div class="basket" id="basket">
+          <div class="basket-glow"></div>
+          <div class="basket-body"></div>
+        </div>
+
+        <div class="catch-overlay" id="overlay">
+          <div class="catch-overlay-card">
+            <h2>هل أنت مستعد؟</h2>
+            <p>
+              حرِّك السلَّة بالماوس أو بمفتاحَي <span class="catch-key">→</span>
+              <span class="catch-key">←</span><br/>
+              اصطَدِ <b>ا</b> و <b>و</b> و <b>ي</b> فقط.
+            </p>
+            <button class="btn-primary" id="ov-btn" style="width:100%;justify-content:center;">ابدأ اللعب</button>
+            <div class="catch-mobile-pads">
+              <button class="catch-pad" id="pad-left">◀</button>
+              <button class="catch-pad" id="pad-right">▶</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="wheel-controls">
+        <div class="wheel-stat">أفضل حصاد <strong id="best">—</strong></div>
+        <div class="wheel-stat" style="text-align:center;">المحاولات <strong id="plays">0</strong></div>
+        <button class="wheel-mute-toggle" id="mute-btn" aria-pressed="false">
+          <span class="mute-icon"></span>
+          <span class="mute-label">كتم الصوت</span>
+        </button>
+      </div>
+    </section>
+
+    <!-- ============ اللوحة الجانبية ============ -->
+    <aside class="side-panel">
+      <div class="panel-card">
+        <div class="panel-head"><h3>حروفُ المدِّ الثلاثة</h3></div>
+        <div class="madd-ref">
+          <div class="madd-chip"><span class="big">ا</span><div><b>الألف</b><small>قَالَ، نَام</small></div></div>
+          <div class="madd-chip"><span class="big">و</span><div><b>الواو</b><small>نُور، يَقُول</small></div></div>
+          <div class="madd-chip"><span class="big">ي</span><div><b>الياء</b><small>فِيل، كَرِيم</small></div></div>
+        </div>
+        <div class="tip-card" style="margin-top: var(--s-4);">
+          <span class="tip-icon">!</span>
+          <span>حروفُ المدِّ تَمُدُّ الصوتَ فيطولُ، وهي سرُّ جمالِ التلاوة.</span>
+        </div>
+      </div>
+
+      <div class="panel-card">
+        <div class="panel-head"><h3>كيف ألعب؟</h3></div>
+        <div style="font-size: 14px; line-height: 1.7; color: var(--ink-2);">
+          ١. حرِّك السلَّة يميناً ويساراً.<br/>
+          ٢. اصطَدْ حروفَ المدِّ (ا، و، ي) فقط.<br/>
+          ٣. لا تَدَع حرفَ مدٍّ يَسقُط، ولا تَلتَقِط غيرَه.<br/>
+          ٤. اجمَع ١٥ حرفاً قبل أن تَنفَد أرواحُك.
+        </div>
+      </div>
+
+      <div class="panel-card">
+        <div class="panel-head"><h3>فضلُ تجويد القرآن</h3></div>
+        <div class="hadith-card">
+          <div class="quote">«زَيِّنوا القرآنَ بأصواتِكم»</div>
+          <span class="src">رواه أبو داود والنسائي<span class="hadith-grade ok">صحيح</span></span>
+        </div>
+      </div>
+    </aside>
+  </div>
+</div>
+
+<!-- مودال النصر -->
+<div class="modal-backdrop" id="win-modal" role="dialog" aria-modal="true">
+  <div class="modal">
+    <button class="modal-close" data-close aria-label="إغلاق">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M6 6l12 12M18 6l-12 12"/></svg>
+    </button>
+    <div class="modal-deco" aria-hidden="true">
+      <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l2.4 6.6L21 9l-5 4.6L17.2 21 12 17.4 6.8 21 8 13.6 3 9l6.6-.4z"/></svg>
+    </div>
+    <div class="modal-eyebrow">صيد حروف المد</div>
+    <h2 class="modal-title">صيّادٌ ماهر!</h2>
+    <div class="modal-meaning" id="win-summary"></div>
+    <div class="modal-actions">
+      <button class="btn-ghost" data-close>انتهيت</button>
+      <button class="btn-primary" id="win-replay">محاولة جديدة</button>
+    </div>
+  </div>
+</div>
+
+<div class="particles" id="particles" aria-hidden="true"></div>
+
+<script src="../scripts/activity-common.js"></script>
+<script src="../scripts/catch.js"></script>
+
+<script>
+window.PAGE_DICT = {
+  "صيد حروف المد": "Catch the Madd Letters",
+  "الحروف تتساقط من السماء! حرِّك السلَّة لِتَصطاد": "Letters are falling from the sky! Move the basket to catch",
+  "حروف المدِّ": "the madd letters",
+  "الثلاثة: الألفَ والواوَ والياء، وتَجنَّب باقي الحروف.": "the three of them: alif, waw, and yaa, and avoid the rest.",
+  "حروف المد": "Madd letters",
+  "الأرواح": "Lives",
+  "فات منك": "Missed",
+  "هل أنت مستعد؟": "Are you ready?",
+  "حرِّك السلَّة بالماوس أو بمفتاحَي": "Move the basket with the mouse or the keys",
+  "اصطَدِ": "Catch",
+  "فقط.": "only.",
+  "ابدأ اللعب": "Start playing",
+  "أفضل حصاد": "Best harvest",
+  "المحاولات": "Attempts",
+  "حروفُ المدِّ الثلاثة": "The three madd letters",
+  "الألف": "Alif",
+  "الواو": "Waw",
+  "الياء": "Yaa",
+  "حروفُ المدِّ تَمُدُّ الصوتَ فيطولُ، وهي سرُّ جمالِ التلاوة.": "The madd letters stretch the sound so it lengthens — they're the secret of beautiful recitation.",
+  "١. حرِّك السلَّة يميناً ويساراً.": "1. Move the basket right and left.",
+  "٢. اصطَدْ حروفَ المدِّ (ا، و، ي) فقط.": "2. Catch only the madd letters (ا، و، ي).",
+  "٣. لا تَدَع حرفَ مدٍّ يَسقُط، ولا تَلتَقِط غيرَه.": "3. Don't let a madd letter fall, and don't catch any other.",
+  "٤. اجمَع ١٥ حرفاً قبل أن تَنفَد أرواحُك.": "4. Collect 15 letters before your lives run out.",
+  "فضلُ تجويد القرآن": "The virtue of reciting Quran well",
+  "رواه أبو داود والنسائي": "Narrated by Abu Dawud & an-Nasa'i",
+  "صيّادٌ ماهر!": "Skilled catcher!",
+  "محاولة جديدة": "New attempt"
+};
+</script>
+<script src="../scripts/i18n.js"></script>
+<script src="../../shared/nav-fix.js"></script>
+</body>
+</html>

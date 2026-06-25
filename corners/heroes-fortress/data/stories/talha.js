@@ -1,0 +1,56 @@
+/* data/stories/talha.js — Heroes · Talha ibn Ubaydillah — sources: صور من حياة الصحابة (الباشا) · إسلام ويب · الدرر السنية · البداية والنهاية */
+window.HISN_STORIES = window.HISN_STORIES || {};
+HISN_STORIES.talha = [
+  { icon:'🛡️', scene:'peaks', character:'⚔️',
+    title:{ ar:'الشهيدُ الحيُّ يومَ أُحُد', en:'The Living Martyr at Uhud' },
+    pages:[
+      { scene:'peaks', character:'⚔️',
+        text:{ ar:'في يومِ <b>أُحُد</b> اضطربتِ الصفوفُ وأحاطَ المشركونَ بالنبيِّ ﷺ يريدونَ قتلَه. فثبتَ <b>طلحةُ</b> بين يديه كالجبل، يصدُّ السهامَ والسيوفَ بنفسِه. وحين أهوى سيفٌ نحوَ وجهِ النبيِّ ﷺ <b>تلقّاه طلحةُ بيدِه</b> فشُلَّتْ يدُه — لكنّه لم يتراجعْ!<br><br>أصابه يومَئذٍ <b>أكثرُ من سبعينَ جرحاً</b> في جسدِه، وما زالَ يحمي النبيَّ ﷺ حتى نجا. فلمّا رآه النبيُّ ﷺ قال: <b>«مَن سرَّه أن ينظرَ إلى شهيدٍ يمشي على وجهِ الأرض، فلينظرْ إلى طلحة»</b>.',
+          en:'On the day of <b>Uhud</b> the ranks broke and the idolaters surrounded the Prophet ﷺ wanting to kill him. <b>Talha</b> stood before him like a mountain, blocking arrows and swords with his own body. When a sword swung toward the Prophet\'s ﷺ face, <b>Talha caught it with his hand</b> and it was paralyzed — but he did not retreat!<br><br>That day he took <b>over seventy wounds</b>, and kept shielding the Prophet ﷺ until he was safe. When the Prophet ﷺ saw him he said: <b>"Whoever would like to see a martyr walking on the face of the earth, let him look at Talha."</b>' },
+        choice:{ q:{ar:'ماذا فعلَ طلحةُ حين أحاطَ المشركونَ بالنبيِّ ﷺ؟',en:'What did Talha do when the idolaters surrounded the Prophet ﷺ?'},
+          opts:[
+            { t:{ar:'ثبتَ ووقاه بجسدِه ويدِه',en:'He stood firm and shielded him with his body and hand'},c:true,exp:{ar:'نعم! فداه بنفسِه حتى شُلَّتْ يدُه وأصابه سبعونَ جرحاً.',en:'Yes! He sacrificed himself until his hand was paralyzed and he took seventy wounds.'} },
+            { t:{ar:'فرَّ من المعركة',en:'He fled the battle'},c:false,exp:{ar:'لا، بل ثبتَ حين فرَّ كثيرون.',en:'No — he stood firm when many fled.'} },
+            { t:{ar:'اختبأ خلفَ صخرة',en:'He hid behind a rock'},c:false,exp:{ar:'لا، بل تقدّمَ ليحميَ النبيَّ ﷺ.',en:'No — he advanced to protect the Prophet ﷺ.'} },
+          ] } },
+    ],
+    quiz:[
+      { q:{ar:'في أيِّ غزوةٍ وقى طلحةُ النبيَّ ﷺ بيدِه؟',en:'In which battle did Talha shield the Prophet ﷺ with his hand?'},
+        opts:[ {t:{ar:'أُحُد',en:'Uhud'},c:true}, {t:{ar:'بدر',en:'Badr'},c:false}, {t:{ar:'حنين',en:'Hunayn'},c:false} ] },
+      { q:{ar:'ماذا أصابَ يدَ طلحة؟',en:'What happened to Talha\'s hand?'},
+        opts:[ {t:{ar:'شُلَّتْ وهو يحمي النبيَّ ﷺ',en:'It was paralyzed protecting the Prophet ﷺ'},c:true}, {t:{ar:'لم يُصِبْها شيء',en:'Nothing'},c:false}, {t:{ar:'كُتِبَ بها القرآن',en:'He wrote the Quran with it'},c:false} ] },
+      { q:{ar:'بِمَ وصفَ النبيُّ ﷺ طلحةَ يومَئذ؟',en:'How did the Prophet ﷺ describe Talha that day?'},
+        opts:[ {t:{ar:'شهيدٌ يمشي على الأرض',en:'A martyr walking the earth'},c:true}, {t:{ar:'أعلمُ الناس',en:'The most learned'},c:false}, {t:{ar:'أغنى الناس',en:'The wealthiest'},c:false} ] },
+    ],
+    moral:{ar:'البطلُ الحقُّ يفدي مَن يحبُّ بنفسِه، ويثبتُ في الشدّةِ حين يتراجعُ غيرُه.',en:'A true hero sacrifices himself for whom he loves and stands firm in hardship when others retreat.'},
+    badge:{icon:'🛡️',title:{ar:'وِسامُ الشهيدِ الحي',en:'Badge of the Living Martyr'}},
+    reflect:[ {ar:'هل تُدافِعُ عمَّن تحبُّ ولو كان ذلك صعباً؟',en:'Do you defend those you love even when it is hard?'}, {ar:'كيف تثبُتُ على الحقِّ وقتَ الشدّة؟',en:'How do you stay firm on the truth in hardship?'} ],
+    didYouKnow:[ {ar:'رُوِيَ أنّ طلحةَ أصابه يومَ أُحُدٍ بضعةٌ وسبعونَ جرحاً وشُلَّتْ إصبعُه وهو يقي النبيَّ ﷺ — المصدر: البداية والنهاية',en:'It is reported Talha took some seventy wounds at Uhud and a finger was paralyzed while shielding the Prophet ﷺ — Source: Al-Bidaya wa an-Nihaya'}, {ar:'قال أبو بكرٍ الصدّيقُ عن يومِ أُحُد: «ذاك يومٌ كلُّه لطلحة» — المصدر: الدرر السنية',en:'Abu Bakr said of Uhud: "That whole day belonged to Talha" — Source: ad-Durar as-Saniyya'} ],
+  },
+  { icon:'🎁', scene:'madinah', character:'🤲',
+    title:{ ar:'طلحةُ الجود: مالٌ لا يُنيمُه', en:'Talha of Bounty: Wealth That Robbed His Sleep' },
+    pages:[
+      { scene:'madinah', character:'🤲',
+        text:{ ar:'كان <b>طلحةُ</b> تاجراً غنيّاً، لكنَّ المالَ لم يكنْ غايتَه — بل وسيلةً للخير. جاءه يوماً مالٌ كثيرٌ من تجارتِه، فباتَ ليلتَه <b>قلِقاً لا ينامُ</b>! فقالت له زوجتُه: ما لك؟ قال: «فكّرتُ: ما ظنُّ رجلٍ بربِّه يبيتُ وهذا المالُ في بيتِه؟».<br><br>فلمّا أصبحَ <b>دعا بالمالِ كلِّه ففرَّقه</b> على فقراءِ المسلمينَ وأقاربِه حتى لم يبقَ منه شيء! لذلك لُقِّبَ <b>«طلحةَ الخير»</b> و«طلحةَ الجود» و«طلحةَ الفيّاض». كان كرمُه يُسعِدُه أكثرَ من جمعِ المال.',
+          en:'<b>Talha</b> was a wealthy merchant, but wealth was never his goal — only a means to do good. One day great wealth came from his trade, and he spent the night <b>anxious and sleepless</b>! His wife asked: what is wrong? He said: "I thought — what should a man think of his Lord while spending the night with this wealth in his house?"<br><br>When morning came he <b>called for all the money and gave it away</b> to the poor Muslims and his relatives until none remained! That is why he was called <b>"Talha of goodness,"</b> "Talha of bounty," and "Talha the overflowing." His generosity made him happier than hoarding ever could.' },
+        choice:{ q:{ar:'لماذا لم ينمْ طلحةُ ليلةَ جاءه المالُ الكثير؟',en:'Why couldn\'t Talha sleep the night the great wealth came?'},
+          opts:[
+            { t:{ar:'لأنّه خشيَ أن ينشغلَ قلبُه عن ربِّه بالمال',en:'Because he feared the wealth would distract his heart from his Lord'},c:true,exp:{ar:'نعم! ففرَّقه كلَّه في الصباحِ ليطمئنَّ قلبُه.',en:'Yes! So he gave it all away in the morning to calm his heart.'} },
+            { t:{ar:'لأنّه أرادَ أن يجمعَ أكثر',en:'Because he wanted to gather more'},c:false,exp:{ar:'لا، بل أرادَ أن يتخلّصَ منه في الخير.',en:'No — he wanted to spend it in good.'} },
+            { t:{ar:'لأنّه خافَ السرّاق',en:'Because he feared thieves'},c:false,exp:{ar:'لا، بل خشيَ أن يشغلَه المالُ عن الله.',en:'No — he feared it distracting him from Allah.'} },
+          ] } },
+    ],
+    quiz:[
+      { q:{ar:'ماذا فعلَ طلحةُ بالمالِ الكثيرِ في الصباح؟',en:'What did Talha do with the great wealth in the morning?'},
+        opts:[ {t:{ar:'فرَّقه على الفقراءِ وأقاربِه',en:'Gave it to the poor and relatives'},c:true}, {t:{ar:'خبَّأه',en:'Hid it'},c:false}, {t:{ar:'اشترى به قصراً',en:'Bought a palace'},c:false} ] },
+      { q:{ar:'بأيِّ الألقابِ عُرِفَ لكرمِه؟',en:'By what titles was he known for his generosity?'},
+        opts:[ {t:{ar:'طلحةُ الخيرِ والجود',en:'Talha of goodness and bounty'},c:true}, {t:{ar:'طلحةُ المال',en:'Talha of wealth'},c:false}, {t:{ar:'طلحةُ الحرب',en:'Talha of war'},c:false} ] },
+      { q:{ar:'ماذا تعلّمنا من جودِ طلحة؟',en:'What do we learn from Talha\'s generosity?'},
+        opts:[ {t:{ar:'المالُ وسيلةٌ للخيرِ لا غاية',en:'Wealth is a means for good, not a goal'},c:true}, {t:{ar:'الجمعُ والمنع',en:'Hoarding and withholding'},c:false}, {t:{ar:'حبُّ الدنيا',en:'Love of worldly life'},c:false} ] },
+    ],
+    moral:{ar:'الكريمُ الحقُّ يجعلُ المالَ في يدِه لا في قلبِه، ويُسعِدُه العطاءُ أكثرَ من الجمع.',en:'The truly generous keep wealth in their hand, not their heart, and find more joy in giving than in gathering.'},
+    badge:{icon:'🎁',title:{ar:'وِسامُ طلحةِ الجود',en:'Badge of Talha\'s Bounty'}},
+    reflect:[ {ar:'هل تُشارِكُ ما تحبُّ مع المحتاجين بفرح؟',en:'Do you joyfully share what you love with the needy?'}, {ar:'أين تضعُ المالَ — في يدِك أم في قلبِك؟',en:'Where do you place wealth — in your hand or in your heart?'} ],
+    didYouKnow:[ {ar:'ذكرَ أهلُ السيرِ أنّ طلحةَ كان من أجودِ الصحابةِ يُنفِقُ أموالَه الطائلةَ في سبيلِ الله — المصدر: صور من حياة الصحابة',en:'The biographers noted Talha was among the most generous companions, spending his vast wealth for Allah\'s sake — Source: Suwar min Hayat as-Sahaba'}, {ar:'سمّاه بعضُ الصحابةِ «طلحةَ الفيّاض» لكثرةِ عطائِه وفيضِ كرمِه — المصدر: الدرر السنية',en:'Some companions called him "Talha the overflowing" for his abundant giving — Source: ad-Durar as-Saniyya'} ],
+  },
+];

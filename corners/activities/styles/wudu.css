@@ -1,0 +1,219 @@
+/* ============================================================
+   WUDU ORDER — ترتيب خطوات الوضوء
+   ============================================================ */
+
+.wudu-panel {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--r-2xl);
+  padding: var(--s-8);
+  display: flex; flex-direction: column;
+  box-shadow: var(--shadow-card);
+}
+
+/* ---------- منطقة العمل ---------- */
+.wudu-workspace {
+  display: flex; flex-direction: column;
+  gap: var(--s-6);
+  margin-top: var(--s-5);
+}
+
+/* عنوان كل منطقة */
+.zone-label {
+  display: flex; align-items: center; gap: 10px;
+  font-size: 13px; font-weight: 800;
+  color: var(--ink-2);
+  margin-bottom: var(--s-3);
+}
+.zone-label::before {
+  content: ""; flex-grow: 1; height: 1px; background: var(--line);
+  display: block; margin-right: 8px;
+}
+.zone-label::after {
+  content: ""; flex-grow: 1; height: 1px; background: var(--line);
+  display: block; margin-left: 8px;
+}
+
+/* ---------- خزانة الخطوات (Pool) ---------- */
+.wudu-pool {
+  background: var(--bg-soft);
+  border: 2px dashed var(--line);
+  border-radius: var(--r-lg);
+  padding: var(--s-4);
+  min-height: 130px;
+  display: flex; flex-wrap: wrap; gap: var(--s-3);
+  align-items: center; justify-content: center;
+}
+.wudu-pool:empty::before {
+  content: "✓ كل الخطوات في أماكنها";
+  color: var(--brand-ink);
+  font-weight: 700;
+  font-size: 14px;
+  text-align: center;
+}
+
+/* ---------- بطاقة خطوة ---------- */
+.step-card {
+  width: 130px;
+  background: var(--surface);
+  border: 2px solid var(--line);
+  border-radius: var(--r-md);
+  padding: var(--s-3);
+  display: flex; flex-direction: column;
+  align-items: center; gap: 6px;
+  cursor: grab;
+  user-select: none;
+  transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
+  position: relative;
+  text-align: center;
+}
+.step-card:hover { transform: translateY(-2px); box-shadow: var(--shadow-md); }
+.step-card.dragging { opacity: 0.4; transform: scale(0.96); cursor: grabbing; }
+.step-card.in-slot { cursor: grab; }
+
+.step-card .step-icon {
+  width: 50px; height: 50px;
+  border-radius: 50%;
+  background: var(--peach);
+  color: var(--peach-ink);
+  display: grid; place-items: center;
+  flex-shrink: 0;
+}
+.step-card .step-icon svg { width: 26px; height: 26px; }
+
+.step-card .step-title {
+  font-size: 13px; font-weight: 800;
+  line-height: 1.25;
+  color: var(--ink);
+}
+
+/* الشريط الزخرفي على الجانب (يظهر حالة التحقق) */
+.step-card::before {
+  content: ""; position: absolute;
+  top: 6px; right: 6px; bottom: 6px;
+  width: 3px; border-radius: 3px;
+  background: transparent;
+  transition: background 0.3s ease;
+}
+.step-card.correct {
+  border-color: var(--brand);
+  background: var(--brand-soft);
+  animation: pop-in 0.4s cubic-bezier(0.2, 1.6, 0.4, 1);
+}
+.step-card.correct::before { background: var(--brand); }
+.step-card.correct .step-icon { background: var(--brand); color: #fff; }
+
+.step-card.wrong {
+  border-color: var(--rose);
+  animation: shake-h 0.4s ease;
+}
+.step-card.wrong::before { background: var(--rose); }
+@keyframes shake-h {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-6px); }
+  75% { transform: translateX(6px); }
+}
+
+/* ---------- خانات الترتيب (Slots) ---------- */
+.wudu-slots {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: var(--s-3);
+}
+@media (max-width: 980px) {
+  .wudu-slots { grid-template-columns: repeat(4, 1fr); }
+}
+@media (max-width: 600px) {
+  .wudu-slots { grid-template-columns: repeat(2, 1fr); }
+}
+
+.wudu-slot {
+  background: var(--surface);
+  border: 2px dashed var(--line);
+  border-radius: var(--r-md);
+  min-height: 180px;
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+  padding: var(--s-2);
+  gap: 4px;
+  position: relative;
+  transition: background 0.2s ease, border-color 0.2s ease;
+}
+.wudu-slot.over {
+  background: var(--brand-soft);
+  border-color: var(--brand);
+  border-style: solid;
+}
+.wudu-slot.filled {
+  border-style: solid;
+  background: var(--surface);
+}
+.wudu-slot .slot-num {
+  position: absolute;
+  top: -10px;
+  background: var(--ink);
+  color: #FBF6EC;
+  width: 28px; height: 28px;
+  border-radius: 50%;
+  display: grid; place-items: center;
+  font-family: var(--font-en);
+  font-weight: 800; font-size: 12px;
+  border: 3px solid var(--surface);
+  z-index: 1;
+}
+.wudu-slot.filled .slot-num { background: var(--brand-ink); }
+.wudu-slot .slot-hint {
+  color: var(--muted); font-size: 11px; font-weight: 600;
+}
+.wudu-slot .step-card { width: 100%; }
+
+/* ---------- شريط الإجراءات ---------- */
+.wudu-actions {
+  display: flex; gap: var(--s-3); justify-content: center;
+  margin-top: var(--s-5);
+  padding-top: var(--s-5);
+  border-top: 1px dashed var(--line);
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.feedback-line {
+  font-size: 13px; font-weight: 700;
+  color: var(--muted);
+  flex-grow: 1;
+}
+.feedback-line.success { color: var(--brand-ink); }
+.feedback-line.error { color: var(--rose); }
+
+/* ---------- لائحة الخطوات الجانبية ---------- */
+.steps-guide {
+  display: flex; flex-direction: column; gap: 6px;
+}
+.steps-guide .name-row { opacity: 1; background: var(--bg-soft); }
+.steps-guide .name-row .name-ar { font-size: 14px; }
+
+/* مسار صغير (Hadith) */
+.hadith-card {
+  background:
+    linear-gradient(135deg, rgba(255,217,194,0.4), rgba(205,235,215,0.4));
+  border: 1px solid var(--line);
+  border-radius: var(--r-md);
+  padding: var(--s-4);
+  font-size: 14px;
+  line-height: 1.7;
+  color: var(--ink-2);
+}
+.hadith-card .quote {
+  font-weight: 800; color: var(--ink);
+  font-size: 15px;
+  position: relative;
+  padding-right: 16px;
+}
+.hadith-card .quote::before {
+  content: "﴿"; position: absolute; right: 0; top: -2px;
+  color: var(--brand-ink); font-size: 20px;
+}
+.hadith-card .src {
+  display: block; margin-top: 8px;
+  font-size: 11px; color: var(--muted); font-weight: 600;
+}

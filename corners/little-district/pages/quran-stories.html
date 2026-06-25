@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta name="color-scheme" content="dark">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<title>قصص القرآن | Quran Stories</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Amiri+Quran&family=Amiri:wght@400;700&family=Tajawal:wght@400;500;700;800;900&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+<link rel="stylesheet" href="assets/quran-stories.css">
+<script>(function(){try{var l=localStorage.getItem('bunyanLang');if(l==='en'){var h=document.documentElement;h.dir='ltr';h.lang='en';}}catch(e){}})();</script>
+<style id="__antiflash">html{background:#0A2540;color-scheme:dark}</style>
+</head>
+<body>
+
+<!-- ═══ HEADER ═══ -->
+<header class="qs-hdr">
+  <a class="qs-brand" href="quran.html" title="بستان القرآن والسنة">
+    <span class="ico">←</span>
+    <span><span class="lng-ar">بستان القرآن والسنة</span><span class="lng-en">Quran & Sunnah Garden</span></span>
+  </a>
+  <span class="qs-badge">
+    <span>📜</span>
+    <span class="lng-ar">قصص القرآن</span>
+    <span class="lng-en">Quran Stories</span>
+  </span>
+  <div class="qs-actions">
+    <div class="qs-lang">
+      <button data-lang="en">EN</button>
+      <button data-lang="ar" class="active">عربي</button>
+    </div>
+  </div>
+</header>
+
+<!-- ═══ COURTYARD (gallery) ═══ -->
+<div class="courtyard">
+  <div class="cy-sun"></div>
+  <span class="cy-flag f1">🚩</span>
+  <span class="cy-flag f2">🚩</span>
+
+  <div class="cy-intro">
+    <h1 class="cy-title">
+      <span class="lng-ar">📜 قصص القرآن</span>
+      <span class="lng-en">📜 Quran Stories</span>
+    </h1>
+    <p class="cy-sub">
+      <span class="lng-ar">حصن الأبطال — عِبَرٌ من قصص القرآن العظيم</span>
+      <span class="lng-en">Heroes' Fortress — lessons from the Quran's great stories</span>
+    </p>
+  </div>
+
+  <div class="cy-guide">
+    <div class="speech">
+      <span class="lng-ar">أنا «أنس»، تعال نعيش قصص القرآن العجيبة!</span>
+      <span class="lng-en">I'm Anas — come live the wondrous Quran stories!</span>
+    </div>
+    <div class="who">🧒</div>
+  </div>
+
+  <div class="cy-shelf">
+    <div class="story-grid" id="storyGrid"></div>
+
+    <a class="sec-testbtn stories" href="quran-tests.html?j=stories">
+      <span class="stb-ic">🎯</span>
+      <span class="stb-tx">
+        <b class="lng-ar">اختبارُ قصص القرآن</b><b class="lng-en">Quran Stories Test</b>
+        <small class="lng-ar">٣ مستويات · ٩ أنشطة متنوّعة</small><small class="lng-en">3 levels · 9 varied activities</small>
+      </span>
+      <span class="stb-go lng-ar">ابدأ ←</span><span class="stb-go lng-en">Start →</span>
+    </a>
+
+    <div class="cy-progress">
+      <div class="cp-card">
+        <div class="cp-hdr">
+          <div class="ic">🏰</div>
+          <div>
+            <h3><span class="lng-ar">رايات الأبطال</span><span class="lng-en">Heroes' Banners</span></h3>
+            <p id="cpCount"></p>
+          </div>
+        </div>
+        <div class="cp-row" id="cpRow"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="cy-wall"></div>
+
+  <footer class="qs-foot">
+    <span class="lng-ar">صُنع بحب 🧡 لأطفال الأمة — <b>قصص القرآن</b></span>
+    <span class="lng-en">Made with 🧡 for the children of the Ummah — <b>Quran Stories</b></span>
+  </footer>
+</div>
+
+<!-- ═══ READER ═══ -->
+<div class="reader" id="reader">
+  <div class="r-nav">
+    <button class="r-back" id="rBack">
+      <span>←</span>
+      <span class="lng-ar">الحصن</span>
+      <span class="lng-en">Fortress</span>
+    </button>
+    <div class="r-center">
+      <div class="nm" id="rNm"></div>
+      <div class="mt" id="rMt"></div>
+    </div>
+    <div class="r-pager">
+      <button class="r-arrow" id="rPrev">‹</button>
+      <button class="r-arrow" id="rNext">›</button>
+    </div>
+  </div>
+  <div class="book-stage">
+    <div class="book" id="book"></div>
+  </div>
+</div>
+
+<!-- ═══ CONFETTI + TOAST ═══ -->
+<div id="confetti"></div>
+<div class="toast" id="toast"></div>
+<div id="qsPrintArea"></div>
+
+<!-- ═══ SCRIPTS ═══ -->
+<script src="qstories-data/_index.js"></script>
+<script src="qstories-data/luqman.js"></script>
+<script src="qstories-data/kahf.js"></script>
+<script src="qstories-data/qarun.js"></script>
+<script src="qstories-data/dhulqarnayn.js"></script>
+<script src="qstories-data/twogardens.js"></script>
+<script src="qstories-data/uzayr.js"></script>
+<script src="qstories-data/gardenowners.js"></script>
+<script src="qstories-data/elephant.js"></script>
+<script src="qstories-data/saba.js"></script>
+<script src="qstories-data/fleedeath.js"></script>
+<script src="qstories-data/rass.js"></script>
+<script src="qstories-data/harutmarut.js"></script>
+<script src="qstories-data/khidr.js"></script>
+<script src="qstories-data/ukhdud.js"></script>
+<script src="qstories-data/adamsons.js"></script>
+<script src="qstories-data/sabt.js"></script>
+<script src="qstories-data/cow.js"></script>
+<script src="qstories-data/dirar.js"></script>
+<script src="qstories-data/fitna.js"></script>
+<script src="qstories-data/adam.js"></script>
+<script src="assets/quran-stories.js"></script>
+
+<style>
+.sec-testbtn{position:relative;z-index:8;display:flex;align-items:center;gap:.8rem;max-width:520px;margin:1.2rem auto 1.4rem;padding:.85rem 1.2rem;text-decoration:none;cursor:pointer;border-radius:1.3rem;font-family:'Tajawal',sans-serif;transition:transform .18s,box-shadow .18s}
+.sec-testbtn:hover{transform:translateY(-3px)}
+.sec-testbtn .stb-ic{font-size:2rem;flex:0 0 auto}
+.sec-testbtn .stb-tx{flex:1;display:flex;flex-direction:column;line-height:1.35}
+.sec-testbtn .stb-tx b{color:#fff;font-size:1.08rem;font-weight:900}
+.sec-testbtn .stb-tx small{color:rgba(255,255,255,.85);font-size:.78rem;font-weight:700}
+.sec-testbtn .stb-go{flex:0 0 auto;background:#fff;font-family:'Tajawal',sans-serif;font-weight:900;font-size:.85rem;border-radius:2rem;padding:.4rem .9rem;white-space:nowrap}
+.sec-testbtn.stories{background:linear-gradient(135deg,#E08A3C,#B5681F);border:2px solid #F4C77E;box-shadow:0 8px 0 #8f5418,0 14px 28px rgba(120,70,20,.4)}
+.sec-testbtn.stories .stb-go{color:#B5681F}
+</style>
+<script defer src="../../shared/mk-system.js"></script>
+<script defer src="../../shared/mk-journeys.js"></script>
+<script defer src="../../shared/mk-bag.js"></script>
+<script defer src="../../shared/mk-train.js"></script>
+<script defer src="../../shared/nav-fix.js"></script>
+</body>
+</html>

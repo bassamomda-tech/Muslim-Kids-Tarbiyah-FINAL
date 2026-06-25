@@ -1,0 +1,56 @@
+/* data/stories/nasai.js — Scholars · An-Nasa'i — sources: سير أعلام النبلاء · البداية والنهاية · إسلام ويب · الدرر السنية */
+window.HISN_STORIES = window.HISN_STORIES || {};
+HISN_STORIES.nasai = [
+  { icon:'🔍', scene:'mihrab', character:'🧔',
+    title:{ ar:'العالمُ الذي يعرفُ الصادقين', en:'The Scholar Who Knew the Truthful' },
+    pages:[
+      { scene:'mihrab', character:'🧔',
+        text:{ ar:'كان <b>الإمامُ النسائي</b> صاحبَ موهبةٍ نادرة: <b>معرفةُ الرواةِ ومعرفةُ الصادقِ منهم من غيرِه</b>. فالحديثُ عن النبيِّ ﷺ ينتقلُ من شخصٍ إلى شخص، فإن كان أحدُ الناقلينَ ضعيفَ الحفظِ أو غيرَ صادق، فقد يدخلُ الخطأُ في الحديث.<br><br>فكان النسائيُّ يدرسُ كلَّ راوٍ دراسةً دقيقة: هل هو صادقٌ أمين؟ هل ذاكرتُه قويّة؟ متى وُلِدَ ومتى ماتَ ومِمَّن سمِع؟ وبهذا العلمِ الدقيقِ استطاعَ أن <b>يُميِّزَ الأحاديثَ الصحيحةَ من الضعيفة</b>، ويحفظَ سنّةَ النبيِّ ﷺ من الخطأ. ألّفَ كتابَ <b>«السنن»</b> الذي صارَ أحدَ الكتبِ الستّةِ المعتمدة. علّمنا النسائيُّ أنّ <b>التثبّتَ والدقّةَ يحفظانِ الحقَّ من الخطأ</b>.',
+          en:'<b>An-Nasa\u2019i</b> had a rare talent: <b>knowing the narrators and distinguishing the truthful from others</b>. A hadith of the Prophet ﷺ passes from person to person, and if one of the transmitters had a weak memory or was untruthful, error could enter the hadith.<br><br>So an-Nasa\u2019i studied each narrator precisely: Is he truthful and trustworthy? Is his memory strong? When was he born, when did he die, and from whom did he hear? With this precise knowledge he could <b>distinguish authentic hadiths from weak ones</b> and protect the Prophet\u2019s ﷺ Sunnah from error. He authored the book <b>"the Sunan,"</b> which became one of the six accepted books. An-Nasa\u2019i taught us that <b>verification and precision protect the truth from error</b>.' },
+        choice:{ q:{ar:'لماذا كان النسائيُّ يدرسُ كلَّ راوٍ بدقّة؟',en:'Why did an-Nasa\u2019i study each narrator precisely?'},
+          opts:[
+            { t:{ar:'ليُميِّزَ الحديثَ الصحيحَ ويحفظَ السنّةَ من الخطأ',en:'To distinguish authentic hadith and protect the Sunnah from error'},c:true,exp:{ar:'نعم! التثبّتُ والدقّةُ يحفظانِ الحقَّ من الخطأ.',en:'Yes! Verification and precision protect the truth from error.'} },
+            { t:{ar:'بلا سبب',en:'For no reason'},c:false,exp:{ar:'لا، بل ليحفظَ سنّةَ النبيِّ ﷺ.',en:'No — to protect the Prophet\u2019s ﷺ Sunnah.'} },
+            { t:{ar:'ليشتهر',en:'To become famous'},c:false,exp:{ar:'لا، بل خدمةً للحقِّ والعلم.',en:'No — in service of truth and knowledge.'} },
+          ] } },
+    ],
+    quiz:[
+      { q:{ar:'بِمَ اشتهرَ النسائيُّ في علمِ الحديث؟',en:'What was an-Nasa\u2019i famed for in hadith?'},
+        opts:[ {t:{ar:'معرفةِ الرواةِ ونقدِهم بدقّة',en:'Knowing and evaluating narrators precisely'},c:true}, {t:{ar:'كثرةِ الأخطاء',en:'Many errors'},c:false}, {t:{ar:'الإهمال',en:'Negligence'},c:false} ] },
+      { q:{ar:'ما الكتابُ الذي ألّفه النسائي؟',en:'What book did an-Nasa\u2019i author?'},
+        opts:[ {t:{ar:'السنن، أحدُ الكتبِ الستّة',en:'The Sunan, one of the six books'},c:true}, {t:{ar:'الموطّأ',en:'Al-Muwatta'},c:false}, {t:{ar:'المسند',en:'Al-Musnad'},c:false} ] },
+      { q:{ar:'ما الدرسُ من دقّةِ النسائي؟',en:'What is the lesson from an-Nasa\u2019i\u2019s precision?'},
+        opts:[ {t:{ar:'التثبّتُ والدقّةُ يحفظانِ الحقَّ من الخطأ',en:'Verification and precision protect the truth from error'},c:true}, {t:{ar:'العجلةُ أفضل',en:'Haste is better'},c:false}, {t:{ar:'لا حاجةَ للتثبّت',en:'No need to verify'},c:false} ] },
+    ],
+    moral:{ar:'التثبّتُ والدقّةُ يحفظانِ الحقَّ من الخطأ، ومعرفةُ مصدرِ الخبرِ قبلَ تصديقِه أمانةٌ وعلم.',en:'Verification and precision protect the truth from error; knowing the source of news before believing it is a trust and a science.'},
+    badge:{icon:'🔍',title:{ar:'وِسامُ التثبّتِ والدقّة',en:'Badge of Verification & Precision'}},
+    reflect:[ {ar:'هل تتأكّدُ من مصدرِ الخبرِ قبلَ أن تصدّقَه أو تنقلَه؟',en:'Do you verify the source of news before believing or transmitting it?'}, {ar:'كيف تختارُ ممّن تتعلّمُ وتأخذُ المعلومة؟',en:'How do you choose whom you learn and take information from?'} ],
+    didYouKnow:[ {ar:'«سننُ النسائي» (المجتبى) أحدُ الكتبِ الستّةِ، ويُعَدُّ من أقلِّها أحاديثَ ضعيفة لدقّةِ مؤلّفِه — المصدر: سير أعلام النبلاء',en:'"Sunan an-Nasa\u2019i" (al-Mujtaba) is one of the six books and among those with the fewest weak hadiths, due to its author\u2019s precision — Source: Siyar A\u2019lam an-Nubala\u2019'}, {ar:'كان النسائيُّ من أعلمِ أهلِ زمانِه بعللِ الحديثِ والرجال — المصدر: البداية والنهاية',en:'An-Nasa\u2019i was among the most knowledgeable of his time in hadith defects and narrators — Source: Al-Bidaya wa an-Nihaya'} ],
+  },
+  { icon:'🌙', scene:'mihrab', character:'🤲',
+    title:{ ar:'عالمٌ عابدٌ شجاعٌ في الحق', en:'A Scholar, Worshipper, Brave in Truth' },
+    pages:[
+      { scene:'mihrab', character:'🤲',
+        text:{ ar:'لم يكنِ <b>النسائيُّ</b> عالماً فقط، بل كان <b>عابداً تقيّاً</b> يُكثِرُ الصلاةَ والصيام، ويصومُ يوماً ويُفطِرُ يوماً (صيامَ داود عليه السلام). جمعَ بين العلمِ والعبادةِ فكان نورُه على نور.<br><br>وكان <b>شجاعاً في قولِ الحق</b>. ففي آخرِ حياتِه، ذهبَ إلى بلدٍ فيه ناسٌ يُبغِضونَ عليَّ بنَ أبي طالبٍ رضي الله عنه، فأرادَ أن يُذكِّرَهم بفضلِ عليّ وحبِّ النبيِّ ﷺ له، فألّفَ كتاباً في فضائلِه وقرأه عليهم. فغضِبَ بعضُ الظالمينَ وآذوه أذىً شديداً بسببِ قولِه الحق! لكنّه صبرَ ولم يتراجعْ عن الحقِّ حتى لقيَ ربَّه. علّمنا النسائيُّ أنّ <b>العالمَ الحقَّ يجمعُ بين العلمِ والعبادةِ والشجاعةِ في قولِ الحق</b>، ويصبرُ على ما يصيبُه في سبيلِ ذلك.',
+          en:'<b>An-Nasa\u2019i</b> was not only a scholar but a <b>devout, pious worshipper</b> who prayed and fasted much, fasting one day and breaking the next (the fast of Dawud, peace be upon him). He combined knowledge and worship, so his light was upon light.<br><br>He was also <b>courageous in speaking the truth</b>. Late in his life, he went to a land where some people hated Ali ibn Abi Talib (may Allah be pleased with him), so he wanted to remind them of Ali\u2019s merit and the Prophet\u2019s ﷺ love for him; he authored a book on his virtues and read it to them. Some wrongdoers were angered and harmed him severely for speaking the truth! But he was patient and did not retreat from the truth until he met his Lord. An-Nasa\u2019i taught us that <b>a true scholar combines knowledge, worship, and courage in speaking the truth</b>, and is patient with what befalls him for its sake.' },
+        choice:{ q:{ar:'كيف جمعَ النسائيُّ بين العلمِ وغيرِه؟',en:'How did an-Nasa\u2019i combine knowledge with other things?'},
+          opts:[
+            { t:{ar:'جمعَ بين العلمِ والعبادةِ والشجاعةِ في قولِ الحق',en:'He combined knowledge, worship, and courage in speaking truth'},c:true,exp:{ar:'نعم! العالمُ الحقُّ يجمعُ بين العلمِ والعملِ والشجاعة.',en:'Yes! A true scholar combines knowledge, action, and courage.'} },
+            { t:{ar:'اكتفى بالعلمِ فقط',en:'He only had knowledge'},c:false,exp:{ar:'لا، بل كان عابداً شجاعاً أيضاً.',en:'No — he was also a worshipper and courageous.'} },
+            { t:{ar:'تركَ العبادة',en:'He abandoned worship'},c:false,exp:{ar:'لا، بل كان كثيرَ العبادة.',en:'No — he worshipped much.'} },
+          ] } },
+    ],
+    quiz:[
+      { q:{ar:'كيف كان النسائيُّ في عبادتِه؟',en:'How was an-Nasa\u2019i in his worship?'},
+        opts:[ {t:{ar:'كثيرَ الصلاةِ والصيام',en:'He prayed and fasted much'},c:true}, {t:{ar:'تاركاً لها',en:'He abandoned it'},c:false}, {t:{ar:'غافلاً',en:'Heedless'},c:false} ] },
+      { q:{ar:'ماذا حدثَ له حين قالَ الحقَّ في فضلِ عليّ؟',en:'What happened when he spoke the truth about Ali\u2019s merit?'},
+        opts:[ {t:{ar:'آذاه الظالمونَ فصبرَ ولم يتراجعْ',en:'Wrongdoers harmed him; he was patient and didn\u2019t retreat'},c:true}, {t:{ar:'تراجعَ خوفاً',en:'He retreated in fear'},c:false}, {t:{ar:'سكتَ',en:'He stayed silent'},c:false} ] },
+      { q:{ar:'ما الدرسُ من حياةِ النسائي؟',en:'What is the lesson from an-Nasa\u2019i\u2019s life?'},
+        opts:[ {t:{ar:'العالمُ الحقُّ يجمعُ العلمَ والعبادةَ والشجاعة',en:'A true scholar combines knowledge, worship, and courage'},c:true}, {t:{ar:'العلمُ يكفي وحدَه',en:'Knowledge alone suffices'},c:false}, {t:{ar:'السكوتُ عن الحقّ',en:'Staying silent about the truth'},c:false} ] },
+    ],
+    moral:{ar:'العالمُ الحقُّ يجمعُ بين العلمِ والعبادةِ والشجاعةِ في قولِ الحق، ويصبرُ على ما يصيبُه في سبيلِ ذلك.',en:'A true scholar combines knowledge, worship, and courage in speaking the truth, and is patient with what befalls him for its sake.'},
+    badge:{icon:'🌙',title:{ar:'وِسامُ العلمِ والعبادةِ والشجاعة',en:'Badge of Knowledge, Worship & Courage'}},
+    reflect:[ {ar:'هل تجمعُ بين تعلّمِك وعبادتِك لله؟',en:'Do you combine your learning with your worship of Allah?'}, {ar:'هل تقولُ الحقَّ بشجاعةٍ وأدبٍ ولو كان صعباً؟',en:'Do you speak the truth with courage and courtesy even if it is hard?'} ],
+    didYouKnow:[ {ar:'كان النسائيُّ يصومُ صيامَ داودَ عليه السلام (يوماً ويُفطِرُ يوماً) ويُكثِرُ العبادة — المصدر: سير أعلام النبلاء',en:'An-Nasa\u2019i would fast the fast of Dawud (one day on, one day off) and worship abundantly — Source: Siyar A\u2019lam an-Nubala\u2019'}, {ar:'ألّفَ النسائيُّ كتاباً في فضائلِ الصحابةِ ومنهم عليُّ بنُ أبي طالبٍ رضي الله عنه — المصدر: البداية والنهاية',en:'An-Nasa\u2019i authored a book on the virtues of the companions, including Ali ibn Abi Talib (may Allah be pleased with him) — Source: Al-Bidaya wa an-Nihaya'} ],
+  },
+];

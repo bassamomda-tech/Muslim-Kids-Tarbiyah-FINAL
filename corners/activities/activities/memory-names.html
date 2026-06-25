@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>ذاكرة الأسماء الحسنى · أنوس</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+
+<link rel="stylesheet" href="../styles/tokens.css" />
+<link rel="stylesheet" href="../styles/dashboard.css" />
+<link rel="stylesheet" href="../styles/wheel.css" />
+<link rel="stylesheet" href="../styles/memory.css" />
+</head>
+<body>
+
+<div class="bg-decor" aria-hidden="true"></div>
+
+<div class="activity-shell">
+
+  <nav class="activity-nav">
+    <a class="back-link" href="../dashboard.html">
+      الرجوع للوحة الأنشطة
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg>
+    </a>
+
+    <div class="activity-crumb">
+      <span>العبادات والإيمان</span>
+      <span class="sep">/</span>
+      <span class="cur">ذاكرة الأسماء الحسنى</span>
+    </div>
+
+    <div class="activity-actions">
+      <button class="icon-btn" id="reset-btn" title="إعادة الضبط" aria-label="إعادة الضبط">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 3-6.7L3 8"/><path d="M3 3v5h5"/></svg>
+      </button>
+    </div>
+  </nav>
+
+  <div class="activity-layout">
+
+    <!-- ============ لوحة الذاكرة ============ -->
+    <section class="memory-panel">
+      <header class="wheel-header">
+        <span class="activity-tag">Activity 02 · Card Flip Engine</span>
+        <h1 class="activity-title">ذاكرة الأسماء الحسنى</h1>
+        <p class="activity-desc">
+          اقلِب البطاقتين معاً وتذكَّر مواقعها. طابِق بين كل اسمين متماثلين
+          من أسماء الله الحسنى. أكمل الثمانية مطابقات بأقل عدد من الحركات!
+        </p>
+      </header>
+
+      <div class="memory-board" id="memory-board" aria-label="لوحة البطاقات"></div>
+
+      <div class="memory-stats-bar">
+        <div class="wheel-stat">
+          الحركات
+          <strong id="stat-moves">0</strong>
+        </div>
+        <div class="wheel-stat" style="text-align:center;">
+          المطابقات
+          <strong id="stat-matches">0/8</strong>
+        </div>
+        <div class="wheel-stat" style="text-align:center;">
+          الوقت
+          <strong id="stat-time">0:00</strong>
+        </div>
+        <button class="wheel-mute-toggle" id="mute-btn" aria-pressed="false">
+          <span class="mute-icon"></span>
+          <span class="mute-label">كتم الصوت</span>
+        </button>
+      </div>
+    </section>
+
+    <!-- ============ اللوحة الجانبية ============ -->
+    <aside class="side-panel">
+
+      <div class="panel-card">
+        <div class="panel-head">
+          <h3>أفضل نتيجة</h3>
+          <span class="pill">Personal Best</span>
+        </div>
+        <div class="ring-row">
+          <div class="ring" style="--pct:100;background:  conic-gradient(var(--gold) 100%, var(--bg-soft) 0);">
+            <span style="color:var(--gold);">★</span>
+          </div>
+          <div class="ring-meta">
+            <strong id="stat-best">—</strong>
+            استمر، كل جولة تُحسّن ذاكرتك! حاول أن تطابق<br/> الثمانية في أقل من 16 حركة.
+          </div>
+        </div>
+        <button class="replay-btn" id="replay-btn">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 3-6.7L3 8"/><path d="M3 3v5h5"/></svg>
+          جولة جديدة
+        </button>
+      </div>
+
+      <div class="panel-card">
+        <div class="panel-head">
+          <h3>الأسماء المُكتشفة</h3>
+          <span class="pill">8 أسماء</span>
+        </div>
+        <div class="names-list" id="names-list"></div>
+        <div class="tip-card" style="margin-top: var(--s-4);">
+          <span class="tip-icon">!</span>
+          <span>أسماء الله الحسنى تسعة وتسعون اسماً. هذه ثمانية منها فقط — كلما تطابقتْ، اقرأ معناها وتأمّله.</span>
+        </div>
+      </div>
+
+    </aside>
+  </div>
+</div>
+
+<!-- ============ مودال الفوز ============ -->
+<div class="modal-backdrop" id="win-modal" role="dialog" aria-modal="true">
+  <div class="modal">
+    <button class="modal-close" data-close aria-label="إغلاق">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M6 6l12 12M18 6l-12 12"/></svg>
+    </button>
+
+    <div class="modal-deco" aria-hidden="true">
+      <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M12 2l2.4 6.6L21 9l-5 4.6L17.2 21 12 17.4 6.8 21 8 13.6 3 9l6.6-.4z"/>
+      </svg>
+    </div>
+
+    <div class="modal-eyebrow" id="win-record" style="color: var(--gold); display:none;">★ رقم قياسي جديد ★</div>
+    <h2 class="modal-title">أحسنت! أكملتَ المطابقات الثمانية</h2>
+
+    <div class="modal-meaning" style="text-align:right; display:grid; grid-template-columns:1fr 1fr; gap:var(--s-2);">
+      <div><strong>هذه الجولة</strong>
+        <span id="win-moves">0</span> حركة · <span id="win-time">0:00</span>
+      </div>
+      <div><strong>أفضل نتيجة</strong>
+        <span id="win-best-moves">0</span> حركة · <span id="win-best-time">0:00</span>
+      </div>
+    </div>
+
+    <div class="modal-actions">
+      <button class="btn-ghost" data-close id="win-dismiss">انتهيت</button>
+      <button class="btn-primary" id="win-replay">جولة جديدة</button>
+    </div>
+  </div>
+</div>
+
+<div class="particles" id="particles" aria-hidden="true"></div>
+
+<script src="../scripts/activity-common.js"></script>
+<script src="../scripts/memory.js"></script>
+
+<script>
+window.PAGE_DICT = {
+  "ذاكرة الأسماء الحسنى": "Memory of the Beautiful Names",
+  "اقلِب البطاقتين معاً وتذكَّر مواقعها. طابِق بين كل اسمين متماثلين من أسماء الله الحسنى. أكمل الثمانية مطابقات بأقل عدد من الحركات!": "Flip two cards and remember their positions. Match each pair of identical Names of Allah. Complete all eight matches in the fewest moves!",
+  "لوحة البطاقات": "Cards board",
+  "الحركات": "Moves",
+  "المطابقات": "Matches",
+  "أفضل نتيجة": "Best score",
+  "استمر، كل جولة تُحسّن ذاكرتك! حاول أن تطابق الثمانية في أقل من 16 حركة.": "Keep going — every round sharpens your memory! Try to match all eight in fewer than 16 moves.",
+  "الأسماء المُكتشفة": "Names discovered",
+  "8 أسماء": "8 names",
+  "أسماء الله الحسنى تسعة وتسعون اسماً. هذه ثمانية منها فقط — كلما تطابقتْ، اقرأ معناها وتأمّله.": "Allah has ninety-nine Beautiful Names. These are just eight of them — each time you match a pair, read its meaning and reflect on it.",
+  "أحسنت! أكملتَ المطابقات الثمانية": "Well done! You completed all eight matches",
+  "هذه الجولة": "This round",
+  "حركة": "moves"
+};
+</script>
+<script>
+Object.assign(window.PAGE_DICT, {
+  "الواسع الرحمة بجميع الخلائق": "The Most Merciful, whose mercy embraces all creation",
+  "الذي يرحم المؤمنين خاصة": "The One especially merciful to the believers",
+  "المالك لكل شيء، المُتصرّف فيه": "The Owner of all things, who governs them",
+  "الطاهر المنزّه عن كل نقص": "The Pure One, free of every imperfection",
+  "السالم من كل عيب، المُسلِّم عباده": "The Flawless One, who grants safety to His servants",
+  "كثير الخير والعطاء بلا حدّ": "The Generous, abundant in good and giving without limit",
+  "الذي يستر الذنوب ويعفو عن العباد": "The One who conceals sins and pardons His servants",
+  "المُحِبّ لعباده الصالحين": "The Loving, who loves His righteous servants"
+});
+</script>
+<script src="../scripts/i18n.js"></script>
+<script src="../../shared/nav-fix.js"></script>
+</body>
+</html>

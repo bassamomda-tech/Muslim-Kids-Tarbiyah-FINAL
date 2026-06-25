@@ -1,0 +1,106 @@
+/* ════════════════════════════════════════════════════════════════
+   posters.css — decorative, print-ready wall posters for «بوسترات
+   البيت المسلم». Full A4 pages, bold themed designs, one poster per
+   page. Reuses the house navy+gold palette but each poster carries
+   its own accent. Print: one poster per sheet, edge-to-edge colour.
+   ════════════════════════════════════════════════════════════════ */
+:root{
+  --navy:#0A2540; --gold:#C9A227; --gold-d:#a9851a; --gold-l:#F5CC5A;
+  --ink:#1c2a36; --paper:#fff;
+}
+*{box-sizing:border-box}
+html{background:#e7e2d4}
+body{margin:0;color:var(--ink);font-family:'Tajawal','Nunito',sans-serif;direction:rtl}
+html[dir="ltr"] body{direction:ltr;font-family:'Nunito','Tajawal',sans-serif}
+.en-only{display:none}
+html[dir="ltr"] .en-only{display:inline}
+html[dir="ltr"] .ar-only{display:none}
+
+/* toolbar (shared look) */
+.toolbar{position:fixed;top:12px;inset-inline-end:12px;z-index:50;display:flex;gap:.5rem}
+.toolbar button{background:var(--navy);color:var(--gold-l);border:1.5px solid var(--gold);border-radius:2rem;
+  padding:.5rem 1.1rem;font-weight:800;font-family:inherit;font-size:.86rem;cursor:pointer;box-shadow:0 6px 18px rgba(0,0,0,.22)}
+.toolbar button.prim{background:linear-gradient(135deg,var(--gold),var(--gold-d));color:#10243d;border-color:transparent}
+.toolbar .seg{display:flex;border:1.5px solid var(--gold);border-radius:2rem;overflow:hidden;background:var(--navy)}
+.toolbar .seg button{border:none;border-radius:0;box-shadow:none;background:transparent;color:#f0ead6;padding:.5rem .9rem}
+.toolbar .seg button.on{background:var(--gold);color:#10243d}
+
+/* poster sheet — full A4, edge-to-edge themed background */
+.poster{width:794px;height:1123px;margin:20px auto;position:relative;overflow:hidden;
+  box-shadow:0 10px 34px rgba(0,0,0,.22);display:flex;flex-direction:column;
+  background:var(--pbg,#fff);color:var(--pink,#1c2a36)}
+.poster *{position:relative}
+
+/* decorative arabesque corners + frame */
+.poster .frame{position:absolute;inset:26px;border:3px solid var(--pacc,#C9A227);border-radius:18px;pointer-events:none;z-index:1}
+.poster .frame::before{content:'';position:absolute;inset:9px;border:1.5px solid var(--pacc,#C9A227);opacity:.5;border-radius:11px}
+.poster .corner{position:absolute;width:62px;height:62px;z-index:2;opacity:.9}
+.poster .corner svg{width:100%;height:100%}
+.poster .c-tr{top:14px;inset-inline-end:14px}
+.poster .c-tl{top:14px;inset-inline-start:14px;transform:scaleX(-1)}
+.poster .c-br{bottom:14px;inset-inline-end:14px;transform:scaleY(-1)}
+.poster .c-bl{bottom:14px;inset-inline-start:14px;transform:scale(-1,-1)}
+
+/* header */
+.poster .p-head{padding:58px 64px 0;text-align:center;z-index:3}
+.poster .p-badge{display:inline-flex;align-items:center;gap:.5rem;background:var(--pacc,#C9A227);color:var(--pbadge,#10243d);
+  font-weight:800;font-size:.84rem;letter-spacing:.5px;padding:.32rem 1.1rem;border-radius:2rem;margin-bottom:1rem}
+.poster .p-ic{font-size:3.4rem;line-height:1;margin-bottom:.5rem;filter:drop-shadow(0 3px 5px rgba(0,0,0,.18))}
+.poster .p-title{font-size:2.6rem;font-weight:900;line-height:1.15;margin:0;color:var(--ptitle,#0A2540)}
+.poster .p-sub{font-size:1.05rem;font-weight:700;margin-top:.5rem;color:var(--psub,#5a6a78)}
+.poster .p-rule{width:120px;height:4px;background:var(--pacc,#C9A227);border-radius:3px;margin:1.1rem auto 0}
+
+/* body */
+.poster .p-body{flex:1;padding:30px 60px 36px;z-index:3;display:flex;flex-direction:column;justify-content:center}
+
+/* numbered rules list */
+.rules{display:flex;flex-direction:column;gap:.62rem}
+.rule{display:flex;align-items:center;gap:1rem;background:var(--pcard,rgba(255,255,255,.72));border:1.5px solid var(--pline,rgba(10,37,64,.1));
+  border-radius:.85rem;padding:.72rem 1rem;box-shadow:0 2px 8px rgba(0,0,0,.04)}
+.rule .r-n{flex:0 0 auto;width:2.3rem;height:2.3rem;border-radius:.6rem;background:var(--pacc,#C9A227);color:var(--pbadge,#10243d);
+  display:grid;place-items:center;font-weight:900;font-size:1.1rem}
+.rule .r-ic{font-size:1.5rem;flex:0 0 auto}
+.rule .r-tx{flex:1}
+.rule .r-main{font-size:1.12rem;font-weight:800;line-height:1.35;color:var(--ptitle,#0A2540)}
+.rule .r-sub{font-size:.82rem;font-weight:600;color:var(--psub,#5a6a78);margin-top:.12rem;line-height:1.4}
+
+/* big two-column grid variant (manners / words) */
+.pgrid{display:grid;grid-template-columns:1fr 1fr;gap:.7rem}
+.pcell{background:var(--pcard,rgba(255,255,255,.72));border:1.5px solid var(--pline,rgba(10,37,64,.1));border-radius:.85rem;
+  padding:.85rem .9rem;text-align:center;box-shadow:0 2px 8px rgba(0,0,0,.04)}
+.pcell .pc-ic{font-size:2rem;line-height:1}
+.pcell .pc-main{font-size:1.08rem;font-weight:800;margin-top:.35rem;color:var(--ptitle,#0A2540)}
+.pcell .pc-sub{font-size:.78rem;font-weight:600;color:var(--psub,#5a6a78);margin-top:.18rem;line-height:1.4}
+
+/* routine timeline */
+.timeline{display:flex;flex-direction:column;gap:.5rem}
+.tl{display:flex;align-items:center;gap:.9rem;background:var(--pcard,rgba(255,255,255,.72));border:1.5px solid var(--pline,rgba(10,37,64,.1));
+  border-radius:.8rem;padding:.6rem .9rem}
+.tl .tl-time{flex:0 0 auto;min-width:84px;font-weight:900;color:var(--pacc,#a9851a);font-size:.92rem;text-align:center}
+.tl .tl-ic{font-size:1.5rem;flex:0 0 auto}
+.tl .tl-tx{flex:1;font-size:1rem;font-weight:700;color:var(--ptitle,#0A2540);line-height:1.35}
+
+/* charter / pledge lines */
+.pledge{display:flex;flex-direction:column;gap:.55rem}
+.pl{display:flex;align-items:flex-start;gap:.7rem;font-size:1.06rem;font-weight:700;line-height:1.5;color:var(--ptitle,#0A2540);
+  background:var(--pcard,rgba(255,255,255,.6));border-inline-start:4px solid var(--pacc,#C9A227);border-radius:.5rem;padding:.55rem .85rem}
+.pl .pl-ic{flex:0 0 auto;color:var(--pacc,#a9851a);font-size:1.15rem}
+
+/* footer ayah / hadith strip */
+.poster .p-foot{margin:0 60px 30px;z-index:3;background:var(--pfoot,rgba(10,37,64,.92));color:#fff;border-radius:.9rem;
+  padding:.85rem 1.2rem;text-align:center}
+.poster .p-foot .pf-tx{font-size:1.02rem;font-weight:700;line-height:1.7}
+.poster .p-foot .pf-ref{font-size:.78rem;font-weight:700;color:var(--gold-l);margin-top:.25rem}
+.poster .p-sign{position:absolute;bottom:34px;inset-inline-start:0;width:100%;text-align:center;font-size:.72rem;
+  font-weight:700;color:var(--psub,#5a6a78);opacity:.8;z-index:3}
+
+/* faint background motif */
+.poster .motif{position:absolute;inset:0;z-index:0;opacity:var(--pmotif,.05);pointer-events:none}
+.poster .motif svg{width:100%;height:100%}
+
+@media print{
+  @page{size:A4;margin:0}
+  html,body{background:#fff}
+  .toolbar{display:none!important}
+  .poster{margin:0;box-shadow:none;page-break-after:always;width:210mm;height:297mm}
+}

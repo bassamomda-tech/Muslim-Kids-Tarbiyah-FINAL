@@ -1,0 +1,182 @@
+/* ============================================================
+   WORD SEARCH — شبكة البحث عن الكلمات
+   ============================================================ */
+
+.ws-panel {
+  background:
+    radial-gradient(140% 80% at 50% 0%, rgba(205,235,215,0.35), transparent 60%),
+    var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--r-2xl);
+  padding: var(--s-8);
+  display: flex; flex-direction: column;
+  box-shadow: var(--shadow-card);
+}
+.ws-panel .activity-tag { background: var(--mint); color: var(--mint-ink); }
+.ws-panel .activity-tag::before { background: var(--mint-ink); }
+
+/* HUD */
+.ws-hud {
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--s-3);
+  margin-bottom: var(--s-4);
+}
+.ws-hud .hud-block {
+  background: var(--bg-soft); border: 1px solid var(--line);
+  border-radius: var(--r-md); padding: 10px 14px;
+  display: flex; flex-direction: column; gap: 2px;
+  font-size: 11px; color: var(--muted); font-weight: 600;
+}
+.ws-hud .hud-block strong {
+  font-size: 20px; color: var(--ink);
+  font-family: var(--font-en); font-weight: 800;
+}
+
+/* ============ شبكة الحروف ============ */
+.ws-grid-wrap {
+  position: relative;
+  background: linear-gradient(135deg, #F7FBF4 0%, #E8F2E2 100%);
+  border: 1px solid var(--line);
+  border-radius: var(--r-xl);
+  padding: var(--s-4);
+  display: grid; place-items: center;
+  flex-grow: 1;
+  margin-bottom: var(--s-4);
+  min-height: 420px;
+}
+.ws-grid {
+  display: grid;
+  gap: 4px;
+  user-select: none;
+  touch-action: none;
+}
+.ws-cell {
+  width: 42px;
+  height: 42px;
+  background: var(--surface);
+  border: 1.5px solid var(--line);
+  border-radius: 10px;
+  display: grid; place-items: center;
+  font-family: var(--font-ar);
+  font-size: 20px;
+  font-weight: 800;
+  color: var(--ink);
+  cursor: pointer;
+  transition: background 0.15s ease, border-color 0.15s ease, transform 0.1s ease;
+  unicode-bidi: isolate;
+  position: relative;
+}
+.ws-cell:hover { background: var(--brand-soft); }
+.ws-cell.selecting {
+  background: var(--mint);
+  border-color: var(--mint-ink);
+  color: var(--mint-ink);
+  transform: scale(1.05);
+  z-index: 2;
+}
+.ws-cell.found {
+  background: var(--mint);
+  border-color: var(--mint-ink);
+  color: var(--mint-ink);
+  font-weight: 900;
+}
+.ws-cell.found.color-2 { background: #FFD9C2; border-color: #B5612A; color: #B5612A; }
+.ws-cell.found.color-3 { background: #E0D5F2; border-color: #5A3F94; color: #5A3F94; }
+.ws-cell.found.color-4 { background: #CFE3F2; border-color: #2E5F8A; color: #2E5F8A; }
+.ws-cell.found.color-5 { background: #FFE9A8; border-color: #8A6510; color: #8A6510; }
+.ws-cell.found.color-6 { background: #E8A5A5; border-color: #7A2F2F; color: #7A2F2F; }
+.ws-cell.found.color-7 { background: #DCE9DC; border-color: #2E4A3F; color: #2E4A3F; }
+.ws-cell.found.color-8 { background: #FFCFB0; border-color: #7A2F1A; color: #7A2F1A; }
+.ws-cell.hinted {
+  animation: ws-hint 1.4s ease-in-out 3;
+}
+@keyframes ws-hint {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(201,169,97,0.7); }
+  50%      { box-shadow: 0 0 0 12px rgba(201,169,97,0); }
+}
+
+/* ============ قائمة الكلمات ============ */
+.ws-words-bar {
+  display: flex; flex-wrap: wrap; gap: 8px;
+  margin-bottom: var(--s-4);
+  padding: var(--s-3) var(--s-4);
+  background: var(--surface-2);
+  border: 1px dashed var(--gold);
+  border-radius: var(--r-lg);
+}
+.ws-word-chip {
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 8px 14px;
+  background: var(--surface);
+  border: 1.5px solid var(--line);
+  border-radius: var(--r-pill);
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--ink);
+}
+.ws-word-chip.found {
+  background: var(--mint);
+  border-color: var(--mint-ink);
+  color: var(--mint-ink);
+  text-decoration: line-through;
+  text-decoration-thickness: 2px;
+  text-decoration-color: rgba(47,122,82,0.4);
+  animation: rec-pop 0.5s cubic-bezier(0.2, 1.6, 0.4, 1);
+}
+.ws-word-chip .meta {
+  font-size: 10px;
+  color: var(--muted);
+  font-weight: 600;
+  font-family: var(--font-en);
+}
+.ws-word-chip.found .meta { color: var(--mint-ink); }
+.ws-word-chip.found .check {
+  display: inline-flex !important;
+}
+.ws-word-chip .check {
+  display: none;
+  width: 18px; height: 18px;
+  border-radius: 50%;
+  background: var(--mint-ink);
+  color: #fff;
+  align-items: center; justify-content: center;
+}
+
+/* أدوات */
+.ws-tools {
+  display: flex; gap: 8px; flex-wrap: wrap; align-items: center;
+}
+.ws-btn {
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 10px 16px;
+  border-radius: var(--r-pill);
+  font-size: 13px; font-weight: 700;
+  border: 1px solid var(--line);
+  background: var(--surface);
+  color: var(--ink-2);
+}
+.ws-btn:hover { background: var(--bg-soft); }
+.ws-btn.primary { background: var(--ink); color: #FBF6EC; border-color: var(--ink); }
+.ws-btn.warning { background: var(--butter); color: var(--butter-ink); border-color: rgba(138,101,16,0.2); }
+
+/* لوحة المعلومات */
+.ws-info {
+  background: var(--bg-soft);
+  border-radius: var(--r-md);
+  padding: var(--s-3);
+  font-size: 12px;
+  color: var(--ink-2);
+  line-height: 1.6;
+}
+.ws-info strong { color: var(--ink); display: block; margin-bottom: 4px; }
+
+/* علم النصر — يمتد على الكلمة المُعثَر عليها */
+.ws-overlay-line {
+  position: absolute;
+  height: 8px;
+  background: rgba(47,122,82,0.25);
+  border: 1px solid rgba(47,122,82,0.45);
+  border-radius: 4px;
+  pointer-events: none;
+  transform-origin: right center;
+  z-index: 1;
+}

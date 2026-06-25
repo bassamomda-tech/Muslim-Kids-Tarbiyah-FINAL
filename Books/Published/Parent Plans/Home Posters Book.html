@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>بوسترات البيت المسلم — جاهزة للطباعة | Muslim Home Posters</title>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&family=Nunito:wght@400;600;700;800;900&display=swap">
+<link rel="stylesheet" href="posters/posters.css">
+</head>
+<body dir="rtl">
+<div class="toolbar">
+  <div class="seg">
+    <button id="segAr" class="on" onclick="setLang('ar')">عربي</button>
+    <button id="segEn" onclick="setLang('en')">EN</button>
+  </div>
+  <button class="prim" onclick="window.print()">🖨️ <span class="ar-only">طباعة البوسترات</span><span class="en-only">Print posters</span></button>
+</div>
+<div id="book"></div>
+
+<script>
+window.POSTERS = [
+  { id:'house', layout:'rules',
+    theme:{bg:'linear-gradient(160deg,#fdfaf0,#f6edd6)', acc:'#C9A227', badge:'#10243d', title:'#0A2540', sub:'#7a6a3a', card:'#fffdf6', line:'rgba(169,133,26,.22)', foot:'rgba(10,37,64,.93)', motif:.05},
+    badge:{ar:'بيتُنا المسلم', en:'Our Muslim Home'}, ic:'🏡', title:{ar:'قواعدُ بيتِنا', en:'Our House Rules'},
+    sub:{ar:'في بيتِنا نحيا بهذه القواعدِ الجميلة', en:'In our home we live by these beautiful rules'},
+    items:[
+      {ic:'🕌', main:{ar:'نُصلّي في وقتِها', en:'We pray on time'}, sub:{ar:'الصلاةُ أوّلُ ما نهتمُّ به', en:'Prayer comes first'}},
+      {ic:'🤲', main:{ar:'نبدأ بالبسملةِ ونحمدُ الله', en:'We start with Bismillah & thank Allah'}, sub:{ar:'في الطعامِ والعملِ وكلِّ أمر', en:'In eating, work & everything'}},
+      {ic:'💬', main:{ar:'نتكلّم بلطفٍ ولا نرفع أصواتَنا', en:'We speak kindly & don\u2019t raise our voices'}, sub:{ar:'الكلمةُ الطيّبةُ صدقة', en:'A kind word is charity'}},
+      {ic:'🤝', main:{ar:'نتعاونُ ونساعدُ بعضَنا', en:'We cooperate & help one another'}, sub:{ar:'يدٌ واحدةٌ لا تصفّق', en:'One hand alone can\u2019t clap'}},
+      {ic:'🙏', main:{ar:'نقول: من فضلك · شكرًا · آسف', en:'We say: please · thank you · sorry'}, sub:{ar:'أدبُنا عنوانُنا', en:'Our manners are our badge'}},
+      {ic:'🧹', main:{ar:'نرتّب أغراضَنا ونحافظ على النظافة', en:'We tidy our things & stay clean'}, sub:{ar:'النظافةُ من الإيمان', en:'Cleanliness is of faith'}},
+      {ic:'📵', main:{ar:'للشاشةِ وقتٌ، وللأسرةِ وقتٌ أهمّ', en:'Screens have a time; family has a greater one'}, sub:{ar:'نجلس معًا كلَّ يوم', en:'We sit together every day'}},
+      {ic:'❤️', main:{ar:'نعتذرُ ونسامحُ ولا نُبيّت غضبًا', en:'We apologize, forgive & hold no grudge'}, sub:{ar:'القلوبُ الصافيةُ تسكن هنا', en:'Pure hearts dwell here'}},
+    ],
+    foot:{tx:{ar:'«وقولوا للناسِ حُسنًا»', en:'\u201cAnd speak to people kindly.\u201d'}, ref:{ar:'البقرة ٨٣', en:'al-Baqarah 83'}},
+  },
+  { id:'parent', layout:'rules',
+    theme:{bg:'linear-gradient(160deg,#eef5f3,#dcebe5)', acc:'#1A9B7B', badge:'#fff', title:'#0d3b30', sub:'#4a7163', card:'#fbfffd', line:'rgba(26,155,123,.2)', foot:'rgba(13,59,48,.94)', motif:.05},
+    badge:{ar:'دليلُ المربّي', en:'The Educator\u2019s Code'}, ic:'🧭', title:{ar:'قواعدُ التربية', en:'Our Parenting Rules'},
+    sub:{ar:'عهدٌ نلتزمه نحن الوالدَين', en:'A pledge we, the parents, keep'},
+    items:[
+      {ic:'🧎', main:{ar:'نكون قدوةً قبل أن نأمر', en:'We model before we command'}, sub:{ar:'الطفلُ يقلّد ما يرى لا ما يُقال', en:'A child copies what he sees'}},
+      {ic:'❤️', main:{ar:'نربط القلبَ قبل أن نوجّه السلوك', en:'We connect the heart before correcting'}, sub:{ar:'الحبُّ أوّلًا، ثمّ التوجيه', en:'Love first, then guidance'}},
+      {ic:'👂', main:{ar:'نُنصت أكثرَ ممّا نحاضر', en:'We listen more than we lecture'}, sub:{ar:'المسموعُ لا يبحث عن أذنٍ خارج البيت', en:'The heard child seeks no ear outside'}},
+      {ic:'⚖️', main:{ar:'نعدل بين أبنائنا ولا نقارن', en:'We are just & never compare'}, sub:{ar:'«اعدِلوا بين أولادكم»', en:'\u201cBe just between your children\u201d'}},
+      {ic:'🌿', main:{ar:'نرفق ولا نقسو، ونحزم ولا نسيّب', en:'Gentle not harsh, firm not lax'}, sub:{ar:'«ما كان الرفقُ في شيءٍ إلّا زانه»', en:'Gentleness beautifies everything'}},
+      {ic:'🗣️', main:{ar:'نصحّح الخطأَ لا نجرح الطفل', en:'We fix the act, not wound the child'}, sub:{ar:'نعالج السلوكَ بلا تحقير', en:'Correct behaviour without belittling'}},
+      {ic:'🤲', main:{ar:'ندعو لأبنائنا ولا ندعو عليهم', en:'We pray for our children, never against'}, sub:{ar:'دعوةُ الوالدِ مستجابة', en:'A parent\u2019s du\u2019a is answered'}},
+      {ic:'⏳', main:{ar:'نمنحهم وقتًا لا تكفي عنه الهدايا', en:'We give them time no gift replaces'}, sub:{ar:'وقتُك هو حبُّك المترجَم', en:'Your time is your love made visible'}},
+    ],
+    foot:{tx:{ar:'«كلُّكم راعٍ وكلُّكم مسؤولٌ عن رعيّته»', en:'\u201cEach of you is a shepherd, responsible for his flock.\u201d'}, ref:{ar:'متفق عليه', en:'Bukhari & Muslim'}},
+  },
+  { id:'manners', layout:'grid',
+    theme:{bg:'linear-gradient(160deg,#f2eefb,#e4dbf6)', acc:'#8E44AD', badge:'#fff', title:'#3d1d5a', sub:'#6b4e87', card:'#fdfbff', line:'rgba(142,68,173,.18)', foot:'rgba(61,29,90,.94)', motif:.06},
+    badge:{ar:'أخلاقُنا الجميلة', en:'Our Beautiful Manners'}, ic:'🌸', title:{ar:'أخلاقُنا في البيت', en:'Our Manners at Home'},
+    sub:{ar:'هكذا يكون الطفلُ المسلمُ المؤدّب', en:'This is the well-mannered Muslim child'},
+    items:[
+      {ic:'😊', main:{ar:'الصدق', en:'Truthfulness'}, sub:{ar:'أقول الحقَّ دائمًا', en:'I always tell the truth'}},
+      {ic:'🤝', main:{ar:'الأمانة', en:'Trustworthiness'}, sub:{ar:'أحفظ ما اؤتُمنت عليه', en:'I guard what I\u2019m entrusted'}},
+      {ic:'🫶', main:{ar:'الرحمة', en:'Mercy'}, sub:{ar:'أرفق بالصغيرِ والكبير', en:'I\u2019m gentle to small & old'}},
+      {ic:'🎁', main:{ar:'الكرم', en:'Generosity'}, sub:{ar:'أشارك ولا أبخل', en:'I share & am not stingy'}},
+      {ic:'🙇', main:{ar:'التواضع', en:'Humility'}, sub:{ar:'لا أتكبّر على أحد', en:'I\u2019m never arrogant'}},
+      {ic:'😌', main:{ar:'الصبر', en:'Patience'}, sub:{ar:'أتحمّل ولا أغضب بسرعة', en:'I bear & don\u2019t anger fast'}},
+      {ic:'👋', main:{ar:'إلقاء السلام', en:'Greeting'}, sub:{ar:'أبدأ بالسلامِ والابتسامة', en:'I start with salam & a smile'}},
+      {ic:'👵', main:{ar:'برُّ الوالدين', en:'Honouring parents'}, sub:{ar:'أطيعهما وأخدمهما', en:'I obey & serve them'}},
+    ],
+    foot:{tx:{ar:'«إنّما بُعثتُ لأُتمّمَ مكارمَ الأخلاق»', en:'\u201cI was sent only to perfect noble character.\u201d'}, ref:{ar:'أحمد', en:'Ahmad'}},
+  },
+  { id:'routine', layout:'timeline',
+    theme:{bg:'linear-gradient(160deg,#eaf3fb,#d6e8f7)', acc:'#2E86DE', badge:'#fff', title:'#0e3a63', sub:'#4a6e90', card:'#fbfdff', line:'rgba(46,134,222,.18)', foot:'rgba(14,58,99,.94)', motif:.05},
+    badge:{ar:'يومي المبارك', en:'My Blessed Day'}, ic:'🌅', title:{ar:'روتيني اليوميّ', en:'My Daily Routine'},
+    sub:{ar:'يومٌ منظّمٌ يبدأ وينتهي مع الله', en:'An ordered day that starts & ends with Allah'},
+    items:[
+      {time:{ar:'الفجر', en:'Fajr'}, ic:'🕌', tx:{ar:'أستيقظ، أصلّي الفجر، أذكارُ الصباح', en:'I wake, pray Fajr & read morning adhkar'}},
+      {time:{ar:'الصباح', en:'Morning'}, ic:'🪥', tx:{ar:'أرتّب سريري، أنظّف أسناني، أُفطر بالبسملة', en:'I make my bed, brush my teeth & eat with Bismillah'}},
+      {time:{ar:'النهار', en:'Daytime'}, ic:'📚', tx:{ar:'أتعلّم وأذاكر، وأحفظ وِردي من القرآن', en:'I learn & study, & memorize my Qur\u2019an portion'}},
+      {time:{ar:'الظهر/العصر', en:'Dhuhr/\u2018Asr'}, ic:'🤲', tx:{ar:'أصلّي في وقتها، وأساعد في البيت', en:'I pray on time & help at home'}},
+      {time:{ar:'المغرب', en:'Maghrib'}, ic:'👨‍👩‍👧', tx:{ar:'أصلّي، ونجلس معًا أسرةً واحدة', en:'I pray & we sit together as one family'}},
+      {time:{ar:'العشاء', en:'\u2018Isha'}, ic:'📖', tx:{ar:'أصلّي، أقرأ، وأراجع ما حفظت', en:'I pray, read & review what I memorized'}},
+      {time:{ar:'النوم', en:'Sleep'}, ic:'🌙', tx:{ar:'أذكارُ النوم، وأنام مبكّرًا على طُهر', en:'Sleep adhkar, & I sleep early in purity'}},
+    ],
+    foot:{tx:{ar:'«واذكُر ربَّك في نفسِك تضرّعًا وخيفةً بالغُدوِّ والآصال»', en:'\u201cRemember your Lord within yourself, morning & evening.\u201d'}, ref:{ar:'الأعراف ٢٠٥', en:'al-A\u2019raf 205'}},
+  },
+  { id:'words', layout:'grid',
+    theme:{bg:'linear-gradient(160deg,#fdeef0,#f8dce1)', acc:'#C0392B', badge:'#fff', title:'#6e1f1a', sub:'#9a5450', card:'#fffafa', line:'rgba(192,57,43,.16)', foot:'rgba(110,31,26,.94)', motif:.05},
+    badge:{ar:'كلماتٌ تفتح القلوب', en:'Words That Open Hearts'}, ic:'💗', title:{ar:'كلماتُنا الجميلة', en:'Our Beautiful Words'},
+    sub:{ar:'كلماتٌ نقولها كلَّ يومٍ في بيتنا', en:'Words we say every day in our home'},
+    items:[
+      {ic:'🌟', main:{ar:'بسم الله', en:'Bismillah'}, sub:{ar:'قبل كلِّ عمل', en:'Before everything'}},
+      {ic:'🤲', main:{ar:'الحمد لله', en:'Alhamdulillah'}, sub:{ar:'على كلِّ نعمة', en:'For every blessing'}},
+      {ic:'✨', main:{ar:'إن شاء الله', en:'In sha\u2019 Allah'}, sub:{ar:'لكلِّ ما سنفعله', en:'For all we plan'}},
+      {ic:'💚', main:{ar:'جزاك الله خيرًا', en:'JazakAllah khayr'}, sub:{ar:'بدل شكرًا', en:'Instead of thanks'}},
+      {ic:'🙏', main:{ar:'من فضلك', en:'Please'}, sub:{ar:'حين نطلب شيئًا', en:'When we ask'}},
+      {ic:'🤗', main:{ar:'آسف، سامحني', en:'Sorry, forgive me'}, sub:{ar:'حين نخطئ', en:'When we err'}},
+      {ic:'👋', main:{ar:'السلام عليكم', en:'As-salamu alaykum'}, sub:{ar:'حين نلتقي', en:'When we meet'}},
+      {ic:'🌸', main:{ar:'ما شاء الله', en:'Masha\u2019 Allah'}, sub:{ar:'حين يعجبنا شيء', en:'When we admire'}},
+    ],
+    foot:{tx:{ar:'«والكلمةُ الطيّبةُ صدقة»', en:'\u201cA kind word is charity.\u201d'}, ref:{ar:'متفق عليه', en:'Bukhari & Muslim'}},
+  },
+  { id:'charter', layout:'pledge',
+    theme:{bg:'linear-gradient(160deg,#0a2540,#14385c)', acc:'#F5CC5A', badge:'#10243d', title:'#fff', sub:'#cfe0f0', card:'rgba(255,255,255,.07)', line:'rgba(245,204,90,.35)', foot:'rgba(0,0,0,.28)', motif:.07, ink:'#fff'},
+    badge:{ar:'ميثاقُ أسرتِنا', en:'Our Family Charter'}, ic:'🤍', title:{ar:'ميثاقُ أسرتِنا', en:'Our Family Charter'},
+    sub:{ar:'عهدٌ بيننا نعيش به ونتعاهد عليه', en:'A covenant between us we live & renew'},
+    items:[
+      {ic:'🕋', tx:{ar:'اللهُ غايتُنا، ورضاه أغلى ما نطلب', en:'Allah is our goal; His pleasure is our dearest aim'}},
+      {ic:'❤️', tx:{ar:'نتحابّ ونتراحم ونعذر بعضَنا', en:'We love, show mercy & make excuses for one another'}},
+      {ic:'🗣️', tx:{ar:'نتحاور بهدوء، ونحلّ خلافَنا بالحكمة', en:'We talk calmly & resolve disputes with wisdom'}},
+      {ic:'🛡️', tx:{ar:'بيتُنا أمانٌ، أسرارُه تبقى بيننا', en:'Our home is safety; its secrets stay among us'}},
+      {ic:'🌱', tx:{ar:'نعمل معًا، ونتقاسم المسؤوليّةَ والفرح', en:'We work together & share duty & joy'}},
+      {ic:'🤲', tx:{ar:'ندعو لبعضنا، ونفرح لنجاح بعضنا', en:'We pray for & rejoice in each other\u2019s success'}},
+    ],
+    foot:{tx:{ar:'«ربَّنا هَب لنا من أزواجِنا وذرّيّاتِنا قُرّةَ أعيُن»', en:'\u201cOur Lord, grant us from our families comfort of eyes.\u201d'}, ref:{ar:'الفرقان ٧٤', en:'al-Furqan 74'}},
+  },
+];
+</script>
+<script>
+(function(){
+  var lang = localStorage.getItem('bunyanLang') || 'ar';
+  function tx(o){ return o ? (o[lang]||o.ar||'') : ''; }
+  function AR(){ return lang==='ar'; }
+
+  var CORNER = '<svg viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="3">'+
+    '<path d="M6 94 L6 40 Q6 6 40 6 L94 6" stroke-opacity=".0"/>'+
+    '<path d="M14 90 Q14 14 90 14" stroke-linecap="round"/>'+
+    '<path d="M26 90 Q26 26 90 26" stroke-opacity=".55" stroke-linecap="round"/>'+
+    '<circle cx="20" cy="20" r="5" fill="currentColor" stroke="none"/>'+
+    '<path d="M40 14 l4 8 8 0 -6 6 2 9 -8 -5 -8 5 2 -9 -6 -6 8 0 z" fill="currentColor" stroke="none" opacity=".8" transform="translate(-6 -2) scale(.7)"/>'+
+    '</svg>';
+
+  var MOTIF = '<svg viewBox="0 0 200 280" preserveAspectRatio="xMidYMid slice" fill="none" stroke="currentColor" stroke-width="1.2">'+
+    (function(){var s='';for(var y=0;y<300;y+=40){for(var x=0;x<220;x+=40){s+='<path d="M'+x+' '+(y+10)+' q10 -10 20 0 q10 10 0 20 q-10 10 -20 0 q-10 -10 0 -20 z"/>';}}return s;})()+
+    '</svg>';
+
+  function star(){ return '✦'; }
+
+  function head(p){
+    return '<div class="p-head">'+
+      '<div class="p-badge">'+star()+' '+tx(p.badge)+' '+star()+'</div>'+
+      '<div class="p-ic">'+p.ic+'</div>'+
+      '<h1 class="p-title">'+tx(p.title)+'</h1>'+
+      '<div class="p-sub">'+tx(p.sub)+'</div>'+
+      '<div class="p-rule"></div>'+
+    '</div>';
+  }
+  function foot(p){
+    return '<div class="p-foot"><div class="pf-tx">'+tx(p.foot.tx)+'</div><div class="pf-ref">— '+tx(p.foot.ref)+'</div></div>';
+  }
+  function bodyRules(p){
+    return '<div class="p-body"><div class="rules">'+p.items.map(function(it,i){
+      return '<div class="rule"><div class="r-n">'+(AR()?toAr(i+1):(i+1))+'</div><div class="r-ic">'+it.ic+'</div>'+
+        '<div class="r-tx"><div class="r-main">'+tx(it.main)+'</div><div class="r-sub">'+tx(it.sub)+'</div></div></div>';
+    }).join('')+'</div></div>';
+  }
+  function bodyGrid(p){
+    return '<div class="p-body"><div class="pgrid">'+p.items.map(function(it){
+      return '<div class="pcell"><div class="pc-ic">'+it.ic+'</div><div class="pc-main">'+tx(it.main)+'</div><div class="pc-sub">'+tx(it.sub)+'</div></div>';
+    }).join('')+'</div></div>';
+  }
+  function bodyTimeline(p){
+    return '<div class="p-body"><div class="timeline">'+p.items.map(function(it){
+      return '<div class="tl"><div class="tl-time">'+tx(it.time)+'</div><div class="tl-ic">'+it.ic+'</div><div class="tl-tx">'+tx(it.tx)+'</div></div>';
+    }).join('')+'</div></div>';
+  }
+  function bodyPledge(p){
+    return '<div class="p-body"><div class="pledge">'+p.items.map(function(it){
+      return '<div class="pl"><span class="pl-ic">'+it.ic+'</span><span>'+tx(it.tx)+'</span></div>';
+    }).join('')+'</div></div>';
+  }
+  function toAr(n){ return String(n).replace(/[0-9]/g,function(d){return '٠١٢٣٤٥٦٧٨٩'[d];}); }
+
+  function render(){
+    if(typeof POSTERS==='undefined' || !POSTERS){ return; }
+    var html = POSTERS.map(function(p){
+      var t=p.theme;
+      var vars='--pbg:'+t.bg+';--pacc:'+t.acc+';--pbadge:'+t.badge+';--ptitle:'+t.title+';--psub:'+t.sub+
+        ';--pcard:'+t.card+';--pline:'+t.line+';--pfoot:'+t.foot+';--pmotif:'+t.motif+(t.ink?';--pink:'+t.ink:'')+';';
+      var body = p.layout==='grid'?bodyGrid(p): p.layout==='timeline'?bodyTimeline(p): p.layout==='pledge'?bodyPledge(p): bodyRules(p);
+      return '<div class="poster" style="'+vars+'">'+
+        '<div class="motif" style="color:'+t.acc+'">'+MOTIF+'</div>'+
+        '<div class="frame"></div>'+
+        '<div class="corner c-tr" style="color:'+t.acc+'">'+CORNER+'</div>'+
+        '<div class="corner c-tl" style="color:'+t.acc+'">'+CORNER+'</div>'+
+        '<div class="corner c-br" style="color:'+t.acc+'">'+CORNER+'</div>'+
+        '<div class="corner c-bl" style="color:'+t.acc+'">'+CORNER+'</div>'+
+        head(p)+body+foot(p)+
+        '<div class="p-sign">'+(AR()?'تربية الطفل المسلم · بوسترات البيت':'Muslim Kids\u2019 Tarbiyah · Home Posters')+'</div>'+
+      '</div>';
+    }).join('');
+    document.getElementById('book').innerHTML = html;
+  }
+
+  window.setLang = function(l){
+    lang=l; localStorage.setItem('bunyanLang',l);
+    document.documentElement.lang=l; document.documentElement.dir=l==='ar'?'rtl':'ltr';
+    var a=document.getElementById('segAr'), e=document.getElementById('segEn');
+    if(a) a.classList.toggle('on',l==='ar'); if(e) e.classList.toggle('on',l==='en');
+    render();
+  };
+  setLang(lang);
+})();
+</script>
+</body>
+</html>

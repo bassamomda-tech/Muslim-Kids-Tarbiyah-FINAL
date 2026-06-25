@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>حقيبة الأخلاق · أنوس</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Amiri:wght@400;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+
+<link rel="stylesheet" href="../styles/tokens.css" />
+<link rel="stylesheet" href="../styles/dashboard.css" />
+<link rel="stylesheet" href="../styles/wheel.css" />
+<link rel="stylesheet" href="../styles/akhlaq-bag.css" />
+</head>
+<body>
+
+<div class="bg-decor" aria-hidden="true"></div>
+
+<div class="activity-shell">
+
+  <nav class="activity-nav">
+    <a class="back-link" href="../dashboard.html">
+      الرجوع للوحة الأنشطة
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg>
+    </a>
+    <div class="activity-crumb">
+      <span>العلوم والاستكشاف</span>
+      <span class="sep">/</span>
+      <span class="cur">حقيبة الأخلاق</span>
+    </div>
+    <div class="activity-actions">
+      <button class="icon-btn" id="reset-btn" title="إعادة الضبط" aria-label="إعادة الضبط">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 3-6.7L3 8"/><path d="M3 3v5h5"/></svg>
+      </button>
+    </div>
+  </nav>
+
+  <div class="activity-layout">
+
+    <section class="ak-panel">
+      <header class="wheel-header">
+        <span class="activity-tag">Activity 36 · Card Deck</span>
+        <h1 class="activity-title">حقيبة الأخلاق</h1>
+        <p class="activity-desc">
+          سَحبَةٌ مِنَ الحَقيبَة، مَوقِفٌ مِنَ الحَياة. اِختَر الرَّدَّ النَّبَوِيَّ المُناسِب،
+          واجمَع الأَخلاقَ التي زانَ بِها رَسولُ اللهِ ﷺ صَحابَتَه.
+        </p>
+      </header>
+
+      <div class="ak-hud">
+        <div class="hud-block">البِطاقات <strong><span id="ak-idx">0</span><small>/8</small></strong></div>
+        <div class="hud-block">الأَخلاق <strong id="ak-virtues">0</strong></div>
+        <div class="hud-block">الإِجابات <strong id="ak-correct">0</strong></div>
+        <div class="hud-block">النَّقَطات <strong id="ak-points">0</strong></div>
+      </div>
+
+      <div class="ak-stage">
+        <!-- مَنطِقَة السَّحب -->
+        <div class="ak-draw-area">
+          <div class="ak-bag" id="ak-bag" aria-hidden="true">
+            <svg viewBox="0 0 140 140" fill="none" stroke="currentColor" stroke-width="3" stroke-linejoin="round" stroke-linecap="round">
+              <path d="M28 50h84l-8 76a8 8 0 0 1-8 8H44a8 8 0 0 1-8-8z" fill="currentColor" fill-opacity="0.18"/>
+              <path d="M50 50v-12a20 20 0 0 1 40 0v12"/>
+              <path d="M28 76h84" stroke-dasharray="2 4" stroke-opacity="0.55"/>
+              <circle cx="70" cy="92" r="4" fill="currentColor" stroke="none"/>
+            </svg>
+            <span class="ak-bag-glow"></span>
+          </div>
+
+          <button class="ak-draw-btn" id="btn-draw">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg>
+            اسحَب بِطاقَة
+          </button>
+        </div>
+
+        <!-- البِطاقَة المَكشوفة -->
+        <div class="ak-card-slot" id="ak-card-slot">
+          <div class="ak-empty">
+            ابدأ بِسَحبِ بِطاقَةٍ مِنَ الحَقيبَة
+          </div>
+        </div>
+
+        <!-- الخَيارات -->
+        <div class="ak-choices" id="ak-choices"></div>
+
+        <div class="ak-feedback" id="ak-feedback"></div>
+
+        <div class="ak-controls">
+          <button class="ak-btn" id="btn-skip" disabled>تَخَطّى</button>
+          <button class="ak-btn primary" id="btn-next" disabled>التّالية</button>
+        </div>
+      </div>
+
+      <div class="wheel-controls" style="margin-top:var(--s-4);">
+        <div class="wheel-stat">أَفضَل نَقَطات <strong id="best">—</strong></div>
+        <button class="wheel-mute-toggle" id="mute-btn" aria-pressed="false">
+          <span class="mute-icon"></span>
+          <span class="mute-label">كتم الصوت</span>
+        </button>
+      </div>
+    </section>
+
+    <aside class="side-panel">
+      <div class="panel-card">
+        <div class="panel-head">
+          <h3>أَخلاقُك المُجَمَّعَة</h3>
+          <span class="pill" id="coll-pill">0 / 10</span>
+        </div>
+        <div class="ak-collection" id="collection"></div>
+      </div>
+
+      <div class="panel-card">
+        <div class="panel-head"><h3>كَيف ألعب؟</h3></div>
+        <div style="font-size: 14px; line-height: 1.7; color: var(--ink-2);">
+          ١. اسحَب بِطاقَة لِتَظهَرَ مَوقِفاً.<br/>
+          ٢. اختَر الرَّدَّ الأَجمَل.<br/>
+          ٣. كلَّما أَصَبت، اِنضَمَّ خُلُقٌ إلى حَقيبَتِك.<br/>
+          ٤. اكمِل ٨ بِطاقات لِتُنهي الجَولَة.
+        </div>
+        <div class="tip-card" style="margin-top: var(--s-3);">
+          <span class="tip-icon">!</span>
+          <span>قال ﷺ: «إنّما بُعِثتُ لِأُتَمِّمَ مَكارِمَ الأَخلاق». فَجَمالُ الإنسانِ في خُلُقِه قَبلَ ثَوبِه.</span>
+        </div>
+      </div>
+
+      <div class="panel-card">
+        <div class="panel-head"><h3>قَولُ اللهِ تَعالى</h3></div>
+        <div class="hadith-card">
+          <div class="quote">«وَإِنَّكَ لَعَلَىٰ خُلُقٍ عَظِيمٍ» — القلم · 4</div>
+          <span class="src">في وَصفِ نَبِيِّنا ﷺ</span>
+        </div>
+      </div>
+    </aside>
+  </div>
+</div>
+
+<div class="modal-backdrop" id="done-modal" role="dialog" aria-modal="true">
+  <div class="modal">
+    <button class="modal-close" data-close aria-label="إغلاق">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M6 6l12 12M18 6l-12 12"/></svg>
+    </button>
+    <div class="modal-deco" aria-hidden="true">
+      <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-8-7-8-13a5 5 0 0 1 9-3 5 5 0 0 1 9 3c0 6-8 13-8 13z"/></svg>
+    </div>
+    <div class="modal-eyebrow">جَولَةُ الأَخلاق</div>
+    <h2 class="modal-title" id="done-title">حَقيبَةٌ مَملوءَةٌ بِالجَمال</h2>
+    <div class="modal-meaning" id="done-summary"></div>
+    <div class="modal-actions">
+      <button class="btn-ghost" data-close>إنهاء</button>
+      <button class="btn-primary" id="done-next">جَولَةٌ جَديدة</button>
+    </div>
+  </div>
+</div>
+
+<div class="particles" id="particles" aria-hidden="true"></div>
+
+<script src="../scripts/activity-common.js"></script>
+<script src="../scripts/akhlaq-bag.js"></script>
+
+<script>
+window.PAGE_DICT = {
+  "حقيبة الأخلاق": "The Akhlaq Bag",
+  "سَحبَةٌ مِنَ الحَقيبَة، مَوقِفٌ مِنَ الحَياة. اِختَر الرَّدَّ النَّبَوِيَّ المُناسِب، واجمَع الأَخلاقَ التي زانَ بِها رَسولُ اللهِ ﷺ صَحابَتَه.": "A draw from the bag, a situation from life. Choose the right prophetic response, and collect the virtues the Messenger of Allah ﷺ adorned his companions with.",
+  "البِطاقات": "Cards",
+  "الأَخلاق": "Virtues",
+  "الإِجابات": "Answers",
+  "النَّقَطات": "Points",
+  "اسحَب بِطاقَة": "Draw a card",
+  "ابدأ بِسَحبِ بِطاقَةٍ مِنَ الحَقيبَة": "Start by drawing a card from the bag",
+  "تَخَطّى": "Skip",
+  "التّالية": "Next",
+  "أَفضَل نَقَطات": "Best points",
+  "أَخلاقُك المُجَمَّعَة": "Your collected virtues",
+  "كَيف ألعب؟": "How to play?",
+  "١. اسحَب بِطاقَة لِتَظهَرَ مَوقِفاً.": "1. Draw a card to reveal a situation.",
+  "٢. اختَر الرَّدَّ الأَجمَل.": "2. Choose the finest response.",
+  "٣. كلَّما أَصَبت، اِنضَمَّ خُلُقٌ إلى حَقيبَتِك.": "3. Each time you're right, a virtue joins your bag.",
+  "٤. اكمِل ٨ بِطاقات لِتُنهي الجَولَة.": "4. Complete 8 cards to finish the round.",
+  "قال ﷺ: «إنّما بُعِثتُ لِأُتَمِّمَ مَكارِمَ الأَخلاق». فَجَمالُ الإنسانِ في خُلُقِه قَبلَ ثَوبِه.": "He ﷺ said: «I was only sent to perfect noble character». A person's beauty is in their character before their clothes.",
+  "قَولُ اللهِ تَعالى": "The words of Allah the Exalted",
+  "في وَصفِ نَبِيِّنا ﷺ": "Describing our Prophet ﷺ",
+  "جَولَةُ الأَخلاق": "Akhlaq round",
+  "حَقيبَةٌ مَملوءَةٌ بِالجَمال": "A bag full of beauty",
+  "إنهاء": "Finish",
+  "جَولَةٌ جَديدة": "New round"
+};
+</script>
+<script>
+Object.assign(window.PAGE_DICT, {
+  "الصِّدق":"Honesty","الأَمانَة":"Trustworthiness","العَفو":"Pardon","الصَّبر":"Patience","الحَياء":"Modesty","العَدل":"Justice","الرَّحمَة":"Mercy","الإِيثار":"Altruism","الأَدَب":"Good manners","التَّواضُع":"Humility",
+  "في البَيت":"At home","في المَدرَسَة":"At school","مَعَ الإِخوَة":"With siblings","في الطّابور":"In the queue","أَمامَ الضُّيوف":"In front of guests","عِندَ الطَّعام":"At mealtime","حُكمٌ بَينَ صَديقَين":"Judging between two friends","مَعَ القِطَّة":"With the cat","في النّادي":"At the club","في القِراءَة":"During reading",
+  "كَسَرتَ كوبَ والِدَتِك دونَ أن تَراك. ماذا تَفعَل؟":"You broke your mother's cup without her seeing. What do you do?",
+  "وَجَدتَ مَحفَظَةً فيها مال، وَلا يَعلَمُ بِها أَحَد.":"You found a wallet with money, and no one knows about it.",
+  "أَخوكَ الصَّغيرُ كَسَرَ لُعبَتَك المُفَضَّلَة. وَهوَ يَبكي خائِفاً.":"Your little brother broke your favorite toy. He's crying, afraid.",
+  "تَقِفُ في طابورٍ طَويلٍ والحَرُّ شَديد. صَديقُكَ يَقتَرِحُ التَّقَدُّم.":"You're standing in a long queue and it's very hot. Your friend suggests cutting ahead.",
+  "دَخَلَ ضَيفٌ كَبيرُ السِّنّ. والمَجلِسُ مُمتَلِئ.":"An elderly guest entered, and the room is full.",
+  "بَقِيَت قِطعَةُ كَعكٍ واحِدَة، وأَخوكَ يَنظُرُ إلَيها.":"One piece of cake is left, and your brother is looking at it.",
+  "اختَلَفَ صَديقان: أَحَدُهما صَديقُكَ المُقَرَّب، والآخَرُ مَعَهُ الحَقّ.":"Two friends disagreed: one is your close friend, and the other is right.",
+  "رَأَيتَ قِطَّةً جائِعَةً تَنظُرُ إِلَيك في الشّارع.":"You saw a hungry cat looking at you in the street.",
+  "هَزَمتَ صَديقَك في لُعبَة. وَهوَ يَنظُرُ إِلى الأَرض.":"You beat your friend in a game. He's looking at the ground.",
+  "زَميلُك يَتَعَثَّرُ في القِراءَة أَمامَ الصَّفّ، وَالكُلُّ يَنظُر.":"Your classmate stumbles while reading in front of the class, and everyone is watching.",
+  "أُخفي القِطَعَ وأَسكُت.":"I hide the pieces and stay quiet.","أَذهَبُ إلَيها وأَعتَرِف.":"I go to her and admit it.","أَتَّهِمُ أَخي الصَّغير.":"I blame my little brother.",
+  "آخُذُ المال، فَلَن يَعرِف.":"I take the money; no one will know.","أَترُكُها مَكانَها.":"I leave it where it is.","أُسَلِّمُها لِمُديرِ المَدرَسَة.":"I hand it to the school principal.",
+  "أَصرُخُ في وَجهِه وأَضرِبُه.":"I shout at him and hit him.","أُهَدِّئُه وأَقولُ: لا بأس.":"I calm him and say: it's okay.","أُخفي لُعَبَه كُلَّها.":"I hide all his toys.",
+  "أَتَقَدَّم معه، الجَميعُ يَفعَل.":"I cut ahead with him; everyone does it.","أَبقى في مَكاني بِهُدوء.":"I stay in my place quietly.","أَترُكُ الطّابورَ وأَذهَبُ.":"I leave the queue and go.",
+  "أَتَجاهَلُه، فالكَبيرُ يَجِدُ مَكاناً.":"I ignore him; an elder will find a spot.","أَقومُ مِن مَكاني وَأُجلِسُه.":"I get up from my seat and seat him.","أَنظُرُ إليه بِفُضول.":"I stare at him curiously.",
+  "آخُذُها بِسُرعَة قَبلَه.":"I grab it quickly before him.","أُقَسِّمُها نِصفَين.":"I split it in half.","أُعطيهِ إيّاها وأَفرَح.":"I give it to him and feel happy.",
+  "أَنحازُ لِصَديقي دائِماً.":"I always side with my friend.","أَقولُ الحَقَّ ولَو على نَفسي أو صَديقي.":"I tell the truth even against myself or my friend.","أَتَجاهَلُهُما حَتّى تَهدَأ المَشاكِل.":"I ignore them both until things calm down.",
+  "أَرفُسُها لِتَبتَعِد.":"I kick it away to make it leave.","أُعطيها بَقايا طَعامي.":"I give it my leftover food.","أَتَجاهَلُها وأَمضي.":"I ignore it and move on.",
+  "أَفتَخِرُ وأُذَكِّرُهُ كلَّ يَوم.":"I boast and remind him every day.","أَقولُ: لَعِبتَ جَيِّداً، ولَكَ المَرَّةُ القادِمَة.":"I say: you played well, next time is yours.","أَطلُبُ مِنه أن يَلعَبَ ثانِيَة.":"I ask him to play again.",
+  "أَضحَكُ مع البَعض.":"I laugh along with some others.","أُشَجِّعُه بِنَظرَةٍ وابتِسامَة.":"I encourage him with a look and a smile.","أُكمِلُ مَكانَهُ بِصَوتٍ عالٍ.":"I finish for him out loud.",
+  "إِخفاءُ الخَطأ خِيانَة لِنَفسِك قَبلَ غَيرِك.":"Hiding a mistake betrays yourself before anyone else.",
+  "الصَّادِقُ نَجا. أُمُّك سَتُحِبُّ صِدقَك أَكثَرَ مِنَ الكوب.":"The honest one is saved. Your mother will love your honesty more than the cup.",
+  "الكَذِبُ يَجُرُّ الكَذِب، وَظُلمُ الصَّغير أَشَدّ.":"Lying leads to more lying, and wronging the young is worse.",
+  "لا تَأخُذ ما لَيسَ لَك، فاللهُ يَراك.":"Don't take what isn't yours — Allah sees you.",
+  "تَركُها لِلضَّياع لَيسَ أَمانَة.":"Leaving it to be lost is not trustworthiness.",
+  "الأَمينُ يُؤدّي ما اؤتُمِنَ عَلَيه. هذا خُلُقُ المُسلِم.":"The trustworthy returns what is entrusted. This is the Muslim's character.",
+  "الغَضَبُ يَهدِمُ، وأَخوكَ يَحتاجُ رَحمَتَك.":"Anger destroys, and your brother needs your mercy.",
+  "العَفوُ عِندَ المَقدِرَة هُوَ خُلُقُ النَّبيِّ ﷺ.":"Pardoning when able is the character of the Prophet ﷺ.",
+  "الانتِقامُ لا يُصلِح، بَل يُعَمِّقُ الجُرح.":"Revenge doesn't fix things; it deepens the wound.",
+  "ما يَفعَلُهُ النّاسُ لا يَجعَلُ الخَطأَ صَواباً.":"What people do doesn't make a wrong right.",
+  "الصَّبرُ نِصفُ الإِيمان، وَنِظامُ الطّابورِ حَقُّ مَن قَبلَك.":"Patience is half of faith, and the queue's order is the right of those before you.",
+  "الانسِحابُ غَضَباً يَحرِمُك ما تَحتاج.":"Withdrawing in anger deprives you of what you need.",
+  "إِكرامُ الكَبيرِ مِن إِكرامِ اللهِ تَعالى.":"Honoring the elder is part of honoring Allah the Exalted.",
+  "«لَيسَ مِنّا مَن لَم يَرحَمْ صَغيرَنا وَيُوَقِّرْ كَبيرَنا».":"«He is not one of us who does not show mercy to our young and respect to our elders».",
+  "الفُضولُ لَيسَ أَدَباً، الأَدَبُ فِعلٌ لا نَظَر.":"Curiosity is not good manners; manners are action, not staring.",
+  "السُّرعَة في الأَخذِ لا تُورِثُ بَرَكَة.":"Rushing to take brings no blessing.",
+  "حَسَن، ولكنَّ هناك ما هُوَ أَعلى.":"Good, but there's something higher.",
+  "الإِيثار: تُحِبُّ لِأَخيك ما تُحِبُّ لِنَفسِك أو أَكثَر.":"Altruism: loving for your brother what you love for yourself, or more.",
+  "العَصَبيَّةُ ظُلم، وَلَو لَبِسَت ثَوبَ الصَّداقَة.":"Blind partisanship is injustice, even if dressed as friendship.",
+  "«كونوا قَوّامينَ بِالقِسطِ شُهَداءَ للهِ ولو على أَنفُسِكم».":"«Be upholders of justice, witnesses for Allah, even against yourselves».",
+  "الصَّمتُ عَنِ الحَقِّ خَوفاً ضَعفٌ، لا أَدَب.":"Silence about the truth out of fear is weakness, not manners.",
+  "أَذى الحَيَوانِ حَرام. اِمرَأَةٌ دَخَلَتِ النّارَ في هِرَّة.":"Harming an animal is forbidden. A woman entered the Fire over a cat.",
+  "«في كلِّ كَبِدٍ رَطبَةٍ أَجر». الرَّحمَةُ بابُ الجَنَّة.":"«In every living being there is reward». Mercy is a door to Paradise.",
+  "تَركُ المُحتاجِ مَعَ القُدرَة قَسوَة.":"Leaving the needy when you can help is cruelty.",
+  "الفَخرُ يُؤذي القُلوب، وَهوَ خُلُقُ إِبليس.":"Boasting hurts hearts, and it is the trait of Iblis.",
+  "التَّواضُع يَرفَع، وَلَن يَنقُصَ مالاً صَدَقَة، ولا فَوزاً تَواضُع.":"Humility raises you; charity never decreases wealth, nor does humility lessen a victory.",
+  "الإِصرار قَد يُحرِجُه. اِنتَبِه لِشُعورِه.":"Insisting may embarrass him. Be mindful of his feelings.",
+  "السُّخريَةُ بِأَخيك جَرحٌ لا تُداويهِ كَلِمَة.":"Mocking your brother is a wound no word can heal.",
+  "الحَياءُ خُلُقٌ يَستُرُك ويَستُرُ غَيرَك. الابتِسامَةُ صَدَقَة.":"Modesty is a trait that shields you and others. A smile is charity.",
+  "نِيَّةٌ طَيِّبَة، لَكِن قَد تَزيدُ حَرَجَه.":"A good intention, but it may increase his embarrassment."
+});
+</script>
+<script>
+Object.assign(window.PAGE_DICT, {
+  "بَعدَ عِراك":"After a fight","أَمامَ المَرآة":"In front of the mirror",
+  "غَضِبَ مِنكَ جارُكَ بِكَلامٍ جارِح، ثُمَّ نَدِمَ واعتَذَر.":"Your neighbor got angry at you with hurtful words, then regretted it and apologized.",
+  "أَنا لَن أَنساها أَبَداً.":"I'll never forget it.",
+  "أَقبَلُ عُذرَه وأَطوي الصَّفحَة.":"I accept his apology and turn the page.",
+  "أُعامِلُه بِالمِثلِ ثُمَّ أَعفو.":"I treat him the same way, then forgive.",
+  "حِفظُ الإِساءَةِ يُتعِبُ صاحِبَهُ قَبلَ أَن يُؤذي مَن أَساء.":"Holding onto an offense wears out its keeper before it harms the offender.",
+  "«وَأَن تَعفوا أَقرَبُ لِلتَّقوى».":"«And to pardon is nearer to righteousness».",
+  "العَفوُ بِلا انتِقامٍ أَقرَبُ لِلنَّبيِّ ﷺ.":"Pardoning without revenge is closer to the Prophet ﷺ.",
+  "تَلبَسُ ثَوباً جَميلاً جَديداً. تَفكيرُكَ الأَوَّل…":"You put on a beautiful new garment. Your first thought…",
+  "كَم سَأُبهِرُ النّاسَ في المَدرَسَة!":"How I'll impress everyone at school!",
+  "الحَمدُ للهِ على نِعمَتِه عَلَيَّ.":"Praise be to Allah for His blessing upon me.",
+  "أَتَمَنّى لَو كانَ أَغلى.":"I wish it were more expensive.",
+  "اللِّباسُ لِنا، لا لِنَتَفاخَرَ بِه.":"Clothing is for us, not for us to boast with.",
+  "«إِنَّ اللهَ جَميلٌ يُحِبُّ الجَمال»، والشُّكرُ يَزيدُ النِّعَم.":"«Allah is beautiful and loves beauty», and gratitude increases blessings.",
+  "الطَّمَعُ يُذهِبُ بَرَكَةَ ما عِندَك.":"Greed removes the blessing of what you have."
+});
+</script>
+<script src="../scripts/i18n.js"></script>
+<script src="../../shared/nav-fix.js"></script>
+</body>
+</html>

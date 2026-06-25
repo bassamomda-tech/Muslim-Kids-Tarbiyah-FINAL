@@ -1,0 +1,99 @@
+/* ============================================================
+   FAMILY — شجرة العائلة النبوية (Hierarchy Tree)
+   ============================================================ */
+
+.fm-panel {
+  background:
+    radial-gradient(140% 80% at 50% 0%, rgba(255,233,168,0.45), transparent 60%),
+    var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--r-2xl);
+  padding: var(--s-8);
+  display: flex; flex-direction: column;
+  box-shadow: var(--shadow-card);
+  position: relative; overflow: hidden;
+}
+.fm-panel .activity-tag { background: var(--butter); color: var(--butter-ink); }
+.fm-panel .activity-tag::before { background: var(--butter-ink); }
+
+.fm-hud { display: flex; gap: var(--s-3); flex-wrap: wrap; margin-bottom: var(--s-5); }
+.fm-hud .hud-block {
+  background: var(--bg-soft); border: 1px solid var(--line);
+  border-radius: var(--r-md); padding: 10px 14px;
+  display: flex; flex-direction: column; gap: 2px;
+  font-size: 11px; color: var(--muted); font-weight: 600; flex: 1; min-width: 84px;
+}
+.fm-hud .hud-block strong { font-size: 20px; color: var(--ink); font-family: var(--font-en); font-weight: 800; }
+
+/* tree */
+.fm-tree {
+  flex-grow: 1;
+  display: flex; flex-direction: column; align-items: center;
+  gap: var(--s-6);
+  padding: var(--s-4) 0;
+  position: relative;
+}
+.fm-tier { display: flex; gap: var(--s-6); justify-content: center; flex-wrap: wrap; position: relative; }
+.fm-tier::before {
+  content: ""; position: absolute; top: -22px; left: 50%; transform: translateX(-50%);
+  width: 2px; height: 22px; background: var(--line);
+}
+.fm-tier:first-child::before { display: none; }
+
+.fm-node {
+  width: 168px; min-height: 76px;
+  border-radius: var(--r-lg);
+  border: 2px dashed var(--line);
+  background: var(--surface);
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  gap: 2px; padding: 10px 12px; text-align: center;
+  cursor: pointer;
+  transition: transform 0.14s ease, border-color 0.14s ease, box-shadow 0.14s ease, background 0.14s ease;
+}
+.fm-node .role { font-size: 11px; font-weight: 800; color: var(--muted); }
+.fm-node .name { font-size: 17px; font-weight: 800; color: var(--ink); min-height: 22px; }
+.fm-node .name.empty { color: var(--line); font-size: 26px; line-height: 1; }
+.fm-node:hover { transform: translateY(-2px); }
+.fm-node.target { border-color: var(--ink); border-style: solid; box-shadow: 0 0 0 4px rgba(255,233,168,0.7); }
+.fm-node.filled { border-style: solid; border-color: var(--brand); background: rgba(106,142,127,0.10); cursor: default; }
+.fm-node.fixed {
+  border-style: solid; border-color: var(--gold);
+  background: linear-gradient(135deg, rgba(201,169,97,0.18), rgba(255,233,168,0.28));
+  cursor: default;
+}
+.fm-node.fixed .name { color: var(--brand-ink); }
+.fm-node.wrong { animation: fm-shake 0.4s ease; border-color: var(--rose); }
+@keyframes fm-shake { 0%,100%{transform:translateX(0);} 25%{transform:translateX(-6px);} 75%{transform:translateX(6px);} }
+
+/* bank */
+.fm-bank-label { font-size: 13px; font-weight: 700; color: var(--muted); margin: var(--s-5) 0 var(--s-3); }
+.fm-bank { display: flex; flex-wrap: wrap; gap: 10px; }
+.fm-name {
+  padding: 11px 18px; border-radius: var(--r-pill);
+  background: var(--surface); border: 2px solid var(--line);
+  font-size: 16px; font-weight: 800; color: var(--ink); cursor: pointer;
+  transition: transform 0.12s ease, border-color 0.12s ease, opacity 0.2s ease;
+  box-shadow: var(--shadow-sm);
+}
+.fm-name:hover { transform: translateY(-2px); border-color: var(--butter-ink); }
+.fm-name.selected { border-color: var(--ink); background: var(--butter); }
+.fm-name.used { opacity: 0; pointer-events: none; width: 0; padding: 0; margin: -5px; }
+
+/* side relation list */
+.fm-rel { display: flex; flex-direction: column; gap: 8px; }
+.fm-rel-row {
+  display: flex; align-items: center; gap: 10px;
+  padding: 9px 12px; border-radius: var(--r-md);
+  background: var(--bg-soft); font-size: 13px; font-weight: 700; color: var(--ink-2);
+  opacity: 0.5; transition: opacity 0.3s ease;
+}
+.fm-rel-row.done { opacity: 1; }
+.fm-rel-row .ic {
+  width: 26px; height: 26px; border-radius: 8px; flex-shrink: 0;
+  background: var(--surface); border: 1px solid var(--line);
+  display: grid; place-items: center; color: var(--muted);
+}
+.fm-rel-row.done .ic { background: var(--brand); color: #fff; border-color: var(--brand); }
+.fm-rel-row b { color: var(--ink); }
+.fm-rel-row .r-name { margin-right: auto; color: var(--muted); font-weight: 600; font-size: 12px; }
+.fm-rel-row.done .r-name { color: var(--brand-ink); font-weight: 800; }

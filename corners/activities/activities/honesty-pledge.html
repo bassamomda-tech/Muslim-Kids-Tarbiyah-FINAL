@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>تعهّد الصدق · أنوس</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Amiri:wght@400;700&family=Reem+Kufi:wght@500;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+
+<link rel="stylesheet" href="../styles/tokens.css" />
+<link rel="stylesheet" href="../styles/dashboard.css" />
+<link rel="stylesheet" href="../styles/wheel.css" />
+<link rel="stylesheet" href="../styles/honesty-pledge.css" />
+</head>
+<body>
+
+<div class="bg-decor" aria-hidden="true"></div>
+
+<div class="activity-shell">
+
+  <nav class="activity-nav">
+    <a class="back-link" href="../dashboard.html">
+      الرجوع للوحة الأنشطة
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg>
+    </a>
+    <div class="activity-crumb">
+      <span>الفن والإبداع</span>
+      <span class="sep">/</span>
+      <span class="cur">تعهّد الصدق</span>
+    </div>
+    <div class="activity-actions">
+      <button class="icon-btn" id="reset-btn" title="إعادة الضبط" aria-label="إعادة الضبط">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 3-6.7L3 8"/><path d="M3 3v5h5"/></svg>
+      </button>
+    </div>
+  </nav>
+
+  <div class="activity-layout">
+
+    <section class="hp-panel">
+      <header class="wheel-header">
+        <span class="activity-tag">Activity 29 · Certificate Gen</span>
+        <h1 class="activity-title">تعهّد الصدق</h1>
+        <p class="activity-desc">
+          الصِّدقُ خُلُقُ الأنبياء، وأَجمَلُ ما يُزَيَّنُ به القَلبُ والكَلام.
+          اِكتُب اسمَك، واختَر تَعهُّداتك، ثُمَّ وَقِّع لِتَنالَ شَهادةً تَحتَفِظُ بِها.
+        </p>
+      </header>
+
+      <div class="hp-hud">
+        <div class="hud-block">حالةُ التَّعَهُّد <strong id="status">غَيرُ مُوَقَّع</strong></div>
+        <div class="hud-block">المُختار <strong><span id="picked">0</span><small>/6</small></strong></div>
+        <div class="hud-block">شَهادات سابِقة <strong id="cert-count">0</strong></div>
+        <div class="hud-block">أيَّامُ الالتِزام <strong id="commit-days">0</strong></div>
+      </div>
+
+      <div class="hp-stage">
+
+        <!-- مَلءُ البَيانات -->
+        <div class="hp-form" id="form">
+          <label class="hp-field">
+            <span>اِسمُكَ الكامِل</span>
+            <input id="name-input" type="text" maxlength="32" placeholder="مَثَلاً: أَحمَد بنُ مُحَمَّد" />
+          </label>
+
+          <div class="hp-pledges">
+            <div class="pledge-label">تَعَهَّدُ بِأن أَكونَ صادِقاً في…</div>
+            <div class="pledge-grid" id="pledges"></div>
+          </div>
+
+          <label class="hp-field hp-sign-field">
+            <span>تَوقيعُك (اِكتُب اسمَك بِالخَطِّ الذي تُحِبّ)</span>
+            <input id="sign-input" type="text" maxlength="20" placeholder="اِكتُب اِسمَكَ هُنا" class="hp-sign" />
+          </label>
+        </div>
+
+        <!-- مُعايَنة الشَّهادة -->
+        <div class="hp-certificate" id="cert" aria-live="polite">
+          <div class="cert-deco-tl"></div>
+          <div class="cert-deco-tr"></div>
+          <div class="cert-deco-bl"></div>
+          <div class="cert-deco-br"></div>
+
+          <div class="cert-seal" aria-hidden="true">
+            <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round">
+              <circle cx="32" cy="32" r="28" stroke-dasharray="2 3"/>
+              <circle cx="32" cy="32" r="20"/>
+              <path d="M22 32l7 7 13-14" stroke-linecap="round"/>
+            </svg>
+          </div>
+
+          <div class="cert-tag">شَهادةُ صِدق</div>
+          <h2 class="cert-bism">بِسْمِ اللهِ الرَّحْمَٰنِ الرَّحِيم</h2>
+
+          <p class="cert-body">
+            أَنا <strong class="cert-name" id="cn-name">…………</strong>،
+            أَتَعَهَّدُ أَمامَ اللهِ تَعالى بِأَن أَكونَ <em>صادِقاً</em> في:
+          </p>
+
+          <ul class="cert-list" id="cn-list">
+            <li class="cert-empty">— اختَر تَعَهُّداتِكَ مِنَ القائِمَة —</li>
+          </ul>
+
+          <p class="cert-ayah">
+            «يا أَيُّها الَّذينَ آمَنوا اتَّقوا اللهَ وكونوا مَعَ الصَّادِقين»
+            <span class="cert-src">سورة التوبة · 119</span>
+          </p>
+
+          <div class="cert-sign-row">
+            <div class="cert-sign-block">
+              <div class="line"></div>
+              <span class="lbl">التَّوقيع</span>
+              <strong class="cert-sign" id="cn-sign">………</strong>
+            </div>
+            <div class="cert-sign-block">
+              <div class="line"></div>
+              <span class="lbl">التَّاريخ</span>
+              <strong class="cert-date" id="cn-date">—</strong>
+            </div>
+          </div>
+        </div>
+
+        <div class="hp-actions">
+          <button class="hp-btn" id="btn-clear">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6h18"/><path d="M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6"/></svg>
+            مَسح
+          </button>
+          <button class="hp-btn" id="btn-print">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9V3h12v6"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><path d="M6 14h12v8H6z"/></svg>
+            طِباعة
+          </button>
+          <button class="hp-btn primary" id="btn-sign" disabled>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21l4-1 11-11-3-3L4 17z"/><path d="M14 6l3 3"/></svg>
+            وَقِّع وَاحْفَظ
+          </button>
+        </div>
+      </div>
+
+      <div class="wheel-controls" style="margin-top:var(--s-4);">
+        <div class="wheel-stat">آخِرُ شَهادة <strong id="last-cert">—</strong></div>
+        <button class="wheel-mute-toggle" id="mute-btn" aria-pressed="false">
+          <span class="mute-icon"></span>
+          <span class="mute-label">كتم الصوت</span>
+        </button>
+      </div>
+    </section>
+
+    <aside class="side-panel">
+      <div class="panel-card">
+        <div class="panel-head">
+          <h3>شَهاداتُكَ السَّابِقة</h3>
+          <span class="pill" id="hist-pill">0</span>
+        </div>
+        <div class="hp-history" id="history"></div>
+      </div>
+
+      <div class="panel-card">
+        <div class="panel-head"><h3>لماذا الصِّدق؟</h3></div>
+        <div style="font-size: 14px; line-height: 1.7; color: var(--ink-2);">
+          الصِّدقُ ثِقَةٌ يَحبُّها النَّاس، ونورٌ في القَلب، وطَريقٌ إلى الجَنَّة.
+          سُمِّيَ النبيُّ ﷺ قَبلَ البِعثَةِ بِـ«الصَّادِقِ الأَمين»، وكان قَومُه يُؤمِنونَه على أَموالِهم.
+        </div>
+        <div class="tip-card" style="margin-top: var(--s-3);">
+          <span class="tip-icon">!</span>
+          <span>لا تَخَفْ مِنَ الحَقِّ ولَو غَلَطتَ. الاعتِراف بِالخَطأ شَجاعَة، والصِّدقُ يُنجي.</span>
+        </div>
+      </div>
+
+      <div class="panel-card">
+        <div class="panel-head"><h3>قَولُ النَّبيِّ ﷺ</h3></div>
+        <div class="hadith-card">
+          <div class="quote">«علَيكُم بِالصِّدْقِ، فإنَّ الصِّدْقَ يَهْدي إلى البِرِّ، وإنَّ البِرَّ يَهْدي إلى الجَنَّة»</div>
+          <span class="src">رواه البخاري ومسلم<span class="hadith-grade ok">صحيح</span></span>
+        </div>
+      </div>
+    </aside>
+  </div>
+</div>
+
+<div class="modal-backdrop" id="signed-modal" role="dialog" aria-modal="true">
+  <div class="modal">
+    <button class="modal-close" data-close aria-label="إغلاق">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M6 6l12 12M18 6l-12 12"/></svg>
+    </button>
+    <div class="modal-deco" aria-hidden="true">
+      <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8 12l3 3 5-6"/></svg>
+    </div>
+    <div class="modal-eyebrow">تَعَهُّدٌ مَوقَّع</div>
+    <h2 class="modal-title">جَزاكَ اللهُ خَيرا</h2>
+    <div class="modal-meaning" id="signed-summary"></div>
+    <div class="modal-actions">
+      <button class="btn-ghost" data-close>عودة</button>
+      <button class="btn-primary" id="signed-print">طِباعةُ الشَّهادة</button>
+    </div>
+  </div>
+</div>
+
+<div class="particles" id="particles" aria-hidden="true"></div>
+
+<script src="../scripts/activity-common.js"></script>
+<script src="../scripts/honesty-pledge.js"></script>
+
+<script>
+window.PAGE_DICT = {
+  "تعهّد الصدق": "Honesty Pledge",
+  "الصِّدقُ خُلُقُ الأنبياء، وأَجمَلُ ما يُزَيَّنُ به القَلبُ والكَلام. اِكتُب اسمَك، واختَر تَعهُّداتك، ثُمَّ وَقِّع لِتَنالَ شَهادةً تَحتَفِظُ بِها.": "Honesty is the character of the prophets, and the finest adornment of the heart and speech. Write your name, choose your pledges, then sign to earn a certificate to keep.",
+  "حالةُ التَّعَهُّد": "Pledge status",
+  "غَيرُ مُوَقَّع": "Not signed",
+  "المُختار": "Selected",
+  "شَهادات سابِقة": "Past certificates",
+  "أيَّامُ الالتِزام": "Days of commitment",
+  "اِسمُكَ الكامِل": "Your full name",
+  "مَثَلاً: أَحمَد بنُ مُحَمَّد": "e.g. Ahmad ibn Muhammad",
+  "تَعَهَّدُ بِأن أَكونَ صادِقاً في…": "I pledge to be honest in…",
+  "تَوقيعُك (اِكتُب اسمَك بِالخَطِّ الذي تُحِبّ)": "Your signature (write your name in the style you like)",
+  "اِكتُب اِسمَكَ هُنا": "Write your name here",
+  "شَهادةُ صِدق": "Certificate of honesty",
+  "أَتَعَهَّدُ أَمامَ اللهِ تَعالى بِأَن أَكونَ": "I pledge before Allah the Exalted to be",
+  "في:": "in:",
+  "— اختَر تَعَهُّداتِكَ مِنَ القائِمَة —": "— Choose your pledges from the list —",
+  "سورة التوبة · 119": "Surat at-Tawbah · 119",
+  "التَّوقيع": "Signature",
+  "التَّاريخ": "Date",
+  "مَسح": "Clear",
+  "طِباعة": "Print",
+  "وَقِّع وَاحْفَظ": "Sign & save",
+  "آخِرُ شَهادة": "Last certificate",
+  "شَهاداتُكَ السَّابِقة": "Your past certificates",
+  "لماذا الصِّدق؟": "Why honesty?",
+  "الصِّدقُ ثِقَةٌ يَحبُّها النَّاس، ونورٌ في القَلب، وطَريقٌ إلى الجَنَّة. سُمِّيَ النبيُّ ﷺ قَبلَ البِعثَةِ بِـ«الصَّادِقِ الأَمين»، وكان قَومُه يُؤمِنونَه على أَموالِهم.": "Honesty is trust people love, light in the heart, and a path to Paradise. Before his prophethood, the Prophet ﷺ was called “the Truthful, the Trustworthy,” and his people trusted him with their wealth.",
+  "لا تَخَفْ مِنَ الحَقِّ ولَو غَلَطتَ. الاعتِراف بِالخَطأ شَجاعَة، والصِّدقُ يُنجي.": "Don't fear the truth even if you made a mistake. Admitting a mistake is courage, and honesty saves you.",
+  "قَولُ النَّبيِّ ﷺ": "The Prophet's ﷺ saying",
+  "تَعَهُّدٌ مَوقَّع": "Pledge signed",
+  "جَزاكَ اللهُ خَيرا": "May Allah reward you",
+  "عودة": "Back",
+  "طِباعةُ الشَّهادة": "Print the certificate"
+};
+</script>
+<script>
+Object.assign(window.PAGE_DICT, {
+  "كَلامي مع النَّاس":"My speech with people",
+  "مع والِدَيَّ ومُعَلِّمي":"With my parents and teacher",
+  "مع أَصدِقائي وإخوَتي":"With my friends and siblings",
+  "في واجِباتي ودراستي":"In my homework and studies",
+  "في الوُعودِ والمَواعيد":"In promises and appointments",
+  "في الاعتِرافِ بِأَخطائي":"In admitting my mistakes"
+});
+</script>
+<script src="../scripts/i18n.js"></script>
+<script src="../../shared/nav-fix.js"></script>
+</body>
+</html>

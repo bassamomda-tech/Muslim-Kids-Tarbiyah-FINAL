@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" data-theme="dusk" data-path="rampart">
+<head>
+<meta name="color-scheme" content="dark">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+<title>معاينةُ الشهادات · Certificate Preview</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Tajawal:wght@400;500;700;800;900&family=Amiri:wght@400;700&family=Nunito:wght@600;700;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+<link rel="stylesheet" href="styles/base.css">
+<link rel="stylesheet" href="styles/cert.css">
+<style>
+  .pv-wrap{ max-width:760px; margin:0 auto; padding:1.4rem clamp(.8rem,3vw,1.4rem) 4rem; position:relative; z-index:1; }
+  .pv-head{ text-align:center; margin:1rem 0 2rem; }
+  .pv-head h1{ font-size:clamp(1.3rem,4vw,1.8rem); color:var(--fg); }
+  .pv-head p{ font-size:.85rem; color:var(--fg-dim); margin-top:.4rem; line-height:1.6; }
+  .pv-toolbar{ display:flex; gap:.5rem; justify-content:center; flex-wrap:wrap; margin-top:1.1rem; }
+  .pv-toolbar button{ border:1px solid var(--line); color:var(--fg-dim);background: rgba(255,255,255,.04);
+    border-radius:2rem; padding:.4rem 1rem; font-weight:800; font-size:.82rem; font-family:inherit; cursor:pointer; transition:.18s; }
+  .pv-toolbar button.on{background: var(--gold); color:#1a1208; border-color:var(--gold); }
+  .pv-note{ text-align:center; font-size:.74rem; color:var(--fg-faint); margin-top:2rem; line-height:1.7; }
+  .cert{ margin:0; }
+  .cert-head{ display:none; }
+</style>
+<script>(function(){try{var p=JSON.parse(localStorage.getItem('hisn-prefs2')||'{}');var r=document.documentElement;if(p.theme)r.dataset.theme=p.theme;if(p.path)r.dataset.path=p.path;}catch(e){}})();</script>
+<style id="__antiflash">html{background:#0A2540;color-scheme:dark}</style>
+</head>
+<body>
+<div class="stars" id="stars"></div>
+
+<div class="pv-wrap">
+  <div class="pv-head">
+    <h1><span class="ar-only">معاينةُ شهاداتِ المراحل</span><span class="en-only">Era Certificate Preview</span></h1>
+    <p class="ar-only">هذه معاينةٌ فقط — تظهرُ الشهادةُ للطفلِ تلقائيًّا حين يُكمِلُ كلَّ محطّاتِ المرحلة. لا تؤثّرُ هذه الصفحةُ على تقدُّمِه.</p>
+    <p class="en-only">Preview only — in the app this unlocks automatically when the child finishes every station in the era. This page does not change real progress.</p>
+    <div class="pv-toolbar" id="pvToolbar"></div>
+  </div>
+  <section class="cert" id="eraCert"></section>
+  <p class="pv-note">
+    <span class="ar-only">جرّبْ كتابةَ الاسمِ في السطرِ المنقّط، ثمّ اضغطْ «اطبعِ الشهادة».</span>
+    <span class="en-only">Try typing a name on the dotted line, then tap “Print certificate”.</span>
+  </p>
+</div>
+
+<div id="printArea" style="display:none"></div>
+
+<script src="engine/icons.js"></script>
+<script src="engine/svg.js"></script>
+<script src="data/index.js"></script>
+<script src="data/prophets.js"></script>
+<script src="data/seerah.js"></script>
+<script src="data/heroes.js"></script>
+<script src="data/battles.js"></script>
+<script src="data/creativity.js"></script>
+<script src="data/heart.js"></script>
+<script>
+(function(){
+  const $ = s => document.querySelector(s);
+  let lang = (function(){ try{ return JSON.parse(localStorage.getItem('hisn-save')||'{}').lang || 'ar'; }catch(e){ return 'ar'; } })();
+  let eraId = 'prophets';
+  const CERT_NAME_KEY = 'hisn-childName';
+
+  function applyLang(){
+    document.documentElement.lang = lang;
+    document.documentElement.dir = lang==='ar' ? 'rtl' : 'ltr';
+  }
+
+  function toolbar(){
+    const eras = HISN.eraList();
+    $('#pvToolbar').innerHTML =
+      eras.map(e=>`<button data-era="${e.id}" class="${e.id===eraId?'on':''}">${e.title[lang]}</button>`).join('')
+      + `<button data-lang="1">${lang==='ar'?'EN':'عربي'}</button>`;
+    $('#pvToolbar').querySelectorAll('button').forEach(b=>{
+      if(b.dataset.lang){ b.addEventListener('click', ()=>{ lang = lang==='ar'?'en':'ar'; applyLang(); toolbar(); renderCert(); }); }
+      else b.addEventListener('click', ()=>{ eraId = b.dataset.era; toolbar(); renderCert(); });
+    });
+  }
+
+  function renderCert(){
+    const era = HISN.eras[eraId];
+    const box = $('#eraCert');
+    const emblem = HISN_SVG[era.icon] || HISN_SVG.crest || '';
+    const name = (function(){ try{ return localStorage.getItem(CERT_NAME_KEY)||''; }catch(e){ return ''; } })();
+    const ct = era.certificate;
+    const dateStr = new Date().toLocaleDateString(lang==='ar'?'ar-EG':'en-GB', {year:'numeric',month:'long',day:'numeric'});
+    document.documentElement.style.setProperty('--ec', era.accent);
+    document.documentElement.style.setProperty('--ec2', era.accent2);
+    box.innerHTML = `<div class="cert-card" id="certCard">
+      <div class="cert-ribbon">🎖️ ${lang==='ar'?'وسامُ الإتمام':'Medal of Completion'}</div>
+      <div class="cert-kicker">${lang==='ar'?'حِصنُ الأبطال':"Hero's Fortress"}</div>
+      <div class="cert-h">${era.title[lang]}<span class="cert-h-en">${lang==='ar'?era.title.en:era.title.ar}</span></div>
+      <div class="cert-sub">${ct.subtitle[lang]}</div>
+      <div class="cert-rule"></div>
+      <div class="cert-name-row">${lang==='ar'?'تُمنَحُ لـ':'Awarded to'}</div>
+      <span class="cert-name" id="certName" contenteditable="true" data-ph="${lang==='ar'?'اكتبْ اسمَك هنا':'write your name'}">${name}</span>
+      <div class="cert-statement">${ct.statement[lang]}</div>
+      <div class="cert-seal" aria-hidden="true">${emblem}<span>${lang==='ar'?'خَتمُ الحِصن':'Fortress Seal'}</span></div>
+      <div class="cert-sig">
+        <div><div class="line"></div>${lang==='ar'?'توقيعُ البطل':'Hero signature'}</div>
+        <div><div class="line"></div>${dateStr}</div>
+      </div>
+      <div class="cert-actions">
+        <button class="primary" id="certPrint">🖨️ ${lang==='ar'?'اطبعِ الشهادة':'Print certificate'}</button>
+      </div>
+    </div>`;
+    const nameEl = $('#certName');
+    if(nameEl) nameEl.addEventListener('input', ()=>{ try{ localStorage.setItem(CERT_NAME_KEY,(nameEl.textContent||'').trim()); }catch(e){} });
+    const printBtn = $('#certPrint');
+    if(printBtn) printBtn.addEventListener('click', ()=>{
+      const card = $('#certCard'); const print = $('#printArea');
+      print.style.display='block'; print.innerHTML=''; print.appendChild(card.cloneNode(true));
+      setTimeout(()=>{ window.print(); setTimeout(()=>{ print.style.display='none'; print.innerHTML=''; }, 600); }, 80);
+    });
+  }
+
+  // starfield
+  let s=''; for(let i=0;i<46;i++){ s+=`<i style="left:${Math.random()*100}%;top:${Math.random()*70}%;--d:${2+Math.random()*3}s;--dl:${-Math.random()*4}s"></i>`; }
+  $('#stars').innerHTML = s;
+
+  applyLang(); toolbar(); renderCert();
+})();
+</script>
+<script defer src="../shared/mk-system.js"></script>
+<script defer src="../shared/mk-journeys.js"></script>
+<script defer src="../shared/mk-bag.js"></script>
+<script defer src="../shared/mk-train.js"></script>
+<script defer src="../shared/nav-fix.js"></script>
+</body>
+</html>

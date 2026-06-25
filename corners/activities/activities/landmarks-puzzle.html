@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>أحجية المعالم · أنوس</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Amiri:wght@400;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+
+<link rel="stylesheet" href="../styles/tokens.css" />
+<link rel="stylesheet" href="../styles/dashboard.css" />
+<link rel="stylesheet" href="../styles/wheel.css" />
+<link rel="stylesheet" href="../styles/landmarks-puzzle.css" />
+</head>
+<body>
+
+<div class="bg-decor" aria-hidden="true"></div>
+
+<div class="activity-shell">
+
+  <nav class="activity-nav">
+    <a class="back-link" href="../dashboard.html">
+      الرجوع للوحة الأنشطة
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg>
+    </a>
+    <div class="activity-crumb">
+      <span>العلوم والاستكشاف</span>
+      <span class="sep">/</span>
+      <span class="cur">أحجية المعالم</span>
+    </div>
+    <div class="activity-actions">
+      <button class="icon-btn" id="reset-btn" title="إعادة الضبط" aria-label="إعادة الضبط">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 3-6.7L3 8"/><path d="M3 3v5h5"/></svg>
+      </button>
+    </div>
+  </nav>
+
+  <div class="activity-layout">
+
+    <section class="lp-panel">
+      <header class="wheel-header">
+        <span class="activity-tag">Activity 39 · Jigsaw Puzzle</span>
+        <h1 class="activity-title">أحجية المعالم</h1>
+        <p class="activity-desc">
+          ثَلاثَةُ مَعالِم أَحَبَّ المُسلِمونَ زِيارَتَها. اِنقُر قِطعَتَين لِتُبدِّل بَينَهُما،
+          أَكمِل الصُّورَة لِتَكتَشِف اسمَها وَفَضلَها.
+        </p>
+      </header>
+
+      <div class="lp-hud">
+        <div class="hud-block">المَعلَم <strong id="lp-cur">١<small>/3</small></strong></div>
+        <div class="hud-block">القِطَع <strong><span id="lp-correct">0</span><small>/9</small></strong></div>
+        <div class="hud-block">التَّبديلات <strong id="lp-swaps">0</strong></div>
+        <div class="hud-block">النَّقَطات <strong id="lp-points">0</strong></div>
+      </div>
+
+      <!-- مُحَدِّد المَعالِم -->
+      <div class="lp-picker" id="lp-picker"></div>
+
+      <div class="lp-stage">
+        <!-- شَبَكَة القِطَع -->
+        <div class="lp-board-wrap">
+          <div class="lp-board" id="lp-board"></div>
+
+          <!-- بِطاقَة الكَشف بَعدَ الحَلّ -->
+          <div class="lp-reveal" id="lp-reveal" hidden>
+            <div class="card">
+              <span class="label" id="reveal-label">المَعلَم</span>
+              <h3 class="title" id="reveal-title">…</h3>
+              <p class="body" id="reveal-body">…</p>
+              <div class="quote" id="reveal-quote">…</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="lp-controls">
+          <button class="lp-btn" id="btn-shuffle">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M16 3h5v5"/><path d="M21 3l-8 8"/><path d="M8 21H3v-5"/><path d="M3 21l8-8"/></svg>
+            خَلْط جَديد
+          </button>
+          <button class="lp-btn" id="btn-peek">
+            عَرضُ الصُّورَة (3 ثوان)
+          </button>
+          <button class="lp-btn primary" id="btn-next-landmark" hidden>
+            المَعلَم التّالي
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M15 6l-6 6 6 6"/></svg>
+          </button>
+        </div>
+      </div>
+
+      <div class="wheel-controls" style="margin-top:var(--s-4);">
+        <div class="wheel-stat">أَفضَل نَقَطات <strong id="best">—</strong></div>
+        <button class="wheel-mute-toggle" id="mute-btn" aria-pressed="false">
+          <span class="mute-icon"></span>
+          <span class="mute-label">كتم الصوت</span>
+        </button>
+      </div>
+    </section>
+
+    <aside class="side-panel">
+      <div class="panel-card">
+        <div class="panel-head">
+          <h3>المَعالِم المُكتَشَفَة</h3>
+          <span class="pill" id="lp-pill">0 / 3</span>
+        </div>
+        <div class="lp-discovered" id="discovered"></div>
+      </div>
+
+      <div class="panel-card">
+        <div class="panel-head"><h3>كَيف ألعب؟</h3></div>
+        <div style="font-size: 14px; line-height: 1.7; color: var(--ink-2);">
+          ١. اِختَر مَعلَماً مِنَ الأَعلى.<br/>
+          ٢. اِنقُر قِطعَةً أُولى، ثُمَّ قِطعَةً ثانِيَة لِتُبدِّل بَينَهُما.<br/>
+          ٣. القِطعَةُ المُوَجَّهَةُ بِشَكلٍ صَحيح تُلَوَّن بِالأَخضَر الخَفيف.<br/>
+          ٤. كلَّما قَلَّت التَّبديلات، زادَت النَّقَطات.
+        </div>
+        <div class="tip-card" style="margin-top: var(--s-3);">
+          <span class="tip-icon">!</span>
+          <span>قال ﷺ: «لا تُشَدُّ الرِّحالُ إلاّ إلى ثَلاثَةِ مَساجِد: المَسجِدِ الحَرام، ومَسجِدي هذا، والمَسجِدِ الأقصى» — البخاري ومسلم.</span>
+        </div>
+      </div>
+
+      <div class="panel-card">
+        <div class="panel-head"><h3>قَولُ اللهِ تَعالى</h3></div>
+        <div class="hadith-card">
+          <div class="quote">«سُبْحَانَ الَّذِي أَسْرَىٰ بِعَبْدِهِ لَيْلًا مِّنَ الْمَسْجِدِ الْحَرَامِ إِلَى الْمَسْجِدِ الْأَقْصَى» — الإسراء · 1</div>
+          <span class="src">رِحلَةُ المَعالِمِ الثَّلاثَة</span>
+        </div>
+      </div>
+    </aside>
+  </div>
+</div>
+
+<div class="modal-backdrop" id="done-modal" role="dialog" aria-modal="true">
+  <div class="modal">
+    <button class="modal-close" data-close aria-label="إغلاق">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M6 6l12 12M18 6l-12 12"/></svg>
+    </button>
+    <div class="modal-deco" aria-hidden="true">
+      <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M5 21V11l7-7 7 7v10M9 21v-6h6v6"/></svg>
+    </div>
+    <div class="modal-eyebrow">جَولَةُ المَعالِم</div>
+    <h2 class="modal-title">عَرَفتَ المَعالِمَ الثَّلاثَة</h2>
+    <div class="modal-meaning" id="done-summary"></div>
+    <div class="modal-actions">
+      <button class="btn-ghost" data-close>إنهاء</button>
+      <button class="btn-primary" id="done-next">جَولَةٌ جَديدة</button>
+    </div>
+  </div>
+</div>
+
+<div class="particles" id="particles" aria-hidden="true"></div>
+
+<script src="../scripts/activity-common.js"></script>
+<script src="../scripts/landmarks-puzzle.js"></script>
+
+<script>
+window.PAGE_DICT = {
+  "أحجية المعالم": "Landmarks Puzzle",
+  "ثَلاثَةُ مَعالِم أَحَبَّ المُسلِمونَ زِيارَتَها. اِنقُر قِطعَتَين لِتُبدِّل بَينَهُما، أَكمِل الصُّورَة لِتَكتَشِف اسمَها وَفَضلَها.": "Three landmarks Muslims have loved to visit. Tap two pieces to swap them, complete the picture to discover its name and virtue.",
+  "المَعلَم": "Landmark",
+  "القِطَع": "Pieces",
+  "التَّبديلات": "Swaps",
+  "النَّقَطات": "Points",
+  "خَلْط جَديد": "New shuffle",
+  "عَرضُ الصُّورَة (3 ثوان)": "Show the picture (3 sec)",
+  "المَعلَم التّالي": "Next landmark",
+  "أَفضَل نَقَطات": "Best points",
+  "المَعالِم المُكتَشَفَة": "Discovered landmarks",
+  "كَيف ألعب؟": "How to play?",
+  "١. اِختَر مَعلَماً مِنَ الأَعلى.": "1. Choose a landmark from above.",
+  "٢. اِنقُر قِطعَةً أُولى، ثُمَّ قِطعَةً ثانِيَة لِتُبدِّل بَينَهُما.": "2. Tap a first piece, then a second piece to swap them.",
+  "٣. القِطعَةُ المُوَجَّهَةُ بِشَكلٍ صَحيح تُلَوَّن بِالأَخضَر الخَفيف.": "3. A correctly placed piece is tinted light green.",
+  "٤. كلَّما قَلَّت التَّبديلات، زادَت النَّقَطات.": "4. The fewer your swaps, the more points.",
+  "قال ﷺ: «لا تُشَدُّ الرِّحالُ إلاّ إلى ثَلاثَةِ مَساجِد: المَسجِدِ الحَرام، ومَسجِدي هذا، والمَسجِدِ الأقصى» — البخاري ومسلم.": "He ﷺ said: «Journeys are not undertaken except to three mosques: the Sacred Mosque, this mosque of mine, and the Aqsa Mosque» — al-Bukhari & Muslim.",
+  "قَولُ اللهِ تَعالى": "The words of Allah the Exalted",
+  "رِحلَةُ المَعالِمِ الثَّلاثَة": "The journey of the three landmarks",
+  "جَولَةُ المَعالِم": "Landmarks round",
+  "عَرَفتَ المَعالِمَ الثَّلاثَة": "You knew the three landmarks",
+  "إنهاء": "Finish",
+  "جَولَةٌ جَديدة": "New round"
+};
+</script>
+<script>
+Object.assign(window.PAGE_DICT, {
+  "الكَعبَة المُشَرَّفَة":"The Holy Kaaba","المَسجِد النَّبَوي":"The Prophet's Mosque","قُبَّةُ الصَّخرَة":"The Dome of the Rock",
+  "مَكَّة المُكَرَّمَة":"Makkah al-Mukarramah","المَدينَة المُنَوَّرَة":"Al-Madinah al-Munawwarah","القُدسُ الشَّريف":"Noble Jerusalem",
+  "أَوَّلُ بَيتٍ وُضِعَ لِلنّاس. قِبلَةُ المُسلِمين في كلِّ صَلاة. بَناها إِبراهيمُ وإِسماعيلُ — عَلَيهِما السَّلام.":"The first house built for people. The qiblah of Muslims in every prayer. Built by Ibrahim and Ismail — peace be upon them.",
+  "«إِنَّ أَوَّلَ بَيْتٍ وُضِعَ لِلنَّاسِ لَلَّذِي بِبَكَّةَ مُبَارَكًا» — آل عمران · 96":"«The first house established for mankind was that at Bakkah, blessed» — Aal Imran · 96",
+  "بَناهُ النَّبيُّ ﷺ بِيَدِه عِندَ هِجرَتِه إلى المَدينَة. تَحتَ قُبَّتِه الخَضراءِ مَدفِنُهُ الشَّريف ﷺ.":"The Prophet ﷺ built it with his own hands upon his migration to Medina. Beneath its green dome is his noble resting place ﷺ.",
+  "«صَلاةٌ في مَسجِدي هذا أَفضَلُ مِن أَلفِ صَلاةٍ فيما سِواه» — البخاري ومسلم":"«A prayer in this mosque of mine is better than a thousand prayers elsewhere» — al-Bukhari & Muslim",
+  "مَعلَمُ القُدسِ المُذَهَّب، يَقومُ على صَخرَةٍ مُبارَكَة. مِن باحاتِ المَسجِدِ الأقصى أَوَّلِ القِبلَتَين.":"The gilded landmark of Jerusalem, standing on a blessed rock. Within the courtyards of Al-Aqsa Mosque, the first of the two qiblahs.",
+  "«سُبْحَانَ الَّذِي أَسْرَىٰ بِعَبْدِهِ لَيْلًا … إِلَى الْمَسْجِدِ الْأَقْصَى» — الإسراء · 1":"«Glory to the One who took His servant by night … to Al-Aqsa Mosque» — Al-Isra · 1"
+});
+</script>
+<script src="../scripts/i18n.js"></script>
+<script src="../../shared/nav-fix.js"></script>
+</body>
+</html>

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" data-theme="dusk" data-path="heart">
+<head>
+<meta name="color-scheme" content="dark">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+<title>ركن القلب السليم · Pure Heart Corner</title>
+<meta name="theme-color" content="#0C0A1C">
+<!-- This corner always renders the Pure Heart era. If opened without the param,
+     add it (so the shared era engine knows which corner to draw) before booting. -->
+<script>(function(){var p=new URLSearchParams(location.search);if(p.get('era')!=='heart'){p.set('era','heart');location.replace('heart.html?'+p.toString());}})();</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Tajawal:wght@400;500;700;800;900&family=Amiri:wght@400;700&family=Nunito:wght@600;700;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+<link rel="stylesheet" href="styles/base.css">
+<link rel="stylesheet" href="styles/map.css">
+<link rel="stylesheet" href="styles/timeline.css">
+<link rel="stylesheet" href="styles/cert.css">
+<script>(function(){try{var p=JSON.parse(localStorage.getItem('hisn-prefs2')||'{}');var r=document.documentElement;if(p.theme)r.dataset.theme=p.theme;}catch(e){}})();</script>
+<style id="__antiflash">html{background:#0A2540;color-scheme:dark}</style>
+</head>
+<style>
+  .learn-anous{border:2px solid #7E5BD0;border-radius:1.4rem;padding:1.2rem 1.3rem;margin:0 0 1.3rem;background:
+    linear-gradient(160deg,rgba(126,91,208,.20),rgba(255,255,255,.03))}
+  .learn-anous .la-head{display:flex;align-items:center;gap:.8rem;margin-bottom:.9rem}
+  .learn-anous .la-ic{font-size:2rem;flex:0 0 auto}
+  .learn-anous .la-tt{flex:1}
+  .learn-anous .la-tt h3{margin:0;font-size:1.3rem;font-weight:900;color:#C9B6F2}
+  .learn-anous .la-tt p{margin:.15rem 0 0;font-size:.88rem;opacity:.85;line-height:1.5}
+  .learn-anous .la-ct{flex:0 0 auto;font-size:.78rem;font-weight:800;opacity:.7;background:rgba(0,0,0,.25);border-radius:1rem;padding:.2rem .6rem}
+  .learn-anous .la-ct.full{background:rgba(46,158,91,.3);color:#bff7d4;opacity:1}
+  .learn-anous .la-btn{width:100%;display:flex;align-items:center;justify-content:center;gap:.6rem;background:
+    linear-gradient(135deg,#7E5BD0,#4B2F8C);color:#fff;border:none;border-radius:1.1rem;
+    padding:.95rem 1.2rem;font:900 1.05rem/1.2 'Tajawal',sans-serif;cursor:pointer;box-shadow:0 8px 22px rgba(0,0,0,.3)}
+  .learn-anous .la-btn:hover{filter:brightness(1.07)}
+  .learn-anous .la-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:.7rem}
+  .learn-anous .la-tile{display:flex;align-items:center;gap:.5rem;text-decoration:none;background:rgba(255,255,255,.06);
+    border:1.5px solid rgba(126,91,208,.4);border-radius:1rem;padding:.7rem .8rem;color:inherit;font-weight:800;
+    font-family:'Tajawal',sans-serif;transition:transform .15s,background .2s}
+  .learn-anous .la-tile:hover{transform:translateY(-3px);background:rgba(126,91,208,.16)}
+  .learn-anous .la-tile-ic{font-size:1.3rem;width:1.6rem;display:inline-flex;justify-content:center}
+  .learn-anous .la-tile-ic svg{width:1.3rem;height:1.3rem}
+  .learn-anous .la-tile-nm{flex:1;font-size:.9rem}
+</style>
+</head>
+<body>
+<div class="stars" id="stars"></div>
+
+<header class="topbar">
+  <a class="tb-back" href="../../index.html"><span>←</span><span id="backTxt">المدينة</span></a>
+  <div class="brand">
+    <span class="brand-badge" id="brandBadge"></span>
+    <div><h1 id="brandName">ركنُ القلبِ السليم</h1><p class="ar-only">البناءُ العاطفيُّ والنفسي</p><p class="en-only">Emotional & Spiritual Building</p></div>
+  </div>
+  <div class="tb-right">
+    <div class="xp-wrap"><div class="xp-top"><span class="lvl" id="lvl">LVL 1</span><span class="xp" id="xp">0 XP</span></div><div class="xp-track"><div class="xp-fill" id="xpfill"></div></div></div>
+    <div class="lang"><button id="langAr" class="on" onclick="setLang('ar')">عربي</button><button id="langEn" onclick="setLang('en')">EN</button></div>
+  </div>
+</header>
+
+<main class="era-wrap">
+  <div class="era-plate" id="eraPlate"></div>
+  <div class="view-toggle" id="viewToggle" hidden></div>
+  <div class="view" id="viewMap">
+    <div class="field">
+      <div class="field-battlement"></div>
+      <div class="field-bg" id="fieldBg"></div>
+      <svg class="path-svg" viewBox="0 0 100 100" preserveAspectRatio="none"><g id="pathSeg"></g></svg>
+      <div class="field-stations" id="stations"></div>
+    </div>
+  </div>
+  <div class="view" id="viewTimeline" hidden></div>
+  <section class="cats" id="viewCats" hidden></section>
+  <section class="aspects" id="eraAspects" hidden></section>
+  <section class="cert" id="eraCert" hidden></section>
+  <nav class="era-nav" id="eraNav"></nav>
+</main>
+
+<div id="printArea" style="display:none"></div>
+
+<div class="guide" id="guide">
+  <div class="guide-avatar" id="guideAvatar"></div>
+  <div class="guide-bubble"><button class="guide-x" onclick="tuckGuide()">✕</button><b id="guideName">رقية</b><p id="guideLine"></p></div>
+</div>
+
+<!-- App scripts (plain JS): download in parallel, execute in dependency order -->
+<script defer src="engine/icons.js"></script>
+<script defer src="engine/svg.js"></script>
+<script defer src="data/index.js"></script>
+<script defer src="data/heart.js"></script>
+<script defer src="data/heart-medals.js"></script>
+<script defer src="data/activities-heart.js"></script>
+<script defer src="engine/progress.js"></script>
+<script defer src="engine/era.js"></script>
+<script defer src="../quiz/quiz-engine.js"></script>
+<script>window.MK_CORNER='heart';window.MK_SCORE_ERAS=['heart'];window.MK_TRAIN_NEXT_CORNER='heart';</script>
+<script defer src="../shared/mk-system.js"></script>
+<script defer src="../shared/mk-journeys.js"></script>
+<script defer src="../shared/mk-corner-score.js"></script>
+<script defer src="../shared/mk-bag.js"></script>
+<script defer src="../shared/mk-train.js"></script>
+<script defer src="../shared/nav-fix.js"></script>
+<script src="../shared/mk-citynav.js"></script>
+</body>
+</html>

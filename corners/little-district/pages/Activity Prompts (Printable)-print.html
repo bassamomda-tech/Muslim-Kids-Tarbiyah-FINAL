@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Activity Prompts — Printable Reference</title>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&family=Nunito:wght@400;600;700;800&display=swap">
+<style>
+  *{box-sizing:border-box}
+  body{background:#F0EEE6;margin:0;font-family:'Nunito','Tajawal',sans-serif;color:#23303a;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .page{max-width:816px;margin:26px auto;background:#fff;padding:64px 68px;box-shadow:0 2px 12px rgba(0,0,0,.08);border-radius:3px}
+
+  /* cover / intro */
+  .doc-kick{font-size:.78rem;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;color:#9a7414}
+  h1.doc-title{font-size:2rem;font-weight:900;margin:.25rem 0 .4rem;color:#0A2540;font-family:'Tajawal','Nunito',sans-serif}
+  .doc-sub{font-size:1rem;color:#5a6470;line-height:1.7;margin:0 0 1.3rem}
+  .stylebox{background:#fbf6e8;border:1px solid #e3d3a0;border-radius:10px;padding:1rem 1.1rem;margin:1.1rem 0 0}
+  .stylebox h3{margin:0 0 .5rem;font-size:.92rem;font-weight:900;color:#7a5a12}
+  .stylebox p{margin:0;font-size:.84rem;line-height:1.7;color:#4a5560;direction:ltr;text-align:left}
+  .note{font-size:.84rem;color:#6a5a2a;background:#fcf3da;border-left:4px solid #d4a017;border-radius:6px;padding:.7rem .9rem;margin-top:1rem;line-height:1.65}
+
+  /* corner section */
+  .corner{margin-top:1.6rem;break-inside:avoid}
+  .corner-h{display:flex;align-items:baseline;gap:.55rem;border-bottom:2px solid var(--cc,#0A2540);padding-bottom:.4rem;margin:1.4rem 0 .9rem}
+  .corner-h .ci{font-size:1.3rem}
+  .corner-h .cn{font-size:1.3rem;font-weight:900;color:var(--cc,#0A2540);font-family:'Tajawal','Nunito',sans-serif}
+  .corner-h .cen{font-size:.86rem;font-weight:700;color:#8895a0}
+  .corner-h .ccount{margin-left:auto;font-size:.74rem;font-weight:800;color:#fff;background:var(--cc,#0A2540);border-radius:1rem;padding:.12rem .6rem}
+
+  .prompt{break-inside:avoid;padding:.75rem 0 .85rem;border-bottom:1px dashed #dfe3e8}
+  .prompt:last-child{border-bottom:none}
+  .p-head{display:flex;align-items:baseline;flex-wrap:wrap;gap:.5rem;margin-bottom:.35rem}
+  .p-num{font-weight:900;color:var(--cc,#0A2540);font-size:.95rem;min-width:1.6rem}
+  .p-title{font-weight:900;font-size:1.02rem;color:#1a2630;font-family:'Tajawal','Nunito',sans-serif}
+  .p-title .en{font-weight:700;font-size:.82rem;color:#8895a0;margin-left:.4rem}
+  .p-tags{margin-left:auto;display:flex;gap:.35rem;flex-wrap:wrap}
+  .tg{font-size:.68rem;font-weight:800;border-radius:1rem;padding:.12rem .55rem;white-space:nowrap}
+  .tg.type{background:#f3ebd2;color:#8a6a1a}
+  .tg.age{background:#eee3f5;color:#6b3f93}
+  .p-body{font-size:.85rem;line-height:1.62;color:#33414c;direction:ltr;text-align:left;padding-left:1.6rem}
+
+  .foot{margin-top:1.6rem;padding-top:.8rem;border-top:1px solid #e3e7ec;font-size:.78rem;color:#9aa6b0;text-align:center}
+
+  .toolbar{position:fixed;top:14px;right:14px;display:flex;gap:.5rem;z-index:50}
+  .tb-btn{border:none;border-radius:2rem;padding:.55rem 1.2rem;font-weight:800;font-family:inherit;cursor:pointer;font-size:.9rem;box-shadow:0 4px 14px rgba(0,0,0,.18)}
+  .tb-btn.print{background:#D4A017;color:#10243d}
+
+  @media print{
+    body{background:#fff}
+    .page{max-width:none;margin:0;padding:0;box-shadow:none;border-radius:0}
+    .toolbar{display:none}
+    @page{margin:0.7in}
+    .corner-h{break-after:avoid}
+  }
+</style>
+</head>
+<body>
+<div class="toolbar"><button class="tb-btn print" onclick="window.print()">🖨️ Print / Save PDF</button></div>
+
+<div class="page">
+  <div class="doc-kick">Parents' Corner · Nano Banana Prompt Bank</div>
+  <h1 class="doc-title">بنك أنشطة الأطفال — Children's Activity Prompts</h1>
+  <p class="doc-sub" id="introSub"></p>
+
+  <div class="stylebox">
+    <h3>House style — appended to every prompt</h3>
+    <p id="styleText"></p>
+  </div>
+  <div class="note">
+    ⚠️ <b>Arabic text:</b> Nano Banana (Gemini's image model) renders English reliably but often distorts Arabic letters. Generate 2–3 versions and pick the best, or omit the Arabic and add it yourself afterwards. The exact Arabic to render is shown inside «guillemets» in each prompt.
+  </div>
+
+  <div id="content"></div>
+
+  <div class="foot" id="foot"></div>
+</div>
+
+<script src="activity-prompts.js"></script>
+<script>
+  var introSub = "90 ready-to-use creative prompts for generating kids' activities and printables — covering all nine corners and every age group (3–5, 6–8, 9–12, 13+). Each prompt below is complete on its own: paste it into Nano Banana together with the house-style clause shown here.";
+  document.getElementById('introSub').textContent = introSub;
+  document.getElementById('styleText').textContent = AP.STYLE;
+
+  var content = document.getElementById('content');
+  var total = 0;
+  AP.CORNERS.forEach(function(c){
+    var items = AP.PROMPTS.filter(function(p){return p.corner===c.id;});
+    if(!items.length) return;
+    var sec = document.createElement('section');
+    sec.className='corner';
+    sec.style.setProperty('--cc', c.color);
+    var h = '<div class="corner-h"><span class="ci">'+c.icon+'</span>'+
+      '<span class="cn">'+c.ar+'</span><span class="cen">'+c.en+'</span>'+
+      '<span class="ccount">'+items.length+' prompts</span></div>';
+    var rows='';
+    items.forEach(function(p,i){
+      total++;
+      var t = AP.TYPES[p.type];
+      var age = AP.AGES.filter(function(a){return a.id===p.age;})[0];
+      rows += '<div class="prompt">'+
+        '<div class="p-head"><span class="p-num">'+(i+1)+'.</span>'+
+        '<span class="p-title">'+p.titleAr+'<span class="en">'+p.titleEn+'</span></span>'+
+        '<span class="p-tags"><span class="tg type">'+t.icon+' '+t.en+'</span>'+
+        '<span class="tg age">'+age.en+'</span></span></div>'+
+        '<div class="p-body">'+escapeHtml(p.body)+'</div></div>';
+    });
+    sec.innerHTML = h + rows;
+    content.appendChild(sec);
+  });
+  document.getElementById('foot').textContent = total + ' prompts · 9 corners · all ages · Muslim Kids\u2019 Tarbiyah';
+
+  function escapeHtml(s){ return String(s).replace(/[&<>]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;'}[c];}); }
+</script>
+<script>
+(async () => {
+  // Prepend so page-supplied @page / break rules (deck-stage's margin:0,
+  // author CSS) keep source-order precedence over the baseline.
+  const baseCss = document.createElement('style');
+  baseCss.textContent = "@media print {\n  @page { margin: 0.5cm; }\n  html, body { print-color-adjust: exact; -webkit-print-color-adjust: exact; }\n  section, article, figure, table { break-inside: avoid; }\n  *, *::before, *::after {\n    animation-delay: -99s !important; animation-duration: .001s !important;\n    animation-iteration-count: 1 !important; animation-fill-mode: both !important;\n    animation-play-state: running !important; transition-duration: 0s !important;\n  }\n}";
+  document.head.prepend(baseCss);
+  if (document.readyState === 'loading') {
+    await new Promise((r) => document.addEventListener('DOMContentLoaded', r, { once: true }));
+  }
+  let ds = document.querySelector('deck-stage');
+  // whenDefined never resolves when nothing registers the element, so only
+  // await it when a <deck-stage> tag exists (and race a timeout regardless).
+  if (ds && !customElements.get('deck-stage')) {
+    try {
+      await Promise.race([
+        customElements.whenDefined('deck-stage'),
+        new Promise((r) => setTimeout(r, 3000)),
+      ]);
+    } catch (e) {}
+    ds = document.querySelector('deck-stage');
+  }
+  // dc-runtime assigns window.DCLogic at init and mounts into #dc-root on
+  // DOMContentLoaded; settle on that subtree so React has rendered before
+  // print(). Non-DC pages fall through to weighing body.
+  const isDc = !ds && 'DCLogic' in window;
+  const settleRoot = ds || (isDc ? document.getElementById('dc-root') : null) || document.body;
+  if (settleRoot) {
+    // Weigh only content children — skip script/style/template so inline
+    // Babel/CSS doesn't register as stable "content" before the framework
+    // has mounted anything.
+    const MEDIA = 'img,svg,canvas,video,picture,iframe,embed,object';
+    const weigh = () => {
+      let text = 0, media = 0;
+      for (const c of settleRoot.children) {
+        const t = c.tagName;
+        if (t === 'SCRIPT' || t === 'STYLE' || t === 'TEMPLATE') continue;
+        text += (c.textContent || '').trim().length;
+        media += c.querySelectorAll(MEDIA).length + (c.matches(MEDIA) ? 1 : 0);
+      }
+      return text + media * 100;
+    };
+    // "Non-zero and stable" alone is not sufficient to mean rendered: generic
+    // body can carry a static shell while async main content is pending, and
+    // #dc-root can carry the root DC's static text while child refs are still
+    // .sc-placeholder boxes. Gate generic on readyState 'complete', and never
+    // accept stability while a dc-runtime placeholder is present.
+    const isGeneric = settleRoot === document.body;
+    const deadline = Date.now() + 15000;
+    let last = -1, stable = 0;
+    while (Date.now() < deadline) {
+      const n = weigh();
+      const ready =
+        (!isGeneric || document.readyState === 'complete') &&
+        !settleRoot.querySelector('.sc-placeholder');
+      if (n > 0 && n === last && ready) { if (++stable >= 2) break; } else { stable = 0; }
+      last = n;
+      await new Promise((r) => setTimeout(r, 250));
+    }
+  }
+  try { await document.fonts.ready; } catch (e) {}
+  // Jump every animation to its end state so print() never captures a slide
+  // mid-entrance. Ordering matters: the 0s-transition style must be live
+  // BEFORE data-deck-active is set so attribute-keyed transitions don't
+  // start a (now-0s) run from the pre-active base.
+  const st = document.createElement('style');
+  st.textContent = '*,*::before,*::after{animation-delay:-99s !important;animation-duration:.001s !important;animation-iteration-count:1 !important;animation-fill-mode:both !important;animation-play-state:running !important;transition-duration:0s !important}';
+  document.head.appendChild(st);
+  for (const d of document.querySelectorAll('deck-stage')) {
+    for (const c of d.children) {
+      const t = c.tagName;
+      if (t === 'SCRIPT' || t === 'STYLE' || t === 'TEMPLATE') continue;
+      c.setAttribute('data-deck-active', '');
+    }
+  }
+  try {
+    const sweep = () => {
+      for (const a of document.getAnimations()) {
+        try { a.finish(); } catch (e) {
+          try { a.currentTime = (a.effect && a.effect.getComputedTiming().duration) || 0; a.pause(); } catch (e2) {}
+        }
+      }
+    };
+    sweep();
+    await new Promise((r) => requestAnimationFrame(r));
+    sweep();
+    await new Promise((r) => requestAnimationFrame(r));
+  } catch (e) {}
+  setTimeout(() => { try { window.print(); } catch (e) {} }, 200);
+})();
+</script>
+</body>
+</html>

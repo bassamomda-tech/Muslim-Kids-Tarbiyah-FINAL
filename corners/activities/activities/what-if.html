@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>ماذا لو؟ · أنوس</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Amiri:wght@400;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+
+<link rel="stylesheet" href="../styles/tokens.css" />
+<link rel="stylesheet" href="../styles/dashboard.css" />
+<link rel="stylesheet" href="../styles/wheel.css" />
+<link rel="stylesheet" href="../styles/what-if.css" />
+</head>
+<body>
+
+<div class="bg-decor" aria-hidden="true"></div>
+
+<div class="activity-shell">
+
+  <nav class="activity-nav">
+    <a class="back-link" href="../dashboard.html">
+      الرجوع للوحة الأنشطة
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg>
+    </a>
+    <div class="activity-crumb">
+      <span>العلوم والاستكشاف</span>
+      <span class="sep">/</span>
+      <span class="cur">ماذا لو؟</span>
+    </div>
+    <div class="activity-actions">
+      <button class="icon-btn" id="reset-btn" title="إعادة الضبط" aria-label="إعادة الضبط">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 3-6.7L3 8"/><path d="M3 3v5h5"/></svg>
+      </button>
+    </div>
+  </nav>
+
+  <div class="activity-layout">
+
+    <section class="wi-panel">
+      <header class="wheel-header">
+        <span class="activity-tag">Activity 38 · Scenario Branching</span>
+        <h1 class="activity-title">ماذا لو؟</h1>
+        <p class="activity-desc">
+          في كلِّ مَوقِفٍ بابانِ: قَريبٌ مِنَ النَّبيِّ ﷺ، أو بَعيد.
+          اِختَر طَريقَك في القِصَّة، وَشاهِد إلى أَيِّ نِهايَةٍ يَأخُذُكَ القَرار.
+        </p>
+      </header>
+
+      <div class="wi-hud">
+        <div class="hud-block">القِصَّة <strong id="wi-story-num">١<small>/3</small></strong></div>
+        <div class="hud-block">العُقدَة <strong><span id="wi-depth">١</span></strong></div>
+        <div class="hud-block">النِّهايات <strong><span id="wi-endings">0</span><small>/4</small></strong></div>
+        <div class="hud-block">النَّقَطات <strong id="wi-points">0</strong></div>
+      </div>
+
+      <!-- مُحَدِّد القِصَص -->
+      <div class="wi-story-picker" id="wi-story-picker"></div>
+
+      <div class="wi-stage" id="wi-stage">
+        <!-- اللَّوحَة العُليا: اسمُ القِصَّة + شَجَرَةُ المَسار -->
+        <header class="wi-story-head">
+          <div class="wi-story-meta">
+            <span class="wi-story-ic" id="story-ic">✦</span>
+            <div>
+              <strong id="story-title">…</strong>
+              <small id="story-sub">قِصَّة مُتَفَرِّعَة</small>
+            </div>
+          </div>
+          <div class="wi-breadcrumb" id="breadcrumb"></div>
+        </header>
+
+        <!-- المَشهَد -->
+        <div class="wi-scene" id="wi-scene">
+          <span class="wi-scene-label" id="scene-label">المَشهَد</span>
+          <p class="wi-scene-text" id="scene-text">…</p>
+        </div>
+
+        <!-- الخَيارات -->
+        <div class="wi-choices" id="wi-choices"></div>
+
+        <!-- نِهايَة (إِذا وَصَلنا) -->
+        <div class="wi-outcome" id="wi-outcome" hidden></div>
+
+        <div class="wi-controls">
+          <button class="wi-btn" id="btn-back">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg>
+            رُجوع خُطوَة
+          </button>
+          <button class="wi-btn" id="btn-restart-story">إعادَةُ القِصَّة</button>
+          <button class="wi-btn primary" id="btn-next-story" hidden>
+            القِصَّة التّالِيَة
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M15 6l-6 6 6 6"/></svg>
+          </button>
+        </div>
+      </div>
+
+      <div class="wheel-controls" style="margin-top:var(--s-4);">
+        <div class="wheel-stat">أَفضَل نَقَطات <strong id="best">—</strong></div>
+        <button class="wheel-mute-toggle" id="mute-btn" aria-pressed="false">
+          <span class="mute-icon"></span>
+          <span class="mute-label">كتم الصوت</span>
+        </button>
+      </div>
+    </section>
+
+    <aside class="side-panel">
+      <div class="panel-card">
+        <div class="panel-head">
+          <h3>نِهاياتُ القِصَّة</h3>
+          <span class="pill" id="end-pill">0 / 4</span>
+        </div>
+        <div class="wi-endings-list" id="endings-list"></div>
+      </div>
+
+      <div class="panel-card">
+        <div class="panel-head"><h3>كَيف ألعب؟</h3></div>
+        <div style="font-size: 14px; line-height: 1.7; color: var(--ink-2);">
+          ١. اخْتَر قِصَّةً مِنَ الأَعلى.<br/>
+          ٢. اقْرَأ المَوقِف ثُمَّ اضغط الخِيارَ الَّذي تَراهُ أَقرَب.<br/>
+          ٣. كلُّ طَريقٍ يَنتَهي بِنَتيجَةٍ مُختَلِفَة.<br/>
+          ٤. أَكمِل النِّهاياتِ الأَربَع لِكلِّ قِصَّةٍ لِنَيلِ كاملِ النَّقَطات.
+        </div>
+        <div class="tip-card" style="margin-top: var(--s-3);">
+          <span class="tip-icon">!</span>
+          <span>قال ﷺ: «إنَّما الأَعمالُ بِالنِّيّات». في كلِّ قِصَّةٍ هنا، النِّيَّةُ تَصنَع الفَرق.</span>
+        </div>
+      </div>
+
+      <div class="panel-card">
+        <div class="panel-head"><h3>قَولُ اللهِ تَعالى</h3></div>
+        <div class="hadith-card">
+          <div class="quote">«وَهَدَيْنَاهُ النَّجْدَيْنِ» — البلد · 10</div>
+          <span class="src">طَريقُ الخَيرِ وطَريقُ الشَّرّ بَيِّنَتان</span>
+        </div>
+      </div>
+    </aside>
+  </div>
+</div>
+
+<div class="modal-backdrop" id="done-modal" role="dialog" aria-modal="true">
+  <div class="modal">
+    <button class="modal-close" data-close aria-label="إغلاق">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M6 6l12 12M18 6l-12 12"/></svg>
+    </button>
+    <div class="modal-deco" aria-hidden="true">
+      <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a10 10 0 1 0 10 10"/><path d="M12 6v6l4 2"/></svg>
+    </div>
+    <div class="modal-eyebrow">قِصَّةٌ مُكتَمِلَة</div>
+    <h2 class="modal-title" id="done-title">قَرَأتَ كلَّ نِهايات الطَّريق</h2>
+    <div class="modal-meaning" id="done-summary"></div>
+    <div class="modal-actions">
+      <button class="btn-ghost" data-close>إنهاء</button>
+      <button class="btn-primary" id="done-next">القِصَّة التّالِيَة</button>
+    </div>
+  </div>
+</div>
+
+<div class="particles" id="particles" aria-hidden="true"></div>
+
+<script src="../scripts/activity-common.js"></script>
+<script src="../scripts/what-if.js"></script>
+
+<script>
+window.PAGE_DICT = {
+  "ماذا لو؟": "What If?",
+  "في كلِّ مَوقِفٍ بابانِ: قَريبٌ مِنَ النَّبيِّ ﷺ، أو بَعيد. اِختَر طَريقَك في القِصَّة، وَشاهِد إلى أَيِّ نِهايَةٍ يَأخُذُكَ القَرار.": "In each situation there are two doors: close to the Prophet ﷺ, or far. Choose your path in the story, and see which ending your decision leads you to.",
+  "القِصَّة": "Story",
+  "العُقدَة": "Depth",
+  "النِّهايات": "Endings",
+  "النَّقَطات": "Points",
+  "قِصَّة مُتَفَرِّعَة": "A branching story",
+  "المَشهَد": "Scene",
+  "رُجوع خُطوَة": "Step back",
+  "إعادَةُ القِصَّة": "Restart story",
+  "القِصَّة التّالِيَة": "Next story",
+  "أَفضَل نَقَطات": "Best points",
+  "نِهاياتُ القِصَّة": "Story endings",
+  "كَيف ألعب؟": "How to play?",
+  "١. اخْتَر قِصَّةً مِنَ الأَعلى.": "1. Choose a story from above.",
+  "٢. اقْرَأ المَوقِف ثُمَّ اضغط الخِيارَ الَّذي تَراهُ أَقرَب.": "2. Read the situation then tap the option you see as closest.",
+  "٣. كلُّ طَريقٍ يَنتَهي بِنَتيجَةٍ مُختَلِفَة.": "3. Each path ends with a different outcome.",
+  "٤. أَكمِل النِّهاياتِ الأَربَع لِكلِّ قِصَّةٍ لِنَيلِ كاملِ النَّقَطات.": "4. Complete all four endings of each story to earn full points.",
+  "قال ﷺ: «إنَّما الأَعمالُ بِالنِّيّات». في كلِّ قِصَّةٍ هنا، النِّيَّةُ تَصنَع الفَرق.": "He ﷺ said: «Deeds are but by intentions». In every story here, the intention makes the difference.",
+  "قَولُ اللهِ تَعالى": "The words of Allah the Exalted",
+  "طَريقُ الخَيرِ وطَريقُ الشَّرّ بَيِّنَتان": "The path of good and the path of evil are both clear",
+  "قِصَّةٌ مُكتَمِلَة": "Story complete",
+  "قَرَأتَ كلَّ نِهايات الطَّريق": "You read all the path's endings",
+  "إنهاء": "Finish"
+};
+</script>
+<script>
+Object.assign(window.PAGE_DICT, {
+  "المَحفَظَة الضّائِعَة":"The Lost Wallet","أَمانَةٌ في الطَّريق":"A trust on the road",
+  "المَوقِف":"The situation","بَعدَ خُطوَتَين":"After two steps","وَجَدتَ بِطاقَة":"You found an ID card",
+  "في طَريقِكَ إلى المَدرَسَة وَجَدتَ مَحفَظَةً سَقَطَت مِن شَخصٍ ما، فيها مالٌ وَبِطاقَةٌ شَخصيَّة. لَم يَرَكَ أَحَد. ماذا تَفعَل؟":"On your way to school you found a wallet that fell from someone, with money and an ID card. No one saw you. What do you do?",
+  "آخُذُها مَعي بِهُدوء وأَفكِّر لاحِقاً.":"I quietly take it and think later.","أَفتَحُها لِأَعرِفَ صاحِبَها.":"I open it to find its owner.",
+  "وَضَعتَ المَحفَظَةَ في حَقيبَتِك. صَديقُكَ لَحِقَ بِك وسَأَلَك: «ما هذا الَّذي تُخفيه؟»":"You put the wallet in your bag. Your friend caught up and asked: «What's that you're hiding?»",
+  "أَعتَرِفُ لَهُ وأَطلُبُ مُساعَدَتَهُ في إيصالِها.":"I admit it to him and ask his help to return it.","أَكذِبُ وأَقول: لا شَيء، حاجَةٌ خاصَّة.":"I lie and say: nothing, a private thing.",
+  "البِطاقَةُ تَحمِلُ اسماً وَرَقمَ هاتِف. الشَّمسُ تَرتَفِع، وأَنتَ مُتَأَخِّر قَليلاً.":"The card bears a name and phone number. The sun is rising, and you're a little late.",
+  "أَتَّصِلُ بِالرَّقمِ فَوراً مِن هاتِفِ والِدي.":"I call the number right away from my father's phone.","أَترُكُ المَحفَظَةَ تَحتَ شَجَرَةٍ، لَعَلَّ صاحِبَها يَجِدُها.":"I leave the wallet under a tree, hoping its owner finds it.",
+  "صَديقانِ على الصِّدق":"Two friends in honesty","اِتَّصَلتُما بِصاحِبِها، فَفَرِحَ وَدَعا لَكُما. اِكتَشَفتُما أَنَّ الصِّدقَ يُسهِّلُ ما كانَ يَبدو ثَقيلاً.":"You both called its owner, who was delighted and prayed for you. You discovered that honesty eases what seemed heavy.",
+  "«إنَّ الصِّدقَ يَهدي إلى البِرّ» — البخاري ومسلم":"«Honesty leads to righteousness» — al-Bukhari & Muslim",
+  "ثِقلٌ في الصَّدر":"A weight on the chest","نَجاتٌ ظاهِرَة، لكِنَّكَ بِتَّ ساهِراً تُفَكِّرُ بِصاحِبِها. الكَذبَةُ الواحِدَةُ تَطلُبُ أُختاً لَها، وَهكَذا.":"An apparent escape, but you lay awake thinking of its owner. One lie calls for another, and so on.",
+  "«إيّاكُم والكَذِبَ فإنَّ الكَذِبَ يَهدي إلى الفُجور» — البخاري ومسلم":"«Beware of lying, for lying leads to wickedness» — al-Bukhari & Muslim",
+  "أَمينٌ صَغيرٌ كَبير":"A young yet great trustee","حَضَرَ صاحِبُها وَشَكَرَكَ بِدَموع. عَرَضَ مُكافَأَةً فَقُلتَ: «هذا واجِب». رَأى فيكَ الكَبيرَ قَبلَ أن تَكبَر.":"Its owner came and thanked you in tears. He offered a reward and you said: «This is a duty». He saw the grown-up in you before you grew up.",
+  "«المُسلِمُ مَن سَلِمَ المُسلِمونَ مِن لِسانِهِ وَيَدِه» — البخاري ومسلم":"«The Muslim is the one from whose tongue and hand Muslims are safe» — al-Bukhari & Muslim",
+  "نِيَّةٌ بِلا خُطوَة":"Intention without a step","أَخفَيتَها بِنيَّةٍ طَيِّبَة، لكِنَّ مَن وَجَدَها بَعدَكَ قَد لا يَكونُ مِثلَكَ. النِّيَّةُ الحَسَنَةُ تَحتاجُ يَداً تُحَقِّقُها.":"You hid it with good intention, but whoever finds it after you may not be like you. A good intention needs a hand to fulfill it.",
+  "«مَن دَلَّ على خَيرٍ فَلَهُ مِثلُ أَجرِ فاعِلِه» — مسلم":"«Whoever guides to good has a reward like the doer of it» — Muslim",
+  "إشارَةٌ في الامتِحان":"A signal in the exam","صَديقٌ في وَرطَة":"A friend in trouble","تَطَوُّر":"A development","بَعدَ الامتِحان":"After the exam",
+  "في الامتِحان، صَديقُكَ يَنظُرُ إليكَ بِعَينَين قَلِقَتَين، يُومِئُ بِرَأسِه طالِباً أن تُريَهُ إِجابَتَك. المُعَلِّمَةُ ظَهرُها لَكُما.":"In the exam, your friend looks at you with anxious eyes, nodding for you to show him your answer. The teacher's back is to you both.",
+  "أَرفَعُ وَرَقَتي قَليلاً لِيَرى.":"I raise my paper a little so he can see.","أَهُزُّ رَأسي بِأَدَب: لا، لاحِقاً.":"I shake my head politely: no, later.",
+  "اِنتَبَهَتِ المُعَلِّمَةُ لِحَرَكَةِ يَدِكُما، وَجاءَت تَسأَلُكُما: «ما الَّذي يَحدُث؟»":"The teacher noticed your hand movement and came asking: «What's going on?»",
+  "أَعتَرِفُ بِأَنّي ساعَدتُهُ، وأَتحَمَّلُ النَّتيجَة.":"I admit I helped him and accept the consequence.","أَتَّهِمُهُ وَحدَه، فَهوَ مَن طَلَب.":"I blame him alone — he's the one who asked.",
+  "خَرَجَ صَديقُكَ مُحبَطاً وزَعِلاً، يُلَوِّحُ لَكَ بِيَدِه. ماذا تَفعَل؟":"Your friend left frustrated and upset, waving at you. What do you do?",
+  "أَدعوهُ لِمُذاكَرَةٍ مَعي قَبلَ الامتِحانِ القادِم.":"I invite him to study with me before the next exam.","أَتَجاهَلُه، فَهوَ سَبَبُ زَعَلِه.":"I ignore him — he caused his own upset.",
+  "صِدقٌ يَفتَحُ باباً":"Honesty opens a door","تَحَدَّثَت مَعَكُما المُعَلِّمَةُ، وعاقَبَتكُما بِواجِبٍ إِضافي. لكِنَّها قالَت: «أَنا فَخورَةٌ بِصِدقِك». تَعَلَّمتَ أنَّ الاعتِرافَ يُخَفِّفُ الحِملَ ولا يُثَقِّلُه.":"The teacher spoke with you both and gave you extra homework. But she said: «I'm proud of your honesty». You learned that admitting lightens the load, not adds to it.",
+  "«التّائِبُ مِنَ الذَّنبِ كَمَن لا ذَنبَ لَه» — ابن ماجه":"«The one who repents from sin is like one with no sin» — Ibn Majah"
+});
+</script>
+<script>
+Object.assign(window.PAGE_DICT, {
+  "خِيانَةُ صَديق":"Betrayal of a friend","صَديقُكَ نَظَرَ إليكَ بِخَيبَة، وَفَقَدَ ثِقَتَهُ بِك. صِرتَ شَريكاً في خَطإٍ ثُمَّ شاهِداً عَلَيهِ كاذِباً. الخَيرُ يَهدِم نَفسَهُ بِالظُّلم.":"Your friend looked at you with disappointment and lost his trust in you. You became a partner in a mistake, then a false witness against him. Good destroys itself through injustice.",
+  "«الظُّلمُ ظُلُماتٌ يَومَ القِيامَة» — البخاري ومسلم":"«Injustice will be darkness on the Day of Judgement» — al-Bukhari & Muslim",
+  "نَصيحَةٌ لا غِشّ":"Advice, not cheating","ذاكَرتُما مَعاً، فَنَجَحَ في الامتِحانِ التّالي بِنَفسِه. الفَرقُ بَينَ المُساعَدَةِ والغِشّ: الأُولى تَبني، والثّاني يَهدِم.":"You studied together, and he passed the next exam on his own. The difference between help and cheating: the first builds, the second destroys.",
+  "«الدّينُ النَّصيحَة» — مسلم":"«Religion is sincere advice» — Muslim",
+  "نَجَوتَ وَحدَك":"You were saved alone","أَنتَ بَريءٌ مِنَ الغِشّ، لكِنَّكَ تَرَكتَ صَديقاً يَحتاجُك. المُؤمِنُ مِرآةُ أَخيه، وَلَيسَ غَريباً عَنه.":"You're innocent of cheating, but you left a friend who needed you. A believer is the mirror of his brother, not a stranger to him.",
+  "«المُؤمِنُ لِلمُؤمِنِ كَالبُنيانِ يَشُدُّ بَعضُهُ بَعضاً» — البخاري ومسلم":"«A believer to another believer is like a building, parts of it strengthen others» — al-Bukhari & Muslim",
+  "كيسُ الرَّجُلِ الكَبير":"The Old Man's Bag","مُساعَدَةٌ في وَقتٍ ضَيِّق":"Help in a tight moment","وَصَلتَ مُتَأَخِّراً":"You arrived late",
+  "وَأَنتَ في طَريقِك مِنَ المَسجِد، رَأَيتَ رَجُلاً كَبيراً يَحمِلُ كيساً ثَقيلاً ويَلهَث. والِدُكَ يَنتَظِرُكَ على الغَداء، وَقَد تَأَخَّرت.":"On your way from the mosque, you saw an old man carrying a heavy bag and panting. Your father is waiting for you for lunch, and you're already late.",
+  "أُسرِعُ إليه: «دَعني أُساعِدُك يا عَمّ».":"I rush to him: «Let me help you, uncle».","أُلوِّحُ لَهُ بِالعُذرِ وأُسرِعُ لِلبَيت.":"I wave an apology to him and hurry home.",
+  "أَوصَلتَ الكيسَ إلى بَيتِه، ثُمَّ رَكَضتَ. والِدُكَ في البَيتِ غاضِبٌ مِنَ التَّأخير. ماذا تَقول؟":"You carried the bag to his house, then ran. Your father at home is angry about the delay. What do you say?",
+  "أَقولُ الصِّدقَ بِبَساطَة، حَتّى لَو غَضِب.":"I tell the truth simply, even if he's angry.","أَقولُ: المُعَلِّمَةُ أَخَّرَتنا، لا أَكثَر.":"I say: the teacher kept us late, nothing more."
+});
+</script>
+<script>
+Object.assign(window.PAGE_DICT, {
+  "في البَيت":"At home","وَصَلتَ في الوَقت. لكِنَّ صورَةَ الرَّجُلِ ما زالَت في رَأسِك. ماذا تَفعَل؟":"You arrived on time. But the image of the man is still in your head. What do you do?",
+  "أَعودُ بَعدَ الغَداءِ لِأَطمَئِنَّ عَلَيه.":"I go back after lunch to check on him.","أَنسى الأَمر، لَعَلَّ غَيري ساعَدَه.":"I forget about it; maybe someone else helped him.",
+  "إِحسانٌ بِصِدق":"Kindness with honesty","والِدُكَ سَكَتَ ثُمَّ ابتَسَم. قال: «إن كانَت هذه عُذرَك، فَعُذرٌ مَقبول. عُد إليه غَداً ليَسأَل عَنه». مَلَأتَ يَومَكَ بِأَجرَين.":"Your father went quiet, then smiled. He said: «If that's your excuse, it's an accepted one. Go back to him tomorrow to check on him». You filled your day with two rewards.",
+  "«ما نَقَصَت صَدَقَةٌ مِن مال» — مسلم":"«Charity does not decrease wealth» — Muslim",
+  "كَذبَةٌ أَضاعَت إِحساناً":"A lie that wasted a good deed","صَدَّقَكَ والِدُكَ، لكِنَّكَ شَعَرتَ بِشَيءٍ يَنزِفُ في صَدرِك. كَأَنَّكَ مَحَوتَ أَجرَ المُساعَدَةِ بِكَذبَةٍ صَغيرَة.":"Your father believed you, but you felt something bleeding in your chest. As if you erased the reward of helping with a small lie.",
+  "«إنَّما الأَعمالُ بِالنِّيّات» — البخاري ومسلم":"«Deeds are but by intentions» — al-Bukhari & Muslim",
+  "تَدارَكتَ الخَيرَ":"You caught the good in time","عُدتَ فَوَجَدتَهُ يَجلِسُ تَحتَ شَجَرَةٍ. اِبتَسَمَ وَقالَ: «اللهُ يَكرِمُك». لا تَتأَخَّر عَنِ الخَيرِ مَرَّتَين، فالخَطوَةُ التّالِيَةُ قَد لا تَلحَق.":"You went back and found him sitting under a tree. He smiled and said: «May Allah honor you». Don't delay doing good twice, for the next step may not catch up.",
+  "«اِغتَنِم خَمساً قَبلَ خَمس» — الحاكم":"«Seize five before five» — al-Hakim",
+  "نَجاةٌ مِن غَيرِ جائِزَة":"Safe but without a prize","نَسيتَه، لكِنَّ اللهَ لا يَنسى. لَستَ آثِماً، لَكِنَّكَ فَوَّتَّ بابَ خَيرٍ كانَ مَفتوحاً لَك.":"You forgot him, but Allah does not forget. You're not sinful, but you missed a door of good that was open for you.",
+  "«لا تَحقِرَنَّ مِنَ المَعروفِ شَيئاً» — مسلم":"«Do not belittle any good deed» — Muslim",
+  "نِهايَةٌ مُمتازَة":"An excellent ending","نِهايَةٌ حَسَنَة":"A good ending","نِهايَةٌ مُتَوَسِّطَة":"An average ending","نِهايَةٌ سَيِّئَة":"A poor ending","نِهايَةٌ ضَعيفَة":"A weak ending"
+});
+</script>
+<script src="../scripts/i18n.js"></script>
+<script src="../../shared/nav-fix.js"></script>
+</body>
+</html>

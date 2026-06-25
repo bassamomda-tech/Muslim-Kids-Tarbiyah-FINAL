@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" data-theme="dusk" data-path="academy">
+<head>
+<meta name="color-scheme" content="dark">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+<title>أكاديمية المبدعين · Innovators' Academy</title>
+<meta name="theme-color" content="#06231E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Tajawal:wght@400;500;700;800;900&family=Amiri:wght@400;700&family=Nunito:wght@600;700;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+<style>
+  *{box-sizing:border-box;margin:0;padding:0}
+  :root{
+    --bg1:#06231E; --bg2:#0A3A30; --bg3:#0E5142;
+    --gold:#F0C868; --gold-soft:#F7DC9E; --teal:#1FAE8C;
+    --primary:#1FAE8C;
+    --ink:#EEF6F2; --muted:rgba(238,246,242,.72);
+  }
+  body{
+    font-family:'Tajawal',sans-serif; color:var(--ink); min-height:100vh;
+    animation:pgIn .28s ease both;background:
+    
+      radial-gradient(1200px 700px at 80% -10%, rgba(31,174,140,.30), transparent 58%),
+      radial-gradient(900px 560px at 0% 100%, rgba(240,200,104,.13), transparent 55%),
+      linear-gradient(165deg,var(--bg1),var(--bg2) 55%,var(--bg3));
+    background-attachment:fixed;
+  }
+  .stars{position:fixed;inset:0;overflow:hidden;pointer-events:none;z-index:0}
+  .stars i{position:absolute;width:2px;height:2px;border-radius:50%;background:rgba(255,255,255,.6);animation:tw var(--d,3s) var(--dl,0s) infinite alternate}
+  @keyframes tw{from{opacity:.15}to{opacity:.9}}
+
+  .topbar{position:sticky;top:0;z-index:10;display:flex;align-items:center;justify-content:space-between;
+    gap:12px;padding:14px 20px;background:rgba(6,35,30,.78);backdrop-filter:blur(10px);
+    border-bottom:1px solid rgba(240,200,104,.18)}
+  .tb-back{display:inline-flex;align-items:center;gap:7px;text-decoration:none;color:var(--ink);
+    font-weight:700;background:rgba(255,255,255,.08);padding:8px 16px;border-radius:999px;font-size:.95rem}
+  .tb-back:hover{background:rgba(255,255,255,.16)}
+  .brand{display:flex;align-items:center;gap:12px}
+  .brand .b-ico{font-size:1.8rem}
+  .brand h1{font-size:1.25rem;color:var(--gold-soft);font-weight:900}
+  .brand p{font-size:.82rem;color:var(--muted);font-weight:500}
+  .lang{display:flex;gap:4px;background:rgba(255,255,255,.08);border-radius:999px;padding:3px}
+  .lang button{border:0;background:transparent;color:var(--ink);font-family:inherit;font-weight:700;
+    padding:6px 13px;border-radius:999px;cursor:pointer;font-size:.85rem}
+  .lang button.on{background:var(--gold);color:#06231E}
+
+  .wrap{position:relative;z-index:1;max-width:1040px;margin:0 auto;padding:34px 20px 60px}
+  .crest{text-align:center;margin-bottom:30px}
+  .crest .seal{font-size:3.4rem;margin-bottom:8px;filter:drop-shadow(0 4px 14px rgba(240,200,104,.4))}
+  .crest h2{font-size:2rem;font-weight:900;color:var(--gold-soft);margin-bottom:8px}
+  .crest p{color:var(--muted);font-size:1.05rem;max-width:680px;margin:0 auto;line-height:1.7}
+
+  .sections{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px;margin-top:34px}
+  .sec-card{position:relative;display:flex;flex-direction:column;text-decoration:none;color:var(--ink);
+    border-radius:24px;padding:28px 24px;overflow:hidden;border:1.5px solid rgba(255,255,255,.1);background:
+    rgba(255,255,255,.05);transition:transform .18s ease, box-shadow .18s ease, border-color .18s}
+  .sec-card:hover{transform:translateY(-5px);box-shadow:0 16px 44px rgba(0,0,0,.34)}
+  .sec-card .glow{position:absolute;inset:0;opacity:.16;z-index:0;background:
+    radial-gradient(420px 220px at 70% 0%, var(--c), transparent 62%)}
+  .sec-card>*{position:relative;z-index:1}
+  .sec-ico{width:74px;height:74px;border-radius:20px;display:grid;place-items:center;font-size:2.4rem;
+    margin-bottom:16px;background:var(--c);box-shadow:0 8px 24px rgba(0,0,0,.3)}
+  .sec-card.c1{border-color:rgba(240,200,104,.42)}
+  .sec-card h3{font-size:1.4rem;font-weight:900;margin-bottom:7px;color:#fff}
+  .sec-card .cnt{font-size:.82rem;font-weight:700;color:var(--gold-soft);margin-bottom:10px;opacity:.92}
+  .sec-card .desc{color:var(--muted);font-size:.96rem;line-height:1.6;flex:1}
+  .sec-go{margin-top:18px;align-self:flex-start;background:var(--c);color:#06231E;font-weight:800;
+    padding:9px 20px;border-radius:999px;font-size:.95rem}
+  .feat-tag{position:absolute;top:16px;left:16px;background:var(--gold);color:#06231E;font-weight:800;
+    font-size:.72rem;padding:4px 11px;border-radius:999px;z-index:2}
+
+  .foot{text-align:center;color:var(--muted);font-size:.86rem;margin-top:42px;line-height:1.7}
+  [lang-hide]{display:none}
+  .en-only{display:none}
+  html[data-lang="en"] .en-only{display:inline}
+  html[data-lang="en"] .ar-only{display:none}
+</style>
+<script>(function(){try{var p=JSON.parse(localStorage.getItem('hisn-prefs2')||'{}');if(p.lang)document.documentElement.dataset.lang=p.lang;}catch(e){}})();</script>
+<style id="__antiflash">html{background:#06231E;color-scheme:dark}</style>
+</head>
+<body>
+<div class="stars" id="stars"></div>
+
+<header class="topbar">
+  <a class="tb-back" href="../../index.html"><span>←</span><span class="ar-only">المدينة</span><span class="en-only">City</span></a>
+  <div class="brand">
+    <span class="b-ico">🏛️</span>
+    <div>
+      <h1><span class="ar-only">أكاديميةُ المبدعين</span><span class="en-only">Innovators' Academy</span></h1>
+      <p><span class="ar-only">البناءُ العلميُّ والفكري</span><span class="en-only">Intellectual & Creative Building</span></p>
+    </div>
+  </div>
+  <div class="lang">
+    <button id="langAr" class="on" onclick="setLang('ar')">عربي</button>
+    <button id="langEn" onclick="setLang('en')">EN</button>
+  </div>
+</header>
+
+<div class="wrap">
+  <section class="crest">
+    <div class="seal">🏛️</div>
+    <h2><span class="ar-only">أكاديميةُ المبدعين</span><span class="en-only">The Innovators' Academy</span></h2>
+    <p>
+      <span class="ar-only">خمسةُ أقسامٍ تَبني مُبدِعَ الغد: ابدأ برحلةِ الوعي «كُن أنتَ المُبدِع»، ثم اكتَشِف هُوِيَّتَك في لُغتِك، وعُد بآلةِ الزمن إلى عصرِ نورِنا، ثم تعرّفْ على روّادِ الاكتشافِ والعلماءِ الذين أناروا الدنيا. اختَر قِسماً وابدأِ الرحلة.</span>
+      <span class="en-only">Five sections that build tomorrow's creator: begin with the awareness journey "Be the Creator," discover your identity in your language, travel by time machine to our age of light, then meet the pioneers of discovery and the scholars who lit the world. Pick a section and begin.</span>
+    </p>
+  </section>
+
+  <div class="sections">
+
+    <!-- 1 · كن أنت المبدع -->
+    <a class="sec-card c1" href="mubdi.html" style="--c:#1FAE8C">
+      <span class="feat-tag"><span class="ar-only">رحلةُ الوعي</span><span class="en-only">Awareness</span></span>
+      <div class="glow"></div>
+      <div class="sec-ico">💡</div>
+      <h3><span class="ar-only">كُن أنتَ المُبدِع</span><span class="en-only">Be the Creator</span></h3>
+      <div class="cnt"><span class="ar-only">١٥ محطة · رحلة وعي</span><span class="en-only">15 stations · awareness journey</span></div>
+      <div class="desc">
+        <span class="ar-only">هدفُك من الحياة، وقيمةُ الوقت، وحربُ التفاهة، والعِلمُ عبادة، وحديثُ السبعة — لتكونَ مبدعاً عالِماً صانِعاً، لَبِنةً في جيلٍ واعٍ.</span>
+        <span class="en-only">Your life's purpose, the value of time, the war of triviality, knowledge as worship, and the hadith of the seven — to be a creative scholar & maker, a brick in an aware generation.</span>
+      </div>
+      <span class="sec-go"><span class="ar-only">ابدأ الرحلة ←</span><span class="en-only">Start →</span></span>
+    </a>
+
+    <!-- 2 · لغتي العربية -->
+    <a class="sec-card" href="lugha.html" style="--c:#C9962E">
+      <span class="feat-tag"><span class="ar-only">رحلةُ الهُوِيّة</span><span class="en-only">Identity</span></span>
+      <div class="glow"></div>
+      <div class="sec-ico">📜</div>
+      <h3><span class="ar-only">لُغَتي العَرَبيّة</span><span class="en-only">My Arabic Language</span></h3>
+      <div class="cnt"><span class="ar-only">١٥ محطة · كنزُ الهُوِيّة</span><span class="en-only">15 stations · treasure of identity</span></div>
+      <div class="desc">
+        <span class="ar-only">مع «لين»: لماذا اختار اللهُ العربيةَ لكتابه، وأنها مفتاحُ فهم الدين ووعاءُ الهُوِيّة، وحربُ إضعافها — مع تذوّق جمالِها وشِعرِها وأمثالها وعمالقتها، لتكونَ حارسَ لغتك.</span>
+        <span class="en-only">With Lynn: why Allah chose Arabic for His Book, that it's the key to understanding religion and the vessel of identity, and the war to weaken it — tasting its beauty, poetry, proverbs & giants, to be the guardian of your language.</span>
+      </div>
+      <span class="sec-go" style="color:#241A08"><span class="ar-only">ادخُل الرحلة ←</span><span class="en-only">Enter →</span></span>
+    </a>
+
+    <!-- 3 · منارة العالم -->
+    <a class="sec-card" href="manara.html" style="--c:#C9A227">
+      <span class="feat-tag"><span class="ar-only">رحلةُ العزّة</span><span class="en-only">Pride</span></span>
+      <div class="glow"></div>
+      <div class="sec-ico">🗼</div>
+      <h3><span class="ar-only">مَنارةُ العالَم</span><span class="en-only">The World's Lighthouse</span></h3>
+      <div class="cnt"><span class="ar-only">١٠ محطات · العودة لعصر النور</span><span class="en-only">10 stations · return to the age of light</span></div>
+      <div class="desc">
+        <span class="ar-only">آلةُ زمنٍ مع «لين»: كيف كانت حضارتُنا منارةَ العالم حين كانت أوروبا في الظلام، والتصدّي لمن يصوّر الإسلام دينَ تخلّف — وأن مفتاحَ العودة الدينُ + العلمُ + العمل.</span>
+        <span class="en-only">A time machine with Lynn: how our civilization was the world's lighthouse while Europe was in darkness, refuting those who paint Islam as backward — and that the key to return is religion + knowledge + work.</span>
+      </div>
+      <span class="sec-go" style="color:#0B1026"><span class="ar-only">ادخُل الرحلة ←</span><span class="en-only">Enter →</span></span>
+    </a>
+
+    <!-- 4 · رحلة المستكشفين -->
+    <a class="sec-card" href="academy-explorers.html" style="--c:#1F8FB0">
+      <div class="glow"></div>
+      <div class="sec-ico">🔭</div>
+      <h3><span class="ar-only">رِحلةُ المُستَكْشِفين</span><span class="en-only">The Explorers' Journey</span></h3>
+      <div class="cnt"><span class="ar-only">١٤ عالِماً · علومُ الاكتشاف</span><span class="en-only">14 scientists · sciences of discovery</span></div>
+      <div class="desc">
+        <span class="ar-only">روّادُ العلومِ التجريبيّة الذين أناروا الدنيا: ابنُ الهيثمِ والخوارزميُّ وابنُ سينا وجابرُ بنُ حيّان — في البصرياتِ والرياضياتِ والطبِّ والكيمياء.</span>
+        <span class="en-only">Pioneers of the empirical sciences who lit the world: Ibn al-Haytham, al-Khwarizmi, Ibn Sina & Jabir ibn Hayyan — in optics, mathematics, medicine & chemistry.</span>
+      </div>
+      <span class="sec-go" style="color:#fff"><span class="ar-only">ادخُل القسم ←</span><span class="en-only">Enter →</span></span>
+    </a>
+
+    <!-- 5 · عقول منيرة -->
+    <a class="sec-card" href="academy-minds.html" style="--c:#C0902E">
+      <div class="glow"></div>
+      <div class="sec-ico">📖</div>
+      <h3><span class="ar-only">عُقولٌ مُنيرة</span><span class="en-only">Illuminating Minds</span></h3>
+      <div class="cnt"><span class="ar-only">١٨ عالِماً · فقه وحديث وتفسير</span><span class="en-only">18 scholars · fiqh, hadith & tafsir</span></div>
+      <div class="desc">
+        <span class="ar-only">علماءُ الإسلامِ الذين حفظوا الدين: أئمّةُ الفقهِ كأبي حنيفة، وحُفّاظُ الحديثِ كالبخاري، وأئمّةُ التفسيرِ كابنِ كثير — رحمهم الله.</span>
+        <span class="en-only">The scholars who preserved the religion: jurists like Abu Hanifa, hadith masters like al-Bukhari, and exegetes like Ibn Kathir — may Allah have mercy on them.</span>
+      </div>
+      <span class="sec-go" style="color:#fff"><span class="ar-only">ادخُل القسم ←</span><span class="en-only">Enter →</span></span>
+    </a>
+
+    <!-- 6 · الخطابة والإلقاء -->
+    <a class="sec-card" href="academy-khataba.html" style="--c:#7E5BD0">
+      <div class="glow"></div>
+      <div class="sec-ico">🎤</div>
+      <h3><span class="ar-only">الخَطابةُ والإلقاء</span><span class="en-only">Oratory &amp; Recitation</span></h3>
+      <div class="cnt"><span class="ar-only">٦ منظومات · إلقاء وحفظ</span><span class="en-only">6 poems · delivery &amp; memorizing</span></div>
+      <div class="desc">
+        <span class="ar-only">تعلَّمِ الإلقاءَ والوقوفَ بثقة، واحفَظ أشهرَ المنظوماتِ والأناشيد: تحفةُ الأطفالِ في التجويد، وطلَعَ البدرُ في السيرة، ولاميّةُ الأخلاق، ومنظومةُ التوحيد، وأبياتُ الرقائق.</span>
+        <span class="en-only">Learn delivery and standing with confidence, and memorize the most famous didactic poems & nasheeds: Tuhfat al-Atfal in tajweed, Tala'a al-Badr in seerah, the Lamiyyah of character, the creed poem, and lines of the heart.</span>
+      </div>
+      <span class="sec-go" style="color:#fff"><span class="ar-only">ادخُل القسم ←</span><span class="en-only">Enter →</span></span>
+    </a>
+
+  </div>
+
+  <p class="foot">
+    <span class="ar-only">صُنع بِحُبٍّ 🧡 لِأطفالِ الأُمّة — أكاديميةُ المبدعين · على نَهجِ أهلِ السُّنّة</span>
+    <span class="en-only">Made with 🧡 for the children of the Ummah — The Innovators' Academy</span>
+  </p>
+</div>
+
+<script>
+  // starfield
+  (function(){var s='';for(var i=0;i<44;i++){s+='<i style="left:'+(Math.random()*100)+'%;top:'+(Math.random()*92)+'%;--d:'+(2+Math.random()*3)+'s;--dl:'+(-Math.random()*4)+'s"></i>';}document.getElementById('stars').innerHTML=s;})();
+  function setLang(l){
+    document.documentElement.dataset.lang=l;
+    document.documentElement.lang=l; document.documentElement.dir = l==='en'?'ltr':'rtl';
+    document.getElementById('langAr').classList.toggle('on',l==='ar');
+    document.getElementById('langEn').classList.toggle('on',l==='en');
+    try{var p=JSON.parse(localStorage.getItem('hisn-prefs2')||'{}');p.lang=l;localStorage.setItem('hisn-prefs2',JSON.stringify(p));}catch(e){}
+  }
+  // honor saved lang on load
+  (function(){try{var p=JSON.parse(localStorage.getItem('hisn-prefs2')||'{}');if(p.lang)setLang(p.lang);}catch(e){}})();
+</script>
+<script defer src="../quiz/quiz-engine.js"></script>
+<script>window.MK_CORNER='academy';</script>
+<script defer src="../shared/mk-system.js"></script>
+<script defer src="../shared/mk-journeys.js"></script>
+<script defer src="../shared/mk-corner-score.js"></script>
+<script defer src="../shared/mk-bag.js"></script>
+<script defer src="../shared/mk-train.js"></script>
+<script defer src="../shared/nav-fix.js"></script>
+<script src="../shared/mk-citynav.js"></script>
+</body>
+</html>

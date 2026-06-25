@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta name="color-scheme" content="dark">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>واحة العبادة — رحلات الأبطال | Worship Oasis Journeys</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Amiri+Quran&family=Tajawal:wght@400;500;700;800;900&family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+<link rel="stylesheet" href="yaqeen.css">
+<style>
+/* ── Oasis theme: teal water + warm desert gold ── */
+:root{
+  --primary:#117A8B; --primary-dark:#0E5F6B;
+  --bg1:#04221F; --bg2:#06332E; --bg3:#0A4A40;
+  --gold:#E8B530; --gold-soft:#F5CC5A;
+  --text:#EAF7F2; --muted:rgba(234,247,242,.74);
+  --card:rgba(255,255,255,.06); --line:rgba(232,181,48,.26);
+  --jcolor:#117A8B;
+}
+body{background:
+  
+    radial-gradient(1300px 760px at 80% -12%, rgba(17,122,139,.34), transparent 58%),
+    radial-gradient(1000px 620px at 0% 100%, rgba(232,181,48,.12), transparent 55%),
+    linear-gradient(165deg,var(--bg1),var(--bg2) 55%,var(--bg3));
+  background-attachment:fixed;
+}
+.guide .who{background:linear-gradient(160deg,#1ABC9C,#0E5F6B)}
+.lang button.active{color:#04221F}
+.node .num{color:var(--gold-soft)}
+
+/* chapter bar journey tabs */
+.cb-tab.soon{opacity:.66}
+.cb-tab .soon-dot{color:var(--gold-soft);font-size:1.1rem;line-height:0}
+.cb-tab.active{background:var(--jcolor);color:#fff;border-color:var(--jcolor)}
+
+/* hero simile chip */
+.hero-simile{position:relative;display:inline-block;margin-top:.7rem;background:rgba(0,0,0,.25);border:1px solid var(--line);border-radius:2rem;padding:.4rem 1rem;font-weight:800;font-size:.92rem;color:var(--gold-soft)}
+
+/* Maryam / teach */
+.block.treasure{border-color:rgba(245,204,90,.5);background:linear-gradient(160deg,rgba(232,181,48,.13),rgba(17,122,139,.08))}
+.block.treasure h3{color:var(--gold-soft)}
+.block.treasure .maryam{display:flex;gap:.8rem;align-items:flex-start}
+.block.treasure .maryam .m-face{flex:0 0 auto;width:50px;height:50px;border-radius:50%;background:linear-gradient(160deg,#1ABC9C,#0E5F6B);display:flex;align-items:center;justify-content:center;font-size:1.7rem;box-shadow:0 6px 16px rgba(0,0,0,.4)}
+.block.treasure .maryam p{margin:0}
+
+/* Hadith block */
+.block.hadith{border-color:rgba(134,199,240,.4);background:rgba(41,128,185,.08)}
+.block.hadith h3{color:#86C7F0}
+.hd-text{font-weight:800;font-size:1.08rem;line-height:1.95;color:#fff;padding:.4rem .2rem .2rem}
+.hd-src{margin-top:.6rem;font-weight:800;color:#86C7F0;font-size:.88rem;text-align:end}
+.block.hadith .explain{line-height:1.85;font-size:1rem;color:#eafaf0;margin-top:.7rem}
+
+/* chapter dividers on the map */
+.chapter-divider{position:relative;z-index:2;display:flex;align-items:center;gap:.7rem;max-width:520px;margin:.4rem auto 1.4rem;padding:0 .4rem}
+.chapter-divider .cd-line{flex:1;height:2px;background:linear-gradient(90deg,transparent,var(--line),transparent)}
+.chapter-divider .cd-txt{flex:0 0 auto;font-weight:900;font-size:.86rem;color:var(--gold-soft);background:rgba(232,181,48,.12);border:1px solid var(--line);border-radius:2rem;padding:.35rem 1rem;text-align:center}
+
+/* coming-soon card */
+.soon-card{max-width:480px;margin:2rem auto;text-align:center;background:var(--card);border:1px solid var(--line);border-radius:1.4rem;padding:2.4rem 1.6rem}
+.soon-card .sc-ic{font-size:3.4rem}
+.soon-card .sc-t{font-weight:900;font-size:1.3rem;margin:.7rem 0 .4rem;color:var(--gold-soft)}
+.soon-card .sc-s{color:var(--muted);line-height:1.7;margin-bottom:1.3rem}
+.soon-card .sc-btn{display:inline-block;background:var(--primary);color:#fff;text-decoration:none;font-weight:900;border-radius:2rem;padding:.7rem 1.5rem;box-shadow:0 8px 20px rgba(17,122,139,.4)}
+.block.hajjorder{border-color:rgba(192,57,43,.4)!important}
+.hajj-steps{list-style:none;margin:.4rem 0 1rem;padding:0;counter-reset:none;display:flex;flex-direction:column;gap:.4rem}
+.hajj-steps li{display:flex;align-items:center;gap:.6rem;background:rgba(192,57,43,.08);border:1px solid rgba(192,57,43,.25);border-radius:.8rem;padding:.5rem .7rem}
+.hajj-steps .hs-n{flex:0 0 auto;width:24px;height:24px;border-radius:50%;background:#C0392B;color:#fff;font-weight:900;font-size:.82rem;display:grid;place-items:center}
+.hajj-steps .hs-ic{font-size:1.2rem}
+.hajj-steps .hs-t{font-weight:700;line-height:1.4}
+.hajj-game{margin-top:.6rem}
+.hg-head{font-weight:900;color:#C0392B;margin-bottom:.6rem;font-size:1rem}
+.hg-list{display:flex;flex-direction:column;gap:.4rem}
+.hg-row{display:flex;align-items:center;gap:.55rem;background:rgba(255,255,255,.06);border:1.5px solid rgba(255,255,255,.14);border-radius:.8rem;padding:.5rem .6rem;transition:border-color .2s,background .2s}
+.hg-row.ok{border-color:#2ecc71;background:rgba(46,204,113,.16)}
+.hg-row.bad{border-color:#e74c3c;background:rgba(231,76,60,.14)}
+.hg-pos{flex:0 0 auto;width:22px;height:22px;border-radius:50%;background:rgba(192,57,43,.25);color:#fff;font-weight:900;font-size:.78rem;display:grid;place-items:center}
+.hg-ic{font-size:1.15rem}
+.hg-t{flex:1;font-weight:700;font-size:.92rem;line-height:1.35}
+.hg-ud{flex:0 0 auto;display:flex;flex-direction:column;gap:.15rem}
+.hg-ud button{width:30px;height:20px;border-radius:.4rem;border:1px solid rgba(255,255,255,.2);background:rgba(255,255,255,.08);color:inherit;cursor:pointer;font-size:.68rem;line-height:1;display:flex;align-items:center;justify-content:center}
+.hg-ud button:disabled{opacity:.3;cursor:default}
+.hg-ud button:not(:disabled):hover{border-color:#C0392B;background:rgba(192,57,43,.2)}
+.hg-foot{display:flex;align-items:center;gap:.8rem;flex-wrap:wrap;margin-top:.8rem}
+.hg-check{background:#C0392B;color:#fff;border:none;border-radius:1rem;padding:.55rem 1.2rem;font-weight:900;font-family:inherit;cursor:pointer}
+.hg-msg{font-weight:800;font-size:.88rem}
+.hg-msg.win{color:#2ecc71}
+/* per-station mini-game */
+.block.stgame{border-color:rgba(17,122,139,.4)!important}
+.st-game{margin-top:.3rem}
+.sg-q{font-weight:800;margin-bottom:.7rem;line-height:1.6}
+.sg-stmt{font-size:1.05rem;font-weight:700;line-height:1.9;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.12);border-radius:.9rem;padding:.8rem 1rem;margin-bottom:.8rem;text-wrap:pretty}
+.sg-answer{min-height:2.4rem;display:flex;flex-wrap:wrap;gap:.4rem;background:rgba(17,122,139,.1);border:1.5px dashed rgba(17,122,139,.45);border-radius:.8rem;padding:.5rem;margin-bottom:.6rem;align-items:center}
+.sg-ph{opacity:.4;padding:0 .5rem}
+.sg-pool{display:flex;flex-wrap:wrap;gap:.4rem;margin-bottom:.6rem}
+.sg-chip{background:rgba(255,255,255,.08);border:1.5px solid rgba(255,255,255,.18);color:inherit;border-radius:.7rem;padding:.45rem .75rem;font-weight:700;font-size:.92rem;cursor:pointer;font-family:inherit}
+.sg-chip:hover{border-color:var(--primary,#117A8B)}
+.sg-chip.used{background:rgba(17,122,139,.22);border-color:rgba(17,122,139,.5)}
+.sg-tf,.sg-opts{display:flex;flex-wrap:wrap;gap:.6rem}
+.sg-btn{flex:1;min-width:120px;background:rgba(255,255,255,.07);border:1.5px solid rgba(255,255,255,.18);color:inherit;border-radius:.9rem;padding:.7rem 1rem;font-weight:800;font-size:.95rem;cursor:pointer;font-family:inherit;transition:transform .12s}
+.sg-btn:hover{transform:translateY(-2px);border-color:var(--primary,#117A8B)}
+.sg-btn.t{border-color:rgba(46,204,113,.5)}
+.sg-btn.f{border-color:rgba(231,76,60,.5)}
+.sg-btn.ok{background:rgba(46,204,113,.28);border-color:#2ecc71;color:#fff}
+.sg-btn.no{background:rgba(231,76,60,.24);border-color:#e74c3c}
+.sg-msg{margin-top:.7rem;font-weight:800;font-size:.9rem;min-height:1.1rem}
+.sg-msg.win{color:#2ecc71}
+</style>
+<script>(function(){try{var l=localStorage.getItem('bunyanLang');if(l==='en'){var h=document.documentElement;h.dir='ltr';h.lang='en';}}catch(e){}})();</script>
+<style id="__antiflash">html{background:#04221F;color-scheme:dark}</style>
+</head>
+<body>
+
+<!-- ═══ HEADER ═══ -->
+<header class="hdr">
+  <a class="back" href="ibada.html">
+    <span>↩️</span><span class="lng-ar">الواحة</span><span class="lng-en">Oasis</span>
+  </a>
+  <span class="hdr-badge"><span class="l">🌴</span><span class="lng-ar">رِحلاتُ العِبادة</span><span class="lng-en">Worship Journeys</span></span>
+  <div class="lang">
+    <button data-lang="en">EN</button>
+    <button data-lang="ar" class="active">عربي</button>
+  </div>
+</header>
+
+<!-- ═══ CHAPTER BAR (journey switcher) ═══ -->
+<div class="chapter-bar">
+  <span class="cb-label"><span class="lng-ar">🌴 الرِّحلات</span><span class="lng-en">🌴 Journeys</span></span>
+  <div class="cb-tabs" id="cbTabs"></div>
+</div>
+
+<!-- ═══ INTRO ═══ -->
+<section class="intro">
+  <h1 id="introTitle"></h1>
+  <p class="sub" id="introSub"></p>
+  <div class="guide">
+    <div class="who">🧕</div>
+    <div class="say" id="guideSay"></div>
+  </div>
+</section>
+
+<!-- ═══ METER ═══ -->
+<div class="pbar-wrap">
+  <div class="pbar-top">
+    <span id="meterTitle"></span>
+    <span class="stars" id="pCount">0 / 10</span>
+  </div>
+  <div class="pbar"><div class="pbar-fill" id="pFill"></div></div>
+  <div class="meter-label" id="meterLabel"></div>
+</div>
+
+<!-- ═══ COLLECTIONS ═══ -->
+<div class="collections">
+  <div class="coll-card" id="collStickers"></div>
+  <div class="coll-card" id="collKeys"></div>
+  <div class="coll-card coll-cert" id="collCert"></div>
+</div>
+
+<!-- ═══ MAP ═══ -->
+<div class="map" id="map"><div class="road"></div></div>
+
+<footer class="foot">
+  <span class="lng-ar">صُنع بِحُبٍّ 🧡 لِأطفالِ الأُمّة — <b>واحةُ العِبادة</b> · حَيُّنا الصَّغير · على نَهجِ أهلِ السُّنّة</span>
+  <span class="lng-en">Made with 🧡 for the children of the Ummah — <b>The Worship Oasis</b> · Our Little District · Upon the way of Ahl al-Sunnah</span>
+</footer>
+
+<!-- ═══ READER ═══ -->
+<div class="reader" id="reader">
+  <div class="sheet">
+    <div class="r-top">
+      <button class="r-close" id="rClose">✕</button>
+      <span class="r-count" id="rCount"></span>
+      <div class="r-arrows">
+        <button id="rPrev">‹</button>
+        <button id="rNext">›</button>
+      </div>
+    </div>
+    <div id="rBody"></div>
+  </div>
+</div>
+
+<!-- ═══ COLLECTIONS DRAWER ═══ -->
+<div class="drawer" id="drawer">
+  <div class="drawer-sheet">
+    <div class="dw-top">
+      <h3 id="dwTitle"></h3>
+      <button class="r-close" id="dwClose">✕</button>
+    </div>
+    <div class="dw-body" id="dwBody"></div>
+  </div>
+</div>
+
+<!-- ═══ CERTIFICATE ═══ -->
+<div class="cert-overlay" id="certOverlay">
+  <div class="cert-tools">
+    <input id="certName" type="text" placeholder="✍️ اكتُب اسمَك هنا / Type your name" maxlength="40">
+    <button class="cprint" id="certPrint">🖨️ <span class="lng-ar">اطبَع</span><span class="lng-en">Print</span></button>
+    <button class="cclose" id="certClose">✕</button>
+  </div>
+  <div class="certificate" id="certBox"></div>
+</div>
+
+<div id="confetti"></div>
+<div class="toast" id="toast"></div>
+
+<script src="data/ibada-meta.js"></script>
+<script src="data/ibada-salah.js"></script>
+<script src="data/ibada-fasting.js"></script>
+<script src="data/ibada-adhkar.js"></script>
+<script src="data/ibada-dua.js"></script>
+<script src="data/ibada-zakah.js"></script>
+<script src="data/ibada-hajj.js"></script>
+<script src="ibada-app.js"></script>
+<script defer src="../../shared/mk-tts.js"></script>
+<script defer src="../../quiz/quiz-engine.js"></script>
+<script defer src="../../shared/mk-system.js"></script>
+<script defer src="../../shared/mk-journeys.js"></script>
+<script defer src="../../shared/mk-bag.js"></script>
+<script defer src="../../shared/mk-train.js"></script>
+<script defer src="../../shared/nav-fix.js"></script>
+</body>
+</html>

@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>أنشطة الأطفال المسلمين · لوحة التحكم</title>
+
+<!-- ============================================================
+     الخطوط (Google Fonts)
+     ============================================================ -->
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+
+<!-- ============================================================
+     تنسيقات المشروع
+     ============================================================ -->
+<link rel="stylesheet" href="styles/tokens.css" />
+<link rel="stylesheet" href="styles/dashboard.css" />
+</head>
+<body>
+
+<!-- خلفية زخرفية ناعمة -->
+<div class="bg-decor" aria-hidden="true"></div>
+
+<div class="shell">
+
+  <!-- ============================================================
+       الشريط العلوي
+       ============================================================ -->
+  <header class="topbar">
+    <div class="brand">
+      <a href="../../index.html" class="back-city" style="display:inline-flex;align-items:center;gap:6px;text-decoration:none;background:#C9A961;color:#23332b;font:800 13px/1 'Tajawal',sans-serif;padding:9px 15px;border-radius:999px;margin-inline-end:14px;white-space:nowrap;box-shadow:0 4px 12px rgba(0,0,0,.12)">↩︎ العودة للمدينة</a>
+      <div class="brand-mark" aria-hidden="true"></div>
+      <div class="brand-name">
+        أنوس
+        <small>منصة أنشطة الأطفال المسلمين</small>
+      </div>
+    </div>
+
+    <div class="top-stats">
+      <span class="stat-chip"><span class="dot"></span> <span id="stat-playable">1</span> نشاط متاح</span>
+      <span class="stat-chip gold"><span class="dot"></span> <span id="stat-badges">0</span> وسام</span>
+      <span class="stat-chip rose"><span class="dot"></span> <span id="stat-streak">0</span> أيام متتالية</span>
+      <span class="profile-pill">
+        <span>أحمد</span>
+        <span class="avatar">أ</span>
+      </span>
+    </div>
+  </header>
+
+  <!-- ============================================================
+       البطاقة الترحيبية + التقدم
+       ============================================================ -->
+  <section class="hero">
+    <div class="hero-card">
+      <span class="hero-eyebrow"><span class="star"></span> 50 نشاطاً تفاعلياً</span>
+      <h1>تعلّم العقيدة واللغة والقيم<br/> من خلال <em>اللعب المُمتع</em></h1>
+      <p>منصة تعليمية شاملة للأطفال من سن 6 إلى 12 سنة، تجمع بين الأذكار والسيرة واللغة العربية في 50 نشاطاً تفاعلياً مصمَّماً بعناية. كل نشاط يحفظ تقدّمك ويمنحك أوساماً تشجيعية.</p>
+      <div class="hero-actions">
+        <a class="btn-primary" href="activities/wheel-of-dhikr.html">
+          ابدأ بعجلة الأذكار
+          <svg class="arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M15 6l-6 6 6 6"/></svg>
+        </a>
+        <a class="btn-ghost" href="#sections">
+          استكشف الأنشطة
+        </a>
+      </div>
+    </div>
+
+    <aside class="progress-card">
+      <div class="progress-head">
+        <h3>تقدّمك هذا الأسبوع</h3>
+        <span class="pct" id="progress-pct">2%</span>
+      </div>
+
+      <div class="ring-row">
+        <div class="ring" id="progress-ring" style="--pct:2">
+          <span>2%</span>
+        </div>
+        <div class="ring-meta">
+          <strong id="progress-completed">1/50 مكتمل</strong>
+          أكمل 4 أنشطة هذا الأسبوع لتحصل على وسام<br/>«المثابر الصغير» 🏅
+        </div>
+      </div>
+
+      <div>
+        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px; font-size:13px;">
+          <strong>الأوسمة المكتسبة</strong>
+          <span style="color:var(--muted); font-size:12px;">2 / 10</span>
+        </div>
+        <div class="badges-row">
+          <div class="badge-mini earned">★</div>
+          <div class="badge-mini earned">★</div>
+          <div class="badge-mini locked"></div>
+          <div class="badge-mini locked"></div>
+          <div class="badge-mini locked"></div>
+        </div>
+      </div>
+    </aside>
+  </section>
+
+  <!-- ============================================================
+       شريط التصفية + البحث
+       ============================================================ -->
+  <div class="filter-bar">
+    <div class="filter-tabs" role="tablist">
+      <button class="active" data-filter="all">الكل <span class="count">50</span></button>
+      <button data-filter="worship">العبادات <span class="count">10</span></button>
+      <button data-filter="language">اللغة <span class="count">10</span></button>
+      <button data-filter="art">الفن <span class="count">10</span></button>
+      <button data-filter="science">العلوم <span class="count">10</span></button>
+      <button data-filter="challenges">التحديات <span class="count">10</span></button>
+    </div>
+
+    <label class="search-box">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/>
+      </svg>
+      <input id="search-input" type="text" placeholder="ابحث عن نشاط…" aria-label="بحث" />
+      <span class="kbd">/</span>
+    </label>
+  </div>
+
+  <!-- ============================================================
+       الأقسام الخمسة + الأنشطة (تُولَّد ديناميكياً)
+       ============================================================ -->
+  <main id="sections" aria-live="polite"></main>
+
+  <!-- ============================================================
+       التذييل
+       ============================================================ -->
+  <footer class="foot">
+    <span>© 2026 أنوس · صُمّمت بحب للأطفال المسلمين</span>
+    <nav class="links">
+      <a href="#">للوالدين</a>
+      <a href="#">الخصوصية</a>
+      <a href="#">حول المنصة</a>
+    </nav>
+  </footer>
+
+</div>
+
+<!-- ============================================================
+     السكربتات
+     ============================================================ -->
+<script>
+window.PAGE_DICT = {
+  "أنوس": "Anos",
+  "منصة أنشطة الأطفال المسلمين": "Muslim Kids Activities Platform",
+  "نشاط متاح": "activities available",
+  "وسام": "badges",
+  "أيام متتالية": "day streak",
+  "أحمد": "Ahmad",
+  "أ": "A",
+  "50 نشاطاً تفاعلياً": "50 interactive activities",
+  "تعلّم العقيدة واللغة والقيم": "Learn faith, language & values",
+  "من خلال": "through",
+  "اللعب المُمتع": "fun play",
+  "منصة تعليمية شاملة للأطفال من سن 6 إلى 12 سنة، تجمع بين الأذكار والسيرة واللغة العربية في 50 نشاطاً تفاعلياً مصمَّماً بعناية. كل نشاط يحفظ تقدّمك ويمنحك أوساماً تشجيعية.": "A complete learning platform for children aged 6 to 12, blending dhikr, seerah and Arabic across 50 carefully crafted interactive activities. Every activity saves your progress and rewards you with encouraging badges.",
+  "ابدأ بعجلة الأذكار": "Start with Wheel of Dhikr",
+  "استكشف الأنشطة": "Explore activities",
+  "تقدّمك هذا الأسبوع": "Your progress this week",
+  "أكمل 4 أنشطة هذا الأسبوع لتحصل على وسام": "Complete 4 activities this week to earn the",
+  "«المثابر الصغير» 🏅": "“Little Achiever” badge 🏅",
+  "الأوسمة المكتسبة": "Badges earned",
+  "الكل": "All",
+  "العبادات": "Worship",
+  "اللغة": "Language",
+  "الفن": "Art",
+  "العلوم": "Science",
+  "التحديات": "Challenges",
+  "ابحث عن نشاط…": "Search for an activity…",
+  "© 2026 أنوس · صُمّمت بحب للأطفال المسلمين": "© 2026 Anos · Made with love for Muslim children",
+  "للوالدين": "For parents",
+  "الخصوصية": "Privacy",
+  "حول المنصة": "About"
+};
+</script>
+<script src="scripts/glyphs.js"></script>
+<script src="scripts/activities-data.js"></script>
+<script src="scripts/i18n.js"></script>
+<script src="scripts/dashboard.js"></script>
+<script src="../quiz/quiz-anous.js"></script>
+
+<template id="__bundler_thumbnail" data-bg-color="#6A8E7F">
+  <svg viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
+    <rect width="1200" height="800" fill="#6A8E7F"/>
+    <g fill="none" stroke="#FBF6EC" stroke-width="26" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M600 250 l40 95 l103 8 -79 67 24 100 -88 -54 -88 54 24 -100 -79 -67 103 -8 z" fill="#C9A961" stroke="#C9A961"/>
+    </g>
+    <text x="600" y="560" fill="#FBF6EC" font-family="sans-serif" font-size="120" font-weight="800" text-anchor="middle">أنوس</text>
+  </svg>
+</template>
+<script src="../shared/nav-fix.js"></script>
+<script defer src="../shared/mk-system.js"></script>
+<script src="../shared/mk-citynav.js"></script>
+</body>
+</html>

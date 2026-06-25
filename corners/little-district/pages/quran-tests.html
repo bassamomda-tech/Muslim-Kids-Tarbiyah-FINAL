@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta name="color-scheme" content="dark">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>اختبارات بستان القرآن | Quran Garden Tests</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Amiri+Quran&family=Tajawal:wght@400;500;700;800;900&family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+<link rel="stylesheet" href="yaqeen.css">
+<style>
+:root{
+  --primary:#2E8B57; --primary-dark:#1F6B41;
+  --bg1:#06251C; --bg2:#093528; --bg3:#0C4A37;
+  --gold:#E6C16B; --gold-soft:#F2D89B;
+  --text:#EAF7F0; --muted:rgba(234,247,240,.74);
+  --card:rgba(255,255,255,.06); --line:rgba(230,193,107,.26);
+}
+body{background:
+  
+    radial-gradient(1300px 760px at 80% -12%, rgba(46,139,87,.34), transparent 58%),
+    radial-gradient(1000px 620px at 0% 100%, rgba(230,193,107,.12), transparent 55%),
+    linear-gradient(165deg,var(--bg1),var(--bg2) 55%,var(--bg3));
+  background-attachment:fixed;
+}
+.lang button.active{color:#06251C}
+.cb-tab.active{background:var(--primary);color:#fff;border-color:var(--primary)}
+.gate-intro{max-width:620px;margin:1.2rem auto .2rem;text-align:center;color:var(--muted);line-height:1.8;font-size:1rem;padding:0 1rem}
+.gate-intro b{color:var(--gold-soft)}
+</style>
+<script>(function(){try{var l=localStorage.getItem('bunyanLang');if(l==='en'){var h=document.documentElement;h.dir='ltr';h.lang='en';}}catch(e){}})();</script>
+<style id="__antiflash">html{background:#06251C;color-scheme:dark}</style>
+</head>
+<body>
+
+<header class="hdr">
+  <a class="back" href="quran.html">
+    <span>↩️</span><span class="lng-ar">البستان</span><span class="lng-en">Garden</span>
+  </a>
+  <span class="hdr-badge"><span class="l">📖</span><span class="lng-ar">اختباراتُ البستان</span><span class="lng-en">Garden Tests</span></span>
+  <div class="lang">
+    <button data-lang="en">EN</button>
+    <button data-lang="ar" class="active">عربي</button>
+  </div>
+</header>
+
+<div class="chapter-bar">
+  <span class="cb-label"><span class="lng-ar">📖 البوّابات</span><span class="lng-en">📖 Gates</span></span>
+  <div class="cb-tabs" id="cbTabs"></div>
+</div>
+
+<section class="intro">
+  <h1 id="introTitle"></h1>
+  <p class="gate-intro" id="introSub"></p>
+</section>
+
+<div class="map" id="map"><div class="road"></div></div>
+
+<footer class="foot">
+  <span class="lng-ar">صُنع بِحُبٍّ 🧡 لِأطفالِ الأُمّة — <b>بُستانُ القرآنِ والسنّة</b> · على نَهجِ أهلِ السُّنّة</span>
+  <span class="lng-en">Made with 🧡 for the children of the Ummah — <b>The Quran &amp; Sunnah Garden</b></span>
+</footer>
+
+<div id="confetti"></div>
+<div class="toast" id="toast"></div>
+
+<script src="data/quran-quiz.js"></script>
+<script>
+(function(){
+  var GATES = [
+    { id:'surahs',     icon:'📜', ar:'السور القصيرة', en:'Short Surahs',
+      subAr:'اختبِر معرفتَك بالسور القصيرة ومعانيها في <b>٣ مستويات</b>.', subEn:'Test your knowledge of the short surahs across <b>3 levels</b>.' },
+    { id:'stories',    icon:'🏛️', ar:'قصص القرآن', en:"Qur'anic Stories",
+      subAr:'دروسٌ وعِبَرٌ من قصصِ القرآن في <b>٣ مستويات</b>.', subEn:'Lessons from the stories of the Qur’an across <b>3 levels</b>.' },
+    { id:'hadith', icon:'🕌', ar:'الأربعون النووية', en:'The 40 Hadith of Nawawi',
+      subAr:'اختبِر فهمَك لأحاديثِ الأربعينَ النوويّةِ ومعانيها في <b>٣ مستويات</b>.', subEn:'Test your understanding of the 40 Nawawi hadiths across <b>3 levels</b>.' },
+    { id:'companions', icon:'🤝', ar:'أنا صاحبك القرآن', en:'I Am Your Companion',
+      subAr:'تعرَّفْ على صحابةٍ خدموا القرآنَ وحفظوه في <b>٣ مستويات</b>.', subEn:'Companions who served and preserved the Qur’an, across <b>3 levels</b>.' },
+  ];
+  function lang(){ return document.documentElement.lang==='en' ? 'en' : 'ar'; }
+  var params = new URLSearchParams(location.search);
+  var jid = params.get('j') || 'surahs';
+  if(!GATES.find(function(g){return g.id===jid;})) jid='surahs';
+
+  function render(){
+    var L = lang();
+    var cur = GATES.find(function(g){return g.id===jid;});
+    document.getElementById('cbTabs').innerHTML = GATES.map(function(g){
+      return '<a class="cb-tab'+(g.id===jid?' active':'')+'" href="?j='+g.id+'"><span>'+g.icon+'</span><span>'+(L==='en'?g.en:g.ar)+'</span></a>';
+    }).join('');
+    document.getElementById('introTitle').innerHTML = (L==='en'?'📖 Test: ':'📖 اختبار: ')+'<span class="hl">'+(L==='en'?cur.en:cur.ar)+'</span>';
+    document.getElementById('introSub').innerHTML = L==='en'?cur.subEn:cur.subAr;
+  }
+  document.querySelectorAll('.lang button').forEach(function(b){
+    b.onclick=function(){ var nl=b.dataset.lang; document.documentElement.lang=nl; document.documentElement.dir=nl==='ar'?'rtl':'ltr';
+      try{localStorage.setItem('bunyanLang',nl);}catch(e){}
+      document.querySelectorAll('.lang button').forEach(function(x){x.classList.toggle('active',x.dataset.lang===nl);});
+      render(); };
+  });
+  try{ var sl=localStorage.getItem('bunyanLang'); if(sl){ document.documentElement.lang=sl; document.documentElement.dir=sl==='ar'?'rtl':'ltr';
+    document.querySelectorAll('.lang button').forEach(function(x){x.classList.toggle('active',x.dataset.lang===sl);}); } }catch(e){}
+  render();
+})();
+</script>
+<script defer src="../../quiz/quiz-engine.js"></script>
+<script defer src="../../shared/mk-system.js"></script>
+<script defer src="../../shared/mk-journeys.js"></script>
+<script defer src="../../shared/mk-bag.js"></script>
+<script defer src="../../shared/mk-train.js"></script>
+<script defer src="../../shared/nav-fix.js"></script>
+</body>
+</html>
