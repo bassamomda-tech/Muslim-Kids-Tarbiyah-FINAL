@@ -1,19 +1,4 @@
-/* ════════════════════════════════════════════════════════════════
-   mk-tts-cloud.js — client bridge to the cloud-TTS Cloud Function.
-
-   Exposes window.MKTTS:
-     MKTTS.enabled          → true once an endpoint is configured
-     MKTTS.speak(text,lang) → plays natural cloud audio; returns a
-                              Promise. Rejects if unavailable so the
-                              caller can fall back to browser voices.
-     MKTTS.stop()           → stops playback.
-
-   SETUP: after deploying the function, set ONE line in firebase-config.js
-   (or anywhere before this script):
-       window.MK_TTS_ENDPOINT = 'https://us-central1-<your-project>.cloudfunctions.net/narrate';
-   If that global is absent, MKTTS.enabled = false and the site silently
-   uses the built-in browser voices (today's behaviour). Zero breakage.
-   ════════════════════════════════════════════════════════════════ */
+/* mk-tts-cloud.js — client bridge to the cloud-TTS Cloud Function + global voice unifier. */
 (function () {
   var EP = window.MK_TTS_ENDPOINT || '';
   var audio = null, memo = {};
@@ -56,4 +41,33 @@
   }
 
   window.MKTTS = { get enabled() { return !!EP; }, speak: speak, stop: stop };
+
+  /* Global voice unifier: route EVERY browser speechSynthesis.speak call
+     through the natural cloud voice, so all read-aloud features sound
+     identical on every device. Falls back to browser voice if cloud is down. */
+  if (EP && typeof window.speechSynthesis !== 'undefined' && !window.__mkSpeechPatched) {
+    window.__mkSpeechPatched = true;
+    var SS = window.speechSynthesis;
+    var origSpeak = SS.speak.bind(SS);
+    var origCancel = SS.cancel.bind(SS);
+    function uLang(u) {
+      var l = (u && u.lang) ? String(u.lang).toLowerCase()
+                            : (localStorage.getItem('bunyanLang') || 'ar');
+      return l.indexOf('ar') === 0 ? 'ar' : 'en';
+    }
+    SS.speak = function (u) {
+      var txt = '';
+      try { txt = (u && u.text) ? String(u.text) : ''; } catch (e) {}
+      if (!txt) { return origSpeak(u); }
+      speak(txt, uLang(u)).then(function () {
+        try { if (u && typeof u.onend === 'function') u.onend({ target: u }); } catch (e) {}
+      }).catch(function () {
+        try { origSpeak(u); } catch (e) {}
+      });
+    };
+    SS.cancel = function () {
+      try { stop(); } catch (e) {}
+      try { return origCancel(); } catch (e) {}
+    };
+  }
 })();
