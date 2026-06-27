@@ -1,9 +1,5 @@
-/* sw.js — service worker for Muslim Kids' Tarbiyah (installable PWA).
-   Strategy: network-first for navigations (always fresh pages when online),
-   cache fallback when offline so the app opens. Static assets are
-   cached on first use (stale-while-revalidate). This is intentionally
-   light — it does NOT pre-cache the whole site (hundreds of books). */
-var CACHE = 'mkt-v1';
+/* sw.js — service worker for Muslim Kids' Tarbiyah (auto-updating PWA). */
+var CACHE = 'mkt-v2';
 var CORE = [
   './',
   './index.html',
@@ -32,9 +28,9 @@ self.addEventListener('fetch', function (e) {
   var req = e.request;
   if (req.method !== 'GET') return;
   var url = new URL(req.url);
-  if (url.origin !== self.location.origin) return; // let CDN/Firebase handle themselves
+  if (url.origin !== self.location.origin) return;
 
-  // Navigations: network-first, fall back to cache, then offline shell.
+  // Navigations: network-first.
   if (req.mode === 'navigate') {
     e.respondWith(
       fetch(req).then(function (res) {
@@ -48,7 +44,21 @@ self.addEventListener('fetch', function (e) {
     return;
   }
 
-  // Static assets: stale-while-revalidate.
+  // Code files (JS/CSS/HTML): network-first so visitors always get the newest.
+  if (/\.(?:js|css|html|webmanifest)(?:$|\?)/i.test(url.pathname)) {
+    e.respondWith(
+      fetch(req).then(function (res) {
+        if (res && res.status === 200) {
+          var copy = res.clone();
+          caches.open(CACHE).then(function (c) { c.put(req, copy); });
+        }
+        return res;
+      }).catch(function () { return caches.match(req); })
+    );
+    return;
+  }
+
+  // Images/fonts/other: stale-while-revalidate (fast).
   e.respondWith(
     caches.match(req).then(function (cached) {
       var net = fetch(req).then(function (res) {
