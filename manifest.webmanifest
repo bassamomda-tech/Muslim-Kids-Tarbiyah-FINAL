@@ -1,0 +1,20 @@
+{
+  "name": "تربية الطفل المسلم · Muslim Kids' Tarbiyah",
+  "short_name": "تربية الطفل",
+  "description": "منصّة تربوية إسلامية للأطفال — أركان، أنشطة، وكتب. An Islamic upbringing platform for children.",
+  "lang": "ar",
+  "dir": "rtl",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#081326",
+  "theme_color": "#0A2540",
+  "categories": ["education", "kids", "lifestyle"],
+  "icons": [
+    { "src": "assets/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "assets/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "assets/icon-maskable-192.png", "sizes": "192x192", "type": "image/png", "purpose": "maskable" },
+    { "src": "assets/icon-maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}

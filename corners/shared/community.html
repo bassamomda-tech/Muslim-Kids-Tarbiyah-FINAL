@@ -102,8 +102,13 @@
     </div>
   </div>
 
+<script src="https://www.gstatic.com/firebasejs/10.12.5/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.5/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.5/firebase-firestore-compat.js"></script>
+<script src="firebase-config.js"></script>
 <script defer src="mk-system.js"></script>
 <script src="mk-auth.js"></script>
+<script src="mk-firebase.js"></script>
 <script>
   var lang=(window.MK&&MK.lang&&MK.lang())||localStorage.getItem('bunyanLang')||'ar';
   function t(a,e){ return lang==='ar'?a:e; }

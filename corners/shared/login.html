@@ -145,7 +145,7 @@
     grid.innerHTML = ps.map(function(p){
       return '<div class="pcard" data-id="'+p.id+'" style="--pc:'+p.color+'">'
         + '<button class="pedit" data-edit="'+p.id+'" title="edit">✎</button>'
-        + '<div class="pavi" style="'+p.color+'">'+p.avatar+'</div>'
+        + '<div class="pavi" style="background:'+p.color+'">'+p.avatar+'</div>'
         + '<div class="pname">'+escapeHtml(p.name)+'</div>'
         + '<div class="pmeta">'+(lang==='ar'?'اضغَط للدُّخول':'tap to enter')+'</div>'
         + '</div>';
@@ -186,7 +186,7 @@
       return '<button class="opt'+(a===selAvi?' sel':'')+'" data-avi="'+a+'">'+a+'</button>';
     }).join('');
     document.getElementById('colPick').innerHTML = COLS.map(function(c){
-      return '<button class="opt col'+(c===selCol?' sel':'')+'" data-col="'+c+'" style="'+c+'"></button>';
+      return '<button class="opt col'+(c===selCol?' sel':'')+'" data-col="'+c+'" style="background:'+c+'"></button>';
     }).join('');
     document.querySelectorAll('#aviPick .opt').forEach(function(b){ b.onclick=function(){ selAvi=b.dataset.avi; buildPickers(); }; });
     document.querySelectorAll('#colPick .opt').forEach(function(b){ b.onclick=function(){ selCol=b.dataset.col; buildPickers(); }; });

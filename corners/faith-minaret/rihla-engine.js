@@ -426,15 +426,33 @@
   var speaking=false, btn=null;
   function label(on){ return on ? ('⏸ '+(L()==='ar'?'إيقاف':'Stop')) : ('🔊 '+(L()==='ar'?'استمِع':'Listen')); }
   function setBtn(on){ speaking=on; if(btn) btn.innerHTML=label(on); }
-  function stop(){ try{ synth.cancel(); }catch(e){} setBtn(false); }
+  function stop(){ try{ synth.cancel(); }catch(e){} try{ if(window.MKTTS) MKTTS.stop(); }catch(e){} setBtn(false); }
   function pickVoice(){ var p=L()==='ar'?'ar':'en'; var vs=(synth.getVoices()||[]).filter(function(v){return v.lang&&v.lang.toLowerCase().indexOf(p)===0;}); return vs[0]||null; }
-  function speak(text){
-    if(speaking){ stop(); return; }
-    if(!text) return;
+  function doSpeak(text){
     var u=new SpeechSynthesisUtterance(text); u.lang=L()==='ar'?'ar-SA':'en-US'; u.rate=.95;
     var v=pickVoice(); if(v) u.voice=v;
     u.onend=function(){ setBtn(false); }; u.onerror=function(){ setBtn(false); };
+    try{ synth.resume(); }catch(e){}
     synth.speak(u); setBtn(true);
+  }
+  function speak(text){
+    if(speaking){ stop(); return; }
+    if(!text) return;
+    setBtn(true);
+    // Prefer natural cloud voice when configured; fall back to browser voices.
+    if(window.MKTTS && MKTTS.enabled){
+      MKTTS.speak(text, L()).then(function(){ setBtn(false); }).catch(function(){ browserSpeak(text); });
+      return;
+    }
+    browserSpeak(text);
+  }
+  function browserSpeak(text){
+    // Voices load async (Firefox/Safari/Edge often empty on first call); wait for them.
+    if((synth.getVoices()||[]).length===0){
+      var done=false, go=function(){ if(done)return; done=true; doSpeak(text); };
+      try{ synth.addEventListener('voiceschanged', go, {once:true}); }catch(e){ synth.onvoiceschanged=go; }
+      setTimeout(go, 350); // fallback if the event never fires
+    } else { doSpeak(text); }
   }
   function text(){
     var sels=['.block.wow p','.block.treasure .maryam p','.block.treasure p','.blocks .block p'];

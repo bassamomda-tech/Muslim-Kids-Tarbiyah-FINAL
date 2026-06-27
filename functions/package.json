@@ -1,0 +1,12 @@
+{
+  "name": "mkt-functions",
+  "description": "Cloud TTS proxy for Muslim Kids' Tarbiyah",
+  "engines": { "node": "20" },
+  "main": "index.js",
+  "dependencies": {
+    "firebase-admin": "^12.1.0",
+    "firebase-functions": "^5.0.0",
+    "@google-cloud/text-to-speech": "^5.3.0"
+  },
+  "private": true
+}

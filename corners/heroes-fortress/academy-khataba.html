@@ -184,11 +184,20 @@
   function speak(text){
     var synth=window.speechSynthesis; if(!synth) return;
     if(speaking){ stop(); return; }
-    var u=new SpeechSynthesisUtterance(text); u.lang='ar-SA'; u.rate=.82;
-    var vs=(synth.getVoices()||[]).filter(function(v){return v.lang&&v.lang.toLowerCase().indexOf('ar')===0;});
-    if(vs[0]) u.voice=vs[0];
-    u.onend=function(){speaking=false;}; u.onerror=function(){speaking=false;};
-    synth.speak(u); speaking=true;
+    speaking=true;
+    function go(){
+      var u=new SpeechSynthesisUtterance(text); u.lang='ar-SA'; u.rate=.82;
+      var vs=(synth.getVoices()||[]).filter(function(v){return v.lang&&v.lang.toLowerCase().indexOf('ar')===0;});
+      if(vs[0]) u.voice=vs[0];
+      u.onend=function(){speaking=false;}; u.onerror=function(){speaking=false;};
+      try{ synth.resume(); }catch(e){}
+      synth.speak(u);
+    }
+    if((synth.getVoices()||[]).length===0){
+      var done=false, run=function(){ if(done)return; done=true; go(); };
+      try{ synth.addEventListener('voiceschanged', run, {once:true}); }catch(e){ synth.onvoiceschanged=run; }
+      setTimeout(run, 350);
+    } else { go(); }
   }
   applyLang();
 </script>

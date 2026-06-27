@@ -149,6 +149,17 @@
   /* page-relative link to any project-root path (e.g. the Parents or Home page) */
   function rel(rootPath) { return rootPrefix() + String(rootPath).replace(/^\//, ''); }
 
+  /* ═══ Cloud read-aloud bridge ═══
+     After deploying the TTS Cloud Function, paste its URL here (ONE place).
+     Leave '' to use the free built-in browser voices everywhere. */
+  var TTS_ENDPOINT = 'https://narrate-ltyvjxcneq-uc.a.run.app';   // e.g. 'https://us-central1-muslim-kids-tarbiyah.cloudfunctions.net/narrate'
+  if (TTS_ENDPOINT && !window.MK_TTS_ENDPOINT) {
+    window.MK_TTS_ENDPOINT = TTS_ENDPOINT;
+    var s = document.createElement('script');
+    s.src = rootPrefix() + 'corners/shared/mk-tts-cloud.js';
+    s.defer = true; document.head.appendChild(s);
+  }
+
   window.MK = {
     CORNERS: CORNERS,
     cornerNav: cornerNav, rootPrefix: rootPrefix, rel: rel,
