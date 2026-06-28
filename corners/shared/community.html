@@ -67,6 +67,30 @@
   .en-only{display:none}
   html[dir="ltr"] .ar-only{display:none}
   html[dir="ltr"] .en-only{display:inline}
+
+  /* admin composer + announcements */
+  .admin-box{background:linear-gradient(160deg,rgba(232,181,48,.14),rgba(232,181,48,.05));border:1.5px solid var(--gold);border-radius:1.2rem;padding:1rem 1.1rem;margin-bottom:1.2rem}
+  .admin-box-h{font-weight:900;color:var(--gold-lt);margin-bottom:.7rem;font-size:.95rem}
+  .admin-kinds{display:flex;gap:.5rem;margin-bottom:.7rem;flex-wrap:wrap}
+  .admin-kinds .kbtn{background:rgba(255,255,255,.06);border:1px solid var(--line);color:var(--muted);border-radius:2rem;padding:.4rem .9rem;font-weight:800;font-size:.82rem;cursor:pointer;font-family:inherit}
+  .admin-kinds .kbtn.active{background:var(--gold);color:#10243d;border-color:var(--gold)}
+  .admin-box textarea{width:100%;border:1.5px solid var(--line);background:rgba(255,255,255,.07);color:var(--ink);border-radius:1rem;padding:.7rem .9rem;font-family:inherit;font-size:.95rem;resize:vertical;margin-bottom:.7rem}
+  .admin-post-btn{background:var(--gold);color:#10243d;border:none;border-radius:1rem;padding:.6rem 1.4rem;font-weight:900;font-family:inherit;cursor:pointer}
+  .post.admin{border-color:var(--gold);background:linear-gradient(160deg,rgba(232,181,48,.1),rgba(255,255,255,.05));position:relative}
+  .post .pin{position:absolute;top:.7rem;inset-inline-end:.9rem;font-size:1rem}
+  .admin-badge{background:var(--gold);color:#10243d;border-radius:2rem;padding:.1rem .55rem;font-size:.68rem;font-weight:900;margin-inline-start:.4rem}
+  .admin-badge.sm{padding:.05rem .3rem;font-size:.6rem;margin-inline-start:.25rem}
+  .kind-tag{display:inline-block;background:rgba(41,128,185,.18);border:1px solid rgba(41,128,185,.5);color:#bfe0f7;border-radius:2rem;padding:.15rem .7rem;font-size:.74rem;font-weight:800;margin-bottom:.5rem}
+  .comments{margin-top:.7rem;border-top:1px solid var(--line);padding-top:.7rem}
+  .comment{background:rgba(255,255,255,.04);border-radius:.8rem;padding:.5rem .7rem;margin-bottom:.5rem}
+  .comment .c-av{font-size:.95rem;margin-inline-end:.35rem}
+  .comment .c-who{font-weight:800;font-size:.82rem}
+  .comment .c-time{color:var(--muted);font-size:.7rem;margin-inline-start:.4rem}
+  .comment .c-text{line-height:1.6;font-size:.88rem;margin-top:.25rem}
+  .c-empty{color:var(--muted);font-size:.82rem;text-align:center;padding:.4rem 0 .7rem}
+  .comment-add{display:flex;gap:.5rem;margin-top:.5rem}
+  .comment-add input{flex:1;border:1.5px solid var(--line);background:rgba(255,255,255,.07);color:var(--ink);border-radius:.8rem;padding:.5rem .7rem;font-family:inherit;font-size:.88rem}
+  .comment-add button{background:var(--c);color:#fff;border:none;border-radius:.8rem;padding:0 1rem;font-weight:800;font-family:inherit;cursor:pointer}
 </style>
 <style id="__antiflash">html{background:#081E36;color-scheme:dark}</style>
 </head>
@@ -97,6 +121,16 @@
       </section>
 
       <section class="panel" id="panel-disc">
+        <div class="admin-box" id="adminBox" style="display:none">
+          <div class="admin-box-h">🛡️ <span class="ar-only">لوحة المشرف — انشُر باسمك الرسمي (مثبّت أعلى النقاش)</span><span class="en-only">Admin panel — post in your official name (pinned to the top)</span></div>
+          <div class="admin-kinds">
+            <button type="button" class="kbtn active" data-kind="announcement">📢 <span class="ar-only">إعلان</span><span class="en-only">Announcement</span></button>
+            <button type="button" class="kbtn" data-kind="request">💬 <span class="ar-only">طلب آراء</span><span class="en-only">Ask for input</span></button>
+            <button type="button" class="kbtn" data-kind="initiative">🚀 <span class="ar-only">مبادرة</span><span class="en-only">Initiative</span></button>
+          </div>
+          <textarea id="adminInput" rows="3" placeholder=""></textarea>
+          <button class="admin-post-btn" onclick="adminPost()"><span class="ar-only">انشُر كمشرف 📌</span><span class="en-only">Post as admin 📌</span></button>
+        </div>
         <div class="add">
           <textarea id="postInput" rows="2" placeholder=""></textarea>
           <button onclick="addPost()"><span class="ar-only">انشُر</span><span class="en-only">Post</span></button>
@@ -127,6 +161,7 @@
     document.getElementById('ncTitle').placeholder=t('عنوان التحدّي (مثال: حفظ جزء عمّ)','Challenge title');
     document.getElementById('ncDesc').placeholder=t('وصفٌ قصير','Short description');
     document.getElementById('postInput').placeholder=t('شارِك تجربتك أو سؤالك مع الأهل…','Share your experience or question…');
+    var ai=document.getElementById('adminInput'); if(ai) ai.placeholder=t('اكتب إعلاناً أو مبادرةً أو اطلب آراء الأهل…','Write an announcement, an initiative, or ask families for input…');
     var live=(window.MKAuth&&MKAuth.isLive&&MKAuth.isLive());
     document.getElementById('liveNote').textContent=live
       ? t('☁️ مجتمعٌ مباشر · يمكنك الإبلاغ عن أيّ منشور أو حجب أيّ مستخدم','☁️ Live community · you can report any post or block any user')
@@ -148,6 +183,7 @@
       }
       gate.style.display='none'; main.style.display='block';
       who.innerHTML='<span class="av">'+(u.avatar||'🧑')+'</span><span>'+escapeHtml(u.name)+'</span>';
+      document.getElementById('adminBox').style.display = (MKAuth.isAdmin&&MKAuth.isAdmin()) ? 'block' : 'none';
       renderChallenges(); renderPosts();
     });
   }
@@ -190,20 +226,58 @@
     });
   }
 
+  var KIND={ announcement:{ic:'📢',ar:'إعلان',en:'Announcement'}, request:{ic:'💬',ar:'طلب آراء',en:'Ask for input'}, initiative:{ic:'🚀',ar:'مبادرة',en:'Initiative'} };
+  var adminKind='announcement';
+  document.querySelectorAll('#adminBox .kbtn').forEach(function(b){ b.onclick=function(){ adminKind=b.dataset.kind; document.querySelectorAll('#adminBox .kbtn').forEach(function(x){x.classList.toggle('active',x===b);}); }; });
+  function adminPost(){
+    var inp=document.getElementById('adminInput'); var v=inp.value.trim(); if(!v) return;
+    MKAuth.addPost(v,{admin:true,kind:adminKind}).then(function(){ inp.value=''; renderPosts(); });
+  }
+
   function renderPosts(){
     MKAuth.listPosts().then(function(list){
       document.getElementById('postList').innerHTML=list.map(function(p){
         var who=encodeURIComponent(p.who||''); var puid=encodeURIComponent(p.uid||'');
-        return '<div class="post"><div class="post-h"><span class="post-av">'+(p.avatar||'🧑')+'</span>'
-          +'<span class="post-who">'+escapeHtml(p.who)+'</span><span class="post-time">'+ago(p.at)+'</span></div>'
+        var adminCls=p.admin?' admin':'';
+        var pin=p.pinned?'<span class="pin">📌</span>':'';
+        var k=p.admin&&p.kind&&KIND[p.kind];
+        var kind=k?'<div><span class="kind-tag">'+k.ic+' '+t(k.ar,k.en)+'</span></div>':'';
+        var badge=p.admin?'<span class="admin-badge">🛡️ '+t('المشرف','Admin')+'</span>':'';
+        return '<div class="post'+adminCls+'" id="post-'+p.id+'">'+pin
+          +'<div class="post-h"><span class="post-av">'+(p.avatar||'🧑')+'</span>'
+          +'<span class="post-who">'+escapeHtml(p.who)+'</span>'+badge
+          +'<span class="post-time">'+ago(p.at)+'</span></div>'
+          +kind
           +'<div class="post-text">'+escapeHtml(p.text)+'</div>'
           +'<div class="post-foot">'
           +'<button class="post-like" onclick="likePost(\''+p.id+'\')">🤍 '+(p.likes||0)+'</button>'
+          +'<button class="post-mini" onclick="toggleComments(\''+p.id+'\')">💬 '+t('تعليق','Comment')+'</button>'
           +(p.mine?'':'<button class="post-mini" onclick="reportPost(\''+p.id+'\')">🚩 '+t('إبلاغ','Report')+'</button>'
           +'<button class="post-mini" onclick="blockUser(\''+who+'\',\''+puid+'\')">🚫 '+t('حجب','Block')+'</button>')
-          +'</div></div>';
+          +'</div>'
+          +'<div class="comments" id="cm-'+p.id+'" style="display:none"></div>'
+          +'</div>';
       }).join('');
     });
+  }
+  function toggleComments(id){
+    var box=document.getElementById('cm-'+id);
+    if(box.style.display==='none'){ box.style.display='block'; loadComments(id); } else { box.style.display='none'; }
+  }
+  function loadComments(id){
+    var box=document.getElementById('cm-'+id);
+    MKAuth.listComments(id).then(function(list){
+      var items=list.map(function(c){
+        var ab=c.admin?'<span class="admin-badge sm">🛡️</span>':'';
+        return '<div class="comment"><span class="c-av">'+(c.avatar||'🧑')+'</span><span class="c-who">'+escapeHtml(c.who)+'</span>'+ab+'<span class="c-time">'+ago(c.at)+'</span><div class="c-text">'+escapeHtml(c.text)+'</div></div>';
+      }).join('');
+      box.innerHTML=(items||'<div class="c-empty">'+t('كن أوّل من يعلّق','Be the first to comment')+'</div>')
+        +'<div class="comment-add"><input id="ci-'+id+'" placeholder="'+t('اكتب تعليقاً…','Write a comment…')+'"><button onclick="sendComment(\''+id+'\')">'+t('أرسل','Send')+'</button></div>';
+    });
+  }
+  function sendComment(id){
+    var inp=document.getElementById('ci-'+id); var v=inp.value.trim(); if(!v) return;
+    MKAuth.addComment(id,v).then(function(){ loadComments(id); });
   }
   function addPost(){
     var inp=document.getElementById('postInput'); var v=inp.value.trim(); if(!v) return;

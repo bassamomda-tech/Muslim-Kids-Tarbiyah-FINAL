@@ -41,10 +41,12 @@
   catch (e) { return; }
 
   function now() { return Date.now(); }
+  var ADMIN_EMAILS = ['bassamomda91@gmail.com'];
+  function isAdminEmail(e) { return !!e && ADMIN_EMAILS.indexOf(String(e).trim().toLowerCase()) >= 0; }
   function pub(uid, p) {
     p = p || {};
     return { id: uid, email: p.email || '', name: p.name || '', role: p.role || 'parent',
-             avatar: p.avatar || '🧑', createdAt: p.createdAt || now() };
+             avatar: p.avatar || '🧑', createdAt: p.createdAt || now(), admin: isAdminEmail(p.email) };
   }
   // Normalise Firebase's verbose error codes to the SAME short codes the UI already handles.
   function mapErr(e) {
@@ -184,16 +186,21 @@
             var list = []; qs.forEach(function (d) {
               var x = d.data(); x.id = d.id;
               if (blocked.indexOf(x.uid) < 0 && blocked.indexOf(x.who) < 0) list.push(x);
-            }); return list;
+            });
+            list.sort(function (a, c) { return ((c.pinned ? 1 : 0) - (a.pinned ? 1 : 0)) || (c.at - a.at); });
+            return list;
           });
       }).catch(function () { return []; });
     },
-    addPost: function (text) {
+    addPost: function (text, opts) {
+      opts = opts || {};
       var u = window.MKAuth.user();
-      return db.collection('posts').add({
+      var doc = {
         who: (u && u.name) || 'ضيف', avatar: (u && u.avatar) || '🧑',
         uid: uidNow() || '', text: String(text).slice(0, 600), at: now(), likes: 0
-      }).then(function () { return true; });
+      };
+      if (u && u.admin && opts.admin) { doc.admin = true; doc.kind = opts.kind || 'announcement'; doc.pinned = true; }
+      return db.collection('posts').add(doc).then(function () { return true; });
     },
     likePost: function (id) {
       return db.collection('posts').doc(id).update({ likes: firebase.firestore.FieldValue.increment(1) })
@@ -211,6 +218,18 @@
       return db.collection('blocks').doc(uid)
         .set({ users: firebase.firestore.FieldValue.arrayUnion(key) }, { merge: true })
         .then(function () { return true; });
+    },
+    listComments: function (postId) {
+      return db.collection('posts').doc(postId).collection('comments').orderBy('at', 'asc').limit(200).get()
+        .then(function (qs) { var list = []; qs.forEach(function (d) { var x = d.data(); x.id = d.id; list.push(x); }); return list; })
+        .catch(function () { return []; });
+    },
+    addComment: function (postId, text) {
+      var u = window.MKAuth.user();
+      return db.collection('posts').doc(postId).collection('comments').add({
+        who: (u && u.name) || 'ضيف', avatar: (u && u.avatar) || '🧑', uid: uidNow() || '',
+        admin: !!(u && u.admin), text: String(text).slice(0, 400), at: now()
+      }).then(function () { return true; });
     },
   };
 

@@ -1,0 +1,58 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    function signedIn() { return request.auth != null; }
+    function isOwner(uid) { return request.auth != null && request.auth.uid == uid; }
+
+    // User profiles — any signed-in user can read names/avatars; only owner writes
+    match /users/{uid} {
+      allow read: if signedIn();
+      allow write: if isOwner(uid);
+    }
+
+    // Private learning progress — owner only
+    match /progress/{uid} {
+      allow read, write: if isOwner(uid);
+    }
+
+    // Community challenges — all signed-in users read; create & member-count updates allowed
+    match /challenges/{id} {
+      allow read: if signedIn();
+      allow create: if signedIn();
+      allow update: if signedIn();
+      allow delete: if false;
+    }
+
+    // Per-user challenge progress
+    match /joins/{uid}/items/{id} {
+      allow read, write: if isOwner(uid);
+    }
+
+    // Community posts — all signed-in users read; author creates; likes update allowed
+    match /posts/{id} {
+      allow read:   if signedIn();
+      allow create: if signedIn() && request.resource.data.uid == request.auth.uid;
+      allow update: if signedIn();
+      allow delete: if signedIn() && resource.data.uid == request.auth.uid;
+
+      // Comments on a post — any signed-in family can read & add
+      match /comments/{cid} {
+        allow read:   if signedIn();
+        allow create: if signedIn() && request.resource.data.uid == request.auth.uid;
+        allow update, delete: if false;
+      }
+    }
+
+    // Personal block lists — owner only
+    match /blocks/{uid} {
+      allow read, write: if isOwner(uid);
+    }
+
+    // Abuse reports — any signed-in user can file; only you read them (via Firebase console)
+    match /reports/{id} {
+      allow create: if signedIn();
+      allow read, update, delete: if false;
+    }
+  }
+}

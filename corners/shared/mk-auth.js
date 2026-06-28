@@ -21,13 +21,17 @@
   /* hash a password locally (NOT secure — backend will replace this) */
   function hash(s) { var h = 0; s = String(s); for (var i = 0; i < s.length; i++) { h = (h << 5) - h + s.charCodeAt(i); h |= 0; } return 'h' + h; }
 
+  /* admin allow-list — these accounts can post announcements, requests & initiatives */
+  var ADMIN_EMAILS = ['bassamomda91@gmail.com'];
+  function isAdminEmail(e) { return !!e && ADMIN_EMAILS.indexOf(String(e).trim().toLowerCase()) >= 0; }
+
   /* ════════════════════════════════════════════════════════════════
      LOCAL ADAPTER — the default offline implementation.
      Replace each body with real calls to ship a live backend.
      ════════════════════════════════════════════════════════════════ */
   var LocalAdapter = {
     name: 'local',
-    K: { users: 'mkauth:users', session: 'mkauth:session', chal: 'mkcomm:challenges', posts: 'mkcomm:posts', joins: 'mkcomm:joins', blocks: 'mkcomm:blocks', reports: 'mkcomm:reports' },
+    K: { users: 'mkauth:users', session: 'mkauth:session', chal: 'mkcomm:challenges', posts: 'mkcomm:posts', joins: 'mkcomm:joins', blocks: 'mkcomm:blocks', reports: 'mkcomm:reports', comments: 'mkcomm:comments' },
 
     /* --- AUTH --- */
     register: function (data) {
@@ -110,14 +114,19 @@
       if (!p) { p = SEED_POSTS.slice(); jset(this.K.posts, p); }
       var b = jget(this.K.blocks, []);
       if (b && b.length) p = p.filter(function (x) { return b.indexOf(x.uid) < 0 && b.indexOf(x.who) < 0; });
+      p = p.slice().sort(function (a, c) { return ((c.pinned ? 1 : 0) - (a.pinned ? 1 : 0)) || (c.at - a.at); });
       return delay(p);
     },
-    addPost: function (text) {
+    addPost: function (text, opts) {
       // ☁️ BACKEND: db.collection('posts').add({uid, text, createdAt})
+      opts = opts || {};
       var p = jget(this.K.posts, SEED_POSTS.slice());
-      var who = (MKAuth._user && MKAuth._user.name) || 'ضيف';
-      var av = (MKAuth._user && MKAuth._user.avatar) || '🧑';
-      p.unshift({ id: uid(), who: who, avatar: av, text: String(text).slice(0, 600), at: now(), likes: 0, mine: true });
+      var me = MKAuth._user || {};
+      var who = me.name || 'ضيف';
+      var av = me.avatar || '🧑';
+      var post = { id: uid(), who: who, avatar: av, uid: me.id || '', text: String(text).slice(0, 600), at: now(), likes: 0, mine: true };
+      if (me.admin && opts.admin) { post.admin = true; post.kind = opts.kind || 'announcement'; post.pinned = true; }
+      p.unshift(post);
       jset(this.K.posts, p); return delay(true);
     },
     likePost: function (id) { bump(this.K.posts, id, 'likes', 1); return delay(true); },
@@ -129,9 +138,20 @@
       var b = jget(this.K.blocks, []); var key = buid || who; if (key && b.indexOf(key) < 0) b.push(key); jset(this.K.blocks, b); return delay(true);
     },
     getBlocked: function () { return delay(jget(this.K.blocks, [])); },
+    listComments: function (postId) {
+      var all = jget(this.K.comments, {});
+      return delay((all[postId] || []).slice());
+    },
+    addComment: function (postId, text) {
+      var all = jget(this.K.comments, {});
+      var me = MKAuth._user || {};
+      if (!all[postId]) all[postId] = [];
+      all[postId].push({ id: uid(), who: me.name || 'ضيف', avatar: me.avatar || '🧑', uid: me.id || '', admin: !!me.admin, text: String(text).slice(0, 400), at: now() });
+      jset(this.K.comments, all); return delay(true);
+    },
   };
 
-  function publicUser(u) { return { id: u.id, email: u.email, name: u.name, role: u.role, avatar: u.avatar, createdAt: u.createdAt }; }
+  function publicUser(u) { return { id: u.id, email: u.email, name: u.name, role: u.role, avatar: u.avatar, createdAt: u.createdAt, admin: isAdminEmail(u.email) }; }
   function bump(key, id, field, n) { var a = jget(key, []); a.forEach(function (x) { if (x.id === id) x[field] = (x[field] || 0) + n; }); jset(key, a); }
 
   /* seed community content so the screens look alive offline */
@@ -173,8 +193,11 @@
     createChallenge: function (c) { return adapter.createChallenge(c); },
 
     listPosts: function () { return adapter.listPosts(); },
-    addPost: function (t) { return adapter.addPost(t); },
+    addPost: function (t, opts) { return adapter.addPost(t, opts); },
     likePost: function (id) { return adapter.likePost(id); },
+    listComments: function (postId) { return adapter.listComments ? adapter.listComments(postId) : Promise.resolve([]); },
+    addComment: function (postId, t) { return adapter.addComment ? adapter.addComment(postId, t) : Promise.resolve(true); },
+    isAdmin: function () { return !!(this._user && this._user.admin); },
     reportPost: function (id, reason) { return adapter.reportPost ? adapter.reportPost(id, reason) : Promise.resolve(true); },
     blockUser: function (who, uid) { return adapter.blockUser ? adapter.blockUser(who, uid) : Promise.resolve(true); },
     getBlocked: function () { return adapter.getBlocked ? adapter.getBlocked() : Promise.resolve([]); },
