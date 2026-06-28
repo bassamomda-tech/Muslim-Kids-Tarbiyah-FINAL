@@ -1,0 +1,8 @@
+[{
+      "relation": ["delegate_permission/common.handle_all_urls"],
+      "target": {
+        "namespace": "android_app",
+        "package_name": "uk.tarbiyahkids.twa",
+        "sha256_cert_fingerprints": ["81:08:9E:6C:DB:91:7D:94:79:D3:40:20:EF:E6:20:A7:E0:AE:0B:04:93:15:CB:DA:4F:78:2E:93:55:CE:B4:71"]
+      }
+    }]
