@@ -30,6 +30,8 @@
   .tab .ti{font-size:1.3rem}
   .tab:hover{border-color:rgba(212,160,23,.5)}
   .tab.active{background:var(--primary);border-color:var(--primary);color:#fff;box-shadow:0 8px 22px rgba(142,68,173,.4)}
+  .tab.tab-go{text-decoration:none;border-color:rgba(212,160,23,.55);background:linear-gradient(135deg,rgba(232,181,48,.16),rgba(212,160,23,.06))}
+  .tab.tab-go:hover{border-color:var(--gold,#E8B530)}
   .panel{display:none;animation:fade .35s}
   .panel.active{display:block}
   @keyframes fade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
@@ -473,6 +475,8 @@ html[dir="rtl"] .shop-card{border-inline-start:1.5px solid var(--card-bd);border
     <button class="tab" data-tab="print" onclick="showTab('print')"><span class="ti">🖨️</span><span class="ar-only">المطبوعات</span><span class="en-only">Printables</span></button>
     <button class="tab" data-tab="res" onclick="showTab('res')"><span class="ti">🗂️</span><span class="ar-only">المصادر التربوية</span><span class="en-only">Resources</span></button>
     <button class="tab" data-tab="controls" onclick="showTab('controls')"><span class="ti">🔐</span><span class="ar-only">تحكّم الأهل</span><span class="en-only">Controls</span></button>
+    <a class="tab tab-go" href="../../shared/store.html" onclick="this.href='../../shared/store.html?lang='+lang"><span class="ti">🛍️</span><span class="ar-only">متجر الدعم</span><span class="en-only">Support Store</span></a>
+    <a class="tab tab-go" href="../../shared/downloads.html" onclick="this.href='../../shared/downloads.html?lang='+lang"><span class="ti">📥</span><span class="ar-only">ركن التنزيلات</span><span class="en-only">Downloads</span></a>
   </div>
 
   <!-- PANEL 0 · GUIDE / HOW TO USE -->
