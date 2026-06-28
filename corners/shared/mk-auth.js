@@ -27,7 +27,7 @@
      ════════════════════════════════════════════════════════════════ */
   var LocalAdapter = {
     name: 'local',
-    K: { users: 'mkauth:users', session: 'mkauth:session', chal: 'mkcomm:challenges', posts: 'mkcomm:posts', joins: 'mkcomm:joins' },
+    K: { users: 'mkauth:users', session: 'mkauth:session', chal: 'mkcomm:challenges', posts: 'mkcomm:posts', joins: 'mkcomm:joins', blocks: 'mkcomm:blocks', reports: 'mkcomm:reports' },
 
     /* --- AUTH --- */
     register: function (data) {
@@ -108,6 +108,8 @@
     listPosts: function () {
       var p = jget(this.K.posts, null);
       if (!p) { p = SEED_POSTS.slice(); jset(this.K.posts, p); }
+      var b = jget(this.K.blocks, []);
+      if (b && b.length) p = p.filter(function (x) { return b.indexOf(x.uid) < 0 && b.indexOf(x.who) < 0; });
       return delay(p);
     },
     addPost: function (text) {
@@ -119,6 +121,14 @@
       jset(this.K.posts, p); return delay(true);
     },
     likePost: function (id) { bump(this.K.posts, id, 'likes', 1); return delay(true); },
+    reportPost: function (id, reason) {
+      // ☁️ BACKEND: db.collection('reports').add({postId,reason,by,at})
+      var r = jget(this.K.reports, []); r.push({ id: id, reason: reason || '', at: now() }); jset(this.K.reports, r); return delay(true);
+    },
+    blockUser: function (who, buid) {
+      var b = jget(this.K.blocks, []); var key = buid || who; if (key && b.indexOf(key) < 0) b.push(key); jset(this.K.blocks, b); return delay(true);
+    },
+    getBlocked: function () { return delay(jget(this.K.blocks, [])); },
   };
 
   function publicUser(u) { return { id: u.id, email: u.email, name: u.name, role: u.role, avatar: u.avatar, createdAt: u.createdAt }; }
@@ -165,6 +175,9 @@
     listPosts: function () { return adapter.listPosts(); },
     addPost: function (t) { return adapter.addPost(t); },
     likePost: function (id) { return adapter.likePost(id); },
+    reportPost: function (id, reason) { return adapter.reportPost ? adapter.reportPost(id, reason) : Promise.resolve(true); },
+    blockUser: function (who, uid) { return adapter.blockUser ? adapter.blockUser(who, uid) : Promise.resolve(true); },
+    getBlocked: function () { return adapter.getBlocked ? adapter.getBlocked() : Promise.resolve([]); },
 
     /* simple change subscription so headers/badges update on login/logout */
     _subs: [],

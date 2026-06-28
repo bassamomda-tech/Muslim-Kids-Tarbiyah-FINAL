@@ -171,10 +171,22 @@
     },
 
     /* ---------- COMMUNITY: posts ---------- */
-    listPosts: function () {
-      return db.collection('posts').orderBy('at', 'desc').limit(100).get()
-        .then(function (qs) { var list = []; qs.forEach(function (d) { var x = d.data(); x.id = d.id; list.push(x); }); return list; })
+    getBlocked: function () {
+      var uid = uidNow(); if (!uid) return Promise.resolve([]);
+      return db.collection('blocks').doc(uid).get()
+        .then(function (s) { return (s.exists && s.data().users) || []; })
         .catch(function () { return []; });
+    },
+    listPosts: function () {
+      return this.getBlocked().then(function (blocked) {
+        return db.collection('posts').orderBy('at', 'desc').limit(100).get()
+          .then(function (qs) {
+            var list = []; qs.forEach(function (d) {
+              var x = d.data(); x.id = d.id;
+              if (blocked.indexOf(x.uid) < 0 && blocked.indexOf(x.who) < 0) list.push(x);
+            }); return list;
+          });
+      }).catch(function () { return []; });
     },
     addPost: function (text) {
       var u = window.MKAuth.user();
@@ -186,6 +198,19 @@
     likePost: function (id) {
       return db.collection('posts').doc(id).update({ likes: firebase.firestore.FieldValue.increment(1) })
         .then(function () { return true; }).catch(function () { return true; });
+    },
+    reportPost: function (id, reason) {
+      var u = window.MKAuth.user();
+      return db.collection('reports').add({
+        postId: id, reason: reason || '', by: uidNow() || '', byName: (u && u.name) || '', at: now()
+      }).then(function () { return true; }).catch(function () { return true; });
+    },
+    blockUser: function (who, buid) {
+      var uid = uidNow(); if (!uid) return Promise.reject(new Error('noauth'));
+      var key = buid || who; if (!key) return Promise.resolve(true);
+      return db.collection('blocks').doc(uid)
+        .set({ users: firebase.firestore.FieldValue.arrayUnion(key) }, { merge: true })
+        .then(function () { return true; });
     },
   };
 

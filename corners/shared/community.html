@@ -58,7 +58,11 @@
   .post-av{width:34px;height:34px;border-radius:50%;background:rgba(255,255,255,.1);display:grid;place-items:center;font-size:1.1rem}
   .post-who{font-weight:800}.post-time{color:var(--muted);font-size:.74rem;margin-inline-start:auto}
   .post-text{line-height:1.75;font-size:.95rem}
-  .post-like{margin-top:.5rem;background:transparent;border:1px solid var(--line);color:var(--muted);border-radius:2rem;padding:.25rem .8rem;font-weight:800;font-size:.8rem;cursor:pointer;font-family:inherit}
+  .post-foot{display:flex;align-items:center;gap:.5rem;margin-top:.6rem;flex-wrap:wrap}
+  .post-like{background:transparent;border:1px solid var(--line);color:var(--muted);border-radius:2rem;padding:.25rem .8rem;font-weight:800;font-size:.8rem;cursor:pointer;font-family:inherit}
+  .post-mini{background:transparent;border:1px solid rgba(255,255,255,.14);color:var(--muted);border-radius:2rem;padding:.25rem .7rem;font-weight:700;font-size:.76rem;cursor:pointer;font-family:inherit;opacity:.85}
+  .post-mini:hover{opacity:1;border-color:rgba(229,115,115,.6);color:#ffb4b4}
+  .post-mini.mk-blocked{opacity:.6;cursor:default;border-color:var(--line);color:var(--muted)}
   .live-note{font-family:ui-monospace,monospace;font-size:.72rem;color:#90A4AE;background:rgba(0,0,0,.22);border-radius:.6rem;padding:.5rem .8rem;margin-bottom:1.2rem;text-align:center}
   .en-only{display:none}
   html[dir="ltr"] .ar-only{display:none}
@@ -123,7 +127,10 @@
     document.getElementById('ncTitle').placeholder=t('عنوان التحدّي (مثال: حفظ جزء عمّ)','Challenge title');
     document.getElementById('ncDesc').placeholder=t('وصفٌ قصير','Short description');
     document.getElementById('postInput').placeholder=t('شارِك تجربتك أو سؤالك مع الأهل…','Share your experience or question…');
-    document.getElementById('liveNote').textContent=t('🔒 يعمل محليّاً الآن · جاهزٌ للربط بحسابٍ سحابيٍّ ليتشارك الجميع','🔒 Runs locally now · ready to connect to a cloud account so everyone shares');
+    var live=(window.MKAuth&&MKAuth.isLive&&MKAuth.isLive());
+    document.getElementById('liveNote').textContent=live
+      ? t('☁️ مجتمعٌ مباشر · يمكنك الإبلاغ عن أيّ منشور أو حجب أيّ مستخدم','☁️ Live community · you can report any post or block any user')
+      : t('🔒 يعمل محليّاً الآن · جاهزٌ للربط بحسابٍ سحابيٍّ ليتشارك الجميع','🔒 Runs locally now · ready to connect to a cloud account so everyone shares');
     boot();
   }
   document.querySelectorAll('.lang button').forEach(function(b){ b.onclick=function(){ lang=b.dataset.lang; try{localStorage.setItem('bunyanLang',lang);}catch(e){} applyLang(); }; });
@@ -186,10 +193,15 @@
   function renderPosts(){
     MKAuth.listPosts().then(function(list){
       document.getElementById('postList').innerHTML=list.map(function(p){
+        var who=encodeURIComponent(p.who||''); var puid=encodeURIComponent(p.uid||'');
         return '<div class="post"><div class="post-h"><span class="post-av">'+(p.avatar||'🧑')+'</span>'
           +'<span class="post-who">'+escapeHtml(p.who)+'</span><span class="post-time">'+ago(p.at)+'</span></div>'
           +'<div class="post-text">'+escapeHtml(p.text)+'</div>'
-          +'<button class="post-like" onclick="likePost(\''+p.id+'\')">🤍 '+(p.likes||0)+'</button></div>';
+          +'<div class="post-foot">'
+          +'<button class="post-like" onclick="likePost(\''+p.id+'\')">🤍 '+(p.likes||0)+'</button>'
+          +(p.mine?'':'<button class="post-mini" onclick="reportPost(\''+p.id+'\')">🚩 '+t('إبلاغ','Report')+'</button>'
+          +'<button class="post-mini" onclick="blockUser(\''+who+'\',\''+puid+'\')">🚫 '+t('حجب','Block')+'</button>')
+          +'</div></div>';
       }).join('');
     });
   }
@@ -198,6 +210,20 @@
     MKAuth.addPost(v).then(function(){ inp.value=''; renderPosts(); });
   }
   function likePost(id){ MKAuth.likePost(id).then(renderPosts); }
+  function reportPost(id){
+    if(!confirm(t('هل تريد الإبلاغ عن هذا المنشور كمحتوى مخالف؟','Report this post as inappropriate?'))) return;
+    MKAuth.reportPost(id,'').then(function(){
+      alert(t('شكراً لك. تم استلام بلاغك وسيُراجَع خلال ٢٤ ساعة.','Thank you. Your report was received and will be reviewed within 24 hours.'));
+    });
+  }
+  function blockUser(who,puid){
+    who=decodeURIComponent(who||''); puid=decodeURIComponent(puid||'');
+    if(!confirm(t('حجب منشورات هذا المستخدم؟ لن ترى منشوراته بعد الآن.','Block this user? You will no longer see their posts.'))) return;
+    MKAuth.blockUser(who,puid).then(function(){
+      alert(t('تم الحجب. تم إخفاء منشورات هذا المستخدم.','User blocked. Their posts are now hidden.'));
+      renderPosts();
+    });
+  }
 
   function escapeHtml(s){ return String(s).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];}); }
   applyLang();

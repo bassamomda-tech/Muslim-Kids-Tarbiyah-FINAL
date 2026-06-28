@@ -1,4 +1,19 @@
-/* mk-tts-cloud.js — client bridge to the cloud-TTS Cloud Function + global voice unifier. */
+/* ════════════════════════════════════════════════════════════════
+   mk-tts-cloud.js — client bridge to the cloud-TTS Cloud Function.
+
+   Exposes window.MKTTS:
+     MKTTS.enabled          → true once an endpoint is configured
+     MKTTS.speak(text,lang) → plays natural cloud audio; returns a
+                              Promise. Rejects if unavailable so the
+                              caller can fall back to browser voices.
+     MKTTS.stop()           → stops playback.
+
+   SETUP: after deploying the function, set ONE line in firebase-config.js
+   (or anywhere before this script):
+       window.MK_TTS_ENDPOINT = 'https://us-central1-<your-project>.cloudfunctions.net/narrate';
+   If that global is absent, MKTTS.enabled = false and the site silently
+   uses the built-in browser voices (today's behaviour). Zero breakage.
+   ════════════════════════════════════════════════════════════════ */
 (function () {
   var EP = window.MK_TTS_ENDPOINT || '';
   var audio = null, memo = {};
@@ -42,9 +57,11 @@
 
   window.MKTTS = { get enabled() { return !!EP; }, speak: speak, stop: stop };
 
-  /* Global voice unifier: route EVERY browser speechSynthesis.speak call
-     through the natural cloud voice, so all read-aloud features sound
-     identical on every device. Falls back to browser voice if cloud is down. */
+  /* ── Global voice unifier ───────────────────────────────────────
+     Route EVERY browser speechSynthesis.speak call through the natural
+     cloud voice, so all read-aloud features sound identical on every
+     device (laptop / phone / tablet). Falls back to the browser voice
+     only if the cloud is unavailable. One patch covers all corners. */
   if (EP && typeof window.speechSynthesis !== 'undefined' && !window.__mkSpeechPatched) {
     window.__mkSpeechPatched = true;
     var SS = window.speechSynthesis;

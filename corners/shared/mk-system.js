@@ -152,7 +152,7 @@
   /* ═══ Cloud read-aloud bridge ═══
      After deploying the TTS Cloud Function, paste its URL here (ONE place).
      Leave '' to use the free built-in browser voices everywhere. */
-  var TTS_ENDPOINT = 'https://narrate-ltyvjxcneq-uc.a.run.app';   // e.g. 'https://us-central1-muslim-kids-tarbiyah.cloudfunctions.net/narrate'
+  var TTS_ENDPOINT = 'https://narrate-ltyvjxcneq-uc.a.run.app';   // live cloud voice (Google TTS)
   if (TTS_ENDPOINT && !window.MK_TTS_ENDPOINT) {
     window.MK_TTS_ENDPOINT = TTS_ENDPOINT;
     var s = document.createElement('script');
