@@ -42,8 +42,8 @@
   function open() { paint(); document.getElementById('mkcnPanel').classList.add('open'); }
   function close() { var p = document.getElementById('mkcnPanel'); if (p) p.classList.remove('open'); }
 
-  function row(icon, label, href) {
-    return '<a class="mkcn-row" href="' + href + '?lang=' + lang() + '"><span class="mkcn-r-ic">' + icon + '</span><span class="mkcn-r-t">' + label + '</span></a>';
+  function row(icon, label, href, badge) {
+    return '<a class="mkcn-row"' + (badge ? ' data-community-badge' : '') + ' href="' + href + '?lang=' + lang() + '"><span class="mkcn-r-ic">' + icon + '</span><span class="mkcn-r-t">' + label + '</span></a>';
   }
   function paint() {
     var A = ar();
@@ -54,7 +54,8 @@
       corners.map(function (c) { return row(c.icon, A ? c.name.ar : c.name.en, ROOT + c.base); }).join('');
     document.getElementById('mkcnSections').innerHTML =
       '<div class="mkcn-lbl">' + (A ? 'الأقسام' : 'Sections') + '</div>' +
-      SECTIONS.map(function (s) { return row(s.icon, A ? s.ar : s.en, ROOT + s.href); }).join('');
+      SECTIONS.map(function (s) { return row(s.icon, A ? s.ar : s.en, ROOT + s.href, s.href.indexOf('community.html') >= 0); }).join('');
+    if (window.MKNotify) window.MKNotify.refresh();
   }
 
   function css() {
@@ -77,6 +78,7 @@
   }
 
   function boot() { css(); build();
+    (function () { if (window.MKNotify) return; var s = document.createElement('script'); s.src = ROOT + 'corners/shared/mk-notify.js'; document.head.appendChild(s); })();
     document.querySelectorAll('.lang button,[data-lang]').forEach(function (b) { b.addEventListener('click', function () { setTimeout(paint, 50); }); });
   }
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', boot); else boot();

@@ -200,10 +200,25 @@
         uid: uidNow() || '', text: String(text).slice(0, 600), at: now(), likes: 0
       };
       if (u && u.admin && opts.admin) { doc.admin = true; doc.kind = opts.kind || 'announcement'; doc.pinned = true; }
-      return db.collection('posts').add(doc).then(function () { return true; });
+      return db.collection('posts').add(doc).then(function () {
+        if (doc.admin) {
+          db.collection('meta').doc('community').set({
+            lastAdminAt: doc.at, kind: doc.kind || 'announcement',
+            text: doc.text.slice(0, 140), by: doc.who
+          }, { merge: true }).catch(function () {});
+        }
+        return true;
+      });
     },
     likePost: function (id) {
       return db.collection('posts').doc(id).update({ likes: firebase.firestore.FieldValue.increment(1) })
+        .then(function () { return true; }).catch(function () { return true; });
+    },
+    deletePost: function (id) {
+      return db.collection('posts').doc(id).delete().then(function () { return true; }).catch(function () { return true; });
+    },
+    deleteComment: function (postId, cid) {
+      return db.collection('posts').doc(postId).collection('comments').doc(cid).delete()
         .then(function () { return true; }).catch(function () { return true; });
     },
     reportPost: function (id, reason) {

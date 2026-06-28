@@ -130,6 +130,16 @@
       jset(this.K.posts, p); return delay(true);
     },
     likePost: function (id) { bump(this.K.posts, id, 'likes', 1); return delay(true); },
+    deletePost: function (id) {
+      var p = jget(this.K.posts, []); p = p.filter(function (x) { return x.id !== id; }); jset(this.K.posts, p);
+      var all = jget(this.K.comments, {}); if (all[id]) { delete all[id]; jset(this.K.comments, all); }
+      return delay(true);
+    },
+    deleteComment: function (postId, cid) {
+      var all = jget(this.K.comments, {});
+      if (all[postId]) { all[postId] = all[postId].filter(function (c) { return c.id !== cid; }); jset(this.K.comments, all); }
+      return delay(true);
+    },
     reportPost: function (id, reason) {
       // ☁️ BACKEND: db.collection('reports').add({postId,reason,by,at})
       var r = jget(this.K.reports, []); r.push({ id: id, reason: reason || '', at: now() }); jset(this.K.reports, r); return delay(true);
@@ -195,6 +205,8 @@
     listPosts: function () { return adapter.listPosts(); },
     addPost: function (t, opts) { return adapter.addPost(t, opts); },
     likePost: function (id) { return adapter.likePost(id); },
+    deletePost: function (id) { return adapter.deletePost ? adapter.deletePost(id) : Promise.resolve(true); },
+    deleteComment: function (postId, cid) { return adapter.deleteComment ? adapter.deleteComment(postId, cid) : Promise.resolve(true); },
     listComments: function (postId) { return adapter.listComments ? adapter.listComments(postId) : Promise.resolve([]); },
     addComment: function (postId, t) { return adapter.addComment ? adapter.addComment(postId, t) : Promise.resolve(true); },
     isAdmin: function () { return !!(this._user && this._user.admin); },

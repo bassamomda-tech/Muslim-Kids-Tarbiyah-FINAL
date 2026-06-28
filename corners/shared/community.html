@@ -82,7 +82,10 @@
   .admin-badge.sm{padding:.05rem .3rem;font-size:.6rem;margin-inline-start:.25rem}
   .kind-tag{display:inline-block;background:rgba(41,128,185,.18);border:1px solid rgba(41,128,185,.5);color:#bfe0f7;border-radius:2rem;padding:.15rem .7rem;font-size:.74rem;font-weight:800;margin-bottom:.5rem}
   .comments{margin-top:.7rem;border-top:1px solid var(--line);padding-top:.7rem}
-  .comment{background:rgba(255,255,255,.04);border-radius:.8rem;padding:.5rem .7rem;margin-bottom:.5rem}
+  .comment{background:rgba(255,255,255,.04);border-radius:.8rem;padding:.5rem .7rem;margin-bottom:.5rem;position:relative}
+  .c-del{position:absolute;top:.4rem;inset-inline-end:.5rem;background:none;border:none;color:var(--muted);cursor:pointer;font-size:.85rem;opacity:.7}
+  .c-del:hover{opacity:1;color:#ffb4b4}
+  .post-mini.del:hover{border-color:rgba(229,115,115,.6);color:#ffb4b4}
   .comment .c-av{font-size:.95rem;margin-inline-end:.35rem}
   .comment .c-who{font-weight:800;font-size:.82rem}
   .comment .c-time{color:var(--muted);font-size:.7rem;margin-inline-start:.4rem}
@@ -184,6 +187,8 @@
       gate.style.display='none'; main.style.display='block';
       who.innerHTML='<span class="av">'+(u.avatar||'🧑')+'</span><span>'+escapeHtml(u.name)+'</span>';
       document.getElementById('adminBox').style.display = (MKAuth.isAdmin&&MKAuth.isAdmin()) ? 'block' : 'none';
+      try{ localStorage.setItem('mkcomm:lastSeenAdmin', String(Date.now())); }catch(e){}
+      if(window.MKNotify) MKNotify.refresh();
       renderChallenges(); renderPosts();
     });
   }
@@ -235,14 +240,19 @@
   }
 
   function renderPosts(){
+    var me=(MKAuth.user&&MKAuth.user())||{}; var myId=me.id; var admin=!!(MKAuth.isAdmin&&MKAuth.isAdmin());
     MKAuth.listPosts().then(function(list){
       document.getElementById('postList').innerHTML=list.map(function(p){
         var who=encodeURIComponent(p.who||''); var puid=encodeURIComponent(p.uid||'');
+        var mine=(p.uid&&p.uid===myId)||p.mine;
         var adminCls=p.admin?' admin':'';
         var pin=p.pinned?'<span class="pin">📌</span>':'';
         var k=p.admin&&p.kind&&KIND[p.kind];
         var kind=k?'<div><span class="kind-tag">'+k.ic+' '+t(k.ar,k.en)+'</span></div>':'';
         var badge=p.admin?'<span class="admin-badge">🛡️ '+t('المشرف','Admin')+'</span>':'';
+        var del=(mine||admin)?'<button class="post-mini del" onclick="deletePost(\''+p.id+'\')">🗑️ '+t('حذف','Delete')+'</button>':'';
+        var mod=(!mine)?'<button class="post-mini" onclick="reportPost(\''+p.id+'\')">🚩 '+t('إبلاغ','Report')+'</button>'
+          +'<button class="post-mini" onclick="blockUser(\''+who+'\',\''+puid+'\')">🚫 '+t('حجب','Block')+'</button>':'';
         return '<div class="post'+adminCls+'" id="post-'+p.id+'">'+pin
           +'<div class="post-h"><span class="post-av">'+(p.avatar||'🧑')+'</span>'
           +'<span class="post-who">'+escapeHtml(p.who)+'</span>'+badge
@@ -252,8 +262,7 @@
           +'<div class="post-foot">'
           +'<button class="post-like" onclick="likePost(\''+p.id+'\')">🤍 '+(p.likes||0)+'</button>'
           +'<button class="post-mini" onclick="toggleComments(\''+p.id+'\')">💬 '+t('تعليق','Comment')+'</button>'
-          +(p.mine?'':'<button class="post-mini" onclick="reportPost(\''+p.id+'\')">🚩 '+t('إبلاغ','Report')+'</button>'
-          +'<button class="post-mini" onclick="blockUser(\''+who+'\',\''+puid+'\')">🚫 '+t('حجب','Block')+'</button>')
+          +del+mod
           +'</div>'
           +'<div class="comments" id="cm-'+p.id+'" style="display:none"></div>'
           +'</div>';
@@ -266,10 +275,13 @@
   }
   function loadComments(id){
     var box=document.getElementById('cm-'+id);
+    var me=(MKAuth.user&&MKAuth.user())||{}; var myId=me.id; var admin=!!(MKAuth.isAdmin&&MKAuth.isAdmin());
     MKAuth.listComments(id).then(function(list){
       var items=list.map(function(c){
         var ab=c.admin?'<span class="admin-badge sm">🛡️</span>':'';
-        return '<div class="comment"><span class="c-av">'+(c.avatar||'🧑')+'</span><span class="c-who">'+escapeHtml(c.who)+'</span>'+ab+'<span class="c-time">'+ago(c.at)+'</span><div class="c-text">'+escapeHtml(c.text)+'</div></div>';
+        var canDel=(c.uid&&c.uid===myId)||admin;
+        var del=canDel?'<button class="c-del" onclick="deleteComment(\''+id+'\',\''+c.id+'\')">🗑️</button>':'';
+        return '<div class="comment">'+del+'<span class="c-av">'+(c.avatar||'🧑')+'</span><span class="c-who">'+escapeHtml(c.who)+'</span>'+ab+'<span class="c-time">'+ago(c.at)+'</span><div class="c-text">'+escapeHtml(c.text)+'</div></div>';
       }).join('');
       box.innerHTML=(items||'<div class="c-empty">'+t('كن أوّل من يعلّق','Be the first to comment')+'</div>')
         +'<div class="comment-add"><input id="ci-'+id+'" placeholder="'+t('اكتب تعليقاً…','Write a comment…')+'"><button onclick="sendComment(\''+id+'\')">'+t('أرسل','Send')+'</button></div>';
@@ -278,6 +290,14 @@
   function sendComment(id){
     var inp=document.getElementById('ci-'+id); var v=inp.value.trim(); if(!v) return;
     MKAuth.addComment(id,v).then(function(){ loadComments(id); });
+  }
+  function deletePost(id){
+    if(!confirm(t('حذف هذا المنشور نهائياً؟','Delete this post permanently?'))) return;
+    MKAuth.deletePost(id).then(renderPosts);
+  }
+  function deleteComment(postId,cid){
+    if(!confirm(t('حذف هذا التعليق؟','Delete this comment?'))) return;
+    MKAuth.deleteComment(postId,cid).then(function(){ loadComments(postId); });
   }
   function addPost(){
     var inp=document.getElementById('postInput'); var v=inp.value.trim(); if(!v) return;
@@ -303,6 +323,7 @@
   applyLang();
 </script>
 <script defer src="nav-fix.js"></script>
+<script src="mk-notify.js"></script>
 <script src="mk-citynav.js"></script>
 </body>
 </html>
