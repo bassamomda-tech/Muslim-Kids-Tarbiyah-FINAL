@@ -7,7 +7,7 @@ window.IBADA_JOURNEYS.zakah = {
   id:'zakah', icon:'🎁', emoji:'🌱', color:'#27AE60',
   title:{ ar:'الزَّكاةُ والصَّدَقة', en:'Zakah & Charity' },
   tagline:{ ar:'عَشرُ مَحطّاتٍ تَكتَشِفُ فيها كَنزَ العَطاء', en:'Ten stations to discover the treasure of giving' },
-  guide:{ ar:'أهلاً يا بَطَل! أنا «مَريم». سَأكشِفُ لَكَ اليَومَ سِرّاً عَجيباً يَعرِفُهُ الأبطال: حينَ تُعطي، لا تَنقُص — بَل تَزيد! 🌱 الصَّدَقةُ كَالبَذرةِ الصَّغيرةِ تُنبِتُ شَجَرةً مَليئةً بِالثَّمَر. هَيّا نَفتَح كَنزَ العَطاءِ في عَشرِ مَحطّات! 💝', en:'Welcome, hero! I\'m Maryam. Today I\'ll reveal a wondrous secret that heroes know: when you give, you don\'t lose — you gain! 🌱 Charity is like a tiny seed that grows a tree full of fruit. Let\'s open the treasure of giving in ten stations! 💝' },
+  guide:{ ar:'أهلاً يا بَطَل! سَأكشِفُ لَكَ اليَومَ سِرّاً عَجيباً يَعرِفُهُ الأبطال: حينَ تُعطي، لا تَنقُص — بَل تَزيد! 🌱 الصَّدَقةُ كَالبَذرةِ الصَّغيرةِ تُنبِتُ شَجَرةً مَليئةً بِالثَّمَر. هَيّا نَفتَح كَنزَ العَطاءِ في عَشرِ مَحطّات! 💝', en:'Welcome, hero! Today I\'ll reveal a wondrous secret that heroes know: when you give, you don\'t lose — you gain! 🌱 Charity is like a tiny seed that grows a tree full of fruit. Let\'s open the treasure of giving in ten stations! 💝' },
   badge:{ icon:'🌱', title:{ ar:'بَطَلُ العَطاء', en:'Hero of Giving' } },
   certificate:{ statement:{
     ar:'فَتَعَلَّمَ أنَّ الصَّدَقةَ لا تَنقُصُ المالَ بَل تُبارِكُه، وأنَّ العَطاءَ يُطفئُ الخَطايا ويُسعِدُ القُلوب. نَسألُ اللهَ أن يَجعَلَهُ مِنَ الكُرَماءِ الذينَ تُظِلُّهُم صَدَقاتُهُم يَومَ القِيامة.',

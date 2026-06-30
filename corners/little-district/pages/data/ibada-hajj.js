@@ -7,7 +7,7 @@ window.IBADA_JOURNEYS.hajj = {
   id:'hajj', icon:'🕋', emoji:'🏆', color:'#C0392B',
   title:{ ar:'الحَجّ', en:'Hajj' },
   tagline:{ ar:'عَشرُ مَحطّاتٍ في أعظَمِ رِحلةٍ إلى بَيتِ الله', en:'Ten stations in the greatest journey to Allah\'s House' },
-  guide:{ ar:'أهلاً يا بَطَل! أنا «مَريم». وَصَلنا إلى أعظَمِ رِحلاتِنا! 🕋 تَخَيَّل مِلايينَ المُسلِمينَ مِن كُلِّ بِلادِ الأرضِ يَلبَسونَ الأبيَضَ ويَطوفونَ حَولَ الكَعبةِ بِصَوتٍ واحِد: «لَبَّيكَ اللهُمَّ لَبَّيك». هَيّا نَستَعِدّ لِمُغامَرةِ العُمرِ في عَشرِ مَحطّات! 🌟', en:'Welcome, hero! I\'m Maryam. We\'ve reached our greatest journey! 🕋 Imagine millions of Muslims from every land wearing white, circling the Ka\'bah in one voice: "Labbayk Allahumma labbayk." Let\'s get ready for the adventure of a lifetime in ten stations! 🌟' },
+  guide:{ ar:'أهلاً يا بَطَل! وَصَلنا إلى أعظَمِ رِحلاتِنا! 🕋 تَخَيَّل مِلايينَ المُسلِمينَ مِن كُلِّ بِلادِ الأرضِ يَلبَسونَ الأبيَضَ ويَطوفونَ حَولَ الكَعبةِ بِصَوتٍ واحِد: «لَبَّيكَ اللهُمَّ لَبَّيك». هَيّا نَستَعِدّ لِمُغامَرةِ العُمرِ في عَشرِ مَحطّات! 🌟', en:'Welcome, hero! We\'ve reached our greatest journey! 🕋 Imagine millions of Muslims from every land wearing white, circling the Ka\'bah in one voice: "Labbayk Allahumma labbayk." Let\'s get ready for the adventure of a lifetime in ten stations! 🌟' },
   badge:{ icon:'🏆', title:{ ar:'حاجُّ بَيتِ الله', en:'Pilgrim of Allah\'s House' } },
   certificate:{ statement:{
     ar:'فَتَعَلَّمَ مَناسِكَ الحَجِّ وأسرارَها، وأحَبَّ بَيتَ اللهِ الحَرام، وعَرَفَ قِصّةَ إبراهيمَ وإسماعيلَ وهاجَر، واشتاقَ قَلبُهُ إلى الطَّوافِ والتَّلبية. نَسألُ اللهَ أن يَرزُقَهُ حَجَّ بَيتِهِ الحَرامِ ويَتَقَبَّلَ مِنه.',

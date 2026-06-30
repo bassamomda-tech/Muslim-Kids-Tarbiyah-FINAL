@@ -7,7 +7,7 @@ window.IBADA_JOURNEYS.fasting = {
   id:'fasting', icon:'🌙', emoji:'🛡️', color:'#8E44AD',
   title:{ ar:'الصِّيام', en:'Fasting' },
   tagline:{ ar:'عَشرُ مَحطّاتٍ في مَدرَسةِ الأبطالِ والصَّبر', en:'Ten stations in the school of heroes and patience' },
-  guide:{ ar:'مَرحَباً بِكَ في مَدرَسةِ الأبطال يا صَديقي! أنا «مَريم». هُنا نَتَعَلَّمُ كيفَ نُصبِحُ أقوِياءَ نَتَحَكَّمُ في أنفُسِنا حُبّاً لِله. الصِّيامُ تَدريبٌ سِرِّيٌّ يَصنَعُ مِنكَ بَطَلاً صَبوراً. هَيّا في عَشرِ مَحطّات! 💪', en:'Welcome to the heroes\' school, my friend! I\'m Maryam. Here we learn how to become strong and master ourselves out of love for Allah. Fasting is a secret training that turns you into a patient hero. Let\'s go through ten stations! 💪' },
+  guide:{ ar:'مَرحَباً بِكَ في مَدرَسةِ الأبطال يا صَديقي! هُنا نَتَعَلَّمُ كيفَ نُصبِحُ أقوِياءَ نَتَحَكَّمُ في أنفُسِنا حُبّاً لِله. الصِّيامُ تَدريبٌ سِرِّيٌّ يَصنَعُ مِنكَ بَطَلاً صَبوراً. هَيّا في عَشرِ مَحطّات! 💪', en:'Welcome to the heroes\' school, my friend! Here we learn how to become strong and master ourselves out of love for Allah. Fasting is a secret training that turns you into a patient hero. Let\'s go through ten stations! 💪' },
   badge:{ icon:'🛡️', title:{ ar:'بَطَلُ الصَّبر', en:'Hero of Patience' } },
   certificate:{ statement:{
     ar:'فَتَعَلَّمَ أنَّ الصِّيامَ دِرعٌ وتَدريبٌ على الصَّبر، يُقَوّي إرادَتَهُ ويُرَقِّقُ قَلبَهُ ويُقَرِّبُهُ مِن رَبِّه. نَسألُ اللهَ أن يَجعَلَهُ مِنَ الصّائِمينَ الفائِزينَ بِبابِ الرَّيّان.',
