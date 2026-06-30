@@ -14,8 +14,81 @@
   if (window.MKNotify) return;
   var PROJECT = 'muslim-kids-tarbiyah';
   var URL = 'https://firestore.googleapis.com/v1/projects/' + PROJECT + '/databases/(default)/documents/meta/community';
+  var BC_URL = 'https://firestore.googleapis.com/v1/projects/' + PROJECT + '/databases/(default)/documents/meta/broadcast';
   var SEEN_KEY = 'mkcomm:lastSeenAdmin';
+  var BC_SEEN = 'mkbroadcast:lastSeen';
   var lastAdminAt = 0;
+  var bc = null;
+
+  function L() { try { return localStorage.getItem('bunyanLang') === 'en' ? 'en' : 'ar'; } catch (e) { return 'ar'; } }
+  function pageArea() {
+    var p = location.pathname.toLowerCase();
+    if (/parents\.html|account\.html|community\.html|downloads\.html|store\.html|bag\.html/.test(p)) return 'parents';
+    return 'kids';
+  }
+  function audienceMatch(a) { if (!a || a === 'all') return true; return a === pageArea(); }
+
+  function bcGetSeen() { try { return parseInt(localStorage.getItem(BC_SEEN) || '0', 10) || 0; } catch (e) { return 0; } }
+  function bcSetSeen(ts) { try { localStorage.setItem(BC_SEEN, String(ts || 0)); } catch (e) {} }
+
+  function fetchBroadcast() {
+    if (!window.fetch) return Promise.resolve(null);
+    return fetch(BC_URL, { cache: 'no-store' })
+      .then(function (r) { return r.ok ? r.json() : null; })
+      .then(function (j) {
+        if (j && j.fields) {
+          var f = j.fields;
+          bc = {
+            at: parseInt((f.at || {}).integerValue || (f.at || {}).doubleValue || '0', 10) || 0,
+            ar: (f.ar || {}).stringValue || '',
+            en: (f.en || {}).stringValue || '',
+            audience: (f.audience || {}).stringValue || 'all',
+            by: (f.by || {}).stringValue || ''
+          };
+        }
+        return bc;
+      })
+      .catch(function () { return null; });
+  }
+
+  function bannerCss() {
+    if (document.getElementById('mk-bc-css')) return;
+    var s = document.createElement('style'); s.id = 'mk-bc-css';
+    s.textContent = '.mk-bc{position:fixed;top:0;left:0;right:0;z-index:99999;display:flex;align-items:center;gap:.7rem;padding:.85rem 1.1rem;background:linear-gradient(135deg,#10243d,#1a3a5c);color:#fff;box-shadow:0 6px 22px rgba(0,0,0,.3);font-family:"Tajawal","Nunito",system-ui,sans-serif;border-bottom:3px solid #E8B530;transform:translateY(-110%);transition:transform .45s cubic-bezier(.2,.9,.3,1);direction:rtl}'
+      + '.mk-bc.show{transform:translateY(0)}'
+      + '.mk-bc[data-en="1"]{direction:ltr}'
+      + '.mk-bc-ic{font-size:1.5rem;flex:0 0 auto;animation:mkBcBell 2s ease-in-out infinite;transform-origin:50% 0}'
+      + '@keyframes mkBcBell{0%,60%,100%{transform:rotate(0)}10%{transform:rotate(14deg)}20%{transform:rotate(-12deg)}30%{transform:rotate(8deg)}40%{transform:rotate(-6deg)}50%{transform:rotate(3deg)}}'
+      + '.mk-bc-body{flex:1;min-width:0;line-height:1.45}'
+      + '.mk-bc-by{display:block;font-size:.74rem;opacity:.75;font-weight:700;margin-bottom:.1rem}'
+      + '.mk-bc-tx{font-size:1rem;font-weight:800;overflow-wrap:break-word}'
+      + '.mk-bc-x{flex:0 0 auto;background:rgba(255,255,255,.14);border:none;color:#fff;width:30px;height:30px;border-radius:50%;font-size:1.1rem;cursor:pointer;line-height:1}'
+      + '.mk-bc-x:hover{background:rgba(255,255,255,.28)}';
+    document.head.appendChild(s);
+  }
+  function showBanner() {
+    if (!bc || !bc.at) return;
+    if (bc.at <= bcGetSeen()) return;
+    if (!audienceMatch(bc.audience)) return;
+    var en = L() === 'en';
+    var msg = en ? (bc.en || bc.ar) : (bc.ar || bc.en);
+    if (!msg) return;
+    if (document.getElementById('mkBcBar')) return;
+    bannerCss();
+    var bar = document.createElement('div');
+    bar.className = 'mk-bc'; bar.id = 'mkBcBar'; if (en) bar.setAttribute('data-en', '1');
+    bar.innerHTML = '<span class="mk-bc-ic">\uD83D\uDCE3</span>'
+      + '<div class="mk-bc-body"><span class="mk-bc-by">' + (bc.by ? esc(bc.by) : (en ? 'Admin' : '\u0627\u0644\u0625\u062F\u0627\u0631\u0629')) + '</span>'
+      + '<span class="mk-bc-tx">' + esc(msg) + '</span></div>'
+      + '<button class="mk-bc-x" aria-label="close">\u00D7</button>';
+    document.body.appendChild(bar);
+    requestAnimationFrame(function () { bar.classList.add('show'); });
+    bar.querySelector('.mk-bc-x').onclick = function () {
+      bcSetSeen(bc.at); bar.classList.remove('show');
+      setTimeout(function () { if (bar.parentNode) bar.parentNode.removeChild(bar); }, 450);
+    };
+  }
+  function esc(s) { return String(s == null ? '' : s).replace(/[&<>"']/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]; }); }
 
   function getSeen() { try { return parseInt(localStorage.getItem(SEEN_KEY) || '0', 10) || 0; } catch (e) { return 0; } }
   function setSeen(ts) { try { localStorage.setItem(SEEN_KEY, String(ts || Date.now())); } catch (e) {} }
@@ -59,11 +132,12 @@
   }
 
   var MKNotify = {
-    check: function () { injectCss(); return fetchLatest().then(function () { paintBadges(); return unread(); }); },
+    check: function () { injectCss(); return Promise.all([fetchLatest(), fetchBroadcast()]).then(function () { paintBadges(); showBanner(); return unread(); }); },
     refresh: function () { injectCss(); paintBadges(); },
     markSeen: function () { setSeen(Date.now()); paintBadges(); },
     isUnread: unread,
-    latest: function () { return lastAdminAt; }
+    latest: function () { return lastAdminAt; },
+    broadcast: function () { return bc; }
   };
   window.MKNotify = MKNotify;
 

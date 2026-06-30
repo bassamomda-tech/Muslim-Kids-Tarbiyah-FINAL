@@ -134,6 +134,18 @@
           <textarea id="adminInput" rows="3" placeholder=""></textarea>
           <button class="admin-post-btn" onclick="adminPost()"><span class="ar-only">انشُر كمشرف 📌</span><span class="en-only">Post as admin 📌</span></button>
         </div>
+        <div class="admin-box" id="bcBox" style="display:none;border-style:dashed">
+          <div class="admin-box-h">📣 <span class="ar-only">إشعار للموقع كامل — يظهر كشريط واضح أعلى كل صفحة</span><span class="en-only">Site-wide notice — shows as a clear bar on top of every page</span></div>
+          <div class="admin-kinds" id="bcAud">
+            <button type="button" class="kbtn active" data-aud="all">🌍 <span class="ar-only">الجميع</span><span class="en-only">Everyone</span></button>
+            <button type="button" class="kbtn" data-aud="kids">🧒 <span class="ar-only">الأطفال (الأركان)</span><span class="en-only">Kids (corners)</span></button>
+            <button type="button" class="kbtn" data-aud="parents">👪 <span class="ar-only">الأهل</span><span class="en-only">Parents</span></button>
+          </div>
+          <textarea id="bcAr" rows="2" placeholder="نص الرسالة بالعربية…" dir="rtl"></textarea>
+          <textarea id="bcEn" rows="2" placeholder="English text (optional)…" dir="ltr"></textarea>
+          <button class="admin-post-btn" onclick="sendBroadcast()"><span class="ar-only">أرسل الإشعار 📣</span><span class="en-only">Send notice 📣</span></button>
+          <span id="bcMsg" style="margin-inline-start:.6rem;font-weight:800;color:var(--gold-lt)"></span>
+        </div>
         <div class="add">
           <textarea id="postInput" rows="2" placeholder=""></textarea>
           <button onclick="addPost()"><span class="ar-only">انشُر</span><span class="en-only">Post</span></button>
@@ -187,6 +199,7 @@
       gate.style.display='none'; main.style.display='block';
       who.innerHTML='<span class="av">'+(u.avatar||'🧑')+'</span><span>'+escapeHtml(u.name)+'</span>';
       document.getElementById('adminBox').style.display = (MKAuth.isAdmin&&MKAuth.isAdmin()) ? 'block' : 'none';
+      document.getElementById('bcBox').style.display = (MKAuth.isAdmin&&MKAuth.isAdmin()) ? 'block' : 'none';
       try{ localStorage.setItem('mkcomm:lastSeenAdmin', String(Date.now())); }catch(e){}
       if(window.MKNotify) MKNotify.refresh();
       renderChallenges(); renderPosts();
@@ -237,6 +250,21 @@
   function adminPost(){
     var inp=document.getElementById('adminInput'); var v=inp.value.trim(); if(!v) return;
     MKAuth.addPost(v,{admin:true,kind:adminKind}).then(function(){ inp.value=''; renderPosts(); });
+  }
+
+  var bcAud='all';
+  document.querySelectorAll('#bcAud .kbtn').forEach(function(b){ b.onclick=function(){ bcAud=b.dataset.aud; document.querySelectorAll('#bcAud .kbtn').forEach(function(x){x.classList.toggle('active',x===b);}); }; });
+  function sendBroadcast(){
+    var ar=document.getElementById('bcAr').value.trim();
+    var en=document.getElementById('bcEn').value.trim();
+    var msg=document.getElementById('bcMsg');
+    if(!ar && !en){ msg.textContent=t('اكتب نص الرسالة','Write a message'); return; }
+    msg.textContent=t('جارٍ الإرسال…','Sending…');
+    MKAuth.broadcast(ar,en,bcAud).then(function(ok){
+      if(ok){ document.getElementById('bcAr').value=''; document.getElementById('bcEn').value='';
+        msg.textContent=t('تم إرسال الإشعار ✓','Notice sent ✓'); setTimeout(function(){msg.textContent='';},3000); }
+      else { msg.textContent=t('تعذّر الإرسال','Could not send'); }
+    });
   }
 
   function renderPosts(){

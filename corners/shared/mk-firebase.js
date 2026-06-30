@@ -214,6 +214,14 @@
       return db.collection('posts').doc(id).update({ likes: firebase.firestore.FieldValue.increment(1) })
         .then(function () { return true; }).catch(function () { return true; });
     },
+    broadcast: function (ar, en, audience) {
+      var u = window.MKAuth.user();
+      if (!u || !u.admin) return Promise.resolve(false);
+      return db.collection('meta').doc('broadcast').set({
+        at: now(), ar: String(ar || '').slice(0, 300), en: String(en || ar || '').slice(0, 300),
+        audience: audience || 'all', by: (u && u.name) || 'الإدارة'
+      }).then(function () { return true; }).catch(function () { return false; });
+    },
     deletePost: function (id) {
       return db.collection('posts').doc(id).delete().then(function () { return true; }).catch(function () { return true; });
     },

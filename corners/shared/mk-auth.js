@@ -130,6 +130,12 @@
       jset(this.K.posts, p); return delay(true);
     },
     likePost: function (id) { bump(this.K.posts, id, 'likes', 1); return delay(true); },
+    broadcast: function (ar, en, audience) {
+      var me = MKAuth._user || {};
+      if (!me.admin) return delay(false);
+      jset('mk:broadcast', { at: now(), ar: String(ar || '').slice(0, 300), en: String(en || ar || '').slice(0, 300), audience: audience || 'all', by: me.name || 'الإدارة' });
+      return delay(true);
+    },
     deletePost: function (id) {
       var p = jget(this.K.posts, []); p = p.filter(function (x) { return x.id !== id; }); jset(this.K.posts, p);
       var all = jget(this.K.comments, {}); if (all[id]) { delete all[id]; jset(this.K.comments, all); }
@@ -205,6 +211,7 @@
     listPosts: function () { return adapter.listPosts(); },
     addPost: function (t, opts) { return adapter.addPost(t, opts); },
     likePost: function (id) { return adapter.likePost(id); },
+    broadcast: function (ar, en, audience) { return adapter.broadcast ? adapter.broadcast(ar, en, audience) : Promise.resolve(false); },
     deletePost: function (id) { return adapter.deletePost ? adapter.deletePost(id) : Promise.resolve(true); },
     deleteComment: function (postId, cid) { return adapter.deleteComment ? adapter.deleteComment(postId, cid) : Promise.resolve(true); },
     listComments: function (postId) { return adapter.listComments ? adapter.listComments(postId) : Promise.resolve([]); },
