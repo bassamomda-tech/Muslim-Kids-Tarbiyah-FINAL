@@ -88,7 +88,7 @@
     const L=lang, d=done.has(st.id);
     const H={
       kick: t(`الدَّرَجة ${st.num} مِن ${S.length}`,`Step ${st.num} of ${S.length}`),
-      narr: t('يوسُف يَحكي','Yusuf Tells the Story'),
+      narr: t('القِصّة','The Story'),
       logic:t('الدَّليلُ المَنطِقيّ','The Logical Proof'),
       myth: t('بَطاقةُ كَشفِ الشُّبهة','Doubt-Buster Card'),
       match:t('لُعبةُ الوَصل','Match-Up Game'),

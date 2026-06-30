@@ -88,7 +88,7 @@
     const L=lang, d=done.has(st.id);
     const H={
       kick: t(`المَحطّة ${st.num} مِن ١٠`,`Station ${st.num} of 10`),
-      narr: t('يوسُف يَحكي','Yusuf Tells the Story'),
+      narr: t('القِصّة','The Story'),
       logic:t('الدَّليلُ المَنطِقيّ','The Logical Proof'),
       myth: t('بَطاقةُ كَشفِ الخُرافة','Myth-Buster Card'),
       match:t('لُعبةُ الوَصل','Match-Up Game'),

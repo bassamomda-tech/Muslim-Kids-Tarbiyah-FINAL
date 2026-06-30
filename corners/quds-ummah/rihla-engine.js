@@ -29,7 +29,7 @@
     coll3:{icon:'🔑',title:{ar:'المَفاتيح',en:'Keys'}},
     collCert:{icon:'📜',title:{ar:'الشَّهادة',en:'Diploma'},cta:{ar:'اطبَع شَهادَتَك ←',en:'Print yours →'}},
     kick:{ar:'المَحطّة {n} مِن {t}',en:'Station {n} of {t}'},
-    hNarr:{ar:'يوسُف يَحكي',en:'Yusuf Tells the Story'},
+    hNarr:{ar:'القِصّة',en:'The Story'},
     hLogic:{ar:'فَكِّر مَعي',en:'Think With Me'},
     hMyth:{ar:'بَطاقةُ تَصحيحِ الفِكرة',en:'Idea-Fixer Card'},
     hMatch:{ar:'لُعبةُ الوَصل',en:'Match-Up Game'},
