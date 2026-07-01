@@ -184,7 +184,7 @@
           <button class="create-toggle" onclick="toggleCreate()">➕ <span class="ar-only">أنشئ تحدّياً</span><span class="en-only">New challenge</span></button>
         </div>
         <div class="new-ch" id="createForm" style="display:none">
-          <b>🎯 <span class="ar-only">صمّم تحدّياً مخصّصاً</span><span class="en-only">Design a tailored challenge</span></b>
+          <b id="ncFormTitle">🎯 <span class="ar-only">صمّم تحدّياً مخصّصاً</span><span class="en-only">Design a tailored challenge</span></b>
           <input id="ncTitle" type="text" placeholder="">
           <input id="ncDesc" type="text" placeholder="">
           <div class="nc-row">
@@ -197,7 +197,7 @@
             <label style="max-width:96px;flex:0 0 96px"><span class="ar-only">الرمز</span><span class="en-only">Icon</span><input id="ncIcon" type="text" maxlength="2" placeholder="🎯"></label>
           </div>
           <div class="nc-hint" id="officialHint"></div>
-          <button onclick="createChallenge()"><span class="ar-only">أنشئ التحدّي</span><span class="en-only">Create challenge</span></button>
+          <button id="ncSubmit" onclick="createChallenge()"><span class="ar-only">أنشئ التحدّي</span><span class="en-only">Create challenge</span></button>
         </div>
         <div class="ch" id="chGrid" style="margin-top:1.2rem"></div>
       </section>
@@ -331,7 +331,42 @@
     var diff=document.getElementById('ncDiff');
     if(diff){ var dv=diff.value; diff.innerHTML=Object.keys(DIFF).map(function(k){return '<option value="'+k+'">'+t(DIFF[k].ar,DIFF[k].en)+'</option>';}).join(''); if(dv)diff.value=dv; }
   }
-  function toggleCreate(forceHide){ var f=document.getElementById('createForm'); if(!f)return; f.style.display=(forceHide||f.style.display!=='none')?'none':'flex'; }
+  var editingId=null;
+  function resetForm(){
+    document.getElementById('ncTitle').value=''; document.getElementById('ncDesc').value=''; document.getElementById('ncIcon').value='';
+    document.getElementById('ncDays').value='7'; document.getElementById('ncGoal').value='days';
+    document.getElementById('ncAge').value='all'; document.getElementById('ncDiff').value='beginner';
+  }
+  function setFormMode(edit){
+    editingId = edit || null;
+    var ft=document.getElementById('ncFormTitle'), sb=document.getElementById('ncSubmit');
+    if(ft) ft.innerHTML = edit
+      ? '✏️ <span class="ar-only">تعديل التحدّي</span><span class="en-only">Edit challenge</span>'
+      : '🎯 <span class="ar-only">صمّم تحدّياً مخصّصاً</span><span class="en-only">Design a tailored challenge</span>';
+    if(sb) sb.innerHTML = edit
+      ? '<span class="ar-only">حفظ التعديل ✓</span><span class="en-only">Save changes ✓</span>'
+      : '<span class="ar-only">أنشئ التحدّي</span><span class="en-only">Create challenge</span>';
+  }
+  function toggleCreate(forceHide){
+    var f=document.getElementById('createForm'); if(!f)return;
+    var willHide=(forceHide||f.style.display!=='none');
+    f.style.display=willHide?'none':'flex';
+    if(willHide){ setFormMode(null); resetForm(); }
+  }
+  function startEditChallenge(id){
+    var c=CHCACHE[id]; if(!c) return;
+    var f=document.getElementById('createForm'); if(f) f.style.display='flex';
+    closeModal('chModal');
+    document.getElementById('ncTitle').value=txo(c.title)||'';
+    document.getElementById('ncDesc').value=txo(c.desc)||'';
+    document.getElementById('ncDays').value=c.days||7;
+    document.getElementById('ncGoal').value=c.goalType||'days';
+    document.getElementById('ncAge').value=c.age||'all';
+    document.getElementById('ncDiff').value=c.difficulty||'beginner';
+    document.getElementById('ncIcon').value=c.icon||'';
+    setFormMode(id);
+    f.scrollTop=0; document.getElementById('ncTitle').focus();
+  }
   function updateStarBanner(){ var u=(MKAuth.user&&MKAuth.user())||{}; var el=document.getElementById('starBanner'); if(el){ var b=el.querySelector('b'); if(b) b.textContent=(u.stars||0); } }
   function refreshUser(){ return MKAuth.refresh().then(function(){ updateStarBanner(); }); }
   function unitOf(c){ var g=GOALS[c.goalType]||GOALS.days; return t(g.ar,g.en); }
@@ -360,6 +395,7 @@
           ? '<button class="ch-join joined" disabled>✓ '+t('مشترك','Joined')+'</button><button class="ch-step" title="'+t('أنجزت اليوم','Mark done')+'" onclick="stepChallenge(\''+c.id+'\','+c.days+')">＋</button>'
           : '<button class="ch-join" onclick="joinChallenge(\''+c.id+'\')">'+t('انضمّ','Join')+'</button>';
         var canDel=(c.mine||(c.byUid&&c.byUid===myId)||admin);
+        var edit=canDel?'<button class="ch-del" title="'+t('تعديل','Edit')+'" onclick="startEditChallenge(\''+c.id+'\')">✏️</button>':'';
         var del=canDel?'<button class="ch-del" title="'+t('حذف','Delete')+'" onclick="removeChallenge(\''+c.id+'\')">🗑️</button>':'';
         return '<div class="ch-card">'
           +'<div class="ch-top"><span class="ch-ic">'+c.icon+'</span><span class="ch-t">'+txo(c.title)+'</span></div>'
@@ -368,7 +404,7 @@
           +'<div class="ch-d">'+txo(c.desc)+'</div>'
           +(c.joined?'<div class="ch-bar"><i style="width:'+pct+'%"></i></div><div class="ch-meta"><span>'+(c.myProgress||0)+'/'+c.days+' '+unit+'</span><span>'+pct+'%</span></div>':'')
           +'<div class="ch-meta"><span>👥 '+(c.members||0)+' '+t('مشارك','members')+'</span><span>'+c.days+' '+unit+'</span></div>'
-          +'<div class="ch-acts">'+join+'<button class="ch-open" onclick="openChallenge(\''+c.id+'\')">🎙️ '+t('التسجيلات والنقاش','Audio & talk')+'</button>'+del+'</div>'
+          +'<div class="ch-acts">'+join+'<button class="ch-open" onclick="openChallenge(\''+c.id+'\')">🎙️ '+t('التسجيلات والنقاش','Audio & talk')+'</button>'+edit+del+'</div>'
           +'</div>';
       }).join('');
     });
@@ -392,12 +428,10 @@
     var g=GOALS[goalType]||GOALS.days;
     var icon=(document.getElementById('ncIcon').value||'').trim()||g.ic||'🎯';
     if(!title){ document.getElementById('ncTitle').focus(); return; }
-    MKAuth.createChallenge({ title:{ar:title,en:title}, desc:{ar:desc,en:desc}, days:days,
-      unit:{ar:g.ar,en:g.en}, goalType:goalType, age:age, difficulty:difficulty, icon:icon }).then(function(){
-      document.getElementById('ncTitle').value=''; document.getElementById('ncDesc').value=''; document.getElementById('ncIcon').value='';
-      document.getElementById('ncDays').value='7';
-      toggleCreate(true); renderChallenges();
-    });
+    var fields={ title:{ar:title,en:title}, desc:{ar:desc,en:desc}, days:days,
+      unit:{ar:g.ar,en:g.en}, goalType:goalType, age:age, difficulty:difficulty, icon:icon };
+    var op = editingId ? MKAuth.editChallenge(editingId, fields) : MKAuth.createChallenge(fields);
+    op.then(function(){ toggleCreate(true); renderChallenges(); });
   }
 
   /* ---- challenge detail modal: videos + discussion ---- */

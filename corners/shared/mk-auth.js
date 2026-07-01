@@ -119,6 +119,17 @@
       var c = jget(this.K.chal, []); c = c.filter(function (x) { return x.id !== id; }); jset(this.K.chal, c);
       return delay(true);
     },
+    editChallenge: function (id, f) {
+      f = f || {};
+      var c = jget(this.K.chal, SEED_CHALLENGES.slice());
+      for (var i = 0; i < c.length; i++) {
+        if (c[i].id === id) {
+          ['title', 'desc', 'icon', 'unit', 'goalType', 'age', 'difficulty'].forEach(function (k) { if (f[k] != null) c[i][k] = f[k]; });
+          if (f.days) c[i].days = Math.max(1, parseInt(f.days, 10) || 7);
+        }
+      }
+      jset(this.K.chal, c); return delay(true);
+    },
 
     /* --- MOTIVATION: stars + leaderboard --- */
     awardStars: function (n) {
@@ -273,6 +284,7 @@
     setChallengeProgress: function (id, p) { return adapter.setChallengeProgress(id, p); },
     createChallenge: function (c) { return adapter.createChallenge(c); },
     deleteChallenge: function (id) { return adapter.deleteChallenge ? adapter.deleteChallenge(id) : Promise.resolve(true); },
+    editChallenge: function (id, f) { return adapter.editChallenge ? adapter.editChallenge(id, f) : Promise.resolve(true); },
     awardStars: function (n) { return adapter.awardStars ? adapter.awardStars(n) : Promise.resolve(true); },
     getLeaderboard: function () { return adapter.getLeaderboard ? adapter.getLeaderboard() : Promise.resolve([]); },
     listChallengeComments: function (cid) { return adapter.listChallengeComments ? adapter.listChallengeComments(cid) : Promise.resolve([]); },

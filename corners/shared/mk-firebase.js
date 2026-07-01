@@ -191,6 +191,19 @@
       return db.collection('challenges').doc(id).delete()
         .then(function () { return true; }).catch(function () { return true; });
     },
+    editChallenge: function (id, f) {
+      f = f || {}; var patch = {};
+      if (f.title) patch.title = f.title;
+      if (f.desc) patch.desc = f.desc;
+      if (f.icon) patch.icon = f.icon;
+      if (f.days) patch.days = Math.max(1, parseInt(f.days, 10) || 7);
+      if (f.unit) patch.unit = f.unit;
+      if (f.goalType) patch.goalType = f.goalType;
+      if (f.age) patch.age = f.age;
+      if (f.difficulty) patch.difficulty = f.difficulty;
+      return db.collection('challenges').doc(id).set(patch, { merge: true })
+        .then(function () { return true; }).catch(function () { return true; });
+    },
 
     /* ---------- MOTIVATION: stars on the public profile (for leaderboard) ---------- */
     awardStars: function (n) {
