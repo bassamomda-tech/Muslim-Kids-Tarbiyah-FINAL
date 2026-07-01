@@ -147,6 +147,8 @@
   .lb-rank{font-weight:900;width:2rem;text-align:center;font-size:1.05rem}
   .lb-name{flex:1;font-weight:800}
   .lb-stars{font-weight:900;color:var(--gold-lt)}
+  .ch-by{font-size:.78rem;color:var(--muted);font-weight:700;margin:.35rem 0 .1rem;display:flex;align-items:center;gap:.25rem}
+  .ch-by b{color:var(--gold-lt);font-weight:900}
 </style>
 <style id="__antiflash">html{background:#081E36;color-scheme:dark}</style>
 <template id="__bundler_thumbnail" data-bg-color="#081E36">
@@ -362,6 +364,7 @@
         return '<div class="ch-card">'
           +'<div class="ch-top"><span class="ch-ic">'+c.icon+'</span><span class="ch-t">'+txo(c.title)+'</span></div>'
           +badgesOf(c)
+          +'<div class="ch-by">'+(c.official?'🛡️ '+t('من الإدارة','From the team'):'👪 '+t('أنشأتها: ','By: ')+'<b>'+escapeHtml(c.by||t('عائلة','a family'))+'</b>')+'</div>'
           +'<div class="ch-d">'+txo(c.desc)+'</div>'
           +(c.joined?'<div class="ch-bar"><i style="width:'+pct+'%"></i></div><div class="ch-meta"><span>'+(c.myProgress||0)+'/'+c.days+' '+unit+'</span><span>'+pct+'%</span></div>':'')
           +'<div class="ch-meta"><span>👥 '+(c.members||0)+' '+t('مشارك','members')+'</span><span>'+c.days+' '+unit+'</span></div>'
@@ -412,6 +415,7 @@
       '<div class="modal-head"><span class="ch-ic">'+c.icon+'</span><span class="modal-title">'+txo(c.title)+'</span>'
       +'<button class="modal-close" onclick="closeModal(\'chModal\')">✕</button></div>'
       +badgesOf(c)
+      +'<div class="ch-by" style="margin-top:.5rem">'+(c.official?'🛡️ '+t('تحدٍّ رسميٌّ من الإدارة','Official challenge from the team'):'👪 '+t('أنشأتها: ','By: ')+'<b>'+escapeHtml(c.by||t('عائلة','a family'))+'</b>')+'</div>'
       +'<div class="ch-d" style="margin-top:.5rem">'+txo(c.desc)+'</div>'
       +prog
       +'<div class="msec"><h4>🎙️ '+t('تسجيلات الأطفال','Kids\u2019 audio')+'</h4>'
