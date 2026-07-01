@@ -164,6 +164,7 @@
 <body>
   <div class="header">
     <a class="back-btn" href="../../index.html"><span class="ar-only">↩️ المدينة</span><span class="en-only">↩️ City</span></a>
+    <a class="back-btn" id="adminReportBtn" href="admin-report.html" style="display:none;background:linear-gradient(135deg,#E8B530,#c79518);color:#10243d;border-color:transparent">📊 <span class="ar-only">تقرير النشاط</span><span class="en-only">Activity report</span></a>
     <div class="who" id="who"></div>
     <div class="lang"><button data-lang="en">EN</button><button data-lang="ar" class="active">عربي</button></div>
   </div>
@@ -298,6 +299,7 @@
       who.innerHTML='<span class="av">'+(u.avatar||'🧑')+'</span><span>'+escapeHtml(u.name)+'</span>';
       document.getElementById('adminBox').style.display = (MKAuth.isAdmin&&MKAuth.isAdmin()) ? 'block' : 'none';
       document.getElementById('bcBox').style.display = (MKAuth.isAdmin&&MKAuth.isAdmin()) ? 'block' : 'none';
+      document.getElementById('adminReportBtn').style.display = (MKAuth.isAdmin&&MKAuth.isAdmin()) ? '' : 'none';
       try{ localStorage.setItem('mkcomm:lastSeenAdmin', String(Date.now())); }catch(e){}
       if(window.MKNotify) MKNotify.refresh();
       renderChallenges(); renderPosts();
