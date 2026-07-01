@@ -94,8 +94,70 @@
   .comment-add{display:flex;gap:.5rem;margin-top:.5rem}
   .comment-add input{flex:1;border:1.5px solid var(--line);background:rgba(255,255,255,.07);color:var(--ink);border-radius:.8rem;padding:.5rem .7rem;font-family:inherit;font-size:.88rem}
   .comment-add button{background:var(--c);color:#fff;border:none;border-radius:.8rem;padding:0 1rem;font-weight:800;font-family:inherit;cursor:pointer}
+
+  /* --- tailored challenges: toolbar, create form, badges --- */
+  .ch-toolbar{display:flex;gap:.6rem;align-items:center;flex-wrap:wrap;margin-bottom:1rem}
+  .star-banner{background:linear-gradient(160deg,rgba(232,181,48,.16),rgba(232,181,48,.05));border:1.5px solid var(--gold);border-radius:2rem;padding:.5rem 1.1rem;font-weight:900;color:var(--gold-lt);font-size:.9rem}
+  .lb-btn,.create-toggle{background:rgba(255,255,255,.07);border:1.5px solid var(--line);color:var(--ink);border-radius:2rem;padding:.5rem 1.1rem;font-weight:800;font-family:inherit;cursor:pointer;font-size:.85rem}
+  .create-toggle{margin-inline-start:auto;background:var(--c);border-color:var(--c);color:#fff}
+  .nc-row{display:flex;gap:.6rem;flex-wrap:wrap}
+  .nc-row label{flex:1;min-width:130px;display:flex;flex-direction:column;gap:.25rem;font-size:.76rem;color:var(--muted);font-weight:700}
+  .new-ch select,.new-ch input[type=number],.new-ch input[type=text]{border:1.5px solid var(--line);background:rgba(255,255,255,.07);color:var(--ink);border-radius:.7rem;padding:.5rem .6rem;font-family:inherit;font-size:.92rem;width:100%}
+  .new-ch select option{background:var(--bg2);color:var(--ink)}
+  .nc-hint{font-size:.76rem;color:var(--muted);line-height:1.6}
+  .ch-badges{display:flex;gap:.35rem;flex-wrap:wrap}
+  .badge{font-size:.68rem;font-weight:800;padding:.15rem .6rem;border-radius:2rem;border:1px solid var(--line)}
+  .badge.official{background:var(--gold);color:#10243d;border-color:var(--gold)}
+  .badge.family{background:rgba(41,128,185,.16);color:#bfe0f7;border-color:rgba(41,128,185,.5)}
+  .badge.age{background:rgba(255,255,255,.06);color:var(--muted)}
+  .badge.diff{color:#fff;border-color:transparent}
+  .ch-acts{flex-wrap:wrap}
+  .ch-open{background:transparent;border:1px solid var(--line);color:var(--ink);border-radius:.9rem;padding:.5rem .7rem;font-weight:800;font-family:inherit;cursor:pointer;font-size:.8rem;flex:1}
+  .ch-del{background:transparent;border:1px solid rgba(217,83,79,.5);color:#ffb4b4;border-radius:.9rem;padding:.5rem .6rem;cursor:pointer;font-family:inherit;font-weight:800}
+
+  /* --- modal --- */
+  .modal{position:fixed;inset:0;z-index:50;display:none;align-items:flex-start;justify-content:center;padding:1.2rem;overflow:auto;background:rgba(4,14,26,.72);backdrop-filter:blur(4px)}
+  .modal.open{display:flex}
+  .modal-card{background:linear-gradient(165deg,var(--bg2),var(--bg1));border:1.5px solid var(--line);border-radius:1.4rem;max-width:640px;width:100%;margin:auto;padding:1.3rem}
+  .modal-head{display:flex;align-items:center;gap:.6rem;margin-bottom:.3rem}
+  .modal-head .ch-ic{font-size:2rem}
+  .modal-title{font-weight:900;font-size:1.2rem;flex:1;line-height:1.35}
+  .modal-close{background:rgba(255,255,255,.08);border:1px solid var(--line);color:var(--ink);border-radius:50%;width:34px;height:34px;font-size:1rem;cursor:pointer;font-family:inherit;flex:0 0 auto}
+  .msec{border-top:1px solid var(--line);margin-top:1rem;padding-top:1rem}
+  .msec h4{font-size:.98rem;font-weight:900;margin-bottom:.6rem;display:flex;align-items:center;gap:.4rem}
+  .vupload{background:rgba(41,128,185,.08);border:1.5px dashed var(--c);border-radius:1rem;padding:.8rem;display:flex;flex-direction:column;gap:.5rem;margin-bottom:.9rem}
+  .vupload input[type=file]{font-family:inherit;color:var(--muted);font-size:.85rem}
+  .vupload input[type=text]{border:1.5px solid var(--line);background:rgba(255,255,255,.07);color:var(--ink);border-radius:.7rem;padding:.5rem .7rem;font-family:inherit;font-size:.9rem}
+  .vupload button{background:var(--c);color:#fff;border:none;border-radius:.7rem;padding:.55rem;font-weight:800;font-family:inherit;cursor:pointer}
+  .vmsg{font-size:.8rem;color:var(--gold-lt);font-weight:700;min-height:1rem}
+  .vgallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:.8rem}
+  .vcard{background:var(--card);border:1px solid var(--line);border-radius:1rem;overflow:hidden;display:flex;flex-direction:column}
+  .vcard{flex-direction:row;align-items:stretch}
+  .vcard .vthumb{flex:0 0 64px;background:linear-gradient(160deg,var(--c),#123a63);display:grid;place-items:center;font-size:1.7rem}
+  .vcard audio{width:100%;margin-top:.35rem}
+  .vcard .vinfo{flex:1;padding:.55rem .7rem;font-size:.8rem;display:flex;flex-direction:column;gap:.3rem;min-width:0}
+  .vcard .vwho{font-weight:800}
+  .vcard .vkid{color:var(--gold-lt);font-weight:700}
+  .vcard .vcap{color:var(--muted);line-height:1.5}
+  .vcard .vacts{display:flex;gap:.4rem;align-items:center;margin-top:.2rem}
+  .vlike{background:transparent;border:1px solid var(--line);color:var(--muted);border-radius:2rem;padding:.2rem .6rem;font-weight:800;font-size:.76rem;cursor:pointer;font-family:inherit}
+  .vdel{background:transparent;border:none;color:var(--muted);cursor:pointer;font-size:.85rem;margin-inline-start:auto}
+  .vdel:hover{color:#ffb4b4}
+  .lb-row{display:flex;align-items:center;gap:.6rem;padding:.55rem .3rem;border-bottom:1px solid var(--line)}
+  .lb-rank{font-weight:900;width:2rem;text-align:center;font-size:1.05rem}
+  .lb-name{flex:1;font-weight:800}
+  .lb-stars{font-weight:900;color:var(--gold-lt)}
 </style>
 <style id="__antiflash">html{background:#081E36;color-scheme:dark}</style>
+<template id="__bundler_thumbnail" data-bg-color="#081E36">
+  <svg viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
+    <rect width="1200" height="800" fill="#081E36"/>
+    <circle cx="480" cy="360" r="120" fill="#1F8A5B"/>
+    <circle cx="720" cy="360" r="120" fill="#2980B9"/>
+    <text x="600" y="400" font-family="sans-serif" font-size="150" fill="#FEF5DC" text-anchor="middle" dominant-baseline="central">👥</text>
+    <text x="600" y="600" font-family="sans-serif" font-size="64" font-weight="900" fill="#E8B530" text-anchor="middle">مجتمع العائلات</text>
+  </svg>
+</template>
 </head>
 <body>
   <div class="header">
@@ -114,10 +176,25 @@
       </div>
 
       <section class="panel active" id="panel-ch">
-        <div class="new-ch">
-          <b>➕ <span class="ar-only">أنشئ تحدّياً جديداً</span><span class="en-only">Create a new challenge</span></b>
-          <input id="ncTitle" placeholder="">
-          <input id="ncDesc" placeholder="">
+        <div class="ch-toolbar">
+          <div class="star-banner" id="starBanner">⭐ <span class="ar-only">نجومك:</span><span class="en-only">Your stars:</span> <b>0</b></div>
+          <button class="lb-btn" onclick="openLeaderboard()">🏆 <span class="ar-only">المتصدّرون</span><span class="en-only">Leaderboard</span></button>
+          <button class="create-toggle" onclick="toggleCreate()">➕ <span class="ar-only">أنشئ تحدّياً</span><span class="en-only">New challenge</span></button>
+        </div>
+        <div class="new-ch" id="createForm" style="display:none">
+          <b>🎯 <span class="ar-only">صمّم تحدّياً مخصّصاً</span><span class="en-only">Design a tailored challenge</span></b>
+          <input id="ncTitle" type="text" placeholder="">
+          <input id="ncDesc" type="text" placeholder="">
+          <div class="nc-row">
+            <label><span class="ar-only">نوع الهدف</span><span class="en-only">Goal type</span><select id="ncGoal"></select></label>
+            <label><span class="ar-only">العدد المطلوب</span><span class="en-only">Target amount</span><input id="ncDays" type="number" min="1" value="7"></label>
+          </div>
+          <div class="nc-row">
+            <label><span class="ar-only">الفئة العمرية</span><span class="en-only">Age group</span><select id="ncAge"></select></label>
+            <label><span class="ar-only">المستوى</span><span class="en-only">Difficulty</span><select id="ncDiff"></select></label>
+            <label style="max-width:96px;flex:0 0 96px"><span class="ar-only">الرمز</span><span class="en-only">Icon</span><input id="ncIcon" type="text" maxlength="2" placeholder="🎯"></label>
+          </div>
+          <div class="nc-hint" id="officialHint"></div>
           <button onclick="createChallenge()"><span class="ar-only">أنشئ التحدّي</span><span class="en-only">Create challenge</span></button>
         </div>
         <div class="ch" id="chGrid" style="margin-top:1.2rem"></div>
@@ -152,12 +229,30 @@
         </div>
         <div id="postList"></div>
       </section>
+
+      <!-- Challenge detail: videos + discussion -->
+      <div class="modal" id="chModal" onclick="if(event.target===this)closeModal('chModal')">
+        <div class="modal-card" id="chModalCard"></div>
+      </div>
+      <!-- Leaderboard -->
+      <div class="modal" id="lbModal" onclick="if(event.target===this)closeModal('lbModal')">
+        <div class="modal-card">
+          <div class="modal-head">
+            <span class="ch-ic">🏆</span>
+            <span class="modal-title"><span class="ar-only">لوحة المتصدّرين</span><span class="en-only">Leaderboard</span></span>
+            <button class="modal-close" onclick="closeModal('lbModal')">✕</button>
+          </div>
+          <p class="nc-hint" style="margin:.1rem 0 .7rem"><span class="ar-only">أكثر العائلات كسباً للنجوم ⭐ — كل يوم مكتمل ١٠ نجوم، وكل مقطع ٢٥ نجمة.</span><span class="en-only">Top star-earning families ⭐ — every completed day = 10, every video = 25.</span></p>
+          <div class="modal-body" id="lbBody"></div>
+        </div>
+      </div>
     </div>
   </div>
 
 <script src="https://www.gstatic.com/firebasejs/10.12.5/firebase-app-compat.js"></script>
 <script src="https://www.gstatic.com/firebasejs/10.12.5/firebase-auth-compat.js"></script>
 <script src="https://www.gstatic.com/firebasejs/10.12.5/firebase-firestore-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.5/firebase-storage-compat.js"></script>
 <script src="firebase-config.js"></script>
 <script defer src="mk-system.js"></script>
 <script src="mk-auth.js"></script>
@@ -181,6 +276,7 @@
     document.getElementById('liveNote').textContent=live
       ? t('☁️ مجتمعٌ مباشر · يمكنك الإبلاغ عن أيّ منشور أو حجب أيّ مستخدم','☁️ Live community · you can report any post or block any user')
       : t('🔒 يعمل محليّاً الآن · جاهزٌ للربط بحسابٍ سحابيٍّ ليتشارك الجميع','🔒 Runs locally now · ready to connect to a cloud account so everyone shares');
+    fillSelects();
     boot();
   }
   document.querySelectorAll('.lang button').forEach(function(b){ b.onclick=function(){ lang=b.dataset.lang; try{localStorage.setItem('bunyanLang',lang);}catch(e){} applyLang(); }; });
@@ -213,34 +309,190 @@
     document.getElementById('panel-disc').classList.toggle('active',id==='disc');
   }
 
+  /* ---- tailored-challenge config ---- */
+  var GOALS={
+    days:{ar:'يوم',en:'day',arP:'أيّام',enP:'days',ic:'📅'},
+    verses:{ar:'آية',en:'ayah',arP:'آيات',enP:'ayat',ic:'📖'},
+    pages:{ar:'صفحة',en:'page',arP:'صفحات',enP:'pages',ic:'📄'},
+    prayers:{ar:'صلاة',en:'prayer',arP:'صلوات',enP:'prayers',ic:'🕌'},
+    tasks:{ar:'مهمّة',en:'task',arP:'مهامّ',enP:'tasks',ic:'✅'}
+  };
+  var AGES={ all:{ar:'كل الأعمار',en:'All ages'}, '3-6':{ar:'٣–٦ سنوات',en:'Ages 3–6'}, '7-10':{ar:'٧–١٠ سنوات',en:'Ages 7–10'}, '11+':{ar:'١١ سنة فأكثر',en:'Ages 11+'} };
+  var DIFF={ beginner:{ar:'مبتدئ',en:'Beginner',c:'#1F8A5B'}, intermediate:{ar:'متوسط',en:'Intermediate',c:'#C98A1A'}, advanced:{ar:'متقدّم',en:'Advanced',c:'#C0453F'} };
+  var CHCACHE={};
+
+  function fillSelects(){
+    var goal=document.getElementById('ncGoal');
+    if(goal){ var gv=goal.value; goal.innerHTML=Object.keys(GOALS).map(function(k){var g=GOALS[k];return '<option value="'+k+'">'+g.ic+' '+t(g.arP,g.enP)+'</option>';}).join(''); if(gv)goal.value=gv; }
+    var age=document.getElementById('ncAge');
+    if(age){ var av=age.value; age.innerHTML=Object.keys(AGES).map(function(k){return '<option value="'+k+'">'+t(AGES[k].ar,AGES[k].en)+'</option>';}).join(''); if(av)age.value=av; }
+    var diff=document.getElementById('ncDiff');
+    if(diff){ var dv=diff.value; diff.innerHTML=Object.keys(DIFF).map(function(k){return '<option value="'+k+'">'+t(DIFF[k].ar,DIFF[k].en)+'</option>';}).join(''); if(dv)diff.value=dv; }
+  }
+  function toggleCreate(forceHide){ var f=document.getElementById('createForm'); if(!f)return; f.style.display=(forceHide||f.style.display!=='none')?'none':'flex'; }
+  function updateStarBanner(){ var u=(MKAuth.user&&MKAuth.user())||{}; var el=document.getElementById('starBanner'); if(el){ var b=el.querySelector('b'); if(b) b.textContent=(u.stars||0); } }
+  function refreshUser(){ return MKAuth.refresh().then(function(){ updateStarBanner(); }); }
+  function unitOf(c){ var g=GOALS[c.goalType]||GOALS.days; return t(g.ar,g.en); }
+  function badgesOf(c){
+    return '<div class="ch-badges">'
+      +(c.official?'<span class="badge official">🛡️ '+t('رسمي','Official')+'</span>':'<span class="badge family">👪 '+t('من عائلة','Family')+'</span>')
+      +(c.age&&c.age!=='all'&&AGES[c.age]?'<span class="badge age">'+t(AGES[c.age].ar,AGES[c.age].en)+'</span>':'')
+      +(c.difficulty&&DIFF[c.difficulty]?'<span class="badge diff" style="background:'+DIFF[c.difficulty].c+'">'+t(DIFF[c.difficulty].ar,DIFF[c.difficulty].en)+'</span>':'')
+      +'</div>';
+  }
+
   function renderChallenges(){
-    MKAuth.listChallenges().then(function(list){
+    updateStarBanner();
+    var me=(MKAuth.user&&MKAuth.user())||{}; var myId=me.id; var admin=!!(MKAuth.isAdmin&&MKAuth.isAdmin());
+    var oh=document.getElementById('officialHint');
+    if(oh) oh.textContent = admin
+      ? t('بصفتك مشرفاً، تُنشر تحدّياتك بوسم «رسمي» 🛡️','As admin, your challenges are posted as “Official” 🛡️')
+      : t('ستظهر تحدّياتك بوسم «من عائلة» 👪','Your challenges appear tagged “Family” 👪');
+    return MKAuth.listChallenges().then(function(list){
+      CHCACHE={};
       document.getElementById('chGrid').innerHTML=list.map(function(c){
-        var pct=c.days?Math.round((c.myProgress||0)/c.days*100):0;
+        CHCACHE[c.id]=c;
+        var unit=unitOf(c);
+        var pct=c.days?Math.min(100,Math.round((c.myProgress||0)/c.days*100)):0;
         var join=c.joined
-          ? '<button class="ch-join joined" disabled>✓ '+t('مشترك','Joined')+'</button><button class="ch-step" onclick="stepChallenge(\''+c.id+'\','+c.days+')">＋</button>'
+          ? '<button class="ch-join joined" disabled>✓ '+t('مشترك','Joined')+'</button><button class="ch-step" title="'+t('أنجزت اليوم','Mark done')+'" onclick="stepChallenge(\''+c.id+'\','+c.days+')">＋</button>'
           : '<button class="ch-join" onclick="joinChallenge(\''+c.id+'\')">'+t('انضمّ','Join')+'</button>';
-        return '<div class="ch-card"><div class="ch-top"><span class="ch-ic">'+c.icon+'</span><span class="ch-t">'+txo(c.title)+'</span></div>'
+        var canDel=(c.mine||(c.byUid&&c.byUid===myId)||admin);
+        var del=canDel?'<button class="ch-del" title="'+t('حذف','Delete')+'" onclick="removeChallenge(\''+c.id+'\')">🗑️</button>':'';
+        return '<div class="ch-card">'
+          +'<div class="ch-top"><span class="ch-ic">'+c.icon+'</span><span class="ch-t">'+txo(c.title)+'</span></div>'
+          +badgesOf(c)
           +'<div class="ch-d">'+txo(c.desc)+'</div>'
-          +(c.joined?'<div class="ch-bar"><i style="width:'+pct+'%"></i></div><div class="ch-meta"><span>'+(c.myProgress||0)+'/'+c.days+' '+t('يوم','days')+'</span><span>'+pct+'%</span></div>':'')
-          +'<div class="ch-meta"><span>👥 '+c.members+' '+t('مشارك','members')+'</span><span>'+(c.days)+' '+t('يوم','days')+'</span></div>'
-          +'<div class="ch-acts">'+join+'</div></div>';
+          +(c.joined?'<div class="ch-bar"><i style="width:'+pct+'%"></i></div><div class="ch-meta"><span>'+(c.myProgress||0)+'/'+c.days+' '+unit+'</span><span>'+pct+'%</span></div>':'')
+          +'<div class="ch-meta"><span>👥 '+(c.members||0)+' '+t('مشارك','members')+'</span><span>'+c.days+' '+unit+'</span></div>'
+          +'<div class="ch-acts">'+join+'<button class="ch-open" onclick="openChallenge(\''+c.id+'\')">🎙️ '+t('التسجيلات والنقاش','Audio & talk')+'</button>'+del+'</div>'
+          +'</div>';
       }).join('');
     });
   }
-  function joinChallenge(id){ MKAuth.joinChallenge(id).then(renderChallenges); }
-  function stepChallenge(id,days){
-    MKAuth.listChallenges().then(function(list){
-      var c=list.find(function(x){return x.id===id;}); var p=Math.min((c.myProgress||0)+1,days);
-      MKAuth.setChallengeProgress(id,p).then(renderChallenges);
-    });
+  function joinChallenge(id,fromModal){ MKAuth.joinChallenge(id).then(function(){ return renderChallenges(); }).then(function(){ if(fromModal) openChallenge(id); }); }
+  function stepChallenge(id,days,fromModal){
+    var c=CHCACHE[id]; var p=Math.min((c?(c.myProgress||0):0)+1,days);
+    MKAuth.setChallengeProgress(id,p).then(function(){ return refreshUser(); }).then(function(){ return renderChallenges(); }).then(function(){ if(fromModal) openChallenge(id); });
+  }
+  function removeChallenge(id){
+    if(!confirm(t('حذف هذا التحدّي نهائياً؟','Delete this challenge permanently?'))) return;
+    MKAuth.deleteChallenge(id).then(function(){ closeModal('chModal'); renderChallenges(); });
   }
   function createChallenge(){
     var title=document.getElementById('ncTitle').value.trim();
     var desc=document.getElementById('ncDesc').value.trim();
+    var days=Math.max(1,parseInt(document.getElementById('ncDays').value,10)||7);
+    var goalType=document.getElementById('ncGoal').value||'days';
+    var age=document.getElementById('ncAge').value||'all';
+    var difficulty=document.getElementById('ncDiff').value||'beginner';
+    var g=GOALS[goalType]||GOALS.days;
+    var icon=(document.getElementById('ncIcon').value||'').trim()||g.ic||'🎯';
     if(!title){ document.getElementById('ncTitle').focus(); return; }
-    MKAuth.createChallenge({ title:{ar:title,en:title}, desc:{ar:desc,en:desc}, days:7, icon:'🎯' }).then(function(){
-      document.getElementById('ncTitle').value=''; document.getElementById('ncDesc').value=''; renderChallenges();
+    MKAuth.createChallenge({ title:{ar:title,en:title}, desc:{ar:desc,en:desc}, days:days,
+      unit:{ar:g.ar,en:g.en}, goalType:goalType, age:age, difficulty:difficulty, icon:icon }).then(function(){
+      document.getElementById('ncTitle').value=''; document.getElementById('ncDesc').value=''; document.getElementById('ncIcon').value='';
+      document.getElementById('ncDays').value='7';
+      toggleCreate(true); renderChallenges();
+    });
+  }
+
+  /* ---- challenge detail modal: videos + discussion ---- */
+  function closeModal(idm){ var m=document.getElementById(idm); if(m) m.classList.remove('open'); }
+  function openChallenge(id){
+    var c=CHCACHE[id]; if(!c) return;
+    var unit=unitOf(c);
+    var pct=c.days?Math.min(100,Math.round((c.myProgress||0)/c.days*100)):0;
+    var prog=c.joined
+      ? '<div class="ch-bar" style="margin:.4rem 0 .3rem"><i style="width:'+pct+'%"></i></div>'
+        +'<div class="ch-meta"><span>'+(c.myProgress||0)+'/'+c.days+' '+unit+' • '+pct+'%</span>'
+        +'<button class="ch-step" onclick="stepChallenge(\''+c.id+'\','+c.days+',true)">＋ '+t('أنجزت','Mark')+'</button></div>'
+      : '<button class="ch-join" style="margin:.5rem 0;max-width:220px" onclick="joinChallenge(\''+c.id+'\',true)">'+t('انضمّ إلى التحدّي','Join challenge')+'</button>';
+    document.getElementById('chModalCard').innerHTML=
+      '<div class="modal-head"><span class="ch-ic">'+c.icon+'</span><span class="modal-title">'+txo(c.title)+'</span>'
+      +'<button class="modal-close" onclick="closeModal(\'chModal\')">✕</button></div>'
+      +badgesOf(c)
+      +'<div class="ch-d" style="margin-top:.5rem">'+txo(c.desc)+'</div>'
+      +prog
+      +'<div class="msec"><h4>🎙️ '+t('تسجيلات الأطفال','Kids\u2019 audio')+'</h4>'
+        +'<div class="vupload">'
+          +'<input type="file" id="vf-'+c.id+'" accept="audio/*">'
+          +'<input type="text" id="vk-'+c.id+'" placeholder="'+t('اسم الطفل (اختياري)','Child\u2019s name (optional)')+'">'
+          +'<input type="text" id="vc-'+c.id+'" placeholder="'+t('تعليق قصير (اختياري)','Short caption (optional)')+'">'
+          +'<button onclick="uploadVideoFor(\''+c.id+'\')">⬆️ '+t('ارفع التسجيل (+٢٥ ⭐)','Upload audio (+25 ⭐)')+'</button>'
+          +'<div class="vmsg" id="vmsg-'+c.id+'"></div>'
+          +'<div class="nc-hint">'+t('يستمع للتسجيل جميعُ العائلات المسجّلة. الصوت أخفّ على المساحة — سجّل بصوت طفلك أو ارفع ملفاً صوتياً (الحدّ ٢٥ ميغابايت).','All registered families can listen. Audio saves space — record your child or upload an audio file (max 25 MB).')+'</div>'
+        +'</div>'
+        +'<div class="vgallery" id="vg-'+c.id+'"></div>'
+      +'</div>'
+      +'<div class="msec"><h4>💬 '+t('نقاش التحدّي','Challenge discussion')+'</h4><div id="cc-'+c.id+'"></div></div>';
+    document.getElementById('chModal').classList.add('open');
+    loadVideos(c.id); loadChComments(c.id);
+  }
+
+  function uploadVideoFor(cid){
+    var f=document.getElementById('vf-'+cid); var file=f&&f.files&&f.files[0];
+    var msg=document.getElementById('vmsg-'+cid);
+    if(!file){ msg.textContent=t('اختر تسجيلاً أوّلاً','Choose an audio file first'); return; }
+    if(file.size>25*1024*1024){ msg.textContent=t('التسجيل كبير جداً (الحدّ ٢٥ ميغابايت)','Audio too large (max 25 MB)'); return; }
+    var kid=document.getElementById('vk-'+cid).value.trim();
+    var cap=document.getElementById('vc-'+cid).value.trim();
+    msg.textContent=t('جارٍ الرفع… 0%','Uploading… 0%');
+    MKAuth.uploadVideo(cid,file,{kid:kid,caption:cap},function(p){ msg.textContent=t('جارٍ الرفع… ','Uploading… ')+p+'%'; })
+      .then(function(){ msg.textContent=t('تمّ الرفع ✓ (+٢٥ ⭐)','Uploaded ✓ (+25 ⭐)'); f.value=''; document.getElementById('vk-'+cid).value=''; document.getElementById('vc-'+cid).value='';
+        return refreshUser(); })
+      .then(function(){ loadVideos(cid); })
+      .catch(function(e){ msg.textContent=t('تعذّر الرفع: ','Upload failed: ')+((e&&e.message)||e); });
+  }
+  function loadVideos(cid){
+    var box=document.getElementById('vg-'+cid); if(!box) return;
+    var me=(MKAuth.user&&MKAuth.user())||{}; var myId=me.id; var admin=!!(MKAuth.isAdmin&&MKAuth.isAdmin());
+    MKAuth.listVideos(cid).then(function(list){
+      if(!list.length){ box.innerHTML='<div class="c-empty" style="grid-column:1/-1">'+t('لا تسجيلات بعد — كن أوّل من يشارك صوت طفله! 🎙️','No audio yet — be the first to share your child\u2019s recording! 🎙️')+'</div>'; return; }
+      box.innerHTML=list.map(function(v){
+        var mine=(v.uid&&v.uid===myId)||v.local; var canDel=mine||admin;
+        var del=canDel?'<button class="vdel" onclick="deleteVideoFor(\''+cid+'\',\''+v.id+'\',\''+encodeURIComponent(v.path||'')+'\')">🗑️</button>':'';
+        return '<div class="vcard"><div class="vthumb">🎙️</div>'
+          +'<div class="vinfo"><div class="vwho"><span class="c-av">'+(v.avatar||'🧑')+'</span> '+escapeHtml(v.who)+'</div>'
+          +(v.kid?'<div class="vkid">🧒 '+escapeHtml(v.kid)+'</div>':'')
+          +(v.caption?'<div class="vcap">'+escapeHtml(v.caption)+'</div>':'')
+          +'<audio src="'+escapeHtml(v.url)+'" controls preload="metadata"></audio>'
+          +'<div class="vacts"><button class="vlike" onclick="likeVideoFor(\''+cid+'\',\''+v.id+'\')">❤️ '+(v.likes||0)+'</button>'+del+'</div>'
+          +'</div></div>';
+      }).join('');
+    });
+  }
+  function likeVideoFor(cid,vid){ MKAuth.likeVideo(cid,vid).then(function(){ loadVideos(cid); }); }
+  function deleteVideoFor(cid,vid,path){
+    if(!confirm(t('حذف هذا المقطع نهائياً؟','Delete this video permanently?'))) return;
+    MKAuth.deleteVideo(cid,vid,decodeURIComponent(path||'')).then(function(){ loadVideos(cid); });
+  }
+
+  function loadChComments(cid){
+    var box=document.getElementById('cc-'+cid); if(!box) return;
+    var me=(MKAuth.user&&MKAuth.user())||{}; var myId=me.id; var admin=!!(MKAuth.isAdmin&&MKAuth.isAdmin());
+    MKAuth.listChallengeComments(cid).then(function(list){
+      var items=list.map(function(c){
+        var ab=c.admin?'<span class="admin-badge sm">🛡️</span>':'';
+        var canDel=(c.uid&&c.uid===myId)||admin;
+        var del=canDel?'<button class="c-del" onclick="deleteChComment(\''+cid+'\',\''+c.id+'\')">🗑️</button>':'';
+        return '<div class="comment">'+del+'<span class="c-av">'+(c.avatar||'🧑')+'</span><span class="c-who">'+escapeHtml(c.who)+'</span>'+ab+'<span class="c-time">'+ago(c.at)+'</span><div class="c-text">'+escapeHtml(c.text)+'</div></div>';
+      }).join('');
+      box.innerHTML=(items||'<div class="c-empty">'+t('كن أوّل من يعلّق ويشجّع','Be the first to comment & encourage')+'</div>')
+        +'<div class="comment-add"><input id="cci-'+cid+'" placeholder="'+t('شجّع أو اسأل…','Encourage or ask…')+'"><button onclick="sendChComment(\''+cid+'\')">'+t('أرسل','Send')+'</button></div>';
+    });
+  }
+  function sendChComment(cid){ var inp=document.getElementById('cci-'+cid); var v=inp.value.trim(); if(!v) return; MKAuth.addChallengeComment(cid,v).then(function(){ loadChComments(cid); }); }
+  function deleteChComment(cid,id){ if(!confirm(t('حذف هذا التعليق؟','Delete this comment?'))) return; MKAuth.deleteChallengeComment(cid,id).then(function(){ loadChComments(cid); }); }
+
+  function openLeaderboard(){
+    MKAuth.getLeaderboard().then(function(list){
+      var body=list.length? list.map(function(m,i){
+        var medal=i===0?'🥇':i===1?'🥈':i===2?'🥉':(i+1)+'.';
+        return '<div class="lb-row"><span class="lb-rank">'+medal+'</span><span class="c-av">'+(m.avatar||'🧑')+'</span><span class="lb-name">'+escapeHtml(m.name)+'</span><span class="lb-stars">⭐ '+m.stars+'</span></div>';
+      }).join('') : '<div class="c-empty">'+t('لا نجوم بعد — أكمِل أيّام التحدّي أو ارفع مقطعاً لتكسب!','No stars yet — complete challenge days or upload a video to earn!')+'</div>';
+      document.getElementById('lbBody').innerHTML=body;
+      document.getElementById('lbModal').classList.add('open');
     });
   }
 

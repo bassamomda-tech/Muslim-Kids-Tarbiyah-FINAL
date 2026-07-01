@@ -22,7 +22,23 @@ service cloud.firestore {
       allow read: if signedIn();
       allow create: if signedIn();
       allow update: if signedIn();
-      allow delete: if false;
+      allow delete: if signedIn() && (resource.data.byUid == request.auth.uid || isAdmin());
+
+      // Discussion thread on a challenge — any family reads & posts; author or admin deletes
+      match /comments/{cid} {
+        allow read:   if signedIn();
+        allow create: if signedIn() && request.resource.data.uid == request.auth.uid;
+        allow delete: if signedIn() && (resource.data.uid == request.auth.uid || isAdmin());
+        allow update: if false;
+      }
+
+      // Kids' video submissions — any family watches; uploader creates; likes update; owner/admin delete
+      match /videos/{vid} {
+        allow read:   if signedIn();
+        allow create: if signedIn() && request.resource.data.uid == request.auth.uid;
+        allow update: if signedIn();
+        allow delete: if signedIn() && (resource.data.uid == request.auth.uid || isAdmin());
+      }
     }
 
     // Per-user challenge progress

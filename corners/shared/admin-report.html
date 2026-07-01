@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="dark">
+<title>تقرير نشاط الأعضاء — لوحة المشرف</title>
+<style id="__antiflash">html{background:#081E36;color-scheme:dark}</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#081E36; --panel:#0E2C4C; --panel2:#123A63;
+    --ink:#FEF5DC; --muted:#9DB6D4; --line:#1E446F;
+    --green:#1F8A5B; --blue:#2980B9; --gold:#E8B530; --red:#D9534F;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;font-family:'Cairo',system-ui,sans-serif;background:var(--bg);color:var(--ink);
+    -webkit-font-smoothing:antialiased;line-height:1.5}
+  .wrap{max-width:1180px;margin:0 auto;padding:28px 22px 80px}
+
+  header.top{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-bottom:8px}
+  .brand{display:flex;align-items:center;gap:12px}
+  .brand .dot{width:42px;height:42px;border-radius:12px;background:linear-gradient(135deg,var(--green),var(--blue));
+    display:grid;place-items:center;font-size:22px}
+  .brand h1{font-size:20px;margin:0;font-weight:900}
+  .brand p{margin:0;font-size:13px;color:var(--muted)}
+  .who{font-size:13px;color:var(--muted);text-align:left}
+  .who b{color:var(--ink);font-weight:700}
+
+  button{font-family:inherit;cursor:pointer;border:0;border-radius:12px;font-weight:700;font-size:14px;
+    padding:11px 18px;transition:transform .12s ease,filter .12s ease}
+  button:active{transform:translateY(1px)}
+  .btn-primary{background:linear-gradient(135deg,var(--green),var(--blue));color:#fff}
+  .btn-ghost{background:var(--panel2);color:var(--ink);border:1px solid var(--line)}
+  button:hover{filter:brightness(1.08)}
+  button:disabled{opacity:.5;cursor:default}
+
+  /* Gate / states */
+  .center{min-height:62vh;display:grid;place-items:center;text-align:center}
+  .card{background:var(--panel);border:1px solid var(--line);border-radius:20px;padding:34px;max-width:440px}
+  .card h2{margin:0 0 8px;font-size:22px}
+  .card p{margin:0 0 22px;color:var(--muted);font-size:14px}
+  .err{color:var(--red);font-size:13px;margin-top:14px;min-height:18px}
+
+  .spin{width:34px;height:34px;border-radius:50%;border:3px solid var(--line);border-top-color:var(--gold);
+    animation:s 1s linear infinite;margin:0 auto 16px}
+  @keyframes s{to{transform:rotate(360deg)}}
+
+  /* Stat grid */
+  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(168px,1fr));gap:14px;margin:22px 0}
+  .stat{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:18px 18px 16px;position:relative;overflow:hidden}
+  .stat .v{font-size:32px;font-weight:900;line-height:1.1}
+  .stat .l{font-size:13px;color:var(--muted);margin-top:4px}
+  .stat .bar{position:absolute;inset-inline:0;bottom:0;height:4px;background:var(--green)}
+  .stat.blue .bar{background:var(--blue)} .stat.gold .bar{background:var(--gold)} .stat.red .bar{background:var(--red)}
+
+  section.block{background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:20px 20px 8px;margin:18px 0}
+  section.block > h3{margin:0 0 4px;font-size:17px;font-weight:900;display:flex;align-items:center;gap:8px}
+  section.block > .sub{margin:0 0 14px;font-size:13px;color:var(--muted)}
+
+  table{width:100%;border-collapse:collapse;font-size:14px}
+  th,td{text-align:right;padding:10px 10px;border-bottom:1px solid var(--line);vertical-align:middle}
+  th{color:var(--muted);font-weight:700;font-size:12px;letter-spacing:.2px}
+  tbody tr:hover{background:rgba(255,255,255,.03)}
+  td.num,th.num{text-align:center;font-variant-numeric:tabular-nums}
+  .rank{width:26px;height:26px;border-radius:8px;display:inline-grid;place-items:center;font-weight:900;font-size:12px;background:var(--panel2)}
+  .rank.g1{background:var(--gold);color:#3a2a00} .rank.g2{background:#C7D2DD;color:#1a2733} .rank.g3{background:#B9742E;color:#fff}
+  .av{width:30px;height:30px;border-radius:50%;background:var(--panel2);display:inline-grid;place-items:center;font-size:13px;font-weight:700;overflow:hidden;vertical-align:middle;margin-inline-start:8px}
+  .av img{width:100%;height:100%;object-fit:cover}
+  .name{font-weight:700}
+  .pill{display:inline-block;font-size:11px;font-weight:700;padding:3px 9px;border-radius:20px;background:var(--panel2);color:var(--muted)}
+
+  /* Timeline chart */
+  .chart{display:flex;align-items:flex-end;gap:4px;height:140px;padding:6px 0 0;overflow-x:auto}
+  .chart .col{flex:1 0 14px;min-width:10px;display:flex;flex-direction:column;align-items:center;gap:6px;justify-content:flex-end;height:100%}
+  .chart .col .bar2{width:100%;max-width:22px;background:linear-gradient(180deg,var(--blue),var(--green));border-radius:5px 5px 0 0;min-height:3px}
+  .chart .col .cap{font-size:10px;color:var(--muted);white-space:nowrap}
+
+  .empty{color:var(--muted);font-size:13px;padding:18px 0 24px;text-align:center}
+  .foot{margin-top:26px;font-size:12px;color:var(--muted);text-align:center}
+  .danger-row td{background:rgba(217,83,79,.08)}
+  @media(max-width:560px){ .who{display:none} .stat .v{font-size:26px} }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <div class="brand">
+      <div class="dot">📊</div>
+      <div>
+        <h1>تقرير نشاط الأعضاء</h1>
+        <p>لوحة المشرف — تربية أطفال المسلمين</p>
+      </div>
+    </div>
+    <div style="display:flex;align-items:center;gap:12px">
+      <div class="who" id="who"></div>
+      <button class="btn-ghost" id="refreshBtn" style="display:none" onclick="loadReport()">↻ تحديث</button>
+      <button class="btn-ghost" id="signoutBtn" style="display:none" onclick="doSignOut()">خروج</button>
+    </div>
+  </header>
+
+  <!-- Sign-in gate -->
+  <div id="gate" class="center" style="display:none">
+    <div class="card">
+      <div class="dot" style="width:54px;height:54px;border-radius:16px;margin:0 auto 16px;background:linear-gradient(135deg,var(--green),var(--blue));display:grid;place-items:center;font-size:26px">🔐</div>
+      <h2>دخول المشرف</h2>
+      <p>هذه اللوحة للمالك فقط. سجّل الدخول بحساب جوجل الخاص بالإدارة لعرض التقرير الكامل.</p>
+      <button class="btn-primary" id="googleBtn" onclick="doSignIn()">الدخول بحساب جوجل</button>
+      <div class="err" id="gateErr"></div>
+    </div>
+  </div>
+
+  <!-- Loading -->
+  <div id="loading" class="center" style="display:none">
+    <div>
+      <div class="spin"></div>
+      <div style="color:var(--muted);font-size:14px">جارٍ تجميع بيانات النشاط…</div>
+    </div>
+  </div>
+
+  <!-- Report -->
+  <main id="report" style="display:none"></main>
+
+  <div class="foot" id="foot"></div>
+</div>
+
+<!-- Firebase SDK (compat for simplicity) -->
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-functions-compat.js"></script>
+<script src="firebase-config.js"></script>
+<script>
+const ADMIN_EMAIL = 'bassamomda91@gmail.com';
+const $ = (id) => document.getElementById(id);
+const show = (id, on) => { const e=$(id); if(e) e.style.display = on ? '' : 'none'; };
+const fmt = (n) => (n==null?'—':Number(n).toLocaleString('ar-EG'));
+const esc = (s) => String(s==null?'':s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+
+let app, auth, fns;
+try {
+  app = firebase.initializeApp(window.firebaseConfig);
+  auth = firebase.auth();
+  fns = firebase.app().functions('us-central1');
+} catch(e){ console.error(e); }
+
+function setStateFromUser(user){
+  if(!user){ show('gate',true); show('loading',false); show('report',false);
+    show('refreshBtn',false); show('signoutBtn',false); $('who').textContent=''; return; }
+  $('who').innerHTML = 'مسجّل باسم <b>'+esc(user.email)+'</b>';
+  if((user.email||'').toLowerCase() !== ADMIN_EMAIL){
+    show('gate',true); show('signoutBtn',true);
+    $('gateErr').textContent = 'هذا الحساب ليس حساب المشرف. سجّل الخروج وادخل بحساب الإدارة.';
+    return;
+  }
+  show('gate',false); show('signoutBtn',true);
+  loadReport();
+}
+
+auth && auth.onAuthStateChanged(setStateFromUser);
+
+async function doSignIn(){
+  $('gateErr').textContent='';
+  try{
+    const p = new firebase.auth.GoogleAuthProvider();
+    await auth.signInWithPopup(p);
+  }catch(e){ $('gateErr').textContent = 'تعذّر الدخول: '+(e.message||e); }
+}
+async function doSignOut(){ try{ await auth.signOut(); }catch(e){} }
+
+async function loadReport(){
+  show('gate',false); show('report',false); show('loading',true); show('refreshBtn',false);
+  try{
+    const call = fns.httpsCallable('adminReport');
+    const res = await call({});
+    render(res.data);
+    show('loading',false); show('report',true); show('refreshBtn',true);
+  }catch(e){
+    show('loading',false); show('gate',true);
+    $('gateErr').textContent = 'تعذّر تحميل التقرير: '+(e.message||e)+
+      ' — تأكد من نشر الدالة adminReport (firebase deploy --only functions:adminReport).';
+  }
+}
+
+function render(d){
+  const t = d.totals||{};
+  const stat = (v,l,cls)=>`<div class="stat ${cls||''}"><div class="v">${fmt(v)}</div><div class="l">${l}</div><div class="bar"></div></div>`;
+  let html = '<div class="grid">'
+    + stat(t.members,'إجمالي الأعضاء','')
+    + stat(t.active7,'نشِط آخر ٧ أيام','blue')
+    + stat(t.active30,'نشِط آخر ٣٠ يوم','blue')
+    + stat(t.silent,'لم يتفاعل بعد','gold')
+    + stat(t.posts,'منشورات','')
+    + stat(t.comments,'تعليقات','blue')
+    + stat(t.likes,'إعجابات','gold')
+    + stat(t.challenges,'تحديات','')
+    + stat(t.challengeJoins,'مشاركات بالتحديات','blue')
+    + stat(t.learnersWithProgress,'لديهم تقدّم تعليمي','')
+    + stat(t.openReports,'بلاغات / مشاكل','red')
+    + '</div>';
+
+  // Timeline
+  const tl = d.postsTimeline||{};
+  const keys = Object.keys(tl).sort();
+  const last = keys.slice(-30);
+  const max = Math.max(1, ...last.map(k=>tl[k]));
+  html += '<section class="block"><h3>📈 نشاط المنشورات</h3><p class="sub">عدد المنشورات يوميًا — آخر '+last.length+' يوم بها نشاط</p>';
+  if(last.length){
+    html += '<div class="chart">'+last.map(k=>{
+      const h = Math.round((tl[k]/max)*100);
+      const dd = k.slice(5); // MM-DD
+      return `<div class="col" title="${k}: ${tl[k]}"><div class="bar2" style="height:${h}%"></div><div class="cap">${dd}</div></div>`;
+    }).join('')+'</div>';
+  } else { html += '<div class="empty">لا توجد منشورات بعد.</div>'; }
+  html += '</section>';
+
+  // Top contributors
+  const tc = d.topContributors||[];
+  html += '<section class="block"><h3>🏅 أكثر العائلات تفاعلًا</h3><p class="sub">مرتبة حسب النشاط (منشور ٣ • تعليق ٢ • إعجاب ١ • تحدٍّ ١)</p>';
+  if(tc.length){
+    html += '<table><thead><tr><th class="num">#</th><th>العضو</th>'
+      + '<th class="num">منشورات</th><th class="num">تعليقات</th><th class="num">إعجابات قدّمها</th>'
+      + '<th class="num">إعجابات تلقّاها</th><th class="num">تحديات</th><th class="num">آخر نشاط</th></tr></thead><tbody>';
+    tc.forEach((m,i)=>{
+      const rc = i===0?'g1':i===1?'g2':i===2?'g3':'';
+      const av = m.avatar ? `<span class="av"><img src="${esc(m.avatar)}" onerror="this.style.display='none'"></span>`
+        : `<span class="av">${esc((m.name||'؟').slice(0,1))}</span>`;
+      html += `<tr><td class="num"><span class="rank ${rc}">${i+1}</span></td>`
+        + `<td>${av}<span class="name">${esc(m.name)}</span></td>`
+        + `<td class="num">${fmt(m.posts)}</td><td class="num">${fmt(m.comments)}</td>`
+        + `<td class="num">${fmt(m.likesGiven)}</td><td class="num">${fmt(m.likesReceived)}</td>`
+        + `<td class="num">${fmt(m.challengesJoined)}</td><td class="num">${ago(m.lastActiveMs)}</td></tr>`;
+    });
+    html += '</tbody></table>';
+  } else { html += '<div class="empty">لا توجد بيانات تفاعل بعد.</div>'; }
+  html += '</section>';
+
+  // Reports / problems
+  const rp = d.reports||[];
+  html += '<section class="block"><h3>⚠️ البلاغات والمشاكل</h3><p class="sub">شكاوى الأعضاء التي تحتاج مراجعتك</p>';
+  if(rp.length){
+    html += '<table><thead><tr><th>السبب</th><th>تفاصيل</th><th>الهدف</th><th>مقدّم البلاغ</th><th class="num">التاريخ</th></tr></thead><tbody>';
+    rp.forEach(r=>{
+      html += `<tr class="danger-row"><td><span class="pill" style="color:var(--red)">${esc(r.reason)}</span></td>`
+        + `<td>${esc(r.note)||'—'}</td>`
+        + `<td>${esc(r.targetType||'')} ${r.targetId?('<span class="pill">'+esc(String(r.targetId).slice(0,8))+'</span>'):''}</td>`
+        + `<td>${esc(r.byName||r.byUid||'—')}</td>`
+        + `<td class="num">${ago(r.createdMs)}</td></tr>`;
+    });
+    html += '</tbody></table>';
+  } else { html += '<div class="empty">لا توجد بلاغات — كل شيء على ما يرام. ✅</div>'; }
+  html += '</section>';
+
+  $('report').innerHTML = html;
+  $('foot').textContent = 'أُنشئ التقرير: ' + new Date(d.generatedMs||Date.now()).toLocaleString('ar-EG');
+}
+
+function ago(ms){
+  if(!ms) return '—';
+  const s = Math.floor((Date.now()-ms)/1000);
+  if(s<60) return 'الآن';
+  const m=Math.floor(s/60); if(m<60) return 'منذ '+m+' د';
+  const h=Math.floor(m/60); if(h<24) return 'منذ '+h+' س';
+  const dd=Math.floor(h/24); if(dd<30) return 'منذ '+dd+' يوم';
+  const mo=Math.floor(dd/30); if(mo<12) return 'منذ '+mo+' شهر';
+  return 'منذ '+Math.floor(mo/12)+' سنة';
+}
+
+// Initial gate if config missing
+if(!window.firebaseConfig){ show('gate',true); $('gateErr').textContent='إعدادات Firebase غير محمّلة.'; }
+</script>
+</body>
+</html>

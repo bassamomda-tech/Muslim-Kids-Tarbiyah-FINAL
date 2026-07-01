@@ -31,7 +31,7 @@
      ════════════════════════════════════════════════════════════════ */
   var LocalAdapter = {
     name: 'local',
-    K: { users: 'mkauth:users', session: 'mkauth:session', chal: 'mkcomm:challenges', posts: 'mkcomm:posts', joins: 'mkcomm:joins', blocks: 'mkcomm:blocks', reports: 'mkcomm:reports', comments: 'mkcomm:comments' },
+    K: { users: 'mkauth:users', session: 'mkauth:session', chal: 'mkcomm:challenges', posts: 'mkcomm:posts', joins: 'mkcomm:joins', blocks: 'mkcomm:blocks', reports: 'mkcomm:reports', comments: 'mkcomm:comments', chalcom: 'mkcomm:chalcomments', videos: 'mkcomm:videos' },
 
     /* --- AUTH --- */
     register: function (data) {
@@ -97,15 +97,80 @@
       bump(this.K.chal, id, 'members', 1); return delay(true);
     },
     setChallengeProgress: function (id, progress) {
-      var joins = jget(this.K.joins, {}); if (!joins[id]) joins[id] = { at: now() }; joins[id].progress = progress; jset(this.K.joins, joins);
+      var joins = jget(this.K.joins, {}); if (!joins[id]) joins[id] = { at: now() };
+      var old = joins[id].progress || 0; var gained = Math.max(0, progress - old);
+      joins[id].progress = progress; joins[id].at = now(); jset(this.K.joins, joins);
+      if (gained > 0) this.awardStars(gained * 10);
       return delay(true);
     },
     createChallenge: function (ch) {
       // ☁️ BACKEND: db.collection('challenges').add(ch)
       var c = jget(this.K.chal, SEED_CHALLENGES.slice());
-      var who = (MKAuth._user && MKAuth._user.name) || 'ضيف';
-      c.unshift({ id: uid(), icon: ch.icon || '🎯', title: ch.title, desc: ch.desc, days: ch.days || 7, members: 1, by: who, createdAt: now(), mine: true });
+      var me = MKAuth._user || {};
+      var who = me.name || 'ضيف';
+      c.unshift({ id: uid(), icon: ch.icon || '🎯', title: ch.title, desc: ch.desc,
+        days: Math.max(1, parseInt(ch.days, 10) || 7),
+        unit: ch.unit || { ar: 'يوم', en: 'day' }, goalType: ch.goalType || 'days',
+        age: ch.age || 'all', difficulty: ch.difficulty || 'beginner', official: !!me.admin,
+        members: 1, by: who, byUid: me.id || '', createdAt: now(), mine: true });
       jset(this.K.chal, c); return delay(true);
+    },
+    deleteChallenge: function (id) {
+      var c = jget(this.K.chal, []); c = c.filter(function (x) { return x.id !== id; }); jset(this.K.chal, c);
+      return delay(true);
+    },
+
+    /* --- MOTIVATION: stars + leaderboard --- */
+    awardStars: function (n) {
+      var s = localStorage.getItem(this.K.session); if (!s || !n) return delay(true);
+      var email = s.split('|')[1]; var users = jget(this.K.users, {}); var u = users[email];
+      if (u) { u.stars = (u.stars || 0) + n; jset(this.K.users, users); if (MKAuth._user) MKAuth._user.stars = u.stars; }
+      return delay(true);
+    },
+    getLeaderboard: function () {
+      var users = jget(this.K.users, {}); var list = [];
+      Object.keys(users).forEach(function (e) { var u = users[e]; if (u.stars) list.push({ id: u.id, name: u.name, avatar: u.avatar || '🧑', stars: u.stars }); });
+      list.sort(function (a, b) { return b.stars - a.stars; });
+      return delay(list.slice(0, 20));
+    },
+
+    /* --- CHALLENGE discussion thread --- */
+    listChallengeComments: function (cid) {
+      var all = jget(this.K.chalcom, {}); return delay((all[cid] || []).slice());
+    },
+    addChallengeComment: function (cid, text) {
+      var all = jget(this.K.chalcom, {}); var me = MKAuth._user || {};
+      if (!all[cid]) all[cid] = [];
+      all[cid].push({ id: uid(), who: me.name || 'ضيف', avatar: me.avatar || '🧑', uid: me.id || '', admin: !!me.admin, text: String(text).slice(0, 400), at: now() });
+      jset(this.K.chalcom, all); return delay(true);
+    },
+    deleteChallengeComment: function (cid, id) {
+      var all = jget(this.K.chalcom, {});
+      if (all[cid]) { all[cid] = all[cid].filter(function (c) { return c.id !== id; }); jset(this.K.chalcom, all); }
+      return delay(true);
+    },
+
+    /* --- CHALLENGE videos (offline: session object URLs) --- */
+    listVideos: function (cid) {
+      var all = jget(this.K.videos, {}); return delay((all[cid] || []).slice());
+    },
+    uploadVideo: function (cid, file, meta, onProgress) {
+      meta = meta || {}; var me = MKAuth._user || {};
+      var all = jget(this.K.videos, {}); if (!all[cid]) all[cid] = [];
+      var url = ''; try { url = URL.createObjectURL(file); } catch (e) {}
+      if (onProgress) onProgress(100);
+      all[cid].unshift({ id: uid(), who: me.name || 'ضيف', avatar: me.avatar || '🧑', uid: me.id || '',
+        kid: String(meta.kid || '').slice(0, 40), caption: String(meta.caption || '').slice(0, 200),
+        url: url, path: '', at: now(), likes: 0, local: true });
+      jset(this.K.videos, all);
+      this.awardStars(25);
+      return delay(true);
+    },
+    likeVideo: function (cid, vid) {
+      var all = jget(this.K.videos, {}); (all[cid] || []).forEach(function (v) { if (v.id === vid) v.likes = (v.likes || 0) + 1; }); jset(this.K.videos, all); return delay(true);
+    },
+    deleteVideo: function (cid, vid) {
+      var all = jget(this.K.videos, {}); if (all[cid]) { all[cid] = all[cid].filter(function (v) { return v.id !== vid; }); jset(this.K.videos, all); } return delay(true);
     },
 
     /* --- COMMUNITY: discussion posts --- */
@@ -167,15 +232,15 @@
     },
   };
 
-  function publicUser(u) { return { id: u.id, email: u.email, name: u.name, role: u.role, avatar: u.avatar, createdAt: u.createdAt, admin: isAdminEmail(u.email) }; }
+  function publicUser(u) { return { id: u.id, email: u.email, name: u.name, role: u.role, avatar: u.avatar, createdAt: u.createdAt, stars: u.stars || 0, admin: isAdminEmail(u.email) }; }
   function bump(key, id, field, n) { var a = jget(key, []); a.forEach(function (x) { if (x.id === id) x[field] = (x[field] || 0) + n; }); jset(key, a); }
 
   /* seed community content so the screens look alive offline */
   var SEED_CHALLENGES = [
-    { id: 'fajr7', icon: '🌅', title: { ar: 'تحدّي الفجر ٧ أيّام', en: '7-Day Fajr Challenge' }, desc: { ar: 'حافِظ على صلاة الفجر في وقتها أسبوعاً كاملاً.', en: 'Keep Fajr on time for a full week.' }, days: 7, members: 128, by: 'فريق الموقع', createdAt: now() },
-    { id: 'mulk', icon: '📖', title: { ar: 'حفظ سورة المُلك', en: 'Memorize Surah al-Mulk' }, desc: { ar: 'احفظ سورة الملك آيةً كلَّ يوم.', en: 'Memorize Surah al-Mulk, an ayah a day.' }, days: 30, members: 86, by: 'فريق الموقع', createdAt: now() },
-    { id: 'adhkar', icon: '📿', title: { ar: 'أذكار الصباح والمساء', en: 'Morning & Evening Adhkar' }, desc: { ar: 'داوِم على الأذكار صباحاً ومساءً ١٤ يوماً.', en: 'Keep the morning & evening adhkar for 14 days.' }, days: 14, members: 203, by: 'فريق الموقع', createdAt: now() },
-    { id: 'kind', icon: '💚', title: { ar: 'لطفٌ كلَّ يوم', en: 'A Kindness Each Day' }, desc: { ar: 'اعمل معروفاً واحداً كلَّ يوم لِأهلِك أو جيرانِك.', en: 'Do one act of kindness daily for family or neighbors.' }, days: 10, members: 152, by: 'فريق الموقع', createdAt: now() },
+    { id: 'fajr7', icon: '🌅', title: { ar: 'تحدّي الفجر ٧ أيّام', en: '7-Day Fajr Challenge' }, desc: { ar: 'حافِظ على صلاة الفجر في وقتها أسبوعاً كاملاً.', en: 'Keep Fajr on time for a full week.' }, days: 7, unit: { ar: 'يوم', en: 'day' }, goalType: 'days', age: 'all', difficulty: 'beginner', official: true, members: 128, by: 'فريق الموقع', createdAt: now() },
+    { id: 'mulk', icon: '📖', title: { ar: 'حفظ سورة المُلك', en: 'Memorize Surah al-Mulk' }, desc: { ar: 'احفظ سورة الملك آيةً كلَّ يوم.', en: 'Memorize Surah al-Mulk, an ayah a day.' }, days: 30, unit: { ar: 'آية', en: 'ayah' }, goalType: 'verses', age: '7-10', difficulty: 'intermediate', official: true, members: 86, by: 'فريق الموقع', createdAt: now() },
+    { id: 'adhkar', icon: '📿', title: { ar: 'أذكار الصباح والمساء', en: 'Morning & Evening Adhkar' }, desc: { ar: 'داوِم على الأذكار صباحاً ومساءً ١٤ يوماً.', en: 'Keep the morning & evening adhkar for 14 days.' }, days: 14, unit: { ar: 'يوم', en: 'day' }, goalType: 'days', age: 'all', difficulty: 'beginner', official: true, members: 203, by: 'فريق الموقع', createdAt: now() },
+    { id: 'kind', icon: '💚', title: { ar: 'لطفٌ كلَّ يوم', en: 'A Kindness Each Day' }, desc: { ar: 'اعمل معروفاً واحداً كلَّ يوم لِأهلِك أو جيرانِك.', en: 'Do one act of kindness daily for family or neighbors.' }, days: 10, unit: { ar: 'يوم', en: 'day' }, goalType: 'days', age: '3-6', difficulty: 'beginner', official: true, members: 152, by: 'فريق الموقع', createdAt: now() },
   ];
   var SEED_POSTS = [
     { id: 'p1', who: 'أمُّ عبدالله', avatar: '🧕', text: 'تجربتي مع تحدّي الفجر رائعة — طفلي صار يوقظني! شاركوني تجاربكم.', at: now() - 86400000, likes: 12 },
@@ -207,6 +272,16 @@
     joinChallenge: function (id) { return adapter.joinChallenge(id); },
     setChallengeProgress: function (id, p) { return adapter.setChallengeProgress(id, p); },
     createChallenge: function (c) { return adapter.createChallenge(c); },
+    deleteChallenge: function (id) { return adapter.deleteChallenge ? adapter.deleteChallenge(id) : Promise.resolve(true); },
+    awardStars: function (n) { return adapter.awardStars ? adapter.awardStars(n) : Promise.resolve(true); },
+    getLeaderboard: function () { return adapter.getLeaderboard ? adapter.getLeaderboard() : Promise.resolve([]); },
+    listChallengeComments: function (cid) { return adapter.listChallengeComments ? adapter.listChallengeComments(cid) : Promise.resolve([]); },
+    addChallengeComment: function (cid, t) { return adapter.addChallengeComment ? adapter.addChallengeComment(cid, t) : Promise.resolve(true); },
+    deleteChallengeComment: function (cid, id) { return adapter.deleteChallengeComment ? adapter.deleteChallengeComment(cid, id) : Promise.resolve(true); },
+    listVideos: function (cid) { return adapter.listVideos ? adapter.listVideos(cid) : Promise.resolve([]); },
+    uploadVideo: function (cid, file, meta, onProgress) { return adapter.uploadVideo ? adapter.uploadVideo(cid, file, meta, onProgress) : Promise.reject(new Error('unsupported')); },
+    likeVideo: function (cid, vid) { return adapter.likeVideo ? adapter.likeVideo(cid, vid) : Promise.resolve(true); },
+    deleteVideo: function (cid, vid, path) { return adapter.deleteVideo ? adapter.deleteVideo(cid, vid, path) : Promise.resolve(true); },
 
     listPosts: function () { return adapter.listPosts(); },
     addPost: function (t, opts) { return adapter.addPost(t, opts); },
