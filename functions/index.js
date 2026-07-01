@@ -124,7 +124,8 @@ exports.adminReport = onCall(
         avatar: u.avatar || u.photoURL || '',
         joinedMs: ms(u.createdAt) || ms(u.joinedAt) || null,
         posts: 0, comments: 0, likesGiven: 0, likesReceived: 0, challengesJoined: 0,
-        lastActiveMs: null,
+        // seed activity from the family's own "last seen" heartbeat (site opens)
+        lastActiveMs: ms(u.lastSeen) || null,
       };
     });
     const touch = (uid, t) => {
@@ -154,8 +155,9 @@ exports.adminReport = onCall(
 
     // ── Challenge participation ──
     joinsSnap.forEach((d) => {
+      const j = d.data() || {};
       const uid = d.ref.parent.parent && d.ref.parent.parent.id;
-      if (members[uid]) members[uid].challengesJoined++;
+      if (members[uid]) { members[uid].challengesJoined++; touch(uid, ms(j.at) || ms(j.createdAt)); }
     });
 
     // ── Private learning progress (admin-only visibility) ──
@@ -164,7 +166,7 @@ exports.adminReport = onCall(
       const p = d.data() || {};
       const keys = Object.keys(p);
       if (keys.length) progressWithData++;
-      const t = ms(p.updatedAt) || ms(p.lastSeen);
+      const t = ms(p.at) || ms(p.updatedAt) || ms(p.lastSeen);
       if (t) touch(d.id, t);
     });
 

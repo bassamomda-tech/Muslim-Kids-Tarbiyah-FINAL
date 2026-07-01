@@ -63,6 +63,19 @@
   }
   function uidNow() { var u = auth.currentUser; return u ? u.uid : null; }
 
+  // 💓 Lightweight presence: stamp users/{uid}.lastSeen so the admin report
+  // knows a family actually OPENED the site — throttled to once per day per device.
+  function touchLastSeen(uid) {
+    if (!uid) return;
+    try {
+      var k = 'mk:lastSeenPushed:' + uid;
+      var last = parseInt(localStorage.getItem(k) || '0', 10) || 0;
+      if (Date.now() - last < 20 * 60 * 60 * 1000) return; // already stamped in last ~20h
+      localStorage.setItem(k, String(Date.now()));
+      db.collection('users').doc(uid).set({ lastSeen: now() }, { merge: true }).catch(function () {});
+    } catch (e) {}
+  }
+
   var FirebaseAdapter = {
     name: 'firebase',
 
@@ -107,6 +120,7 @@
         var off = auth.onAuthStateChanged(function (user) {
           off();
           if (!user) return res(null);
+          touchLastSeen(user.uid);
           db.collection('users').doc(user.uid).get()
             .then(function (snap) { res(pub(user.uid, snap.exists ? snap.data() : { email: user.email })); })
             .catch(function () { res(pub(user.uid, { email: user.email })); });
