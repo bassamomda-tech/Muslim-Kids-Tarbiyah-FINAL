@@ -138,6 +138,12 @@
       if (u) { u.stars = (u.stars || 0) + n; jset(this.K.users, users); if (MKAuth._user) MKAuth._user.stars = u.stars; }
       return delay(true);
     },
+    setBroadcastSeen: function (ts) {
+      var s = localStorage.getItem(this.K.session); if (!s) return delay(true);
+      var email = s.split('|')[1]; var users = jget(this.K.users, {}); var u = users[email];
+      if (u) { u.bcSeen = ts || now(); jset(this.K.users, users); if (MKAuth._user) MKAuth._user.bcSeen = u.bcSeen; }
+      return delay(true);
+    },
     getLeaderboard: function () {
       var users = jget(this.K.users, {}); var list = [];
       Object.keys(users).forEach(function (e) { var u = users[e]; if (u.stars) list.push({ id: u.id, name: u.name, avatar: u.avatar || '🧑', stars: u.stars }); });
@@ -243,7 +249,7 @@
     },
   };
 
-  function publicUser(u) { return { id: u.id, email: u.email, name: u.name, role: u.role, avatar: u.avatar, createdAt: u.createdAt, stars: u.stars || 0, admin: isAdminEmail(u.email) }; }
+  function publicUser(u) { return { id: u.id, email: u.email, name: u.name, role: u.role, avatar: u.avatar, createdAt: u.createdAt, stars: u.stars || 0, bcSeen: u.bcSeen || 0, admin: isAdminEmail(u.email) }; }
   function bump(key, id, field, n) { var a = jget(key, []); a.forEach(function (x) { if (x.id === id) x[field] = (x[field] || 0) + n; }); jset(key, a); }
 
   /* seed community content so the screens look alive offline */
@@ -286,6 +292,7 @@
     deleteChallenge: function (id) { return adapter.deleteChallenge ? adapter.deleteChallenge(id) : Promise.resolve(true); },
     editChallenge: function (id, f) { return adapter.editChallenge ? adapter.editChallenge(id, f) : Promise.resolve(true); },
     awardStars: function (n) { return adapter.awardStars ? adapter.awardStars(n) : Promise.resolve(true); },
+    setBroadcastSeen: function (ts) { var s = this; return adapter.setBroadcastSeen ? adapter.setBroadcastSeen(ts).then(function (r) { if (s._user) s._user.bcSeen = ts || Date.now(); return r; }) : Promise.resolve(true); },
     getLeaderboard: function () { return adapter.getLeaderboard ? adapter.getLeaderboard() : Promise.resolve([]); },
     listChallengeComments: function (cid) { return adapter.listChallengeComments ? adapter.listChallengeComments(cid) : Promise.resolve([]); },
     addChallengeComment: function (cid, t) { return adapter.addChallengeComment ? adapter.addChallengeComment(cid, t) : Promise.resolve(true); },

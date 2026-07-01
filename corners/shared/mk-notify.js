@@ -28,8 +28,14 @@
   }
   function audienceMatch(a) { if (!a || a === 'all') return true; return a === pageArea(); }
 
-  function bcGetSeen() { try { return parseInt(localStorage.getItem(BC_SEEN) || '0', 10) || 0; } catch (e) { return 0; } }
-  function bcSetSeen(ts) { try { localStorage.setItem(BC_SEEN, String(ts || 0)); } catch (e) {} }
+  function acctSeen() { try { var u = window.MKAuth && MKAuth.user && MKAuth.user(); return (u && u.bcSeen) || 0; } catch (e) { return 0; } }
+  function bcGetSeen() { var ls = 0; try { ls = parseInt(localStorage.getItem(BC_SEEN) || '0', 10) || 0; } catch (e) {} return Math.max(ls, acctSeen()); }
+  function bcSetSeen(ts) {
+    ts = ts || 0;
+    try { localStorage.setItem(BC_SEEN, String(ts)); } catch (e) {}
+    // ☁️ persist to the family account so it counts as seen on every device they log in on
+    try { if (window.MKAuth && MKAuth.setBroadcastSeen && MKAuth.user && MKAuth.user()) MKAuth.setBroadcastSeen(ts); } catch (e) {}
+  }
 
   function fetchBroadcast() {
     if (!window.fetch) return Promise.resolve(null);
@@ -82,6 +88,7 @@
       + '<span class="mk-bc-tx">' + esc(msg) + '</span></div>'
       + '<button class="mk-bc-x" aria-label="close">\u00D7</button>';
     document.body.appendChild(bar);
+    bcSetSeen(bc.at); // ← يُعلَّم كمقروء فور عرضه: يظهر مرّة واحدة فقط ولا يتكرّر في كل زيارة
     requestAnimationFrame(function () { bar.classList.add('show'); });
     bar.querySelector('.mk-bc-x').onclick = function () {
       bcSetSeen(bc.at); bar.classList.remove('show');
@@ -140,6 +147,26 @@
     broadcast: function () { return bc; }
   };
   window.MKNotify = MKNotify;
+
+  // ☁️ Cross-device: once the family account loads, honor its "seen" value.
+  // If this broadcast was already dismissed on another device, hide it here;
+  // and if it was dismissed on THIS device first, push that up to the account.
+  function onAcct() {
+    var u = window.MKAuth && MKAuth.user && MKAuth.user();
+    if (!u) return;
+    var bar = document.getElementById('mkBcBar');
+    if (bc && bc.at) {
+      if (bc.at <= bcGetSeen()) {
+        if (bar) { bar.classList.remove('show'); setTimeout(function () { if (bar.parentNode) bar.parentNode.removeChild(bar); }, 300); }
+      }
+      // sync a local-only dismissal up to the account
+      var ls = 0; try { ls = parseInt(localStorage.getItem(BC_SEEN) || '0', 10) || 0; } catch (e) {}
+      if (ls >= bc.at && (u.bcSeen || 0) < bc.at && MKAuth.setBroadcastSeen) { try { MKAuth.setBroadcastSeen(ls); } catch (e) {} }
+    }
+    paintBadges();
+  }
+  function hookAuth() { if (window.MKAuth && MKAuth.onChange) { MKAuth.onChange(onAcct); onAcct(); return true; } return false; }
+  if (!hookAuth()) { var tries = 0; var iv = setInterval(function () { if (hookAuth() || ++tries > 40) clearInterval(iv); }, 250); }
 
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', function () { MKNotify.check(); });
   else MKNotify.check();

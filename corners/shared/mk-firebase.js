@@ -47,7 +47,7 @@
   function pub(uid, p) {
     p = p || {};
     return { id: uid, email: p.email || '', name: p.name || '', role: p.role || 'parent',
-             avatar: p.avatar || '🧑', createdAt: p.createdAt || now(), stars: p.stars || 0, admin: isAdminEmail(p.email) };
+             avatar: p.avatar || '🧑', createdAt: p.createdAt || now(), stars: p.stars || 0, bcSeen: p.bcSeen || 0, admin: isAdminEmail(p.email) };
   }
   // Normalise Firebase's verbose error codes to the SAME short codes the UI already handles.
   function mapErr(e) {
@@ -210,6 +210,11 @@
       var uid = uidNow(); if (!uid || !n) return Promise.resolve(true);
       return db.collection('users').doc(uid)
         .set({ stars: firebase.firestore.FieldValue.increment(n) }, { merge: true })
+        .then(function () { return true; }).catch(function () { return true; });
+    },
+    setBroadcastSeen: function (ts) {
+      var uid = uidNow(); if (!uid) return Promise.resolve(true);
+      return db.collection('users').doc(uid).set({ bcSeen: ts || now() }, { merge: true })
         .then(function () { return true; }).catch(function () { return true; });
     },
     getLeaderboard: function () {
