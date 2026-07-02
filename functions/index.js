@@ -138,7 +138,7 @@ exports.adminReport = onCall(
     const postsTimeline = {}; // dayKey -> count
     postsSnap.forEach((d) => {
       const p = d.data() || {};
-      const t = ms(p.createdAt) || ms(p.ts);
+      const t = ms(p.at) || ms(p.createdAt) || ms(p.ts);
       const likes = Array.isArray(p.likes) ? p.likes.length : (typeof p.likes === 'number' ? p.likes : 0);
       totalLikes += likes;
       if (members[p.uid]) { members[p.uid].posts++; members[p.uid].likesReceived += likes; touch(p.uid, t); }
@@ -149,7 +149,7 @@ exports.adminReport = onCall(
     // ── Comments ──
     commentsSnap.forEach((d) => {
       const c = d.data() || {};
-      const t = ms(c.createdAt) || ms(c.ts);
+      const t = ms(c.at) || ms(c.createdAt) || ms(c.ts);
       if (members[c.uid]) { members[c.uid].comments++; touch(c.uid, t); }
     });
 
@@ -157,7 +157,14 @@ exports.adminReport = onCall(
     joinsSnap.forEach((d) => {
       const j = d.data() || {};
       const uid = d.ref.parent.parent && d.ref.parent.parent.id;
-      if (members[uid]) { members[uid].challengesJoined++; touch(uid, ms(j.at) || ms(j.createdAt)); }
+      if (members[uid]) { members[uid].challengesJoined++; touch(uid, ms(j.at) || ms(j.createdAt) || ms(j.updatedAt)); }
+    });
+
+    // ── Challenge creators (making a challenge counts as activity) ──
+    challengesSnap.forEach((d) => {
+      const ch = d.data() || {};
+      const uid = ch.byUid || ch.uid;
+      if (members[uid]) touch(uid, ms(ch.createdAt) || ms(ch.at));
     });
 
     // ── Private learning progress (admin-only visibility) ──
