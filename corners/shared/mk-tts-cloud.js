@@ -18,17 +18,22 @@
   var EP = window.MK_TTS_ENDPOINT || '';
   var audio = null, memo = {};
 
+  // Narrator gender per corner: a page sets window.MK_NARRATOR_GENDER='male'
+  // (default 'female' = the current voice). Used for both lang voices.
+  function gender() { return (window.MK_NARRATOR_GENDER === 'male') ? 'male' : 'female'; }
+
   function stop() {
     if (audio) { try { audio.pause(); } catch (e) {} audio = null; }
   }
 
   function fetchUrl(text, lang) {
-    var key = lang + '|' + text;
+    var g = gender();
+    var key = lang + '|' + g + '|' + text;
     if (memo[key]) return Promise.resolve(memo[key]);
     return fetch(EP, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ text: text, lang: lang }),
+      body: JSON.stringify({ text: text, lang: lang, gender: g }),
     }).then(function (r) {
       if (!r.ok) throw new Error('tts http ' + r.status);
       return r.json();

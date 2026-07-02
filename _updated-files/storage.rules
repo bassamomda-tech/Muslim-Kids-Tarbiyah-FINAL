@@ -1,0 +1,27 @@
+rules_version = '2';
+service firebase.storage {
+  match /b/{bucket}/o {
+
+    function isAdmin() {
+      return request.auth != null && request.auth.token.email == 'bassamomda91@gmail.com';
+    }
+
+    // Kids' challenge audio: challenge-audio/{challengeId}/{uid}/{file}
+    // - any signed-in family can listen
+    // - only the owner (uid in the path) can upload, and only small audio files
+    // - owner or admin can delete
+    match /challenge-audio/{cid}/{uid}/{file} {
+      allow read: if request.auth != null;
+      allow create, update: if request.auth != null
+        && request.auth.uid == uid
+        && request.resource.size < 25 * 1024 * 1024
+        && request.resource.contentType.matches('audio/.*');
+      allow delete: if request.auth != null && (request.auth.uid == uid || isAdmin());
+    }
+
+    // Everything else is closed by default
+    match /{allPaths=**} {
+      allow read, write: if false;
+    }
+  }
+}

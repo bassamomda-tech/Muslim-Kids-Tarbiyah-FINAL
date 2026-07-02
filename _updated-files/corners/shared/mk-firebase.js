@@ -1,0 +1,395 @@
+/* ════════════════════════════════════════════════════════════════
+   mk-firebase.js — LIVE backend adapter for MKAuth (Firebase).
+
+   Drop-in cloud replacement for the offline LocalAdapter in mk-auth.js.
+   Implements the SAME method names, so no UI code changes.
+
+   Self-activating: if the Firebase SDK (compat) and window.firebaseConfig
+   are present, it initialises Firebase, registers itself via
+   MKAuth.use(...), and re-hydrates the session. If Firebase is missing
+   (e.g. a page that didn't load the SDK), it does nothing and the
+   offline LocalAdapter keeps working — so every page is safe.
+
+   LOAD ORDER (after the Firebase compat SDK + config + mk-auth.js):
+     firebase-app-compat.js
+     firebase-auth-compat.js
+     firebase-firestore-compat.js
+     firebase-config.js        (window.firebaseConfig = {...})
+     mk-auth.js                (defines window.MKAuth, default = local)
+     mk-firebase.js            (this file — swaps in Firebase)
+
+   FIRESTORE SHAPE:
+     users/{uid}        → { name, role, avatar, email, createdAt }
+     progress/{uid}     → { at, data }
+     challenges/{id}    → { icon, title, desc, days, members, by, createdAt }
+     joins/{uid}/items/{challengeId} → { progress, at }
+     posts/{id}         → { who, avatar, uid, text, at, likes }
+   ════════════════════════════════════════════════════════════════ */
+(function () {
+  'use strict';
+
+  if (!window.MKAuth) return;                  // mk-auth.js must load first
+  if (!window.firebase || !window.firebaseConfig) return; // page has no SDK → stay offline
+
+  // Initialise once (other pages may already have called initializeApp)
+  try {
+    if (!firebase.apps || !firebase.apps.length) firebase.initializeApp(window.firebaseConfig);
+  } catch (e) { return; } // bad config → keep local adapter
+
+  var auth, db, storage;
+  try { auth = firebase.auth(); db = firebase.firestore(); }
+  catch (e) { return; }
+  try { storage = firebase.storage ? firebase.storage() : null; } catch (e) { storage = null; }
+
+  function now() { return Date.now(); }
+  var ADMIN_EMAILS = ['bassamomda91@gmail.com'];
+  function isAdminEmail(e) { return !!e && ADMIN_EMAILS.indexOf(String(e).trim().toLowerCase()) >= 0; }
+  function pub(uid, p) {
+    p = p || {};
+    return { id: uid, email: p.email || '', name: p.name || '', role: p.role || 'parent',
+             avatar: p.avatar || '🧑', createdAt: p.createdAt || now(), stars: p.stars || 0, bcSeen: p.bcSeen || 0, admin: isAdminEmail(p.email) };
+  }
+  // Normalise Firebase's verbose error codes to the SAME short codes the UI already handles.
+  function mapErr(e) {
+    var c = (e && e.code) || '';
+    if (c === 'auth/email-already-in-use') return new Error('exists');
+    if (c === 'auth/invalid-email')        return new Error('missing');
+    if (c === 'auth/missing-password' || c === 'auth/weak-password') return new Error('weakpass');
+    if (c === 'auth/user-not-found' || c === 'auth/wrong-password' ||
+        c === 'auth/invalid-credential' || c === 'auth/invalid-login-credentials') return new Error('badcreds');
+    if (c === 'auth/too-many-requests')    return new Error('toomany');
+    if (c === 'auth/network-request-failed') return new Error('network');
+    return e instanceof Error ? e : new Error(String(c || 'error'));
+  }
+  function uidNow() { var u = auth.currentUser; return u ? u.uid : null; }
+
+  // 💓 Lightweight presence: stamp users/{uid}.lastSeen so the admin report
+  // knows a family actually OPENED the site — throttled to once per day per device.
+  function touchLastSeen(uid) {
+    if (!uid) return;
+    try {
+      var k = 'mk:lastSeenPushed:' + uid;
+      var last = parseInt(localStorage.getItem(k) || '0', 10) || 0;
+      if (Date.now() - last < 20 * 60 * 60 * 1000) return; // already stamped in last ~20h
+      localStorage.setItem(k, String(Date.now()));
+      db.collection('users').doc(uid).set({ lastSeen: now() }, { merge: true }).catch(function () {});
+    } catch (e) {}
+  }
+
+  var FirebaseAdapter = {
+    name: 'firebase',
+
+    /* ---------- AUTH ---------- */
+    register: function (data) {
+      var email = String(data.email || '').trim().toLowerCase();
+      var pass  = String(data.password || '');
+      if (!email || !pass) return Promise.reject(new Error('missing'));
+      var profile = {
+        name: (data.name || '').trim() || email.split('@')[0],
+        role: data.role || 'parent',
+        avatar: data.avatar || '🧑',
+        email: email, createdAt: now()
+      };
+      return auth.createUserWithEmailAndPassword(email, pass)
+        .then(function (cred) {
+          var uid = cred.user.uid;
+          return db.collection('users').doc(uid).set(profile)
+            .then(function () { return pub(uid, profile); });
+        })
+        .catch(function (e) { return Promise.reject(mapErr(e)); });
+    },
+
+    login: function (data) {
+      var email = String(data.email || '').trim().toLowerCase();
+      var pass  = String(data.password || '');
+      if (!email || !pass) return Promise.reject(new Error('missing'));
+      return auth.signInWithEmailAndPassword(email, pass)
+        .then(function (cred) {
+          var uid = cred.user.uid;
+          return db.collection('users').doc(uid).get()
+            .then(function (snap) { return pub(uid, snap.exists ? snap.data() : { email: email }); });
+        })
+        .catch(function (e) { return Promise.reject(mapErr(e)); });
+    },
+
+    logout: function () { return auth.signOut().then(function () { return true; }); },
+
+    // Resolves once Firebase reports the restored session (handles page reloads).
+    current: function () {
+      return new Promise(function (res) {
+        var off = auth.onAuthStateChanged(function (user) {
+          off();
+          if (!user) return res(null);
+          touchLastSeen(user.uid);
+          db.collection('users').doc(user.uid).get()
+            .then(function (snap) { res(pub(user.uid, snap.exists ? snap.data() : { email: user.email })); })
+            .catch(function () { res(pub(user.uid, { email: user.email })); });
+        });
+      });
+    },
+
+    updateProfile: function (patch) {
+      var uid = uidNow();
+      if (!uid) return Promise.reject(new Error('noauth'));
+      var clean = {};
+      ['name', 'avatar', 'role'].forEach(function (k) { if (patch[k] != null) clean[k] = patch[k]; });
+      return db.collection('users').doc(uid).set(clean, { merge: true })
+        .then(function () { return db.collection('users').doc(uid).get(); })
+        .then(function (snap) { return pub(uid, snap.exists ? snap.data() : {}); });
+    },
+
+    /* ---------- PROGRESS SYNC ---------- */
+    saveProgress: function (snapshot) {
+      var uid = uidNow();
+      if (!uid) return Promise.reject(new Error('noauth'));
+      return db.collection('progress').doc(uid).set({ at: now(), data: snapshot }).then(function () { return true; });
+    },
+    loadProgress: function () {
+      var uid = uidNow();
+      if (!uid) return Promise.resolve(null);
+      return db.collection('progress').doc(uid).get()
+        .then(function (snap) { return snap.exists ? snap.data() : null; });
+    },
+
+    /* ---------- COMMUNITY: challenges ---------- */
+    listChallenges: function () {
+      var uid = uidNow();
+      return db.collection('challenges').orderBy('createdAt', 'desc').get()
+        .then(function (qs) {
+          var list = []; qs.forEach(function (d) { var x = d.data(); x.id = d.id; list.push(x); });
+          if (!uid) { list.forEach(function (c) { c.joined = false; c.myProgress = 0; }); return list; }
+          return db.collection('joins').doc(uid).collection('items').get()
+            .then(function (js) {
+              var joins = {}; js.forEach(function (d) { joins[d.id] = d.data(); });
+              list.forEach(function (c) { c.joined = !!joins[c.id]; c.myProgress = joins[c.id] ? (joins[c.id].progress || 0) : 0; });
+              return list;
+            });
+        })
+        .catch(function () { return []; });
+    },
+    joinChallenge: function (id) {
+      var uid = uidNow(); if (!uid) return Promise.reject(new Error('noauth'));
+      return db.collection('joins').doc(uid).collection('items').doc(id)
+        .set({ progress: 0, at: now() }, { merge: true })
+        .then(function () { return db.collection('challenges').doc(id).update({ members: firebase.firestore.FieldValue.increment(1) }).catch(function(){}); })
+        .then(function () { return true; });
+    },
+    setChallengeProgress: function (id, progress) {
+      var uid = uidNow(); if (!uid) return Promise.reject(new Error('noauth'));
+      var self = this;
+      var ref = db.collection('joins').doc(uid).collection('items').doc(id);
+      return ref.get().then(function (snap) {
+        var old = (snap.exists && snap.data().progress) || 0;
+        var gained = Math.max(0, progress - old);
+        return ref.set({ progress: progress, at: now() }, { merge: true }).then(function () {
+          if (gained > 0) return self.awardStars(gained * 10);
+          return true;
+        });
+      }).then(function () { return true; });
+    },
+    createChallenge: function (ch) {
+      var u = window.MKAuth.user();
+      var admin = !!(u && u.admin);
+      return db.collection('challenges').add({
+        icon: ch.icon || '🎯', title: ch.title, desc: ch.desc,
+        days: Math.max(1, parseInt(ch.days, 10) || 7),
+        unit: ch.unit || { ar: 'يوم', en: 'day' },
+        goalType: ch.goalType || 'days',
+        age: ch.age || 'all',
+        difficulty: ch.difficulty || 'beginner',
+        official: admin,
+        members: 1, by: (u && u.name) || 'ضيف', byUid: uidNow() || '', createdAt: now()
+      }).then(function () { return true; });
+    },
+    deleteChallenge: function (id) {
+      return db.collection('challenges').doc(id).delete()
+        .then(function () { return true; }).catch(function () { return true; });
+    },
+    editChallenge: function (id, f) {
+      f = f || {}; var patch = {};
+      if (f.title) patch.title = f.title;
+      if (f.desc) patch.desc = f.desc;
+      if (f.icon) patch.icon = f.icon;
+      if (f.days) patch.days = Math.max(1, parseInt(f.days, 10) || 7);
+      if (f.unit) patch.unit = f.unit;
+      if (f.goalType) patch.goalType = f.goalType;
+      if (f.age) patch.age = f.age;
+      if (f.difficulty) patch.difficulty = f.difficulty;
+      return db.collection('challenges').doc(id).set(patch, { merge: true })
+        .then(function () { return true; }).catch(function () { return true; });
+    },
+
+    /* ---------- MOTIVATION: stars on the public profile (for leaderboard) ---------- */
+    awardStars: function (n) {
+      var uid = uidNow(); if (!uid || !n) return Promise.resolve(true);
+      return db.collection('users').doc(uid)
+        .set({ stars: firebase.firestore.FieldValue.increment(n) }, { merge: true })
+        .then(function () { return true; }).catch(function () { return true; });
+    },
+    setBroadcastSeen: function (ts) {
+      var uid = uidNow(); if (!uid) return Promise.resolve(true);
+      return db.collection('users').doc(uid).set({ bcSeen: ts || now() }, { merge: true })
+        .then(function () { return true; }).catch(function () { return true; });
+    },
+    getLeaderboard: function () {
+      return db.collection('users').orderBy('stars', 'desc').limit(20).get()
+        .then(function (qs) {
+          var list = []; qs.forEach(function (d) {
+            var x = d.data(); if (!x.stars) return;
+            list.push({ id: d.id, name: x.name || 'عائلة', avatar: x.avatar || '🧑', stars: x.stars || 0 });
+          });
+          return list;
+        }).catch(function () { return []; });
+    },
+
+    /* ---------- CHALLENGE discussion thread ---------- */
+    listChallengeComments: function (cid) {
+      return db.collection('challenges').doc(cid).collection('comments').orderBy('at', 'asc').limit(200).get()
+        .then(function (qs) { var l = []; qs.forEach(function (d) { var x = d.data(); x.id = d.id; l.push(x); }); return l; })
+        .catch(function () { return []; });
+    },
+    addChallengeComment: function (cid, text) {
+      var u = window.MKAuth.user();
+      return db.collection('challenges').doc(cid).collection('comments').add({
+        who: (u && u.name) || 'ضيف', avatar: (u && u.avatar) || '🧑', uid: uidNow() || '',
+        admin: !!(u && u.admin), text: String(text).slice(0, 400), at: now()
+      }).then(function () { return true; });
+    },
+    deleteChallengeComment: function (cid, id) {
+      return db.collection('challenges').doc(cid).collection('comments').doc(id).delete()
+        .then(function () { return true; }).catch(function () { return true; });
+    },
+
+    /* ---------- CHALLENGE videos (Firebase Storage) ---------- */
+    listVideos: function (cid) {
+      return db.collection('challenges').doc(cid).collection('videos').orderBy('at', 'desc').limit(60).get()
+        .then(function (qs) { var l = []; qs.forEach(function (d) { var x = d.data(); x.id = d.id; l.push(x); }); return l; })
+        .catch(function () { return []; });
+    },
+    uploadVideo: function (cid, file, meta, onProgress) {
+      var uid = uidNow(); if (!uid) return Promise.reject(new Error('noauth'));
+      if (!storage) return Promise.reject(new Error('nostorage'));
+      meta = meta || {};
+      var u = window.MKAuth.user();
+      var ext = (file.name && file.name.split('.').pop()) || 'webm';
+      var path = 'challenge-audio/' + cid + '/' + uid + '/' + now() + '.' + ext;
+      var ref = storage.ref().child(path);
+      var task = ref.put(file, { contentType: file.type || 'audio/webm' });
+      return new Promise(function (resolve, reject) {
+        task.on('state_changed',
+          function (snap) { if (onProgress) onProgress(Math.round(snap.bytesTransferred / snap.totalBytes * 100)); },
+          function (err) { reject(err); },
+          function () {
+            ref.getDownloadURL().then(function (url) {
+              return db.collection('challenges').doc(cid).collection('videos').add({
+                who: (u && u.name) || 'ضيف', avatar: (u && u.avatar) || '🧑', uid: uid,
+                kid: String(meta.kid || '').slice(0, 40),
+                caption: String(meta.caption || '').slice(0, 200),
+                url: url, path: path, at: now(), likes: 0
+              });
+            }).then(function () { resolve(true); }).catch(reject);
+          }
+        );
+      });
+    },
+    likeVideo: function (cid, vid) {
+      return db.collection('challenges').doc(cid).collection('videos').doc(vid)
+        .update({ likes: firebase.firestore.FieldValue.increment(1) })
+        .then(function () { return true; }).catch(function () { return true; });
+    },
+    deleteVideo: function (cid, vid, path) {
+      var p = Promise.resolve();
+      if (storage && path) { p = storage.ref().child(path).delete().catch(function () {}); }
+      return p.then(function () {
+        return db.collection('challenges').doc(cid).collection('videos').doc(vid).delete().catch(function () {});
+      }).then(function () { return true; });
+    },
+
+    /* ---------- COMMUNITY: posts ---------- */
+    getBlocked: function () {
+      var uid = uidNow(); if (!uid) return Promise.resolve([]);
+      return db.collection('blocks').doc(uid).get()
+        .then(function (s) { return (s.exists && s.data().users) || []; })
+        .catch(function () { return []; });
+    },
+    listPosts: function () {
+      return this.getBlocked().then(function (blocked) {
+        return db.collection('posts').orderBy('at', 'desc').limit(100).get()
+          .then(function (qs) {
+            var list = []; qs.forEach(function (d) {
+              var x = d.data(); x.id = d.id;
+              if (blocked.indexOf(x.uid) < 0 && blocked.indexOf(x.who) < 0) list.push(x);
+            });
+            list.sort(function (a, c) { return ((c.pinned ? 1 : 0) - (a.pinned ? 1 : 0)) || (c.at - a.at); });
+            return list;
+          });
+      }).catch(function () { return []; });
+    },
+    addPost: function (text, opts) {
+      opts = opts || {};
+      var u = window.MKAuth.user();
+      var doc = {
+        who: (u && u.name) || 'ضيف', avatar: (u && u.avatar) || '🧑',
+        uid: uidNow() || '', text: String(text).slice(0, 600), at: now(), likes: 0
+      };
+      if (u && u.admin && opts.admin) { doc.admin = true; doc.kind = opts.kind || 'announcement'; doc.pinned = true; }
+      return db.collection('posts').add(doc).then(function () {
+        if (doc.admin) {
+          db.collection('meta').doc('community').set({
+            lastAdminAt: doc.at, kind: doc.kind || 'announcement',
+            text: doc.text.slice(0, 140), by: doc.who
+          }, { merge: true }).catch(function () {});
+        }
+        return true;
+      });
+    },
+    likePost: function (id) {
+      return db.collection('posts').doc(id).update({ likes: firebase.firestore.FieldValue.increment(1) })
+        .then(function () { return true; }).catch(function () { return true; });
+    },
+    broadcast: function (ar, en, audience) {
+      var u = window.MKAuth.user();
+      if (!u || !u.admin) return Promise.resolve(false);
+      return db.collection('meta').doc('broadcast').set({
+        at: now(), ar: String(ar || '').slice(0, 300), en: String(en || ar || '').slice(0, 300),
+        audience: audience || 'all', by: (u && u.name) || 'الإدارة'
+      }).then(function () { return true; }).catch(function () { return false; });
+    },
+    deletePost: function (id) {
+      return db.collection('posts').doc(id).delete().then(function () { return true; }).catch(function () { return true; });
+    },
+    deleteComment: function (postId, cid) {
+      return db.collection('posts').doc(postId).collection('comments').doc(cid).delete()
+        .then(function () { return true; }).catch(function () { return true; });
+    },
+    reportPost: function (id, reason) {
+      var u = window.MKAuth.user();
+      return db.collection('reports').add({
+        postId: id, reason: reason || '', by: uidNow() || '', byName: (u && u.name) || '', at: now()
+      }).then(function () { return true; }).catch(function () { return true; });
+    },
+    blockUser: function (who, buid) {
+      var uid = uidNow(); if (!uid) return Promise.reject(new Error('noauth'));
+      var key = buid || who; if (!key) return Promise.resolve(true);
+      return db.collection('blocks').doc(uid)
+        .set({ users: firebase.firestore.FieldValue.arrayUnion(key) }, { merge: true })
+        .then(function () { return true; });
+    },
+    listComments: function (postId) {
+      return db.collection('posts').doc(postId).collection('comments').orderBy('at', 'asc').limit(200).get()
+        .then(function (qs) { var list = []; qs.forEach(function (d) { var x = d.data(); x.id = d.id; list.push(x); }); return list; })
+        .catch(function () { return []; });
+    },
+    addComment: function (postId, text) {
+      var u = window.MKAuth.user();
+      return db.collection('posts').doc(postId).collection('comments').add({
+        who: (u && u.name) || 'ضيف', avatar: (u && u.avatar) || '🧑', uid: uidNow() || '',
+        admin: !!(u && u.admin), text: String(text).slice(0, 400), at: now()
+      }).then(function () { return true; });
+    },
+  };
+
+  // Activate the live backend, then re-hydrate the session through it.
+  window.MKAuth.use(FirebaseAdapter);
+  window.MKAuth.refresh();
+})();

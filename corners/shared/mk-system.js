@@ -160,6 +160,23 @@
     s.defer = true; document.head.appendChild(s);
   }
 
+  /* ═══ Narrator gender per corner ═══
+     Corners whose guide/storyteller is a BOY use a male voice (same
+     natural Arabic quality). All others stay female (default).
+     Edit MALE_CORNERS to taste — values are corner ids from CORNERS above. */
+  var MALE_CORNERS = ['history', 'sport'];
+  if (!window.MK_NARRATOR_GENDER) {
+    try {
+      var path = location.pathname.toLowerCase();
+      var hit = CORNERS.filter(function (c) {
+        var file = c.base.split('/').pop().replace('.html', '').toLowerCase();
+        return path.indexOf('/' + file + '.html') >= 0 || path.indexOf('/' + file + '/') >= 0
+            || path.indexOf(c.base.toLowerCase()) >= 0;
+      })[0];
+      if (hit && MALE_CORNERS.indexOf(hit.id) >= 0) window.MK_NARRATOR_GENDER = 'male';
+    } catch (e) {}
+  }
+
   window.MK = {
     CORNERS: CORNERS,
     cornerNav: cornerNav, rootPrefix: rootPrefix, rel: rel,
