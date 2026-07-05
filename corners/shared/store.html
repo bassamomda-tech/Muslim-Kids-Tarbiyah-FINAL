@@ -77,6 +77,17 @@
   .cart-row button{background:rgba(192,57,43,.85);color:#fff;border:none;border-radius:.6rem;width:1.7rem;height:1.7rem;cursor:pointer;font-weight:800;flex:0 0 auto}
   .cart-pay{margin-top:1rem;border-top:1px solid var(--line);padding-top:1rem}
   .cart-note{color:var(--muted);font-size:.78rem;line-height:1.6;margin:.2rem 0 .9rem}
+  .pay-or{display:flex;align-items:center;gap:.6rem;color:var(--muted);font-size:.78rem;font-weight:800;margin:.9rem 0 .7rem}
+  .pay-or::before,.pay-or::after{content:'';flex:1;height:1px;background:var(--line)}
+  .vfcash{border:1.5px solid rgba(226,0,26,.4);background:linear-gradient(160deg,rgba(226,0,26,.08),rgba(226,0,26,.02));border-radius:1rem;padding:.8rem .9rem}
+  .vfcash-h{font-weight:900;color:#e2001a;margin-bottom:.3rem;font-size:.95rem}
+  .vfcash-num{display:flex;align-items:center;gap:.5rem;background:rgba(0,0,0,.18);border-radius:.7rem;padding:.5rem .7rem;margin-bottom:.6rem}
+  .vfcash-num .vf-n{font-weight:900;font-size:1.05rem;letter-spacing:.5px;direction:ltr;flex:1}
+  .vf-copy{background:#e2001a;color:#fff;border:none;border-radius:.6rem;padding:.35rem .8rem;font-weight:800;font-family:inherit;cursor:pointer;flex:0 0 auto}
+  .vf-wa{display:flex;align-items:center;justify-content:center;gap:.4rem;background:#25D366;color:#fff;text-decoration:none;border-radius:.7rem;padding:.55rem;font-weight:800}
+  .vf-send{display:flex;gap:.5rem}
+  .vf-send a{flex:1}
+  .vf-fb{display:flex;align-items:center;justify-content:center;gap:.4rem;background:#1877F2;color:#fff;text-decoration:none;border-radius:.7rem;padding:.55rem;font-weight:800}
   .auth-btn{display:flex;align-items:center;gap:.3rem;background:transparent;border:1.5px solid var(--line);color:var(--ink);border-radius:2rem;padding:.4rem .9rem;font-weight:800;font-family:inherit;font-size:.82rem;cursor:pointer;max-width:9rem;overflow:hidden;white-space:nowrap;text-overflow:ellipsis}
   .auth-tabs{display:flex;gap:.5rem;margin:.5rem 0 .8rem}
   .auth-tabs button{flex:1;background:var(--card);border:1.5px solid var(--line);color:var(--ink);border-radius:.7rem;padding:.55rem;font-weight:800;font-family:inherit;cursor:pointer;font-size:.9rem}
@@ -126,6 +137,9 @@
 
     <div class="sec-h"><span class="si">📚</span><h2><span class="ar-only">حزمُ الكتب — لكلِّ ركنٍ حزمة</span><span class="en-only">Book Bundles — one per corner</span></h2></div>
     <p class="banner" style="text-align:center;margin:-.3rem 0 1rem;padding:.7rem 1rem;font-size:.86rem;color:var(--muted)"><span class="ar-only">كلُّ حزمةٍ تفتحُ <b style="color:var(--gold-lt)">جميعَ كتبِ الركن</b> دفعةً واحدة — <b style="color:var(--gold-lt)">£٥ للحزمة</b>.</span><span class="en-only">Each bundle unlocks <b style="color:var(--gold-lt)">all of that corner's books</b> at once — <b style="color:var(--gold-lt)">£5 per bundle</b>.</span></p>
+    <div style="text-align:center;margin:-.4rem 0 1.3rem">
+      <button onclick="addAllBundles()" style="background:linear-gradient(135deg,var(--green),#176b46);color:#fff;border:none;border-radius:1rem;padding:.75rem 1.4rem;font-weight:900;font-family:inherit;font-size:.95rem;cursor:pointer;box-shadow:0 8px 22px rgba(31,138,91,.35)">🎁 <span class="ar-only">احصُل على كلِّ الأركان — £٢٠ فقط <span style="opacity:.8;font-weight:700">(١٠٠٠ جنيه · بدلاً من £٥٥)</span></span><span class="en-only">Get all corners — just £20 <span style="opacity:.8;font-weight:700">(1000 EGP · was £55)</span></span></button>
+    </div>
     <div id="bookGroups"></div>
 
     <div class="sec-h"><span class="si">💚</span><h2><span class="ar-only">طرقُ الدعم</span><span class="en-only">Ways to Support</span></h2></div>
@@ -148,8 +162,25 @@
       <div class="cart-pay">
         <p class="cart-note"><span class="ar-only">راجِع موادّك المختارة، ثمّ أكمِل الدعمَ عبر الزرّ الآمن أدناه. بعد الدفعِ تُفتَح الموادّ المميّزة.</span><span class="en-only">Review your selected materials, then complete your support via the secure button below. Premium materials unlock after payment.</span></p>
         <div style="display:flex;align-items:center;justify-content:space-between;font-weight:900;font-size:1.05rem;margin:.2rem 0 .9rem"><span><span class="ar-only">الإجمالي</span><span class="en-only">Total</span> <span style="color:var(--muted);font-weight:600;font-size:.78rem">(£5 × <span class="ar-only">حزمة</span><span class="en-only">bundle</span>)</span></span><b id="cartTotal" style="color:var(--gold-lt)">£0.00</b></div>
+        <div id="cartDisc" style="display:none;background:rgba(31,138,91,.16);border:1px solid rgba(31,138,91,.5);color:#a8f0c4;border-radius:.7rem;padding:.5rem .7rem;font-weight:800;font-size:.84rem;margin:-.4rem 0 .9rem;text-align:center">🎁 <span class="ar-only">خصمُ الحزمة الكاملة — كلُّ الأركان بـ £٢٠ (١٠٠٠ جنيه) بدلاً من £٥٥</span><span class="en-only">Full-bundle discount — all corners for £20 (1000 EGP) instead of £55</span></div>
         <div id="authHint" class="cart-note" style="margin:.2rem 0 .8rem"></div>
         <div id="paypal-btns"></div>
+        <div class="pay-or"><span><span class="ar-only">أو</span><span class="en-only">or</span></span></div>
+        <div class="vfcash">
+          <div class="vfcash-h">💳 <span class="ar-only">فودافون كاش أو إنستاباي</span><span class="en-only">Vodafone Cash or InstaPay</span></div>
+          <p class="cart-note" style="margin:.1rem 0 .5rem">
+            <span class="ar-only">حوِّل المبلغ (<b id="vfTotalAr">٥ جنيه</b>) على الرقم التالي عبر <b>فودافون كاش</b> أو <b>إنستاباي</b>، ثم أرسِل صورة الإيصال لتفعيل موادّك:</span>
+            <span class="en-only">Transfer the amount (<b id="vfTotalEn">£5</b>) to the number below via <b>Vodafone Cash</b> or <b>InstaPay</b>, then send the receipt screenshot to unlock your materials:</span>
+          </p>
+          <div class="vfcash-num">
+            <span class="vf-n" id="vfNum">01066324179</span>
+            <button type="button" class="vf-copy" onclick="copyVf()"><span class="ar-only">نسخ</span><span class="en-only">Copy</span></button>
+          </div>
+          <div class="vf-send">
+            <a class="vf-wa" id="vfWa" href="https://wa.me/447543774533" target="_blank" rel="noopener">💬 <span class="ar-only">إيصال عبر واتساب</span><span class="en-only">Receipt via WhatsApp</span></a>
+            <a class="vf-fb" id="vfFb" href="https://www.facebook.com/share/1Ae3VyssLb/?mibextid=wwXIfr" target="_blank" rel="noopener">📘 <span class="ar-only">إيصال عبر فيسبوك</span><span class="en-only">Receipt via Facebook</span></a>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -568,8 +599,35 @@
       : (ar?'💡 <a href="#" onclick="closeCart();openAuth();return false" style="color:var(--gold-lt);font-weight:800">سجِّل الدخول</a> لحفظِ مشترياتك على كلِّ أجهزتك.':'💡 <a href="#" onclick="closeCart();openAuth();return false" style="color:var(--gold-lt);font-weight:800">Log in</a> to save your purchases across devices.');
   }
   function closeCart(){ document.getElementById('cartOv').classList.remove('open'); }
-  function cartTotal(){ return CART.length * 5; }
-  function updateTotal(){ var e=document.getElementById('cartTotal'); if(e) e.textContent='£'+cartTotal().toFixed(2); }
+  function bundleIdsAll(){ var a=[]; for(var i=0;i<BOOKS.length;i++) a.push('bundle'+i); return a; }
+  function cartTotal(){
+    var bundles=0, others=0;
+    CART.forEach(function(id){ if(/^bundle\d+$/.test(id)) bundles++; else others++; });
+    var bundlesPrice = (bundles===BOOKS.length && BOOKS.length>0) ? 20 : bundles*5;
+    return bundlesPrice + others*5;
+  }
+  function allBundlesInCart(){
+    var have=bundleIdsAll().filter(function(id){ return CART.indexOf(id)>=0; }).length;
+    return BOOKS.length>0 && have===BOOKS.length;
+  }
+  function addAllBundles(){
+    bundleIdsAll().forEach(function(id){ if(!isPaid(id) && CART.indexOf(id)<0) CART.push(id); });
+    saveCart(); updateCartUI(); renderCart(); openCart();
+    toast(lang==='ar'?'أُضيفت كل الحزم — خصم! ✓':'All bundles added — discount! ✓');
+  }
+  function updateTotal(){
+    var e=document.getElementById('cartTotal'); if(e) e.textContent='£'+cartTotal().toFixed(2);
+    var egp=Math.round(cartTotal()*50);
+    var va=document.getElementById('vfTotalAr'); if(va) va.textContent=egp.toLocaleString('ar-EG')+' جنيه';
+    var ve=document.getElementById('vfTotalEn'); if(ve) ve.textContent='£'+cartTotal().toFixed(2)+' (~'+egp+' EGP)';
+    var dc=document.getElementById('cartDisc');
+    if(dc){ dc.style.display = allBundlesInCart() ? 'block' : 'none'; }
+  }
+  function copyVf(){
+    var num='01066324179';
+    if(navigator.clipboard){ navigator.clipboard.writeText(num); }
+    toast(lang==='ar'?'تم نسخ الرقم ✓':'Number copied ✓');
+  }
   function renderPaypal(){
     if(ppRendered) return;
     if(!window.paypal||!paypal.Buttons){ setTimeout(renderPaypal,300); return; }
@@ -578,8 +636,8 @@
       onClick:function(data,actions){ if(!CART.length){ toast(lang==='ar'?'سلّتك فارغة':'Your cart is empty'); return actions.reject(); } return actions.resolve(); },
       createOrder:function(data,actions){
         return actions.order.create({ purchase_units:[{
-          amount:{ currency_code:'GBP', value:cartTotal().toFixed(2), breakdown:{ item_total:{ currency_code:'GBP', value:cartTotal().toFixed(2) } } },
-          items: CART.map(function(id){ return { name:((REG[id]?txo(REG[id]):id)||'item').slice(0,127), quantity:'1', unit_amount:{ currency_code:'GBP', value:'5.00' } }; })
+          amount:{ currency_code:'GBP', value:cartTotal().toFixed(2) },
+          description: allBundlesInCart() ? 'All corner bundles (discount)' : (CART.length+' item(s)')
         }] });
       },
       onApprove:function(data,actions){ return actions.order.capture().then(function(){ grantPaid(CART.slice()); CART=[]; saveCart(); updateCartUI(); renderCart(); updateAuthHint(); toast(lang==='ar'?'تمّ الدفع، جزاك الله خيرًا ✓':'Payment complete — JazakAllah khayr ✓'); }); }
