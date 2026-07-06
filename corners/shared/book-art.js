@@ -144,24 +144,46 @@
 
   /* ════ PUZZLE / ACTIVITY (maze) ════ */
   function artPuz(acc,id){
+    // A REAL, solvable grid maze (recursive-backtracker / DFS carve).
     var rnd=seed(id), w=400,h=300;
-    var g='<rect width="'+w+'" height="'+h+'" fill="'+CREAM+'"/>';
-    g+='<rect width="'+w+'" height="'+h+'" fill="'+lighten(acc,0.86)+'"/>';
-    // concentric circular maze
-    var cx=200,cy=150;
-    for(var r=28;r<=120;r+=23){
-      var gap=0.5+rnd()*1.0, gs=rnd()*Math.PI*2;
-      g+='<path d="'+arcPath(cx,cy,r,gs,gs+2*Math.PI-gap)+'" fill="none" stroke="'+acc+'" stroke-width="3" stroke-linecap="round"/>';
+    var cols=12, rows=8, cell=30, ox=20, oy=30;
+    function idx(c,r){ return r*cols+c; }
+    var cells=[]; for(var i=0;i<cols*rows;i++) cells.push({v:false,n:true,e:true,s:true,w:true});
+    var stack=[0]; cells[0].v=true;
+    while(stack.length){
+      var cur=stack[stack.length-1], cr=Math.floor(cur/cols), cc=cur%cols, nb=[];
+      if(cr>0 && !cells[idx(cc,cr-1)].v) nb.push([idx(cc,cr-1),'n']);
+      if(cc<cols-1 && !cells[idx(cc+1,cr)].v) nb.push([idx(cc+1,cr),'e']);
+      if(cr<rows-1 && !cells[idx(cc,cr+1)].v) nb.push([idx(cc,cr+1),'s']);
+      if(cc>0 && !cells[idx(cc-1,cr)].v) nb.push([idx(cc-1,cr),'w']);
+      if(nb.length){
+        var pk=nb[Math.floor(rnd()*nb.length)], nx=pk[0], d=pk[1];
+        if(d==='n'){cells[cur].n=false;cells[nx].s=false;}
+        else if(d==='e'){cells[cur].e=false;cells[nx].w=false;}
+        else if(d==='s'){cells[cur].s=false;cells[nx].n=false;}
+        else {cells[cur].w=false;cells[nx].e=false;}
+        cells[nx].v=true; stack.push(nx);
+      } else stack.pop();
     }
-    // radial spokes (partial)
-    for(var i=0;i<8;i++){ var a=i*Math.PI/4+0.2; var r1=28+(i%2)*23, r2=120-(i%3)*23;
-      g+='<line x1="'+(cx+r1*Math.sin(a)).toFixed(1)+'" y1="'+(cy-r1*Math.cos(a)).toFixed(1)+'" x2="'+(cx+r2*Math.sin(a)).toFixed(1)+'" y2="'+(cy-r2*Math.cos(a)).toFixed(1)+'" stroke="'+acc+'" stroke-width="3" stroke-linecap="round" opacity="0.9"/>'; }
-    // start (outer) + finish (centre)
-    g+='<circle cx="'+cx+'" cy="'+(cy-132)+'" r="11" fill="'+TEAL+'"/><text x="'+cx+'" y="'+(cy-128)+'" font-size="11" fill="#fff" text-anchor="middle" font-family="sans-serif" font-weight="700">★</text>';
-    g+='<polygon points="'+star(cx,cy,15,6,8,0)+'" fill="'+GOLD+'" stroke="'+darken(GOLD,0.2)+'" stroke-width="1.5"/>';
-    g+=stars(rnd,w,h,8,acc,0.18);
+    // open entrance (left of top-left) + exit (right of bottom-right)
+    cells[0].w=false; cells[cols*rows-1].e=false;
+    var g='<rect width="'+w+'" height="'+h+'" fill="'+CREAM+'"/>';
+    g+='<rect x="'+ox+'" y="'+oy+'" width="'+(cols*cell)+'" height="'+(rows*cell)+'" rx="4" fill="'+lighten(acc,0.9)+'"/>';
+    var d='';
+    for(var r=0;r<rows;r++) for(var c=0;c<cols;c++){
+      var x=ox+c*cell, y=oy+r*cell, o=cells[idx(c,r)];
+      if(o.n) d+='M'+x+' '+y+'h'+cell;
+      if(o.w) d+='M'+x+' '+y+'v'+cell;
+      if(c===cols-1 && o.e) d+='M'+(x+cell)+' '+y+'v'+cell;
+      if(r===rows-1 && o.s) d+='M'+x+' '+(y+cell)+'h'+cell;
+    }
+    g+='<path d="'+d+'" fill="none" stroke="'+acc+'" stroke-width="2.6" stroke-linecap="square" stroke-linejoin="round"/>';
+    // start dot + finish star just outside the openings
+    g+='<circle cx="'+(ox-9)+'" cy="'+(oy+cell/2)+'" r="8" fill="'+TEAL+'"/>';
+    g+='<text x="'+(ox-9)+'" y="'+(oy+cell/2+16)+'" font-size="10" fill="'+darken(TEAL,0.2)+'" text-anchor="middle" font-family="sans-serif" font-weight="700">IN</text>';
+    g+='<polygon points="'+star(ox+cols*cell+10,oy+(rows-0.5)*cell,11,5,6,0)+'" fill="'+GOLD+'" stroke="'+darken(GOLD,0.2)+'" stroke-width="1.2"/>';
     g+=frame(w,h,acc,10,false);
-    return enc(svg(w,h,g));
+    return enc(svgFit(w,h,g));
   }
   function arcPath(cx,cy,r,a0,a1){
     var x0=cx+r*Math.cos(a0), y0=cy+r*Math.sin(a0), x1=cx+r*Math.cos(a1), y1=cy+r*Math.sin(a1);
@@ -241,7 +263,7 @@
     var id=el.id||'', kind=kindOf(id), acc=accentOf(el), src;
     if(kind==='cover') src=artCover(acc,id||'cover');
     else if(kind==='color'){ src=artColor(id); el.setAttribute('fit','contain'); }
-    else if(kind==='puz') src=artPuz(acc,id);
+    else if(kind==='puz'){ src=artPuz(acc,id); el.setAttribute('fit','contain'); }
     else if(kind==='hero') src=artHero(acc,id);
     else src=artDefault(acc,id);
     el.setAttribute('src',src);
@@ -258,4 +280,29 @@
   // re-run once more in case slots are added late
   window.addEventListener('load',function(){ setTimeout(run,30); });
   window.BookArt={run:run,fill:fill};
+
+  /* ── print-fit: scale each .leaf so it always fits ONE A4 page ──
+     The print stylesheet uses a fixed zoom (.74). Story pages can be
+     taller than one printable A4 (≈1062px at 96dpi with 8mm margins),
+     which would split them across two paper pages. Before printing,
+     give each leaf its own zoom so nothing is ever cut. */
+  var PRINT_BUDGET = 1050;           /* px of printable A4 height     */
+  var BASE_ZOOM    = 0.74;           /* matches the print stylesheet  */
+  function fitLeaves(){
+    document.querySelectorAll('.leaf').forEach(function(p){
+      p.style.zoom='';               /* reset, then measure natural   */
+      var h=p.scrollHeight||p.offsetHeight;
+      var z=Math.min(BASE_ZOOM, PRINT_BUDGET/Math.max(h,1));
+      p.style.zoom=String(z);
+    });
+  }
+  function unfitLeaves(){
+    document.querySelectorAll('.leaf').forEach(function(p){ p.style.zoom=''; });
+  }
+  window.addEventListener('beforeprint',fitLeaves);
+  window.addEventListener('afterprint',unfitLeaves);
+  if(window.matchMedia){
+    var mq=window.matchMedia('print');
+    if(mq.addEventListener) mq.addEventListener('change',function(e){ e.matches?fitLeaves():unfitLeaves(); });
+  }
 })();
