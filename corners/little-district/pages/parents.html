@@ -813,12 +813,34 @@ function openArticle(i){
 function closeModal(){ document.getElementById('modalBg').classList.remove('open'); }
 
 /* ---- resources ---- */
+function renderMurabbiFeature(){
+  const base='../../../';
+  const t = lang==='ar'
+    ? {tag:'جديد', title:'مرجع المربي — خلاصات «ألف باء التربية»', desc:'١٤ قسمًا عمليًا: إصلاح المربي، خطة اليوم والليلة، الانسحاب التربوي، علاج العناد والغضب والغيرة والخوف والنوم، التعليم وحفظ القرآن — مع برنامج ٣٠/٩٠ يومًا وجداول متابعة.', open:'افتح المرجع ←', print:'🖨 نسخة للطباعة'}
+    : {tag:'New', title:'The Murabbi Reference — “Alif Ba of Tarbiyah” digests', desc:'14 practical sections: fixing the parent first, the day-and-night plan, educational withdrawal, treating stubbornness, anger, jealousy, fear and sleep issues, education and Quran memorisation — with a 30/90-day program and tracking sheets.', open:'Open the reference ←', print:'🖨 Printable version'};
+  return `
+    <div class="res-cat">
+      <div class="res-cat-head"><span class="rc-ic">🧭</span><h3>${t.title}</h3></div>
+      <div class="res-grid">
+        <a class="res-card res-link" style="--rc:#0D6B54" href="${base}مرجع المربي — ألف باء التربية.html">
+          <h4>${t.tag} · ${lang==='ar'?'المرجع التفاعلي':'Interactive reference'}</h4>
+          <p>${t.desc}</p>
+          <span class="res-dl">${t.open}</span>
+        </a>
+        <a class="res-card res-link" style="--rc:#A07810" href="${base}مرجع المربي — نسخة للطباعة.html">
+          <h4>${t.print}</h4>
+          <p>${lang==='ar'?'النسخة نفسها مصفوفة على صفحات A4 — اطبعها أو احفظها PDF لتكون بين يديك.':'The same content laid out on A4 pages — print it or save as PDF.'}</p>
+          <span class="res-dl">${lang==='ar'?'⬇ فتح / طباعة':'⬇ Open / Print'}</span>
+        </a>
+      </div>
+    </div>`;
+}
 function renderResources(){
   const cats=[
     {key:'books', ic:'📚', c:'#2980B9', ar:'كتب أونلاين', en:'Online Books'},
     {key:'videos', ic:'🎬', c:'#C0392B', ar:'فيديوهات', en:'Videos'},
   ];
-  document.getElementById('resWrap').innerHTML=cats.map(cat=>`
+  document.getElementById('resWrap').innerHTML=renderMurabbiFeature()+cats.map(cat=>`
     <div class="res-cat">
       <div class="res-cat-head"><span class="rc-ic">${cat.ic}</span><h3>${lang==='ar'?cat.ar:cat.en}</h3></div>
       <div class="res-grid">
@@ -836,9 +858,23 @@ function renderResources(){
 
 /* ---- online book library (PDFs) — shown under the Online Books section ---- */
 function renderBookCats(){
-  if(!window.PARENT_BOOKS) return '';
   var ar=lang==='ar', base='../../../Books/Parent Library/';
-  return PARENT_BOOKS.map(function(c){
+  /* featured: our own flagship guide — PREVIEW only (full book is a paid item in the Support Store) */
+  var prevRel=encodeURIComponent('Published/Parent Plans/Tarbiyah Compass Guide Book.html');
+  var prevUrl='../../../Books/book-preview.html?src='+prevRel+'&n=3&bid=bundle9&lang='+lang
+    +'&t='+encodeURIComponent(ar?'بوصلةُ التربية':'The Tarbiyah Compass');
+  var storeUrl='../../shared/store.html?lang='+lang;
+  var featured='<div class="vid-cat"><h3 class="vid-cat-h"><span class="vc-ic">🧭</span>'
+    +(ar?'دليلُنا التربوي':'Our Tarbiyah Guide')+'<span class="vc-n">1</span></h3>'
+    +'<div class="vid-grid"><a class="vid-card" href="'+prevUrl+'" target="_blank" rel="noopener" style="border-color:rgba(212,160,23,.55);background:linear-gradient(135deg,rgba(232,181,48,.14),rgba(232,181,48,.04))">'
+    +'<span class="vid-play">🧭</span><span class="vid-name">'+(ar?'بوصلةُ التربية — دليلُ المراحل العمريّة (٠–١٨+)':'The Tarbiyah Compass — Age-Stages Guide (0–18+)')+'</span>'
+    +'<span class="vid-go">'+(ar?'👁️ معاينة (٣ صفحات)':'👁️ Preview (3 pages)')+'</span></a></div>'
+    +'<p class="vid-cat-note" style="color:var(--muted);font-size:.8rem;margin:.5rem .2rem 0">'
+    +(ar?'📖 الكتابُ الكامل ضمن حزمة ركن الأهل في <a href="'+storeUrl+'" style="color:var(--gold-lt);font-weight:800">متجر الدعم</a>.'
+        :'📖 The full book is in the Parents bundle at the <a href="'+storeUrl+'" style="color:var(--gold-lt);font-weight:800">Support Store</a>.')
+    +'</p></div>';
+  if(!window.PARENT_BOOKS) return featured;
+  return featured + PARENT_BOOKS.map(function(c){
     var cards=c.items.map(function(t){
       var href=base+encodeURIComponent(c.dir)+'/'+encodeURIComponent(t)+'.pdf';
       return '<a class="vid-card" href="'+href+'" target="_blank" rel="noopener">'

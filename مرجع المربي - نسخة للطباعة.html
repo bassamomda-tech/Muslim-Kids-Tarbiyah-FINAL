@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>مرجع المربي — نسخة للطباعة</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700;800;900&family=Noto+Naskh+Arabic:wght@400;500;600;700&display=swap">
+<style>
+doc-page:not(:defined){visibility:hidden}
+body{font-family:'Noto Naskh Arabic','Tajawal',serif;color:#22303E;line-height:1.9;direction:rtl}
+a{color:#0D6B54}a:hover{color:#A07810}
+.cover{text-align:center;padding:2.5rem 0 1.5rem;border-bottom:3px double #D4A017;margin-bottom:2rem}
+.cover .kicker{font-family:'Tajawal',sans-serif;font-weight:800;font-size:11pt;color:#A07810;letter-spacing:.05em}
+.cover h1{font-family:'Tajawal',sans-serif;font-size:26pt;font-weight:900;color:#0A2540;margin:.4rem 0}
+.cover p{color:#5A6673;font-size:11pt;max-width:34rem;margin:.4rem auto 0}
+h2.ch{
+  font-family:'Tajawal',sans-serif;font-size:16pt;font-weight:900;color:#0A2540;
+  border-bottom:2px solid #D4A017;padding-bottom:.3rem;margin:2.2rem 0 .8rem;
+  break-after:avoid;
+}
+h3{font-family:'Tajawal',sans-serif;font-size:12.5pt;font-weight:800;color:#0D6B54;margin:1.2rem 0 .4rem;break-after:avoid}
+p{margin:.4rem 0}
+p.lead{color:#5A6673;border-bottom:1px dashed #E7DCC4;padding-bottom:.6rem}
+ul,ol{padding-right:1.5rem;margin:.4rem 0}
+li{margin:.3rem 0}
+li::marker{color:#A07810;font-weight:700}
+strong{color:#0A2540}
+.qbox{background:#F4EEDF;border:1px solid #D9CBA6;border-radius:.5rem;padding:.7rem 1rem;margin:1rem 0;font-size:10.5pt;break-inside:avoid}
+ul.cols2{columns:2;column-gap:1.8rem}
+ul.cols2 li{break-inside:avoid}
+ul.checklist{list-style:none;padding-right:0}
+ul.checklist li{padding-right:1.9rem;position:relative;margin:.45rem 0}
+ul.checklist li::before{content:"";position:absolute;right:0;top:.35rem;width:.85rem;height:.85rem;border:1.5pt solid #A07810;border-radius:.2rem}
+table.track{width:100%;border-collapse:collapse;margin:.7rem 0;font-size:10pt}
+table.track th,table.track td{border:1pt solid #C9BC9C;padding:.45rem .5rem;text-align:center}
+table.track th{background:#F4EEDF;font-family:'Tajawal',sans-serif;font-weight:800;color:#0A2540}
+table.track td:first-child{text-align:right;font-weight:600}
+.hint{font-size:10pt;color:#5A6673}
+.toc{columns:2;column-gap:2rem;font-family:'Tajawal',sans-serif;font-size:11pt;margin-bottom:1rem}
+.toc div{margin:.3rem 0;break-inside:avoid}
+.doc-footer{font-family:'Tajawal',sans-serif;font-size:8.5pt;color:#8A8471;text-align:center}
+</style>
+</head>
+<body>
+<doc-page size="a4" margin="0.7in">
+  <div slot="footer" class="doc-footer">مرجع المربي — خلاصات مجالس «ألف باء التربية»</div>
+  <div class="cover">
+    <div class="kicker">مرجعك التربوي الشخصي</div>
+    <h1>مرجع المربي</h1>
+    <p>خلاصات عملية من مجالس «ألف باء التربية» للشيخ عبدالرحمن ذاكر الهاشمي — إصلاح المربي، خطة اليوم والليلة، علاج المشكلات، وخطط عمل ٣٠/٩٠ يومًا</p>
+  </div>
+  <div class="toc" id="toc"></div>
+  <div id="doc-content"></div>
+</doc-page>
+<script src="murabbi/content-a.js"></script>
+<script src="murabbi/content-b.js"></script>
+<script src="murabbi/content-c.js"></script>
+<script>
+const SECTIONS=[...window.MURABBI_A,...window.MURABBI_B,...window.MURABBI_C];
+const toc=document.getElementById('toc'),host=document.getElementById('doc-content');
+SECTIONS.forEach(s=>{
+  const t=document.createElement('div');t.textContent=s.title;toc.appendChild(t);
+  const wrap=document.createElement('div');
+  wrap.innerHTML='<h2 class="ch">'+s.title+'</h2>'+s.html;
+  host.appendChild(wrap);
+});
+</script>
+<script src="murabbi/doc-page.js"></script>
+</body>
+</html>
