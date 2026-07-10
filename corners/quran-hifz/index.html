@@ -2021,40 +2021,51 @@ class Component extends DCLogic {
     var words=this.followWords();
     var H=transcript.split(/\s+/).map(w=>this.norm(w)).filter(Boolean);
     var flags=(baseFlags&&baseFlags.length===words.length)?baseFlags.slice():new Array(words.length).fill(0);
-    var ci=(baseFlags&&baseFlags.length===words.length)?(baseCursor||0):0; var WIN=3;
-    for(var hi=0; hi<H.length; hi++){
-      if(ci>=words.length) break;
-      while(ci<words.length && words[ci].norm.length===0){ flags[ci]=1; ci++; }
-      if(ci>=words.length) break;
-      var h=H[hi]; var h2 = (hi+1<H.length) ? h+H[hi+1] : null;
-      var best=null;
-      for(var k=0;k<=WIN && ci+k<words.length;k++){
-        var t=words[ci+k].norm; if(!t.length) continue;
-        var e=this.simEq(t,h), merge=false, split=false;
-        var tn=(ci+k+1<words.length)?words[ci+k+1].norm:'';
-        if(e<2 && tn){ var em=this.simEq(t+tn,h); if(em>e){ e=em; merge=true; split=false; } }
-        if(e<2 && h2){ var es=this.simEq(t,h2); if(es>e){ e=es; merge=false; split=true; } }
-        if(k>0){
-          if(e<2) continue;
-          var hn=(hi+1<H.length)?H[hi+1]:null;
-          var nt=ci+k+(merge?2:1);
-          var conf = !hn || nt>=words.length || (words[nt].norm.length>0 && this.simEq(words[nt].norm,hn)>0);
-          if(k>=2 && !conf) continue;
-        }
-        if(e>0 && (!best || e>best.e || (e===best.e && k<best.k))){ best={k:k,e:e,merge:merge,split:split}; }
-        if(best && best.e===2) break;
-      }
-      if(best){
-        for(var j=ci;j<ci+best.k;j++){ flags[j]=words[j].norm.length?2:1; }
-        var tIdx=ci+best.k;
-        flags[tIdx] = best.e===2 ? 1 : 3;
-        if(best.merge && tIdx+1<words.length){ flags[tIdx+1] = best.e===2?1:3; ci=tIdx+2; }
-        else { ci=tIdx+1; }
-        if(best.split) hi++;
+    var ci=(baseFlags&&baseFlags.length===words.length)?(baseCursor||0):0;
+    while(ci<words.length && words[ci].norm.length===0){ flags[ci]=1; ci++; }
+    if(!H.length || ci>=words.length) return {flags, cursor:ci, total:words.length};
+    // ---- global DP alignment (Needleman-Wunsch style) of heard words vs target window ----
+    var T=[], idxMap=[];
+    for(var w=ci; w<words.length && T.length < H.length*2+10; w++){ if(words[w].norm.length){ T.push(words[w].norm); idxMap.push(w); } }
+    var n=T.length, m=H.length;
+    var GAP_T=-1.2, GAP_H=-0.35, MATCH=3, NEAR=1.4;
+    var dp=[], bk=[];
+    for(var i0=0;i0<=n;i0++){ dp.push(new Float32Array(m+1)); bk.push(new Uint8Array(m+1)); }
+    for(var i1=1;i1<=n;i1++){ dp[i1][0]=dp[i1-1][0]+GAP_T; bk[i1][0]=1; }
+    for(var j1=1;j1<=m;j1++){ dp[0][j1]=dp[0][j1-1]+GAP_H; bk[0][j1]=2; }
+    for(var i=1;i<=n;i++){
+      for(var j=1;j<=m;j++){
+        var e=this.simEq(T[i-1],H[j-1]);
+        var sc=dp[i-1][j-1] + (e===2?MATCH:(e===1?NEAR:GAP_T+GAP_H));
+        var b= e===2?3:(e===1?4:5);
+        var alt=dp[i-1][j]+GAP_T; if(alt>sc){sc=alt;b=1;}
+        alt=dp[i][j-1]+GAP_H; if(alt>sc){sc=alt;b=2;}
+        if(i>=2 && this.simEq(T[i-2]+T[i-1],H[j-1])===2){ alt=dp[i-2][j-1]+MATCH*1.6; if(alt>sc){sc=alt;b=6;} }
+        if(j>=2 && this.simEq(T[i-1],H[j-2]+H[j-1])===2){ alt=dp[i-1][j-2]+MATCH*1.3; if(alt>sc){sc=alt;b=7;} }
+        dp[i][j]=sc; bk[i][j]=b;
       }
     }
-    while(ci<words.length && words[ci].norm.length===0){ flags[ci]=1; ci++; }
-    return {flags, cursor:ci, total:words.length};
+    // best end: all heard consumed, any number of targets consumed (never force-consume the window)
+    var bi=0, bsc=dp[0][m];
+    for(var i2=1;i2<=n;i2++){ if(dp[i2][m]>bsc+1e-6){ bsc=dp[i2][m]; bi=i2; } }
+    var cf=new Array(bi).fill(2);
+    var ti=bi, tj=m;
+    while(ti>0 || tj>0){
+      var tb=(ti===0)?2:(tj===0)?1:bk[ti][tj];
+      if(tb===3){ cf[ti-1]=1; ti--; tj--; }
+      else if(tb===4){ cf[ti-1]=3; ti--; tj--; }
+      else if(tb===5){ cf[ti-1]=2; ti--; tj--; }
+      else if(tb===1){ cf[ti-1]=2; ti--; }
+      else if(tb===2){ tj--; }
+      else if(tb===6){ cf[ti-1]=1; cf[ti-2]=1; ti-=2; tj--; }
+      else { cf[ti-1]=1; ti--; tj-=2; }
+    }
+    var consumed=bi; while(consumed>0 && cf[consumed-1]===2) consumed--;
+    for(var c=0;c<consumed;c++){ flags[idxMap[c]]=cf[c]; }
+    var cursor = consumed>0 ? idxMap[consumed-1]+1 : ci;
+    for(var w2=ci; w2<cursor; w2++){ if(!words[w2].norm.length) flags[w2]=1; }
+    while(cursor<words.length && words[cursor].norm.length===0){ flags[cursor]=1; cursor++; }
+    return {flags, cursor:cursor, total:words.length};
   }
   alignFollow(transcript){ return this.alignFrom(this.tasBaseFlags, this.tasBaseCursor, transcript); }
   buildReport(){
