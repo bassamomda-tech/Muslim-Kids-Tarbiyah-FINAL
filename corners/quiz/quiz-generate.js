@@ -115,7 +115,10 @@
     const items = S.filter(st => A.truth(st));
     const qs = [];
     for (const st of pick(items, Math.min(n, items.length))) {
-      const q = mcq({ ar: 'أيُّ العبارةِ صحيحة؟', en: 'Which statement is correct?' }, A.truth(st), P.falsehoods, optCount || 4);
+      const t = A.title(st);
+      const stem = t ? { ar: 'في درسِ «' + t.ar + '»: أيُّ عبارةٍ صحيحة؟', en: 'In “' + t.en + '”: which statement is correct?' }
+                     : { ar: 'أيُّ العبارةِ صحيحة؟', en: 'Which statement is correct?' };
+      const q = mcq(stem, A.truth(st), P.falsehoods, optCount || 4);
       if (q) qs.push(q);
     }
     return qs.length ? { type: 'mcq', icon: '✅', title: { ar: 'اختَر الصحيحة', en: 'Pick the correct one' }, prompt: { ar: 'في كلِّ سؤالٍ اختَر العبارةَ الصحيحة', en: 'In each question pick the correct statement' }, questions: qs } : null;
@@ -140,7 +143,10 @@
     const items = S.filter(st => A.truth(st));
     const qs = [];
     for (const st of pick(items, Math.min(n, items.length))) {
-      const q = mcq({ ar: 'ميِّز العبارةَ الصحيحةَ من الأفكارِ الخاطئة:', en: 'Tell the correct statement from the wrong ideas:' }, A.truth(st), P.falsehoods, 4);
+      const t = A.title(st);
+      const stem = t ? { ar: 'في درسِ «' + t.ar + '»: اختَرِ العبارةَ الصحيحة', en: 'In “' + t.en + '”: choose the correct statement' }
+                     : { ar: 'ميِّز العبارةَ الصحيحةَ من الأفكارِ الخاطئة:', en: 'Tell the correct statement from the wrong ideas:' };
+      const q = mcq(stem, A.truth(st), P.falsehoods, 4);
       if (q) qs.push(q);
     }
     return qs.length ? { type: 'mcq', icon: '🛡️', title: { ar: 'الإجابة الصحيحة', en: 'The correct answer' }, prompt: { ar: 'ميِّز العبارةَ الصحيحةَ من الأفكارِ الخاطئة', en: 'Tell the correct statement from the wrong ideas' }, questions: qs } : null;
@@ -270,6 +276,21 @@
     };
   }
 
+  /* MCQ (easy, untimed): which surah is this ayah from? — replaces the timed Catch game */
+  function mcqAyahSurah(S, n) {
+    const items = S.filter(st => A.ayah(st) && A.ref(st));
+    if (items.length < 3) return null;
+    const refs = items.map(A.ref).filter(Boolean);
+    const qs = [];
+    for (const st of pick(items, Math.min(n || 5, items.length))) {
+      const snip = ayahSnippet(A.ayah(st));
+      const stem = { ar: 'مِن أيِّ سورةٍ هذِهِ الآية؟ ﴿' + snip + '﴾', en: 'Which surah is this ayah from? “' + snip + '”' };
+      const q = mcq(stem, A.ref(st), refs, 4);
+      if (q) qs.push(q);
+    }
+    return qs.length ? { type: 'mcq', icon: '🌟', title: { ar: 'آيةٌ وسورتُها', en: 'Ayah & its Surah' }, prompt: { ar: 'اختَرِ السورةَ الصحيحةَ لِكُلِّ آية', en: 'Choose the correct surah for each ayah' }, questions: qs } : null;
+  }
+
   /* SORT: drop each card into «حقيقة» or «فكرة خاطئة» (≈6 cards, balanced) */
   function sortGame(S) {
     const T = [], F = [];
@@ -339,7 +360,7 @@
   /* assemble one academy level (always 3 distinct mechanics, fixed order) */
   function buildAcademyLevel(S, level) {
     let acts;
-    if (level === 'beginner') acts = [memCards(S), trueFalse(S), catchGame(S)];
+    if (level === 'beginner') acts = [memCards(S), trueFalse(S), mcqAyahSurah(S, 5) || matchAyahRef(S)];
     else if (level === 'intermediate') acts = [sortGame(S), matchTitleKey(S), fillGame(S)];
     else acts = [orderGame(S), mcqCreed(S, 5), maze(S, 5, mcqCreed, { title: { ar: 'متاهةُ الإتقان', en: 'Mastery Maze' }, prompt: { ar: 'اعبُرِ المتاهةَ بِتَمييزِ العِبارةِ الصحيحةِ عِندَ كُلِّ باب', en: 'Cross the maze by identifying the correct statement at each door' } })];
     return acts.map(a => a || mcqTruth(S, 5) || matchTitleKey(S)).filter(Boolean);

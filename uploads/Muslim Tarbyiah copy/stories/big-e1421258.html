@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>مكتبة الأبطال القرّاء · ركن القصص</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+Bhaijaan+2:wght@500;600;700;800&family=Tajawal:wght@400;500;700;800;900&family=Amiri:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="stories.css">
+<style>
+.book .track{width:100%;height:9px;border-radius:5px;background:var(--paper2);border:1px solid var(--line);overflow:hidden;margin-top:.5rem}
+.book .track i{display:block;height:100%;width:0;border-radius:5px;background:linear-gradient(90deg,var(--bc),color-mix(in oklab,var(--bc) 70%,#7A5233));transition:width .7s ease}
+</style>
+</head>
+<body data-screen-label="مكتبة الأبطال ٧-١٢">
+
+<header class="topbar">
+  <a href="index.html" class="back-city">↩︎ بوابة القصص</a>
+  <div class="tb-brand">
+    <div class="tb-mark">🦅</div>
+    <div class="tb-name">مكتبةُ الأبطالِ القرّاء<small>قصص الأنبياء الكاملة · من ٧ إلى ١٢ سنة</small></div>
+  </div>
+  <a class="tb-level" href="little.html">للصغار؟ مكتبة ٣–٦ ←</a>
+</header>
+
+<section class="hero">
+  <span class="lamp">🏮</span>
+  <h1>القصصُ <em>الكاملة</em> بالآياتِ والمواقف</h1>
+  <p>هنا تُجمَعُ قصصُ الأنبياءِ الكاملةُ من حصنِ الأبطال: صفحاتُ قراءةٍ حقيقية، وأسئلةٌ بعد كلِّ قصة، وأوسمةٌ عند الإتمام. اخترْ نبيّاً وابدأ الرحلة.</p>
+</section>
+
+<div class="progress-strip">
+  <div class="ps-card">
+    <span class="ic">🏅</span>
+    <div class="ps-meta"><b>تقدّمُك في القراءة</b><span id="psSub">يُحسَبُ من قصصِ حصنِ الأبطال</span></div>
+    <div class="ps-track"><i id="psFill"></i></div>
+    <span class="ps-pct" id="psPct">—</span>
+  </div>
+</div>
+
+<div class="shelf">رفُّ قصصِ الأنبياء</div>
+<main class="books" id="books" aria-live="polite"></main>
+
+<footer class="foot">🦅 القصصُ تُفتَحُ في حصنِ الأبطال، وتقدّمُك يُحفَظُ هناك ويظهرُ هنا تلقائياً</footer>
+
+<script>
+(function(){
+  localStorage.setItem('mk-stories-level','big');
+  var $ = function(s){ return document.querySelector(s); };
+
+  // الأنبياء الذين لهم ملفات قصص كاملة في حصن الأبطال
+  var PROPHETS = [
+    { id:'adam',     icon:'🌱', color:'#7FA968', name:'آدم',     hook:'كيف خلقَ اللهُ أوّلَ إنسان؟' },
+    { id:'nuh',      icon:'🚢', color:'#2A87B0', name:'نوح',     hook:'سفينةٌ تنجو من الطوفان' },
+    { id:'hud',      icon:'🌪️', color:'#8FA3B8', name:'هود',     hook:'قومُ عادٍ والريحُ العظيمة' },
+    { id:'ibrahim',  icon:'🔥', color:'#E0762A', name:'إبراهيم', hook:'النارُ كانت برداً وسلاماً' },
+    { id:'yusuf',    icon:'⭐', color:'#C9A227', name:'يوسف',    hook:'الحلمُ والجبُّ وعزيزُ مصر' },
+    { id:'musa',     icon:'🌊', color:'#117A8B', name:'موسى',    hook:'العصا ينشقُّ بها البحر' },
+    { id:'sulayman', icon:'👑', color:'#8E6BBF', name:'سليمان',  hook:'مُلكٌ يكلّمُ الطيرَ والنمل' },
+    { id:'yunus',    icon:'🐋', color:'#3B7DD8', name:'يونس',    hook:'دعاءٌ في بطنِ الحوت' },
+    { id:'isa',      icon:'🕊️', color:'#4FA98A', name:'عيسى',    hook:'تكلّمَ في المهدِ طفلاً' },
+  ];
+  var AR = function(n){ return String(n).replace(/\d/g, function(d){ return '٠١٢٣٤٥٦٧٨٩'[d]; }); };
+
+  function loadScript(src){
+    return new Promise(function(res){
+      var t=document.createElement('script'); t.src=src;
+      t.onload=res; t.onerror=res; document.head.appendChild(t);
+    });
+  }
+
+  function readDone(pid){
+    try{ return JSON.parse(localStorage.getItem('hisn-stories-'+pid))||{}; }catch(e){ return {}; }
+  }
+
+  function render(){
+    var totalAll=0, doneAll=0;
+    $('#books').innerHTML = PROPHETS.map(function(p,i){
+      var stories = (window.HISN_STORIES && window.HISN_STORIES[p.id]) || [];
+      var total = stories.length;
+      var done = readDone(p.id);
+      var n = stories.filter(function(_,k){ return done[k]; }).length;
+      totalAll += total; doneAll += n;
+      var complete = total>0 && n===total;
+      return '<article class="book" style="--bc:'+p.color+';animation-delay:'+(0.04+i*0.05)+'s">'
+        + (complete ? '<span class="ribbon">🏅 أتممتَها</span>' : '')
+        + '<div class="cover">'+p.icon+'</div>'
+        + '<h3>'+p.name+' عليه السلام</h3>'
+        + '<div class="who">'+p.hook+'</div>'
+        + '<div class="meta">'
+        +   '<span class="chip">📖 '+AR(total)+' قصص</span>'
+        +   (n>0 ? '<span class="chip done">✓ '+AR(n)+' قرأتُها</span>' : '')
+        + '</div>'
+        + '<div class="track"><i style="width:'+(total? n/total*100 : 0)+'%"></i></div>'
+        + '<a class="open-btn" style="display:block;text-decoration:none;color:#fff" href="../heroes-fortress/stories.html?prophet='+p.id+'">'
+        +   (n>0 && !complete ? 'أكملِ القراءة 📖' : complete ? 'اقرأها من جديد 📖' : 'ابدأِ القصص 📖')
+        + '</a>'
+        + '</article>';
+    }).join('');
+    var pct = totalAll ? Math.round(doneAll/totalAll*100) : 0;
+    $('#psPct').textContent = AR(pct)+'٪';
+    $('#psFill').style.width = pct+'%';
+    $('#psSub').textContent = doneAll===0 ? 'ابدأ أوّلَ قصة من الرفّ!'
+      : 'قرأتَ '+AR(doneAll)+' من '+AR(totalAll)+' قصة — أكملِ الرحلة 💪';
+  }
+
+  // حمّل ملفات القصص لمعرفة عدد قصص كل نبي (تُحمَّل من حصن الأبطال نفسه)
+  Promise.all(PROPHETS.map(function(p){
+    return loadScript('../heroes-fortress/data/stories/'+p.id+'.js');
+  })).then(render);
+})();
+</script>
+</body>
+</html>

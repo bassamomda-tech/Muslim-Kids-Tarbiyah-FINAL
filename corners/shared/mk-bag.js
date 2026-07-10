@@ -104,13 +104,80 @@
     var wrap = document.createElement('div');
     wrap.id = 'mkBag';
     wrap.innerHTML =
-      '<button id="mkBagBtn" class="mkbag-btn" aria-label="bag"><span class="mkbag-ic">🎒</span><span class="mkbag-lb"></span><span class="mkbag-dot" id="mkBagDot"></span></button>' +
+      '<button id="mkBagBtn" class="mkbag-btn" aria-label="bag" title="' + (ar() ? 'اسحبني لتغيير مكاني' : 'Drag me to move') + '"><span class="mkbag-ic">🎒</span><span class="mkbag-lb"></span><span class="mkbag-dot" id="mkBagDot"></span></button>' +
       '<div id="mkBagPanel" class="mkbag-panel"></div>';
-    var map = document.getElementById('map');
-    document.body.appendChild(wrap);   // always fixed at top-left (see CSS)
-    document.getElementById('mkBagBtn').onclick = function (e) { e.stopPropagation(); toggle(); };
+    document.body.appendChild(wrap);
+    setupDrag(wrap, document.getElementById('mkBagBtn'));
+    restorePos(wrap);
     document.addEventListener('click', function (e) { if (!wrap.contains(e.target)) close(); });
     paintBtn(); updateDot();
+  }
+
+  /* ───────── draggable floating bag (position persists per device) ───────── */
+  function clampPos(wrap, x, y) {
+    var w = wrap.offsetWidth || 60, h = wrap.offsetHeight || 60;
+    var maxX = Math.max(4, window.innerWidth - w - 4), maxY = Math.max(4, window.innerHeight - h - 4);
+    return { x: Math.min(Math.max(4, x), maxX), y: Math.min(Math.max(4, y), maxY) };
+  }
+  function applyPos(wrap, x, y) {
+    var c = clampPos(wrap, x, y);
+    wrap.style.left = c.x + 'px'; wrap.style.top = c.y + 'px';
+    wrap.style.right = 'auto'; wrap.style.bottom = 'auto'; wrap.style.transform = 'none';
+  }
+  function savePos(x, y) { try { localStorage.setItem('mk:bagPos', JSON.stringify({ x: x, y: y })); } catch (e) {} }
+  function readPos() { try { return JSON.parse(localStorage.getItem('mk:bagPos') || 'null'); } catch (e) { return null; } }
+  function restorePos(wrap) {
+    var p = readPos();
+    if (p && typeof p.x === 'number') applyPos(wrap, p.x, p.y);
+    window.addEventListener('resize', function () { var q = readPos(); if (q) applyPos(wrap, q.x, q.y); });
+  }
+  function setupDrag(wrap, handle) {
+    var dragging = false, moved = false, sx = 0, sy = 0, ox = 0, oy = 0;
+    handle.addEventListener('pointerdown', function (e) {
+      if (e.button != null && e.button !== 0) return;
+      dragging = true; moved = false;
+      var r = wrap.getBoundingClientRect(); ox = r.left; oy = r.top; sx = e.clientX; sy = e.clientY;
+      try { handle.setPointerCapture(e.pointerId); } catch (er) {}
+    });
+    handle.addEventListener('pointermove', function (e) {
+      if (!dragging) return;
+      var dx = e.clientX - sx, dy = e.clientY - sy;
+      if (!moved && Math.abs(dx) + Math.abs(dy) < 5) return;
+      moved = true; close(); applyPos(wrap, ox + dx, oy + dy);
+    });
+    handle.addEventListener('pointerup', function () {
+      if (!dragging) return; dragging = false;
+      if (moved) { var r = wrap.getBoundingClientRect(); savePos(r.left, r.top); }
+      else toggle();                     // a tap (not a drag) opens/closes the bag
+    });
+    handle.addEventListener('pointercancel', function () { dragging = false; });
+  }
+
+  /* ───────── “save to bag” button on the journey certificate overlay ───────── */
+  function saveCertToBag(btn) {
+    var inp = document.getElementById('certName');
+    var v = inp ? (inp.tagName === 'INPUT' ? inp.value : (inp.textContent || '')) : '';
+    v = (v || '').trim();
+    if (v) {
+      try { localStorage.setItem('parentChildName', v); } catch (e) {}
+      if (inp && inp.tagName === 'INPUT') { inp.value = v; inp.dispatchEvent(new Event('input', { bubbles: true })); }
+    }
+    try { if (window.MK && MK.snapshotActive) MK.snapshotActive(); } catch (e) {}
+    updateDot();
+    var old = btn.innerHTML;
+    btn.innerHTML = ar() ? '✓ حُفِظَت في حقيبتك' : '✓ Saved to bag';
+    btn.disabled = true;
+    setTimeout(function () { btn.innerHTML = old; btn.disabled = false; }, 1700);
+  }
+  function injectCertSave() {
+    var tools = document.querySelector('#certOverlay .cert-tools');
+    if (!tools || document.getElementById('mkCertSave')) return;
+    var b = document.createElement('button');
+    b.id = 'mkCertSave'; b.className = 'cprint mkcert-save';
+    b.innerHTML = '🎒 <span class="lng-ar">احفظ في الحقيبة</span><span class="lng-en">Save to bag</span>';
+    var printBtn = tools.querySelector('#certPrint');
+    if (printBtn) tools.insertBefore(b, printBtn); else tools.appendChild(b);
+    b.addEventListener('click', function (e) { e.stopPropagation(); saveCertToBag(b); });
   }
   function paintBtn() {
     var lb = document.querySelector('#mkBagBtn .mkbag-lb'); if (lb) lb.textContent = tx('حقيبتي', 'My Bag');
@@ -205,6 +272,8 @@
       '.mkbag-crow .c-pct{font-weight:800;font-size:.74rem;color:#F5CC5A;min-width:30px;text-align:end}' +
       '.mkbag-foot{margin-top:.7rem}' +
       '.mkbag-fbtn{display:block;text-align:center;background:linear-gradient(135deg,#1F8A5B,#176b46);color:#fff;border-radius:.9rem;padding:.6rem;font-weight:800;text-decoration:none;font-size:.86rem}' +
+      '#mkBagBtn{touch-action:none}' +
+      '.mkcert-save{background:linear-gradient(160deg,#1F8A5B,#176b46)!important;color:#fff!important}' +
       /* the top collections row (badges/keys/names/cert) lives in the bag now */
       '.collections{display:none!important}' +
       '.drawer{z-index:2147483001!important}';
@@ -213,6 +282,9 @@
 
   function boot() {
     css(); build();
+    injectCertSave();
+    // the overlay is static markup, but retry briefly in case a page builds it late
+    var tries = 0, ct = setInterval(function () { injectCertSave(); if (++tries > 20 || document.getElementById('mkCertSave')) clearInterval(ct); }, 250);
     document.querySelectorAll('.lang button, #btnAr, #btnEn').forEach(function (b) {
       b.addEventListener('click', function () { setTimeout(function () { paintBtn(); updateDot(); if (document.getElementById('mkBagPanel').classList.contains('open')) render(); }, 50); });
     });

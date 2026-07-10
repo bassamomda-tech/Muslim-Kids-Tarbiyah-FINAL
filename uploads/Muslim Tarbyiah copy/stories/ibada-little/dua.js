@@ -1,0 +1,192 @@
+/* corners/stories/ibada-little/dua.js — خيط الدعاء للصغار (٣–٦) · ٨ حكايات */
+window.IBADA_LITTLE = window.IBADA_LITTLE || {};
+window.IBADA_LITTLE.dua = {
+  id:'dua', icon:'🤲', color:'#E67E22', title:'خَيْطُ الدُّعَاء', tag:'أَتَكَلَّمُ مَعَ الله',
+  stories:[
+
+{ id:'call', icon:'📞', color:'#E67E22', title:'خَطُّ النُّورِ الْمُبَاشِر',
+  tag:'مَا هُوَ الدُّعَاء؟',
+  pages:[
+    { emoji:'🤲', text:'الدُّعَاءُ أَنْ تُكَلِّمَ اللهَ مُبَاشَرَةً وَتَطْلُبَ مِنْهُ مَا تُرِيد، بِلَا وَاسِطَةٍ وَلَا مَوْعِد.',
+      prompt:'A child raising open hands to a warm glowing sky, direct call to Allah, tender serene' },
+    { emoji:'🚪', text:'بَابُ اللهِ مَفْتُوحٌ دَائِمًا، لَيْلًا وَنَهَارًا، وَهُوَ يُحِبُّ أَنْ تَطْلُبَ مِنْه.',
+      prompt:'A beautiful open door of golden light welcoming, always open, warm inviting' },
+    { emoji:'💚', text:'قَالَ الله: ادْعُونِي أَسْتَجِبْ لَكُم. هُوَ الَّذِي يَأْمُرُكَ أَنْ تَطْلُبَ مِنْه!',
+      prompt:'A gentle beam of light from the sky reaching praying hands, promise of answer, warm' },
+    { emoji:'🌟', text:'فَالدُّعَاءُ كَنْزُكَ وَسِلَاحُكَ الَّذِي لَا يَنْفَد.',
+      prompt:'A glowing treasure of light in a childs cupped hands, dua as treasure, warm radiant' },
+  ],
+  moral:'الدُّعَاءُ خَطِّي الْمُبَاشِرُ مَعَ الله، وَبَابُهُ لَا يُغْلَق. 🌟',
+  game:{ type:'pairs', title:'صِلْ كُلَّ شَيْءٍ بِمَعْنَاه', pairs:[
+    ['🤲 الدُّعَاء','أُكَلِّمُ اللهَ مُبَاشَرَة'],
+    ['🚪 بَابُ الله','مَفْتُوحٌ دَائِمًا'],
+    ['💚 ادْعُونِي','أَسْتَجِبْ لَكُم'] ] },
+  act:{ q:'مَا هُوَ الدُّعَاء؟', yay:'أَحْسَنْت! أُكَلِّمُ اللهَ وَأَطْلُبُ مِنْه', opts:[
+    { e:'🤲', t:'أُكَلِّمُ اللهَ وَأَطْلُبُ مِنْه', ok:true },
+    { e:'😴', t:'شَيْءٌ لَا فَائِدَةَ مِنْه' },
+    { e:'🤷', t:'لَا أَعْرِف' } ] },
+  dua:'ادْعُونِي أَسْتَجِبْ لَكُم' },
+
+{ id:'anytime', icon:'🕐', color:'#F39C12', title:'أَدْعُو فِي كُلِّ وَقْت',
+  tag:'لَا يَحْتَاجُ مَوْعِدًا',
+  pages:[
+    { emoji:'🕐', text:'أَسْتَطِيعُ أَنْ أَدْعُوَ اللهَ فِي أَيِّ وَقْتٍ وَأَيِّ مَكَان: فِي بَيْتِي، وَفِي طَرِيقِي، وَفِي لَعِبِي.',
+      prompt:'A child praying happily in different everyday places, anytime prayer, warm cheerful scenes' },
+    { emoji:'🌙', text:'وَهُنَاكَ أَوْقَاتٌ الدُّعَاءُ فِيهَا أَقْرَبُ لِلْإِجَابَة: فِي السُّجُود، وَفِي آخِرِ اللَّيْل، وَبَيْنَ الْأَذَانِ وَالْإِقَامَة.',
+      prompt:'A peaceful night sky and a child in prostration with soft light, blessed times of dua, serene' },
+    { emoji:'🌧️', text:'وَعِنْدَ نُزُولِ الْمَطَر، وَيَوْمَ الْجُمُعَة، وَحِينَ أَصُوم.',
+      prompt:'Gentle rain and a bright Friday sky, special times when dua is answered, warm hopeful' },
+    { emoji:'💚', text:'فَأُكْثِرُ الدُّعَاءَ فِي هَذِهِ الْأَوْقَاتِ الْجَمِيلَة.',
+      prompt:'A child raising hands in dua during rain with a soft glow, seizing blessed moments, tender' },
+  ],
+  moral:'أَدْعُو اللهَ فِي كُلِّ وَقْت، وَأَخْتَارُ أَوْقَاتَ الْإِجَابَة. 💚',
+  game:{ type:'sort', title:'أَيُّهَا وَقْتٌ يُسْتَجَابُ فِيهِ الدُّعَاءُ أَكْثَر؟', bins:['وَقْتُ إِجَابَة ✅','وَقْتٌ عَادِيّ ⏳'], items:[
+    { e:'🧎', t:'فِي السُّجُود', bin:0 },
+    { e:'🌧️', t:'عِنْدَ نُزُولِ الْمَطَر', bin:0 },
+    { e:'🌙', t:'فِي آخِرِ اللَّيْل', bin:0 },
+    { e:'🎮', t:'أَيُّ وَقْتٍ (وَهُوَ جَائِز)', bin:1 } ] },
+  act:{ q:'مَتَى أَسْتَطِيعُ أَنْ أَدْعُوَ الله؟', yay:'أَحْسَنْت! فِي أَيِّ وَقْتٍ وَمَكَان', opts:[
+    { e:'🕐', t:'فِي أَيِّ وَقْتٍ وَأَيِّ مَكَان', ok:true },
+    { e:'📅', t:'مَرَّةً فِي السَّنَة' },
+    { e:'🤷', t:'لَا أَعْرِف' } ] },
+  dua:'اللَّهُمَّ اجْعَلْنِي مِنَ الدَّاعِينَ الْمُلِحِّين' },
+
+{ id:'manners', icon:'🙏', color:'#16A085', title:'آدَابُ الدُّعَاء',
+  tag:'كَيْفَ أَدْعُو؟',
+  pages:[
+    { emoji:'🤲', text:'أَبْدَأُ الدُّعَاءَ بِحَمْدِ اللهِ وَالثَّنَاءِ عَلَيْه، ثُمَّ الصَّلَاةِ عَلَى النَّبِيِّ ﷺ.',
+      prompt:'A child beginning dua with raised hands, praise then blessings, warm reverent, from behind' },
+    { emoji:'🙌', text:'ثُمَّ أَرْفَعُ يَدَيَّ وَأَطْلُبُ مِنَ اللهِ بِقَلْبٍ حَاضِرٍ وَيَقِينٍ أَنَّهُ يَسْمَعُنِي.',
+      prompt:'Hands raised in earnest dua with a glowing heart, present-hearted asking, warm serene' },
+    { emoji:'🔁', text:'وَأُلِحُّ وَأُكَرِّرُ وَلَا أَسْتَعْجِل، وَأُحْسِنُ الظَّنَّ بِالله.',
+      prompt:'A child persistently praying with hope, patience in dua, warm gentle scene' },
+    { emoji:'💚', text:'وَأَخْتِمُ بِحَمْدِ الله. فَالدُّعَاءُ بِأَدَبٍ أَقْرَبُ لِلْإِجَابَة.',
+      prompt:'A content child finishing dua with a grateful smile and warm glow, proper manners, tender' },
+  ],
+  moral:'أَدْعُو بِأَدَب: أَحْمَدُ اللهَ، وَأُصَلِّي عَلَى نَبِيِّه، وَأُلِحُّ بِيَقِين. 💚',
+  game:{ type:'order', title:'رَتِّبْ آدَابَ الدُّعَاء', items:[
+    { e:'🌟', t:'أَحْمَدُ اللهَ وَأُثْنِي عَلَيْه' },
+    { e:'💝', t:'أُصَلِّي عَلَى النَّبِيِّ ﷺ' },
+    { e:'🙌', t:'أَرْفَعُ يَدَيَّ وَأَطْلُب' },
+    { e:'💚', t:'أَخْتِمُ بِالْحَمْد' } ] },
+  act:{ q:'بِمَ أَبْدَأُ دُعَائِي؟', yay:'أَحْسَنْت! بِحَمْدِ اللهِ وَالصَّلَاةِ عَلَى نَبِيِّه', opts:[
+    { e:'🌟', t:'بِحَمْدِ اللهِ وَالثَّنَاءِ عَلَيْه', ok:true },
+    { e:'😤', t:'بِالطَّلَبِ فَوْرًا بِلَا أَدَب' },
+    { e:'🤷', t:'لَا أَعْرِف' } ] },
+  dua:'اللَّهُمَّ لَكَ الْحَمْدُ كُلُّه، وَصَلِّ عَلَى نَبِيِّنَا مُحَمَّد' },
+
+{ id:'answered', icon:'✅', color:'#27AE60', title:'الدُّعَاءُ لَا يَضِيع',
+  tag:'ثَلَاثُ إِجَابَات',
+  pages:[
+    { emoji:'🎁', text:'الدُّعَاءُ لَا يَضِيعُ أَبَدًا! إِمَّا يُعْطِيكَ اللهُ مَا طَلَبْتَ فَوْرًا.',
+      prompt:'A child receiving a glowing gift after dua with joy, answered prayer, warm bright' },
+    { emoji:'🛡️', text:'أَوْ يَدْفَعُ عَنْكَ شَرًّا مِثْلَه، فَيَحْمِيكَ مِنْ حَيْثُ لَا تَدْرِي.',
+      prompt:'A gentle shield of light turning away a shadow from a child, dua warding off harm, warm' },
+    { emoji:'💎', text:'أَوْ يَدَّخِرُهُ لَكَ حَسَنَاتٍ وَكُنُوزًا يَوْمَ الْقِيَامَة — وَهَذَا أَفْضَلُهَا!',
+      prompt:'Glowing treasures stored in a heavenly vault of light, dua saved as reward, radiant serene' },
+    { emoji:'💚', text:'فَأَنَا رَابِحٌ فِي كُلِّ الْأَحْوَال، فَلَا أَيْأَسُ وَلَا أَقُول: دَعَوْتُ فَلَمْ يُسْتَجَبْ لِي.',
+      prompt:'A hopeful child raising hands with confidence and a warm glow, never despairing, tender' },
+  ],
+  moral:'دُعَائِي لَا يَضِيعُ أَبَدًا: عَطَاءٌ، أَوْ دَفْعُ شَرٍّ، أَوْ ذُخْرٌ لِلْآخِرَة. 💚',
+  game:{ type:'pairs', title:'صِلْ كُلَّ دُعَاءٍ بِإِحْدَى الْإِجَابَاتِ الثَّلَاث', pairs:[
+    ['🎁 عَطَاءٌ فَوْرِيّ','يُعْطِيكَ مَا طَلَبْت'],
+    ['🛡️ دَفْعُ شَرّ','يَحْمِيكَ مِنْ سُوء'],
+    ['💎 ذُخْرٌ لِلْآخِرَة','حَسَنَاتٌ يَوْمَ الْقِيَامَة'] ] },
+  act:{ q:'هَلْ يَضِيعُ الدُّعَاءُ إِذَا لَمْ أَرَ نَتِيجَتَهُ فَوْرًا؟', yay:'أَحْسَنْت! لَهُ ثَلَاثُ إِجَابَاتٍ وَأَنْتَ رَابِح', opts:[
+    { e:'💚', t:'لَا! لَا يَضِيعُ أَبَدًا', ok:true },
+    { e:'😞', t:'نَعَم، يَضِيع' },
+    { e:'🤷', t:'لَا أَعْرِف' } ] },
+  dua:'اللَّهُمَّ لَا تَرُدَّ لِي دَعْوَة' },
+
+{ id:'prophets', icon:'📖', color:'#8E44AD', title:'أَدْعِيَةُ الْأَنْبِيَاء',
+  tag:'كَلِمَاتٌ نَجَّتِ الْأَبْطَال',
+  pages:[
+    { emoji:'🐋', text:'دَعَا يُونُسُ فِي بَطْنِ الْحُوت: لَا إِلَهَ إِلَّا أَنْتَ سُبْحَانَكَ إِنِّي كُنْتُ مِنَ الظَّالِمِين — فَنَجَّاهُ الله.',
+      prompt:'A gentle glow inside deep water with rising light, Yunus dua in the whale, hopeful serene' },
+    { emoji:'🔥', text:'وَقَالَ إِبْرَاهِيمُ فِي النَّار: حَسْبُنَا اللهُ وَنِعْمَ الْوَكِيل — فَصَارَتْ بَرْدًا وَسَلَامًا.',
+      prompt:'Cool flames turning gentle with light, Ibrahim trust in fire, warm miraculous serene' },
+    { emoji:'🌊', text:'وَقَالَ مُوسَى عِنْدَ الْبَحْر: إِنَّ مَعِيَ رَبِّي سَيَهْدِين — فَانْفَلَقَ الْبَحْر.',
+      prompt:'A parting sea with two walls of water and light, Musa certainty, majestic warm' },
+    { emoji:'💚', text:'فَأَحْفَظُ أَدْعِيَةَ الْأَنْبِيَاءِ وَأَقُولُهَا فِي شَدَائِدِي.',
+      prompt:'A child holding a glowing book of prophet duas close, treasured supplications, warm tender' },
+  ],
+  moral:'أَدْعِيَةُ الْأَنْبِيَاءِ كَنْزٌ أَقُولُهَا عِنْدَ الشِّدَّة. 💚',
+  game:{ type:'pairs', title:'صِلْ كُلَّ نَبِيٍّ بِدُعَائِه', pairs:[
+    ['🐋 يُونُس','لَا إِلَهَ إِلَّا أَنْتَ سُبْحَانَك'],
+    ['🔥 إِبْرَاهِيم','حَسْبُنَا اللهُ وَنِعْمَ الْوَكِيل'],
+    ['🌊 مُوسَى','إِنَّ مَعِيَ رَبِّي سَيَهْدِين'] ] },
+  act:{ q:'مَاذَا قَالَ يُونُسُ فِي بَطْنِ الْحُوت؟', yay:'أَحْسَنْت! فَنَجَّاهُ اللهُ بِهَا', opts:[
+    { e:'🐋', t:'لَا إِلَهَ إِلَّا أَنْتَ سُبْحَانَك', ok:true },
+    { e:'😱', t:'أَخْرِجُونِي!' },
+    { e:'🤷', t:'لَا أَعْرِف' } ] },
+  dua:'لَا إِلَهَ إِلَّا أَنْتَ سُبْحَانَكَ إِنِّي كُنْتُ مِنَ الظَّالِمِين' },
+
+{ id:'forothers', icon:'💞', color:'#E84393', title:'أَدْعُو لِمَنْ أُحِبّ',
+  tag:'الدُّعَاءُ بِظَهْرِ الْغَيْب',
+  pages:[
+    { emoji:'💞', text:'إِذَا دَعَوْتُ لِأَخِي أَوْ صَدِيقِي وَهُوَ غَائِبٌ لَا يَدْرِي، قَالَ الْمَلَك: وَلَكَ بِمِثْلِه!',
+      prompt:'A child praying for a friend with two connected hearts of light, dua for others, tender warm' },
+    { emoji:'👨‍👩‍👧', text:'وَأَدْعُو لِوَالِدَيّ: رَبِّ ارْحَمْهُمَا كَمَا رَبَّيَانِي صَغِيرًا — فَبِرُّهُمَا بِالدُّعَاء.',
+      prompt:'A child raising hands praying for parents with warm light, honoring parents in dua, tender' },
+    { emoji:'🌍', text:'وَأَدْعُو لِلْمُسْلِمِينَ جَمِيعًا فِي كُلِّ مَكَان، فَالْمُؤْمِنُ يُحِبُّ الْخَيْرَ لِلْجَمِيع.',
+      prompt:'A child praying under a warm sky with the globe glowing softly, dua for all Muslims, serene' },
+    { emoji:'💚', text:'فَقَلْبِي كَبِيرٌ يَتَّسِعُ لِلْخَيْرِ لِكُلِّ مَنْ أُحِبّ.',
+      prompt:'A child with a big glowing heart radiating love outward, wide loving heart, warm uplifting' },
+  ],
+  moral:'أَدْعُو لِمَنْ أُحِبُّ بِظَهْرِ الْغَيْب، فَيَقُولُ الْمَلَك: وَلَكَ بِمِثْلِه. 💚',
+  game:{ type:'find', title:'ادْعُ لِمَنْ تُحِبّ! اجْمَعِ الْقُلُوبَ الْمُتَحَابَّةَ الْخَمْس', target:'💞', count:5, distractors:['☁️','⭐'], size:12 },
+  act:{ q:'إِذَا دَعَوْتُ لِصَدِيقِي بِظَهْرِ الْغَيْب، مَاذَا يَقُولُ الْمَلَك؟', yay:'أَحْسَنْت! هَدِيَّةٌ تَعُودُ إِلَيْك', opts:[
+    { e:'💞', t:'وَلَكَ بِمِثْلِه', ok:true },
+    { e:'🤷', t:'لَا شَيْء' },
+    { e:'😴', t:'لَا أَعْرِف' } ] },
+  dua:'رَبِّ ارْحَمْهُمَا كَمَا رَبَّيَانِي صَغِيرًا' },
+
+{ id:'goodthink', icon:'🌈', color:'#3498DB', title:'أُحْسِنُ الظَّنَّ بِالله',
+  tag:'أَدْعُو وَأَنَا وَاثِق',
+  pages:[
+    { emoji:'🌈', text:'حِينَ أَدْعُو، أَكُونُ وَاثِقًا أَنَّ اللهَ سَيُعْطِينِي أَفْضَلَ شَيْء، لِأَنَّهُ كَرِيمٌ يُحِبُّنِي.',
+      prompt:'A hopeful child praying under a warm rainbow sky, confidence and hope in dua, uplifting' },
+    { emoji:'🤴', text:'الْمَلِكُ الْكَرِيمُ يُحِبُّ مَنْ يَطْلُبُ مِنْه، وَيَغْضَبُ مِمَّنْ لَا يَسْأَلُه!',
+      prompt:'A generous open hand of light offering gifts, the King who loves being asked, warm' },
+    { emoji:'⏳', text:'وَإِنْ تَأَخَّرَتِ الْإِجَابَة، أَعْلَمُ أَنَّ اللهَ يَخْتَارُ لِيَ الْوَقْتَ الْأَفْضَل. فَلَا أَسْتَعْجِل.',
+      prompt:'A patient child waiting calmly with hopeful eyes under gentle light, trusting Allah timing, warm' },
+    { emoji:'💚', text:'فَأُحْسِنُ الظَّنَّ بِرَبِّي دَائِمًا، وَأَدْعُوهُ وَأَنَا مُوقِنٌ بِالْإِجَابَة.',
+      prompt:'A joyful confident child with raised hands and a warm glow, certain of Allah generosity, tender' },
+  ],
+  moral:'أَدْعُو وَأَنَا وَاثِقٌ، وَأُحْسِنُ الظَّنَّ بِرَبِّيَ الْكَرِيم. 💚',
+  game:{ type:'sort', title:'مَاذَا أَفْعَلُ حِينَ أَدْعُو؟', bins:['حُسْنُ ظَنٍّ ✅','خَطَأ 🚫'], items:[
+    { e:'🌈', t:'أَثِقُ أَنَّ اللهَ يُعْطِينِي الْأَفْضَل', bin:0 },
+    { e:'😤', t:'أَسْتَعْجِلُ وَأَيْأَس', bin:1 },
+    { e:'⏳', t:'أَصْبِرُ وَأُلِحّ', bin:0 },
+    { e:'😞', t:'أَقُولُ لَنْ يُسْتَجَابَ لِي', bin:1 } ] },
+  act:{ q:'كَيْفَ أَدْعُو اللهَ؟', yay:'أَحْسَنْت! وَاثِقًا مُحْسِنًا الظَّنَّ بِه', opts:[
+    { e:'🌈', t:'وَأَنَا وَاثِقٌ مُوقِنٌ بِالْإِجَابَة', ok:true },
+    { e:'😞', t:'وَأَنَا يَائِسٌ شَاكّ' },
+    { e:'🤷', t:'لَا أَعْرِف' } ] },
+  dua:'أَنَا عِنْدَ ظَنِّ عَبْدِي بِي فَلْيَظُنَّ بِي خَيْرًا' },
+
+{ id:'best', icon:'🌟', color:'#C0392B', title:'خَيْرُ الدُّعَاء',
+  tag:'أَدْعِيَةٌ جَامِعَة',
+  pages:[
+    { emoji:'🌟', text:'أَجْمَلُ الدُّعَاءِ مَا جَمَعَ خَيْرَ الدُّنْيَا وَالْآخِرَة: رَبَّنَا آتِنَا فِي الدُّنْيَا حَسَنَةً وَفِي الْآخِرَةِ حَسَنَة.',
+      prompt:'A child raising hands under a warm sky bridging earth and paradise light, comprehensive dua, serene' },
+    { emoji:'🏡', text:'وَأَدْعُو بِالْجَنَّة: اللَّهُمَّ إِنِّي أَسْأَلُكَ الْجَنَّةَ وَأَعُوذُ بِكَ مِنَ النَّار.',
+      prompt:'A glowing paradise garden gate with a hopeful child, asking for Paradise, warm radiant' },
+    { emoji:'💚', text:'وَأَدْعُو بِثَبَاتِ الْقَلْب: يَا مُقَلِّبَ الْقُلُوبِ ثَبِّتْ قَلْبِي عَلَى دِينِك.',
+      prompt:'A steady glowing heart held firm by gentle light, dua for steadfastness, warm tender' },
+    { emoji:'❤️', text:'فَأَحْفَظُ هَذِهِ الْأَدْعِيَةَ الْجَامِعَةَ وَأَدْعُو بِهَا كُلَّ يَوْم.',
+      prompt:'A child with a full warm heart of light repeating beautiful duas, treasured supplications, uplifting' },
+  ],
+  moral:'خَيْرُ الدُّعَاءِ مَا جَمَعَ خَيْرَ الدُّنْيَا وَالْآخِرَة. ❤️',
+  game:{ type:'order', title:'رَتِّبْ دُعَاءً جَامِعًا جَمِيلًا', items:[
+    { e:'🌟', t:'رَبَّنَا آتِنَا فِي الدُّنْيَا حَسَنَة' },
+    { e:'🏡', t:'وَفِي الْآخِرَةِ حَسَنَة' },
+    { e:'🛡️', t:'وَقِنَا عَذَابَ النَّار' },
+    { e:'💚', t:'وَثَبِّتْ قُلُوبَنَا عَلَى دِينِك' } ] },
+  act:{ q:'مَا خَيْرُ الدُّعَاء؟', yay:'أَحْسَنْت! مَا جَمَعَ خَيْرَ الدُّنْيَا وَالْآخِرَة', opts:[
+    { e:'🌟', t:'مَا جَمَعَ خَيْرَ الدُّنْيَا وَالْآخِرَة', ok:true },
+    { e:'💰', t:'طَلَبُ الْمَالِ فَقَط' },
+    { e:'🤷', t:'لَا أَعْرِف' } ] },
+  dua:'رَبَّنَا آتِنَا فِي الدُّنْيَا حَسَنَةً وَفِي الْآخِرَةِ حَسَنَةً وَقِنَا عَذَابَ النَّار' },
+
+]};

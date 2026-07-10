@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>مكتبة الصغار · ركن القصص</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+Bhaijaan+2:wght@500;600;700;800&family=Tajawal:wght@400;500;700;800;900&family=Amiri:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="stories.css">
+</head>
+<body data-screen-label="مكتبة الصغار ٣-٦">
+
+<header class="topbar">
+  <a href="../../index.html" class="back-city">↩︎ العودة للمدينة</a>
+  <div class="tb-brand">
+    <div class="tb-mark">🐥</div>
+    <div class="tb-name">مكتبةُ الصغار<small>حكايات الأنبياء · من ٣ إلى ٦ سنوات</small></div>
+  </div>
+</header>
+
+<section class="hero">
+  <span class="lamp">🧸</span>
+  <h1>حكايةٌ قبلَ <em>كلِّ شيء</em></h1>
+  <p>حكاياتُ الأنبياءِ عليهم السلام ورحلاتُ الإيمان — سطرانِ سهلانِ في كلِّ صفحة، وبعدَ كلِّ حكايةٍ سؤالٌ ولعبة.</p>
+</section>
+
+<div class="progress-strip">
+  <div class="ps-card">
+    <span class="ic">🌟</span>
+    <div class="ps-meta"><b>حكاياتي المكتملة</b><span id="psSub">ابدأ أوّلَ حكاية!</span></div>
+    <div class="ps-track"><i id="psFill"></i></div>
+    <span class="ps-pct" id="psPct">٠/٨</span>
+  </div>
+</div>
+
+<section class="space-zone">
+  <div class="zone-head zone-head--space">
+    <span class="zone-badge">🪐 عالَمُ العقيدة</span>
+    <h2>رحلاتُ منارةِ العقيدة</h2>
+    <p>كلُّ رحلةٍ كوكبٌ في الفضاء — اختَرْ كوكبَك وانطلقْ في المغامرة!</p>
+  </div>
+  <div class="galaxy" id="minaretBooks" aria-live="polite"></div>
+</section>
+
+<section class="oasis-zone">
+  <div class="zone-head zone-head--oasis">
+    <span class="zone-badge">🌴 واحةُ العبادة</span>
+    <h2>رحلاتُ العبادة</h2>
+    <p>كلُّ رحلةٍ فانوسٌ مضيءٌ في الواحة — الصلاةُ والأذكارُ والدعاءُ والصدقةُ والصيامُ والحجّ.</p>
+  </div>
+  <div class="oasis" id="ibadaBooks" aria-live="polite"></div>
+</section>
+
+<section class="prophets-zone">
+  <div class="zone-head zone-head--prophets">
+    <span class="zone-badge">🌟 سماءُ الأنبياء</span>
+    <h2>حكاياتُ الأنبياءِ عليهم السلام</h2>
+    <p>كلُّ نبيٍّ نجمةٌ مضيئةٌ في السماء — اختَرْ نجمتَك واستمعْ إلى حكايتِه.</p>
+  </div>
+  <div class="galaxy" id="books" aria-live="polite"></div>
+</section>
+
+<section class="seerah-zone">
+  <div class="zone-head zone-head--seerah">
+    <span class="zone-badge">🕌 نورُ السيرة</span>
+    <h2>قصصُ السيرةِ النبوية</h2>
+    <p>كلُّ رحلةٍ فانوسٌ من نورِ المدينة — حياةُ نبيِّنا محمدٍ ﷺ من مولدِه إلى لقاءِ ربِّه.</p>
+  </div>
+  <div class="oasis" id="seerahBooks" aria-live="polite"></div>
+</section>
+
+<section class="companions-zone">
+  <div class="zone-head zone-head--companions">
+    <span class="zone-badge">⭐ نجومُ الصحابة</span>
+    <h2>العشرةُ المبشَّرون بالجنة</h2>
+    <p>كلُّ صحابيٍّ نجمةٌ ذهبيةٌ بشَّرهُ النبيُّ ﷺ بالجنة — تعرَّفْ إلى أبطالِ الإسلامِ العظام.</p>
+  </div>
+  <div class="galaxy" id="companionsBooks" aria-live="polite"></div>
+</section>
+
+<footer class="foot">🐥 سردٌ مبسّطٌ جداً بتصرّفٍ يناسبُ الصغار · القصصُ الكاملةُ في مكتبةِ ٧–١٢</footer>
+
+<!-- ═══ READER ═══ -->
+<div class="reader" id="reader" data-screen-label="قارئ الحكاية">
+  <div class="rd-box" id="rdBox">
+    <button class="rd-x" id="rdClose" aria-label="إغلاق">✕</button>
+    <div class="rd-dots" id="rdDots"></div>
+    <div class="rd-title" id="rdTitle"></div>
+    <span class="rd-scene" id="rdScene"></span>
+    <div class="rd-text" id="rdText"></div>
+    <div class="rd-nav">
+      <button class="rd-prev" id="rdPrev">→ السابق</button>
+      <button class="rd-next" id="rdNext">التالي ←</button>
+    </div>
+  </div>
+</div>
+
+<script src="little-data.js"></script>
+<script src="mini-games.js"></script>
+<script src="prophets-little/journeys.js"></script>
+<script src="minaret-little/journeys.js"></script>
+<script src="ibada-little/journeys.js"></script>
+<script src="seerah-little/journeys.js"></script>
+<script src="companions-little/journeys.js"></script>
+<script>
+(function(){
+  var AR = function(n){ return String(n).replace(/\d/g,function(d){ return '٠١٢٣٤٥٦٧٨٩'[d]; }); };
+  function doneCount(id,total){
+    try{
+      var d = JSON.parse(localStorage.getItem('mk-stories-minlittle-'+id)||'{}');
+      return Math.min(Object.keys(d).length,total);
+    }catch(e){ return 0; }
+  }
+  document.getElementById('minaretBooks').innerHTML = (window.MINARET_JOURNEYS||[]).map(function(j,i){
+    var n = j.ready ? doneCount(j.id,j.count) : 0;
+    var complete = j.ready && n===j.count;
+    var dur = (5.2 + (i%4)*0.7).toFixed(1);
+    var inner = '<div class="orb"><span class="ring"></span><span class="glyph">'+j.icon+'</span>'
+      + (complete?'<span class="flag">🌟</span>':'')
+      + '</div>'
+      + '<div class="pl-name">'+j.title+'</div>'
+      + '<div class="pl-tag">'+j.tag+'</div>'
+      + (j.ready
+          ? '<div class="pl-meta'+(n>0?' has':'')+'">'+(n>0?('✓ '+AR(n)+'/'+AR(j.count)):('📖 '+AR(j.count)+' حكاية'))+'</div>'
+          : '<div class="pl-meta soon">قريباً 🌙</div>');
+    var st = '--pc:'+j.color+';--dur:'+dur+'s;animation-delay:'+(i*0.18)+'s';
+    return j.ready
+      ? '<a class="planet'+(complete?' done':'')+'" style="'+st+'" href="minaret-journey.html?j='+j.id+'">'+inner+'</a>'
+      : '<div class="planet locked" style="'+st+'">'+inner+'</div>';
+  }).join('');
+
+  function ibDone(id,total){
+    try{ var d=JSON.parse(localStorage.getItem('mk-stories-iblittle-'+id)||'{}'); return Math.min(Object.keys(d).length,total); }catch(e){ return 0; }
+  }
+  var ibEl = document.getElementById('ibadaBooks');
+  if(ibEl){
+    ibEl.innerHTML = (window.IBADA_JOURNEYS||[]).map(function(j,i){
+      var n = j.ready ? ibDone(j.id,j.count) : 0;
+      var complete = j.ready && n===j.count;
+      var inner = '<div class="lantern"><span class="lantern-glow"></span><span class="glyph">'+j.icon+'</span>'
+        + (complete?'<span class="flag">🌟</span>':'')
+        + '</div>'
+        + '<div class="pl-name">'+j.title+'</div>'
+        + '<div class="pl-tag">'+j.tag+'</div>'
+        + (j.ready
+            ? '<div class="pl-meta'+(n>0?' has':'')+'">'+(n>0?('✓ '+AR(n)+'/'+AR(j.count)):('📖 '+AR(j.count)+' حكاية'))+'</div>'
+            : '<div class="pl-meta soon">قريباً 🌙</div>');
+      var st = '--pc:'+j.color+';animation-delay:'+(i*0.12)+'s';
+      return j.ready
+        ? '<a class="palm'+(complete?' done':'')+'" style="'+st+'" href="minaret-journey.html?src=ibada&j='+j.id+'">'+inner+'</a>'
+        : '<div class="palm locked" style="'+st+'">'+inner+'</div>';
+    }).join('');
+  }
+
+  /* generic planet renderer (prophets + companions) */
+  function planetZone(elId, list, src, keyPrefix){
+    var el = document.getElementById(elId); if(!el) return;
+    el.innerHTML = (list||[]).map(function(j,i){
+      var n = j.ready ? cnt(keyPrefix, j.id, j.count) : 0;
+      var complete = j.ready && n===j.count;
+      var dur = (5.2 + (i%4)*0.7).toFixed(1);
+      var inner = '<div class="orb"><span class="ring"></span><span class="glyph">'+j.icon+'</span>'
+        + (complete?'<span class="flag">🌟</span>':'')
+        + '</div>'
+        + '<div class="pl-name">'+j.title+'</div>'
+        + '<div class="pl-tag">'+j.tag+'</div>'
+        + (j.ready
+            ? '<div class="pl-meta'+(n>0?' has':'')+'">'+(n>0?('✓ '+AR(n)+'/'+AR(j.count)):('📖 '+AR(j.count)+' حكاية'))+'</div>'
+            : '<div class="pl-meta soon">قريباً 🌙</div>');
+      var st = '--pc:'+j.color+';--dur:'+dur+'s;animation-delay:'+(i*0.15)+'s';
+      return j.ready
+        ? '<a class="planet'+(complete?' done':'')+'" style="'+st+'" href="minaret-journey.html?src='+src+'&j='+j.id+'">'+inner+'</a>'
+        : '<div class="planet locked" style="'+st+'">'+inner+'</div>';
+    }).join('');
+  }
+  /* generic lantern renderer (seerah) */
+  function lanternZone(elId, list, src, keyPrefix){
+    var el = document.getElementById(elId); if(!el) return;
+    el.innerHTML = (list||[]).map(function(j,i){
+      var n = j.ready ? cnt(keyPrefix, j.id, j.count) : 0;
+      var complete = j.ready && n===j.count;
+      var inner = '<div class="lantern"><span class="lantern-glow"></span><span class="glyph">'+j.icon+'</span>'
+        + (complete?'<span class="flag">🌟</span>':'')
+        + '</div>'
+        + '<div class="pl-name">'+j.title+'</div>'
+        + '<div class="pl-tag">'+j.tag+'</div>'
+        + (j.ready
+            ? '<div class="pl-meta'+(n>0?' has':'')+'">'+(n>0?('✓ '+AR(n)+'/'+AR(j.count)):('📖 '+AR(j.count)+' حكاية'))+'</div>'
+            : '<div class="pl-meta soon">قريباً 🌙</div>');
+      var st = '--pc:'+j.color+';animation-delay:'+(i*0.12)+'s';
+      return j.ready
+        ? '<a class="palm'+(complete?' done':'')+'" style="'+st+'" href="minaret-journey.html?src='+src+'&j='+j.id+'">'+inner+'</a>'
+        : '<div class="palm locked" style="'+st+'">'+inner+'</div>';
+    }).join('');
+  }
+  function cnt(prefix, id, total){
+    try{ var d=JSON.parse(localStorage.getItem(prefix+id)||'{}'); return Math.min(Object.keys(d).length,total); }catch(e){ return 0; }
+  }
+  planetZone('books', window.PROPHET_JOURNEYS, 'prophets', 'mk-stories-plittle-');
+  lanternZone('seerahBooks', window.SEERAH_JOURNEYS, 'seerah', 'mk-stories-selittle-');
+  planetZone('companionsBooks', window.COMPANIONS_JOURNEYS, 'companions', 'mk-stories-colittle-');
+})();
+</script>
+<script>
+(function(){
+  localStorage.setItem('mk-stories-level','little');
+  var $ = function(s){ return document.querySelector(s); };
+  var KEY = 'mk-stories-little-done';
+  function loadDone(){ try{ return JSON.parse(localStorage.getItem(KEY)||'{}'); }catch(e){ return {}; } }
+  function saveDone(d){ localStorage.setItem(KEY, JSON.stringify(d)); }
+  var done = loadDone();
+  var STORIES = window.LITTLE_STORIES || [];
+  var AR_NUM = ['٠','١','٢','٣','٤','٥','٦','٧','٨','٩','١٠'];
+  var AR = function(n){ return String(n).replace(/\d/g,function(d){ return '٠١٢٣٤٥٦٧٨٩'[d]; }); };
+
+  function jDone(id,total){
+    try{
+      var d = JSON.parse(localStorage.getItem('mk-stories-plittle-'+id)||'{}');
+      return Math.min(Object.keys(d).length,total);
+    }catch(e){ return 0; }
+  }
+
+  function renderBooks(){ /* prophet zone rendered as planets in the first script block */ }
+
+  function renderProgress(){
+    var total=0, n=0;
+    (window.PROPHET_JOURNEYS||[]).forEach(function(j){ total+=j.count; n+=jDone(j.id,j.count); });
+    $('#psPct').textContent = AR(n)+'/'+AR(total);
+    $('#psFill').style.width = (total? n/total*100 : 0)+'%';
+    $('#psSub').textContent = n===0 ? 'ابدأ أوّلَ حكاية!'
+      : n===total ? 'ما شاء الله! أنهيتَ كلَّ الحكايات 🎉'
+      : 'أحسنت! أكملْ بقيّةَ الرفّ 💪';
+  }
+
+  /* ── reader ── */
+  var cur = null, page = 0, actSolved = false, gameWon = false;
+  function openStory(id){
+    cur = STORIES.find(function(s){ return s.id===id; });
+    if(!cur) return;
+    page = 0;
+    $('#rdBox').style.setProperty('--rc', cur.color);
+    $('#rdTitle').textContent = cur.icon+' '+cur.title+' · '+cur.name;
+    $('#reader').classList.add('open');
+    renderPage();
+  }
+  function closeReader(){ $('#reader').classList.remove('open'); cur=null; }
+
+  function renderPage(){
+    var total = cur.pages.length;
+    var actIdx = cur.act ? total+1 : -1;
+    var gameIdx = cur.game ? total + (cur.act?2:1) : -1;
+    var last = Math.max(total, actIdx, gameIdx);
+    var dots = '';
+    for(var i=0;i<=last;i++){ dots += '<i class="'+(i===page?'on':'')+'"></i>'; }
+    $('#rdDots').innerHTML = dots;
+    var sceneEl = $('#rdScene'), textEl = $('#rdText');
+    $('#rdNext').disabled = false;
+    sceneEl.style.display = '';
+    if(page < total){
+      var p = cur.pages[page];
+      sceneEl.className = 'rd-scene'; void sceneEl.offsetWidth;
+      sceneEl.textContent = p.emoji;
+      textEl.innerHTML = '<span>'+p.text+'</span>';
+      $('#rdPrev').disabled = page===0;
+      $('#rdNext').textContent = page===total-1 ? 'الخاتمة 🌟' : 'التالي ←';
+    }else if(page === total){
+      // moral / celebration page
+      sceneEl.className = 'rd-scene rd-cheer'; void sceneEl.offsetWidth;
+      sceneEl.textContent = '🎉';
+      textEl.innerHTML = '<div class="rd-moral">'+cur.moral+'</div>';
+      $('#rdPrev').disabled = false;
+      $('#rdNext').textContent = cur.act ? 'هيا نلعب! 🎮' : (cur.game ? 'لعبة! 🎲' : 'أنهيتُ الحكاية ✓');
+      if(!cur.act && !cur.game && !done[cur.id]){ confetti(); }
+    }else if(page === actIdx){
+      renderActivity(sceneEl, textEl);
+    }else{
+      renderGame(sceneEl, textEl);
+    }
+  }
+
+  function renderActivity(sceneEl, textEl){
+    actSolved = false;
+    sceneEl.className = 'rd-scene'; void sceneEl.offsetWidth;
+    sceneEl.textContent = '🎮';
+    var a = cur.act;
+    textEl.innerHTML = '<div style="width:100%"><div class="rd-act-q">'+a.q+'</div><div class="rd-opts">'
+      + a.opts.map(function(o,i){ return '<button class="rd-opt" data-i="'+i+'"><span class="oe">'+o.e+'</span><span>'+o.t+'</span></button>'; }).join('')
+      + '</div><div class="rd-yay" id="rdYay" style="display:none"></div></div>';
+    $('#rdPrev').disabled = false;
+    $('#rdNext').textContent = '🔒 أجبِ السؤالَ أولاً';
+    $('#rdNext').disabled = true;
+    Array.prototype.forEach.call(textEl.querySelectorAll('.rd-opt'), function(b){
+      b.addEventListener('click', function(){
+        if(actSolved) return;
+        var o = cur.act.opts[+b.getAttribute('data-i')];
+        if(o.ok){
+          actSolved = true;
+          b.classList.add('ok');
+          Array.prototype.forEach.call(textEl.querySelectorAll('.rd-opt'), function(x){ x.disabled = true; });
+          var y = textEl.querySelector('#rdYay');
+          y.style.display = ''; y.textContent = '🎉 '+(cur.act.yay||'أحسنت! إجابةٌ صحيحة');
+          $('#rdNext').textContent = cur.game ? 'لعبةٌ أخيرة! 🎲' : 'أنهيتُ الحكاية ✓';
+          $('#rdNext').disabled = false;
+          if(!done[cur.id]) confetti();
+        }else{
+          b.classList.add('no');
+          setTimeout(function(){ b.classList.remove('no'); }, 500);
+        }
+      });
+    });
+  }
+
+  function renderGame(sceneEl, textEl){
+    gameWon = false;
+    sceneEl.style.display = 'none';
+    textEl.innerHTML = '';
+    var box = document.createElement('div'); box.style.width = '100%';
+    textEl.appendChild(box);
+    $('#rdPrev').disabled = false;
+    $('#rdNext').textContent = '🔒 أكملِ اللعبةَ أولاً';
+    $('#rdNext').disabled = true;
+    MiniGames.render(box, cur.game, function(){
+      gameWon = true;
+      $('#rdNext').textContent = 'أنهيتُ الحكاية ✓';
+      $('#rdNext').disabled = false;
+      if(!done[cur.id]) confetti();
+    });
+  }
+
+  function next(){
+    var total = cur.pages.length;
+    var actIdx = cur.act ? total+1 : -1;
+    var gameIdx = cur.game ? total + (cur.act?2:1) : -1;
+    var last = Math.max(total, actIdx, gameIdx);
+    if(page === actIdx && !actSolved) return;
+    if(page === gameIdx && !gameWon) return;
+    if(page < last){ page++; renderPage(); }
+    else{
+      done[cur.id] = 1; saveDone(done);
+      closeReader(); renderProgress();
+    }
+  }
+  function prev(){ if(page>0){ page--; renderPage(); } }
+
+  function confetti(){
+    var em = ['🌟','✨','🎈','⭐','🎉'];
+    for(var i=0;i<16;i++){
+      var c = document.createElement('span');
+      c.className='confetti';
+      c.textContent = em[i%em.length];
+      c.style.left = (Math.random()*100)+'vw';
+      c.style.animationDuration = (2+Math.random()*2)+'s';
+      c.style.animationDelay = (Math.random()*.6)+'s';
+      document.body.appendChild(c);
+      setTimeout(function(el){ return function(){ el.remove(); }; }(c), 5000);
+    }
+  }
+
+  $('#rdNext').addEventListener('click', next);
+  $('#rdPrev').addEventListener('click', prev);
+  $('#rdClose').addEventListener('click', closeReader);
+  $('#reader').addEventListener('click', function(e){ if(e.target===this) closeReader(); });
+  document.addEventListener('keydown', function(e){
+    if(!cur) return;
+    if(e.key==='Escape') closeReader();
+    if(e.key==='ArrowLeft') next();   // RTL: left = forward
+    if(e.key==='ArrowRight') prev();
+  });
+
+  renderProgress();
+})();
+</script>
+</body>
+</html>

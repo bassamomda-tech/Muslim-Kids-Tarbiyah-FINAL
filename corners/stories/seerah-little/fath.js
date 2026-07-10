@@ -1,0 +1,166 @@
+/* corners/stories/seerah-little/fath.js — السيرة: فتح مكة للصغار (٣–٦) · ٧ حكايات */
+window.SEERAH_LITTLE = window.SEERAH_LITTLE || {};
+window.SEERAH_LITTLE.fath = {
+  id:'fath', icon:'🕋', color:'#C0392B', title:'فَتْحُ مَكَّة', tag:'الْعَفْوُ عِنْدَ الْمَقْدِرَة',
+  stories:[
+
+{ id:'return', icon:'🕋', color:'#C0392B', title:'الْعَوْدَةُ إِلَى مَكَّة',
+  tag:'بَعْدَ سِنِينَ مِنَ الْهِجْرَة',
+  pages:[
+    { emoji:'🕋', text:'بَعْدَ سِنِينَ مِنَ الْهِجْرَة، عَادَ النَّبِيُّ ﷺ إِلَى مَكَّةَ الَّتِي أَخْرَجَهُ أَهْلُهَا وَآذَوْه.',
+      prompt:'A large peaceful procession approaching Makkah and the Kaaba, the return, warm reverent, no faces' },
+    { emoji:'🤝', text:'جَاءَ بِجَيْشٍ كَبِيرٍ مِنَ الْمُسْلِمِين، لَكِنَّهُ دَخَلَ مَكَّةَ بِلَا قِتَالٍ يُذْكَر، فَاتِحًا بِالسَّلَام.',
+      prompt:'A great but peaceful entry into a city, victory without bloodshed, warm dignified, no faces' },
+    { emoji:'🙇', text:'دَخَلَ النَّبِيُّ ﷺ مُتَوَاضِعًا مُطَأْطِئًا رَأْسَهُ شُكْرًا لِله، لَا مُتَكَبِّرًا وَلَا مُنْتَقِمًا.',
+      prompt:'A humble bowed posture of gratitude entering the city, humility in victory, warm, no face' },
+    { emoji:'💚', text:'فَأَتَعَلَّمُ التَّوَاضُعَ عِنْدَ النَّصْر، وَأَنْ أَشْكُرَ اللهَ لَا أَتَكَبَّر.',
+      prompt:'A child humbly grateful after success, humility in triumph, warm uplifting' },
+  ],
+  moral:'أَتَوَاضَعُ عِنْدَ النَّصْرِ وَأَشْكُرُ اللهَ، وَلَا أَتَكَبَّرُ عَلَى أَحَد. 💚',
+  game:{ type:'sort', title:'كَيْفَ أَكُونُ عِنْدَ النَّصْر؟', bins:['تَوَاضُعٌ وَشُكْر 💚','كِبْرٌ وَانْتِقَام 🚫'], items:[
+    { e:'🙇', t:'أَتَوَاضَعُ وَأَشْكُرُ الله', bin:0 },
+    { e:'😤', t:'أَتَكَبَّرُ وَأَفْتَخِر', bin:1 },
+    { e:'🤲', t:'أَحْمَدُ اللهَ عَلَى الْفَضْل', bin:0 },
+    { e:'👊', t:'أَنْتَقِمُ مِمَّنْ آذَانِي', bin:1 } ] },
+  act:{ q:'كَيْفَ دَخَلَ النَّبِيُّ ﷺ مَكَّةَ فَاتِحًا؟', yay:'أَحْسَنْت! مُتَوَاضِعًا شَاكِرًا لِله', opts:[
+    { e:'🙇', t:'مُتَوَاضِعًا شَاكِرًا', ok:true },
+    { e:'😤', t:'مُتَكَبِّرًا مُنْتَقِمًا' },
+    { e:'🤷', t:'لَا أَعْرِف' } ] },
+  dua:'اللَّهُمَّ اجْعَلْنِي مُتَوَاضِعًا شَاكِرًا عِنْدَ كُلِّ نِعْمَة' },
+
+{ id:'pardon', icon:'💚', color:'#1F8B6E', title:'اذْهَبُوا فَأَنْتُمُ الطُّلَقَاء',
+  tag:'أَعْظَمُ عَفْوٍ فِي التَّارِيخ',
+  pages:[
+    { emoji:'😨', text:'اجْتَمَعَ أَهْلُ مَكَّةَ خَائِفِين: هَؤُلَاءِ الَّذِينَ آذَوُا النَّبِيَّ ﷺ وَأَخْرَجُوهُ وَحَارَبُوه — مَاذَا سَيَفْعَلُ بِهِم؟',
+      prompt:'A worried crowd awaiting judgment in a city square, fear of consequence, warm tense, no faces' },
+    { emoji:'💚', text:'فَقَالَ النَّبِيُّ ﷺ كَلِمَتَهُ الْعَظِيمَة: اذْهَبُوا فَأَنْتُمُ الطُّلَقَاء! أَيْ: عَفَوْتُ عَنْكُم جَمِيعًا.',
+      prompt:'A gesture of forgiveness and release with warm radiant light over a relieved crowd, great pardon, no faces' },
+    { emoji:'🕊️', text:'عَفَا عَنْهُم مَعَ قُدْرَتِهِ عَلَى الِانْتِقَام! فَأَحَبَّهُ النَّاسُ وَدَخَلُوا فِي الْإِسْلَامِ أَفْوَاجًا.',
+      prompt:'Doves of peace rising over a reconciled city, forgiveness winning hearts, warm bright' },
+    { emoji:'💛', text:'فَأَتَعَلَّمُ أَعْظَمَ خُلُق: الْعَفْوُ عِنْدَ الْمَقْدِرَة. إِذَا قَدَرْتُ عَلَى مَنْ أَخْطَأَ عَلَيَّ عَفَوْت.',
+      prompt:'A child forgiving another warmly instead of retaliating, pardon at capability, uplifting warm' },
+  ],
+  moral:'الْعَفْوُ عِنْدَ الْمَقْدِرَةِ خُلُقُ الْعُظَمَاء، وَأَعْفُو كَمَا عَفَا النَّبِيُّ ﷺ. 💛',
+  game:{ type:'find', title:'اعْفُ كَمَا عَفَا النَّبِيُّ ﷺ! اجْمَعِ الْقُلُوبَ الْعَافِيَةَ الْخَمْس', target:'💚', count:5, distractors:['😠','☁️'], size:12 },
+  act:{ q:'مَاذَا فَعَلَ النَّبِيُّ ﷺ بِأَهْلِ مَكَّةَ الَّذِينَ آذَوْه؟', yay:'أَحْسَنْت! عَفَا عَنْهُم جَمِيعًا', opts:[
+    { e:'💚', t:'عَفَا عَنْهُم: أَنْتُمُ الطُّلَقَاء', ok:true },
+    { e:'👊', t:'انْتَقَمَ مِنْهُم' },
+    { e:'🤷', t:'لَا أَعْرِف' } ] },
+  dua:'اللَّهُمَّ اجْعَلْنِي عَفُوًّا أُحِبُّ الْعَفْوَ عَنِ النَّاس' },
+
+{ id:'idols', icon:'🗿', color:'#8E44AD', title:'تَطْهِيرُ الْكَعْبَة',
+  tag:'وَقُلْ جَاءَ الْحَقُّ وَزَهَقَ الْبَاطِل',
+  pages:[
+    { emoji:'🗿', text:'كَانَ حَوْلَ الْكَعْبَةِ أَصْنَامٌ كَثِيرَةٌ يَعْبُدُهَا الْمُشْرِكُونَ مِنْ دُونِ الله.',
+      prompt:'Stone idols around an ancient sacred house, before purification, warm dusty, no worship shown' },
+    { emoji:'✊', text:'فَكَسَّرَهَا النَّبِيُّ ﷺ وَهُوَ يَقُول: جَاءَ الْحَقُّ وَزَهَقَ الْبَاطِل، إِنَّ الْبَاطِلَ كَانَ زَهُوقًا!',
+      prompt:'Fallen idol pieces cleared away with a burst of light, truth prevailing, warm radiant, no faces' },
+    { emoji:'🕋', text:'فَعَادَتِ الْكَعْبَةُ بَيْتًا لِلَّهِ الْوَاحِدِ كَمَا بَنَاهَا إِبْرَاهِيمُ وَإِسْمَاعِيلُ عَلَيْهِمَا السَّلَام.',
+      prompt:'A purified Kaaba glowing warmly, restored to worship of one God, serene reverent' },
+    { emoji:'💚', text:'فَأَتَعَلَّمُ أَنَّ الْحَقَّ يَنْتَصِرُ دَائِمًا، وَأَنَّنِي أَعْبُدُ اللهَ الْوَاحِدَ لَا شَيْءَ سِوَاه.',
+      prompt:'A child raising hands to worship one God under warm light, pure monotheism, uplifting' },
+  ],
+  moral:'الْحَقُّ يَنْتَصِرُ وَالْبَاطِلُ يَزُول، وَأَعْبُدُ اللهَ الْوَاحِدَ وَحْدَه. 💚',
+  game:{ type:'sort', title:'مَنْ نَعْبُد؟', bins:['نَعْبُدُ اللهَ وَحْدَه 💚','لَا يُعْبَدُ أَبَدًا 🚫'], items:[
+    { e:'💚', t:'اللهُ الْخَالِقُ الْوَاحِد', bin:0 },
+    { e:'🗿', t:'الْأَصْنَامُ الْحَجَرِيَّة', bin:1 },
+    { e:'🕋', t:'رَبُّ الْكَعْبَة', bin:0 },
+    { e:'⭐', t:'النُّجُومُ وَالْأَشْيَاء', bin:1 } ] },
+  act:{ q:'مَاذَا قَالَ النَّبِيُّ ﷺ وَهُوَ يُطَهِّرُ الْكَعْبَة؟', yay:'أَحْسَنْت! جَاءَ الْحَقُّ وَزَهَقَ الْبَاطِل', opts:[
+    { e:'✊', t:'جَاءَ الْحَقُّ وَزَهَقَ الْبَاطِل', ok:true },
+    { e:'😴', t:'لَمْ يَقُلْ شَيْئًا' },
+    { e:'🤷', t:'لَا أَعْرِف' } ] },
+  dua:'لَا إِلَهَ إِلَّا اللهُ وَحْدَهُ لَا شَرِيكَ لَه' },
+
+{ id:'bilal', icon:'📢', color:'#2980B9', title:'أَذَانُ بِلَالٍ فَوْقَ الْكَعْبَة',
+  tag:'كَرَامَةُ الْمُؤْمِن',
+  pages:[
+    { emoji:'📢', text:'أَمَرَ النَّبِيُّ ﷺ بِلَالًا — الَّذِي كَانَ عَبْدًا يُعَذَّب — أَنْ يَصْعَدَ فَوْقَ الْكَعْبَةِ وَيَرْفَعَ الْأَذَان!',
+      prompt:'A figure atop the Kaaba calling the adhan at dawn over Makkah, honored call, warm radiant, no face detail' },
+    { emoji:'🌟', text:'ارْتَفَعَ صَوْتُ بِلَالٍ بِالتَّوْحِيدِ فِي أَعْظَمِ مَكَان: اللهُ أَكْبَر، أَشْهَدُ أَنْ لَا إِلَهَ إِلَّا الله!',
+      prompt:'Golden sound waves of adhan spreading over the sacred city, honored voice, warm serene' },
+    { emoji:'💚', text:'الَّذِي كَانَ يُعَذَّبُ عَلَى الرَّمْلِ صَارَ يُؤَذِّنُ فَوْقَ أَقْدَسِ بَيْت! الْإِسْلَامُ رَفَعَهُ بِإِيمَانِه لَا بِنَسَبِه.',
+      prompt:'A once-lowly believer now honored high, faith elevating a person, warm uplifting, no face detail' },
+    { emoji:'💛', text:'فَأَتَعَلَّمُ أَنَّ قِيمَتِي عِنْدَ اللهِ بِإِيمَانِي وَتَقْوَايَ، لَا بِمَالِي أَوْ لَوْنِي أَوْ نَسَبِي.',
+      prompt:'A diverse group of children equal and honored under warm light, worth by piety, uplifting' },
+  ],
+  moral:'قِيمَتِي عِنْدَ اللهِ بِإِيمَانِي وَتَقْوَايَ لَا بِلَوْنِي أَوْ نَسَبِي. 💛',
+  game:{ type:'sort', title:'مَا مِيزَانُ الْقِيمَةِ عِنْدَ الله؟', bins:['يَرْفَعُ عِنْدَ الله ⬆️','لَا قِيمَةَ لَهُ 🚫'], items:[
+    { e:'💚', t:'الْإِيمَانُ وَالتَّقْوَى', bin:0 },
+    { e:'💰', t:'كَثْرَةُ الْمَال', bin:1 },
+    { e:'🤝', t:'الصِّدْقُ وَالْعَمَلُ الطَّيِّب', bin:0 },
+    { e:'🎨', t:'اللَّوْنُ وَالشَّكْل', bin:1 } ] },
+  act:{ q:'مَنْ رَفَعَ الْأَذَانَ فَوْقَ الْكَعْبَةِ يَوْمَ الْفَتْح؟', yay:'أَحْسَنْت! بِلَالٌ رضي الله عنه', opts:[
+    { e:'📢', t:'بِلَالٌ الْحَبَشِيّ', ok:true },
+    { e:'👑', t:'أَحَدُ الْمُلُوك' },
+    { e:'🤷', t:'لَا أَعْرِف' } ] },
+  dua:'اللَّهُمَّ ارْفَعْ قَدْرِي بِتَقْوَاكَ وَطَاعَتِك' },
+
+{ id:'mercy', icon:'🕊️', color:'#16A085', title:'الرَّحْمَةُ الْمُهْدَاة',
+  tag:'رَحْمَةٌ لِلْعَالَمِين',
+  pages:[
+    { emoji:'🕊️', text:'كَانَ النَّبِيُّ ﷺ رَحْمَةً لِلْعَالَمِين: رَحِيمًا بِالنَّاسِ وَالْحَيَوَانِ وَالْأَرْض، فِي الْحَرْبِ وَالسَّلَام.',
+      prompt:'A gentle figure surrounded by people animals and nature in harmony, mercy to all, warm, no face' },
+    { emoji:'🐈', text:'نَهَى عَنْ إِيذَاءِ الْحَيَوَان، وَأَمَرَ بِالرِّفْقِ بِه، حَتَّى الطَّيْرُ وَالْقِطَط.',
+      prompt:'Kind care for a cat and birds, mercy to animals, warm tender scene, no faces' },
+    { emoji:'👶', text:'وَكَانَ يُحِبُّ الْأَطْفَالَ وَيُلَاعِبُهُم وَيَحْمِلُهُم، وَيَرْحَمُ الْيَتِيمَ وَالضَّعِيف.',
+      prompt:'A caring figure playing gently with happy children, love of children, warm bright, no face detail' },
+    { emoji:'💚', text:'فَأَقْتَدِي بِهِ ﷺ: أَكُونُ رَحِيمًا بِكُلِّ مَنْ حَوْلِي — النَّاسِ وَالْحَيَوَانِ وَالطَّبِيعَة.',
+      prompt:'A child kindly caring for people and animals, spreading mercy, warm uplifting' },
+  ],
+  moral:'أَقْتَدِي بِرَحْمَةِ النَّبِيِّ ﷺ: أَرْحَمُ النَّاسَ وَالْحَيَوَانَ وَكُلَّ شَيْء. 💚',
+  game:{ type:'find', title:'انْشُرِ الرَّحْمَة! اجْمَعِ الْقُلُوبَ الرَّحِيمَةَ الْخَمْس', target:'💚', count:5, distractors:['🐈','🌷'], size:12 },
+  act:{ q:'بِمَ وَصَفَ اللهُ نَبِيَّهُ ﷺ؟', yay:'أَحْسَنْت! رَحْمَةً لِلْعَالَمِين', opts:[
+    { e:'🕊️', t:'رَحْمَةً لِلْعَالَمِين', ok:true },
+    { e:'😠', t:'قَاسِيًا شَدِيدًا' },
+    { e:'🤷', t:'لَا أَعْرِف' } ] },
+  dua:'اللَّهُمَّ اجْعَلْنِي رَحِيمًا بِخَلْقِكَ كُلِّهِم' },
+
+{ id:'delegations', icon:'🌍', color:'#D4A017', title:'دُخُولُ النَّاسِ أَفْوَاجًا',
+  tag:'انْتِشَارُ الْإِسْلَام',
+  pages:[
+    { emoji:'🌍', text:'بَعْدَ الْفَتْح، جَاءَتْ وُفُودُ الْقَبَائِلِ مِنْ كُلِّ مَكَانٍ تُعْلِنُ إِسْلَامَهَا وَتَتَعَلَّمُ الدِّين.',
+      prompt:'Delegations arriving from across the land to a welcoming city, tribes embracing Islam, warm, no faces' },
+    { emoji:'📈', text:'دَخَلَ النَّاسُ فِي دِينِ اللهِ أَفْوَاجًا (جَمَاعَاتٍ كَبِيرَة)، كَمَا قَالَ الله: وَرَأَيْتَ النَّاسَ يَدْخُلُونَ فِي دِينِ اللهِ أَفْوَاجًا.',
+      prompt:'Growing waves of people joining, light spreading across a map, mass acceptance, warm radiant' },
+    { emoji:'🕊️', text:'انْتَشَرَ الْإِسْلَامُ بِالسَّلَامِ وَالْأَخْلَاقِ وَالْعَدْل، لَا بِالْإِكْرَاه: لَا إِكْرَاهَ فِي الدِّين.',
+      prompt:'Islam spreading through good character and peace, hearts opening willingly, warm bright' },
+    { emoji:'💚', text:'فَأَتَعَلَّمُ أَنَّ أَجْمَلَ دَعْوَةٍ لِلْخَيْرِ هِيَ الْقُدْوَةُ الْحَسَنَةُ وَالْأَخْلَاقُ الطَّيِّبَة.',
+      prompt:'A child being a good example inspiring friends, leading by example, warm uplifting' },
+  ],
+  moral:'الْإِسْلَامُ انْتَشَرَ بِالْأَخْلَاقِ وَالْعَدْل، وَأَجْمَلُ دَعْوَةٍ قُدْوَةٌ حَسَنَة. 💚',
+  game:{ type:'pairs', title:'صِلْ كُلَّ شَيْءٍ بِمَعْنَاه', pairs:[
+    ['🌍 الْوُفُود','جَاءَتْ تُعْلِنُ إِسْلَامَهَا'],
+    ['📈 أَفْوَاجًا','جَمَاعَاتٌ كَبِيرَة'],
+    ['🕊️ انْتَشَرَ','بِالسَّلَامِ وَالْأَخْلَاق'] ] },
+  act:{ q:'كَيْفَ انْتَشَرَ الْإِسْلَامُ بَعْدَ الْفَتْح؟', yay:'أَحْسَنْت! بِالْأَخْلَاقِ وَالْعَدْلِ لَا بِالْإِكْرَاه', opts:[
+    { e:'🕊️', t:'بِالْأَخْلَاقِ وَالسَّلَام', ok:true },
+    { e:'⚔️', t:'بِالْإِكْرَاه' },
+    { e:'🤷', t:'لَا أَعْرِف' } ] },
+  dua:'اللَّهُمَّ اجْعَلْنِي قُدْوَةً حَسَنَةً تَدْعُو لِلْخَيْر' },
+
+{ id:'lesson', icon:'🌟', color:'#5B4B8A', title:'دُرُوسُ الْفَتْح',
+  tag:'الْعَفْوُ وَالتَّوَاضُعُ وَالنَّصْر',
+  pages:[
+    { emoji:'🌟', text:'فَتْحُ مَكَّةَ عَلَّمَنَا أَعْظَمَ الدُّرُوس: أَنَّ الْقَوِيَّ الْحَقِيقِيَّ هُوَ مَنْ يَعْفُو وَهُوَ قَادِرٌ عَلَى الِانْتِقَام.',
+      prompt:'A radiant lesson-star over a peaceful reconciled city, lessons of the conquest, warm hopeful' },
+    { emoji:'🙇', text:'وَأَنَّ التَّوَاضُعَ عِنْدَ النَّصْرِ وَالشُّكْرَ لِلَّهِ خُلُقُ الْأَنْبِيَاء.',
+      prompt:'A humble grateful posture under warm light after victory, humility, serene, no face' },
+    { emoji:'💚', text:'وَأَنَّ الْإِسْلَامَ دِينُ رَحْمَةٍ وَسَلَامٍ وَعَدْل، يَنْتَصِرُ بِالْأَخْلَاقِ قَبْلَ السِّلَاح.',
+      prompt:'Mercy peace and justice glowing as banners over a thriving city, values of Islam, warm bright' },
+    { emoji:'💛', text:'فَأَكُونُ قَوِيًّا عَفُوًّا مُتَوَاضِعًا رَحِيمًا، أَقْتَدِي بِنَبِيِّي ﷺ فِي كُلِّ أَحْوَالِي.',
+      prompt:'A child embodying strength mercy and humility, following the Prophet, uplifting warm' },
+  ],
+  moral:'الْقَوِيُّ الْحَقِيقِيُّ يَعْفُو وَيَتَوَاضَعُ وَيَرْحَم، وَأَقْتَدِي بِنَبِيِّي ﷺ. 💛',
+  game:{ type:'order', title:'رَتِّبْ أَحْدَاثَ فَتْحِ مَكَّة', items:[
+    { e:'🕋', t:'الْعَوْدَةُ إِلَى مَكَّة' },
+    { e:'💚', t:'الْعَفْوُ عَنْ أَهْلِهَا' },
+    { e:'🗿', t:'تَطْهِيرُ الْكَعْبَة' },
+    { e:'📢', t:'أَذَانُ بِلَال' } ] },
+  act:{ q:'مَنِ الْقَوِيُّ الْحَقِيقِيُّ فِي دَرْسِ الْفَتْح؟', yay:'أَحْسَنْت! مَنْ يَعْفُو وَهُوَ قَادِر', opts:[
+    { e:'💚', t:'مَنْ يَعْفُو عِنْدَ الْمَقْدِرَة', ok:true },
+    { e:'👊', t:'مَنْ يَنْتَقِمُ بِقُوَّة' },
+    { e:'🤷', t:'لَا أَعْرِف' } ] },
+  dua:'اللَّهُمَّ اجْعَلْنِي قَوِيًّا عَفُوًّا مُتَوَاضِعًا رَحِيمًا' },
+
+]};

@@ -1,0 +1,188 @@
+/* corners/stories/companions-little/ali.js — علي بن أبي طالب للصغار (٣–٦) · ٨ حكايات */
+window.COMPANIONS_LITTLE = window.COMPANIONS_LITTLE || {};
+window.COMPANIONS_LITTLE.ali = {
+  id:'ali', icon:'🦁', color:'#8E44AD', title:'عَلِيُّ بْنُ أَبِي طَالِب', tag:'الشَّجَاعَةُ وَالْعِلْم',
+  stories:[
+
+{ id:'child', icon:'👦', color:'#8E44AD', title:'أَوَّلُ الصِّبْيَانِ إِسْلَامًا',
+  tag:'آمَنَ وَهُوَ صَغِير',
+  pages:[
+    { emoji:'👦', text:'كَانَ عَلِيٌّ ابْنَ عَمِّ النَّبِيِّ ﷺ، نَشَأَ فِي بَيْتِهِ صَغِيرًا، فَكَانَ أَوَّلَ الصِّبْيَانِ إِسْلَامًا.',
+      prompt:'A young boy in the Prophet household with warm light, growing up in faith, warm, no face detail' },
+    { emoji:'💚', text:'آمَنَ عَلِيٌّ وَهُوَ طِفْلٌ صَغِير، فَدَلَّ ذَلِكَ أَنَّ قَلْبَ الطِّفْلِ يَتَّسِعُ لِأَعْظَمِ إِيمَان.',
+      prompt:'A child heart glowing with faith, early belief, warm tender scene' },
+    { emoji:'📖', text:'تَعَلَّمَ مِنَ النَّبِيِّ ﷺ مُبَاشَرَةً، فَصَارَ مِنْ أَعْلَمِ النَّاسِ وَأَحْكَمِهِم.',
+      prompt:'A young learner beside a glowing source of knowledge, learning from the Prophet, warm, no faces' },
+    { emoji:'💛', text:'فَأَتَعَلَّمُ أَنَّنِي لَسْتُ صَغِيرًا عَلَى الْإِيمَانِ وَالْعِلْم، فَأَبْدَأُ الْخَيْرَ مِنَ الْآن.',
+      prompt:'A confident young child eager to learn and do good, starting early, warm uplifting' },
+  ],
+  moral:'لَسْتُ صَغِيرًا عَلَى الْإِيمَانِ وَالْعِلْم، أَبْدَأُ الْخَيْرَ مُنْذُ صِغَرِي. 💛',
+  game:{ type:'pairs', title:'صِلْ كُلَّ شَيْءٍ بِعَلِيّ', pairs:[
+    ['👦 عَلِيّ','أَوَّلُ الصِّبْيَانِ إِسْلَامًا'],
+    ['📖 تَعَلَّمَ','مِنَ النَّبِيِّ ﷺ مُبَاشَرَة'],
+    ['🦁 عُرِفَ بِـ','الشَّجَاعَةِ وَالْعِلْم'] ] },
+  act:{ q:'مَاذَا كَانَ عَلِيٌّ بَيْنَ الصِّبْيَان؟', yay:'أَحْسَنْت! أَوَّلَ الصِّبْيَانِ إِسْلَامًا', opts:[
+    { e:'👦', t:'أَوَّلَ الصِّبْيَانِ إِسْلَامًا', ok:true },
+    { e:'🤷', t:'لَمْ يُسْلِم' },
+    { e:'👴', t:'كَانَ شَيْخًا كَبِيرًا' } ] },
+  dua:'اللَّهُمَّ ارْزُقْنِي الْإِيمَانَ وَالْعِلْمَ مُنْذُ صِغَرِي' },
+
+{ id:'firash', icon:'🌙', color:'#2980B9', title:'نَامَ فِي فِرَاشِ النَّبِيِّ ﷺ',
+  tag:'شَجَاعَةٌ فِي لَيْلَةِ الْهِجْرَة',
+  pages:[
+    { emoji:'🌙', text:'لَيْلَةَ الْهِجْرَة، أَرَادَ الْمُشْرِكُونَ قَتْلَ النَّبِيِّ ﷺ فِي فِرَاشِه، فَطَلَبَ مِنْ عَلِيٍّ أَنْ يَنَامَ مَكَانَه.',
+      prompt:'A dark night with a brave youth resting in a bed while danger lurks outside, courage, warm tense, no faces' },
+    { emoji:'🦁', text:'نَامَ عَلِيٌّ الصَّغِيرُ فِي الْفِرَاشِ بِشَجَاعَةٍ عَجِيبَة، رَغْمَ الْخَطَرِ الشَّدِيد، ثِقَةً بِالله.',
+      prompt:'A calm brave figure lying peacefully despite danger, trust and courage, warm, no faces' },
+    { emoji:'🛡️', text:'حَفِظَهُ اللهُ وَلَمْ يُصِبْهُ سُوء، وَنَجَا النَّبِيُّ ﷺ بِفَضْلِ الله.',
+      prompt:'Protective light over a resting youth as danger passes, divine protection, warm reassuring' },
+    { emoji:'💚', text:'فَأَتَعَلَّمُ الشَّجَاعَةَ وَالتَّضْحِيَة: أُضَحِّي وَأُسَاعِدُ مَنْ أُحِبُّ وَأَتَوَكَّلُ عَلَى الله.',
+      prompt:'A brave child helping someone with courage, sacrifice for others, warm uplifting' },
+  ],
+  moral:'الشَّجَاعَةُ وَالتَّضْحِيَةُ مِنْ أَجْلِ الْحَقِّ وَمَنْ نُحِبّ، مَعَ التَّوَكُّلِ عَلَى الله. 💚',
+  game:{ type:'maze', title:'اللَّيْلُ خَطِر! أَوْصِلْ عَلِيًّا بِأَمَانٍ حَتَّى الصَّبَاح', avatar:'🌙', goal:'🌅', wall:'😠', map:['S.#..','.###.','...#.','##...','#..#G'] },
+  act:{ q:'مَاذَا فَعَلَ عَلِيٌّ لَيْلَةَ الْهِجْرَة؟', yay:'أَحْسَنْت! نَامَ فِي فِرَاشِ النَّبِيِّ بِشَجَاعَة', opts:[
+    { e:'🦁', t:'نَامَ فِي فِرَاشِ النَّبِيِّ ﷺ', ok:true },
+    { e:'🏃', t:'هَرَبَ خَائِفًا' },
+    { e:'🤷', t:'لَا أَعْرِف' } ] },
+  dua:'اللَّهُمَّ ارْزُقْنِي الشَّجَاعَةَ وَالتَّضْحِيَةَ فِي الْحَقّ' },
+
+{ id:'knowledge', icon:'📚', color:'#16A085', title:'بَابُ مَدِينَةِ الْعِلْم',
+  tag:'أَعْلَمُ الصَّحَابَة',
+  pages:[
+    { emoji:'📚', text:'كَانَ عَلِيٌّ مِنْ أَعْلَمِ الصَّحَابَة، حَتَّى قَالَ النَّبِيُّ ﷺ: أَنَا مَدِينَةُ الْعِلْمِ وَعَلِيٌّ بَابُهَا.',
+      prompt:'A glowing gate to a city of knowledge, the door of learning, warm radiant, no faces' },
+    { emoji:'⚖️', text:'كَانَ النَّاسُ يَسْأَلُونَهُ فِي الْأُمُورِ الصَّعْبَة، فَيُجِيبُ بِحِكْمَةٍ وَعَدْل.',
+      prompt:'People seeking wise counsel from a knowledgeable figure, wisdom in judgment, warm, no faces' },
+    { emoji:'💡', text:'جَمَعَ بَيْنَ الْعِلْمِ وَالشَّجَاعَة، فَكَانَ قَوِيًّا بِعَقْلِهِ كَمَا هُوَ قَوِيٌّ بِذِرَاعِه.',
+      prompt:'A balance of a book and strength together, knowledge with courage, warm bright, no faces' },
+    { emoji:'💚', text:'فَأَتَعَلَّمُ أَنَّ الْعِلْمَ قُوَّة، وَأَنَّ الْبَطَلَ الْحَقَّ قَوِيٌّ بِعِلْمِهِ وَعَقْلِه.',
+      prompt:'A child reading eagerly with a glowing mind, knowledge as strength, warm uplifting' },
+  ],
+  moral:'الْعِلْمُ قُوَّة، وَالْبَطَلُ الْحَقُّ قَوِيٌّ بِعَقْلِهِ كَمَا بِجِسْمِه. 💚',
+  game:{ type:'find', title:'اطْلُبِ الْعِلْمَ كَعَلِيّ! اجْمَعِ الْكُتُبَ الْخَمْس', target:'📚', count:5, distractors:['🪨','☁️'], size:12 },
+  act:{ q:'بِمَ وَصَفَ النَّبِيُّ ﷺ عِلْمَ عَلِيّ؟', yay:'أَحْسَنْت! أَنَا مَدِينَةُ الْعِلْمِ وَعَلِيٌّ بَابُهَا', opts:[
+    { e:'📚', t:'عَلِيٌّ بَابُ مَدِينَةِ الْعِلْم', ok:true },
+    { e:'💰', t:'أَغْنَى النَّاس' },
+    { e:'🤷', t:'لَا أَعْرِف' } ] },
+  dua:'رَبِّ زِدْنِي عِلْمًا وَاجْعَلْنِي مِنْ أَهْلِه' },
+
+{ id:'brave', icon:'🦁', color:'#C0392B', title:'أَسَدُ الْمَعَارِك',
+  tag:'شَجَاعَةٌ لَا تَعْرِفُ الْخَوْف',
+  pages:[
+    { emoji:'🦁', text:'كَانَ عَلِيٌّ مِنْ أَشْجَعِ الصَّحَابَة، ثَابِتًا فِي الْمَعَارِكِ لَا يَتَرَاجَعُ عَنِ الْحَقّ.',
+      prompt:'A brave lion-hearted figure standing firm, unmatched courage, warm strong, no face detail' },
+    { emoji:'🚩', text:'فِي غَزْوَةِ خَيْبَر، أَعْطَاهُ النَّبِيُّ ﷺ الرَّايَةَ وَقَال: لَأُعْطِيَنَّهَا رَجُلًا يُحِبُّهُ اللهُ وَرَسُولُه، فَفَتَحَ اللهُ عَلَى يَدَيْه.',
+      prompt:'A banner of light held high by a valiant figure, honored trust, warm radiant, no faces' },
+    { emoji:'💪', text:'لَكِنَّ شَجَاعَتَهُ كَانَتْ لِلَّهِ لَا لِلتَّفَاخُر، وَكَانَ رَحِيمًا عَادِلًا مَعَ قُوَّتِه.',
+      prompt:'Strength combined with mercy and justice, courage for Allah, warm balanced, no faces' },
+    { emoji:'💚', text:'فَأَتَعَلَّمُ الشَّجَاعَةَ فِي الْحَقّ: أَثْبُتُ عَلَى الصَّوَابِ وَلَا أَخَافُ إِلَّا الله.',
+      prompt:'A brave child standing up for what is right, courage in truth, warm uplifting' },
+  ],
+  moral:'الشَّجَاعَةُ الْحَقِيقِيَّةُ لِلَّهِ لَا لِلتَّفَاخُر، وَأَثْبُتُ عَلَى الْحَقّ. 💚',
+  game:{ type:'sort', title:'أَيُّهَا شَجَاعَةٌ صَحِيحَة؟', bins:['شَجَاعَةٌ لِلَّه ✅','تَهَوُّرٌ أَوْ تَفَاخُر 🚫'], items:[
+    { e:'🦁', t:'أَثْبُتُ عَلَى الْحَقّ', bin:0 },
+    { e:'😤', t:'أَتَشَاجَرُ لِلتَّفَاخُر', bin:1 },
+    { e:'🛡️', t:'أُدَافِعُ عَنِ الْمَظْلُوم', bin:0 },
+    { e:'🙄', t:'أَتَبَاهَى بِقُوَّتِي', bin:1 } ] },
+  act:{ q:'لِمَاذَا كَانَتْ شَجَاعَةُ عَلِيٍّ عَظِيمَة؟', yay:'أَحْسَنْت! لِأَنَّهَا كَانَتْ لِلَّهِ وَفِي الْحَقّ', opts:[
+    { e:'💚', t:'لِأَنَّهَا لِلَّهِ وَفِي الْحَقّ', ok:true },
+    { e:'🙄', t:'لِلتَّفَاخُرِ أَمَامَ النَّاس' },
+    { e:'🤷', t:'لَا أَعْرِف' } ] },
+  dua:'اللَّهُمَّ ارْزُقْنِي الشَّجَاعَةَ فِي الْحَقّ خَالِصَةً لَك' },
+
+{ id:'zuhd', icon:'🌿', color:'#5B4B8A', title:'الزُّهْدُ وَالْبَسَاطَة',
+  tag:'قَلْبُهُ لَا يُحِبُّ الدُّنْيَا',
+  pages:[
+    { emoji:'🌿', text:'مَعَ عِلْمِهِ وَشَجَاعَتِه، كَانَ عَلِيٌّ زَاهِدًا فِي الدُّنْيَا، يَعِيشُ بِبَسَاطَةٍ وَلَا يُحِبُّ التَّرَف.',
+      prompt:'A simple modest home with a content figure, simplicity and detachment, warm, no faces' },
+    { emoji:'🍞', text:'كَانَ يَأْكُلُ الْبَسِيطَ وَيَلْبَسُ الْبَسِيط، وَيُعْطِي مَالَهُ لِلْفُقَرَاء.',
+      prompt:'A simple meal and plain clothes with a generous hand to the poor, modest living, warm, no faces' },
+    { emoji:'💛', text:'عَلَّمَنَا أَنَّ الدُّنْيَا مَتَاعٌ قَلِيل، وَأَنَّ الْآخِرَةَ خَيْرٌ وَأَبْقَى.',
+      prompt:'A modest life glowing with contentment, this world as little, warm serene' },
+    { emoji:'💚', text:'فَأَتَعَلَّمُ الْقَنَاعَة: لَا أَتَعَلَّقُ بِالْأَشْيَاء، وَأَجْعَلُ هَمِّيَ الْآخِرَة.',
+      prompt:'A content child happy with little, contentment, warm uplifting' },
+  ],
+  moral:'الدُّنْيَا مَتَاعٌ قَلِيل، وَأَقْنَعُ بِمَا عِنْدِي وَأَجْعَلُ هَمِّيَ الْآخِرَة. 💚',
+  game:{ type:'sort', title:'أَيُّهَا مِنَ الْقَنَاعَة؟', bins:['قَنَاعَةٌ 💚','طَمَعٌ 🚫'], items:[
+    { e:'😊', t:'أَقْنَعُ بِمَا عِنْدِي وَأَشْكُر', bin:0 },
+    { e:'😤', t:'أَطْمَعُ فِي كُلِّ شَيْء', bin:1 },
+    { e:'🤝', t:'أُعْطِي الْفُقَرَاء', bin:0 },
+    { e:'🙅', t:'أَبْخَلُ وَأَجْمَع', bin:1 } ] },
+  act:{ q:'كَيْفَ عَاشَ عَلِيٌّ رَغْمَ مَكَانَتِه؟', yay:'أَحْسَنْت! زَاهِدًا بَسِيطًا يُعْطِي الْفُقَرَاء', opts:[
+    { e:'🌿', t:'بِبَسَاطَةٍ وَزُهْدٍ وَكَرَم', ok:true },
+    { e:'👑', t:'بِتَرَفٍ وَبَذَخ' },
+    { e:'🤷', t:'لَا أَعْرِف' } ] },
+  dua:'اللَّهُمَّ ارْزُقْنِي الْقَنَاعَةَ وَاجْعَلْ هَمِّيَ الْآخِرَة' },
+
+{ id:'wise', icon:'💬', color:'#D4A017', title:'حِكَمُ عَلِيّ',
+  tag:'كَلِمَاتٌ تُنِيرُ الْقَلْب',
+  pages:[
+    { emoji:'💬', text:'تَرَكَ لَنَا عَلِيٌّ حِكَمًا جَمِيلَةً نَتَعَلَّمُ مِنْهَا، مِثْلَ: قِيمَةُ كُلِّ امْرِئٍ مَا يُحْسِنُه.',
+      prompt:'Glowing words of wisdom rising softly, wise sayings, warm serene, no faces' },
+    { emoji:'📖', text:'وَقَال: الْعِلْمُ خَيْرٌ مِنَ الْمَال، الْعِلْمُ يَحْرُسُكَ وَأَنْتَ تَحْرُسُ الْمَال.',
+      prompt:'A book glowing brighter than a pile of coins, knowledge over wealth, warm bright' },
+    { emoji:'🤝', text:'وَقَال: مَنْ لَمْ يَكُنْ أَخَاكَ فِي الدِّينِ فَهُوَ نَظِيرُكَ فِي الْخَلْق — دَعْوَةٌ لِلرَّحْمَةِ بِالْجَمِيع.',
+      prompt:'A message of universal kindness with warm light, mercy to all people, warm gentle, no faces' },
+    { emoji:'💚', text:'فَأَتَعَلَّمُ الْحِكْمَة: أُقَدِّرُ الْعِلْمَ، وَأُتْقِنُ عَمَلِي، وَأَرْحَمُ كُلَّ النَّاس.',
+      prompt:'A thoughtful child learning and being kind, wisdom in action, warm uplifting' },
+  ],
+  moral:'قِيمَتِي فِيمَا أُحْسِنُه، وَالْعِلْمُ خَيْرٌ مِنَ الْمَال، وَأَرْحَمُ كُلَّ النَّاس. 💚',
+  game:{ type:'pairs', title:'صِلْ كُلَّ حِكْمَةٍ بِمَعْنَاهَا', pairs:[
+    ['📖 الْعِلْمُ خَيْرٌ مِنَ الْمَال','الْعِلْمُ يَحْرُسُك'],
+    ['💎 قِيمَةُ الْمَرْء','مَا يُحْسِنُه'],
+    ['🤝 نَظِيرُكَ فِي الْخَلْق','ارْحَمْ كُلَّ النَّاس'] ] },
+  act:{ q:'أَيُّهُمَا خَيْرٌ فِي حِكْمَةِ عَلِيّ؟', yay:'أَحْسَنْت! الْعِلْمُ يَحْرُسُكَ وَأَنْتَ تَحْرُسُ الْمَال', opts:[
+    { e:'📖', t:'الْعِلْمُ خَيْرٌ مِنَ الْمَال', ok:true },
+    { e:'💰', t:'الْمَالُ خَيْرٌ مِنَ الْعِلْم' },
+    { e:'🤷', t:'لَا أَعْرِف' } ] },
+  dua:'اللَّهُمَّ ارْزُقْنِي الْعِلْمَ النَّافِعَ وَالْحِكْمَة' },
+
+{ id:'family', icon:'👨‍👩‍👧', color:'#B0578D', title:'زَوْجُ فَاطِمَةَ وَأَبُو الْحَسَنَيْن',
+  tag:'بَيْتُ النُّبُوَّة',
+  pages:[
+    { emoji:'💞', text:'تَزَوَّجَ عَلِيٌّ فَاطِمَةَ بِنْتَ النَّبِيِّ ﷺ، سَيِّدَةَ نِسَاءِ الْجَنَّة، فَكَانَ بَيْتُهُمَا بَيْتَ خَيْرٍ وَحُبّ.',
+      prompt:'A warm blessed home with soft light, a household of goodness, warm serene, no faces' },
+    { emoji:'👦', text:'وَرُزِقَا الْحَسَنَ وَالْحُسَيْن، سِبْطَيِ النَّبِيِّ ﷺ وَرَيْحَانَتَيْهِ اللَّذَيْنِ أَحَبَّهُمَا كَثِيرًا.',
+      prompt:'Two beloved grandchildren cherished with warmth, the beloved grandsons, warm tender, no faces' },
+    { emoji:'🤝', text:'كَانَ بَيْتُهُم مِثَالًا فِي التَّعَاوُنِ وَالْحُبّ: يَتَقَاسَمُونَ الْعَمَلَ وَيَتَرَاحَمُون.',
+      prompt:'A cooperative loving family sharing tasks, family harmony, warm bright, no faces' },
+    { emoji:'💚', text:'فَأَتَعَلَّمُ أَنَّ الْبَيْتَ الصَّالِحَ يُبْنَى بِالْحُبِّ وَالتَّعَاوُنِ وَذِكْرِ الله.',
+      prompt:'A child helping happily in a loving home, family cooperation, warm uplifting' },
+  ],
+  moral:'الْبَيْتُ الصَّالِحُ يُبْنَى بِالْحُبِّ وَالتَّعَاوُنِ وَذِكْرِ الله. 💚',
+  game:{ type:'pairs', title:'صِلْ كُلَّ فَرْدٍ بِبَيْتِ النُّبُوَّة', pairs:[
+    ['💞 فَاطِمَة','سَيِّدَةُ نِسَاءِ الْجَنَّة'],
+    ['👦 الْحَسَنُ وَالْحُسَيْن','سِبْطَا النَّبِيِّ ﷺ'],
+    ['🦁 عَلِيّ','زَوْجُ فَاطِمَة'] ] },
+  act:{ q:'مَنْ زَوْجَةُ عَلِيٍّ بِنْتُ النَّبِيِّ ﷺ؟', yay:'أَحْسَنْت! فَاطِمَةُ سَيِّدَةُ نِسَاءِ الْجَنَّة', opts:[
+    { e:'💞', t:'فَاطِمَةُ رضي الله عنها', ok:true },
+    { e:'🤷', t:'لَا أَعْرِف' },
+    { e:'👑', t:'مَلِكَة' } ] },
+  dua:'اللَّهُمَّ اجْعَلْ بَيْتَنَا بَيْتَ حُبٍّ وَتَعَاوُنٍ وَذِكْر' },
+
+{ id:'jannah', icon:'🌟', color:'#C9A227', title:'الْمُبَشَّرُ بِالْجَنَّة',
+  tag:'رَابِعُ الْخُلَفَاءِ الرَّاشِدِين',
+  pages:[
+    { emoji:'🌟', text:'عَلِيٌّ مِنَ الْعَشَرَةِ الْمُبَشَّرِينَ بِالْجَنَّة، وَرَابِعُ الْخُلَفَاءِ الرَّاشِدِين.',
+      prompt:'A radiant golden star among ten in a warm sky, glad tidings, serene glow' },
+    { emoji:'💚', text:'أَحَبَّهُ النَّبِيُّ ﷺ حُبًّا عَظِيمًا، وَقَال: أَنْتَ مِنِّي وَأَنَا مِنْك.',
+      prompt:'A deep bond of love shown as joined lights, love and closeness, warm tender, no faces' },
+    { emoji:'📚', text:'جَمَعَ عَلِيٌّ بَيْنَ الْعِلْمِ وَالشَّجَاعَةِ وَالزُّهْدِ وَالْحِكْمَة — قُدْوَةٌ لِكُلِّ بَطَل.',
+      prompt:'A well-rounded hero embodying knowledge courage and wisdom, a complete role model, warm bright' },
+    { emoji:'💛', text:'فَأُحِبُّ عَلِيًّا، وَأَقْتَدِي بِعِلْمِهِ وَشَجَاعَتِهِ وَزُهْدِهِ وَحِكْمَتِه.',
+      prompt:'A child aspiring toward a bright guiding star, following a role model, uplifting warm' },
+  ],
+  moral:'أُحِبُّ عَلِيًّا، وَأَجْمَعُ كَمَا جَمَعَ بَيْنَ الْعِلْمِ وَالشَّجَاعَةِ وَالْحِكْمَة. 💛',
+  game:{ type:'order', title:'رَتِّبْ مَرَاحِلَ عَلِيٍّ رضي الله عنه', items:[
+    { e:'👦', t:'أَوَّلُ الصِّبْيَانِ إِسْلَامًا' },
+    { e:'🌙', t:'نَامَ فِي فِرَاشِ النَّبِيّ' },
+    { e:'📚', t:'بَابُ مَدِينَةِ الْعِلْم' },
+    { e:'🌟', t:'الْمُبَشَّرُ بِالْجَنَّة' } ] },
+  act:{ q:'بِمَ بَشَّرَ النَّبِيُّ ﷺ عَلِيًّا؟', yay:'أَحْسَنْت! بَشَّرَهُ بِالْجَنَّة', opts:[
+    { e:'🌟', t:'بَشَّرَهُ بِالْجَنَّة', ok:true },
+    { e:'💰', t:'بِالْمَال' },
+    { e:'🤷', t:'لَا أَعْرِف' } ] },
+  dua:'اللَّهُمَّ ارْزُقْنِي الْعِلْمَ وَالشَّجَاعَةَ وَالْجَنَّة' },
+
+]};

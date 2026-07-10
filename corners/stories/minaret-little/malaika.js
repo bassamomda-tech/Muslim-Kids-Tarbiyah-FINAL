@@ -1,0 +1,233 @@
+/* corners/stories/minaret-little/malaika.js — رحلة جنود النور (الملائكة) للصغار (٣–٦)
+   ١٠ حكايات مبسّطة من محطات «رحلة جنود النور» في منارة العقيدة.
+   كل صفحة: emoji (بديل مؤقت) + text (سطران سهلان) + prompt (وصف صورة إنجليزي لتوليدها لاحقاً).
+   ملاحظة فنية: الأوصاف لا تُصوِّر الملائكةَ ولا وجوهَهم؛ نلمّح إليهم بالنور والأجنحة فقط. */
+window.MINARET_LITTLE = window.MINARET_LITTLE || {};
+window.MINARET_LITTLE.malaika = {
+  id:'malaika', icon:'👼', color:'#5DADE2',
+  title:'جُنُودُ النُّور', tag:'الْإِيمَانُ بِالْمَلَائِكَة',
+  stories:[
+
+{ id:'noor', icon:'💡', color:'#8E7CC3', title:'مَخْلُوقُونَ مِنْ نُور',
+  tag:'اللهُ خَلَقَ الْمَلَائِكَة',
+  pages:[
+    { emoji:'🌌', text:'حَوْلَنَا مَخْلُوقَاتٌ جَمِيلَةٌ لَا نَرَاهَا اسْمُهَا الْمَلَائِكَة. خَلَقَهَا اللهُ قَبْلَ النَّاسِ كُلِّهِم.',
+      prompt:'A soft night sky full of glowing golden light wisps between the stars, gentle and warm, no faces, childrens book style' },
+    { emoji:'💡', text:'خَلَقَ اللهُ الْمَلَائِكَةَ مِنْ نُور، وَخَلَقَنَا نَحْنُ مِنْ طِين. الْمَلَائِكَةُ لَهَا أَجْنِحَةٌ جَمِيلَة!',
+      prompt:'Radiant pairs of luminous white and gold wings floating in a dawn sky, glowing softly, no figure, ethereal' },
+    { emoji:'🌬️', text:'لَا نَرَى الْمَلَائِكَة، مِثْلَمَا لَا نَرَى الْهَوَاء. لَكِنَّهَا مَوْجُودَةٌ حَقًّا حَوْلَنَا.',
+      prompt:'A child blowing a dandelion, invisible breeze shown by swirling little sparkles, cozy garden, warm light' },
+    { emoji:'💜', text:'نُؤْمِنُ بِالْمَلَائِكَةِ لِأَنَّ اللهَ أَخْبَرَنَا عَنْهَا. وَالْإِيمَانُ بِهَا مِنْ إِيمَانِنَا بِالله.',
+      prompt:'A beautiful purple and gold Islamic geometric star pattern glowing gently, ornamental, serene' },
+  ],
+  moral:'أُؤْمِنُ بِالْمَلَائِكَةِ وَإِنْ كُنْتُ لَا أَرَاهَا. 💜',
+  game:{ type:'pairs', title:'صِلْ كُلَّ مَخْلُوقٍ بِمَا خُلِقَ مِنْه', pairs:[
+    ['👼 الْمَلَائِكَة','💡 مِنْ نُور'],
+    ['🧍 الْإِنْسَان','🏺 مِنْ طِين'],
+    ['🌬️ الْهَوَاء','🙈 مَوْجُودٌ وَلَا نَرَاه'] ] },
+  act:{ q:'مِنْ أَيِّ شَيْءٍ خَلَقَ اللهُ الْمَلَائِكَة؟', yay:'أَحْسَنْت! خَلَقَهَا اللهُ مِنْ نُور', opts:[
+    { e:'💡', t:'مِنْ نُور', ok:true },
+    { e:'🏺', t:'مِنْ طِين' },
+    { e:'💧', t:'مِنْ مَاء' } ] },
+  dua:'اللَّهُمَّ إِنِّي أُؤْمِنُ بِكَ وَمَلَائِكَتِك' },
+
+{ id:'azama', icon:'🪽', color:'#5B7FD4', title:'أَجْنِحَةٌ عَظِيمَة',
+  tag:'الْمَلَائِكَةُ مَخْلُوقَاتٌ كَبِيرَة',
+  pages:[
+    { emoji:'👼', text:'أَعْظَمُ الْمَلَائِكَةِ اسْمُهُ جِبْرِيل. رَآهُ النَّبِيُّ ﷺ وَلَهُ سِتُّمِئَةِ جَنَاح!',
+      prompt:'An enormous span of majestic glowing wings stretching across a wide dawn horizon, awe and wonder, no figure, soft gold light' },
+    { emoji:'🌅', text:'أَجْنِحَتُهُ الْكَبِيرَةُ غَطَّتِ السَّمَاءَ كُلَّهَا! مَخْلُوقٌ عَظِيمٌ جِدًّا.',
+      prompt:'Vast wings filling the whole sky from edge to edge over distant mountains, breathtaking scale, warm morning colors' },
+    { emoji:'⭐', text:'وَاللهُ خَلَقَ نُجُومًا كَبِيرَةً وَشَمْسًا ضَخْمَة. كُلُّ شَيْءٍ كَبِيرٍ صَنَعَهُ الله.',
+      prompt:'A giant glowing sun and huge colorful stars in deep space, tiny Earth beside them, sense of vastness, childrens illustration' },
+    { emoji:'💙', text:'إِذَا كَانَ الْجُنْدِيُّ بِهَذِهِ الْعَظَمَة، فَمَا أَعْظَمَ الْمَلِكَ الَّذِي خَلَقَه!',
+      prompt:'Rays of golden light bursting from behind clouds over a calm sea, majestic and reassuring, no figures' },
+  ],
+  moral:'عَظَمَةُ الْمَلَائِكَةِ تَدُلُّنِي عَلَى عَظَمَةِ الله. 💙',
+  game:{ type:'find', title:'جِبْرِيلُ يَسُدُّ الْأُفُق! جِدِ النُّجُومَ الْخَمْسَ فِي السَّمَاء', target:'⭐', count:5, distractors:['☁️','🌙'], size:12 },
+  act:{ q:'كَمْ جَنَاحًا لِجِبْرِيلَ عَلَيْهِ السَّلَام؟', yay:'صَحِيح! سِتُّمِئَةِ جَنَاحٍ تَسُدُّ الْأُفُق', opts:[
+    { e:'🪽', t:'سِتُّمِئَةِ جَنَاح', ok:true },
+    { e:'✌️', t:'جَنَاحَانِ فَقَط' },
+    { e:'🔟', t:'عَشَرَة' } ] },
+  dua:'سُبْحَانَ ذِي الْجَبَرُوتِ وَالْمَلَكُوتِ وَالْعَظَمَة' },
+
+{ id:'taah', icon:'🫡', color:'#27AE60', title:'جُنُودٌ لَا تَعْصِي',
+  tag:'الْمَلَائِكَةُ تُطِيعُ اللهَ دَائِمًا',
+  pages:[
+    { emoji:'🫡', text:'الْمَلَائِكَةُ تُطِيعُ اللهَ فَوْرًا بِفَرَح. لَا تَتْعَبُ وَلَا تَتَكَاسَلُ أَبَدًا.',
+      prompt:'A neat row of glowing light orbs lined up like disciplined soldiers, cheerful sparkles, harmony and order, no faces' },
+    { emoji:'🌙', text:'تُسَبِّحُ اللهَ لَيْلًا وَنَهَارًا وَلَا تَمَلّ. مِثْلَ نَفَسِنَا لَا يَتَوَقَّف.',
+      prompt:'Gentle glowing light trails swirling around a peaceful night sky with moon and stars, calm continuous motion' },
+    { emoji:'🧍', text:'أَمَّا نَحْنُ فَنَتْعَبُ وَنَنْسَى أَحْيَانًا. لَكِنَّنَا نُطِيعُ اللهَ لِأَنَّنَا نُحِبُّه.',
+      prompt:'A child happily helping, warm home scene, soft light, tender and sincere, childrens book style' },
+    { emoji:'💚', text:'حِينَ يُنَادِي الْأَذَان، أَكُونُ مِثْلَ الْمَلَائِكَة: أُلَبِّي فَوْرًا بِقَلْبٍ فَرِح.',
+      prompt:'A slender minaret glowing at sunset, warm golden call-to-prayer light spreading over rooftops, peaceful' },
+  ],
+  moral:'أُطِيعُ اللهَ فَوْرًا وَبِفَرَحٍ مِثْلَ الْمَلَائِكَة. 💚',
+  game:{ type:'sort', title:'مَاذَا نَفْعَلُ عِنْدَ أَمْرِ الله؟ ضَعْ كُلَّ بِطَاقَةٍ فِي سَلَّتِهَا', bins:['طَاعَةٌ فَوْرِيَّة 🫡','تَكَاسُلٌ وَتَذَمُّر 🙅'], items:[
+    { e:'🏃', t:'أُلَبِّي الْأَذَانَ فَوْرًا', bin:0 },
+    { e:'😴', t:'أُؤَجِّلُ وَأَتَكَاسَل', bin:1 },
+    { e:'😊', t:'أُنَفِّذُ بِابْتِسَامَة', bin:0 },
+    { e:'😤', t:'أَتَذَمَّرُ وَأَشْتَكِي', bin:1 } ] },
+  act:{ q:'هَلْ تَمَلُّ الْمَلَائِكَةُ مِنْ طَاعَةِ الله؟', yay:'أَحْسَنْت! تُطِيعُ بِفَرَحٍ وَلَا تَمَلّ', opts:[
+    { e:'🙅', t:'لَا! تُطِيعُ بِفَرَحٍ دَائِمًا', ok:true },
+    { e:'😮‍💨', t:'نَعَم، تَتْعَبُ وَتَمَلّ' },
+    { e:'😴', t:'تَنَامُ أَحْيَانًا' } ] },
+  dua:'اللَّهُمَّ اجْعَلْنِي مِنْ عِبَادِكَ الطَّائِعِين' },
+
+{ id:'jibril', icon:'🕊️', color:'#C0905C', title:'جِبْرِيلُ الْأَمِين',
+  tag:'الْمَلَكُ الَّذِي حَمَلَ الْقُرْآن',
+  pages:[
+    { emoji:'📨', text:'جِبْرِيلُ عَلَيْهِ السَّلَامُ لَهُ أَشْرَفُ عَمَل: يَحْمِلُ كَلَامَ اللهِ إِلَى الْأَنْبِيَاء.',
+      prompt:'A glowing scroll of light traveling gently downward from the heavens toward earth, trailing sparkles, reverent mood, no figures' },
+    { emoji:'📖', text:'حَمَلَ الْقُرْآنَ إِلَى نَبِيِّنَا مُحَمَّدٍ ﷺ. آيَةً آيَة، بِأَمَانَةٍ تَامَّة.',
+      prompt:'An open beautiful Quran glowing with soft golden light on a wooden stand, warm calm room, no people' },
+    { emoji:'🔒', text:'لَمْ يُغَيِّرْ حَرْفًا وَلَمْ يَنْسَ شَيْئًا. لِذَلِكَ اسْمُهُ الْأَمِين!',
+      prompt:'A golden trust seal glowing on a scroll wrapped in light, symbol of faithful delivery, clean and elegant' },
+    { emoji:'💛', text:'وَأَنَا أَكُونُ أَمِينًا مِثْلَ جِبْرِيل: إِذَا حَمَلْتُ رِسَالَةً أَوْصَلْتُهَا كَامِلَة.',
+      prompt:'A child carefully carrying a wrapped gift box with both hands, careful and proud, warm home light' },
+  ],
+  moral:'أَكُونُ أَمِينًا: أُوصِلُ الْأَمَانَةَ كَامِلَةً مِثْلَ جِبْرِيل. 💛',
+  game:{ type:'order', title:'كَيْفَ وَصَلَ الْقُرْآنُ إِلَيْنَا؟ رَتِّبِ السِّلْسِلَة', items:[
+    { e:'💚', t:'كَلَامُ اللهِ' },
+    { e:'🕊️', t:'جِبْرِيلُ الْأَمِين' },
+    { e:'📖', t:'النَّبِيُّ ﷺ' },
+    { e:'👦', t:'وَصَلَ إِلَيْنَا' } ] },
+  act:{ q:'مَاذَا كَانَ جِبْرِيلُ يَحْمِلُ إِلَى الْأَنْبِيَاء؟', yay:'صَحِيح! يَحْمِلُ كَلَامَ اللهِ بِأَمَانَة', opts:[
+    { e:'📖', t:'كَلَامَ الله', ok:true },
+    { e:'🎁', t:'هَدَايَا' },
+    { e:'🍞', t:'طَعَامًا' } ] },
+  dua:'اللَّهُمَّ رَبَّ جِبْرِيلَ اهْدِنِي لِلْحَقّ' },
+
+{ id:'wukala', icon:'🌧️', color:'#2E9E9E', title:'مُوَظَّفُو الْكَوْن',
+  tag:'لِكُلِّ مُهِمَّةٍ مَلَكٌ يُنَفِّذُهَا',
+  pages:[
+    { emoji:'🌧️', text:'مِيكَائِيلُ عَلَيْهِ السَّلَامُ مَلَكٌ مُوَكَّلٌ بِالْمَطَرِ وَالنَّبَات. يُنْزِلُ الْمَطَرَ بِأَمْرِ الله.',
+      prompt:'Gentle rain falling from a soft glowing cloud onto green sprouting fields, sparkles of light in the raindrops, hopeful' },
+    { emoji:'📯', text:'وَإِسْرَافِيلُ عَلَيْهِ السَّلَامُ مَلَكٌ يَنْتَظِرُ أَمْرَ اللهِ لِيَنْفُخَ فِي الصُّور. نَفْخَةُ يَوْمِ الْقِيَامَة.',
+      prompt:'A great glowing golden trumpet-horn resting in radiant clouds, waiting, majestic and quiet, no figure' },
+    { emoji:'🌍', text:'كُلُّ شَيْءٍ فِي الْكَوْنِ لَهُ مَلَكٌ يَعْمَل. مِثْلَ مَمْلَكَةٍ كَبِيرَةٍ مُرَتَّبَة.',
+      prompt:'The round Earth with tiny glowing light points doing gentle tasks around it, tidy organized kingdom, warm colors' },
+    { emoji:'💚', text:'وَكُلُّهُمْ يُطِيعُونَ مَلِكًا وَاحِدًا: الله. لَا يَفْعَلُونَ شَيْئًا إِلَّا بِأَمْرِه.',
+      prompt:'One bright radiant star above, smaller lights below arranged in harmony, unity, teal and gold' },
+  ],
+  moral:'الْكَوْنُ مَمْلَكَةٌ مُرَتَّبَة، وَلَهَا مَلِكٌ وَاحِدٌ هُوَ الله. 💚',
+  game:{ type:'pairs', title:'صِلْ كُلَّ مَلَكٍ بِمُهِمَّتِه', pairs:[
+    ['🌧️ مِيكَائِيل','يُنْزِلُ الْمَطَر'],
+    ['📯 إِسْرَافِيل','يَنْفُخُ فِي الصُّور'],
+    ['🕊️ جِبْرِيل','يَحْمِلُ الْوَحْي'] ] },
+  act:{ q:'أَيُّ مَلَكٍ مُوَكَّلٌ بِالْمَطَر؟', yay:'أَحْسَنْت! مِيكَائِيلُ عَلَيْهِ السَّلَام', opts:[
+    { e:'🌧️', t:'مِيكَائِيل', ok:true },
+    { e:'📯', t:'إِسْرَافِيل' },
+    { e:'🕊️', t:'جِبْرِيل' } ] },
+  dua:'اللَّهُمَّ اسْقِنَا الْغَيْثَ وَاجْعَلْنَا مِنَ الشَّاكِرِين' },
+
+{ id:'hafaza', icon:'🛡️', color:'#E67E22', title:'حُرَّاسِيَ الشَّخْصِيُّون',
+  tag:'مَلَائِكَةٌ تَحْرُسُنِي',
+  pages:[
+    { emoji:'🛡️', text:'مَعِيَ الْآنَ مَلَائِكَةٌ تَحْرُسُنِي بِأَمْرِ الله. لَا أَرَاهَا لَكِنَّهَا مَعِي دَائِمًا.',
+      prompt:'A child playing happily with soft protective glow of light gently surrounding them, warm safe feeling, no visible figures' },
+    { emoji:'🌗', text:'فَرِيقٌ يَحْرُسُنِي بِاللَّيْلِ وَفَرِيقٌ بِالنَّهَار. يَصْرِفُونَ عَنِّي أَخْطَارًا كَثِيرَة.',
+      prompt:'A cozy bedroom at night with a sleeping child, soft luminous light like gentle wings over the bed, day and night split sky in window' },
+    { emoji:'🌅', text:'يَجْتَمِعُونَ فِي صَلَاةِ الْفَجْرِ وَالْعَصْر. ثُمَّ يُخْبِرُونَ اللهَ بِأَحْوَالِنَا.',
+      prompt:'Dawn light over a peaceful town with a glowing minaret, soft golden clouds ascending, serene' },
+    { emoji:'💚', text:'الْمَلَائِكَةُ تَشْهَدُ لِي: تَرَكْنَاهُ يُصَلِّي! فَأُحِبُّ الصَّلَاةَ فِي وَقْتِهَا.',
+      prompt:'A child standing in prayer on a soft rug, warm light beam from a window, calm and devoted, seen from behind' },
+  ],
+  moral:'اللهُ يَحْرُسُنِي بِمَلَائِكَةٍ مِنْ نُور، فَقَلْبِي مُطْمَئِنّ. 🛡️',
+  game:{ type:'maze', title:'أَنْتَ مَحْرُوسٌ بِأَمْرِ الله! أَوْصِلِ الطِّفْلَ بِأَمَانٍ إِلَى بَيْتِه', avatar:'👦', goal:'🏠', wall:'⚠️', map:['S.#..','.###.','...#.','##...','#..#G'] },
+  act:{ q:'مَتَى يَجْتَمِعُ حُرَّاسِي مِنَ الْمَلَائِكَة؟', yay:'صَحِيح! فِي الْفَجْرِ وَالْعَصْر', opts:[
+    { e:'🌅', t:'فِي صَلَاةِ الْفَجْرِ وَالْعَصْر', ok:true },
+    { e:'🎮', t:'وَقْتَ اللَّعِب' },
+    { e:'🍽️', t:'وَقْتَ الطَّعَام' } ] },
+  dua:'بِسْمِ اللهِ الَّذِي لَا يَضُرُّ مَعَ اسْمِهِ شَيْء' },
+
+{ id:'kiraman', icon:'📝', color:'#A65DA6', title:'كَاتِبُ الْحَسَنَات',
+  tag:'الْكِرَامُ الْكَاتِبُون',
+  pages:[
+    { emoji:'📝', text:'مَعِي مَلَكَانِ: عَنْ يَمِينِي يَكْتُبُ الْحَسَنَات، وَعَنْ شِمَالِي يَكْتُبُ الْأَخْطَاء.',
+      prompt:'Two glowing open notebooks floating beside a happy child, one bright gold on the right, one plain on the left, gentle sparkles' },
+    { emoji:'✨', text:'كَاتِبُ الْحَسَنَاتِ كَرِيمٌ جِدًّا! الْحَسَنَةُ الْوَاحِدَةُ يَكْتُبُهَا عَشْرًا وَأَكْثَر.',
+      prompt:'A single good deed turning into many glowing golden stars multiplying upward, generous and joyful, warm colors' },
+    { emoji:'🤔', text:'وَإِذَا هَمَمْتُ بِخَطَأٍ ثُمَّ تَرَكْتُهُ لِله، كَتَبَهَا حَسَنَة! كَرَمٌ كَبِير.',
+      prompt:'A child choosing to walk away from a small mischief with a smile, a soft golden star appearing above them, home setting' },
+    { emoji:'💛', text:'فَأَمْلَأُ صَفْحَتِي بِالْكَلَامِ الطَّيِّب: سَلَام، شُكْر، وَذِكْرٌ لِله.',
+      prompt:'A bright clean page filling with tiny golden hearts and kind-word sparkles, cheerful, childrens book style' },
+  ],
+  moral:'كُلُّ كَلِمَةٍ طَيِّبَةٍ تُكْتَبُ لِي وَلَا تَضِيع. 💛',
+  game:{ type:'sort', title:'مَاذَا يَكْتُبُ مَلَكُ الْيَمِين؟ ضَعْ كُلَّ عَمَلٍ فِي سَلَّتِه', bins:['حَسَنَةٌ تُكْتَبُ 💛','خَطَأٌ نَتْرُكُه 🚫'], items:[
+    { e:'🤝', t:'أُسَاعِدُ أُمِّي', bin:0 },
+    { e:'🗣️', t:'أَقُولُ كَلِمَةً طَيِّبَة', bin:0 },
+    { e:'😠', t:'أَصْرُخُ وَأُزْعِج', bin:1 },
+    { e:'🙏', t:'أَذْكُرُ الله', bin:0 } ] },
+  act:{ q:'مَاذَا يَكْتُبُ الْمَلَكُ عَنْ يَمِينِي؟', yay:'أَحْسَنْت! يَكْتُبُ حَسَنَاتِي مُضَاعَفَة', opts:[
+    { e:'💛', t:'الْحَسَنَات', ok:true },
+    { e:'🎮', t:'أَسْمَاءَ الْأَلْعَاب' },
+    { e:'🍬', t:'الْحَلْوَى' } ] },
+  dua:'اللَّهُمَّ اجْعَلْ صَحِيفَتِي عَامِرَةً بِالْحَسَنَات' },
+
+{ id:'hubb', icon:'🤲', color:'#D4A017', title:'مَلَائِكَةٌ تَدْعُو لِي',
+  tag:'الْمَلَائِكَةُ تُحِبُّ الْمُؤْمِن',
+  pages:[
+    { emoji:'🤲', text:'فِي السَّمَاءِ مَلَائِكَةٌ تَدْعُو لِلْمُؤْمِنِين! تَقُول: رَبَّنَا اغْفِرْ لَهُم.',
+      prompt:'Soft glowing lights raised gently in a heavenly sky as if in supplication, warm golden dua atmosphere, no faces' },
+    { emoji:'📚', text:'وَحِينَ أَجْلِسُ أَتَعَلَّمُ عَنِ الله، تَضَعُ الْمَلَائِكَةُ أَجْنِحَتَهَا لِي مَحَبَّة!',
+      prompt:'A child reading a glowing book, soft luminous wings of light gently lowering around them, tender and warm' },
+    { emoji:'💞', text:'وَإِذَا دَعَوْتُ لِصَدِيقِي، قَالَ مَلَكٌ: وَلَكَ بِمِثْلِه! هَدِيَّةٌ جَمِيلَة.',
+      prompt:'Two little glowing hearts connected by a light thread over a night sky, friendship and dua, gentle sparkles' },
+    { emoji:'💛', text:'فَأَنَا مُهِمٌّ فِي السَّمَاء! مَلَائِكَةٌ تُحِبُّنِي وَتَدْعُو لِي.',
+      prompt:'A joyful child looking up at a warm glowing sky raining down soft golden light, loved and happy' },
+  ],
+  moral:'الْمَلَائِكَةُ تُحِبُّنِي وَتَدْعُو لِي وَأَنَا لَا أَرَاهَا. 💛',
+  game:{ type:'find', title:'مَلَائِكَةٌ تُؤَمِّنُ عَلَى دُعَائِك! اجْمَعِ الْأَيْدِيَ الْمَرْفُوعَةَ الْخَمْس', target:'🤲', count:5, distractors:['☁️','⭐'], size:12 },
+  act:{ q:'مَاذَا تَفْعَلُ الْمَلَائِكَةُ حِينَ أَتَعَلَّمُ عَنِ الله؟', yay:'صَحِيح! تَضَعُ أَجْنِحَتَهَا لِي مَحَبَّة', opts:[
+    { e:'🪽', t:'تَضَعُ أَجْنِحَتَهَا لِي', ok:true },
+    { e:'🙈', t:'تَخْتَبِئ' },
+    { e:'😴', t:'تَنَام' } ] },
+  dua:'اللَّهُمَّ اجْعَلْنِي مِمَّنْ تَسْتَغْفِرُ لَهُمُ الْمَلَائِكَة' },
+
+{ id:'sakina', icon:'🌠', color:'#1ABC9C', title:'الْمَلَائِكَةُ تُحِبُّ الْقُرْآن',
+  tag:'أَيْنَ نُحِسُّ بِالْمَلَائِكَة؟',
+  pages:[
+    { emoji:'📖', text:'كَانَ صَحَابِيٌّ يَقْرَأُ الْقُرْآنَ لَيْلًا. فَنَزَلَتْ سَحَابَةٌ فِيهَا أَنْوَارٌ جَمِيلَة!',
+      prompt:'A glowing cloud filled with hanging lamps of light descending softly at night toward a quiet garden, magical and calm' },
+    { emoji:'🌠', text:'قَالَ النَّبِيُّ ﷺ: تِلْكَ الْمَلَائِكَةُ نَزَلَتْ لِصَوْتِ الْقُرْآن. الْمَلَائِكَةُ تُحِبُّ الْقُرْآن!',
+      prompt:'Soft descending lights gathering around an open glowing Quran under a starry sky, serene and beautiful' },
+    { emoji:'😌', text:'وَحِينَ أَقْرَأُ الْقُرْآنَ أَشْعُرُ بِرَاحَةٍ فِي قَلْبِي. تِلْكَ السَّكِينَةُ تَنْزِلُ عَلَيّ.',
+      prompt:'A child reading Quran peacefully, warm gentle glow filling their chest area softly, cozy calm room' },
+    { emoji:'🏠', text:'أَجْعَلُ بَيْتِي مَكَانًا يُذْكَرُ فِيهِ الله. فَتَحْضُرُهُ مَلَائِكَةُ الرَّحْمَة.',
+      prompt:'A cozy warm home glowing softly from within at dusk, gentle light around it, safe and blessed, crescent moon above' },
+  ],
+  moral:'حَيْثُ أَقْرَأُ الْقُرْآنَ وَأَذْكُرُ اللهَ تَنْزِلُ السَّكِينَة. 🌠',
+  game:{ type:'maze', title:'الْمَلَائِكَةُ تُحِبُّ الْقُرْآن! أَوْصِلِ الطِّفْلَ إِلَى مَجْلِسِ الْقُرْآن', avatar:'👦', goal:'📖', wall:'🌫️', map:['S#...','.#.#.','.#.#.','...#.','##..G'] },
+  act:{ q:'مَاذَا تُحِبُّ الْمَلَائِكَةُ أَنْ تَسْمَع؟', yay:'أَحْسَنْت! تَنْزِلُ لِسَمَاعِ الْقُرْآن', opts:[
+    { e:'📖', t:'الْقُرْآنَ وَذِكْرَ الله', ok:true },
+    { e:'📺', t:'التِّلْفَاز' },
+    { e:'🎮', t:'أَصْوَاتَ الْأَلْعَاب' } ] },
+  dua:'اللَّهُمَّ أَنْزِلْ عَلَى قَلْبِيَ السَّكِينَة' },
+
+{ id:'qabul', icon:'💞', color:'#C0392B', title:'نِدَاءُ الْمَحَبَّة',
+  tag:'حُبٌّ بَيْنَ السَّمَاءِ وَالْأَرْض',
+  pages:[
+    { emoji:'💚', text:'إِذَا أَحَبَّ اللهُ عَبْدًا، نَادَى جِبْرِيل: إِنِّي أُحِبُّ فُلَانًا فَأَحِبَّه!',
+      prompt:'A radiant beam of golden love-light traveling from the highest heaven downward, warm and joyful, no figures' },
+    { emoji:'📣', text:'فَيُحِبُّهُ جِبْرِيل، ثُمَّ يُنَادِي أَهْلَ السَّمَاء: أَحِبُّوهُ! فَيُحِبُّهُ الْجَمِيع.',
+      prompt:'Many soft glowing lights across a starry sky lighting up one after another in joy, spreading warmth, celebration' },
+    { emoji:'🌍', text:'ثُمَّ يَجْعَلُ اللهُ النَّاسَ يُحِبُّونَه فِي الْأَرْض. مَحَبَّةٌ تَمْلَأُ السَّمَاءَ وَالْأَرْض!',
+      prompt:'The Earth glowing warmly with little hearts of light rising from it up to a bright sky, love connecting heaven and earth' },
+    { emoji:'💞', text:'فَأَنَا أُحِبُّ الْمَلَائِكَة، وَأَعْمَلُ الْخَيْرَ لِيُحِبَّنِي أَهْلُ السَّمَاء.',
+      prompt:'A happy child doing a kind act, warm golden glow of acceptance surrounding them, uplifting and tender' },
+  ],
+  moral:'أُحِبُّ الْمَلَائِكَة، وَأَعْمَلُ الْخَيْرَ لِيُحِبَّنِي أَهْلُ السَّمَاء. 💞',
+  game:{ type:'order', title:'رَتِّبْ نِدَاءَ الْمَحَبَّة', items:[
+    { e:'💚', t:'اللهُ يُحِبُّ عَبْدَه' },
+    { e:'🕊️', t:'يُنَادِي جِبْرِيل: أَحِبَّه' },
+    { e:'📣', t:'أَهْلُ السَّمَاءِ يُحِبُّونَه' },
+    { e:'🌍', t:'الْقَبُولُ فِي الْأَرْض' } ] },
+  act:{ q:'كَيْفَ يُحِبُّنِي أَهْلُ السَّمَاء؟', yay:'صَحِيح! أَعْمَلُ الْخَيْرَ فَيُحِبُّنِي الله وَمَلَائِكَتُه', opts:[
+    { e:'💞', t:'حِينَ أَعْمَلُ الْخَيْرَ وَأُطِيعُ الله', ok:true },
+    { e:'💰', t:'حِينَ أَجْمَعُ الْمَال' },
+    { e:'😴', t:'حِينَ أَنَامُ كَثِيرًا' } ] },
+  dua:'اللَّهُمَّ ارْزُقْنِي حُبَّكَ وَحُبَّ مَلَائِكَتِك' },
+
+]};

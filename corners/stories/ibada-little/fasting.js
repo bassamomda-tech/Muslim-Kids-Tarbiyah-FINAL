@@ -1,0 +1,193 @@
+/* corners/stories/ibada-little/fasting.js — أبطال الصيام للصغار (٣–٦) · ٨ حكايات */
+window.IBADA_LITTLE = window.IBADA_LITTLE || {};
+window.IBADA_LITTLE.fasting = {
+  id:'fasting', icon:'🌙', color:'#8E44AD', title:'أَبْطَالُ الصِّيَام', tag:'الصَّبْرُ وَالْقُوَّة',
+  stories:[
+
+{ id:'what', icon:'🌙', color:'#8E44AD', title:'مَا هُوَ الصِّيَام؟',
+  tag:'مَدْرَسَةُ الصَّبْر',
+  pages:[
+    { emoji:'🌙', text:'الصِّيَامُ أَنْ نَمْتَنِعَ عَنِ الطَّعَامِ وَالشَّرَابِ مِنَ الْفَجْرِ إِلَى غُرُوبِ الشَّمْسِ طَاعَةً لِله.',
+      prompt:'A crescent moon over a peaceful town at dawn, the start of fasting, serene warm night sky' },
+    { emoji:'💪', text:'إِنَّهُ مَدْرَسَةٌ نَتَعَلَّمُ فِيهَا الصَّبْرَ وَالْقُوَّةَ وَالتَّحَكُّمَ فِي أَنْفُسِنَا.',
+      prompt:'A determined happy child feeling strong, fasting as training, warm uplifting scene' },
+    { emoji:'🕋', text:'وَهُوَ رُكْنٌ مِنْ أَرْكَانِ الْإِسْلَامِ الْخَمْسَة، نَصُومُ شَهْرَ رَمَضَانَ كُلَّ عَام.',
+      prompt:'Five glowing pillars of light with one for fasting, pillar of Islam, warm serene' },
+    { emoji:'💚', text:'قَالَ الله: الصَّوْمُ لِي وَأَنَا أَجْزِي بِه — أَجْرُهُ عَظِيمٌ عِنْدَ الله.',
+      prompt:'A soft heavenly glow of reward over a fasting believer, special reward, warm radiant' },
+  ],
+  moral:'الصِّيَامُ مَدْرَسَةُ الصَّبْرِ وَالْقُوَّة، وَأَجْرُهُ عِنْدَ اللهِ عَظِيم. 💚',
+  game:{ type:'pairs', title:'صِلْ كُلَّ شَيْءٍ بِمَعْنَاه', pairs:[
+    ['🌙 الصِّيَام','امْتِنَاعٌ عَنِ الطَّعَامِ لِله'],
+    ['💪 الصِّيَام','مَدْرَسَةُ الصَّبْر'],
+    ['🕋 رَمَضَان','شَهْرُ الصِّيَام'] ] },
+  act:{ q:'مَا هُوَ الصِّيَام؟', yay:'أَحْسَنْت! امْتِنَاعٌ عَنِ الطَّعَامِ طَاعَةً لِله', opts:[
+    { e:'🌙', t:'الِامْتِنَاعُ عَنِ الطَّعَامِ وَالشَّرَابِ لِله', ok:true },
+    { e:'😴', t:'النَّوْمُ طُولَ الْيَوْم' },
+    { e:'🤷', t:'لَا أَعْرِف' } ] },
+  dua:'اللَّهُمَّ بَلِّغْنَا رَمَضَان' },
+
+{ id:'ramadan', icon:'🌟', color:'#F39C12', title:'شَهْرُ رَمَضَانَ الْكَرِيم',
+  tag:'شَهْرُ الْخَيْرِ وَالْقُرْآن',
+  pages:[
+    { emoji:'🌟', text:'رَمَضَانُ أَجْمَلُ شُهُورِ السَّنَة! فِيهِ نُزِّلَ الْقُرْآن، وَتُفْتَحُ أَبْوَابُ الْجَنَّة.',
+      prompt:'A festive glowing town at night in Ramadan with lanterns and a crescent, joyful holy month, warm' },
+    { emoji:'😈', text:'وَتُغَلَّقُ أَبْوَابُ النَّار، وَتُصَفَّدُ الشَّيَاطِين، فَيَسْهُلُ عَلَيْنَا فِعْلُ الْخَيْر!',
+      prompt:'Chained-up shadows fading and gates of light opening, ease of good in Ramadan, warm bright' },
+    { emoji:'🌙', text:'وَفِيهِ لَيْلَةُ الْقَدْرِ خَيْرٌ مِنْ أَلْفِ شَهْر! نَجْتَهِدُ فِي الْعَشْرِ الْأَوَاخِر.',
+      prompt:'A radiant special night sky full of gentle light and angels descending as soft glows, Laylat al-Qadr' },
+    { emoji:'💚', text:'فَأَفْرَحُ بِرَمَضَان، وَأَمْلَؤُهُ بِالصِّيَامِ وَالْقُرْآنِ وَالصَّدَقَة.',
+      prompt:'A joyful child reading Quran and giving charity in a warm Ramadan setting, blessed month, uplifting' },
+  ],
+  moral:'رَمَضَانُ شَهْرُ الْخَيْرِ وَالْقُرْآن، أَمْلَؤُهُ بِالطَّاعَة. 💚',
+  game:{ type:'sort', title:'مَاذَا نُكْثِرُ فِي رَمَضَان؟', bins:['نُكْثِرُ مِنْه ✅','نَبْتَعِدُ عَنْه 🚫'], items:[
+    { e:'📖', t:'قِرَاءَةُ الْقُرْآن', bin:0 },
+    { e:'🤲', t:'الصَّدَقَةُ وَالدُّعَاء', bin:0 },
+    { e:'😠', t:'الْكَذِبُ وَالْأَذَى', bin:1 },
+    { e:'🕌', t:'الصَّلَاةُ وَالْقِيَام', bin:0 } ] },
+  act:{ q:'مَا الَّتِي هِيَ خَيْرٌ مِنْ أَلْفِ شَهْر؟', yay:'أَحْسَنْت! لَيْلَةُ الْقَدْرِ فِي رَمَضَان', opts:[
+    { e:'🌙', t:'لَيْلَةُ الْقَدْر', ok:true },
+    { e:'🎮', t:'لَيْلَةُ اللَّعِب' },
+    { e:'🤷', t:'لَا أَعْرِف' } ] },
+  dua:'اللَّهُمَّ إِنَّكَ عَفُوٌّ تُحِبُّ الْعَفْوَ فَاعْفُ عَنِّي' },
+
+{ id:'suhoor', icon:'🍽️', color:'#16A085', title:'السُّحُورُ وَالْإِفْطَار',
+  tag:'بَرَكَةُ الطَّعَام',
+  pages:[
+    { emoji:'🌅', text:'قَبْلَ الْفَجْرِ نَأْكُلُ السُّحُور، وَفِيهِ بَرَكَة، فَهُوَ يُعِينُنَا عَلَى الصِّيَام.',
+      prompt:'A cozy pre-dawn meal with a family, suhoor before fajr, warm gentle kitchen light' },
+    { emoji:'🌇', text:'وَعِنْدَ غُرُوبِ الشَّمْسِ نُفْطِرُ فَرِحِين! نَقُول: ذَهَبَ الظَّمَأُ وَابْتَلَّتِ الْعُرُوق.',
+      prompt:'A joyful family breaking fast at sunset with dates and water, iftar joy, warm festive scene' },
+    { emoji:'🌴', text:'نُفْطِرُ عَلَى تَمْرٍ وَمَاءٍ كَمَا فَعَلَ النَّبِيُّ ﷺ، وَنَدْعُو فَدُعَاءُ الصَّائِمِ مُسْتَجَاب.',
+      prompt:'Dates and water on a table at sunset with warm light, breaking fast sunnah, cozy serene' },
+    { emoji:'💚', text:'وَلِلصَّائِمِ فَرْحَتَان: فَرْحَةٌ عِنْدَ فِطْرِه، وَفَرْحَةٌ عِنْدَ لِقَاءِ رَبِّه.',
+      prompt:'A happy child breaking fast with a grateful smile and warm glow, two joys of fasting, uplifting' },
+  ],
+  moral:'لِلصَّائِمِ فَرْحَتَان: عِنْدَ فِطْرِهِ وَعِنْدَ لِقَاءِ رَبِّه. 💚',
+  game:{ type:'order', title:'رَتِّبْ يَوْمَ الصَّائِم', items:[
+    { e:'🌅', t:'السُّحُورُ قَبْلَ الْفَجْر' },
+    { e:'🌞', t:'الصِّيَامُ طُولَ النَّهَار' },
+    { e:'🤲', t:'الدُّعَاءُ قَبْلَ الْمَغْرِب' },
+    { e:'🌇', t:'الْإِفْطَارُ عِنْدَ الْغُرُوب' } ] },
+  act:{ q:'عَلَى مَاذَا نُفْطِرُ اقْتِدَاءً بِالنَّبِيِّ ﷺ؟', yay:'أَحْسَنْت! عَلَى تَمْرٍ وَمَاء', opts:[
+    { e:'🌴', t:'عَلَى تَمْرٍ وَمَاء', ok:true },
+    { e:'🍔', t:'عَلَى كُلِّ شَيْءٍ بِشَرَه' },
+    { e:'🤷', t:'لَا أَعْرِف' } ] },
+  dua:'ذَهَبَ الظَّمَأُ وَابْتَلَّتِ الْعُرُوقُ وَثَبَتَ الْأَجْرُ إِنْ شَاءَ الله' },
+
+{ id:'manners', icon:'🛡️', color:'#2980B9', title:'الصِّيَامُ خُلُقٌ لَا جُوعٌ فَقَط',
+  tag:'يَصُومُ اللِّسَانُ وَالْقَلْب',
+  pages:[
+    { emoji:'🛡️', text:'الصِّيَامُ لَيْسَ تَرْكَ الطَّعَامِ فَقَط، بَلْ تَرْكُ الْكَذِبِ وَالْغَضَبِ وَالْكَلَامِ السَّيِّئ.',
+      prompt:'A child staying calm and kind while fasting, guarding the tongue, warm gentle scene' },
+    { emoji:'😤', text:'قَالَ النَّبِيُّ ﷺ: مَنْ لَمْ يَدَعْ قَوْلَ الزُّورِ فَلَيْسَ لِلَّهِ حَاجَةٌ فِي أَنْ يَدَعَ طَعَامَه.',
+      prompt:'A child choosing to walk away from an argument while fasting, self-control, warm bright' },
+    { emoji:'😊', text:'وَإِذَا شَتَمَنِي أَحَدٌ أَقُول: إِنِّي صَائِم! فَلَا أَرُدُّ السُّوءَ بِالسُّوء.',
+      prompt:'A calm patient child responding gently when provoked, saying I am fasting, tender warm' },
+    { emoji:'💚', text:'فَأَصُومُ بِلِسَانِي وَقَلْبِي وَيَدَيّ، لَا بِبَطْنِي فَقَط.',
+      prompt:'A serene child radiating good character while fasting, complete fasting, warm uplifting' },
+  ],
+  moral:'أَصُومُ بِلِسَانِي وَقَلْبِي: أَتْرُكُ الْكَذِبَ وَالْغَضَبَ وَالْأَذَى. 💚',
+  game:{ type:'sort', title:'مَاذَا يَتْرُكُ الصَّائِمُ الْحَقِيقِيّ؟', bins:['يَتْرُكُهُ الصَّائِم ✅','لَا عَلَاقَةَ لَهُ 🚫'], items:[
+    { e:'🤥', t:'الْكَذِب', bin:0 },
+    { e:'😠', t:'الْغَضَبُ وَالشَّتْم', bin:0 },
+    { e:'🎨', t:'الرَّسْمُ وَاللَّعِبُ الْمُبَاح', bin:1 },
+    { e:'😢', t:'إِيذَاءُ النَّاس', bin:0 } ] },
+  act:{ q:'مَاذَا أَقُولُ إِذَا أَغْضَبَنِي أَحَدٌ وَأَنَا صَائِم؟', yay:'أَحْسَنْت! فَلَا أَرُدُّ السُّوءَ بِالسُّوء', opts:[
+    { e:'😊', t:'إِنِّي صَائِم', ok:true },
+    { e:'😡', t:'أَرُدُّ عَلَيْهِ بِالْأَسْوَأ' },
+    { e:'🤷', t:'لَا أَعْرِف' } ] },
+  dua:'اللَّهُمَّ اجْعَلْ صِيَامِي كَامِلًا بِحُسْنِ خُلُقِي' },
+
+{ id:'gate', icon:'🚪', color:'#5B4B8A', title:'بَابُ الرَّيَّان',
+  tag:'بَابٌ خَاصٌّ لِلصَّائِمِين',
+  pages:[
+    { emoji:'🚪', text:'فِي الْجَنَّةِ بَابٌ اسْمُهُ الرَّيَّان، لَا يَدْخُلُ مِنْهُ إِلَّا الصَّائِمُون!',
+      prompt:'A beautiful special gate of paradise glowing with light, gate of Ar-Rayyan, warm radiant' },
+    { emoji:'📢', text:'يُنَادِى يَوْمَ الْقِيَامَة: أَيْنَ الصَّائِمُون؟ فَيَقُومُونَ وَيَدْخُلُونَ مِنْه.',
+      prompt:'A welcoming glowing gate calling the fasting believers forward, honored entry, warm serene' },
+    { emoji:'💧', text:'فَإِذَا دَخَلُوا أُغْلِقَ فَلَمْ يَدْخُلْ مِنْهُ غَيْرُهُم — مُكَافَأَةٌ خَاصَّةٌ لِلصَّابِرِين.',
+      prompt:'Fasting believers entering a special gate that then closes, exclusive reward, warm uplifting' },
+    { emoji:'💚', text:'فَأَصُومُ لِأَكُونَ مِنْهُم وَأَدْخُلَ مِنْ بَابِ الرَّيَّان.',
+      prompt:'A hopeful child approaching the glowing gate of Ar-Rayyan, aspiring to enter, warm tender' },
+  ],
+  moral:'لِلصَّائِمِينَ بَابٌ خَاصٌّ فِي الْجَنَّةِ اسْمُهُ الرَّيَّان. 💚',
+  game:{ type:'maze', title:'ادْخُلْ مِنْ بَابِ الرَّيَّانِ إِلَى الْجَنَّة', avatar:'🚶', goal:'🚪', wall:'🌫️', map:['S#...','.#.#.','.#.#.','...#.','##..G'] },
+  act:{ q:'مَنِ الَّذِي يَدْخُلُ مِنْ بَابِ الرَّيَّان؟', yay:'أَحْسَنْت! الصَّائِمُونَ فَقَط', opts:[
+    { e:'🚪', t:'الصَّائِمُون', ok:true },
+    { e:'💰', t:'الْأَغْنِيَاءُ فَقَط' },
+    { e:'🤷', t:'الْجَمِيع' } ] },
+  dua:'اللَّهُمَّ اجْعَلْنِي مِنْ أَهْلِ بَابِ الرَّيَّان' },
+
+{ id:'extra', icon:'➕', color:'#27AE60', title:'صِيَامُ الزِّيَادَة',
+  tag:'أَيَّامٌ نَصُومُهَا حُبًّا',
+  pages:[
+    { emoji:'➕', text:'بَعْدَ رَمَضَان، هُنَاكَ أَيَّامٌ جَمِيلَةٌ نَصُومُهَا زِيَادَةً وَحُبًّا لِله.',
+      prompt:'A calendar with special glowing days marked for fasting, voluntary fasts, warm bright' },
+    { emoji:'📅', text:'مِثْلُ صِيَامِ الِاثْنَيْنِ وَالْخَمِيس، وَثَلَاثَةِ أَيَّامٍ مِنْ كُلِّ شَهْر.',
+      prompt:'Marked days of the week and month glowing gently, weekly and monthly fasts, warm serene' },
+    { emoji:'🌟', text:'وَصِيَامُ يَوْمِ عَرَفَة يُكَفِّرُ سَنَتَيْن، وَعَاشُورَاءَ يُكَفِّرُ سَنَة!',
+      prompt:'Two special glowing days on a calendar with rays of reward, great reward days, radiant warm' },
+    { emoji:'💚', text:'فَأَصُومُ زِيَادَةً كَمَا صَامَ النَّبِيُّ ﷺ، وَأَتَقَرَّبُ بِهَا إِلَى الله.',
+      prompt:'A content child fasting with a soft glow of extra reward, drawing near to Allah, warm uplifting' },
+  ],
+  moral:'أَصُومُ أَيَّامَ الزِّيَادَةِ حُبًّا لِله وَتَقَرُّبًا إِلَيْه. 💚',
+  game:{ type:'pairs', title:'صِلْ كُلَّ صِيَامٍ بِأَجْرِه', pairs:[
+    ['📅 الِاثْنَيْنِ وَالْخَمِيس','تُعْرَضُ فِيهِ الْأَعْمَال'],
+    ['🌟 يَوْمُ عَرَفَة','يُكَفِّرُ سَنَتَيْن'],
+    ['🌙 عَاشُورَاء','يُكَفِّرُ سَنَة'] ] },
+  act:{ q:'هَلْ نَصُومُ زِيَادَةً بَعْدَ رَمَضَان؟', yay:'أَحْسَنْت! أَيَّامٌ نَصُومُهَا حُبًّا لِله', opts:[
+    { e:'➕', t:'نَعَم، كَالِاثْنَيْنِ وَالْخَمِيس', ok:true },
+    { e:'🙅', t:'لَا، رَمَضَانُ فَقَط' },
+    { e:'🤷', t:'لَا أَعْرِف' } ] },
+  dua:'اللَّهُمَّ تَقَبَّلْ صِيَامَنَا وَقِيَامَنَا' },
+
+{ id:'training', icon:'👶', color:'#E67E22', title:'أَتَدَرَّبُ عَلَى الصِّيَام',
+  tag:'أَبْطَالٌ صِغَار',
+  pages:[
+    { emoji:'👶', text:'الصِّيَامُ فَرْضٌ عَلَى الْكِبَار، لَكِنَّ الصِّغَارَ يَتَدَرَّبُونَ عَلَيْهِ لِيُحِبُّوهُ كِبَارًا.',
+      prompt:'A young child practicing fasting a few hours with a proud smile, learning early, warm bright' },
+    { emoji:'⏳', text:'أَصُومُ سَاعَاتٍ قَلِيلَةً ثُمَّ أَزِيد، حَتَّى أَقْدِرَ عَلَى صِيَامِ الْيَوْمِ كُلِّه.',
+      prompt:'A child building up fasting hours shown on a gentle clock, gradual practice, warm encouraging' },
+    { emoji:'🏅', text:'كَانَ الصَّحَابَةُ يُصَوِّمُونَ أَطْفَالَهُم وَيُعْطُونَهُمُ اللُّعَبَ لِيَصْبِرُوا حَتَّى الْمَغْرِب!',
+      prompt:'Little children happily playing with toys while fasting, companions teaching kids, cheerful warm' },
+    { emoji:'💚', text:'فَأَتَدَرَّبُ بِفَرَح، وَأَفْخَرُ أَنِّي بَطَلٌ صَغِيرٌ يُحِبُّ الصِّيَام.',
+      prompt:'A proud happy child who completed a fast with a warm glow of achievement, little hero, uplifting' },
+  ],
+  moral:'أَتَدَرَّبُ عَلَى الصِّيَامِ صَغِيرًا لِأُحِبَّهُ وَأُتْقِنَهُ كَبِيرًا. 💚',
+  game:{ type:'order', title:'رَتِّبْ تَدَرُّبِي عَلَى الصِّيَام', items:[
+    { e:'⏰', t:'أَصُومُ سَاعَاتٍ قَلِيلَة' },
+    { e:'⏳', t:'أَزِيدُ شَيْئًا فَشَيْئًا' },
+    { e:'🌇', t:'أَصْبِرُ حَتَّى الْمَغْرِب' },
+    { e:'🏅', t:'أُتِمُّ يَوْمًا كَامِلًا' } ] },
+  act:{ q:'كَيْفَ أَتَعَلَّمُ الصِّيَامَ وَأَنَا صَغِير؟', yay:'أَحْسَنْت! أَتَدَرَّبُ شَيْئًا فَشَيْئًا بِفَرَح', opts:[
+    { e:'⏳', t:'أَتَدَرَّبُ سَاعَاتٍ ثُمَّ أَزِيد', ok:true },
+    { e:'🙅', t:'لَا أُحَاوِلُ أَبَدًا' },
+    { e:'🤷', t:'لَا أَعْرِف' } ] },
+  dua:'اللَّهُمَّ حَبِّبْ إِلَيَّ الصِّيَامَ وَأَعِنِّي عَلَيْه' },
+
+{ id:'righteous', icon:'⭐', color:'#C0392B', title:'صَبْرُ الْأَبْطَال',
+  tag:'الصِّيَامُ قُوَّةٌ وَإِرَادَة',
+  pages:[
+    { emoji:'⭐', text:'الصِّيَامُ يُعَلِّمُنَا أَعْظَمَ قُوَّة: قُوَّةَ الْإِرَادَةِ وَالتَّحَكُّمِ فِي النَّفْس.',
+      prompt:'A strong determined child resisting temptation with a calm smile, willpower, warm uplifting' },
+    { emoji:'🛡️', text:'حِينَ أَجُوعُ وَأَصْبِر، أَشْعُرُ بِالْفُقَرَاءِ الَّذِينَ لَا يَجِدُونَ طَعَامًا، فَيَرِقُّ قَلْبِي.',
+      prompt:'A fasting child thinking with compassion about hungry people, empathy grown, warm tender' },
+    { emoji:'💪', text:'وَأَتَعَلَّمُ أَنَّ سَعَادَتِي لَيْسَتْ فِي بَطْنِي، بَلْ فِي طَاعَةِ رَبِّي.',
+      prompt:'A content child feeling inner strength and joy from obedience, happiness beyond food, warm' },
+    { emoji:'💚', text:'فَأَخْرُجُ مِنْ رَمَضَانَ بَطَلًا أَقْوَى قَلْبًا وَأَرْحَمَ بِالنَّاس.',
+      prompt:'A joyful stronger child after Ramadan with a warm glowing heart, transformed by fasting, uplifting' },
+  ],
+  moral:'الصِّيَامُ يَصْنَعُ مِنِّي بَطَلًا: قَوِيَّ الْإِرَادَة، رَحِيمًا بِالنَّاس. 💚',
+  game:{ type:'sort', title:'مَاذَا يُعَلِّمُنِي الصِّيَام؟', bins:['يُعَلِّمُنِي 💪','لَا يُعَلِّمُنِي 🚫'], items:[
+    { e:'🛡️', t:'الصَّبْرَ وَقُوَّةَ الْإِرَادَة', bin:0 },
+    { e:'💞', t:'الرَّحْمَةَ بِالْفُقَرَاء', bin:0 },
+    { e:'😤', t:'الْغَضَبَ وَالْجَشَع', bin:1 },
+    { e:'🙏', t:'التَّقَرُّبَ إِلَى الله', bin:0 } ] },
+  act:{ q:'مَاذَا يَصْنَعُ الصِّيَامُ مِنِّي؟', yay:'أَحْسَنْت! قَوِيَّ الْإِرَادَةِ رَحِيمًا بِالنَّاس', opts:[
+    { e:'💪', t:'بَطَلًا قَوِيًّا رَحِيمًا', ok:true },
+    { e:'😠', t:'غَاضِبًا ضَعِيفًا' },
+    { e:'🤷', t:'لَا شَيْء' } ] },
+  dua:'اللَّهُمَّ اجْعَلْنِي مِنَ الصَّابِرِينَ الرَّاحِمِين' },
+
+]};

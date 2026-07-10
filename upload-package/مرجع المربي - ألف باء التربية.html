@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>مرجع المربي — ألف باء التربية</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&family=Noto+Naskh+Arabic:wght@400;500;600;700&display=swap">
+<style>
+:root{
+  --gold:#A07810;--gold-lt:#D4A017;--green:#0D6B54;--navy:#0A2540;
+  --paper:#FBF6EA;--card:#FFFDF7;--ink:#22303E;--ink-soft:#5A6673;
+  --line:#E7DCC4;
+}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Noto Naskh Arabic','Tajawal',serif;background:var(--paper);color:var(--ink);line-height:1.95;direction:rtl}
+a{color:var(--green);text-decoration:none}
+a:hover{color:var(--gold);text-decoration:underline}
+
+/* ── layout ── */
+.wrap{display:grid;grid-template-columns:280px 1fr;min-height:100vh}
+aside{
+  background:var(--navy);color:#FEF5DC;padding:1.6rem 0;
+  position:sticky;top:0;height:100vh;overflow-y:auto;
+}
+aside .brand{padding:0 1.4rem 1.1rem;border-bottom:1px solid rgba(212,160,23,.25);margin-bottom:.9rem}
+aside .brand h1{font-family:'Tajawal',sans-serif;font-size:1.15rem;font-weight:900;color:#F5CC5A;line-height:1.4}
+aside .brand p{font-size:.78rem;color:rgba(254,245,220,.65);margin-top:.2rem}
+.search-box{margin:0 1.4rem .9rem;position:relative}
+.search-box input{
+  width:100%;padding:.5rem .9rem;border-radius:.7rem;border:1px solid rgba(212,160,23,.35);
+  background:rgba(255,255,255,.07);color:#FEF5DC;font-family:'Tajawal',sans-serif;font-size:.85rem;outline:none;
+}
+.search-box input::placeholder{color:rgba(254,245,220,.45)}
+.search-box input:focus{border-color:var(--gold-lt)}
+nav{display:flex;flex-direction:column}
+nav a{
+  display:flex;align-items:center;gap:.6rem;padding:.5rem 1.4rem;color:rgba(254,245,220,.85);
+  font-family:'Tajawal',sans-serif;font-size:.86rem;font-weight:700;border-right:3px solid transparent;transition:.15s;
+}
+nav a:hover{background:rgba(212,160,23,.12);color:#F5CC5A;text-decoration:none}
+nav a.active{border-right-color:var(--gold-lt);background:rgba(212,160,23,.16);color:#F5CC5A}
+nav a .ic{font-size:.95rem;width:1.3rem;text-align:center;flex:none}
+.side-foot{padding:1.1rem 1.4rem 0;margin-top:1rem;border-top:1px solid rgba(212,160,23,.2);display:flex;flex-direction:column;gap:.5rem}
+.side-foot a{font-family:'Tajawal',sans-serif;font-size:.8rem;color:#F5CC5A;display:flex;gap:.45rem;align-items:center}
+
+/* ── main ── */
+main{padding:2.6rem clamp(1.2rem,5vw,4.5rem);max-width:60rem}
+.hero{margin-bottom:2.4rem;border-bottom:2px solid var(--line);padding-bottom:1.6rem}
+.hero .kicker{font-family:'Tajawal',sans-serif;font-weight:800;font-size:.8rem;letter-spacing:.06em;color:var(--gold)}
+.hero h2{font-family:'Tajawal',sans-serif;font-size:clamp(1.7rem,3.4vw,2.4rem);font-weight:900;color:var(--navy);line-height:1.35;margin:.3rem 0 .6rem}
+.hero p{color:var(--ink-soft);max-width:44rem}
+section.chapter{margin-bottom:2.8rem;scroll-margin-top:1.5rem}
+section.chapter .ch-card{
+  background:var(--card);border:1px solid var(--line);border-radius:1rem;
+  padding:1.8rem clamp(1.2rem,3vw,2.4rem);box-shadow:0 2px 14px rgba(34,48,62,.05);
+}
+section.chapter h2{
+  font-family:'Tajawal',sans-serif;font-size:1.45rem;font-weight:900;color:var(--navy);
+  display:flex;align-items:center;gap:.6rem;margin-bottom:1rem;
+}
+section.chapter h2 .ic{color:var(--gold);font-size:1.2rem}
+section.chapter h3{
+  font-family:'Tajawal',sans-serif;font-size:1.06rem;font-weight:800;color:var(--green);
+  margin:1.5rem 0 .5rem;padding-right:.75rem;border-right:3px solid var(--gold-lt);
+}
+section.chapter p{margin:.5rem 0}
+section.chapter p.lead{color:var(--ink-soft);font-size:1.02rem;border-bottom:1px dashed var(--line);padding-bottom:.9rem}
+section.chapter ul,section.chapter ol{padding-right:1.4rem;margin:.5rem 0}
+section.chapter li{margin:.45rem 0}
+section.chapter li::marker{color:var(--gold);font-weight:700}
+strong{color:var(--navy)}
+.qbox{
+  background:linear-gradient(135deg,rgba(13,107,84,.07),rgba(212,160,23,.08));
+  border:1px solid rgba(13,107,84,.22);border-radius:.8rem;padding:.9rem 1.2rem;margin:1.2rem 0 .3rem;
+  font-size:.95rem;
+}
+ul.cols2{columns:2;column-gap:2rem}
+ul.cols2 li{break-inside:avoid}
+@media(max-width:720px){ul.cols2{columns:1}}
+
+/* checklists */
+ul.checklist{list-style:none;padding-right:0}
+ul.checklist li{
+  display:flex;align-items:flex-start;gap:.65rem;padding:.5rem .75rem;margin:.3rem 0;
+  background:var(--card);border:1px solid var(--line);border-radius:.6rem;cursor:pointer;transition:.15s;
+}
+ul.checklist li:hover{border-color:var(--gold-lt)}
+ul.checklist li .box{
+  flex:none;width:1.25rem;height:1.25rem;border:2px solid var(--gold);border-radius:.35rem;margin-top:.35rem;
+  display:flex;align-items:center;justify-content:center;font-size:.85rem;color:#fff;background:transparent;transition:.15s;
+}
+ul.checklist li.done .box{background:var(--green);border-color:var(--green)}
+ul.checklist li.done{opacity:.65}
+ul.checklist li.done .txt{text-decoration:line-through}
+.ck-tools{display:flex;gap:.6rem;align-items:center;margin:.4rem 0 1rem}
+.ck-tools button{
+  font-family:'Tajawal',sans-serif;font-weight:700;font-size:.78rem;padding:.3rem .8rem;border-radius:2rem;
+  border:1px solid var(--line);background:var(--card);color:var(--ink-soft);cursor:pointer;
+}
+.ck-tools button:hover{border-color:var(--gold);color:var(--gold)}
+
+/* table */
+table.track{width:100%;border-collapse:collapse;margin:.8rem 0;font-size:.88rem;background:var(--card)}
+table.track th,table.track td{border:1px solid var(--line);padding:.5rem .6rem;text-align:center}
+table.track th{background:rgba(212,160,23,.12);font-family:'Tajawal',sans-serif;font-weight:800;color:var(--navy)}
+table.track td:first-child{text-align:right;font-weight:600}
+.hint{font-size:.85rem;color:var(--ink-soft)}
+
+.no-results{display:none;color:var(--ink-soft);font-family:'Tajawal',sans-serif;padding:2rem 0;text-align:center}
+mark{background:rgba(245,204,90,.55);color:inherit;border-radius:.15rem;padding:0 .1rem}
+
+footer{margin:3rem 0 1rem;padding-top:1.2rem;border-top:1px solid var(--line);color:var(--ink-soft);font-size:.82rem;font-family:'Tajawal',sans-serif}
+
+/* mobile */
+.menu-btn{display:none}
+@media(max-width:900px){
+  .wrap{grid-template-columns:1fr}
+  aside{position:fixed;right:0;top:0;width:min(300px,85vw);transform:translateX(100%);transition:.25s;z-index:50;box-shadow:-8px 0 30px rgba(0,0,0,.3)}
+  aside.open{transform:translateX(0)}
+  .menu-btn{
+    display:flex;position:fixed;top:.9rem;right:.9rem;z-index:60;width:44px;height:44px;
+    align-items:center;justify-content:center;border-radius:.7rem;border:none;cursor:pointer;
+    background:var(--navy);color:#F5CC5A;font-size:1.3rem;box-shadow:0 4px 14px rgba(0,0,0,.25);
+  }
+  main{padding-top:4.2rem}
+}
+@media print{aside,.menu-btn,.ck-tools{display:none}.wrap{display:block}main{max-width:none;padding:0}}
+</style>
+</head>
+<body>
+<button class="menu-btn" id="menuBtn" aria-label="القائمة">☰</button>
+<div class="wrap">
+<aside id="sidebar">
+  <div class="brand">
+    <h1>مرجع المربي</h1>
+    <p>خلاصات عملية من مجالس «ألف باء التربية» — الشيخ عبدالرحمن ذاكر الهاشمي</p>
+  </div>
+  <div class="search-box"><input type="text" id="search" placeholder="ابحث في المرجع… (عناد، نوم، حفظ)"></div>
+  <nav id="nav"></nav>
+  <div class="side-foot">
+    <a href="مرجع المربي - نسخة للطباعة.html">🖨 النسخة القابلة للطباعة</a>
+  </div>
+</aside>
+<main>
+  <div class="hero">
+    <div class="kicker">مرجعك التربوي الشخصي</div>
+    <h2>لتصبح مربّيًا صالحًا: افهم نفسك أولًا، ثم بيتك، ثم مشكلات أبنائك</h2>
+    <p>أربعة عشر قسمًا عمليًا: من تصحيح مفهوم التربية وإصلاح نفس المربي، إلى خطة اليوم والليلة والانسحاب التربوي، فعلاج المشكلات واحدة واحدة، مع خطط ٣٠/٩٠ يومًا وجداول متابعة. القاعدة الحاكمة: <strong>«ما يتكرر يتقرر»</strong> — والمجهود هو المعيار لا النتيجة.</p>
+  </div>
+  <div id="content"></div>
+  <p class="no-results" id="noResults">لا نتائج مطابقة — جرّب كلمة أخرى.</p>
+  <footer>خلاصات اجتهادية من تفريغات وملخصات مجالس «ألف باء التربية» — للمراجعة الشخصية، والعلم يؤخذ من مصدره.</footer>
+</main>
+</div>
+<script src="murabbi/content-a.js"></script>
+<script src="murabbi/content-b.js"></script>
+<script src="murabbi/content-c.js"></script>
+<script>
+const SECTIONS=[...window.MURABBI_A,...window.MURABBI_B,...window.MURABBI_C];
+const nav=document.getElementById('nav'),content=document.getElementById('content');
+
+SECTIONS.forEach(s=>{
+  const a=document.createElement('a');
+  a.href='#'+s.id;a.innerHTML='<span class="ic">'+s.icon+'</span><span>'+s.title+'</span>';
+  a.dataset.target=s.id;nav.appendChild(a);
+  const sec=document.createElement('section');
+  sec.className='chapter';sec.id=s.id;sec.dataset.screenLabel=s.title;
+  sec.innerHTML='<div class="ch-card"><h2><span class="ic">'+s.icon+'</span>'+s.title+'</h2>'+s.html+'</div>';
+  content.appendChild(sec);
+});
+
+/* checklist persistence */
+document.querySelectorAll('ul.checklist').forEach(ul=>{
+  const key='murabbi-ck-'+ul.dataset.ck;
+  let saved={};try{saved=JSON.parse(localStorage.getItem(key)||'{}')}catch(e){}
+  const items=[...ul.querySelectorAll('li')];
+  items.forEach((li,i)=>{
+    const txt=li.innerHTML;
+    li.innerHTML='<span class="box">✓</span><span class="txt">'+txt+'</span>';
+    if(saved[i])li.classList.add('done');
+    li.addEventListener('click',()=>{
+      li.classList.toggle('done');
+      saved[i]=li.classList.contains('done');
+      localStorage.setItem(key,JSON.stringify(saved));
+    });
+  });
+  const tools=document.createElement('div');tools.className='ck-tools';
+  const btn=document.createElement('button');btn.textContent='إعادة تصفير القائمة';
+  btn.addEventListener('click',e=>{e.stopPropagation();saved={};localStorage.setItem(key,'{}');items.forEach(li=>li.classList.remove('done'));});
+  tools.appendChild(btn);ul.after(tools);
+});
+
+/* active nav on scroll */
+const links=[...nav.querySelectorAll('a')];
+const obs=new IntersectionObserver(entries=>{
+  entries.forEach(en=>{
+    if(en.isIntersecting){
+      links.forEach(l=>l.classList.toggle('active',l.dataset.target===en.target.id));
+    }
+  });
+},{rootMargin:'-25% 0px -65% 0px'});
+document.querySelectorAll('section.chapter').forEach(s=>obs.observe(s));
+
+/* search */
+const searchInput=document.getElementById('search'),noRes=document.getElementById('noResults');
+searchInput.addEventListener('input',()=>{
+  const q=searchInput.value.trim();
+  let any=false;
+  document.querySelectorAll('section.chapter').forEach(sec=>{
+    const hit=!q||sec.textContent.includes(q);
+    sec.style.display=hit?'':'none';
+    if(hit)any=true;
+  });
+  links.forEach(l=>{
+    const sec=document.getElementById(l.dataset.target);
+    l.style.display=(sec&&sec.style.display==='none')?'none':'';
+  });
+  noRes.style.display=any?'none':'block';
+});
+
+/* mobile menu */
+const sidebar=document.getElementById('sidebar'),menuBtn=document.getElementById('menuBtn');
+menuBtn.addEventListener('click',()=>sidebar.classList.toggle('open'));
+nav.addEventListener('click',()=>sidebar.classList.remove('open'));
+</script>
+</body>
+</html>

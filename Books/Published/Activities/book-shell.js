@@ -17,3 +17,16 @@
   var cert=sheet('<div class="cert"><div class="cert-corner tl">✦</div><div class="cert-corner tr">✦</div><div class="cert-corner bl">✦</div><div class="cert-corner br">✦</div><div class="seal">🏅</div><div class="cert-kick">'+B.corner+' · '+M.name+'</div><h2 class="cert-title">'+B.certTitle+'</h2><div class="cert-line">'+tr('تُمنَحُ هذه الشهادةُ بكلِّ فخرٍ إلى','This certificate is proudly awarded to')+'</div><div class="cert-name"></div><div class="cert-body">'+B.certBody+'</div><div class="cert-badges">🌟 🏅 🧠 🕌 ⭐</div><div class="cert-sign"><span>'+tr('التاريخ: ______','Date: ______')+'</span><span>'+tr('التوقيع: ______','Signature: ______')+'</span></div></div>',AC,'dark');
   document.getElementById('book').innerHTML=cover+pages+tally+cert;
 })();
+
+
+  /* print-fit: scale any over-tall sheet so it fits ONE A4 page */
+  (function(){
+    var BUDGET=1050;
+    function fit(){ document.querySelectorAll('.sheet').forEach(function(p){
+      p.style.zoom=''; var h=p.scrollHeight||p.offsetHeight;
+      if(h>BUDGET+70) p.style.zoom=String(BUDGET/h);
+    }); }
+    function unfit(){ document.querySelectorAll('.sheet').forEach(function(p){ p.style.zoom=''; }); }
+    window.addEventListener('beforeprint',fit);
+    window.addEventListener('afterprint',unfit);
+  })();

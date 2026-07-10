@@ -1,0 +1,323 @@
+/* ═══════════════════════════════════════════════════════════════
+   KNOWLEDGE ROOM — Kid-friendly redesign (Room 1)
+   Comic-strip · Flip cards · Ladder · Power-ups · Heroes vs Villains
+   ─────────────────────────────────────────────────────────────── */
+
+/* ─── Section divider with mascot ─── */
+.k-section{
+  position:relative;
+  margin:1rem 0 .75rem;
+}
+.k-divider{
+  display:flex;align-items:center;gap:.6rem;
+  margin:1.1rem 0 .65rem;
+  position:relative;
+}
+.k-divider .k-ico{
+  width:42px;height:42px;border-radius:50%;
+  background:linear-gradient(135deg,var(--hc),color-mix(in srgb,var(--hc) 65%,#000));
+  color:#fff;display:flex;align-items:center;justify-content:center;
+  font-size:1.4rem;
+  box-shadow:0 4px 0 color-mix(in srgb,var(--hc) 45%,#000), 0 6px 14px rgba(40,20,10,.15);
+  animation:wiggle 4s ease-in-out infinite;
+  flex-shrink:0;
+}
+.k-divider .k-title{
+  flex:1;font-size:1.05rem;font-weight:900;color:var(--hc);
+  line-height:1.25;
+}
+.k-divider .k-title small{
+  display:block;font-size:.74rem;color:var(--ink-3);font-weight:700;margin-top:.1rem;
+}
+.k-divider::after{
+  content:'';flex:1;height:3px;border-radius:2px;
+  background:repeating-linear-gradient(90deg, color-mix(in srgb,var(--hc) 55%,#fff) 0 8px, transparent 8px 16px);
+  margin-inline-start:.4rem;
+}
+
+/* ─── BIG HERO BANNER (Did You Know) ─── */
+.k-banner{
+  position:relative;
+  background:
+    radial-gradient(circle at 88% 12%, rgba(255,255,255,.45) 0 20px, transparent 22px),
+    radial-gradient(circle at 12% 80%, rgba(255,255,255,.3) 0 14px, transparent 16px),
+    linear-gradient(135deg, var(--hc), color-mix(in srgb,var(--hc) 60%,#000));
+  color:#fff;border-radius:var(--r-xl);
+  padding:1.1rem 1.1rem 1.1rem 5.2rem;
+  margin-bottom:.9rem;
+  overflow:hidden;
+  box-shadow:0 8px 0 color-mix(in srgb,var(--hc) 45%,#000),
+             0 14px 30px rgba(40,20,10,.18);
+}
+html[dir="ltr"] .k-banner{padding:1.1rem 5.2rem 1.1rem 1.1rem}
+.k-banner .k-mascot{
+  position:absolute;
+  inset-inline-start:.3rem; bottom:.3rem;
+  width:78px;height:78px;
+  background:rgba(255,255,255,.96);
+  border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  font-size:3rem;
+  box-shadow:0 4px 0 rgba(0,0,0,.18), inset 0 -4px 8px rgba(0,0,0,.08);
+  animation:bob 3.5s ease-in-out infinite;
+  border:3px solid #fff;
+}
+.k-banner .k-bubble{
+  background:rgba(255,255,255,.97);
+  color:var(--ink);
+  border-radius:1.2rem;
+  padding:.7rem .9rem;
+  position:relative;
+  margin-bottom:.4rem;
+  box-shadow:0 4px 10px rgba(0,0,0,.15);
+  font-weight:800;font-size:.95rem;line-height:1.45;
+}
+.k-banner .k-bubble::before{
+  content:'';position:absolute;
+  bottom:50%; transform:translateY(50%);
+  inset-inline-start:-12px;
+  width:0;height:0;
+  border:8px solid transparent;
+  border-inline-end:14px solid rgba(255,255,255,.97);
+  border-inline-start:0;
+}
+html[dir="ltr"] .k-banner .k-bubble::before{
+  inset-inline-start:auto;inset-inline-end:-12px;
+  border:8px solid transparent;
+  border-inline-start:14px solid rgba(255,255,255,.97);
+  border-inline-end:0;
+}
+.k-banner .k-bubble b{color:var(--hc)}
+.k-banner .k-sub{
+  font-size:.82rem;font-weight:700;
+  background:rgba(0,0,0,.18);
+  padding:.4rem .7rem;border-radius:1rem;
+  line-height:1.6;
+}
+
+/* ─── COMIC STRIP — Definition ─── */
+.k-comic{
+  display:grid;
+  grid-template-columns:repeat(3, 1fr);
+  gap:.55rem;
+  margin:.5rem 0;
+}
+@media(max-width:520px){ .k-comic{grid-template-columns:1fr;gap:.5rem} }
+.k-panel{
+  background:#fff;
+  border:3px solid var(--ink);
+  border-radius:var(--r);
+  padding:.85rem .9rem .9rem;
+  position:relative;
+  box-shadow:6px 6px 0 rgba(40,20,10,.92);
+  display:flex;flex-direction:column;align-items:center;text-align:center;
+  min-height:170px;
+}
+.k-panel .k-panel-em{
+  font-size:2.2rem;
+  background:linear-gradient(135deg,var(--hc), color-mix(in srgb,var(--hc) 65%,#000));
+  width:64px;height:64px;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  border:3px solid var(--ink);
+  margin-bottom:.4rem;
+  box-shadow:3px 3px 0 var(--ink);
+}
+.k-panel .k-panel-label{
+  font-weight:900;font-size:.86rem;color:var(--hc);
+  margin-bottom:.3rem;text-transform:uppercase;letter-spacing:.5px;
+}
+.k-panel .k-panel-text{
+  font-size:.88rem;line-height:1.6;color:var(--ink);font-weight:600;
+}
+.k-panel .k-panel-text b{color:var(--hc);font-weight:900}
+.k-panel:nth-child(1){animation:fadeUp .35s ease both .05s}
+.k-panel:nth-child(2){animation:fadeUp .35s ease both .15s}
+.k-panel:nth-child(3){animation:fadeUp .35s ease both .25s}
+.k-panel:nth-child(3) .k-panel-em{background:linear-gradient(135deg,#66BB6A,#2E7D32)}
+
+/* ─── FLIP CARDS — Forms ─── */
+.k-flipgrid{
+  display:grid;grid-template-columns:repeat(3, 1fr);gap:.55rem;
+  margin:.5rem 0;
+}
+@media(max-width:520px){ .k-flipgrid{grid-template-columns:repeat(2,1fr)} }
+.k-flipcard{
+  height:140px;cursor:pointer;perspective:800px;
+}
+.k-flipcard-inner{
+  position:relative;width:100%;height:100%;
+  transition:transform .55s cubic-bezier(.34,1.56,.64,1);
+  transform-style:preserve-3d;
+}
+.k-flipcard.flipped .k-flipcard-inner{transform:rotateY(180deg)}
+.k-flipface{
+  position:absolute;inset:0;
+  backface-visibility:hidden;
+  border-radius:var(--r);
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  padding:.6rem;text-align:center;
+  border:3px solid;
+}
+.k-flipfront{
+  background:linear-gradient(135deg,
+    color-mix(in srgb, var(--fcol,#E8A82F) 25%,#fff),
+    color-mix(in srgb, var(--fcol,#E8A82F) 8%,#fff));
+  border-color:var(--fcol,#E8A82F);
+  color:var(--fcol,#E8A82F);
+  box-shadow:0 5px 0 color-mix(in srgb, var(--fcol,#E8A82F) 40%,#fff);
+}
+.k-flipfront .em{font-size:2rem;margin-bottom:.25rem;filter:drop-shadow(0 2px 3px rgba(0,0,0,.18))}
+.k-flipfront .ttl{font-size:.86rem;font-weight:900;line-height:1.2;color:var(--ink)}
+.k-flipfront .tap-hint{
+  font-size:.65rem;color:var(--ink-3);font-weight:700;margin-top:.3rem;opacity:.8;
+}
+.k-flipback{
+  background:var(--fcol,#E8A82F);
+  border-color:color-mix(in srgb, var(--fcol,#E8A82F) 70%,#000);
+  color:#fff;
+  transform:rotateY(180deg);
+  font-size:.78rem;line-height:1.55;font-weight:700;
+  box-shadow:0 5px 0 color-mix(in srgb, var(--fcol,#E8A82F) 55%,#000);
+}
+
+/* ─── LADDER — Ranking ─── */
+.k-ladder{
+  display:flex;flex-direction:column;gap:.5rem;
+  margin:.6rem 0;
+  position:relative;
+}
+.k-ladder::before{
+  content:'';
+  position:absolute;
+  inset-inline-start:32px;
+  top:30px; bottom:30px;
+  width:5px;background:repeating-linear-gradient(180deg, var(--hc) 0 8px, transparent 8px 16px);
+  border-radius:3px;
+  z-index:0;
+}
+.k-rung{
+  display:flex;align-items:center;gap:.7rem;
+  background:#fff;
+  border:3px solid var(--rcol,var(--hc));
+  border-radius:var(--r);
+  padding:.55rem .85rem;
+  position:relative;z-index:1;
+  box-shadow:0 5px 0 color-mix(in srgb, var(--rcol,#E8A82F) 35%,#fff);
+}
+.k-rung .k-rung-n{
+  width:48px;height:48px;border-radius:50%;
+  background:linear-gradient(135deg, var(--rcol), color-mix(in srgb, var(--rcol) 65%,#000));
+  color:#fff;font-weight:900;font-size:1.3rem;
+  display:flex;align-items:center;justify-content:center;
+  flex-shrink:0;
+  border:3px solid #fff;
+  box-shadow:0 0 0 3px var(--rcol), 0 4px 8px rgba(0,0,0,.15);
+}
+.k-rung .k-rung-text{flex:1;font-size:.9rem;line-height:1.45}
+.k-rung .k-rung-text b{font-weight:900;color:var(--rcol);font-size:.96rem;display:block;margin-bottom:.1rem}
+
+/* ─── POWER-UPS — Benefits ─── */
+.k-powerups{
+  display:grid;grid-template-columns:repeat(auto-fit, minmax(130px, 1fr));
+  gap:.55rem;margin:.5rem 0;
+}
+.k-power{
+  background:linear-gradient(135deg,
+    color-mix(in srgb, var(--hc) 14%,#fff),
+    color-mix(in srgb, var(--hc) 4%,#fff));
+  border:2.5px solid color-mix(in srgb,var(--hc) 50%,#fff);
+  border-radius:var(--r);
+  padding:.65rem .55rem;
+  display:flex;align-items:center;gap:.5rem;
+  position:relative;overflow:hidden;
+  transition:.2s;
+}
+.k-power:hover{transform:translateY(-3px) scale(1.02)}
+.k-power .em{
+  width:42px;height:42px;border-radius:50%;
+  background:linear-gradient(135deg, var(--hc), color-mix(in srgb,var(--hc) 65%,#000));
+  color:#fff;
+  display:flex;align-items:center;justify-content:center;
+  font-size:1.3rem;flex-shrink:0;
+  box-shadow:0 3px 0 color-mix(in srgb,var(--hc) 50%,#000);
+  filter:drop-shadow(0 2px 3px rgba(0,0,0,.15));
+  animation:pulse 3s ease-in-out infinite;
+}
+.k-power .txt{font-size:.84rem;line-height:1.45;font-weight:700;color:var(--ink)}
+
+/* ─── HEROES vs VILLAINS — Obstacles + Means ─── */
+.k-versus{
+  display:grid;grid-template-columns:1fr 1fr;gap:.6rem;margin:.6rem 0;
+}
+@media(max-width:450px){ .k-versus{grid-template-columns:1fr} }
+.k-team{
+  border-radius:var(--r-lg);
+  padding:.9rem .85rem;
+  border:3px solid;
+  position:relative;overflow:hidden;
+}
+.k-team.heroes{
+  background:linear-gradient(180deg,#F1F8E9,#DCEDC8);
+  border-color:#7CB342;
+  box-shadow:0 6px 0 #AED581;
+}
+.k-team.villains{
+  background:linear-gradient(180deg,#FFEBEE,#FFCDD2);
+  border-color:#EF5350;
+  box-shadow:0 6px 0 #E57373;
+}
+.k-team .k-team-hdr{
+  display:flex;align-items:center;gap:.45rem;
+  margin-bottom:.5rem;
+  padding-bottom:.4rem;
+  border-bottom:2px dashed currentColor;
+}
+.k-team.heroes .k-team-hdr{color:#2E7D32}
+.k-team.villains .k-team-hdr{color:#C62828}
+.k-team .k-team-em{font-size:1.6rem}
+.k-team .k-team-name{font-weight:900;font-size:.95rem;line-height:1.2;flex:1}
+.k-team ul{list-style:none;display:flex;flex-direction:column;gap:.35rem}
+.k-team li{
+  background:rgba(255,255,255,.7);
+  border-radius:.7rem;
+  padding:.38rem .55rem;
+  font-size:.82rem;font-weight:700;line-height:1.4;
+  display:flex;align-items:flex-start;gap:.4rem;
+  color:var(--ink);
+}
+.k-team li .li-em{flex-shrink:0;font-size:1rem}
+
+/* ─── QURAN / HADITH cards — keep core but make rounder ─── */
+.verse-card, .hadith-card{
+  position:relative;
+}
+.verse-card::before{
+  content:'❝';position:absolute;top:-12px;right:14px;
+  background:#fff;color:var(--green);
+  width:30px;height:30px;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  font-size:1.4rem;font-weight:900;line-height:1;
+  border:2.5px solid var(--green-lt);
+  box-shadow:0 2px 6px rgba(0,0,0,.1);
+}
+html[dir="ltr"] .verse-card::before{right:auto;left:14px}
+.hadith-card::before{
+  content:'💎';position:absolute;top:-14px;right:14px;
+  background:#fff;
+  width:32px;height:32px;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  font-size:1.05rem;
+  border:2.5px solid #FFC107;
+  box-shadow:0 2px 6px rgba(0,0,0,.1);
+}
+html[dir="ltr"] .hadith-card::before{right:auto;left:14px}
+
+/* ─── Sparkle animation for flip card reveal ─── */
+@keyframes sparkleOut{
+  0%{transform:translate(0,0) scale(0);opacity:1}
+  100%{transform:translate(var(--dx),var(--dy)) scale(1);opacity:0}
+}
+.k-sparkle{
+  position:absolute;font-size:1.1rem;pointer-events:none;
+  animation:sparkleOut .8s ease-out forwards;
+}

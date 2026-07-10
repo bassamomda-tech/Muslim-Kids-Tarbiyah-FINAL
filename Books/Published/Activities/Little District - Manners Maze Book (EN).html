@@ -157,5 +157,9 @@ function render(){
 }
 render();
 </script>
+<script>
+/* print-fit: scale any over-tall sheet so it fits ONE A4 page */
+(function(){var B=1050;function f(){document.querySelectorAll('.sheet,.poster').forEach(function(p){p.style.zoom='';var h=p.scrollHeight||p.offsetHeight;if(h>B+70)p.style.zoom=String(B/h);});}function u(){document.querySelectorAll('.sheet,.poster').forEach(function(p){p.style.zoom='';});}window.addEventListener('beforeprint',f);window.addEventListener('afterprint',u);})();
+</script>
 </body>
 </html>

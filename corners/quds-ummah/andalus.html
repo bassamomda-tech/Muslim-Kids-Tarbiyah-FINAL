@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta name="color-scheme" content="dark">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>رحلة الأندلس | Journey of Al-Andalus</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Amiri+Quran&family=Tajawal:wght@400;500;700;800;900&family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+<link rel="stylesheet" href="yaqeen.css">
+<style>
+/* ── Al-Andalus theme: Andalusian wine-red + Alhambra gold + green ── */
+:root{
+  --primary:#B8322E; --primary-dark:#7C1F1C;
+  --bg1:#2A0E12; --bg2:#3E1518; --bg3:#4E1E1C;
+  --gold:#E8C264; --gold-soft:#F4DB9C;
+  --text:#F7EFE6; --muted:rgba(247,239,230,.74);
+  --line:rgba(232,194,100,.28);
+}
+body{background:
+  
+    radial-gradient(1300px 760px at 78% -12%, rgba(184,50,46,.34), transparent 58%),
+    radial-gradient(1000px 620px at 0% 100%, rgba(232,194,100,.16), transparent 55%),
+    radial-gradient(900px 600px at 100% 100%, rgba(31,122,107,.16), transparent 60%),
+    linear-gradient(165deg,var(--bg1),var(--bg2) 55%,var(--bg3));
+  background-attachment:fixed;
+}
+.guide .who{background:linear-gradient(160deg,#B8322E,#7C1F1C)}
+.coll-cert{background:linear-gradient(160deg,rgba(232,194,100,.16),rgba(184,50,46,.22))!important}
+.lang button.active{color:#2A0E12}
+.stampbtn{color:#2A0E12}
+</style>
+<script>(function(){try{var l=localStorage.getItem('bunyanLang');if(l==='en'){var h=document.documentElement;h.dir='ltr';h.lang='en';}}catch(e){}})();</script>
+<style id="__antiflash">html{background:#2A0E12;color-scheme:dark}</style>
+</head>
+<body>
+
+<header class="hdr">
+  <a class="back" href="../little-district/pages/quds.html">
+    <span>↩️</span><span class="lng-ar">الرُّكن</span><span class="lng-en">Corner</span>
+  </a>
+  <span class="hdr-badge"><span class="l">🏰</span><span class="lng-ar">رِحلةُ الأندَلُس</span><span class="lng-en">Al-Andalus</span></span>
+  <div class="lang">
+    <button data-lang="en">EN</button>
+    <button data-lang="ar" class="active">عربي</button>
+  </div>
+</header>
+
+<section class="intro">
+  <h1>
+    <span class="lng-ar">🏰 رِحلةُ <span class="hl">الأندَلُس</span> — مَجدٌ وعِبرة</span>
+    <span class="lng-en">🏰 Journey of <span class="hl">Al-Andalus</span> — Glory & Lesson</span>
+  </h1>
+  <p class="sub">
+    <span class="lng-ar">عَشرُ مَحطّاتٍ نَعرِفُ فيها عَظَمةَ حَضارةِ الأندَلُسِ وأشهَرَ قادَتِها — طارِقٌ وعبدُ الرَّحمنِ الدّاخِلُ والنّاصِرُ ويوسُفُ بنُ تاشفين — وأسبابَ قُوَّتِها وأسبابَ سُقوطِها، لِنَتَعَلَّمَ مِنَ التّاريخِ ونَكونَ مِن جيلِ النَّهضةِ الذي يُعيدُ لِلأُمّةِ مَجدَها.</span>
+    <span class="lng-en">Ten stations on the greatness of Andalusian civilization and its most famous leaders — Tariq, Abd ar-Rahman I, al-Nasir, and Yusuf ibn Tashfin — the causes of its strength and the causes of its fall, so we learn from history and become the generation of revival that restores the nation's glory.</span>
+  </p>
+  <div class="guide">
+    <div class="who">🧑</div>
+    <div class="say">
+      <span class="lng-ar">أنا «طارِق»، رَفيقُك. في كُلِّ مَحطّةٍ نَكتَشِفُ سِرّاً مِن أسرارِ الأندَلُس… هَيّا نَبدَأ! 🏰</span>
+      <span class="lng-en">I'm Tariq, your companion. Each station uncovers a secret of Al-Andalus… let's begin! 🏰</span>
+    </div>
+  </div>
+</section>
+
+<div class="pbar-wrap">
+  <div class="pbar-top">
+    <span><span class="lng-ar">مِيزانُ النَّهضة</span><span class="lng-en">Revival Meter</span></span>
+    <span class="stars" id="pCount">0 / 10</span>
+  </div>
+  <div class="pbar"><div class="pbar-fill" id="pFill"></div></div>
+  <div class="meter-label" id="meterLabel"></div>
+</div>
+
+<div class="collections">
+  <div class="coll-card" id="collStickers"></div>
+  <div class="coll-card" id="collNames"></div>
+  <div class="coll-card" id="collKeys"></div>
+  <div class="coll-card coll-cert" id="collCert"></div>
+</div>
+
+<div class="map" id="map"><div class="road"></div></div>
+
+<footer class="foot">
+  <span class="lng-ar">صُنع بِحُبٍّ 🤍 لِأطفالِ الأُمّة — <b>رِحلةُ الأندَلُس</b> · ركنُ القُدسِ والأُمّة · على نَهجِ أهلِ السُّنّة</span>
+  <span class="lng-en">Made with 🤍 for the children of the Ummah — <b>Journey of Al-Andalus</b> · Al-Quds & the Ummah · Upon the way of Ahl al-Sunnah</span>
+</footer>
+
+<div class="reader" id="reader">
+  <div class="sheet">
+    <div class="r-top">
+      <button class="r-close" id="rClose">✕</button>
+      <span class="r-count" id="rCount"></span>
+      <div class="r-arrows">
+        <button id="rPrev">‹</button>
+        <button id="rNext">›</button>
+      </div>
+    </div>
+    <div id="rBody"></div>
+  </div>
+</div>
+
+<div class="drawer" id="drawer">
+  <div class="drawer-sheet">
+    <div class="dw-top">
+      <h3 id="dwTitle"></h3>
+      <button class="r-close" id="dwClose">✕</button>
+    </div>
+    <div class="dw-body" id="dwBody"></div>
+  </div>
+</div>
+
+<div class="cert-overlay" id="certOverlay">
+  <div class="cert-tools">
+    <input id="certName" type="text" placeholder="✍️ اكتُب اسمَك هنا / Type your name" maxlength="40">
+    <button class="cprint" id="certPrint">🖨️ <span class="lng-ar">اطبَع</span><span class="lng-en">Print</span></button>
+    <button class="cclose" id="certClose">✕</button>
+  </div>
+  <div class="certificate" id="certBox"></div>
+</div>
+
+<div id="confetti"></div>
+<div class="toast" id="toast"></div>
+
+<script defer src="nav-fix.js"></script>
+<script src="data/andalus-stations.js"></script>
+<script>
+window.RIHLA_CFG = {
+  stations: window.ANDALUS_STATIONS,
+  prefix: 'andalus',
+  confetti: ['#E8C264','#B8322E','#1F7A6B','#6C3B8E','#FFFFFF','#C9852E'],
+  T: {
+    mapEnter:{ar:'ادخُل المَحطّة ←',en:'Enter →'},
+    finishTitle:{ar:'وِسامُ النَّهضة',en:'Revival Medal'},
+    meterStart:{ar:'ابدَأ الرِّحلة… كُلُّ مَحطّةٍ تُقَرِّبُكَ مِن سِرِّ نَهضةِ الأُمّة',en:'Begin… each station brings you closer to the secret of the nation\'s revival'},
+    meterMid:{ar:'أحسَنت! أنجَزتَ {n} مِن {t} مَحطّات',en:'Great! You completed {n} of {t} stations'},
+    meterDone:{ar:'🎉 اكتَمَلَتِ الرِّحلة! صِرتَ مِن جيلِ النَّهضةِ الذي يَتَعَلَّمُ مِنَ التّاريخ',en:'🎉 Journey complete! You\'ve become part of the generation of revival that learns from history'},
+    coll1:{icon:'🎖️',title:{ar:'أوسِمةُ النَّهضة',en:'Revival Badges'},unit:{ar:'وِسام',en:'badges'}},
+    coll2:{icon:'🏰',title:{ar:'بِطاقاتُ الأندَلُس',en:'Al-Andalus Cards'},unit:{ar:'بِطاقة',en:'cards'}},
+    coll3:{title:{ar:'مَفاتيحُ القُوّة',en:'Keys of Strength'}},
+    collCert:{title:{ar:'عَهدُ النَّهضة',en:'Revival Pledge'}},
+    kick:{ar:'المَحطّة {n} مِن {t}',en:'Station {n} of {t}'},
+    hNarr:{ar:'طارِق يَحكي',en:'Tariq Tells It'},
+    hLogic:{ar:'الحَقيقةُ المُنيرة',en:'The Illuminating Truth'},
+    hMyth:{ar:'بَطاقةُ تَصحيحِ الفِكرة',en:'Idea-Fixer Card'},
+    hCard:{ar:'بِطاقةُ الأندَلُس',en:'Al-Andalus Card'},
+    hKey:{ar:'مِفتاحُ القُوّة',en:'Key of Strength'},
+    hJournal:{ar:'دَفتَرُ النَّهضة',en:'Revival Journal'},
+    shSays:{ar:'سُؤالٌ يَخطُرُ بِبالِك:',en:'A question crosses your mind:'},
+    rebut:{ar:'والحَقيقة ↓',en:'The truth ↓'},
+    journalPh:{ar:'اكتُب ما تَعَلَّمتَهُ عنِ الأندَلُسِ وأُمّتِك…',en:'Write what you learned about Al-Andalus and your ummah…'},
+    stampDo:{ar:'🏰 أتمِم هذه المَحطّة',en:'🏰 Complete this station'},
+    stampDone:{ar:'✓ مَحطّةٌ مُكتَمِلة',en:'✓ Station complete'},
+    drawer1:{ar:'🎖️ أوسِمةُ النَّهضة',en:'🎖️ Revival Badges'},
+    drawer2:{ar:'🏰 بِطاقاتُ الأندَلُس',en:'🏰 Al-Andalus Cards'},
+    drawer3:{ar:'🔑 مَفاتيحُ القُوّة',en:'🔑 Keys of Strength'},
+    fromStation:{ar:'مِن مَحطّة: ',en:'From: '},
+    certSeal:'🏰',
+    certKick:{ar:'رِحلةُ الأندَلُس · ركنُ القُدسِ والأُمّة',en:'Journey of Al-Andalus · Al-Quds & the Ummah'},
+    certTitle:{ar:'عَهدُ جيلِ النَّهضة',en:'Pledge of the Generation of Revival'},
+    certStatement:{
+      ar:'أتَمَّ هذا القَلبُ الصَّغيرُ <b>{n}</b> مِن {t} مَحطّاتٍ في رِحلةِ الأندَلُس، فَعَرَفَ — على نَهجِ أهلِ السُّنّةِ والجَماعة — عَظَمةَ حَضارةِ الأندَلُسِ وقادَتِها، وأسبابَ قُوّةِ الأُمَمِ وأسبابَ سُقوطِها، وأنَّ التَّفَرُّقَ بابُ الهَزيمة — فَعاهَدَ اللهَ أن يَتَعَلَّمَ مِنَ التّاريخِ، ويَتَمَسَّكَ بِدينِهِ وعِلمِهِ ووَحدَتِه، ويَكونَ مِن جيلِ النَّهضةِ الذي يُعيدُ لِلأُمّةِ مَجدَها.',
+      en:'This young heart completed <b>{n}</b> of {t} stations in the Journey of Al-Andalus, learning — upon the way of Ahl al-Sunnah — the greatness of Andalusian civilization and its leaders, the causes of nations\' strength and fall, and that division is the door to defeat — pledging to Allah to learn from history, hold to his religion, knowledge, and unity, and be part of the generation of revival that restores the nation\'s glory.'},
+  }
+};
+</script>
+<script src="rihla-engine.js"></script>
+<script defer src="../quiz/quiz-engine.js"></script>
+<script defer src="../shared/mk-system.js"></script>
+<script defer src="../shared/mk-journeys.js"></script>
+<script defer src="../shared/mk-bag.js"></script>
+<script defer src="../shared/mk-train.js"></script>
+</body>
+</html>

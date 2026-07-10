@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta name="color-scheme" content="dark">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ورشة الصانع الصغير | Little Maker's Workshop</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+<link rel="stylesheet" href="yaqeen.css">
+<style>
+/* ── Workshop theme: forest night + leafy green + warm wood ── */
+:root{
+  --primary:#5E8C31; --primary-dark:#4A7226;
+  --bg1:#0A1F12; --bg2:#0E2E1A; --bg3:#134024;
+  --gold:#A8C256; --gold-soft:#C4DA76;
+  --text:#F2F8E8; --muted:rgba(242,248,232,.74);
+  --card:rgba(255,255,255,.06); --line:rgba(168,194,86,.28);
+}
+body{background:
+    radial-gradient(1300px 760px at 80% -12%, rgba(94,140,49,.32), transparent 58%),
+    radial-gradient(1000px 620px at 0% 100%, rgba(168,194,86,.12), transparent 55%),
+    linear-gradient(165deg,var(--bg1),var(--bg2) 55%,var(--bg3));
+  background-attachment:fixed;
+}
+a{color:var(--gold-soft)} a:hover{color:var(--gold)}
+.guide .who{background:linear-gradient(160deg,#7BAA46,#4A7226)}
+.lang button.active{color:#0A1F12}
+
+/* ── weekly mission ── */
+.weekly{max-width:760px;margin:1.6rem auto 0;padding:0 1.2rem}
+.weekly-card{position:relative;overflow:hidden;display:flex;align-items:center;gap:1rem;background:linear-gradient(160deg,rgba(168,194,86,.16),rgba(94,140,49,.08));border:1.5px solid rgba(196,218,118,.45);border-radius:1.4rem;padding:1.1rem 1.3rem;cursor:pointer;transition:transform .2s,box-shadow .2s}
+.weekly-card:hover{transform:translateY(-2px);box-shadow:0 14px 34px rgba(0,0,0,.35)}
+.weekly-ic{flex:0 0 auto;width:64px;height:64px;border-radius:1.1rem;background:rgba(0,0,0,.28);display:grid;place-items:center;font-size:2.2rem}
+.weekly-lbl{display:inline-block;font-size:.72rem;font-weight:900;color:#0A1F12;background:var(--gold-soft);border-radius:2rem;padding:.14rem .7rem;margin-bottom:.3rem}
+.weekly-t{font-weight:900;font-size:1.15rem;line-height:1.3}
+.weekly-s{color:var(--muted);font-size:.86rem;margin-top:.2rem;line-height:1.6}
+.weekly-done{flex:0 0 auto;font-size:1.7rem}
+
+/* ── stamps ── */
+.stamps{display:flex;flex-wrap:wrap;justify-content:center;gap:.55rem;max-width:640px;margin:.9rem auto 0;padding:0 1.2rem}
+.stamp{display:inline-flex;align-items:center;gap:.4rem;background:var(--card);border:1.5px dashed var(--line);border-radius:2rem;padding:.32rem .8rem;font-weight:800;font-size:.8rem;color:var(--muted)}
+.stamp.earned{border-style:solid;border-color:var(--gold);color:var(--gold-soft);background:rgba(168,194,86,.13)}
+.stamp .s-ic{font-size:1.05rem;filter:grayscale(1);opacity:.5}
+.stamp.earned .s-ic{filter:none;opacity:1}
+
+/* ── filters ── */
+.filters{display:flex;flex-wrap:wrap;justify-content:center;gap:.45rem;max-width:860px;margin:1.7rem auto .3rem;padding:0 1.2rem}
+.fchip{display:inline-flex;align-items:center;gap:.35rem;background:rgba(255,255,255,.06);border:1.5px solid var(--line);border-radius:2rem;padding:.42rem .95rem;font-weight:800;font-size:.84rem;color:var(--text);cursor:pointer;font-family:inherit;transition:transform .15s,background .2s}
+.fchip:hover{transform:translateY(-1px);background:rgba(255,255,255,.12)}
+.fchip.active{background:var(--gold);color:#0A1F12;border-color:var(--gold)}
+
+/* ── grid ── */
+.acts{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:1rem;max-width:1060px;margin:1.2rem auto 0;padding:0 1.2rem}
+.act{position:relative;display:flex;flex-direction:column;gap:.55rem;background:var(--card);border:1.5px solid var(--line);border-radius:1.4rem;padding:1.1rem;cursor:pointer;transition:transform .2s,border-color .2s,box-shadow .2s;animation:actIn .5s both}
+@keyframes actIn{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:translateY(0)}}
+@media (prefers-reduced-motion: reduce){.act{animation:none}}
+.act:hover{transform:translateY(-3px);border-color:var(--gold);box-shadow:0 16px 36px rgba(0,0,0,.35)}
+.act-top{display:flex;align-items:center;gap:.7rem}
+.act-ic{flex:0 0 auto;width:52px;height:52px;border-radius:1rem;background:rgba(0,0,0,.28);display:grid;place-items:center;font-size:1.8rem}
+.act-name{font-weight:900;font-size:1.02rem;line-height:1.3}
+.act-cat{font-size:.72rem;font-weight:800;color:var(--gold-soft);margin-top:.15rem}
+.act-desc{color:var(--muted);font-size:.84rem;line-height:1.65;flex:1}
+.act-tags{display:flex;flex-wrap:wrap;gap:.35rem}
+.act-tag{display:inline-flex;align-items:center;gap:.25rem;font-size:.7rem;font-weight:800;border-radius:2rem;padding:.16rem .6rem;background:rgba(0,0,0,.25);border:1px solid var(--line);color:var(--muted)}
+.act-tag.corner{border-color:var(--tag-c,var(--line));color:var(--text)}
+.act-done-badge{position:absolute;top:.7rem;inset-inline-start:.7rem;width:34px;height:34px;border-radius:50%;display:grid;place-items:center;font-size:1.05rem;background:rgba(168,194,86,.9);color:#0A1F12;box-shadow:0 4px 12px rgba(0,0,0,.4)}
+.act-photo{width:100%;height:110px;object-fit:cover;border-radius:.9rem;border:1px solid var(--line)}
+
+/* ── section titles ── */
+.sec-t{display:flex;align-items:center;gap:.7rem;max-width:1060px;margin:2.6rem auto .2rem;padding:0 1.2rem;font-weight:900;font-size:1.25rem}
+.sec-t .l{font-size:1.5rem}
+.sec-t::after{content:'';flex:1;height:2px;background:linear-gradient(90deg,var(--line),transparent)}
+.sec-badge{order:9;flex:0 0 auto;font-size:.75rem;font-weight:900;color:var(--gold-soft);background:rgba(168,194,86,.14);border:1.5px solid var(--line);border-radius:2rem;padding:.2rem .75rem}
+.sec-s{max-width:1060px;margin:.2rem auto 0;padding:0 1.2rem;color:var(--muted);font-size:.9rem;line-height:1.6}
+
+/* ── journal ── */
+.journal{display:grid;grid-template-columns:repeat(auto-fill,minmax(170px,1fr));gap:.9rem;max-width:1060px;margin:1.1rem auto 0;padding:0 1.2rem}
+.j-card{background:var(--card);border:1.5px solid var(--line);border-radius:1.2rem;padding:.8rem;text-align:center}
+.j-photo{width:100%;height:110px;object-fit:cover;border-radius:.8rem;border:1px solid var(--line)}
+.j-noph{width:100%;height:110px;border-radius:.8rem;background:rgba(0,0,0,.25);display:grid;place-items:center;font-size:2.4rem}
+.j-name{font-weight:800;font-size:.84rem;margin-top:.5rem;line-height:1.4}
+.j-date{color:var(--muted);font-size:.72rem;margin-top:.15rem}
+.j-empty{max-width:520px;margin:1.1rem auto 0;padding:1.6rem 1.2rem;text-align:center;background:var(--card);border:1.5px dashed var(--line);border-radius:1.3rem;color:var(--muted);font-weight:700;line-height:1.7}
+
+/* ── printables banner ── */
+.print-banner{display:flex;flex-wrap:wrap;align-items:center;gap:1rem;max-width:760px;margin:2.6rem auto 0;padding:1.1rem 1.3rem;background:var(--card);border:1.5px solid var(--line);border-radius:1.4rem}
+.print-banner .pb-ic{font-size:2.2rem}
+.print-banner .pb-tx{flex:1;min-width:200px}
+.print-banner .pb-t{font-weight:900;font-size:1.05rem}
+.print-banner .pb-s{color:var(--muted);font-size:.84rem;line-height:1.6;margin-top:.15rem}
+.pb-btn{display:inline-block;background:var(--primary);color:#fff;text-decoration:none;font-weight:900;border-radius:2rem;padding:.65rem 1.3rem;font-size:.9rem;box-shadow:0 8px 20px rgba(94,140,49,.4);transition:transform .2s,background .2s}
+.pb-btn:hover{background:var(--primary-dark);transform:translateY(-1px);color:#fff}
+
+/* ── reader (activity sheet) ── */
+.reader{position:fixed;inset:0;z-index:80;display:none;align-items:flex-end;justify-content:center;background:rgba(4,12,7,.72);backdrop-filter:blur(6px)}
+.reader.open{display:flex}
+.sheet{width:min(720px,100%);max-height:92vh;overflow-y:auto;background:linear-gradient(175deg,#12301C,#0C2313);border:1.5px solid var(--line);border-bottom:0;border-radius:1.6rem 1.6rem 0 0;padding:1.1rem 1.3rem 5.5rem}
+.r-top{position:sticky;top:-1.1rem;z-index:5;display:flex;align-items:center;justify-content:space-between;gap:.7rem;background:#12301C;margin:-1.1rem -1.3rem 0;padding:.9rem 1.3rem;border-bottom:1px solid var(--line)}
+.r-close{background:rgba(255,255,255,.09);border:1px solid var(--line);color:var(--text);width:36px;height:36px;border-radius:50%;font-size:1rem;cursor:pointer;font-family:inherit}
+.r-corner{display:inline-flex;align-items:center;gap:.4rem;font-weight:800;font-size:.8rem;border-radius:2rem;padding:.3rem .85rem;background:rgba(0,0,0,.3);border:1.5px solid var(--rc,var(--line))}
+.r-hero{display:flex;align-items:center;gap:1rem;margin-top:1.2rem}
+.r-hero .h-ic{flex:0 0 auto;width:72px;height:72px;border-radius:1.2rem;background:rgba(0,0,0,.3);display:grid;place-items:center;font-size:2.6rem}
+.r-hero h2{margin:0;font-size:1.45rem;font-weight:900;line-height:1.3}
+.r-hero .h-desc{color:var(--muted);font-size:.9rem;line-height:1.6;margin-top:.25rem}
+.r-why{margin-top:1.1rem;background:rgba(168,194,86,.1);border:1.5px solid rgba(168,194,86,.35);border-radius:1.1rem;padding:.85rem 1rem;font-size:.92rem;line-height:1.8}
+.r-why .w-lbl{display:block;font-weight:900;color:var(--gold-soft);font-size:.8rem;margin-bottom:.2rem}
+.r-h3{display:flex;align-items:center;gap:.5rem;font-weight:900;font-size:1.02rem;margin:1.4rem 0 .6rem;color:var(--gold-soft)}
+.r-tools{display:flex;flex-wrap:wrap;gap:.45rem}
+.r-tool{display:inline-flex;align-items:center;gap:.4rem;background:rgba(255,255,255,.06);border:1px solid var(--line);border-radius:2rem;padding:.38rem .85rem;font-weight:700;font-size:.84rem}
+.r-steps{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:.55rem}
+.r-step{display:flex;gap:.75rem;align-items:flex-start;background:rgba(255,255,255,.05);border:1px solid var(--line);border-radius:1rem;padding:.7rem .85rem}
+.r-step .st-n{flex:0 0 auto;width:30px;height:30px;border-radius:50%;background:var(--primary);color:#fff;display:grid;place-items:center;font-weight:900;font-size:.85rem}
+.r-step .st-ic{flex:0 0 auto;font-size:1.25rem;margin-top:.05rem}
+.r-step.has-svg{align-items:center}
+.r-step .st-svg{flex:0 0 auto;width:96px;height:72px;background:rgba(0,0,0,.28);border:1px solid var(--line);border-radius:.7rem;display:grid;place-items:center;padding:4px}
+.r-step .st-svg svg{width:100%;height:100%}
+@media(max-width:480px){.r-step .st-svg{width:78px;height:58px}}
+.r-step p{margin:0;font-size:.92rem;line-height:1.75}
+.r-ages{display:grid;grid-template-columns:1fr 1fr;gap:.6rem}
+@media(max-width:560px){.r-ages{grid-template-columns:1fr}}
+.r-age{background:rgba(255,255,255,.05);border:1px solid var(--line);border-radius:1rem;padding:.7rem .85rem;font-size:.86rem;line-height:1.7}
+.r-age .a-lbl{display:block;font-weight:900;color:var(--gold-soft);font-size:.78rem;margin-bottom:.2rem}
+.r-wisdom{margin-top:1.3rem;text-align:center;background:rgba(0,0,0,.25);border:1.5px solid var(--line);border-radius:1.1rem;padding:.9rem 1rem;font-weight:800;font-size:.95rem;line-height:1.9;color:var(--gold-soft)}
+.r-acts{position:sticky;bottom:0;display:flex;gap:.6rem;margin:1.4rem -1.3rem -5.5rem;padding:.9rem 1.3rem calc(.9rem + env(safe-area-inset-bottom));background:linear-gradient(0deg,#0C2313 65%,transparent)}
+.r-btn{flex:1;display:inline-flex;align-items:center;justify-content:center;gap:.45rem;border:none;border-radius:2rem;padding:.85rem;font-weight:900;font-size:.98rem;cursor:pointer;font-family:inherit;transition:transform .15s}
+.r-btn:hover{transform:translateY(-1px)}
+.r-btn.photo{background:rgba(255,255,255,.1);color:var(--text);border:1.5px solid var(--line)}
+.r-btn.done{background:linear-gradient(135deg,var(--gold),#8aa838);color:#0A1F12}
+.r-btn.done.is-done{background:rgba(168,194,86,.2);color:var(--gold-soft);border:1.5px solid var(--gold)}
+.r-myphoto{margin-top:.7rem;width:100%;max-height:260px;object-fit:cover;border-radius:1rem;border:1.5px solid var(--line)}
+
+/* stamp splash */
+.splash{position:fixed;inset:0;z-index:95;display:none;align-items:center;justify-content:center;background:rgba(4,12,7,.6);backdrop-filter:blur(4px)}
+.splash.show{display:flex}
+.splash-in{text-align:center;animation:splashIn .5s cubic-bezier(.2,1.6,.4,1) both}
+@keyframes splashIn{from{opacity:0;transform:scale(.4) rotate(-12deg)}to{opacity:1;transform:scale(1) rotate(0)}}
+.splash-ic{font-size:6rem;filter:drop-shadow(0 10px 30px rgba(0,0,0,.5))}
+.splash-t{font-weight:900;font-size:1.5rem;color:var(--gold-soft);margin-top:.6rem}
+.splash-s{color:var(--muted);font-weight:700;margin-top:.25rem}
+
+/* toast */
+.toast{position:fixed;bottom:1.2rem;left:50%;transform:translate(-50%,150%);z-index:99;background:#12301C;border:1.5px solid var(--gold);color:var(--text);font-weight:800;font-size:.9rem;border-radius:2rem;padding:.7rem 1.4rem;transition:transform .35s cubic-bezier(.2,1.4,.4,1);box-shadow:0 12px 34px rgba(0,0,0,.5);max-width:90vw;text-align:center}
+.toast.show{transform:translate(-50%,0)}
+
+.foot{text-align:center;padding:3rem 1.2rem 2.2rem;color:var(--muted);font-size:.84rem;line-height:1.8}
+</style>
+<script>(function(){try{var l=localStorage.getItem('bunyanLang');if(l==='en'){var h=document.documentElement;h.dir='ltr';h.lang='en';}}catch(e){}})();</script>
+<style id="__antiflash">html{background:#0A1F12;color-scheme:dark}</style>
+</head>
+<body data-screen-label="ورشة الصانع الصغير">
+
+<!-- ═══ HEADER ═══ -->
+<header class="hdr">
+  <a class="back" href="../../index.html">
+    <span>↩️</span><span class="lng-ar">المدينة</span><span class="lng-en">City</span>
+  </a>
+  <span class="hdr-badge"><span class="l">🧰</span><span class="lng-ar">ورشةُ الصانعِ الصغير</span><span class="lng-en">Little Maker's Workshop</span></span>
+  <div class="lang">
+    <button data-lang="en">EN</button>
+    <button data-lang="ar" class="active">عربي</button>
+  </div>
+</header>
+
+<!-- ═══ INTRO ═══ -->
+<section class="intro">
+  <h1><span class="lng-ar">هنا نصنعُ بأيدينا <span class="hl">ما تعلَّمناه</span></span><span class="lng-en">Here we make <span class="hl">what we learned</span> with our hands</span></h1>
+  <p class="sub"><span class="lng-ar">أنشطةٌ يدويةٌ وتجاربُ ومهماتٌ في الطبيعة — كلُّها تُطبِّقُ ما تعلَّمتَه في أركانِ المدينة: عِلمٌ وتفكُّرٌ وعملٌ ومرح.</span><span class="lng-en">Crafts, experiments and nature missions — all applying what you learned across the city's corners: knowledge, reflection, action and fun.</span></p>
+  <div class="guide">
+    <div class="who">🧔</div>
+    <div class="say"><span class="lng-ar"><b>المربي:</b> العلمُ بلا عملٍ كشجرةٍ بلا ثمر — هيّا نعمل!</span><span class="lng-en"><b>Al-Murabbi:</b> Knowledge without action is a tree without fruit — let's get making!</span></div>
+  </div>
+  <div class="guide">
+    <div class="who">🧕</div>
+    <div class="say"><span class="lng-ar"><b>المربية:</b> أنجِزِ النشاطَ، صوِّرْ عملَك، واجمعِ الأختامَ الثمانية!</span><span class="lng-en"><b>Al-Murabbiyah:</b> Finish an activity, snap your work, and collect all eight stamps!</span></div>
+  </div>
+</section>
+
+<!-- ═══ WEEKLY MISSION ═══ -->
+<div class="weekly"><div class="weekly-card" id="weeklyCard"></div></div>
+
+<!-- ═══ METER + STAMPS ═══ -->
+<div class="pbar-wrap">
+  <div class="pbar-top">
+    <span><span class="lng-ar">🛠️ إنجازاتي في الورشة</span><span class="lng-en">🛠️ My workshop progress</span></span>
+    <span class="stars" id="pCount">0 / 12</span>
+  </div>
+  <div class="pbar"><div class="pbar-fill" id="pFill"></div></div>
+  <div class="meter-label" id="meterLabel"></div>
+</div>
+<div class="stamps" id="stamps"></div>
+
+<!-- ═══ ACTIVITIES (grouped by category) ═══ -->
+<div id="acts"></div>
+
+<!-- ═══ PRINTABLES ═══ -->
+<div class="print-banner">
+  <span class="pb-ic">🖨️</span>
+  <div class="pb-tx">
+    <div class="pb-t"><span class="lng-ar">بطاقاتُ المستكشفِ للطباعة</span><span class="lng-en">Printable explorer cards</span></div>
+    <div class="pb-s"><span class="lng-ar">يومياتُ القمر، سفاري الحديقة، مفكرةُ نبتتي، بطاقةُ التجربة، مهمةُ الخير، وجدولُ مهاراتي — اطبعْها واملأْها بيدِك.</span><span class="lng-en">Moon journal, backyard safari, plant diary, experiment card, kindness mission & skills chart — print and fill them in by hand.</span></div>
+  </div>
+  <a class="pb-btn" href="print-cards.html"><span class="lng-ar">افتح البطاقات ←</span><span class="lng-en">Open the cards →</span></a>
+</div>
+
+<!-- ═══ JOURNAL ═══ -->
+<div class="sec-t"><span class="l">📔</span><span class="lng-ar">دفترُ إنجازي</span><span class="lng-en">My Achievement Journal</span></div>
+<p class="sec-s"><span class="lng-ar">كلُّ نشاطٍ تُنجزُه — مع صورةِ عملِك — يُحفَظُ هنا.</span><span class="lng-en">Every activity you complete — with a photo of your work — is kept here.</span></p>
+<div id="journalWrap"></div>
+
+<footer class="foot">
+  <span class="lng-ar">صُنع بِحُبٍّ 💚 لِأطفالِ الأُمّة — <b>ورشةُ الصانعِ الصغير</b> · تربية الطفل المسلم</span>
+  <span class="lng-en">Made with 💚 for the children of the Ummah — <b>Little Maker's Workshop</b> · Muslim Kids' Tarbiyah</span>
+</footer>
+
+<!-- ═══ ACTIVITY READER ═══ -->
+<div class="reader" id="reader">
+  <div class="sheet">
+    <div class="r-top">
+      <span class="r-corner" id="rCorner"></span>
+      <button class="r-close" id="rClose">✕</button>
+    </div>
+    <div id="rBody"></div>
+    <div class="r-acts">
+      <button class="r-btn photo" id="rPhotoBtn"></button>
+      <button class="r-btn done" id="rDoneBtn"></button>
+    </div>
+  </div>
+</div>
+<input type="file" id="photoInput" accept="image/*" style="display:none">
+
+<!-- ═══ STAMP SPLASH ═══ -->
+<div class="splash" id="splash">
+  <div class="splash-in">
+    <div class="splash-ic" id="splashIc">🏵️</div>
+    <div class="splash-t" id="splashT"></div>
+    <div class="splash-s" id="splashS"></div>
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script src="workshop-data.js"></script>
+<script src="workshop-data-crafts.js"></script>
+<script src="workshop-data-science.js"></script>
+<script src="workshop-data-life.js"></script>
+<script src="workshop-data-seasons.js"></script>
+<script src="workshop-data-games.js"></script>
+<script src="workshop-data-games2.js"></script>
+<script src="workshop-diagrams.js"></script>
+<script src="workshop-app.js"></script>
+<script defer src="../shared/nav-fix.js"></script>
+</body>
+</html>

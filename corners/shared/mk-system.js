@@ -49,6 +49,7 @@
     { id:'sport',   icon:'🏊', color:'#27AE60', name:{ar:'النادي الرياضي',    en:'Sports Club'},           base:'corners/little-district/pages/sport.html' },
     { id:'academy', icon:'🔭', color:'#2980B9', name:{ar:'أكاديمية المبدعين', en:"Innovators' Academy"},   base:'corners/heroes-fortress/academy.html' },
     { id:'quds',    icon:'🕌', color:'#2E8B57', name:{ar:'ركن القدس والأمة',  en:'Al-Quds & Ummah'},       base:'corners/little-district/pages/quds.html' },
+    { id:'hifz',    icon:'🌱', color:'#1F7A4D', name:{ar:'حُفّاظ القرآن',      en:'Quran Huffaz'},          base:'corners/quran-hifz/index.html' },
   ];
 
   /* ─────────── profiles ─────────── */

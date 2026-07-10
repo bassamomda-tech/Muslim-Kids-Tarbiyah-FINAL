@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>بطاقات المستكشف للطباعة | ورشة الصانع الصغير</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&display=swap" rel="stylesheet">
+<style>
+:root{ --green:#5E8C31; --dark:#2C4A18; --gold:#8aa838; --paper:#FDFBF4; --ink:#26301C; --line:#C8D5A8; }
+*{box-sizing:border-box}
+html,body{margin:0}
+body{font-family:'Tajawal',sans-serif;background:#E8EBDD;color:var(--ink)}
+a{color:var(--dark)} a:hover{color:var(--green)}
+
+.topbar{display:flex;align-items:center;justify-content:space-between;gap:.8rem;flex-wrap:wrap;padding:1rem 1.4rem;background:var(--dark);color:#F2F8E8}
+.topbar .t{font-weight:900;font-size:1.1rem}
+.topbar .s{font-size:.82rem;opacity:.85}
+.top-actions{display:flex;gap:.6rem}
+.tbtn{display:inline-flex;align-items:center;gap:.4rem;background:var(--gold);color:#1B2610;border:none;border-radius:2rem;padding:.55rem 1.2rem;font-weight:900;font-size:.9rem;cursor:pointer;font-family:inherit;text-decoration:none}
+.tbtn.ghost{background:transparent;color:#F2F8E8;border:1.5px solid rgba(255,255,255,.4)}
+
+.sheet-wrap{max-width:840px;margin:1.4rem auto 3rem;padding:0 1rem;display:flex;flex-direction:column;gap:1.4rem}
+.card{background:var(--paper);border:2px solid var(--line);border-radius:14px;padding:1.4rem 1.6rem;box-shadow:0 4px 14px rgba(0,0,0,.08);break-inside:avoid;page-break-inside:avoid}
+.card-h{display:flex;align-items:center;gap:.8rem;border-bottom:2.5px dashed var(--line);padding-bottom:.8rem;margin-bottom:1rem}
+.card-h .ic{width:52px;height:52px;border-radius:12px;background:var(--green);display:grid;place-items:center;font-size:1.7rem}
+.card-h h2{margin:0;font-size:1.25rem;font-weight:900;color:var(--dark)}
+.card-h .sub{font-size:.82rem;color:#5A6648;margin-top:.1rem}
+.name-line{display:flex;gap:.5rem;align-items:baseline;font-weight:800;font-size:.9rem;margin-bottom:1rem}
+.name-line .fill{flex:1;border-bottom:2px dotted #9AA87E;min-width:120px}
+.hint{font-size:.8rem;color:#5A6648;line-height:1.7;margin-top:.9rem}
+.wisdom{margin-top:1rem;text-align:center;font-weight:800;font-size:.9rem;color:var(--dark);background:#F0F3E2;border-radius:10px;padding:.6rem .8rem;line-height:1.8}
+
+/* moon journal */
+.moon-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:.5rem}
+.moon-cell{border:2px solid var(--line);border-radius:10px;padding:.5rem .3rem;text-align:center}
+.moon-cell .d{font-weight:900;font-size:.78rem;color:var(--dark)}
+.moon-cell .circle{width:52px;height:52px;margin:.45rem auto 0;border:2px dashed #9AA87E;border-radius:50%}
+.moon-cell .w{font-size:.62rem;color:#5A6648;margin-top:.35rem;line-height:1.4}
+
+/* safari */
+.safari-rows{display:flex;flex-direction:column;gap:.5rem}
+.safari-row{display:flex;align-items:center;gap:.8rem;border:2px solid var(--line);border-radius:10px;padding:.55rem .8rem}
+.safari-row .sic{font-size:1.5rem;width:36px;text-align:center}
+.safari-row .sname{flex:1;font-weight:800;font-size:.92rem}
+.tally{display:flex;gap:.35rem}
+.tally span{width:26px;height:26px;border:2px dashed #9AA87E;border-radius:6px}
+
+/* plant diary */
+.plant-tbl{width:100%;border-collapse:collapse}
+.plant-tbl th,.plant-tbl td{border:2px solid var(--line);padding:.5rem .6rem;font-size:.85rem;text-align:center}
+.plant-tbl th{background:#F0F3E2;font-weight:900;color:var(--dark)}
+.plant-tbl td{height:44px}
+.plant-tbl td.q{text-align:right;font-weight:800;width:38%}
+
+/* experiment */
+.exp-block{border:2px solid var(--line);border-radius:10px;padding:.7rem .9rem;margin-bottom:.6rem}
+.exp-block .lbl{font-weight:900;font-size:.85rem;color:var(--dark);margin-bottom:.3rem}
+.lines{background-image:repeating-linear-gradient(transparent,transparent 27px,#C4CFA6 27px,#C4CFA6 29px)}
+.lines.h3{height:87px} .lines.h2{height:58px}
+.draw-box{height:130px;border:2px dashed #9AA87E;border-radius:8px}
+
+/* kindness */
+.k-missions{display:flex;flex-direction:column;gap:.6rem}
+.k-row{display:flex;align-items:center;gap:.7rem;border:2px solid var(--line);border-radius:10px;padding:.6rem .8rem}
+.k-row .n{width:32px;height:32px;border-radius:50%;background:var(--green);color:#fff;display:grid;place-items:center;font-weight:900;flex:0 0 auto}
+.k-row .fill{flex:1;border-bottom:2px dotted #9AA87E;height:1.4em}
+.k-check{width:30px;height:30px;border:2px dashed #9AA87E;border-radius:8px;flex:0 0 auto}
+
+/* skills chart */
+.week-tbl{width:100%;border-collapse:collapse}
+.week-tbl th,.week-tbl td{border:2px solid var(--line);padding:.45rem .3rem;font-size:.8rem;text-align:center}
+.week-tbl th{background:#F0F3E2;font-weight:900;color:var(--dark)}
+.week-tbl td:first-child,.week-tbl th:first-child{text-align:right;padding-inline:.6rem;font-weight:800;font-size:.84rem}
+.week-tbl td{height:38px}
+
+@media print{
+  body{background:#fff}
+  .topbar{display:none}
+  .sheet-wrap{max-width:none;margin:0;padding:0;gap:0}
+  .card{border-radius:0;border:none;box-shadow:none;padding:1.2cm 1.4cm;page-break-after:always}
+  .card:last-child{page-break-after:auto}
+}
+</style>
+</head>
+<body data-screen-label="بطاقات الورشة للطباعة">
+
+<div class="topbar">
+  <div>
+    <div class="t">🖨️ بطاقاتُ المستكشفِ للطباعة</div>
+    <div class="s">٦ بطاقات — كلُّ بطاقةٍ على صفحةٍ مستقلة</div>
+  </div>
+  <div class="top-actions">
+    <a class="tbtn ghost" href="workshop.html">↩️ عودة إلى الورشة</a>
+    <button class="tbtn" onclick="window.print()">🖨️ اطبع البطاقات</button>
+  </div>
+</div>
+
+<div class="sheet-wrap">
+
+<!-- ═══ ١ يوميات القمر ═══ -->
+<div class="card">
+  <div class="card-h">
+    <div class="ic">🌙</div>
+    <div><h2>يومياتُ القمر</h2><div class="sub">نشاط «مرصد القمر الصغير» — ارسمْ شكلَ القمرِ كلَّ ليلةٍ بعدَ العشاء</div></div>
+  </div>
+  <div class="name-line">اسمُ الراصد: <span class="fill"></span> بدأتُ ليلةَ: <span class="fill"></span></div>
+  <div class="moon-grid">
+    <div class="moon-cell"><div class="d">الليلة ١</div><div class="circle"></div><div class="w">الطقس: ____</div></div>
+    <div class="moon-cell"><div class="d">الليلة ٢</div><div class="circle"></div><div class="w">الطقس: ____</div></div>
+    <div class="moon-cell"><div class="d">الليلة ٣</div><div class="circle"></div><div class="w">الطقس: ____</div></div>
+    <div class="moon-cell"><div class="d">الليلة ٤</div><div class="circle"></div><div class="w">الطقس: ____</div></div>
+    <div class="moon-cell"><div class="d">الليلة ٥</div><div class="circle"></div><div class="w">الطقس: ____</div></div>
+    <div class="moon-cell"><div class="d">الليلة ٦</div><div class="circle"></div><div class="w">الطقس: ____</div></div>
+    <div class="moon-cell"><div class="d">الليلة ٧</div><div class="circle"></div><div class="w">الطقس: ____</div></div>
+  </div>
+  <p class="hint">💡 لوِّنِ الجزءَ المضيءَ من القمرِ داخلَ كلِّ دائرة. إذا حجبَتْه الغيومُ اكتبْ «غيوم». بعدَ ٧ ليالٍ تأمَّلْ: كيف تغيَّرَ شكلُه؟</p>
+  <div class="wisdom">﴿وَالْقَمَرَ قَدَّرْنَاهُ مَنَازِلَ﴾ — يس:39</div>
+</div>
+
+<!-- ═══ ٢ سفاري الحديقة ═══ -->
+<div class="card">
+  <div class="card-h">
+    <div class="ic">🐜</div>
+    <div><h2>سفاري الحديقة</h2><div class="sub">نشاط «سفاري الحديقة الصغير» — ضعْ علامةً في مربعٍ عن كلِّ مخلوقٍ تراه</div></div>
+  </div>
+  <div class="name-line">اسمُ المستكشف: <span class="fill"></span> المكان: <span class="fill"></span></div>
+  <div class="safari-rows">
+    <div class="safari-row"><span class="sic">🐜</span><span class="sname">نملة</span><span class="tally"><span></span><span></span><span></span><span></span><span></span></span></div>
+    <div class="safari-row"><span class="sic">🐦</span><span class="sname">عصفور</span><span class="tally"><span></span><span></span><span></span><span></span><span></span></span></div>
+    <div class="safari-row"><span class="sic">🦋</span><span class="sname">فراشة أو نحلة</span><span class="tally"><span></span><span></span><span></span><span></span><span></span></span></div>
+    <div class="safari-row"><span class="sic">🍃</span><span class="sname">ورقةٌ غريبةُ الشكل</span><span class="tally"><span></span><span></span><span></span><span></span><span></span></span></div>
+    <div class="safari-row"><span class="sic">❓</span><span class="sname">مخلوقٌ آخرُ رأيتُه: ________________</span><span class="tally"><span></span><span></span><span></span><span></span><span></span></span></div>
+  </div>
+  <p class="hint">💡 قفْ ساكناً دقيقةً قبلَ أن تبدأ — المستكشفُ الجيدُ هادئ. راقبْ ولا تؤذِ أيَّ مخلوق.</p>
+  <div class="wisdom">﴿وَمَا مِن دَابَّةٍ فِي الْأَرْضِ إِلَّا عَلَى اللَّهِ رِزْقُهَا﴾ — هود:6</div>
+</div>
+
+<!-- ═══ ٣ مفكرة نبتتي ═══ -->
+<div class="card">
+  <div class="card-h">
+    <div class="ic">🌱</div>
+    <div><h2>مفكرةُ نبتتي</h2><div class="sub">نشاط «بذرتي الصغيرة تنمو» — سجِّلْ رحلةَ بذرتِك يوماً بعدَ يوم</div></div>
+  </div>
+  <div class="name-line">اسمُ المزارع: <span class="fill"></span> نوعُ البذرة: <span class="fill"></span></div>
+  <table class="plant-tbl">
+    <thead><tr><th>سؤالُ المزارعِ الصغير</th><th>اليوم</th><th>ماذا رأيت؟ ارسمْ أو اكتب</th></tr></thead>
+    <tbody>
+      <tr><td class="q">🫘 متى وضعتُ البذرةَ في القطن؟</td><td></td><td></td></tr>
+      <tr><td class="q">🌿 متى ظهرَ الجذرُ الأبيض؟</td><td></td><td></td></tr>
+      <tr><td class="q">🌱 متى طلعتِ الساقُ الخضراء؟</td><td></td><td></td></tr>
+      <tr><td class="q">🍃 متى فتحتْ أولُ ورقة؟</td><td></td><td></td></tr>
+      <tr><td class="q">🪴 متى نقلتُها إلى الأصيص؟</td><td></td><td></td></tr>
+    </tbody>
+  </table>
+  <p class="hint">💡 بلِّلِ القطنَ كلَّ صباح، وتذكَّرْ: أنتَ تزرع… واللهُ هو الذي يُنبِت.</p>
+  <div class="wisdom">﴿أَأَنتُمْ تَزْرَعُونَهُ أَمْ نَحْنُ الزَّارِعُونَ﴾ — الواقعة:64</div>
+</div>
+
+<!-- ═══ ٤ بطاقة التجربة ═══ -->
+<div class="card">
+  <div class="card-h">
+    <div class="ic">🔬</div>
+    <div><h2>بطاقةُ التجربةِ العلمية</h2><div class="sub">لأيِّ تجربة — دورةُ الماء، المصفاة، أو تجربتُك الخاصة</div></div>
+  </div>
+  <div class="name-line">اسمُ العالِمِ الصغير: <span class="fill"></span> التاريخ: <span class="fill"></span></div>
+  <div class="exp-block"><div class="lbl">🧪 اسمُ تجربتي</div><div class="lines h2"></div></div>
+  <div class="exp-block"><div class="lbl">🤔 توقُّعي قبلَ التجربة: ماذا سيحدث؟</div><div class="lines h2"></div></div>
+  <div class="exp-block"><div class="lbl">👀 ما رأيتُه فعلاً</div><div class="lines h3"></div></div>
+  <div class="exp-block"><div class="lbl">🎨 ارسمْ تجربتَك</div><div class="draw-box"></div></div>
+  <div class="wisdom">﴿سَنُرِيهِمْ آيَاتِنَا فِي الْآفَاقِ وَفِي أَنفُسِهِمْ﴾ — فصلت:53</div>
+</div>
+
+<!-- ═══ ٥ مهمة الخير السرية ═══ -->
+<div class="card">
+  <div class="card-h">
+    <div class="ic">🤫</div>
+    <div><h2>مهمةُ الخيرِ السرية</h2><div class="sub">نشاط «مهمة البرّ السرية» — ٣ خدماتٍ خفيةٍ لا يعرفُ أحدٌ مَن فعلَها</div></div>
+  </div>
+  <div class="name-line">العميلُ السرّي: <span class="fill"></span> الأسبوع: <span class="fill"></span></div>
+  <div class="k-missions">
+    <div class="k-row"><span class="n">١</span><span class="fill"></span><span class="k-check"></span></div>
+    <div class="k-row"><span class="n">٢</span><span class="fill"></span><span class="k-check"></span></div>
+    <div class="k-row"><span class="n">٣</span><span class="fill"></span><span class="k-check"></span></div>
+  </div>
+  <p class="hint">💡 اكتبْ خدماتِك السريةَ ثم نفِّذْها دونَ أن يراك أحد. علِّمْ في المربعِ بعدَ التنفيذ. وإذا سألوا «مَن فعلَ هذا؟» — ابتسمْ فقط! ولا تنسَ الدعاء: «ربِّ ارحمهما كما ربّياني صغيراً».</p>
+  <div class="wisdom">﴿وَقُل رَّبِّ ارْحَمْهُمَا كَمَا رَبَّيَانِي صَغِيرًا﴾ — الإسراء:24</div>
+</div>
+
+<!-- ═══ ٦ جدول مهاراتي ═══ -->
+<div class="card">
+  <div class="card-h">
+    <div class="ic">🏡</div>
+    <div><h2>جدولُ مهاراتي المنزلية</h2><div class="sub">نشاط «غرفتي مملكتي» — علِّمْ ✓ كلَّ مساءٍ على ما أنجزتَه</div></div>
+  </div>
+  <div class="name-line">بطلُ الترتيب: <span class="fill"></span></div>
+  <table class="week-tbl">
+    <thead><tr><th>المهمة</th><th>السبت</th><th>الأحد</th><th>الاثنين</th><th>الثلاثاء</th><th>الأربعاء</th><th>الخميس</th><th>الجمعة</th></tr></thead>
+    <tbody>
+      <tr><td>🛏️ رتَّبتُ سريري صباحاً</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+      <tr><td>🧸 أعدتُ ألعابي إلى مكانِها</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+      <tr><td>👕 وضعتُ ملابسي في السلة</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+      <tr><td>⭐ مهمةٌ أختارُها: ________</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+    </tbody>
+  </table>
+  <p class="hint">💡 أكملْ ٧ أيامٍ متتاليةً وأنتَ بطلُ الترتيبِ في البيت! اعرضْ جدولَك على الأهلِ كلَّ جمعة.</p>
+  <div class="wisdom">«إنَّ اللهَ جميلٌ يحبُّ الجمال» — رواه مسلم</div>
+</div>
+
+</div>
+</body>
+</html>

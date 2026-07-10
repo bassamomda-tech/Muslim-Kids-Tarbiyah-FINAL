@@ -1,0 +1,1373 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta name="color-scheme" content="dark">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ركن الأهل | Parents' Corner</title>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&family=Nunito:wght@400;600;700;800&display=swap" media="print" onload="this.media='all'"><noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&family=Nunito:wght@400;600;700;800&display=swap" media="print" onload="this.media='all'"></noscript>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+<style>
+  :root{--primary:#8E44AD;--primary-dark:#7D3C98;--bg1:#0A2540;--bg2:#12375A;--gold:#D4A017;--gold-lt:#F5CC5A;--text:#FEF5DC;--card:rgba(255,255,255,.07);--card-bd:rgba(255,255,255,.12);--radius:1.3rem}
+  *{box-sizing:border-box}
+  body{font-family:'Tajawal','Nunito',sans-serif;background:linear-gradient(160deg,var(--bg1),var(--bg2));color:var(--text);min-height:100vh;margin:0;direction:rtl}
+  html[dir="ltr"] body{direction:ltr;font-family:'Nunito','Tajawal',sans-serif}
+  .header{position:sticky;top:0;z-index:20;background:rgba(10,37,64,.92);backdrop-filter:blur(12px);padding:.9rem 1.4rem;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid rgba(212,160,23,.3)}
+  .back-btn{background:var(--primary);color:#fff;border:none;border-radius:2rem;padding:.5rem 1.2rem;font-weight:700;cursor:pointer;text-decoration:none;font-size:.9rem}
+  .back-btn:hover{background:var(--primary-dark);color:#fff}
+  .lang-switch{display:flex;border:1.5px solid rgba(212,160,23,.4);border-radius:2rem;overflow:hidden}
+  .lang-btn{background:transparent;border:none;color:var(--text);font-weight:700;padding:.3rem .8rem;font-size:.8rem;cursor:pointer}
+  .lang-btn.active{background:var(--primary);color:#fff}
+  .content{max-width:1080px;margin:0 auto;padding:1.8rem 1rem 4rem;width:100%}
+  .page-hero{text-align:center;margin-bottom:1.6rem}
+  .page-hero .ic{font-size:3.4rem}
+  .page-hero h1{font-size:2rem;font-weight:900;margin:.3rem 0;color:var(--gold-lt)}
+  .page-hero p{opacity:.82;font-size:1.05rem;margin:0}
+
+  /* Tabs */
+  .tabs{display:flex;gap:.6rem;justify-content:center;flex-wrap:wrap;margin-bottom:1.8rem}
+  .tab{display:flex;align-items:center;gap:.5rem;background:var(--card);border:1.5px solid var(--card-bd);color:var(--text);border-radius:2rem;padding:.7rem 1.3rem;font-weight:800;font-size:.98rem;cursor:pointer;font-family:inherit;transition:.2s}
+  .tab .ti{font-size:1.3rem}
+  .tab:hover{border-color:rgba(212,160,23,.5)}
+  .tab.active{background:var(--primary);border-color:var(--primary);color:#fff;box-shadow:0 8px 22px rgba(142,68,173,.4)}
+  .tab.tab-go{text-decoration:none;border-color:rgba(212,160,23,.55);background:linear-gradient(135deg,rgba(232,181,48,.16),rgba(212,160,23,.06))}
+  .tab.tab-go:hover{border-color:var(--gold,#E8B530)}
+  .panel{display:none;animation:fade .35s}
+  .panel.active{display:block}
+  @keyframes fade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+  .sec-head{text-align:center;margin-bottom:1.4rem}
+  .sec-head h2{font-weight:900;font-size:1.5rem;color:var(--gold-lt);margin:0 0 .2rem}
+  .sec-head p{opacity:.75;margin:0;font-size:.95rem}
+
+  /* Article cards */
+  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.2rem}
+  .art-card{background:var(--card);border:1px solid var(--card-bd);border-radius:var(--radius);padding:1.4rem;cursor:pointer;transition:.22s;display:flex;flex-direction:column;border-top:4px solid var(--c,#8E44AD)}
+  .art-card:hover{transform:translateY(-5px);box-shadow:0 18px 34px rgba(0,0,0,.45)}
+  .art-ic{font-size:2.4rem;margin-bottom:.6rem}
+  .art-tag{display:inline-block;align-self:flex-start;background:rgba(255,255,255,.1);color:var(--gold-lt);font-size:.72rem;font-weight:700;padding:.2rem .7rem;border-radius:1rem;margin-bottom:.5rem}
+  .art-card h3{font-size:1.12rem;font-weight:800;margin:0 0 .5rem;line-height:1.45}
+  .art-read{margin-top:auto;font-size:.82rem;opacity:.7;font-weight:700}
+  .art-read::before{content:'📖 '}
+
+  /* Modal */
+  .modal-bg{position:fixed;inset:0;background:rgba(0,0,0,.7);z-index:60;display:none;align-items:flex-start;justify-content:center;padding:2rem 1rem;overflow-y:auto}
+  .modal-bg.open{display:flex}
+  .modal-box{background:linear-gradient(165deg,#123a5e,#0c2b47);border:1px solid var(--card-bd);border-radius:1.6rem;max-width:680px;width:100%;padding:2rem;box-shadow:0 30px 60px rgba(0,0,0,.6);margin:auto}
+  .modal-box .m-ic{font-size:3rem;text-align:center}
+  .modal-box h2{font-weight:900;font-size:1.5rem;color:var(--gold-lt);text-align:center;margin:.4rem 0 1.2rem}
+  .modal-box p{line-height:2;font-size:1.02rem;margin:0 0 1rem;opacity:.95}
+  .modal-close{background:var(--primary);color:#fff;border:none;border-radius:2rem;padding:.55rem 1.6rem;font-weight:800;cursor:pointer;display:block;margin:1rem auto 0;font-family:inherit}
+
+  /* Tracking */
+  .points-banner{background:linear-gradient(135deg,rgba(212,160,23,.18),rgba(142,68,173,.2));border:1.5px solid rgba(212,160,23,.35);border-radius:1.6rem;padding:1.6rem;display:flex;align-items:center;gap:1.5rem;flex-wrap:wrap;justify-content:center;text-align:center;margin-bottom:1.5rem}
+  .pb-level{font-size:3.4rem;line-height:1}
+  .pb-info{flex:1;min-width:180px}
+  .pb-info .lvl-name{font-size:1.4rem;font-weight:900;color:var(--gold-lt)}
+  .pb-info .pts{font-size:2.4rem;font-weight:900;margin:.1rem 0}
+  .pb-info .pts small{font-size:1rem;opacity:.7;font-weight:700}
+  .pb-bar{width:100%;max-width:420px;height:12px;background:rgba(255,255,255,.12);border-radius:10px;overflow:hidden;margin:.5rem auto 0}
+  .pb-bar i{display:block;height:100%;background:linear-gradient(90deg,var(--gold),var(--gold-lt));border-radius:10px;transition:width .8s}
+  .pb-next{font-size:.82rem;opacity:.72;margin-top:.4rem}
+  .stat-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:1rem;margin-bottom:1.5rem}
+  .stat{background:var(--card);border:1px solid var(--card-bd);border-radius:1.2rem;padding:1.1rem;text-align:center}
+  .stat .sv{font-size:2rem;font-weight:900;color:var(--gold-lt)}
+  .stat .sl{font-size:.85rem;opacity:.78;font-weight:700}
+  .charts{display:grid;grid-template-columns:1fr 1.4fr;gap:1.2rem;margin-bottom:1.5rem}
+  @media(max-width:760px){.charts{grid-template-columns:1fr}}
+  .chart-card{background:var(--card);border:1px solid var(--card-bd);border-radius:1.4rem;padding:1.3rem}
+  .chart-card h3{font-size:1.05rem;font-weight:800;text-align:center;margin:0 0 1rem;color:var(--gold-lt)}
+  .chart-wrap{position:relative;height:240px}
+  .jlist{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:.9rem}
+  .jrow{background:var(--card);border:1px solid var(--card-bd);border-radius:1.1rem;padding:.9rem 1rem;display:flex;align-items:center;gap:.8rem}
+  .jrow .ji{font-size:1.7rem;width:2.3rem;text-align:center}
+  .jrow .jmid{flex:1;min-width:0}
+  .jrow .jn{font-weight:800;font-size:.92rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .jrow .jc{font-size:.74rem;opacity:.65;font-weight:700}
+  .jrow .jbar{height:7px;background:rgba(255,255,255,.12);border-radius:6px;overflow:hidden;margin-top:.4rem}
+  .jrow .jbar i{display:block;height:100%;border-radius:6px;background:var(--jc,#8E44AD)}
+  .jrow .jpct{font-weight:900;font-size:1rem;color:var(--gold-lt);min-width:42px;text-align:center}
+  .cert-btn{background:transparent;border:1.5px solid var(--gold);color:var(--gold-lt);border-radius:1rem;padding:.3rem .7rem;font-size:.74rem;font-weight:800;cursor:pointer;font-family:inherit;white-space:nowrap}
+  .cert-btn:disabled{opacity:.3;cursor:not-allowed}
+  .cert-btn.done{background:var(--gold);color:#0A2540}
+
+  /* Resources */
+  .res-cat{margin-bottom:1.8rem}
+  .res-cat-head{display:flex;align-items:center;gap:.7rem;margin-bottom:.9rem;padding-bottom:.5rem;border-bottom:2px solid rgba(212,160,23,.25)}
+  .res-cat-head .rc-ic{font-size:1.8rem}
+  .res-cat-head h3{font-weight:900;font-size:1.25rem;margin:0;color:var(--gold-lt)}
+  .res-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:.9rem}
+  .res-card{background:var(--card);border:1px solid var(--card-bd);border-radius:1.1rem;padding:1.1rem;border-inline-start:4px solid var(--rc,#8E44AD)}
+  .res-card h4{font-weight:800;font-size:1rem;margin:0 0 .35rem}
+  .res-card p{font-size:.85rem;opacity:.78;margin:0;line-height:1.5}
+  .res-link{display:flex;flex-direction:column;text-decoration:none;color:inherit;transition:.2s}
+  .res-link:hover{transform:translateY(-3px);box-shadow:0 14px 28px rgba(0,0,0,.4);border-color:rgba(212,160,23,.5)}
+  .res-dl{display:inline-flex;align-self:flex-start;gap:.3rem;margin-top:.7rem;background:rgba(212,160,23,.16);border:1px solid rgba(212,160,23,.4);color:var(--gold-lt);font-size:.78rem;font-weight:800;padding:.3rem .8rem;border-radius:1rem}
+  .ch-note{font-size:.85rem;opacity:.8;margin:.2rem 0 1rem;line-height:1.6}
+  .ch-group{margin-bottom:1.3rem}
+  .ch-group-h{display:flex;align-items:center;gap:.5rem;font-weight:900;font-size:1.05rem;color:var(--gc,#1FAE8C);margin:0 0 .6rem}
+  .ch-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:.6rem}
+  .ch-card{display:flex;align-items:center;gap:.5rem;background:var(--card);border:1px solid var(--card-bd);border-inline-start:4px solid var(--gc,#1FAE8C);border-radius:.9rem;padding:.7rem .85rem}
+  .ch-nm{flex:1;font-weight:700;font-size:.9rem;line-height:1.45}
+  .ch-acts{flex:0 0 auto;display:flex;gap:.35rem}
+  .ch-watch,.ch-open{width:32px;height:32px;border-radius:.6rem;display:flex;align-items:center;justify-content:center;font-size:.9rem;font-weight:900;cursor:pointer;text-decoration:none;border:none;font-family:inherit}
+  .ch-watch{background:var(--gc,#1FAE8C);color:#fff}
+  .ch-open{background:rgba(255,255,255,.08);color:var(--gold-lt);border:1px solid var(--card-bd)}
+  .ch-watch:hover{filter:brightness(1.1)}.ch-open:hover{background:rgba(255,255,255,.15)}
+  .yt-ov{position:fixed;inset:0;background:rgba(4,14,26,.85);backdrop-filter:blur(7px);display:none;align-items:center;justify-content:center;z-index:200;padding:1rem}
+  .yt-ov.open{display:flex}
+  .yt-box{width:100%;max-width:880px;background:#0e2c49;border:1.5px solid var(--card-bd);border-radius:1.2rem;overflow:hidden;box-shadow:0 24px 60px rgba(0,0,0,.6)}
+  .yt-head{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:.8rem 1.1rem}
+  .yt-head h3{margin:0;font-size:1.02rem;font-weight:800;color:var(--gold-lt)}
+  .yt-x{background:rgba(255,255,255,.1);border:none;color:#fff;width:32px;height:32px;border-radius:50%;cursor:pointer;font-weight:900;font-size:1rem}
+  .yt-frame-wrap{position:relative;width:100%;aspect-ratio:16/9;background:#000}
+  .yt-frame-wrap iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+
+  /* Certificate print */
+  .cert-overlay{position:fixed;inset:0;background:rgba(0,0,0,.8);z-index:80;display:none;align-items:center;justify-content:center;padding:1.5rem;overflow-y:auto}
+  .cert-overlay.open{display:flex}
+  .certificate{background:linear-gradient(160deg,#fffdf5,#f6edd6);color:#3a2e12;width:640px;max-width:100%;border-radius:1rem;padding:2.6rem 2.2rem;text-align:center;border:10px solid #d4a017;position:relative;font-family:'Tajawal',serif}
+  .certificate .cseal{font-size:3.4rem}
+  .certificate .ckick{color:#8a6a1a;font-weight:700;letter-spacing:1px;margin:.4rem 0}
+  .certificate .ctitle{font-size:1.7rem;font-weight:900;color:#7D3C98;margin:.4rem 0}
+  .certificate .cname{font-size:2rem;font-weight:900;border-bottom:2px dashed #d4a017;display:inline-block;padding:.2rem 1.5rem;margin:.6rem 0;min-width:240px;color:#3a2e12}
+  .certificate .cstate{font-size:1.05rem;line-height:1.8;margin:.8rem 0}
+  .certificate .cfoot{margin-top:1rem;font-weight:700;color:#8a6a1a}
+  .cert-tools{position:fixed;top:1.2rem;inset-inline-end:1.2rem;display:flex;gap:.6rem;z-index:90}
+  .cert-tools button{border:none;border-radius:2rem;padding:.5rem 1.2rem;font-weight:800;cursor:pointer;font-family:inherit}
+  .cprint{background:var(--gold);color:#0A2540}
+  .cclose{background:#c0392b;color:#fff}
+  .cert-name-in{display:block;margin:0 auto 1rem;max-width:340px;width:100%;border:1.5px solid rgba(212,160,23,.5);background:rgba(255,255,255,.1);color:var(--text);border-radius:1rem;padding:.5rem 1rem;font-family:inherit;text-align:center;font-weight:700}
+  @media print{body *{visibility:hidden}.cert-overlay,.cert-overlay *{visibility:visible}.cert-overlay{position:absolute;inset:0;background:#fff}.cert-tools{display:none}.certificate{box-shadow:none;border-color:#d4a017}}
+
+  /* Sidebar (city map) */
+  .float-map-btn{position:fixed;bottom:1.6rem;inset-inline-start:1.6rem;z-index:50;width:50px;height:50px;border-radius:50%;background:var(--gold);color:#0A2540;font-size:1.5rem;display:flex;align-items:center;justify-content:center;cursor:pointer;box-shadow:0 8px 25px rgba(0,0,0,.5);border:none}
+  .sidebar-overlay{position:fixed;inset:0;background:rgba(0,0,0,.6);z-index:99;opacity:0;pointer-events:none;transition:.3s}
+  .sidebar-overlay.open{opacity:1;pointer-events:all}
+  .sidebar-drawer{position:fixed;top:0;right:0;width:280px;height:100%;background:linear-gradient(180deg,#112240,#0A2540);z-index:100;transform:translateX(100%);transition:transform .4s cubic-bezier(.4,0,.2,1);padding:2rem 1rem;overflow-y:auto;box-shadow:-5px 0 25px rgba(0,0,0,.5)}
+  html[dir="ltr"] .sidebar-drawer{right:auto;left:0;transform:translateX(-100%)}
+  .sidebar-drawer.open{transform:translateX(0)!important}
+  .sidebar-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:1.4rem}
+  .sidebar-title{font-size:1.3rem;font-weight:900;color:var(--gold);margin:0}
+  .sidebar-close{background:none;border:none;color:var(--text);font-size:1.7rem;cursor:pointer}
+  .sidebar-nav{display:flex;flex-direction:column;gap:.7rem}
+  .sidebar-item{display:flex;align-items:center;gap:.8rem;padding:.7rem 1rem;border-radius:1rem;text-decoration:none;color:var(--text);font-weight:600;background:rgba(255,255,255,.03)}
+  .sidebar-item:hover{background:rgba(212,160,23,.15);color:var(--gold)}
+  .sidebar-item i{font-size:1.4rem;width:1.9rem;text-align:center}
+  .en-only{display:none}
+  html[dir="ltr"] .en-only{display:inline}
+  html[dir="ltr"] .ar-only{display:none}
+  /* solution programs */
+  #programsBody{max-width:880px;margin:0 auto}
+  .prog-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:1rem}
+  .prog-card{position:relative;text-align:start;background:var(--card,rgba(255,255,255,.05));border:1.5px solid var(--card-bd,rgba(212,160,23,.25));border-left:4px solid var(--pa,#D4A017);border-radius:1.2rem;padding:1.1rem;cursor:pointer;font-family:inherit;color:var(--text,#FEF5DC);display:flex;flex-direction:column;gap:.45rem;transition:transform .16s,border-color .2s}
+  html[dir="rtl"] .prog-card{border-left:1.5px solid var(--card-bd,rgba(212,160,23,.25));border-right:4px solid var(--pa,#D4A017)}
+  .prog-card:hover{transform:translateY(-4px);border-color:var(--pa,#D4A017)}
+  .prog-card .prog-ic{font-size:2rem}
+  .prog-card .prog-t{font-weight:900;font-size:1.08rem;line-height:1.4}
+  .prog-card .prog-b{color:var(--muted,rgba(254,245,220,.66));font-size:.82rem;line-height:1.6;flex:1}
+  .prog-card .prog-meta{display:flex;justify-content:space-between;align-items:center;font-size:.76rem;font-weight:800}
+  .prog-card .prog-weeks{color:var(--pa,#D4A017)}
+  .prog-card .prog-prog{background:rgba(255,255,255,.08);border-radius:1rem;padding:.1rem .6rem}
+  .prog-card .prog-go{align-self:flex-start;background:var(--pa,#D4A017);color:#10243d;border-radius:2rem;padding:.34rem .85rem;font-weight:800;font-size:.8rem;margin-top:.2rem}
+  /* program detail */
+  .pd-back{background:rgba(255,255,255,.08);border:1px solid var(--card-bd);color:var(--text);border-radius:2rem;padding:.5rem 1.1rem;font-weight:800;font-family:inherit;cursor:pointer;margin-bottom:1rem}
+  .pd-hero{display:flex;align-items:center;gap:1rem;background:linear-gradient(160deg,rgba(255,255,255,.07),rgba(255,255,255,.02));border:1.5px solid var(--card-bd);border-radius:1.3rem;padding:1.2rem 1.3rem;margin-bottom:1.2rem}
+  .pd-hero .pd-ic{font-size:2.6rem;flex:0 0 auto}
+  .pd-hero h3{font-size:1.3rem;font-weight:900;color:var(--gold-lt,#F5CC5A);margin-bottom:.5rem}
+  .pd-bar{height:8px;background:rgba(255,255,255,.1);border-radius:5px;overflow:hidden;max-width:320px}
+  .pd-bar i{display:block;height:100%;border-radius:5px;transition:width .5s}
+  .pd-pct{font-size:.8rem;font-weight:800;color:var(--muted);display:inline-block;margin-top:.3rem}
+  .pd-blk{margin-bottom:1.3rem}
+  .pd-blk h4{font-size:1.05rem;color:var(--gold-lt,#F5CC5A);margin-bottom:.6rem}
+  .pd-blk p{line-height:1.85;color:var(--text);font-size:.95rem}
+  .pd-root{display:flex;gap:.6rem;align-items:flex-start;background:var(--card);border:1px solid var(--card-bd);border-radius:.9rem;padding:.6rem .8rem;margin-bottom:.5rem}
+  .pd-root .pdr-ic{font-size:1.2rem;flex:0 0 auto}
+  .pd-root span:last-child{line-height:1.7;font-size:.9rem}
+  .pd-week{background:var(--card);border:1.5px solid var(--card-bd);border-radius:1.1rem;padding:1rem 1.1rem;margin-bottom:.8rem}
+  .pd-week.done{border-color:#2E9E5B;background:rgba(46,158,91,.08)}
+  .pdw-h{display:flex;align-items:center;gap:.6rem;margin-bottom:.5rem;flex-wrap:wrap}
+  .pdw-n{flex:0 0 auto;width:28px;height:28px;border-radius:50%;background:var(--gold,#D4A017);color:#10243d;font-weight:900;display:grid;place-items:center;font-size:.85rem}
+  .pdw-h b{flex:1;font-size:1rem;font-weight:900;color:var(--gold-lt,#F5CC5A)}
+  .pdw-check{background:rgba(46,158,91,.16);border:1px solid rgba(46,158,91,.5);color:#7ee0a8;border-radius:1rem;padding:.3rem .8rem;font-weight:800;font-size:.78rem;cursor:pointer;font-family:inherit}
+  .pd-week.done .pdw-check{background:#2E9E5B;color:#fff}
+  .pdw-goal{font-weight:800;margin-bottom:.55rem;font-size:.9rem}
+  .pdw-steps{margin:0;padding-inline-start:1.3rem;display:flex;flex-direction:column;gap:.4rem}
+  .pdw-steps li{line-height:1.7;font-size:.9rem}
+  .pd-flag{background:rgba(192,57,43,.12);border:1px solid rgba(192,57,43,.4);border-radius:1rem;padding:.9rem 1.1rem;line-height:1.75;font-size:.88rem;color:#f2b8b0}
+  #videoBody{max-width:760px;margin:0 auto;display:flex;flex-direction:column;gap:1.4rem}
+  .vid-cat-h{display:flex;align-items:center;gap:.55rem;font-size:1.1rem;font-weight:900;color:var(--gold);margin:.2rem 0 .7rem}
+  .vid-cat-h .vc-ic{font-size:1.35rem}
+  .vid-cat-h .vc-n{margin-inline-start:auto;font-size:.78rem;font-weight:800;background:rgba(212,160,23,.16);color:var(--gold);border-radius:1rem;padding:.15rem .6rem}
+  .vid-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:.6rem}
+  .vid-card{display:flex;align-items:center;gap:.6rem;background:var(--card,rgba(255,255,255,.05));border:1.5px solid var(--card-bd,rgba(212,160,23,.25));border-radius:1rem;padding:.7rem .85rem;text-decoration:none;color:var(--text,#FEF5DC);transition:transform .15s,border-color .2s,background .2s}
+  .vid-card:hover{transform:translateY(-2px);border-color:var(--gold);background:rgba(212,160,23,.1)}
+  .vid-card .vid-play{flex:0 0 auto;width:30px;height:30px;border-radius:50%;display:grid;place-items:center;background:#C0392B;color:#fff;font-size:.78rem}
+  .vid-card .vid-name{flex:1;font-weight:800;font-size:.9rem;line-height:1.35}
+  .vid-card .vid-go{flex:0 0 auto;font-size:.7rem;font-weight:800;opacity:.7}
+  .site-card{display:flex;align-items:center;gap:.65rem;background:var(--card,rgba(255,255,255,.05));border:1.5px solid var(--card-bd,rgba(212,160,23,.25));border-radius:1rem;padding:.7rem .85rem;text-decoration:none;color:var(--text,#FEF5DC);transition:transform .15s,border-color .2s,background .2s}
+  .site-card:hover{transform:translateY(-2px);border-color:var(--gold);background:rgba(212,160,23,.1)}
+  .site-card .site-ic{flex:0 0 auto;font-size:1.35rem}
+  .site-card .site-tx{flex:1;display:flex;flex-direction:column;line-height:1.3}
+  .site-card .site-tx b{font-weight:800;font-size:.9rem}
+  .site-card .site-tx span{font-size:.72rem;opacity:.72}
+  #ctrlBody{display:flex;flex-direction:column;gap:1.1rem;max-width:680px;margin:0 auto}
+  .ctrl-card{background:var(--card);border:1.5px solid var(--card-bd);border-radius:var(--radius);padding:1.2rem 1.3rem}
+  .ctrl-card h3{margin:0 0 .7rem;font-size:1.1rem;font-weight:900;color:var(--gold-lt)}
+  .ctrl-mut{color:rgba(254,245,220,.66);font-size:.86rem;line-height:1.6}
+  .kids{display:flex;flex-direction:column;gap:.5rem}
+  .kid-row{display:flex;align-items:center;gap:.7rem;background:rgba(255,255,255,.05);border:1px solid var(--card-bd);border-radius:1rem;padding:.5rem .8rem}
+  .kid-avi{width:38px;height:38px;border-radius:50%;display:grid;place-items:center;font-size:1.25rem;flex:0 0 auto}
+  .kid-name{flex:1;font-weight:800}
+  .kid-on{color:#7ee0a8;font-size:.74rem;font-weight:800}
+  .ctrl-acts{display:flex;gap:.5rem;flex-wrap:wrap}
+  .ctrl-btn{background:rgba(255,255,255,.08);border:1.5px solid var(--card-bd);color:var(--text);border-radius:1rem;padding:.6rem 1rem;font-weight:800;font-family:inherit;font-size:.9rem;cursor:pointer}
+  .ctrl-btn:hover{border-color:var(--gold)}
+  .ctrl-btn.sm{padding:.4rem .8rem;font-size:.82rem}
+  .ctrl-btn.go{background:linear-gradient(135deg,var(--gold),#c79518);color:#10243d;border:none}
+  .ctrl-btn.warn{background:rgba(192,57,43,.8);color:#fff;border:none}
+  .ctrl-pin{display:block;width:100%;max-width:220px;margin:.4rem auto;border:1.5px solid var(--card-bd);background:rgba(255,255,255,.07);color:var(--text);border-radius:1rem;padding:.7rem;font-size:1.4rem;font-weight:800;text-align:center;letter-spacing:.4em;font-family:inherit}
+  .ctrl-pin:focus{outline:none;border-color:var(--gold)}
+  .ctrl-err{min-height:1.1rem;color:#ff9b8e;font-weight:700;font-size:.82rem;margin:.3rem 0}
+  .lock-row{display:flex;align-items:center;gap:.7rem;padding:.5rem 0;border-bottom:1px solid rgba(255,255,255,.06)}
+  .lock-row:last-child{border-bottom:none}
+  .lk-ic{font-size:1.3rem;width:1.8rem;text-align:center}
+  .lk-nm{flex:1;font-weight:700}
+  .toggle{border:none;border-radius:1.4rem;padding:.45rem 1rem;font-weight:800;font-size:.82rem;cursor:pointer;font-family:inherit;min-width:104px}
+  .toggle.on{background:rgba(39,174,96,.22);color:#7ee0a8;border:1px solid rgba(39,174,96,.5)}
+  .toggle.off{background:rgba(192,57,43,.22);color:#f2a99f;border:1px solid rgba(192,57,43,.5)}
+  /* corner groups in tracking */
+  .corner-group{background:var(--card);border:1.5px solid var(--card-bd);border-left:4px solid var(--cc,#D4A017);border-radius:1rem;padding:.9rem 1rem;margin-bottom:1rem}
+  html[dir="rtl"] .corner-group{border-left:1.5px solid var(--card-bd);border-right:4px solid var(--cc,#D4A017)}
+  .cg-head{display:flex;align-items:center;gap:.6rem;margin-bottom:.5rem}
+  .cg-ic{font-size:1.4rem}
+  .cg-nm{flex:1;font-weight:900;font-size:1.05rem;color:var(--gold-lt)}
+  .cg-pct{font-weight:900;color:var(--cc,#D4A017)}
+  .bag-btn{background:rgba(212,160,23,.16);border:1.5px solid rgba(212,160,23,.45);color:var(--gold-lt);border-radius:1.4rem;padding:.35rem .9rem;font-weight:800;font-size:.82rem;cursor:pointer;font-family:inherit}
+  .bag-btn:hover{background:rgba(212,160,23,.28)}
+  .cg-bar{height:6px;background:rgba(255,255,255,.08);border-radius:4px;overflow:hidden;margin-bottom:.7rem}
+  .cg-bar i{display:block;height:100%;border-radius:4px}
+  /* bag overlay */
+  .bag-ov{position:fixed;inset:0;background:rgba(4,14,26,.7);backdrop-filter:blur(7px);display:none;align-items:flex-start;justify-content:center;z-index:140;overflow-y:auto;padding:1.2rem}
+  .bag-ov.open{display:flex}
+  .bag-sheet{width:100%;max-width:620px;background:linear-gradient(170deg,#13314f,#0d2238);border:1.5px solid var(--card-bd);border-radius:1.3rem;padding:1.3rem;margin:auto}
+  .bag-head{display:flex;align-items:flex-start;justify-content:space-between;gap:1rem;margin-bottom:1rem}
+  .bag-body{display:flex;flex-direction:column;gap:.8rem}
+  .bag-j{background:rgba(255,255,255,.05);border:1px solid var(--card-bd);border-radius:1rem;padding:.85rem 1rem}
+  .bag-j-top{display:flex;align-items:center;gap:.6rem;margin-bottom:.55rem}
+  .bag-j-ic{font-size:1.3rem}
+  .bag-j-nm{flex:1;font-weight:800}
+  .bag-j-pct{font-weight:900;color:var(--gold-lt)}
+  .bag-collect{display:flex;flex-wrap:wrap;gap:.4rem;margin-bottom:.6rem}
+  .bag-chip{background:rgba(212,160,23,.12);border:1px solid rgba(212,160,23,.3);color:var(--gold-lt);border-radius:1rem;padding:.25rem .65rem;font-size:.76rem;font-weight:800}
+  .bag-j-acts{display:flex;align-items:center;gap:.7rem;flex-wrap:wrap}
+  .bag-open{color:var(--gold-lt);font-weight:800;font-size:.84rem;text-decoration:none}
+  .bag-open:hover{text-decoration:underline}
+  /* ── behaviour points ── */
+  #bpsBody{max-width:760px;margin:0 auto;font-family:'Tajawal',sans-serif}
+  .bps-chips{display:flex;gap:.5rem;overflow-x:auto;padding:.2rem .1rem .6rem;margin-bottom:.3rem}
+  .bps-chip{flex:0 0 auto;display:flex;align-items:center;gap:.45rem;background:rgba(255,255,255,.06);border:1.5px solid var(--card-bd);border-radius:2rem;padding:.3rem .8rem .3rem .35rem;cursor:pointer;font-family:inherit;color:var(--text)}
+  html[dir="ltr"] .bps-chip{padding:.3rem .35rem .3rem .8rem}
+  .bps-chip.on{background:rgba(212,160,23,.18);border-color:var(--gold)}
+  .bps-chip-avi{width:28px;height:28px;border-radius:50%;display:grid;place-items:center;font-size:1rem}
+  .bps-chip-nm{font-weight:800;font-size:.86rem}
+  .bps-chip-pts{font-size:.72rem;font-weight:800;color:var(--gold-lt)}
+  .bps-chip.add{justify-content:center;font-size:1.2rem;font-weight:900;color:var(--gold-lt);padding:.3rem .9rem}
+  .bps-hero{display:flex;align-items:center;gap:.8rem;background:linear-gradient(135deg,var(--hc,#F47C7C),color-mix(in oklab,var(--hc,#F47C7C),#000 14%));border-radius:1.3rem;padding:.9rem 1.2rem;margin-bottom:.9rem;box-shadow:0 10px 26px rgba(0,0,0,.28)}
+  .bps-hero-avi{width:48px;height:48px;border-radius:50%;background:rgba(255,255,255,.25);display:grid;place-items:center;font-size:1.7rem}
+  .bps-hero-nm{flex:1;font-weight:900;font-size:1.2rem;color:#fff}
+  .bps-hero-pts{font-weight:900;font-size:1.7rem;color:#fff;display:flex;align-items:center;gap:.3rem}
+  .bps-hero-pts .st{font-size:1.1rem}
+  .bps-subnav{display:flex;gap:.4rem;margin-bottom:.9rem;flex-wrap:wrap}
+  .bps-stab{flex:1;min-width:80px;background:rgba(255,255,255,.05);border:1.5px solid var(--card-bd);color:var(--text);border-radius:1rem;padding:.55rem .4rem;font-weight:800;font-size:.85rem;cursor:pointer;font-family:inherit}
+  .bps-stab.on{background:var(--primary);border-color:var(--primary);color:#fff}
+  .bps-section-lbl{display:flex;align-items:center;justify-content:space-between;gap:.6rem;font-weight:900;color:var(--gold-lt);font-size:.92rem;margin:.2rem 0 .7rem}
+  .bps-grid{display:grid;grid-template-columns:1fr 1fr;gap:.7rem}
+  @media(min-width:560px){.bps-grid{grid-template-columns:1fr 1fr 1fr}}
+  .bps-task{position:relative;display:flex;flex-direction:column;align-items:center;gap:.3rem;text-align:center;background:var(--tc,#5BA8F5);border:none;border-radius:1.2rem;padding:1rem .6rem;cursor:pointer;font-family:inherit;color:#fff;min-height:120px;justify-content:center;transition:transform .12s,filter .15s,box-shadow .2s;box-shadow:0 6px 16px rgba(0,0,0,.2)}
+  .bps-task:hover{transform:translateY(-3px)}
+  .bps-task.on{filter:saturate(1.05) brightness(1.02);box-shadow:0 0 0 3px rgba(255,255,255,.55) inset,0 8px 20px rgba(0,0,0,.28)}
+  .bps-task-ic{font-size:1.9rem}
+  .bps-task-nm{font-weight:900;font-size:.92rem;line-height:1.3}
+  .bps-task-pts{font-weight:800;font-size:.82rem;background:rgba(0,0,0,.18);border-radius:1rem;padding:.12rem .6rem}
+  .bps-task-corner{font-size:.66rem;font-weight:700;opacity:.85}
+  .bps-manual{display:flex;gap:.5rem;justify-content:center;margin-top:.9rem}
+  .bps-btn{background:rgba(255,255,255,.08);border:1.5px solid var(--card-bd);color:var(--text);border-radius:1rem;padding:.6rem 1rem;font-weight:800;font-family:inherit;font-size:.9rem;cursor:pointer}
+  .bps-btn.go{background:linear-gradient(135deg,#2ecc71,#27a35a);border:none;color:#fff}
+  .bps-btn.sm{padding:.45rem .9rem;font-size:.84rem}
+  .bps-btn.warn{background:rgba(192,57,43,.75);border:none;color:#fff}
+  .bps-rewards{display:flex;flex-direction:column;gap:.7rem}
+  .bps-rw{display:flex;align-items:center;gap:.8rem;background:rgba(255,255,255,.05);border:1.5px solid var(--card-bd);border-radius:1.1rem;padding:.8rem 1rem}
+  .bps-rw-ic{font-size:1.7rem;width:2.6rem;height:2.6rem;display:grid;place-items:center;background:rgba(255,255,255,.08);border-radius:.8rem;flex:0 0 auto}
+  .bps-rw-mid{flex:1;display:flex;flex-direction:column;gap:.15rem}
+  .bps-rw-mid b{font-weight:900}
+  .bps-rw-mid small{color:rgba(254,245,220,.66);font-size:.78rem;font-weight:700}
+  .bps-rw-bar{height:7px;background:rgba(255,255,255,.1);border-radius:5px;overflow:hidden;margin-top:.3rem}
+  .bps-rw-bar i{display:block;height:100%;background:#2ecc71;border-radius:5px}
+  .bps-rw-pct{font-weight:900;color:var(--gold-lt);font-size:.9rem}
+  .bps-log{display:flex;flex-direction:column;gap:.4rem}
+  .bps-log-row{display:flex;align-items:center;gap:.6rem;background:rgba(255,255,255,.04);border:1px solid var(--card-bd);border-radius:.8rem;padding:.5rem .8rem}
+  .bps-log-lb{flex:1;font-weight:700;font-size:.88rem}
+  .bps-log-dt{font-size:.72rem;color:rgba(254,245,220,.5)}
+  .bps-log-d{font-weight:900;font-size:.86rem;min-width:56px;text-align:end}
+  .bps-log-d.pos{color:#7ee0a8}.bps-log-d.neg{color:#f2a99f}
+  .bps-manage{display:flex;flex-direction:column;gap:.45rem}
+  .bps-mrow{display:flex;align-items:center;gap:.6rem;background:rgba(255,255,255,.04);border:1px solid var(--card-bd);border-radius:.8rem;padding:.45rem .7rem}
+  .bps-mic{font-size:1.2rem}
+  .bps-mnm{flex:1;font-weight:700;font-size:.88rem}.bps-mnm small{color:rgba(254,245,220,.55);font-weight:600}
+  .bps-pts-btn{background:rgba(212,160,23,.16);border:1px solid rgba(212,160,23,.4);color:var(--gold-lt);border-radius:1rem;padding:.25rem .7rem;font-weight:800;font-size:.8rem;cursor:pointer;font-family:inherit}
+  .bps-x{background:rgba(192,57,43,.18);border:none;color:#f2a99f;width:26px;height:26px;border-radius:50%;cursor:pointer;font-weight:900}
+  .bps-empty{text-align:center;padding:2rem 1rem;color:rgba(254,245,220,.72)}
+  .bps-empty-ic{font-size:2.6rem;margin-bottom:.5rem}
+  .bps-mut{color:rgba(254,245,220,.6);text-align:center;padding:1rem}
+</style>
+<style id="__antiflash">html{background:#0A2540;color-scheme:dark}</style>
+<style id="__noshift">*,*::before,*::after{box-sizing:border-box}html,body{overflow-x:hidden;max-width:100%}</style>
+<style id="printables-css">
+/* ══════════ Printables shop (متجر المطبوعات) ══════════ */
+.store-link{display:inline-flex;align-items:center;gap:.4rem;margin-top:.9rem;background:linear-gradient(135deg,var(--gold,#E8B530),#c79518);color:#10243d;border-radius:2rem;padding:.6rem 1.3rem;font-weight:900;font-size:.92rem;text-decoration:none;box-shadow:0 8px 22px rgba(232,181,48,.28)}
+.store-link:hover{filter:brightness(1.05)}
+.shop-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:1rem}
+.shop-card{position:relative;text-align:start;background:var(--card);border:1.5px solid var(--card-bd);border-inline-start:4px solid var(--pa,#D4A017);border-radius:1.2rem;padding:1.15rem 1.15rem 1.2rem;cursor:pointer;font-family:inherit;color:var(--text);display:flex;flex-direction:column;gap:.45rem;transition:transform .16s,border-color .2s}
+html[dir="rtl"] .shop-card{border-inline-start:1.5px solid var(--card-bd);border-inline-end:4px solid var(--pa,#D4A017)}
+.shop-card:hover{transform:translateY(-4px);border-color:var(--pa,#D4A017)}
+.shop-tag{position:absolute;top:.8rem;inset-inline-end:.8rem;font-size:.68rem;font-weight:800;background:rgba(31,138,91,.2);color:#a8f0c4;border-radius:1rem;padding:.16rem .55rem}
+.shop-ic{font-size:2.2rem}
+.shop-t{font-weight:900;font-size:1.05rem;line-height:1.4}
+.shop-b{color:rgba(254,245,220,.66);font-size:.84rem;line-height:1.6;flex:1}
+.shop-meta{font-size:.74rem;font-weight:800;color:var(--gold-lt)}
+.shop-go{align-self:flex-start;background:var(--pa,#D4A017);color:#10243d;border-radius:2rem;padding:.34rem .9rem;font-weight:800;font-size:.8rem;margin-top:.25rem}
+.shop-inc{margin:0;padding-inline-start:1.2rem;display:flex;flex-direction:column;gap:.5rem}
+.shop-inc li{line-height:1.6;font-size:.94rem}
+.shop-cta{display:flex;gap:.7rem;flex-wrap:wrap;margin:1.3rem 0 .7rem}
+.shop-cta-btn{flex:1;min-width:210px;border:none;border-radius:1rem;padding:.85rem 1rem;font-weight:800;font-family:inherit;font-size:.95rem;cursor:pointer}
+.shop-cta-btn.sample{background:rgba(255,255,255,.08);border:1.5px solid var(--card-bd);color:var(--text)}
+.shop-cta-btn.sample:hover{border-color:var(--gold)}
+.shop-cta-btn.supp{background:linear-gradient(135deg,var(--gold),#c79518);color:#10243d}
+.shop-note{color:rgba(254,245,220,.66);font-size:.85rem;line-height:1.75;background:rgba(31,138,91,.1);border:1px solid rgba(31,138,91,.3);border-radius:1rem;padding:.85rem 1rem}
+/* print overlay */
+.shop-print-ov{position:fixed;inset:0;background:rgba(4,14,26,.85);backdrop-filter:blur(7px);display:none;align-items:flex-start;justify-content:center;z-index:120;overflow-y:auto;padding:1.2rem}
+.shop-print-ov.open{display:flex}
+.shop-print-tools{position:fixed;top:1rem;inset-inline-end:1rem;display:flex;gap:.5rem;z-index:121}
+.pt-btn{border:none;border-radius:.9rem;padding:.6rem 1rem;font-weight:800;cursor:pointer;font-family:inherit}
+.pt-btn.print{background:var(--gold);color:#10243d}
+.pt-btn.close{background:#c0392b;color:#fff}
+.psh-paper{background:#fff;color:#23303a;max-width:780px;width:100%;margin:auto;border-radius:.8rem;padding:2rem 2.1rem;font-family:'Tajawal','Nunito',sans-serif}
+.psh-paper *{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+.psh-head{text-align:center;border-bottom:2px solid #e6d9b3;padding-bottom:.7rem;margin-bottom:1rem}
+.psh-brand{font-size:.72rem;font-weight:800;letter-spacing:.5px;color:#9a7414}
+.psh-title{font-size:1.5rem;font-weight:900;color:#7a5a12;margin:.25rem 0 .1rem}
+.psh-sub{font-size:.92rem;color:#5a6470}
+.psh-foot{text-align:center;margin-top:1.3rem;padding-top:.7rem;border-top:1px dashed #cdbf98;font-size:.78rem;font-weight:700;color:#9a7414}
+.psh-tip{margin-top:1rem;background:#fbf5e3;border:1px dashed #d8c690;border-radius:.7rem;padding:.6rem .8rem;font-size:.83rem;color:#6a5a2a;line-height:1.65}
+.psh-slot{border:2px dashed #c2cdd6;border-radius:.7rem;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.4rem;color:#90a0ad;background:repeating-linear-gradient(45deg,#fafcfe,#fafcfe 10px,#f1f5f8 10px,#f1f5f8 20px)}
+.psh-slot-ic{font-size:1.6rem;opacity:.6}
+.psh-slot-tx{font-family:ui-monospace,monospace;font-size:.74rem;text-align:center;max-width:82%;line-height:1.5}
+.psh-act{margin:1rem 0}
+.psh-act-h{display:block;font-size:1rem;color:#3a4650;margin-bottom:.6rem}
+.psh-match{display:flex;justify-content:space-between;gap:2.4rem}
+.m-col{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:.7rem;flex:1}
+.m-col li{background:#f4f7fa;border:1px solid #dfe7ee;border-radius:.6rem;padding:.55rem .7rem;font-weight:700;font-size:.92rem;display:flex;align-items:center;gap:.4rem}
+.m-col-r li{justify-content:space-between}
+.m-ic{font-size:1.2rem}
+.m-dot{color:#b9c4cd;font-size:1.2rem}
+.psh-trace{font-size:2.6rem;font-weight:900;color:#dfe3e8;text-align:center;letter-spacing:6px;border:1px dashed #d4dae0;border-radius:.7rem;padding:.7rem;background:linear-gradient(#fff,#fbfdff)}
+.psh-stk-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:.7rem}
+.psh-stk{border:2px dashed #c9d3db;border-radius:1rem;background:var(--sc);color:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.25rem;padding:.9rem .4rem;min-height:92px;text-align:center}
+.psh-stk-ic{font-size:1.7rem}
+.psh-stk-tx{font-weight:900;font-size:.82rem;text-shadow:0 1px 2px rgba(0,0,0,.2)}
+.psh-cert{border:8px solid #d4a017;border-radius:.6rem;padding:1.8rem 1.6rem;text-align:center;background:linear-gradient(160deg,#fffdf5,#f7efd8)}
+.psh-cert-seal{font-size:3rem}
+.psh-cert-kick{font-size:.74rem;font-weight:800;color:#9a7414;letter-spacing:.5px}
+.psh-cert-title{font-size:1.5rem;font-weight:900;color:#7D3C98;margin:.3rem 0 .8rem}
+.psh-cert-lbl{font-size:.86rem;color:#6a5a2a}
+.psh-cert-state{font-size:.86rem;color:#6a5a2a;margin-top:.7rem}
+.psh-cert-line{border-bottom:2px dashed #c9a83a;margin:.45rem auto;max-width:80%}
+.psh-cert-line.sm{max-width:160px;margin:.3rem auto}
+.psh-cert-name{height:2rem;max-width:62%}
+.psh-cert-row{display:flex;align-items:flex-end;justify-content:space-between;gap:1rem;margin-top:1.2rem}
+.psh-cert-row span{font-size:.74rem;color:#8a6a1a;font-weight:700}
+.psh-cert-star{font-size:1.6rem}
+.psh-cert-foot{margin-top:1rem;font-weight:800;color:#8a6a1a;font-size:.9rem}
+.psh-plan{width:100%;border-collapse:collapse;text-align:center}
+.psh-plan th,.psh-plan td{border:1px solid #d7dee5;padding:.4rem .2rem;font-size:.82rem}
+.psh-plan th{background:#1F8A5B;color:#fff;font-weight:800}
+.psh-plan .h-name{background:#eef3f7;text-align:start;font-weight:800;color:#3a4650;white-space:nowrap;padding-inline:.5rem}
+.psh-plan th.h-name{background:#147049}
+.h-cell{color:#9aa6b0;font-size:1rem}
+.psh-month{display:flex;flex-wrap:wrap;gap:.35rem}
+.psh-month-d{width:30px;height:30px;border:1px solid #d7dee5;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.74rem;font-weight:700;color:#5a6470}
+.psh-hero-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.psh-hero{border:2px dashed #c9a83a;border-radius:1rem;padding:1rem;background:#fffdf6;display:flex;flex-direction:column;gap:.5rem}
+.psh-hero-top .psh-slot{min-height:110px}
+.psh-hero-name{font-weight:900;font-size:1.05rem;color:#7a5a12}
+.psh-hero-title{font-size:.8rem;color:#6a5a2a;font-weight:700}
+.psh-hero-facts{margin:0;padding-inline-start:1.1rem;display:flex;flex-direction:column;gap:.3rem}
+.psh-hero-facts li{font-size:.82rem;line-height:1.5;color:#3a4650}
+.psh-hero-lesson{font-size:.82rem;background:#f4ecd6;border-radius:.6rem;padding:.5rem .6rem;color:#5a4a1a;line-height:1.5}
+@media print{
+  .shop-print-ov,.shop-print-ov *{visibility:visible}
+  .shop-print-ov{position:absolute;inset:0;background:#fff;padding:0;display:block}
+  .shop-print-ov .psh-paper{box-shadow:none;border-radius:0;max-width:100%}
+  .shop-print-tools{display:none}
+}
+@media(max-width:560px){ .psh-hero-grid{grid-template-columns:1fr} .psh-stk-grid{grid-template-columns:repeat(2,1fr)} .shop-cta-btn{min-width:100%} }
+</style>
+<style id="guide-css">
+/* ══════ Guide / How-to tab ══════ */
+.guide-band{display:flex;gap:1rem;align-items:flex-start;max-width:880px;margin:0 auto 1.5rem;background:linear-gradient(160deg,rgba(142,68,173,.2),rgba(212,160,23,.1));border:1.5px solid var(--card-bd);border-radius:1.4rem;padding:1.3rem 1.4rem}
+.guide-band .gb-ic{font-size:2.6rem;flex:0 0 auto;line-height:1}
+.guide-band h3{margin:0 0 .4rem;font-size:1.2rem;font-weight:900;color:var(--gold-lt)}
+.guide-band p{margin:0;line-height:1.95;opacity:.9;font-size:.96rem}
+.guide-h{max-width:880px;margin:1.8rem auto .9rem;font-size:1.25rem;font-weight:900;color:var(--gold-lt);text-align:center}
+.guide-steps{max-width:880px;margin:0 auto 1.6rem;display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
+@media(max-width:720px){.guide-steps{grid-template-columns:1fr}}
+.gstep{background:var(--card);border:1px solid var(--card-bd);border-top:4px solid var(--primary);border-radius:var(--radius);padding:1.25rem;display:flex;flex-direction:column;gap:.5rem;text-align:center;align-items:center}
+.gstep .gs-n{width:2.4rem;height:2.4rem;border-radius:50%;background:linear-gradient(135deg,var(--gold),#c79518);color:#10243d;font-weight:900;font-size:1.2rem;display:grid;place-items:center}
+.gstep b{font-size:1.05rem;font-weight:900;color:var(--text)}
+.gstep p{margin:0;font-size:.88rem;opacity:.82;line-height:1.7}
+.gkey{max-width:880px;margin:0 auto 1.6rem;background:linear-gradient(160deg,rgba(31,138,91,.2),rgba(212,160,23,.12));border:1.5px solid rgba(31,138,91,.45);border-radius:1.5rem;padding:1.5rem 1.5rem 1.4rem}
+.gkey h3{margin:0 0 .55rem;font-size:1.3rem;font-weight:900;color:var(--gold-lt)}
+.gkey p{margin:0 0 1rem;line-height:1.95;font-size:.96rem;opacity:.94}
+.gkey-acts{display:flex;gap:.7rem;flex-wrap:wrap}
+.gbtn{border:none;border-radius:1rem;padding:.8rem 1.3rem;font-weight:800;font-family:inherit;font-size:.95rem;cursor:pointer}
+.gbtn.go{background:linear-gradient(135deg,#2ecc71,#27a35a);color:#fff}
+.gbtn.go:hover{filter:brightness(1.06)}
+.gbtn.alt{background:rgba(255,255,255,.08);border:1.5px solid var(--card-bd);color:var(--text)}
+.gbtn.alt:hover{border-color:var(--gold)}
+.gkey-msg{display:none;margin-top:.95rem;background:rgba(46,158,91,.18);border:1px solid rgba(46,158,91,.5);color:#9be8b9;border-radius:.9rem;padding:.75rem .95rem;font-weight:700;font-size:.92rem;line-height:1.7}
+.gkey-note{margin-top:.85rem;font-size:.82rem;opacity:.72;line-height:1.7}
+.guide-tabs-list{max-width:880px;margin:0 auto 1rem;display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:.7rem}
+.gtab-row{display:flex;gap:.7rem;align-items:flex-start;background:var(--card);border:1px solid var(--card-bd);border-radius:1rem;padding:.85rem .95rem}
+.gtab-row .gt-ic{font-size:1.5rem;flex:0 0 auto;line-height:1.3}
+.gtab-row b{display:block;font-weight:800;font-size:.95rem;margin-bottom:.15rem}
+.gtab-row span span{font-size:.82rem;opacity:.72;line-height:1.55}
+.gpin{border-color:rgba(212,160,23,.5);background:linear-gradient(160deg,rgba(142,68,173,.18),rgba(212,160,23,.12))}
+.gpin-steps{display:grid;grid-template-columns:repeat(3,1fr);gap:.7rem;margin:.4rem 0 1rem}
+@media(max-width:640px){.gpin-steps{grid-template-columns:1fr}}
+.gpstep{display:flex;gap:.6rem;align-items:flex-start;background:rgba(8,24,42,.3);border:1px solid var(--card-bd);border-radius:1rem;padding:.8rem .9rem}
+.gpstep .gp-n{flex:0 0 auto;width:1.9rem;height:1.9rem;border-radius:50%;background:linear-gradient(135deg,var(--gold),#c79518);color:#10243d;font-weight:900;display:grid;place-items:center}
+.gpstep b{display:block;font-weight:800;font-size:.92rem;margin-bottom:.15rem}
+.gpstep span span{font-size:.8rem;opacity:.78;line-height:1.6}
+</style>
+</head>
+<body>
+<div class="header">
+  <a href="../../../index.html" class="back-btn" id="backBtn" onclick="goCity(event)">↩️ <span class="ar-only">العودة للمدينة</span><span class="en-only">Back to City</span></a>
+  <div class="lang-switch">
+    <button class="lang-btn" id="btnEn" onclick="setLang('en')">EN</button>
+    <button class="lang-btn active" id="btnAr" onclick="setLang('ar')">عربي</button>
+  </div>
+</div>
+
+<main class="content">
+  <div class="page-hero">
+    <div class="ic">👨‍👩‍👧</div>
+    <h1><span class="ar-only">ركن الأهل</span><span class="en-only">Parents' Corner</span></h1>
+    <p><span class="ar-only">رفيقُك في رحلة تربية جيلٍ واعٍ قويّ</span><span class="en-only">Your companion in raising an aware, strong generation</span></p>
+  </div>
+
+  <div class="tabs">
+    <button class="tab active" data-tab="guide" onclick="showTab('guide')"><span class="ti">📖</span><span class="ar-only">دليل الاستخدام</span><span class="en-only">Guide</span></button>
+    <button class="tab" data-tab="edu" onclick="showTab('edu')"><span class="ti">📚</span><span class="ar-only">القسم التربوي</span><span class="en-only">Parenting</span></button>
+    <button class="tab" data-tab="programs" onclick="showTab('programs')"><span class="ti">🧩</span><span class="ar-only">حلول وبرامج</span><span class="en-only">Programs</span></button>
+    <button class="tab" data-tab="track" onclick="showTab('track')"><span class="ti">📊</span><span class="ar-only">المتابعة والتقييم</span><span class="en-only">Tracking</span></button>
+    <button class="tab" data-tab="behavior" onclick="showTab('behavior')"><span class="ti">⭐</span><span class="ar-only">نقاط السلوك</span><span class="en-only">Behaviour Points</span></button>
+    <button class="tab" data-tab="print" onclick="showTab('print')"><span class="ti">🖨️</span><span class="ar-only">المطبوعات</span><span class="en-only">Printables</span></button>
+    <button class="tab" data-tab="res" onclick="showTab('res')"><span class="ti">🗂️</span><span class="ar-only">المصادر التربوية</span><span class="en-only">Resources</span></button>
+    <button class="tab" data-tab="controls" onclick="showTab('controls')"><span class="ti">🔐</span><span class="ar-only">تحكّم الأهل</span><span class="en-only">Controls</span></button>
+    <a class="tab tab-go" href="../../shared/store.html" onclick="this.href='../../shared/store.html?lang='+lang"><span class="ti">🛍️</span><span class="ar-only">متجر الدعم</span><span class="en-only">Support Store</span></a>
+    <a class="tab tab-go" href="../../shared/downloads.html" onclick="this.href='../../shared/downloads.html?lang='+lang"><span class="ti">📥</span><span class="ar-only">ركن التنزيلات</span><span class="en-only">Downloads</span></a>
+    <a class="tab tab-go" href="../../shared/community.html" onclick="this.href='../../shared/community.html?lang='+lang" data-community-badge><span class="ti">👨‍👩‍👧‍👦</span><span class="ar-only">مجتمع العائلات</span><span class="en-only">Family Community</span></a>
+  </div>
+
+  <!-- PANEL 0 · GUIDE / HOW TO USE -->
+  <section class="panel active" id="panel-guide">
+    <div class="sec-head">
+      <h2><span class="ar-only">📖 دليل استخدام الموقع</span><span class="en-only">📖 How to Use the Site</span></h2>
+      <p><span class="ar-only">كلُّ ما تحتاج معرفته في دقائق — من أين تبدأ، وكيف تتابع، وكيف تفتح الأنشطة.</span><span class="en-only">Everything you need in minutes — where to begin, how to track, and how to open activities.</span></p>
+    </div>
+
+    <div class="guide-band">
+      <div class="gb-ic">🏘️</div>
+      <div>
+        <h3><span class="ar-only">ما هذا الموقع؟</span><span class="en-only">What is this site?</span></h3>
+        <p><span class="ar-only">«مدينةٌ تربويّةٌ» للطفل المسلم: كلُّ ركنٍ فيها بابٌ لقيمةٍ أو علم — عقيدة، عبادة، قرآن، أخلاق، أبطال، رياضة، إبداع… يتنقّل طفلُك بين الأركان، يُكمل «رحلاتٍ» و«محطّات»، فيجمع نقاطًا وأوسمةً وشهادات. وفي «ركن أنوس» أنشطةٌ وألعابٌ تربويّةٌ تُفتَح كمكافأة.</span><span class="en-only">A learning “city” for your Muslim child: every corner is a door to a value or subject — faith, worship, Qur'an, character, heroes, sport, creativity… Your child moves between corners, completing “journeys” and “stations”, collecting points, badges and certificates. The “Anous” activities corner holds games unlocked as a reward.</span></p>
+      </div>
+    </div>
+
+    <h3 class="guide-h"><span class="ar-only">ابدأ في ٣ خطوات</span><span class="en-only">Start in 3 steps</span></h3>
+    <div class="guide-steps">
+      <div class="gstep"><span class="gs-n">١</span><b><span class="ar-only">أنشِئ ملفّ طفلك</span><span class="en-only">Create a profile</span></b><p><span class="ar-only">من صفحة الدخول اكتب اسمه واختَر صورته. يمكنك إضافة أكثر من طفل.</span><span class="en-only">On the login page enter the child's name and pick an avatar. You can add several children.</span></p></div>
+      <div class="gstep"><span class="gs-n">٢</span><b><span class="ar-only">اختَر ركناً</span><span class="en-only">Pick a corner</span></b><p><span class="ar-only">من خريطة المدينة 🗺️ اضغط أيّ ركنٍ ليبدأ رحلته ويُكمل محطّاته.</span><span class="en-only">From the city map 🗺️ tap any corner to begin a journey and complete its stations.</span></p></div>
+      <div class="gstep"><span class="gs-n">٣</span><b><span class="ar-only">تابِع وكافِئ</span><span class="en-only">Track &amp; reward</span></b><p><span class="ar-only">عُد إلى ركن الأهل لترى تقدّمه، وتمنحه النقاط، وتفتح له الأنشطة.</span><span class="en-only">Come back to the Parents corner to see progress, award points, and open activities.</span></p></div>
+    </div>
+
+    <div class="gkey">
+      <h3><span class="ar-only">🎁 فتح الأنشطة بدون امتحانات</span><span class="en-only">🎁 Open activities without exams</span></h3>
+      <p><span class="ar-only">عادةً تُفتَح أنشطة «ركن أنوس» عندما ينجح طفلُك في اختبار الركن (٧٥٪ فأكثر). لكن إن أردتَ منحها مكافأةً على حُسن سلوكه — <b>دون أيّ امتحان</b> — فاضغط الزرّ بالأسفل: تُفتَح فورًا ٥ أنشطةٍ مميّزة يجدها طفلُك في حقيبته وفي قائمة الأنشطة المفتوحة. يمكنك سحبُها في أيِّ وقت.</span><span class="en-only">Normally the “Anous” activities open after your child passes a corner's test (75%+). But if you'd rather give them as a reward for good behaviour — <b>with no exam at all</b> — just press the button below: 5 special activities open instantly and appear in your child's bag &amp; unlocked list. You can revoke them anytime.</span></p>
+      <div class="gkey-acts">
+        <button class="gbtn go" onclick="guideUnlockActivities()"><span class="ar-only">🎁 افتح الأنشطة الآن — بدون امتحان</span><span class="en-only">🎁 Open activities now — no exam</span></button>
+        <button class="gbtn alt" onclick="showTab('behavior')"><span class="ar-only">⭐ من تبويب نقاط السلوك</span><span class="en-only">⭐ Via Behaviour Points</span></button>
+      </div>
+      <div id="guideUnlockMsg" class="gkey-msg"></div>
+      <p class="gkey-note"><span class="ar-only">إن وضعتَ رمزَ حماية، سيُطلَب منك إدخالُه أوّلاً. للسحب: عُد إلى تبويب «⭐ نقاط السلوك» واضغط «إلغاء المنح».</span><span class="en-only">If you set a PIN you'll be asked for it first. To revoke: open the “⭐ Behaviour Points” tab and press “Revoke”.</span></p>
+    </div>
+
+    <div class="gkey gpin">
+      <h3><span class="ar-only">🔐 رمزُ حماية الأهل — كيف يعمل؟</span><span class="en-only">🔐 The Parent PIN — how it works</span></h3>
+      <p><span class="ar-only">داخل تبويب <b>«🔐 تحكّم الأهل»</b> يمكنك إنشاءُ <b>رمزٍ سرّيٍّ من ٤ إلى ٦ أرقام</b>. هذا الرمز يحمي إعداداتِ الأهل، ويمنع الطفلَ من فتح الأركان المقفلة أو العبثِ بالإعدادات. وهو يُحفَظ في هذا الجهاز فقط.</span><span class="en-only">Inside the <b>“🔐 Controls”</b> tab you can create a secret <b>4–6 digit PIN</b>. It protects parent settings and stops your child from opening locked corners or changing settings. It's stored on this device only.</span></p>
+      <div class="gpin-steps">
+        <div class="gpstep"><span class="gp-n">١</span><div><b><span class="ar-only">أنشِئ الرمز</span><span class="en-only">Create it</span></b><span><span class="ar-only">افتح «🔐 تحكّم الأهل» ← بطاقة «🔢 رمز حماية الأهل» ← «إنشاء رمز»، واكتب ٤–٦ أرقام.</span><span class="en-only">Open “🔐 Controls” → “🔢 Parent PIN” card → “Create PIN”, then type 4–6 digits.</span></span></div></div>
+        <div class="gpstep"><span class="gp-n">٢</span><div><b><span class="ar-only">متى يُطلَب؟</span><span class="en-only">When it's asked</span></b><span><span class="ar-only">عند دخول تبويب التحكّم، وعند فتح ركنٍ مقفل، وعند منح الأنشطة أو سحبها.</span><span class="en-only">When entering Controls, opening a locked corner, or granting/revoking activities.</span></span></div></div>
+        <div class="gpstep"><span class="gp-n">٣</span><div><b><span class="ar-only">غيّره أو احذفه</span><span class="en-only">Change or remove</span></b><span><span class="ar-only">من البطاقة نفسها: «تغيير الرمز» لتعديله، أو «إزالة الرمز» لإلغائه نهائيًّا.</span><span class="en-only">From the same card: “Change PIN” to edit it, or “Remove PIN” to clear it.</span></span></div></div>
+      </div>
+      <div class="gkey-acts">
+        <button class="gbtn go" onclick="showTab('controls')"><span class="ar-only">🔐 اذهب إلى تحكّم الأهل</span><span class="en-only">🔐 Go to Controls</span></button>
+      </div>
+      <p class="gkey-note"><span class="ar-only">⚠️ مهم: الرمزُ محفوظٌ على هذا الجهاز فقط ولا يمكن استرجاعُه إن نسيتَه — اكتبه في مكانٍ آمن. أوّلُ مرّةٍ تقفل فيها ركنًا سيُطلَب منك إنشاءُ رمزٍ تلقائيًّا.</span><span class="en-only">⚠️ Note: the PIN lives on this device only and can't be recovered if forgotten — keep it somewhere safe. The first time you lock a corner you'll be prompted to create one automatically.</span></p>
+    </div>
+
+    <h3 class="guide-h"><span class="ar-only">ماذا يقدّم ركن الأهل؟</span><span class="en-only">What's inside the Parents corner?</span></h3>
+    <div class="guide-tabs-list">
+      <div class="gtab-row"><span class="gt-ic">📚</span><div><b><span class="ar-only">القسم التربوي</span><span class="en-only">Parenting</span></b><span><span class="ar-only">مقالات ونصائح في تربية الأبناء.</span><span class="en-only">Articles &amp; parenting tips.</span></span></div></div>
+      <div class="gtab-row"><span class="gt-ic">🧩</span><div><b><span class="ar-only">حلول وبرامج</span><span class="en-only">Programs</span></b><span><span class="ar-only">برامج أسبوعيّة لمشاكل شائعة.</span><span class="en-only">Week-by-week programs for common problems.</span></span></div></div>
+      <div class="gtab-row"><span class="gt-ic">📊</span><div><b><span class="ar-only">المتابعة والتقييم</span><span class="en-only">Tracking</span></b><span><span class="ar-only">رسومٌ ونقاطٌ وشهاداتُ إنجاز.</span><span class="en-only">Charts, points &amp; certificates.</span></span></div></div>
+      <div class="gtab-row"><span class="gt-ic">⭐</span><div><b><span class="ar-only">نقاط السلوك</span><span class="en-only">Behaviour Points</span></b><span><span class="ar-only">كافئ التزاماته الحقيقيّة، وامنحه الأنشطة.</span><span class="en-only">Reward real-life habits &amp; grant activities.</span></span></div></div>
+      <div class="gtab-row"><span class="gt-ic">🖨️</span><div><b><span class="ar-only">المطبوعات</span><span class="en-only">Printables</span></b><span><span class="ar-only">أوراق نشاطٍ جاهزةٌ للطباعة.</span><span class="en-only">Ready-to-print activity sheets.</span></span></div></div>
+      <div class="gtab-row"><span class="gt-ic">🗂️</span><div><b><span class="ar-only">المصادر</span><span class="en-only">Resources</span></b><span><span class="ar-only">كتبٌ وفيديوهاتٌ ومواقعُ موثوقة.</span><span class="en-only">Books, videos &amp; trusted sites.</span></span></div></div>
+      <div class="gtab-row"><span class="gt-ic">🔐</span><div><b><span class="ar-only">تحكّم الأهل</span><span class="en-only">Controls</span></b><span><span class="ar-only">رمزُ حماية، وقفلُ وفتحُ الأركان.</span><span class="en-only">PIN, and lock/unlock corners.</span></span></div></div>
+    </div>
+  </section>
+
+  <!-- PANEL 1 · EDUCATIONAL -->
+  <section class="panel" id="panel-edu">
+    <div class="sec-head">
+      <h2 id="eduTitle">القسم التربوي</h2>
+      <p id="eduSub">مقالات ونصائح في تربية الأبناء</p>
+    </div>
+    <div class="grid" id="artGrid"></div>
+  </section>
+
+  <!-- PANEL · SOLUTION PROGRAMS -->
+  <section class="panel" id="panel-programs">
+    <div class="sec-head">
+      <h2><span class="ar-only">🧩 حلول وبرامج لمشاكل الأطفال</span><span class="en-only">🧩 Solution Programs for Child Problems</span></h2>
+      <p><span class="ar-only">برامج عملية متدرّجة بالأسابيع، مبنيّة على الكتاب والسنّة وعلم النفس الحديث.</span><span class="en-only">Practical week-by-week programs grounded in the Qur'an, Sunnah &amp; modern psychology.</span></p>
+    </div>
+    <div id="programsBody"></div>
+  </section>
+
+  <!-- PANEL 2 · TRACKING -->
+  <section class="panel" id="panel-track">
+    <div class="sec-head">
+      <h2 id="trackTitle">المتابعة والتقييم</h2>
+      <p id="trackSub">رسوم بيانية ونقاط وشهادات</p>
+    </div>
+    <div class="points-banner">
+      <div class="pb-level" id="pbLevel">🌱</div>
+      <div class="pb-info">
+        <div class="lvl-name" id="pbLevelName">بذرة</div>
+        <div class="pts"><span id="pbPoints">0</span> <small><span class="ar-only">نقطة</span><span class="en-only">points</span></small></div>
+        <div class="pb-bar"><i id="pbFill" style="width:0%"></i></div>
+        <div class="pb-next" id="pbNext"></div>
+      </div>
+    </div>
+    <div class="stat-row">
+      <div class="stat"><div class="sv" id="stStations">0</div><div class="sl"><span class="ar-only">محطات مكتملة</span><span class="en-only">Stations done</span></div></div>
+      <div class="stat"><div class="sv" id="stJourneys">0</div><div class="sl"><span class="ar-only">رحلات مكتملة</span><span class="en-only">Journeys done</span></div></div>
+      <div class="stat"><div class="sv" id="stPct">0%</div><div class="sl"><span class="ar-only">نسبة الإنجاز الكلية</span><span class="en-only">Overall progress</span></div></div>
+      <div class="stat"><div class="sv" id="stActive">0</div><div class="sl"><span class="ar-only">رحلات بدأها</span><span class="en-only">Journeys started</span></div></div>
+    </div>
+    <div class="charts">
+      <div class="chart-card"><h3><span class="ar-only">الإنجاز الكلي</span><span class="en-only">Overall Completion</span></h3><div class="chart-wrap"><canvas id="doughnut"></canvas></div></div>
+      <div class="chart-card"><h3><span class="ar-only">التقدّم حسب الركن</span><span class="en-only">Progress by Corner</span></h3><div class="chart-wrap"><canvas id="barchart"></canvas></div></div>
+    </div>
+    <div class="sec-head" style="margin-top:.5rem"><h2 style="font-size:1.2rem"><span class="ar-only">الرحلات والشهادات</span><span class="en-only">Journeys & Certificates</span></h2></div>
+    <div class="jlist" id="jList"></div>
+  </section>
+
+  <!-- PANEL 5 · BEHAVIOUR POINTS -->
+  <section class="panel" id="panel-behavior">
+    <div class="sec-head">
+      <h2><span class="ar-only">⭐ نظام النقاط السلوكية</span><span class="en-only">⭐ Behaviour Points</span></h2>
+      <p><span class="ar-only">امنح طفلك نقاطًا على التزاماته (الصلاة · الصدق · برّ الوالدين…) واجعلها تُستبدل بمكافآت.</span><span class="en-only">Award your child stars for real-life commitments (prayer, honesty, honoring parents…) and let them redeem for rewards.</span></p>
+    </div>
+    <div id="bpsBody"></div>
+    <div id="parentsRewards" style="max-width:760px;margin:1.4rem auto 0"></div>
+  </section>
+
+  <!-- PANEL · PRINTABLES SHOP -->
+  <section class="panel" id="panel-print">
+    <div class="sec-head">
+      <h2><span class="ar-only">🖨️ المطبوعات التربوية</span><span class="en-only">🖨️ Printable Packs</span></h2>
+      <p><span class="ar-only">حزمٌ مطبوعةٌ للأطفال — عيّناتٌ مجّانيّة، وحزمٌ كاملةٌ بدعمك يُبقي الموقعَ صدقةً جارية.</span><span class="en-only">Printable packs for kids — free samples, and full packs whose support keeps the site an ongoing charity.</span></p>
+      <a class="store-link" href="../../shared/store.html" onclick="this.href='../../shared/store.html?lang='+lang"><span class="ar-only">🏬 زيارةُ متجر الدعم — الحزمُ الكاملة</span><span class="en-only">🏬 Visit the Support Store — full packs</span></a>
+    </div>
+    <div id="printShopBody"></div>
+  </section>
+
+  <!-- PANEL 3 · RESOURCES -->
+  <section class="panel" id="panel-res">
+    <div class="sec-head">
+      <h2 id="resTitle">المصادر التربوية</h2>
+      <p id="resSub">كتب وفيديوهات ومقالات ودروس سماعية</p>
+    </div>
+    <div id="resWrap"></div>
+  </section>
+
+  <!-- PANEL 4 · PARENT CONTROLS -->
+  <section class="panel" id="panel-controls">
+    <div class="sec-head">
+      <h2><span class="ar-only">🔐 تحكّم الأهل</span><span class="en-only">🔐 Parent Controls</span></h2>
+      <p><span class="ar-only">الملفّات · رمز الحماية · قفل وفتح الأركان</span><span class="en-only">Profiles · PIN · lock &amp; unlock corners</span></p>
+    </div>
+    <div id="ctrlBody"></div>
+  </section>
+</main>
+
+<!-- YouTube watch modal -->
+<div class="yt-ov" id="ytOverlay" onclick="if(event.target===this)closeYt()">
+  <div class="yt-box">
+    <div class="yt-head"><h3 id="ytTitle"></h3><button class="yt-x" onclick="closeYt()">✕</button></div>
+    <div class="yt-frame-wrap"><iframe id="ytFrame" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe></div>
+  </div>
+</div>
+
+<!-- Article modal -->
+<div class="modal-bg" id="modalBg" onclick="if(event.target===this)closeModal()">
+  <div class="modal-box">
+    <div class="m-ic" id="mIc"></div>
+    <h2 id="mTitle"></h2>
+    <div id="mBody"></div>
+    <button class="modal-close" onclick="closeModal()"><span class="ar-only">إغلاق</span><span class="en-only">Close</span></button>
+  </div>
+</div>
+
+<!-- Certificate overlay -->
+<div class="cert-overlay" id="certOverlay">
+  <div class="cert-tools">
+    <button class="cprint" onclick="window.print()">🖨️ <span class="ar-only">اطبع</span><span class="en-only">Print</span></button>
+    <button class="cclose" onclick="document.getElementById('certOverlay').classList.remove('open')">✕</button>
+  </div>
+  <div>
+    <input class="cert-name-in" id="certNameIn" placeholder="✍️ اكتب اسم الطفل / Child's name" maxlength="40">
+    <div class="certificate" id="certBox"></div>
+  </div>
+</div>
+
+<!-- Printables sample print overlay -->
+<div class="shop-print-ov" id="shopPrintOv" onclick="if(event.target===this)closeShopPrint()">
+  <div class="shop-print-tools">
+    <button class="pt-btn print" onclick="window.print()">🖨️ <span class="ar-only">طباعة / PDF</span><span class="en-only">Print / PDF</span></button>
+    <button class="pt-btn close" onclick="closeShopPrint()">✕</button>
+  </div>
+  <div class="psh-paper" id="pshPaper"></div>
+</div>
+
+<!-- Per-corner BAG overlay -->
+<div class="bag-ov" id="bagOverlay" onclick="if(event.target===this)closeBag()">
+  <div class="bag-sheet">
+    <div class="bag-head">
+      <div><h2 id="bagTitle" style="margin:0;font-size:1.25rem;font-weight:900;color:var(--gold-lt)"></h2><div id="bagSub" class="ctrl-mut" style="margin-top:.2rem"></div></div>
+      <button class="sidebar-close" onclick="closeBag()">✕</button>
+    </div>
+    <div class="bag-body" id="bagBody"></div>
+  </div>
+</div>
+
+<button class="float-map-btn" onclick="toggleSidebar()" title="خريطة المدينة">🗺️</button>
+<div class="sidebar-overlay" id="sidebarOverlay" onclick="closeSidebar()"></div>
+<div class="sidebar-drawer" id="sidebarDrawer">
+  <div class="sidebar-header">
+    <h2 class="sidebar-title" id="sidebarTitle">🗺️ خريطة المدينة</h2>
+    <button class="sidebar-close" onclick="closeSidebar()">✕</button>
+  </div>
+  <nav class="sidebar-nav" id="sidebarNav"></nav>
+</div>
+
+<script defer src="../../shared/mk-system.js"></script>
+<script defer src="../../shared/mk-journeys.js"></script>
+<script src="../../shared/mk-behavior.js"></script>
+<script src="parents-data.js"></script>
+<script src="parents-programs.js"></script>
+<script src="parents-printables.js"></script>
+<script src="parents-videos.js"></script>
+<script src="parents-books.js"></script>
+<script>
+const D = window.PARENTS_DATA;
+// Menu data comes from the ONE list (MK.CORNERS) in corners/shared/mk-system.js — edit it there.
+        function getCorners(){ return (window.MK && MK.cornerNav) ? MK.cornerNav() : []; }
+let lang = localStorage.getItem('bunyanLang') || 'ar';
+const tx = o => o ? (o[lang]||o.ar) : '';
+
+/* ---- progress reading ---- */
+function readDone(prefix){ try{ return JSON.parse(localStorage.getItem(prefix+'Done')||'[]').length; }catch(e){ return 0; } }
+function computeStats(){
+  let doneStations=0, totalStations=0, journeysDone=0, journeysStarted=0;
+  const perJourney = D.journeys.map(j=>{
+    const c = Math.min(readDone(j.prefix), j.total);
+    doneStations+=c; totalStations+=j.total;
+    if(c>=j.total) journeysDone++;
+    if(c>0) journeysStarted++;
+    return {...j, completed:c, pct:Math.round(c/j.total*100)};
+  });
+  return { perJourney, doneStations, totalStations, journeysDone, journeysStarted,
+           points:doneStations*10, pct: totalStations?Math.round(doneStations/totalStations*100):0 };
+}
+function levelFor(points){
+  let lv=D.levels[0], next=null;
+  for(let i=0;i<D.levels.length;i++){ if(points>=D.levels[i].min){ lv=D.levels[i]; next=D.levels[i+1]||null; } }
+  return {lv,next};
+}
+
+/* ---- charts ---- */
+let doughnutChart, barChart;
+function renderCharts(s){
+  const cornerMap={};
+  s.perJourney.forEach(j=>{ const k=tx(j.corner); (cornerMap[k]=cornerMap[k]||{done:0,total:0,color:j.color}); cornerMap[k].done+=j.completed; cornerMap[k].total+=j.total; });
+  const labels=Object.keys(cornerMap), data=labels.map(k=>Math.round(cornerMap[k].done/cornerMap[k].total*100)), cols=labels.map(k=>cornerMap[k].color);
+  const remain=Math.max(0,100-s.pct);
+  if(doughnutChart)doughnutChart.destroy();
+  doughnutChart=new Chart(document.getElementById('doughnut'),{type:'doughnut',
+    data:{labels:[lang==='ar'?'مكتمل':'Done',lang==='ar'?'متبقٍّ':'Left'],datasets:[{data:[s.pct,remain],backgroundColor:['#D4A017','rgba(255,255,255,.1)'],borderWidth:0}]},
+    options:{cutout:'72%',plugins:{legend:{display:false},tooltip:{callbacks:{label:c=>c.label+': '+c.parsed+'%'}}}}});
+  // center text via plugin-less overlay: draw using afterDraw
+  const centerTxt={id:'ct',afterDraw(ch){const{ctx,chartArea:{left,right,top,bottom}}=ch;ctx.save();ctx.font='900 1.7rem Tajawal';ctx.fillStyle='#F5CC5A';ctx.textAlign='center';ctx.textBaseline='middle';ctx.fillText(s.pct+'%',(left+right)/2,(top+bottom)/2);ctx.restore();}};
+  doughnutChart.config.plugins=[centerTxt]; doughnutChart.update();
+  if(barChart)barChart.destroy();
+  barChart=new Chart(document.getElementById('barchart'),{type:'bar',
+    data:{labels,datasets:[{data,backgroundColor:cols,borderRadius:8,barThickness:'flex',maxBarThickness:46}]},
+    options:{plugins:{legend:{display:false},tooltip:{callbacks:{label:c=>c.parsed+'%'}}},
+      scales:{y:{beginAtZero:true,max:100,ticks:{color:'rgba(254,245,220,.6)',callback:v=>v+'%'},grid:{color:'rgba(255,255,255,.08)'}},
+              x:{ticks:{color:'rgba(254,245,220,.8)',font:{size:11,weight:700}},grid:{display:false}}}}});
+}
+
+/* ---- tracking panel ---- */
+function renderTracking(){
+  const s=computeStats();
+  document.getElementById('pbPoints').textContent=s.points;
+  document.getElementById('stStations').textContent=s.doneStations;
+  document.getElementById('stJourneys').textContent=s.journeysDone;
+  document.getElementById('stPct').textContent=s.pct+'%';
+  document.getElementById('stActive').textContent=s.journeysStarted;
+  const {lv,next}=levelFor(s.points);
+  document.getElementById('pbLevel').textContent=lv.icon;
+  document.getElementById('pbLevelName').textContent=lang==='ar'?lv.ar:lv.en;
+  if(next){
+    const span=next.min-lv.min, prog=s.points-lv.min;
+    document.getElementById('pbFill').style.width=Math.min(100,Math.round(prog/span*100))+'%';
+    document.getElementById('pbNext').textContent=(lang==='ar'?`${next.min-s.points} نقطة للمستوى التالي: ${next.ar} ${next.icon}`:`${next.min-s.points} points to next level: ${next.en} ${next.icon}`);
+  } else { document.getElementById('pbFill').style.width='100%'; document.getElementById('pbNext').textContent=lang==='ar'?'🎉 أعلى مستوى!':'🎉 Top level!'; }
+  renderCharts(s);
+  document.getElementById('jList').innerHTML=s.perJourney.map(j=>{
+    const full=j.completed>=j.total;
+    return `<div class="jrow">
+      <div class="ji">${j.icon}</div>
+      <div class="jmid">
+        <div class="jn" title="${tx(j.name)}">${tx(j.name)}</div>
+        <div class="jc">${tx(j.corner)} · ${j.completed}/${j.total}</div>
+        <div class="jbar"><i style="width:${j.pct}%;--jc:${j.color}"></i></div>
+      </div>
+      <div class="jpct">${j.pct}%</div>
+      <button class="cert-btn ${full?'done':''}" ${j.completed>0?'':'disabled'} onclick='openCert(${JSON.stringify(j).replace(/'/g,"&#39;")})'>${full?(lang==='ar'?'🏅 شهادة':'🏅 Cert'):(lang==='ar'?'شهادة':'Cert')}</button>
+    </div>`;
+  }).join('');
+}
+
+/* ---- certificate ---- */
+function openCert(j){
+  const s=computeStats(); const jr=s.perJourney.find(x=>x.prefix===j.prefix)||j;
+  const nm=localStorage.getItem('parentChildName')||'';
+  const box=document.getElementById('certBox');
+  const stmt = lang==='ar'
+    ? `أتمّ هذا البطلُ الصغيرُ <b>${jr.completed}</b> من ${jr.total} محطةً في «${tx(j.name)}» ضمن ${tx(j.corner)}، فاستحقّ هذا التكريم. بارك الله فيه وزاده علماً وإيماناً.`
+    : `This young hero completed <b>${jr.completed}</b> of ${jr.total} stations in "${tx(j.name)}" within ${tx(j.corner)}, earning this honor. May Allah bless him and increase him in knowledge and faith.`;
+  box.innerHTML=`<div class="cseal">${j.icon}</div>
+    <div class="ckick">${lang==='ar'?'مدينة بُنيان · ركن الأهل':'Bunyan City · Parents Corner'}</div>
+    <div class="ctitle">${lang==='ar'?'شهادة تميّز':'Certificate of Excellence'}</div>
+    <div class="cname" id="certNameTxt">${nm||(lang==='ar'?'اسم الطفل':'Child Name')}</div>
+    <div class="cstate">${stmt}</div>
+    <div class="cfoot">${jr.completed} 🎖️ · ${tx(j.name)}</div>`;
+  const inp=document.getElementById('certNameIn'); inp.value=nm;
+  inp.oninput=()=>{ localStorage.setItem('parentChildName',inp.value); document.getElementById('certNameTxt').textContent=inp.value||(lang==='ar'?'اسم الطفل':'Child Name'); };
+  document.getElementById('certOverlay').classList.add('open');
+}
+
+/* ---- articles ---- */
+function renderArticles(){
+  document.getElementById('artGrid').innerHTML=D.articles.map((a,i)=>`
+    <div class="art-card" style="--c:${a.color}" onclick="openArticle(${i})">
+      <div class="art-ic">${a.icon}</div>
+      <span class="art-tag">${tx(a.tag)}</span>
+      <h3>${tx(a.title)}</h3>
+      <div class="art-read">${tx(a.read)}</div>
+    </div>`).join('');
+}
+function openArticle(i){
+  const a=D.articles[i];
+  document.getElementById('mIc').textContent=a.icon;
+  document.getElementById('mTitle').textContent=tx(a.title);
+  document.getElementById('mBody').innerHTML=a.body[lang].map(p=>`<p>${p}</p>`).join('');
+  document.getElementById('modalBg').classList.add('open');
+}
+function closeModal(){ document.getElementById('modalBg').classList.remove('open'); }
+
+/* ---- resources ---- */
+function renderMurabbiFeature(){
+  const base='../../../';
+  const t = lang==='ar'
+    ? {tag:'جديد', title:'مرجع المربي — خلاصات «ألف باء التربية»', desc:'١٤ قسمًا عمليًا: إصلاح المربي، خطة اليوم والليلة، الانسحاب التربوي، علاج العناد والغضب والغيرة والخوف والنوم، التعليم وحفظ القرآن — مع برنامج ٣٠/٩٠ يومًا وجداول متابعة.', open:'افتح المرجع ←', print:'🖨 نسخة للطباعة'}
+    : {tag:'New', title:'The Murabbi Reference — “Alif Ba of Tarbiyah” digests', desc:'14 practical sections: fixing the parent first, the day-and-night plan, educational withdrawal, treating stubbornness, anger, jealousy, fear and sleep issues, education and Quran memorisation — with a 30/90-day program and tracking sheets.', open:'Open the reference ←', print:'🖨 Printable version'};
+  return `
+    <div class="res-cat">
+      <div class="res-cat-head"><span class="rc-ic">🧭</span><h3>${t.title}</h3></div>
+      <div class="res-grid">
+        <a class="res-card res-link" style="--rc:#0D6B54" href="${base}مرجع المربي - ألف باء التربية.html">
+          <h4>${t.tag} · ${lang==='ar'?'المرجع التفاعلي':'Interactive reference'}</h4>
+          <p>${t.desc}</p>
+          <span class="res-dl">${t.open}</span>
+        </a>
+        <a class="res-card res-link" style="--rc:#A07810" href="${base}مرجع المربي - نسخة للطباعة.html">
+          <h4>${t.print}</h4>
+          <p>${lang==='ar'?'النسخة نفسها مصفوفة على صفحات A4 — اطبعها أو احفظها PDF لتكون بين يديك.':'The same content laid out on A4 pages — print it or save as PDF.'}</p>
+          <span class="res-dl">${lang==='ar'?'⬇ فتح / طباعة':'⬇ Open / Print'}</span>
+        </a>
+      </div>
+    </div>`;
+}
+function renderResources(){
+  const cats=[
+    {key:'books', ic:'📚', c:'#2980B9', ar:'كتب أونلاين', en:'Online Books'},
+    {key:'videos', ic:'🎬', c:'#C0392B', ar:'فيديوهات', en:'Videos'},
+  ];
+  document.getElementById('resWrap').innerHTML=renderMurabbiFeature()+cats.map(cat=>`
+    <div class="res-cat">
+      <div class="res-cat-head"><span class="rc-ic">${cat.ic}</span><h3>${lang==='ar'?cat.ar:cat.en}</h3></div>
+      <div class="res-grid">
+        ${D.resources[cat.key].map(r=>{
+          const inner=`<h4>${tx(r.title)}</h4><p>${tx(r.desc)}</p>`+(r.dl?`<span class="res-dl">⬇ ${lang==='ar'?'تحميل / تصفّح':'Download / Browse'} ↗</span>`:'');
+          return r.url
+            ? `<a class="res-card res-link" style="--rc:${cat.c}" href="${r.url}" target="_blank" rel="noopener">${inner}</a>`
+            : `<div class="res-card" style="--rc:${cat.c}">${inner}</div>`;
+        }).join('')}
+      </div>
+      ${cat.key==='videos'?renderVideoCats():''}
+      ${cat.key==='books'?renderBookCats():''}
+    </div>`).join('') + renderSitesApps();
+}
+
+/* ---- online book library (PDFs) — shown under the Online Books section ---- */
+function renderBookCats(){
+  var ar=lang==='ar', base='../../../Books/Parent Library/';
+  /* featured: our own flagship guide — PREVIEW only (full book is a paid item in the Support Store) */
+  var prevRel=encodeURIComponent('Published/Parent Plans/Tarbiyah Compass Guide Book.html');
+  var prevUrl='../../../Books/book-preview.html?src='+prevRel+'&n=3&bid=bundle9&lang='+lang
+    +'&t='+encodeURIComponent(ar?'بوصلةُ التربية':'The Tarbiyah Compass');
+  var storeUrl='../../shared/store.html?lang='+lang;
+  var featured='<div class="vid-cat"><h3 class="vid-cat-h"><span class="vc-ic">🧭</span>'
+    +(ar?'دليلُنا التربوي':'Our Tarbiyah Guide')+'<span class="vc-n">1</span></h3>'
+    +'<div class="vid-grid"><a class="vid-card" href="'+prevUrl+'" target="_blank" rel="noopener" style="border-color:rgba(212,160,23,.55);background:linear-gradient(135deg,rgba(232,181,48,.14),rgba(232,181,48,.04))">'
+    +'<span class="vid-play">🧭</span><span class="vid-name">'+(ar?'بوصلةُ التربية — دليلُ المراحل العمريّة (٠–١٨+)':'The Tarbiyah Compass — Age-Stages Guide (0–18+)')+'</span>'
+    +'<span class="vid-go">'+(ar?'👁️ معاينة (٣ صفحات)':'👁️ Preview (3 pages)')+'</span></a></div>'
+    +'<p class="vid-cat-note" style="color:var(--muted);font-size:.8rem;margin:.5rem .2rem 0">'
+    +(ar?'📖 الكتابُ الكامل ضمن حزمة ركن الأهل في <a href="'+storeUrl+'" style="color:var(--gold-lt);font-weight:800">متجر الدعم</a>.'
+        :'📖 The full book is in the Parents bundle at the <a href="'+storeUrl+'" style="color:var(--gold-lt);font-weight:800">Support Store</a>.')
+    +'</p></div>';
+  if(!window.PARENT_BOOKS) return featured;
+  return featured + PARENT_BOOKS.map(function(c){
+    var cards=c.items.map(function(t){
+      var href=base+encodeURIComponent(c.dir)+'/'+encodeURIComponent(t)+'.pdf';
+      return '<a class="vid-card" href="'+href+'" target="_blank" rel="noopener">'
+        +'<span class="vid-play">📕</span><span class="vid-name">'+t+'</span>'
+        +'<span class="vid-go">'+(ar?'فتح PDF ↗':'Open PDF ↗')+'</span></a>';
+    }).join('');
+    return '<div class="vid-cat"><h3 class="vid-cat-h"><span class="vc-ic">'+c.icon+'</span>'+(ar?c.ar:c.en)
+      +'<span class="vc-n">'+c.items.length+'</span></h3><div class="vid-grid">'+cards+'</div></div>';
+  }).join('');
+}
+
+/* ---- curated YouTube channels / series / podcasts — shown under the Videos section ---- */
+function renderVideoCats(){
+  if(!window.PARENTS_VIDEOS) return '';
+  var ar=lang==='ar', V=PARENTS_VIDEOS;
+  return V.cats.map(function(c){
+    var cards=c.items.map(function(it){
+      var name=ar?it.ar:it.en;
+      var href=it.url || ('https://www.youtube.com/results?search_query='+encodeURIComponent(it.ar));
+      return '<a class="vid-card" href="'+href+'" target="_blank" rel="noopener">'
+        +'<span class="vid-play">▶</span><span class="vid-name">'+name+'</span>'
+        +'<span class="vid-go">'+(ar?'يوتيوب ↗':'YouTube ↗')+'</span></a>';
+    }).join('');
+    return '<div class="vid-cat"><h3 class="vid-cat-h"><span class="vc-ic">'+c.icon+'</span>'+(ar?c.ar:c.en)
+      +'<span class="vc-n">'+c.items.length+'</span></h3><div class="vid-grid">'+cards+'</div></div>';
+  }).join('');
+}
+
+/* ---- reference sites · mobile apps (appended after all resource categories) ---- */
+function renderSitesApps(){
+  if(!window.PARENTS_VIDEOS) return '';
+  var ar=lang==='ar', V=PARENTS_VIDEOS;
+  var html = '';
+  if(V.sites && V.sites.length){
+    var sc=V.sites.map(function(s){
+      return '<a class="site-card" href="'+s.url+'" target="_blank" rel="noopener">'
+        +'<span class="site-ic">🌐</span>'
+        +'<span class="site-tx"><b>'+(ar?s.ar:s.en)+'</b><span>'+(ar?s.desc.ar:s.desc.en)+'</span></span>'
+        +'<span class="vid-go">'+(ar?'زيارة ↗':'Visit ↗')+'</span></a>';
+    }).join('');
+    html += '<div class="vid-cat"><h3 class="vid-cat-h"><span class="vc-ic">📚</span>'
+      +(ar?'أهمّ المصادر والمواقع':'Top reference sites')
+      +'<span class="vc-n">'+V.sites.length+'</span></h3><div class="vid-grid">'+sc+'</div></div>';
+  }
+  if(V.apps && V.apps.length){
+    var ac=V.apps.map(function(a){
+      var href='https://play.google.com/store/search?q='+encodeURIComponent(a.ar)+'&c=apps';
+      return '<a class="site-card" href="'+href+'" target="_blank" rel="noopener">'
+        +'<span class="site-ic">📱</span>'
+        +'<span class="site-tx"><b>'+(ar?a.ar:a.en)+'</b><span>'+(ar?a.desc.ar:a.desc.en)+'</span></span>'
+        +'<span class="vid-go">'+(ar?'تحميل ↗':'Get ↗')+'</span></a>';
+    }).join('');
+    html += '<div class="vid-cat"><h3 class="vid-cat-h"><span class="vc-ic">📱</span>'
+      +(ar?'أهمّ التطبيقات على الهاتف':'Top mobile apps')
+      +'<span class="vc-n">'+V.apps.length+'</span></h3><div class="vid-grid">'+ac+'</div></div>';
+  }
+  return html;
+}
+
+/* ---- tabs / lang / sidebar ---- */
+function showTab(id){
+  document.querySelectorAll('.tab').forEach(t=>t.classList.toggle('active',t.dataset.tab===id));
+  document.querySelectorAll('.panel').forEach(p=>p.classList.remove('active'));
+  document.getElementById('panel-'+id).classList.add('active');
+  if(id==='track') renderTracking();
+  if(id==='controls') renderControls();
+  if(id==='behavior' && window.MKB){ MKB.render(); renderParentsRewards(); }
+  if(id==='programs') renderPrograms();
+  if(id==='print') renderPrintShop();
+}
+var OPEN_PROGRAM=null;
+function txp(o){ return o?(lang==='ar'?o.ar:o.en):''; }
+function progKey(p){ return 'pp:'+p.id; }
+function programDone(p){ try{ return (JSON.parse(localStorage.getItem(progKey(p))||'[]')||[]).length; }catch(e){ return 0; } }
+function weekDone(p,i){ try{ return (JSON.parse(localStorage.getItem(progKey(p))||'[]')||[]).indexOf(i)>-1; }catch(e){ return false; } }
+function toggleWeek(p,i){ var d=[]; try{ d=JSON.parse(localStorage.getItem(progKey(p))||'[]')||[]; }catch(e){} var k=d.indexOf(i); if(k>-1)d.splice(k,1); else d.push(i); localStorage.setItem(progKey(p),JSON.stringify(d)); renderPrograms(); }
+function openProgram(id){ OPEN_PROGRAM=id; renderPrograms(); var el=document.getElementById('panel-programs'); if(el) el.scrollIntoView({block:'start'}); }
+function closeProgram(){ OPEN_PROGRAM=null; renderPrograms(); }
+function renderPrograms(){
+  var host=document.getElementById('programsBody'); if(!host||!window.PARENTS_PROGRAMS) return;
+  var ar=lang==='ar';
+  if(OPEN_PROGRAM){
+    var p=PARENTS_PROGRAMS.find(function(x){return x.id===OPEN_PROGRAM;});
+    if(p){ host.innerHTML=programDetailHTML(p,ar); return; }
+  }
+  host.innerHTML='<div class="prog-grid">'+PARENTS_PROGRAMS.map(function(p){
+    var done=programDone(p), tot=p.weeks.length;
+    return '<button class="prog-card" style="--pa:'+p.accent+'" onclick="openProgram(\''+p.id+'\')">'
+      +'<span class="prog-ic">'+p.icon+'</span>'
+      +'<span class="prog-t">'+txp(p.title)+'</span>'
+      +'<span class="prog-b">'+txp(p.blurb)+'</span>'
+      +'<span class="prog-meta"><span class="prog-weeks">'+tot+' '+(ar?'أسابيع':'weeks')+'</span><span class="prog-prog">'+done+'/'+tot+'</span></span>'
+      +'<span class="prog-go">'+(ar?'ابدأ البرنامج ←':'Start program →')+'</span></button>';
+  }).join('')+'</div>';
+}
+function programDetailHTML(p,ar){
+  var rooted=p.rooted.map(function(r){ return '<div class="pd-root"><span class="pdr-ic">'+r.icon+'</span><span>'+txp(r)+'</span></div>'; }).join('');
+  var weeks=p.weeks.map(function(w,i){
+    var dn=weekDone(p,i);
+    var steps=w.steps.map(function(s){ return '<li>'+txp(s)+'</li>'; }).join('');
+    return '<div class="pd-week '+(dn?'done':'')+'">'
+      +'<div class="pdw-h"><span class="pdw-n">'+(i+1)+'</span><b>'+txp(w.t)+'</b>'
+      +'<button class="pdw-check" onclick="toggleWeek(PARENTS_PROGRAMS.find(function(x){return x.id===\''+p.id+'\';}),'+i+')">'+(dn?(ar?'✓ تم':'✓ Done'):(ar?'أنهيتُه':'Mark done'))+'</button></div>'
+      +'<div class="pdw-goal">🎯 '+txp(w.goal)+'</div>'
+      +'<ul class="pdw-steps">'+steps+'</ul></div>';
+  }).join('');
+  var dn=programDone(p), tot=p.weeks.length, pct=Math.round(dn/tot*100);
+  return '<button class="pd-back" onclick="closeProgram()">← '+(ar?'كلّ البرامج':'All programs')+'</button>'
+    +'<div class="pd-hero" style="--pa:'+p.accent+'"><span class="pd-ic">'+p.icon+'</span><div><h3>'+txp(p.title)+'</h3>'
+    +'<div class="pd-bar"><i style="width:'+pct+'%;'+p.accent+'"></i></div><span class="pd-pct">'+dn+'/'+tot+' '+(ar?'أسابيع':'weeks')+' · '+pct+'%</span></div></div>'
+    +'<div class="pd-blk"><h4>🧠 '+(ar?'افهم المشكلة':'Understand the problem')+'</h4><p>'+txp(p.understand)+'</p></div>'
+    +'<div class="pd-blk"><h4>📚 '+(ar?'الأساس: كتاب · سنّة · علم':'The basis: Qur\'an · Sunnah · Science')+'</h4>'+rooted+'</div>'
+    +'<div class="pd-blk"><h4>🗓️ '+(ar?'الخطّة الأسبوعيّة':'The weekly plan')+'</h4>'+weeks+'</div>'
+    +'<div class="pd-flag">⚠️ '+txp(p.redflags)+'</div>';
+}
+/* ═══════════ PRINTABLES SHOP (متجر المطبوعات) ═══════════ */
+var OPEN_SET=null;
+function pset(o){ return o?(lang==='ar'?o.ar:o.en):''; }
+function renderPrintShop(){
+  var host=document.getElementById('printShopBody'); if(!host||!window.PARENTS_PRINTABLES) return;
+  var ar=lang==='ar', PP=PARENTS_PRINTABLES;
+  if(OPEN_SET){
+    var s=PP.sets.find(function(x){return x.id===OPEN_SET;});
+    if(s){ host.innerHTML=setDetailHTML(s,ar); return; }
+  }
+  host.innerHTML='<div class="shop-grid">'+PP.sets.map(function(s){
+    return '<button class="shop-card" style="--pa:'+s.accent+'" onclick="openSet(\''+s.id+'\')">'
+      +'<span class="shop-tag">'+(ar?'🎁 مجاناً':'🎁 Free')+'</span>'
+      +'<span class="shop-ic">'+s.icon+'</span>'
+      +'<span class="shop-t">'+pset(s.title)+'</span>'
+      +'<span class="shop-b">'+pset(s.blurb)+'</span>'
+      +'<span class="shop-meta">'+s.includes.length+'+ '+(ar?'موادّ':'items')+' · '+(ar?'مجّانًا بالكامل':'fully free')+'</span>'
+      +'<span class="shop-go">'+(ar?'استعرِض الحزمة ←':'View pack →')+'</span></button>';
+  }).join('')+'</div>';
+}
+function openSet(id){ OPEN_SET=id; renderPrintShop(); var el=document.getElementById('panel-print'); if(el) el.scrollIntoView({block:'start'}); }
+function closeSet(){ OPEN_SET=null; renderPrintShop(); }
+function setDetailHTML(s,ar){
+  var inc=s.includes.map(function(it){ return '<li>'+pset(it)+'</li>'; }).join('');
+  return '<button class="pd-back" onclick="closeSet()">← '+(ar?'كلُّ الحزم':'All packs')+'</button>'
+    +'<div class="pd-hero" style="--pa:'+s.accent+'"><span class="pd-ic">'+s.icon+'</span><div><h3>'+pset(s.title)+'</h3>'
+    +'<p style="color:rgba(254,245,220,.72);line-height:1.7;margin:0;font-size:.95rem">'+pset(s.blurb)+'</p></div></div>'
+    +'<div class="pd-blk"><h4>📦 '+(ar?'ماذا في الحزمة؟':'What\u2019s inside?')+'</h4><ul class="shop-inc">'+inc+'</ul></div>'
+    +'<div class="shop-cta">'
+    +'<button class="shop-cta-btn sample" onclick="printSet(\''+s.id+'\')">🖨️ '+(ar?'اطبَع الحزمة مجّاناً':'Print the pack — free')+'</button>'
+    +'</div>'
+    +'<p class="shop-note">'+(ar?'كلُّ الحزم متاحةٌ الآن مجّاناً 🎁 — اطبَعها واستمتِع بها. ادعُ لنا، وادعَم الموقعَ إن أحببتَ لِيبقى صدقةً جارية. 💚':'All packs are now free 🎁 — print and enjoy them. Keep us in your du’a, and support the site if you wish so it stays an ongoing charity. 💚')+'</p>';
+}
+function printSet(id){
+  var PP=window.PARENTS_PRINTABLES; if(!PP) return;
+  var s=PP.sets.find(function(x){return x.id===id;}); if(!s||!PP.build[s.build]) return;
+  document.getElementById('pshPaper').innerHTML = PP.build[s.build](lang==='ar');
+  document.getElementById('shopPrintOv').classList.add('open');
+}
+function closeShopPrint(){ document.getElementById('shopPrintOv').classList.remove('open'); }
+function supportSet(id){ location.href='../../shared/store.html?lang='+lang; }
+/* parents' exclusive 5 Anous activities — parent grants them (PIN-protected) */
+function renderParentsRewards(){
+  var host=document.getElementById('parentsRewards'); if(!host) return;
+  var set=(window.PARENT_ANOUS||[]); var ar=lang==='ar';
+  var bse='../../activities/activities/';
+  var unlocked=false;
+  try{ var u=JSON.parse(localStorage.getItem('mkUnlocked')||'{}'); unlocked=!!u.parents; }catch(e){}
+  var cells=set.map(function(r){
+    var label='<span class="mkcs-rw-t">'+(ar?r[2]:r[3])+'</span>';
+    if(unlocked) return '<a class="mkcs-rw" href="'+bse+r[0]+'?lang='+lang+'"><span class="mkcs-rw-ic">'+r[1]+'</span>'+label+'</a>';
+    return '<div class="mkcs-rw lock"><span class="mkcs-rw-ic">🔒</span>'+label+'</div>';
+  }).join('');
+  var btn=unlocked
+    ? '<button class="ctrl-btn warn" onclick="grantParents(false)">'+(ar?'إلغاء المنح':'Revoke')+'</button>'
+    : '<button class="ctrl-btn go" onclick="grantParents(true)">'+(ar?'🎁 امنح طفلي هذه المكافأة':'🎁 Grant my child this reward')+'</button>';
+  host.innerHTML=
+    '<div class="ctrl-card"><h3>🎁 '+(ar?'مكافأة الأهل — ٥ أنشطة خاصّة':'Parents’ Reward — 5 special activities')+'</h3>'
+    +'<p class="bps-note" style="margin:.2rem 0 .8rem">'+(ar?'هذه الأنشطة الخمس من حقّ الأهل وحدهم: امنحها طفلك مكافأةً على حُسن سلوكه.':'These five activities are the parents’ to give — grant them to your child as a reward for good behaviour.')+'</p>'
+    +'<div class="mkcs-rewards">'+cells+'</div>'
+    +'<div style="margin-top:.9rem">'+btn+'</div></div>';
+}
+function grantParents(on){
+  if(window.MK && MK.hasPin && MK.hasPin()){
+    var pin=window.prompt(lang==='ar'?'أدخِل رمز الأهل:':'Enter parents PIN:','');
+    if(pin==null) return;
+    if(!MK.checkPin(String(pin).trim())){ alert(lang==='ar'?'رمزٌ غير صحيح':'Wrong PIN'); return; }
+  }
+  try{ var u=JSON.parse(localStorage.getItem('mkUnlocked')||'{}');
+    if(on) u.parents=(window.PARENT_ANOUS||[]).map(function(r){return {href:'activities/'+r[0],icon:r[1],t:{ar:r[2],en:r[3]}};});
+    else delete u.parents;
+    localStorage.setItem('mkUnlocked', JSON.stringify(u));
+  }catch(e){}
+  renderParentsRewards();
+}
+/* ── Guide tab: open Anous activities WITHOUT exams (parent grant) ── */
+function guideUnlockActivities(){
+  var ar = lang==='ar';
+  if(window.MK && MK.hasPin && MK.hasPin()){
+    var pin=window.prompt(ar?'أدخِل رمز الأهل:':'Enter parents PIN:','');
+    if(pin==null) return;
+    if(!MK.checkPin(String(pin).trim())){ alert(ar?'رمزٌ غير صحيح':'Wrong PIN'); return; }
+  }
+  try{
+    var u=JSON.parse(localStorage.getItem('mkUnlocked')||'{}');
+    u.parents=(window.PARENT_ANOUS||[]).map(function(r){return {href:'activities/'+r[0],icon:r[1],t:{ar:r[2],en:r[3]}};});
+    localStorage.setItem('mkUnlocked', JSON.stringify(u));
+    try{ window.dispatchEvent(new Event('mk-unlocks-changed')); }catch(e){}
+  }catch(e){}
+  var st=document.getElementById('guideUnlockMsg');
+  if(st){ st.style.display='block';
+    st.textContent = ar
+      ? '✅ تمّ فتح ٥ أنشطةٍ لطفلك دون امتحانات! يجدها في حقيبته وفي قائمة الأنشطة المفتوحة.'
+      : '✅ 5 activities unlocked for your child — no exams needed! They appear in the bag & unlocked list.'; }
+  if(typeof renderParentsRewards==='function') renderParentsRewards();
+}
+function setLang(l){
+  lang=l; localStorage.setItem('bunyanLang',l);
+  document.documentElement.lang=l; document.documentElement.dir=l==='ar'?'rtl':'ltr';
+  document.getElementById('btnAr').classList.toggle('active',l==='ar');
+  document.getElementById('btnEn').classList.toggle('active',l==='en');
+  document.getElementById('eduTitle').textContent=tx(D.ui.sectionEdu);
+  document.getElementById('eduSub').textContent=tx(D.ui.sectionEduSub);
+  document.getElementById('trackTitle').textContent=tx(D.ui.sectionTrack);
+  document.getElementById('trackSub').textContent=tx(D.ui.sectionTrackSub);
+  document.getElementById('resTitle').textContent=tx(D.ui.sectionRes);
+  document.getElementById('resSub').textContent=tx(D.ui.sectionResSub);
+  renderArticles(); renderResources(); buildSidebar();
+  if(document.getElementById('panel-track').classList.contains('active')) renderTracking();
+  if(document.getElementById('panel-controls').classList.contains('active')) renderControls();
+  if(document.getElementById('panel-behavior').classList.contains('active') && window.MKB){ MKB.render(); renderParentsRewards(); }
+  if(document.getElementById('panel-programs').classList.contains('active')) renderPrograms();
+  if(document.getElementById('panel-print').classList.contains('active')) renderPrintShop();
+}
+/* parents' exclusive 5 Anous activities (the "last five") */
+window.PARENT_ANOUS = [
+  ['paradise-post.html','💌','بريد الجنة','Paradise Post'],  ['build-mosque.html','🕌','ابنِ المسجد','Build the Mosque'],
+  ['family-tree.html','🌳','شجرة العائلة','Family Tree'],
+  ['nasheed-karaoke.html','🎤','كاريوكي الأناشيد','Nasheed Karaoke'],
+  ['puppet-theater.html','🎭','مسرح العرائس','Puppet Theater']
+];
+function toggleSidebar(){ document.getElementById('sidebarDrawer').classList.toggle('open'); document.getElementById('sidebarOverlay').classList.toggle('open'); }
+function closeSidebar(){ document.getElementById('sidebarDrawer').classList.remove('open'); document.getElementById('sidebarOverlay').classList.remove('open'); }
+function goCity(e){
+  if(e) e.preventDefault();
+  var u; try{ u=new URL('../../../index.html', location.href); }catch(err){ window.location.href='../../../index.html'; return; }
+  u.searchParams.set('lang', lang);
+  new URLSearchParams(location.search).forEach(function(v,k){ if(!u.searchParams.has(k)) u.searchParams.set(k,v); });
+  window.location.assign(u.href);
+}
+function buildSidebar(){
+  const nav=document.getElementById('sidebarNav'); if(!nav||!(window.MK&&MK.cornerNav))return; const isAr=lang==='ar';
+  nav.innerHTML=getCorners().map(c=>{
+    return `<a href="${c.url}?lang=${lang}" class="sidebar-item"><i>${c.icon}</i><span>${isAr?c.nameAr:c.nameEn}</span></a>`;
+  }).join('')
+  +`<a href="${MK.rel('corners/little-district/pages/parents.html')}?lang=${lang}" class="sidebar-item" style="background:rgba(212,160,23,.15);color:var(--gold)"><i>🧔</i><span>${isAr?'ركن الأهل':"Parents' Corner"}</span></a>`
+  +`<a href="../../../index.html?lang=${lang}" class="sidebar-item" style="margin-top:.7rem;border-inline-start:3px solid var(--gold)"><i>🏠</i><span>${isAr?'الصفحة الرئيسية':'Main Page'}</span></a>`;
+  document.getElementById('sidebarTitle').textContent=isAr?'🗺️ خريطة المدينة':'🗺️ City Map';
+}
+(function(){ const p=new URLSearchParams(location.search); if(p.get('lang'))lang=p.get('lang'); setLang(lang); })();
+document.addEventListener('DOMContentLoaded', buildSidebar);
+
+/* ═══════════ PARENT CONTROLS (profiles · PIN · corner locks) ═══════════ */
+var ctrlOK = false;
+function ctrlAr(){ return lang==='ar'; }
+function renderControls(){
+  var host=document.getElementById('ctrlBody'); if(!host||!window.MK) return;
+  var ar=ctrlAr();
+  if(MK.hasPin() && !ctrlOK){
+    host.innerHTML =
+      '<div class="ctrl-card" style="max-width:420px;margin:0 auto;text-align:center">'
+      +'<div style="font-size:2.4rem">🔐</div>'
+      +'<h3>'+(ar?'منطقةُ الأهل':'Parents only')+'</h3>'
+      +'<p class="ctrl-mut">'+(ar?'أدخِل رمزَ الحماية لإدارة الإعدادات':'Enter your PIN to manage settings')+'</p>'
+      +'<input id="ctrlPinIn" class="ctrl-pin" inputmode="numeric" maxlength="6" autocomplete="off">'
+      +'<div id="ctrlPinErr" class="ctrl-err"></div>'
+      +'<button class="ctrl-btn go" onclick="ctrlUnlock()">'+(ar?'دخول ←':'Unlock →')+'</button>'
+      +'</div>';
+    var inp=document.getElementById('ctrlPinIn');
+    inp.addEventListener('keydown',function(e){ if(e.key==='Enter') ctrlUnlock(); });
+    setTimeout(function(){ inp.focus(); },60);
+    return;
+  }
+  // unlocked (or no PIN yet)
+  var ps=MK.profiles(), activeId=MK.activeId();
+  var kidsHtml = ps.map(function(p){
+    var on = p.id===activeId;
+    return '<div class="kid-row">'
+      +'<span class="kid-avi" style="'+p.color+'">'+p.avatar+'</span>'
+      +'<span class="kid-name">'+escAttr(p.name)+(on?' <b class="kid-on">'+(ar?'• نشط':'• active')+'</b>':'')+'</span>'
+      +(on?'':'<button class="ctrl-btn sm" onclick="ctrlSwitch(\''+p.id+'\')">'+(ar?'تبديل':'Switch')+'</button>')
+      +'</div>';
+  }).join('') || '<p class="ctrl-mut">'+(ar?'لا يوجد أطفال بعد':'No children yet')+'</p>';
+
+  var locksHtml = MK.CORNERS.map(function(c){
+    var locked=MK.isLocked(c.id);
+    return '<div class="lock-row">'
+      +'<span class="lk-ic">'+c.icon+'</span>'
+      +'<span class="lk-nm">'+(ar?c.name.ar:c.name.en)+'</span>'
+      +'<button class="toggle '+(locked?'off':'on')+'" onclick="ctrlToggleLock(\''+c.id+'\')">'
+      +(locked?(ar?'🔒 مُقفَل':'🔒 Locked'):(ar?'🔓 مفتوح':'🔓 Open'))+'</button>'
+      +'</div>';
+  }).join('');
+
+  var pinHtml = MK.hasPin()
+    ? '<button class="ctrl-btn" onclick="ctrlSetPin(1)">'+(ar?'تغيير الرمز':'Change PIN')+'</button>'
+      +'<button class="ctrl-btn warn" onclick="ctrlRemovePin()">'+(ar?'إزالة الرمز':'Remove PIN')+'</button>'
+    : '<p class="ctrl-mut">'+(ar?'لا يوجد رمز بعد — أنشِئ رمزًا لحماية القفل والإعدادات.':'No PIN yet — create one to protect locks & settings.')+'</p>'
+      +'<button class="ctrl-btn go" onclick="ctrlSetPin(0)">'+(ar?'إنشاء رمز':'Create PIN')+'</button>';
+
+  host.innerHTML =
+    '<div class="ctrl-card"><h3>👨‍👩‍👧 '+(ar?'الأطفال':'Children')+'</h3>'
+    + '<div class="kids">'+kidsHtml+'</div>'
+    + '<button class="ctrl-btn go" style="margin-top:.7rem" onclick="ctrlAddChild()">＋ '+(ar?'إضافة / تبديل طفل':'Add / switch child')+'</button></div>'
+    + '<div class="ctrl-card"><h3>🔢 '+(ar?'رمز حماية الأهل':'Parent PIN')+'</h3><div class="ctrl-mut" style="margin-bottom:.6rem">'+(ar?'يمنع الطفل من فتح الأركان المقفلة أو تغيير الإعدادات.':'Stops kids from unlocking corners or changing settings.')+'</div><div class="ctrl-acts">'+pinHtml+'</div></div>'
+    + '<div class="ctrl-card"><h3>🔒 '+(ar?'قفل وفتح الأركان':'Lock &amp; unlock corners')+'</h3><div class="ctrl-mut" style="margin-bottom:.7rem">'+(ar?'الأركان المقفلة تحتاج رمز الأهل للدخول.':'Locked corners need the PIN to enter.')+'</div>'+locksHtml+'</div>';
+}
+function ctrlUnlock(){
+  var v=document.getElementById('ctrlPinIn').value.trim();
+  if(MK.checkPin(v)){ ctrlOK=true; renderControls(); }
+  else { document.getElementById('ctrlPinErr').textContent = ctrlAr()?'رمزٌ غير صحيح':'Wrong PIN'; document.getElementById('ctrlPinIn').value=''; }
+}
+function ctrlToggleLock(id){
+  var ar=ctrlAr();
+  var turningOn = !MK.isLocked(id);
+  /* A lock is meaningless without a PIN — the child could just toggle it back.
+     So the first time a parent locks anything, require them to create a PIN. */
+  if(turningOn && !MK.hasPin()){
+    var v=window.prompt(ar?'لتفعيل القفل أنشِئ أوّلاً رمزَ حمايةٍ من ٤ أرقام (سيُطلَب لفتح الأركان المقفلة):':'To lock corners, first create a 4-digit PIN (it will be required to unlock them):','');
+    if(v==null) return;
+    v=String(v).trim();
+    if(!/^[0-9]{4,6}$/.test(v)){ alert(ar?'الرمز يجب أن يكون ٤–٦ أرقام.':'PIN must be 4–6 digits.'); return; }
+    MK.setPin(v); ctrlOK=true;
+  }
+  MK.setLock(id, turningOn);
+  renderControls();
+}
+function ctrlSwitch(id){ MK.setActive(id); location.href='parents.html?lang='+lang; }
+function ctrlAddChild(){ if(window.MK) MK.snapshotActive(); location.href='../../shared/login.html?lang='+lang; }
+function ctrlSetPin(isChange){
+  var ar=ctrlAr();
+  var v=window.prompt(ar?'أدخِل رمزًا من ٤ أرقام:':'Enter a 4-digit PIN:','');
+  if(v==null) return;
+  v=String(v).trim();
+  if(!/^[0-9]{4,6}$/.test(v)){ alert(ar?'الرمز يجب أن يكون ٤–٦ أرقام.':'PIN must be 4–6 digits.'); return; }
+  MK.setPin(v); ctrlOK=true; renderControls();
+}
+function ctrlRemovePin(){
+  var ar=ctrlAr();
+  if(window.confirm(ar?'إزالة الرمز؟ ستُفتح كل الإعدادات بلا حماية.':'Remove the PIN? Settings will be unprotected.')){ MK.setPin(''); renderControls(); }
+}
+function escAttr(s){ return String(s).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];}); }
+
+/* ════════ OVERRIDES: complete cross-corner tracking + bag (uses MK_JOURNEYS) ════════ */
+const CORNER_NAME = id => { const c=(window.MK&&MK.corner)?MK.corner(id):null; return c?c.name:{ar:id,en:id}; };
+const CORNER_ICON = id => { const c=(window.MK&&MK.corner)?MK.corner(id):null; return c?c.icon:'🏛️'; };
+const CORNER_COL  = id => { const c=(window.MK&&MK.corner)?MK.corner(id):null; return c?c.color:'#D4A017'; };
+function computeStats(){
+  let doneStations=0, totalStations=0, journeysDone=0, journeysStarted=0;
+  const perJourney = (window.MK_JOURNEYS||[]).map(j=>{
+    const c = MK_J.completedOf(j);
+    doneStations+=c; totalStations+=j.total;
+    if(c>=j.total && j.total>0) journeysDone++;
+    if(c>0) journeysStarted++;
+    return Object.assign({}, j, {completed:c, pct: j.total?Math.round(c/j.total*100):0});
+  });
+  // Fold in CARD snapshots for corners not tracked as station-journeys (heart, history…)
+  // so the parents dashboard shows the SAME numbers as the corner score cards.
+  try {
+    const snap = JSON.parse(localStorage.getItem('mk:cornerCard')||'{}');
+    const covered = {}; perJourney.forEach(j=>{ covered[j.corner]=true; });
+    Object.keys(snap).forEach(cid=>{
+      if(covered[cid]) return;                 // already counted via station journeys
+      const cs=snap[cid]; if(!cs||!cs.station) return;
+      const done=cs.station[0]||0, total=cs.station[1]||0; if(!total) return;
+      doneStations+=done; totalStations+=total;
+      const jd=(cs.journey&&cs.journey[0])||0;
+      if(jd>0){ journeysDone+=jd; journeysStarted+=jd; } else if(done>0){ journeysStarted++; }
+      perJourney.push({ corner:cid, total:total, completed:done, pct: total?Math.round(done/total*100):0,
+        icon:CORNER_ICON(cid), color:CORNER_COL(cid), name:CORNER_NAME(cid), fromCard:true });
+    });
+  } catch(e){}
+  return { perJourney, doneStations, totalStations, journeysDone, journeysStarted,
+           points:doneStations*10, pct: totalStations?Math.round(doneStations/totalStations*100):0 };
+}
+function renderCharts(s){
+  const cornerMap={};
+  s.perJourney.forEach(j=>{ const k=j.corner; (cornerMap[k]=cornerMap[k]||{done:0,total:0,color:CORNER_COL(k)}); cornerMap[k].done+=j.completed; cornerMap[k].total+=j.total; });
+  const keys=Object.keys(cornerMap);
+  const labels=keys.map(k=>tx(CORNER_NAME(k))), data=keys.map(k=>cornerMap[k].total?Math.round(cornerMap[k].done/cornerMap[k].total*100):0), cols=keys.map(k=>cornerMap[k].color);
+  const remain=Math.max(0,100-s.pct);
+  if(doughnutChart)doughnutChart.destroy();
+  doughnutChart=new Chart(document.getElementById('doughnut'),{type:'doughnut',
+    data:{labels:[lang==='ar'?'مكتمل':'Done',lang==='ar'?'متبقٍّ':'Left'],datasets:[{data:[s.pct,remain],backgroundColor:['#D4A017','rgba(255,255,255,.1)'],borderWidth:0}]},
+    options:{cutout:'72%',plugins:{legend:{display:false},tooltip:{callbacks:{label:c=>c.label+': '+c.parsed+'%'}}}}});
+  const centerTxt={id:'ct',afterDraw(ch){const{ctx,chartArea:{left,right,top,bottom}}=ch;ctx.save();ctx.font='900 1.7rem Tajawal';ctx.fillStyle='#F5CC5A';ctx.textAlign='center';ctx.textBaseline='middle';ctx.fillText(s.pct+'%',(left+right)/2,(top+bottom)/2);ctx.restore();}};
+  doughnutChart.config.plugins=[centerTxt]; doughnutChart.update();
+  if(barChart)barChart.destroy();
+  barChart=new Chart(document.getElementById('barchart'),{type:'bar',
+    data:{labels,datasets:[{data,backgroundColor:cols,borderRadius:8,barThickness:'flex',maxBarThickness:46}]},
+    options:{plugins:{legend:{display:false},tooltip:{callbacks:{label:c=>c.parsed+'%'}}},
+      scales:{y:{beginAtZero:true,max:100,ticks:{color:'rgba(254,245,220,.6)',callback:v=>v+'%'},grid:{color:'rgba(255,255,255,.08)'}},
+              x:{ticks:{color:'rgba(254,245,220,.8)',font:{size:10,weight:700}},grid:{display:false}}}}});
+}
+function renderTracking(){
+  const s=computeStats();
+  document.getElementById('pbPoints').textContent=s.points;
+  document.getElementById('stStations').textContent=s.doneStations;
+  document.getElementById('stJourneys').textContent=s.journeysDone;
+  document.getElementById('stPct').textContent=s.pct+'%';
+  document.getElementById('stActive').textContent=s.journeysStarted;
+  const {lv,next}=levelFor(s.points);
+  document.getElementById('pbLevel').textContent=lv.icon;
+  document.getElementById('pbLevelName').textContent=lang==='ar'?lv.ar:lv.en;
+  if(next){
+    const span=next.min-lv.min, prog=s.points-lv.min;
+    document.getElementById('pbFill').style.width=Math.min(100,Math.round(prog/span*100))+'%';
+    document.getElementById('pbNext').textContent=(lang==='ar'?`${next.min-s.points} نقطة للمستوى التالي: ${next.ar} ${next.icon}`:`${next.min-s.points} points to next level: ${next.en} ${next.icon}`);
+  } else { document.getElementById('pbFill').style.width='100%'; document.getElementById('pbNext').textContent=lang==='ar'?'🎉 أعلى مستوى!':'🎉 Top level!'; }
+  renderCharts(s);
+  const order = (window.MK&&MK.CORNERS)?MK.CORNERS.map(c=>c.id):[];
+  const groups = {};
+  s.perJourney.forEach(j=>{ (groups[j.corner]=groups[j.corner]||[]).push(j); });
+  const orderedCorners = order.filter(id=>groups[id]&&groups[id].length);
+  document.getElementById('jList').innerHTML = orderedCorners.map(cid=>{
+    const js=groups[cid];
+    let cdone=0, ctot=0; js.forEach(j=>{cdone+=j.completed;ctot+=j.total;});
+    const cpct=ctot?Math.round(cdone/ctot*100):0;
+    const rows=js.map(j=>{
+      const full=j.completed>=j.total;
+      const cj=JSON.stringify({id:j.id,icon:j.icon,name:j.name,corner:j.corner,total:j.total}).replace(/'/g,'&#39;');
+      return `<div class="jrow">
+        <div class="ji">${j.icon}</div>
+        <div class="jmid">
+          <div class="jn" title="${tx(j.name)}">${tx(j.name)}</div>
+          <div class="jc">${j.completed}/${j.total} · 🎖️${j.completed} 🃏${j.completed} 🔑${j.completed}</div>
+          <div class="jbar"><i style="width:${j.pct}%;--jc:${j.color}"></i></div>
+        </div>
+        <div class="jpct">${j.pct}%</div>
+        <button class="cert-btn ${full?'done':''}" ${j.completed>0?'':'disabled'} onclick='openCert(${cj})'>${full?(lang==='ar'?'🏅 شهادة':'🏅 Cert'):(lang==='ar'?'شهادة':'Cert')}</button>
+      </div>`;
+    }).join('');
+    return `<div class="corner-group" style="--cc:${CORNER_COL(cid)}">
+      <div class="cg-head">
+        <span class="cg-ic">${CORNER_ICON(cid)}</span>
+        <span class="cg-nm">${tx(CORNER_NAME(cid))}</span>
+        <span class="cg-pct">${cpct}%</span>
+        <button class="bag-btn" onclick="openBag('${cid}')">🎒 ${lang==='ar'?'الحقيبة':'Bag'}</button>
+      </div>
+      <div class="cg-bar"><i style="width:${cpct}%;${CORNER_COL(cid)}"></i></div>
+      ${rows}
+    </div>`;
+  }).join('');
+}
+function openBag(cid){
+  const st=MK_J.cornerStats(cid);
+  const ar=lang==='ar';
+  const body=st.journeys.map(j=>{
+    const c=MK_J.completedOf(j), full=c>=j.total;
+    const cj=JSON.stringify({id:j.id,icon:j.icon,name:j.name,corner:j.corner,total:j.total}).replace(/'/g,'&#39;');
+    return `<div class="bag-j">
+      <div class="bag-j-top"><span class="bag-j-ic">${j.icon}</span><span class="bag-j-nm">${tx(j.name)}</span><span class="bag-j-pct">${j.total?Math.round(c/j.total*100):0}%</span></div>
+      <div class="bag-collect"><span class="bag-chip">🎖️ ${c} ${ar?'أوسمة':'badges'}</span><span class="bag-chip">🃏 ${c} ${ar?'بطاقات':'cards'}</span><span class="bag-chip">🔑 ${c} ${ar?'مفاتيح':'keys'}</span></div>
+      <div class="bag-j-acts">
+        <button class="cert-btn ${full?'done':''}" ${c>0?'':'disabled'} onclick='openCert(${cj})'>${ar?'🏅 الشهادة':'🏅 Certificate'}</button>
+        <a class="bag-open" href="../../${j.page}${j.page.indexOf('?')>-1?'&':'?'}lang=${lang}">${ar?'افتح الجمعية ←':'View collection →'}</a>
+      </div>
+    </div>`;
+  }).join('');
+  document.getElementById('bagTitle').innerHTML = CORNER_ICON(cid)+' '+(ar?'حقيبة ':'Bag · ')+tx(CORNER_NAME(cid));
+  document.getElementById('bagSub').textContent = ar
+    ? `${st.done} محطة · ${st.journeysDone} رحلة مكتملة · ${st.pct}٪`
+    : `${st.done} stations · ${st.journeysDone} journeys done · ${st.pct}%`;
+  document.getElementById('bagBody').innerHTML = body || '<p class="ctrl-mut">—</p>';
+  document.getElementById('bagOverlay').classList.add('open');
+}
+function closeBag(){ document.getElementById('bagOverlay').classList.remove('open'); }
+function openCert(j){
+  const jj=(window.MK_JOURNEYS||[]).find(x=>x.id===j.id);
+  const completed = jj?MK_J.completedOf(jj):0;
+  const cornerName = CORNER_NAME(j.corner);
+  const nm=localStorage.getItem('parentChildName')|| (window.MK&&MK.activeProfile()?MK.activeProfile().name:'') ||'';
+  const box=document.getElementById('certBox');
+  const stmt = lang==='ar'
+    ? `أتمّ هذا البطلُ الصغيرُ <b>${completed}</b> من ${j.total} محطةً في «${tx(j.name)}» ضمن ${tx(cornerName)}، فاستحقّ هذا التكريم. بارك الله فيه.`
+    : `This young hero completed <b>${completed}</b> of ${j.total} stations in "${tx(j.name)}" within ${tx(cornerName)}, earning this honor. May Allah bless him.`;
+  box.innerHTML=`<div class="cseal">${j.icon}</div>
+    <div class="ckick">${lang==='ar'?'تربية الطفل المسلم · ركن الأهل':'Muslim Kids’ Tarbiyah · Parents Corner'}</div>
+    <div class="ctitle">${lang==='ar'?'شهادة تميّز':'Certificate of Excellence'}</div>
+    <div class="cname" id="certNameTxt">${nm||(lang==='ar'?'اسم الطفل':'Child Name')}</div>
+    <div class="cstate">${stmt}</div>
+    <div class="cfoot">${completed} 🎖️ · ${tx(j.name)}</div>`;
+  const inp=document.getElementById('certNameIn'); inp.value=nm;
+  inp.oninput=()=>{ localStorage.setItem('parentChildName',inp.value); document.getElementById('certNameTxt').textContent=inp.value||(lang==='ar'?'اسم الطفل':'Child Name'); };
+  document.getElementById('certOverlay').classList.add('open');
+}
+</script>
+<script defer src="../../shared/nav-fix.js"></script>
+<script src="../../shared/mk-notify.js"></script>
+</body>
+</html>

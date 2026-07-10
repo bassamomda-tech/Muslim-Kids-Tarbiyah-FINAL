@@ -150,6 +150,7 @@
   function openStation(i){
     cur=i; const st=S[i]; if(st.locked) return;
     const L=lang, d=done.has(st.id), card=cardOf(st);
+    function splitP(h){h=(h==null?'':''+h);var a=h.replace(/([.!?\u061F\u2026])\s+/g,'$1\u0001').split('\u0001').map(function(s){return s.trim();}).filter(function(s){return s.length;});return a.length<2?h:a.map(function(s){return '<span class="st-line" style="display:block;margin-bottom:.6rem;padding-inline-start:.8rem;border-inline-start:3px solid rgba(255,255,255,.16)">'+s+' </span>';}).join('');}
     $('#rBody').innerHTML=`
       <div class="s-hero" style="--accent:${st.color}">
         <div class="ring">${st.icon}</div>
@@ -160,7 +161,7 @@
 
         <div class="block wow">
           <h3><span class="bi">🎙️</span>${t(T.hNarr)}</h3>
-          <p>${st.narration[L]}</p>
+          <p>${splitP(st.narration[L])}</p>
         </div>
 
         <div class="block chance">
@@ -170,7 +171,7 @@
             <div class="mc-body"><div class="mc-name">${t(T.shSays)}</div><div class="mc-say">${st.shubha[L]}</div></div>
           </div>
           <div class="rebut-tag">🛡️ ${t(T.rebut)}</div>
-          <p>${st.logic[L]}</p>
+          <p>${splitP(st.logic[L])}</p>
         </div>
 
         <div class="block myth">
@@ -421,7 +422,7 @@
 (function(){
   if(window.__mkTTS) return; window.__mkTTS=true;
   var synth = window.speechSynthesis; if(!synth) return;
-  function strip(h){ var d=document.createElement('div'); d.innerHTML=h; return (d.textContent||'').replace(/\s+/g,' ').trim(); }
+  function strip(h){ var d=document.createElement('div'); d.innerHTML=h; var t=(d.textContent||''); try{ t=t.replace(/[\u{1F000}-\u{1FFFF}\u{2190}-\u{2BFF}\u{FE00}-\u{FE0F}\u{200D}\u{20E3}]/gu,''); }catch(e){} return t.replace(/\s+/g,' ').trim(); }
   function L(){ return localStorage.getItem('bunyanLang')||'ar'; }
   var speaking=false, btn=null;
   function label(on){ return on ? ('⏸ '+(L()==='ar'?'إيقاف':'Stop')) : ('🔊 '+(L()==='ar'?'استمِع':'Listen')); }

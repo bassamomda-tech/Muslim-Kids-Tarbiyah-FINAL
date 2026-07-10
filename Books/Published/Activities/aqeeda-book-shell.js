@@ -60,3 +60,16 @@
 
   document.getElementById('book').innerHTML = cover + pages + tally + cert;
 })();
+
+
+  /* print-fit: scale any over-tall sheet so it fits ONE A4 page */
+  (function(){
+    var BUDGET=1050;
+    function fit(){ document.querySelectorAll('.sheet').forEach(function(p){
+      p.style.zoom=''; var h=p.scrollHeight||p.offsetHeight;
+      if(h>BUDGET+70) p.style.zoom=String(BUDGET/h);
+    }); }
+    function unfit(){ document.querySelectorAll('.sheet').forEach(function(p){ p.style.zoom=''; }); }
+    window.addEventListener('beforeprint',fit);
+    window.addEventListener('afterprint',unfit);
+  })();

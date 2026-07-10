@@ -1,0 +1,238 @@
+/* corners/stories/minaret-little/qadar.js — سرّ التقدير (القضاء والقدر) للصغار (٣–٦)
+   ١٠ حكايات مبسّطة من محطات «رحلة سرّ التقدير» في منارة العقيدة — بسلامٍ وطمأنينة.
+   كل صفحة: emoji (بديل مؤقت) + text (سطران سهلان) + prompt (وصف صورة إنجليزي لتوليدها لاحقاً). */
+window.MINARET_LITTLE = window.MINARET_LITTLE || {};
+window.MINARET_LITTLE.qadar = {
+  id:'qadar', icon:'🗝️', color:'#B03A5B', title:'سِرُّ التَّقْدِير', tag:'الْقَضَاءُ وَالْقَدَر',
+  stories:[
+
+{ id:'qalam', icon:'🖋️', color:'#3E7CB1', title:'الْقَلَمُ الَّذِي كَتَبَ كُلَّ شَيْء',
+  tag:'اللهُ يَعْلَمُ كُلَّ شَيْءٍ قَبْلَ حُدُوثِه',
+  pages:[
+    { emoji:'🖋️', text:'أَوَّلُ مَا خَلَقَ اللهُ الْقَلَم، فَقَالَ لَه: اكْتُبْ! فَكَتَبَ كُلَّ مَا سَيَحْدُثُ إِلَى يَوْمِ الْقِيَامَة.',
+      prompt:'A glowing golden pen writing on a vast luminous tablet in the sky, sacred and calm, no faces' },
+    { emoji:'📜', text:'قَبْلَ أَنْ تُولَدَ بِآلَافِ السِّنِين، كَتَبَ اللهُ فِي اللَّوْحِ الْمَحْفُوظِ كُلَّ شَيْء.',
+      prompt:'A radiant preserved tablet of light among the stars, timeless and majestic, deep blue and gold' },
+    { emoji:'💡', text:'وَكَتَبَ اللهُ ذَلِكَ لِأَنَّهُ يَعْلَمُ كُلَّ شَيْء، لَا لِيُجْبِرَك — بَلْ عِلْمُهُ كَامِل.',
+      prompt:'A gentle glowing lightbulb over an open book, knowledge and understanding, warm light' },
+    { emoji:'💙', text:'اللهُ يَعْلَمُ وَيَكْتُبُ وَيَشَاءُ وَيَخْلُق، وَكُلُّ شَيْءٍ يَجْرِي بِحِكْمَتِه.',
+      prompt:'A serene starry sky with everything in gentle harmony, order and wisdom, teal and gold' },
+  ],
+  moral:'اللهُ كَتَبَ بِعِلْمِهِ مَا سَأَخْتَارُهُ بِحُرِّيَّتِي — الْعِلْمُ لَا يُجْبِر. 💙',
+  game:{ type:'order', title:'رَتِّبْ كَيْفَ يَجْرِي الْقَدَر', items:[
+    { e:'🧠', t:'اللهُ يَعْلَم' },
+    { e:'🖋️', t:'ثُمَّ يَكْتُب' },
+    { e:'💫', t:'ثُمَّ يَشَاء' },
+    { e:'🌍', t:'ثُمَّ يَخْلُق' } ] },
+  act:{ q:'مَا أَوَّلُ مَا خَلَقَ الله؟', yay:'أَحْسَنْت! الْقَلَمُ الَّذِي كَتَبَ الْمَقَادِير', opts:[
+    { e:'🖋️', t:'الْقَلَم', ok:true },
+    { e:'⭐', t:'النُّجُوم' },
+    { e:'🌊', t:'الْبَحْر' } ] },
+  dua:'اللَّهُمَّ إِنِّي أُؤْمِنُ بِقَضَائِكَ وَقَدَرِك' },
+
+{ id:'keys', icon:'🗝️', color:'#5B8C5A', title:'مَفَاتِيحُ الْقَدَرِ الْأَرْبَعَة',
+  tag:'عِلْمٌ وَكِتَابَةٌ وَمَشِيئَةٌ وَخَلْق',
+  pages:[
+    { emoji:'🧠', text:'لِتَفْهَمَ الْقَدَرَ خُذْ أَرْبَعَةَ مَفَاتِيح. الْأَوَّل: الْعِلْم — اللهُ يَعْلَمُ كُلَّ شَيْءٍ قَبْلَ حُدُوثِه.',
+      prompt:'One golden key glowing with a lightbulb symbol, first of four, warm clean illustration' },
+    { emoji:'📜', text:'الثَّانِي: الْكِتَابَة — كَتَبَ هَذَا الْعِلْمَ فِي اللَّوْحِ الْمَحْفُوظ.',
+      prompt:'A second golden key with a scroll symbol glowing softly, elegant' },
+    { emoji:'💫', text:'الثَّالِث: الْمَشِيئَة — مَا شَاءَ اللهُ كَانَ وَمَا لَمْ يَشَأْ لَمْ يَكُن.',
+      prompt:'A third golden key with a star symbol radiating light, will and power' },
+    { emoji:'🌍', text:'الرَّابِع: الْخَلْق — اللهُ خَالِقُ كُلِّ شَيْء، حَتَّى أَفْعَالُنَا هُوَ خَالِقُهَا.',
+      prompt:'A fourth golden key with a globe symbol glowing, creation, warm colors' },
+  ],
+  moral:'عِلْمٌ ثُمَّ كِتَابَةٌ ثُمَّ مَشِيئَةٌ ثُمَّ خَلْق — مَفَاتِيحُ الطُّمَأْنِينَة. 🗝️',
+  game:{ type:'pairs', title:'صِلْ كُلَّ مِفْتَاحٍ بِمَعْنَاه', pairs:[
+    ['🧠 الْعِلْم','يَعْلَمُ قَبْلَ الْحُدُوث'],
+    ['📜 الْكِتَابَة','كَتَبَهُ فِي اللَّوْح'],
+    ['💫 الْمَشِيئَة','مَا شَاءَ كَان'],
+    ['🌍 الْخَلْق','خَالِقُ كُلِّ شَيْء'] ] },
+  act:{ q:'كَمْ مِفْتَاحًا لِفَهْمِ الْقَدَر؟', yay:'صَحِيح! أَرْبَعَة: عِلْمٌ وَكِتَابَةٌ وَمَشِيئَةٌ وَخَلْق', opts:[
+    { e:'4️⃣', t:'أَرْبَعَةُ مَفَاتِيح', ok:true },
+    { e:'☝️', t:'مِفْتَاحٌ وَاحِد' },
+    { e:'🔟', t:'عَشَرَة' } ] },
+  dua:'اللَّهُمَّ فَقِّهْنِي فِي دِينِك' },
+
+{ id:'choose', icon:'🚦', color:'#D08C34', title:'أَنْتَ تَخْتَارُ حَقًّا',
+  tag:'لَسْتَ مَجْبُورًا',
+  pages:[
+    { emoji:'🛤️', text:'إِنْ كَانَ كُلُّ شَيْءٍ مَكْتُوبًا، فَهَلْ أَنَا حُرٌّ أَمْ مَجْبُور؟ الْجَوَاب: أَنْتَ حُرٌّ مُخْتَار!',
+      prompt:'A friendly road splitting into two paths under a bright sky, a small figure choosing, hopeful' },
+    { emoji:'🧠', text:'أَعْطَاكَ اللهُ عَقْلًا وَإِرَادَة. حِينَ تُرِيدُ أَنْ تَصْدُقَ أَوْ تَكْذِب، أَنْتَ تَخْتَارُ بِنَفْسِك.',
+      prompt:'A child at a crossroads thinking with a thought bubble showing good and choice, warm illustration' },
+    { emoji:'🚗', text:'أَنْتَ كَقَائِدِ سَيَّارَةٍ عَلَى طَرِيقٍ فِيهِ مَخْرَجَان: اللهُ عَلِمَ اخْتِيَارَك، وَيَدُكَ عَلَى الْمِقْوَد.',
+      prompt:'A cheerful cartoon car at a fork in the road, hands on the wheel choosing a direction, bright' },
+    { emoji:'💚', text:'وَاللهُ لَا يُحَاسِبُكَ إِلَّا عَلَى مَا تَفْعَلُهُ بِاخْتِيَارِك. الثَّوَابُ دَلِيلٌ أَنَّكَ مُخْتَار.',
+      prompt:'A glowing balance scale under soft light with a happy heart beside it, fairness and choice' },
+  ],
+  moral:'يَدِي عَلَى الْمِقْوَد: أَخْتَارُ الْخَيْرَ وَلَا أُعَلِّقُ خَطَئِي عَلَى الْقَدَر. 🚦',
+  game:{ type:'sort', title:'مَاذَا نَفْعَلُ فِي كُلِّ حَالَة؟', bins:['مُصِيبَة: أُؤْمِنُ وَأَصْبِر 💚','ذَنْب: لَا أَحْتَجُّ بِالْقَدَرِ بَلْ أَتُوب 🛑'], items:[
+    { e:'🤕', t:'أَصَابَتْنِي مُصِيبَة', bin:0 },
+    { e:'😔', t:'أَخْطَأْتُ وَأَذْنَبْت', bin:1 },
+    { e:'🌧️', t:'ضَاعَ شَيْءٌ أُحِبُّه', bin:0 },
+    { e:'🤥', t:'كَذَبْتُ بِاخْتِيَارِي', bin:1 } ] },
+  act:{ q:'هَلْ يَصِحُّ أَنْ نَحْتَجَّ بِالْقَدَرِ عَلَى أَخْطَائِنَا؟', yay:'صَحِيح! نُؤْمِنُ بِهِ فِي الْبَلَاءِ وَنَتُوبُ مِنَ الذَّنْب', opts:[
+    { e:'🙅', t:'لَا! نَتُوبُ مِنَ الذَّنْبِ وَلَا نَحْتَجّ', ok:true },
+    { e:'🤷', t:'نَعَم، الْقَدَرُ عُذْرِي' },
+    { e:'😴', t:'لَا أَعْرِف' } ] },
+  dua:'اللَّهُمَّ أَلْهِمْنِي رُشْدِي، وَأَعِذْنِي مِنْ شَرِّ نَفْسِي' },
+
+{ id:'camel', icon:'🐪', color:'#B5652E', title:'اعْقِلْ نَاقَتَكَ وَتَوَكَّل',
+  tag:'خُذْ بِالْأَسْبَابِ ثُمَّ تَوَكَّل',
+  pages:[
+    { emoji:'🐪', text:'جَاءَ رَجُلٌ عَلَى نَاقَتِهِ وَسَأَل: أَأَرْبِطُهَا وَأَتَوَكَّل، أَمْ أَتْرُكُهَا وَأَتَوَكَّل؟',
+      prompt:'A friendly camel beside a tent in the desert at golden hour, a rope nearby, storybook style' },
+    { emoji:'🪢', text:'فَقَالَ النَّبِيُّ ﷺ: اعْقِلْهَا وَتَوَكَّل! اِرْبِطْهَا أَوَّلًا ثُمَّ تَوَكَّلْ عَلَى الله.',
+      prompt:'A camel tied to a post with a neat rope, secure and calm, warm desert evening' },
+    { emoji:'📚', text:'تُرِيدُ النَّجَاحَ فِي الِامْتِحَان؟ ذَاكِرْ (السَّبَب) ثُمَّ تَوَكَّلْ وَادْعُ.',
+      prompt:'A child studying happily at a desk with books, warm lamplight, focused and hopeful' },
+    { emoji:'💚', text:'الْأَخْذُ بِالْأَسْبَابِ لَيْسَ ضَعْفًا فِي التَّوَكُّل، بَلْ هُوَ التَّوَكُّلُ الصَّحِيح.',
+      prompt:'A child raising hands in dua after finishing work, warm glow, trust and effort together' },
+  ],
+  moral:'آخُذُ بِالسَّبَبِ بِيَدِي، وَأُعَلِّقُ قَلْبِي بِرَبِّي. 🪢',
+  game:{ type:'pairs', title:'صِلْ كُلَّ هَدَفٍ بِسَبَبِه', pairs:[
+    ['📚 النَّجَاح','الْمُذَاكَرَةُ ثُمَّ التَّوَكُّل'],
+    ['💪 الصِّحَّة','الطَّعَامُ الصِّحِّيُّ وَالنَّظَافَة'],
+    ['🐪 نَاقَةٌ لَا تَهْرُب','اعْقِلْهَا وَتَوَكَّل'] ] },
+  act:{ q:'مَاذَا قَالَ النَّبِيُّ ﷺ لِصَاحِبِ النَّاقَة؟', yay:'أَحْسَنْت! اعْقِلْهَا (ارْبِطْهَا) وَتَوَكَّل', opts:[
+    { e:'🪢', t:'اعْقِلْهَا وَتَوَكَّل', ok:true },
+    { e:'🏃', t:'اتْرُكْهَا تَهْرُب' },
+    { e:'😴', t:'نَمْ وَلَا تَهْتَمّ' } ] },
+  dua:'حَسْبِيَ اللهُ وَنِعْمَ الْوَكِيل' },
+
+{ id:'missed', icon:'🎯', color:'#2E8B82', title:'مَا أَخْطَأَكَ لَمْ يَكُنْ لِيُصِيبَك',
+  tag:'لَا حَسَدَ وَلَا نَدَم',
+  pages:[
+    { emoji:'🍃', text:'قَالَ النَّبِيُّ ﷺ لِابْنِ عَبَّاسٍ الصَّغِير: مَا أَخْطَأَكَ لَمْ يَكُنْ لِيُصِيبَك، وَمَا أَصَابَكَ لَمْ يَكُنْ لِيُخْطِئَك.',
+      prompt:'A gentle leaf floating on a soft breeze in a calm sky, peace and acceptance, warm light' },
+    { emoji:'🎁', text:'كُلُّ خَيْرٍ وَصَلَ إِلَيْكَ كَانَ مَكْتُوبًا لَك، لَا يَسْتَطِيعُ أَحَدٌ مَنْعَه.',
+      prompt:'A wrapped gift with a name tag glowing softly, meant for you, warm and reassuring' },
+    { emoji:'😌', text:'وَكُلُّ شَيْءٍ فَاتَكَ مَا كَانَ لَكَ، فَلَا تَحْزَنْ عَلَيْه.',
+      prompt:'A child calmly watching a balloon float away with a peaceful smile, acceptance, soft sky' },
+    { emoji:'💚', text:'فَلَا نَحْسُدُ أَحَدًا: نَصِيبُهُ لَهُ وَنَصِيبُنَا لَنَا. وَلَا نَنْدَمُ نَدَمًا قَاتِلًا.',
+      prompt:'Two children each holding their own gift, content and smiling, no envy, warm friendship' },
+  ],
+  moral:'مَا فَاتَنِي مَا كَانَ لِي، وَاللهُ ادَّخَرَ لِي خَيْرًا. 💚',
+  game:{ type:'sort', title:'مَاذَا نَقُولُ فِي كُلِّ حَالَة؟', bins:['قَوْلٌ جَمِيل ✅','قَوْلُ النَّدَم 🚫'], items:[
+    { e:'😌', t:'مَا كَانَ لِي، وَاللهُ ادَّخَرَ خَيْرًا', bin:0 },
+    { e:'😩', t:'لَوْ فَعَلْتُ كَذَا لَتَغَيَّرَ كُلُّ شَيْء', bin:1 },
+    { e:'🤲', t:'قَدَّرَ اللهُ وَمَا شَاءَ فَعَل', bin:0 },
+    { e:'😤', t:'لِمَاذَا أَنَا؟ حَيَاتِي خَرِبَت!', bin:1 } ] },
+  act:{ q:'مَاذَا نَقُولُ بَدَلَ «لَوْ» عِنْدَ النَّدَم؟', yay:'صَحِيح! قَدَّرَ اللهُ وَمَا شَاءَ فَعَل', opts:[
+    { e:'🤲', t:'قَدَّرَ اللهُ وَمَا شَاءَ فَعَل', ok:true },
+    { e:'😩', t:'لَوْ… لَوْ… لَوْ…' },
+    { e:'😴', t:'لَا شَيْء' } ] },
+  dua:'اللَّهُمَّ رَضِّنِي بِقَضَائِك، وَعَوِّضْنِي عَمَّا فَاتَنِي' },
+
+{ id:'hidden', icon:'🎁', color:'#6A7FB5', title:'الْخَيْرُ الْمُخْتَبِئُ فِي الْبَلَاء',
+  tag:'أَمْرُ الْمُؤْمِنِ كُلُّهُ خَيْر',
+  pages:[
+    { emoji:'🎁', text:'قَالَ النَّبِيُّ ﷺ: عَجَبًا لِلْمُؤْمِن! أَمْرُهُ كُلُّهُ خَيْر: يَشْكُرُ فِي الْفَرَحِ وَيَصْبِرُ فِي الشِّدَّة.',
+      prompt:'A gift box with a surprise glow of light inside, hidden good, warm and joyful' },
+    { emoji:'💊', text:'كَثِيرٌ مِمَّا نَظُنُّهُ سَيِّئًا فِيهِ خَيْرٌ خَفِيّ. الدَّوَاءُ مُرٌّ لَكِنَّهُ يَشْفِي.',
+      prompt:'A spoon of medicine with a small heart above it, bitter but healing, gentle illustration' },
+    { emoji:'🤒', text:'أُمُّكَ تُحِبُّكَ وَتَأْخُذُكَ لِلطَّبِيبِ لِإِبْرَةٍ مُؤْلِمَة — لِأَنَّهَا تَحْمِيكَ مِنْ مَرَضٍ كَبِير.',
+      prompt:'A caring parent silhouette comforting a child at a clinic, gentle and loving, soft colors' },
+    { emoji:'💙', text:'وَاللهُ أَحْكَمُ وَأَرْحَم: مَا اخْتَارَهُ لَكَ خَيْر، حَتَّى لَوْ لَمْ تَفْهَمْهُ الْيَوْم.',
+      prompt:'Rain falling on green fields that bloom, hidden blessing revealed, hopeful warm light' },
+  ],
+  moral:'رَبِّي الطَّبِيبُ الْأَعْظَم: مَا اخْتَارَهُ لِي خَيْرٌ وَإِنْ لَمْ أَفْهَمْه. 💙',
+  game:{ type:'pairs', title:'صِلْ كُلَّ شَيْءٍ مُرٍّ بِخَيْرِهِ الْخَفِيّ', pairs:[
+    ['💊 الدَّوَاءُ الْمُرّ','يَشْفِي مِنَ الْمَرَض'],
+    ['🌧️ الْمَطَرُ يُعَطِّلُ اللَّعِب','يُحْيِي الْأَرْض'],
+    ['💉 إِبْرَةُ الطَّبِيب','تَقِي مِنْ مَرَضٍ كَبِير'] ] },
+  act:{ q:'هَلْ يُعْطِينَا اللهُ الْأَلَمَ لِأَنَّهُ لَا يُحِبُّنَا؟', yay:'أَحْسَنْت! قَدْ يَكُونُ فِيهِ خَيْرٌ خَفِيٌّ وَرَحْمَة', opts:[
+    { e:'🙅', t:'لَا! فِيهِ حِكْمَةٌ وَخَيْرٌ خَفِيّ', ok:true },
+    { e:'😢', t:'نَعَم، لَا يَهْتَمُّ بِنَا' },
+    { e:'🤷', t:'لَا أَعْرِف' } ] },
+  dua:'اللَّهُمَّ لَكَ الْحَمْدُ عَلَى كُلِّ حَال' },
+
+{ id:'rida', icon:'😌', color:'#3FA796', title:'الْكَلِمَةُ السِّحْرِيَّة',
+  tag:'قَدَّرَ اللهُ وَمَا شَاءَ فَعَل',
+  pages:[
+    { emoji:'☘️', text:'أُعَلِّمُكَ كَلِمَةً سِحْرِيَّةً تُحَوِّلُ الْغَضَبَ إِلَى سَكِينَةٍ فِي ثَانِيَة: كَلِمَةُ الرِّضَا.',
+      prompt:'A calm four-leaf clover glowing softly with a peaceful aura, serenity, gentle greens' },
+    { emoji:'🥛', text:'تَكْسِرُ كُوبًا بِلَا قَصْد؟ بَدَلَ الْغَضَب، قُلْ بِهُدُوء: قَدَّرَ اللهُ وَمَا شَاءَ فَعَل.',
+      prompt:'A gently broken cup on the floor with soft calm light, no drama, accepting mood' },
+    { emoji:'💧', text:'هَذِهِ الْكَلِمَةُ كَالْمَاءِ الْبَارِدِ يُطْفِئُ نَارَ الْغَضَبِ فَوْرًا.',
+      prompt:'Cool blue water gently putting out a small flame, calming metaphor, soft illustration' },
+    { emoji:'💚', text:'وَمَنْ رَضِيَ بِقَدَرِ الله، رَضِيَ اللهُ عَنْه! الرِّضَا أَعْلَى مِنَ الصَّبْر.',
+      prompt:'A peaceful child with a serene smile and a soft glow around the heart, contentment, warm' },
+  ],
+  moral:'الرِّضَا أَقْوَى مِنَ الْغَضَب، وَ«قَدَّرَ اللهُ» تُطْفِئُ نَارِي. ☘️',
+  game:{ type:'find', title:'أَطْفِئْ نَارَ الْغَضَب! الْمِسْ قَطَرَاتِ الْمَاءِ الْبَارِدِ السِّتّ', target:'💧', count:6, distractors:['🔥','☁️'], size:12 },
+  act:{ q:'مَاذَا نَقُولُ حِينَ يَحْدُثُ مَا يُغْضِبُنَا؟', yay:'صَحِيح! تُطْفِئُ الْغَضَبَ كَالْمَاءِ الْبَارِد', opts:[
+    { e:'☘️', t:'قَدَّرَ اللهُ وَمَا شَاءَ فَعَل', ok:true },
+    { e:'😡', t:'نَصْرُخُ وَنَغْضَب' },
+    { e:'😭', t:'نَبْكِي طَوِيلًا' } ] },
+  dua:'رَضِيتُ بِاللهِ رَبًّا وَبِالْإِسْلَامِ دِينًا وَبِمُحَمَّدٍ ﷺ نَبِيًّا' },
+
+{ id:'dua', icon:'🤍', color:'#7E6BB0', title:'الدُّعَاءُ يُغَيِّر',
+  tag:'كَنْزُ الْمُؤْمِن',
+  pages:[
+    { emoji:'🌟', text:'هَلْ يَنْفَعُ الدُّعَاءُ مَا دَامَ كُلُّ شَيْءٍ مَكْتُوبًا؟ نَعَم! الدُّعَاءُ مِنْ أَقْوَى الْأَسْبَاب.',
+      prompt:'A child raising open hands to a glowing sky full of soft stars, hopeful dua, warm and tender' },
+    { emoji:'📖', text:'قَالَ النَّبِيُّ ﷺ: لَا يَرُدُّ الْقَضَاءَ إِلَّا الدُّعَاء. فَدُعَاؤُكَ نَفْسُهُ جُزْءٌ مِنَ الْقَدَر!',
+      prompt:'A beam of light rising from praying hands up to the heavens, connection and hope, radiant' },
+    { emoji:'🚪', text:'اللهُ الْمَلِكُ الْكَرِيمُ يُحِبُّ أَنْ تَطْلُبَ مِنْه، وَبَابُهُ لَا يُغْلَقُ أَبَدًا.',
+      prompt:'A beautiful open golden door with warm light streaming out, welcoming, generous' },
+    { emoji:'💛', text:'وَالدُّعَاءُ لَا يَضِيعُ أَبَدًا: إِمَّا يُعْطِيكَ مَا طَلَبْت، أَوْ يَدْفَعُ شَرًّا، أَوْ يَدَّخِرُهُ لَك.',
+      prompt:'Three glowing paths from a single dua leading to gift, shield, and treasure, hopeful' },
+  ],
+  moral:'الدُّعَاءُ سِلَاحِي الَّذِي لَا يَنْفَد، وَبَابُ رَبِّي الَّذِي لَا يُغْلَق. 💛',
+  game:{ type:'find', title:'ادْعُ رَبَّك! اجْمَعِ الْأَيْدِيَ الْمَرْفُوعَةَ بِالدُّعَاءِ الْخَمْس', target:'🤲', count:5, distractors:['☁️','⭐'], size:12 },
+  act:{ q:'هَلْ يَنْفَعُ الدُّعَاءُ مَعَ الْقَدَر؟', yay:'أَحْسَنْت! الدُّعَاءُ سَبَبٌ كَتَبَهُ الله، لَا يَضِيعُ أَبَدًا', opts:[
+    { e:'🌟', t:'نَعَم! هُوَ مِنْ أَقْوَى الْأَسْبَاب', ok:true },
+    { e:'🙅', t:'لَا فَائِدَةَ مِنْه' },
+    { e:'🤷', t:'لَا أَعْرِف' } ] },
+  dua:'اللَّهُمَّ لَا تَرُدَّ لِي دَعْوَة، وَاجْعَلْنِي مِنَ الْمُلِحِّينَ عَلَيْك' },
+
+{ id:'shukr', icon:'🌳', color:'#5E9C4E', title:'صَاحِبَا الْجَنَّتَيْن',
+  tag:'الْقَدَرُ وَالشُّكْر',
+  pages:[
+    { emoji:'🍇', text:'أَعْطَى اللهُ رَجُلًا جَنَّتَيْنِ رَائِعَتَيْنِ مَلِيئَتَيْنِ بِالْأَعْنَابِ وَالنَّخِيلِ وَالْأَنْهَار.',
+      prompt:'A lush green garden with grapevines, palm trees and streams, abundant and beautiful, sunny' },
+    { emoji:'😤', text:'لَكِنَّهُ نَسِيَ أَنَّ هَذَا كُلَّهُ عَطَاءٌ مِنَ الله، وَقَالَ بِغُرُور: مَا أَظُنُّ أَنْ تَبِيدَ أَبَدًا!',
+      prompt:'A proud figure with crossed arms in front of a rich garden, arrogance, gentle warning mood, no face' },
+    { emoji:'🌪️', text:'فَذَكَّرَهُ صَاحِبُهُ: هَلَّا قُلْتَ مَا شَاءَ الله! فَتَكَبَّرَ وَلَمْ يَشْكُر، فَأَهْلَكَ اللهُ جَنَّتَهُ فِي لَيْلَة.',
+      prompt:'An empty barren garden after a storm with fallen leaves, humbling scene, soft muted colors' },
+    { emoji:'💚', text:'كُلُّ نِعْمَةٍ عِنْدَكَ عَطَاءٌ مِنَ الله! اشْكُرْهَا بِكَلِمَةِ: مَا شَاءَ الله.',
+      prompt:'A child looking at a small plant with grateful joy, saying thanks, warm golden light' },
+  ],
+  moral:'كُلُّ نِعْمَةٍ عِنْدِي مِنَ الله، أَشْكُرُهَا بِـ«مَا شَاءَ الله». 💚',
+  game:{ type:'sort', title:'مَاذَا نَقُولُ عِنْدَ النِّعْمَة؟', bins:['شُكْرٌ جَمِيل 💚','غُرُورٌ خَاطِئ 🚫'], items:[
+    { e:'🙏', t:'مَا شَاءَ الله، الْحَمْدُ لِله', bin:0 },
+    { e:'😤', t:'أَنَا وَحْدِي صَنَعْتُهَا', bin:1 },
+    { e:'💚', t:'هَذَا فَضْلُ رَبِّي', bin:0 },
+    { e:'🏆', t:'بِذَكَائِي فَقَط', bin:1 } ] },
+  act:{ q:'مَاذَا نَقُولُ حِينَ نَرَى نِعْمَةً تُعْجِبُنَا؟', yay:'أَحْسَنْت! تَحْفَظُ النِّعْمَةَ وَتَزِيدُهَا', opts:[
+    { e:'💚', t:'مَا شَاءَ الله، لَا قُوَّةَ إِلَّا بِالله', ok:true },
+    { e:'😤', t:'أَنَا الْأَفْضَل' },
+    { e:'😒', t:'لِمَاذَا لَيْسَ عِنْدِي مِثْلُه؟' } ] },
+  dua:'اللَّهُمَّ أَعِنِّي عَلَى ذِكْرِكَ وَشُكْرِكَ وَحُسْنِ عِبَادَتِك' },
+
+{ id:'heart', icon:'🕊️', color:'#3E7CB1', title:'الْقَلْبُ الْمُطْمَئِنّ',
+  tag:'ثَمَرَةُ الْإِيمَانِ بِالْقَدَر',
+  pages:[
+    { emoji:'💎', text:'لِمَاذَا نُؤْمِنُ بِالْقَدَر؟ لِنَنَالَ أَعْظَمَ هَدِيَّة: قَلْبًا مُطْمَئِنًّا لَا يَعْرِفُ الْقَلَق.',
+      prompt:'A glowing gem-like heart radiating calm light, peace and tranquility, teal and gold' },
+    { emoji:'🌳', text:'الْإِيمَانُ بِالْقَدَرِ كَالْجُذُورِ الْعَمِيقَة: حِينَ تَأْتِي الْعَاصِفَةُ تَثْبُتُ الشَّجَرَةُ وَلَا تَنْكَسِر.',
+      prompt:'A strong tree with deep visible roots standing firm in wind, resilience, warm sky' },
+    { emoji:'😌', text:'لَا تَخَافُ الْغَد، وَلَا تَحْزَنُ عَلَى الْأَمْس، وَلَا تَحْسُدُ أَحَدًا، وَلَا تَيْأَس.',
+      prompt:'A serene child sitting peacefully under a tree at sunset, content and calm, warm glow' },
+    { emoji:'💚', text:'اعْمَلْ بِكُلِّ قُوَّة، وَسَلِّمْ أَمْرَكَ لِلَّهِ بِرِضًا — تَكُنْ أَسْعَدَ قَلْبٍ فِي الدُّنْيَا.',
+      prompt:'A joyful child with arms open under a bright warm sky, happiness and trust, uplifting' },
+  ],
+  moral:'أَعْمَلُ بِقُوَّة، وَأُسَلِّمُ أَمْرِي لِلَّهِ بِرِضًا، فَيَطْمَئِنُّ قَلْبِي. 💎',
+  game:{ type:'pairs', title:'صِلْ كُلَّ ثَمَرَةٍ بِأَصْلِهَا', pairs:[
+    ['😌 لَا أَخَافُ الْغَد','رَبِّي الْحَكِيمُ يُدَبِّرُه'],
+    ['💚 لَا أَحْسُدُ أَحَدًا','لِكُلٍّ نَصِيبُهُ الْمَكْتُوب'],
+    ['🤲 لَا أَيْأَسُ','بَابُ الدُّعَاءِ مَفْتُوح'] ] },
+  act:{ q:'مَا أَعْظَمُ هَدِيَّةٍ مِنَ الْإِيمَانِ بِالْقَدَر؟', yay:'أَحْسَنْت! قَلْبٌ مُطْمَئِنٌّ لَا يَعْرِفُ الْقَلَق', opts:[
+    { e:'💎', t:'قَلْبٌ مُطْمَئِنٌّ هَادِئ', ok:true },
+    { e:'💰', t:'مَالٌ كَثِير' },
+    { e:'🏆', t:'كَأْسٌ ذَهَبِيّ' } ] },
+  dua:'اللَّهُمَّ اجْعَلْ قَلْبِي مُطْمَئِنًّا بِقَضَائِك، رَاضِيًا بِقَدَرِك' },
+
+]};

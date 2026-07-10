@@ -166,6 +166,7 @@
         </div>`;
     }
 
+    function splitP(h){h=(h==null?'':''+h);var a=h.replace(/([.!?\u061F\u2026])\s+/g,'$1\u0001').split('\u0001').map(function(s){return s.trim();}).filter(function(s){return s.length;});return a.length<2?h:a.map(function(s){return '<span class="st-line" style="display:block;margin-bottom:.6rem;padding-inline-start:.8rem;border-inline-start:3px solid rgba(255,255,255,.16)">'+s+' </span>';}).join('');}
     $('#rBody').innerHTML=`
       <div class="s-hero" style="--accent:${st.color||meta.color}">
         <div class="ring">${st.icon}</div>
@@ -179,7 +180,7 @@
           <h3><span class="bi">${st.teachIcon||'🌿'}</span>${H.teach}</h3>
           <div class="maryam">
             <div class="m-face">${st.teachFace||'🧑‍🏫'}</div>
-            <p>${st.teach[L]}</p>
+            <p>${splitP(st.teach[L])}</p>
           </div>
         </div>
 

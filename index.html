@@ -718,6 +718,7 @@ footer b{color:rgba(212,160,23,.55);font-weight:700}
     { id:'sport',   icon:'🏊', color:'#27AE60', name:{ar:'النادي الرياضي',    en:'Sports Club'},           base:'corners/little-district/pages/sport.html' },
     { id:'academy', icon:'🔭', color:'#2980B9', name:{ar:'أكاديمية المبدعين', en:"Innovators' Academy"},   base:'corners/heroes-fortress/academy.html' },
     { id:'quds',    icon:'🕌', color:'#2E8B57', name:{ar:'ركن القدس والأمة',  en:'Al-Quds & Ummah'},       base:'corners/little-district/pages/quds.html' },
+    { id:'hifz',    icon:'🌱', color:'#1F7A4D', name:{ar:'حُفّاظ القرآن',      en:'Quran Huffaz'},          base:'corners/quran-hifz/index.html' },
   ];
   function profiles(){ return jget(K.profiles,[]); }
   function activeId(){ return LS.getItem(K.active)||null; }
@@ -911,6 +912,7 @@ const buildings = [ // home corners — order: faith, worship, quran, district, 
   {id:'aqeeda',icon:'🕋',nameAr:'منارة العقيدة',nameEn:'Faith Minaret',descAr:'البناء العقدي والروحي',descEn:'Spiritual & Creedal Foundation',accent:'#C0392B',gradient:'linear-gradient(160deg,rgba(192,57,43,.2),transparent)',badge:'🔥 جديد',progress:0,character:{charNameAr:'يوسف',charNameEn:'Yusuf',emoji:'👦',charQuoteAr:'أنا يوسف، هيا نراقب الله!',charQuoteEn:"I'm Yusuf, let's watch for Allah!"},featuresAr:[{icon:'🕋',text:'رحلة التوحيد ورحلة اليقين — براهين وجود الله ووحدانيته'},{icon:'✨',text:'رحلة جنود النور ورحلة البلاغ — الملائكة والكتب والرسل'},{icon:'🌉',text:'رحلة العبور وسر التقدير والأبطال — اليوم الآخر والقدر وقصص الثبات'}],featuresEn:[{icon:'🕋',text:'Journey of Tawheed & Certainty — proofs of Allah\'s existence & oneness'},{icon:'✨',text:'Soldiers of Light & the Message — angels, books & prophets'},{icon:'🌉',text:'The Crossing, the Decree & the Heroes — the Last Day, qadar & steadfastness'}],url:'corners/faith-minaret/aqeeda.html',ready:true},
   {id:'ibada',icon:'🌙',nameAr:'واحة العبادة',nameEn:'Worship Oasis',descAr:'البناء العبادي',descEn:'Acts of Worship',accent:'#117A8B',gradient:'linear-gradient(160deg,rgba(17,122,139,.2),transparent)',badge:'💧',progress:0,character:{charNameAr:'مريم',charNameEn:'Mariam',emoji:'👧',charQuoteAr:'معاً نتعلم الصلاة والوضوء!',charQuoteEn:'Together we learn prayer and wudu!'},featuresAr:[{icon:'🤲',text:'تعلم الوضوء والصلاة خطوة بخطوة بصور تفاعلية'},{icon:'📚',text:'مدرسة الصيام — تدريب الصغار على الصوم'},{icon:'🛡️',text:'درع البطل: أذكاري تحميني في كل وقت'},{icon:'💡',text:'خيط النور: كيف أتحدث مع الله؟ فقه الدعاء'},{icon:'🎁',text:'كنز العطاء: سر الزكاة وبركة الصدقة'},{icon:'🕋',text:'الرحلة الكبرى: مغامرة إلى بيت الله الحرام'}],featuresEn:[{icon:'🤲',text:'Interactive step-by-step Wudu & Prayer'},{icon:'📚',text:'Little Fasting School'},{icon:'🛡️',text:"Hero's Shield: My Adhkar Protect Me"},{icon:'💡',text:'Thread of Light: How Do I Speak to Allah?'},{icon:'🎁',text:'Treasure of Giving: Zakat & Charity'},{icon:'🕋',text:'The Grand Journey: Adventure to Makkah'}],url:'corners/little-district/pages/ibada.html',ready:true},
   {id:'quran',icon:'📖',nameAr:'بستان القرآن والسنة',nameEn:'Quran & Sunnah Garden',descAr:'البناء القرآني والتدبر',descEn:'Quranic Learning & Reflection',accent:'#1A9B7B',gradient:'linear-gradient(160deg,rgba(26,155,123,.22),transparent)',badge:'🌿',progress:0,character:{charNameAr:'أنس',charNameEn:'Anas',emoji:'👦',charQuoteAr:'تعال نتدبر آيات القرآن!',charQuoteEn:"Let's reflect on the Quran together!"},featuresAr:[{icon:'📖',text:'سور القرآن — اقرأ بالتجويد وتدبّر المعاني'},{icon:'📜',text:'قصص القرآن — لقمان وأصحاب الكهف وغيرهم'},{icon:'🕌',text:'الأربعون النووية — احفظ وافهم واعمل'},{icon:'🤝',text:'أنا صاحبك القرآن — قصص الصالحين مع كتاب الله'}],featuresEn:[{icon:'📖',text:'Quran Surahs — read with tajweed & reflect'},{icon:'📜',text:'Quran Stories — Luqman, the Cave & more'},{icon:'🕌',text:'40 Hadith of Nawawi — memorize, understand & act'},{icon:'🤝',text:'I Am Your Companion — the righteous with the Quran'}],url:'corners/little-district/pages/quran.html',ready:true},
+  {id:'hifz',icon:'🌱',nameAr:'حُفّاظ القرآن',nameEn:'Quran Huffaz',descAr:'حفظُ القرآن وتثبيته',descEn:'Quran Memorization',accent:'#1F7A4D',gradient:'linear-gradient(160deg,rgba(31,122,77,.22),transparent)',badge:'🌱 جديد',progress:0,noScore:true,character:{charNameAr:'حفصة',charNameEn:'Hafsah',emoji:'👧',charQuoteAr:'هيّا نغرسُ القرآنَ في قلوبنا!',charQuoteEn:"Let's plant the Quran in our hearts!"},featuresAr:[{icon:'🌱',text:'احفظِ السُّورةَ آيةً آيةً — إخفاءٌ تدريجيٌّ وتكرار'},{icon:'🎧',text:'تابِعِ القارئ وردِّدْ مع الشيخِ والأطفال'},{icon:'🎨',text:'تلوينُ التجويد وصفحاتُ المصحفِ كما هي'},{icon:'🏅',text:'أوسمةٌ وشهادةُ إتمامٍ لكلِّ سورةٍ تحفظها'}],featuresEn:[{icon:'🌱',text:'Memorize each surah verse by verse — gradual hide & repeat'},{icon:'🎧',text:'Follow the reciter & repeat with the sheikh and children'},{icon:'🎨',text:'Tajweed colouring & real mushaf pages'},{icon:'🏅',text:'Badges & a completion certificate for every surah'}],url:'corners/quran-hifz/index.html',ready:true},
   {id:'social',icon:'🏘️',nameAr:'حيّنا الصغير',nameEn:'Our Little District',descAr:'البناء الاجتماعي والأخلاقي',descEn:'Social & Moral Building',accent:'#D4A017',gradient:'linear-gradient(160deg,rgba(212,160,23,.2),transparent)',badge:'👋',progress:0,character:{charNameAr:'نسيبة',charNameEn:'Nusaybah',emoji:'👧',charQuoteAr:'أنا نسيبة، لنحسن أخلاقنا!',charQuoteEn:"I'm Nusaybah, let's improve our manners!"},featuresAr:[{icon:'🗣️',text:'آداب الطفل المسلم — السلام والاستئذان والمجلس'},{icon:'🏠',text:'أخلاق الطفل المسلم — بيت الصدق وحصن الأمانة'},{icon:'🌟',text:'رحلة البحث عن الكنز — الإحسان والتواضع'}],featuresEn:[{icon:'🗣️',text:'Muslim Child Manners — greetings & etiquette'},{icon:'🏠',text:'Muslim Child Character — truth & trust'},{icon:'🌟',text:'Treasure Hunt — kindness & humility'}],url:'corners/little-district/pages/social.html',ready:true},
   {id:'heart',icon:'💚',nameAr:'ركن القلب السليم',nameEn:'Pure Heart Corner',descAr:'البناء العاطفي والنفسي',descEn:'Emotional & Spiritual Growth',accent:'#6C3483',gradient:'linear-gradient(160deg,rgba(108,52,131,.2),transparent)',badge:'🕊️',progress:0,character:{charNameAr:'رقية',charNameEn:'Ruqayyah',emoji:'👧',charQuoteAr:'أنا رقية، تعال نحب الله ونرضى!',charQuoteEn:"I'm Ruqayyah, let's love Allah and be content!"},featuresAr:[{icon:'🌙',text:'حبُّ الله — تعرّفْ إلى ربك بأسمائه الحسنى'},{icon:'🤍',text:'حبُّ الرسول ﷺ — اعرفه في ثماني محطّات فتحبّه'},{icon:'👨‍👩‍👧',text:'برُّ الوالدين — بابٌ إلى الجنّة'},{icon:'🤝',text:'الحبُّ في الله — أوثقُ عُرى الإيمان'},{icon:'💎',text:'سلامةُ القلب — قلبٌ مطمئنٌّ صافٍ'}],featuresEn:[{icon:'🌙',text:'Love of Allah — know your Lord by His Beautiful Names'},{icon:'🤍',text:'Love of the Prophet ﷺ — in eight stations'},{icon:'👨‍👩‍👧',text:'Honoring Parents — a gate to Paradise'},{icon:'🤝',text:"Love for Allah's Sake — the firmest handhold of faith"},{icon:'💎',text:'A Sound Heart — tranquil & pure'}],url:'corners/heroes-fortress/heart.html',ready:true},
   {id:'history',icon:'🏰',nameAr:'حصن الأبطال',nameEn:"Heroes' Fortress",descAr:'تاريخ الإسلام والقدوات',descEn:'Islamic History & Role Models',accent:'#E67E22',gradient:'linear-gradient(160deg,rgba(230,126,34,.2),transparent)',badge:'⚔️',progress:0,character:{charNameAr:'محمد',charNameEn:'Muhammad',emoji:'👦',charQuoteAr:'هيا نتعلم سيرة أبطالنا!',charQuoteEn:"Let's learn about our heroes!"},featuresAr:[{icon:'🕊️',text:'عصر الأنبياء — من آدم إلى عيسى عليهم السلام'},{icon:'📜',text:'السيرة النبوية — رحلة الـ ٢٣ عاماً التي غيّرت الأرض'},{icon:'🦅',text:'الأبطال — سير الصحابة والصحابيات الكرام'},{icon:'🌍',text:'المعارك والفتوحات — القادسية واليرموك وغيرها'}],featuresEn:[{icon:'🕊️',text:'Era of the Prophets — from Adam to Isa'},{icon:'📜',text:'The Seerah — the 23-year journey that changed the world'},{icon:'🦅',text:'The Heroes — lives of the noble Companions'},{icon:'🌍',text:'Battles & Conquests — Qadisiyyah, Yarmouk & more'}],url:'corners/heroes-fortress/fortress.html',ready:true},
@@ -957,9 +959,31 @@ const buildings = [ // home corners — order: faith, worship, quran, district, 
 /* Curriculum display order on the city map (holistic development of the child).
    Excludes nothing here — social stays; "Learn with Anous" exclusions are separate. */
 (function(){
-  var ORDER=['aqeeda','ibada','quran','history','social','heart','sport','academy','quds'];
+  var ORDER=['aqeeda','ibada','quran','history','social','heart','sport','academy','quds','hifz'];
   buildings.sort(function(a,b){ var ia=ORDER.indexOf(a.id), ib=ORDER.indexOf(b.id); return (ia<0?99:ia)-(ib<0?99:ib); });
 })();
+
+const storiesCorner = {
+  id:'stories-little',icon:'📚',nameAr:'مكتبة القصص للصغار',nameEn:'Little Stories Library',
+  descAr:'ركنٌ مستقلٌّ للأعمار ٣–٦ — العقيدةُ والعبادةُ والأنبياءُ والسيرةُ والصحابةُ بسردٍ سهلٍ وصورٍ وألعاب',
+  descEn:'A standalone corner for ages 3–6 — Aqeeda, worship, Prophets, Seerah & Companions told simply with pictures & games',
+  accent:'#C1663A',gradient:'linear-gradient(160deg,rgba(193,102,58,.22),transparent)',badge:'🐥 ٣–٦',progress:0,
+  characters:[{charNameAr:'حكايتي',charNameEn:'My Story',emoji:'🐥'}],
+  featuresAr:[{icon:'📖',text:'خمسةُ عوالمَ: العقيدة والعبادة والأنبياء والسيرة والصحابة'},{icon:'🌙',text:'ماذا نتعلّم؟ وكيف نطبّق؟ — بعدَ كلِّ حكاية'},{icon:'🎮',text:'سؤالٌ ولعبةٌ ممتعة بعدَ كلِّ قصة'}],
+  featuresEn:[{icon:'📖',text:'Five worlds: Aqeeda, worship, Prophets, Seerah & Companions'},{icon:'🌙',text:'What we learn & how we apply — after each story'},{icon:'🎮',text:'A question and a fun game after each story'}],
+  url:'corners/stories/little.html',ready:true,
+};
+
+const workshopCorner = {
+  id:'workshop',icon:'🧰',nameAr:'ورشة الصانع الصغير',nameEn:"Little Maker's Workshop",
+  descAr:'مهاراتٌ يدوية وتجاربُ ومهماتٌ في الطبيعة — يطبّق الطفل بيدَيه ما تعلّمه في الأركان',
+  descEn:'Hands-on crafts, experiments & nature missions — applying what the child learned across the corners',
+  accent:'#5E8C31',gradient:'linear-gradient(160deg,rgba(94,140,49,.22),transparent)',badge:'🧰',progress:0,
+  characters:[{charNameAr:'المربي',charNameEn:'Al-Murabbi',emoji:'🧔'},{charNameAr:'المربية',charNameEn:'Al-Murabbiyah',emoji:'🧕'}],
+  featuresAr:[{icon:'✂️',text:'أشغالٌ يدوية وزراعةٌ وتجاربُ علمية في البيت'},{icon:'🌙',text:'مهماتُ استكشافٍ في الطبيعة: القمرُ والحديقةُ والمخلوقات'},{icon:'📔',text:'دفترُ إنجازٍ بصورِ أعمالِ الطفل + أختامُ الصانعِ الستة'}],
+  featuresEn:[{icon:'✂️',text:'Crafts, planting & simple science experiments at home'},{icon:'🌙',text:'Nature missions: the moon, the garden & Allah\'s creatures'},{icon:'📔',text:"A journal of the child's work photos + six maker stamps"}],
+  url:'corners/workshop/workshop.html',ready:true,
+};
 
 const parentsCorner = {
   id:'parents',icon:'🧔',nameAr:'ركن الأهل',nameEn:"Parents' Corner",
@@ -1321,7 +1345,7 @@ function renderTicker() {
 ══════════════════════════════════════════════════ */
 function renderParade() {
   const parade = document.getElementById('charsParade');
-  if(!window.__bSorted){window.__bSorted=1;var __o=['aqeeda','ibada','quran','social','heart','history','sport','academy','quds'];buildings.sort(function(a,b){return __o.indexOf(a.id)-__o.indexOf(b.id);});}
+  if(!window.__bSorted){window.__bSorted=1;var __o=['aqeeda','ibada','quran','social','heart','history','sport','academy','quds','hifz'];buildings.sort(function(a,b){return __o.indexOf(a.id)-__o.indexOf(b.id);});}
   parade.innerHTML = buildings.map((b,i) => {
     const c = b.character;
     const name = lang==='ar' ? c.charNameAr : c.charNameEn;
@@ -1348,7 +1372,7 @@ function closeSidebar(){document.getElementById('sidebarDrawer').classList.remov
 function renderSidebar() {
   const nav = document.getElementById('sidebarNav');
   const t = T[lang];
-  nav.innerHTML = [...buildings, parentsCorner, anosCorner].map(b => {
+  nav.innerHTML = [...buildings, storiesCorner, workshopCorner, parentsCorner, anosCorner].map(b => {
     const name = lang==='ar' ? b.nameAr : b.nameEn;
     const pct = b.progress || 0;
     const locked = !!(window.MK && MK.isLocked(b.id));
@@ -1374,7 +1398,7 @@ function sbGuard(e, id, url){
   if(window.MK && MK.isLocked(id) && MK.hasPin()){
     e.preventDefault();
     closeSidebar();
-    var b = [...buildings, parentsCorner, anosCorner].find(x=>x.id===id) || {id:id, url:url};
+    var b = [...buildings, storiesCorner, workshopCorner, parentsCorner, anosCorner].find(x=>x.id===id) || {id:id, url:url};
     tryEnterCorner(b);
     return false;
   }
@@ -1439,7 +1463,7 @@ function renderMap() {
   map.innerHTML = '';
   const t = T[lang];
 
-  if(!window.__bSorted){window.__bSorted=1;var __o=['aqeeda','ibada','quran','social','heart','history','sport','academy','quds'];buildings.sort(function(a,b){return __o.indexOf(a.id)-__o.indexOf(b.id);});}
+  if(!window.__bSorted){window.__bSorted=1;var __o=['aqeeda','ibada','quran','social','heart','history','sport','academy','quds','hifz'];buildings.sort(function(a,b){return __o.indexOf(a.id)-__o.indexOf(b.id);});}
   buildings.forEach((b, i) => {
     const name = lang==='ar' ? b.nameAr : b.nameEn;
     const nameAlt = lang==='ar' ? b.nameEn : b.nameAr;
@@ -1482,10 +1506,10 @@ function renderMap() {
       <div class="b-name-ar">${name}</div>
       <div class="b-name-en">${nameAlt}</div>
       <div class="b-desc">${desc}</div>
-      <div class="b-progress">
+      ${b.noScore ? '' : `<div class="b-progress">
         <div class="b-prog-bg"><div class="b-prog-fill" style="width:${pct}%;${b.accent}"></div></div>
         <span class="b-prog-pct">${t.progressText} ${pct}%</span>
-      </div>
+      </div>`}
       <button class="b-enter-btn" style="${b.accent}">${t.enter}</button>`;
 
     div.addEventListener('click', () => { playSound(b.id); openModal(b); });
@@ -1528,8 +1552,10 @@ function renderMap() {
     return pDiv;
   }
 
-  special.appendChild(makeSpecialCard(parentsCorner, 0));
-  special.appendChild(makeSpecialCard(anosCorner, 1));
+  special.appendChild(makeSpecialCard(storiesCorner, 0));
+  special.appendChild(makeSpecialCard(workshopCorner, 1));
+  special.appendChild(makeSpecialCard(parentsCorner, 2));
+  special.appendChild(makeSpecialCard(anosCorner, 3));
   map.appendChild(special);
 
   renderSidebar();

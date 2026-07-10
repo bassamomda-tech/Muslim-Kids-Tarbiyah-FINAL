@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>منارة العقيدة للصغار · ركن القصص</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+Bhaijaan+2:wght@500;600;700;800&family=Tajawal:wght@400;500;700;800;900&family=Amiri:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="stories.css">
+<style>
+/* picture area in reader */
+.rd-pic{
+  width:100%;aspect-ratio:16/10;border-radius:1.1rem;overflow:hidden;position:relative;
+  background:color-mix(in oklab,var(--rc,var(--gold)) 10%,white);
+  border:1px solid color-mix(in oklab,var(--rc,var(--gold)) 30%,white);
+  display:grid;place-items:center;margin-bottom:.8rem;
+}
+.rd-pic img{width:100%;height:100%;object-fit:cover;display:none}
+.rd-pic .ph{font-size:4.2rem;line-height:1;animation:pop .45s both;filter:drop-shadow(0 8px 12px rgba(92,61,36,.2))}
+.rd-tools{display:flex;gap:.5rem;justify-content:center;flex-wrap:wrap;margin-bottom:.6rem}
+.rd-tools button{
+  display:inline-flex;align-items:center;gap:6px;border:1.5px solid var(--line);
+  background:var(--paper2);color:var(--wood);font:800 .8rem var(--font-body);
+  border-radius:999px;padding:.5rem 1rem;min-height:40px;transition:.2s;
+}
+.rd-tools button:hover{background:var(--line)}
+.rd-tools button.speaking{background:var(--rc,var(--gold));color:#fff;border-color:transparent}
+.rd-dua{
+  margin-top:.7rem;font-family:var(--font-story);font-size:1.15rem;color:var(--gold-deep);
+  background:var(--paper2);border-radius:.9rem;padding:.7rem 1rem;line-height:1.9;
+}
+.toast{
+  position:fixed;bottom:1.2rem;inset-inline-start:50%;transform:translateX(50%) translateY(20px);
+  background:var(--wood);color:#fff;font-weight:800;font-size:.82rem;padding:.7rem 1.2rem;
+  border-radius:999px;box-shadow:0 10px 26px rgba(0,0,0,.3);opacity:0;transition:.3s;z-index:99;
+  max-width:90vw;text-align:center;line-height:1.6;
+}
+.toast.show{opacity:1;transform:translateX(50%) translateY(0)}
+</style>
+</head>
+<body data-screen-label="رحلة منارة للصغار">
+
+<header class="topbar">
+  <a href="little.html" class="back-city">↩︎ مكتبة الصغار</a>
+  <div class="tb-brand">
+    <div class="tb-mark" id="jMark">🕌</div>
+    <div class="tb-name" id="jName">…<small id="jTag"></small></div>
+  </div>
+</header>
+
+<section class="hero">
+  <span class="lamp" id="jLamp">🕌</span>
+  <h1 id="jTitle">…</h1>
+  <p id="jDesc"></p>
+</section>
+
+<div class="progress-strip">
+  <div class="ps-card">
+    <span class="ic">🌟</span>
+    <div class="ps-meta"><b>حكاياتي المكتملة</b><span id="psSub"></span></div>
+    <div class="ps-track"><i id="psFill"></i></div>
+    <span class="ps-pct" id="psPct"></span>
+  </div>
+</div>
+
+<div class="shelf">رفُّ الحكايات</div>
+<main class="books" id="books" aria-live="polite"></main>
+
+<footer class="foot">🏮 حكاياتٌ مبسّطةٌ من رحلاتِ منارةِ العقيدة · النسخةُ الكاملةُ (٧–١٢) في منارةِ العقيدة نفسِها</footer>
+
+<!-- READER -->
+<div class="reader" id="reader" data-screen-label="قارئ الحكاية">
+  <div class="rd-box" id="rdBox">
+    <button class="rd-x" id="rdClose" aria-label="إغلاق">✕</button>
+    <div class="rd-dots" id="rdDots"></div>
+    <div class="rd-title" id="rdTitle"></div>
+    <div class="rd-pic" id="rdPic"><img id="rdImg" alt=""><span class="ph" id="rdPh">🏮</span></div>
+    <div class="rd-tools">
+      <button id="btnSpeak">🔊 اقرئي لي</button>
+      <button id="btnPrompt">🎨 انسخْ وصفَ الصورة</button>
+    </div>
+    <div class="rd-text" id="rdText"></div>
+    <div class="rd-nav">
+      <button class="rd-prev" id="rdPrev">→ السابق</button>
+      <button class="rd-next" id="rdNext">التالي ←</button>
+    </div>
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script src="minaret-little/journeys.js"></script>
+<script src="prophets-little/journeys.js"></script>
+<script src="ibada-little/journeys.js"></script>
+<script src="seerah-little/journeys.js"></script>
+<script src="companions-little/journeys.js"></script>
+<script src="story-endings.js"></script>
+<script src="mini-games.js"></script>
+<script>
+(function(){
+  var $ = function(s){ return document.querySelector(s); };
+  var params = new URLSearchParams(location.search);
+  var jid = params.get('j') || 'tawheed';
+  var src = params.get('src') || (params.get('src')==='prophets'?'prophets':'minaret');
+  var isProphets = src==='prophets';
+  var SRC = { prophets:{dir:'prophets-little',ns:'PROPHET_LITTLE',meta:'PROPHET_JOURNEYS',key:'mk-stories-plittle-'},
+              ibada:{dir:'ibada-little',ns:'IBADA_LITTLE',meta:'IBADA_JOURNEYS',key:'mk-stories-iblittle-'},
+              seerah:{dir:'seerah-little',ns:'SEERAH_LITTLE',meta:'SEERAH_JOURNEYS',key:'mk-stories-selittle-'},
+              companions:{dir:'companions-little',ns:'COMPANIONS_LITTLE',meta:'COMPANIONS_JOURNEYS',key:'mk-stories-colittle-'},
+              minaret:{dir:'minaret-little',ns:'MINARET_LITTLE',meta:'MINARET_JOURNEYS',key:'mk-stories-minlittle-'} };
+  var CFG = SRC[src] || SRC.minaret;
+  var DIR = CFG.dir;
+  var NSKEY = CFG.ns;
+  var metaList = window[CFG.meta]||[];
+  var meta = metaList.find(function(x){ return x.id===jid; });
+  if(!meta || !meta.ready){ location.replace('little.html'); return; }
+
+  var KEY = CFG.key+jid;
+  function loadDone(){ try{ return JSON.parse(localStorage.getItem(KEY)||'{}'); }catch(e){ return {}; } }
+  var done = loadDone();
+  var AR = function(n){ return String(n).replace(/\d/g,function(d){ return '٠١٢٣٤٥٦٧٨٩'[d]; }); };
+
+  /* image prompt style prefix for nanobanana / Gemini */
+  var STYLE = "Children's storybook illustration for ages 3-6, soft warm watercolor with paper texture, cozy golden-library palette, simple friendly shapes, no text or writing anywhere, culturally Islamic-appropriate, never depict prophets or their faces. Scene: ";
+
+  var J=null, STORIES=[];
+  var s=document.createElement('script');
+  s.src=DIR+'/'+jid+'.js';
+  s.onload=init; s.onerror=function(){ location.replace('little.html'); };
+  document.head.appendChild(s);
+
+  function init(){
+    J = window[NSKEY] && window[NSKEY][jid];
+    if(!J){ location.replace('little.html'); return; }
+    STORIES = J.stories;
+    document.title = J.title+' · ركن القصص للصغار';
+    $('#jMark').textContent = J.icon; $('#jLamp').textContent = J.icon;
+    $('#jName').innerHTML = J.title+'<small>'+J.tag+' · من ٣ إلى ٦ سنوات</small>';
+    $('#jTitle').innerHTML = isProphets ? 'حكاياتُ <em>'+J.title+'</em>' : 'رحلةُ <em>'+J.title+'</em>';
+    $('#jDesc').textContent = 'حكاياتٌ قصيرةٌ سهلةٌ تزرعُ في قلبِ طفلِك: '+J.tag+'. كلُّ صفحةٍ صورةٌ وجملٌ بسيطةٌ تُقرأُ بصوتٍ جميل.';
+    renderBooks(); renderProgress();
+  }
+
+  function renderBooks(){
+    $('#books').innerHTML = STORIES.map(function(st,i){
+      var isDone = !!done[st.id];
+      return '<article class="book" style="--bc:'+st.color+';animation-delay:'+(0.04+i*0.05)+'s">'
+        + (isDone ? '<span class="ribbon">✓ أنهيتُها</span>' : '')
+        + '<div class="cover">'+st.icon+'</div>'
+        + '<h3>'+st.title+'</h3>'
+        + '<div class="who">'+st.tag+'</div>'
+        + '<div class="meta"><span class="chip">📄 '+AR(st.pages.length)+' صفحات</span>'
+        + (isDone ? '<span class="chip done">🌟 مكتملة</span>' : '') + '</div>'
+        + '<button class="open-btn" data-i="'+i+'">'+(isDone?'اقرأها من جديد 📖':'افتحِ الحكاية 📖')+'</button>'
+        + '</article>';
+    }).join('');
+    Array.prototype.forEach.call(document.querySelectorAll('.open-btn'),function(b){
+      b.addEventListener('click',function(){ openStory(+b.getAttribute('data-i')); });
+    });
+  }
+  function renderProgress(){
+    var n = STORIES.filter(function(s){ return done[s.id]; }).length;
+    $('#psPct').textContent = AR(n)+'/'+AR(STORIES.length);
+    $('#psFill').style.width = (n/STORIES.length*100)+'%';
+    $('#psSub').textContent = n===0?'ابدأ أولَ حكاية!':n===STORIES.length?'ما شاء الله! أتممتَ الرحلةَ كلَّها 🎉':'أحسنت! أكملِ الرحلة 💪';
+  }
+
+  /* ── reader ── */
+  var cur=null, page=0, actSolved=false, gameWon=false, seq=[], EX={};
+  function openStory(i){
+    cur = STORIES[i]; page = 0;
+    EX = (window.STORY_ENDINGS||{})[jid+':'+cur.id]||{};
+    seq = [{t:'intro'}];
+    cur.pages.forEach(function(p,k){ seq.push({t:'page',p:p,i:k}); });
+    seq.push({t:'lessons'});
+    seq.push({t:'apply'});
+    if(cur.act) seq.push({t:'act'});
+    if(cur.game) seq.push({t:'game'});
+    $('#rdBox').style.setProperty('--rc',cur.color);
+    $('#rdTitle').textContent = cur.icon+' '+cur.title;
+    $('#reader').classList.add('open');
+    renderPage();
+  }
+  function closeReader(){ stopSpeak(); $('#reader').classList.remove('open'); cur=null; }
+
+  function imgPath(p){ return 'minaret-art/'+jid+'-'+cur.id+'-'+(p+1)+'.png'; }
+
+  function getLessons(){ return EX.lessons || [cur.moral]; }
+  function getApply(){ return EX.apply || ['أقولُ دائماً: '+cur.dua]; }
+
+  function renderPage(){
+    stopSpeak();
+    var dots='';
+    for(var i=0;i<seq.length;i++){ dots+='<i class="'+(i===page?'on':'')+'"></i>'; }
+    $('#rdDots').innerHTML = dots;
+    var img=$('#rdImg'), ph=$('#rdPh');
+    var step = seq[page];
+    $('#rdNext').disabled=false;
+    $('#rdPrev').disabled = page===0;
+    $('#rdPic').style.display='';
+    $('#btnPrompt').style.display='none';
+    img.style.display='none'; ph.style.display='';
+    if(step.t==='intro'){
+      ph.textContent = cur.icon;
+      $('#rdText').innerHTML = '<span>كان يا ما كان، في قديمِ الزمان... 🌙<br>هذه حكايةُ «'+cur.title+'» — '+cur.tag+'.<br>هيا بنا نبدأ!</span>';
+      $('#rdNext').textContent = 'ابدأِ الحكاية ←';
+    }else if(step.t==='page'){
+      var p = step.p;
+      ph.textContent=p.emoji;
+      img.onload=function(){ img.style.display='block'; ph.style.display='none'; };
+      img.onerror=function(){ img.style.display='none'; ph.style.display=''; };
+      img.src = imgPath(step.i);
+      $('#rdText').innerHTML = '<span>'+p.text+'</span>';
+      $('#btnPrompt').style.display = p.prompt ? '' : 'none';
+      $('#rdNext').textContent = step.i===cur.pages.length-1 ? 'انتهتِ الحكاية 🌟' : 'التالي ←';
+    }else if(step.t==='lessons'){
+      ph.textContent='🌙';
+      $('#rdText').innerHTML = '<div style="width:100%"><div class="rd-act-q">🌙 ماذا نتعلّمُ من القصة؟</div><div class="rd-lessons">'
+        + getLessons().map(function(l){ return '<div class="rd-lesson">🌟 '+l+'</div>'; }).join('')
+        + '</div></div>';
+      $('#rdNext').textContent = 'كيف نطبّقُها؟ 💪';
+    }else if(step.t==='apply'){
+      ph.textContent='💪';
+      $('#rdText').innerHTML = '<div style="width:100%"><div class="rd-act-q">💪 كيف نطبّقُ ما تعلّمنا؟</div><div class="rd-lessons">'
+        + getApply().map(function(l){ return '<div class="rd-lesson apply">✅ '+l+'</div>'; }).join('')
+        + '</div><div class="rd-dua">🤲 '+cur.dua+'</div></div>';
+      $('#rdNext').textContent = cur.act ? 'هيا نلعب! 🎮' : (cur.game ? 'لعبة! 🎲' : 'أنهيتُ الحكاية ✓');
+      if(!cur.act && !cur.game && !done[cur.id]) confetti();
+    }else if(step.t==='act'){
+      ph.textContent='🎮';
+      renderActivity();
+    }else{
+      $('#rdPic').style.display='none';
+      renderGame();
+    }
+  }
+  function renderGame(){
+    gameWon=false;
+    $('#rdText').innerHTML='';
+    var box=document.createElement('div'); box.style.width='100%';
+    $('#rdText').appendChild(box);
+    $('#rdPrev').disabled=false;
+    $('#rdNext').textContent='🔒 أكملِ اللعبةَ أولاً';
+    $('#rdNext').disabled=true;
+    MiniGames.render(box, cur.game, function(){
+      gameWon=true;
+      $('#rdNext').textContent='أنهيتُ الحكاية ✓';
+      $('#rdNext').disabled=false;
+      if(!done[cur.id]) confetti();
+    });
+  }
+  function renderActivity(){
+    actSolved=false;
+    var a=cur.act;
+    $('#rdText').innerHTML = '<div style="width:100%"><div class="rd-act-q">'+a.q+'</div><div class="rd-opts">'
+      + a.opts.map(function(o,i){ return '<button class="rd-opt" data-i="'+i+'"><span class="oe">'+o.e+'</span><span>'+o.t+'</span></button>'; }).join('')
+      + '</div><div class="rd-yay" id="rdYay" style="display:none"></div></div>';
+    $('#rdPrev').disabled=false;
+    $('#rdNext').textContent = cur.game ? 'لعبة! 🎲' : 'أنهيتُ الحكاية ✓';
+    $('#rdNext').disabled=false;
+    Array.prototype.forEach.call(document.querySelectorAll('#rdText .rd-opt'),function(b){
+      b.addEventListener('click',function(){
+        if(actSolved) return;
+        var o=cur.act.opts[+b.getAttribute('data-i')];
+        if(o.ok){
+          actSolved=true;
+          b.classList.add('ok');
+          Array.prototype.forEach.call(document.querySelectorAll('#rdText .rd-opt'),function(x){ x.disabled=true; });
+          var y=document.getElementById('rdYay');
+          y.style.display=''; y.textContent='🎉 '+(cur.act.yay||'أحسنت! إجابةٌ صحيحة');
+          $('#rdNext').textContent = cur.game ? 'لعبةٌ أخيرة! 🎲' : 'أنهيتُ الحكاية ✓';
+          $('#rdNext').disabled=false;
+          if(!done[cur.id]) confetti();
+        }else{
+          b.classList.add('no');
+          setTimeout(function(){ b.classList.remove('no'); },500);
+        }
+      });
+    });
+  }
+  function next(){
+    var step = seq[page];
+    if(step.t==='game' && !gameWon) return;
+    if(page<seq.length-1){ page++; renderPage(); }
+    else{
+      done[cur.id]=1; localStorage.setItem(KEY,JSON.stringify(done)); closeReader(); renderBooks(); renderProgress();
+    }
+  }
+  function prev(){ if(page>0){ page--; renderPage(); } }
+
+  /* ── read aloud (best available Arabic voice) ── */
+  var speaking=false;
+  function pickVoice(){
+    var vs = speechSynthesis.getVoices().filter(function(v){ return /^ar/i.test(v.lang); });
+    if(!vs.length) return null;
+    var score = function(v){
+      var s=0, n=v.name.toLowerCase();
+      if(/natural|neural|online/.test(n)) s+=4;
+      if(/google/.test(n)) s+=3;
+      if(/majed|laila|hoda|salma|hamed/.test(n)) s+=2;
+      if(v.localService===false) s+=1;
+      return s;
+    };
+    return vs.sort(function(a,b){ return score(b)-score(a); })[0];
+  }
+  function speakText(){
+    if(speaking){ stopSpeak(); return; }
+    var step = seq[page];
+    var txt = step.t==='intro' ? ('كان يا ما كان، في قديمِ الزمان. هذه حكايةُ '+cur.title+'. هيا بنا نبدأ')
+      : step.t==='page' ? step.p.text
+      : step.t==='lessons' ? ('ماذا نتعلمُ من القصة؟ '+getLessons().join('. '))
+      : step.t==='apply' ? ('كيف نطبقُ ما تعلمنا؟ '+getApply().join('. ')+'. '+cur.dua)
+      : step.t==='act' ? cur.act.q
+      : (cur.game ? cur.game.title : '');
+    txt = txt.replace(/<[^>]+>/g,'').replace(/[🌱-🿿📄-📿☀-⛿✀-➿🀀-🯿]/gu,'');
+    var u = new SpeechSynthesisUtterance(txt);
+    var v = pickVoice(); if(v) u.voice=v;
+    u.lang='ar-SA'; u.rate=0.92; u.pitch=1.05;
+    u.onend=u.onerror=function(){ speaking=false; $('#btnSpeak').classList.remove('speaking'); $('#btnSpeak').textContent='🔊 اقرئي لي'; };
+    speechSynthesis.cancel(); speechSynthesis.speak(u);
+    speaking=true; $('#btnSpeak').classList.add('speaking'); $('#btnSpeak').textContent='⏸ توقّفي';
+  }
+  function stopSpeak(){ if(window.speechSynthesis){ speechSynthesis.cancel(); } speaking=false;
+    var b=$('#btnSpeak'); b.classList.remove('speaking'); b.textContent='🔊 اقرئي لي'; }
+  if(window.speechSynthesis){ speechSynthesis.onvoiceschanged=function(){}; }
+
+  /* ── copy image prompt ── */
+  function copyPrompt(){
+    var step = seq[page];
+    if(!step || step.t!=='page' || !step.p.prompt) return;
+    var p = step.p;
+    var fname = jid+'-'+cur.id+'-'+(step.i+1)+'.png';
+    var full = STYLE + p.prompt + '.';
+    (navigator.clipboard ? navigator.clipboard.writeText(full) : Promise.reject()).then(function(){
+      toast('✓ نُسخَ الوصف! ولِّدِ الصورةَ ثم احفظْها باسم <b>'+fname+'</b> داخل مجلد minaret-art');
+    }).catch(function(){
+      toast('لم يُسمَح بالنسخ — الوصف: '+full);
+    });
+  }
+  var toastTimer=null;
+  function toast(html){
+    var t=$('#toast'); t.innerHTML=html; t.classList.add('show');
+    clearTimeout(toastTimer); toastTimer=setTimeout(function(){ t.classList.remove('show'); },5000);
+  }
+
+  function confetti(){
+    var em=['🌟','✨','🎈','⭐','🎉'];
+    for(var i=0;i<16;i++){
+      var c=document.createElement('span'); c.className='confetti'; c.textContent=em[i%em.length];
+      c.style.left=(Math.random()*100)+'vw';
+      c.style.animationDuration=(2+Math.random()*2)+'s';
+      c.style.animationDelay=(Math.random()*.6)+'s';
+      document.body.appendChild(c);
+      setTimeout(function(el){ return function(){ el.remove(); }; }(c),5000);
+    }
+  }
+
+  $('#rdNext').addEventListener('click',next);
+  $('#rdPrev').addEventListener('click',prev);
+  $('#rdClose').addEventListener('click',closeReader);
+  $('#btnSpeak').addEventListener('click',speakText);
+  $('#btnPrompt').addEventListener('click',copyPrompt);
+  $('#reader').addEventListener('click',function(e){ if(e.target===this) closeReader(); });
+  document.addEventListener('keydown',function(e){
+    if(!cur) return;
+    if(e.key==='Escape') closeReader();
+    if(e.key==='ArrowLeft') next();
+    if(e.key==='ArrowRight') prev();
+  });
+})();
+</script>
+</body>
+</html>

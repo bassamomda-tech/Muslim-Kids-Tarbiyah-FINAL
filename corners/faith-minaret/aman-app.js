@@ -101,6 +101,7 @@
       sh: t('الشُّبهةُ تَقول:','The Doubt says:'),
       rebut:t('وردُّنا عليها ↓','Our reply ↓'),
     };
+    function splitP(h){h=(h==null?'':''+h);var a=h.replace(/([.!?\u061F\u2026])\s+/g,'$1\u0001').split('\u0001').map(function(s){return s.trim();}).filter(function(s){return s.length;});return a.length<2?h:a.map(function(s){return '<span class="st-line" style="display:block;margin-bottom:.6rem;padding-inline-start:.8rem;border-inline-start:3px solid rgba(255,255,255,.16)">'+s+' </span>';}).join('');}
     $('#rBody').innerHTML=`
       <div class="s-hero" style="--accent:${st.color}">
         <div class="ring">${st.icon}</div>
@@ -111,7 +112,7 @@
 
         <div class="block wow">
           <h3><span class="bi">🎙️</span>${H.narr}</h3>
-          <p>${st.narration[L]}</p>
+          <p>${splitP(st.narration[L])}</p>
         </div>
 
         <div class="block chance">
@@ -121,7 +122,7 @@
             <div class="mc-body"><div class="mc-name">${H.sh}</div><div class="mc-say">${st.shubha[L]}</div></div>
           </div>
           <div class="rebut-tag">🛡️ ${H.rebut}</div>
-          <p>${st.logic[L]}</p>
+          <p>${splitP(st.logic[L])}</p>
         </div>
 
         <div class="block myth">

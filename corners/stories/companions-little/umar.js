@@ -1,0 +1,193 @@
+/* corners/stories/companions-little/umar.js — عمر الفاروق للصغار (٣–٦) · ٨ حكايات */
+window.COMPANIONS_LITTLE = window.COMPANIONS_LITTLE || {};
+window.COMPANIONS_LITTLE.umar = {
+  id:'umar', icon:'⚖️', color:'#B8322E', title:'عُمَرُ الْفَارُوق', tag:'الْعَدْلُ وَالْقُوَّة',
+  stories:[
+
+{ id:'islam', icon:'💪', color:'#B8322E', title:'إِسْلَامُ عُمَر',
+  tag:'دُعَاءُ النَّبِيِّ ﷺ الْمُسْتَجَاب',
+  pages:[
+    { emoji:'💪', text:'كَانَ عُمَرُ رَجُلًا قَوِيًّا شُجَاعًا، لَكِنَّهُ كَانَ فِي أَوَّلِ الْأَمْرِ ضِدَّ الْإِسْلَام.',
+      prompt:'A strong dignified figure in old Makkah, strength and resolve, warm, no face detail' },
+    { emoji:'🤲', text:'فَدَعَا النَّبِيُّ ﷺ: اللَّهُمَّ أَعِزَّ الْإِسْلَامَ بِأَحَبِّ الرَّجُلَيْنِ إِلَيْك — بِعُمَرَ أَوْ أَبِي جَهْل.',
+      prompt:'Raised hands in earnest dua under warm light, a prayer for guidance, serene, no faces' },
+    { emoji:'📖', text:'سَمِعَ عُمَرُ أُخْتَهُ تَقْرَأُ الْقُرْآن، فَلَانَ قَلْبُهُ وَبَكَى، ثُمَّ ذَهَبَ وَأَعْلَنَ إِسْلَامَه!',
+      prompt:'A softened heart moved by glowing Quran verses, a heart opening to faith, warm tender, no faces' },
+    { emoji:'💚', text:'فَعَزَّ الْإِسْلَامُ بِإِسْلَامِه، وَصَارَ الْمُسْلِمُونَ يُصَلُّونَ عِنْدَ الْكَعْبَةِ عَلَنًا!',
+      prompt:'Believers praying openly at the Kaaba with confidence, Islam strengthened, warm radiant, no faces' },
+  ],
+  moral:'دُعَاءُ الصَّالِحِينَ مُسْتَجَاب، وَالْقَلْبُ يَلِينُ بِالْقُرْآن. 💚',
+  game:{ type:'pairs', title:'صِلْ كُلَّ شَيْءٍ بِمَعْنَاه', pairs:[
+    ['🤲 دُعَاءُ النَّبِيِّ ﷺ','أَعِزَّ الْإِسْلَامَ بِعُمَر'],
+    ['📖 الْقُرْآن','أَلَانَ قَلْبَ عُمَر'],
+    ['💪 عُمَر','عَزَّ بِهِ الْإِسْلَام'] ] },
+  act:{ q:'مَا الَّذِي أَلَانَ قَلْبَ عُمَرَ فَأَسْلَم؟', yay:'أَحْسَنْت! سَمَاعُهُ الْقُرْآن', opts:[
+    { e:'📖', t:'سَمَاعُهُ لِلْقُرْآن', ok:true },
+    { e:'💰', t:'الْمَال' },
+    { e:'🤷', t:'لَا أَعْرِف' } ] },
+  dua:'اللَّهُمَّ أَعِزَّ الْإِسْلَامَ وَالْمُسْلِمِين' },
+
+{ id:'faruq', icon:'⚔️', color:'#8E2E2E', title:'لِمَاذَا الْفَارُوق؟',
+  tag:'فَرَّقَ بَيْنَ الْحَقِّ وَالْبَاطِل',
+  pages:[
+    { emoji:'⚔️', text:'سَمَّى النَّبِيُّ ﷺ عُمَرَ «الْفَارُوق»، لِأَنَّهُ يُفَرِّقُ بَيْنَ الْحَقِّ وَالْبَاطِلِ بِقُوَّةٍ وَوُضُوح.',
+      prompt:'A clear line of light separating light from dark, distinguishing truth from falsehood, warm symbolic' },
+    { emoji:'🦁', text:'كَانَ قَوِيًّا شُجَاعًا لَا يَخَافُ فِي الْحَقِّ لَوْمَةَ لَائِم، حَتَّى إِنَّ الشَّيْطَانَ يَهْرُبُ مِنْ طَرِيقِه!',
+      prompt:'A brave lion-like figure standing firm for truth, courage in truth, warm strong, no face detail' },
+    { emoji:'☝️', text:'وَقَفَ مَعَ الْحَقِّ دَائِمًا، وَقَالَ كَلِمَةَ الْحَقِّ وَلَوْ كَانَتْ صَعْبَة.',
+      prompt:'A steadfast figure speaking truth plainly, upholding what is right, warm dignified, no face' },
+    { emoji:'💚', text:'فَأَتَعَلَّمُ الشَّجَاعَةَ فِي الْحَقّ: أَقُولُ الصَّوَابَ وَلَا أَخَافُ إِلَّا الله.',
+      prompt:'A brave child standing up for what is right kindly, courage for truth, warm uplifting' },
+  ],
+  moral:'أَكُونُ شُجَاعًا فِي الْحَقّ، أُفَرِّقُ بَيْنَ الصَّوَابِ وَالْخَطَأ وَلَا أَخَافُ إِلَّا الله. 💚',
+  game:{ type:'sort', title:'أَيُّهَا شَجَاعَةٌ فِي الْحَقّ؟', bins:['شَجَاعَةٌ ✅','خَطَأ 🚫'], items:[
+    { e:'☝️', t:'أَقُولُ الْحَقَّ بِأَدَب', bin:0 },
+    { e:'🙈', t:'أَسْكُتُ عَنِ الظُّلْمِ خَوْفًا', bin:1 },
+    { e:'⚖️', t:'أُنْصِفُ الْمَظْلُوم', bin:0 },
+    { e:'😤', t:'أُجَامِلُ عَلَى حِسَابِ الْحَقّ', bin:1 } ] },
+  act:{ q:'لِمَاذَا سُمِّيَ عُمَرُ بِالْفَارُوق؟', yay:'أَحْسَنْت! لِأَنَّهُ يُفَرِّقُ بَيْنَ الْحَقِّ وَالْبَاطِل', opts:[
+    { e:'⚖️', t:'يُفَرِّقُ بَيْنَ الْحَقِّ وَالْبَاطِل', ok:true },
+    { e:'💰', t:'لِأَنَّهُ غَنِيّ' },
+    { e:'🤷', t:'لَا أَعْرِف' } ] },
+  dua:'اللَّهُمَّ ارْزُقْنِي الشَّجَاعَةَ فِي الْحَقّ' },
+
+{ id:'justice', icon:'⚖️', color:'#D4A017', title:'خَلِيفَةُ الْعَدْل',
+  tag:'الْعَدْلُ مَعَ الْجَمِيع',
+  pages:[
+    { emoji:'⚖️', text:'صَارَ عُمَرُ خَلِيفَةً لِلْمُسْلِمِين، فَحَكَمَ بِالْعَدْلِ حَتَّى صَارَ مِثَالًا لِلْعَدْلِ فِي التَّارِيخ.',
+      prompt:'A just ruler weighing matters fairly with a glowing scale, justice, warm dignified, no face' },
+    { emoji:'🌙', text:'كَانَ يَطُوفُ لَيْلًا لِيَتَفَقَّدَ النَّاس، فَإِذَا وَجَدَ مُحْتَاجًا حَمَلَ لَهُ الطَّعَامَ بِنَفْسِه!',
+      prompt:'A cloaked leader carrying a sack of food at night to a needy family, servant leadership, warm, no faces' },
+    { emoji:'👶', text:'رَأَى أُمًّا وَأَطْفَالَهَا جِيَاعًا، فَحَمَلَ كِيسَ الطَّحِينِ عَلَى ظَهْرِهِ وَقَال: أَنَا الَّذِي سَأُحَاسَبُ عَنْهُم!',
+      prompt:'A leader carrying a heavy sack on his own back to feed hungry children, responsibility, warm tender, no faces' },
+    { emoji:'💚', text:'فَأَتَعَلَّمُ الْعَدْلَ وَالْمَسْؤُولِيَّة: أُنْصِفُ النَّاسَ وَأَهْتَمُّ بِالْمُحْتَاجِ حَوْلِي.',
+      prompt:'A child sharing fairly and helping someone in need, justice and care, warm uplifting' },
+  ],
+  moral:'الْعَادِلُ يَهْتَمُّ بِرَعِيَّتِه، وَأُنْصِفُ النَّاسَ وَأُسَاعِدُ الْمُحْتَاج. 💚',
+  game:{ type:'find', title:'اعْدِلْ كَعُمَر! اجْمَعْ مَوَازِينَ الْعَدْلِ الْخَمْس', target:'⚖️', count:5, distractors:['💰','☁️'], size:12 },
+  act:{ q:'مَاذَا كَانَ يَفْعَلُ عُمَرُ لَيْلًا لِرَعِيَّتِه؟', yay:'أَحْسَنْت! يَتَفَقَّدُهُم وَيُطْعِمُ الْمُحْتَاج', opts:[
+    { e:'🌙', t:'يَتَفَقَّدُ النَّاسَ وَيُطْعِمُ الْجَائِع', ok:true },
+    { e:'😴', t:'يَنَامُ فَقَط' },
+    { e:'🤷', t:'لَا أَعْرِف' } ] },
+  dua:'اللَّهُمَّ اجْعَلْنِي عَادِلًا مُهْتَمًّا بِالْمُحْتَاجِين' },
+
+{ id:'humble', icon:'🙇', color:'#5B4B8A', title:'تَوَاضُعُ الْقَوِيّ',
+  tag:'خَلِيفَةٌ بِثَوْبٍ مُرَقَّع',
+  pages:[
+    { emoji:'🙇', text:'مَعَ أَنَّ عُمَرَ حَكَمَ دَوْلَةً عَظِيمَة، كَانَ يَلْبَسُ ثَوْبًا بَسِيطًا فِيهِ رِقَاع، وَيَعِيشُ كَأَفْقَرِ النَّاس.',
+      prompt:'A simple patched garment on a humble leader, modest living despite power, warm, no face' },
+    { emoji:'🐪', text:'وَحِينَ دَخَلَ الْقُدْسَ فَاتِحًا، كَانَ يَمْشِي وَخَادِمُهُ يَرْكَبُ، يَتَنَاوَبَانِ عَلَى الدَّابَّةِ بِالْعَدْل!',
+      prompt:'A leader walking while a servant rides, taking turns fairly entering a city, humility, warm, no faces' },
+    { emoji:'😌', text:'لَمْ يَتَكَبَّرْ بِمَنْصِبِه، بَلْ خَافَ مِنْ مَسْؤُولِيَّتِهِ أَمَامَ الله، وَقَال: لَوْ عَثَرَتْ بَغْلَةٌ فِي الْعِرَاقِ لَخِفْتُ أَنْ يَسْأَلَنِيَ اللهُ عَنْهَا!',
+      prompt:'A humble leader reflecting on his responsibility with concern, fear of accountability, warm serene, no faces' },
+    { emoji:'💚', text:'فَأَتَعَلَّمُ أَنَّ الْقُوَّةَ الْحَقِيقِيَّةَ مَعَ التَّوَاضُع، وَأَنَّ الْمَسْؤُولِيَّةَ أَمَانَة.',
+      prompt:'A child humble and responsible despite ability, humility and duty, warm uplifting' },
+  ],
+  moral:'الْقُوَّةُ الْحَقِيقِيَّةُ مَعَ التَّوَاضُع، وَالْمَسْؤُولِيَّةُ أَمَانَةٌ أُحَاسَبُ عَلَيْهَا. 💚',
+  game:{ type:'sort', title:'أَيُّهَا مِنَ التَّوَاضُع؟', bins:['تَوَاضُع 💚','كِبْر 🚫'], items:[
+    { e:'🙇', t:'أَعِيشُ بِبَسَاطَةٍ بِلَا تَكَبُّر', bin:0 },
+    { e:'😤', t:'أَتَفَاخَرُ بِمَنْصِبِي', bin:1 },
+    { e:'🤝', t:'أَخْدِمُ وَأُسَاعِد', bin:0 },
+    { e:'🙄', t:'أَحْتَقِرُ مَنْ دُونِي', bin:1 } ] },
+  act:{ q:'كَيْفَ عَاشَ عُمَرُ وَهُوَ خَلِيفَة؟', yay:'أَحْسَنْت! مُتَوَاضِعًا بَسِيطًا بِلَا تَكَبُّر', opts:[
+    { e:'🙇', t:'بِبَسَاطَةٍ وَتَوَاضُع', ok:true },
+    { e:'👑', t:'بِتَكَبُّرٍ وَتَرَف' },
+    { e:'🤷', t:'لَا أَعْرِف' } ] },
+  dua:'اللَّهُمَّ ارْزُقْنِي التَّوَاضُعَ وَأَدَاءَ الْأَمَانَة' },
+
+{ id:'fear', icon:'🤲', color:'#2980B9', title:'خَوْفُهُ مِنَ الله',
+  tag:'قَوِيٌّ يَبْكِي مِنْ خَشْيَةِ الله',
+  pages:[
+    { emoji:'🤲', text:'مَعَ قُوَّتِهِ وَهَيْبَتِه، كَانَ عُمَرُ شَدِيدَ الْخَوْفِ مِنَ الله، كَثِيرَ الْبُكَاءِ فِي صَلَاتِهِ مِنْ خَشْيَتِه.',
+      prompt:'A strong figure humbled and tearful in prayer, awe of Allah, warm reverent, no face detail' },
+    { emoji:'📖', text:'كَانَ إِذَا سَمِعَ آيَةً مِنَ الْقُرْآنِ تَأَثَّرَ قَلْبُهُ حَتَّى يَمْرَض مِنَ الْخَشْيَة.',
+      prompt:'A heart deeply moved by glowing Quran verses, tenderness before Allah, warm serene, no faces' },
+    { emoji:'💚', text:'الْخَوْفُ مِنَ اللهِ لَا يَعْنِي الضَّعْف، بَلْ يَجْعَلُ الْقَوِيَّ عَادِلًا رَحِيمًا يَتَذَكَّرُ الْآخِرَة.',
+      prompt:'Strength combined with humility and awe, God-consciousness, warm balanced scene, no faces' },
+    { emoji:'💛', text:'فَأَتَعَلَّمُ أَنْ أَخَافَ اللهَ فِي السِّرِّ وَالْعَلَن، فَيَحْمِلُنِي خَوْفُهُ عَلَى الْخَيْر.',
+      prompt:'A child mindful of Allah with a peaceful heart, God-consciousness, warm uplifting' },
+  ],
+  moral:'خَوْفُ اللهِ يَجْعَلُ الْقَوِيَّ عَادِلًا رَحِيمًا، وَأَخَافُهُ فِي السِّرِّ وَالْعَلَن. 💛',
+  game:{ type:'pairs', title:'صِلْ كُلَّ شَيْءٍ بِمَعْنَاه', pairs:[
+    ['🤲 عُمَرُ الْقَوِيّ','يَبْكِي مِنْ خَشْيَةِ الله'],
+    ['📖 آيَةُ الْقُرْآن','تُؤَثِّرُ فِي قَلْبِه'],
+    ['💚 خَوْفُ الله','يَحْمِلُ عَلَى الْخَيْر'] ] },
+  act:{ q:'هَلْ خَوْفُ اللهِ ضَعْف؟', yay:'أَحْسَنْت! يَجْعَلُ الْقَوِيَّ عَادِلًا رَحِيمًا', opts:[
+    { e:'💚', t:'لَا! يَجْعَلُ الْقَوِيَّ عَادِلًا', ok:true },
+    { e:'😠', t:'نَعَم، ضَعْف' },
+    { e:'🤷', t:'لَا أَعْرِف' } ] },
+  dua:'اللَّهُمَّ ارْزُقْنِي خَشْيَتَكَ فِي السِّرِّ وَالْعَلَن' },
+
+{ id:'expand', icon:'🌍', color:'#16A085', title:'انْتِشَارُ الْعَدْل',
+  tag:'الْإِسْلَامُ يَصِلُ الْبِلَاد',
+  pages:[
+    { emoji:'🌍', text:'فِي عَهْدِ عُمَر، انْتَشَرَ الْإِسْلَامُ فِي بِلَادٍ كَثِيرَة، وَوَصَلَ الْعَدْلُ إِلَى شُعُوبٍ كَانَتْ تَحْتَ الظُّلْم.',
+      prompt:'Light of justice spreading across a map of lands, spread of justice, warm radiant, no faces' },
+    { emoji:'🕊️', text:'فَرِحَ النَّاسُ بِعَدْلِ الْمُسْلِمِينَ بَعْدَ ظُلْمِ الْحُكَّامِ الْقُدَامَى، وَأَحَبُّوا هَذَا الدِّينَ الْعَادِل.',
+      prompt:'Relieved people welcoming just rule with warmth, justice loved by all, warm bright, no faces' },
+    { emoji:'⚖️', text:'كَانَ عُمَرُ يُوصِي قَادَتَهُ بِالْعَدْلِ وَالرِّفْقِ بِالنَّاسِ وَعَدَمِ الظُّلم، حَتَّى مَعَ غَيْرِ الْمُسْلِمِين.',
+      prompt:'A leader instructing commanders to be just and gentle, ethics of governance, warm dignified, no faces' },
+    { emoji:'💚', text:'فَأَتَعَلَّمُ أَنَّ الْإِسْلَامَ يَنْتَشِرُ بِالْعَدْلِ وَالْأَخْلَاق، وَأَنَّ الْعَدْلَ يُحَبِّبُ النَّاسَ فِي الْحَقّ.',
+      prompt:'A community thriving under fairness with people of all kinds, justice attracting hearts, warm uplifting' },
+  ],
+  moral:'الْإِسْلَامُ يَنْتَشِرُ بِالْعَدْلِ وَالْأَخْلَاق، وَالْعَدْلُ يُحَبِّبُ النَّاسَ فِي الْحَقّ. 💚',
+  game:{ type:'sort', title:'كَيْفَ يَحْكُمُ الْقَائِدُ الْعَادِل؟', bins:['عَدْلٌ وَرِفْق ✅','ظُلْمٌ 🚫'], items:[
+    { e:'⚖️', t:'يُنْصِفُ كُلَّ النَّاس', bin:0 },
+    { e:'😠', t:'يَظْلِمُ الضُّعَفَاء', bin:1 },
+    { e:'🕊️', t:'يَرْفُقُ بِرَعِيَّتِه', bin:0 },
+    { e:'👊', t:'يَتَكَبَّرُ وَيَقْهَر', bin:1 } ] },
+  act:{ q:'بِمَ انْتَشَرَ الْإِسْلَامُ فِي عَهْدِ عُمَر؟', yay:'أَحْسَنْت! بِالْعَدْلِ وَالْأَخْلَاق', opts:[
+    { e:'⚖️', t:'بِالْعَدْلِ وَالرِّفْق', ok:true },
+    { e:'😠', t:'بِالظُّلْم' },
+    { e:'🤷', t:'لَا أَعْرِف' } ] },
+  dua:'اللَّهُمَّ انْشُرِ الْعَدْلَ بَيْنَ النَّاس' },
+
+{ id:'jannah', icon:'🌟', color:'#C9A227', title:'الْمُبَشَّرُ بِالْجَنَّة',
+  tag:'ثَانِي الْخُلَفَاءِ الرَّاشِدِين',
+  pages:[
+    { emoji:'🌟', text:'بَشَّرَ النَّبِيُّ ﷺ عُمَرَ بِالْجَنَّة، فَهُوَ مِنَ الْعَشَرَةِ الْمُبَشَّرِينَ بِهَا.',
+      prompt:'A radiant golden star among ten in a warm sky, glad tidings of Paradise, serene' },
+    { emoji:'🏰', text:'رَأَى النَّبِيُّ ﷺ فِي الْجَنَّةِ قَصْرًا، فَقِيلَ لَه: هَذَا لِعُمَر! فَتَذَكَّرَ غَيْرَتَهُ فَلَمْ يَدْخُلْه.',
+      prompt:'A beautiful palace of light in a paradise garden, reward in Paradise, warm radiant, no faces' },
+    { emoji:'😈', text:'وَقَالَ ﷺ: مَا لَقِيَكَ الشَّيْطَانُ سَالِكًا فَجًّا إِلَّا سَلَكَ فَجًّا غَيْرَ فَجِّك — لِقُوَّةِ إِيمَانِه!',
+      prompt:'A shadow fleeing away from a strong figure of faith, Satan avoiding him, warm symbolic, no faces' },
+    { emoji:'💚', text:'فَأُحِبُّ عُمَر، وَأَقْتَدِي بِعَدْلِهِ وَشَجَاعَتِهِ وَتَوَاضُعِهِ وَخَوْفِهِ مِنَ الله.',
+      prompt:'A child looking up at a bright guiding star with aspiration, following a role model, uplifting' },
+  ],
+  moral:'أُحِبُّ عُمَر، وَأَقْتَدِي بِعَدْلِهِ وَشَجَاعَتِهِ وَتَوَاضُعِه. 💚',
+  game:{ type:'order', title:'رَتِّبْ مَرَاحِلَ عُمَرَ الْفَارُوق', items:[
+    { e:'📖', t:'أَسْلَمَ بَعْدَ سَمَاعِ الْقُرْآن' },
+    { e:'⚔️', t:'صَارَ الْفَارُوق' },
+    { e:'⚖️', t:'خَلِيفَةُ الْعَدْل' },
+    { e:'🌟', t:'الْمُبَشَّرُ بِالْجَنَّة' } ] },
+  act:{ q:'بِمَ بَشَّرَ النَّبِيُّ ﷺ عُمَر؟', yay:'أَحْسَنْت! بَشَّرَهُ بِالْجَنَّة', opts:[
+    { e:'🌟', t:'بَشَّرَهُ بِالْجَنَّة', ok:true },
+    { e:'💰', t:'بِالْمَال' },
+    { e:'🤷', t:'لَا أَعْرِف' } ] },
+  dua:'اللَّهُمَّ ارْزُقْنِي الْجَنَّةَ وَصُحْبَةَ الصَّالِحِينَ فِيهَا' },
+
+{ id:'lesson', icon:'💪', color:'#8E44AD', title:'دُرُوسٌ مِنْ عُمَر',
+  tag:'قُوَّةٌ وَعَدْلٌ وَتَوَاضُع',
+  pages:[
+    { emoji:'💪', text:'عَلَّمَنَا عُمَرُ أَنَّ الْقُوَّةَ الْحَقِيقِيَّةَ لَيْسَتْ فِي الْعَضَلَاتِ فَقَط، بَلْ فِي قُوَّةِ الْحَقِّ وَالْعَدْل.',
+      prompt:'Strength shown as justice and truth combined, true strength, warm dignified, no faces' },
+    { emoji:'⚖️', text:'وَأَنَّ الْقَائِدَ الْحَقَّ يَخْدُمُ النَّاسَ وَلَا يَتَكَبَّرُ عَلَيْهِم، وَيَخَافُ اللهَ فِيهِم.',
+      prompt:'A servant-leader caring for people humbly, leadership as service, warm bright, no faces' },
+    { emoji:'💚', text:'وَأَنَّ الشَّجَاعَةَ فِي قَوْلِ الْحَقّ، وَالْخَوْفَ مِنَ اللهِ يَصْنَعُ أَعْظَمَ الرِّجَال.',
+      prompt:'Courage and God-consciousness shaping a great person, virtues combined, warm uplifting, no faces' },
+    { emoji:'💛', text:'فَأَكُونُ قَوِيًّا عَادِلًا مُتَوَاضِعًا شُجَاعًا فِي الْحَقّ، أَخَافُ اللهَ وَأَنْفَعُ النَّاس.',
+      prompt:'A child embodying strength justice and humility, well-rounded character, warm uplifting' },
+  ],
+  moral:'أَكُونُ قَوِيًّا عَادِلًا مُتَوَاضِعًا شُجَاعًا فِي الْحَقّ، أَخَافُ اللهَ وَأَنْفَعُ النَّاس. 💛',
+  game:{ type:'sort', title:'أَيُّهَا مِنْ صِفَاتِ عُمَر؟', bins:['صِفَةٌ عُمَرِيَّة 💚','ضِدُّهَا 🚫'], items:[
+    { e:'⚖️', t:'الْعَدْل', bin:0 },
+    { e:'😤', t:'الظُّلْم', bin:1 },
+    { e:'🦁', t:'الشَّجَاعَةُ فِي الْحَقّ', bin:0 },
+    { e:'🙄', t:'الْكِبْر', bin:1 } ] },
+  act:{ q:'مَا أَعْظَمُ دَرْسٍ مِنْ عُمَر؟', yay:'أَحْسَنْت! الْقُوَّةُ مَعَ الْعَدْلِ وَالتَّوَاضُع', opts:[
+    { e:'💪', t:'الْقُوَّةُ مَعَ الْعَدْلِ وَخَوْفِ الله', ok:true },
+    { e:'💰', t:'جَمْعُ الْمَال' },
+    { e:'🤷', t:'لَا أَعْرِف' } ] },
+  dua:'اللَّهُمَّ اجْعَلْنِي قَوِيًّا عَادِلًا مُتَوَاضِعًا أَخَافُك' },
+
+]};
