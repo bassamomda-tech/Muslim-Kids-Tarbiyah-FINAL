@@ -818,6 +818,16 @@
           </div>
 
           <!-- the surah, word-by-word follow -->
+          <div style="display:flex;align-items:center;justify-content:center;gap:9px;flex-wrap:wrap;margin-bottom:16px;">
+            <span style="font-weight:800;color:#137a60;font-size:13px;font-family:'Cairo';">🎯 سمِّع من</span>
+            <select value="{{ tasFromValue }}" onChange="{{ tasFromChange }}" style="font-family:'Cairo';font-weight:800;font-size:13px;color:#15543c;background:#fff;border:2px solid #1b6e4e;border-radius:11px;padding:7px 12px;cursor:pointer;">
+              <sc-for list="{{ tasRangeOptions }}" as="o" hint-placeholder-count="3"><option value="{{ o.value }}">{{ o.label }}</option></sc-for>
+            </select>
+            <span style="font-weight:800;color:#137a60;font-size:13px;font-family:'Cairo';">إلى</span>
+            <select value="{{ tasToValue }}" onChange="{{ tasToChange }}" style="font-family:'Cairo';font-weight:800;font-size:13px;color:#15543c;background:#fff;border:2px solid #1b6e4e;border-radius:11px;padding:7px 12px;cursor:pointer;">
+              <sc-for list="{{ tasRangeOptions }}" as="o2" hint-placeholder-count="3"><option value="{{ o2.value }}">{{ o2.label }}</option></sc-for>
+            </select>
+          </div>
           <div data-r="refbook" style="background:linear-gradient(180deg,#FFFDF5,#F7EDCF);border:1px solid #E4D3A0;border-radius:20px;padding:16px;box-shadow:0 18px 40px rgba(60,45,15,.14),0 3px 0 #E9D9AC;">
             <div style="border:2.5px solid #E8C766;border-radius:14px;padding:26px 20px;background:linear-gradient(180deg,#fffdf6,#fdf7e6);position:relative;overflow:hidden;">
             <sc-if value="{{ notTawba }}" hint-placeholder-val="{{ true }}"><div style="text-align:center;font-family:'Amiri Quran';font-size:24px;color:#9a8240;margin-bottom:18px;">بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ</div></sc-if>
@@ -839,7 +849,13 @@
             <sc-if value="{{ tasIsListening }}" hint-placeholder-val="{{ false }}">
               <div style="display:inline-flex;align-items:center;gap:10px;background:#fbecea;color:#cf4b3e;font-weight:800;font-size:16px;padding:11px 22px;border-radius:16px;">
                 <span style="width:14px;height:14px;border-radius:50%;background:#cf4b3e;animation:qg-pulse 1s ease-in-out infinite;"></span>أستمع إليك... تابع القراءة
+                <span style="display:inline-flex;align-items:flex-end;gap:2.5px;height:22px;margin-right:4px;"><span data-tasbar style="width:4px;height:5px;border-radius:2px;background:#cf4b3e;opacity:.3;transition:height .12s;"></span><span data-tasbar style="width:4px;height:5px;border-radius:2px;background:#cf4b3e;opacity:.3;transition:height .12s;"></span><span data-tasbar style="width:4px;height:5px;border-radius:2px;background:#cf4b3e;opacity:.3;transition:height .12s;"></span><span data-tasbar style="width:4px;height:5px;border-radius:2px;background:#cf4b3e;opacity:.3;transition:height .12s;"></span><span data-tasbar style="width:4px;height:5px;border-radius:2px;background:#cf4b3e;opacity:.3;transition:height .12s;"></span></span>
               </div>
+              <div style="margin-top:8px;"><span data-tasnoise style="display:none;font-size:13px;font-weight:700;color:#8a6410;background:#fdf3d6;border:1px solid #e0c878;border-radius:11px;padding:7px 14px;line-height:1.7;"></span></div>
+              <sc-if value="{{ tasHideOn }}" hint-placeholder-val="{{ false }}"><div style="margin-top:10px;"><button onClick="{{ tasHint }}" style="border:2px solid #e0b94a;background:#fff9e8;color:#a9760f;font-weight:800;border-radius:12px;padding:9px 20px;cursor:pointer;font-family:'Cairo';font-size:14px;box-shadow:0 3px 0 #ecd9a0;">👁️ أظهِر لي الكلمة التالية</button></div></sc-if>
+            </sc-if>
+            <sc-if value="{{ tasPaused }}" hint-placeholder-val="{{ false }}">
+              <div style="display:inline-flex;align-items:center;gap:10px;background:#fdf3d6;color:#8a6410;font-weight:800;font-size:15px;padding:11px 22px;border-radius:16px;">⏸ توقّف مؤقت — تقدّمك محفوظ، اضغط «متابعة» لاستكمال التسميع</div>
             </sc-if>
             <sc-if value="{{ tasCompleted }}" hint-placeholder-val="{{ false }}">
               <div style="display:inline-flex;align-items:center;gap:10px;background:#e7f3ea;color:#1b6e4e;font-weight:800;font-size:18px;padding:11px 24px;border-radius:16px;">
@@ -883,6 +899,7 @@
                       <div style="background:#fbecea;border:1px solid #e3a99f;border-radius:13px;padding:9px 13px;display:flex;align-items:center;gap:10px;flex-wrap:wrap;">
                         <span style="font-family:'Amiri Quran';font-size:24px;color:#cf4b3e;">{{ m.text }}</span>
                         <span style="font-family:'Cairo';font-size:10px;font-weight:800;color:#a33529;background:#fff;border-radius:6px;padding:2px 7px;">آية {{ m.ayah }}</span>
+                        <button onClick="{{ m.say }}" style="border:none;background:#1b6e4e;color:#fff;font-weight:800;border-radius:9px;padding:6px 13px;cursor:pointer;font-family:'Cairo';font-size:12px;display:inline-flex;align-items:center;gap:5px;">🔊 انطق لي</button>
                         <sc-for list="{{ m.rules }}" as="r" hint-placeholder-count="1"><span style="display:inline-flex;align-items:center;gap:5px;background:#fff;border-radius:8px;padding:3px 9px;"><span style="width:11px;height:11px;border-radius:4px;background:{{ r.color }};"></span><span style="font-size:11px;font-weight:700;color:#23332c;">{{ r.label }}</span></span></sc-for>
                       </div>
                     </sc-for>
@@ -898,6 +915,7 @@
                       <div style="background:#fdf3d6;border:1px solid #e0c878;border-radius:13px;padding:9px 13px;display:flex;align-items:center;gap:10px;flex-wrap:wrap;">
                         <span style="font-family:'Amiri Quran';font-size:24px;color:#b07d12;">{{ m.text }}</span>
                         <span style="font-family:'Cairo';font-size:10px;font-weight:800;color:#8a6410;background:#fff;border-radius:6px;padding:2px 7px;">آية {{ m.ayah }}</span>
+                        <button onClick="{{ m.say }}" style="border:none;background:#1b6e4e;color:#fff;font-weight:800;border-radius:9px;padding:6px 13px;cursor:pointer;font-family:'Cairo';font-size:12px;display:inline-flex;align-items:center;gap:5px;">🔊 انطق لي</button>
                         <sc-for list="{{ m.rules }}" as="r" hint-placeholder-count="1"><span style="display:inline-flex;align-items:center;gap:5px;background:#fff;border-radius:8px;padding:3px 9px;"><span style="width:11px;height:11px;border-radius:4px;background:{{ r.color }};"></span><span style="font-size:11px;font-weight:700;color:#23332c;">{{ r.label }}</span></span></sc-for>
                       </div>
                     </sc-for>
@@ -921,9 +939,10 @@
           <div style="display:flex;align-items:center;justify-content:center;gap:12px;flex-wrap:wrap;">
             <button onClick="{{ tasAuto }}" style="border:none;background:{{ tasAutoBg }};color:#fff;font-weight:800;border-radius:14px;padding:14px 30px;cursor:pointer;font-family:'Cairo';font-size:17px;box-shadow:0 6px 16px rgba(31,110,78,.28);display:flex;align-items:center;gap:9px;"><span style="font-size:21px;">{{ tasAutoIcon }}</span>{{ tasAutoLabel }}</button>
             <button onClick="{{ tasMic }}" style="border:none;background:{{ tasMicBg }};color:#fff;font-weight:800;border-radius:14px;padding:14px 28px;cursor:pointer;font-family:'Cairo';font-size:17px;box-shadow:0 6px 16px rgba(207,75,62,.28);display:flex;align-items:center;gap:9px;"><span style="font-size:21px;">{{ tasMicIcon }}</span>{{ tasMicLabel }}</button>
+            <sc-if value="{{ tasPauseShow }}" hint-placeholder-val="{{ false }}"><button onClick="{{ tasPause }}" style="border:none;background:#b07d12;color:#fff;font-weight:800;border-radius:14px;padding:14px 24px;cursor:pointer;font-family:'Cairo';font-size:16px;box-shadow:0 6px 16px rgba(176,125,18,.28);display:flex;align-items:center;gap:8px;"><span style="font-size:19px;">{{ tasPauseIcon }}</span>{{ tasPauseLabel }}</button></sc-if>
             <button onClick="{{ tasReset }}" style="border:2px solid #d4e3cf;background:#fff;color:#1b6e4e;font-weight:700;border-radius:14px;padding:13px 22px;cursor:pointer;font-family:'Cairo';font-size:15px;">↻ إعادة من البداية</button>
           </div>
-          <div style="text-align:center;margin-top:10px;font-size:13px;color:#7d8a7e;font-weight:600;">👂 «تتبّع مع القارئ» يُبرز الكلمات مع صوت الشيخ بدون ميكروفون · 🎤 «سمِّع بصوتي» يسمع تلاوتك (يحتاج إذن الميكروفون)</div>
+          <div style="text-align:center;margin-top:10px;font-size:13px;color:#7d8a7e;font-weight:600;">👂 «تتبّع مع القارئ» يُبرز الكلمات مع صوت الشيخ بدون ميكروفون · 🎤 «سمِّع بصوتي» يسمع تلاوتك (يحتاج إذن الميكروفون) · 💡 للدقّة الأعلى: مكان هادئ والجهاز قريب منك</div>
           <div style="display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:8px;margin-top:14px;padding-top:14px;border-top:1px dashed #e3d6b4;">
             <span style="font-weight:800;color:#137a60;font-size:13px;">🎙️ القارئ:</span>
             <select value="{{ reciterValue }}" onChange="{{ reciterChange }}" style="font-family:'Cairo';font-weight:800;font-size:14px;color:#15543c;background:#fff;border:2px solid #1b6e4e;border-radius:12px;padding:9px 34px 9px 14px;cursor:pointer;max-width:280px;appearance:none;-webkit-appearance:none;background-image:url('data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2216%22 height=%2216%22 viewBox=%220 0 24 24%22 fill=%22none%22 stroke=%22%231b6e4e%22 stroke-width=%223%22 stroke-linecap=%22round%22 stroke-linejoin=%22round%22><polyline points=%226 9 12 15 18 9%22/></svg>');background-repeat:no-repeat;background-position:left 12px center;">
@@ -1694,7 +1713,7 @@ class Component extends DCLogic {
       // memorize
       memMode:'repeat', hideLevel:0, revealed:false, memRevealed:[], mushafHide:false, mushafRevealed:[],
       memIndex:0, repeatTarget:5, repeatDone:0, memPlaying:false, playingAyah:null, playingSurahNum:null, mushafIndex:0, glossWord:'', glossText:'', rangeFrom:1, rangeTo:0,
-      tasmeeIndex:0, tasStatus:'idle', tasResult:null, tasAccuracy:0, tasHeard:'', tasRefPlaying:false, tasErr:'', tasFlags:[], tasCursor:0, tasReport:null, tasHide:false, tasAutoAyah:0,
+      tasmeeIndex:0, tasStatus:'idle', tasResult:null, tasAccuracy:0, tasHeard:'', tasRefPlaying:false, tasErr:'', tasFlags:[], tasCursor:0, tasReport:null, tasHide:false, tasAutoAyah:0, tasFrom:1, tasTo:0,
       recState:'idle', recUrl:null, videoEmbed:null,
       // activities
       activity:'maze',
@@ -1962,9 +1981,9 @@ class Component extends DCLogic {
     const idxs=Array.from({length:n},(_,i)=>i);
     // deterministic-ish shuffle
     for(let i=n-1;i>0;i--){ const j=Math.floor((Math.sin((i+1)*(s.num+9))*10000)%(i+1)+(i+1))%(i+1); const t=idxs[i];idxs[i]=idxs[j];idxs[j]=t; }
-    this.stopAudio(); this.tasManualStop=true; if(this.recog){try{this.recog.stop();}catch(e){}}
+    this.stopAudio(); this.tasManualStop=true; if(this.recog){try{this.recog.stop();}catch(e){}} this.tasMeterStop(); this.tasBaseFlags=null; this.tasBaseCursor=0; this.tasResume=false;
     this.setState({ surahId:id, tab:'mushaf', memIndex:0, mushafIndex:0, glossWord:'', glossText:'', repeatDone:0, memPlaying:false, playingAyah:null, rangeFrom:1, rangeTo:n, mushafHide:false, mushafRevealed:[], hideLevel:0,
-      tasmeeIndex:0, tasStatus:'idle', tasResult:null, tasAccuracy:0, tasHeard:'', tasRefPlaying:false, tasErr:'', tasFlags:[], tasCursor:0, tasReport:null,
+      tasmeeIndex:0, tasStatus:'idle', tasResult:null, tasAccuracy:0, tasHeard:'', tasRefPlaying:false, tasErr:'', tasFlags:[], tasCursor:0, tasReport:null, tasFrom:1, tasTo:0, tasHintIdx:null,
       activity:'maze', quizSel:{}, orderPlaced:[], orderShuffle:idxs, orderMsg:'', fills:{}, storyPage:0, maze:null,
       screen: go?'surah':this.state.screen }, ()=>{ if(go){ try{window.scrollTo(0,0);}catch(e){} } });
   }
@@ -1975,25 +1994,33 @@ class Component extends DCLogic {
 
   // ---------- TASMEE: live follow-along (Tarteel-style) ----------
   followWords(){
-    const ayat=this.cur().ayat; const out=[];
-    ayat.forEach((a,ai)=>{ a.split(' ').filter(Boolean).forEach(raw=>{ out.push({raw, norm:this.norm(raw), ayah:ai+1}); }); });
+    const ayat=this.cur().ayat; const out=[]; const R=this.tasRange();
+    ayat.forEach((a,ai)=>{ const n=ai+1; if(n<R.from||n>R.to) return; let p=0; a.split(' ').filter(Boolean).forEach(raw=>{ p++; out.push({raw, norm:this.norm(raw), ayah:n, pos:p}); }); });
     return out;
   }
+  tasRange(){ const len=this.cur().ayat.length; let from=Math.max(1,Math.min(+(this.state.tasFrom||1),len)); let to=+(this.state.tasTo||0)||len; to=Math.max(from,Math.min(to,len)); return {from,to}; }
   lev(a,b){ const n=a.length,m=b.length; if(!n)return m; if(!m)return n; const d=Array.from({length:n+1},(_,i)=>[i].concat(new Array(m).fill(0))); for(let j=0;j<=m;j++)d[0][j]=j; for(let i=1;i<=n;i++)for(let j=1;j<=m;j++){ d[i][j]=Math.min(d[i-1][j]+1,d[i][j-1]+1,d[i-1][j-1]+(a[i-1]===b[j-1]?0:1)); } return d[n][m]; }
   simEq(t,h){
     if(t===h) return 2;
     var st=t.replace(/^(\u0648|\u0641)/,''), sh=h.replace(/^(\u0648|\u0641)/,'');
     if(st.length>=2 && st===sh) return 2;
-    var L=Math.max(t.length,h.length);
-    if(L>=3 && 1-this.lev(t,h)/L >= 0.6) return 1;
+    var at=st.replace(/^\u0627\u0644(?=..)/,''), ah=sh.replace(/^\u0627\u0644(?=..)/,'');
+    if(at.length>=3 && at===ah) return 2;
+    var pt=this.phon(at), ph=this.phon(ah);
+    if(pt.length>=3 && pt===ph) return 2;
+    var S=Math.min(t.length,h.length), L=Math.max(t.length,h.length);
+    if(S>=3 && (t.indexOf(h)===0 || h.indexOf(t)===0) && S/L>=0.6) return 2;
+    if(L>=3 && 1-this.lev(t,h)/L >= 0.55) return 1;
     var L2=Math.max(st.length,sh.length);
-    if(L2>=3 && 1-this.lev(st,sh)/L2 >= 0.6) return 1;
+    if(L2>=3 && 1-this.lev(st,sh)/L2 >= 0.55) return 1;
+    var Lp=Math.max(pt.length,ph.length);
+    if(Lp>=3 && 1-this.lev(pt,ph)/Lp >= 0.55) return 1;
     return 0;
   }
   alignFollow(transcript){
     var words=this.followWords();
     var H=transcript.split(/\s+/).map(w=>this.norm(w)).filter(Boolean);
-    var flags=new Array(words.length).fill(0); var ci=0; var WIN=4;
+    var flags=(this.tasBaseFlags&&this.tasBaseFlags.length===words.length)?this.tasBaseFlags.slice():new Array(words.length).fill(0); var ci=(this.tasBaseFlags&&this.tasBaseFlags.length===words.length)?(this.tasBaseCursor||0):0; var WIN=6;
     for(var hi=0; hi<H.length; hi++){
       if(ci>=words.length) break;
       while(ci<words.length && words[ci].norm.length===0){ flags[ci]=1; ci++; }
@@ -2024,7 +2051,7 @@ class Component extends DCLogic {
   buildReport(){
     const words=this.followWords(); const flags=this.state.tasFlags||[]; const cursor=Math.min(this.state.tasCursor||0, words.length);
     const missed=[], near=[]; let readCount=0;
-    for(let i=0;i<cursor;i++){ if(flags[i]===2) missed.push({t:words[i].raw, ayah:words[i].ayah, rules:this.wordRules(words[i].raw, words[i+1]&&words[i+1].raw)}); else if(flags[i]===3){ near.push({t:words[i].raw, ayah:words[i].ayah, rules:this.wordRules(words[i].raw, words[i+1]&&words[i+1].raw)}); } else if(flags[i]===1 && words[i].norm.length) readCount++; }
+    for(let i=0;i<cursor;i++){ if(flags[i]===2) missed.push({t:words[i].raw, ayah:words[i].ayah, pos:words[i].pos, rules:this.wordRules(words[i].raw, words[i+1]&&words[i+1].raw)}); else if(flags[i]===3){ near.push({t:words[i].raw, ayah:words[i].ayah, pos:words[i].pos, rules:this.wordRules(words[i].raw, words[i+1]&&words[i+1].raw)}); } else if(flags[i]===1 && words[i].norm.length) readCount++; }
     const reached=cursor; const denom=reached||1; const acc=Math.round((readCount/denom)*100);
     const RL={ghunnah:'\u0627\u0644\u063a\u064f\u0646\u0651\u0629',qalqalah:'\u0627\u0644\u0642\u0644\u0642\u0644\u0629',madd:'\u0627\u0644\u0645\u062f\u0651',ikhfa:'\u0627\u0644\u0625\u062e\u0641\u0627\u0621',idgham:'\u0627\u0644\u0625\u062f\u063a\u0627\u0645',iqlab:'\u0627\u0644\u0625\u0642\u0644\u0627\u0628'};
     const covered=new Set(); for(let i=0;i<cursor;i++) covered.add(words[i].ayah);
@@ -2034,7 +2061,8 @@ class Component extends DCLogic {
     if(mastered){ try{ const seals=JSON.parse(localStorage.getItem('qg_seal')||'{}')||{}; if(!seals[this.state.surahId]){ seals[this.state.surahId]=true; localStorage.setItem('qg_seal',JSON.stringify(seals)); } }catch(e){} }
     return {acc, missed, near, readCount, reached, total:words.length, tajweed, mastered};
   }
-  norm(w){ return this.strip(w).replace(/[\u0623\u0625\u0622\u0627]/g,'\u0627').replace(/\u0649/g,'\u064a').replace(/\u0629/g,'\u0647').replace(/\u0624/g,'\u0648').replace(/\u0626/g,'\u064a').replace(/[^\u0621-\u064a]/g,''); }
+  norm(w){ return this.strip(w).replace(/[\u0623\u0625\u0622\u0627]/g,'\u0627').replace(/\u0649/g,'\u064a').replace(/\u0629/g,'\u0647').replace(/\u0624/g,'\u0648').replace(/\u0626/g,'\u064a').replace(/[^\u0621-\u064a]/g,'').replace(/([\u0621-\u064a])\1{2,}/g,'$1$1'); }
+  phon(w){ return w.replace(/[\u0637\u062a]/g,'\u062a').replace(/[\u062b\u0633\u0635]/g,'\u0633').replace(/[\u0630\u0632\u0638]/g,'\u0632').replace(/[\u0636\u062f]/g,'\u062f').replace(/[\u0642\u0643]/g,'\u0643').replace(/\u0647$/,'').replace(/([\u0621-\u064a])\1+/g,'$1'); }
   wordRules(raw, nextRaw){
     const RL={ghunnah:'الغُنّة (ن/م مشدّدة)',qalqalah:'القلقلة',madd:'المدّ',ikhfa:'الإخفاء (نون ساكنة/تنوين)',idgham:'الإدغام بغُنّة (نون ساكنة/تنوين)',idghamng:'الإدغام بغير غُنّة (ل، ر)',iqlab:'الإقلاب (نون ساكنة/تنوين)',izhar:'الإظهار (نون ساكنة/تنوين)'};
     const own=this.clusters(raw); const ownLen=own.length;
@@ -2050,24 +2078,110 @@ class Component extends DCLogic {
     while(i>0&&j>0){ if(target[i-1]===heard[j-1]){matched[i-1]=true;i--;j--;} else if(dp[i-1][j]>=dp[i][j-1])i--; else j--; }
     return matched;
   }
+  // ---------- TASMEE: live mic level meter + noise guard ----------
+  tasMeterStart(){
+    try{
+      if(!navigator.mediaDevices || !navigator.mediaDevices.getUserMedia) return;
+      navigator.mediaDevices.getUserMedia({audio:{echoCancellation:true, noiseSuppression:true, autoGainControl:true}}).then((stream)=>{
+        if(this.state.tasStatus!=='listening'){ try{stream.getTracks().forEach(t=>t.stop());}catch(e){} return; }
+        this.tasStream=stream;
+        const AC=window.AudioContext||window.webkitAudioContext; if(!AC) return;
+        this.tasAC=new AC();
+        const src=this.tasAC.createMediaStreamSource(stream);
+        const an=this.tasAC.createAnalyser(); an.fftSize=512; src.connect(an);
+        const data=new Uint8Array(an.fftSize);
+        const t0=Date.now(); this.tasLvl=0;
+        const loop=()=>{
+          if(!this.tasAC || this.state.tasStatus!=='listening') return;
+          an.getByteTimeDomainData(data);
+          let sum=0; for(let i=0;i<data.length;i++){ const v=(data[i]-128)/128; sum+=v*v; }
+          const rms=Math.sqrt(sum/data.length);
+          this.tasLvl=this.tasLvl*0.75+rms*0.25;
+          const lvl=Math.min(1, this.tasLvl*7);
+          try{
+            const bars=document.querySelectorAll('[data-tasbar]');
+            bars.forEach((b,i)=>{ const on=lvl >= (i+1)/(bars.length+1); b.style.height=(5+(on?5+i*4:0))+'px'; b.style.opacity=on?'1':'.3'; });
+            const warn=document.querySelector('[data-tasnoise]');
+            if(warn){
+              const stuckMs=Date.now()-(this.tasHeardAt||t0);
+              if(stuckMs>6000 && this.tasLvl>0.045){ warn.textContent='\ud83d\udd07 \u064a\u0628\u062f\u0648 \u0623\u0646 \u062d\u0648\u0644\u0643 \u0636\u0648\u0636\u0627\u0621 \u062a\u064f\u0634\u0648\u0651\u0634 \u0639\u0644\u0649 \u0627\u0644\u0633\u0645\u0627\u0639 \u2014 \u0627\u0646\u062a\u0642\u0644 \u0644\u0645\u0643\u0627\u0646 \u0623\u0647\u062f\u0623 \u0648\u0627\u0642\u062a\u0631\u0628 \u0645\u0646 \u0627\u0644\u0645\u064a\u0643\u0631\u0648\u0641\u0648\u0646'; warn.style.display='inline-block'; }
+              else if(stuckMs>6000 && this.tasLvl<0.012){ warn.textContent='\ud83e\udd0f \u0644\u0627 \u0623\u0643\u0627\u062f \u0623\u0633\u0645\u0639\u0643 \u2014 \u0627\u0642\u062a\u0631\u0628 \u0645\u0646 \u0627\u0644\u0645\u064a\u0643\u0631\u0648\u0641\u0648\u0646 \u0648\u0627\u0642\u0631\u0623 \u0628\u0635\u0648\u062a \u0623\u0639\u0644\u0649 \u0642\u0644\u064a\u0644\u0627\u064b'; warn.style.display='inline-block'; }
+              else if(stuckMs<2500){ warn.style.display='none'; }
+            }
+          }catch(e){}
+          this.tasRAF=requestAnimationFrame(loop);
+        };
+        this.tasRAF=requestAnimationFrame(loop);
+      }).catch(()=>{});
+    }catch(e){}
+  }
+  tasMeterStop(){
+    try{ if(this.tasRAF) cancelAnimationFrame(this.tasRAF); }catch(e){} this.tasRAF=null;
+    try{ if(this.tasStream) this.tasStream.getTracks().forEach(t=>t.stop()); }catch(e){} this.tasStream=null;
+    try{ if(this.tasAC) this.tasAC.close(); }catch(e){} this.tasAC=null; this.tasLvl=0;
+  }
+  tasPause(){
+    if(this.state.tasStatus==='listening'){
+      this.tasManualStop=true; if(this.recog){try{this.recog.stop();}catch(e){}} this.tasMeterStop();
+      let bf=(this.state.tasFlags||[]).slice(); const wl=this.followWords().length;
+      if(bf.length!==wl){ const nb=new Array(wl).fill(0); for(let i=0;i<Math.min(bf.length,wl);i++)nb[i]=bf[i]; bf=nb; }
+      this.tasBaseFlags=bf; this.tasBaseCursor=this.state.tasCursor||0;
+      this.setState({tasStatus:'paused'});
+    } else if(this.state.tasStatus==='paused'){ this.tasResume=true; this.tasMic(); }
+  }
+  playWord(ayah,pos){
+    this.stopAudio(); this.setState({tasRefPlaying:false});
+    if(!pos){ this.playRef(ayah-1); return; }
+    this.audioMode='word';
+    const url='https://audio.qurancdn.com/wbw/'+this.pad(this.cur().num)+'_'+this.pad(ayah)+'_'+this.pad(pos)+'.mp3';
+    let fell=false; const fall=()=>{ if(fell)return; fell=true; try{this.audio.removeEventListener('error',onerr);}catch(e){} this.setState({tasRefPlaying:false}); this.playRef(ayah-1); };
+    const onerr=()=>fall();
+    this.audio.addEventListener('error',onerr);
+    this.audio.loop=false; this.audio.src=url;
+    this.audio.play().catch(fall);
+    setTimeout(()=>{ try{this.audio.removeEventListener('error',onerr);}catch(e){} },8000);
+  }
+  tasHint(){ const i=this.state.tasCursor||0; const words=this.followWords(); if(i>=words.length) return; if(this.tasHintTimer){ try{clearTimeout(this.tasHintTimer);}catch(e){} } this.setState({tasHintIdx:i}); this.tasHintTimer=setTimeout(()=>{ if(this.state.tasHintIdx===i) this.setState({tasHintIdx:null}); },5000); }
   tasMic(){
-    if(this.state.tasStatus==='listening'){ this.tasManualStop=true; if(this.recog){try{this.recog.stop();}catch(e){}} const rep=this.buildReport(); this.setState({tasStatus:'report', tasReport:rep}); return; }
+    if(this.state.tasStatus==='listening'){ this.tasManualStop=true; if(this.recog){try{this.recog.stop();}catch(e){}} this.tasMeterStop(); const rep=this.buildReport(); this.setState({tasStatus:'report', tasReport:rep}); return; }
+    const resume=(this.state.tasStatus==='paused' && this.tasResume===true); this.tasResume=false;
+    if(this.state.tasStatus==='paused' && !resume){ const rep=this.buildReport(); this.setState({tasStatus:'report', tasReport:rep}); return; }
     const SR = window.SpeechRecognition || window.webkitSpeechRecognition;
     if(!SR){ this.setState({tasStatus:'unsupported', tasErr:''}); return; }
     this.stopAudio(); this.setState({tasRefPlaying:false});
     const begin=()=>{
-      const r=new SR(); this.recog=r; r.lang='ar-SA'; r.interimResults=true; r.maxAlternatives=1; r.continuous=true;
-      r.onresult=(e)=>{ let transcript=''; for(let i=0;i<e.results.length;i++){ transcript+=' '+(e.results[i][0]&&e.results[i][0].transcript||''); } const al=this.alignFollow(transcript); const completed=al.cursor>=al.total && al.total>0; this.setState({tasFlags:al.flags, tasCursor:al.cursor}); if(completed && !this.tasDone){ this.tasDone=true; this.tasManualStop=true; if(this.recog){try{this.recog.stop();}catch(e2){}} const rep=this.buildReport(); this.tasmeeEver=true; this.recordProgress(this.state.surahId,1); this.bumpDaily(1); this.setState({tasStatus:'completed', tasReport:rep}); this.addStars(3,'\u0645\u0627 \u0634\u0627\u0621 \u0627\u0644\u0644\u0647! \u0623\u062a\u0645\u0645\u062a \u0627\u0644\u0633\u0648\u0631\u0629 \ud83c\udf1f'); } };
-      r.onerror=(e)=>{ const t=e&&e.error; let msg='\u062a\u0639\u0630\u0651\u0631 \u0627\u0644\u062a\u0633\u0645\u064a\u0639. \u062d\u0627\u0648\u0644 \u0645\u0631\u0629 \u0623\u062e\u0631\u0649.';
+      const r=new SR(); this.recog=r; r.lang='ar-SA'; r.interimResults=true; r.maxAlternatives=5; r.continuous=true;
+      r.onresult=(e)=>{
+        if(!this.tasAlt) this.tasAlt=[];
+        let transcript='';
+        for(let i=0;i<e.results.length;i++){
+          const res=e.results[i];
+          if(res.isFinal && this.tasAlt[i]!=null){ transcript+=' '+this.tasAlt[i]; continue; }
+          let bestTxt=(res[0]&&res[0].transcript)||'', bestScore=-1;
+          for(let a=0;a<res.length;a++){
+            const txt=(res[a]&&res[a].transcript)||''; if(!txt) continue;
+            const alx=this.alignFollow(transcript+' '+txt);
+            let sc=0; for(let f=0;f<alx.flags.length;f++){ if(alx.flags[f]===1)sc+=2; else if(alx.flags[f]===3)sc+=1; }
+            sc=sc*10+alx.cursor;
+            if(sc>bestScore){ bestScore=sc; bestTxt=txt; }
+          }
+          if(res.isFinal) this.tasAlt[i]=bestTxt;
+          transcript+=' '+bestTxt;
+        }
+        const al=this.alignFollow(transcript);
+        if(al.cursor>(this.tasLastCursor||0)){ this.tasHeardAt=Date.now(); this.tasLastCursor=al.cursor; }
+        const completed=al.cursor>=al.total && al.total>0; this.setState({tasFlags:al.flags, tasCursor:al.cursor}); if(completed && !this.tasDone){ this.tasDone=true; this.tasManualStop=true; if(this.recog){try{this.recog.stop();}catch(e2){}} this.tasMeterStop(); const rep=this.buildReport(); this.tasmeeEver=true; this.recordProgress(this.state.surahId,1); this.bumpDaily(1); this.setState({tasStatus:'completed', tasReport:rep}); this.addStars(3,'\u0645\u0627 \u0634\u0627\u0621 \u0627\u0644\u0644\u0647! \u0623\u062a\u0645\u0645\u062a \u0627\u0644\u0633\u0648\u0631\u0629 \ud83c\udf1f'); } };
+      r.onerror=(e)=>{ const t=e&&e.error; if((t==='no-speech'||t==='aborted')&&this.state.tasStatus==='listening'){ return; } let msg='\u062a\u0639\u0630\u0651\u0631 \u0627\u0644\u062a\u0633\u0645\u064a\u0639. \u062d\u0627\u0648\u0644 \u0645\u0631\u0629 \u0623\u062e\u0631\u0649.';
         if(t==='not-allowed'||t==='service-not-allowed') msg='\u064a\u062d\u062a\u0627\u062c \u0627\u0644\u062a\u0633\u0645\u064a\u0639 \u0625\u0630\u0646 \u0627\u0644\u0645\u064a\u0643\u0631\u0648\u0641\u0648\u0646. \u0627\u0641\u062a\u062d \u0627\u0644\u0645\u0648\u0642\u0639 \u0641\u064a \u0646\u0627\u0641\u0630\u0629 \u0643\u0627\u0645\u0644\u0629 \u0648\u0627\u0633\u0645\u062d \u0628\u0627\u0644\u0645\u064a\u0643\u0631\u0648\u0641\u0648\u0646 \u0645\u0646 \ud83d\udd12 \u0628\u062c\u0627\u0646\u0628 \u0627\u0644\u0639\u0646\u0648\u0627\u0646.';
         else if(t==='no-speech') msg='\u0644\u0645 \u0623\u0633\u0645\u0639 \u0635\u0648\u062a\u0627\u064b. \u0627\u0636\u063a\u0637 \u0648\u0627\u0628\u062f\u0623 \u0627\u0644\u0642\u0631\u0627\u0621\u0629 \u0641\u0648\u0631\u0627\u064b.';
         else if(t==='audio-capture') msg='\u0644\u0627 \u064a\u0648\u062c\u062f \u0645\u064a\u0643\u0631\u0648\u0641\u0648\u0646. \u062a\u0623\u0643\u062f \u0645\u0646 \u062a\u0648\u0635\u064a\u0644\u0647.';
         else if(t==='network') msg='\u0627\u0644\u062a\u0639\u0631\u0651\u0641 \u0627\u0644\u0635\u0648\u062a\u064a \u064a\u062d\u062a\u0627\u062c \u0627\u062a\u0635\u0627\u0644 \u0628\u0627\u0644\u0625\u0646\u062a\u0631\u0646\u062a.';
-        this.recogErr=true; this.setState({tasStatus:'error', tasErr:msg}); };
-      r.onend=()=>{ if(!this.tasManualStop && this.state.tasStatus==='listening'){ try{ r.start(); }catch(e){} } else if(this.state.tasStatus==='listening'){ this.setState({tasStatus:'idle'}); } };
-      this.tasManualStop=false; this.tasDone=false;
-      this.setState({tasStatus:'listening', tasErr:'', tasFlags:[], tasCursor:0, tasReport:null});
-      try{ r.start(); }catch(e){ this.setState({tasStatus:'error', tasErr:'\u062a\u0639\u0630\u0651\u0631 \u0628\u062f\u0621 \u0627\u0644\u0645\u064a\u0643\u0631\u0648\u0641\u0648\u0646. \u062c\u0631\u0651\u0628 \u0641\u062a\u062d \u0627\u0644\u0645\u0648\u0642\u0639 \u0641\u064a \u0646\u0627\u0641\u0630\u0629 \u0643\u0627\u0645\u0644\u0629.'}); }
+        this.tasMeterStop(); this.recogErr=true; this.setState({tasStatus:'error', tasErr:msg}); };
+      r.onend=()=>{ if(!this.tasManualStop && this.state.tasStatus==='listening'){ try{ r.start(); }catch(e){} } else { this.tasMeterStop(); if(this.state.tasStatus==='listening'){ this.setState({tasStatus:'idle'}); } } };
+      this.tasManualStop=false; this.tasDone=false; this.tasAlt=[]; this.tasHeardAt=Date.now();
+      if(resume){ this.tasLastCursor=this.tasBaseCursor||0; this.setState({tasStatus:'listening', tasErr:''}); }
+      else { this.tasBaseFlags=null; this.tasBaseCursor=0; this.tasLastCursor=0; this.setState({tasStatus:'listening', tasErr:'', tasFlags:[], tasCursor:0, tasReport:null, tasHintIdx:null}); }
+      try{ r.start(); this.tasMeterStart(); }catch(e){ this.setState({tasStatus:'error', tasErr:'\u062a\u0639\u0630\u0651\u0631 \u0628\u062f\u0621 \u0627\u0644\u0645\u064a\u0643\u0631\u0648\u0641\u0648\u0646. \u062c\u0631\u0651\u0628 \u0641\u062a\u062d \u0627\u0644\u0645\u0648\u0642\u0639 \u0641\u064a \u0646\u0627\u0641\u0630\u0629 \u0643\u0627\u0645\u0644\u0629.'}); }
     };
     // start recognition directly — it requests the mic itself (more reliable than a getUserMedia pre-gate)
     begin();
@@ -2085,7 +2199,7 @@ class Component extends DCLogic {
     this.setState({tasStatus:'done', tasResult:flags, tasAccuracy:acc, tasHeard:heard});
     if(acc>=80) this.addStars(2,'\u0645\u0627 \u0634\u0627\u0621 \u0627\u0644\u0644\u0647! \u062a\u0633\u0645\u064a\u0639 \u0645\u0645\u062a\u0627\u0632 \ud83c\udf1f');
   }
-  resetFollow(){ this.tasManualStop=true; this.tasDone=false; if(this.recog){try{this.recog.stop();}catch(e){}} this.stopAudio(); this.setState({tasFlags:[], tasCursor:0, tasStatus:'idle', tasReport:null, tasRefPlaying:false, tasAutoAyah:0}); }
+  resetFollow(){ this.tasManualStop=true; this.tasDone=false; if(this.recog){try{this.recog.stop();}catch(e){}} this.tasMeterStop(); this.tasBaseFlags=null; this.tasBaseCursor=0; this.tasResume=false; this.stopAudio(); this.setState({tasFlags:[], tasCursor:0, tasStatus:'idle', tasReport:null, tasRefPlaying:false, tasAutoAyah:0, tasHintIdx:null}); }
   openLink(u){ try{ var w=window.open(u,'_blank','noopener'); if(!w){ window.location.href=u; } }catch(e){ try{ window.location.href=u; }catch(_){} } }
   scrollToRefBook(){ const go=()=>{ try{ const el=document.querySelector('[data-r=refbook]'); if(el){ const y=(window.pageYOffset||document.documentElement.scrollTop||0)+el.getBoundingClientRect().top-72; window.scrollTo(0,Math.max(0,y)); return; } }catch(e){} try{ window.scrollTo(0,0); }catch(e){} }; requestAnimationFrame(()=>requestAnimationFrame(go)); }
   scrollTop0(){
@@ -2102,11 +2216,11 @@ class Component extends DCLogic {
     this.tasManualStop=false;
     const words=this.followWords();
     this.setState({tasStatus:'autofollow', tasErr:'', tasFlags:new Array(words.length).fill(0), tasCursor:0, tasReport:null, tasAutoAyah:0});
-    this.tasAdvance(1);
+    this.tasAdvance(this.tasRange().from);
   }
   tasAdvance(n){
     if(this.tasManualStop) return;
-    const total=this.cur().ayat.length; const words=this.followWords();
+    const total=this.tasRange().to; const words=this.followWords();
     if(n>total){
       this.stopAudio();
       this.setState({tasStatus:'idle', tasAutoAyah:0, tasFlags:new Array(words.length).fill(1), tasCursor:words.length});
@@ -2795,8 +2909,10 @@ class Component extends DCLogic {
           else if(f===3){ color='#b07d12'; weight='700'; bg='#fdf3d6'; }
           else if(f===2){ color='#cf4b3e'; bg='#fbecea'; }
           if(isCur && !hide){ color='#a9760f'; bg='#fdebb0'; weight='700'; ring='0 0 0 2px #e0b94a'; }
+          const hinted=(st.tasHintIdx===i && f===0);
+          if(hinted){ color='#a9760f'; bg='#fdebb0'; weight='700'; ring='0 0 0 2px #e0b94a'; }
           if(isAuto){ color='#0f5c4a'; bg='#cdeed9'; weight='700'; ring='0 0 0 2px #4fae7e'; }
-          const hidden = hide && f===0;
+          const hidden = hide && f===0 && !hinted;
           groups[w.ayah].push({text:w.raw, color, bg:(hidden?'transparent':bg), weight, ring, hidden, shown:!hidden, boxW:(Math.max(2,this.strip(w.raw).length)*15)+'px' }); });
         let all=order.map(n=>({num:this.toArabicNum(n), words:groups[n]})); 
         const _pb=(window.QG&&window.QG.pageBreaks&&window.QG.pageBreaks[this.cur().num])||null;
@@ -2819,8 +2935,14 @@ class Component extends DCLogic {
       tasIsListening: st.tasStatus==='listening', tasCompleted: st.tasStatus==='completed', tasUnsupported: st.tasStatus==='unsupported',
       tasError: st.tasStatus==='error', tasErrMsg: st.tasErr,
       tasOpenFull:()=>{ try{ window.open(window.location.href,'_blank'); }catch(e){} },
+      tasHint:()=>this.tasHint(), tasPause:()=>this.tasPause(), tasPauseShow: st.tasStatus==='listening'||st.tasStatus==='paused', tasPaused: st.tasStatus==='paused',
+      tasPauseIcon: st.tasStatus==='paused'?'▶':'⏸', tasPauseLabel: st.tasStatus==='paused'?'متابعة':'إيقاف مؤقت',
+      tasRangeOptions: this.cur().ayat.map((_,i)=>({value:''+(i+1), label:'الآية '+this.toArabicNum(i+1)})),
+      tasFromValue:''+this.tasRange().from, tasToValue:''+this.tasRange().to,
+      tasFromChange:(e)=>{ const v=+e.target.value; const t=this.tasRange().to; this.resetFollow(); this.setState({tasFrom:v, tasTo:Math.max(v,t)}); },
+      tasToChange:(e)=>{ const v=+e.target.value; const f=this.tasRange().from; this.resetFollow(); this.setState({tasTo:v, tasFrom:Math.min(v,f)}); },
       tasMic:()=>this.tasMic(), tasMicBg: st.tasStatus==='listening'?'#9a3528':'linear-gradient(120deg,#e0563f,#c33a26)',
-      tasMicIcon: st.tasStatus==='listening'?'⏹':'🎤', tasMicLabel: st.tasStatus==='listening'?'إيقاف الاستماع':'سمِّع بصوتي',
+      tasMicIcon: st.tasStatus==='listening'?'⏹':(st.tasStatus==='paused'?'📋':'🎤'), tasMicLabel: st.tasStatus==='listening'?'إيقاف الاستماع':(st.tasStatus==='paused'?'إنهاء وعرض التقرير':'سمِّع بصوتي'),
       tasReset:()=>this.resetFollow(),
       tasAuto:()=>this.tasAuto(), tasAutoActive: st.tasStatus==='autofollow',
       tasAutoBg: st.tasStatus==='autofollow'?'#0f5c4a':'linear-gradient(120deg,#2f9d6a,#1b6e4e)',
@@ -2829,8 +2951,8 @@ class Component extends DCLogic {
       repAcc: st.tasReport?st.tasReport.acc:0,
       repReached: st.tasReport?st.tasReport.reached:0, repTotal: st.tasReport?st.tasReport.total:0,
       repReadCount: st.tasReport?st.tasReport.readCount:0,
-      repMissed: st.tasReport?st.tasReport.missed.map(m=>({text:m.t, ayah:this.toArabicNum(m.ayah), rules:m.rules||[], hasRules:!!(m.rules&&m.rules.length)})):[],
-      repNear: st.tasReport?st.tasReport.near.map(m=>({text:m.t, ayah:this.toArabicNum(m.ayah), rules:m.rules||[], hasRules:!!(m.rules&&m.rules.length)})):[],
+      repMissed: st.tasReport?st.tasReport.missed.map(m=>({text:m.t, ayah:this.toArabicNum(m.ayah), say:()=>this.playWord(m.ayah,m.pos), rules:m.rules||[], hasRules:!!(m.rules&&m.rules.length)})):[],
+      repNear: st.tasReport?st.tasReport.near.map(m=>({text:m.t, ayah:this.toArabicNum(m.ayah), say:()=>this.playWord(m.ayah,m.pos), rules:m.rules||[], hasRules:!!(m.rules&&m.rules.length)})):[],
       repTajweed: st.tasReport?st.tasReport.tajweed:[],
       repHasMissed: !!(st.tasReport&&st.tasReport.missed.length),
       repHasNear: !!(st.tasReport&&st.tasReport.near.length),
