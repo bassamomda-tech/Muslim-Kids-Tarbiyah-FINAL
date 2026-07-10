@@ -2017,10 +2017,11 @@ class Component extends DCLogic {
     if(Lp>=3 && 1-this.lev(pt,ph)/Lp >= 0.55) return 1;
     return 0;
   }
-  alignFollow(transcript){
+  alignFrom(baseFlags, baseCursor, transcript){
     var words=this.followWords();
     var H=transcript.split(/\s+/).map(w=>this.norm(w)).filter(Boolean);
-    var flags=(this.tasBaseFlags&&this.tasBaseFlags.length===words.length)?this.tasBaseFlags.slice():new Array(words.length).fill(0); var ci=(this.tasBaseFlags&&this.tasBaseFlags.length===words.length)?(this.tasBaseCursor||0):0; var WIN=6;
+    var flags=(baseFlags&&baseFlags.length===words.length)?baseFlags.slice():new Array(words.length).fill(0);
+    var ci=(baseFlags&&baseFlags.length===words.length)?(baseCursor||0):0; var WIN=6;
     for(var hi=0; hi<H.length; hi++){
       if(ci>=words.length) break;
       while(ci<words.length && words[ci].norm.length===0){ flags[ci]=1; ci++; }
@@ -2048,6 +2049,7 @@ class Component extends DCLogic {
     while(ci<words.length && words[ci].norm.length===0){ flags[ci]=1; ci++; }
     return {flags, cursor:ci, total:words.length};
   }
+  alignFollow(transcript){ return this.alignFrom(this.tasBaseFlags, this.tasBaseCursor, transcript); }
   buildReport(){
     const words=this.followWords(); const flags=this.state.tasFlags||[]; const cursor=Math.min(this.state.tasCursor||0, words.length);
     const missed=[], near=[]; let readCount=0;
@@ -2081,6 +2083,7 @@ class Component extends DCLogic {
   // ---------- TASMEE: live mic level meter + noise guard ----------
   tasMeterStart(){
     try{
+      if(/Android|iPhone|iPad|iPod/i.test(navigator.userAgent||'')) return; // mobile: a second mic capture can silence speech recognition
       if(!navigator.mediaDevices || !navigator.mediaDevices.getUserMedia) return;
       navigator.mediaDevices.getUserMedia({audio:{echoCancellation:true, noiseSuppression:true, autoGainControl:true}}).then((stream)=>{
         if(this.state.tasStatus!=='listening'){ try{stream.getTracks().forEach(t=>t.stop());}catch(e){} return; }
@@ -2152,23 +2155,30 @@ class Component extends DCLogic {
     const begin=()=>{
       const r=new SR(); this.recog=r; r.lang='ar-SA'; r.interimResults=true; r.maxAlternatives=5; r.continuous=true;
       r.onresult=(e)=>{
-        if(!this.tasAlt) this.tasAlt=[];
-        let transcript='';
-        for(let i=0;i<e.results.length;i++){
-          const res=e.results[i];
-          if(res.isFinal && this.tasAlt[i]!=null){ transcript+=' '+this.tasAlt[i]; continue; }
-          let bestTxt=(res[0]&&res[0].transcript)||'', bestScore=-1;
-          for(let a=0;a<res.length;a++){
-            const txt=(res[a]&&res[a].transcript)||''; if(!txt) continue;
-            const alx=this.alignFollow(transcript+' '+txt);
-            let sc=0; for(let f=0;f<alx.flags.length;f++){ if(alx.flags[f]===1)sc+=2; else if(alx.flags[f]===3)sc+=1; }
-            sc=sc*10+alx.cursor;
-            if(sc>bestScore){ bestScore=sc; bestTxt=txt; }
-          }
-          if(res.isFinal) this.tasAlt[i]=bestTxt;
-          transcript+=' '+bestTxt;
+        const wordsN=this.followWords().length;
+        if(!this.tasCommitFlags || this.tasCommitFlags.length!==wordsN){
+          this.tasCommitFlags=(this.tasBaseFlags&&this.tasBaseFlags.length===wordsN)?this.tasBaseFlags.slice():new Array(wordsN).fill(0);
+          this.tasCommitCursor=(this.tasBaseFlags&&this.tasBaseFlags.length===wordsN)?(this.tasBaseCursor||0):0;
+          this.tasFinalN=0;
         }
-        const al=this.alignFollow(transcript);
+        // commit each new FINAL result once, picking the best of its alternatives
+        for(let i=this.tasFinalN;i<e.results.length;i++){
+          const res=e.results[i]; if(!res.isFinal) break;
+          let best=null;
+          for(let a=0;a<res.length;a++){
+            const txt=(res[a]&&res[a].transcript)||''; if(!txt && a>0) continue;
+            const al=this.alignFrom(this.tasCommitFlags,this.tasCommitCursor,txt);
+            let sc=0; for(let f=this.tasCommitCursor;f<al.cursor;f++){ if(al.flags[f]===1)sc+=2; else if(al.flags[f]===3)sc+=1; }
+            sc=sc*10+al.cursor;
+            if(!best || sc>best.sc) best={sc, al};
+          }
+          if(best){ this.tasCommitFlags=best.al.flags; this.tasCommitCursor=best.al.cursor; }
+          this.tasFinalN=i+1;
+        }
+        // align the interim tail on top of the committed state
+        let interim='';
+        for(let i=this.tasFinalN;i<e.results.length;i++){ interim+=' '+((e.results[i][0]&&e.results[i][0].transcript)||''); }
+        const al=interim.trim()?this.alignFrom(this.tasCommitFlags,this.tasCommitCursor,interim):{flags:this.tasCommitFlags.slice(), cursor:this.tasCommitCursor, total:wordsN};
         if(al.cursor>(this.tasLastCursor||0)){ this.tasHeardAt=Date.now(); this.tasLastCursor=al.cursor; }
         const completed=al.cursor>=al.total && al.total>0; this.setState({tasFlags:al.flags, tasCursor:al.cursor}); if(completed && !this.tasDone){ this.tasDone=true; this.tasManualStop=true; if(this.recog){try{this.recog.stop();}catch(e2){}} this.tasMeterStop(); const rep=this.buildReport(); this.tasmeeEver=true; this.recordProgress(this.state.surahId,1); this.bumpDaily(1); this.setState({tasStatus:'completed', tasReport:rep}); this.addStars(3,'\u0645\u0627 \u0634\u0627\u0621 \u0627\u0644\u0644\u0647! \u0623\u062a\u0645\u0645\u062a \u0627\u0644\u0633\u0648\u0631\u0629 \ud83c\udf1f'); } };
       r.onerror=(e)=>{ const t=e&&e.error; if((t==='no-speech'||t==='aborted')&&this.state.tasStatus==='listening'){ return; } let msg='\u062a\u0639\u0630\u0651\u0631 \u0627\u0644\u062a\u0633\u0645\u064a\u0639. \u062d\u0627\u0648\u0644 \u0645\u0631\u0629 \u0623\u062e\u0631\u0649.';
@@ -2177,8 +2187,8 @@ class Component extends DCLogic {
         else if(t==='audio-capture') msg='\u0644\u0627 \u064a\u0648\u062c\u062f \u0645\u064a\u0643\u0631\u0648\u0641\u0648\u0646. \u062a\u0623\u0643\u062f \u0645\u0646 \u062a\u0648\u0635\u064a\u0644\u0647.';
         else if(t==='network') msg='\u0627\u0644\u062a\u0639\u0631\u0651\u0641 \u0627\u0644\u0635\u0648\u062a\u064a \u064a\u062d\u062a\u0627\u062c \u0627\u062a\u0635\u0627\u0644 \u0628\u0627\u0644\u0625\u0646\u062a\u0631\u0646\u062a.';
         this.tasMeterStop(); this.recogErr=true; this.setState({tasStatus:'error', tasErr:msg}); };
-      r.onend=()=>{ if(!this.tasManualStop && this.state.tasStatus==='listening'){ try{ r.start(); }catch(e){} } else { this.tasMeterStop(); if(this.state.tasStatus==='listening'){ this.setState({tasStatus:'idle'}); } } };
-      this.tasManualStop=false; this.tasDone=false; this.tasAlt=[]; this.tasHeardAt=Date.now();
+      r.onend=()=>{ if(!this.tasManualStop && this.state.tasStatus==='listening'){ this.tasFinalN=0; try{ r.start(); }catch(e){} } else { this.tasMeterStop(); if(this.state.tasStatus==='listening'){ this.setState({tasStatus:'idle'}); } } };
+      this.tasManualStop=false; this.tasDone=false; this.tasAlt=[]; this.tasHeardAt=Date.now(); this.tasCommitFlags=null; this.tasCommitCursor=0; this.tasFinalN=0;
       if(resume){ this.tasLastCursor=this.tasBaseCursor||0; this.setState({tasStatus:'listening', tasErr:''}); }
       else { this.tasBaseFlags=null; this.tasBaseCursor=0; this.tasLastCursor=0; this.setState({tasStatus:'listening', tasErr:'', tasFlags:[], tasCursor:0, tasReport:null, tasHintIdx:null}); }
       try{ r.start(); this.tasMeterStart(); }catch(e){ this.setState({tasStatus:'error', tasErr:'\u062a\u0639\u0630\u0651\u0631 \u0628\u062f\u0621 \u0627\u0644\u0645\u064a\u0643\u0631\u0648\u0641\u0648\u0646. \u062c\u0631\u0651\u0628 \u0641\u062a\u062d \u0627\u0644\u0645\u0648\u0642\u0639 \u0641\u064a \u0646\u0627\u0641\u0630\u0629 \u0643\u0627\u0645\u0644\u0629.'}); }
