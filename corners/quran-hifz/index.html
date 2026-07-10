@@ -2018,7 +2018,7 @@ class Component extends DCLogic {
     if(Lp>=4 && 1-this.lev(pt,ph)/Lp >= 0.68) return 1;
     return 0;
   }
-  alignFrom(baseFlags, baseCursor, transcript){
+  alignFrom(baseFlags, baseCursor, transcript, mode){
     var words=this.followWords();
     var H=transcript.split(/\s+/).map(w=>this.norm(w)).filter(Boolean);
     var flags=(baseFlags&&baseFlags.length===words.length)?baseFlags.slice():new Array(words.length).fill(0);
@@ -2062,6 +2062,19 @@ class Component extends DCLogic {
       else { cf[ti-1]=1; ti--; tj-=2; }
     }
     var consumed=bi; while(consumed>0 && cf[consumed-1]===2) consumed--;
+    // reject skip-ahead runs unless confirmed by 3+ matched words after them
+    // (Google ASR hallucinates continuations of famous phrases — e.g. completes the basmala —
+    //  which would otherwise jump the cursor across whole ayat)
+    var maxRun=(mode==='interim')?2:8, p=0;
+    while(p<consumed){
+      if(cf[p]===2){
+        var q=p, run=0; while(q<consumed && cf[q]===2){ run++; q++; }
+        var k=q, conf=0; while(k<consumed && cf[k]!==2){ conf+=(cf[k]===1?1:0.5); k++; }
+        var need=(run<=1)?1:(run===2?2:3);
+        if(run>maxRun || conf<need){ consumed=p; break; }
+        p=q;
+      } else p++;
+    }
     for(var c=0;c<consumed;c++){ flags[idxMap[c]]=cf[c]; }
     var cursor = consumed>0 ? idxMap[consumed-1]+1 : ci;
     for(var w2=ci; w2<cursor; w2++){ if(!words[w2].norm.length) flags[w2]=1; }
@@ -2171,7 +2184,7 @@ class Component extends DCLogic {
         // align the interim tail on top of the committed state
         let interim='';
         for(let i=this.tasFinalN;i<e.results.length;i++){ interim+=' '+((e.results[i][0]&&e.results[i][0].transcript)||''); }
-        const al=interim.trim()?this.alignFrom(this.tasCommitFlags,this.tasCommitCursor,interim):{flags:this.tasCommitFlags.slice(), cursor:this.tasCommitCursor, total:wordsN};
+        const al=interim.trim()?this.alignFrom(this.tasCommitFlags,this.tasCommitCursor,interim,'interim'):{flags:this.tasCommitFlags.slice(), cursor:this.tasCommitCursor, total:wordsN};
         if(al.cursor>(this.tasLastCursor||0)){ this.tasHeardAt=Date.now(); this.tasLastCursor=al.cursor; }
         const completed=al.cursor>=al.total && al.total>0; this.setState({tasFlags:al.flags, tasCursor:al.cursor}); if(completed && !this.tasDone){ this.tasDone=true; this.tasManualStop=true; if(this.recog){try{this.recog.stop();}catch(e2){}} this.tasMeterStop(); const rep=this.buildReport(); this.tasmeeEver=true; this.recordProgress(this.state.surahId,1); this.bumpDaily(1); this.setState({tasStatus:'completed', tasReport:rep}); this.addStars(3,'\u0645\u0627 \u0634\u0627\u0621 \u0627\u0644\u0644\u0647! \u0623\u062a\u0645\u0645\u062a \u0627\u0644\u0633\u0648\u0631\u0629 \ud83c\udf1f'); } };
       r.onerror=(e)=>{ const t=e&&e.error; if((t==='no-speech'||t==='aborted')&&this.state.tasStatus==='listening'){ return; } let msg='\u062a\u0639\u0630\u0651\u0631 \u0627\u0644\u062a\u0633\u0645\u064a\u0639. \u062d\u0627\u0648\u0644 \u0645\u0631\u0629 \u0623\u062e\u0631\u0649.';
