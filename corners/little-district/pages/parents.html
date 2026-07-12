@@ -404,11 +404,39 @@ html[dir="rtl"] .shop-card{border-inline-start:1.5px solid var(--card-bd);border
 .psh-hero-facts{margin:0;padding-inline-start:1.1rem;display:flex;flex-direction:column;gap:.3rem}
 .psh-hero-facts li{font-size:.82rem;line-height:1.5;color:#3a4650}
 .psh-hero-lesson{font-size:.82rem;background:#f4ecd6;border-radius:.6rem;padding:.5rem .6rem;color:#5a4a1a;line-height:1.5}
+/* ---- multi-page printable packs ---- */
+.psh-sheet + .psh-sheet{margin-top:1.6rem;border-top:2px dashed #cdbf98;padding-top:1.6rem}
+.psh-trace-row{font-family:'Tajawal',sans-serif;font-size:2.1rem;font-weight:900;color:#e0e4e8;letter-spacing:7px;border-bottom:2px dashed #d4dae0;padding:.35rem .3rem;margin:.5rem 0;text-align:center}
+.psh-arabrow{display:flex;flex-wrap:wrap;gap:.4rem;justify-content:center;margin:.5rem 0}
+.psh-arabrow span{border:1px dashed #d4dae0;border-radius:.5rem;min-width:2.5rem;text-align:center;font-size:1.7rem;font-weight:900;color:#e0e4e8;padding:.15rem .35rem;font-family:'Tajawal',sans-serif}
+.psh-count{display:flex;align-items:center;gap:.8rem;border:1px solid #dfe7ee;border-radius:.6rem;padding:.5rem .8rem;margin:.5rem 0}
+.psh-count .emos{font-size:1.5rem;letter-spacing:3px;flex:1}
+.psh-count .cl{font-size:.85rem;font-weight:700;color:#5a6470}
+.psh-count .box{width:46px;height:36px;border:2px solid #c2cdd6;border-radius:.4rem;flex:0 0 auto}
+.psh-tf{display:flex;align-items:center;justify-content:space-between;gap:1rem;border:1px solid #dfe7ee;border-radius:.6rem;padding:.5rem .8rem;margin:.42rem 0;font-size:.92rem;font-weight:600;color:#3a4650}
+.psh-tf .tfb{display:flex;gap:.45rem;flex:0 0 auto}
+.psh-tf .tfb b{border:1.5px solid #c2cdd6;border-radius:.4rem;width:34px;height:30px;display:flex;align-items:center;justify-content:center;color:#aeb8c1;font-size:.95rem}
+.psh-sort{display:flex;gap:1rem;margin-top:.6rem}
+.psh-sort .col{flex:1;border:2px solid #dfe7ee;border-radius:.7rem;padding:.6rem;min-height:130px}
+.psh-sort .col h5{margin:0 0 .5rem;text-align:center;font-size:.95rem;color:#3a4650}
+.psh-bank{display:flex;flex-wrap:wrap;gap:.5rem;justify-content:center;margin:.7rem 0}
+.psh-bank b{background:#f4f7fa;border:1.5px dashed #c2cdd6;border-radius:1rem;padding:.28rem .8rem;font-size:.9rem;font-weight:700;color:#3a4650}
+.psh-scr{display:flex;align-items:center;gap:.8rem;border:1px solid #dfe7ee;border-radius:.6rem;padding:.5rem .8rem;margin:.5rem 0}
+.psh-scr .letters{flex:1;font-size:1.3rem;font-weight:900;letter-spacing:6px;color:#3a4650;font-family:'Tajawal',sans-serif}
+.psh-scr .ans{display:flex;gap:.3rem}
+.psh-scr .ans i{width:30px;height:34px;border:2px solid #c2cdd6;border-radius:.35rem}
+.psh-log{width:100%;border-collapse:collapse;text-align:center;margin-top:.4rem}
+.psh-log th,.psh-log td{border:1px solid #d7dee5;padding:.45rem .3rem;font-size:.82rem}
+.psh-log th{background:#2980B9;color:#fff;font-weight:800}
+.psh-log td{height:1.9rem}
+.psh-note-line{border-bottom:1.5px dashed #d4dae0;height:1.7rem;margin:.5rem 0}
 @media print{
   .shop-print-ov,.shop-print-ov *{visibility:visible}
   .shop-print-ov{position:absolute;inset:0;background:#fff;padding:0;display:block}
   .shop-print-ov .psh-paper{box-shadow:none;border-radius:0;max-width:100%}
   .shop-print-tools{display:none}
+  .psh-sheet{break-after:page;page-break-after:always;break-inside:avoid;border-top:none!important;margin-top:0!important;padding-top:0!important}
+  .psh-sheet:last-child{break-after:auto;page-break-after:auto}
 }
 @media(max-width:560px){ .psh-hero-grid{grid-template-columns:1fr} .psh-stk-grid{grid-template-columns:repeat(2,1fr)} .shop-cta-btn{min-width:100%} }
 </style>
@@ -470,6 +498,7 @@ html[dir="rtl"] .shop-card{border-inline-start:1.5px solid var(--card-bd);border
     <button class="tab active" data-tab="guide" onclick="showTab('guide')"><span class="ti">📖</span><span class="ar-only">دليل الاستخدام</span><span class="en-only">Guide</span></button>
     <button class="tab" data-tab="edu" onclick="showTab('edu')"><span class="ti">📚</span><span class="ar-only">القسم التربوي</span><span class="en-only">Parenting</span></button>
     <button class="tab" data-tab="programs" onclick="showTab('programs')"><span class="ti">🧩</span><span class="ar-only">حلول وبرامج</span><span class="en-only">Programs</span></button>
+    <button class="tab" data-tab="schedule" onclick="showTab('schedule')"><span class="ti">🗓️</span><span class="ar-only">منظّم اليوم</span><span class="en-only">Day Planner</span></button>
     <button class="tab" data-tab="track" onclick="showTab('track')"><span class="ti">📊</span><span class="ar-only">المتابعة والتقييم</span><span class="en-only">Tracking</span></button>
     <button class="tab" data-tab="behavior" onclick="showTab('behavior')"><span class="ti">⭐</span><span class="ar-only">نقاط السلوك</span><span class="en-only">Behaviour Points</span></button>
     <button class="tab" data-tab="print" onclick="showTab('print')"><span class="ti">🖨️</span><span class="ar-only">المطبوعات</span><span class="en-only">Printables</span></button>
@@ -530,7 +559,7 @@ html[dir="rtl"] .shop-card{border-inline-start:1.5px solid var(--card-bd);border
     <h3 class="guide-h"><span class="ar-only">ماذا يقدّم ركن الأهل؟</span><span class="en-only">What's inside the Parents corner?</span></h3>
     <div class="guide-tabs-list">
       <div class="gtab-row"><span class="gt-ic">📚</span><div><b><span class="ar-only">القسم التربوي</span><span class="en-only">Parenting</span></b><span><span class="ar-only">مقالات ونصائح في تربية الأبناء.</span><span class="en-only">Articles &amp; parenting tips.</span></span></div></div>
-      <div class="gtab-row"><span class="gt-ic">🧩</span><div><b><span class="ar-only">حلول وبرامج</span><span class="en-only">Programs</span></b><span><span class="ar-only">برامج أسبوعيّة لمشاكل شائعة.</span><span class="en-only">Week-by-week programs for common problems.</span></span></div></div>
+      <div class="gtab-row"><span class="gt-ic">🧩</span><div><b><span class="ar-only">حلول وبرامج</span><span class="en-only">Programs</span></b><span><span class="ar-only">التطبيقات العمليّة للأركان، مرجع «ألف باء التربية»، دليلُنا التربوي، وبرامج أسبوعيّة لمشاكل شائعة.</span><span class="en-only">Practical applications, the “Alif-Ba” reference, our Tarbiyah guide &amp; week-by-week programs.</span></span></div></div>
       <div class="gtab-row"><span class="gt-ic">📊</span><div><b><span class="ar-only">المتابعة والتقييم</span><span class="en-only">Tracking</span></b><span><span class="ar-only">رسومٌ ونقاطٌ وشهاداتُ إنجاز.</span><span class="en-only">Charts, points &amp; certificates.</span></span></div></div>
       <div class="gtab-row"><span class="gt-ic">⭐</span><div><b><span class="ar-only">نقاط السلوك</span><span class="en-only">Behaviour Points</span></b><span><span class="ar-only">كافئ التزاماته الحقيقيّة، وامنحه الأنشطة.</span><span class="en-only">Reward real-life habits &amp; grant activities.</span></span></div></div>
       <div class="gtab-row"><span class="gt-ic">🖨️</span><div><b><span class="ar-only">المطبوعات</span><span class="en-only">Printables</span></b><span><span class="ar-only">أوراق نشاطٍ جاهزةٌ للطباعة.</span><span class="en-only">Ready-to-print activity sheets.</span></span></div></div>
@@ -551,10 +580,19 @@ html[dir="rtl"] .shop-card{border-inline-start:1.5px solid var(--card-bd);border
   <!-- PANEL · SOLUTION PROGRAMS -->
   <section class="panel" id="panel-programs">
     <div class="sec-head">
-      <h2><span class="ar-only">🧩 حلول وبرامج لمشاكل الأطفال</span><span class="en-only">🧩 Solution Programs for Child Problems</span></h2>
-      <p><span class="ar-only">برامج عملية متدرّجة بالأسابيع، مبنيّة على الكتاب والسنّة وعلم النفس الحديث.</span><span class="en-only">Practical week-by-week programs grounded in the Qur'an, Sunnah &amp; modern psychology.</span></p>
+      <h2><span class="ar-only">🧩 حلول وبرامج تربوية</span><span class="en-only">🧩 Tarbiyah Solutions &amp; Programs</span></h2>
+      <p><span class="ar-only">التطبيقات العمليّة لأهداف الأركان، ومراجعُنا التربويّة، وبرامجُ علاجٍ متدرّجة بالأسابيع — مبنيّة على الكتاب والسنّة وعلم النفس الحديث.</span><span class="en-only">Practical applications of the corners' goals, our tarbiyah references, and week-by-week programs grounded in the Qur'an, Sunnah &amp; modern psychology.</span></p>
     </div>
     <div id="programsBody"></div>
+  </section>
+
+  <!-- PANEL · DAY / WEEK / MONTH PLANNER -->
+  <section class="panel" id="panel-schedule">
+    <div class="sec-head">
+      <h2><span class="ar-only">🗓️ منظّم يوم الطفل</span><span class="en-only">🗓️ Child's Day Planner</span></h2>
+      <p><span class="ar-only">أضِف التزامات طفلك ومكافآته، فيصنع لك الموقع جدولًا يوميًّا أو أسبوعيًّا أو شهريًّا جاهزًا للطباعة.</span><span class="en-only">Add your child's commitments &amp; rewards, and get a printable daily, weekly or monthly schedule.</span></p>
+    </div>
+    <div id="schedTool"></div>
   </section>
 
   <!-- PANEL 2 · TRACKING -->
@@ -610,7 +648,7 @@ html[dir="rtl"] .shop-card{border-inline-start:1.5px solid var(--card-bd);border
   <section class="panel" id="panel-res">
     <div class="sec-head">
       <h2 id="resTitle">المصادر التربوية</h2>
-      <p id="resSub">كتب وفيديوهات ومقالات ودروس سماعية</p>
+      <p id="resSub">كتبٌ وفيديوهاتٌ ومواقعُ موثوقة</p>
     </div>
     <div id="resWrap"></div>
   </section>
@@ -818,7 +856,65 @@ function renderMurabbiFeature(){
   const t = lang==='ar'
     ? {tag:'جديد', title:'مرجع المربي — خلاصات «ألف باء التربية»', desc:'١٤ قسمًا عمليًا: إصلاح المربي، خطة اليوم والليلة، الانسحاب التربوي، علاج العناد والغضب والغيرة والخوف والنوم، التعليم وحفظ القرآن — مع برنامج ٣٠/٩٠ يومًا وجداول متابعة.', open:'افتح المرجع ←', print:'🖨 نسخة للطباعة'}
     : {tag:'New', title:'The Murabbi Reference — “Alif Ba of Tarbiyah” digests', desc:'14 practical sections: fixing the parent first, the day-and-night plan, educational withdrawal, treating stubbornness, anger, jealousy, fear and sleep issues, education and Quran memorisation — with a 30/90-day program and tracking sheets.', open:'Open the reference ←', print:'🖨 Printable version'};
+  const p = lang==='ar'
+    ? {title:'التطبيقات العملية لأهداف الأركان', tag:'الهدف الأول: الصلاة', parent:'👨‍👩‍👧 جزء الأهل — كيف أجعل ابني يصلي؟', pdesc:'خطة تشغيلية من عمر سنتين حتى المراهقة: زمن الدخول، الأسلوب، المدة، برنامج ٩٠ يومًا، وجدول متابعة ٣٠ يومًا.', kid:'🎠 جزء الطفل — رحلة أُحبُّ الصلاة', kdesc:'رحلة تفاعلية من ٨ محطات: قصص لتحبيبه بالصلاة، أنشطة عملية، خيار «اقرأ لي»، وشهادة «صديق الصلاة» في النهاية.', open:'افتح ←'}
+    : {title:'Practical applications of the corners\' goals', tag:'Goal 1: Salah', parent:'👨‍👩‍👧 Parents\' part — How do I get my child to pray?', pdesc:'An operational plan from age two to adolescence: when to start, which method, how long, a 90-day program and a 30-day tracker.', kid:'🎠 Child\'s part — the “I Love Salah” journey', kdesc:'An interactive 8-station journey: stories, hands-on activities, read-aloud, and a “Friend of Salah” certificate.', open:'Open ←'};
   return `
+    <div class="res-cat">
+      <div class="res-cat-head"><span class="rc-ic">🎯</span><h3>${p.title} · ${p.tag}</h3></div>
+      <div class="res-grid">
+        <a class="res-card res-link" style="--rc:#33302A" href="${base}دليل الأهل للرحلات.html">
+          <h4>${lang==='ar'?'👨‍👩‍👧 دليل الأهل — الرحلات الثمانية':'👨‍👩‍👧 Parents\' guide — all 8 journeys'}</h4>
+          <p>${lang==='ar'?'لكل رحلة: الهدف التربوي، دوركم العملي، وعلامات النجاح — مع القواعد الذهبية وترتيب مقترح للرحلات.':'For every journey: the goal, your practical role, success signs, plus golden rules and a suggested order.'}</p>
+          <span class="res-dl">${p.open}</span>
+        </a>
+        <a class="res-card res-link" style="--rc:#8E44AD" href="${base}تطبيقات عملية - كيف أجعل ابني يصلي.html">
+          <h4>${p.parent}</h4>
+          <p>${p.pdesc}</p>
+          <span class="res-dl">${p.open}</span>
+        </a>
+        <a class="res-card res-link" style="--rc:#1B8A6B" href="${base}رحلة أحب الصلاة.html">
+          <h4>${p.kid}</h4>
+          <p>${p.kdesc}</p>
+          <span class="res-dl">${p.open}</span>
+        </a>
+        <a class="res-card res-link" style="--rc:#C94F6D" href="${base}رحلة أحب الله.html">
+          <h4>${lang==='ar'?'❤️ جزء الطفل — رحلة أُحبُّ الله':'❤️ Child\'s part — the “I Love Allah” journey'}</h4>
+          <p>${lang==='ar'?'٩ محطات: معرفة الله بنعمه وخلقه، حبُّه، مراقبتُه «الله يراني»، والصلة به بالدعاء — حتى يكون الحب دافعَ العبادة.':'9 stations: knowing Allah through His blessings and creation, loving Him, awareness that He sees us, and connecting through dua.'}</p>
+          <span class="res-dl">${p.open}</span>
+        </a>
+        <a class="res-card res-link" style="--rc:#2E7D5B" href="${base}رحلة أحب الرسول.html">
+          <h4>${lang==='ar'?'💚 جزء الطفل — رحلة أُحبُّ رسول الله ﷺ':'💚 Child\'s part — the “I Love the Prophet ﷺ” journey'}</h4>
+          <p>${lang==='ar'?'١١ محطة: منزلته عند الله، صدقه، معجزاته، تضحياته، أخلاقه، حب الصحابة له، واشتياقه لإخوانه — حتى يشتاق الطفل لرؤيته ويتمسك بسنته.':'11 stations: his rank, truthfulness, miracles, sacrifices, character and the companions\' love — so the child longs to meet him and follows his sunnah.'}</p>
+          <span class="res-dl">${p.open}</span>
+        </a>
+        <a class="res-card res-link" style="--rc:#5B6B23" href="${base}رحلة حافظ الدين.html">
+          <h4>${lang==='ar'?'📖 جزء الطفل — رحلة حافظ الدين':'📖 Child\'s part — the Deen Keeper journey'}</h4>
+          <p>${lang==='ar'?'١١ محطة: حفظ الله للقرآن، «خيركم من تعلم القرآن»، العلم الشرعي أساس العلوم، قصة البخاري وأمه، حراس السنة والسند، البعد عن البدعة، مجالس تحفها الملائكة، العلم حياة الأمة + خطة الحافظ الصغير ونشاط المعلم الصغير.':'11 stations: why we memorise Quran and Sunnah, al-Bukhari\'s story, guarding against innovation, and a memorisation plan.'}</p>
+          <span class="res-dl">${p.open}</span>
+        </a>
+        <a class="res-card res-link" style="--rc:#2C4C8C" href="${base}رحلة القائد الصغير.html">
+          <h4>${lang==='ar'?'🚩 جزء الطفل — رحلة القائد الصغير':'🚩 Child\'s part — the Little Leader journey'}</h4>
+          <p>${lang==='ar'?'١٣ محطة تربط أركان المبدعين والرياضة والقدس والأمة: صفات القائد، الإبداع (خندق سلمان)، قوة الجسم، قضية القدس، همّ الأمة، الهدف الكبير، التغيير، قوة الشخصية (لا إمّعة)، الشورى، إدارة الوقت + مشروع قيادي وبطاقة صفات.':'13 stations building the little leader: creativity, fitness, al-Quds, the ummah, vision, change-making and strong character.'}</p>
+          <span class="res-dl">${p.open}</span>
+        </a>
+        <a class="res-card res-link" style="--rc:#0E7C86" href="${base}رحلة الأذكار والدعاء.html">
+          <h4>${lang==='ar'?'📿 جزء الطفل — رحلة الأذكار والدعاء':'📿 Child\'s part — the Adhkar & Dua journey'}</h4>
+          <p>${lang==='ar'?'١٤ محطة: فضل الذكر (الحي والميت، غراس الجنة)، أذكار الصباح والمساء والنوم، كنز «لا حول»، دعوة ذي النون، فضل الدعاء وآدابه وفقهه، سيد الاستغفار، الصلاة على النبي + أنشطة: ساعة الأذكار، دفتر الدعوات، تحدي المسبحة.':'14 stations: virtues of dhikr, morning/evening/sleep adhkar, dua etiquette and fiqh, with hands-on activities.'}</p>
+          <span class="res-dl">${p.open}</span>
+        </a>
+        <a class="res-card res-link" style="--rc:#B0762A" href="${base}رحلة القدوات.html">
+          <h4>${lang==='ar'?'⭐ جزء الطفل — رحلة القدوات (نجوم الصحابة)':'⭐ Child\'s part — the Role Models journey'}</h4>
+          <p>${lang==='ar'?'٢٢ قصة: العشرة المبشرون بالجنة كاملين + خالد وبلال ومصعب وحمزة ومعاذ وسعد بن معاذ والبراء وصهيب ونسيبة، وشباب الصحابة: ابن مسعود وأنس وأبو هريرة وعائشة وابن عباس — كل صحابي مربوط بخُلُقه.':'22 stories: the ten promised Paradise plus famous and young companions — each linked to a signature virtue.'}</p>
+          <span class="res-dl">${p.open}</span>
+        </a>
+        <a class="res-card res-link" style="--rc:#6C4A9E" href="${base}رحلة الأخلاق والآداب.html">
+          <h4>${lang==='ar'?'🌟 جزء الطفل — رحلة الأخلاق والآداب':'🌟 Child\'s part — the Manners & Morals journey'}</h4>
+          <p>${lang==='ar'?'٤٤ محطة تغطي أخلاق وآداب «حينا الصغير» كلها: الصدق، الأمانة، الشجاعة، الإحسان، حفظ اللسان، العفو، الحلم، الاحترام، الإخلاص، التواضع، الحياء، السعي، الصبر، الوفاء، الشكر، الكرم، العلم، المروءة، القناعة، الرحمة، العدل، الإيثار، حسن الظن، الإتقان + آداب السلام والطعام والاستئذان والدعاء والنوم والضيافة وقضاء الحاجة والمسجد والأخوة والمجلس.':'44 stations covering all the district\'s morals & manners with stories, activities and challenges.'}</p>
+          <span class="res-dl">${p.open}</span>
+        </a>
+      </div>
+    </div>
     <div class="res-cat">
       <div class="res-cat-head"><span class="rc-ic">🧭</span><h3>${t.title}</h3></div>
       <div class="res-grid">
@@ -840,7 +936,7 @@ function renderResources(){
     {key:'books', ic:'📚', c:'#2980B9', ar:'كتب أونلاين', en:'Online Books'},
     {key:'videos', ic:'🎬', c:'#C0392B', ar:'فيديوهات', en:'Videos'},
   ];
-  document.getElementById('resWrap').innerHTML=renderMurabbiFeature()+cats.map(cat=>`
+  document.getElementById('resWrap').innerHTML=cats.map(cat=>`
     <div class="res-cat">
       <div class="res-cat-head"><span class="rc-ic">${cat.ic}</span><h3>${lang==='ar'?cat.ar:cat.en}</h3></div>
       <div class="res-grid">
@@ -856,15 +952,14 @@ function renderResources(){
     </div>`).join('') + renderSitesApps();
 }
 
-/* ---- online book library (PDFs) — shown under the Online Books section ---- */
-function renderBookCats(){
-  var ar=lang==='ar', base='../../../Books/Parent Library/';
-  /* featured: our own flagship guide — PREVIEW only (full book is a paid item in the Support Store) */
+/* ---- our flagship Tarbiyah guide — MOVED to the Programs panel (دليلُنا التربوي) ---- */
+function renderTarbiyahGuideFeature(){
+  var ar=lang==='ar';
   var prevRel=encodeURIComponent('Published/Parent Plans/Tarbiyah Compass Guide Book.html');
   var prevUrl='../../../Books/book-preview.html?src='+prevRel+'&n=3&bid=bundle9&lang='+lang
     +'&t='+encodeURIComponent(ar?'بوصلةُ التربية':'The Tarbiyah Compass');
   var storeUrl='../../shared/store.html?lang='+lang;
-  var featured='<div class="vid-cat"><h3 class="vid-cat-h"><span class="vc-ic">🧭</span>'
+  return '<div class="vid-cat"><h3 class="vid-cat-h"><span class="vc-ic">🧭</span>'
     +(ar?'دليلُنا التربوي':'Our Tarbiyah Guide')+'<span class="vc-n">1</span></h3>'
     +'<div class="vid-grid"><a class="vid-card" href="'+prevUrl+'" target="_blank" rel="noopener" style="border-color:rgba(212,160,23,.55);background:linear-gradient(135deg,rgba(232,181,48,.14),rgba(232,181,48,.04))">'
     +'<span class="vid-play">🧭</span><span class="vid-name">'+(ar?'بوصلةُ التربية — دليلُ المراحل العمريّة (٠–١٨+)':'The Tarbiyah Compass — Age-Stages Guide (0–18+)')+'</span>'
@@ -873,8 +968,12 @@ function renderBookCats(){
     +(ar?'📖 الكتابُ الكامل ضمن حزمة ركن الأهل في <a href="'+storeUrl+'" style="color:var(--gold-lt);font-weight:800">متجر الدعم</a>.'
         :'📖 The full book is in the Parents bundle at the <a href="'+storeUrl+'" style="color:var(--gold-lt);font-weight:800">Support Store</a>.')
     +'</p></div>';
-  if(!window.PARENT_BOOKS) return featured;
-  return featured + PARENT_BOOKS.map(function(c){
+}
+/* ---- online book library (PDFs) — shown under the Online Books section ---- */
+function renderBookCats(){
+  var ar=lang==='ar', base='../../../Books/Parent Library/';
+  if(!window.PARENT_BOOKS) return '';
+  return PARENT_BOOKS.map(function(c){
     var cards=c.items.map(function(t){
       var href=base+encodeURIComponent(c.dir)+'/'+encodeURIComponent(t)+'.pdf';
       return '<a class="vid-card" href="'+href+'" target="_blank" rel="noopener">'
@@ -944,6 +1043,7 @@ function showTab(id){
   if(id==='behavior' && window.MKB){ MKB.render(); renderParentsRewards(); }
   if(id==='programs') renderPrograms();
   if(id==='print') renderPrintShop();
+  if(id==='schedule' && window.renderSchedule) renderSchedule();
 }
 var OPEN_PROGRAM=null;
 function txp(o){ return o?(lang==='ar'?o.ar:o.en):''; }
@@ -960,7 +1060,10 @@ function renderPrograms(){
     var p=PARENTS_PROGRAMS.find(function(x){return x.id===OPEN_PROGRAM;});
     if(p){ host.innerHTML=programDetailHTML(p,ar); return; }
   }
-  host.innerHTML='<div class="prog-grid">'+PARENTS_PROGRAMS.map(function(p){
+  host.innerHTML=renderMurabbiFeature()
+    +'<div class="res-cat">'+renderTarbiyahGuideFeature()+'</div>'
+    +'<div class="res-cat-head" style="margin-top:.4rem"><span class="rc-ic">🧩</span><h3>'+(ar?'برامجُ علاجٍ متدرّجة':'Step-by-step programs')+'</h3></div>'
+    +'<div class="prog-grid">'+PARENTS_PROGRAMS.map(function(p){
     var done=programDone(p), tot=p.weeks.length;
     return '<button class="prog-card" style="--pa:'+p.accent+'" onclick="openProgram(\''+p.id+'\')">'
       +'<span class="prog-ic">'+p.icon+'</span>'
@@ -1006,7 +1109,7 @@ function renderPrintShop(){
       +'<span class="shop-ic">'+s.icon+'</span>'
       +'<span class="shop-t">'+pset(s.title)+'</span>'
       +'<span class="shop-b">'+pset(s.blurb)+'</span>'
-      +'<span class="shop-meta">'+s.includes.length+'+ '+(ar?'موادّ':'items')+' · '+(ar?'مجّانًا بالكامل':'fully free')+'</span>'
+      +'<span class="shop-meta">'+(ar?((''+s.pages).replace(/[0-9]/g,function(d){return '٠١٢٣٤٥٦٧٨٩'[+d];})+' صفحات · حزمةٌ كاملة'):(s.pages+' pages · complete pack'))+'</span>'
       +'<span class="shop-go">'+(ar?'استعرِض الحزمة ←':'View pack →')+'</span></button>';
   }).join('')+'</div>';
 }
@@ -1019,7 +1122,7 @@ function setDetailHTML(s,ar){
     +'<p style="color:rgba(254,245,220,.72);line-height:1.7;margin:0;font-size:.95rem">'+pset(s.blurb)+'</p></div></div>'
     +'<div class="pd-blk"><h4>📦 '+(ar?'ماذا في الحزمة؟':'What\u2019s inside?')+'</h4><ul class="shop-inc">'+inc+'</ul></div>'
     +'<div class="shop-cta">'
-    +'<button class="shop-cta-btn sample" onclick="printSet(\''+s.id+'\')">🖨️ '+(ar?'اطبَع الحزمة مجّاناً':'Print the pack — free')+'</button>'
+    +'<button class="shop-cta-btn sample" onclick="printSet(\''+s.id+'\')">🖨️ '+(ar?('اطبَعِ الحزمةَ كاملةً مجّاناً ('+(''+s.pages).replace(/[0-9]/g,function(d){return '٠١٢٣٤٥٦٧٨٩'[+d];})+' صفحات)'):('Print the full pack — free ('+s.pages+' pages)'))+'</button>'
     +'</div>'
     +'<p class="shop-note">'+(ar?'كلُّ الحزم متاحةٌ الآن مجّاناً 🎁 — اطبَعها واستمتِع بها. ادعُ لنا، وادعَم الموقعَ إن أحببتَ لِيبقى صدقةً جارية. 💚':'All packs are now free 🎁 — print and enjoy them. Keep us in your du’a, and support the site if you wish so it stays an ongoing charity. 💚')+'</p>';
 }
@@ -1103,6 +1206,7 @@ function setLang(l){
   if(document.getElementById('panel-behavior').classList.contains('active') && window.MKB){ MKB.render(); renderParentsRewards(); }
   if(document.getElementById('panel-programs').classList.contains('active')) renderPrograms();
   if(document.getElementById('panel-print').classList.contains('active')) renderPrintShop();
+  if(document.getElementById('panel-schedule').classList.contains('active') && window.renderSchedule) renderSchedule();
 }
 /* parents' exclusive 5 Anous activities (the "last five") */
 window.PARENT_ANOUS = [
@@ -1367,6 +1471,7 @@ function openCert(j){
   document.getElementById('certOverlay').classList.add('open');
 }
 </script>
+<script src="schedule.js"></script>
 <script defer src="../../shared/nav-fix.js"></script>
 <script src="../../shared/mk-notify.js"></script>
 </body>
