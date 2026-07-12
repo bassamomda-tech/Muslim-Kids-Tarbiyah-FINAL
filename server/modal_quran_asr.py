@@ -62,7 +62,7 @@ class QuranASR:
         )
 
     @modal.fastapi_endpoint(method="POST", label="quran-asr-transcribe")
-    async def transcribe(self, request):
+    async def transcribe(self, request: modal.fastapi.Request):
         """يستقبل ملف صوت خام في جسم الطلب (webm/ogg/mp4/wav) ويعيد {"text": "..."}"""
         import tempfile, os
         from fastapi.responses import JSONResponse
