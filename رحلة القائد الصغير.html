@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>رحلة القائد الصغير 🚩</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&display=swap">
+<style>
+:root{
+  --sky:#EEF2FB;--sun:#F5B92E;--rose:#2C4C8C;--rose-dk:#1D3563;
+  --teal:#1B8A6B;--teal-dk:#0F6B52;--purple:#8E5EA8;--navy:#274060;--ink:#2B3247;
+  --card:#FBFCFF;--line:#CBD7EE;
+}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Tajawal',sans-serif;background:var(--sky);color:var(--ink);line-height:1.9;direction:rtl;overflow-x:hidden}
+a{color:var(--rose-dk)}a:hover{color:var(--sun)}
+button{font-family:'Tajawal',sans-serif;cursor:pointer}
+
+header.hero{text-align:center;padding:2.2rem 1rem 1rem;position:relative}
+.hero h1{font-size:clamp(1.8rem,5vw,2.8rem);font-weight:900;color:var(--rose-dk)}
+.hero p{font-weight:700;color:#5E6C8C;max-width:34rem;margin:.4rem auto 0}
+.hero .back{position:absolute;top:1rem;right:1rem;font-size:.85rem;font-weight:800;background:#fff;border:2px solid var(--line);border-radius:2rem;padding:.4rem 1rem;text-decoration:none}
+.starbar{display:inline-flex;align-items:center;gap:.4rem;background:#fff;border:2px solid var(--rose);border-radius:2rem;padding:.35rem 1.1rem;margin-top:.9rem;font-weight:900;color:var(--rose-dk);font-size:1.05rem}
+
+.map{max-width:40rem;margin:1.6rem auto 3rem;padding:0 1.2rem;position:relative}
+.map::before{content:'';position:absolute;top:0;bottom:0;right:50%;width:6px;background:repeating-linear-gradient(180deg,var(--rose) 0 14px,transparent 14px 26px);border-radius:3px;transform:translateX(50%)}
+.station{position:relative;width:calc(50% - 2.2rem);margin-bottom:1.6rem}
+.station:nth-child(odd){margin-left:auto;margin-right:0}
+.station:nth-child(even){margin-right:calc(50% + 2.2rem)}
+.st-card{display:block;width:100%;text-align:right;background:var(--card);border:3px solid var(--line);border-radius:1.3rem;padding:1rem 1.1rem;box-shadow:0 6px 0 rgba(29,53,99,.13);transition:.15s;position:relative}
+.st-card:hover{transform:translateY(-3px)}
+.st-card .ic{font-size:2rem;display:block}
+.st-card b{font-size:1.05rem;font-weight:900;color:var(--navy);display:block;margin-top:.2rem}
+.st-card small{display:block;margin-top:.25rem;font-weight:700;color:#7C88A6;font-size:.78rem}
+.st-card .badge{position:absolute;top:-.7rem;left:-.7rem;background:var(--teal);color:#fff;border-radius:50%;width:2rem;height:2rem;display:none;align-items:center;justify-content:center;font-size:1rem;border:2px solid #fff}
+.station.done .st-card{border-color:var(--teal)}
+.station.done .st-card .badge{display:flex}
+.station .dot{position:absolute;top:1.4rem;width:1.4rem;height:1.4rem;background:#fff;border:4px solid var(--rose);border-radius:50%;z-index:2}
+.station:nth-child(odd) .dot{left:-2.95rem}
+.station:nth-child(even) .dot{right:-2.95rem}
+.station.done .dot{background:var(--teal);border-color:var(--teal)}
+.station.activity .st-card{border-color:#F2D3AE}.station.activity.done .st-card{border-color:var(--sun)}
+.station.finish .st-card{background:linear-gradient(135deg,#E8EEFF,#D2DFFA);border-color:var(--rose)}
+
+.overlay{position:fixed;inset:0;background:rgba(15,30,60,.55);display:none;align-items:flex-start;justify-content:center;padding:2rem 1rem;z-index:50;overflow-y:auto}
+.overlay.open{display:flex}
+.sheet{background:var(--card);border-radius:1.5rem;max-width:38rem;width:100%;padding:1.6rem clamp(1.1rem,4vw,2.2rem);position:relative;border:4px solid var(--rose);margin-bottom:2rem}
+.sheet .close{position:absolute;top:.8rem;left:.8rem;background:#fff;border:2px solid var(--line);border-radius:50%;width:2.3rem;height:2.3rem;font-size:1.1rem;font-weight:900}
+.sheet .s-ic{font-size:2.6rem;text-align:center;display:block}
+.sheet h2{font-size:1.45rem;font-weight:900;color:var(--rose-dk);text-align:center;margin:.2rem 0 .8rem}
+.sheet .story-txt{font-size:1.08rem;font-weight:500;line-height:2.15}
+.sheet .story-txt p{margin:.6rem 0}
+.sheet .story-txt .say{color:var(--rose-dk);font-weight:800}
+.readbtn{display:flex;align-items:center;gap:.5rem;margin:0 auto 1rem;background:var(--rose);color:#fff;border:none;border-radius:2rem;padding:.5rem 1.4rem;font-weight:900;font-size:.95rem;box-shadow:0 4px 0 var(--rose-dk)}
+.readbtn.playing{background:var(--sun);color:#5C420A;box-shadow:0 4px 0 #C99417}
+.steps{counter-reset:st;list-style:none;margin:.6rem 0}
+.steps li{counter-increment:st;position:relative;padding:.55rem .5rem .55rem 0;padding-right:3rem;font-weight:700;font-size:1.02rem;border-bottom:1px dashed var(--line)}
+.steps li::before{content:counter(st);position:absolute;right:0;top:.65rem;width:2.1rem;height:2.1rem;background:var(--purple);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:900}
+.q{background:#E7EDFB;border:2px dashed var(--rose);border-radius:1rem;padding:.8rem 1rem;margin:1rem 0;font-weight:800;color:#1D3563}
+.donebtn{display:block;margin:1.3rem auto 0;background:var(--rose);color:#fff;border:none;border-radius:2rem;padding:.7rem 2.2rem;font-weight:900;font-size:1.1rem;box-shadow:0 5px 0 var(--rose-dk)}
+.donebtn.finished{background:var(--teal);box-shadow:0 5px 0 var(--teal-dk)}
+
+.cert{border:6px double var(--rose);border-radius:1.2rem;background:#FBFCFF;text-align:center;padding:1.6rem 1rem;margin:.6rem 0}
+.cert h3{font-size:1.5rem;font-weight:900;color:var(--rose-dk)}
+.cert .nm{font-size:1.3rem;font-weight:900;color:var(--teal-dk);border-bottom:2px dashed var(--line);display:inline-block;min-width:12rem;margin:.5rem 0;padding:0 .5rem}
+.cert p{font-weight:700}
+.cert input{font-family:'Tajawal';font-size:1.1rem;font-weight:800;text-align:center;border:2px solid var(--line);border-radius:.8rem;padding:.4rem .8rem;width:min(16rem,90%);margin:.5rem 0;background:#fff}
+.confetti{position:fixed;top:-2rem;font-size:1.5rem;z-index:60;animation:fall 2.6s linear forwards;pointer-events:none}
+@keyframes fall{to{transform:translateY(110vh) rotate(540deg)}}
+
+footer{text-align:center;color:#7C88A6;font-weight:700;font-size:.85rem;padding:1.5rem 1rem 2.2rem}
+@media(max-width:560px){
+  .map::before{right:1.1rem;transform:none}
+  .station,.station:nth-child(even),.station:nth-child(odd){width:calc(100% - 3.4rem);margin-right:3.4rem;margin-left:0}
+  .station .dot,.station:nth-child(odd) .dot,.station:nth-child(even) .dot{right:-2.85rem;left:auto}
+}
+</style>
+</head>
+<body data-screen-label="رحلة القائد الصغير">
+
+<header class="hero">
+  <a class="back" href="corners/little-district/pages/little-district.html">↩️ الحي الصغير</a>
+  <h1>🚩 رحلةُ القائدِ الصغير</h1>
+  <p>يا بطل! الأمةُ تنتظرُ قادةً يحملونَ همَّها ويغيّرونَ العالم… في هذه الرحلةِ تتعلمُ صفاتِ القائد: عقلُهُ المبدع، وجسمُهُ القوي، وقضيتُهُ الكبرى، وهمَّتُهُ التي لا تنطفئ 💪</p>
+  <div class="starbar">🚩 <span id="stars">0</span> من <span id="total"></span> محطة</div>
+  <div style="margin-top:.9rem;display:flex;gap:.6rem;justify-content:center;flex-wrap:wrap">
+    <a href="رحلة القدوات.html" style="display:inline-flex;align-items:center;gap:.5rem;background:#B0762A;color:#fff;border-radius:2rem;padding:.5rem 1.3rem;font-weight:900;font-size:.88rem;text-decoration:none">⭐ رحلة القدوات ←</a>
+    <a href="رحلة الأخلاق والآداب.html" style="display:inline-flex;align-items:center;gap:.5rem;background:#6C4A9E;color:#fff;border-radius:2rem;padding:.5rem 1.3rem;font-weight:900;font-size:.88rem;text-decoration:none">🌟 رحلة الأخلاق والآداب ←</a>
+    <a href="دليل الأهل للرحلات.html" style="display:inline-flex;align-items:center;gap:.5rem;background:#fff;color:#33302A;border:2px solid #CBD7EE;border-radius:2rem;padding:.5rem 1.3rem;font-weight:900;font-size:.88rem;text-decoration:none">👨‍👩‍👧 دليل الأهل ←</a>
+  </div>
+</header>
+
+<div class="map" id="map"></div>
+
+<div class="overlay" id="ov" onclick="if(event.target===this)closeSheet()">
+  <div class="sheet" id="sheet"></div>
+</div>
+
+<footer>صُنع بحُب 🚩 — تربية الطفل المسلم · رحلة القائد الصغير</footer>
+
+<script>
+var STATIONS=[
+ {type:'story',ic:'👑',title:'قصة: من هو القائد؟ (صفات القائد المسلم)',
+  body:[
+   'سألَ المعلمُ تلاميذَه: «من هو القائد؟». قال أحدُهم: «الذي يأمرُ الناس!». قال آخر: «الأقوى!».',
+   'قال المعلم: «القائدُ الحقيقيُّ شيءٌ آخر… قال النبيُّ ﷺ: <span class="say">سيدُ القومِ خادمُهم</span> — القائدُ هو الذي يخدمُ فريقَهُ لا الذي يتسلطُ عليه!».',
+   '«وكان النبيُّ ﷺ — أعظمُ قائدٍ في التاريخ — يحفرُ الخندقَ مع أصحابِه، وينقلُ الترابَ حتى وارى الغبارُ بطنَه، ويجمعُ الحطبَ في السفر ويقول: <span class="say">أكرهُ أن أتميزَ عليكم</span>».',
+   '«القائدُ: صادقٌ يثقُ به الناس، عادلٌ لا يحابي، شجاعٌ يقولُ الحق، رحيمٌ بالضعيف، صاحبُ هدفٍ كبير… ويبدأُ بنفسِهِ قبل أن يأمرَ غيرَه».',
+   'فكتبَ التلاميذُ على السبورة: «القيادةُ خدمةٌ ومسؤولية… وكلُّكم راعٍ وكلُّكم مسؤولٌ عن رعيتِه» 👑'
+  ],
+  q:'🤔 سؤال القائد: اختبر نفسك اليوم — اخدم فريقك (إخوتك/أصدقاءك) في شيء واحد دون أن تنتظر شكرًا!'},
+ {type:'story',ic:'💡',title:'قصة: عقل يصنع الحلول (الإبداع)',
+  body:[
+   'في غزوةِ الأحزاب، اجتمعتْ قبائلُ الشركِ كلُّها لغزوِ المدينة… عشرةُ آلافِ مقاتل! فماذا يفعلُ المسلمونَ وهم قلة؟',
+   'وقفَ شابٌّ فارسيٌّ اسمُهُ سلمانُ وقال فكرةً لم تعرفْها العرب: <span class="say">«يا رسولَ الله، إنا كنا بفارسَ إذا حوصرنا… خندقنا!»</span> — نحفرُ خندقًا عظيمًا يمنعُ الخيولَ من العبور!',
+   'فأعجبتِ الفكرةُ النبيَّ ﷺ ونفَّذها الجميع… ووقفَ جيشُ الأحزابِ عاجزًا أمامَ الخندق، وردَّهمُ اللهُ خائبين!',
+   'قال الأبُ لابنِه بعد القصة: «هل رأيت؟ فكرةٌ واحدةٌ مبدعةٌ حمتْ مدينةً كاملة! والنبيُّ ﷺ قبِلَ الفكرةَ من شابٍّ أجنبيٍّ فقير… <span class="say">القائدُ يسمعُ الأفكارَ من الجميع، والمبدعُ لا يقول: هكذا وجدنا آباءَنا… بل يسأل: هل من طريقةٍ أفضل؟</span>».',
+   'فالقائدُ الصغيرُ يدربُ عقلَه: يقرأ، ويسأل، ويجرب، ولا يخافُ من فكرةٍ جديدة 💡'
+  ],
+  q:'🤔 تحدي المبدع: اختر مشكلة صغيرة في بيتك أو صفك (فوضى؟ نسيان؟) واقترح لها حلًا مبتكرًا — واعرضه على أهلك!'},
+ {type:'story',ic:'💪',title:'قصة: جسم القائد (القوة والرياضة)',
+  body:[
+   'قال النبيُّ ﷺ: <span class="say">«المؤمنُ القويُّ خيرٌ وأحبُّ إلى اللهِ من المؤمنِ الضعيف، وفي كلٍّ خير»</span>.',
+   'وكان ﷺ قويَّ الجسم: <span class="say">صارعَ رُكانةَ — أقوى مصارعي مكة — فصرعَهُ مرةً بعد مرة!</span> حتى قال ركانة: ما وُضعَ جنبي على الأرضِ قبلَك!',
+   'وسابقَ ﷺ زوجتَهُ عائشةَ مرتين، وتسابقَ الصحابةُ بين يديه، وقال: <span class="say">«ارموا بني إسماعيل، فإنَّ أباكم كان راميًا»</span>.',
+   'قال المدربُ لفريقِه: «القائدُ يحتاجُ جسمًا يحملُ همَّتَه! النومُ المبكر، والأكلُ الصحي بلا إسراف — <span class="say">حسبُ ابنِ آدمَ لقيماتٌ يُقمنَ صلبَه</span> — والتمرينُ المنتظم… هذه عدةُ القائد».',
+   '«لكن انتبه: القوةُ للحمايةِ والخير، لا للتنمرِ والأذى… <span class="say">وليس الشديدُ بالصُّرَعة، إنما الشديدُ الذي يملكُ نفسَهُ عند الغضب</span>» 💪'
+  ],
+  q:'🤔 برنامج القائد: نم مبكرًا الليلة، وتمرن غدًا ١٥ دقيقة، وقلل الحلوى — جسمك أمانة وعدة قيادتك!'},
+ {type:'story',ic:'🕌',title:'قصة: قضية القائد (القدس أمانة)',
+  body:[
+   'رأى يوسفُ صورةَ المسجدِ الأقصى في بيتِ جدِّهِ فسأل: «ما هذا المسجدُ الجميل؟».',
+   'قال الجد: «هذا أولى القبلتين، وثاني مسجدٍ وُضعَ في الأرض، ومسرى نبيِّكَ ﷺ! <span class="say">﴿سُبْحَانَ الَّذِي أَسْرَىٰ بِعَبْدِهِ لَيْلًا مِّنَ الْمَسْجِدِ الْحَرَامِ إِلَى الْمَسْجِدِ الْأَقْصَى الَّذِي بَارَكْنَا حَوْلَهُ﴾</span> — وفيه صلى النبيُّ إمامًا بالأنبياءِ جميعًا!».',
+   '«وحرَّرَهُ من قبلُ عمرُ بنُ الخطاب، ثم صلاحُ الدين… وهل تعلمُ سرَّ صلاحِ الدين؟ لم يبدأ بالسيف! <span class="say">بدأ ببناءِ جيلٍ مؤمنٍ متعلم… ربَّى الأمةَ أولًا، فتحررَ الأقصى بعدَها</span>».',
+   'قال يوسف: «وأنا صغير… ماذا أفعلُ للقدس؟». قال الجد: «ما فعلَهُ جيلُ صلاحِ الدين: <span class="say">تعلَّمْ، وصلِّ، وقوِّ إيمانَك، واعرفْ قصةَ الأقصى واحكِها، وادعُ له كلَّ يوم</span>… فالقائدُ يحملُ قضيتَهُ في قلبِهِ وهو يستعد».',
+   'فعلَّقَ يوسفُ صورةَ الأقصى فوقَ مكتبِه… ليتذكرَ كلَّ يومٍ لماذا يتعلمُ ويجتهد 🕌'
+  ],
+  q:'🤔 عهد القائد: احفظ آية الإسراء، واحكِ لأحد أصدقائك قصة الأقصى، وادعُ له في سجودك كل يوم!'},
+ {type:'story',ic:'🌍',title:'قصة: أمة واحدة (هم الأمة)',
+  body:[
+   'جاءَ حمزةُ من المدرسةِ حزينًا: «رأيتُ في الأخبارِ أطفالًا جوعى في بلدٍ بعيد… لكنه ليس بلدي، فلماذا أنا حزين؟».',
+   'قال أبوه: «لأنَّ قلبَكَ سليم! قال النبيُّ ﷺ: <span class="say">مثلُ المؤمنينَ في توادِّهم وتراحمِهم وتعاطفِهم مثلُ الجسدِ الواحد: إذا اشتكى منه عضوٌ تداعى له سائرُ الجسدِ بالسهرِ والحمى</span>».',
+   '«المسلمُ في الصين، والمسلمةُ في أفريقيا… كلُّهم جسدُكَ الكبير. وقال ﷺ: <span class="say">من لا يهتمُّ بأمرِ المسلمينَ فليس منهم</span>».',
+   '«والقائدُ الصغيرُ يبدأُ هكذا: يدعو لإخوانِهِ في كلِّ مكان، ويتصدقُ لهم، ويتعلمُ أخبارَهم وجغرافيتَهم، ويكبرُ وفي قلبِهِ حلمٌ: <span class="say">أن يكونَ سببًا في عزةِ هذه الأمة</span>».',
+   'فأمسكَ حمزةُ خريطةَ العالم، وصارَ كلَّ ليلةٍ يضعُ إصبعَهُ على بلدٍ ويدعو لأهلِه… قائدٌ قلبُهُ يتسعُ للأمةِ كلِّها 🌍'
+  ],
+  q:'🤔 قلب القائد: ضع إصبعك على الخريطة كل ليلة وادعُ لبلد مسلم مختلف — واجمع في قلبك الأمة كلها!'},
+ {type:'story',ic:'🎯',title:'قصة: الهدف الكبير (أهداف القائد في الحياة)',
+  body:[
+   'سُئلَ الأولادُ في الفصل: «ماذا تريدُ أن تصبح؟». قالوا: طبيبًا! مهندسًا! لاعبًا مشهورًا!',
+   'وقال زيد: «أريدُ أن أصبحَ طبيبًا… <span class="say">لأداويَ الفقراءَ مجانًا وأرفعَ اسمَ أمتي!</span>». فقال المعلم: «قفْ يا زيد! أنتَ فهمتَ السر…».',
+   '«الهدفُ الصغير: وظيفةٌ لنفسي. والهدفُ الكبير: <span class="say">أن تكونَ نافعًا — خيرُ الناسِ أنفعُهم للناس!</span> همةُ القائدِ أعلى من نفسِه».',
+   '«انظروا لأصحابِ الهممِ العالية: أسامةُ بنُ زيدٍ قادَ جيشًا وعمرُهُ ثمانيةَ عشرَ عامًا! ومحمدُ الفاتحُ فتحَ القسطنطينيةَ وعمرُهُ واحدٌ وعشرون… لأنهم منذ الصغرِ عاشوا لهدفٍ أكبرَ من اللعبِ فقط».',
+   '«القاعدة: <span class="say">إذا سألتَ فاسألِ اللهَ… وإذا حلمتَ فاحلمْ كبيرًا، واعملْ لحلمِكَ كلَّ يوم خطوة</span>» 🎯'
+  ],
+  q:'🤔 حلم القائد: اكتب في ورقة: «حلمي الكبير هو… وسأنفع به الناس عن طريق…» وعلقها فوق سريرك!'},
+ {type:'story',ic:'🔥',title:'قصة: صاحب الهمة لا ييأس (الحرص على التغيير)',
+  body:[
+   'أرادَ عمرُ أن يجعلَ صفَّهُ أنظفَ صف… فوضعَ صندوقَ مهملات، فسخرَ بعضُهم: «ستتعبُ وحدَكَ ولن يتغيرَ شيء!».',
+   'فتذكرَ قولَ النبيِّ ﷺ: <span class="say">«من رأى منكم منكرًا فليغيرْهُ بيدِه، فإن لم يستطعْ فبلسانِه، فإن لم يستطعْ فبقلبِه»</span> — القائدُ لا يقفُ متفرجًا!',
+   'استمرَّ عمرُ أسبوعًا: يلتقطُ الأوراق، ويذكِّرُ بلطف، ويكافئُ من يساعدُه… وفي الأسبوعِ الثاني انضمَّ له ثلاثة، وفي الشهرِ صارَ الصفُّ كلُّهُ فريقَ نظافة، وفازوا بجائزةِ أنظفِ صفٍّ في المدرسة!',
+   'قال المدير: «كيف فعلتَها؟». قال عمر: <span class="say">«بدأتُ بنفسي… ولم أنتظرْ أحدًا»</span>.',
+   'وهذا قانونُ التغيير: <span class="say">﴿إِنَّ اللَّهَ لَا يُغَيِّرُ مَا بِقَوْمٍ حَتَّىٰ يُغَيِّرُوا مَا بِأَنفُسِهِمْ﴾</span> — غيِّرْ نفسَك… يتغيرْ من حولُك 🔥'
+  ],
+  q:'🤔 مشروع القائد: اختر شيئًا واحدًا تريد تغييره حولك (نظافة؟ عادة؟) وابدأ بنفسك أسبوعًا كاملًا دون انتظار أحد!'},
+ {type:'story',ic:'🗣️',title:'قصة: شخصية لا تذوب (قوة الشخصية)',
+  body:[
+   'قال أصدقاءُ كريم: «كلُّنا سنتغيبُ غدًا عن حصةِ المراجعة… لا تكنْ مملًا وتعالَ معنا للملاهي!».',
+   'وقفَ كريمٌ موقفَ القائد: «لا. المراجعةُ أهم، ومن أرادَ الملاهيَ فبعدَ الامتحان… وأنا أدعوكم!». ضحكوا: «جبان!». فابتسمَ وقال: <span class="say">«الجبانُ من يخافُ من كلمةِ (لا)!»</span>.',
+   'وحكى لهم ما علَّمَهُ أبوه: قال النبيُّ ﷺ: <span class="say">«لا يكنْ أحدُكم إمَّعة، يقول: إن أحسنَ الناسُ أحسنتُ، وإن ظلموا ظلمت! ولكن وطِّنوا أنفسَكم: إن أحسنَ الناسُ أن تُحسنوا، وإن أساؤوا فلا تظلموا»</span>.',
+   '«الإمَّعة: الذي يذوبُ في الآخرين بلا رأي! أما القائد: يجاملُ في المباح، ويثبتُ عند المبادئ… بأدبٍ وابتسامةٍ ودونَ غرور».',
+   'ويومَ الامتحان، جاءَهُ أصدقاؤُهُ يطلبونَ ملخصاتِه… فأعطاهم بكرمٍ وقال: «القادمة، ذاكروا معي من البداية!» — فصارَ قائدَهم بحق 🗣️'
+  ],
+  q:'🤔 تدريب القائد: تدرّب على جملة «لا، شكرًا» بابتسامة وثبات — متى ستحتاجها هذا الأسبوع؟'},
+ {type:'story',ic:'🤝',title:'قصة: القائد وفريقه (الشورى والعمل الجماعي)',
+  body:[
+   'في يومِ بدر، نزلَ النبيُّ ﷺ بالجيشِ عند أدنى ماء… فجاءَهُ الحُبابُ بنُ المنذرِ وقال بأدب: <span class="say">«يا رسولَ الله، أهذا منزلٌ أنزلكَهُ الله، أم هو الرأيُ والحرب؟»</span> قال: «بل الرأيُ والحرب». قال: «فليس هذا بمنزل! انزلْ بنا عند أقربِ ماءٍ للعدو…».',
+   'فماذا فعلَ أعظمُ قائد؟ <span class="say">قام ونفَّذَ رأيَ الجندي فورًا!</span> — القائدُ الحقيقيُّ يسمعُ ويستشير: ﴿وَشَاوِرْهُمْ فِي الْأَمْرِ﴾.',
+   'وقال معاويةُ رضي الله عنه كلمةً عجيبةً في فنِّ القيادة: <span class="say">«لو أنَّ بيني وبين الناسِ شعرةً ما انقطعتْ: إذا شدُّوها أرخيتُها، وإذا أرخَوها شددتُها»</span> — مرونةٌ بلا ضعف، وحزمٌ بلا قسوة!',
+   'والقائدُ يوزعُ المهامَ ويثقُ بفريقِه: النبيُّ ﷺ جعلَ لكلِّ مهمةٍ صاحبَها: مصعبٌ للتعليم، وحسانُ للشعر، وزيدٌ للترجمة، وخالدٌ للقتال…',
+   'فالنجاحُ الكبيرُ لا يصنعُهُ بطلٌ وحيد… بل فريقٌ يقودُهُ قلبٌ كبير 🤝'
+  ],
+  q:'🤔 فن القائد: في نشاطك الجماعي القادم — استشر فريقك أولًا، ووزّع المهام حسب موهبة كل واحد!'},
+ {type:'story',ic:'⏳',title:'قصة: وقت القائد ذهب',
+  body:[
+   'سألَ فادي جدَّه: «كيف أنجزَ العظماءُ كلَّ هذا؟ أسامةُ قائدٌ في الثامنةَ عشرة، وابنُ عباسٍ عالمٌ صغيرًا…».',
+   'قال الجد: «سرُّهم في كلمتين: <span class="say">لم يضيعوا الوقت!</span> قال ﷺ: <span class="say">نعمتانِ مغبونٌ فيهما كثيرٌ من الناس: الصحةُ والفراغ</span> — أكثرُ الناسِ يخسرونَهما في اللاشيء!».',
+   '«ويومَ القيامة: <span class="say">لا تزولُ قدما عبدٍ حتى يُسألَ عن عمرِهِ فيمَ أفناه، وعن شبابِهِ فيمَ أبلاه</span>… ستُسألُ عن كلِّ ساعة».',
+   '«القائدُ الصغيرُ ليس ممنوعًا من اللعب — النبيُّ ﷺ مازحَ ولاعبَ الأطفال! — لكنه يعرفُ الميزان: وقتٌ للصلاةِ والقرآن، وقتٌ للدراسة، وقتٌ للرياضة، وقتٌ للعبِ والعائلة… <span class="say">لكلِّ شيءٍ وقتُه، فلا يأكلُ وقتٌ وقتًا</span>».',
+   'فرسمَ فادي جدولَهُ الأسبوعي… وقال: «من اليوم: أنا أميرُ وقتي، لا أسيرُ الشاشة!» ⏳'
+  ],
+  q:'🤔 جدول القائد: ارسم جدول يومك: صلاة، دراسة، رياضة، لعب، عائلة — وكن أمير وقتك أسبوعًا!'},
+ {type:'activity',ic:'🚩',title:'نشاط: مشروعي القيادي الأول',
+  steps:[
+   'اختر مشروعًا صغيرًا نافعًا: مكتبة صف، حملة نظافة، مساعدة جار، جمع صدقة لمحتاج…',
+   'حدد الهدف بجملة واحدة، والمدة (أسبوع مثلًا).',
+   'كوّن فريقك: ٢-٤ أصدقاء أو إخوة، واستشرهم في الخطة.',
+   'وزّع المهام حسب مواهب كل واحد.',
+   'ابدأ بنفسك بأول خطوة اليوم — القائد قدوة!',
+   'وفي النهاية: اجتمعوا وقيّموا: ماذا نجح؟ وماذا نحسّن في المشروع القادم؟ 🚩'
+  ],
+  q:'💡 لا يهم حجم المشروع… المهم أنك قُدت فريقًا لعمل خير من البداية للنهاية!'},
+ {type:'activity',ic:'📋',title:'نشاط: بطاقة صفات القائد',
+  steps:[
+   'اكتب على بطاقة كبيرة الصفات العشر: صادق، عادل، شجاع، رحيم، مبدع، قوي الجسم, صاحب قضية، عالي الهمة، يستشير، أمير وقته.',
+   'علّقها على باب غرفتك.',
+   'كل مساء ضع ✓ أمام كل صفة طبقتها اليوم بموقف حقيقي.',
+   'في نهاية الأسبوع: احسب نقاطك مع أهلك — أي صفة تحتاج تدريبًا أكثر؟',
+   'حدد «صفة الأسبوع القادم» وركّز عليها! 📋'
+  ],
+  q:'💡 القيادة عضلة… تنمو بالتمرين اليومي!'},
+ {type:'story',ic:'🪥',title:'قصة: النظافة وسنن الفطرة (وحكاية السواك)',
+  body:[
+   'سألَ آدمُ أباه: «لماذا تحملُ هذا العودَ الصغيرَ دائمًا؟». قال أبوه: «هذا السواك! قال ﷺ: <span class="say">السواكُ مطهرةٌ للفم، مرضاةٌ للرب</span>، وقال: <span class="say">لولا أن أشقَّ على أمتي لأمرتُهم بالسواكِ عند كلِّ صلاة</span>».',
+   '«وهل تعلمُ أنَّ السواكَ دخلَ التاريخ؟ قبلَ معركةِ القادسية، أرسلَ الفرسُ عيونًا تراقبُ المسلمين… فرأوهم <span class="say">يستاكونَ قبل الصلاة</span>، فرجعوا مذعورين يقولون: قومٌ يعضُّونَ العيدان! يهتمونَ بنظافةِ أفواهِهم حتى في الحرب… <span class="say">قومٌ هذا حرصُهم لا يُهزمون!</span> فكانتْ هيبتُهم نصرًا قبل المعركة».',
+   '«والنظافةُ منهجُ حياةِ القائد: <span class="say">إنَّ اللهَ جميلٌ يحبُّ الجمال</span>، والطهورُ شطرُ الإيمان! ومن سننِ الفطرةِ التي علَّمنا إياها النبيُّ ﷺ: <span class="say">قصُّ الأظافر، وتنظيفُ الأسنان، والاستحمامُ، وترتيبُ الشعر، والتطيب</span>».',
+   '«القائدُ نظيفُ الجسمِ والثوبِ والمكان… لأنَّ الناسَ تثقُ بمن يعتني بنفسِه». فصارَ لآدمَ سواكُهُ الخاص… وقال: «سلاحُ النصرِ الصغير!» 🪥'
+  ],
+  q:'🤔 سنن الفطرة: قص أظافرك كل جمعة، ونظف أسنانك قبل كل صلاة أسبوعًا — واجعل النظافة عنوانك!'},
+ {type:'story',ic:'👬',title:'قصة: الصحبة التي تبني (الصاحب الصالح)',
+  body:[
+   'قال المعلمُ لتلاميذِه: «أخبروني: لماذا لم يبنِ النبيُّ ﷺ الجيلَ الأولَ فردًا فردًا… بل جمعَهم في دارِ الأرقم؟».',
+   '«لأنَّ القائدَ لا يُبنى وحدَه! الصحبةُ الصالحةُ مثلُ ما قال ﷺ: <span class="say">مثلُ الجليسِ الصالحِ والسوءِ كحاملِ المسكِ ونافخِ الكير: فحاملُ المسكِ إما أن يُحذيَك، وإما أن تبتاعَ منه، وإما أن تجدَ منه ريحًا طيبة</span>».',
+   '«انظروا: أبو بكرٍ أسلمَ على يدِهِ خمسةٌ من العشرةِ المبشرين! صاحبٌ واحدٌ صالح… فتحَ بابَ الجنةِ لخمسة!».',
+   '«وقال ﷺ: <span class="say">المرءُ على دينِ خليلِه، فلينظرْ أحدُكم من يُخالل</span> — أصدقاؤُكَ يرسمونَ مستقبلَك: صديقُ الصلاةِ يجرُّكَ للمسجد، وصديقُ الشاشاتِ يجرُّكَ للضياع».',
+   'فتعاهدَ ثلاثةٌ من التلاميذِ يومَها: «نكونُ فريقَ الجنة: نذكِّرُ بعضَنا بالصلاة، ونتسابقُ في الخير، ونكبرُ معًا قادةً» 👬'
+  ],
+  q:'🤔 فريق القائد: اختر صديقًا صالحًا واعقدا «عهد فريق الجنة»: تذكير بالصلاة وتسابق في الخير!'},
+ {type:'story',ic:'🌱',title:'قصة: رجل واحد يصنع أمة (الأمل في التغيير)',
+  body:[
+   'قال يوسف: «نحن قلة… فكيف نغيرُ العالم؟». فابتسمَ جدُّهُ وقال: «سأحكي لك سرَّ التاريخ: <span class="say">كلُّ أمةٍ عظيمةٍ بدأتْ برجلٍ واحد!</span>».',
+   '«إبراهيمُ عليه السلام… وقفَ وحدَهُ أمامَ قومِهِ كلِّهم، فقال اللهُ عنه: <span class="say">﴿إِنَّ إِبْرَاهِيمَ كَانَ أُمَّةً قَانِتًا لِّلَّهِ﴾</span> — رجلٌ واحدٌ سماهُ اللهُ أمة! ومن ذريتِهِ جاءتِ الأنبياءُ كلُّهم».',
+   '«وعبدُ الرحمنِ الداخل: شابٌّ هربَ وحيدًا مطاردًا، عبرَ الصحاري والبحار… فوصلَ الأندلسَ بلا جيشٍ ولا مال، <span class="say">فأسسَ دولةً عظيمةً أضاءتْ أوروبا ثمانيةَ قرون!</span> سموهُ: صقرَ قريش».',
+   '«وعبدُ اللهِ بنُ ياسين: عالمٌ واحدٌ خرجَ إلى الصحراءِ فبنى رباطًا صغيرًا يعلِّمُ فيه الناس… فتخرجَ من رباطِهِ <span class="say">دولةُ المرابطينَ</span> التي وحدتِ المغربَ وأنقذتِ الأندلس!».',
+   '«فلا تقلْ أبدًا: أنا واحدٌ فماذا أفعل؟ قل: <span class="say">أنا واحدٌ… وكلُّ أمةٍ بدأتْ بواحد!</span>» 🌱'
+  ],
+  q:'🤔 بذرة القائد: إبراهيم كان أمة، والداخل صنع أمة، وابن ياسين بدأ برباط — ما البذرة الصغيرة التي ستبدأها أنت؟'},
+ {type:'story',ic:'🕌',title:'قصة: صلاح الدين وعودة الأقصى (لا مستحيل)',
+  body:[
+   'في زمنِ صلاحِ الدين، كان الأقصى أسيرًا منذ تسعينَ عامًا… وكان كثيرٌ من الناسِ قد يئسوا: «انتهى الأمر، لن يعود!». والأمةُ ممزقةٌ دويلاتٍ متناحرة.',
+   'لكنَّ صلاحَ الدينِ رفضَ اليأس… وبدأ من العمق: <span class="say">وحَّدَ القلوبَ قبل البلاد، ونشرَ العلمَ والمدارس، وربى جيلًا يعشقُ الآخرةَ أكثرَ من الدنيا</span>.',
+   'وكان لا يضحكُ، فسُئل، فقال كلمتَهُ الشهيرة: <span class="say">«كيف أضحكُ والمسجدُ الأقصى أسير؟!»</span> — قضيتُهُ تسكنُ قلبَهُ ليلَ نهار.',
+   'وفي حطين، جمعَ الأمةَ الموحدةَ… فانتصر، ودخلَ القدسَ <span class="say">فحرَّرَها بلا مذابح، وأضاءَ الأقصى بالصلاةِ من جديد!</span> تسعونَ عامًا من اليأس… محاها جيلٌ واحدٌ مؤمن.',
+   'قال الجدُّ ليوسف: «وهكذا تعلمنا: <span class="say">لا تحتقرْ زمنَ الضعف… ففي داخلِهِ يولدُ جيلُ النصر. وربما تكونُ أنتَ من ذلك الجيل!</span>» 🕌'
+  ],
+  q:'🤔 همة القائد: صلاح الدين بدأ بالعلم والتربية قبل السيف — ابدأ أنت اليوم ببناء نفسك: علم + إيمان + جسم قوي!'},
+ {type:'activity',ic:'🎤',title:'نشاط: فن الخطابة وقوة الكلمة',
+  steps:[
+   'اعلم أولًا قوة الكلمة: يوم زحف التتار — الذين أسقطوا بغداد وأرعبوا الدنيا — وقف القائد قطز في الجيش خطيبًا، وصرخ صرخته الخالدة: «وا إسلاماه!» وقال: «من للإسلام إن لم نكن نحن؟» فبكى الجنود واشتعلت قلوبهم… فانتصروا في عين جالوت وكسروا أسطورة التتار!',
+   'اختر موضوعًا تحبه: الصلاة، بر الوالدين، القدس، النظافة…',
+   'اكتب خطبة صغيرة من ٥ جمل: افتتاح بحمد الله ← جملة تشد الانتباه ← فكرتك بدليل (آية أو حديث) ← قصة قصيرة ← دعوة للعمل.',
+   'تدرب أمام المرآة ٣ مرات: صوت واضح، وقفة ثابتة، ونظرة للجمهور.',
+   'ألقِها أمام عائلتك بعد العشاء… ثم اطلب رأيهم: ما أجمل ما فيها؟ وما أطوّره؟',
+   'كرر كل أسبوع بموضوع جديد — فالقائد يؤثر بكلمته قبل يده! 🎤'
+  ],
+  q:'💡 كلمة واحدة صادقة («وا إسلاماه!») غيّرت التاريخ — درّب لسانك على الكلمة المؤثرة!'},
+ {type:'finish',ic:'🏅',title:'المحطة الأخيرة: شهادة القائد الصغير'}
+];
+
+var K='leader_journey_v1';
+var st={};
+try{ st=JSON.parse(localStorage.getItem(K)||'{}')||{}; }catch(e){}
+st.done=st.done||{};
+function save(){ try{ localStorage.setItem(K,JSON.stringify(st)); }catch(e){} }
+function doneCount(){ return Object.keys(st.done).length; }
+
+function renderMap(){
+  var m=document.getElementById('map'); m.innerHTML='';
+  STATIONS.forEach(function(s,i){
+    var d=document.createElement('div');
+    d.className='station '+(s.type||'story')+(st.done[i]?' done':'');
+    var kind=s.type==='story'?'قصة':(s.type==='activity'?'نشاط':'الجائزة الكبرى');
+    d.innerHTML='<span class="dot"></span>'+
+      '<button class="st-card" onclick="openStation('+i+')">'+
+      '<span class="badge">✓</span>'+
+      '<span class="ic">'+s.ic+'</span>'+
+      '<b>'+s.title.replace(/^(قصة|نشاط|المحطة الأخيرة): /,'').replace(/ \(.+\)$/,'')+'</b>'+
+      '<small>المحطة '+(i+1)+' · '+kind+'</small></button>';
+    m.appendChild(d);
+  });
+  document.getElementById('stars').textContent=doneCount();
+  document.getElementById('total').textContent=STATIONS.length;
+}
+
+var cur=-1;
+function openStation(i){
+  cur=i; var s=STATIONS[i];
+  var h='<button class="close" onclick="closeSheet()">✕</button>'+
+        '<span class="s-ic">'+s.ic+'</span><h2>'+s.title+'</h2>';
+  if(s.type==='finish'){
+    var all = doneCount() >= STATIONS.length-1 || st.done[i];
+    if(all){
+      h+='<div class="cert"><h3>🏅 شهادة القائد الصغير</h3>'+
+         '<p>تشهدُ رحلةُ «القائدِ الصغير» أنَّ البطل/البطلة</p>'+
+         (st.name?'<div class="nm">'+st.name+'</div>':'<input id="nm" placeholder="اكتب اسمك هنا" value="">')+
+         '<p>تعلَّمَ صفاتِ القائدِ المسلم: عقلًا مبدعًا، وجسمًا قويًّا، وقلبًا يحملُ القدسَ والأمة، وشخصيةً تغيّرُ ولا تذوب!</p>'+
+         '<p style="font-size:1.3rem">🚩⭐🚩⭐🚩</p>'+
+         '<p style="font-size:.85rem;color:#7C88A6">«كلُّكم راعٍ وكلُّكم مسؤولٌ عن رعيتِه»</p></div>'+
+         (st.name
+           ?'<button class="donebtn finished" onclick="window.print()">🖨️ اطبع شهادتي</button>'
+           :'<button class="donebtn" onclick="signCert()">✍️ وقِّع الشهادة</button>');
+    }else{
+      h+='<p style="text-align:center;font-weight:800;font-size:1.05rem">🔒 أكمِل كلَّ المحطاتِ أولًا أيها القائد…<br>أنجزتَ حتى الآن <b style="color:var(--teal-dk)">'+doneCount()+'</b> من '+(STATIONS.length-1)+'!</p>'+
+         '<button class="donebtn" onclick="closeSheet()">أكمل الرحلة 💪</button>';
+    }
+  }else{
+    h+='<button class="readbtn" id="rb" onclick="readAloud()">🔊 اقرأ لي</button>';
+    if(s.type==='story'){
+      h+='<div class="story-txt">'+s.body.map(function(p){return '<p>'+p+'</p>';}).join('')+'</div>';
+    }else{
+      h+='<ol class="steps">'+s.steps.map(function(p){return '<li>'+p+'</li>';}).join('')+'</ol>';
+    }
+    h+='<div class="q">'+s.q+'</div>';
+    h+= st.done[i]
+      ? '<button class="donebtn finished" onclick="closeSheet()">✓ أنجزتُها! (اضغط للرجوع)</button>'
+      : '<button class="donebtn" onclick="markDone()">'+(s.type==='story'?'قرأتُها كاملة! 🚩':'أنجزتُ النشاط! 🚩')+'</button>';
+  }
+  document.getElementById('sheet').innerHTML=h;
+  document.getElementById('ov').classList.add('open');
+}
+function signCert(){
+  var v=(document.getElementById('nm')||{}).value||'';
+  v=v.trim(); if(!v){ alert('اكتب اسمك أولًا أيها القائد! ✍️'); return; }
+  st.name=v; st.done[STATIONS.length-1]=true; save(); celebrate(); openStation(STATIONS.length-1); renderMap();
+}
+function markDone(){
+  st.done[cur]=true; save(); stopRead(); celebrate();
+  renderMap(); closeSheet();
+}
+function closeSheet(){ stopRead(); document.getElementById('ov').classList.remove('open'); }
+
+var uttering=false;
+function readAloud(){
+  if(uttering){ stopRead(); return; }
+  var s=STATIONS[cur]; if(!s) return;
+  var txt=(s.type==='story'?s.body.join(' '):s.steps.join('. '))+'. '+s.q;
+  txt=txt.replace(/<[^>]+>/g,'').replace(/[🤔📋💡🚩✨👑💪🕌🌍🎯🔥🗣️🤝⏳⭐]/g,'');
+  var u=new SpeechSynthesisUtterance(txt);
+  u.lang='ar-SA'; u.rate=.92;
+  var vs=speechSynthesis.getVoices().filter(function(v){return v.lang&&v.lang.indexOf('ar')===0;});
+  if(vs.length) u.voice=vs[0];
+  u.onend=u.onerror=function(){ uttering=false; var b=document.getElementById('rb'); if(b){b.classList.remove('playing');b.textContent='🔊 اقرأ لي';} };
+  speechSynthesis.cancel(); speechSynthesis.speak(u); uttering=true;
+  var b=document.getElementById('rb'); if(b){b.classList.add('playing');b.textContent='⏹️ إيقاف';}
+}
+function stopRead(){ try{speechSynthesis.cancel();}catch(e){} uttering=false; }
+
+function celebrate(){
+  var em=['🚩','🌟','✨','🎉','💙'];
+  for(var i=0;i<18;i++){
+    var s=document.createElement('span');
+    s.className='confetti'; s.textContent=em[i%em.length];
+    s.style.left=(Math.random()*100)+'vw';
+    s.style.animationDelay=(Math.random()*0.5)+'s';
+    document.body.appendChild(s);
+    setTimeout(function(el){return function(){el.remove()}}(s),3200);
+  }
+}
+renderMap();
+</script>
+</body>
+</html>

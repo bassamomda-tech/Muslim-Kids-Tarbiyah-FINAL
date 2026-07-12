@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>تطبيقات عملية — كيف أجعل ابني يحب الله ويعرفه؟</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&family=Noto+Naskh+Arabic:wght@400;500;600;700&display=swap">
+<style>
+:root{
+  --gold:#A07810;--gold-lt:#D4A017;--green:#0D6B54;--navy:#0A2540;
+  --paper:#FBF6EA;--card:#FFFDF7;--ink:#22303E;--ink-soft:#5A6673;
+  --line:#E7DCC4;--red:#A33529;
+}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Noto Naskh Arabic','Tajawal',serif;background:var(--paper);color:var(--ink);line-height:1.95;direction:rtl}
+a{color:var(--green);text-decoration:none}
+a:hover{color:var(--gold)}
+main{padding:2.4rem clamp(1.2rem,5vw,4rem);max-width:56rem;margin:0 auto}
+.topbar{display:flex;justify-content:space-between;align-items:center;gap:1rem;margin-bottom:1.8rem;flex-wrap:wrap}
+.topbar a.back{font-family:'Tajawal',sans-serif;font-weight:800;font-size:.9rem;background:var(--card);border:1px solid var(--line);border-radius:2rem;padding:.5rem 1.2rem}
+.topbar button{font-family:'Tajawal',sans-serif;font-weight:800;font-size:.9rem;background:var(--navy);color:#F5CC5A;border:none;border-radius:2rem;padding:.55rem 1.3rem;cursor:pointer}
+.hero{border-bottom:2px solid var(--line);padding-bottom:1.5rem;margin-bottom:2rem}
+.hero .kicker{font-family:'Tajawal',sans-serif;font-weight:800;font-size:.8rem;letter-spacing:.05em;color:var(--gold)}
+.hero h1{font-family:'Tajawal',sans-serif;font-size:clamp(1.7rem,3.5vw,2.4rem);font-weight:900;color:var(--navy);line-height:1.35;margin:.3rem 0 .6rem}
+.hero p{color:var(--ink-soft);max-width:44rem}
+.goal-card{background:linear-gradient(135deg,rgba(13,107,84,.08),rgba(212,160,23,.09));border:1px solid rgba(13,107,84,.25);border-radius:1rem;padding:1.4rem 1.6rem;margin-bottom:2.2rem}
+.goal-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:1rem;margin-top:.8rem}
+.goal-item{background:var(--card);border:1px solid var(--line);border-radius:.8rem;padding:.8rem 1rem}
+.goal-item b{font-family:'Tajawal',sans-serif;display:block;font-size:.78rem;color:var(--gold);font-weight:800;margin-bottom:.15rem}
+.goal-item span{font-family:'Tajawal',sans-serif;font-weight:800;color:var(--navy);font-size:.95rem;line-height:1.6}
+section.chapter{margin-bottom:2.4rem;scroll-margin-top:1.5rem}
+.ch-card{background:var(--card);border:1px solid var(--line);border-radius:1rem;padding:1.7rem clamp(1.1rem,3vw,2.2rem);box-shadow:0 2px 14px rgba(34,48,62,.05)}
+section.chapter h2{font-family:'Tajawal',sans-serif;font-size:1.4rem;font-weight:900;color:var(--navy);display:flex;align-items:center;gap:.6rem;margin-bottom:1rem}
+section.chapter h2 .ic{color:var(--gold);font-size:1.15rem}
+p{margin:.5rem 0}
+ul,ol{padding-right:1.4rem;margin:.5rem 0}
+li{margin:.45rem 0}
+li::marker{color:var(--gold);font-weight:700}
+strong{color:var(--navy)}
+.qbox{background:linear-gradient(135deg,rgba(13,107,84,.07),rgba(212,160,23,.08));border:1px solid rgba(13,107,84,.22);border-radius:.8rem;padding:.85rem 1.15rem;margin:1rem 0 .3rem;font-size:.95rem}
+.stage{border:1px solid var(--line);border-radius:.9rem;margin:1rem 0;overflow:hidden}
+.stage-head{display:flex;align-items:center;gap:.8rem;padding:.8rem 1.1rem;background:rgba(212,160,23,.09);border-bottom:1px solid var(--line);flex-wrap:wrap}
+.stage-age{font-family:'Tajawal',sans-serif;font-weight:900;font-size:1rem;color:var(--navy);background:#fff;border:1.5px solid var(--gold-lt);border-radius:2rem;padding:.2rem .95rem;flex:none}
+.stage-name{font-family:'Tajawal',sans-serif;font-weight:900;color:var(--green);font-size:1.02rem}
+.stage-body{padding:1rem 1.2rem}
+.meta-row{display:flex;flex-wrap:wrap;gap:.5rem;margin:.4rem 0 .8rem}
+.meta{font-family:'Tajawal',sans-serif;font-size:.78rem;font-weight:800;border-radius:2rem;padding:.25rem .8rem;background:rgba(13,107,84,.09);color:var(--green);border:1px solid rgba(13,107,84,.22)}
+.meta.gold{background:rgba(212,160,23,.12);color:var(--gold);border-color:rgba(212,160,23,.35)}
+.stage-body ul{margin:.3rem 0}
+.win{font-family:'Tajawal',sans-serif;font-size:.88rem;font-weight:800;color:var(--green);background:rgba(13,107,84,.07);border-right:3px solid var(--green);border-radius:.5rem;padding:.5rem .9rem;margin-top:.7rem}
+table{width:100%;border-collapse:collapse;font-family:'Tajawal',sans-serif;font-size:.9rem;margin:.8rem 0}
+th{background:var(--navy);color:#F5CC5A;font-weight:800;padding:.55rem .7rem;text-align:right}
+td{border:1px solid var(--line);padding:.55rem .7rem;vertical-align:top;background:var(--card)}
+tr:nth-child(even) td{background:#FCF8EE}
+.tracker{display:grid;grid-template-columns:repeat(auto-fill,minmax(52px,1fr));gap:.45rem;margin:.9rem 0}
+.day{font-family:'Tajawal',sans-serif;font-weight:800;font-size:.82rem;text-align:center;border:1.5px solid var(--line);border-radius:.6rem;padding:.55rem .2rem;cursor:pointer;background:var(--card);transition:.15s;user-select:none}
+.day:hover{border-color:var(--gold-lt)}
+.day.done{background:var(--green);border-color:var(--green);color:#fff}
+.tracker-note{font-family:'Tajawal',sans-serif;font-size:.8rem;color:var(--ink-soft)}
+.warn li::marker{content:'⚠️ '}
+.good li::marker{content:'✅ '}
+footer{font-family:'Tajawal',sans-serif;text-align:center;color:var(--ink-soft);font-size:.82rem;padding:2rem 1rem 2.4rem;border-top:1px dashed var(--line);margin-top:1.5rem}
+@media print{.topbar{display:none}body{background:#fff}.ch-card{box-shadow:none;break-inside:avoid}.day{border-color:#999}}
+</style>
+</head>
+<body data-screen-label="تطبيقات عملية — حب الله">
+<main>
+  <div class="topbar">
+    <a class="back" href="corners/little-district/pages/parents.html">↩️ العودة لركن الأهل</a>
+    <button onclick="window.print()">🖨️ طباعة / حفظ PDF</button>
+  </div>
+
+  <div class="hero">
+    <span class="kicker">التطبيقات العملية لأهداف الأركان · الهدف الثاني</span>
+    <h1>💛 كيف أجعلُ ابني يحبُّ اللهَ ويعرفُه؟</h1>
+    <p>خطة تشغيلية لبناء أعظم أساس تربوي: <strong>حب الله، ومعرفته بأسمائه وصفاته، ومراقبته، والصلة به</strong> — حتى يكون الحبُّ (لا الخوف وحده ولا العادة) هو الدافع الأساسي لكل عبادة. بالأساليب المعتمدة: القدوة، التعليق التلقائي، القصة، التربية بالعادة، والحوار.</p>
+  </div>
+
+  <a href="رحلة أحب الله.html" style="display:flex;align-items:center;gap:1rem;background:linear-gradient(135deg,#8E5EA8,#6A4383);border-radius:1rem;padding:1.1rem 1.4rem;margin-bottom:2.2rem;text-decoration:none;box-shadow:0 6px 18px rgba(106,67,131,.3)">
+    <span style="font-size:2.2rem;flex:none">🎠</span>
+    <span style="flex:1">
+      <b style="font-family:'Tajawal',sans-serif;font-weight:900;color:#fff;font-size:1.1rem;display:block">للطفل: رحلة أُحبُّ الله — قصص وأنشطة تفاعلية</b>
+      <span style="font-family:'Tajawal',sans-serif;font-weight:700;color:rgba(255,255,255,.85);font-size:.85rem">قصص عن نِعم الله وأسمائه الحسنى ومراقبته والدعاء + أنشطة + شهادة «قلبي يحب الله» — مع خيار «اقرأ لي»</span>
+    </span>
+    <span style="font-family:'Tajawal',sans-serif;font-weight:900;background:#fff;color:#6A4383;border-radius:2rem;padding:.45rem 1.1rem;font-size:.9rem;flex:none">ابدأ الرحلة ←</span>
+  </a>
+
+  <div class="goal-card">
+    <h2 style="font-family:'Tajawal';font-weight:900;color:var(--navy);font-size:1.15rem">🎯 بطاقة الهدف</h2>
+    <div class="goal-grid">
+      <div class="goal-item"><b>الهدف النهائي</b><span>طفل يعبد اللهَ حبًّا وشوقًا، ويراقبه في السر قبل العلن</span></div>
+      <div class="goal-item"><b>زمن الدخول</b><span>من أول كلمة يسمعها — لا يوجد «مبكر جدًا» لهذا الهدف</span></div>
+      <div class="goal-item"><b>المدة الواقعية</b><span>نَفَسٌ تربوي دائم، والتأسيس المركّز: ٩٠ يومًا من «التعليق التلقائي»</span></div>
+      <div class="goal-item"><b>المرجع</b><span>وصية النبي ﷺ لابن عباس: «احفظِ اللهَ يحفظْك... إذا سألتَ فاسألِ الله» — الترمذي</span></div>
+    </div>
+  </div>
+
+  <section class="chapter">
+    <div class="ch-card">
+      <h2><span class="ic">🪜</span> الخطة حسب العمر — متى وماذا وكم؟</h2>
+      <p class="qbox">القاعدة الذهبية: <strong>اربط كلَّ جميلٍ في حياة الطفل بالله قبل أن تطلب منه شيئًا لله.</strong> الطفل الذي عرف أن اللهَ هو من أعطاه أمَّه والشمسَ والحلوى، سيحبُّ من أعطاه — والحبُّ يقود الطاعة، والعكس نادرًا.</p>
+
+      <div class="stage">
+        <div class="stage-head"><span class="stage-age">٢–٤ سنوات</span><span class="stage-name">مرحلة البذرة: الله = الحب والعطاء</span></div>
+        <div class="stage-body">
+          <div class="meta-row"><span class="meta">الأسلوب: التعليق التلقائي + القدوة</span><span class="meta gold">المدة: مستمرة — جمل عابرة يومية</span><span class="meta gold">ممنوع تمامًا: التخويف بالله</span></div>
+          <ul>
+            <li><strong>التعليق التلقائي:</strong> اجعل اسم الله يمرُّ في اليوم عشر مرات بجملٍ قصيرة سعيدة: «ما أطيبَ هذا الطعام! الحمد لله الذي رزقنا»، «انظر للقمر! الله الذي خلقه»، «الله يحبك يا حبيبي».</li>
+            <li>لا تستخدم اللهَ أداةَ تهديد أبدًا («الله يحرقك/يغضب منك») — في هذا العمر تُزرع صورة الله في القلب ولا تُمحى بسهولة.</li>
+            <li>علّمه «بسم الله» قبل الطعام و«الحمد لله» بعده كأول رابط عملي — بالتقليد لا بالأمر.</li>
+          </ul>
+          <div class="win">مؤشر نجاح المرحلة: إذا سمع اسمَ الله ابتسم وارتاح — لا خاف.</div>
+        </div>
+      </div>
+
+      <div class="stage">
+        <div class="stage-head"><span class="stage-age">٤–٧ سنوات</span><span class="stage-name">مرحلة المعرفة: من هو الله؟</span></div>
+        <div class="stage-body">
+          <div class="meta-row"><span class="meta">الأسلوب: القصة + أسئلة التفكر + التربية بالعادة</span><span class="meta gold">زمن الدخول: اسم حسنى واحد كل أسبوع/أسبوعين</span><span class="meta gold">مدة التأسيس: سنة من «رحلة الأسماء»</span></div>
+          <ul>
+            <li><strong>رحلة الأسماء الحسنى:</strong> اسمٌ واحد كل أسبوع أو أسبوعين، بقصة وموقف: الرزاق (من أطعم العصفور؟)، السميع (يسمع همسك)، البصير، الرحمن، الغفور. لا تتجاوز اسمًا قبل أن يعيشه.</li>
+            <li>أجب عن أسئلته عن الله بترحيب واحترام مهما تكررت («أين الله؟ الله في السماء، وهو معنا يرانا ويسمعنا») — ولا تقل أبدًا «عيب هذا السؤال».</li>
+            <li>عوّده <strong>الشكر الليلي:</strong> قبل النوم «قل ٣ أشياء جميلة أعطاك الله اليوم» — دقيقتان تبنيان قلبًا شاكرًا محبًّا.</li>
+            <li>استخدم قصص الصغار وقصص الأنبياء: ركّز على مواضع حب الله لعباده ورحمته بهم.</li>
+          </ul>
+          <div class="win">مؤشر نجاح المرحلة: يسألك عن الله بشغف، ويذكر نعمه من نفسه («الله أعطانا المطر!»).</div>
+        </div>
+      </div>
+
+      <div class="stage">
+        <div class="stage-head"><span class="stage-age">٧–١٠ سنوات</span><span class="stage-name">مرحلة المراقبة والصلة</span></div>
+        <div class="stage-body">
+          <div class="meta-row"><span class="meta">الأسلوب: الحوار + المواقف العملية + الدعاء المشترك</span><span class="meta gold">زمن الدخول: مع بدء الأمر بالصلاة (٧ سنوات)</span><span class="meta gold">مدة التأسيس: برنامج ٩٠ يومًا (بالأسفل)</span></div>
+          <ul>
+            <li><strong>ازرع المراقبة بالمواقف لا بالمحاضرات:</strong> قصة الراعي («قل هي أكلها الذئب» — «فأين الله؟»)، وتحدي «اعمل حسنة لا يعلمها إلا الله» أسبوعيًا.</li>
+            <li><strong>علّمه الدعاء صلةً لا طلبات فقط:</strong> عند كل حاجة قل له «اسأل اللهَ أنت بنفسك» — ضائعٌ قلمُه؟ خائف من اختبار؟ «ارفع يديك وكلّم ربك». ثم لفت نظره حين تتحقق.</li>
+            <li>احكِ له عن ردِّ الله عليه في الفاتحة (قسمتُ الصلاة...) — حتى يقف في الصلاة وقوفَ من يُكلِّم.</li>
+            <li>اجعل لكم <strong>دعاءً عائليًا مشتركًا</strong> في السجود أو قبل النوم: كلٌّ يدعو بصوت خافت لنفسه وللآخرين.</li>
+          </ul>
+          <div class="win">مؤشر نجاح المرحلة: يترك خطأً في الخفاء «لأن الله يراني»، ويلجأ للدعاء وحدَه عند الحاجة.</div>
+        </div>
+      </div>
+
+      <div class="stage">
+        <div class="stage-head"><span class="stage-age">١٠–١٣ سنة</span><span class="stage-name">مرحلة اليقين: الحب دافعُ العبادة</span></div>
+        <div class="stage-body">
+          <div class="meta-row"><span class="meta">الأسلوب: الحوار العقلي + التفكر + القدوة الصادقة</span><span class="meta gold">المدة: حوار أسبوعي ثابت حتى البلوغ</span></div>
+          <ul>
+            <li>خصّص <strong>جلسة تفكر أسبوعية</strong> (١٥ دقيقة): آية كونية، مقطع عن الكون، نعمة نتأملها — واختمها بـ«من فعل هذا كله لأجلك؟».</li>
+            <li>ناقش أسئلته الكبيرة بجدية (لماذا خلقنا الله؟ لماذا يبتلينا؟) — المراهق الذي تُجاب أسئلته في البيت لا يبحث عنها عند المشككين.</li>
+            <li>اربط العبادة بالحب صراحة: «نصلي لأننا نحب من أعطانا كل شيء، ونشتاق للقائه في الجنة» — وازن بين الرجاء والخوف مع غلبة الرجاء.</li>
+            <li>قدوتك الصادقة هنا حاسمة: دمعتك في الدعاء، وقولك «الحمد لله» عند البلاء — تعلّمه أكثر من ألف درس.</li>
+          </ul>
+          <div class="win">مؤشر النجاح النهائي: يعبد اللهَ ويتقيه حين لا يراه أحد — لأنه يحب، لا لأنه مراقَب منك.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="chapter">
+    <div class="ch-card">
+      <h2><span class="ic">📅</span> برنامج التأسيس — ٩٠ يومًا</h2>
+      <p class="qbox">برنامج لبيتٍ يمرُّ فيه ذكرُ الله بحبٍّ كلَّ يوم — <strong>عمود البرنامج «التعليق التلقائي» وعادتان صغيرتان.</strong></p>
+      <table>
+        <tr><th style="width:22%">الأسابيع</th><th>المطلوب</th><th style="width:33%">دورك أنت</th></tr>
+        <tr><td><strong>١–٢</strong></td><td><strong>التعليق التلقائي</strong>: ٥ جمل يومية تربط الجميلَ بالله + شكر ليلي (٣ نعم قبل النوم)</td><td>ضع لنفسك منبهًا خفيًا · الجمل قصيرة سعيدة لا وعظية</td></tr>
+        <tr><td><strong>٣–٤</strong></td><td>ابدأ <strong>رحلة الأسماء الحسنى</strong>: الرزاق ثم السميع (قصة + موقف عملي لكل اسم)</td><td>استخدم قصص رحلة «أحب الله» · علّق بطاقة الاسم على الثلاجة</td></tr>
+        <tr><td><strong>٥–٨</strong></td><td>أضف <strong>الدعاء الذاتي</strong>: عند كل حاجة «اسأل الله أنت» + أسماء: البصير، الرحمن، الغفور</td><td>لفت نظره حين يستجيب الله · شاركه دعاءك أنت بصوت مسموع أحيانًا</td></tr>
+        <tr><td><strong>٩–١٢</strong></td><td><strong>المراقبة:</strong> تحدي الحسنة السرية أسبوعيًا + جلسة تفكر عائلية أسبوعية</td><td>اسأله مساءً بلطف «هل عملتَ حسنتك السرية؟» دون طلب تفاصيل · احتفل بالإتمام</td></tr>
+      </table>
+      <p><strong>بعد اليوم ٩٠:</strong> يبقى التعليق التلقائي والشكر الليلي نظامَ بيتٍ دائمًا، وتستمر رحلة الأسماء الحسنى اسمًا كل أسبوعين حتى تكتمل المعرفة.</p>
+    </div>
+  </section>
+
+  <section class="chapter">
+    <div class="ch-card">
+      <h2><span class="ic">✅</span> جدول المتابعة — ٣٠ يومًا</h2>
+      <p class="tracker-note">اضغط على اليوم إذا تحقق فيه: ٥ تعليقات تلقائية + الشكر الليلي (يُحفظ على هذا الجهاز) — أو اطبعه وعلّقه.</p>
+      <div class="tracker" id="tracker"></div>
+      <p class="tracker-note" id="trackerCount"></p>
+    </div>
+  </section>
+
+  <section class="chapter">
+    <div class="ch-card">
+      <h2><span class="ic">🚫</span> أخطاء تهدم المشروع</h2>
+      <ul class="warn">
+        <li><strong>التخويف الدائم بالله:</strong> «الله يعذبك، الله يغضب منك» كأول تعريف — يبني علاقة رعب تنهار عند أول استقلال. الترتيب الصحيح: حبٌّ ورجاء أولًا، ثم خوفٌ متوازن بعد التمييز.</li>
+        <li><strong>قمع الأسئلة:</strong> «عيب! لا تسأل هكذا عن الله» — يدفن السؤال ليخرجَ شكًّا في المراهقة.</li>
+        <li><strong>إجابات خاطئة مرتجلة:</strong> إن لم تعرف قل «سؤال جميل، سنبحث عن جوابه معًا» — ولا تخترع.</li>
+        <li><strong>ربط الدين بالأوامر الثقيلة فقط:</strong> إذا كان اسم الله لا يظهر إلا مع «حرام/قم صلِّ» فسيربطه الطفل بالثقل لا بالحب.</li>
+        <li><strong>قدوة مكسورة:</strong> تحدثه عن مراقبة الله ثم يراك تكذب في الهاتف — فيتعلم أن الكلام شيء والحياة شيء آخر.</li>
+        <li><strong>الاستعجال:</strong> هذا أطول الأهداف نَفَسًا — ثمرتُه تظهر سنين، فلا تقس النجاح بأسبوع.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="chapter">
+    <div class="ch-card">
+      <h2><span class="ic">🧩</span> أدوات المنصة المساندة لهذا الهدف</h2>
+      <ul class="good">
+        <li><strong>رحلة أحب الله (جديد):</strong> <a href="رحلة أحب الله.html">رحلة تفاعلية للطفل</a> — قصص النعم والأسماء الحسنى والمراقبة والدعاء + شهادة «قلبي يحب الله».</li>
+        <li><strong>ركن العقيدة:</strong> من هو الله؟ وأركان الإيمان بأسلوب الأطفال.</li>
+        <li><strong>ركن قصص الصغار (٣–٦):</strong> تبسيط قصص الأركان — ركّز على مواضع رحمة الله.</li>
+        <li><strong>ساحة المسابقات — قسم العقيدة:</strong> أسئلة «من ربك؟» ومعرفة الله من كتاب «ما لا يسع أطفال المسلمين جهله».</li>
+        <li><strong>ركن حفظ القرآن:</strong> حفظ آيات النعم والتفكر (سورة الرحمن، النبأ…).</li>
+      </ul>
+    </div>
+  </section>
+
+  <footer>صُنع بحُب 💛 — تربية الطفل المسلم · التطبيقات العملية لأهداف الأركان</footer>
+</main>
+
+<script>
+(function(){
+  var K='pract_hubbAllah_tracker';
+  var saved={};
+  try{ saved=JSON.parse(localStorage.getItem(K)||'{}')||{}; }catch(e){}
+  var box=document.getElementById('tracker');
+  for(var i=1;i<=30;i++){
+    (function(d){
+      var el=document.createElement('div');
+      el.className='day'+(saved[d]?' done':'');
+      el.textContent=d;
+      el.onclick=function(){
+        saved[d]=!saved[d]; if(!saved[d]) delete saved[d];
+        el.classList.toggle('done');
+        try{ localStorage.setItem(K,JSON.stringify(saved)); }catch(e){}
+        count();
+      };
+      box.appendChild(el);
+    })(i);
+  }
+  function count(){
+    var n=Object.keys(saved).length;
+    document.getElementById('trackerCount').textContent = n ? ('أُنجز '+n+' من ٣٠ يومًا — '+(n>=30?'ما شاء الله! اكتمل التأسيس 🌟':(n>=7?'استمروا، القلب يتعلق بربه 💛':'بداية طيبة 🌱'))) : '';
+  }
+  count();
+})();
+</script>
+</body>
+</html>

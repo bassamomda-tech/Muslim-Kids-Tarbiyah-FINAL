@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>رحلة الأذكار والدعاء 📿</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&display=swap">
+<style>
+:root{
+  --sky:#EBF5F3;--sun:#F5B92E;--rose:#0E7C86;--rose-dk:#095E66;
+  --teal:#1B8A6B;--teal-dk:#0F6B52;--purple:#8E5EA8;--navy:#274060;--ink:#28403D;
+  --card:#FBFFFE;--line:#C8E3DE;
+}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Tajawal',sans-serif;background:var(--sky);color:var(--ink);line-height:1.9;direction:rtl;overflow-x:hidden}
+a{color:var(--rose-dk)}a:hover{color:var(--sun)}
+button{font-family:'Tajawal',sans-serif;cursor:pointer}
+
+header.hero{text-align:center;padding:2.2rem 1rem 1rem;position:relative}
+.hero h1{font-size:clamp(1.8rem,5vw,2.8rem);font-weight:900;color:var(--rose-dk)}
+.hero p{font-weight:700;color:#557A75;max-width:34rem;margin:.4rem auto 0}
+.hero .back{position:absolute;top:1rem;right:1rem;font-size:.85rem;font-weight:800;background:#fff;border:2px solid var(--line);border-radius:2rem;padding:.4rem 1rem;text-decoration:none}
+.starbar{display:inline-flex;align-items:center;gap:.4rem;background:#fff;border:2px solid var(--rose);border-radius:2rem;padding:.35rem 1.1rem;margin-top:.9rem;font-weight:900;color:var(--rose-dk);font-size:1.05rem}
+
+.map{max-width:40rem;margin:1.6rem auto 3rem;padding:0 1.2rem;position:relative}
+.map::before{content:'';position:absolute;top:0;bottom:0;right:50%;width:6px;background:repeating-linear-gradient(180deg,var(--rose) 0 14px,transparent 14px 26px);border-radius:3px;transform:translateX(50%)}
+.station{position:relative;width:calc(50% - 2.2rem);margin-bottom:1.6rem}
+.station:nth-child(odd){margin-left:auto;margin-right:0}
+.station:nth-child(even){margin-right:calc(50% + 2.2rem)}
+.st-card{display:block;width:100%;text-align:right;background:var(--card);border:3px solid var(--line);border-radius:1.3rem;padding:1rem 1.1rem;box-shadow:0 6px 0 rgba(9,94,102,.13);transition:.15s;position:relative}
+.st-card:hover{transform:translateY(-3px)}
+.st-card .ic{font-size:2rem;display:block}
+.st-card b{font-size:1.05rem;font-weight:900;color:var(--navy);display:block;margin-top:.2rem}
+.st-card small{display:block;margin-top:.25rem;font-weight:700;color:#6C8A86;font-size:.78rem}
+.st-card .badge{position:absolute;top:-.7rem;left:-.7rem;background:var(--teal);color:#fff;border-radius:50%;width:2rem;height:2rem;display:none;align-items:center;justify-content:center;font-size:1rem;border:2px solid #fff}
+.station.done .st-card{border-color:var(--teal)}
+.station.done .st-card .badge{display:flex}
+.station .dot{position:absolute;top:1.4rem;width:1.4rem;height:1.4rem;background:#fff;border:4px solid var(--rose);border-radius:50%;z-index:2}
+.station:nth-child(odd) .dot{left:-2.95rem}
+.station:nth-child(even) .dot{right:-2.95rem}
+.station.done .dot{background:var(--teal);border-color:var(--teal)}
+.station.activity .st-card{border-color:#D8C3E6}.station.activity.done .st-card{border-color:var(--purple)}
+.station.finish .st-card{background:linear-gradient(135deg,#E4FBF4,#C7F0E4);border-color:var(--rose)}
+
+.overlay{position:fixed;inset:0;background:rgba(10,50,45,.55);display:none;align-items:flex-start;justify-content:center;padding:2rem 1rem;z-index:50;overflow-y:auto}
+.overlay.open{display:flex}
+.sheet{background:var(--card);border-radius:1.5rem;max-width:38rem;width:100%;padding:1.6rem clamp(1.1rem,4vw,2.2rem);position:relative;border:4px solid var(--rose);margin-bottom:2rem}
+.sheet .close{position:absolute;top:.8rem;left:.8rem;background:#fff;border:2px solid var(--line);border-radius:50%;width:2.3rem;height:2.3rem;font-size:1.1rem;font-weight:900}
+.sheet .s-ic{font-size:2.6rem;text-align:center;display:block}
+.sheet h2{font-size:1.45rem;font-weight:900;color:var(--rose-dk);text-align:center;margin:.2rem 0 .8rem}
+.sheet .story-txt{font-size:1.08rem;font-weight:500;line-height:2.15}
+.sheet .story-txt p{margin:.6rem 0}
+.sheet .story-txt .say{color:var(--rose-dk);font-weight:800}
+.readbtn{display:flex;align-items:center;gap:.5rem;margin:0 auto 1rem;background:var(--rose);color:#fff;border:none;border-radius:2rem;padding:.5rem 1.4rem;font-weight:900;font-size:.95rem;box-shadow:0 4px 0 var(--rose-dk)}
+.readbtn.playing{background:var(--sun);color:#5C420A;box-shadow:0 4px 0 #C99417}
+.steps{counter-reset:st;list-style:none;margin:.6rem 0}
+.steps li{counter-increment:st;position:relative;padding:.55rem .5rem .55rem 0;padding-right:3rem;font-weight:700;font-size:1.02rem;border-bottom:1px dashed var(--line)}
+.steps li::before{content:counter(st);position:absolute;right:0;top:.65rem;width:2.1rem;height:2.1rem;background:var(--purple);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:900}
+.q{background:#E1F3F0;border:2px dashed var(--rose);border-radius:1rem;padding:.8rem 1rem;margin:1rem 0;font-weight:800;color:#095E66}
+.dhikr{background:#FFF9E8;border:2px solid var(--sun);border-radius:1rem;padding:.8rem 1rem;margin:.8rem 0;font-weight:800;color:#7A5C10;text-align:center;font-size:1.05rem}
+.donebtn{display:block;margin:1.3rem auto 0;background:var(--rose);color:#fff;border:none;border-radius:2rem;padding:.7rem 2.2rem;font-weight:900;font-size:1.1rem;box-shadow:0 5px 0 var(--rose-dk)}
+.donebtn.finished{background:var(--teal);box-shadow:0 5px 0 var(--teal-dk)}
+
+.cert{border:6px double var(--rose);border-radius:1.2rem;background:#FBFFFC;text-align:center;padding:1.6rem 1rem;margin:.6rem 0}
+.cert h3{font-size:1.5rem;font-weight:900;color:var(--rose-dk)}
+.cert .nm{font-size:1.3rem;font-weight:900;color:var(--teal-dk);border-bottom:2px dashed var(--line);display:inline-block;min-width:12rem;margin:.5rem 0;padding:0 .5rem}
+.cert p{font-weight:700}
+.cert input{font-family:'Tajawal';font-size:1.1rem;font-weight:800;text-align:center;border:2px solid var(--line);border-radius:.8rem;padding:.4rem .8rem;width:min(16rem,90%);margin:.5rem 0;background:#fff}
+.confetti{position:fixed;top:-2rem;font-size:1.5rem;z-index:60;animation:fall 2.6s linear forwards;pointer-events:none}
+@keyframes fall{to{transform:translateY(110vh) rotate(540deg)}}
+
+footer{text-align:center;color:#6C8A86;font-weight:700;font-size:.85rem;padding:1.5rem 1rem 2.2rem}
+@media(max-width:560px){
+  .map::before{right:1.1rem;transform:none}
+  .station,.station:nth-child(even),.station:nth-child(odd){width:calc(100% - 3.4rem);margin-right:3.4rem;margin-left:0}
+  .station .dot,.station:nth-child(odd) .dot,.station:nth-child(even) .dot{right:-2.85rem;left:auto}
+}
+</style>
+</head>
+<body data-screen-label="رحلة الأذكار والدعاء">
+
+<header class="hero">
+  <a class="back" href="corners/little-district/pages/little-district.html">↩️ الحي الصغير</a>
+  <h1>📿 رحلةُ الأذكارِ والدعاء</h1>
+  <p>يا بطل! الذكرُ حصنُك، والدعاءُ سلاحُك، ولسانُك الرطبُ بذكرِ اللهِ كنزٌ لا ينفد… هيا نملأ اليومَ كلَّه نورًا! ✨</p>
+  <div class="starbar">📿 <span id="stars">0</span> من <span id="total"></span> محطة</div>
+  <div style="margin-top:.9rem;display:flex;gap:.6rem;justify-content:center;flex-wrap:wrap">
+    <a href="رحلة أحب الله.html" style="display:inline-flex;align-items:center;gap:.5rem;background:#C94F6D;color:#fff;border-radius:2rem;padding:.5rem 1.3rem;font-weight:900;font-size:.88rem;text-decoration:none">❤️ رحلة أُحبُّ الله ←</a>
+    <a href="رحلة أحب الصلاة.html" style="display:inline-flex;align-items:center;gap:.5rem;background:#274060;color:#F5CC5A;border-radius:2rem;padding:.5rem 1.3rem;font-weight:900;font-size:.88rem;text-decoration:none">🕌 رحلة أُحبُّ الصلاة ←</a>
+    <a href="رحلة القدوات.html" style="display:inline-flex;align-items:center;gap:.5rem;background:#B0762A;color:#fff;border-radius:2rem;padding:.5rem 1.3rem;font-weight:900;font-size:.88rem;text-decoration:none">⭐ رحلة القدوات ←</a>
+    <a href="رحلة حافظ الدين.html" style="display:inline-flex;align-items:center;gap:.5rem;background:#5B6B23;color:#fff;border-radius:2rem;padding:.5rem 1.3rem;font-weight:900;font-size:.88rem;text-decoration:none">📖 رحلة حافظ الدين ←</a>
+    <a href="دليل الأهل للرحلات.html" style="display:inline-flex;align-items:center;gap:.5rem;background:#fff;color:#33302A;border:2px solid #C8E3DE;border-radius:2rem;padding:.5rem 1.3rem;font-weight:900;font-size:.88rem;text-decoration:none">👨‍👩‍👧 دليل الأهل ←</a>
+  </div>
+</header>
+
+<div class="map" id="map"></div>
+
+<div class="overlay" id="ov" onclick="if(event.target===this)closeSheet()">
+  <div class="sheet" id="sheet"></div>
+</div>
+
+<footer>صُنع بحُب 📿 — تربية الطفل المسلم · رحلة الأذكار والدعاء</footer>
+
+<script>
+var STATIONS=[
+ {type:'story',ic:'💓',title:'قصة: الحي والميت (لماذا نذكر الله؟)',
+  body:[
+   'سألَ يوسفُ جدَّه: «لماذا تحركُ شفتيكَ دائمًا يا جدي؟». قال: «أذكرُ الله! سبحان الله… الحمد لله… لا إله إلا الله».',
+   'قال يوسف: «طوالَ اليوم؟!». قال الجد: <span class="say">«يا يوسف، قال النبيُّ ﷺ: مثلُ الذي يذكرُ ربَّهُ والذي لا يذكرُ ربَّه… مثلُ الحيِّ والميت!»</span>.',
+   '«القلبُ الذي يذكرُ اللهَ حيٌّ مضيء، والقلبُ الغافلُ مظلمٌ حزين. والذكرُ أخفُّ عبادةٍ وأعظمُها أجرًا: لا يحتاجُ وضوءًا ولا مكانًا… تذكرُ اللهَ وأنت تمشي وتلعبُ وتركبُ السيارة!».',
+   '«وسُئلَ النبيُّ ﷺ: أيُّ الأعمالِ أفضل؟ قال: <span class="say">أن تموتَ ولسانُكَ رطبٌ من ذكرِ الله</span>».',
+   'فقرَّرَ يوسفُ أن يصيرَ قلبُهُ حيًّا مضيئًا… وبدأ من لحظتِها: سبحانَ اللهِ وبحمدِه 💓'
+  ],
+  q:'🤔 سؤال البطل: قلبك الآن حي بالذكر أم غافل؟ أحيِه فورًا بـ ١٠ تسبيحات!'},
+ {type:'story',ic:'🌴',title:'قصة: غراس الجنة',
+  body:[
+   'حكى الأبُ لأولادِه: «مرَّ النبيُّ ﷺ ليلةَ الإسراءِ بإبراهيمَ عليه السلام، فقال له إبراهيم: <span class="say">يا محمد، أقرئْ أمتَكَ مني السلام، وأخبرْهم أنَّ الجنةَ طيبةُ التربةِ عذبةُ الماء، وأنها قيعان — أرضٌ واسعةٌ فارغة — وأنَّ غراسَها: سبحانَ الله، والحمدُ لله، ولا إله إلا الله، واللهُ أكبر!</span>».',
+   'قالت لين: «يعني كلما قلتُ سبحانَ الله… زُرعتْ لي شجرةٌ في الجنة؟!». قال أبوها: «نعم! شجرةٌ باسمِك!».',
+   'وقال ﷺ: <span class="say">«كلمتانِ خفيفتانِ على اللسان، ثقيلتانِ في الميزان، حبيبتانِ إلى الرحمن: سبحانَ اللهِ وبحمدِه، سبحانَ اللهِ العظيم»</span>.',
+   'فجلسَ الأولادُ يتسابقون: من يزرعُ اليومَ بستانًا أكبر؟ وقالت لين قبل النوم: «زرعتُ اليومَ مئةَ شجرة… وغدًا سأزرعُ أكثر!» 🌴'
+  ],
+  q:'🤔 مزرعة البطل: كم شجرة ستزرع اليوم في جنتك؟ ابدأ بـ«سبحان الله وبحمده» ١٠٠ مرة — تُحط خطاياك ولو كانت مثل زبد البحر!'},
+ {type:'story',ic:'🏰',title:'قصة: الحصن العجيب (أذكار الصباح والمساء)',
+  body:[
+   'كان أنسٌ يخافُ في طريقِ المدرسة… فقال له أبوه: «سأعطيكَ درعًا لا يُرى!».',
+   '«قال النبيُّ ﷺ: <span class="say">من قال: بسمِ اللهِ الذي لا يضرُّ مع اسمِهِ شيءٌ في الأرضِ ولا في السماءِ وهو السميعُ العليم — ثلاثَ مراتٍ صباحًا ومساءً — لم يضرَّهُ شيء!</span>».',
+   '«وآيةُ الكرسي بعد كلِّ صلاةٍ وقبل النوم: لا يزالُ عليكَ من اللهِ حافظ، ولا يقربُكَ شيطان. والمعوذتان: ما تعوَّذَ متعوذٌ بمثلِهما!».',
+   'صارَ أنسٌ يلبسُ «درعَهُ» كلَّ صباح: الأذكارُ الثلاثة، وآيةُ الكرسي، والمعوذات… ويمشي مطمئنًا يبتسم.',
+   'وقال لأصحابِه: «أنا لا أمشي وحدي أبدًا… معي حارسٌ من السماء!» 🏰'
+  ],
+  q:'🤔 درع البطل: احفظ ذكر «بسم الله الذي لا يضر…» والبسه كل صباح ومساء — ٣ مرات فقط!'},
+ {type:'story',ic:'🌅',title:'قصة: مفاتيح اليوم (أذكار الصباح)',
+  body:[
+   'لاحظَ آدمُ أنَّ أباهُ كلَّ فجرٍ بعد الصلاةِ يجلسُ في ركنِهِ يهمسُ بكلماتٍ قبل أن يبدأَ أيَّ شيء… فسأله: «ماذا تقول؟».',
+   'قال أبوه: «أفتحُ اليومَ بمفاتيحِه! أقول: <span class="say">أصبحنا وأصبحَ الملكُ لله، والحمدُ لله، لا إله إلا اللهُ وحدَهُ لا شريكَ له</span>… فأبدأُ يومي بتوحيدِ مالكِ اليوم».',
+   '«ثم أقول: <span class="say">رضيتُ بالله ربًّا، وبالإسلامِ دينًا، وبمحمدٍ ﷺ نبيًّا</span> — ثلاثًا. قال ﷺ: من قالها كان حقًّا على اللهِ أن يُرضيَهُ يومَ القيامة!».',
+   '«وأقول: <span class="say">يا حيُّ يا قيومُ برحمتِكَ أستغيث، أصلحْ لي شأني كلَّه، ولا تكلني إلى نفسي طرفةَ عين</span> — فيتولى اللهُ أموري كلَّها، صغيرَها وكبيرَها».',
+   '«وأختمُ بـ<span class="say">حسبيَ اللهُ لا إله إلا هو، عليه توكلتُ وهو ربُّ العرشِ العظيم</span> سبعَ مرات — فيكفيني اللهُ ما أهمَّني من أمرِ الدنيا والآخرة». فقال آدم: «إذن أنتَ لا تخرجُ للدنيا إلا وأنتَ محصَّنٌ بالله!» — قال أبوه: «وهذا سرُّ هدوئي يا بني» 🌅'
+  ],
+  q:'🤔 مفاتيح البطل: احفظ هذا الأسبوع ذكرين: «رضيت بالله ربًّا…» و«يا حي يا قيوم…» وقلهما كل صباح!'},
+ {type:'story',ic:'🌆',title:'قصة: حارس الليل (أذكار المساء)',
+  body:[
+   'عند المغرب، كانت جدةُ مريمَ تجلسُ في الشرفةِ تذكرُ الله… قالت مريم: «الشمسُ تغرب، ألن تشعلي النور؟». قالت الجدة: «أشعلُ نورًا أقوى: أذكارَ المساء!».',
+   '«أقول: <span class="say">أمسينا وأمسى الملكُ لله</span>… وأعوذُ باللهِ من شرِّ هذه الليلةِ وشرِّ ما بعدَها».',
+   '«وأقرأُ آيةَ الكرسي والمعوذاتِ ثلاثًا… ثم أقول: <span class="say">أعوذُ بكلماتِ اللهِ التاماتِ من شرِّ ما خلق</span> — ثلاثًا. قال ﷺ: من قالها حين يُمسي لم تضرَّهُ حُمَةٌ تلك الليلة — أي لا لدغةَ عقربٍ ولا أذى!».',
+   '«وأقول: <span class="say">اللهم بكَ أمسينا وبكَ أصبحنا، وبكَ نحيا وبكَ نموت، وإليكَ المصير</span>».',
+   'ومن يومِها صارتْ مريمُ تجلسُ مع جدتِها كلَّ مغرب… «وردية الحراسة» تسميها: النهارُ انتهى بأمانِ الله، والليلُ يبدأُ بحراستِه! 🌆'
+  ],
+  q:'🤔 وردية البطلة: اجعل لأذكار المساء موعدًا ثابتًا (بعد المغرب) — والتزمي به مع أحد أفراد أسرتك ليذكّر أحدكما الآخر!'},
+ {type:'story',ic:'🪶',title:'قصة: أثقل من الجبال (سبحان الله وبحمده)',
+  body:[
+   'في درسِ العلوم، سألَ المعلم: «ما أثقلُ شيءٍ تعرفونه؟». قال الأولاد: الجبل! الحوت! الأرض!',
+   'قال المعلم: «سأخبرُكم بشيءٍ أثقلَ في ميزانِ الآخرة… كلمتان! قال ﷺ: <span class="say">كلمتانِ خفيفتانِ على اللسان، ثقيلتانِ في الميزان، حبيبتانِ إلى الرحمن: سبحانَ اللهِ وبحمدِه، سبحانَ اللهِ العظيم</span>».',
+   '«وقال ﷺ: <span class="say">من قال: سبحانَ اللهِ وبحمدِهِ في يومٍ مئةَ مرة… حُطَّتْ خطاياهُ وإن كانت مثلَ زبَدِ البحر!</span>» — تعرفون زبدَ البحر؟ رغوةٌ لا يحصيها أحد… ومع ذلك تُمحى كلُّها!',
+   '«وقال: <span class="say">من قالها حين يصبحُ وحين يمسي مئةَ مرة، لم يأتِ أحدٌ يومَ القيامةِ بأفضلَ مما جاءَ به، إلا أحدٌ قال مثلَ ما قال أو زادَ عليه</span>».',
+   'فتسابقَ الأولادُ من يومِها: في طريقِ المدرسةِ وفي الفسحة… يجمعون «الكلمتين الحبيبتين» — خفيفتانِ على اللسان، وأثقلُ من كلِّ جبالِ الأرضِ في الميزان! 🪶'
+  ],
+  q:'🤔 تحدي البطل: ١٠٠ مرة «سبحان الله وبحمده» اليوم — وزّعها: ٢٥ صباحًا، ٢٥ في الطريق، ٢٥ عصرًا، ٢٥ قبل النوم!'},
+ {type:'story',ic:'🌳',title:'قصة: الباقيات الصالحات (الكلمات الأربع)',
+  body:[
+   'قالت الجدةُ لأحفادِها: «سأحكي لكم عن أحبِّ الكلامِ إلى الله! قال ﷺ: <span class="say">أحبُّ الكلامِ إلى اللهِ أربع: سبحانَ الله، والحمدُ لله، ولا إله إلا الله، واللهُ أكبر</span>».',
+   '«وهنَّ <span class="say">الباقياتُ الصالحات</span> التي قال اللهُ عنها: ﴿وَالْبَاقِيَاتُ الصَّالِحَاتُ خَيْرٌ عِندَ رَبِّكَ ثَوَابًا وَخَيْرٌ أَمَلًا﴾ — الألعابُ تنكسر، والحلوى تنتهي… وهذه الكلماتُ تبقى لكم عند اللهِ للأبد!».',
+   '«وقال ﷺ: <span class="say">لأن أقولَ: سبحانَ الله، والحمدُ لله، ولا إله إلا الله، واللهُ أكبر… أحبُّ إليَّ مما طلعتْ عليه الشمس!</span>» — أغلى من الدنيا كلِّها!',
+   '«وهنَّ جُنَّةٌ من النار: يأتينَ يومَ القيامةِ مقدِّماتٍ ومعقِّباتٍ ومجنِّبات — يحمينَ صاحبَهنَّ ويدافعنَ عنه!».',
+   'قالت الحفيدةُ الصغيرة: «إذن كلُّ مرةٍ أقولُهنَّ… أرسلُ كنزًا يسبقُني إلى الآخرة؟». قالت الجدة: «بالضبط! والذكيُّ من أرسلَ كنوزَهُ إلى حيثُ سيعيشُ للأبد» 🌳'
+  ],
+  q:'🤔 كنز البطلة: قل الكلمات الأربع ٢٥ مرة الآن — وأرسل قافلة كنوز إلى الجنة قبل أن تنام!'},
+ {type:'story',ic:'🏔️',title:'قصة: الكلمة التي ترجح بالكون (ذكر موسى عليه السلام)',
+  body:[
+   'جاء في الحديثِ أنَّ موسى عليه السلامُ قال: <span class="say">«يا ربِّ، علِّمني شيئًا أذكرُكَ وأدعوكَ به»</span>. قال اللهُ تعالى: <span class="say">«قل يا موسى: لا إله إلا الله»</span>.',
+   'قال موسى: «يا رب، كلُّ عبادِكَ يقولونَ هذا!» — أرادَ موسى شيئًا خاصًّا به وحدَه…',
+   'فقال اللهُ تعالى: <span class="say">«يا موسى، لو أنَّ السماواتِ السبعَ وعامرَهنَّ غيري، والأرضينَ السبعَ في كفة… ولا إله إلا اللهُ في كفة — مالتْ بهنَّ لا إله إلا الله!»</span>.',
+   'سألتْ سلمى أباها بعد القصة: «كلمةٌ واحدةٌ أثقلُ من الكونِ كلِّه؟!». قال: «نعم! لأنها كلمةُ التوحيد: مفتاحُ الجنة، وأفضلُ الذكرِ على الإطلاق. قال ﷺ: <span class="say">أفضلُ الذكرِ: لا إله إلا الله</span>».',
+   '«وأفضلُ صيغِها: <span class="say">لا إله إلا اللهُ وحدَهُ لا شريكَ له، له الملكُ وله الحمد، وهو على كلِّ شيءٍ قدير</span> — من قالها مئةَ مرةٍ في يوم: كانت له عدلَ عشرِ رقاب، وكُتبتْ له مئةُ حسنة، ومُحيتْ عنه مئةُ سيئة، وكانت له حرزًا من الشيطانِ يومَهُ كلَّه!» 🏔️'
+  ],
+  q:'🤔 ميزان البطلة: الكلمة التي طلبها موسى بين يديك الآن — قل «لا إله إلا الله وحده لا شريك له…» ١٠ مرات!'},
+ {type:'story',ic:'🐦',title:'قصة: الجبال تسبح معه (داود عليه السلام وتسبيح الطير)',
+  body:[
+   'أعطى اللهُ داودَ عليه السلامُ صوتًا لم يُعطَ أحدٌ مثلَه… إذا قرأ الزبورَ وسبَّح، توقفَ كلُّ شيءٍ ليستمع!',
+   'بل أعظم: قال تعالى: <span class="say">﴿إِنَّا سَخَّرْنَا الْجِبَالَ مَعَهُ يُسَبِّحْنَ بِالْعَشِيِّ وَالْإِشْرَاقِ ۝ وَالطَّيْرَ مَحْشُورَةً كُلٌّ لَّهُ أَوَّابٌ﴾</span> — الجبالُ الصخريةُ الصامتةُ تسبِّحُ معه، والطيرُ تتجمعُ فوقَهُ تردِّدُ التسبيح!',
+   'وقال تعالى: ﴿يَا جِبَالُ أَوِّبِي مَعَهُ وَالطَّيْرَ﴾ — يا جبالُ رجِّعي التسبيحَ معه!',
+   'قال يوسفُ لجدِّه مندهشًا: «الجبالُ والطيرُ تسبح؟!». قال الجد: «كلُّ الكونِ يسبح يا يوسف! قال تعالى: <span class="say">﴿وَإِن مِّن شَيْءٍ إِلَّا يُسَبِّحُ بِحَمْدِهِ وَلَٰكِن لَّا تَفْقَهُونَ تَسْبِيحَهُمْ﴾</span> — العصفورُ الذي يغرِّدُ صباحًا، والشجرُ، والنجوم… كلُّهم في حلقةِ ذكرٍ عظيمة!».',
+   '«فمن يذكرُ الله… ينضمُّ لأعظمِ جوقةٍ في الوجود». فخرجَ يوسفُ للحديقةِ يسمعُ تغريدَ العصافير… وهمسَ معها: سبحانَ اللهِ وبحمدِه — «الآن أنا معكم في الفريق!» 🐦'
+  ],
+  q:'🤔 فريق البطل: اخرج للشرفة أو الحديقة، استمع لتغريد الطيور… وسبِّح معها ١٠ مرات — أنت الآن في جوقة الكون!'},
+ {type:'activity',ic:'⏰',title:'نشاط: ساعة الأذكار',
+  steps:[
+   'ارسم ساعة كبيرة على ورقة مقوّاة.',
+   'عند كل وقت ألصق ذكره: الاستيقاظ (الحمد لله الذي أحيانا)، الصباح (أذكار الصباح)، الأكل (بسم الله)، الخروج (بسم الله توكلت على الله)، المساء (أذكار المساء)، النوم (باسمك اللهم أموت وأحيا).',
+   'علّقها بجانب سريرك.',
+   'كل يوم تُتم فيه ٤ مواعيد أو أكثر… لوّن نجمة على الساعة!',
+   'أسبوع كامل = أنت «حارس الأذكار» الرسمي في البيت! ⏰'
+  ],
+  q:'💡 السر: اربط الذكر بالحدث لا بالحفظ — كلما أكلت تذكرت، كلما خرجت تذكرت!'},
+ {type:'story',ic:'🗝️',title:'قصة: كنز تحت لسانك (لا حول ولا قوة إلا بالله)',
+  body:[
+   'قال النبيُّ ﷺ لأبي موسى الأشعري: <span class="say">«يا عبدَ اللهِ بنَ قيس، ألا أدلُّكَ على كنزٍ من كنوزِ الجنة؟»</span> قال: بلى يا رسولَ الله! قال: <span class="say">«قل: لا حولَ ولا قوةَ إلا بالله»</span>.',
+   'سألَ حمزةُ أباه: «لماذا هي كنز؟». قال: «لأنَّ معناها عظيم: لا تحوُّلَ من حالٍ إلى حال، ولا قوةَ على شيء… إلا بالله! فأنتَ تسلِّمُ أمرَكَ كلَّهُ للقوي العزيز».',
+   '«عندما يصعبُ عليك الواجب: لا حولَ ولا قوةَ إلا بالله. عندما تخاف: لا حولَ ولا قوةَ إلا بالله. عندما تُريدُ قوةً إضافية: قلها… فهي تشحنُ القلبَ كما يُشحنُ الهاتف!».',
+   'وفي مباراةِ السباحة، وقفَ حمزةُ خائفًا… ثم همس: «لا حولَ ولا قوةَ إلا بالله» وانطلق… وفاز! وقال: «سحبتُ من كنزي!» 🗝️'
+  ],
+  q:'🤔 كنز البطل: متى ستسحب من كنزك اليوم؟ قلها عند أول شيء صعب!'},
+ {type:'story',ic:'⚓',title:'قصة: دعوة ذي النون (دعاء الكرب)',
+  body:[
+   'حكتِ الأمُّ لأولادِها: «ابتلعَ الحوتُ يونسَ عليه السلام… ظلماتٌ ثلاث: ظلمةُ الليل، وظلمةُ البحر، وظلمةُ بطنِ الحوت! فماذا فعل؟».',
+   'نادى في الظلمات: <span class="say">﴿لَّا إِلَٰهَ إِلَّا أَنتَ سُبْحَانَكَ إِنِّي كُنتُ مِنَ الظَّالِمِينَ﴾</span>… فأنجاهُ الله!',
+   'وقال النبيُّ ﷺ: <span class="say">«دعوةُ ذي النونِ إذ دعا وهو في بطنِ الحوت… لم يدعُ بها رجلٌ مسلمٌ في شيءٍ قط إلا استجابَ اللهُ له!»</span>.',
+   'قالت سارة: «يعني إذا ضاقَ صدري أو صعبَ عليَّ شيء… أدعو بها؟». قالت الأم: «نعم! هي مفتاحُ الفرج: توحيدٌ وتسبيحٌ واعترافٌ… ثلاثةٌ في دعاءٍ واحد».',
+   'ومن يومِها، صارتْ دعوةُ يونسَ صديقةَ سارةَ في كلِّ ضيق ⚓'
+  ],
+  q:'🤔 مفتاح البطلة: احفظ دعوة ذي النون وادعُ بها في سجودك عند أي هم أو ضيق!'},
+ {type:'story',ic:'🚪',title:'قصة: الملك الذي لا يغلق بابه (فضل الدعاء)',
+  body:[
+   'قال المعلمُ للتلاميذ: «تخيلوا ملكًا عظيمًا… كلُّ من طرقَ بابَهُ في أيِّ وقتٍ فُتحَ له، وكلما طلبتَ أكثرَ أحبَّكَ أكثر!».',
+   'قال التلاميذ: «مستحيل! الملوكُ يملّون». قال المعلم: «إلا اللهَ! قال تعالى: <span class="say">﴿وَقَالَ رَبُّكُمُ ادْعُونِي أَسْتَجِبْ لَكُمْ﴾</span>، وقال ﷺ: <span class="say">الدعاءُ هو العبادة</span>، و<span class="say">من لم يسألِ اللهَ يغضبْ عليه!</span>».',
+   '«والدعاءُ لا يضيعُ أبدًا: إما أن يعطيَكَ اللهُ ما طلبت، وإما أن يدفعَ عنكَ شرًّا بقدرِها، وإما أن يدَّخرَها لك حسناتٍ يومَ القيامة… حتى قال الصحابة: إذن نُكثر! قال ﷺ: <span class="say">اللهُ أكثر!</span>».',
+   '«وينزلُ ربُّنا كلَّ ليلةٍ إلى السماءِ الدنيا في الثلثِ الأخيرِ يقول: <span class="say">من يدعوني فأستجيبَ له؟ من يسألُني فأعطيَه؟</span>»… فأيُّ بابٍ أكرمُ من هذا؟! 🚪'
+  ],
+  q:'🤔 سؤال البطل: الدعاء لا يضيع أبدًا — ما الثلاثة أشياء التي ستطلبها الليلة؟'},
+ {type:'story',ic:'🧭',title:'قصة: آداب الطلب من الملك (آداب الدعاء)',
+  body:[
+   'أرادَ كريمٌ أن يطلبَ من أبيهِ دراجة… فقال لجدِّه: «كيف أطلب؟». قال الجد: «وأنا سأعلمُكَ الأجمل: كيف تطلبُ من اللهِ!».',
+   '«١. ابدأ بالحمدِ والثناء: يا رب، أنت الكريمُ الرحيم… ٢. ثم صلِّ على النبيِّ ﷺ. ٣. وارفعْ يديكَ فربُّنا <span class="say">يستحيي من عبدِهِ إذا رفعَ يديهِ أن يردَّهما صفرًا</span>. ٤. وادعُ بقلبٍ حاضرٍ موقنٍ بالإجابة».',
+   '«٥. وألحَّ وكرر: فاللهُ يحبُّ الملحّينَ في الدعاء. ٦. ولا تستعجل: قال ﷺ: <span class="say">يُستجابُ لأحدِكم ما لم يعجلْ يقول: دعوتُ فلم يُستجبْ لي</span>. ٧. وتحرَّ أوقاتَ الإجابة: في السجود، وبين الأذانِ والإقامة، وآخرَ الليل، وساعةَ الجمعة».',
+   '«٨. وأطبْ مطعمَك: فالحلالُ يفتحُ بابَ الإجابة».',
+   'دعا كريمٌ بالآداب كلِّها… وبعد شهرٍ جاءتْهُ الدراجة هديةَ نجاحِه! فقال: «الملكُ الكريمُ لا يخيّبُ من أحسنَ الطلب» 🧭'
+  ],
+  q:'🤔 تدريب البطل: طبّق الليلة آداب الدعاء الثمانية بالترتيب — واكتب دعاءك في ورقة لتلحّ به كل يوم!'},
+ {type:'activity',ic:'📮',title:'نشاط: دفتر دعواتي المستجابة',
+  steps:[
+   'خصص دفترًا صغيرًا جميلًا اسمه «دعواتي 📮».',
+   'اكتب في كل صفحة دعاءً واحدًا تريده، وتاريخ بدء الدعاء به.',
+   'ادعُ به يوميًّا في سجودك وقبل النوم، بآداب الدعاء التي تعلمتها.',
+   'عندما يستجيب الله… اكتب بجانبه: «استجاب الله! الحمد لله» والتاريخ.',
+   'وما لم يُستجب بعد؟ اكتب تحته: «خير مدَّخر لي» — فالدعاء لا يضيع!',
+   'راجع الدفتر كل شهر مع أهلك… وستمتلئ صفحاته بعجائب الإجابة! ✨'
+  ],
+  q:'💡 الدفتر يعلّمك أعظم درس: الله يسمعك فعلًا ويجيبك فعلًا!'},
+ {type:'story',ic:'🌧️',title:'قصة: سيد الاستغفار',
+  body:[
+   'لاحظتْ سلمى أنَّ جدتَها تستغفرُ كثيرًا… فسألتْها: «جدتي، أنتِ طيبة، فلماذا كلُّ هذا الاستغفار؟».',
+   'قالت الجدة: «الاستغفارُ ليس للمذنبينَ فقط يا حبيبتي! كان النبيُّ ﷺ — وقد غُفرَ له — يستغفرُ في اليومِ <span class="say">أكثرَ من سبعينَ مرة!</span>».',
+   '«والاستغفارُ يفتحُ الأبواب: قال نوحٌ لقومِه: ﴿اسْتَغْفِرُوا رَبَّكُمْ إِنَّهُ كَانَ غَفَّارًا ۝ يُرْسِلِ السَّمَاءَ عَلَيْكُم مِّدْرَارًا وَيُمْدِدْكُم بِأَمْوَالٍ وَبَنِينَ﴾ — مطرٌ ورزقٌ وذرية… كلُّها بالاستغفار!».',
+   '«وأعظمُهُ: سيدُ الاستغفار — <span class="say">من قاله موقنًا في الصباحِ فماتَ قبل المساء… دخلَ الجنة!</span>» وعلَّمتْها إياه: «اللهم أنتَ ربي لا إله إلا أنت، خلقتني وأنا عبدُك…».',
+   'حفظتْهُ سلمى في ثلاثةِ أيام… وصارتْ تقولُهُ كلَّ صباحٍ ومساء 🌧️'
+  ],
+  q:'🤔 مهمة البطلة: احفظ سيد الاستغفار هذا الأسبوع (اطلب من أهلك كتابته لك) — إنه أعظم استغفار!'},
+ {type:'story',ic:'💚',title:'قصة: الصلاة على النبي ﷺ',
+  body:[
+   'قال أُبيُّ بنُ كعبٍ للنبيِّ ﷺ: يا رسولَ الله، إني أكثرُ الصلاةَ عليك، فكم أجعلُ لك من صلاتي؟ حتى قال: أجعلُ لك صلاتي كلَّها! فقال ﷺ: <span class="say">«إذن تُكفى همَّك، ويُغفرُ لك ذنبُك!»</span>.',
+   'وقال ﷺ: <span class="say">«من صلى عليَّ صلاةً واحدة… صلى اللهُ عليه بها عشرًا!»</span> — تقولُها في ثانية، ويصلي عليك ربُّ العالمينَ عشرَ مرات!',
+   'وقال: <span class="say">«أولى الناسِ بي يومَ القيامةِ أكثرُهم عليَّ صلاة»</span> — تريدُ أن تكونَ قريبًا منه عند الحوض؟ أكثرْ من الصلاةِ عليه!',
+   'وكلُّ صلاةٍ تقولُها تصلُهُ ﷺ: <span class="say">«إنَّ للهِ ملائكةً سياحينَ في الأرض، يبلغوني من أمتي السلام»</span>.',
+   'فيا بطل… أرسلْ له الآن رسالةَ حب: اللهم صلِّ وسلمْ على نبينا محمد! 💚'
+  ],
+  q:'🤔 عداد البطل: كم صلاة على النبي تستطيع اليوم؟ ضع هدفًا: ٥٠؟ ١٠٠؟ ويوم الجمعة ضاعفها!'},
+ {type:'story',ic:'🛏️',title:'قصة: نومة الأبطال (أذكار النوم)',
+  body:[
+   'كانت جنى تخافُ من الظلامِ ولا تنامُ إلا والنورُ مضاء… فعلمتْها أمُّها «روتين نومة الأبطال»:',
+   '«نتوضأ، وننفضُ الفراش، وننامُ على الجنبِ الأيمن… ثم نقرأُ آيةَ الكرسي: <span class="say">فلا يزالُ عليكِ من اللهِ حافظ، ولا يقربُكِ شيطانٌ حتى تصبحي!</span>».',
+   '«ثم نجمعُ الكفينِ وننفثُ فيهما ونقرأُ الإخلاصَ والمعوذتين، ونمسحُ ما استطعنا من الجسد — ثلاث مرات، كما كان يفعلُ النبيُّ ﷺ كلَّ ليلة».',
+   '«وآخرُ الكلام: <span class="say">باسمِكَ اللهمَّ أموتُ وأحيا</span>… وإذا استيقظتِ فزعةً قولي: أعوذُ بكلماتِ اللهِ التاماتِ من غضبِهِ وعقابِهِ وشرِّ عباده».',
+   'جربتْ جنى الروتينَ ليلةً كاملة… ثم أطفأتِ النورَ بنفسِها وقالت: «معي حارسٌ لا ينام!» ونامتْ نومًا هنيئًا 🛏️'
+  ],
+  q:'🤔 روتين البطلة: طبقي نومة الأبطال الليلة كاملة: وضوء ← آية الكرسي ← النفث بالسور ← دعاء النوم!'},
+ {type:'activity',ic:'🏆',title:'نشاط: تحدي المسبحة الأسبوعي',
+  steps:[
+   'اصنع مسبحة من ٣٣ خرزة مع أهلك (أو استخدم أصابعك — سنة!).',
+   'التحدي اليومي: ٣٣ سبحان الله + ٣٣ الحمد لله + ٣٤ الله أكبر بعد كل صلاة.',
+   'أضف تحدي «كلمتان حبيبتان»: سبحان الله وبحمده، سبحان الله العظيم — ١٠ مرات صباحًا.',
+   'ولا تنسَ كنز الجنة: لا حول ولا قوة إلا بالله — ١٠ مرات.',
+   'سجّل إنجازك على جدول الأسبوع، ومن أتمّ ٥ أيام يختار مكافأة العائلة! 🏆'
+  ],
+  q:'💡 «أحب الأعمال إلى الله أدومها وإن قل» — القليل الدائم يبني جبلًا من الحسنات!'},
+ {type:'finish',ic:'🏅',title:'المحطة الأخيرة: شهادة صاحب اللسان الذاكر'}
+];
+
+var K='adhkar_journey_v1';
+var st={};
+try{ st=JSON.parse(localStorage.getItem(K)||'{}')||{}; }catch(e){}
+st.done=st.done||{};
+function save(){ try{ localStorage.setItem(K,JSON.stringify(st)); }catch(e){} }
+function doneCount(){ return Object.keys(st.done).length; }
+
+function renderMap(){
+  var m=document.getElementById('map'); m.innerHTML='';
+  STATIONS.forEach(function(s,i){
+    var d=document.createElement('div');
+    d.className='station '+(s.type||'story')+(st.done[i]?' done':'');
+    var kind=s.type==='story'?'قصة':(s.type==='activity'?'نشاط':'الجائزة الكبرى');
+    d.innerHTML='<span class="dot"></span>'+
+      '<button class="st-card" onclick="openStation('+i+')">'+
+      '<span class="badge">✓</span>'+
+      '<span class="ic">'+s.ic+'</span>'+
+      '<b>'+s.title.replace(/^(قصة|نشاط|المحطة الأخيرة): /,'').replace(/ \(.+\)$/,'')+'</b>'+
+      '<small>المحطة '+(i+1)+' · '+kind+'</small></button>';
+    m.appendChild(d);
+  });
+  document.getElementById('stars').textContent=doneCount();
+  document.getElementById('total').textContent=STATIONS.length;
+}
+
+var cur=-1;
+function openStation(i){
+  cur=i; var s=STATIONS[i];
+  var h='<button class="close" onclick="closeSheet()">✕</button>'+
+        '<span class="s-ic">'+s.ic+'</span><h2>'+s.title+'</h2>';
+  if(s.type==='finish'){
+    var all = doneCount() >= STATIONS.length-1 || st.done[i];
+    if(all){
+      h+='<div class="cert"><h3>🏅 شهادة صاحب اللسان الذاكر</h3>'+
+         '<p>تشهدُ رحلةُ «الأذكارِ والدعاء» أنَّ البطل/البطلة</p>'+
+         (st.name?'<div class="nm">'+st.name+'</div>':'<input id="nm" placeholder="اكتب اسمك هنا" value="">')+
+         '<p>تعلَّمَ فضلَ الذكرِ وأشهرَ الأذكارِ وآدابَ الدعاءِ وفقهَه، وبدأ يغرسُ بستانَهُ في الجنة!</p>'+
+         '<p style="font-size:1.3rem">📿⭐📿⭐📿</p>'+
+         '<p style="font-size:.85rem;color:#6C8A86">«لا يزالُ لسانُكَ رطبًا من ذكرِ الله»</p></div>'+
+         (st.name
+           ?'<button class="donebtn finished" onclick="window.print()">🖨️ اطبع شهادتي</button>'
+           :'<button class="donebtn" onclick="signCert()">✍️ وقِّع الشهادة</button>');
+    }else{
+      h+='<p style="text-align:center;font-weight:800;font-size:1.05rem">🔒 أكمِل كلَّ المحطاتِ أولًا يا صاحبَ الذكر…<br>أنجزتَ حتى الآن <b style="color:var(--teal-dk)">'+doneCount()+'</b> من '+(STATIONS.length-1)+'!</p>'+
+         '<button class="donebtn" onclick="closeSheet()">أكمل الرحلة 💪</button>';
+    }
+  }else{
+    h+='<button class="readbtn" id="rb" onclick="readAloud()">🔊 اقرأ لي</button>';
+    if(s.type==='story'){
+      h+='<div class="story-txt">'+s.body.map(function(p){return '<p>'+p+'</p>';}).join('')+'</div>';
+    }else{
+      h+='<ol class="steps">'+s.steps.map(function(p){return '<li>'+p+'</li>';}).join('')+'</ol>';
+    }
+    h+='<div class="q">'+s.q+'</div>';
+    h+= st.done[i]
+      ? '<button class="donebtn finished" onclick="closeSheet()">✓ أنجزتُها! (اضغط للرجوع)</button>'
+      : '<button class="donebtn" onclick="markDone()">'+(s.type==='story'?'قرأتُها كاملة! 📿':'أنجزتُ النشاط! 📿')+'</button>';
+  }
+  document.getElementById('sheet').innerHTML=h;
+  document.getElementById('ov').classList.add('open');
+}
+function signCert(){
+  var v=(document.getElementById('nm')||{}).value||'';
+  v=v.trim(); if(!v){ alert('اكتب اسمك أولًا يا بطل! ✍️'); return; }
+  st.name=v; st.done[STATIONS.length-1]=true; save(); celebrate(); openStation(STATIONS.length-1); renderMap();
+}
+function markDone(){
+  st.done[cur]=true; save(); stopRead(); celebrate();
+  renderMap(); closeSheet();
+}
+function closeSheet(){ stopRead(); document.getElementById('ov').classList.remove('open'); }
+
+var uttering=false;
+function readAloud(){
+  if(uttering){ stopRead(); return; }
+  var s=STATIONS[cur]; if(!s) return;
+  var txt=(s.type==='story'?s.body.join(' '):s.steps.join('. '))+'. '+s.q;
+  txt=txt.replace(/<[^>]+>/g,'').replace(/[🤔📮💡📿✨💓🌴🏰⏰🗝️⚓🚪🧭🌧️💚🛏️🏆⭐]/g,'');
+  var u=new SpeechSynthesisUtterance(txt);
+  u.lang='ar-SA'; u.rate=.92;
+  var vs=speechSynthesis.getVoices().filter(function(v){return v.lang&&v.lang.indexOf('ar')===0;});
+  if(vs.length) u.voice=vs[0];
+  u.onend=u.onerror=function(){ uttering=false; var b=document.getElementById('rb'); if(b){b.classList.remove('playing');b.textContent='🔊 اقرأ لي';} };
+  speechSynthesis.cancel(); speechSynthesis.speak(u); uttering=true;
+  var b=document.getElementById('rb'); if(b){b.classList.add('playing');b.textContent='⏹️ إيقاف';}
+}
+function stopRead(){ try{speechSynthesis.cancel();}catch(e){} uttering=false; }
+
+function celebrate(){
+  var em=['📿','🌟','✨','🎉','💚'];
+  for(var i=0;i<18;i++){
+    var s=document.createElement('span');
+    s.className='confetti'; s.textContent=em[i%em.length];
+    s.style.left=(Math.random()*100)+'vw';
+    s.style.animationDelay=(Math.random()*0.5)+'s';
+    document.body.appendChild(s);
+    setTimeout(function(el){return function(){el.remove()}}(s),3200);
+  }
+}
+renderMap();
+</script>
+</body>
+</html>

@@ -34,6 +34,93 @@
   </div>
 </div>
 
+<style>
+/* ══ HERO JOURNEYS · رحلات البطل الصغير (sunset garden) ══ */
+.hj-zone{position:relative;max-width:1180px;margin:1.6rem auto 0;border-radius:2rem;overflow:hidden;
+  padding:.6rem .5rem 2rem;
+  background:
+    radial-gradient(120% 80% at 50% 0%,#F7A23B 0%,#E9642E 46%,#B23C6B 100%);
+  box-shadow:0 22px 55px rgba(150,50,60,.34), inset 0 0 90px rgba(255,200,120,.18)}
+.hj-zone::after{content:'🌅';position:absolute;top:1rem;inset-inline-end:1.4rem;font-size:2.1rem;
+  filter:drop-shadow(0 4px 10px rgba(0,0,0,.3));animation:floaty 7s ease-in-out infinite}
+.hj-zone .zone-head{color:#fff;padding-top:1.4rem;text-align:center}
+.hj-zone .zone-head h2{font-family:var(--font-head);font-size:clamp(1.5rem,4vw,2.1rem);margin:.3rem 0}
+.hj-zone .zone-head p{color:#ffe7cf;max-width:40rem;margin:0 auto;font-weight:600}
+.hj-badge{display:inline-block;background:rgba(255,255,255,.16);color:#fff;border:1px solid rgba(255,255,255,.3);
+  border-radius:999px;padding:.25rem .9rem;font-weight:800;font-size:.85rem}
+.hj-grid{position:relative;max-width:1040px;margin:1.1rem auto 0;padding:.5rem 1rem 0;
+  display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:1.9rem 1rem;place-items:start center}
+.hj-card{display:flex;flex-direction:column;align-items:center;gap:.5rem;text-decoration:none;
+  animation:rise .5s both;will-change:transform}
+.hj-orb{position:relative;width:104px;height:104px;border-radius:30% 70% 62% 38%/44% 42% 58% 56%;display:grid;place-items:center;
+  background:
+    radial-gradient(circle at 32% 26%,rgba(255,255,255,.6),transparent 46%),
+    radial-gradient(circle at 70% 78%,rgba(0,0,0,.22),transparent 60%),
+    var(--pc,#B23C6B);
+  box-shadow:0 0 0 3px rgba(255,255,255,.28), 0 12px 26px -6px rgba(0,0,0,.4), inset -6px -8px 18px rgba(0,0,0,.28);
+  transition:transform .25s;animation:hjMorph 9s ease-in-out infinite}
+@keyframes hjMorph{0%,100%{border-radius:30% 70% 62% 38%/44% 42% 58% 56%}50%{border-radius:62% 38% 38% 62%/56% 58% 42% 44%}}
+.hj-orb .glow{position:absolute;inset:-9px;border-radius:inherit;
+  background:radial-gradient(circle,color-mix(in oklab,var(--pc) 60%,white) 0%,transparent 68%);opacity:.5;pointer-events:none;
+  animation:lanternPulse 3.5s ease-in-out infinite}
+.hj-orb .glyph{font-size:2.9rem;line-height:1;filter:drop-shadow(0 2px 4px rgba(0,0,0,.4));z-index:1}
+.hj-card .pl-name{font-family:var(--font-head);font-weight:800;font-size:1.02rem;color:#fff;text-align:center;line-height:1.25}
+.hj-card .pl-tag{font-size:.74rem;font-weight:700;color:#ffe0c6;text-align:center;line-height:1.4;max-width:14ch}
+.hj-card .pl-meta{font-size:.72rem;font-weight:800;color:#fff3d6;background:rgba(255,255,255,.14);
+  border-radius:999px;padding:.2rem .7rem;margin-top:.05rem}
+.hj-card:not(.guide):hover .hj-orb{transform:scale(1.09) rotate(3deg)}
+.hj-card.guide .hj-orb{border-radius:22%;background:
+    radial-gradient(circle at 32% 26%,rgba(255,255,255,.7),transparent 46%),#fff;animation:none}
+.hj-card.guide .hj-orb .glyph{filter:none}
+.hj-card.guide .pl-meta{background:#fff;color:#B23C6B}
+</style>
+
+<section class="hj-zone">
+  <div class="zone-head">
+    <span class="hj-badge">🦸 رحلاتُ البطل الصغير</span>
+    <h2>ثماني مغامراتٍ تصنعُ بطلاً!</h2>
+    <p>رحلاتٌ تفاعليةٌ أطول وأعمق — قصصٌ وأنشطةٌ وتحدياتٌ وشهادات، تأخذُ الطفلَ خطوةً خطوة نحو حبِّ اللهِ ورسولِه، والصلاةِ والأذكار، والأخلاقِ والقيادة، والاقتداءِ بالعظماء.</p>
+  </div>
+  <div class="hj-grid">
+    <a class="hj-card" style="--pc:#C94F6D" href="../../رحلة أحب الله.html">
+      <div class="hj-orb"><span class="glow"></span><span class="glyph">❤️</span></div>
+      <div class="pl-name">أُحبُّ الله</div><div class="pl-tag">أعرفُ ربي فأحبَّه</div><div class="pl-meta">📖 قصص وأنشطة</div>
+    </a>
+    <a class="hj-card" style="--pc:#2E7D5B" href="../../رحلة أحب الرسول.html">
+      <div class="hj-orb"><span class="glow"></span><span class="glyph">💚</span></div>
+      <div class="pl-name">أُحبُّ رسولَ الله ﷺ</div><div class="pl-tag">أشتاقُ إليه وأتبعُ سنته</div><div class="pl-meta">📖 قصص وأنشطة</div>
+    </a>
+    <a class="hj-card" style="--pc:#3C5A80" href="../../رحلة أحب الصلاة.html">
+      <div class="hj-orb"><span class="glow"></span><span class="glyph">🕌</span></div>
+      <div class="pl-name">أُحبُّ الصلاة</div><div class="pl-tag">صِلتي بربي كلَّ يوم</div><div class="pl-meta">📖 قصص وأنشطة</div>
+    </a>
+    <a class="hj-card" style="--pc:#0E7C86" href="../../رحلة الأذكار والدعاء.html">
+      <div class="hj-orb"><span class="glow"></span><span class="glyph">📿</span></div>
+      <div class="pl-name">الأذكارُ والدعاء</div><div class="pl-tag">لساني رطبٌ بذكرِ الله</div><div class="pl-meta">📖 قصص وأنشطة</div>
+    </a>
+    <a class="hj-card" style="--pc:#6C4A9E" href="../../رحلة الأخلاق والآداب.html">
+      <div class="hj-orb"><span class="glow"></span><span class="glyph">🌟</span></div>
+      <div class="pl-name">الأخلاقُ والآداب</div><div class="pl-tag">٤٤ محطةً تصنعُ خُلُقي</div><div class="pl-meta">📖 قصص وأنشطة</div>
+    </a>
+    <a class="hj-card" style="--pc:#B0762A" href="../../رحلة القدوات.html">
+      <div class="hj-orb"><span class="glow"></span><span class="glyph">⭐</span></div>
+      <div class="pl-name">القدوات</div><div class="pl-tag">نجومُ الصحابةِ قدوتي</div><div class="pl-meta">📖 قصص وأنشطة</div>
+    </a>
+    <a class="hj-card" style="--pc:#2C4C8C" href="../../رحلة القائد الصغير.html">
+      <div class="hj-orb"><span class="glow"></span><span class="glyph">🚩</span></div>
+      <div class="pl-name">القائدُ الصغير</div><div class="pl-tag">أُغيِّرُ وأقودُ أمتي</div><div class="pl-meta">📖 قصص وأنشطة</div>
+    </a>
+    <a class="hj-card" style="--pc:#5B6B23" href="../../رحلة حافظ الدين.html">
+      <div class="hj-orb"><span class="glow"></span><span class="glyph">📖</span></div>
+      <div class="pl-name">حافظُ الدين</div><div class="pl-tag">أحفظُ وأتعلمُ لأمتي</div><div class="pl-meta">📖 قصص وأنشطة</div>
+    </a>
+    <a class="hj-card guide" style="--pc:#B23C6B" href="../../دليل الأهل للرحلات.html">
+      <div class="hj-orb"><span class="glyph">👨‍👩‍👧</span></div>
+      <div class="pl-name">دليلُ الأهل</div><div class="pl-tag">هدفُ كلِّ رحلةٍ ودورُكم</div><div class="pl-meta">للكبار</div>
+    </a>
+  </div>
+</section>
+
 <section class="space-zone">
   <div class="zone-head zone-head--space">
     <span class="zone-badge">🪐 عالَمُ العقيدة</span>

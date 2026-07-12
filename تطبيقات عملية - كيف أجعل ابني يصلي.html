@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>تطبيقات عملية — كيف أجعل ابني يصلي؟</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&family=Noto+Naskh+Arabic:wght@400;500;600;700&display=swap">
+<style>
+:root{
+  --gold:#A07810;--gold-lt:#D4A017;--green:#0D6B54;--navy:#0A2540;
+  --paper:#FBF6EA;--card:#FFFDF7;--ink:#22303E;--ink-soft:#5A6673;
+  --line:#E7DCC4;--red:#A33529;
+}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Noto Naskh Arabic','Tajawal',serif;background:var(--paper);color:var(--ink);line-height:1.95;direction:rtl}
+a{color:var(--green);text-decoration:none}
+a:hover{color:var(--gold)}
+
+main{padding:2.4rem clamp(1.2rem,5vw,4rem);max-width:56rem;margin:0 auto}
+.topbar{display:flex;justify-content:space-between;align-items:center;gap:1rem;margin-bottom:1.8rem;flex-wrap:wrap}
+.topbar a.back{font-family:'Tajawal',sans-serif;font-weight:800;font-size:.9rem;background:var(--card);border:1px solid var(--line);border-radius:2rem;padding:.5rem 1.2rem}
+.topbar button{font-family:'Tajawal',sans-serif;font-weight:800;font-size:.9rem;background:var(--navy);color:#F5CC5A;border:none;border-radius:2rem;padding:.55rem 1.3rem;cursor:pointer}
+
+.hero{border-bottom:2px solid var(--line);padding-bottom:1.5rem;margin-bottom:2rem}
+.hero .kicker{font-family:'Tajawal',sans-serif;font-weight:800;font-size:.8rem;letter-spacing:.05em;color:var(--gold)}
+.hero h1{font-family:'Tajawal',sans-serif;font-size:clamp(1.7rem,3.5vw,2.4rem);font-weight:900;color:var(--navy);line-height:1.35;margin:.3rem 0 .6rem}
+.hero p{color:var(--ink-soft);max-width:44rem}
+
+/* goal card */
+.goal-card{background:linear-gradient(135deg,rgba(13,107,84,.08),rgba(212,160,23,.09));border:1px solid rgba(13,107,84,.25);border-radius:1rem;padding:1.4rem 1.6rem;margin-bottom:2.2rem}
+.goal-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:1rem;margin-top:.8rem}
+.goal-item{background:var(--card);border:1px solid var(--line);border-radius:.8rem;padding:.8rem 1rem}
+.goal-item b{font-family:'Tajawal',sans-serif;display:block;font-size:.78rem;color:var(--gold);font-weight:800;margin-bottom:.15rem}
+.goal-item span{font-family:'Tajawal',sans-serif;font-weight:800;color:var(--navy);font-size:.95rem;line-height:1.6}
+
+section.chapter{margin-bottom:2.4rem;scroll-margin-top:1.5rem}
+.ch-card{background:var(--card);border:1px solid var(--line);border-radius:1rem;padding:1.7rem clamp(1.1rem,3vw,2.2rem);box-shadow:0 2px 14px rgba(34,48,62,.05)}
+section.chapter h2{font-family:'Tajawal',sans-serif;font-size:1.4rem;font-weight:900;color:var(--navy);display:flex;align-items:center;gap:.6rem;margin-bottom:1rem}
+section.chapter h2 .ic{color:var(--gold);font-size:1.15rem}
+h3{font-family:'Tajawal',sans-serif;font-size:1.04rem;font-weight:800;color:var(--green);margin:1.4rem 0 .5rem;padding-right:.75rem;border-right:3px solid var(--gold-lt)}
+p{margin:.5rem 0}
+ul,ol{padding-right:1.4rem;margin:.5rem 0}
+li{margin:.45rem 0}
+li::marker{color:var(--gold);font-weight:700}
+strong{color:var(--navy)}
+.qbox{background:linear-gradient(135deg,rgba(13,107,84,.07),rgba(212,160,23,.08));border:1px solid rgba(13,107,84,.22);border-radius:.8rem;padding:.85rem 1.15rem;margin:1rem 0 .3rem;font-size:.95rem}
+
+/* stage blocks */
+.stage{border:1px solid var(--line);border-radius:.9rem;margin:1rem 0;overflow:hidden}
+.stage-head{display:flex;align-items:center;gap:.8rem;padding:.8rem 1.1rem;background:rgba(212,160,23,.09);border-bottom:1px solid var(--line);flex-wrap:wrap}
+.stage-age{font-family:'Tajawal',sans-serif;font-weight:900;font-size:1rem;color:var(--navy);background:#fff;border:1.5px solid var(--gold-lt);border-radius:2rem;padding:.2rem .95rem;flex:none}
+.stage-name{font-family:'Tajawal',sans-serif;font-weight:900;color:var(--green);font-size:1.02rem}
+.stage-body{padding:1rem 1.2rem}
+.meta-row{display:flex;flex-wrap:wrap;gap:.5rem;margin:.4rem 0 .8rem}
+.meta{font-family:'Tajawal',sans-serif;font-size:.78rem;font-weight:800;border-radius:2rem;padding:.25rem .8rem;background:rgba(13,107,84,.09);color:var(--green);border:1px solid rgba(13,107,84,.22)}
+.meta.gold{background:rgba(212,160,23,.12);color:var(--gold);border-color:rgba(212,160,23,.35)}
+.stage-body ul{margin:.3rem 0}
+.win{font-family:'Tajawal',sans-serif;font-size:.88rem;font-weight:800;color:var(--green);background:rgba(13,107,84,.07);border-right:3px solid var(--green);border-radius:.5rem;padding:.5rem .9rem;margin-top:.7rem}
+
+/* week table */
+table{width:100%;border-collapse:collapse;font-family:'Tajawal',sans-serif;font-size:.9rem;margin:.8rem 0}
+th{background:var(--navy);color:#F5CC5A;font-weight:800;padding:.55rem .7rem;text-align:right}
+td{border:1px solid var(--line);padding:.55rem .7rem;vertical-align:top;background:var(--card)}
+tr:nth-child(even) td{background:#FCF8EE}
+
+/* tracker */
+.tracker{display:grid;grid-template-columns:repeat(auto-fill,minmax(52px,1fr));gap:.45rem;margin:.9rem 0}
+.day{font-family:'Tajawal',sans-serif;font-weight:800;font-size:.82rem;text-align:center;border:1.5px solid var(--line);border-radius:.6rem;padding:.55rem .2rem;cursor:pointer;background:var(--card);transition:.15s;user-select:none}
+.day:hover{border-color:var(--gold-lt)}
+.day.done{background:var(--green);border-color:var(--green);color:#fff}
+.tracker-note{font-family:'Tajawal',sans-serif;font-size:.8rem;color:var(--ink-soft)}
+
+.warn li::marker{content:'⚠️ '}
+.good li::marker{content:'✅ '}
+
+footer{font-family:'Tajawal',sans-serif;text-align:center;color:var(--ink-soft);font-size:.82rem;padding:2rem 1rem 2.4rem;border-top:1px dashed var(--line);margin-top:1.5rem}
+
+@media print{
+  .topbar{display:none}
+  body{background:#fff}
+  .ch-card{box-shadow:none;break-inside:avoid}
+  .day{border-color:#999}
+}
+</style>
+</head>
+<body data-screen-label="تطبيقات عملية — الصلاة">
+<main>
+  <div class="topbar">
+    <a class="back" href="corners/little-district/pages/parents.html">↩️ العودة لركن الأهل</a>
+    <button onclick="window.print()">🖨️ طباعة / حفظ PDF</button>
+  </div>
+
+  <div class="hero">
+    <span class="kicker">التطبيقات العملية لأهداف الأركان · الهدف الأول (تجربة)</span>
+    <h1>🕌 كيف أجعلُ ابني يصلي؟</h1>
+    <p>خطة تشغيلية واقعية من عمر السنتين حتى المراهقة: متى تبدأ، بأي أسلوب، كم تستغرق كل مرحلة، وكيف تعرف أنك نجحت — مبنية على الأساليب التربوية المعتمدة في المنصة: <strong>القدوة، التربية بالعادة، الترغيب، القصة، والصحبة</strong>.</p>
+  </div>
+
+  <div class="goal-card">
+      <h2 style="font-family:'Tajawal';font-weight:900;color:var(--navy);font-size:1.15rem">🎯 بطاقة الهدف</h2>
+    <div class="goal-grid">
+      <div class="goal-item"><b>الهدف النهائي</b><span>طفل يصلي الخمس في وقتها بدافع ذاتي قبل البلوغ</span></div>
+      <div class="goal-item"><b>زمن الدخول</b><span>التهيئة من ٢–٣ سنوات · الأمر بها عند ٧ · الحزم عند ١٠</span></div>
+      <div class="goal-item"><b>المدة الواقعية</b><span>مشروع سنوات، لكن التأسيس الفعلي: ٩٠ يومًا متصلة</span></div>
+      <div class="goal-item"><b>المرجع</b><span>«مُروا أولادَكم بالصلاةِ لسبعٍ، واضربوهم عليها لعشرٍ» — أبو داود</span></div>
+    </div>
+  </div>
+
+  <a href="رحلة أحب الصلاة.html" style="display:flex;align-items:center;gap:1rem;background:linear-gradient(135deg,#1B8A6B,#0F6B52);border-radius:1rem;padding:1.1rem 1.4rem;margin-bottom:2.2rem;text-decoration:none;box-shadow:0 6px 18px rgba(15,107,82,.3)">
+    <span style="font-size:2.2rem;flex:none">🎠</span>
+    <span style="flex:1">
+      <b style="font-family:'Tajawal',sans-serif;font-weight:900;color:#fff;font-size:1.1rem;display:block">للطفل: رحلة أُحبُّ الصلاة — قصص وأنشطة تفاعلية</b>
+      <span style="font-family:'Tajawal',sans-serif;font-weight:700;color:rgba(255,255,255,.85);font-size:.85rem">٨ محطات: ٤ قصص لتحبيبه بالصلاة + ٣ أنشطة عملية + شهادة «صديق الصلاة» — مع خيار «اقرأ لي»</span>
+    </span>
+    <span style="font-family:'Tajawal',sans-serif;font-weight:900;background:#fff;color:#0F6B52;border-radius:2rem;padding:.45rem 1.1rem;font-size:.9rem;flex:none">ابدأ الرحلة ←</span>
+  </a>
+
+  <!-- المراحل -->
+  <section class="chapter">
+    <div class="ch-card">
+      <h2><span class="ic">🪜</span> الخطة حسب العمر — متى وماذا وكم؟</h2>
+      <p class="qbox">القاعدة الذهبية: <strong>قبل السابعة لا يوجد «أمر» إطلاقًا</strong> — فقط حبٌّ وتقليد وربط جميل. الأمر يبدأ في السابعة، والحزم في العاشرة، ولكل مرحلة أسلوبها وأدواتها.</p>
+
+      <div class="stage">
+        <div class="stage-head"><span class="stage-age">٢–٤ سنوات</span><span class="stage-name">مرحلة المشاهدة والمحاكاة</span></div>
+        <div class="stage-body">
+          <div class="meta-row"><span class="meta">الأسلوب: القدوة</span><span class="meta gold">المدة: مستمرة — لا جدول</span><span class="meta gold">الجهد: صفر ضغط على الطفل</span></div>
+          <ul>
+            <li><strong>صلِّ أمامه دائمًا</strong> — لا تصلِّ في غرفة مغلقة. الطفل في هذا العمر يقلد أكثر مما يسمع.</li>
+            <li>اترك سجادة صغيرة بجانب سجادتك. إن وقف يقلدك فابتسم له، وإن قفز فوق ظهرك فلا تنهره — كان الحسن والحسين يركبان ظهر النبي ﷺ ساجدًا.</li>
+            <li>علّق أذانًا مسموعًا في البيت، واجعل لحظة الأذان لحظة هادئة محبوبة (لا صراخ «اسكتوا! الأذان!»).</li>
+          </ul>
+          <div class="win">مؤشر نجاح المرحلة: الطفل يقف بجانبك من نفسه ويقلد الركوع والسجود — ولو ثواني.</div>
+        </div>
+      </div>
+
+      <div class="stage">
+        <div class="stage-head"><span class="stage-age">٤–٧ سنوات</span><span class="stage-name">مرحلة الربط الجميل والتعويد الجزئي</span></div>
+        <div class="stage-body">
+          <div class="meta-row"><span class="meta">الأسلوب: التربية بالعادة + القصة + الترغيب</span><span class="meta gold">زمن الدخول: صلاة واحدة فقط (المغرب غالبًا)</span><span class="meta gold">مدة التأسيس: ٤–٨ أسابيع لكل عادة</span></div>
+          <ul>
+            <li><strong>ابدأ بصلاة واحدة</strong> يكون البيت فيها مجتمعًا (المغرب مثلًا) واجعلها «موعدنا الجميل»: وضوء معًا، صف صغير، ودعاء يختاره هو بصوته.</li>
+            <li>علّمه الوضوء باللعب في عطلة نهاية الأسبوع (استخدم ركن الحفظ وركن العبادة في الموقع لعرض الخطوات).</li>
+            <li>استخدم <strong>القصة قبل النوم</strong>: قصص عن الصلاة وحب الله (ركن قصص الصغار) — الهدف ربط الصلاة بالحب لا بالواجب.</li>
+            <li>الترغيب: لوحة نجوم أسبوعية للصلاة الواحدة — والجائزة <strong>تجربة</strong> لا نقودًا (نزهة، بناء خيمة، طبخة معًا).</li>
+            <li>لا تصحح الحركات كثيرًا — التصحيح المستمر يطفئ الحماس. صحّح خطأً واحدًا كل أسبوع.</li>
+          </ul>
+          <div class="win">مؤشر نجاح المرحلة: عند بلوغه السابعة يعرف الوضوء والفاتحة وحركات الصلاة، ويحضر صلاة العائلة بلا مقاومة.</div>
+        </div>
+      </div>
+
+      <div class="stage">
+        <div class="stage-head"><span class="stage-age">٧–١٠ سنوات</span><span class="stage-name">مرحلة الأمر والتثبيت — هنا يبدأ المشروع الحقيقي</span></div>
+        <div class="stage-body">
+          <div class="meta-row"><span class="meta">الأسلوب: التربية بالعادة + المتابعة اللطيفة</span><span class="meta gold">زمن الدخول: يوم سابع ميلاده — اجعله حدثًا</span><span class="meta gold">مدة التأسيس: برنامج ٩٠ يومًا (بالأسفل)</span></div>
+          <ul>
+            <li><strong>يوم السابعة:</strong> احتفل! هدية سجادة باسمه + مصلى صغير خاص به + إعلان: «أصبحتَ اليوم رجلًا يؤمر بالصلاة». الدخول المهيب يصنع فارقًا نفسيًا هائلًا.</li>
+            <li>أدخل الصلوات <strong>تدريجيًا لا دفعة واحدة</strong>: أسبوعان فجر وظهر بالتذكير، ثم أضف العصر، وهكذا حتى تكتمل الخمس خلال ٢–٣ أشهر.</li>
+            <li>التذكير بلا غضب: قاعدة <strong>«ذكِّر ثلاثًا وامدح مرة»</strong> — كل ثلاث تذكيرات هادئة يقابلها مدح أمام الأسرة عند الاستجابة.</li>
+            <li>اصطحب الولد للمسجد (جمعة + صلاة يومية واحدة على الأقل) — الصحبة تصنع الانتماء.</li>
+            <li>استخدم جدول المتابعة الشهري (بالأسفل) — يعلّمه هو بنفسه، لا أنت.</li>
+          </ul>
+          <div class="win">مؤشر نجاح المرحلة: عند العاشرة يصلي الخمس ولا يفوّت أكثر من صلاة أو اثنتين أسبوعيًا بالتذكير فقط.</div>
+        </div>
+      </div>
+
+      <div class="stage">
+        <div class="stage-head"><span class="stage-age">١٠–١٣ سنة</span><span class="stage-name">مرحلة الحزم والمسؤولية</span></div>
+        <div class="stage-body">
+          <div class="meta-row"><span class="meta">الأسلوب: الحزم الهادئ + ربط الامتيازات</span><span class="meta gold">المدة: حتى يستقر الالتزام الذاتي</span></div>
+          <ul>
+            <li>الحزم لا يعني الضرب المؤذي ولا الإهانة — يعني أن التهاون في الصلاة <strong>لم يعد خيارًا مقبولًا</strong> في البيت، وتظهر جديتك في نبرتك وثبات موقفك.</li>
+            <li>اربط الامتيازات بالفريضة: «الجهاز/الخروج بعد الصلاة» — بهدوء ودون مساومة صاخبة.</li>
+            <li>انقل المسؤولية إليه: منبه خاص به للفجر، وهو من يوقظ إخوته الأصغر أحيانًا («أنت قدوة الآن»).</li>
+            <li>احكِ له عن معنى الصلاة (صلة، أمان، وقوف بين يدي الملك) — العقل في هذا العمر يحتاج «لماذا» لا «افعل» فقط.</li>
+          </ul>
+          <div class="win">مؤشر النجاح النهائي: يصلي دون تذكير حتى خارج البيت وعندما لا تراه — هذا هو الهدف الحقيقي.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- برنامج 90 يوم -->
+  <section class="chapter">
+    <div class="ch-card">
+      <h2><span class="ic">📅</span> برنامج التأسيس — ٩٠ يومًا (لعمر ٧ سنوات فأكثر)</h2>
+      <p class="qbox">العادة تُبنى بالتكرار المتصل لا بالحماس المتقطع. هذا البرنامج يدخل الصلوات تدريجيًا على ١٢ أسبوعًا — <strong>لا تقفز مرحلة ولو ظهر التجاوب سريعًا.</strong></p>
+      <table>
+        <tr><th style="width:22%">الأسابيع</th><th>المطلوب</th><th style="width:33%">دورك أنت</th></tr>
+        <tr><td><strong>١–٢</strong></td><td>صلاتا <strong>المغرب والعشاء</strong> جماعة في البيت يوميًا</td><td>أنت الإمام دائمًا · مدح فوري بعد كل صلاة · لا عتاب على النسيان إطلاقًا</td></tr>
+        <tr><td><strong>٣–٤</strong></td><td>أضف <strong>الفجر</strong> (ولو بعد الشروق أول أسبوع)</td><td>أيقظه بلمسة ورائحة فطور لا بصراخ · «البطل يصلي الفجر» قبل النوم</td></tr>
+        <tr><td><strong>٥–٨</strong></td><td>أضف <strong>الظهر والعصر</strong> — اكتملت الخمس</td><td>اتفق مع المدرسة/تابع هاتفيًا · علِّق جدول المتابعة وسلِّمه القلم</td></tr>
+        <tr><td><strong>٩–١٢</strong></td><td><strong>التثبيت:</strong> الخمس في وقتها + مسجد مرة يوميًا</td><td>قلِّل التذكير تدريجيًا من ٣ مرات إلى واحدة · كافئ الأسبوع الكامل بتجربة عائلية</td></tr>
+      </table>
+      <p><strong>بعد اليوم ٩٠:</strong> انتقل من «مشروع» إلى «نظام بيت» — الصلاة كالطعام والنوم، تحدث كل يوم بلا نقاش، وتبقى المتابعة الصامتة (نظرة، ابتسامة، سؤال عابر) سنوات.</p>
+    </div>
+  </section>
+
+  <!-- جدول المتابعة -->
+  <section class="chapter">
+    <div class="ch-card">
+      <h2><span class="ic">✅</span> جدول المتابعة — ٣٠ يومًا</h2>
+      <p class="tracker-note">اضغط على اليوم عند إتمام صلوات اليوم المطلوبة (يُحفظ تلقائيًا على هذا الجهاز) — أو اطبع الصفحة وعلّق الجدول على الثلاجة ودَع الطفل يلوّن بنفسه.</p>
+      <div class="tracker" id="tracker"></div>
+      <p class="tracker-note" id="trackerCount"></p>
+    </div>
+  </section>
+
+  <!-- أخطاء -->
+  <section class="chapter">
+    <div class="ch-card">
+      <h2><span class="ic">🚫</span> أخطاء تهدم المشروع</h2>
+      <ul class="warn">
+        <li><strong>الصراخ والضرب المبكر:</strong> يربط الصلاة بالخوف — فيتركها أول يوم يستقل فيه عنك.</li>
+        <li><strong>أن تأمره وأنت لا تصلي في وقتها:</strong> القدوة المكسورة تهدم ألف موعظة.</li>
+        <li><strong>المكافأة النقدية الدائمة:</strong> تجعل الصلاة «وظيفة بأجر» — استخدم التجارب والمدح، وأطفئ المكافآت تدريجيًا.</li>
+        <li><strong>إدخال الخمس دفعة واحدة في أسبوع:</strong> حماس ثلاثة أيام ثم انهيار. التدرج سنّة التربية.</li>
+        <li><strong>الفضيحة أمام الضيوف والإخوة:</strong> «قوموا شوفوا اللي ما يصلي!» — تولّد عنادًا لا صلاة.</li>
+        <li><strong>الانقطاع في السفر والإجازات:</strong> العادة تنكسر في أسبوع فوضى — خذ السجادة معكم واجعل صلاة السفر مغامرة.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- أدوات المنصة -->
+  <section class="chapter">
+    <div class="ch-card">
+      <h2><span class="ic">🧩</span> أدوات المنصة المساندة لهذا الهدف</h2>
+      <ul class="good">
+        <li><strong>رحلة أحب الصلاة (جديد):</strong> <a href="رحلة أحب الصلاة.html">رحلة تفاعلية للطفل</a> — قصص وأنشطة وشهادة تحبّبه بالصلاة قبل سن الأمر.</li>
+        <li><strong>واحة العبادة:</strong> تعليم الوضوء والصلاة خطوة بخطوة بالصور والتكرار.</li>
+        <li><strong>ركن حفظ القرآن:</strong> حفظ الفاتحة وقصار السور المطلوبة للصلاة مع التسميع.</li>
+        <li><strong>ركن قصص الصغار (٣–٦):</strong> ربط الصلاة بالحب قبل سن الأمر.</li>
+        <li><strong>ساحة المسابقات — قسم الفقه:</strong> أسئلة الوضوء والصلاة من كتاب «ما لا يسع أطفال المسلمين جهله» لتثبيت الفهم.</li>
+        <li><strong>ركن الأنشطة:</strong> أنشطة يدوية عن الصلاة والوضوء تكرّس المعنى باللعب.</li>
+      </ul>
+      <p class="qbox">💡 <strong>هل أعجبك هذا الشكل؟</strong> هذا الهدف الأول تجربة — أخبرنا رأيك، وسنكمل بقية الأهداف بنفس الطريقة: كيف أجعل ابني يدعو؟ · يعرف ربه؟ · صادقًا؟ · قائدًا؟ · حافظًا للقرآن؟ · بارًّا بوالديه؟</p>
+    </div>
+  </section>
+
+  <footer>صُنع بحُب 💛 — تربية الطفل المسلم · التطبيقات العملية لأهداف الأركان</footer>
+</main>
+
+<script>
+(function(){
+  var K='pract_salah_tracker';
+  var saved={};
+  try{ saved=JSON.parse(localStorage.getItem(K)||'{}')||{}; }catch(e){}
+  var box=document.getElementById('tracker');
+  for(var i=1;i<=30;i++){
+    (function(d){
+      var el=document.createElement('div');
+      el.className='day'+(saved[d]?' done':'');
+      el.textContent=d;
+      el.onclick=function(){
+        saved[d]=!saved[d]; if(!saved[d]) delete saved[d];
+        el.classList.toggle('done');
+        try{ localStorage.setItem(K,JSON.stringify(saved)); }catch(e){}
+        count();
+      };
+      box.appendChild(el);
+    })(i);
+  }
+  function count(){
+    var n=Object.keys(saved).length;
+    document.getElementById('trackerCount').textContent = n ? ('أُنجز '+n+' من ٣٠ يومًا — '+(n>=30?'ما شاء الله! اكتمل التأسيس 🌟':(n>=7?'استمروا، العادة تتشكل 💪':'بداية طيبة 🌱'))) : '';
+  }
+  count();
+})();
+</script>
+</body>
+</html>

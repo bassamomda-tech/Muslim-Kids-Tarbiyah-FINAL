@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>رحلة حافظ الدين 📖</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&display=swap">
+<style>
+:root{
+  --sky:#F4F0E6;--sun:#F5B92E;--rose:#5B6B23;--rose-dk:#404D14;
+  --teal:#1B8A6B;--teal-dk:#0F6B52;--purple:#8E5EA8;--navy:#274060;--ink:#3A3A28;
+  --card:#FDFCF5;--line:#DDD9BC;
+}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Tajawal',sans-serif;background:var(--sky);color:var(--ink);line-height:1.9;direction:rtl;overflow-x:hidden}
+a{color:var(--rose-dk)}a:hover{color:var(--sun)}
+button{font-family:'Tajawal',sans-serif;cursor:pointer}
+
+header.hero{text-align:center;padding:2.2rem 1rem 1rem;position:relative}
+.hero h1{font-size:clamp(1.8rem,5vw,2.8rem);font-weight:900;color:var(--rose-dk)}
+.hero p{font-weight:700;color:#7C7A5C;max-width:34rem;margin:.4rem auto 0}
+.hero .back{position:absolute;top:1rem;right:1rem;font-size:.85rem;font-weight:800;background:#fff;border:2px solid var(--line);border-radius:2rem;padding:.4rem 1rem;text-decoration:none}
+.starbar{display:inline-flex;align-items:center;gap:.4rem;background:#fff;border:2px solid var(--rose);border-radius:2rem;padding:.35rem 1.1rem;margin-top:.9rem;font-weight:900;color:var(--rose-dk);font-size:1.05rem}
+
+.map{max-width:40rem;margin:1.6rem auto 3rem;padding:0 1.2rem;position:relative}
+.map::before{content:'';position:absolute;top:0;bottom:0;right:50%;width:6px;background:repeating-linear-gradient(180deg,var(--rose) 0 14px,transparent 14px 26px);border-radius:3px;transform:translateX(50%)}
+.station{position:relative;width:calc(50% - 2.2rem);margin-bottom:1.6rem}
+.station:nth-child(odd){margin-left:auto;margin-right:0}
+.station:nth-child(even){margin-right:calc(50% + 2.2rem)}
+.st-card{display:block;width:100%;text-align:right;background:var(--card);border:3px solid var(--line);border-radius:1.3rem;padding:1rem 1.1rem;box-shadow:0 6px 0 rgba(64,77,20,.13);transition:.15s;position:relative}
+.st-card:hover{transform:translateY(-3px)}
+.st-card .ic{font-size:2rem;display:block}
+.st-card b{font-size:1.05rem;font-weight:900;color:var(--navy);display:block;margin-top:.2rem}
+.st-card small{display:block;margin-top:.25rem;font-weight:700;color:#8C8A6C;font-size:.78rem}
+.st-card .badge{position:absolute;top:-.7rem;left:-.7rem;background:var(--teal);color:#fff;border-radius:50%;width:2rem;height:2rem;display:none;align-items:center;justify-content:center;font-size:1rem;border:2px solid #fff}
+.station.done .st-card{border-color:var(--teal)}
+.station.done .st-card .badge{display:flex}
+.station .dot{position:absolute;top:1.4rem;width:1.4rem;height:1.4rem;background:#fff;border:4px solid var(--rose);border-radius:50%;z-index:2}
+.station:nth-child(odd) .dot{left:-2.95rem}
+.station:nth-child(even) .dot{right:-2.95rem}
+.station.done .dot{background:var(--teal);border-color:var(--teal)}
+.station.activity .st-card{border-color:#D8C3E6}.station.activity.done .st-card{border-color:var(--purple)}
+.station.finish .st-card{background:linear-gradient(135deg,#F6F8E4,#E9EFC8);border-color:var(--rose)}
+
+.overlay{position:fixed;inset:0;background:rgba(40,40,10,.55);display:none;align-items:flex-start;justify-content:center;padding:2rem 1rem;z-index:50;overflow-y:auto}
+.overlay.open{display:flex}
+.sheet{background:var(--card);border-radius:1.5rem;max-width:38rem;width:100%;padding:1.6rem clamp(1.1rem,4vw,2.2rem);position:relative;border:4px solid var(--rose);margin-bottom:2rem}
+.sheet .close{position:absolute;top:.8rem;left:.8rem;background:#fff;border:2px solid var(--line);border-radius:50%;width:2.3rem;height:2.3rem;font-size:1.1rem;font-weight:900}
+.sheet .s-ic{font-size:2.6rem;text-align:center;display:block}
+.sheet h2{font-size:1.45rem;font-weight:900;color:var(--rose-dk);text-align:center;margin:.2rem 0 .8rem}
+.sheet .story-txt{font-size:1.08rem;font-weight:500;line-height:2.15}
+.sheet .story-txt p{margin:.6rem 0}
+.sheet .story-txt .say{color:var(--rose-dk);font-weight:800}
+.readbtn{display:flex;align-items:center;gap:.5rem;margin:0 auto 1rem;background:var(--rose);color:#fff;border:none;border-radius:2rem;padding:.5rem 1.4rem;font-weight:900;font-size:.95rem;box-shadow:0 4px 0 var(--rose-dk)}
+.readbtn.playing{background:var(--sun);color:#5C420A;box-shadow:0 4px 0 #C99417}
+.steps{counter-reset:st;list-style:none;margin:.6rem 0}
+.steps li{counter-increment:st;position:relative;padding:.55rem .5rem .55rem 0;padding-right:3rem;font-weight:700;font-size:1.02rem;border-bottom:1px dashed var(--line)}
+.steps li::before{content:counter(st);position:absolute;right:0;top:.65rem;width:2.1rem;height:2.1rem;background:var(--purple);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:900}
+.q{background:#F1F3DC;border:2px dashed var(--rose);border-radius:1rem;padding:.8rem 1rem;margin:1rem 0;font-weight:800;color:#404D14}
+.donebtn{display:block;margin:1.3rem auto 0;background:var(--rose);color:#fff;border:none;border-radius:2rem;padding:.7rem 2.2rem;font-weight:900;font-size:1.1rem;box-shadow:0 5px 0 var(--rose-dk)}
+.donebtn.finished{background:var(--teal);box-shadow:0 5px 0 var(--teal-dk)}
+
+.cert{border:6px double var(--rose);border-radius:1.2rem;background:#FDFCF5;text-align:center;padding:1.6rem 1rem;margin:.6rem 0}
+.cert h3{font-size:1.5rem;font-weight:900;color:var(--rose-dk)}
+.cert .nm{font-size:1.3rem;font-weight:900;color:var(--teal-dk);border-bottom:2px dashed var(--line);display:inline-block;min-width:12rem;margin:.5rem 0;padding:0 .5rem}
+.cert p{font-weight:700}
+.cert input{font-family:'Tajawal';font-size:1.1rem;font-weight:800;text-align:center;border:2px solid var(--line);border-radius:.8rem;padding:.4rem .8rem;width:min(16rem,90%);margin:.5rem 0;background:#fff}
+.confetti{position:fixed;top:-2rem;font-size:1.5rem;z-index:60;animation:fall 2.6s linear forwards;pointer-events:none}
+@keyframes fall{to{transform:translateY(110vh) rotate(540deg)}}
+
+footer{text-align:center;color:#8C8A6C;font-weight:700;font-size:.85rem;padding:1.5rem 1rem 2.2rem}
+@media(max-width:560px){
+  .map::before{right:1.1rem;transform:none}
+  .station,.station:nth-child(even),.station:nth-child(odd){width:calc(100% - 3.4rem);margin-right:3.4rem;margin-left:0}
+  .station .dot,.station:nth-child(odd) .dot,.station:nth-child(even) .dot{right:-2.85rem;left:auto}
+}
+</style>
+</head>
+<body data-screen-label="رحلة حافظ الدين">
+
+<header class="hero">
+  <a class="back" href="corners/little-district/pages/little-district.html">↩️ الحي الصغير</a>
+  <h1>📖 رحلةُ حافظِ الدين</h1>
+  <p>يا بطل! هذا الدينُ وصلَ إلينا نقيًّا لأنَّ في كلِّ جيلٍ حفَظةً حملوه: حفظوا القرآنَ والسنةَ وتعلَّموا وعلَّموا… واليوم جاءَ دورُك! 🌟</p>
+  <div class="starbar">📖 <span id="stars">0</span> من <span id="total"></span> محطة</div>
+  <div style="margin-top:.9rem;display:flex;gap:.6rem;justify-content:center;flex-wrap:wrap">
+    <a href="رحلة الأذكار والدعاء.html" style="display:inline-flex;align-items:center;gap:.5rem;background:#0E7C86;color:#fff;border-radius:2rem;padding:.5rem 1.3rem;font-weight:900;font-size:.88rem;text-decoration:none">📿 رحلة الأذكار والدعاء ←</a>
+    <a href="رحلة القائد الصغير.html" style="display:inline-flex;align-items:center;gap:.5rem;background:#2C4C8C;color:#fff;border-radius:2rem;padding:.5rem 1.3rem;font-weight:900;font-size:.88rem;text-decoration:none">🚩 رحلة القائد الصغير ←</a>
+    <a href="دليل الأهل للرحلات.html" style="display:inline-flex;align-items:center;gap:.5rem;background:#fff;color:#33302A;border:2px solid #DDD9BC;border-radius:2rem;padding:.5rem 1.3rem;font-weight:900;font-size:.88rem;text-decoration:none">👨‍👩‍👧 دليل الأهل ←</a>
+  </div>
+</header>
+
+<div class="map" id="map"></div>
+
+<div class="overlay" id="ov" onclick="if(event.target===this)closeSheet()">
+  <div class="sheet" id="sheet"></div>
+</div>
+
+<footer>صُنع بحُب 📖 — تربية الطفل المسلم · رحلة حافظ الدين</footer>
+
+<script>
+var STATIONS=[
+ {type:'story',ic:'🛡️',title:'قصة: الكتاب الذي لا يضيع (حفظ الله للقرآن)',
+  body:[
+   'سألتْ سلمى أباها: «الكتبُ القديمةُ ضاعتْ وتغيرتْ… فكيف بقيَ القرآنُ كما هو منذ أكثرَ من ألفٍ وأربعمئةِ سنة؟».',
+   'قال أبوها: «لأنَّ حارسَهُ هو الله! قال تعالى: <span class="say">﴿إِنَّا نَحْنُ نَزَّلْنَا الذِّكْرَ وَإِنَّا لَهُ لَحَافِظُونَ﴾</span> — وعدٌ من ربِّ العالمين!».',
+   '«لكنَّ اللهَ يحفظُهُ بنا نحن: في كلِّ جيلٍ ملايينُ الحفاظ! لو جمعتَ كلَّ مصاحفِ الدنيا وأحرقتَها — لا قدَّرَ الله — <span class="say">لخرجَ القرآنُ كاملًا من صدورِ الأطفالِ قبل الشيوخ!</span> أيُّ كتابٍ في الدنيا مثلُ هذا؟».',
+   '«وهل تعلمين مكانتَكِ لو حفظتِ؟ قال ﷺ: <span class="say">يُقالُ لصاحبِ القرآن: اقرأ وارتقِ ورتلْ… فإنَّ منزلتَكَ عند آخرِ آيةٍ تقرؤُها</span> — درجاتُ الجنةِ بعددِ الآيات!».',
+   'قالت سلمى: «إذن كلُّ آيةٍ أحفظُها… درجةٌ أصعدُها في الجنة!» وفتحتْ مصحفَها من ساعتِها 🛡️'
+  ],
+  q:'🤔 سؤال الحافظ: القرآن محفوظ بوعد الله… فهل تكون أنت من جنوده الحفظة؟ ابدأ اليوم بآية!'},
+ {type:'story',ic:'👨‍👦',title:'قصة: خيركم (فضل تعلم القرآن وتعليمه)',
+  body:[
+   'رجعَ زيدٌ من المسجدِ فرحًا: «يا أبي! المعلمُ قال إني أفضلُ من حفظَ هذا الشهر!».',
+   'قال أبوه: «أتعرفُ ماذا قال النبيُّ ﷺ عن مثلِك؟ <span class="say">خيرُكم من تعلَّمَ القرآنَ وعلَّمَه</span> — خيرُ الناسِ كلِّهم!».',
+   '«والقرآنُ يرفعُك: قال ﷺ: <span class="say">إنَّ اللهَ يرفعُ بهذا الكتابِ أقوامًا ويضعُ به آخرين</span>. والماهرُ بالقرآنِ <span class="say">مع السفرةِ الكرامِ البررة</span> — مع الملائكة! والذي يقرأُ ويتعتعُ فيه وهو عليه شاقٌّ… <span class="say">له أجران!</span>».',
+   '«وأعظمُ من هذا: القرآنُ يشفعُ لكَ يومَ القيامة: <span class="say">اقرؤوا القرآنَ فإنه يأتي يومَ القيامةِ شفيعًا لأصحابِه</span>، ويُلبسُ والداكَ تاجًا من نور!».',
+   'قال زيد: «تاجًا لكما؟!». قال أبوه: «نعم… <span class="say">فاجعلْ حفظَكَ هديةً لنا وتاجًا يومَ نلقى الله</span>» — فازدادَ زيدٌ حبًّا للحفظِ من أجلِهما 👨‍👦'
+  ],
+  q:'🤔 هدية الحافظ: كل صفحة تحفظها لبنة في تاج والديك يوم القيامة — كم صفحة ستهديهما هذا الشهر؟'},
+ {type:'story',ic:'⚖️',title:'قصة: أيهما أهم؟ (العلم الشرعي والعلم الدنيوي)',
+  body:[
+   'تجادلَ أخوان: قال الأكبر: «الطبُّ والهندسةُ أهمُّ العلوم!». قال الأصغر: «بل حفظُ القرآنِ والفقه!».',
+   'فاحتكما إلى جدِّهما، فقال: «كلاكما معه طرفُ الحقيقة… العلومُ الدنيويةُ نافعةٌ والأمةُ تحتاجُها: طبيبٌ يداوي، ومهندسٌ يبني — وهي عبادةٌ إذا نويتَ بها نفعَ الناس».',
+   '«لكنَّ العلمَ الشرعيَّ <span class="say">هو الأساس</span>: لأنه يجيبُ عن أعظمِ الأسئلة: من ربي؟ ولماذا خُلقت؟ وكيف أعبدُه؟ وإلى أين المصير؟ الطبُّ يصلحُ الجسد… والوحيُ يصلحُ القلبَ الذي بصلاحِهِ يصلحُ كلُّ شيء!».',
+   '«ولهذا قال ﷺ: <span class="say">من يُردِ اللهُ به خيرًا يفقِّهْهُ في الدين</span> — علامةُ حبِّ اللهِ لك! وقال: <span class="say">طلبُ العلمِ فريضةٌ على كلِّ مسلم</span> — تعلُّمُ ما تصحُّ به صلاتُكَ وعقيدتُك فرضٌ قبل كلِّ شيء».',
+   '«فكونا مثلَ علماءِ أمتِنا الأوائل: <span class="say">ابنُ سينا طبيبٌ حافظٌ للقرآن، والخوارزميُّ عالمُ رياضياتٍ فقيه!</span> أتقنوا الدينَ أولًا… فأبدعوا في الدنيا بعدَه» ⚖️'
+  ],
+  q:'🤔 ميزان الحافظ: مهما كان حلمك الدنيوي (طبيب؟ مهندس؟) اجعل أساسه: قرآن + عقيدة + فقه — مثل علمائنا العظماء!'},
+ {type:'story',ic:'🕯️',title:'قصة: أمير المؤمنين في الحديث (الإمام البخاري)',
+  body:[
+   'وُلدَ محمدُ بنُ إسماعيلَ البخاريُّ فأصابَهُ العمى صغيرًا… فما يئستْ أمُّه: <span class="say">دعتِ اللهَ له الليالي الطوال… فرأتْ في المنامِ إبراهيمَ عليه السلامُ يبشرُها: قد ردَّ اللهُ على ابنِكِ بصرَه بكثرةِ دعائِك!</span> فأصبحَ مبصرًا!',
+   'وبدأ يحفظُ الحديثَ وعمرُهُ عشرُ سنين! وكان زملاؤُهُ يكتبونَ ما يسمعون، وهو لا يكتب… فعاتبوه، فقال: «اعرضوا ما كتبتم» — <span class="say">فقرأ من حفظِهِ خمسةَ عشرَ ألفَ حديثٍ صحَّحَ بها كتبَهم!</span>',
+   'ورحلَ في طلبِ الحديثِ إلى مكةَ والمدينةِ والشامِ ومصرَ والعراق… يمشي آلافَ الأميالِ من أجلِ حديثٍ واحد!',
+   'وجمعَ كتابَهُ «الصحيح» من ستمئةِ ألفِ حديث، اختارَ منها الأصحَّ فقط… <span class="say">وكان لا يضعُ حديثًا إلا اغتسلَ وصلى ركعتينِ واستخارَ الله!</span>',
+   'فصارَ «صحيحُ البخاري» أصحَّ كتابٍ بعد كتابِ الله… وحُفظتْ بجهدِهِ سنةُ نبيِّنا ﷺ إلى يومِ القيامة 🕯️'
+  ],
+  q:'🤔 درس الحافظ: أم البخاري صنعت عالمًا بدعائها، والبخاري صنع مجدًا بإتقانه — اطلب دعاء أمك اليوم، وأتقن حفظك كالبخاري!'},
+ {type:'story',ic:'🌙',title:'قصة: حراس السنة (لماذا نحفظ الحديث؟)',
+  body:[
+   'سألَ آدمُ معلمَه: «القرآنُ محفوظ… لكن كيف وصلتنا أقوالُ النبيِّ ﷺ وأفعالُهُ بعد مئاتِ السنين؟».',
+   'قال المعلم: «بجيشٍ عجيبٍ اسمُهم: <span class="say">حراسُ السنة!</span> الصحابةُ حفظوا كلَّ كلمةٍ وحركة: كيف يصلي، وكيف يأكل، وماذا يقول… ثم علَّموها للتابعين، جيلًا يسلِّمُ جيلًا كسلسلةِ الذهب».',
+   '«وكانَ للحديثِ الواحدِ سند: فلانٌ سمعَ من فلانٍ عن فلانٍ عن النبيِّ ﷺ… <span class="say">ولا يُقبلُ إلا من الصادقينَ الضابطين!</span> اخترعَ علماؤُنا أدقَّ نظامِ توثيقٍ في تاريخِ البشرية».',
+   '«ورحلَ جابرُ بنُ عبدِ اللهِ رضي الله عنه <span class="say">شهرًا كاملًا على راحلتِهِ من أجلِ حديثٍ واحد!</span> وقال ﷺ داعيًا لهم: <span class="say">نضَّرَ اللهُ امرأً سمعَ منا حديثًا فحفظَهُ حتى يبلغَهُ غيرَه</span>».',
+   '«ولماذا كلُّ هذا؟ لأنَّ السنةَ هي بيانُ القرآن: منها تعلمنا كيف نصلي وكم ركعة! فحفظُها حفظٌ للدينِ كلِّه». فقال آدم: «إذن كلُّ حديثٍ أحفظُهُ… أنضمُّ به لحراسِ السنة!» 🌙'
+  ],
+  q:'🤔 مهمة الحارس: احفظ هذا الأسبوع حديثًا واحدًا بإتقان («إنما الأعمال بالنيات») وعلّمه لشخص — تنلْ دعوة النبي: نضّر الله امرأً…!'},
+ {type:'story',ic:'🚫',title:'قصة: الطريق الأصلي (البعد عن البدعة)',
+  body:[
+   'رسمَ المعلمُ على السبورةِ خطًّا مستقيمًا وخطوطًا متعرجةً حولَه، وقال: «هذا ما رسمَهُ النبيُّ ﷺ لأصحابِه! خطَّ خطًّا وقال: <span class="say">هذا سبيلُ الله</span>، وخطَّ خطوطًا عن يمينِهِ وشمالِهِ وقال: <span class="say">هذه سبلٌ على كلِّ سبيلٍ منها شيطانٌ يدعو إليه</span>، ثم قرأ: ﴿وَأَنَّ هَٰذَا صِرَاطِي مُسْتَقِيمًا فَاتَّبِعُوهُ﴾».',
+   '«ديننا وصفةٌ ربانيةٌ كاملة: <span class="say">﴿الْيَوْمَ أَكْمَلْتُ لَكُمْ دِينَكُمْ﴾</span> — كاملٌ لا ينقصُهُ شيء! فمن أرادَ أن يزيدَ فيه عبادةً من عندِه، فكأنه يقول: الوصفةُ ناقصة!».',
+   '«قال ﷺ: <span class="say">من أحدثَ في أمرِنا هذا ما ليس منه فهو ردّ</span> — مردودٌ على صاحبِهِ مهما ظنَّهُ جميلًا. وقال: <span class="say">وإياكم ومحدثاتِ الأمور، فإنَّ كلَّ محدثةٍ بدعة</span>».',
+   '«فكيف نعرفُ الأصليَّ من الدخيل؟ بسؤالِ أهلِ العلم: <span class="say">هل فعلَهُ النبيُّ ﷺ وأصحابُه؟</span> إن نعم فهو النور… وهذا سرُّ أهميةِ التعلمِ الشرعي: الجاهلُ لا يفرقُ بين السنةِ والبدعة!».',
+   'وكتبَ التلاميذُ القاعدةَ الذهبية: <span class="say">«خيرُ الهديِ هديُ محمدٍ ﷺ»</span> — نعبدُ اللهَ كما أحبَّ هو، لا كما نهوى نحن 🚫'
+  ],
+  q:'🤔 قاعدة الحافظ: قبل أي عبادة جديدة اسأل: هل فعلها النبي ﷺ وصحابته؟ — واسأل أهل العلم ولا تخجل!'},
+ {type:'story',ic:'💎',title:'قصة: مجالس تحفها الملائكة (فضل مجالس العلم)',
+  body:[
+   'ترددَ حمزةُ: «درسُ المسجدِ اليوم… أم اللعب؟». فحكى له جدُّهُ حكايةً غيرتْ قرارَه:',
+   '«خرجَ النبيُّ ﷺ يومًا فوجدَ في مسجدِهِ مجلسين: قومٌ يدعونَ الله، وقومٌ يتعلمونَ العلم… فقال: <span class="say">كلاهما على خير… وإنما بُعثتُ معلمًا</span> — وجلسَ مع أهلِ العلم!».',
+   '«ومجالسُ العلمِ عجيبة: قال ﷺ: <span class="say">ما اجتمعَ قومٌ في بيتٍ من بيوتِ الله، يتلونَ كتابَ اللهِ ويتدارسونَهُ بينهم، إلا نزلتْ عليهمُ السكينة، وغشيتهمُ الرحمة، وحفَّتهمُ الملائكة، وذكرَهمُ اللهُ فيمن عنده!</span>».',
+   '«أربعُ جوائزَ في مجلسٍ واحد! والطريقُ نفسُهُ جائزة: <span class="say">من سلكَ طريقًا يلتمسُ فيه علمًا، سهَّلَ اللهُ له به طريقًا إلى الجنة</span>».',
+   'ذهبَ حمزةُ للدرس… وفي الطريقِ كان يبتسمُ ويقولُ في نفسِه: «أنا الآن أمشي في طريقِ الجنة… والملائكةُ تنتظرُني هناك!» 💎'
+  ],
+  q:'🤔 موعد الحافظ: التزم بدرس علم أسبوعي (في المسجد أو مع أهلك أو في الموقع) — ولا تفوّته مهما كان!'},
+ {type:'story',ic:'🌍',title:'قصة: أمة لا تموت (العلم حياة الأمة)',
+  body:[
+   'سألَ يوسفُ أباه: «لماذا تهتمُّ الأمةُ كلُّ هذا الاهتمامِ بحفظِ القرآنِ والعلم؟».',
+   'قال أبوه: «لأنَّ العلمَ حياتُها! انظر للتاريخ: <span class="say">لما أحرقَ التتارُ بغدادَ ورموا الكتبَ في نهرِ دجلة… ظنَّ العالمُ أنَّ الإسلامَ انتهى. لكنَّ القرآنَ كان في الصدور، والعلمَ في الحلقات… فنهضتِ الأمةُ من جديد!</span> الذي في الصدورِ لا يُحرقُ ولا يغرق».',
+   '«والعلماءُ هم قلبُ الأمةِ النابض: <span class="say">العلماءُ ورثةُ الأنبياء… والأنبياءُ لم يورِّثوا دينارًا ولا درهمًا، وإنما ورَّثوا العلم</span> — أعظمُ ميراثٍ في الوجود!».',
+   '«لكن احذر: قال ﷺ: <span class="say">إنَّ اللهَ لا يقبضُ العلمَ انتزاعًا… ولكن يقبضُ العلمَ بقبضِ العلماء، حتى إذا لم يُبقِ عالمًا اتخذَ الناسُ رؤوسًا جهالًا فسُئلوا فأفتَوا بغيرِ علمٍ فضلُّوا وأضلُّوا</span> — إذا ماتَ العلمُ ضاعتِ الأمة!».',
+   '«ولهذا كلُّ طفلٍ يحفظُ ويتعلمُ اليوم… هو صمامُ أمانِ الأمةِ غدًا». فوضعَ يوسفُ يدَهُ على مصحفِهِ وقال: <span class="say">«سأكونُ من ورثةِ الأنبياء»</span> 🌍'
+  ],
+  q:'🤔 عهد الحافظ: أنت حلقة في سلسلة عمرها ١٤٠٠ سنة — لا تجعل السلسلة تنقطع عندك: احفظ وعلّم!'},
+ {type:'story',ic:'🥾',title:'قصة: تعب العلماء (ثمن العلم)',
+  body:[
+   'قال جدُّ سلمى: «أتظنونَ العلمَ وصلنا سهلًا؟ اسمعوا ثمنَه…».',
+   '«الإمامُ أحمدُ بنُ حنبل <span class="say">مشى على قدميهِ آلافَ الأميال</span>: من بغدادَ إلى اليمنِ والشامِ والحجاز… يجمعُ الحديث، وكان فقيرًا ينامُ أحيانًا على الطريق، وعملَ حمّالًا في رحلتِهِ ليأكل!».',
+   '«والإمامُ الشافعيُّ كان يتيمًا فقيرًا… <span class="say">لا يجدُ ثمنَ الورق، فيكتبُ العلمَ على العظامِ وسعفِ النخل!</span> وحفظَ القرآنَ في السابعةِ والموطأَ في العاشرة».',
+   '«وابنُ حجرٍ جلسَ يكتبُ شرحَ البخاري <span class="say">خمسًا وعشرينَ سنة!</span> والإمامُ مسلمٌ سافرَ لجمعِ صحيحِهِ خمسَ عشرةَ سنة… وقيل لأحدِهم: كيف بلغتَ هذا العلم؟ قال: <span class="say">بالسفرِ والسهرِ والبكورِ في السحر!</span>».',
+   'قالت سلمى: «كلُّ صفحةٍ في كتبِنا وراءَها تعبُ عمر!». قال الجد: «ولهذا العلمُ غالٍ… لا يُنالُ براحةِ الجسد» 🥾'
+  ],
+  q:'🤔 همة الحافظ: هؤلاء مشوا آلاف الأميال — وأنت العلم بين يديك بضغطة! فهل تبذل نصف ساعة يوميًّا؟'},
+ {type:'story',ic:'⛓️',title:'قصة: أحمد بن حنبل والثبات على الحق (فتنة خلق القرآن)',
+  body:[
+   'جاءَ زمنٌ ظهرتْ فيه بدعةٌ خطيرة: قومٌ قالوا إنَّ القرآنَ «مخلوق» — كلامٌ ما قالَهُ النبيُّ ﷺ ولا أصحابُه! وأجبرَ الحاكمُ العلماءَ على قولِها…',
+   'خافَ كثيرون فسكتوا… <span class="say">إلا الإمامَ أحمدَ بنَ حنبل: وقفَ وحدَهُ كالجبلِ وقال: القرآنُ كلامُ اللهِ ليس بمخلوق… أعطوني آيةً أو حديثًا يقولُ غيرَ هذا!</span>',
+   'فسجنوهُ وقيَّدوهُ بالحديد، وجلدوهُ حتى يُغمى عليه… <span class="say">ثمانيةً وعشرينَ شهرًا في السجن!</span> وهو يقول: <span class="say">«إذا أجابَ العالِمُ تقيةً — خوفًا — والجاهلُ يجهل… فمتى يتبينُ الحق؟!»</span> — لو سكتُّ أنا، ضاعَ الناس!',
+   'وثبتَ حتى فرَّجَ اللهُ… فخرجَ من المحنةِ وقد أحبَّهُ الناسُ كلُّهم، وسُميَ: <span class="say">«إمامَ أهلِ السنة»</span> — ومات وشيَّعَهُ مئاتُ الآلاف!',
+   'قال العلماء: «ثبتَ أحمدُ يومَها… فثبتَ الدين». رجلٌ واحدٌ صادقٌ حفظَ عقيدةَ أمةٍ كاملة ⛓️'
+  ],
+  q:'🤔 درس الحافظ: أحمد تحمّل السجن ولم يقل كلمة باطلة — تعلم دينك جيدًا حتى تثبت مثله ولا تنجرف مع أي كلام جديد!'},
+ {type:'story',ic:'🌾',title:'قصة: تواضع العالم (ابن عباس وزيد بن ثابت)',
+  body:[
+   'كان ابنُ عباسٍ ابنَ عمِّ النبيِّ ﷺ و«حَبرَ الأمة»… ومع ذلك انظروا لتواضعِه!',
+   'خرجَ زيدُ بنُ ثابتٍ — كاتبُ الوحي — يومًا على دابتِه، <span class="say">فأمسكَ ابنُ عباسٍ بركابِها يقودُها كالخادم!</span> فقال زيد: خلِّ عنكَ يا ابنَ عمِّ رسولِ الله! فقال ابنُ عباس: <span class="say">«هكذا أُمرنا أن نفعلَ بعلمائِنا وكبرائِنا»</span>.',
+   'فماذا فعلَ زيد؟ <span class="say">أخذَ يدَ ابنِ عباسٍ فقبَّلَها وقال: «هكذا أُمرنا أن نفعلَ بأهلِ بيتِ نبيِّنا!»</span> — تواضعٌ يقابلُهُ تواضع!',
+   'وكان ابنُ عباسٍ يقول: <span class="say">«ذللتُ طالبًا… فعززتُ مطلوبًا»</span> — تواضعتُ وأنا أطلبُ العلم، فصارَ الناسُ يأتونني يطلبونَه!',
+   'والقاعدة: <span class="say">العلمُ الحقيقيُّ يزيدُكَ تواضعًا كالسنبلة: كلما امتلأتْ… انحنتْ</span>. أما الفارغةُ فترفعُ رأسَها عاليًا! 🌾'
+  ],
+  q:'🤔 أدب الحافظ: كلما زاد حفظك… زد تواضعًا واحترامًا لمعلمك — قبّل رأس معلمك للقرآن أو اشكره اليوم!'},
+ {type:'story',ic:'⚠️',title:'قصة: آفة العلم (التحذير من الكبر والغرور)',
+  body:[
+   'حفظَ كريمٌ ثلاثةَ أجزاء… فبدأ يسخرُ من زملائِه: «أنتم ما زلتم في جزءِ عمّ! تعلموا مني!».',
+   'فجلسَ معه معلمُهُ وقال: «يا كريم، أتعرفُ أخطرَ مرضٍ يصيبُ الحافظ؟ <span class="say">الغرور!</span> إبليسُ كان أعلمَ الملأِ الأعلى عبادةً… <span class="say">فأهلكَهُ الكبر: أنا خيرٌ منه!</span>».',
+   '«وقال ﷺ: <span class="say">لا يدخلُ الجنةَ من كان في قلبِهِ مثقالُ ذرةٍ من كبر</span>. والعلمُ الذي يجعلُكَ تحتقرُ الناس… وبالٌ عليكَ لا نور».',
+   '«واسمع قصةَ موسى عليه السلام: سُئل: من أعلمُ الناس؟ قال: أنا — ولم يردَّ العلمَ إلى الله — <span class="say">فأمرَهُ اللهُ أن يرحلَ إلى الخضرِ ليتعلمَ أنَّ فوقَ كلِّ ذي علمٍ عليم!</span> نبيٌّ كريمٌ يتعلمُ الدرس… فكيف بنا؟».',
+   'فذهبَ كريمٌ لزملائِهِ واعتذر، وقال: «من اليوم… كلما حفظتُ أكثر، قلتُ: الحمدُ لله الذي علَّمني، وساعدتُ من بعدي» ⚠️'
+  ],
+  q:'🤔 تحصين الحافظ: كلما أنجزت حفظًا قل: «الحمد لله الذي علّمني، اللهم لا تجعله حجة عليّ» — وساعد زميلًا أضعف منك!'},
+ {type:'story',ic:'🧭',title:'قصة: فقه العلم (العلم للعمل لا للمظاهر)',
+  body:[
+   'سألَ حمزةُ جدَّه: «أحفظُ وأتعلم… لكن كيف أعرفُ أنَّ علمي (في سبيلِ الله)؟».',
+   'قال الجد: «سؤالُ العارفين! العلمُ في سبيلِ اللهِ له ثلاثُ علامات: <span class="say">الأولى: أن تعملَ به</span> — قال ﷺ: <span class="say">لا تزولُ قدما عبدٍ يومَ القيامةِ حتى يُسأل… عن علمِهِ ماذا عملَ فيه</span>. فمن حفظَ آيةَ الصدقِ وكذب… فعلمُهُ حجةٌ عليه!».',
+   '«<span class="say">الثانية: أن تعلِّمَهُ غيرَك</span> — فزكاةُ العلمِ نشرُه. <span class="say">والثالثة: أن تزدادَ به خشيةً لله</span>: ﴿إِنَّمَا يَخْشَى اللَّهَ مِنْ عِبَادِهِ الْعُلَمَاءُ﴾ — العلمُ الذي لا يقربُكَ من اللهِ ليس علمًا نافعًا».',
+   '«وكان النبيُّ ﷺ يدعو: <span class="say">اللهم إني أسألُكَ علمًا نافعًا</span>، ويستعيذ: <span class="say">اللهم إني أعوذُ بك من علمٍ لا ينفع!</span>».',
+   'فكتبَ حمزةُ العلاماتِ الثلاثَ في أولِ دفترِه: أعملُ به ← أعلِّمُهُ ← يزيدُني قربًا من الله 🧭'
+  ],
+  q:'🤔 اختبار الحافظ: خذ آخر شيء تعلمته واسأل: هل عملت به؟ هل علّمته أحدًا؟ هل قرّبك من الله؟'},
+ {type:'story',ic:'💼',title:'قصة: النية أولًا (لا للوظيفة والمنصب فقط)',
+  body:[
+   'قال أبو فادي لابنِه: «سأحكي لك حديثًا يهزُّ القلوب… أولُ ثلاثةٍ تُسعَّرُ بهم النارُ يومَ القيامة: منهم <span class="say">رجلٌ تعلَّمَ العلمَ وعلَّمَهُ وقرأَ القرآن… لكن ليقالَ: عالمٌ وقارئ! فقد قيلَ في الدنيا… وأُمرَ به إلى النار</span>».',
+   'ارتجفَ فادي: «تعلَّمَ وعلَّم… ودخلَ النار؟!». قال أبوه: «لأنَّ نيتَهُ كانت للناسِ لا لله! <span class="say">وإنما الأعمالُ بالنيات</span>».',
+   '«وقال ﷺ: <span class="say">من تعلَّمَ علمًا مما يُبتغى به وجهُ الله، لا يتعلمُهُ إلا ليصيبَ به عرَضًا من الدنيا — مالًا أو منصبًا — لم يجدْ عَرْفَ الجنةِ يومَ القيامة</span> — لا يشمُّ ريحَها!».',
+   '«فهل الوظيفةُ والرزقُ حرام؟ لا! اعملْ وارزقْ وتفوقْ… لكنِ <span class="say">اجعلِ النيةَ الكبرى لله: أتعلمُ لأعبدَ اللهَ على بصيرة، وأنفعَ أمتي… والوظيفةُ تأتي تبعًا لا هدفًا</span>».',
+   'فتعلمَ فادي دعاءَ النيةِ قبل كلِّ درس: «اللهم إني أتعلمُ لوجهِك… فبارك لي وانفعْ بي» 💼'
+  ],
+  q:'🤔 نية الحافظ: قبل كل مذاكرة قل: «اللهم إني أتعلم لوجهك ولنفع أمتي» — وجدد النية كلما نسيت!'},
+ {type:'activity',ic:'🗓️',title:'نشاط: خطة الحافظ الصغير',
+  steps:[
+   'حدد وردك اليومي مع أهلك: ٣-٥ أسطر حفظ جديد (حسب عمرك) + مراجعة ما سبق.',
+   'اجعل له وقتًا ثابتًا: بعد الفجر أو بعد المغرب — وقت لا يتزحزح!',
+   'استخدم ركن حفظ القرآن في الموقع: التسميع الذكي يصحح لك.',
+   'كل جمعة: سمّع حصيلة الأسبوع لأحد والديك.',
+   'أضف حديثًا واحدًا كل أسبوع من الأربعين النووية.',
+   'وضع لوحة إنجاز: كل صفحة محفوظة = نجمة ⭐ وكل سورة كاملة = احتفال عائلي! 🗓️'
+  ],
+  q:'💡 «أحب الأعمال إلى الله أدومها وإن قل» — ٣ أسطر يوميًّا = عدة أجزاء في السنة!'},
+ {type:'activity',ic:'🎓',title:'نشاط: أنا المعلم الصغير',
+  steps:[
+   'اختر شيئًا أتقنته: سورة قصيرة، حديثًا، وضوءًا صحيحًا…',
+   'حضّر درسًا صغيرًا من ٥ دقائق: اقرأ، اشرح الكلمات الصعبة، واذكر فائدة.',
+   'علّمه لأخ أصغر أو صديق أو حتى لأهلك!',
+   'اجعل لتلميذك اختبارًا صغيرًا ممتعًا في النهاية.',
+   'تذكر أجرك: «خيركم من تعلم القرآن وعلمه» — وأجر من عمل بما علّمته يصلك دون أن ينقص منه شيء!',
+   'كرر كل أسبوع بدرس جديد — فأفضل طريقة للحفظ: أن تُعلِّم! 🎓'
+  ],
+  q:'💡 من علّم آية فله أجر كل من قرأها بتعليمه — تخيل حسناتك بعد ٥٠ سنة!'},
+ {type:'finish',ic:'🏅',title:'المحطة الأخيرة: شهادة حافظ الدين'}
+];
+
+var K='deenkeeper_journey_v1';
+var st={};
+try{ st=JSON.parse(localStorage.getItem(K)||'{}')||{}; }catch(e){}
+st.done=st.done||{};
+function save(){ try{ localStorage.setItem(K,JSON.stringify(st)); }catch(e){} }
+function doneCount(){ return Object.keys(st.done).length; }
+
+function renderMap(){
+  var m=document.getElementById('map'); m.innerHTML='';
+  STATIONS.forEach(function(s,i){
+    var d=document.createElement('div');
+    d.className='station '+(s.type||'story')+(st.done[i]?' done':'');
+    var kind=s.type==='story'?'قصة':(s.type==='activity'?'نشاط':'الجائزة الكبرى');
+    d.innerHTML='<span class="dot"></span>'+
+      '<button class="st-card" onclick="openStation('+i+')">'+
+      '<span class="badge">✓</span>'+
+      '<span class="ic">'+s.ic+'</span>'+
+      '<b>'+s.title.replace(/^(قصة|نشاط|المحطة الأخيرة): /,'').replace(/ \(.+\)$/,'')+'</b>'+
+      '<small>المحطة '+(i+1)+' · '+kind+'</small></button>';
+    m.appendChild(d);
+  });
+  document.getElementById('stars').textContent=doneCount();
+  document.getElementById('total').textContent=STATIONS.length;
+}
+
+var cur=-1;
+function openStation(i){
+  cur=i; var s=STATIONS[i];
+  var h='<button class="close" onclick="closeSheet()">✕</button>'+
+        '<span class="s-ic">'+s.ic+'</span><h2>'+s.title+'</h2>';
+  if(s.type==='finish'){
+    var all = doneCount() >= STATIONS.length-1 || st.done[i];
+    if(all){
+      h+='<div class="cert"><h3>🏅 شهادة حافظ الدين</h3>'+
+         '<p>تشهدُ رحلةُ «حافظِ الدين» أنَّ البطل/البطلة</p>'+
+         (st.name?'<div class="nm">'+st.name+'</div>':'<input id="nm" placeholder="اكتب اسمك هنا" value="">')+
+         '<p>عرفَ فضلَ حفظِ القرآنِ والسنةِ والعلمِ الشرعي، وتعلَّمَ من البخاريِّ وحراسِ السنة، وعزمَ أن يكونَ حلقةً في سلسلةِ حفظِ الدين!</p>'+
+         '<p style="font-size:1.3rem">📖⭐📖⭐📖</p>'+
+         '<p style="font-size:.85rem;color:#8C8A6C">«خيرُكم من تعلَّمَ القرآنَ وعلَّمَه»</p></div>'+
+         (st.name
+           ?'<button class="donebtn finished" onclick="window.print()">🖨️ اطبع شهادتي</button>'
+           :'<button class="donebtn" onclick="signCert()">✍️ وقِّع الشهادة</button>');
+    }else{
+      h+='<p style="text-align:center;font-weight:800;font-size:1.05rem">🔒 أكمِل كلَّ المحطاتِ أولًا يا حافظ…<br>أنجزتَ حتى الآن <b style="color:var(--teal-dk)">'+doneCount()+'</b> من '+(STATIONS.length-1)+'!</p>'+
+         '<button class="donebtn" onclick="closeSheet()">أكمل الرحلة 💪</button>';
+    }
+  }else{
+    h+='<button class="readbtn" id="rb" onclick="readAloud()">🔊 اقرأ لي</button>';
+    if(s.type==='story'){
+      h+='<div class="story-txt">'+s.body.map(function(p){return '<p>'+p+'</p>';}).join('')+'</div>';
+    }else{
+      h+='<ol class="steps">'+s.steps.map(function(p){return '<li>'+p+'</li>';}).join('')+'</ol>';
+    }
+    h+='<div class="q">'+s.q+'</div>';
+    h+= st.done[i]
+      ? '<button class="donebtn finished" onclick="closeSheet()">✓ أنجزتُها! (اضغط للرجوع)</button>'
+      : '<button class="donebtn" onclick="markDone()">'+(s.type==='story'?'قرأتُها كاملة! 📖':'أنجزتُ النشاط! 📖')+'</button>';
+  }
+  document.getElementById('sheet').innerHTML=h;
+  document.getElementById('ov').classList.add('open');
+}
+function signCert(){
+  var v=(document.getElementById('nm')||{}).value||'';
+  v=v.trim(); if(!v){ alert('اكتب اسمك أولًا يا حافظ! ✍️'); return; }
+  st.name=v; st.done[STATIONS.length-1]=true; save(); celebrate(); openStation(STATIONS.length-1); renderMap();
+}
+function markDone(){
+  st.done[cur]=true; save(); stopRead(); celebrate();
+  renderMap(); closeSheet();
+}
+function closeSheet(){ stopRead(); document.getElementById('ov').classList.remove('open'); }
+
+var uttering=false;
+function readAloud(){
+  if(uttering){ stopRead(); return; }
+  var s=STATIONS[cur]; if(!s) return;
+  var txt=(s.type==='story'?s.body.join(' '):s.steps.join('. '))+'. '+s.q;
+  txt=txt.replace(/<[^>]+>/g,'').replace(/[🤔🗓️💡📖✨🛡️👨‍👦⚖️🕯️🌙🚫💎🌍🎓⭐]/g,'');
+  var u=new SpeechSynthesisUtterance(txt);
+  u.lang='ar-SA'; u.rate=.92;
+  var vs=speechSynthesis.getVoices().filter(function(v){return v.lang&&v.lang.indexOf('ar')===0;});
+  if(vs.length) u.voice=vs[0];
+  u.onend=u.onerror=function(){ uttering=false; var b=document.getElementById('rb'); if(b){b.classList.remove('playing');b.textContent='🔊 اقرأ لي';} };
+  speechSynthesis.cancel(); speechSynthesis.speak(u); uttering=true;
+  var b=document.getElementById('rb'); if(b){b.classList.add('playing');b.textContent='⏹️ إيقاف';}
+}
+function stopRead(){ try{speechSynthesis.cancel();}catch(e){} uttering=false; }
+
+function celebrate(){
+  var em=['📖','🌟','✨','🎉','💚'];
+  for(var i=0;i<18;i++){
+    var s=document.createElement('span');
+    s.className='confetti'; s.textContent=em[i%em.length];
+    s.style.left=(Math.random()*100)+'vw';
+    s.style.animationDelay=(Math.random()*0.5)+'s';
+    document.body.appendChild(s);
+    setTimeout(function(el){return function(){el.remove()}}(s),3200);
+  }
+}
+renderMap();
+</script>
+</body>
+</html>

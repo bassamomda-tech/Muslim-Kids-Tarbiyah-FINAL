@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>رحلة أُحبُّ الصلاة 🕌</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&display=swap">
+<style>
+:root{
+  --sky:#FDF3DF;--sun:#F5B92E;--teal:#1B8A6B;--teal-dk:#0F6B52;
+  --orange:#E08A3C;--purple:#8E5EA8;--navy:#274060;--ink:#3A3125;
+  --card:#FFFDF6;--line:#EAD9B0;
+}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Tajawal',sans-serif;background:var(--sky);color:var(--ink);line-height:1.9;direction:rtl;overflow-x:hidden}
+a{color:var(--teal-dk)}a:hover{color:var(--orange)}
+button{font-family:'Tajawal',sans-serif;cursor:pointer}
+
+header.hero{text-align:center;padding:2.2rem 1rem 1rem;position:relative}
+.hero h1{font-size:clamp(1.8rem,5vw,2.8rem);font-weight:900;color:var(--teal-dk)}
+.hero p{font-weight:700;color:#7A6B4F;max-width:34rem;margin:.4rem auto 0}
+.hero .back{position:absolute;top:1rem;right:1rem;font-size:.85rem;font-weight:800;background:#fff;border:2px solid var(--line);border-radius:2rem;padding:.4rem 1rem;text-decoration:none}
+.starbar{display:inline-flex;align-items:center;gap:.4rem;background:#fff;border:2px solid var(--sun);border-radius:2rem;padding:.35rem 1.1rem;margin-top:.9rem;font-weight:900;color:#B07E10;font-size:1.05rem}
+
+/* journey map */
+.map{max-width:40rem;margin:1.6rem auto 3rem;padding:0 1.2rem;position:relative}
+.map::before{content:'';position:absolute;top:0;bottom:0;right:50%;width:6px;background:repeating-linear-gradient(180deg,var(--sun) 0 14px,transparent 14px 26px);border-radius:3px;transform:translateX(50%)}
+.station{position:relative;width:calc(50% - 2.2rem);margin-bottom:1.6rem}
+.station:nth-child(odd){margin-left:auto;margin-right:0}
+.station:nth-child(even){margin-right:calc(50% + 2.2rem)}
+.st-card{display:block;width:100%;text-align:right;background:var(--card);border:3px solid var(--line);border-radius:1.3rem;padding:1rem 1.1rem;box-shadow:0 6px 0 rgba(160,120,16,.18);transition:.15s;position:relative}
+.st-card:hover{transform:translateY(-3px)}
+.st-card .ic{font-size:2rem;display:block}
+.st-card b{font-size:1.05rem;font-weight:900;color:var(--navy);display:block;margin-top:.2rem}
+.st-card small{font-weight:700;color:#8A7A5C;font-size:.78rem}
+.st-card .badge{position:absolute;top:-.7rem;left:-.7rem;background:var(--teal);color:#fff;border-radius:50%;width:2rem;height:2rem;display:none;align-items:center;justify-content:center;font-size:1rem;border:2px solid #fff}
+.station.done .st-card{border-color:var(--teal)}
+.station.done .st-card .badge{display:flex}
+.station .dot{position:absolute;top:1.4rem;width:1.4rem;height:1.4rem;background:#fff;border:4px solid var(--sun);border-radius:50%;z-index:2}
+.station:nth-child(odd) .dot{left:-2.95rem}
+.station:nth-child(even) .dot{right:-2.95rem}
+.station.done .dot{background:var(--teal);border-color:var(--teal)}
+.station.story .st-card{border-color:#F0C98C}.station.story.done .st-card{border-color:var(--orange)}
+.station.activity .st-card{border-color:#D8C3E6}.station.activity.done .st-card{border-color:var(--purple)}
+.station.finish .st-card{background:linear-gradient(135deg,#FFF6DF,#FFEBB8);border-color:var(--sun)}
+
+/* overlay */
+.overlay{position:fixed;inset:0;background:rgba(40,30,10,.55);display:none;align-items:flex-start;justify-content:center;padding:2rem 1rem;z-index:50;overflow-y:auto}
+.overlay.open{display:flex}
+.sheet{background:var(--card);border-radius:1.5rem;max-width:38rem;width:100%;padding:1.6rem clamp(1.1rem,4vw,2.2rem);position:relative;border:4px solid var(--sun);margin-bottom:2rem}
+.sheet .close{position:absolute;top:.8rem;left:.8rem;background:#fff;border:2px solid var(--line);border-radius:50%;width:2.3rem;height:2.3rem;font-size:1.1rem;font-weight:900}
+.sheet .s-ic{font-size:2.6rem;text-align:center;display:block}
+.sheet h2{font-size:1.45rem;font-weight:900;color:var(--teal-dk);text-align:center;margin:.2rem 0 .8rem}
+.sheet .story-txt{font-size:1.08rem;font-weight:500;line-height:2.15}
+.sheet .story-txt p{margin:.6rem 0}
+.sheet .story-txt .say{color:var(--teal-dk);font-weight:800}
+.readbtn{display:flex;align-items:center;gap:.5rem;margin:0 auto 1rem;background:var(--teal);color:#fff;border:none;border-radius:2rem;padding:.5rem 1.4rem;font-weight:900;font-size:.95rem;box-shadow:0 4px 0 var(--teal-dk)}
+.readbtn.playing{background:var(--orange);box-shadow:0 4px 0 #a8641f}
+.steps{counter-reset:st;list-style:none;margin:.6rem 0}
+.steps li{counter-increment:st;position:relative;padding:.55rem .5rem .55rem 0;padding-right:3rem;font-weight:700;font-size:1.02rem;border-bottom:1px dashed var(--line)}
+.steps li::before{content:counter(st);position:absolute;right:0;top:.65rem;width:2.1rem;height:2.1rem;background:var(--purple);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:900}
+.q{background:#FFF3D6;border:2px dashed var(--sun);border-radius:1rem;padding:.8rem 1rem;margin:1rem 0;font-weight:800;color:#7A5C10}
+.donebtn{display:block;margin:1.3rem auto 0;background:var(--sun);color:#5C420A;border:none;border-radius:2rem;padding:.7rem 2.2rem;font-weight:900;font-size:1.1rem;box-shadow:0 5px 0 #C99417}
+.donebtn:disabled{opacity:.55;box-shadow:none}
+.donebtn.finished{background:var(--teal);color:#fff;box-shadow:0 5px 0 var(--teal-dk)}
+
+/* certificate */
+.cert{border:6px double var(--sun);border-radius:1.2rem;background:#FFFDF4;text-align:center;padding:1.6rem 1rem;margin:.6rem 0}
+.cert h3{font-size:1.5rem;font-weight:900;color:var(--teal-dk)}
+.cert .nm{font-size:1.3rem;font-weight:900;color:var(--orange);border-bottom:2px dashed var(--line);display:inline-block;min-width:12rem;margin:.5rem 0;padding:0 .5rem}
+.cert p{font-weight:700}
+.cert input{font-family:'Tajawal';font-size:1.1rem;font-weight:800;text-align:center;border:2px solid var(--line);border-radius:.8rem;padding:.4rem .8rem;width:min(16rem,90%);margin:.5rem 0;background:#fff}
+.confetti{position:fixed;top:-2rem;font-size:1.5rem;z-index:60;animation:fall 2.6s linear forwards;pointer-events:none}
+@keyframes fall{to{transform:translateY(110vh) rotate(540deg)}}
+
+footer{text-align:center;color:#8A7A5C;font-weight:700;font-size:.85rem;padding:1.5rem 1rem 2.2rem}
+@media(max-width:560px){
+  .map::before{right:1.1rem;transform:none}
+  .station,.station:nth-child(even){width:calc(100% - 3.4rem);margin-right:3.4rem}
+  .station .dot,.station:nth-child(odd) .dot,.station:nth-child(even) .dot{right:-2.85rem;left:auto}
+}
+</style>
+</head>
+<body data-screen-label="رحلة أحب الصلاة">
+
+<header class="hero">
+  <a class="back" href="corners/little-district/pages/little-district.html">↩️ الحي الصغير</a>
+  <h1>🕌 رحلةُ أُحبُّ الصلاة</h1>
+  <p>يا بطل! امشِ في الطريق، افتح كلَّ محطة: اسمع قصة، والعب نشاطًا… وفي النهاية شهادةُ «صديق الصلاة» 🏅</p>
+  <div class="starbar">⭐ <span id="stars">0</span> من <span id="total"></span> محطة</div>
+  <div style="margin-top:.9rem;display:flex;gap:.6rem;justify-content:center;flex-wrap:wrap">
+    <a href="تطبيقات عملية - كيف أجعل ابني يصلي.html" style="display:inline-flex;align-items:center;gap:.5rem;background:#274060;color:#F5CC5A;border-radius:2rem;padding:.5rem 1.3rem;font-weight:900;font-size:.88rem;text-decoration:none">👨‍👩‍👧 جزء الأهل: الخطة العملية لهذا الهدف ←</a>
+    <a href="رحلة أحب الله.html" style="display:inline-flex;align-items:center;gap:.5rem;background:#C94F6D;color:#fff;border-radius:2rem;padding:.5rem 1.3rem;font-weight:900;font-size:.88rem;text-decoration:none">❤️ رحلة أُحبُّ الله ←</a>
+    <a href="دليل الأهل للرحلات.html" style="display:inline-flex;align-items:center;gap:.5rem;background:#fff;color:#33302A;border:2px solid #EAD9B0;border-radius:2rem;padding:.5rem 1.3rem;font-weight:900;font-size:.88rem;text-decoration:none">👨‍👩‍👧 دليل الأهل ←</a>
+  </div>
+</header>
+
+<div class="map" id="map"></div>
+
+<div class="overlay" id="ov" onclick="if(event.target===this)closeSheet()">
+  <div class="sheet" id="sheet"></div>
+</div>
+
+<footer>صُنع بحُب 💛 — تربية الطفل المسلم · رحلة أحب الصلاة</footer>
+
+<script>
+/* ---------- stations data ---------- */
+var STATIONS=[
+ {type:'story',ic:'🌙',title:'قصة: هدية جدّي الغالية',
+  body:[
+   'كان سالمٌ يزورُ جدَّه كلَّ جمعة. وفي يومٍ، أعطاهُ جدُّهُ صندوقًا جميلًا وقال: <span class="say">«هذه أغلى هديةٍ عندي يا سالم»</span>.',
+   'فتحَ سالمٌ الصندوقَ بسرعة… فوجدَ سجادةً صغيرةً خضراء! قال سالم: «سجادة؟ ظننتُها لعبة!».',
+   'ابتسمَ جدُّهُ وقال: <span class="say">«هذه ليست سجادةً فقط… هذا مكانُ موعدِكَ مع الله! عندما تقفُ عليها وتقول: الله أكبر، يسمعُكَ اللهُ ويحبُّك ويرعاك»</span>.',
+   'وقفَ سالمٌ على السجادةِ بجانبِ جدِّه، وركعَ مثلَه، وسجدَ مثلَه… وشعرَ بشيءٍ جميلٍ في قلبه.',
+   'ومن يومِها، صارَ سالمٌ يفرشُ سجادتَهُ كلَّ يومٍ ويقول: «حانَ موعدي مع الله!» 💚'
+  ],
+  q:'🤔 سؤال البطل: ما هو أجمل شيء في الصلاة برأيك؟ احكِ لأمك أو أبيك!'},
+ {type:'activity',ic:'🧺',title:'نشاط: اصنع ركنَ صلاتك',
+  body:null,
+  steps:[
+   'اختر زاويةً هادئةً في غرفتك مع أبيك أو أمك.',
+   'افرش سجادتَك فيها — وإن لم تكن عندك سجادة، اطلبها هديةً!',
+   'زيِّن الركنَ برسمةٍ من يدك: مسجد، نجوم، أو هلال.',
+   'ضع فيه مصحفَك الصغير.',
+   'كل صلاةٍ… قف في ركنِك الخاص! 🕌'
+  ],
+  q:'📸 اطلب من أهلك أن يصوروا ركنَك الجميل!'},
+ {type:'story',ic:'💧',title:'قصة: قطرات الوضوء تتكلم!',
+  body:[
+   'فتحتْ لينُ الصنبورَ لتتوضأ، فتخيلتْ أنَّ قطراتِ الماءِ تتكلم!',
+   'قالت قطرة: <span class="say">«أنا سعيدة! سأغسلُ يدَ لينَ الصغيرة»</span>. وقالت أخرى: <span class="say">«وأنا سأغسلُ وجهَها المنير!»</span>.',
+   'وهمستْ قطرةٌ ثالثة: <span class="say">«هل تعلمين يا لين؟ قال النبيُّ ﷺ إنَّ الخطايا تخرجُ مع قطراتِ الوضوء… فنحنُ نأخذُها بعيدًا بعيدًا!»</span>.',
+   'ضحكتْ لينُ وقالت: «إذن أنا بعدَ الوضوءِ أنظفُ من الداخلِ والخارج!».',
+   'ومن يومِها، صارتْ لينُ تتوضأ وهي تبتسم… لأنها تعرفُ سرَّ القطرات ✨'
+  ],
+  q:'🤔 سؤال البطلة: كم عضوًا نغسل في الوضوء؟ جرّب تعدّها على أصابعك!'},
+ {type:'activity',ic:'💦',title:'نشاط: تحدّي الوضوء الصامت',
+  steps:[
+   'اطلب من أبيك أو أمك الوقوفَ بجانبِك عند المغسلة.',
+   'توضأ وضوءًا كاملًا بالترتيب… من غيرِ أن يقولوا لك أيَّ خطوة!',
+   'إذا نسيتَ خطوة، يرفعون إصبعًا واحدًا فقط — من غير كلام.',
+   'أنهيتَ الوضوءَ من غيرِ أي إصبع؟ أنت نجمُ الوضوء! 🌟',
+   'كرِّر التحدي ٣ أيام متتالية.'
+  ],
+  q:'💡 لا تنسَ: نوايا الوضوء في القلب، والبسملة قبل البدء!'},
+ {type:'story',ic:'🐦',title:'قصة: العصفور الذي ينتظر الأذان',
+  body:[
+   'على شجرةٍ قربَ المسجد، عاشَ عصفورٌ صغيرٌ اسمُهُ زقزوق.',
+   'كان زقزوقُ يلاحظُ شيئًا عجيبًا: كلَّما صدحَ الأذانُ <span class="say">«اللهُ أكبر… اللهُ أكبر»</span>، توقفَ الناسُ عن كلِّ شيء: البائعُ تركَ دكانَه، والأولادُ تركوا الكرةَ، وجاؤوا جميعًا إلى المسجد!',
+   'سألَ زقزوقُ أمَّه: «لماذا يتركون كلَّ شيءٍ ويأتون؟». قالت أمُّه: <span class="say">«لأنَّ ملكَ الملوكِ يناديهم يا صغيري… ومن أحبَّ أحدًا أسرعَ إليه عندما يناديه»</span>.',
+   'ومنذ ذلك اليوم، صارَ زقزوقُ يقفُ على النافذةِ عند كلِّ أذان، يشاهدُ أحبابَ اللهِ يسرعون إليه… ويزقزقُ فرحًا 🐦'
+  ],
+  q:'🤔 سؤال البطل: ماذا نقول عندما نسمع المؤذن يقول «حي على الصلاة»؟ (الجواب: لا حول ولا قوة إلا بالله)'},
+ {type:'activity',ic:'🏆',title:'نشاط: سباق تكبيرة الإحرام',
+  steps:[
+   'اتفق مع أهلِ البيت: عند الأذان، الكلُّ يستعد!',
+   'من يتوضأ ويقفُ على السجادةِ أولًا قبل الإقامة… يفوز!',
+   'الفائزُ يضع نجمةً على لوحةِ النجومِ عند الثلاجة.',
+   'من جمعَ ٥ نجومٍ في الأسبوع يختارُ نزهةَ العائلة! 🎉'
+  ],
+  q:'⏱️ السرُّ الجميل: النبي ﷺ أخبرنا أن الصفَّ الأولَ له أجرٌ عظيم — والسباقُ إلى الصلاة عادةُ الأبطال.'},
+ {type:'story',ic:'🌟',title:'قصة: أين يذهب السجود؟',
+  body:[
+   'سألَ آدمُ أباه ليلةً: «يا أبي… عندما أسجدُ وأضعُ جبهتي على الأرض، هل يراني الله؟».',
+   'قال أبوه: <span class="say">«يراكَ ويسمعُكَ ويحبُّك! بل أخبركَ سرًّا: أقربُ ما تكونُ إلى اللهِ وأنتَ ساجد»</span>.',
+   'قال آدم: «أقرب؟! لكنَّ اللهَ فوقَ السماء!».',
+   'ابتسمَ أبوهُ: <span class="say">«نعم، ومع ذلك حين تسجدُ يقتربُ منكَ رحمةً وحبًّا. لذلك في السجودِ نهمسُ بأحلى الدعاء: يا ربِّ وفقني، يا ربِّ اجعلني من أهلِ الجنة»</span>.',
+   'تلك الليلة، سجدَ آدمُ سجدةً طويلةً طويلة… وهمسَ بكلِّ أمنياتِه، وقامَ وقلبُهُ يطير من الفرح 🌟'
+  ],
+  q:'🤔 سؤال البطل: ما هي الأمنية التي ستهمس بها في سجودك الليلة؟'},
+ {type:'story',ic:'🏕️',title:'قصة: خيمة النور وأعمدتُها (أركان الصلاة)',
+  body:[
+   'في رحلةِ البرِّ، نصبَ أبو عمرَ خيمةً كبيرة. قال عمر: «لماذا كلُّ هذه الأعمدة، يا أبي؟».',
+   'قال أبوه: <span class="say">«جرّبْ أن تنزعَ عمودًا واحدًا…»</span>. نزعَ عمرُ عمودًا… فسقطتِ الخيمةُ كلُّها!',
+   'ضحكَ أبوهُ وقال: <span class="say">«هكذا الصلاةُ يا عمر! لها أعمدةٌ اسمُها الأركان: الوقوف، وقراءةُ الفاتحة، والركوع، والسجود… إن تركتَ واحدًا منها، سقطتِ الصلاةُ كما سقطتِ الخيمة!»</span>.',
+   'قال عمر: «إذن سأبني صلاتي كلَّ مرةٍ بأعمدتها كاملة… خيمةً من نورٍ لا تسقط أبدًا!» 🏕️'
+  ],
+  q:'🤔 سؤال البطل: اذكر أربعة أركان للصلاة مع أبيك أو أمك — واعرضوا أصابعكم مع كل ركن!'},
+ {type:'story',ic:'🌊',title:'قصة: النهر أمام الباب (أهمية الصلاة)',
+  body:[
+   'سألَ النبيُّ ﷺ أصحابَهُ يومًا: <span class="say">«أرأيتم لو أنَّ نهرًا ببابِ أحدِكم، يغتسلُ منه كلَّ يومٍ خمسَ مرات، هل يبقى من درنِهِ شيء؟»</span>.',
+   'قالوا: «لا يبقى من درنِهِ شيء» — يعني: لن يبقى عليه أيُّ وسخ!',
+   'قال ﷺ: <span class="say">«فذلك مثلُ الصلواتِ الخمس، يمحو اللهُ بهنَّ الخطايا»</span>.',
+   'فتخيّلْ يا بطل: أمامَ بابِ بيتكَ نهرٌ جميلٌ من نور… كلَّ مرةٍ تصلي فيها، تغتسلُ فيه من كلِّ خطأ، وتخرجُ نظيفَ القلب، خفيفًا سعيدًا 🌊',
+   'ولهذا الصلاةُ أولُ ما نُسألُ عنه يومَ القيامة — لأنها أحبُّ الأعمالِ إلى الله!'
+  ],
+  q:'🤔 سؤال البطل: كم مرة نغتسل في «نهر الصلاة» كل يوم؟'},
+ {type:'story',ic:'🌸',title:'قصة: حديقة السنن (الواجبات والسنن الرواتب)',
+  body:[
+   'زرعتْ جوريةُ مع أمّها حديقةً صغيرة. قالتِ الأم: <span class="say">«الشجراتُ الكبارُ هي الفرائضُ الخمس — لا حديقةَ بدونها. أما هذه الزهورُ الملونةُ حولَها… فهي السنن!»</span>.',
+   'قالت جورية: «وما السنن يا أمي؟». قالت: <span class="say">«ركعاتٌ خفيفةٌ حبيبةٌ نصليها مع الفرائض: ركعتان قبل الفجر، وأربعٌ قبل الظهرِ وثنتانِ بعده، وثنتانِ بعد المغرب، وثنتانِ بعد العشاء — اثنتا عشرةَ زهرةً كلَّ يوم!»</span>.',
+   'ثم همست: <span class="say">«والسرُّ الأجمل؟ قال النبيُّ ﷺ: من صلّى في اليومِ والليلةِ اثنتي عشرةَ ركعةً تطوعًا… بنى اللهُ له بيتًا في الجنة!»</span>.',
+   'فتحتْ جوريةُ عينيها واسعتين: «بيتٌ في الجنة كلَّ يوم؟! إذن سأزرعُ زهوري الاثنتي عشرةَ كلَّ يومٍ بإذن الله!» 🌸'
+  ],
+  q:'🤔 سؤال البطلة: ابدأ بزهرة واحدة — أي سنة ستختار أن تبدأ بها هذا الأسبوع؟'},
+ {type:'story',ic:'🗝️',title:'قصة: مفتاح الحيرة (صلاة الاستخارة)',
+  body:[
+   'احتارَ يوسفُ كثيرًا: هل ينضمُّ لفريقِ تحفيظِ القرآن، أم لفريقِ السباحة؟ الوقتُ واحد، ولا يستطيعُ الاثنين!',
+   'رآهُ أبوهُ حزينًا، فقال: <span class="say">«عندي لك مفتاحٌ عجيب للحيرة… علّمناهُ النبيُّ ﷺ: صلِّ ركعتين، ثم قل: اللهم إن كان هذا الأمرُ خيرًا لي فيسّرهُ لي وباركْ لي فيه، وإن كان شرًّا لي فاصرفهُ عني واصرفني عنه، واقدرْ لي الخيرَ حيث كان»</span>.',
+   'قال يوسف: «يعني أطلبُ من اللهِ أن يختارَ لي؟». قال أبوه: <span class="say">«نعم! ومن استخارَ الخالقَ ما خابَ أبدًا — فاللهُ يعلمُ وأنت لا تعلم»</span>.',
+   'صلّى يوسفُ ركعتين، ودعا… ثم شعرَ براحةٍ عجيبة. ومهما اختارَ بعدَها… فهو يعلمُ أن اللهَ سيجعلُ فيه الخير 🗝️'
+  ],
+  q:'🤔 سؤال البطل: متى ستستخدم مفتاح الحيرة أنت؟ احكِ لأهلك عن قرار تحتار فيه!'},
+ {type:'story',ic:'🌅',title:'قصة: كنز الصباح (صلاة الضحى)',
+  body:[
+   'قالتِ الجدةُ لمريمَ ذاتَ صباح: <span class="say">«هل تعلمين أنَّ في جسمكِ ثلاثمئةٍ وستينَ مفصلًا، وعلى كلِّ مفصلٍ صدقةٌ كلَّ يوم؟»</span>.',
+   'فزعتْ مريم: «ثلاثمئة وستون صدقة؟! من أين آتي بكلِّ هذا؟».',
+   'ضحكتِ الجدةُ وقالت: <span class="say">«لا تخافي! أخبرنا النبيُّ ﷺ بسرٍّ جميل: يُجزئُ من ذلك كلِّهِ ركعتانِ يركعُهما من الضحى! ركعتانِ فقط بعد شروقِ الشمس… تساويانِ صدقةً عن كلِّ مفصلٍ في جسمك!»</span>.',
+   'من يومها، صارتْ مريمُ تصلي ركعتينِ في الضحى في العطلة، وتقول: «دفعتُ كنزَ اليومِ كاملًا!» 🌅'
+  ],
+  q:'🤔 سؤال البطلة: متى وقت صلاة الضحى؟ (بعد شروق الشمس وارتفاعها إلى قبيل الظهر) — جرّبها في العطلة مع أهلك!'},
+ {type:'story',ic:'📿',title:'قصة: الكنز بعد السلام (أذكار بعد الصلاة)',
+  body:[
+   'لاحظَ حمزةُ أنَّ جدَّهُ بعد كلِّ صلاةٍ يجلسُ هادئًا، ويحرّكُ أصابعَه، وشفتاهُ تهمسان… فسأله: «ماذا تفعلُ يا جدي؟».',
+   'قال جدُّه: <span class="say">«أجمعُ الكنزَ يا حمزة! بعد السلامِ أقول: أستغفرُ الله ثلاثًا، ثم: سبحان الله ثلاثًا وثلاثين، والحمدُ لله ثلاثًا وثلاثين، واللهُ أكبر ثلاثًا وثلاثين…»</span>.',
+   '<span class="say">«ثم أُتمُّ المئةَ بقول: لا إله إلا اللهُ وحدَهُ لا شريكَ له، له الملكُ وله الحمد، وهو على كلِّ شيءٍ قدير — وأقرأُ آيةَ الكرسي، فمن قرأها بعد كلِّ صلاةٍ لم يمنعهُ من دخولِ الجنةِ إلا أن يموت!»</span>.',
+   'قال حمزة: «كلُّ هذا في دقائق؟ إذن أنا أيضًا سأجلسُ أجمعُ الكنزَ بعد كلِّ صلاة!» 📿'
+  ],
+  q:'🤔 سؤال البطل: عدّ على أصابعك: سبحان الله ٣٣ + الحمد لله ٣٣ + الله أكبر ٣٣ + واحدة… كم المجموع؟ (١٠٠!)'},
+ {type:'story',ic:'🗺️',title:'قصة: خريطة الكلمات الجميلة (ماذا نقول في الصلاة؟)',
+  body:[
+   'قالت أمُّ ريان: <span class="say">«الصلاةُ رحلةٌ يا ريان، ولكلِّ محطةٍ فيها كلمةٌ جميلة… هل تريدُ خريطةَ الرحلة؟»</span>. قال ريان: «نعم نعم!».',
+   'قالت: <span class="say">«نبدأ واقفين ونقول: اللهُ أكبر — يعني: اللهُ أعظمُ من كلِّ شيء! ثم نقول: سبحانكَ اللهمَّ وبحمدِك، وتباركَ اسمُك، وتعالى جدُّك، ولا إلهَ غيرُك. ثم نقرأُ الفاتحة»</span>.',
+   '<span class="say">«ثم ننحني في الركوعِ ونقول ثلاثًا: سبحانَ ربيَ العظيم. ونقفُ ونقول: سمعَ اللهُ لمن حمِدَه، ربَّنا ولكَ الحمد»</span>.',
+   '<span class="say">«ثم أجملُ محطة: السجود! نقولُ ثلاثًا: سبحانَ ربيَ الأعلى. وبين السجدتين: ربِّ اغفرْ لي»</span>.',
+   '<span class="say">«وفي الجلوسِ الأخيرِ نقرأُ التحيات، ونصلي على النبيِّ ﷺ، ثم نلتفتُ يمينًا ويسارًا: السلامُ عليكم ورحمةُ الله»</span>.',
+   'قال ريان: «كأنها أغنيةٌ جميلةٌ أحفظُها!». قالت أمُّه: «بل أجملُ… إنها كلماتٌ تسافرُ إلى السماء» 🗺️'
+  ],
+  q:'🤔 تحدّي البطل: صلِّ بجانب أبيك أو أمك وقل كلمة كل محطة بصوت مسموع — هل أكملت الخريطة كلها؟'},
+ {type:'story',ic:'💬',title:'قصة: اللهُ يردُّ عليك! (الصلاة صلةٌ بالله)',
+  body:[
+   'سألتْ سارةُ أباها: «عندما أتكلمُ في الصلاة… هل يسمعُني اللهُ حقًّا؟».',
+   'قال أبوها: <span class="say">«ليس يسمعُكِ فقط… بل يردُّ عليكِ! أخبرنا النبيُّ ﷺ أنَّ اللهَ قال: قسمتُ الصلاةَ بيني وبين عبدي نصفين»</span>.',
+   '<span class="say">«عندما تقولين: الحمدُ لله ربِّ العالمين — يقولُ الله: حمِدَني عبدي! وعندما تقولين: الرحمنِ الرحيم — يقول: أثنى عليَّ عبدي! وعندما تقولين: إياكَ نعبدُ وإياكَ نستعين — يقول: هذا بيني وبين عبدي، ولعبدي ما سأل»</span>.',
+   'فتحتْ سارةُ فمَها من الدهشة: «يعني أنا واللهُ نتحدثُ معًا في كلِّ صلاة؟!».',
+   'قال أبوها: <span class="say">«نعم، لذلك اسمُها صِلة — خيطٌ من نورٍ بينكِ وبين ربِّك. ولذلك ندعو في سجودِنا بكلِّ ما نحب: يا رب وفقني، يا رب اشفِ جدتي، يا رب أدخلني الجنة — فأنتِ تكلمين من يملكُ كلَّ شيء ويحبُّك!»</span>.',
+   'في صلاةِ المغرب، قرأتْ سارةُ الفاتحةَ ببطءٍ شديد… وهي تتخيلُ الردَّ بعد كلِّ آية، وشعرتْ أنَّ قلبَها يلمع 💬✨'
+  ],
+  q:'🤔 سؤال البطلة: لماذا سُميت الصلاة «صِلة»؟ وما الدعاء الذي ستقوله في سجودك اليوم؟'},
+ {type:'activity',ic:'🧮',title:'نشاط: اصنع عدّادَ أذكارك',
+  steps:[
+   'أحضر خيطًا و٣٣ خرزةً أو معكرونةً ملونة مع أهلك.',
+   'انظمْها في الخيط واربط الطرفين — صار عندك عدّادُ أذكار!',
+   'بعد كل صلاة: دورةٌ للتسبيح، ودورةٌ للحمد، ودورةٌ للتكبير.',
+   'لا تنسَ آيةَ الكرسي في النهاية!',
+   'علّقْ عدّادك في ركنِ صلاتك الذي صنعته في المحطة الثانية 🌟'
+  ],
+  q:'💡 تذكّر: النبي ﷺ كان يعقد التسبيح على يده — فأصابعك أيضًا عدّاد دائم معك!'},
+ {type:'finish',ic:'🏅',title:'المحطة الأخيرة: شهادة صديق الصلاة'}
+];
+
+/* ---------- state ---------- */
+var K='salah_journey_v1';
+var st={};
+try{ st=JSON.parse(localStorage.getItem(K)||'{}')||{}; }catch(e){}
+st.done=st.done||{};
+
+function save(){ try{ localStorage.setItem(K,JSON.stringify(st)); }catch(e){} }
+function doneCount(){ return Object.keys(st.done).length; }
+
+/* ---------- map render ---------- */
+function renderMap(){
+  var m=document.getElementById('map'); m.innerHTML='';
+  STATIONS.forEach(function(s,i){
+    var d=document.createElement('div');
+    d.className='station '+s.type+(st.done[i]?' done':'');
+    var kind=s.type==='story'?'قصة':(s.type==='activity'?'نشاط':'الجائزة الكبرى');
+    d.innerHTML='<span class="dot"></span>'+
+      '<button class="st-card" onclick="openStation('+i+')">'+
+      '<span class="badge">✓</span>'+
+      '<span class="ic">'+s.ic+'</span>'+
+      '<b>'+s.title.replace(/^(قصة|نشاط|المحطة الأخيرة): /,'')+'</b>'+
+      '<small>المحطة '+(i+1)+' · '+kind+'</small></button>';
+    m.appendChild(d);
+  });
+  document.getElementById('stars').textContent=doneCount();
+  document.getElementById('total').textContent=STATIONS.length;
+}
+
+/* ---------- sheet ---------- */
+var cur=-1;
+function openStation(i){
+  cur=i; var s=STATIONS[i];
+  var h='<button class="close" onclick="closeSheet()">✕</button>'+
+        '<span class="s-ic">'+s.ic+'</span><h2>'+s.title+'</h2>';
+  if(s.type==='finish'){
+    var all = doneCount() >= STATIONS.length-1 || st.done[i];
+    if(all){
+      h+='<div class="cert"><h3>🏅 شهادة صديق الصلاة</h3>'+
+         '<p>تشهدُ رحلةُ «أحبُّ الصلاة» أنَّ البطل/البطلة</p>'+
+         (st.name?'<div class="nm">'+st.name+'</div>':'<input id="nm" placeholder="اكتب اسمك هنا" value="">')+
+         '<p>أتمَّ جميعَ محطاتِ الرحلة: سمعَ القصص، ولعبَ الأنشطة، وصارَ من أصدقاءِ الصلاة!</p>'+
+         '<p style="font-size:1.3rem">⭐⭐⭐⭐⭐</p>'+
+         '<p style="font-size:.85rem;color:#8A7A5C">قال ﷺ: «وجُعلت قرةُ عيني في الصلاة»</p></div>'+
+         (st.name
+           ?'<button class="donebtn finished" onclick="window.print()">🖨️ اطبع شهادتي</button>'
+           :'<button class="donebtn" onclick="signCert()">✍️ وقِّع الشهادة</button>');
+      if(!st.done[i] && st.name){ /* already signed */ }
+    }else{
+      h+='<p style="text-align:center;font-weight:800;font-size:1.05rem">🔒 أكمِل كلَّ المحطاتِ أولًا يا بطل…<br>أنجزتَ حتى الآن <b style="color:var(--teal-dk)">'+doneCount()+'</b> من '+(STATIONS.length-1)+'!</p>'+
+         '<button class="donebtn" onclick="closeSheet()">أكمل الرحلة 💪</button>';
+    }
+  }else{
+    h+='<button class="readbtn" id="rb" onclick="readAloud()">🔊 اقرأ لي</button>';
+    if(s.type==='story'){
+      h+='<div class="story-txt">'+s.body.map(function(p){return '<p>'+p+'</p>';}).join('')+'</div>';
+    }else{
+      h+='<ol class="steps">'+s.steps.map(function(p){return '<li>'+p+'</li>';}).join('')+'</ol>';
+    }
+    h+='<div class="q">'+s.q+'</div>';
+    h+= st.done[i]
+      ? '<button class="donebtn finished" onclick="closeSheet()">✓ أنجزتُها! (اضغط للرجوع)</button>'
+      : '<button class="donebtn" onclick="markDone()">'+(s.type==='story'?'قرأتُها كاملة! ⭐':'أنجزتُ النشاط! ⭐')+'</button>';
+  }
+  document.getElementById('sheet').innerHTML=h;
+  document.getElementById('ov').classList.add('open');
+}
+function signCert(){
+  var v=(document.getElementById('nm')||{}).value||'';
+  v=v.trim(); if(!v){ alert('اكتب اسمك أولًا يا بطل! ✍️'); return; }
+  st.name=v; st.done[STATIONS.length-1]=true; save(); celebrate(); openStation(STATIONS.length-1); renderMap();
+}
+function markDone(){
+  st.done[cur]=true; save(); stopRead(); celebrate();
+  renderMap(); closeSheet();
+}
+function closeSheet(){ stopRead(); document.getElementById('ov').classList.remove('open'); }
+
+/* ---------- read aloud ---------- */
+var uttering=false;
+function readAloud(){
+  if(uttering){ stopRead(); return; }
+  var s=STATIONS[cur]; if(!s) return;
+  var txt=(s.type==='story'?s.body.join(' '):s.steps.join('. '))+'. '+s.q;
+  txt=txt.replace(/<[^>]+>/g,'').replace(/[🤔📸💡⏱️🌟💚✨🐦🎉🕌]/g,'');
+  var u=new SpeechSynthesisUtterance(txt);
+  u.lang='ar-SA'; u.rate=.92;
+  var vs=speechSynthesis.getVoices().filter(function(v){return v.lang&&v.lang.indexOf('ar')===0;});
+  if(vs.length) u.voice=vs[0];
+  u.onend=u.onerror=function(){ uttering=false; var b=document.getElementById('rb'); if(b){b.classList.remove('playing');b.textContent='🔊 اقرأ لي';} };
+  speechSynthesis.cancel(); speechSynthesis.speak(u); uttering=true;
+  var b=document.getElementById('rb'); if(b){b.classList.add('playing');b.textContent='⏹️ إيقاف';}
+}
+function stopRead(){ try{speechSynthesis.cancel();}catch(e){} uttering=false; }
+
+/* ---------- confetti ---------- */
+function celebrate(){
+  var em=['⭐','🌟','✨','🎉','💛'];
+  for(var i=0;i<18;i++){
+    var s=document.createElement('span');
+    s.className='confetti'; s.textContent=em[i%em.length];
+    s.style.left=(Math.random()*100)+'vw';
+    s.style.animationDelay=(Math.random()*0.5)+'s';
+    document.body.appendChild(s);
+    setTimeout(function(el){return function(){el.remove()}}(s),3200);
+  }
+}
+
+renderMap();
+</script>
+</body>
+</html>

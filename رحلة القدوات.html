@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>رحلة القدوات ⭐</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&display=swap">
+<style>
+:root{
+  --sky:#FBF4E8;--sun:#F5B92E;--rose:#B0762A;--rose-dk:#84561B;
+  --teal:#1B8A6B;--teal-dk:#0F6B52;--purple:#8E5EA8;--navy:#274060;--ink:#3E3524;
+  --card:#FFFDF5;--line:#EBD9B4;
+}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Tajawal',sans-serif;background:var(--sky);color:var(--ink);line-height:1.9;direction:rtl;overflow-x:hidden}
+a{color:var(--rose-dk)}a:hover{color:var(--teal-dk)}
+button{font-family:'Tajawal',sans-serif;cursor:pointer}
+
+header.hero{text-align:center;padding:2.2rem 1rem 1rem;position:relative}
+.hero h1{font-size:clamp(1.8rem,5vw,2.8rem);font-weight:900;color:var(--rose-dk)}
+.hero p{font-weight:700;color:#8A7355;max-width:34rem;margin:.4rem auto 0}
+.hero .back{position:absolute;top:1rem;right:1rem;font-size:.85rem;font-weight:800;background:#fff;border:2px solid var(--line);border-radius:2rem;padding:.4rem 1rem;text-decoration:none}
+.starbar{display:inline-flex;align-items:center;gap:.4rem;background:#fff;border:2px solid var(--rose);border-radius:2rem;padding:.35rem 1.1rem;margin-top:.9rem;font-weight:900;color:var(--rose-dk);font-size:1.05rem}
+
+.map{max-width:40rem;margin:1.6rem auto 3rem;padding:0 1.2rem;position:relative}
+.map::before{content:'';position:absolute;top:0;bottom:0;right:50%;width:6px;background:repeating-linear-gradient(180deg,var(--rose) 0 14px,transparent 14px 26px);border-radius:3px;transform:translateX(50%)}
+.station{position:relative;width:calc(50% - 2.2rem);margin-bottom:1.6rem}
+.station:nth-child(odd){margin-left:auto;margin-right:0}
+.station:nth-child(even){margin-right:calc(50% + 2.2rem)}
+.st-card{display:block;width:100%;text-align:right;background:var(--card);border:3px solid var(--line);border-radius:1.3rem;padding:1rem 1.1rem;box-shadow:0 6px 0 rgba(132,86,27,.15);transition:.15s;position:relative}
+.st-card:hover{transform:translateY(-3px)}
+.st-card .ic{font-size:2rem;display:block}
+.st-card b{font-size:1.05rem;font-weight:900;color:var(--navy);display:block;margin-top:.2rem}
+.st-card small{font-weight:700;color:#9A8563;font-size:.78rem}
+.st-card .tag{display:block;width:max-content;background:#F7EBD2;color:#84561B;border-radius:2rem;padding:0 .7rem;font-size:.78rem;font-weight:900;margin-top:.3rem}
+.st-card small{display:block;margin-top:.25rem}
+.st-card .badge{position:absolute;top:-.7rem;left:-.7rem;background:var(--teal);color:#fff;border-radius:50%;width:2rem;height:2rem;display:none;align-items:center;justify-content:center;font-size:1rem;border:2px solid #fff}
+.station.done .st-card{border-color:var(--teal)}
+.station.done .st-card .badge{display:flex}
+.station .dot{position:absolute;top:1.4rem;width:1.4rem;height:1.4rem;background:#fff;border:4px solid var(--rose);border-radius:50%;z-index:2}
+.station:nth-child(odd) .dot{left:-2.95rem}
+.station:nth-child(even) .dot{right:-2.95rem}
+.station.done .dot{background:var(--teal);border-color:var(--teal)}
+.station.finish .st-card{background:linear-gradient(135deg,#FFF6DF,#FBE7BC);border-color:var(--sun)}
+
+.overlay{position:fixed;inset:0;background:rgba(60,45,15,.55);display:none;align-items:flex-start;justify-content:center;padding:2rem 1rem;z-index:50;overflow-y:auto}
+.overlay.open{display:flex}
+.sheet{background:var(--card);border-radius:1.5rem;max-width:38rem;width:100%;padding:1.6rem clamp(1.1rem,4vw,2.2rem);position:relative;border:4px solid var(--sun);margin-bottom:2rem}
+.sheet .close{position:absolute;top:.8rem;left:.8rem;background:#fff;border:2px solid var(--line);border-radius:50%;width:2.3rem;height:2.3rem;font-size:1.1rem;font-weight:900}
+.sheet .s-ic{font-size:2.6rem;text-align:center;display:block}
+.sheet h2{font-size:1.45rem;font-weight:900;color:var(--rose-dk);text-align:center;margin:.2rem 0 .8rem}
+.sheet .story-txt{font-size:1.08rem;font-weight:500;line-height:2.15}
+.sheet .story-txt p{margin:.6rem 0}
+.sheet .story-txt .say{color:var(--rose-dk);font-weight:800}
+.readbtn{display:flex;align-items:center;gap:.5rem;margin:0 auto 1rem;background:var(--rose);color:#fff;border:none;border-radius:2rem;padding:.5rem 1.4rem;font-weight:900;font-size:.95rem;box-shadow:0 4px 0 var(--rose-dk)}
+.readbtn.playing{background:var(--teal);box-shadow:0 4px 0 var(--teal-dk)}
+.q{background:#FCF1DB;border:2px dashed var(--sun);border-radius:1rem;padding:.8rem 1rem;margin:1rem 0;font-weight:800;color:#84561B}
+.donebtn{display:block;margin:1.3rem auto 0;background:var(--rose);color:#fff;border:none;border-radius:2rem;padding:.7rem 2.2rem;font-weight:900;font-size:1.1rem;box-shadow:0 5px 0 var(--rose-dk)}
+.donebtn.finished{background:var(--teal);box-shadow:0 5px 0 var(--teal-dk)}
+
+.cert{border:6px double var(--sun);border-radius:1.2rem;background:#FFFDF4;text-align:center;padding:1.6rem 1rem;margin:.6rem 0}
+.cert h3{font-size:1.5rem;font-weight:900;color:var(--rose-dk)}
+.cert .nm{font-size:1.3rem;font-weight:900;color:var(--teal-dk);border-bottom:2px dashed var(--line);display:inline-block;min-width:12rem;margin:.5rem 0;padding:0 .5rem}
+.cert p{font-weight:700}
+.cert input{font-family:'Tajawal';font-size:1.1rem;font-weight:800;text-align:center;border:2px solid var(--line);border-radius:.8rem;padding:.4rem .8rem;width:min(16rem,90%);margin:.5rem 0;background:#fff}
+.confetti{position:fixed;top:-2rem;font-size:1.5rem;z-index:60;animation:fall 2.6s linear forwards;pointer-events:none}
+@keyframes fall{to{transform:translateY(110vh) rotate(540deg)}}
+
+footer{text-align:center;color:#9A8563;font-weight:700;font-size:.85rem;padding:1.5rem 1rem 2.2rem}
+@media(max-width:560px){
+  .map::before{right:1.1rem;transform:none}
+  .station,.station:nth-child(even),.station:nth-child(odd){width:calc(100% - 3.4rem);margin-right:3.4rem;margin-left:0}
+  .station .dot,.station:nth-child(odd) .dot,.station:nth-child(even) .dot{right:-2.85rem;left:auto}
+}
+</style>
+</head>
+<body data-screen-label="رحلة القدوات">
+
+<header class="hero">
+  <a class="back" href="corners/little-district/pages/little-district.html">↩️ الحي الصغير</a>
+  <h1>⭐ رحلةُ القدوات</h1>
+  <p>يا بطل! هؤلاء أعظمُ جيلٍ في التاريخ — أصحابُ النبيِّ ﷺ. كلُّ صحابيٍّ نجمٌ في خُلُقٍ عظيم… اختر نجمَك واقتدِ به! 🌟</p>
+  <div class="starbar">⭐ <span id="stars">0</span> من <span id="total"></span> محطة</div>
+  <div style="margin-top:.9rem;display:flex;gap:.6rem;justify-content:center;flex-wrap:wrap">
+    <a href="رحلة أحب الرسول.html" style="display:inline-flex;align-items:center;gap:.5rem;background:#2E7D5B;color:#fff;border-radius:2rem;padding:.5rem 1.3rem;font-weight:900;font-size:.88rem;text-decoration:none">💚 رحلة أُحبُّ رسول الله ←</a>
+    <a href="رحلة الأخلاق والآداب.html" style="display:inline-flex;align-items:center;gap:.5rem;background:#6C4A9E;color:#fff;border-radius:2rem;padding:.5rem 1.3rem;font-weight:900;font-size:.88rem;text-decoration:none">🌟 رحلة الأخلاق والآداب ←</a>
+    <a href="دليل الأهل للرحلات.html" style="display:inline-flex;align-items:center;gap:.5rem;background:#fff;color:#33302A;border:2px solid #EBD9B4;border-radius:2rem;padding:.5rem 1.3rem;font-weight:900;font-size:.88rem;text-decoration:none">👨‍👩‍👧 دليل الأهل ←</a>
+  </div>
+</header>
+
+<div class="map" id="map"></div>
+
+<div class="overlay" id="ov" onclick="if(event.target===this)closeSheet()">
+  <div class="sheet" id="sheet"></div>
+</div>
+
+<footer>صُنع بحُب ⭐ — تربية الطفل المسلم · رحلة القدوات</footer>
+
+<script>
+var STATIONS=[
+ {ic:'🕊️',name:'أبو بكر الصديق',trait:'الصدق واليقين',tag:'من العشرة المبشرين ١',
+  body:[
+   'صاحبُ النبيِّ ﷺ في الغار، وأولُ الرجالِ إسلامًا، وأحبُّ الرجالِ إليه.',
+   'لماذا سُمّيَ «الصدّيق»؟ صبيحةَ الإسراءِ والمعراج، قال المشركون ساخرين: «صاحبُكَ يزعمُ أنه ذهبَ إلى بيتِ المقدسِ وعادَ في ليلة!». فقال بلا تردد: <span class="say">«إن كان قالَه… فقد صدق!»</span> — يقينٌ لا يهتز!',
+   'وفي الهجرة، وقفَ المشركونَ على بابِ الغارِ حتى قال: يا رسولَ الله، لو نظرَ أحدُهم تحتَ قدميهِ لأبصرَنا! فقال النبيُّ ﷺ: <span class="say">«يا أبا بكر، ما ظنُّكَ باثنينِ اللهُ ثالثُهما؟»</span>.',
+   'وأنفقَ مالَهُ كلَّهُ في سبيلِ الله. سأله النبيُّ ﷺ: «ما أبقيتَ لأهلِك؟» قال: <span class="say">«أبقيتُ لهمُ اللهَ ورسولَه!»</span>. قال ﷺ: «ما نفعني مالٌ قط ما نفعني مالُ أبي بكر».',
+   'وبشَّرَهُ النبيُّ ﷺ أنه يُدعى من أبوابِ الجنةِ كلِّها! 🕊️'
+  ],
+  q:'🤔 درس البطل: الصدّيق صدَّق ولم يتردد — إذا سمعت أمرًا صحيحًا من الله ورسوله فقل: صدق الله ورسوله، وافعله!'},
+ {ic:'⚖️',name:'عمر بن الخطاب',trait:'العدل والقوة في الحق',tag:'من العشرة المبشرين ٢',
+  body:[
+   '«الفاروق» — لأنَّ اللهَ فرَّقَ به بين الحقِّ والباطل. لما أسلمَ عمرُ، خرجَ المسلمونَ يصلونَ عند الكعبةِ علنًا لأولِ مرة!',
+   'قال النبيُّ ﷺ عنه: <span class="say">«إنَّ الشيطانَ ليخافُ منكَ يا عمر! ما سلكتَ فجًّا إلا سلكَ الشيطانُ فجًّا غيرَ فجِّك»</span>.',
+   'ولما صارَ خليفةً كان أعدلَ الناس: يسهرُ يحرسُ القوافل، ويحملُ الدقيقَ على ظهرِهِ للأراملِ والفقراء، ويقول: <span class="say">«لو ماتت شاةٌ ضائعةً على شاطئ الفراتِ لخشيتُ أن يسألني اللهُ عنها!»</span>.',
+   'وفي عامِ الرمادةِ (المجاعة) رفضَ أن يأكلَ إلا ما يأكلُهُ أفقرُ الناس… حتى تغيَّرَ لونُه!',
+   'وقال ﷺ: <span class="say">«لو كان بعدي نبيٌّ لكان عمر»</span> ⚖️'
+  ],
+  q:'🤔 درس البطل: الفاروق كان قويًّا في الحق رحيمًا بالضعيف — كن أنت حكمًا عادلًا في لعبك ومع إخوتك!'},
+ {ic:'🌸',name:'عثمان بن عفان',trait:'الحياء والجود',tag:'من العشرة المبشرين ٣',
+  body:[
+   '«ذو النورين» — تزوجَ ابنتي النبيِّ ﷺ: رقيةَ ثم أمَّ كلثوم. ولم يحدثْ هذا لأحدٍ غيرِه!',
+   'وكان أشدَّ الأمةِ حياءً، حتى قال النبيُّ ﷺ: <span class="say">«ألا أستحيي من رجلٍ تستحيي منه الملائكة؟!»</span>.',
+   'وكان جوادًا كريمًا: لما احتاجَ المسلمونَ ماءً في المدينة، اشترى بئرَ رومةَ بمالِهِ وجعلَها للمسلمينَ جميعًا. وجهَّزَ جيشَ العسرةِ كلَّهُ من مالِه: تسعُمئةِ بعيرٍ ومئةُ فرس!',
+   'فقال النبيُّ ﷺ: <span class="say">«ما ضرَّ عثمانَ ما عملَ بعد اليوم!»</span>.',
+   'وجمعَ الأمةَ على مصحفٍ واحد… المصحفُ الذي بين يديكَ اليومَ يُسمى: المصحفُ العثماني! 🌸'
+  ],
+  q:'🤔 درس البطل: الحياء لا يمنع العطاء — كن حييًّا في كلامك، كريمًا بيدك مثل ذي النورين!'},
+ {ic:'🦁',name:'علي بن أبي طالب',trait:'العلم والقضاء والشجاعة',tag:'من العشرة المبشرين ٤',
+  body:[
+   'أولُ الصبيانِ إسلامًا، وابنُ عمِّ النبيِّ ﷺ وزوجُ ابنتِهِ فاطمة، وأبو الحسنِ والحسين سيدي شبابِ أهلِ الجنة.',
+   'ليلةَ الهجرة، نامَ في فراشِ النبيِّ ﷺ والسيوفُ تنتظرُ على الباب… شجاعةُ فتًى ما خافَ الموت!',
+   'وفي خيبر قال ﷺ: <span class="say">«لأعطينَّ الرايةَ غدًا رجلًا يحبُّ اللهَ ورسولَه، ويحبُّهُ اللهُ ورسولُه»</span>… فأعطاها عليًّا، وفتحَ اللهُ على يديه!',
+   'وكان أقضى الصحابة — أذكاهم في حلِّ الخصومات. قال عمر: <span class="say">«أقضانا علي!»</span> وكان الصحابةُ يسألونَهُ في أصعبِ المسائل.',
+   'وقال ﷺ له: <span class="say">«أنتَ مني بمنزلةِ هارونَ من موسى، إلا أنه لا نبيَّ بعدي»</span> 🦁'
+  ],
+  q:'🤔 درس البطل: علي جمع الشجاعة والعلم — كن شجاعًا في الحق، واطلب العلم لتحكم بالعدل!'},
+ {ic:'🏹',name:'سعد بن أبي وقاص',trait:'البطولة وإجابة الدعوة',tag:'من العشرة المبشرين ٥',
+  body:[
+   'أولُ من رمى بسهمٍ في سبيلِ الله، وخالُ النبيِّ ﷺ، وكان يقول له: <span class="say">«ارمِ سعدُ… فداكَ أبي وأمي!»</span> — ما جمعَ النبيُّ أبويهِ لأحدٍ غيرِه في أُحد!',
+   'ودعا له النبيُّ ﷺ: <span class="say">«اللهم سدِّدْ رميتَه، وأجبْ دعوتَه»</span>… فصارَ مستجابَ الدعوة، يخافُ الناسُ دعوتَه!',
+   'ولما أرادتْ أمُّهُ أن تردَّهُ عن الإسلام، امتنعتْ عن الطعامِ حتى كادتْ تموت… فقال لها بأدبٍ وثبات: <span class="say">«يا أماه، واللهِ لو كانت لكِ مئةُ نفسٍ فخرجتْ نفسًا نفسًا، ما تركتُ ديني!»</span> فأكلتْ. ونزلَ فيه قرآن!',
+   'وقادَ جيشَ القادسيةِ ففتحَ اللهُ به بلادَ فارس 🏹'
+  ],
+  q:'🤔 درس البطل: سعد بر أمه ولم يترك دينه — أطع والديك في كل شيء… إلا إن أمرا بمعصية فبالحسنى اثبت!'},
+ {ic:'🛡️',name:'طلحة والزبير',trait:'الفداء والنصرة',tag:'من العشرة المبشرين ٦ و٧',
+  body:[
+   'نجمانِ توأمان في الفداء! <span class="say">طلحةُ بنُ عبيدِ الله</span>: يومَ أُحدٍ وقى النبيَّ ﷺ بيدِهِ حتى شُلَّتْ أصابعُه، وحملَهُ على ظهرِهِ حين صعدَ الصخرة، وأصابتْهُ بضعٌ وسبعونَ جراحة! قال ﷺ: <span class="say">«من سرَّهُ أن ينظرَ إلى شهيدٍ يمشي على وجهِ الأرض، فلينظرْ إلى طلحة»</span> — وسُمّيَ: طلحة الخير!',
+   'أما <span class="say">الزبيرُ بنُ العوام</span> فهو حواريُّ النبيِّ ﷺ — ناصرُهُ الخاص! قال ﷺ: <span class="say">«إنَّ لكلِّ نبيٍّ حواريًّا، وحواريَّ الزبير!»</span>.',
+   'وهو أولُ من سلَّ سيفًا في سبيلِ الله: سمعَ إشاعةً أنَّ النبيَّ ﷺ أُصيب، فخرجَ شابًّا صغيرًا شاهرًا سيفَهُ في شوارعِ مكة!',
+   'وأمُّهُ صفيةُ عمةُ النبيِّ ﷺ، ربَّتْهُ على الشجاعةِ منذ صغرِه 🛡️'
+  ],
+  q:'🤔 درس البطل: طلحة جعل يده درعًا والزبير جعل شبابه نصرةً — بماذا تنصر أنت دينك اليوم؟ (علمك؟ خلقك؟ دعوتك لأصدقائك؟)'},
+ {ic:'💰',name:'عبد الرحمن بن عوف',trait:'الكرم والإنفاق',tag:'من العشرة المبشرين ٨',
+  body:[
+   'التاجرُ الذي يمشي على الأرضِ وقلبُهُ معلقٌ بالسماء!',
+   'هاجرَ إلى المدينةِ تاركًا مالَهُ كلَّهُ في مكة. فعرضَ عليه أخوهُ الأنصاريُّ نصفَ مالِه، فقال بعزة: <span class="say">«باركَ اللهُ لك في أهلِكَ ومالِك… دلَّني على السوق!»</span> وبدأ من الصفر… حتى صارَ من أغنى الصحابة!',
+   'وذاتَ يومٍ وصلتْ قافلتُهُ: سبعُمئةِ راحلةٍ تحملُ البضائع، فارتجتِ المدينة! فماذا فعل؟ <span class="say">تصدَّقَ بها كلِّها بأحمالِها في سبيلِ الله!</span>',
+   'وجهَّزَ نصفَ جيشِ العسرة، وأوصى لمن بقيَ من أهلِ بدرٍ بأربعِمئةِ دينارٍ لكلِّ واحد…',
+   'كان يقول: <span class="say">«إنا نُخالُ الغنى بالتجارة… ونطلبُ الآخرةَ بالصدقة»</span> 💰'
+  ],
+  q:'🤔 درس البطل: الغنى الحقيقي أن تكسب بيدك وتعطي بقلبك — ادّخر من مصروفك للصدقة كل أسبوع!'},
+ {ic:'🌾',name:'سعيد بن زيد وأبو عبيدة',trait:'الزهد والأمانة',tag:'من العشرة المبشرين ٩ و١٠',
+  body:[
+   '<span class="say">سعيدُ بنُ زيد</span>: من السابقينَ إلى الإسلام، أسلمَ قبل أن يدخلَ النبيُّ ﷺ دارَ الأرقم! وشهدَ المشاهدَ كلَّها، وكان مجابَ الدعوة، ومع ذلك عاشَ بعيدًا عن الأضواءِ لا يطلبُ منصبًا ولا شهرة… نجمٌ يضيءُ في صمت!',
+   'أما <span class="say">أبو عبيدةَ بنُ الجراح</span> فقد لقَّبَهُ النبيُّ ﷺ بنفسِه: <span class="say">«لكلِّ أمةٍ أمين، وأمينُ هذه الأمةِ أبو عبيدة!»</span>.',
+   'ولما طلبَ أهلُ نجرانَ رجلًا أمينًا يعلِّمُهم، قال ﷺ: «لأبعثنَّ معكم رجلًا أمينًا حقَّ أمين» — وأرسلَ أبا عبيدة.',
+   'وقادَ فتحَ الشام، وكان أميرًا متواضعًا: دخلَ عليه عمرُ فلم يجدْ في بيتِهِ إلا سيفَهُ وترسَهُ ورحلَه… فبكى عمرُ وقال: <span class="say">«غيَّرتنا الدنيا كلَّنا غيرَك يا أبا عبيدة!»</span> 🌾'
+  ],
+  q:'🤔 درس البطل: الأمانة أن يثق الناس بك في كل شيء — هل أنت أمين على الأسرار والأشياء والواجبات؟'},
+ {ic:'⚔️',name:'خالد بن الوليد',trait:'الشجاعة والعبقرية',tag:'سيف الله المسلول',
+  body:[
+   'القائدُ الذي لم يُهزمْ في معركةٍ قط… لا قبل الإسلامِ ولا بعدَه!',
+   'لما أسلمَ قال له النبيُّ ﷺ: <span class="say">«الحمدُ لله الذي هداك، قد كنتُ أرى لكَ عقلًا رجوتُ ألا يُسلمَكَ إلا إلى خير»</span>. ولقَّبَهُ: <span class="say">سيفَ اللهِ المسلول!</span>',
+   'في مؤتة، استلمَ الرايةَ بعد استشهادِ القادةِ الثلاثة، وانكسرتْ في يدِهِ تسعةُ أسيافٍ وهو يقاتل، وأنقذَ الجيشَ بخطةٍ عبقرية!',
+   'وفي اليرموك، قادَ المسلمينَ ضدَّ جيشٍ يفوقُهم أضعافًا… فنصرَهمُ الله.',
+   'ومع كلِّ بطولاتِه، لما عزلَهُ عمرُ عن القيادة، قاتلَ جنديًّا عاديًّا بنفسِ الحماس! قيل له: لماذا؟ قال: <span class="say">«إنما أقاتلُ لربِّ عمر!»</span> — إخلاصٌ فوقَ المناصب ⚔️'
+  ],
+  q:'🤔 درس البطل: خالد قاتل لله لا للمنصب — اعمل بإتقان سواء كنت القائد أو الجندي في فريقك!'},
+ {ic:'📖',name:'عبد الله بن مسعود',trait:'الفتى صاحب القرآن',tag:'من شباب الصحابة',
+  body:[
+   'كان راعيَ غنمٍ صغيرًا فقيرًا… فصارَ من أعلمِ الأمةِ بالقرآن!',
+   'أولُ لقاءٍ له بالنبيِّ ﷺ: طلبَ منه النبيُّ لبنًا، فقال: «إني مؤتمَن!» — لن أعطيكم من غنمٍ ليست لي! فأعجبَ النبيَّ أمانتُه.',
+   'وهو أولُ من جهرَ بالقرآنِ في مكةَ بعد النبيِّ ﷺ: وقفَ عند الكعبةِ يقرأُ ﴿الرَّحْمَٰنُ ۝ عَلَّمَ الْقُرْآنَ﴾ والمشركونَ يضربونَه… وما توقف!',
+   'قال ﷺ: <span class="say">«من أحبَّ أن يقرأَ القرآنَ غضًّا كما أُنزل، فليقرأْهُ على قراءةِ ابنِ أمِّ عبد»</span>. وقال: <span class="say">«خذوا القرآنَ من أربعة»</span> وبدأ به!',
+   'وكانت ساقاهُ دقيقتينِ فضحكَ بعضُهم، فقال ﷺ: <span class="say">«والذي نفسي بيدِه، لهما أثقلُ في الميزانِ من جبلِ أُحد!»</span> 📖'
+  ],
+  q:'🤔 درس البطل: فتى صغير فقير صار معلم الأمة بالقرآن — احفظ وردك اليومي مهما كان صغيرًا!'},
+ {ic:'🍯',name:'أنس بن مالك',trait:'خدمة النبي ﷺ',tag:'من شباب الصحابة',
+  body:[
+   'وهو ابنُ عشرِ سنين، جاءتْ به أمُّهُ أمُّ سُليمٍ للنبيِّ ﷺ وقالت: «هذا أنسٌ يخدمُك!» — فكانت أعظمَ هديةٍ في حياتِه.',
+   'خدمَ النبيَّ ﷺ عشرَ سنينَ كاملة، قال: <span class="say">«واللهِ ما قال لي: أفٍّ قط، وما قال لشيءٍ صنعتُه: لمَ صنعتَه؟»</span>.',
+   'ودعا له النبيُّ ﷺ: <span class="say">«اللهم أكثرْ مالَهُ وولدَه، وباركْ له فيما أعطيتَه»</span>… فعاشَ أكثرَ من مئةِ سنة، ورأى من أولادِهِ وأحفادِهِ المئات، وكان بستانُهُ يثمرُ في السنةِ مرتين!',
+   'وروى عن النبيِّ ﷺ آلافَ الأحاديثِ التي نتعلمُ منها اليوم.',
+   'كان يقول للصغار: «يا بني، تعلَّموا وتأدبوا… فأنا خدمتُ رسولَ الله وأنا في مثلِ سنِّكم!» 🍯'
+  ],
+  q:'🤔 درس البطل: أنس صار عظيمًا بخدمته وأدبه وهو صغير — اخدم أهلك ومعلمك بحب، فالخدمة شرف!'},
+ {ic:'🐈',name:'أبو هريرة',trait:'الحرص على العلم',tag:'حافظ الأمة',
+  body:[
+   'أسلمَ متأخرًا وصحبَ النبيَّ ﷺ نحوَ ثلاثِ سنينَ فقط… فكيف صارَ أكثرَ الصحابةِ روايةً للحديث؟!',
+   'السر: <span class="say">التفرغُ والحرص!</span> قال: «كان إخواني من المهاجرينَ يشغلُهمُ الصفقُ بالأسواق، وإخواني من الأنصارِ يشغلُهم عملُ أموالِهم… وكنتُ ألزمُ رسولَ اللهِ ﷺ على ملءِ بطني، أحضرُ حين يغيبون، وأحفظُ حين ينسون!».',
+   'وشكا مرةً للنبيِّ ﷺ أنه ينسى، فقال: <span class="say">«ابسطْ رداءَك»</span> فبسطَه، فغرفَ النبيُّ بيديهِ ثم قال: «ضمَّه» فضمَّه… <span class="say">قال: فما نسيتُ شيئًا بعدَه!</span>',
+   'وسُميَ أبا هريرة لأنه كان يحملُ هرةً صغيرةً يرفقُ بها — إسمُهُ الحقيقي: عبد الرحمن بن صخر.',
+   'حفظَ لنا آلافَ الأحاديث… فكلما قرأتَ حديثًا، ادعُ له! 🐈'
+  ],
+  q:'🤔 درس البطل: أبو هريرة عوّض السنوات بالحرص — لا تقل «فاتني الكثير»، بل ابدأ الآن بجدية مضاعفة!'},
+ {ic:'🌷',name:'السيدة عائشة',trait:'العلم والفقه',tag:'أم المؤمنين',
+  body:[
+   'زوجُ النبيِّ ﷺ وأحبُّ الناسِ إليه، وابنةُ الصدّيق. سُئلَ ﷺ: من أحبُّ الناسِ إليك؟ قال: <span class="say">«عائشة»</span>. قيل: فمن الرجال؟ قال: «أبوها».',
+   'وكانت من أعلمِ الأمة! قال أبو موسى: <span class="say">«ما أشكلَ علينا — أصحابَ رسولِ الله — حديثٌ قط، فسألنا عائشةَ إلا وجدنا عندها منه علمًا»</span>.',
+   'كانت تحفظُ القرآنَ والشعرَ والطب، ويأتيها كبارُ الصحابةِ يسألونها، وعلَّمتِ الأمةَ نصفَ دينِها في البيوتِ والأحكام!',
+   'وروتْ أكثرَ من ألفي حديث، ونزلتْ براءتُها من فوقِ سبعِ سماواتٍ في القرآنِ يُتلى إلى يومِ القيامة.',
+   'وكانت كريمةً: تصدقتْ يومًا بمئةِ ألفِ درهمٍ وهي صائمة… ونسيتْ أن تُبقيَ لفطرِها شيئًا! 🌷'
+  ],
+  q:'🤔 درس البطلة: عائشة صارت معلمة الأمة بحبها للسؤال والتعلم — لا تخجل أبدًا من السؤال في الصف!'},
+ {ic:'📚',name:'عبد الله بن عباس',trait:'همة الصغير في العلم',tag:'حَبر الأمة',
+  body:[
+   'ابنُ عمِّ النبيِّ ﷺ. ضمَّهُ النبيُّ وهو صغيرٌ ودعا له: <span class="say">«اللهم فقِّهْهُ في الدينِ وعلِّمْهُ التأويل»</span>… فصارَ «حَبرَ الأمة» و«ترجمانَ القرآن»!',
+   'وهو الغلامُ الذي أوصاهُ النبيُّ ﷺ بالوصيةِ الخالدة: <span class="say">«يا غلام، إني أعلمُكَ كلمات: احفظِ اللهَ يحفظْك، احفظِ اللهَ تجدْهُ تجاهَك، إذا سألتَ فاسألِ الله، وإذا استعنتَ فاستعنْ بالله»</span>.',
+   'وبعد وفاةِ النبيِّ ﷺ، كان يذهبُ لبيوتِ الصحابةِ يطلبُ العلم: <span class="say">ينامُ على عتبةِ البابِ والريحُ تسفي عليه الترابَ</span> حتى يخرجَ الصحابيُّ فيسألَه! قال: «كنتُ أُهينُ نفسي في طلبِ العلم… فعزَّتْ بعدَ ذلك».',
+   'وكان عمرُ يُدخلُهُ مجلسَ كبارِ أهلِ بدرٍ وهو غلام، ويقول: «إنه فتى الكهول! له لسانٌ سؤول، وقلبٌ عقول» 📚'
+  ],
+  q:'🤔 درس البطل: احفظ وصية «احفظ الله يحفظك» — واطلب العلم بهمة ابن عباس: اسأل، واقرأ، واصبر!'},
+ {ic:'🕌',name:'بلال بن رباح',trait:'الثبات على التوحيد',tag:'مؤذن الرسول ﷺ',
+  body:[
+   'كان عبدًا حبشيًّا… فرفعَهُ الإسلامُ حتى صارَ صوتَ الإسلامِ الأول!',
+   'عذَّبَهُ أميةُ في رمضاءِ مكة: يضعُ الصخرةَ العظيمةَ على صدرِهِ ويقول: لن أتركَكَ حتى تكفرَ بمحمد! وبلالٌ يرددُ كلمةً واحدة: <span class="say">«أحدٌ… أحد!»</span>.',
+   'فاشتراهُ أبو بكرٍ وأعتقَه. وقال عمر: «أبو بكرٍ سيدُنا وأعتقَ سيدَنا!».',
+   'واختارَهُ النبيُّ ﷺ مؤذنًا له، وقال له: <span class="say">«يا بلال، حدِّثني بأرجى عملٍ عملتَه، فإني سمعتُ دفَّ نعليكَ بين يديَّ في الجنة!»</span> قال: ما توضأتُ إلا صليتُ بعدَهُ ركعتين.',
+   'ويومَ فتحِ مكة، صعدَ فوقَ الكعبةِ وأذَّن… العبدُ المعذَّبُ صارَ فوقَ أشرفِ بقعةٍ في الأرض! 🕌'
+  ],
+  q:'🤔 درس البطل: «أحدٌ أحد» — تمسك بدينك مهما ضحك أحد أو ضغط عليك، فالعزة لمن ثبت!'},
+ {ic:'🌙',name:'مصعب بن عمير',trait:'التضحية والدعوة',tag:'أول سفير في الإسلام',
+  body:[
+   'كان أجملَ فتيانِ مكةَ وأغناهم: يلبسُ أفخرَ الثياب، وتتمنى كلُّ أمٍّ أن يكونَ ولدُها مثلَه!',
+   'فلما أسلم، حرمتْهُ أمُّهُ من كلِّ شيء… فتركَ النعيمَ كلَّهُ لله، حتى رآهُ النبيُّ ﷺ يلبسُ جلدَ كبشٍ فقال: <span class="say">«انظروا إلى هذا الذي نوَّرَ اللهُ قلبَه!»</span>.',
+   'واختارَهُ النبيُّ ﷺ أولَ سفيرٍ في الإسلام: أرسلَهُ للمدينةِ يعلِّمُ الناس… فما جاءَ العامُ التالي إلا والمدينةُ كلُّها تستقبلُ النبيَّ ﷺ! أسلمتِ المدينةُ على يدِ شابٍّ واحد!',
+   'واستشهدَ في أُحدٍ حاملًا الراية… ولم يجدوا له كفنًا إلا بردةً قصيرة: إذا غطَّوا رأسَهُ بدتْ رجلاه! فبكى النبيُّ ﷺ وقرأ: ﴿مِنَ الْمُؤْمِنِينَ رِجَالٌ صَدَقُوا مَا عَاهَدُوا اللَّهَ عَلَيْهِ﴾ 🌙'
+  ],
+  q:'🤔 درس البطل: مصعب ترك الأشياء الغالية لأجل الأغلى — ما الذي تستطيع التضحية به لله؟ (وقت لعب؟ نومة الفجر؟)'},
+ {ic:'🎓',name:'معاذ بن جبل',trait:'العلم بالحلال والحرام',tag:'من شباب الصحابة',
+  body:[
+   'شابٌّ من الأنصار، أسلمَ وهو ابنُ ثماني عشرةَ سنة… وقال عنه النبيُّ ﷺ: <span class="say">«أعلمُ أمتي بالحلالِ والحرامِ معاذُ بنُ جبل»</span>!',
+   'وأحبَّهُ النبيُّ ﷺ حبًّا خاصًّا، وقال له يومًا: <span class="say">«يا معاذ، واللهِ إني لأحبُّك! لا تدَعَنَّ في دبرِ كلِّ صلاةٍ تقول: اللهم أعني على ذكرِك، وشكرِك، وحُسنِ عبادتِك»</span>.',
+   'وأرسلَهُ النبيُّ ﷺ معلمًا وقاضيًا إلى اليمن، وسأله: «بمَ تقضي؟» قال: بكتابِ الله، فإن لم أجدْ فبسنةِ رسولِ الله، فإن لم أجدْ أجتهدُ رأيي. فضربَ النبيُّ ﷺ صدرَهُ وقال: <span class="say">«الحمدُ لله الذي وفَّقَ رسولَ رسولِ اللهِ لما يُرضي رسولَ الله!»</span>.',
+   'ويومَ القيامةِ يأتي معاذٌ أمامَ العلماءِ بمكانةٍ عظيمة… شابٌّ صارَ إمامًا للعلماءِ بالعلمِ والحب! 🎓'
+  ],
+  q:'🤔 درس البطل: احفظ دعاء معاذ وقله بعد كل صلاة: «اللهم أعني على ذكرك وشكرك وحسن عبادتك»!'},
+ {ic:'🏰',name:'سعد بن معاذ',trait:'العزة والمكانة عند الله',tag:'سيد الأنصار',
+  body:[
+   'سيدُ الأوسِ في المدينة. أسلمَ على يدِ مصعبِ بنِ عمير، فلما أسلم… قال لقومِه: «كلامُكم عليَّ حرامٌ حتى تؤمنوا بالله ورسولِه» — <span class="say">فأسلمَ قومُهُ كلُّهم في يومٍ واحد!</span> أعظمُ رجلٍ بركةً على قومِه.',
+   'وفي غزوةِ الخندقِ أُصيبَ بسهمٍ في يدِه، فدعا: <span class="say">«اللهم لا تُمتني حتى تُقِرَّ عيني من بني قريظة»</span> — الذينَ خانوا العهد. فاستجابَ اللهُ له، وحكمَ فيهم حكمًا وافقَ حكمَ اللهِ من فوقِ سبعِ سماوات!',
+   'ثم توفيَ من جرحِه… فماذا حدثَ يومَ وفاتِه؟ قال النبيُّ ﷺ: <span class="say">«اهتزَّ عرشُ الرحمنِ لموتِ سعدِ بنِ معاذ!»</span>',
+   'وشيَّعَهُ سبعونَ ألفَ ملَكٍ ما وطئوا الأرضَ قبلَها… شابٌّ عاشَ في الإسلامِ ستَّ سنينَ فقط، وبلغَ ما لم يبلغْهُ أحد! 🏰'
+  ],
+  q:'🤔 درس البطل: سعد عاش ٦ سنوات فقط في الإسلام واهتز لموته العرش — العبرة ليست بطول العمر بل بعظمة العمل!'},
+ {ic:'⚡',name:'البراء بن مالك',trait:'الإقدام وصدق اليقين',tag:'أخو أنس بن مالك',
+  body:[
+   'أخو أنسِ بنِ مالكٍ خادمِ النبيِّ ﷺ… وواحدٌ من أشجعِ رجالِ التاريخ: قتلَ مئةَ مبارزٍ وحدَه في المعارك!',
+   'وقال عنه النبيُّ ﷺ كلمةً عجيبة: <span class="say">«كم من أشعثَ أغبرَ ذي طِمرين لا يُؤبهُ له، لو أقسمَ على اللهِ لأبرَّه، منهمُ البراءُ بنُ مالك»</span> — بسيطُ الثيابِ لا يلتفتُ إليه الناس… لكنه عظيمٌ عند الله!',
+   'وفي حربِ اليمامةِ الشديدة، قال له المسلمون: «أقسِمْ على ربِّكَ يا براء!» فقال: <span class="say">«أقسمتُ عليكَ يا ربِّ لما منحتَنا أكتافَهم!»</span> فانتصروا!',
+   'وفي معركةِ الحديقة، طلبَ من أصحابِهِ أن يقذفوهُ فوقَ السورِ وحدَه… ففتحَ البابَ للجيشِ وهو مثخنٌ بالجراح! ⚡'
+  ],
+  q:'🤔 درس البطل: قد لا يلتفت إليك الناس… لكن قيمتك عند الله بإيمانك وشجاعتك — كن عظيمًا عند الله أولًا!'},
+ {ic:'🌅',name:'صهيب الرومي',trait:'البيع الرابح',tag:'صهيب الرابح',
+  body:[
+   'نشأ في بلادِ الرومِ فسُميَ «الرومي»، وعملَ في مكةَ حتى جمعَ مالًا كثيرًا… ثم أسلمَ من أوائلِ المسلمين وتحمَّلَ العذاب.',
+   'ولما هاجرَ النبيُّ ﷺ، خرجَ صهيبٌ مهاجرًا خلفَه… فلحقَهُ كفارُ قريش: «جئتَنا فقيرًا فاغتنيتَ عندنا، ثم تخرجُ بمالِك؟!».',
+   'فقال لهم: <span class="say">«أرأيتم إن جعلتُ لكم مالي… أتُخلّونَ سبيلي؟»</span> قالوا: نعم. فدلَّهم على مالِهِ كلِّه… واشترى دينَهُ بدنياه!',
+   'فلما وصلَ إلى النبيِّ ﷺ استقبلَهُ مبتسمًا: <span class="say">«ربحَ البيعُ أبا يحيى! ربحَ البيع!»</span> ونزلَ فيه: ﴿وَمِنَ النَّاسِ مَن يَشْرِي نَفْسَهُ ابْتِغَاءَ مَرْضَاتِ اللَّهِ﴾ 🌅'
+  ],
+  q:'🤔 درس البطل: صهيب باع الدنيا واشترى الآخرة فربح — إذا خُيّرت بين شيء تحبه وشيء يحبه الله… فاختر الرابح!'},
+ {ic:'🦁',name:'حمزة بن عبد المطلب',trait:'النصرة والاستشهاد',tag:'سيد الشهداء',
+  body:[
+   'عمُّ النبيِّ ﷺ وأخوهُ من الرضاعة، وأحدُ أقوى رجالِ قريش… «أسدُ الله»!',
+   'يومَ علِمَ أنَّ أبا جهلٍ آذى النبيَّ ﷺ، ذهبَ إليه غاضبًا وضربَهُ بقوسِهِ أمامَ قومِهِ وقال: <span class="say">«أتشتمُهُ وأنا على دينِه؟!»</span> — فكان إسلامُهُ عزًّا للمسلمين!',
+   'وفي بدرٍ وأُحدٍ قاتلَ قتالَ الأبطال، حتى استُشهدَ في أُحدٍ رحمهُ الله… فحزنَ عليه النبيُّ ﷺ حزنًا شديدًا.',
+   'وقال ﷺ: <span class="say">«سيدُ الشهداءِ حمزةُ بنُ عبدِ المطلب»</span>… فهو في أعلى منازلِ الجنةِ مع الشهداء، والشهداءُ أحياءٌ عند ربِّهم يُرزقون! 🦁'
+  ],
+  q:'🤔 درس البطل: حمزة جعل قوته في نصرة الحق — قوتك أنت (جسمك، ذكاؤك، شعبيتك) في ماذا تستخدمها؟'},
+ {ic:'🌹',name:'نسيبة بنت كعب',trait:'شجاعة المؤمنة',tag:'أم عمارة',
+  body:[
+   'أمُّ عمارةَ الأنصارية… خرجتْ يومَ أُحدٍ تسقي الجرحى وتداويهم، فلما اشتدَّ القتالُ وتفرقَ الناسُ عن النبيِّ ﷺ…',
+   '<span class="say">أخذتِ السيفَ والترسَ ووقفتْ تقاتلُ دونَ رسولِ الله ﷺ!</span> تتلقى الضرباتِ بجسدِها حتى أصابتْها اثنتا عشرةَ جراحة!',
+   'قال النبيُّ ﷺ: <span class="say">«ما التفتُّ يمينًا ولا شمالًا يومَ أُحدٍ إلا وأنا أراها تقاتلُ دوني!»</span>.',
+   'وقال: «لَمقامُ نسيبةَ بنتِ كعبٍ اليومَ خيرٌ من مقامِ فلانٍ وفلان». فقالت: ادعُ اللهَ أن نرافقَكَ في الجنة! فدعا: <span class="say">«اللهم اجعلْهم رفقائي في الجنة»</span>. فقالت: ما أبالي ما أصابني من الدنيا بعدَها! 🌹'
+  ],
+  q:'🤔 درس البطلة: الشجاعة ليست للرجال فقط — نسيبة علّمتنا أن المؤمنة القوية تحمي وتداوي وتقف مع الحق!'},
+ {type:'finish',ic:'🏅',title:'المحطة الأخيرة: شهادة نجم القدوات'}
+];
+
+var K='qudwat_journey_v1';
+var st={};
+try{ st=JSON.parse(localStorage.getItem(K)||'{}')||{}; }catch(e){}
+st.done=st.done||{};
+function save(){ try{ localStorage.setItem(K,JSON.stringify(st)); }catch(e){} }
+function doneCount(){ return Object.keys(st.done).length; }
+
+function renderMap(){
+  var m=document.getElementById('map'); m.innerHTML='';
+  STATIONS.forEach(function(s,i){
+    var d=document.createElement('div');
+    d.className='station '+(s.type==='finish'?'finish':'story')+(st.done[i]?' done':'');
+    var inner;
+    if(s.type==='finish'){
+      inner='<b>'+s.title.replace(/^المحطة الأخيرة: /,'')+'</b><small>المحطة '+(i+1)+' · الجائزة الكبرى</small>';
+    }else{
+      inner='<b>'+s.name+'</b><span class="tag">'+s.trait+'</span><small>'+s.tag+'</small>';
+    }
+    d.innerHTML='<span class="dot"></span>'+
+      '<button class="st-card" onclick="openStation('+i+')">'+
+      '<span class="badge">✓</span>'+
+      '<span class="ic">'+s.ic+'</span>'+inner+'</button>';
+    m.appendChild(d);
+  });
+  document.getElementById('stars').textContent=doneCount();
+  document.getElementById('total').textContent=STATIONS.length;
+}
+
+var cur=-1;
+function openStation(i){
+  cur=i; var s=STATIONS[i];
+  var title = s.type==='finish' ? s.title : 'قصة: '+s.name+' — '+s.trait;
+  var h='<button class="close" onclick="closeSheet()">✕</button>'+
+        '<span class="s-ic">'+s.ic+'</span><h2>'+title+'</h2>';
+  if(s.type==='finish'){
+    var all = doneCount() >= STATIONS.length-1 || st.done[i];
+    if(all){
+      h+='<div class="cert"><h3>🏅 شهادة نجم القدوات</h3>'+
+         '<p>تشهدُ رحلةُ «القدوات» أنَّ البطل/البطلة</p>'+
+         (st.name?'<div class="nm">'+st.name+'</div>':'<input id="nm" placeholder="اكتب اسمك هنا" value="">')+
+         '<p>تعرَّفَ على العشرةِ المبشرينَ بالجنةِ ونجومِ الصحابةِ وشبابِهم، وتعلَّمَ من كلِّ نجمٍ خُلُقَه!</p>'+
+         '<p style="font-size:1.3rem">⭐🌟⭐🌟⭐</p>'+
+         '<p style="font-size:.85rem;color:#9A8563">«أصحابي كالنجوم» — رضيَ اللهُ عنهم أجمعين</p></div>'+
+         (st.name
+           ?'<button class="donebtn finished" onclick="window.print()">🖨️ اطبع شهادتي</button>'
+           :'<button class="donebtn" onclick="signCert()">✍️ وقِّع الشهادة</button>');
+    }else{
+      h+='<p style="text-align:center;font-weight:800;font-size:1.05rem">🔒 تعرَّفْ على كلِّ النجومِ أولًا يا بطل…<br>أنجزتَ حتى الآن <b style="color:var(--teal-dk)">'+doneCount()+'</b> من '+(STATIONS.length-1)+'!</p>'+
+         '<button class="donebtn" onclick="closeSheet()">أكمل الرحلة 💪</button>';
+    }
+  }else{
+    h+='<button class="readbtn" id="rb" onclick="readAloud()">🔊 اقرأ لي</button>';
+    h+='<div class="story-txt">'+s.body.map(function(p){return '<p>'+p+'</p>';}).join('')+'</div>';
+    h+='<div class="q">'+s.q+'</div>';
+    h+= st.done[i]
+      ? '<button class="donebtn finished" onclick="closeSheet()">✓ تعرفتُ عليه! (اضغط للرجوع)</button>'
+      : '<button class="donebtn" onclick="markDone()">تعرفتُ على هذا النجم! ⭐</button>';
+  }
+  document.getElementById('sheet').innerHTML=h;
+  document.getElementById('ov').classList.add('open');
+}
+function signCert(){
+  var v=(document.getElementById('nm')||{}).value||'';
+  v=v.trim(); if(!v){ alert('اكتب اسمك أولًا يا بطل! ✍️'); return; }
+  st.name=v; st.done[STATIONS.length-1]=true; save(); celebrate(); openStation(STATIONS.length-1); renderMap();
+}
+function markDone(){
+  st.done[cur]=true; save(); stopRead(); celebrate();
+  renderMap(); closeSheet();
+}
+function closeSheet(){ stopRead(); document.getElementById('ov').classList.remove('open'); }
+
+var uttering=false;
+function readAloud(){
+  if(uttering){ stopRead(); return; }
+  var s=STATIONS[cur]; if(!s||!s.body) return;
+  var txt=s.body.join(' ')+'. '+s.q;
+  txt=txt.replace(/<[^>]+>/g,'').replace(/[🤔⭐🌟✨🕊️⚖️🌸🦁🏹🛡️💰🌾⚔️📖🍯🐈🌷📚🕌🌙]/g,'');
+  var u=new SpeechSynthesisUtterance(txt);
+  u.lang='ar-SA'; u.rate=.92;
+  var vs=speechSynthesis.getVoices().filter(function(v){return v.lang&&v.lang.indexOf('ar')===0;});
+  if(vs.length) u.voice=vs[0];
+  u.onend=u.onerror=function(){ uttering=false; var b=document.getElementById('rb'); if(b){b.classList.remove('playing');b.textContent='🔊 اقرأ لي';} };
+  speechSynthesis.cancel(); speechSynthesis.speak(u); uttering=true;
+  var b=document.getElementById('rb'); if(b){b.classList.add('playing');b.textContent='⏹️ إيقاف';}
+}
+function stopRead(){ try{speechSynthesis.cancel();}catch(e){} uttering=false; }
+
+function celebrate(){
+  var em=['⭐','🌟','✨','🎉','💛'];
+  for(var i=0;i<18;i++){
+    var s=document.createElement('span');
+    s.className='confetti'; s.textContent=em[i%em.length];
+    s.style.left=(Math.random()*100)+'vw';
+    s.style.animationDelay=(Math.random()*0.5)+'s';
+    document.body.appendChild(s);
+    setTimeout(function(el){return function(){el.remove()}}(s),3200);
+  }
+}
+renderMap();
+</script>
+</body>
+</html>

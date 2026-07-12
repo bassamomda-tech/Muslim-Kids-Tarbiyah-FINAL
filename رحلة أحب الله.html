@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>رحلة أُحبُّ الله ❤️</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&display=swap">
+<style>
+:root{
+  --sky:#FFF2EC;--sun:#F5B92E;--rose:#C94F6D;--rose-dk:#A03350;
+  --teal:#1B8A6B;--teal-dk:#0F6B52;--purple:#8E5EA8;--navy:#274060;--ink:#3A3125;
+  --card:#FFFDF6;--line:#F0D3C2;
+}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Tajawal',sans-serif;background:var(--sky);color:var(--ink);line-height:1.9;direction:rtl;overflow-x:hidden}
+a{color:var(--rose-dk)}a:hover{color:var(--teal-dk)}
+button{font-family:'Tajawal',sans-serif;cursor:pointer}
+
+header.hero{text-align:center;padding:2.2rem 1rem 1rem;position:relative}
+.hero h1{font-size:clamp(1.8rem,5vw,2.8rem);font-weight:900;color:var(--rose-dk)}
+.hero p{font-weight:700;color:#8A6A5C;max-width:34rem;margin:.4rem auto 0}
+.hero .back{position:absolute;top:1rem;right:1rem;font-size:.85rem;font-weight:800;background:#fff;border:2px solid var(--line);border-radius:2rem;padding:.4rem 1rem;text-decoration:none}
+.starbar{display:inline-flex;align-items:center;gap:.4rem;background:#fff;border:2px solid var(--rose);border-radius:2rem;padding:.35rem 1.1rem;margin-top:.9rem;font-weight:900;color:var(--rose-dk);font-size:1.05rem}
+
+.map{max-width:40rem;margin:1.6rem auto 3rem;padding:0 1.2rem;position:relative}
+.map::before{content:'';position:absolute;top:0;bottom:0;right:50%;width:6px;background:repeating-linear-gradient(180deg,var(--rose) 0 14px,transparent 14px 26px);border-radius:3px;transform:translateX(50%)}
+.station{position:relative;width:calc(50% - 2.2rem);margin-bottom:1.6rem}
+.station:nth-child(odd){margin-left:auto;margin-right:0}
+.station:nth-child(even){margin-right:calc(50% + 2.2rem)}
+.st-card{display:block;width:100%;text-align:right;background:var(--card);border:3px solid var(--line);border-radius:1.3rem;padding:1rem 1.1rem;box-shadow:0 6px 0 rgba(160,80,60,.15);transition:.15s;position:relative}
+.st-card:hover{transform:translateY(-3px)}
+.st-card .ic{font-size:2rem;display:block}
+.st-card b{font-size:1.05rem;font-weight:900;color:var(--navy);display:block;margin-top:.2rem}
+.st-card small{font-weight:700;color:#9A7A6C;font-size:.78rem}
+.st-card .badge{position:absolute;top:-.7rem;left:-.7rem;background:var(--teal);color:#fff;border-radius:50%;width:2rem;height:2rem;display:none;align-items:center;justify-content:center;font-size:1rem;border:2px solid #fff}
+.station.done .st-card{border-color:var(--teal)}
+.station.done .st-card .badge{display:flex}
+.station .dot{position:absolute;top:1.4rem;width:1.4rem;height:1.4rem;background:#fff;border:4px solid var(--rose);border-radius:50%;z-index:2}
+.station:nth-child(odd) .dot{left:-2.95rem}
+.station:nth-child(even) .dot{right:-2.95rem}
+.station.done .dot{background:var(--teal);border-color:var(--teal)}
+.station.activity .st-card{border-color:#D8C3E6}.station.activity.done .st-card{border-color:var(--purple)}
+.station.finish .st-card{background:linear-gradient(135deg,#FFEDF0,#FFD9E0);border-color:var(--rose)}
+
+.overlay{position:fixed;inset:0;background:rgba(60,25,20,.55);display:none;align-items:flex-start;justify-content:center;padding:2rem 1rem;z-index:50;overflow-y:auto}
+.overlay.open{display:flex}
+.sheet{background:var(--card);border-radius:1.5rem;max-width:38rem;width:100%;padding:1.6rem clamp(1.1rem,4vw,2.2rem);position:relative;border:4px solid var(--rose);margin-bottom:2rem}
+.sheet .close{position:absolute;top:.8rem;left:.8rem;background:#fff;border:2px solid var(--line);border-radius:50%;width:2.3rem;height:2.3rem;font-size:1.1rem;font-weight:900}
+.sheet .s-ic{font-size:2.6rem;text-align:center;display:block}
+.sheet h2{font-size:1.45rem;font-weight:900;color:var(--rose-dk);text-align:center;margin:.2rem 0 .8rem}
+.sheet .story-txt{font-size:1.08rem;font-weight:500;line-height:2.15}
+.sheet .story-txt p{margin:.6rem 0}
+.sheet .story-txt .say{color:var(--rose-dk);font-weight:800}
+.readbtn{display:flex;align-items:center;gap:.5rem;margin:0 auto 1rem;background:var(--rose);color:#fff;border:none;border-radius:2rem;padding:.5rem 1.4rem;font-weight:900;font-size:.95rem;box-shadow:0 4px 0 var(--rose-dk)}
+.readbtn.playing{background:var(--teal);box-shadow:0 4px 0 var(--teal-dk)}
+.steps{counter-reset:st;list-style:none;margin:.6rem 0}
+.steps li{counter-increment:st;position:relative;padding:.55rem .5rem .55rem 0;padding-right:3rem;font-weight:700;font-size:1.02rem;border-bottom:1px dashed var(--line)}
+.steps li::before{content:counter(st);position:absolute;right:0;top:.65rem;width:2.1rem;height:2.1rem;background:var(--purple);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:900}
+.q{background:#FFE9EE;border:2px dashed var(--rose);border-radius:1rem;padding:.8rem 1rem;margin:1rem 0;font-weight:800;color:#8A2A44}
+.donebtn{display:block;margin:1.3rem auto 0;background:var(--rose);color:#fff;border:none;border-radius:2rem;padding:.7rem 2.2rem;font-weight:900;font-size:1.1rem;box-shadow:0 5px 0 var(--rose-dk)}
+.donebtn:disabled{opacity:.55;box-shadow:none}
+.donebtn.finished{background:var(--teal);box-shadow:0 5px 0 var(--teal-dk)}
+
+.cert{border:6px double var(--rose);border-radius:1.2rem;background:#FFFDF4;text-align:center;padding:1.6rem 1rem;margin:.6rem 0}
+.cert h3{font-size:1.5rem;font-weight:900;color:var(--rose-dk)}
+.cert .nm{font-size:1.3rem;font-weight:900;color:var(--teal-dk);border-bottom:2px dashed var(--line);display:inline-block;min-width:12rem;margin:.5rem 0;padding:0 .5rem}
+.cert p{font-weight:700}
+.cert input{font-family:'Tajawal';font-size:1.1rem;font-weight:800;text-align:center;border:2px solid var(--line);border-radius:.8rem;padding:.4rem .8rem;width:min(16rem,90%);margin:.5rem 0;background:#fff}
+.confetti{position:fixed;top:-2rem;font-size:1.5rem;z-index:60;animation:fall 2.6s linear forwards;pointer-events:none}
+@keyframes fall{to{transform:translateY(110vh) rotate(540deg)}}
+
+footer{text-align:center;color:#9A7A6C;font-weight:700;font-size:.85rem;padding:1.5rem 1rem 2.2rem}
+@media(max-width:560px){
+  .map::before{right:1.1rem;transform:none}
+  .station,.station:nth-child(even),.station:nth-child(odd){width:calc(100% - 3.4rem);margin-right:3.4rem;margin-left:0}
+  .station .dot,.station:nth-child(odd) .dot,.station:nth-child(even) .dot{right:-2.85rem;left:auto}
+}
+</style>
+</head>
+<body data-screen-label="رحلة أحب الله">
+
+<header class="hero">
+  <a class="back" href="corners/little-district/pages/little-district.html">↩️ الحي الصغير</a>
+  <h1>❤️ رحلةُ أُحبُّ الله</h1>
+  <p>يا حبيب الله! في هذه الرحلة ستعرفُ ربَّك، وتحبُّه أكثرَ وأكثر، وتشعرُ أنه معكَ في كلِّ مكان 🌟</p>
+  <div class="starbar">❤️ <span id="stars">0</span> من <span id="total"></span> محطة</div>
+  <div style="margin-top:.9rem">
+    <a href="رحلة أحب الصلاة.html" style="display:inline-flex;align-items:center;gap:.5rem;background:#1B8A6B;color:#fff;border-radius:2rem;padding:.5rem 1.3rem;font-weight:900;font-size:.88rem;text-decoration:none">🕌 رحلة أُحبُّ الصلاة ←</a>
+    <a href="رحلة أحب الرسول.html" style="display:inline-flex;align-items:center;gap:.5rem;background:#2E7D5B;color:#fff;border-radius:2rem;padding:.5rem 1.3rem;font-weight:900;font-size:.88rem;text-decoration:none">💚 رحلة أُحبُّ رسول الله ﷺ ←</a>
+    <a href="دليل الأهل للرحلات.html" style="display:inline-flex;align-items:center;gap:.5rem;background:#fff;color:#33302A;border:2px solid #F0D3C2;border-radius:2rem;padding:.5rem 1.3rem;font-weight:900;font-size:.88rem;text-decoration:none">👨‍👩‍👧 دليل الأهل ←</a>
+  </div>
+</header>
+
+<div class="map" id="map"></div>
+
+<div class="overlay" id="ov" onclick="if(event.target===this)closeSheet()">
+  <div class="sheet" id="sheet"></div>
+</div>
+
+<footer>صُنع بحُب ❤️ — تربية الطفل المسلم · رحلة أحب الله</footer>
+
+<script>
+var STATIONS=[
+ {type:'story',ic:'🎁',title:'قصة: من أعطاك كلَّ هذا؟ (معرفة الله بنعمه)',
+  body:[
+   'في نزهةِ العائلة، قال أبو مالك: <span class="say">«لنلعبْ لعبة! من يجدُ هديةً من اللهِ حولَنا، يكسبُ نقطة»</span>.',
+   'قال مالك: «الشمس! تدفئُنا وتضيءُ لنا». قالت أختُهُ نور: «والشجر! يعطينا الظلَّ والفواكه».',
+   'قال مالك: «عيناي اللتان أرى بهما!». قالت نور: «والمطرُ والماءُ الذي نشرب!».',
+   'ولم تنتهِ اللعبة… لأنَّ الهدايا لم تنتهِ! فقال أبوهم: <span class="say">«قال تعالى: ﴿وَإِن تَعُدُّوا نِعْمَتَ اللَّهِ لَا تُحْصُوهَا﴾ — لو عددنا طولَ العمرِ ما انتهينا. فمن يعطي كلَّ هذه الهدايا؟»</span>.',
+   'قالا معًا: «اللهُ الكريمُ الرحيم!». قال أبوهما: <span class="say">«ولهذا نحبُّهُ أكثرَ من كلِّ شيء… لأنَّ كلَّ جميلٍ في حياتِنا منه سبحانه»</span> 🎁'
+  ],
+  q:'🤔 لعبة البطل: العب لعبة «هدايا الله» مع أهلك على العشاء — من يذكر ٥ نعم أولًا؟'},
+ {type:'story',ic:'🌌',title:'قصة: من صنعَ القمر؟ (معرفة الله بخلقه)',
+  body:[
+   'وقفَ آدمُ في الشرفةِ ليلًا يتأملُ القمر. سأل أمَّه: «من علَّقَ القمرَ في السماءِ ولا يقع؟».',
+   'قالت أمُّه: <span class="say">«اللهُ الذي خلقَ كلَّ شيء! انظر: قمرٌ يضيء، ونجومٌ تلمعُ كالمصابيح، وسماءٌ بلا أعمدة… من يقدرُ على هذا غيرُ الله؟»</span>.',
+   'قال آدم: «واللهُ خلقني أنا أيضًا؟». قالت: <span class="say">«نعم! خلقكَ وصوَّركَ فأحسنَ صورتَك، وخلقَ قلبَكَ الصغيرَ الذي يدقُّ ليلَ نهار دون أن تطلبَ منه!»</span>.',
+   'وضعَ آدمُ يدَهُ على قلبِهِ وأنصت… دُق دُق، دُق دُق… وابتسمَ وقال: «سبحانَ الله! ما أعظمَ الله!».',
+   'قالت أمُّه: <span class="say">«هذه هي يا آدم… كلما رأيتَ شيئًا عجيبًا في الكونِ قل: سبحانَ الله — فتعرفُ ربَّكَ أكثر، وتحبُّهُ أكثر»</span> 🌌'
+  ],
+  q:'🤔 سؤال البطل: انظر الليلة إلى السماء وعدّ ٥ أشياء عجيبة خلقها الله!'},
+ {type:'activity',ic:'🔍',title:'نشاط: مستكشف آيات الله',
+  steps:[
+   'خذ ورقةً وقلمًا واخرج مع أهلك إلى الحديقة أو الشرفة.',
+   'ابحث عن ٥ مخلوقات عجيبة: نملة، ورقة شجر، سحابة، عصفور…',
+   'ارسم كلَّ واحدة، واكتب تحتها: «سبحان الله الذي خلقها».',
+   'اسأل نفسك في كل واحدة: كيف تأكل؟ كيف تعيش؟ من يرزقها؟',
+   'علِّق لوحةَ «مستكشف آيات الله» في غرفتك 🔍'
+  ],
+  q:'💡 سر جميل: النملة الصغيرة لا تنسى طريق بيتها أبدًا… من علَّمها؟ الله!'},
+ {type:'story',ic:'💝',title:'قصة: أرحم من الأم (حب الله لنا)',
+  body:[
+   'رأتْ خديجةُ قطةً تحملُ صغيرَها بفمِها برفقٍ شديد، وتنقلُهُ إلى مكانٍ آمن. قالت: «ما أحنَّها على صغيرِها!».',
+   'قال أبوها: <span class="say">«رأى الصحابةُ يومًا امرأةً تبحثُ عن صغيرِها بلهفة، فلما وجدتْهُ ضمَّتْهُ وأرضعتْه. فقال النبيُّ ﷺ: أترونَ هذه طارحةً ولدَها في النار؟ قالوا: لا واللهِ. فقال: اللهُ أرحمُ بعبادِهِ من هذه بولدِها!»</span>.',
+   'قالت خديجة: «اللهُ يحبُّني أكثرَ مما تحبُّني أمي؟!».',
+   'قال أبوها: <span class="say">«أكثرَ بكثير! هو الذي يطعمُكِ ويحرسُكِ وأنتِ نائمة، ويفرحُ بكِ عندما تدعينَه، وإذا مشيتِ إليه خطوةً أقبلَ عليكِ… ومن أحبَّهُ وأطاعَه، أحبَّهُ اللهُ وجعلَ له الجنة»</span>.',
+   'تلك الليلة، نامتْ خديجةُ وهي تبتسم… فقد عرفتْ أنَّ من يحبُّها أكثرَ من الجميع… يراها الآن 💝'
+  ],
+  q:'🤔 سؤال البطلة: اذكر ٣ أشياء تدل على أن الله يحبك ويرعاك كل يوم!'},
+ {type:'story',ic:'👁️',title:'قصة: الحارس الذي لا ينام (مراقبة الله)',
+  body:[
+   'ذهبَ عبدُ اللهِ مع صفِّهِ في رحلة. وعند شجرةِ التفاح، قال صديقُه: «خذ تفاحةً! لا أحدَ يرانا!».',
+   'توقفَ عبدُ اللهِ وتذكرَ كلمةَ جدِّه: <span class="say">«يا بنيّ، إذا قال لك أحدٌ: لا أحدَ يراك… فقل له: بلى! اللهُ يراني، يراني في الظلامِ وفي النور، ويسمعُ همسي وأفكاري»</span>.',
+   'قال عبدُ الله لصديقِه: «بلى، هناك من يرانا… اللهُ يرانا! وهذه الشجرةُ لها صاحبٌ لم يأذنْ لنا».',
+   'وفي طريقِ العودة، حكى المعلمُ قصةَ الفتاةِ التي قالت لها أمُّها: اخلطي اللبنَ بالماء، فقالت: <span class="say">«إن كان عمرُ لا يرانا… فإنَّ ربَّ عمرَ يرانا!»</span>.',
+   'فربَّتَ المعلمُ على كتفِ عبدِ اللهِ وقال: «من يعيشُ مع (اللهُ يراني) لا يسرقُ ولا يكذبُ ولا يؤذي… ويصبحُ أجملَ إنسان» 👁️✨'
+  ],
+  q:'🤔 كلمة السر: «الله يراني» — قلها ٣ مرات، ومتى ستتذكرها هذا الأسبوع؟'},
+ {type:'story',ic:'🤲',title:'قصة: الملك الذي يحب أن نطلب منه (الصلة بالله)',
+  body:[
+   'قالت مريمُ لجدتِها: «أريدُ دراجةً، لكني أخجلُ أن أطلبَ من أبي مرةً أخرى…».',
+   'قالت جدتُها: <span class="say">«هل أخبركِ عن ملكٍ عجيب؟ كلُّ الملوكِ يغضبونَ إذا أكثرَ الناسُ عليهمُ الطلب… إلا ملكًا واحدًا: يغضبُ إذا لم تطلبي منه!»</span>.',
+   'قالت مريم: «من هو؟!». قالت الجدة: <span class="say">«اللهُ! قال النبيُّ ﷺ: من لم يسألِ اللهَ يغضبْ عليه. اطلبي منه كلَّ شيء: الدراجة، والنجاح، وحتى شسعَ نعلِكِ إذا انقطع!»</span>.',
+   '<span class="say">«وأقربُ ما تكونينَ منه وأنتِ ساجدة… تهمسين: يا رب، يا رب — وهو يسمعُكِ ويحبُّ صوتَكِ ويقول: سلي تُعطَي!»</span>.',
+   'في سجودِها ذلك اليوم، همستْ مريم: «يا رب…» وشعرتْ أنَّ قلبَها متصلٌ بخيطٍ من نورٍ يصعدُ فوقَ السحاب… إلى الملكِ الذي لا يغلقُ بابَهُ أبدًا 🤲'
+  ],
+  q:'🤔 سؤال البطلة: ما هي ٣ أشياء ستطلبها من الله في سجودك اليوم؟'},
+ {type:'activity',ic:'📮',title:'نشاط: صندوق رسائلي إلى الله',
+  steps:[
+   'زيِّن علبةً صغيرةً واكتب عليها: «دعواتي ❤️».',
+   'كلَّ ليلة، اكتب أو ارسم دعاءً واحدًا تحبُّه.',
+   'ادعُ به في سجودِك أو قبل النوم، ثم ضع الورقة في الصندوق.',
+   'كلَّ جمعة، افتح الصندوق مع أهلك وتذكروا: أيُّ دعاءٍ استجابه الله؟',
+   'ستندهش… كم يستجيبُ اللهُ لك! 📮'
+  ],
+  q:'💡 تذكّر: الدعاء هو العبادة — والله يحب أن يسمع صوتك كل يوم!'},
+ {type:'story',ic:'🕋',title:'قصة: أحبك يا الله! (جامعة الحب)',
+  body:[
+   'في ليلةِ العيد، سألَ الأبُ أولادَه: <span class="say">«من يخبرني: لماذا نحبُّ الله؟»</span>.',
+   'قال يوسف: «لأنه خلقنا ورزقنا كلَّ النعم!». قالت لينُ: «لأنه أرحمُ بنا من أمهاتِنا!».',
+   'قال حمزة: «لأنه معنا دائمًا، يرانا ويسمعُنا ولا ننسى أبدًا!». قالت مريم: «ولأنَّ بابَهُ مفتوحٌ دائمًا… نطلبُ منه فيعطينا!».',
+   'قال الأبُ: <span class="say">«أحسنتم كلُّكم! ولهذا نعبدُهُ ونصلي له: ليس خوفًا فقط… بل حبًّا! نصلي لأنَّنا نحبُّ لقاءَه، ونصومُ لأننا نحبُّ رضاه، ونتصدقُ لأننا نحبُّ من يحبُّهم»</span>.',
+   'ثم رفعوا أيديَهم جميعًا ودعوا بدعاءِ النبيِّ ﷺ: <span class="say">«اللهم إني أسألُكَ حبَّك، وحبَّ من يحبُّك، وحبَّ عملٍ يقرِّبُني إلى حبِّك»</span> 🕋❤️'
+  ],
+  q:'🤔 التحدي الأخير: احفظ دعاء «اللهم إني أسألك حبك…» وعلِّمه لأحد إخوتك أو أصدقائك!'},
+ {type:'story',ic:'🌈',title:'قصة: بستان فوق السحاب (الجنة)',
+  body:[
+   'قال جدُّ سلمى وهو يسقي البستان: <span class="say">«هل أعجبكِ بستاني يا سلمى؟»</span>. قالت: «إنه أجملُ مكانٍ في الدنيا!».',
+   'ابتسمَ الجدُّ وقال: <span class="say">«هل أخبركِ عن بستانٍ أجملَ منه بملايينِ المرات؟ بستانٌ فيه أنهارٌ من عسلٍ ولبن، وقصورٌ من ذهبٍ وفضة، وفاكهةٌ لا تنتهي… كلما قطفتِ واحدةً نبتتْ مكانَها أخرى!»</span>.',
+   'قالت سلمى: «أين هذا البستان؟!». قال: <span class="say">«إنها الجنة! أعدَّها اللهُ لمن يحبُّه ويطيعُه. فيها ما لا عينٌ رأت، ولا أذنٌ سمعت، ولا خطرَ على قلبِ بشر!»</span>.',
+   '<span class="say">«وأجملُ ما فيها؟ ليس القصورَ ولا الأنهار… بل أنَّ اللهَ يرضى عن أهلِها فلا يسخطُ عليهم أبدًا، ويرونَ ربَّهمُ الكريم!»</span>.',
+   'قالت سلمى: «أريدُ أن أكونَ من أهلِ الجنة!». قال جدُّها: «إذن أحبي اللهَ وأطيعيه… فثمنُ الجنةِ ليس مالًا، بل قلبٌ يحبُّ اللهَ وعملٌ صالح» 🌈'
+  ],
+  q:'🤔 سؤال البطلة: ما أول شيء ستطلبه في الجنة إن شاء الله؟ وادعُ الآن: اللهم إني أسألك الجنة!'},
+ {type:'story',ic:'🌧️',title:'قصة: الخيرُ فيما اختاره الله (الرضا بالقضاء)',
+  body:[
+   'استعدَّ زيدٌ أسبوعًا كاملًا لرحلةِ المدرسة… وفي الصباح، هطلَ مطرٌ شديدٌ وأُلغيتِ الرحلة! بكى زيدٌ وقال: «لماذا يا رب؟!».',
+   'احتضنتْهُ أمُّهُ وقالت: <span class="say">«يا زيد، هل تذكرُ قصةَ النبيِّ ﷺ؟ قال: عجبًا لأمرِ المؤمن! إنَّ أمرَهُ كلَّهُ خير: إن أصابتْهُ سراءُ شكرَ فكان خيرًا له، وإن أصابتْهُ ضراءُ صبرَ فكان خيرًا له»</span>.',
+   'قال زيد: «لكن أين الخيرُ في إلغاءِ رحلتي؟». قالت: <span class="say">«نحن لا نرى ما يراهُ الله. اللهُ يعلمُ ونحن لا نعلم… ربما دفعَ عنكَ شرًّا لا تعرفُه، وربما أخّرَ لكَ ما هو أجمل»</span>.',
+   'وبعد الظهر، جاءَ عمُّهُ فجأةً من السفر، ومعه هديةٌ ولعبٌ وحكايات… وقضى زيدٌ أجملَ يومٍ في حياتِه!',
+   'ليلتَها قال زيد: «الحمدُ لله الذي ألغى الرحلة! لو ذهبتُ لما رأيتُ عمي!». قالت أمُّه: <span class="say">«هذا هو الرضا يا حبيبي: نثقُ أنَّ اختيارَ اللهِ لنا أجملُ من اختيارِنا لأنفسِنا»</span> 🌧️🌤️'
+  ],
+  q:'🤔 سؤال البطل: تذكّر شيئًا حزنت له ثم اكتشفت أن فيه خيرًا — واحكه لأهلك!'},
+ {type:'story',ic:'🧼',title:'قصة: الغفّار يمحو كل شيء (اسم الله الغفّار)',
+  body:[
+   'كسرَ كريمٌ مزهريةَ أمِّهِ المفضلة… وخافَ خوفًا شديدًا، واختبأ في غرفتِه.',
+   'دخلَ عليه أبوهُ فوجدَهُ يبكي. قال كريم: «فعلتُ شيئًا سيئًا… هل سيغضبُ اللهُ مني ولن يحبَّني بعد اليوم؟».',
+   'قال أبوه: <span class="say">«تعالَ أخبرْكَ عن اسمٍ من أسماءِ اللهِ الجميلة: الغفّار! يعني الذي يغفرُ الذنوبَ مرةً بعد مرة، مهما كثرت. قال النبيُّ ﷺ: كلُّ بني آدمَ خطّاء، وخيرُ الخطائينَ التوابون»</span>.',
+   '<span class="say">«الغفّارُ يفرحُ عندما يعودُ إليه عبدُهُ ويقول: أستغفرُ الله! يمحو الخطأَ كما تمحو الممحاةُ الكلمةَ من الدفتر… ولا يبقى منه شيء!»</span>.',
+   'قال كريم: «أستغفرُ اللهَ العظيم…». ثم ذهبَ لأمِّهِ واعتذرَ وساعدَها في تنظيفِ الزجاج. فقبَّلتْهُ وقالت: «سامحتُك يا حبيبي». وشعرَ كريمٌ أنَّ قلبَهُ صارَ خفيفًا نظيفًا كالثوبِ المغسول 🧼✨'
+  ],
+  q:'🤔 تذكّر يا بطل: إذا أخطأت فقل «أستغفر الله» واعتذر لمن أخطأت في حقه — الغفّار يحب التوابين!'},
+ {type:'story',ic:'🐣',title:'قصة: أرأف من كل رؤوف (اسم الله الرؤوف)',
+  body:[
+   'وجدتْ جنى عصفورًا صغيرًا وقعَ من عشِّه، فحملتْهُ بيديها برفقٍ وأطعمتْهُ وأعادتْهُ إلى عشِّه.',
+   'قالت أمُّها: <span class="say">«ما أجملَ رأفتَكِ يا جنى! وهل تعلمين أنَّ اللهَ هو الرؤوف؟ رأفتُهُ أوسعُ من رأفةِ كلِّ الناسِ مجتمعين»</span>.',
+   'قالت جنى: «وكيف أرى رأفةَ الله؟». قالت أمُّها: <span class="say">«انظري حولَك! هو الذي ألهمَ أمَّ العصفورِ أن تطعمَ صغارَها، وجعلَ في قلبِ أمِّكِ حنانًا عليكِ، ورزقَ النملةَ في جحرِها، والسمكةَ في البحر…»</span>.',
+   '<span class="say">«ومن رأفتِهِ بنا: لم يكلِّفنا فوقَ طاقتِنا، فالصلواتُ خمسٌ قصيرة، والصيامُ شهرٌ واحد، ويغفرُ لنا إذا نسينا أو أخطأنا»</span>.',
+   'قالت جنى وهي تنظرُ للعش: «الحمدُ لله أنَّ ربَّنا رؤوفٌ رحيم… سأكونُ رفيقةً مثلما هو رؤوفٌ بي» 🐣'
+  ],
+  q:'🤔 سؤال البطلة: اذكر موقفًا واحدًا اليوم يمكنك أن تكون فيه رؤوفًا بإنسان أو حيوان!'},
+ {type:'story',ic:'💌',title:'قصة: الودود الذي يحبك أولًا (اسم الله الودود)',
+  body:[
+   'سألَ باسلٌ معلمَه: «أنا أحبُّ اللهَ… لكن هل اللهُ يحبُّني أنا؟ أنا صغيرٌ بين ملايينِ الناس!».',
+   'قال المعلم: <span class="say">«يا باسل، من أسماءِ اللهِ الحسنى: الودود — يعني الذي يحبُّ عبادَهُ حبًّا لطيفًا قريبًا، ويتودّدُ إليهم بالنعمِ قبل أن يطلبوا!»</span>.',
+   '<span class="say">«فكِّر: من أعطاكَ عينيكَ قبل أن تطلبَهما؟ من جعلَ أمَّكَ تحبُّكَ قبل أن تراك؟ الودودُ أحبَّكَ أولًا… قبل أن تعرفَه!»</span>.',
+   '<span class="say">«وإذا تقرَّبَ إليه العبدُ شبرًا تقرَّبَ إليه ذراعًا، وإذا أتاهُ يمشي أتاهُ هرولةً! وإذا أحبَّ اللهُ عبدًا نادى جبريل: إني أحبُّ فلانًا فأحبَّه… ثم يوضعُ له القبولُ في الأرض، فيحبُّهُ الناس»</span>.',
+   'عادَ باسلٌ إلى بيتِهِ يقفزُ فرحًا، وكتبَ على دفترِه: «الودودُ يحبُّني! وسأحبُّهُ أكثرَ كلَّ يوم» 💌'
+  ],
+  q:'🤔 همسة البطل: قل في سجودك الليلة: «يا ودود، اجعلني من عبادك الذين تحبهم»!'},
+ {type:'story',ic:'🧭',title:'قصة: من يدير الكون؟ (اسم الله المدبِّر)',
+  body:[
+   'سألَ عمرُ أباه في السيارة: «من يجعلُ الشمسَ تشرقُ كلَّ يومٍ في موعدِها ولا تتأخرُ أبدًا؟».',
+   'قال أبوه: <span class="say">«اللهُ المدبِّر! يدبِّرُ أمرَ السماءِ والأرض: الشمسُ تجري لموعدِها، والليلُ والنهارُ يتعاقبان، والمطرُ ينزلُ فيحيي الأرض… كلُّ شيءٍ يمشي بنظامٍ دقيقٍ لا يخطئ»</span>.',
+   'قال عمر: «حتى أنا؟». قال أبوه: <span class="say">«حتى أنت! دبَّرَ رزقَكَ وأهلَكَ وبيتَك، ويدبِّرُ لكَ الخيرَ وأنتَ نائم. لذلك لا نقلقُ كثيرًا… فالذي يديرُ الكونَ كلَّهُ لن ينساك!»</span>.',
+   'نظرَ عمرُ من النافذةِ إلى الشمسِ والسحابِ والطيورِ العائدةِ إلى أعشاشِها… وقال بقلبٍ مطمئن: «حسبيَ اللهُ المدبِّر» 🧭'
+  ],
+  q:'🤔 سؤال البطل: اذكر ٣ أشياء يدبّرها الله كل يوم دون أن يطلبها أحد!'},
+ {type:'story',ic:'👂',title:'قصة: همسة تحت اللحاف (اسم الله السميع)',
+  body:[
+   'خافتْ لينُ من الرعدِ ليلًا، واختبأتْ تحت اللحاف، وهمستْ بصوتٍ لا يكادُ يُسمع: «يا الله… أنا خائفة».',
+   'في الصباحِ قالت لأمِّها: «هل سمعَني اللهُ وأنا أهمسُ تحت اللحاف؟».',
+   'قالت أمُّها: <span class="say">«يا حبيبتي، اللهُ السميع! يسمعُ همسَكِ ودعاءَكِ وحتى ما في قلبِكِ قبل أن تنطقي! يسمعُ دبيبَ النملةِ السوداءِ على الصخرةِ الصماءِ في الليلةِ الظلماء!»</span>.',
+   '<span class="say">«ولا تختلطُ عليه الأصوات: يسمعُكِ أنتِ، ويسمعُ ملايينَ الداعينَ معكِ في نفسِ اللحظة، ويجيبُ كلَّ واحد!»</span>.',
+   'قالت لين: «إذن لن أخافَ بعد اليوم… سأهمسُ له وهو يسمعُني دائمًا». وصارتْ كلما خافتْ همستْ: «يا سميع…» فيطمئنُّ قلبُها 👂✨'
+  ],
+  q:'🤔 همسة البطلة: جرّب أن تدعو الله همسًا بأخفض صوت — هل يسمعك؟ نعم! فهو السميع!'},
+ {type:'story',ic:'👀',title:'قصة: النملة في الصخرة (اسم الله البصير)',
+  body:[
+   'في درسِ العلوم، نظرَ سعدٌ في المجهرِ فرأى كائناتٍ صغيرةً لا تُرى بالعين! قال مندهشًا: «هذه تعيشُ معنا ولا نراها؟!».',
+   'قال المعلم: <span class="say">«نحن لا نراها… لكنَّ اللهَ البصيرَ يراها! يرى النملةَ السوداءَ في جوفِ الصخرةِ في أعماقِ البحر، ويرى ما تحتَ الأرضِ وما فوقَ السماء»</span>.',
+   '<span class="say">«ويراكَ أنتَ يا سعد: يرى إحسانَكَ حين تساعدُ أمَّك، ويرى صدقَكَ حين ترجعُ الأمانة… لا يضيعُ عندَهُ عملٌ جميلٌ أبدًا، حتى لو لم يرَهُ أحدٌ من الناس!»</span>.',
+   'فرحَ سعدٌ وقال: «كنتُ أظنُّ أنَّ أعمالي الجميلةَ الخفيةَ لا يعرفُها أحد… الآن عرفتُ أنَّ البصيرَ يراها كلَّها ويكافئُني عليها!» 👀🌟'
+  ],
+  q:'🤔 تحدي البطل: اعمل اليوم عملًا جميلًا في السر لا يعرفه إلا الله!'},
+ {type:'story',ic:'🍞',title:'قصة: من أين يأتي الخبز؟ (اسم الله الرزّاق)',
+  body:[
+   'سألتْ رقيةُ أمَّها في المطبخ: «من أين جاءَ هذا الخبز؟». قالت أمُّها: «من المخبز». قالت: «والمخبزُ من أين؟». قالت: «من القمح». قالت: «والقمح؟!».',
+   'ضحكتْ أمُّها وقالت: <span class="say">«وصلتِ إلى السر! القمحُ من حبةٍ صغيرةٍ أنزلَ اللهُ عليها المطرَ وأخرجَ منها السنابل… اللهُ الرزّاقُ هو أولُ القصةِ كلِّها!»</span>.',
+   '<span class="say">«وهو يرزقُ كلَّ المخلوقات: الطيرُ تخرجُ جائعةً وترجعُ شبعانة، والسمكُ في البحر، والنملُ في جحورِه… ما من دابةٍ في الأرضِ إلا على اللهِ رزقُها!»</span>.',
+   'قالت رقية: «إذن قبل أن آكلَ أقول: بسم الله، وأشكرُ الرزّاق!». قالت أمُّها: «وتذكّري أيضًا: الرزّاقُ يحبُّ أن نطلبَ منه، وأن نعطيَ الفقراءَ مما رزقَنا» 🍞'
+  ],
+  q:'🤔 سؤال البطلة: تتبّع رحلة أي طعام على مائدتكم اليوم… ستجد الرزّاق في أولها دائمًا!'},
+ {type:'story',ic:'🪶',title:'قصة: لطفٌ خفي (اسم الله اللطيف)',
+  body:[
+   'سقطَ أنسٌ عن دراجتِهِ فجُرحتْ ركبتُه، وبكى. وبعد أيامٍ لاحظَ شيئًا عجيبًا: الجرحُ يلتئمُ وحدَه!',
+   'قال لأبيه: «من أصلحَ جرحي وأنا نائم؟». قال أبوه: <span class="say">«اللهُ اللطيف! يصنعُ لكَ الخيرَ بهدوءٍ من حيثُ لا تشعر: جرحُكَ يلتئم، وطعامُكَ يتحولُ إلى قوةٍ في جسمِك، وقلبُكَ يدقُّ وأنت نائم»</span>.',
+   '<span class="say">«واللطيفُ يلطفُ بنا حتى في الأشياءِ التي لا تعجبُنا! أحيانًا يمنعُ عنكَ شيئًا تريدُهُ لأنَّ فيه ضررًا لا تراه… مثل الأمِّ تمنعُ الحلوى قبل النوم لطفًا لا بخلًا»</span>.',
+   'قال أنس: «إذن حتى عندما لا أفهم… أثقُ أنَّ اللطيفَ يدبِّرُ لي الأجمل». وقبَّلَ ركبتَهُ الملتئمةَ وقال: «شكرًا يا لطيف!» 🪶'
+  ],
+  q:'🤔 سؤال البطل: ابحث عن ٣ ألطاف خفية في جسمك تعمل الآن وأنت لا تشعر!'},
+ {type:'story',ic:'🏔️',title:'قصة: أكبر من كل شيء (اسم الله الكبير)',
+  body:[
+   'وقفَ حمزةُ أمامَ الجبلِ في الرحلةِ وقال: «ما أكبرَه! أنا مثلُ نملةٍ بجانبِه!».',
+   'قال أبوه: <span class="say">«وهذا الجبلُ نفسُهُ مثلُ ذرةٍ بجانبِ الأرض، والأرضُ مثلُ حبةِ رملٍ بجانبِ الشمس، والشمسُ واحدةٌ من ملياراتِ النجوم… فمن خلقَ كلَّ هذا؟»</span>.',
+   'قال حمزة بصوتٍ خاشع: «اللهُ أكبر…». قال أبوه: <span class="say">«أحسنت! اللهُ الكبيرُ أكبرُ من كلِّ شيء. ولهذا نقولُ في كلِّ صلاة: اللهُ أكبر — يعني: اللهُ أكبرُ من اللعبِ، ومن التلفاز، ومن كلِّ شيءٍ يشغلُني عنه!»</span>.',
+   'وفي صلاةِ المغربِ عند الجبل، كبَّرَ حمزةُ وهو يشعرُ بمعنى الكلمةِ لأولِ مرة: اللهُ أكبر… أكبرُ من الجبلِ ومن كلِّ شيء 🏔️'
+  ],
+  q:'🤔 سؤال البطل: عندما تقول «الله أكبر» في الصلاة القادمة… تذكّر: أكبر من ماذا؟ من كل شيء!'},
+ {type:'story',ic:'🛡️',title:'قصة: الحارس في كل مكان (اسم الله الحفيظ)',
+  body:[
+   'سافرَ أبو ياسمينَ للعمل، فقالت لأمِّها باكية: «من يحرسُنا الليلةَ وبابا مسافر؟».',
+   'قالت أمُّها: <span class="say">«الذي يحرسُنا كلَّ ليلة، حتى عندما يكونُ بابا هنا: اللهُ الحفيظ! يحفظُنا بملائكةٍ يتعاقبونَ علينا بالليلِ والنهار»</span>.',
+   '<span class="say">«وقد علَّمنا النبيُّ ﷺ كلماتِ الحفظ: نقرأُ آيةَ الكرسي فلا يقربُنا شيطان، ونقول: بسمِ اللهِ الذي لا يضرُّ مع اسمِهِ شيءٌ في الأرضِ ولا في السماء — ثلاثًا صباحًا ومساءً، فنكونُ في حفظِ اللهِ يومَنا كلَّه»</span>.',
+   'قرأتْ ياسمينُ آيةَ الكرسي مع أمِّها، وقالت الأذكار… ثم نامت مطمئنةً وهي تعلمُ أنَّ الحفيظَ لا ينامُ أبدًا 🛡️'
+  ],
+  q:'🤔 مهمة البطلة: احفظ دعاء «بسم الله الذي لا يضر مع اسمه شيء…» وقله ٣ مرات كل صباح ومساء!'},
+ {type:'story',ic:'🚪',title:'قصة: البابُ الذي لا يُغلق (اسم الله الصمد)',
+  body:[
+   'احتاجَ أبو مالكٍ قرضًا، فطرقَ بابَ صديقِهِ فلم يفتح، واتصلَ بآخرَ فاعتذر… فرآهُ مالكٌ حزينًا.',
+   'ثم رأى مالكٌ أباهُ يتوضأُ ويصلي ركعتينِ ويرفعُ يديه يدعو طويلًا… وبعد أيام، جاءَ الفرجُ من حيثُ لا يحتسب!',
+   'قال مالك: «يا أبي، لماذا دعوتَ اللهَ ولم تحزنْ من الأبوابِ المغلقة؟». قال أبوه: <span class="say">«لأنَّ اللهَ الصمد! السيدُ الذي يقصدُهُ كلُّ المخلوقاتِ في حاجاتِها، وبابُهُ لا يُغلقُ أبدًا»</span>.',
+   '<span class="say">«الناسُ يملّون إذا أكثرتَ الطلب… والصمدُ يحبُّ أن تطلبَ منه كلَّ شيء! الناسُ يحتاجونَ لغيرِهم… والصمدُ لا يحتاجُ لأحد، وكلُّنا نحتاجُه»</span>.',
+   'حفظَ مالكٌ الدرس: عندما تُغلقُ الأبواب… ابدأ بالبابِ الذي لا يُغلق 🚪✨'
+  ],
+  q:'🤔 سؤال البطل: في سورة الإخلاص نقرأ «اللهُ الصمد» — ماذا تعني الآن بعد القصة؟'},
+ {type:'story',ic:'🫧',title:'قصة: أقرب مما تظن (اسم الله الباطن)',
+  body:[
+   'سألتْ سارةُ معلمتَها: «اللهُ فوقَ السماءِ على عرشِه… فهل هو بعيدٌ عنا؟».',
+   'قالت المعلمة: <span class="say">«سؤالٌ جميل! اللهُ هو الظاهرُ فليس فوقَهُ شيء، وهو الباطنُ فليس دونَهُ شيء — هو فوقَ عرشِهِ سبحانه، وهو مع ذلك أقربُ إليكِ من حبلِ الوريد: يعلمُ سرَّكِ وخواطرَكِ وما يدورُ في قلبِك!»</span>.',
+   '<span class="say">«لا يحجبُهُ عنكِ جدارٌ ولا مسافة. في أيِّ مكانٍ تدعينَه… يسمعُكِ ويعلمُ حالَكِ، وهو معكِ بعلمِهِ أينما كنتِ»</span>.',
+   'قالت سارة: «إذن لستُ وحدي أبدًا… حتى لو كنتُ في مكانٍ لا يعرفُهُ أحد!». قالت المعلمة: «أبدًا يا سارة… ومن عاشَ بهذا القلبِ لا يستوحشُ أبدًا» 🫧'
+  ],
+  q:'🤔 همسة البطلة: عندما تشعر بالوحدة قل: «اللهُ معي، اللهُ يراني، اللهُ شاهدي»!'},
+ {type:'story',ic:'☝️',title:'قصة: واحدٌ لا شريكَ له (اسم الله الواحد)',
+  body:[
+   'سألَ يوسفُ جدَّه: «لماذا نعبدُ اللهَ وحدَهُ ولا نعبدُ معه غيرَه؟».',
+   'قال الجد: <span class="say">«فكِّر معي: لو كان للسفينةِ قبطانان، كلٌّ يريدُ اتجاهًا… ماذا يحدث؟». قال يوسف: «تغرق!». قال: «ولو كان للصفِّ معلمان يأمرانِ بأمرينِ مختلفين؟». قال: «لضاعَ التلاميذ!»</span>.',
+   '<span class="say">«أحسنت! قال تعالى: ﴿لَوْ كَانَ فِيهِمَا آلِهَةٌ إِلَّا اللَّهُ لَفَسَدَتَا﴾ — لو كان مع اللهِ إلهٌ آخرُ لفسدتِ السماواتُ والأرض! لكنِ انظر: كلُّ شيءٍ يمشي بنظامٍ واحدٍ متقن… لأنَّ المدبِّرَ واحد»</span>.',
+   '<span class="say">«ولهذا أحلى كلمةٍ في الوجود: لا إله إلا الله — وحدَهُ نعبد، ووحدَهُ ندعو، ووحدَهُ نحب أعظمَ الحب»</span>.',
+   'قال يوسف: «لا إله إلا الله… الآن فهمتُها أكثر، وأحببتُها أكثر!» ☝️'
+  ],
+  q:'🤔 سؤال البطل: «لا إله إلا الله» أفضل الذكر — كم مرة ستقولها اليوم؟'},
+ {type:'story',ic:'⚖️',title:'قصة: لكل شيء حكمة (اسم الله الحكيم)',
+  body:[
+   'قالت مريمُ لأبيها وهي تنظرُ إلى النحلة: «لماذا خلقَ اللهُ للنحلةِ إبرةً تلسع؟ إنها تؤلم!».',
+   'قال أبوها: <span class="say">«سؤالٌ ذكي! الإبرةُ تحمي النحلةَ وبيتَها، وبدونِها لسُرقَ عسلُها كلُّه فلا نجدُ نحن العسل! اللهُ الحكيمُ لا يخلقُ شيئًا عبثًا… لكلِّ شيءٍ حكمة، فهمناها أو لم نفهمْها»</span>.',
+   '<span class="say">«الليلُ للنومِ والنهارُ للعمل، والجلدُ يتألمُ ليحذِّرَكِ من النار، والدواءُ مرٌّ لكنه يشفي… وهكذا أوامرُ اللهِ كلُّها: ما أمرَنا إلا بما ينفعُنا، وما نهانا إلا عما يضرُّنا»</span>.',
+   'قالت مريم: «إذن عندما لا أفهمُ شيئًا أقول: اللهُ الحكيمُ أعلم!». قال أبوها: «وهذه من علاماتِ العقلِ الكبير يا مريم» ⚖️🍯'
+  ],
+  q:'🤔 سؤال البطلة: اذكر أمرًا أمرنا الله به… وابحث مع أهلك عن حكمة جميلة فيه!'},
+ {type:'story',ic:'🌿',title:'قصة: الذي لا يستعجل (اسم الله الحليم)',
+  body:[
+   'غضبَ خالدٌ من أخيهِ الصغيرِ لأنه خربشَ دفترَه، وكادَ يصرخُ فيه… لكنَّ جدَّهُ أمسكَ يدَهُ بلطفٍ وقال: «تعالَ أحكِ لك عن الحليم».',
+   '<span class="say">«اللهُ الحليمُ يرى الناسَ يخطئونَ كلَّ يوم… ومع ذلك لا يستعجلُ عقوبتَهم! يمهلُهم ويرزقُهم ويسترُهم، وينتظرُ أن يعودوا إليه ليغفرَ لهم»</span>.',
+   'قال خالد: «حتى الذين يعصونَه؟». قال الجد: <span class="say">«حتى هم! يشرقُ عليهم شمسَه، وينزلُ عليهم مطرَه… فما أعظمَ حلمَه! ومن أحبَّ الحليمَ تعلَّمَ منه: لا يغضبُ بسرعة، ويسامحُ من أخطأَ عليه»</span>.',
+   'نظرَ خالدٌ إلى أخيهِ الصغيرِ الخائف… فابتسمَ وضمَّهُ وقال: «سامحتُك، لكن دفاتري ليست للرسم!». فقال جدُّه: «اللهُ يحبُّ الحليمَ مثلَك يا خالد» 🌿'
+  ],
+  q:'🤔 تحدي البطل: النبي ﷺ قال: «ليس الشديدُ بالصُّرَعة…» — عندما تغضب هذا الأسبوع، تذكّر الحليم واكظم غضبك!'},
+ {type:'finish',ic:'🏅',title:'المحطة الأخيرة: شهادة حبيب الله'}
+];
+
+var K='allah_journey_v1';
+var st={};
+try{ st=JSON.parse(localStorage.getItem(K)||'{}')||{}; }catch(e){}
+st.done=st.done||{};
+function save(){ try{ localStorage.setItem(K,JSON.stringify(st)); }catch(e){} }
+function doneCount(){ return Object.keys(st.done).length; }
+
+function renderMap(){
+  var m=document.getElementById('map'); m.innerHTML='';
+  STATIONS.forEach(function(s,i){
+    var d=document.createElement('div');
+    d.className='station '+s.type+(st.done[i]?' done':'');
+    var kind=s.type==='story'?'قصة':(s.type==='activity'?'نشاط':'الجائزة الكبرى');
+    d.innerHTML='<span class="dot"></span>'+
+      '<button class="st-card" onclick="openStation('+i+')">'+
+      '<span class="badge">✓</span>'+
+      '<span class="ic">'+s.ic+'</span>'+
+      '<b>'+s.title.replace(/^(قصة|نشاط|المحطة الأخيرة): /,'').replace(/ \(.+\)$/,'')+'</b>'+
+      '<small>المحطة '+(i+1)+' · '+kind+'</small></button>';
+    m.appendChild(d);
+  });
+  document.getElementById('stars').textContent=doneCount();
+  document.getElementById('total').textContent=STATIONS.length;
+}
+
+var cur=-1;
+function openStation(i){
+  cur=i; var s=STATIONS[i];
+  var h='<button class="close" onclick="closeSheet()">✕</button>'+
+        '<span class="s-ic">'+s.ic+'</span><h2>'+s.title+'</h2>';
+  if(s.type==='finish'){
+    var all = doneCount() >= STATIONS.length-1 || st.done[i];
+    if(all){
+      h+='<div class="cert"><h3>🏅 شهادة حبيب الله</h3>'+
+         '<p>تشهدُ رحلةُ «أحبُّ الله» أنَّ البطل/البطلة</p>'+
+         (st.name?'<div class="nm">'+st.name+'</div>':'<input id="nm" placeholder="اكتب اسمك هنا" value="">')+
+         '<p>أتمَّ جميعَ محطاتِ الرحلة: عرفَ ربَّهُ بنعمِهِ وخلقِه، وأحبَّه، وتعلَّمَ أنَّ اللهَ يراهُ ويسمعُهُ ويحبُّه!</p>'+
+         '<p style="font-size:1.3rem">❤️⭐❤️⭐❤️</p>'+
+         '<p style="font-size:.85rem;color:#9A7A6C">«اللهم إني أسألُكَ حبَّك، وحبَّ من يحبُّك، وحبَّ عملٍ يقرِّبُني إلى حبِّك»</p></div>'+
+         (st.name
+           ?'<button class="donebtn finished" onclick="window.print()">🖨️ اطبع شهادتي</button>'
+           :'<button class="donebtn" onclick="signCert()">✍️ وقِّع الشهادة</button>');
+    }else{
+      h+='<p style="text-align:center;font-weight:800;font-size:1.05rem">🔒 أكمِل كلَّ المحطاتِ أولًا يا حبيب الله…<br>أنجزتَ حتى الآن <b style="color:var(--teal-dk)">'+doneCount()+'</b> من '+(STATIONS.length-1)+'!</p>'+
+         '<button class="donebtn" onclick="closeSheet()">أكمل الرحلة 💪</button>';
+    }
+  }else{
+    h+='<button class="readbtn" id="rb" onclick="readAloud()">🔊 اقرأ لي</button>';
+    if(s.type==='story'){
+      h+='<div class="story-txt">'+s.body.map(function(p){return '<p>'+p+'</p>';}).join('')+'</div>';
+    }else{
+      h+='<ol class="steps">'+s.steps.map(function(p){return '<li>'+p+'</li>';}).join('')+'</ol>';
+    }
+    h+='<div class="q">'+s.q+'</div>';
+    h+= st.done[i]
+      ? '<button class="donebtn finished" onclick="closeSheet()">✓ أنجزتُها! (اضغط للرجوع)</button>'
+      : '<button class="donebtn" onclick="markDone()">'+(s.type==='story'?'قرأتُها كاملة! ❤️':'أنجزتُ النشاط! ❤️')+'</button>';
+  }
+  document.getElementById('sheet').innerHTML=h;
+  document.getElementById('ov').classList.add('open');
+}
+function signCert(){
+  var v=(document.getElementById('nm')||{}).value||'';
+  v=v.trim(); if(!v){ alert('اكتب اسمك أولًا يا حبيب الله! ✍️'); return; }
+  st.name=v; st.done[STATIONS.length-1]=true; save(); celebrate(); openStation(STATIONS.length-1); renderMap();
+}
+function markDone(){
+  st.done[cur]=true; save(); stopRead(); celebrate();
+  renderMap(); closeSheet();
+}
+function closeSheet(){ stopRead(); document.getElementById('ov').classList.remove('open'); }
+
+var uttering=false;
+function readAloud(){
+  if(uttering){ stopRead(); return; }
+  var s=STATIONS[cur]; if(!s) return;
+  var txt=(s.type==='story'?s.body.join(' '):s.steps.join('. '))+'. '+s.q;
+  txt=txt.replace(/<[^>]+>/g,'').replace(/[🤔📮💡❤️✨🌌👁️🤲🕋🎁💝🔍]/g,'');
+  var u=new SpeechSynthesisUtterance(txt);
+  u.lang='ar-SA'; u.rate=.92;
+  var vs=speechSynthesis.getVoices().filter(function(v){return v.lang&&v.lang.indexOf('ar')===0;});
+  if(vs.length) u.voice=vs[0];
+  u.onend=u.onerror=function(){ uttering=false; var b=document.getElementById('rb'); if(b){b.classList.remove('playing');b.textContent='🔊 اقرأ لي';} };
+  speechSynthesis.cancel(); speechSynthesis.speak(u); uttering=true;
+  var b=document.getElementById('rb'); if(b){b.classList.add('playing');b.textContent='⏹️ إيقاف';}
+}
+function stopRead(){ try{speechSynthesis.cancel();}catch(e){} uttering=false; }
+
+function celebrate(){
+  var em=['❤️','🌟','✨','🎉','💛'];
+  for(var i=0;i<18;i++){
+    var s=document.createElement('span');
+    s.className='confetti'; s.textContent=em[i%em.length];
+    s.style.left=(Math.random()*100)+'vw';
+    s.style.animationDelay=(Math.random()*0.5)+'s';
+    document.body.appendChild(s);
+    setTimeout(function(el){return function(){el.remove()}}(s),3200);
+  }
+}
+renderMap();
+</script>
+</body>
+</html>

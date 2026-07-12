@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>رحلة أُحبُّ رسولَ الله ﷺ 💚</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&display=swap">
+<style>
+:root{
+  --sky:#EFF7F0;--sun:#F5B92E;--rose:#2E7D5B;--rose-dk:#1C5C40;
+  --teal:#C99417;--teal-dk:#8F6A0E;--purple:#8E5EA8;--navy:#274060;--ink:#33402F;
+  --card:#FDFFF8;--line:#CFE3CE;
+}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Tajawal',sans-serif;background:var(--sky);color:var(--ink);line-height:1.9;direction:rtl;overflow-x:hidden}
+a{color:var(--rose-dk)}a:hover{color:var(--teal-dk)}
+button{font-family:'Tajawal',sans-serif;cursor:pointer}
+
+header.hero{text-align:center;padding:2.2rem 1rem 1rem;position:relative}
+.hero h1{font-size:clamp(1.8rem,5vw,2.8rem);font-weight:900;color:var(--rose-dk)}
+.hero p{font-weight:700;color:#5C7A62;max-width:34rem;margin:.4rem auto 0}
+.hero .back{position:absolute;top:1rem;right:1rem;font-size:.85rem;font-weight:800;background:#fff;border:2px solid var(--line);border-radius:2rem;padding:.4rem 1rem;text-decoration:none}
+.starbar{display:inline-flex;align-items:center;gap:.4rem;background:#fff;border:2px solid var(--rose);border-radius:2rem;padding:.35rem 1.1rem;margin-top:.9rem;font-weight:900;color:var(--rose-dk);font-size:1.05rem}
+
+.map{max-width:40rem;margin:1.6rem auto 3rem;padding:0 1.2rem;position:relative}
+.map::before{content:'';position:absolute;top:0;bottom:0;right:50%;width:6px;background:repeating-linear-gradient(180deg,var(--rose) 0 14px,transparent 14px 26px);border-radius:3px;transform:translateX(50%)}
+.station{position:relative;width:calc(50% - 2.2rem);margin-bottom:1.6rem}
+.station:nth-child(odd){margin-left:auto;margin-right:0}
+.station:nth-child(even){margin-right:calc(50% + 2.2rem)}
+.st-card{display:block;width:100%;text-align:right;background:var(--card);border:3px solid var(--line);border-radius:1.3rem;padding:1rem 1.1rem;box-shadow:0 6px 0 rgba(40,90,60,.15);transition:.15s;position:relative}
+.st-card:hover{transform:translateY(-3px)}
+.st-card .ic{font-size:2rem;display:block}
+.st-card b{font-size:1.05rem;font-weight:900;color:var(--navy);display:block;margin-top:.2rem}
+.st-card small{font-weight:700;color:#6C8A72;font-size:.78rem}
+.st-card .badge{position:absolute;top:-.7rem;left:-.7rem;background:var(--teal);color:#fff;border-radius:50%;width:2rem;height:2rem;display:none;align-items:center;justify-content:center;font-size:1rem;border:2px solid #fff}
+.station.done .st-card{border-color:var(--teal)}
+.station.done .st-card .badge{display:flex}
+.station .dot{position:absolute;top:1.4rem;width:1.4rem;height:1.4rem;background:#fff;border:4px solid var(--rose);border-radius:50%;z-index:2}
+.station:nth-child(odd) .dot{left:-2.95rem}
+.station:nth-child(even) .dot{right:-2.95rem}
+.station.done .dot{background:var(--teal);border-color:var(--teal)}
+.station.activity .st-card{border-color:#D8C3E6}.station.activity.done .st-card{border-color:var(--purple)}
+.station.finish .st-card{background:linear-gradient(135deg,#EDFFEF,#D3F2DB);border-color:var(--rose)}
+
+.overlay{position:fixed;inset:0;background:rgba(20,50,30,.55);display:none;align-items:flex-start;justify-content:center;padding:2rem 1rem;z-index:50;overflow-y:auto}
+.overlay.open{display:flex}
+.sheet{background:var(--card);border-radius:1.5rem;max-width:38rem;width:100%;padding:1.6rem clamp(1.1rem,4vw,2.2rem);position:relative;border:4px solid var(--rose);margin-bottom:2rem}
+.sheet .close{position:absolute;top:.8rem;left:.8rem;background:#fff;border:2px solid var(--line);border-radius:50%;width:2.3rem;height:2.3rem;font-size:1.1rem;font-weight:900}
+.sheet .s-ic{font-size:2.6rem;text-align:center;display:block}
+.sheet h2{font-size:1.45rem;font-weight:900;color:var(--rose-dk);text-align:center;margin:.2rem 0 .8rem}
+.sheet .story-txt{font-size:1.08rem;font-weight:500;line-height:2.15}
+.sheet .story-txt p{margin:.6rem 0}
+.sheet .story-txt .say{color:var(--rose-dk);font-weight:800}
+.readbtn{display:flex;align-items:center;gap:.5rem;margin:0 auto 1rem;background:var(--rose);color:#fff;border:none;border-radius:2rem;padding:.5rem 1.4rem;font-weight:900;font-size:.95rem;box-shadow:0 4px 0 var(--rose-dk)}
+.readbtn.playing{background:var(--teal);box-shadow:0 4px 0 var(--teal-dk)}
+.steps{counter-reset:st;list-style:none;margin:.6rem 0}
+.steps li{counter-increment:st;position:relative;padding:.55rem .5rem .55rem 0;padding-right:3rem;font-weight:700;font-size:1.02rem;border-bottom:1px dashed var(--line)}
+.steps li::before{content:counter(st);position:absolute;right:0;top:.65rem;width:2.1rem;height:2.1rem;background:var(--purple);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:900}
+.q{background:#E4F5E7;border:2px dashed var(--rose);border-radius:1rem;padding:.8rem 1rem;margin:1rem 0;font-weight:800;color:#1C5C40}
+.donebtn{display:block;margin:1.3rem auto 0;background:var(--rose);color:#fff;border:none;border-radius:2rem;padding:.7rem 2.2rem;font-weight:900;font-size:1.1rem;box-shadow:0 5px 0 var(--rose-dk)}
+.donebtn:disabled{opacity:.55;box-shadow:none}
+.donebtn.finished{background:var(--teal);box-shadow:0 5px 0 var(--teal-dk)}
+
+.cert{border:6px double var(--rose);border-radius:1.2rem;background:#FDFFF4;text-align:center;padding:1.6rem 1rem;margin:.6rem 0}
+.cert h3{font-size:1.5rem;font-weight:900;color:var(--rose-dk)}
+.cert .nm{font-size:1.3rem;font-weight:900;color:var(--teal-dk);border-bottom:2px dashed var(--line);display:inline-block;min-width:12rem;margin:.5rem 0;padding:0 .5rem}
+.cert p{font-weight:700}
+.cert input{font-family:'Tajawal';font-size:1.1rem;font-weight:800;text-align:center;border:2px solid var(--line);border-radius:.8rem;padding:.4rem .8rem;width:min(16rem,90%);margin:.5rem 0;background:#fff}
+.confetti{position:fixed;top:-2rem;font-size:1.5rem;z-index:60;animation:fall 2.6s linear forwards;pointer-events:none}
+@keyframes fall{to{transform:translateY(110vh) rotate(540deg)}}
+
+footer{text-align:center;color:#6C8A72;font-weight:700;font-size:.85rem;padding:1.5rem 1rem 2.2rem}
+@media(max-width:560px){
+  .map::before{right:1.1rem;transform:none}
+  .station,.station:nth-child(even),.station:nth-child(odd){width:calc(100% - 3.4rem);margin-right:3.4rem;margin-left:0}
+  .station .dot,.station:nth-child(odd) .dot,.station:nth-child(even) .dot{right:-2.85rem;left:auto}
+}
+</style>
+</head>
+<body data-screen-label="رحلة أحب الرسول">
+
+<header class="hero">
+  <a class="back" href="corners/little-district/pages/little-district.html">↩️ الحي الصغير</a>
+  <h1>💚 رحلةُ أُحبُّ رسولَ الله ﷺ</h1>
+  <p>يا بطل! في هذه الرحلة ستتعرفُ على أعظمِ إنسانٍ مشى على الأرض… ستحبُّهُ وتشتاقُ لرؤيتِه، وتتمسكُ بسنتِهِ ﷺ 🌟</p>
+  <div class="starbar">💚 <span id="stars">0</span> من <span id="total"></span> محطة</div>
+  <div style="margin-top:.9rem;display:flex;gap:.6rem;justify-content:center;flex-wrap:wrap">
+    <a href="رحلة أحب الله.html" style="display:inline-flex;align-items:center;gap:.5rem;background:#C94F6D;color:#fff;border-radius:2rem;padding:.5rem 1.3rem;font-weight:900;font-size:.88rem;text-decoration:none">❤️ رحلة أُحبُّ الله ←</a>
+    <a href="رحلة أحب الصلاة.html" style="display:inline-flex;align-items:center;gap:.5rem;background:#274060;color:#F5CC5A;border-radius:2rem;padding:.5rem 1.3rem;font-weight:900;font-size:.88rem;text-decoration:none">🕌 رحلة أُحبُّ الصلاة ←</a>
+    <a href="رحلة الأخلاق والآداب.html" style="display:inline-flex;align-items:center;gap:.5rem;background:#6C4A9E;color:#fff;border-radius:2rem;padding:.5rem 1.3rem;font-weight:900;font-size:.88rem;text-decoration:none">🌟 رحلة الأخلاق والآداب ←</a>
+    <a href="رحلة القدوات.html" style="display:inline-flex;align-items:center;gap:.5rem;background:#B0762A;color:#fff;border-radius:2rem;padding:.5rem 1.3rem;font-weight:900;font-size:.88rem;text-decoration:none">⭐ رحلة القدوات ←</a>
+    <a href="رحلة الأذكار والدعاء.html" style="display:inline-flex;align-items:center;gap:.5rem;background:#0E7C86;color:#fff;border-radius:2rem;padding:.5rem 1.3rem;font-weight:900;font-size:.88rem;text-decoration:none">📿 رحلة الأذكار والدعاء ←</a>
+    <a href="دليل الأهل للرحلات.html" style="display:inline-flex;align-items:center;gap:.5rem;background:#fff;color:#33302A;border:2px solid #CFE3CE;border-radius:2rem;padding:.5rem 1.3rem;font-weight:900;font-size:.88rem;text-decoration:none">👨‍👩‍👧 دليل الأهل ←</a>
+  </div>
+</header>
+
+<div class="map" id="map"></div>
+
+<div class="overlay" id="ov" onclick="if(event.target===this)closeSheet()">
+  <div class="sheet" id="sheet"></div>
+</div>
+
+<footer>صُنع بحُب 💚 — تربية الطفل المسلم · رحلة أحب رسول الله ﷺ</footer>
+
+<script>
+var STATIONS=[
+ {type:'story',ic:'🌍',title:'قصة: رحمةٌ للعالمين (منزلة الرسول عند الله)',
+  body:[
+   'سألَ آدمُ أباه: «من هو أحبُّ الناسِ إلى الله؟».',
+   'قال أبوه: <span class="say">«محمدٌ ﷺ! اختارَهُ اللهُ من بينِ كلِّ البشرِ ليحملَ آخرَ رسالة، وقال عنه: ﴿وَمَا أَرْسَلْنَاكَ إِلَّا رَحْمَةً لِّلْعَالَمِينَ﴾ — رحمةً لكلِّ الناس، بل وللحيواناتِ والأشجار!»</span>.',
+   '<span class="say">«ومنزلتُهُ عند اللهِ عجيبة: أُسريَ به في ليلةٍ واحدةٍ من مكةَ إلى المسجدِ الأقصى، ثم عُرِجَ به فوقَ السماءِ السابعة! وهو أولُ من يدخلُ الجنة، وصاحبُ الشفاعةِ يومَ القيامة»</span>.',
+   '<span class="say">«وفي الجنةِ درجةٌ اسمُها الوسيلة، أعلى درجةٍ لعبدٍ واحدٍ فقط… ونرجو أن تكونَ لنبيِّنا. لذلك ندعو له بعد كلِّ أذان!»</span>.',
+   'قال آدم: «كلُّ هذا لنبيِّنا؟! أريدُ أن أعرفَهُ أكثرَ وأكثر!». قال أبوه: «هيا بنا في الرحلة…» 🌍'
+  ],
+  q:'🤔 مهمة البطل: بعد الأذان القادم قل: «اللهم آتِ محمدًا الوسيلةَ والفضيلة» — فمن دعا له حلّت له شفاعته ﷺ!'},
+ {type:'story',ic:'💎',title:'قصة: الصادق الأمين (صدق الرسول)',
+  body:[
+   'قبل أن يصبحَ محمدٌ ﷺ نبيًّا… ماذا كان أهلُ مكةَ يلقبونَه؟ كانوا ينادونَه: <span class="say">«الصادقُ الأمين!»</span>.',
+   'ما كذبَ مرةً واحدةً في حياتِهِ كلِّها، وكانوا يتركونَ عندَهُ أغلى أماناتِهم وهم مطمئنون… حتى أعداؤُهُ كانوا يأمنونَه!',
+   'ويومَ وقفَ على جبلِ الصفا وقال: <span class="say">«أرأيتم لو أخبرتُكم أنَّ خيلًا بالوادي تريدُ أن تغيرَ عليكم، أكنتم مصدقيَّ؟»</span> قالوا جميعًا: «نعم! ما جرَّبنا عليكَ إلا صدقًا!».',
+   'وعندما سألَ ملكُ الرومِ هرقلُ أبا سفيانَ — وكان يومَها عدوًّا للنبي —: «هل كنتم تتهمونَهُ بالكذبِ قبل أن يقولَ ما قال؟» قال: «لا». فقال هرقل: <span class="say">«ما كان ليدعَ الكذبَ على الناسِ ويكذبَ على الله!»</span>.',
+   'فيا بطل: نبيُّكَ ما كذبَ قط… فكلُّ ما أخبرَنا به حق: عن اللهِ والجنةِ والنار. ومن أحبَّهُ صارَ صادقًا مثلَه 💎'
+  ],
+  q:'🤔 تحدي البطل: لقبك الجديد هذا الأسبوع «الصادق الأمين» — لا كذب ولو مزاحًا!'},
+ {type:'story',ic:'🌙',title:'قصة: انشقاق القمر (معجزات الرسول)',
+  body:[
+   'قال المشركونَ للنبيِّ ﷺ: «إن كنتَ نبيًّا حقًّا… فأرِنا آية!» — وأشاروا إلى القمر.',
+   'فدعا النبيُّ ﷺ ربَّه… <span class="say">فانشقَّ القمرُ في السماءِ نصفين!</span> رآهُ أهلُ مكةَ جميعًا، وسجَّلَهُ اللهُ في القرآن: ﴿اقْتَرَبَتِ السَّاعَةُ وَانشَقَّ الْقَمَرُ﴾.',
+   'ومعجزاتُهُ كثيرة: <span class="say">نبعَ الماءُ من بينِ أصابعِهِ الشريفةِ فشربَ منه الجيشُ كلُّه! وأشبعَ مئةَ رجلٍ من طعامِ رجلٍ واحد! وحنَّ جذعُ النخلةِ وبكى شوقًا إليه حين تركَ الخطبةَ عليه!</span>',
+   'وأعظمُ معجزةٍ باقيةٌ بين أيدينا اليوم: <span class="say">القرآنُ الكريم!</span> تحدّى اللهُ الإنسَ والجنَّ أن يأتوا بسورةٍ واحدةٍ مثلِه… فما استطاعوا ولن يستطيعوا.',
+   'قال حمزةُ لأبيه بعد القصة: «معجزتُهُ أمامَ عيني… القرآنُ في بيتِنا!». قال أبوه: «ولذلك نقرؤُهُ كلَّ يومٍ ونحبُّ من جاءَ به» 🌙'
+  ],
+  q:'🤔 سؤال البطل: أي معجزة من معجزاته ﷺ ما زالت بين يديك اليوم تقرؤها وتلمسها؟'},
+ {type:'story',ic:'🕊️',title:'قصة: يوم الطائف (تضحيات الرسول)',
+  body:[
+   'هل تعلمُ يا بطل كم تعبَ نبيُّكَ لتصلَكَ كلمةُ «لا إله إلا الله»؟',
+   'ذهبَ ﷺ إلى الطائفِ يدعوهم إلى الله… فسخروا منه، وأغرَوا به سفهاءَهم يرمونَهُ بالحجارةِ حتى سالَ الدمُ من قدميهِ الشريفتين!',
+   'فجاءَهُ ملَكُ الجبالِ وقال: <span class="say">«إن شئتَ أطبقتُ عليهمُ الجبلين!»</span>. فماذا قال النبيُّ الرحيم؟ قال: <span class="say">«بل أرجو أن يُخرجَ اللهُ من أصلابِهم من يعبدُ اللهَ وحدَه»</span> — رفضَ أن يُهلكَهم… ودعا لأبنائِهم!',
+   'وفي مكة: وضعوا الشوكَ في طريقِه، وحاصروهُ وأصحابَهُ ثلاثَ سنينَ حتى أكلوا ورقَ الشجر، ثم أخرجوهُ من أحبِّ البلادِ إليه… وهو صابرٌ محتسب.',
+   'كلُّ هذا… <span class="say">لأجلِ أن يصلَ إليكَ الإسلامُ يا حبيبي</span>. فإذا صليتَ وقرأتَ القرآن، فتذكرْ من تحمَّلَ الألمَ ليصلَكَ هذا النور 🕊️'
+  ],
+  q:'🤔 سؤال البطل: النبي ﷺ ضحّى لأجلك قبل أن يراك… بماذا تضحي أنت لأجل سنته؟ (مثلًا: أترك دقائق اللعب لأصلي في الوقت)'},
+ {type:'story',ic:'🤲',title:'قصة: أرحم الناس (أخلاق الرسول ١)',
+  body:[
+   'كان أنسُ بنُ مالكٍ خادمَ النبيِّ ﷺ عشرَ سنينَ كاملة. فماذا قال عنه؟',
+   'قال: <span class="say">«خدمتُهُ عشرَ سنين، واللهِ ما قال لي: أفٍّ قط! وما قال لشيءٍ فعلتُه: لمَ فعلتَه؟ ولا لشيءٍ لم أفعلْه: ألا فعلتَ كذا؟»</span> — عشرُ سنواتٍ بلا كلمةِ عتابٍ واحدة!',
+   'وكان ﷺ يمزحُ مع الأطفالِ ويحملُهم، ويقبِّلُ الحسنَ والحسين ويقول: <span class="say">«من لا يَرحمْ لا يُرحمْ»</span>. وكانت الجاريةُ الصغيرةُ تأخذُ بيدِهِ فيذهبُ معها لقضاءِ حاجتِها!',
+   'وكان يرقِّعُ ثوبَه، ويخصفُ نعلَه، ويكونُ في خدمةِ أهلِه، ويبدأُ من لقيَهُ بالسلام، ويجلسُ حيثُ ينتهي به المجلسُ بلا تكبر.',
+   'وسُئلتْ عائشةُ رضي الله عنها عن خلقِه، فقالت كلمةً واحدةً تكفي: <span class="say">«كان خلُقُهُ القرآن»</span> 🤲'
+  ],
+  q:'🤔 تحدي البطل: يوم كامل بلا «أف» ولا تذمر — مثل نبيك ﷺ!'},
+ {type:'story',ic:'🎁',title:'قصة: أكرم الناس (أخلاق الرسول ٢)',
+  body:[
+   'جاءَ رجلٌ إلى النبيِّ ﷺ يسألُهُ عطاءً… فأعطاهُ <span class="say">غنمًا يملأُ ما بين جبلين!</span>',
+   'فرجعَ الرجلُ إلى قومِهِ يصيح: <span class="say">«يا قومِ أسلِموا! فإنَّ محمدًا يعطي عطاءَ من لا يخشى الفقر!»</span>.',
+   'وكان ﷺ لا يُسألُ شيئًا فيقولُ: لا. وكان أجودَ الناسِ بالخير، وأجودُ ما يكونُ في رمضان… أجودَ من الريحِ المرسلة!',
+   'وجاءتْهُ امرأةٌ ببردةٍ نسجتْها له. فلبسَها ﷺ وهو محتاجٌ إليها… ثم طلبَها منه رجل، فخلعَها وأعطاهُ إياها!',
+   'قال الصحابةُ للرجل: ما أحسنتَ! لبسَها النبيُّ محتاجًا إليها ثم سألتَه! قال: <span class="say">«واللهِ ما سألتُها لألبسَها… بل لتكونَ كفني إذا متُّ»</span> — من شدةِ حبِّهم لكلِّ شيءٍ لمسَهُ ﷺ! 🎁'
+  ],
+  q:'🤔 تحدي البطل: كن كريمًا اليوم — شارك لعبتك أو حلواك مع أحد دون أن يطلب!'},
+ {type:'story',ic:'❤️‍🔥',title:'قصة: أحبوه أكثر من أنفسهم (حب الصحابة له)',
+  body:[
+   'هل تريدُ أن تعرفَ كم أحبَّ الصحابةُ نبيَّهم؟ اسمع هذه المواقف…',
+   'في غزوةِ أُحد، وقفَ أبو طلحةَ أمامَ النبيِّ ﷺ يحميهِ بجسدِهِ من السهامِ ويقول: <span class="say">«نحري دونَ نحرِكَ يا رسولَ الله!»</span> — يعني: رقبتي تُصابُ قبلَ رقبتِك!',
+   'وسُئلَ زيدُ بنُ الدَّثِنَةِ وهو أسير: «أتحبُّ أنَّ محمدًا مكانَكَ وأنتَ سالمٌ في أهلِك؟» فقال: <span class="say">«واللهِ ما أحبُّ أن يُشاكَ محمدٌ بشوكةٍ وأنا جالسٌ في بيتي!»</span> فقال أبو سفيان: «ما رأيتُ أحدًا يحبُّ أحدًا كحبِّ أصحابِ محمدٍ محمدًا!».',
+   'وجاءَ رجلٌ فقال: يا رسولَ الله، متى الساعة؟ قال: <span class="say">«وماذا أعددتَ لها؟»</span> قال: ما أعددتُ كثيرَ صلاةٍ ولا صيام… ولكني أحبُّ اللهَ ورسولَه. فقال ﷺ: <span class="say">«المرءُ مع من أحبّ!»</span>.',
+   'قال أنس: فما فرحنا بشيءٍ فرحَنا بقولِه: «المرءُ مع من أحبّ» — فنحنُ نحبُّ النبيَّ ﷺ… ونرجو أن نكونَ معه في الجنة! ❤️‍🔥'
+  ],
+  q:'🤔 بشارة البطل: أنت تحب النبي ﷺ؟ إذن «المرء مع من أحب» — ادعُ الله أن تكون معه في الجنة!'},
+ {type:'story',ic:'🌸',title:'قصة: إخواني الذين لم يروني (اشتياق النبي إليك!)',
+  body:[
+   'جلسَ النبيُّ ﷺ يومًا بين أصحابِهِ وقال كلامًا عجيبًا: <span class="say">«وددتُ أنا قد رأينا إخوانَنا!»</span>.',
+   'قال الصحابة: «أولسنا إخوانَكَ يا رسولَ الله؟». قال: <span class="say">«أنتم أصحابي… وإخواني الذين لم يأتوا بعد!»</span> — الذين يؤمنونَ به وهم لم يروه!',
+   'وقال ﷺ: <span class="say">«من أشدِّ أمتي لي حبًّا ناسٌ يكونونَ بعدي، يودُّ أحدُهم لو رآني بأهلِهِ ومالِه»</span>.',
+   'هل فهمتَ يا بطل؟ <span class="say">النبيُّ ﷺ اشتاقَ إليكَ أنتَ قبل أن تولدَ بمئاتِ السنين!</span> وسمّاكَ أخاه!',
+   'وفي يومِ القيامة، يعرفُ أمتَهُ من أثرِ الوضوءِ، ويسقيكَ من حوضِهِ الكوثرِ شربةً لا تظمأُ بعدَها أبدًا… فيا الله، ما أجملَ اللقاء! 🌸'
+  ],
+  q:'🤔 همسة البطل: النبي ﷺ اشتاق إليك… فهل تشتاق إليه؟ صلِّ عليه الآن: اللهم صلِّ وسلم على نبينا محمد!'},
+ {type:'story',ic:'🌃',title:'قصة: الذي يصلي والناس نيام (عبادة الرسول)',
+  body:[
+   'استيقظتْ عائشةُ رضي الله عنها ليلًا… فلم تجدِ النبيَّ ﷺ بجانبِها. فمدَّتْ يدَها تبحثُ عنه، فوقعتْ يدُها على قدمَيهِ وهو ساجد!',
+   'كان ﷺ يقومُ الليلَ يصلي ويقرأُ ويدعو… <span class="say">حتى تتفطرَ — تتشققَ — قدماهُ من طولِ الوقوف!</span>',
+   'فقالت له عائشة: «لمَ تصنعُ هذا يا رسولَ الله، وقد غفرَ اللهُ لكَ ما تقدمَ من ذنبِكَ وما تأخر؟».',
+   'فأجابَ بكلمةٍ تدخلُ القلب: <span class="say">«أفلا أكونُ عبدًا شكورًا؟»</span> — يصلي ليس خوفًا فقط… بل شكرًا وحبًّا لله!',
+   'وكان يقول: <span class="say">«وجُعلتْ قرةُ عيني في الصلاة»</span> — أسعدُ لحظاتِهِ حين يقفُ بين يدي ربِّه. وإذا حزَبَهُ أمرٌ — أهمَّهُ شيءٌ — فزعَ إلى الصلاة… فيا بطل، إذا ضاقَ صدرُكَ يومًا: افعل مثلَه! 🌃'
+  ],
+  q:'🤔 سؤال البطل: النبي ﷺ صلى شكرًا لله… اذكر نعمة واحدة تشكر الله عليها في سجودك الليلة!'},
+ {type:'story',ic:'🐪',title:'قصة: الجمل الذي بكى (رفقه بالحيوان والشجر)',
+  body:[
+   'دخلَ النبيُّ ﷺ بستانًا لرجلٍ من الأنصار… فإذا جملٌ يعملُ في السقي. فلما رأى الجملُ النبيَّ ﷺ… <span class="say">حنَّ إليه وذرفتْ عيناهُ بالدموع!</span>',
+   'فمسحَ النبيُّ ﷺ على رأسِهِ فسكن. ثم سأل: <span class="say">«من ربُّ هذا الجمل؟»</span> فجاءَ صاحبُه، فقال له: <span class="say">«أفلا تتقي اللهَ في هذه البهيمة؟! إنه شكا إليَّ أنكَ تُجيعُهُ وتُتعبُه»</span> — الجملُ اشتكى للنبي!',
+   'وحكى ﷺ عن امرأةٍ دخلتِ النارَ في هرةٍ حبستْها حتى ماتتْ جوعًا… وعن رجلٍ سقى كلبًا عطشانًا <span class="say">فشكرَ اللهُ له وغفرَ له وأدخلَهُ الجنة!</span>',
+   'وحتى الشجر: نهى أن يُقطعَ الشجرُ بلا حاجة، وقال: <span class="say">«إن قامتِ الساعةُ وفي يدِ أحدِكم فسيلةٌ — شجرةٌ صغيرة — فإنِ استطاعَ أن لا يقومَ حتى يغرسَها فليغرسْها»</span> — ازرعْ حتى لو كانت آخرَ لحظةٍ في الدنيا!',
+   'فمن أحبَّ النبيَّ ﷺ… رفقَ بالقطةِ والعصفورِ والشجرة، وعلمَ أنَّ في كلِّ كبدٍ رطبةٍ أجرًا 🐪🌱'
+  ],
+  q:'🤔 مهمة البطل: افعل اليوم معروفًا لمخلوق: اسقِ نبتة، أطعم قطة، أو ضع ماءً للعصافير!'},
+ {type:'story',ic:'🧒',title:'قصة: صديق الأطفال (رفقه بالصغار)',
+  body:[
+   'هل تعلمُ أنَّ أطفالَ المدينةِ كانوا يعتبرونَ النبيَّ ﷺ صديقَهم الكبير؟',
+   'كان يمرُّ عليهم وهم يلعبون <span class="say">فيسلِّمُ عليهم واحدًا واحدًا</span> ويمسحُ رؤوسَهم! وكان يحملُ أمامةَ حفيدتَهُ على كتفِهِ وهو يصلي: إذا سجدَ وضعَها، وإذا قامَ حملَها!',
+   'وكان لأخٍ صغيرٍ لأنسٍ عصفورٌ صغيرٌ اسمُهُ «النُّغَير»، فمات العصفور. فكان النبيُّ ﷺ كلما رآهُ يمازحُهُ ويواسيه: <span class="say">«يا أبا عُمير، ما فعلَ النُّغَير؟»</span> — نبيُّ الأمةِ العظيمُ يسألُ طفلًا عن عصفورِه!',
+   'وذاتَ يومٍ قبَّلَ الحسنَ بنَ علي، فقال رجل: إنَّ لي عشرةً من الولدِ ما قبَّلتُ منهم أحدًا! فنظرَ إليه النبيُّ ﷺ وقال: <span class="say">«من لا يَرحمْ لا يُرحمْ»</span>.',
+   'وكان يقول: <span class="say">«ليس منا من لم يرحمْ صغيرَنا»</span>… فأنتَ يا بطل عندَ نبيِّكَ غالٍ محبوب 🧒💚'
+  ],
+  q:'🤔 سؤال البطل: النبي ﷺ كان يسلّم على الأطفال… فهل تسلّم أنت على الصغار وتعطف عليهم مثله؟'},
+ {type:'story',ic:'🌕',title:'قصة: أجمل من القمر (وصف الرسول ﷺ)',
+  body:[
+   'سُئلَ البراءُ بنُ عازب: «أكان وجهُ النبيِّ ﷺ مثلَ السيف؟» قال: <span class="say">«لا… بل مثلَ القمر!»</span>.',
+   'وقال جابرُ بنُ سمرة: رأيتُهُ في ليلةٍ مقمرةٍ وعليه حلةٌ حمراء، فجعلتُ أنظرُ إليه وإلى القمر… <span class="say">«فلَهوَ عندي أحسنُ من القمر!»</span>.',
+   'كان ﷺ ليس بالطويلِ ولا بالقصير، أبيضَ مشرَبًا بحمرة، واسعَ العينين، شعرُهُ أسودُ جميل، <span class="say">وإذا ابتسمَ أضاءَ وجهُهُ كأنه قطعةُ قمر</span>.',
+   'وكانت رائحتُهُ أطيبَ من المسك! قال أنس: <span class="say">«ما شممتُ عنبرًا قط ولا مسكًا أطيبَ من رائحةِ رسولِ الله ﷺ»</span>، وكان إذا صافحَ أحدًا بقيتْ رائحةُ الطيبِ في يدِهِ يومَه!',
+   'وقال أنسُ عن كفِّه: «ما مسستُ حريرًا ولا ديباجًا ألينَ من كفِّ رسولِ الله ﷺ». اللهم ارزقنا رؤيتَهُ في الجنة! 🌕'
+  ],
+  q:'🤔 همسة البطل: من رآه في المنام فقد رآه حقًّا… أكثر من الصلاة عليه واتباع سنته، وادعُ أن تراه!'},
+ {type:'story',ic:'🎶',title:'قصة: طلع البدر علينا (استقباله في المدينة)',
+  body:[
+   'انتظرَ أهلُ المدينةِ نبيَّهم أيامًا طويلة… كلَّ صباحٍ يخرجونَ إلى مشارفِ المدينةِ ينظرونَ إلى الطريق، حتى إذا اشتدَّ الحرُّ رجعوا.',
+   'وفي يومٍ من الأيام… صاحَ رجلٌ من فوقِ مرتفَع: <span class="say">«يا بني قَيلة! هذا صاحبُكم قد جاء!»</span>.',
+   'فخرجتِ المدينةُ كلُّها! <span class="say">الرجالُ والنساءُ فوقَ البيوت، والأطفالُ والخدمُ في الطرقات</span>، يصيحون: اللهُ أكبر! جاءَ رسولُ الله! قال أنس: «ما رأيتُ يومًا قط أنورَ ولا أحسنَ من يومِ دخولِ رسولِ اللهِ ﷺ المدينة!».',
+   'وخرجتِ البناتُ الصغيراتُ ينشدنَ بفرح: <span class="say">«طلعَ البدرُ علينا 🎶 من ثنياتِ الوداع، وجبَ الشكرُ علينا، ما دعا للهِ داع، أيها المبعوثُ فينا، جئتَ بالأمرِ المطاع»</span>.',
+   'وتعلقَ الأطفالُ به يقولون: «يا رسولَ الله! عندنا! عندنا!»… كلٌّ يريدُهُ ضيفًا في بيتِه. فيا ترى… <span class="say">لو جاءَ اليومَ إلى مدينتِك، هل كنتَ ستخرجُ تستقبلُه؟</span> 🎶🌕'
+  ],
+  q:'🤔 نشاط البطل: احفظ نشيد «طلع البدر علينا» وأنشده مع إخوتك كما أنشده أطفال المدينة!'},
+ {type:'activity',ic:'📿',title:'نشاط: يوم كامل مع سنة النبي ﷺ',
+  steps:[
+   'استيقظ وقل: «الحمدُ لله الذي أحيانا بعد ما أماتنا وإليه النشور».',
+   'ابدأ بالسواك أو تنظيف الأسنان — سنة!',
+   'كل بيمينك ومما يليك، واشرب جالسًا.',
+   'ابتسم في وجه كل من تقابله — «تبسمك في وجه أخيك صدقة».',
+   'سلِّم على أهل بيتك عند الدخول.',
+   'نم على جنبك الأيمن وقل: «باسمك اللهم أموت وأحيا».',
+   'عدّ في آخر اليوم: كم سنة طبقت؟ 📿'
+  ],
+  q:'💡 من أحيا سنته فقد أحبه، ومن أحبه كان معه في الجنة — واصل يومًا بعد يوم!'},
+ {type:'activity',ic:'💌',title:'نشاط: رسالة إلى حبيبي ﷺ',
+  steps:[
+   'خذ ورقة جميلة وزيّنها بنقوش خضراء وذهبية.',
+   'اكتب في أعلاها: «إلى حبيبي رسول الله ﷺ».',
+   'اكتب: ماذا أحببتَ فيه؟ وماذا ستفعل من سنته؟ وأنك تشتاق للقائه عند الحوض.',
+   'اقرأها على أهلك بصوت جميل.',
+   'ثم صلِّ عليه ١٠ مرات — فمن صلى عليه مرةً صلى اللهُ عليه بها عشرًا! 💌'
+  ],
+  q:'💡 يوم الجمعة أفضل الأيام للإكثار من الصلاة على النبي ﷺ — اجعلها عادتك كل جمعة!'},
+ {type:'finish',ic:'🏅',title:'المحطة الأخيرة: شهادة محب النبي ﷺ'}
+];
+
+var K='rasul_journey_v1';
+var st={};
+try{ st=JSON.parse(localStorage.getItem(K)||'{}')||{}; }catch(e){}
+st.done=st.done||{};
+function save(){ try{ localStorage.setItem(K,JSON.stringify(st)); }catch(e){} }
+function doneCount(){ return Object.keys(st.done).length; }
+
+function renderMap(){
+  var m=document.getElementById('map'); m.innerHTML='';
+  STATIONS.forEach(function(s,i){
+    var d=document.createElement('div');
+    d.className='station '+s.type+(st.done[i]?' done':'');
+    var kind=s.type==='story'?'قصة':(s.type==='activity'?'نشاط':'الجائزة الكبرى');
+    d.innerHTML='<span class="dot"></span>'+
+      '<button class="st-card" onclick="openStation('+i+')">'+
+      '<span class="badge">✓</span>'+
+      '<span class="ic">'+s.ic+'</span>'+
+      '<b>'+s.title.replace(/^(قصة|نشاط|المحطة الأخيرة): /,'').replace(/ \(.+\)$/,'')+'</b>'+
+      '<small>المحطة '+(i+1)+' · '+kind+'</small></button>';
+    m.appendChild(d);
+  });
+  document.getElementById('stars').textContent=doneCount();
+  document.getElementById('total').textContent=STATIONS.length;
+}
+
+var cur=-1;
+function openStation(i){
+  cur=i; var s=STATIONS[i];
+  var h='<button class="close" onclick="closeSheet()">✕</button>'+
+        '<span class="s-ic">'+s.ic+'</span><h2>'+s.title+'</h2>';
+  if(s.type==='finish'){
+    var all = doneCount() >= STATIONS.length-1 || st.done[i];
+    if(all){
+      h+='<div class="cert"><h3>🏅 شهادة محب النبي ﷺ</h3>'+
+         '<p>تشهدُ رحلةُ «أحبُّ رسولَ الله» أنَّ البطل/البطلة</p>'+
+         (st.name?'<div class="nm">'+st.name+'</div>':'<input id="nm" placeholder="اكتب اسمك هنا" value="">')+
+         '<p>أتمَّ جميعَ محطاتِ الرحلة: عرفَ نبيَّهُ ﷺ وأخلاقَهُ ومعجزاتِهِ وتضحياتِه، وأحبَّهُ واشتاقَ للقائِه، وعزمَ على اتباعِ سنتِه!</p>'+
+         '<p style="font-size:1.3rem">💚⭐💚⭐💚</p>'+
+         '<p style="font-size:.85rem;color:#6C8A72">«المرءُ مع من أحبّ» — اللهم احشرنا مع نبينا محمدٍ ﷺ</p></div>'+
+         (st.name
+           ?'<button class="donebtn finished" onclick="window.print()">🖨️ اطبع شهادتي</button>'
+           :'<button class="donebtn" onclick="signCert()">✍️ وقِّع الشهادة</button>');
+    }else{
+      h+='<p style="text-align:center;font-weight:800;font-size:1.05rem">🔒 أكمِل كلَّ المحطاتِ أولًا يا محب النبي…<br>أنجزتَ حتى الآن <b style="color:var(--teal-dk)">'+doneCount()+'</b> من '+(STATIONS.length-1)+'!</p>'+
+         '<button class="donebtn" onclick="closeSheet()">أكمل الرحلة 💪</button>';
+    }
+  }else{
+    h+='<button class="readbtn" id="rb" onclick="readAloud()">🔊 اقرأ لي</button>';
+    if(s.type==='story'){
+      h+='<div class="story-txt">'+s.body.map(function(p){return '<p>'+p+'</p>';}).join('')+'</div>';
+    }else{
+      h+='<ol class="steps">'+s.steps.map(function(p){return '<li>'+p+'</li>';}).join('')+'</ol>';
+    }
+    h+='<div class="q">'+s.q+'</div>';
+    h+= st.done[i]
+      ? '<button class="donebtn finished" onclick="closeSheet()">✓ أنجزتُها! (اضغط للرجوع)</button>'
+      : '<button class="donebtn" onclick="markDone()">'+(s.type==='story'?'قرأتُها كاملة! 💚':'أنجزتُ النشاط! 💚')+'</button>';
+  }
+  document.getElementById('sheet').innerHTML=h;
+  document.getElementById('ov').classList.add('open');
+}
+function signCert(){
+  var v=(document.getElementById('nm')||{}).value||'';
+  v=v.trim(); if(!v){ alert('اكتب اسمك أولًا يا محب النبي! ✍️'); return; }
+  st.name=v; st.done[STATIONS.length-1]=true; save(); celebrate(); openStation(STATIONS.length-1); renderMap();
+}
+function markDone(){
+  st.done[cur]=true; save(); stopRead(); celebrate();
+  renderMap(); closeSheet();
+}
+function closeSheet(){ stopRead(); document.getElementById('ov').classList.remove('open'); }
+
+var uttering=false;
+function readAloud(){
+  if(uttering){ stopRead(); return; }
+  var s=STATIONS[cur]; if(!s) return;
+  var txt=(s.type==='story'?s.body.join(' '):s.steps.join('. '))+'. '+s.q;
+  txt=txt.replace(/<[^>]+>/g,'').replace(/[🤔📿💡💚✨🌍💎🌙🕊️🤲🎁🌸💌]/g,'');
+  var u=new SpeechSynthesisUtterance(txt);
+  u.lang='ar-SA'; u.rate=.92;
+  var vs=speechSynthesis.getVoices().filter(function(v){return v.lang&&v.lang.indexOf('ar')===0;});
+  if(vs.length) u.voice=vs[0];
+  u.onend=u.onerror=function(){ uttering=false; var b=document.getElementById('rb'); if(b){b.classList.remove('playing');b.textContent='🔊 اقرأ لي';} };
+  speechSynthesis.cancel(); speechSynthesis.speak(u); uttering=true;
+  var b=document.getElementById('rb'); if(b){b.classList.add('playing');b.textContent='⏹️ إيقاف';}
+}
+function stopRead(){ try{speechSynthesis.cancel();}catch(e){} uttering=false; }
+
+function celebrate(){
+  var em=['💚','🌟','✨','🎉','💛'];
+  for(var i=0;i<18;i++){
+    var s=document.createElement('span');
+    s.className='confetti'; s.textContent=em[i%em.length];
+    s.style.left=(Math.random()*100)+'vw';
+    s.style.animationDelay=(Math.random()*0.5)+'s';
+    document.body.appendChild(s);
+    setTimeout(function(el){return function(){el.remove()}}(s),3200);
+  }
+}
+renderMap();
+</script>
+</body>
+</html>
