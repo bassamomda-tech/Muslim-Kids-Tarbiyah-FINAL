@@ -1,7 +1,7 @@
 /* asr-client.js — عميل التسميع عبر خادم Cloudflare Worker + Groq Whisper
    ─────────────────────────────────────────────────────────────────────────────
    بعد نشر server/quran-asr-worker.js على Cloudflare، ضع رابط الـ Worker هنا: */
-var ASR_ENDPOINT = ''; // مثال: 'https://quran-asr.YOURNAME.workers.dev'
+var ASR_ENDPOINT = 'https://quran-asr.bassamomda.workers.dev'; // مثال: 'https://quran-asr.YOURNAME.workers.dev'
 
 /* يسجّل الصوت بمقاطع قصيرة متتالية ويرسل كل مقطع للخادم فور اكتماله.
    الاستخدام:
