@@ -97,6 +97,12 @@
 <script src="companions-little/journeys.js"></script>
 <script src="story-endings.js"></script>
 <script src="mini-games.js"></script>
+<!-- same warm FEMALE cloud voice as every other corner (loaded directly so the path never breaks) -->
+<script>
+  window.MK_TTS_ENDPOINT = window.MK_TTS_ENDPOINT || 'https://narrate-ltyvjxcneq-uc.a.run.app';
+  window.MK_NARRATOR_GENDER = 'female';
+</script>
+<script defer src="../shared/mk-tts-cloud.js"></script>
 <script>
 (function(){
   var $ = function(s){ return document.querySelector(s); };
