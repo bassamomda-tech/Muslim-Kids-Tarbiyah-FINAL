@@ -1,7 +1,7 @@
 /* asr-client.js — عميل التسميع عبر خادم Cloudflare Worker + Groq Whisper
    ─────────────────────────────────────────────────────────────────────────────
    بعد نشر server/quran-asr-worker.js على Cloudflare، ضع رابط الـ Worker هنا: */
-var ASR_ENDPOINT = 'https://quran-asr.bassamomda.workers.dev'; // مثال: 'https://quran-asr.YOURNAME.workers.dev'
+var ASR_ENDPOINT = ''; // مثال: 'https://quran-asr.YOURNAME.workers.dev'
 
 /* يسجّل الصوت بمقاطع قصيرة متتالية ويرسل كل مقطع للخادم فور اكتماله.
    الاستخدام:
@@ -90,16 +90,26 @@ var ASR_ENDPOINT = 'https://quran-asr.bassamomda.workers.dev'; // مثال: 'htt
       headers: { 'Content-Type': blob.type || 'audio/webm' },
       body: blob,
       signal: ctrl ? ctrl.signal : undefined
-    }).then(function (r) { return r.json(); })
-      .then(function (j) {
-        self.texts[idx] = (j && j.text) ? j.text : '';
+    }).then(function (r) {
+        return r.json().catch(function () { return {}; }).then(function (j) { return { ok: r.ok, j: j }; });
+      })
+      .then(function (res) {
+        var j = res.j || {};
+        if (!res.ok || j.error) {
+          // خطأ من الخادم: تجاوز الحد المسموح (429) أو عطل أو مفتاح غير مضبوط
+          // → ننتقل فورًا إلى محرك المتصفح دون فقدان التقدم
+          self.texts[idx] = ''; self._emit();
+          self.onError('server_down');
+          return;
+        }
+        self.texts[idx] = j.text ? j.text : '';
         self.failCount = 0;
         self._emit();
       })
       .catch(function () {
         self.texts[idx] = '';
         self.failCount++;
-        if (self.failCount >= 3) self.onError('server_down'); // ليعود المتصل لمحرك المتصفح
+        if (self.failCount >= 2) self.onError('server_down'); // ليعود المتصل لمحرك المتصفح
       })
       .finally(function () { clearTimeout(to); self.pending--; if (self.stopped && self.pending === 0) self.onState('stopped'); });
   };
