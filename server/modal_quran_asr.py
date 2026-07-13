@@ -1,12 +1,33 @@
 # -*- coding: utf-8 -*-
+"""
+خادم التسميع القرآني — Modal.com
+=================================
+يشغّل نموذج tarteel-ai/whisper-base-ar-quran (تعرّف صوتي مدرَّب على تلاوات القرآن
+— بما فيها تلاوات كبار القراء كالحصري والمنشاوي) ويعيد النص المسموع.
+
+النشر (مرة واحدة):
+  1) أنشئ حسابًا مجانيًا على https://modal.com  (تسجيل بجوجل يكفي)
+  2) على جهازك:  pip install modal   ثم   modal setup   (يفتح المتصفح لتسجيل الدخول)
+  3) ثم:         modal deploy modal_quran_asr.py
+  4) سيطبع لك رابطًا مثل:
+       https://YOUR-WORKSPACE--quran-asr-transcribe.modal.run
+     ضعه في corners/quran-hifz/asr-client.js مكان ASR_ENDPOINT.
+
+التكلفة: ضمن الرصيد المجاني الشهري ($30) لحجم استخدام ~1000 أسرة.
+"""
+
 import modal
-import tempfile
-import os
 
 app = modal.App("quran-asr")
+
 MODEL = "tarteel-ai/whisper-base-ar-quran"
 
-# 1. Setup container image environment
+CORS = {
+    "Access-Control-Allow-Origin": "*",
+    "Access-Control-Allow-Methods": "POST, OPTIONS",
+    "Access-Control-Allow-Headers": "Content-Type",
+}
+
 image = (
     modal.Image.debian_slim(python_version="3.11")
     .apt_install("ffmpeg")
@@ -21,26 +42,12 @@ image = (
 with image.imports():
     import torch
     from transformers import pipeline
-    import fastapi
-    from fastapi.middleware.cors import CORSMiddleware
-    from fastapi.responses import JSONResponse
 
-# 2. Build the main Web Server application wrapper
-web_app = fastapi.FastAPI()
-
-# This middleware tells the browser that ALL incoming requests (POST and OPTIONS) are welcome
-web_app.add_middleware(
-    CORSMiddleware,
-    allow_origins=["*"],
-    allow_credentials=True,
-    allow_methods=["*"],
-    allow_headers=["*"],
-)
 
 @app.cls(
     image=image,
-    gpu="T4",
-    scaledown_window=120,
+    gpu="T4",                 # سريع؛ استبدلها بـ cpu=4 (واحذف سطر gpu) لو أردت الأرخص
+    scaledown_window=120,     # ينام بعد دقيقتين من عدم الاستخدام = لا تكلفة خمول
     max_containers=3,
 )
 class QuranASR:
@@ -54,41 +61,31 @@ class QuranASR:
             torch_dtype=torch.float16 if device == "cuda" else torch.float32,
         )
 
-    @modal.method()
-    async def transcribe_audio(self, body: bytes, content_type: str):
-        if not body or len(body) < 200:
-            return {"text": "", "error": "empty"}
-        if len(body) > 8_000_000:
-            return {"text": "", "error": "too_large"}
+    @modal.fastapi_endpoint(method="POST", label="quran-asr-transcribe")
+    async def transcribe(self, request):
+        """يستقبل ملف صوت خام في جسم الطلب (webm/ogg/mp4/wav) ويعيد {"text": "..."}"""
+        import tempfile, os
+        from fastapi.responses import JSONResponse
 
-        suffix = ".mp4" if "mp4" in content_type else ".ogg" if "ogg" in content_type else ".wav" if "wav" in content_type else ".webm"
+        body = await request.body()
+        if not body or len(body) < 200:
+            return JSONResponse({"text": "", "error": "empty"}, headers=CORS)
+        if len(body) > 8_000_000:
+            return JSONResponse({"text": "", "error": "too_large"}, headers=CORS)
+
+        ct = (request.headers.get("content-type") or "").lower()
+        suffix = ".mp4" if "mp4" in ct else ".ogg" if "ogg" in ct else ".wav" if "wav" in ct else ".webm"
 
         with tempfile.NamedTemporaryFile(suffix=suffix, delete=False) as f:
             f.write(body)
             path = f.name
         try:
             out = self.pipe(path, generate_kwargs={"language": "arabic", "task": "transcribe"})
-            return {"text": out.get("text", "")}
+            return JSONResponse({"text": out.get("text", "")}, headers=CORS)
         except Exception as e:
-            return {"text": "", "error": str(e)[:200]}
+            return JSONResponse({"text": "", "error": str(e)[:200]}, headers=CORS)
         finally:
             try:
                 os.unlink(path)
             except OSError:
                 pass
-
-# 3. Expose the entire FastAPI app to the internet
-@web_app.post("/quran-asr-transcribe")
-async def handle_transcribe(request: fastapi.Request):
-    body = await request.body()
-    ct = (request.headers.get("content-type") or "").lower()
-    
-    # Run the processing safely inside the GPU container
-    engine = QuranASR()
-    result = await engine.transcribe_audio.aio(body, ct)
-    return JSONResponse(result)
-
-@app.function(image=image)
-@modal.asgi_app()
-def fastapi_app():
-    return web_app

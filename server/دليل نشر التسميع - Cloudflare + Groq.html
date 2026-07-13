@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>دليل نشر التسميع — Cloudflare + Groq</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&display=swap">
+<style>
+:root{--ink:#22303A;--teal:#0F6B52;--teal2:#117A8B;--gold:#B07D12;--red:#B23A2E;--paper:#F6F8F7;--line:#DCE6E2;--code:#0B2D25}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Tajawal',sans-serif;background:var(--paper);color:var(--ink);line-height:2;direction:rtl}
+a{color:var(--teal2);font-weight:800}
+.wrap{max-width:54rem;margin:0 auto;padding:2rem 1.2rem 4rem}
+h1{font-size:clamp(1.6rem,4.5vw,2.3rem);font-weight:900;color:var(--teal);text-align:center}
+.sub{text-align:center;color:#5E7069;font-weight:700;max-width:40rem;margin:.4rem auto 1.5rem}
+.cost{background:#EAF6EF;border:2px solid #BFE3CE;border-radius:1rem;padding:1rem 1.3rem;margin:1.2rem 0;font-weight:700}
+.cost b{color:var(--teal)}
+.step{background:#fff;border:2px solid var(--line);border-radius:1.2rem;padding:1.2rem 1.4rem;margin:1.3rem 0}
+.step h2{font-size:1.2rem;font-weight:900;color:var(--teal2);display:flex;align-items:center;gap:.6rem;margin-bottom:.5rem}
+.step h2 .n{background:var(--teal);color:#fff;border-radius:50%;width:1.9rem;height:1.9rem;display:grid;place-items:center;font-size:1rem;flex-shrink:0}
+ol,ul{margin-right:1.3rem;margin-top:.3rem}
+li{margin-bottom:.45rem;font-weight:600}
+code{background:#EEF2F0;border:1px solid var(--line);border-radius:.4rem;padding:.05rem .4rem;font-family:ui-monospace,monospace;font-size:.9em;direction:ltr;display:inline-block;color:var(--code)}
+.warn{background:#FDEEEA;border:2px solid #F1C4BB;border-radius:1rem;padding:.8rem 1.2rem;margin:1rem 0;font-weight:700;color:#8A2A20}
+.tip{background:#FFF7E2;border:2px dashed #E1B94B;border-radius:1rem;padding:.8rem 1.2rem;margin:1rem 0;font-weight:700;color:#7A5C10}
+.kbd{background:#fff;border:1px solid var(--line);border-bottom-width:3px;border-radius:.4rem;padding:.05rem .45rem;font-weight:800;direction:ltr;display:inline-block}
+hr{border:none;border-top:1px solid var(--line);margin:1.5rem 0}
+.done{background:var(--teal);color:#fff;border-radius:1rem;padding:1rem 1.3rem;font-weight:800;text-align:center;margin-top:1.5rem}
+</style>
+</head>
+<body data-screen-label="دليل نشر التسميع Cloudflare Groq">
+<div class="wrap">
+
+<h1>🎙️ دليل نشر التسميع الجديد</h1>
+<p class="sub">خادم Cloudflare Worker + Groq Whisper — بديلٌ رخيصٌ ومستقرٌّ عن Modal، بلا كروت رسومية ولا انهيارات. الوقت المتوقَّع: ١٥–٢٠ دقيقة.</p>
+
+<div class="cost">
+💰 <b>التكلفة:</b> Groq يحسب <b>٠٫٠٤$ فقط للساعة</b> من الصوت (نموذج Turbo) أو ٠٫١١$ للنموذج الأدق — أي أنّ التسميعة الواحدة تكلّف أجزاءً من السنت. وهناك <b>باقة مجانية</b> تكفي ٢٠٠٠ طلب يوميًّا. لا تكلفة عند عدم الاستخدام إطلاقًا (عكس Modal الذي يحاسب على وقت تشغيل الكرت الرسومي).
+</div>
+
+<div class="warn">
+🛑 <b>أولًا — أوقف خادم Modal القديم فورًا حتى لا يستهلك رصيدك:</b> ادخل modal.com → التطبيق <code>quran-asr</code> → زر <b>Stop app</b> (أو احذفه). هو الآن «crash-looping» ويستهلك الرصيد في محاولاتٍ فاشلة.
+</div>
+
+<div class="step">
+  <h2><span class="n">١</span> أنشئ حساب Groq واحصل على المفتاح</h2>
+  <ol>
+    <li>افتح <a href="https://console.groq.com" target="_blank">console.groq.com</a> وسجّل الدخول (بحساب Google مثلًا — مجاني، بلا بطاقة).</li>
+    <li>من القائمة الجانبية اختر <b>API Keys</b> ← <b>Create API Key</b>.</li>
+    <li>سمِّه <code>quran-asr</code> واضغط Create.</li>
+    <li><b>انسخ المفتاح فورًا</b> (يبدأ بـ <code>gsk_...</code>) واحفظه مؤقتًا — لن يظهر ثانيةً.</li>
+  </ol>
+</div>
+
+<div class="step">
+  <h2><span class="n">٢</span> أنشئ الـ Worker على Cloudflare</h2>
+  <ol>
+    <li>افتح <a href="https://dash.cloudflare.com" target="_blank">dash.cloudflare.com</a> (لديك حسابٌ بالفعل).</li>
+    <li>من القائمة الجانبية: <b>Workers &amp; Pages</b> ← <b>Create</b> ← <b>Create Worker</b>.</li>
+    <li>سمِّه <code>quran-asr</code> ثم <b>Deploy</b> (سيَنشُر مثالًا افتراضيًّا مؤقتًا).</li>
+    <li>اضغط <b>Edit code</b> (تحرير الكود).</li>
+    <li>احذف كل الكود الموجود، ثم افتح ملف <code>server/quran-asr-worker.js</code> (من الملفات التي حمّلتها) في أي محرّر نصوص، <b>انسخه كاملًا</b> والصقه في المحرّر.</li>
+    <li>اضغط <b>Deploy</b> (أعلى اليمين).</li>
+  </ol>
+</div>
+
+<div class="step">
+  <h2><span class="n">٣</span> أضِف المفتاح السرّي للـ Worker</h2>
+  <ol>
+    <li>ارجع لصفحة الـ Worker ← <b>Settings</b> ← <b>Variables and Secrets</b> (أو Variables).</li>
+    <li>تحت <b>Secrets</b> اضغط <b>Add</b>:
+      <ul>
+        <li>الاسم (Variable name): <code>GROQ_API_KEY</code> — <b>بالضبط بهذا الشكل</b>.</li>
+        <li>القيمة (Value): الصق مفتاح Groq (<code>gsk_...</code>).</li>
+      </ul>
+    </li>
+    <li>اضغط <b>Deploy</b> / <b>Save</b>.</li>
+    <li><b>اختياري (لحماية أفضل):</b> أضِف متغيّرًا عاديًّا (Variable) باسم <code>ALLOWED_ORIGINS</code> وقيمته نطاق موقعك، مثل: <code>https://yoursite.com,https://www.yoursite.com</code> — يمنع غيرك من استهلاك رصيدك.</li>
+    <li><b>اختياري:</b> متغيّر <code>MODEL</code> = <code>whisper-large-v3-turbo</code> إن أردت الأرخص والأسرع (الافتراضي <code>whisper-large-v3</code> الأدقّ).</li>
+  </ol>
+</div>
+
+<div class="step">
+  <h2><span class="n">٤</span> انسخ رابط الـ Worker</h2>
+  <ol>
+    <li>في صفحة الـ Worker ستجد الرابط أعلى الصفحة، بالشكل:<br><code>https://quran-asr.YOURNAME.workers.dev</code></li>
+    <li>انسخه.</li>
+  </ol>
+  <div class="tip">💡 للتأكّد أنه يعمل: افتح الرابط في المتصفح — يجب أن تظهر رسالة <code>{"error":"post_audio_only"}</code>. هذا <b>طبيعيٌّ وصحيح</b> (لأن المتصفح يفتحه كطلب GET لا POST).</div>
+</div>
+
+<div class="step">
+  <h2><span class="n">٥</span> اربط الموقع بالخادم الجديد</h2>
+  <ol>
+    <li>افتح ملف <code>corners/quran-hifz/asr-client.js</code>.</li>
+    <li>في السطر الرابع تقريبًا، ضع الرابط بين علامتَي التنصيص:<br>
+      <code>var ASR_ENDPOINT = 'https://quran-asr.YOURNAME.workers.dev';</code></li>
+    <li>احفظ الملف.</li>
+  </ol>
+</div>
+
+<div class="step">
+  <h2><span class="n">٦</span> ارفع الملفات المعدَّلة</h2>
+  <p>ارفع هذه الملفات إلى موقعك (بنفس مساراتها):</p>
+  <ul>
+    <li><code>corners/quran-hifz/asr-client.js</code> ← فيه الرابط + تمرير الآية المتوقَّعة</li>
+    <li><code>corners/quran-hifz/index.html</code> ← يمرّر الآيةَ المتوقَّعة للخادم</li>
+  </ul>
+  <p>ثم افتح ركن الحفظ واعمل تحديثًا قسريًّا: <span class="kbd">Ctrl+Shift+R</span> (أو أعد فتح التبويب على الجوال).</p>
+</div>
+
+<div class="step">
+  <h2><span class="n">٧</span> جرّب — وحلّ المشكلات</h2>
+  <ul>
+    <li>ادخل سورةً قصيرة، اضغط 🎤 «تسميع»، واقرأ. يجب أن تتلوّن الكلماتُ الصحيحة تلقائيًّا.</li>
+    <li><b>لا يستجيب / يرجع للمحرّك القديم؟</b> راجع أنّ الرابط في <code>asr-client.js</code> صحيح، وأنّ اسم السرّ <code>GROQ_API_KEY</code> مطابق تمامًا.</li>
+    <li><b>خطأ في Cloudflare؟</b> افتح الـ Worker ← <b>Logs</b> ← <b>Begin log stream</b> وراقب الأخطاء أثناء التجربة. رسالة <code>groq_error 401</code> تعني أنّ المفتاح خاطئ؛ <code>groq_error 429</code> تعني تجاوز الباقة المجانية (فعّل الدفع في Groq).</li>
+    <li><b>الدقة:</b> صار الخادم يستقبل الآيةَ المتوقَّعة ويوجّه بها Whisper — هذا يرفع الدقة كثيرًا على نفس الآية، ويقلّل الخلط مع الضوضاء.</li>
+  </ul>
+</div>
+
+<hr>
+<p style="font-weight:700;color:#5E7069">
+<b>ملاحظة أمينة عن الدقة:</b> هذا الحلّ رخيصٌ ومستقرٌّ ويستغلّ أنّنا نعرف الآيةَ المطلوبة مسبقًا، فيقترب كثيرًا من جودة Tarteel. لكن مطابقة دقّتهم الكاملة (٤٪ خطأ) تحتاج نموذجًا قرآنيًّا متخصّصًا. إن لم تكفِك الدقة بعد التجربة، الخطوة التالية هي استضافة نموذج <code>tarteel-ai/whisper-base-ar-quran</code> المفتوح — أخبرني وقتها ونفعلها.
+</p>
+
+<div class="done">✅ بعد هذه الخطوات: تسميعٌ يعمل بأجزاء السنت، بلا انهيارات، وبدقّةٍ أعلى — ويمكنك حذف مجلد <code>server/modal_quran_asr.py</code> وحساب Modal نهائيًّا.</div>
+
+</div>
+</body>
+</html>
