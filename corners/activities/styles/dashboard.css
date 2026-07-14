@@ -351,12 +351,22 @@
 .section[data-color="lavender"] .section-icon { background: var(--lavender); color: var(--lavender-ink); }
 .section[data-color="sky"]      .section-icon { background: var(--sky);      color: var(--sky-ink); }
 .section[data-color="butter"]   .section-icon { background: var(--butter);   color: var(--butter-ink); }
+.section[data-color="teal"]     .section-icon { background: var(--teal);     color: var(--teal-ink); }
+.section[data-color="sand"]     .section-icon { background: var(--sand);     color: var(--sand-ink); }
+.section[data-color="coral"]    .section-icon { background: var(--coral);    color: var(--coral-ink); }
+.section[data-color="berry"]    .section-icon { background: var(--berry);    color: var(--berry-ink); }
+.section[data-color="olive"]    .section-icon { background: var(--olive);    color: var(--olive-ink); }
 
 .section[data-color="peach"]    .section-meta .bar > span { background: var(--peach-ink); }
 .section[data-color="mint"]     .section-meta .bar > span { background: var(--mint-ink); }
 .section[data-color="lavender"] .section-meta .bar > span { background: var(--lavender-ink); }
 .section[data-color="sky"]      .section-meta .bar > span { background: var(--sky-ink); }
 .section[data-color="butter"]   .section-meta .bar > span { background: var(--butter-ink); }
+.section[data-color="teal"]     .section-meta .bar > span { background: var(--teal-ink); }
+.section[data-color="sand"]     .section-meta .bar > span { background: var(--sand-ink); }
+.section[data-color="coral"]    .section-meta .bar > span { background: var(--coral-ink); }
+.section[data-color="berry"]    .section-meta .bar > span { background: var(--berry-ink); }
+.section[data-color="olive"]    .section-meta .bar > span { background: var(--olive-ink); }
 
 /* ============================================================
    شبكة الأنشطة (Activity Grid)
@@ -447,12 +457,36 @@
 .section[data-color="lavender"] .card-thumb { background: linear-gradient(135deg, #ECE3FA 0%, #D4C6EB 100%); }
 .section[data-color="sky"]      .card-thumb { background: linear-gradient(135deg, #E0EEF7 0%, #C3DDEE 100%); }
 .section[data-color="butter"]   .card-thumb { background: linear-gradient(135deg, #FFF3CD 0%, #FFDF95 100%); }
+.section[data-color="teal"]     .card-thumb { background: linear-gradient(135deg, #DCF1EF 0%, #B7E0DC 100%); }
+.section[data-color="sand"]     .card-thumb { background: linear-gradient(135deg, #F4EAD3 0%, #E4D3AC 100%); }
+.section[data-color="coral"]    .card-thumb { background: linear-gradient(135deg, #FCE1DA 0%, #F6C2B3 100%); }
+.section[data-color="berry"]    .card-thumb { background: linear-gradient(135deg, #F8E0EC 0%, #EDC0D8 100%); }
+.section[data-color="olive"]    .card-thumb { background: linear-gradient(135deg, #E5EDD5 0%, #CCDCAC 100%); }
 
 .section[data-color="peach"]    .card-thumb .glyph { color: var(--peach-ink); }
 .section[data-color="mint"]     .card-thumb .glyph { color: var(--mint-ink); }
 .section[data-color="lavender"] .card-thumb .glyph { color: var(--lavender-ink); }
 .section[data-color="sky"]      .card-thumb .glyph { color: var(--sky-ink); }
 .section[data-color="butter"]   .card-thumb .glyph { color: var(--butter-ink); }
+.section[data-color="teal"]     .card-thumb .glyph { color: var(--teal-ink); }
+.section[data-color="sand"]     .card-thumb .glyph { color: var(--sand-ink); }
+.section[data-color="coral"]    .card-thumb .glyph { color: var(--coral-ink); }
+.section[data-color="berry"]    .card-thumb .glyph { color: var(--berry-ink); }
+.section[data-color="olive"]    .card-thumb .glyph { color: var(--olive-ink); }
+
+/* شارة الفئة العمرية على البطاقة */
+.card .card-age {
+  position: absolute;
+  top: auto; bottom: 8px; left: 8px;
+  font-family: var(--font-en);
+  font-size: 10px; font-weight: 800;
+  background: rgba(255,255,255,0.85);
+  color: var(--ink-2, #444);
+  padding: 2px 8px;
+  border-radius: 999px;
+  letter-spacing: 0.02em;
+  pointer-events: none;
+}
 
 /* جسم البطاقة */
 .card-body { display: flex; flex-direction: column; gap: 4px; flex-grow: 1; }

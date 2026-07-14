@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>غرفة أركان الإيمان · أنوس</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="../styles/tokens.css" />
+<link rel="stylesheet" href="../styles/dashboard.css" />
+<link rel="stylesheet" href="../styles/wheel.css" />
+<link rel="stylesheet" href="../styles/iman.css" />
+</head>
+<body>
+
+<div class="bg-decor" aria-hidden="true"></div>
+
+<div class="activity-shell">
+
+  <nav class="activity-nav">
+    <a class="back-link" href="../dashboard.html">
+      <span data-i18n="back">الرجوع للوحة الأنشطة</span>
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg>
+    </a>
+    <div class="activity-crumb">
+      <span data-i18n="crumbSection">رحلة الإيمان</span>
+      <span class="sep">/</span>
+      <span class="cur" data-i18n="crumbTitle">غرفة أركان الإيمان</span>
+    </div>
+    <div class="activity-actions">
+      <button class="lang-btn" id="lang-btn" title="عربي / English">EN</button>
+      <button class="icon-btn" id="reset-btn" title="إعادة الضبط" aria-label="إعادة الضبط">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 3-6.7L3 8"/><path d="M3 3v5h5"/></svg>
+      </button>
+    </div>
+  </nav>
+
+  <div class="activity-layout">
+
+    <section class="iman-panel">
+      <header class="wheel-header">
+        <span class="activity-tag">Activity 60 · Escape Room</span>
+        <h1 class="activity-title" data-i18n="title">غرفة أركان الإيمان</h1>
+        <p class="activity-desc" data-i18n="desc">
+          الباب مقفل برمزٍ من ستة أرقام! في الغرفة ستة أشياء متوهّجة، كل واحد
+          يخفي لغزاً عن ركنٍ من أركان الإيمان الستة. حُلّها كلها لتفتح الباب.
+        </p>
+      </header>
+
+      <div class="ir-room" id="ir-room">
+        <svg viewBox="0 0 720 380" aria-hidden="true">
+          <rect x="0" y="0" width="720" height="290" fill="#EFE6D4"/>
+          <rect x="0" y="290" width="720" height="90" fill="#C9B591"/>
+          <rect x="60" y="300" width="260" height="52" rx="26" fill="#B04A32" opacity="0.55"/>
+          <rect x="540" y="60" width="120" height="230" rx="6" fill="#6B5B3A"/>
+          <rect x="552" y="72" width="96" height="206" rx="4" fill="#8A754C"/>
+          <circle cx="566" cy="180" r="6" fill="#FFE9A8"/>
+          <rect x="80" y="70" width="130" height="100" rx="8" fill="#9CC4E4" stroke="#6B5B3A" stroke-width="6"/>
+          <path d="M80 120h130M145 70v100" stroke="#6B5B3A" stroke-width="5"/>
+          <rect x="260" y="60" width="180" height="14" fill="#6B5B3A"/>
+          <rect x="275" y="24" width="22" height="36" fill="#1F6E68"/>
+          <rect x="302" y="18" width="26" height="42" fill="#B04A32"/>
+          <rect x="333" y="28" width="20" height="32" fill="#C9A961"/>
+          <rect x="360" y="20" width="24" height="40" fill="#5A7A2E"/>
+          <rect x="260" y="150" width="110" height="70" rx="8" fill="#8A6B3A"/>
+          <rect x="260" y="150" width="110" height="22" rx="8" fill="#A8854C"/>
+          <circle cx="315" cy="172" r="7" fill="#FFE9A8"/>
+          <rect x="440" y="120" width="60" height="90" rx="30" fill="#FFE9A8" opacity="0.9"/>
+          <rect x="465" y="210" width="10" height="60" fill="#6B5B3A"/>
+        </svg>
+        <!-- النقاط الساخنة تُزرع بالجافاسكربت -->
+      </div>
+
+      <div class="ir-code-row" id="ir-code"></div>
+
+      <div id="ir-quiz"></div>
+
+      <div class="iman-actions">
+        <div class="feedback-line" id="ir-feedback"></div>
+        <button class="btn-primary" id="ir-open" disabled data-i18n="openBtn">🔓 افتح الباب</button>
+      </div>
+
+      <div class="iman-stats">
+        <div class="wheel-stat"><span data-i18n="statSolved">ألغاز محلولة</span><strong id="stat-solved">0/6</strong></div>
+        <button class="wheel-mute-toggle" id="mute-btn" aria-pressed="false">
+          <span class="mute-icon"></span>
+          <span class="mute-label">كتم الصوت</span>
+        </button>
+      </div>
+    </section>
+
+    <aside class="side-panel">
+      <div class="panel-card">
+        <div class="panel-head">
+          <h3 data-i18n="sideTitle">أركان الإيمان الستة</h3>
+          <span class="pill">6</span>
+        </div>
+        <div class="dhikr-list" id="ir-guide"></div>
+      </div>
+      <div class="panel-card">
+        <div class="tip-card">
+          <span class="tip-icon">!</span>
+          <span data-i18n="tip">سُئل النبي ﷺ: ما الإيمان؟ قال: «أن تؤمن بالله وملائكته وكتبه ورسله واليوم الآخر، وتؤمن بالقدر خيره وشره».</span>
+        </div>
+      </div>
+    </aside>
+  </div>
+</div>
+
+<div class="modal-backdrop" id="win-modal" role="dialog" aria-modal="true">
+  <div class="modal">
+    <button class="modal-close" data-close aria-label="إغلاق">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M6 6l12 12M18 6l-12 12"/></svg>
+    </button>
+    <div class="modal-deco" aria-hidden="true">
+      <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="10" width="16" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0"/></svg>
+    </div>
+    <div class="modal-eyebrow" data-i18n="winEyebrow">انفتح الباب!</div>
+    <h2 class="modal-title" data-i18n="winTitle">قلبٌ عرف أركان الإيمان</h2>
+    <p class="modal-translit" id="win-sub"></p>
+    <div class="modal-actions">
+      <button class="btn-ghost" data-close data-i18n="winDone">انتهيت</button>
+      <button class="btn-primary" id="win-replay" data-i18n="winReplay">غرفة جديدة</button>
+    </div>
+  </div>
+</div>
+
+<div class="particles" id="particles" aria-hidden="true"></div>
+
+<script src="../scripts/activity-common.js"></script>
+<script src="../scripts/lang.js"></script>
+<script src="../scripts/iman-room.js"></script>
+
+<script src="../../shared/nav-fix.js"></script>
+</body>
+</html>

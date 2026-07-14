@@ -1,0 +1,311 @@
+/* ============================================================
+   WAHY — أنماط أنشطة «كنوز الوحي» (61–70)
+   تعتمد على iman.css للمكوّنات العامة (stage-strip, fd-event,
+   iman-actions, iman-stats, play-stage, lang-btn)
+   بادئات: qr(61) is(62) gr(63) tr(64) tj(65)
+            wc(66) mk(67) mo(68) hd(69) wq(70)
+   ============================================================ */
+
+/* لوحة رملية */
+.wahy-panel {
+  background:
+    radial-gradient(140% 80% at 50% 0%, rgba(237,224,196,0.55), transparent 60%),
+    var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--r-2xl);
+  padding: var(--s-7);
+  box-shadow: var(--shadow-card);
+  display: flex; flex-direction: column;
+  position: relative; overflow: hidden;
+}
+.wahy-panel .activity-tag { background: var(--sand); color: var(--sand-ink); }
+.wahy-panel .activity-tag::before { background: var(--sand-ink); }
+
+/* شريط مهمة رملي */
+.wahy-mission {
+  display: flex; align-items: center; gap: 10px;
+  background: var(--sand); color: var(--sand-ink);
+  border-radius: var(--r-md); padding: 10px 14px;
+  font-size: 14px; font-weight: 700; margin-bottom: var(--s-4);
+}
+
+/* ============ 61 المقرئ الصغير ============ */
+.qr-recorder {
+  border: 1px solid var(--line); border-radius: var(--r-xl);
+  background: var(--bg-soft); padding: var(--s-5);
+  text-align: center;
+}
+.qr-ayah {
+  font-size: clamp(22px, 3vw, 30px); font-weight: 800; line-height: 2;
+  margin: 0 0 6px; color: var(--ink);
+}
+.qr-ayah-info { font-size: 12px; color: var(--muted); font-weight: 700; margin-bottom: var(--s-4); }
+.qr-viz {
+  height: 72px; border-radius: var(--r-md);
+  background: var(--surface); border: 1px solid var(--line);
+  margin-bottom: var(--s-4); overflow: hidden;
+}
+.qr-viz canvas { width: 100%; height: 100%; display: block; }
+.qr-controls { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; }
+.qr-rec-btn {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 12px 22px; border-radius: var(--r-pill);
+  border: none; cursor: pointer; font-family: inherit;
+  font-size: 14px; font-weight: 800;
+  background: #C0392B; color: #fff;
+  transition: transform 0.12s ease, filter 0.12s ease;
+}
+.qr-rec-btn:hover { transform: translateY(-2px); filter: brightness(1.05); }
+.qr-rec-btn.recording { animation: qr-blink 1s ease-in-out infinite; }
+@keyframes qr-blink { 0%,100% { box-shadow: 0 0 0 0 rgba(192,57,43,0.5); } 50% { box-shadow: 0 0 0 10px rgba(192,57,43,0); } }
+.qr-rec-btn[disabled] { opacity: 0.45; cursor: not-allowed; transform: none; }
+.qr-checklist { display: flex; gap: 8px; flex-wrap: wrap; margin-top: var(--s-4); justify-content: center; }
+.qr-check-chip {
+  font-size: 12px; font-weight: 700; padding: 6px 14px;
+  border-radius: var(--r-pill); border: 1px solid var(--line);
+  background: var(--surface); color: var(--muted); cursor: pointer;
+}
+.qr-check-chip.current { background: var(--sand); color: var(--sand-ink); border-color: var(--sand-ink); }
+.qr-check-chip.done { background: var(--mint); color: var(--mint-ink); border-color: var(--mint-ink); }
+
+/* ============ 62 سلسلة الإسناد ============ */
+.is-chain { display: flex; flex-direction: column; gap: 0; align-items: center; margin: var(--s-4) 0; }
+.is-slot {
+  width: min(420px, 100%); min-height: 58px;
+  border: 2px dashed var(--line); border-radius: var(--r-md);
+  background: var(--bg-soft);
+  display: flex; align-items: center; justify-content: center;
+  font-weight: 700; color: var(--muted); font-size: 13px;
+  transition: border-color 0.15s ease, background 0.15s ease;
+}
+.is-slot.filled { border-style: solid; border-color: var(--sand-ink); background: var(--surface); color: var(--ink); cursor: pointer; }
+.is-slot.good { border-color: var(--mint-ink); background: var(--mint); color: var(--mint-ink); }
+.is-slot.bad { border-color: #B34A4A; background: var(--rose); animation: ae-shake 0.4s ease; }
+.is-link {
+  width: 3px; height: 18px; background: var(--sand-ink); opacity: 0.5;
+}
+.is-pool { display: flex; gap: 10px; flex-wrap: wrap; justify-content: center; }
+.is-card {
+  padding: 12px 18px; border-radius: var(--r-md);
+  border: 1.5px solid var(--line); background: var(--surface);
+  font-size: 14px; font-weight: 800; cursor: pointer; font-family: inherit;
+  transition: transform 0.12s ease, border-color 0.12s ease;
+}
+.is-card small { display: block; font-size: 11px; font-weight: 600; color: var(--muted); }
+.is-card:hover { transform: translateY(-2px); border-color: var(--sand-ink); }
+.is-card.used { opacity: 0.3; pointer-events: none; }
+
+/* ============ 63 بستان السور ============ */
+.gr-garden {
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(96px, 1fr));
+  gap: var(--s-3);
+  padding: var(--s-4);
+  border-radius: var(--r-xl);
+  background: linear-gradient(180deg, #E9F3E2 0%, #D5E8C9 100%);
+  border: 1px solid var(--line);
+  min-height: 160px;
+}
+.gr-plot {
+  aspect-ratio: 0.85; border-radius: var(--r-md);
+  display: flex; flex-direction: column; align-items: center; justify-content: flex-end;
+  gap: 4px; padding: 8px 4px;
+  background: rgba(255,255,255,0.4);
+  border: 1.5px dashed rgba(90,122,46,0.4);
+  cursor: pointer; text-align: center;
+  transition: transform 0.15s ease;
+  position: relative;
+}
+.gr-plot:hover { transform: translateY(-3px); }
+.gr-plot .tree { font-size: 34px; line-height: 1; filter: grayscale(1) opacity(0.35); transition: filter 0.4s ease, font-size 0.3s ease; }
+.gr-plot .nm { font-size: 10px; font-weight: 800; color: var(--ink-2); }
+.gr-plot[data-lv="1"] .tree { filter: grayscale(0.5) opacity(0.7); }
+.gr-plot[data-lv="2"] .tree { filter: none; }
+.gr-plot[data-lv="3"] .tree { filter: none; font-size: 40px; }
+.gr-plot[data-lv="3"] { border-style: solid; border-color: var(--mint-ink); background: rgba(255,255,255,0.7); }
+.gr-reader {
+  border: 1px solid var(--line); border-radius: var(--r-xl);
+  background: var(--surface); padding: var(--s-5);
+  margin-top: var(--s-4); text-align: center;
+}
+.gr-reader .ayah { font-size: clamp(20px, 2.6vw, 26px); font-weight: 800; line-height: 2.1; margin: 0 0 var(--s-4); }
+
+/* ============ 64 قطار الآيات ============ */
+.tr-track {
+  display: flex; align-items: flex-end; gap: 6px;
+  overflow-x: auto; padding: var(--s-4) var(--s-2);
+  background: linear-gradient(180deg, transparent 82%, var(--line) 82%, var(--line) 86%, transparent 86%);
+}
+.tr-loco { font-size: 44px; flex-shrink: 0; }
+.tr-car {
+  min-width: 130px; min-height: 84px; flex-shrink: 0;
+  border: 2px dashed var(--line); border-radius: var(--r-md) var(--r-md) 6px 6px;
+  background: var(--bg-soft);
+  display: grid; place-items: center; text-align: center;
+  padding: 10px; font-size: 14px; font-weight: 800; line-height: 1.8;
+  color: var(--muted); position: relative;
+  transition: border-color 0.15s ease, background 0.15s ease;
+}
+.tr-car::after {
+  content: ""; position: absolute; bottom: -9px;
+  width: 14px; height: 14px; border-radius: 50%;
+  background: var(--ink); inset-inline-start: 16px;
+  box-shadow: 60px 0 0 var(--ink);
+}
+.tr-car.filled { border-style: solid; border-color: var(--sand-ink); background: var(--surface); color: var(--ink); cursor: pointer; }
+.tr-car.good { border-color: var(--mint-ink); background: var(--mint); color: var(--mint-ink); }
+.tr-car .idx {
+  position: absolute; top: -10px; inset-inline-start: 50%; transform: translateX(50%);
+  width: 22px; height: 22px; border-radius: 50%;
+  background: var(--sand-ink); color: #fff;
+  font-family: var(--font-en); font-size: 11px; font-weight: 800;
+  display: grid; place-items: center;
+}
+.tr-pool { display: flex; gap: 10px; flex-wrap: wrap; justify-content: center; margin-top: var(--s-5); }
+.tr-chip {
+  padding: 12px 16px; border-radius: var(--r-md);
+  border: 1.5px solid var(--line); background: var(--surface);
+  font-size: 15px; font-weight: 800; cursor: pointer; font-family: inherit; line-height: 1.8;
+  transition: transform 0.12s ease, border-color 0.12s ease;
+}
+.tr-chip:hover { transform: translateY(-2px); border-color: var(--sand-ink); }
+.tr-chip.used { opacity: 0.3; pointer-events: none; }
+
+/* ============ 65 مختبر التجويد ============ */
+.tj-lab {
+  border: 1px solid var(--line); border-radius: var(--r-xl);
+  background: #1F2540; padding: var(--s-5);
+}
+.tj-word {
+  text-align: center; font-size: clamp(30px, 4vw, 44px); font-weight: 900;
+  color: #FFE9A8; margin: 0 0 var(--s-3);
+}
+.tj-word .madd { color: #7EE4D0; }
+.tj-wave { height: 90px; border-radius: var(--r-md); background: rgba(255,255,255,0.06); overflow: hidden; }
+.tj-wave canvas { width: 100%; height: 100%; display: block; }
+.tj-counts { display: flex; gap: 10px; justify-content: center; margin-top: var(--s-4); }
+.tj-count-btn {
+  min-width: 84px; padding: 12px; border-radius: var(--r-md);
+  border: 1.5px solid rgba(255,255,255,0.25); background: rgba(255,255,255,0.08);
+  color: #fff; font-family: inherit; font-size: 14px; font-weight: 800; cursor: pointer;
+  transition: transform 0.12s ease, background 0.12s ease;
+}
+.tj-count-btn small { display: block; font-size: 10px; font-weight: 600; opacity: 0.7; }
+.tj-count-btn:hover { transform: translateY(-2px); background: rgba(255,255,255,0.16); }
+.tj-count-btn.good { background: var(--mint-ink); border-color: var(--mint-ink); }
+.tj-count-btn.bad { background: #8A3030; border-color: #8A3030; animation: ae-shake 0.4s ease; }
+
+/* ============ 66 صيّاد المعاني ============ */
+.wc-stage-wrap { position: relative; }
+.wc-meaning {
+  position: absolute; top: 10px; left: 50%; transform: translateX(-50%);
+  z-index: 2; background: rgba(255,255,255,0.92);
+  border: 1px solid var(--line); border-radius: var(--r-pill);
+  padding: 6px 18px; font-size: 14px; font-weight: 800; white-space: nowrap;
+}
+
+/* ============ 67 مشكاة الحديث ============ */
+.mk-lantern-row { display: flex; align-items: center; gap: var(--s-4); margin-bottom: var(--s-4); }
+.mk-lantern {
+  width: 74px; height: 92px; flex-shrink: 0;
+  display: grid; place-items: center;
+  border-radius: var(--r-md);
+  background: #2A2438;
+  position: relative; overflow: hidden;
+}
+.mk-flame {
+  width: 26px; height: 26px; border-radius: 50% 50% 50% 0;
+  transform: rotate(-45deg);
+  background: #FFD469;
+  box-shadow: 0 0 22px 6px rgba(255,212,105,0.0);
+  opacity: 0.25;
+  transition: opacity 0.6s ease, box-shadow 0.6s ease;
+}
+.mk-light-meter { flex-grow: 1; }
+.mk-light-meter .bar {
+  height: 12px; border-radius: 99px; background: var(--bg-soft);
+  border: 1px solid var(--line); overflow: hidden;
+}
+.mk-light-meter .bar > span {
+  display: block; height: 100%; width: 0;
+  background: linear-gradient(90deg, #C9A961, #FFD469);
+  transition: width 0.5s ease;
+}
+.mk-light-meter .lbl { font-size: 12px; font-weight: 700; color: var(--muted); margin-bottom: 6px; }
+.mk-hadith {
+  background: var(--sand); color: var(--sand-ink);
+  border-radius: var(--r-md); padding: 10px 14px;
+  font-size: 13px; font-weight: 700; margin-top: var(--s-3);
+}
+
+/* ============ 68 فسيفساء جزء عمّ ============ */
+.mo-grid {
+  display: grid; grid-template-columns: repeat(6, 1fr);
+  gap: 5px; margin-bottom: var(--s-4);
+  aspect-ratio: 2;
+}
+.mo-tile {
+  border-radius: 6px;
+  background: var(--bg-soft);
+  border: 1px solid var(--line);
+  transition: background 0.5s ease, transform 0.5s ease;
+}
+.mo-tile.on { border: none; transform: scale(1); animation: mo-pop 0.45s ease; }
+@keyframes mo-pop { 0% { transform: scale(0.4); } 70% { transform: scale(1.12); } 100% { transform: scale(1); } }
+
+/* ============ 69 أذن الحافظ ============ */
+.hd-mode-row { display: flex; gap: 8px; margin-bottom: var(--s-4); }
+.hd-surahs { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 10px; }
+.hd-surah {
+  padding: 16px 12px; border-radius: var(--r-md);
+  border: 1.5px solid var(--line); background: var(--surface);
+  font-size: 15px; font-weight: 800; cursor: pointer; font-family: inherit;
+  text-align: center;
+  transition: transform 0.12s ease, border-color 0.12s ease, background 0.12s ease;
+}
+.hd-surah small { display: block; font-size: 11px; font-weight: 600; color: var(--muted); margin-top: 4px; }
+.hd-surah:hover { transform: translateY(-2px); border-color: var(--sand-ink); }
+.hd-surah.lit { background: var(--butter); border-color: var(--butter-ink); }
+.hd-surah.good { background: var(--mint); border-color: var(--mint-ink); }
+.hd-surah.bad { background: var(--rose); border-color: #B34A4A; animation: ae-shake 0.4s ease; }
+
+/* ============ 70 إشارة الوقف والوصل ============ */
+.wq-sign-stage {
+  position: relative; min-height: 210px;
+  border-radius: var(--r-xl); border: 1px solid var(--line);
+  background: linear-gradient(180deg, #EFE8D8, #E4D8BD);
+  display: grid; place-items: center;
+  overflow: hidden;
+}
+.wq-sign {
+  width: 120px; height: 120px; border-radius: 50%;
+  display: grid; place-items: center;
+  font-size: 52px; font-weight: 900;
+  background: var(--surface);
+  border: 6px solid var(--ink);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+  animation: mo-pop 0.3s ease;
+}
+.wq-timer {
+  position: absolute; bottom: 0; left: 0; height: 8px;
+  background: var(--sand-ink); transition: width 0.1s linear;
+}
+.wq-btns { display: flex; gap: 12px; justify-content: center; margin-top: var(--s-4); }
+.wq-btn {
+  min-width: 150px; padding: 16px; border-radius: var(--r-md);
+  border: none; cursor: pointer; font-family: inherit;
+  font-size: 17px; font-weight: 900; color: #fff;
+  transition: transform 0.1s ease;
+}
+.wq-btn:active { transform: scale(0.95); }
+.wq-btn.stop { background: #B04A32; }
+.wq-btn.go { background: var(--mint-ink); }
+.wq-legend { display: flex; flex-direction: column; gap: 8px; }
+.wq-legend .row {
+  display: flex; align-items: center; gap: 10px;
+  font-size: 13px; font-weight: 700;
+}
+.wq-legend .sym {
+  width: 34px; height: 34px; border-radius: 50%; flex-shrink: 0;
+  border: 3px solid var(--ink); background: var(--surface);
+  display: grid; place-items: center; font-weight: 900; font-size: 16px;
+}

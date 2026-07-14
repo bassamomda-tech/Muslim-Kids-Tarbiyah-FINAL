@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>مخترعو الحضارة · أنوس</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="../styles/tokens.css" />
+<link rel="stylesheet" href="../styles/dashboard.css" />
+<link rel="stylesheet" href="../styles/wheel.css" />
+<link rel="stylesheet" href="../styles/iman.css" />
+<link rel="stylesheet" href="../styles/qudwa.css" />
+</head>
+<body>
+
+<div class="bg-decor" aria-hidden="true"></div>
+
+<div class="activity-shell">
+
+  <nav class="activity-nav">
+    <a class="back-link" href="../dashboard.html">
+      <span data-i18n="back">الرجوع للوحة الأنشطة</span>
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg>
+    </a>
+    <div class="activity-crumb">
+      <span data-i18n="crumbSection">على خطى القدوات</span>
+      <span class="sep">/</span>
+      <span class="cur" data-i18n="crumbTitle">مخترعو الحضارة</span>
+    </div>
+    <div class="activity-actions">
+      <button class="lang-btn" id="lang-btn" title="عربي / English">EN</button>
+      <button class="icon-btn" id="reset-btn" title="إعادة الضبط" aria-label="إعادة الضبط">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 3-6.7L3 8"/><path d="M3 3v5h5"/></svg>
+      </button>
+    </div>
+  </nav>
+
+  <div class="activity-layout">
+
+    <section class="qudwa-panel">
+      <header class="wheel-header">
+        <span class="activity-tag">Activity 73 · Invention Lab</span>
+        <h1 class="activity-title" data-i18n="title">مخترعو الحضارة</h1>
+        <p class="activity-desc" data-i18n="desc">
+          في العصر الذهبي أبدع علماء المسلمين اختراعاتٍ غيّرت العالم! اجمع
+          القطع الصحيحة على طاولة العمل لتُعيد بناء اختراعٍ من اختراعاتهم.
+        </p>
+      </header>
+
+      <div class="qudwa-mission" id="in-mission"></div>
+
+      <div class="in-workbench" id="in-workbench"></div>
+
+      <div class="zone-label" data-i18n="benchLabel" style="font-size:12px; font-weight:800; color:var(--muted); margin-bottom:8px;">قطع المخترع — اختر ما يلزم فقط</div>
+      <div class="in-bench" id="in-bench"></div>
+
+      <div class="iman-actions">
+        <div class="feedback-line" id="in-feedback"></div>
+        <button class="btn-primary" id="in-build" data-i18n="buildBtn">اصنع الاختراع!</button>
+      </div>
+
+      <div class="iman-stats">
+        <div class="wheel-stat"><span data-i18n="statRound">الاختراع</span><strong id="stat-round">1/4</strong></div>
+        <div class="wheel-stat"><span data-i18n="statBuilt">اختراعات صنعتها</span><strong id="stat-built">0</strong></div>
+        <button class="wheel-mute-toggle" id="mute-btn" aria-pressed="false">
+          <span class="mute-icon"></span>
+          <span class="mute-label">كتم الصوت</span>
+        </button>
+      </div>
+    </section>
+
+    <aside class="side-panel">
+      <div class="panel-card">
+        <div class="panel-head">
+          <h3 data-i18n="sideTitle">العالِم</h3>
+          <span class="pill">💡</span>
+        </div>
+        <div class="hadith-card" id="in-scientist">
+          <div class="quote" data-i18n="sideQuote">«طلب العلم فريضة على كل مسلم»</div>
+          <span class="src" data-i18n="sideSrc">رواه ابن ماجه</span>
+        </div>
+      </div>
+      <div class="panel-card">
+        <div class="tip-card">
+          <span class="tip-icon">!</span>
+          <span data-i18n="tip">ازدهرت العلوم في الحضارة الإسلامية بين القرنين الثامن والرابع عشر: الطب والفلك والرياضيات والكيمياء والهندسة — بفضل قيمة العلم في ديننا.</span>
+        </div>
+      </div>
+    </aside>
+  </div>
+</div>
+
+<div class="modal-backdrop" id="win-modal" role="dialog" aria-modal="true">
+  <div class="modal">
+    <button class="modal-close" data-close aria-label="إغلاق">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M6 6l12 12M18 6l-12 12"/></svg>
+    </button>
+    <div class="modal-deco" aria-hidden="true">
+      <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18h6M10 21h4M12 3a6 6 0 0 1 4 10 3 3 0 0 0-1 2H9a3 3 0 0 0-1-2 6 6 0 0 1 4-10Z"/></svg>
+    </div>
+    <div class="modal-eyebrow" data-i18n="winEyebrow">مخترع صغير</div>
+    <h2 class="modal-title" data-i18n="winTitle">أعدتَ بناء كنوز العلماء!</h2>
+    <p class="modal-translit" id="win-sub"></p>
+    <div class="modal-actions">
+      <button class="btn-ghost" data-close data-i18n="winDone">انتهيت</button>
+      <button class="btn-primary" id="win-replay" data-i18n="winReplay">من جديد</button>
+    </div>
+  </div>
+</div>
+
+<div class="particles" id="particles" aria-hidden="true"></div>
+
+<script src="../scripts/activity-common.js"></script>
+<script src="../scripts/lang.js"></script>
+<script src="../scripts/invention-lab.js"></script>
+
+<script src="../../shared/nav-fix.js"></script>
+</body>
+</html>

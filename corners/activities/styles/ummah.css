@@ -1,0 +1,220 @@
+/* ============================================================
+   UMMAH — أنماط أنشطة «أمتي الواحدة» (91–100)
+   القدس وقضايا الأمة. لوحة زيتونية (olive).
+   تعتمد على iman.css للمكوّنات العامة.
+   بادئات: gd(91) ky(92) ol(93) br(94) cv(95)
+     jg(96) gl(97) rd(98) dv(99) wv(100)
+   ============================================================ */
+
+.ummah-panel {
+  background:
+    radial-gradient(140% 80% at 50% 0%, rgba(217,228,197,0.6), transparent 60%),
+    var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--r-2xl);
+  padding: var(--s-7);
+  box-shadow: var(--shadow-card);
+  display: flex; flex-direction: column;
+  position: relative; overflow: hidden;
+}
+.ummah-panel .activity-tag { background: var(--olive); color: var(--olive-ink); }
+.ummah-panel .activity-tag::before { background: var(--olive-ink); }
+
+.ummah-mission {
+  display: flex; align-items: center; gap: 10px;
+  background: var(--olive); color: var(--olive-ink);
+  border-radius: var(--r-md); padding: 10px 14px;
+  font-size: 14px; font-weight: 700; margin-bottom: var(--s-4);
+}
+
+/* ============ 91 حارس القدس (قصة تفاعلية) ============ */
+.gd-illus {
+  aspect-ratio: 2.3; border-radius: var(--r-xl); overflow: hidden;
+  border: 1px solid var(--line); margin-bottom: var(--s-4);
+  background: linear-gradient(180deg, #DCE8C8 0%, #C8DCA8 55%, #A8C078 100%);
+  display: grid; place-items: center; position: relative;
+}
+.gd-dome-svg { width: 60%; max-width: 280px; }
+.gd-scene-em { position: absolute; font-size: 30px; opacity: 0.85; }
+
+/* ============ 92 مفتاح العودة (ألغاز) ============ */
+.ky-lock {
+  display: flex; flex-direction: column; align-items: center;
+  padding: var(--s-5); margin-bottom: var(--s-4);
+}
+.ky-key-track { display: flex; align-items: center; gap: 8px; margin-bottom: var(--s-4); }
+.ky-tooth {
+  width: 30px; height: 44px; border-radius: 4px;
+  background: var(--bg-soft); border: 2px solid var(--line);
+  display: grid; place-items: center; font-size: 20px;
+  transition: background 0.3s ease, border-color 0.3s ease;
+}
+.ky-tooth.got { background: var(--olive); border-color: var(--olive-ink); }
+.ky-riddle {
+  border: 1px solid var(--line); border-radius: var(--r-xl);
+  background: var(--surface); padding: var(--s-5);
+}
+.ky-riddle p { font-size: 16px; font-weight: 700; line-height: 1.8; margin: 0 0 14px; }
+.ky-opts { display: flex; flex-direction: column; gap: 8px; }
+
+/* ============ 93 زيتونة فلسطين (رعاية) ============ */
+.ol-tree-stage {
+  position: relative; height: 320px;
+  border-radius: var(--r-xl); border: 1px solid var(--line);
+  background: linear-gradient(180deg, #DCEEF0 0%, #E4EED0 60%, #C0B088 100%);
+  overflow: hidden; margin-bottom: var(--s-4);
+  display: grid; place-items: end center;
+}
+.ol-tree { font-size: 90px; transition: font-size 0.5s ease, filter 0.5s ease; margin-bottom: 20px; filter: grayscale(0.6); }
+.ol-tree[data-stage="1"] { filter: grayscale(0.3); }
+.ol-tree[data-stage="2"] { filter: none; }
+.ol-tree[data-stage="3"] { font-size: 120px; filter: none; }
+.ol-year {
+  position: absolute; top: 12px; inset-inline-start: 14px;
+  background: rgba(255,255,255,0.85); border-radius: 99px;
+  padding: 4px 14px; font-family: var(--font-en); font-weight: 800; font-size: 14px; color: var(--olive-ink);
+}
+.ol-olives { position: absolute; inset: 0; pointer-events: none; }
+
+/* ============ 94 جسور الأمة (فيزياء بناء) ============ */
+.br-canvas-note { text-align: center; font-size: 13px; font-weight: 700; color: var(--muted); margin-top: var(--s-3); }
+.br-parts { display: flex; gap: 8px; justify-content: center; flex-wrap: wrap; margin-top: var(--s-3); }
+.br-part-btn {
+  padding: 10px 16px; border-radius: var(--r-md); border: 1.5px solid var(--line);
+  background: var(--surface); cursor: pointer; font-size: 13px; font-weight: 700; font-family: inherit;
+  transition: transform 0.12s ease, border-color 0.12s ease;
+}
+.br-part-btn:hover { transform: translateY(-2px); border-color: var(--olive-ink); }
+.br-part-btn.selected { border-color: var(--olive-ink); background: var(--olive); }
+
+/* ============ 95 قافلة الخير (محاكاة) ============ */
+.cv-route {
+  position: relative; height: 130px; margin-bottom: var(--s-4);
+  border-radius: var(--r-xl); border: 1px solid var(--line);
+  background: linear-gradient(180deg, #E8E0C8, #D8C8A0);
+  overflow: hidden;
+}
+.cv-truck { position: absolute; bottom: 20px; font-size: 34px; transition: left 0.8s ease; }
+.cv-stop {
+  position: absolute; bottom: 18px; transform: translateX(-50%);
+  display: flex; flex-direction: column; align-items: center; font-size: 11px; font-weight: 800; color: var(--olive-ink);
+}
+.cv-stop .flag { font-size: 22px; }
+.cv-cargo { display: flex; gap: var(--s-4); flex-wrap: wrap; margin-bottom: var(--s-4); }
+.cv-supply { flex: 1; min-width: 120px; }
+.cv-supply .lbl { font-size: 12px; font-weight: 800; color: var(--muted); margin-bottom: 4px; display: flex; justify-content: space-between; }
+.cv-supply .bar { height: 12px; border-radius: 99px; background: var(--bg-soft); border: 1px solid var(--line); overflow: hidden; }
+.cv-supply .bar > span { display: block; height: 100%; transition: width 0.5s ease; }
+.cv-supply.food .bar > span { background: #D4A94A; }
+.cv-supply.med .bar > span { background: #C85A5A; }
+.cv-supply.water .bar > span { background: #4A90B8; }
+.cv-decision { display: flex; flex-direction: column; gap: 8px; }
+
+/* ============ 96 فسيفساء الأقصى (تركيب) ============ */
+.jg-board {
+  display: grid; gap: 4px; margin: 0 auto var(--s-4);
+  max-width: 400px; aspect-ratio: 1;
+  border: 2px solid var(--olive-ink); border-radius: var(--r-md); padding: 6px;
+  background: var(--bg-soft);
+}
+.jg-slot {
+  border-radius: 4px; background: rgba(90,122,46,0.08);
+  border: 1px dashed rgba(90,122,46,0.3);
+  transition: all 0.2s ease;
+}
+.jg-slot.filled { border-style: solid; }
+.jg-tray { display: flex; gap: 8px; flex-wrap: wrap; justify-content: center; }
+.jg-piece {
+  width: 56px; height: 56px; border-radius: 6px; cursor: grab;
+  border: 2px solid rgba(0,0,0,0.1);
+  transition: transform 0.12s ease;
+  background-size: cover;
+}
+.jg-piece:hover { transform: scale(1.08); }
+.jg-piece.selected { outline: 3px solid var(--olive-ink); outline-offset: 2px; }
+.jg-piece.used { opacity: 0; pointer-events: none; }
+
+/* ============ 97 أطفال العالم المسلم (مطابقة) ============ */
+.gl-globe { text-align: center; margin-bottom: var(--s-4); }
+.gl-child-card {
+  border: 1px solid var(--line); border-radius: var(--r-xl);
+  background: var(--surface); padding: var(--s-5); text-align: center;
+  animation: fd-pop 0.35s ease;
+}
+.gl-child-card .face { font-size: 60px; }
+.gl-child-card .greet { font-size: 22px; font-weight: 800; margin: 8px 0 4px; color: var(--olive-ink); }
+.gl-child-card .say { font-size: 13px; color: var(--muted); font-weight: 600; }
+.gl-country-opts { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: var(--s-4); }
+.gl-country {
+  padding: 12px; border-radius: var(--r-md); border: 1.5px solid var(--line);
+  background: var(--bg-soft); cursor: pointer; font-size: 14px; font-weight: 700; font-family: inherit;
+  display: flex; align-items: center; gap: 8px; justify-content: center;
+  transition: transform 0.12s ease, border-color 0.12s ease;
+}
+.gl-country:hover { transform: translateY(-2px); border-color: var(--olive-ink); }
+.gl-country .flag { font-size: 22px; }
+.gl-country.good { background: var(--mint); border-color: var(--mint-ink); }
+.gl-country.bad { background: var(--rose); border-color: #B34A4A; }
+
+/* ============ 98 إذاعة الأمة (استوديو) ============ */
+.rd-mic {
+  text-align: center; padding: var(--s-4);
+  border: 1px solid var(--line); border-radius: var(--r-xl);
+  background: linear-gradient(180deg, #2A2438, #3A3450); color: #fff;
+  margin-bottom: var(--s-4);
+}
+.rd-onair {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: #C0392B; color: #fff; font-weight: 800; font-size: 12px;
+  padding: 4px 14px; border-radius: 99px; margin-bottom: 12px;
+  opacity: 0.4; transition: opacity 0.3s ease;
+}
+.rd-onair.live { opacity: 1; animation: qr-blink 1.2s ease-in-out infinite; }
+.rd-onair .dot { width: 8px; height: 8px; border-radius: 50%; background: #fff; }
+.rd-script { font-size: 17px; font-weight: 700; line-height: 1.9; min-height: 60px; }
+.rd-script .hl { background: var(--olive-ink); border-radius: 4px; padding: 0 3px; }
+.rd-segments { display: flex; gap: 8px; flex-wrap: wrap; justify-content: center; margin-bottom: var(--s-4); }
+.rd-seg {
+  padding: 10px 16px; border-radius: var(--r-md); border: 1.5px solid var(--line);
+  background: var(--surface); cursor: pointer; font-size: 13px; font-weight: 700; font-family: inherit;
+  display: inline-flex; align-items: center; gap: 6px;
+  transition: transform 0.12s ease, border-color 0.12s ease;
+}
+.rd-seg:hover { transform: translateY(-2px); border-color: var(--olive-ink); }
+.rd-seg.done { background: var(--mint); border-color: var(--mint-ink); }
+
+/* ============ 99 سفير السلام (دبلوماسية) ============ */
+.dv-scene {
+  border: 1px solid var(--line); border-radius: var(--r-xl);
+  background: var(--surface); padding: var(--s-6); animation: fd-pop 0.35s ease; margin-bottom: var(--s-4);
+}
+.dv-parties { display: flex; align-items: center; justify-content: center; gap: 20px; margin-bottom: var(--s-4); }
+.dv-party { text-align: center; }
+.dv-party .face { font-size: 44px; }
+.dv-party .name { font-size: 12px; font-weight: 800; color: var(--olive-ink); }
+.dv-vs { font-size: 24px; }
+.dv-meter-row { display: flex; gap: var(--s-4); flex-wrap: wrap; margin-top: var(--s-4); }
+.dv-meter { flex: 1; min-width: 130px; }
+.dv-meter .lbl { font-size: 12px; font-weight: 800; color: var(--muted); margin-bottom: 4px; display: flex; justify-content: space-between; }
+.dv-meter .bar { height: 10px; border-radius: 99px; background: var(--bg-soft); border: 1px solid var(--line); overflow: hidden; }
+.dv-meter .bar > span { display: block; height: 100%; transition: width 0.5s ease; background: var(--olive-ink); }
+
+/* ============ 100 نسيج الأمة (لاعبان نسج) ============ */
+.wv-loom {
+  display: grid; gap: 3px; margin: 0 auto var(--s-4);
+  max-width: 420px;
+  background: #C0B088; padding: 8px; border-radius: var(--r-md);
+}
+.wv-thread {
+  aspect-ratio: 1; border-radius: 3px; cursor: pointer;
+  background: #EDE6D4; transition: background 0.2s ease, transform 0.1s ease;
+}
+.wv-thread:hover { transform: scale(1.08); }
+.wv-turn { text-align: center; font-size: 15px; font-weight: 800; margin-bottom: var(--s-4); padding: 10px; border-radius: var(--r-md); }
+.wv-turn.p1 { background: rgba(90,122,46,0.15); color: var(--olive-ink); }
+.wv-turn.p2 { background: rgba(176,74,50,0.15); color: var(--coral-ink); }
+
+@media (max-width: 640px) {
+  .ummah-panel { padding: var(--s-5); }
+  .gl-country-opts { grid-template-columns: 1fr; }
+}

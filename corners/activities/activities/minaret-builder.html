@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>مهندس المآذن · أنوس</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="../styles/tokens.css" />
+<link rel="stylesheet" href="../styles/dashboard.css" />
+<link rel="stylesheet" href="../styles/wheel.css" />
+<link rel="stylesheet" href="../styles/iman.css" />
+<link rel="stylesheet" href="../styles/ghad.css" />
+</head>
+<body>
+
+<div class="bg-decor" aria-hidden="true"></div>
+
+<div class="activity-shell">
+
+  <nav class="activity-nav">
+    <a class="back-link" href="../dashboard.html">
+      <span data-i18n="back">الرجوع للوحة الأنشطة</span>
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg>
+    </a>
+    <div class="activity-crumb">
+      <span data-i18n="crumbSection">صنّاع الغد</span>
+      <span class="sep">/</span>
+      <span class="cur" data-i18n="crumbTitle">مهندس المآذن</span>
+    </div>
+    <div class="activity-actions">
+      <button class="lang-btn" id="lang-btn" title="عربي / English">EN</button>
+      <button class="icon-btn" id="reset-btn" title="إعادة الضبط" aria-label="إعادة الضبط">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 3-6.7L3 8"/><path d="M3 3v5h5"/></svg>
+      </button>
+    </div>
+  </nav>
+
+  <div class="activity-layout">
+
+    <section class="ghad-panel">
+      <header class="wheel-header">
+        <span class="activity-tag">Activity 81 · Block Building</span>
+        <h1 class="activity-title" data-i18n="title">مهندس المآذن</h1>
+        <p class="activity-desc" data-i18n="desc">
+          كن مهندساً معمارياً وابنِ مسجداً جميلاً! اتبع المخطّط: ضع القاعدة،
+          فالجدران، فالقبّة، فالمئذنة والهلال. رتّب القطع بالترتيب الصحيح لترتفع بنايتك.
+        </p>
+      </header>
+
+      <div class="ghad-mission" id="bl-mission"></div>
+
+      <div class="bl-scene" id="bl-scene">
+        <div class="bl-ground"></div>
+      </div>
+
+      <div class="zone-label" data-i18n="trayLabel" style="font-size:12px; font-weight:800; color:var(--muted); margin-bottom:8px; text-align:center;">صندوق القطع — انقر القطعة الصحيحة التالية</div>
+      <div class="bl-tray" id="bl-tray"></div>
+
+      <div class="iman-actions">
+        <div class="feedback-line" id="bl-feedback" style="text-align:center;"></div>
+      </div>
+
+      <div class="iman-stats">
+        <div class="wheel-stat"><span data-i18n="statBuilt">القطع المركّبة</span><strong id="stat-built">0/6</strong></div>
+        <div class="wheel-stat"><span data-i18n="statMosques">مساجد بنيتها</span><strong id="stat-mosques">0</strong></div>
+        <button class="wheel-mute-toggle" id="mute-btn" aria-pressed="false">
+          <span class="mute-icon"></span>
+          <span class="mute-label">كتم الصوت</span>
+        </button>
+      </div>
+    </section>
+
+    <aside class="side-panel">
+      <div class="panel-card">
+        <div class="panel-head">
+          <h3 data-i18n="sideTitle">عمارة المساجد</h3>
+          <span class="pill">🕌</span>
+        </div>
+        <div class="hadith-card">
+          <div class="quote" data-i18n="sideQuote">«مَن بنى مسجداً لله بنى الله له بيتاً في الجنة»</div>
+          <span class="src" data-i18n="sideSrc">متفق عليه</span>
+        </div>
+      </div>
+      <div class="panel-card">
+        <div class="tip-card">
+          <span class="tip-icon">!</span>
+          <span data-i18n="tip">للمسجد أجزاء: القاعدة، وقاعة الصلاة، والمحراب (اتجاه القبلة)، والقبّة، والمئذنة التي يُرفع منها الأذان. كل مسجدٍ عمارةٌ من عمائر الإسلام.</span>
+        </div>
+      </div>
+    </aside>
+  </div>
+</div>
+
+<div class="modal-backdrop" id="win-modal" role="dialog" aria-modal="true">
+  <div class="modal">
+    <button class="modal-close" data-close aria-label="إغلاق">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M6 6l12 12M18 6l-12 12"/></svg>
+    </button>
+    <div class="modal-deco" aria-hidden="true">
+      <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 21V11a7 7 0 0 1 14 0v10M9 21v-5h6v5M12 2v3"/></svg>
+    </div>
+    <div class="modal-eyebrow" data-i18n="winEyebrow">اكتمل البناء</div>
+    <h2 class="modal-title" data-i18n="winTitle">بنيتَ مسجداً جميلاً!</h2>
+    <p class="modal-translit" id="win-sub"></p>
+    <div class="modal-actions">
+      <button class="btn-ghost" data-close data-i18n="winDone">انتهيت</button>
+      <button class="btn-primary" id="win-replay" data-i18n="winReplay">مسجد جديد</button>
+    </div>
+  </div>
+</div>
+
+<div class="particles" id="particles" aria-hidden="true"></div>
+
+<script src="../scripts/activity-common.js"></script>
+<script src="../scripts/lang.js"></script>
+<script src="../scripts/minaret-builder.js"></script>
+
+<script src="../../shared/nav-fix.js"></script>
+</body>
+</html>

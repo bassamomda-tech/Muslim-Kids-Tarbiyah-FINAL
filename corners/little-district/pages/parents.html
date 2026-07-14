@@ -542,7 +542,7 @@ html[dir="rtl"] .shop-card{border-inline-start:1.5px solid var(--card-bd);border
 
     <div class="gkey">
       <h3><span class="ar-only">🎁 فتح الأنشطة بدون امتحانات</span><span class="en-only">🎁 Open activities without exams</span></h3>
-      <p><span class="ar-only">عادةً تُفتَح أنشطة «ركن أنوس» عندما ينجح طفلُك في اختبار الركن (٧٥٪ فأكثر). لكن إن أردتَ منحها مكافأةً على حُسن سلوكه — <b>دون أيّ امتحان</b> — فاضغط الزرّ بالأسفل: تُفتَح فورًا ٥ أنشطةٍ مميّزة يجدها طفلُك في حقيبته وفي قائمة الأنشطة المفتوحة. يمكنك سحبُها في أيِّ وقت.</span><span class="en-only">Normally the “Anous” activities open after your child passes a corner's test (75%+). But if you'd rather give them as a reward for good behaviour — <b>with no exam at all</b> — just press the button below: 5 special activities open instantly and appear in your child's bag &amp; unlocked list. You can revoke them anytime.</span></p>
+      <p><span class="ar-only">عادةً تُفتَح أنشطة «ركن أنوس» عندما ينجح طفلُك في اختبار الركن (٧٥٪ فأكثر). لكن إن أردتَ منحها مكافأةً على حُسن سلوكه — <b>دون أيّ امتحان</b> — فاضغط الزرّ بالأسفل: تُفتَح فورًا ٥٥ نشاطًا (الأنشطة الخمسة الخاصّة + الـ٥٠ نشاطًا الجديدة) يجدها طفلُك في حقيبته وفي قائمة الأنشطة المفتوحة. يمكنك سحبُها في أيِّ وقت.</span><span class="en-only">Normally the “Anous” activities open after your child passes a corner's test (75%+). But if you'd rather give them as a reward for good behaviour — <b>with no exam at all</b> — just press the button below: 55 activities (the 5 special ones + the 50 new ones) open instantly and appear in your child's bag &amp; unlocked list. You can revoke them anytime.</span></p>
       <div class="gkey-acts">
         <button class="gbtn go" onclick="guideUnlockActivities()"><span class="ar-only">🎁 افتح الأنشطة الآن — بدون امتحان</span><span class="en-only">🎁 Open activities now — no exam</span></button>
         <button class="gbtn alt" onclick="showTab('behavior')"><span class="ar-only">⭐ من تبويب نقاط السلوك</span><span class="en-only">⭐ Via Behaviour Points</span></button>
@@ -1155,13 +1155,16 @@ function renderParentsRewards(){
     if(unlocked) return '<a class="mkcs-rw" href="'+bse+r[0]+'?lang='+lang+'"><span class="mkcs-rw-ic">'+r[1]+'</span>'+label+'</a>';
     return '<div class="mkcs-rw lock"><span class="mkcs-rw-ic">🔒</span>'+label+'</div>';
   }).join('');
+  var extra = unlocked
+    ? '<a class="mkcs-rw" href="../../activities/dashboard.html?lang='+lang+'"><span class="mkcs-rw-ic">🎮</span><span class="mkcs-rw-t">'+(ar?'+٥٠ نشاطًا جديدًا':'+50 new activities')+'</span></a>'
+    : '<div class="mkcs-rw lock"><span class="mkcs-rw-ic">🔒</span><span class="mkcs-rw-t">'+(ar?'+٥٠ نشاطًا جديدًا':'+50 new activities')+'</span></div>';
   var btn=unlocked
     ? '<button class="ctrl-btn warn" onclick="grantParents(false)">'+(ar?'إلغاء المنح':'Revoke')+'</button>'
     : '<button class="ctrl-btn go" onclick="grantParents(true)">'+(ar?'🎁 امنح طفلي هذه المكافأة':'🎁 Grant my child this reward')+'</button>';
   host.innerHTML=
-    '<div class="ctrl-card"><h3>🎁 '+(ar?'مكافأة الأهل — ٥ أنشطة خاصّة':'Parents’ Reward — 5 special activities')+'</h3>'
-    +'<p class="bps-note" style="margin:.2rem 0 .8rem">'+(ar?'هذه الأنشطة الخمس من حقّ الأهل وحدهم: امنحها طفلك مكافأةً على حُسن سلوكه.':'These five activities are the parents’ to give — grant them to your child as a reward for good behaviour.')+'</p>'
-    +'<div class="mkcs-rewards">'+cells+'</div>'
+    '<div class="ctrl-card"><h3>🎁 '+(ar?'مكافأة الأهل — ٥ أنشطة خاصّة + ٥٠ نشاطًا جديدًا':'Parents’ Reward — 5 special + 50 new activities')+'</h3>'
+    +'<p class="bps-note" style="margin:.2rem 0 .8rem">'+(ar?'هذه المكافأة من حقّ الأهل وحدهم: الأنشطة الخمسة الخاصّة مع الـ٥٠ نشاطًا الجديدة (٥١–١٠٠) — امنحها طفلك مكافأةً على حُسن سلوكه.':'This reward is the parents’ to give: the 5 special activities plus the 50 new ones (51–100) — grant them to your child as a reward for good behaviour.')+'</p>'
+    +'<div class="mkcs-rewards">'+cells+extra+'</div>'
     +'<div style="margin-top:.9rem">'+btn+'</div></div>';
 }
 function grantParents(on){
@@ -1171,7 +1174,7 @@ function grantParents(on){
     if(!MK.checkPin(String(pin).trim())){ alert(lang==='ar'?'رمزٌ غير صحيح':'Wrong PIN'); return; }
   }
   try{ var u=JSON.parse(localStorage.getItem('mkUnlocked')||'{}');
-    if(on) u.parents=(window.PARENT_ANOUS||[]).map(function(r){return {href:'activities/'+r[0],icon:r[1],t:{ar:r[2],en:r[3]}};});
+    if(on) u.parents=(window.PARENT_ANOUS||[]).concat(window.PARENT_ANOUS_NEW||[]).map(function(r){return {href:'activities/'+r[0],icon:r[1],t:{ar:r[2],en:r[3]}};});
     else delete u.parents;
     localStorage.setItem('mkUnlocked', JSON.stringify(u));
   }catch(e){}
@@ -1187,15 +1190,15 @@ function guideUnlockActivities(){
   }
   try{
     var u=JSON.parse(localStorage.getItem('mkUnlocked')||'{}');
-    u.parents=(window.PARENT_ANOUS||[]).map(function(r){return {href:'activities/'+r[0],icon:r[1],t:{ar:r[2],en:r[3]}};});
+    u.parents=(window.PARENT_ANOUS||[]).concat(window.PARENT_ANOUS_NEW||[]).map(function(r){return {href:'activities/'+r[0],icon:r[1],t:{ar:r[2],en:r[3]}};});
     localStorage.setItem('mkUnlocked', JSON.stringify(u));
     try{ window.dispatchEvent(new Event('mk-unlocks-changed')); }catch(e){}
   }catch(e){}
   var st=document.getElementById('guideUnlockMsg');
   if(st){ st.style.display='block';
     st.textContent = ar
-      ? '✅ تمّ فتح ٥ أنشطةٍ لطفلك دون امتحانات! يجدها في حقيبته وفي قائمة الأنشطة المفتوحة.'
-      : '✅ 5 activities unlocked for your child — no exams needed! They appear in the bag & unlocked list.'; }
+      ? '✅ تمّ فتح ٥٥ نشاطًا لطفلك دون امتحانات (الخمسة الخاصّة + الـ٥٠ الجديدة)! يجدها في حقيبته وفي قائمة الأنشطة المفتوحة.'
+      : '✅ 55 activities unlocked for your child — no exams needed (the 5 special + the 50 new)! They appear in the bag & unlocked list.'; }
   if(typeof renderParentsRewards==='function') renderParentsRewards();
 }
 function setLang(l){
@@ -1223,6 +1226,34 @@ window.PARENT_ANOUS = [
   ['family-tree.html','🌳','شجرة العائلة','Family Tree'],
   ['nasheed-karaoke.html','🎤','كاريوكي الأناشيد','Nasheed Karaoke'],
   ['puppet-theater.html','🎭','مسرح العرائس','Puppet Theater']
+];
+/* the 50 NEW activities (51–100) — parents can open them all alongside the 5 above */
+window.PARENT_ANOUS_NEW = [
+  ['hajj-sim.html','🕋','مناسك الحج الصغير',"The Little Pilgrim's Hajj"], ['fasting-day.html','🌙','يوم مع الصائم','A Day with a Fasting Kid'],
+  ['qibla-quest.html','🧭','مهمة القِبلة','Qibla Quest'], ['zakat-jar.html','🪙','حصّالة الزكاة','The Zakat Jar'],
+  ['soul-journey.html','💗','رحلة الروح الطيبة',"The Good Soul's Journey"], ['adhan-echo.html','📢','صدى الأذان','Echo of the Adhan'],
+  ['deeds-scale.html','⚖️','ميزان الحسنات','The Scale of Good Deeds'], ['prayer-orbit.html','✨','نجوم الصلوات الخمس','The Five Prayer Stars'],
+  ['fajr-run.html','🏃','سباق الفجر','Fajr Dash'], ['iman-room.html','🔐','غرفة أركان الإيمان','The Room of the Pillars of Iman'],
+  ['qari-studio.html','🎙️','المقرئ الصغير',"The Little Reciter's Studio"], ['isnad-chain.html','📿','سلسلة الإسناد','The Golden Chain'],
+  ['surah-garden.html','🌷','بستان السور','The Surah Garden'], ['ayah-train.html','🚂','قطار الآيات','The Ayah Train'],
+  ['tajweed-lab.html','🔬','مختبر التجويد','The Tajweed Sound Lab'], ['meaning-catch.html','🎣','صيّاد المعاني','The Meaning Catcher'],
+  ['hadith-lantern.html','🏮','مشكاة الحديث','The Lantern of Hadith'], ['juz-mosaic.html','🧩','فسيفساء جزء عمّ','The Juz Amma Mosaic'],
+  ['hafiz-ear.html','👂','أذن الحافظ',"The Hafiz's Ear"], ['waqf-signals.html','🚦','إشارة الوقف والوصل','Stop & Continue Signals'],
+  ['hijrah-journey.html','🐪','رحلة الهجرة','The Hijrah Journey'], ['sahaba-duel.html','🤝','مجلس الصحابة',"The Companions' Duel"],
+  ['invention-lab.html','💡','مخترعو الحضارة','Inventors of Civilization'], ['madinah-market.html','🏪','سوق المدينة','The Madinah Market'],
+  ['story-theater.html','🎭','فرسان القصص','Story Knights Theater'], ['conquest-map.html','🗺️','خطى الفاتحين','Paths of the Openers'],
+  ['hikmah-library.html','📚','مكتبة بيت الحكمة','The House of Wisdom Library'], ['qudwa-cards.html','🃏','بطاقات القدوة','Role-Model Collectible Cards'],
+  ['seerah-narrator.html','📖','راوي السيرة','The Seerah Narrator'], ['trench-dig.html','⛏️','حفر الخندق','Digging the Trench'],
+  ['minaret-builder.html','🕌','مهندس المآذن','The Minaret Engineer'], ['team-leader.html','🚩','قائد الفريق','The Team Leader'],
+  ['horse-race.html','🐎','سباق الفروسية','The Horse Race'], ['archery.html','🏹','رماية السهام','Archery'],
+  ['nasheed-studio.html','🎵','استوديو النشيد','The Nasheed Studio'], ['river-swim.html','🏊','سبّاح النهر','The River Swimmer'],
+  ['idea-factory.html','🏭','مصنع الأفكار','The Idea Factory'], ['leadership-tent.html','⛺','خيمة القيادة','The Leadership Tent'],
+  ['giving-garden.html','🌱','حديقة العطاء','The Garden of Giving'], ['good-runner.html','👟','عدّاء الخير','The Good Deeds Runner'],
+  ['quds-guardian.html','🛡️','حارس القدس الصغير','The Little Guardian of Al-Quds'], ['return-key.html','🗝️','مفتاح العودة','The Key of Return'],
+  ['olive-tree.html','🫒','زيتونة فلسطين','The Olive of Palestine'], ['ummah-bridge.html','🌉','جسور الأمة','Bridges of the Ummah'],
+  ['aid-convoy.html','🚚','قافلة الخير','The Convoy of Good'], ['aqsa-jigsaw.html','🧩','فسيفساء الأقصى','The Al-Aqsa Jigsaw'],
+  ['muslim-kids.html','🌍','أطفال العالم المسلم','Children of the Muslim World'], ['ummah-radio.html','📻','إذاعة الأمة','Ummah Radio Studio'],
+  ['peace-envoy.html','🕊️','سفير السلام','The Peace Envoy'], ['ummah-weave.html','🧶','نسيج الأمة الواحد','The One Ummah Weave']
 ];
 function toggleSidebar(){ document.getElementById('sidebarDrawer').classList.toggle('open'); document.getElementById('sidebarOverlay').classList.toggle('open'); }
 function closeSidebar(){ document.getElementById('sidebarDrawer').classList.remove('open'); document.getElementById('sidebarOverlay').classList.remove('open'); }

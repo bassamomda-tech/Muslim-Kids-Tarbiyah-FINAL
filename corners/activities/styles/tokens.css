@@ -27,6 +27,18 @@
   --butter:      #FFE9A8;   /* أصفر زبدي */
   --butter-ink:  #8A6510;
 
+  /* ألوان الأقسام الخمسة الجديدة (51–100) */
+  --teal:        #C9E8E5;   /* تركوازي هادئ */
+  --teal-ink:    #1F6E68;
+  --sand:        #EDE0C4;   /* رملي (رَق قديم) */
+  --sand-ink:    #8A6B2E;
+  --coral:       #FAD3C8;   /* مرجاني */
+  --coral-ink:   #B04A32;
+  --berry:       #F3D1E3;   /* توتي */
+  --berry-ink:   #A83A72;
+  --olive:       #D9E4C5;   /* زيتوني */
+  --olive-ink:   #5A7A2E;
+
   /* لون أساسي للعلامة */
   --brand:       #6A8E7F;   /* أخضر زيتي هادئ */
   --brand-soft:  #DCE9DC;

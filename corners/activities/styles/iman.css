@@ -1,0 +1,415 @@
+/* ============================================================
+   IMAN — أنماط أنشطة «رحلة الإيمان» (51–60)
+   بادئات: hj (الحج) fd (الصيام) qb (القبلة) zk (الزكاة)
+   sj (القصة) ae (الأذان) ds (الميزان) po (المدار)
+   fr (سباق الفجر) ir (غرفة الإيمان)
+   ============================================================ */
+
+/* زر اللغة في شريط التنقل */
+.lang-btn {
+  width: auto; min-width: 52px;
+  padding: 0 16px; height: 40px;
+  border-radius: var(--r-pill);
+  border: 1px solid var(--line);
+  background: var(--surface);
+  font-family: var(--font-en);
+  font-weight: 800; font-size: 12px;
+  letter-spacing: 0.04em;
+  cursor: pointer;
+  color: var(--ink-2);
+  transition: background 0.18s ease, color 0.18s ease;
+}
+.lang-btn:hover { background: var(--ink); color: #fff; border-color: var(--ink); }
+
+/* لوحة نشاط عامة بلون تركوازي */
+.iman-panel {
+  background:
+    radial-gradient(140% 80% at 50% 0%, rgba(201,232,229,0.5), transparent 60%),
+    var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--r-2xl);
+  padding: var(--s-7);
+  box-shadow: var(--shadow-card);
+  display: flex; flex-direction: column;
+  position: relative; overflow: hidden;
+}
+.iman-panel .activity-tag { background: var(--teal); color: var(--teal-ink); }
+.iman-panel .activity-tag::before { background: var(--teal-ink); }
+
+/* شريط مراحل عام (حج/غرفة) */
+.stage-strip { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: var(--s-5); }
+.stage-chip {
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 6px 12px; border-radius: var(--r-pill);
+  background: var(--bg-soft); border: 1px solid var(--line);
+  font-size: 12px; font-weight: 700; color: var(--muted);
+}
+.stage-chip .n {
+  width: 18px; height: 18px; border-radius: 50%;
+  background: var(--surface); border: 1px solid var(--line);
+  display: grid; place-items: center;
+  font-family: var(--font-en); font-size: 10px; font-weight: 800;
+}
+.stage-chip.current { background: var(--teal); color: var(--teal-ink); border-color: var(--teal-ink); }
+.stage-chip.current .n { background: var(--teal-ink); color: #fff; border-color: var(--teal-ink); }
+.stage-chip.done { background: var(--mint); color: var(--mint-ink); border-color: var(--mint-ink); }
+.stage-chip.done .n { background: var(--mint-ink); color: #fff; border-color: var(--mint-ink); }
+
+/* منطقة لعب كانفس عامة */
+.play-stage {
+  position: relative;
+  border-radius: var(--r-xl);
+  border: 1px solid var(--line);
+  overflow: hidden;
+  background: var(--bg-soft);
+}
+.play-stage canvas { display: block; width: 100%; height: auto; touch-action: none; }
+
+/* شريط تعليمات + إجراءات أسفل اللوحة */
+.iman-actions {
+  display: flex; align-items: center; gap: var(--s-3);
+  margin-top: var(--s-5); flex-wrap: wrap;
+}
+.iman-actions .feedback-line {
+  flex-grow: 1; font-size: 14px; font-weight: 600; color: var(--ink-2);
+  min-height: 22px;
+}
+.iman-stats {
+  display: flex; align-items: center; gap: var(--s-6);
+  margin-top: var(--s-5); padding-top: var(--s-4);
+  border-top: 1px dashed var(--line);
+  flex-wrap: wrap;
+}
+
+/* ============ 51 الحج ============ */
+.hj-instruction {
+  display: flex; align-items: center; gap: 10px;
+  background: var(--teal); color: var(--teal-ink);
+  border-radius: var(--r-md);
+  padding: 10px 14px; font-size: 14px; font-weight: 700;
+  margin-bottom: var(--s-4);
+}
+.hj-hold-meter {
+  position: absolute; bottom: 14px; left: 50%; transform: translateX(-50%);
+  width: 60%; height: 10px; border-radius: 99px;
+  background: rgba(255,255,255,0.7); overflow: hidden;
+  border: 1px solid var(--line);
+}
+.hj-hold-meter > span { display: block; height: 100%; width: 0; background: var(--teal-ink); transition: width 0.1s linear; border-radius: 99px; }
+
+/* ============ 52 يوم الصائم ============ */
+.fd-sky {
+  position: relative; height: 150px;
+  border-radius: var(--r-xl); border: 1px solid var(--line);
+  overflow: hidden; margin-bottom: var(--s-5);
+  transition: background 1s ease;
+}
+.fd-sun {
+  position: absolute; width: 40px; height: 40px; border-radius: 50%;
+  background: #FFD469; box-shadow: 0 0 30px rgba(255,212,105,0.8);
+  transform: translate(-50%, -50%);
+}
+.fd-ground { position: absolute; bottom: 0; left: 0; right: 0; height: 26px; background: var(--brand-soft); border-top: 2px solid var(--brand); }
+.fd-clock {
+  position: absolute; top: 10px; inset-inline-start: 12px;
+  background: rgba(255,255,255,0.85); border-radius: var(--r-pill);
+  padding: 4px 12px; font-family: var(--font-en); font-weight: 800; font-size: 14px;
+}
+.fd-event {
+  border: 1px solid var(--line); border-radius: var(--r-xl);
+  padding: var(--s-5); background: var(--surface);
+  animation: fd-pop 0.3s ease;
+}
+@keyframes fd-pop { from { transform: scale(0.94); opacity: 0; } }
+.fd-event h3 { margin: 0 0 6px; font-size: 18px; }
+.fd-event p { margin: 0 0 14px; color: var(--ink-2); font-size: 14px; line-height: 1.6; }
+.fd-choices { display: flex; flex-direction: column; gap: 8px; }
+.fd-choice {
+  text-align: start; padding: 12px 16px;
+  border-radius: var(--r-md); border: 1.5px solid var(--line);
+  background: var(--bg-soft); cursor: pointer;
+  font-size: 14px; font-weight: 700; font-family: inherit;
+  transition: transform 0.12s ease, border-color 0.12s ease;
+}
+.fd-choice:hover { transform: translateY(-2px); border-color: var(--teal-ink); }
+.fd-meter { display: flex; align-items: center; gap: 8px; font-size: 12px; font-weight: 700; color: var(--muted); }
+.fd-meter .bar { flex-grow: 1; height: 10px; border-radius: 99px; background: var(--bg-soft); overflow: hidden; border: 1px solid var(--line); }
+.fd-meter .bar > span { display: block; height: 100%; background: linear-gradient(90deg, var(--teal-ink), var(--brand)); transition: width 0.4s ease; }
+
+/* ============ 53 القبلة ============ */
+.qb-scenario {
+  display: flex; align-items: center; gap: 10px;
+  background: var(--sand); color: var(--sand-ink);
+  border-radius: var(--r-md); padding: 10px 14px;
+  font-size: 14px; font-weight: 700; margin-bottom: var(--s-4);
+}
+.qb-stage { aspect-ratio: 1; max-width: 420px; margin: 0 auto; position: relative; }
+.qb-dial {
+  position: absolute; inset: 0; border-radius: 50%;
+  border: 2px solid var(--line); background: var(--surface);
+  cursor: grab; user-select: none; touch-action: none;
+}
+.qb-dial:active { cursor: grabbing; }
+.qb-needle {
+  position: absolute; top: 50%; left: 50%;
+  width: 8px; height: 42%;
+  transform-origin: 50% 100%;
+  transform: translate(-50%, -100%) rotate(0deg);
+  pointer-events: none;
+}
+.qb-needle::before {
+  content: ""; position: absolute; inset: 0;
+  background: var(--teal-ink);
+  clip-path: polygon(50% 0, 100% 100%, 0 100%);
+  border-radius: 4px;
+}
+.qb-city {
+  position: absolute; transform: translate(-50%, -50%);
+  display: grid; place-items: center; text-align: center;
+  font-size: 11px; font-weight: 800; color: var(--ink-2);
+  pointer-events: none; gap: 2px;
+}
+.qb-city .dot { width: 14px; height: 14px; border-radius: 50%; background: var(--sand-ink); border: 3px solid #fff; box-shadow: 0 1px 4px rgba(0,0,0,0.2); }
+.qb-city.kaaba .dot { width: 20px; height: 20px; border-radius: 4px; background: var(--ink); }
+
+/* ============ 54 الزكاة ============ */
+.zk-wallet {
+  display: flex; flex-wrap: wrap; gap: 10px;
+  padding: var(--s-4); border-radius: var(--r-xl);
+  background: var(--bg-soft); border: 1px dashed var(--line);
+  min-height: 92px; align-content: flex-start;
+}
+.zk-coin {
+  width: 58px; height: 58px; border-radius: 50%;
+  background: radial-gradient(circle at 35% 30%, #FFE9A8, #C9A961);
+  border: 2px solid #A8873D;
+  display: grid; place-items: center;
+  font-family: var(--font-en); font-weight: 800; font-size: 15px; color: #6B5313;
+  cursor: grab; user-select: none; touch-action: none;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.12);
+  transition: transform 0.12s ease;
+}
+.zk-coin:hover { transform: translateY(-3px) rotate(-4deg); }
+.zk-coin.dragging { opacity: 0.4; }
+.zk-jar {
+  margin-top: var(--s-4);
+  border: 2.5px solid var(--teal-ink); border-radius: var(--r-xl);
+  background: linear-gradient(180deg, rgba(201,232,229,0.35), rgba(201,232,229,0.8));
+  min-height: 120px; padding: var(--s-4);
+  display: flex; flex-wrap: wrap; gap: 8px; align-content: flex-end;
+  position: relative;
+}
+.zk-jar.hover { box-shadow: 0 0 0 4px rgba(31,110,104,0.25); }
+.zk-jar .zk-coin { cursor: pointer; width: 48px; height: 48px; font-size: 13px; }
+.zk-jar-label {
+  position: absolute; top: -14px; inset-inline-start: 16px;
+  background: var(--teal-ink); color: #fff;
+  font-size: 12px; font-weight: 800; padding: 4px 14px; border-radius: var(--r-pill);
+}
+.zk-sum {
+  display: flex; gap: var(--s-5); margin-top: var(--s-4);
+  font-size: 13px; font-weight: 700; color: var(--muted); flex-wrap: wrap;
+}
+.zk-sum strong { font-family: var(--font-en); font-size: 20px; color: var(--ink); display: block; }
+.zk-sum .ok strong { color: var(--mint-ink); }
+
+/* ============ 55 قصة الروح ============ */
+.sj-scene {
+  border: 1px solid var(--line); border-radius: var(--r-xl);
+  background: var(--surface); padding: var(--s-6);
+  animation: fd-pop 0.35s ease;
+}
+.sj-glyph {
+  width: 72px; height: 72px; border-radius: var(--r-lg, 16px);
+  background: var(--teal); color: var(--teal-ink);
+  display: grid; place-items: center; margin-bottom: var(--s-4);
+}
+.sj-glyph svg { width: 42px; height: 42px; }
+.sj-text { font-size: 17px; line-height: 1.9; color: var(--ink); margin: 0 0 var(--s-5); font-weight: 500; }
+.sj-choices { display: flex; flex-direction: column; gap: 10px; }
+.sj-choice {
+  display: flex; align-items: center; gap: 12px;
+  text-align: start; padding: 14px 16px;
+  border-radius: var(--r-md); border: 1.5px solid var(--line);
+  background: var(--bg-soft); cursor: pointer;
+  font-size: 15px; font-weight: 700; font-family: inherit;
+  transition: transform 0.12s ease, border-color 0.12s ease, background 0.12s ease;
+}
+.sj-choice:hover { transform: translateY(-2px); border-color: var(--teal-ink); background: var(--surface); }
+.sj-choice .arrow { margin-inline-start: auto; opacity: 0.5; }
+.sj-trail { display: flex; gap: 6px; flex-wrap: wrap; margin-top: var(--s-4); }
+.sj-trail .bead {
+  width: 12px; height: 12px; border-radius: 50%;
+  background: var(--bg-soft); border: 1px solid var(--line);
+}
+.sj-trail .bead.on { background: var(--teal-ink); border-color: var(--teal-ink); }
+.sj-lesson {
+  background: var(--brand-soft); border-radius: var(--r-md);
+  padding: var(--s-4); font-size: 14px; line-height: 1.7; font-weight: 600;
+  color: var(--brand-ink); margin-top: var(--s-4);
+}
+
+/* ============ 56 صدى الأذان ============ */
+.ae-phrases { display: flex; flex-direction: column; gap: 10px; margin-top: var(--s-4); }
+.ae-phrase {
+  display: flex; align-items: center; gap: 12px;
+  padding: 14px 16px; border-radius: var(--r-md);
+  border: 1.5px solid var(--line); background: var(--surface);
+  cursor: pointer; font-family: inherit; text-align: start;
+  font-size: 16px; font-weight: 800;
+  transition: transform 0.12s ease, border-color 0.12s ease, background 0.12s ease;
+}
+.ae-phrase small { display: block; font-size: 11px; font-weight: 600; color: var(--muted); margin-top: 2px; }
+.ae-phrase:hover { transform: translateY(-2px); border-color: var(--teal-ink); }
+.ae-phrase.lit { background: var(--butter); border-color: var(--butter-ink); }
+.ae-phrase.good { background: var(--mint); border-color: var(--mint-ink); }
+.ae-phrase.bad { background: var(--rose); border-color: #B34A4A; animation: ae-shake 0.4s ease; }
+.ae-phrase .wave-ic {
+  width: 34px; height: 34px; border-radius: 50%; flex-shrink: 0;
+  background: var(--teal); color: var(--teal-ink);
+  display: grid; place-items: center;
+}
+@keyframes ae-shake { 0%,100%{transform:translateX(0);} 25%{transform:translateX(-6px);} 75%{transform:translateX(6px);} }
+.ae-round-pips { display: flex; gap: 8px; margin-top: var(--s-4); }
+.ae-round-pips .pip { width: 10px; height: 10px; border-radius: 50%; background: var(--bg-soft); border: 1px solid var(--line); }
+.ae-round-pips .pip.on { background: var(--teal-ink); border-color: var(--teal-ink); }
+
+/* ============ 57 ميزان الحسنات ============ */
+.ds-scale-wrap { position: relative; height: 260px; margin: var(--s-4) 0; }
+.ds-beam {
+  position: absolute; top: 40px; left: 50%;
+  width: 78%; height: 8px; border-radius: 6px;
+  background: var(--ink);
+  transform: translateX(-50%) rotate(0deg);
+  transition: transform 0.6s cubic-bezier(0.3, 1.4, 0.4, 1);
+}
+.ds-post { position: absolute; top: 40px; left: 50%; transform: translateX(-50%); width: 10px; height: 150px; background: var(--ink); border-radius: 6px; }
+.ds-base { position: absolute; top: 186px; left: 50%; transform: translateX(-50%); width: 130px; height: 12px; background: var(--ink); border-radius: 8px; }
+.ds-pan {
+  position: absolute; top: 0;
+  width: 120px; text-align: center;
+}
+.ds-pan .plate {
+  margin: 46px auto 0; width: 110px; min-height: 54px;
+  border: 2.5px solid var(--ink); border-top: none;
+  border-radius: 0 0 60px 60px;
+  background: var(--surface);
+  display: flex; flex-wrap: wrap; align-content: flex-start; justify-content: center; gap: 3px;
+  padding: 6px;
+}
+.ds-pan .chain { width: 2px; height: 46px; background: var(--ink); margin: 0 auto; position: absolute; top: 0; left: 50%; }
+.ds-pan .pan-label { font-size: 11px; font-weight: 800; color: var(--muted); margin-top: 6px; }
+.ds-token {
+  width: 26px; height: 26px; border-radius: 50%;
+  display: grid; place-items: center; font-size: 13px; font-weight: 800;
+  background: var(--mint); color: var(--mint-ink); border: 1px solid var(--mint-ink);
+}
+.ds-token.sin { background: #E8C8C8; color: #8A3030; border-color: #B36B6B; }
+.ds-deeds { display: flex; flex-wrap: wrap; gap: 8px; }
+.ds-deed {
+  padding: 10px 14px; border-radius: var(--r-pill);
+  border: 1.5px solid var(--line); background: var(--surface);
+  font-size: 13px; font-weight: 700; cursor: pointer; font-family: inherit;
+  display: inline-flex; align-items: center; gap: 8px;
+  transition: transform 0.12s ease, border-color 0.12s ease;
+}
+.ds-deed:hover { transform: translateY(-2px); border-color: var(--teal-ink); }
+.ds-deed .w { font-family: var(--font-en); font-size: 11px; background: var(--teal); color: var(--teal-ink); border-radius: 99px; padding: 2px 8px; }
+.ds-deed.used { opacity: 0.35; pointer-events: none; }
+
+/* ============ 58 مدار الصلوات ============ */
+.po-stage {
+  position: relative; aspect-ratio: 1; max-width: 440px; margin: 0 auto;
+  border-radius: 50%;
+  background: radial-gradient(circle, #1F2540 0%, #2A3358 55%, #39406B 100%);
+  border: 2px solid var(--line);
+  touch-action: none;
+}
+.po-ring { position: absolute; inset: 9%; border: 1.5px dashed rgba(255,255,255,0.35); border-radius: 50%; }
+.po-slot {
+  position: absolute; width: 54px; height: 54px;
+  transform: translate(-50%, -50%);
+  border: 2px dashed rgba(255,255,255,0.5); border-radius: 50%;
+  display: grid; place-items: center;
+  color: rgba(255,255,255,0.75); font-size: 10px; font-weight: 700; text-align: center;
+}
+.po-slot.filled { border-style: solid; border-color: #FFE9A8; }
+.po-star {
+  position: absolute; width: 58px; height: 58px;
+  transform: translate(-50%, -50%);
+  display: grid; place-items: center;
+  cursor: grab; user-select: none; touch-action: none;
+  filter: drop-shadow(0 2px 6px rgba(0,0,0,0.4));
+  z-index: 3;
+}
+.po-star:active { cursor: grabbing; }
+.po-star svg { width: 100%; height: 100%; }
+.po-star .lbl {
+  position: absolute; inset: 0; display: grid; place-items: center;
+  font-size: 10px; font-weight: 800; color: #6B5313; padding-top: 4px;
+}
+.po-star.locked { cursor: default; }
+.po-center {
+  position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+  text-align: center; color: #FFE9A8; font-weight: 800; font-size: 13px;
+  pointer-events: none;
+}
+
+/* ============ 59 سباق الفجر ============ */
+.fr-stage { position: relative; }
+.fr-hud {
+  position: absolute; top: 10px; inset-inline-start: 12px; z-index: 2;
+  display: flex; gap: 8px;
+}
+.fr-hud .chip {
+  background: rgba(255,255,255,0.88); border-radius: var(--r-pill);
+  font-size: 12px; font-weight: 800; padding: 4px 12px;
+  font-family: var(--font-en);
+}
+.fr-overlay {
+  position: absolute; inset: 0; z-index: 3;
+  display: grid; place-items: center;
+  background: rgba(20,24,40,0.45);
+  border-radius: inherit;
+}
+.fr-overlay .box {
+  background: var(--surface); border-radius: var(--r-xl);
+  padding: var(--s-6); text-align: center; max-width: 320px;
+  box-shadow: var(--shadow-card);
+}
+.fr-overlay h3 { margin: 0 0 8px; font-size: 20px; }
+.fr-overlay p { margin: 0 0 16px; font-size: 13px; color: var(--ink-2); line-height: 1.6; }
+
+/* ============ 60 غرفة الإيمان ============ */
+.ir-room { position: relative; border-radius: var(--r-xl); overflow: hidden; border: 1px solid var(--line); }
+.ir-room svg { display: block; width: 100%; height: auto; }
+.ir-hotspot {
+  position: absolute; transform: translate(-50%, -50%);
+  width: 52px; height: 52px; border-radius: 50%;
+  border: 2.5px solid var(--teal-ink);
+  background: rgba(201,232,229,0.85);
+  color: var(--teal-ink);
+  display: grid; place-items: center;
+  font-family: var(--font-en); font-weight: 800; font-size: 16px;
+  cursor: pointer;
+  animation: ir-pulse 2s ease-in-out infinite;
+  transition: transform 0.15s ease;
+}
+.ir-hotspot:hover { transform: translate(-50%, -50%) scale(1.12); animation: none; }
+.ir-hotspot.solved { background: var(--mint); border-color: var(--mint-ink); color: var(--mint-ink); animation: none; }
+@keyframes ir-pulse { 0%,100% { box-shadow: 0 0 0 0 rgba(31,110,104,0.4); } 50% { box-shadow: 0 0 0 12px rgba(31,110,104,0); } }
+.ir-code-row { display: flex; gap: 8px; justify-content: center; margin: var(--s-4) 0; direction: ltr; }
+.ir-code-cell {
+  width: 44px; height: 54px; border-radius: var(--r-md);
+  border: 2px solid var(--line); background: var(--bg-soft);
+  display: grid; place-items: center;
+  font-family: var(--font-en); font-size: 24px; font-weight: 800; color: var(--ink);
+}
+.ir-code-cell.got { border-color: var(--teal-ink); background: var(--teal); color: var(--teal-ink); }
+.ir-quiz-opts { display: flex; flex-direction: column; gap: 8px; margin-top: var(--s-4); }
+
+/* استجابة عامة */
+@media (max-width: 640px) {
+  .iman-panel { padding: var(--s-5); }
+  .ds-scale-wrap { height: 300px; }
+}

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>مهمة القِبلة · أنوس</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="../styles/tokens.css" />
+<link rel="stylesheet" href="../styles/dashboard.css" />
+<link rel="stylesheet" href="../styles/wheel.css" />
+<link rel="stylesheet" href="../styles/iman.css" />
+</head>
+<body>
+
+<div class="bg-decor" aria-hidden="true"></div>
+
+<div class="activity-shell">
+
+  <nav class="activity-nav">
+    <a class="back-link" href="../dashboard.html">
+      <span data-i18n="back">الرجوع للوحة الأنشطة</span>
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg>
+    </a>
+    <div class="activity-crumb">
+      <span data-i18n="crumbSection">رحلة الإيمان</span>
+      <span class="sep">/</span>
+      <span class="cur" data-i18n="crumbTitle">مهمة القِبلة</span>
+    </div>
+    <div class="activity-actions">
+      <button class="lang-btn" id="lang-btn" title="عربي / English">EN</button>
+      <button class="icon-btn" id="reset-btn" title="إعادة الضبط" aria-label="إعادة الضبط">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 3-6.7L3 8"/><path d="M3 3v5h5"/></svg>
+      </button>
+    </div>
+  </nav>
+
+  <div class="activity-layout">
+
+    <section class="iman-panel">
+      <header class="wheel-header">
+        <span class="activity-tag">Activity 53 · Compass Physics</span>
+        <h1 class="activity-title" data-i18n="title">مهمة القِبلة</h1>
+        <p class="activity-desc" data-i18n="desc">
+          أنت في مدينة جديدة وحان وقت الصلاة! أدِر إبرة البوصلة بإصبعك
+          نحو اتجاه الكعبة، ثم اضغط «تحقّق». استخدم التلميح الجغرافي.
+        </p>
+      </header>
+
+      <div class="qb-scenario" id="qb-scenario"></div>
+
+      <div class="qb-stage" id="qb-stage">
+        <div class="qb-dial" id="qb-dial">
+          <div class="qb-needle" id="qb-needle"></div>
+        </div>
+      </div>
+
+      <div class="iman-actions">
+        <div class="feedback-line" id="qb-feedback"></div>
+        <button class="btn-primary" id="qb-check" data-i18n="checkBtn">تحقّق من الاتجاه</button>
+      </div>
+
+      <div class="iman-stats">
+        <div class="wheel-stat"><span data-i18n="statRound">المدينة</span><strong id="stat-round">1/5</strong></div>
+        <div class="wheel-stat"><span data-i18n="statScore">إصابات</span><strong id="stat-score">0</strong></div>
+        <button class="wheel-mute-toggle" id="mute-btn" aria-pressed="false">
+          <span class="mute-icon"></span>
+          <span class="mute-label">كتم الصوت</span>
+        </button>
+      </div>
+    </section>
+
+    <aside class="side-panel">
+      <div class="panel-card">
+        <div class="panel-head">
+          <h3 data-i18n="sideTitle">ما هي القِبلة؟</h3>
+          <span class="pill">🕋</span>
+        </div>
+        <div class="hadith-card">
+          <div class="quote" data-i18n="sideQuote">﴿فَوَلِّ وَجْهَكَ شَطْرَ الْمَسْجِدِ الْحَرَامِ﴾</div>
+          <span class="src" data-i18n="sideSrc">البقرة · 144</span>
+        </div>
+      </div>
+      <div class="panel-card">
+        <div class="tip-card">
+          <span class="tip-icon">!</span>
+          <span data-i18n="tip">أينما كان المسلم على وجه الأرض، يتّجه في صلاته نحو الكعبة في مكة المكرمة. الشمال في الأعلى دائماً على البوصلة.</span>
+        </div>
+      </div>
+    </aside>
+  </div>
+</div>
+
+<div class="modal-backdrop" id="win-modal" role="dialog" aria-modal="true">
+  <div class="modal">
+    <button class="modal-close" data-close aria-label="إغلاق">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M6 6l12 12M18 6l-12 12"/></svg>
+    </button>
+    <div class="modal-deco" aria-hidden="true">
+      <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M15 9l-2 5-5 2 2-5 5-2Z"/></svg>
+    </div>
+    <div class="modal-eyebrow" data-i18n="winEyebrow">مستكشف القِبلة</div>
+    <h2 class="modal-title" data-i18n="winTitle">وجدتَ القِبلة في كل المدن!</h2>
+    <p class="modal-translit" id="win-sub"></p>
+    <div class="modal-actions">
+      <button class="btn-ghost" data-close data-i18n="winDone">انتهيت</button>
+      <button class="btn-primary" id="win-replay" data-i18n="winReplay">جولة جديدة</button>
+    </div>
+  </div>
+</div>
+
+<div class="particles" id="particles" aria-hidden="true"></div>
+
+<script src="../scripts/activity-common.js"></script>
+<script src="../scripts/lang.js"></script>
+<script src="../scripts/qibla-quest.js"></script>
+
+<script src="../../shared/nav-fix.js"></script>
+</body>
+</html>

@@ -1,0 +1,310 @@
+/* ============================================================
+   QUDWA — أنماط أنشطة «على خطى القدوات» (71–80)
+   تعتمد على iman.css للمكوّنات العامة
+   لوحة مرجانية. بادئات: hj(71) mj(72) in(73) mk(74)
+     st(75) ft(76) bk(77) cd(78) rw(79) kh(80)
+   ============================================================ */
+
+.qudwa-panel {
+  background:
+    radial-gradient(140% 80% at 50% 0%, rgba(250,211,200,0.55), transparent 60%),
+    var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--r-2xl);
+  padding: var(--s-7);
+  box-shadow: var(--shadow-card);
+  display: flex; flex-direction: column;
+  position: relative; overflow: hidden;
+}
+.qudwa-panel .activity-tag { background: var(--coral); color: var(--coral-ink); }
+.qudwa-panel .activity-tag::before { background: var(--coral-ink); }
+
+.qudwa-mission {
+  display: flex; align-items: center; gap: 10px;
+  background: var(--coral); color: var(--coral-ink);
+  border-radius: var(--r-md); padding: 10px 14px;
+  font-size: 14px; font-weight: 700; margin-bottom: var(--s-4);
+}
+
+/* ============ 71 رحلة الهجرة (قصة متفرعة بخريطة) ============ */
+.hj-map {
+  position: relative;
+  border-radius: var(--r-xl); overflow: hidden;
+  border: 1px solid var(--line);
+  background: linear-gradient(160deg, #F3E8D0 0%, #E8D4A8 100%);
+  aspect-ratio: 2.1;
+  margin-bottom: var(--s-4);
+}
+.hj-map svg { position: absolute; inset: 0; width: 100%; height: 100%; }
+.hj-pin {
+  position: absolute; transform: translate(-50%, -100%);
+  font-size: 26px; filter: drop-shadow(0 2px 3px rgba(0,0,0,0.3));
+  transition: left 1s ease, top 1s ease;
+  z-index: 3;
+}
+.hj-city-label {
+  position: absolute; transform: translate(-50%, 4px);
+  font-size: 11px; font-weight: 800; color: var(--coral-ink);
+  background: rgba(255,255,255,0.8); border-radius: 99px; padding: 2px 8px;
+  white-space: nowrap; z-index: 2;
+}
+
+/* ============ 72 مجلس الصحابة (لاعبان) ============ */
+.mj-board { display: grid; grid-template-rows: 1fr auto 1fr; gap: var(--s-3); }
+.mj-player {
+  border-radius: var(--r-xl); border: 2px solid var(--line);
+  padding: var(--s-5); position: relative;
+  transition: border-color 0.2s ease, background 0.2s ease;
+}
+.mj-player.p2 { transform: rotate(180deg); }
+.mj-player.active { border-color: var(--coral-ink); background: rgba(250,211,200,0.25); }
+.mj-player .who {
+  font-size: 13px; font-weight: 800; color: var(--coral-ink);
+  display: flex; align-items: center; justify-content: space-between; margin-bottom: 10px;
+}
+.mj-player .score-badge {
+  font-family: var(--font-en); font-size: 20px; font-weight: 800;
+  background: var(--coral); color: var(--coral-ink);
+  border-radius: 99px; padding: 2px 14px;
+}
+.mj-q { font-size: 16px; font-weight: 800; margin: 0 0 12px; line-height: 1.7; min-height: 44px; }
+.mj-opts { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+.mj-opt {
+  padding: 12px; border-radius: var(--r-md);
+  border: 1.5px solid var(--line); background: var(--surface);
+  font-size: 14px; font-weight: 700; cursor: pointer; font-family: inherit;
+  transition: transform 0.1s ease;
+}
+.mj-opt:active { transform: scale(0.96); }
+.mj-opt.good { background: var(--mint); border-color: var(--mint-ink); }
+.mj-opt.bad { background: var(--rose); border-color: #B34A4A; }
+.mj-vs {
+  text-align: center; font-family: var(--font-en); font-weight: 800;
+  color: var(--muted); font-size: 14px;
+  display: flex; align-items: center; justify-content: center; gap: 10px;
+}
+.mj-vs::before, .mj-vs::after { content: ""; height: 1px; width: 60px; background: var(--line); }
+
+/* ============ 73 مخترعو الحضارة (تركيب) ============ */
+.in-bench { display: grid; grid-template-columns: repeat(auto-fill, minmax(88px, 1fr)); gap: 10px; margin-bottom: var(--s-4); }
+.in-part {
+  aspect-ratio: 1; border-radius: var(--r-md);
+  border: 1.5px solid var(--line); background: var(--surface);
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  gap: 4px; cursor: pointer; font-size: 11px; font-weight: 700; text-align: center;
+  transition: transform 0.12s ease, border-color 0.12s ease;
+}
+.in-part .ic { font-size: 30px; }
+.in-part:hover { transform: translateY(-3px); border-color: var(--coral-ink); }
+.in-part.selected { border-color: var(--coral-ink); background: var(--coral); }
+.in-workbench {
+  min-height: 120px; border: 2px dashed var(--coral-ink); border-radius: var(--r-xl);
+  background: rgba(250,211,200,0.15);
+  display: flex; align-items: center; justify-content: center; gap: 10px; flex-wrap: wrap;
+  padding: var(--s-4); margin-bottom: var(--s-4);
+}
+.in-slot-chip {
+  padding: 8px 14px; border-radius: 99px; background: var(--surface);
+  border: 1.5px solid var(--coral-ink); font-size: 13px; font-weight: 700;
+  display: inline-flex; align-items: center; gap: 6px;
+}
+
+/* ============ 74 سوق المدينة (محاكاة تجارية) ============ */
+.mk-stall-head { display: flex; align-items: center; justify-content: space-between; margin-bottom: var(--s-4); flex-wrap: wrap; gap: 10px; }
+.mk-purse {
+  font-family: var(--font-en); font-weight: 800; font-size: 20px;
+  background: var(--butter); color: var(--butter-ink);
+  border-radius: 99px; padding: 6px 18px;
+}
+.mk-customer {
+  border: 1px solid var(--line); border-radius: var(--r-xl);
+  background: var(--surface); padding: var(--s-5); margin-bottom: var(--s-4);
+  display: flex; gap: var(--s-4); align-items: flex-start;
+}
+.mk-customer .avatar { font-size: 40px; flex-shrink: 0; }
+.mk-customer .bubble { flex-grow: 1; }
+.mk-customer .bubble p { margin: 0 0 4px; font-weight: 700; font-size: 15px; }
+.mk-customer .bubble small { color: var(--muted); font-weight: 600; }
+.mk-choices { display: flex; flex-direction: column; gap: 8px; }
+.mk-choice {
+  text-align: start; padding: 12px 16px; border-radius: var(--r-md);
+  border: 1.5px solid var(--line); background: var(--bg-soft);
+  font-size: 14px; font-weight: 700; cursor: pointer; font-family: inherit;
+  transition: transform 0.12s ease, border-color 0.12s ease;
+  display: flex; align-items: center; justify-content: space-between; gap: 10px;
+}
+.mk-choice:hover { transform: translateY(-2px); border-color: var(--coral-ink); }
+.mk-choice .tag { font-size: 11px; font-weight: 800; padding: 2px 8px; border-radius: 99px; }
+.mk-choice .tag.gold { background: var(--butter); color: var(--butter-ink); }
+.mk-choice .tag.trust { background: var(--mint); color: var(--mint-ink); }
+.mk-meters { display: flex; gap: var(--s-5); flex-wrap: wrap; }
+.mk-meter { flex: 1; min-width: 140px; }
+.mk-meter .lbl { font-size: 12px; font-weight: 700; color: var(--muted); margin-bottom: 4px; display: flex; justify-content: space-between; }
+.mk-meter .bar { height: 10px; border-radius: 99px; background: var(--bg-soft); border: 1px solid var(--line); overflow: hidden; }
+.mk-meter .bar > span { display: block; height: 100%; transition: width 0.5s ease; }
+.mk-meter.trust .bar > span { background: var(--mint-ink); }
+.mk-meter.gold .bar > span { background: var(--butter-ink); }
+
+/* ============ 75 فرسان القصص (مسرح) ============ */
+.st-stage {
+  position: relative; aspect-ratio: 1.9; border-radius: var(--r-xl);
+  overflow: hidden; border: 1px solid var(--line);
+  background: linear-gradient(180deg, #FBE3D0 0%, #F3C9B3 60%, #C98A6B 100%);
+  margin-bottom: var(--s-4);
+}
+.st-actor {
+  position: absolute; bottom: 14%; font-size: 60px;
+  transition: left 0.8s cubic-bezier(0.4,0,0.2,1), transform 0.3s ease;
+  transform-origin: bottom center;
+}
+.st-prop { position: absolute; transition: all 0.6s ease; }
+.st-caption {
+  position: absolute; left: 0; right: 0; bottom: 0;
+  background: rgba(43,36,56,0.82); color: #fff;
+  padding: 12px 18px; font-size: 15px; font-weight: 700; line-height: 1.7;
+  text-align: center;
+}
+.st-scene-dots { display: flex; gap: 6px; justify-content: center; }
+
+/* ============ 76 خطى الفاتحين (خط زمن على خريطة) ============ */
+.ft-map {
+  position: relative; border-radius: var(--r-xl); overflow: hidden;
+  border: 1px solid var(--line); aspect-ratio: 2;
+  background: linear-gradient(160deg, #DCE8D0 0%, #C8DCB0 100%);
+  margin-bottom: var(--s-4);
+}
+.ft-region {
+  position: absolute; border-radius: 50%;
+  transform: translate(-50%, -50%);
+  display: grid; place-items: center;
+  font-size: 11px; font-weight: 800; text-align: center;
+  transition: background 0.5s ease, color 0.5s ease, transform 0.3s ease;
+}
+.ft-region .dot { width: 16px; height: 16px; border-radius: 50%; background: var(--muted); border: 2px solid #fff; }
+.ft-region.lit .dot { background: var(--coral-ink); box-shadow: 0 0 0 5px rgba(176,74,50,0.25); }
+.ft-timeline { display: flex; gap: 8px; overflow-x: auto; padding-bottom: 8px; }
+.ft-event {
+  min-width: 150px; border: 1.5px solid var(--line); border-radius: var(--r-md);
+  background: var(--surface); padding: 12px; cursor: pointer;
+  font-size: 13px; font-weight: 700; flex-shrink: 0;
+  transition: transform 0.12s ease, border-color 0.12s ease;
+}
+.ft-event .yr { font-family: var(--font-en); font-size: 12px; color: var(--coral-ink); font-weight: 800; }
+.ft-event:hover { transform: translateY(-2px); border-color: var(--coral-ink); }
+.ft-event.placed { opacity: 0.4; pointer-events: none; }
+
+/* ============ 77 مكتبة بيت الحكمة (فرز) ============ */
+.bk-shelves { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: var(--s-3); margin-bottom: var(--s-4); }
+.bk-shelf {
+  border: 2px solid var(--line); border-radius: var(--r-xl);
+  background: var(--bg-soft); padding: var(--s-4);
+  min-height: 130px;
+  transition: border-color 0.15s ease, background 0.15s ease;
+}
+.bk-shelf.hover { border-color: var(--coral-ink); background: rgba(250,211,200,0.2); }
+.bk-shelf .cat { font-size: 13px; font-weight: 800; color: var(--coral-ink); margin-bottom: 8px; display: flex; align-items: center; gap: 6px; }
+.bk-shelf .drop-zone { display: flex; flex-wrap: wrap; gap: 6px; }
+.bk-book-mini { font-size: 22px; }
+.bk-conveyor {
+  border: 1px dashed var(--line); border-radius: var(--r-xl);
+  background: var(--surface); padding: var(--s-4);
+  display: flex; align-items: center; gap: var(--s-4); flex-wrap: wrap;
+  min-height: 90px;
+}
+.bk-book {
+  padding: 12px 16px; border-radius: var(--r-md);
+  border: 1.5px solid var(--line); background: var(--bg-soft);
+  cursor: pointer; font-size: 14px; font-weight: 700; font-family: inherit;
+  display: inline-flex; align-items: center; gap: 8px;
+  transition: transform 0.12s ease, border-color 0.12s ease;
+}
+.bk-book:hover { transform: translateY(-2px); border-color: var(--coral-ink); }
+.bk-book.selected { border-color: var(--coral-ink); background: var(--coral); }
+
+/* ============ 78 بطاقات القدوة (جمع) ============ */
+.cd-album { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: var(--s-3); }
+.cd-card {
+  border-radius: var(--r-xl); overflow: hidden;
+  border: 2px solid var(--line);
+  background: var(--surface);
+  aspect-ratio: 0.72; position: relative; cursor: pointer;
+  display: flex; flex-direction: column;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transform-style: preserve-3d;
+}
+.cd-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-card); }
+.cd-card.locked {
+  background: repeating-linear-gradient(45deg, #EDE0DA, #EDE0DA 8px, #E4D3CC 8px, #E4D3CC 16px);
+  align-items: center; justify-content: center; cursor: default;
+}
+.cd-card.locked .q { font-size: 44px; color: var(--muted); opacity: 0.5; }
+.cd-card .cd-top {
+  flex: 1; display: grid; place-items: center;
+  background: linear-gradient(160deg, var(--coral), #F6C2B3);
+  font-size: 48px;
+}
+.cd-card .cd-body { padding: 10px; text-align: center; }
+.cd-card .cd-name { font-size: 14px; font-weight: 800; color: var(--ink); }
+.cd-card .cd-title { font-size: 11px; font-weight: 700; color: var(--coral-ink); margin-top: 2px; }
+.cd-card .cd-rarity {
+  position: absolute; top: 8px; inset-inline-end: 8px;
+  font-family: var(--font-en); font-size: 10px; font-weight: 800;
+  padding: 2px 8px; border-radius: 99px;
+  background: var(--butter); color: var(--butter-ink);
+}
+.cd-detail { text-align: center; }
+.cd-detail .big { font-size: 72px; margin-bottom: 8px; }
+.cd-detail .facts { display: flex; flex-direction: column; gap: 8px; margin-top: var(--s-4); text-align: start; }
+.cd-detail .fact { background: var(--bg-soft); border-radius: var(--r-md); padding: 10px 14px; font-size: 14px; font-weight: 600; line-height: 1.6; }
+.cd-detail .fact b { color: var(--coral-ink); }
+
+/* ============ 79 راوي السيرة (كتاب صوتي) ============ */
+.rw-book {
+  border-radius: var(--r-xl); overflow: hidden; border: 1px solid var(--line);
+  background: var(--surface); margin-bottom: var(--s-4);
+}
+.rw-illus {
+  aspect-ratio: 2.2; display: grid; place-items: center;
+  background: linear-gradient(160deg, #FBE3D0, #F3C9B3);
+  font-size: 88px; position: relative;
+}
+.rw-illus .float-em { position: absolute; font-size: 30px; opacity: 0.7; }
+.rw-page-text {
+  padding: var(--s-5); font-size: 17px; line-height: 2; font-weight: 500;
+  min-height: 90px;
+}
+.rw-page-text .hl { background: var(--butter); border-radius: 4px; padding: 0 3px; transition: background 0.2s ease; }
+.rw-controls { display: flex; align-items: center; gap: var(--s-3); justify-content: center; }
+.rw-page-dots { display: flex; gap: 6px; justify-content: center; margin-top: var(--s-3); }
+.rw-page-dots .d { width: 9px; height: 9px; border-radius: 50%; background: var(--bg-soft); border: 1px solid var(--line); }
+.rw-page-dots .d.on { background: var(--coral-ink); border-color: var(--coral-ink); }
+
+/* ============ 80 حفر الخندق (فيزياء حفر) ============ */
+.kh-scene { position: relative; }
+.kh-hud {
+  position: absolute; top: 10px; inset-inline-start: 12px; z-index: 2;
+  display: flex; gap: 8px;
+}
+.kh-hud .chip {
+  background: rgba(255,255,255,0.9); border-radius: 99px;
+  font-size: 12px; font-weight: 800; padding: 4px 12px; font-family: var(--font-en);
+}
+.kh-strength-wrap {
+  position: absolute; bottom: 12px; left: 50%; transform: translateX(-50%);
+  width: 62%; z-index: 2; text-align: center;
+}
+.kh-strength {
+  height: 14px; border-radius: 99px; background: rgba(255,255,255,0.6);
+  border: 1px solid var(--line); overflow: hidden; position: relative;
+}
+.kh-strength > span { display: block; height: 100%; width: 0; background: linear-gradient(90deg, var(--coral-ink), var(--butter-ink)); transition: width 0.05s linear; }
+.kh-sweet {
+  position: absolute; top: 0; bottom: 0; width: 20%;
+  background: rgba(31,110,104,0.35); border-inline: 2px solid var(--mint-ink);
+}
+
+/* استجابة */
+@media (max-width: 640px) {
+  .qudwa-panel { padding: var(--s-5); }
+  .mj-opts { grid-template-columns: 1fr; }
+}

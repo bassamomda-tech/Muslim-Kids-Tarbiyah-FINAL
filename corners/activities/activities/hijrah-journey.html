@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>رحلة الهجرة · أنوس</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="../styles/tokens.css" />
+<link rel="stylesheet" href="../styles/dashboard.css" />
+<link rel="stylesheet" href="../styles/wheel.css" />
+<link rel="stylesheet" href="../styles/iman.css" />
+<link rel="stylesheet" href="../styles/qudwa.css" />
+</head>
+<body>
+
+<div class="bg-decor" aria-hidden="true"></div>
+
+<div class="activity-shell">
+
+  <nav class="activity-nav">
+    <a class="back-link" href="../dashboard.html">
+      <span data-i18n="back">الرجوع للوحة الأنشطة</span>
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg>
+    </a>
+    <div class="activity-crumb">
+      <span data-i18n="crumbSection">على خطى القدوات</span>
+      <span class="sep">/</span>
+      <span class="cur" data-i18n="crumbTitle">رحلة الهجرة</span>
+    </div>
+    <div class="activity-actions">
+      <button class="lang-btn" id="lang-btn" title="عربي / English">EN</button>
+      <button class="icon-btn" id="reset-btn" title="من البداية" aria-label="من البداية">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 3-6.7L3 8"/><path d="M3 3v5h5"/></svg>
+      </button>
+    </div>
+  </nav>
+
+  <div class="activity-layout">
+
+    <section class="qudwa-panel">
+      <header class="wheel-header">
+        <span class="activity-tag">Activity 71 · Branching Adventure</span>
+        <h1 class="activity-title" data-i18n="title">رحلة الهجرة</h1>
+        <p class="activity-desc" data-i18n="desc">
+          عِش رحلة الهجرة النبوية من مكة إلى المدينة! قراراتك الحكيمة تحمي
+          النبي ﷺ وصاحبه أبا بكر — اختر بحكمة لتصل بأمان وتضيء الطريق.
+        </p>
+      </header>
+
+      <div class="hj-map" id="hj-map">
+        <svg viewBox="0 0 100 48" preserveAspectRatio="none" aria-hidden="true">
+          <path id="hj-route" d="M82 32 Q70 40 60 30 Q52 22 40 26 Q28 30 18 16" fill="none" stroke="#B04A32" stroke-width="0.6" stroke-dasharray="1.6 1.6" opacity="0.6"/>
+        </svg>
+        <span class="hj-city-label" style="left:82%; top:38%;">مكة</span>
+        <span class="hj-city-label" style="left:60%; top:36%;" data-i18n="cave">غار ثور</span>
+        <span class="hj-city-label" style="left:18%; top:14%;">المدينة</span>
+        <span class="hj-pin" id="hj-pin" style="left:82%; top:32%;">🐫</span>
+      </div>
+
+      <div class="qudwa-mission" id="hj-stage-info"></div>
+      <div id="hj-area"></div>
+
+      <div class="iman-stats">
+        <div class="wheel-stat"><span data-i18n="statStep">المرحلة</span><strong id="stat-step">1/6</strong></div>
+        <div class="wheel-stat"><span data-i18n="statWisdom">الحكمة</span><strong id="stat-wisdom">0</strong></div>
+        <button class="wheel-mute-toggle" id="mute-btn" aria-pressed="false">
+          <span class="mute-icon"></span>
+          <span class="mute-label">كتم الصوت</span>
+        </button>
+      </div>
+    </section>
+
+    <aside class="side-panel">
+      <div class="panel-card">
+        <div class="panel-head">
+          <h3 data-i18n="sideTitle">دروس الهجرة</h3>
+          <span class="pill">🕋→🕌</span>
+        </div>
+        <div class="dhikr-list" id="hj-lessons"></div>
+      </div>
+      <div class="panel-card">
+        <div class="tip-card">
+          <span class="tip-icon">!</span>
+          <span data-i18n="tip">كانت الهجرة سنة 622م، وبها بدأ التقويم الهجري. علّمتنا أن النصر يأتي بالتوكل على الله مع الأخذ بالأسباب والتخطيط.</span>
+        </div>
+      </div>
+    </aside>
+  </div>
+</div>
+
+<div class="modal-backdrop" id="win-modal" role="dialog" aria-modal="true">
+  <div class="modal">
+    <button class="modal-close" data-close aria-label="إغلاق">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M6 6l12 12M18 6l-12 12"/></svg>
+    </button>
+    <div class="modal-deco" aria-hidden="true">
+      <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20l6-16 4 8 6-2-4 10Z"/></svg>
+    </div>
+    <div class="modal-eyebrow" data-i18n="winEyebrow">استقبال المدينة</div>
+    <h2 class="modal-title" data-i18n="winTitle">وصلتَ إلى المدينة بأمان!</h2>
+    <p class="modal-translit" id="win-sub"></p>
+    <div class="modal-meaning" data-i18n="winMeaning">
+      <strong>طلع البدر علينا</strong>
+      استقبل أهل المدينة النبي ﷺ بالفرح والأناشيد. بدأت دولة الإسلام الأولى، وأصبح الأنصار والمهاجرون إخوة.
+    </div>
+    <div class="modal-actions">
+      <button class="btn-ghost" data-close data-i18n="winDone">انتهيت</button>
+      <button class="btn-primary" id="win-replay" data-i18n="winReplay">رحلة جديدة</button>
+    </div>
+  </div>
+</div>
+
+<div class="particles" id="particles" aria-hidden="true"></div>
+
+<script src="../scripts/activity-common.js"></script>
+<script src="../scripts/lang.js"></script>
+<script src="../scripts/hijrah-journey.js"></script>
+
+<script src="../../shared/nav-fix.js"></script>
+</body>
+</html>

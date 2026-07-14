@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>استوديو النشيد · أنوس</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="../styles/tokens.css" />
+<link rel="stylesheet" href="../styles/dashboard.css" />
+<link rel="stylesheet" href="../styles/wheel.css" />
+<link rel="stylesheet" href="../styles/iman.css" />
+<link rel="stylesheet" href="../styles/ghad.css" />
+</head>
+<body>
+
+<div class="bg-decor" aria-hidden="true"></div>
+
+<div class="activity-shell">
+
+  <nav class="activity-nav">
+    <a class="back-link" href="../dashboard.html">
+      <span data-i18n="back">الرجوع للوحة الأنشطة</span>
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg>
+    </a>
+    <div class="activity-crumb">
+      <span data-i18n="crumbSection">صنّاع الغد</span>
+      <span class="sep">/</span>
+      <span class="cur" data-i18n="crumbTitle">استوديو النشيد</span>
+    </div>
+    <div class="activity-actions">
+      <button class="lang-btn" id="lang-btn" title="عربي / English">EN</button>
+      <button class="icon-btn" id="reset-btn" title="امسح اللحن" aria-label="امسح اللحن">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 3-6.7L3 8"/><path d="M3 3v5h5"/></svg>
+      </button>
+    </div>
+  </nav>
+
+  <div class="activity-layout">
+
+    <section class="ghad-panel">
+      <header class="wheel-header">
+        <span class="activity-tag">Activity 85 · Rhythm Composer</span>
+        <h1 class="activity-title" data-i18n="title">استوديو النشيد</h1>
+        <p class="activity-desc" data-i18n="desc">
+          لحّن نشيدك الإسلامي الخاص! انقر الخلايا لتضيء النغمات، ثم اضغط «شغّل»
+          لتسمع لحنك. جرّب الألحان الجاهزة أو أبدع لحناً من عندك بالدفّ والنغمات.
+        </p>
+      </header>
+
+      <div class="ns-grid" id="ns-grid"></div>
+
+      <div class="ns-transport">
+        <button class="btn-primary" id="ns-play" data-i18n="playBtn">▶ شغّل اللحن</button>
+        <span style="color:var(--muted); font-weight:700; font-size:13px;" data-i18n="presetsLabel">ألحان جاهزة:</span>
+        <button class="ns-preset" data-preset="tala" data-i18n="preset1">طلع البدر</button>
+        <button class="ns-preset" data-preset="simple" data-i18n="preset2">لحن بسيط</button>
+      </div>
+      <div class="rhythm-hint" data-i18n="hint">💡 انقر الخلايا لتؤلّف — كل صفٍّ نغمة، وكل عمودٍ نبضة</div>
+
+      <div class="iman-stats">
+        <div class="wheel-stat"><span data-i18n="statNotes">نغمات اخترتها</span><strong id="stat-notes">0</strong></div>
+        <div class="wheel-stat"><span data-i18n="statPlays">مرّات التشغيل</span><strong id="stat-plays">0</strong></div>
+        <button class="wheel-mute-toggle" id="mute-btn" aria-pressed="false">
+          <span class="mute-icon"></span>
+          <span class="mute-label">كتم الصوت</span>
+        </button>
+      </div>
+    </section>
+
+    <aside class="side-panel">
+      <div class="panel-card">
+        <div class="panel-head">
+          <h3 data-i18n="sideTitle">الأناشيد الإسلامية</h3>
+          <span class="pill">🎵</span>
+        </div>
+        <div class="hadith-card">
+          <div class="quote" data-i18n="sideQuote">أنشد الأنصار للنبي ﷺ عند قدومه المدينة: «طلع البدر علينا من ثنيّات الوداع».</div>
+          <span class="src" data-i18n="sideSrc">السيرة النبوية</span>
+        </div>
+      </div>
+      <div class="panel-card">
+        <div class="tip-card">
+          <span class="tip-icon">!</span>
+          <span data-i18n="tip">الأناشيد الهادفة تُدخل السرور وتُعلّم القيم. حاول أن تصنع لحناً فرِحاً بنغماتٍ متدرّجة، وأضف ضربات الدفّ في الصف الأخير.</span>
+        </div>
+      </div>
+    </aside>
+  </div>
+</div>
+
+<div class="particles" id="particles" aria-hidden="true"></div>
+
+<script src="../scripts/activity-common.js"></script>
+<script src="../scripts/lang.js"></script>
+<script src="../scripts/nasheed-studio.js"></script>
+
+<script src="../../shared/nav-fix.js"></script>
+</body>
+</html>
