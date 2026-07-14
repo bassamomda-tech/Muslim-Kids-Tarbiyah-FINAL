@@ -542,7 +542,7 @@ html[dir="rtl"] .shop-card{border-inline-start:1.5px solid var(--card-bd);border
 
     <div class="gkey">
       <h3><span class="ar-only">🎁 فتح الأنشطة بدون امتحانات</span><span class="en-only">🎁 Open activities without exams</span></h3>
-      <p><span class="ar-only">عادةً تُفتَح أنشطة «ركن أنوس» عندما ينجح طفلُك في اختبار الركن (٧٥٪ فأكثر). لكن إن أردتَ منحها مكافأةً على حُسن سلوكه — <b>دون أيّ امتحان</b> — فاضغط الزرّ بالأسفل: تُفتَح فورًا ٥٥ نشاطًا (الأنشطة الخمسة الخاصّة + الـ٥٠ نشاطًا الجديدة) يجدها طفلُك في حقيبته وفي قائمة الأنشطة المفتوحة. يمكنك سحبُها في أيِّ وقت.</span><span class="en-only">Normally the “Anous” activities open after your child passes a corner's test (75%+). But if you'd rather give them as a reward for good behaviour — <b>with no exam at all</b> — just press the button below: 55 activities (the 5 special ones + the 50 new ones) open instantly and appear in your child's bag &amp; unlocked list. You can revoke them anytime.</span></p>
+      <p><span class="ar-only">عادةً تُفتَح أنشطة «ركن أنوس» عندما ينجح طفلُك في اختبار الركن (٧٥٪ فأكثر). لكن إن أردتَ منحها مكافأةً على حُسن سلوكه — <b>دون أيّ امتحان</b> — فاضغط الزرّ بالأسفل: تُفتَح فورًا ٥ أنشطةٍ مميّزة يجدها طفلُك في حقيبته وفي قائمة الأنشطة المفتوحة. ومن بطاقة المكافآت يمكنك أيضًا منح الأنشطة الجديدة (٥١–١٠٠) بواقع ٥ أنشطة في كل مرة. يمكنك سحبُها في أيِّ وقت.</span><span class="en-only">Normally the “Anous” activities open after your child passes a corner's test (75%+). But if you'd rather give them as a reward for good behaviour — <b>with no exam at all</b> — just press the button below: 5 special activities open instantly and appear in your child's bag &amp; unlocked list. From the rewards card you can also grant the new activities (51–100), 5 at a time. You can revoke them anytime.</span></p>
       <div class="gkey-acts">
         <button class="gbtn go" onclick="guideUnlockActivities()"><span class="ar-only">🎁 افتح الأنشطة الآن — بدون امتحان</span><span class="en-only">🎁 Open activities now — no exam</span></button>
         <button class="gbtn alt" onclick="showTab('behavior')"><span class="ar-only">⭐ من تبويب نقاط السلوك</span><span class="en-only">⭐ Via Behaviour Points</span></button>
@@ -1155,17 +1155,73 @@ function renderParentsRewards(){
     if(unlocked) return '<a class="mkcs-rw" href="'+bse+r[0]+'?lang='+lang+'"><span class="mkcs-rw-ic">'+r[1]+'</span>'+label+'</a>';
     return '<div class="mkcs-rw lock"><span class="mkcs-rw-ic">🔒</span>'+label+'</div>';
   }).join('');
-  var extra = unlocked
-    ? '<a class="mkcs-rw" href="../../activities/dashboard.html?lang='+lang+'"><span class="mkcs-rw-ic">🎮</span><span class="mkcs-rw-t">'+(ar?'+٥٠ نشاطًا جديدًا':'+50 new activities')+'</span></a>'
-    : '<div class="mkcs-rw lock"><span class="mkcs-rw-ic">🔒</span><span class="mkcs-rw-t">'+(ar?'+٥٠ نشاطًا جديدًا':'+50 new activities')+'</span></div>';
   var btn=unlocked
     ? '<button class="ctrl-btn warn" onclick="grantParents(false)">'+(ar?'إلغاء المنح':'Revoke')+'</button>'
     : '<button class="ctrl-btn go" onclick="grantParents(true)">'+(ar?'🎁 امنح طفلي هذه المكافأة':'🎁 Grant my child this reward')+'</button>';
+  /* new activities (51–100): parent grants them 5 at a time */
+  var granted={};
+  try{ var u2=JSON.parse(localStorage.getItem('mkUnlocked')||'{}');
+    (u2.parentsNew||[]).forEach(function(a){ granted[a.href.replace('activities/','')]=1; });
+  }catch(e){}
+  var nGranted=Object.keys(granted).length;
+  var newCells=(window.PARENT_ANOUS_NEW||[]).map(function(r){
+    var nm=(ar?r[2]:r[3]);
+    if(granted[r[0]]) return '<a class="mkcs-rw" href="'+bse+r[0]+'?lang='+lang+'"><span class="mkcs-rw-ic">'+r[1]+'</span><span class="mkcs-rw-t">'+nm+'</span></a>';
+    return '<label class="mkcs-rw lock" style="cursor:pointer;display:inline-flex;align-items:center;gap:.35rem"><input type="checkbox" class="mkanp-ck" value="'+r[0]+'" onchange="mkNewPickCount()"><span class="mkcs-rw-ic">'+r[1]+'</span><span class="mkcs-rw-t">'+nm+'</span></label>';
+  }).join('');
+  var newBtns='<button class="ctrl-btn go" id="mkanpGrant" onclick="grantParentsNew()">'+(ar?'🎁 امنح المحدّد (٠/٥)':'🎁 Grant selected (0/5)')+'</button>'
+    +(nGranted? ' <button class="ctrl-btn warn" onclick="revokeParentsNew()">'+(ar?'إلغاء الأنشطة الجديدة':'Revoke new activities')+'</button>':'');
   host.innerHTML=
-    '<div class="ctrl-card"><h3>🎁 '+(ar?'مكافأة الأهل — ٥ أنشطة خاصّة + ٥٠ نشاطًا جديدًا':'Parents’ Reward — 5 special + 50 new activities')+'</h3>'
-    +'<p class="bps-note" style="margin:.2rem 0 .8rem">'+(ar?'هذه المكافأة من حقّ الأهل وحدهم: الأنشطة الخمسة الخاصّة مع الـ٥٠ نشاطًا الجديدة (٥١–١٠٠) — امنحها طفلك مكافأةً على حُسن سلوكه.':'This reward is the parents’ to give: the 5 special activities plus the 50 new ones (51–100) — grant them to your child as a reward for good behaviour.')+'</p>'
-    +'<div class="mkcs-rewards">'+cells+extra+'</div>'
-    +'<div style="margin-top:.9rem">'+btn+'</div></div>';
+    '<div class="ctrl-card"><h3>🎁 '+(ar?'مكافأة الأهل — ٥ أنشطة خاصّة':'Parents’ Reward — 5 special activities')+'</h3>'
+    +'<p class="bps-note" style="margin:.2rem 0 .8rem">'+(ar?'هذه الأنشطة الخمس من حقّ الأهل وحدهم: امنحها طفلك مكافأةً على حُسن سلوكه.':'These five activities are the parents’ to give — grant them to your child as a reward for good behaviour.')+'</p>'
+    +'<div class="mkcs-rewards">'+cells+'</div>'
+    +'<div style="margin-top:.9rem">'+btn+'</div></div>'
+    +'<div class="ctrl-card" style="margin-top:1rem"><h3>✨ '+(ar?'الأنشطة الجديدة (٥١–١٠٠) — امنح ٥ في كل مرة':'New activities (51–100) — grant 5 at a time')+'</h3>'
+    +'<p class="bps-note" style="margin:.2rem 0 .8rem">'+(ar?'اختر حتى ٥ أنشطة ثم اضغط زر المنح. يمكنك منح دفعة أخرى لاحقًا. الممنوح حتى الآن: '+nGranted+' من ٥٠.':'Pick up to 5 activities then press Grant. You can grant another batch later. Granted so far: '+nGranted+' of 50.')+'</p>'
+    +'<div class="mkcs-rewards" style="max-height:340px;overflow:auto;display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:.45rem;align-items:start">'+newCells+'</div>'
+    +'<div style="margin-top:.9rem">'+newBtns+'</div></div>';
+}
+function mkNewPickCount(){
+  var cks=document.querySelectorAll('.mkanp-ck:checked');
+  if(cks.length>5){ cks[cks.length-1].checked=false; cks=document.querySelectorAll('.mkanp-ck:checked'); }
+  var b=document.getElementById('mkanpGrant'); var ar=lang==='ar';
+  if(b) b.textContent=ar?('🎁 امنح المحدّد ('+cks.length+'/٥)'):('🎁 Grant selected ('+cks.length+'/5)');
+}
+function mkParentsPin(){
+  if(window.MK && MK.hasPin && MK.hasPin()){
+    var pin=window.prompt(lang==='ar'?'أدخِل رمز الأهل:':'Enter parents PIN:','');
+    if(pin==null) return false;
+    if(!MK.checkPin(String(pin).trim())){ alert(lang==='ar'?'رمزٌ غير صحيح':'Wrong PIN'); return false; }
+  }
+  return true;
+}
+function grantParentsNew(){
+  var ar=lang==='ar';
+  var picks=[].slice.call(document.querySelectorAll('.mkanp-ck:checked')).map(function(c){return c.value;});
+  if(!picks.length){ alert(ar?'اختر نشاطًا واحدًا على الأقل':'Pick at least one activity'); return; }
+  if(picks.length>5){ alert(ar?'٥ أنشطة كحدّ أقصى في كل مرة':'Max 5 activities per grant'); return; }
+  if(!mkParentsPin()) return;
+  try{ var u=JSON.parse(localStorage.getItem('mkUnlocked')||'{}');
+    var cur=Array.isArray(u.parentsNew)?u.parentsNew:[];
+    var have={}; cur.forEach(function(a){have[a.href]=1;});
+    (window.PARENT_ANOUS_NEW||[]).forEach(function(r){
+      if(picks.indexOf(r[0])>-1 && !have['activities/'+r[0]])
+        cur.push({href:'activities/'+r[0],icon:r[1],t:{ar:r[2],en:r[3]}});
+    });
+    u.parentsNew=cur;
+    localStorage.setItem('mkUnlocked', JSON.stringify(u));
+    try{ window.dispatchEvent(new Event('mk-unlocks-changed')); }catch(e){}
+  }catch(e){}
+  renderParentsRewards();
+}
+function revokeParentsNew(){
+  if(!mkParentsPin()) return;
+  try{ var u=JSON.parse(localStorage.getItem('mkUnlocked')||'{}');
+    delete u.parentsNew;
+    localStorage.setItem('mkUnlocked', JSON.stringify(u));
+    try{ window.dispatchEvent(new Event('mk-unlocks-changed')); }catch(e){}
+  }catch(e){}
+  renderParentsRewards();
 }
 function grantParents(on){
   if(window.MK && MK.hasPin && MK.hasPin()){
@@ -1174,7 +1230,7 @@ function grantParents(on){
     if(!MK.checkPin(String(pin).trim())){ alert(lang==='ar'?'رمزٌ غير صحيح':'Wrong PIN'); return; }
   }
   try{ var u=JSON.parse(localStorage.getItem('mkUnlocked')||'{}');
-    if(on) u.parents=(window.PARENT_ANOUS||[]).concat(window.PARENT_ANOUS_NEW||[]).map(function(r){return {href:'activities/'+r[0],icon:r[1],t:{ar:r[2],en:r[3]}};});
+    if(on) u.parents=(window.PARENT_ANOUS||[]).map(function(r){return {href:'activities/'+r[0],icon:r[1],t:{ar:r[2],en:r[3]}};});
     else delete u.parents;
     localStorage.setItem('mkUnlocked', JSON.stringify(u));
   }catch(e){}
@@ -1190,15 +1246,15 @@ function guideUnlockActivities(){
   }
   try{
     var u=JSON.parse(localStorage.getItem('mkUnlocked')||'{}');
-    u.parents=(window.PARENT_ANOUS||[]).concat(window.PARENT_ANOUS_NEW||[]).map(function(r){return {href:'activities/'+r[0],icon:r[1],t:{ar:r[2],en:r[3]}};});
+    u.parents=(window.PARENT_ANOUS||[]).map(function(r){return {href:'activities/'+r[0],icon:r[1],t:{ar:r[2],en:r[3]}};});
     localStorage.setItem('mkUnlocked', JSON.stringify(u));
     try{ window.dispatchEvent(new Event('mk-unlocks-changed')); }catch(e){}
   }catch(e){}
   var st=document.getElementById('guideUnlockMsg');
   if(st){ st.style.display='block';
     st.textContent = ar
-      ? '✅ تمّ فتح ٥٥ نشاطًا لطفلك دون امتحانات (الخمسة الخاصّة + الـ٥٠ الجديدة)! يجدها في حقيبته وفي قائمة الأنشطة المفتوحة.'
-      : '✅ 55 activities unlocked for your child — no exams needed (the 5 special + the 50 new)! They appear in the bag & unlocked list.'; }
+      ? '✅ تمّ فتح ٥ أنشطةٍ لطفلك دون امتحانات! يجدها في حقيبته وفي قائمة الأنشطة المفتوحة. ولمنح الأنشطة الجديدة (٥ في كل مرة) استخدم بطاقة المكافآت في تبويب السلوك.'
+      : '✅ 5 activities unlocked for your child — no exams needed! They appear in the bag & unlocked list. To grant the new activities (5 at a time), use the rewards card in the Behaviour tab.'; }
   if(typeof renderParentsRewards==='function') renderParentsRewards();
 }
 function setLang(l){
