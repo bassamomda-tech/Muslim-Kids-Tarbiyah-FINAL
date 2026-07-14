@@ -1,7 +1,7 @@
-/* asr-client.js — عميل التسميع عبر الخادم (نموذج قرآني مدرَّب على تلاوات كالحصري)
+/* asr-client.js — عميل التسميع عبر خادم Cloudflare Worker + Groq Whisper
    ─────────────────────────────────────────────────────────────────────────────
-   بعد نشر server/modal_quran_asr.py على Modal، ضع الرابط الناتج هنا: */
-var ASR_ENDPOINT = 'https://bassamomda--quran-asr-transcribe.modal.run'; // مثال: 'https://your-workspace--quran-asr-transcribe.modal.run'
+   بعد نشر server/quran-asr-worker.js على Cloudflare، ضع رابط الـ Worker هنا: */
+var ASR_ENDPOINT = ''; // مثال: 'https://quran-asr.YOURNAME.workers.dev'
 
 /* يسجّل الصوت بمقاطع قصيرة متتالية ويرسل كل مقطع للخادم فور اكتماله.
    الاستخدام:
@@ -28,6 +28,7 @@ var ASR_ENDPOINT = 'https://bassamomda--quran-asr-transcribe.modal.run'; // مث
     this.onState = opts.onState || function () {};
     this.onError = opts.onError || function () {};
     this.segMs = opts.segMs || 4000;   // طول المقطع الواحد
+    this.getPrompt = opts.getPrompt || null; // دالة تُعيد الآيةَ المتوقَّعة لرفع الدقة
     this.texts = [];                   // نص كل مقطع بترتيبه
     this.pending = 0;
     this.stream = null;
@@ -45,7 +46,7 @@ var ASR_ENDPOINT = 'https://bassamomda--quran-asr-transcribe.modal.run'; // مث
     if (!QuranASRClient.available()) { self.onError('asr_unavailable'); return; }
     self.stopped = false; self.texts = []; self.failCount = 0;
     navigator.mediaDevices.getUserMedia({
-      audio: { echoCancellation: true, noiseSuppression: true, autoGainControl: true, channelCount: 1 }
+      audio: { echoCancellation: true, noiseSuppression: false, autoGainControl: true, channelCount: 1 }
     }).then(function (stream) {
       if (self.stopped) { stream.getTracks().forEach(function (t) { t.stop(); }); return; }
       self.stream = stream;
@@ -78,25 +79,37 @@ var ASR_ENDPOINT = 'https://bassamomda--quran-asr-transcribe.modal.run'; // مث
 
   QuranASRClient.prototype._send = function (blob, idx) {
     var self = this;
-    if (blob.size < 2000) { self.texts[idx] = ''; self._emit(); return; } // صمت
+    if (blob.size < 800) { self.texts[idx] = ''; self._emit(); return; } // صمت
     self.pending++;
     var ctrl = (typeof AbortController !== 'undefined') ? new AbortController() : null;
     var to = setTimeout(function () { if (ctrl) ctrl.abort(); }, 25000);
-    fetch(ASR_ENDPOINT, {
+    var url = ASR_ENDPOINT;
+    if (self.getPrompt) { try { var _p = self.getPrompt(); if (_p) url += (url.indexOf('?') < 0 ? '?' : '&') + 'prompt=' + encodeURIComponent(String(_p).slice(0, 700)); } catch (e) {} }
+    fetch(url, {
       method: 'POST',
       headers: { 'Content-Type': blob.type || 'audio/webm' },
       body: blob,
       signal: ctrl ? ctrl.signal : undefined
-    }).then(function (r) { return r.json(); })
-      .then(function (j) {
-        self.texts[idx] = (j && j.text) ? j.text : '';
+    }).then(function (r) {
+        return r.json().catch(function () { return {}; }).then(function (j) { return { ok: r.ok, j: j }; });
+      })
+      .then(function (res) {
+        var j = res.j || {};
+        if (!res.ok || j.error) {
+          // خطأ من الخادم: تجاوز الحد المسموح (429) أو عطل أو مفتاح غير مضبوط
+          // → ننتقل فورًا إلى محرك المتصفح دون فقدان التقدم
+          self.texts[idx] = ''; self._emit();
+          self.onError('server_down');
+          return;
+        }
+        self.texts[idx] = j.text ? j.text : '';
         self.failCount = 0;
         self._emit();
       })
       .catch(function () {
         self.texts[idx] = '';
         self.failCount++;
-        if (self.failCount >= 3) self.onError('server_down'); // ليعود المتصل لمحرك المتصفح
+        if (self.failCount >= 2) self.onError('server_down'); // ليعود المتصل لمحرك المتصفح
       })
       .finally(function () { clearTimeout(to); self.pending--; if (self.stopped && self.pending === 0) self.onState('stopped'); });
   };
