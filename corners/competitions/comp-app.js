@@ -9,6 +9,17 @@
   function lang() { return document.documentElement.dir === 'ltr' ? 'en' : 'ar'; }
   function L(o) { return o ? (o[lang()] || o.ar || o.en || '') : ''; }
   function toArNum(n) { return lang() === 'en' ? String(n) : String(n).replace(/[0-9]/g, function (d) { return '٠١٢٣٤٥٦٧٨٩'[+d]; }); }
+  function enQ(q) { var e = window.BANK_EN && window.BANK_EN[q.id]; return (lang() === 'en' && e && e.q) ? e.q : q.q; }
+  function enA(q) { var e = window.BANK_EN && window.BANK_EN[q.id]; return (lang() === 'en' && e && e.a) ? e.a : q.answer; }
+  var SRC_EN = { 'العقيدة': 'Creed', 'الفقه': 'Fiqh', 'السيرة': 'Seerah', 'التفسير': 'Tafsir', 'الحديث': 'Hadith', 'الآداب': 'Manners', 'الأخلاق': 'Ethics', 'الأدعية والأذكار': 'Supplications', 'المنوعات': 'Miscellany' };
+  function enSrc(s) {
+    if (lang() !== 'en' || !s) return s;
+    var parts = s.split('·');
+    if (parts.length !== 2) return s;
+    var sec = SRC_EN[parts[0].trim()] || parts[0].trim();
+    var pg = parts[1].replace('ص', '').trim().replace(/[٠-٩]/g, function (d) { return String('٠١٢٣٤٥٦٧٨٩'.indexOf(d)); });
+    return sec + ' · p. ' + pg;
+  }
 
   var TYPE_LBL = {
     mcq:   { ar: 'اختيار من متعدد', en: 'Multiple choice' },
@@ -155,7 +166,7 @@
     var w = $('#qwrap');
     var html = '<span class="q-topic" style="background:' + hexA(t.color, .18) + ';color:' + t.color + '">' + t.icon + ' ' + L(t.name) +
       '</span><span class="q-lvl">' + ['', '🟢', '🟡', '🔴'][q.level] + ' ' + L(LVL_LBL[q.level]) + '</span>' +
-      '<div class="q-text">' + q.q + '</div>';
+      '<div class="q-text">' + enQ(q) + '</div>';
 
     if (q.type === 'mcq') {
       var order = ex.shuffle ? shuffle(q.choices.map(function (_, i) { return i; })) : q.choices.map(function (_, i) { return i; });
@@ -169,7 +180,7 @@
         '<button class="tf-btn" data-v="true"><span class="tf-ic">✔️</span>' + (lang() === 'en' ? 'True' : 'صحيح') + '</button>' +
         '<button class="tf-btn" data-v="false"><span class="tf-ic">✖️</span>' + (lang() === 'en' ? 'False' : 'خطأ') + '</button></div>';
     } else { // flash
-      html += '<div class="flash-answer" id="flashAns"><span class="flash-lbl">' + (lang() === 'en' ? 'Answer' : 'الإجابة') + '</span>' + q.answer + '</div>' +
+      html += '<div class="flash-answer" id="flashAns"><span class="flash-lbl">' + (lang() === 'en' ? 'Answer' : 'الإجابة') + '</span>' + enA(q) + '</div>' +
         '<button class="reveal-btn" id="revealBtn">👁️ ' + (lang() === 'en' ? 'Show the answer' : 'أظهِرِ الإجابة') + '</button>' +
         '<div class="selfmark" id="selfmark">' +
         '<button class="sm-btn no" data-ok="0">✖️ ' + (lang() === 'en' ? 'I missed it' : 'لم أعرفها') + '</button>' +
@@ -384,7 +395,7 @@
   }
   function studyCard(q, num, color) {
     var tag = ({ mcq: '🔘', tf: '⚖️', flash: '🃏' })[q.type] + ' ' + L(TYPE_LBL[q.type]);
-    var h = '<div class="qa"><div class="qa-q"><span class="qa-num">' + toArNum(num) + '</span><span>' + q.q +
+    var h = '<div class="qa"><div class="qa-q"><span class="qa-num">' + toArNum(num) + '</span><span>' + enQ(q) +
       '<span class="qa-tag" style="background:' + hexA(color, .2) + ';color:' + color + '">' + tag + '</span></span></div>';
     h += '<div class="qa-a"><span class="qa-a-lbl">' + (lang() === 'en' ? 'Answer:' : 'الإجابة:') + '</span>';
     if (q.type === 'mcq') {
@@ -392,10 +403,10 @@
     } else if (q.type === 'tf') {
       h += '<span class="opt right">✔ ' + (q.answer ? (lang() === 'en' ? 'True' : 'صحيح') : (lang() === 'en' ? 'False' : 'خطأ')) + '</span>';
     } else {
-      h += q.answer;
+      h += enA(q);
     }
     if (q.explain && q.type !== 'flash') h += '<span class="opt" style="margin-top:.4rem">💡 ' + q.explain + '</span>';
-    if (q.src) h += '<span class="qa-src">📄 ' + esc(q.src) + '</span>';
+    if (q.src) h += '<span class="qa-src">📄 ' + esc(enSrc(q.src)) + '</span>';
     h += '</div></div>';
     return h;
   }
