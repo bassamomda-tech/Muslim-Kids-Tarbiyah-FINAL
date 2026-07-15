@@ -556,8 +556,17 @@
       default:                          return ar?'تعذّر تسجيل الدخول — حاول مرة أخرى':'Couldn\u2019t sign in — please try again';
     }
   }
+  var ADMIN_EMAILS=['bassamomda91@gmail.com']; // owner accounts: full access to every paid item
+  function isAdmin(){ return !!(currentUser && ADMIN_EMAILS.indexOf((currentUser.email||'').toLowerCase())>=0); }
+  function grantAllToAdmin(){
+    if(!isAdmin()) return false;
+    bundleIdsAll().forEach(function(id){ if(PAID.indexOf(id)<0) PAID.push(id); });
+    savePaidLocal(); saveUnlocks();
+    return true;
+  }
   function loadUnlocks(){
     if(!db||!currentUser) return;
+    if(isAdmin()){ grantAllToAdmin(); render(); return; } // owner sees everything, no purchase needed
     db.collection('users').doc(currentUser.uid).get().then(function(d){
       var server=(d.exists&&d.data().unlocks)||[];
       var merged=[]; server.concat(PAID).forEach(function(x){ if(merged.indexOf(x)<0) merged.push(x); });
