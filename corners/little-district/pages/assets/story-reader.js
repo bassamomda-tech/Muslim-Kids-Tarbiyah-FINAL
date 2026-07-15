@@ -113,21 +113,32 @@ window.StoryReader = (function () {
   let utterance = null;
   function stopNarrate() {
     if (typeof speechSynthesis !== 'undefined' && speechSynthesis.speaking) speechSynthesis.cancel();
+    try { if (window.MKTTS) MKTTS.stop(); } catch (e) {}
     document.querySelectorAll('.sr-narrate.playing').forEach(b => b.classList.remove('playing'));
     utterance = null;
   }
-  function narrate(text, btn) {
-    if (typeof speechSynthesis === 'undefined') return;
-    if (utterance && speechSynthesis.speaking) { stopNarrate(); return; }
-    stopNarrate();
+  function browserNarrate(text, btn, done) {
+    if (typeof speechSynthesis === 'undefined') { done && done(); return; }
     const u = new SpeechSynthesisUtterance(text);
     u.lang = state.lang === 'ar' ? 'ar-SA' : 'en-US';
     u.rate = 0.92;
     if(state.lang==='ar'&&window.MKVoice){ MKVoice.applyGender(u, text, 'ar'); }
-    btn && btn.classList.add('playing');
-    u.onend = () => { btn && btn.classList.remove('playing'); utterance = null; };
+    u.onend = done; u.onerror = done;
     utterance = u;
-    try { speechSynthesis.speak(u); } catch (e) {}
+    try { speechSynthesis.speak(u); } catch (e) { done && done(); }
+  }
+  function narrate(text, btn) {
+    if (utterance && ((typeof speechSynthesis !== 'undefined' && speechSynthesis.speaking) || utterance === true)) { stopNarrate(); return; }
+    stopNarrate();
+    btn && btn.classList.add('playing');
+    const done = () => { btn && btn.classList.remove('playing'); utterance = null; };
+    // Prefer the natural cloud voice (same as every other corner); fall back to the browser voice.
+    if (window.MKTTS && MKTTS.enabled) {
+      utterance = true;
+      MKTTS.speak(text, state.lang).then(done).catch(() => browserNarrate(text, btn, done));
+      return;
+    }
+    browserNarrate(text, btn, done);
   }
 
   /* ───── Open ───── */
