@@ -119,7 +119,7 @@ window.StoryReader = (function () {
   }
   function browserNarrate(text, btn, done) {
     if (typeof speechSynthesis === 'undefined') { done && done(); return; }
-    const u = new SpeechSynthesisUtterance(text);
+    const u = new SpeechSynthesisUtterance(window.MKVoice?MKVoice.fixText(text):text);
     u.lang = state.lang === 'ar' ? 'ar-SA' : 'en-US';
     u.rate = 0.92;
     if(state.lang==='ar'&&window.MKVoice){ MKVoice.applyGender(u, text, 'ar'); }

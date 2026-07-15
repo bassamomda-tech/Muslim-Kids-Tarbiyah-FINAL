@@ -96,7 +96,7 @@ window.HApp = (function(){
     if(!SS){toast(lang==='ar'?'الصوت غير مدعوم في هذا المتصفح':'Audio not supported here');return;}
     audioStop();
     _spTokens=tokens||[]; _uiCb=ui;
-    const u=new SpeechSynthesisUtterance(text);
+    const u=new SpeechSynthesisUtterance(window.MKVoice?MKVoice.fixText(text):text);
     const v=(voiceLang==='en')?_enVoice():_arVoice(); if(v)u.voice=v;
     u.lang=(v&&v.lang)||(voiceLang==='en'?'en-US':'ar-SA');
     u.rate=Math.max(0.6,_spRate*0.95); u.pitch=1;

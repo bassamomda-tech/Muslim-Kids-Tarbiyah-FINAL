@@ -321,7 +321,7 @@
       : step.t==='act' ? cur.act.q
       : (cur.game ? cur.game.title : '');
     txt = txt.replace(/<[^>]+>/g,'').replace(/[🌱-🿿📄-📿☀-⛿✀-➿🀀-🯿]/gu,'');
-    var u = new SpeechSynthesisUtterance(txt);
+    var u = new SpeechSynthesisUtterance(window.MKVoice?MKVoice.fixText(txt):txt);
     var v = pickVoice(); if(v) u.voice=v;
     u.lang='ar-SA'; u.rate=0.92; u.pitch=1.05; if(window.MKVoice&&u.voice){ var __g=MKVoice.guessGender(txt); if(MKVoice.genderOf(u.voice)!==__g) u.pitch=(__g==='male'?0.72:1.22); }
     u.onend=u.onerror=function(){ speaking=false; $('#btnSpeak').classList.remove('speaking'); $('#btnSpeak').textContent='🔊 اقرئي لي'; };

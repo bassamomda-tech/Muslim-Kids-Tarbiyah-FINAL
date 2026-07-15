@@ -658,7 +658,7 @@ window.QApp = (function(){
         const beat=beats[i]; beat.classList.add('reading');
         try{ beat.scrollIntoView({block:'nearest',behavior:'smooth'}); }catch(e){}
         const raw=tr(st.pages[i].text).replace(/<[^>]+>/g,'').trim();
-        const u=new SpeechSynthesisUtterance(raw);
+        const u=new SpeechSynthesisUtterance(window.MKVoice?MKVoice.fixText(raw):raw);
         u.lang = lang==='ar' ? 'ar-SA' : 'en-US';
         u.rate = 0.92;
         var __bv=(window.MKVoice&&MKVoice.bestVoice(lang))||null; if(__bv){u.voice=__bv;u.lang=__bv.lang;}

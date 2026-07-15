@@ -231,7 +231,8 @@ function markDone(v){
 function closeSheet(){ stopRead(); document.getElementById('ov').classList.remove('open'); }
 
 /* ══ اقرأ لي: قراءة متصلة بصوت هادئ، وقفة ونغمة انتقال بين المشاهد ══ */
-var reading=false, rTimer=null, AC=null;
+var reading=false, rTimer=null, AC=null, epAudio=null;
+function epAudioSrc(e){ return 'audio/salahuddin/sd-ep'+String(e.n).padStart(3,'0')+'.mp3'; }
 function clean(t){ return String(t).replace(/<[^>]+>/g,' ').replace(/[\u{1F000}-\u{1FAFF}\u{2600}-\u{27BF}\u2B50\uFE0F]/gu,'').replace(/[«»]/g,'"').replace(/\s+/g,' ').trim(); }
 function chunksOf(e){
   var ch=[];
@@ -271,14 +272,21 @@ function arVoice(){
 function readAloud(){
   if(reading){ stopRead(); return; }
   var e=EPS[cur]; if(!e) return;
-  var ch=chunksOf(e), i=0;
   reading=true; setRB(true);
+  /* pre-recorded MP3 first; fall back to the cloud/browser voice if none exists */
+  epAudio=new Audio(epAudioSrc(e));
+  epAudio.onended=function(){ stopRead(); };
+  epAudio.onerror=function(){ epAudio=null; if(reading) ttsRead(e); };
+  epAudio.play().catch(function(){ epAudio=null; if(reading) ttsRead(e); });
+}
+function ttsRead(e){
+  var ch=chunksOf(e), i=0;
   function next(){
     if(!reading||i>=ch.length){ stopRead(); return; }
     var c=ch[i++];
     var go=function(){
       if(!reading) return;
-      var u=new SpeechSynthesisUtterance(c.t);
+      var u=new SpeechSynthesisUtterance(window.MKVoice?MKVoice.fixText(c.t):c.t);
       u.lang='ar-SA'; u.rate=.88; u.pitch=1;
       u.onend=next; u.onerror=next;
       if(window.MKVoice){ MKVoice.applyGender(u, c.t, "ar", "male"); }
@@ -293,6 +301,7 @@ function readAloud(){
 }
 function stopRead(){
   reading=false; clearTimeout(rTimer);
+  try{ if(epAudio){ epAudio.pause(); epAudio=null; } }catch(e){}
   try{ speechSynthesis.cancel(); }catch(e){}
   setRB(false);
 }

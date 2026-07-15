@@ -431,7 +431,7 @@
   function stop(){ try{ synth.cancel(); }catch(e){} try{ if(window.MKTTS) MKTTS.stop(); }catch(e){} reset(); }
   function pickVoice(){ var p=L()==='ar'?'ar':'en'; var vs=(synth.getVoices()||[]).filter(function(v){return v.lang&&v.lang.toLowerCase().indexOf(p)===0;}); return (window.MKVoice&&MKVoice.bestVoice(p))||vs[0]||null; }
   function doSpeak(text){
-    var u=new SpeechSynthesisUtterance(text); u.lang=L()==='ar'?'ar-SA':'en-US'; u.rate=.95;
+    var u=new SpeechSynthesisUtterance(window.MKVoice?MKVoice.fixText(text):text); u.lang=L()==='ar'?'ar-SA':'en-US'; u.rate=.95;
     if(window.MKVoice){ MKVoice.applyGender(u, text, L()==='ar'?'ar':'en', window.MK_VOICE_GENDER); } else { var v=pickVoice(); if(v) u.voice=v; }
     u.onend=function(){ reset(); }; u.onerror=function(){ reset(); };
     try{ synth.resume(); }catch(e){}

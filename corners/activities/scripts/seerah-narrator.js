@@ -86,7 +86,7 @@
     /* الصوت: نستخدم SpeechSynthesis إن وُجد صوت مناسب */
     let useTTS = false;
     try {
-      const u = new SpeechSynthesisUtterance($("rw-text").textContent);
+      const u = new SpeechSynthesisUtterance(window.MKVoice?MKVoice.fixText($("rw-text").textContent):$("rw-text").textContent);
       u.lang = L === "ar" ? "ar-SA" : "en-US";
       u.rate = 0.9;
       const voices = speechSynthesis.getVoices();

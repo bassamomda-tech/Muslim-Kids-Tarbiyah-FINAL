@@ -161,7 +161,7 @@
   function say(text) {
     try {
       if (!("speechSynthesis" in window)) return;
-      const u = new SpeechSynthesisUtterance(text);
+      const u = new SpeechSynthesisUtterance(window.MKVoice?MKVoice.fixText(text):text);
       u.lang = "ar-SA"; u.rate = 0.78;
       const ar = (window.MKVoice&&MKVoice.bestVoice("ar")) || speechSynthesis.getVoices().find(v => /ar/i.test(v.lang));
       if (ar) u.voice = ar;

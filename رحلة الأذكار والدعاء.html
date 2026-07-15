@@ -358,7 +358,7 @@ function readAloud(){
   var s=STATIONS[cur]; if(!s) return;
   var txt=(s.type==='story'?s.body.join(' '):s.steps.join('. '))+'. '+s.q;
   txt=txt.replace(/<[^>]+>/g,'').replace(/[🤔📮💡📿✨💓🌴🏰⏰🗝️⚓🚪🧭🌧️💚🛏️🏆⭐]/g,'');
-  var u=new SpeechSynthesisUtterance(txt);
+  var u=new SpeechSynthesisUtterance(window.MKVoice?MKVoice.fixText(txt):txt);
   u.lang='ar-SA'; u.rate=.92;
   var vs=speechSynthesis.getVoices().filter(function(v){return v.lang&&v.lang.indexOf('ar')===0;});
   if(window.MKVoice){ MKVoice.applyGender(u, txt, "ar"); } else if(vs.length){ u.voice=vs[0]; }

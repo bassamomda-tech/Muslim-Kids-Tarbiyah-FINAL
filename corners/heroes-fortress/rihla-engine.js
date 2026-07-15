@@ -434,7 +434,7 @@
     if(activeBtn===button){ stop(); return; }   // click the playing button = stop
     stop();                                      // stop any other block first
     if(!text) return;
-    var u=new SpeechSynthesisUtterance(text); u.lang=L()==='ar'?'ar-SA':'en-US'; u.rate=.95;
+    var u=new SpeechSynthesisUtterance(window.MKVoice?MKVoice.fixText(text):text); u.lang=L()==='ar'?'ar-SA':'en-US'; u.rate=.95;
     if(window.MKVoice){ MKVoice.applyGender(u, text, L()==='ar'?'ar':'en', window.MK_VOICE_GENDER); } else { var v=pickVoice(); if(v) u.voice=v; }
     u.onend=function(){ reset(); }; u.onerror=function(){ reset(); };
     synth.speak(u); activeBtn=button; button.innerHTML=label(true);

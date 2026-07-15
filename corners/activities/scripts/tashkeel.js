@@ -179,7 +179,7 @@
   function say(text) {
     try {
       if (!("speechSynthesis" in window)) return chime();
-      const u = new SpeechSynthesisUtterance(text);
+      const u = new SpeechSynthesisUtterance(window.MKVoice?MKVoice.fixText(text):text);
       u.lang = "ar-SA"; u.rate = 0.8;
       const voices = speechSynthesis.getVoices();
       const ar = (window.MKVoice&&MKVoice.bestVoice("ar")) || voices.find(v => /ar/i.test(v.lang));

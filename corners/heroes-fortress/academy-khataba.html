@@ -187,7 +187,7 @@
     if(speaking){ stop(); return; }
     speaking=true;
     function go(){
-      var u=new SpeechSynthesisUtterance(text); u.lang='ar-SA'; u.rate=.82;
+      var u=new SpeechSynthesisUtterance(window.MKVoice?MKVoice.fixText(text):text); u.lang='ar-SA'; u.rate=.82;
       var vs=(synth.getVoices()||[]).filter(function(v){return v.lang&&v.lang.toLowerCase().indexOf('ar')===0;});
       var __bv=(window.MKVoice&&MKVoice.bestVoice("ar"))||vs[0]; if(__bv) u.voice=__bv;
       u.onend=function(){speaking=false;}; u.onerror=function(){speaking=false;};
