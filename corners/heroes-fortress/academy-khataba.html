@@ -80,6 +80,7 @@
   html[dir="ltr"] .en-only{display:inline}
 </style>
 <style id="__antiflash">html{background:#06231E;color-scheme:dark}</style>
+<script src="../shared/voice-engine.js"></script>
 </head>
 <body>
   <div class="topbar">
@@ -188,7 +189,7 @@
     function go(){
       var u=new SpeechSynthesisUtterance(text); u.lang='ar-SA'; u.rate=.82;
       var vs=(synth.getVoices()||[]).filter(function(v){return v.lang&&v.lang.toLowerCase().indexOf('ar')===0;});
-      if(vs[0]) u.voice=vs[0];
+      var __bv=(window.MKVoice&&MKVoice.bestVoice("ar"))||vs[0]; if(__bv) u.voice=__bv;
       u.onend=function(){speaking=false;}; u.onerror=function(){speaking=false;};
       try{ synth.resume(); }catch(e){}
       synth.speak(u);

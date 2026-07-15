@@ -1,3 +1,4 @@
+/* mkvoice-loader */(function(){try{var cs=document.currentScript,src=(cs&&cs.src)||"";var m=src.match(/^(.*\/corners\/)/);var base=m?m[1]:"";if(base&&!window.MKVoice&&!document.querySelector("script[data-mkvoice]")){var s=document.createElement("script");s.src=base+"shared/voice-engine.js";s.setAttribute("data-mkvoice","1");document.head.appendChild(s);}}catch(e){}})();
 /* ═══════════════════════════════════════════════════════════════
    QURAN GARDEN — engine: garden shelf, page-flip book reader,
    tap-word meanings, tabs, story pager, mini-game, memorize, i18n.
@@ -660,6 +661,7 @@ window.QApp = (function(){
         const u=new SpeechSynthesisUtterance(raw);
         u.lang = lang==='ar' ? 'ar-SA' : 'en-US';
         u.rate = 0.92;
+        var __bv=(window.MKVoice&&MKVoice.bestVoice(lang))||null; if(__bv){u.voice=__bv;u.lang=__bv.lang;}
         u.onend=()=>{ i++; speakNext(); };
         u.onerror=()=>{ i++; speakNext(); };
         speechSynthesis.speak(u);

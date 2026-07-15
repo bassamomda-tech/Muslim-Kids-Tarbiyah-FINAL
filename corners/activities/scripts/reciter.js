@@ -1,3 +1,4 @@
+/* mkvoice-loader */(function(){try{var cs=document.currentScript,src=(cs&&cs.src)||"";var m=src.match(/^(.*\/corners\/)/);var base=m?m[1]:"";if(base&&!window.MKVoice&&!document.querySelector("script[data-mkvoice]")){var s=document.createElement("script");s.src=base+"shared/voice-engine.js";s.setAttribute("data-mkvoice","1");document.head.appendChild(s);}}catch(e){}})();
 /* ============================================================
    RECITER — المقرأة الذكية
    استمِع إلى الآية/الذِّكر وهي تُتلى كلمةً كلمة، ثم سَمِّعها بترتيب
@@ -162,7 +163,7 @@
       if (!("speechSynthesis" in window)) return;
       const u = new SpeechSynthesisUtterance(text);
       u.lang = "ar-SA"; u.rate = 0.78;
-      const ar = speechSynthesis.getVoices().find(v => /ar/i.test(v.lang));
+      const ar = (window.MKVoice&&MKVoice.bestVoice("ar")) || speechSynthesis.getVoices().find(v => /ar/i.test(v.lang));
       if (ar) u.voice = ar;
       speechSynthesis.cancel(); speechSynthesis.speak(u);
     } catch (e) {}

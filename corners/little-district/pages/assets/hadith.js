@@ -1,3 +1,4 @@
+/* mkvoice-loader */(function(){try{var cs=document.currentScript,src=(cs&&cs.src)||"";var m=src.match(/^(.*\/corners\/)/);var base=m?m[1]:"";if(base&&!window.MKVoice&&!document.querySelector("script[data-mkvoice]")){var s=document.createElement("script");s.src=base+"shared/voice-engine.js";s.setAttribute("data-mkvoice","1");document.head.appendChild(s);}}catch(e){}})();
 /* ═══════════════════════════════════════════════════════════════
    AL-ARBA'IN AN-NAWAWIYYAH — reader engine
    Gallery of hadith cards → reader with tabs (matn, explain,
@@ -48,6 +49,7 @@ window.HApp = (function(){
   let _auto=store.get('auto')==='1';             // auto-advance to next hadith
   function _loadVoices(){ try{_voices=SS.getVoices()||[];}catch(e){_voices=[];} }
   function _arVoice(){
+    if(window.MKVoice){var __b=MKVoice.bestVoice("ar"); if(__b) return __b;}
     const ar=_voices.filter(v=>/(^|[-_ ])ar([-_ ]|$)/i.test(v.lang)||/arab/i.test(v.name));
     const nat=ar.find(v=>/(natural|neural|online|premium|enhanced)/i.test(v.name)); // prefer high-quality voices
     if(nat)return nat;

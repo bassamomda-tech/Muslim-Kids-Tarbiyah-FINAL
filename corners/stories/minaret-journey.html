@@ -38,6 +38,7 @@
 }
 .toast.show{opacity:1;transform:translateX(50%) translateY(0)}
 </style>
+<script src="../shared/voice-engine.js"></script>
 </head>
 <body data-screen-label="رحلة منارة للصغار">
 
@@ -308,7 +309,7 @@
       if(v.localService===false) s+=1;
       return s;
     };
-    return vs.sort(function(a,b){ return score(b)-score(a); })[0];
+    return (window.MKVoice&&MKVoice.bestVoice("ar",MKVoice.guessGender(txt)))||vs.sort(function(a,b){ return score(b)-score(a); })[0];
   }
   function speakText(){
     if(speaking){ stopSpeak(); return; }
@@ -322,7 +323,7 @@
     txt = txt.replace(/<[^>]+>/g,'').replace(/[🌱-🿿📄-📿☀-⛿✀-➿🀀-🯿]/gu,'');
     var u = new SpeechSynthesisUtterance(txt);
     var v = pickVoice(); if(v) u.voice=v;
-    u.lang='ar-SA'; u.rate=0.92; u.pitch=1.05;
+    u.lang='ar-SA'; u.rate=0.92; u.pitch=1.05; if(window.MKVoice&&u.voice){ var __g=MKVoice.guessGender(txt); if(MKVoice.genderOf(u.voice)!==__g) u.pitch=(__g==='male'?0.72:1.22); }
     u.onend=u.onerror=function(){ speaking=false; $('#btnSpeak').classList.remove('speaking'); $('#btnSpeak').textContent='🔊 اقرئي لي'; };
     speechSynthesis.cancel(); speechSynthesis.speak(u);
     speaking=true; $('#btnSpeak').classList.add('speaking'); $('#btnSpeak').textContent='⏸ توقّفي';

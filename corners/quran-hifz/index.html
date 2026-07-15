@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <script src="./support.js"></script>
 <script src="./asr-client.js"></script>
+<script src="../shared/voice-engine.js"></script>
 </head>
 <body>
 <x-dc>
@@ -2007,7 +2008,7 @@ class Component extends DCLogic {
   stopAudio(){ if(this.audio){ this.audio.pause(); this.audio.loop=false; try{this.audio.currentTime=0;}catch(e){} } this.audioMode=null; }
 
   // ---------- SPEECH SYNTHESIS (pronunciation) ----------
-  speak(text){ try{ const synth=window.speechSynthesis; if(!synth)return; synth.cancel(); const u=new SpeechSynthesisUtterance(String(text).replace(/—/g,' ')); u.lang='ar-SA'; u.rate=0.72; u.pitch=1; const vs=synth.getVoices(); const ar=vs.find(v=>/^ar/i.test(v.lang)); if(ar)u.voice=ar; synth.speak(u); }catch(e){} }
+  speak(text){ try{ const synth=window.speechSynthesis; if(!synth)return; synth.cancel(); const u=new SpeechSynthesisUtterance(String(text).replace(/—/g,' ')); u.lang='ar-SA'; u.rate=0.72; u.pitch=1; const vs=synth.getVoices(); const ar=(window.MKVoice&&MKVoice.bestVoice("ar"))||vs.find(v=>/^ar/i.test(v.lang)); if(ar)u.voice=ar; synth.speak(u); }catch(e){} }
 
   // ---------- TASMEE: live follow-along (Tarteel-style) ----------
   followWords(){

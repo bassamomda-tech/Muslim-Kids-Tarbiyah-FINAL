@@ -77,6 +77,7 @@ footer{text-align:center;color:#8C8A6C;font-weight:700;font-size:.85rem;padding:
   .station .dot,.station:nth-child(odd) .dot,.station:nth-child(even) .dot{right:-2.85rem;left:auto}
 }
 </style>
+<script src="corners/shared/voice-engine.js"></script>
 </head>
 <body data-screen-label="رحلة حافظ الدين">
 
@@ -332,7 +333,7 @@ function readAloud(){
   var u=new SpeechSynthesisUtterance(txt);
   u.lang='ar-SA'; u.rate=.92;
   var vs=speechSynthesis.getVoices().filter(function(v){return v.lang&&v.lang.indexOf('ar')===0;});
-  if(vs.length) u.voice=vs[0];
+  if(window.MKVoice){ MKVoice.applyGender(u, txt, "ar"); } else if(vs.length){ u.voice=vs[0]; }
   u.onend=u.onerror=function(){ uttering=false; var b=document.getElementById('rb'); if(b){b.classList.remove('playing');b.textContent='🔊 اقرأ لي';} };
   speechSynthesis.cancel(); speechSynthesis.speak(u); uttering=true;
   var b=document.getElementById('rb'); if(b){b.classList.add('playing');b.textContent='⏹️ إيقاف';}

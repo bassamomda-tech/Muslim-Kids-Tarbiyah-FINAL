@@ -1,3 +1,4 @@
+/* mkvoice-loader */(function(){try{var cs=document.currentScript,src=(cs&&cs.src)||"";var m=src.match(/^(.*\/corners\/)/);var base=m?m[1]:"";if(base&&!window.MKVoice&&!document.querySelector("script[data-mkvoice]")){var s=document.createElement("script");s.src=base+"shared/voice-engine.js";s.setAttribute("data-mkvoice","1");document.head.appendChild(s);}}catch(e){}})();
 /* ═══════════════════════════════════════════════════════════════
    STORY READER — paginated, interactive, with end-of-story quiz.
    Public: StoryReader.open(story, hc, lang, onFinish)
@@ -122,6 +123,7 @@ window.StoryReader = (function () {
     const u = new SpeechSynthesisUtterance(text);
     u.lang = state.lang === 'ar' ? 'ar-SA' : 'en-US';
     u.rate = 0.92;
+    if(state.lang==='ar'&&window.MKVoice){ MKVoice.applyGender(u, text, 'ar'); }
     btn && btn.classList.add('playing');
     u.onend = () => { btn && btn.classList.remove('playing'); utterance = null; };
     utterance = u;

@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>رحلة صلاح الدين الأيوبي 🎬</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&family=Aref+Ruqaa:wght@400;700&display=swap">
+<style>
+:root{--night:#141B2E;--night2:#1D2842;--gold:#D4A845;--gold-dk:#B08A2E;--paper:#FAF6EC;--card:#FFFDF6;--ink:#2E2A22;--line:#E8DCC2;--green:#1F8B6E;--green-dk:#14634E}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Tajawal',sans-serif;background:var(--paper);color:var(--ink);line-height:1.9;direction:rtl;overflow-x:hidden}
+a{color:var(--green-dk)}a:hover{color:var(--gold-dk)}
+button{font-family:'Tajawal',sans-serif;cursor:pointer}
+/* ── hero ── */
+.hero{background:radial-gradient(ellipse at 50% -20%,#2A3A5F 0%,var(--night) 60%);color:#F4EDDA;text-align:center;padding:3.6rem 1rem 2.2rem;position:relative}
+.hero .back{position:absolute;top:1rem;right:1rem;font-size:.82rem;font-weight:800;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.25);color:#F4EDDA;border-radius:2rem;padding:.35rem 1rem;text-decoration:none}
+.hero .film{font-size:.8rem;font-weight:800;letter-spacing:.35em;color:var(--gold);text-transform:uppercase}
+.hero h1{font-family:'Aref Ruqaa',serif;font-size:clamp(2rem,6vw,3.4rem);color:#fff;margin:.2rem 0 .1rem;text-shadow:0 4px 24px rgba(212,168,69,.35)}
+.hero h1 span{color:var(--gold)}
+.hero .log{max-width:44rem;margin:.6rem auto 0;font-weight:500;color:#CBBFA4;font-size:.98rem}
+.hero .meta{display:flex;flex-wrap:wrap;gap:.5rem;justify-content:center;margin-top:1.1rem}
+.hero .meta span{background:rgba(255,255,255,.07);border:1px solid rgba(212,168,69,.4);border-radius:2rem;padding:.3rem 1rem;font-size:.82rem;font-weight:800}
+.hero .actions{margin-top:1.2rem;display:flex;gap:.6rem;justify-content:center;flex-wrap:wrap}
+.hero .actions button{border:none;border-radius:2rem;padding:.55rem 1.5rem;font-weight:900;font-size:.9rem}
+.btn-gold{background:var(--gold);color:var(--night);box-shadow:0 4px 0 var(--gold-dk)}
+.btn-ghost{background:transparent;color:#F4EDDA;border:2px solid rgba(255,255,255,.35)!important}
+.probar{max-width:30rem;margin:1.4rem auto 0}
+.probar .lbl{font-size:.85rem;font-weight:800;color:var(--gold);display:flex;justify-content:space-between}
+.probar .tr{height:.7rem;background:rgba(255,255,255,.12);border-radius:1rem;overflow:hidden;margin-top:.3rem}
+.probar .fl{height:100%;background:linear-gradient(90deg,var(--gold),#F0D48A);border-radius:1rem;width:0;transition:width .6s}
+/* ── corners legend ── */
+.legend{max-width:62rem;margin:1.6rem auto .4rem;padding:0 1.2rem;display:flex;flex-wrap:wrap;gap:.45rem;justify-content:center}
+.legend .chip{display:inline-flex;align-items:center;gap:.35rem;background:#fff;border:2px solid var(--line);border-radius:2rem;padding:.28rem .85rem;font-size:.78rem;font-weight:800;color:#6B6152}
+.legend .chip.on{border-color:var(--c);color:var(--c);background:color-mix(in srgb,var(--c) 8%,#fff)}
+.legend .chip .dot{width:.6rem;height:.6rem;border-radius:50%;background:var(--c)}
+.legend-note{text-align:center;font-size:.78rem;color:#9A8E76;font-weight:700;margin-bottom:.2rem}
+/* ── stages ── */
+.stages{max-width:62rem;margin:0 auto 3rem;padding:0 1.2rem}
+.stage{margin-top:1.8rem}
+.st-head{display:flex;align-items:center;gap:.9rem;background:linear-gradient(135deg,var(--sc),color-mix(in srgb,var(--sc) 70%,#000));color:#fff;border-radius:1.2rem;padding:1rem 1.3rem;flex-wrap:wrap}
+.st-head .ic{font-size:2.2rem}
+.st-head h2{font-family:'Aref Ruqaa',serif;font-size:1.5rem;line-height:1.3}
+.st-head .yrs{font-size:.82rem;font-weight:800;opacity:.9}
+.st-head .cnt{margin-right:auto;background:rgba(255,255,255,.18);border-radius:2rem;padding:.3rem 1rem;font-weight:900;font-size:.85rem}
+.st-intro{font-size:.92rem;font-weight:500;color:#6B6152;margin:.7rem .3rem .9rem;max-width:56rem}
+.eps{display:grid;grid-template-columns:repeat(auto-fill,minmax(15.5rem,1fr));gap:.8rem}
+.ep{position:relative;text-align:right;background:var(--card);border:2.5px solid var(--line);border-radius:1.1rem;padding:.85rem .95rem .8rem;transition:.15s;cursor:pointer}
+.ep:hover{transform:translateY(-3px);border-color:var(--sc)}
+.ep .n{position:absolute;top:-.65rem;right:.8rem;background:var(--sc);color:#fff;border-radius:2rem;font-size:.72rem;font-weight:900;padding:.1rem .7rem}
+.ep .ic{font-size:1.5rem;float:left}
+.ep b{display:block;font-size:.98rem;font-weight:900;color:var(--night);margin-top:.25rem;line-height:1.5}
+.ep small{display:block;font-weight:700;color:#9A8E76;font-size:.74rem;margin-top:.15rem}
+.ep .tags{display:flex;gap:.35rem;margin-top:.5rem;align-items:center;flex-wrap:wrap}
+.ep .ck{display:inline-flex;align-items:center;gap:.25rem;font-size:.7rem;font-weight:800;border-radius:2rem;padding:.08rem .6rem;background:color-mix(in srgb,var(--cc) 12%,#fff);color:var(--cc);border:1px solid color-mix(in srgb,var(--cc) 45%,#fff)}
+.ep .full{font-size:.68rem;font-weight:900;color:var(--gold-dk);background:#FBF3DC;border:1px solid #EBD9A8;border-radius:2rem;padding:.08rem .6rem}
+.ep .done-b{position:absolute;top:-.7rem;left:-.5rem;background:var(--green);color:#fff;border-radius:50%;width:1.8rem;height:1.8rem;display:none;align-items:center;justify-content:center;border:2px solid #fff;font-size:.85rem}
+.ep.done{border-color:var(--green)}
+.ep.done .done-b{display:flex}
+.ep.dim{opacity:.28;pointer-events:none}
+/* ── sheet ── */
+.overlay{position:fixed;inset:0;background:rgba(15,20,35,.72);display:none;align-items:flex-start;justify-content:center;padding:1.6rem .8rem;z-index:50;overflow-y:auto}
+.overlay.open{display:flex}
+.sheet{background:var(--card);border-radius:1.4rem;max-width:46rem;width:100%;padding:1.6rem clamp(1rem,4vw,2.2rem) 1.8rem;position:relative;border-top:8px solid var(--sc,#D4A845);margin-bottom:2rem}
+.sheet .close{position:absolute;top:.9rem;left:.9rem;background:#fff;border:2px solid var(--line);border-radius:50%;width:2.3rem;height:2.3rem;font-size:1rem;font-weight:900}
+.sheet .ep-kicker{font-size:.75rem;font-weight:900;letter-spacing:.2em;color:var(--sc)}
+.sheet h2{font-family:'Aref Ruqaa',serif;font-size:1.7rem;color:var(--night);line-height:1.4;margin:.1rem 0 .6rem}
+.pcard{background:#F6F0E0;border:1.5px solid var(--line);border-radius:1rem;padding:.8rem 1rem;font-size:.85rem;font-weight:700;color:#5C5344;display:grid;grid-template-columns:repeat(auto-fit,minmax(11rem,1fr));gap:.35rem .9rem}
+.pcard b{color:var(--night)}
+.goal{background:color-mix(in srgb,var(--sc) 8%,#fff);border-right:4px solid var(--sc);border-radius:.7rem;padding:.7rem 1rem;font-weight:800;font-size:.92rem;margin:.9rem 0;color:#41493E}
+.readbtn{display:flex;align-items:center;gap:.5rem;margin:.9rem auto 0;background:var(--green);color:#fff;border:none;border-radius:2rem;padding:.55rem 1.6rem;font-weight:900;font-size:.95rem;box-shadow:0 4px 0 var(--green-dk)}
+.readbtn.playing{background:var(--night);color:var(--gold);box-shadow:0 4px 0 #000}
+.scene{margin-top:1.1rem;border:1.5px solid var(--line);border-radius:1rem;overflow:hidden}
+.scene .sh{background:var(--night);color:var(--gold);font-weight:900;font-size:.85rem;padding:.45rem .9rem;letter-spacing:.03em}
+.scene .sb{padding:.7rem .95rem .85rem}
+.scene .desc{font-size:.88rem;color:#7A6F5C;font-style:italic;font-weight:500}
+.scene .vo{margin-top:.55rem;background:#FBF6E8;border-radius:.7rem;padding:.55rem .8rem;font-size:.95rem;font-weight:700;color:#5A4A22}
+.scene .vo::before{content:'🎙️ الراوي — صلاح الدين: ';font-weight:900;color:var(--gold-dk)}
+.dlg{margin-top:.5rem}
+.dlg p{margin:.3rem 0;font-size:.95rem;font-weight:500}
+.dlg p b{color:var(--green-dk);font-weight:900}
+.beats{list-style:none;margin:.7rem 0 0;counter-reset:bt}
+.beats li{counter-increment:bt;position:relative;padding:.5rem 2.6rem .5rem 0;border-bottom:1px dashed var(--line);font-weight:700;font-size:.93rem}
+.beats li::before{content:counter(bt);position:absolute;right:0;top:.55rem;width:1.8rem;height:1.8rem;background:var(--sc);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.8rem;font-weight:900}
+.syn{font-size:.98rem;font-weight:500;margin-top:.4rem}
+.outline-tag{display:inline-block;background:#EEF3FB;color:#3D5A8C;border:1px solid #C9D8F0;border-radius:2rem;padding:.15rem .8rem;font-size:.75rem;font-weight:900;margin-top:.6rem}
+.msg{background:linear-gradient(135deg,#FFF9E8,#FCF0D0);border:2px dashed var(--gold);border-radius:1rem;padding:.8rem 1rem;margin-top:1.2rem;font-weight:800;color:#7A5A12}
+.msg::before{content:'📺 رسالة الحلقة (تظهر على الشاشة): ';font-weight:900}
+.chal{background:#EAF6F1;border:2px dashed var(--green);border-radius:1rem;padding:.8rem 1rem;margin-top:.7rem;font-weight:800;color:#155B45}
+.chal::before{content:'🔥 تحدي البطل: ';font-weight:900}
+.clink{display:inline-flex;align-items:center;gap:.4rem;margin-top:.9rem;font-size:.82rem;font-weight:900;text-decoration:none;background:color-mix(in srgb,var(--cc) 10%,#fff);border:1.5px solid color-mix(in srgb,var(--cc) 40%,#fff);color:var(--cc);border-radius:2rem;padding:.35rem 1rem}
+.sheet .nav{display:flex;gap:.6rem;justify-content:space-between;margin-top:1.4rem;flex-wrap:wrap}
+.sheet .nav button{border:none;border-radius:2rem;padding:.6rem 1.4rem;font-weight:900;font-size:.92rem}
+.nv{background:#fff;border:2px solid var(--line)!important;color:#6B6152}
+.dn{background:var(--green);color:#fff;box-shadow:0 4px 0 var(--green-dk)}
+.dn.finished{background:var(--gold);color:var(--night);box-shadow:0 4px 0 var(--gold-dk)}
+.pr{background:var(--night);color:var(--gold)}
+/* bible modal */
+.bgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(13rem,1fr));gap:.6rem;margin-top:.8rem}
+.bcard{background:#F9F4E6;border:1.5px solid var(--line);border-radius:.9rem;padding:.6rem .8rem;font-size:.85rem;font-weight:500}
+.bcard b{display:block;font-weight:900;color:var(--night)}
+.bsec{font-weight:900;color:var(--gold-dk);margin-top:1.2rem;font-size:1.05rem}
+.confetti{position:fixed;top:-2rem;font-size:1.5rem;z-index:60;animation:fall 2.6s linear forwards;pointer-events:none}
+@keyframes fall{to{transform:translateY(110vh) rotate(540deg)}}
+footer{text-align:center;color:#9A8E76;font-weight:700;font-size:.85rem;padding:1.5rem 1rem 2.2rem}
+@media(max-width:700px){.hero{padding-top:4.2rem}}
+@media print{body *{visibility:hidden}.overlay,.overlay *{visibility:visible}.overlay{position:static;background:#fff;padding:0;display:block!important}.sheet{border:none;max-width:100%;box-shadow:none}.sheet .close,.sheet .nav{display:none!important}}
+</style>
+<script src="corners/shared/voice-engine.js"></script>
+</head>
+<body data-screen-label="رحلة صلاح الدين الأيوبي">
+
+<header class="hero">
+  <a class="back" href="index.html">↩️ العودة للمدينة</a>
+  <div class="film">مسلسل تربوي — ١٠٠ حلقة × ٥ دقائق</div>
+  <h1>رحلة <span>صلاحِ الدينِ الأيوبي</span></h1>
+  <div class="log" id="logline"></div>
+  <div class="meta"><span>👶 يولد في مانشستر</span><span>✈️ يهاجر في عيده العاشر</span><span>🕌 الفتح في عيده الخامس والعشرين</span><span>🏛️ يجمع الأركان العشرة كلها</span></div>
+  <div class="actions">
+    <button class="btn-gold" onclick="openBible()">📖 ملف السلسلة</button>
+    <button class="btn-ghost" onclick="openEp(0)">▶️ ابدأ من الحلقة الأولى</button>
+  </div>
+  <div class="probar"><div class="lbl"><span>تقدمك في المشاهدة</span><span><span id="dnCnt">0</span> / <span id="totCnt">100</span></span></div><div class="tr"><div class="fl" id="pFill"></div></div></div>
+</header>
+
+<div class="legend-note" style="margin-top:1.4rem">كل حلقة تزرع قيمة من ركن — اضغط ركناً لتصفية الحلقات:</div>
+<div class="legend" id="legend"></div>
+
+<div class="stages" id="stages"></div>
+
+<div class="overlay" id="ov" onclick="if(event.target===this)closeSheet()"><div class="sheet" id="sheet"></div></div>
+
+<footer>صُنع بحُب ❤️ — تربية الطفل المسلم · رحلة صلاح الدين الأيوبي: أساس درامي جاهز للتحويل إلى مسلسل</footer>
+
+<script src="salahuddin/bible.js"></script>
+<script src="salahuddin/s1.js"></script>
+<script src="salahuddin/s2.js"></script>
+<script src="salahuddin/s3.js"></script>
+<script src="salahuddin/s4.js"></script>
+<script src="salahuddin/s5.js"></script>
+<script src="salahuddin/s6.js"></script>
+<script src="salahuddin/s7.js"></script>
+<script>
+var EPS=[]; SD.stages.forEach(function(s){ s.eps.forEach(function(e){ e._st=s; EPS.push(e); }); });
+var done=[]; try{ done=JSON.parse(localStorage.getItem('sdDone')||'[]'); }catch(e){}
+var filt=null, cur=-1;
+document.getElementById('logline').textContent=SD.logline;
+document.getElementById('totCnt').textContent=EPS.length;
+
+function esc(s){return String(s).replace(/[&<]/g,function(c){return c==='&'?'&amp;':'&lt;'});}
+function cInfo(id){return SD.corners[id]||['🏛️',id,'#888','#'];}
+
+function renderLegend(){
+  var h='';
+  Object.keys(SD.corners).forEach(function(id){ var c=SD.corners[id];
+    h+='<button class="chip'+(filt===id?' on':'')+'" style="--c:'+c[2]+'" onclick="toggleFilt(\''+id+'\')"><span class="dot"></span>'+c[0]+' '+c[1].split(' — ')[0]+'</button>';
+  });
+  document.getElementById('legend').innerHTML=h;
+}
+function toggleFilt(id){ filt=(filt===id)?null:id; renderLegend(); renderStages(); }
+
+function renderStages(){
+  var h='';
+  SD.stages.forEach(function(s){
+    var dc=s.eps.filter(function(e){return done.indexOf(e.n)>-1}).length;
+    h+='<section class="stage" style="--sc:'+s.color+'" data-screen-label="المرحلة '+s.id+'">';
+    h+='<div class="st-head"><span class="ic">'+s.icon+'</span><div><h2>المرحلة '+'١٢٣٤٥٦٧'[s.id-1]+': '+s.name+'</h2><div class="yrs">'+s.years+' · '+s.place+'</div></div><span class="cnt">'+dc+' / '+s.eps.length+'</span></div>';
+    h+='<p class="st-intro">'+s.intro+'</p><div class="eps">';
+    s.eps.forEach(function(e){
+      var c=cInfo(e.corner), isDone=done.indexOf(e.n)>-1, dim=filt&&e.corner!==filt;
+      h+='<div class="ep'+(isDone?' done':'')+(dim?' dim':'')+'" style="--cc:'+c[2]+'" onclick="openEp('+(e.n-1)+')">'
+        +'<span class="n">الحلقة '+ar(e.n)+'</span><span class="done-b">✓</span><span class="ic">'+e.ic+'</span>'
+        +'<b>'+e.t+'</b><small>'+e.age+' · '+e.loc+'</small>'
+        +'<div class="tags"><span class="ck">'+c[0]+' '+c[1].split(' — ')[0]+'</span>'+(e.scenes?'<span class="full">🎬 سيناريو كامل</span>':'')+'</div></div>';
+    });
+    h+='</div></section>';
+  });
+  document.getElementById('stages').innerHTML=h;
+  var n=done.length;
+  document.getElementById('dnCnt').textContent=n;
+  document.getElementById('pFill').style.width=Math.round(n/EPS.length*100)+'%';
+}
+function ar(n){ return String(n).replace(/\d/g,function(d){return '٠١٢٣٤٥٦٧٨٩'[d]}); }
+
+function openEp(i){
+  if(i<0||i>=EPS.length) return;
+  stopRead();
+  cur=i; var e=EPS[i], s=e._st, c=cInfo(e.corner), isDone=done.indexOf(e.n)>-1;
+  var h='<button class="close" onclick="closeSheet()">✕</button>';
+  h+='<div class="ep-kicker">'+s.icon+' المرحلة '+ar(s.id)+' — '+s.name+'</div>';
+  h+='<h2>'+e.ic+' الحلقة '+ar(e.n)+': '+e.t+'</h2>';
+  h+='<div class="pcard"><span>🎂 <b>العمر:</b> '+e.age+'</span><span>📍 <b>المكان:</b> '+e.loc+'</span><span>⏱️ <b>المدة:</b> ٥ دقائق</span>'+(e.chars?'<span style="grid-column:1/-1">🎭 <b>الشخصيات:</b> '+e.chars.join('، ')+'</span>':'')+'</div>';
+  h+='<div class="goal" style="--sc:'+s.color+'">🎯 الهدف التربوي: '+e.goal+'</div>';
+  h+='<button class="readbtn" id="rb" onclick="readAloud()">🔊 اقرأ لي الحلقة كاملة</button>';
+  if(e.scenes){
+    e.scenes.forEach(function(sc){
+      h+='<div class="scene"><div class="sh">🎬 '+sc.h+'</div><div class="sb">';
+      if(sc.d) h+='<div class="desc">'+sc.d+'</div>';
+      if(sc.vo) h+='<div class="vo">'+sc.vo+'</div>';
+      if(sc.dlg){ h+='<div class="dlg">'; sc.dlg.forEach(function(d){ h+='<p><b>'+d[0]+':</b> '+d[1]+'</p>'; }); h+='</div>'; }
+      h+='</div></div>';
+    });
+  } else {
+    h+='<span class="outline-tag">📋 ملخص تنفيذي — السيناريو الكامل يُكتب في الدفعة القادمة</span>';
+    if(e.syn) h+='<p class="syn">'+e.syn+'</p>';
+    if(e.beats){ h+='<div style="font-weight:900;margin-top:.9rem;color:'+s.color+'">🎞️ مشاهد الحلقة:</div><ol class="beats" style="--sc:'+s.color+'">'; e.beats.forEach(function(b){h+='<li>'+b+'</li>';}); h+='</ol>'; }
+  }
+  if(e.msg) h+='<div class="msg">'+e.msg+'</div>';
+  if(e.apply) h+='<div class="chal">'+e.apply+'</div>';
+  h+='<br><a class="clink" style="--cc:'+c[2]+'" href="'+c[3]+'">'+c[0]+' تعمّق في هذا الركن: '+c[1]+' ←</a>';
+  h+='<div class="nav">';
+  h+='<button class="nv" onclick="openEp('+(i-1)+')" '+(i===0?'disabled':'')+'>→ الحلقة السابقة</button>';
+  h+='<button class="pr" onclick="window.print()">🖨️ اطبع السيناريو</button>';
+  h+= isDone?'<button class="dn finished" onclick="markDone(false)">✓ شاهدتُها — تراجع</button>':'<button class="dn" onclick="markDone(true)">أتممتُ الحلقة! ⭐</button>';
+  h+='<button class="nv" onclick="openEp('+(i+1)+')" '+(i===EPS.length-1?'disabled':'')+'>الحلقة التالية ←</button></div>';
+  var sh=document.getElementById('sheet');
+  sh.style.setProperty('--sc',s.color); sh.innerHTML=h;
+  document.getElementById('ov').classList.add('open');
+  document.getElementById('ov').scrollTop=0;
+}
+function markDone(v){
+  var n=EPS[cur].n, ix=done.indexOf(n);
+  if(v&&ix<0){ done.push(n); celebrate(); }
+  if(!v&&ix>-1) done.splice(ix,1);
+  localStorage.setItem('sdDone',JSON.stringify(done));
+  renderStages(); if(v){ closeSheet(); } else openEp(cur);
+}
+function closeSheet(){ stopRead(); document.getElementById('ov').classList.remove('open'); }
+
+/* ══ اقرأ لي: قراءة متصلة بصوت هادئ، وقفة ونغمة انتقال بين المشاهد ══ */
+var reading=false, rTimer=null, AC=null;
+function clean(t){ return String(t).replace(/<[^>]+>/g,' ').replace(/[\u{1F000}-\u{1FAFF}\u{2600}-\u{27BF}\u2B50\uFE0F]/gu,'').replace(/[«»]/g,'"').replace(/\s+/g,' ').trim(); }
+function chunksOf(e){
+  var ch=[];
+  ch.push({t:'الحلقة '+ar(e.n)+': '+e.t+'. '+e.age+'، '+e.loc+'.'});
+  ch.push({t:'الهدف التربوي: '+e.goal+'.'});
+  if(e.scenes){ e.scenes.forEach(function(sc,i){
+    var t='المشهد '+['الأول','الثاني','الثالث','الرابع','الخامس','السادس','السابع'][i]+': '+sc.h+'. ';
+    if(sc.d) t+=sc.d+' ';
+    if(sc.vo) t+='الراوي: '+sc.vo+' ';
+    if(sc.dlg) sc.dlg.forEach(function(d){ t+=d[0]+': '+d[1]+' '; });
+    ch.push({t:t,scene:true});
+  }); }
+  else{
+    if(e.syn) ch.push({t:'ملخص الحلقة: '+e.syn,scene:true});
+    if(e.beats) e.beats.forEach(function(b,i){ ch.push({t:'المشهد '+ar(i+1)+': '+b+'.',scene:true}); });
+  }
+  if(e.msg) ch.push({t:'رسالة الحلقة: '+e.msg,scene:true});
+  if(e.apply) ch.push({t:'تحدي البطل: '+e.apply,scene:true});
+  return ch.map(function(c){ c.t=clean(c.t); return c; }).filter(function(c){ return c.t; });
+}
+function chime(){
+  try{
+    AC=AC||new (window.AudioContext||window.webkitAudioContext)();
+    var o=AC.createOscillator(), g=AC.createGain();
+    o.type='sine'; o.frequency.value=740;
+    g.gain.setValueAtTime(.0001,AC.currentTime);
+    g.gain.exponentialRampToValueAtTime(.12,AC.currentTime+.05);
+    g.gain.exponentialRampToValueAtTime(.0001,AC.currentTime+.9);
+    o.connect(g); g.connect(AC.destination); o.start(); o.stop(AC.currentTime+1);
+  }catch(e){}
+}
+function arVoice(){
+  var vs=speechSynthesis.getVoices().filter(function(v){ return v.lang&&v.lang.indexOf('ar')===0; });
+  var __g=(window.MKVoice&&MKVoice.mode&&MKVoice.mode()!=='auto')?MKVoice.mode():'male';
+  return (window.MKVoice&&MKVoice.bestVoice("ar",__g))||vs[0]||null;
+}
+function readAloud(){
+  if(reading){ stopRead(); return; }
+  var e=EPS[cur]; if(!e) return;
+  var ch=chunksOf(e), i=0;
+  reading=true; setRB(true);
+  function next(){
+    if(!reading||i>=ch.length){ stopRead(); return; }
+    var c=ch[i++];
+    var go=function(){
+      if(!reading) return;
+      var u=new SpeechSynthesisUtterance(c.t);
+      u.lang='ar-SA'; u.rate=.88; u.pitch=1;
+      u.onend=next; u.onerror=next;
+      if(window.MKVoice){ MKVoice.applyGender(u, c.t, "ar", "male"); }
+      else { var v=arVoice(); if(v) u.voice=v; }
+      speechSynthesis.speak(u);
+    };
+    if(c.scene){ chime(); rTimer=setTimeout(go,1800); } else go();
+  }
+  speechSynthesis.cancel();
+  if(!speechSynthesis.getVoices().length){ speechSynthesis.onvoiceschanged=function(){ speechSynthesis.onvoiceschanged=null; if(reading) return; }; }
+  next();
+}
+function stopRead(){
+  reading=false; clearTimeout(rTimer);
+  try{ speechSynthesis.cancel(); }catch(e){}
+  setRB(false);
+}
+function setRB(on){ var b=document.getElementById('rb'); if(b){ b.classList.toggle('playing',on); b.innerHTML=on?'⏹️ إيقاف القراءة':'🔊 اقرأ لي الحلقة كاملة'; } }
+
+function openBible(){
+  var h='<button class="close" onclick="closeSheet()">✕</button>';
+  h+='<div class="ep-kicker">🎬 وثيقة السلسلة</div><h2>ملفُّ سلسلة صلاح الدين الأيوبي</h2>';
+  h+='<p class="syn">'+SD.logline+'</p>';
+  h+='<div class="bsec">🎞️ صيغة العرض</div><div class="pcard"><span>⏱️ <b>المدة:</b> '+SD.format.dur+'</span><span style="grid-column:1/-1">🎙️ <b>الراوي:</b> '+SD.format.voice+'</span><span style="grid-column:1/-1">🎨 <b>الأسلوب:</b> '+SD.format.style+'</span><span style="grid-column:1/-1">📈 <b>القوس الدرامي:</b> '+SD.format.arc+'</span></div>';
+  h+='<div class="bsec">🎭 الشخصيات</div><div class="bgrid">';
+  SD.chars.forEach(function(c){ h+='<div class="bcard"><b>'+c.ic+' '+c.n+'</b>'+c.r+'</div>'; });
+  h+='</div><div class="bsec">🗺️ الأماكن</div><div class="bgrid">';
+  SD.places.forEach(function(p){ h+='<div class="bcard"><b>'+p[0]+' '+p[1]+'</b>'+p[2]+'</div>'; });
+  h+='</div><div class="bsec">🏛️ الأركان العشرة في السلسلة</div><p class="syn" style="font-size:.9rem">كل حلقة موسومة بركنها من أركان مدينة تربية الطفل المسلم — بحيث تغطي المئة حلقة الأركان كلها: العقيدة والعبادة والقرآن والأخلاق والقلب السليم والبطولة والرياضة والإبداع والقدس والأهل. اضغط وسم الركن داخل أي حلقة للتعمق في مادته.</p>';
+  h+='<div class="nav"><button class="pr" onclick="window.print()">🖨️ اطبع الملف</button><button class="nv" onclick="closeSheet()">إغلاق</button></div>';
+  var sh=document.getElementById('sheet'); sh.style.setProperty('--sc','#D4A845'); sh.innerHTML=h;
+  document.getElementById('ov').classList.add('open'); document.getElementById('ov').scrollTop=0;
+}
+function celebrate(){
+  var em=['⭐','🕌','✨','🎬','🗝️'];
+  for(var i=0;i<16;i++){ var s=document.createElement('span'); s.className='confetti'; s.textContent=em[i%em.length]; s.style.left=(Math.random()*100)+'vw'; s.style.animationDelay=(Math.random()*.5)+'s'; document.body.appendChild(s); setTimeout(function(el){return function(){el.remove()}}(s),3200); }
+}
+renderLegend(); renderStages();
+</script>
+</body>
+</html>

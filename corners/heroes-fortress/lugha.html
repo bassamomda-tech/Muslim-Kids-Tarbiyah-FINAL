@@ -64,6 +64,7 @@ body{background:
 </style>
 <script>(function(){try{var l=localStorage.getItem('bunyanLang');if(l==='en'){var h=document.documentElement;h.dir='ltr';h.lang='en';}}catch(e){}})();</script>
 <style id="__antiflash">html{background:#241A08;color-scheme:dark}</style>
+<script src="../shared/voice-engine.js"></script>
 </head>
 <body>
 
@@ -206,7 +207,7 @@ window.RIHLA_CFG = {
   let arVoice = null;
   function loadVoice(){
     const vs = speechSynthesis.getVoices() || [];
-    arVoice = vs.find(v=>/^ar/i.test(v.lang)) || null;
+    arVoice = (window.MKVoice&&MKVoice.bestVoice("ar")) || vs.find(v=>/^ar/i.test(v.lang)) || null;
   }
   loadVoice();
   speechSynthesis.onvoiceschanged = loadVoice;
@@ -252,7 +253,7 @@ window.RIHLA_CFG = {
 /* ── letter pronunciation (huruf station) via Web Speech API ── */
 (function(){
   var hasTTS = ('speechSynthesis' in window);
-  function arVoice(){ var vs=(hasTTS&&speechSynthesis.getVoices())||[]; return vs.find(function(v){return /^ar/i.test(v.lang);})||vs.find(function(v){return /arab/i.test(v.name);})||null; }
+  function arVoice(){ var vs=(hasTTS&&speechSynthesis.getVoices())||[]; return (window.MKVoice&&MKVoice.bestVoice("ar"))||vs.find(function(v){return /^ar/i.test(v.lang);})||vs.find(function(v){return /arab/i.test(v.name);})||null; }
   if(hasTTS){ try{ speechSynthesis.getVoices(); speechSynthesis.onvoiceschanged=function(){}; }catch(e){} }
   var curH='\u064E';
   function speak(t){ if(!hasTTS)return; try{ speechSynthesis.cancel();

@@ -1,3 +1,4 @@
+/* mkvoice-loader */(function(){try{var cs=document.currentScript,src=(cs&&cs.src)||"";var m=src.match(/^(.*\/corners\/)/);var base=m?m[1]:"";if(base&&!window.MKVoice&&!document.querySelector("script[data-mkvoice]")){var s=document.createElement("script");s.src=base+"shared/voice-engine.js";s.setAttribute("data-mkvoice","1");document.head.appendChild(s);}}catch(e){}})();
 /* ============================================================
    79 · راوي السيرة — كتاب صوتي بتظليل الكلمات (karaoke-style)
    يستخدم SpeechSynthesis إن توفّر، وإلا تظليل موقوت + نغمات
@@ -89,7 +90,7 @@
       u.lang = L === "ar" ? "ar-SA" : "en-US";
       u.rate = 0.9;
       const voices = speechSynthesis.getVoices();
-      const v = voices.find(v => v.lang && v.lang.startsWith(L === "ar" ? "ar" : "en"));
+      const v = (L==="ar"&&window.MKVoice&&MKVoice.bestVoice("ar",MKVoice.guessGender($("rw-text").textContent))) || voices.find(v => v.lang && v.lang.startsWith(L === "ar" ? "ar" : "en"));
       if (v) { u.voice = v; useTTS = true; }
       u.onend = () => finishReading();
       if (useTTS) speechSynthesis.speak(u);

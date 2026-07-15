@@ -1,3 +1,4 @@
+/* mkvoice-loader */(function(){try{var cs=document.currentScript,src=(cs&&cs.src)||"";var m=src.match(/^(.*\/corners\/)/);var base=m?m[1]:"";if(base&&!window.MKVoice&&!document.querySelector("script[data-mkvoice]")){var s=document.createElement("script");s.src=base+"shared/voice-engine.js";s.setAttribute("data-mkvoice","1");document.head.appendChild(s);}}catch(e){}})();
 /* ════ مُحَرِّكُ الرِّحلات — generic journey engine (Faith Minaret) ════
    Reads window.RIHLA_CFG = { stations, prefix, confetti, T:{...labels} }
    Same station schema as aman-stations.js, with `card` replacing
@@ -428,13 +429,13 @@
   function label(on){ return on ? ('⏸ '+(L()==='ar'?'إيقاف':'Stop')) : ('🔊 '+(L()==='ar'?'استمِع':'Listen')); }
   function reset(){ document.querySelectorAll('#rBody .mk-listen').forEach(function(b){ b.innerHTML=label(false); }); activeBtn=null; }
   function stop(){ try{ synth.cancel(); }catch(e){} reset(); }
-  function pickVoice(){ var p=L()==='ar'?'ar':'en'; var vs=(synth.getVoices()||[]).filter(function(v){return v.lang&&v.lang.toLowerCase().indexOf(p)===0;}); return vs[0]||null; }
+  function pickVoice(){ var p=L()==='ar'?'ar':'en'; var vs=(synth.getVoices()||[]).filter(function(v){return v.lang&&v.lang.toLowerCase().indexOf(p)===0;}); return (window.MKVoice&&MKVoice.bestVoice(p))||vs[0]||null; }
   function speak(button, text){
     if(activeBtn===button){ stop(); return; }   // click the playing button = stop
     stop();                                      // stop any other block first
     if(!text) return;
     var u=new SpeechSynthesisUtterance(text); u.lang=L()==='ar'?'ar-SA':'en-US'; u.rate=.95;
-    var v=pickVoice(); if(v) u.voice=v;
+    if(window.MKVoice){ MKVoice.applyGender(u, text, L()==='ar'?'ar':'en', window.MK_VOICE_GENDER); } else { var v=pickVoice(); if(v) u.voice=v; }
     u.onend=function(){ reset(); }; u.onerror=function(){ reset(); };
     synth.speak(u); activeBtn=button; button.innerHTML=label(true);
   }
