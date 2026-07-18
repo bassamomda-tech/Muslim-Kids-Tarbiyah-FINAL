@@ -14,6 +14,13 @@ function esc(s){ return String(s).replace(/</g,'&lt;'); }
 var doneMap  = jget(K.done,{});
 var photoMap = jget(K.photos,{});
 var curAct = null;
+var curFilter = 'all';
+/* riddle difficulty levels (فوازير وذكاء) */
+var WS_LVL = {
+  1:{ic:'🟢',ar:'سهل',en:'Easy',c:'#7BAA46'},
+  2:{ic:'🟡',ar:'متوسط',en:'Medium',c:'#C9A961'},
+  3:{ic:'🔴',ar:'صعب',en:'Hard',c:'#D9713C'}
+};
 
 /* ── week number (for weekly mission) ── */
 function weekIndex(){
@@ -84,12 +91,32 @@ function renderActs(){
     if(!list.length) return '';
     var n = list.filter(function(a){return !!doneMap[a.id];}).length;
     var badge = catDone(cat.id) ? cat.stamp+' '+LT('اكتمل','Complete') : (n+' / '+list.length);
-    return '<div class="sec-t" data-screen-label="'+esc(cat.ar)+'"><span class="l">'+cat.ic+'</span>'+esc(L(cat))+
+    return '<section class="ws-cat" data-cat="'+cat.id+'">'+
+      '<div class="sec-t" data-screen-label="'+esc(cat.ar)+'"><span class="l">'+cat.ic+'</span>'+esc(L(cat))+
       '<span class="sec-badge">'+badge+'</span></div>'+
-      '<div class="acts">'+list.map(actCard).join('')+'</div>';
+      '<div class="acts">'+list.map(actCard).join('')+'</div></section>';
   }).join('');
   wrap.querySelectorAll('.act').forEach(function(el){
     el.onclick = function(){ openAct(el.dataset.id); };
+  });
+  applyFilter();
+}
+
+/* ── category filter tabs ── */
+function renderFilters(){
+  var bar = document.getElementById('wsFilters');
+  if(!bar) return;
+  var chips = [{id:'all',ic:'🌟',ar:'الكل',en:'All'}].concat(WS.cats);
+  bar.innerHTML = chips.map(function(c){
+    return '<button class="fchip'+(c.id===curFilter?' active':'')+'" data-cat="'+c.id+'">'+c.ic+' '+esc(L(c))+'</button>';
+  }).join('');
+  bar.querySelectorAll('.fchip').forEach(function(b){
+    b.onclick = function(){ curFilter=b.dataset.cat; renderFilters(); applyFilter(); };
+  });
+}
+function applyFilter(){
+  document.querySelectorAll('#acts .ws-cat').forEach(function(s){
+    s.style.display = (curFilter==='all' || s.dataset.cat===curFilter) ? '' : 'none';
   });
 }
 
@@ -142,9 +169,21 @@ function openAct(id){
       '<div class="r-age"><span class="a-lbl">🦅 '+LT('للكبار ٩+','Ages 9+')+'</span>'+esc(L(a.big))+'</div>'+
     '</div>'+
     (a.wisdom?'<div class="r-wisdom">'+esc(L(a.wisdom))+'</div>':'')+
+    (a.riddles?('<div class="r-h3">🧩 '+LT('الفوازير — فكِّرْ ثم اكشفِ الجواب','The Riddles — think, then reveal')+'</div><div class="r-riddles">'+a.riddles.map(function(r,i){var lv=WS_LVL[r.lvl||1];return '<div class="r-riddle"><div class="rid-q"><span class="rid-n">'+(i+1)+'</span><p>'+esc(L(r.q))+(lv?'<span class="rid-lvl" style="--lc:'+lv.c+'">'+lv.ic+' '+LT(lv.ar,lv.en)+'</span>':'')+'</p></div><button class="rid-reveal" type="button">🔍 '+LT('اكشفِ الجواب','Reveal answer')+'</button><div class="rid-a" style="display:none">✅ '+esc(L(r.a))+'</div></div>';}).join('')+'</div>'):'')+
     (photo?'<img class="r-myphoto" id="rMyPhoto" src="'+photo+'" alt="">':'<img class="r-myphoto" id="rMyPhoto" style="display:none" alt="">');
 
   updateReaderBtns();
+  body.querySelectorAll('.rid-reveal').forEach(function(btn){
+    btn.onclick = function(){
+      var box = btn.parentNode.querySelector('.rid-a');
+      var hidden = box.style.display==='none';
+      box.style.display = hidden?'block':'none';
+      btn.innerHTML = (hidden?'🙈 '+LT('إخفاء الجواب','Hide answer'):'🔍 '+LT('اكشفِ الجواب','Reveal answer'));
+    };
+  });
+  /* push a history entry so the device/browser BACK button closes the
+     activity and returns to the list, instead of leaving the workshop. */
+  try{ history.pushState({wsReader:1}, ''); }catch(e){}
   var rd = document.getElementById('reader');
   rd.classList.add('open');
   rd.querySelector('.sheet').scrollTop = 0;
@@ -159,11 +198,17 @@ function updateReaderBtns(){
   db.innerHTML = done ? '🏵️ '+LT('أُنجز! (اضغطْ للتراجع)','Done! (tap to undo)') : '✅ '+LT('أنجزتُ النشاط!','I finished it!');
   db.classList.toggle('is-done', done);
 }
-function closeReader(){
+function closeReader(fromPop){
   document.getElementById('reader').classList.remove('open');
   document.body.style.overflow = '';
   curAct = null;
+  /* if closed by tapping ✕/backdrop/Esc, consume the history entry we pushed */
+  if(!fromPop){ try{ if(history.state && history.state.wsReader) history.back(); }catch(e){} }
 }
+window.addEventListener('popstate', function(){
+  var rd = document.getElementById('reader');
+  if(rd && rd.classList.contains('open')) closeReader(true);   // BACK button closes the activity
+});
 
 /* ── done + stamp splash ── */
 function toggleDone(){
@@ -262,7 +307,7 @@ document.getElementById('reader').addEventListener('click', function(e){ if(e.ta
 document.getElementById('rDoneBtn').onclick = toggleDone;
 document.addEventListener('keydown', function(e){ if(e.key==='Escape') closeReader(); });
 
-function refreshAll(){ renderWeekly(); renderMeter(); renderActs(); renderJournal(); }
+function refreshAll(){ renderWeekly(); renderMeter(); renderFilters(); renderActs(); renderJournal(); }
 document.querySelectorAll('.lang button').forEach(function(b){
   b.classList.toggle('active', b.dataset.lang===lang());
 });

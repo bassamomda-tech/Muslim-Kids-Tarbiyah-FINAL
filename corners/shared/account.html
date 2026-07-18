@@ -83,6 +83,7 @@
 <script src="https://www.gstatic.com/firebasejs/10.12.5/firebase-firestore-compat.js"></script>
 <script src="firebase-config.js"></script>
 <script defer src="mk-system.js"></script>
+<script defer src="mk-cloud.js"></script>
 <script>
   var lang=(window.MK&&MK.lang&&MK.lang())||localStorage.getItem('bunyanLang')||'ar';
   var AVIS=['🧑','🧔','🧕','👩','👨','👵','👴'];
@@ -171,7 +172,11 @@
       });
       var addK=document.getElementById('addKid');
       if(addK) addK.onclick=function(){ if(window.MK)MK.snapshotActive&&MK.snapshotActive(); location.href='login.html?lang='+lang; };
-      document.getElementById('logoutBtn').onclick=function(){ if(auth){ auth.signOut(); } };
+      document.getElementById('logoutBtn').onclick=function(){
+        /* push a final cloud backup of kids + progress BEFORE signing out */
+        var out=false; var go=function(){ if(out) return; out=true; if(auth) auth.signOut(); };
+        if(window.MKCloud&&MKCloud.saveNow){ MKCloud.saveNow().then(go,go); setTimeout(go,2500); } else go();
+      };
       return;
     }
 
@@ -244,6 +249,8 @@
 
   applyLang();
   initFirebase();
+  /* when mk-cloud restores the family's children from the cloud, show them */
+  window.addEventListener('mk-cloud-restored', function(){ render(); });
 </script>
 <script defer src="nav-fix.js"></script>
 <script src="mk-citynav.js"></script>

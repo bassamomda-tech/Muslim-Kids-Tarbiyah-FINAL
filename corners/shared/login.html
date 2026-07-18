@@ -115,6 +115,12 @@
 <script defer src="mk-system.js"></script>
 <script defer src="mk-journeys.js"></script>
 <script defer src="mk-bag.js"></script>
+<!-- ☁️ cloud restore: if the parent is signed in, missing children come back automatically -->
+<script defer src="https://www.gstatic.com/firebasejs/10.12.5/firebase-app-compat.js"></script>
+<script defer src="https://www.gstatic.com/firebasejs/10.12.5/firebase-auth-compat.js"></script>
+<script defer src="https://www.gstatic.com/firebasejs/10.12.5/firebase-firestore-compat.js"></script>
+<script defer src="firebase-config.js"></script>
+<script defer src="mk-cloud.js"></script>
 <script>
   var AVIS = ['🧒','👦','👧','🧕','👶','🦁','🐯','🦊','🐼','🦉','🐨','🦄','🐢','🦋','⭐','🌙','🚀','🌷'];
   var COLS = ['#D4A017','#C0392B','#117A8B','#2E8B57','#6C3483','#E67E22','#2980B9','#1A9B7B','#D81B60','#5D4037'];
@@ -221,6 +227,8 @@
   function escapeHtml(s){ return String(s).replace(/[&<>"]/g, function(c){ return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]; }); }
 
   (function boot(){ if(!window.MK){ return setTimeout(boot, 30); } applyLang(); })();
+  /* children restored from the family cloud account → refresh the grid */
+  window.addEventListener('mk-cloud-restored', function(){ if(window.MK) render(); });
 </script>
 <script defer src="nav-fix.js"></script>
 </body>

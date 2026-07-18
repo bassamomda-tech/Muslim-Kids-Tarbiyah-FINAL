@@ -47,9 +47,31 @@
     var snap = {}; try { snap = JSON.parse(localStorage.getItem('mk:cornerCard') || '{}'); } catch (e) {}
     if (window.MK && window.MK.CORNERS) {
       MK.CORNERS.forEach(function (c) {
-        // Prefer the corner CARD snapshot (single source of truth = mk-corner-score / district card)
         var cs = snap[c.id];
-        if (cs && cs.station) {
+        // Live station tracking — the truth whenever this page can compute it
+        var live = null;
+        if (window.MK_J) {
+          var st = MK_J.cornerStats(c.id);
+          var done = 0, total = 0, jDone = 0, jCount = 0;
+          if (st && st.total > 0) { done = st.done; total = st.total; jDone = st.journeysDone; jCount = st.count; }
+          var eras = ERA_MAP[c.id];
+          if (eras) {
+            eras.forEach(function (e) {
+              var d = eraSolved(e), t = eraTotal(e);
+              if (t) { done += d; total += t; if (d >= t) jDone++; jCount++; }
+              else if (d) { done += d; total += d; }
+            });
+          }
+          if (total > 0) {
+            var FIXED = { academy: 72, aqeeda: 130 };
+            if (FIXED[c.id]) { var fp = total ? done / total : 0; total = FIXED[c.id]; done = Math.round(fp * total); jCount = jCount || 5; }
+            live = { done: done, total: total, jDone: jDone, jCount: jCount };
+          }
+        }
+        // Prefer the corner CARD snapshot (single source of truth), EXCEPT when
+        // live progress is ahead of it — new progress must show in the bag
+        // immediately, not only after re-visiting the corner page.
+        if (cs && cs.station && !(live && live.done > cs.station[0])) {
           var sd = cs.station[0], stt = cs.station[1];
           badges += (cs.medal ? cs.medal[0] : sd);
           totalStations += stt;
@@ -59,24 +81,9 @@
           perCorner.push({ id: c.id, icon: c.icon, name: c.name, color: c.color, done: sd, total: stt, pct: cs.pct != null ? cs.pct : (stt ? Math.round(sd / stt * 100) : 0) });
           return;
         }
-        // Fallback: live station tracking when no snapshot yet
-        if (!window.MK_J) return;
-        var st = MK_J.cornerStats(c.id);
-        var done = 0, total = 0, jDone = 0, jCount = 0;
-        if (st && st.total > 0) { done = st.done; total = st.total; jDone = st.journeysDone; jCount = st.count; }
-        var eras = ERA_MAP[c.id];
-        if (eras) {
-          eras.forEach(function (e) {
-            var d = eraSolved(e), t = eraTotal(e);
-            if (t) { done += d; total += t; if (d >= t) jDone++; jCount++; }
-            else if (d) { done += d; total += d; }
-          });
-        }
-        if (total === 0) return;
-        var FIXED = { academy: 72, aqeeda: 130 };
-        if (FIXED[c.id]) { var fp = total ? done / total : 0; total = FIXED[c.id]; done = Math.round(fp * total); jCount = jCount || 5; }
-        badges += done; totalStations += total; stationPts += done * 10; journeysDone += jDone; certs += jCount;
-        perCorner.push({ id: c.id, icon: c.icon, name: c.name, color: c.color, done: done, total: total, pct: total ? Math.round(done / total * 100) : 0 });
+        if (!live) return;
+        badges += live.done; totalStations += live.total; stationPts += live.done * 10; journeysDone += live.jDone; certs += live.jCount;
+        perCorner.push({ id: c.id, icon: c.icon, name: c.name, color: c.color, done: live.done, total: live.total, pct: live.total ? Math.round(live.done / live.total * 100) : 0 });
       });
     }
     var pts = stationPts + (prof ? bpsPoints(prof.id) : 0);

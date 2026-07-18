@@ -137,6 +137,7 @@
     $('#resultView').classList.remove('show');
     $('#exam').classList.add('show');
     document.body.style.overflow = 'hidden';
+    pushView();
     renderQ();
   }
 
@@ -356,6 +357,7 @@
     $('#studyView').classList.add('show');
     document.body.style.overflow = 'hidden';
     document.body.classList.remove('hide-answers');
+    pushView();
     studySec = 'all';
     renderStudy();
     window.scrollTo(0, 0);
@@ -411,12 +413,79 @@
     return h;
   }
 
+  /* ─────────── WHO AM I? ─────────── */
+  function launchWhoAmI() {
+    var pool = BANK.questions.filter(function (q) { return q.topic === 'whoami'; });
+    if (!pool.length) { toast(lang() === 'en' ? 'No characters yet' : 'لا شخصياتَ بعد'); return; }
+    launch(shuffle(pool).slice(0, Math.min(12, pool.length)), { timer: false, shuffle: true });
+  }
+
+  /* ─────────── DID YOU KNOW? ─────────── */
+  var DYK_CATS = [
+    { id: 'all',     ic: '🌟', ar: 'الكل',              en: 'All' },
+    { id: 'quran',   ic: '🕋', ar: 'معجزاتٌ وآيات',   en: 'Miracles & Signs' },
+    { id: 'kawn',    ic: '🌌', ar: 'الكونُ والفلك',   en: 'Universe & Space' },
+    { id: 'hayawan', ic: '🐾', ar: 'عجائبُ الحيوان', en: 'Amazing Animals' },
+    { id: 'jism',    ic: '🧠', ar: 'جسمُ الإنسان',   en: 'The Human Body' },
+    { id: 'amal',    ic: '🤲', ar: 'فضائلُ الأعمال', en: 'Virtues of Deeds' },
+  ];
+  var FACTS = window.DYK || [];
+  var dyk = { cat: 'all', list: [], i: 0 };
+  function dykPool() { return dyk.cat === 'all' ? FACTS.slice() : FACTS.filter(function (f) { return f.cat === dyk.cat; }); }
+  function openDYK() {
+    if (!FACTS.length) { toast(lang() === 'en' ? 'No facts yet' : 'لا معلوماتَ بعد'); return; }
+    $('#homeView').style.display = 'none';
+    $('#dykView').classList.add('show');
+    document.body.style.overflow = 'hidden';
+    pushView();
+    dyk.cat = 'all'; dyk.list = shuffle(dykPool()); dyk.i = 0;
+    renderDYKFilters(); renderDYK();
+    window.scrollTo(0, 0);
+  }
+  function renderDYKFilters() {
+    var bar = $('#dykFilters'); bar.innerHTML = '';
+    DYK_CATS.forEach(function (c) {
+      var n = c.id === 'all' ? FACTS.length : FACTS.filter(function (f) { return f.cat === c.id; }).length;
+      var b = document.createElement('button');
+      b.className = 'dyk-fchip' + (dyk.cat === c.id ? ' active' : '');
+      b.innerHTML = c.ic + ' ' + L(c) + ' <span style="opacity:.6">' + toArNum(n) + '</span>';
+      b.onclick = function () { dyk.cat = c.id; dyk.list = shuffle(dykPool()); dyk.i = 0; renderDYKFilters(); renderDYK(); };
+      bar.appendChild(b);
+    });
+  }
+  function renderDYK() {
+    var f = dyk.list[dyk.i]; if (!f) return;
+    var cat = DYK_CATS.filter(function (c) { return c.id === f.cat; })[0] || { ic: '💡', ar: '', en: '' };
+    $('#dykStage').innerHTML =
+      '<div class="dyk-card" key="' + dyk.i + '">' +
+        '<div class="dyk-ic">' + (f.ic || '💡') + '</div>' +
+        '<div class="dyk-badge">' + cat.ic + ' ' + L(cat) + '</div>' +
+        '<div class="dyk-text">' + (lang() === 'en' ? f.en : f.ar) + '</div>' +
+      '</div>';
+    $('#dykCount').textContent = toArNum(dyk.i + 1) + ' / ' + toArNum(dyk.list.length);
+  }
+  function dykStep(d) {
+    if (!dyk.list.length) return;
+    dyk.i = (dyk.i + d + dyk.list.length) % dyk.list.length;
+    renderDYK(); $('#dykStage').scrollIntoView ? null : null; $('#dykView').scrollTop = 0;
+  }
+
   /* ─────────── nav ─────────── */
-  function goHome() {
+  /* Any in-page mode (exam / builder / study / did-you-know / result) pushes a
+     history entry, so the device/browser BACK button returns to the Arena home
+     instead of leaving the corner to the city. */
+  var viewOpen = false;
+  function pushView() { if (!viewOpen) { viewOpen = true; try { history.pushState({ compView: 1 }, ''); } catch (e) {} } }
+  window.addEventListener('popstate', function () { if (viewOpen) { viewOpen = false; goHomeInternal(); } });
+
+  function goHome() { if (viewOpen) { history.back(); } else goHomeInternal(); }   // back button consumes the pushed entry
+  function goHomeInternal() {
     clearTick();
+    viewOpen = false;
     $('#exam').classList.remove('show');
     $('#resultView').classList.remove('show');
     $('#studyView').classList.remove('show');
+    $('#dykView').classList.remove('show');
     $('#builderView').style.display = 'none';
     document.body.classList.remove('hide-answers');
     $('#homeView').style.display = '';
@@ -467,6 +536,7 @@
         $$('.lang button').forEach(function (x) { x.classList.toggle('active', x === b); });
         syncBuilder(); renderLeaderboard();
         if ($('#studyView').classList.contains('show')) renderStudy();
+        if ($('#dykView').classList.contains('show')) { renderDYKFilters(); renderDYK(); }
       };
       b.classList.toggle('active', (b.dataset.lang === lang()));
     });
@@ -485,9 +555,16 @@
     $('#buildMode').onclick = function () {
       $('#homeView').style.display = 'none';
       $('#builderView').style.display = '';
+      pushView();
       syncBuilder(); window.scrollTo(0, 0);
     };
     $('#studyMode').onclick = openStudy;
+    $('#whoamiMode').onclick = launchWhoAmI;
+    $('#dykMode').onclick = openDYK;
+    $('#dykHome').onclick = goHome;
+    $('#dykPrev').onclick = function () { dykStep(-1); };
+    $('#dykNext').onclick = function () { dykStep(1); };
+    $('#dykShuffle').onclick = function () { dyk.list = shuffle(dykPool()); dyk.i = 0; renderDYK(); toast(lang() === 'en' ? '🔀 Shuffled' : '🔀 خُلِطَت'); };
     $('#studyHome').onclick = goHome;
     $('#studyToggle').onclick = function () {
       document.body.classList.toggle('hide-answers');

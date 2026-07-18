@@ -123,6 +123,17 @@ a{color:var(--gold-soft)} a:hover{color:var(--gold)}
 .r-age{background:rgba(255,255,255,.05);border:1px solid var(--line);border-radius:1rem;padding:.7rem .85rem;font-size:.86rem;line-height:1.7}
 .r-age .a-lbl{display:block;font-weight:900;color:var(--gold-soft);font-size:.78rem;margin-bottom:.2rem}
 .r-wisdom{margin-top:1.3rem;text-align:center;background:rgba(0,0,0,.25);border:1.5px solid var(--line);border-radius:1.1rem;padding:.9rem 1rem;font-weight:800;font-size:.95rem;line-height:1.9;color:var(--gold-soft)}
+/* ── interactive riddles ── */
+.r-riddles{display:flex;flex-direction:column;gap:.7rem}
+.r-riddle{background:rgba(255,255,255,.05);border:1.5px solid var(--line);border-radius:1.1rem;padding:.85rem .95rem}
+.rid-q{display:flex;gap:.7rem;align-items:flex-start}
+.rid-n{flex:0 0 auto;width:30px;height:30px;border-radius:50%;background:var(--primary);color:#fff;display:grid;place-items:center;font-weight:900;font-size:.9rem}
+.rid-q p{margin:0;font-size:.96rem;line-height:1.7;font-weight:700}
+.rid-lvl{display:inline-block;margin-inline-start:.5rem;font-size:.68rem;font-weight:900;color:var(--lc);background:color-mix(in srgb,var(--lc) 18%,transparent);border:1px solid var(--lc);border-radius:2rem;padding:.06rem .5rem;vertical-align:middle;white-space:nowrap}
+.rid-reveal{margin-top:.65rem;width:100%;background:rgba(168,194,86,.14);border:1.5px solid var(--line);color:var(--gold-soft);border-radius:.8rem;padding:.55rem;font-weight:800;font-size:.88rem;cursor:pointer;font-family:inherit;transition:background .18s}
+.rid-reveal:hover{background:rgba(168,194,86,.24)}
+.rid-a{margin-top:.55rem;background:linear-gradient(135deg,rgba(168,194,86,.2),rgba(94,140,49,.1));border:1.5px solid var(--gold);border-radius:.8rem;padding:.6rem .8rem;font-weight:800;font-size:.95rem;line-height:1.7;color:var(--text);animation:ridIn .25s ease}
+@keyframes ridIn{from{opacity:0;transform:translateY(-4px)}to{opacity:1;transform:none}}
 .r-acts{position:sticky;bottom:0;display:flex;gap:.6rem;margin:1.4rem -1.3rem -5.5rem;padding:.9rem 1.3rem calc(.9rem + env(safe-area-inset-bottom));background:linear-gradient(0deg,#0C2313 65%,transparent)}
 .r-btn{flex:1;display:inline-flex;align-items:center;justify-content:center;gap:.45rem;border:none;border-radius:2rem;padding:.85rem;font-weight:900;font-size:.98rem;cursor:pointer;font-family:inherit;transition:transform .15s}
 .r-btn:hover{transform:translateY(-1px)}
@@ -173,7 +184,7 @@ a{color:var(--gold-soft)} a:hover{color:var(--gold)}
   </div>
   <div class="guide">
     <div class="who">🧕</div>
-    <div class="say"><span class="lng-ar"><b>المربية:</b> أنجِزِ النشاطَ، صوِّرْ عملَك، واجمعِ الأختامَ الثمانية!</span><span class="lng-en"><b>Al-Murabbiyah:</b> Finish an activity, snap your work, and collect all eight stamps!</span></div>
+    <div class="say"><span class="lng-ar"><b>المربية:</b> أنجِزِ النشاطَ، صوِّرْ عملَك، واجمعِ الأختامَ كلَّها!</span><span class="lng-en"><b>Al-Murabbiyah:</b> Finish an activity, snap your work, and collect all the stamps!</span></div>
   </div>
 </section>
 
@@ -190,6 +201,9 @@ a{color:var(--gold-soft)} a:hover{color:var(--gold)}
   <div class="meter-label" id="meterLabel"></div>
 </div>
 <div class="stamps" id="stamps"></div>
+
+<!-- ═══ CATEGORY FILTER TABS ═══ -->
+<div class="filters" id="wsFilters"></div>
 
 <!-- ═══ ACTIVITIES (grouped by category) ═══ -->
 <div id="acts"></div>

@@ -26,6 +26,7 @@ window.COMP_BANK = {
     { id: 'akhlaq', icon: '💚', color: '#1F8A5B', book: { ar: 'قسم الأخلاق', en: 'Ethics' }, name: { ar: 'الأخلاق', en: 'Ethics' } },
     { id: 'adhkar', icon: '📿', color: '#0E7C86', book: { ar: 'قسم الأدعية والأذكار', en: 'Supplications' }, name: { ar: 'الأدعية والأذكار', en: 'Supplications' } },
     { id: 'munawaat', icon: '🌟', color: '#B7791F', book: { ar: 'قسم المنوعات', en: 'Miscellany' }, name: { ar: 'المنوعات', en: 'Miscellany' } },
+    { id: 'puzzles', icon: '🧩', color: '#7A3FB0', book: { ar: 'فوازير وذكاء', en: 'Riddles & Brain' }, name: { ar: 'فوازير وذكاء', en: 'Riddles & Brain' } },
   ],
 
   /* ─────────── الأسئلة ─────────── */
