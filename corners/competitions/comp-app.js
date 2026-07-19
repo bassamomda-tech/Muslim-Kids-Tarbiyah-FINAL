@@ -343,6 +343,24 @@
     var d = new Date();
     $('#certDate').textContent = (lang() === 'en' ? 'Date: ' : 'التاريخ: ') + toArNum(d.getFullYear()) + '/' + toArNum(d.getMonth() + 1) + '/' + toArNum(d.getDate());
     $('#certModal').classList.add('show');
+    saveAward(pct, stars);
+    toast(lang() === 'en' ? '🎒 Saved to your bag!' : '🎒 حُفِظت في حقيبتك!');
+  }
+
+  /* Persist the earned certificate into the child's bag (plain key → auto per-child).
+     Keeps a single "best" competition award, upgrading it when a better score comes. */
+  function saveAward(pct, stars) {
+    try {
+      var list = JSON.parse(localStorage.getItem('comp_awards') || '[]');
+      if (!Array.isArray(list)) list = [];
+      var a = list[0];
+      if (a) {
+        if (pct > a.pct || (pct === a.pct && stars > a.stars)) { a.pct = pct; a.stars = stars; a.at = Date.now(); }
+      } else {
+        list.push({ kind: 'competition', pct: pct, stars: stars, at: Date.now() });
+      }
+      localStorage.setItem('comp_awards', JSON.stringify(list));
+    } catch (e) {}
   }
 
   /* ─────────── STUDY / BROWSE ─────────── */
