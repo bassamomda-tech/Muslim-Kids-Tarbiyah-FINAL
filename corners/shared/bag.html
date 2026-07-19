@@ -215,6 +215,8 @@
   }
 
   function earned(){ return (window.MK_JOURNEYS||[]).map(function(j){ return Object.assign({},j,{done:MK_J.completedOf(j)}); }).filter(function(j){ return j.done>0; }); }
+  /* competition certificates saved from ساحة المسابقات (plain key → active child's) */
+  function compAwards(){ try{ var l=JSON.parse(localStorage.getItem('comp_awards')||'[]'); return Array.isArray(l)?l:[]; }catch(e){ return []; } }
 
   function applyLang(){
     document.documentElement.lang=lang; document.documentElement.dir=lang==='ar'?'rtl':'ltr';
@@ -239,10 +241,10 @@
       document.getElementById('bagName').textContent=ar?'ضيف':'Guest';
     }
     document.getElementById('ptsN').textContent=d.points;
-    // Certificates stat must equal the actual downloadable certificate cards below.
-    var es=earned();
+    // Certificates stat must equal the actual certificate cards below.
+    var es=earned(), ca=compAwards();
     document.getElementById('stBadges').textContent=d.badges;
-    document.getElementById('stCerts').textContent=es.length;
+    document.getElementById('stCerts').textContent=es.length+ca.length;
     document.getElementById('stJourneys').textContent=d.journeysDone;
     document.getElementById('stRewards').textContent=d.rewards.length;
 
@@ -255,17 +257,26 @@
         }).join('')
       : '<div class="empty">'+(ar?'لم تبدأ أيّ ركنٍ بعد — اختر ركناً من المدينة وابدأ رحلتك! 🗺️':'No corner started yet — pick a corner from the city and begin! 🗺️')+'</div>';
 
-    // certificates
-    document.getElementById('certCount').textContent = ar?(es.length+' شهادة'):(es.length+' certificates');
-    document.getElementById('certGrid').innerHTML = es.length
-      ? '<div class="grid">'+es.map(function(j){
+    // certificates (corner journeys + competition awards)
+    var totalCerts=es.length+ca.length;
+    document.getElementById('certCount').textContent = ar?(totalCerts+' شهادة'):(totalCerts+' certificates');
+    var journeyCards=es.map(function(j){
           var full=j.done>=j.total;
           return '<div class="card"><div class="c-ic">'+j.icon+'</div>'
             +'<div class="c-t">'+txo(j.name)+'</div>'
             +'<div class="c-s">'+txo(CN(j.corner))+' · '+j.done+'/'+j.total+(full?(ar?' · مكتملة 🎉':' · complete 🎉'):'')+'</div>'
             +'<button class="btn" onclick=\'openCert("'+j.id+'")\'>'+(ar?'🏅 عرض الشهادة':'🏅 View certificate')+'</button></div>';
-        }).join('')+'</div>'
-      : '<div class="empty">'+(ar?'لا توجد شهادات بعد — أكمِل محطات في أي ركن لتظهر هنا. ✨':'No certificates yet — complete stations in any corner and they\'ll appear here. ✨')+'</div>';
+        });
+    var compCards=ca.map(function(a){
+          return '<div class="card"><div class="c-ic">🏆</div>'
+            +'<div class="c-t">'+(ar?'شهادة تميّز — المسابقات':'Excellence — Competitions')+'</div>'
+            +'<div class="c-s">'+(ar?('أفضل نتيجة: '+a.pct+'٪ '+'★'.repeat(a.stars)):('Best score: '+a.pct+'% '+'★'.repeat(a.stars)))+'</div>'
+            +'<button class="btn" onclick="openCompCert('+a.pct+','+a.stars+')">'+(ar?'🏅 عرض الشهادة':'🏅 View certificate')+'</button></div>';
+        });
+    var allCards=journeyCards.concat(compCards);
+    document.getElementById('certGrid').innerHTML = allCards.length
+      ? '<div class="grid">'+allCards.join('')+'</div>'
+      : '<div class="empty">'+(ar?'لا توجد شهادات بعد — أكمِل محطات في أي ركن أو تميّز في ساحة المسابقات لتظهر هنا. ✨':'No certificates yet — complete stations in any corner or excel in the Competitions Arena and they\'ll appear here. ✨')+'</div>';
 
     // rewards
     document.getElementById('rewCount').textContent = ar?(d.rewards.length+' جائزة'):(d.rewards.length+' rewards');
@@ -293,6 +304,21 @@
       +'<div class="name">'+nm+'</div>'
       +'<div class="state">'+stmt+'</div>'
       +'<div class="foot">'+done+' 🎖️ · '+txo(j.name)+'</div></div>';
+    document.getElementById('printOv').classList.add('open');
+  }
+  function openCompCert(pct,stars){
+    var ar=lang==='ar';
+    var nm=(MK.activeProfile()?MK.activeProfile().name:'')||localStorage.getItem('parentChildName')||(ar?'اسم الطفل':'Child Name');
+    var stmt = ar
+      ? 'قد تميَّزَ في <b>ساحةِ المسابقات</b>، وحصلَ على <b>'+pct+'٪</b> '+'★'.repeat(stars)+'. باركَ اللهُ في علمِه، ورفعَ قدرَه. 🤲'
+      : 'excelled in the <b>Competitions Arena</b>, scoring <b>'+pct+'%</b> '+'★'.repeat(stars)+'. May Allah bless his knowledge and raise his rank. 🤲';
+    document.getElementById('printPaper').innerHTML =
+      '<div class="cert"><div class="seal">🏆</div>'
+      +'<div class="kick">'+(ar?'تربية الطفل المسلم · حقيبتي':'Muslim Kids’ Tarbiyah · My Bag')+'</div>'
+      +'<div class="title">'+(ar?'شهادة تميّز':'Certificate of Excellence')+'</div>'
+      +'<div class="name">'+nm+'</div>'
+      +'<div class="state">'+stmt+'</div>'
+      +'<div class="foot">🏆 '+(ar?'ساحة المسابقات':'Competitions Arena')+'</div></div>';
     document.getElementById('printOv').classList.add('open');
   }
   function openSummary(){
