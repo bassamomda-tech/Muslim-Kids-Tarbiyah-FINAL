@@ -26,9 +26,29 @@
   if (!auth || !db) return;
 
   var LS = window.localStorage;
-  var user = null, lastSaved = '', adopted = false;
+  var user = null, lastSaved = '', adopted = false, ready = false, reloading = false;
 
   function jget(k, d) { try { var v = LS.getItem(k); return v == null ? d : JSON.parse(v); } catch (e) { return d; } }
+
+  /* Is this a LIVE per-child progress key (as opposed to a system/device/account
+     key)? Mirrors MK.isSystemKey: everything under mk:* is system EXCEPT
+     mk:cornerCard, which is child data. Account/community/device keys are skipped. */
+  function isChildKey(k) {
+    if (!k || skipKey(k)) return false;
+    if (k === 'mk:cornerCard') return true;
+    if (k === 'bunyanLang' || k.indexOf('mk:') === 0) return false;
+    return true;
+  }
+  /* does the live store currently hold ANY progress for the active child? */
+  function liveHasProgress() {
+    for (var i = 0; i < LS.length; i++) { if (isChildKey(LS.key(i))) return true; }
+    return false;
+  }
+  /* write a saved bucket's keys back into the live store (no wipe) */
+  function hydrateLive(bucket) {
+    if (!bucket) return;
+    Object.keys(bucket).forEach(function (k) { try { LS.setItem(k, bucket[k]); } catch (e) {} });
+  }
 
   /* device/session-only keys — never sent to the cloud */
   function skipKey(k) {
@@ -41,7 +61,9 @@
     try { if (window.MK && MK.snapshotActive) MK.snapshotActive(); } catch (e) {}   // flush live keys into the active child's bucket
     var profiles = jget('mk:profiles', []);
     var sys = { profiles: profiles, active: LS.getItem('mk:active') || '', locks: jget('mk:locks', {}),
-                pin: LS.getItem('mk:parentPin') || '', lang: LS.getItem('bunyanLang') || '' };
+                pin: LS.getItem('mk:parentPin') || '', lang: LS.getItem('bunyanLang') || '',
+                bps: LS.getItem('mk:bps') || '',     // behaviour points (shared, keyed by child) — back these up too
+                dataAt: jget('mk:dataAt', {}) };     // per-child save timestamps — lets the newest device win
     var buckets = {};
     profiles.forEach(function (p) {
       if (!p || !p.id) return;
@@ -62,7 +84,11 @@
   }
 
   function saveNow() {
-    if (!user) return Promise.resolve(false);
+    /* Never write to the cloud until we've fetched & merged the cloud copy for
+       this session. Otherwise an early timer / tab-hide / navigation would
+       overwrite the good backup with this device's not-yet-restored (empty)
+       state — which is exactly what made progress "reload as zero". */
+    if (!user || !ready || reloading) return Promise.resolve(false);
     var data;
     try { data = buildData(); } catch (e) { return Promise.resolve(false); }
     var s = JSON.stringify(data);
@@ -82,41 +108,97 @@
     try { LS.setItem('mk:active', id); } catch (e) {}
   }
 
-  /* merge the cloud copy into this device: re-add missing children (with
-     their full progress). Local data always wins for children that already
-     exist here — the device copy is the freshest. */
+  /* clear the live store of the active child's progress keys (system/device/account keys kept) */
+  function clearLiveChild() {
+    var doomed = [];
+    for (var i = 0; i < LS.length; i++) { var k = LS.key(i); if (isChildKey(k)) doomed.push(k); }
+    doomed.forEach(function (k) { try { LS.removeItem(k); } catch (e) {} });
+  }
+
+  /* merge the cloud copy into this device. Children missing here are re-added.
+     For children that already exist, whichever copy is NEWER wins (per-child
+     timestamp) — that's what makes progress follow the child across devices.
+     If the active child's copy changes, the live keys are rehydrated and the
+     page refreshed so every corner reflects it. */
   function adoptCloud(data) {
     var sys = data.sys || {}, buckets = data.buckets || {};
+    var cloudAt = sys.dataAt || {};
+    var localAt = jget('mk:dataAt', {});
     var local = jget('mk:profiles', []);
     var freshDevice = local.length === 0;
     var byId = {}; local.forEach(function (p) { if (p) byId[p.id] = 1; });
-    var added = false;
+    var active = LS.getItem('mk:active');
+    var changed = false, activeChanged = false;
+
     (sys.profiles || []).forEach(function (p) {
-      if (!p || !p.id || byId[p.id]) return;
-      local.push(p); byId[p.id] = 1; added = true;
-      try { LS.setItem('mk:data:' + p.id, JSON.stringify(buckets[p.id] || {})); } catch (e) {}
+      if (!p || !p.id) return;
+      var cloudB = buckets[p.id];
+      var cloudTs = cloudAt[p.id] || 0;
+      if (!byId[p.id]) {
+        // new child for this device — bring them in with their progress
+        local.push(p); byId[p.id] = 1; changed = true;
+        try { LS.setItem('mk:data:' + p.id, JSON.stringify(cloudB || {})); } catch (e) {}
+        localAt[p.id] = cloudTs;
+      } else {
+        // already here — take the cloud copy only if it is strictly newer
+        var localTs = localAt[p.id] || 0;
+        var hasCloud = cloudB && Object.keys(cloudB).length;
+        if (hasCloud && cloudTs > localTs) {
+          try { LS.setItem('mk:data:' + p.id, JSON.stringify(cloudB)); } catch (e) {}
+          localAt[p.id] = cloudTs; changed = true;
+          if (p.id === active) activeChanged = true;
+        }
+      }
     });
-    if (added) { try { LS.setItem('mk:profiles', JSON.stringify(local)); } catch (e) {} }
+    if (changed) {
+      try { LS.setItem('mk:profiles', JSON.stringify(local)); } catch (e) {}
+      try { LS.setItem('mk:dataAt', JSON.stringify(localAt)); } catch (e) {}
+    }
+
+    /* shared system values: adopt only when this device doesn't already have them */
+    if (sys.locks && !LS.getItem('mk:locks'))     { try { LS.setItem('mk:locks', JSON.stringify(sys.locks)); } catch (e) {} }
+    if (sys.pin && !LS.getItem('mk:parentPin'))   { try { LS.setItem('mk:parentPin', sys.pin); } catch (e) {} }
+    if (sys.bps && !LS.getItem('mk:bps'))         { try { LS.setItem('mk:bps', sys.bps); } catch (e) {} }
+    if (sys.lang && !LS.getItem('bunyanLang'))    { try { LS.setItem('bunyanLang', sys.lang); } catch (e) {} }
+
     if (freshDevice && local.length) {
-      if (sys.locks && !LS.getItem('mk:locks')) { try { LS.setItem('mk:locks', JSON.stringify(sys.locks)); } catch (e) {} }
-      if (sys.pin && !LS.getItem('mk:parentPin')) { try { LS.setItem('mk:parentPin', sys.pin); } catch (e) {} }
+      // brand-new / cleared device: load the cloud's active child
       var act = (sys.active && byId[sys.active]) ? sys.active : local[0].id;
       restoreActive(act);
+      try { window.dispatchEvent(new CustomEvent('mk-cloud-restored')); } catch (e) {}
+      return;
     }
-    if (added) { try { window.dispatchEvent(new CustomEvent('mk-cloud-restored')); } catch (e) {} }
-    return added;
+
+    // existing device: refresh live keys when the active child's saved copy
+    // just changed (newer cloud copy), OR when live progress is simply empty
+    // but we now hold a bucket for them (recovers a wiped device).
+    if (active && (activeChanged || !liveHasProgress())) {
+      var b = jget('mk:data:' + active, {});
+      if (b && Object.keys(b).length) {
+        clearLiveChild(); hydrateLive(b);
+        reloading = true;
+        try { window.dispatchEvent(new CustomEvent('mk-cloud-restored')); } catch (e) {}
+        setTimeout(function () { location.reload(); }, 60);
+        return;
+      }
+    }
+    if (changed) { try { window.dispatchEvent(new CustomEvent('mk-cloud-restored')); } catch (e) {} }
   }
 
   auth.onAuthStateChanged(function (u) {
-    user = u || null;
-    if (!user) return;
+    if (!u) { user = null; ready = false; adopted = false; return; }   // signed out: block saves until a fresh sign-in re-adopts
+    user = u;
     db.collection('progress').doc(user.uid).get().then(function (snap) {
-      if (!adopted && snap.exists) {
-        var doc = snap.data();
-        if (doc && doc.data && doc.data.kind === 'mk-family-v1') { adopted = true; adoptCloud(doc.data); }
-      }
+      try {
+        if (!adopted && snap.exists) {
+          var doc = snap.data();
+          if (doc && doc.data && doc.data.kind === 'mk-family-v1') { adopted = true; adoptCloud(doc.data); }
+        }
+      } catch (e) {}
+      if (reloading) return;          // a refresh is about to happen — don't save the interim state
+      ready = true;
       saveNow();
-    }).catch(function () {});
+    }).catch(function () { ready = true; });
   });
 
   setInterval(function () { saveNow(); }, 60000);

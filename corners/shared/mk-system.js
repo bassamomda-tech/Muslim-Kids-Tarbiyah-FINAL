@@ -18,11 +18,16 @@
     pin:      'mk:parentPin',
     locks:    'mk:locks',
     data:     'mk:data:',      // + profileId  → that child's progress bucket
+    dataAt:   'mk:dataAt',     // {profileId: timestamp} → when each bucket was last saved (cross-device newer-wins)
     lang:     'bunyanLang',    // shared UI pref (NOT per child)
   };
 
-  /* keys that belong to the SYSTEM (shared), never snapshotted as child progress */
+  /* keys that belong to the SYSTEM (shared), never snapshotted as child progress.
+     EXCEPTION: mk:cornerCard is the bag's per-corner score snapshot — it is CHILD
+     data, so it must follow the child through snapshot/restore (otherwise one
+     child's bag shows another child's progress). */
   function isSystemKey(k) {
+    if (k === 'mk:cornerCard') return false;
     return k === K.lang || k.indexOf('mk:') === 0;
   }
 
@@ -50,6 +55,9 @@
     { id:'academy', icon:'🔭', color:'#2980B9', name:{ar:'أكاديمية المبدعين', en:"Innovators' Academy"},   base:'corners/heroes-fortress/academy.html' },
     { id:'quds',    icon:'🕌', color:'#2E8B57', name:{ar:'ركن القدس والأمة',  en:'Al-Quds & Ummah'},       base:'corners/little-district/pages/quds.html' },
     { id:'hifz',    icon:'🌱', color:'#1F7A4D', name:{ar:'حُفّاظ القرآن',      en:'Quran Huffaz'},          base:'corners/quran-hifz/index.html' },
+    { id:'stories-little', icon:'📚', color:'#C1663A', name:{ar:'مكتبة القصص للصغار', en:'Little Stories Library'}, base:'corners/stories/little.html' },
+    { id:'workshop', icon:'🧰', color:'#5E8C31', name:{ar:'ورشة الصانع الصغير', en:"Little Maker's Workshop"}, base:'corners/workshop/workshop.html' },
+    { id:'competitions', icon:'🏆', color:'#7A3FB0', name:{ar:'ساحة المسابقات', en:'Competitions Arena'}, base:'corners/competitions/competitions.html' },
   ];
 
   /* ─────────── profiles ─────────── */
@@ -66,6 +74,7 @@
       if (!isSystemKey(k)) bucket[k] = LS.getItem(k);
     }
     jset(K.data + id, bucket);
+    var at = jget(K.dataAt, {}); at[id] = Date.now(); jset(K.dataAt, at);   // stamp so the newest device wins on sync
   }
   /* wipe all non-system keys, then write the profile's bucket back into the live store */
   function restoreFrom(id) {
@@ -189,4 +198,32 @@
     locks: locks, isLocked: isLocked, setLock: setLock,
     lang: lang,
   };
+
+  /* ═══ Cloud backup — turned on for EVERY page automatically ═══
+     mk-system.js loads on every corner/journey page, but the family cloud
+     backup (mk-cloud.js) was only wired into a few pages, so progress earned
+     inside a corner was never uploaded until the child happened to return to
+     the home page. Here we lazy-load the Firebase SDK + config + mk-cloud on
+     any page that doesn't already include them, so backup runs everywhere.
+     Guarded so pages that already load these scripts are untouched. */
+  (function loadCloud() {
+    try {
+      if (window.__mkCloud) return;                                   // already active
+      if (document.querySelector('script[src*="mk-cloud.js"]')) return; // page loads it itself
+      var R = rootPrefix() + 'corners/shared/';
+      var srcs = [
+        'https://www.gstatic.com/firebasejs/10.12.5/firebase-app-compat.js',
+        'https://www.gstatic.com/firebasejs/10.12.5/firebase-auth-compat.js',
+        'https://www.gstatic.com/firebasejs/10.12.5/firebase-firestore-compat.js',
+        R + 'firebase-config.js',
+        R + 'mk-cloud.js'
+      ];
+      srcs.forEach(function (src) {
+        var s = document.createElement('script');
+        s.src = src; s.async = false;        // async=false → run in insertion order
+        s.onerror = function () {};          // offline / blocked: fail silently
+        document.head.appendChild(s);
+      });
+    } catch (e) {}
+  })();
 })();
