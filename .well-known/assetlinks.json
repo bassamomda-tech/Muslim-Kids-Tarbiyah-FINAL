@@ -5,7 +5,8 @@
       "namespace": "android_app",
       "package_name": "uk.tarbiyahkids.twa",
       "sha256_cert_fingerprints": [
-        "PASTE_YOUR_SHA256_FINGERPRINT_FROM_PWABUILDER_HERE"
+        "38:5E:83:62:67:AB:A4:4D:5F:73:B1:9E:B9:EF:D8:15:9F:CF:2D:FE:7B:1F:9F:43:30:12:6B:90:63:F3:8D:C9",
+        "81:08:9E:6C:DB:91:7D:94:79:D3:40:20:EF:E6:20:A7:E0:AE:0B:04:93:15:CB:DA:4F:78:2E:93:55:CE:B4:71"
       ]
     }
   }
