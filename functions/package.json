@@ -2,7 +2,7 @@
   "name": "mkt-functions",
   "description": "Cloud TTS proxy for Muslim Kids' Tarbiyah",
   "engines": {
-    "node": "20"
+    "node": "22"
   },
   "main": "index.js",
   "dependencies": {

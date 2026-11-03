@@ -156,23 +156,54 @@
   function prefetch(text, lang, opt) {
     if (!EP) return;
     lang = (lang || 'ar').toLowerCase().indexOf('ar') === 0 ? 'ar' : 'en';
-    text = String(text || '').trim().slice(0, 800); if (!text) return;
+    text = String(text || '').trim(); if (!text) return; text = chunks(text)[0] || text;
     fetchUrl(text, lang, opt).then(function (u) { try { var a = new Audio(); a.preload = 'auto'; a.src = u; } catch (e) {} }, function () {});
   }
 
+  /* Long passages are read sentence by sentence: the first short piece starts in ~2-3 s and
+     the next piece is prepared while the current one plays (Gemini makes a clip only after it
+     has the whole text, so one long request kept children waiting 10-20 s). */
+  function chunks(text) {
+    var bits = String(text).replace(/\s+/g, ' ').trim().match(/[^.!?؟…:؛]+[.!?؟…:؛]*|[.!?؟…:؛]+/g) || [], out = [], cur = '';
+    function push(x) { x = x.trim(); if (x) out.push(x); }
+    bits.forEach(function (b) {
+      while (b.length > 320) {                                   // very long sentence: cut at a comma or space
+        var cut = Math.max(b.lastIndexOf('،', 300), b.lastIndexOf(',', 300));
+        if (cut < 120) cut = b.lastIndexOf(' ', 300); if (cut < 60) cut = 300;
+        if (cur) { push(cur); cur = ''; } push(b.slice(0, cut + 1)); b = b.slice(cut + 1).trim();
+      }
+      var lim = out.length ? 300 : 140;                           // keep the first piece short = fast start
+      if (cur && (cur + ' ' + b).length > lim) { push(cur); cur = b; } else cur = cur ? cur + ' ' + b : b;
+    });
+    push(cur);
+    return out;
+  }
+  function playOne(url, my) {
+    return new Promise(function (res, rej) {
+      if (my !== gen) return;
+      audio = new Audio(url);
+      audio.onended = function () { res(true); };
+      audio.onerror = function () { rej(new Error('audio error')); };
+      audio.play().catch(rej);
+    });
+  }
   function playClip(text, lang, opt, my) {
     if (!EP) return Promise.reject(new Error('no endpoint'));
-    text = String(text || '').trim().slice(0, 800);
-    if (!text) return Promise.resolve(true);
-    return fetchUrl(text, lang, opt).then(function (url) {
-      return new Promise(function (res, rej) {
-        if (my !== gen) return;
-        audio = new Audio(url);
-        audio.onended = function () { res(true); };
-        audio.onerror = function () { rej(new Error('audio error')); };
-        audio.play().catch(rej);
+    var parts = chunks(text || '');
+    if (!parts.length) return Promise.resolve(true);
+    var i = 0;
+    function next() {
+      if (my !== gen) return new Promise(function () {});
+      if (i >= parts.length) return Promise.resolve(true);
+      var k = i++;
+      var p = fetchUrl(parts[k], lang, opt);
+      if (parts[k + 1]) fetchUrl(parts[k + 1], lang, opt).catch(function () {});   // prepare the next piece now
+      return p.then(function (url) { return playOne(url, my); }).then(next, function (e) {
+        if (k === 0) throw e;                                       // nothing played yet: caller falls back
+        return browserSay(parts.slice(k).join(' '), lang, my);      // cloud dropped mid-way: finish on device
       });
-    });
+    }
+    return next();
   }
   function speak(text, lang, opt) {
     lang = (lang || 'ar').toLowerCase().indexOf('ar') === 0 ? 'ar' : 'en';
