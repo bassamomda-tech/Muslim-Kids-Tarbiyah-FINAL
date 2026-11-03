@@ -14,11 +14,25 @@
   };
   const U = () => UI[L()];
 
+  /* what THIS child has really played (written by activity-common.js on every activity page) */
+  function played() { try { return JSON.parse(localStorage.getItem("anos_played") || "{}") || {}; } catch (e) { return {}; } }
+  function days() { try { return JSON.parse(localStorage.getItem("anos_days") || "[]") || []; } catch (e) { return []; } }
+  function actId(a) { return (a.href || "").split("/").pop().replace(/\.html$/i, ""); }
+  function isPlayed(a, P) { return !!(P || played())[actId(a)]; }
+  function streak() {   // days in a row up to today (or up to yesterday, so a streak isn't lost before today's play)
+    const set = new Set(days()), d = new Date(); let n = 0;
+    const key = (x) => x.getFullYear() + "-" + ("0" + (x.getMonth() + 1)).slice(-2) + "-" + ("0" + x.getDate()).slice(-2);
+    if (!set.has(key(d))) d.setDate(d.getDate() - 1);
+    while (set.has(key(d))) { n++; d.setDate(d.getDate() - 1); }
+    return n;
+  }
+  function playedThisWeek(P) { const since = Date.now() - 7 * 864e5; return Object.keys(P).filter(k => (P[k][1] || 0) >= since).length; }
+
   /* بطاقة نشاط واحدة */
   function cardHTML(act) {
     const locked = act.status === "locked";
-    const done   = act.status === "done";
-    const featured = act.status === "featured";
+    const done   = isPlayed(act);
+    const featured = act.status === "featured" && !Object.keys(played()).length;   // «ابدأ من هنا» only until the first play
     const href = act.href ? `href="${act.href}"` : 'href="#"';
     const tag = act.href && !locked ? 'a' : 'div';
 
@@ -40,7 +54,7 @@
     return `
       <${tag} ${tag === 'a' ? href : ''}
               class="card"
-              data-status="${act.status}"
+              data-status="${featured ? "featured" : (done ? "done" : act.status === "featured" ? "normal" : act.status)}"
               data-locked="${locked}"
               data-name="${act.t} ${act.te || ""}"
               data-mech="${act.m}">
@@ -51,7 +65,7 @@
         </div>
         <div class="card-body">
           <h3 class="card-title">${title}</h3>
-          <span class="card-mech">${act.m}</span>
+          ${done ? `<span class="card-mech">${L() === "en" ? "✓ You played it" : "✓ لعبتَه"}</span>` : ""}
         </div>
         <div class="card-foot">
           <span class="difficulty" aria-label="${u.difficulty}">${dots}</span>
@@ -68,9 +82,8 @@
   function sectionHTML(sec, idx) {
     // حساب نسبة الإنجاز للقسم (افتراضياً للعرض)
     const total = sec.activities.length;
-    const done = sec.activities.filter(a => a.status === "done").length;
-    const featured = sec.activities.filter(a => a.status === "featured").length;
-    const completed = done + featured;
+    const P = played();
+    const completed = sec.activities.filter(a => isPlayed(a, P)).length;
     const pct = Math.round((completed / total) * 100);
     const en = L() === "en";
     const secTitle = (en && sec.titleEn) ? sec.titleEn : sec.title;
@@ -89,7 +102,7 @@
             </div>
           </div>
           <div class="section-meta">
-            <span>${completed}/${total} ${U().completed}</span>
+            <span>${completed}/${total} ${L() === "en" ? "played" : "لعبتَها"}</span>
             <div class="bar"><span style="width:${pct}%"></span></div>
           </div>
         </header>
@@ -167,35 +180,34 @@
 
   /* تحديث الإحصائيات في الأعلى وبطاقة التقدم */
   function updateStats() {
-    let total = 0, done = 0, featured = 0;
-    SECTIONS.forEach(s => {
-      total += s.activities.length;
-      s.activities.forEach(a => {
-        if (a.status === "done") done++;
-        if (a.status === "featured") featured++;
-      });
-    });
-    const playable = SECTIONS.reduce((acc, s) =>
-      acc + s.activities.filter(a => a.status !== "locked").length, 0);
-
-    // اختياري: قراءة الأوسمة من localStorage
-    const earned = JSON.parse(localStorage.getItem("mk_badges") || "[]").length;
+    const P = played(), en = L() === "en";
+    let total = 0, done = 0;
+    SECTIONS.forEach(s => { total += s.activities.length; s.activities.forEach(a => { if (isPlayed(a, P)) done++; }); });
+    const playable = SECTIONS.reduce((acc, s) => acc + s.activities.filter(a => a.status !== "locked").length, 0);
+    // a section medal = every activity in that section played at least once
+    const medals = SECTIONS.map(s => ({ s, got: s.activities.every(a => isPlayed(a, P)), n: s.activities.filter(a => isPlayed(a, P)).length }));
+    const week = playedThisWeek(P), GOAL = 4;
 
     document.getElementById("stat-playable").textContent = playable;
-    document.getElementById("stat-badges").textContent = earned;
-    document.getElementById("stat-streak").textContent = "3";
+    document.getElementById("stat-badges").textContent = medals.filter(m => m.got).length;
+    document.getElementById("stat-streak").textContent = streak();
 
-    const completed = done + featured;
-    const pct = Math.round((completed / total) * 100);
+    const pct = Math.min(100, Math.round((week / GOAL) * 100));
     const ring = document.getElementById("progress-ring");
-    if (ring) {
-      ring.style.setProperty("--pct", pct);
-      ring.querySelector("span").textContent = pct + "%";
-    }
+    if (ring) { ring.style.setProperty("--pct", pct); ring.querySelector("span").textContent = Math.min(week, GOAL) + "/" + GOAL; }
     const pctEl = document.getElementById("progress-pct");
-    if (pctEl) pctEl.textContent = pct + "%";
-    const completedEl = document.getElementById("progress-completed");
-    if (completedEl) completedEl.textContent = `${completed}/${total}`;
+    if (pctEl) pctEl.textContent = done + "/" + total;
+    const meta = document.getElementById("progress-meta");
+    if (meta) meta.innerHTML = week >= GOAL
+      ? (en ? "<strong>Well done! 🏅</strong> You earned the “Little Achiever” badge this week — keep going!" : "<strong>أحسنت! 🏅</strong> نلتَ وسام «المثابر الصغير» هذا الأسبوع — واصل!")
+      : (en ? `<strong>${week} of ${GOAL} this week</strong> Play ${GOAL - week} more to earn the “Little Achiever” badge 🏅` : `<strong>${week} من ${GOAL} هذا الأسبوع</strong> العب ${GOAL - week} ${GOAL - week === 1 ? "نشاطًا" : "أنشطة"} أخرى لتنال وسام «المثابر الصغير» 🏅`);
+    const row = document.getElementById("medals-row");
+    if (row) row.innerHTML = medals.map(m => {
+      const t = en && m.s.titleEn ? m.s.titleEn : m.s.title;
+      return `<div class="badge-mini ${m.got ? "earned" : "locked"}" title="${t} — ${m.n}/${m.s.activities.length}">${m.got ? "★" : m.s.icon}</div>`;
+    }).join("");
+    const mc = document.getElementById("medals-count");
+    if (mc) mc.textContent = medals.filter(m => m.got).length + " / " + medals.length;
   }
 
   // تشغيل

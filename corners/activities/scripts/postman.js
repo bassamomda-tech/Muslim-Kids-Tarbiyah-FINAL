@@ -152,7 +152,10 @@
       return;
     }
     document.getElementById("msg-text").textContent = msg.text;
-    document.getElementById("msg-from").textContent = "من: " + msg.from;
+    /* the letter is signed by the child who is playing (their profile name), not a made-up name */
+    let me = "";
+    try { const pr = window.MK && MK.activeProfile && MK.activeProfile(); me = (pr && pr.name) || ""; } catch (e) {}
+    document.getElementById("msg-from").textContent = "من: " + String(msg.from).replace(/^أحمد · /, me ? me + " · " : "");
     document.getElementById("msg-prompt").textContent =
       `الرسالة رقم ${currentIdx + 1} من ${bag.length} — لمن هذه الرسالة؟`;
 

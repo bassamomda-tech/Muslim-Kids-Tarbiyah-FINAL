@@ -6,7 +6,7 @@
    they work as-is here.
    ════════════════════════════════════════════════════════════════ */
 (function () {
-  const NAMES = { aqeeda: { ar: 'منارة العقيدة', en: 'Faith Minaret' }, ibada: { ar: 'واحة العبادة', en: 'Worship Oasis' }, sport: { ar: 'النادي الرياضي', en: 'Sports Club' }, quds: { ar: 'ركن القدس', en: 'Al-Quds Corner' }, hisn: { ar: 'حصن الأبطال', en: "Heroes' Fortress" }, heart: { ar: 'القلب السليم', en: 'The Pure Heart' }, academy: { ar: 'أكاديمية المبدعين', en: "Innovators' Academy" }, quran: { ar: 'بستان القرآن', en: 'Quran Garden' } };
+  const NAMES = { aqeeda: { ar: 'منارة العقيدة', en: 'Faith Minaret' }, ibada: { ar: 'واحة العبادة', en: 'Worship Oasis' }, sport: { ar: 'النادي الرياضي', en: 'Sports Club' }, quds: { ar: 'ركن القدس', en: 'Al-Quds Corner' }, hisn: { ar: 'حصن الأبطال', en: "Heroes' Fortress" }, heart: { ar: 'القلب السليم', en: 'The Pure Heart' }, academy: { ar: 'أكاديمية المبدعين', en: "Innovators' Academy" }, quran: { ar: 'بستان القرآن', en: 'Quran Garden' }, parents: { ar: 'ركن الأهل', en: "Parents' Corner" }, social: { ar: 'حيّنا الصغير', en: 'Our Little District' }, sunnah: { ar: 'حُفّاظ السنة', en: 'Sunnah Keepers' }, skills: { ar: 'صانع المهارات', en: 'Skills Maker' } };
   function run() {
     let u; try { u = JSON.parse(localStorage.getItem('mkUnlocked') || '{}'); } catch (e) { return; }
     const corners = Object.keys(u || {}).filter(c => Array.isArray(u[c]) && u[c].length);
@@ -19,7 +19,8 @@
       cards += `<a href="${r.href}" style="display:flex;align-items:center;gap:10px;background:#fff;border:1px solid #ECE3D4;border-radius:14px;padding:10px 14px;text-decoration:none;color:#23332b;font-weight:700;font-size:14px;box-shadow:0 4px 14px rgba(0,0,0,.05)">
         <span style="font-size:22px">${r.icon}</span><span>${tx(r.t)}</span></a>`;
     }));
-    const list = corners.map(c => tx(NAMES[c] || { ar: c, en: c })).join('، ');
+    const nm = (c) => { const k = window.MK && MK.corner && MK.corner(c === 'hisn' ? 'history' : c); return NAMES[c] || (k && k.name) || { ar: 'أحد الأركان', en: 'a corner' }; };
+    const list = corners.map(c => tx(nm(c))).join('، ');
     const banner = document.createElement('section');
     banner.id = 'mkq-anous-banner';
     banner.style.cssText = 'max-width:1180px;margin:18px auto 0;padding:18px 20px;background:linear-gradient(135deg,#FBF4E6,#F3ECDD);border:1.5px solid #C9A961;border-radius:20px';

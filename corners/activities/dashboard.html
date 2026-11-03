@@ -40,12 +40,12 @@
 
     <div class="top-stats">
       <span class="stat-chip"><span class="dot"></span> <span id="stat-playable">1</span> نشاط متاح</span>
-      <span class="stat-chip gold"><span class="dot"></span> <span id="stat-badges">0</span> وسام</span>
+      <span class="stat-chip gold"><span class="dot"></span> <span id="stat-badges">0</span> أوسمة</span>
       <span class="stat-chip rose"><span class="dot"></span> <span id="stat-streak">0</span> أيام متتالية</span>
-      <span class="profile-pill">
-        <span>أحمد</span>
-        <span class="avatar">أ</span>
-      </span>
+      <a class="profile-pill" id="anosProfile" href="../shared/account.html" style="text-decoration:none;color:inherit;display:none">
+        <span id="anosProfileName"></span>
+        <span class="avatar" id="anosProfileAv"></span>
+      </a>
     </div>
   </header>
 
@@ -70,32 +70,24 @@
 
     <aside class="progress-card">
       <div class="progress-head">
-        <h3>تقدّمك هذا الأسبوع</h3>
-        <span class="pct" id="progress-pct">2%</span>
+        <h3>تقدّمك</h3>
+        <span class="pct" id="progress-pct">0/100</span>
       </div>
 
       <div class="ring-row">
-        <div class="ring" id="progress-ring" style="--pct:2">
-          <span>2%</span>
+        <div class="ring" id="progress-ring" style="--pct:0">
+          <span>0/4</span>
         </div>
-        <div class="ring-meta">
-          <strong id="progress-completed">1/50 مكتمل</strong>
-          أكمل 4 أنشطة هذا الأسبوع لتحصل على وسام<br/>«المثابر الصغير» 🏅
-        </div>
+        <div class="ring-meta" id="progress-meta"></div>
       </div>
 
       <div>
         <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px; font-size:13px;">
-          <strong>الأوسمة المكتسبة</strong>
-          <span style="color:var(--muted); font-size:12px;">2 / 10</span>
+          <strong>أوسمة الأقسام</strong>
+          <span id="medals-count" style="color:var(--muted); font-size:12px;">0 / 10</span>
         </div>
-        <div class="badges-row">
-          <div class="badge-mini earned">★</div>
-          <div class="badge-mini earned">★</div>
-          <div class="badge-mini locked"></div>
-          <div class="badge-mini locked"></div>
-          <div class="badge-mini locked"></div>
-        </div>
+        <div class="badges-row" id="medals-row" style="flex-wrap:wrap"></div>
+        <p class="medals-hint" style="margin:8px 0 0;color:var(--muted);font-size:12px;line-height:1.5">العب كلّ أنشطة قسمٍ لتنال وسامه ⭐</p>
       </div>
     </aside>
   </section>
@@ -136,11 +128,11 @@
        التذييل
        ============================================================ -->
   <footer class="foot">
-    <span>© 2026 أنوس · صُمّمت بحب للأطفال المسلمين</span>
+    <span>أنشطة أنوس · من «تربية الأطفال المسلمين» — صُمّمت بحب للأطفال المسلمين</span>
     <nav class="links">
-      <a href="#">للوالدين</a>
-      <a href="#">الخصوصية</a>
-      <a href="#">حول المنصة</a>
+      <a href="../little-district/pages/parents.html">للوالدين</a>
+      <a href="../../privacy.html">الخصوصية</a>
+      <a href="../../index.html">المدينة</a>
     </nav>
   </footer>
 
@@ -154,10 +146,10 @@ window.PAGE_DICT = {
   "أنوس": "Anos",
   "منصة أنشطة الأطفال المسلمين": "Muslim Kids Activities Platform",
   "نشاط متاح": "activities available",
-  "وسام": "badges",
+  "أوسمة": "medals",
+  "أوسمة الأقسام": "Section medals",
+  "العب كلّ أنشطة قسمٍ لتنال وسامه ⭐": "Play every activity in a section to earn its medal ⭐",
   "أيام متتالية": "day streak",
-  "أحمد": "Ahmad",
-  "أ": "A",
   "100 نشاط تفاعلي": "100 interactive activities",
   "الإيمان": "Faith",
   "الوحي": "Revelation",
@@ -168,12 +160,11 @@ window.PAGE_DICT = {
   "من خلال": "through",
   "اللعب المُمتع": "fun play",
   "منصة تعليمية شاملة للأطفال من سن 6 إلى 12 سنة، تجمع بين الأذكار والسيرة واللغة العربية في 100 نشاط تفاعلي مصمَّم بعناية. كل نشاط يحفظ تقدّمك ويمنحك أوساماً تشجيعية.": "A complete learning platform for children aged 6 to 12, blending dhikr, seerah and Arabic across 100 carefully crafted interactive activities. Every activity saves your progress and rewards you with encouraging badges.",
+  "أنشطة أنوس · من «تربية الأطفال المسلمين» — صُمّمت بحب للأطفال المسلمين": "Anos' Activities · part of Muslim Kids' Tarbiyah — made with love for Muslim children",
+  "المدينة": "The City",
   "ابدأ بعجلة الأذكار": "Start with Wheel of Dhikr",
   "استكشف الأنشطة": "Explore activities",
-  "تقدّمك هذا الأسبوع": "Your progress this week",
-  "أكمل 4 أنشطة هذا الأسبوع لتحصل على وسام": "Complete 4 activities this week to earn the",
-  "«المثابر الصغير» 🏅": "“Little Achiever” badge 🏅",
-  "الأوسمة المكتسبة": "Badges earned",
+  "تقدّمك": "Your progress",
   "الكل": "All",
   "العبادات": "Worship",
   "اللغة": "Language",
@@ -181,7 +172,6 @@ window.PAGE_DICT = {
   "العلوم": "Science",
   "التحديات": "Challenges",
   "ابحث عن نشاط…": "Search for an activity…",
-  "© 2026 أنوس · صُمّمت بحب للأطفال المسلمين": "© 2026 Anos · Made with love for Muslim children",
   "للوالدين": "For parents",
   "الخصوصية": "Privacy",
   "حول المنصة": "About"
@@ -206,5 +196,22 @@ window.PAGE_DICT = {
 <script src="../shared/nav-fix.js"></script>
 <script defer src="../shared/mk-system.js"></script>
 <script src="../shared/mk-citynav.js"></script>
+<script>
+/* the child who is playing now (from the family's child profiles); hidden if no profile is set up */
+(function () {
+  function show() {
+    if (!window.MK || !MK.activeProfile) return setTimeout(show, 200);
+    /* a greeting from Anos to the child who is playing (their profile name), or to everyone */
+    var p = MK.activeProfile(), el = document.getElementById('anosProfile'); if (!el) return;
+    var en = (document.documentElement.lang === 'en');
+    var nm = p && p.name ? p.name : '';
+    document.getElementById('anosProfileName').textContent = en ? ('Anos: ' + (nm ? 'Hi ' + nm + '!' : 'Welcome!')) : ('أنوس: ' + (nm ? 'أهلًا يا ' + nm + '!' : 'أهلًا بك!'));
+    document.getElementById('anosProfileAv').textContent = '👋';
+    el.style.display = '';
+  }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', show); else show();
+  window.addEventListener('anos:langchange', show);
+})();
+</script>
 </body>
 </html>

@@ -192,3 +192,12 @@ window.Particles = Particles;
 window.Modal = Modal;
 window.Storage = Storage;
 window.Fmt = Fmt;
+
+/* سجلّ اللعب: record that this activity was played (scripts/anos-track.js) */
+(function () {
+  if (window.__anosTrack) return;
+  var me = document.currentScript && document.currentScript.src;
+  var t = document.createElement("script");
+  t.src = me ? me.replace(/activity-common\.js.*$/, "anos-track.js") : "../scripts/anos-track.js";
+  (document.head || document.documentElement).appendChild(t);
+})();
