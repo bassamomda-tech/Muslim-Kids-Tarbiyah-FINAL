@@ -126,7 +126,7 @@
       var selStyle='padding:8px 10px;border-radius:10px;border:1.5px solid #d8c9a8;font-family:inherit;font-size:14px;background:#fffdf7;width:100%';
       var tryStyle='padding:7px 12px;border-radius:10px;border:none;color:#fff;font-family:inherit;font-size:13px;cursor:pointer;margin-top:6px';
       el.innerHTML='<div style="display:flex;flex-direction:column;gap:14px;font-family:inherit">'
-        +'<div><label style="font-size:13px;font-weight:800;display:block;margin-bottom:5px">👩 صوت الراوية (الافتراضي)</label>'
+        +'<div><label style="font-size:13px;font-weight:800;display:block;margin-bottom:5px">🧕 صوت الراوية (الافتراضي)</label>'
         +'<select id="mkv-f" style="'+selStyle+'">'+opts(vs,bestVoice("ar","female"))+'</select>'
         +'<button id="mkv-ft" type="button" style="'+tryStyle+';background:#b8558f">🔊 جرّب</button></div>'
         +'<div><label style="font-size:13px;font-weight:800;display:block;margin-bottom:5px">👦 صوت الولد (عند حديث صبي)</label>'
@@ -149,7 +149,7 @@
     if(document.getElementById('mkv-toggle')) return;
     var wrap=document.createElement('div'); wrap.id='mkv-toggle'; wrap.dir='rtl';
     wrap.style.cssText='position:fixed;bottom:14px;inset-inline-start:14px;z-index:99999;display:flex;gap:2px;background:rgba(24,20,14,.82);border-radius:999px;padding:3px;font-family:inherit;box-shadow:0 3px 12px rgba(0,0,0,.32);backdrop-filter:blur(4px)';
-    var modes=[['auto','تلقائي'],['female','👩'],['male','👦']];
+    var modes=[['auto','تلقائي'],['female','🧕'],['male','👦']];
     function render(){ var cur=mode(); wrap.innerHTML='';
       modes.forEach(function(m){ var b=document.createElement('button'); b.type='button'; b.textContent=m[1];
         b.title='صوت القراءة'; b.style.cssText='border:none;cursor:pointer;font-family:inherit;font-size:12px;font-weight:800;padding:5px 11px;border-radius:999px;transition:.15s;'+(cur===m[0]?'background:#e8b530;color:#1a1200':'background:transparent;color:#fff');

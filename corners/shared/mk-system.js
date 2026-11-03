@@ -287,6 +287,15 @@
     } catch (e) {}
   })();
 
+  /* ═══ Modest character faces (mk-avatars.js): boys with a kufi, girls & women in hijab ═══ */
+  (function loadAvatars() {
+    try {
+      if (window.MKAvatar || document.querySelector('script[src*="mk-avatars.js"]')) return;
+      var s = document.createElement('script'); s.src = rootPrefix() + 'corners/shared/mk-avatars.js'; s.async = true; s.onerror = function () {};
+      (document.head || document.documentElement).appendChild(s);
+    } catch (e) {}
+  })();
+
   /* ═══ Display settings panel (mk-a11y.js) — every page that loads mk-system ═══ */
   (function loadA11y() {
     try {

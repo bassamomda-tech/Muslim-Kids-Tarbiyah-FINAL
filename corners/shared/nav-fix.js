@@ -56,3 +56,14 @@
     (document.head || document.documentElement).appendChild(s);
   } catch (e) {}
 })();
+
+/* modest character faces — corners/shared/mk-avatars.js, loaded once */
+(function () {
+  try {
+    if (window.MKAvatar || document.querySelector('script[src*="mk-avatars.js"]')) return;
+    var p = location.pathname, i = p.indexOf('/corners/'), R = '';
+    if (i >= 0) { var rest = p.slice(i + 1).split('/'); rest.pop(); R = new Array(rest.length + 1).join('../'); }
+    var s = document.createElement('script'); s.src = R + 'corners/shared/mk-avatars.js'; s.async = true; s.onerror = function () {};
+    (document.head || document.documentElement).appendChild(s);
+  } catch (e) {}
+})();
