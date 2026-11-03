@@ -2,7 +2,9 @@
    Every event is matched by its HIJRI day/month (d, m) and year (y, AH).
    ce = the Gregorian year (shown next to the Hijri one); g = the exact Gregorian date when it is the recorded one;
    hc = the Hijri day was calculated from that Gregorian date (dates before 1582 read as Julian) and may differ by a day;
-   pre = an event before the Hijrah (shown with its Gregorian year); sure:false = date per the most common view («على الأرجح»). */
+   pre = an event before the Hijrah (shown with its Gregorian year); sure:false = date per the most common view («على الأرجح»).
+   G = events and world days matched by their GREGORIAN day/month (gd, gm; y = CE year for events, none for yearly
+   world days). Hijri events above that carry an exact recorded Gregorian date (g, from 1582 on) also show on that day. */
 window.MK_OTD = { H: [
  {
   "d": 1,
@@ -1684,4 +1686,514 @@ window.MK_OTD = { H: [
   "link": "corners/treasures/eids.html"
  }
 ],
- G: [] };
+ G: [
+ {
+  "gd": 21,
+  "gm": 2,
+  "icon": "🗣️",
+  "kind": "day",
+  "t": [
+   "اليوم الدولي للغة الأم",
+   "International Mother Language Day"
+  ],
+  "s": [
+   "يحتفل العالم اليوم باللغات التي يتكلّمها الناس. وقد جعل الله اختلاف لغاتنا آيةً من آياته: ﴿وَمِنْ آيَاتِهِ خَلْقُ السَّمَاوَاتِ وَالْأَرْضِ وَاخْتِلَافُ أَلْسِنَتِكُمْ وَأَلْوَانِكُمْ﴾ [الروم: ٢٢].",
+   "Today the world celebrates the languages people speak. Allah made the variety of our languages one of His signs: \"And among His signs is the creation of the heavens and the earth and the diversity of your languages and your colours\" [ar-Rum 30:22]."
+  ],
+  "lesson": [
+   "تعلّم اليوم كلمة «شكرًا» بلغةٍ جديدة، وقلها لمن يساعدك.",
+   "Learn to say \"thank you\" in a new language today, and say it to someone who helps you."
+  ]
+ },
+ {
+  "gd": 3,
+  "gm": 3,
+  "icon": "🐾",
+  "kind": "day",
+  "t": [
+   "اليوم العالمي للحياة البرية",
+   "World Wildlife Day"
+  ],
+  "s": [
+   "أخبرنا النبي ﷺ عن رجلٍ سقى كلبًا عطشانًا فشكر الله له وغفر له، وقال: «في كلِّ كبدٍ رطبةٍ أجر» (رواه البخاري ومسلم). فالرحمة بالحيوان عبادة.",
+   "The Prophet ﷺ told us of a man who gave water to a thirsty dog, so Allah thanked him and forgave him, and he said: \"There is a reward for (kindness to) every living being\" (al-Bukhari and Muslim). Mercy to animals is worship."
+  ],
+  "lesson": [
+   "ضع اليوم وعاء ماءٍ صغيرًا للطيور في الشرفة أو الحديقة.",
+   "Put out a small bowl of water for the birds today."
+  ]
+ },
+ {
+  "gd": 3,
+  "gm": 3,
+  "icon": "📜",
+  "kind": "event",
+  "t": [
+   "إلغاء الخلافة العثمانية",
+   "The Ottoman Caliphate Is Abolished"
+  ],
+  "s": [
+   "في الثالث من مارس ١٩٢٤م أُلغيت الخلافة العثمانية، بعد قرونٍ طويلة كان المسلمون فيها تحت رايةٍ واحدة. ويتذكّر المسلمون هذا اليوم ليتعلّموا قيمة الوحدة والتعاون.",
+   "On 3 March 1924 the Ottoman Caliphate was abolished, after many centuries in which Muslims lived under one banner. Muslims remember this day to learn the value of unity and working together."
+  ],
+  "lesson": [
+   "الوحدة تبدأ من البيت: ساعد إخوتك اليوم بلا شجار.",
+   "Unity starts at home: help your brothers and sisters today without arguing."
+  ],
+  "y": 1924
+ },
+ {
+  "gd": 15,
+  "gm": 3,
+  "icon": "🤝",
+  "kind": "day",
+  "t": [
+   "اليوم الدولي لمكافحة كراهية الإسلام",
+   "International Day to Combat Islamophobia"
+  ],
+  "s": [
+   "اختارت الأمم المتحدة هذا اليوم لنشر الاحترام ونبذ الكراهية ضدّ المسلمين. والمسلم يدعو إلى الخير بأخلاقه، كما قال الله تعالى: ﴿ادْفَعْ بِالَّتِي هِيَ أَحْسَنُ﴾ [فصّلت: ٣٤].",
+   "The United Nations chose this day to spread respect and reject hatred against Muslims. A Muslim invites to good through his character, as Allah says: \"Repel (evil) with what is better\" [Fussilat 41:34]."
+  ],
+  "lesson": [
+   "أجمل ردٍّ على الكلام السيّئ: ابتسامة وكلمة طيّبة.",
+   "The best answer to unkind words: a smile and a kind word."
+  ]
+ },
+ {
+  "gd": 21,
+  "gm": 3,
+  "icon": "🌳",
+  "kind": "day",
+  "t": [
+   "اليوم الدولي للغابات",
+   "International Day of Forests"
+  ],
+  "s": [
+   "قال النبي ﷺ: «ما من مسلمٍ يغرس غرسًا أو يزرع زرعًا، فيأكل منه طيرٌ أو إنسانٌ أو بهيمة، إلا كان له به صدقة» (رواه البخاري ومسلم).",
+   "The Prophet ﷺ said: \"No Muslim plants a tree or sows a crop from which a bird, a person or an animal eats, except that it is charity for him\" (al-Bukhari and Muslim)."
+  ],
+  "lesson": [
+   "ازرع بذرةً في كوبٍ صغير، واسقِها كلّ يوم.",
+   "Plant a seed in a small cup and water it every day."
+  ]
+ },
+ {
+  "gd": 22,
+  "gm": 3,
+  "icon": "💧",
+  "kind": "day",
+  "t": [
+   "اليوم العالمي للمياه",
+   "World Water Day"
+  ],
+  "s": [
+   "الماء أصل الحياة، قال الله تعالى: ﴿وَجَعَلْنَا مِنَ الْمَاءِ كُلَّ شَيْءٍ حَيٍّ﴾ [الأنبياء: ٣٠]. وكان النبي ﷺ يتوضّأ بقليلٍ من الماء ولا يُسرف.",
+   "Water is the source of life. Allah says: \"And We made from water every living thing\" [al-Anbiya 21:30]. The Prophet ﷺ made wudu with little water and never wasted it."
+  ],
+  "lesson": [
+   "أغلق الصنبور وأنت تفرّش أسنانك.",
+   "Turn off the tap while you brush your teeth."
+  ]
+ },
+ {
+  "gd": 7,
+  "gm": 4,
+  "icon": "🩺",
+  "kind": "day",
+  "t": [
+   "يوم الصحة العالمي",
+   "World Health Day"
+  ],
+  "s": [
+   "قال النبي ﷺ: «نعمتان مغبونٌ فيهما كثيرٌ من الناس: الصحّة والفراغ» (رواه البخاري). فالصحة نعمةٌ نشكر الله عليها ونحافظ عليها.",
+   "The Prophet ﷺ said: \"There are two blessings that many people lose out on: health and free time\" (al-Bukhari). Health is a blessing we thank Allah for and look after."
+  ],
+  "lesson": [
+   "اشرب الماء، وكُل فاكهة، والعب في الهواء الطلق اليوم.",
+   "Drink water, eat a fruit and play outdoors today."
+  ]
+ },
+ {
+  "gd": 23,
+  "gm": 4,
+  "icon": "📚",
+  "kind": "day",
+  "t": [
+   "اليوم العالمي للكتاب",
+   "World Book Day"
+  ],
+  "s": [
+   "أقسم الله تعالى بالقلم فقال: ﴿ن ۚ وَالْقَلَمِ وَمَا يَسْطُرُونَ﴾ [القلم: ١]. والكتاب صديقٌ يعلّمك ولا يملّ منك.",
+   "Allah swore by the pen: \"Nun. By the pen and what they write\" [al-Qalam 68:1]. A book is a friend who teaches you and never tires of you."
+  ],
+  "lesson": [
+   "اقرأ اليوم صفحةً من كتابٍ تحبّه، وأخبر أحدًا بما تعلّمت.",
+   "Read a page of a book you love today, and tell someone what you learned."
+  ]
+ },
+ {
+  "gd": 15,
+  "gm": 5,
+  "icon": "👨‍👩‍👧",
+  "kind": "day",
+  "t": [
+   "اليوم الدولي للأسر",
+   "International Day of Families"
+  ],
+  "s": [
+   "الأسرة نعمة، وقد قرن الله الإحسان إلى الوالدين بعبادته: ﴿وَقَضَىٰ رَبُّكَ أَلَّا تَعْبُدُوا إِلَّا إِيَّاهُ وَبِالْوَالِدَيْنِ إِحْسَانًا﴾ [الإسراء: ٢٣].",
+   "Family is a blessing, and Allah joined kindness to parents with worshipping Him: \"Your Lord has decreed that you worship none but Him, and that you be good to your parents\" [al-Isra 17:23]."
+  ],
+  "lesson": [
+   "اسأل أمّك أو أباك: كيف أساعدك اليوم؟",
+   "Ask your mother or father: how can I help you today?"
+  ]
+ },
+ {
+  "gd": 20,
+  "gm": 5,
+  "icon": "🐝",
+  "kind": "day",
+  "t": [
+   "اليوم العالمي للنحل",
+   "World Bee Day"
+  ],
+  "s": [
+   "في القرآن سورةٌ اسمها «النحل»، وفيها: ﴿وَأَوْحَىٰ رَبُّكَ إِلَى النَّحْلِ أَنِ اتَّخِذِي مِنَ الْجِبَالِ بُيُوتًا وَمِنَ الشَّجَرِ وَمِمَّا يَعْرِشُونَ﴾ [النحل: ٦٨]. فالنحلة تعمل بنظامٍ عجيب علّمها إيّاه ربّها.",
+   "There is a surah in the Quran called \"The Bee\", and in it: \"And your Lord inspired the bee: Take homes in the mountains, in the trees and in what people build\" [an-Nahl 16:68]. The bee works with an amazing order her Lord taught her."
+  ],
+  "lesson": [
+   "تذوّق ملعقة عسل، وقل: الحمد لله الذي سخّر لنا النحل.",
+   "Taste a spoon of honey and say: Praise be to Allah who made the bee serve us."
+  ]
+ },
+ {
+  "gd": 5,
+  "gm": 6,
+  "icon": "🌍",
+  "kind": "day",
+  "t": [
+   "اليوم العالمي للبيئة",
+   "World Environment Day"
+  ],
+  "s": [
+   "أمرنا الله أن نحافظ على الأرض فقال: ﴿وَلَا تُفْسِدُوا فِي الْأَرْضِ بَعْدَ إِصْلَاحِهَا﴾ [الأعراف: ٥٦].",
+   "Allah commanded us to look after the earth: \"And do not cause corruption on the earth after it has been set right\" [al-A'raf 7:56]."
+  ],
+  "lesson": [
+   "اجمع ثلاث قطع من النفايات من حولك وضعها في مكانها.",
+   "Pick up three bits of litter around you and put them in the bin."
+  ]
+ },
+ {
+  "gd": 8,
+  "gm": 6,
+  "icon": "🌊",
+  "kind": "day",
+  "t": [
+   "اليوم العالمي للمحيطات",
+   "World Oceans Day"
+  ],
+  "s": [
+   "البحر من نِعم الله علينا: ﴿وَهُوَ الَّذِي سَخَّرَ الْبَحْرَ لِتَأْكُلُوا مِنْهُ لَحْمًا طَرِيًّا﴾ [النحل: ١٤]. ونحافظ عليه فلا نرمي فيه النفايات.",
+   "The sea is one of Allah's blessings: \"It is He who made the sea serve you, so that you eat fresh meat from it\" [an-Nahl 16:14]. We protect it and never throw rubbish into it."
+  ],
+  "lesson": [
+   "ارسم سمكةً وأخبر أهلك بثلاث نِعَمٍ يعطينا الله إيّاها من البحر.",
+   "Draw a fish and tell your family three blessings Allah gives us from the sea."
+  ]
+ },
+ {
+  "gd": 30,
+  "gm": 7,
+  "icon": "🫂",
+  "kind": "day",
+  "t": [
+   "اليوم الدولي للصداقة",
+   "International Day of Friendship"
+  ],
+  "s": [
+   "قال النبي ﷺ: «المرء على دين خليله، فلينظر أحدكم من يُخالل» (رواه أبو داود والترمذي). فالصديق الصالح يقرّبك من الخير.",
+   "The Prophet ﷺ said: \"A person follows the way of his close friend, so let each of you look at whom he befriends\" (Abu Dawud and at-Tirmidhi). A good friend brings you closer to good."
+  ],
+  "lesson": [
+   "اكتب بطاقة شكرٍ صغيرة لصديقٍ يعينك على الخير.",
+   "Write a small thank-you card to a friend who helps you do good."
+  ]
+ },
+ {
+  "gd": 21,
+  "gm": 8,
+  "icon": "🕌",
+  "kind": "event",
+  "t": [
+   "حريق المسجد الأقصى",
+   "The Al-Aqsa Mosque Fire"
+  ],
+  "s": [
+   "في الحادي والعشرين من أغسطس ١٩٦٩م أُشعلت النار في المسجد الأقصى، فاحترق منبر صلاح الدين التاريخي، ثمّ صُنع منبرٌ جديد يشبهه وأُعيد إلى مكانه سنة ٢٠٠٧م. والأقصى مسجدٌ مبارك ذكره الله في القرآن: ﴿سُبْحَانَ الَّذِي أَسْرَىٰ بِعَبْدِهِ لَيْلًا مِنَ الْمَسْجِدِ الْحَرَامِ إِلَى الْمَسْجِدِ الْأَقْصَى الَّذِي بَارَكْنَا حَوْلَهُ﴾ [الإسراء: ١].",
+   "On 21 August 1969 the Al-Aqsa Mosque was set on fire, and the historic minbar of Salahuddin burned. A new minbar like it was made and returned to its place in 2007. Al-Aqsa is a blessed mosque mentioned in the Quran: \"Glory be to Him who took His servant by night from al-Masjid al-Haram to al-Masjid al-Aqsa, whose surroundings We have blessed\" [al-Isra 17:1]."
+  ],
+  "lesson": [
+   "ادعُ الله اليوم أن يحفظ المسجد الأقصى وأهله.",
+   "Make dua today for Allah to protect Al-Aqsa and its people."
+  ],
+  "y": 1969
+ },
+ {
+  "gd": 5,
+  "gm": 9,
+  "icon": "🤲",
+  "kind": "day",
+  "t": [
+   "اليوم الدولي للعمل الخيري",
+   "International Day of Charity"
+  ],
+  "s": [
+   "قال النبي ﷺ: «ما نقصت صدقةٌ من مال» (رواه مسلم). فالصدقة لا تُنقص ما عندك، بل يباركه الله.",
+   "The Prophet ﷺ said: \"Charity never decreases wealth\" (Muslim). Giving does not make you poorer — Allah blesses what you have."
+  ],
+  "lesson": [
+   "تصدّق اليوم بشيءٍ صغير: لعبة، أو كتاب، أو ابتسامة.",
+   "Give something small today: a toy, a book, or a smile."
+  ]
+ },
+ {
+  "gd": 8,
+  "gm": 9,
+  "icon": "✏️",
+  "kind": "day",
+  "t": [
+   "اليوم الدولي لمحو الأمية",
+   "International Literacy Day"
+  ],
+  "s": [
+   "أوّل كلمةٍ نزلت من القرآن كانت: ﴿اقْرَأْ بِاسْمِ رَبِّكَ الَّذِي خَلَقَ﴾ [العلق: ١]. فالقراءة والكتابة بابٌ عظيم للعلم.",
+   "The very first word of the Quran revealed was \"Read\": \"Read in the name of your Lord who created\" [al-'Alaq 96:1]. Reading and writing are a great door to knowledge."
+  ],
+  "lesson": [
+   "علّم أخاك الصغير حرفًا جديدًا، أو اقرأ له قصّة.",
+   "Teach your little brother or sister a new letter, or read them a story."
+  ]
+ },
+ {
+  "gd": 21,
+  "gm": 9,
+  "icon": "🕊️",
+  "kind": "day",
+  "t": [
+   "اليوم الدولي للسلام",
+   "International Day of Peace"
+  ],
+  "s": [
+   "تحيّة المسلمين «السلام عليكم»، وقال النبي ﷺ: «أفشوا السلام بينكم» (رواه مسلم). فالسلام يملأ القلوب محبّة.",
+   "The Muslim greeting is \"Peace be upon you\", and the Prophet ﷺ said: \"Spread the greeting of peace among you\" (Muslim). Peace fills hearts with love."
+  ],
+  "lesson": [
+   "ألقِ السلام اليوم على كلّ من تلقاه.",
+   "Greet everyone you meet today with \"as-salamu alaykum\"."
+  ]
+ },
+ {
+  "gd": 25,
+  "gm": 9,
+  "icon": "🌐",
+  "kind": "event",
+  "t": [
+   "تأسيس منظّمة التعاون الإسلامي",
+   "The Organisation of Islamic Cooperation Is Founded"
+  ],
+  "s": [
+   "في الخامس والعشرين من سبتمبر ١٩٦٩م اجتمع قادة دولٍ مسلمة في مدينة الرباط بالمغرب، وأسّسوا منظّمةً تجمع الدول الإسلامية على التعاون، تذكيرًا بقول الله تعالى: ﴿وَاعْتَصِمُوا بِحَبْلِ اللَّهِ جَمِيعًا وَلَا تَفَرَّقُوا﴾ [آل عمران: ١٠٣].",
+   "On 25 September 1969 leaders of Muslim countries met in Rabat, Morocco, and founded an organisation bringing Muslim nations together to cooperate — a reminder of Allah's words: \"Hold firmly to the rope of Allah all together and do not be divided\" [Al 'Imran 3:103]."
+  ],
+  "lesson": [
+   "اعمل اليوم مشروعًا صغيرًا مع إخوتك أو أصدقائك معًا.",
+   "Do a small project together with your siblings or friends today."
+  ],
+  "y": 1969
+ },
+ {
+  "gd": 1,
+  "gm": 10,
+  "icon": "👴",
+  "kind": "day",
+  "t": [
+   "اليوم الدولي لكبار السنّ",
+   "International Day of Older Persons"
+  ],
+  "s": [
+   "قال النبي ﷺ: «ليس منّا من لم يرحم صغيرنا ويوقّر كبيرنا» (رواه الترمذي). فاحترام الكبار من أخلاق المسلم.",
+   "The Prophet ﷺ said: \"He is not one of us who does not show mercy to our young and respect to our elders\" (at-Tirmidhi). Respecting elders is part of a Muslim's character."
+  ],
+  "lesson": [
+   "اتّصل بجدّك أو جدّتك اليوم، أو زُرهما.",
+   "Call or visit your grandfather or grandmother today."
+  ]
+ },
+ {
+  "gd": 5,
+  "gm": 10,
+  "icon": "👩‍🏫",
+  "kind": "day",
+  "t": [
+   "اليوم العالمي للمعلّم",
+   "World Teachers' Day"
+  ],
+  "s": [
+   "قال النبي ﷺ: «إنّ الله وملائكته، حتى النملة في جحرها وحتى الحوت، ليصلّون على معلّم الناس الخير» (رواه الترمذي). فالمعلّم صاحب فضلٍ عظيم.",
+   "The Prophet ﷺ said: \"Allah, His angels — even the ant in its hole and the fish — pray for the one who teaches people good\" (at-Tirmidhi). A teacher has a great virtue."
+  ],
+  "lesson": [
+   "اكتب لمعلّمك رسالة شكر، وادعُ له.",
+   "Write your teacher a thank-you note and make dua for them."
+  ]
+ },
+ {
+  "gd": 7,
+  "gm": 10,
+  "icon": "🧬",
+  "kind": "event",
+  "t": [
+   "عزيز سنجر ينال جائزة نوبل",
+   "Aziz Sancar Wins the Nobel Prize"
+  ],
+  "s": [
+   "في السابع من أكتوبر ٢٠١٥م أُعلن فوز العالم التركي المسلم عزيز سنجر بجائزة نوبل في الكيمياء، لاكتشافاته في الطريقة التي تُصلح بها خلايا الجسم نفسها.",
+   "On 7 October 2015 the Turkish Muslim scientist Aziz Sancar was announced as a winner of the Nobel Prize in Chemistry, for his discoveries about how the body's cells repair themselves."
+  ],
+  "lesson": [
+   "سبحان الله! جسمك يُصلح نفسه كلّ يوم — اشكر الله على هذه النعمة.",
+   "Subhan Allah! Your body repairs itself every day — thank Allah for this blessing."
+  ],
+  "y": 2015
+ },
+ {
+  "gd": 10,
+  "gm": 10,
+  "icon": "🎓",
+  "kind": "event",
+  "t": [
+   "ملالا يوسفزاي تنال جائزة نوبل للسلام",
+   "Malala Yousafzai Wins the Nobel Peace Prize"
+  ],
+  "s": [
+   "في العاشر من أكتوبر ٢٠١٤م أُعلن فوز الفتاة الباكستانية ملالا يوسفزاي بجائزة نوبل للسلام لدفاعها عن حقّ الأطفال — وخاصّةً البنات — في التعليم، وكانت في السابعة عشرة من عمرها.",
+   "On 10 October 2014 the Pakistani girl Malala Yousafzai was announced as a winner of the Nobel Peace Prize for standing up for every child's — especially every girl's — right to learn. She was seventeen years old."
+  ],
+  "lesson": [
+   "العلم نعمة: اشكر الله على مدرستك، واجتهد في درسك اليوم.",
+   "Learning is a blessing: thank Allah for your school and work hard on your lesson today."
+  ],
+  "y": 2014
+ },
+ {
+  "gd": 16,
+  "gm": 10,
+  "icon": "🍽️",
+  "kind": "day",
+  "t": [
+   "يوم الأغذية العالمي",
+   "World Food Day"
+  ],
+  "s": [
+   "قال الله تعالى: ﴿وَكُلُوا وَاشْرَبُوا وَلَا تُسْرِفُوا﴾ [الأعراف: ٣١]. فنأكل ما يكفينا، ولا نرمي الطعام، ونشارك من يحتاج.",
+   "Allah says: \"Eat and drink, but do not waste\" [al-A'raf 7:31]. We eat what is enough, never throw food away, and share with those in need."
+  ],
+  "lesson": [
+   "ضع في صحنك ما تستطيع أكله فقط، وابدأ بـ«بسم الله».",
+   "Put on your plate only what you can finish, and start with \"Bismillah\"."
+  ]
+ },
+ {
+  "gd": 13,
+  "gm": 11,
+  "icon": "💗",
+  "kind": "day",
+  "t": [
+   "اليوم العالمي للّطف",
+   "World Kindness Day"
+  ],
+  "s": [
+   "قال النبي ﷺ: «إنّ الله رفيقٌ يحبّ الرفق في الأمر كلّه» (رواه البخاري ومسلم). فاللطف يجعل كلّ شيءٍ أجمل.",
+   "The Prophet ﷺ said: \"Allah is Gentle and loves gentleness in all matters\" (al-Bukhari and Muslim). Kindness makes everything more beautiful."
+  ],
+  "lesson": [
+   "افعل اليوم ثلاثة أشياء لطيفة دون أن يطلبها أحد.",
+   "Do three kind things today without being asked."
+  ]
+ },
+ {
+  "gd": 20,
+  "gm": 11,
+  "icon": "🧒",
+  "kind": "day",
+  "t": [
+   "اليوم العالمي للطفل",
+   "World Children's Day"
+  ],
+  "s": [
+   "كان النبي ﷺ يرحم الأطفال ويلاعبهم ويسلّم عليهم، وقال: «ليس منّا من لم يرحم صغيرنا» (رواه الترمذي).",
+   "The Prophet ﷺ was merciful to children: he played with them and greeted them, and said: \"He is not one of us who does not show mercy to our young\" (at-Tirmidhi)."
+  ],
+  "lesson": [
+   "العب اليوم لعبةً مع طفلٍ أصغر منك، وكن لطيفًا معه.",
+   "Play a game today with a child younger than you, and be gentle with them."
+  ]
+ },
+ {
+  "gd": 29,
+  "gm": 11,
+  "icon": "🇵🇸",
+  "kind": "day",
+  "t": [
+   "اليوم الدولي للتضامن مع الشعب الفلسطيني",
+   "International Day of Solidarity with the Palestinian People"
+  ],
+  "s": [
+   "يتذكّر العالم في هذا اليوم أهل فلسطين، أرض المسجد الأقصى المبارك. والمسلمون كالجسد الواحد، يتألّمون لألم إخوانهم ويدعون لهم.",
+   "On this day the world remembers the people of Palestine, the land of the blessed Al-Aqsa Mosque. Muslims are like one body: they feel their brothers' pain and make dua for them."
+  ],
+  "lesson": [
+   "ادعُ اليوم لأطفال فلسطين بالأمن والسلام.",
+   "Make dua today for the children of Palestine to have safety and peace."
+  ]
+ },
+ {
+  "gd": 3,
+  "gm": 12,
+  "icon": "♿",
+  "kind": "day",
+  "t": [
+   "اليوم الدولي للأشخاص ذوي الإعاقة",
+   "International Day of Persons with Disabilities"
+  ],
+  "s": [
+   "جاء الصحابي الكفيف عبد الله ابن أمّ مكتوم إلى النبي ﷺ يسأله، فنزلت: ﴿عَبَسَ وَتَوَلَّىٰ ۝ أَنْ جَاءَهُ الْأَعْمَىٰ﴾ [عبس: ١–٢]. فصار النبي ﷺ يكرمه، وكان مؤذّنه، واستخلفه على المدينة مرّات.",
+   "The blind Companion Abdullah ibn Umm Maktum came to the Prophet ﷺ with a question, and the verses were revealed: \"He frowned and turned away, because the blind man came to him\" ['Abasa 80:1–2]. After that the Prophet ﷺ honoured him: he was one of his callers to prayer, and he left him in charge of Madinah several times."
+  ],
+  "lesson": [
+   "كل إنسانٍ عنده مواهب: ساعد اليوم من يحتاج مساعدة، واحترمه.",
+   "Everyone has gifts: help someone who needs it today, and treat them with respect."
+  ]
+ },
+ {
+  "gd": 18,
+  "gm": 12,
+  "icon": "🔤",
+  "kind": "day",
+  "t": [
+   "اليوم العالمي للغة العربية",
+   "World Arabic Language Day"
+  ],
+  "s": [
+   "العربية لغة القرآن، قال الله تعالى: ﴿إِنَّا أَنْزَلْنَاهُ قُرْآنًا عَرَبِيًّا لَعَلَّكُمْ تَعْقِلُونَ﴾ [يوسف: ٢]. واختير هذا اليوم لأنّ الأمم المتحدة جعلت العربية من لغاتها الرسمية في ١٨ ديسمبر ١٩٧٣م.",
+   "Arabic is the language of the Quran. Allah says: \"We have sent it down as an Arabic Quran so that you may understand\" [Yusuf 12:2]. This day was chosen because the United Nations made Arabic one of its official languages on 18 December 1973."
+  ],
+  "lesson": [
+   "تعلّم اليوم كلمةً عربيةً جديدة من القرآن واعرف معناها.",
+   "Learn a new Arabic word from the Quran today, and its meaning."
+  ]
+ }
+] };

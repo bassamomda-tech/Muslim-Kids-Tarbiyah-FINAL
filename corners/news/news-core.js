@@ -35,6 +35,19 @@
     if (h) D.H.forEach(function (e) { if (e.d === h.d && e.m === h.m) out.push(Object.assign({ cal: 'H' }, e)); });
     return out;
   }
+  /* every event whose GREGORIAN day and month fall on date d: the G list, plus Hijri-list events with an exact
+     recorded Gregorian date from 1582 on (earlier dates are Julian, so they are not "this day" in today's calendar) */
+  function eventsOnG(d) {
+    d = noon(d); var D = data(), out = [], gd = d.getDate(), gm = d.getMonth() + 1;
+    (D.G || []).forEach(function (e) { if (e.gd === gd && e.gm === gm) out.push(Object.assign({ cal: 'G' }, e)); });
+    D.H.forEach(function (e) { if (e.g && e.g.y >= 1582 && e.g.d === gd && e.g.m === gm) out.push(Object.assign({ cal: 'H', via: 'G' }, e)); });
+    return out;
+  }
+  function upcomingG(n, from) {
+    var base = noon(from || new Date()), list = [];
+    for (var i = 1; i <= n; i++) { var d = new Date(base.getTime() + i * DAY), ev = eventsOnG(d); if (ev.length) list.push({ date: d, events: ev }); }
+    return list;
+  }
   /* the next n days starting tomorrow (or today when withToday) → [{date, events}] */
   function upcoming(n, from, withToday) {
     var base = noon(from || new Date()), list = [];
@@ -56,7 +69,12 @@
   /* Hijri first, Gregorian beside it:
      «٢٧ رجب ٥٨٣ هـ · ٢ أكتوبر ١١٨٧ م» (recorded Gregorian date) · «١٧ رمضان ٢ هـ · ٦٢٤ م» · «عام الفيل · نحو ٥٧١ م» */
   function dateLabel(e, ar) {
-    var L = ar ? 'ar' : 'en', hd = num(e.d, ar) + ' ' + HM[L][e.m - 1];
+    var L = ar ? 'ar' : 'en';
+    if (e.cal === 'G') {   // Gregorian-dated: «٣ مارس ١٩٢٤ م» · a yearly world day: «كلّ عام في ٢١ مارس»
+      var gdl = num(e.gd, ar) + ' ' + GM[L][e.gm - 1];
+      return e.y ? gdl + ' ' + num(e.y, ar) + (ar ? ' م' : ' CE') : (ar ? 'كلّ عام في ' + gdl : 'Every year on ' + gdl);
+    }
+    var hd = num(e.d, ar) + ' ' + HM[L][e.m - 1];
     if (e.y) {
       var h = hd + ' ' + num(e.y, ar) + (ar ? ' هـ' : ' AH');
       if (e.g) return h + ' · ' + num(e.g.d, ar) + ' ' + GM[L][e.g.m - 1] + ' ' + num(e.g.y, ar) + (ar ? ' م' : ' CE');
@@ -67,10 +85,11 @@
   }
   function yearLabel(e, ar) { return dateLabel(e, ar); }   // kept for older callers
   function ago(e, today) {
+    if (e.cal === 'G') return e.y ? { n: today.getFullYear() - e.y, cal: 'G' } : null;
     if (e.y) { var h = hijri(today); return h ? { n: h.y - e.y, cal: 'H' } : null; }
     if (e.pre && e.ce) return { n: today.getFullYear() - e.ce, cal: 'G', approx: true };
     return null;
   }
 
-  window.MKNews = { hijri: hijri, fmtHijri: fmtHijri, fmtGreg: fmtGreg, eventsOn: eventsOn, upcoming: upcoming, week: week, pick: pick, yearLabel: yearLabel, dateLabel: dateLabel, ago: ago, noon: noon, HM: HM, DAY: DAY };
+  window.MKNews = { hijri: hijri, fmtHijri: fmtHijri, fmtGreg: fmtGreg, eventsOn: eventsOn, eventsOnG: eventsOnG, upcoming: upcoming, upcomingG: upcomingG, GM: GM, week: week, pick: pick, yearLabel: yearLabel, dateLabel: dateLabel, ago: ago, noon: noon, HM: HM, DAY: DAY };
 })();
