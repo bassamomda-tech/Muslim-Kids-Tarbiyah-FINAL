@@ -51,7 +51,7 @@
     }));
   }
   function qvNorm(t) {
-    return String(t).replace(/<[^>]*>/g, '')
+    return String(t).replace(/<[^>]*>/g, '').replace(/[ىو]\u0670(?=[\u064B-\u065F\u0670\u06D6-\u06ED]*[\u0621-\u064A])/g, 'ا')
       .replace(/[\u0610-\u061A\u064B-\u065F\u0670\u06D6-\u06ED\u0640\u08D3-\u08FF]/g, '')
       .replace(/[أإآٱ]/g, 'ا').replace(/ى/g, 'ي').replace(/ة/g, 'ه').replace(/ؤ/g, 'و').replace(/ئ/g, 'ي')
       .replace(/[^\u0621-\u064A]/g, '').replace(/[اء]/g, '');
@@ -75,6 +75,28 @@
     if (!out.length) return null;
     txt(text.slice(last));
     return out;
+  }
+  /* quotes not in the built-in list (e.g. verses added to the site later): ask the voice server
+     once, which knows the whole mushaf; remembered on this device. */
+  var QV_ASKED = {};
+  try { QV_ASKED = JSON.parse(localStorage.getItem('mk:qv-extra') || '{}') || {}; } catch (e) {}
+  function qvResolve(text) {
+    if (!EP) return Promise.resolve();
+    var ask = [], keys = [], m, re = /﴿([^﴾]*)﴾/g;
+    while ((m = re.exec(text))) {
+      var n = qvNorm(m[1]), k = n.length >= 6 && qvHash(n);
+      if (!k || qvMap[k]) continue;
+      if (k in QV_ASKED) { if (QV_ASKED[k]) qvMap[k] = QV_ASKED[k]; continue; }
+      if (keys.indexOf(k) < 0) { keys.push(k); ask.push(m[1]); }
+    }
+    if (!ask.length) return Promise.resolve();
+    var done = fetch(EP, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ verses: ask }) })
+      .then(function (r) { return r.json(); })
+      .then(function (j) {
+        (j.refs || []).forEach(function (ref, i) { QV_ASKED[keys[i]] = ref || ''; if (ref) qvMap[keys[i]] = ref; });
+        try { localStorage.setItem('mk:qv-extra', JSON.stringify(QV_ASKED)); } catch (e) {}
+      }, function () {});
+    return Promise.race([done, new Promise(function (r) { setTimeout(r, 3000); })]);
   }
   function pad3(x) { return ('00' + x).slice(-3); }
   function qvUrl(s, a) { return QV_AUDIO + pad3(s) + pad3(a) + '.mp3'; }
@@ -211,7 +233,7 @@
     if (!text) return Promise.reject(new Error('no text'));
     stop(); var my = gen;
     if (lang === 'ar' && text.indexOf('﴿') >= 0) {
-      return qvLoad().then(function () {
+      return qvLoad().then(function () { return qvResolve(text); }).then(function () {
         if (my !== gen) return new Promise(function () {});
         var parts = qvSplit(text);
         return parts ? runParts(parts, lang, opt, my) : playClip(text, lang, opt, my);

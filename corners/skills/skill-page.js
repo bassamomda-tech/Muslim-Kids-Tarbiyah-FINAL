@@ -69,17 +69,25 @@
       try { speechSynthesis.cancel(); } catch (e) {}
       speechSynthesis.speak(u);
     }
-    /* natural cloud voice first; if it fails or hangs, switch to the device voices for the rest of the visit */
-    if (window.MKTTS && MKTTS.enabled && !pod.cloudBad) {
-      var settled = false, guard = setTimeout(function () {
-        if (settled) return; settled = true; pod.cloudBad = true;
-        try { MKTTS.stop(); } catch (e) {}
-        if (tok === pod.token) browser();
-      }, 20000 + txt.length * 110);   // room for the first (uncached) generation
+    /* natural cloud voice first. A slow or failed line is tried once more; only after 3 failed lines in a
+       row does the rest of the visit use the device voice (one busy moment no longer makes it robotic) */
+    if (window.MKTTS && MKTTS.enabled && (pod.cloudFails || 0) < 3) {
       var ep = pod.ep >= 0 && S.stations[pod.ep].podcast, nx = ep && ep.lines[pod.line + 1];
       if (nx && MKTTS.prefetch) { var nw = CAST[nx[0]] || CAST.h; MKTTS.prefetch(lineText(nx, ar), lang, { style: 'podcast', gender: nw.g || 'female' }); }
-      MKTTS.speak(txt, lang, { style: 'podcast', gender: who.g || 'female' }).then(function () { if (settled) return; settled = true; clearTimeout(guard); next(); },
-        function () { if (settled) return; settled = true; clearTimeout(guard); pod.cloudBad = true; if (tok === pod.token) browser(); });
+      var attempt = function (n) {
+        var settled = false, guard = setTimeout(function () { fail(); }, 15000 + txt.length * 80);
+        function fail() {
+          if (settled) return; settled = true; clearTimeout(guard);
+          try { MKTTS.stop(); } catch (e) {}
+          if (tok !== pod.token) return;
+          if (n < 1) { setTimeout(function () { if (tok === pod.token) attempt(n + 1); }, 1200); return; }
+          pod.cloudFails = (pod.cloudFails || 0) + 1; browser();
+        }
+        MKTTS.speak(txt, lang, { style: 'podcast', gender: who.g || 'female' }).then(function () {
+          if (settled) return; settled = true; clearTimeout(guard); pod.cloudFails = 0; next();
+        }, fail);
+      };
+      attempt(0);
     } else browser();
     window.MK_NARRATOR_GENDER = prevG;
   }

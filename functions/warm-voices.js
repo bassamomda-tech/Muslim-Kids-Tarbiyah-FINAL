@@ -23,15 +23,21 @@ Object.values(window.SKILLS || {}).forEach((S) => S.stations.forEach((st) => (st
 })));
 console.log('clips to prepare:', jobs.length);
 (async () => {
-  let done = 0, made = 0, failed = 0;
+  let done = 0, made = 0, fallback = 0, failed = 0, wait = 1500;
   for (const j of jobs) {
-    try {
-      const r = await fetch(EP, { method: 'POST', headers: Object.assign({ 'Content-Type': 'application/json' }, WARM ? { 'x-mk-warm': WARM } : {}), body: JSON.stringify(j) });
-      const o = await r.json(); if (!o.url) throw new Error(JSON.stringify(o));
-      if (!o.cached) made++;
-    } catch (e) { failed++; }
-    if (++done % 50 === 0) console.log(done + '/' + jobs.length, '(new ' + made + ', failed ' + failed + ')');
-    await new Promise((res) => setTimeout(res, 400));   // gentle on the API rate limit
+    let ok = false;
+    for (let t = 0; t < 4 && !ok; t++) {
+      try {
+        const r = await fetch(EP, { method: 'POST', headers: Object.assign({ 'Content-Type': 'application/json' }, WARM ? { 'x-mk-warm': WARM } : {}), body: JSON.stringify(j) });
+        const o = await r.json();
+        if (!o.url) throw new Error(JSON.stringify(o));
+        if (o.engine && o.engine !== 'gemini') { fallback++; wait = Math.min(20000, wait * 2); await new Promise((res) => setTimeout(res, wait)); continue; }   // Gemini busy: slow down, try again
+        ok = true; if (!o.cached) made++; wait = Math.max(1500, wait * 0.8);
+      } catch (e) { await new Promise((res) => setTimeout(res, 5000)); }
+    }
+    if (!ok) failed++;
+    if (++done % 25 === 0) console.log(done + '/' + jobs.length, '(new ' + made + ', retried busy ' + fallback + ', failed ' + failed + ')');
+    await new Promise((res) => setTimeout(res, wait));   // gentle on Gemini's per-minute limit
   }
   console.log('finished:', done, 'clips — new', made, '· failed', failed, '(run again to retry failures)');
 })();

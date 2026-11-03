@@ -115,8 +115,8 @@ async function googleSpeak(text, lang, gender) {
    warm-voices.js (run by you in Cloud Shell) proves it is you with a hash of the Gemini key,
    so preparing all the podcasts is not blocked by these limits.
    Counters live in Firestore (collection tts_limits); the website itself cannot read them. */
-const DAILY_NEW = parseInt(process.env.TTS_DAILY_NEW || '3000', 10);
-const IP_HOURLY = parseInt(process.env.TTS_IP_HOURLY || '200', 10);
+const DAILY_NEW = parseInt(process.env.TTS_DAILY_NEW || '10000', 10);
+const IP_HOURLY = parseInt(process.env.TTS_IP_HOURLY || '600', 10);
 function visitor(req) {
   // Google's front end ADDS the real address at the end; anything before it can be faked by the caller
   const ip = String(req.headers['x-forwarded-for'] || req.ip || '').split(',').pop().trim();
@@ -144,6 +144,14 @@ exports.narrate = onRequest(
   async (req, res) => {
     try {
       const q = Object.assign({}, req.query, req.body || {});
+      /* { verses: ['quote', …] } → { refs: ['surah:ayah…' | null, …] }: where each Quran quote is, so the
+         site plays Al-Husary's recitation of it. Free (no voice is made) — used for verses added later. */
+      if (Array.isArray(q.verses)) {
+        const qm = require('./quran-match.js');
+        res.set('Cache-Control', 'public, max-age=86400');
+        res.json({ refs: q.verses.slice(0, 20).map((v) => { try { return qm.match(String(v).slice(0, 1500)); } catch (e) { return null; } }) });
+        return;
+      }
       const text = String(q.text || '').trim().slice(0, MAX);
       const lang = String(q.lang || 'ar').toLowerCase().indexOf('ar') === 0 ? 'ar' : 'en';
       const gender = String(q.gender || 'female').toLowerCase() === 'male' ? 'male' : 'female';
@@ -166,8 +174,18 @@ exports.narrate = onRequest(
         if (!ok) { res.set('Cache-Control', 'no-store'); res.status(429).json({ error: 'limit' }); return; }
         let mp3;
         if (key) {
-          try { mp3 = (await geminiSpeak(text, lang, gender, style, key)).mp3; }
-          catch (e) { console.warn('gemini failed, using google voice:', e.message); engine = 'google'; }
+          /* Gemini allows a limited number of requests per minute: when it is busy (429/5xx) wait and try
+             again, so the same natural voice is used instead of a different-sounding fallback voice */
+          for (let t = 0; t < 3 && !mp3; t++) {
+            try { mp3 = (await geminiSpeak(text, lang, gender, style, key)).mp3; }
+            catch (e) {
+              const busy = /gemini http (429|500|503)/.test(e.message);
+              console.warn('gemini try ' + (t + 1) + ' failed:', e.message.slice(0, 160));
+              if (!busy || t === 2) break;
+              await new Promise((r) => setTimeout(r, 2500 * (t + 1)));
+            }
+          }
+          if (!mp3) { console.warn('gemini unavailable, using google voice'); engine = 'google'; }
         }
         if (!mp3) mp3 = await googleSpeak(text, lang, gender);
         // a Google fallback clip is NOT stored under the Gemini name, so Gemini is retried next time
