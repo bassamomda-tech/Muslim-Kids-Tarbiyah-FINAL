@@ -267,7 +267,7 @@ html[dir="ltr"] .hd-cert-name:empty::before{content:'... write your name here'}
   #hdPrintArea{display:block!important;position:fixed!important;inset:0!important;padding:1.2cm!important;background:#fff!important}
   .hd-cert-card{box-shadow:none!important;margin:0!important}
 }
-/* each hadith's card lives inside the hadith (🃏 on the tile and in the reader) — no separate cards page */
+/* each hadith's card lives inside the hadith (📇 on the tile and in the reader) — no separate cards page */
 .hd-card{position:relative}
 .hd-cardic{position:absolute;top:.45rem;inset-inline-end:.45rem;width:34px;height:34px;border-radius:50%;border:2px solid var(--hd-lt,#B7AAEB);background:#fff;display:grid;place-items:center;font-size:1rem;cursor:pointer;box-shadow:0 2px 6px rgba(20,12,50,.18);padding:0}
 .hd-cardic.rev{background:#FFF4CC;border-color:#E8B530}
@@ -350,7 +350,7 @@ html.calm .hdc-in{transition:none}
   <div class="hr-nav">
     <button class="hr-back" id="hrBack"><span>←</span><span class="lng-ar">المسجد</span><span class="lng-en">Masjid</span></button>
     <div class="hr-center"><div class="nm" id="hrNm"></div><div class="mt" id="hrMt"></div></div>
-    <button class="hr-cardbtn" id="hrCardBtn" type="button" title="بطاقة الحديث" aria-label="بطاقة الحديث">🃏</button>
+    <button class="hr-cardbtn" id="hrCardBtn" type="button" title="بطاقة الحديث" aria-label="بطاقة الحديث">📇</button>
     <div class="hr-pager"><button class="hr-arrow" id="hrPrev">‹</button><button class="hr-arrow" id="hrNext">›</button></div>
   </div>
   <div class="hr-stage"><div class="hr-book" id="hrBook"></div></div>
@@ -410,7 +410,7 @@ html.calm .hdc-in{transition:none}
 <script defer src="../../shared/nav-fix.js"></script>
 <div class="hdc-ov" id="hdcOv" role="dialog" aria-modal="true"><div class="hdc-box" id="hdcBox"></div></div>
 <script>
-/* «بطاقة الحديث» — each of the Forty has its flip card INSIDE the hadith (🃏 on its tile and in the reader).
+/* «بطاقة الحديث» — each of the Forty has its flip card INSIDE the hadith (📇 on its tile and in the reader).
    Reviewed cards are saved in tr:hadith-cards (same key as before, so stars & the bag keep counting). */
 (function(){
   var KEY='tr:hadith-cards';
@@ -431,7 +431,7 @@ html.calm .hdc-in{transition:none}
   var cur=null;
   function draw(){
     var x=idx(cur), h=(window.HADITHS||{})[cur]||{}, l=L(), on=isRev(cur), box=document.getElementById('hdcBox');
-    box.innerHTML='<div class="hdc-hd"><b>🃏 '+T('بطاقة الحديث','Hadith card')+' '+x.num+'</b><button class="hdc-x" id="hdcX" aria-label="close">✕</button></div>'+cardHtml(x,h,l)+
+    box.innerHTML='<div class="hdc-hd"><b>📇 '+T('بطاقة الحديث','Hadith card')+' '+x.num+'</b><button class="hdc-x" id="hdcX" aria-label="close">✕</button></div>'+cardHtml(x,h,l)+
       '<div class="hdc-act"><button class="ok'+(on?' on':'')+'" id="hdcOk">'+(on?'⭐ '+T('راجعتُها','Reviewed'):'☆ '+T('راجعتُها!','I reviewed it!'))+'</button><button id="hdcPr">🖨️ '+T('اطبع البطاقة','Print the card')+'</button><button id="hdcAll">🖨️ '+T('اطبع البطاقات الـ٤٢','Print all 42 cards')+'</button></div>';
     var f=box.querySelector('.hdc-flip'); f.onclick=function(){ f.classList.toggle('on'); };
     box.querySelector('#hdcX').onclick=close;
@@ -447,12 +447,12 @@ html.calm .hdc-in{transition:none}
       list.map(function(s){ var x=idx(s), h=(window.HADITHS||{})[s]||{}; return '<div class="row"><div class="c f"><div class="e">'+x.emoji+'</div><div class="t">'+esc(l==='ar'?x.titleAr:x.titleEn)+'</div><div class="s">'+(l==='ar'?'الحديث ':'Hadith ')+x.num+'</div></div><div class="c"><div class="m">'+(h.matn?h.matn[l]:'')+'</div><div class="s">'+esc(src(h,l))+'</div></div></div>'; }).join('')+'<script>print()<\/script>');
     w.document.close();
   }
-  /* 🃏 on every hadith tile (the grid re-renders on language change, so keep watching) */
+  /* 📇 on every hadith tile (the grid re-renders on language change, so keep watching) */
   function marks(){
     document.querySelectorAll('#hdGrid .hd-card').forEach(function(c,i){
       var x=(window.HADITH_INDEX||[])[i]; if(!x) return;
       var b=c.querySelector('.hd-cardic');
-      if(!b){ b=document.createElement('button'); b.type='button'; b.className='hd-cardic'; b.textContent='🃏';
+      if(!b){ b=document.createElement('button'); b.type='button'; b.className='hd-cardic'; b.textContent='📇';
         b.addEventListener('click',function(e){ e.stopPropagation(); e.preventDefault(); open(x.slug); }); c.appendChild(b); }
       b.title=b.ariaLabel=T('بطاقة الحديث','Hadith card'); b.classList.toggle('rev',isRev(x.slug));
     });

@@ -50,7 +50,7 @@
     { problem: { ar: "الناس يرمون طعاماً كثيراً بينما غيرهم جائع.", en: "People throw away lots of food while others go hungry." },
       a: { em: "📱", ar: "تطبيق هاتف", en: "Phone app" }, b: { em: "🍲", ar: "طعام فائض", en: "Surplus food" },
       result: { em: "🤝", ar: "تطبيق يوصّل الطعام الفائض للمحتاجين!", en: "An app that delivers surplus food to those in need!" },
-      extra: [ { em: "🎸", ar: "قيثارة", en: "Guitar" }, { em: "🧦", ar: "جوارب", en: "Socks" }, { em: "🪀", ar: "لعبة يويو", en: "Yo-yo" } ] },
+      extra: [ { em: "🪁", ar: "طائرة ورقية", en: "Kite" }, { em: "🧦", ar: "جوارب", en: "Socks" }, { em: "🪀", ar: "لعبة يويو", en: "Yo-yo" } ] },
   ];
 
   const $ = (id) => document.getElementById(id);

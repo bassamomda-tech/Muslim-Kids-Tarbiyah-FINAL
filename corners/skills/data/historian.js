@@ -275,7 +275,7 @@ window.SKILLS.historian = {
                  '"One of the greatest teachers of this was a Muslim scholar named <b>Ibn Khaldun</b>, born in Tunis in 732 AH (1332 CE). He wrote the <i>Muqaddimah</i>, the introduction to his big book of history."'],
         ['⚖️🧠', '«قال ابن خلدون إن المؤرّخ لا ينقل كلّ خبرٍ كما سمعه، بل يسأل: هل هذا ممكنٌ في الواقع؟ ولاحظ أن بعض الكتب القديمة ذكرت أعداد جيوشٍ مبالغًا فيها جدًّا لا تتّسع لها الأرض ولا الطعام. ورأى أن للتاريخ أسبابًا نبحث عنها، لا أحداثًا فقط.»',
                  '"Ibn Khaldun said a historian should not repeat every report as heard, but ask: Is this possible in real life? He noticed some old books gave army sizes so huge that no land or food supply could hold them. He taught that history has causes we should look for, not just events."'],
-        ['👦🕵️', 'قال يوسف: «سأصير صائد أساطير!» قالت الخالة نور: «وأفضل مكانٍ تبدأ منه: الأسئلة التي ستطرحها على جدّك وجدّتك قريبًا.»',
+        ['👦🔎', 'قال يوسف: «سأصير صائد أساطير!» قالت الخالة نور: «وأفضل مكانٍ تبدأ منه: الأسئلة التي ستطرحها على جدّك وجدّتك قريبًا.»',
                  'Yusuf said, "I am going to be a myth hunter!" Aunt Noor said, "And the best place to start is the questions you will soon ask your grandparents."']
       ],
       learn: ['المؤرّخ يسأل: <b>من؟ ماذا؟ متى؟ أين؟ لماذا؟</b> ثم يسأل سؤال ابن خلدون: <b>هل هذا معقولٌ وممكن؟</b> والأسطورة خبرٌ مشهور بلا دليل، نكشفها بطلب الدليل لا بالسخرية من الناس.',
@@ -421,7 +421,7 @@ window.SKILLS.historian = {
                  'Aunt Noor said, "A good museum tells one clear story. Choose <b>five objects</b> that tell your family\'s story, and arrange them on a <b>timeline</b> from oldest to newest."'],
         ['🏷️✅', 'اختار يوسف: صورة جدّه شابًّا، وصورة المفتاح الحديدي، وبطاقة عرس والديه، وأوّل حذاءٍ لبسه، ورسمةً من صفّه هذا العام. ووضع بجانب كلّ قطعة بطاقة، وفحص كلّ بطاقة بالقائمة: هل كتبتُ الصحيح فقط؟',
                  'Yusuf chose: a photo of his grandfather as a young man, a photo of the iron key, his parents\' wedding card, his first baby shoe, and a drawing from his class this year. He put a label beside each one, and checked each label with the list: did I write only what is true?'],
-        ['🎤👨‍👩‍👧', 'ثم دعا عائلته إلى «افتتاح المتحف». وقف وقال: «السلام عليكم، أهلًا بكم في متحف عائلتنا!» وشرح كلّ قطعة في جملتين: ما هي؟ وماذا تخبرنا؟',
+        ['🎤🏡', 'ثم دعا عائلته إلى «افتتاح المتحف». وقف وقال: «السلام عليكم، أهلًا بكم في متحف عائلتنا!» وشرح كلّ قطعة في جملتين: ما هي؟ وماذا تخبرنا؟',
                  'Then he invited his family to the "Museum Opening". He stood up and said, "Assalamu alaikum, welcome to our family museum!" He explained each object in two sentences: What is it? What does it tell us?'],
         ['❓😊', 'سألته أخته الصغيرة: «كيف عرفتَ أن الصورة لجدّي؟» قال: «سألتُ جدّتي، فهي الراوية، وكتبتُ ذلك على البطاقة.» صفّق الجميع؛ لقد صار مؤرّخًا حقيقيًّا.',
                  'His little sister asked, "How do you know that photo is Grandpa?" He said, "I asked Grandma; she is the narrator, and I wrote it on the label." Everyone clapped; he had become a real historian.'],

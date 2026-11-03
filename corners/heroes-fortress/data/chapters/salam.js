@@ -101,7 +101,7 @@ HISN.chapters.salam = {
     medal: { ar: 'وِسامُ السلام', en: 'Medal of Peace' },
     recipe: {
       title: { ar: 'الخلطةُ السحرية', en: 'The Magic Mix' },
-      intro: { ar: 'لِتعيشَ اسمَ «السلام» اخلِطْ هذه في يومِك 🪄', en: 'To live the name "As-Salam", mix these into your day 🪄' },
+      intro: { ar: 'لِتعيشَ اسمَ «السلام» اخلِطْ هذه في يومِك ✨', en: 'To live the name "As-Salam", mix these into your day ✨' },
       steps: [
         { icon: '🤝', ar: 'أُلقي «السلامَ عليكم» على أهلي وأصدقائي.', en: 'I greet my family and friends with "As-salamu ‘alaykum".' },
         { icon: '😊', ar: 'لا أُخيفُ أحداً ولا أُؤذي بيدي أو لساني.', en: 'I frighten no one and harm none with hand or tongue.' },

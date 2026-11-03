@@ -115,7 +115,7 @@
       <div class="pl-name">حافظُ الدين</div><div class="pl-tag">أحفظُ وأتعلمُ لأمتي</div><div class="pl-meta">📖 قصص وأنشطة</div>
     </a>
     <a class="hj-card guide" style="--pc:#B23C6B" href="../../دليل الأهل للرحلات.html">
-      <div class="hj-orb"><span class="glyph">👨‍👩‍👧</span></div>
+      <div class="hj-orb"><span class="glyph">🏡</span></div>
       <div class="pl-name">دليلُ الأهل</div><div class="pl-tag">هدفُ كلِّ رحلةٍ ودورُكم</div><div class="pl-meta">للكبار</div>
     </a>
   </div>
@@ -357,7 +357,7 @@
       sceneEl.textContent = '🎉';
       textEl.innerHTML = '<div class="rd-moral">'+cur.moral+'</div>';
       $('#rdPrev').disabled = false;
-      $('#rdNext').textContent = cur.act ? 'هيا نلعب! 🎮' : (cur.game ? 'لعبة! 🎲' : 'أنهيتُ الحكاية ✓');
+      $('#rdNext').textContent = cur.act ? 'هيا نلعب! 🎮' : (cur.game ? 'لعبة! 🧩' : 'أنهيتُ الحكاية ✓');
       if(!cur.act && !cur.game && !done[cur.id]){ confetti(); }
     }else if(page === actIdx){
       renderActivity(sceneEl, textEl);
@@ -387,7 +387,7 @@
           Array.prototype.forEach.call(textEl.querySelectorAll('.rd-opt'), function(x){ x.disabled = true; });
           var y = textEl.querySelector('#rdYay');
           y.style.display = ''; y.textContent = '🎉 '+(cur.act.yay||'أحسنت! إجابةٌ صحيحة');
-          $('#rdNext').textContent = cur.game ? 'لعبةٌ أخيرة! 🎲' : 'أنهيتُ الحكاية ✓';
+          $('#rdNext').textContent = cur.game ? 'لعبةٌ أخيرة! 🧩' : 'أنهيتُ الحكاية ✓';
           $('#rdNext').disabled = false;
           if(!done[cur.id]) confetti();
         }else{

@@ -34,7 +34,7 @@ window.HOUSES.mastery = {
     },
 
     forms: [
-      { icon:'🙏', color:'#00695C', title:{ar:'إِتقانُ العِبادَة',  en:'Mastery in worship'},
+      { icon:'🤲', color:'#00695C', title:{ar:'إِتقانُ العِبادَة',  en:'Mastery in worship'},
         body:{ar:'أداءُ الصَّلاةِ بِخُشوعٍ تامّ، والصِّيامِ بِصِدقٍ، والقُرآنِ بِتَجويد. اللهُ يُريدُنا أن نُعبِدَهُ بِأَفضَلِ ما يُمكِن.', en:'Praying with full focus, fasting sincerely, reciting Quran with tajweed. Allah wants us to worship Him in the best way possible.'} },
       { icon:'📚', color:'#1A237E', title:{ar:'إِتقانُ التَّعَلُّم', en:'Mastery in learning'},
         body:{ar:'الدِّراسَةُ بِجِدٍّ وفَهم، لا الحِفظُ دونَ فَهم. الطّالِبُ المُتقِنُ يُراجِعُ ويَسأَلُ حتى يَفهَمَ كُلَّ شَيء.', en:'Studying with effort and understanding, not memorizing without comprehension. The mastering student reviews and asks until everything is clear.'} },
@@ -779,7 +779,7 @@ window.HOUSES.mastery = {
       body:{ar:'لا تَجلِس لِلدِّراسَةِ وفي بالِكَ «سَأَدرُس شَيئاً ما» — بَل قُل: «سَأَفهَم هذا الدَّرسَ كامِلاً».', en:'Don\'t sit to study with "I\'ll study something" in mind — instead say: "I will fully understand this lesson."'} },
     { icon:'🔄', title:{ar:'تَدَرَّب على المَهارَةِ حتى تَصيرَ عادَة', en:'Practise the skill until it becomes a habit'},
       body:{ar:'اكتُب، ارسُم، احفَظ، مارِس — كَرِّر حتى لا تَحتاجَ إلى تَفكير. هذا هو الإِتقان!', en:'Write, draw, memorise, practise — repeat until you need no thinking. This is mastery!'} },
-    { icon:'🙏', title:{ar:'ادعُ اللهَ أن يُعينَكَ على الإِتقان', en:'Ask Allah to help you master'},
+    { icon:'🤲', title:{ar:'ادعُ اللهَ أن يُعينَكَ على الإِتقان', en:'Ask Allah to help you master'},
       body:{ar:'«اللَّهُمَّ أَعِنِّي على إِتقانِ عَمَلي وأَن أُحسِنَ فيما تَكَلَّفتُ بِه».', en:'"O Allah, help me to master my work and to excel in what I am entrusted with."'} },
   ],
 

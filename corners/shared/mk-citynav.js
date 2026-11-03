@@ -25,7 +25,7 @@
     { icon: '📚', ar: 'المكتبة المجانية', en: 'Free Library', href: 'corners/shared/store.html' },
     { icon: '👥', ar: 'مجتمع العائلات', en: 'Community', href: 'corners/shared/community.html' },
     { icon: '🤝', ar: 'ادعَمْنا', en: 'Support Us', href: 'corners/shared/support.html' },
-    { icon: '👨‍👩‍👧', ar: 'ركن الأهل', en: 'Parents', href: 'corners/little-district/pages/parents.html' },
+    { icon: '🏡', ar: 'ركن الأهل', en: 'Parents', href: 'corners/little-district/pages/parents.html' },
   ];
 
   function build() {

@@ -101,7 +101,7 @@ HISN.chapters.hadi = {
     medal: { ar: 'وِسامُ الهداية', en: 'Medal of Guidance' },
     recipe: {
       title: { ar: 'الخلطةُ السحرية', en: 'The Magic Mix' },
-      intro: { ar: 'لِتعيشَ اسمَ «الهادي» اخلِطْ هذه في يومِك 🪄', en: 'To live the name "Al-Hadi", mix these into your day 🪄' },
+      intro: { ar: 'لِتعيشَ اسمَ «الهادي» اخلِطْ هذه في يومِك ✨', en: 'To live the name "Al-Hadi", mix these into your day ✨' },
       steps: [
         { icon: '🤲', ar: 'أطلبُ الهدايةَ من اللهِ في صلاتي ودعائي.', en: 'I ask Allah for guidance in my prayer and du‘a.' },
         { icon: '📖', ar: 'أقرأُ القرآنَ ولو آيةً كلَّ يومٍ فيَنوّرُ قلبي.', en: 'I read the Qur’an, even a verse daily, lighting my heart.' },

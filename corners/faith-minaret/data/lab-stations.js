@@ -143,7 +143,7 @@ window.LAB_STATIONS = [
 
 /* ───────────── 5 · The Princess and the Frog ───────────── */
 {
-  id:'frog', num:5, icon:'🐸', emoji:'👸', color:'#16A085', scene:'lab',
+  id:'frog', num:5, icon:'🐸', emoji:'👑', color:'#16A085', scene:'lab',
   title:{ ar:'خُرافةُ الأميرةِ والضِّفدَع — هَدمُ التَّطَوُّر', en:'The Princess and the Frog Myth — Demolishing Evolution' },
   narration:{
     ar:'هل تَذكُرونَ قِصّةَ الخَيالِ عَن أميرةٍ قَبَّلَت <b>ضِفدَعاً</b> فَتَحَوَّلَ في لَحظةٍ إلى أميرٍ وَسيم؟ كُلُّنا نَضحَكُ ونَعرِفُ أنها مُجَرَّدُ قِصّةٍ خَياليّةٍ لِلأطفال! 😄 لكنَّ بَعضَ النّاسِ يَقولونَ شَيئاً يُشبِهُ هذا تَماماً! يَقولونَ إنَّ السَّمَكةَ تَحَوَّلَت إلى زاحِف، والزّاحِفَ تَحَوَّلَ إلى طائِرٍ ثُمَّ إلى قِردٍ ثُمَّ إلى إنسانٍ يُفَكِّرُ ويَتَكَلَّم… لكن ليسَ بِقُبلةٍ سِحريّة، بَل بِمُرورِ <b>مَلايينِ السِّنينَ والصُّدفة</b>! والفَرقُ الوَحيدُ بَينَ القِصّتَين: قِصّةُ الأميرةِ سِحرُها «قُبلة»، وهذِهِ سِحرُها «الوَقتُ الطَّويل». وكِلاهُما <b>خَيالٌ لا يَحدُثُ في الواقِع</b>! الحَقيقةُ أنَّ اللهَ خَلَقَ كُلَّ نَوعٍ مِنَ الكائِناتِ مُستَقِلّاً مُتقَناً مُنذُ البِداية.',
@@ -171,7 +171,7 @@ window.LAB_STATIONS = [
   proof:{ ar:'الصُّدفةُ تَهدِمُ ولا تَبني، والخالِقُ قَدَّرَ كُلَّ شَيء', en:'Chance destroys, never builds; the Creator measured all things' },
   dua:{ ar:'سُبحانَ الخالِقِ البارِئِ المُصَوِّر', en:'Glory to the Creator, the Originator, the Fashioner' },
   mission:{ ar:'🐸 مُهِمّةُ المَحطّة: ارسُم سَمَكةً وطائِراً، وتَأمَّل كيفَ صُمِّمَ كُلُّ واحِدٍ بِشَكلٍ مِثاليٍّ لِبيئَتِه. هذا تَقديرُ الخالِق، لا صُدفةٌ عَشوائيّة. قُل: «سُبحانَ الخالِق».', en:'🐸 Station Mission: Draw a fish and a bird, and reflect on how each was perfectly designed for its world. That\'s the Creator\'s design, not random chance. Say: "Glory to the Creator."' },
-  badge:{ icon:'👸', color:'#16A085', title:{ ar:'فاضِحُ الخُرافة', en:'Myth Exposer' } }
+  badge:{ icon:'👑', color:'#16A085', title:{ ar:'فاضِحُ الخُرافة', en:'Myth Exposer' } }
 },
 
 /* ───────────── 6 · The Missing Pieces ───────────── */

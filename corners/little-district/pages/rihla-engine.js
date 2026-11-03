@@ -26,7 +26,7 @@
     meterMid:{ar:'أحسَنت! أتمَمتَ {n} مِن {t} مَحطّات',en:'Great! You finished {n} of {t} stations'},
     meterDone:{ar:'🎉 اكتَمَلَتِ الرِّحلة! ما شاءَ الله',en:'🎉 The journey is complete! MashaAllah'},
     coll1:{icon:'🎟️',title:{ar:'الأوسِمة',en:'Badges'},unit:{ar:'وِسام',en:'badges'}},
-    coll2:{icon:'🃏',title:{ar:'البِطاقات',en:'Cards'},unit:{ar:'بِطاقة',en:'cards'}},
+    coll2:{icon:'📇',title:{ar:'البِطاقات',en:'Cards'},unit:{ar:'بِطاقة',en:'cards'}},
     coll3:{icon:'🔑',title:{ar:'المَفاتيح',en:'Keys'}},
     collCert:{icon:'📜',title:{ar:'الشَّهادة',en:'Diploma'},cta:{ar:'اطبَع شَهادَتَك ←',en:'Print yours →'}},
     kick:{ar:'المَحطّة {n} مِن {t}',en:'Station {n} of {t}'},
@@ -53,7 +53,7 @@
     nextBtn:{ar:'المَحطّةُ التّالية ←',en:'Next station →'},
     toastBadge:{ar:'🎖️ أحسَنت! حَصَلتَ على وِسام «{b}»',en:'🎖️ Great! You earned the “{b}” badge'},
     drawer1:{ar:'🎟️ الأوسِمة',en:'🎟️ Badges'},
-    drawer2:{ar:'🃏 البِطاقات',en:'🃏 Cards'},
+    drawer2:{ar:'📇 البِطاقات',en:'📇 Cards'},
     drawer3:{ar:'🔑 المَفاتيح',en:'🔑 Keys'},
     locked:{ar:'مُقفَل',en:'Locked'},
     lockedCard:{ar:'أكمِل المَحطّةَ لِتَكشِفَ البِطاقة',en:'Complete the station to reveal the card'},
@@ -176,7 +176,7 @@
         </div>
 
         <div class="block myth">
-          <h3><span class="bi">🃏</span>${t(T.hMyth)}</h3>
+          <h3><span class="bi">📇</span>${t(T.hMyth)}</h3>
           <div class="flip" id="flipCard">
             <div class="flip-inner">
               <div class="flip-face flip-front"><div class="ft-tag">${t(T.mythFront)}</div><div>${st.myth.claim[L]}</div></div>

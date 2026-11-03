@@ -232,7 +232,7 @@
 
         ${st.flip?`
         <div class="block myth">
-          <h3><span class="bi">🃏</span>${H.flip}</h3>
+          <h3><span class="bi">📇</span>${H.flip}</h3>
           <div class="flip" id="flipCard">
             <div class="flip-inner">
               <div class="flip-face flip-front"><div class="ft-tag">${t('العُذر','The Excuse')}</div><div>${st.flip.claim[L]}</div></div>

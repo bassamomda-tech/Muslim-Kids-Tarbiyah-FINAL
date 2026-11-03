@@ -101,7 +101,7 @@ HISN.chapters.latif = {
     medal: { ar: 'وِسامُ اللطف', en: 'Medal of Gentleness' },
     recipe: {
       title: { ar: 'الخلطةُ السحرية', en: 'The Magic Mix' },
-      intro: { ar: 'لِتعيشَ اسمَ «اللطيف» اخلِطْ هذه في يومِك 🪄', en: 'To live the name "Al-Latif", mix these into your day 🪄' },
+      intro: { ar: 'لِتعيشَ اسمَ «اللطيف» اخلِطْ هذه في يومِك ✨', en: 'To live the name "Al-Latif", mix these into your day ✨' },
       steps: [
         { icon: '🌙', ar: 'أُحسِنُ الظنَّ باللهِ وأَثِقُ أنّه يختارُ لي الأفضل.', en: 'I think well of Allah, trusting He chooses my best.' },
         { icon: '😊', ar: 'أَرضى ولا أَحزَنُ إذا فاتني ما تمنّيت.', en: 'I’m content and not sad if I miss what I wished.' },

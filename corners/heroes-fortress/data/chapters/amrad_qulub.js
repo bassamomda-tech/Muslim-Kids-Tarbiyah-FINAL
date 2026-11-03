@@ -107,7 +107,7 @@ HISN.chapters.amrad_qulub = {
     medal: { ar: 'وِسامُ القلبِ الأبيض', en: 'Medal of the White Heart' },
     recipe: {
       title: { ar: 'الخلطةُ السحرية', en: 'The Magic Mix' },
-      intro: { ar: 'لِيَبقى قلبُك أبيضَ كالصفا اخلِطْ هذه في يومِك 🪄', en: 'For your heart to stay white like as-Safa, mix these into your day 🪄' },
+      intro: { ar: 'لِيَبقى قلبُك أبيضَ كالصفا اخلِطْ هذه في يومِك ✨', en: 'For your heart to stay white like as-Safa, mix these into your day ✨' },
       steps: [
         { icon: '🚫', ar: 'إذا عُرِضَتْ عليّ معصيةٌ أنكرتُها ولم أُحبَّها.', en: 'When a sin is presented to me, I reject it and don’t love it.' },
         { icon: '🤲', ar: 'أستغفرُ اللهَ كلَّ يومٍ ليُصقَلَ قلبي.', en: 'I seek Allah’s forgiveness daily to polish my heart.' },

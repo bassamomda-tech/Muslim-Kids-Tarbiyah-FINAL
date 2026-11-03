@@ -198,7 +198,7 @@ HISN_STORIES.isa = [
   ]
  },
  {
-  "icon": "👼",
+  "icon": "✨",
   "scene": "garden",
   "character": "✨",
   "title": {
@@ -216,7 +216,7 @@ HISN_STORIES.isa = [
    },
    {
     "scene": "garden",
-    "character": "👼",
+    "character": "✨",
     "text": {
      "ar": "فَأَجابَها الرَّجُلُ بِكَلامٍ هَدَّأَ قَلبَها: <b>﴿ قَالَ إِنَّمَا أَنَا رَسُولُ رَبِّكِ لِأَهَبَ لَكِ غُلَامًا زَكِيًّا ﴾</b> — لا تَخافي! أَنا لَستُ بَشَراً — أَنا <b>جِبريل</b>! أَرسَلَني اللهُ لِأُبَشِّرَكِ بِغُلامٍ طاهِر!<br><br>صُعِقَت مَريَم! <b>﴿ قَالَتْ أَنَّىٰ يَكُونُ لِي غُلَامٌ وَلَمْ يَمْسَسْنِي بَشَرٌ وَلَمْ أَكُ بَغِيًّا ﴾</b> — كَيفَ يَكونُ لي وَلَدٌ ولَم يَمسَسني رَجُل ولَم أَكُن زانيَة!<br><br>فَقالَ جِبريل: <b>﴿ قَالَ كَذَٰلِكِ قَالَ رَبُّكِ هُوَ عَلَيَّ هَيِّنٌ وَلِنَجْعَلَهُ آيَةً لِّلنَّاسِ وَرَحْمَةً مِّنَّا ﴾</b> — هكذا قالَ رَبُّكِ! هو على اللهِ هَيِّنٌ يَسير! ولِنَجعَلَهُ آيَةً لِلنّاسِ ورَحمَةً مِن الله!",
      "en": "The man answered with words that calmed her heart: <b>﴿ \"He said: I am only a messenger of your Lord, to give you a pure son\" ﴾</b> — Don't fear! I am not a human — I am <b>Jibril</b>! Allah sent me to give you glad tidings of a pure boy!<br><br>Maryam was stunned! <b>﴿ \"She said: How can I have a son when no man has touched me and I have not been unchaste?\" ﴾</b> — How can I have a child when no man has touched me and I was never immoral!<br><br>Jibril said: <b>﴿ \"He said: Thus says your Lord — it is easy for Me, and We will make him a sign for people and a mercy from Us\" ﴾</b> — Thus says your Lord! It is easy for Allah! We will make him a sign for people and a mercy from Allah!"
@@ -366,7 +366,7 @@ HISN_STORIES.isa = [
    "en": "Nothing is beyond Allah's power — and etiquette with Allah in moments of fear is the highest form of faith."
   },
   "badge": {
-   "icon": "👼",
+   "icon": "✨",
    "title": {
     "ar": "وِسامُ البِشارَةِ الإِلَهيَّة",
     "en": "Badge of the Divine Glad Tidings"

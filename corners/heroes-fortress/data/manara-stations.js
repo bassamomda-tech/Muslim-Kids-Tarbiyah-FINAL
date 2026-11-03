@@ -149,7 +149,7 @@ window.MANARA_STATIONS = [
 
 /* ───────────── 5 · Thieves of Minds (Intellectual Colonialism) ───────────── */
 {
-  id:'isti3mar', num:5, icon:'🕵️', emoji:'🧠', color:'#7E4FA3',
+  id:'isti3mar', num:5, icon:'🔎', emoji:'🧠', color:'#7E4FA3',
   title:{ ar:'لُصوصُ العُقول — الاستِعمارُ الفِكري', en:'Thieves of Minds — Intellectual Colonialism' },
   narration:{
     ar:'الآنَ يا بَطَل، سأكشِفُ لَكَ سِرّاً خَطيراً يُخفونَه. 🧠 بَعدَ قُرونٍ مِنَ التَّقَدُّمِ والنّور، حَدَثَ شَيءٌ غَريب: جاءَ المُستَعمِرونَ إلى بِلادِ المُسلِمين، لكِنَّهُم لم يَسرِقوا الذَّهَبَ والأرضَ فَقَط — بَل سَرَقوا شَيئاً أثمَن: <b>كُتُبَنا وعِلمَنا وثِقَتَنا بِأنفُسِنا</b>! نَقَلوا كُنوزَ مَكتَباتِنا إلى بِلادِهِم، وتَرجَموا عُلومَنا، ثُمَّ فَعَلوا الأخطَر: بَدَؤوا يُقنِعونَنا بِأكذوبةٍ كَبيرة: «<b>أنتُم مُتَخَلِّفون، ودينُكُم هو سَبَبُ تَخَلُّفِكُم، وعَلَيكُم أن تَتبَعونا في كُلِّ شَيء</b>». هذا اسمُهُ <b>الاستِعمارُ الفِكريّ</b> — أخطَرُ مِنَ استِعمارِ الأرض! لِأنَّ مَن يَحتَلُّ أرضَكَ تَستَطيعُ طَردَه، لكِن مَن يَحتَلُّ عَقلَكَ ويُقنِعُكَ بِأنَّكَ ضَعيفٌ لا تَستَطيعُ شَيئاً — يَجعَلُكَ تَستَسلِمُ بِنَفسِك! أرادوا أن نَنسى أنَّنا كُنّا مَنارةَ العالَم، لِنَبقى تابِعينَ لَهُم إلى الأبَد. لكِنَّ مَعرِفَتَكَ بِهذِهِ الحَقيقةِ هي أوَّلُ خُطوةٍ لِلتَّحَرُّر.',
@@ -177,7 +177,7 @@ window.MANARA_STATIONS = [
   card:{ name:{ar:'الاستِعمارُ الفِكري',en:'Intellectual Colonialism'}, meaning:{ar:'أخطَرُ مِنِ احتِلالِ الأرض: أن يُقنِعوكَ بِأنَّكَ ضَعيفٌ وأنَّ دينَكَ سَبَبُ تَخَلُّفِكَ — والوَعيُ بِهذا أوَّلُ خُطوةٍ لِلتَّحَرُّر',en:'More dangerous than land occupation: convincing you that you\'re weak and your religion is your backwardness — awareness of this is the first step to liberation'} },
   proof:{ ar:'لا أُصَدِّقُ مَن يُصَغِّرُ أُمّتي — آخُذُ العِلمَ النّافِعَ وأفخَرُ بِهُوِيَّتي', en:'I don\'t believe those who belittle my nation — I take beneficial knowledge and take pride in my identity' },
   dua:{ ar:'اللهُمَّ ثَبِّتنا على ديننا، ولا تَجعَلنا تابِعينَ ذائِبين، واجعَلنا أعِزّةً بِك', en:'O Allah, keep us firm on our religion, don\'t make us dissolving followers, and make us honored through You' },
-  mission:{ ar:'🕵️ مُهِمّةُ المَنارة: في كُلِّ مَرّةٍ تَسمَعُ فيها أنَّ «المُسلِمينَ مُتَخَلِّفون»، تَذَكَّر إنجازاتِ أجدادِك، وقُل لِنَفسِك: «هذا الكَلامُ استِعمارٌ فِكريٌّ، وأنا حَفيدُ صُنّاعِ الحَضارة». لا تَستَسلِم لِلأكذوبة.', en:'🕵️ Lighthouse Mission: Every time you hear that "Muslims are backward," remember your ancestors\' achievements and tell yourself: "This talk is intellectual colonialism, and I am the grandchild of the makers of civilization." Don\'t surrender to the lie.' },
+  mission:{ ar:'🔎 مُهِمّةُ المَنارة: في كُلِّ مَرّةٍ تَسمَعُ فيها أنَّ «المُسلِمينَ مُتَخَلِّفون»، تَذَكَّر إنجازاتِ أجدادِك، وقُل لِنَفسِك: «هذا الكَلامُ استِعمارٌ فِكريٌّ، وأنا حَفيدُ صُنّاعِ الحَضارة». لا تَستَسلِم لِلأكذوبة.', en:'🔎 Lighthouse Mission: Every time you hear that "Muslims are backward," remember your ancestors\' achievements and tell yourself: "This talk is intellectual colonialism, and I am the grandchild of the makers of civilization." Don\'t surrender to the lie.' },
   badge:{ icon:'🧠', color:'#7E4FA3', title:{ ar:'مُحَرِّرُ العَقل', en:'Liberator of the Mind' } }
 },
 

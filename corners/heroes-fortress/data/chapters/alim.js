@@ -101,7 +101,7 @@ HISN.chapters.alim = {
     medal: { ar: 'وِسامُ العلم', en: 'Medal of Knowledge' },
     recipe: {
       title: { ar: 'الخلطةُ السحرية', en: 'The Magic Mix' },
-      intro: { ar: 'لِتعيشَ اسمَ «العليم» اخلِطْ هذه في يومِك 🪄', en: 'To live the name "Al-‘Alim", mix these into your day 🪄' },
+      intro: { ar: 'لِتعيشَ اسمَ «العليم» اخلِطْ هذه في يومِك ✨', en: 'To live the name "Al-‘Alim", mix these into your day ✨' },
       steps: [
         { icon: '👀', ar: 'أتذكّرُ أنّ اللهَ يراني فأُحسِنُ حتى في الخفاء.', en: 'I remember Allah sees me, so I do good even in secret.' },
         { icon: '🤥', ar: 'لا أكذبُ ولا أغُشُّ، فاللهُ يعلمُ الحقيقة.', en: 'I don’t lie or cheat, for Allah knows the truth.' },

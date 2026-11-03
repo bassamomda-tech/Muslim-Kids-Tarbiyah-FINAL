@@ -8,7 +8,7 @@ window.PARENTS_DATA = {
      Each journey writes localStorage["<prefix>Done"] = [stationId,...].
      We read those arrays to compute real progress across the city. */
   journeys: [
-    { prefix:'malaika',  total:10, icon:'👼', color:'#5B6BD6', corner:{ar:'منارة العقيدة',en:'Faith Minaret'}, name:{ar:'رحلة جنود النور (الملائكة)', en:'Soldiers of Light (Angels)'} },
+    { prefix:'malaika',  total:10, icon:'✨', color:'#5B6BD6', corner:{ar:'منارة العقيدة',en:'Faith Minaret'}, name:{ar:'رحلة جنود النور (الملائكة)', en:'Soldiers of Light (Angels)'} },
     { prefix:'kutub',    total:10, icon:'📜', color:'#2B8C7E', corner:{ar:'منارة العقيدة',en:'Faith Minaret'}, name:{ar:'رحلة البلاغ (الكتب والرسل)', en:'The Message (Books & Messengers)'} },
     { prefix:'akhira',   total:11, icon:'🌅', color:'#C56B3E', corner:{ar:'منارة العقيدة',en:'Faith Minaret'}, name:{ar:'رحلة العبور (اليوم الآخر)', en:'The Crossing (Last Day)'} },
     { prefix:'qadar',    total:10, icon:'📜', color:'#3E7CB1', corner:{ar:'منارة العقيدة',en:'Faith Minaret'}, name:{ar:'رحلة سر التقدير (القضاء والقدر)', en:'The Decree (Qadar)'} },
@@ -182,7 +182,7 @@ window.PARENTS_DATA = {
             '<b>Plant honoring parents early:</b> tie manners to Allah\'s pleasure: "Speak to them a noble word." Tell stories of the pious honoring their parents, and praise every polite word he says — adab is cemented by praise, example, and supplication.']
       }},
 
-    { icon:'🙏', color:'#D4A017', tag:{ar:'القناعة والشكر',en:'Contentment & Gratitude'},
+    { icon:'🤲', color:'#D4A017', tag:{ar:'القناعة والشكر',en:'Contentment & Gratitude'},
       title:{ar:'«أريدُ! اشترِ لي!»: تربية الشكر في زمن الاستهلاك', en:'"I Want It! Buy Me!" Raising Gratitude in a Consumer Age'},
       read:{ar:'٥ دقائق',en:'5 min'},
       body:{

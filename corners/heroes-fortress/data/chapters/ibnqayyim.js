@@ -48,7 +48,7 @@ HISN.chapters.ibnqayyim = {
     { icon:'💗', color:'#3A5A7A', title:{ar:'اعتنِ بقلبِك',en:'Care for your heart'},
       body:{ar:'علّمَ ابنُ القيّمِ الناسَ كيف يُطهّرونَ قلوبَهم من الحسدِ والكِبر. صلاحُ القلبِ أساسُ صلاحِ العمل.',en:'Ibn al-Qayyim taught people how to purify their hearts of envy and arrogance. The soundness of the heart is the basis of sound deeds.'},
       apply:{ar:'أُطهِّرُ قلبي من الحسدِ والكِبرِ والحقد.',en:'I purify my heart of envy, arrogance, and rancor.'} },
-    { icon:'🙏', color:'#5A7A9A', title:{ar:'كنْ وفيّاً لمعلّمِك',en:'Be loyal to your teacher'},
+    { icon:'🤲', color:'#5A7A9A', title:{ar:'كنْ وفيّاً لمعلّمِك',en:'Be loyal to your teacher'},
       body:{ar:'لازمَ ابنُ القيّمِ شيخَه ابنَ تيميةَ ونشرَ علمَه ودافعَ عنه. الوفاءُ للمعلّمِ خُلُقٌ كريم.',en:'Ibn al-Qayyim accompanied his teacher Ibn Taymiyya, spread his knowledge, and defended him. Loyalty to one\u2019s teacher is a noble trait.'},
       apply:{ar:'أُوفي لمعلّميَّ وأنشرُ ما تعلّمتُ منهم.',en:'I am loyal to my teachers and spread what I learned from them.'} },
     { icon:'🌙', color:'#2A4A6A', title:{ar:'أكثِرْ من ذكرِ الله',en:'Increase in the remembrance of Allah'},

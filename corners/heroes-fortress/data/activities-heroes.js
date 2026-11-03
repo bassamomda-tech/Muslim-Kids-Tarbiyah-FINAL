@@ -79,7 +79,7 @@ HISN.activities.heroes = {
     } },
 
   /* 4 · Who am I? */
-  { id:'whoami', icon:'🕵️', title:{ ar:'مَن أنا؟', en:'Who am I?' },
+  { id:'whoami', icon:'🔎', title:{ ar:'مَن أنا؟', en:'Who am I?' },
     levels:{
       beginner:{ type:'whoAmI',
         clues:[ {ar:'كنتُ أوّلَ الخلفاءِ الراشدين.',en:'I was the first Rightly-Guided Caliph.'},
@@ -151,7 +151,7 @@ HISN.activities.heroes = {
     } },
 
   /* 7 · Memory flip (hero ↔ symbol) */
-  { id:'flip', icon:'🃏', title:{ ar:'بطاقاتُ الذاكرة', en:'Memory flip cards' },
+  { id:'flip', icon:'📇', title:{ ar:'بطاقاتُ الذاكرة', en:'Memory flip cards' },
     levels:{
       beginner:{ type:'flip', pairs:[
         { a:{ar:'أبو بكر',en:'Abu Bakr'}, b:{ar:'🕳️',en:'🕳️'} },

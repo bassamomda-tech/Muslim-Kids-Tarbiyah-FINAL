@@ -69,7 +69,7 @@
       {ic:'🔁', t:{ar:'كثرةُ السرد',en:'Abundant reciting'}, d:{ar:'السردُ المتكرّرُ من الحفظ — لا القراءةُ من المصحف — هو ما يصنع الرسوخ.',en:'Repeated reciting from memory \u2014 not reading from the mushaf \u2014 is what sets it.'}},
       {ic:'🕌', t:{ar:'السردُ في الصلاة',en:'Recite in prayer'}, d:{ar:'اقرأ محفوظَك في الفرائضِ والنوافل؛ صلاةُ الليلِ أعظمُ مثبّت.',en:'Recite your memorization in obligatory & voluntary prayers; night prayer is the greatest fixer.'}},
       {ic:'🎯', t:{ar:'الاختبارُ العشوائيّ',en:'Random testing'}, d:{ar:'ليطلب منك المعلّمُ السردَ من مواضعَ عشوائيّة؛ يكشف الثغراتِ قبل أن تكبر.',en:'Have the teacher ask you to recite from random places; it exposes gaps before they grow.'}},
-      {ic:'👯', t:{ar:'سردُ المتشابهات معًا',en:'Recite look-alikes together'}, d:{ar:'اجمع الآياتِ المتشابهةَ في جلسةٍ واحدةٍ ووازِن بينها لتثبّت الفروق.',en:'Gather similar verses in one session and contrast them to fix the differences.'}},
+      {ic:'🤸', t:{ar:'سردُ المتشابهات معًا',en:'Recite look-alikes together'}, d:{ar:'اجمع الآياتِ المتشابهةَ في جلسةٍ واحدةٍ ووازِن بينها لتثبّت الفروق.',en:'Gather similar verses in one session and contrast them to fix the differences.'}},
       {ic:'📖', t:{ar:'ربطُ المعنى',en:'Anchor the meaning'}, d:{ar:'فهمُ معنى الآيةِ وسياقِها يجعل الحفظَ منطقيًّا لا آليًّا، فيثبت أكثر.',en:'Understanding a verse\u2019s meaning & context makes hifdh logical, not mechanical, so it holds better.'}}
     ]
   };
@@ -105,7 +105,7 @@
           {ar:'لا تزِد جديدًا حتى يثبت القديم؛ القليلُ الراسخُ أبقى.',en:'Add no new until the old is firm; a little well-set lasts.'},
           {ar:'أدخِل كلَّ محفوظٍ في دورةِ مراجعةٍ بعيدةٍ لا يخرج منها أبدًا.',en:'Put every portion into a far-review cycle it never leaves.'},
           {ar:'اسرد محفوظَك في الصلاةِ يوميًّا.',en:'Recite your memorization in daily prayers.'}]},
-      { ic:'👯', t:{ar:'الخلطُ بين الآياتِ المتشابهة',en:'Confusing similar verses'},
+      { ic:'🤸', t:{ar:'الخلطُ بين الآياتِ المتشابهة',en:'Confusing similar verses'},
         why:{ar:'القرآنُ فيه مواضعُ متشابهةٌ تتكرّر بفروقٍ دقيقة؛ الذاكرةُ تخلط بينها إن لم تُميّز.',en:'The Qur\u2019an has similar passages that recur with subtle differences; memory mixes them unless distinguished.'},
         fix:[{ar:'اجمع المتشابهاتِ في ورقةٍ واحدةٍ ووازِن بين فروقها بالتلوين.',en:'Gather the look-alikes on one page and contrast their differences with colour.'},
           {ar:'احفظ علامةً مميّزةً لكلِّ موضع (كلمةٌ أو سياقٌ قبلها).',en:'Memorize a distinguishing marker for each place (a word or context before it).'},

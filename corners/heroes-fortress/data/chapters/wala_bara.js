@@ -109,7 +109,7 @@ HISN.chapters.wala_bara = {
     medal: { ar: 'وِسامُ الميزان', en: 'Medal of Balance' },
     recipe: {
       title: { ar: 'الخلطةُ السحرية', en: 'The Magic Mix' },
-      intro: { ar: 'لِتعيشَ الولاءَ والبراءَ بميزانِه الجميل اخلِطْ هذه في يومِك 🪄', en: 'To live loyalty & disavowal in its beautiful balance, mix these into your day 🪄' },
+      intro: { ar: 'لِتعيشَ الولاءَ والبراءَ بميزانِه الجميل اخلِطْ هذه في يومِك ✨', en: 'To live loyalty & disavowal in its beautiful balance, mix these into your day ✨' },
       steps: [
         { icon: '💚', ar: 'أُحبُّ اللهَ والمؤمنينَ وأفرحُ بصُحبتِهم.', en: 'I love Allah and the believers and rejoice in their company.' },
         { icon: '🛡️', ar: 'أتمسّكُ بديني وأتبرّأُ من الشركِ والباطل.', en: 'I hold to my faith and disavow shirk and falsehood.' },

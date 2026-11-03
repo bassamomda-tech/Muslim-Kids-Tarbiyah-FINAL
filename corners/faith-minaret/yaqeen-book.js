@@ -80,7 +80,7 @@
     var jobs=shuffle(st.match.pairs.map(function(p,i){return {i:i,t:p.job};}));
     function col(arr,side){ return arr.map(function(o){return '<button class="mtile" data-key="'+o.i+'" data-side="'+side+'"><span class="ar">'+o.t.ar+'</span><span class="en lat">'+o.t.en+'</span></button>';}).join(''); }
     leaf.innerHTML=head(st,'🎯','نشاط Activity')+
-      '<div class="flip"><div class="flip-face flip-front"><span class="flip-tag">🎲 السيّد «صُدفة» يقول — Mr Chance says</span>'+
+      '<div class="flip"><div class="flip-face flip-front"><span class="flip-tag">🧩 السيّد «صُدفة» يقول — Mr Chance says</span>'+
         '<span class="flip-txt"><span class="ar">'+st.mrChance.ar+'</span></span><span class="flip-hint">اضغط للحقيقة — tap to reveal ↻</span></div>'+
         '<div class="flip-face flip-back"><span class="flip-tag">✅ الحقيقة — The truth</span>'+
         '<span class="flip-txt"><span class="ar">'+st.myth.bust.ar+'</span><span class="en lat">'+st.myth.bust.en+'</span></span></div></div>'+
@@ -90,7 +90,7 @@
       '<div class="puzzle-instr">'+puz.ar+'<br><span class="en lat" style="font-weight:600;color:var(--ink-soft)">'+puz.en+'</span></div>'+
       slotBlock('slot-'+st.id+'-puz',260,'ضع اللغز — Drop puzzle art',puz.p(st))+
       '<div class="acard exp"><span class="ac-ic">🧪</span><div class="ac-mid"><b>جرِّب بنفسك — Try it</b><div class="body"><span class="ar">'+st.experiment.ar+'</span><span class="en lat">'+st.experiment.en+'</span></div></div></div>'+
-      '<div class="acard fam"><span class="ac-ic">👨‍👩‍👧</span><div class="ac-mid"><b>سؤال العائلة — Family question</b><div class="body"><span class="ar">'+st.familyQ.ar+'</span><span class="en lat">'+st.familyQ.en+'</span></div></div></div>';
+      '<div class="acard fam"><span class="ac-ic">🏡</span><div class="ac-mid"><b>سؤال العائلة — Family question</b><div class="body"><span class="ar">'+st.familyQ.ar+'</span><span class="en lat">'+st.familyQ.en+'</span></div></div></div>';
     return leaf;
   }
   function buildColoring(st){

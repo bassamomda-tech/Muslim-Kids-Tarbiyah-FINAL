@@ -182,7 +182,7 @@ a{color:var(--gold-lt)}a:hover{color:#fff}
 const D=window.HASANAT_DATA;
 const dayKey=()=>{const d=new Date();return d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0')};
 /* ملفات المتسابقين — مفاتيح mk: لا تتبدل مع تبديل الطفل النشط فتظل المنافسة مرئية للجميع */
-const FAM={id:'family',name:'الأهل',avatar:'👨‍👩‍👧',color:'#8E44AD'};
+const FAM={id:'family',name:'الأهل',avatar:'🏡',color:'#8E44AD'};
 function people(){const ps=(window.MK&&MK.profiles&&MK.profiles())||[];return [FAM].concat(ps)}
 let PID=localStorage.getItem('mk:hasanatView')||'family';
 if(!people().some(p=>p.id===PID))PID='family';

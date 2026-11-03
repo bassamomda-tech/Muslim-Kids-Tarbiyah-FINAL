@@ -81,7 +81,7 @@ window.SURAHS.nasr = {
       body:{ar:'إذا فزتَ أو نجحتَ، قُل «الحمدُ لله» ولا تنسَ فضلَه.', en:'When you win or succeed, say “al-hamdu lillah” and never forget His favour.'} },
     { icon:'🤲', title:{ar:'استغفِرِ اللهَ بعدَ العمل', en:'Seek forgiveness after a deed'},
       body:{ar:'قُل «أستغفرُ الله» بعدَ الصَّلاةِ والعملِ الصّالح، كما أمرَ اللهُ نبيَّه.', en:'Say “I seek Allah’s forgiveness” after prayer and good deeds, as Allah told His Prophet.'} },
-    { icon:'🙏', title:{ar:'تواضَعْ ولا تتكبَّر', en:'Be humble, never proud'},
+    { icon:'🤲', title:{ar:'تواضَعْ ولا تتكبَّر', en:'Be humble, never proud'},
       body:{ar:'الفضلُ كلُّه لله، فلا تفخَرْ بنجاحِك على الناس.', en:'All credit is Allah’s, so don’t boast of your success over others.'} },
     { icon:'📿', title:{ar:'سبِّحِ اللهَ واحمَدْه', en:'Glorify and praise Allah'},
       body:{ar:'أكثِرْ من «سبحانَ اللهِ وبحمدِه» شُكراً لنِعمِه.', en:'Say “Glory and praise to Allah” often in thanks for His blessings.'} },
@@ -120,7 +120,7 @@ window.SURAHS.nasr.treasures = [
     }
   },
   {
-    "icon": "🙏",
+    "icon": "🤲",
     "color": "#2980B9",
     "title": {
       "ar": "فَسَبِّحْ بحَمد رَبِّك",

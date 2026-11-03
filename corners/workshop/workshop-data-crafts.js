@@ -11,7 +11,7 @@ window.WS.acts.push(
   whyEn:'Egypt\'s famous rooftop kite — learn the physics of air and lift as it soars.',
   tools:[{ic:'🎋',ar:'عودانِ خفيفانِ (بوص)',en:'Two light reeds'},{ic:'📄',ar:'ورقٌ خفيفٌ أو كيسٌ كبير',en:'Light paper or a big bag'},{ic:'🧵',ar:'خيطٌ طويلٌ متين',en:'Long strong string'}],
   steps:[
-    {ic:'✝️',ar:'اربطِ العودَينِ صليباً: طويلٌ عموديٌّ وقصيرٌ أفقي.',en:'Tie the reeds in a cross: long upright, short across.'},
+    {ic:'➕',ar:'اربطِ العودَينِ صليباً: طويلٌ عموديٌّ وقصيرٌ أفقي.',en:'Tie the reeds in a cross: long upright, short across.'},
     {ic:'📄',ar:'غطِّ الهيكلَ بالورقِ والصقْ حوافَه بإحكام.',en:'Cover the frame with paper and glue the edges tight.'},
     {ic:'🎀',ar:'اصنعْ ذيلاً من شرائطِ الورق — هو سرُّ التوازن!',en:'Make a tail from paper strips — the secret of balance!'},
     {ic:'🧵',ar:'اربطِ الخيطَ في تقاطعِ العودَين.',en:'Tie the string at the cross point.'},
@@ -100,7 +100,7 @@ window.WS.acts.push(
     {ic:'👀',ar:'الصقِ الأزرارَ عيوناً والصوفَ شعراً.',en:'Glue button eyes and yarn hair.'},
     {ic:'📖',ar:'اخترْ قصةً تحفظُها: يونسُ والحوت، أو أصحابُ الفيل.',en:'Pick a story you know: Yunus and the whale, or the People of the Elephant.'},
     {ic:'🎭',ar:'تدرَّبْ على صوتِ العروسةِ — غيِّرْ نبرتَك!',en:'Practice the puppet\'s voice — change your tone!'},
-    {ic:'👨‍👩‍👧',ar:'اعرضِ الحكايةَ على إخوتِك الصغارِ قبلَ النوم.',en:'Perform the tale for your little siblings before bed.'}],
+    {ic:'🏡',ar:'اعرضِ الحكايةَ على إخوتِك الصغارِ قبلَ النوم.',en:'Perform the tale for your little siblings before bed.'}],
   little:{ar:'العروسةُ تسلِّمُ وتسألُ: «ما اسمُك؟» — حوارٌ بسيطٌ يكفي.',en:'The puppet greets and asks "what\'s your name?" — simple chat is enough.'},
   big:{ar:'اصنعْ شخصيتَين واعرضْ مسرحيةً كاملةً بحوار.',en:'Make two characters and stage a full dialogue play.'},
   wisdom:{ar:'خيرُ العلمِ ما بلَّغتَه غيرَك.',en:'The best knowledge is what you pass on.'} },

@@ -54,7 +54,7 @@ HISN.chapters.ishaq = {
     { icon:'🌱', color:'#1F9C8A', title:{ar:'لا تيأسْ مِن رحمةِ الله',en:'Never despair of Allah\'s mercy'},
       body:{ar:'رُزِقَ إبراهيمُ وسارةُ ولداً بعدَ كِبَرِهما. مهما تأخّرَ الخيرُ، فإنّ رحمةَ اللهِ قريبةٌ لمن دعاه.',en:'Ibrahim and Sarah were granted a child in old age. However long good is delayed, Allah\'s mercy is near to those who call Him.'},
       apply:{ar:'أدعو اللهَ بِيقينٍ وأصبِرُ ولا أيأسُ أبداً.',en:'I pray to Allah with certainty, stay patient, and never despair.'} },
-    { icon:'🙏', color:'#2980B9', title:{ar:'اشكُرِ اللهَ على العطاء',en:'Thank Allah for His gifts'},
+    { icon:'🤲', color:'#2980B9', title:{ar:'اشكُرِ اللهَ على العطاء',en:'Thank Allah for His gifts'},
       body:{ar:'شكرَ إبراهيمُ وسارةُ اللهَ على نعمةِ الولد. كلُّ عطيّةٍ مِن اللهِ تستحقُّ الشُّكرَ والحمد.',en:'Ibrahim and Sarah thanked Allah for the gift of a child. Every gift from Allah deserves gratitude and praise.'},
       apply:{ar:'أشكرُ اللهَ على نِعَمِه وأفرحُ بها.',en:'I thank Allah for His blessings and rejoice in them.'} },
     { icon:'🌟', color:'#E67E22', title:{ar:'الصلاحُ يُورَث',en:'Righteousness passes on'},

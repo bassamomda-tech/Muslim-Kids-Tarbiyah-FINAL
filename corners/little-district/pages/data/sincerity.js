@@ -199,7 +199,7 @@ window.HOUSES.sincerity = {
 
     /* STORY 2 — Source: islamweb.net — قصة مصعب بن عمير */
     {
-      icon:'👔', scene:'madinah', character:'🤴',
+      icon:'👔', scene:'madinah', character:'👑',
       title: { ar:'مُصعَبٌ الأَنيق — يَترُكُ الدُّنيا للآخِرة', en:'Elegant Mus’ab — leaving the world for the Hereafter' },
       pages: [
         { scene:'madinah', character:'😊',

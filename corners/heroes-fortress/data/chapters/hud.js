@@ -57,7 +57,7 @@ HISN.chapters.hud = {
     { ar:'الشجاعة', en:'Courage' }, { ar:'الثبات', en:'Steadfastness' },
   ],
   lessons: [
-    { icon:'🙏', color:'#8D6E63', title:{ar:'اشكُرْ نِعَمَك',en:'Thank Allah for blessings'},
+    { icon:'🤲', color:'#8D6E63', title:{ar:'اشكُرْ نِعَمَك',en:'Thank Allah for blessings'},
       body:{ar:'نسيَ قومُ عادٍ مَن أعطاهمُ القوّةَ والخيرات، فهلكوا. الشُّكرُ يحفظُ النِّعمةَ ويزيدُها.',en:'The people of ʿĀd forgot Who gave them strength and blessings, so they perished. Gratitude protects a blessing and increases it.'},
       apply:{ar:'أشكرُ اللهَ كلَّ يومٍ على جسدي وأهلي ونِعَمي.',en:'I thank Allah each day for my body, my family and my blessings.'} },
     { icon:'🤲', color:'#A98274', title:{ar:'تواضعْ ولا تتكبّر',en:'Be humble, never arrogant'},

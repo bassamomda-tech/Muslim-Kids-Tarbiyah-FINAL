@@ -49,7 +49,7 @@ window.PARENTS_VIDEOS = {
       { ar:'سما القدس', en:'Sama al-Quds', url:'https://youtube.com/@samaqudspl' },
       { ar:'حوارات د. نايف بن نهار', en:'Dr. Naif bin Nahar — talks', url:'https://youtube.com/playlist?list=PLdk8aQPGcSOwBIGH6zOwbYFvS_lY-lnh6' },
     ]},
-    { id:'parenting', icon:'👨‍👩‍👧', ar:'تربية الأبناء', en:'Raising children', items:[
+    { id:'parenting', icon:'🏡', ar:'تربية الأبناء', en:'Raising children', items:[
       { ar:'التربية — د. محمد بهجت', en:'Tarbiyah — Dr. Muhammad Bahjat' },
       { ar:'د. مطلق الجاسر في التربية', en:'Dr. Mutlaq al-Jasser on parenting' },
       { ar:'فيديوهات التربية — د. محمد الشعال', en:'Parenting videos — Dr. Muhammad al-Sha‘‘al', url:'https://youtube.com/playlist?list=PLMPqxr1nu2Zc_vfl_Kinxm2sJwUMjRucs' },

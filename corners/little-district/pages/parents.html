@@ -490,7 +490,7 @@ html[dir="rtl"] .shop-card{border-inline-start:1.5px solid var(--card-bd);border
 
 <main class="content">
   <div class="page-hero">
-    <div class="ic">👨‍👩‍👧</div>
+    <div class="ic">🏡</div>
     <h1><span class="ar-only">ركن الأهل</span><span class="en-only">Parents' Corner</span></h1>
     <p><span class="ar-only">رفيقُك في رحلة تربية جيلٍ واعٍ قويّ</span><span class="en-only">Your companion in raising an aware, strong generation</span></p>
   </div>
@@ -508,7 +508,7 @@ html[dir="rtl"] .shop-card{border-inline-start:1.5px solid var(--card-bd);border
     <a class="tab tab-go" href="hasanat.html"><span class="ti">⚖️</span><span class="ar-only">حاسبة الحسنات</span><span class="en-only">Hasanat Calculator</span></a>
     <a class="tab tab-go" href="../../shared/store.html" onclick="this.href='../../shared/store.html?lang='+lang"><span class="ti">📚</span><span class="ar-only">المكتبة المجانية</span><span class="en-only">Free Library</span></a>
     <a class="tab tab-go" href="../../shared/downloads.html" onclick="this.href='../../shared/downloads.html?lang='+lang"><span class="ti">📥</span><span class="ar-only">ركن التنزيلات</span><span class="en-only">Downloads</span></a>
-    <a class="tab tab-go" href="../../shared/community.html" onclick="this.href='../../shared/community.html?lang='+lang" data-community-badge><span class="ti">👨‍👩‍👧‍👦</span><span class="ar-only">مجتمع العائلات</span><span class="en-only">Family Community</span></a>
+    <a class="tab tab-go" href="../../shared/community.html" onclick="this.href='../../shared/community.html?lang='+lang" data-community-badge><span class="ti">🏡</span><span class="ar-only">مجتمع العائلات</span><span class="en-only">Family Community</span></a>
   </div>
 
   <!-- PANEL 0 · GUIDE / HOW TO USE -->
@@ -873,8 +873,8 @@ function renderMurabbiFeature(){
     ? {tag:'جديد', title:'مرجع المربي — خلاصات «ألف باء التربية»', desc:'١٤ قسمًا عمليًا: إصلاح المربي، خطة اليوم والليلة، الانسحاب التربوي، علاج العناد والغضب والغيرة والخوف والنوم، التعليم وحفظ القرآن — مع برنامج ٣٠/٩٠ يومًا وجداول متابعة.', open:'افتح المرجع ←', print:'🖨 نسخة للطباعة'}
     : {tag:'New', title:'The Murabbi Reference — “Alif Ba of Tarbiyah” digests', desc:'14 practical sections: fixing the parent first, the day-and-night plan, educational withdrawal, treating stubbornness, anger, jealousy, fear and sleep issues, education and Quran memorisation — with a 30/90-day program and tracking sheets.', open:'Open the reference ←', print:'🖨 Printable version'};
   const p = lang==='ar'
-    ? {title:'التطبيقات العملية لأهداف الأركان', tag:'الهدف الأول: الصلاة', parent:'👨‍👩‍👧 جزء الأهل — كيف أجعل ابني يصلي؟', pdesc:'خطة تشغيلية من عمر سنتين حتى المراهقة: زمن الدخول، الأسلوب، المدة، برنامج ٩٠ يومًا، وجدول متابعة ٣٠ يومًا.', kid:'🎠 جزء الطفل — رحلة أُحبُّ الصلاة', kdesc:'رحلة تفاعلية من ٨ محطات: قصص لتحبيبه بالصلاة، أنشطة عملية، خيار «اقرأ لي»، وشهادة «صديق الصلاة» في النهاية.', open:'افتح ←'}
-    : {title:'Practical applications of the corners\' goals', tag:'Goal 1: Salah', parent:'👨‍👩‍👧 Parents\' part — How do I get my child to pray?', pdesc:'An operational plan from age two to adolescence: when to start, which method, how long, a 90-day program and a 30-day tracker.', kid:'🎠 Child\'s part — the “I Love Salah” journey', kdesc:'An interactive 8-station journey: stories, hands-on activities, read-aloud, and a “Friend of Salah” certificate.', open:'Open ←'};
+    ? {title:'التطبيقات العملية لأهداف الأركان', tag:'الهدف الأول: الصلاة', parent:'🏡 جزء الأهل — كيف أجعل ابني يصلي؟', pdesc:'خطة تشغيلية من عمر سنتين حتى المراهقة: زمن الدخول، الأسلوب، المدة، برنامج ٩٠ يومًا، وجدول متابعة ٣٠ يومًا.', kid:'🎠 جزء الطفل — رحلة أُحبُّ الصلاة', kdesc:'رحلة تفاعلية من ٨ محطات: قصص لتحبيبه بالصلاة، أنشطة عملية، خيار «اقرأ لي»، وشهادة «صديق الصلاة» في النهاية.', open:'افتح ←'}
+    : {title:'Practical applications of the corners\' goals', tag:'Goal 1: Salah', parent:'🏡 Parents\' part — How do I get my child to pray?', pdesc:'An operational plan from age two to adolescence: when to start, which method, how long, a 90-day program and a 30-day tracker.', kid:'🎠 Child\'s part — the “I Love Salah” journey', kdesc:'An interactive 8-station journey: stories, hands-on activities, read-aloud, and a “Friend of Salah” certificate.', open:'Open ←'};
   return `
     <div class="res-cat">
       <div class="res-cat-head"><span class="rc-ic">🎯</span><h3>${p.title} · ${p.tag}</h3></div>
@@ -885,7 +885,7 @@ function renderMurabbiFeature(){
           <span class="res-dl">${p.open}</span>
         </a>
         <a class="res-card res-link" style="--rc:#33302A" href="${base}دليل الأهل للرحلات.html">
-          <h4>${lang==='ar'?'👨‍👩‍👧 دليل الأهل — الرحلات الثمانية':'👨‍👩‍👧 Parents\' guide — all 8 journeys'}</h4>
+          <h4>${lang==='ar'?'🏡 دليل الأهل — الرحلات الثمانية':'🏡 Parents\' guide — all 8 journeys'}</h4>
           <p>${lang==='ar'?'لكل رحلة: الهدف التربوي، دوركم العملي، وعلامات النجاح — مع القواعد الذهبية وترتيب مقترح للرحلات.':'For every journey: the goal, your practical role, success signs, plus golden rules and a suggested order.'}</p>
           <span class="res-dl">${p.open}</span>
         </a>
@@ -1309,7 +1309,7 @@ window.PARENT_ANOUS_NEW = [
   ['hijrah-journey.html','🐪','رحلة الهجرة','The Hijrah Journey'], ['sahaba-duel.html','🤝','مجلس الصحابة',"The Companions' Duel"],
   ['invention-lab.html','💡','مخترعو الحضارة','Inventors of Civilization'], ['madinah-market.html','🏪','سوق المدينة','The Madinah Market'],
   ['story-theater.html','🎭','فرسان القصص','Story Knights Theater'], ['conquest-map.html','🗺️','خطى الفاتحين','Paths of the Openers'],
-  ['hikmah-library.html','📚','مكتبة بيت الحكمة','The House of Wisdom Library'], ['qudwa-cards.html','🃏','بطاقات القدوة','Role-Model Collectible Cards'],
+  ['hikmah-library.html','📚','مكتبة بيت الحكمة','The House of Wisdom Library'], ['qudwa-cards.html','📇','بطاقات القدوة','Role-Model Collectible Cards'],
   ['seerah-narrator.html','📖','راوي السيرة','The Seerah Narrator'], ['trench-dig.html','⛏️','حفر الخندق','Digging the Trench'],
   ['minaret-builder.html','🕌','مهندس المآذن','The Minaret Engineer'], ['team-leader.html','🚩','قائد الفريق','The Team Leader'],
   ['horse-race.html','🐎','سباق الفروسية','The Horse Race'], ['archery.html','🏹','رماية السهام','Archery'],
@@ -1392,7 +1392,7 @@ function renderControls(){
       +'<button class="ctrl-btn go" onclick="ctrlSetPin(0)">'+(ar?'إنشاء رمز':'Create PIN')+'</button>';
 
   host.innerHTML =
-    '<div class="ctrl-card"><h3>👨‍👩‍👧 '+(ar?'الأطفال':'Children')+'</h3>'
+    '<div class="ctrl-card"><h3>🏡 '+(ar?'الأطفال':'Children')+'</h3>'
     + '<div class="kids">'+kidsHtml+'</div>'
     + '<button class="ctrl-btn go" style="margin-top:.7rem" onclick="ctrlAddChild()">＋ '+(ar?'إضافة / تبديل طفل':'Add / switch child')+'</button></div>'
     + '<div class="ctrl-card"><h3>🔢 '+(ar?'رمز حماية الأهل':'Parent PIN')+'</h3><div class="ctrl-mut" style="margin-bottom:.6rem">'+(ar?'يمنع الطفل من فتح الأركان المقفلة أو تغيير الإعدادات.':'Stops kids from unlocking corners or changing settings.')+'</div><div class="ctrl-acts">'+pinHtml+'</div></div>'
@@ -1516,7 +1516,7 @@ function renderTracking(){
         <div class="ji">${j.icon}</div>
         <div class="jmid">
           <div class="jn" title="${tx(j.name)}">${tx(j.name)}</div>
-          <div class="jc">${j.completed}/${j.total} · 🎖️${j.completed} 🃏${j.completed} 🔑${j.completed}</div>
+          <div class="jc">${j.completed}/${j.total} · 🎖️${j.completed} 📇${j.completed} 🔑${j.completed}</div>
           <div class="jbar"><i style="width:${j.pct}%;--jc:${j.color}"></i></div>
         </div>
         <div class="jpct">${j.pct}%</div>
@@ -1543,7 +1543,7 @@ function openBag(cid){
     const cj=JSON.stringify({id:j.id,icon:j.icon,name:j.name,corner:j.corner,total:j.total}).replace(/'/g,'&#39;');
     return `<div class="bag-j">
       <div class="bag-j-top"><span class="bag-j-ic">${j.icon}</span><span class="bag-j-nm">${tx(j.name)}</span><span class="bag-j-pct">${j.total?Math.round(c/j.total*100):0}%</span></div>
-      <div class="bag-collect"><span class="bag-chip">🎖️ ${c} ${ar?'أوسمة':'badges'}</span><span class="bag-chip">🃏 ${c} ${ar?'بطاقات':'cards'}</span><span class="bag-chip">🔑 ${c} ${ar?'مفاتيح':'keys'}</span></div>
+      <div class="bag-collect"><span class="bag-chip">🎖️ ${c} ${ar?'أوسمة':'badges'}</span><span class="bag-chip">📇 ${c} ${ar?'بطاقات':'cards'}</span><span class="bag-chip">🔑 ${c} ${ar?'مفاتيح':'keys'}</span></div>
       <div class="bag-j-acts">
         <button class="cert-btn ${full?'done':''}" ${c>0?'':'disabled'} onclick='openCert(${cj})'>${ar?'🏅 الشهادة':'🏅 Certificate'}</button>
         <a class="bag-open" href="../../${j.page}${j.page.indexOf('?')>-1?'&':'?'}lang=${lang}">${ar?'افتح الجمعية ←':'View collection →'}</a>

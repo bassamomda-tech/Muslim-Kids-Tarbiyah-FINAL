@@ -29,8 +29,8 @@
 
   var TYPES = {
     coloring:    { ar:'تلوين وخطوط',        en:'Coloring & line art',   icon:'🖍️' },
-    flashcards:  { ar:'بطاقات ومطابقة',     en:'Flashcards & matching', icon:'🃏' },
-    board:       { ar:'ألعاب لوحية ونرد',   en:'Board & dice games',    icon:'🎲' },
+    flashcards:  { ar:'بطاقات ومطابقة',     en:'Flashcards & matching', icon:'📇' },
+    board:       { ar:'ألعاب لوحية ونرد',   en:'Board & dice games',    icon:'🧩' },
     poster:      { ar:'ملصقات ولوحات',      en:'Posters & wall charts', icon:'🖼️' },
     tracker:     { ar:'جداول متابعة ومكافآت', en:'Trackers & rewards',  icon:'📅' },
     puzzle:      { ar:'متاهات وألغاز',      en:'Mazes & puzzles',       icon:'🧩' },

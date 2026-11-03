@@ -1366,7 +1366,7 @@ HISN_STORIES.yusuf = [
   ]
  },
  {
-  "icon": "👨‍👦",
+  "icon": "🏡",
   "scene": "garden",
   "character": "❤️",
   "title": {

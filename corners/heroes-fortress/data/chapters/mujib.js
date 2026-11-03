@@ -101,7 +101,7 @@ HISN.chapters.mujib = {
     medal: { ar: 'وِسامُ الدعاء', en: 'Medal of Du‘a' },
     recipe: {
       title: { ar: 'الخلطةُ السحرية', en: 'The Magic Mix' },
-      intro: { ar: 'لِتعيشَ اسمَ «المجيب» اخلِطْ هذه في يومِك 🪄', en: 'To live the name "Al-Mujib", mix these into your day 🪄' },
+      intro: { ar: 'لِتعيشَ اسمَ «المجيب» اخلِطْ هذه في يومِك ✨', en: 'To live the name "Al-Mujib", mix these into your day ✨' },
       steps: [
         { icon: '🤲', ar: 'أدعو اللهَ في كلِّ حاجةٍ ولو كانت صغيرة.', en: 'I call on Allah for every need, even a small one.' },
         { icon: '🌙', ar: 'أدعو في السجودِ وآخرِ الليلِ بقلبٍ حاضر.', en: 'I call in prostration and late night with a present heart.' },

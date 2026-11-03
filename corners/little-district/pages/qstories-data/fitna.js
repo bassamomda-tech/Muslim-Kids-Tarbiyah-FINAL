@@ -122,7 +122,7 @@ window.QSTORIES.fitna.magicMix = [
     }
   },
   {
-    "icon": "🙏",
+    "icon": "🤲",
     "title": {
       "ar": "أعفو وأتسامح",
       "en": "I forgive and pardon"

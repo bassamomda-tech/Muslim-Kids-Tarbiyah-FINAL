@@ -101,7 +101,7 @@ HISN.chapters.azim = {
     medal: { ar: 'وِسامُ التعظيم', en: 'Medal of Reverence' },
     recipe: {
       title: { ar: 'الخلطةُ السحرية', en: 'The Magic Mix' },
-      intro: { ar: 'لِتعيشَ اسمَ «العظيم» اخلِطْ هذه في يومِك 🪄', en: 'To live the name "Al-‘Azim", mix these into your day 🪄' },
+      intro: { ar: 'لِتعيشَ اسمَ «العظيم» اخلِطْ هذه في يومِك ✨', en: 'To live the name "Al-‘Azim", mix these into your day ✨' },
       steps: [
         { icon: '🕌', ar: 'أقولُ «سبحان ربّي العظيم» في ركوعي بخشوع.', en: 'I say "Glory to my Lord, the Magnificent" in bowing, with focus.' },
         { icon: '⭐', ar: 'أتأمّلُ في عظمةِ الكونِ فأكبِّرُ الله.', en: 'I ponder the greatness of the universe and magnify Allah.' },

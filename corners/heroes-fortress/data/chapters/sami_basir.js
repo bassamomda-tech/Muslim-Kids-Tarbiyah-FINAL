@@ -101,7 +101,7 @@ HISN.chapters.sami_basir = {
     medal: { ar: 'وِسامُ المراقبة', en: 'Medal of Mindfulness' },
     recipe: {
       title: { ar: 'الخلطةُ السحرية', en: 'The Magic Mix' },
-      intro: { ar: 'لِتعيشَ اسمَ «السميعِ البصير» اخلِطْ هذه في يومِك 🪄', en: 'To live "As-Sami‘ Al-Basir", mix these into your day 🪄' },
+      intro: { ar: 'لِتعيشَ اسمَ «السميعِ البصير» اخلِطْ هذه في يومِك ✨', en: 'To live "As-Sami‘ Al-Basir", mix these into your day ✨' },
       steps: [
         { icon: '🗣️', ar: 'أحفظُ لساني: لا كذبَ ولا غِيبةَ ولا سُخرية.', en: 'I guard my tongue: no lies, backbiting, or mockery.' },
         { icon: '👁️', ar: 'أُحسِنُ في الخفاءِ كما في العلن، فاللهُ يراني.', en: 'I do good in secret as in public — Allah sees me.' },

@@ -217,7 +217,7 @@ HISN.chapters.badr = {
    }
   },
   {
-   "icon": "🙏",
+   "icon": "🤲",
    "color": "#AA8A4A",
    "title": {
     "ar": "الدعاءُ سلاحُ المؤمن",

@@ -30,7 +30,7 @@
       scenes: [
         { actorX: "12%", flip: false, props: [{ e: "🧙", x: "70%", y: "35%" }], cap: { ar: "كان غلامٌ ذكيّ يذهب لراهبٍ مؤمن ليتعلّم منه التوحيد سرّاً.", en: "A clever boy would secretly visit a believing monk to learn about the Oneness of God." } },
         { actorX: "40%", flip: false, props: [{ e: "🦁", x: "78%", y: "55%" }], cap: { ar: "وفي طريقه وجد وحشاً يمنع الناس، فدعا الله فقتله بحجر — فعلم أن أمر الله أعظم.", en: "On his way he found a beast blocking people; he prayed and killed it with a stone — knowing God's cause is greater." } },
-        { actorX: "66%", flip: false, props: [{ e: "🙏", x: "20%", y: "45%" }], cap: { ar: "صار الغلام يشفي المرضى بإذن الله ويقول: إنما يشفي الله وحده.", en: "The boy began healing the sick by God's leave, saying: only Allah heals." } },
+        { actorX: "66%", flip: false, props: [{ e: "🤲", x: "20%", y: "45%" }], cap: { ar: "صار الغلام يشفي المرضى بإذن الله ويقول: إنما يشفي الله وحده.", en: "The boy began healing the sick by God's leave, saying: only Allah heals." } },
         { actorX: "50%", flip: false, props: [{ e: "👑", x: "82%", y: "30%" }], cap: { ar: "غضب الملك الظالم وحاول قتله، لكن إيمان الغلام أدخل شعباً كاملاً في دين الله.", en: "The unjust king raged and tried to kill him, but the boy's faith brought a whole people to God." } },
       ],
       q: { ar: "ماذا كان يقول الغلام عندما يشفى المرضى؟", en: "What did the boy say when the sick were healed?" },

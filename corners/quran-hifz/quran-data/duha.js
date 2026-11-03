@@ -162,7 +162,7 @@ window.SURAHS.duha.treasures = [
     }
   },
   {
-    "icon": "🙏",
+    "icon": "🤲",
     "color": "#E67E22",
     "title": {
       "ar": "وأمَّا السَّائِل",

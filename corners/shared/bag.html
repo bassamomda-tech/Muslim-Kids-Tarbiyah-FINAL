@@ -294,7 +294,7 @@
             +'<button class="btn" onclick="openCompCert('+a.pct+','+a.stars+')">'+(ar?'🏅 عرض الشهادة':'🏅 View certificate')+'</button></div>';
         });
     var anosCards=am.map(function(m,i){
-          return '<div class="card"><div class="c-ic">🎲</div>'
+          return '<div class="card"><div class="c-ic">🧩</div>'
             +'<div class="c-t">'+(ar?('وسام قسم «'+esc(m.ar)+'»'):('Section medal: '+esc(m.en)))+'</div>'
             +'<div class="c-s">'+(ar?'أنشطة أنوس · لعبتَ كلّ أنشطة القسم 🎉':"Anos' activities · every activity played 🎉")+'</div>'
             +'<button class="btn" onclick="openAnosCert('+i+')">'+(ar?'🏅 عرض الشهادة':'🏅 View certificate')+'</button></div>';
@@ -354,12 +354,12 @@
       ? 'قد لَعِبَ كلَّ أنشطةِ قسمِ <b>«'+esc(m.ar)+'»</b> في أنشطةِ أنوس، فتعلَّمَ وهو يلعب. باركَ اللهُ فيه، وجعلَه قرّةَ عينٍ لوالديه. 🤲'
       : 'played every activity in the <b>“'+esc(m.en)+'”</b> section of Anos\' activities — learning while playing. May Allah bless them and make them the coolness of their parents\' eyes. 🤲';
     document.getElementById('printPaper').innerHTML =
-      '<div class="cert"><div class="seal">🎲</div>'
+      '<div class="cert"><div class="seal">🧩</div>'
       +'<div class="kick">'+(ar?'تربية الطفل المسلم · حقيبتي':'Muslim Kids’ Tarbiyah · My Bag')+'</div>'
       +'<div class="title">'+(ar?'شهادة وسام القسم':'Section Medal Certificate')+'</div>'
       +'<div class="name">'+esc(nm)+'</div>'
       +'<div class="state">'+stmt+'</div>'
-      +'<div class="foot">🎲 '+(ar?'أنشطة أنوس':"Anos' Activities")+'</div></div>';
+      +'<div class="foot">🧩 '+(ar?'أنشطة أنوس':"Anos' Activities")+'</div></div>';
     document.getElementById('printOv').classList.add('open');
   }
   function openSummary(){

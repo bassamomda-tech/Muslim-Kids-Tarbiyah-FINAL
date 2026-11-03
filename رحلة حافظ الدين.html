@@ -91,7 +91,7 @@ footer{text-align:center;color:#8C8A6C;font-weight:700;font-size:.85rem;padding:
   <div style="margin-top:.9rem;display:flex;gap:.6rem;justify-content:center;flex-wrap:wrap">
     <a href="رحلة الأذكار والدعاء.html" style="display:inline-flex;align-items:center;gap:.5rem;background:#0E7C86;color:#fff;border-radius:2rem;padding:.5rem 1.3rem;font-weight:900;font-size:.88rem;text-decoration:none">📿 رحلة الأذكار والدعاء ←</a>
     <a href="رحلة القائد الصغير.html" style="display:inline-flex;align-items:center;gap:.5rem;background:#2C4C8C;color:#fff;border-radius:2rem;padding:.5rem 1.3rem;font-weight:900;font-size:.88rem;text-decoration:none">🚩 رحلة القائد الصغير ←</a>
-    <a href="دليل الأهل للرحلات.html" style="display:inline-flex;align-items:center;gap:.5rem;background:#fff;color:#33302A;border:2px solid #DDD9BC;border-radius:2rem;padding:.5rem 1.3rem;font-weight:900;font-size:.88rem;text-decoration:none">👨‍👩‍👧 دليل الأهل ←</a>
+    <a href="دليل الأهل للرحلات.html" style="display:inline-flex;align-items:center;gap:.5rem;background:#fff;color:#33302A;border:2px solid #DDD9BC;border-radius:2rem;padding:.5rem 1.3rem;font-weight:900;font-size:.88rem;text-decoration:none">🏡 دليل الأهل ←</a>
   </div>
 </header>
 
@@ -114,13 +114,13 @@ var STATIONS=[
    'قالت سلمى: «إذن كلُّ آيةٍ أحفظُها… درجةٌ أصعدُها في الجنة!» وفتحتْ مصحفَها من ساعتِها 🛡️'
   ],
   q:'🤔 سؤال الحافظ: القرآن محفوظ بوعد الله… فهل تكون أنت من جنوده الحفظة؟ ابدأ اليوم بآية!'},
- {type:'story',ic:'👨‍👦',title:'قصة: خيركم (فضل تعلم القرآن وتعليمه)',
+ {type:'story',ic:'🏡',title:'قصة: خيركم (فضل تعلم القرآن وتعليمه)',
   body:[
    'رجعَ زيدٌ من المسجدِ فرحًا: «يا أبي! المعلمُ قال إني أفضلُ من حفظَ هذا الشهر!».',
    'قال أبوه: «أتعرفُ ماذا قال النبيُّ ﷺ عن مثلِك؟ <span class="say">خيرُكم من تعلَّمَ القرآنَ وعلَّمَه</span> — خيرُ الناسِ كلِّهم!».',
    '«والقرآنُ يرفعُك: قال ﷺ: <span class="say">إنَّ اللهَ يرفعُ بهذا الكتابِ أقوامًا ويضعُ به آخرين</span>. والماهرُ بالقرآنِ <span class="say">مع السفرةِ الكرامِ البررة</span> — مع الملائكة! والذي يقرأُ ويتعتعُ فيه وهو عليه شاقٌّ… <span class="say">له أجران!</span>».',
    '«وأعظمُ من هذا: القرآنُ يشفعُ لكَ يومَ القيامة: <span class="say">اقرؤوا القرآنَ فإنه يأتي يومَ القيامةِ شفيعًا لأصحابِه</span>، ويُلبسُ والداكَ تاجًا من نور!».',
-   'قال زيد: «تاجًا لكما؟!». قال أبوه: «نعم… <span class="say">فاجعلْ حفظَكَ هديةً لنا وتاجًا يومَ نلقى الله</span>» — فازدادَ زيدٌ حبًّا للحفظِ من أجلِهما 👨‍👦'
+   'قال زيد: «تاجًا لكما؟!». قال أبوه: «نعم… <span class="say">فاجعلْ حفظَكَ هديةً لنا وتاجًا يومَ نلقى الله</span>» — فازدادَ زيدٌ حبًّا للحفظِ من أجلِهما 🏡'
   ],
   q:'🤔 هدية الحافظ: كل صفحة تحفظها لبنة في تاج والديك يوم القيامة — كم صفحة ستهديهما هذا الشهر؟'},
  {type:'story',ic:'⚖️',title:'قصة: أيهما أهم؟ (العلم الشرعي والعلم الدنيوي)',
@@ -331,7 +331,7 @@ function readAloud(){
   if(uttering){ stopRead(); return; }
   var s=STATIONS[cur]; if(!s) return;
   var txt=(s.type==='story'?s.body.join(' '):s.steps.join('. '))+'. '+s.q;
-  txt=txt.replace(/<[^>]+>/g,'').replace(/[🤔🗓️💡📖✨🛡️👨‍👦⚖️🕯️🌙🚫💎🌍🎓⭐]/g,'');
+  txt=txt.replace(/<[^>]+>/g,'').replace(/[🤔🗓️💡📖✨🛡️🏡⚖️🕯️🌙🚫💎🌍🎓⭐]/g,'');
   var u=new SpeechSynthesisUtterance(window.MKVoice?MKVoice.fixText(txt):txt);
   u.lang='ar-SA'; u.rate=.92;
   var vs=speechSynthesis.getVoices().filter(function(v){return v.lang&&v.lang.indexOf('ar')===0;});

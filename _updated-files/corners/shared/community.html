@@ -219,7 +219,7 @@
           <div class="admin-kinds" id="bcAud">
             <button type="button" class="kbtn active" data-aud="all">🌍 <span class="ar-only">الجميع</span><span class="en-only">Everyone</span></button>
             <button type="button" class="kbtn" data-aud="kids">🧒 <span class="ar-only">الأطفال (الأركان)</span><span class="en-only">Kids (corners)</span></button>
-            <button type="button" class="kbtn" data-aud="parents">👪 <span class="ar-only">الأهل</span><span class="en-only">Parents</span></button>
+            <button type="button" class="kbtn" data-aud="parents">🏡 <span class="ar-only">الأهل</span><span class="en-only">Parents</span></button>
           </div>
           <textarea id="bcAr" rows="2" placeholder="نص الرسالة بالعربية…" dir="rtl"></textarea>
           <textarea id="bcEn" rows="2" placeholder="English text (optional)…" dir="ltr"></textarea>
@@ -374,7 +374,7 @@
   function unitOf(c){ var g=GOALS[c.goalType]||GOALS.days; return t(g.ar,g.en); }
   function badgesOf(c){
     return '<div class="ch-badges">'
-      +(c.official?'<span class="badge official">🛡️ '+t('رسمي','Official')+'</span>':'<span class="badge family">👪 '+t('من عائلة','Family')+'</span>')
+      +(c.official?'<span class="badge official">🛡️ '+t('رسمي','Official')+'</span>':'<span class="badge family">🏡 '+t('من عائلة','Family')+'</span>')
       +(c.age&&c.age!=='all'&&AGES[c.age]?'<span class="badge age">'+t(AGES[c.age].ar,AGES[c.age].en)+'</span>':'')
       +(c.difficulty&&DIFF[c.difficulty]?'<span class="badge diff" style="background:'+DIFF[c.difficulty].c+'">'+t(DIFF[c.difficulty].ar,DIFF[c.difficulty].en)+'</span>':'')
       +'</div>';
@@ -386,7 +386,7 @@
     var oh=document.getElementById('officialHint');
     if(oh) oh.textContent = admin
       ? t('بصفتك مشرفاً، تُنشر تحدّياتك بوسم «رسمي» 🛡️','As admin, your challenges are posted as “Official” 🛡️')
-      : t('ستظهر تحدّياتك بوسم «من عائلة» 👪','Your challenges appear tagged “Family” 👪');
+      : t('ستظهر تحدّياتك بوسم «من عائلة» 🏡','Your challenges appear tagged “Family” 🏡');
     return MKAuth.listChallenges().then(function(list){
       CHCACHE={};
       document.getElementById('chGrid').innerHTML=list.map(function(c){
@@ -402,7 +402,7 @@
         return '<div class="ch-card">'
           +'<div class="ch-top"><span class="ch-ic">'+c.icon+'</span><span class="ch-t">'+txo(c.title)+'</span></div>'
           +badgesOf(c)
-          +'<div class="ch-by">'+(c.official?'🛡️ '+t('من الإدارة','From the team'):'👪 '+t('أنشأتها: ','By: ')+'<b>'+escapeHtml(c.by||t('عائلة','a family'))+'</b>')+'</div>'
+          +'<div class="ch-by">'+(c.official?'🛡️ '+t('من الإدارة','From the team'):'🏡 '+t('أنشأتها: ','By: ')+'<b>'+escapeHtml(c.by||t('عائلة','a family'))+'</b>')+'</div>'
           +'<div class="ch-d">'+txo(c.desc)+'</div>'
           +(c.joined?'<div class="ch-bar"><i style="width:'+pct+'%"></i></div><div class="ch-meta"><span>'+(c.myProgress||0)+'/'+c.days+' '+unit+'</span><span>'+pct+'%</span></div>':'')
           +'<div class="ch-meta"><span>👥 '+(c.members||0)+' '+t('مشارك','members')+'</span><span>'+c.days+' '+unit+'</span></div>'
@@ -451,7 +451,7 @@
       '<div class="modal-head"><span class="ch-ic">'+c.icon+'</span><span class="modal-title">'+txo(c.title)+'</span>'
       +'<button class="modal-close" onclick="closeModal(\'chModal\')">✕</button></div>'
       +badgesOf(c)
-      +'<div class="ch-by" style="margin-top:.5rem">'+(c.official?'🛡️ '+t('تحدٍّ رسميٌّ من الإدارة','Official challenge from the team'):'👪 '+t('أنشأتها: ','By: ')+'<b>'+escapeHtml(c.by||t('عائلة','a family'))+'</b>')+'</div>'
+      +'<div class="ch-by" style="margin-top:.5rem">'+(c.official?'🛡️ '+t('تحدٍّ رسميٌّ من الإدارة','Official challenge from the team'):'🏡 '+t('أنشأتها: ','By: ')+'<b>'+escapeHtml(c.by||t('عائلة','a family'))+'</b>')+'</div>'
       +'<div class="ch-d" style="margin-top:.5rem">'+txo(c.desc)+'</div>'
       +prog
       +'<div class="msec"><h4>🎙️ '+t('تسجيلات الأطفال','Kids\u2019 audio')+'</h4>'

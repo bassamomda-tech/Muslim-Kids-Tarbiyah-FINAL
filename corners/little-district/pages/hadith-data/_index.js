@@ -4,7 +4,7 @@
    ─────────────────────────────────────────────────────────────── */
 window.HADITH_INDEX = [
   { slug:'h01', num:1,  emoji:'🎯', titleAr:'إنما الأعمال بالنيّات', titleEn:'Deeds by Intentions', themeAr:'النيّة والإخلاص', themeEn:'Intention & sincerity' },
-  { slug:'h02', num:2,  emoji:'👼', titleAr:'حديث جبريل', titleEn:'Hadith of Jibril', themeAr:'الإسلام والإيمان والإحسان', themeEn:'Islam, Iman & Ihsan' },
+  { slug:'h02', num:2,  emoji:'✨', titleAr:'حديث جبريل', titleEn:'Hadith of Jibril', themeAr:'الإسلام والإيمان والإحسان', themeEn:'Islam, Iman & Ihsan' },
   { slug:'h03', num:3,  emoji:'🕌', titleAr:'أركان الإسلام', titleEn:'Pillars of Islam', themeAr:'بُني الإسلام على خمس', themeEn:'Islam built on five' },
   { slug:'h04', num:4,  emoji:'⏳', titleAr:'خلق الإنسان', titleEn:'Creation of Man', themeAr:'القَدَر وخواتيم الأعمال', themeEn:'Destiny & final deeds' },
   { slug:'h05', num:5,  emoji:'🚫', titleAr:'ردّ البدعة', titleEn:'Rejecting Innovation', themeAr:'كل محدثة بدعة', themeEn:'Following the Sunnah' },
@@ -26,7 +26,7 @@ window.HADITH_INDEX = [
   { slug:'h21', num:21, emoji:'🧭', titleAr:'قل آمنت ثم استقم', titleEn:'Believe & Be Steadfast', themeAr:'الاستقامة', themeEn:'Uprightness' },
   { slug:'h22', num:22, emoji:'🚪', titleAr:'الطريق إلى الجنة', titleEn:'The Way to Paradise', themeAr:'الفرائض تُدخل الجنة', themeEn:'Duties lead to Jannah' },
   { slug:'h23', num:23, emoji:'🌟', titleAr:'الطهور شطر الإيمان', titleEn:'Purity is Half of Faith', themeAr:'أبواب الخير', themeEn:'Doors of goodness' },
-  { slug:'h24', num:24, emoji:'🙏', titleAr:'تحريم الظلم', titleEn:'Allah Forbids Oppression', themeAr:'الحديث القدسي', themeEn:'Divine hadith of mercy' },
+  { slug:'h24', num:24, emoji:'🤲', titleAr:'تحريم الظلم', titleEn:'Allah Forbids Oppression', themeAr:'الحديث القدسي', themeEn:'Divine hadith of mercy' },
   { slug:'h25', num:25, emoji:'💝', titleAr:'أبواب الصدقة', titleEn:'Doors of Charity', themeAr:'كل معروف صدقة', themeEn:'Every good is charity' },
   { slug:'h26', num:26, emoji:'⚖️', titleAr:'العدل صدقة', titleEn:'Justice is Charity', themeAr:'كل سُلامى صدقة', themeEn:'A charity each day' },
   { slug:'h27', num:27, emoji:'❤️', titleAr:'البِرّ حسن الخلق', titleEn:'Righteousness is Character', themeAr:'البر والإثم', themeEn:'Virtue & sin' },

@@ -18,7 +18,7 @@ HISN.activities.prophets = {
       beginner:{ type:'match', pairs:[
         { a:{ar:'نُوح ﻿عليه السلام',en:'Nuh'},     b:{ar:'السفينة 🚢',en:'The Ark 🚢'} },
         { a:{ar:'يُونُس عليه السلام',en:'Yunus'},   b:{ar:'الحوت 🐋',en:'The Whale 🐋'} },
-        { a:{ar:'مُوسى عليه السلام',en:'Musa'},     b:{ar:'العصا 🪄',en:'The Staff 🪄'} },
+        { a:{ar:'مُوسى عليه السلام',en:'Musa'},     b:{ar:'العصا ✨',en:'The Staff ✨'} },
         { a:{ar:'إبراهيم عليه السلام',en:'Ibrahim'},b:{ar:'النار 🔥',en:'The Fire 🔥'} },
       ]},
       intermediate:{ type:'match', pairs:[
@@ -39,7 +39,7 @@ HISN.activities.prophets = {
     } },
 
   /* ── 2 · Who am I? ─────────────────────────────────────────────────── */
-  { id:'whoami', icon:'🕵️', title:{ ar:'مَن أنا؟', en:'Who am I?' },
+  { id:'whoami', icon:'🔎', title:{ ar:'مَن أنا؟', en:'Who am I?' },
     levels:{
       beginner:{ type:'whoAmI',
         clues:[ {ar:'بنيتُ سفينةً بأمرِ الله.',en:'I built a ship by Allah’s command.'},
@@ -264,17 +264,17 @@ HISN.activities.prophets = {
     } },
 
   /* ── 11 · Memory flip cards ────────────────────────────────────────── */
-  { id:'flip', icon:'🃏', title:{ ar:'بطاقاتُ الذاكرة', en:'Memory flip cards' },
+  { id:'flip', icon:'📇', title:{ ar:'بطاقاتُ الذاكرة', en:'Memory flip cards' },
     levels:{
       beginner:{ type:'flip', pairs:[
         { a:{ar:'نُوح',en:'Nuh'},     b:{ar:'🚢',en:'🚢'} },
-        { a:{ar:'مُوسى',en:'Musa'},   b:{ar:'🪄',en:'🪄'} },
+        { a:{ar:'مُوسى',en:'Musa'},   b:{ar:'✨',en:'✨'} },
         { a:{ar:'يُونُس',en:'Yunus'}, b:{ar:'🐋',en:'🐋'} },
         { a:{ar:'إبراهيم',en:'Ibrahim'},b:{ar:'🔥',en:'🔥'} },
       ]},
       intermediate:{ type:'flip', pairs:[
         { a:{ar:'نُوح',en:'Nuh'},     b:{ar:'🚢',en:'🚢'} },
-        { a:{ar:'مُوسى',en:'Musa'},   b:{ar:'🪄',en:'🪄'} },
+        { a:{ar:'مُوسى',en:'Musa'},   b:{ar:'✨',en:'✨'} },
         { a:{ar:'يُونُس',en:'Yunus'}, b:{ar:'🐋',en:'🐋'} },
         { a:{ar:'إبراهيم',en:'Ibrahim'},b:{ar:'🔥',en:'🔥'} },
         { a:{ar:'صالِح',en:'Salih'},  b:{ar:'🐪',en:'🐪'} },
@@ -282,7 +282,7 @@ HISN.activities.prophets = {
       ]},
       advanced:{ type:'flip', pairs:[
         { a:{ar:'نُوح',en:'Nuh'},     b:{ar:'🚢',en:'🚢'} },
-        { a:{ar:'مُوسى',en:'Musa'},   b:{ar:'🪄',en:'🪄'} },
+        { a:{ar:'مُوسى',en:'Musa'},   b:{ar:'✨',en:'✨'} },
         { a:{ar:'يُونُس',en:'Yunus'}, b:{ar:'🐋',en:'🐋'} },
         { a:{ar:'إبراهيم',en:'Ibrahim'},b:{ar:'🔥',en:'🔥'} },
         { a:{ar:'صالِح',en:'Salih'},  b:{ar:'🐪',en:'🐪'} },

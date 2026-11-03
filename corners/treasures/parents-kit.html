@@ -30,7 +30,7 @@
   var DAYS = { ar: ['السبت', 'الأحد', 'الإثنين', 'الثلاثاء', 'الأربعاء', 'الخميس', 'الجمعة'], en: ['Sat', 'Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri'] };
   /* A calm 15-minute daily rhythm: one treasure a day, never a marathon. */
   var PLAN = [
-    { ar: ['🃏 بطاقة حديث واحدة', 'اقرآها معًا واختارا «تحدّي اليوم»'], en: ['🃏 One hadith card', 'Read it together and pick "today\'s challenge"'] },
+    { ar: ['📇 بطاقة حديث واحدة', 'اقرآها معًا واختارا «تحدّي اليوم»'], en: ['📇 One hadith card', 'Read it together and pick "today\'s challenge"'] },
     { ar: ['✨ اسمٌ من أسماء الله', 'تأمّلا أثره: أين رأينا رحمة الله اليوم؟'], en: ['✨ One Name of Allah', 'Reflect: where did we see Allah\'s mercy today?'] },
     { ar: ['📿 ذكرٌ ومعناه', 'افهما ذكرًا واحدًا وقولاه في وقته'], en: ['📿 One dhikr & its meaning', 'Understand one dhikr and say it at its time'] },
     { ar: ['📖 قصة من السيرة', 'قصة واحدة قبل النوم + سؤال «ماذا كنت ستفعل؟»'], en: ['📖 One Seerah story', 'One bedtime story + "what would you do?"'] },
@@ -88,7 +88,7 @@
         '</div>' +
         '<div class="tr-prose" style="margin-top:1.2rem"><h3>🖨️ ' + TR.tx('بطاقات وأوراق نشاط من كل كنز', 'Cards & activity sheets from every treasure') + '</h3><p>' +
         TR.tx('في كل صفحة تبويب «اطبع مجانًا» فيه بطاقات للطفل، وورقة نشاط، ودليل للأهل:', 'Every page has a "Print free" tab with kids\' cards, an activity sheet and a parents guide:') + '</p><div class="links">' +
-        [['hadith-cards', '🃏', 'بطاقات الأحاديث', 'Hadith cards'], ['names-cards', '✨', 'أسماء الله الحسنى', 'Names of Allah'], ['adhkar', '📿', 'الأذكار والأدعية', 'Adhkar & duas'], ['ubudiyah', '🤲', 'العبودية', 'Servanthood'], ['shubuhat', '🛡️', 'أسئلة صعبة', 'Hard questions'], ['eids', '🎉', 'الأعياد', 'Eids'], ['prophet-moments', '🌙', 'مواقف النبي ﷺ', 'Prophet\'s moments'], ['hadith-stories', '📖', 'قصص السنة', 'Sunnah stories'], ['landmarks', '🕋', 'المعالم', 'Landmarks'], ['tours', '🧭', 'الجولات', 'Tours']]
+        [['hadith-cards', '📇', 'بطاقات الأحاديث', 'Hadith cards'], ['names-cards', '✨', 'أسماء الله الحسنى', 'Names of Allah'], ['adhkar', '📿', 'الأذكار والأدعية', 'Adhkar & duas'], ['ubudiyah', '🤲', 'العبودية', 'Servanthood'], ['shubuhat', '🛡️', 'أسئلة صعبة', 'Hard questions'], ['eids', '🎉', 'الأعياد', 'Eids'], ['prophet-moments', '🌙', 'مواقف النبي ﷺ', 'Prophet\'s moments'], ['hadith-stories', '📖', 'قصص السنة', 'Sunnah stories'], ['landmarks', '🕋', 'المعالم', 'Landmarks'], ['tours', '🧭', 'الجولات', 'Tours']]
           .map(function (x) { return '<a href="' + x[0] + '.html">' + x[1] + ' ' + (TR.ar() ? x[2] : x[3]) + '</a>'; }).join('') +
         '</div><p style="margin-top:.8rem">' + TR.tx('وكتب الأركان كلّها مجانية في ', 'And every corner book is free in ') + '<a href="../shared/store.html" style="color:var(--acc);font-weight:800">' + TR.tx('المكتبة المجانية 📚', 'the Free Library 📚') + '</a>.</p></div>';
     },

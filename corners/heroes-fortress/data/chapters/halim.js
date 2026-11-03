@@ -101,7 +101,7 @@ HISN.chapters.halim = {
     medal: { ar: 'وِسامُ الحِلم', en: 'Medal of Forbearance' },
     recipe: {
       title: { ar: 'الخلطةُ السحرية', en: 'The Magic Mix' },
-      intro: { ar: 'لِتعيشَ اسمَ «الحليم» اخلِطْ هذه في يومِك 🪄', en: 'To live the name "Al-Halim", mix these into your day 🪄' },
+      intro: { ar: 'لِتعيشَ اسمَ «الحليم» اخلِطْ هذه في يومِك ✨', en: 'To live the name "Al-Halim", mix these into your day ✨' },
       steps: [
         { icon: '🧘', ar: 'إذا غضبتُ أتنفّسُ وأقولُ «أعوذُ باللهِ» وأَجلِس.', en: 'When angry I breathe, say "I seek refuge in Allah," and sit.' },
         { icon: '⏳', ar: 'أتمهّلُ قبلَ أن أتكلّمَ أو أتصرّف.', en: 'I pause before I speak or act.' },

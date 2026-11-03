@@ -101,7 +101,7 @@ HISN.chapters.hakim = {
     medal: { ar: 'وِسامُ الحكمة', en: 'Medal of Wisdom' },
     recipe: {
       title: { ar: 'الخلطةُ السحرية', en: 'The Magic Mix' },
-      intro: { ar: 'لِتعيشَ اسمَ «الحكيم» اخلِطْ هذه في يومِك 🪄', en: 'To live the name "Al-Hakim", mix these into your day 🪄' },
+      intro: { ar: 'لِتعيشَ اسمَ «الحكيم» اخلِطْ هذه في يومِك ✨', en: 'To live the name "Al-Hakim", mix these into your day ✨' },
       steps: [
         { icon: '✅', ar: 'أُطيعُ أوامرَ اللهِ واثقاً أنّ فيها الخير.', en: 'I obey Allah’s commands, sure they hold good.' },
         { icon: '😌', ar: 'أرضى بما يُقدِّرُه اللهُ وأقول: ربّي حكيم.', en: 'I accept what Allah decrees and say: my Lord is Wise.' },

@@ -265,10 +265,10 @@ window.HOUSES.generosity = {
        Source: quranpedia.net + Sahih Bukhari (hadith 4889)
        ────────────────────────────────────────── */
     {
-      icon:'🏠', scene:'madinah', character:'👨‍👩‍👦',
+      icon:'🏠', scene:'madinah', character:'🏡',
       title: { ar:'إيثارُ الأَنصارِ: حينَ نَزَلَ القُرآنُ مَدحاً', en:'The Ansari\'s Sacrifice: When the Quran Praised Them' },
       pages: [
-        { scene:'madinah', character:'👨‍👩‍👦',
+        { scene:'madinah', character:'🏡',
           text:{
             ar: 'في المَدينَةِ المُنَوَّرَة، في بَيتٍ صَغيرٍ مِن طينٍ وخَشَب، كانَت أُسرَةٌ أَنصارِيَّةٌ تَجلِسُ مَعَ بَعضِها في لَيلَةٍ باردَة. كانَ الأَطفالُ يَلتَصِقونَ بِأُمِّهِم طَلَباً لِلدِّفء، والنَّارُ الصَّغيرَةُ تَبذُلُ آخِرَ ما فيها مِن حَرارَة. والأَبُ يَنظُرُ إلى وَجهِ زَوجَتِهِ الكَريمَة ويُريدُ أن يُفصِحَ عَمَّا في قَلبِه: «عِندَنا اليَومَ ضَيف — وليسَ عِندَنا مِن الطَّعامِ إلّا ما يَكفي الأَطفال!»',
             en: 'In Madinah al-Munawwarah, in a small house of mud and wood, an Ansari family sat together on a cold night. The children huddled close to their mother for warmth, and the small fire gave its last flickers of heat. The father looked into his noble wife\'s eyes and needed to voice what was in his heart: "We have a guest tonight — and our food is only enough for the children!"'
@@ -601,13 +601,13 @@ window.HOUSES.generosity = {
         levels: [
           { kind:'cipher', points:30,
             key: { ar:{
-              '🌸':'ك', '💧':'ر', '⭐':'م', '🍀':'ج', '🎁':'و', '🌙':'د', '☀️':'ع', '🌺':'ط', '🌈':'ا', '🏵️':'ء'
+              '🌸':'ك', '💧':'ر', '⭐':'م', '🌿':'ج', '🎁':'و', '🌙':'د', '☀️':'ع', '🌺':'ط', '🌈':'ا', '🏵️':'ء'
             }, en:{
-              '🌸':'g', '💧':'e', '🎁':'n', '⭐':'r', '🍀':'o', '☀️':'s', '🌙':'i', '🌺':'t', '🌈':'y', '🏵️':'h'
+              '🌸':'g', '💧':'e', '🎁':'n', '⭐':'r', '🌿':'o', '☀️':'s', '🌙':'i', '🌺':'t', '🌈':'y', '🏵️':'h'
             } },
             puzzles: [
-              { symbols:{ar:'🌸💧⭐', en:'🌸💧🎁💧⭐🍀☀️🌙🌺🌈'}, answer:{ar:'كرم', en:'generosity'} },
-              { symbols:{ar:'🍀🎁💧', en:'🌸🌙🏵️💧'}, answer:{ar:'جود', en:'give'} },
+              { symbols:{ar:'🌸💧⭐', en:'🌸💧🎁💧⭐🌿☀️🌙🌺🌈'}, answer:{ar:'كرم', en:'generosity'} },
+              { symbols:{ar:'🌿🎁💧', en:'🌸🌙🏵️💧'}, answer:{ar:'جود', en:'give'} },
               { symbols:{ar:'☀️🌺🌈🏵️', en:'☀️🌙💧🎁🌺'}, answer:{ar:'عطاء', en:'spent'} },
             ]
           },
@@ -734,7 +734,7 @@ window.HOUSES.generosity = {
       body:{ar:'مُبادَرَةُ الكَريمِ أجمَلُ مِن عَطائِهِ بَعدَ الطَّلَب — بادِر قَبلَ أن يَسأَل.',en:'The generous person\'s initiative is more beautiful than giving after being asked — act before they ask.'} },
     { icon:'🍱', title:{ar:'شارِك طَعامَكَ مَع مَن حَولَك', en:'Share your food with those around you'},
       body:{ar:'أَفضَلُ الطَّعامِ ما كَثُرَت عليهِ الأَيدي — ادعُ زَميلَكَ وجارَكَ لِيَأكُلَ مَعَك.',en:'The best food is what many hands reach for — invite your classmate and neighbor to eat with you.'} },
-    { icon:'🙏', title:{ar:'ادعُ اللهَ أن يَرزُقَكَ الكَرَم', en:'Ask Allah to grant you generosity'},
+    { icon:'🤲', title:{ar:'ادعُ اللهَ أن يَرزُقَكَ الكَرَم', en:'Ask Allah to grant you generosity'},
       body:{ar:'قُل كُلَّ صَباح: «اللَّهُمَّ ارزُقني الكَرَمَ والسَّخاء» — الدُّعاءُ مِفتاحُ كُلِّ خَير.',en:'Say every morning: "O Allah, grant me generosity and open-handedness" — supplication is the key to all good.'} },
   ],
 

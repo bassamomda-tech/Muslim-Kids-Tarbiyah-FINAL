@@ -101,9 +101,9 @@ HISN.chapters.wahhab = {
     medal: { ar: 'وِسامُ الكرم', en: 'Medal of Generosity' },
     recipe: {
       title: { ar: 'الخلطةُ السحرية', en: 'The Magic Mix' },
-      intro: { ar: 'لِتعيشَ اسمَ «الوهّاب» اخلِطْ هذه في يومِك 🪄', en: 'To live the name "Al-Wahhab", mix these into your day 🪄' },
+      intro: { ar: 'لِتعيشَ اسمَ «الوهّاب» اخلِطْ هذه في يومِك ✨', en: 'To live the name "Al-Wahhab", mix these into your day ✨' },
       steps: [
-        { icon: '🙏', ar: 'أحمدُ اللهَ على نِعَمي كلَّ صباحٍ ومساء.', en: 'I praise Allah for my blessings every morning and evening.' },
+        { icon: '🤲', ar: 'أحمدُ اللهَ على نِعَمي كلَّ صباحٍ ومساء.', en: 'I praise Allah for my blessings every morning and evening.' },
         { icon: '🎁', ar: 'أُشارِكُ ألعابي وطعامي مع إخوتي وأصدقائي.', en: 'I share my toys and food with siblings and friends.' },
         { icon: '🤲', ar: 'أطلبُ حاجاتي من الوهّابِ بلا خجل.', en: 'I ask Al-Wahhab for my needs without shyness.' },
         { icon: '🍽️', ar: 'أُكرِمُ الضيفَ وأُعطي المحتاج.', en: 'I honor the guest and give to the needy.' },

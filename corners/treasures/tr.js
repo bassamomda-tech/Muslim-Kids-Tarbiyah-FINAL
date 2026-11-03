@@ -136,7 +136,7 @@
 
   function tabsHtml() {
     var tabs = [{ id: 'kids', icon: '🧒', label: { ar: 'للأطفال', en: 'For Kids' } }].concat(P.panels || []);
-    if (P.parents) tabs.push({ id: 'parents', icon: '👨‍👩‍👧', label: { ar: 'دليل الأهل', en: 'Parents' } });
+    if (P.parents) tabs.push({ id: 'parents', icon: '🏡', label: { ar: 'دليل الأهل', en: 'Parents' } });
     if (P.items && P.items.length) tabs.push({ id: 'print', icon: '🖨️', label: { ar: 'اطبع مجانًا', en: 'Print free' } });
     if (tabs.length < 2) return '';
     return '<div class="tr-tabs" role="tablist">' + tabs.map(function (x, i) {
@@ -335,9 +335,9 @@
     return '<div class="tr-prose" style="text-align:center"><h3>🖨️ ' + tx('موادّ مجّانية للطباعة', 'Free printables') + '</h3>' +
       '<p>' + tx('اطبع على ورق A4، ثم قُصّ على الخط المتقطّع واطوِ كلّ بطاقة من المنتصف: الوجه في جهة والمعنى في الجهة الأخرى.', 'Print on A4, cut along the dashed lines and fold each card in half: front on one side, meaning on the other.') + '</p>' +
       '<div class="tr-print-opts" style="margin-top:1rem">' +
-      '<button class="tr-btn" data-print="cards">🃏 ' + tx('بطاقات للطفل', 'Cards for kids') + '</button>' +
+      '<button class="tr-btn" data-print="cards">📇 ' + tx('بطاقات للطفل', 'Cards for kids') + '</button>' +
       (P.worksheet ? '<button class="tr-btn" data-print="worksheet">✏️ ' + tx('ورقة نشاط', 'Activity sheet') + '</button>' : '') +
-      (P.parents ? '<button class="tr-btn ghost" data-print="parents">👨‍👩‍👧 ' + tx('دليل الأهل', 'Parents guide') + '</button>' : '') +
+      (P.parents ? '<button class="tr-btn ghost" data-print="parents">🏡 ' + tx('دليل الأهل', 'Parents guide') + '</button>' : '') +
       '</div></div>';
   }
   function printCards() {

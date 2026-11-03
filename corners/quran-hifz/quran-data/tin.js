@@ -95,7 +95,7 @@ window.SURAHS.tin = {
   },
 
   practice: [
-    { icon:'🙏', title:{ar:'اشكُرْ نِعمةَ جسدِك', en:'Thank Allah for your body'},
+    { icon:'🤲', title:{ar:'اشكُرْ نِعمةَ جسدِك', en:'Thank Allah for your body'},
       body:{ar:'«أحسنِ تقويم»: احمَدِ اللهَ على عينيك ويديك وعقلِك.', en:'“The finest form”: thank Allah for your eyes, hands, and mind.'} },
     { icon:'💪', title:{ar:'استعمِلْ جوارِحَك في الخير', en:'Use your limbs for good'},
       body:{ar:'يداك للمساعدة، ولسانُك للصِّدق، وعيناك للنّافِع.', en:'Your hands to help, tongue for truth, eyes for what benefits.'} },

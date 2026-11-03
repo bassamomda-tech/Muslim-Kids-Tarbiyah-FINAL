@@ -101,7 +101,7 @@ HISN.chapters.khaliq = {
     medal: { ar: 'وِسامُ الإبداع', en: 'Medal of Creation' },
     recipe: {
       title: { ar: 'الخلطةُ السحرية', en: 'The Magic Mix' },
-      intro: { ar: 'لِتعيشَ اسمَ «الخالق» اخلِطْ هذه في يومِك 🪄', en: 'To live the name "Al-Khaliq", mix these into your day 🪄' },
+      intro: { ar: 'لِتعيشَ اسمَ «الخالق» اخلِطْ هذه في يومِك ✨', en: 'To live the name "Al-Khaliq", mix these into your day ✨' },
       steps: [
         { icon: '🔭', ar: 'أتأمّلُ مخلوقاً واحداً كلَّ يومٍ وأقول: سبحانَ الخالق!', en: 'I marvel at one creature each day and say: glory to the Creator!' },
         { icon: '💪', ar: 'أعتني بجسمي: طعامٌ صحيٌّ، نومٌ، ونظافة.', en: 'I care for my body: healthy food, sleep, and cleanliness.' },

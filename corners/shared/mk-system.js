@@ -148,7 +148,7 @@
       get:function(){ return parseInt(LS.getItem('qg_stars'),10)||0; } },
     { id:'forty', j:true, ic:'🕌', n:{ar:'الأربعون النووية',en:'The Forty Hadith'}, h:'corners/little-district/pages/hadith.html', c:'#1A9B7B', t:42,
       get:function(){ var n=0; for (var i=1;i<=42;i++) if (LS.getItem('hd:done:h'+(i<10?'0':'')+i)==='1') n++; return n; } },
-    { tr:'hadith-cards', h:'corners/little-district/pages/hadith.html', ic:'🃏', n:{ar:'بطاقات الأربعين',en:'Forty Hadith Cards'}, c:'#2E8B57', t:42 },
+    { tr:'hadith-cards', h:'corners/little-district/pages/hadith.html', ic:'📇', n:{ar:'بطاقات الأربعين',en:'Forty Hadith Cards'}, c:'#2E8B57', t:42 },
     { tr:'hadith-stories', j:true, ic:'📖', n:{ar:'قصص السنة',en:'Sunnah Stories'}, c:'#C1663A', t:100 },
     { tr:'prophet-moments', j:true, ic:'🌙', n:{ar:'مواقف النبي ﷺ',en:'Moments of the Prophet ﷺ'}, c:'#2C5F8A', t:18 },
     { tr:'names-cards',     ic:'✨', n:{ar:'أسماء الله الحسنى',en:'Names of Allah'}, c:'#6C3483', t:35 },
@@ -159,7 +159,7 @@
     { tr:'landmarks',       ic:'🕋', n:{ar:'المعالم والخرائط',en:'Landmarks & Maps'}, c:'#2980B9', t:18 },
     { tr:'tours',           ic:'🧭', n:{ar:'جولات افتراضية',en:'Virtual Tours'}, c:'#E67E22', t:5 },
     /* أنشطة أنوس: each of the 100 activities played at least once (written by corners/activities/scripts/anos-track.js) */
-    { id:'anos', ic:'🎲', n:{ar:'أنشطة أنوس (لعبتُها)',en:"Anos' activities played"}, h:'corners/activities/dashboard.html', c:'#C9A961', t:100,
+    { id:'anos', ic:'🧩', n:{ar:'أنشطة أنوس (لعبتُها)',en:"Anos' activities played"}, h:'corners/activities/dashboard.html', c:'#C9A961', t:100,
       get:function(){ var o=jget('anos_played',{})||{}; return Object.keys(o).length; } }
   ];
   /* → [{id, icon, name, color, href, done, total}] ; total 0 = open-ended (Hifz stars) */

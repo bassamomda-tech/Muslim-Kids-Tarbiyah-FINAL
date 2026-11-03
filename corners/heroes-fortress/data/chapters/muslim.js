@@ -45,7 +45,7 @@ HISN.chapters.muslim = {
     { ar:'الدقّة', en:'Precision' }, { ar:'حُسنُ الترتيب', en:'Fine organization' },
   ],
   lessons:[
-    { icon:'🙏', color:'#3A5A2A', title:{ar:'أحبَّ معلّمَك وأجلَّه',en:'Love and revere your teacher'},
+    { icon:'🤲', color:'#3A5A2A', title:{ar:'أحبَّ معلّمَك وأجلَّه',en:'Love and revere your teacher'},
       body:{ar:'أحبَّ مسلمٌ شيخَه البخاريَّ وأجلَّه غايةَ الإجلال. توقيرُ المعلّمِ من أدبِ طالبِ العلم.',en:'Muslim loved and deeply revered his teacher al-Bukhari. Honoring one\u2019s teacher is part of the etiquette of a knowledge-seeker.'},
       apply:{ar:'أُحِبُّ معلّميَّ وأُوقِّرُهم وأشكرُهم.',en:'I love my teachers, honor them, and thank them.'} },
     { icon:'📂', color:'#5A7A4A', title:{ar:'رتّبْ عملَك بإتقان',en:'Organize your work with care'},

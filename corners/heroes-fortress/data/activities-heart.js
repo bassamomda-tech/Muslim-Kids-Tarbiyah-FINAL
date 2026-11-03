@@ -131,7 +131,7 @@ HISN.activities.heart = {
     } },
 
   /* 6 · Who am I? (a quality of the heart) */
-  { id:'whoami', icon:'🕵️', cat:['love_prophet','salamat_qalb'], title:{ ar:'ما أنا؟', en:'What am I?' },
+  { id:'whoami', icon:'🔎', cat:['love_prophet','salamat_qalb'], title:{ ar:'ما أنا؟', en:'What am I?' },
     levels:{
       beginner:{ type:'whoAmI',
         clues:[ {ar:'أنا خُلقٌ في القلب.',en:'I am a quality of the heart.'},
@@ -154,7 +154,7 @@ HISN.activities.heart = {
     } },
 
   /* 7 · Memory flip (name ↔ symbol) */
-  { id:'flip', icon:'🃏', cat:['love_allah'], title:{ ar:'بطاقاتُ الذاكرة', en:'Memory flip cards' },
+  { id:'flip', icon:'📇', cat:['love_allah'], title:{ ar:'بطاقاتُ الذاكرة', en:'Memory flip cards' },
     levels:{
       beginner:{ type:'flip', pairs:[
         { a:{ar:'الرحمن',en:'Ar-Rahman'}, b:{ar:'💚',en:'💚'} },

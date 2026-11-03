@@ -249,7 +249,7 @@ HISN.chapters.fath = {
    }
   },
   {
-   "icon": "🙏",
+   "icon": "🤲",
    "color": "#C29A2A",
    "title": {
     "ar": "اشكرْ على النِّعَم",

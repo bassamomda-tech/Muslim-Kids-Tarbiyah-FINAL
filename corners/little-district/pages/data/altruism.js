@@ -93,10 +93,10 @@ window.HOUSES.altruism = {
        قصة نزول آية ﴿ويؤثرون على أنفسهم﴾ [الحشر:٩]
        ────────────────────────────────────────── */
     {
-      icon: '🕯️', scene: 'madinah', character: '👨‍👩‍👧‍👦',
+      icon: '🕯️', scene: 'madinah', character: '🏡',
       title: { ar:'الشَّمعَةُ الَّتي أُطفِئَت: إيثارُ أَبي طَلحَة', en:'The Candle That Was Put Out: Abu Talhah\'s Altruism' },
       pages: [
-        { scene:'madinah', character:'👨‍👩‍👧‍👦',
+        { scene:'madinah', character:'🏡',
           text:{ ar:'كانَت المَدينَةُ المُنَوَّرَةُ في فَجرِ الإسلامِ تَعيشُ أَيَّامَ فَقرٍ صَعبَة. المُهاجِرونَ تَرَكوا أَموالَهُم في مَكَّةَ، والأَنصارُ يَقتَسِمونَ ما بَأَيديهِم. في تِلكَ اللَّيلَةِ البارِدَة، كانَ أَبو طَلحَةَ الأَنصاريُّ رضي الله عنه جالِساً في بَيتِهِ الصَّغير، أَمامَهُ مِصباحٌ خافِتٌ يَرمي بَضعَةَ أَشِعَّة على وُجوهِ أَطفالِهِ الجائِعين.<br><br>             كانَت أُمُّ سُلَيمٍ زَوجَتُهُ تُمَهِّدُ أَفِرشَةَ الأَطفالِ لِلنَّومِ بِصَبرٍ، ودُموعٌ في عَينَيها — فَلَيسَ في البَيتِ مِنَ الطَّعامِ إلَّا ما يَكفي الصِّغارَ فَقَط.',
                  en:'Madinah in the early days of Islam was living through hard times of poverty. The Muhajirin had left their wealth in Makkah, and the Ansar were sharing whatever they had. On that cold night, Abu Talhah al-Ansari رضي الله عنه sat in his small home, a dim lamp casting faint light on the faces of his hungry children.<br><br>                    His wife Umm Sulaym was patiently preparing the children\'s bedding, tears glistening in her eyes — for there was no food in the house except just enough for the little ones.' } },
         { scene:'mosque', character:'🧔',

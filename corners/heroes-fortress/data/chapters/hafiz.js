@@ -101,7 +101,7 @@ HISN.chapters.hafiz = {
     medal: { ar: 'وِسامُ الحِفظ', en: 'Medal of Protection' },
     recipe: {
       title: { ar: 'الخلطةُ السحرية', en: 'The Magic Mix' },
-      intro: { ar: 'لِتعيشَ اسمَ «الحفيظ» اخلِطْ هذه في يومِك 🪄', en: 'To live the name "Al-Hafiz", mix these into your day 🪄' },
+      intro: { ar: 'لِتعيشَ اسمَ «الحفيظ» اخلِطْ هذه في يومِك ✨', en: 'To live the name "Al-Hafiz", mix these into your day ✨' },
       steps: [
         { icon: '🌅', ar: 'أقولُ أذكارَ الصباحِ والمساءِ كلَّ يوم.', en: 'I say morning and evening adhkar every day.' },
         { icon: '🌙', ar: 'أقرأُ آيةَ الكرسيِّ قبلَ النوم.', en: 'I read Ayat al-Kursi before sleeping.' },

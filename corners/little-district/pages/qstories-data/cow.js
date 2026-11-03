@@ -172,7 +172,7 @@ window.QSTORIES.cow.treasures = [
     }
   },
   {
-    "icon": "🕵️",
+    "icon": "🔎",
     "color": "#2980B9",
     "title": {
       "ar": "كشفُ القاتل",

@@ -112,7 +112,7 @@ HISN.chapters.rahman = {
     // الخلطةُ السحرية — كيف نُطبّقُ اسمَ «الرحمن» عمليّاً في حياتِنا كلَّ يوم
     recipe: {
       title: { ar: 'الخلطةُ السحرية', en: 'The Magic Mix' },
-      intro: { ar: 'لِتعيشَ اسمَ «الرحمن» اخلِطْ هذه المقاديرَ في يومِك… وانظُرْ ماذا يحدث! 🪄', en: 'To live the name "Ar-Rahman", mix these into your day… and watch what happens! 🪄' },
+      intro: { ar: 'لِتعيشَ اسمَ «الرحمن» اخلِطْ هذه المقاديرَ في يومِك… وانظُرْ ماذا يحدث! ✨', en: 'To live the name "Ar-Rahman", mix these into your day… and watch what happens! ✨' },
       steps: [
         { icon: '🤝', ar: 'مقدارٌ من الرحمةِ بإخوتي وأصدقائي، ولُطفٌ مع الصغار.', en: 'A scoop of mercy to my siblings and friends, and gentleness with little ones.' },
         { icon: '🐦', ar: 'رفقٌ بالحيوان: أُطعِمُه وأسقيه ولا أُؤذيه.', en: 'Kindness to animals: I feed them, give them water, and never hurt them.' },

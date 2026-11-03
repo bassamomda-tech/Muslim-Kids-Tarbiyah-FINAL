@@ -25,7 +25,7 @@ window.QS_INDEX = [
     metaAr:'لا يُغني حَذَرٌ من قَدَر', metaEn:'No escape from the decree', surahAr:'سورة البقرة', surahEn:'Surah Al-Baqarah' },
   { slug:'rass',       num:11, emoji:'🌲', nameAr:'أصحاب الرَّسّ',     nameEn:'People of the Well',
     metaAr:'عبدوا شجرةً وكذَّبوا نبيَّهم', metaEn:'Tree-worshippers who denied their prophet', surahAr:'الفرقان · ق', surahEn:'Al-Furqan · Qaf' },
-  { slug:'harutmarut', num:12, emoji:'👼', nameAr:'هاروت وماروت',      nameEn:'Harut & Marut',
+  { slug:'harutmarut', num:12, emoji:'✨', nameAr:'هاروت وماروت',      nameEn:'Harut & Marut',
     metaAr:'المَلَكانِ والتحذيرُ من السِّحر', metaEn:'The angels\u2019 warning against magic', surahAr:'سورة البقرة', surahEn:'Surah Al-Baqarah' },
   { slug:'khidr',      num:13, emoji:'🧭', nameAr:'الخَضِر وموسى',      nameEn:'Al-Khidr & Musa',
     metaAr:'حِكمةٌ خفيّةٌ وراءَ الأمور', metaEn:'Hidden wisdom behind events', surahAr:'سورة الكهف', surahEn:'Surah Al-Kahf' },

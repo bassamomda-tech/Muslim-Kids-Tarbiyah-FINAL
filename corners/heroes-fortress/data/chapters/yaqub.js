@@ -63,7 +63,7 @@ HISN.chapters.yaqub = {
     { icon:'🌅', color:'#E67E22', title:{ar:'لا تيأسْ مِن رَوحِ الله',en:'Never despair of Allah\'s relief'},
       body:{ar:'ظلَّ يعقوبُ يأملُ لقاءَ يوسفَ سنواتٍ طويلة، فجاءَ الفرج. اليأسُ ليس مِن صفاتِ المؤمن.',en:'Yaqub kept hoping to meet Yusuf for long years, and relief came. Despair is not a believer\'s trait.'},
       apply:{ar:'مهما طالَ همّي أبقى متفائلاً برحمةِ الله.',en:'However long my worry, I stay hopeful in Allah\'s mercy.'} },
-    { icon:'👨‍👦', color:'#5DA236', title:{ar:'ربِّ على التوحيد',en:'Teach pure worship'},
+    { icon:'🏡', color:'#5DA236', title:{ar:'ربِّ على التوحيد',en:'Teach pure worship'},
       body:{ar:'أهمُّ ما أوصى به يعقوبُ أبناءه: أن يعبدوا اللهَ وحدَه. خيرُ ما نُورِثُه لِمن نُحبُّ هو الإيمان.',en:'The most important thing Yaqub urged his sons: to worship Allah alone. The best thing we can pass to those we love is faith.'},
       apply:{ar:'أُذكِّرُ مَن أُحبُّ بِعبادةِ اللهِ وحدَه.',en:'I remind those I love to worship Allah alone.'} },
   ],

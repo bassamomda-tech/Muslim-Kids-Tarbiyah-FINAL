@@ -4,7 +4,7 @@
 window.HS_DATA = window.HS_DATA || [];
 HS_DATA.push(
 
-  { id: 'your-mother-three', tag: 'usra', icon: '👩‍👦',
+  { id: 'your-mother-three', tag: 'usra', icon: '🏡',
     t: [`«أمُّك، ثم أمُّك، ثم أمُّك»`, `"Your mother, then your mother, then your mother"`],
     sub: [`من أحقّ الناس بحسن صحبتي؟`, `Who most deserves my good company?`],
     pg: [

@@ -45,7 +45,7 @@ window.HADITHS.h19.treasures = [
     }
   },
   {
-    "icon": "🙏",
+    "icon": "🤲",
     "color": "#F4D03F",
     "title": {
       "ar": "الاستعانةُ بالله",

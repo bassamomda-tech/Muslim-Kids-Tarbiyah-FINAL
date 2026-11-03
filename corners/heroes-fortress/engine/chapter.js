@@ -52,7 +52,7 @@
     order:    { ic:'🔢', label:{ar:'ترتيب',en:'Order'} },
     match:    { ic:'🔗', label:{ar:'توصيل',en:'Match'} },
     trueFalse:{ ic:'⚖️', label:{ar:'صح أم خطأ',en:'True / False'} },
-    whoAmI:   { ic:'🕵️', label:{ar:'من أنا؟',en:'Who am I?'} },
+    whoAmI:   { ic:'🔎', label:{ar:'من أنا؟',en:'Who am I?'} },
   };
   const T = o => (o && (o[lang]!==undefined?o[lang]:o.ar)) ?? '';
   const titleBar = t => `<div class="room-title"><span class="bar"></span>${t}</div>`;
@@ -808,7 +808,7 @@
     const stkHead = `<div class="stk-head"><span>🏷️ ${lang==='ar'?'ملصقاتك':'Your stickers'}</span><span class="stk-cnt">${stkCount} / ${t.stickers.length}</span></div>`;
     // “الخلطة السحرية” — a playful recipe-card showing how to LIVE this name in daily life.
     const recipe = (t.recipe && t.recipe.steps && t.recipe.steps.length) ? `<div class="magic-mix">
-      <div class="mix-head"><span class="mix-em">🪄</span><div><h4>${t.recipe.title?T(t.recipe.title):(lang==='ar'?'الخلطةُ السحرية':'The Magic Mix')}</h4><p>${t.recipe.intro?T(t.recipe.intro):(lang==='ar'?'امزجْ هذه في يومِك — فتعيشَ الاسمَ لا تحفظُه فقط!':'Mix these into your day — so you live the name, not just memorize it!')}</p></div></div>
+      <div class="mix-head"><span class="mix-em">✨</span><div><h4>${t.recipe.title?T(t.recipe.title):(lang==='ar'?'الخلطةُ السحرية':'The Magic Mix')}</h4><p>${t.recipe.intro?T(t.recipe.intro):(lang==='ar'?'امزجْ هذه في يومِك — فتعيشَ الاسمَ لا تحفظُه فقط!':'Mix these into your day — so you live the name, not just memorize it!')}</p></div></div>
       <ul class="mix-list">${t.recipe.steps.map((s,i)=>`<li style="--i:${i}"><span class="mix-ic">${s.icon||'✨'}</span><p>${T(s)}</p></li>`).join('')}</ul>
       ${t.recipe.result?`<div class="mix-result"><span class="mix-eq">=</span><p>${T(t.recipe.result)}</p></div>`:''}
     </div>` : '';

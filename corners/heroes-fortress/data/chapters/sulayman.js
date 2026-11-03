@@ -54,7 +54,7 @@ HISN.chapters.sulayman = {
     { ar:'الحِكمة', en:'Wisdom' }, { ar:'الرحمةُ بالخلق', en:'Mercy to creatures' },
   ],
   lessons: [
-    { icon:'🙏', color:'#A6792E', title:{ar:'اشكُرْ على النِّعَم',en:'Be grateful for blessings'},
+    { icon:'🤲', color:'#A6792E', title:{ar:'اشكُرْ على النِّعَم',en:'Be grateful for blessings'},
       body:{ar:'كلّما زادتْ نِعَمُ سُليمانَ زادَ شُكرُه، ولم يتكبّر. كلُّ نعمةٍ عندك هي مِن اللهِ تستحقُّ الشُّكر.',en:'The more blessings Sulayman had, the more he thanked Allah and the more humble he stayed. Every blessing you have is from Allah and deserves thanks.'},
       apply:{ar:'أقولُ «الحمدُ لله» على كلِّ نعمةٍ صغيرةٍ وكبيرة.',en:'I say "All praise to Allah" for every blessing, small and large.'} },
     { icon:'🐜', color:'#5DA236', title:{ar:'ارحمِ المخلوقات',en:'Be merciful to creatures'},

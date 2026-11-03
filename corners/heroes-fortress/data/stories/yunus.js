@@ -370,7 +370,7 @@ HISN_STORIES.yunus = [
   ]
  },
  {
-  "icon": "🙏",
+  "icon": "🤲",
   "scene": "madinah",
   "character": "🌅",
   "title": {
@@ -522,7 +522,7 @@ HISN_STORIES.yunus = [
    "en": "The door of repentance never closes — even at the last moment Allah accepts whoever turns to Him sincerely."
   },
   "badge": {
-   "icon": "🙏",
+   "icon": "🤲",
    "title": {
     "ar": "وِسامُ التَّوبَةِ الجَماعيَّة",
     "en": "Badge of Collective Repentance"

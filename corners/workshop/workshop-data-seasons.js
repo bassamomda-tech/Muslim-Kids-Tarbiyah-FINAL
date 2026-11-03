@@ -29,7 +29,7 @@ window.WS.acts.push(
   steps:[
     {ic:'📄',ar:'الصقوا ٣٠ جيباً مرقَّماً على الكرتونة.',en:'Glue 30 numbered pockets onto the board.'},
     {ic:'✍️',ar:'اكتبوا معاً ٣٠ عملاً: أفطِّرُ صائماً، أقرأُ صفحة، أتصدق، أصلُ جدتي...',en:'Write 30 deeds together: feed a fasting person, read a page, give charity, visit grandma...'},
-    {ic:'🎲',ar:'وزِّعوا البطاقاتِ على الجيوبِ عشوائياً.',en:'Slip the cards into the pockets randomly.'},
+    {ic:'🧩',ar:'وزِّعوا البطاقاتِ على الجيوبِ عشوائياً.',en:'Slip the cards into the pockets randomly.'},
     {ic:'🌅',ar:'كلَّ يومٍ بعدَ الفجرِ اسحبْ بطاقةَ اليومِ ونفِّذْها قبلَ المغرب.',en:'Each day after Fajr, draw the day\'s card and do it before Maghrib.'},
     {ic:'⭐',ar:'أنجزتَها؟ لوِّنْ نجمةَ اليومِ على التقويم.',en:'Done? Color that day\'s star on the calendar.'}],
   little:{ar:'أعمالُ الصغار بالصور: 🍬 وزِّع تمراً، 🤲 قل دعاءً.',en:'Little ones\' deeds in pictures: 🍬 share dates, 🤲 say a du\'a.'},

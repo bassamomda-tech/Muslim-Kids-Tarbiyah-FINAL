@@ -107,7 +107,7 @@ HISN.chapters.qalb_mutmainn = {
     medal: { ar: 'وِسامُ الطمأنينة', en: 'Medal of Tranquility' },
     recipe: {
       title: { ar: 'الخلطةُ السحرية', en: 'The Magic Mix' },
-      intro: { ar: 'لِيَطمئنَّ قلبُك اخلِطْ هذه في يومِك 🪄', en: 'For your heart to be at peace, mix these into your day 🪄' },
+      intro: { ar: 'لِيَطمئنَّ قلبُك اخلِطْ هذه في يومِك ✨', en: 'For your heart to be at peace, mix these into your day ✨' },
       steps: [
         { icon: '🤲', ar: 'عندَ الشدّةِ أدعو اللهَ وآخذُ بالأسباب.', en: 'In hardship I call on Allah and take the means.' },
         { icon: '😌', ar: 'أصبِرُ وأرضى وأقول: «قدَّرَ اللهُ وما شاءَ فعل».', en: 'I’m patient and content and say: "Allah decreed, and did what He willed."' },

@@ -26,8 +26,8 @@
   }
   /* curated 5 Anous activities per corner (themed) */
   var REWARDS = {
-    aqeeda:  [['star-telescope.html','🔭','منظار النجوم','Star Telescope'],['creature-lab.html','🔬','مختبر المخلوقات','Creature Lab'],['rain-cycle.html','🌧️','دورة المطر','Rain Cycle'],['riddles.html','🧩','ألغاز الأذكياء','Riddles'],['smart-detective.html','🕵️','المحقّق الذكي','Smart Detective']],
-    ibada:   [['wudu-order.html','🚿','ترتيب الوضوء','Wudu Order'],['prayer-tree.html','🌳','شجرة الصلاة','Prayer Tree'],['wheel-of-dhikr.html','☸️','عجلة الذِّكر','Wheel of Dhikr'],['pillars-hero.html','🕋','بطل الأركان','Pillars Hero'],['traveler-bag.html','🎒','حقيبة المسافر','Traveler Bag']],
+    aqeeda:  [['star-telescope.html','🔭','منظار النجوم','Star Telescope'],['creature-lab.html','🔬','مختبر المخلوقات','Creature Lab'],['rain-cycle.html','🌧️','دورة المطر','Rain Cycle'],['riddles.html','🧩','ألغاز الأذكياء','Riddles'],['smart-detective.html','🔎','المحقّق الذكي','Smart Detective']],
+    ibada:   [['wudu-order.html','🚿','ترتيب الوضوء','Wudu Order'],['prayer-tree.html','🌳','شجرة الصلاة','Prayer Tree'],['wheel-of-dhikr.html','📿','عجلة الذِّكر','Wheel of Dhikr'],['pillars-hero.html','🕋','بطل الأركان','Pillars Hero'],['traveler-bag.html','🎒','حقيبة المسافر','Traveler Bag']],
     quran:   [['ayah-color.html','🎨','تلوين الآيات','Ayah Color'],['catch-madd.html','📏','اصطد المدّ','Catch the Madd'],['tashkeel-game.html','✏️','لعبة التشكيل','Tashkeel Game'],['word-trace.html','✒️','تتبّع الكلمة','Word Trace'],['smart-reciter.html','🎙️','القارئ الذكي','Smart Reciter']],
     sport:   [['landsea.html','🏊','برّ وبحر','Land & Sea'],['thirty-second.html','⏱️','تحدّي ٣٠ ثانية','30-Second'],['spot-differences.html','🔍','اكتشف الفروق','Spot Differences'],['islamic-sudoku.html','🔢','سودوكو','Sudoku'],['water-save.html','💧','وفّر الماء','Save Water']],
     academy: [['anagram.html','🔤','رتّب الحروف','Anagram'],['number-cipher.html','🔢','شيفرة الأرقام','Number Cipher'],['carpet-designer.html','🎨','مصمّم الزخارف','Pattern Designer'],['picture-crossword.html','🧩','كلمات متقاطعة','Crossword'],['word-search.html','🔎','بحث الكلمات','Word Search']],

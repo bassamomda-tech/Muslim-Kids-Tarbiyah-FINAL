@@ -10,10 +10,10 @@ window.QSTORIES.harutmarut = {
 
   story:{
     title:{ ar:'الاختبارُ في أرضِ بابِل', en:'The test in the land of Babylon' },
-    emoji:'👼',
+    emoji:'✨',
     pages:[
       { emoji:'🏙️', text:{ ar:'في زمنٍ قديمٍ في مدينةٍ تُسمّى <b>بابِل</b>، انتشرَ بين الناسِ <b>السِّحر</b>، وزعمَ بعضُهم أنه عِلمٌ نافع. بل افترى بعضُ الشياطينِ كذبةً كبيرة، فقالوا إنَّ نبيَّ اللهِ <b>سليمانَ</b> عليه السلام إنما حكمَ بالسِّحر! وهذا باطلٌ تماماً: <b>﴿وَمَا كَفَرَ سُلَيْمَانُ وَلَٰكِنَّ الشَّيَاطِينَ كَفَرُوا﴾</b> — فسليمانُ نبيٌّ كريم، والشياطينُ هم الذين كفروا وعلَّموا الناسَ السِّحر.', en:'Long ago, in a city called <b>Babylon</b>, <b>magic</b> spread among people, and some claimed it was a useful knowledge. Some devils even invented a great lie, saying that Allah\u2019s prophet <b>Sulayman</b> (peace be upon him) ruled by magic! This is utterly false: <b>"Sulayman did not disbelieve, but the devils disbelieved"</b> — Sulayman was a noble prophet, and it was the devils who disbelieved and taught people magic.' } },
-      { emoji:'👼', text:{ ar:'وأرادَ اللهُ أن يَختبِرَ الناسَ: مَن يُطيعُ ويبتعدُ عن الشَّرّ، ومَن يَعصي ويَتبعُ السِّحرَ المُحرَّم. فأنزلَ مَلَكَين: <b>هاروتَ وماروت</b>. وكان عملُهما أن يُبيِّنا للناسِ حقيقةَ السِّحرِ لِيَحذَروه ويَبتعِدوا عنه — لا لِيُحبِّباه إليهم.', en:'Allah willed to test people: who would obey and avoid evil, and who would disobey and follow forbidden magic. So He sent down two angels: <b>Harut and Marut</b>. Their task was to make clear to people the reality of magic so they would beware and stay away from it — not to make them love it.' } },
+      { emoji:'✨', text:{ ar:'وأرادَ اللهُ أن يَختبِرَ الناسَ: مَن يُطيعُ ويبتعدُ عن الشَّرّ، ومَن يَعصي ويَتبعُ السِّحرَ المُحرَّم. فأنزلَ مَلَكَين: <b>هاروتَ وماروت</b>. وكان عملُهما أن يُبيِّنا للناسِ حقيقةَ السِّحرِ لِيَحذَروه ويَبتعِدوا عنه — لا لِيُحبِّباه إليهم.', en:'Allah willed to test people: who would obey and avoid evil, and who would disobey and follow forbidden magic. So He sent down two angels: <b>Harut and Marut</b>. Their task was to make clear to people the reality of magic so they would beware and stay away from it — not to make them love it.' } },
       { emoji:'⚠️', text:{ ar:'فكانا لا يُعلِّمانِ أحداً <b>إلا بعد تحذيرٍ واضحٍ صريح</b>. كانا يقولانِ لكلِّ مَن يأتيهما: <b>﴿إِنَّمَا نَحْنُ فِتْنَةٌ فَلَا تَكْفُرْ﴾</b> — نحنُ امتحانٌ واختبارٌ لك، فاحذَر! تعلُّمُ السِّحرِ لِلإضرارِ بالناسِ <b>كُفرٌ وحرام</b>. كان تحذيراً صادقاً قبلَ كلِّ شيء.', en:'They taught no one <b>except after a clear, explicit warning</b>. They said to everyone who came to them: <b>"We are only a trial, so do not disbelieve."</b> — we are a test for you, so beware! Learning magic to harm people is <b>disbelief and forbidden</b>. It was a sincere warning before anything else.' } },
       { emoji:'🚫', text:{ ar:'فانقسمَ الناسُ قسمَين: منهم مَن سَمِعَ التحذيرَ <b>فابتعدَ ونَجا</b>، وحَمِدَ اللهَ أن أنقذه. ومنهم مَن <b>عصى وأصرَّ</b> على تعلُّمِ السِّحر، حتى تعلَّموا ما <b>يُفرِّقون به بين الزوجِ وزوجتِه</b> ويُؤذون به الناس. هؤلاء خَسِروا، لأنهم اختاروا الشَّرَّ بعد أن عرفوا الحقّ.', en:'So people split into two: some heard the warning <b>and stayed away and were saved</b>, praising Allah for rescuing them. Others <b>disobeyed and insisted</b> on learning magic, until they learned what <b>causes division between a husband and his wife</b> and harms people. These lost, because they chose evil after knowing the truth.' } },
       { emoji:'🛡️', text:{ ar:'وعلَّمَنا اللهُ حقيقةً مهمّةً تُطمئنُ القلب: السِّحرُ <b>﴿وَمَا هُم بِضَارِّينَ بِهِ مِنْ أَحَدٍ إِلَّا بِإِذْنِ اللَّهِ﴾</b> — لا يَضُرُّ أحداً إلا بإذنِ الله! فهو ضعيفٌ تماماً أمامَ قُدرةِ الله. فلا نَخافُ السِّحرَ، بل نَحتمي بالله القويِّ القادر.', en:'Allah taught us an important truth that calms the heart: magic <b>"cannot harm anyone except by Allah\u2019s leave"</b> — it harms no one except by Allah\u2019s permission! It is utterly weak before Allah\u2019s power. So we do not fear magic; we take refuge in Allah, the Strong, the Able.' } },
@@ -43,7 +43,7 @@ window.QSTORIES.harutmarut = {
   ],
 
   figures:[
-    { emoji:'👼', name:{ar:'هاروتُ وماروت',en:'Harut & Marut'}, role:{ar:'مَلَكانِ أُنزِلا بِبابِل اختباراً، يُحذِّرانِ الناسَ من السِّحر', en:'Two angels sent to Babylon as a test, warning people against magic'} },
+    { emoji:'✨', name:{ar:'هاروتُ وماروت',en:'Harut & Marut'}, role:{ar:'مَلَكانِ أُنزِلا بِبابِل اختباراً، يُحذِّرانِ الناسَ من السِّحر', en:'Two angels sent to Babylon as a test, warning people against magic'} },
     { emoji:'🧎', name:{ar:'أهلُ بابِل',en:'The people of Babylon'}, role:{ar:'افترقوا: ناجٍ ابتعدَ بالتحذير، وخاسرٌ أصرَّ على السِّحر', en:'They split: the saved who heeded the warning, and the lost who insisted on magic'} },
   ],
 
@@ -79,7 +79,7 @@ window.QSTORIES.harutmarut = {
 
 
 /* ───── Treasures: magic recipe + stickers + certificate ───── */
-window.QSTORIES.harutmarut.icon = "👼";
+window.QSTORIES.harutmarut.icon = "✨";
 window.QSTORIES.harutmarut.magicMixTitle = {"ar":"الخُلاصةُ السِّحرية — كيف أحمي نفسي من السِّحرِ والشر؟","en":"The Magic Recipe — how do I protect myself from magic and evil?"};
 window.QSTORIES.harutmarut.formulaEq = {"ar":"علمٌ + تقوى + تحذير = حِفظ 🏆 | سِحر = كُفرٌ وضرر","en":"Knowledge + Piety + Warning = protection 🏆"};
 window.QSTORIES.harutmarut.magicMix = [
@@ -141,7 +141,7 @@ window.QSTORIES.harutmarut.magicMix = [
 ];
 window.QSTORIES.harutmarut.treasures = [
   {
-    "icon": "👼",
+    "icon": "✨",
     "color": "#27AE60",
     "title": {
       "ar": "المَلَكان",

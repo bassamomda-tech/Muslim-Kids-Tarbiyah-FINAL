@@ -50,7 +50,7 @@ HISN.activities.seerah = {
     } },
 
   /* 3 · Who am I? */
-  { id:'whoami', icon:'🕵️', title:{ ar:'مَن أنا؟', en:'Who am I?' },
+  { id:'whoami', icon:'🔎', title:{ ar:'مَن أنا؟', en:'Who am I?' },
     levels:{
       beginner:{ type:'whoAmI',
         clues:[ {ar:'كنتُ أوّلَ من آمنَ بالنبيِّ ﷺ من النساء.',en:'I was the first woman to believe in the Prophet ﷺ.'},
@@ -171,7 +171,7 @@ HISN.activities.seerah = {
     } },
 
   /* 8 · Memory flip (event ↔ symbol) */
-  { id:'flip', icon:'🃏', title:{ ar:'بطاقاتُ الذاكرة', en:'Memory flip cards' },
+  { id:'flip', icon:'📇', title:{ ar:'بطاقاتُ الذاكرة', en:'Memory flip cards' },
     levels:{
       beginner:{ type:'flip', pairs:[
         { a:{ar:'البعثة',en:'Revelation'}, b:{ar:'🏔️',en:'🏔️'} },

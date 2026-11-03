@@ -108,7 +108,7 @@ HISN.chapters.birr_rank = {
     medal: { ar: 'وِسامُ البِرّ', en: 'Medal of Honoring' },
     recipe: {
       title: { ar: 'الخلطةُ السحرية', en: 'The Magic Mix' },
-      intro: { ar: 'لِتعيشَ بِرَّ والديك اخلِطْ هذه في يومِك 🪄', en: 'To live honoring your parents, mix these into your day 🪄' },
+      intro: { ar: 'لِتعيشَ بِرَّ والديك اخلِطْ هذه في يومِك ✨', en: 'To live honoring your parents, mix these into your day ✨' },
       steps: [
         { icon: '🙋', ar: 'أُطيعُهما بسرعةٍ إذا طلبا منّي شيئاً طيّباً.', en: 'I obey quickly when they ask me for something good.' },
         { icon: '🗣️', ar: 'أُكلِّمُهما بلُطفٍ ولا أرفعُ صوتي أبداً.', en: 'I speak to them gently and never raise my voice.' },

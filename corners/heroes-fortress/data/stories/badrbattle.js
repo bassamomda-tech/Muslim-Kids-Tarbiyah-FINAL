@@ -305,7 +305,7 @@ HISN_STORIES.badrbattle = [
   ]
  },
  {
-  "icon": "👼",
+  "icon": "✨",
   "scene": "cosmos",
   "character": "✨",
   "title": {
@@ -323,7 +323,7 @@ HISN_STORIES.badrbattle = [
    },
    {
     "scene": "cosmos",
-    "character": "👼",
+    "character": "✨",
     "text": {
      "ar": "فاستجابَ اللهُ ووفّى بوعدِه، وأنزلَ <b>الملائكةَ</b> مدداً: ﴿ أنّي مُمِدُّكم بألفٍ من الملائكةِ مُردِفين ﴾. ونزلَ <b>جبريلُ</b> عليه السلام، وقاتلتِ الملائكةُ مع المؤمنين. كان نصراً من السماء!",
      "en": "Allah answered and sent <b>the angels</b> as aid: “I will reinforce you with a thousand angels, rank upon rank.” <b>Jibril</b> descended, and the angels fought alongside the believers. It was a victory from the heavens!"
@@ -436,7 +436,7 @@ HISN_STORIES.badrbattle = [
    "en": "Supplication is the believer’s weapon; Allah aids His servants with unseen hosts."
   },
   "badge": {
-   "icon": "👼",
+   "icon": "✨",
    "title": {
     "ar": "وِسامُ مددِ السماء",
     "en": "Badge of Heaven’s Aid"

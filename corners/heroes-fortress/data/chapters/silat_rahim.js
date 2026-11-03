@@ -110,7 +110,7 @@ HISN.chapters.silat_rahim = {
     medal: { ar: 'وِسامُ صِلةِ الرَّحِم', en: 'Medal of Kinship' },
     recipe: {
       title: { ar: 'خلطةُ الوَصلِ', en: 'The Kinship Mix' },
-      intro: { ar: 'لِتَصِلَ رحمَك ويُحبَّك الرحمن، اخلِطْ هذه في أسبوعِك 🪄', en: 'To keep your kinship and earn the Most Merciful’s love, mix these into your week 🪄' },
+      intro: { ar: 'لِتَصِلَ رحمَك ويُحبَّك الرحمن، اخلِطْ هذه في أسبوعِك ✨', en: 'To keep your kinship and earn the Most Merciful’s love, mix these into your week ✨' },
       steps: [
         { icon: '👵', ar: 'أزورُ جَدّي وجَدّتي وأُقبِّلُ رأسَهما.', en: 'I visit my grandparents and kiss their heads.' },
         { icon: '📞', ar: 'أتّصِلُ بعمّي وخالتي وأسألُ عنهم.', en: 'I call my uncle and aunt and ask after them.' },

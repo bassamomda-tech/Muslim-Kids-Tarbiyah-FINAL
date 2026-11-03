@@ -107,7 +107,7 @@ HISN.chapters.birr_uquq = {
     medal: { ar: 'وِسامُ الحذر', en: 'Medal of Vigilance' },
     recipe: {
       title: { ar: 'الخلطةُ السحرية', en: 'The Magic Mix' },
-      intro: { ar: 'لِتحذرَ العقوقَ وتبقى بارّاً اخلِطْ هذه في يومِك 🪄', en: 'To avoid ‘uquq and stay dutiful, mix these into your day 🪄' },
+      intro: { ar: 'لِتحذرَ العقوقَ وتبقى بارّاً اخلِطْ هذه في يومِك ✨', en: 'To avoid ‘uquq and stay dutiful, mix these into your day ✨' },
       steps: [
         { icon: '🤐', ar: 'أحفظُ لساني فلا أقولُ «أُفّ» ولا كلمةً قاسية.', en: 'I guard my tongue — no "uff" nor harsh words.' },
         { icon: '🧘', ar: 'إذا غضبتُ كظمتُ غضبي وتنفّستُ وهدأت.', en: 'When angry, I hold it, breathe, and calm down.' },

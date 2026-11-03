@@ -126,7 +126,7 @@
         </div>
 
         <div class="block myth">
-          <h3><span class="bi">🃏</span>${H.myth}</h3>
+          <h3><span class="bi">📇</span>${H.myth}</h3>
           <div class="flip" id="flipCard">
             <div class="flip-inner">
               <div class="flip-face flip-front"><div class="ft-tag">${t('وَسوَسةُ القَلَق','The Worry')}</div><div>${st.myth.claim[L]}</div></div>

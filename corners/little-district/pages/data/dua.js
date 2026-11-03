@@ -32,7 +32,7 @@ window.HOUSES.dua = {
       },
     },
     forms: [
-      { icon:'🙏', color:'#004D40', title:{ar:'دُعاءُ المَسأَلَة', en:'Du\'a of Request'}, body:{ar:'طَلَبُ الخَيرِ مِن اللهِ كالرِّزقِ والصِّحَّةِ والعِلمِ والهِدايَة. وهو لَيسَ ضَعفاً بل اعتِرافٌ بِأنَّ اللهَ وَحدَهُ هو المُعطي الحَقيقيّ.', en:'Asking Allah for good things: provision, health, knowledge, and guidance. It is not weakness but an acknowledgment that Allah alone is the true Giver.'} },
+      { icon:'🤲', color:'#004D40', title:{ar:'دُعاءُ المَسأَلَة', en:'Du\'a of Request'}, body:{ar:'طَلَبُ الخَيرِ مِن اللهِ كالرِّزقِ والصِّحَّةِ والعِلمِ والهِدايَة. وهو لَيسَ ضَعفاً بل اعتِرافٌ بِأنَّ اللهَ وَحدَهُ هو المُعطي الحَقيقيّ.', en:'Asking Allah for good things: provision, health, knowledge, and guidance. It is not weakness but an acknowledgment that Allah alone is the true Giver.'} },
       { icon:'🌿', color:'#1B5E20', title:{ar:'دُعاءُ الثَّناءِ والتَّعظيم', en:'Du\'a of Praise'}, body:{ar:'الثَّناءُ على اللهِ بِأَسمائِهِ الحُسنى دونَ طَلَب — كـ«سُبحانَ الله، اللهُ أَكبَر». وقالَ العُلَماءُ: هو مِن أَعلى مَراتِبِ الدُّعاء.', en:'Praising Allah through His beautiful names without asking — like "Glory be to Allah, Allah is the Greatest." Scholars said this is among the highest forms of du\'a.'} },
       { icon:'🤲', color:'#0277BD', title:{ar:'دُعاءُ التَّضَرُّع', en:'Du\'a of Humble Supplication'}, body:{ar:'الدُّعاءُ في لَحَظاتِ الشِّدَّةِ والكَرب — حينَ يَشعُرُ العَبدُ بِضَعفِهِ التّامِّ ويَلجَأُ إلى اللهِ بِكُلِّ قَلبِه كَدُعاءِ يُونُسَ عليهِ السَّلامُ في بَطنِ الحوت.', en:'Praying in moments of hardship and distress — when the servant feels utterly weak and turns to Allah with all his heart, like Yunus\'s ﷺ prayer in the belly of the whale.'} },
       { icon:'💛', color:'#F9A825', title:{ar:'دُعاءُ الشُّكر', en:'Du\'a of Gratitude'}, body:{ar:'الثَّناءُ على اللهِ بَعدَ نِعمَة — كـ«الحَمدُ لِلَّهِ الَّذي أَطعَمَني». الشُّكرُ يَزيدُ النِّعمَةَ بِوَعدٍ إِلهيٍّ قاطِع: ﴿ لَئِن شَكَرْتُمْ لَأَزِيدَنَّكُمْ ﴾.', en:'Praising Allah after a blessing — like "Praise be to Allah who fed me." Gratitude increases blessings by Allah\'s firm promise: "If you are grateful I will surely increase you."'} },
@@ -635,7 +635,7 @@ window.HOUSES.dua = {
   magicMixTitle:{ ar:'كَيفَ تَعيشُ آدابَ الدُّعاءِ كُلَّ يَوم؟', en:'How do you live du\'a manners every day?' },
   formulaEq:{ ar:'إِخلاص + أَدَب + حَلال = دُعاءٌ مُستَجاب 🏆', en:'Sincerity + Manners + Halal = Answered Du\'a 🏆' },
   magicMix:[
-    { icon:'🙏', title:{ar:'ابدَأ كُلَّ دُعاءٍ بِحَمدِ الله',en:'Begin every du\'a with praise of Allah'},
+    { icon:'🤲', title:{ar:'ابدَأ كُلَّ دُعاءٍ بِحَمدِ الله',en:'Begin every du\'a with praise of Allah'},
       body:{ar:'قُل أَوَّلاً: «الحَمدُ لِلَّهِ رَبِّ العالَمين، اللَّهُمَّ صَلِّ على نَبيِّنا مُحَمَّد» — ثُمَّ اطلُب ما شِئت!',en:'Say first: "All praise to Allah Lord of worlds, O Allah bless our Prophet Muhammad" — then ask whatever you wish!'} },
     { icon:'🌙', title:{ar:'نَوِ قِيامَ ثُلُثِ اللَّيل',en:'Intend to rise in the last third of night'},
       body:{ar:'اعزِم قَبلَ النَّومِ أن تَستَيقِظَ ولو لِعَشرِ دَقائِق — ادعُ فيها ما شِئت فاللهُ يَنزِلُ يُنادي!',en:'Intend before sleep to wake even for ten minutes — call on Allah whatever you wish for He descends calling!'} },

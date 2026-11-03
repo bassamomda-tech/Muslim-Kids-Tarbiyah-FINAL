@@ -39,7 +39,7 @@ window.HOUSES.eating = {
       { icon:'🍽️', color:'#4E342E', title:{ar:'الأَكلُ مِمَّا يَليك', en:'Eating from what is in front of you'}, body:{ar:'كُل مِن ناحيَتِكَ ولا تَمُدَّ يَدَكَ إلى جانِبِ غَيرِك، فَالنَّبيُّ ﷺ قال: «كُل مِمَّا يَليك». البَرَكَةُ تَنزِلُ مِن وَسَطِ الطَّعام!', en:'Eat from your own side and do not reach into another\'s portion. The Prophet ﷺ said: "Eat from what is in front of you." Blessing descends from the centre of the food!'} },
       { icon:'🙅', color:'#6D4C41', title:{ar:'عَدَمُ عَيبِ الطَّعام', en:'Never criticising food'}, body:{ar:'لَم يَعِب النَّبيُّ ﷺ طَعاماً قَطُّ — إن أَعجَبَهُ أَكَلَ، وإن لَم يَشتَهِهِ تَرَكَهُ وسَكَتَ. لا تَقُل: هذا مَرٌّ أو مالِحٌ! فَتُحزِنَ مَن طَبَخ بِحُبّ.', en:'The Prophet ﷺ never criticised food — if he liked it he ate, if he did not want it he left it and said nothing. Never say "this is bitter or salty!" — you will hurt whoever cooked with love.'} },
       { icon:'👌', color:'#8D6E63', title:{ar:'لَعقُ الأَصابِعِ وإناءِ الطَّعام', en:'Licking fingers and the dish'}, body:{ar:'أَلعَق أَصابِعَكَ والإِناءَ بَعدَ الأَكل — فَإِنَّكَ لا تَدري في أيِّ طَعامِكَ البَرَكَة. وكانَ النَّبيُّ ﷺ يَأكُلُ بِثَلاثِ أَصابِعَ ثُمَّ يَلعَقُها!', en:'Lick your fingers and the dish after eating — for you do not know in which part of your food the blessing lies. The Prophet ﷺ used to eat with three fingers and then lick them!'} },
-      { icon:'🙏', color:'#A1887F', title:{ar:'الحَمدُ بَعدَ الأَكل', en:'Praising Allah after eating'}, body:{ar:'بَعدَ كُلِّ وَجبَة قُل: «الحَمدُ للهِ الَّذي أَطعَمَني هذا ورَزَقَنيه». إنَّ اللهَ لَيَرضى عن العَبدِ يَأكُلُ الأَكلَةَ فَيَحمَدُه، أو يَشرَبُ الشَّربَةَ فَيَحمَدُه!', en:'After every meal say: "Praise be to Allah who fed me this and provided it for me." For Allah is pleased with the servant who eats a meal and praises Him, or drinks a drink and praises Him!'} },
+      { icon:'🤲', color:'#A1887F', title:{ar:'الحَمدُ بَعدَ الأَكل', en:'Praising Allah after eating'}, body:{ar:'بَعدَ كُلِّ وَجبَة قُل: «الحَمدُ للهِ الَّذي أَطعَمَني هذا ورَزَقَنيه». إنَّ اللهَ لَيَرضى عن العَبدِ يَأكُلُ الأَكلَةَ فَيَحمَدُه، أو يَشرَبُ الشَّربَةَ فَيَحمَدُه!', en:'After every meal say: "Praise be to Allah who fed me this and provided it for me." For Allah is pleased with the servant who eats a meal and praises Him, or drinks a drink and praises Him!'} },
     ],
     ranking: [
       { color:'#3E2723', title:{ar:'أَعلى الآداب: الشُّكرُ لِلَّه', en:'Highest manners: Gratitude to Allah'}, body:{ar:'أن يَرى المُسلِمُ الطَّعامَ نِعمَةً مِن اللهِ فَيَشكُرَه قَبلَه وبَعدَه. هذهِ أَعظَمُ دَرَجَة؛ لأنَّها تَجعَلُ الأَكلَ عِبادَةً يُثابُ عليها المُؤمِن.', en:'That the Muslim sees food as a gift from Allah and thanks Him before and after eating it. This is the greatest degree — it turns eating into an act of worship for which the believer is rewarded.'} },
@@ -70,7 +70,7 @@ window.HOUSES.eating = {
       { ar:'🌸 يَجعَلُ اللهُ في الطَّعامِ البَرَكَةَ فَيَشبَعُ مِنه الكَثير', en:'🌸 Allah places blessing in the food so many are satisfied from it' },
       { ar:'🤲 يَطرُدُ الشَّيطانَ ويَحفَظُ الطَّعامَ مِن الأَذى', en:'🤲 It drives away Shaytaan and protects the food from harm' },
       { ar:'💚 يَحفَظُ الصِّحَّةَ ويَقي مِن الأَمراض', en:'💚 It protects health and guards against illness' },
-      { ar:'👨‍👩‍👧 يُجَمِّلُ المائِدَةَ ويُسعِدُ الأُسرَة', en:'👨‍👩‍👧 It beautifies the table and makes the family happy' },
+      { ar:'🏡 يُجَمِّلُ المائِدَةَ ويُسعِدُ الأُسرَة', en:'🏡 It beautifies the table and makes the family happy' },
       { ar:'⭐ يَجعَلُ كُلَّ وَجبَةٍ عِبادَةً يُؤجَرُ عليها العَبد', en:'⭐ It turns every meal into worship for which the servant is rewarded' },
     ],
     obstacles: [
@@ -774,7 +774,7 @@ window.HOUSES.eating = {
       body:{ar:'ذَكِّر نَفسَكَ في كُلِّ وَجبَة: «اليَمين! اليَمين!»', en:'Remind yourself at every meal: "Right hand! Right hand!"'} },
     { icon:'🍽️', title:{ar:'كُل مِمَّا يَليكَ في الصَّحفَة', en:'Eat from what is in front of you on the dish'},
       body:{ar:'لا تَمُد يَدَكَ لِناحِيَةِ أَحَد — ناحِيَتُكَ كافِيَة!', en:'Don\'t reach into someone else\'s side — your own side is enough!'} },
-    { icon:'🙏', title:{ar:'اشكُر مَن طَبَخَ لَكَ بَعدَ كُلِّ وَجبَة', en:'Thank whoever cooked for you after every meal'},
+    { icon:'🤲', title:{ar:'اشكُر مَن طَبَخَ لَكَ بَعدَ كُلِّ وَجبَة', en:'Thank whoever cooked for you after every meal'},
       body:{ar:'قُل: «جَزاكَ اللهُ خَيراً — كانَ الطَّعامُ لَذيذاً!»', en:'Say: "May Allah reward you — the food was delicious!"'} },
     { icon:'🌿', title:{ar:'لَعِق أَصابِعَكَ بَعدَ الطَّعام', en:'Lick your fingers after eating'},
       body:{ar:'هذه سُنَّةُ النَّبيِّ ﷺ — فَإِنَّكَ لا تَدري في أيِّها البَرَكَة!', en:'This is the Sunnah of the Prophet ﷺ — for you do not know in which part the blessing lies!'} },

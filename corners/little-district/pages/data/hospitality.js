@@ -341,10 +341,10 @@ window.HOUSES.hospitality = {
        dorar.net — islamweb.net/ar/article/220939
        ══════════════════════════════════════════════════ */
     {
-      icon:'🤝', scene:'madinah', character:'👨‍👨‍👦',
+      icon:'🤝', scene:'madinah', character:'👨‍🏡',
       title: { ar:'الأَنصارُ والمُهاجِرون: أَعظَمُ ضِيافَةٍ في التّاريخ', en:'The Ansar and the Migrants: The Greatest Hospitality in History' },
       pages: [
-        { scene:'desert', character:'👨‍👦',
+        { scene:'desert', character:'🏡',
           text:{ ar:'تَخَيَّل أَنَّكَ تَرَكتَ بَيتَك ومالَكَ وكُلَّ شَيءٍ تُحِبُّه، وجِئتَ إلى مَدينَةٍ لا تَعرِفُها وبِلا شَيءٍ في يَدِك! هكَذا كانَ حالُ المُهاجِرينَ الكِرامِ مِن مَكَّةَ المُكَرَّمَة — تَرَكوا كُلَّ دُنياهُم لِيَحفَظوا دينَهُم.<br><br>وَصَلوا إلى المَدينَةِ المُنَوَّرَة خالي الوِفاض، ووُجوهُهُم تَنِمُّ عن التَّعَبِ والحُزن والأَمَل المُختَلِط في آنٍ واحِد. أَيَنَ يَذهَبون؟ مَن سَيَستَقبِلُهُم؟',
                  en:'Imagine leaving your home, your wealth, and everything you love — arriving in a city you do not know with nothing in your hands! This was the condition of the noble Migrants from Makkah — they left everything of their worldly life to protect their faith.<br><br>They arrived in Madinah al-Munawwarah empty-handed, their faces bearing the mixed marks of exhaustion, sorrow, and hope all at once. Where would they go? Who would receive them?' } },
         { scene:'madinah', character:'😊',

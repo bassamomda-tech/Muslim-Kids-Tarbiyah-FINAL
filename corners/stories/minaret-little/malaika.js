@@ -4,7 +4,7 @@
    ملاحظة فنية: الأوصاف لا تُصوِّر الملائكةَ ولا وجوهَهم؛ نلمّح إليهم بالنور والأجنحة فقط. */
 window.MINARET_LITTLE = window.MINARET_LITTLE || {};
 window.MINARET_LITTLE.malaika = {
-  id:'malaika', icon:'👼', color:'#5DADE2',
+  id:'malaika', icon:'✨', color:'#5DADE2',
   title:'جُنُودُ النُّور', tag:'الْإِيمَانُ بِالْمَلَائِكَة',
   stories:[
 
@@ -22,7 +22,7 @@ window.MINARET_LITTLE.malaika = {
   ],
   moral:'أُؤْمِنُ بِالْمَلَائِكَةِ وَإِنْ كُنْتُ لَا أَرَاهَا. 💜',
   game:{ type:'pairs', title:'صِلْ كُلَّ مَخْلُوقٍ بِمَا خُلِقَ مِنْه', pairs:[
-    ['👼 الْمَلَائِكَة','💡 مِنْ نُور'],
+    ['✨ الْمَلَائِكَة','💡 مِنْ نُور'],
     ['🧍 الْإِنْسَان','🏺 مِنْ طِين'],
     ['🌬️ الْهَوَاء','🙈 مَوْجُودٌ وَلَا نَرَاه'] ] },
   act:{ q:'مِنْ أَيِّ شَيْءٍ خَلَقَ اللهُ الْمَلَائِكَة؟', yay:'أَحْسَنْت! خَلَقَهَا اللهُ مِنْ نُور', opts:[
@@ -34,7 +34,7 @@ window.MINARET_LITTLE.malaika = {
 { id:'azama', icon:'🪽', color:'#5B7FD4', title:'أَجْنِحَةٌ عَظِيمَة',
   tag:'الْمَلَائِكَةُ مَخْلُوقَاتٌ كَبِيرَة',
   pages:[
-    { emoji:'👼', text:'أَعْظَمُ الْمَلَائِكَةِ اسْمُهُ جِبْرِيل. رَآهُ النَّبِيُّ ﷺ وَلَهُ سِتُّمِئَةِ جَنَاح!',
+    { emoji:'✨', text:'أَعْظَمُ الْمَلَائِكَةِ اسْمُهُ جِبْرِيل. رَآهُ النَّبِيُّ ﷺ وَلَهُ سِتُّمِئَةِ جَنَاح!',
       prompt:'An enormous span of majestic glowing wings stretching across a wide dawn horizon, awe and wonder, no figure, soft gold light' },
     { emoji:'🌅', text:'أَجْنِحَتُهُ الْكَبِيرَةُ غَطَّتِ السَّمَاءَ كُلَّهَا! مَخْلُوقٌ عَظِيمٌ جِدًّا.',
       prompt:'Vast wings filling the whole sky from edge to edge over distant mountains, breathtaking scale, warm morning colors' },
@@ -159,7 +159,7 @@ window.MINARET_LITTLE.malaika = {
     { e:'🤝', t:'أُسَاعِدُ أُمِّي', bin:0 },
     { e:'🗣️', t:'أَقُولُ كَلِمَةً طَيِّبَة', bin:0 },
     { e:'😠', t:'أَصْرُخُ وَأُزْعِج', bin:1 },
-    { e:'🙏', t:'أَذْكُرُ الله', bin:0 } ] },
+    { e:'🤲', t:'أَذْكُرُ الله', bin:0 } ] },
   act:{ q:'مَاذَا يَكْتُبُ الْمَلَكُ عَنْ يَمِينِي؟', yay:'أَحْسَنْت! يَكْتُبُ حَسَنَاتِي مُضَاعَفَة', opts:[
     { e:'💛', t:'الْحَسَنَات', ok:true },
     { e:'🎮', t:'أَسْمَاءَ الْأَلْعَاب' },

@@ -12,7 +12,7 @@ HISN_STORIES.adam = [
   "pages": [
    {
     "scene": "garden",
-    "character": "👼",
+    "character": "✨",
     "text": {
      "ar": "قَبلَ أن يَكونَ على الأَرضِ إنسانٌ واحِد — أَعلَنَ اللهُ لِلمَلائِكَةِ قَراراً عَظيماً: <b>﴿ إِنِّي جَاعِلٌ فِي الْأَرْضِ خَلِيفَةً ﴾</b> — سَأَجعَلُ في الأَرضِ مَن يَخلُفُني في تَدبيرِها وعِمارَتِها!<br><br>تَعَجَّبَت المَلائِكَة: <b>﴿ أَتَجْعَلُ فِيهَا مَن يُفْسِدُ فِيهَا وَيَسْفِكُ الدِّمَاءَ وَنَحْنُ نُسَبِّحُ بِحَمْدِكَ وَنُقَدِّسُ لَكَ ﴾</b> — أَتَجعَلُ فيها مَن يُفسِدُ ويَسفِكُ الدِّماء ونَحنُ هُنا نُسَبِّحُ ونُقَدِّس؟!<br><br>فَأَجابَ اللهُ بِجُملَةٍ واحِدَةٍ أَسكَتَت كُلَّ سُؤال: <b>﴿ إِنِّي أَعْلَمُ مَا لَا تَعْلَمُونَ ﴾</b> — أَعلَمُ ما لا تَعلَمون! في هذا المَخلوقِ الجَديدِ سِرٌّ لا تُدرِكونَهُ بَعد!",
      "en": "Before a single human existed on earth — Allah announced a momentous decision to the angels: <b>﴿ \"I am placing on earth a vicegerent\" ﴾</b> — I will place on earth one who represents Me in managing and building it!<br><br>The angels wondered: <b>﴿ \"Will You place therein one who causes corruption and sheds blood, while we glorify You with praise and sanctify You?\" ﴾</b> — will You place there one who corrupts and sheds blood while we are here glorifying and sanctifying?!<br><br>Allah answered with one sentence that silenced every question: <b>﴿ \"I know what you do not know\" ﴾</b> — I know what you don't know! In this new creation is a secret you cannot yet perceive!"
@@ -568,7 +568,7 @@ HISN_STORIES.adam = [
  {
   "icon": "🌳",
   "scene": "garden",
-  "character": "👫",
+  "character": "🤝",
   "title": {
    "ar": "آدَمُ وحَوّاءُ في الجَنَّة: ولا تَقرَبا هذهِ الشَّجَرَة",
    "en": "Adam and Hawwa in Paradise: Do Not Approach This Tree"
@@ -576,7 +576,7 @@ HISN_STORIES.adam = [
   "pages": [
    {
     "scene": "garden",
-    "character": "👫",
+    "character": "🤝",
     "text": {
      "ar": "خَلَقَ اللهُ لِآدَمَ زَوجَتَهُ <b>حَوّاء</b> — لِيَسكُنَ إليها ويَأنَسَ بِها. ثُمَّ أَسكَنَهُما الجَنَّة — حَيثُ كُلُّ شَيءٍ مُباح: <b>﴿ وَكُلَا مِنْهَا رَغَدًا حَيْثُ شِئْتُمَا ﴾</b> — كُلا مِن كُلِّ مَكانٍ بِحُرِّيَّةٍ وسَعَة!<br><br>لَكِنَّ اللهَ وَضَعَ تَحذيراً واحِداً: <b>﴿ وَلَا تَقْرَبَا هَٰذِهِ الشَّجَرَةَ فَتَكُونَا مِنَ الظَّالِمِينَ ﴾</b> — لا تَقرَبا هذهِ الشَّجَرَة! ليسَ «لا تَأكُلا» فَقَط بل «لا تَقرَبا» — حتى لا تَقتَرِبا مِنها!<br><br>كُلُّ الجَنَّةِ مُباح — إلّا شَجَرَةً واحِدَة! امتِحانٌ بَسيطٌ في الظّاهِر — لَكِنَّهُ اختِبارٌ لِلطّاعَةِ والإرادَة!",
      "en": "Allah created for Adam his wife <b>Hawwa</b> — so he would find comfort and companionship. Then He settled them in Paradise — where everything was permitted: <b>﴿ \"Eat from it freely wherever you wish\" ﴾</b> — eat from anywhere with freedom and abundance!<br><br>But Allah set one warning: <b>﴿ \"And do not approach this tree, lest you be among the wrongdoers\" ﴾</b> — don't approach this tree! Not just \"don't eat\" but \"don't approach\" — don't even go near it!<br><br>All of Paradise was permitted — except one tree! A simple test on the surface — but a test of obedience and willpower!"

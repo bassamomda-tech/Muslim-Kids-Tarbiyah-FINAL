@@ -440,7 +440,7 @@ HISN_STORIES.ibrahim = [
                en:'After long years of waiting and du\'a, Ibrahim was blessed with Ismail — the son who came after white hair and prolonged longing. Ibrahim loved him with a love that filled heart and soul — how could he not when he was Allah\'s gift after barrenness?<br><br>' +
                'Ismail grew until he could walk and work alongside his father. Then the night came: Ibrahim saw a vision clear as the sun — <b>that he was slaughtering his son Ismail!</b> And the visions of prophets are revelation from Allah.<br><br>' +
                'Ibrahim woke drenched in sweat. The greatest trial in human history: to slaughter the piece of your heart with your own hand — by Allah\'s command!' } },
-      { scene:'desert', character:'👨‍👦',
+      { scene:'desert', character:'🏡',
         text:{ ar:'لَم يَتَرَدَّد إبراهيمُ لَحظَةً واحِدَة. لَكِنَّهُ فَعَلَ شَيئاً يُعَلِّمُنا أَرقى أَنواعِ التَّربيَة: لَم يَأخُذِ ابنَهُ غَدراً ولَم يُخفِ عنهُ الحَقيقَة — بل جَلَسَ أَمامَهُ وأَخبَرَهُ بِكُلِّ صِدقٍ وشَفافيَّة:<br><br>' +
                '<b>﴿ يَا بُنَيَّ إِنِّي أَرَىٰ فِي الْمَنَامِ أَنِّي أَذْبَحُكَ فَانظُرْ مَاذَا تَرَىٰ ﴾</b><br><br>' +
                '«يا بُنَيّ» — كَلِمَةُ حَنانٍ وتَصغيرٍ تَذوبُ لَها القُلوب! «فَانظُر ماذا تَرى» — يَستَشيرُهُ ولا يُجبِرُه! ليسَ لأنَّ لَهُ خِياراً في أَمرِ اللهِ — بل لِيَكونَ إسماعيلُ شَريكاً في الطّاعَةِ لا ضَحيَّةً مُكرَهَة!',
@@ -610,7 +610,7 @@ HISN_STORIES.ibrahim = [
               quranpedia.net — سورة هود ٦٩-٧٦، سورة الذاريات ٢٤-٣٧
      ════════════════════════════════════════════════════════ */
   {
-    icon:'👼', scene:'garden', character:'🍖',
+    icon:'✨', scene:'garden', character:'🍖',
     title:{ ar:'ضُيوفُ إبراهيم: المَلائِكَةُ والبِشارَةُ العَظيمَة', en:'Ibrahim\'s Guests: The Angels and the Great Glad Tidings' },
     pages:[
       { scene:'garden', character:'🧔',
@@ -631,7 +631,7 @@ HISN_STORIES.ibrahim = [
             { t:{ar:'لأنَّ عُرفَ العَرَبِ أنَّ مَن لا يَأكُلُ طَعامَكَ لَيسَ بِضَيفٍ آمِن.',en:'Because Arab custom held that one who won\'t eat your food isn\'t a safe guest.'},c:true,exp:{ar:'نَعَم! لَكِنَّ الضُّيوفَ طَمأَنوه بِسُرعَة — فَهُم مَلائِكَةٌ لا يَأكُلون!',en:'Yes! But the guests quickly reassured him — they were angels who do not eat!'} },
             { t:{ar:'لأنَّهُم كانوا كَثيرينَ جِدّاً.',en:'Because there were too many of them.'},c:false,exp:{ar:'لا — كانوا ثَلاثَةً فَقَط. خَوفُهُ كانَ بِسَبَبِ عَدَمِ أَكلِهِم!',en:'No — they were only three. His fear was because they didn\'t eat!'} },
           ] } },
-      { scene:'garden', character:'👼',
+      { scene:'garden', character:'✨',
         text:{ ar:'<b>﴿ قَالُوا لَا تَخَفْ ﴾</b> — لا تَخَف يا إبراهيم! نَحنُ مَلائِكَةُ اللهِ! أُرسِلنا بِمُهِمَّتَين:<br><br>' +
                'المُهِمَّةُ الأولى — <b>بِشارَة!</b> التَفَتوا إلى زَوجَتِهِ سارَة — وكانَت واقِفَةً خَلفَ السِّتار — وقالوا: <b>﴿ فَبَشَّرْنَاهَا بِإِسْحَاقَ وَمِن وَرَاءِ إِسْحَاقَ يَعْقُوبَ ﴾</b> — ستَلِدينَ ابناً اسمُهُ إسحاق! ومِن بَعدِهِ حَفيداً اسمُهُ يَعقوب!<br><br>' +
                'دَهِشَت سارَةُ وضَرَبَت وَجهَها مِن التَّعَجُّب: <b>﴿ قَالَتْ يَا وَيْلَتَىٰ أَأَلِدُ وَأَنَا عَجُوزٌ وَهَٰذَا بَعْلِي شَيْخًا ﴾</b> — أَنا عَجوزٌ عاقِرٌ وزَوجي شَيخٌ كَبير! فَأَجابوها: <b>﴿ أَتَعْجَبِينَ مِنْ أَمْرِ اللَّهِ ﴾</b> — أَتَستَعجِبينَ مِن قُدرَةِ الَّذي خَلَقَ كُلَّ شَيء؟!',
@@ -674,7 +674,7 @@ HISN_STORIES.ibrahim = [
         ] },
     ],
     moral:{ ar:'الكَرَمُ والضِّيافَةُ بابٌ مِن أَبوابِ رِضا اللهِ — ومَن أَكرَمَ الخَلقَ أَكرَمَهُ الخالِق.', en:'Generosity and hospitality are doors to Allah\'s pleasure — whoever honors creation, the Creator honors them.' },
-    badge:{ icon:'👼', title:{ar:'وِسامُ أَبي الضِّيفان', en:'Badge of the Father of Guests'} },
+    badge:{ icon:'✨', title:{ar:'وِسامُ أَبي الضِّيفان', en:'Badge of the Father of Guests'} },
     reflect:[
       {ar:'كَيفَ تُطَبِّقُ كَرَمَ إبراهيمَ في حَياتِكَ — حتى لو لَم يَكُن عِندَكَ عِجلٌ سَمين؟', en:'How do you apply Ibrahim\'s generosity in your life — even without a fattened calf?'},
       {ar:'ما الفَرقُ بَينَ «كُلوا!» و«أَلا تَأكُلون؟» — وكَيفَ تُطَبِّقُ هذا الأَدَبَ مَعَ ضُيوفِك؟', en:'What is the difference between "Eat!" and "Will you not eat?" — how do you apply this etiquette with your guests?'},

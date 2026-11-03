@@ -137,7 +137,7 @@ window.SURAHS.quraysh.treasures = [
     }
   },
   {
-    "icon": "🙏",
+    "icon": "🤲",
     "color": "#8E44AD",
     "title": {
       "ar": "فَليَعبُدوا رَبَّ البَيت",

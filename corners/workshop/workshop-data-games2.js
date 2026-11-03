@@ -95,7 +95,7 @@ window.WS.acts.push(
   whyEn:'One of Egypt\'s most famous street chase games — everyone against everyone till one remains.',
   tools:[{ic:'🏞️',ar:'ساحةٌ واسعةٌ محددةُ الحدود',en:'A wide yard with agreed boundaries'},{ic:'👧',ar:'٥ أطفالٍ فأكثر',en:'5+ children'}],
   steps:[
-    {ic:'🎲',ar:'اقترعوا على «القفّاش» الأول.',en:'Draw lots for the first catcher.'},
+    {ic:'🧩',ar:'اقترعوا على «القفّاش» الأول.',en:'Draw lots for the first catcher.'},
     {ic:'🏃',ar:'يطاردُ الجميعَ — ومَن لمسَه انضمَّ إليه.',en:'He chases everyone — whoever he tags joins him.'},
     {ic:'🤝',ar:'يكبرُ فريقُ القفّاشينَ ويتعاونونَ على المحاصرة.',en:'The catchers\' team grows and works together to corner players.'},
     {ic:'👑',ar:'آخرُ لاعبٍ حرٍّ يُعلَنُ «ملكاً» بتصفيقِ الجميع.',en:'The last free player is declared "King" to everyone\'s applause.'},

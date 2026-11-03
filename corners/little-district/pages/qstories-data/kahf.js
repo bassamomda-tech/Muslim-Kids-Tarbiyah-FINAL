@@ -53,7 +53,7 @@ window.QSTORIES.kahf = {
   ],
 
   figures:[
-    { emoji:'🧑‍🤝‍🧑', name:{ar:'الفتية المؤمنون',en:'The believing youths'}, role:{ar:'شبابٌ آمنوا بالله وفرُّوا بدينهم إلى الكهف', en:'Young men who believed and fled with their faith'} },
+    { emoji:'🤝', name:{ar:'الفتية المؤمنون',en:'The believing youths'}, role:{ar:'شبابٌ آمنوا بالله وفرُّوا بدينهم إلى الكهف', en:'Young men who believed and fled with their faith'} },
     { emoji:'🐕', name:{ar:'الكلب',en:'The dog'}, role:{ar:'رافقهم وحرس باب الكهف', en:'Accompanied them, guarding the cave entrance'} },
     { emoji:'👑', name:{ar:'المَلِك الظالم',en:'The tyrant king'}, villain:true, role:{ar:'أجبر الناس على عبادة الأصنام', en:'Forced people to worship idols'} },
   ],
@@ -117,7 +117,7 @@ window.QSTORIES.kahf.magicMix = [
     }
   },
   {
-    "icon": "🧑‍🤝‍🧑",
+    "icon": "🤝",
     "title": {
       "ar": "أختارُ الصُّحبةَ الصالحة",
       "en": "I choose good company"
@@ -152,7 +152,7 @@ window.QSTORIES.kahf.magicMix = [
 ];
 window.QSTORIES.kahf.treasures = [
   {
-    "icon": "🧑‍🤝‍🧑",
+    "icon": "🤝",
     "color": "#27AE60",
     "title": {
       "ar": "الفِتيةُ المؤمنون",

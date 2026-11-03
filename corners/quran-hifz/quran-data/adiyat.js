@@ -110,7 +110,7 @@ window.SURAHS.adiyat = {
   },
 
   practice: [
-    { icon:'🙏', title:{ar:'اشكُرِ اللهَ ولا تجحَدْ', en:'Be grateful, never ungrateful'},
+    { icon:'🤲', title:{ar:'اشكُرِ اللهَ ولا تجحَدْ', en:'Be grateful, never ungrateful'},
       body:{ar:'عُدِّ نِعمَ اللهِ عليك كلَّ يوم، وقُل «الحمدُ لله».', en:'Count Allah’s blessings on you each day and say “al-hamdu lillah.”'} },
     { icon:'🤲', title:{ar:'لا تطمَعْ في المال', en:'Don’t be greedy for money'},
       body:{ar:'حُبُّ المالِ الشديدُ عيب، فاقنَعْ بما عندَك وأعطِ منه.', en:'Intense love of wealth is a flaw — be content and give from it.'} },

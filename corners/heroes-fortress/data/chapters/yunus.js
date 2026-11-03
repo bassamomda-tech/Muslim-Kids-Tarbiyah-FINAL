@@ -59,7 +59,7 @@ HISN.chapters.yunus = {
     { icon:'🤲', color:'#2A7FAE', title:{ar:'ادعُ في الشِّدّة',en:'Call on Allah in hardship'},
       body:{ar:'في أحلكِ الظُّلماتِ دعا يونسُ ربَّه فنجّاه. ما مِن كَربٍ إلا ويُفرِّجُه الدعاءُ والتوكّلُ على الله.',en:'In the darkest darkness Yunus called his Lord and was saved. No distress comes that prayer and trust in Allah cannot relieve.'},
       apply:{ar:'إذا ضِقتُ بشيءٍ دعوتُ اللهَ بدعاءِ يونسَ بِيقين.',en:'When something troubles me, I call Allah with Yunus\'s prayer, certain He hears.'} },
-    { icon:'🙏', color:'#8E44AD', title:{ar:'اعترفْ بخطئِك',en:'Admit your mistake'},
+    { icon:'🤲', color:'#8E44AD', title:{ar:'اعترفْ بخطئِك',en:'Admit your mistake'},
       body:{ar:'قال يونسُ: «إنّي كنتُ مِن الظالمين»، فلم يَلُمْ أحداً غيرَ نفسِه. الاعترافُ بابُ المغفرة.',en:'Yunus said: "I was among the wrongdoers," blaming no one but himself. Admitting fault is a door to forgiveness.'},
       apply:{ar:'لا أُبرِّرُ خطئي، بل أعترفُ وأستغفر.',en:'I don\'t make excuses for my mistake — I admit it and seek forgiveness.'} },
     { icon:'⏳', color:'#E67E22', title:{ar:'اصبِرْ على الناس',en:'Be patient with people'},

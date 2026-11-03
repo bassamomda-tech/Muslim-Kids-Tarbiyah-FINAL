@@ -101,7 +101,7 @@ HISN.chapters.qadir = {
     medal: { ar: 'وِسامُ القوة', en: 'Medal of Power' },
     recipe: {
       title: { ar: 'الخلطةُ السحرية', en: 'The Magic Mix' },
-      intro: { ar: 'لِتعيشَ اسمَ «القدير» اخلِطْ هذه في يومِك 🪄', en: 'To live the name "Al-Qadir", mix these into your day 🪄' },
+      intro: { ar: 'لِتعيشَ اسمَ «القدير» اخلِطْ هذه في يومِك ✨', en: 'To live the name "Al-Qadir", mix these into your day ✨' },
       steps: [
         { icon: '🤲', ar: 'أطلبُ العونَ من اللهِ وحدَه في كلِّ أمر.', en: 'I seek help from Allah alone in everything.' },
         { icon: '💪', ar: 'لا أيأسُ من مشكلةٍ صعبة، فاللهُ قادر.', en: 'I don’t despair over a hard problem — Allah is able.' },

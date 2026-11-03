@@ -144,7 +144,7 @@ window.SURAHS.infitar = {
   practice: [
     { icon:'📝', title:{ar:'تذكَّرْ الملائكةَ الكاتبين', en:'Remember the recording angels'},
       body:{ar:'ملَكانِ يكتُبانِ عملَك، فاجعَلْ صحيفتَك حسنات.', en:'Two angels write your deeds — fill your record with good.'} },
-    { icon:'🙏', title:{ar:'لا تغترِّ بحِلمِ الله', en:'Don’t be fooled by Allah’s patience'},
+    { icon:'🤲', title:{ar:'لا تغترِّ بحِلمِ الله', en:'Don’t be fooled by Allah’s patience'},
       body:{ar:'اللهُ كريمٌ يُمهِلُ، فاشكُرْه بالطّاعةِ ولا تعصِه.', en:'Allah is generous and gives time — thank Him with obedience, don’t disobey.'} },
     { icon:'🥲', title:{ar:'اشكُرْ ربَّك الذي خلَقَك', en:'Thank the Lord who created you'},
       body:{ar:'سوّاك وعدَلَك في أحسنِ صورة، فاحمَدْه على ذلك.', en:'He shaped and balanced you in the finest form — praise Him for it.'} },

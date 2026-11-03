@@ -101,9 +101,9 @@ HISN.chapters.shakur = {
     medal: { ar: 'وِسامُ الشكر', en: 'Medal of Gratitude' },
     recipe: {
       title: { ar: 'الخلطةُ السحرية', en: 'The Magic Mix' },
-      intro: { ar: 'لِتعيشَ اسمَ «الشكور» اخلِطْ هذه في يومِك 🪄', en: 'To live the name "Ash-Shakur", mix these into your day 🪄' },
+      intro: { ar: 'لِتعيشَ اسمَ «الشكور» اخلِطْ هذه في يومِك ✨', en: 'To live the name "Ash-Shakur", mix these into your day ✨' },
       steps: [
-        { icon: '🙏', ar: 'أقولُ «الحمدُ لله» كثيراً وأَشكرُ اللهَ على نِعَمي.', en: 'I say "Alhamdulillah" often and thank Allah for my blessings.' },
+        { icon: '🤲', ar: 'أقولُ «الحمدُ لله» كثيراً وأَشكرُ اللهَ على نِعَمي.', en: 'I say "Alhamdulillah" often and thank Allah for my blessings.' },
         { icon: '😊', ar: 'أبتسمُ لأخي وأُميطُ الأذى عن الطريق.', en: 'I smile at my brother and remove harm from the road.' },
         { icon: '💧', ar: 'أفعلُ الخيرَ الصغيرَ ولا أَستهِينُ به.', en: 'I do small good and never underestimate it.' },
         { icon: '🤝', ar: 'أَشكرُ الناسَ على معروفِهم وأقولُ «شكراً».', en: 'I thank people for their kindness and say "thank you".' },

@@ -107,7 +107,7 @@ HISN.chapters.qalb_safi = {
     medal: { ar: 'وِسامُ القلبِ الصافي', en: 'Medal of the Pure Heart' },
     recipe: {
       title: { ar: 'الخلطةُ السحرية', en: 'The Magic Mix' },
-      intro: { ar: 'لِيَصفوَ قلبُك من الأمراضِ اخلِطْ هذه في يومِك 🪄', en: 'For your heart to be cleared of diseases, mix these into your day 🪄' },
+      intro: { ar: 'لِيَصفوَ قلبُك من الأمراضِ اخلِطْ هذه في يومِك ✨', en: 'For your heart to be cleared of diseases, mix these into your day ✨' },
       steps: [
         { icon: '😊', ar: 'إذا رأيتُ نعمةً عند غيري قلتُ «ما شاء الله» وفرحتُ له.', en: 'When I see a blessing with another, I say "Masha’Allah" and rejoice.' },
         { icon: '🕊️', ar: 'أُسامِحُ من أخطأَ ولا أنامُ وفي قلبي حقد.', en: 'I forgive whoever erred and don’t sleep with a grudge.' },

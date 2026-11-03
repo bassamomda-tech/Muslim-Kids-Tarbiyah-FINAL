@@ -29,7 +29,7 @@ HISN.rewards = {
     { href: 'activities/hijri-timeline.html',      icon: '📜', d: 2, t: { ar: 'شريط الزمن الهجري',    en: 'Hijri Timeline' } },
   ],
   heart: [
-    { href: 'activities/memory-names.html',  icon: '🃏', d: 2, t: { ar: 'ذاكرة الأسماء الحسنى', en: 'Memory of the Beautiful Names' } },
+    { href: 'activities/memory-names.html',  icon: '📇', d: 2, t: { ar: 'ذاكرة الأسماء الحسنى', en: 'Memory of the Beautiful Names' } },
     { href: 'activities/gratitude.html',     icon: '📔', d: 1, t: { ar: 'مفكرة الامتنان',       en: 'Gratitude Journal' } },
     { href: 'activities/good-bingo.html',    icon: '🏅', d: 2, t: { ar: 'بنغو الصالحات',        en: 'Good Deeds Bingo' } },
     { href: 'activities/akhlaq-bag.html',    icon: '🎒', d: 1, t: { ar: 'حقيبة الأخلاق',        en: 'The Akhlaq Bag' } },

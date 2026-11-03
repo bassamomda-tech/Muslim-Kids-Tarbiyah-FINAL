@@ -241,13 +241,13 @@ window.HOUSES.masjid = {
        Source: islamweb.net/ar/ — فضل يوم الجمعة وآداب صلاتها
        ────────────────────────────────────────── */
     {
-      icon:'✨', scene:'mosque', character:'👨‍👦',
+      icon:'✨', scene:'mosque', character:'🏡',
       title: { ar:'يَومُ الجُمُعَة: اليَومُ الَّذي تَشتاقُ إليه المَلائِكَة', en:'Friday: The day the angels look forward to' },
       pages: [
-        { scene:'mosque', character:'👨‍👦',
+        { scene:'mosque', character:'🏡',
           text:{ ar:'أيقَظَ أَبو عَبدِ الله ابنَهُ الصَّغيرَ يوسُفَ بَعدَ الفَجر، والشَّمسُ لم تَطلُعْ بَعد. قالَ له بِصَوتٍ دافِئ: <b>«قُم يا يوسُف — اليَومَ الجُمُعَة!»</b><br><br>فَرَكَ يوسُفُ عَينَيه المُتَعَبَتَين وسَأَل: «وما خُصوصيَّةُ اليَومِ يا أبِي؟» فَجَلَسَ الأَبُ وابتَسَمَ، وكأَنَّهُ كانَ يَنتَظِرُ هذا السُّؤال.',
                en:'Abu Abdallah woke his little son Yusuf after Fajr, the sun not yet risen. He said in a warm voice: <b>"Rise, Yusuf — today is Friday!"</b><br><br>Yusuf rubbed his tired eyes and asked: "What\'s special about today, Father?" The father sat down and smiled, as if he had been waiting for exactly this question.' } },
-        { scene:'garden', character:'👨‍👦',
+        { scene:'garden', character:'🏡',
           text:{ ar:'قالَ الأَبُ: «يا بُنيّ، يَومُ الجُمُعَةِ يَومٌ لَهُ في السَّماءِ والأَرضِ خَصائِص! الشَّمسُ لا تَطلُعُ على يَومٍ أَفضَلَ مِنه. فيه خُلِقَ آدَم، وفيه أُدخِلَ الجَنَّة، وفيه تَقومُ السَّاعَة. وفيه ساعَةٌ لا يُوافِقُها عَبدٌ مُسلِمٌ يَدعو اللهَ إلّا استُجيبَ له!»<br><br>فَتَحَ يوسُفُ عَينَيه كَواسِع وقال: <b>«ساعَةٌ كاملَة تُستَجابُ فيها الدَّعوات؟!»</b>',
                en:'The father said: "O my son, Friday has special qualities in the sky and on earth! The sun does not rise on a better day than it. On it Adam was created, on it he was entered into Paradise, and on it the Hour will come. And in it there is an hour — no Muslim servant coincides with it asking Allah except that he is answered!"<br><br>Yusuf opened his eyes wide and said: <b>"A whole hour when prayers are answered?!"</b>' } },
         { scene:'mosque', character:'😇',
@@ -262,7 +262,7 @@ window.HOUSES.masjid = {
         { scene:'mosque', character:'🕌',
           text:{ ar:'وَصَلا المَسجِدَ مُبَكِّرَين، وجَلَسَ يوسُفُ بِقُربِ أَبيه في الصَّفِّ الأَوَّل. كانَ رائِحَةُ البَخورِ تَملَأُ المَكانَ، والهُدوءُ يَسودُ الأَجواء، والأَصواتُ تُهمهِمُ بِذِكرِ الله.<br><br>وحينَ صَعِدَ الإِمامُ المِنبَرَ وبَدَأَ الخُطبَة، أَشارَ الأَبُ لِيوسُف: <b>«الآنَ يا بُنيّ — أَصغِ وافهَم. إنَّ الإِمامَ يُبَلِّغُكَ كَلامَ الله!»</b>',
                en:'They arrived at the masjid early, and Yusuf sat close to his father in the first row. The scent of incense filled the air, stillness reigned, and voices murmured in remembrance of Allah.<br><br>When the imam climbed the minbar and began the khutbah, the father pointed to Yusuf: <b>"Now, my son — listen and understand. The imam is conveying Allah\'s words to you!"</b>' } },
-        { scene:'mosque', character:'👨‍👦',
+        { scene:'mosque', character:'🏡',
           text:{ ar:'بَعدَ الصَّلاةِ جَلَسَ يوسُفُ في المَسجِدِ يُسَبِّح ويَدعو. ثُمَّ سَأَلَ أَباهُ: «يا أبِي، قُلتَ إنَّ هُناكَ ساعَةَ إجابَة — متى هي؟»<br><br>قالَ الأَبُ: «اختَلَفَ العُلَماء — لَكِنَّ الأَرجَحَ أنَّها آخِرُ ساعَةٍ مِن العَصرِ حتى المَغرِب. فَارفَع يَدَيكَ وادعُ اللهَ بِما تُريد!»<br><br>رَفَعَ يوسُفُ يَدَيه الصَّغيرَتَين وقالَ: <b>«اللَّهُمَّ ارزُقني حِفظَ القُرآن!»</b>',
                en:'After prayer, Yusuf sat in the masjid making tasbih and supplication. Then he asked his father: "Father, you said there\'s an hour of answered prayers — when is it?"<br><br>The father said: "Scholars differed — but the strongest opinion is that it is the last hour from Asr until Maghrib. So raise your hands and ask Allah for whatever you want!"<br><br>Yusuf raised his small hands and said: <b>"O Allah, grant me memorization of the Quran!"</b>' } },
         { scene:'garden', character:'🌟',

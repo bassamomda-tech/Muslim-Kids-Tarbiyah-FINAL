@@ -274,7 +274,7 @@ window.WS.acts.push(
   big:{ar:'كنْ أنتَ مسؤولَ الصوت — التحكمُ في اللعبةِ فنٌّ أيضاً.',en:'Be the sound master — running the game is a skill too.'},
   wisdom:{ar:'الروحُ الطيبةُ في اللعبِ أهمُّ من الفوز.',en:'Good spirit in play matters more than winning.'} },
 
-{ id:'vanished', cat:'games', ic:'🕵️', corner:'academy', themes:['ilm','laab'],
+{ id:'vanished', cat:'games', ic:'🔎', corner:'academy', themes:['ilm','laab'],
   ar:'مين اختفى؟', en:'Who Vanished?',
   descAr:'أغمضْ عينَيك... وحينَ تفتحُهما: مَن الغائبُ من المجلس؟',
   descEn:'Close your eyes... open them: who\'s missing from the gathering?',

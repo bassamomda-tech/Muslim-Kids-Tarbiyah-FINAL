@@ -107,7 +107,7 @@ HISN.chapters.hubb_fillah = {
     medal: { ar: 'وِسامُ المحبّة', en: 'Medal of Love' },
     recipe: {
       title: { ar: 'الخلطةُ السحرية', en: 'The Magic Mix' },
-      intro: { ar: 'لِتعيشَ الحبَّ في اللهِ اخلِطْ هذه في يومِك 🪄', en: 'To live love for Allah’s sake, mix these into your day 🪄' },
+      intro: { ar: 'لِتعيشَ الحبَّ في اللهِ اخلِطْ هذه في يومِك ✨', en: 'To live love for Allah’s sake, mix these into your day ✨' },
       steps: [
         { icon: '🤝', ar: 'أُفشي السلامَ وأبتسمُ لإخواني المسلمين.', en: 'I spread peace and smile at my Muslim brothers.' },
         { icon: '💗', ar: 'أُخبِرُ صديقي الصالح: «إنّي أُحبُّك في الله».', en: 'I tell my righteous friend: "I love you for Allah’s sake."' },

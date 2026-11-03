@@ -552,7 +552,7 @@ HISN_STORIES.sulayman = [
  {
   "icon": "🏰",
   "scene": "madinah",
-  "character": "👸",
+  "character": "👑",
   "title": {
    "ar": "بِلقيسُ والعَرش: أَهكَذا عَرشُكِ",
    "en": "Bilqis and the Throne: Is Your Throne Like This?"
@@ -560,7 +560,7 @@ HISN_STORIES.sulayman = [
   "pages": [
    {
     "scene": "madinah",
-    "character": "👸",
+    "character": "👑",
     "text": {
      "ar": "أَرسَلَت بِلقيسُ هَدِيَّةً لِسُلَيمان — لَكِنَّهُ رَفَضَها: <b>﴿ أَتُمِدُّونَنِ بِمَالٍ ﴾!</b> ثُمَّ طَلَبَ مِن جُنودِهِ إحضارَ عَرشِها قَبلَ وُصولِها!<br><br>قالَ عِفريتٌ مِن الجِنّ: <b>﴿ أَنَا آتِيكَ بِهِ قَبْلَ أَن تَقُومَ مِن مَّقَامِكَ ﴾!</b> لَكِنَّ الَّذي عِندَهُ عِلمٌ مِن الكِتابِ قالَ: <b>﴿ أَنَا آتِيكَ بِهِ قَبْلَ أَن يَرْتَدَّ إِلَيْكَ طَرْفُكَ ﴾!</b> — قَبلَ أن تَطرِفَ عَينُك! فَاستَقَرَّ العَرشُ أَمامَ سُلَيمانَ في لَحظَة!<br><br>ولَمّا جاءَت بِلقيس سَأَلَها: <b>﴿ أَهَكَذَا عَرْشُكِ ﴾</b> — فَعَرَفَته وأَسلَمَت! <b>﴿ قَالَتْ رَبِّ إِنِّي ظَلَمْتُ نَفْسِي وَأَسْلَمْتُ مَعَ سُلَيْمَانَ لِلَّهِ رَبِّ الْعَالَمِينَ ﴾</b>",
      "en": "Bilqis sent a gift to Sulaiman — but he refused: <b>﴿ \"Do you provide me with wealth?!\" ﴾</b> Then he asked his soldiers to bring her throne before her arrival!<br><br>A powerful jinn said: <b>﴿ \"I will bring it before you rise from your seat!\" ﴾</b> But one who had knowledge from the Scripture said: <b>﴿ \"I will bring it before your glance returns to you!\" ﴾</b> — before you blink! The throne appeared before Sulaiman in an instant!<br><br>When Bilqis came he asked: <b>﴿ \"Is your throne like this?\" ﴾</b> — she recognized it and submitted! <b>﴿ \"She said: My Lord, I have wronged myself, and I submit with Sulaiman to Allah, Lord of all worlds\" ﴾</b>"

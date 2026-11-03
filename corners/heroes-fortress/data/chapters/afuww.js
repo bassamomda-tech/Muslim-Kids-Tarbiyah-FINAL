@@ -101,7 +101,7 @@ HISN.chapters.afuww = {
     medal: { ar: 'وِسامُ العفو', en: 'Medal of Pardon' },
     recipe: {
       title: { ar: 'الخلطةُ السحرية', en: 'The Magic Mix' },
-      intro: { ar: 'لِتعيشَ اسمَ «العفوّ» اخلِطْ هذه في يومِك 🪄', en: 'To live the name "Al-‘Afuww", mix these into your day 🪄' },
+      intro: { ar: 'لِتعيشَ اسمَ «العفوّ» اخلِطْ هذه في يومِك ✨', en: 'To live the name "Al-‘Afuww", mix these into your day ✨' },
       steps: [
         { icon: '🤝', ar: 'أعفو عمّن أخطأَ في حقّي وأبتسمُ له.', en: 'I pardon whoever wrongs me and smile at him.' },
         { icon: '🕊️', ar: 'لا أحمِلُ حقداً، وأُفرِّغُ قلبي من الغضب.', en: 'I hold no grudge and empty my heart of anger.' },

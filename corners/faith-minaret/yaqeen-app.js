@@ -120,7 +120,7 @@
         </div>
 
         <div class="block chance">
-          <h3><span class="bi">🎲</span>${H.chance}</h3>
+          <h3><span class="bi">🧩</span>${H.chance}</h3>
           <div class="mrchance">
             <div class="mc-face">😼</div>
             <div class="mc-body"><div class="mc-name">${H.mc}</div><div class="mc-say">${st.mrChance[L]}</div></div>
@@ -130,7 +130,7 @@
         </div>
 
         <div class="block myth">
-          <h3><span class="bi">🃏</span>${H.myth}</h3>
+          <h3><span class="bi">📇</span>${H.myth}</h3>
           <div class="flip" id="flipCard">
             <div class="flip-inner">
               <div class="flip-face flip-front"><div class="ft-tag">${t('الخُرافة','The Myth')}</div><div>${st.myth.claim[L]}</div></div>
@@ -146,7 +146,7 @@
           <div class="cm-stage">
             <div class="cm-tiles" id="cmTiles"></div>
             <div class="cm-row">
-              <button class="cm-btn" id="cmShake">🎲 ${t('هُزَّ الصُّندوق','Shake the box')}</button>
+              <button class="cm-btn" id="cmShake">🧩 ${t('هُزَّ الصُّندوق','Shake the box')}</button>
               <button class="cm-btn solve" id="cmSolve">🧠 ${t('رَتِّبها بِعَقل','Arrange with a mind')}</button>
               <span class="cm-count" id="cmCount"></span>
             </div>
@@ -196,7 +196,7 @@
         </div>
 
         <div class="block fam">
-          <h3><span class="bi">👨‍👩‍👧</span>${H.fam}</h3>
+          <h3><span class="bi">🏡</span>${H.fam}</h3>
           <p>${st.familyQ[L]}</p>
         </div>
 
@@ -257,7 +257,7 @@
       tries++;
       paint(scramble(),false);
       countEl.textContent=t(`مُحاوَلة ${tries}`,`Try ${tries}`);
-      if(tries===5) verdictEl.textContent=t('٥ محاولات… ولا شَيء! 🤷','5 tries… and nothing! 🤷');
+      if(tries===5) verdictEl.textContent=t('٥ محاولات… ولا شَيء! 🤔','5 tries… and nothing! 🤔');
       else if(tries===12) verdictEl.textContent=t('١٢ محاولة وما زالَت فَوضى! الصُّدفةُ لا تَبني.','12 tries and still chaos! Chance doesn\'t build.');
       else if(tries>=20) verdictEl.textContent=t('٢٠ محاولة! الصُّدفةُ عاجِزة. جَرِّب «رَتِّبها بِعَقل».','20 tries! Chance is helpless. Try “Arrange with a mind”.');
       else verdictEl.textContent='';

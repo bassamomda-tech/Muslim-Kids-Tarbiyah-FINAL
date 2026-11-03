@@ -28,8 +28,8 @@
     order:    { ic:'🔢',  label:{ar:'ترتيب',en:'Order'} },
     match:    { ic:'🔗',  label:{ar:'توصيل',en:'Match'} },
     trueFalse:{ ic:'⚖️', label:{ar:'صح أم خطأ',en:'True / False'} },
-    whoAmI:   { ic:'🕵️', label:{ar:'من أنا؟',en:'Who am I?'} },
-    flip:     { ic:'🃏',  label:{ar:'بطاقات الذاكرة',en:'Memory'} },
+    whoAmI:   { ic:'🔎', label:{ar:'من أنا؟',en:'Who am I?'} },
+    flip:     { ic:'📇',  label:{ar:'بطاقات الذاكرة',en:'Memory'} },
     maze:     { ic:'🧭',  label:{ar:'متاهة',en:'Maze'} },
   };
 

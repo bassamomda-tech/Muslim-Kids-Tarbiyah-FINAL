@@ -7,7 +7,7 @@
   var keys = (cs.getAttribute('data-links') || '').split(',').map(function (s) { return s.trim(); }).filter(Boolean);
   var base = cs.src.replace(/tr-links\.js.*$/, '');
   var PAGES = {
-    'hadith-cards':    ['🃏', 'بطاقات الأربعين', 'Forty Hadith Cards'],
+    'hadith-cards':    ['📇', 'بطاقات الأربعين', 'Forty Hadith Cards'],
     'hadith-stories':  ['📖', 'قصص السنة', 'Sunnah Stories'],
     'sunnah':          ['🕌', 'حُفّاظ السنة', 'Sunnah Keepers'],
     'prophet-moments': ['🌙', 'مواقف النبي ﷺ', 'Moments of the Prophet ﷺ'],

@@ -33,7 +33,7 @@ window.QUIZ_REG = {
       { href: 'activities/anagram.html',         icon: '🔤', d: 1, t: { ar: 'رتّبِ الحروف',     en: 'Anagram' } },
       { href: 'activities/riddles.html',         icon: '🧩', d: 2, t: { ar: 'ألغازُ الأذكياء',  en: 'Riddles' } },
       { href: 'activities/number-cipher.html',   icon: '🔢', d: 2, t: { ar: 'شيفرةُ الأرقام',   en: 'Number Cipher' } },
-      { href: 'activities/smart-detective.html', icon: '🕵️', d: 3, t: { ar: 'المُحقّقُ الذكي',  en: 'Smart Detective' } },
+      { href: 'activities/smart-detective.html', icon: '🔎', d: 3, t: { ar: 'المُحقّقُ الذكي',  en: 'Smart Detective' } },
       { href: 'activities/carpet-designer.html', icon: '🎨', d: 3, t: { ar: 'مُصمّمُ الزخارف',  en: 'Pattern Designer' } },
     ],
   },
@@ -55,7 +55,7 @@ window.QUIZ_REG = {
       { id: 'thabat',  icon: '🦁', title: { ar: 'رحلة الأبطال',      en: 'Journey of the Heroes' } },
     ],
     rewards: [
-      { href: 'activities/memory-names.html',  icon: '🃏', d: 2, t: { ar: 'ذاكرة الأسماء الحسنى', en: 'Memory of the Beautiful Names' } },
+      { href: 'activities/memory-names.html',  icon: '📇', d: 2, t: { ar: 'ذاكرة الأسماء الحسنى', en: 'Memory of the Beautiful Names' } },
       { href: 'activities/creature-lab.html',  icon: '🔬', d: 2, t: { ar: 'مختبر المخلوقات',       en: 'Creatures Lab' } },
       { href: 'activities/star-telescope.html',icon: '🔭', d: 3, t: { ar: 'منظار النجوم',          en: 'Star Telescope' } },
       { href: 'activities/prophet-quiz.html',  icon: '❓', d: 2, t: { ar: 'من هو النبي؟',          en: 'Who Is the Prophet?' } },
@@ -170,7 +170,7 @@ window.QUIZ_REG = {
       { id: 'heart', icon: '💚', title: { ar: 'اختبار القلب السليم', en: 'Pure Heart Test' } },
     ],
     rewards: [
-      { href: 'activities/memory-names.html', icon: '🃏', d: 2, t: { ar: 'ذاكرة الأسماء الحسنى', en: 'Memory of the Names' } },
+      { href: 'activities/memory-names.html', icon: '📇', d: 2, t: { ar: 'ذاكرة الأسماء الحسنى', en: 'Memory of the Names' } },
       { href: 'activities/gratitude.html',    icon: '💛', d: 1, t: { ar: 'شجرة الشكر',          en: 'Gratitude Tree' } },
       { href: 'activities/akhlaq-bag.html',   icon: '🎒', d: 1, t: { ar: 'حقيبة الأخلاق',       en: 'The Akhlaq Bag' } },
       { href: 'activities/what-if.html',      icon: '🤔', d: 3, t: { ar: 'ماذا لو؟',            en: 'What If?' } },

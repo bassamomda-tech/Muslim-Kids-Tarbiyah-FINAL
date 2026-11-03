@@ -39,7 +39,7 @@ window.BEHAVIOR.problems.push({
     {ic:'😨', t:{ar:'الخوفُ من العقابِ القاسي (الأشيع)',en:'Fear of harsh punishment (most common)'}},
     {ic:'🦸', t:{ar:'تضخيمُ الذاتِ والمباهاةُ أمام الأقران',en:'Self-inflation & boasting before peers'}},
     {ic:'👀', t:{ar:'طلبُ الانتباهِ وجذبُ اهتمامِ الوالدين',en:'Attention-seeking from the parents'}},
-    {ic:'🧚', t:{ar:'الخيالُ غيرُ الناضجِ عند الصغار',en:'Immature imagination in the young'}},
+    {ic:'🦋', t:{ar:'الخيالُ غيرُ الناضجِ عند الصغار',en:'Immature imagination in the young'}},
     {ic:'🧎', t:{ar:'تقليدُ كذبِ الكبارِ ووعودِهم الكاذبة',en:'Imitating adults\u2019 lies & false promises'}},
     {ic:'🛟', t:{ar:'الهروبُ من مهمّةٍ أو موقفٍ مزعج',en:'Escaping a task or unpleasant situation'}},
   ],

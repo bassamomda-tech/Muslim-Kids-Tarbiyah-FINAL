@@ -62,7 +62,7 @@ HISN.chapters.ayyub = {
     { icon:'🤲', color:'#8E44AD', title:{ar:'اشكُ لله وحدَه',en:'Complain only to Allah'},
       body:{ar:'لم يَشكُ أيّوبُ للناس، بل رفعَ حاجتَه إلى ربِّه بِأدب. اللهُ وحدَه يكشفُ الضُّرَّ ويسمعُ الدعاء.',en:'Ayyub did not complain to people; he raised his need to his Lord with manners. Allah alone removes harm and hears the prayer.'},
       apply:{ar:'إذا تعِبتُ، أشكو لله وأدعوه قبلَ أن أشكوَ للناس.',en:'When I\'m worn out, I turn to Allah and pray before complaining to people.'} },
-    { icon:'🙏', color:'#E67E22', title:{ar:'اشكُرْ في كلِّ حال',en:'Be grateful in every state'},
+    { icon:'🤲', color:'#E67E22', title:{ar:'اشكُرْ في كلِّ حال',en:'Be grateful in every state'},
       body:{ar:'ظلَّ أيّوبُ يحمدُ اللهَ في النعمةِ والبلاء. الشاكرُ يرى نِعَمَ اللهِ حتى في أصعبِ الأوقات.',en:'Ayyub kept praising Allah in blessing and in trial. The grateful person sees Allah\'s gifts even in the hardest times.'},
       apply:{ar:'أحمدُ اللهَ على ما أملِكُ ولا أنظرُ لِما فقدتُ فقط.',en:'I thank Allah for what I have, not only focus on what I\'ve lost.'} },
     { icon:'🌅', color:'#2980B9', title:{ar:'بعدَ العُسرِ يُسر',en:'After hardship comes ease'},

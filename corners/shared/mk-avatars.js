@@ -7,9 +7,9 @@
    • MKAvatar.svg(kind, {c, size, acc})  kind: boy | girl | man | woman | grandpa
        c = hijab / kufi colour, acc = 'doctor' | 'scientist' | 'engineer'
    • MKAvatar.fromEmoji(emoji, seed)    → svg for a known character emoji (or null)
-   • Auto: inside the site's character spots (home parade & cards, corner
-     guides, podcast speakers…) the known emoji are swapped for these faces,
-     also after a page re-renders.
+   • Auto: every person emoji on the page (character spots, cards, stories,
+     menus…) is swapped for these faces, also after a page re-renders —
+     except inside form fields and Quran text. Add class "no-ava" to opt out.
    ════════════════════════════════════════════════════════════════ */
 (function () {
   if (window.MKAvatar) return;
@@ -69,7 +69,10 @@
     '👧': ['girl'],
     '🧕': ['woman'], '👩': ['woman'], '👩‍🏫': ['woman'], '👩‍⚕️': ['woman', 'doctor'], '👩‍🔬': ['woman', 'scientist'], '👷‍♀️': ['woman', 'engineer'], '👩‍🌾': ['woman'],
     '🧔': ['man'], '🧔‍♂️': ['man'], '👨': ['man'], '🧑‍🏫': ['man'], '👨‍🏫': ['man'], '👨‍⚕️': ['man', 'doctor'], '👨‍🔬': ['man', 'scientist'], '👷': ['man', 'engineer'], '👷‍♂️': ['man', 'engineer'], '👨‍🌾': ['man'],
-    '👴': ['grandpa'], '👵': ['woman']
+    '👴': ['grandpa'], '👵': ['woman'], '🧓': ['grandpa'], '🧑‍🦳': ['grandpa'], '👨‍🦳': ['grandpa'], '👩‍🦳': ['woman'],
+    '🤱': ['woman'], '🤰': ['woman'], '👩‍💼': ['woman'], '👩‍🍳': ['woman'], '👩‍🎓': ['woman'], '🙋‍♀️': ['woman'], '💁‍♀️': ['woman'], '🙆‍♀️': ['woman'],
+    '🧑‍💼': ['man'], '👨‍💼': ['man'], '🧑‍🍳': ['man'], '👨‍🍳': ['man'], '🧑‍🔬': ['man', 'scientist'], '🧑‍⚕️': ['man', 'doctor'], '🧑‍🌾': ['man'], '🧑‍🔧': ['man', 'engineer'], '👨‍🔧': ['man', 'engineer'],
+    '🧑‍🎓': ['boy'], '👨‍🎓': ['boy'], '🙋‍♂️': ['boy'], '🙋': ['boy']
   };
   function norm(e) { return String(e).replace(/[\u{1F3FB}-\u{1F3FF}\uFE0F]/gu, ''); }   // skin tones & variation selector don't matter
   var M2 = {}; Object.keys(MAP).forEach(function (k) { M2[norm(k)] = MAP[k]; });
@@ -95,6 +98,29 @@
       t.parentNode.replaceChild(span, t);
     });
   }
+  /* everywhere else on the page too: any person emoji in normal text becomes a modest face
+     (not inside form fields, code, or Quran text) */
+  var SKIP_TAGS = { SCRIPT: 1, STYLE: 1, TEXTAREA: 1, INPUT: 1, SELECT: 1, OPTION: 1, NOSCRIPT: 1, TITLE: 1, svg: 1, SVG: 1, CODE: 1, PRE: 1 };
+  function skippable(el) {
+    for (var e = el; e && e.nodeType === 1; e = e.parentNode) {
+      if (SKIP_TAGS[e.tagName] || e.isContentEditable || (e.classList && (e.classList.contains('mk-ava') || e.classList.contains('no-ava')))) return true;
+      var c = typeof e.className === 'string' ? e.className : '';
+      if (/quran|ayah|mushaf|verse/i.test(c)) return true;
+    }
+    return false;
+  }
+  function swapAll(root) {
+    if (!root || !document.body) return;
+    var w = document.createTreeWalker(root, NodeFilter.SHOW_TEXT, null), nodes = [], n;
+    while ((n = w.nextNode())) { RX.lastIndex = 0; if (RX.test(n.nodeValue) && n.parentNode && !skippable(n.parentNode)) nodes.push(n); }
+    nodes.forEach(function (t) {
+      var span = document.createElement('span'), s = t.nodeValue, seed = (t.parentNode && t.parentNode.textContent) || s;
+      span.innerHTML = s.replace(/[&<>]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;' }[c]; })
+        .replace(RX, function (m) { return fromEmoji(m, seed) || m; });
+      span.style.display = 'contents';
+      if (t.parentNode) t.parentNode.replaceChild(span, t);
+    });
+  }
   function run(root) {
     try {
       (root || document).querySelectorAll(SPOTS).forEach(function (el) {
@@ -102,6 +128,7 @@
         var seed = (el.closest('[id^="card-"],.char-pin,.sk-line,.tr-guide') || el).textContent;
         swapText(el, seed);
       });
+      swapAll(root && root.nodeType === 1 ? root : document.body);
     } catch (e) {}
   }
   var pending = false;

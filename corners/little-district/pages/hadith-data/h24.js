@@ -26,7 +26,7 @@ window.HADITHS.h24 = {
 
 
 /* ───── ROOM 6: Treasures (stickers + certificate) ───── */
-window.HADITHS.h24.icon = "🙏";
+window.HADITHS.h24.icon = "🤲";
 window.HADITHS.h24.treasures = [
   {
     "icon": "🚫",

@@ -105,7 +105,7 @@ window.WS.acts.push(
   big:{ar:'نافسْ: أسطوانةٌ أم زجزاجٌ أم مثلثات — أيُّ جسرٍ يحملُ أكثر؟',en:'Compete: tube vs zigzag vs triangles — which bridge holds most?'},
   wisdom:{ar:'التصميمُ الحسنُ نصفُ القوة.',en:'Good design is half the strength.'} },
 
-{ id:'secret-ink', cat:'science', ic:'🕵️', corner:'quran', themes:['ilm','laab'],
+{ id:'secret-ink', cat:'science', ic:'🔎', corner:'quran', themes:['ilm','laab'],
   ar:'الحبر السري بالليمون', en:'Lemon Secret Ink',
   descAr:'اكتبْ رسالةً لا تظهرُ إلا بالحرارة — بريدُ الأسرارِ العائلي!',
   descEn:'Write a message that only heat reveals — the family secret mail!',

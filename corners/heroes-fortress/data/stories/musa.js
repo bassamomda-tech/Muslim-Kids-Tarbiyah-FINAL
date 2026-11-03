@@ -36,7 +36,7 @@ HISN_STORIES.musa = [
    },
    {
     "scene": "garden",
-    "character": "👸",
+    "character": "👑",
     "text": {
      "ar": "حَمَلَ التَّيّارُ التّابوتَ إلى حيثُ لَم تَتَوَقَّع أُمُّهُ أَبَداً: إلى <b>قَصرِ فِرعَونَ نَفسِه!</b> التَقَطَتهُ <b>آسِيَةُ بنتُ مُزاحِم</b> — زَوجَةُ فِرعَون! فَلَمّا فَتَحَت الصُّندوقَ ورَأَت الوَجهَ المُنيرَ — أَلقى اللهُ في قَلبِها حُبّاً عَظيماً لِهذا الطِّفل!<br><br>أَرادَ فِرعَونُ قَتلَه — لَكِنَّ آسِيَةَ صَرَخَت: <b>﴿ قُرَّتُ عَيْنٍ لِّي وَلَكَ لَا تَقْتُلُوهُ عَسَىٰ أَن يَنفَعَنَا أَوْ نَتَّخِذَهُ وَلَدًا ﴾</b> — هذا قُرَّةُ عَيني! لا تَقتُلوه!<br><br>وهكذا نَشَأَ موسى في <b>بَيتِ عَدُوِّه</b> — يَأكُلُ مِن طَعامِ فِرعَونَ ويَنامُ في قَصرِه! المَلِكُ الَّذي يَذبَحُ أَبناءَ بَني إسرائيلَ — يُرَبّي في بَيتِهِ الطِّفلَ الَّذي سَيُدَمِّرُ مُلكَه! <b>سُبحانَ اللهِ المُدَبِّر!</b>",
      "en": "The current carried the basket where his mother never expected: to <b>Pharaoh's own palace!</b> <b>Asiya bint Muzahim</b> — Pharaoh's wife — picked him up! When she opened the chest and saw the luminous face — Allah cast in her heart a great love for this child!<br><br>Pharaoh wanted to kill him — but Asiya cried: <b>﴿ \"A comfort for my eye and yours — do not kill him. Perhaps he will benefit us or we will adopt him as a son\" ﴾</b> — he is the delight of my eyes! Don't kill him!<br><br>And so Musa grew up in <b>his enemy's house</b> — eating Pharaoh's food and sleeping in his palace! The king who slaughtered the sons of Israel — raising in his own home the child who would destroy his kingdom! <b>Glory to Allah the Master Planner!</b>"

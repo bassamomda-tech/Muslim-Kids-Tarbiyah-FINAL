@@ -107,7 +107,7 @@ HISN.chapters.sahib_salih = {
     medal: { ar: 'وِسامُ الصُّحبة', en: 'Medal of Companionship' },
     recipe: {
       title: { ar: 'الخلطةُ السحرية', en: 'The Magic Mix' },
-      intro: { ar: 'لِتختارَ الصاحبَ الصالحَ وتكونَ مثلَه اخلِطْ هذه في يومِك 🪄', en: 'To choose a righteous companion and be like him, mix these into your day 🪄' },
+      intro: { ar: 'لِتختارَ الصاحبَ الصالحَ وتكونَ مثلَه اخلِطْ هذه في يومِك ✨', en: 'To choose a righteous companion and be like him, mix these into your day ✨' },
       steps: [
         { icon: '🔎', ar: 'أختارُ صديقاً يُذكِّرُني باللهِ ويُعينُني على الخير.', en: 'I choose a friend who reminds me of Allah and helps me to good.' },
         { icon: '🚫', ar: 'أبتعِدُ عمّن يَجُرُّني للكذبِ أو ترْكِ الصلاة.', en: 'I avoid whoever drags me to lying or missing prayer.' },

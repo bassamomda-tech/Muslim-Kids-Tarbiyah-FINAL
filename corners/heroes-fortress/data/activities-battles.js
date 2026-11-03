@@ -118,7 +118,7 @@ HISN.activities.battles = {
     } },
 
   /* 6 · Who am I? */
-  { id:'whoami', icon:'🕵️', title:{ ar:'مَن أنا؟', en:'Who am I?' },
+  { id:'whoami', icon:'🔎', title:{ ar:'مَن أنا؟', en:'Who am I?' },
     levels:{
       beginner:{ type:'whoAmI',
         clues:[ {ar:'لقّبني النبيُّ ﷺ بسيفِ اللهِ المسلول.',en:'The Prophet ﷺ called me the Drawn Sword of Allah.'},
@@ -141,7 +141,7 @@ HISN.activities.battles = {
     } },
 
   /* 7 · Memory flip (battle ↔ symbol) */
-  { id:'flip', icon:'🃏', title:{ ar:'بطاقاتُ الذاكرة', en:'Memory flip cards' },
+  { id:'flip', icon:'📇', title:{ ar:'بطاقاتُ الذاكرة', en:'Memory flip cards' },
     levels:{
       beginner:{ type:'flip', pairs:[
         { a:{ar:'بدر',en:'Badr'},   b:{ar:'⚔️',en:'⚔️'} },

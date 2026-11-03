@@ -106,7 +106,7 @@ HISN.chapters.birr_stories = {
     medal: { ar: 'وِسامُ البطل البارّ', en: 'Medal of the Dutiful Hero' },
     recipe: {
       title: { ar: 'الخلطةُ السحرية', en: 'The Magic Mix' },
-      intro: { ar: 'لِتكونَ بطلاً بارّاً مثلَهم اخلِطْ هذه في يومِك 🪄', en: 'To be a dutiful hero like them, mix these into your day 🪄' },
+      intro: { ar: 'لِتكونَ بطلاً بارّاً مثلَهم اخلِطْ هذه في يومِك ✨', en: 'To be a dutiful hero like them, mix these into your day ✨' },
       steps: [
         { icon: '🏃', ar: 'أُجيبُ أمّي وأبي فورَ ندائِهما بابتسامة.', en: 'I answer my mother and father at once, with a smile.' },
         { icon: '💪', ar: 'أخدِمُهما وأُساعِدُهما في البيتِ بلا تذمّر.', en: 'I serve and help them at home without complaining.' },

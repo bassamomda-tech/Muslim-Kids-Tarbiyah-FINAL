@@ -150,7 +150,7 @@ window.SURAHS.balad = {
       body:{ar:'العقبةُ صعبة، واقتحامُها بالعملِ الشّاقِّ على النّفس.', en:'The path is steep — storm it with deeds hard on the self.'} },
     { icon:'🤝', title:{ar:'تواصَ بالصّبرِ والرحمة', en:'Encourage patience and mercy'},
       body:{ar:'ذكِّرْ أصحابَك بالصّبر، وارحَمِ الضُّعفاء.', en:'Remind your friends of patience and be merciful to the weak.'} },
-    { icon:'🙏', title:{ar:'اشكُرْ عينيك ولسانَك', en:'Thank Allah for your senses'},
+    { icon:'🤲', title:{ar:'اشكُرْ عينيك ولسانَك', en:'Thank Allah for your senses'},
       body:{ar:'جعَلَ لك عينينِ ولساناً، فاستعمِلْها في الخير.', en:'He gave you eyes and a tongue — use them for good.'} },
   ],
 

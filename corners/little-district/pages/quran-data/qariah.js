@@ -110,7 +110,7 @@ window.SURAHS.qariah = {
   practice: [
     { icon:'⚖️', title:{ar:'ثقِّلْ ميزانَك بالحسنات', en:'Make your scale heavy with good'},
       body:{ar:'كلُّ حسنةٍ تزيدُ ميزانَك، فأكثِرْ منها كلَّ يوم.', en:'Every good deed adds to your scale — increase them daily.'} },
-    { icon:'🙏', title:{ar:'احرِصْ على العباداتِ الثّقيلة', en:'Seek the weighty deeds'},
+    { icon:'🤲', title:{ar:'احرِصْ على العباداتِ الثّقيلة', en:'Seek the weighty deeds'},
       body:{ar:'الصّلاةُ والذِّكرُ وبرُّ الوالدينِ ثقيلةٌ في الميزان.', en:'Prayer, remembrance, and kindness to parents are heavy on the Scale.'} },
     { icon:'🌟', title:{ar:'تذكَّرْ هولَ القيامة', en:'Remember the Day’s terror'},
       body:{ar:'تصوّرْ النّاسَ كالفراش، فاستعدِّ لذلك اليوم.', en:'Picture people like moths — prepare for that Day.'} },

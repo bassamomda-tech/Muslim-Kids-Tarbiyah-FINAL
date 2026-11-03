@@ -94,10 +94,10 @@ window.HOUSES.contentment = {
        Source: quranpedia.net — stories of the prophets
     ══════════════════════════════════════════════════════════ */
     {
-      icon:'👑', scene:'garden', character:'🧙',
+      icon:'👑', scene:'garden', character:'👳',
       title: { ar:'مَلِكٌ يَأكُلُ مِن عَمَلِ يَدِه', en:'A king who eats from his own handiwork' },
       pages: [
-        { scene:'garden', character:'🧙',
+        { scene:'garden', character:'👳',
           text:{
             ar: 'كانَ مَملَكَةُ سُلَيمانَ عليه السَّلام أَعظَمَ مَملَكَةٍ رَآها التّاريخ. كانَت الجِبالُ تُسَبِّحُ مَعَه، والطَّيرُ تَنتَظِمُ في صُفوفٍ فَوقَ رَأسِه ظِلاّلاً، والرِّيحُ تَحمِلُه أَينَما أَراد. وكانَ يَتَكَلَّمُ مَعَ النَّملِ والطَّيرِ كما نَتَكَلَّمُ نَحنُ مَعَ أَصدِقائِنا. كانَ فيلُهُ مِن ذَهَب، وسَريرُهُ مِن ياقوت، وبَيتُهُ مِن أَعظَمِ ما بَنَت الجِنّ والإنس.<br><br><b>لَو سَأَلتَ أيَّ مَلِكٍ: ماذا تُريد؟ لَقالَ: مُلكَ سُلَيمان! كانَ عِندَهُ كُلُّ شَيء!</b>',
             en: 'The kingdom of Sulayman عليه السَّلام was the greatest kingdom history had ever seen. The mountains glorified Allah alongside him, birds arranged themselves in rows above his head as living shade, and the wind carried him wherever he wished. He spoke with ants and birds as naturally as we speak with friends. His throne was of jewels, his palace built by jinn and men alike.<br><br><b>If you asked any king: What do you desire? He would say: The kingdom of Sulayman! He had everything!</b>'

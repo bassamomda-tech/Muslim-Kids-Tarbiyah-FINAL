@@ -101,11 +101,11 @@ HISN.chapters.wadud = {
     medal: { ar: 'وِسامُ المحبّة', en: 'Medal of Love' },
     recipe: {
       title: { ar: 'الخلطةُ السحرية', en: 'The Magic Mix' },
-      intro: { ar: 'لِتعيشَ اسمَ «الودود» اخلِطْ هذه في يومِك 🪄', en: 'To live the name "Al-Wadud", mix these into your day 🪄' },
+      intro: { ar: 'لِتعيشَ اسمَ «الودود» اخلِطْ هذه في يومِك ✨', en: 'To live the name "Al-Wadud", mix these into your day ✨' },
       steps: [
         { icon: '🕌', ar: 'أُحبُّ ما يُحبُّ اللهُ: الصلاةَ والصدقَ والإحسان.', en: 'I love what Allah loves: prayer, truth, and kindness.' },
-        { icon: '👨‍👩‍👧', ar: 'أُحبُّ أهلي وأصدقائي وأُعامِلُهم بلطف.', en: 'I love my family and friends and treat them kindly.' },
-        { icon: '🙏', ar: 'أشكرُ اللهَ على نِعَمِه التي يَتودّدُ بها إليّ.', en: 'I thank Allah for the blessings of His affection.' },
+        { icon: '🏡', ar: 'أُحبُّ أهلي وأصدقائي وأُعامِلُهم بلطف.', en: 'I love my family and friends and treat them kindly.' },
+        { icon: '🤲', ar: 'أشكرُ اللهَ على نِعَمِه التي يَتودّدُ بها إليّ.', en: 'I thank Allah for the blessings of His affection.' },
         { icon: '💗', ar: 'أقولُ «أُحبُّ اللهَ» وأُطيعُه ليُحبَّني.', en: 'I say "I love Allah" and obey Him so He loves me.' },
       ],
       result: { ar: 'قلبٌ يُحبُّ اللهَ ويُحبُّه اللهُ، فيَملؤُه الحبُّ والطمأنينة! 💗', en: 'A heart that loves Allah and is loved by Him — filled with love and peace! 💗' },

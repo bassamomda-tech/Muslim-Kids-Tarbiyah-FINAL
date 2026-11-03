@@ -101,7 +101,7 @@
     ['mcq', 'tf', 'flash'].forEach(function (ty) {
       var b = document.createElement('button');
       b.className = 'chip' + (sel.types.indexOf(ty) >= 0 ? ' active' : '');
-      b.innerHTML = ({ mcq: '🔘', tf: '⚖️', flash: '🃏' })[ty] + ' ' + L(TYPE_LBL[ty]);
+      b.innerHTML = ({ mcq: '🔘', tf: '⚖️', flash: '📇' })[ty] + ' ' + L(TYPE_LBL[ty]);
       b.onclick = function () { var i = sel.types.indexOf(ty); if (i >= 0) sel.types.splice(i, 1); else sel.types.push(ty); syncBuilder(); };
       yc.appendChild(b);
     });
@@ -414,7 +414,7 @@
     body.innerHTML = html;
   }
   function studyCard(q, num, color) {
-    var tag = ({ mcq: '🔘', tf: '⚖️', flash: '🃏' })[q.type] + ' ' + L(TYPE_LBL[q.type]);
+    var tag = ({ mcq: '🔘', tf: '⚖️', flash: '📇' })[q.type] + ' ' + L(TYPE_LBL[q.type]);
     var h = '<div class="qa"><div class="qa-q"><span class="qa-num">' + toArNum(num) + '</span><span>' + enQ(q) +
       '<span class="qa-tag" style="background:' + hexA(color, .2) + ';color:' + color + '">' + tag + '</span></span></div>';
     h += '<div class="qa-a"><span class="qa-a-lbl">' + (lang() === 'en' ? 'Answer:' : 'الإجابة:') + '</span>';

@@ -10,7 +10,7 @@ cats: [
   { id:'life',    ic:'🏡', ar:'مهاراتٌ حياتية',    en:'Life Skills',      stamp:'🗝️' },
   { id:'khair',   ic:'🤲', ar:'أعمالُ الخير',      en:'Good Deeds',       stamp:'💝' },
   { id:'seasons', ic:'🌙', ar:'مواسمُ الخير',      en:'Blessed Seasons',  stamp:'🕌' },
-  { id:'games',   ic:'🎲', ar:'ألعابٌ جماعية',     en:'Group Games',      stamp:'🏆' },
+  { id:'games',   ic:'🧩', ar:'ألعابٌ جماعية',     en:'Group Games',      stamp:'🏆' },
 ],
 
 /* ── سِمات (روح النشاط) ── */
@@ -195,7 +195,7 @@ acts: [
   tools:[
     {ic:'📋', ar:'بطاقةُ «يومياتُ القمر» المطبوعة', en:'The printed Moon Journal card'},
     {ic:'✏️', ar:'قلمُ رصاص', en:'A pencil'},
-    {ic:'👨‍👩‍👧', ar:'أحدُ الوالدَين للخروجِ ليلاً', en:'A parent for going out at night'},
+    {ic:'🏡', ar:'أحدُ الوالدَين للخروجِ ليلاً', en:'A parent for going out at night'},
   ],
   steps:[
     {ic:'🌆', ar:'بعدَ صلاةِ العشاءِ اخرجْ مع أحدِ والدَيك إلى الشرفةِ أو الحديقة.', en:'After Isha, step out with a parent to the balcony or garden.'},
@@ -316,7 +316,7 @@ acts: [
     {ic:'🤫', ar:'قدرةٌ على كتمانِ السر!', en:'The ability to keep a secret!'},
   ],
   steps:[
-    {ic:'🕵️', ar:'راقبْ: ما الذي يُتعِبُ أمَّك أو أباك كلَّ يوم؟', en:'Observe: what tires your mom or dad every day?'},
+    {ic:'🔎', ar:'راقبْ: ما الذي يُتعِبُ أمَّك أو أباك كلَّ يوم؟', en:'Observe: what tires your mom or dad every day?'},
     {ic:'📝', ar:'اخترْ ٣ خدماتٍ تقدرُ عليها: ترتيبُ الأحذية، تعبئةُ قارورةِ الماء، إحضارُ نظارةِ أبيك...', en:'Pick 3 services you can do: lining up the shoes, refilling the water bottle, fetching dad\'s glasses...'},
     {ic:'🤫', ar:'نفِّذْها في الخفاءِ دونَ أن يراك أحد.', en:'Do them secretly without being seen.'},
     {ic:'🙊', ar:'إذا سألوا «مَن فعلَ هذا؟» ابتسمْ ولا تُجِب!', en:'If they ask "who did this?" — just smile and don\'t tell!'},

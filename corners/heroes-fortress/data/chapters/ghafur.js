@@ -101,7 +101,7 @@ HISN.chapters.ghafur = {
     medal: { ar: 'وِسامُ المغفرة', en: 'Medal of Forgiveness' },
     recipe: {
       title: { ar: 'الخلطةُ السحرية', en: 'The Magic Mix' },
-      intro: { ar: 'لِتعيشَ اسمَ «الغفور» اخلِطْ هذه في يومِك 🪄', en: 'To live the name "Al-Ghafur", mix these into your day 🪄' },
+      intro: { ar: 'لِتعيشَ اسمَ «الغفور» اخلِطْ هذه في يومِك ✨', en: 'To live the name "Al-Ghafur", mix these into your day ✨' },
       steps: [
         { icon: '🙇', ar: 'إذا أخطأتُ أعتذرُ وأطلبُ السماحَ بسرعة.', en: 'When I err, I apologize and seek pardon quickly.' },
         { icon: '🤲', ar: 'أستغفرُ اللهَ كلَّ يوم: «أستغفرُ الله».', en: 'I seek Allah’s forgiveness daily: "Astaghfirullah".' },

@@ -26,7 +26,7 @@ window.HADITHS.h02 = {
 
 
 /* ───── ROOM 6: Treasures (stickers + certificate) ───── */
-window.HADITHS.h02.icon = "👼";
+window.HADITHS.h02.icon = "✨";
 window.HADITHS.h02.treasures = [
   {
     "icon": "🕌",
@@ -53,7 +53,7 @@ window.HADITHS.h02.treasures = [
     }
   },
   {
-    "icon": "👼",
+    "icon": "✨",
     "color": "#2980B9",
     "title": {
       "ar": "معلّمُ الدين",

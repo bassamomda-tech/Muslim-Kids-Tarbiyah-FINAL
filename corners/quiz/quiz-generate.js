@@ -76,7 +76,7 @@
     if (items.length < 3) return null;
     const chosen = pick(items, Math.min(4, items.length));
     return {
-      type: 'match', icon: '🃏',
+      type: 'match', icon: '📇',
       title: { ar: 'صِل البطاقة بمعناها', en: 'Match the card to its meaning' },
       prompt: { ar: 'صِل كلَّ بطاقةٍ بالمعنى الصحيح', en: 'Connect each card with its correct meaning' },
       pairs: chosen.map(st => ({ a: A.cardName(st), b: A.cardMeaning(st) })),
@@ -232,7 +232,7 @@
     const poolP = short.length >= 3 ? short : all;
     if (poolP.length < 3) return null;
     return {
-      type: 'memory', icon: '🃏',
+      type: 'memory', icon: '📇',
       title: { ar: 'ذاكرةُ البِطاقات', en: 'Card Memory' },
       prompt: { ar: 'اقلِبِ البِطاقتَينِ وابحَث عنِ البِطاقةِ ومَعناها', en: 'Flip two tiles and find each card with its meaning' },
       pairs: pick(poolP, 3),

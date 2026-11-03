@@ -96,7 +96,7 @@ window.SURAHS.takathur = {
   },
 
   practice: [
-    { icon:'🙏', title:{ar:'اشكُرْ نِعمَ الله', en:'Thank Allah for blessings'},
+    { icon:'🤲', title:{ar:'اشكُرْ نِعمَ الله', en:'Thank Allah for blessings'},
       body:{ar:'ستُسألُ عنها، فاشكُرِ الماءَ والطّعامَ والصّحّةَ والأمن.', en:'You’ll be asked about them — thank Allah for water, food, health, and safety.'} },
     { icon:'🤲', title:{ar:'لا تنشغِلْ بجمعِ الأشياء', en:'Don’t be obsessed with collecting'},
       body:{ar:'الألعابُ والأشياءُ لا تُنسِك صلاتَك وآخرتَك.', en:'Don’t let toys and things make you forget your prayer and Hereafter.'} },

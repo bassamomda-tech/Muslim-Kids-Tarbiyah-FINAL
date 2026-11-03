@@ -37,7 +37,7 @@ window.HOUSES.trust = {
       { icon:'👂', color:'#C0392B', title:{ar:'أمانةُ الشَّهادة',  en:'Trust in testimony'},   body:{ar:'تَشهدُ بالحقِّ ولا تَكتُمُ شَهادة.',                en:'Testify to truth; never conceal it.'} },
       { icon:'🌟', color:'#D4AC0D', title:{ar:'الأمانةُ مع الله',  en:'Trust with Allah'},      body:{ar:'تُؤدِّي الفرائضَ وتَحفظُ جوارِحَكَ عن الحرام.',      en:'Fulfill obligations; guard your limbs from sin.'} },
       { icon:'🤝', color:'#16A085', title:{ar:'أمانةُ العَهد',     en:'Trust in promises'},    body:{ar:'إذا وَعَدتَ فَلا تُخلِف — الوَعدُ أمانة.',          en:'If you promise, don’t break it — a promise is trust.'} },
-      { icon:'👨‍👩‍👧‍👦', color:'#D35400', title:{ar:'أمانةُ الأُسرة',   en:'Trust in family'},      body:{ar:'رِعايةُ الأهلِ والأولادِ حَقٌّ وأمانة.',             en:'Caring for family and children is a right and trust.'} },
+      { icon:'🏡', color:'#D35400', title:{ar:'أمانةُ الأُسرة',   en:'Trust in family'},      body:{ar:'رِعايةُ الأهلِ والأولادِ حَقٌّ وأمانة.',             en:'Caring for family and children is a right and trust.'} },
     ],
     ranking: [
       { color:'#27AE60', title:{ar:'الأمانةُ الكُبرى',     en:'The greatest trust'},     body:{ar:'التَّوحيدُ والفَرائض — أعظَمُ ما ائتَمنَكَ اللهُ عليه',               en:'Monotheism and duties — the greatest trust Allah gave you'} },

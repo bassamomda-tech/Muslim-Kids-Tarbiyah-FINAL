@@ -116,7 +116,7 @@ window.SURAHS.nas.treasures = [
     }
   },
   {
-    "icon": "🤴",
+    "icon": "👑",
     "color": "#1ABC9C",
     "title": {
       "ar": "مَلِكِ الناس",

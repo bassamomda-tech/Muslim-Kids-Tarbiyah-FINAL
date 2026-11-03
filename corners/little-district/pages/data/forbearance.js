@@ -207,10 +207,10 @@ window.HOUSES.forbearance = {
 
     /* STORY 3 — Mu'awiyah's forbearance with the Bedouin */
     {
-      icon:'👑', scene:'desert', character:'🤴',
+      icon:'👑', scene:'desert', character:'👑',
       title: { ar:'مُعاوِيَةُ وحِلمُهُ مع مَن أَهانَه!', en:'Mu\'awiyah’s forbearance with who insulted him!' },
       pages: [
-        { scene:'desert', character:'🤴',
+        { scene:'desert', character:'👑',
           text:{ ar:'كانَ مُعاوِيَةُ بنُ أَبي سُفيانَ رضي الله عنه خَليفَةَ المُسلِمين، وكانَ مَشهوراً بِحِلمِهِ حتّى قالوا: <b>«حِلمُ مُعاوِيَة»</b> مَثَلاً يُضرَب!<br><br>كانَ يَقول: «إنّي لَآنَفُ أن يَكونَ في الأَرضِ جَهلٌ لا يَسَعُهُ حِلمي، وذَنبٌ لا يَسَعُهُ عَفوي!»',
                  en:'Mu\'awiyah ibn Abi Sufyan, the Caliph of Muslims, was famous for his forbearance until they said: <b>"The forbearance of Mu\'awiyah"</b> as a proverb!<br><br>He would say: "I refuse to let there be on earth ignorance my forbearance can’t bear, or sin my pardon can’t embrace!"' } },
         { scene:'madinah', character:'😤',
@@ -266,7 +266,7 @@ window.HOUSES.forbearance = {
 
     /* STORY 4 — Al-Ahnaf ibn Qays */
     {
-      icon:'🧙', scene:'desert', character:'👴',
+      icon:'👳', scene:'desert', character:'👴',
       title: { ar:'الأَحنَفُ بنُ قَيس — أَحلَمُ العَرَب!', en:'Al-Ahnaf ibn Qays — most forbearing of the Arabs!' },
       pages: [
         { scene:'desert', character:'👴',
@@ -312,7 +312,7 @@ window.HOUSES.forbearance = {
           ] },
       ],
       moral:      { ar:'الحِلمُ صِفَةُ الأَقوِياءِ لا الضُّعَفاء — فَاملِك نَفسَكَ عِندَ الغَضَب تَكُن مِن العُظَماء!', en:'Forbearance is the trait of the strong, not the weak — control yourself when angry to be among the great!' },
-      badge:      { icon:'🧙', title:{ar:'حَكيمُ الحِلم',en:'Sage of Forbearance'} },
+      badge:      { icon:'👳', title:{ar:'حَكيمُ الحِلم',en:'Sage of Forbearance'} },
       reflect:    [ 
         {ar:'لِماذا قالَ الأَحنَفُ إنَّهُ يَفِرُّ بِالرَّجُلِ مِن نَفسِه؟', en:'Why did al-Ahnaf say he fled with the man from himself?'}, 
         {ar:'هل تَستَطيعُ أن تَصبِرَ على مَن يُؤذيكَ بِالكَلام؟', en:'Can you be patient with someone who harms you with words?'} 

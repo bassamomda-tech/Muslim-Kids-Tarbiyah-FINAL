@@ -1,4 +1,4 @@
-/* 👫 الأخوّة والجيران — stories for hadith-stories.html (see the page header).
+/* 🤝 الأخوّة والجيران — stories for hadith-stories.html (see the page header).
    real: omitted = true event from the Seerah · 'told' = a story the Prophet ﷺ
    told · false = everyday story explaining the hadith. o: [ar, en, 1] marks the answer. */
 window.HS_DATA = window.HS_DATA || [];
@@ -9,7 +9,7 @@ HS_DATA.push(
     sub: [`زيارةٌ في الله`, `A visit for Allah's sake`],
     pg: [
       ['🚶', `حكى النبيّ ﷺ عن رجلٍ خرج يزور أخًا له يحبّه في الله، يسكن في قريةٍ أخرى بعيدة.`, `The Prophet ﷺ told of a man who set out to visit a brother he loved for Allah's sake, who lived in another, faraway village.`],
-      ['👼', `فأرسل الله على طريقه مَلَكًا في صورة رجل، ينتظره في الطريق. فلمّا وصل إليه سأله: «أين تريد؟»`, `So Allah sent an angel, in the form of a man, to wait for him on his road. When the man reached him, the angel asked: "Where are you going?"`],
+      ['✨', `فأرسل الله على طريقه مَلَكًا في صورة رجل، ينتظره في الطريق. فلمّا وصل إليه سأله: «أين تريد؟»`, `So Allah sent an angel, in the form of a man, to wait for him on his road. When the man reached him, the angel asked: "Where are you going?"`],
       ['🏡', `قال: «أريد أخًا لي في هذه القرية». قال المَلَك: «هل لك عليه من نعمةٍ تَرُبُّها؟» — يعني: هل تزوره لمصلحةٍ أو لشيءٍ تأخذه منه؟`, `He said: "I am going to a brother of mine in this village." The angel asked: "Do you have some favour from him that you are looking after?" — meaning: are you visiting for some benefit you'll get from him?`],
       ['💚', `قال الرجل: «لا، غيرَ أنّي أحببتُه في الله عزّ وجلّ». ما كان يريد مالًا ولا هديّة — فقط يحبّه لأنّه يحبّ الله.`, `The man said: "No — only that I love him for the sake of Allah, the Mighty and Majestic." He wanted no money or gift — he simply loved him because he loved Allah.`],
       ['✨', `فقال المَلَك: «فإنّي رسولُ الله إليك، بأنّ الله قد أحبّك كما أحببتَه فيه». يا لها من بشارة! حبُّه لأخيه في الله جعل الله يحبّه.`, `The angel said: "I am a messenger from Allah to you, to tell you that Allah loves you as you have loved him for His sake." What good news! His love for his brother for Allah's sake made Allah love him.`]
@@ -119,7 +119,7 @@ HS_DATA.push(
       ['🐪', `هاجر <b>عبد الرحمن بن عوف</b> رضي الله عنه من مكّة إلى المدينة، وترك وراءه بيته وماله، ووصل لا يملك شيئًا تقريبًا.`, `<b>Abdurrahman ibn 'Awf</b> (RA) migrated from Makkah to Madinah, leaving his home and wealth behind, and arrived with almost nothing.`],
       ['🤝', `فآخى النبيّ ﷺ بينه وبين رجلٍ من الأنصار اسمه <b>سعد بن الربيع</b> — أي جعلهما أخوين في الله.`, `The Prophet ﷺ made him a brother to a man of the Ansar called <b>Sa'd ibn ar-Rabi'</b> — making them brothers for Allah's sake.`],
       ['💰', `فقال له سعد بكلّ كرم: «إنّي أكثرُ الأنصار مالًا، فأقسم مالي نصفين، نصفٌ لك ونصفٌ لي». يا له من كرمٍ عظيم!`, `Sa'd said to him with great generosity: "I am the wealthiest of the Ansar, so I'll split my wealth in two — half for you and half for me." What amazing generosity!`],
-      ['🙏', `فقال عبد الرحمن بعفّةٍ ولطف: «بارك الله لك في أهلك ومالك، دُلّوني على السوق». لم يأخذ المال، بل أراد أن يعمل بيديه.`, `Abdurrahman replied with dignity and kindness: "May Allah bless you in your family and your wealth — show me the way to the market." He didn't take the money; he wanted to work with his own hands.`],
+      ['🤲', `فقال عبد الرحمن بعفّةٍ ولطف: «بارك الله لك في أهلك ومالك، دُلّوني على السوق». لم يأخذ المال، بل أراد أن يعمل بيديه.`, `Abdurrahman replied with dignity and kindness: "May Allah bless you in your family and your wealth — show me the way to the market." He didn't take the money; he wanted to work with his own hands.`],
       ['🌟', `فذهب إلى السوق، فباع واشترى بأمانة، وبارك الله في تجارته حتى صار من أغنى الصحابة وأكثرهم صدقة.`, `He went to the market, bought and sold honestly, and Allah blessed his trade until he became one of the richest Companions — and one of the most generous in charity.`]
     ],
     m: [`قال سعدٌ لعبد الرحمن: إنّي أكثرُ الأنصارِ مالًا فأقسمُ مالي نصفين… فقال عبد الرحمن: «بارك اللهُ لك في أهلِك ومالِك، دُلّوني على السوق».`, `Sa'd said to Abdurrahman: "I am the wealthiest of the Ansar, so I will divide my wealth into two halves…" Abdurrahman said: "May Allah bless you in your family and your wealth — show me the way to the market."`],

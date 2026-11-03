@@ -1,7 +1,7 @@
 /* data/stories/muslim.js — Scholars · Imam Muslim — sources: سير أعلام النبلاء · البداية والنهاية · إسلام ويب · الدرر السنية */
 window.HISN_STORIES = window.HISN_STORIES || {};
 HISN_STORIES.muslim = [
-  { icon:'🙏', scene:'mihrab', character:'🧔',
+  { icon:'🤲', scene:'mihrab', character:'🧔',
     title:{ ar:'أدبُ التلميذِ مع شيخِه', en:'A Student\u2019s Courtesy Toward His Teacher' },
     pages:[
       { scene:'mihrab', character:'🧔',
@@ -23,7 +23,7 @@ HISN_STORIES.muslim = [
         opts:[ {t:{ar:'توقيرُ المعلّمِ والاعترافُ بفضلِه من أعظمِ الأدب',en:'Honoring a teacher and acknowledging his favor is among the greatest courtesy'},c:true}, {t:{ar:'التكبّرُ على المعلّم',en:'Being arrogant toward a teacher'},c:false}, {t:{ar:'نسيانُ الفضل',en:'Forgetting favors'},c:false} ] },
     ],
     moral:{ar:'توقيرُ المعلّمِ والاعترافُ بفضلِه من أعظمِ الأدب، والعالمُ الحقُّ يعرفُ لأهلِ الفضلِ فضلَهم.',en:'Honoring one\u2019s teacher and acknowledging his favor is among the greatest courtesy; a true scholar recognizes the merit of those of merit.'},
-    badge:{icon:'🙏',title:{ar:'وِسامُ أدبِ طالبِ العلم',en:'Badge of the Knowledge-Seeker\u2019s Courtesy'}},
+    badge:{icon:'🤲',title:{ar:'وِسامُ أدبِ طالبِ العلم',en:'Badge of the Knowledge-Seeker\u2019s Courtesy'}},
     reflect:[ {ar:'كيف تُظهِرُ احترامَك وشكرَك لمعلّميك؟',en:'How do you show your respect and gratitude to your teachers?'}, {ar:'هل تعترفُ بفضلِ من علّمك وساعدك؟',en:'Do you acknowledge the favor of those who taught and helped you?'} ],
     didYouKnow:[ {ar:'رُوِيَ أنّ مسلماً قبّلَ بين عينَي البخاريِّ وأثنى عليه أعظمَ الثناءِ إجلالاً له — المصدر: سير أعلام النبلاء',en:'It is related that Muslim kissed al-Bukhari\u2019s forehead and praised him most highly, out of reverence — Source: Siyar A\u2019lam an-Nubala\u2019'}, {ar:'يُذكَرُ «صحيحُ البخاري» و«صحيحُ مسلم» معاً باسمِ «الصحيحين» وهما أصحُّ كتابَين بعدَ القرآن — المصدر: البداية والنهاية',en:'"Sahih al-Bukhari" and "Sahih Muslim" are together called "the two Sahihs," the most authentic books after the Quran — Source: Al-Bidaya wa an-Nihaya'} ],
   },

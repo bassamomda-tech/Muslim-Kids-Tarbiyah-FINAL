@@ -101,7 +101,7 @@ HISN.chapters.razzaq = {
     medal: { ar: 'وِسامُ الرزق', en: 'Medal of Provision' },
     recipe: {
       title: { ar: 'الخلطةُ السحرية', en: 'The Magic Mix' },
-      intro: { ar: 'لِتعيشَ اسمَ «الرزّاق» اخلِطْ هذه في يومِك 🪄', en: 'To live the name "Ar-Razzaq", mix these into your day 🪄' },
+      intro: { ar: 'لِتعيشَ اسمَ «الرزّاق» اخلِطْ هذه في يومِك ✨', en: 'To live the name "Ar-Razzaq", mix these into your day ✨' },
       steps: [
         { icon: '🤲', ar: 'أقولُ «بسم الله» قبلَ الأكلِ و«الحمد لله» بعدَه.', en: 'I say "Bismillah" before eating and "Alhamdulillah" after.' },
         { icon: '🍞', ar: 'لا أُسرفُ ولا أرمي الطعام، وآكلُ ما يكفيني.', en: 'I don’t waste or throw food, and eat just enough.' },

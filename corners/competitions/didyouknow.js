@@ -89,7 +89,7 @@ window.DYK = [
   { cat:'amal', ic:'📖', ar:'مَن قرأ حرفاً من القرآنِ فله حسنة، والحسنةُ بعشرِ أمثالِها.', en:'Whoever reads one letter of the Qur\'an earns a good deed, and each good deed is multiplied by ten.' },
   { cat:'amal', ic:'🤲', ar:'الدعاءُ سلاحُ المؤمن، ويُستجابُ خاصةً في الثلثِ الأخيرِ من الليلِ وبين الأذانِ والإقامة.', en:'Supplication is the believer\'s weapon, answered especially in the last third of the night and between the adhan and iqamah.' },
   { cat:'amal', ic:'💧', ar:'مَن سقى ماءً أو أطعمَ جائعاً كُتِبَ له أجرٌ عظيم، حتى سقيُ الحيوانِ فيه أجر.', en:'Whoever gives water or feeds the hungry earns a great reward — even giving water to an animal is rewarded.' },
-  { cat:'amal', ic:'👪', ar:'برُّ الوالدَين من أحبِّ الأعمالِ إلى الله، ورضاهُما بابٌ من أبوابِ الجنة.', en:'Kindness to parents is among the most beloved deeds to Allah, and their pleasure is a gate of Paradise.' },
+  { cat:'amal', ic:'🏡', ar:'برُّ الوالدَين من أحبِّ الأعمالِ إلى الله، ورضاهُما بابٌ من أبوابِ الجنة.', en:'Kindness to parents is among the most beloved deeds to Allah, and their pleasure is a gate of Paradise.' },
   { cat:'amal', ic:'🌳', ar:'مَن غرسَ شجرةً فأكلَ منها إنسانٌ أو طيرٌ أو حيوانٌ كُتِبَ له صدقة.', en:'Whoever plants a tree from which a person, bird, or animal eats has a charity recorded for them.' },
   { cat:'amal', ic:'🧹', ar:'إماطةُ الأذى عن الطريقِ (كحجرٍ أو شوك) شعبةٌ من شعبِ الإيمان.', en:'Removing harm from the road (like a stone or thorns) is a branch of faith.' },
   { cat:'amal', ic:'🌙', ar:'مَن صام رمضانَ إيماناً واحتساباً غُفِرَ له ما تقدَّمَ من ذنبِه.', en:'Whoever fasts Ramadan with faith and hope has their past sins forgiven.' },

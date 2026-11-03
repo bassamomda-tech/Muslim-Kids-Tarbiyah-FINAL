@@ -80,7 +80,7 @@ HISN.activities.creativity = {
     } },
 
   /* 4 · Who am I? */
-  { id:'whoami', icon:'🕵️', title:{ ar:'مَن أنا؟', en:'Who am I?' },
+  { id:'whoami', icon:'🔎', title:{ ar:'مَن أنا؟', en:'Who am I?' },
     levels:{
       beginner:{ type:'whoAmI',
         clues:[ {ar:'أسّستُ علماً جديداً في الرياضيات.',en:'I founded a new branch of mathematics.'},
@@ -152,7 +152,7 @@ HISN.activities.creativity = {
     } },
 
   /* 7 · Memory flip (scholar ↔ symbol) */
-  { id:'flip', icon:'🃏', title:{ ar:'بطاقاتُ الذاكرة', en:'Memory flip cards' },
+  { id:'flip', icon:'📇', title:{ ar:'بطاقاتُ الذاكرة', en:'Memory flip cards' },
     levels:{
       beginner:{ type:'flip', pairs:[
         { a:{ar:'الخوارزمي',en:'Al-Khwarizmi'}, b:{ar:'🔢',en:'🔢'} },

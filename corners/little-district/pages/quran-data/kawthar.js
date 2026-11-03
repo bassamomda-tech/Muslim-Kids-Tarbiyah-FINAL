@@ -76,7 +76,7 @@ window.SURAHS.kawthar = {
   },
 
   practice: [
-    { icon:'🙏', title:{ar:'اشكُرِ اللهَ بالصَّلاة', en:'Thank Allah with prayer'},
+    { icon:'🤲', title:{ar:'اشكُرِ اللهَ بالصَّلاة', en:'Thank Allah with prayer'},
       body:{ar:'كما أمرَ «فصَلِّ لربِّك»؛ اجعَلْ صلاتَك شُكراً لله على نِعمِه.', en:'As He commanded “so pray to your Lord” — make your prayer thanks for His blessings.'} },
     { icon:'💧', title:{ar:'تَشوَّقْ لِحوضِ النبيِّ ﷺ', en:'Long for the Prophet’s Pool'},
       body:{ar:'اسألِ اللهَ أن تَشرَبَ من حوضِه يومَ القيامة.', en:'Ask Allah to let you drink from his Pool on Judgement Day.'} },

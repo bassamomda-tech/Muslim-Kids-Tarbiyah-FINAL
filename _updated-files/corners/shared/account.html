@@ -157,7 +157,7 @@
         +'<h2>'+t('أهلاً، ','Welcome, ')+escapeHtml(name)+'</h2>'
         +'<div class="email">'+escapeHtml(currentUser.email||'')+'</div>'
         +'<div class="badge">☁️ '+t('حسابُك متّصلٌ بالسحابة — تقدّمُ أطفالك ومشترياتك محفوظةٌ على كلِّ أجهزتك.','Your account is connected — your children\u2019s progress &amp; purchases are saved across all your devices.')+'</div>'
-        +'<div class="kids-sec"><div class="kids-h">👨‍👩‍👧 '+t('أطفالُك على هذا الجهاز','Your children on this device')+'</div>'
+        +'<div class="kids-sec"><div class="kids-h">🏡 '+t('أطفالُك على هذا الجهاز','Your children on this device')+'</div>'
         +'<div class="kids-grid">'+kidsHtml
         +'<button class="kid-card add" id="addKid"><span class="kid-avi add">＋</span><span class="kid-nm">'+t('إضافة طفل','Add child')+'</span></button>'
         +'</div></div>'
@@ -178,7 +178,7 @@
     /* ── SIGNED OUT: login / register form ── */
     var isReg=mode==='register';
     card.innerHTML =
-      '<div class="logo">👨‍👩‍👧‍👦</div>'
+      '<div class="logo">🏡</div>'
       +'<h1>'+t('حسابُ العائلة','Family Account')+'</h1>'
       +'<div class="sub">'+t('سجِّل لِتحفظَ تقدّمَ أطفالِك ومشترياتك على كلِّ أجهزتك','Sign in to save your children\u2019s progress & purchases across all your devices')+'</div>'
       +'<div class="tabs"><button id="tabLogin" class="'+(!isReg?'active':'')+'">'+t('دخول','Log in')+'</button>'

@@ -57,7 +57,7 @@ HISN.chapters.yahya = {
     { icon:'🤍', color:'#2980B9', title:{ar:'اجعلْ قلبَك طاهراً',en:'Keep your heart pure'},
       body:{ar:'كان يحيى طاهرَ القلبِ نقيّاً مِن الحَسَدِ والكِبر. القلبُ النقيُّ يُحبُّه اللهُ ويرتاحُ صاحبُه.',en:'Yahya was pure of heart, free of envy and pride. Allah loves a pure heart, and its owner is at peace.'},
       apply:{ar:'أُنقّي قلبي مِن الحَسَدِ والغضبِ على الناس.',en:'I cleanse my heart of envy and anger toward people.'} },
-    { icon:'👨‍👩‍👦', color:'#E67E22', title:{ar:'برَّ والديك',en:'Honour your parents'},
+    { icon:'🏡', color:'#E67E22', title:{ar:'برَّ والديك',en:'Honour your parents'},
       body:{ar:'وصفه اللهُ بأنّه «بَرٌّ بوالديه ولم يكن جبّاراً عصيّاً». بِرُّ الوالدينِ مِن أحبِّ الأعمالِ إلى الله.',en:'Allah described him as "devoted to his parents, not arrogant or disobedient." Honouring parents is among the deeds most beloved to Allah.'},
       apply:{ar:'أُطيعُ والديَّ وأتكلّمُ معهما بِلُطفٍ وأُسعِدُهما.',en:'I obey my parents, speak to them gently, and make them happy.'} },
     { icon:'🌟', color:'#8E44AD', title:{ar:'الصِّغَرُ ليس عُذراً',en:'Being young is no excuse'},

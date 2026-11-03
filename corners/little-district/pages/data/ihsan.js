@@ -125,7 +125,7 @@ window.HOUSES.ihsan = {
   stories: [
     /* STORY 1 */
     {
-      icon:'👼', scene:'madinah', character:'🧔',
+      icon:'✨', scene:'madinah', character:'🧔',
       title: { ar:'المَلَكُ الذي عَلَّمَ النّاسَ دينَهُم', en:'The angel who taught people their faith' },
       pages: [
         { scene:'madinah', character:'🧔',
@@ -175,7 +175,7 @@ window.HOUSES.ihsan = {
       ],
       moral: { ar:'الإحسانُ قِمَّةُ الدِّين — أَن تَعبُدَ اللهَ كَأَنَّكَ تَراه، فَإن لم تَكُن تَراهُ فَإنَّهُ يَراك!',
                en:'Ihsan is faith\u2019s peak — worship Allah as if you see Him; if not, He surely sees you!' },
-      badge: { icon:'👼', title:{ar:'شاهِدُ حَديثِ جِبريل', en:'Witness of Jibril\u2019s Hadith'} },
+      badge: { icon:'✨', title:{ar:'شاهِدُ حَديثِ جِبريل', en:'Witness of Jibril\u2019s Hadith'} },
       reflect: [
         {ar:'كَيفَ تَتَخَيَّلُ أَن تَعبُدَ اللهَ كَأَنَّكَ تَراه؟', en:'How do you imagine worshipping as if you see Allah?'},
         {ar:'ما الفَرقُ بَينَ أَن «تَراهُ» وبَينَ أَن «يَراك»؟', en:'What\u2019s the difference between "seeing Him" and "He sees you"?'},

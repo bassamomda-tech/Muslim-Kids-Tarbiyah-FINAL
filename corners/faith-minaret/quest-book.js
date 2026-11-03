@@ -76,7 +76,7 @@
         '<div class="mission"><div class="mq-lbl">🎯 مهمّتُكما — Your mission</div><p>'+q.mission.ar+'</p><span class="en lat">'+q.mission.en+'</span></div>'+
         '<div class="sage"><div class="sage-orb">🦉</div><div class="sage-cap">الحكيم</div></div>'+
       '</div>'+
-      '<div class="myth"><div class="myth-row"><span class="myth-tag">🎲 السيّد «صُدفة» يقول</span><span class="myth-txt">'+q.mrChance.ar+'</span></div>'+
+      '<div class="myth"><div class="myth-row"><span class="myth-tag">🧩 السيّد «صُدفة» يقول</span><span class="myth-txt">'+q.mrChance.ar+'</span></div>'+
         '<div class="bust-row"><span class="bust-tag">✅ الحقيقة</span><span class="bust-txt">'+q.bust.ar+'<span class="en lat">'+q.bust.en+'</span></span></div></div>'+
       '<div class="tests-h">🔎 اكتشافاتُ الرحلة — The three discoveries</div>'+
       '<div class="tests">'+tests+'</div>'+
@@ -85,7 +85,7 @@
           '<p>'+q.resolution.text.ar+'<span class="en lat">'+q.resolution.text.en+'</span></p></div></div>'+
       '<div class="two-cards">'+
         '<div class="acard exp"><span class="ac-ic">🧪</span><div class="ac-mid"><b>جرِّب بنفسك</b><div class="body">'+q.experiment.ar+'<span class="en lat">'+q.experiment.en+'</span></div></div></div>'+
-        '<div class="acard fam"><span class="ac-ic">👨‍👩‍👧</span><div class="ac-mid"><b>سؤالُ العائلة</b><div class="body">'+q.familyQ.ar+'<span class="en lat">'+q.familyQ.en+'</span></div></div></div>'+
+        '<div class="acard fam"><span class="ac-ic">🏡</span><div class="ac-mid"><b>سؤالُ العائلة</b><div class="body">'+q.familyQ.ar+'<span class="en lat">'+q.familyQ.en+'</span></div></div></div>'+
       '</div>'+
       '<div class="scroll lessons"><h3>🎓 ما تعلّمناه<span class="en lat">What we learned</span></h3>'+
         '<ul>'+q.lessons.map(function(l){return '<li>'+l.ar+'<span class="en lat">'+l.en+'</span></li>';}).join('')+'</ul></div>'+

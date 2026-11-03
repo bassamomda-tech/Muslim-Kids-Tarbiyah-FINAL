@@ -980,7 +980,7 @@ window.MK_WEEKLY = {
    ]
   },
   {
-   "icon": "🙏",
+   "icon": "🤲",
    "t": [
     "تدرّب على كلمات «من فضلك» و«شكرًا» و«جزاك الله خيرًا»، وعدّوا كم مرة قلتموها.",
     "Practise saying \"please\", \"thank you\" and \"Jazak Allahu khayran\", and count how many times you say them."
@@ -1465,7 +1465,7 @@ window.MK_WEEKLY = {
    ]
   },
   {
-   "icon": "💃",
+   "icon": "🤸",
    "t": [
     "هل تعلم أن نحلة العسل تُخبر أخواتها بمكان الأزهار عن طريق «رقصة» خاصة تحدّد الاتجاه والمسافة؟",
     "Did you know a honeybee tells the other bees where flowers are by doing a special \"waggle dance\" that shows direction and distance?"
