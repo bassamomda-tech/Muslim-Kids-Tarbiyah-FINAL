@@ -35,7 +35,8 @@ const GEMINI_API_KEY = defineSecret('GEMINI_API_KEY');
 const G = {
   model: process.env.GEMINI_TTS_MODEL || 'gemini-2.5-flash-preview-tts',   // the main model (its name is part of the saved-clip key)
   /* all the voice models to share the work (each has its own allowance); GEMINI_TTS_MODELS in functions/.env = comma list */
-  models: (process.env.GEMINI_TTS_MODELS || [process.env.GEMINI_TTS_MODEL || 'gemini-2.5-flash-preview-tts', 'gemini-2.5-pro-preview-tts'].join(','))
+  models: (process.env.GEMINI_TTS_MODELS || [process.env.GEMINI_TTS_MODEL || 'gemini-2.5-flash-preview-tts',
+    'gemini-3.8-flash-tts', 'gemini-3.1-flash-tts-preview', 'gemini-2.5-pro-preview-tts', 'gemini-3.8-flash-lite-tts'].join(','))
     .split(',').map((x) => x.trim()).filter(Boolean),
   ar: { female: process.env.GEMINI_VOICE_AR_F || 'Sulafat', male: process.env.GEMINI_VOICE_AR_M || 'Achird' },
   en: { female: process.env.GEMINI_VOICE_EN_F || 'Sulafat', male: process.env.GEMINI_VOICE_EN_M || 'Achird' },
