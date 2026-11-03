@@ -4,7 +4,7 @@
 <meta name="color-scheme" content="dark">
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
-<title>بستان القرآن والسنة | Quran & Sunnah Garden</title>
+<title>بستان القرآن | Quran Garden</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Amiri+Quran&family=Amiri:wght@400;700&family=Tajawal:wght@400;500;700;800;900&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
@@ -16,9 +16,9 @@
 
 <!-- ═══ HEADER ═══ -->
 <header class="q-hdr">
-  <a class="q-brand" href="quran.html" title="بستان القرآن والسنة">
+  <a class="q-brand" href="quran.html" title="بستان القرآن">
     <span class="ico">←</span>
-    <span><span class="lng-ar">بستان القرآن والسنة</span><span class="lng-en">Quran & Sunnah Garden</span></span>
+    <span><span class="lng-ar">بستان القرآن</span><span class="lng-en">Quran Garden</span></span>
   </a>
   <span class="q-badge">
     <span>📖</span>
@@ -44,7 +44,7 @@
   <div class="g-intro">
     <h1 class="g-title">
       <span class="lng-ar">🌿 بُستان القرآن</span>
-      <span class="lng-en">🌿 The Quran & Sunnah Garden</span>
+      <span class="lng-en">🌿 The Quran Garden</span>
     </h1>
     <p class="g-sub">
       <span class="lng-ar">المُصحفُ الساحر — اقطف سورةً واغرسها في قلبك!</span>
@@ -80,7 +80,7 @@
       <div class="gp-hdr">
         <div class="ic">🌳</div>
         <div>
-          <h3><span class="lng-ar">حديقة الحفظ</span><span class="lng-en">My Memory Garden</span></h3>
+          <h3><span class="lng-ar">حديقة التدبّر</span><span class="lng-en">My Reflection Garden</span></h3>
           <p id="gpCount"></p>
         </div>
       </div>
@@ -92,8 +92,8 @@
   <div class="g-flowers"><span>🌷</span><span>🌻</span><span>🌱</span><span>🌼</span><span>🌷</span><span>🌿</span></div>
 
   <footer class="q-foot">
-    <span class="lng-ar">صُنع بحب 💚 لأطفال الأمة — <b>بستان القرآن والسنة</b></span>
-    <span class="lng-en">Made with 💚 for the children of the Ummah — <b>Quran & Sunnah Garden</b></span>
+    <span class="lng-ar">صُنع بحب 💚 لأطفال الأمة — <b>بستان القرآن</b></span>
+    <span class="lng-en">Made with 💚 for the children of the Ummah — <b>Quran Garden</b></span>
   </footer>
 </div>
 
@@ -120,6 +120,8 @@
       </div>
     </div>
   </div>
+
+  <a class="r-hifz" id="rHifz" href="../../quran-hifz/index.html"><span class="lng-ar">🌱 احفظ هذه السورة في «حُفّاظ القرآن» ←</span><span class="lng-en">🌱 Memorize this surah in «Quran Huffaz» →</span></a>
 
   <div class="book-stage">
     <div class="book" id="book"></div>
@@ -183,7 +185,23 @@
 .sec-testbtn .stb-go{flex:0 0 auto;background:#fff;font-family:'Tajawal',sans-serif;font-weight:900;font-size:.85rem;border-radius:2rem;padding:.4rem .9rem;white-space:nowrap}
 .sec-testbtn.surahs{background:linear-gradient(135deg,#1FAE8C,#0E6B53);border:2px solid #7FE0C8;box-shadow:0 8px 0 #0a5740,0 14px 28px rgba(10,60,40,.4)}
 .sec-testbtn.surahs .stb-go{color:#0E6B53}
+/* «سور القرآن» = read & reflect; memorizing lives in «حُفّاظ القرآن» — one button bridges them */
+.r-hifz{display:table;margin:.9rem auto 0;background:#1FAE8C;color:#fff;text-decoration:none;font-family:'Tajawal',sans-serif;font-weight:800;font-size:.9rem;border-radius:2rem;padding:.45rem 1.1rem;text-align:center;max-width:calc(100% - 32px);position:relative;z-index:5}
+.r-hifz:hover{background:#0E6B53}
 </style>
+<script>
+/* «احفظ هذه السورة»: point the button at the open surah inside حُفّاظ القرآن.
+   The reader sets #<slug> when a surah opens, so this stays outside the engine (assets/ is not edited). */
+(function(){
+  function upd(){
+    var a=document.getElementById('rHifz'); if(!a) return;
+    var slug=(location.hash||'').slice(1), s=(window.SURAH_INDEX||[]).filter(function(x){return x.slug===slug;})[0];
+    var en=(localStorage.getItem('bunyanLang')||'ar')==='en';
+    a.href='../../quran-hifz/index.html'+(s?'?surah='+s.num+(en?'&lang=en':''):(en?'?lang=en':''));
+  }
+  window.addEventListener('hashchange',upd); upd();
+})();
+</script>
 <script defer src="../../shared/mk-system.js"></script>
 <script defer src="../../shared/mk-journeys.js"></script>
 <script defer src="../../shared/mk-bag.js"></script>

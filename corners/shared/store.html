@@ -4,7 +4,7 @@
 <meta name="color-scheme" content="dark">
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>متجر الدعم | Support Store</title>
+<title>المكتبة المجانية | Free Library</title>
 <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
 <style>
   :root{ --bg1:#081E36; --bg2:#0E2E4E; --gold:#E8B530; --gold-lt:#F5CC5A; --ink:#FEF5DC; --muted:rgba(254,245,220,.68); --card:rgba(255,255,255,.06); --line:rgba(232,181,48,.28); --green:#1F8A5B; }
@@ -19,6 +19,7 @@
   .lang{display:flex;border:1.5px solid var(--line);border-radius:2rem;overflow:hidden}
   .lang button{background:transparent;border:none;color:var(--ink);font-weight:800;padding:.32rem .85rem;font-size:.8rem;cursor:pointer;font-family:inherit}
   .lang button.active{background:var(--gold);color:#10243d}
+  @media(max-width:520px){ .header{padding:.7rem .75rem;gap:.4rem} .back-btn{padding:.45rem .8rem;font-size:.82rem} .auth-btn{padding:.4rem .7rem!important;font-size:.8rem!important} .lang button{padding:.3rem .55rem} }
   .wrap{max-width:1000px;margin:0 auto;padding:1.8rem 1rem 4rem}
 
   .banner{background:linear-gradient(160deg,rgba(31,138,91,.2),rgba(232,181,48,.08));border:1.5px solid var(--line);border-radius:1.6rem;padding:1.6rem 1.5rem;text-align:center;margin-bottom:2rem}
@@ -115,7 +116,7 @@
   <div class="header">
     <a href="../../index.html" class="back-btn"><span class="ar-only">↩️ المدينة</span><span class="en-only">↩️ City</span></a>
     <div style="display:flex;align-items:center;gap:.6rem">
-      <button class="cart-btn" onclick="openCart()">🛒 <span class="ar-only">السلة</span><span class="en-only">Cart</span> <span class="cart-count" id="cartCount">0</span></button>
+      <button class="cart-btn" onclick="openCart()" hidden style="display:none">🛒 <span class="ar-only">السلة</span><span class="en-only">Cart</span> <span class="cart-count" id="cartCount">0</span></button>
       <button class="auth-btn" id="authBtn" onclick="onAuthBtn()">👤 <span id="authLabel"><span class="ar-only">دخول</span><span class="en-only">Login</span></span></button>
       <div class="lang"><button data-lang="en">EN</button><button data-lang="ar" class="active">عربي</button></div>
     </div>
@@ -123,23 +124,19 @@
 
   <div class="wrap">
     <div class="banner">
-      <div class="ic">🛍️</div>
-      <h1><span class="ar-only">متجرُ الدعم</span><span class="en-only">Support Store</span></h1>
+      <div class="ic">📚</div>
+      <h1><span class="ar-only">المكتبةُ المجّانية</span><span class="en-only">The Free Library</span></h1>
       <p>
-        <span class="ar-only">هذا الموقعُ مجّانيٌّ بالكامل وصدقةٌ جارية. حمِّل ما تشاءُ من الموادِّ المجّانية، ودعمُك للموادِّ المميّزةِ يُبقي الموقعَ مجّانيًّا للجميعِ ويُنمّيه.</span>
-        <span class="en-only">This site is completely free and an ongoing charity. Download the free materials, and your support for the premium ones keeps the site free for everyone and helps it grow.</span>
+        <span class="ar-only">كلُّ ما في هذا الموقع مجّانيٌّ بالكامل — كلُّ الكتب والأنشطة والمطبوعات — صدقةٌ جارية لكلِّ بيتٍ مسلم. حمِّل واطبع وشارِك بلا حدود.</span>
+        <span class="en-only">Everything on this site is completely free — every book, activity and printable — an ongoing charity for every Muslim home. Download, print and share freely.</span>
       </p>
-      <span class="why"><span class="ar-only">💚 كلُّ دعمٍ يُبقي الموقعَ مجّانيًّا ويُضيفُ محتوًى جديدًا</span><span class="en-only">💚 Every bit of support keeps the site free & adds new content</span></span>
+      <span class="why"><span class="ar-only">💚 لا دفع ولا اشتراك — فقط دعاءٌ صادق ومشاركةٌ للخير</span><span class="en-only">💚 No payment, no subscription — just a sincere dua and sharing the good</span></span>
     </div>
 
     <div class="sec-h"><span class="si">📦</span><h2><span class="ar-only">موادُّ للتحميل</span><span class="en-only">Downloadable Materials</span></h2></div>
     <div class="grid" id="itemGrid"></div>
 
-    <div class="sec-h"><span class="si">📚</span><h2><span class="ar-only">حزمُ الكتب — لكلِّ ركنٍ حزمة</span><span class="en-only">Book Bundles — one per corner</span></h2></div>
-    <p class="banner" style="text-align:center;margin:-.3rem 0 1rem;padding:.7rem 1rem;font-size:.86rem;color:var(--muted)"><span class="ar-only">كلُّ حزمةٍ تفتحُ <b style="color:var(--gold-lt)">جميعَ كتبِ الركن</b> دفعةً واحدة — <b style="color:var(--gold-lt)">£٥ للحزمة</b>.</span><span class="en-only">Each bundle unlocks <b style="color:var(--gold-lt)">all of that corner's books</b> at once — <b style="color:var(--gold-lt)">£5 per bundle</b>.</span></p>
-    <div style="text-align:center;margin:-.4rem 0 1.3rem">
-      <button onclick="addAllBundles()" style="background:linear-gradient(135deg,var(--green),#176b46);color:#fff;border:none;border-radius:1rem;padding:.75rem 1.4rem;font-weight:900;font-family:inherit;font-size:.95rem;cursor:pointer;box-shadow:0 8px 22px rgba(31,138,91,.35)">🎁 <span class="ar-only">احصُل على كلِّ الأركان — £٢٠ فقط <span style="opacity:.8;font-weight:700">(١٠٠٠ جنيه · بدلاً من £٥٥)</span></span><span class="en-only">Get all corners — just £20 <span style="opacity:.8;font-weight:700">(1000 EGP · was £55)</span></span></button>
-    </div>
+    <div class="sec-h"><span class="si">📚</span><h2><span class="ar-only">الكتب — لكلِّ ركنٍ مجموعة مجّانية</span><span class="en-only">Books — a free set for every corner</span></h2></div>
     <div id="bookGroups"></div>
 
     <div class="sec-h"><span class="si">💚</span><h2><span class="ar-only">طرقُ الدعم</span><span class="en-only">Ways to Support</span></h2></div>
@@ -262,16 +259,18 @@
       {t:{ar:'أنشطةُ العبادة (إنجليزي) — المستوى ٢',en:'Worship Oasis Activity (EN) — Level 2'}, p:AB+'Worship Oasis Activity Book -EN- - Level 2.html'},
       {t:{ar:'أنشطةُ العبادة (إنجليزي) — المستوى ٣',en:'Worship Oasis Activity (EN) — Level 3'}, p:AB+'Worship Oasis Activity Book -EN- - Level 3.html'},
     ]},
-    { grp:{ar:'بستان القرآن والسنة',en:'Quran & Sunnah Garden'}, icon:'📖', items:[
+    { grp:{ar:'بستان القرآن',en:'Quran Garden'}, icon:'📖', items:[
       {t:{ar:'قصصُ القرآن',en:'Quran Stories'}, p:CB+'Quran Garden/Quran Stories Book.html'},
       {t:{ar:'بستانُ السور — قِصار السور',en:'Short Surahs'}, p:CB+'Quran Garden/Short Surahs Book.html'},
-      {t:{ar:'الأربعون النووية',en:'The Forty Hadith'}, p:CB+'Quran Garden/Forty Hadith Book.html'},
       {t:{ar:'أنشطةُ القرآن — المستوى ١',en:'Quran Garden Activity Book — Level 1'}, p:AB+'Quran Garden Activity Book - Level 1.html'},
       {t:{ar:'أنشطةُ القرآن — المستوى ٢',en:'Quran Garden Activity Book — Level 2'}, p:AB+'Quran Garden Activity Book - Level 2.html'},
       {t:{ar:'أنشطةُ القرآن — المستوى ٣',en:'Quran Garden Activity Book — Level 3'}, p:AB+'Quran Garden Activity Book - Level 3.html'},
       {t:{ar:'أنشطةُ القرآن (إنجليزي) — المستوى ١',en:'Quran Garden Activity (EN) — Level 1'}, p:AB+'Quran Garden Activity Book -EN- - Level 1.html'},
       {t:{ar:'أنشطةُ القرآن (إنجليزي) — المستوى ٢',en:'Quran Garden Activity (EN) — Level 2'}, p:AB+'Quran Garden Activity Book -EN- - Level 2.html'},
       {t:{ar:'أنشطةُ القرآن (إنجليزي) — المستوى ٣',en:'Quran Garden Activity (EN) — Level 3'}, p:AB+'Quran Garden Activity Book -EN- - Level 3.html'},
+    ]},
+    { grp:{ar:'حُفّاظ السنة',en:'Sunnah Keepers'}, icon:'📜', items:[
+      {t:{ar:'الأربعون النووية',en:'The Forty Hadith'}, p:CB+'Quran Garden/Forty Hadith Book.html'},
     ]},
     { grp:{ar:'حيّنا الصغير',en:'Our Little District'}, icon:'🏘️', items:[
       {t:{ar:'كنزُ قصص الحيّ الصغير',en:'Little District Story Treasury'}, p:'../../Books/Published/Little District/Little District Story Treasury.html'},
@@ -417,12 +416,12 @@
       var tag = (n===0)
         ? '<span class="it-tag" style="background:rgba(255,255,255,.07);color:var(--muted)">'+(ar?'قريباً':'Soon')+'</span>'
         : owned
-          ? '<span class="it-tag free">'+(ar?'مملوكة ✓':'Owned ✓')+'</span>'
+          ? '<span class="it-tag free">'+(ar?'مجّاني':'Free')+'</span>'
           : '<span class="it-tag supp">£5</span>';
       var foot = (n===0)
         ? '<div class="bundle-owned" style="color:var(--muted)">'+(ar?'تُضافُ كتبُ هذا الركن قريباً بإذن الله':'Books for this corner are coming soon')+'</div>'
         : owned
-          ? '<div class="bundle-owned">'+(ar?'✓ مفتوحة — حمِّل كلَّ الكتب':'✓ Unlocked — download all')+'</div>'
+          ? '<div class="bundle-owned">'+(ar?'✓ مجّانية — افتح أيَّ كتابٍ وحمِّله':'✓ Free — open & download any book')+'</div>'
           : '<button class="it-btn supp" onclick="addToCart(\''+bundleId+'\')">🛒 '+(ar?'أضِف الحزمة — £٥':'Add bundle — £5')+'</button>';
       return '<div class="item bundle">'+tag
         +'<div class="it-ic">'+g.icon+'</div>'
@@ -497,7 +496,7 @@
   var auth=null, db=null, currentUser=null, authMode='login';
   var PAID=[]; try{ PAID=JSON.parse(localStorage.getItem('mkPaid'))||[]; }catch(e){ PAID=[]; }
   function savePaidLocal(){ try{localStorage.setItem('mkPaid',JSON.stringify(PAID));}catch(e){} }
-  function isPaid(id){ return PAID.indexOf(id)>=0; }
+  function isPaid(id){ return true; } // everything on the site is free
   function initFirebase(){
     if(!window.firebase||!window.firebaseConfig){ return; }
     try{

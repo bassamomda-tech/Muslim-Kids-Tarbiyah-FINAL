@@ -28,11 +28,24 @@
     { id:'zakah',   corner:'ibada', total:10, icon:'🎁', color:'#27AE60', doneKey:'ibadaDone', idMatch:'zakah-',   page:'corners/little-district/pages/ibada-journeys.html?j=zakah',   name:{ar:'كنز العطاء (الزكاة)', en:'Treasure of Giving (Zakah)'} },
     { id:'hajj',    corner:'ibada', total:10, icon:'🕋', color:'#C0392B', doneKey:'ibadaDone', idMatch:'hajj-',    page:'corners/little-district/pages/ibada-journeys.html?j=hajj',    name:{ar:'الرحلة الكبرى (الحج)', en:'The Grand Journey (Hajj)'} },
 
-    /* ─── بستان القرآن · Quran & Sunnah Garden (115 stations across 4 sections) ─── */
+    /* ─── بستان القرآن · Quran Garden ─── */
     { id:'surahs',  corner:'quran', total:38, icon:'📜', color:'#1A9B7B', flagPrefix:'qg:',  page:'corners/little-district/pages/quran-surahs.html',    name:{ar:'حديقة السور القصيرة', en:'Short Surahs Garden'} },
     { id:'qstories',corner:'quran', total:20, icon:'🏛️', color:'#2E8B57', flagPrefix:'qs:',  page:'corners/little-district/pages/quran-stories.html',   name:{ar:'قصص القرآن', en:"Qur'anic Stories"} },
-    { id:'hadith40',corner:'quran', total:42, icon:'🕌', color:'#0E6B53', flagPrefix:'hd:',  page:'corners/little-district/pages/hadith.html',          name:{ar:'الأربعون النووية', en:'The 40 Hadith of Nawawi'} },
     { id:'qsahib',  corner:'quran', total:15, icon:'📖', color:'#1A9B7B', doneKey:'qsahibDone', page:'corners/little-district/pages/quran-companions.html', name:{ar:'أنا صاحبك القرآن', en:'I Am Your Companion, the Qur’an'} },
+
+    /* ─── حُفّاظ السنة · Sunnah Keepers (the 10th corner) — tr:<page> arrays are the learned-ids of each page ─── */
+    { id:'hadith40',corner:'sunnah', total:42, icon:'🕌', color:'#0E6B53', flagPrefix:'hd:',  page:'corners/little-district/pages/hadith.html',          name:{ar:'الأربعون النووية', en:'The 40 Hadith of Nawawi'} },
+    { id:'hcards',  corner:'sunnah', total:42,  icon:'🃏', color:'#2E8B57', doneKey:'tr:hadith-cards',    page:'corners/treasures/hadith-cards.html',    name:{ar:'بطاقات الأربعين', en:'Forty Hadith Cards'} },
+    { id:'hstories',corner:'sunnah', total:100, icon:'📖', color:'#C1663A', doneKey:'tr:hadith-stories',  page:'corners/treasures/hadith-stories.html',  name:{ar:'قصص السنة', en:'Sunnah Stories'} },
+    { id:'pmoments',corner:'sunnah', total:18,  icon:'🌙', color:'#2C5F8A', doneKey:'tr:prophet-moments', page:'corners/treasures/prophet-moments.html', name:{ar:'مواقف النبي ﷺ', en:'Moments of the Prophet ﷺ'} },
+
+    /* ─── صانع المهارات · Skills Maker — tr:skill-<id> = the stations the child learned ─── */
+    { id:'sk-merchant',  corner:'skills', total:10, icon:'🛍️', color:'#C0841A', doneKey:'tr:skill-merchant',  page:'corners/skills/merchant.html',  name:{ar:'التاجر الصغير', en:'The Little Merchant'} },
+    { id:'sk-historian', corner:'skills', total:8,  icon:'🧭', color:'#8E5A2B', doneKey:'tr:skill-historian', page:'corners/skills/historian.html', name:{ar:'مستكشف التاريخ', en:'The History Explorer'} },
+    { id:'sk-scientist', corner:'skills', total:8,  icon:'🔬', color:'#2E86C1', doneKey:'tr:skill-scientist', page:'corners/skills/scientist.html', name:{ar:'العالِم الصغير', en:'The Little Scientist'} },
+    { id:'sk-doctor',    corner:'skills', total:8,  icon:'🩺', color:'#C0392B', doneKey:'tr:skill-doctor',    page:'corners/skills/doctor.html',    name:{ar:'الطبيب الصغير', en:'The Little Doctor'} },
+    { id:'sk-engineer',  corner:'skills', total:8,  icon:'🏗️', color:'#E67E22', doneKey:'tr:skill-engineer',  page:'corners/skills/engineer.html',  name:{ar:'المهندس الصغير', en:'The Little Engineer'} },
+    { id:'sk-farmer',    corner:'skills', total:8,  icon:'🌱', color:'#27AE60', doneKey:'tr:skill-farmer',    page:'corners/skills/farmer.html',    name:{ar:'المزارع الصغير', en:'The Little Farmer'} },
 
     /* ─── حيّنا الصغير · Our Little District (district engine: ld:) ─── */
     { id:'district', corner:'social', total:34, icon:'🏘️', color:'#D4A017', ldKey:true, page:'corners/little-district/pages/social.html', name:{ar:'بيوت الحيّ — الأخلاق والآداب', en:'District Houses — Manners & Etiquette'} },

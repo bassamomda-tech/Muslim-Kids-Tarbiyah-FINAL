@@ -45,3 +45,14 @@
     window.location.assign(decorate(u).href);
   };
 })();
+
+/* display settings (⚙️ Aa) for every page — corners/shared/mk-a11y.js, loaded once */
+(function () {
+  try {
+    if (window.__mkA11y || document.querySelector('script[src*="mk-a11y.js"]')) return;
+    var p = location.pathname, i = p.indexOf('/corners/'), R = '';
+    if (i >= 0) { var rest = p.slice(i + 1).split('/'); rest.pop(); R = new Array(rest.length + 1).join('../'); }
+    var s = document.createElement('script'); s.src = R + 'corners/shared/mk-a11y.js'; s.async = true; s.onerror = function () {};
+    (document.head || document.documentElement).appendChild(s);
+  } catch (e) {}
+})();

@@ -49,6 +49,7 @@
     [data-r="hero-title"] p{ font-size:12px !important; padding:6px 11px !important; line-height:1.5 !important; }
     [data-r="grid2"]{ grid-template-columns:1fr !important; }
     [data-r="tiles"]{ grid-template-columns:1fr !important; }
+    [data-r="streakgoal"]{ grid-template-columns:1fr !important; }   /* streak + daily goal stack on phones (they overflowed sideways) */
     [data-r="ayah"]{ font-size:27px !important; line-height:2.05 !important; }
     [data-r="mushafcard"]{ padding:28px 16px !important; }
     [data-r="surahcards"]{ grid-template-columns:1fr 1fr !important; gap:12px !important; }
@@ -186,7 +187,7 @@
     <!-- ===== DASHBOARD ===== -->
     <div data-r="grid2" style="display:grid;grid-template-columns:1fr;gap:18px;margin-top:20px;">
       <!-- right column: streak + goal -->
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:18px;">
+      <div data-r="streakgoal" style="display:grid;grid-template-columns:1fr 1fr;gap:18px;">
         <!-- streak -->
         <div style="background:linear-gradient(120deg,#fff3e0,#ffe9cc);border:2px solid #f3d49a;border-radius:24px;padding:20px 22px;display:flex;align-items:center;gap:16px;box-shadow:0 4px 16px rgba(40,80,50,.06);">
           <div style="font-size:42px;animation:qg-pulse 2s ease-in-out infinite;">🔥</div>
@@ -1766,6 +1767,7 @@ class Component extends DCLogic {
     this.audio.addEventListener('ended', ()=>this.onEnded());
     this.audio.addEventListener('error', ()=>{ this.setState({playingAyah:null, memPlaying:false}); this.audioMode=null; });
     this.setupSurah('fatiha', false);
+    if(this._isDataReady()) this._deepLink();
     this.persist('qg_daily',this.state.daily); this.persist('qg_streak',this.state.streak);
     this.bindSwipe();
   }
@@ -1913,7 +1915,9 @@ class Component extends DCLogic {
   surahOrder(){ return (window.QG&&window.QG.order)||['fatiha']; }
   cur(){ return this.data[this.state.surahId]; }
   _isDataReady(){ var G=window.QG||{}; return !!(G.content&&G.cards&&G.missions&&G.mushaf&&G.juzList&&G.order); }
-  _waitData(){ var self=this; var tick=function(){ if(self._isDataReady()){ self.data=self.buildData(); self.forceUpdate(); } else { requestAnimationFrame(tick); } }; requestAnimationFrame(tick); }
+  // ?surah=<number> (from «سور القرآن» → «احفظ هذه السورة»): open that surah straight away
+  _deepLink(){ if(this._linked) return; this._linked=true; var n=0; try{ n=parseInt(new URLSearchParams(location.search).get('surah'),10)||0; }catch(e){} if(!n||!this.data) return; var id=Object.keys(this.data).find(k=>this.data[k]&&+this.data[k].num===n); if(id) this.setupSurah(id,true); }
+  _waitData(){ var self=this; var tick=function(){ if(self._isDataReady()){ self.data=self.buildData(); self.forceUpdate(); self._deepLink(); } else { requestAnimationFrame(tick); } }; requestAnimationFrame(tick); }
 
   // ---------- TAJWEED ENGINE ----------
   clusters(text){
@@ -3139,8 +3143,8 @@ class Component extends DCLogic {
   }
 }
 </script>
-<!-- Back to city (Muslim Kids' Tarbiyah) — injected for corner integration -->
-<a id="mkBackCity" href="../../index.html" aria-label="العودة إلى المدينة"></a>
+<!-- Back to the Quran Garden — حُفّاظ القرآن now lives inside the garden -->
+<a id="mkBackCity" href="../little-district/pages/quran.html" aria-label="العودة إلى بستان القرآن"></a>
 <style>
   #mkBackCity{
     position:fixed;left:14px;bottom:14px;z-index:2147483000;
@@ -3163,11 +3167,16 @@ class Component extends DCLogic {
   // localized label + preserve lang param
   var isEn=false;
   try{ var q=new URLSearchParams(location.search); if((q.get('lang')||'').toLowerCase()==='en') isEn=true; }catch(e){}
-  a.innerHTML='<span class="mk-bc-ic">🏘️</span><span>'+(isEn?'Back to the city':'العودة إلى المدينة')+'</span>';
+  a.innerHTML='<span class="mk-bc-ic">🌿</span><span>'+(isEn?'Back to the Quran Garden':'العودة إلى بستان القرآن')+'</span>';
+  if(isEn) a.href+='?lang=en';
   // keep the back link pinned to <body> even if the app re-renders its root
   function pin(){ if(a.parentNode!==document.body){ document.body.appendChild(a); } }
   pin(); setTimeout(pin,600); setTimeout(pin,2000);
 })();
 </script>
+<!-- shared platform: per-child progress + cloud backup (so Hifz stars reach the server) + the 🎒 bag -->
+<script defer src="../shared/mk-system.js"></script>
+<script defer src="../shared/mk-journeys.js"></script>
+<script defer src="../shared/mk-bag.js"></script>
 </body>
 </html>

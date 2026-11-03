@@ -186,6 +186,21 @@ header{
 .char-pin:hover .char-tooltip{opacity:1}
 
 /* ══════════════════════ SECTION LABEL ══════════════════════ */
+.mk-continue{position:relative;z-index:6;display:flex;align-items:center;gap:.8rem;max-width:620px;margin:1rem auto .4rem;padding:.8rem 1rem;border-radius:1.2rem;text-decoration:none;color:#FEF5DC;background:linear-gradient(135deg,rgba(232,181,48,.22),rgba(26,155,123,.18));border:1.5px solid rgba(232,181,48,.55);box-shadow:0 10px 26px rgba(0,0,0,.25)}
+.mk-continue[hidden]{display:none}
+.mk-news{position:relative;z-index:6;display:flex;align-items:center;gap:.7rem;max-width:620px;margin:.5rem auto .4rem;padding:.65rem 1rem;border-radius:1.1rem;text-decoration:none;color:#FEF5DC;background:rgba(31,111,139,.28);border:1.5px solid rgba(120,200,230,.45)}
+.mk-news[hidden]{display:none}
+.mk-news .ic{font-size:1.5rem}.mk-news .tx{flex:1;min-width:0;display:flex;flex-direction:column;line-height:1.4}
+.mk-news .k{font-size:.72rem;font-weight:800;color:#9FDCF0}.mk-news b{font-size:.95rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.mk-news .go{font-size:.8rem;font-weight:900;color:#9FDCF0;white-space:nowrap}
+@media(max-width:480px){.mk-news{margin:.4rem 14px .3rem}}
+.mk-continue .ic{flex:0 0 52px;height:52px;border-radius:14px;display:grid;place-items:center;font-size:1.7rem;background:rgba(255,255,255,.1)}
+.mk-continue .tx{flex:1;min-width:0;display:flex;flex-direction:column;line-height:1.4}
+.mk-continue .k{font-size:.75rem;font-weight:800;color:#F5CC5A}
+.mk-continue b{font-size:1.02rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.mk-continue small{font-size:.78rem;opacity:.75}
+.mk-continue .go{flex:0 0 auto;background:#E8B530;color:#10243d;font-weight:900;border-radius:2rem;padding:.45rem .9rem;font-size:.88rem}
+@media(max-width:480px){.mk-continue{margin:.8rem 14px .3rem}}
 .section-lbl{
   display:flex;align-items:center;gap:.6rem;position:relative;z-index:5;
   font-size:.7rem;font-weight:800;color:rgba(254,245,220,.38);
@@ -458,8 +473,20 @@ footer b{color:rgba(212,160,23,.55);font-weight:700}
 @media(max-width:400px){
   .city-map{grid-template-columns:1fr 1fr;gap:.5rem;padding:0 .5rem .8rem}
 }
+/* phone header: keep the ☰ menu on screen — brand shrinks, login shows icon only */
+@media(max-width:560px){
+  header{padding:.55rem .7rem;gap:.4rem}
+  .brand{min-width:0;font-size:.98rem}
+  .brand #hBrand{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .header-right{gap:.35rem;flex-shrink:0}
+  .login-icon .li-txt,.child-chip .cc-name{display:none}
+  .lang-btn{padding:.25rem .5rem}
+}
+@media(max-width:380px){ .about-btn{display:none} .brand-icon{width:1.7rem;height:1.7rem} }
 </style>
 <style id="__antiflash">html{background:#0A2540;color-scheme:dark}</style>
+<script>/* calm mode 🍃 (mk:calm) — set from the Treasures pages; stops the ticker and all motion */
+try{if(localStorage.getItem('mk:calm')==='true'){document.documentElement.classList.add('calm');document.write('<style>html.calm *,html.calm *::before,html.calm *::after{animation:none!important;transition:none!important}</style>');}}catch(e){}</script>
 </head>
 <body>
 
@@ -573,6 +600,11 @@ footer b{color:rgba(212,160,23,.55);font-weight:700}
 
 <!-- ═══ CHILD CHARACTERS PARADE ═══ -->
 <div class="chars-parade" id="charsParade"></div>
+
+<!-- ═══ CONTINUE WHERE YOU STOPPED (mk_last, set by mk-system.js on every learning page) ═══ -->
+<a class="mk-continue" id="mkContinue" hidden></a>
+<!-- ═══ WEEKLY NEWS + ON THIS DAY (corners/news) ═══ -->
+<a class="mk-news" id="mkNews" href="corners/news/index.html" hidden></a>
 
 <!-- SECTION LABEL -->
 <div class="section-lbl" id="sectionLbl">أركان تربية الطفل المسلم</div>
@@ -711,14 +743,14 @@ footer b{color:rgba(212,160,23,.55);font-weight:700}
   var CORNERS=[
     { id:'aqeeda',  icon:'🕋', color:'#C0392B', name:{ar:'منارة العقيدة',     en:'Faith Minaret'},        base:'corners/faith-minaret/aqeeda.html' },
     { id:'ibada',   icon:'🌙', color:'#117A8B', name:{ar:'واحة العبادة',      en:'Worship Oasis'},        base:'corners/little-district/pages/ibada.html' },
-    { id:'quran',   icon:'📖', color:'#1A9B7B', name:{ar:'بستان القرآن والسنة', en:'Quran & Sunnah Garden'}, base:'corners/little-district/pages/quran.html' },
+    { id:'quran',   icon:'📖', color:'#1A9B7B', name:{ar:'بستان القرآن', en:'Quran Garden'}, base:'corners/little-district/pages/quran.html' },   // حُفّاظ القرآن is a gate inside this garden
+    { id:'sunnah',  icon:'📜', color:'#6C4BD8', name:{ar:'حُفّاظ السنة', en:'Sunnah Keepers'}, base:'corners/treasures/sunnah.html' },
     { id:'social',  icon:'🏘️', color:'#D4A017', name:{ar:'حيّنا الصغير',      en:'Our Little District'},   base:'corners/little-district/pages/social.html' },
     { id:'heart',   icon:'💚', color:'#6C3483', name:{ar:'ركن القلب السليم',  en:'Pure Heart Corner'},     base:'corners/heroes-fortress/heart.html' },
     { id:'history', icon:'🏰', color:'#E67E22', name:{ar:'حصن الأبطال',       en:"Heroes' Fortress"},      base:'corners/heroes-fortress/fortress.html' },
     { id:'sport',   icon:'🏊', color:'#27AE60', name:{ar:'النادي الرياضي',    en:'Sports Club'},           base:'corners/little-district/pages/sport.html' },
     { id:'academy', icon:'🔭', color:'#2980B9', name:{ar:'أكاديمية المبدعين', en:"Innovators' Academy"},   base:'corners/heroes-fortress/academy.html' },
     { id:'quds',    icon:'🕌', color:'#2E8B57', name:{ar:'ركن القدس والأمة',  en:'Al-Quds & Ummah'},       base:'corners/little-district/pages/quds.html' },
-    { id:'hifz',    icon:'🌱', color:'#1F7A4D', name:{ar:'حُفّاظ القرآن',      en:'Quran Huffaz'},          base:'corners/quran-hifz/index.html' },
     { id:'stories-little', icon:'📚', color:'#C1663A', name:{ar:'مكتبة القصص للصغار', en:'Little Stories Library'}, base:'corners/stories/little.html' },
     { id:'workshop', icon:'🧰', color:'#5E8C31', name:{ar:'ورشة الصانع الصغير', en:"Little Maker's Workshop"}, base:'corners/workshop/workshop.html' },
   ];
@@ -913,8 +945,8 @@ document.getElementById('lockPin').addEventListener('keydown',function(e){ if(e.
 const buildings = [ // home corners — order: faith, worship, quran, district, pure-heart, fortress, sports, academy, quds
   {id:'aqeeda',icon:'🕋',nameAr:'منارة العقيدة',nameEn:'Faith Minaret',descAr:'البناء العقدي والروحي',descEn:'Spiritual & Creedal Foundation',accent:'#C0392B',gradient:'linear-gradient(160deg,rgba(192,57,43,.2),transparent)',badge:'🔥 جديد',progress:0,character:{charNameAr:'يوسف',charNameEn:'Yusuf',emoji:'👦',charQuoteAr:'أنا يوسف، هيا نراقب الله!',charQuoteEn:"I'm Yusuf, let's watch for Allah!"},featuresAr:[{icon:'🕋',text:'رحلة التوحيد ورحلة اليقين — براهين وجود الله ووحدانيته'},{icon:'✨',text:'رحلة جنود النور ورحلة البلاغ — الملائكة والكتب والرسل'},{icon:'🌉',text:'رحلة العبور وسر التقدير والأبطال — اليوم الآخر والقدر وقصص الثبات'}],featuresEn:[{icon:'🕋',text:'Journey of Tawheed & Certainty — proofs of Allah\'s existence & oneness'},{icon:'✨',text:'Soldiers of Light & the Message — angels, books & prophets'},{icon:'🌉',text:'The Crossing, the Decree & the Heroes — the Last Day, qadar & steadfastness'}],url:'corners/faith-minaret/aqeeda.html',ready:true},
   {id:'ibada',icon:'🌙',nameAr:'واحة العبادة',nameEn:'Worship Oasis',descAr:'البناء العبادي',descEn:'Acts of Worship',accent:'#117A8B',gradient:'linear-gradient(160deg,rgba(17,122,139,.2),transparent)',badge:'💧',progress:0,character:{charNameAr:'مريم',charNameEn:'Mariam',emoji:'👧',charQuoteAr:'معاً نتعلم الصلاة والوضوء!',charQuoteEn:'Together we learn prayer and wudu!'},featuresAr:[{icon:'🤲',text:'تعلم الوضوء والصلاة خطوة بخطوة بصور تفاعلية'},{icon:'📚',text:'مدرسة الصيام — تدريب الصغار على الصوم'},{icon:'🛡️',text:'درع البطل: أذكاري تحميني في كل وقت'},{icon:'💡',text:'خيط النور: كيف أتحدث مع الله؟ فقه الدعاء'},{icon:'🎁',text:'كنز العطاء: سر الزكاة وبركة الصدقة'},{icon:'🕋',text:'الرحلة الكبرى: مغامرة إلى بيت الله الحرام'}],featuresEn:[{icon:'🤲',text:'Interactive step-by-step Wudu & Prayer'},{icon:'📚',text:'Little Fasting School'},{icon:'🛡️',text:"Hero's Shield: My Adhkar Protect Me"},{icon:'💡',text:'Thread of Light: How Do I Speak to Allah?'},{icon:'🎁',text:'Treasure of Giving: Zakat & Charity'},{icon:'🕋',text:'The Grand Journey: Adventure to Makkah'}],url:'corners/little-district/pages/ibada.html',ready:true},
-  {id:'quran',icon:'📖',nameAr:'بستان القرآن والسنة',nameEn:'Quran & Sunnah Garden',descAr:'البناء القرآني والتدبر',descEn:'Quranic Learning & Reflection',accent:'#1A9B7B',gradient:'linear-gradient(160deg,rgba(26,155,123,.22),transparent)',badge:'🌿',progress:0,character:{charNameAr:'أنس',charNameEn:'Anas',emoji:'👦',charQuoteAr:'تعال نتدبر آيات القرآن!',charQuoteEn:"Let's reflect on the Quran together!"},featuresAr:[{icon:'📖',text:'سور القرآن — اقرأ بالتجويد وتدبّر المعاني'},{icon:'📜',text:'قصص القرآن — لقمان وأصحاب الكهف وغيرهم'},{icon:'🕌',text:'الأربعون النووية — احفظ وافهم واعمل'},{icon:'🤝',text:'أنا صاحبك القرآن — قصص الصالحين مع كتاب الله'}],featuresEn:[{icon:'📖',text:'Quran Surahs — read with tajweed & reflect'},{icon:'📜',text:'Quran Stories — Luqman, the Cave & more'},{icon:'🕌',text:'40 Hadith of Nawawi — memorize, understand & act'},{icon:'🤝',text:'I Am Your Companion — the righteous with the Quran'}],url:'corners/little-district/pages/quran.html',ready:true},
-  {id:'hifz',icon:'🌱',nameAr:'حُفّاظ القرآن',nameEn:'Quran Huffaz',descAr:'حفظُ القرآن وتثبيته',descEn:'Quran Memorization',accent:'#1F7A4D',gradient:'linear-gradient(160deg,rgba(31,122,77,.22),transparent)',badge:'🌱 جديد',progress:0,noScore:true,character:{charNameAr:'حفصة',charNameEn:'Hafsah',emoji:'👧',charQuoteAr:'هيّا نغرسُ القرآنَ في قلوبنا!',charQuoteEn:"Let's plant the Quran in our hearts!"},featuresAr:[{icon:'🌱',text:'احفظِ السُّورةَ آيةً آيةً — إخفاءٌ تدريجيٌّ وتكرار'},{icon:'🎧',text:'تابِعِ القارئ وردِّدْ مع الشيخِ والأطفال'},{icon:'🎨',text:'تلوينُ التجويد وصفحاتُ المصحفِ كما هي'},{icon:'🏅',text:'أوسمةٌ وشهادةُ إتمامٍ لكلِّ سورةٍ تحفظها'}],featuresEn:[{icon:'🌱',text:'Memorize each surah verse by verse — gradual hide & repeat'},{icon:'🎧',text:'Follow the reciter & repeat with the sheikh and children'},{icon:'🎨',text:'Tajweed colouring & real mushaf pages'},{icon:'🏅',text:'Badges & a completion certificate for every surah'}],url:'corners/quran-hifz/index.html',ready:true},
+  {id:'quran',icon:'📖',nameAr:'بستان القرآن',nameEn:'Quran Garden',descAr:'التلاوة والتدبّر والحفظ',descEn:'Recite, reflect & memorize',accent:'#1A9B7B',gradient:'linear-gradient(160deg,rgba(26,155,123,.22),transparent)',badge:'🌿',progress:0,character:{charNameAr:'أنس',charNameEn:'Anas',emoji:'👦',charQuoteAr:'تعال نتدبر آيات القرآن!',charQuoteEn:"Let's reflect on the Quran together!"},featuresAr:[{icon:'📖',text:'سور القرآن — اقرأ بالتجويد وتدبّر المعاني'},{icon:'🌱',text:'حُفّاظ القرآن — احفظ وسمِّع وراجع'},{icon:'📜',text:'قصص القرآن — لقمان وأصحاب الكهف وغيرهم'},{icon:'🤝',text:'أنا صاحبك القرآن — قصص الصالحين مع كتاب الله'}],featuresEn:[{icon:'📖',text:'Quran Surahs — read with tajweed & reflect'},{icon:'🌱',text:'Quran Huffaz — memorize, recite & review'},{icon:'📜',text:'Quran Stories — Luqman, the Cave & more'},{icon:'🤝',text:'I Am Your Companion — the righteous with the Quran'}],url:'corners/little-district/pages/quran.html',ready:true},
+  {id:'sunnah',icon:'📜',nameAr:'حُفّاظ السنة',nameEn:'Sunnah Keepers',descAr:'الأربعون النووية وقصص السنة',descEn:'The Forty Hadith & Sunnah stories',accent:'#6C4BD8',gradient:'linear-gradient(160deg,rgba(108,75,216,.24),transparent)',badge:'🌸 جديد',progress:0,character:{charNameAr:'كارما',charNameEn:'Karma',emoji:'👧',charQuoteAr:'أنا كارما، تعال نتعلّم كلام النبيّ ﷺ ونعمل به!',charQuoteEn:"I'm Karma — let's learn the Prophet's ﷺ words and live by them!"},featuresAr:[{icon:'🕌',text:'الأربعون النووية — احفظ وافهم واعمل، مع اختبارٍ وشهادة'},{icon:'🃏',text:'بطاقات الأربعين — راجِع واطبع مجّانًا'},{icon:'📖',text:'قصص السنة — ١٠٠ قصة من ١٠٠ حديثٍ صحيح'},{icon:'🌙',text:'مواقف النبي ﷺ — رحمته وأخلاقه مع الناس'}],featuresEn:[{icon:'🕌',text:'The Forty Hadith — memorize, understand & act, with a test and certificate'},{icon:'🃏',text:'Forty Hadith cards — review & print free'},{icon:'📖',text:'Sunnah Stories — 100 stories from 100 authentic hadiths'},{icon:'🌙',text:'Moments of the Prophet ﷺ — his mercy and character with people'}],url:'corners/treasures/sunnah.html',ready:true},
   {id:'social',icon:'🏘️',nameAr:'حيّنا الصغير',nameEn:'Our Little District',descAr:'البناء الاجتماعي والأخلاقي',descEn:'Social & Moral Building',accent:'#D4A017',gradient:'linear-gradient(160deg,rgba(212,160,23,.2),transparent)',badge:'👋',progress:0,character:{charNameAr:'نسيبة',charNameEn:'Nusaybah',emoji:'👧',charQuoteAr:'أنا نسيبة، لنحسن أخلاقنا!',charQuoteEn:"I'm Nusaybah, let's improve our manners!"},featuresAr:[{icon:'🗣️',text:'آداب الطفل المسلم — السلام والاستئذان والمجلس'},{icon:'🏠',text:'أخلاق الطفل المسلم — بيت الصدق وحصن الأمانة'},{icon:'🌟',text:'رحلة البحث عن الكنز — الإحسان والتواضع'}],featuresEn:[{icon:'🗣️',text:'Muslim Child Manners — greetings & etiquette'},{icon:'🏠',text:'Muslim Child Character — truth & trust'},{icon:'🌟',text:'Treasure Hunt — kindness & humility'}],url:'corners/little-district/pages/social.html',ready:true},
   {id:'heart',icon:'💚',nameAr:'ركن القلب السليم',nameEn:'Pure Heart Corner',descAr:'البناء العاطفي والنفسي',descEn:'Emotional & Spiritual Growth',accent:'#6C3483',gradient:'linear-gradient(160deg,rgba(108,52,131,.2),transparent)',badge:'🕊️',progress:0,character:{charNameAr:'رقية',charNameEn:'Ruqayyah',emoji:'👧',charQuoteAr:'أنا رقية، تعال نحب الله ونرضى!',charQuoteEn:"I'm Ruqayyah, let's love Allah and be content!"},featuresAr:[{icon:'🌙',text:'حبُّ الله — تعرّفْ إلى ربك بأسمائه الحسنى'},{icon:'🤍',text:'حبُّ الرسول ﷺ — اعرفه في ثماني محطّات فتحبّه'},{icon:'👨‍👩‍👧',text:'برُّ الوالدين — بابٌ إلى الجنّة'},{icon:'🤝',text:'الحبُّ في الله — أوثقُ عُرى الإيمان'},{icon:'💎',text:'سلامةُ القلب — قلبٌ مطمئنٌّ صافٍ'}],featuresEn:[{icon:'🌙',text:'Love of Allah — know your Lord by His Beautiful Names'},{icon:'🤍',text:'Love of the Prophet ﷺ — in eight stations'},{icon:'👨‍👩‍👧',text:'Honoring Parents — a gate to Paradise'},{icon:'🤝',text:"Love for Allah's Sake — the firmest handhold of faith"},{icon:'💎',text:'A Sound Heart — tranquil & pure'}],url:'corners/heroes-fortress/heart.html',ready:true},
   {id:'history',icon:'🏰',nameAr:'حصن الأبطال',nameEn:"Heroes' Fortress",descAr:'تاريخ الإسلام والقدوات',descEn:'Islamic History & Role Models',accent:'#E67E22',gradient:'linear-gradient(160deg,rgba(230,126,34,.2),transparent)',badge:'⚔️',progress:0,character:{charNameAr:'محمد',charNameEn:'Muhammad',emoji:'👦',charQuoteAr:'هيا نتعلم سيرة أبطالنا!',charQuoteEn:"Let's learn about our heroes!"},featuresAr:[{icon:'🕊️',text:'عصر الأنبياء — من آدم إلى عيسى عليهم السلام'},{icon:'📜',text:'السيرة النبوية — رحلة الـ ٢٣ عاماً التي غيّرت الأرض'},{icon:'🦅',text:'الأبطال — سير الصحابة والصحابيات الكرام'},{icon:'🌍',text:'المعارك والفتوحات — القادسية واليرموك وغيرها'}],featuresEn:[{icon:'🕊️',text:'Era of the Prophets — from Adam to Isa'},{icon:'📜',text:'The Seerah — the 23-year journey that changed the world'},{icon:'🦅',text:'The Heroes — lives of the noble Companions'},{icon:'🌍',text:'Battles & Conquests — Qadisiyyah, Yarmouk & more'}],url:'corners/heroes-fortress/fortress.html',ready:true},
@@ -961,7 +993,7 @@ const buildings = [ // home corners — order: faith, worship, quran, district, 
 /* Curriculum display order on the city map (holistic development of the child).
    Excludes nothing here — social stays; "Learn with Anous" exclusions are separate. */
 (function(){
-  var ORDER=['aqeeda','ibada','quran','history','social','heart','sport','academy','quds','hifz'];
+  var ORDER=['aqeeda','ibada','quran','sunnah','history','social','heart','sport','academy','quds'];
   buildings.sort(function(a,b){ var ia=ORDER.indexOf(a.id), ib=ORDER.indexOf(b.id); return (ia<0?99:ia)-(ib<0?99:ib); });
 })();
 
@@ -1004,9 +1036,21 @@ const parentsCorner = {
   descEn:'Educator Dashboard — progress tracking & parenting articles',
   accent:'#8E44AD',gradient:'linear-gradient(160deg,rgba(142,68,173,.2),transparent)',badge:'🎓',progress:60,
   characters:[{charNameAr:'المربي',charNameEn:'Al-Murabbi',emoji:'🧔'},{charNameAr:'المربية',charNameEn:'Al-Murabbiyah',emoji:'🧕'}],
-  featuresAr:[{icon:'📊',text:'متابعة دقيقة لتقدم الطفل في الأركان التسعة'},{icon:'📰',text:'مقالات إرشادية حول التربية الإسلامية المتوازنة'},{icon:'🖨️',text:'شهادات تميز PDF بالاسم — جاهزة للطباعة والاحتفاء'}],
-  featuresEn:[{icon:'📊',text:"Track your child's progress across all 9 pillars"},{icon:'📰',text:'Guidance articles on balanced Islamic Tarbiyah'},{icon:'🖨️',text:'Personalised PDF achievement certificates'}],
+  featuresAr:[{icon:'📊',text:'متابعة دقيقة لتقدم الطفل في الأركان العشرة'},{icon:'📰',text:'مقالات إرشادية حول التربية الإسلامية المتوازنة'},{icon:'🖨️',text:'شهادات تميز PDF بالاسم — جاهزة للطباعة والاحتفاء'}],
+  featuresEn:[{icon:'📊',text:"Track your child's progress across all 10 pillars"},{icon:'📰',text:'Guidance articles on balanced Islamic Tarbiyah'},{icon:'🖨️',text:'Personalised PDF achievement certificates'}],
   url:'corners/little-district/pages/parents.html',ready:true,
+};
+
+/* ONE home card for the three "doing" places (they keep their own pages) */
+const playCorner = {
+  id:'play',icon:'🎲',nameAr:'ساحة الأنشطة',nameEn:'Activities',
+  descAr:'صانع المهارات · أنشطة أنوس · ساحة المسابقات · ورشة الصانع الصغير',
+  descEn:"Skills Maker · Anos' activities · Competitions · Little Maker's Workshop",
+  accent:'#7A3FB0',gradient:'linear-gradient(160deg,rgba(122,63,176,.24),transparent)',badge:'🎲',progress:0,
+  characters:[{charNameAr:'أنوس',charNameEn:'Anos',emoji:'🧒'}],
+  featuresAr:[{icon:'🛠️',text:'صانع المهارات — رحلات التاجر والمؤرّخ والعالِم والطبيب والمهندس والمزارع، مع بودكاست'},{icon:'🎲',text:'أنشطة أنوس — ألعابٌ وتحدّيات من كلّ الأركان'},{icon:'🏆',text:'ساحة المسابقات — كوِّن اختبارك وتسابق واجمع النجوم'},{icon:'🧰',text:'ورشة الصانع الصغير — أشغالٌ يدوية وتجارب ومهمّات في الطبيعة'}],
+  featuresEn:[{icon:'🛠️',text:'Skills Maker — merchant, historian, scientist, doctor, engineer & farmer journeys, with a podcast'},{icon:'🎲',text:"Anos' activities — games & challenges from every corner"},{icon:'🏆',text:'Competitions — build your quiz, race & collect stars'},{icon:'🧰',text:"Little Maker's Workshop — crafts, experiments & nature missions"}],
+  url:'corners/activities/play.html',ready:true,
 };
 
 const anosCorner = {
@@ -1035,7 +1079,7 @@ const T = {
     ftBrand:'تربية الطفل المسلم', ftTagline:'منصّةٌ تربويّةٌ إسلاميّةٌ مجّانيّةٌ للأطفال — صدقةٌ جارية.',
     ftQuickT:'روابط سريعة', ftContactT:'تواصل معنا', ftPartnersT:'شركاؤنا',
     ftPartnersNote:'نفخر بالتعاون مع المؤسّسات التربويّة. كُن شريكًا في النفع.',
-    ft:{register:'👤 التسجيل / دخول', community:'👥 مجتمع العائلات', store:'🛍️ متجر الدعم', support:'🤝 ادعَمْنا', downloads:'📥 ركن التنزيلات',
+    ft:{register:'👤 التسجيل / دخول', community:'👥 مجتمع العائلات', store:'📚 المكتبة المجانية', support:'🤝 ادعَمْنا', downloads:'📥 ركن التنزيلات',
       email:'✉️ البريد الإلكتروني', whatsapp:'💬 واتساب', facebook:'👍 فيسبوك', linkedin:'🔗 لينكدإن', becomePartner:'🤝 كن شريكًا'},
     sectionLbl:'أركان تربية الطفل المسلم',
     enter:'ادخل الركن ←', progressText:'أُنجز',
@@ -1062,7 +1106,7 @@ const T = {
     ftBrand:'Muslim Kids’ Tarbiyah', ftTagline:'A free Islamic learning platform for children — an ongoing charity.',
     ftQuickT:'Quick Links', ftContactT:'Contact Us', ftPartnersT:'Our Partners',
     ftPartnersNote:'We’re proud to collaborate with educational institutions. Be a partner in benefit.',
-    ft:{register:'👤 Register / Log in', community:'👥 Family Community', store:'🛍️ Support Store', support:'🤝 Support Us', downloads:'📥 Downloads',
+    ft:{register:'👤 Register / Log in', community:'👥 Family Community', store:'📚 Free Library', support:'🤝 Support Us', downloads:'📥 Downloads',
       email:'✉️ Email', whatsapp:'💬 WhatsApp', facebook:'👍 Facebook', linkedin:'🔗 LinkedIn', becomePartner:'🤝 Become a partner'},
     sectionLbl:'Corners of Muslim Kids’ Tarbiyah',
     enter:'Enter Corner →', progressText:'Done',
@@ -1358,7 +1402,7 @@ function renderTicker() {
 ══════════════════════════════════════════════════ */
 function renderParade() {
   const parade = document.getElementById('charsParade');
-  if(!window.__bSorted){window.__bSorted=1;var __o=['aqeeda','ibada','quran','social','heart','history','sport','academy','quds','hifz'];buildings.sort(function(a,b){return __o.indexOf(a.id)-__o.indexOf(b.id);});}
+  if(!window.__bSorted){window.__bSorted=1;var __o=['aqeeda','ibada','quran','sunnah','social','heart','history','sport','academy','quds'];buildings.sort(function(a,b){return __o.indexOf(a.id)-__o.indexOf(b.id);});}
   parade.innerHTML = buildings.map((b,i) => {
     const c = b.character;
     const name = lang==='ar' ? c.charNameAr : c.charNameEn;
@@ -1385,7 +1429,7 @@ function closeSidebar(){document.getElementById('sidebarDrawer').classList.remov
 function renderSidebar() {
   const nav = document.getElementById('sidebarNav');
   const t = T[lang];
-  nav.innerHTML = [...buildings, storiesCorner, workshopCorner, competitionsCorner, parentsCorner, anosCorner].map(b => {
+  nav.innerHTML = [...buildings, storiesCorner, playCorner, parentsCorner].map(b => {
     const name = lang==='ar' ? b.nameAr : b.nameEn;
     const pct = b.progress || 0;
     const locked = !!(window.MK && MK.isLocked(b.id));
@@ -1395,12 +1439,15 @@ function renderSidebar() {
       <div class="sb-prog-mini"><div class="sb-prog-mini-fill" style="width:${pct}%;${b.accent}"></div></div>
       <span class="sb-item-pct">${pct}%</span>
     </a>`;
-  }).join('') + `<a href="corners/shared/downloads.html?lang=${lang}" class="sb-item" style="--item-color:#3FA796" onclick="closeSidebar()">
+  }).join('') + `<a href="corners/news/index.html?lang=${lang}" class="sb-item" style="--item-color:#1F6F8B" onclick="closeSidebar()">
+      <div class="sb-icon">📰</div>
+      <span class="sb-item-name">${lang==='ar'?'نشرة الأسبوع':'Weekly News'}</span>
+    </a>` + `<a href="corners/shared/downloads.html?lang=${lang}" class="sb-item" style="--item-color:#3FA796" onclick="closeSidebar()">
       <div class="sb-icon">📥</div>
       <span class="sb-item-name">${lang==='ar'?'ركن التنزيلات':'Downloads'}</span>
     </a>` + `<a href="corners/shared/store.html?lang=${lang}" class="sb-item" style="--item-color:#1F8A5B" onclick="closeSidebar()">
-      <div class="sb-icon">🛍️</div>
-      <span class="sb-item-name">${lang==='ar'?'متجر الدعم':'Support Store'}</span>
+      <div class="sb-icon">📚</div>
+      <span class="sb-item-name">${lang==='ar'?'المكتبة المجانية':'Free Library'}</span>
     </a>` + `<a href="corners/shared/community.html?lang=${lang}" class="sb-item" style="--item-color:#2980B9" onclick="closeSidebar()" data-community-badge>
       <div class="sb-icon">👥</div>
       <span class="sb-item-name">${lang==='ar'?'مجتمع العائلات':'Community'}</span>
@@ -1411,7 +1458,7 @@ function sbGuard(e, id, url){
   if(window.MK && MK.isLocked(id) && MK.hasPin()){
     e.preventDefault();
     closeSidebar();
-    var b = [...buildings, storiesCorner, workshopCorner, competitionsCorner, parentsCorner, anosCorner].find(x=>x.id===id) || {id:id, url:url};
+    var b = [...buildings, storiesCorner, playCorner, workshopCorner, competitionsCorner, parentsCorner, anosCorner].find(x=>x.id===id) || {id:id, url:url};
     tryEnterCorner(b);
     return false;
   }
@@ -1470,13 +1517,36 @@ function refreshProgress() {
   } catch (e) {}
 }
 
+
+/* «أكمِل من حيث توقّفت»: one card to the active child's last learning page */
+/* «📰 نشرة الأسبوع» strip: today's event if there is one, else the issue number */
+function renderNews(){
+  var el=document.getElementById('mkNews'); if(!el||!window.MKNews) return;
+  var ar=lang==='ar', N=MKNews, d=N.noon(new Date()), ev=N.eventsOn(d)[0], wk=N.week(d);
+  var esc=function(x){ return String(x).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];}); };
+  el.href='corners/news/index.html?lang='+lang;
+  el.innerHTML = ev
+    ? '<span class="ic">'+(ev.icon||'📅')+'</span><span class="tx"><span class="k">📅 '+(ar?'حدث في مثل هذا اليوم':'On this day')+'</span><b>'+esc(ar?ev.t[0]:ev.t[1])+'</b></span><span class="go">📰 '+(ar?'النشرة ←':'News →')+'</span>'
+    : '<span class="ic">📰</span><span class="tx"><span class="k">'+(ar?'نشرة الأسبوع — العدد '+wk.edition.toLocaleString('ar-EG'):'This week’s news — issue '+wk.edition)+'</span><b>'+(ar?'شهرنا، آية وحديث الأسبوع، ومهمّة للعائلة':'Our month, verse & hadith of the week, a family mission')+'</b></span><span class="go">'+(ar?'اقرأ ←':'Read →')+'</span>';
+  el.hidden=false;
+}
+function renderContinue(){
+  var el=document.getElementById('mkContinue'); if(!el) return;
+  var o=null; try{ o=JSON.parse(localStorage.getItem('mk_last')||'null'); }catch(e){}
+  if(!o||!o.href||!/^corners\//.test(o.href)){ el.hidden=true; return; }
+  var ar=lang==='ar', esc=function(x){ return String(x).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];}); };
+  var cn=o.corner?(ar?o.corner.ar:o.corner.en):'';
+  el.href=o.href+(o.href.indexOf('?')<0?'?':'&')+'lang='+lang;
+  el.innerHTML='<span class="ic">'+esc(o.icon||'📖')+'</span><span class="tx"><span class="k">'+(ar?'▶ أكمِل من حيث توقّفت':'▶ Continue where you stopped')+'</span><b>'+esc(o.title)+'</b>'+(cn?'<small>'+esc(cn)+'</small>':'')+'</span><span class="go">'+(ar?'تابِع ←':'Go →')+'</span>';
+  el.hidden=false;
+}
 function renderMap() {
   const map = document.getElementById('cityMap');
   syncLiveProgress();
   map.innerHTML = '';
   const t = T[lang];
 
-  if(!window.__bSorted){window.__bSorted=1;var __o=['aqeeda','ibada','quran','social','heart','history','sport','academy','quds','hifz'];buildings.sort(function(a,b){return __o.indexOf(a.id)-__o.indexOf(b.id);});}
+  if(!window.__bSorted){window.__bSorted=1;var __o=['aqeeda','ibada','quran','sunnah','social','heart','history','sport','academy','quds'];buildings.sort(function(a,b){return __o.indexOf(a.id)-__o.indexOf(b.id);});}
   buildings.forEach((b, i) => {
     const name = lang==='ar' ? b.nameAr : b.nameEn;
     const nameAlt = lang==='ar' ? b.nameEn : b.nameAr;
@@ -1567,13 +1637,12 @@ function renderMap() {
   }
 
   special.appendChild(makeSpecialCard(storiesCorner, 0));
-  special.appendChild(makeSpecialCard(workshopCorner, 1));
-  special.appendChild(makeSpecialCard(competitionsCorner, 2));
-  special.appendChild(makeSpecialCard(parentsCorner, 3));
-  special.appendChild(makeSpecialCard(anosCorner, 4));
+  special.appendChild(makeSpecialCard(playCorner, 1));        // أنشطة أنوس + المسابقات + الورشة — one card
   map.appendChild(special);
 
   renderSidebar();
+  renderContinue();
+  renderNews();
   setTimeout(renderParade, 0);   // defer decorative character row past first paint
 }
 
@@ -1767,5 +1836,8 @@ document.addEventListener('keydown', e => { if (e.key==='Escape') { closeModalBt
 })();
 </script>
 <script src="corners/shared/mk-notify.js"></script>
+<script defer src="corners/shared/mk-a11y.js"></script>
+<script defer src="corners/news/data/on-this-day.js"></script>
+<script defer src="corners/news/news-core.js" onload="try{renderNews()}catch(e){}"></script>
 </body>
 </html>

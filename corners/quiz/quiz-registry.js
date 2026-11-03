@@ -138,10 +138,10 @@ window.QUIZ_REG = {
     ],
   },
 
-  /* ───────────── 📖 بستان القرآن والسنة (single-page ?j=) ───────────── */
+  /* ───────────── 📖 بستان القرآن (single-page ?j=) ───────────── */
   quran: {
     page: 'quran-tests', index: 'quran', stationsGlobal: 'QURAN_QUIZ', richProfile: 'academy',
-    title: { ar: 'بستان القرآن والسنة', en: 'Quran & Sunnah Garden' }, icon: '📖',
+    title: { ar: 'بستان القرآن', en: 'Quran Garden' }, icon: '📖',
     journeys: [
       { id: 'surahs',     icon: '📜', title: { ar: 'السور القصيرة',  en: 'Short Surahs' } },
       { id: 'stories',    icon: '🏛️', title: { ar: 'قصص القرآن',     en: "Qur'anic Stories" } },

@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>نشرة الأسبوع | Weekly News</title>
+<meta name="description" content="نشرة الأسبوع الإسلامية للأطفال: حدث في مثل هذا اليوم، شهرنا الهجري، آية وحديث الأسبوع، ومهمّة للعائلة — تتجدّد كلّ أسبوع.">
+<link rel="icon" href="../../favicon.ico">
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&family=Nunito:wght@400;700;800;900&family=Amiri:wght@400;700&family=Amiri+Quran&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../treasures/tr.css">
+<style>
+  .nw-mast{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:.6rem;background:#fff;border:2px solid var(--acc);border-radius:20px;padding:.8rem 1rem;margin-bottom:1rem;box-shadow:var(--shadow)}
+  .nw-mast b{font-size:1.15rem}.nw-mast small{display:block;color:var(--muted);font-weight:700}
+  .nw-ed{background:var(--acc);color:#fff;border-radius:999px;padding:.3rem .8rem;font-weight:900;font-size:.85rem;white-space:nowrap}
+  .nw-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1rem}
+  .nw-box{background:#fff;border:2px solid var(--line);border-radius:20px;padding:1rem 1.1rem;box-shadow:var(--shadow)}
+  .nw-box.wide{grid-column:1/-1}
+  .nw-box h3{display:flex;align-items:center;gap:.4rem;font-size:1.02rem;color:var(--acc);margin:0 0 .5rem}
+  .nw-box p{margin:.25rem 0;line-height:1.85}
+  .nw-ayah{font-family:'Amiri Quran',Amiri,serif;font-size:1.35rem;line-height:2;text-align:center;color:var(--ink)}
+  .nw-ref{color:var(--muted);font-size:.85rem;text-align:center}
+  .nw-ev{display:flex;gap:.7rem;align-items:flex-start;padding:.6rem 0;border-top:1px dashed var(--line)}
+  .nw-ev:first-of-type{border-top:0}
+  .nw-ev .ic{flex:0 0 46px;height:46px;border-radius:14px;display:grid;place-items:center;font-size:1.5rem;background:color-mix(in srgb,var(--acc) 12%,#fff)}
+  .nw-ev .tx{flex:1;min-width:0}
+  .nw-ev b{display:block;font-size:1.02rem}
+  .nw-ev .when{font-size:.78rem;font-weight:800;color:var(--acc)}
+  .nw-ev .ls{font-size:.88rem;color:var(--muted)}
+  .nw-ev a{font-weight:800;color:var(--acc);font-size:.85rem}
+  .nw-note{font-size:.78rem;color:var(--muted);margin-top:.5rem}
+  .nw-pick{display:flex;align-items:center;gap:.6rem;text-decoration:none;color:var(--ink);font-weight:800}
+  .nw-pick .ic{font-size:1.8rem}
+  .nw-day{display:flex;align-items:center;justify-content:center;gap:.6rem;margin-bottom:1rem;flex-wrap:wrap}
+  .nw-day .d{min-width:220px;text-align:center;font-weight:900}
+  .nw-day .d small{display:block;color:var(--muted);font-weight:700}
+  .nw-empty{color:var(--muted);text-align:center;padding:1rem}
+  .nw-print{display:flex;justify-content:center;margin-top:1.2rem}
+  @media print{.tr-top,.tr-tabs,.nw-print,.tr-foot,.tr-next,#mkA11yBtn,#mkBag,#mkCityNav,.tr-guide{display:none!important}.nw-box{break-inside:avoid;box-shadow:none}}
+</style>
+</head>
+<body>
+<div id="tr-root"></div>
+<script src="data/on-this-day.js"></script>
+<script src="data/weekly.js"></script>
+<script src="../little-district/pages/hadith-data/_index.js"></script>
+<script src="news-core.js"></script>
+<script>
+(function () {
+  var R = '../../';
+  /* «من الموقع هذا الأسبوع» — one place in the site to visit, rotating weekly */
+  var PICKS = [
+    ['🛍️', 'التاجر الصغير', 'The Little Merchant', 'corners/skills/merchant.html'],
+    ['📖', 'قصص السنة', 'Sunnah Stories', 'corners/treasures/hadith-stories.html'],
+    ['✨', 'أسماء الله الحسنى', 'Names of Allah', 'corners/treasures/names-cards.html'],
+    ['🔬', 'العالِم الصغير', 'The Little Scientist', 'corners/skills/scientist.html'],
+    ['🕋', 'المعالم والخرائط', 'Landmarks & Maps', 'corners/treasures/landmarks.html'],
+    ['🌙', 'مواقف النبي ﷺ', 'Moments of the Prophet ﷺ', 'corners/treasures/prophet-moments.html'],
+    ['🩺', 'الطبيب الصغير', 'The Little Doctor', 'corners/skills/doctor.html'],
+    ['📿', 'معاني الأذكار', 'Meanings of Adhkar', 'corners/treasures/adhkar.html'],
+    ['🧭', 'مستكشف التاريخ', 'The History Explorer', 'corners/skills/historian.html'],
+    ['🤲', 'العبودية وتعظيم الله', 'Servanthood & Glorifying Allah', 'corners/treasures/ubudiyah.html'],
+    ['🏗️', 'المهندس الصغير', 'The Little Engineer', 'corners/skills/engineer.html'],
+    ['🧭', 'جولات افتراضية', 'Virtual Tours', 'corners/treasures/tours.html'],
+    ['🌱', 'المزارع الصغير', 'The Little Farmer', 'corners/skills/farmer.html'],
+    ['🎉', 'الأعياد في العبادات', 'Eids in Worship', 'corners/treasures/eids.html']
+  ];
+  var N = window.MKNews, W = window.MK_WEEKLY || {}, H = window.HADITH_INDEX || [];
+  var today = N.noon(new Date()), wk = N.week(today), view = today;
+
+  function evHtml(TR, e, when) {
+    var ar = TR.ar(), ago = N.ago(e, today), yl = N.yearLabel(e, ar);
+    return '<div class="nw-ev"><span class="ic">' + (e.icon || '📜') + '</span><span class="tx">' +
+      '<span class="when">' + (when ? TR.esc(when) + ' · ' : '') + (yl ? TR.esc(yl) : TR.tx('كلّ عام', 'every year')) + (ago && ago > 0 ? ' · ' + TR.tx('قبل ' + ago.toLocaleString('ar-EG', { useGrouping: false }) + ' عامًا', ago + ' years ago') : '') + (e.sure === false ? ' · ' + TR.tx('على الأرجح', 'most common view') : '') + '</span>' +
+      '<b>' + TR.esc(TR.t({ ar: e.t[0], en: e.t[1] })) + '</b>' +
+      '<p>' + TR.t({ ar: e.s[0], en: e.s[1] }) + '</p>' +
+      (e.lesson ? '<p class="ls">🌱 ' + TR.t({ ar: e.lesson[0], en: e.lesson[1] }) + '</p>' : '') +
+      (e.link ? '<a href="' + R + e.link + '">' + TR.tx('اقرأ أكثر ←', 'Read more →') + '</a>' : '') +
+      '</span></div>';
+  }
+  function dayName(TR, d) { return N.fmtGreg(d, TR.ar()).replace(/[,،]?\s*\d{4}.*$/, '').replace(/\s*[٠-٩]{4}.*$/, ''); }
+
+  function weekly(TR) {
+    var ar = TR.ar(), i = wk.index, h = N.hijri(today);
+    var mo = h && W.months ? W.months[h.m] : null;
+    var v = N.pick(W.verses, i), m = N.pick(W.missions, i), q = N.pick(W.questions, i), f = N.pick(W.facts, i), had = N.pick(H, i), pk = N.pick(PICKS, i);
+    var todayEv = N.eventsOn(today), next = N.upcoming(7, today);
+    var html = '<div class="nw-mast"><div><b>📰 ' + TR.tx('نشرة الأسبوع', 'This week’s news') + '</b><small>' + TR.esc(N.fmtGreg(today, ar)) + ' · ' + TR.esc(N.fmtHijri(today, ar)) + '</small></div>' +
+      '<span class="nw-ed">' + TR.tx('العدد ' + wk.edition.toLocaleString('ar-EG'), 'Issue ' + wk.edition) + '</span></div><div class="nw-grid">';
+    html += '<section class="nw-box wide"><h3>📅 ' + TR.tx('حدث في مثل هذا اليوم', 'On this day') + '</h3>' +
+      (todayEv.length ? todayEv.map(function (e) { return evHtml(TR, e); }).join('') :
+        (next.length ? '<p class="nw-empty" style="text-align:start;padding:0">' + TR.tx('لا نعرف حدثًا مشهورًا بتاريخ اليوم — وهذا أقرب حدثٍ قادم:', 'We know of no famous event dated today — here is the next one:') + '</p>' + evHtml(TR, next[0].events[0], dayName(TR, next[0].date)) : '<p class="nw-empty">' + TR.tx('لا أحداث مسجّلة لهذا الأسبوع.', 'No events recorded for this week.') + '</p>')) +
+      '<p class="nw-note">🗓️ ' + TR.tx('التاريخ الهجري حسب تقويم أمّ القرى، وقد يختلف يومًا حسب رؤية الهلال في بلدك.', 'The Hijri date follows the Umm al-Qura calendar and may differ by a day from the moon sighting in your country.') + '</p></section>';
+    if (mo) html += '<section class="nw-box"><h3>' + (mo.icon || '🌙') + ' ' + TR.tx('شهرنا: ', 'Our month: ') + TR.esc(ar ? mo.name[0] : mo.name[1]) + '</h3><p>' + (ar ? mo.note[0] : mo.note[1]) + '</p>' + (mo.todo ? '<p class="ls">🎯 ' + (ar ? mo.todo[0] : mo.todo[1]) + '</p>' : '') + '</section>';
+    if (v) html += '<section class="nw-box"><h3>📖 ' + TR.tx('آية الأسبوع', 'Verse of the week') + '</h3><div class="nw-ayah">' + v.a + '</div><div class="nw-ref">' + TR.esc(ar ? v.ref[0] : v.ref[1]) + '</div>' + (!ar && v.en ? '<p>' + TR.esc(v.en) + '</p>' : '') + (v.tip ? '<p class="ls">💡 ' + (ar ? v.tip[0] : v.tip[1]) + '</p>' : '') + '</section>';
+    if (had) html += '<section class="nw-box"><h3>💬 ' + TR.tx('حديث الأسبوع', 'Hadith of the week') + '</h3><p><b>' + had.emoji + ' ' + TR.esc(ar ? had.titleAr : had.titleEn) + '</b></p><p class="ls">' + TR.tx('من الأربعين النووية — الحديث ', 'From the Forty Hadith — no. ') + had.num.toLocaleString(ar ? 'ar-EG' : 'en') + ' · ' + TR.esc(ar ? had.themeAr : had.themeEn) + '</p><a class="tr-btn ghost" href="' + R + 'corners/treasures/hadith-cards.html#' + had.slug + '">🃏 ' + TR.tx('اقلب بطاقته', 'Flip its card') + '</a> <a class="tr-btn ghost" href="' + R + 'corners/little-district/pages/hadith.html">🕌 ' + TR.tx('تعلّمه', 'Learn it') + '</a></section>';
+    if (next.length) html += '<section class="nw-box"><h3>🗓️ ' + TR.tx('هذا الأسبوع في التاريخ', 'This week in history') + '</h3>' + next.slice(0, 4).map(function (x) { return evHtml(TR, x.events[0], dayName(TR, x.date)); }).join('') + '</section>';
+    if (m) html += '<section class="nw-box"><h3>🎯 ' + TR.tx('مهمّة الأسبوع للعائلة', 'Family mission of the week') + '</h3><p>' + (m.icon || '') + ' ' + (ar ? m.t[0] : m.t[1]) + '</p></section>';
+    if (q) html += '<section class="nw-box"><h3>❓ ' + TR.tx('سؤال الأسبوع على المائدة', 'Dinner-table question') + '</h3><p>' + (ar ? q[0] : q[1]) + '</p></section>';
+    if (f) html += '<section class="nw-box"><h3>💡 ' + TR.tx('هل تعلم؟', 'Did you know?') + '</h3><p>' + (f.icon || '') + ' ' + (ar ? f.t[0] : f.t[1]) + '</p></section>';
+    if (pk) html += '<section class="nw-box"><h3>✨ ' + TR.tx('من موقعنا هذا الأسبوع', 'From our site this week') + '</h3><a class="nw-pick" href="' + R + pk[3] + '"><span class="ic">' + pk[0] + '</span><span>' + TR.esc(ar ? pk[1] : pk[2]) + ' ←</span></a></section>';
+    html += '</div><div class="nw-print"><button class="tr-btn ghost" onclick="window.print()">🖨️ ' + TR.tx('اطبع النشرة للثلاجة', 'Print for the fridge') + '</button></div>';
+    return html;
+  }
+  function dayPanel(el, TR) {
+    function draw() {
+      var ar = TR.ar(), ev = N.eventsOn(view);
+      el.innerHTML = '<div class="nw-day"><button class="tr-btn ghost" id="nwPrev">' + (ar ? '→' : '←') + ' ' + TR.tx('أمس', 'Previous') + '</button>' +
+        '<div class="d">' + TR.esc(N.fmtGreg(view, ar)) + '<small>' + TR.esc(N.fmtHijri(view, ar)) + '</small></div>' +
+        '<button class="tr-btn ghost" id="nwNext">' + TR.tx('غدًا', 'Next') + ' ' + (ar ? '←' : '→') + '</button>' +
+        (view.getTime() !== today.getTime() ? '<button class="tr-btn" id="nwToday">' + TR.tx('اليوم', 'Today') + '</button>' : '') + '</div>' +
+        '<div class="nw-box">' + (ev.length ? ev.map(function (e) { return evHtml(TR, e); }).join('') : '<p class="nw-empty">' + TR.tx('لا نعرف حدثًا مشهورًا مؤكَّد التاريخ في هذا اليوم. جرّب يومًا آخر!', 'No famous event with a certain date on this day. Try another day!') + '</p>') + '</div>' +
+        '<p class="nw-note">📚 ' + TR.tx('نذكر الأحداث المعروفة تواريخها، ونكتب «على الأرجح» حين يختلف المؤرّخون.', 'We list events with known dates, and write "most common view" where historians differ.') + '</p>';
+      el.querySelector('#nwPrev').onclick = function () { view = new Date(view.getTime() - N.DAY); draw(); };
+      el.querySelector('#nwNext').onclick = function () { view = new Date(view.getTime() + N.DAY); draw(); };
+      var t = el.querySelector('#nwToday'); if (t) t.onclick = function () { view = today; draw(); };
+    }
+    draw();
+  }
+  window.TR_PAGE = {
+    id: 'news', icon: '📰', color: '#1F6F8B',
+    back: { href: R + 'index.html', label: { ar: 'المدينة', en: 'City' } },
+    title: { ar: 'نشرة الأسبوع', en: 'Weekly News' },
+    intro: { ar: 'نشرةٌ إسلامية هادئة تتجدّد كلّ أسبوع: حدث في مثل هذا اليوم، وشهرنا الهجري، وآية وحديث، ومهمّة للعائلة 🌿', en: 'A calm Islamic newsletter, new every week: on this day, our Hijri month, a verse and a hadith, and a family mission 🌿' },
+    guide: { icon: '🧕', name: { ar: 'المربية', en: 'Al-Murabbiyah' }, say: { ar: 'اقرؤوا النشرة معًا على مائدة الأسبوع، واختاروا مهمّةً واحدة تنفّذونها قبل العدد القادم 💚', en: 'Read the newsletter together at the weekly table, and pick one mission to do before the next issue 💚' } },
+    panels: [{ id: 'otd', icon: '📅', label: { ar: 'حدث في مثل هذا اليوم', en: 'On this day' }, render: dayPanel }],
+    onRender: function (TR) { document.querySelector('[data-panel="kids"]').innerHTML = weekly(TR); },
+    parents: {
+      ar: '<h3>كيف نستفيد من النشرة؟</h3><ul><li>تتجدّد تلقائيًا كلّ يوم أحد — لا تحتاج إلى إنترنت ولا تسجيل.</li><li>اطبعوها وعلّقوها على الثلاجة، واقرؤوا «سؤال الأسبوع» على العشاء.</li><li>«حدث في مثل هذا اليوم» يذكر الأحداث المعروفة تواريخها فقط، ويكتب «على الأرجح» حين يختلف المؤرّخون.</li><li>التاريخ الهجري حسب تقويم أمّ القرى، وقد يختلف يومًا عن رؤية الهلال في بلدكم.</li></ul>',
+      en: '<h3>How to use the newsletter</h3><ul><li>It renews by itself every Sunday — no internet or sign-up needed.</li><li>Print it for the fridge and ask the "dinner-table question" together.</li><li>"On this day" lists only events with known dates, and says "most common view" where historians differ.</li><li>The Hijri date follows the Umm al-Qura calendar and may differ by a day from the moon sighting where you live.</li></ul>'
+    }
+  };
+})();
+</script>
+<script src="../treasures/tr.js"></script>
+<script defer src="../shared/mk-system.js"></script>
+<script defer src="../shared/mk-journeys.js"></script>
+<script defer src="../shared/mk-bag.js"></script>
+</body>
+</html>

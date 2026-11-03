@@ -33,8 +33,8 @@
   .bag-points .ps{font-weight:800;color:var(--muted);font-size:.85rem}
 
   /* STAT TILES */
-  .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:.8rem;margin-bottom:1.6rem}
-  @media(max-width:560px){.stats{grid-template-columns:repeat(2,1fr)}}
+  .stats{display:grid;grid-template-columns:repeat(5,1fr);gap:.8rem;margin-bottom:1.6rem}
+  @media(max-width:560px){.stats{grid-template-columns:repeat(3,1fr)}}
   .stat{background:var(--card);border:1.5px solid var(--line);border-radius:1.2rem;padding:1rem .6rem;text-align:center;display:flex;flex-direction:column;gap:.2rem}
   .stat .si{font-size:1.7rem}
   .stat b{font-size:1.6rem;font-weight:900;color:var(--gold-lt)}
@@ -123,12 +123,19 @@
       <div class="stat"><span class="si">📜</span><b id="stCerts">0</b><span><span class="lng-ar">شهادات</span><span class="lng-en">Certificates</span></span></div>
       <div class="stat"><span class="si">🗺️</span><b id="stJourneys">0</b><span><span class="lng-ar">رحلات</span><span class="lng-en">Journeys</span></span></div>
       <div class="stat"><span class="si">🎁</span><b id="stRewards">0</b><span><span class="lng-ar">جوائز</span><span class="lng-en">Rewards</span></span></div>
+      <div class="stat"><span class="si">⭐</span><b id="stStars">0</b><span><span class="lng-ar">نجوم</span><span class="lng-en">Stars</span></span></div>
     </div>
 
     <!-- CORNER PROGRESS -->
     <div class="sec">
       <div class="sec-h"><span class="si">🏙️</span><h2><span class="lng-ar">تقدّمي في الأركان</span><span class="lng-en">My Progress</span></h2></div>
       <div class="corner-list" id="cornerList"></div>
+    </div>
+
+    <!-- STARS FROM EVERY PLACE (garden, cards, stories) -->
+    <div class="sec">
+      <div class="sec-h"><span class="si">⭐</span><h2><span class="lng-ar">نجومي في القرآن والسنة والبطاقات</span><span class="lng-en">My Stars: Quran, Sunnah &amp; Cards</span></h2><span class="sn" id="starCount"></span></div>
+      <div class="corner-list" id="starList"></div>
     </div>
 
     <!-- CERTIFICATES -->
@@ -210,8 +217,10 @@
       });
     }
     var rew=rewardsList();
-    var pts=stationPts+(prof?bpsPoints(prof.id):0);
-    return { prof:prof, perCorner:perCorner, badges:badges, certs:certs, journeysDone:journeysDone, points:pts, rewards:rew };
+    var sr=(window.MK&&MK.stars)?MK.stars():[], stars=sr.reduce(function(a,r){return a+r.done;},0);
+    var extra=sr.reduce(function(a,r){return a+(r.journey?0:r.done);},0);   // ⭐ 5 points each for stars that are not journey stations (those got 10 above) — same as mk-bag.js
+    var pts=stationPts+extra*5+(prof?bpsPoints(prof.id):0);
+    return { prof:prof, perCorner:perCorner, badges:badges, certs:certs, journeysDone:journeysDone, points:pts, rewards:rew, stars:stars, starRows:sr };
   }
 
   function earned(){ return (window.MK_JOURNEYS||[]).map(function(j){ return Object.assign({},j,{done:MK_J.completedOf(j)}); }).filter(function(j){ return j.done>0; }); }
@@ -231,6 +240,15 @@
 
   function render(){
     var ar=lang==='ar', d=collect();
+    // ⭐ stars from every place — started ones first; untouched ones stay listed (calm invitation, no pressure)
+    document.getElementById('starCount').textContent='⭐ '+d.stars;
+    document.getElementById('stStars').textContent=d.stars;
+    document.getElementById('starList').innerHTML=d.starRows.slice().sort(function(a,b){ return (b.done>0)-(a.done>0); }).map(function(r){
+      var pct=r.total?Math.round(r.done/r.total*100):0;
+      return '<a class="crow" style="text-decoration:none;color:inherit" href="'+r.href+'"><span class="c-ic">'+r.icon+'</span><div class="c-mid"><div class="c-nm">'+(ar?r.name.ar:r.name.en)+'</div>'
+        +(r.total?'<div class="c-bar"><i style="width:'+pct+'%;background:'+r.color+'"></i></div>':'')+'</div>'
+        +'<span class="c-pct">'+(r.total?(r.done+'/'+r.total):('⭐ '+r.done))+'</span></a>';
+    }).join('');
     // hero
     if(d.prof){
       document.getElementById('bagAvi').textContent=d.prof.avatar||'🧒';
@@ -344,6 +362,7 @@
   function closePrint(){ document.getElementById('printOv').classList.remove('open'); }
 
   function boot(){ applyLang(); }
+  window.addEventListener('mk-cloud-restored', function(){ try{ render(); }catch(e){} });   // a child's progress just arrived from the server
   if(window.MK&&window.MK_J){ boot(); }
   else { var t=setInterval(function(){ if(window.MK&&window.MK_J){ clearInterval(t); boot(); } },60); setTimeout(function(){ clearInterval(t); boot(); },2000); }
 </script>

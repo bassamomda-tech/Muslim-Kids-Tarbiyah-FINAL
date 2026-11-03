@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>جولات افتراضية في التاريخ | Virtual History Tours</title>
+<meta name="description" content="جولات افتراضية مجانية للأطفال في التاريخ الإسلامي: الهجرة النبوية، بيت المقدس، الأندلس، القاهرة، دمشق وبغداد — على خريطة تفاعلية محطّةً بعد محطّة.">
+<link rel="icon" href="../../favicon.ico">
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&family=Nunito:wght@400;700;800;900&family=Amiri:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="tr.css">
+<style>
+  /* tour list + calm tour player (page-local) */
+  .tp-list{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:1rem}
+  .tp-tour{display:flex;gap:.8rem;align-items:center;background:#fff;border:2px solid var(--line);border-radius:20px;padding:1rem;box-shadow:var(--shadow);text-align:start;color:var(--ink);width:100%;font:inherit;transition:transform .2s,border-color .2s}
+  .tp-tour:hover,.tp-tour:focus-visible{transform:translateY(-3px);border-color:var(--acc);outline:none}
+  .tp-tour .ic{flex:0 0 58px;height:58px;border-radius:16px;display:grid;place-items:center;font-size:2rem;background:var(--acc-soft)}
+  .tp-tour .t{font-weight:900;font-size:1.05rem;line-height:1.4;display:block}
+  .tp-tour .s{color:var(--muted);font-size:.84rem;line-height:1.5;display:block}
+  .tp-tour .m{font-size:.78rem;font-weight:800;color:var(--acc);display:block;margin-top:.15rem}
+  .tp-head{display:flex;align-items:center;gap:.6rem;margin-bottom:.7rem}
+  .tp-head h3{flex:1;font-size:1.1rem;font-weight:900;color:var(--acc);line-height:1.4}
+  .tp-steps{display:flex;gap:.3rem;justify-content:center;margin:.7rem 0}
+  .tp-steps button{width:30px;height:30px;border-radius:50%;border:2px solid var(--acc);background:#fff;color:var(--acc);font-weight:900;font-size:.8rem;padding:0}
+  .tp-steps button.on{background:var(--acc);color:#fff}
+  .tp-steps button.seen{background:var(--acc-soft)}
+  .tp-card{background:#fff;border:1px solid var(--line);border-radius:20px;padding:1rem 1.1rem 1.2rem;box-shadow:var(--shadow)}
+  .tp-card h4{font-size:1.25rem;font-weight:900;margin:.8rem 0 .3rem;color:var(--ink)}
+  .tp-card .when{color:var(--acc);font-weight:800;font-size:.85rem}
+  .tp-card p.nar{font-size:1.08rem;line-height:2}
+  .tp-know{background:var(--acc-soft);border-radius:14px;padding:.6rem .9rem;margin-top:.7rem;font-weight:600}
+  .tp-done{text-align:center;padding:1.5rem 1rem}
+  .tp-done .big{font-size:4rem}
+</style>
+</head>
+<body>
+<div id="tr-root"></div>
+<script src="tr-map.js"></script>
+<script>
+/* Virtual history tours — one calm station at a time.
+   Map: Leaflet/OSM (flyTo each station, route drawn as you go);
+   offline → SVG sketch. Finished tours are kept in tr:tours. */
+(function () {
+  function st(lat, lng, z, img, emoji, title, when, text, know, q) { return { lat: lat, lng: lng, z: z, img: img, emoji: emoji, title: title, when: when, text: text, know: know, q: q }; }
+  function Q(qa, qe, right, w1, w2) { return { q: { ar: qa, en: qe }, opts: [{ t: right, ok: true }, { t: w1 }, { t: w2 }] }; }
+
+  var TOURS = [
+    { id: 'hijra', icon: '🐪', title: { ar: 'رحلة الهجرة النبوية', en: 'The Prophet\'s Hijrah' }, sub: { ar: 'من مكّة إلى المدينة — سنة ١ هـ', en: 'From Makkah to Madinah — 1 AH' }, stations: [
+      st(21.4225, 39.8262, 11, 'Kaaba_mirror_edit_jj.jpg', '🌙', { ar: 'مكّة المكرّمة: الخروج ليلًا', en: 'Makkah: leaving by night' }, { ar: 'سنة ١ هـ / ٦٢٢م', en: '1 AH / 622 CE' },
+        { ar: 'اشتدّ أذى قريش على المسلمين، فأذن الله لنبيّه ﷺ بالهجرة إلى المدينة. خرج النبيُّ ﷺ ليلًا مع صاحبه أبي بكر الصدّيق رضي الله عنه. وبقي عليٌّ رضي الله عنه في مكّة ليردّ الأمانات إلى أصحابها — حتى الذين آذوا النبيَّ ﷺ كانوا يأتمنونه على أموالهم!', en: 'Quraysh\'s harm against the Muslims grew severe, so Allah permitted His Prophet ﷺ to migrate to Madinah. The Prophet ﷺ left by night with his companion Abu Bakr as-Siddiq (RA). Ali (RA) stayed behind in Makkah to return people\'s trusts — even those who hurt the Prophet ﷺ trusted him with their wealth!' },
+        { ar: 'كانت قريش تسمّي النبيَّ ﷺ قبل البعثة «الصادق الأمين».', en: 'Before prophethood, Quraysh called the Prophet ﷺ "the Truthful, the Trustworthy".' },
+        Q('مَن رافق النبيَّ ﷺ في الهجرة؟', 'Who accompanied the Prophet ﷺ on the Hijrah?', { ar: 'أبو بكر الصدّيق رضي الله عنه', en: 'Abu Bakr as-Siddiq (RA)' }, { ar: 'خالد بن الوليد', en: 'Khalid ibn al-Walid' }, { ar: 'لم يرافقه أحد', en: 'No one' })),
+      st(21.3772, 39.8497, 12, 'Jabal_Thawr.jpg', '⛰️', { ar: 'غار ثور: ثلاثُ ليالٍ', en: 'Cave Thawr: three nights' }, { ar: 'جنوب مكّة', en: 'South of Makkah' },
+        { ar: 'اختبأ النبيُّ ﷺ وأبو بكر في غار ثور ثلاثَ ليالٍ. وصل المشركون إلى باب الغار، فخاف أبو بكر على النبي ﷺ، فقال له النبي ﷺ: «ما ظنُّك يا أبا بكر باثنين اللهُ ثالثُهما» (رواه البخاري ومسلم). ونزل قوله تعالى: ﴿لَا تَحْزَنْ إِنَّ اللَّهَ مَعَنَا﴾ [التوبة: ٤٠].', en: 'The Prophet ﷺ and Abu Bakr hid in Cave Thawr for three nights. The pursuers reached the cave\'s entrance and Abu Bakr feared for the Prophet ﷺ, who said: "What do you think, Abu Bakr, of two whose third is Allah?" (Bukhari & Muslim). And Allah revealed: "Do not grieve; indeed Allah is with us" [at-Tawbah 9:40].' },
+        { ar: 'كان عبدُ الله بن أبي بكر يأتيهما بالأخبار ليلًا، وكان عامرُ بن فُهيرة يرعى الغنم فوق آثار الأقدام ليُخفيها (رواه البخاري). خطّةٌ محكمة!', en: 'Abdullah ibn Abi Bakr brought them news at night, and Amir ibn Fuhayrah grazed sheep over the footprints to hide them (Bukhari). A careful plan!' },
+        Q('ماذا قال النبيُّ ﷺ لأبي بكر في الغار؟', 'What did the Prophet ﷺ tell Abu Bakr in the cave?', { ar: 'لا تحزن إنّ الله معنا', en: 'Do not grieve, Allah is with us' }, { ar: 'لنرجع إلى مكّة', en: 'Let us go back to Makkah' }, { ar: 'لنقاتلهم الآن', en: 'Let us fight them now' })),
+      st(22.30, 39.20, 7, '', '🐎', { ar: 'طريق الساحل وفرسُ سُراقة', en: 'The coastal road & Suraqah\'s horse' }, { ar: 'على الطريق (موقعٌ تقريبي)', en: 'On the road (approximate location)' },
+        { ar: 'بعد ثلاث ليالٍ انطلقا مع دليلٍ ماهرٍ استأجراه — عبد الله بن أُرَيقِط — وكان على دين قومه لكنّهما أمِناه. سلكوا طريق الساحل غير المعتاد. ولحقهم سُراقة بن مالك على فرسه طمعًا في الجائزة، فغاصت قوائم فرسه في الأرض، فعلم أنّ النبيَّ ﷺ محفوظ وطلب منه الأمان (رواه البخاري).', en: 'After three nights they set out with a skilled guide they had hired — Abdullah ibn Uraiqit — who was not Muslim but whom they trusted. They took the unusual coastal route. Suraqah ibn Malik chased them on his horse, hoping for the reward, but his horse\'s legs sank into the ground; he knew the Prophet ﷺ was protected and asked him for a pledge of safety (Bukhari).' },
+        { ar: 'درسُ الهجرة: نأخذ بالأسباب (دليل، طريق مختلف، خطّة) ونتوكّل على الله. وقد أسلم سُراقة بعد ذلك.', en: 'The lesson of the Hijrah: we take the means (a guide, a different road, a plan) and rely on Allah. Suraqah later became Muslim.' },
+        Q('ماذا حدث لفرس سُراقة؟', 'What happened to Suraqah\'s horse?', { ar: 'غاصت قوائمه في الأرض', en: 'Its legs sank into the ground' }, { ar: 'طار في السماء', en: 'It flew into the sky' }, { ar: 'سبق النبي ﷺ', en: 'It overtook the Prophet ﷺ' })),
+      st(24.4393, 39.6173, 13, 'Quba_Mosque.jpg', '🕌', { ar: 'قُباء: أوّلُ مسجد', en: 'Quba: the first mosque' }, { ar: 'ربيع الأوّل ١ هـ', en: 'Rabi\' al-Awwal 1 AH' },
+        { ar: 'كان المسلمون في المدينة يخرجون كلَّ صباح ينتظرون النبيَّ ﷺ حتى يشتدَّ الحرّ (رواه البخاري). وأخيرًا وصل! نزل ﷺ في قُباء بضعَ عشرةَ ليلة، وأسّس فيها أوّلَ مسجدٍ في الإسلام.', en: 'The Muslims of Madinah went out every morning to wait for the Prophet ﷺ until the heat grew strong (Bukhari). At last he arrived! He ﷺ stayed in Quba some ten-plus nights and founded the first mosque in Islam there.' },
+        { ar: 'كان النبيُّ ﷺ بعد ذلك يزور قُباء كلَّ سبتٍ ويصلّي فيه ركعتين (رواه البخاري ومسلم).', en: 'Afterwards the Prophet ﷺ would visit Quba every Saturday and pray two rak\'ahs there (Bukhari & Muslim).' }, null),
+      st(24.4672, 39.6111, 14, 'Al-Masjid_an-Nabawi_(The_Prophet\'s_Mosque)_in_Medina.jpg', '🌴', { ar: 'المدينة المنوّرة: بيتُ الأمّة', en: 'Madinah: home of the Ummah' }, { ar: '١ هـ', en: '1 AH' },
+        { ar: 'دخل النبيُّ ﷺ المدينة وفرح أهلُها فرحًا عظيمًا. بركت ناقتُه في أرضٍ ليتيمَين، فاشتراها ﷺ وبنى عليها مسجدَه (رواه البخاري). ثم آخى بين المهاجرين والأنصار، فصاروا إخوةً يتقاسمون البيوت والطعام.', en: 'The Prophet ﷺ entered Madinah and its people rejoiced greatly. His camel knelt on land belonging to two orphans; he ﷺ bought it and built his mosque there (Bukhari). Then he made the Muhajirun and Ansar brothers, sharing homes and food.' },
+        { ar: 'جعل عمرُ بن الخطّاب رضي الله عنه سنةَ الهجرة بدايةً للتقويم الهجري الذي نستعمله إلى اليوم.', en: 'Umar ibn al-Khattab (RA) made the year of the Hijrah the start of the Hijri calendar we still use today.' },
+        Q('ماذا بنى النبيُّ ﷺ أوّلًا في المدينة؟', 'What did the Prophet ﷺ build first in Madinah?', { ar: 'المسجد', en: 'The mosque' }, { ar: 'قصرًا', en: 'A palace' }, { ar: 'سوقًا', en: 'A market' }))
+    ]},
+
+    { id: 'quds', icon: '🕌', title: { ar: 'رحلة إلى بيت المقدس', en: 'A Journey to Bayt al-Maqdis' }, sub: { ar: 'من الإسراء إلى صلاح الدين', en: 'From the Isra\' to Salah al-Din' }, stations: [
+      st(21.4225, 39.8262, 6, 'Kaaba_mirror_edit_jj.jpg', '✨', { ar: 'مكّة: بدايةُ الإسراء', en: 'Makkah: the Night Journey begins' }, { ar: 'قبل الهجرة', en: 'Before the Hijrah' },
+        { ar: 'في ليلةٍ واحدة أسرى اللهُ بنبيّه ﷺ من مكّة إلى بيت المقدس. قال تعالى: ﴿سُبْحَانَ الَّذِي أَسْرَىٰ بِعَبْدِهِ لَيْلًا مِّنَ الْمَسْجِدِ الْحَرَامِ إِلَى الْمَسْجِدِ الْأَقْصَى الَّذِي بَارَكْنَا حَوْلَهُ لِنُرِيَهُ مِنْ آيَاتِنَا ۚ إِنَّهُ هُوَ السَّمِيعُ الْبَصِيرُ﴾ [الإسراء: ١].', en: 'In a single night Allah took His Prophet ﷺ from Makkah to Bayt al-Maqdis. Allah says: "Exalted is He who took His servant by night from al-Masjid al-Haram to al-Masjid al-Aqsa, whose surroundings We have blessed, to show him of Our signs. Indeed, He is the All-Hearing, the All-Seeing" [al-Isra\' 17:1].' },
+        { ar: 'المسافة بين مكّة والقدس أكثر من ١٢٠٠ كيلومتر — قطعها النبيُّ ﷺ في جزءٍ من ليلة بقدرة الله!', en: 'Makkah to Jerusalem is over 1,200 km — the Prophet ﷺ crossed it in part of a night by Allah\'s power!' }, null),
+      st(31.7781, 35.2354, 16, 'Jerusalem-2013(2)-Aerial-Temple_Mount-(south_exposure).jpg', '🕌', { ar: 'المسجد الأقصى: الساحة المباركة', en: 'Al-Masjid al-Aqsa: the blessed compound' }, { ar: 'القدس', en: 'Jerusalem' },
+        { ar: 'المسجد الأقصى هو كلُّ الساحة المباركة داخل الأسوار، بما فيها من قِباب ومصلّيات وساحات. هنا ربط النبيُّ ﷺ البُراقَ وصلّى، وأمَّ الأنبياءَ عليهم السلام (رواه مسلم). وهو ثاني مسجدٍ وُضع في الأرض بعد المسجد الحرام بأربعين سنة (رواه البخاري ومسلم).', en: 'Al-Masjid al-Aqsa is the whole blessed compound inside the walls, with all its domes, prayer halls and courtyards. Here the Prophet ﷺ tied al-Buraq, prayed, and led the prophets (AS) in prayer (Muslim). It is the second mosque set up on earth, forty years after al-Masjid al-Haram (Bukhari & Muslim).' },
+        { ar: 'كان الأقصى قِبلةَ المسلمين الأولى نحو ستّة عشر أو سبعة عشر شهرًا، ثم تحوّلت القبلة إلى الكعبة (رواه البخاري).', en: 'Al-Aqsa was the Muslims\' first qiblah for about sixteen or seventeen months, then the qiblah changed to the Kaaba (Bukhari).' },
+        Q('ما هو المسجد الأقصى؟', 'What is al-Masjid al-Aqsa?', { ar: 'كلُّ الساحة المباركة داخل الأسوار', en: 'The whole blessed compound within the walls' }, { ar: 'القبّة الذهبية فقط', en: 'Only the golden dome' }, { ar: 'جبلٌ قرب مكّة', en: 'A mountain near Makkah' })),
+      st(31.77805, 35.23525, 17, 'Dome_of_the_Rock.jpg', '🟡', { ar: 'قبّة الصخرة', en: 'The Dome of the Rock' }, { ar: '٧٢ هـ / ٦٩١م', en: '72 AH / 691 CE' },
+        { ar: 'في وسط ساحة الأقصى تلمع قبّةُ الصخرة الذهبية. بناها الخليفة عبدُ الملك بن مروان سنة ٧٢ هـ، وهي من أقدم المباني الإسلامية القائمة في العالم، وجدرانها مزيّنة بآياتٍ من القرآن.', en: 'In the middle of al-Aqsa shines the golden Dome of the Rock. Caliph Abd al-Malik ibn Marwan built it in 72 AH; it is one of the oldest Islamic buildings still standing, and its walls are adorned with verses of the Quran.' },
+        { ar: 'تذكّر: القبّة الذهبية <b>جزءٌ</b> من المسجد الأقصى، والمصلّى القِبلي ذو القبّة الرمادية جزءٌ آخر منه.', en: 'Remember: the golden dome is <b>part</b> of al-Masjid al-Aqsa; the grey-domed Qibli prayer hall is another part.' },
+        Q('مَن بنى قبّة الصخرة؟', 'Who built the Dome of the Rock?', { ar: 'الخليفة عبد الملك بن مروان', en: 'Caliph Abd al-Malik ibn Marwan' }, { ar: 'صلاح الدين', en: 'Salah al-Din' }, { ar: 'محمد الفاتح', en: 'Mehmed the Conqueror' })),
+      st(31.7780, 35.2310, 15, 'Jerusalem_Old_City_from_Mount_of_Olives.jpg', '🗝️', { ar: 'عمرُ بن الخطاب يتسلّم المفاتيح', en: 'Umar ibn al-Khattab receives the keys' }, { ar: 'نحو ١٥–١٦ هـ / ٦٣٧–٦٣٨م', en: 'c. 15–16 AH / 637–638 CE' },
+        { ar: 'طلب أهلُ القدس أن يأتي الخليفةُ بنفسه ليتسلّم مدينتهم صلحًا، فجاء أمير المؤمنين عمرُ بن الخطاب رضي الله عنه من المدينة. وأعطى أهلَها الأمانَ على أنفسهم وأموالهم وكنائسهم، كما روى المؤرّخ الطبري.', en: 'The people of Jerusalem asked that the Caliph come himself to receive their city peacefully, so the Commander of the Believers Umar ibn al-Khattab (RA) came from Madinah. He granted its people safety for their lives, property and churches, as the historian at-Tabari reported.' },
+        { ar: 'دخل المسلمون القدسَ بلا قتالٍ ولا انتقام — هكذا علّمنا الإسلام العدلَ والرحمة.', en: 'The Muslims entered Jerusalem without fighting or revenge — this is how Islam taught justice and mercy.' }, null),
+      st(31.7761, 35.2356, 17, 'Al-Aqsa_Mosque_(Qibli).jpg', '🛡️', { ar: 'صلاح الدين يحرّر القدس', en: 'Salah al-Din liberates Jerusalem' }, { ar: '٢٧ رجب ٥٨٣ هـ / ٢ أكتوبر ١١٨٧م', en: '27 Rajab 583 AH / 2 Oct 1187 CE' },
+        { ar: 'بقيت القدسُ في أيدي الصليبيين نحو ٨٨ سنة، حتى انتصر صلاحُ الدين الأيوبي في معركة حطّين، ثم دخل القدسَ يوم الجمعة ٢٧ رجب ٥٨٣ هـ دون انتقام، وأحسن إلى أهلها. ووضع في المصلّى القِبلي المنبرَ الذي أمر بصنعه نورُ الدين زنكي قبل سنوات.', en: 'Jerusalem remained in Crusader hands for about 88 years, until Salah al-Din al-Ayyubi won the Battle of Hattin and then entered Jerusalem on Friday, 27 Rajab 583 AH, without revenge, treating its people kindly. He placed in the Qibli hall the pulpit that Nur al-Din Zengi had ordered years before.' },
+        { ar: 'أُحرق منبرُ صلاح الدين سنة ١٩٦٩م، ثم صُنعت نسخةٌ مطابقة منه وأُعيدت إلى مكانها سنة ٢٠٠٧م.', en: 'Salah al-Din\'s pulpit was burned in 1969 CE; an exact replica was made and returned to its place in 2007 CE.' },
+        Q('كيف دخل صلاح الدين القدس؟', 'How did Salah al-Din enter Jerusalem?', { ar: 'دون انتقام، وأحسن إلى أهلها', en: 'Without revenge, treating its people kindly' }, { ar: 'بالانتقام من الجميع', en: 'Taking revenge on everyone' }, { ar: 'لم يدخلها أبدًا', en: 'He never entered it' }))
+    ]},
+
+    { id: 'andalus', icon: '🌙', title: { ar: 'جولة في الأندلس', en: 'A Tour of al-Andalus' }, sub: { ar: 'ثمانية قرون من العلم والجمال', en: 'Eight centuries of knowledge and beauty' }, stations: [
+      st(36.1408, -5.3536, 10, 'Rock_of_Gibraltar_northwest.jpg', '⛵', { ar: 'جبل طارق: البداية', en: 'Gibraltar: the beginning' }, { ar: '٩٢ هـ / ٧١١م', en: '92 AH / 711 CE' },
+        { ar: 'عبر القائدُ طارق بن زياد البحرَ من شمال أفريقيا إلى الأندلس سنة ٩٢ هـ. ونزل عند جبلٍ صار يُسمّى باسمه: «جبل طارق» — وبالإنجليزية Gibraltar!', en: 'The commander Tariq ibn Ziyad crossed the sea from North Africa to al-Andalus in 92 AH. He landed at a mountain that took his name: "Jabal Tariq" — in English, Gibraltar!' },
+        { ar: 'كلمة Gibraltar جاءت من العربية «جبل طارق».', en: 'The word Gibraltar comes from the Arabic "Jabal Tariq".' },
+        Q('من أين جاء اسم Gibraltar؟', 'Where does the name Gibraltar come from?', { ar: 'من «جبل طارق»', en: 'From "Jabal Tariq"' }, { ar: 'من اسم سفينة', en: 'From a ship\'s name' }, { ar: 'من اسم سمكة', en: 'From a fish\'s name' })),
+      st(37.8789, -4.7794, 15, 'Mezquita_de_Córdoba_desde_el_aire_(Córdoba,_España).jpg', '🕌', { ar: 'جامع قرطبة', en: 'The Mosque of Córdoba' }, { ar: '١٧٠ هـ / ٧٨٦م', en: '170 AH / 786 CE' },
+        { ar: 'بدأ عبدُ الرحمن الداخل بناءَ جامع قرطبة، ووسّعه الأمراء من بعده حتى امتلأ بمئات الأعمدة والأقواس الحمراء والبيضاء. وصارت قرطبة من أكبر مدن العالم، فيها مكتباتٌ وحمّامات وشوارع مضاءة.', en: 'Abd al-Rahman al-Dakhil began the Mosque of Córdoba, and later rulers enlarged it until it was filled with hundreds of columns and red-and-white arches. Córdoba became one of the world\'s greatest cities, with libraries, baths and lit streets.' },
+        { ar: 'بعد سقوط قرطبة سنة ٦٣٣ هـ (١٢٣٦م) حُوِّل الجامع إلى كنيسة.', en: 'After Córdoba fell in 633 AH (1236 CE), the mosque was turned into a cathedral.' }, null),
+      st(37.8853, -4.8673, 14, 'Medina_Azahara.jpg', '🏛️', { ar: 'مدينة الزهراء', en: 'Madinat al-Zahra' }, { ar: 'من ٣٢٥ هـ / ٩٣٦م', en: 'From 325 AH / 936 CE' },
+        { ar: 'بنى الخليفةُ عبد الرحمن الناصر قربَ قرطبة مدينةً كاملة للحكم سمّاها «الزهراء»، فيها قصورٌ وحدائق ونوافير. لكنّها هُدمت في فتنةٍ بين المسلمين بعد نحو سبعين سنة، وبقيت أطلالها إلى اليوم.', en: 'Caliph Abd al-Rahman al-Nasir built a whole royal city near Córdoba called "al-Zahra", with palaces, gardens and fountains. But it was destroyed in strife among Muslims about seventy years later, and only its ruins remain today.' },
+        { ar: 'درسٌ مهم: الخلافُ والفُرقة يهدمان ما يبنيه الأجداد.', en: 'An important lesson: disputes and division destroy what our ancestors built.' },
+        Q('لماذا هُدمت مدينة الزهراء؟', 'Why was Madinat al-Zahra destroyed?', { ar: 'بسبب فتنةٍ وخلافٍ بين المسلمين', en: 'Because of strife and division among Muslims' }, { ar: 'بسبب زلزال', en: 'Because of an earthquake' }, { ar: 'لأنّها كانت صغيرة', en: 'Because it was small' })),
+      st(39.8628, -4.0273, 13, 'Toledo_Skyline_Panorama,_Spain_-_Dec_2006.jpg', '🔭', { ar: 'طُليطلة: مدينة الترجمة', en: 'Toledo: city of translation' }, { ar: 'القرن ٥ هـ / ١١م', en: '5th c. AH / 11th c. CE' },
+        { ar: 'كانت طليطلة مركزًا للعلم، عاش فيها الفلكيُّ المسلم الزرقالي الذي صنع آلاتٍ لرصد النجوم. وبعد سقوطها سنة ٤٧٨ هـ (١٠٨٥م) تُرجمت كتبُ المسلمين في الطبّ والفلك والرياضيات إلى اللاتينية، فوصل علمُهم إلى أوروبا.', en: 'Toledo was a centre of learning, home to the Muslim astronomer al-Zarqali who built instruments to observe the stars. After it fell in 478 AH (1085 CE), Muslim books of medicine, astronomy and mathematics were translated into Latin, carrying their knowledge to Europe.' },
+        { ar: 'كثيرٌ من أسماء النجوم بالإنجليزية أصلُها عربي، مثل Aldebaran (الدَّبَران).', en: 'Many English star names come from Arabic, like Aldebaran (al-Dabaran).' }, null),
+      st(37.1761, -3.5881, 15, 'Dawn_Charles_V_Palace_Alhambra_Granada_Andalusia_Spain.jpg', '🏰', { ar: 'غرناطة وقصر الحمراء', en: 'Granada & the Alhambra' }, { ar: '٨٩٧ هـ / ١٤٩٢م', en: '897 AH / 1492 CE' },
+        { ar: 'كانت غرناطة آخرَ ممالك المسلمين في الأندلس، وفيها قصرُ الحمراء المكتوب على جدرانه «ولا غالبَ إلا الله». ولمّا تفرّق المسلمون وضعفوا، سُلّمت غرناطة سنة ٨٩٧ هـ، فانتهى حكمُ المسلمين في الأندلس بعد نحو ثمانية قرون.', en: 'Granada was the last Muslim kingdom in al-Andalus, home of the Alhambra whose walls read "There is no victor but Allah". When Muslims became divided and weak, Granada was handed over in 897 AH, ending Muslim rule in al-Andalus after about eight centuries.' },
+        { ar: 'قال تعالى: ﴿إِنَّ اللَّهَ لَا يُغَيِّرُ مَا بِقَوْمٍ حَتَّىٰ يُغَيِّرُوا مَا بِأَنفُسِهِمْ﴾ [الرعد: ١١].', en: 'Allah says: "Indeed, Allah will not change the condition of a people until they change what is in themselves" [ar-Ra\'d 13:11].' },
+        Q('ما الدرس الكبير من قصّة الأندلس؟', 'What is the big lesson of al-Andalus?', { ar: 'الوحدةُ قوّة، والفُرقة ضعف', en: 'Unity is strength, division is weakness' }, { ar: 'القصور أهمّ من المساجد', en: 'Palaces matter more than mosques' }, { ar: 'لا شيء', en: 'Nothing' }))
+    ]},
+
+    { id: 'cairo', icon: '🏙️', title: { ar: 'القاهرة الإسلامية', en: 'Islamic Cairo' }, sub: { ar: 'مدينة الألف مئذنة', en: 'City of a thousand minarets' }, stations: [
+      st(30.0103, 31.2333, 15, 'Mosque_of_Amr_ibn_al-As.jpg', '🌴', { ar: 'جامع عمرو بن العاص', en: 'Mosque of Amr ibn al-As' }, { ar: '٢١ هـ / ٦٤١–٦٤٢م', en: '21 AH / 641–642 CE' },
+        { ar: 'بعد فتح مصر بنى الصحابيُّ عمرو بن العاص رضي الله عنه أوّلَ مسجدٍ في مصر وأفريقيا، في مدينة الفسطاط. كان بسيطًا من جذوع النخل والطين، ثم وُسِّع مرّاتٍ كثيرة.', en: 'After Egypt was opened to Islam, the companion Amr ibn al-As (RA) built the first mosque in Egypt and Africa, in the city of Fustat. It was simple — palm trunks and mud — and was enlarged many times.' },
+        { ar: 'الفسطاط كانت أوّلَ عاصمةٍ لمصر الإسلامية، وصارت بعد ذلك جزءًا من القاهرة.', en: 'Fustat was the first capital of Islamic Egypt and later became part of Cairo.' }, null),
+      st(30.0287, 31.2497, 16, 'Mosque_of_Ibn_Tulun.jpg', '🌀', { ar: 'جامع أحمد بن طولون', en: 'Mosque of Ibn Tulun' }, { ar: '٢٦٣–٢٦٥ هـ / ٨٧٦–٨٧٩م', en: '263–265 AH / 876–879 CE' },
+        { ar: 'بناه أحمد بن طولون، وله مئذنةٌ عجيبة يلتفّ سُلّمها من الخارج كالحلزون! وهو من أكبر مساجد القاهرة مساحةً، ومن أقدمها المحفوظة على هيئتها الأولى.', en: 'Ahmad ibn Tulun built it, and it has an amazing minaret whose staircase spirals around the outside like a snail shell! It is one of Cairo\'s largest mosques by area, and among the oldest preserved in their original form.' },
+        { ar: 'مئذنته الحلزونية تشبه مئذنة سامرّاء في العراق — فقد جاء ابن طولون من هناك.', en: 'Its spiral minaret resembles the one at Samarra in Iraq — Ibn Tulun came from there.' },
+        Q('ما الذي يميّز مئذنة ابن طولون؟', 'What is special about Ibn Tulun\'s minaret?', { ar: 'سُلّمها يلتفّ من الخارج', en: 'Its staircase spirals around the outside' }, { ar: 'إنّها من زجاج', en: 'It is made of glass' }, { ar: 'إنّها تحت الأرض', en: 'It is underground' })),
+      st(30.0457, 31.2627, 16, 'Al-Azhar_Mosque.jpg', '📚', { ar: 'الجامع الأزهر', en: 'Al-Azhar Mosque' }, { ar: '٣٥٩–٣٦١ هـ / ٩٧٠–٩٧٢م', en: '359–361 AH / 970–972 CE' },
+        { ar: 'الأزهر مسجدٌ وجامعة معًا، من أقدم الجامعات في العالم. يأتيه الطلّاب من كلّ البلاد ليتعلّموا القرآن والحديث والفقه والعربية، وكان التعليم فيه مجّانيًا.', en: 'Al-Azhar is a mosque and a university together — one of the oldest in the world. Students come from every land to learn Quran, hadith, fiqh and Arabic, and the teaching was free.' },
+        { ar: 'كان لكلّ بلدٍ «رواقٌ» يسكنه طلّابه حول الأزهر.', en: 'Each country had its own "riwaq" (hall) around al-Azhar where its students lived.' }, null),
+      st(30.0299, 31.2611, 15, 'Cairo_Citadel.jpg', '🏯', { ar: 'قلعة صلاح الدين', en: 'The Citadel of Salah al-Din' }, { ar: 'من ٥٧٢ هـ / ١١٧٦م', en: 'From 572 AH / 1176 CE' },
+        { ar: 'بنى صلاحُ الدين الأيوبي قلعةً على تلّة المقطّم لتحمي القاهرة من الصليبيين. وحفر فيها بئرًا عميقة في الصخر ليكون للقلعة ماءٌ دائم.', en: 'Salah al-Din al-Ayyubi built a citadel on the Muqattam hill to protect Cairo from the Crusaders. He had a deep well cut into the rock so the citadel always had water.' },
+        { ar: 'تُسمّى «بئر يوسف» نسبةً إلى صلاح الدين — فاسمه يوسف بن أيوب.', en: 'It is called "Joseph\'s Well" after Salah al-Din — whose name was Yusuf ibn Ayyub.' },
+        Q('لماذا بنى صلاح الدين القلعة؟', 'Why did Salah al-Din build the citadel?', { ar: 'لحماية القاهرة', en: 'To protect Cairo' }, { ar: 'للّعب', en: 'For playing' }, { ar: 'ليسكن فيها وحده', en: 'To live in it alone' }))
+    ]},
+
+    { id: 'baghdad', icon: '📜', title: { ar: 'دمشق وبغداد: عواصم العلم', en: 'Damascus & Baghdad: capitals of knowledge' }, sub: { ar: 'من الأمويين إلى عين جالوت', en: 'From the Umayyads to Ayn Jalut' }, stations: [
+      st(33.5116, 36.3066, 15, 'Umayyad_Mosque,_Damascus.jpg', '🏛️', { ar: 'الجامع الأموي في دمشق', en: 'The Umayyad Mosque, Damascus' }, { ar: '٨٦–٩٦ هـ / ٧٠٥–٧١٥م', en: '86–96 AH / 705–715 CE' },
+        { ar: 'كانت دمشق عاصمةَ الدولة الأموية، وفيها بنى الخليفة الوليد بن عبد الملك الجامعَ الأموي، وزيّنه بفسيفساء تصوّر أشجارًا وأنهارًا وبيوتًا كأنّها حدائق الجنّة.', en: 'Damascus was the capital of the Umayyad state, where Caliph al-Walid ibn Abd al-Malik built the Umayyad Mosque, decorating it with mosaics of trees, rivers and houses like gardens of Paradise.' },
+        { ar: 'بجوار الجامع يرقد صلاحُ الدين الأيوبي رحمه الله.', en: 'Salah al-Din al-Ayyubi (may Allah have mercy on him) rests beside the mosque.' }, null),
+      st(33.3152, 44.3661, 11, 'Baghdad_Round_City.jpg', '⭕', { ar: 'بغداد: المدينة المدوّرة', en: 'Baghdad: the Round City' }, { ar: '١٤٥ هـ / ٧٦٢م', en: '145 AH / 762 CE' },
+        { ar: 'بنى الخليفةُ العبّاسي أبو جعفر المنصور مدينةَ بغداد على شكل دائرة، لها أربعة أبواب: باب الكوفة وباب البصرة وباب خراسان وباب الشام، وفي وسطها المسجد وقصر الخليفة.', en: 'The Abbasid Caliph Abu Ja\'far al-Mansur built Baghdad as a circle with four gates — the Kufa, Basra, Khurasan and Sham gates — with the mosque and the caliph\'s palace in the centre.' },
+        { ar: 'لم يبقَ من المدينة المدوّرة شيءٌ اليوم، لكنّ المؤرّخين وصفوها لنا بدقّة.', en: 'Nothing of the Round City survives today, but historians described it for us in detail.' },
+        Q('كم بابًا كان لبغداد المدوّرة؟', 'How many gates did the Round City have?', { ar: 'أربعة', en: 'Four' }, { ar: 'باب واحد', en: 'One' }, { ar: 'مئة', en: 'A hundred' })),
+      st(33.335, 44.395, 12, '', '📚', { ar: 'بيت الحكمة', en: 'The House of Wisdom' }, { ar: 'عهد المأمون ١٩٨–٢١٨ هـ / ٨١٣–٨٣٣م', en: 'Reign of al-Ma\'mun, 198–218 AH / 813–833 CE' },
+        { ar: 'في بيت الحكمة جمع الخلفاءُ الكتبَ والعلماء، فتُرجمت كتبُ العلوم إلى العربية، وعمل فيه علماءُ مثل الخوارزمي الذي ألّف كتاب «الجبر» — ومنه جاءت كلمة Algebra، ومن اسمه جاءت كلمة Algorithm!', en: 'In the House of Wisdom the caliphs gathered books and scholars; works of science were translated into Arabic, and scholars like al-Khwarizmi worked there — his book "al-Jabr" gave us the word Algebra, and his name gave us the word Algorithm!' },
+        { ar: 'الموقعُ الدقيق لبيت الحكمة غير معروف اليوم، ولم يبقَ من مبناه شيء — النقطة على الخريطة تقريبية.', en: 'The exact site of the House of Wisdom is unknown today and nothing of its building remains — the map point is approximate.' },
+        Q('أيّ كلمة جاءت من اسم الخوارزمي؟', 'Which word comes from al-Khwarizmi\'s name?', { ar: 'Algorithm (خوارزمية)', en: 'Algorithm' }, { ar: 'Banana', en: 'Banana' }, { ar: 'Football', en: 'Football' })),
+      st(34.2059, 43.8796, 15, 'Samarra_Malwiya.jpg', '🌀', { ar: 'سامرّاء ومئذنة الملويّة', en: 'Samarra & the Malwiya minaret' }, { ar: '٢٣٥–٢٣٧ هـ / ٨٤٨–٨٥١م', en: '235–237 AH / 848–851 CE' },
+        { ar: 'بنى الخليفة المتوكّل في سامرّاء مسجدًا كان من أكبر مساجد العالم، ومئذنتُه «الملويّة» ترتفع نحو ٥٢ مترًا ويلتفّ حولها طريقٌ حلزوني يصعد إلى القمّة.', en: 'Caliph al-Mutawakkil built a mosque in Samarra that was among the largest in the world; its "Malwiya" minaret rises about 52 metres, with a spiral ramp winding to the top.' },
+        { ar: 'الملويّة تعني «الملتوية» — بسبب شكلها الحلزوني.', en: 'Malwiya means "twisted" — because of its spiral shape.' }, null),
+      st(32.55, 35.36, 10, '', '🌅', { ar: 'عين جالوت: الأمّة تنهض', en: 'Ayn Jalut: the Ummah rises' }, { ar: '٢٥ رمضان ٦٥٨ هـ / ١٢٦٠م', en: '25 Ramadan 658 AH / 1260 CE' },
+        { ar: 'في سنة ٦٥٦ هـ (١٢٥٨م) دمّر المغولُ بغداد وكتبَها. ظنّ الناسُ أنّ الأمّة انتهت! لكن بعد سنتين فقط، هزم المسلمون بقيادة السلطان قُطُز المغولَ في معركة عين جالوت بفلسطين، في شهر رمضان.', en: 'In 656 AH (1258 CE) the Mongols destroyed Baghdad and its books. People thought the Ummah was finished! But just two years later, Muslims led by Sultan Qutuz defeated the Mongols at the Battle of Ayn Jalut in Palestine, in the month of Ramadan.' },
+        { ar: 'الأمّة الإسلامية قد تمرض لكنّها لا تموت — قد تسقط ثم تنهض من جديد بإذن الله.', en: 'The Muslim Ummah may fall ill but it does not die — it may fall and then rise again, by Allah\'s will.' },
+        Q('ماذا نتعلّم من عين جالوت؟', 'What do we learn from Ayn Jalut?', { ar: 'الأمّة تنهض من جديد مهما سقطت', en: 'The Ummah rises again however far it falls' }, { ar: 'لا أمل بعد الهزيمة', en: 'There is no hope after defeat' }, { ar: 'المغول لا يُهزمون', en: 'The Mongols cannot be beaten' }))
+    ]}
+  ];
+
+  /* ── progress (same key tr.js uses → hub star count) ── */
+  function doneList() { try { return JSON.parse(localStorage.getItem('tr:tours')) || []; } catch (e) { return []; } }
+  function markDone(id) { var L = doneList(); if (L.indexOf(id) < 0) L.push(id); try { localStorage.setItem('tr:tours', JSON.stringify(L)); } catch (e) {} }
+
+  /* ── player state ── */
+  var TRr = null, box = null, T = -1, S = 0, seen = {}, map = null, marks = [], line = null, lineAll = null, mapEl = null, finished = false;
+  function calm() { return document.documentElement.classList.contains('calm'); }
+
+  function drawList() {
+    T = -1; finished = false; destroyMap(); TRr.stopSpeak();
+    var D = doneList();
+    box.innerHTML = '<div class="tr-prog"><span>⭐ ' + D.length + ' / ' + TOURS.length + '</span><div class="bar"><i style="width:' + Math.round(D.length / TOURS.length * 100) + '%"></i></div><span>' + TRr.tx('جولات أنهيتُها', 'tours finished') + '</span></div>' +
+      '<div class="tp-list">' + TOURS.map(function (tour, i) {
+        return '<button class="tp-tour" data-t="' + i + '"><span class="ic">' + tour.icon + '</span><span><span class="t">' + TRr.esc(TRr.t(tour.title)) + (D.indexOf(tour.id) > -1 ? ' ⭐' : '') + '</span><span class="s">' + TRr.esc(TRr.t(tour.sub)) + '</span><span class="m">🧭 ' + tour.stations.length + ' ' + TRr.tx('محطّات', 'stations') + '</span></span></button>';
+      }).join('') + '</div>' + TRMap.credit(TRr.ar());
+    box.querySelectorAll('.tp-tour').forEach(function (b) { b.onclick = function () { openTour(+b.dataset.t); }; });
+  }
+
+  function openTour(i) { T = i; S = 0; seen = { 0: true }; finished = false; drawPlayer(true); window.scrollTo(0, box.getBoundingClientRect().top + window.scrollY - 70); }
+
+  function destroyMap() { if (map && map !== 'sketch') { try { map.remove(); } catch (e) {} } map = null; marks = []; line = lineAll = null; }
+
+  function drawPlayer(newMap) {
+    TRr.stopSpeak();
+    var tour = TOURS[T], n = tour.stations.length;
+    if (newMap) destroyMap();
+    var head = '<div class="tp-head"><button class="tr-btn ghost" id="tpBack">' + (TRr.ar() ? '→' : '←') + ' ' + TRr.tx('كلّ الجولات', 'All tours') + '</button><h3>' + tour.icon + ' ' + TRr.esc(TRr.t(tour.title)) + '</h3></div>';
+    var steps = '<div class="tp-steps">' + tour.stations.map(function (_, k) { return '<button data-s="' + k + '" class="' + (k === S && !finished ? 'on' : (seen[k] ? 'seen' : '')) + '" aria-label="' + (k + 1) + '">' + (k + 1) + '</button>'; }).join('') + '</div>';
+    var body;
+    if (finished) {
+      body = '<div class="tp-card tp-done"><div class="big">🎉</div><h4>' + TRr.tx('ما شاء الله! أنهيتَ الجولة', 'Masha Allah! You finished the tour') + '</h4><p>' + TRr.tx('حصلتَ على نجمة ⭐ — احكِ لأهلك عن أجمل محطّة رأيتها.', 'You earned a star ⭐ — tell your family about your favourite station.') + '</p>' +
+        '<div class="tr-actions"><button class="tr-btn" id="tpList">🧭 ' + TRr.tx('جولة أخرى', 'Another tour') + '</button><button class="tr-btn ghost" id="tpAgain">' + TRr.tx('أعِد الجولة', 'Replay') + '</button></div></div>';
+    } else {
+      var s = tour.stations[S];
+      var photo = s.img ? TRMap.img(s.img, s.emoji, TRr.t(s.title)) : '<div class="trm-fig noimg"><span class="trm-emoji">' + s.emoji + '</span></div>';
+      var quiz = s.q ? '<div class="tr-sec tr-q"><h4>🤔 ' + TRr.esc(TRr.t(s.q.q)) + '</h4>' + s.q.opts.map(function (o, k) { return '<button data-q="' + k + '">' + TRr.esc(TRr.t(o.t)) + '</button>'; }).join('') + '<div class="fb" id="tpFb" aria-live="polite"></div></div>' : '';
+      body = '<div class="tp-card">' + photo +
+        '<h4>' + (S + 1) + '. ' + TRr.esc(TRr.t(s.title)) + '</h4><div class="when">🕰️ ' + TRr.esc(TRr.t(s.when)) + '</div>' +
+        '<p class="nar">' + TRr.t(s.text) + '</p>' +
+        '<div class="tp-know">💡 ' + TRr.tx('هل تعلم؟ ', 'Did you know? ') + TRr.t(s.know) + '</div>' + quiz +
+        '<div class="tr-actions"><button class="tr-btn ghost" id="tpSpeak">🔊 ' + TRr.tx('استمِع', 'Listen') + '</button>' +
+        (S > 0 ? '<button class="tr-btn ghost" id="tpPrev">' + TRr.tx('المحطة السابقة', 'Previous station') + '</button>' : '') +
+        '<button class="tr-btn" id="tpNext">' + (S === n - 1 ? TRr.tx('أنهيتُ الجولة 🎉', 'Finish the tour 🎉') : TRr.tx('المحطة التالية', 'Next station') + ' ' + (TRr.ar() ? '←' : '→')) + '</button></div></div>';
+    }
+    if (newMap || !mapEl || !box.contains(mapEl)) {
+      box.innerHTML = head + '<div class="trm-map" id="tpMap"></div>' + steps + '<div id="tpBody"></div>' + TRMap.credit(TRr.ar());
+      mapEl = box.querySelector('#tpMap');
+      initMap();
+    } else {
+      box.querySelector('.tp-steps').outerHTML = steps;
+      updateMap();
+    }
+    box.querySelector('#tpBody').innerHTML = body;
+    bindPlayer();
+  }
+
+  function bindPlayer() {
+    var $ = function (id) { return box.querySelector('#' + id); };
+    $('tpBack').onclick = drawList;
+    box.querySelectorAll('.tp-steps button').forEach(function (b) { b.onclick = function () { S = +b.dataset.s; seen[S] = true; finished = false; drawPlayer(false); }; });
+    if ($('tpList')) $('tpList').onclick = drawList;
+    if ($('tpAgain')) $('tpAgain').onclick = function () { openTour(T); };
+    if ($('tpSpeak')) $('tpSpeak').onclick = function () { var s = TOURS[T].stations[S]; TRr.speak(TRr.t(s.title) + '. ' + TRr.t(s.text) + '. ' + TRr.t(s.know), this); };
+    if ($('tpPrev')) $('tpPrev').onclick = function () { S--; drawPlayer(false); };
+    if ($('tpNext')) $('tpNext').onclick = function () {
+      var n = TOURS[T].stations.length;
+      if (S < n - 1) { S++; seen[S] = true; drawPlayer(false); }
+      else { finished = true; markDone(TOURS[T].id); TRr.toast(TRr.tx('نجمةٌ جديدة ⭐', 'A new star ⭐')); drawPlayer(false); }
+      var m = box.querySelector('#tpMap'); if (m && m.getBoundingClientRect().top < 60) window.scrollTo({ top: m.getBoundingClientRect().top + window.scrollY - 70, behavior: calm() ? 'auto' : 'smooth' });
+    };
+    box.querySelectorAll('.tr-q button[data-q]').forEach(function (b) {
+      b.onclick = function () {
+        var o = TOURS[T].stations[S].q.opts[+b.dataset.q];
+        box.querySelectorAll('.tr-q button').forEach(function (x) { x.classList.remove('right', 'wrong'); });
+        b.classList.add(o.ok ? 'right' : 'wrong');
+        $('tpFb').textContent = o.ok ? '✅ ' + TRr.tx('أحسنت!', 'Well done!') : '💭 ' + TRr.tx('فكّر مرّةً أخرى، لا بأس!', "Think again — that's okay!");
+      };
+    });
+  }
+
+  /* ── map ── */
+  function pts() { return TOURS[T].stations; }
+  function initMap() {
+    var el = mapEl, t = T;
+    TRMap.load(function (ok) {
+      if (el !== mapEl || t !== T || map) return;          // the player moved on meanwhile
+      if (!ok) { map = 'sketch'; updateMap(); return; }
+      map = TRMap.leaflet(el);
+      var P = pts().map(function (s) { return [s.lat, s.lng]; });
+      lineAll = L.polyline(P, { color: '#999', weight: 3, dashArray: '6 8', opacity: .6 }).addTo(map);
+      line = L.polyline([P[0]], { color: getComputedStyle(document.documentElement).getPropertyValue('--acc').trim() || '#E67E22', weight: 5 }).addTo(map);
+      marks = pts().map(function (s, k) {
+        return L.marker([s.lat, s.lng], { icon: TRMap.pin(k + 1, k === S), title: TRr.t(s.title) }).addTo(map).on('click', function () { S = k; seen[k] = true; finished = false; drawPlayer(false); });
+      });
+      map.setView(P[S], pts()[S].z);
+      setTimeout(function () { if (map && map !== 'sketch') { map.invalidateSize(); updateMap(); } }, 80);
+    });
+  }
+  function updateMap() {
+    if (!map) return;
+    var cur = finished ? -1 : S, upto = finished ? pts().length - 1 : S;
+    if (map === 'sketch') {
+      TRMap.sketch(mapEl, pts(), { route: true, upto: upto, current: cur, onPick: function (k) { S = k; seen[k] = true; finished = false; drawPlayer(false); },
+        offline: TRr.tx('خريطة مبسّطة — الخريطة التفاعلية تحتاج اتصالًا بالإنترنت', 'Simple sketch — the interactive map needs an internet connection') });
+      return;
+    }
+    var P = pts().map(function (s) { return [s.lat, s.lng]; });
+    line.setLatLngs(P.slice(0, upto + 1));
+    marks.forEach(function (m, k) { m.setIcon(TRMap.pin(k + 1, k === cur)); });
+    if (finished) { map.fitBounds(L.latLngBounds(P), { padding: [30, 30] }); return; }
+    var s = pts()[S];
+    if (calm()) map.setView([s.lat, s.lng], s.z); else map.flyTo([s.lat, s.lng], s.z, { duration: 1.8 });
+  }
+
+  window.TR_PAGE = {
+    id: 'tours', icon: '🧭', color: '#E67E22',
+    back: { href: '../heroes-fortress/fortress.html', label: { ar: 'حصن الأبطال', en: "Heroes' Fortress" } },
+    next: { href: '../heroes-fortress/era.html?era=seerah', icon: '🏰', title: { ar: "رحلة السيرة في حصن الأبطال", en: "The Seerah Journey in the Fortress" }, why: { ar: "خطُّ زمنٍ واحد لحياة النبيّ ﷺ، من المولد إلى الوداع.", en: "One timeline of the Prophet's ﷺ life, from birth to farewell." } },
+    title: { ar: 'جولات افتراضية في التاريخ', en: 'Virtual History Tours' },
+    intro: { ar: 'اختر جولة، وسافر على الخريطة محطّةً بعد محطّة. اقرأ أو استمع، ثم انتقل حين تكون مستعدًّا — لا عجلة 🐪', en: "Pick a tour and travel across the map, station by station. Read or listen, then move on when you're ready — no rush 🐪" },
+    kind: 'cards',
+    /* items = the tours, so the free print tab makes one card per tour */
+    items: TOURS.map(function (tour) {
+      return {
+        id: tour.id, icon: tour.icon, title: tour.title, sub: tour.sub,
+        back: { ar: tour.stations.map(function (s, k) { return (k + 1) + '. ' + s.title.ar; }).join('<br>'), en: tour.stations.map(function (s, k) { return (k + 1) + '. ' + s.title.en; }).join('<br>') },
+        sections: [{ icon: '💡', h: { ar: 'هل تعلم؟', en: 'Did you know?' }, html: { ar: tour.stations.map(function (s) { return s.know.ar; }).join(' '), en: tour.stations.map(function (s) { return s.know.en; }).join(' ') } }]
+      };
+    }),
+    onRender: function (TR) {
+      TRr = TR; mapEl = null; map = null; marks = []; line = lineAll = null;
+      var k = document.querySelector('[data-panel="kids"]');
+      k.innerHTML = '<div id="tpBox"></div>';
+      box = k.querySelector('#tpBox');
+      if (T >= 0) drawPlayer(true); else drawList();
+    },
+    onTab: function (tab) { if (tab === 'kids' && map && map !== 'sketch') setTimeout(function () { map.invalidateSize(); }, 50); },
+    parents: {
+      ar: '<h3>ليلةُ السفر العائلية ✈️</h3><p>حوّلوا الجولة إلى موعدٍ أسبوعيّ ينتظره الأطفال:</p><ol><li><b>جهّزوا المكان:</b> علّقوا خريطةً كبيرة على الحائط، وأطفئوا الأضواء القويّة، وحضّروا مشروبًا دافئًا.</li><li><b>جواز المستكشف:</b> اطبعوا «جواز السفر» من تبويب «اطبع مجانًا»، وأعطوا كلَّ طفلٍ جوازه.</li><li><b>محطّةٌ محطّة:</b> اقرؤوا المحطّة معًا (أو استمعوا لها)، ثم اسألوا: «ماذا شعرتَ لو كنتَ هناك؟»</li><li><b>ختم الجواز:</b> بعد كلّ محطّة يرسم الطفل ختمًا صغيرًا أو يلصق نجمة.</li><li><b>الختام:</b> دعاءٌ قصير لأهل البلد الذي زرتموه.</li></ol><div class="tr-note">💡 جولةٌ واحدة في الجلسة تكفي (١٠–١٥ دقيقة). اتركوا الطفل يتحكّم بزرّ «المحطة التالية» ليشعر بأنّه هو المستكشف.</div><h3>أسئلة للحوار</h3><ul><li>الهجرة: «ما الأسباب التي أخذ بها النبي ﷺ؟ وكيف نأخذ بالأسباب في دراستنا؟»</li><li>القدس: «كيف عامل عمرُ وصلاحُ الدين أهلَ المدينة؟ ماذا نتعلّم عن الرحمة؟»</li><li>الأندلس: «لماذا ضاعت؟ كيف نحافظ على وحدة عائلتنا وأصدقائنا؟»</li><li>بغداد: «ما العلم الذي تحبّ أن تنفع به الناس؟»</li></ul><h3>عن الخرائط والصور</h3><p>الخرائط من OpenStreetMap والصور من ويكيميديا كومنز — مجّانية بالكامل. بدون إنترنت تظهر خريطةٌ مبسّطة، وتعمل الجولة كاملة.</p>',
+      en: '<h3>Family travel night ✈️</h3><p>Turn the tours into a weekly date the children look forward to:</p><ol><li><b>Set the scene:</b> hang a big map on the wall, dim the lights, prepare a warm drink.</li><li><b>Explorer passport:</b> print the "passport" from the "Print free" tab and give each child their own.</li><li><b>Station by station:</b> read (or listen to) each station together, then ask: "How would you feel if you were there?"</li><li><b>Stamp the passport:</b> after each station the child draws a small stamp or adds a sticker.</li><li><b>Closing:</b> a short du\'a for the people of the land you visited.</li></ol><div class="tr-note">💡 One tour per session is enough (10–15 minutes). Let the child press "Next station" so they feel like the explorer.</div><h3>Discussion questions</h3><ul><li>Hijrah: "What means did the Prophet ﷺ take? How do we take the means in our studies?"</li><li>Jerusalem: "How did Umar and Salah al-Din treat the city\'s people? What do we learn about mercy?"</li><li>Al-Andalus: "Why was it lost? How do we keep our family and friends united?"</li><li>Baghdad: "What knowledge would you love to benefit people with?"</li></ul><h3>About maps & photos</h3><p>Maps are from OpenStreetMap and photos from Wikimedia Commons — completely free. Offline, a simple sketch map appears and the tour still works fully.</p>'
+    },
+    worksheet: {
+      ar: '<h3>🛂 جواز سفر المستكشف الصغير</h3><p>الاسم: ............................ العمر: ......</p>' + TOURS.map(function (tour) {
+        return '<h3>' + tour.icon + ' ' + tour.title.ar + '</h3><p>' + tour.stations.map(function (s, k) { return '☐ ' + (k + 1) + '. ' + s.title.ar; }).join('&nbsp;&nbsp; ') + '</p><p>أجمل ما تعلّمتُه:</p><div class="ws-line"></div>';
+      }).join('') + '<p>ارسم ختمَ الجولة التي أحببتها أكثر:</p><div class="ws-box"></div>',
+      en: '<h3>🛂 Little Explorer\'s Passport</h3><p>Name: ............................ Age: ......</p>' + TOURS.map(function (tour) {
+        return '<h3>' + tour.icon + ' ' + tour.title.en + '</h3><p>' + tour.stations.map(function (s, k) { return '☐ ' + (k + 1) + '. ' + s.title.en; }).join('&nbsp;&nbsp; ') + '</p><p>The best thing I learned:</p><div class="ws-line"></div>';
+      }).join('') + '<p>Draw a stamp for the tour you loved most:</p><div class="ws-box"></div>'
+    }
+  };
+})();
+</script>
+<script src="tr.js"></script>
+<script defer src="../shared/mk-system.js"></script>
+<script defer src="../shared/mk-journeys.js"></script>
+<script defer src="../shared/mk-bag.js"></script>
+</body>
+</html>

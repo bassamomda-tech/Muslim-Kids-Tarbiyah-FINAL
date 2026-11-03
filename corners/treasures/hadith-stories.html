@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>قصص السنة | Sunnah Stories</title>
+<meta name="description" content="أحاديث نبوية صحيحة تُحكى للأطفال كقصص من السيرة: القصّة أوّلًا ثم الحديث، مع درسٍ وتحدٍّ وسؤال — مجانًا مع دليل للأهل وورقة نشاط.">
+<link rel="icon" href="../../favicon.ico">
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&family=Nunito:wght@400;700;800;900&family=Amiri:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="tr.css">
+<style>.hs-kind{display:inline-block;font-size:.8rem;font-weight:800;border-radius:999px;padding:.15rem .7rem;margin-bottom:.5rem;background:var(--acc-soft);color:var(--acc)}.hs-kind.life{background:#EEF4F9;color:#2C5F8A}.hs-kind.told{background:#FBF1DC;color:#9A6B12}</style>
+</head>
+<body>
+<div id="tr-root"></div>
+<script src="hadith-stories-data/iman.js"></script>
+<script src="hadith-stories-data/ibada.js"></script>
+<script src="hadith-stories-data/sidq.js"></script>
+<script src="hadith-stories-data/rahma.js"></script>
+<script src="hadith-stories-data/ukhuwwa.js"></script>
+<script src="hadith-stories-data/usra.js"></script>
+<script src="hadith-stories-data/adab.js"></script>
+<script src="hadith-stories-data/ilm.js"></script>
+<script src="hadith-stories-data/sabr.js"></script>
+<script src="hadith-stories-data/tawba.js"></script>
+<script>
+/* قصص السنة (was «أحاديث في قصص») — 100 stories from 100 authentic hadiths; a door of حُفّاظ السنة.
+   Two kinds, always labelled on the first page:
+   • real (default) 📜 the authentic event or context of the hadith
+     (sabab al-wurud), retold faithfully — no invented words for the Prophet ﷺ;
+   • real:'told'    📖 a story the Prophet ﷺ himself told (earlier peoples, parables);
+   • real:false     🧒 a clearly-fictional everyday story that teaches the
+     MEANING of a hadith that is a saying with no event behind it.
+   The 13 original stories are below; the rest load from
+   hadith-stories-data/<group>.js (window.HS_DATA), one file per group. */
+(function () {
+  function S(o) {
+    return {
+      id: o.id, tag: o.tag, icon: o.icon,
+      title: { ar: o.t[0], en: o.t[1] }, sub: { ar: o.sub[0], en: o.sub[1] },
+      pages: o.pg.map(function (p, i) {
+        var b = ['', ''];
+        if (i === 0) b = o.real === false
+          ? ['<span class="hs-kind life">🧒 قصّةٌ من حياتنا تقرّب معنى الحديث</span><br>', '<span class="hs-kind life">🧒 An everyday story to explain the hadith</span><br>']
+          : o.real === 'told'
+          ? ['<span class="hs-kind told">📖 قصّةٌ حكاها النبيّ ﷺ</span><br>', '<span class="hs-kind told">📖 A story the Prophet ﷺ told</span><br>']
+          : ['<span class="hs-kind">📜 قصّةٌ حقيقيّة من السيرة</span><br>', '<span class="hs-kind">📜 A true story from the Seerah</span><br>'];
+        return { scene: p[0], text: { ar: b[0] + p[1], en: b[1] + p[2] } };
+      }),
+      matn: { ar: o.m[0], en: o.m[1] }, source: { ar: o.src[0], en: o.src[1] },
+      sections: [
+        { icon: '💡', h: { ar: 'الدرس', en: 'The lesson' }, html: { ar: o.learn[0], en: o.learn[1] } },
+        { icon: '🎯', h: { ar: 'تحدّي اليوم', en: "Today's challenge" }, html: { ar: o.act[0], en: o.act[1] } }
+      ],
+      quiz: { q: { ar: o.q[0], en: o.q[1] }, opts: o.o.map(function (x) { return { t: { ar: x[0], en: x[1] }, ok: !!x[2] }; }), fb: { ar: o.fb[0], en: o.fb[1] } }
+    };
+  }
+
+  var ITEMS = [
+  S({ id: 'palm-riddle', tag: 'ilm', icon: '🌴',
+    t: [`لغزُ النخلة`, `The palm-tree riddle`],
+    sub: [`ابن عمر الصغير الذي عرف الجواب`, `Young Ibn Umar who knew the answer`],
+    pg: [
+      ['👥', `كان النبيّ ﷺ جالسًا مع أصحابه، وفيهم كبارُ الصحابة مثل أبي بكر وعمر، وفيهم غلامٌ صغير هو <b>عبد الله بن عمر</b>.`, `The Prophet ﷺ was sitting with his Companions — senior ones like Abu Bakr and Umar — and among them was a young boy, <b>Abdullah ibn Umar</b>.`],
+      ['❓', `فسألهم ﷺ لغزًا: «إنّ من الشجر شجرةً لا يسقط ورقُها، وإنّها مثلُ المسلم، فحدِّثوني ما هي؟»`, `He ﷺ asked them a riddle: "Among the trees is a tree whose leaves do not fall, and it is like the Muslim. Tell me, which is it?"`],
+      ['🌳🤔', `فبدأ الناس يفكّرون في أشجار البادية: هذه؟ تلك؟ أمّا ابن عمر فخطر في قلبه الجواب: <b>النخلة!</b> لكنّه استحيا أن يتكلّم وهو أصغرُ الحاضرين.`, `People started thinking of desert trees: this one? that one? But the answer came to Ibn Umar's heart: <b>the palm tree!</b> Yet he was too shy to speak, being the youngest there.`],
+      ['🌴', `فقالوا: أخبِرنا ما هي يا رسول الله. فقال ﷺ: «هي النخلة». النخلة كلّها نافعة: ثمرها وظلّها وجذعها، وأوراقها لا تسقط، تمامًا مثل المسلم: خيره دائم ونفعه للناس.`, `They said: "Tell us which it is, O Messenger of Allah." He ﷺ said: "It is the palm tree." Every part of the palm is useful — its fruit, shade and trunk — and its leaves don't fall, just like the Muslim: his goodness lasts and benefits people.`],
+      ['👨‍👦', `ولمّا أخبر ابنُ عمر أباه عمرَ بأنه عرف الجواب، فرح عمر وقال: «لَأَن تكونَ قلتَها أحبُّ إليّ من كذا وكذا». كان يتمنّى أن يتكلّم ابنه بالعلم الذي يعرفه!`, `When Ibn Umar told his father Umar that he had known the answer, Umar was delighted and said: "Had you said it, that would have been dearer to me than such-and-such." He wished his son had spoken the knowledge he had!`]
+    ],
+    m: [`«إنّ من الشجرِ شجرةً لا يسقطُ ورقُها، وإنّها مثلُ المسلمِ، فحدِّثوني ما هي؟»... قالوا: حدِّثنا ما هي يا رسولَ الله، قال: «هي النخلة».`, `"Among the trees is a tree whose leaves do not fall, and it is like the Muslim — tell me, which is it?" … They said: "Tell us, O Messenger of Allah." He said: "It is the palm tree."`],
+    src: [`رواه البخاري (٦١، ١٣١) ومسلم (٢٨١١) عن ابن عمر رضي الله عنهما`, `Al-Bukhari (61, 131) and Muslim (2811), from Ibn Umar (RA)`],
+    learn: [`المسلم مثل النخلة: نافعٌ في كلّ حال، خيرُه لا ينقطع. ومن أدب ابن عمر أنه احترم الكبار، لكنّ أباه علّمه أن العلم الصحيح يُقال بأدب ولا نستحيي منه.`, `A Muslim is like the palm tree: useful in every situation, his goodness never stops. Ibn Umar respected his elders — and his father taught him that true knowledge should be shared politely, not hidden out of shyness.`],
+    act: [`كن «نخلة» اليوم: افعل ثلاثة أشياء تنفع غيرك — ساعد أحدًا، علّم أحدًا، أو شارك شيئًا 🌴`, `Be a "palm tree" today: do three things that benefit others — help someone, teach someone, or share something 🌴`],
+    q: [`لماذا شبّه النبيّ ﷺ المسلمَ بالنخلة؟`, `Why did the Prophet ﷺ compare the Muslim to the palm tree?`],
+    o: [[`لأنها نافعة دائمًا ولا يسقط ورقها`, `Because it is always useful and its leaves don't fall`, 1], [`لأنها أطول شجرة`, `Because it's the tallest tree`], [`لأنها لا تحتاج إلى ماء`, `Because it needs no water`]],
+    fb: [`أحسنت! خيرُ المسلم دائمٌ مثل النخلة.`, `Well done! A Muslim's goodness lasts, like the palm tree.`] }),
+
+  S({ id: 'irji-fasalli', tag: 'ibada', icon: '🧎',
+    t: [`«ارجع فصلِّ»`, `"Go back and pray"`],
+    sub: [`الرجل الذي تعلّم الصلاة الهادئة`, `The man who learned the calm prayer`],
+    pg: [
+      ['🕌', `كان النبيّ ﷺ جالسًا في المسجد، فدخل رجلٌ فصلّى بسرعة، ثم جاء فسلّم على النبيّ ﷺ.`, `The Prophet ﷺ was sitting in the masjid. A man came in, prayed quickly, then came and greeted the Prophet ﷺ.`],
+      ['🔙', `فردّ النبيّ ﷺ السلام وقال له بلطف: «ارجع فصلِّ، فإنّك لم تُصلِّ». فرجع الرجل وصلّى كما صلّى أوّل مرّة.`, `The Prophet ﷺ returned his greeting and said kindly: "Go back and pray, for you have not prayed." The man went back and prayed the same way.`],
+      ['🔁', `ثم جاء وسلّم، فقال له مرّة أخرى: «ارجع فصلِّ، فإنّك لم تُصلِّ». حدث ذلك ثلاث مرّات!`, `He came and greeted again, and was told again: "Go back and pray, for you have not prayed." This happened three times!`],
+      ['🙋', `فقال الرجل: والذي بعثك بالحقّ ما أُحسن غير هذا، فعلّمني! — كان صادقًا ويريد أن يتعلّم.`, `The man said: "By the One who sent you with the truth, I don't know any better than this — so teach me!" He was honest and wanted to learn.`],
+      ['🌿', `فعلّمه النبيّ ﷺ خطوةً خطوة: كبّر، واقرأ، ثم اركع حتى تطمئنّ راكعًا، ثم ارفع حتى تعتدل قائمًا، ثم اسجد حتى تطمئنّ ساجدًا... وافعل ذلك في صلاتك كلّها.`, `So the Prophet ﷺ taught him step by step: say takbir, recite, then bow until you are at rest in bowing, rise until you stand straight, then prostrate until you are at rest in prostration… and do that in all your prayer.`]
+    ],
+    m: [`«ارجِعْ فصلِّ فإنّك لم تُصلِّ» ... «ثم اركعْ حتى تطمئنَّ راكعًا، ثم ارفعْ حتى تعتدلَ قائمًا، ثم اسجدْ حتى تطمئنَّ ساجدًا»`, `"Go back and pray, for you have not prayed." … "Then bow until you are at rest while bowing, then rise until you stand straight, then prostrate until you are at rest while prostrating."`],
+    src: [`رواه البخاري (٧٥٧) ومسلم (٣٩٧) عن أبي هريرة رضي الله عنه`, `Al-Bukhari (757) and Muslim (397), from Abu Hurayrah (RA)`],
+    learn: [`الصلاة ليست سباقًا. «الطمأنينة» أن يهدأ جسمك في كلّ ركن قبل أن تنتقل للذي بعده. والسؤال عمّا لا نعرف شجاعة.`, `Prayer is not a race. "Tuma'ninah" means letting your body be still in each position before moving on. And asking about what we don't know is courage.`],
+    act: [`في صلاتك القادمة، قل «سبحان ربي العظيم» ثلاث مرّات بهدوء في الركوع، ومثلها «سبحان ربي الأعلى» في السجود 🌿`, `In your next prayer, calmly say "Subhana Rabbiyal-Adhim" three times in ruku', and "Subhana Rabbiyal-A'la" three times in sujood 🌿`],
+    q: [`لماذا قال النبيّ ﷺ للرجل: «ارجع فصلِّ»؟`, `Why did the Prophet ﷺ tell the man "Go back and pray"?`],
+    o: [[`لأنه صلّى بسرعة بلا طمأنينة`, `He prayed too fast, without stillness`, 1], [`لأنه صلّى في المكان الخطأ`, `He prayed in the wrong place`], [`لأنه لم يسلّم`, `He didn't greet`]],
+    fb: [`صحيح! والطمأنينة ركنٌ من أركان الصلاة.`, `Correct! Stillness is a pillar of the prayer.`] }),
+
+  S({ id: 'fatimah-tasbih', tag: 'sabr', icon: '🌙',
+    t: [`هديّةٌ أجمل من خادم`, `A gift better than a servant`],
+    sub: [`فاطمة وتسبيح قبل النوم`, `Fatimah and the bedtime tasbih`],
+    pg: [
+      ['🌾', `كانت <b>فاطمة</b> رضي الله عنها، بنتُ النبيّ ﷺ، تعمل كثيرًا في بيتها، وتطحن الحبوب بالرَّحى الثقيلة حتى تعبت يداها.`, `<b>Fatimah</b> (RA), the Prophet's ﷺ daughter, worked hard at home, grinding grain with a heavy hand-mill until her hands were sore.`],
+      ['🚪', `فسمعت أنّ النبيّ ﷺ جاءه خَدَم، فذهبت إليه لتطلب خادمًا يساعدها، فلم تجده، فأخبرت عائشةَ رضي الله عنها بحاجتها.`, `She heard that some servants had come to the Prophet ﷺ, so she went to ask him for one to help her. She didn't find him, so she told 'A'ishah (RA) what she needed.`],
+      ['🌙', `فجاء النبيّ ﷺ إلى بيت فاطمة وعليّ ليلًا، وكانا قد استعدّا للنوم. فأرادا أن يقوما، فقال: «على مكانِكما»، وجلس بينهما بلطف.`, `At night the Prophet ﷺ came to the home of Fatimah and Ali; they had already gone to bed. They started to get up, but he said: "Stay where you are," and sat gently between them.`],
+      ['🎁', `ثم قال: «ألا أعلّمكما خيرًا ممّا سألتماني؟ إذا أخذتما مضاجعَكما: تكبّرا أربعًا وثلاثين، وتسبّحا ثلاثًا وثلاثين، وتحمدا ثلاثًا وثلاثين، فهو خيرٌ لكما من خادم».`, `Then he said: "Shall I not teach you something better than what you asked me for? When you go to bed, say Allahu Akbar thirty-four times, Subhan Allah thirty-three times, and Alhamdulillah thirty-three times — that is better for you than a servant."`],
+      ['💪💚', `فأحبّ عليّ وفاطمة هذه الهديّة، وقال عليٌّ رضي الله عنه إنه لم يتركها منذ سمعها من النبيّ ﷺ.`, `Ali and Fatimah loved this gift, and Ali (RA) said he never left it from the time he heard it from the Prophet ﷺ.`]
+    ],
+    m: [`«ألا أعلّمُكما خيرًا ممّا سألتُماني؟ إذا أخذتُما مضاجعَكما تكبِّرا أربعًا وثلاثين، وتسبِّحا ثلاثًا وثلاثين، وتحمدا ثلاثًا وثلاثين، فهو خيرٌ لكما من خادم».`, `"Shall I not teach you something better than what you asked of me? When you go to bed, say Allahu Akbar thirty-four times, Subhan Allah thirty-three times and Alhamdulillah thirty-three times; that is better for you than a servant."`],
+    src: [`رواه البخاري (٣٧٠٥) ومسلم (٢٧٢٧) عن عليّ رضي الله عنه`, `Al-Bukhari (3705) and Muslim (2727), from Ali (RA)`],
+    learn: [`النبيّ ﷺ أحبّ ابنته كثيرًا، فأعطاها شيئًا يبقى معها كلَّ ليلة: ذِكرُ الله يعطي القلب قوّةً وراحة. والصبر على تعب العمل مع ذكر الله يجعل الحِمل أخفّ.`, `The Prophet ﷺ loved his daughter dearly, so he gave her something that would stay with her every night: remembering Allah gives the heart strength and rest. Patience with hard work, together with dhikr, makes the load lighter.`],
+    act: [`الليلة قبل النوم، قل مع أهلك: الله أكبر ٣٤، سبحان الله ٣٣، الحمد لله ٣٣ — يمكنكم العدّ على الأصابع معًا 🌙`, `Tonight before sleep, say with your family: Allahu Akbar 34, Subhan Allah 33, Alhamdulillah 33 — count on your fingers together 🌙`],
+    q: [`ماذا أعطى النبيُّ ﷺ فاطمةَ وعليًّا بدل الخادم؟`, `What did the Prophet ﷺ give Fatimah and Ali instead of a servant?`],
+    o: [[`ذِكرًا يقولانه قبل النوم`, `A dhikr to say before sleeping`, 1], [`مالًا كثيرًا`, `Lots of money`], [`لم يعطهما شيئًا`, `Nothing at all`]],
+    fb: [`أحسنت! «فهو خيرٌ لكما من خادم».`, `Well done! "That is better for you than a servant."`] }),
+
+  S({ id: 'sammi-allah', tag: 'adab', icon: '🍲',
+    t: [`«يا غلام، سمِّ الله»`, `"Young man, say Bismillah"`],
+    sub: [`آداب الطعام من مائدة النبيّ ﷺ`, `Table manners from the Prophet's ﷺ table`],
+    pg: [
+      ['👦🏠', `كان <b>عمر بن أبي سلمة</b> غلامًا صغيرًا يعيش في بيت النبيّ ﷺ، لأنّ أمّه أمّ سلمة تزوّجها النبيّ ﷺ.`, `<b>Umar ibn Abi Salamah</b> was a young boy living in the Prophet's ﷺ home, because his mother Umm Salamah had married the Prophet ﷺ.`],
+      ['🍲✋', `وفي يوم، جلسوا يأكلون من صحنٍ واحد كبير. وكانت يد عمر «تطيش» في الصحن — تتنقّل هنا وهناك، تأخذ من كلّ جهة!`, `One day they sat eating from one big dish. Umar's hand was "wandering" all over the dish — taking from every side!`],
+      ['😊', `فلم يصرخ عليه النبيّ ﷺ، ولم يُحرجه أمام الناس، بل قال له بلطفٍ ثلاث نصائح.`, `The Prophet ﷺ didn't shout at him or embarrass him; he kindly gave him three tips.`],
+      ['💬', `قال: «يا غلام، سمِّ الله، وكُلْ بيمينك، وكُلْ ممّا يليك».`, `He said: "Young man, say Bismillah, eat with your right hand, and eat from what is in front of you."`],
+      ['🌟', `قال عمر بعد أن كبر: فما زالت تلك طِعمتي بعدُ — أي: بقيت آكل هكذا طوال حياتي!`, `Umar said when he grew up: "That remained my way of eating ever after" — he ate that way all his life!`]
+    ],
+    m: [`«يا غلامُ، سمِّ اللهَ، وكُلْ بيمينك، وكُلْ ممّا يليك» فما زالت تلك طِعمتي بعدُ.`, `"Young man, mention the name of Allah, eat with your right hand, and eat from what is near you." — "That remained my way of eating ever after."`],
+    src: [`رواه البخاري (٥٣٧٦) ومسلم (٢٠٢٢) عن عمر بن أبي سلمة رضي الله عنه`, `Al-Bukhari (5376) and Muslim (2022), from Umar ibn Abi Salamah (RA)`],
+    learn: [`النصيحة اللطيفة تبقى العمر كلّه. وآداب الطعام الثلاثة سهلة: بسم الله، باليمين، ممّا يليك.`, `Gentle advice lasts a lifetime. The three table manners are easy: Bismillah, the right hand, from what's in front of you.`],
+    act: [`في كلّ وجبة اليوم: قل «بسم الله»، وكُل بيمينك، ومن أمامك. وذكّر إخوتك بلطف 🍽️`, `At every meal today: say "Bismillah", eat with your right hand, from what's in front of you — and gently remind your siblings 🍽️`],
+    q: [`ما الآداب الثلاثة التي علّمها النبيّ ﷺ لعمر؟`, `What three manners did the Prophet ﷺ teach Umar?`],
+    o: [[`بسم الله، باليمين، ممّا يليك`, `Bismillah, right hand, from what's in front of you`, 1], [`كُل بسرعة قبل الناس`, `Eat fast before everyone`], [`خذ أكبر قطعة`, `Take the biggest piece`]],
+    fb: [`أحسنت! وبقي عمر يأكل هكذا طوال عمره.`, `Well done! Umar ate that way all his life.`] }),
+
+  S({ id: 'cave', tag: 'tawba', real: 'told', icon: '🪨',
+    t: [`أصحاب الغار الثلاثة`, `The three men in the cave`],
+    sub: [`أعمالٌ صالحة فتحت الصخرة`, `Good deeds that moved the rock`],
+    pg: [
+      ['🗣️', `حكى النبيّ ﷺ لأصحابه قصّة ثلاثة رجال من الأمم السابقة، خرجوا في سفر.`, `The Prophet ﷺ told his Companions about three men from earlier nations who went on a journey.`],
+      ['🌧️🪨', `فلجؤوا إلى غارٍ في جبل ليبيتوا فيه، فسقطت صخرةٌ كبيرة وسدّت باب الغار! لا يستطيعون الخروج.`, `They took shelter in a mountain cave for the night, and a huge rock fell and sealed the entrance! They couldn't get out.`],
+      ['🥛👴👵', `فقالوا: لا ينجّينا إلا أن ندعو الله بأحسن أعمالنا. قال الأوّل: يا ربّ، كان لي أبوان كبيران، جئتهما بالحليب فوجدتهما نائمَين، فوقفت والإناء في يدي حتى الفجر، لا أشرب قبلهما. فانفرجت الصخرة قليلًا.`, `They said: "Only calling on Allah by our best deeds can save us." The first said: "O Lord, I had elderly parents. I brought them milk and found them asleep, so I stood holding the cup until dawn, not drinking before them." The rock moved a little.`],
+      ['🛑', `وقال الثاني: يا ربّ، كنتُ قريبًا من فعل معصيةٍ كبيرة، فتذكّرتُك وخفتُك فتركتُها، وتركتُ المال الذي أعطيتُه. فانفرجت الصخرة أكثر.`, `The second said: "O Lord, I was close to committing a great sin, but I remembered You, feared You, and left it — and left the money I had given." The rock moved more.`],
+      ['🐄🐑', `وقال الثالث: يا ربّ، كان عندي عاملٌ ترك أجرته وذهب، فنمّيتُها له حتى صارت إبلًا وبقرًا وغنمًا، فلما جاء أعطيتُه كلّها. فانفرجت الصخرة كلّها، وخرجوا يمشون! 🌄`, `The third said: "O Lord, a worker of mine left without his wage. I invested it until it became camels, cows and sheep, and when he came, I gave him all of it." The rock rolled away completely, and they walked out! 🌄`]
+    ],
+    m: [`«انطلقَ ثلاثةُ رهطٍ ممّن كان قبلكم حتى أووا المبيتَ إلى غارٍ فدخلوه، فانحدرت صخرةٌ من الجبل فسدّت عليهم الغار، فقالوا: إنّه لا يُنجيكم من هذه الصخرة إلا أن تدعوا اللهَ بصالحِ أعمالكم»`, `"Three men of those before you set out until they took shelter for the night in a cave. A rock rolled down the mountain and sealed the cave. They said: Nothing will save you from this rock except calling upon Allah by your righteous deeds."`],
+    src: [`رواه البخاري (٢٢٧٢) ومسلم (٢٧٤٣) عن عبد الله بن عمر رضي الله عنهما`, `Al-Bukhari (2272) and Muslim (2743), from Abdullah ibn Umar (RA)`],
+    learn: [`الأعمال الصالحة الخالصة لله تنفعنا في الشدائد: برّ الوالدين، وترك المعصية خوفًا من الله، والأمانة.`, `Good deeds done sincerely for Allah help us in hard times: kindness to parents, leaving sin out of fear of Allah, and honesty.`],
+    act: [`اعمل اليوم عملًا صالحًا سرًّا لا يعرفه أحد إلا الله — واجعله «كنزك الخاصّ» 💎`, `Do one good deed today in secret that only Allah knows about — make it your "private treasure" 💎`],
+    q: [`بماذا دعا الرجال الثلاثة لتنفرج الصخرة؟`, `What did the three men call upon Allah by, so the rock would move?`],
+    o: [[`بأحسن أعمالهم الصالحة`, `Their best good deeds`, 1], [`بقوّة أجسامهم`, `The strength of their bodies`], [`بأموالهم`, `Their money`]],
+    fb: [`صحيح! والإخلاص سرّ قبول العمل.`, `Correct! Sincerity is the secret of an accepted deed.`] }),
+
+  S({ id: 'ninety-nine', tag: 'tawba', real: 'told', icon: '🚪',
+    t: [`باب التوبة المفتوح`, `The open door of repentance`],
+    sub: [`الرجل الذي أراد أن يتغيّر`, `The man who wanted to change`],
+    pg: [
+      ['🗣️', `حكى النبيّ ﷺ عن رجلٍ من الأمم السابقة، كان قد فعل ذنوبًا كثيرة جدًّا وعظيمة، حتى قتل نفوسًا كثيرة.`, `The Prophet ﷺ told of a man from earlier nations who had committed very many great sins — he had even taken many lives.`],
+      ['💭', `ثم ندم ندمًا شديدًا، وأراد أن يتوب ويرجع إلى الله. فذهب يسأل: هل لي من توبة؟`, `Then he deeply regretted it and wanted to repent and return to Allah. So he went to ask: "Can I still repent?"`],
+      ['📚', `فدلّوه على عالِمٍ حكيم، فقال له: نعم، ومن يحول بينك وبين التوبة؟ اذهب إلى أرضٍ فيها أناسٌ صالحون يعبدون الله، فاعبد الله معهم، ولا ترجع إلى أرضك فإنها أرض سوء.`, `They directed him to a wise scholar, who said: "Yes! What could stand between you and repentance? Go to a land where good people worship Allah, worship with them, and don't return to your land, for it is a bad place."`],
+      ['🚶‍♂️', `فخرج الرجل يمشي نحو البلد الصالح، وقلبه مليء بالأمل... لكنه مات في منتصف الطريق.`, `The man set out walking toward the good town, his heart full of hope… but he died halfway there.`],
+      ['📏🌟', `فقاسوا المسافة، فوجدوه أقرب إلى البلد الصالح بشبرٍ واحد! فغفر الله له ورحمه، لأنه صدق في توبته.`, `They measured the distance and found him closer to the good town by just one hand-span! So Allah forgave him and had mercy on him, because his repentance was sincere.`]
+    ],
+    m: [`«...نعم، ومَن يحولُ بينه وبين التوبة؟ انطلقْ إلى أرضِ كذا وكذا، فإنّ بها أناسًا يعبدون اللهَ فاعبدِ اللهَ معهم، ولا ترجعْ إلى أرضك فإنها أرضُ سوء» ... «فوُجِدَ إلى هذه أقربَ بشبرٍ، فغُفِر له»`, `"…Yes, and who can stand between him and repentance? Go to such-and-such land, for there are people there who worship Allah — worship Allah with them, and do not return to your land, for it is a bad land." … "He was found closer to this one by a hand-span, so he was forgiven."`],
+    src: [`رواه البخاري (٣٤٧٠) ومسلم (٢٧٦٦) عن أبي سعيد الخدري رضي الله عنه (واللفظ مركّب من روايتيهما)`, `Al-Bukhari (3470) and Muslim (2766), from Abu Sa'id al-Khudri (RA) (wording combined from both)`],
+    learn: [`رحمة الله أوسع من كلّ ذنب. من أخطأ ثم ندم وتاب صادقًا، فبابُ الله مفتوحٌ له. والصحبة الصالحة تعين على الخير.`, `Allah's mercy is wider than every sin. Whoever makes a mistake, regrets it and sincerely repents — Allah's door is open. And good friends help us do good.`],
+    act: [`إذا أخطأت اليوم: اعترف، واعتذر، وقل «أستغفر الله»، ثم ابدأ من جديد. لا تيأس أبدًا 🌱`, `If you make a mistake today: admit it, apologize, say "Astaghfirullah", and start again. Never give up hope 🌱`],
+    q: [`ماذا نتعلّم من قصّة هذا الرجل؟`, `What do we learn from this man's story?`],
+    o: [[`أنّ باب التوبة مفتوح لمن ندم وصدق`, `The door of repentance is open to whoever sincerely regrets`, 1], [`أنّ من أخطأ لا يمكنه أن يتغيّر`, `Someone who made mistakes can never change`], [`أنّ المسافة لا تهمّ`, `Distance doesn't matter`]],
+    fb: [`أحسنت! الله يحبّ التوّابين 💚`, `Well done! Allah loves those who repent 💚`] }),
+
+  S({ id: 'cat', tag: 'rahma', real: 'told', icon: '🐈',
+    t: [`المرأة والقطّة`, `The woman and the cat`],
+    sub: [`الحيوانات أمانة`, `Animals are a trust`],
+    pg: [
+      ['🗣️🐈', `علّمنا النبيّ ﷺ أنّ معاملة الحيوانات أمرٌ مهمّ جدًّا عند الله، وحكى لنا عن امرأةٍ وقطّة.`, `The Prophet ﷺ taught us that how we treat animals matters greatly to Allah, and he told us about a woman and a cat.`],
+      ['⛓️', `كانت هذه المرأة قد ربطت قطّةً عندها وحبستها.`, `This woman had tied up a cat and kept it locked in.`],
+      ['🍽️❌', `فلم تُطعمها، ولم تتركها تخرج لتأكل من حشرات الأرض وما تجده بنفسها.`, `She didn't feed it, and she didn't let it go out to eat insects and whatever it could find for itself.`],
+      ['⚖️', `فأخبر النبيّ ﷺ أنّ الله حاسبها على ظلمها لهذا المخلوق الضعيف. فالظلم — حتى لقطّة — ذنبٌ كبير عند الله.`, `The Prophet ﷺ told us that Allah held her to account for wronging this weak creature. Injustice — even to a cat — is a great sin with Allah.`],
+      ['💚🐾', `وفي المقابل، غفر الله لرجلٍ سقى كلبًا عطشان. فالرحمة بالحيوان طريقٌ إلى رضا الله.`, `On the other hand, Allah forgave a man who gave water to a thirsty dog. Mercy to animals is a path to Allah's pleasure.`]
+    ],
+    m: [`«دخلتِ امرأةٌ النارَ في هِرّةٍ ربطتها، فلم تُطعمْها، ولم تدَعْها تأكلُ من خَشاشِ الأرض»`, `"A woman entered the Fire because of a cat she tied up; she neither fed it nor let it eat from the creatures of the earth."`],
+    src: [`رواه البخاري (٣٣١٨، ٢٣٦٥) ومسلم (٢٢٤٢) عن أبي هريرة وابن عمر رضي الله عنهم`, `Al-Bukhari (3318, 2365) and Muslim (2242), from Abu Hurayrah and Ibn Umar (RA)`],
+    learn: [`إذا كان عندنا حيوان فهو أمانة: طعامه وماؤه وراحته مسؤوليّتنا. والله يحبّ الرحيمين.`, `If we keep an animal, it is a trust: its food, water and comfort are our responsibility. Allah loves those who are merciful.`],
+    act: [`تأكّد اليوم أنّ حيوانات بيتك أو حيّك عندها ماء وطعام، أو ضع ماءً لقطط الشارع 🐾`, `Today, make sure the animals at home or nearby have water and food, or put out water for street cats 🐾`],
+    q: [`ما الذي يجب علينا تجاه الحيوان الذي نربّيه؟`, `What must we do for an animal we keep?`],
+    o: [[`نطعمه ونسقيه ونرحمه`, `Feed it, give it water, and be kind to it`, 1], [`نحبسه بلا طعام`, `Lock it up without food`], [`نخيفه لنضحك`, `Scare it for fun`]],
+    fb: [`صحيح! الحيوان أمانة 💚`, `Correct! An animal is a trust 💚`] }),
+
+  S({ id: 'thumamah', tag: 'rahma', icon: '🤝',
+    t: [`ثُمامة: الأسير الذي فتحَ قلبَه العفو`, `Thumamah: the captive won over by forgiveness`],
+    sub: [`«أطلِقوا ثُمامة»`, `"Set Thumamah free"`],
+    pg: [
+      ['🏜️', `كان <b>ثُمامة بن أُثال</b> سيّدَ قومه في اليمامة، وكان عدوًّا للمسلمين. وفي يومٍ أسره فرسانُ المسلمين وجاؤوا به إلى المدينة.`, `<b>Thumamah ibn Uthal</b> was the chief of his people in al-Yamamah and an enemy of the Muslims. One day Muslim horsemen captured him and brought him to Madinah.`],
+      ['🕌', `أبقوه في المسجد النبويّ، فكان يرى المسلمين كلَّ يوم: كيف يصلّون، وكيف يتعاملون، وكيف يتكلّم النبيّ ﷺ.`, `They kept him in the Prophet's Mosque, so every day he saw the Muslims: how they prayed, how they treated each other, how the Prophet ﷺ spoke.`],
+      ['🗣️', `وكان النبيّ ﷺ يمرّ عليه ويسأله: «ما عندك يا ثُمامة؟» فيجيبه ثمامة، ثلاثة أيّام متتالية.`, `The Prophet ﷺ would come to him and ask: "What do you have to say, O Thumamah?" and Thumamah would answer — for three days in a row.`],
+      ['🕊️', `وفي اليوم الثالث قال النبيّ ﷺ: «أطلِقوا ثُمامة». أطلقه بلا مالٍ ولا شرط! فخرج ثمامة حرًّا.`, `On the third day the Prophet ﷺ said: "Set Thumamah free." He freed him with no ransom and no conditions! Thumamah walked out free.`],
+      ['💚', `لكنّ ثمامة لم يرجع إلى بلده! ذهب فاغتسل، ثم عاد إلى المسجد وأسلم، وقال: «والله ما كان على الأرض وجهٌ أبغضَ إليّ من وجهك، فقد أصبح وجهُك أحبَّ الوجوه كلِّها إليّ».`, `But Thumamah didn't go home! He went and bathed, then came back to the mosque, embraced Islam and said: "By Allah, there was no face on earth more hateful to me than yours — and now your face has become the most beloved of all faces to me."`]
+    ],
+    m: [`فقال ﷺ: «أطلِقوا ثُمامة»... فقال: «واللهِ ما كان على الأرضِ وجهٌ أبغضَ إليّ من وجهِك، فقد أصبحَ وجهُك أحبَّ الوجوهِ كلِّها إليّ».`, `He ﷺ said: "Set Thumamah free." … Thumamah said: "By Allah, there was no face on earth more hateful to me than yours, and now your face has become the most beloved of all faces to me."`],
+    src: [`رواه البخاري (٤٣٧٢) ومسلم (١٧٦٤) عن أبي هريرة رضي الله عنه`, `Al-Bukhari (4372) and Muslim (1764), from Abu Hurayrah (RA)`],
+    learn: [`العفو والأخلاق الحسنة تفتح القلوب أكثر من القوّة. رأى ثمامة الإسلام في أفعال المسلمين، فأحبّه قبل أن يسمع أيّ جدال.`, `Forgiveness and good character open hearts more than force. Thumamah saw Islam in how the Muslims behaved, and loved it before hearing any argument.`],
+    act: [`إذا أساء إليك أحدٌ اليوم، جرّب أن تسامحه وتعامله بلطف — وانظر كيف يتغيّر قلبه 🤝`, `If someone is unkind to you today, try forgiving them and treating them gently — and see how their heart changes 🤝`],
+    q: [`ما الذي جعل ثمامة يحبّ الإسلام؟`, `What made Thumamah love Islam?`],
+    o: [[`عفوُ النبيّ ﷺ وأخلاقُ المسلمين`, `The Prophet's ﷺ forgiveness and the Muslims' character`, 1], [`أنه أُجبر على ذلك`, `He was forced to`], [`أنه أخذ مالًا كثيرًا`, `He was given lots of money`]],
+    fb: [`صحيح! أُطلق حرًّا، ثم عاد وأسلم باختياره.`, `Correct! He was set free, then came back and became Muslim by his own choice.`] }),
+
+  S({ id: 'aqra', tag: 'rahma', icon: '😘',
+    t: [`«من لا يَرحم لا يُرحم»`, `"Whoever shows no mercy…"`],
+    sub: [`قبلةٌ للحسن`, `A kiss for al-Hasan`],
+    pg: [
+      ['👴👦', `كان النبيّ ﷺ يحبّ حفيده <b>الحسن بن عليّ</b> حبًّا كبيرًا.`, `The Prophet ﷺ loved his grandson <b>al-Hasan ibn Ali</b> very much.`],
+      ['😘', `وفي يوم، قبّل النبيّ ﷺ الحسنَ أمام الناس، وكان عنده رجلٌ اسمه <b>الأقرع بن حابس</b>.`, `One day the Prophet ﷺ kissed al-Hasan in front of people. A man named <b>al-Aqra' ibn Habis</b> was sitting there.`],
+      ['😐', `فتعجّب الأقرع وقال: إنّ لي عشرةً من الأولاد، ما قبّلتُ منهم أحدًا!`, `Al-Aqra' was surprised and said: "I have ten children, and I have never kissed any of them!"`],
+      ['👀💬', `فنظر إليه النبيّ ﷺ ثم قال: «مَن لا يَرحم لا يُرحم» — أي: من لا يرحم الناس لا يرحمه الله.`, `The Prophet ﷺ looked at him and said: "Whoever does not show mercy will not be shown mercy."`],
+      ['💞', `فالقبلة والحضن واللمسة الحانية ليست ضعفًا، بل رحمة يحبّها الله ويُثيب عليها.`, `A kiss, a hug, and a gentle touch are not weakness — they are mercy that Allah loves and rewards.`]
+    ],
+    m: [`«مَن لا يَرحمُ لا يُرحمُ»`, `"Whoever does not show mercy will not be shown mercy."`],
+    src: [`رواه البخاري (٥٩٩٧) ومسلم (٢٣١٨) عن أبي هريرة رضي الله عنه`, `Al-Bukhari (5997) and Muslim (2318), from Abu Hurayrah (RA)`],
+    learn: [`الرحمة بالأهل والصغار من صفات المؤمن. ومن رحم الناس رحمه الله.`, `Mercy to family and little ones is a quality of the believer. Whoever is merciful to people, Allah is merciful to them.`],
+    act: [`اليوم: احضن أمّك وأباك، وقبّل يد جدّك أو جدّتك، والعب بلطف مع الصغار 🤗`, `Today: hug your mother and father, kiss your grandparent's hand, and play gently with the little ones 🤗`],
+    q: [`ماذا قال النبيّ ﷺ للأقرع بن حابس؟`, `What did the Prophet ﷺ say to al-Aqra' ibn Habis?`],
+    o: [[`«من لا يَرحم لا يُرحم»`, `"Whoever does not show mercy will not be shown mercy"`, 1], [`«عشرة أولاد كثير»`, `"Ten children is a lot"`], [`«لا تقبّل أحدًا»`, `"Don't kiss anyone"`]],
+    fb: [`صحيح! الرحمة طريق رحمة الله.`, `Correct! Mercy is the way to Allah's mercy.`] }),
+
+  S({ id: 'kikh', tag: 'sidq', icon: '🌴',
+    t: [`«كِخْ كِخْ» — تمرة الصدقة`, `"Kikh, kikh!" — the charity date`],
+    sub: [`أمانة في تمرة واحدة`, `Honesty in a single date`],
+    pg: [
+      ['🌴🧺', `جاء الناس بتمر الصدقة إلى المسجد، ليُوزَّع على الفقراء والمحتاجين.`, `People brought charity dates to the masjid, to be shared with the poor and needy.`],
+      ['👦🌰', `وكان <b>الحسن بن عليّ</b> طفلًا صغيرًا يلعب هناك، فأخذ تمرةً من تمر الصدقة ووضعها في فمه!`, `<b>Al-Hasan ibn Ali</b>, a small child, was playing there. He took a date from the charity dates and put it in his mouth!`],
+      ['✋', `فرآه النبيّ ﷺ فقال: «كِخْ كِخْ» — وهي كلمة تُقال للطفل ليرمي الشيء من فمه — فأخرجها الحسن.`, `The Prophet ﷺ saw him and said: "Kikh, kikh!" — a word said to a child to spit something out — and al-Hasan took it out.`],
+      ['💬', `ثم قال له ﷺ بلطف: «أما شعرتَ أنّا لا نأكلُ الصدقة؟» — لأنّ الصدقة لا تحلّ لآل بيت النبيّ ﷺ، فهي حقّ الفقراء.`, `Then he ﷺ gently said: "Don't you know that we do not eat charity?" — because charity was not permitted for the Prophet's ﷺ family; it was the right of the poor.`],
+      ['🌟', `تمرةٌ واحدة صغيرة! لكنّ النبيّ ﷺ علّم حفيده منذ الصغر أن يحترم حقوق الآخرين، ولو كانت صغيرة.`, `Just one small date! Yet the Prophet ﷺ taught his grandson from a young age to respect others' rights, however small.`]
+    ],
+    m: [`«كِخْ كِخْ» ليطرحَها، ثم قال: «أما شعرتَ أنّا لا نأكلُ الصدقة؟»`, `"Kikh, kikh!" so that he would throw it out, then he said: "Don't you know that we do not eat charity?"`],
+    src: [`رواه البخاري (١٤٩١) ومسلم (١٠٦٩) عن أبي هريرة رضي الله عنه`, `Al-Bukhari (1491) and Muslim (1069), from Abu Hurayrah (RA)`],
+    learn: [`الأمانة تبدأ بالأشياء الصغيرة: لا آخذ ما ليس لي، ولو كان قطعة حلوى أو قلمًا.`, `Honesty starts with small things: I don't take what isn't mine, even a sweet or a pencil.`],
+    act: [`إذا وجدت اليوم شيئًا ليس لك (قلمًا أو لعبة)، أرجعه إلى صاحبه أو إلى المعلّم 🎒`, `If you find something today that isn't yours (a pencil or a toy), return it to its owner or to the teacher 🎒`],
+    q: [`لماذا طلب النبيّ ﷺ من الحسن أن يُخرج التمرة؟`, `Why did the Prophet ﷺ ask al-Hasan to take out the date?`],
+    o: [[`لأنها من الصدقة التي هي حقّ الفقراء`, `It was charity, the right of the poor`, 1], [`لأنها كانت مُرّة`, `It tasted bitter`], [`لأنه لا يحبّ التمر`, `He didn't like dates`]],
+    fb: [`أحسنت! الأمانة حتى في تمرة.`, `Well done! Honesty even in one date.`] }),
+
+  S({ id: 'three-tested', tag: 'sabr', real: 'told', icon: '🎁',
+    t: [`الأبرص والأقرع والأعمى`, `The leper, the bald man, and the blind man`],
+    sub: [`اختبار الشكر`, `The test of gratitude`],
+    pg: [
+      ['🗣️', `حكى النبيّ ﷺ عن ثلاثة رجال من بني إسرائيل: أبرص (في جلده مرض)، وأقرع (بلا شعر)، وأعمى. أراد الله أن يختبرهم.`, `The Prophet ﷺ told of three men of Bani Isra'il: one with a skin disease, one bald, and one blind. Allah wanted to test them.`],
+      ['👼🎁', `فأرسل الله إليهم ملَكًا، فمسح على كلّ واحد فشُفي: صار جلد الأوّل جميلًا، ونبت شعر الثاني، وعاد البصر للثالث. وأعطى كلًّا منهم مالًا: إبلًا وبقرًا وغنمًا، فكثر حتى ملأ الوادي.`, `Allah sent them an angel who wiped over each one and he was healed: the first's skin became beautiful, the second's hair grew, the third could see. He gave each wealth — camels, cows and sheep — until it filled a valley.`],
+      ['🧳', `ثم جاءهم الملَك بعد سنوات في صورة رجلٍ فقير مسافر، وطلب من كلّ واحد شيئًا يساعده في سفره.`, `Years later, the angel came back in the form of a poor traveler and asked each of them for something to help him on his journey.`],
+      ['🙅‍♂️', `فقال الأبرص والأقرع: الحقوق كثيرة! وقالا: هذا المال ورثناه كابرًا عن كابر! نسيا أنهما كانا مريضَين فقيرَين.`, `The first two said: "We have many expenses!" and claimed: "We inherited this wealth from our forefathers!" They forgot they had once been sick and poor.`],
+      ['💚🐑', `أمّا الأعمى فقال: كنتُ أعمى فردّ الله إليّ بصري، فخُذ ما شئت! فقال الملَك: «أمسِك مالَك، فإنما ابتُليتم، فقد رضي اللهُ عنك، وسخط على صاحبيك». وعادا كما كانا.`, `But the formerly blind man said: "I was blind and Allah gave me back my sight — take whatever you wish!" The angel said: "Keep your wealth. You were only being tested. Allah is pleased with you and displeased with your two companions." And the other two returned to how they had been.`]
+    ],
+    m: [`«أمسِكْ مالَك، فإنّما ابتُليتم، فقد رضيَ اللهُ عنك، وسخِطَ على صاحبيك»`, `"Keep your wealth, for you (all) were only being tested. Allah is pleased with you and displeased with your two companions."`],
+    src: [`رواه البخاري (٣٤٦٤) ومسلم (٢٩٦٤) عن أبي هريرة رضي الله عنه`, `Al-Bukhari (3464) and Muslim (2964), from Abu Hurayrah (RA)`],
+    learn: [`النِّعم اختبار: هل نشكر الله ونتذكّر من أين جاءت، ونعطي المحتاج؟ الشكر يحفظ النعمة.`, `Blessings are a test: do we thank Allah, remember where they came from, and give to those in need? Gratitude keeps blessings.`],
+    act: [`اكتب اليوم ثلاث نِعم أعطاك الله إيّاها، وقل «الحمد لله» على كلّ واحدة، ثم شارك شيئًا ممّا تحبّ 🎁`, `Today, write three blessings Allah gave you, say "Alhamdulillah" for each, then share something you love 🎁`],
+    q: [`لماذا رضي الله عن الرجل الذي كان أعمى؟`, `Why was Allah pleased with the man who had been blind?`],
+    o: [[`لأنه شكر الله وأعطى المحتاج`, `He thanked Allah and gave to the one in need`, 1], [`لأنه كان أغنى من صاحبيه`, `He was richer than the others`], [`لأنه رفض أن يعطي`, `He refused to give`]],
+    fb: [`صحيح! الشكر يحفظ النعمة 💚`, `Correct! Gratitude keeps blessings 💚`] }),
+
+  S({ id: 'kidhba', tag: 'sidq', icon: '🍬',
+    t: [`«تعالَ أُعطِك»`, `"Come, I'll give you something"`],
+    sub: [`الصدق حتى مع الأطفال`, `Honesty even with children`],
+    pg: [
+      ['🏠👦', `كان <b>عبد الله بن عامر</b> طفلًا صغيرًا، وكان النبيّ ﷺ جالسًا في بيتهم يومًا.`, `<b>Abdullah ibn Amir</b> was a little boy, and one day the Prophet ﷺ was sitting in their home.`],
+      ['👩✋', `فنادته أمّه: «تعالَ هنا أُعطِك!» — كما يقول الكبار أحيانًا ليأتي الطفل بسرعة.`, `His mother called him: "Come here, I'll give you something!" — like grown-ups sometimes say to make a child come quickly.`],
+      ['❓', `فسألها النبيّ ﷺ: «وما أردتِ أن تُعطيه؟» قالت: أردتُ أن أعطيه تمرًا.`, `The Prophet ﷺ asked her: "What did you intend to give him?" She said: "I meant to give him a date."`],
+      ['💬✨', `فقال ﷺ: «أما إنّكِ لو لم تُعطيه شيئًا كُتبت عليكِ كذبة».`, `He ﷺ said: "If you had not given him anything, it would have been written against you as a lie."`],
+      ['🌟', `حتى الوعد الصغير للطفل الصغير أمانة! فالمسلم صادقٌ في كلّ كلمة، مع الكبير والصغير.`, `Even a small promise to a little child is a trust! A Muslim is truthful in every word, with old and young.`]
+    ],
+    m: [`«أما إنّكِ لو لم تُعطيه شيئًا كُتبَت عليكِ كَذْبةٌ»`, `"If you had not given him anything, a lie would have been recorded against you."`],
+    src: [`رواه أبو داود (٤٩٩١) وأحمد عن عبد الله بن عامر رضي الله عنه، وحسّنه الألباني`, `Abu Dawud (4991) and Ahmad, from Abdullah ibn Amir (RA); graded hasan by al-Albani`],
+    learn: [`الصدق في كلّ شيء، حتى في المزاح والوعود الصغيرة. والكبار قدوة للصغار في الصدق.`, `Be truthful in everything, even in jokes and small promises. Grown-ups are role models for little ones in honesty.`],
+    act: [`لا تَعِد اليوم بشيء لا تستطيع فعله. وإذا وعدتَ أخاك بشيء، فأوفِ به 🤝`, `Today, don't promise anything you can't do. And if you promise your sibling something, keep it 🤝`],
+    q: [`ماذا قال النبيّ ﷺ عن الوعد الذي لا يُوفى للطفل؟`, `What did the Prophet ﷺ say about a promise to a child that isn't kept?`],
+    o: [[`يُكتب كذبة`, `It is written as a lie`, 1], [`لا بأس لأنه طفل`, `It's fine because it's a child`], [`هو مزاح فقط`, `It's only a joke`]],
+    fb: [`أحسنت! الصدق مع الجميع.`, `Well done! Honesty with everyone.`] }),
+
+  S({ id: 'patient-woman', tag: 'sabr', icon: '🌷',
+    t: [`المرأة الصابرة`, `The patient woman`],
+    sub: [`امرأةٌ من أهل الجنّة`, `A woman of Paradise`],
+    pg: [
+      ['👀', `قال ابن عبّاس لأحد أصحابه: ألا أُريك امرأةً من أهل الجنّة؟ قال: بلى. قال: هذه المرأة السوداء.`, `Ibn Abbas said to a companion: "Shall I show you a woman of the people of Paradise?" He said: "Yes." He said: "This dark-skinned woman."`],
+      ['🤒', `كانت هذه المرأة مريضة بمرضٍ يجعلها تقع فجأة (الصَّرَع). فجاءت إلى النبيّ ﷺ وقالت: ادعُ الله لي أن يشفيني.`, `She had an illness that made her suddenly fall (epilepsy). She came to the Prophet ﷺ and said: "Pray to Allah to cure me."`],
+      ['⚖️', `فقال لها ﷺ: «إن شئتِ صبرتِ ولكِ الجنّة، وإن شئتِ دعوتُ الله أن يعافيَكِ».`, `He ﷺ said: "If you wish, be patient and you will have Paradise; or if you wish, I will pray to Allah to cure you."`],
+      ['💪🌷', `فاختارت بشجاعة: «أصبر». لكنها قالت: إنّي أتكشّف حين أقع، فادعُ الله ألّا أتكشّف. فدعا لها ﷺ.`, `She bravely chose: "I will be patient." But she said: "I become uncovered when I fall, so pray that I don't." And he ﷺ prayed for her.`],
+      ['🌟', `فصارت من أهل الجنّة بصبرها! وتعلّمنا منها أنّ الصبر على التعب له أجرٌ عظيم، وأنّ الحياء جمال.`, `Through her patience she became one of the people of Paradise! We learn that patience through hardship has a great reward, and that modesty is beautiful.`]
+    ],
+    m: [`«إن شئتِ صبرتِ ولكِ الجنّة، وإن شئتِ دعوتُ اللهَ أن يُعافيَكِ» فقالت: أصبرُ.`, `"If you wish, be patient and Paradise is yours; or if you wish, I will pray to Allah to heal you." She said: "I will be patient."`],
+    src: [`رواه البخاري (٥٦٥٢) ومسلم (٢٥٧٦) عن ابن عبّاس رضي الله عنهما`, `Al-Bukhari (5652) and Muslim (2576), from Ibn Abbas (RA)`],
+    learn: [`الصبر على المرض والتعب عبادةٌ عظيمة. ولا يُقاس الناس بأشكالهم أو ألوانهم، بل بقلوبهم وأعمالهم.`, `Patience with illness and hardship is great worship. People aren't measured by looks or color, but by their hearts and deeds.`],
+    act: [`إذا تعبت أو مرضت أو حدث ما يُحزنك اليوم، قل: «الحمد لله على كلّ حال» واصبر 🌷`, `If you feel tired, sick, or something sad happens today, say "Alhamdulillah in every situation" and be patient 🌷`],
+    q: [`ماذا اختارت المرأة الصابرة؟`, `What did the patient woman choose?`],
+    o: [[`الصبر والجنّة`, `Patience and Paradise`, 1], [`أن تغضب من مرضها`, `To be angry at her illness`], [`أن تترك الدعاء`, `To stop making du'a`]],
+    fb: [`أحسنت! بصبرها صارت من أهل الجنّة.`, `Well done! Through patience she became of the people of Paradise.`] })
+  ];
+
+  var FILTERS = [
+    { id: 'iman',    label: { ar: '🌟 الإيمان والتوكّل', en: '🌟 Faith & trust in Allah' } },
+    { id: 'ibada',   label: { ar: '🕌 العبادة', en: '🕌 Worship' } },
+    { id: 'sidq',    label: { ar: '🤝 الصدق والأمانة', en: '🤝 Honesty & trust' } },
+    { id: 'rahma',   label: { ar: '💚 الرحمة والرفق', en: '💚 Mercy & gentleness' } },
+    { id: 'ukhuwwa', label: { ar: '👫 الأخوّة والجيران', en: '👫 Brotherhood & neighbours' } },
+    { id: 'usra',    label: { ar: '🏡 الوالدان والأسرة', en: '🏡 Parents & family' } },
+    { id: 'adab',    label: { ar: '🌷 الأدب والكلمة الطيّبة', en: '🌷 Manners & kind words' } },
+    { id: 'ilm',     label: { ar: '📚 العلم والعمل', en: '📚 Knowledge & work' } },
+    { id: 'sabr',    label: { ar: '🌤️ الصبر والشكر والقناعة', en: '🌤️ Patience, gratitude & contentment' } },
+    { id: 'tawba',   label: { ar: '🤲 الإخلاص والتوبة', en: '🤲 Sincerity & repentance' } }
+  ];
+
+  window.TR_PAGE = {
+    back: { href: 'sunnah.html', label: { ar: 'حُفّاظ السنة', en: 'Sunnah' } },
+    id: 'hadith-stories', icon: '📖', color: '#C1663A',
+    guide: { icon: '👧', name: { ar: 'كارما', en: 'Karma' }, say: { ar: "أنا كارما 📖 كلُّ قصّةٍ هنا تنتهي بحديثٍ صحيح. اقرأ قصّةً واحدة، ثم جرّب العمل الصغير في آخرها — وأخبرني كيف كان!", en: "I'm Karma 📖 Every story here ends with an authentic hadith. Read one story, then try the small deed at its end — and tell me how it went!" } },
+    next: { href: 'prophet-moments.html', icon: '🌙', title: { ar: "مواقف النبي ﷺ", en: "Moments of the Prophet ﷺ" }, why: { ar: "كيف كان ﷺ يعامل الأطفال وأهله وأصحابه؟", en: "How did he ﷺ treat children, family and Companions?" } },
+    seerah: {"cave-thawr": "hijrah"},
+    title: { ar: 'قصص السنة', en: 'Sunnah Stories' },
+    intro: { ar: '١٠٠ قصّة من ١٠٠ حديثٍ صحيح، في عشر مجموعات. نقرأ القصّة صفحةً صفحة، ثم نكتشف الحديث ومعناه، ونختار تحدّيًا صغيرًا نعمل به اليوم. قصّةٌ واحدة تكفي في الجلسة 🌿', en: '100 stories from 100 authentic hadiths, in ten groups. We read each story page by page, then discover the hadith and its meaning, and pick one small challenge for today. One story per sitting is enough 🌿' },
+    kind: 'stories',
+    filters: FILTERS,
+    defaultFilter: 'iman',
+    items: (function () {
+      var all = ITEMS.concat((window.HS_DATA || []).map(S)), order = FILTERS.map(function (f) { return f.id; });
+      return all.map(function (it, i) { return [it, i]; })
+        .sort(function (x, y) { return (order.indexOf(x[0].tag) - order.indexOf(y[0].tag)) || (x[1] - y[1]); })
+        .map(function (x) { return x[0]; });
+    })(),
+    parents: {
+      ar: '<h3>لماذا نحكي الحديث كقصّة؟</h3><p>الطفل يتذكّر القصص أكثر من القواعد. حين يعرف «لماذا» قال النبيّ ﷺ الحديث، ولمن قاله، يفهمه ويحبّه ويعمل به.</p>' +
+        '<h3>كيف تحكي القصّة جيّدًا؟</h3><ul>' +
+        '<li><b>قصّة واحدة في الجلسة</b>، ٥–١٠ دقائق، في وقت هادئ (قبل النوم أو بعد الغداء).</li>' +
+        '<li><b>توقّف قبل كشف الحديث</b> واسأل: «ماذا تظنّ أنّ النبيّ ﷺ قال له؟» أو «ماذا كنتَ ستفعل لو كنت مكانه؟»</li>' +
+        '<li>غيّر صوتك قليلًا مع الشخصيات، وتمهّل عند اللحظات المهمّة، واترك الطفل يرى الرسوم (الإيموجي) ويصفها.</li>' +
+        '<li><b>بلا تخويف:</b> في قصص مثل «المرأة والقطّة» و«باب التوبة» ركّز على الرحمة والأمل، ولا تُطِل في وصف العقاب. الهدف أن يحبّ الطفل الخير، لا أن يرتعب.</li>' +
+        '<li>احفظوا معًا جملة الحديث القصيرة فقط (مثل «هي النخلة» أو «من لا يَرحم لا يُرحم»).</li>' +
+        '<li>تابع «تحدّي اليوم» مساءً بسؤال لطيف: «كيف طبّقت الحديث اليوم؟»</li></ul>' +
+        '<h3>ألعاب بلا شاشة</h3><ul>' +
+        '<li><b>من قال هذا؟</b> اقرأ جملة الحديث، واطلب من الطفل أن يتذكّر قصّتها.</li>' +
+        '<li><b>رتّب المشاهد:</b> ارسموا ٣ مشاهد من القصّة على بطاقات، واخلطوها، ثم رتّبوها.</li>' +
+        '<li><b>مسرح العائلة:</b> مثّلوا قصّة «يا غلام سمِّ الله» على مائدة الطعام!</li></ul>' +
+        '<h3>ثلاثة أنواع من القصص</h3><ul><li><b>📜 قصّة حقيقيّة من السيرة:</b> الحدث الذي قيل فيه الحديث أو الذي يرويه، نحكيه كما ورد بلا إضافة كلامٍ على لسان النبيّ ﷺ.</li><li><b>📖 قصّة حكاها النبيّ ﷺ:</b> عن أممٍ سابقة أو مثلٌ ضربه ﷺ، نرويها كما حكاها.</li><li><b>🧒 قصّة من حياتنا:</b> حين يكون الحديث قولًا بلا حادثة، نكتب قصّةً خياليّة عن طفلٍ في يومه تشرح <b>معنى</b> الحديث، ومكتوبٌ عليها بوضوح أنها لتقريب المعنى.</li></ul><div class="tr-note">📚 كلّ القصص هنا من أحاديث صحيحة أو حسنة، والمصدر ورقم الحديث في نهاية كلّ قصّة. صياغة القصّة من عندنا لتناسب الأطفال، أمّا ألفاظ النبيّ ﷺ فبنصّ الرواية أو بمعناها الواضح.</div>',
+      en: '<h3>Why tell the hadith as a story?</h3><p>Children remember stories more than rules. When they know <i>why</i> the Prophet ﷺ said a hadith, and to whom, they understand it, love it, and live by it.</p>' +
+        '<h3>How to tell it well</h3><ul>' +
+        '<li><b>One story per sitting</b>, 5–10 minutes, at a calm time (bedtime or after lunch).</li>' +
+        '<li><b>Pause before revealing the hadith</b> and ask: "What do you think the Prophet ﷺ told him?" or "What would you have done in his place?"</li>' +
+        '<li>Change your voice a little for the characters, slow down at the key moments, and let the child look at and describe the pictures (emoji).</li>' +
+        '<li><b>No fear tactics:</b> in stories like "The woman and the cat" and "The open door of repentance", focus on mercy and hope and don\'t dwell on punishment. The goal is for the child to love goodness, not to be frightened.</li>' +
+        '<li>Memorize together only the short hadith phrase (like "It is the palm tree" or "Whoever shows no mercy…").</li>' +
+        '<li>Follow up "Today\'s challenge" in the evening with a gentle question: "How did you live the hadith today?"</li></ul>' +
+        '<h3>Screen-free games</h3><ul>' +
+        '<li><b>Who said this?</b> Read the hadith phrase and ask the child to recall its story.</li>' +
+        '<li><b>Order the scenes:</b> draw 3 scenes from the story on cards, shuffle, then put them in order.</li>' +
+        '<li><b>Family theatre:</b> act out "Young man, say Bismillah" at the dinner table!</li></ul>' +
+        '<h3>Three kinds of stories</h3><ul><li><b>📜 A true story from the Seerah:</b> the event in which the hadith was said, or which it narrates, retold as reported, with no words added to the Prophet ﷺ.</li><li><b>📖 A story the Prophet ﷺ told:</b> about earlier peoples, or a parable he gave, retold as he told it.</li><li><b>🧒 An everyday story:</b> when the hadith is a saying with no event behind it, a clearly fictional story about a child explains its <b>meaning</b>, and is labelled as such.</li></ul><div class="tr-note">📚 All stories here come from authentic (sahih or hasan) hadiths; the source and number are at the end of each story. The storytelling is our own wording for children; the Prophet\'s ﷺ words follow the narration\'s text or its clear meaning.</div>'
+    },
+    worksheet: {
+      ar: '<h3>✏️ ورقة نشاط: قصّة حديث</h3><p>اسم القصّة:</p><div class="ws-line"></div>' +
+        '<p><b>رتّب القصّة:</b> ارسم ما حدث في كلّ مربّع.</p>' +
+        '<table style="width:100%;border-collapse:collapse"><tr><td style="border:1.5px solid #888;height:38mm;width:33%;vertical-align:top;padding:2mm">١. في البداية...</td><td style="border:1.5px solid #888;width:33%;vertical-align:top;padding:2mm">٢. ثم...</td><td style="border:1.5px solid #888;width:33%;vertical-align:top;padding:2mm">٣. وفي النهاية...</td></tr></table>' +
+        '<p><b>جملة الحديث التي حفظتها:</b></p><div class="ws-line"></div><div class="ws-line"></div>' +
+        '<p><b>ارسم نفسك وأنت تطبّق الحديث:</b></p><div class="ws-box"></div>' +
+        '<p><b>عملي هذا الأسبوع:</b></p><div class="ws-line"></div>' +
+        '<p>☐ السبت ☐ الأحد ☐ الإثنين ☐ الثلاثاء ☐ الأربعاء ☐ الخميس ☐ الجمعة — ضع ✓ كلّ يوم طبّقته</p>',
+      en: '<h3>✏️ Activity sheet: A hadith story</h3><p>Story name:</p><div class="ws-line"></div>' +
+        '<p><b>Put the story in order:</b> draw what happened in each box.</p>' +
+        '<table style="width:100%;border-collapse:collapse"><tr><td style="border:1.5px solid #888;height:38mm;width:33%;vertical-align:top;padding:2mm">1. First…</td><td style="border:1.5px solid #888;width:33%;vertical-align:top;padding:2mm">2. Then…</td><td style="border:1.5px solid #888;width:33%;vertical-align:top;padding:2mm">3. In the end…</td></tr></table>' +
+        '<p><b>The hadith phrase I memorized:</b></p><div class="ws-line"></div><div class="ws-line"></div>' +
+        '<p><b>Draw yourself living by the hadith:</b></p><div class="ws-box"></div>' +
+        '<p><b>My deed this week:</b></p><div class="ws-line"></div>' +
+        '<p>☐ Sat ☐ Sun ☐ Mon ☐ Tue ☐ Wed ☐ Thu ☐ Fri — tick each day you did it</p>'
+    }
+  };
+})();
+</script>
+<script src="tr.js"></script>
+<script defer src="../shared/mk-system.js"></script>
+<script defer src="../shared/mk-journeys.js"></script>
+<script defer src="../shared/mk-bag.js"></script>
+</body>
+</html>

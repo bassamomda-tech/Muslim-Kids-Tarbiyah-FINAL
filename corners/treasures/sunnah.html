@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>حُفّاظ السنة | Sunnah Keepers</title>
+<meta name="description" content="حُفّاظ السنة: الأربعون النووية، وبطاقاتها للمراجعة والطباعة، و١٠٠ قصة من ١٠٠ حديث صحيح، ومواقف النبي ﷺ — في ركنٍ واحد.">
+<link rel="icon" href="../../favicon.ico">
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&family=Nunito:wght@400;700;800;900&family=Amiri:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="tr.css">
+<style>
+  .sn-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:1rem}
+  .sn-door{display:flex;flex-direction:column;gap:.35rem;background:#fff;border:2px solid var(--line);border-radius:22px;padding:1.1rem 1.1rem 1rem;text-decoration:none;color:var(--ink);box-shadow:var(--shadow);transition:transform .2s,border-color .2s}
+  .sn-door:hover,.sn-door:focus-visible{transform:translateY(-3px);border-color:var(--c);outline:none}
+  .sn-door .top{display:flex;align-items:center;gap:.7rem}
+  .sn-door .ic{flex:0 0 54px;height:54px;border-radius:16px;display:grid;place-items:center;font-size:1.8rem;background:color-mix(in srgb,var(--c) 14%,#fff)}
+  .sn-door .t{font-weight:900;font-size:1.1rem;line-height:1.35}
+  .sn-door .tag{font-size:.74rem;font-weight:800;color:var(--c)}
+  .sn-door .d{color:var(--muted);font-size:.9rem;line-height:1.6;flex:1}
+  .sn-door .bar{display:flex;align-items:center;gap:.5rem;font-size:.8rem;font-weight:800;color:var(--muted)}
+  .sn-door .bar .track{flex:1;height:8px;border-radius:99px;background:var(--paper2);overflow:hidden}
+  .sn-door .bar .fill{height:100%;background:var(--c);border-radius:99px}
+  .sn-door .go{align-self:flex-start;margin-top:.3rem;background:var(--c);color:#fff;border-radius:999px;padding:.35rem .9rem;font-weight:800;font-size:.86rem}
+  .sn-path{background:#fff;border:1.5px dashed var(--line);border-radius:18px;padding:1rem 1.1rem;margin-top:1.2rem}
+  .sn-path h3{font-size:1.02rem;color:var(--acc);margin-bottom:.35rem}
+  .sn-path ol{padding-inline-start:1.3rem;color:var(--ink)}
+  .sn-path li{margin:.2rem 0}
+  .sn-test{display:block;max-width:520px;margin:1.1rem auto 0;text-align:center;background:var(--acc);color:#fff;text-decoration:none;font-weight:800;border-radius:999px;padding:.7rem 1rem}
+</style>
+</head>
+<body>
+<div id="tr-root"></div>
+<script>
+/* حُفّاظ السنة — the 10th main corner: the one home for Sunnah content.
+   Each door shows the child's own progress from the key that page already
+   saves (hd:done:<slug> for the Nawawi garden, tr:<page id> for treasures). */
+(function () {
+  var GARDEN = '../little-district/pages/';
+  function ls(k) { try { return localStorage.getItem(k); } catch (e) { return null; } }
+  function stars(id) { try { return (JSON.parse(ls('tr:' + id)) || []).length; } catch (e) { return 0; } }
+  function nawawiDone() { var n = 0; for (var i = 1; i <= 42; i++) if (ls('hd:done:h' + (i < 10 ? '0' : '') + i) === '1') n++; return n; }
+
+  var DOORS = [
+    { href: GARDEN + 'hadith.html', ic: '🕌', c: '#1A9B7B', done: nawawiDone, total: 42,
+      t: { ar: 'الأربعون النووية', en: 'The Forty Hadith of an-Nawawi' }, tag: { ar: 'احفظ · افهم · اعمل', en: 'Memorize · Understand · Act' },
+      d: { ar: 'أحاديثُ النبيّ ﷺ الجامعة، حديثًا حديثًا: نصّه وشرحه وفوائده واختبارٌ وشهادة.', en: "The Prophet's ﷺ comprehensive hadiths, one by one: text, explanation, lessons, a test and a certificate." },
+      unit: { ar: 'حديثًا حفظتُه', en: 'memorized' } },
+    { href: 'hadith-cards.html', ic: '🃏', c: '#2E8B57', done: function () { return stars('hadith-cards'); }, total: 42,
+      t: { ar: 'بطاقات الأربعين', en: 'Forty Hadith Cards' }, tag: { ar: 'نفسُ الأربعين — للمراجعة والطباعة', en: 'The same forty — to review & print' },
+      d: { ar: 'بعد أن تتعلّم الحديث: اقلب بطاقته لتراجعه، واطبع البطاقات مجّانًا للعبة المطابقة والثلاجة.', en: 'After learning a hadith: flip its card to review it, and print the cards free for matching games and the fridge.' },
+      unit: { ar: 'بطاقةً راجعتُها', en: 'reviewed' } },
+    { href: 'hadith-stories.html', ic: '📖', c: '#C1663A', done: function () { return stars('hadith-stories'); }, total: 100,
+      t: { ar: 'قصص السنة', en: 'Sunnah Stories' }, tag: { ar: '١٠٠ قصة من ١٠٠ حديث صحيح', en: '100 stories from 100 authentic hadiths' },
+      d: { ar: 'لكلّ حديثٍ قصّة: من السيرة، أو حكاها النبيّ ﷺ، أو من حياتنا لتقريب المعنى — في عشر مجموعات.', en: 'Every hadith has a story: from the Seerah, told by the Prophet ﷺ, or from daily life to explain it — in ten groups.' },
+      unit: { ar: 'قصّةً قرأتُها', en: 'read' } },
+    { href: 'prophet-moments.html', ic: '🌙', c: '#2C5F8A', done: function () { return stars('prophet-moments'); }, total: 18,
+      t: { ar: 'مواقف النبي ﷺ', en: 'Moments of the Prophet ﷺ' }, tag: { ar: 'كيف كان ﷺ يعامل الناس؟', en: 'How did he ﷺ treat people?' },
+      d: { ar: 'رحمته ﷺ وأخلاقه مع الأطفال وأهله وأصحابه، ومع من أساء إليه، ومع الحيوان.', en: 'His ﷺ mercy and manners with children, family, Companions, those who wronged him, and animals.' },
+      unit: { ar: 'موقفًا قرأتُه', en: 'read' } }
+  ];
+
+  window.TR_PAGE = {
+    id: 'sunnah', icon: '📜', color: '#6C4BD8',
+    guide: { icon: '👧', name: { ar: 'كارما', en: 'Karma' }, say: { ar: "السلام عليكم! أنا كارما، بطلةُ حُفّاظ السنة 🌸 أحبُّ النبيَّ ﷺ وأحبُّ أن أعمل بكلامه. اختر بابًا وتعال نتعلّم معًا — حديثًا واحدًا كلّ أسبوع يكفي!", en: "Assalamu alaikum! I'm Karma, the hero of the Sunnah Keepers 🌸 I love the Prophet ﷺ and I love living by his words. Pick a door and let's learn together — one hadith a week is enough!" } },
+    back: { href: '../../index.html', label: { ar: 'المدينة', en: 'City' } },
+    title: { ar: 'حُفّاظ السنة', en: 'Sunnah Keepers' },
+    intro: { ar: '﴿وَمَا آتَاكُمُ الرَّسُولُ فَخُذُوهُ﴾ — كلُّ ما نتعلّمه من أحاديث النبيّ ﷺ في مكانٍ واحد. اختر بابًا، وتمهّل فيه 🌿', en: '"Whatever the Messenger gives you, take it" — everything we learn from the Prophet\'s ﷺ hadiths, in one place. Pick a door and take your time 🌿' },
+    onRender: function (TR) {
+      // the corner score card (mk-corner-score.js) sits under the hero; keep it there when the page re-renders (language switch)
+      var sc = window.__mkcs || document.getElementById('mkCornerScore'), hero = document.querySelector('.tr-hero');
+      if (sc && hero) { window.__mkcs = sc; hero.parentNode.insertBefore(sc, hero.nextSibling); }
+      var el = document.querySelector('[data-panel="kids"]');
+      el.innerHTML = '<div class="sn-grid">' + DOORS.map(function (d) {
+        var n = d.done(), pct = Math.round(n / d.total * 100);
+        return '<a class="sn-door" style="--c:' + d.c + '" href="' + d.href + '">' +
+          '<span class="top"><span class="ic">' + d.ic + '</span><span><span class="t">' + TR.esc(TR.t(d.t)) + '</span><br><span class="tag">' + TR.esc(TR.t(d.tag)) + '</span></span></span>' +
+          '<span class="d">' + TR.esc(TR.t(d.d)) + '</span>' +
+          '<span class="bar"><span>' + n + ' / ' + d.total + '</span><span class="track"><span class="fill" style="width:' + pct + '%;display:block"></span></span><span>' + TR.esc(TR.t(d.unit)) + '</span></span>' +
+          '<span class="go">' + TR.tx('ادخل ←', 'Enter →') + '</span></a>';
+      }).join('') + '</div>' +
+      '<div class="sn-path"><h3>👧 ' + TR.tx('طريقُ كارما الهادئ للأسبوع', 'Karma\'s calm path for the week') + '</h3><ol>' +
+        '<li>' + TR.tx('حديثٌ واحد من <b>الأربعين</b>: اقرأه وافهمه، واحفظ جملةً منه.', 'One hadith from <b>the Forty</b>: read it, understand it, memorize one sentence.') + '</li>' +
+        '<li>' + TR.tx('راجعه في منتصف الأسبوع بـ<b>بطاقته</b> — أو علّقها على الثلاجة.', 'Review it mid-week with its <b>card</b> — or stick it on the fridge.') + '</li>' +
+        '<li>' + TR.tx('قصّةٌ واحدة من <b>قصص السنة</b> قبل النوم، من المجموعة القريبة من حديث الأسبوع.', 'One <b>Sunnah story</b> at bedtime, from the group closest to the week\'s hadith.') + '</li>' +
+        '<li>' + TR.tx('يوم الجمعة: <b>موقفٌ</b> من مواقف النبيّ ﷺ، ونسأل: «كيف نقتدي به؟»', 'On Friday: one <b>moment</b> of the Prophet ﷺ, and ask: "How can we follow his example?"') + '</li>' +
+      '</ol></div>' +
+      '<a class="sn-test" href="' + GARDEN + 'quran-tests.html?j=hadith">🎯 ' + TR.tx('اختبار الأربعين النووية — ٣ مستويات', 'The Forty Hadith test — 3 levels') + ' ' + (TR.ar() ? '←' : '→') + '</a>';
+    },
+    parents: {
+      ar: '<h3>لماذا جمعنا السنة في مكانٍ واحد؟</h3><p>كي لا يتشتّت الطفل بين أبوابٍ متشابهة، ولا يرى الحديث نفسه في أماكن متفرّقة. هنا أربعة أبواب، لكلٍّ منها دورٌ واحد:</p><ul><li><b>الأربعون النووية:</b> التعلّم والحفظ والشرح والاختبار.</li><li><b>بطاقات الأربعين:</b> ليست محتوًى جديدًا، بل الأحاديث نفسها في بطاقاتٍ للمراجعة والطباعة.</li><li><b>قصص السنة:</b> ١٠٠ حديثٍ آخر لا تتكرّر مع الأربعين، يُحكى كلٌّ منها في قصّة.</li><li><b>مواقف النبيّ ﷺ:</b> القدوة العمليّة في أخلاقه ﷺ.</li></ul><div class="tr-note">💡 لا تستعجلوا العدد: حديثٌ واحد مفهومٌ معمولٌ به خيرٌ من عشرة محفوظةٍ بلا عمل.</div>',
+      en: '<h3>Why gather the Sunnah in one place?</h3><p>So the child isn\'t scattered between similar doors, and doesn\'t meet the same hadith in different places. Four doors, each with one job:</p><ul><li><b>The Forty:</b> learning, memorizing, explanation and the test.</li><li><b>Forty cards:</b> not new content — the same hadiths as cards to review and print.</li><li><b>Sunnah stories:</b> 100 other hadiths, none repeating the Forty, each told as a story.</li><li><b>Moments of the Prophet ﷺ:</b> the living example of his ﷺ character.</li></ul><div class="tr-note">💡 Don\'t rush the count: one hadith understood and lived is better than ten memorized without action.</div>'
+    }
+  };
+})();
+</script>
+<script src="tr.js"></script>
+<script defer src="../shared/mk-system.js"></script>
+<script defer src="../shared/mk-journeys.js"></script>
+<script>window.MK_CORNER='sunnah'; window.MK_SCORE_ANCHOR='.tr-hero';</script>
+<script defer src="../shared/mk-corner-score.js"></script>
+<script defer src="../shared/mk-bag.js"></script>
+</body>
+</html>

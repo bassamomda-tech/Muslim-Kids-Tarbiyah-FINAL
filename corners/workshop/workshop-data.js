@@ -25,7 +25,7 @@ themes: {
 corners: {
   aqeeda: { ic:'🕋', ar:'منارة العقيدة',      en:'Faith Minaret',   color:'#C0392B' },
   ibada:  { ic:'🌙', ar:'واحة العبادة',       en:'Worship Oasis',   color:'#117A8B' },
-  quran:  { ic:'📖', ar:'بستان القرآن والسنة', en:'Quran Garden',    color:'#1A9B7B' },
+  quran:  { ic:'📖', ar:'بستان القرآن', en:'Quran Garden',    color:'#1A9B7B' },
   social: { ic:'🏘️', ar:'حيّنا الصغير',       en:'Little District', color:'#D4A017' },
   heart:  { ic:'💚', ar:'ركن القلب السليم',   en:'Pure Heart',      color:'#6C3483' },
   sport:  { ic:'🏊', ar:'النادي الرياضي',     en:'Sports Club',     color:'#27AE60' },

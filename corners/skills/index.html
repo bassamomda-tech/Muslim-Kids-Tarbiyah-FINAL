@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>صانع المهارات | Skills Maker</title>
+<meta name="description" content="صانع المهارات: رحلاتٌ لتعلّم مهاراتٍ حقيقية — التاجر الصغير، مستكشف التاريخ، العالِم، الطبيب، المهندس، المزارع — مع مهمّاتٍ عملية وحلقات بودكاست.">
+<link rel="icon" href="../../favicon.ico">
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&family=Nunito:wght@400;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../treasures/tr.css">
+<style>
+  .sk-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:1rem}
+  .sk-door{display:flex;flex-direction:column;gap:.45rem;background:#fff;border:2px solid var(--line);border-radius:22px;padding:1.1rem;text-decoration:none;color:var(--ink);box-shadow:var(--shadow);transition:transform .2s,border-color .2s}
+  .sk-door:hover,.sk-door:focus-visible{transform:translateY(-3px);border-color:var(--c);outline:none}
+  .sk-door .top{display:flex;align-items:center;gap:.75rem}
+  .sk-door .ic{flex:0 0 60px;height:60px;border-radius:18px;display:grid;place-items:center;font-size:2.1rem;background:color-mix(in srgb,var(--c) 14%,#fff)}
+  .sk-door .t{font-weight:900;font-size:1.15rem;line-height:1.35}
+  .sk-door .tag{font-size:.78rem;font-weight:800;color:var(--c)}
+  .sk-door .d{color:var(--muted);font-size:.9rem;line-height:1.6;flex:1}
+  .sk-door .meta{display:flex;flex-wrap:wrap;gap:.35rem}
+  .sk-door .chip{font-size:.74rem;font-weight:800;background:var(--paper2,#f5efe3);border-radius:999px;padding:.2rem .6rem;color:var(--ink)}
+  .sk-door .bar{display:flex;align-items:center;gap:.5rem;font-size:.8rem;font-weight:800;color:var(--muted)}
+  .sk-door .bar .track{flex:1;height:8px;border-radius:99px;background:var(--paper2,#f5efe3);overflow:hidden}
+  .sk-door .bar .fill{display:block;height:100%;background:var(--c);border-radius:99px}
+  .sk-door .go{align-self:flex-start;background:var(--c);color:#fff;border-radius:999px;padding:.4rem 1rem;font-weight:800;font-size:.88rem}
+  .sk-how{background:#fff;border:1.5px dashed var(--line);border-radius:18px;padding:1rem 1.1rem;margin-top:1.2rem}
+  .sk-how h3{color:var(--acc);font-size:1.02rem;margin-bottom:.4rem}
+  .sk-how ol{padding-inline-start:1.3rem}
+  html.calm .sk-door{transition:none}
+</style>
+</head>
+<body>
+<div id="tr-root"></div>
+<script>
+/* صانع المهارات — hub of the skill journeys (each one: corners/skills/<id>.html + data/<id>.js) */
+(function () {
+  var SK = [
+    { id: 'merchant',  ic: '🛍️', c: '#C0841A', n: 10, t: { ar: 'التاجر الصغير', en: 'The Little Merchant' }, tag: { ar: 'المال · المشروع · البيع بأمانة', en: 'Money · projects · honest trade' },
+      d: { ar: 'ما هو المال؟ وكيف أبدأ مشروعي الأوّل؟ من المقايضة إلى «جزيرة الأعمال» — مع الرزّاق سبحانه، وفقه البيع، والزكاة والصدقة.', en: 'What is money, and how do I start my first project? From barter to "Business Island" — with ar-Razzaq, the fiqh of trade, zakat and sadaqah.' } },
+    { id: 'historian', ic: '🧭', c: '#8E5A2B', n: 8, t: { ar: 'مستكشف التاريخ', en: 'The History Explorer' }, tag: { ar: 'المصادر · الخرائط · المتحف', en: 'Sources · maps · museum' },
+      d: { ar: 'كيف يعرف المؤرّخ ما حدث؟ الخطّ الزمني، والتثبّت من الأخبار، والإسناد، ومقابلة الأجداد — ثم متحف عائلتك.', en: 'How does a historian know what happened? Timelines, checking news, isnad, interviewing grandparents — then your family museum.' } },
+    { id: 'scientist', ic: '🔬', c: '#2E86C1', n: 8, t: { ar: 'العالِم الصغير', en: 'The Little Scientist' }, tag: { ar: 'الملاحظة · التجربة · النتيجة', en: 'Observe · test · conclude' },
+      d: { ar: 'تأمّل خلق الله، واسأل سؤالًا، وجرّب تجربةً عادلة، وسجّل النتائج كما فعل ابن الهيثم.', en: 'Reflect on Allah\'s creation, ask a question, run a fair test and record results — like Ibn al-Haytham.' } },
+    { id: 'doctor',    ic: '🩺', c: '#C0392B', n: 8, t: { ar: 'الطبيب الصغير', en: 'The Little Doctor' }, tag: { ar: 'جسمي · النظافة · الإسعاف', en: 'My body · hygiene · first aid' },
+      d: { ar: 'جسمي العجيب، وغسل اليدين، والطعام الصحّي، وزيارة المريض، وماذا أفعل في الطوارئ — بأمانٍ ومع الكبار.', en: 'My amazing body, handwashing, healthy food, visiting the sick, and what to do in an emergency — safely, with adults.' } },
+    { id: 'engineer',  ic: '🏗️', c: '#E67E22', n: 8, t: { ar: 'المهندس الصغير', en: 'The Little Engineer' }, tag: { ar: 'فكّر · صمّم · ابنِ · حسّن', en: 'Think · design · build · improve' },
+      d: { ar: 'مشكلةٌ حقيقية، وأفكارٌ كثيرة، ورسمٌ ومقاسات، ونموذجٌ نختبره ونحسّنه — بإتقانٍ كما يحبّ الله.', en: 'A real problem, many ideas, a sketch with measurements, a prototype we test and improve — with itqan, as Allah loves.' } },
+    { id: 'farmer',    ic: '🌱', c: '#27AE60', n: 8, t: { ar: 'المزارع الصغير', en: 'The Little Farmer' }, tag: { ar: 'البذرة · التربة · الحصاد', en: 'Seed · soil · harvest' },
+      d: { ar: 'الله فالق الحبّ والنوى: ازرع بذرتك، واعتنِ بها، وسجّل نموّها، واجعلها صدقةً جارية.', en: 'Allah splits the seed and the date-stone: plant your seed, care for it, record its growth, make it ongoing charity.' } }
+  ];
+  function stars(id) { try { return (JSON.parse(localStorage.getItem('tr:skill-' + id)) || []).length; } catch (e) { return 0; } }
+  window.TR_PAGE = {
+    id: 'skills', icon: '🛠️', color: '#7A3FB0',
+    back: { href: '../activities/play.html', label: { ar: 'ساحة الأنشطة', en: 'Activities' } },
+    title: { ar: 'صانع المهارات', en: 'Skills Maker' },
+    intro: { ar: 'رحلاتٌ حقيقية لتتعلّم مهارةً تنفعك وتنفع الناس: محطّاتٌ قصيرة، ومهمّةٌ عملية في كلّ محطّة، وحلقةُ بودكاست نسمعها معًا 🎧', en: 'Real journeys to learn a skill that helps you and others: short stations, a hands-on mission in each, and a podcast episode to listen to together 🎧' },
+    guide: { icon: '🧒', name: { ar: 'أنوس', en: 'Anos' }, say: { ar: 'أيّ مهارةٍ تحبّ أن تصنعها اليوم؟ اختر رحلةً واحدة، وأكمل محطّةً في كلّ مرّة — وفي آخر الرحلة شهادةٌ تنتظرك! 🏅', en: 'Which skill would you like to make today? Pick one journey and finish one station at a time — a certificate waits at the end! 🏅' } },
+    onRender: function (TR) {
+      var el = document.querySelector('[data-panel="kids"]');
+      el.innerHTML = '<div class="sk-grid">' + SK.map(function (s) {
+        var n = Math.min(stars(s.id), s.n), pct = Math.round(n / s.n * 100);
+        return '<a class="sk-door" style="--c:' + s.c + '" href="' + s.id + '.html">' +
+          '<span class="top"><span class="ic">' + s.ic + '</span><span><span class="t">' + TR.esc(TR.t(s.t)) + '</span><br><span class="tag">' + TR.esc(TR.t(s.tag)) + '</span></span></span>' +
+          '<span class="d">' + TR.esc(TR.t(s.d)) + '</span>' +
+          '<span class="meta"><span class="chip">🗺️ ' + s.n + ' ' + TR.tx('محطّات', 'stations') + '</span><span class="chip">🎯 ' + TR.tx('مهمّات عملية', 'real missions') + '</span><span class="chip">🎧 ' + s.n + ' ' + TR.tx('حلقات', 'episodes') + '</span></span>' +
+          '<span class="bar"><span>' + n + ' / ' + s.n + '</span><span class="track"><span class="fill" style="width:' + pct + '%"></span></span><span>⭐</span></span>' +
+          '<span class="go">' + TR.tx('ابدأ الرحلة ←', 'Start the journey →') + '</span></a>';
+      }).join('') + '</div>' +
+      '<div class="sk-how"><h3>🧭 ' + TR.tx('كيف تسير الرحلة؟', 'How does a journey work?') + '</h3><ol>' +
+        '<li>' + TR.tx('اقرأ قصّة المحطّة صفحةً صفحة، أو استمع لها 🔊', 'Read the station story page by page, or listen 🔊') + '</li>' +
+        '<li>' + TR.tx('تعرّف على الفكرة المهمّة، وصلتها بديننا 🌙', 'Learn the big idea and how it links to our deen 🌙') + '</li>' +
+        '<li>' + TR.tx('نفّذ <b>المهمّة الحقيقية</b> في البيت مع أهلك 🎯', 'Do the <b>real mission</b> at home with your family 🎯') + '</li>' +
+        '<li>' + TR.tx('أجب عن السؤال، واضغط «تعلّمتُها» لتأخذ نجمة ⭐', 'Answer the question and tap "I learned it" for a star ⭐') + '</li>' +
+        '<li>' + TR.tx('اسمع حلقة البودكاست من تبويب 🎧 — وحدك أو مع العائلة في السيارة!', 'Play the podcast episode from the 🎧 tab — alone or with the family in the car!') + '</li>' +
+      '</ol></div>';
+    },
+    parents: {
+      ar: '<h3>لماذا «صانع المهارات»؟</h3><p>لأنّ الطفل يتعلّم المهارة حين <b>يفعلها</b>، لا حين يقرأ عنها فقط. كلّ رحلةٍ تنتهي بمشروعٍ حقيقيّ صغير ينجزه بيده.</p><ul><li>محطّةٌ واحدة في الأسبوع تكفي — والمهمّة هي الأهمّ.</li><li>حلقات البودكاست قصيرة (٣–٥ دقائق) تصلح للسيارة وقبل النوم.</li><li>كلّ النجوم تُحفظ في «حقيبتي»، وعند إكمال المحطّات تظهر شهادة الرحلة.</li><li>المهمّات آمنة ومعظمها يحتاج أدواتٍ من البيت؛ رافِق طفلك فيما يحتاج كبيرًا.</li></ul>',
+      en: '<h3>Why "Skills Maker"?</h3><p>Children learn a skill by <b>doing</b> it, not just reading about it. Every journey ends with a small real project made by their own hands.</p><ul><li>One station a week is enough — the mission matters most.</li><li>Podcast episodes are short (3–5 minutes) — great for the car and bedtime.</li><li>All stars are saved in "My Bag", and the journey certificate appears as stations are completed.</li><li>Missions are safe and mostly need things from home; join your child where an adult is needed.</li></ul>'
+    }
+  };
+})();
+</script>
+<script src="../treasures/tr.js"></script>
+<script defer src="../shared/mk-system.js"></script>
+<script defer src="../shared/mk-journeys.js"></script>
+<script defer src="../shared/mk-bag.js"></script>
+</body>
+</html>

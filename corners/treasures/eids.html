@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>الأعياد في العبادات | Eids in Worship</title>
+<meta name="description" content="قصص مجانية للأطفال عن عيد الفطر وعيد الأضحى والجمعة عيد الأسبوع: السنن، الآداب، الفرح المشروع، وخطّة العيد للعائلة.">
+<link rel="icon" href="../../favicon.ico">
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&family=Nunito:wght@400;700;800;900&family=Amiri:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="tr.css">
+<style>
+  /* «خطة العيد للعائلة» checklist */
+  .ep-wrap{max-width:640px;margin:0 auto}
+  .ep-grp{background:#fff;border:1px solid var(--line);border-radius:18px;padding:.9rem 1rem;margin-bottom:1rem;box-shadow:var(--shadow)}
+  .ep-grp h4{color:var(--acc);font-size:1.05rem;margin-bottom:.4rem;display:flex;justify-content:space-between;align-items:center;gap:.5rem}
+  .ep-grp h4 small{color:var(--muted);font-weight:700;font-size:.8rem}
+  .ep-item{display:flex;align-items:flex-start;gap:.6rem;padding:.45rem .2rem;border-top:1px dashed var(--line);cursor:pointer;font-size:.98rem}
+  .ep-item:first-of-type{border-top:none}
+  .ep-item input{width:22px;height:22px;flex:0 0 22px;margin-top:.3rem;accent-color:var(--acc);cursor:pointer}
+  .ep-item.on span{color:var(--muted);text-decoration:line-through}
+  .ep-acts{display:flex;gap:.5rem;justify-content:center;flex-wrap:wrap;margin-top:.5rem}
+</style>
+</head>
+<body>
+<div id="tr-root"></div>
+<script>
+/* Eids in worship — short story pages, then the authentic text, lessons and a quiz.
+   Only authentic narrations (sources given); scholarly recommendations are labelled as such. */
+(function () {
+  function B(a, e) { return { ar: a, en: e }; }
+  function P(scene, a, e) { return { scene: scene, text: B(a, e) }; }
+  function Q(qa, qe, opts, fbA, fbE) { /* opts: [[ar,en,ok]] — order is as written */
+    return { q: B(qa, qe), opts: opts.map(function (x) { return { t: B(x[0], x[1]), ok: !!x[2] }; }), fb: fbA ? B(fbA, fbE) : null };
+  }
+
+  var ITEMS = [
+    { id: 'two-eids', tag: 'manners', icon: '🌙', title: B('عيدان أهداهما الله لنا', 'Two Eids, a gift from Allah'), sub: B('الفطر والأضحى', 'Fitr and Adha'),
+      pages: [
+        P('🐪', 'وصل النبيّ ﷺ إلى المدينة بعد رحلة الهجرة الطويلة. فرح به الناس، ورحّبوا به أجمل ترحيب.', 'The Prophet ﷺ arrived in Madinah after the long journey of Hijrah. The people were overjoyed and welcomed him warmly.'),
+        P('🎪', 'رأى النبيّ ﷺ أنّ لأهل المدينة يومين يلعبون فيهما كلّ سنة. فسألهم بلطف: «ما هذان اليومان؟»', 'He saw that the people of Madinah had two days each year when they played. He asked them gently: "What are these two days?"'),
+        P('🗣️', 'قالوا: كنّا نلعب فيهما في الجاهلية، أي قبل الإسلام.', 'They said: "We used to play on them before Islam."'),
+        P('🎁', 'فقال ﷺ: «إنّ الله قد أبدلكم بهما خيرًا منهما: يوم الأضحى ويوم الفطر». ففرح المسلمون بهديّة ربّهم: عيدين فيهما فرحٌ وعبادة معًا!', 'He ﷺ said: "Allah has given you something better than them instead: the day of Adha and the day of Fitr." The Muslims rejoiced at their Lord\'s gift — two Eids with joy and worship together!')
+      ],
+      matn: B('قَدِمَ رَسُولُ اللَّهِ ﷺ الْمَدِينَةَ وَلَهُمْ يَوْمَانِ يَلْعَبُونَ فِيهِمَا، فَقَالَ: «مَا هَذَانِ الْيَوْمَانِ؟» قَالُوا: كُنَّا نَلْعَبُ فِيهِمَا فِي الْجَاهِلِيَّةِ، فَقَالَ رَسُولُ اللَّهِ ﷺ: «إِنَّ اللَّهَ قَدْ أَبْدَلَكُمْ بِهِمَا خَيْرًا مِنْهُمَا: يَوْمَ الْأَضْحَى، وَيَوْمَ الْفِطْرِ».', 'The Messenger of Allah ﷺ came to Madinah and they had two days on which they played. He said: "What are these two days?" They said: "We used to play on them in the time of ignorance." The Messenger of Allah ﷺ said: "Allah has replaced them for you with two better days: the day of Adha and the day of Fitr."'),
+      source: B('عن أنس بن مالك رضي الله عنه — رواه أبو داود والنسائي، وصحّحه الألباني', 'Anas ibn Malik (RA) — Abu Dawud & An-Nasa\'i (sahih)'),
+      sections: [
+        { icon: '🌱', h: B('ماذا تعلّمنا؟', 'What did we learn?'), html: B('<ul><li>للمسلمين عيدان في السنة: <b>عيد الفطر</b> و<b>عيد الأضحى</b>.</li><li>العيد في الإسلام فرحٌ + عبادة: نصلّي ونكبّر ثم نلعب ونفرح.</li><li>أعيادنا هديّة من الله، فنفرح بها ونعتزّ بها.</li></ul>', '<ul><li>Muslims have two Eids a year: <b>Eid al-Fitr</b> and <b>Eid al-Adha</b>.</li><li>Eid in Islam is joy + worship: we pray and say takbeer, then play and celebrate.</li><li>Our Eids are a gift from Allah, so we rejoice in them and are proud of them.</li></ul>') }
+      ],
+      quiz: Q('كم عيدًا للمسلمين في السنة؟', 'How many Eids do Muslims have each year?', [['ثلاثة', 'Three'], ['اثنان: الفطر والأضحى', 'Two: Fitr and Adha', 1], ['عيد واحد', 'One']], 'نعم! عيد الفطر وعيد الأضحى — وعندنا أيضًا عيد صغير كلّ أسبوع، سنعرفه في قصّة الجمعة.', 'Yes! Eid al-Fitr and Eid al-Adha — and there\'s also a little weekly Eid, which we\'ll meet in the Friday story.') },
+
+    { id: 'fitr', tag: 'fitr', icon: '🌙', title: B('صباح عيد الفطر', 'The morning of Eid al-Fitr'), sub: B('زكاة الفطر والتمرات', 'Zakat al-Fitr and the dates'),
+      pages: [
+        P('🌙', 'صام سالم وأخته مريم أيّام رمضان، بعضها كاملًا وبعضها نصف يوم. وفي آخر ليلة رأى الناس الهلال: غدًا العيد!', 'Salim and his sister Maryam fasted the days of Ramadan — some full days, some half days. On the last night people sighted the new moon: tomorrow is Eid!'),
+        P('🌾', 'قبل صلاة العيد أخرج أبوهما <b>زكاة الفطر</b> طعامًا للفقراء عن كلّ واحد في البيت، حتى عن الصغار. قال: «حتى يفرح الفقراء بالعيد مثلنا».', 'Before the Eid prayer their father gave <b>Zakat al-Fitr</b> — food for the poor — for every person in the house, even the little ones. He said: "So the poor can be happy on Eid just like us."'),
+        P('🌴', 'وعلى المائدة كان صحن تمر. أكل كلّ واحد منهم ثلاث تمرات قبل الخروج. قالت مريم: «لماذا ثلاث؟» قالت أمّها: «كان النبيّ ﷺ يأكل تمرات وِترًا — واحدة أو ثلاثًا أو خمسًا — قبل أن يخرج يوم الفطر».', 'On the table was a plate of dates. Each of them ate three before going out. Maryam asked, "Why three?" Mum said: "The Prophet ﷺ would eat an odd number of dates — one, three or five — before going out on the day of Fitr."'),
+        P('📣', 'وفي الطريق كانت الأصوات ترتفع بالتكبير: «الله أكبر، الله أكبر، لا إله إلا الله، والله أكبر، الله أكبر، ولله الحمد». شعر سالم أنّ الدنيا كلّها تفرح لله.', 'On the way, voices rose with takbeer: "Allahu akbar, Allahu akbar, la ilaha illallah, wallahu akbar, Allahu akbar, wa lillahil-hamd." Salim felt the whole world was rejoicing for Allah.')
+      ],
+      matn: B('عَنْ أَنَسٍ رَضِيَ اللَّهُ عَنْهُ قَالَ: كَانَ رَسُولُ اللَّهِ ﷺ لَا يَغْدُو يَوْمَ الْفِطْرِ حَتَّى يَأْكُلَ تَمَرَاتٍ… وَيَأْكُلُهُنَّ وِتْرًا.', 'Anas (RA) said: The Messenger of Allah ﷺ would not go out on the day of Fitr until he had eaten some dates… and he would eat an odd number of them.'),
+      source: B('رواه البخاري. وزكاة الفطر: عن ابن عمر رضي الله عنهما أنّ النبيّ ﷺ فرضها «وأمر بها أن تُؤدّى قبل خروج الناس إلى الصلاة» (البخاري ومسلم). والتكبير: ﴿وَلِتُكْمِلُوا الْعِدَّةَ وَلِتُكَبِّرُوا اللَّهَ عَلَىٰ مَا هَدَاكُمْ﴾ البقرة: ١٨٥', 'Bukhari. Zakat al-Fitr: Ibn Umar (RA) — the Prophet ﷺ made it obligatory "and ordered that it be given before the people go out to the prayer" (Bukhari & Muslim). Takbeer: "…so that you complete the number and glorify Allah for having guided you" (Al-Baqarah 2:185).'),
+      sections: [
+        { icon: '🌱', h: B('سنن صباح عيد الفطر', 'Sunnahs of the Eid al-Fitr morning'), html: B('<ul><li>إخراج <b>زكاة الفطر</b> قبل الصلاة، طعامًا للفقراء.</li><li>أكل <b>تمرات وِترًا</b> قبل الخروج.</li><li><b>التكبير</b> من ليلة العيد حتى الصلاة.</li><li>الاغتسال ولبس أحسن الثياب (من فعل الصحابة كابن عمر رضي الله عنهما).</li></ul>', '<ul><li>Giving <b>Zakat al-Fitr</b> before the prayer, as food for the poor.</li><li>Eating an <b>odd number of dates</b> before leaving.</li><li><b>Takbeer</b> from the night of Eid until the prayer.</li><li>Taking a bath and wearing your best clothes (the practice of Companions like Ibn Umar RA).</li></ul>') },
+        { icon: '📣', h: B('صيغة التكبير', 'The takbeer'), html: B('<p>«اللهُ أكبرُ، اللهُ أكبرُ، لا إلهَ إلا اللهُ، واللهُ أكبرُ، اللهُ أكبرُ، وللهِ الحمدُ» — من الصيغ المأثورة عن ابن مسعود رضي الله عنه.</p>', '<p>"Allahu akbar, Allahu akbar, la ilaha illallah, wallahu akbar, Allahu akbar, wa lillahil-hamd" — one of the wordings reported from Ibn Mas\'ud (RA).</p>') }
+      ],
+      quiz: Q('متى نُخرج زكاة الفطر؟', 'When do we give Zakat al-Fitr?', [['بعد العيد بشهر', 'A month after Eid'], ['قبل صلاة العيد', 'Before the Eid prayer', 1], ['لا نُخرجها', "We don't give it"]], 'أحسنت! قبل الصلاة، حتى يفرح الفقراء يوم العيد.', 'Well done! Before the prayer, so the poor can be happy on Eid day.') },
+
+    { id: 'prayer', tag: 'fitr', icon: '🕌', title: B('إلى صلاة العيد', 'Off to the Eid prayer'), sub: B('طريقٌ للذهاب وطريقٌ للعودة', 'One way there, another way back'),
+      pages: [
+        P('👨‍👩‍👧‍👦', 'خرجت العائلة كلّها إلى المصلّى: الأب والأمّ والأطفال وحتى الجدّة. كان النبيّ ﷺ يحبّ أن يخرج الجميع، حتى البنات الصغيرات، ليشهدوا الخير ودعوة المسلمين.', 'The whole family went out to the prayer ground: father, mother, children, even Grandma. The Prophet ﷺ loved for everyone to come out — even the young girls — to witness the goodness and the gathering of the Muslims.'),
+        P('🙏', 'صلّى الناس ركعتين، ثم وقف الإمام يخطب ويذكّرهم بالله وبالفقراء وبصلة الأرحام.', 'The people prayed two rak\'ahs, then the imam stood and gave a sermon reminding them of Allah, of the poor, and of keeping family ties.'),
+        P('🛤️', 'في طريق العودة قال الأب: «سنعود من طريق آخر!» تعجّب سالم: «لماذا؟» قال أبوه: «كان النبيّ ﷺ إذا كان يوم عيد خالف الطريق — ذهب من طريق ورجع من غيره».', 'On the way home Dad said: "We\'ll go back a different way!" Salim was surprised: "Why?" Dad said: "On Eid day the Prophet ﷺ would take one road there and a different road back."'),
+        P('🤝', 'وفي الطريق الجديد سلّموا على جيران لم يروهم من زمن، وقالوا لهم: «تقبّل الله منّا ومنكم». فانتشر الفرح في طريقين بدل طريق واحد!', 'On the new road they greeted neighbours they hadn\'t seen for ages and said: "May Allah accept from us and from you." Joy spread along two roads instead of one!')
+      ],
+      matn: B('عَنْ جَابِرِ بْنِ عَبْدِ اللَّهِ رَضِيَ اللَّهُ عَنْهُمَا قَالَ: كَانَ النَّبِيُّ ﷺ إِذَا كَانَ يَوْمُ عِيدٍ خَالَفَ الطَّرِيقَ.', 'Jabir ibn Abdillah (RA) said: When it was the day of Eid, the Prophet ﷺ would take different routes.'),
+      source: B('رواه البخاري. وخروج النساء والبنات لشهود الخير: عن أمّ عطيّة رضي الله عنها (البخاري ومسلم). والصلاة قبل الخطبة: عن ابن عمر رضي الله عنهما (البخاري)', 'Bukhari. Women and girls coming out to witness the good: Umm Atiyyah (RA) (Bukhari & Muslim). Prayer before the sermon: Ibn Umar (RA) (Bukhari).'),
+      sections: [
+        { icon: '🌱', h: B('ماذا تعلّمنا؟', 'What did we learn?'), html: B('<ul><li>صلاة العيد ركعتان، ثم الخطبة.</li><li>يخرج إليها الجميع: الكبار والصغار، الرجال والنساء.</li><li>من السنّة الذهاب من طريق والعودة من طريق آخر.</li></ul>', '<ul><li>The Eid prayer is two rak\'ahs, followed by the sermon.</li><li>Everyone goes: young and old, men and women.</li><li>It is Sunnah to go by one road and return by another.</li></ul>') }
+      ],
+      quiz: Q('ماذا كان يفعل النبيّ ﷺ في طريق العيد؟', 'What did the Prophet ﷺ do with the Eid route?', [['يذهب من طريق ويعود من طريق آخر', 'Went one way and came back another', 1], ['يبقى في البيت', 'Stayed home'], ['يجري بسرعة', 'Ran fast']]) },
+
+    { id: 'ibrahim', tag: 'adha', icon: '🐏', title: B('إبراهيم وإسماعيل عليهما السلام', 'Ibrahim and Ismail (AS)'), sub: B('قصّة عيد الأضحى', 'The story of Eid al-Adha'),
+      pages: [
+        P('🏜️', 'كان إبراهيم عليه السلام يحبّ ابنه إسماعيل حبًّا كبيرًا. انتظره سنواتٍ طويلة، ثم رزقه الله به، فكبر ولدًا صالحًا يمشي مع أبيه ويساعده.', 'Ibrahim (AS) loved his son Ismail very much. He waited many long years, then Allah gave him this son, who grew into a good boy who walked with his father and helped him.'),
+        P('💭', 'وذات يوم رأى إبراهيم في منامه أمرًا من الله: أن يقدّم ابنه. ورؤيا الأنبياء حقّ. كان أمرًا صعبًا جدًّا على قلب الأب.', 'One day Ibrahim saw in a dream a command from Allah: to offer his son. The dreams of prophets are true. It was so very hard on a father\'s heart.'),
+        P('🤲', 'فلم يُجبر إبراهيم ابنه، بل شاوره بلطف: ﴿يَا بُنَيَّ إِنِّي أَرَىٰ فِي الْمَنَامِ أَنِّي أَذْبَحُكَ فَانظُرْ مَاذَا تَرَىٰ﴾. فأجاب إسماعيل بقلبٍ مطمئن: ﴿يَا أَبَتِ افْعَلْ مَا تُؤْمَرُ ۖ سَتَجِدُنِي إِن شَاءَ اللَّهُ مِنَ الصَّابِرِينَ﴾.', 'Ibrahim did not force his son; he consulted him gently: "My dear son, I have seen in a dream that I am sacrificing you, so see what you think." Ismail answered with a calm heart: "O my father, do as you are commanded. You will find me, if Allah wills, among the patient."'),
+        P('🐏', 'وحين أطاع الاثنان أمر الله، ناداه ربّه أنْ قد نجحت! ولم يُرِد الله أن يُذبح إسماعيل، بل أراد أن يرى طاعتهما. وأرسل كبشًا عظيمًا فداءً له: ﴿وَفَدَيْنَاهُ بِذِبْحٍ عَظِيمٍ﴾.', 'When both obeyed Allah\'s command, their Lord called out that Ibrahim had passed the test! Allah never wanted Ismail to be harmed — He wanted to see their obedience. He sent a great ram as a ransom: "And We ransomed him with a great sacrifice."'),
+        P('🎉', 'ومنذ ذلك اليوم يتذكّر المسلمون هذه الطاعة الجميلة في عيد الأضحى، فيذبحون الأضاحي ويطعمون الفقراء، ويشكرون الله.', 'Since that day Muslims remember this beautiful obedience on Eid al-Adha: they sacrifice animals, feed the poor, and thank Allah.')
+      ],
+      matn: B('﴿فَلَمَّا بَلَغَ مَعَهُ السَّعْيَ قَالَ يَا بُنَيَّ إِنِّي أَرَىٰ فِي الْمَنَامِ أَنِّي أَذْبَحُكَ فَانظُرْ مَاذَا تَرَىٰ ۚ قَالَ يَا أَبَتِ افْعَلْ مَا تُؤْمَرُ ۖ سَتَجِدُنِي إِن شَاءَ اللَّهُ مِنَ الصَّابِرِينَ﴾ … ﴿وَفَدَيْنَاهُ بِذِبْحٍ عَظِيمٍ﴾', '"And when he reached the age of striving with him, he said: My dear son, I have seen in a dream that I am sacrificing you, so see what you think. He said: O my father, do as you are commanded; you will find me, if Allah wills, among the patient." … "And We ransomed him with a great sacrifice."'),
+      source: B('سورة الصافّات: ١٠٢ و١٠٧ (والقصّة في الآيات ١٠٠–١١١)', 'As-Saffat 37:102 and 37:107 (the story is in 37:100–111)'),
+      sections: [
+        { icon: '🌱', h: B('ماذا تعلّمنا؟', 'What did we learn?'), html: B('<ul><li><b>الطاعة</b>: نطيع الله حتى لو كان الأمر صعبًا.</li><li><b>الشورى</b>: إبراهيم شاور ابنه وهو الأب النبيّ.</li><li><b>البرّ</b>: إسماعيل أجاب أباه بأدب: «يا أبتِ».</li><li><b>رحمة الله</b>: الله لم يُرد إيذاء إسماعيل، بل أكرمهما.</li></ul>', '<ul><li><b>Obedience</b>: we obey Allah even when it is hard.</li><li><b>Consultation</b>: Ibrahim asked his son\'s view, though he was the father and a prophet.</li><li><b>Kindness to parents</b>: Ismail answered politely: "O my father."</li><li><b>Allah\'s mercy</b>: Allah never wanted Ismail harmed; He honoured them both.</li></ul>') }
+      ],
+      quiz: Q('بماذا أجاب إسماعيل أباه؟', 'How did Ismail answer his father?', [['رفض وغضب', 'He refused and got angry'], ['هرب بعيدًا', 'He ran away'], ['«يا أبتِ افعل ما تُؤمر»', '"O my father, do as you are commanded"', 1]], 'نعم! أجاب بأدبٍ وصبر، فأكرمه الله.', 'Yes! He answered politely and patiently, and Allah honoured him.') },
+
+    { id: 'udhiyah', tag: 'adha', icon: '🍖', title: B('الأضحية والمشاركة', 'The udhiyah and sharing'), sub: B('كلوا وأطعموا', 'Eat and give food'),
+      pages: [
+        P('🐑', 'في صباح عيد الأضحى، بعد الصلاة، ذبح النبيّ ﷺ كبشين بيده الشريفة، وقال: «بسم الله، والله أكبر».', 'On the morning of Eid al-Adha, after the prayer, the Prophet ﷺ sacrificed two rams with his own blessed hand, saying: "Bismillah, Allahu akbar."'),
+        P('🥘', 'وفي بيت سالم قالت الأم: «نقسم لحم الأضحية: جزءًا لنا، وجزءًا هديةً للأقارب والجيران، وجزءًا للفقراء». هكذا استحبّ كثيرٌ من العلماء أن تُقسم.', 'At Salim\'s house Mum said: "We\'ll divide the udhiyah meat: a part for us, a part as gifts for relatives and neighbours, and a part for the poor." Many scholars recommended dividing it this way.'),
+        P('🚪', 'حمل سالم ومريم الأكياس إلى بيوت الجيران. قال جارهم العجوز: «جزاكم الله خيرًا يا أولادي!» فشعرا أنّ فرحتهما صارت أكبر.', 'Salim and Maryam carried the bags to the neighbours\' homes. Their elderly neighbour said: "May Allah reward you, my children!" They felt their joy grow even bigger.'),
+        P('💚', 'وتعلّما أنّ الله لا يصله اللحم ولا الدم، بل تصله <b>التقوى</b> التي في القلوب.', 'And they learned that it is not the meat or blood that reaches Allah — it is the <b>taqwa</b> (God-consciousness) in our hearts.')
+      ],
+      matn: B('﴿لَن يَنَالَ اللَّهَ لُحُومُهَا وَلَا دِمَاؤُهَا وَلَٰكِن يَنَالُهُ التَّقْوَىٰ مِنكُمْ﴾', '"Neither their meat nor their blood reaches Allah, but what reaches Him is the taqwa from you."'),
+      source: B('سورة الحجّ: ٣٧. وأضحية النبيّ ﷺ بكبشين: عن أنس رضي الله عنه (البخاري ومسلم). و«كلوا وأطعموا وادّخروا»: البخاري. وتقسيمها أثلاثًا استحباب من العلماء', 'Al-Hajj 22:37. The Prophet\'s ﷺ two rams: Anas (RA) (Bukhari & Muslim). "Eat, give food, and store": Bukhari. Dividing into thirds is a recommendation of scholars.'),
+      sections: [
+        { icon: '🌱', h: B('ماذا تعلّمنا؟', 'What did we learn?'), html: B('<ul><li>الأضحية عبادة نتقرّب بها إلى الله بعد صلاة العيد.</li><li>نأكل منها، ونُهدي، ونُطعم الفقراء: ﴿فَكُلُوا مِنْهَا وَأَطْعِمُوا الْبَائِسَ الْفَقِيرَ﴾ (الحجّ: ٢٨).</li><li>المهمّ عند الله ما في القلب: التقوى والإخلاص.</li></ul>', '<ul><li>The udhiyah is worship that brings us closer to Allah, done after the Eid prayer.</li><li>We eat from it, give gifts, and feed the poor: "So eat of them and feed the needy poor" (Al-Hajj 22:28).</li><li>What matters to Allah is in the heart: taqwa and sincerity.</li></ul>') }
+      ],
+      quiz: Q('ما الذي يصل إلى الله من الأضحية؟', 'What reaches Allah from the udhiyah?', [['اللحم', 'The meat'], ['التقوى التي في القلب', 'The taqwa in the heart', 1], ['الصوف', 'The wool']]) },
+
+    { id: 'ten-days', tag: 'adha', icon: '🔟', title: B('العشر الأوائل ويوم عرفة', 'The first ten days & the Day of Arafah'), sub: B('أحبّ الأيام إلى الله', 'The days most beloved to Allah'),
+      pages: [
+        P('📅', 'قبل عيد الأضحى بعشرة أيام، علّقت مريم لوحة صغيرة: «عشرة أيام — عشرة أعمال صالحة!»', 'Ten days before Eid al-Adha, Maryam hung up a little board: "Ten days — ten good deeds!"'),
+        P('✨', 'قالت لها أمّها: «أخبرنا النبيّ ﷺ أنّه ما من أيام العمل الصالح فيها أحبّ إلى الله من هذه الأيام العشر».', 'Mum told her: "The Prophet ﷺ told us there are no days in which good deeds are more beloved to Allah than these ten days."'),
+        P('⛰️', 'وفي اليوم التاسع — يوم عرفة — كان الحجّاج يقفون على جبل عرفات يدعون الله. وصام أبوها ذلك اليوم، وقال: «صيام يوم عرفة يكفّر الله به ذنوب سنة قبله وسنة بعده».', 'On the ninth day — the Day of Arafah — the pilgrims stood at Mount Arafat making dua. Her father fasted that day and said: "Fasting the Day of Arafah — Allah wipes away the sins of the year before and the year after."'),
+        P('🤲', 'صامت مريم نصف اليوم تدريبًا، وأكثرت من الدعاء والتكبير، وقالت: «غدًا العيد، وقلبي مستعدّ!»', 'Maryam fasted half the day for practice, made lots of dua and takbeer, and said: "Tomorrow is Eid, and my heart is ready!"')
+      ],
+      matn: B('«مَا مِنْ أَيَّامٍ الْعَمَلُ الصَّالِحُ فِيهَا أَحَبُّ إِلَى اللَّهِ مِنْ هَذِهِ الْأَيَّامِ» يَعْنِي أَيَّامَ الْعَشْرِ.', '"There are no days in which righteous deeds are more beloved to Allah than these days" — meaning the ten days (of Dhul-Hijjah).'),
+      source: B('عن ابن عباس رضي الله عنهما — رواه البخاري بنحوه، وأبو داود والترمذي بهذا اللفظ. وصيام عرفة: «أحتسب على الله أن يكفّر السنة التي قبله والسنة التي بعده» (مسلم)', 'Ibn Abbas (RA) — Bukhari (similar wording), Abu Dawud & Tirmidhi (this wording). Fasting Arafah: "I hope from Allah that it expiates the year before and the year after" (Muslim).'),
+      sections: [
+        { icon: '🌱', h: B('أفكار لعشرة أعمال صالحة', 'Ideas for ten good deeds'), html: B('<ol><li>التكبير في البيت والطريق</li><li>صدقة صغيرة من مصروفي</li><li>برّ الوالدين بعمل مفاجئ</li><li>قراءة صفحة من القرآن</li><li>صيام نصف يوم أو يوم (حسب العمر)</li><li>زيارة أو اتصال بالجدّ والجدّة</li><li>مساعدة في البيت</li><li>دعاء لشخص آخر</li><li>إطعام طائر أو حيوان</li><li>الدعاء يوم عرفة</li></ol>', '<ol><li>Takbeer at home and on the way</li><li>A small charity from my pocket money</li><li>A surprise kindness for my parents</li><li>Reading a page of Quran</li><li>Fasting half a day or a full day (by age)</li><li>Visiting or calling grandparents</li><li>Helping at home</li><li>Making dua for someone else</li><li>Feeding a bird or animal</li><li>Making dua on the Day of Arafah</li></ol>') }
+      ],
+      quiz: Q('ما فضل صيام يوم عرفة؟', 'What is the reward of fasting the Day of Arafah?', [['يكفّر ذنوب سنتين', 'It wipes away the sins of two years', 1], ['لا فضل له', 'It has no reward'], ['يُصام كلّ أسبوع', "It's fasted every week"]]) },
+
+    { id: 'jumuah', tag: 'jumuah', icon: '🕋', title: B('الجمعة: عيد الأسبوع', 'Friday: the weekly Eid'), sub: B('خير يوم طلعت عليه الشمس', 'The best day the sun rises on'),
+      pages: [
+        P('📆', 'سأل سالم أباه: «العيد مرّتان في السنة فقط؟ هذا قليل!» ابتسم الأب وقال: «عندنا عيد صغير كلّ أسبوع: يوم الجمعة!»', 'Salim asked his father: "Eid only twice a year? That\'s not much!" Dad smiled: "We have a little Eid every week: Friday!"'),
+        P('☀️', 'قال الأب: «قال النبيّ ﷺ: خير يوم طلعت عليه الشمس يوم الجمعة؛ فيه خُلق آدم، وفيه أُدخل الجنة». وقال ﷺ عن الجمعة: «إنّ هذا يوم عيد جعله الله للمسلمين».', 'Dad said: "The Prophet ﷺ said: The best day the sun rises on is Friday — on it Adam was created and on it he was admitted into Paradise. And he ﷺ said of Friday: This is a day of Eid that Allah has made for the Muslims."'),
+        P('🛁', 'فاستعدّ سالم كالعيد: اغتسل، ولبس ثيابًا نظيفة، وتطيّب، وذهب مبكّرًا مع أبيه إلى المسجد، وأنصت للخطبة دون كلام.', 'So Salim got ready like for Eid: he took a bath, wore clean clothes, put on perfume, went early with his dad to the masjid, and listened to the sermon without talking.'),
+        P('📖', 'وفي البيت قرأت العائلة سورة الكهف، وأكثروا من الصلاة على النبيّ ﷺ: «اللهمّ صلِّ وسلّم على نبيّنا محمد». قال سالم: «صار عندي عيد كلّ أسبوع!»', 'At home the family read Surat al-Kahf and sent many blessings upon the Prophet ﷺ: "Allahumma salli wa sallim \'ala nabiyyina Muhammad." Salim said: "Now I have an Eid every week!"')
+      ],
+      matn: B('«خَيْرُ يَوْمٍ طَلَعَتْ عَلَيْهِ الشَّمْسُ يَوْمُ الْجُمُعَةِ: فِيهِ خُلِقَ آدَمُ، وَفِيهِ أُدْخِلَ الْجَنَّةَ، وَفِيهِ أُخْرِجَ مِنْهَا».', '"The best day on which the sun has risen is Friday: on it Adam was created, on it he was admitted into Paradise, and on it he was taken out of it."'),
+      source: B('رواه مسلم. و«إنّ هذا يوم عيد جعله الله للمسلمين، فمن جاء إلى الجمعة فليغتسل…» رواه ابن ماجه وحسّنه الألباني. والغسل: البخاري ومسلم. وسورة الكهف يوم الجمعة: رواه الحاكم والبيهقي وصحّحه الألباني. والإكثار من الصلاة على النبيّ ﷺ يوم الجمعة: أبو داود وصحّحه الألباني', 'Muslim. "This is a day of Eid that Allah has made for the Muslims, so whoever comes to Jumu\'ah, let him take a bath…": Ibn Majah (hasan per al-Albani). The bath: Bukhari & Muslim. Surat al-Kahf on Friday: al-Hakim & al-Bayhaqi (sahih per al-Albani). Abundant salawat on Friday: Abu Dawud (sahih per al-Albani).'),
+      sections: [
+        { icon: '🌱', h: B('سنن الجمعة', 'Sunnahs of Friday'), html: B('<ul><li>الاغتسال والتطيّب ولبس الثياب الحسنة.</li><li>التبكير إلى المسجد، والإنصات للخطبة.</li><li>قراءة سورة الكهف.</li><li>الإكثار من الصلاة على النبيّ ﷺ.</li><li>الدعاء؛ ففي الجمعة ساعة يُستجاب فيها الدعاء (البخاري ومسلم).</li></ul>', '<ul><li>Taking a bath, wearing perfume and nice clothes.</li><li>Going early to the masjid and listening quietly to the sermon.</li><li>Reading Surat al-Kahf.</li><li>Sending many blessings upon the Prophet ﷺ.</li><li>Making dua — on Friday there is an hour when dua is answered (Bukhari & Muslim).</li></ul>') }
+      ],
+      quiz: Q('أيّ يوم هو عيد الأسبوع؟', 'Which day is the weekly Eid?', [['الإثنين', 'Monday'], ['السبت', 'Saturday'], ['الجمعة', 'Friday', 1]]) },
+
+    { id: 'joy', tag: 'manners', icon: '🎈', title: B('الفرح واللعب في العيد', 'Joy and play on Eid'), sub: B('«هذا عيدنا»', '"This is our Eid"'),
+      pages: [
+        P('🥁', 'في يوم عيدٍ في المدينة، جاء رجالٌ من الحبشة يلعبون بالحِراب في المسجد لعبًا جميلًا، كأنّه عرضٌ رياضيّ.', 'On an Eid day in Madinah, some men from Abyssinia came and played with spears in the masjid — a beautiful display, like a sports show.'),
+        P('👀', 'أرادت أمّنا عائشة رضي الله عنها أن تتفرّج، فوقف النبيّ ﷺ يسترها بردائه وهي تنظر من خلفه، ولم ينصرف حتى كانت هي التي ملّت وانصرفت.', 'Our mother Aisha (RA) wanted to watch, so the Prophet ﷺ stood shielding her with his cloak while she watched from behind him, and he didn\'t leave until she was the one who had had enough.'),
+        P('🎶', 'وفي يوم عيد آخر كانت عند عائشة جاريتان صغيرتان تنشدان أناشيد. فقال أبو بكر: «أمِزمار الشيطان في بيت رسول الله؟!» فقال النبيّ ﷺ: «يا أبا بكر، إنّ لكلّ قومٍ عيدًا، وهذا عيدنا».', 'On another Eid, two little girls were singing songs at Aisha\'s house. Abu Bakr said: "Instruments of Shaytan in the house of the Messenger of Allah?!" The Prophet ﷺ said: "O Abu Bakr, every people has its Eid, and this is our Eid."'),
+        P('😊', 'فتعلّمنا أنّ الفرح في العيد عبادة جميلة: نلعب، ونضحك، ونلبس الجديد، دون أن نؤذي أحدًا أو نغضب ربّنا.', 'So we learn that joy on Eid is a beautiful part of worship: we play, laugh, and wear new clothes — without hurting anyone or displeasing our Lord.')
+      ],
+      matn: B('«يَا أَبَا بَكْرٍ، إِنَّ لِكُلِّ قَوْمٍ عِيدًا، وَهَذَا عِيدُنَا».', '"O Abu Bakr, every people has its Eid, and this is our Eid."'),
+      source: B('عن عائشة رضي الله عنها — رواه البخاري ومسلم (القصّتان)', 'Aisha (RA) — Bukhari & Muslim (both stories)'),
+      sections: [
+        { icon: '🌱', h: B('ماذا تعلّمنا؟', 'What did we learn?'), html: B('<ul><li>النبيّ ﷺ كان يُفرح أهله في العيد ويصبر عليهم.</li><li>اللعب المباح والأناشيد الجميلة من فرح العيد.</li><li>نفرح دون أذى: لا سخرية، ولا تبذير، ولا ترك للصلاة.</li></ul>', '<ul><li>The Prophet ﷺ brought joy to his family on Eid and was patient with them.</li><li>Permissible play and nice songs are part of Eid joy.</li><li>We celebrate without harm: no mocking, no waste, no skipping prayer.</li></ul>') }
+      ],
+      quiz: Q('ماذا قال النبيّ ﷺ لأبي بكر عن فرح العيد؟', 'What did the Prophet ﷺ tell Abu Bakr about Eid joy?', [['«إنّ لكلّ قوم عيدًا، وهذا عيدنا»', '"Every people has its Eid, and this is our Eid"', 1], ['ممنوع الفرح', 'No celebrating'], ['العبوا طوال الليل', 'Play all night']]) },
+
+    { id: 'manners', tag: 'manners', icon: '🎁', title: B('آداب العيد الجميلة', 'Beautiful Eid manners'), sub: B('تهنئة، وهدايا، وصلة رحم', 'Greetings, gifts and family ties'),
+      pages: [
+        P('🤝', 'كان أصحاب النبيّ ﷺ إذا التقوا يوم العيد يقول بعضهم لبعض: «تقبّل الله منّا ومنك». فقالها سالم لكلّ من قابله، فابتسم الجميع.', 'When the Companions of the Prophet ﷺ met on Eid, they would say to one another: "May Allah accept from us and from you." Salim said it to everyone he met, and everyone smiled.'),
+        P('👵', 'ثم زارت العائلة الجدّة والأعمام والخالات. قال النبيّ ﷺ: «من أحبّ أن يُبسط له في رزقه، ويُنسأ له في أثره، فليصل رحمه».', 'Then the family visited Grandma, uncles and aunts. The Prophet ﷺ said: "Whoever would like his provision to be increased and his life to be extended, let him keep the ties of kinship."'),
+        P('🎁', 'وحملت مريم هديّة صغيرة صنعتها بيدها لصديقتها. قالت أمّها: «قال النبيّ ﷺ: تهادَوا تحابّوا». فالهديّة تزرع الحبّ في القلوب.', 'Maryam brought a little gift she had made for her friend. Mum said: "The Prophet ﷺ said: Give gifts to one another and you will love one another." Gifts plant love in hearts.'),
+        P('🧸', 'وتذكّر سالم الأطفال الذين لا يجدون ثيابًا جديدة، فوضع من عيديّته في صندوق الصدقة. فكان عيده أجمل عيد!', 'Salim remembered the children who have no new clothes, and put some of his Eid money in the charity box. It was his best Eid ever!')
+      ],
+      matn: B('«تَقَبَّلَ اللَّهُ مِنَّا وَمِنْكَ».', '"May Allah accept from us and from you."'),
+      source: B('من فعل الصحابة رضي الله عنهم، عن جبير بن نفير، وحسّن إسناده ابن حجر في فتح الباري. و«من أحبّ أن يُبسط له في رزقه…»: البخاري ومسلم. و«تهادوا تحابّوا»: البخاري في الأدب المفرد، وحسّنه الألباني', 'The practice of the Companions (RA), reported by Jubayr ibn Nufayr; Ibn Hajar graded its chain hasan (Fath al-Bari). "Whoever would like his provision increased…": Bukhari & Muslim. "Give gifts, you will love one another": Bukhari in al-Adab al-Mufrad (hasan per al-Albani).'),
+      sections: [
+        { icon: '🌱', h: B('آداب العيد', 'Eid manners'), html: B('<ul><li>التهنئة: «تقبّل الله منّا ومنكم» أو «عيد مبارك».</li><li>زيارة الأقارب وصلة الرحم.</li><li>تبادل الهدايا الصغيرة.</li><li>إدخال الفرح على الفقراء والأيتام.</li><li>شكر الأهل على العيديّة!</li></ul>', '<ul><li>Greeting: "Taqabbal Allahu minna wa minkum" or "Eid Mubarak".</li><li>Visiting relatives and keeping family ties.</li><li>Exchanging small gifts.</li><li>Bringing joy to the poor and orphans.</li><li>Thanking the family for the Eid money!</li></ul>') }
+      ],
+      quiz: Q('بماذا كان الصحابة يهنّئ بعضهم بعضًا في العيد؟', 'How did the Companions greet each other on Eid?', [['«تقبّل الله منّا ومنك»', '"May Allah accept from us and from you"', 1], ['لم يكونوا يهنّئون', "They didn't greet"], ['«صباح الخير» فقط', 'Only "good morning"']]) },
+
+    { id: 'our-eids', tag: 'manners', icon: '🌍', title: B('أعيادنا وجيراننا', 'Our Eids and our neighbours'), sub: B('نعتزّ بأعيادنا ونُحسن للجميع', 'Proud of our Eids, kind to everyone'),
+      pages: [
+        P('🏫', 'في المدرسة سألت صديقة مريم: «لماذا لا تحتفلين معنا بعيدنا؟» فكّرت مريم قليلًا ثم ابتسمت.', 'At school, Maryam\'s friend asked: "Why don\'t you celebrate our holiday with us?" Maryam thought for a moment, then smiled.'),
+        P('🌙', 'قالت مريم بلطف: «لكلّ قومٍ عيد، ونحن المسلمين عندنا عيدان أهداهما الله لنا، وعندنا الجمعة كلّ أسبوع. أعيادنا عبادة نصلّي فيها لله، ولهذا نحتفل بأعيادنا نحن».', 'Maryam said kindly: "Every people has its own festival. We Muslims have two Eids that Allah gave us, and Friday every week. Our Eids are worship — we pray to Allah in them — so we celebrate our own Eids."'),
+        P('🍪', 'ثم قالت: «لكنّي أحبّك، وسأحضر لكِ حلوى العيد!» فالله يحبّ أن نكون لطفاء وعادلين مع جيراننا وأصدقائنا من كلّ الأديان.', 'Then she said: "But I like you, and I\'ll bring you some Eid sweets!" Allah loves us to be kind and fair to our neighbours and friends of every faith.'),
+        P('💚', 'في العيد جاءت الصديقة إلى بيت مريم، وأكلت كعك العيد، وعرفت أنّ المسلمين يفرحون ويُفرحون الآخرين.', 'On Eid her friend came to Maryam\'s house, ate Eid cookies, and learned that Muslims are joyful and share their joy with others.')
+      ],
+      matn: B('﴿لَّا يَنْهَاكُمُ اللَّهُ عَنِ الَّذِينَ لَمْ يُقَاتِلُوكُمْ فِي الدِّينِ وَلَمْ يُخْرِجُوكُم مِّن دِيَارِكُمْ أَن تَبَرُّوهُمْ وَتُقْسِطُوا إِلَيْهِمْ ۚ إِنَّ اللَّهَ يُحِبُّ الْمُقْسِطِينَ﴾', '"Allah does not forbid you from being kind and just to those who have not fought you because of religion nor driven you from your homes. Indeed, Allah loves those who are just."'),
+      source: B('سورة الممتحنة: ٨. و«إنّ لكلّ قوم عيدًا وهذا عيدنا»: البخاري ومسلم', 'Al-Mumtahanah 60:8. "Every people has its Eid, and this is our Eid": Bukhari & Muslim'),
+      sections: [
+        { icon: '🌱', h: B('ماذا تعلّمنا؟', 'What did we learn?'), html: B('<ul><li>نعتزّ بأعيادنا: الفطر والأضحى والجمعة، لأنّها من الله.</li><li>أعياد الأديان الأخرى ليست أعيادنا، فلا نشارك في شعائرها.</li><li>ومع ذلك نُحسن إلى جيراننا وأصدقائنا، ونهديهم، ونكون عادلين معهم.</li></ul>', '<ul><li>We are proud of our Eids — Fitr, Adha and Friday — because they are from Allah.</li><li>Other religions\' festivals are not our Eids, so we don\'t take part in their religious rituals.</li><li>At the same time we are kind to our neighbours and friends, give them gifts, and treat them fairly.</li></ul>') }
+      ],
+      quiz: Q('كيف نعامل أصدقاءنا من الأديان الأخرى؟', 'How do we treat our friends of other faiths?', [['نُحسن إليهم ونكون عادلين', 'We are kind and fair to them', 1], ['نسخر منهم', 'We mock them'], ['لا نكلّمهم', "We don't talk to them"]], 'أحسنت! ديننا يعلّمنا البرّ والعدل مع الجميع، والاعتزاز بأعيادنا.', 'Well done! Our religion teaches kindness and fairness to all, and pride in our own Eids.') }
+  ];
+
+  /* «خطة العيد للعائلة» — ticks persist in tr:eids-plan */
+  var PLAN = [
+    { h: B('قبل العيد', 'Before Eid'), items: [
+      B('نزيّن البيت معًا بزينة نصنعها بأيدينا', 'Decorate the house together with handmade decorations'),
+      B('نُعِدّ «جرّة الفرح»: أوراق فيها أفكار لإسعاد الآخرين', 'Prepare a "joy jar": notes with ideas to make others happy'),
+      B('نُخرج زكاة الفطر (عيد الفطر) أو نُعِدّ الأضحية (عيد الأضحى)', 'Give Zakat al-Fitr (Fitr) or arrange the udhiyah (Adha)'),
+      B('نجهّز هدايا صغيرة للأقارب والجيران', 'Prepare small gifts for relatives and neighbours'),
+      B('نكبّر في ليلة العيد', 'Say takbeer on the night of Eid')
+    ]},
+    { h: B('صباح العيد', 'Eid morning'), items: [
+      B('نغتسل ونلبس أجمل الثياب', 'Take a bath and wear our best clothes'),
+      B('نأكل تمرات وِترًا (عيد الفطر)', 'Eat an odd number of dates (Eid al-Fitr)'),
+      B('نكبّر في الطريق إلى المصلّى', 'Say takbeer on the way to the prayer'),
+      B('نصلّي صلاة العيد ونستمع للخطبة', 'Pray the Eid prayer and listen to the sermon'),
+      B('نعود من طريق آخر', 'Return by a different road')
+    ]},
+    { h: B('يوم العيد', 'Eid day'), items: [
+      B('نهنّئ: «تقبّل الله منّا ومنكم»', 'Greet: "Taqabbal Allahu minna wa minkum"'),
+      B('نزور الجدّين والأقارب', 'Visit grandparents and relatives'),
+      B('نوزّع الهدايا أو لحم الأضحية', 'Hand out gifts or udhiyah meat'),
+      B('نضع جزءًا من العيديّة في صندوق الصدقة', 'Put part of the Eid money in the charity box'),
+      B('نلعب لعبة عائلية ونلتقط صورة جماعية', 'Play a family game and take a group photo'),
+      B('نشكر الله في نهاية اليوم على نعمة العيد', 'Thank Allah at the end of the day for the gift of Eid')
+    ]}
+  ];
+  var PKEY = 'tr:eids-plan';
+  function getPlan() { try { return JSON.parse(localStorage.getItem(PKEY)) || []; } catch (e) { return []; } }
+  function setPlan(v) { try { localStorage.setItem(PKEY, JSON.stringify(v)); } catch (e) {} }
+
+  window.TR_PAGE = {
+    id: 'eids', icon: '🎉', color: '#D4A017',
+    back: { href: '../little-district/pages/ibada.html', label: { ar: 'واحة العبادة', en: "Worship Oasis" } },
+    next: { href: 'landmarks.html#arafat', icon: '🕋', title: { ar: "جبل عرفات والكعبة", en: "Mount Arafah & the Kaaba" }, why: { ar: "شاهد أين يقف الحُجّاج يومَ عرفة قبل عيد الأضحى.", en: "See where the pilgrims stand on the Day of Arafah, just before Eid al-Adha." } },
+    title: B('الأعياد في العبادات', 'Eids in Worship'),
+    intro: B('عيد الفطر، وعيد الأضحى، والجمعة عيد الأسبوع: قصصٌ قصيرة نقرؤها صفحةً صفحة، ثم نتعلّم سننها وآدابها.', 'Eid al-Fitr, Eid al-Adha, and Friday — the weekly Eid: short stories read page by page, then their Sunnahs and manners.'),
+    kind: 'stories',
+    filters: [
+      { id: 'fitr', label: B('عيد الفطر', 'Eid al-Fitr') },
+      { id: 'adha', label: B('عيد الأضحى', 'Eid al-Adha') },
+      { id: 'jumuah', label: B('الجمعة', 'Friday') },
+      { id: 'manners', label: B('فرح العيد وآدابه', 'Eid joy & manners') }
+    ],
+    items: ITEMS,
+    panels: [{
+      id: 'plan', icon: '📅', label: B('خطة العيد للعائلة', 'Family Eid plan'),
+      render: function (el, TR) {
+        var done = getPlan();
+        el.innerHTML = '<div class="ep-wrap"><p class="tr-note" style="text-align:center">📅 ' +
+          TR.tx('خطّة بسيطة لعيدٍ لا يُنسى: ضعوا ✓ معًا على ما أنجزتموه. لا يلزم إنجاز الكلّ — المهمّ أن يفرح الجميع.', "A simple plan for an unforgettable Eid: tick together what you've done. You don't need to do it all — what matters is that everyone is happy.") + '</p>' +
+          PLAN.map(function (g, gi) {
+            var n = g.items.filter(function (_, ii) { return done.indexOf(gi + '-' + ii) > -1; }).length;
+            return '<div class="ep-grp"><h4>' + TR.esc(TR.t(g.h)) + ' <small>' + n + ' / ' + g.items.length + '</small></h4>' +
+              g.items.map(function (it, ii) {
+                var k = gi + '-' + ii, on = done.indexOf(k) > -1;
+                return '<label class="ep-item' + (on ? ' on' : '') + '"><input type="checkbox" data-k="' + k + '"' + (on ? ' checked' : '') + '><span>' + TR.esc(TR.t(it)) + '</span></label>';
+              }).join('') + '</div>';
+          }).join('') +
+          '<div class="ep-acts"><button class="tr-btn ghost" id="epPrint">🖨️ ' + TR.tx('اطبع الخطّة', 'Print the plan') + '</button>' +
+          '<button class="tr-btn ghost" id="epReset">↺ ' + TR.tx('ابدأ من جديد للعيد القادم', 'Reset for the next Eid') + '</button></div></div>';
+        var self = this;
+        el.querySelectorAll('input[data-k]').forEach(function (c) {
+          c.onchange = function () {
+            var d = getPlan(), k = c.dataset.k, i = d.indexOf(k);
+            if (c.checked && i < 0) d.push(k); if (!c.checked && i > -1) d.splice(i, 1);
+            setPlan(d);
+            if (c.checked) TR.toast(TR.tx('ما شاء الله! 🎉', 'Masha Allah! 🎉'));
+            self.render(el, TR);
+          };
+        });
+        el.querySelector('#epReset').onclick = function () { setPlan([]); self.render(el, TR); };
+        el.querySelector('#epPrint').onclick = function () {
+          var area = document.getElementById('trPrint');
+          area.innerHTML = '<div class="pg" dir="' + (TR.ar() ? 'rtl' : 'ltr') + '"><h1>🎉 ' + TR.esc(TR.tx('خطة العيد للعائلة', 'Family Eid plan')) + '</h1>' +
+            PLAN.map(function (g) { return '<h3>' + TR.esc(TR.t(g.h)) + '</h3>' + g.items.map(function (it) { return '<p>☐ ' + TR.esc(TR.t(it)) + '</p>'; }).join(''); }).join('') + '</div>';
+          setTimeout(function () { window.print(); }, 60);
+        };
+      }
+    }],
+    parents: {
+      ar: '<h3>كيف نجعل العيد ذكرى لا تُنسى؟</h3><ul><li><b>ابدؤوا قبل العيد</b>: عدّ تنازلي على ورقة، وزينة يصنعها الأطفال بأيديهم. الترقّب جزء من الفرح.</li><li><b>العيديّة بنيّة</b>: أعطِ العيديّة وعلّم الطفل أن يجعل جزءًا منها صدقة، وجزءًا هديّة، وجزءًا له.</li><li><b>جرّة الفرح</b>: أوراق صغيرة يكتب فيها كلّ فرد فكرة لإسعاد غيره (اتصال بجدّة، حلوى لجار، رسالة شكر للمعلّم)، ويسحب كلّ طفل ورقة يوم العيد.</li><li><b>اربطوا الفرح بالعبادة</b>: «نفرح لأنّ الله أكرمنا بإتمام الصيام» — «نفرح لأنّ الله أكرم إبراهيم وإسماعيل».</li><li><b>أشركوا الطفل في الخير</b>: يحمل زكاة الفطر بنفسه، أو يوزّع لحم الأضحية على الجيران.</li><li><b>الجمعة عيد الأسبوع</b>: عادة صغيرة ثابتة: حمّام وطيب صباح الجمعة، قراءة جزء من الكهف معًا، وحلوى بسيطة بعد الصلاة.</li></ul><h3>عن أعياد الآخرين</h3><p>علّموا الطفل الاعتزاز بأعيادنا دون استعلاء أو كراهية: «لكلّ قوم عيد، وهذا عيدنا»، ومع ذلك نُحسن إلى جيراننا وأصدقائنا من كلّ الأديان ونعدل معهم (الممتحنة: ٨).</p><div class="tr-note">💡 يتذكّر الأطفال المشاعر أكثر من التفاصيل. عيدٌ هادئ دافئ فيه صلاة وضحك وصلة رحم يبقى في القلب أكثر من عيدٍ مزدحم بالمشتريات.</div>',
+      en: '<h3>How do we make Eid unforgettable?</h3><ul><li><b>Start before Eid</b>: a paper countdown and decorations the children make themselves. Anticipation is part of the joy.</li><li><b>Eid money with intention</b>: give eidiyah and teach the child to set part aside for charity, part for a gift, and part for themselves.</li><li><b>A joy jar</b>: small notes where each family member writes an idea to make someone happy (call grandma, sweets for a neighbour, a thank-you note to a teacher); each child draws one on Eid day.</li><li><b>Link joy to worship</b>: "We\'re happy because Allah helped us complete the fast" — "We\'re happy because Allah honoured Ibrahim and Ismail."</li><li><b>Involve the child in giving</b>: let them hand over the Zakat al-Fitr, or deliver udhiyah meat to neighbours.</li><li><b>Friday, the weekly Eid</b>: a small steady habit — bath and perfume on Friday morning, reading part of Al-Kahf together, a simple treat after the prayer.</li></ul><h3>About other people\'s festivals</h3><p>Teach the child to be proud of our Eids without arrogance or hostility: "Every people has its Eid, and this is our Eid" — while being kind and fair to neighbours and friends of all faiths (Al-Mumtahanah 60:8).</p><div class="tr-note">💡 Children remember feelings more than details. A calm, warm Eid with prayer, laughter and family stays in the heart longer than a busy one full of shopping.</div>'
+    },
+    worksheet: {
+      ar: '<h3>✏️ ورقة نشاط: بطاقة العيد</h3><p>صمّم بطاقة عيد لشخص تحبّه: ارسم ولوّن، واكتب تهنئة العيد.</p><div class="ws-box" style="min-height:80mm"></div><p>إلى: ____________ &nbsp;&nbsp; من: ____________</p><h3>⭐ أعمالي الصالحة في العيد</h3><p>☐ كبّرتُ في ليلة العيد وصباحه</p><p>☐ صلّيتُ صلاة العيد</p><p>☐ قلتُ «تقبّل الله منّا ومنكم» لـ ___ أشخاص</p><p>☐ زرتُ أو اتصلتُ بـ: ____________</p><p>☐ تصدّقتُ من عيديّتي بـ: ____________</p><p>☐ أهديتُ هديّة إلى: ____________</p><p>أجمل شيء في عيدي هذا العام:</p><div class="ws-line"></div><div class="ws-line"></div>',
+      en: '<h3>✏️ Activity sheet: My Eid card</h3><p>Design an Eid card for someone you love: draw, colour, and write an Eid greeting.</p><div class="ws-box" style="min-height:80mm"></div><p>To: ____________ &nbsp;&nbsp; From: ____________</p><h3>⭐ My good deeds on Eid</h3><p>☐ I said takbeer on Eid night and morning</p><p>☐ I prayed the Eid prayer</p><p>☐ I said "Taqabbal Allahu minna wa minkum" to ___ people</p><p>☐ I visited or called: ____________</p><p>☐ I gave charity from my Eid money: ____________</p><p>☐ I gave a gift to: ____________</p><p>The best thing about my Eid this year:</p><div class="ws-line"></div><div class="ws-line"></div>'
+    }
+  };
+})();
+</script>
+<script src="tr.js"></script>
+<script defer src="../shared/mk-system.js"></script>
+<script defer src="../shared/mk-journeys.js"></script>
+<script defer src="../shared/mk-bag.js"></script>
+</body>
+</html>

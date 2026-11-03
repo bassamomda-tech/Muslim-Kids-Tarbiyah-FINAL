@@ -65,7 +65,7 @@
 
   function buildCover(){
     var leaf=document.createElement('section'); leaf.className='leaf dark';
-    leaf.innerHTML='<div class="cover-mid"><div class="cover-kick">'+(C.kicker||'بستان القرآن والسنة · QURAN GARDEN')+'</div>'+
+    leaf.innerHTML='<div class="cover-mid"><div class="cover-kick">'+(C.kicker||'حُفّاظ السنة · SUNNAH KEEPERS')+'</div>'+
       '<h1 class="cover-title">'+C.titleAr+'<span class="en lat">'+C.titleEn+'</span></h1>'+
       '<div style="width:62%;max-width:430px">'+slot(R.coverSid(),280,'ضع رسمة الغلاف — Drop cover art')+'</div>'+
       '<div class="cover-sub">'+C.subAr+'<br><span class="en lat" style="font-size:.92rem;color:rgba(254,245,220,.7)">'+C.subEn+'</span></div>'+

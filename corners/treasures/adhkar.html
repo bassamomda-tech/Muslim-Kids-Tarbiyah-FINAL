@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>معاني الأذكار والأدعية | Meanings of Adhkar & Duas</title>
+<meta name="description" content="بطاقات مجانية لأذكار الطفل اليومية: النصّ، معاني الكلمات، ماذا أقول لربّي، ومتى أقوله — مع يومي مع الأذكار ونسخة للطباعة.">
+<link rel="icon" href="../../favicon.ico">
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&family=Nunito:wght@400;700;800;900&family=Amiri:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="tr.css">
+<style>
+  /* «يومي مع الأذكار» — calm vertical timeline */
+  .dz-line{position:relative;max-width:620px;margin:0 auto;padding-inline-start:2.2rem}
+  .dz-line::before{content:'';position:absolute;top:.6rem;bottom:.6rem;inset-inline-start:.95rem;width:3px;border-radius:3px;background:var(--line)}
+  .dz-stop{position:relative;background:#fff;border:1px solid var(--line);border-radius:18px;padding:.8rem 1rem;margin-bottom:.9rem;box-shadow:var(--shadow)}
+  .dz-stop::before{content:attr(data-ic);position:absolute;inset-inline-start:-2.2rem;top:.6rem;width:2rem;height:2rem;border-radius:50%;background:var(--paper);border:2px solid var(--acc);display:grid;place-items:center;font-size:1rem}
+  .dz-stop h4{color:var(--acc);font-size:1rem;margin-bottom:.15rem}
+  .dz-stop .when{color:var(--muted);font-size:.85rem;margin-bottom:.4rem}
+  .dz-links{display:flex;flex-wrap:wrap;gap:.4rem}
+  .dz-links button{border:1.5px solid var(--line);background:var(--paper);border-radius:999px;padding:.3rem .8rem;font-weight:700;font-size:.88rem;color:var(--ink)}
+  .dz-links button:hover,.dz-links button:focus-visible{border-color:var(--acc);color:var(--acc);outline:none}
+  .dz-links button.done::after{content:' ⭐'}
+</style>
+</head>
+<body>
+<div id="tr-root"></div>
+<script>
+/* Meanings of adhkar & duas — only authentic (sahih/hasan) narrations or Quran.
+   Each card: exact text · word meanings · whole meaning in kid language ·
+   when to say it and what happens (only rewards that are authentically reported). */
+(function () {
+  function B(a, e) { return { ar: a, en: e }; }
+  function W(list) { /* [[wordAr, meaningAr, wordEn, meaningEn], …] */
+    return B('<ul>' + list.map(function (x) { return '<li><b>' + x[0] + '</b>: ' + x[1] + '</li>'; }).join('') + '</ul>',
+             '<ul>' + list.map(function (x) { return '<li><b>' + x[2] + '</b>: ' + x[3] + '</li>'; }).join('') + '</ul>');
+  }
+  /* rotate options by a stable per-card amount so the right answer isn't always first */
+  function rot(a, id) { var n = 0; for (var i = 0; i < id.length; i++) n += id.charCodeAt(i); n = n % a.length; return a.slice(n).concat(a.slice(0, n)); }
+  function D(o) {
+    return {
+      id: o.id, tag: o.tag, icon: o.icon, title: o.title, sub: o.sub, matn: o.matn, source: o.src,
+      sections: [
+        { icon: '🔤', h: B('معاني الكلمات', 'Word meanings'), html: W(o.words) },
+        { icon: '💡', h: B('ماذا أقول لربّي؟', 'What am I telling my Lord?'), html: o.mean },
+        { icon: '🌱', h: B('متى أقوله وماذا يحدث؟', 'When do I say it, and what happens?'), html: o.when }
+      ],
+      quiz: { q: o.q[0], opts: rot(o.q[1].map(function (x) { return { t: B(x[0], x[1]), ok: !!x[2] }; }), o.id), fb: o.q[2] }
+    };
+  }
+
+  var ITEMS = [
+    /* ───────── صباح ومساء ───────── */
+    D({ id: 'morning', tag: 'morning', icon: '🌅',
+      title: B('أذكار الصباح والمساء', 'Morning & evening'), sub: B('أبدأ يومي مع الله', 'I start my day with Allah'),
+      matn: B('اللَّهُمَّ بِكَ أَصْبَحْنَا، وَبِكَ أَمْسَيْنَا، وَبِكَ نَحْيَا، وَبِكَ نَمُوتُ، وَإِلَيْكَ النُّشُورُ.<br><small>(وفي المساء: اللَّهُمَّ بِكَ أَمْسَيْنَا، وَبِكَ أَصْبَحْنَا، وَبِكَ نَحْيَا، وَبِكَ نَمُوتُ، وَإِلَيْكَ الْمَصِيرُ)</small>',
+        'O Allah, by You we enter the morning, by You we enter the evening, by You we live, by You we die, and to You is the resurrection.<br><small>(In the evening: …and to You is the final return.)</small>'),
+      src: B('رواه أبو داود والترمذي، وقال: حسن', 'Abu Dawud & Tirmidhi (hasan)'),
+      words: [['بِكَ أَصْبَحْنَا', 'بفضلك ونعمتك جاء علينا الصباح', 'By You we enter the morning', 'by Your grace the morning came to us'],
+              ['النُّشُورُ', 'القيام من القبور يوم القيامة', 'Resurrection', 'rising again on the Day of Judgement'],
+              ['الْمَصِيرُ', 'المرجع والنهاية', 'Final return', 'where everything ends up']],
+      mean: B('يا ربّي، أنت الذي أعطيتني هذا الصباح الجميل. كلُّ يومي منك وبك، وأنا راجعٌ إليك.', 'O my Lord, You gave me this beautiful morning. My whole day is from You and with You, and I will return to You.'),
+      when: B('بعد صلاة الفجر وفي أوّل الصباح، وفي المساء بعد العصر أو المغرب. أبدأ يومي وأنا أتذكّر أنّ الله معي.', 'After Fajr in the early morning, and in the evening after Asr or Maghrib. I start my day remembering that Allah is with me.'),
+      q: [B('متى نقول «بِكَ أَصْبَحْنَا»؟', 'When do we say "by You we enter the morning"?'), [['في الصباح', 'In the morning', 1], ['عند الأكل فقط', 'Only when eating'], ['عند الغضب', 'When angry']]] }),
+
+    D({ id: 'bismillah-protect', tag: 'morning', icon: '🛡️',
+      title: B('ذكر الحماية', 'The protection dhikr'), sub: B('ثلاث مرّات صباحًا ومساءً', 'Three times, morning & evening'),
+      matn: B('بِسْمِ اللَّهِ الَّذِي لَا يَضُرُّ مَعَ اسْمِهِ شَيْءٌ فِي الْأَرْضِ وَلَا فِي السَّمَاءِ، وَهُوَ السَّمِيعُ الْعَلِيمُ.', 'In the name of Allah, with whose name nothing on earth or in the heaven can cause harm, and He is the All-Hearing, the All-Knowing.'),
+      src: B('رواه أبو داود والترمذي، وقال: حسن صحيح', 'Abu Dawud & Tirmidhi (hasan sahih)'),
+      words: [['لَا يَضُرُّ', 'لا يؤذي', 'Cannot harm', 'cannot hurt'], ['السَّمِيعُ', 'الذي يسمع كلّ شيء', 'All-Hearing', 'hears everything'], ['الْعَلِيمُ', 'الذي يعلم كلّ شيء', 'All-Knowing', 'knows everything']],
+      mean: B('أبدأ باسم ربّي القويّ. إذا كان الله معي فلا شيء يستطيع أن يؤذيني إلا بإذنه، وهو يسمعني ويعلم حالي.', 'I begin with the name of my strong Lord. If Allah is with me, nothing can hurt me except by His permission — He hears me and knows how I am.'),
+      when: B('ثلاث مرّات في الصباح وثلاثًا في المساء. أخبر النبيُّ ﷺ أنّ من قالها ثلاثًا لم يضرّه شيء حتى يمسي، ومن قالها مساءً لم يضرّه شيء حتى يصبح.', 'Three times in the morning and three in the evening. The Prophet ﷺ told us whoever says it three times, nothing will harm him until evening — and in the evening, until morning.'),
+      q: [B('كم مرّة نقول هذا الذكر في الصباح؟', 'How many times do we say it in the morning?'), [['مرّة واحدة', 'Once'], ['ثلاث مرّات', 'Three times', 1], ['عشر مرّات', 'Ten times']]] }),
+
+    D({ id: 'subhanallah-100', tag: 'morning', icon: '🌳',
+      title: B('سبحان الله وبحمده', 'SubhanAllahi wa bihamdih'), sub: B('مئة مرّة في اليوم', 'A hundred times a day'),
+      matn: B('سُبْحَانَ اللَّهِ وَبِحَمْدِهِ.', 'Glory be to Allah, and praise be to Him.'),
+      src: B('رواه مسلم، ورواه البخاري ومسلم بلفظ: «في يوم مئة مرّة»', 'Muslim; and Bukhari & Muslim with "a hundred times a day"'),
+      words: [['سُبْحَانَ اللَّهِ', 'الله منزّه عن كلّ نقص، كاملٌ في كلّ شيء', 'SubhanAllah', 'Allah is perfect, free from every flaw'], ['وَبِحَمْدِهِ', 'وأشكره وأمدحه على نعمه', 'Wa bihamdih', 'and I praise and thank Him']],
+      mean: B('يا الله، أنت الكامل الذي لا عيب فيه، وأنا أحمدك على كلّ نعمك عليّ.', 'O Allah, You are perfect with no flaw at all, and I praise You for all Your gifts to me.'),
+      when: B('في الصباح والمساء وفي أيّ وقت. قال النبيّ ﷺ: من قالها في يومٍ مئة مرّة حُطّت خطاياه وإن كانت مثل زبد البحر (متفق عليه). كلمتان خفيفتان على اللسان ثقيلتان في الميزان.', 'Morning, evening and anytime. The Prophet ﷺ said whoever says it a hundred times in a day, his sins are wiped away even if they were like the foam of the sea (Bukhari & Muslim). Light on the tongue, heavy on the scale.'),
+      q: [B('ماذا يحدث لمن قالها مئة مرّة في اليوم؟', 'What happens to whoever says it 100 times a day?'), [['تُمحى خطاياه', 'His sins are wiped away', 1], ['يصير غنيًّا', 'He becomes rich'], ['لا شيء', 'Nothing']]] }),
+
+    D({ id: 'four-words', tag: 'morning', icon: '💎',
+      title: B('أحبّ الكلام إلى الله', 'The words Allah loves most'), sub: B('أربع كلمات', 'Four words'),
+      matn: B('سُبْحَانَ اللَّهِ، وَالْحَمْدُ لِلَّهِ، وَلَا إِلَهَ إِلَّا اللَّهُ، وَاللَّهُ أَكْبَرُ.', 'Glory be to Allah, praise be to Allah, there is no god but Allah, and Allah is the Greatest.'),
+      src: B('رواه مسلم', 'Muslim'),
+      words: [['الْحَمْدُ لِلَّهِ', 'الشكر والثناء كلّه لله', 'Alhamdulillah', 'all thanks and praise belong to Allah'], ['لَا إِلَهَ إِلَّا اللَّهُ', 'لا أعبد أحدًا إلا الله', 'La ilaha illallah', 'I worship no one but Allah'], ['اللَّهُ أَكْبَرُ', 'الله أعظم من كلّ شيء', 'Allahu akbar', 'Allah is greater than everything']],
+      mean: B('أُنزّه ربّي، وأشكره، وأُوحّده، وأعظّمه — كلّ ذلك في جملة واحدة قصيرة!', 'I declare my Lord perfect, thank Him, worship Him alone, and glorify Him — all in one short sentence!'),
+      when: B('في أيّ وقت: في السيارة، في الطريق، وأنا أنتظر. قال النبيّ ﷺ: «أحبّ الكلام إلى الله أربع… لا يضرّك بأيّهنّ بدأت».', 'Anytime: in the car, on the way, while waiting. The Prophet ﷺ said: "The most beloved words to Allah are four… it does not matter which you begin with."'),
+      q: [B('كم كلمة من أحبّ الكلام إلى الله؟', 'How many are the words Allah loves most?'), [['أربع', 'Four', 1], ['اثنتان', 'Two'], ['سبع', 'Seven']]] }),
+
+    D({ id: 'sayyid-istighfar', tag: 'morning', icon: '👑',
+      title: B('سيّد الاستغفار', 'The master of seeking forgiveness'), sub: B('أعظم دعاء للتوبة', 'The greatest dua of repentance'),
+      matn: B('اللَّهُمَّ أَنْتَ رَبِّي لَا إِلَهَ إِلَّا أَنْتَ، خَلَقْتَنِي وَأَنَا عَبْدُكَ، وَأَنَا عَلَى عَهْدِكَ وَوَعْدِكَ مَا اسْتَطَعْتُ، أَعُوذُ بِكَ مِنْ شَرِّ مَا صَنَعْتُ، أَبُوءُ لَكَ بِنِعْمَتِكَ عَلَيَّ، وَأَبُوءُ لَكَ بِذَنْبِي، فَاغْفِرْ لِي، فَإِنَّهُ لَا يَغْفِرُ الذُّنُوبَ إِلَّا أَنْتَ.',
+        'O Allah, You are my Lord; there is no god but You. You created me and I am Your servant, and I keep Your covenant and promise as much as I can. I seek refuge in You from the evil of what I have done. I acknowledge Your blessings upon me and I acknowledge my sin, so forgive me, for none forgives sins but You.'),
+      src: B('رواه البخاري', 'Bukhari'),
+      words: [['عَهْدِكَ', 'وعدي لك أن أعبدك وحدك', 'Your covenant', 'my promise to worship You alone'], ['أَبُوءُ', 'أعترف وأُقرّ', 'I acknowledge', 'I admit'], ['ذَنْبِي', 'خطئي', 'My sin', 'my mistake']],
+      mean: B('يا ربّي، أنت خلقتني وأنا أحبّك وأحاول أن أطيعك. أعترف بنعمك الكثيرة، وأعترف بأخطائي، فسامحني؛ فلا أحد يسامح غيرك.', 'O my Lord, You created me; I love You and try to obey You. I admit Your many gifts and I admit my mistakes, so forgive me — no one forgives but You.'),
+      when: B('في الصباح وفي المساء. قال النبيّ ﷺ: من قالها في النهار موقنًا بها فمات من يومه قبل أن يمسي فهو من أهل الجنة، ومن قالها في الليل كذلك.', 'Morning and evening. The Prophet ﷺ said whoever says it during the day with firm belief and dies that day before evening is among the people of Paradise — and likewise at night.'),
+      q: [B('من الذي يغفر الذنوب؟', 'Who forgives sins?'), [['الله وحده', 'Allah alone', 1], ['أصدقائي', 'My friends'], ['لا أحد', 'No one']]] }),
+
+    D({ id: 'quls', tag: 'morning', icon: '✋',
+      title: B('المعوّذات', 'The three Quls'), sub: B('الإخلاص والفلق والناس', 'Al-Ikhlas, Al-Falaq, An-Nas'),
+      matn: B('قُلْ هُوَ اللَّهُ أَحَدٌ… · قُلْ أَعُوذُ بِرَبِّ الْفَلَقِ… · قُلْ أَعُوذُ بِرَبِّ النَّاسِ…<br><small>(السور الثلاث كاملة: الإخلاص ١١٢، الفلق ١١٣، الناس ١١٤)</small>', 'Say: He is Allah, the One… · Say: I seek refuge in the Lord of daybreak… · Say: I seek refuge in the Lord of mankind…<br><small>(the three full surahs: 112, 113, 114)</small>'),
+      src: B('القرآن الكريم؛ وفضلها صباحًا ومساءً رواه أبو داود والترمذي (حسن صحيح)، وقبل النوم رواه البخاري', 'The Quran; their morning/evening virtue: Abu Dawud & Tirmidhi (hasan sahih); at bedtime: Bukhari'),
+      words: [['أَحَدٌ', 'واحدٌ لا شريك له', 'Ahad', 'One, with no partner'], ['الْفَلَقِ', 'الصبح حين يطلع', 'Al-Falaq', 'the daybreak'], ['أَعُوذُ', 'أحتمي وألتجئ', "A'udhu", 'I seek protection']],
+      mean: B('أقول: ربّي واحد لا مثيل له، وأطلب منه أن يحميني من كلّ شرّ — من الظلام، ومن الحسد، ومن وسوسة الشيطان.', 'I say: my Lord is One, with none like Him, and I ask Him to protect me from every harm — from darkness, from envy, and from Shaytan\'s whispers.'),
+      when: B('ثلاث مرّات صباحًا ومساءً، قال النبيّ ﷺ: «تكفيك من كلّ شيء». وقبل النوم: كان النبيّ ﷺ يجمع كفّيه وينفث فيهما ويقرؤها ثم يمسح بهما جسده، ثلاث مرّات.', 'Three times morning and evening — the Prophet ﷺ said: "They will suffice you against everything." At bedtime the Prophet ﷺ would cup his hands, blow lightly into them, recite them, and wipe over his body — three times.'),
+      q: [B('ماذا قال النبيّ ﷺ عن المعوّذات صباحًا ومساءً؟', 'What did the Prophet ﷺ say about the Quls morning & evening?'), [['تكفيك من كلّ شيء', 'They suffice you against everything', 1], ['تُقرأ مرّة في السنة', 'Read once a year'], ['للكبار فقط', 'Only for adults']]] }),
+
+    D({ id: 'ayat-kursi', tag: 'morning', icon: '🌌',
+      title: B('آية الكرسي', 'Ayat al-Kursi'), sub: B('أعظم آية في القرآن', 'The greatest verse in the Quran'),
+      matn: B('اللَّهُ لَا إِلَهَ إِلَّا هُوَ الْحَيُّ الْقَيُّومُ لَا تَأْخُذُهُ سِنَةٌ وَلَا نَوْمٌ لَهُ مَا فِي السَّمَاوَاتِ وَمَا فِي الْأَرْضِ مَنْ ذَا الَّذِي يَشْفَعُ عِنْدَهُ إِلَّا بِإِذْنِهِ يَعْلَمُ مَا بَيْنَ أَيْدِيهِمْ وَمَا خَلْفَهُمْ وَلَا يُحِيطُونَ بِشَيْءٍ مِنْ عِلْمِهِ إِلَّا بِمَا شَاءَ وَسِعَ كُرْسِيُّهُ السَّمَاوَاتِ وَالْأَرْضَ وَلَا يَئُودُهُ حِفْظُهُمَا وَهُوَ الْعَلِيُّ الْعَظِيمُ',
+        'Allah — there is no god but He, the Ever-Living, the Sustainer of all. Neither drowsiness nor sleep overtakes Him. To Him belongs whatever is in the heavens and the earth. Who could intercede with Him except by His permission? He knows what is before them and what is behind them, and they encompass nothing of His knowledge except what He wills. His Kursi extends over the heavens and the earth, and guarding them does not tire Him. He is the Most High, the Most Great.'),
+      src: B('سورة البقرة: ٢٥٥؛ وفضلها عند النوم رواه البخاري، وأنها أعظم آية رواه مسلم', 'Al-Baqarah 2:255; its bedtime virtue: Bukhari; "greatest verse": Muslim'),
+      words: [['الْحَيُّ', 'الحيّ الذي لا يموت أبدًا', 'Al-Hayy', 'the Ever-Living who never dies'], ['الْقَيُّومُ', 'القائم بأمر كلّ شيء، يدبّر الكون', "Al-Qayyum", 'who takes care of everything'], ['سِنَةٌ', 'نعاس خفيف', 'Sinah', 'light drowsiness'], ['لَا يَئُودُهُ', 'لا يُتعبه ولا يُثقله', "La ya'uduh", 'does not tire Him']],
+      mean: B('ربّي حيّ لا ينام أبدًا، يحفظ السماوات والأرض كلّها ولا يتعب، ويعلم كلّ شيء. فإذا نمتُ أنا، فهو لا ينام ويحفظني.', 'My Lord is Ever-Living and never sleeps. He guards all the heavens and the earth without tiring, and He knows everything. When I sleep, He does not — and He protects me.'),
+      when: B('قبل النوم، وبعد كلّ صلاة، وفي الصباح والمساء. أخبر النبيّ ﷺ أنّ من قرأها عند نومه لا يزال عليه من الله حافظ، ولا يقربه شيطان حتى يصبح.', 'Before sleeping, after each prayer, and morning and evening. The Prophet ﷺ told us whoever reads it at bedtime has a guardian from Allah, and no shaytan comes near him until morning.'),
+      q: [B('هل ينام الله سبحانه؟', 'Does Allah ever sleep?'), [['لا، أبدًا', 'No, never', 1], ['نعم في الليل', 'Yes, at night'], ['أحيانًا', 'Sometimes']]] }),
+
+    /* ───────── يومي في البيت ───────── */
+    D({ id: 'wake', tag: 'home', icon: '☀️',
+      title: B('عند الاستيقاظ', 'When I wake up'), sub: B('أوّل كلمة في يومي', 'The first words of my day'),
+      matn: B('الْحَمْدُ لِلَّهِ الَّذِي أَحْيَانَا بَعْدَ مَا أَمَاتَنَا وَإِلَيْهِ النُّشُورُ.', 'Praise be to Allah who gave us life after He had caused us to die, and to Him is the resurrection.'),
+      src: B('رواه البخاري', 'Bukhari'),
+      words: [['أَحْيَانَا', 'أيقظنا وأعادنا للحياة', 'Gave us life', 'woke us up again'], ['أَمَاتَنَا', 'النوم يشبه الموت الصغير', 'Caused us to die', 'sleep is like a small death'], ['النُّشُورُ', 'البعث يوم القيامة', 'Resurrection', 'rising again on the Last Day']],
+      mean: B('شكرًا يا ربّي لأنك أيقظتني من نومي وأعطيتني يومًا جديدًا!', 'Thank You, my Lord, for waking me up and giving me a brand-new day!'),
+      when: B('أوّل ما أفتح عينيّ في الصباح. هكذا كان النبيّ ﷺ يفعل.', 'As soon as I open my eyes in the morning — this is what the Prophet ﷺ did.'),
+      q: [B('لماذا نشكر الله عند الاستيقاظ؟', 'Why do we thank Allah when we wake up?'), [['لأنه أعطانا يومًا جديدًا', 'He gave us a new day', 1], ['لأننا تعبنا', 'Because we are tired'], ['لا داعي للشكر', 'No need to thank']]] }),
+
+    D({ id: 'sleep', tag: 'home', icon: '🌙',
+      title: B('قبل النوم', 'Before sleeping'), sub: B('آخر كلمة في يومي', 'The last words of my day'),
+      matn: B('بِاسْمِكَ اللَّهُمَّ أَمُوتُ وَأَحْيَا.', 'In Your name, O Allah, I die and I live.'),
+      src: B('رواه البخاري', 'Bukhari'),
+      words: [['بِاسْمِكَ', 'مستعينًا باسمك', 'In Your name', 'seeking Your help'], ['أَمُوتُ', 'أنام (النوم موتة صغيرة)', 'I die', 'I sleep (sleep is a small death)'], ['وَأَحْيَا', 'وأستيقظ', 'And I live', 'and I wake up']],
+      mean: B('يا الله، باسمك أنام وباسمك أستيقظ. أنا بين يديك وأنت تحفظني.', 'O Allah, with Your name I sleep and with Your name I wake. I am in Your care and You protect me.'),
+      when: B('حين أضع رأسي على الوسادة، مع آية الكرسي والمعوّذات. كان النبيّ ﷺ يضع يده تحت خدّه ويقولها.', 'When I put my head on the pillow, along with Ayat al-Kursi and the Quls. The Prophet ﷺ would place his hand under his cheek and say it.'),
+      q: [B('متى نقول «بِاسْمِكَ اللَّهُمَّ أَمُوتُ وَأَحْيَا»؟', 'When do we say "In Your name, O Allah, I die and I live"?'), [['قبل النوم', 'Before sleeping', 1], ['عند الأكل', 'When eating'], ['عند الخروج', 'When going out']]] }),
+
+    D({ id: 'leave-home', tag: 'home', icon: '🚪',
+      title: B('عند الخروج من البيت', 'Leaving home'), sub: B('أتوكّل على الله', 'I rely on Allah'),
+      matn: B('بِسْمِ اللَّهِ، تَوَكَّلْتُ عَلَى اللَّهِ، وَلَا حَوْلَ وَلَا قُوَّةَ إِلَّا بِاللَّهِ.', 'In the name of Allah, I place my trust in Allah, and there is no power and no strength except with Allah.'),
+      src: B('رواه أبو داود والترمذي، وقال: حسن صحيح', 'Abu Dawud & Tirmidhi (hasan sahih)'),
+      words: [['تَوَكَّلْتُ', 'اعتمدتُ على الله', 'I trust', 'I rely on Allah'], ['حَوْلَ', 'تحوُّل وتغيير', 'Hawl', 'ability to change things'], ['قُوَّةَ', 'قدرة', "Quwwah", 'strength']],
+      mean: B('يا ربّي، أخرج باسمك وأنا معتمد عليك؛ فلا أقدر على شيء إلا بمساعدتك.', 'O my Lord, I go out in Your name relying on You — I can do nothing without Your help.'),
+      when: B('عند باب البيت قبل أن أخرج. أخبر النبيّ ﷺ أنّه يُقال لمن قالها: «هُديتَ وكُفيتَ ووُقيتَ»، ويبتعد عنه الشيطان.', 'At the door before going out. The Prophet ﷺ said it is said to whoever says it: "You are guided, you are sufficed, you are protected," and Shaytan moves away from him.'),
+      q: [B('ماذا يُقال لمن يقول دعاء الخروج؟', 'What is said to the one who says the leaving dua?'), [['هُديتَ وكُفيتَ ووُقيتَ', 'You are guided, sufficed, protected', 1], ['ارجع إلى البيت', 'Go back home'], ['لا شيء', 'Nothing']]] }),
+
+    D({ id: 'enter-home', tag: 'home', icon: '🏠',
+      title: B('عند دخول البيت', 'Entering home'), sub: B('أذكر الله وأُسلّم', 'I remember Allah and greet'),
+      matn: B('بِسْمِ اللَّهِ، السَّلَامُ عَلَيْكُمْ.', 'In the name of Allah. Peace be upon you.'),
+      src: B('ذكر الله عند الدخول: رواه مسلم؛ والسلام: ﴿فَإِذَا دَخَلْتُم بُيُوتًا فَسَلِّمُوا عَلَىٰ أَنفُسِكُمْ﴾ النور: ٦١', 'Remembering Allah on entering: Muslim; greeting: "When you enter houses, greet one another" (An-Nur 24:61)'),
+      words: [['السَّلَامُ', 'الأمان والسلامة، وهو من أسماء الله', 'As-Salam', 'peace and safety — also a name of Allah'], ['عَلَيْكُمْ', 'لكم يا أهل البيت', "'Alaykum", 'upon you, my family']],
+      mean: B('أدخل بيتي باسم الله، وأتمنّى السلامة والخير لأهلي.', 'I enter my home with the name of Allah and wish peace and good for my family.'),
+      when: B('عند دخول البيت. أخبر النبيّ ﷺ أنّ من ذكر الله عند دخوله وعند طعامه قال الشيطان: لا مبيت لكم ولا عشاء!', 'When entering the house. The Prophet ﷺ said when a person remembers Allah upon entering and at his meal, Shaytan says: "No place to stay and no dinner for you!"'),
+      q: [B('ماذا يقول الشيطان إذا ذكرنا الله عند الدخول والطعام؟', 'What does Shaytan say if we remember Allah on entering and eating?'), [['لا مبيت لكم ولا عشاء', 'No place to stay and no dinner', 1], ['سأبقى هنا', "I'll stay here"], ['لا يقول شيئًا', 'Nothing']]] }),
+
+    D({ id: 'toilet-in', tag: 'home', icon: '🚻',
+      title: B('دخول الخلاء', 'Entering the toilet'), sub: B('أستعيذ قبل أن أدخل', 'I seek protection before entering'),
+      matn: B('اللَّهُمَّ إِنِّي أَعُوذُ بِكَ مِنَ الْخُبُثِ وَالْخَبَائِثِ.', 'O Allah, I seek refuge in You from the male and female evil ones.'),
+      src: B('رواه البخاري ومسلم', 'Bukhari & Muslim'),
+      words: [['أَعُوذُ بِكَ', 'أحتمي بك', "A'udhu bika", 'I seek Your protection'], ['الْخُبُثِ وَالْخَبَائِثِ', 'الشياطين، ذكورهم وإناثهم', 'Al-khubuth wal-khaba\'ith', 'the evil devils, male and female']],
+      mean: B('يا ربّي، احمِني من الشياطين في هذا المكان.', 'O my Lord, protect me from the devils in this place.'),
+      when: B('قبل أن أدخل الحمّام، وأدخل برجلي اليسرى. ولا أذكر الله داخله.', 'Before going into the bathroom, entering with my left foot. I don\'t say dhikr inside.'),
+      q: [B('بأيّ رجل ندخل الحمّام؟', 'Which foot do we enter the bathroom with?'), [['اليسرى', 'The left', 1], ['اليمنى', 'The right'], ['نقفز!', 'We jump!']]] }),
+
+    D({ id: 'toilet-out', tag: 'home', icon: '🫧',
+      title: B('الخروج من الخلاء', 'Leaving the toilet'), sub: B('كلمة واحدة', 'One word'),
+      matn: B('غُفْرَانَكَ.', 'I ask Your forgiveness.'),
+      src: B('رواه أبو داود والترمذي، وصحّحه الألباني', 'Abu Dawud & Tirmidhi (sahih)'),
+      words: [['غُفْرَانَكَ', 'أطلب مغفرتك يا الله', 'Ghufranak', 'I ask for Your forgiveness, O Allah']],
+      mean: B('يا ربّي، اغفر لي وسامحني.', 'O my Lord, forgive me.'),
+      when: B('بعد أن أخرج من الحمّام برجلي اليمنى.', 'After I come out of the bathroom with my right foot.'),
+      q: [B('ماذا نقول عند الخروج من الخلاء؟', 'What do we say when leaving the toilet?'), [['غُفْرَانَكَ', 'Ghufranak', 1], ['صباح الخير', 'Good morning'], ['لا شيء', 'Nothing']]] }),
+
+    D({ id: 'sneeze', tag: 'home', icon: '🤧',
+      title: B('عند العطاس', 'When sneezing'), sub: B('حوار جميل بين أخوين', 'A beautiful exchange between two people'),
+      matn: B('العاطس: الْحَمْدُ لِلَّهِ.<br>السامع: يَرْحَمُكَ اللَّهُ.<br>العاطس: يَهْدِيكُمُ اللَّهُ وَيُصْلِحُ بَالَكُمْ.', 'The sneezer: Alhamdulillah (praise be to Allah).<br>The listener: Yarhamuk-Allah (may Allah have mercy on you).<br>The sneezer: Yahdikumullahu wa yuslihu balakum (may Allah guide you and set your affairs right).'),
+      src: B('رواه البخاري', 'Bukhari'),
+      words: [['يَرْحَمُكَ اللَّهُ', 'أدعو الله أن يرحمك', 'Yarhamuk-Allah', 'may Allah have mercy on you'], ['بَالَكُمْ', 'حالكم وشأنكم', 'Balakum', 'your affairs, your state']],
+      mean: B('أشكر الله على العطسة، ويدعو لي أخي بالرحمة، فأدعو له بالهداية وصلاح الحال. ثلاثة أدعية في ثانيتين!', 'I thank Allah for the sneeze, my brother prays for mercy for me, and I pray for his guidance and wellbeing. Three duas in two seconds!'),
+      when: B('كلّما عطستُ أو سمعتُ أحدًا يعطس ويحمد الله.', 'Every time I sneeze, or hear someone sneeze and say Alhamdulillah.'),
+      q: [B('ماذا يقول من سمع العاطس يحمد الله؟', 'What does the listener say when the sneezer praises Allah?'), [['يَرْحَمُكَ اللَّهُ', 'Yarhamuk-Allah', 1], ['صحّة!', 'Bless you!'], ['لا يقول شيئًا', 'Nothing']]] }),
+
+    D({ id: 'rain', tag: 'home', icon: '🌧️',
+      title: B('عند نزول المطر', 'When it rains'), sub: B('المطر رحمة', 'Rain is mercy'),
+      matn: B('اللَّهُمَّ صَيِّبًا نَافِعًا.', 'O Allah, (make it) a beneficial rain.'),
+      src: B('رواه البخاري', 'Bukhari'),
+      words: [['صَيِّبًا', 'مطرًا ينزل بكثرة', 'Sayyiban', 'a pouring rain'], ['نَافِعًا', 'مفيدًا لا يضرّ', "Nafi'an", 'useful, not harmful']],
+      mean: B('يا ربّي، اجعل هذا المطر خيرًا: يسقي الأشجار والحيوانات والناس، ولا يؤذي أحدًا.', 'O my Lord, make this rain good: watering trees, animals and people, without harming anyone.'),
+      when: B('حين أرى المطر ينزل. ووقت المطر من أوقات استجابة الدعاء، فأدعو فيه لنفسي ولأهلي.', 'When I see the rain falling. Rain time is a time to make dua, so I pray for myself and my family.'),
+      q: [B('ماذا نطلب حين ينزل المطر؟', 'What do we ask for when it rains?'), [['أن يكون مطرًا نافعًا', 'That it be beneficial rain', 1], ['أن يتوقّف فورًا', 'That it stop immediately'], ['لا ندعو', "We don't make dua"]]] }),
+
+    D({ id: 'wind', tag: 'home', icon: '🌬️',
+      title: B('عند هبوب الريح', 'When the wind blows'), sub: B('أسأل الله خيرها', 'I ask Allah for its good'),
+      matn: B('اللَّهُمَّ إِنِّي أَسْأَلُكَ خَيْرَهَا، وَخَيْرَ مَا فِيهَا، وَخَيْرَ مَا أُرْسِلَتْ بِهِ، وَأَعُوذُ بِكَ مِنْ شَرِّهَا، وَشَرِّ مَا فِيهَا، وَشَرِّ مَا أُرْسِلَتْ بِهِ.', 'O Allah, I ask You for its good, the good within it, and the good it was sent with; and I seek refuge in You from its harm, the harm within it, and the harm it was sent with.'),
+      src: B('رواه مسلم', 'Muslim'),
+      words: [['خَيْرَهَا', 'ما فيها من نفع', 'Its good', 'the benefit it brings'], ['أُرْسِلَتْ بِهِ', 'ما أرسلها الله لأجله', 'What it was sent with', 'what Allah sent it for']],
+      mean: B('الريح جنديّ من جنود الله. أطلب من ربّي أن تأتي بالخير، وأن يبعد عنّا ضررها.', 'The wind is one of Allah\'s soldiers. I ask my Lord that it bring good, and that He keep its harm away.'),
+      when: B('حين تهبّ ريحٌ قويّة. وكان النبيّ ﷺ إذا رأى الريح ظهر ذلك في وجهه، فيدعو بهذا الدعاء.', 'When a strong wind blows. When the Prophet ﷺ saw strong wind it showed on his face, and he would say this dua.'),
+      q: [B('ماذا نطلب من الله عند الريح؟', 'What do we ask Allah for when the wind blows?'), [['خيرها ونستعيذ من شرّها', 'Its good, and protection from its harm', 1], ['أن نطير معها', 'To fly with it'], ['لا شيء', 'Nothing']]] }),
+
+    D({ id: 'parents', tag: 'home', icon: '💐',
+      title: B('دعاء لوالديّ', 'Dua for my parents'), sub: B('من القرآن الكريم', 'From the Quran'),
+      matn: B('﴿رَّبِّ ارْحَمْهُمَا كَمَا رَبَّيَانِي صَغِيرًا﴾', '"My Lord, have mercy on them both as they raised me when I was small."'),
+      src: B('سورة الإسراء: ٢٤', 'Al-Isra 17:24'),
+      words: [['ارْحَمْهُمَا', 'ارحم أبي وأمّي', 'Irhamhuma', 'have mercy on my father and mother'], ['رَبَّيَانِي', 'اعتنيا بي وعلّماني', 'Rabbayani', 'cared for me and taught me']],
+      mean: B('يا ربّي، أبي وأمّي تعبا كثيرًا من أجلي وأنا صغير؛ فارحمهما كما رحماني.', 'O my Lord, my father and mother worked so hard for me when I was little — so have mercy on them as they were merciful to me.'),
+      when: B('في سجودي، وبعد صلاتي، وقبل نومي. وهو جزء من البرّ الذي أمرنا الله به.', 'In my sujood, after my prayer, and before I sleep. It is part of the kindness to parents Allah commanded.'),
+      q: [B('من أين هذا الدعاء؟', 'Where is this dua from?'), [['من القرآن الكريم', 'From the Quran', 1], ['من قصّة خيالية', 'From a fairy tale'], ['لا أعرف', "I don't know"]]] }),
+
+    D({ id: 'knowledge', tag: 'home', icon: '📚',
+      title: B('قبل المذاكرة', 'Before studying'), sub: B('أطلب العلم من الله', 'I ask Allah for knowledge'),
+      matn: B('﴿رَّبِّ زِدْنِي عِلْمًا﴾', '"My Lord, increase me in knowledge."'),
+      src: B('سورة طه: ١١٤', 'Ta-Ha 20:114'),
+      words: [['زِدْنِي', 'أعطني أكثر', 'Zidni', 'give me more'], ['عِلْمًا', 'معرفة نافعة', "'Ilman", 'useful knowledge']],
+      mean: B('يا ربّي، علّمني أكثر وأكثر، واجعل ما أتعلّمه نافعًا.', 'O my Lord, teach me more and more, and make what I learn useful.'),
+      when: B('قبل المذاكرة، وقبل المدرسة، وقبل حفظ القرآن. أمر الله نبيّه ﷺ أن يدعو بها.', 'Before studying, before school, and before memorizing Quran. Allah told His Prophet ﷺ to make this dua.'),
+      q: [B('ماذا نطلب في «رَبِّ زِدْنِي عِلْمًا»؟', 'What do we ask for in "Rabbi zidni ilma"?'), [['زيادة العلم', 'More knowledge', 1], ['زيادة الحلوى', 'More sweets'], ['النوم', 'Sleep']]] }),
+
+    D({ id: 'sick', tag: 'home', icon: '🤒',
+      title: B('عند زيارة المريض', 'Visiting the sick'), sub: B('كلمة تواسي القلب', 'A word that comforts the heart'),
+      matn: B('لَا بَأْسَ، طَهُورٌ إِنْ شَاءَ اللَّهُ.', 'No harm — it is a purification, if Allah wills.'),
+      src: B('رواه البخاري', 'Bukhari'),
+      words: [['لَا بَأْسَ', 'لا تقلق، ستكون بخير', 'La ba\'s', "don't worry, you'll be fine"], ['طَهُورٌ', 'يُطهّرك الله به من الذنوب', 'Tahur', 'Allah cleans away sins with it']],
+      mean: B('يا صديقي المريض، لا تحزن؛ هذا المرض يمحو الله به ذنوبك إن شاء الله، وستشفى.', "Dear sick friend, don't be sad — Allah wipes away your sins through this illness, if He wills, and you'll get better."),
+      when: B('حين أزور مريضًا أو أتّصل به. كان النبيّ ﷺ يقولها إذا دخل على مريض.', 'When I visit or call someone who is ill. The Prophet ﷺ said it whenever he visited a sick person.'),
+      q: [B('ما معنى «طَهُورٌ»؟', 'What does "tahur" mean?'), [['المرض يمحو الذنوب', 'Illness wipes away sins', 1], ['المرض عقاب دائم', 'Illness is a punishment forever'], ['اذهب إلى المدرسة', 'Go to school']]] }),
+
+    /* ───────── الطعام واللباس ───────── */
+    D({ id: 'eat-start', tag: 'food', icon: '🍽️',
+      title: B('قبل الأكل', 'Before eating'), sub: B('بسم الله، وآكل بيميني', 'Bismillah, and I eat with my right hand'),
+      matn: B('بِسْمِ اللَّهِ.', 'In the name of Allah.'),
+      src: B('رواه البخاري ومسلم: «يا غلام، سَمِّ الله، وكُلْ بيمينك، وكُلْ ممّا يليك»', 'Bukhari & Muslim: "Young boy, mention Allah\'s name, eat with your right hand, and eat from what is in front of you."'),
+      words: [['بِسْمِ اللَّهِ', 'أبدأ باسم الله، مستعينًا به', 'Bismillah', 'I begin with the name of Allah, seeking His help'], ['سَمِّ', 'قُل: بسم الله', 'Sammi', 'say Bismillah']],
+      mean: B('يا الله، هذا الطعام منك، وأنا أبدأ باسمك.', 'O Allah, this food is from You, and I begin with Your name.'),
+      when: B('قبل أوّل لقمة. علّمها النبيّ ﷺ لطفلٍ صغير اسمه عمر بن أبي سلمة، وعلّمه آداب الطعام بلطف.', 'Before the first bite. The Prophet ﷺ taught it to a little boy named Umar ibn Abi Salamah, and taught him table manners kindly.'),
+      q: [B('بأيّ يد نأكل؟', 'Which hand do we eat with?'), [['اليمنى', 'The right', 1], ['اليسرى', 'The left'], ['أيّ يد', 'Any hand']]] }),
+
+    D({ id: 'eat-forgot', tag: 'food', icon: '😮',
+      title: B('إذا نسيتُ التسمية', 'If I forgot Bismillah'), sub: B('لا بأس، أتداركها', "It's okay, I make up for it"),
+      matn: B('بِسْمِ اللَّهِ أَوَّلَهُ وَآخِرَهُ.', 'In the name of Allah, at its beginning and its end.'),
+      src: B('رواه أبو داود والترمذي، وقال: حسن صحيح', 'Abu Dawud & Tirmidhi (hasan sahih)'),
+      words: [['أَوَّلَهُ', 'بدايته', 'Awwalahu', 'its beginning'], ['وَآخِرَهُ', 'ونهايته', 'Wa akhirahu', 'and its end']],
+      mean: B('نسيت أن أقول بسم الله في البداية، فأقولها الآن لكلّ الطعام: أوّله وآخره.', 'I forgot to say Bismillah at the start, so I say it now for the whole meal: its beginning and end.'),
+      when: B('إذا تذكّرتُ في وسط الأكل أنّي نسيت. ديننا رحيم: النسيان له علاج!', 'If I remember in the middle of the meal that I forgot. Our religion is merciful — forgetting has a fix!'),
+      q: [B('نسيتُ البسملة وتذكّرتُ أثناء الأكل، ماذا أقول؟', 'I forgot Bismillah and remembered while eating — what do I say?'), [['بسم الله أوّله وآخره', 'Bismillahi awwalahu wa akhirahu', 1], ['أتوقّف عن الأكل', 'I stop eating'], ['لا شيء', 'Nothing']]] }),
+
+    D({ id: 'eat-end', tag: 'food', icon: '😋',
+      title: B('بعد الأكل', 'After eating'), sub: B('أحمد الله الذي أطعمني', 'I thank Allah who fed me'),
+      matn: B('الْحَمْدُ لِلَّهِ الَّذِي أَطْعَمَنِي هَذَا، وَرَزَقَنِيهِ مِنْ غَيْرِ حَوْلٍ مِنِّي وَلَا قُوَّةٍ.', 'Praise be to Allah who fed me this and provided it for me without any might or power from me.'),
+      src: B('رواه أبو داود والترمذي، وحسّنه', 'Abu Dawud & Tirmidhi (hasan)'),
+      words: [['أَطْعَمَنِي', 'أعطاني الطعام', "At'amani", 'gave me food'], ['رَزَقَنِيهِ', 'جعله رزقًا لي', 'Razaqanihi', 'provided it for me'], ['مِنْ غَيْرِ حَوْلٍ مِنِّي', 'دون قدرة منّي', 'Without might from me', 'without my own power']],
+      mean: B('شكرًا يا الله! أنت الذي أعطيتني هذا الطعام اللذيذ، ولولاك ما وصل إليّ.', 'Thank You, Allah! You gave me this tasty food — without You it would never have reached me.'),
+      when: B('بعد أن أنتهي من الأكل. أخبر النبيّ ﷺ أنّ من قاله غُفر له ما تقدّم من ذنبه.', 'When I finish eating. The Prophet ﷺ said whoever says it, his past sins are forgiven.'),
+      q: [B('من الذي رزقني الطعام؟', 'Who provided me the food?'), [['الله سبحانه', 'Allah', 1], ['أنا وحدي', 'Me alone'], ['لا أحد', 'No one']]] }),
+
+    D({ id: 'clothes', tag: 'food', icon: '👕',
+      title: B('عند لبس الثوب', 'Putting on clothes'), sub: B('ثيابي نعمة', 'My clothes are a blessing'),
+      matn: B('الْحَمْدُ لِلَّهِ الَّذِي كَسَانِي هَذَا الثَّوْبَ، وَرَزَقَنِيهِ مِنْ غَيْرِ حَوْلٍ مِنِّي وَلَا قُوَّةٍ.', 'Praise be to Allah who clothed me with this garment and provided it for me without any might or power from me.'),
+      src: B('رواه أبو داود، وحسّنه الألباني', 'Abu Dawud (hasan)'),
+      words: [['كَسَانِي', 'ألبسني', 'Kasani', 'clothed me'], ['الثَّوْبَ', 'اللباس', 'Ath-thawb', 'the garment']],
+      mean: B('الحمد لله على ثيابي التي تدفئني وتسترني وتجمّلني؛ كثير من الأطفال لا يجدون ما يلبسون.', 'Praise Allah for my clothes that keep me warm, covered and neat — many children have nothing to wear.'),
+      when: B('عند لبس ثوب، وأبدأ باليمين. ويذكّرني أن أتصدّق بالثياب التي صغرت عليّ.', 'When putting on clothes, starting with the right side. It reminds me to give away clothes that no longer fit.'),
+      q: [B('بأيّ جهة نبدأ عند لبس الثوب؟', 'Which side do we start with when dressing?'), [['اليمنى', 'The right', 1], ['اليسرى', 'The left'], ['لا يهمّ', "Doesn't matter"]]] }),
+
+    /* ───────── المسجد والسفر ───────── */
+    D({ id: 'wudu', tag: 'masjid', icon: '💧',
+      title: B('بعد الوضوء', 'After wudu'), sub: B('تُفتح أبواب الجنة', 'The gates of Paradise open'),
+      matn: B('أَشْهَدُ أَنْ لَا إِلَهَ إِلَّا اللَّهُ وَحْدَهُ لَا شَرِيكَ لَهُ، وَأَشْهَدُ أَنَّ مُحَمَّدًا عَبْدُهُ وَرَسُولُهُ.', 'I bear witness that there is no god but Allah alone, with no partner, and I bear witness that Muhammad is His servant and Messenger.'),
+      src: B('رواه مسلم', 'Muslim'),
+      words: [['أَشْهَدُ', 'أعترف وأُعلن بيقين', 'Ash-hadu', 'I declare with certainty'], ['لَا شَرِيكَ لَهُ', 'لا أحد معه في ملكه وعبادته', 'No partner', 'no one shares His kingdom or worship']],
+      mean: B('بعد أن نظّفتُ جسمي بالوضوء، أُنظّف قلبي بالشهادة: الله واحد، ومحمد ﷺ رسوله.', 'After cleaning my body with wudu, I clean my heart with the testimony: Allah is One, and Muhammad ﷺ is His Messenger.'),
+      when: B('بعد أن أنتهي من الوضوء. أخبر النبيّ ﷺ أنّ من قالها فُتحت له أبواب الجنة الثمانية، يدخل من أيّها شاء.', 'When I finish wudu. The Prophet ﷺ said whoever says it, the eight gates of Paradise are opened for him to enter from whichever he wishes.'),
+      q: [B('كم باب من أبواب الجنة يُفتح لمن قالها؟', 'How many gates of Paradise open for whoever says it?'), [['ثمانية', 'Eight', 1], ['واحد', 'One'], ['ثلاثة', 'Three']]] }),
+
+    D({ id: 'adhan', tag: 'masjid', icon: '📢',
+      title: B('عند سماع الأذان', 'Hearing the adhan'), sub: B('أردّد ثم أرضى', 'I repeat, then declare my contentment'),
+      matn: B('أُردّد مع المؤذّن مثل ما يقول، ثم أقول:<br>أَشْهَدُ أَنْ لَا إِلَهَ إِلَّا اللَّهُ وَحْدَهُ لَا شَرِيكَ لَهُ، وَأَنَّ مُحَمَّدًا عَبْدُهُ وَرَسُولُهُ، رَضِيتُ بِاللَّهِ رَبًّا، وَبِمُحَمَّدٍ رَسُولًا، وَبِالْإِسْلَامِ دِينًا.', 'I repeat what the muadhin says, then say:<br>I bear witness that there is no god but Allah alone, with no partner, and that Muhammad is His servant and Messenger. I am pleased with Allah as Lord, with Muhammad as Messenger, and with Islam as religion.'),
+      src: B('الترديد: رواه البخاري ومسلم؛ والدعاء: رواه مسلم', 'Repeating: Bukhari & Muslim; the dua: Muslim'),
+      words: [['رَضِيتُ', 'أنا سعيد وراضٍ', 'Raditu', 'I am pleased and content'], ['دِينًا', 'طريقًا أعيش عليه', 'Dinan', 'the way I live by']],
+      mean: B('أنا فرحان بربّي الله، وبنبيّي محمد ﷺ، وبديني الإسلام!', "I'm happy with my Lord Allah, my Prophet Muhammad ﷺ, and my religion Islam!"),
+      when: B('حين أسمع الأذان أوقف اللعب وأردّد. وعند «حيّ على الصلاة» و«حيّ على الفلاح» أقول: لا حول ولا قوّة إلا بالله (مسلم). وأخبر النبيّ ﷺ أنّ من قال «رضيت بالله ربًّا…» غُفر له ذنبه.', 'When I hear the adhan I pause my play and repeat. At "hayya \'ala-s-salah" and "hayya \'ala-l-falah" I say: la hawla wa la quwwata illa billah (Muslim). The Prophet ﷺ said whoever says "I am pleased with Allah as Lord…" is forgiven.'),
+      q: [B('ماذا أفعل حين أسمع الأذان؟', 'What do I do when I hear the adhan?'), [['أردّد مع المؤذّن', 'Repeat after the muadhin', 1], ['أرفع صوت التلفاز', 'Turn up the TV'], ['أتجاهله', 'Ignore it']]] }),
+
+    D({ id: 'masjid-in', tag: 'masjid', icon: '🕌',
+      title: B('عند دخول المسجد', 'Entering the masjid'), sub: B('أطلب الرحمة', 'I ask for mercy'),
+      matn: B('اللَّهُمَّ افْتَحْ لِي أَبْوَابَ رَحْمَتِكَ.', 'O Allah, open for me the doors of Your mercy.'),
+      src: B('رواه مسلم', 'Muslim'),
+      words: [['افْتَحْ', 'افتح', 'Iftah', 'open'], ['أَبْوَابَ رَحْمَتِكَ', 'كلّ طرق رحمتك وحبّك', 'Doors of Your mercy', 'all the ways of Your mercy and love']],
+      mean: B('يا ربّي، أنا في بيتك الآن، فافتح لي كلّ أبواب رحمتك.', "O my Lord, I'm in Your house now — open every door of Your mercy for me."),
+      when: B('عند باب المسجد، وأدخل برجلي اليمنى، ثم أصلّي ركعتين تحيّة المسجد قبل أن أجلس.', 'At the masjid door, entering with my right foot, then I pray two rak\'ahs to greet the masjid before sitting.'),
+      q: [B('بأيّ رجل ندخل المسجد؟', 'Which foot do we enter the masjid with?'), [['اليمنى', 'The right', 1], ['اليسرى', 'The left'], ['نجري', 'We run in']]] }),
+
+    D({ id: 'masjid-out', tag: 'masjid', icon: '🚶',
+      title: B('عند الخروج من المسجد', 'Leaving the masjid'), sub: B('أطلب من فضل الله', "I ask for Allah's bounty"),
+      matn: B('اللَّهُمَّ إِنِّي أَسْأَلُكَ مِنْ فَضْلِكَ.', 'O Allah, I ask You of Your bounty.'),
+      src: B('رواه مسلم', 'Muslim'),
+      words: [['فَضْلِكَ', 'عطاؤك وخيرك ورزقك', 'Your bounty', 'Your gifts, goodness and provision']],
+      mean: B('يا ربّي، صلّيتُ لك، والآن أخرج إلى حياتي، فارزقني من خيرك.', 'O my Lord, I prayed to You and now I go back to my life — give me from Your goodness.'),
+      when: B('عند الخروج من المسجد برجلي اليسرى.', 'When leaving the masjid with my left foot.'),
+      q: [B('ماذا نطلب عند الخروج من المسجد؟', 'What do we ask for when leaving the masjid?'), [['من فضل الله', "From Allah's bounty", 1], ['الرجوع للعب فقط', 'Just to go play'], ['لا شيء', 'Nothing']]] }),
+
+    D({ id: 'ride', tag: 'masjid', icon: '🚗',
+      title: B('عند الركوب والسفر', 'Riding & travelling'), sub: B('في السيارة أو الطائرة', 'In the car or plane'),
+      matn: B('﴿سُبْحَانَ الَّذِي سَخَّرَ لَنَا هَٰذَا وَمَا كُنَّا لَهُ مُقْرِنِينَ ۝ وَإِنَّا إِلَىٰ رَبِّنَا لَمُنقَلِبُونَ﴾', '"Glory be to the One who has subjected this to us, and we could not have done it ourselves. And surely to our Lord we will return."'),
+      src: B('سورة الزخرف: ١٣–١٤؛ وكان النبيّ ﷺ يقولها في دعاء السفر (رواه مسلم)', 'Az-Zukhruf 43:13–14; the Prophet ﷺ said it in his travel dua (Muslim)'),
+      words: [['سَخَّرَ', 'ذلّل وجعله في خدمتنا', 'Sakhkhara', 'made it serve us'], ['مُقْرِنِينَ', 'قادرين عليه بأنفسنا', 'Muqrinin', 'able to control it by ourselves'], ['لَمُنقَلِبُونَ', 'لراجعون', 'Lamunqalibun', 'will surely return']],
+      mean: B('سبحان الله! السيارة والطائرة لا نقدر عليها وحدنا، لكنّ الله سخّرها لنا. وكلّ رحلة تذكّرني برحلتي الكبرى إلى الله.', 'SubhanAllah! We could never control a car or plane on our own, but Allah made them serve us. Every trip reminds me of my big journey back to Allah.'),
+      when: B('حين أجلس في السيارة أو الحافلة أو الطائرة، وأربط حزام الأمان.', 'When I sit in the car, bus or plane and fasten my seatbelt.'),
+      q: [B('من سخّر لنا السيارات والطائرات؟', 'Who made cars and planes serve us?'), [['الله سبحانه', 'Allah', 1], ['نحن وحدنا', 'We alone'], ['الصدفة', 'Chance']]] }),
+
+    D({ id: 'new-place', tag: 'masjid', icon: '⛺',
+      title: B('عند النزول في مكان جديد', 'Arriving at a new place'), sub: B('في الرحلات والمخيّمات', 'On trips and camps'),
+      matn: B('أَعُوذُ بِكَلِمَاتِ اللَّهِ التَّامَّاتِ مِنْ شَرِّ مَا خَلَقَ.', 'I seek refuge in the perfect words of Allah from the evil of what He has created.'),
+      src: B('رواه مسلم', 'Muslim'),
+      words: [['كَلِمَاتِ اللَّهِ التَّامَّاتِ', 'كلام الله الكامل الذي لا نقص فيه', 'Perfect words of Allah', 'Allah\'s complete, flawless words'], ['شَرِّ مَا خَلَقَ', 'كلّ مخلوق قد يؤذي', 'Evil of what He created', 'any creature that may harm']],
+      mean: B('يا ربّي، أنا في مكان جديد، فاحمني بكلماتك الكاملة من كلّ شيء قد يؤذيني.', "O my Lord, I'm in a new place — protect me with Your perfect words from anything that might harm me."),
+      when: B('حين أصل إلى مكان جديد: فندق، مخيّم، بيت جدّتي. أخبر النبيّ ﷺ أنّ من قالها لم يضرّه شيء حتى يرتحل من منزله ذلك.', "When I arrive somewhere new: a hotel, a camp, grandma's house. The Prophet ﷺ said whoever says it, nothing will harm him until he leaves that place."),
+      q: [B('بماذا نستعيذ في المكان الجديد؟', 'What do we seek refuge in at a new place?'), [['بكلمات الله التامّات', 'The perfect words of Allah', 1], ['بالأضواء', 'The lights'], ['بالأصدقاء', 'Friends']]] }),
+
+    /* ───────── مشاعري ───────── */
+    D({ id: 'anger', tag: 'feel', icon: '😤',
+      title: B('حين أغضب', "When I'm angry"), sub: B('كلمة تُطفئ الغضب', 'Words that cool down anger'),
+      matn: B('أَعُوذُ بِاللَّهِ مِنَ الشَّيْطَانِ الرَّجِيمِ.', 'I seek refuge in Allah from Shaytan, the accursed.'),
+      src: B('رواه البخاري ومسلم', 'Bukhari & Muslim'),
+      words: [['أَعُوذُ بِاللَّهِ', 'أحتمي بالله', "A'udhu billah", 'I take shelter with Allah'], ['الرَّجِيمِ', 'المطرود من رحمة الله', 'Ar-rajim', 'the one cast out from Allah\'s mercy']],
+      mean: B('يا ربّي، الشيطان يريد أن يجعلني أصرخ وأؤذي، فاحمني منه حتى أهدأ.', 'O my Lord, Shaytan wants me to shout and hurt others — protect me from him so I can calm down.'),
+      when: B('حين يحمرّ وجهي من الغضب. رأى النبيّ ﷺ رجلين يتشاجران وقد احمرّ وجه أحدهما، فقال: إنّي لأعلم كلمة لو قالها لذهب عنه ما يجد: «أعوذ بالله من الشيطان الرجيم». وأسكت، وإن كنتُ واقفًا أجلس.', 'When my face gets hot with anger. The Prophet ﷺ saw two men arguing, one red-faced, and said: "I know a word that, if he said it, what he feels would go away: I seek refuge in Allah from Shaytan the accursed." I also stay quiet, and if I\'m standing, I sit down.'),
+      q: [B('ماذا أقول حين أغضب؟', 'What do I say when I get angry?'), [['أعوذ بالله من الشيطان الرجيم', "A'udhu billahi mina-sh-shaytani-r-rajim", 1], ['أصرخ بصوت عالٍ', 'Shout loudly'], ['أكسر شيئًا', 'Break something']]] }),
+
+    D({ id: 'afraid', tag: 'feel', icon: '🫣',
+      title: B('حين أخاف', "When I'm afraid"), sub: B('الله يكفيني', 'Allah is enough for me'),
+      matn: B('حَسْبُنَا اللَّهُ وَنِعْمَ الْوَكِيلُ.', 'Allah is sufficient for us, and He is the best Disposer of affairs.'),
+      src: B('سورة آل عمران: ١٧٣؛ وقالها إبراهيم عليه السلام حين أُلقي في النار، ومحمد ﷺ (رواه البخاري عن ابن عباس)', 'Aal Imran 3:173; Ibrahim (AS) said it when thrown into the fire, and so did Muhammad ﷺ (Bukhari, from Ibn Abbas)'),
+      words: [['حَسْبُنَا', 'يكفينا', 'Hasbuna', 'is enough for us'], ['الْوَكِيلُ', 'الذي نعتمد عليه فيدبّر أمورنا', 'Al-Wakil', 'the One we rely on to take care of us']],
+      mean: B('يا ربّي، أنا خائف، لكنّك تكفيني. أنت أقوى من كلّ شيء أخاف منه.', "O my Lord, I'm scared, but You are enough for me. You are stronger than anything I fear."),
+      when: B('حين أخاف من الظلام أو من شيء جديد أو من امتحان. قالها إبراهيم عليه السلام حين أُلقي في النار، فجعلها الله بردًا وسلامًا.', 'When I\'m scared of the dark, something new, or an exam. Ibrahim (AS) said it when he was thrown into the fire, and Allah made it cool and safe.'),
+      q: [B('من قال «حسبنا الله ونعم الوكيل» حين أُلقي في النار؟', 'Who said "Hasbunallah" when thrown into the fire?'), [['إبراهيم عليه السلام', 'Ibrahim (AS)', 1], ['فرعون', 'Pharaoh'], ['لا أحد', 'No one']]] }),
+
+    D({ id: 'sad', tag: 'feel', icon: '🐋',
+      title: B('حين أحزن أو أُخطئ', "When I'm sad or made a mistake"), sub: B('دعاء يونس في بطن الحوت', 'Yunus\'s dua inside the whale'),
+      matn: B('﴿لَّا إِلَٰهَ إِلَّا أَنتَ سُبْحَانَكَ إِنِّي كُنتُ مِنَ الظَّالِمِينَ﴾', '"There is no god but You; glory be to You. Indeed, I have been among the wrongdoers."'),
+      src: B('سورة الأنبياء: ٨٧؛ وقال النبيّ ﷺ: «لم يدعُ بها رجل مسلم في شيء قطّ إلا استجاب الله له» (رواه الترمذي، وصحّحه الألباني)', 'Al-Anbiya 21:87; the Prophet ﷺ said no Muslim calls with it for anything but Allah answers him (Tirmidhi, sahih)'),
+      words: [['سُبْحَانَكَ', 'أنت الكامل يا ربّ', 'Subhanak', 'You are perfect, my Lord'], ['الظَّالِمِينَ', 'الذين أخطؤوا في حقّ أنفسهم', 'Az-zalimin', 'those who wronged themselves']],
+      mean: B('يا ربّي، أنت وحدك تستطيع أن تساعدني. أنا أخطأتُ، وأنت الكامل، فأخرجني من حزني كما أخرجت يونس من بطن الحوت.', 'O my Lord, only You can help me. I made a mistake, and You are perfect — take me out of my sadness as You took Yunus out of the whale.'),
+      when: B('حين أكون حزينًا أو في ضيق أو أخطأتُ. دعا بها يونس عليه السلام في الظلمات فنجّاه الله.', "When I'm sad, in difficulty, or I've done wrong. Yunus (AS) called with it in the darkness and Allah saved him."),
+      q: [B('أين دعا يونس عليه السلام بهذا الدعاء؟', 'Where did Yunus (AS) make this dua?'), [['في بطن الحوت', 'Inside the whale', 1], ['في السوق', 'In the market'], ['في الحديقة', 'In the garden']]] }),
+
+    D({ id: 'joy', tag: 'feel', icon: '🥳',
+      title: B('حين أفرح بنعمة', "When I'm happy with a blessing"), sub: B('أشكر الله على الفرح', 'I thank Allah for joy'),
+      matn: B('الْحَمْدُ لِلَّهِ الَّذِي بِنِعْمَتِهِ تَتِمُّ الصَّالِحَاتُ.', 'Praise be to Allah by whose grace good things are completed.'),
+      src: B('رواه ابن ماجه، وحسّنه الألباني', 'Ibn Majah (hasan per al-Albani)'),
+      words: [['بِنِعْمَتِهِ', 'بفضله وعطائه', "Bi ni'matihi", 'by His grace and gift'], ['تَتِمُّ الصَّالِحَاتُ', 'تكتمل الأشياء الجميلة', 'Good things are completed', 'nice things come to completion']],
+      mean: B('نجحتُ؟ وصل أبي من السفر؟ شُفيت جدّتي؟ الحمد لله! كلّ خير يتمّ بفضل الله.', 'Did I pass? Did Dad come home from a trip? Did Grandma get better? Alhamdulillah! Every good thing is completed by Allah\'s grace.'),
+      when: B('حين يحدث شيء يفرحني. كان النبيّ ﷺ إذا رأى ما يحبّ قالها.', 'When something makes me happy. Whenever the Prophet ﷺ saw something he loved, he said it.'),
+      q: [B('ماذا أقول حين يحدث شيء يفرحني؟', 'What do I say when something makes me happy?'), [['الحمد لله الذي بنعمته تتمّ الصالحات', 'Alhamdulillahi-lladhi bi ni\'matihi tatimmu-s-salihat', 1], ['لا شيء', 'Nothing'], ['أتباهى على أصدقائي', 'Show off to my friends']]] }),
+
+    D({ id: 'la-hawla', tag: 'feel', icon: '🗝️',
+      title: B('حين أحتاج قوّة', 'When I need strength'), sub: B('كنزٌ من كنوز الجنة', 'A treasure of Paradise'),
+      matn: B('لَا حَوْلَ وَلَا قُوَّةَ إِلَّا بِاللَّهِ.', 'There is no power and no strength except with Allah.'),
+      src: B('رواه البخاري ومسلم: «ألا أدلّك على كنزٍ من كنوز الجنة؟ لا حول ولا قوّة إلا بالله»', 'Bukhari & Muslim: "Shall I not tell you of a treasure from the treasures of Paradise? La hawla wa la quwwata illa billah."'),
+      words: [['حَوْلَ', 'قدرة على التغيير', 'Hawl', 'the ability to change things'], ['قُوَّةَ', 'قدرة وطاقة', 'Quwwah', 'strength and energy']],
+      mean: B('لا أستطيع أن أفعل شيئًا صعبًا وحدي، لكن بالله أستطيع!', "I can't do hard things on my own — but with Allah I can!"),
+      when: B('حين أواجه شيئًا صعبًا: واجبًا طويلًا، أو رياضة متعبة، أو حين أحتاج للصبر. وهي كنزٌ من كنوز الجنة.', 'When I face something hard: long homework, a tiring sport, or when I need patience. It is a treasure of Paradise.'),
+      q: [B('ماذا سمّى النبيّ ﷺ «لا حول ولا قوّة إلا بالله»؟', 'What did the Prophet ﷺ call "La hawla wa la quwwata illa billah"?'), [['كنزًا من كنوز الجنة', 'A treasure of Paradise', 1], ['كلمة صعبة', 'A hard word'], ['أغنية', 'A song']]] })
+  ];
+
+  /* «يومي مع الأذكار» — stops in a child's day → card ids */
+  var DAY = [
+    { ic: '☀️', h: B('أستيقظ', 'I wake up'), w: B('أوّل ما أفتح عينيّ', 'As soon as I open my eyes'), ids: ['wake'] },
+    { ic: '🚻', h: B('الحمّام والوضوء', 'Bathroom & wudu'), w: B('أستعدّ لصلاة الفجر', 'Getting ready for Fajr'), ids: ['toilet-in', 'toilet-out', 'wudu'] },
+    { ic: '🌅', h: B('أذكار الصباح', 'Morning adhkar'), w: B('بعد الفجر — خمس دقائق هادئة', 'After Fajr — five calm minutes'), ids: ['morning', 'bismillah-protect', 'quls', 'sayyid-istighfar'] },
+    { ic: '👕', h: B('ألبس وأفطر', 'Dress & breakfast'), w: B('أبدأ باليمين', 'Starting with the right'), ids: ['clothes', 'eat-start', 'eat-forgot', 'eat-end'] },
+    { ic: '🚪', h: B('أخرج إلى المدرسة', 'Off to school'), w: B('عند الباب وفي السيارة', 'At the door and in the car'), ids: ['leave-home', 'ride', 'four-words'] },
+    { ic: '📚', h: B('أتعلّم', 'I learn'), w: B('قبل الدرس والمذاكرة', 'Before lessons and homework'), ids: ['knowledge', 'la-hawla'] },
+    { ic: '📢', h: B('وقت الصلاة', 'Prayer time'), w: B('حين أسمع الأذان', 'When I hear the adhan'), ids: ['adhan', 'masjid-in', 'masjid-out'] },
+    { ic: '🏠', h: B('أعود إلى البيت', 'Back home'), w: B('أسلّم على أهلي', 'I greet my family'), ids: ['enter-home', 'parents'] },
+    { ic: '💭', h: B('مشاعري خلال اليوم', 'My feelings during the day'), w: B('غضب؟ خوف؟ حزن؟ فرح؟ لكلّ شعور ذكر', 'Angry? Scared? Sad? Happy? Each feeling has a dhikr'), ids: ['anger', 'afraid', 'sad', 'joy', 'sneeze', 'rain', 'wind', 'sick', 'new-place'] },
+    { ic: '🌇', h: B('أذكار المساء', 'Evening adhkar'), w: B('بعد العصر أو المغرب', 'After Asr or Maghrib'), ids: ['morning', 'subhanallah-100', 'bismillah-protect'] },
+    { ic: '🌙', h: B('أنام', 'I sleep'), w: B('على وسادتي، على جنبي الأيمن', 'On my pillow, on my right side'), ids: ['ayat-kursi', 'quls', 'sleep'] }
+  ];
+
+  window.TR_PAGE = {
+    id: 'adhkar', icon: '📿', color: '#1F7A4D',
+    back: { href: '../little-district/pages/ibada.html', label: { ar: 'واحة العبادة', en: "Worship Oasis" } },
+    next: { href: '../little-district/pages/ibada-journeys.html?j=adhkar', icon: '🛡️', title: { ar: "درع البطل: أذكاري تحميني", en: "Hero's Shield: my adhkar protect me" }, why: { ar: "فهمتَ المعنى — الآن احفظ أذكار الصباح والمساء والنوم في رحلةٍ خطوةً خطوة.", en: "You know the meaning — now memorize the morning, evening and sleep adhkar on a step-by-step journey." } },
+    title: B('معاني الأذكار والأدعية', 'Meanings of Adhkar & Duas'),
+    intro: B('حين أفهم ما أقول، أحبّ أن أقوله! بطاقة واحدة كلّ مرّة: النصّ، معاني الكلمات، ومتى أقوله.', 'When I understand what I say, I love saying it! One card at a time: the words, their meanings, and when to say them.'),
+    kind: 'cards',
+    filters: [
+      { id: 'morning', label: B('صباح ومساء', 'Morning & evening') },
+      { id: 'home', label: B('يومي في البيت', 'My day at home') },
+      { id: 'food', label: B('الطعام واللباس', 'Food & clothes') },
+      { id: 'masjid', label: B('المسجد والسفر', 'Masjid & travel') },
+      { id: 'feel', label: B('مشاعري', 'My feelings') }
+    ],
+    items: ITEMS,
+    panels: [{
+      id: 'day', icon: '🕰️', label: B('يومي مع الأذكار', 'My day with adhkar'),
+      render: function (el, TR) {
+        var learned = []; try { learned = JSON.parse(localStorage.getItem('tr:adhkar')) || []; } catch (e) {}
+        function idx(id) { for (var i = 0; i < ITEMS.length; i++) if (ITEMS[i].id === id) return i; return -1; }
+        el.innerHTML = '<p class="tr-note" style="max-width:620px;margin:0 auto 1rem;text-align:center">🕰️ ' +
+          TR.tx('يومٌ هادئ مع الله: اضغط على أيّ ذكر لتفتح بطاقته. لا تحاول حفظها كلّها مرّة واحدة — ذكرٌ جديد كلّ أسبوع يكفي.', 'A calm day with Allah: tap any dhikr to open its card. Don\'t try to learn them all at once — one new dhikr a week is plenty.') + '</p>' +
+          '<div class="dz-line">' + DAY.map(function (s) {
+            return '<div class="dz-stop" data-ic="' + s.ic + '"><h4>' + TR.esc(TR.t(s.h)) + '</h4><div class="when">' + TR.esc(TR.t(s.w)) + '</div><div class="dz-links">' +
+              s.ids.map(function (id) { var i = idx(id); if (i < 0) return ''; return '<button data-open="' + i + '" class="' + (learned.indexOf(id) > -1 ? 'done' : '') + '">' + ITEMS[i].icon + ' ' + TR.esc(TR.t(ITEMS[i].title)) + '</button>'; }).join('') +
+              '</div></div>';
+          }).join('') + '</div>';
+        el.querySelectorAll('[data-open]').forEach(function (b) { b.onclick = function () { TR.open(+b.dataset.open); }; });
+      }
+    }],
+    onTab: function (tab, TR) { if (tab === 'day') { var p = window.TR_PAGE.panels[0]; p.render(document.querySelector('[data-panel="day"]'), TR); } },
+    parents: {
+      ar: '<div class="tr-note">🧭 <b>للأذكار ثلاثة أماكن، لكلٍّ دوره:</b> <a href="../little-district/pages/ibada-journeys.html?j=adhkar">درع البطل</a> في واحة العبادة لـ<b>الحفظ</b> خطوةً خطوة · هذه الصفحة لـ<b>فهم المعنى</b> · <a href="../little-district/pages/hasanat.html">حاسبة الحسنات</a> في ركن الأهل لـ<b>التطبيق اليومي</b>.</div><h3>كيف نعلّم الأذكار دون ضغط؟</h3><ul><li><b>ذكرٌ واحد في الأسبوع</b>: ابدأ بأذكار المواقف المتكرّرة (الأكل، النوم، الخروج).</li><li><b>كن أنت القدوة</b>: قُل الذكر بصوتٍ مسموع أمام طفلك؛ الطفل يقلّد قبل أن يحفظ.</li><li><b>اشرح المعنى قبل الحفظ</b>: سؤال «ماذا نقول لربّنا الآن؟» يجعل الذكر حديثًا مع الله لا كلمات تُردَّد.</li><li><b>اربط الذكر بالمكان</b>: ألصق بطاقة دعاء الخروج على الباب، ودعاء الطعام قرب المائدة.</li><li>لا عقاب على النسيان؛ ذكّر بلطف: «نسينا شيئًا جميلًا… ماذا نقول؟».</li></ul><h3>أفكار تفاعلية</h3><ul><li><b>لعبة «ماذا نقول؟»</b>: تذكر موقفًا (عطسة، مطر، باب) ويجيب الطفل بالذكر.</li><li><b>عقد الأذكار</b>: خرزة في خيط عن كلّ ذكر أتقنه الطفل خلال الشهر.</li><li><b>دقائق الصباح الخمس</b>: بعد الفجر أو قبل المدرسة، تقرؤون معًا ٣ أذكار فقط بهدوء.</li></ul><div class="tr-note">💡 أذكار الأطفال الأساسية بالترتيب المقترح: الأكل ← النوم والاستيقاظ ← الخلاء ← الخروج والدخول ← المسجد ← المشاعر ← الصباح والمساء.</div>',
+      en: '<div class="tr-note">🧭 <b>Adhkar live in three places, each with one job:</b> <a href="../little-district/pages/ibada-journeys.html?j=adhkar">Hero\'s Shield</a> in the Worship Oasis to <b>memorize</b> step by step · this page to <b>understand the meaning</b> · the <a href="../little-district/pages/hasanat.html">Good-Deeds Counter</a> in the Parents corner for <b>daily practice</b>.</div><h3>How to teach adhkar without pressure</h3><ul><li><b>One dhikr a week</b>: start with recurring moments (eating, sleeping, going out).</li><li><b>Be the example</b>: say the dhikr aloud in front of your child — children imitate before they memorize.</li><li><b>Explain the meaning before memorizing</b>: asking "What are we telling our Lord now?" turns it into a conversation with Allah, not words repeated.</li><li><b>Link the dhikr to a place</b>: stick the leaving-home card on the door and the eating dua near the table.</li><li>No punishment for forgetting; remind gently: "We forgot something beautiful… what do we say?"</li></ul><h3>Interactive ideas</h3><ul><li><b>"What do we say?" game</b>: name a situation (a sneeze, rain, a door) and the child answers with the dhikr.</li><li><b>Adhkar necklace</b>: one bead on a string for each dhikr the child masters during the month.</li><li><b>Five morning minutes</b>: after Fajr or before school, read just 3 adhkar together calmly.</li></ul><div class="tr-note">💡 Suggested order for children: eating → sleeping & waking → toilet → leaving & entering → masjid → feelings → morning & evening.</div>'
+    },
+    worksheet: {
+      ar: '<h3>✏️ ورقة نشاط: أذكاري اليوم</h3><p>صِل كلّ موقف بذكره (اكتب الرقم):</p><p>١- قبل الأكل &nbsp;&nbsp; ٢- عند العطاس &nbsp;&nbsp; ٣- عند الخروج من البيت &nbsp;&nbsp; ٤- قبل النوم &nbsp;&nbsp; ٥- حين أغضب</p><p>( ) بِاسْمِكَ اللَّهُمَّ أَمُوتُ وَأَحْيَا &nbsp; ( ) بِسْمِ اللَّهِ &nbsp; ( ) أَعُوذُ بِاللَّهِ مِنَ الشَّيْطَانِ الرَّجِيمِ &nbsp; ( ) الْحَمْدُ لِلَّهِ &nbsp; ( ) بِسْمِ اللَّهِ تَوَكَّلْتُ عَلَى اللَّهِ</p><p>الذكر الذي أتعلّمه هذا الأسبوع:</p><div class="ws-line"></div><p>معناه بكلماتي:</p><div class="ws-line"></div><div class="ws-line"></div><p>ارسم المكان الذي أقول فيه هذا الذكر:</p><div class="ws-box"></div><p>☐ السبت ☐ الأحد ☐ الإثنين ☐ الثلاثاء ☐ الأربعاء ☐ الخميس ☐ الجمعة — ضع ✓ كلّ يوم تذكّرته بنفسي</p>',
+      en: '<h3>✏️ Activity sheet: My adhkar today</h3><p>Match each moment with its dhikr (write the number):</p><p>1- Before eating &nbsp;&nbsp; 2- When sneezing &nbsp;&nbsp; 3- Leaving home &nbsp;&nbsp; 4- Before sleeping &nbsp;&nbsp; 5- When angry</p><p>( ) Bismika Allahumma amutu wa ahya &nbsp; ( ) Bismillah &nbsp; ( ) A\'udhu billahi mina-sh-shaytani-r-rajim &nbsp; ( ) Alhamdulillah &nbsp; ( ) Bismillah, tawakkaltu \'ala Allah</p><p>The dhikr I\'m learning this week:</p><div class="ws-line"></div><p>Its meaning in my words:</p><div class="ws-line"></div><div class="ws-line"></div><p>Draw the place where I say this dhikr:</p><div class="ws-box"></div><p>☐ Sat ☐ Sun ☐ Mon ☐ Tue ☐ Wed ☐ Thu ☐ Fri — tick each day I remembered it myself</p>'
+    }
+  };
+})();
+</script>
+<script src="tr.js"></script>
+<script defer src="../shared/mk-system.js"></script>
+<script defer src="../shared/mk-journeys.js"></script>
+<script defer src="../shared/mk-bag.js"></script>
+</body>
+</html>

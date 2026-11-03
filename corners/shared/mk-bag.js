@@ -32,6 +32,7 @@
   function rewardsCount() {
     try { var u = JSON.parse(localStorage.getItem('mkUnlocked') || '{}'); var n = 0; for (var k in u) if (Array.isArray(u[k])) n += u[k].length; return n; } catch (e) { return 0; }
   }
+  var STAR_PTS = 5;   // keep equal to bag.html
   /* era-based corners (story/challenge halls) keep progress in hisn-acts-<era> */
   var ERA_MAP = { heart: ['heart'], history: ['prophets', 'seerah', 'heroes', 'battles'], academy: ['creativity', 'minds', 'explorers'] };
   function eraSolved(era) {
@@ -86,14 +87,17 @@
         perCorner.push({ id: c.id, icon: c.icon, name: c.name, color: c.color, done: live.done, total: live.total, pct: live.total ? Math.round(live.done / live.total * 100) : 0 });
       });
     }
-    var pts = stationPts + (prof ? bpsPoints(prof.id) : 0);
+    /* ⭐ stars from the Quran, Sunnah, cards & stories pages (MK.stars) — 5 points each */
+    /* (stars that are also journey stations — surahs, the Forty, Sunnah pages — already earned 10 points above) */
+    var stars = 0, extra = 0; try { if (window.MK && MK.stars) MK.stars().forEach(function (r) { stars += r.done; if (!r.journey) extra += r.done; }); } catch (e) {}
+    var pts = stationPts + extra * STAR_PTS + (prof ? bpsPoints(prof.id) : 0);
     // A certificate = a journey the child has actually earned (the same set shown
     // as downloadable cards in downloads.html / bag.html). Keep this stat equal to
     // that list so the number never disagrees with what's downloadable.
     var earnedCerts = certs;
     try { if (window.MK_J && window.MK_JOURNEYS) { earnedCerts = 0; MK_JOURNEYS.forEach(function (j) { if (MK_J.completedOf(j) > 0) earnedCerts++; }); } } catch (e) {}
     try { var ca = JSON.parse(localStorage.getItem('comp_awards') || '[]'); if (Array.isArray(ca)) earnedCerts += ca.length; } catch (e) {}
-    return { prof: prof, perCorner: perCorner, badges: badges, totalStations: totalStations, certs: earnedCerts, journeysDone: journeysDone, points: pts, rewards: rewardsCount() };
+    return { prof: prof, perCorner: perCorner, badges: badges, totalStations: totalStations, certs: earnedCerts, journeysDone: journeysDone, points: pts, stars: stars, rewards: rewardsCount() };
   }
 
   /* local journey collections present on this page? */
@@ -216,6 +220,7 @@
       '<div class="mkbag-stat"><span class="s-i">📜</span><b>' + d.certs + '</b><span>' + (A ? 'شهادات' : 'Certs') + '</span></div>' +
       '<div class="mkbag-stat"><span class="s-i">🗺️</span><b>' + d.journeysDone + '</b><span>' + (A ? 'رحلات' : 'Journeys') + '</span></div>' +
       '<div class="mkbag-stat"><span class="s-i">🎁</span><b>' + d.rewards + '</b><span>' + (A ? 'جوائز' : 'Rewards') + '</span></div>' +
+      '<div class="mkbag-stat"><span class="s-i">⭐</span><b>' + d.stars + '</b><span>' + (A ? 'نجوم' : 'Stars') + '</span></div>' +
       '</div>';
 
     var loc = localItems();
@@ -266,7 +271,7 @@
       '.mkbag-pn{display:flex;flex-direction:column;line-height:1.3}.mkbag-pn b{font-weight:900}.mkbag-pn a{color:#9fd0ff;font-size:.76rem;text-decoration:none}' +
       '.mkbag-points{display:flex;align-items:baseline;gap:.5rem;justify-content:center;background:linear-gradient(135deg,rgba(232,181,48,.2),rgba(232,181,48,.06));border:1px solid rgba(232,181,48,.4);border-radius:1rem;padding:.7rem;margin-bottom:.6rem}' +
       '.mkbag-pts-n{font-size:2rem;font-weight:900;color:#F5CC5A}.mkbag-pts-s{font-weight:800;opacity:.85}' +
-      '.mkbag-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:.4rem;margin-bottom:.4rem}' +
+      '.mkbag-stats{display:grid;grid-template-columns:repeat(5,1fr);gap:.4rem;margin-bottom:.4rem}' +
       '.mkbag-stat{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);border-radius:.8rem;padding:.5rem .2rem;text-align:center;display:flex;flex-direction:column;gap:.1rem}' +
       '.mkbag-stat .s-i{font-size:1.1rem}.mkbag-stat b{font-size:1.05rem;font-weight:900;color:#F5CC5A}.mkbag-stat span:last-child{font-size:.64rem;opacity:.75;font-weight:700}' +
       '.mkbag-sec{font-weight:900;color:#F5CC5A;font-size:.86rem;margin:.7rem 0 .4rem}' +
@@ -296,6 +301,7 @@
     document.querySelectorAll('.lang button, #btnAr, #btnEn').forEach(function (b) {
       b.addEventListener('click', function () { setTimeout(function () { paintBtn(); updateDot(); if (document.getElementById('mkBagPanel').classList.contains('open')) render(); }, 50); });
     });
+    window.addEventListener('mk-cloud-restored', function () { updateDot(); if (document.getElementById('mkBagPanel').classList.contains('open')) render(); });   // progress arrived from the server
     var map = document.getElementById('map');
     if (map) new MutationObserver(function () { updateDot(); }).observe(map, { childList: true });
   }

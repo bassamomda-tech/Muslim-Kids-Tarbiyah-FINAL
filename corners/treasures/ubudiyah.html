@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>العبودية وتعظيم الله | Servanthood & Glorifying Allah</title>
+<meta name="description" content="دروسٌ قصصية قصيرة ومجانية للأطفال عن معنى العبودية لله وتعظيمه: المحبّة والخوف والرجاء، الشكر، التوكّل، والمراقبة — مع دليلٍ للأهل وورقة نشاط.">
+<link rel="icon" href="../../favicon.ico">
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&family=Nunito:wght@400;700;800;900&family=Amiri:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="tr.css">
+</head>
+<body>
+<div id="tr-root"></div>
+<script>
+(function () {
+  function P(scene, ar, en) { return { scene: scene, text: { ar: ar, en: en } }; }
+  function S(icon, hAr, hEn, ar, en) { return { icon: icon, h: { ar: hAr, en: hEn }, html: { ar: ar, en: en } }; }
+  var qn = 0;  /* vary where the right answer sits */
+  function Q(qa, qe, opts, fa, fe) { var k = qn++ % opts.length; opts = opts.slice(k).concat(opts.slice(0, k)); return { q: { ar: qa, en: qe }, opts: opts.map(function (o) { return { t: { ar: o[0], en: o[1] }, ok: !!o[2] }; }), fb: { ar: fa, en: fe } }; }
+  var LESSON = ['💡', 'الدرس', 'The lesson'], PROOF = ['📖', 'من القرآن والسنّة', 'From the Quran & Sunnah'], TASK = ['🎯', 'تحدّي اليوم', "Today's challenge"];
+  function L(ar, en) { return S(LESSON[0], LESSON[1], LESSON[2], '<p>' + ar + '</p>', '<p>' + en + '</p>'); }
+  function D(ar, en) { return S(PROOF[0], PROOF[1], PROOF[2], ar, en); }
+  function T(ar, en) { return S(TASK[0], TASK[1], TASK[2], '<p>' + ar + '</p>', '<p>' + en + '</p>'); }
+
+  var items = [
+    { id: 'abd', icon: '🏷️', title: { ar: 'ماذا يعني «عبدُ الله»؟', en: 'What does "Abdullah" mean?' }, sub: { ar: 'أجمل لقبٍ في الدنيا', en: 'The most beautiful title in the world' },
+      pages: [
+        P('👦', 'سأل يوسفُ أباه: «يا أبي، لماذا اسمُ عمّي عبدُ الله؟». ابتسم الأب وقال: «لأنّ أجملَ شيءٍ أن تكون عبدًا لله».', 'Yusuf asked his father, "Dad, why is my uncle named Abdullah?" His father smiled: "Because the most beautiful thing is to be a servant of Allah."'),
+        P('🤔', 'قال يوسف: «لكنّ العبد يُطيع سيّده دائمًا!». قال الأب: «نعم، ونحن نطيع الله لأنه خلقنا ويحبّنا، ويأمرنا بما ينفعنا».', 'Yusuf said, "But a servant always obeys his master!" Dad replied, "Yes — and we obey Allah because He created us, loves us, and only commands what benefits us."'),
+        P('🕊️', '«والعجيب يا بنيّ: كلّما كنتَ عبدًا لله أكثر، صرتَ حرًّا أكثر. لا تخاف من الناس، ولا تكون عبدًا لهاتفٍ أو لعبةٍ أو غضب».', '"And the amazing thing, son: the more you are a servant of Allah, the freer you become. You don\'t fear people, and you\'re not a slave to a phone, a game, or your anger."'),
+        P('🌟', 'قال يوسف بفرح: «إذن أنا أيضًا عبدُ الله!». قال الأب: «نعم، وهذا شرفٌ عظيم، فلأجله خلقنا الله».', 'Yusuf said happily, "Then I\'m also a servant of Allah!" Dad said, "Yes — a great honour. That is what Allah created us for."')
+      ],
+      sections: [
+        L('العبودية لله ليست ذُلًّا، بل هي <b>شرفٌ وحرّية</b>: أحبّ الله وأطيعه، فلا يتحكّم بي شيءٌ غيره.', 'Being a servant of Allah isn\'t humiliation — it is <b>honour and freedom</b>: I love and obey Allah, so nothing else controls me.'),
+        D('<p>﴿وَمَا خَلَقْتُ الْجِنَّ وَالْإِنسَ إِلَّا لِيَعْبُدُونِ﴾ (الذاريات: ٥٦)</p><p>قال النبي ﷺ: «إِنَّ أَحَبَّ أَسْمَائِكُمْ إِلَى اللَّهِ عَبْدُ اللَّهِ وَعَبْدُ الرَّحْمَنِ» (رواه مسلم).</p>', '<p>"And I did not create the jinn and mankind except to worship Me." (Adh-Dhariyat 51:56)</p><p>The Prophet ﷺ said: "The most beloved of your names to Allah are Abdullah and Abdur-Rahman." (Muslim)</p>'),
+        T('عُدَّ كم مرّة تقول «الله» اليوم وأنت تبدأ عملًا: «بسم الله»، «إن شاء الله»، «الحمد لله».', 'Count how many times you mention Allah today when starting something: "Bismillah", "In sha Allah", "Alhamdulillah".')
+      ],
+      quiz: Q('لماذا خلقنا الله؟', 'Why did Allah create us?', [['لنعبده', 'To worship Him', 1], ['لنلعب فقط', 'Only to play', 0], ['لا أعرف', "I don't know", 0]], 'أحسنت! ﴿وَمَا خَلَقْتُ الْجِنَّ وَالْإِنسَ إِلَّا لِيَعْبُدُونِ﴾.', 'Well done! "I did not create jinn and mankind except to worship Me."') },
+
+    { id: 'more', icon: '🧹', title: { ar: 'العبادة أكبر من الصلاة', en: 'Worship is bigger than prayer' }, sub: { ar: 'كلُّ عملٍ طيّبٍ بنيّةٍ عبادة', en: 'Every good deed with intention is worship' },
+      pages: [
+        P('🧒', 'كانت مريم ترتّب غرفتها وهي متضايقة. قالت أمّها: «يا مريم، هل تعلمين أنّ ترتيب غرفتك يمكن أن يصير عبادة؟».', 'Maryam was tidying her room, feeling grumpy. Her mother said, "Maryam, did you know tidying your room can become worship?"'),
+        P('😮', 'تعجّبت مريم: «عبادة؟ أنا لا أصلّي الآن!». قالت الأم: «العبادة كلُّ ما يحبّه الله من قولٍ وعمل».', 'Maryam was surprised: "Worship? I\'m not praying!" Her mother said, "Worship is everything Allah loves — words and deeds."'),
+        P('😊', '«حين تبتسمين لأختك فهي صدقة، وحين تساعدينني بنيّةِ إرضاء الله فهي عبادة، وحين تذاكرين لتنفعي الناس فهي عبادة».', '"When you smile at your sister, it\'s charity. When you help me intending to please Allah, it\'s worship. When you study to benefit people, it\'s worship."'),
+        P('✨', 'ابتسمت مريم وقالت في قلبها: «يا ربّ، أرتّب غرفتي لأُرضيك». وأكملت الترتيب بفرحٍ هذه المرّة!', 'Maryam smiled and said in her heart, "O Lord, I tidy my room to please You." And she finished — happily this time!')
+      ],
+      sections: [
+        L('النيّة الطيبة تحوّل الأعمال العادية إلى عبادة: الأكل لأتقوّى، والنوم لأنشط، واللعب البريء مع إخوتي لأُدخل السرور عليهم.', 'A good intention turns everyday actions into worship: eating to be strong, sleeping to be active, playing kindly with siblings to make them happy.'),
+        D('<p>﴿قُلْ إِنَّ صَلَاتِي وَنُسُكِي وَمَحْيَايَ وَمَمَاتِي لِلَّهِ رَبِّ الْعَالَمِينَ﴾ (الأنعام: ١٦٢)</p><p>قال النبي ﷺ: «إِنَّمَا الْأَعْمَالُ بِالنِّيَّاتِ» (رواه البخاري ومسلم)، وقال: «تَبَسُّمُكَ فِي وَجْهِ أَخِيكَ لَكَ صَدَقَةٌ» (رواه الترمذي، صحيح).</p>', '<p>"Say: Indeed my prayer, my sacrifice, my living and my dying are for Allah, Lord of the worlds." (Al-An\'am 6:162)</p><p>The Prophet ﷺ said: "Actions are only by intentions" (al-Bukhari & Muslim), and "Your smile in your brother\'s face is charity" (at-Tirmidhi, sahih).</p>'),
+        T('اختر ثلاثة أعمال عادية اليوم، وانوِ بكلٍّ منها إرضاء الله.', 'Pick three ordinary tasks today and intend each one to please Allah.')
+      ],
+      quiz: Q('كيف يصير ترتيب الغرفة عبادة؟', 'How does tidying my room become worship?', [['بالنيّة الطيبة لإرضاء الله', 'With a good intention to please Allah', 1], ['لا يمكن أبدًا', "It never can", 0], ['إذا رآني الناس', 'If people see me', 0]], 'رائع! النيّة سرٌّ عظيم.', 'Great! Intention is a great secret.') },
+
+    { id: 'wings', icon: '🕊️', title: { ar: 'الطائر بجناحين', en: 'The bird with two wings' }, sub: { ar: 'المحبّة والخوف والرجاء', en: 'Love, fear and hope' },
+      pages: [
+        P('🐦', 'نظر أنس إلى عصفورٍ يطير، فقال جدّه: «يا أنس، قلبُ المؤمن مثل هذا الطائر».', 'Anas watched a sparrow fly. His grandfather said, "Anas, a believer\'s heart is like this bird."'),
+        P('❤️', '«رأسُه <b>المحبّة</b>: نحبّ الله أكثر من كل شيء. وجناحاه <b>الرجاء والخوف</b>».', '"Its head is <b>love</b>: we love Allah more than anything. And its two wings are <b>hope and fear</b>."'),
+        P('🌈', '«الرجاء: أن نرجو رحمة الله وجنّته، فلا نيأس أبدًا. والخوف: أن نخاف أن نُغضبه، فلا نتجرّأ على المعصية».', '"Hope: we hope for Allah\'s mercy and Paradise, so we never despair. Fear: we\'re afraid to displease Him, so we don\'t dare to disobey."'),
+        P('🕊️', '«ولو كان للطائر جناحٌ واحد لسقط! كذلك نحتاج الرجاء والخوف معًا، والمحبّة تقودهما». هكذا شبّه بعض العلماء قلب المؤمن.', '"If a bird had just one wing it would fall! So we need hope and fear together, led by love." This is how some scholars described the believer\'s heart.')
+      ],
+      sections: [
+        L('نعبد الله <b>محبّةً</b> له، و<b>رجاءً</b> لرحمته، و<b>خوفًا</b> من عقابه — والثلاثة معًا تجعل القلب متوازنًا.', 'We worship Allah out of <b>love</b> for Him, <b>hope</b> for His mercy, and <b>fear</b> of His punishment — all three together keep the heart balanced.'),
+        D('<p>﴿وَالَّذِينَ آمَنُوا أَشَدُّ حُبًّا لِّلَّهِ﴾ (البقرة: ١٦٥)</p><p>﴿وَيَرْجُونَ رَحْمَتَهُ وَيَخَافُونَ عَذَابَهُ﴾ (الإسراء: ٥٧)</p>', '<p>"But those who believe are stronger in love for Allah." (Al-Baqarah 2:165)</p><p>"They hope for His mercy and fear His punishment." (Al-Isra 17:57)</p>'),
+        T('ارسم طائرًا، واكتب على رأسه «أحبّ الله»، وعلى جناحيه «أرجو رحمته» و«أخاف أن أُغضبه».', 'Draw a bird; write "I love Allah" on its head and "I hope for His mercy" and "I fear displeasing Him" on its wings.')
+      ],
+      quiz: Q('ما جناحا قلب المؤمن؟', "What are the two wings of the believer's heart?", [['الرجاء والخوف', 'Hope and fear', 1], ['اللعب والنوم', 'Play and sleep', 0], ['الغضب والحزن', 'Anger and sadness', 0]], 'أحسنت! والمحبّة هي الرأس الذي يقودهما.', 'Well done! And love is the head that leads them.') },
+
+    { id: 'creation', icon: '🐜', title: { ar: 'سبحان الخالق!', en: 'Glory be to the Creator!' }, sub: { ar: 'نعظّم الله بالتفكّر في خلقه', en: 'Glorifying Allah by reflecting on creation' },
+      pages: [
+        P('🌌', 'في ليلةٍ صافية، استلقت رقيّة مع أبيها ينظران إلى السماء. قال الأب: «عُدّي النجوم يا رقيّة». ضحكت: «لا أستطيع، إنها كثيرةٌ جدًّا!».', 'On a clear night, Ruqayyah lay with her father looking at the sky. "Count the stars, Ruqayyah." She laughed, "I can\'t — there are too many!"'),
+        P('🐜', 'في الصباح رأت نملةً تحمل حبّةً أكبر منها، وتمشي في طابورٍ منظّم. قالت: «من علّم النملة النظام؟».', 'In the morning she saw an ant carrying a grain bigger than itself, marching in a neat line. "Who taught the ant to be so organised?"'),
+        P('🌧️', 'ثم نزل المطر، فشربت الأرض واخضرّ العشب. قال الأب: «كلُّ هذا من صنع الله. حين نتفكّر فيه، يكبر الله في قلوبنا».', 'Then rain fell, the earth drank and the grass turned green. Dad said, "All this is Allah\'s making. When we reflect on it, Allah becomes greater in our hearts."'),
+        P('🤲', 'رفعت رقيّة رأسها إلى السماء وقالت من قلبها: «سبحان الله! ما أعظمك يا ربّ!».', 'Ruqayyah looked up at the sky and said from her heart: "SubhanAllah! How great You are, my Lord!"')
+      ],
+      sections: [
+        L('التفكّر في خلق الله عبادة: كلّما رأيتُ عظمة المخلوق عرفتُ عظمة الخالق، فأحببتُه وعظّمتُه أكثر.', 'Reflecting on creation is worship: the more I see the greatness of what is created, the more I know the greatness of the Creator — and love and glorify Him more.'),
+        D('<p>﴿إِنَّ فِي خَلْقِ السَّمَاوَاتِ وَالْأَرْضِ وَاخْتِلَافِ اللَّيْلِ وَالنَّهَارِ لَآيَاتٍ لِّأُولِي الْأَلْبَابِ﴾ (آل عمران: ١٩٠)</p><p>﴿قَالَتْ نَمْلَةٌ يَا أَيُّهَا النَّمْلُ ادْخُلُوا مَسَاكِنَكُمْ﴾ (النمل: ١٨)</p>', '<p>"Indeed, in the creation of the heavens and the earth and the alternation of night and day are signs for people of understanding." (Al Imran 3:190)</p><p>"An ant said: O ants, enter your dwellings." (An-Naml 27:18)</p>'),
+        T('اخرج مع أهلك خمس دقائق، وابحث عن ثلاثة مخلوقات، وقل عند كلٍّ منها: «سبحان الله».', 'Go outside with your family for five minutes, find three creatures, and say "SubhanAllah" at each one.')
+      ],
+      quiz: Q('ماذا نقول حين نرى شيئًا عجيبًا من خلق الله؟', 'What do we say when we see something amazing Allah created?', [['سبحان الله', 'SubhanAllah', 1], ['لا شيء', 'Nothing', 0], ['هذا صنعه الإنسان', 'People made this', 0]], 'رائع! سبحان الخالق العظيم.', 'Great! Glory be to the Great Creator.') },
+
+    { id: 'dhikr', icon: '📿', title: { ar: 'كلمتان خفيفتان', en: 'Two light words' }, sub: { ar: 'نقول «سبحان الله» و«الله أكبر» بقلوبنا', en: 'Saying SubhanAllah and Allahu Akbar with our hearts' },
+      pages: [
+        P('⚖️', 'سألت المعلّمة: «من يعرف كلماتٍ خفيفةً على اللسان، ثقيلةً جدًّا في الميزان يوم القيامة؟». سكت الأطفال.', 'The teacher asked: "Who knows words that are light on the tongue but very heavy on the Scale on the Day of Judgement?" The children were quiet.'),
+        P('💚', 'قالت: «أخبرنا النبي ﷺ: سبحان الله وبحمده، سبحان الله العظيم». ردّدها الأطفال معًا بهدوء.', 'She said: "The Prophet ﷺ told us: SubhanAllahi wa bihamdihi, SubhanAllahil-Adhim." The children repeated it calmly together.'),
+        P('🏔️', '«وحين نقول: الله أكبر، نتذكّر أنّ الله أكبر من كل شيء: أكبر من خوفنا، ومن مشكلاتنا، ومن الجبال كلّها».', '"And when we say Allahu Akbar, we remember Allah is greater than everything: greater than our fears, our problems, and all the mountains."'),
+        P('🫀', '«لكن انتبهوا! لا نقولها بألسنتنا فقط، بل نشعر بمعناها في قلوبنا. هكذا يكون الذكر عبادةً حيّة».', '"But remember — we don\'t just say it with our tongues; we feel its meaning in our hearts. That makes dhikr living worship."')
+      ],
+      sections: [
+        L('الذكر سهلٌ وأجره عظيم. وتعظيم الله أن أقول «الله أكبر» وأنا أشعر حقًّا أنّه أكبر من كلّ ما يُقلقني.', 'Dhikr is easy and its reward is huge. Glorifying Allah is saying "Allahu Akbar" while truly feeling He is greater than whatever worries me.'),
+        D('<p>قال النبي ﷺ: «كَلِمَتَانِ خَفِيفَتَانِ عَلَى اللِّسَانِ، ثَقِيلَتَانِ فِي الْمِيزَانِ، حَبِيبَتَانِ إِلَى الرَّحْمَنِ: سُبْحَانَ اللَّهِ وَبِحَمْدِهِ، سُبْحَانَ اللَّهِ الْعَظِيمِ» (رواه البخاري ومسلم).</p>', '<p>The Prophet ﷺ said: "Two words are light on the tongue, heavy on the Scale, and beloved to the Most Merciful: SubhanAllahi wa bihamdihi, SubhanAllahil-Adhim." (al-Bukhari & Muslim)</p>'),
+        T('قل «سبحان الله وبحمده، سبحان الله العظيم» عشر مرّات بهدوءٍ قبل النوم، وتأمّل معناها.', 'Say "SubhanAllahi wa bihamdihi, SubhanAllahil-Adhim" ten times calmly before sleeping, thinking about its meaning.')
+      ],
+      quiz: Q('الكلمتان الخفيفتان على اللسان الثقيلتان في الميزان هما:', 'The two words light on the tongue and heavy on the Scale are:', [['سبحان الله وبحمده، سبحان الله العظيم', 'SubhanAllahi wa bihamdihi, SubhanAllahil-Adhim', 1], ['صباح الخير', 'Good morning', 0], ['شكرًا جزيلًا', 'Thank you very much', 0]], 'أحسنت! رواه البخاري ومسلم.', 'Well done! Narrated by al-Bukhari and Muslim.') },
+
+    { id: 'need', icon: '🌱', title: { ar: 'نحن نحتاج إلى الله', en: 'We need Allah' }, sub: { ar: 'التواضع والافتقار إلى الله', en: 'Humility and our need for Allah' },
+      pages: [
+        P('🌻', 'زرع عمر بذرةً في أصيص، وقال بفخر: «أنا الذي أنبتُّها!». ابتسمت أمّه وسألته: «ومن أنزل المطر؟ ومن جعل في البذرة حياة؟».', 'Umar planted a seed in a pot and said proudly, "I made it grow!" His mother smiled: "And who sent the rain? Who put life in the seed?"'),
+        P('💭', 'فكّر عمر قليلًا: «الله…». قالت الأم: «نعم. نحن نعمل ونجتهد، لكنّ كلّ شيءٍ بيد الله. نحتاجه في كل نفَس».', 'Umar thought: "Allah…" She said: "Yes. We work and try hard, but everything is in Allah\'s hand. We need Him with every breath."'),
+        P('🙇', '«والله لا يحتاج إلينا. لو صلّى كلُّ الناس ما زاد ذلك في ملكه شيئًا، فنحن نصلّي لأننا نحن المحتاجون».', '"And Allah doesn\'t need us. If all people prayed, it wouldn\'t add anything to His kingdom. We pray because we are the ones in need."'),
+        P('😊', 'قال عمر: «إذن أقول: الحمد لله الذي أنبت بذرتي!». وصار يسقيها كل يوم ويقول: «يا ربّ بارك فيها».', 'Umar said, "Then I\'ll say: Alhamdulillah who made my seed grow!" He watered it daily, saying, "O Lord, bless it."')
+      ],
+      sections: [
+        L('العبد المتواضع يعرف أنّ كلّ نجاحٍ من الله، فلا يتكبّر على أحد، ويطلب العون من ربّه دائمًا.', 'A humble servant knows every success comes from Allah, so he never looks down on anyone and always asks his Lord for help.'),
+        D('<p>﴿يَا أَيُّهَا النَّاسُ أَنتُمُ الْفُقَرَاءُ إِلَى اللَّهِ ۖ وَاللَّهُ هُوَ الْغَنِيُّ الْحَمِيدُ﴾ (فاطر: ١٥)</p><p>وفي الحديث القدسي: «يَا عِبَادِي، كُلُّكُمْ ضَالٌّ إِلَّا مَنْ هَدَيْتُهُ، فَاسْتَهْدُونِي أَهْدِكُمْ» (رواه مسلم).</p>', '<p>"O people, you are the ones in need of Allah, while Allah is the Free of need, the Praiseworthy." (Fatir 35:15)</p><p>In the hadith qudsi: "O My servants, all of you are astray except whom I guide, so ask Me for guidance and I will guide you." (Muslim)</p>'),
+        T('حين تنجح في شيءٍ اليوم، قل أوّلًا: «الحمد لله»، ثم اشكر من ساعدك.', 'When you succeed at something today, first say "Alhamdulillah", then thank whoever helped you.')
+      ],
+      quiz: Q('هل يحتاج الله إلى صلاتنا؟', 'Does Allah need our prayer?', [['لا، نحن الذين نحتاج إليه', 'No — we are the ones who need Him', 1], ['نعم', 'Yes', 0], ['أحيانًا', 'Sometimes', 0]], 'صحيح! الله غنيٌّ ونحن الفقراء إليه.', 'Correct! Allah is Free of need; we are in need of Him.') },
+
+    { id: 'shukr', icon: '🍎', title: { ar: 'سرُّ الزيادة', en: 'The secret of "more"' }, sub: { ar: 'الشكر عبادةٌ يحبّها الله', en: 'Gratitude is worship Allah loves' },
+      pages: [
+        P('🍽️', 'جلست العائلة على الغداء. قالت نسيبة: «أوه، عدس مرّةً أخرى!». نظرت جدّتها إليها بلطفٍ وقالت: «تعالَي نلعب لعبة النِّعَم».', 'The family sat down for lunch. Nusaybah said, "Oh, lentils again!" Her grandmother looked at her gently: "Let\'s play the blessings game."'),
+        P('🔢', '«من يعدّ نعمةً في هذه المائدة؟». قال أحدهم: «الطعام!»، وآخر: «الماء النظيف!»، وثالث: «أنّنا معًا!»، ورابع: «أنّ عندنا أسنانًا نأكل بها!».', '"Who can count a blessing at this table?" One said "Food!", another "Clean water!", another "That we\'re together!", and another "That we have teeth to eat with!"'),
+        P('🤲', 'ضحكت نسيبة وقالت: «النِّعم كثيرة جدًّا! الحمد لله». قالت الجدّة: «والله وعدنا: إن شكرنا زادنا».', 'Nusaybah laughed: "There are so many blessings! Alhamdulillah." Grandma said: "And Allah promised: if we\'re grateful, He gives us more."'),
+        P('💚', 'أكلت نسيبة العدس، وقالت في آخر الطعام: «الحمد لله الذي أطعمني هذا»، وشكرت أمّها على الطبخ.', 'Nusaybah ate her lentils, said "Alhamdulillah who fed me this" at the end, and thanked her mother for cooking.')
+      ],
+      sections: [
+        L('الشكر يكون بالقلب (أعرف أنّ النعمة من الله)، وباللسان («الحمد لله»)، وبالعمل (أستعمل النعمة فيما يرضيه).', 'Gratitude is with the heart (knowing the blessing is from Allah), the tongue ("Alhamdulillah"), and actions (using the blessing in what pleases Him).'),
+        D('<p>﴿لَئِن شَكَرْتُمْ لَأَزِيدَنَّكُمْ﴾ (إبراهيم: ٧)</p><p>قال النبي ﷺ: «إِنَّ اللَّهَ لَيَرْضَى عَنِ الْعَبْدِ أَنْ يَأْكُلَ الْأَكْلَةَ فَيَحْمَدَهُ عَلَيْهَا، أَوْ يَشْرَبَ الشَّرْبَةَ فَيَحْمَدَهُ عَلَيْهَا» (رواه مسلم).</p>', '<p>"If you are grateful, I will surely give you more." (Ibrahim 14:7)</p><p>The Prophet ﷺ said: "Allah is pleased with the servant who eats a meal and praises Him for it, or drinks a drink and praises Him for it." (Muslim)</p>'),
+        T('قبل النوم، اذكر لأهلك ثلاث نِعَمٍ رأيتها اليوم، وقل بعد كلٍّ منها: «الحمد لله».', 'Before bed, tell your family three blessings you noticed today, saying "Alhamdulillah" after each.')
+      ],
+      quiz: Q('ماذا وعد الله الشاكرين؟', 'What did Allah promise the grateful?', [['أن يزيدهم', 'To give them more', 1], ['لا شيء', 'Nothing', 0], ['أن يأخذ النعمة', 'To take the blessing', 0]], 'أحسنت! ﴿لَئِن شَكَرْتُمْ لَأَزِيدَنَّكُمْ﴾.', 'Well done! "If you are grateful, I will surely give you more."') },
+
+    { id: 'tawakkul', icon: '🐪', title: { ar: 'اعقِلها وتوكّل', en: 'Tie it, then trust' }, sub: { ar: 'التوكّل على الله مع العمل', en: 'Relying on Allah while doing your part' },
+      pages: [
+        P('📚', 'غدًا امتحان محمد، وهو قلقٌ جدًّا. قال لأبيه: «أنا خائف! ماذا لو نسيت كلّ شيء؟».', 'Muhammad had an exam tomorrow and was very worried. "Dad, I\'m scared! What if I forget everything?"'),
+        P('🐪', 'قال الأب: «سأحكي لك قصّة: جاء رجلٌ إلى النبي ﷺ وسأله: أترك ناقتي بلا رباط وأتوكّل على الله؟ فقال ﷺ: اعقِلها وتوكّل».', 'Dad said, "Let me tell you a story. A man asked the Prophet ﷺ: Should I leave my camel untied and trust in Allah? He ﷺ said: Tie it, and trust in Allah."'),
+        P('✏️', '«يعني يا بنيّ: ذاكِر جيّدًا — هذا رباطُ الناقة — ثم سلِّم أمرك لله ولا تقلق. والطيور تخرج صباحًا جائعة، وترجع مساءً شبعانة، لأنها تسعى وتتوكّل».', '"That means: study well — that\'s tying the camel — then hand the matter to Allah and don\'t worry. Birds leave hungry each morning and return full, because they strive and trust."'),
+        P('😌', 'ذاكر محمد، ثم نام مطمئنًّا. وفي الصباح قال قبل الامتحان: «بسم الله، توكّلت على الله».', 'Muhammad studied, then slept peacefully. In the morning before the exam he said, "Bismillah, I trust in Allah."')
+      ],
+      sections: [
+        L('التوكّل أن أبذل جهدي ثم أعتمد بقلبي على الله، وأرضى بما يختاره لي. ليس التوكّل كسلًا ولا قلقًا.', 'Tawakkul means doing my best, then relying on Allah with my heart and accepting what He chooses. It is neither laziness nor worry.'),
+        D('<p>﴿وَمَن يَتَوَكَّلْ عَلَى اللَّهِ فَهُوَ حَسْبُهُ﴾ (الطلاق: ٣)</p><p>قال النبي ﷺ: «لَوْ أَنَّكُمْ تَوَكَّلُونَ عَلَى اللَّهِ حَقَّ تَوَكُّلِهِ لَرَزَقَكُمْ كَمَا يَرْزُقُ الطَّيْرَ، تَغْدُو خِمَاصًا وَتَرُوحُ بِطَانًا» (رواه الترمذي، حسن صحيح). وقال: «اعْقِلْهَا وَتَوَكَّلْ» (رواه الترمذي، حسن).</p>', '<p>"And whoever relies upon Allah — then He is sufficient for him." (At-Talaq 65:3)</p><p>The Prophet ﷺ said: "If you relied on Allah as He truly deserves, He would provide for you as He provides for the birds: they go out hungry in the morning and return full in the evening." (at-Tirmidhi, hasan sahih). And: "Tie it and trust in Allah." (at-Tirmidhi, hasan)</p>'),
+        T('عند أيّ أمرٍ يقلقك اليوم: اعمل ما تقدر عليه، ثم قل: «توكّلتُ على الله» وخذ نفَسًا هادئًا.', 'For anything worrying you today: do what you can, then say "Tawakkaltu ala Allah" and take a calm breath.')
+      ],
+      quiz: Q('ما معنى «اعقِلها وتوكّل»؟', 'What does "Tie it and trust" mean?', [['أعمل ما عليّ ثم أعتمد على الله', 'Do my part, then rely on Allah', 1], ['لا أعمل شيئًا', 'Do nothing at all', 0], ['أقلق كثيرًا', 'Worry a lot', 0]], 'رائع! هذا هو التوكّل الصحيح.', 'Great! That is true tawakkul.') },
+
+    { id: 'muraqaba', icon: '👁️', title: { ar: 'الله يراني', en: 'Allah sees me' }, sub: { ar: 'أطيع الله حتى حين لا يراني أحد', en: 'Obeying Allah even when no one is watching' },
+      pages: [
+        P('🍪', 'كانت علبة الحلوى على الطاولة، وقالت الأم: «لا حلوى قبل العشاء». ثم خرجت من المطبخ. لم يكن أحدٌ ينظر إلى حنظلة…', 'The sweets jar was on the table. Mum said, "No sweets before dinner," and left the kitchen. No one was looking at Handhalah…'),
+        P('🤚', 'مدّ حنظلة يده… ثم توقّف. تذكّر شيئًا تعلّمه: «الله يراني في كلّ مكان، حتى حين أكون وحدي».', 'Handhalah reached out… then stopped. He remembered something he had learned: "Allah sees me everywhere, even when I\'m alone."'),
+        P('😊', 'أبعد يده وقال: «سأنتظر، يا ربّ أنت تراني». ثم ذهب يساعد أمّه في تجهيز العشاء.', 'He pulled his hand back and said, "I\'ll wait — O Lord, You see me." Then he went to help his mother prepare dinner.'),
+        P('🌟', 'بعد العشاء أعطته أمّه قطعتين بدل قطعة! لكنّ أجمل شيء كان الشعور في قلبه: «ربّي راضٍ عنّي».', 'After dinner his mum gave him two pieces instead of one! But the best thing was the feeling in his heart: "My Lord is pleased with me."')
+      ],
+      sections: [
+        L('المراقبة أن أتذكّر أنّ الله يراني دائمًا، فأفعل الخير وأترك الخطأ حتى في السرّ. وهذا هو «الإحسان»، أعلى درجات الدين.', 'Muraqabah is remembering that Allah always sees me, so I do good and avoid wrong even in private. This is "ihsan", the highest level of the religion.'),
+        D('<p>﴿أَلَمْ يَعْلَم بِأَنَّ اللَّهَ يَرَىٰ﴾ (العلق: ١٤)</p><p>قال النبي ﷺ عن الإحسان: «أَنْ تَعْبُدَ اللَّهَ كَأَنَّكَ تَرَاهُ، فَإِنْ لَمْ تَكُنْ تَرَاهُ فَإِنَّهُ يَرَاكَ» (رواه مسلم).</p>', '<p>"Does he not know that Allah sees?" (Al-Alaq 96:14)</p><p>The Prophet ﷺ said about ihsan: "To worship Allah as though you see Him, and if you don\'t see Him, He surely sees you." (Muslim)</p>'),
+        T('اعمل عملًا طيّبًا اليوم في السرّ، لا يعرفه إلا الله.', 'Do one good deed today in secret, known only to Allah.')
+      ],
+      quiz: Q('لماذا ترك حنظلة الحلوى مع أنّ أحدًا لم يره؟', 'Why did Handhalah leave the sweets even though no one saw him?', [['لأنّ الله يراه', 'Because Allah sees him', 1], ['لأنه لا يحبّ الحلوى', "Because he doesn't like sweets", 0], ['خوفًا من الكاميرا', 'Fear of a camera', 0]], 'أحسنت! هذه هي المراقبة.', 'Well done! That is muraqabah.') },
+
+    { id: 'loves', icon: '💖', title: { ar: 'أحبُّ ما يحبّه الله', en: 'I love what Allah loves' }, sub: { ar: 'القليل الدائم أحبّ إلى الله', en: 'A little, done constantly, is most beloved to Allah' },
+      pages: [
+        P('📝', 'كتبت لين قائمةً طويلة: «سأصلّي مئة ركعة، وأقرأ عشرة أجزاء، وأتصدّق بكلّ مصروفي… كلّه اليوم!».', 'Lin wrote a long list: "I\'ll pray a hundred rak\'ahs, read ten juz\', give all my pocket money… all today!"'),
+        P('😴', 'وفي المساء كانت متعبةً جدًّا، ولم تُكمل شيئًا تقريبًا. حزنت وقالت: «لن أستطيع أبدًا».', 'By evening she was exhausted and had barely finished anything. She felt sad: "I\'ll never manage."'),
+        P('🌱', 'قالت لها خالتها: «يا لين، أخبرنا النبي ﷺ أنّ أحبّ الأعمال إلى الله أدومها وإن قلّ. مثل قطرة الماء التي تحفر الصخرة».', 'Her aunt said, "Lin, the Prophet ﷺ told us the deeds most beloved to Allah are the most constant, even if small — like a drop of water that carves a rock."'),
+        P('✅', 'كتبت لين قائمةً جديدة صغيرة: «صفحة قرآن، وذكر الصباح، وابتسامة لأختي — كلّ يوم». وصارت تفرح كلّما أنجزتها.', 'Lin wrote a small new list: "One page of Quran, morning adhkar, a smile for my sister — every day." And she felt happy each time she did it.')
+      ],
+      sections: [
+        L('العبد يحبّ ما يحبّه ربّه: الإحسان، والصدق، والرحمة، والجمال، والعمل الدائم ولو كان قليلًا.', 'A servant loves what his Lord loves: excellence, honesty, mercy, beauty, and steady deeds even if small.'),
+        D('<p>﴿إِنَّ اللَّهَ يُحِبُّ الْمُحْسِنِينَ﴾ (البقرة: ١٩٥)</p><p>قال النبي ﷺ: «أَحَبُّ الْأَعْمَالِ إِلَى اللَّهِ أَدْوَمُهَا وَإِنْ قَلَّ» (رواه البخاري ومسلم)، وقال: «إِنَّ اللَّهَ جَمِيلٌ يُحِبُّ الْجَمَالَ» (رواه مسلم).</p>', '<p>"Indeed, Allah loves those who do good." (Al-Baqarah 2:195)</p><p>The Prophet ﷺ said: "The most beloved deeds to Allah are the most constant, even if small" (al-Bukhari & Muslim), and "Allah is Beautiful and loves beauty" (Muslim).</p>'),
+        T('اختر عملًا صغيرًا واحدًا تحافظ عليه كلّ يوم هذا الأسبوع، وضع علامة ✓ كلّ يوم.', 'Choose one small deed to keep up every day this week, and tick ✓ each day.')
+      ],
+      quiz: Q('ما أحبّ الأعمال إلى الله؟', 'Which deeds are most beloved to Allah?', [['أدومها وإن قلّ', 'The most constant, even if small', 1], ['الكثير مرّةً واحدة ثم نتركه', 'A lot once, then quitting', 0], ['ما يراه الناس فقط', 'Only what people see', 0]], 'صحيح! القليل الدائم خيرٌ من الكثير المنقطع.', 'Correct! A little that lasts beats a lot that stops.') }
+  ];
+
+  window.TR_PAGE = {
+    id: 'ubudiyah', icon: '🤲', color: '#117A8B',
+    back: { href: '../faith-minaret/aqeeda.html', label: { ar: 'منارة العقيدة', en: "Faith Minaret" } },
+    next: { href: 'adhkar.html', icon: '📿', title: { ar: "معاني الأذكار والأدعية", en: "Meanings of Adhkar & Duas" }, why: { ar: "أسهلُ عبادةٍ وأعظمُها ذكرُ الله — افهم ما تقول فتحبّ أن تقوله.", en: "The easiest and greatest worship is remembering Allah — understand what you say and you'll love saying it." } },
+    title: { ar: 'العبودية وتعظيم الله', en: 'Servanthood & Glorifying Allah' },
+    intro: { ar: 'قصصٌ قصيرة نتعلّم منها كيف نحبّ الله ونعظّمه ونعبده في كل يومنا — قصّةٌ واحدة تكفي اليوم.', en: 'Short stories about loving, glorifying and worshipping Allah throughout our day — one story is enough for today.' },
+    kind: 'stories',
+    items: items,
+    parents: {
+      ar: '<h3>لماذا هذا الكنز؟</h3><p>يتعلّم كثيرٌ من الأطفال <b>كيف</b> يصلّون قبل أن يعرفوا <b>لماذا</b> يعبدون الله. هذه القصص تبني المعنى: أنّ العبادة محبّةٌ وتعظيمٌ وحرّية، وأنّها تشمل الحياة كلّها.</p><h3>طريقة الاستخدام</h3><ul><li>قصّةٌ واحدة في الجلسة، تُقرأ بصوتٍ هادئ (أو بزرّ «استمِع»)، ثم سؤالٌ مفتوح: «ماذا كنتَ ستفعل لو كنتَ مكانه؟».</li><li>طبّقوا <b>تحدّي اليوم</b> معًا، وتحدّثوا عنه على العشاء دون محاسبةٍ قاسية.</li><li>رتّبوها على عشرة أيام أو عشرة أسابيع، بحسب عمر الطفل.</li></ul><h3>توازنٌ في الخطاب</h3><ul><li>قدّموا <b>المحبّة والرجاء</b> أوّلًا مع الصغار، واذكروا الخوف من الله بلطفٍ ودون تهويل، كي لا يرتبط الدين بالرعب.</li><li>لا تقولوا: «الله سيحرقك إن فعلت كذا» على كل صغيرة؛ بل: «الله يحبّ منك أن…».</li><li>كونوا قدوة: الطفل يتعلّم «الحمد لله» و«توكّلت على الله» من سماعها منكم في المواقف الحقيقية.</li></ul><h3>أنشطة عائلية</h3><ul><li><b>جرّة النِّعَم:</b> ورقةٌ يوميّة بنعمةٍ ودعاءِ شكر.</li><li><b>سرّي مع الله:</b> عملٌ صالحٌ خفيٌّ أسبوعيًّا، لا يُسأل عنه الطفل.</li><li><b>دقيقة تفكّر:</b> قبل النوم، ينظر الجميع من النافذة دقيقةً ويقولون «سبحان الله».</li></ul><div class="tr-note">💡 العبودية تُغرَس بالحبّ والقدوة والتكرار الهادئ، لا بالضغط. اجعلوا الحديث عن الله أجمل لحظات اليوم.</div>',
+      en: '<h3>Why this treasure?</h3><p>Many children learn <b>how</b> to pray before they understand <b>why</b> they worship Allah. These stories build meaning: that worship is love, glorification and freedom, and that it covers all of life.</p><h3>How to use</h3><ul><li>One story per session, read calmly (or with the "Listen" button), then an open question: "What would you have done in their place?"</li><li>Do <b>today\'s challenge</b> together and chat about it at dinner, without harsh checking.</li><li>Spread them over ten days or ten weeks depending on age.</li></ul><h3>Balance in how we speak</h3><ul><li>Lead with <b>love and hope</b> for young children; mention fear of Allah gently, without terrifying them, so religion isn\'t tied to dread.</li><li>Avoid "Allah will burn you if…" for every small thing; say instead "Allah loves it when you…".</li><li>Be the example: children learn "Alhamdulillah" and "Tawakkaltu ala Allah" by hearing you say them in real moments.</li></ul><h3>Family activities</h3><ul><li><b>Blessings jar:</b> a daily note of a blessing and a dua of thanks.</li><li><b>My secret with Allah:</b> one hidden good deed a week — don\'t ask the child about it.</li><li><b>One-minute reflection:</b> before bed, everyone looks out the window for a minute and says "SubhanAllah".</li></ul><div class="tr-note">💡 Servanthood is planted through love, example and calm repetition — not pressure. Make talking about Allah the most beautiful moment of the day.</div>'
+    },
+    worksheet: {
+      ar: '<h3>✏️ ورقة نشاط: أنا عبدٌ لله</h3><p>القصّة التي قرأتها:</p><div class="ws-line"></div><p>أجمل شيءٍ تعلّمته منها:</p><div class="ws-line"></div><div class="ws-line"></div><p>ثلاث نِعَمٍ أشكر الله عليها اليوم:</p><div class="ws-line"></div><div class="ws-line"></div><div class="ws-line"></div><p>عملٌ عاديّ سأجعله عبادةً بالنيّة:</p><div class="ws-line"></div><p>ارسم طائر القلب: الرأس «أحبّ الله»، والجناحان «أرجو» و«أخاف»:</p><div class="ws-box"></div><p>☐ السبت ☐ الأحد ☐ الإثنين ☐ الثلاثاء ☐ الأربعاء ☐ الخميس ☐ الجمعة — ضع ✓ كل يوم أنجزت فيه تحدّي القصّة</p>',
+      en: '<h3>✏️ Activity sheet: I am a servant of Allah</h3><p>The story I read:</p><div class="ws-line"></div><p>The most beautiful thing I learned from it:</p><div class="ws-line"></div><div class="ws-line"></div><p>Three blessings I thank Allah for today:</p><div class="ws-line"></div><div class="ws-line"></div><div class="ws-line"></div><p>An ordinary task I will turn into worship with my intention:</p><div class="ws-line"></div><p>Draw the heart-bird: head "I love Allah", wings "I hope" and "I fear":</p><div class="ws-box"></div><p>☐ Sat ☐ Sun ☐ Mon ☐ Tue ☐ Wed ☐ Thu ☐ Fri — tick each day you did the story\'s challenge</p>'
+    }
+  };
+})();
+</script>
+<script src="tr.js"></script>
+<script defer src="../shared/mk-system.js"></script>
+<script defer src="../shared/mk-journeys.js"></script>
+<script defer src="../shared/mk-bag.js"></script>
+</body>
+</html>

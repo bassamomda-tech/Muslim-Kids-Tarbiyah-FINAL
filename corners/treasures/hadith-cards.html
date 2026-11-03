@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>بطاقات الأربعين | Forty Hadith Cards</title>
+<meta name="description" content="بطاقات مجانية للأربعين النووية للأطفال: الحديث، معناه بلغة الطفل، وكيف أعمل به — مع نسخة للطباعة.">
+<link rel="icon" href="../../favicon.ico">
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&family=Nunito:wght@400;700;800;900&family=Amiri:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="tr.css">
+</head>
+<body>
+<div id="tr-root"></div>
+<script src="../little-district/pages/hadith-data/_index.js"></script>
+<script src="../little-district/pages/hadith-data/h01.js"></script>
+<script src="../little-district/pages/hadith-data/h02.js"></script>
+<script src="../little-district/pages/hadith-data/h03.js"></script>
+<script src="../little-district/pages/hadith-data/h04.js"></script>
+<script src="../little-district/pages/hadith-data/h05.js"></script>
+<script src="../little-district/pages/hadith-data/h06.js"></script>
+<script src="../little-district/pages/hadith-data/h07.js"></script>
+<script src="../little-district/pages/hadith-data/h08.js"></script>
+<script src="../little-district/pages/hadith-data/h09.js"></script>
+<script src="../little-district/pages/hadith-data/h10.js"></script>
+<script src="../little-district/pages/hadith-data/h11.js"></script>
+<script src="../little-district/pages/hadith-data/h12.js"></script>
+<script src="../little-district/pages/hadith-data/h13.js"></script>
+<script src="../little-district/pages/hadith-data/h14.js"></script>
+<script src="../little-district/pages/hadith-data/h15.js"></script>
+<script src="../little-district/pages/hadith-data/h16.js"></script>
+<script src="../little-district/pages/hadith-data/h17.js"></script>
+<script src="../little-district/pages/hadith-data/h18.js"></script>
+<script src="../little-district/pages/hadith-data/h19.js"></script>
+<script src="../little-district/pages/hadith-data/h20.js"></script>
+<script src="../little-district/pages/hadith-data/h21.js"></script>
+<script src="../little-district/pages/hadith-data/h22.js"></script>
+<script src="../little-district/pages/hadith-data/h23.js"></script>
+<script src="../little-district/pages/hadith-data/h24.js"></script>
+<script src="../little-district/pages/hadith-data/h25.js"></script>
+<script src="../little-district/pages/hadith-data/h26.js"></script>
+<script src="../little-district/pages/hadith-data/h27.js"></script>
+<script src="../little-district/pages/hadith-data/h28.js"></script>
+<script src="../little-district/pages/hadith-data/h29.js"></script>
+<script src="../little-district/pages/hadith-data/h30.js"></script>
+<script src="../little-district/pages/hadith-data/h31.js"></script>
+<script src="../little-district/pages/hadith-data/h32.js"></script>
+<script src="../little-district/pages/hadith-data/h33.js"></script>
+<script src="../little-district/pages/hadith-data/h34.js"></script>
+<script src="../little-district/pages/hadith-data/h35.js"></script>
+<script src="../little-district/pages/hadith-data/h36.js"></script>
+<script src="../little-district/pages/hadith-data/h37.js"></script>
+<script src="../little-district/pages/hadith-data/h38.js"></script>
+<script src="../little-district/pages/hadith-data/h39.js"></script>
+<script src="../little-district/pages/hadith-data/h40.js"></script>
+<script src="../little-district/pages/hadith-data/h41.js"></script>
+<script src="../little-district/pages/hadith-data/h42.js"></script>
+<script>
+/* Hadith cards — built from the SAME data as the 40 Nawawi garden
+   (little-district/pages/hadith-data), so a fix there shows here too. */
+(function () {
+  var H = window.HADITHS || {}, IDX = window.HADITH_INDEX || [];
+  function tag(n) { return n <= 14 ? 'g1' : n <= 28 ? 'g2' : 'g3'; }
+  window.TR_PAGE = {
+    back: { href: 'sunnah.html', label: { ar: 'حُفّاظ السنة', en: 'Sunnah' } },
+    id: 'hadith-cards', icon: '🃏', color: '#1A9B7B',
+    guide: { icon: '👧', name: { ar: 'كارما', en: 'Karma' }, say: { ar: "أنا كارما 👋 بعد أن تتعلّم الحديث في «الأربعين»، اقلب بطاقته هنا لتراجعه. أنا أعلّق بطاقة الأسبوع على الثلاجة!", en: "I'm Karma 👋 After you learn a hadith in «The Forty», flip its card here to review it. I stick the week's card on the fridge!" } },
+    next: { href: 'hadith-stories.html', icon: '📖', title: { ar: "قصص السنة", en: "Sunnah Stories" }, why: { ar: "١٠٠ حديثٍ آخر لا تتكرّر مع الأربعين، كلٌّ منها في قصّة.", en: "100 more hadiths, none repeating the Forty — each told as a story." } },
+    title: { ar: 'بطاقات الأربعين', en: 'Forty Hadith Cards' },
+    intro: { ar: 'بطاقةٌ واحدة كلَّ مرّة: اقرأ الحديث، اقلب البطاقة، افهم معناه، ثم اختر عملًا صغيرًا تفعله اليوم.', en: 'One card at a time: read the hadith, flip the card, understand it, then pick one small deed to do today.' },
+    kind: 'cards',
+    filters: [
+      { id: 'g1', label: { ar: '١ – ١٤', en: '1 – 14' } },
+      { id: 'g2', label: { ar: '١٥ – ٢٨', en: '15 – 28' } },
+      { id: 'g3', label: { ar: '٢٩ – ٤٢', en: '29 – 42' } }
+    ],
+    items: IDX.map(function (x) {
+      var h = H[x.slug] || {};
+      var secs = [];
+      if (h.explain && h.explain.length) secs.push({ icon: '💡', h: { ar: 'ماذا يعني؟', en: 'What does it mean?' }, html: { ar: h.explain.map(function (e) { return '<p>' + e.ar + '</p>'; }).join(''), en: h.explain.map(function (e) { return '<p>' + e.en + '</p>'; }).join('') } });
+      if (h.benefits && h.benefits.length) secs.push({ icon: '🌱', h: { ar: 'ماذا أتعلّم؟', en: 'What do I learn?' }, html: { ar: '<ul>' + h.benefits.map(function (e) { return '<li>' + e.ar + '</li>'; }).join('') + '</ul>', en: '<ul>' + h.benefits.map(function (e) { return '<li>' + e.en + '</li>'; }).join('') + '</ul>' } });
+      if (h.apply) secs.push({ icon: '🎯', h: { ar: 'تحدّي اليوم', en: "Today's challenge" }, html: h.apply });
+      var q = h.quiz && h.quiz[0];
+      return {
+        id: x.slug, num: x.num, icon: x.emoji, tag: tag(x.num),
+        title: { ar: x.titleAr, en: x.titleEn }, sub: { ar: x.themeAr, en: x.themeEn },
+        matn: h.matn, source: h.source && h.narrator ? { ar: 'عن ' + h.narrator.ar + ' — ' + h.source.ar, en: h.narrator.en + ' — ' + h.source.en } : h.source,
+        sections: secs,
+        quiz: q ? { q: q.q, opts: q.opts.map(function (o) { return { t: o.t, ok: !!o.c }; }) } : null
+      };
+    }),
+    parents: {
+      ar: '<h3>كيف نستخدم بطاقات الأحاديث؟</h3><ul><li><b>بطاقة واحدة في اليوم</b> تكفي — أو بطاقتان في الأسبوع للصغار (٤–٦ سنوات).</li><li>اقرأ الحديث بصوتٍ هادئ، ثم اسأل: «ماذا فهمت؟» قبل أن تقلب البطاقة.</li><li>ركّز على <b>تحدّي اليوم</b>: عملٌ واحد صغير يُطبَّق في البيت، وتابعه مساءً بلطف.</li><li>للحفظ: جملةٌ واحدة يوميًا، تُردَّد في السيارة أو قبل النوم، لا أكثر.</li></ul><h3>أفكار تفاعلية بلا شاشة</h3><ul><li><b>لعبة المطابقة:</b> اطبع البطاقات، وافصل الوجه عن المعنى، واطلب من الطفل مطابقتهما.</li><li><b>حديث الأسبوع على الثلاجة:</b> علّق البطاقة، وكافئ كلّ مرّة يتذكّرها الطفل بنفسه.</li><li><b>تمثيل الموقف:</b> اطلب من الطفل أن يمثّل موقفًا يطبّق فيه الحديث.</li></ul><div class="tr-note">💡 الهدف ليس عدد الأحاديث، بل أن يحبّ الطفل كلام النبي ﷺ ويعمل به. نجمةٌ واحدة صادقة خيرٌ من عشر نجوم سريعة.</div>',
+      en: '<h3>How to use the hadith cards</h3><ul><li><b>One card a day</b> is enough — or two a week for little ones (4–6).</li><li>Read the hadith calmly, then ask "What did you understand?" before flipping.</li><li>Focus on <b>today\'s challenge</b>: one small deed at home, gently followed up in the evening.</li><li>For memorizing: one sentence a day, repeated in the car or at bedtime.</li></ul><h3>Screen-free ideas</h3><ul><li><b>Matching game:</b> print the cards, separate fronts from meanings, and let the child match them.</li><li><b>Hadith of the week on the fridge:</b> reward each time the child recalls it unprompted.</li><li><b>Role-play:</b> ask the child to act out a situation applying the hadith.</li></ul><div class="tr-note">💡 The goal isn\'t how many hadiths, but that the child loves the Prophet\'s ﷺ words and lives by them.</div>'
+    },
+    worksheet: {
+      ar: '<h3>✏️ ورقة نشاط: حديثي هذا الأسبوع</h3><p>اسم الحديث:</p><div class="ws-line"></div><p>أكتب الحديث (أو جزءًا منه):</p><div class="ws-line"></div><div class="ws-line"></div><p>ماذا فهمت منه بكلماتي؟</p><div class="ws-line"></div><div class="ws-line"></div><p>عملٌ سأفعله هذا الأسبوع:</p><div class="ws-line"></div><p>ارسم موقفًا تطبّق فيه الحديث:</p><div class="ws-box"></div><p>☐ السبت ☐ الأحد ☐ الإثنين ☐ الثلاثاء ☐ الأربعاء ☐ الخميس ☐ الجمعة — ضع ✓ كل يوم طبّقته</p>',
+      en: '<h3>✏️ Activity sheet: My hadith this week</h3><p>Hadith name:</p><div class="ws-line"></div><p>Write the hadith (or part of it):</p><div class="ws-line"></div><div class="ws-line"></div><p>What I understood, in my own words:</p><div class="ws-line"></div><div class="ws-line"></div><p>A deed I will do this week:</p><div class="ws-line"></div><p>Draw a scene where you live by this hadith:</p><div class="ws-box"></div><p>☐ Sat ☐ Sun ☐ Mon ☐ Tue ☐ Wed ☐ Thu ☐ Fri — tick each day you applied it</p>'
+    }
+  };
+})();
+</script>
+<script src="tr.js"></script>
+<script defer src="../shared/mk-system.js"></script>
+<script defer src="../shared/mk-journeys.js"></script>
+<script defer src="../shared/mk-bag.js"></script>
+</body>
+</html>

@@ -1,5 +1,5 @@
 /* ════════════════════════════════════════════════════════════════
-   بستان القرآن والسنة — Quiz content for the 3 gates (السور · القصص · الصحابة).
+   بستان القرآن — Quiz content for the 3 gates (السور · القصص · الصحابة).
    Shaped exactly like the journey stations the generic quiz engine reads
    (title · key · flip{claim,bust} · evidence{ayah}) so it auto-generates
    match / MCQ / maze across 3 levels. Grounded in well-known facts.

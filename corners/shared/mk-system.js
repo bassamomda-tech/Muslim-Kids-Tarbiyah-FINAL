@@ -47,17 +47,18 @@
   var CORNERS = [
     { id:'aqeeda',  icon:'🕋', color:'#C0392B', name:{ar:'منارة العقيدة',     en:'Faith Minaret'},        base:'corners/faith-minaret/aqeeda.html' },
     { id:'ibada',   icon:'🌙', color:'#117A8B', name:{ar:'واحة العبادة',      en:'Worship Oasis'},        base:'corners/little-district/pages/ibada.html' },
-    { id:'quran',   icon:'📖', color:'#1A9B7B', name:{ar:'بستان القرآن والسنة', en:'Quran & Sunnah Garden'}, base:'corners/little-district/pages/quran.html' },
+    { id:'quran',   icon:'📖', color:'#1A9B7B', name:{ar:'بستان القرآن', en:'Quran Garden'}, base:'corners/little-district/pages/quran.html' },   // حُفّاظ القرآن is a gate inside this garden
+    { id:'sunnah',  icon:'📜', color:'#6C4BD8', name:{ar:'حُفّاظ السنة', en:'Sunnah Keepers'}, base:'corners/treasures/sunnah.html' },
     { id:'social',  icon:'🏘️', color:'#D4A017', name:{ar:'حيّنا الصغير',      en:'Our Little District'},   base:'corners/little-district/pages/social.html' },
     { id:'heart',   icon:'💚', color:'#6C3483', name:{ar:'ركن القلب السليم',  en:'Pure Heart Corner'},     base:'corners/heroes-fortress/heart.html' },
     { id:'history', icon:'🏰', color:'#E67E22', name:{ar:'حصن الأبطال',       en:"Heroes' Fortress"},      base:'corners/heroes-fortress/fortress.html' },
     { id:'sport',   icon:'🏊', color:'#27AE60', name:{ar:'النادي الرياضي',    en:'Sports Club'},           base:'corners/little-district/pages/sport.html' },
     { id:'academy', icon:'🔭', color:'#2980B9', name:{ar:'أكاديمية المبدعين', en:"Innovators' Academy"},   base:'corners/heroes-fortress/academy.html' },
     { id:'quds',    icon:'🕌', color:'#2E8B57', name:{ar:'ركن القدس والأمة',  en:'Al-Quds & Ummah'},       base:'corners/little-district/pages/quds.html' },
-    { id:'hifz',    icon:'🌱', color:'#1F7A4D', name:{ar:'حُفّاظ القرآن',      en:'Quran Huffaz'},          base:'corners/quran-hifz/index.html' },
     { id:'stories-little', icon:'📚', color:'#C1663A', name:{ar:'مكتبة القصص للصغار', en:'Little Stories Library'}, base:'corners/stories/little.html' },
     { id:'workshop', icon:'🧰', color:'#5E8C31', name:{ar:'ورشة الصانع الصغير', en:"Little Maker's Workshop"}, base:'corners/workshop/workshop.html' },
     { id:'competitions', icon:'🏆', color:'#7A3FB0', name:{ar:'ساحة المسابقات', en:'Competitions Arena'}, base:'corners/competitions/competitions.html' },
+    { id:'skills', icon:'🛠️', color:'#7A3FB0', name:{ar:'صانع المهارات', en:'Skills Maker'}, base:'corners/skills/index.html' },
   ];
 
   /* ─────────── profiles ─────────── */
@@ -137,6 +138,39 @@
   /* ─────────── lang helper ─────────── */
   function lang() { return LS.getItem(K.lang) || 'ar'; }
 
+  /* ─────────── ⭐ stars from every learning place (one list for the bag & bag page) ───────────
+     Each page keeps its own progress key; this only READS them. They are ordinary
+     child keys, so they follow the child (snapshot) and go to the cloud (mk-cloud). */
+  var STAR_PLACES = [
+    /* j:true = already counted as journey stations (10 points each) — never double-count */
+    { id:'surahs', j:true, ic:'📖', n:{ar:'سور القرآن (قرأتُها وتدبّرتُها)',en:'Surahs read & reflected on'}, h:'corners/little-district/pages/quran-surahs.html', c:'#1A9B7B', t:38,
+      get:function(){ var n=0; for (var i=0;i<LS.length;i++){ var k=LS.key(i); if (k && k.indexOf('qg:done:')===0 && LS.getItem(k)==='1') n++; } return n; } },
+    { id:'hifz', ic:'🌱', n:{ar:'حُفّاظ القرآن — نجوم الحفظ',en:'Quran Huffaz — memorizing stars'}, h:'corners/quran-hifz/index.html', c:'#1FAE8C', t:0,
+      get:function(){ return parseInt(LS.getItem('qg_stars'),10)||0; } },
+    { id:'forty', j:true, ic:'🕌', n:{ar:'الأربعون النووية',en:'The Forty Hadith'}, h:'corners/little-district/pages/hadith.html', c:'#1A9B7B', t:42,
+      get:function(){ var n=0; for (var i=1;i<=42;i++) if (LS.getItem('hd:done:h'+(i<10?'0':'')+i)==='1') n++; return n; } },
+    { tr:'hadith-cards', j:true, ic:'🃏', n:{ar:'بطاقات الأربعين',en:'Forty Hadith Cards'}, c:'#2E8B57', t:42 },
+    { tr:'hadith-stories', j:true, ic:'📖', n:{ar:'قصص السنة',en:'Sunnah Stories'}, c:'#C1663A', t:100 },
+    { tr:'prophet-moments', j:true, ic:'🌙', n:{ar:'مواقف النبي ﷺ',en:'Moments of the Prophet ﷺ'}, c:'#2C5F8A', t:18 },
+    { tr:'names-cards',     ic:'✨', n:{ar:'أسماء الله الحسنى',en:'Names of Allah'}, c:'#6C3483', t:35 },
+    { tr:'ubudiyah',        ic:'🤲', n:{ar:'العبودية وتعظيم الله',en:'Servanthood & Glorifying Allah'}, c:'#117A8B', t:10 },
+    { tr:'shubuhat',        ic:'🛡️', n:{ar:'أسئلة صعبة وأجوبة مطمئنة',en:'Hard Questions, Calm Answers'}, c:'#2C5F8A', t:21 },
+    { tr:'adhkar',          ic:'📿', n:{ar:'معاني الأذكار والأدعية',en:'Meanings of Adhkar & Duas'}, c:'#1F7A4D', t:34 },
+    { tr:'eids',            ic:'🎉', n:{ar:'الأعياد في العبادات',en:'Eids in Worship'}, c:'#D4A017', t:10 },
+    { tr:'landmarks',       ic:'🕋', n:{ar:'المعالم والخرائط',en:'Landmarks & Maps'}, c:'#2980B9', t:18 },
+    { tr:'tours',           ic:'🧭', n:{ar:'جولات افتراضية',en:'Virtual Tours'}, c:'#E67E22', t:5 }
+  ];
+  /* → [{id, icon, name, color, href, done, total}] ; total 0 = open-ended (Hifz stars) */
+  function stars() {
+    var R = rootPrefix();
+    return STAR_PLACES.map(function (p) {
+      var n = 0;
+      try { n = p.tr ? (jget('tr:' + p.tr, []) || []).length : p.get(); } catch (e) {}
+      if (p.t) n = Math.min(n, p.t);
+      return { id: p.id || p.tr, icon: p.ic, name: p.n, color: p.c, href: R + (p.h || 'corners/treasures/' + p.tr + '.html'), done: n, total: p.t, journey: !!p.j };
+    });
+  }
+
   /* ─────────── nav helpers (single source of truth for every corner menu) ─────────
      EVERY corner page builds its menu from CORNERS above — edit that array ONCE
      (add / rename / reorder / re-icon a corner) and all corners update together.
@@ -194,10 +228,73 @@
     profiles: profiles, activeId: activeId, activeProfile: activeProfile,
     addProfile: addProfile, setActive: setActive, removeProfile: removeProfile, renameProfile: renameProfile,
     snapshotActive: function () { snapshotInto(activeId()); },
+    stars: stars,
     hasPin: hasPin, setPin: setPin, checkPin: checkPin,
     locks: locks, isLocked: isLocked, setLock: setLock,
     lang: lang,
   };
+
+  /* ═══ Calm mode (🍃) — one shared switch for the whole site ═══
+     Set from any «كنوز المعرفة» page (key mk:calm, shared across children).
+     When on, every corner that loads mk-system.js drops all animation and
+     transitions, so nothing moves unless the child taps it. */
+  (function calmMode() {
+    try {
+      if (localStorage.getItem('mk:calm') !== 'true') return;
+      document.documentElement.classList.add('calm');
+      if (document.getElementById('mk-calm-style')) return;
+      var st = document.createElement('style'); st.id = 'mk-calm-style';
+      st.textContent = 'html.calm *,html.calm *::before,html.calm *::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}';
+      (document.head || document.documentElement).appendChild(st);
+    } catch (e) {}
+  })();
+
+  /* ═══ «أكمِل من حيث توقّفت» — remember the child's last learning page ═══
+     Saved under mk_last (NOT an mk: key on purpose: it is the child's own data,
+     so it follows the child on switch and goes to the cloud backup).
+     Utility pages (login, bag, library, downloads…) are not remembered. */
+  (function rememberLast() {
+    try {
+      var p = location.pathname, i = p.indexOf('/corners/'); if (i < 0) return;
+      var rel = p.slice(i + 1);
+      if (/^corners\/(shared|news)\//.test(rel) || /print|Printable|admin|certificate/i.test(rel)) return;   // utility & news pages are not «where you stopped»
+      function save() {
+        try {
+          var t = (document.title || '').split(/\s[|·—]\s/)[0].trim();
+          var cid = window.MK_CORNER;
+          var h = document.getElementById('chName') || (document.body.classList.contains('reading') && document.getElementById('rNm'));   // a Fortress station / an open surah: its own name
+          if (h && (h.innerText || h.textContent).trim()) t = (h.innerText || h.textContent).trim().split('\n')[0];
+          var PAGE = { 'corners/quran-hifz/index.html': ['quran', 'حُفّاظ القرآن', 'Quran Huffaz'], 'corners/little-district/pages/hadith.html': ['sunnah'],
+                       'corners/little-district/pages/quran-surahs.html': ['quran'], 'corners/little-district/pages/quran-stories.html': ['quran'], 'corners/little-district/pages/quran-companions.html': ['quran'],
+                       'corners/little-district/pages/ibada-journeys.html': ['ibada'] }[rel.split(/[?#]/)[0]];
+          if (PAGE && PAGE[1]) t = localStorage.getItem('bunyanLang') === 'en' ? PAGE[2] : PAGE[1];
+          if (PAGE) cid = PAGE[0];
+          if (!t) return;
+          var P = window.TR_PAGE, ic = (P && P.icon) || '', c = null, cname = null;
+          CORNERS.forEach(function (x) { if (!c && (x.base === rel || (cid && x.id === cid))) c = x; });
+          if (!c) {                                                          // only when ONE corner lives in this folder
+            var dir = rel.replace(/[^/]+$/, ''), same = CORNERS.filter(function (x) { return x.base.replace(/[^/]+$/, '') === dir; });
+            if (same.length === 1) c = same[0];
+          }
+          if (P && P.back && P.back.label && P.back.label.ar !== 'المدينة' && !(c && c.base === rel)) cname = P.back.label;   // card/story pages name the corner they live in (not «the city»)
+          if (rel.indexOf('corners/heroes-fortress/chapter.html') === 0 || rel.indexOf('corners/heroes-fortress/era.html') === 0) c = c || CORNERS.filter(function (x) { return x.id === 'history'; })[0];
+          var q = location.search.replace(/([?&])lang=[^&]*&?/, '$1').replace(/[?&]$/, '');
+          LS.setItem('mk_last', JSON.stringify({ href: rel + q + location.hash, title: t, icon: ic || (c ? c.icon : '📖'), corner: cname || (c ? c.name : null), at: Date.now() }));
+        } catch (e) {}
+      }
+      if (document.readyState === 'complete') setTimeout(save, 400); else window.addEventListener('load', function () { setTimeout(save, 400); });
+      window.addEventListener('hashchange', save);
+    } catch (e) {}
+  })();
+
+  /* ═══ Display settings panel (mk-a11y.js) — every page that loads mk-system ═══ */
+  (function loadA11y() {
+    try {
+      if (window.__mkA11y || document.querySelector('script[src*="mk-a11y.js"]')) return;
+      var s = document.createElement('script'); s.src = rootPrefix() + 'corners/shared/mk-a11y.js'; s.async = true; s.onerror = function () {};
+      (document.head || document.documentElement).appendChild(s);
+    } catch (e) {}
+  })();
 
   /* ═══ Cloud backup — turned on for EVERY page automatically ═══
      mk-system.js loads on every corner/journey page, but the family cloud

@@ -4,7 +4,7 @@
 <meta name="color-scheme" content="dark">
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
-<title>بستان القرآن والسنة | Quran & Sunnah Garden</title>
+<title>بستان القرآن | Quran Garden</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Amiri+Quran&family=Amiri:wght@400;700&family=Tajawal:wght@400;500;700;800;900&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
@@ -13,7 +13,7 @@
 /* ─────────── HUB (three gates) ─────────── */
 .hub-grid{
   position:relative;z-index:6;max-width:1000px;margin:1.4rem auto 0;
-  padding:0 1.1rem;display:grid;grid-template-columns:1fr 1fr 1fr;gap:1.1rem;
+  padding:0 1.1rem;display:grid;grid-template-columns:1fr 1fr;gap:1.1rem;max-width:820px;
 }
 @media(max-width:760px){.hub-grid{grid-template-columns:1fr;gap:1rem;max-width:460px}}
 
@@ -65,6 +65,10 @@
 .gate.stories{--acc:#E08A3C;--acc-dk:#B5681F;--acc-lt:#F4C77E}
 /* hadith gate = deep indigo/violet accent */
 .gate.hadith{--acc:#7E6BD4;--acc-dk:#5B49A8;--acc-lt:#B7AAEB}
+.hub-sunnah{display:inline-block;margin-top:.7rem;background:#6C4BD8;color:#fff;text-decoration:none;font-weight:800;font-size:.9rem;border-radius:2rem;padding:.45rem 1.1rem}
+/* حُفّاظ القرآن gate = deep green (the Hifz corner's own colour) */
+.gate.hifz{--acc:#1F7A4D;--acc-dk:#155E3B;--acc-lt:#9FD3B4}
+.gate .g-sub2{margin-top:.35rem;font-size:.72rem;font-weight:800;color:var(--ink-3)}
 
 .hub-note{
   position:relative;z-index:6;text-align:center;max-width:620px;margin:1.3rem auto 90px;
@@ -86,8 +90,8 @@ html[dir="ltr"] .hub-note .verse{font-family:inherit;font-style:italic}
   </a>
   <span class="q-badge">
     <span>🌿</span>
-    <span class="lng-ar">بستان القرآن والسنة</span>
-    <span class="lng-en">Quran & Sunnah Garden</span>
+    <span class="lng-ar">بستان القرآن</span>
+    <span class="lng-en">Quran Garden</span>
   </span>
   <div class="q-actions">
     <div class="q-lang">
@@ -107,12 +111,12 @@ html[dir="ltr"] .hub-note .verse{font-family:inherit;font-style:italic}
 
   <div class="g-intro">
     <h1 class="g-title">
-      <span class="lng-ar">🌿 بُستان القرآن والسنة</span>
-      <span class="lng-en">🌿 The Quran & Sunnah Garden</span>
+      <span class="lng-ar">🌿 بُستان القرآن</span>
+      <span class="lng-en">🌿 The Quran Garden</span>
     </h1>
     <p class="g-sub">
-      <span class="lng-ar">اختر بابك: السُّوَر، أم القصص، أم أحاديث النبي ﷺ؟</span>
-      <span class="lng-en">Choose your path: surahs, stories, or the Prophet's ﷺ hadiths?</span>
+      <span class="lng-ar">اختر بابك: السُّوَر، أم الحفظ، أم القصص؟</span>
+      <span class="lng-en">Choose your path: surahs, memorizing, or stories?</span>
     </p>
   </div>
 
@@ -124,7 +128,7 @@ html[dir="ltr"] .hub-note .verse{font-family:inherit;font-style:italic}
     <div class="who">👦</div>
   </div>
 
-  <!-- three gates -->
+  <!-- four gates: surahs · huffaz · stories · companion  (the Sunnah is its own corner: حُفّاظ السنة) -->
   <div class="hub-grid">
     <a class="gate surahs" href="quran-surahs.html">
       <div class="emblem">📖</div>
@@ -133,12 +137,12 @@ html[dir="ltr"] .hub-note .verse{font-family:inherit;font-style:italic}
         <span class="lng-en">Quran Surahs</span>
       </div>
       <div class="g-name-en">
-        <span class="lng-ar">اقرأ · تدبّر · احفظ</span>
-        <span class="lng-en">Read · Reflect · Memorize</span>
+        <span class="lng-ar">اقرأ · استمع · تدبّر</span>
+        <span class="lng-en">Read · Listen · Reflect</span>
       </div>
       <p class="g-desc">
-        <span class="lng-ar">اقطف سورةً، اقرأها بالتجويد واستمع للتلاوة، وافهم معانيها.</span>
-        <span class="lng-en">Pick a surah, read it with tajweed, listen to the recitation, and understand it.</span>
+        <span class="lng-ar">اقطف سورةً، اقرأها بالتجويد واستمع للتلاوة، وافهم معانيها — ثم احفظها في «حُفّاظ القرآن».</span>
+        <span class="lng-en">Pick a surah, read it with tajweed, listen to the recitation, and understand it — then memorize it in «Quran Huffaz».</span>
       </p>
       <div class="g-bar">
         <span class="lng-ar">السُّوَر</span><span class="lng-en">Surahs</span>
@@ -148,6 +152,30 @@ html[dir="ltr"] .hub-note .verse{font-family:inherit;font-style:italic}
       <span class="g-enter">
         <span class="lng-ar">ادخل البستان 🌳</span>
         <span class="lng-en">Enter the garden 🌳</span>
+      </span>
+    </a>
+
+    <a class="gate hifz" href="../../quran-hifz/index.html">
+      <div class="emblem">🌱</div>
+      <div class="g-name">
+        <span class="lng-ar">حُفّاظ القرآن</span>
+        <span class="lng-en">Quran Huffaz</span>
+      </div>
+      <div class="g-name-en">
+        <span class="lng-ar">احفظ · سمِّع · ثبِّت</span>
+        <span class="lng-en">Memorize · Recite · Retain</span>
+      </div>
+      <p class="g-desc">
+        <span class="lng-ar">مصحفُك وخطّة حفظك: احفظ وِردك، وسمِّع، وراجع حتى يثبت.</span>
+        <span class="lng-en">Your mushaf and memorization plan: learn your portion, recite it, and review until it sticks.</span>
+      </p>
+      <div class="g-bar">
+        <span class="lng-ar">نجومي</span><span class="lng-en">My stars</span>
+        <span id="hifzStars">⭐ 0</span>
+      </div>
+      <span class="g-enter">
+        <span class="lng-ar">ادخل الحَلْقة 🌱</span>
+        <span class="lng-en">Join the circle 🌱</span>
       </span>
     </a>
 
@@ -176,31 +204,6 @@ html[dir="ltr"] .hub-note .verse{font-family:inherit;font-style:italic}
       </span>
     </a>
 
-    <a class="gate hadith" href="hadith.html">
-      <div class="emblem">🕌</div>
-      <div class="g-name">
-        <span class="lng-ar">الأربعون النووية</span>
-        <span class="lng-en">40 Hadith of Nawawi</span>
-      </div>
-      <div class="g-name-en">
-        <span class="lng-ar">احفظ · افهم · اعمل</span>
-        <span class="lng-en">Memorize · Understand · Act</span>
-      </div>
-      <p class="g-desc">
-        <span class="lng-ar">احفظ أحاديث النبي ﷺ الجامعة، وافهم شرحها، واعمل بها في حياتك.</span>
-        <span class="lng-en">Memorize the Prophet's ﷺ comprehensive hadiths, understand them, and live by them.</span>
-      </p>
-      <div class="g-bar">
-        <span class="lng-ar">الأحاديث</span><span class="lng-en">Hadiths</span>
-        <div class="track"><div class="fill" id="hadithFill" style="width:0%"></div></div>
-        <span id="hadithCount">0/0</span>
-      </div>
-      <span class="g-enter">
-        <span class="lng-ar">ادخل المسجد 🕌</span>
-        <span class="lng-en">Enter the masjid 🕌</span>
-      </span>
-    </a>
-
     <a class="gate companions" href="quran-companions.html" style="--g1:#1A9B7B;--g2:#0E6B53;">
       <div class="emblem">🤝</div>
       <div class="g-name">
@@ -225,27 +228,28 @@ html[dir="ltr"] .hub-note .verse{font-family:inherit;font-style:italic}
         <span class="lng-en">Start the journey 📖</span>
       </span>
     </a>
+
   </div>
 
   <div class="hub-note">
     <span class="verse">﴿ وَمَا آتَاكُمُ الرَّسُولُ فَخُذُوهُ وَمَا نَهَاكُمْ عَنْهُ فَانتَهُوا ﴾</span>
     <span class="lng-ar">القرآنُ والسنةُ نورانِ يهديانِنا — تعلَّمْهما وعِشْ بهما.</span>
     <span class="lng-en">The Quran and Sunnah are two lights that guide us — learn them and live by them.</span>
+    <a class="hub-sunnah" href="../../treasures/sunnah.html"><span class="lng-ar">📜 وللسنة ركنُها: حُفّاظ السنة مع كارما 👧 ←</span><span class="lng-en">📜 The Sunnah has its own corner: Sunnah Keepers with Karma 👧 →</span></a>
   </div>
 
   <div class="g-ground"></div>
   <div class="g-flowers"><span>🌷</span><span>🌻</span><span>🌱</span><span>🌼</span><span>🌷</span><span>🌿</span></div>
 
   <footer class="q-foot">
-    <span class="lng-ar">صُنع بحب 💚 لأطفال الأمة — <b>بستان القرآن والسنة</b></span>
-    <span class="lng-en">Made with 💚 for the children of the Ummah — <b>Quran & Sunnah Garden</b></span>
+    <span class="lng-ar">صُنع بحب 💚 لأطفال الأمة — <b>بستان القرآن</b></span>
+    <span class="lng-en">Made with 💚 for the children of the Ummah — <b>Quran Garden</b></span>
   </footer>
 </div>
 
 <!-- ═══ INDEX DATA (for progress counts) ═══ -->
 <script src="quran-data/index_data.js"></script>
 <script src="qstories-data/_index.js"></script>
-<script src="hadith-data/_index.js"></script>
 <script>
 (function(){
   function getLang(){
@@ -275,7 +279,9 @@ html[dir="ltr"] .hub-note .verse{font-family:inherit;font-style:italic}
     const c=document.getElementById(countId); if(c)c.textContent=done+'/'+total;
   }
   fill(window.SURAH_INDEX,'qg:','surahFill','surahCount');
-  fill(window.QS_INDEX,'qs:','storyFill','storyCount');  fill(window.HADITH_INDEX,'hd:','hadithFill','hadithCount');
+  fill(window.QS_INDEX,'qs:','storyFill','storyCount');
+  // حُفّاظ القرآن (its own app keeps a star count)
+  try{ var hs=document.getElementById('hifzStars'); if(hs) hs.textContent='⭐ '+(parseInt(localStorage.getItem('qg_stars'),10)||0); }catch(e){}
   // 4th gate — "I Am Your Companion, the Quran" (rihla-engine tracks its own progress)
   try{
     var cdone = JSON.parse(localStorage.getItem('qsahibDone')||'[]').length;

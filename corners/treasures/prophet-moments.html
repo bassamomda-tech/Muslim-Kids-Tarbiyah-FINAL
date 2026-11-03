@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>مواقف النبي ﷺ | Moments of the Prophet ﷺ</title>
+<meta name="description" content="مواقف صحيحة من حياة النبي ﷺ مع الأطفال وأهله وأصحابه ومن أساء إليه والحيوان — قصص قصيرة مصوّرة مجانية للأطفال مع دليل للأهل وورقة نشاط.">
+<link rel="icon" href="../../favicon.ico">
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&family=Nunito:wght@400;700;800;900&family=Amiri:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="tr.css">
+</head>
+<body>
+<div id="tr-root"></div>
+<script>
+/* مواقف النبي ﷺ — authentic moments only; every item cites its source.
+   Narrative glue is ours; words attributed to the Prophet ﷺ follow the
+   authentic wording (or are clearly paraphrased). */
+(function () {
+  function S(o) {
+    return {
+      id: o.id, tag: o.tag, icon: o.icon,
+      title: { ar: o.t[0], en: o.t[1] }, sub: { ar: o.sub[0], en: o.sub[1] },
+      pages: o.pg.map(function (p) { return { scene: p[0], text: { ar: p[1], en: p[2] } }; }),
+      matn: { ar: o.m[0], en: o.m[1] }, source: { ar: o.src[0], en: o.src[1] },
+      sections: [
+        { icon: '💚', h: { ar: 'ماذا نتعلّم من النبي ﷺ؟', en: 'What do we learn from the Prophet ﷺ?' }, html: { ar: o.learn[0], en: o.learn[1] } },
+        { icon: '🎯', h: { ar: 'أقتدي به اليوم', en: 'I follow his example today' }, html: { ar: o.act[0], en: o.act[1] } }
+      ],
+      quiz: { q: { ar: o.q[0], en: o.q[1] }, opts: o.o.map(function (x) { return { t: { ar: x[0], en: x[1] }, ok: !!x[2] }; }), fb: { ar: o.fb[0], en: o.fb[1] } }
+    };
+  }
+
+  var ITEMS = [
+  /* ═══════════ مع الأطفال ═══════════ */
+  S({ id: 'abu-umayr', tag: 'kids', icon: '🐦',
+    t: [`أبو عُمَير وطائره الصغير`, `Abu Umayr and his little bird`],
+    sub: [`النبي ﷺ يسأل طفلًا عن عصفوره`, `The Prophet ﷺ asks a child about his bird`],
+    pg: [
+      ['👦🐦', `كان في المدينة طفلٌ صغير اسمه <b>أبو عُمَير</b>، وهو أخو أنسِ بنِ مالك. وكان عنده عصفورٌ صغير يحبّه كثيرًا، اسمه <b>النُّغَير</b>.`, `In Madinah there was a little boy called <b>Abu Umayr</b>, the brother of Anas ibn Malik. He had a small bird he loved very much, named <b>an-Nughayr</b>.`],
+      ['🏠😊', `وكان النبيّ ﷺ يزور بيتهم، فيلاعب أبا عُمَير ويمازحه، كما يمازح الأبُ الحنون أبناءه.`, `The Prophet ﷺ used to visit their home, and he would play and joke with Abu Umayr, like a kind father with his children.`],
+      ['🥀🐦', `وفي يومٍ من الأيام، مات العصفور الصغير. فحزن أبو عُمَير حزنًا شديدًا، وجلس وحيدًا.`, `One day, the little bird died. Abu Umayr became very sad and sat all alone.`],
+      ['🤗', `فجاء النبيّ ﷺ فرآه حزينًا، فلم يقل له: «إنه مجرّد عصفور!»، بل جلس معه، وكلّمه بلطف، وسأله عن عصفوره بكلماتٍ فيها سجعٌ جميل يُضحك الصغار.`, `The Prophet ﷺ came and saw him sad. He did not say "It's only a bird!" Instead, he sat with him, spoke gently, and asked about his bird with a sweet rhyme that makes little ones smile.`],
+      ['💬🌈', `قال له: «يا أبا عُمَير، ما فعلَ النُّغَير؟» — فشعر أبو عُمَير أنّ أعظم رجلٍ في الدنيا يهتمّ بحزنه الصغير.`, `He said: "O Abu Umayr, what happened to an-Nughayr?" — and Abu Umayr felt that the greatest man in the world cared about his small sadness.`]
+    ],
+    m: [`«يا أبا عُمَيرٍ، ما فعلَ النُّغَيرُ؟»`, `"O Abu Umayr, what happened to an-Nughayr (the little bird)?"`],
+    src: [`رواه البخاري (٦١٢٩) ومسلم (٢١٥٠) عن أنس بن مالك رضي الله عنه`, `Al-Bukhari (6129) and Muslim (2150), from Anas ibn Malik (RA)`],
+    learn: [`النبيّ ﷺ كان يحترم مشاعر الأطفال، ويمازحهم، ولا يستصغر حزنهم. وكان يناديهم بالكُنى الجميلة («أبا عُمَير») كأنهم كبار.`, `The Prophet ﷺ respected children's feelings, joked with them, and never belittled their sadness. He even called them by honorable names ("Abu Umayr") as if they were grown-ups.`],
+    act: [`إذا رأيت أخاك أو صديقك حزينًا اليوم، اجلس معه واسأله بلطف: «ما بك؟» 🤍`, `If you see your sibling or friend sad today, sit with them and gently ask: "What's wrong?" 🤍`],
+    q: [`ماذا فعل النبيّ ﷺ حين رأى أبا عُمَير حزينًا؟`, `What did the Prophet ﷺ do when he saw Abu Umayr sad?`],
+    o: [[`جلس معه وسأله عن عصفوره بلطف`, `He sat with him and kindly asked about his bird`, 1], [`قال له: لا تحزن على عصفور`, `He told him not to be sad over a bird`], [`تركه وذهب`, `He left him and went away`]],
+    fb: [`نعم! النبيّ ﷺ كان يهتمّ بمشاعر الصغار.`, `Yes! The Prophet ﷺ cared about little ones' feelings.`] }),
+
+  S({ id: 'umamah', tag: 'kids', icon: '👧',
+    t: [`أُمامة في الصلاة`, `Umamah in the prayer`],
+    sub: [`يحمل حفيدته وهو يصلّي`, `He carries his granddaughter while praying`],
+    pg: [
+      ['👧💕', `كانت <b>أُمامة</b> طفلةً صغيرة، وهي بنت زينب بنت النبي ﷺ، أي حفيدته. وكان جدّها ﷺ يحبّها كثيرًا.`, `<b>Umamah</b> was a little girl, the daughter of Zaynab, the Prophet's ﷺ daughter — so she was his granddaughter, and he loved her dearly.`],
+      ['🕌', `وفي يومٍ خرج النبيّ ﷺ ليصلّي بالناس، وهو يحمل أُمامة على كتفه!`, `One day the Prophet ﷺ came out to lead the people in prayer — carrying Umamah on his shoulder!`],
+      ['🧎', `فكان إذا ركع أو سجد وضعها على الأرض برفق، وإذا قام من السجود حملها من جديد.`, `When he bowed or prostrated, he gently put her down, and when he stood up again, he picked her up.`],
+      ['😊🌸', `لم يتركها تبكي، ولم يُبعدها عنه. فتعلّم الصحابة أنّ الرحمة بالأطفال جزءٌ من الدين، حتى في المسجد.`, `He didn't leave her crying, nor push her away. The Companions learned that mercy to children is part of the religion — even in the masjid.`]
+    ],
+    m: [`كان رسولُ الله ﷺ يصلّي وهو حاملٌ أُمامةَ بنتَ زينب، فإذا سجدَ وضعها، وإذا قامَ حملها.`, `The Messenger of Allah ﷺ would pray while carrying Umamah, daughter of Zaynab; when he prostrated he put her down, and when he stood he carried her.`],
+    src: [`رواه البخاري (٥١٦) ومسلم (٥٤٣) عن أبي قتادة رضي الله عنه`, `Al-Bukhari (516) and Muslim (543), from Abu Qatadah (RA)`],
+    learn: [`الرحمة بالصغار لا تتعارض مع العبادة. النبيّ ﷺ كان رحيمًا بالأطفال في كلّ مكان.`, `Mercy to little ones does not conflict with worship. The Prophet ﷺ was merciful to children everywhere.`],
+    act: [`كن رحيمًا بإخوتك الصغار اليوم: احمل أحدهم، أو العب معه، أو ساعده بصبر 🌸`, `Be gentle with your younger siblings today: carry one, play with them, or help them patiently 🌸`],
+    q: [`ماذا كان النبيّ ﷺ يفعل بأُمامة حين يسجد؟`, `What did the Prophet ﷺ do with Umamah when he prostrated?`],
+    o: [[`يضعها على الأرض برفق`, `He put her down gently`, 1], [`يطلب من أحدٍ أن يأخذها بعيدًا`, `He asked someone to take her away`], [`يوقف الصلاة`, `He stopped the prayer`]],
+    fb: [`أحسنت! ثم يحملها حين يقوم.`, `Well done! Then he picked her up when he stood.`] }),
+
+  S({ id: 'long-sujood', tag: 'kids', icon: '🧎',
+    t: [`السجدة الطويلة`, `The long prostration`],
+    sub: [`حفيده على ظهره وهو ساجد`, `His grandson on his back in sujood`],
+    pg: [
+      ['🕌🌙', `في إحدى الصلوات، كان النبيّ ﷺ يصلّي بالناس، ومعه أحد حفيدَيه: <b>الحسن أو الحسين</b>.`, `In one prayer, the Prophet ﷺ was leading the people, and one of his grandsons — <b>al-Hasan or al-Husayn</b> — was with him.`],
+      ['🧎👦', `فلما سجد النبيّ ﷺ، صعد الطفلُ على ظهره كأنه يركب حصانًا!`, `When the Prophet ﷺ prostrated, the little boy climbed onto his back as if riding a horse!`],
+      ['⏳', `فأطال النبيّ ﷺ السجود كثيرًا... حتى رفع أحد الصحابة رأسه ليرى ماذا حدث! فرأى الطفل على ظهره.`, `The Prophet ﷺ stayed in prostration for a long time… so long that one Companion lifted his head to see what had happened — and saw the child on his back.`],
+      ['❓', `بعد الصلاة قال الناس: يا رسول الله، أطلتَ السجود حتى ظننّا أنه حدث أمر، أو أنه يوحى إليك!`, `After the prayer, the people said: "O Messenger of Allah, you made the prostration so long that we thought something had happened, or that revelation was coming to you!"`],
+      ['😊', `فأخبرهم ﷺ أنّ حفيده ركب على ظهره، فكره أن يستعجله حتى ينزل وحده.`, `He ﷺ told them that his grandson had climbed on his back, and he did not want to hurry him until he had finished.`]
+    ],
+    m: [`«كلُّ ذلك لم يكن، ولكنَّ ابني ارتحلني، فكرهتُ أن أُعجِلَه حتى يقضيَ حاجتَه»`, `"None of that happened, but my son (grandson) rode on my back, and I disliked hurrying him until he had his fill."`],
+    src: [`رواه النسائي (١١٤١) وأحمد عن شدّاد بن الهاد رضي الله عنه، وصحّحه الألباني`, `An-Nasa'i (1141) and Ahmad, from Shaddad ibn al-Had (RA); graded sahih by al-Albani`],
+    learn: [`النبيّ ﷺ كان صبورًا ولطيفًا مع الأطفال، ولا يزجرهم ولا يُفسد فرحتهم.`, `The Prophet ﷺ was patient and gentle with children; he didn't scold them or spoil their joy.`],
+    act: [`إذا أزعجك أخوك الصغير وهو يلعب، تذكّر هذه القصة وكن صبورًا معه 🤍`, `If your little brother or sister bothers you while playing, remember this story and be patient with them 🤍`],
+    q: [`لماذا أطال النبيّ ﷺ السجود؟`, `Why did the Prophet ﷺ make the prostration long?`],
+    o: [[`لأنه لم يرد أن يستعجل حفيده الذي ركب على ظهره`, `He didn't want to rush his grandson who was on his back`, 1], [`لأنه نسي`, `Because he forgot`], [`لأنه كان متعبًا`, `Because he was tired`]],
+    fb: [`صحيح! رحمةٌ ولطفٌ بالصغار.`, `Correct! Mercy and gentleness with little ones.`] }),
+
+  S({ id: 'salam-kids', tag: 'kids', icon: '👋',
+    t: [`السلام على الأطفال`, `Greeting the children`],
+    sub: [`سنّةٌ نسيها كثير من الكبار`, `A sunnah many grown-ups forget`],
+    pg: [
+      ['👦👧⚽', `كان الأطفال في المدينة يلعبون في الطرقات، كما يلعب الأطفال اليوم.`, `Children in Madinah used to play in the streets, just like children play today.`],
+      ['🚶', `وكان النبيّ ﷺ إذا مرّ بهم لم يتجاهلهم، ولم يقل: «هؤلاء صغار».`, `When the Prophet ﷺ passed by them, he did not ignore them or say, "They're just little."`],
+      ['👋😊', `بل كان يقف ويُسلّم عليهم: «السلام عليكم» — فيفرحون، ويشعرون أنهم مهمّون.`, `Instead he would greet them: "As-salamu alaykum!" — and they would be happy and feel important.`],
+      ['🌱', `وتعلّم أنسُ بن مالك ذلك منه، فكان إذا مرّ بالأطفال سلّم عليهم، ويقول: كان النبيّ ﷺ يفعله.`, `Anas ibn Malik learned this from him; whenever he passed children he greeted them and said: "The Prophet ﷺ used to do this."`]
+    ],
+    m: [`عن أنس رضي الله عنه أنه مرّ على صِبيانٍ فسلّم عليهم، وقال: كان النبيُّ ﷺ يفعلُه.`, `Anas (RA) passed by some children and greeted them, and said: "The Prophet ﷺ used to do this."`],
+    src: [`رواه البخاري (٦٢٤٧) ومسلم (٢١٦٨)`, `Al-Bukhari (6247) and Muslim (2168)`],
+    learn: [`السلام يزرع المحبّة، والنبيّ ﷺ كان يحترم الصغار ويبدأهم بالسلام.`, `Greeting with salam plants love, and the Prophet ﷺ respected little ones and greeted them first.`],
+    act: [`ابدأ اليوم بالسلام على كلّ من تراه: أهلك، أصدقاءك، وإخوتك الصغار 👋`, `Today, be the first to say salam to everyone you meet: family, friends, and little siblings 👋`],
+    q: [`ماذا كان النبيّ ﷺ يفعل إذا مرّ بالأطفال؟`, `What did the Prophet ﷺ do when he passed by children?`],
+    o: [[`يُسلّم عليهم`, `He greeted them with salam`, 1], [`يمشي بسرعة`, `He walked past quickly`], [`يطلب منهم أن يذهبوا`, `He asked them to leave`]],
+    fb: [`نعم! وتعلّمها أنسٌ منه.`, `Yes! And Anas learned it from him.`] }),
+
+  /* ═══════════ مع أهله ═══════════ */
+  S({ id: 'home-help', tag: 'family', icon: '🧵',
+    t: [`في خدمة أهله`, `Helping his family`],
+    sub: [`ماذا كان يفعل في البيت؟`, `What did he do at home?`],
+    pg: [
+      ['🏠', `سأل رجلٌ أمَّ المؤمنين <b>عائشة</b> رضي الله عنها سؤالًا جميلًا: ماذا كان النبيّ ﷺ يفعل في بيته؟`, `A man asked the Mother of the Believers <b>Aisha</b> (RA) a lovely question: what did the Prophet ﷺ do in his home?`],
+      ['🧹', `فأخبرت أنه ﷺ كان في «مهنة أهله» — يعني يساعد أهله ويخدمهم في أعمال البيت.`, `She said he ﷺ was "in the service of his family" — helping them with the housework.`],
+      ['🧵👡', `وجاء في رواياتٍ أخرى أنه كان يُصلح نعلَه بيده، ويخيط ثوبه، ويعمل ما يعمل الرجال في بيوتهم.`, `Other narrations say he would mend his own sandal with his hands, sew his garment, and do what men do in their homes.`],
+      ['🕌', `فإذا سمع الأذان وحضرت الصلاة، ترك العمل وخرج إلى المسجد ليصلّي.`, `And when it was time for prayer, he would stop and go out to the masjid to pray.`],
+      ['💪💚', `رسول الله، قائد الأمة، يساعد في البيت بنفسه! فالمساعدة في البيت ليست عيبًا، بل هي من أخلاق الأنبياء.`, `The Messenger of Allah, leader of the Ummah, helped at home himself! Helping at home is not shameful — it is the manners of prophets.`]
+    ],
+    m: [`«كان يكونُ في مِهنةِ أهلِه — تعني خدمةَ أهلِه — فإذا حضرتِ الصلاةُ خرجَ إلى الصلاة»`, `"He used to be in the service of his family, and when the time for prayer came, he went out to pray."`],
+    src: [`رواه البخاري (٦٧٦) عن عائشة رضي الله عنها؛ وخياطة الثوب وإصلاح النعل عند أحمد بإسناد صحيح`, `Al-Bukhari (676), from Aisha (RA); mending sandals and sewing clothes is in Ahmad with an authentic chain`],
+    learn: [`النبيّ ﷺ كان متواضعًا، يخدم أهله، ولا يرى نفسه أكبر من أعمال البيت.`, `The Prophet ﷺ was humble and served his family; he never saw himself as too great for housework.`],
+    act: [`ساعد في البيت اليوم دون أن يطلب منك أحد: رتّب سريرك، أو ضع الأطباق، أو اطوِ الملابس 🧺`, `Help at home today without being asked: make your bed, set the table, or fold the laundry 🧺`],
+    q: [`ماذا كان النبيّ ﷺ يفعل في بيته؟`, `What did the Prophet ﷺ do at home?`],
+    o: [[`يساعد أهله ويخدمهم`, `He helped and served his family`, 1], [`يجلس فقط وينتظر`, `He only sat and waited`], [`لا يدخل البيت أبدًا`, `He never stayed home`]],
+    fb: [`أحسنت! وإذا حضرت الصلاة خرج إليها.`, `Well done! And at prayer time he went out to pray.`] }),
+
+  S({ id: 'race-aisha', tag: 'family', icon: '🏃',
+    t: [`السباق مع عائشة`, `The race with Aisha`],
+    sub: [`مرحٌ ولعب في البيت المسلم`, `Fun and play in a Muslim home`],
+    pg: [
+      ['🐫🏜️', `خرجت عائشة رضي الله عنها مع النبيّ ﷺ في سفر، وكانت يومها صغيرةً خفيفة الجسم.`, `Aisha (RA) went on a journey with the Prophet ﷺ; she was young and light back then.`],
+      ['🏃‍♀️🏃', `فقال النبيّ ﷺ للناس: تقدّموا. ثم قال لها: «تعالَي حتى أُسابقَكِ». فتسابقا، فسبقته عائشة!`, `The Prophet ﷺ told the people to go ahead, then said to her: "Come, let me race you." They raced — and Aisha won!`],
+      ['⏳', `ومرّت السنوات... ثم خرجت معه في سفرٍ آخر، فدعاها إلى السباق مرّة أخرى.`, `Years passed… then on another journey, he invited her to race again.`],
+      ['😄', `فسبقها هذه المرّة! فضحك ﷺ وقال: «هذه بتلك» — يعني: واحدة بواحدة!`, `This time he won! He laughed ﷺ and said: "This is for that one!" — one each!`]
+    ],
+    m: [`«هذهِ بتلكَ السَّبقة»`, `"This (win) is for that (earlier) one."`],
+    src: [`رواه أبو داود (٢٥٧٨) وأحمد عن عائشة رضي الله عنها، وصحّحه الألباني`, `Abu Dawud (2578) and Ahmad, from Aisha (RA); graded sahih by al-Albani`],
+    learn: [`البيت المسلم فيه فرحٌ ولعب ومزاح لطيف. النبيّ ﷺ كان يُدخل السرور على أهله.`, `A Muslim home has joy, play, and gentle humor. The Prophet ﷺ brought happiness to his family.`],
+    act: [`العب اليوم لعبةً حركيّة مع أهلك (سباق قصير أو لعبة كرة) وأدخل السرور عليهم 😄`, `Play a moving game with your family today (a short race or a ball game) and bring them joy 😄`],
+    q: [`ماذا قال النبيّ ﷺ حين سبق عائشة في المرّة الثانية؟`, `What did the Prophet ﷺ say when he won the second race?`],
+    o: [[`«هذه بتلك»`, `"This is for that one"`, 1], [`«أنا الأقوى»`, `"I am the strongest"`], [`«لن أسابقك مرّة أخرى»`, `"I won't race you again"`]],
+    fb: [`صحيح! واحدة بواحدة 😄`, `Correct! One each 😄`] }),
+
+  S({ id: 'fatimah', tag: 'family', icon: '🌷',
+    t: [`حين تأتي فاطمة`, `When Fatimah came`],
+    sub: [`استقبال الأب لابنته`, `A father welcoming his daughter`],
+    pg: [
+      ['🚪🌷', `كانت <b>فاطمة</b> رضي الله عنها بنتَ النبيّ ﷺ، وكانت تشبهه في مشيتها وكلامها.`, `<b>Fatimah</b> (RA) was the Prophet's ﷺ daughter; she resembled him in her walk and her speech.`],
+      ['🧍', `فكانت إذا دخلت عليه قام إليها مرحّبًا، فأخذ بيدها، وقبّلها.`, `Whenever she came to see him, he would stand up to welcome her, take her hand, and kiss her.`],
+      ['🪑', `ثم يُجلسها في مكانه هو! كأنه يقول لها: أنتِ غالية عندي.`, `Then he would seat her in his own place — as if to say: you are precious to me.`],
+      ['💞', `وكان إذا دخل عليها قامت إليه، فأخذت بيده، وقبّلته، وأجلسته في مكانها. محبّةٌ واحترامٌ متبادل.`, `And when he visited her, she would stand for him, take his hand, kiss him, and seat him in her place. Love and respect from both sides.`]
+    ],
+    m: [`كانت إذا دخلت عليه قامَ إليها، فأخذَ بيدها، فقبّلها، وأجلسها في مجلسه.`, `When she came in to him, he would stand for her, take her hand, kiss her, and seat her in his place.`],
+    src: [`رواه أبو داود (٥٢١٧) والترمذي (٣٨٧٢) عن عائشة رضي الله عنها، وصحّحه الألباني`, `Abu Dawud (5217) and at-Tirmidhi (3872), from Aisha (RA); graded sahih by al-Albani`],
+    learn: [`النبيّ ﷺ كان يُظهر حبّه لبناته، ويكرمهنّ، ويستقبلهنّ بفرح.`, `The Prophet ﷺ showed love to his daughters, honored them, and welcomed them joyfully.`],
+    act: [`حين يعود أبوك أو أمك إلى البيت اليوم، قُم واستقبله بابتسامة وسلام وقبلة 💞`, `When your father or mother comes home today, stand up and welcome them with a smile, salam, and a kiss 💞`],
+    q: [`ماذا كان النبيّ ﷺ يفعل حين تدخل فاطمة؟`, `What did the Prophet ﷺ do when Fatimah came in?`],
+    o: [[`يقوم إليها ويقبّلها ويُجلسها في مكانه`, `He stood, kissed her, and seated her in his place`, 1], [`يستمرّ في عمله ولا ينتبه`, `He kept working and didn't notice`], [`يطلب منها أن تنتظر`, `He asked her to wait`]],
+    fb: [`أحسنت! وهكذا كانت تفعل معه أيضًا.`, `Well done! And she did the same for him.`] }),
+
+  /* ═══════════ مع أصحابه ═══════════ */
+  S({ id: 'anas', tag: 'companions', icon: '🧒',
+    t: [`أنس الخادم الصغير`, `Anas, the young helper`],
+    sub: [`عشر سنين بلا كلمة «أُفّ»`, `Ten years without a single "uff"`],
+    pg: [
+      ['👩‍👦', `حين قدم النبيّ ﷺ المدينة، جاءت أمّ سُلَيم بابنها الصغير <b>أنس</b>، ليخدم النبيّ ﷺ ويتعلّم منه. وكان عمره نحو عشر سنين.`, `When the Prophet ﷺ came to Madinah, Umm Sulaym brought her young son <b>Anas</b> to serve the Prophet ﷺ and learn from him. He was about ten years old.`],
+      ['📦🏃', `وفي يوم، أرسله النبيّ ﷺ في حاجة. فقال أنس في نفسه: لن أذهب! ولكنه كان ينوي أن يذهب...`, `One day the Prophet ﷺ sent him on an errand. Anas said, "I won't go!" — though inside he meant to go…`],
+      ['⚽👦👦', `فخرج، فمرّ بأطفالٍ يلعبون في السوق، فوقف يلعب معهم ونسي الحاجة!`, `He went out, passed some boys playing in the market — and stopped to play with them, forgetting the errand!`],
+      ['😄', `فجاء النبيّ ﷺ من خلفه وأمسك بقفاه برفق، فالتفت أنس فإذا النبيّ ﷺ يضحك! وقال: «يا أُنَيس، أذهبتَ حيث أمرتُك؟» قال: نعم، أنا ذاهبٌ يا رسول الله.`, `The Prophet ﷺ came from behind and gently held the back of his neck. Anas turned — and the Prophet ﷺ was laughing! He said: "O little Anas, did you go where I told you?" He said: "Yes, I'm going, O Messenger of Allah."`],
+      ['💚', `وكبر أنس، وكان يقول: خدمتُ النبيّ ﷺ عشر سنين، فما قال لي «أُفٍّ» قطّ، ولا قال لشيءٍ فعلتُه: لِمَ فعلتَه؟`, `Anas grew up and used to say: "I served the Prophet ﷺ for ten years, and he never once said 'uff' to me, nor asked about something I did: why did you do it?"`]
+    ],
+    m: [`«خدمتُ النبيَّ ﷺ عشرَ سنين، فما قال لي: أُفٍّ، ولا: لِمَ صنعتَ؟ ولا: ألا صنعتَ؟»`, `"I served the Prophet ﷺ for ten years, and he never said to me 'uff', nor 'Why did you do that?', nor 'Why didn't you do that?'"`],
+    src: [`رواه البخاري (٦٠٣٨) ومسلم (٢٣٠٩)؛ وقصة السوق عند مسلم (٢٣١٠) عن أنس رضي الله عنه`, `Al-Bukhari (6038) and Muslim (2309); the market story in Muslim (2310), from Anas (RA)`],
+    learn: [`النبيّ ﷺ كان يعامل الصغير بالرفق والضحك، لا بالصراخ واللوم. فأحبّه أنس طوال حياته.`, `The Prophet ﷺ treated the young with gentleness and laughter, not shouting and blame — so Anas loved him all his life.`],
+    act: [`إذا أخطأ أحد إخوتك اليوم، لا تقل له «أُفّ»، بل ذكّره بلطف وابتسامة 😊`, `If a sibling makes a mistake today, don't say "uff" — remind them gently with a smile 😊`],
+    q: [`ماذا فعل النبيّ ﷺ حين وجد أنسًا يلعب ونسي الحاجة؟`, `What did the Prophet ﷺ do when he found Anas playing and forgetting the errand?`],
+    o: [[`ضحك وذكّره بلطف`, `He laughed and reminded him gently`, 1], [`غضب منه وعاقبه`, `He got angry and punished him`], [`أرسل غيره ولم يكلّمه`, `He sent someone else and ignored him`]],
+    fb: [`صحيح! «يا أُنَيس، أذهبتَ حيث أمرتُك؟»`, `Correct! "O little Anas, did you go where I told you?"`] }),
+
+  S({ id: 'trench', tag: 'companions', icon: '⛏️',
+    t: [`يحفر مع أصحابه`, `Digging with his Companions`],
+    sub: [`القائد يعمل بيده يوم الخندق`, `The leader works with his hands at the Trench`],
+    pg: [
+      ['🏙️⚠️', `جاءت جيوشٌ كثيرة تريد أن تهاجم المدينة. فقرّر المسلمون أن يحفروا خندقًا كبيرًا حولها ليحميها.`, `Large armies were coming to attack Madinah, so the Muslims decided to dig a big trench around it to protect it.`],
+      ['❄️⛏️', `كان الجوّ باردًا، والعمل شاقًّا، والطعام قليلًا.`, `It was cold, the work was hard, and food was scarce.`],
+      ['🧺', `ولم يجلس النبيّ ﷺ يأمر الناس فقط، بل كان يحمل التراب بنفسه، حتى غطّى الترابُ جلدَ صدره الشريف!`, `The Prophet ﷺ did not just sit and give orders — he carried the earth himself, until the dust covered the skin of his chest!`],
+      ['🎶', `وكان يُنشد مع أصحابه ليُنشّطهم: «اللهمّ لولا أنت ما اهتدينا، ولا تصدّقنا ولا صلّينا...»`, `He chanted with his Companions to lift their spirits: "O Allah, were it not for You, we would not have been guided, nor given charity, nor prayed…"`],
+      ['🤝', `فكان الصحابة يعملون بحماس، لأن قائدهم معهم، يتعب كما يتعبون.`, `So the Companions worked with energy, because their leader was with them, tiring as they tired.`]
+    ],
+    m: [`«رأيتُه ينقلُ من ترابِ الخندق حتى وارى عنّي الترابُ جلدةَ بطنه»، وهو يقول: «اللهمّ لولا أنتَ ما اهتدينا، ولا تصدّقنا ولا صلّينا»`, `"I saw him carrying the earth of the trench until the dust covered the skin of his belly," as he chanted: "O Allah, were it not for You we would not have been guided, nor given charity, nor prayed."`],
+    src: [`رواه البخاري (٢٨٣٧، ٤١٠٦) ومسلم (١٨٠٣) عن البراء بن عازب رضي الله عنه`, `Al-Bukhari (2837, 4106) and Muslim (1803), from al-Bara' ibn Azib (RA)`],
+    learn: [`القائد الحقيقي يعمل مع فريقه ولا يتكبّر. النبيّ ﷺ كان قدوة في العمل والتعاون.`, `A true leader works with his team and isn't arrogant. The Prophet ﷺ was a role model in work and teamwork.`],
+    act: [`في عملٍ جماعي اليوم (ترتيب الغرفة أو مشروع مدرسي)، كن أوّل من يعمل، وشجّع فريقك 💪`, `In a group task today (tidying a room or a school project), be the first to work and cheer your team on 💪`],
+    q: [`ماذا كان النبيّ ﷺ يفعل يوم الخندق؟`, `What did the Prophet ﷺ do at the Trench?`],
+    o: [[`يحمل التراب مع أصحابه`, `He carried earth with his Companions`, 1], [`يجلس في الظلّ ويأمرهم`, `He sat in the shade giving orders`], [`ينام حتى ينتهوا`, `He slept until they finished`]],
+    fb: [`أحسنت! حتى غطّى التراب صدره ﷺ.`, `Well done! Until the dust covered his chest ﷺ.`] }),
+
+  S({ id: 'trunk', tag: 'companions', icon: '🌴',
+    t: [`جذع النخلة الذي بكى`, `The palm trunk that cried`],
+    sub: [`حتى الخشب أحبّ رسول الله ﷺ`, `Even wood loved the Messenger of Allah ﷺ`],
+    pg: [
+      ['🌴🕌', `كان النبيّ ﷺ إذا خطب يوم الجمعة يقف مستندًا إلى جذع نخلةٍ في المسجد.`, `When the Prophet ﷺ gave the Friday sermon, he used to stand leaning against a palm trunk in the masjid.`],
+      ['🪜', `فقالت امرأةٌ من الأنصار: يا رسول الله، ألا نصنع لك شيئًا تقعد عليه؟ فصنعوا له منبرًا.`, `A woman of the Ansar said: "O Messenger of Allah, shall we make you something to sit on?" So they made him a minbar.`],
+      ['😢🌴', `فلما كان يوم الجمعة، صعد النبيّ ﷺ على المنبر الجديد... فبكى الجذعُ وصاح كما يبكي الطفل الصغير! وسمعه الصحابة.`, `When Friday came and the Prophet ﷺ went up the new minbar… the trunk cried and wailed like a little child! The Companions heard it.`],
+      ['🤗', `فنزل النبيّ ﷺ من المنبر، وضمّ الجذع إليه، فجعل يئنّ كالطفل الذي يُسكَّت حتى سكن.`, `The Prophet ﷺ came down from the minbar and hugged the trunk, and it moaned like a child being comforted until it calmed down.`],
+      ['📿', `وأخبر ﷺ أنه بكى لِما كان يسمع من الذِّكر عنده. سبحان الله! حتى الجذع أحبّ ذكر الله وأحبّ رسوله ﷺ.`, `He ﷺ explained that it cried for the remembrance of Allah it used to hear near it. SubhanAllah! Even the trunk loved Allah's remembrance and loved His Messenger ﷺ.`]
+    ],
+    m: [`«بكت على ما كانت تسمعُ من الذِّكر»`, `"It cried for the remembrance (of Allah) it used to hear."`],
+    src: [`رواه البخاري (٢٠٩٥، ٣٥٨٤) عن جابر بن عبد الله رضي الله عنهما`, `Al-Bukhari (2095, 3584), from Jabir ibn Abdillah (RA)`],
+    learn: [`النبيّ ﷺ كان رحيمًا بكلّ شيء، حتى بالجذع. ومجالس الذكر يحبّها كلّ شيء.`, `The Prophet ﷺ was merciful to everything, even a trunk. And everything loves gatherings of remembrance.`],
+    act: [`اجلس مع أهلك اليوم دقيقتين لذكر الله: «سبحان الله، والحمد لله، ولا إله إلا الله، والله أكبر» 📿`, `Sit with your family today for two minutes of dhikr: "SubhanAllah, Alhamdulillah, La ilaha illallah, Allahu Akbar" 📿`],
+    q: [`لماذا بكى جذع النخلة؟`, `Why did the palm trunk cry?`],
+    o: [[`لأنه اشتاق إلى الذكر الذي كان يسمعه`, `It missed the remembrance it used to hear`, 1], [`لأن الريح كانت شديدة`, `Because the wind was strong`], [`لأنه انكسر`, `Because it broke`]],
+    fb: [`صحيح! فضمّه النبيّ ﷺ حتى سكن.`, `Correct! So the Prophet ﷺ hugged it until it calmed.`] }),
+
+  /* ═══════════ مع من أخطأ أو أساء ═══════════ */
+  S({ id: 'bedouin-masjid', tag: 'wrong', icon: '💧',
+    t: [`الأعرابي في المسجد`, `The Bedouin in the masjid`],
+    sub: [`التعليم بالرفق لا بالصراخ`, `Teaching with gentleness, not shouting`],
+    pg: [
+      ['🏜️🕌', `جاء رجلٌ من البادية إلى المسجد، ولم يكن يعرف آداب المسجد بعد.`, `A man from the desert came into the masjid. He didn't yet know the manners of the masjid.`],
+      ['😮', `فذهب إلى زاوية في المسجد وبدأ يتبوّل! فغضب الصحابة وقاموا إليه يريدون أن يمنعوه.`, `He went to a corner of the masjid and started to urinate! The Companions got upset and rushed toward him to stop him.`],
+      ['✋', `فقال النبيّ ﷺ: «دَعُوه» — اتركوه حتى ينتهي، فإنّ إيقافه فجأة قد يضرّه ويوسّخ مكانًا أكبر.`, `The Prophet ﷺ said: "Leave him" — let him finish, because stopping him suddenly could harm him and spread the mess.`],
+      ['🪣', `ثم أمر بدلوٍ من ماء فصُبّ على المكان فطهُر. وقال لأصحابه: «فإنما بُعثتم مُيسِّرين، ولم تُبعثوا مُعسِّرين».`, `Then he asked for a bucket of water to be poured over the spot to clean it, and told his Companions: "You were sent to make things easy, not to make them hard."`],
+      ['🗣️💚', `ثم دعا الأعرابيّ وعلّمه بلطف أنّ المساجد للصلاة وذكر الله وقراءة القرآن. فتعلّم الرجل ولم يشعر بالخجل أو الخوف.`, `Then he called the Bedouin and gently taught him that masjids are for prayer, remembering Allah, and reading Quran. The man learned without feeling ashamed or afraid.`]
+    ],
+    m: [`«دَعُوه، وهَرِيقوا على بوله سَجْلًا من ماء، فإنما بُعثتم مُيسِّرين ولم تُبعثوا مُعسِّرين»`, `"Leave him, and pour a bucket of water over it. You were sent to make things easy, not to make them difficult."`],
+    src: [`رواه البخاري (٢٢٠، ٦١٢٨) عن أبي هريرة، ومسلم (٢٨٥) عن أنس رضي الله عنهما`, `Al-Bukhari (220, 6128) from Abu Hurayrah, and Muslim (285) from Anas (RA)`],
+    learn: [`من لا يعرف يحتاج إلى من يعلّمه بلطف، لا من يصرخ عليه. الرفق يفتح القلوب.`, `Someone who doesn't know needs gentle teaching, not shouting. Gentleness opens hearts.`],
+    act: [`إذا رأيت أخاك الصغير يخطئ، علّمه بهدوء كما علّم النبيّ ﷺ الأعرابيّ 🤲`, `If you see a younger sibling make a mistake, teach them calmly, the way the Prophet ﷺ taught the Bedouin 🤲`],
+    q: [`ماذا قال النبيّ ﷺ لأصحابه حين أرادوا منع الأعرابي؟`, `What did the Prophet ﷺ tell his Companions when they wanted to stop the Bedouin?`],
+    o: [[`«دَعُوه» ثم علّمه بلطف`, `"Leave him," and then he taught him gently`, 1], [`أخرجوه من المسجد فورًا`, `Throw him out right away`], [`لا تكلّموه أبدًا`, `Never speak to him`]],
+    fb: [`أحسنت! «فإنما بُعثتم مُيسِّرين».`, `Well done! "You were sent to make things easy."`] }),
+
+  S({ id: 'cloak', tag: 'wrong', icon: '🧣',
+    t: [`الرداء الذي شُدّ بقوّة`, `The cloak pulled hard`],
+    sub: [`ابتسامة في وجه القسوة`, `A smile in the face of harshness`],
+    pg: [
+      ['🚶', `كان أنس يمشي مع النبيّ ﷺ، وكان النبيّ ﷺ يلبس رداءً من نجران، طرفه غليظ وخشن.`, `Anas was walking with the Prophet ﷺ, who was wearing a cloak from Najran with a thick, rough edge.`],
+      ['💥', `فلحقه أعرابيٌّ من خلفه، وشدّ رداءه شدّةً قويّة، حتى أثّر طرفُ الرداء في عنق النبيّ ﷺ.`, `A Bedouin caught up from behind and yanked the cloak so hard that its edge left a mark on the Prophet's ﷺ neck.`],
+      ['😠', `ثم قال الأعرابيّ بخشونة: «مُرْ لي من مال الله الذي عندك!»`, `Then the Bedouin said roughly: "Order something for me from the wealth of Allah that you have!"`],
+      ['😊🎁', `فماذا فعل النبيّ ﷺ؟ التفت إليه... فضحك! ثم أمر له بعطاء.`, `What did the Prophet ﷺ do? He turned to him… and smiled! Then he ordered that he be given a gift.`],
+      ['💚', `لم يغضب لنفسه، ولم يردّ الإساءة بإساءة. بل قابل القسوة بالابتسامة والكرم.`, `He didn't get angry for himself or answer harm with harm. He met harshness with a smile and generosity.`]
+    ],
+    m: [`«فالتفتَ إليه رسولُ الله ﷺ فضحكَ، ثم أمرَ له بعطاء»`, `"The Messenger of Allah ﷺ turned to him and laughed, then ordered that he be given something."`],
+    src: [`رواه البخاري (٣١٤٩، ٥٨٠٩) ومسلم (١٠٥٧) عن أنس رضي الله عنه`, `Al-Bukhari (3149, 5809) and Muslim (1057), from Anas (RA)`],
+    learn: [`الحِلم قوّة. النبيّ ﷺ لم يكن يغضب لنفسه، وكان يقابل الإساءة بالإحسان.`, `Forbearance is strength. The Prophet ﷺ didn't get angry for his own sake, and answered harm with kindness.`],
+    act: [`إذا كلّمك أحد بخشونة اليوم، خذ نفسًا عميقًا، وابتسم، وردّ بكلمة طيّبة 😊`, `If someone speaks roughly to you today, take a deep breath, smile, and reply with a kind word 😊`],
+    q: [`كيف ردّ النبيّ ﷺ على الأعرابي الذي شدّ رداءه؟`, `How did the Prophet ﷺ respond to the Bedouin who yanked his cloak?`],
+    o: [[`ضحك وأمر له بعطاء`, `He smiled and ordered him a gift`, 1], [`شدّه هو أيضًا`, `He pulled him back`], [`طرده`, `He sent him away`]],
+    fb: [`صحيح! ابتسامة وكرم ✨`, `Correct! A smile and generosity ✨`] }),
+
+  S({ id: 'taif', tag: 'wrong', icon: '⛰️',
+    t: [`يوم الطائف وملَك الجبال`, `Ta'if and the Angel of the Mountains`],
+    sub: [`أرجو أن يخرج من أبنائهم من يعبد الله`, `"I hope their children will worship Allah"`],
+    pg: [
+      ['🏔️🚶', `ذهب النبيّ ﷺ إلى مدينة <b>الطائف</b> يدعو أهلها إلى عبادة الله وحده، ويرجو أن يقبلوا الخير.`, `The Prophet ﷺ went to the town of <b>Ta'if</b> to invite its people to worship Allah alone, hoping they would accept the good.`],
+      ['😔', `ولكنّ زعماءها ردّوه ردًّا قبيحًا وآذَوه. فخرج ﷺ حزينًا مهمومًا، يمشي ولا ينتبه أين يمشي.`, `But its leaders rejected him harshly and hurt him. He ﷺ left sad and worried, walking without noticing where he was going.`],
+      ['☁️👼', `ثم رفع رأسه، فإذا سحابة قد أظلّته، وفيها جبريل عليه السلام. ومعه <b>ملَك الجبال</b>.`, `Then he looked up, and a cloud was shading him, with Jibril (AS) in it — and with him was the <b>Angel of the Mountains</b>.`],
+      ['⛰️❓', `قال ملَك الجبال: إن شئتَ أطبقتُ عليهم الجبلين! — يعني: إن أردتَ عاقبتُهم.`, `The Angel of the Mountains said: "If you wish, I will bring the two mountains down upon them!" — meaning: if you want, I'll punish them.`],
+      ['🌱💚', `فقال النبيّ ﷺ: «بل أرجو أن يُخرجَ اللهُ من أصلابهم من يعبدُ اللهَ وحدَه لا يُشرك به شيئًا». وتحقّق رجاؤه، فأسلم أهل الطائف بعد ذلك.`, `The Prophet ﷺ said: "Rather, I hope that Allah will bring from their descendants people who worship Allah alone, without partners." And his hope came true — the people of Ta'if later became Muslim.`]
+    ],
+    m: [`«بل أرجو أن يُخرجَ اللهُ من أصلابهم من يعبدُ اللهَ وحدَه لا يُشركُ به شيئًا»`, `"Rather, I hope that Allah will bring forth from their offspring those who worship Allah alone, associating nothing with Him."`],
+    src: [`رواه البخاري (٣٢٣١) ومسلم (١٧٩٥) عن عائشة رضي الله عنها`, `Al-Bukhari (3231) and Muslim (1795), from Aisha (RA)`],
+    learn: [`قلب النبيّ ﷺ كان مليئًا بالرحمة والأمل، حتى مع من آذاه. لم يطلب الانتقام بل الهداية.`, `The Prophet's ﷺ heart was full of mercy and hope, even toward those who hurt him. He didn't seek revenge — he sought their guidance.`],
+    act: [`ادعُ اليوم بالخير لشخصٍ أزعجك: «اللهمّ اهدِه وأصلح قلبه» 🤲`, `Today, make a good du'a for someone who upset you: "O Allah, guide them and mend their heart" 🤲`],
+    q: [`ماذا اختار النبيّ ﷺ حين عرض عليه ملَك الجبال أن يعاقبهم؟`, `What did the Prophet ﷺ choose when the Angel offered to punish them?`],
+    o: [[`رجا أن يخرج من أبنائهم من يعبد الله`, `He hoped their children would worship Allah`, 1], [`وافق على العقاب`, `He agreed to the punishment`], [`قال: لا أريد أن أراهم`, `He said he never wanted to see them again`]],
+    fb: [`أحسنت! رحمةٌ وأمل 🌱`, `Well done! Mercy and hope 🌱`] }),
+
+  S({ id: 'makkah', tag: 'wrong', icon: '🕋',
+    t: [`يوم فتح مكة`, `The day Makkah was opened`],
+    sub: [`الأمان لمن آذوه سنين`, `Safety for those who hurt him for years`],
+    pg: [
+      ['🏜️🐪', `أخرج أهلُ مكة النبيّ ﷺ وأصحابه من بيوتهم، وآذَوهم سنين طويلة.`, `The people of Makkah drove the Prophet ﷺ and his Companions from their homes and harmed them for many years.`],
+      ['🚩', `وبعد سنوات، عاد النبيّ ﷺ إلى مكة مع جيشٍ عظيم، ولم يكن أحدٌ يستطيع أن يقف أمامه.`, `Years later, the Prophet ﷺ returned to Makkah with a great army, and no one could stand against him.`],
+      ['📖🐪', `دخلها وهو على ناقته يقرأ سورة <b>الفتح</b> بصوتٍ جميل، شاكرًا لله.`, `He entered on his camel, reciting Surat <b>al-Fath</b> in a beautiful voice, thankful to Allah.`],
+      ['🛡️🏠', `وأعلن الأمان للناس: «من دخلَ دارَ أبي سفيان فهو آمن، ومن ألقى السلاحَ فهو آمن، ومن أغلقَ بابه فهو آمن».`, `He announced safety for the people: "Whoever enters the house of Abu Sufyan is safe, whoever lays down his weapon is safe, and whoever locks his door is safe."`],
+      ['🕋💚', `ثم طهّر الكعبة من الأصنام، وعفا عن أكثر الذين آذَوه. فدخل الناسُ في دين الله أفواجًا، لأنهم رأوا رحمته بأعينهم.`, `Then he cleansed the Ka'bah of idols and pardoned most of those who had harmed him. People entered Allah's religion in crowds, because they saw his mercy with their own eyes.`]
+    ],
+    m: [`«من دخلَ دارَ أبي سفيان فهو آمن، ومن ألقى السلاحَ فهو آمن، ومن أغلقَ بابَه فهو آمن»`, `"Whoever enters the house of Abu Sufyan is safe, whoever lays down arms is safe, and whoever shuts his door is safe."`],
+    src: [`رواه مسلم (١٧٨٠) عن أبي هريرة رضي الله عنه؛ وقراءته سورة الفتح عند البخاري (٤٢٨١). (تنبيه: عبارة «اذهبوا فأنتم الطلقاء» المشهورة في إسنادها ضعف، فلم نذكرها نصًّا)`, `Muslim (1780), from Abu Hurayrah (RA); his recitation of al-Fath in al-Bukhari (4281). (Note: the famous phrase "Go, you are free" has a weak chain, so we did not quote it.)`],
+    learn: [`العفو عند القدرة من أعظم الأخلاق. النبيّ ﷺ كان قادرًا على الانتقام، فاختار الأمان والرحمة.`, `Forgiving when you are able to punish is among the greatest of manners. The Prophet ﷺ could have taken revenge, but chose safety and mercy.`],
+    act: [`سامح اليوم شخصًا أخطأ في حقّك، وقل له: «سامحتُك» 🤍`, `Forgive someone today who wronged you, and tell them: "I forgive you" 🤍`],
+    q: [`ماذا أعطى النبيّ ﷺ أهلَ مكة يوم الفتح؟`, `What did the Prophet ﷺ give the people of Makkah on the day of the Opening?`],
+    o: [[`الأمان والعفو`, `Safety and pardon`, 1], [`العقاب على ما فعلوا`, `Punishment for what they did`], [`طردهم من مكة`, `He expelled them from Makkah`]],
+    fb: [`صحيح! فأحبّه الناس ودخلوا في الإسلام.`, `Correct! People loved him and entered Islam.`] }),
+
+  /* ═══════════ مع الحيوان والضعفاء ═══════════ */
+  S({ id: 'camel', tag: 'animals', icon: '🐫',
+    t: [`الجمل الذي اشتكى`, `The camel that complained`],
+    sub: [`رحمة بالحيوان`, `Mercy to animals`],
+    pg: [
+      ['🌴🚪', `دخل النبيّ ﷺ يومًا بستانًا لرجلٍ من الأنصار، فإذا فيه جمل.`, `One day the Prophet ﷺ entered a garden belonging to a man of the Ansar, and there was a camel in it.`],
+      ['🐫😢', `فلما رأى الجملُ النبيّ ﷺ، حنّ وأصدر صوتًا حزينًا، وسالت الدموع من عينيه!`, `When the camel saw the Prophet ﷺ, it groaned with a sad sound, and tears flowed from its eyes!`],
+      ['🤲🐫', `فاقترب منه النبيّ ﷺ، ومسح على رأسه خلف أذنيه برفق، فهدأ الجمل.`, `The Prophet ﷺ came close and gently stroked it behind its ears, and the camel calmed down.`],
+      ['❓', `ثم قال: «مَن ربُّ هذا الجمل؟» — أي: من صاحبه؟ فجاء شابٌّ من الأنصار فقال: هو لي يا رسول الله.`, `Then he asked: "Who owns this camel?" A young man of the Ansar came and said: "It is mine, O Messenger of Allah."`],
+      ['💚', `فقال ﷺ: «أفلا تتّقي اللهَ في هذه البهيمة التي ملّكك اللهُ إيّاها؟ فإنه شكا إليّ أنك تُجيعه وتُدئبه» — أي تتعبه كثيرًا.`, `He ﷺ said: "Do you not fear Allah regarding this animal that Allah has given you? It has complained to me that you starve it and overwork it."`]
+    ],
+    m: [`«أفلا تتّقي اللهَ في هذه البهيمةِ التي ملّككَ اللهُ إيّاها؟ فإنه شكا إليّ أنك تُجيعُه وتُدئبُه»`, `"Do you not fear Allah regarding this animal that Allah made you own? It complained to me that you starve it and wear it out."`],
+    src: [`رواه أبو داود (٢٥٤٩) وأحمد عن عبد الله بن جعفر رضي الله عنهما، وصحّحه الألباني`, `Abu Dawud (2549) and Ahmad, from Abdullah ibn Ja'far (RA); graded sahih by al-Albani`],
+    learn: [`الحيوانات أمانةٌ عندنا، والله يحاسبنا على معاملتها. الرحمة بالحيوان من الإيمان.`, `Animals are a trust with us, and Allah will ask us how we treated them. Mercy to animals is part of faith.`],
+    act: [`ضع اليوم ماءً لطائر أو قطّة، أو اعتنِ بحيوانٍ في بيتك بلطف 🐾`, `Today, put out water for a bird or cat, or care gently for an animal at home 🐾`],
+    q: [`لماذا اشتكى الجمل إلى النبيّ ﷺ؟`, `Why did the camel complain to the Prophet ﷺ?`],
+    o: [[`لأن صاحبه يجيعه ويتعبه`, `Its owner starved it and overworked it`, 1], [`لأنه يريد أن يلعب`, `It wanted to play`], [`لأنه ضاع`, `It was lost`]],
+    fb: [`صحيح! والنبيّ ﷺ دافع عنه.`, `Correct! And the Prophet ﷺ defended it.`] }),
+
+  S({ id: 'bird', tag: 'animals', icon: '🐤',
+    t: [`الطائر الذي فقد صغيريه`, `The bird who lost her chicks`],
+    sub: [`«ردّوا ولدها إليها»`, `"Return her young to her"`],
+    pg: [
+      ['🏕️', `كان الصحابة في سفرٍ مع النبيّ ﷺ، فذهب النبيّ ﷺ لحاجته.`, `The Companions were on a journey with the Prophet ﷺ, and he stepped away for a while.`],
+      ['🐦🐣🐣', `فرأى الصحابة طائرًا صغيرًا أحمر يُسمّى <b>الحُمَّرة</b>، ومعه فرخان صغيران، فأخذوا الفرخين.`, `The Companions saw a small reddish bird called a <b>hummarah</b> with two little chicks, and they took the chicks.`],
+      ['🐦💨', `فجاءت الأمّ الحزينة ترفرف بجناحيها فوقهم، تبحث عن صغيريها.`, `The sad mother came, flapping her wings above them, searching for her babies.`],
+      ['❤️', `فلما رجع النبيّ ﷺ ورآها، قال: «مَن فجعَ هذه بولدها؟ رُدّوا ولدَها إليها».`, `When the Prophet ﷺ came back and saw her, he said: "Who has distressed this one by taking her young? Return her young to her."`],
+      ['🐣🐦', `فأعاد الصحابة الفرخين إلى أمّهما، فاطمأنّت. حتى قلب الطائر الصغير كان يهمّ النبيّ ﷺ.`, `The Companions returned the chicks to their mother, and she was at peace. Even a little bird's heart mattered to the Prophet ﷺ.`]
+    ],
+    m: [`«مَن فجعَ هذه بولدها؟ رُدّوا ولدَها إليها»`, `"Who has distressed this one by taking her young? Return her young to her."`],
+    src: [`رواه أبو داود (٢٦٧٥) عن عبد الله بن مسعود رضي الله عنه، وصحّحه الألباني`, `Abu Dawud (2675), from Abdullah ibn Mas'ud (RA); graded sahih by al-Albani`],
+    learn: [`للحيوان مشاعر، والنبيّ ﷺ علّمنا ألا نؤذي حتى الطيور الصغيرة أو نحزنها.`, `Animals have feelings, and the Prophet ﷺ taught us not to harm or sadden even small birds.`],
+    act: [`لا تُخرج العصافير من أعشاشها، ولا تُخِف الحيوانات اليوم. كن صديقًا لها 🐤`, `Don't take birds from their nests or frighten animals today. Be their friend 🐤`],
+    q: [`ماذا أمر النبيّ ﷺ أصحابه أن يفعلوا بالفرخين؟`, `What did the Prophet ﷺ tell the Companions to do with the chicks?`],
+    o: [[`أن يردّوهما إلى أمّهما`, `Return them to their mother`, 1], [`أن يأخذوهما معهم`, `Take them along`], [`أن يتركوهما وحدهما`, `Leave them alone somewhere`]],
+    fb: [`أحسنت! «رُدّوا ولدها إليها».`, `Well done! "Return her young to her."`] }),
+
+  S({ id: 'dog-water', tag: 'animals', icon: '🐕',
+    t: [`الرجل الذي سقى الكلب`, `The man who gave water to a dog`],
+    sub: [`قصّةٌ حكاها النبيّ ﷺ لأصحابه`, `A story the Prophet ﷺ told his Companions`],
+    pg: [
+      ['🗣️👂', `جلس النبيّ ﷺ مع أصحابه، فحكى لهم قصّةً عن رجلٍ من الزمن الماضي.`, `The Prophet ﷺ sat with his Companions and told them a story about a man from long ago.`],
+      ['☀️🚶', `كان الرجل يمشي في طريق، فاشتدّ عليه العطش. فوجد بئرًا فنزل فيها وشرب.`, `The man was walking along a road and became very thirsty. He found a well, climbed down, and drank.`],
+      ['🐕👅', `فلما خرج، رأى كلبًا يلهث من شدّة العطش، يأكل التراب الرطب! فقال: لقد أصاب هذا الكلبَ مثلُ الذي أصابني.`, `When he came out, he saw a dog panting from thirst, licking the damp earth! He said: "This dog is as thirsty as I was."`],
+      ['👞💧', `فنزل البئر مرّة أخرى، وملأ خُفّه ماءً، وأمسكه بفمه حتى صعد، ثم سقى الكلب.`, `So he climbed down the well again, filled his leather sock with water, held it in his mouth as he climbed up, and gave the dog a drink.`],
+      ['🌟', `فشكر الله له وغفر له! فسأل الصحابة: يا رسول الله، وإنّ لنا في البهائم أجرًا؟ قال: «في كلِّ كبدٍ رطبةٍ أجر».`, `Allah thanked him and forgave him! The Companions asked: "O Messenger of Allah, is there reward for us in animals?" He said: "In every living being there is reward."`]
+    ],
+    m: [`«في كلِّ كبدٍ رطبةٍ أجرٌ»`, `"There is reward (for kindness) to every living thing."`],
+    src: [`رواه البخاري (٢٣٦٣) ومسلم (٢٢٤٤) عن أبي هريرة رضي الله عنه`, `Al-Bukhari (2363) and Muslim (2244), from Abu Hurayrah (RA)`],
+    learn: [`عملٌ صغير برحمة قد يكون سببًا لمغفرة الله. فلا تحقر شربة ماء تقدّمها لمخلوق.`, `A small act of mercy can be a reason for Allah's forgiveness. Never belittle a sip of water you give to any creature.`],
+    act: [`ضع اليوم طبقًا صغيرًا من الماء للطيور على الشرفة أو في الحديقة 💧`, `Today, put a small dish of water for birds on the balcony or in the garden 💧`],
+    q: [`لماذا غفر الله للرجل؟`, `Why did Allah forgive the man?`],
+    o: [[`لأنه رحم كلبًا عطشان وسقاه`, `He was merciful to a thirsty dog and gave it water`, 1], [`لأنه شرب الماء`, `Because he drank water`], [`لأنه حفر بئرًا`, `Because he dug a well`]],
+    fb: [`صحيح! «في كلّ كبدٍ رطبةٍ أجر».`, `Correct! "In every living being there is reward."`] }),
+
+  S({ id: 'sweeper', tag: 'animals', icon: '🧹',
+    t: [`المرأة التي كانت تنظّف المسجد`, `The woman who cleaned the masjid`],
+    sub: [`لا ينسى الضعفاء`, `He never forgot the weak`],
+    pg: [
+      ['🕌🧹', `كانت في المدينة امرأةٌ بسيطة، لا يعرفها كثير من الناس، وكانت تنظّف المسجد كلّ يوم.`, `In Madinah there was a simple woman whom few people knew; she cleaned the masjid every day.`],
+      ['🌙', `ثم ماتت في الليل، فصلّى عليها الناس ودفنوها، ولم يخبروا النبيّ ﷺ، لأنهم رأوا أمرها صغيرًا.`, `She passed away at night. The people prayed over her and buried her without telling the Prophet ﷺ, thinking her matter was small.`],
+      ['❓', `فافتقدها النبيّ ﷺ ولم يرها في المسجد، فسأل عنها. فقالوا: ماتت يا رسول الله.`, `The Prophet ﷺ noticed she was missing from the masjid and asked about her. They said: "She died, O Messenger of Allah."`],
+      ['💚', `فقال: «أفلا كنتم آذنتموني؟» — لماذا لم تخبروني؟ ثم قال: «دُلّوني على قبرها». فذهب ﷺ وصلّى عليها.`, `He said: "Why didn't you inform me?" Then he said: "Show me her grave." And he ﷺ went and prayed over her.`]
+    ],
+    m: [`«أفلا كنتم آذنتموني؟ دُلّوني على قبرها» فدلّوه، فصلّى عليها.`, `"Why did you not inform me? Show me her grave." They showed him, and he prayed over her.`],
+    src: [`رواه البخاري (٤٥٨) ومسلم (٩٥٦) عن أبي هريرة رضي الله عنه`, `Al-Bukhari (458) and Muslim (956), from Abu Hurayrah (RA)`],
+    learn: [`كلّ إنسان مهمّ عند النبيّ ﷺ، مهما كان عمله بسيطًا. وخدمة المسجد عملٌ عظيم.`, `Every person mattered to the Prophet ﷺ, however simple their work. Serving the masjid is a great deed.`],
+    act: [`اشكر اليوم من يخدمونك ولا ينتبه لهم الناس: عامل النظافة، الحارس، من يطبخ لك 🌷`, `Today, thank the people who serve you whom others overlook: the cleaner, the guard, whoever cooks for you 🌷`],
+    q: [`ماذا فعل النبيّ ﷺ حين علم بموت المرأة؟`, `What did the Prophet ﷺ do when he learned the woman had died?`],
+    o: [[`ذهب إلى قبرها وصلّى عليها`, `He went to her grave and prayed over her`, 1], [`قال: لا بأس، أمرٌ صغير`, `He said it was a small matter`], [`لم يسأل عنها`, `He didn't ask about her`]],
+    fb: [`أحسنت! لم يكن أحد صغيرًا عنده ﷺ.`, `Well done! No one was small to him ﷺ.`] })
+  ];
+
+  window.TR_PAGE = {
+    back: { href: 'sunnah.html', label: { ar: 'حُفّاظ السنة', en: 'Sunnah' } },
+    id: 'prophet-moments', icon: '🌙', color: '#2E8B57',
+    guide: { icon: '👧', name: { ar: 'كارما', en: 'Karma' }, say: { ar: "أنا كارما 🌙 هنا نرى كيف كان النبيُّ ﷺ يعامل الأطفال وأهله وأصحابه. بعد كلّ موقف أسأل نفسي: كيف أقتدي به اليوم؟", en: "I'm Karma 🌙 Here we see how the Prophet ﷺ treated children, his family and Companions. After each moment I ask myself: how can I follow him today?" } },
+    next: { href: '../heroes-fortress/era.html?era=seerah', icon: '🏰', title: { ar: "رحلة السيرة في حصن الأبطال", en: "The Seerah Journey in the Fortress" }, why: { ar: "ضع كلّ موقفٍ في مكانه من حياة النبيّ ﷺ، من المولد إلى الوداع.", en: "Place every moment in the Prophet's ﷺ life, from birth to farewell." } },
+    seerah: {"taif": "amalhuzn", "trench": "ahzab", "trunk": "masjid", "makkah": "fath"},
+    title: { ar: 'مواقف النبي ﷺ', en: 'Moments of the Prophet ﷺ' },
+    intro: { ar: 'قصصٌ صحيحة قصيرة من حياة النبيّ ﷺ: كيف عامل الأطفال، وأهله، وأصحابه، ومن أساء إليه، وحتى الحيوان. اقرأ قصّةً واحدة، ثم اختر خُلُقًا تقتدي به اليوم.', en: 'Short authentic stories from the life of the Prophet ﷺ: how he treated children, his family, his Companions, those who wronged him, and even animals. Read one story, then pick one manner to follow today.' },
+    kind: 'stories',
+    filters: [
+      { id: 'kids', label: { ar: 'مع الأطفال', en: 'With children' } },
+      { id: 'family', label: { ar: 'مع أهله', en: 'With his family' } },
+      { id: 'companions', label: { ar: 'مع أصحابه', en: 'With his Companions' } },
+      { id: 'wrong', label: { ar: 'مع من أخطأ أو أساء إليه', en: 'With those who erred or wronged him' } },
+      { id: 'animals', label: { ar: 'مع الحيوان والضعفاء', en: 'With animals & the weak' } }
+    ],
+    items: ITEMS,
+    parents: {
+      ar: '<h3>كيف نحكي مواقف النبي ﷺ لأطفالنا؟</h3><ul>' +
+        '<li><b>قصّةٌ واحدة في الجلسة</b> تكفي. القصّة القصيرة التي تُفهَم خيرٌ من خمس قصص تُنسى.</li>' +
+        '<li><b>توقّف قبل النهاية</b> واسأل: «ماذا تظنّ أنّ النبيّ ﷺ فعل؟» ثم «ماذا كنتَ ستفعل أنت؟» — دع الطفل يفكّر قبل أن تكشف الجواب.</li>' +
+        '<li>اقرأ بصوتٍ هادئ ونبرةٍ دافئة، وأظهر مشاعر الشخصيات (حزن أبي عُمَير، فرح أنس) دون مبالغة.</li>' +
+        '<li><b>لا تخويف:</b> الهدف أن يحبّ الطفل النبيّ ﷺ ويقتدي به، لا أن يخاف. ركّز على الرحمة والجمال في كلّ موقف.</li>' +
+        '<li>اربط القصّة بموقف حقيقي في يوم الطفل: «تذكُر كيف ابتسم النبيّ ﷺ للأعرابي؟ هل نجرّب ذلك مع أخيك؟»</li>' +
+        '<li>صلِّ على النبيّ ﷺ كلّما ذُكر اسمه، فيتعوّد الطفل على ذلك منك.</li></ul>' +
+        '<h3>نشاطات بلا شاشة</h3><ul>' +
+        '<li><b>تمثيل الموقف:</b> وزّعوا الأدوار (أنس، الأطفال في السوق...) ومثّلوا القصّة بالدمى أو بأنفسكم.</li>' +
+        '<li><b>لوحة «خُلُق الأسبوع»:</b> اختاروا خُلُقًا واحدًا (الرفق، العفو، الرحمة بالحيوان) وضعوا نجمة كلّما طبّقه أحد أفراد الأسرة.</li>' +
+        '<li><b>صندوق المواقف:</b> اكتبوا أسماء القصص على أوراق صغيرة، واسحبوا واحدة كلّ ليلة قبل النوم.</li></ul>' +
+        '<div class="tr-note">📚 جميع المواقف هنا من أحاديث صحيحة، والمصدر مذكور في نهاية كلّ قصّة. الربط القصصي بين الأحداث من صياغتنا لتقريبها للأطفال، أمّا ما نُسب إلى النبيّ ﷺ من كلام فهو بلفظ الرواية أو بمعناها الواضح.</div>',
+      en: '<h3>How to tell the Prophet\'s ﷺ moments to our children</h3><ul>' +
+        '<li><b>One story per sitting</b> is enough. A short story that is understood beats five that are forgotten.</li>' +
+        '<li><b>Pause before the ending</b> and ask: "What do you think the Prophet ﷺ did?" then "What would you have done?" — let the child think before you reveal it.</li>' +
+        '<li>Read in a calm, warm voice, and show the characters\' feelings (Abu Umayr\'s sadness, Anas\'s joy) without overdoing it.</li>' +
+        '<li><b>No fear tactics:</b> the goal is for the child to love the Prophet ﷺ and follow him, not to be afraid. Focus on the mercy and beauty in each moment.</li>' +
+        '<li>Link the story to a real moment in the child\'s day: "Remember how the Prophet ﷺ smiled at the Bedouin? Shall we try that with your brother?"</li>' +
+        '<li>Send salawat on the Prophet ﷺ whenever his name is mentioned, so the child picks up the habit from you.</li></ul>' +
+        '<h3>Screen-free activities</h3><ul>' +
+        '<li><b>Act it out:</b> hand out roles (Anas, the children in the market…) and act out the story with puppets or yourselves.</li>' +
+        '<li><b>"Manner of the week" board:</b> choose one manner (gentleness, forgiveness, mercy to animals) and add a star each time a family member practices it.</li>' +
+        '<li><b>Story jar:</b> write the story names on slips of paper and draw one each night before bed.</li></ul>' +
+        '<div class="tr-note">📚 All moments here come from authentic hadiths; the source is given at the end of each story. The narrative linking is our own wording to bring it close to children; words attributed to the Prophet ﷺ follow the narration\'s wording or its clear meaning.</div>'
+    },
+    worksheet: {
+      ar: '<h3>✏️ ورقة نشاط: موقفٌ من حياة النبي ﷺ</h3><p>اسم القصّة:</p><div class="ws-line"></div>' +
+        '<p><b>رتّب القصّة:</b> ارسم أو اكتب ما حدث في كلّ مربّع.</p>' +
+        '<table style="width:100%;border-collapse:collapse"><tr><td style="border:1.5px solid #888;height:38mm;width:33%;vertical-align:top;padding:2mm">١. البداية</td><td style="border:1.5px solid #888;width:33%;vertical-align:top;padding:2mm">٢. ماذا حدث؟</td><td style="border:1.5px solid #888;width:33%;vertical-align:top;padding:2mm">٣. ماذا فعل النبيّ ﷺ؟</td></tr></table>' +
+        '<p><b>ارسم اللحظة التي أحببتها أكثر:</b></p><div class="ws-box"></div>' +
+        '<p><b>الخُلُق الذي تعلّمته:</b></p><div class="ws-line"></div>' +
+        '<p><b>عملي هذا الأسبوع اقتداءً بالنبيّ ﷺ:</b></p><div class="ws-line"></div>' +
+        '<p>☐ السبت ☐ الأحد ☐ الإثنين ☐ الثلاثاء ☐ الأربعاء ☐ الخميس ☐ الجمعة — ضع ✓ كلّ يوم طبّقته</p>',
+      en: '<h3>✏️ Activity sheet: A moment from the Prophet\'s ﷺ life</h3><p>Story name:</p><div class="ws-line"></div>' +
+        '<p><b>Put the story in order:</b> draw or write what happened in each box.</p>' +
+        '<table style="width:100%;border-collapse:collapse"><tr><td style="border:1.5px solid #888;height:38mm;width:33%;vertical-align:top;padding:2mm">1. The beginning</td><td style="border:1.5px solid #888;width:33%;vertical-align:top;padding:2mm">2. What happened?</td><td style="border:1.5px solid #888;width:33%;vertical-align:top;padding:2mm">3. What did the Prophet ﷺ do?</td></tr></table>' +
+        '<p><b>Draw the moment you loved most:</b></p><div class="ws-box"></div>' +
+        '<p><b>The manner I learned:</b></p><div class="ws-line"></div>' +
+        '<p><b>My deed this week, following the Prophet ﷺ:</b></p><div class="ws-line"></div>' +
+        '<p>☐ Sat ☐ Sun ☐ Mon ☐ Tue ☐ Wed ☐ Thu ☐ Fri — tick each day you did it</p>'
+    }
+  };
+})();
+</script>
+<script src="tr.js"></script>
+<script defer src="../shared/mk-system.js"></script>
+<script defer src="../shared/mk-journeys.js"></script>
+<script defer src="../shared/mk-bag.js"></script>
+</body>
+</html>

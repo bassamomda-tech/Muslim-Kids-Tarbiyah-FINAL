@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>حقيبة الأهل المجانية | Free Parents Kit</title>
+<meta name="description" content="حقيبة مجانية للأهل: خطة أسبوعية هادئة، لوحة نجوم، اتفاقية الشاشة، أسئلة حوار، وأوراق نشاط للطباعة.">
+<link rel="icon" href="../../favicon.ico">
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&family=Nunito:wght@400;700;800;900&family=Amiri:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="tr.css">
+<style>
+  .kit-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:1rem;margin-top:1rem}
+  .kit{background:#fff;border:2px solid var(--line);border-radius:20px;padding:1.1rem;display:flex;flex-direction:column;gap:.45rem;box-shadow:var(--shadow)}
+  .kit .ic{font-size:2.2rem}
+  .kit h3{font-size:1.08rem;font-weight:900}
+  .kit p{color:var(--muted);font-size:.9rem;flex:1}
+  .wk{width:100%;border-collapse:collapse;margin:.6rem 0;font-size:.92rem}
+  .wk th,.wk td{border:1px solid var(--line);padding:.45rem .5rem;text-align:start;vertical-align:top}
+  .wk th{background:var(--acc-soft);color:var(--acc)}
+  .tbl-wrap{overflow-x:auto}
+  .links{display:flex;flex-wrap:wrap;gap:.45rem;margin-top:.5rem}
+  .links a{background:var(--acc-soft);color:var(--acc);text-decoration:none;font-weight:800;border-radius:999px;padding:.35rem .8rem;font-size:.88rem}
+  @media print{ .pg table{width:100%;border-collapse:collapse} .pg th,.pg td{border:1px solid #888;padding:2.5mm;font-size:10.5pt;vertical-align:top} .pg td.blank{height:12mm} }
+</style>
+</head>
+<body>
+<div id="tr-root"></div>
+<script>
+(function () {
+  var DAYS = { ar: ['السبت', 'الأحد', 'الإثنين', 'الثلاثاء', 'الأربعاء', 'الخميس', 'الجمعة'], en: ['Sat', 'Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri'] };
+  /* A calm 15-minute daily rhythm: one treasure a day, never a marathon. */
+  var PLAN = [
+    { ar: ['🃏 بطاقة حديث واحدة', 'اقرآها معًا واختارا «تحدّي اليوم»'], en: ['🃏 One hadith card', 'Read it together and pick "today\'s challenge"'] },
+    { ar: ['✨ اسمٌ من أسماء الله', 'تأمّلا أثره: أين رأينا رحمة الله اليوم؟'], en: ['✨ One Name of Allah', 'Reflect: where did we see Allah\'s mercy today?'] },
+    { ar: ['📿 ذكرٌ ومعناه', 'افهما ذكرًا واحدًا وقولاه في وقته'], en: ['📿 One dhikr & its meaning', 'Understand one dhikr and say it at its time'] },
+    { ar: ['📖 قصة من السيرة', 'قصة واحدة قبل النوم + سؤال «ماذا كنت ستفعل؟»'], en: ['📖 One Seerah story', 'One bedtime story + "what would you do?"'] },
+    { ar: ['🧭 جولة أو معلم', 'سافرا على الخريطة إلى معلمٍ واحد'], en: ['🧭 A tour or landmark', 'Travel on the map to one landmark'] },
+    { ar: ['🤲 مجلس العائلة', 'مراجعة لطيفة لنجوم الأسبوع + دعاء جماعي'], en: ['🤲 Family circle', 'Gentle review of the week\'s stars + a family dua'] },
+    { ar: ['🌿 يوم راحة', 'لا شاشات — لعب، زيارة، ونزهة'], en: ['🌿 Rest day', 'No screens — play, visit, and a walk'] }
+  ];
+  var TALK = {
+    ar: ['ما أجمل شيء أنعم الله به عليك اليوم؟', 'متى شعرتَ أن الله قريبٌ منك؟', 'لو رأيتَ صديقك حزينًا، ماذا تفعل كما كان النبي ﷺ يفعل؟', 'ما العمل الصغير الذي فعلتَه اليوم لله وحده؟', 'أيّ قصة من السيرة تحبّ أن نعيدها؟ ولماذا؟', 'لو كنتَ في المسجد النبوي الآن، ماذا تحبّ أن تفعل؟', 'ما الدعاء الذي تريد أن ندعو به جميعًا الليلة؟'],
+    en: ['What is the most beautiful blessing Allah gave you today?', 'When did you feel Allah is close to you?', 'If your friend were sad, what would you do as the Prophet ﷺ did?', 'What small deed did you do today only for Allah?', 'Which Seerah story would you like to hear again? Why?', 'If you were in the Prophet\'s Mosque now, what would you love to do?', 'Which dua should we all make tonight?']
+  };
+  var SCREEN = {
+    ar: ['نستخدم الموقع <b>١٥–٢٠ دقيقة</b> في الجلسة، ثم نرتاح.', 'نجلس معًا: الشاشة نافذةٌ للتعلّم، لا جليسة أطفال.', 'نفعّل <b>«الوضع الهادئ» 🍃</b> عند الحاجة.', 'بعد كل بطاقة: نطبّق شيئًا بأيدينا أو نحكيه بكلماتنا.', 'لا شاشات على الطعام، ولا قبل النوم بساعة.', 'إذا ظهرت رسالة «وقت الاستراحة» نحترمها بابتسامة 🌿'],
+    en: ['We use the site <b>15–20 minutes</b> per session, then rest.', 'We sit together: the screen is a window to learn, not a babysitter.', 'We switch on <b>"calm mode" 🍃</b> when needed.', 'After each card: we do something with our hands or retell it in our words.', 'No screens at meals, nor an hour before bed.', 'When the "break time" message appears, we respect it with a smile 🌿']
+  };
+  function pr(html) { var a = document.getElementById('trPrint'); a.innerHTML = '<div class="pg" dir="' + (TR.ar() ? 'rtl' : 'ltr') + '">' + html + '</div>'; setTimeout(function () { window.print(); }, 60); }
+  function planTable(L) {
+    return '<table class="wk"><tr><th>' + (L === 'ar' ? 'اليوم' : 'Day') + '</th><th>' + (L === 'ar' ? 'كنز اليوم (١٥ دقيقة)' : "Today's treasure (15 min)") + '</th><th>' + (L === 'ar' ? 'كيف؟' : 'How?') + '</th><th>✓</th></tr>' +
+      PLAN.map(function (p, i) { return '<tr><td><b>' + DAYS[L][i] + '</b></td><td>' + p[L][0] + '</td><td>' + p[L][1] + '</td><td class="blank"></td></tr>'; }).join('') + '</table>';
+  }
+  window.KIT = {
+    plan: function () { var L = TR.lang(); pr('<h1>📅 ' + TR.tx('خطتنا الأسبوعية الهادئة', 'Our calm weekly plan') + '</h1>' + planTable(L) + '<p>' + TR.tx('الاسم: ____________ &nbsp; الأسبوع: ____________', 'Name: ____________ &nbsp; Week: ____________') + '</p>'); },
+    stars: function () {
+      var L = TR.lang();
+      var rows = [TR.tx('صليتُ في وقتها', 'Prayed on time'), TR.tx('قلتُ أذكار الصباح/المساء', 'Said morning/evening adhkar'), TR.tx('ساعدتُ في البيت', 'Helped at home'), TR.tx('تعلّمتُ بطاقة جديدة', 'Learned a new card'), TR.tx('قلتُ كلمة طيبة', 'Said a kind word'), TR.tx('عمل من اختياري', 'A deed of my choice')];
+      pr('<h1>⭐ ' + TR.tx('لوحة نجومي', 'My star chart') + '</h1><table><tr><th></th>' + DAYS[L].map(function (d) { return '<th>' + d + '</th>'; }).join('') + '</tr>' +
+        rows.map(function (r) { return '<tr><td><b>' + r + '</b></td>' + DAYS[L].map(function () { return '<td class="blank"></td>'; }).join('') + '</tr>'; }).join('') + '</table>' +
+        '<p>' + TR.tx('💡 النجوم للتشجيع لا للمقارنة. احتفلوا بالجهد، لا بالكمال.', '💡 Stars encourage — never compare. Celebrate effort, not perfection.') + '</p>');
+    },
+    talk: function () { var L = TR.lang(); pr('<h1>💬 ' + TR.tx('أسئلة حوار العائلة', 'Family conversation cards') + '</h1><ol>' + TALK[L].map(function (q) { return '<li>' + q + '<div class="ws-line"></div></li>'; }).join('') + '</ol>'); },
+    screen: function () {
+      var L = TR.lang();
+      pr('<h1>📱 ' + TR.tx('اتفاقيتنا مع الشاشة', 'Our screen agreement') + '</h1><ol>' + SCREEN[L].map(function (x) { return '<li>' + x + '</li>'; }).join('') + '</ol><p style="margin-top:8mm">' + TR.tx('توقيع الطفل: ____________ &nbsp;&nbsp; توقيع الأهل: ____________', 'Child: ____________ &nbsp;&nbsp; Parent: ____________') + '</p>');
+    }
+  };
+
+  window.TR_PAGE = {
+    id: 'parents-kit', icon: '🎒', color: '#7A3FB0',
+    back: { href: '../little-district/pages/parents.html', label: { ar: 'ركن الأهل', en: "Parents" } },
+    next: { href: 'index.html', icon: '🗂️', title: { ar: "فهرس البطاقات والقصص", en: "Cards & Stories Index" }, why: { ar: "كلّ البطاقات والقصص في مكانٍ واحد — اطبع منها ما يناسب أسبوعكم.", en: "Every card and story in one place — print what suits your week." } },
+    title: { ar: 'حقيبة الأهل المجانية', en: 'Free Parents Kit' },
+    intro: { ar: 'كلّ ما تحتاجه لتجعل التعلّم في البيت هادئًا وممتعًا — بلا إرهاق للطفل ولا لك. اطبع ما تشاء مجانًا.', en: 'Everything you need to make learning at home calm and joyful — without exhausting your child or you. Print anything, free.' },
+    onRender: function (TR) {
+      var L = TR.lang(), el = document.querySelector('[data-panel="kids"]');
+      function kit(ic, h, p, fn) { return '<div class="kit"><div class="ic">' + ic + '</div><h3>' + h + '</h3><p>' + p + '</p><button class="tr-btn" onclick="KIT.' + fn + '()">🖨️ ' + TR.tx('اطبع مجانًا', 'Print free') + '</button></div>'; }
+      el.innerHTML =
+        '<div class="tr-prose"><h3>📅 ' + TR.tx('الخطة الأسبوعية الهادئة', 'The calm weekly plan') + '</h3><p>' +
+        TR.tx('كنزٌ واحد في اليوم، ١٥ دقيقة فقط. القليل الدائم أحبّ إلى الله من الكثير المنقطع.', 'One treasure a day, just 15 minutes. A little that lasts is more beloved to Allah than a lot that stops.') +
+        '</p><div class="tbl-wrap">' + planTable(L) + '</div></div>' +
+        '<div class="kit-grid">' +
+        kit('📅', TR.tx('الخطة الأسبوعية', 'Weekly plan'), TR.tx('جدولٌ للثلاجة: كنز كلّ يوم مع خانة ✓.', 'A fridge chart: one treasure a day with a ✓ box.'), 'plan') +
+        kit('⭐', TR.tx('لوحة النجوم', 'Star chart'), TR.tx('ستّ عادات طيبة × سبعة أيام — للتشجيع لا للمقارنة.', 'Six good habits × seven days — to encourage, not compare.'), 'stars') +
+        kit('📱', TR.tx('اتفاقية الشاشة', 'Screen agreement'), TR.tx('قواعد بسيطة يوقّعها الطفل والأهل معًا.', 'Simple rules the child and parents sign together.'), 'screen') +
+        kit('💬', TR.tx('أسئلة الحوار', 'Conversation cards'), TR.tx('سبعة أسئلة لمائدة العشاء تربط اليوم بالإيمان.', 'Seven dinner-table questions linking the day to faith.'), 'talk') +
+        '</div>' +
+        '<div class="tr-prose" style="margin-top:1.2rem"><h3>🖨️ ' + TR.tx('بطاقات وأوراق نشاط من كل كنز', 'Cards & activity sheets from every treasure') + '</h3><p>' +
+        TR.tx('في كل صفحة تبويب «اطبع مجانًا» فيه بطاقات للطفل، وورقة نشاط، ودليل للأهل:', 'Every page has a "Print free" tab with kids\' cards, an activity sheet and a parents guide:') + '</p><div class="links">' +
+        [['hadith-cards', '🃏', 'بطاقات الأحاديث', 'Hadith cards'], ['names-cards', '✨', 'أسماء الله الحسنى', 'Names of Allah'], ['adhkar', '📿', 'الأذكار والأدعية', 'Adhkar & duas'], ['ubudiyah', '🤲', 'العبودية', 'Servanthood'], ['shubuhat', '🛡️', 'أسئلة صعبة', 'Hard questions'], ['eids', '🎉', 'الأعياد', 'Eids'], ['prophet-moments', '🌙', 'مواقف النبي ﷺ', 'Prophet\'s moments'], ['hadith-stories', '📖', 'قصص السنة', 'Sunnah stories'], ['landmarks', '🕋', 'المعالم', 'Landmarks'], ['tours', '🧭', 'الجولات', 'Tours']]
+          .map(function (x) { return '<a href="' + x[0] + '.html">' + x[1] + ' ' + (TR.ar() ? x[2] : x[3]) + '</a>'; }).join('') +
+        '</div><p style="margin-top:.8rem">' + TR.tx('وكتب الأركان كلّها مجانية في ', 'And every corner book is free in ') + '<a href="../shared/store.html" style="color:var(--acc);font-weight:800">' + TR.tx('المكتبة المجانية 📚', 'the Free Library 📚') + '</a>.</p></div>';
+    },
+    parents: {
+      ar: '<h3>🌱 مبادئ التعلّم الهادئ</h3><ul><li><b>شيءٌ واحد في المرّة:</b> بطاقة واحدة أو قصة واحدة، ثم توقّف وهو مستمتع — ليشتاق للمرّة القادمة.</li><li><b>الفهم قبل الحفظ، والعمل قبل العدد:</b> اسأل «ماذا ستفعل اليوم؟» أكثر من «كم حفظت؟».</li><li><b>جلسات قصيرة:</b> ٥–١٠ دقائق لعمر ٤–٦، و١٥–٢٠ دقيقة لعمر ٧–١٠.</li><li><b>الشاشة جسر لا وجهة:</b> كلّ ما يتعلّمه على الشاشة ينتقل إلى البيت: رسم، تمثيل، عمل.</li><li><b>التشجيع بالكلمة الطيبة والدعاء</b> قبل الجوائز المادية.</li><li><b>لا مقارنة بين الإخوة</b> — لكل طفل لوحته ونجومه (يدعم الموقع ملفًّا مستقلًا لكل طفل).</li></ul><h3>⚠️ علامات أن الطفل مُرهَق</h3><ul><li>ينقر بسرعة دون قراءة، أو يقلّب البطاقات بلا تركيز.</li><li>يتضايق من الأسئلة أو يبكي عند الخطأ.</li><li>يطلب «لعبة أخرى» باستمرار.</li></ul><div class="tr-note">💡 عندها توقّف بلطف، واقترح نشاطًا حركيًّا أو قصة يحكيها هو لك. التربية رحلة طويلة، ولسنا في سباق.</div>',
+      en: '<h3>🌱 Principles of calm learning</h3><ul><li><b>One thing at a time:</b> one card or one story, then stop while they still enjoy it — so they look forward to next time.</li><li><b>Understanding before memorizing, doing before counting:</b> ask "what will you do today?" more than "how much did you memorize?".</li><li><b>Short sessions:</b> 5–10 minutes for ages 4–6, 15–20 minutes for ages 7–10.</li><li><b>The screen is a bridge, not a destination:</b> everything learned on screen moves into the home: drawing, role-play, deeds.</li><li><b>Encourage with kind words and dua</b> before material rewards.</li><li><b>No comparing siblings</b> — each child has their own chart and stars (the site supports a separate profile per child).</li></ul><h3>⚠️ Signs your child is overwhelmed</h3><ul><li>Tapping fast without reading, flipping cards without focus.</li><li>Getting upset at questions or crying at mistakes.</li><li>Constantly asking for "another game".</li></ul><div class="tr-note">💡 Then gently stop, and suggest something active or a story they tell you. Tarbiyah is a long journey — we\'re not in a race.</div>'
+    }
+  };
+})();
+</script>
+<script src="tr.js"></script>
+<script defer src="../shared/mk-system.js"></script>
+<script defer src="../shared/mk-journeys.js"></script>
+<script defer src="../shared/mk-bag.js"></script>
+</body>
+</html>

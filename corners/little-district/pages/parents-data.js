@@ -13,7 +13,7 @@ window.PARENTS_DATA = {
     { prefix:'akhira',   total:11, icon:'🌅', color:'#C56B3E', corner:{ar:'منارة العقيدة',en:'Faith Minaret'}, name:{ar:'رحلة العبور (اليوم الآخر)', en:'The Crossing (Last Day)'} },
     { prefix:'qadar',    total:10, icon:'📜', color:'#3E7CB1', corner:{ar:'منارة العقيدة',en:'Faith Minaret'}, name:{ar:'رحلة سر التقدير (القضاء والقدر)', en:'The Decree (Qadar)'} },
     { prefix:'thabat',   total:12, icon:'🦁', color:'#C0392B', corner:{ar:'منارة العقيدة',en:'Faith Minaret'}, name:{ar:'رحلة الأبطال (قصص الثبات)', en:'The Heroes (Steadfastness)'} },
-    { prefix:'qsahib',   total:12, icon:'📖', color:'#1A9B7B', corner:{ar:'بستان القرآن والسنة',en:'Quran & Sunnah Garden'}, name:{ar:'رحلة أنا صاحبك القرآن', en:'I Am Your Companion, the Quran'} },
+    { prefix:'qsahib',   total:12, icon:'📖', color:'#1A9B7B', corner:{ar:'بستان القرآن',en:'Quran Garden'}, name:{ar:'رحلة أنا صاحبك القرآن', en:'I Am Your Companion, the Quran'} },
     { prefix:'mubdi',    total:15, icon:'💡', color:'#1FAE8C', corner:{ar:'أكاديمية المبدعين',en:"Innovators' Academy"}, name:{ar:'رحلة كن أنت المبدع', en:'Be the Creator'} },
     { prefix:'manara',   total:10, icon:'🏛️', color:'#C9962E', corner:{ar:'أكاديمية المبدعين',en:"Innovators' Academy"}, name:{ar:'رحلة منارة العالم', en:'Beacon of the World'} },
     { prefix:'aqsa',     total:10, icon:'🕌', color:'#1F8B6E', corner:{ar:'ركن القدس والأمة',en:'Al-Quds & Ummah'}, name:{ar:'رحلة الأقصى', en:'Journey of Al-Aqsa'} },

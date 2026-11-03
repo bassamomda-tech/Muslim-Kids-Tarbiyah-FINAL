@@ -475,7 +475,7 @@ html[dir="rtl"] .shop-card{border-inline-start:1.5px solid var(--card-bd);border
     <button class="tab" data-tab="print" onclick="showTab('print')"><span class="ti">🖨️</span><span class="ar-only">المطبوعات</span><span class="en-only">Printables</span></button>
     <button class="tab" data-tab="res" onclick="showTab('res')"><span class="ti">🗂️</span><span class="ar-only">المصادر التربوية</span><span class="en-only">Resources</span></button>
     <button class="tab" data-tab="controls" onclick="showTab('controls')"><span class="ti">🔐</span><span class="ar-only">تحكّم الأهل</span><span class="en-only">Controls</span></button>
-    <a class="tab tab-go" href="../../shared/store.html" onclick="this.href='../../shared/store.html?lang='+lang"><span class="ti">🛍️</span><span class="ar-only">متجر الدعم</span><span class="en-only">Support Store</span></a>
+    <a class="tab tab-go" href="../../shared/store.html" onclick="this.href='../../shared/store.html?lang='+lang"><span class="ti">📚</span><span class="ar-only">المكتبة المجانية</span><span class="en-only">Free Library</span></a>
     <a class="tab tab-go" href="../../shared/downloads.html" onclick="this.href='../../shared/downloads.html?lang='+lang"><span class="ti">📥</span><span class="ar-only">ركن التنزيلات</span><span class="en-only">Downloads</span></a>
     <a class="tab tab-go" href="../../shared/community.html" onclick="this.href='../../shared/community.html?lang='+lang" data-community-badge><span class="ti">👨‍👩‍👧‍👦</span><span class="ar-only">مجتمع العائلات</span><span class="en-only">Family Community</span></a>
   </div>
@@ -601,7 +601,7 @@ html[dir="rtl"] .shop-card{border-inline-start:1.5px solid var(--card-bd);border
     <div class="sec-head">
       <h2><span class="ar-only">🖨️ المطبوعات التربوية</span><span class="en-only">🖨️ Printable Packs</span></h2>
       <p><span class="ar-only">حزمٌ مطبوعةٌ للأطفال — عيّناتٌ مجّانيّة، وحزمٌ كاملةٌ بدعمك يُبقي الموقعَ صدقةً جارية.</span><span class="en-only">Printable packs for kids — free samples, and full packs whose support keeps the site an ongoing charity.</span></p>
-      <a class="store-link" href="../../shared/store.html" onclick="this.href='../../shared/store.html?lang='+lang"><span class="ar-only">🏬 زيارةُ متجر الدعم — الحزمُ الكاملة</span><span class="en-only">🏬 Visit the Support Store — full packs</span></a>
+      <a class="store-link" href="../../shared/store.html" onclick="this.href='../../shared/store.html?lang='+lang"><span class="ar-only">📚 المكتبة المجانية — كلُّ الكتب مجّانًا</span><span class="en-only">📚 The Free Library — every book free</span></a>
     </div>
     <div id="printShopBody"></div>
   </section>
@@ -837,19 +837,18 @@ function renderResources(){
 /* ---- online book library (PDFs) — shown under the Online Books section ---- */
 function renderBookCats(){
   var ar=lang==='ar', base='../../../Books/Parent Library/';
-  /* featured: our own flagship guide — PREVIEW only (full book is a paid item in the Support Store) */
+  /* featured: our own flagship guide — the whole book, free */
   var prevRel=encodeURIComponent('Published/Parent Plans/Tarbiyah Compass Guide Book.html');
-  var prevUrl='../../../Books/book-preview.html?src='+prevRel+'&n=3&bid=bundle9&lang='+lang
-    +'&t='+encodeURIComponent(ar?'بوصلةُ التربية':'The Tarbiyah Compass');
+  var prevUrl='../../../Books/'+decodeURIComponent(prevRel).split('/').map(encodeURIComponent).join('/');   // whole book, free
   var storeUrl='../../shared/store.html?lang='+lang;
   var featured='<div class="vid-cat"><h3 class="vid-cat-h"><span class="vc-ic">🧭</span>'
     +(ar?'دليلُنا التربوي':'Our Tarbiyah Guide')+'<span class="vc-n">1</span></h3>'
     +'<div class="vid-grid"><a class="vid-card" href="'+prevUrl+'" target="_blank" rel="noopener" style="border-color:rgba(212,160,23,.55);background:linear-gradient(135deg,rgba(232,181,48,.14),rgba(232,181,48,.04))">'
     +'<span class="vid-play">🧭</span><span class="vid-name">'+(ar?'بوصلةُ التربية — دليلُ المراحل العمريّة (٠–١٨+)':'The Tarbiyah Compass — Age-Stages Guide (0–18+)')+'</span>'
-    +'<span class="vid-go">'+(ar?'👁️ معاينة (٣ صفحات)':'👁️ Preview (3 pages)')+'</span></a></div>'
+    +'<span class="vid-go">'+(ar?'📖 اقرأ الكتاب كاملًا — مجّانًا':'📖 Read the full book — free')+'</span></a></div>'
     +'<p class="vid-cat-note" style="color:var(--muted);font-size:.8rem;margin:.5rem .2rem 0">'
-    +(ar?'📖 الكتابُ الكامل ضمن حزمة ركن الأهل في <a href="'+storeUrl+'" style="color:var(--gold-lt);font-weight:800">متجر الدعم</a>.'
-        :'📖 The full book is in the Parents bundle at the <a href="'+storeUrl+'" style="color:var(--gold-lt);font-weight:800">Support Store</a>.')
+    +(ar?'📖 الكتابُ الكامل مجّانًا في <a href="'+storeUrl+'" style="color:var(--gold-lt);font-weight:800">المكتبة المجانية</a>.'
+        :'📖 The full book is free in the <a href="'+storeUrl+'" style="color:var(--gold-lt);font-weight:800">Free Library</a>.')
     +'</p></div>';
   if(!window.PARENT_BOOKS) return featured;
   return featured + PARENT_BOOKS.map(function(c){

@@ -580,3 +580,17 @@
 .card:nth-child(8) { animation-delay: 0.16s; }
 .card:nth-child(9) { animation-delay: 0.18s; }
 .card:nth-child(10){ animation-delay: 0.20s; }
+
+/* phones: stats wrap under the brand instead of pushing off-screen */
+@media (max-width: 640px) {
+  .topbar { flex-wrap: wrap; row-gap: 8px; }
+  .top-stats { flex-wrap: wrap; justify-content: center; width: 100%; }
+  .stat-chip { padding: 6px 10px; font-size: 12px; }
+}
+@media (max-width: 640px) {
+  .filter-tabs { width: 100%; max-width: 100%; min-width: 0; }
+  .filter-tabs button { flex-shrink: 0; }
+}
+
+/* decorative pseudo-elements must never create a sideways scroll */
+html, body { overflow-x: clip; }

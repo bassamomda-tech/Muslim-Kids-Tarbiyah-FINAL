@@ -18,7 +18,7 @@
   var CORNERS = [
     { id:'aqeeda',  icon:'🕋', color:'#C0392B', ar:'منارة العقيدة',      en:'Faith Minaret',        sub:{ar:'اليقين · التوحيد · أركان الإيمان', en:'Certainty · Tawheed · Pillars of Iman'} },
     { id:'ibada',   icon:'🌙', color:'#117A8B', ar:'واحة العبادة',       en:'Worship Oasis',        sub:{ar:'الصلاة · الصيام · الأذكار · الحج', en:'Salah · Fasting · Adhkar · Hajj'} },
-    { id:'quran',   icon:'📖', color:'#1A9B7B', ar:'بستان القرآن والسنة', en:'Quran & Sunnah Garden', sub:{ar:'السور · القصص · الأربعون النووية', en:'Surahs · Stories · 40 Hadith'} },
+    { id:'quran',   icon:'📖', color:'#1A9B7B', ar:'بستان القرآن', en:'Quran Garden', sub:{ar:'السور · القصص · الأربعون النووية', en:'Surahs · Stories · 40 Hadith'} },
     { id:'social',  icon:'🏘️', color:'#D4A017', ar:'حيّنا الصغير',       en:'Our Little District',  sub:{ar:'الأخلاق والآداب', en:'Manners & Etiquette'} },
     { id:'heart',   icon:'💚', color:'#6C3483', ar:'ركن القلب السليم',   en:'Pure Heart Corner',    sub:{ar:'أمراض القلوب وعلاجها', en:'Heart diseases & their cures'} },
     { id:'history', icon:'🏰', color:'#E67E22', ar:'حصن الأبطال',        en:"Heroes' Fortress",     sub:{ar:'الصحابة والأبطال والتاريخ', en:'Companions · Heroes · History'} },
@@ -96,7 +96,7 @@
     P('ibada','certificate','9-12','صديق الصلاة','Friend of Salah',
       "An A4 LANDSCAPE certificate titled «صديق الصلاة» with a gold border and a crescent-and-mosque emblem at the top. A blank dashed name line «الاسم», the text «حافظ على صلواته الخمس في أوقاتها», and small lines for «التاريخ» and «التوقيع». Teal-and-gold ornament."),
 
-    /* ───────────── 3 · بستان القرآن والسنة · Quran & Sunnah Garden ───────────── */
+    /* ───────────── 3 · بستان القرآن · Quran Garden ───────────── */
     P('quran','coloring','3-5','بستان السور','Garden of Surahs',
       "An A4 portrait coloring page titled «بستان السور»: a cheerful garden where four big flowers each carry the name of a short surah in clear Arabic — «الفاتحة»، «الإخلاص»، «الفلق»، «الناس». Add a smiling sun, butterflies and grass. Thick simple outlines for toddlers, lots of white space."),
     P('quran','flashcards','6-8','مطابقة السور','Match the Surah',

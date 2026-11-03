@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>المعالم الإسلامية والخرائط | Islamic Landmarks & Maps</title>
+<meta name="description" content="بطاقات مجانية للأطفال عن أعظم المعالم الإسلامية: المسجد الحرام، المسجد النبوي، المسجد الأقصى، وغيرها — مع صور وخريطة تفاعلية.">
+<link rel="icon" href="../../favicon.ico">
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&family=Nunito:wght@400;700;800;900&family=Amiri:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="tr.css">
+</head>
+<body>
+<div id="tr-root"></div>
+<script src="tr-map.js"></script>
+<script>
+/* Islamic landmarks — cards + one map (Leaflet/OSM, SVG fallback offline).
+   Photos: Wikimedia Commons; a missing photo falls back to the emoji. */
+(function () {
+  var D = [
+    { id: 'kaaba', icon: '🕋', tag: 'haram', lat: 21.4225, lng: 39.8262, img: 'Kaaba_mirror_edit_jj.jpg',
+      title: { ar: 'المسجد الحرام والكعبة', en: 'Al-Masjid al-Haram & the Kaaba' }, sub: { ar: 'مكّة المكرّمة، السعودية', en: 'Makkah, Saudi Arabia' },
+      back: { ar: '✨ الكعبة أوّلُ بيتٍ وُضِع لعبادة الله في الأرض.<br>✨ نتّجه إليها في كلّ صلاة — إنّها قِبلتُنا.<br>✨ بجوارها بئرُ زمزم المباركة.', en: '✨ The Kaaba is the first house set up on earth for worshipping Allah.<br>✨ We face it in every prayer — it is our qiblah.<br>✨ Next to it is the blessed well of Zamzam.' },
+      story: { ar: 'قال الله تعالى: ﴿إِنَّ أَوَّلَ بَيْتٍ وُضِعَ لِلنَّاسِ لَلَّذِي بِبَكَّةَ مُبَارَكًا﴾ [آل عمران: ٩٦]. رفع إبراهيمُ وابنُه إسماعيلُ عليهما السلام قواعدَ الكعبة وهما يدعوان: ﴿رَبَّنَا تَقَبَّلْ مِنَّا﴾ [البقرة: ١٢٧]. واليوم يطوف حولها ملايين المسلمين في الحجّ والعمرة، من كلّ لونٍ ولغة، كلّهم يعبدون ربًّا واحدًا.', en: 'Allah says: "Indeed, the first House established for mankind is the one at Bakkah (Makkah), blessed" [Al Imran 3:96]. Ibrahim and his son Isma\'il (peace be upon them) raised its foundations, praying: "Our Lord, accept from us" [al-Baqarah 2:127]. Today millions of Muslims of every colour and language circle it in Hajj and Umrah, all worshipping One Lord.' },
+      love: { ar: 'قال النبي ﷺ: «لا تُشَدُّ الرِّحالُ إلا إلى ثلاثةِ مساجد: المسجدِ الحرام، ومسجدِ الرسول ﷺ، والمسجدِ الأقصى» (رواه البخاري ومسلم). وأخبر ﷺ أنّ الصلاة في المسجد الحرام أفضلُ من مئة ألف صلاةٍ فيما سواه (رواه أحمد وابن ماجه، وصحّحه الألباني).', en: 'The Prophet ﷺ said: "Do not set out on a journey (for worship) except to three mosques: al-Masjid al-Haram, the Mosque of the Messenger ﷺ, and al-Masjid al-Aqsa" (Bukhari & Muslim). He ﷺ also told us that a prayer in al-Masjid al-Haram is better than 100,000 prayers elsewhere (Ahmad & Ibn Majah; graded sahih by al-Albani).' },
+      quiz: { q: { ar: 'مَن رفع قواعدَ الكعبة؟', en: 'Who raised the foundations of the Kaaba?' }, opts: [{ t: { ar: 'إبراهيم وإسماعيل عليهما السلام', en: 'Ibrahim and Isma\'il (AS)' }, ok: true }, { t: { ar: 'موسى وهارون عليهما السلام', en: 'Musa and Harun (AS)' } }, { t: { ar: 'نوح عليه السلام', en: 'Nuh (AS)' } }] } },
+
+    { id: 'nabawi', icon: '🟢', tag: 'haram', lat: 24.4672, lng: 39.6111, img: 'Al-Masjid_an-Nabawi_(The_Prophet\'s_Mosque)_in_Medina.jpg',
+      title: { ar: 'المسجد النبوي', en: 'The Prophet\'s Mosque' }, sub: { ar: 'المدينة المنوّرة، السعودية', en: 'Madinah, Saudi Arabia' },
+      back: { ar: '✨ بناه النبيُّ ﷺ بيديه الشريفتين مع أصحابه.<br>✨ فيه «الرّوضة الشريفة».<br>✨ كان أوّلُه من جذوع النخل وسقفُه من سعفه!', en: '✨ The Prophet ﷺ built it with his own blessed hands alongside his companions.<br>✨ It contains the noble "Rawdah".<br>✨ At first its pillars were palm trunks and its roof palm leaves!' },
+      story: { ar: 'لمّا هاجر النبيُّ ﷺ إلى المدينة سنة ١ هـ (٦٢٢م)، بنى مسجدَه أوّلَ ما بنى، وكان يحمل اللَّبِنَ (الطوب) مع أصحابه بنفسه. كان المسجد بيتَ الصلاة والعلم والشورى، ومنه انطلق نور الإسلام. واليوم تعلوه القبّة الخضراء التي تحتها قبرُه ﷺ.', en: 'When the Prophet ﷺ migrated to Madinah in 1 AH (622 CE), the first thing he built was his mosque — carrying the mud bricks himself with his companions. It was a house of prayer, learning and consultation, and the light of Islam spread from it. Today the Green Dome rises over his ﷺ grave.' },
+      love: { ar: 'قال ﷺ: «صلاةٌ في مسجدي هذا خيرٌ من ألفِ صلاةٍ فيما سواه إلا المسجدَ الحرام» (رواه البخاري ومسلم). وقال ﷺ: «ما بين بيتي ومنبري روضةٌ من رياض الجنّة» (رواه البخاري ومسلم).', en: 'He ﷺ said: "A prayer in this mosque of mine is better than a thousand prayers elsewhere, except al-Masjid al-Haram" (Bukhari & Muslim). And: "Between my house and my pulpit is a garden from the gardens of Paradise" (Bukhari & Muslim).' },
+      quiz: { q: { ar: 'ماذا فعل النبي ﷺ عند بناء المسجد؟', en: 'What did the Prophet ﷺ do while the mosque was being built?' }, opts: [{ t: { ar: 'حمل الطوب بنفسه مع أصحابه', en: 'He carried bricks himself with his companions' }, ok: true }, { t: { ar: 'جلس ينتظر حتى ينتهوا', en: 'He sat and waited for them to finish' } }, { t: { ar: 'أمر ببنائه من الذهب', en: 'He ordered it built of gold' } }] } },
+
+    { id: 'quba', icon: '🕌', tag: 'haram', lat: 24.4393, lng: 39.6173, img: 'Quba_Mosque.jpg',
+      title: { ar: 'مسجد قُباء', en: 'Quba Mosque' }, sub: { ar: 'المدينة المنوّرة، السعودية', en: 'Madinah, Saudi Arabia' },
+      back: { ar: '✨ أوّلُ مسجدٍ بُني في الإسلام.<br>✨ بناه النبيُّ ﷺ لمّا وصل مهاجرًا.<br>✨ كان ﷺ يزوره كلَّ يوم سبت.', en: '✨ The first mosque built in Islam.<br>✨ The Prophet ﷺ built it when he arrived as an emigrant.<br>✨ He ﷺ used to visit it every Saturday.' },
+      story: { ar: 'في رحلة الهجرة سنة ١ هـ، نزل النبيُّ ﷺ في قُباء قبل أن يدخل المدينة، وأقام فيها أيّامًا، وأسّس فيها أوّلَ مسجدٍ في الإسلام. ويرى كثيرٌ من العلماء أنّه المقصود بقوله تعالى: ﴿لَمَسْجِدٌ أُسِّسَ عَلَى التَّقْوَىٰ مِنْ أَوَّلِ يَوْمٍ﴾ [التوبة: ١٠٨].', en: 'During the Hijrah in 1 AH, the Prophet ﷺ stopped at Quba before entering Madinah, stayed there some days, and founded the first mosque in Islam. Many scholars say it is meant in Allah\'s words: "A mosque founded on righteousness from the first day" [at-Tawbah 9:108].' },
+      love: { ar: 'كان النبيُّ ﷺ يأتي مسجد قباء كلَّ سبتٍ ماشيًا وراكبًا فيصلّي فيه ركعتين (رواه البخاري ومسلم). وقال ﷺ: «مَن تطهّر في بيته ثم أتى مسجدَ قُباء فصلّى فيه صلاةً كان له كأجرِ عُمرة» (رواه ابن ماجه، وصحّحه الألباني).', en: 'The Prophet ﷺ would come to Quba every Saturday, walking or riding, and pray two rak\'ahs there (Bukhari & Muslim). He ﷺ said: "Whoever purifies himself at home, then comes to the mosque of Quba and prays in it, has a reward like that of an Umrah" (Ibn Majah; graded sahih by al-Albani).' },
+      quiz: { q: { ar: 'ما أوّل مسجد بُني في الإسلام؟', en: 'What was the first mosque built in Islam?' }, opts: [{ t: { ar: 'مسجد قباء', en: 'Quba Mosque' }, ok: true }, { t: { ar: 'الجامع الأزهر', en: 'Al-Azhar' } }, { t: { ar: 'جامع قرطبة', en: 'The Mosque of Córdoba' } }] } },
+
+    { id: 'uhud', icon: '⛰️', tag: 'haram', lat: 24.5030, lng: 39.6120, img: 'Mount_Uhud.jpg',
+      title: { ar: 'جبل أُحُد', en: 'Mount Uhud' }, sub: { ar: 'المدينة المنوّرة، السعودية', en: 'Madinah, Saudi Arabia' },
+      back: { ar: '✨ جبلٌ أحمرُ كبير شمالَ المدينة.<br>✨ قال عنه النبيُّ ﷺ: «جبلٌ يحبُّنا ونحبُّه».<br>✨ عنده وقعت غزوة أُحُد.', en: '✨ A large reddish mountain north of Madinah.<br>✨ The Prophet ﷺ said of it: "A mountain that loves us and we love it".<br>✨ The Battle of Uhud took place beside it.' },
+      story: { ar: 'في سنة ٣ هـ وقعت غزوة أُحُد. أمر النبيُّ ﷺ الرُّماةَ أن يبقوا على جبلٍ صغير (جبل الرُّماة) مهما حدث، فلمّا ترك بعضُهم مكانَهم تغيّرت المعركة. تعلّمنا من أُحُد أنّ طاعة القائد سببٌ للنصر. وهناك استُشهد حمزةُ عمُّ النبي ﷺ وسيّدُ الشهداء رضي الله عنه.', en: 'In 3 AH the Battle of Uhud took place. The Prophet ﷺ ordered the archers to stay on a small hill (the Archers\' Hill) no matter what; when some left their places, the battle turned. Uhud teaches us that obeying the leader is a cause of victory. There Hamzah, the Prophet\'s ﷺ uncle and master of martyrs, was martyred (may Allah be pleased with him).' },
+      love: { ar: 'قال النبيُّ ﷺ: «هذا جبلٌ يُحبُّنا ونُحبُّه» (رواه البخاري ومسلم). حتى الجبالُ تُحبّ أهلَ الإيمان!', en: 'The Prophet ﷺ said: "This is a mountain that loves us and we love it" (Bukhari & Muslim). Even mountains love the people of faith!' },
+      quiz: { q: { ar: 'ماذا نتعلّم من غزوة أُحُد؟', en: 'What do we learn from the Battle of Uhud?' }, opts: [{ t: { ar: 'طاعة القائد سببٌ للنصر', en: 'Obeying the leader is a cause of victory' }, ok: true }, { t: { ar: 'أن نترك أماكننا متى شئنا', en: 'That we can leave our posts whenever we like' } }, { t: { ar: 'أن الجبال لا تحبّ أحدًا', en: 'That mountains love no one' } }] } },
+
+    { id: 'hira', icon: '🌄', tag: 'haram', lat: 21.4576, lng: 39.8593, img: 'Jabal_al-Nour.jpg',
+      title: { ar: 'غار حِراء (جبل النور)', en: 'Cave Hira (Jabal an-Nour)' }, sub: { ar: 'مكّة المكرّمة، السعودية', en: 'Makkah, Saudi Arabia' },
+      back: { ar: '✨ فيه نزلت أوّلُ آيةٍ من القرآن: «اقرأ».<br>✨ كان النبيُّ ﷺ يخلو فيه يتفكّر ويتعبّد.<br>✨ الغار صغيرٌ يتّسع لبضعة أشخاص.', en: '✨ The first verse of the Quran came down here: "Read!"<br>✨ The Prophet ﷺ used to retreat here to reflect and worship.<br>✨ The cave is small — room for only a few people.' },
+      story: { ar: 'قبل البعثة كان النبيُّ ﷺ يذهب إلى غار حراء ليتفكّر في خلق الله بعيدًا عن أصنام مكّة. وفي رمضان، وهو في الأربعين من عمره (نحو ٦١٠م)، جاءه جبريلُ عليه السلام فقال: «اقرأ»، فنزلت: ﴿اقْرَأْ بِاسْمِ رَبِّكَ الَّذِي خَلَقَ﴾. كما روت عائشة رضي الله عنها في صحيح البخاري.', en: 'Before prophethood, the Prophet ﷺ would go to Cave Hira to reflect on Allah\'s creation, far from the idols of Makkah. In Ramadan, when he was forty (around 610 CE), Jibril (AS) came and said "Read!", and the verses came down: "Read in the name of your Lord who created" — as Aishah (RA) narrated in Sahih al-Bukhari.' },
+      love: { ar: 'من هنا بدأ نورُ القرآن! وأوّلُ كلمةٍ نزلت كانت «اقرأ» — فديننا دينُ العلم والقراءة. (لا يُشرع صعودُ الغار عبادةً، لكنّنا نتذكّر قصّته ونحمد الله على نعمة القرآن.)', en: 'The light of the Quran began here! The first word revealed was "Read" — our religion is a religion of knowledge. (Climbing to the cave is not an act of worship, but we remember its story and thank Allah for the Quran.)' },
+      quiz: { q: { ar: 'ما أوّل كلمة نزلت من القرآن؟', en: 'What was the first word of the Quran revealed?' }, opts: [{ t: { ar: 'اقرأ', en: 'Read (Iqra\')' }, ok: true }, { t: { ar: 'صلِّ', en: 'Pray' } }, { t: { ar: 'اسمع', en: 'Listen' } }] } },
+
+    { id: 'arafat', icon: '🤍', tag: 'haram', lat: 21.3549, lng: 39.9842, img: 'Mount_Arafat.jpg',
+      title: { ar: 'جبل عرفات', en: 'Mount Arafat' }, sub: { ar: 'قرب مكّة المكرّمة، السعودية', en: 'Near Makkah, Saudi Arabia' },
+      back: { ar: '✨ يقف فيه الحُجّاج يومَ التاسع من ذي الحجّة.<br>✨ قال ﷺ: «الحجُّ عرفة».<br>✨ فيه خطب النبيُّ ﷺ خطبةَ الوداع.', en: '✨ Pilgrims stand here on the 9th of Dhul-Hijjah.<br>✨ He ﷺ said: "Hajj is Arafah".<br>✨ The Prophet ﷺ gave his Farewell Sermon here.' },
+      story: { ar: 'في حجّة الوداع سنة ١٠ هـ وقف النبيُّ ﷺ بعرفة وخطب الناسَ خطبةً عظيمة، أوصاهم فيها بالصلاة، وبالنساء خيرًا، وأنّ الناس سواسيةٌ لا فضلَ لأحدٍ إلا بالتقوى. ويقف الحجّاج كلَّ عام في عرفة يدعون الله من الظهر حتى غروب الشمس.', en: 'In the Farewell Hajj of 10 AH the Prophet ﷺ stood at Arafah and gave a great sermon, urging people to keep the prayer, to treat women kindly, and teaching that people are equal — none is better except by taqwa. Every year pilgrims stand at Arafah, calling on Allah from noon until sunset.' },
+      love: { ar: 'قال ﷺ: «الحجُّ عرفة» (رواه الترمذي وغيره، وهو صحيح). ومَن لم يحجّ يصوم يومَ عرفة؛ قال ﷺ عن صيامه: «يُكفِّر السنةَ الماضيةَ والباقية» (رواه مسلم).', en: 'He ﷺ said: "Hajj is Arafah" (at-Tirmidhi and others; sahih). Those not on Hajj fast the Day of Arafah; he ﷺ said its fast "expiates the past year and the coming year" (Muslim).' },
+      quiz: { q: { ar: 'متى يقف الحجّاج في عرفة؟', en: 'When do pilgrims stand at Arafah?' }, opts: [{ t: { ar: 'يوم ٩ ذي الحجّة', en: 'On the 9th of Dhul-Hijjah' }, ok: true }, { t: { ar: 'أوّل يوم من رمضان', en: 'On the 1st of Ramadan' } }, { t: { ar: 'يوم العيد', en: 'On Eid day' } }] } },
+
+    { id: 'aqsa', icon: '🕌', tag: 'haram', lat: 31.7781, lng: 35.2354, img: 'Jerusalem-2013(2)-Aerial-Temple_Mount-(south_exposure).jpg',
+      title: { ar: 'المسجد الأقصى وقبّة الصخرة', en: 'Al-Masjid al-Aqsa & the Dome of the Rock' }, sub: { ar: 'القدس، فلسطين', en: 'Jerusalem (al-Quds), Palestine' },
+      back: { ar: '✨ المسجدُ الأقصى هو <b>كلُّ الساحة المباركة</b> بأسوارها، وفيها قبّةُ الصخرة الذهبية والمصلّى القِبلي.<br>✨ كان قِبلةَ المسلمين الأولى.<br>✨ إليه أُسري بالنبي ﷺ.', en: '✨ Al-Masjid al-Aqsa is <b>the whole blessed compound</b> within its walls — including the golden Dome of the Rock and the Qibli prayer hall.<br>✨ It was the Muslims\' first qiblah.<br>✨ The Prophet ﷺ was taken to it on the Night Journey.' },
+      story: { ar: 'سأل أبو ذرّ رضي الله عنه النبيَّ ﷺ عن أوّل مسجدٍ وُضع في الأرض، فقال: «المسجد الحرام»، ثم قال: «المسجد الأقصى»، وكان بينهما أربعون سنة (رواه البخاري ومسلم). وإليه أُسري بالنبي ﷺ: ﴿سُبْحَانَ الَّذِي أَسْرَىٰ بِعَبْدِهِ لَيْلًا مِّنَ الْمَسْجِدِ الْحَرَامِ إِلَى الْمَسْجِدِ الْأَقْصَى الَّذِي بَارَكْنَا حَوْلَهُ﴾ [الإسراء: ١]. وبنى الخليفة عبدُ الملك بن مروان قبّةَ الصخرة سنة ٧٢ هـ (٦٩١م).', en: 'Abu Dharr (RA) asked the Prophet ﷺ which mosque was set up first on earth. He said: "Al-Masjid al-Haram", then "Al-Masjid al-Aqsa" — forty years apart (Bukhari & Muslim). The Prophet ﷺ was taken to it by night: "Exalted is He who took His servant by night from al-Masjid al-Haram to al-Masjid al-Aqsa, whose surroundings We have blessed" [al-Isra\' 17:1]. Caliph Abd al-Malik ibn Marwan built the Dome of the Rock in 72 AH (691 CE).' },
+      love: { ar: 'هو ثالثُ المساجد التي تُشدّ إليها الرِّحال: «لا تُشَدُّ الرِّحالُ إلا إلى ثلاثةِ مساجد…» وذكر منها المسجدَ الأقصى (رواه البخاري ومسلم). نحبّه وندعو له دائمًا.', en: 'It is the third of the mosques one may journey to for worship: "Do not set out on a journey except to three mosques…" — al-Aqsa among them (Bukhari & Muslim). We love it and always pray for it.' },
+      quiz: { q: { ar: 'ما هو المسجد الأقصى بالضبط؟', en: 'What exactly is al-Masjid al-Aqsa?' }, opts: [{ t: { ar: 'كلُّ الساحة المباركة، وفيها قبّة الصخرة والمصلّى القبلي', en: 'The whole blessed compound, including the Dome of the Rock and the Qibli hall' }, ok: true }, { t: { ar: 'قبّة الصخرة وحدها', en: 'Only the Dome of the Rock' } }, { t: { ar: 'مسجدٌ في مكّة', en: 'A mosque in Makkah' } }] } },
+
+    { id: 'umayyad', icon: '🏛️', tag: 'sham', lat: 33.5116, lng: 36.3066, img: 'Umayyad_Mosque,_Damascus.jpg',
+      title: { ar: 'الجامع الأموي', en: 'The Umayyad Mosque' }, sub: { ar: 'دمشق، سوريا', en: 'Damascus, Syria' },
+      back: { ar: '✨ من أقدم وأعظم المساجد في العالم.<br>✨ جدرانه مزيّنة بفسيفساء أشجارٍ وأنهار.<br>✨ بجواره قبرُ صلاح الدين الأيوبي.', en: '✨ One of the oldest and greatest mosques in the world.<br>✨ Its walls are decorated with mosaics of trees and rivers.<br>✨ Salah al-Din\'s tomb lies beside it.' },
+      story: { ar: 'بناه الخليفةُ الوليد بن عبد الملك بين سنتي ٨٦ و٩٦ هـ (٧٠٥–٧١٥م)، وجمع له أمهرَ الصُّنّاع. فيه ثلاثُ مآذن، إحداها تُسمّى «مئذنة عيسى». وقد صار مدرسةً كبيرة درس فيها علماءُ كثيرون عبر القرون.', en: 'Caliph al-Walid ibn Abd al-Malik built it between 86 and 96 AH (705–715 CE), gathering the most skilled craftsmen. It has three minarets, one called the "Minaret of Isa". Over the centuries it became a great school where many scholars taught.' },
+      love: { ar: 'دمشق من بلاد الشام المباركة، والجامع الأموي شاهدٌ على عناية المسلمين بالمساجد وجمالها وإتقانها — «إنّ الله يحبّ إذا عمل أحدُكم عملًا أن يُتقنه» (رواه أبو يعلى والطبراني، وحسّنه الألباني).', en: 'Damascus is in the blessed land of Sham, and the Umayyad Mosque shows how Muslims cared for the beauty and excellence of mosques — "Allah loves that when one of you does a deed, he does it with excellence" (Abu Ya\'la & at-Tabarani; graded hasan by al-Albani).' },
+      quiz: { q: { ar: 'في أيّ مدينة يقع الجامع الأموي؟', en: 'In which city is the Umayyad Mosque?' }, opts: [{ t: { ar: 'دمشق', en: 'Damascus' }, ok: true }, { t: { ar: 'القاهرة', en: 'Cairo' } }, { t: { ar: 'بغداد', en: 'Baghdad' } }] } },
+
+    { id: 'amr', icon: '🌴', tag: 'sham', lat: 30.0103, lng: 31.2333, img: 'Mosque_of_Amr_ibn_al-As.jpg',
+      title: { ar: 'جامع عمرو بن العاص', en: 'Mosque of Amr ibn al-As' }, sub: { ar: 'الفسطاط، القاهرة، مصر', en: 'Fustat, Cairo, Egypt' },
+      back: { ar: '✨ أوّلُ مسجدٍ بُني في مصر وأفريقيا.<br>✨ بناه الصحابيُّ عمرو بن العاص رضي الله عنه.<br>✨ كان في البداية بسيطًا من جذوع النخل.', en: '✨ The first mosque built in Egypt and Africa.<br>✨ Built by the companion Amr ibn al-As (RA).<br>✨ At first it was simple, made of palm trunks.' },
+      story: { ar: 'بعد فتح مصر بنى عمرو بن العاص رضي الله عنه هذا المسجد سنة ٢١ هـ (٦٤١–٦٤٢م) في مدينة الفسطاط. يُروى أنّ عددًا من الصحابة شاركوا في تحديد قِبلته. ثم وُسِّع مرّاتٍ كثيرة، وما زال يُصلّى فيه حتى اليوم.', en: 'After Egypt was opened to Islam, Amr ibn al-As (RA) built this mosque in 21 AH (641–642 CE) in the city of Fustat. It is reported that several companions helped set its qiblah. It was enlarged many times and people still pray in it today.' },
+      love: { ar: 'نحبّه لأنّه أوّلُ بيتٍ لله في أرض مصر وأفريقيا، ومنه انتشر الإسلام والعلم في تلك البلاد.', en: 'We love it because it was the first house of Allah in Egypt and Africa, and from it Islam and knowledge spread in those lands.' },
+      quiz: { q: { ar: 'من بنى أوّل مسجد في مصر؟', en: 'Who built the first mosque in Egypt?' }, opts: [{ t: { ar: 'عمرو بن العاص رضي الله عنه', en: 'Amr ibn al-As (RA)' }, ok: true }, { t: { ar: 'صلاح الدين الأيوبي', en: 'Salah al-Din' } }, { t: { ar: 'هارون الرشيد', en: 'Harun al-Rashid' } }] } },
+
+    { id: 'azhar', icon: '📚', tag: 'sham', lat: 30.0457, lng: 31.2627, img: 'Al-Azhar_Mosque.jpg',
+      title: { ar: 'الجامع الأزهر', en: 'Al-Azhar Mosque' }, sub: { ar: 'القاهرة، مصر', en: 'Cairo, Egypt' },
+      back: { ar: '✨ مسجدٌ وجامعة معًا!<br>✨ من أقدم الجامعات في العالم.<br>✨ يأتيه الطلّاب من كلّ بلاد الدنيا.', en: '✨ A mosque and a university together!<br>✨ One of the oldest universities in the world.<br>✨ Students come to it from every country.' },
+      story: { ar: 'بُني الأزهر بين سنتي ٣٥٩ و٣٦١ هـ (٩٧٠–٩٧٢م)، ثم صار على مرّ القرون منارةً لعلوم القرآن والحديث والفقه واللغة العربية. كان الطلّاب يعيشون في «أروقة» حوله، ولكلّ بلدٍ رواقُه، ويتعلّمون مجّانًا.', en: 'Al-Azhar was built between 359 and 361 AH (970–972 CE), and over the centuries it became a beacon for the sciences of Quran, hadith, fiqh and Arabic. Students lived in "riwaqs" (halls) around it — each country with its own — and studied for free.' },
+      love: { ar: 'قال ﷺ: «مَن سلك طريقًا يلتمس فيه علمًا سهّل الله له به طريقًا إلى الجنّة» (رواه مسلم). الأزهر مثالٌ على حبّ المسلمين للعلم.', en: 'He ﷺ said: "Whoever takes a path seeking knowledge, Allah makes easy for him a path to Paradise" (Muslim). Al-Azhar is an example of Muslims\' love of knowledge.' },
+      quiz: { q: { ar: 'ما الذي يميّز الأزهر؟', en: 'What makes al-Azhar special?' }, opts: [{ t: { ar: 'إنّه مسجدٌ وجامعة لطلب العلم', en: 'It is a mosque and a university for learning' }, ok: true }, { t: { ar: 'إنّه قصرٌ للملوك', en: 'It is a palace for kings' } }, { t: { ar: 'إنّه سوقٌ كبير', en: 'It is a big market' } }] } },
+
+    { id: 'baghdad', icon: '📜', tag: 'sham', lat: 33.3152, lng: 44.3661, img: '',
+      title: { ar: 'بيت الحكمة', en: 'The House of Wisdom' }, sub: { ar: 'بغداد، العراق', en: 'Baghdad, Iraq' },
+      back: { ar: '✨ مكتبةٌ ومركزُ علمٍ عظيم في بغداد العبّاسية.<br>✨ فيها تُرجمت كتبُ العلوم إلى العربية.<br>✨ <b>لم يبقَ من مبناه شيءٌ اليوم</b> — بقي علمُه!', en: '✨ A great library and centre of learning in Abbasid Baghdad.<br>✨ Books of science were translated into Arabic there.<br>✨ <b>Nothing of its building survives today</b> — but its knowledge does!' },
+      story: { ar: 'بنى الخليفةُ أبو جعفر المنصور بغدادَ «المدينة المدوّرة» سنة ١٤٥ هـ (٧٦٢م). وازدهر بيتُ الحكمة في عهد الخليفة المأمون (١٩٨–٢١٨ هـ / ٨١٣–٨٣٣م)، وعمل فيه علماءُ مثل الخوارزمي الذي ألّف كتابًا في «الجبر» — ومنه جاءت كلمة Algebra! ثم دمّر المغولُ بغدادَ سنة ٦٥٦ هـ (١٢٥٨م)، فلم يبقَ للمبنى أثر.', en: 'Caliph Abu Ja\'far al-Mansur built Baghdad, "the Round City", in 145 AH (762 CE). The House of Wisdom flourished under Caliph al-Ma\'mun (198–218 AH / 813–833 CE), where scholars like al-Khwarizmi worked — his book on "al-Jabr" gave us the word Algebra! The Mongols destroyed Baghdad in 656 AH (1258 CE), and no trace of the building remains.' },
+      love: { ar: 'يذكّرنا بيت الحكمة بأنّ أوّل ما نزل «اقرأ»، وأنّ المسلمين علّموا العالمَ الرياضيات والفلك والطبّ. المباني قد تزول، لكنّ العلم النافع يبقى.', en: 'The House of Wisdom reminds us that the first revelation was "Read", and that Muslims taught the world mathematics, astronomy and medicine. Buildings may vanish, but beneficial knowledge remains.' },
+      quiz: { q: { ar: 'أيّ كلمة جاءت من كتاب الخوارزمي؟', en: 'Which word came from al-Khwarizmi\'s book?' }, opts: [{ t: { ar: 'الجبر (Algebra)', en: 'Algebra (al-Jabr)' }, ok: true }, { t: { ar: 'الكمبيوتر', en: 'Computer' } }, { t: { ar: 'الهاتف', en: 'Telephone' } }] } },
+
+    { id: 'kairouan', icon: '🧱', tag: 'maghrib', lat: 35.6812, lng: 10.1036, img: 'Kairouan_Mosque_Stitched_Panorama.jpg',
+      title: { ar: 'جامع عقبة بن نافع', en: 'Great Mosque of Kairouan' }, sub: { ar: 'القيروان، تونس', en: 'Kairouan, Tunisia' },
+      back: { ar: '✨ أسّسه التابعيُّ القائد عقبة بن نافع.<br>✨ مئذنته من أقدم المآذن القائمة في العالم.<br>✨ ساحته تجمع ماء المطر في خزّانات تحت الأرض!', en: '✨ Founded by the leader Uqbah ibn Nafi\'.<br>✨ Its minaret is among the oldest standing minarets in the world.<br>✨ Its courtyard collects rainwater into underground cisterns!' },
+      story: { ar: 'أسّس عقبةُ بن نافع مدينةَ القيروان ومسجدَها سنة ٥٠ هـ (٦٧٠م)، لتكون منطلقًا لنشر الإسلام في شمال أفريقيا. وأُعيد بناؤه وتوسيعه بعد ذلك، وصار مدرسةً كبيرة للعلماء في المغرب الإسلامي.', en: 'Uqbah ibn Nafi\' founded the city of Kairouan and its mosque in 50 AH (670 CE), as a base for spreading Islam across North Africa. It was later rebuilt and enlarged, and became a great school for scholars of the Islamic West.' },
+      love: { ar: 'يعلّمنا هذا الجامع حُسنَ التدبير: حتى قطرةُ المطر لا تضيع! وقد نهى النبيُّ ﷺ عن الإسراف في الماء ولو كنّا على نهرٍ جارٍ.', en: 'This mosque teaches good planning: not even a raindrop is wasted! The Prophet ﷺ taught us not to waste water, even at a flowing river.' },
+      quiz: { q: { ar: 'ماذا تفعل ساحة جامع القيروان بماء المطر؟', en: 'What does the Kairouan courtyard do with rainwater?' }, opts: [{ t: { ar: 'تجمعه في خزّانات تحت الأرض', en: 'Collects it in underground cisterns' }, ok: true }, { t: { ar: 'تتركه يضيع', en: 'Lets it go to waste' } }, { t: { ar: 'تحوّله إلى ثلج', en: 'Turns it into snow' } }] } },
+
+    { id: 'qarawiyyin', icon: '🎓', tag: 'maghrib', lat: 34.0646, lng: -4.9736, img: 'Al-Qarawiyyin_Mosque.jpg',
+      title: { ar: 'جامع القرويّين', en: 'Al-Qarawiyyin' }, sub: { ar: 'فاس، المغرب', en: 'Fez, Morocco' },
+      back: { ar: '✨ أسّسته امرأةٌ صالحة: فاطمة الفِهريّة.<br>✨ يُعدّ أقدمَ مؤسّسة تعليمية ما زالت تعمل في العالم.<br>✨ بنته من مال ميراثها.', en: '✨ Founded by a righteous woman: Fatimah al-Fihriyyah.<br>✨ Considered the oldest educational institution still operating in the world.<br>✨ She built it with her inheritance.' },
+      story: { ar: 'هاجرت فاطمة الفهريّة مع عائلتها من القيروان إلى فاس، ولمّا ورثت مالًا أنفقته في بناء مسجدٍ كبير سنة ٢٤٥ هـ (٨٥٩م). صار المسجد جامعةً يتعلّم فيها الطلّاب القرآن والفقه والرياضيات والفلك، وما زال يعلّم حتى اليوم.', en: 'Fatimah al-Fihriyyah moved with her family from Kairouan to Fez. When she inherited wealth, she spent it building a great mosque in 245 AH (859 CE). It became a university where students learned Quran, fiqh, mathematics and astronomy — and it still teaches today.' },
+      love: { ar: 'قال ﷺ: «إذا مات الإنسانُ انقطع عملُه إلا من ثلاث: صدقةٍ جارية، أو علمٍ يُنتفع به، أو ولدٍ صالحٍ يدعو له» (رواه مسلم). القرويّين صدقةٌ جارية منذ أكثر من ألف سنة!', en: 'He ﷺ said: "When a person dies, his deeds end except for three: ongoing charity, beneficial knowledge, or a righteous child who prays for him" (Muslim). Al-Qarawiyyin has been ongoing charity for over a thousand years!' },
+      quiz: { q: { ar: 'من أسّست جامع القرويّين؟', en: 'Who founded al-Qarawiyyin?' }, opts: [{ t: { ar: 'فاطمة الفهريّة', en: 'Fatimah al-Fihriyyah' }, ok: true }, { t: { ar: 'ملكة الأندلس', en: 'A queen of al-Andalus' } }, { t: { ar: 'تاجرٌ من بغداد', en: 'A merchant from Baghdad' } }] } },
+
+    { id: 'cordoba', icon: '🌙', tag: 'maghrib', lat: 37.8789, lng: -4.7794, img: 'Mezquita_de_Córdoba_desde_el_aire_(Córdoba,_España).jpg',
+      title: { ar: 'جامع قرطبة', en: 'The Great Mosque of Córdoba' }, sub: { ar: 'قرطبة، الأندلس (إسبانيا)', en: 'Córdoba, al-Andalus (Spain)' },
+      back: { ar: '✨ فيه مئاتُ الأعمدة وأقواسٌ بالأحمر والأبيض.<br>✨ بدأ بناءه عبد الرحمن الداخل.<br>✨ كانت قرطبة من أكبر مدن العالم علمًا.', en: '✨ It has hundreds of columns and red-and-white arches.<br>✨ Abd al-Rahman al-Dakhil began building it.<br>✨ Córdoba was one of the world\'s great cities of learning.' },
+      story: { ar: 'بدأ عبدُ الرحمن الداخل بناءَ الجامع سنة ١٧٠ هـ (٧٨٦م)، ثم وسّعه الأمراء من بعده حتى صار من أكبر مساجد الدنيا. كانت قرطبة يومها مدينةً فيها مكتباتٌ ضخمة وشوارع مضاءة. وبعد سقوط قرطبة سنة ٦٣٣ هـ (١٢٣٦م) حُوِّل الجامع إلى كنيسة.', en: 'Abd al-Rahman al-Dakhil began the mosque in 170 AH (786 CE), and later rulers enlarged it until it was one of the largest mosques on earth. Córdoba then had huge libraries and lit streets. After Córdoba fell in 633 AH (1236 CE), the mosque was turned into a cathedral.' },
+      love: { ar: 'يذكّرنا جامع قرطبة بحضارةٍ عظيمة بناها المسلمون في الأندلس، وبأنّ النِّعَم تُحفظ بالشكر والوحدة والعمل الصالح.', en: 'The Mosque of Córdoba reminds us of a great civilisation Muslims built in al-Andalus — and that blessings are kept through gratitude, unity and good deeds.' },
+      quiz: { q: { ar: 'بماذا يشتهر جامع قرطبة؟', en: 'What is the Mosque of Córdoba famous for?' }, opts: [{ t: { ar: 'أعمدته الكثيرة وأقواسه الحمراء والبيضاء', en: 'Its many columns and red-and-white arches' }, ok: true }, { t: { ar: 'قبّته الذهبية', en: 'Its golden dome' } }, { t: { ar: 'مآذنه الستّ', en: 'Its six minarets' } }] } },
+
+    { id: 'alhambra', icon: '🏰', tag: 'maghrib', lat: 37.1761, lng: -3.5881, img: 'Dawn_Charles_V_Palace_Alhambra_Granada_Andalusia_Spain.jpg',
+      title: { ar: 'قصر الحمراء', en: 'The Alhambra' }, sub: { ar: 'غرناطة، الأندلس (إسبانيا)', en: 'Granada, al-Andalus (Spain)' },
+      back: { ar: '✨ كُتبت على جدرانه عبارة «ولا غالبَ إلا الله» آلافَ المرّات.<br>✨ فيه «بهو الأسود» ونوافير جميلة.<br>✨ آخرُ ما بقي للمسلمين في الأندلس.', en: '✨ "There is no victor but Allah" is written on its walls thousands of times.<br>✨ It has the Court of the Lions and beautiful fountains.<br>✨ The last stronghold of Muslims in al-Andalus.' },
+      story: { ar: 'بنى ملوكُ بني نصر (بني الأحمر) معظمَ قصر الحمراء في القرنين السابع والثامن الهجريين (١٣–١٤م). وكانت غرناطة آخرَ ممالك المسلمين في الأندلس، حتى سُلّمت سنة ٨٩٧ هـ (١٤٩٢م).', en: 'The Nasrid kings built most of the Alhambra in the 7th–8th centuries AH (13th–14th CE). Granada was the last Muslim kingdom in al-Andalus, until it was handed over in 897 AH (1492 CE).' },
+      love: { ar: 'شعارُه «ولا غالبَ إلا الله» يعلّمنا أنّ القوّة الحقيقية لله وحده، وأنّ ضياعَ الأندلس كان بعد تفرّق المسلمين — فالوحدةُ قوّة.', en: 'Its motto "There is no victor but Allah" teaches that true power belongs to Allah alone — and al-Andalus was lost after Muslims became divided. Unity is strength.' },
+      quiz: { q: { ar: 'ما العبارة المكتوبة كثيرًا في قصر الحمراء؟', en: 'Which phrase is written many times in the Alhambra?' }, opts: [{ t: { ar: 'ولا غالبَ إلا الله', en: 'There is no victor but Allah' }, ok: true }, { t: { ar: 'مرحبًا بكم', en: 'Welcome' } }, { t: { ar: 'قصر الملك', en: 'The king\'s palace' } }] } },
+
+    { id: 'istanbul', icon: '💙', tag: 'asia', lat: 41.0054, lng: 28.9768, img: 'Blue_Mosque_Courtyard_Dusk_Wikimedia_Commons.jpg',
+      title: { ar: 'جامع السلطان أحمد وآيا صوفيا', en: 'Sultan Ahmed Mosque & Hagia Sophia' }, sub: { ar: 'إسطنبول، تركيا', en: 'Istanbul, Türkiye' },
+      back: { ar: '✨ يُسمّى «الجامع الأزرق» لبلاطه الأزرق الجميل.<br>✨ له ستُّ مآذن.<br>✨ أمامه آيا صوفيا التي صارت مسجدًا بعد فتح القسطنطينية.', en: '✨ Called the "Blue Mosque" for its beautiful blue tiles.<br>✨ It has six minarets.<br>✨ Facing it is Hagia Sophia, which became a mosque after the conquest of Constantinople.' },
+      story: { ar: 'فتح السلطانُ محمد الفاتح القسطنطينيةَ سنة ٨٥٧ هـ (١٤٥٣م) وهو شابٌّ في الحادية والعشرين، فحوّل كنيسة آيا صوفيا إلى مسجد. وبعد نحو ١٥٠ سنة بنى السلطانُ أحمد الأول جامعَه المقابل لها بين ١٦٠٩ و١٦١٦م، وزيّنه بأكثر من عشرين ألف بلاطةٍ زرقاء.', en: 'Sultan Mehmed the Conqueror opened Constantinople in 857 AH (1453 CE) when he was just twenty-one, and turned the church of Hagia Sophia into a mosque. About 150 years later, Sultan Ahmed I built his mosque facing it (1609–1616 CE), decorating it with more than twenty thousand blue tiles.' },
+      love: { ar: 'تعلّمنا قصّةُ محمد الفاتح أنّ الشباب يصنعون الإنجازات العظيمة حين يجتهدون ويتوكّلون على الله.', en: 'The story of Mehmed the Conqueror teaches us that young people achieve great things when they work hard and rely on Allah.' },
+      quiz: { q: { ar: 'لماذا يُسمّى «الجامع الأزرق»؟', en: 'Why is it called the "Blue Mosque"?' }, opts: [{ t: { ar: 'لبلاطه الأزرق في الداخل', en: 'For the blue tiles inside' }, ok: true }, { t: { ar: 'لأنّه في البحر', en: 'Because it is in the sea' } }, { t: { ar: 'لأنّ سقفه سماء', en: 'Because its roof is the sky' } }] } },
+
+    { id: 'badshahi', icon: '🔴', tag: 'asia', lat: 31.5880, lng: 74.3100, img: 'Badshahi_Mosque_front_picture.jpg',
+      title: { ar: 'مسجد بادشاهي', en: 'Badshahi Mosque' }, sub: { ar: 'لاهور، باكستان', en: 'Lahore, Pakistan' },
+      back: { ar: '✨ بُني من الحجر الأحمر وقبابٍ من الرخام الأبيض.<br>✨ ساحته تتّسع لعشرات الآلاف من المصلّين.<br>✨ بناه السلطان المغولي أورنكزيب.', en: '✨ Built of red sandstone with white marble domes.<br>✨ Its courtyard holds tens of thousands of worshippers.<br>✨ Built by the Mughal emperor Aurangzeb.' },
+      story: { ar: 'بناه السلطانُ أورنكزيب عالمكير سنة ١٠٨٤ هـ (١٦٧٣م) في مدينة لاهور. وكان من أكبر مساجد العالم وقتها، وما زال يجمع المصلّين في الأعياد والجُمَع.', en: 'Emperor Aurangzeb Alamgir built it in 1084 AH (1673 CE) in Lahore. It was among the largest mosques in the world at the time, and still gathers worshippers on Eids and Fridays.' },
+      love: { ar: 'وصل الإسلام إلى بلاد الهند والسند، وبنى المسلمون هناك مساجدَ رائعة. المسلمون أمّةٌ واحدة من الشرق إلى الغرب!', en: 'Islam reached the lands of India and Sindh, and Muslims built wonderful mosques there. Muslims are one Ummah from east to west!' },
+      quiz: { q: { ar: 'في أيّ مدينة يقع مسجد بادشاهي؟', en: 'Which city is the Badshahi Mosque in?' }, opts: [{ t: { ar: 'لاهور', en: 'Lahore' }, ok: true }, { t: { ar: 'فاس', en: 'Fez' } }, { t: { ar: 'دمشق', en: 'Damascus' } }] } },
+
+    { id: 'djenne', icon: '🟫', tag: 'asia', lat: 13.9053, lng: -4.5554, img: 'Great_Mosque_of_Djenné_1.jpg',
+      title: { ar: 'جامع جِنّي الكبير', en: 'Great Mosque of Djenné' }, sub: { ar: 'جِنّي، مالي', en: 'Djenné, Mali' },
+      back: { ar: '✨ أكبرُ مبنى من الطين في العالم!<br>✨ كلَّ سنة يجتمع أهلُ المدينة ليُعيدوا تطيينَه معًا.<br>✨ الأخشاب البارزة من جدرانه سلالمُ ثابتة للعمّال.', en: '✨ The largest mud-brick building in the world!<br>✨ Every year the whole town gathers to re-plaster it together.<br>✨ The wooden beams sticking out are built-in ladders for the workers.' },
+      story: { ar: 'وصل الإسلام إلى غرب أفريقيا عبر التجّار والعلماء منذ قرونٍ طويلة. وبُني المسجدُ الحالي في جِنّي سنة ١٩٠٧م على طراز المسجد القديم. وفي مهرجانٍ سنويّ يحمل الكبارُ والصغار الطينَ ليحموا مسجدهم من أمطار الصيف.', en: 'Islam reached West Africa through traders and scholars many centuries ago. The present mosque in Djenné was built in 1907 CE in the style of the old one. In a yearly festival, adults and children carry mud to protect their mosque from the summer rains.' },
+      love: { ar: 'مثالٌ جميل على التعاون: ﴿وَتَعَاوَنُوا عَلَى الْبِرِّ وَالتَّقْوَىٰ﴾ [المائدة: ٢] — حتى الأطفال يشاركون في خدمة بيت الله!', en: 'A beautiful example of cooperation: "And cooperate in righteousness and piety" [al-Ma\'idah 5:2] — even children help serve the house of Allah!' },
+      quiz: { q: { ar: 'مِمّ بُني جامع جِنّي؟', en: 'What is the Djenné mosque built from?' }, opts: [{ t: { ar: 'من الطين', en: 'Mud' }, ok: true }, { t: { ar: 'من الزجاج', en: 'Glass' } }, { t: { ar: 'من الحديد', en: 'Iron' } }] } }
+  ];
+
+  var ITEMS = D.map(function (d, i) {
+    return {
+      id: d.id, num: i + 1, icon: d.icon, tag: d.tag, lat: d.lat, lng: d.lng,
+      title: d.title, sub: d.sub, back: d.back,
+      sections: [
+        { icon: '📜', h: { ar: 'قصّته', en: 'Its story' }, html: d.story },
+        { icon: '📷', h: { ar: 'صورة', en: 'Photo' }, html: { ar: d.img ? TRMap.img(d.img, d.icon, d.title.ar) : '<div class="trm-fig noimg"><span class="trm-emoji">' + d.icon + '</span></div><p style="text-align:center;color:var(--muted);font-size:.85rem">لم يبقَ من المبنى شيءٌ نصوّره — بقي العلم.</p>', en: d.img ? TRMap.img(d.img, d.icon, d.title.en) : '<div class="trm-fig noimg"><span class="trm-emoji">' + d.icon + '</span></div><p style="text-align:center;color:var(--muted);font-size:.85rem">No building is left to photograph — the knowledge remains.</p>' } },
+        { icon: '💚', h: { ar: 'لماذا نحبّه؟', en: 'Why do we love it?' }, html: d.love },
+        { icon: '🗺️', h: { ar: 'أين هو؟', en: 'Where is it?' }, html: {
+          ar: '<p>' + d.sub.ar + '</p><div class="tr-actions" style="justify-content:flex-start"><button class="tr-btn ghost" onclick="LM.goMap(' + i + ')">🗺️ أرِني على الخريطة</button><a class="tr-btn ghost" target="_blank" rel="noopener" href="' + TRMap.osm(d.lat, d.lng) + '">🔗 OpenStreetMap</a></div>',
+          en: '<p>' + d.sub.en + '</p><div class="tr-actions" style="justify-content:flex-start"><button class="tr-btn ghost" onclick="LM.goMap(' + i + ')">🗺️ Show me on the map</button><a class="tr-btn ghost" target="_blank" rel="noopener" href="' + TRMap.osm(d.lat, d.lng) + '">🔗 OpenStreetMap</a></div>' } }
+      ],
+      quiz: d.quiz
+    };
+  });
+
+  /* ── the map panel ── */
+  var map = null, markers = [], pending = null, mapEl = null, TRref = null;
+  function popup(i) {
+    var it = ITEMS[i];
+    return '<b>' + it.icon + ' ' + TRref.esc(TRref.t(it.title)) + '</b><small>' + TRref.esc(TRref.t(it.sub)) + '</small><br><button class="trm-pop-btn" onclick="LM.openCard(' + i + ')">' + TRref.tx('افتح البطاقة', 'Open the card') + '</button>';
+  }
+  function drawSketch(cur) {
+    TRMap.sketch(mapEl, ITEMS, { current: cur, onPick: function (k) { LM.openCard(k); }, offline: TRref.tx('خريطة مبسّطة — الخريطة التفاعلية تحتاج اتصالًا بالإنترنت', 'Simple sketch — the interactive map needs an internet connection') });
+  }
+  function initMap() {
+    if (map || !mapEl) { focus(); return; }
+    TRMap.load(function (ok) {
+      if (!mapEl || map) { focus(); return; }
+      if (!ok) { map = 'sketch'; drawSketch(pending); return; }
+      map = TRMap.leaflet(mapEl);
+      markers = ITEMS.map(function (it, i) { return L.marker([it.lat, it.lng], { title: TRref.t(it.title), icon: TRMap.pin(i + 1) }).addTo(map).bindPopup(popup(i)); });
+      map.fitBounds(L.latLngBounds(ITEMS.map(function (it) { return [it.lat, it.lng]; })), { padding: [20, 20] });
+      setTimeout(function () { map.invalidateSize(); focus(); }, 60);
+    });
+  }
+  function focus() {
+    if (pending == null || !map) return;
+    var i = pending; pending = null;
+    if (map === 'sketch') { drawSketch(i); return; }
+    map.invalidateSize();
+    var calm = document.documentElement.classList.contains('calm');
+    map[calm ? 'setView' : 'flyTo']([ITEMS[i].lat, ITEMS[i].lng], 14, calm ? {} : { duration: 1.6 });
+    markers[i].openPopup();
+  }
+
+  window.LM = {
+    goMap: function (i) {
+      pending = i;
+      var c = document.getElementById('trClose'); if (c && document.getElementById('trView').classList.contains('open')) c.click();
+      var tab = document.querySelector('.tr-tab[data-tab="map"]'); if (tab) tab.click();
+      window.scrollTo(0, 0);
+      if (map) setTimeout(focus, 80);
+    },
+    openCard: function (i) { if (window.TR) TR.open(i); }
+  };
+
+  window.TR_PAGE = {
+    id: 'landmarks', icon: '🕋', color: '#2980B9',
+    back: { href: '../heroes-fortress/fortress.html', label: { ar: 'حصن الأبطال', en: "Heroes' Fortress" } },
+    next: { href: 'tours.html', icon: '🧭', title: { ar: "جولات افتراضية في التاريخ", en: "Virtual History Tours" }, why: { ar: "عرفتَ المعالم — الآن سافِر بينها على الخريطة محطّةً محطّة.", en: "You know the landmarks — now travel between them on the map, station by station." } },
+    seerah: {"hira": "cave", "aqsa": "israa", "quba": "hijrah", "nabawi": "masjid", "uhud": "uhud", "kaaba": "fath", "arafat": "farewell"},
+    title: { ar: 'المعالم الإسلامية والخرائط', en: 'Islamic Landmarks & Maps' },
+    intro: { ar: 'تعرّف على بيوت الله وأماكنَ صنعت تاريخنا: اقلب البطاقة، شاهد الصورة، ثم ابحث عنها على الخريطة 🗺️', en: 'Meet the houses of Allah and places that shaped our history: flip the card, see the photo, then find it on the map 🗺️' },
+    kind: 'cards',
+    filters: [
+      { id: 'haram', label: { ar: 'الحرمان والأقصى', en: 'Two Harams & al-Aqsa' } },
+      { id: 'sham', label: { ar: 'الشام ومصر والعراق', en: 'Sham, Egypt & Iraq' } },
+      { id: 'maghrib', label: { ar: 'المغرب والأندلس', en: 'Maghrib & al-Andalus' } },
+      { id: 'asia', label: { ar: 'آسيا وأفريقيا', en: 'Asia & Africa' } }
+    ],
+    items: ITEMS,
+    panels: [{ id: 'map', icon: '🗺️', label: { ar: 'الخريطة', en: 'Map' }, render: function (el, TR) {
+      TRref = TR; map = null; markers = [];
+      el.innerHTML = '<div class="trm-map" id="lmMap"></div><ul class="trm-list">' + ITEMS.map(function (it, i) {
+        return '<li><span class="n">' + (i + 1) + '</span><button onclick="LM.openCard(' + i + ')">' + it.icon + ' ' + TR.esc(TR.t(it.title)) + '</button><a target="_blank" rel="noopener" href="' + TRMap.osm(it.lat, it.lng) + '">OSM ↗</a></li>';
+      }).join('') + '</ul>' + TRMap.credit(TR.ar());
+      mapEl = el.querySelector('#lmMap');
+    } }],
+    onTab: function (tab) { if (tab === 'map') initMap(); },
+    onRender: function (TR) {
+      TRref = TR;
+      var k = document.querySelector('[data-panel="kids"]');
+      if (k && !k.querySelector('.trm-credit')) k.insertAdjacentHTML('beforeend', TRMap.credit(TR.ar()));
+    },
+    parents: {
+      ar: '<h3>كيف نستفيد من بطاقات المعالم؟</h3><ul><li>اختاروا <b>معلمًا واحدًا في الأسبوع</b>، واقرؤوا قصّته معًا، ثم ابحثوا عنه على الخريطة.</li><li>اربطوا المعلم بعبادة: الكعبة ← القبلة في الصلاة، عرفات ← صيام يوم عرفة، الأقصى ← الدعاء له.</li><li>اسألوا أسئلةً مفتوحة: «لو زرتَ هذا المكان، ماذا تحبّ أن تفعل فيه؟»</li></ul><h3>نشاط عائلي: خريطة الأمّة</h3><ul><li>اطبعوا خريطةً للعالم وعلّقوها في البيت.</li><li>كلّما تعرّف الطفل على معلم، يلصق نجمةً أو صورةً صغيرة مكانه.</li><li>في آخر الشهر: «جولة» يشرح فيها الطفل لكم ما تعلّمه.</li></ul><div class="tr-note">💡 ركّزوا على الحبّ والانتماء لا على الحفظ: «هذه بيوت الله، وهؤلاء إخوتنا في كلّ مكان».</div><h3>ملاحظة عن الصور والخرائط</h3><p>الصور من ويكيميديا كومنز بتراخيص حرّة، والخرائط من OpenStreetMap — كلّها مجّانية. تحتاج الخريطة التفاعلية إلى اتصال بالإنترنت، وبدونه تظهر خريطةٌ مبسّطة.</p>',
+      en: '<h3>How to use the landmark cards</h3><ul><li>Choose <b>one landmark a week</b>, read its story together, then find it on the map.</li><li>Link each landmark to worship: the Kaaba → the qiblah in prayer, Arafat → fasting the Day of Arafah, al-Aqsa → praying for it.</li><li>Ask open questions: "If you visited this place, what would you love to do there?"</li></ul><h3>Family activity: the Ummah map</h3><ul><li>Print a world map and hang it at home.</li><li>Each time the child learns a landmark, they stick a star or small picture on it.</li><li>At month\'s end: a "tour" where the child explains what they learned.</li></ul><div class="tr-note">💡 Focus on love and belonging, not memorizing: "These are Allah\'s houses, and these are our brothers and sisters everywhere."</div><h3>About photos & maps</h3><p>Photos are from Wikimedia Commons under free licences; maps are from OpenStreetMap — all free. The interactive map needs an internet connection; without it a simple sketch map appears.</p>'
+    },
+    worksheet: {
+      ar: '<h3>✏️ ورقة نشاط: مستكشفُ المعالم</h3><p>اسم المعلم الذي تعرّفتُ عليه:</p><div class="ws-line"></div><p>في أيّ مدينة وبلد يقع؟</p><div class="ws-line"></div><p>شيءٌ مدهش عرفتُه عنه:</p><div class="ws-line"></div><div class="ws-line"></div><p>ارسم المعلم كما تتخيّله:</p><div class="ws-box"></div><p>لو زرتُه، سأفعل فيه:</p><div class="ws-line"></div><p>دعاءٌ أدعو به لأهل هذا البلد:</p><div class="ws-line"></div>',
+      en: '<h3>✏️ Activity sheet: Landmark explorer</h3><p>The landmark I learned about:</p><div class="ws-line"></div><p>Which city and country is it in?</p><div class="ws-line"></div><p>An amazing thing I learned about it:</p><div class="ws-line"></div><div class="ws-line"></div><p>Draw the landmark as you imagine it:</p><div class="ws-box"></div><p>If I visited it, I would:</p><div class="ws-line"></div><p>A du\'a I make for the people of that land:</p><div class="ws-line"></div>'
+    }
+  };
+})();
+</script>
+<script src="tr.js"></script>
+<script defer src="../shared/mk-system.js"></script>
+<script defer src="../shared/mk-journeys.js"></script>
+<script defer src="../shared/mk-bag.js"></script>
+</body>
+</html>
