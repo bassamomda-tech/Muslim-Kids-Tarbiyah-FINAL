@@ -35,12 +35,12 @@
     if (h) D.H.forEach(function (e) { if (e.d === h.d && e.m === h.m) out.push(Object.assign({ cal: 'H' }, e)); });
     return out;
   }
-  /* every event whose GREGORIAN day and month fall on date d: the G list, plus Hijri-list events with an exact
-     recorded Gregorian date from 1582 on (earlier dates are Julian, so they are not "this day" in today's calendar) */
+  /* every event whose GREGORIAN day and month fall on date d: the G list, plus Hijri-list events with a recorded
+     Gregorian date (before 1582 that is the Julian date historians use, e.g. Hattin 4 July 1187) */
   function eventsOnG(d) {
     d = noon(d); var D = data(), out = [], gd = d.getDate(), gm = d.getMonth() + 1;
     (D.G || []).forEach(function (e) { if (e.gd === gd && e.gm === gm) out.push(Object.assign({ cal: 'G' }, e)); });
-    D.H.forEach(function (e) { if (e.g && e.g.y >= 1582 && e.g.d === gd && e.g.m === gm) out.push(Object.assign({ cal: 'H', via: 'G' }, e)); });
+    D.H.forEach(function (e) { if (e.g && e.g.d === gd && e.g.m === gm) out.push(Object.assign({ cal: 'H', via: 'G' }, e)); });
     return out;
   }
   function upcomingG(n, from) {
