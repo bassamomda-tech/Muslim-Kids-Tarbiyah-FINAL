@@ -157,7 +157,10 @@
     { tr:'adhkar',          ic:'📿', n:{ar:'معاني الأذكار والأدعية',en:'Meanings of Adhkar & Duas'}, c:'#1F7A4D', t:34 },
     { tr:'eids',            ic:'🎉', n:{ar:'الأعياد في العبادات',en:'Eids in Worship'}, c:'#D4A017', t:10 },
     { tr:'landmarks',       ic:'🕋', n:{ar:'المعالم والخرائط',en:'Landmarks & Maps'}, c:'#2980B9', t:18 },
-    { tr:'tours',           ic:'🧭', n:{ar:'جولات افتراضية',en:'Virtual Tours'}, c:'#E67E22', t:5 }
+    { tr:'tours',           ic:'🧭', n:{ar:'جولات افتراضية',en:'Virtual Tours'}, c:'#E67E22', t:5 },
+    /* أنشطة أنوس: each of the 100 activities played at least once (written by corners/activities/scripts/anos-track.js) */
+    { id:'anos', ic:'🎲', n:{ar:'أنشطة أنوس (لعبتُها)',en:"Anos' activities played"}, h:'corners/activities/dashboard.html', c:'#C9A961', t:100,
+      get:function(){ var o=jget('anos_played',{})||{}; return Object.keys(o).length; } }
   ];
   /* → [{id, icon, name, color, href, done, total}] ; total 0 = open-ended (Hifz stars) */
   function stars() {

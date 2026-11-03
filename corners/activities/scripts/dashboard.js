@@ -206,6 +206,7 @@
       const t = en && m.s.titleEn ? m.s.titleEn : m.s.title;
       return `<div class="badge-mini ${m.got ? "earned" : "locked"}" title="${t} — ${m.n}/${m.s.activities.length}">${m.got ? "★" : m.s.icon}</div>`;
     }).join("");
+    try { localStorage.setItem("anos_medals", JSON.stringify(medals.filter(m => m.got).map(m => ({ id: m.s.id, ar: m.s.title, en: m.s.titleEn || m.s.title })))); } catch (e) {}
     const mc = document.getElementById("medals-count");
     if (mc) mc.textContent = medals.filter(m => m.got).length + " / " + medals.length;
   }
