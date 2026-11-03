@@ -115,6 +115,7 @@ async function googleSpeak(text, lang, gender) {
    warm-voices.js (run by you in Cloud Shell) proves it is you with a hash of the Gemini key,
    so preparing all the podcasts is not blocked by these limits.
    Counters live in Firestore (collection tts_limits); the website itself cannot read them. */
+let geminiPausedUntil = 0;   // set when Gemini says its allowance is used up (see narrate)
 const DAILY_NEW = parseInt(process.env.TTS_DAILY_NEW || '10000', 10);
 const IP_HOURLY = parseInt(process.env.TTS_IP_HOURLY || '600', 10);
 function visitor(req) {
@@ -176,11 +177,13 @@ exports.narrate = onRequest(
         if (key) {
           /* Gemini allows a limited number of requests per minute: when it is busy (429/5xx) wait and try
              again, so the same natural voice is used instead of a different-sounding fallback voice */
-          for (let t = 0; t < 3 && !mp3; t++) {
+          for (let t = 0; t < 3 && !mp3 && Date.now() >= geminiPausedUntil; t++) {
             try { mp3 = (await geminiSpeak(text, lang, gender, style, key)).mp3; }
             catch (e) {
               const busy = /gemini http (429|500|503)/.test(e.message);
-              console.warn('gemini try ' + (t + 1) + ' failed:', e.message.slice(0, 160));
+              console.warn('gemini try ' + (t + 1) + ' failed:', e.message.replace(/\s+/g, ' ').slice(0, 400));
+              /* the daily / monthly allowance is used up: stop asking for 15 minutes so children are not kept waiting */
+              if (/gemini http 429/.test(e.message) && /quota|exhausted|per day|PerDay/i.test(e.message)) { geminiPausedUntil = Date.now() + 15 * 60000; break; }
               if (!busy || t === 2) break;
               await new Promise((r) => setTimeout(r, 2500 * (t + 1)));
             }
