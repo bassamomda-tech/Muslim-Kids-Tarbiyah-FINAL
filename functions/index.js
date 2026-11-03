@@ -17,7 +17,8 @@
      firebase functions:secrets:set GEMINI_API_KEY      (paste the AI Studio key)
      firebase deploy --only functions
    Optional settings (functions/.env): GEMINI_TTS_MODEL, GEMINI_VOICE_AR_F,
-     GEMINI_VOICE_AR_M, GEMINI_VOICE_EN_F, GEMINI_VOICE_EN_M
+     GEMINI_VOICE_AR_M, GEMINI_VOICE_EN_F, GEMINI_VOICE_EN_M,
+     TTS_DAILY_NEW (new clips/day, default 3000), TTS_IP_HOURLY (per visitor/hour, default 200)
    ════════════════════════════════════════════════════════════════ */
 const { onRequest, onCall, HttpsError } = require('firebase-functions/v2/https');
 const { defineSecret } = require('firebase-functions/params');
@@ -72,7 +73,7 @@ const MAX = 800;
 /* Gemini returns raw 16-bit PCM (24 kHz, mono) → MP3 for small, phone-friendly files */
 async function pcmToMp3(pcm, rate) {
   const { Mp3Encoder } = await import('@breezystack/lamejs');
-  const enc = new Mp3Encoder(1, rate, 64), s = new Int16Array(pcm.buffer, pcm.byteOffset, Math.floor(pcm.length / 2)), out = [];
+  const enc = new Mp3Encoder(1, rate, 32)   /* 32 kbps mono: speech sounds the same, half the download */, s = new Int16Array(pcm.buffer, pcm.byteOffset, Math.floor(pcm.length / 2)), out = [];
   for (let i = 0; i < s.length; i += 1152) { const b = enc.encodeBuffer(s.subarray(i, i + 1152)); if (b.length) out.push(Buffer.from(b)); }
   const e = enc.flush(); if (e.length) out.push(Buffer.from(e));
   return Buffer.concat(out);
@@ -105,6 +106,39 @@ async function googleSpeak(text, lang, gender) {
   return Buffer.from(resp.audioContent, 'base64');
 }
 
+/* ═══ Protection for a public, busy site ═══════════════════════════════
+   Replays of saved clips are always free and unlimited. Only NEW clips cost money, so only
+   new clips are limited:
+   • TTS_DAILY_NEW   (default 3000) new clips per day for the whole site
+   • TTS_IP_HOURLY   (default 200)  new clips per hour from one visitor
+   Over a limit the server answers 429 and the website reads with the device's own voice.
+   warm-voices.js (run by you in Cloud Shell) proves it is you with a hash of the Gemini key,
+   so preparing all the podcasts is not blocked by these limits.
+   Counters live in Firestore (collection tts_limits); the website itself cannot read them. */
+const DAILY_NEW = parseInt(process.env.TTS_DAILY_NEW || '3000', 10);
+const IP_HOURLY = parseInt(process.env.TTS_IP_HOURLY || '200', 10);
+function visitor(req) {
+  // Google's front end ADDS the real address at the end; anything before it can be faked by the caller
+  const ip = String(req.headers['x-forwarded-for'] || req.ip || '').split(',').pop().trim();
+  return crypto.createHash('sha256').update('mk|' + ip).digest('hex').slice(0, 24);   // no raw IP is stored
+}
+async function allowNewClip(req, key) {
+  if (key && req.headers['x-mk-warm'] && req.headers['x-mk-warm'] === crypto.createHash('sha256').update('warm|' + key).digest('hex')) return true;
+  const db = admin.firestore(), now = new Date();
+  const day = now.toISOString().slice(0, 10), hour = now.toISOString().slice(0, 13);
+  const dayRef = db.collection('tts_limits').doc('day_' + day);
+  const ipRef = db.collection('tts_limits').doc('ip_' + visitor(req) + '_' + hour);
+  return db.runTransaction(async (t) => {
+    const [d, v] = await Promise.all([t.get(dayRef), t.get(ipRef)]);
+    const dn = (d.exists && d.get('n')) || 0, vn = (v.exists && v.get('n')) || 0;
+    if (dn >= DAILY_NEW || vn >= IP_HOURLY) return false;
+    const exp = admin.firestore.Timestamp.fromMillis(now.getTime() + 3 * 864e5);   // for an optional TTL clean-up policy
+    t.set(dayRef, { n: dn + 1, exp }, { merge: true });
+    t.set(ipRef, { n: vn + 1, exp }, { merge: true });
+    return true;
+  });
+}
+
 exports.narrate = onRequest(
   { cors: true, region: 'us-central1', memory: '512MiB', timeoutSeconds: 60, secrets: [GEMINI_API_KEY] },
   async (req, res) => {
@@ -127,6 +161,9 @@ exports.narrate = onRequest(
       const [exists] = await file.exists();
       let engine = key ? 'gemini' : 'google';
       if (!exists) {
+        let ok = true;
+        try { ok = await allowNewClip(req, key); } catch (e) { console.warn('limit check failed (allowing):', e.message); }
+        if (!ok) { res.set('Cache-Control', 'no-store'); res.status(429).json({ error: 'limit' }); return; }
         let mp3;
         if (key) {
           try { mp3 = (await geminiSpeak(text, lang, gender, style, key)).mp3; }

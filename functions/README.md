@@ -137,3 +137,24 @@ story and a podcast and listen. If a voice still sounds Egyptian:
    ```
    and deploy again.
 
+
+## Limits for a busy site (cost protection)
+
+Replays of saved clips are free and unlimited. Only **new** clips cost money, so only they are limited:
+
+| Setting (functions/.env) | Default | Meaning |
+|---|---|---|
+| `TTS_DAILY_NEW` | 3000 | new clips per day for the whole site |
+| `TTS_IP_HOURLY` | 200 | new clips per hour from one visitor |
+
+Over a limit the server answers `429` and the website quietly reads with the device's own voice.
+Counters are stored in Firestore collection `tts_limits` (server only; the website cannot read it).
+Optional: add a Firestore TTL policy on field `exp` of `tts_limits` to delete old counters automatically.
+
+Warming the podcasts as the owner is not limited:
+
+```
+WARM_KEY="$(firebase functions:secrets:access GEMINI_API_KEY --project muslim-kids-tarbiyah)" node warm-voices.js https://narrate-ltyvjxcneq-uc.a.run.app
+```
+
+New clips are encoded at 32 kbps mono (speech sounds the same; half the download of 64 kbps).
