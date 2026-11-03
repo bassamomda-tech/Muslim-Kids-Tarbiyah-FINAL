@@ -28,11 +28,11 @@
   }
   function data() { return window.MK_OTD || { H: [], G: [] }; }
 
-  /* every event that falls on date d (Hijri day/month or Gregorian day/month) */
+
+  /* every event whose HIJRI day and month fall on date d (the news is Hijri-first) */
   function eventsOn(d) {
     d = noon(d); var h = hijri(d), D = data(), out = [];
     if (h) D.H.forEach(function (e) { if (e.d === h.d && e.m === h.m) out.push(Object.assign({ cal: 'H' }, e)); });
-    D.G.forEach(function (e) { if (e.d === d.getDate() && e.m === d.getMonth() + 1) out.push(Object.assign({ cal: 'G' }, e)); });
     return out;
   }
   /* the next n days starting tomorrow (or today when withToday) → [{date, events}] */
@@ -48,17 +48,29 @@
     return { edition: Math.max(1, n + 1), index: ((n % 52) + 52) % 52, start: new Date(sunday + 12 * 3600000) };
   }
   function pick(list, i) { return list && list.length ? list[((i % list.length) + list.length) % list.length] : null; }
-  /* year label for an event: "سنة ٢ هـ" / "1187 CE" */
-  function yearLabel(e, ar) {
-    if (!e.y) return '';
-    if (e.cal === 'H') return ar ? ('سنة ' + e.y.toLocaleString('ar-EG') + ' هـ') : (e.y + ' AH');
-    return ar ? ('سنة ' + e.y.toLocaleString('ar-EG', { useGrouping: false }) + ' م') : (e.y + ' CE');
+  var HM = { ar: ['محرّم', 'صفر', 'ربيع الأول', 'ربيع الآخر', 'جمادى الأولى', 'جمادى الآخرة', 'رجب', 'شعبان', 'رمضان', 'شوّال', 'ذو القعدة', 'ذو الحجّة'],
+             en: ['Muharram', 'Safar', "Rabi' al-Awwal", "Rabi' al-Akhir", 'Jumada al-Ula', 'Jumada al-Akhirah', 'Rajab', "Sha'ban", 'Ramadan', 'Shawwal', "Dhul-Qa'dah", 'Dhul-Hijjah'] };
+  var GM = { ar: ['يناير', 'فبراير', 'مارس', 'أبريل', 'مايو', 'يونيو', 'يوليو', 'أغسطس', 'سبتمبر', 'أكتوبر', 'نوفمبر', 'ديسمبر'],
+             en: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'] };
+  function num(n, ar) { return ar ? Number(n).toLocaleString('ar-EG', { useGrouping: false }) : String(n); }
+  /* Hijri first, Gregorian beside it:
+     «٢٧ رجب ٥٨٣ هـ · ٢ أكتوبر ١١٨٧ م» (recorded Gregorian date) · «١٧ رمضان ٢ هـ · ٦٢٤ م» · «عام الفيل · نحو ٥٧١ م» */
+  function dateLabel(e, ar) {
+    var L = ar ? 'ar' : 'en', hd = num(e.d, ar) + ' ' + HM[L][e.m - 1];
+    if (e.y) {
+      var h = hd + ' ' + num(e.y, ar) + (ar ? ' هـ' : ' AH');
+      if (e.g) return h + ' · ' + num(e.g.d, ar) + ' ' + GM[L][e.g.m - 1] + ' ' + num(e.g.y, ar) + (ar ? ' م' : ' CE');
+      return h + (e.ce ? ' · ' + num(e.ce, ar) + (ar ? ' م' : ' CE') : '');
+    }
+    if (e.pre) return hd + ' · ' + (ar ? e.pre[0] : e.pre[1]) + ' · ' + (ar ? 'نحو ' + num(e.ce, ar) + ' م' : 'c. ' + e.ce + ' CE');
+    return hd;
   }
+  function yearLabel(e, ar) { return dateLabel(e, ar); }   // kept for older callers
   function ago(e, today) {
-    if (!e.y) return null;
-    if (e.cal === 'G') return today.getFullYear() - e.y;
-    var h = hijri(today); return h ? h.y - e.y : null;
+    if (e.y) { var h = hijri(today); return h ? { n: h.y - e.y, cal: 'H' } : null; }
+    if (e.pre && e.ce) return { n: today.getFullYear() - e.ce, cal: 'G', approx: true };
+    return null;
   }
 
-  window.MKNews = { hijri: hijri, fmtHijri: fmtHijri, fmtGreg: fmtGreg, eventsOn: eventsOn, upcoming: upcoming, week: week, pick: pick, yearLabel: yearLabel, ago: ago, noon: noon, DAY: DAY };
+  window.MKNews = { hijri: hijri, fmtHijri: fmtHijri, fmtGreg: fmtGreg, eventsOn: eventsOn, upcoming: upcoming, week: week, pick: pick, yearLabel: yearLabel, dateLabel: dateLabel, ago: ago, noon: noon, HM: HM, DAY: DAY };
 })();

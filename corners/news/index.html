@@ -68,23 +68,24 @@
   var today = N.noon(new Date()), wk = N.week(today), view = today;
 
   function evHtml(TR, e, when) {
-    var ar = TR.ar(), ago = N.ago(e, today), yl = N.yearLabel(e, ar);
+    var ar = TR.ar(), ago = N.ago(e, today), dl = N.dateLabel(e, ar);
+    var agoTx = ago && ago.n > 0 ? (ago.cal === 'H' ? TR.tx('قبل ' + ago.n.toLocaleString('ar-EG', { useGrouping: false }) + ' سنة هجرية', ago.n + ' Hijri years ago') : TR.tx('منذ نحو ' + ago.n.toLocaleString('ar-EG', { useGrouping: false }) + ' سنة', 'about ' + ago.n + ' years ago')) : '';
     return '<div class="nw-ev"><span class="ic">' + (e.icon || '📜') + '</span><span class="tx">' +
-      '<span class="when">' + (when ? TR.esc(when) + ' · ' : '') + (yl ? TR.esc(yl) : TR.tx('كلّ عام', 'every year')) + (ago && ago > 0 ? ' · ' + TR.tx('قبل ' + ago.toLocaleString('ar-EG', { useGrouping: false }) + ' عامًا', ago + ' years ago') : '') + (e.sure === false ? ' · ' + TR.tx('على الأرجح', 'most common view') : '') + '</span>' +
+      '<span class="when">' + (when ? TR.esc(when) + ' · ' : '') + TR.esc(dl) + (!e.y && !e.pre ? ' · ' + TR.tx('كلّ عام', 'every year') : '') + (agoTx ? ' · ' + agoTx : '') + (e.sure === false ? ' · ' + TR.tx('على الأرجح', 'most common view') : '') + '</span>' +
       '<b>' + TR.esc(TR.t({ ar: e.t[0], en: e.t[1] })) + '</b>' +
       '<p>' + TR.t({ ar: e.s[0], en: e.s[1] }) + '</p>' +
       (e.lesson ? '<p class="ls">🌱 ' + TR.t({ ar: e.lesson[0], en: e.lesson[1] }) + '</p>' : '') +
       (e.link ? '<a href="' + R + e.link + '">' + TR.tx('اقرأ أكثر ←', 'Read more →') + '</a>' : '') +
       '</span></div>';
   }
-  function dayName(TR, d) { return N.fmtGreg(d, TR.ar()).replace(/[,،]?\s*\d{4}.*$/, '').replace(/\s*[٠-٩]{4}.*$/, ''); }
+  function dayName(TR, d) { var h = N.hijri(d), ar = TR.ar(), wd = ''; try { wd = new Intl.DateTimeFormat(ar ? 'ar-EG' : 'en-GB', { weekday: 'long' }).format(d); } catch (e) {} return h ? wd + ' ' + h.d.toLocaleString(ar ? 'ar-EG' : 'en') + ' ' + N.HM[ar ? 'ar' : 'en'][h.m - 1] : wd; }
 
   function weekly(TR) {
     var ar = TR.ar(), i = wk.index, h = N.hijri(today);
     var mo = h && W.months ? W.months[h.m] : null;
     var v = N.pick(W.verses, i), m = N.pick(W.missions, i), q = N.pick(W.questions, i), f = N.pick(W.facts, i), had = N.pick(H, i), pk = N.pick(PICKS, i);
     var todayEv = N.eventsOn(today), next = N.upcoming(7, today);
-    var html = '<div class="nw-mast"><div><b>📰 ' + TR.tx('نشرة الأسبوع', 'This week’s news') + '</b><small>' + TR.esc(N.fmtGreg(today, ar)) + ' · ' + TR.esc(N.fmtHijri(today, ar)) + '</small></div>' +
+    var html = '<div class="nw-mast"><div><b>📰 ' + TR.tx('نشرة الأسبوع', 'This week’s news') + '</b><small>' + TR.esc(N.fmtHijri(today, ar)) + ' · ' + TR.esc(N.fmtGreg(today, ar)) + '</small></div>' +
       '<span class="nw-ed">' + TR.tx('العدد ' + wk.edition.toLocaleString('ar-EG'), 'Issue ' + wk.edition) + '</span></div><div class="nw-grid">';
     html += '<section class="nw-box wide"><h3>📅 ' + TR.tx('حدث في مثل هذا اليوم', 'On this day') + '</h3>' +
       (todayEv.length ? todayEv.map(function (e) { return evHtml(TR, e); }).join('') :
@@ -105,7 +106,7 @@
     function draw() {
       var ar = TR.ar(), ev = N.eventsOn(view);
       el.innerHTML = '<div class="nw-day"><button class="tr-btn ghost" id="nwPrev">' + (ar ? '→' : '←') + ' ' + TR.tx('أمس', 'Previous') + '</button>' +
-        '<div class="d">' + TR.esc(N.fmtGreg(view, ar)) + '<small>' + TR.esc(N.fmtHijri(view, ar)) + '</small></div>' +
+        '<div class="d">' + TR.esc(N.fmtHijri(view, ar)) + '<small>' + TR.esc(N.fmtGreg(view, ar)) + '</small></div>' +
         '<button class="tr-btn ghost" id="nwNext">' + TR.tx('غدًا', 'Next') + ' ' + (ar ? '←' : '→') + '</button>' +
         (view.getTime() !== today.getTime() ? '<button class="tr-btn" id="nwToday">' + TR.tx('اليوم', 'Today') + '</button>' : '') + '</div>' +
         '<div class="nw-box">' + (ev.length ? ev.map(function (e) { return evHtml(TR, e); }).join('') : '<p class="nw-empty">' + TR.tx('لا نعرف حدثًا مشهورًا مؤكَّد التاريخ في هذا اليوم. جرّب يومًا آخر!', 'No famous event with a certain date on this day. Try another day!') + '</p>') + '</div>' +
@@ -125,8 +126,8 @@
     panels: [{ id: 'otd', icon: '📅', label: { ar: 'حدث في مثل هذا اليوم', en: 'On this day' }, render: dayPanel }],
     onRender: function (TR) { document.querySelector('[data-panel="kids"]').innerHTML = weekly(TR); },
     parents: {
-      ar: '<h3>كيف نستفيد من النشرة؟</h3><ul><li>تتجدّد تلقائيًا كلّ يوم أحد — لا تحتاج إلى إنترنت ولا تسجيل.</li><li>اطبعوها وعلّقوها على الثلاجة، واقرؤوا «سؤال الأسبوع» على العشاء.</li><li>«حدث في مثل هذا اليوم» يذكر الأحداث المعروفة تواريخها فقط، ويكتب «على الأرجح» حين يختلف المؤرّخون.</li><li>التاريخ الهجري حسب تقويم أمّ القرى، وقد يختلف يومًا عن رؤية الهلال في بلدكم.</li></ul>',
-      en: '<h3>How to use the newsletter</h3><ul><li>It renews by itself every Sunday — no internet or sign-up needed.</li><li>Print it for the fridge and ask the "dinner-table question" together.</li><li>"On this day" lists only events with known dates, and says "most common view" where historians differ.</li><li>The Hijri date follows the Umm al-Qura calendar and may differ by a day from the moon sighting where you live.</li></ul>'
+      ar: '<h3>كيف نستفيد من النشرة؟</h3><ul><li>تتجدّد تلقائيًا كلّ يوم أحد — لا تحتاج إلى إنترنت ولا تسجيل.</li><li>اطبعوها وعلّقوها على الثلاجة، واقرؤوا «سؤال الأسبوع» على العشاء.</li><li>«حدث في مثل هذا اليوم» بالتاريخ <b>الهجري</b>، ومعه الميلادي للمعرفة (والأحداث قبل الهجرة بسنتها الميلادية). نذكر الأحداث المعروفة تواريخها فقط، ونكتب «على الأرجح» حين يختلف المؤرّخون.</li><li>التاريخ الهجري حسب تقويم أمّ القرى، وقد يختلف يومًا عن رؤية الهلال في بلدكم.</li></ul>',
+      en: '<h3>How to use the newsletter</h3><ul><li>It renews by itself every Sunday — no internet or sign-up needed.</li><li>Print it for the fridge and ask the "dinner-table question" together.</li><li>"On this day" goes by the <b>Hijri</b> date, with the Gregorian beside it (events before the Hijrah show their Gregorian year). Only events with known dates are listed, with "most common view" where historians differ.</li><li>The Hijri date follows the Umm al-Qura calendar and may differ by a day from the moon sighting where you live.</li></ul>'
     }
   };
 })();

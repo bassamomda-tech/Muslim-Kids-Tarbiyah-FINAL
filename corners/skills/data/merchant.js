@@ -170,7 +170,7 @@ window.SKILLS.merchant = {
 <p>مشكلة واجهتني: ......................... &nbsp; كيف حللتها: .........................</p>
 <h3>٦) تقسيم الربح</h3>
 <table style="width:100%;border-collapse:collapse" border="1" cellpadding="6">
-<tr><th>🐷 ادّخار</th><th>🤲 صدقة (أختارها أنا)</th><th>🔁 إعادة استثمار</th><th>🎁 لي</th></tr>
+<tr><th>💰 ادّخار</th><th>🤲 صدقة (أختارها أنا)</th><th>🔁 إعادة استثمار</th><th>🎁 لي</th></tr>
 <tr><td style="height:12mm"></td><td></td><td></td><td></td></tr>
 </table>
 <h3>٧) بطاقات لعبة «جزيرة الأعمال» (قصّها)</h3>
@@ -226,7 +226,7 @@ window.SKILLS.merchant = {
 <p>A problem I faced: ......................... &nbsp; How I solved it: .........................</p>
 <h3>6) Splitting the profit</h3>
 <table style="width:100%;border-collapse:collapse" border="1" cellpadding="6">
-<tr><th>🐷 Saving</th><th>🤲 Sadaqah (my choice)</th><th>🔁 Reinvest</th><th>🎁 For me</th></tr>
+<tr><th>💰 Saving</th><th>🤲 Sadaqah (my choice)</th><th>🔁 Reinvest</th><th>🎁 For me</th></tr>
 <tr><td style="height:12mm"></td><td></td><td></td><td></td></tr>
 </table>
 <h3>7) "Business Island" game cards (cut out)</h3>
@@ -356,7 +356,7 @@ window.SKILLS.merchant = {
 
     /* ───────── 3 · Starting capital (goals 2, 4) ───────── */
     {
-      id: 'capital', icon: '🐷', tag: 'money',
+      id: 'capital', icon: '💰', tag: 'money',
       t: ['رأس المال: من أين أبدأ؟', 'Capital: where do I start?'],
       sub: ['أفكارٌ للحصول عليه، وطريقة تقسيمه', 'ideas for getting it, and how to divide it'],
       pg: [
@@ -691,7 +691,7 @@ window.SKILLS.merchant = {
       pg: [
         ['🪙🧮', `جلست سلمى تعدّ: باعت ١٤ كوبًا = <b>٦٨</b>، والتكلفة <b>٣٠</b>، إذن <b>الربح = ٦٨ − ٣٠ = ٣٨</b>. فصاحت فرحًا: ربحت!`, `Salma sat and counted: she sold 14 cups = <b>68</b>, the cost was <b>30</b>, so <b>profit = 68 − 30 = 38</b>. She cried with joy: I made a profit!`],
         ['🐦🌅', `قال العمّ أمين: تذكّري من رزقكِ. الله <b>الرزّاق</b> يرزق الطير في السماء والنملة في الأرض. أنتِ عملتِ وتعبتِ، والرزق من الله. فقولي: الحمد لله.`, `Uncle Amin said: remember who provided for you. Allah, <b>al-Razzaq</b>, provides for the bird in the sky and the ant on the ground. You worked hard, and the provision is from Allah. So say: Alhamdulillah.`],
-        ['🐷🔁', `ثم قسّمت الربح مع يوسف كما اتّفقا، وقسّمت نصيبها: جزء <b>للادّخار</b> في حصّالة، وجزء <b>لإعادة الاستثمار</b> في المشروع القادم، وجزء <b>صدقة</b> اختارته بنفسها، وجزءٌ صغير لها.`, `Then she shared the profit with Yusuf as agreed, and split her share: part for <b>saving</b> in a money box, part to <b>reinvest</b> in the next project, part as <b>sadaqah</b> she chose herself, and a small part for her.`],
+        ['💰🔁', `ثم قسّمت الربح مع يوسف كما اتّفقا، وقسّمت نصيبها: جزء <b>للادّخار</b> في حصّالة، وجزء <b>لإعادة الاستثمار</b> في المشروع القادم، وجزء <b>صدقة</b> اختارته بنفسها، وجزءٌ صغير لها.`, `Then she shared the profit with Yusuf as agreed, and split her share: part for <b>saving</b> in a money box, part to <b>reinvest</b> in the next project, part as <b>sadaqah</b> she chose herself, and a small part for her.`],
         ['🌾📦', `<b>الادّخار</b> أن تحفظ جزءًا من مالك لحاجةٍ قادمة. وقد علّمنا يوسف عليه السلام في القرآن أن نحفظ من محصول السنوات الطيّبة للسنوات الصعبة. نصيحة: ادّخر أوّلًا، ثم أنفق، واكتب هدف الادّخار على الحصّالة.`, `<b>Saving</b> is keeping part of your money for a future need. In the Quran, Prophet Yusuf, peace be upon him, taught people to store part of the good years' harvest for the hard years. Tip: save first, then spend — and write your saving goal on the money box.`],
         ['🕌📿', `وما الفرق بين الزكاة والصدقة والتبرّع؟ <b>الزكاة</b> فريضة وركنٌ من أركان الإسلام: إذا بلغ المال <b>النصاب</b> ومرّ عليه <b>عامٌ هجريّ</b> كامل، يُخرج منه <b>٢٫٥٪</b> لمستحقّيها. ويحسبها الكبار.`, `What is the difference between zakat, sadaqah and donation? <b>Zakat</b> is an obligation and a pillar of Islam: when savings reach the <b>nisab</b> (a minimum amount) and a full <b>lunar year</b> passes, <b>2.5%</b> is given to those entitled to it. The grown-ups calculate it.`],
         ['💝🏥', `<b>الصدقة</b> تطوّع: أيّ عطاءٍ في أيّ وقت، ولو قليلًا، ولو ابتسامة. و<b>التبرّع</b> أن تعطي لمشروع خير أو قضيّة، كبناء بئر أو مسجد أو مساعدة مستشفى. اختارت سلمى أن تتبرّع لحفر بئر — مثل عثمان!`, `<b>Sadaqah</b> is voluntary: any giving, any time, even a little, even a smile. A <b>donation</b> is giving to a good cause or project, like building a well or a mosque, or helping a hospital. Salma chose to donate to digging a well — just like Uthman!`]

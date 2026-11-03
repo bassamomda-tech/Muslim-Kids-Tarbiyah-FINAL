@@ -98,7 +98,7 @@ HS_DATA.push(
     t: [`الحصّالة التي لم تنقص`, `The money box that didn't shrink`],
     sub: [`«ما نقصت صدقةٌ من مال»`, `"Charity does not decrease wealth"`],
     pg: [
-      ['🐷🪙', `كانت <b>نسيبة</b> تجمع مصروفها في حصّالة لتشتري كتاب قصص. وفي المسجد سمعت عن طفلٍ فقير يحتاج حقيبةً للمدرسة.`, `<b>Nusaybah</b> was saving her pocket money in a money box to buy a storybook. At the mosque she heard about a poor child who needed a school bag.`],
+      ['💰🪙', `كانت <b>نسيبة</b> تجمع مصروفها في حصّالة لتشتري كتاب قصص. وفي المسجد سمعت عن طفلٍ فقير يحتاج حقيبةً للمدرسة.`, `<b>Nusaybah</b> was saving her pocket money in a money box to buy a storybook. At the mosque she heard about a poor child who needed a school bag.`],
       ['🤔', `ترددت: «إن أعطيتُ، ستنقص نقودي، وسأتأخّر عن شراء كتابي!»`, `She hesitated: "If I give, my money will go down, and I'll be late buying my book!"`],
       ['👩‍👧📖', `قالت أمّها: «قال النبيّ ﷺ: <b>ما نقصت صدقةٌ من مال</b>. قد تنقص النقود في العدد، لكنّ الله يبارك في الباقي، ويُخلف عليك، ويكتب لك أجرًا يبقى».`, `Her mother said: "The Prophet ﷺ said: <b>Charity does not decrease wealth</b>. The number of coins may go down, but Allah blesses what remains, replaces it for you, and writes you a reward that lasts."`],
       ['🎒💚', `فأعطت نسيبة جزءًا من حصّالتها لحقيبة الطفل. وفي الأسبوع التالي رأته يحمل حقيبته الجديدة مبتسمًا، ففرح قلبها فرحًا لم تشعر به من قبل.`, `So Nusaybah gave part of her savings for the boy's bag. The next week she saw him carrying his new bag, smiling, and her heart felt a joy she'd never felt before.`],

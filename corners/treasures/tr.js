@@ -120,7 +120,7 @@
   var isHub = P.id === 'hub';
 
   /* ════════════════ render ════════════════ */
-  var filter = P.defaultFilter || 'all', curIdx = -1, curPage = 0;   // defaultFilter: open on one group, not a wall of every card
+  var filter = P.defaultFilter || 'all', curIdx = -1, curPage = 0, API_pageSound = function () {};   // defaultFilter: open on one group, not a wall of every card
 
   function header() {
     var back = P.back ? P.back.href : isHub ? ROOT + 'index.html' : 'index.html';   // P.back: {href, label:{ar,en}} for pages that live under another hub
@@ -206,7 +206,23 @@
   }
 
   /* ── the focus viewer ── */
-  function openItem(i) { curIdx = i; curPage = 0; drawSheet(); document.getElementById('trView').classList.add('open'); document.body.style.overflow = 'hidden'; }
+  /* P.pageSound: a very soft paper rustle when a card/story opens or a page turns (حُفّاظ السنة). WebAudio, no files. */
+  var actx = null;
+  function pageSound() {
+    if (!P.pageSound) return;
+    try {
+      actx = actx || new (window.AudioContext || window.webkitAudioContext)();
+      var n = actx.currentTime, len = Math.floor(actx.sampleRate * 0.45), buf = actx.createBuffer(1, len, actx.sampleRate), d = buf.getChannelData(0), b0 = 0, b1 = 0;
+      for (var i = 0; i < len; i++) { var w = Math.random() * 2 - 1; b0 = 0.97 * b0 + w * 0.15; b1 = 0.6 * b1 + w * 0.4; d[i] = (b0 + b1) * 0.5; }
+      var src = actx.createBufferSource(); src.buffer = buf;
+      var f = actx.createBiquadFilter(); f.type = 'bandpass'; f.Q.value = 0.9;
+      f.frequency.setValueAtTime(1300, n); f.frequency.exponentialRampToValueAtTime(3400, n + 0.15); f.frequency.exponentialRampToValueAtTime(1700, n + 0.4);
+      var g = actx.createGain(); g.gain.setValueAtTime(0, n); g.gain.linearRampToValueAtTime(0.06, n + 0.03); g.gain.exponentialRampToValueAtTime(0.001, n + 0.42);
+      src.connect(f); f.connect(g); g.connect(actx.destination); src.start(n); src.stop(n + 0.45);
+    } catch (e) {}
+  }
+  API_pageSound = pageSound;
+  function openItem(i) { pageSound(); curIdx = i; curPage = 0; drawSheet(); document.getElementById('trView').classList.add('open'); document.body.style.overflow = 'hidden'; }
   function closeView() { stopSpeak(); document.getElementById('trView').classList.remove('open'); document.body.style.overflow = ''; refreshGrid(); }
   function refreshGrid() { var g = document.getElementById('trGrid'); if (!g) return; var panel = g.closest('.tr-panel'); panel.innerHTML = kidsPanel(); bindGrid(panel); }
 
@@ -297,7 +313,7 @@
     var flip = $('trFlip');
     if (flip) { var f = function () { flip.classList.toggle('flipped'); }; flip.onclick = f; flip.onkeydown = function (e) { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); f(); } }; }
     if ($('trSpeak')) $('trSpeak').onclick = function () { speak(sheetText(it), this); };
-    if ($('trPgNext')) $('trPgNext').onclick = function () { stopSpeak(); curPage++; drawSheet(); };
+    if ($('trPgNext')) $('trPgNext').onclick = function () { stopSpeak(); pageSound(); curPage++; drawSheet(); };
     if ($('trPgPrev')) $('trPgPrev').onclick = function () { stopSpeak(); curPage = curPage >= it.pages.length ? 0 : curPage - 1; drawSheet(); };
     if ($('trDone')) $('trDone').onclick = function () {
       var now = toggleLearned(it.id);
@@ -371,7 +387,7 @@
     if (e.key === 'Escape') closeView();
   });
 
-  var API = { t: t, tx: tx, ar: ar, lang: lang, esc: esc, speak: speak, stopSpeak: stopSpeak, toast: toast, root: ROOT, rerender: function () { render(); }, open: openItem, closeView: function () { var v = document.getElementById('trView'); if (v && v.classList.contains('open')) closeView(); } };
+  var API = { t: t, tx: tx, ar: ar, lang: lang, esc: esc, speak: speak, stopSpeak: stopSpeak, toast: toast, root: ROOT, rerender: function () { render(); }, open: openItem, pageSound: function () { API_pageSound(); }, closeView: function () { var v = document.getElementById('trView'); if (v && v.classList.contains('open')) closeView(); } };
   window.TR = API;
 
   /* #<item id> in the URL opens that card/story directly (links from other corners) */

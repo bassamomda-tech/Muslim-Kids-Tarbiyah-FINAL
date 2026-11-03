@@ -267,6 +267,12 @@ html[dir="ltr"] .hd-cert-name:empty::before{content:'... write your name here'}
   #hdPrintArea{display:block!important;position:fixed!important;inset:0!important;padding:1.2cm!important;background:#fff!important}
   .hd-cert-card{box-shadow:none!important;margin:0!important}
 }
+/* the Forty's cards live here (one place for the Forty: learn · cards · test) */
+.hd-cardsbtn{position:relative;z-index:2;display:flex;align-items:center;gap:.8rem;max-width:520px;margin:1.3rem auto 0;padding:.85rem 1.2rem;text-decoration:none;border-radius:1.3rem;background:linear-gradient(135deg,#2E8B57,#1D6B42);border:2px solid #8FD3AE;box-shadow:0 8px 0 #175536,0 14px 28px rgba(10,60,40,.35);font-family:'Tajawal',sans-serif}
+.hd-cardsbtn .tb-ic{font-size:2rem}.hd-cardsbtn .tb-txt{flex:1;display:flex;flex-direction:column;line-height:1.35}
+.hd-cardsbtn b{color:#fff;font-size:1.05rem;font-weight:900}.hd-cardsbtn small{color:rgba(255,255,255,.88);font-size:.78rem;font-weight:700}
+.hd-cardsbtn .tb-go{background:#fff;color:#1D6B42;font-weight:900;font-size:.85rem;border-radius:2rem;padding:.4rem .9rem;white-space:nowrap}
+.hr-card{display:block;text-align:center;margin:.6rem auto 0;max-width:calc(100% - 32px);padding:.45rem 1rem;border-radius:2rem;background:#2E8B57;color:#fff;text-decoration:none;font-family:'Tajawal',sans-serif;font-weight:800;font-size:.88rem}
 </style>
 <script>(function(){try{var l=localStorage.getItem('bunyanLang');if(l==='en'){var h=document.documentElement;h.dir='ltr';h.lang='en';}}catch(e){}})();</script>
 <style id="__antiflash">html{background:#0A2540;color-scheme:dark}</style>
@@ -302,6 +308,15 @@ html[dir="ltr"] .hd-cert-name:empty::before{content:'... write your name here'}
 
   <div class="hd-grid" id="hdGrid"></div>
 
+  <a class="hd-cardsbtn" href="../../treasures/hadith-cards.html">
+    <span class="tb-ic">🃏</span>
+    <span class="tb-txt">
+      <b class="lng-ar">بطاقات الأربعين — للمراجعة والطباعة</b><b class="lng-en">The Forty as cards — review &amp; print</b>
+      <small class="lng-ar">نفسُ الأحاديث في بطاقاتٍ تقلبها · راجعتَ <span id="hdCardsN">٠</span> / ٤٢</small><small class="lng-en">The same hadiths as flip cards · reviewed <span id="hdCardsNen">0</span> / 42</small>
+    </span>
+    <span class="tb-go lng-ar">راجِع ←</span><span class="tb-go lng-en">Review →</span>
+  </a>
+
   <a class="hd-testbtn" href="quran-tests.html?j=hadith">
     <span class="tb-ic">🎯</span>
     <span class="tb-txt">
@@ -329,6 +344,7 @@ html[dir="ltr"] .hd-cert-name:empty::before{content:'... write your name here'}
     <div class="hr-center"><div class="nm" id="hrNm"></div><div class="mt" id="hrMt"></div></div>
     <div class="hr-pager"><button class="hr-arrow" id="hrPrev">‹</button><button class="hr-arrow" id="hrNext">›</button></div>
   </div>
+  <a class="hr-card" id="hrCard" href="../../treasures/hadith-cards.html"><span class="lng-ar">🃏 بطاقة هذا الحديث — راجِعها أو اطبعها</span><span class="lng-en">🃏 This hadith's card — review or print it</span></a>
   <div class="hr-stage"><div class="hr-book" id="hrBook"></div></div>
 </div>
 
@@ -384,5 +400,13 @@ html[dir="ltr"] .hd-cert-name:empty::before{content:'... write your name here'}
 <script defer src="../../shared/mk-bag.js"></script>
 <script defer src="../../shared/mk-train.js"></script>
 <script defer src="../../shared/nav-fix.js"></script>
+<script>
+/* the open hadith's card (the reader sets #hNN) + how many cards the child has reviewed */
+(function(){
+  function upd(){ var a=document.getElementById('hrCard'); if(!a) return; var slug=(location.hash||'').slice(1); a.href='../../treasures/hadith-cards.html'+(/^h\d\d$/.test(slug)?'#'+slug:''); }
+  function count(){ var n=0; try{ n=(JSON.parse(localStorage.getItem('tr:hadith-cards'))||[]).length; }catch(e){} var a=document.getElementById('hdCardsN'), b=document.getElementById('hdCardsNen'); if(a) a.textContent=String(n).replace(/[0-9]/g,function(c){return '٠١٢٣٤٥٦٧٨٩'[c];}); if(b) b.textContent=n; }
+  window.addEventListener('hashchange',upd); upd(); count(); window.addEventListener('pageshow',count);
+})();
+</script>
 </body>
 </html>

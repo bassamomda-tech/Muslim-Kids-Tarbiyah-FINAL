@@ -35,7 +35,7 @@
 
     /* ─── حُفّاظ السنة · Sunnah Keepers (the 10th corner) — tr:<page> arrays are the learned-ids of each page ─── */
     { id:'hadith40',corner:'sunnah', total:42, icon:'🕌', color:'#0E6B53', flagPrefix:'hd:',  page:'corners/little-district/pages/hadith.html',          name:{ar:'الأربعون النووية', en:'The 40 Hadith of Nawawi'} },
-    { id:'hcards',  corner:'sunnah', total:42,  icon:'🃏', color:'#2E8B57', doneKey:'tr:hadith-cards',    page:'corners/treasures/hadith-cards.html',    name:{ar:'بطاقات الأربعين', en:'Forty Hadith Cards'} },
+    /* the Forty's review cards (tr:hadith-cards) are part of the Forty — counted as stars in the bag, not a second certificate */
     { id:'hstories',corner:'sunnah', total:100, icon:'📖', color:'#C1663A', doneKey:'tr:hadith-stories',  page:'corners/treasures/hadith-stories.html',  name:{ar:'قصص السنة', en:'Sunnah Stories'} },
     { id:'pmoments',corner:'sunnah', total:18,  icon:'🌙', color:'#2C5F8A', doneKey:'tr:prophet-moments', page:'corners/treasures/prophet-moments.html', name:{ar:'مواقف النبي ﷺ', en:'Moments of the Prophet ﷺ'} },
 

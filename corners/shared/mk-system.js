@@ -149,7 +149,7 @@
       get:function(){ return parseInt(LS.getItem('qg_stars'),10)||0; } },
     { id:'forty', j:true, ic:'🕌', n:{ar:'الأربعون النووية',en:'The Forty Hadith'}, h:'corners/little-district/pages/hadith.html', c:'#1A9B7B', t:42,
       get:function(){ var n=0; for (var i=1;i<=42;i++) if (LS.getItem('hd:done:h'+(i<10?'0':'')+i)==='1') n++; return n; } },
-    { tr:'hadith-cards', j:true, ic:'🃏', n:{ar:'بطاقات الأربعين',en:'Forty Hadith Cards'}, c:'#2E8B57', t:42 },
+    { tr:'hadith-cards', ic:'🃏', n:{ar:'بطاقات الأربعين',en:'Forty Hadith Cards'}, c:'#2E8B57', t:42 },
     { tr:'hadith-stories', j:true, ic:'📖', n:{ar:'قصص السنة',en:'Sunnah Stories'}, c:'#C1663A', t:100 },
     { tr:'prophet-moments', j:true, ic:'🌙', n:{ar:'مواقف النبي ﷺ',en:'Moments of the Prophet ﷺ'}, c:'#2C5F8A', t:18 },
     { tr:'names-cards',     ic:'✨', n:{ar:'أسماء الله الحسنى',en:'Names of Allah'}, c:'#6C3483', t:35 },

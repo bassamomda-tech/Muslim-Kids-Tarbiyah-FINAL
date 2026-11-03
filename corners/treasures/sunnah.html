@@ -43,12 +43,9 @@
   var DOORS = [
     { href: GARDEN + 'hadith.html', ic: '🕌', c: '#1A9B7B', done: nawawiDone, total: 42,
       t: { ar: 'الأربعون النووية', en: 'The Forty Hadith of an-Nawawi' }, tag: { ar: 'احفظ · افهم · اعمل', en: 'Memorize · Understand · Act' },
-      d: { ar: 'أحاديثُ النبيّ ﷺ الجامعة، حديثًا حديثًا: نصّه وشرحه وفوائده واختبارٌ وشهادة.', en: "The Prophet's ﷺ comprehensive hadiths, one by one: text, explanation, lessons, a test and a certificate." },
+      d: { ar: 'أحاديثُ النبيّ ﷺ الجامعة، حديثًا حديثًا: نصّه وشرحه وفوائده — ولكلّ حديثٍ بطاقةٌ تقلبها للمراجعة وتطبعها، ثم اختبارٌ وشهادة.', en: "The Prophet's ﷺ comprehensive hadiths, one by one: text, explanation and lessons — each with a flip card to review and print — then a test and a certificate." },
+      extra: function () { var n = stars('hadith-cards'); return { ar: '🃏 راجعتُ ' + n.toLocaleString('ar-EG') + ' / ٤٢ بطاقة', en: '🃏 reviewed ' + n + ' / 42 cards' }; },
       unit: { ar: 'حديثًا حفظتُه', en: 'memorized' } },
-    { href: 'hadith-cards.html', ic: '🃏', c: '#2E8B57', done: function () { return stars('hadith-cards'); }, total: 42,
-      t: { ar: 'بطاقات الأربعين', en: 'Forty Hadith Cards' }, tag: { ar: 'نفسُ الأربعين — للمراجعة والطباعة', en: 'The same forty — to review & print' },
-      d: { ar: 'بعد أن تتعلّم الحديث: اقلب بطاقته لتراجعه، واطبع البطاقات مجّانًا للعبة المطابقة والثلاجة.', en: 'After learning a hadith: flip its card to review it, and print the cards free for matching games and the fridge.' },
-      unit: { ar: 'بطاقةً راجعتُها', en: 'reviewed' } },
     { href: 'hadith-stories.html', ic: '📖', c: '#C1663A', done: function () { return stars('hadith-stories'); }, total: 100,
       t: { ar: 'قصص السنة', en: 'Sunnah Stories' }, tag: { ar: '١٠٠ قصة من ١٠٠ حديث صحيح', en: '100 stories from 100 authentic hadiths' },
       d: { ar: 'لكلّ حديثٍ قصّة: من السيرة، أو حكاها النبيّ ﷺ، أو من حياتنا لتقريب المعنى — في عشر مجموعات.', en: 'Every hadith has a story: from the Seerah, told by the Prophet ﷺ, or from daily life to explain it — in ten groups.' },
@@ -60,7 +57,7 @@
   ];
 
   window.TR_PAGE = {
-    id: 'sunnah', icon: '📜', color: '#6C4BD8',
+    id: 'sunnah', icon: '📜', color: '#6C4BD8', pageSound: true,
     guide: { icon: '👧', name: { ar: 'كارما', en: 'Karma' }, say: { ar: "السلام عليكم! أنا كارما، بطلةُ حُفّاظ السنة 🌸 أحبُّ النبيَّ ﷺ وأحبُّ أن أعمل بكلامه. اختر بابًا وتعال نتعلّم معًا — حديثًا واحدًا كلّ أسبوع يكفي!", en: "Assalamu alaikum! I'm Karma, the hero of the Sunnah Keepers 🌸 I love the Prophet ﷺ and I love living by his words. Pick a door and let's learn together — one hadith a week is enough!" } },
     back: { href: '../../index.html', label: { ar: 'المدينة', en: 'City' } },
     title: { ar: 'حُفّاظ السنة', en: 'Sunnah Keepers' },
@@ -69,26 +66,32 @@
       // the corner score card (mk-corner-score.js) sits under the hero; keep it there when the page re-renders (language switch)
       var sc = window.__mkcs || document.getElementById('mkCornerScore'), hero = document.querySelector('.tr-hero');
       if (sc && hero) { window.__mkcs = sc; hero.parentNode.insertBefore(sc, hero.nextSibling); }
+      setTimeout(function () {
+        document.querySelectorAll('.sn-door').forEach(function (d) {
+          d.addEventListener('click', function (e) { if (e.ctrlKey || e.metaKey) return; e.preventDefault(); TR.pageSound(); var h = d.href; setTimeout(function () { location.href = h; }, 320); });
+        });
+      }, 0);
       var el = document.querySelector('[data-panel="kids"]');
       el.innerHTML = '<div class="sn-grid">' + DOORS.map(function (d) {
         var n = d.done(), pct = Math.round(n / d.total * 100);
         return '<a class="sn-door" style="--c:' + d.c + '" href="' + d.href + '">' +
           '<span class="top"><span class="ic">' + d.ic + '</span><span><span class="t">' + TR.esc(TR.t(d.t)) + '</span><br><span class="tag">' + TR.esc(TR.t(d.tag)) + '</span></span></span>' +
           '<span class="d">' + TR.esc(TR.t(d.d)) + '</span>' +
-          '<span class="bar"><span>' + n + ' / ' + d.total + '</span><span class="track"><span class="fill" style="width:' + pct + '%;display:block"></span></span><span>' + TR.esc(TR.t(d.unit)) + '</span></span>' +
+          (d.extra ? '<span class="tag" style="color:var(--muted)">' + TR.esc(TR.t(d.extra())) + '</span>' : '') + '<span class="bar"><span>' + n + ' / ' + d.total + '</span><span class="track"><span class="fill" style="width:' + pct + '%;display:block"></span></span><span>' + TR.esc(TR.t(d.unit)) + '</span></span>' +
           '<span class="go">' + TR.tx('ادخل ←', 'Enter →') + '</span></a>';
       }).join('') + '</div>' +
       '<div class="sn-path"><h3>👧 ' + TR.tx('طريقُ كارما الهادئ للأسبوع', 'Karma\'s calm path for the week') + '</h3><ol>' +
         '<li>' + TR.tx('حديثٌ واحد من <b>الأربعين</b>: اقرأه وافهمه، واحفظ جملةً منه.', 'One hadith from <b>the Forty</b>: read it, understand it, memorize one sentence.') + '</li>' +
-        '<li>' + TR.tx('راجعه في منتصف الأسبوع بـ<b>بطاقته</b> — أو علّقها على الثلاجة.', 'Review it mid-week with its <b>card</b> — or stick it on the fridge.') + '</li>' +
+        '<li>' + TR.tx('راجعه في منتصف الأسبوع بـ<b>بطاقته</b> (من داخل الحديث نفسه) — أو علّقها على الثلاجة.', 'Review it mid-week with its <b>card</b> (from inside the hadith itself) — or stick it on the fridge.') + '</li>' +
         '<li>' + TR.tx('قصّةٌ واحدة من <b>قصص السنة</b> قبل النوم، من المجموعة القريبة من حديث الأسبوع.', 'One <b>Sunnah story</b> at bedtime, from the group closest to the week\'s hadith.') + '</li>' +
         '<li>' + TR.tx('يوم الجمعة: <b>موقفٌ</b> من مواقف النبيّ ﷺ، ونسأل: «كيف نقتدي به؟»', 'On Friday: one <b>moment</b> of the Prophet ﷺ, and ask: "How can we follow his example?"') + '</li>' +
       '</ol></div>' +
       '<a class="sn-test" href="' + GARDEN + 'quran-tests.html?j=hadith">🎯 ' + TR.tx('اختبار الأربعين النووية — ٣ مستويات', 'The Forty Hadith test — 3 levels') + ' ' + (TR.ar() ? '←' : '→') + '</a>';
     },
+    onTab: function () {},
     parents: {
-      ar: '<h3>لماذا جمعنا السنة في مكانٍ واحد؟</h3><p>كي لا يتشتّت الطفل بين أبوابٍ متشابهة، ولا يرى الحديث نفسه في أماكن متفرّقة. هنا أربعة أبواب، لكلٍّ منها دورٌ واحد:</p><ul><li><b>الأربعون النووية:</b> التعلّم والحفظ والشرح والاختبار.</li><li><b>بطاقات الأربعين:</b> ليست محتوًى جديدًا، بل الأحاديث نفسها في بطاقاتٍ للمراجعة والطباعة.</li><li><b>قصص السنة:</b> ١٠٠ حديثٍ آخر لا تتكرّر مع الأربعين، يُحكى كلٌّ منها في قصّة.</li><li><b>مواقف النبيّ ﷺ:</b> القدوة العمليّة في أخلاقه ﷺ.</li></ul><div class="tr-note">💡 لا تستعجلوا العدد: حديثٌ واحد مفهومٌ معمولٌ به خيرٌ من عشرة محفوظةٍ بلا عمل.</div>',
-      en: '<h3>Why gather the Sunnah in one place?</h3><p>So the child isn\'t scattered between similar doors, and doesn\'t meet the same hadith in different places. Four doors, each with one job:</p><ul><li><b>The Forty:</b> learning, memorizing, explanation and the test.</li><li><b>Forty cards:</b> not new content — the same hadiths as cards to review and print.</li><li><b>Sunnah stories:</b> 100 other hadiths, none repeating the Forty, each told as a story.</li><li><b>Moments of the Prophet ﷺ:</b> the living example of his ﷺ character.</li></ul><div class="tr-note">💡 Don\'t rush the count: one hadith understood and lived is better than ten memorized without action.</div>'
+      ar: '<h3>لماذا جمعنا السنة في مكانٍ واحد؟</h3><p>كي لا يتشتّت الطفل بين أبوابٍ متشابهة، ولا يرى الحديث نفسه في أماكن متفرّقة. هنا ثلاثة أبواب، لكلٍّ منها دورٌ واحد:</p><ul><li><b>الأربعون النووية:</b> التعلّم والحفظ والشرح والاختبار.</li><li>داخل <b>الأربعين</b> أيضًا <b>بطاقاتها</b> للمراجعة والطباعة — نفسُ الأحاديث، في مكانٍ واحد.</li><li><b>قصص السنة:</b> ١٠٠ حديثٍ آخر لا تتكرّر مع الأربعين، يُحكى كلٌّ منها في قصّة.</li><li><b>مواقف النبيّ ﷺ:</b> القدوة العمليّة في أخلاقه ﷺ.</li></ul><div class="tr-note">💡 لا تستعجلوا العدد: حديثٌ واحد مفهومٌ معمولٌ به خيرٌ من عشرة محفوظةٍ بلا عمل.</div>',
+      en: '<h3>Why gather the Sunnah in one place?</h3><p>So the child isn\'t scattered between similar doors, and doesn\'t meet the same hadith in different places. Three doors, each with one job:</p><ul><li><b>The Forty:</b> learning, memorizing, explanation and the test.</li><li>Inside <b>the Forty</b> are also its <b>cards</b> to review and print — the same hadiths, in one place.</li><li><b>Sunnah stories:</b> 100 other hadiths, none repeating the Forty, each told as a story.</li><li><b>Moments of the Prophet ﷺ:</b> the living example of his ﷺ character.</li></ul><div class="tr-note">💡 Don\'t rush the count: one hadith understood and lived is better than ten memorized without action.</div>'
     }
   };
 })();

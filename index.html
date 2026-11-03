@@ -1222,6 +1222,27 @@ const soundFuncs = {
     const g=c.createGain();g.gain.setValueAtTime(0,n);g.gain.linearRampToValueAtTime(0.05,n+0.5);g.gain.linearRampToValueAtTime(0,n+5);
     s.connect(f);f.connect(g);g.connect(c.destination);s.start(n);s.stop(n+5.2);currentNodes.push(s,f,g);
   },
+  sunnah: () => {
+    // حُفّاظ السنة — calm book pages turning: three soft paper rustles and a gentle settle
+    const c=getCtx(), n=c.currentTime;
+    const page=(t,v=1)=>{
+      const buf=createNoiseBuffer(c,0.6,'pink'), s=c.createBufferSource(); s.buffer=buf;
+      const f=c.createBiquadFilter(); f.type='bandpass'; f.Q.value=0.9;
+      f.frequency.setValueAtTime(1300,n+t); f.frequency.exponentialRampToValueAtTime(3600,n+t+0.16); f.frequency.exponentialRampToValueAtTime(1800,n+t+0.42);
+      const g=c.createGain(); g.gain.setValueAtTime(0,n+t); g.gain.linearRampToValueAtTime(0.085*v,n+t+0.03); g.gain.linearRampToValueAtTime(0.05*v,n+t+0.18); g.gain.exponentialRampToValueAtTime(0.001,n+t+0.5);
+      s.connect(f); f.connect(g); g.connect(c.destination); s.start(n+t); s.stop(n+t+0.55); currentNodes.push(s,f,g);
+      // the page settling down: a very soft low pat
+      const b2=createNoiseBuffer(c,0.2,'brown'), s2=c.createBufferSource(); s2.buffer=b2;
+      const f2=c.createBiquadFilter(); f2.type='lowpass'; f2.frequency.value=420;
+      const g2=c.createGain(); g2.gain.setValueAtTime(0,n+t+0.42); g2.gain.linearRampToValueAtTime(0.06*v,n+t+0.45); g2.gain.exponentialRampToValueAtTime(0.001,n+t+0.62);
+      s2.connect(f2); f2.connect(g2); g2.connect(c.destination); s2.start(n+t+0.42); s2.stop(n+t+0.65); currentNodes.push(s2,f2,g2);
+    };
+    page(0.15,1); page(1.55,0.85); page(2.85,0.7);
+    // a calm warm tone underneath, like a quiet library
+    const o=c.createOscillator(), og=c.createGain(); o.type='sine'; o.frequency.value=196;
+    og.gain.setValueAtTime(0,n); og.gain.linearRampToValueAtTime(0.018,n+0.8); og.gain.linearRampToValueAtTime(0.012,n+3.2); og.gain.exponentialRampToValueAtTime(0.0005,n+4.6);
+    o.connect(og); og.connect(c.destination); o.start(n); o.stop(n+4.7); currentNodes.push(o,og);
+  },
   social: () => {
     const c=getCtx(), n=c.currentTime;
     [0,0.18,0.36].forEach(o=>{const osc=c.createOscillator(),g=c.createGain();osc.type='sine';osc.frequency.setValueAtTime(180,n+o);osc.frequency.exponentialRampToValueAtTime(80,n+o+0.09);g.gain.setValueAtTime(0,n+o);g.gain.linearRampToValueAtTime(0.2,n+o+0.01);g.gain.exponentialRampToValueAtTime(0.001,n+o+0.14);osc.connect(g);g.connect(c.destination);osc.start(n+o);osc.stop(n+o+0.15);currentNodes.push(osc,g)});
