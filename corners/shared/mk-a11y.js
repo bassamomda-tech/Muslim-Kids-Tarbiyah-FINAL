@@ -128,5 +128,15 @@
       (document.head || document.documentElement).appendChild(hs);
     }
   } catch (e) {}
+  /* the shared read-aloud bridge (natural voice + Quran verses in Sheikh Al-Husary's recitation)
+     on pages that don't load mk-system.js — waits a moment so mk-system can load it first */
+  setTimeout(function () {
+    try {
+      if (window.MKTTS || document.querySelector('script[src*="mk-tts-cloud.js"]')) return;
+      var me = document.querySelector('script[src*="mk-a11y.js"]'), ts = document.createElement('script');
+      ts.src = me ? me.src.replace(/mk-a11y\.js.*$/, 'mk-tts-cloud.js') : 'corners/shared/mk-tts-cloud.js'; ts.async = true; ts.onerror = function () {};
+      (document.head || document.documentElement).appendChild(ts);
+    } catch (e) {}
+  }, 400);
   window.MKA11y = { apply: apply, open: function () { build(); toggle(); } };
 })();
