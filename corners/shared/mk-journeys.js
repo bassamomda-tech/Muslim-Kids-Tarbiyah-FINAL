@@ -45,6 +45,7 @@
     { id:'sk-scientist', corner:'skills', total:8,  icon:'🔬', color:'#2E86C1', doneKey:'tr:skill-scientist', page:'corners/skills/scientist.html', name:{ar:'العالِم الصغير', en:'The Little Scientist'} },
     { id:'sk-doctor',    corner:'skills', total:8,  icon:'🩺', color:'#C0392B', doneKey:'tr:skill-doctor',    page:'corners/skills/doctor.html',    name:{ar:'الطبيب الصغير', en:'The Little Doctor'} },
     { id:'sk-engineer',  corner:'skills', total:8,  icon:'🏗️', color:'#E67E22', doneKey:'tr:skill-engineer',  page:'corners/skills/engineer.html',  name:{ar:'المهندس الصغير', en:'The Little Engineer'} },
+    { id:'sk-maker',     corner:'skills', total:10, icon:'🧰', color:'#5E8C31', doneKey:'tr:skill-maker',     page:'corners/skills/maker.html',     name:{ar:'الصانع الصغير', en:'The Little Maker'} },
     { id:'sk-farmer',    corner:'skills', total:8,  icon:'🌱', color:'#27AE60', doneKey:'tr:skill-farmer',    page:'corners/skills/farmer.html',    name:{ar:'المزارع الصغير', en:'The Little Farmer'} },
 
     /* ─── حيّنا الصغير · Our Little District (district engine: ld:) ─── */

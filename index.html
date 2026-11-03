@@ -752,7 +752,6 @@ try{if(localStorage.getItem('mk:calm')==='true'){document.documentElement.classL
     { id:'academy', icon:'🔭', color:'#2980B9', name:{ar:'أكاديمية المبدعين', en:"Innovators' Academy"},   base:'corners/heroes-fortress/academy.html' },
     { id:'quds',    icon:'🕌', color:'#2E8B57', name:{ar:'ركن القدس والأمة',  en:'Al-Quds & Ummah'},       base:'corners/little-district/pages/quds.html' },
     { id:'stories-little', icon:'📚', color:'#C1663A', name:{ar:'مكتبة القصص للصغار', en:'Little Stories Library'}, base:'corners/stories/little.html' },
-    { id:'workshop', icon:'🧰', color:'#5E8C31', name:{ar:'ورشة الصانع الصغير', en:"Little Maker's Workshop"}, base:'corners/workshop/workshop.html' },
   ];
   function profiles(){ return jget(K.profiles,[]); }
   function activeId(){ return LS.getItem(K.active)||null; }
@@ -1008,17 +1007,6 @@ const storiesCorner = {
   url:'corners/stories/little.html',ready:true,
 };
 
-const workshopCorner = {
-  id:'workshop',icon:'🧰',nameAr:'ورشة الصانع الصغير',nameEn:"Little Maker's Workshop",
-  descAr:'مهاراتٌ يدوية وتجاربُ ومهماتٌ في الطبيعة — يطبّق الطفل بيدَيه ما تعلّمه في الأركان',
-  descEn:'Hands-on crafts, experiments & nature missions — applying what the child learned across the corners',
-  accent:'#5E8C31',gradient:'linear-gradient(160deg,rgba(94,140,49,.22),transparent)',badge:'🧰',progress:0,
-  characters:[{charNameAr:'المربي',charNameEn:'Al-Murabbi',emoji:'🧔'},{charNameAr:'المربية',charNameEn:'Al-Murabbiyah',emoji:'🧕'}],
-  featuresAr:[{icon:'✂️',text:'أشغالٌ يدوية وزراعةٌ وتجاربُ علمية في البيت'},{icon:'🌙',text:'مهماتُ استكشافٍ في الطبيعة: القمرُ والحديقةُ والمخلوقات'},{icon:'📔',text:'دفترُ إنجازٍ بصورِ أعمالِ الطفل + أختامُ الصانعِ الستة'}],
-  featuresEn:[{icon:'✂️',text:'Crafts, planting & simple science experiments at home'},{icon:'🌙',text:'Nature missions: the moon, the garden & Allah\'s creatures'},{icon:'📔',text:"A journal of the child's work photos + six maker stamps"}],
-  url:'corners/workshop/workshop.html',ready:true,
-};
-
 const competitionsCorner = {
   id:'competitions',icon:'🏆',nameAr:'ساحة المسابقات',nameEn:'Competitions Arena',
   descAr:'بنكُ أسئلةٍ في العقيدةِ والقرآنِ والسيرةِ والعبادةِ والأخلاق — كوِّنِ اختبارَك، تسابقْ مع الوقت، واجمعِ النجوم',
@@ -1043,13 +1031,13 @@ const parentsCorner = {
 
 /* ONE home card for the three "doing" places (they keep their own pages) */
 const playCorner = {
-  id:'play',icon:'🎲',nameAr:'ساحة الأنشطة',nameEn:'Activities',
-  descAr:'صانع المهارات · أنشطة أنوس · ساحة المسابقات · ورشة الصانع الصغير',
-  descEn:"Skills Maker · Anos' activities · Competitions · Little Maker's Workshop",
-  accent:'#7A3FB0',gradient:'linear-gradient(160deg,rgba(122,63,176,.24),transparent)',badge:'🎲',progress:0,
+  id:'play',icon:'🪐',nameAr:'كوكب الإبداع',nameEn:'Planet of Creativity',
+  descAr:'صانع المهارات · أنشطة أنوس · ساحة المسابقات',
+  descEn:"Skills Maker · Anos' activities · Competitions",
+  accent:'#7A3FB0',gradient:'linear-gradient(160deg,rgba(122,63,176,.24),transparent)',badge:'✨',progress:0,
   characters:[{charNameAr:'أنوس',charNameEn:'Anos',emoji:'🧒'}],
-  featuresAr:[{icon:'🛠️',text:'صانع المهارات — رحلات التاجر والمؤرّخ والعالِم والطبيب والمهندس والمزارع، مع بودكاست'},{icon:'🎲',text:'أنشطة أنوس — ألعابٌ وتحدّيات من كلّ الأركان'},{icon:'🏆',text:'ساحة المسابقات — كوِّن اختبارك وتسابق واجمع النجوم'},{icon:'🧰',text:'ورشة الصانع الصغير — أشغالٌ يدوية وتجارب ومهمّات في الطبيعة'}],
-  featuresEn:[{icon:'🛠️',text:'Skills Maker — merchant, historian, scientist, doctor, engineer & farmer journeys, with a podcast'},{icon:'🎲',text:"Anos' activities — games & challenges from every corner"},{icon:'🏆',text:'Competitions — build your quiz, race & collect stars'},{icon:'🧰',text:"Little Maker's Workshop — crafts, experiments & nature missions"}],
+  featuresAr:[{icon:'🛠️',text:'صانع المهارات — رحلات التاجر والمؤرّخ والعالِم والطبيب والمهندس والمزارع والصانع الصغير، مع بودكاست'},{icon:'🎲',text:'أنشطة أنوس — ألعابٌ وتحدّيات من كلّ الأركان'},{icon:'🏆',text:'ساحة المسابقات — كوِّن اختبارك وتسابق واجمع النجوم'}],
+  featuresEn:[{icon:'🛠️',text:'Skills Maker — merchant, historian, scientist, doctor, engineer, farmer & little maker journeys, with a podcast'},{icon:'🎲',text:"Anos' activities — games & challenges from every corner"},{icon:'🏆',text:'Competitions — build your quiz, race & collect stars'}],
   url:'corners/activities/play.html',ready:true,
 };
 
@@ -1479,7 +1467,7 @@ function sbGuard(e, id, url){
   if(window.MK && MK.isLocked(id) && MK.hasPin()){
     e.preventDefault();
     closeSidebar();
-    var b = [...buildings, storiesCorner, playCorner, workshopCorner, competitionsCorner, parentsCorner, anosCorner].find(x=>x.id===id) || {id:id, url:url};
+    var b = [...buildings, storiesCorner, playCorner, competitionsCorner, parentsCorner, anosCorner].find(x=>x.id===id) || {id:id, url:url};
     tryEnterCorner(b);
     return false;
   }

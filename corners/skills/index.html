@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>صانع المهارات | Skills Maker</title>
-<meta name="description" content="صانع المهارات: رحلاتٌ لتعلّم مهاراتٍ حقيقية — التاجر الصغير، مستكشف التاريخ، العالِم، الطبيب، المهندس، المزارع — مع مهمّاتٍ عملية وحلقات بودكاست.">
+<meta name="description" content="صانع المهارات: رحلاتٌ لتعلّم مهاراتٍ حقيقية — التاجر الصغير، مستكشف التاريخ، العالِم، الطبيب، المهندس، المزارع، الصانع الصغير — مع مهمّاتٍ عملية وحلقات بودكاست.">
 <link rel="icon" href="../../favicon.ico">
 <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&family=Nunito:wght@400;700;800;900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../treasures/tr.css">
@@ -46,12 +46,14 @@
     { id: 'engineer',  ic: '🏗️', c: '#E67E22', n: 8, t: { ar: 'المهندس الصغير', en: 'The Little Engineer' }, tag: { ar: 'فكّر · صمّم · ابنِ · حسّن', en: 'Think · design · build · improve' },
       d: { ar: 'مشكلةٌ حقيقية، وأفكارٌ كثيرة، ورسمٌ ومقاسات، ونموذجٌ نختبره ونحسّنه — بإتقانٍ كما يحبّ الله.', en: 'A real problem, many ideas, a sketch with measurements, a prototype we test and improve — with itqan, as Allah loves.' } },
     { id: 'farmer',    ic: '🌱', c: '#27AE60', n: 8, t: { ar: 'المزارع الصغير', en: 'The Little Farmer' }, tag: { ar: 'البذرة · التربة · الحصاد', en: 'Seed · soil · harvest' },
-      d: { ar: 'الله فالق الحبّ والنوى: ازرع بذرتك، واعتنِ بها، وسجّل نموّها، واجعلها صدقةً جارية.', en: 'Allah splits the seed and the date-stone: plant your seed, care for it, record its growth, make it ongoing charity.' } }
+      d: { ar: 'الله فالق الحبّ والنوى: ازرع بذرتك، واعتنِ بها، وسجّل نموّها، واجعلها صدقةً جارية.', en: 'Allah splits the seed and the date-stone: plant your seed, care for it, record its growth, make it ongoing charity.' } },
+    { id: 'maker',     ic: '🧰', c: '#5E8C31', n: 10, t: { ar: 'الصانع الصغير', en: 'The Little Maker' }, tag: { ar: 'اصنع · اكتشف · ساعد', en: 'Make · discover · help' },
+      d: { ar: 'فانوسٌ لركن صلاتك، ومجسّم الكعبة، ودورة الماء، ومرصد القمر، وطبقك الأوّل، وصندوق صدقتك — اصنع بيديك وتعلّم.', en: 'A lantern for your prayer corner, a Kaaba model, the water cycle, a moon observatory, your first dish and a sadaqah box — make it and learn.' } }
   ];
   function stars(id) { try { return (JSON.parse(localStorage.getItem('tr:skill-' + id)) || []).length; } catch (e) { return 0; } }
   window.TR_PAGE = {
     id: 'skills', icon: '🛠️', color: '#7A3FB0',
-    back: { href: '../activities/play.html', label: { ar: 'ساحة الأنشطة', en: 'Activities' } },
+    back: { href: '../activities/play.html', label: { ar: 'كوكب الإبداع', en: 'Planet of Creativity' } },
     title: { ar: 'صانع المهارات', en: 'Skills Maker' },
     intro: { ar: 'رحلاتٌ حقيقية لتتعلّم مهارةً تنفعك وتنفع الناس: محطّاتٌ قصيرة، ومهمّةٌ عملية في كلّ محطّة، وحلقةُ بودكاست نسمعها معًا 🎧', en: 'Real journeys to learn a skill that helps you and others: short stations, a hands-on mission in each, and a podcast episode to listen to together 🎧' },
     guide: { icon: '🧒', name: { ar: 'أنوس', en: 'Anos' }, say: { ar: 'أيّ مهارةٍ تحبّ أن تصنعها اليوم؟ اختر رحلةً واحدة، وأكمل محطّةً في كلّ مرّة — وفي آخر الرحلة شهادةٌ تنتظرك! 🏅', en: 'Which skill would you like to make today? Pick one journey and finish one station at a time — a certificate waits at the end! 🏅' } },

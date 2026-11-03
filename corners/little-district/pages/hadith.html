@@ -267,12 +267,29 @@ html[dir="ltr"] .hd-cert-name:empty::before{content:'... write your name here'}
   #hdPrintArea{display:block!important;position:fixed!important;inset:0!important;padding:1.2cm!important;background:#fff!important}
   .hd-cert-card{box-shadow:none!important;margin:0!important}
 }
-/* the Forty's cards live here (one place for the Forty: learn · cards · test) */
-.hd-cardsbtn{position:relative;z-index:2;display:flex;align-items:center;gap:.8rem;max-width:520px;margin:1.3rem auto 0;padding:.85rem 1.2rem;text-decoration:none;border-radius:1.3rem;background:linear-gradient(135deg,#2E8B57,#1D6B42);border:2px solid #8FD3AE;box-shadow:0 8px 0 #175536,0 14px 28px rgba(10,60,40,.35);font-family:'Tajawal',sans-serif}
-.hd-cardsbtn .tb-ic{font-size:2rem}.hd-cardsbtn .tb-txt{flex:1;display:flex;flex-direction:column;line-height:1.35}
-.hd-cardsbtn b{color:#fff;font-size:1.05rem;font-weight:900}.hd-cardsbtn small{color:rgba(255,255,255,.88);font-size:.78rem;font-weight:700}
-.hd-cardsbtn .tb-go{background:#fff;color:#1D6B42;font-weight:900;font-size:.85rem;border-radius:2rem;padding:.4rem .9rem;white-space:nowrap}
-.hr-card{display:block;text-align:center;margin:.6rem auto 0;max-width:calc(100% - 32px);padding:.45rem 1rem;border-radius:2rem;background:#2E8B57;color:#fff;text-decoration:none;font-family:'Tajawal',sans-serif;font-weight:800;font-size:.88rem}
+/* each hadith's card lives inside the hadith (🃏 on the tile and in the reader) — no separate cards page */
+.hd-card{position:relative}
+.hd-cardic{position:absolute;top:.45rem;inset-inline-end:.45rem;width:34px;height:34px;border-radius:50%;border:2px solid var(--hd-lt,#B7AAEB);background:#fff;display:grid;place-items:center;font-size:1rem;cursor:pointer;box-shadow:0 2px 6px rgba(20,12,50,.18);padding:0}
+.hd-cardic.rev{background:#FFF4CC;border-color:#E8B530}
+.hd-cardic:focus-visible,.hr-cardbtn:focus-visible{outline:3px solid #E8B530;outline-offset:2px}
+.hr-cardbtn{border:2px solid #B7AAEB;background:#fff;border-radius:50%;width:40px;height:40px;font-size:1.15rem;cursor:pointer;margin-inline-end:.4rem}
+.hdc-ov{position:fixed;inset:0;z-index:2147482000;background:rgba(20,12,50,.55);display:none;align-items:center;justify-content:center;padding:16px}
+.hdc-ov.open{display:flex}
+.hdc-box{width:min(440px,100%);max-height:92vh;overflow:auto;background:#FBFAFF;border-radius:22px;padding:14px;box-shadow:0 20px 50px rgba(0,0,0,.35);font-family:'Tajawal',sans-serif}
+.hdc-hd{display:flex;align-items:center;justify-content:space-between;margin-bottom:8px}.hdc-hd b{color:#5B49A8}
+.hdc-x{border:0;background:#EEE9FB;border-radius:50%;width:34px;height:34px;font-weight:900;cursor:pointer}
+.hdc-flip{perspective:1200px;cursor:pointer}
+.hdc-in{display:grid;transition:transform .55s;transform-style:preserve-3d}
+.hdc-flip.on .hdc-in{transform:rotateY(180deg)}
+html.calm .hdc-in{transition:none}
+.hdc-face{grid-area:1/1;backface-visibility:hidden;-webkit-backface-visibility:hidden;border-radius:18px;padding:22px 18px;min-height:230px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:6px}
+.hdc-front{background:linear-gradient(160deg,#7E6BD4,#5B49A8);color:#fff}
+.hdc-front .e{font-size:3rem}.hdc-front .t{font-size:1.3rem;font-weight:900}.hdc-front .s{opacity:.9;font-size:.9rem}.hdc-front .h{font-size:.78rem;opacity:.85;margin-top:8px}
+.hdc-back{background:#fff;border:2px solid #B7AAEB;transform:rotateY(180deg);color:#2B2440}
+.hdc-back .m{font-family:'Amiri',serif;font-size:1.12rem;line-height:2}.hdc-back .src{font-size:.8rem;color:#7a7392;margin-top:6px}
+.hdc-act{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-top:12px}
+.hdc-act button{border:0;border-radius:999px;padding:.55rem 1rem;font:800 .92rem 'Tajawal',sans-serif;cursor:pointer;background:#EEE9FB;color:#3c3166}
+.hdc-act .ok{background:#5B49A8;color:#fff}.hdc-act .ok.on{background:#E8B530;color:#2b2000}
 </style>
 <script>(function(){try{var l=localStorage.getItem('bunyanLang');if(l==='en'){var h=document.documentElement;h.dir='ltr';h.lang='en';}}catch(e){}})();</script>
 <style id="__antiflash">html{background:#0A2540;color-scheme:dark}</style>
@@ -308,15 +325,6 @@ html[dir="ltr"] .hd-cert-name:empty::before{content:'... write your name here'}
 
   <div class="hd-grid" id="hdGrid"></div>
 
-  <a class="hd-cardsbtn" href="../../treasures/hadith-cards.html">
-    <span class="tb-ic">🃏</span>
-    <span class="tb-txt">
-      <b class="lng-ar">بطاقات الأربعين — للمراجعة والطباعة</b><b class="lng-en">The Forty as cards — review &amp; print</b>
-      <small class="lng-ar">نفسُ الأحاديث في بطاقاتٍ تقلبها · راجعتَ <span id="hdCardsN">٠</span> / ٤٢</small><small class="lng-en">The same hadiths as flip cards · reviewed <span id="hdCardsNen">0</span> / 42</small>
-    </span>
-    <span class="tb-go lng-ar">راجِع ←</span><span class="tb-go lng-en">Review →</span>
-  </a>
-
   <a class="hd-testbtn" href="quran-tests.html?j=hadith">
     <span class="tb-ic">🎯</span>
     <span class="tb-txt">
@@ -342,9 +350,9 @@ html[dir="ltr"] .hd-cert-name:empty::before{content:'... write your name here'}
   <div class="hr-nav">
     <button class="hr-back" id="hrBack"><span>←</span><span class="lng-ar">المسجد</span><span class="lng-en">Masjid</span></button>
     <div class="hr-center"><div class="nm" id="hrNm"></div><div class="mt" id="hrMt"></div></div>
+    <button class="hr-cardbtn" id="hrCardBtn" type="button" title="بطاقة الحديث" aria-label="بطاقة الحديث">🃏</button>
     <div class="hr-pager"><button class="hr-arrow" id="hrPrev">‹</button><button class="hr-arrow" id="hrNext">›</button></div>
   </div>
-  <a class="hr-card" id="hrCard" href="../../treasures/hadith-cards.html"><span class="lng-ar">🃏 بطاقة هذا الحديث — راجِعها أو اطبعها</span><span class="lng-en">🃏 This hadith's card — review or print it</span></a>
   <div class="hr-stage"><div class="hr-book" id="hrBook"></div></div>
 </div>
 
@@ -400,12 +408,63 @@ html[dir="ltr"] .hd-cert-name:empty::before{content:'... write your name here'}
 <script defer src="../../shared/mk-bag.js"></script>
 <script defer src="../../shared/mk-train.js"></script>
 <script defer src="../../shared/nav-fix.js"></script>
+<div class="hdc-ov" id="hdcOv" role="dialog" aria-modal="true"><div class="hdc-box" id="hdcBox"></div></div>
 <script>
-/* the open hadith's card (the reader sets #hNN) + how many cards the child has reviewed */
+/* «بطاقة الحديث» — each of the Forty has its flip card INSIDE the hadith (🃏 on its tile and in the reader).
+   Reviewed cards are saved in tr:hadith-cards (same key as before, so stars & the bag keep counting). */
 (function(){
-  function upd(){ var a=document.getElementById('hrCard'); if(!a) return; var slug=(location.hash||'').slice(1); a.href='../../treasures/hadith-cards.html'+(/^h\d\d$/.test(slug)?'#'+slug:''); }
-  function count(){ var n=0; try{ n=(JSON.parse(localStorage.getItem('tr:hadith-cards'))||[]).length; }catch(e){} var a=document.getElementById('hdCardsN'), b=document.getElementById('hdCardsNen'); if(a) a.textContent=String(n).replace(/[0-9]/g,function(c){return '٠١٢٣٤٥٦٧٨٩'[c];}); if(b) b.textContent=n; }
-  window.addEventListener('hashchange',upd); upd(); count(); window.addEventListener('pageshow',count);
+  var KEY='tr:hadith-cards';
+  function L(){ return (localStorage.getItem('bunyanLang')||'ar')==='en'?'en':'ar'; }
+  function T(a,e){ return L()==='en'?e:a; }
+  function rev(){ try{ return JSON.parse(localStorage.getItem(KEY))||[]; }catch(e){ return []; } }
+  function isRev(s){ return rev().indexOf(s)>-1; }
+  function toggle(s){ var r=rev(), i=r.indexOf(s); if(i>-1) r.splice(i,1); else r.push(s); try{ localStorage.setItem(KEY,JSON.stringify(r)); }catch(e){} return i<0; }
+  function idx(s){ return (window.HADITH_INDEX||[]).filter(function(x){return x.slug===s;})[0]; }
+  function esc(t){ return String(t||'').replace(/[&<>]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;'}[c];}); }
+  function src(h,l){ return h.source&&h.narrator?((l==='ar'?'عن ':'')+h.narrator[l]+' — '+h.source[l]):(h.source?h.source[l]:''); }
+  function cardHtml(x,h,l,printing){
+    return '<div class="hdc-flip'+(printing?' print':'')+'"><div class="hdc-in">'+
+      '<div class="hdc-face hdc-front"><div class="e">'+x.emoji+'</div><div class="t">'+esc(l==='ar'?x.titleAr:x.titleEn)+'</div><div class="s">'+esc(l==='ar'?x.themeAr:x.themeEn)+' · '+(l==='ar'?'الحديث ':'Hadith ')+x.num+'</div>'+(printing?'':'<div class="h">👆 '+T('اضغط لتقلب البطاقة','Tap to flip the card')+'</div>')+'</div>'+
+      '<div class="hdc-face hdc-back"><div class="m">'+(h.matn?h.matn[l]:'')+'</div><div class="src">📚 '+esc(src(h,l))+'</div></div>'+
+    '</div></div>';
+  }
+  var cur=null;
+  function draw(){
+    var x=idx(cur), h=(window.HADITHS||{})[cur]||{}, l=L(), on=isRev(cur), box=document.getElementById('hdcBox');
+    box.innerHTML='<div class="hdc-hd"><b>🃏 '+T('بطاقة الحديث','Hadith card')+' '+x.num+'</b><button class="hdc-x" id="hdcX" aria-label="close">✕</button></div>'+cardHtml(x,h,l)+
+      '<div class="hdc-act"><button class="ok'+(on?' on':'')+'" id="hdcOk">'+(on?'⭐ '+T('راجعتُها','Reviewed'):'☆ '+T('راجعتُها!','I reviewed it!'))+'</button><button id="hdcPr">🖨️ '+T('اطبع البطاقة','Print the card')+'</button><button id="hdcAll">🖨️ '+T('اطبع البطاقات الـ٤٢','Print all 42 cards')+'</button></div>';
+    var f=box.querySelector('.hdc-flip'); f.onclick=function(){ f.classList.toggle('on'); };
+    box.querySelector('#hdcX').onclick=close;
+    box.querySelector('#hdcOk').onclick=function(){ toggle(cur); draw(); marks(); };
+    box.querySelector('#hdcPr').onclick=function(){ printCards([cur]); };
+    box.querySelector('#hdcAll').onclick=function(){ printCards((window.HADITH_INDEX||[]).map(function(x){return x.slug;})); };
+  }
+  function open(s){ if(!idx(s)) return; cur=s; draw(); document.getElementById('hdcOv').classList.add('open'); }
+  function close(){ document.getElementById('hdcOv').classList.remove('open'); }
+  function printCards(list){
+    var l=L(), w=window.open('','_blank'); if(!w) return;
+    w.document.write('<!doctype html><html dir="'+(l==='ar'?'rtl':'ltr')+'"><meta charset="utf-8"><title>'+T('بطاقات الأربعين النووية','The Forty Hadith cards')+'</title><style>body{font-family:Tajawal,Tahoma,Arial,sans-serif;margin:10mm}.row{display:grid;grid-template-columns:1fr 1fr;gap:6mm;margin-bottom:6mm;break-inside:avoid}.c{border:1.5px dashed #7E6BD4;border-radius:5mm;padding:7mm;min-height:55mm;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center}.f{background:#F3F0FB}.e{font-size:28pt}.t{font-size:15pt;font-weight:800;color:#5B49A8}.m{font-family:Amiri,serif;font-size:12pt;line-height:1.9}.s{font-size:9pt;color:#777;margin-top:3mm}</style>'+
+      list.map(function(s){ var x=idx(s), h=(window.HADITHS||{})[s]||{}; return '<div class="row"><div class="c f"><div class="e">'+x.emoji+'</div><div class="t">'+esc(l==='ar'?x.titleAr:x.titleEn)+'</div><div class="s">'+(l==='ar'?'الحديث ':'Hadith ')+x.num+'</div></div><div class="c"><div class="m">'+(h.matn?h.matn[l]:'')+'</div><div class="s">'+esc(src(h,l))+'</div></div></div>'; }).join('')+'<script>print()<\/script>');
+    w.document.close();
+  }
+  /* 🃏 on every hadith tile (the grid re-renders on language change, so keep watching) */
+  function marks(){
+    document.querySelectorAll('#hdGrid .hd-card').forEach(function(c,i){
+      var x=(window.HADITH_INDEX||[])[i]; if(!x) return;
+      var b=c.querySelector('.hd-cardic');
+      if(!b){ b=document.createElement('button'); b.type='button'; b.className='hd-cardic'; b.textContent='🃏';
+        b.addEventListener('click',function(e){ e.stopPropagation(); e.preventDefault(); open(x.slug); }); c.appendChild(b); }
+      b.title=b.ariaLabel=T('بطاقة الحديث','Hadith card'); b.classList.toggle('rev',isRev(x.slug));
+    });
+  }
+  function start(){
+    marks(); var g=document.getElementById('hdGrid'); if(g) new MutationObserver(function(){ marks(); }).observe(g,{childList:true});
+    var rb=document.getElementById('hrCardBtn'); if(rb) rb.onclick=function(){ var s=(location.hash||'').slice(1); if(idx(s)) open(s); };
+    var ov=document.getElementById('hdcOv'); ov.onclick=function(e){ if(e.target===ov) close(); };
+    document.addEventListener('keydown',function(e){ if(e.key==='Escape') close(); });
+    var q=new URLSearchParams(location.search).get('card'); if(q) setTimeout(function(){ open(q); },300);   // links from other pages (?card=hNN)
+  }
+  if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',start); else start();
 })();
 </script>
 </body>

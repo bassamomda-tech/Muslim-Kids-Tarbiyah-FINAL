@@ -44,7 +44,7 @@
     { href: GARDEN + 'hadith.html', ic: '🕌', c: '#1A9B7B', done: nawawiDone, total: 42,
       t: { ar: 'الأربعون النووية', en: 'The Forty Hadith of an-Nawawi' }, tag: { ar: 'احفظ · افهم · اعمل', en: 'Memorize · Understand · Act' },
       d: { ar: 'أحاديثُ النبيّ ﷺ الجامعة، حديثًا حديثًا: نصّه وشرحه وفوائده — ولكلّ حديثٍ بطاقةٌ تقلبها للمراجعة وتطبعها، ثم اختبارٌ وشهادة.', en: "The Prophet's ﷺ comprehensive hadiths, one by one: text, explanation and lessons — each with a flip card to review and print — then a test and a certificate." },
-      extra: function () { var n = stars('hadith-cards'); return { ar: '🃏 راجعتُ ' + n.toLocaleString('ar-EG') + ' / ٤٢ بطاقة', en: '🃏 reviewed ' + n + ' / 42 cards' }; },
+      extra: function () { var n = stars('hadith-cards'); return { ar: '🃏 لكلّ حديثٍ بطاقته — راجعتُ ' + n.toLocaleString('ar-EG') + ' / ٤٢', en: '🃏 each hadith has its card — reviewed ' + n + ' / 42' }; },
       unit: { ar: 'حديثًا حفظتُه', en: 'memorized' } },
     { href: 'hadith-stories.html', ic: '📖', c: '#C1663A', done: function () { return stars('hadith-stories'); }, total: 100,
       t: { ar: 'قصص السنة', en: 'Sunnah Stories' }, tag: { ar: '١٠٠ قصة من ١٠٠ حديث صحيح', en: '100 stories from 100 authentic hadiths' },
@@ -57,7 +57,7 @@
   ];
 
   window.TR_PAGE = {
-    id: 'sunnah', icon: '📜', color: '#6C4BD8', pageSound: true,
+    id: 'sunnah', icon: '📜', color: '#6C4BD8',
     guide: { icon: '👧', name: { ar: 'كارما', en: 'Karma' }, say: { ar: "السلام عليكم! أنا كارما، بطلةُ حُفّاظ السنة 🌸 أحبُّ النبيَّ ﷺ وأحبُّ أن أعمل بكلامه. اختر بابًا وتعال نتعلّم معًا — حديثًا واحدًا كلّ أسبوع يكفي!", en: "Assalamu alaikum! I'm Karma, the hero of the Sunnah Keepers 🌸 I love the Prophet ﷺ and I love living by his words. Pick a door and let's learn together — one hadith a week is enough!" } },
     back: { href: '../../index.html', label: { ar: 'المدينة', en: 'City' } },
     title: { ar: 'حُفّاظ السنة', en: 'Sunnah Keepers' },
@@ -66,11 +66,6 @@
       // the corner score card (mk-corner-score.js) sits under the hero; keep it there when the page re-renders (language switch)
       var sc = window.__mkcs || document.getElementById('mkCornerScore'), hero = document.querySelector('.tr-hero');
       if (sc && hero) { window.__mkcs = sc; hero.parentNode.insertBefore(sc, hero.nextSibling); }
-      setTimeout(function () {
-        document.querySelectorAll('.sn-door').forEach(function (d) {
-          d.addEventListener('click', function (e) { if (e.ctrlKey || e.metaKey) return; e.preventDefault(); TR.pageSound(); var h = d.href; setTimeout(function () { location.href = h; }, 320); });
-        });
-      }, 0);
       var el = document.querySelector('[data-panel="kids"]');
       el.innerHTML = '<div class="sn-grid">' + DOORS.map(function (d) {
         var n = d.done(), pct = Math.round(n / d.total * 100);
@@ -82,7 +77,7 @@
       }).join('') + '</div>' +
       '<div class="sn-path"><h3>👧 ' + TR.tx('طريقُ كارما الهادئ للأسبوع', 'Karma\'s calm path for the week') + '</h3><ol>' +
         '<li>' + TR.tx('حديثٌ واحد من <b>الأربعين</b>: اقرأه وافهمه، واحفظ جملةً منه.', 'One hadith from <b>the Forty</b>: read it, understand it, memorize one sentence.') + '</li>' +
-        '<li>' + TR.tx('راجعه في منتصف الأسبوع بـ<b>بطاقته</b> (من داخل الحديث نفسه) — أو علّقها على الثلاجة.', 'Review it mid-week with its <b>card</b> (from inside the hadith itself) — or stick it on the fridge.') + '</li>' +
+        '<li>' + TR.tx('راجعه في منتصف الأسبوع بـ<b>بطاقته</b> 🃏 (على الحديث نفسه) — أو اطبعها للثلاجة.', 'Review it mid-week with its <b>card</b> 🃏 (right on the hadith) — or print it for the fridge.') + '</li>' +
         '<li>' + TR.tx('قصّةٌ واحدة من <b>قصص السنة</b> قبل النوم، من المجموعة القريبة من حديث الأسبوع.', 'One <b>Sunnah story</b> at bedtime, from the group closest to the week\'s hadith.') + '</li>' +
         '<li>' + TR.tx('يوم الجمعة: <b>موقفٌ</b> من مواقف النبيّ ﷺ، ونسأل: «كيف نقتدي به؟»', 'On Friday: one <b>moment</b> of the Prophet ﷺ, and ask: "How can we follow his example?"') + '</li>' +
       '</ol></div>' +

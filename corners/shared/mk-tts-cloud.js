@@ -16,7 +16,7 @@
    ════════════════════════════════════════════════════════════════ */
 (function () {
   var EP = window.MK_TTS_ENDPOINT || '';
-  var audio = null, memo = {};
+  var audio = null, memo = {}, pending = {};
 
   // Narrator gender per corner: a page sets window.MK_NARRATOR_GENDER='male'
   // (default 'female' = the current voice). Used for both lang voices.
@@ -26,31 +26,41 @@
     if (audio) { try { audio.pause(); } catch (e) {} audio = null; }
   }
 
-  function fetchUrl(text, lang) {
-    var g = gender();
-    var key = lang + '|' + g + '|' + text;
+  /* style = how the server's voice reads: 'story' (default, calm storyteller), 'podcast' (friendly talk), 'ui' */
+  function fetchUrl(text, lang, opt) {
+    opt = opt || {};
+    var g = opt.gender || gender(), st = opt.style || window.MK_TTS_STYLE || 'story';
+    var key = lang + '|' + g + '|' + st + '|' + text;
     if (memo[key]) return Promise.resolve(memo[key]);
-    return fetch(EP, {
+    if (pending[key]) return pending[key];
+    return (pending[key] = fetch(EP, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ text: text, lang: lang, gender: g }),
+      body: JSON.stringify({ text: text, lang: lang, gender: g, style: st }),
     }).then(function (r) {
       if (!r.ok) throw new Error('tts http ' + r.status);
       return r.json();
     }).then(function (j) {
       if (!j || !j.url) throw new Error('tts no url');
-      memo[key] = j.url;
+      memo[key] = j.url; delete pending[key];
       return j.url;
-    });
+    }, function (e) { delete pending[key]; throw e; }));
+  }
+  /* ask the server to prepare a clip now (e.g. the next podcast line while this one plays) */
+  function prefetch(text, lang, opt) {
+    if (!EP) return;
+    lang = (lang || 'ar').toLowerCase().indexOf('ar') === 0 ? 'ar' : 'en';
+    text = String(text || '').trim().slice(0, 800); if (!text) return;
+    fetchUrl(text, lang, opt).then(function (u) { try { var a = new Audio(); a.preload = 'auto'; a.src = u; } catch (e) {} }, function () {});
   }
 
-  function speak(text, lang) {
+  function speak(text, lang, opt) {
     if (!EP) return Promise.reject(new Error('no endpoint'));
     lang = (lang || 'ar').toLowerCase().indexOf('ar') === 0 ? 'ar' : 'en';
     text = String(text || '').trim().slice(0, 800);
     if (!text) return Promise.reject(new Error('no text'));
     stop();
-    return fetchUrl(text, lang).then(function (url) {
+    return fetchUrl(text, lang, opt).then(function (url) {
       return new Promise(function (res, rej) {
         audio = new Audio(url);
         audio.onended = function () { res(true); };
@@ -60,7 +70,7 @@
     });
   }
 
-  window.MKTTS = { get enabled() { return !!EP; }, speak: speak, stop: stop };
+  window.MKTTS = { get enabled() { return !!EP; }, speak: speak, stop: stop, prefetch: prefetch };
 
   /* ── Global voice unifier ───────────────────────────────────────
      Route EVERY browser speechSynthesis.speak call through the natural

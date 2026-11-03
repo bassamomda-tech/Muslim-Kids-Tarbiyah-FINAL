@@ -32,7 +32,7 @@ window.SKILLS.doctor = {
     '<h3>3) My 7-day healthy-habits tracker</h3><table border="1" cellpadding="6" style="border-collapse:collapse;width:100%;text-align:center"><tr><th>Habit</th><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th><th>6</th><th>7</th></tr><tr><td>Washed hands before eating</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>Drank water</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>Ate vegetables or fruit</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>Moved for an hour</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>Went to bed early</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>Brushed my teeth</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr></table>' +
     '<h3>4) My emergency card (fill it in with a parent)</h3><table border="1" cellpadding="10" style="border-collapse:collapse;width:100%"><tr><td>My name</td><td style="width:60%"></td></tr><tr><td>My home address</td><td></td></tr><tr><td>Mum\'s or Dad\'s phone</td><td></td></tr><tr><td>Emergency number in my country</td><td></td></tr><tr><td>A trusted adult near me</td><td></td></tr></table><p>Remember: I stay calm, I tell an adult, and I never touch blood, medicine or sharp things.</p>'
   ],
-  next: ['../activities/play.html', '🎲', 'ساحة الأنشطة', 'Activities', 'جرّب مهارة أخرى أو لعبة', 'Try another skill or a game'],
+  next: ['../activities/play.html', '🪐', 'كوكب الإبداع', 'Planet of Creativity', 'جرّب مهارة أخرى أو لعبة', 'Try another skill or a game'],
   stations: [
     /* ───────── 1 ───────── */
     {

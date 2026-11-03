@@ -75,8 +75,10 @@
         if (settled) return; settled = true; pod.cloudBad = true;
         try { MKTTS.stop(); } catch (e) {}
         if (tok === pod.token) browser();
-      }, 6000 + txt.length * 110);
-      MKTTS.speak(txt, lang).then(function () { if (settled) return; settled = true; clearTimeout(guard); next(); },
+      }, 20000 + txt.length * 110);   // room for the first (uncached) generation
+      var ep = pod.ep >= 0 && S.stations[pod.ep].podcast, nx = ep && ep.lines[pod.line + 1];
+      if (nx && MKTTS.prefetch) { var nw = CAST[nx[0]] || CAST.h; MKTTS.prefetch(lineText(nx, ar), lang, { style: 'podcast', gender: nw.g || 'female' }); }
+      MKTTS.speak(txt, lang, { style: 'podcast', gender: who.g || 'female' }).then(function () { if (settled) return; settled = true; clearTimeout(guard); next(); },
         function () { if (settled) return; settled = true; clearTimeout(guard); pod.cloudBad = true; if (tok === pod.token) browser(); });
     } else browser();
     window.MK_NARRATOR_GENDER = prevG;

@@ -120,5 +120,13 @@
   style(); apply();
   window.addEventListener('storage', function (e) { if (e.key === KEY || e.key === 'mk:calm') apply(); });
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', build); else build();
+  /* the 🏠 home button rides along: every page that has «Aa» also gets one tap back to the home page */
+  try {
+    if (!window.__mkHome && !document.querySelector('script[src*="mk-home.js"]')) {
+      var me = document.querySelector('script[src*="mk-a11y.js"]'), hs = document.createElement('script');
+      hs.src = me ? me.src.replace(/mk-a11y\.js.*$/, 'mk-home.js') : 'corners/shared/mk-home.js'; hs.async = true; hs.onerror = function () {};
+      (document.head || document.documentElement).appendChild(hs);
+    }
+  } catch (e) {}
   window.MKA11y = { apply: apply, open: function () { build(); toggle(); } };
 })();

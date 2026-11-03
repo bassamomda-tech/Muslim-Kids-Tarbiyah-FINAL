@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ساحة الأنشطة | Activities</title>
-<meta name="description" content="ساحة الأنشطة: ألعاب أنوس التفاعلية، وساحة المسابقات، وورشة الصانع الصغير — في مكانٍ واحد.">
+<title>كوكب الإبداع | Planet of Creativity</title>
+<meta name="description" content="كوكب الإبداع: صانع المهارات، وألعاب أنوس التفاعلية، وساحة المسابقات — في مكانٍ واحد.">
 <link rel="icon" href="../../favicon.ico">
 <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&family=Nunito:wght@400;700;800;900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../treasures/tr.css">
@@ -24,28 +24,25 @@
 <body>
 <div id="tr-root"></div>
 <script>
-/* ساحة الأنشطة — ONE home-page door for the three "doing" places (they keep their own pages & progress). */
+/* كوكب الإبداع — ONE home-page door for the three "doing" places (they keep their own pages & progress). */
 (function () {
   var R = '../';
   var DOORS = [
     { href: R + 'skills/index.html', ic: '🛠️', c: '#7A3FB0',
       t: { ar: 'صانع المهارات', en: 'Skills Maker' }, tag: { ar: 'رحلات لتعلّم مهاراتٍ حقيقية + بودكاست', en: 'Journeys to learn real skills + podcast' },
-      li: { ar: ['التاجر الصغير · مستكشف التاريخ · العالِم · الطبيب · المهندس · المزارع', 'مهمّةٌ عملية وحلقة بودكاست في كلّ محطّة'], en: ['Merchant · History explorer · Scientist · Doctor · Engineer · Farmer', 'A hands-on mission and a podcast episode at every station'] } },
+      li: { ar: ['التاجر · مستكشف التاريخ · العالِم · الطبيب · المهندس · المزارع · الصانع الصغير', 'مهمّةٌ عملية وحلقة بودكاست في كلّ محطّة'], en: ['Merchant · History explorer · Scientist · Doctor · Engineer · Farmer · Little Maker', 'A hands-on mission and a podcast episode at every station'] } },
     { href: R + 'activities/dashboard.html', ic: '🎲', c: '#C9A961',
       t: { ar: 'أنشطة أنوس', en: "Anos' Activities" }, tag: { ar: 'ألعابٌ وتحدّيات من كلّ الأركان', en: 'Games & challenges from every corner' },
       li: { ar: ['ألعابٌ تفاعلية تجمع ما تعلّمته في الأركان', 'اجمع النقاط والأوسمة وأنت تلعب'], en: ['Interactive games built on what you learned', 'Collect points and medals as you play'] } },
     { href: R + 'competitions/competitions.html', ic: '🏆', c: '#7A3FB0',
       t: { ar: 'ساحة المسابقات', en: 'Competitions Arena' }, tag: { ar: 'كوِّن اختبارك وتسابق', en: 'Build your quiz and race' },
       li: { ar: ['بنك أسئلة في العقيدة والقرآن والسيرة والعبادة والأخلاق', 'مؤقّت ونجوم وشهادة تميّز'], en: ['Questions on Aqeeda, Quran, Seerah, worship & manners', 'Timer, stars and a certificate'] } },
-    { href: R + 'workshop/workshop.html', ic: '🧰', c: '#5E8C31',
-      t: { ar: 'ورشة الصانع الصغير', en: "Little Maker's Workshop" }, tag: { ar: 'اعمل بيديك', en: 'Make it with your hands' },
-      li: { ar: ['أشغالٌ يدوية وزراعة وتجارب في البيت', 'مهمّات في الطبيعة ودفتر إنجاز'], en: ['Crafts, planting and experiments at home', 'Nature missions and a maker journal'] } }
   ];
   window.TR_PAGE = {
-    id: 'play', icon: '🎲', color: '#7A3FB0',
+    id: 'play', icon: '🪐', color: '#7A3FB0',
     back: { href: '../../index.html', label: { ar: 'المدينة', en: 'City' } },
-    title: { ar: 'ساحة الأنشطة', en: 'Activities' },
-    intro: { ar: 'تعلّم مهارة، والعب، وتسابق، واصنع بيديك — أربعة أبوابٍ في مكانٍ واحد. اختر واحدًا اليوم 🌟', en: 'Learn a skill, play, compete and make things — four doors in one place. Pick one today 🌟' },
+    title: { ar: 'كوكب الإبداع', en: 'Planet of Creativity' },
+    intro: { ar: 'أهلًا بك في كوكب الإبداع 🪐 تعلّم مهارةً واصنع بيديك، والعب، وتسابق — ثلاثة أبوابٍ في مكانٍ واحد. اختر واحدًا اليوم 🌟', en: 'Welcome to the Planet of Creativity 🪐 Learn a skill and make things, play, and compete — three doors in one place. Pick one today 🌟' },
     guide: { icon: '🧒', name: { ar: 'أنوس', en: 'Anos' }, say: { ar: 'أهلًا! أنا أنوس 👋 تعلّمتَ شيئًا جديدًا في الأركان؟ تعال نلعب به، أو نتسابق، أو نصنع شيئًا جميلًا!', en: "Hi! I'm Anos 👋 Learned something new in the corners? Let's play with it, race, or make something beautiful!" } },
     onRender: function (TR) {
       document.querySelector('[data-panel="kids"]').innerHTML = '<div class="pl-grid">' + DOORS.map(function (d) {
