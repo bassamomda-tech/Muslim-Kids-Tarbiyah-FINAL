@@ -33,7 +33,10 @@ const GEMINI_API_KEY = defineSecret('GEMINI_API_KEY');
 /* Gemini voices (multilingual — they speak Arabic). Change in functions/.env to taste:
    warm/gentle female: Sulafat · Vindemiatrix · Achernar · Aoede     friendly male: Achird · Sadaltager · Iapetus · Charon */
 const G = {
-  model: process.env.GEMINI_TTS_MODEL || 'gemini-2.5-flash-preview-tts',
+  model: process.env.GEMINI_TTS_MODEL || 'gemini-2.5-flash-preview-tts',   // the main model (its name is part of the saved-clip key)
+  /* all the voice models to share the work (each has its own allowance); GEMINI_TTS_MODELS in functions/.env = comma list */
+  models: (process.env.GEMINI_TTS_MODELS || [process.env.GEMINI_TTS_MODEL || 'gemini-2.5-flash-preview-tts', 'gemini-2.5-pro-preview-tts'].join(','))
+    .split(',').map((x) => x.trim()).filter(Boolean),
   ar: { female: process.env.GEMINI_VOICE_AR_F || 'Sulafat', male: process.env.GEMINI_VOICE_AR_M || 'Achird' },
   en: { female: process.env.GEMINI_VOICE_EN_F || 'Sulafat', male: process.env.GEMINI_VOICE_EN_M || 'Achird' },
 };
@@ -80,9 +83,10 @@ async function pcmToMp3(pcm, rate) {
   const e = enc.flush(); if (e.length) out.push(Buffer.from(e));
   return Buffer.concat(out);
 }
-async function geminiSpeak(text, lang, gender, style, key) {
+async function geminiSpeak(text, lang, gender, style, key, model) {
+  model = model || G.model;
   const voice = G[lang][gender], prompt = (lang === 'ar' ? FUSHA + '\n' : '') + (STYLE[lang][style] || STYLE[lang].story) + '\n' + text;
-  const r = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/${G.model}:generateContent`, {
+  const r = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent`, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json', 'x-goog-api-key': key },
     body: JSON.stringify({
@@ -96,7 +100,7 @@ async function geminiSpeak(text, lang, gender, style, key) {
   const inline = (part.find((p) => p.inlineData) || {}).inlineData;
   if (!inline || !inline.data) throw new Error('gemini: no audio');
   const rate = parseInt(((inline.mimeType || '').match(/rate=(\d+)/) || [])[1], 10) || 24000;
-  return { mp3: await pcmToMp3(Buffer.from(inline.data, 'base64'), rate), id: 'gemini|' + G.model + '|' + voice + '|' + style };
+  return { mp3: await pcmToMp3(Buffer.from(inline.data, 'base64'), rate), id: 'gemini|' + model + '|' + voice + '|' + style };
 }
 async function googleSpeak(text, lang, gender) {
   const v = VOICES[lang][gender];
@@ -121,7 +125,7 @@ async function googleSpeak(text, lang, gender) {
    warm-voices.js (run by you in Cloud Shell) proves it is you with a hash of the Gemini key,
    so preparing all the podcasts is not blocked by these limits.
    Counters live in Firestore (collection tts_limits); the website itself cannot read them. */
-let geminiPausedUntil = 0;   // set when Gemini says its allowance is used up (see narrate)
+const modelPausedUntil = {};   // a Gemini model that is at its limit rests until this time (see narrate)
 const DAILY_NEW = parseInt(process.env.TTS_DAILY_NEW || '10000', 10);
 const IP_HOURLY = parseInt(process.env.TTS_IP_HOURLY || '600', 10);
 function visitor(req) {
@@ -181,20 +185,22 @@ exports.narrate = onRequest(
         if (!ok) { res.set('Cache-Control', 'no-store'); res.status(429).json({ error: 'limit' }); return; }
         let mp3;
         if (key) {
-          /* Gemini allows a limited number of requests per minute: when it is busy (429/5xx) wait and try
-             again, so the same natural voice is used instead of a different-sounding fallback voice */
-          for (let t = 0; t < 3 && !mp3 && Date.now() >= geminiPausedUntil; t++) {
-            try { mp3 = (await geminiSpeak(text, lang, gender, style, key)).mp3; }
-            catch (e) {
-              const busy = /gemini http (429|500|503)/.test(e.message);
-              console.warn('gemini try ' + (t + 1) + ' failed:', e.message.replace(/\s+/g, ' ').slice(0, 400));
-              /* the daily / monthly allowance is used up: stop asking for 15 minutes so children are not kept waiting */
-              if (/gemini http 429/.test(e.message)) {
-                const daily = /per ?day|PerDay|daily/i.test(e.message);
-                if (daily || t === 2) { geminiPausedUntil = Date.now() + (daily ? 15 : 1) * 60000; break; }   // daily allowance used up → 15 min; per-minute limit → 1 min
+          /* Each Gemini voice model has its OWN per-minute and daily allowance (Tier 1: 10 a minute each).
+             Try the models in turn: one that is at its limit rests (1 min, or 15 min for the daily limit)
+             and the next one speaks — same voice, so children keep hearing the natural Gemini voice. */
+          for (const model of G.models) {
+            if (mp3) break;
+            if (Date.now() < (modelPausedUntil[model] || 0)) continue;
+            for (let t = 0; t < 2 && !mp3; t++) {
+              try { mp3 = (await geminiSpeak(text, lang, gender, style, key, model)).mp3; }
+              catch (e) {
+                const m = e.message.replace(/\s+/g, ' ');
+                console.warn('gemini ' + model + ' failed:', m.slice(0, 300));
+                if (/gemini http 429/.test(m)) { modelPausedUntil[model] = Date.now() + (/per ?day|PerDay|daily/i.test(m) ? 15 : 1) * 60000; break; }
+                if (/gemini http (403|404)/.test(m)) { modelPausedUntil[model] = Date.now() + 6 * 3600000; break; }   // model not available to this key
+                if (!/gemini http (500|503)|no audio/.test(m) || t === 1) break;
+                await new Promise((r) => setTimeout(r, 1500));
               }
-              if (!busy || t === 2) break;
-              await new Promise((r) => setTimeout(r, 2500 * (t + 1)));
             }
           }
           if (!mp3) { console.warn('gemini unavailable, using google voice'); engine = 'google'; }
