@@ -60,8 +60,10 @@ const VOICES = {
   ar: {
     /* GOOGLE_VOICE_AR_F / _M in functions/.env can pick a newer Modern Standard Arabic voice
        (e.g. a «Chirp3-HD» ar-XA voice from the Cloud Text-to-Speech voice list) */
-    female: { languageCode: 'ar-XA', name: process.env.GOOGLE_VOICE_AR_F || 'ar-XA-Wavenet-D', pitch: 0, rate: 0.98 },
-    male:   { languageCode: 'ar-XA', name: process.env.GOOGLE_VOICE_AR_M || 'ar-XA-Wavenet-C', pitch: 0, rate: 0.98 },
+    /* Chirp 3 HD = Google's natural voices (high limits, used when Gemini is at its limit);
+       if a Chirp voice is not available the older Wavenet voice is used automatically */
+    female: { languageCode: 'ar-XA', name: process.env.GOOGLE_VOICE_AR_F || 'ar-XA-Chirp3-HD-Aoede', backup: 'ar-XA-Wavenet-D', pitch: 0, rate: 0.98 },
+    male:   { languageCode: 'ar-XA', name: process.env.GOOGLE_VOICE_AR_M || 'ar-XA-Chirp3-HD-Charon', backup: 'ar-XA-Wavenet-C', pitch: 0, rate: 0.98 },
   },
   en: {
     female: { languageCode: 'en-US', name: 'en-US-Neural2-F', pitch: 0, rate: 1.0 },
@@ -98,12 +100,16 @@ async function geminiSpeak(text, lang, gender, style, key) {
 }
 async function googleSpeak(text, lang, gender) {
   const v = VOICES[lang][gender];
-  const [resp] = await client.synthesizeSpeech({
-    input: { text },
-    voice: { languageCode: v.languageCode, name: v.name },
-    audioConfig: /Chirp/i.test(v.name) ? { audioEncoding: 'MP3' } : { audioEncoding: 'MP3', speakingRate: v.rate, pitch: v.pitch },   // Chirp voices take no pitch
-  });
-  return Buffer.from(resp.audioContent, 'base64');
+  const once = async (name) => {
+    const [resp] = await client.synthesizeSpeech({
+      input: { text },
+      voice: { languageCode: v.languageCode, name },
+      audioConfig: /Chirp/i.test(name) ? { audioEncoding: 'MP3' } : { audioEncoding: 'MP3', speakingRate: v.rate, pitch: v.pitch },   // Chirp voices take no pitch
+    });
+    return Buffer.from(resp.audioContent, 'base64');
+  };
+  try { return await once(v.name); }
+  catch (e) { if (!v.backup || v.backup === v.name) throw e; console.warn('voice ' + v.name + ' unavailable, using ' + v.backup + ':', String(e.message).slice(0, 160)); v.name = v.backup; return once(v.backup); }
 }
 
 /* ═══ Protection for a public, busy site ═══════════════════════════════
@@ -183,7 +189,10 @@ exports.narrate = onRequest(
               const busy = /gemini http (429|500|503)/.test(e.message);
               console.warn('gemini try ' + (t + 1) + ' failed:', e.message.replace(/\s+/g, ' ').slice(0, 400));
               /* the daily / monthly allowance is used up: stop asking for 15 minutes so children are not kept waiting */
-              if (/gemini http 429/.test(e.message) && /quota|exhausted|per day|PerDay/i.test(e.message)) { geminiPausedUntil = Date.now() + 15 * 60000; break; }
+              if (/gemini http 429/.test(e.message)) {
+                const daily = /per ?day|PerDay|daily/i.test(e.message);
+                if (daily || t === 2) { geminiPausedUntil = Date.now() + (daily ? 15 : 1) * 60000; break; }   // daily allowance used up → 15 min; per-minute limit → 1 min
+              }
               if (!busy || t === 2) break;
               await new Promise((r) => setTimeout(r, 2500 * (t + 1)));
             }

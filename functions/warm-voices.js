@@ -23,7 +23,7 @@ Object.values(window.SKILLS || {}).forEach((S) => S.stations.forEach((st) => (st
 })));
 console.log('clips to prepare:', jobs.length);
 (async () => {
-  let done = 0, made = 0, fallback = 0, failed = 0, wait = 1500;
+  let done = 0, made = 0, fallback = 0, failed = 0, wait = 7000;   // Tier 1 allows 10 voice requests a minute → one every 7 s
   for (const j of jobs) {
     let ok = false;
     for (let t = 0; t < 4 && !ok; t++) {
@@ -31,8 +31,8 @@ console.log('clips to prepare:', jobs.length);
         const r = await fetch(EP, { method: 'POST', headers: Object.assign({ 'Content-Type': 'application/json' }, WARM ? { 'x-mk-warm': WARM } : {}), body: JSON.stringify(j) });
         const o = await r.json();
         if (!o.url) throw new Error(JSON.stringify(o));
-        if (o.engine && o.engine !== 'gemini') { fallback++; wait = Math.min(20000, wait * 2); await new Promise((res) => setTimeout(res, wait)); continue; }   // Gemini busy: slow down, try again
-        ok = true; if (!o.cached) made++; wait = Math.max(1500, wait * 0.8);
+        if (o.engine && o.engine !== 'gemini') { fallback++; wait = Math.min(60000, Math.max(15000, wait * 2)); await new Promise((res) => setTimeout(res, wait)); continue; }   // Gemini busy: slow down, try again
+        ok = true; if (!o.cached) made++; else wait = 300; if (!o.cached) wait = Math.max(7000, wait * 0.8);
       } catch (e) { await new Promise((res) => setTimeout(res, 5000)); }
     }
     if (!ok) failed++;
