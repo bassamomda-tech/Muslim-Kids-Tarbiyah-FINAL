@@ -21,9 +21,12 @@ Object.values(window.SKILLS || {}).forEach((S) => S.stations.forEach((st) => (st
   const who = (S.cast || {})[l[0]] || {};
   [['ar', l[1]], ['en', l[2]]].forEach(([lang, t]) => chunks(String(t).replace(/<[^>]+>/g, '')).forEach((text) => jobs.push({ text, lang, gender: who.g || 'female', style: 'podcast' })));
 })));
+/* WARM_SHARD=1/3 (2/3, 3/3) → this run does every 3rd clip, so 3 runs can work side by side */
+const SH = (process.env.WARM_SHARD || '').match(/^(\d+)\/(\d+)$/);
+if (SH) { const k = +SH[1] - 1, n = +SH[2]; for (let i = jobs.length - 1; i >= 0; i--) if (i % n !== k) jobs.splice(i, 1); }
 console.log('clips to prepare:', jobs.length);
 (async () => {
-  let done = 0, made = 0, fallback = 0, failed = 0, wait = 7000;   // Tier 1 allows 10 voice requests a minute → one every 7 s
+  let done = 0, made = 0, fallback = 0, failed = 0, wait = 7000, inRow = 0;   // Tier 1 allows 10 voice requests a minute → one every 7 s
   for (const j of jobs) {
     let ok = false;
     for (let t = 0; t < 4 && !ok; t++) {
@@ -31,8 +34,11 @@ console.log('clips to prepare:', jobs.length);
         const r = await fetch(EP, { method: 'POST', headers: Object.assign({ 'Content-Type': 'application/json' }, WARM ? { 'x-mk-warm': WARM } : {}), body: JSON.stringify(j) });
         const o = await r.json();
         if (!o.url) throw new Error(JSON.stringify(o));
+        if (o.engine && o.engine !== 'gemini' && ++inRow >= 12) {   // 12 backup-voice answers in a row = Gemini's daily limit is used up
+          console.log('Gemini daily limit reached — stopping. Run again after the daily reset (about 8 am UK time).'); process.exit(0);
+        }
         if (o.engine && o.engine !== 'gemini') { fallback++; wait = Math.min(60000, Math.max(15000, wait * 2)); await new Promise((res) => setTimeout(res, wait)); continue; }   // Gemini busy: slow down, try again
-        ok = true; if (!o.cached) made++; else wait = 300; if (!o.cached) wait = Math.max(7000, wait * 0.8);
+        inRow = 0; ok = true; if (!o.cached) made++; else wait = 300; if (!o.cached) wait = Math.max(7000, wait * 0.8);
       } catch (e) { await new Promise((res) => setTimeout(res, 5000)); }
     }
     if (!ok) failed++;
