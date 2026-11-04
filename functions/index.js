@@ -143,6 +143,35 @@ async function googleSpeak(text, lang, gender) {
    so preparing all the podcasts is not blocked by these limits.
    Counters live in Firestore (collection tts_limits); the website itself cannot read them. */
 const modelPausedUntil = {};   // a Gemini model that is at its limit rests until this time (see narrate)
+/* Each Gemini voice model has its OWN per-minute and daily allowance (Tier 1: 10 a minute each).
+   Try the models in turn: one that is at its limit rests (1 min, or 30 min for the daily limit) and
+   the next one speaks — same voice. Returns the MP3, or null if no model could speak within budgetMs. */
+async function geminiMake(text, lang, gender, style, key, budgetMs) {
+  let mp3 = null;
+  const t0 = Date.now();
+  for (const model of G.models) {
+    if (mp3 || Date.now() - t0 > budgetMs) break;
+    if (Date.now() < (modelPausedUntil[model] || 0)) continue;
+    for (let t = 0; t < 2 && !mp3; t++) {
+      try { mp3 = (await geminiSpeak(text, lang, gender, style, key, model)).mp3; }
+      catch (e) {
+        const m = e.message.replace(/\s+/g, ' ');
+        console.warn('gemini ' + model + ' failed:', m.slice(0, 300));
+        if (/gemini http 429/.test(m)) { modelPausedUntil[model] = Date.now() + (/per ?day|PerDay|daily/i.test(m) ? 30 : 1) * 60000; break; }
+        if (/gemini http (403|404)/.test(m)) { modelPausedUntil[model] = Date.now() + 6 * 3600000; break; }   // model not available to this key
+        if (!/gemini http (500|503)|no audio|silent audio/.test(m) || t === 1) break;
+        await new Promise((r) => setTimeout(r, 1500));
+      }
+    }
+  }
+  return mp3;
+}
+/* where a Gemini clip is saved: one entry per (engine, voice, style, text), so switching voices never mixes clips.
+   fusha2: clips saved before 4 Nov 2026 (made at 32 kbps) are silent, so they are never used again */
+function geminiPath(text, lang, gender, style) {
+  const id = 'gemini|fusha2|' + G.model + '|' + G[lang][gender] + '|' + style;
+  return `tts/${lang}/${crypto.createHash('sha1').update(id + '|' + text).digest('hex')}.mp3`;
+}
 const DAILY_NEW = parseInt(process.env.TTS_DAILY_NEW || '10000', 10);
 const IP_HOURLY = parseInt(process.env.TTS_IP_HOURLY || '600', 10);
 function visitor(req) {
@@ -189,41 +218,42 @@ exports.narrate = onRequest(
       const bucket = admin.storage().bucket();
       /* TTS_ENGINE=google in functions/.env → use the Google voices even when a Gemini key is set */
       const key = (process.env.TTS_ENGINE || '').toLowerCase() === 'google' ? '' : (GEMINI_API_KEY.value() || '').trim();
-      // one cache entry per (engine, voice, style, text): switching voices never mixes old clips
-      // fusha2: clips saved before 4 Nov 2026 (made at 32 kbps) are silent, so they are never used again
-      const engineId = key ? 'gemini|fusha2|' + G.model + '|' + G[lang][gender] + '|' + style : VOICES[lang][gender].name + '|' + VOICES[lang][gender].pitch + '|' + lang + '|' + gender;
-      const path = `tts/${lang}/${crypto.createHash('sha1').update(engineId + '|' + text).digest('hex')}.mp3`;
+      const path = key ? geminiPath(text, lang, gender, style)
+        : `tts/${lang}/${crypto.createHash('sha1').update(VOICES[lang][gender].name + '|' + VOICES[lang][gender].pitch + '|' + lang + '|' + gender + '|' + text).digest('hex')}.mp3`;
       const file = bucket.file(path);
 
+      const owner = !!key && req.headers['x-mk-warm'] === crypto.createHash('sha256').update('warm|' + key).digest('hex');
       let [exists] = await file.exists();
       /* { redo: true } from warm-voices.js (owner only) → make this clip again and replace the saved one */
-      if (exists && q.redo && key && req.headers['x-mk-warm'] === crypto.createHash('sha256').update('warm|' + key).digest('hex')) exists = false;
+      if (exists && q.redo && owner) exists = false;
       let engine = key ? 'gemini' : 'google';
+      /* VISITORS NEVER WAIT FOR GEMINI (default). Gemini clips are made only by the warming run
+         (warm-voices.js); a child asking for a line that is not ready yet hears the Google voice at
+         once (about 2 s), and that clip is saved too so it is instant next time.
+         TTS_LIVE_GEMINI=on in functions/.env → visitors may also create Gemini clips (old behaviour). */
+      const liveGemini = (process.env.TTS_LIVE_GEMINI || '').toLowerCase() === 'on';
+      if (!exists && key && !owner && !liveGemini) {
+        const fbPath = `tts/${lang}/fallback-${crypto.createHash('sha1').update(VOICES[lang][gender].name + '|' + text).digest('hex')}.mp3`;
+        const fb = bucket.file(fbPath);
+        const [fbExists] = await fb.exists();
+        if (!fbExists) {
+          let ok = true;
+          try { ok = await allowNewClip(req, key); } catch (e) { console.warn('limit check failed (allowing):', e.message); }
+          if (!ok) { res.set('Cache-Control', 'no-store'); res.status(429).json({ error: 'limit' }); return; }
+          await fb.save(await googleSpeak(text, lang, gender), { metadata: { contentType: 'audio/mpeg', cacheControl: 'public, max-age=31536000, immutable' } });
+          await fb.makePublic();
+        }
+        res.set('Cache-Control', 'no-store');   // not cached by the browser: the Gemini clip is used once warming has made it
+        res.json({ url: `https://storage.googleapis.com/${bucket.name}/${fbPath}`, cached: fbExists, engine: 'google' });
+        return;
+      }
       if (!exists) {
         let ok = true;
         try { ok = await allowNewClip(req, key); } catch (e) { console.warn('limit check failed (allowing):', e.message); }
         if (!ok) { res.set('Cache-Control', 'no-store'); res.status(429).json({ error: 'limit' }); return; }
         let mp3;
         if (key) {
-          /* Each Gemini voice model has its OWN per-minute and daily allowance (Tier 1: 10 a minute each).
-             Try the models in turn: one that is at its limit rests (1 min, or 30 min for the daily limit)
-             and the next one speaks — same voice, so children keep hearing the natural Gemini voice. */
-          const t0 = Date.now();
-          for (const model of G.models) {
-            if (mp3 || Date.now() - t0 > 15000) break;   // after 15 s use the backup voice: a child should never wait long
-            if (Date.now() < (modelPausedUntil[model] || 0)) continue;
-            for (let t = 0; t < 2 && !mp3; t++) {
-              try { mp3 = (await geminiSpeak(text, lang, gender, style, key, model)).mp3; }
-              catch (e) {
-                const m = e.message.replace(/\s+/g, ' ');
-                console.warn('gemini ' + model + ' failed:', m.slice(0, 300));
-                if (/gemini http 429/.test(m)) { modelPausedUntil[model] = Date.now() + (/per ?day|PerDay|daily/i.test(m) ? 30 : 1) * 60000; break; }
-                if (/gemini http (403|404)/.test(m)) { modelPausedUntil[model] = Date.now() + 6 * 3600000; break; }   // model not available to this key
-                if (!/gemini http (500|503)|no audio|silent audio/.test(m) || t === 1) break;
-                await new Promise((r) => setTimeout(r, 1500));
-              }
-            }
-          }
+          mp3 = await geminiMake(text, lang, gender, style, key, 15000);   // after 15 s use the backup voice: a child should never wait long
           if (!mp3) { console.warn('gemini unavailable, using google voice'); engine = 'google'; }
         }
         if (!mp3) mp3 = await googleSpeak(text, lang, gender);
@@ -386,5 +416,60 @@ exports.adminReport = onCall(
       postsTimeline,   // { 'YYYY-MM-DD': count }
       reports,
     };
+  }
+);
+
+/* ════════════════════════════════════════════════════════════════
+   warmVoices — the server prepares the Gemini voice by itself.
+   Every 30 minutes it works down warm-list.jsonl (podcasts, then stories,
+   most-read first; built by tools/voice-warm/build-list.js) and makes the
+   clips that are not saved yet, until Gemini's daily allowance is used up.
+   Visitors are never slowed down by it: they get the saved clip, or the
+   Google voice at once (see narrate). Progress: Firestore tts_limits/warm_state.
+   TTS_WARM=off in functions/.env pauses it.
+   ════════════════════════════════════════════════════════════════ */
+const { onSchedule } = require('firebase-functions/v2/scheduler');
+exports.warmVoices = onSchedule(
+  { schedule: 'every 30 minutes', timeZone: 'Europe/London', region: 'us-central1', memory: '512MiB',
+    timeoutSeconds: 1500, maxInstances: 1, secrets: [GEMINI_API_KEY] },
+  async () => {
+    if ((process.env.TTS_WARM || '').toLowerCase() === 'off') return;
+    const key = (process.env.TTS_ENGINE || '').toLowerCase() === 'google' ? '' : (GEMINI_API_KEY.value() || '').trim();
+    if (!key) return;
+    let list;
+    try { list = require('fs').readFileSync(require('path').join(__dirname, 'warm-list.jsonl'), 'utf8').split('\n').filter(Boolean); }
+    catch (e) { console.log('warm: no warm-list.jsonl'); return; }
+    const ref = admin.firestore().collection('tts_limits').doc('warm_state');
+    const st = (await ref.get()).data() || {};
+    if (st.restUntil && Date.now() < st.restUntil) return;                       // daily allowance used up: wait
+    const sig = crypto.createHash('sha1').update(list.length + '|' + list[0] + '|' + list[list.length - 1]).digest('hex');
+    let i = st.sig === sig ? (st.i || 0) : 0;                                    // a new list starts from the top
+    if (i >= list.length) return;                                                // everything is ready
+    const bucket = admin.storage().bucket(), stopAt = Date.now() + 1380000;
+    let made = 0, skipped = 0, inRow = 0, restUntil = 0;
+    const save = () => ref.set({ sig, i, total: list.length, restUntil, updated: Date.now(),
+      madeToday: (st.day === new Date().toISOString().slice(0, 10) ? st.madeToday || 0 : 0) + made,
+      day: new Date().toISOString().slice(0, 10) }, { merge: true });
+    while (i < list.length && Date.now() < stopAt) {
+      let j; try { j = JSON.parse(list[i]); } catch (e) { i++; continue; }
+      const [text, lang, gender, style] = j;
+      const file = bucket.file(geminiPath(text, lang, gender, style));
+      if ((await file.exists())[0]) { i++; continue; }
+      const mp3 = await geminiMake(text, lang, gender, style, key, 120000);
+      if (!mp3) {
+        // every model resting for a while = the daily allowance is used up → come back in an hour
+        if (G.models.every((m) => (modelPausedUntil[m] || 0) > Date.now() + 5 * 60000)) { restUntil = Date.now() + 3600000; break; }
+        if (++inRow >= 10) break;                                                // something is wrong: try again next run
+        i++; skipped++; continue;                                                // this line is voiced on demand instead
+      }
+      inRow = 0;
+      await file.save(mp3, { metadata: { contentType: 'audio/mpeg', cacheControl: 'public, max-age=31536000, immutable' } });
+      await file.makePublic();
+      made++; i++;
+      if (made % 20 === 0) await save();
+      await new Promise((r) => setTimeout(r, 1500));
+    }
+    await save();
+    console.log('warm: made', made, 'skipped', skipped, '· at', i, '/', list.length, restUntil ? '· daily limit reached' : '');
   }
 );

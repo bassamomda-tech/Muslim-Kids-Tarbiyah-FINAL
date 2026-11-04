@@ -1,19 +1,30 @@
-# Story voice warming
+# Voice warming (preparing the Gemini voice ahead of time)
 
-`stories-ar.jsonl` lists every Arabic line the site's story readers send to the voice service
-(one JSON per line: text, lang, gender, style, page). It was recorded by opening each story page
-in a browser and pressing play, so the text matches exactly what children hear.
+**It runs by itself.** The `warmVoices` function (functions/index.js) wakes every 30 minutes,
+works down `functions/warm-list.jsonl` and makes the Gemini clips that are not saved yet,
+until Gemini's daily allowance is used up (about 440 clips a day on Tier 1). Next morning it
+carries on where it stopped.
 
-Order (most used first): Little Library → Sunnah stories & Prophet moments → Heroes Fortress
-stories → Little District houses → faith/quds/heroes journeys & apps → other Treasures cards.
+Children are never slowed down by it: the website gets the saved Gemini clip, or — for a line
+that is not ready yet — the Google voice at once, which is saved too.
 
-Warm it from Cloud Shell (inside `functions/`), 3 workers side by side:
+Order of the list: Arabic podcasts → Arabic stories (most read first: Little Library, Sunnah
+stories & Prophet moments, Heroes Fortress, Little District houses, journeys & apps, other
+Treasures cards) → English podcasts.
 
-    WARM_FILE=../tools/voice-warm/stories-ar.jsonl WARM_LANG=ar WARM_SHARD=1/3 node warm-voices.js
-    WARM_FILE=../tools/voice-warm/stories-ar.jsonl WARM_LANG=ar WARM_SHARD=2/3 node warm-voices.js
-    WARM_FILE=../tools/voice-warm/stories-ar.jsonl WARM_LANG=ar WARM_SHARD=3/3 node warm-voices.js
+## After adding podcasts or stories
 
-Each run stops by itself when Gemini's daily limit is used up (about 440 clips a day).
-Run it again the next day: clips already made are skipped in a fraction of a second,
-so it simply carries on where it stopped. New stories you add later are voiced the
-first time a child plays them, and then kept.
+    node tools/voice-warm/build-list.js          # rebuilds functions/warm-list.jsonl
+    cd functions && firebase deploy --only functions --project muslim-kids-tarbiyah
+
+`stories-ar.jsonl` is the recorded list of story lines (one JSON per line: text, lang, gender,
+style, page). Stories not in it are still voiced: Google voice the first time, then saved.
+
+## Switches (functions/.env)
+
+- `TTS_WARM=off` — pause the automatic warming.
+- `TTS_LIVE_GEMINI=on` — let visitors create Gemini clips themselves (slower for them; only
+  worth it once the list is finished, for brand-new lines).
+
+Progress is kept in Firestore: `tts_limits/warm_state` (`i` of `total`, `madeToday`).
+`functions/warm-voices.js` still works for warming by hand from Cloud Shell.
