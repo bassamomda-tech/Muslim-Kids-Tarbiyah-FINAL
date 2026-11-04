@@ -79,10 +79,20 @@ const MAX = 800;
 /* Gemini returns raw 16-bit PCM (24 kHz, mono) → MP3 for small, phone-friendly files */
 async function pcmToMp3(pcm, rate) {
   const { Mp3Encoder } = await import('@breezystack/lamejs');
-  const enc = new Mp3Encoder(1, rate, 32)   /* 32 kbps mono: speech sounds the same, half the download */, s = new Int16Array(pcm.buffer, pcm.byteOffset, Math.floor(pcm.length / 2)), out = [];
+  const enc = new Mp3Encoder(1, rate, 48)   /* 48 kbps mono. NOT 32: this encoder turns 24 kHz speech almost silent at 32 kbps */, s = new Int16Array(pcm.buffer, pcm.byteOffset, Math.floor(pcm.length / 2)), out = [];
   for (let i = 0; i < s.length; i += 1152) { const b = enc.encodeBuffer(s.subarray(i, i + 1152)); if (b.length) out.push(Buffer.from(b)); }
   const e = enc.flush(); if (e.length) out.push(Buffer.from(e));
   return Buffer.concat(out);
+}
+/* share of 50 ms slices that carry sound (louder than about -40 dB): normal speech ≈ 0.6–0.9 */
+function voicedShare(pcm, rate) {
+  const s = new Int16Array(pcm.buffer, pcm.byteOffset, Math.floor(pcm.length / 2)), w = Math.max(1, Math.round(rate / 20));
+  let on = 0, all = 0;
+  for (let i = 0; i + w <= s.length; i += w) {
+    let e = 0; for (let k = i; k < i + w; k++) e += s[k] * s[k];
+    all++; if (Math.sqrt(e / w) > 330) on++;
+  }
+  return all ? on / all : 0;
 }
 async function geminiSpeak(text, lang, gender, style, key, model) {
   model = model || G.model;
@@ -102,7 +112,12 @@ async function geminiSpeak(text, lang, gender, style, key, model) {
   const inline = (part.find((p) => p.inlineData) || {}).inlineData;
   if (!inline || !inline.data) throw new Error('gemini: no audio');
   const rate = parseInt(((inline.mimeType || '').match(/rate=(\d+)/) || [])[1], 10) || 24000;
-  return { mp3: await pcmToMp3(Buffer.from(inline.data, 'base64'), rate), id: 'gemini|' + model + '|' + voice + '|' + style };
+  const pcm = Buffer.from(inline.data, 'base64');
+  /* Gemini sometimes sends back a recording of the right length that is SILENT. Saved, it would be
+     replayed to every child as a story that "plays" but makes no sound — so check before keeping it. */
+  const spoken = voicedShare(pcm, rate);
+  if (spoken < 0.15) throw new Error('gemini: silent audio (' + model + ', ' + (inline.mimeType || '?') + ', voiced ' + Math.round(spoken * 100) + '%)');
+  return { mp3: await pcmToMp3(pcm, rate), id: 'gemini|' + model + '|' + voice + '|' + style };
 }
 async function googleSpeak(text, lang, gender) {
   const v = VOICES[lang][gender];
@@ -175,11 +190,14 @@ exports.narrate = onRequest(
       /* TTS_ENGINE=google in functions/.env → use the Google voices even when a Gemini key is set */
       const key = (process.env.TTS_ENGINE || '').toLowerCase() === 'google' ? '' : (GEMINI_API_KEY.value() || '').trim();
       // one cache entry per (engine, voice, style, text): switching voices never mixes old clips
-      const engineId = key ? 'gemini|fusha1|' + G.model + '|' + G[lang][gender] + '|' + style : VOICES[lang][gender].name + '|' + VOICES[lang][gender].pitch + '|' + lang + '|' + gender;
+      // fusha2: clips saved before 4 Nov 2026 (made at 32 kbps) are silent, so they are never used again
+      const engineId = key ? 'gemini|fusha2|' + G.model + '|' + G[lang][gender] + '|' + style : VOICES[lang][gender].name + '|' + VOICES[lang][gender].pitch + '|' + lang + '|' + gender;
       const path = `tts/${lang}/${crypto.createHash('sha1').update(engineId + '|' + text).digest('hex')}.mp3`;
       const file = bucket.file(path);
 
-      const [exists] = await file.exists();
+      let [exists] = await file.exists();
+      /* { redo: true } from warm-voices.js (owner only) → make this clip again and replace the saved one */
+      if (exists && q.redo && key && req.headers['x-mk-warm'] === crypto.createHash('sha256').update('warm|' + key).digest('hex')) exists = false;
       let engine = key ? 'gemini' : 'google';
       if (!exists) {
         let ok = true;
@@ -201,7 +219,7 @@ exports.narrate = onRequest(
                 console.warn('gemini ' + model + ' failed:', m.slice(0, 300));
                 if (/gemini http 429/.test(m)) { modelPausedUntil[model] = Date.now() + (/per ?day|PerDay|daily/i.test(m) ? 30 : 1) * 60000; break; }
                 if (/gemini http (403|404)/.test(m)) { modelPausedUntil[model] = Date.now() + 6 * 3600000; break; }   // model not available to this key
-                if (!/gemini http (500|503)|no audio/.test(m) || t === 1) break;
+                if (!/gemini http (500|503)|no audio|silent audio/.test(m) || t === 1) break;
                 await new Promise((r) => setTimeout(r, 1500));
               }
             }
