@@ -28,3 +28,5 @@ style, page). Stories not in it are still voiced: Google voice the first time, t
 
 Progress is kept in Firestore: `tts_limits/warm_state` (`i` of `total`, `madeToday`).
 `functions/warm-voices.js` still works for warming by hand from Cloud Shell.
+
+The full plan (Gemini now, then free downloads from Cloudflare R2): see PLAN.md.
