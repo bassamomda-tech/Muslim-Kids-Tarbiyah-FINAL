@@ -123,17 +123,37 @@
   }
   function run(root) {
     try {
-      (root || document).querySelectorAll(SPOTS).forEach(function (el) {
+      var base = root || document;
+      var list = [].slice.call(base.querySelectorAll ? base.querySelectorAll(SPOTS) : []);
+      if (root && root.matches && root.matches(SPOTS)) list.unshift(root);
+      list.forEach(function (el) {
         if (el.querySelector('.mk-ava')) return;
         var seed = (el.closest('[id^="card-"],.char-pin,.sk-line,.tr-guide') || el).textContent;
         swapText(el, seed);
       });
-      swapAll(root && root.nodeType === 1 ? root : document.body);
+      var tgt = root && root.nodeType === 1 ? root : document.body;
+      if (tgt && !skippable(tgt)) swapAll(tgt);
     } catch (e) {}
   }
-  var pending = false;
-  function soon() { if (pending) return; pending = true; requestAnimationFrame(function () { pending = false; run(); }); }
-  function start() { run(); try { new MutationObserver(soon).observe(document.body, { childList: true, subtree: true }); } catch (e) {} }
+  /* Swap BEFORE the browser paints: a MutationObserver callback runs right after the DOM change and
+     before the next frame, so the original emoji never flashes on screen. Only the changed parts
+     are processed (fast even on big pages). Loaded early in <head>, it also catches the page as it
+     is being parsed. */
+  function onMut(recs) {
+    try {
+      for (var i = 0; i < recs.length; i++) {
+        var r = recs[i];
+        if (r.type === 'characterData') { var p = r.target.parentNode; if (p && p.nodeType === 1 && !skippable(p)) swapAll(p); continue; }
+        for (var j = 0; j < r.addedNodes.length; j++) {
+          var n = r.addedNodes[j];
+          if (n.nodeType === 1) { if (!n.classList || !n.classList.contains('mk-ava')) run(n); }
+          else if (n.nodeType === 3 && n.parentNode && n.parentNode.nodeType === 1 && !skippable(n.parentNode)) swapAll(n.parentNode);
+        }
+      }
+    } catch (e) {}
+  }
+  try { new MutationObserver(onMut).observe(document.documentElement, { childList: true, subtree: true, characterData: true }); } catch (e) {}
+  function start() { run(); }
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', start); else start();
 
   window.MKAvatar = { svg: svg, fromEmoji: fromEmoji, run: run };
