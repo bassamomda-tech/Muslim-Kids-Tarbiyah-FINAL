@@ -94,6 +94,7 @@ async function geminiSpeak(text, lang, gender, style, key, model) {
       contents: [{ parts: [{ text: prompt }] }],
       generationConfig: { responseModalities: ['AUDIO'], speechConfig: { voiceConfig: { prebuiltVoiceConfig: { voiceName: voice } } } },
     }),
+    signal: AbortSignal.timeout(20000),   // a stuck request must not keep a child waiting
   });
   if (!r.ok) throw new Error('gemini http ' + r.status + ' ' + (await r.text()).slice(0, 300));
   const j = await r.json();
@@ -187,17 +188,18 @@ exports.narrate = onRequest(
         let mp3;
         if (key) {
           /* Each Gemini voice model has its OWN per-minute and daily allowance (Tier 1: 10 a minute each).
-             Try the models in turn: one that is at its limit rests (1 min, or 15 min for the daily limit)
+             Try the models in turn: one that is at its limit rests (1 min, or 30 min for the daily limit)
              and the next one speaks — same voice, so children keep hearing the natural Gemini voice. */
+          const t0 = Date.now();
           for (const model of G.models) {
-            if (mp3) break;
+            if (mp3 || Date.now() - t0 > 15000) break;   // after 15 s use the backup voice: a child should never wait long
             if (Date.now() < (modelPausedUntil[model] || 0)) continue;
             for (let t = 0; t < 2 && !mp3; t++) {
               try { mp3 = (await geminiSpeak(text, lang, gender, style, key, model)).mp3; }
               catch (e) {
                 const m = e.message.replace(/\s+/g, ' ');
                 console.warn('gemini ' + model + ' failed:', m.slice(0, 300));
-                if (/gemini http 429/.test(m)) { modelPausedUntil[model] = Date.now() + (/per ?day|PerDay|daily/i.test(m) ? 15 : 1) * 60000; break; }
+                if (/gemini http 429/.test(m)) { modelPausedUntil[model] = Date.now() + (/per ?day|PerDay|daily/i.test(m) ? 30 : 1) * 60000; break; }
                 if (/gemini http (403|404)/.test(m)) { modelPausedUntil[model] = Date.now() + 6 * 3600000; break; }   // model not available to this key
                 if (!/gemini http (500|503)|no audio/.test(m) || t === 1) break;
                 await new Promise((r) => setTimeout(r, 1500));

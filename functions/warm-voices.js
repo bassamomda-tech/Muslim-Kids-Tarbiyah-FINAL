@@ -21,6 +21,17 @@ Object.values(window.SKILLS || {}).forEach((S) => S.stations.forEach((st) => (st
   const who = (S.cast || {})[l[0]] || {};
   [['ar', l[1]], ['en', l[2]]].forEach(([lang, t]) => chunks(String(t).replace(/<[^>]+>/g, '')).forEach((text) => jobs.push({ text, lang, gender: who.g || 'female', style: 'podcast' })));
 })));
+/* WARM_FILE=../tools/voice-warm/stories-ar.jsonl → warm the site's STORIES instead of the podcasts: a list of the
+   exact read-aloud requests, recorded page by page (tools/voice-warm/README.md). In list order = most-read first. */
+if (process.env.WARM_FILE) {
+  jobs.length = 0;
+  fs.readFileSync(path.resolve(process.env.WARM_FILE), 'utf8').split('\n').filter(Boolean).forEach((l) => {
+    try { const j = JSON.parse(l); jobs.push({ text: j.text, lang: j.lang || 'ar', gender: j.gender || 'female', style: j.style || 'story' }); } catch (e) {}
+  });
+}
+/* Arabic lines first (most children listen in Arabic); WARM_LANG=ar → Arabic only */
+if (process.env.WARM_LANG) { for (let i = jobs.length - 1; i >= 0; i--) if (jobs[i].lang !== process.env.WARM_LANG) jobs.splice(i, 1); }
+jobs.sort((a, b) => (a.lang === 'ar' ? 0 : 1) - (b.lang === 'ar' ? 0 : 1));
 /* WARM_SHARD=1/3 (2/3, 3/3) → this run does every 3rd clip, so 3 runs can work side by side */
 const SH = (process.env.WARM_SHARD || '').match(/^(\d+)\/(\d+)$/);
 if (SH) { const k = +SH[1] - 1, n = +SH[2]; for (let i = jobs.length - 1; i >= 0; i--) if (i % n !== k) jobs.splice(i, 1); }

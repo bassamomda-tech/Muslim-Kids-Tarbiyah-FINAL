@@ -24,6 +24,15 @@
   // (default 'female' = the current voice). Used for both lang voices.
   function gender() { return (window.MK_NARRATOR_GENDER === 'male') ? 'male' : 'female'; }
 
+  /* ONE audio player for every clip. Phones (iPhone above all) only let a page play sound
+     right after a tap; a player that was started during the tap stays allowed afterwards, so
+     a clip that takes a few seconds to prepare still plays from its very first sentence. */
+  var player = null, SILENT = 'data:audio/wav;base64,UklGRiQAAABXQVZFZm10IBAAAAABAAEARKwAAIhYAQACABAAZGF0YQAAAAA=';
+  function getPlayer() { if (!player) { try { player = new Audio(); player.preload = 'auto'; } catch (e) {} } return player; }
+  function unlock() {
+    var p = getPlayer(); if (!p || p.__mkOn) return;
+    try { p.src = SILENT; var r = p.play(); if (r && r.then) r.then(function () { p.__mkOn = true; }, function () {}); } catch (e) {}
+  }
   function stop() {
     gen++;
     if (audio) { try { audio.pause(); } catch (e) {} audio = null; }
@@ -103,12 +112,13 @@
   function playAyah(url, t0, t1, my) {
     return new Promise(function (res, rej) {
       if (my !== gen) return;
-      var el = new Audio(url), done = false;
+      var el = getPlayer() || new Audio(), done = false;
       function fin() { if (done) return; done = true; if (qvTimer) { clearInterval(qvTimer); qvTimer = null; } try { el.pause(); } catch (e) {} res(true); }
-      audio = el; el.preload = 'auto';
+      audio = el;
       el.onended = fin;
       el.onerror = function () { if (!done) { done = true; rej(new Error('verse audio')); } };
-      if (t0) el.addEventListener('loadedmetadata', function () { try { el.currentTime = t0 / 1000; } catch (e) {} }, { once: true });
+      el.onloadedmetadata = t0 ? function () { el.onloadedmetadata = null; try { el.currentTime = t0 / 1000; } catch (e) {} } : null;
+      el.src = url;
       if (t1) qvTimer = setInterval(function () { if (my !== gen) { clearInterval(qvTimer); qvTimer = null; return; } if (el.currentTime * 1000 >= t1) fin(); }, 60);
       el.play().catch(function (e) { if (!done) { done = true; rej(e); } });
       /* slow network: if the recitation hasn't started after 9 s, read the words instead */
@@ -161,8 +171,10 @@
     var key = lang + '|' + g + '|' + st + '|' + text;
     if (memo[key]) return Promise.resolve(memo[key]);
     if (pending[key]) return pending[key];
+    var ctl = window.AbortController ? new AbortController() : null;
+    if (ctl) setTimeout(function () { try { ctl.abort(); } catch (e) {} }, 30000);   // never wait forever for a clip
     return (pending[key] = fetch(EP, {
-      method: 'POST',
+      method: 'POST', signal: ctl ? ctl.signal : undefined,
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ text: text, lang: lang, gender: g, style: st }),
     }).then(function (r) {
@@ -203,9 +215,11 @@
   function playOne(url, my) {
     return new Promise(function (res, rej) {
       if (my !== gen) return;
-      audio = new Audio(url);
+      audio = getPlayer() || new Audio();
+      audio.onloadedmetadata = null;
       audio.onended = function () { res(true); };
       audio.onerror = function () { rej(new Error('audio error')); };
+      audio.src = url;
       audio.play().catch(rej);
     });
   }
@@ -231,7 +245,7 @@
     lang = (lang || 'ar').toLowerCase().indexOf('ar') === 0 ? 'ar' : 'en';
     text = String(text || '').trim();
     if (!text) return Promise.reject(new Error('no text'));
-    stop(); var my = gen;
+    stop(); unlock(); var my = gen;
     if (lang === 'ar' && text.indexOf('﴿') >= 0) {
       return qvLoad().then(function () { return qvResolve(text); }).then(function () {
         if (my !== gen) return new Promise(function () {});
