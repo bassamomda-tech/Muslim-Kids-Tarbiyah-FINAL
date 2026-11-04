@@ -1642,10 +1642,10 @@ function renderMap() {
             <div class="b-char-quote-mini">${T[lang].parentsHere}</div>
           </div>
         </div>
-        <div class="b-progress">
+        ${p.id === 'parents' ? '' : `<div class="b-progress">
           <div class="b-prog-bg"><div class="b-prog-fill" style="width:${p.progress}%;${p.accent}"></div></div>
           <span class="b-prog-pct">${T[lang].progressText} ${p.progress}%</span>
-        </div>
+        </div>`}
         <button class="b-enter-btn" style="${p.accent};margin-top:.5rem">${T[lang].enter}</button>
       </div>`;
     pDiv.addEventListener('click', () => { playSound(p.id); openModal(p); });
@@ -1655,6 +1655,11 @@ function renderMap() {
   special.appendChild(makeSpecialCard(storiesCorner, 0));
   special.appendChild(makeSpecialCard(playCorner, 1));        // أنشطة أنوس + المسابقات + الورشة — one card
   map.appendChild(special);
+  // «ركن الأهل» — its own full-width card under «كوكب الإبداع» (also in the top bar and the ☰ menu)
+  const family = document.createElement('div');
+  family.className = 'special-corners family-row';
+  family.appendChild(makeSpecialCard(parentsCorner, 2));
+  map.appendChild(family);
 
   renderSidebar();
   renderContinue();
