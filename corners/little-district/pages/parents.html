@@ -335,6 +335,7 @@
 <style id="__antiflash">html{background:#0A2540;color-scheme:dark}</style>
 <style id="__noshift">*,*::before,*::after{box-sizing:border-box}html,body{overflow-x:hidden;max-width:100%}</style>
 <link rel="stylesheet" href="parents-printables.css">
+<link rel="stylesheet" href="annual-plan.css">
 <style id="printables-css">
 /* ══════════ Printables shop (متجر المطبوعات) ══════════ */
 .store-link{display:inline-flex;align-items:center;gap:.4rem;margin-top:.9rem;background:linear-gradient(135deg,var(--gold,#E8B530),#c79518);color:#10243d;border-radius:2rem;padding:.6rem 1.3rem;font-weight:900;font-size:.92rem;text-decoration:none;box-shadow:0 8px 22px rgba(232,181,48,.28)}
@@ -438,6 +439,7 @@ html[dir="rtl"] .shop-card{border-inline-start:1.5px solid var(--card-bd);border
 
   <div class="tabs">
     <button class="tab active" data-tab="guide" onclick="showTab('guide')"><span class="ti">📖</span><span class="ar-only">دليل الاستخدام</span><span class="en-only">Guide</span></button>
+    <button class="tab" data-tab="annual" onclick="showTab('annual')"><span class="ti">🗺️</span><span class="ar-only">الخطة السنوية</span><span class="en-only">Annual Plan</span></button>
     <button class="tab" data-tab="edu" onclick="showTab('edu')"><span class="ti">📚</span><span class="ar-only">القسم التربوي</span><span class="en-only">Parenting</span></button>
     <button class="tab" data-tab="programs" onclick="showTab('programs')"><span class="ti">🧩</span><span class="ar-only">حلول وبرامج</span><span class="en-only">Programs</span></button>
     <button class="tab" data-tab="schedule" onclick="showTab('schedule')"><span class="ti">🗓️</span><span class="ar-only">منظّم اليوم</span><span class="en-only">Day Planner</span></button>
@@ -475,6 +477,13 @@ html[dir="rtl"] .shop-card{border-inline-start:1.5px solid var(--card-bd);border
       </div>
     </div>
 
+    <div class="guide-band" style="background:linear-gradient(160deg,rgba(43,95,168,.22),rgba(31,157,107,.14));cursor:pointer" onclick="showTab('annual')">
+      <div class="gb-ic">🗺️</div>
+      <div><h3><span class="ar-only">لا تضيعوا في المدينة: الخطة السنوية</span><span class="en-only">Don’t get lost in the city: the Annual Plan</span></h3>
+      <p><span class="ar-only">اثنا عشر شهرًا مرتّبة لفئتين (٥–٧ سنوات · ٨ فما فوق): لكل شهرٍ ركنٌ ورحلاتٌ محدّدة بروابطها، وإيقاعٌ أسبوعي، ونشاطٌ عائلي، وكتابٌ للطباعة، وهدفٌ تتحقّقون منه — مع قائمة تحفظ تقدّمكم.</span><span class="en-only">Twelve ordered months for two groups (5–7 · 8+): each month names a corner and its journeys with links, a weekly rhythm, a family activity, a book to print and a goal to check — with a checklist that saves your progress.</span></p>
+      <button class="gbtn go" style="margin-top:.6rem" onclick="event.stopPropagation();showTab('annual')"><span class="ar-only">🗺️ افتح الخطة السنوية</span><span class="en-only">🗺️ Open the Annual Plan</span></button></div>
+    </div>
+
     <h3 class="guide-h"><span class="ar-only">ابدأ في ٣ خطوات</span><span class="en-only">Start in 3 steps</span></h3>
     <div class="guide-steps">
       <div class="gstep"><span class="gs-n">١</span><b><span class="ar-only">أنشِئ ملفّ طفلك</span><span class="en-only">Create a profile</span></b><p><span class="ar-only">من صفحة الدخول اكتب اسمه واختَر صورته. يمكنك إضافة أكثر من طفل.</span><span class="en-only">On the login page enter the child's name and pick an avatar. You can add several children.</span></p></div>
@@ -509,6 +518,7 @@ html[dir="rtl"] .shop-card{border-inline-start:1.5px solid var(--card-bd);border
 
     <h3 class="guide-h"><span class="ar-only">ماذا يقدّم ركن الأهل؟</span><span class="en-only">What's inside the Parents corner?</span></h3>
     <div class="guide-tabs-list">
+      <div class="gtab-row"><span class="gt-ic">🗺️</span><div><b><span class="ar-only">الخطة السنوية</span><span class="en-only">Annual Plan</span></b><span><span class="ar-only">ابدأ من هنا: ماذا يفتح طفلك كلَّ شهر في الموقع (٥–٧ · ٨+).</span><span class="en-only">Start here: what your child opens each month on the site (5–7 · 8+).</span></span></div></div>
       <div class="gtab-row"><span class="gt-ic">📚</span><div><b><span class="ar-only">القسم التربوي</span><span class="en-only">Parenting</span></b><span><span class="ar-only">مقالات ونصائح في تربية الأبناء.</span><span class="en-only">Articles &amp; parenting tips.</span></span></div></div>
       <div class="gtab-row"><span class="gt-ic">🧩</span><div><b><span class="ar-only">حلول وبرامج</span><span class="en-only">Programs</span></b><span><span class="ar-only">التطبيقات العمليّة للأركان، مرجع «ألف باء التربية»، دليلُنا التربوي، وبرامج أسبوعيّة لمشاكل شائعة.</span><span class="en-only">Practical applications, the “Alif-Ba” reference, our Tarbiyah guide &amp; week-by-week programs.</span></span></div></div>
       <div class="gtab-row"><span class="gt-ic">📊</span><div><b><span class="ar-only">المتابعة والتقييم</span><span class="en-only">Tracking</span></b><span><span class="ar-only">رسومٌ ونقاطٌ وشهاداتُ إنجاز.</span><span class="en-only">Charts, points &amp; certificates.</span></span></div></div>
@@ -517,6 +527,15 @@ html[dir="rtl"] .shop-card{border-inline-start:1.5px solid var(--card-bd);border
       <div class="gtab-row"><span class="gt-ic">🗂️</span><div><b><span class="ar-only">المصادر</span><span class="en-only">Resources</span></b><span><span class="ar-only">كتبٌ وفيديوهاتٌ ومواقعُ موثوقة.</span><span class="en-only">Books, videos &amp; trusted sites.</span></span></div></div>
       <div class="gtab-row"><span class="gt-ic">🔐</span><div><b><span class="ar-only">تحكّم الأهل</span><span class="en-only">Controls</span></b><span><span class="ar-only">رمزُ حماية، وقفلُ وفتحُ الأركان.</span><span class="en-only">PIN, and lock/unlock corners.</span></span></div></div>
     </div>
+  </section>
+
+  <!-- PANEL · ANNUAL PLAN (annual-plan.js — also shown in the Parents' Guide, Part 5) -->
+  <section class="panel" id="panel-annual">
+    <div class="sec-head">
+      <h2><span class="ar-only">🗺️ الخطة السنوية لاستخدام الموقع</span><span class="en-only">🗺️ The Annual Plan for using the site</span></h2>
+      <p><span class="ar-only">طريقٌ واضحٌ لعامٍ كامل في المدينة، لفئتين: ٥–٧ سنوات و٨ سنوات فما فوق — ماذا تفتح كلَّ شهر، وبأيّ ترتيب، وكيف تعرف أنّ الهدف تحقّق.</span><span class="en-only">A clear route through a whole year in the city, for two groups: ages 5–7 and 8+ — what to open each month, in what order, and how to know the goal is reached.</span></p>
+    </div>
+    <div id="annualBody"></div>
   </section>
 
   <!-- PANEL 1 · EDUCATIONAL -->
@@ -686,6 +705,7 @@ html[dir="rtl"] .shop-card{border-inline-start:1.5px solid var(--card-bd);border
 <script src="parents-data.js"></script>
 <script src="parents-programs.js"></script>
 <script src="parents-printables.js"></script>
+<script src="annual-plan.js"></script>
 <script src="parents-videos.js"></script>
 <script src="parents-books.js"></script>
 <script>
@@ -951,6 +971,12 @@ function renderSitesApps(){
 }
 
 /* ---- tabs / lang / sidebar ---- */
+function renderAnnual(g){
+  var host=document.getElementById('annualBody'); if(!host||!window.ANNUAL_PLAN) return;
+  var gid=g||ANNUAL_PLAN.currentGroup();
+  host.innerHTML=ANNUAL_PLAN.render(gid,lang,'../../../');
+  ANNUAL_PLAN.wire(host,lang,'../../../',function(n){ renderAnnual(n); });
+}
 function showTab(id){
   document.querySelectorAll('.tab').forEach(t=>t.classList.toggle('active',t.dataset.tab===id));
   document.querySelectorAll('.panel').forEach(p=>p.classList.remove('active'));
@@ -960,6 +986,7 @@ function showTab(id){
   if(id==='behavior' && window.MKB){ MKB.render(); renderParentsRewards(); }
   if(id==='programs') renderPrograms();
   if(id==='print') renderPrintShop();
+  if(id==='annual') renderAnnual();
   if(id==='schedule' && window.renderSchedule) renderSchedule();
 }
 var OPEN_PROGRAM=null;
@@ -1167,6 +1194,7 @@ function setLang(l){
   document.getElementById('resTitle').textContent=tx(D.ui.sectionRes);
   document.getElementById('resSub').textContent=tx(D.ui.sectionResSub);
   renderArticles(); renderResources(); buildSidebar();
+  if(document.getElementById('panel-annual').classList.contains('active')) renderAnnual();
   if(document.getElementById('panel-track').classList.contains('active')) renderTracking();
   if(document.getElementById('panel-controls').classList.contains('active')) renderControls();
   if(document.getElementById('panel-behavior').classList.contains('active') && window.MKB){ MKB.render(); renderParentsRewards(); }

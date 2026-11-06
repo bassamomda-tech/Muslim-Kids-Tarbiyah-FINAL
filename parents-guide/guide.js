@@ -137,6 +137,7 @@
 
   /* special pages */
   var XP={
+    annual:    {icon:'🗺️',t:{ar:'الخطة السنوية لاستخدام الموقع',en:'The annual plan for using the site'}},
     printables:{icon:'🖨️',t:{ar:'المطبوعات التربوية — ٥ حزم للطباعة',en:'Printable packs — 5 sets'}},
     articles:  {icon:'💬',t:{ar:'فهرس مقالات القسم التربوي',en:'Index of the parenting articles'}},
     library:   {icon:'📚',t:{ar:'مكتبة الأهل للاستزادة (٣٢ كتابًا)',en:'Further reading — the parents’ library (32 books)'}}
@@ -157,8 +158,8 @@
       d:{ar:'الخطط العملية الثماني (الصلاة، حب الله، حب الرسول ﷺ…) ومعها خطة حفظ القرآن كاملة.',en:'The eight practical plans (prayer, love of Allah, love of the Prophet ﷺ…) plus the full Quran memorization plan.'},
       items:[['g','intro'],['g','salah'],['g','allah'],['g','rasul'],['g','hafiz'],['b','qp-method'],['b','qp-order'],['b','qp-fix'],['g','leader'],['g','adhkar'],['g','qudwa'],['g','akhlaq']]},
     {key:'b5',ic:'🗺️',c:'#6C3483',t:{ar:'الباب الخامس: خارطةُ الطريق والبرنامج اليومي',en:'Part 5: The roadmap & the daily program'},
-      d:{ar:'مسار طفلك في المدينة لسنةٍ أو سنتين، وخطة اليوم والليلة، وبرنامج ٣٠/٩٠ يومًا، وقوائم المتابعة.',en:'Your child’s 1- or 2-year track through the city, the day-and-night plan, the 30/90-day program and checklists.'},
-      items:[['b','rm-intro'],['b','rm-t1'],['b','rm-t2'],['b','rm-t3'],['b','rm-follow'],['m','khutta'],['m','barnamaj'],['m','jadawil']]},
+      d:{ar:'الخطة السنوية لاستخدام الموقع شهرًا بشهر، ومسار طفلك في المدينة لسنةٍ أو سنتين، وخطة اليوم والليلة، وبرنامج ٣٠/٩٠ يومًا، وقوائم المتابعة.',en:'Your child’s 1- or 2-year track through the city, the day-and-night plan, the 30/90-day program and checklists.'},
+      items:[['x','annual'],['b','rm-intro'],['b','rm-t1'],['b','rm-t2'],['b','rm-t3'],['b','rm-follow'],['m','khutta'],['m','barnamaj'],['m','jadawil']]},
     {key:'b6',ic:'🧩',c:'#A33529',t:{ar:'الباب السادس: المشكلاتُ وحلولُها',en:'Part 6: Problems & solutions'},
       d:{ar:'كلُّ مشكلةٍ في صفحةٍ واحدة: الفهم، الأسباب، الرؤى الأربع، الأدلة، مواقف عملية، خطة العلاج، وقائمة متابعة.',en:'Each problem on one page: understanding, causes, four lenses, evidence, worked examples, the plan & a checklist.'},
       items:TOPICS.map(function(x){ return ['p',x.id]; }).concat([['m','insihab'],['m','halat']])},
@@ -240,7 +241,7 @@
         sr.innerHTML='<style>'+bk.css+'\n'+SHADOW_EXTRA+'</style><div class="bk-html" dir="'+dir+'" lang="'+(B.arOnly?'ar':lang)+'"><div class="bk-body"><div class="bk-zoom">'+pages.join('')+'</div></div></div>';
         /* the Prophetic Plan's own «الباب …» labels follow the old book order → relabel them with this guide's part & chapter */
         if(C.bk==='pp'){ var P=partOf('b/'+slot.dataset.ch), pn=P?P.t.ar.split(':')[0]:'', no=chapNo('b/'+slot.dataset.ch).replace(/[0-9.]/g,function(d){ return d==='.'?'.':'٠١٢٣٤٥٦٧٨٩'[+d]; });
-          Array.prototype.forEach.call(sr.querySelectorAll('.d-k,.ph-k'),function(e){ e.textContent=pn+' · '+no; });
+          Array.prototype.forEach.call(sr.querySelectorAll('.d-k,.ph-k'),function(e){ e.textContent=pn+' — '+no; });
           Array.prototype.forEach.call(sr.querySelectorAll('.pfoot>span:first-child'),function(e){ e.textContent=pn+' — '+C.t.ar; });
           Array.prototype.forEach.call(sr.querySelectorAll('.pfoot .brand'),function(e){ e.textContent='دليل الأهل الشامل'; });
           Array.prototype.forEach.call(sr.querySelectorAll('.ph-n'),function(e){ e.style.display='none'; }); }
@@ -270,6 +271,10 @@
   function specialPage(id){
     var X=XP[id]; if(!X) return null; var P=partOf('x/'+id);
     var h='<div class="ihero" style="--acc:'+(P?P.c:'#0D6B54')+'"><span class="big">'+X.icon+'</span><div><div class="kicker">'+(P?t(P.t):'')+'</div><h1>'+t(X.t)+'</h1>';
+    if(id==='annual'){
+      h+='<p>'+L('طريقٌ لعامٍ كامل داخل الموقع حتى لا يضيع طفلك بين الأركان: لكل شهرٍ ركنٌ ورحلاتٌ محدّدة بروابطها، وإيقاعٌ أسبوعي، ونشاطٌ عائلي، وكتابٌ للطباعة، وهدفٌ تتحقّق منه. التقدّم محفوظٌ هنا وفي ركن الأهل معًا.','A whole year’s route through the site so your child never gets lost: each month names a corner and its journeys with links, a weekly rhythm, a family activity, a book to print and a goal to check. Progress is shared with the Parents Corner.')+'</p></div></div>';
+      return h+'<div id="apHost">'+(window.ANNUAL_PLAN?ANNUAL_PLAN.render(ANNUAL_PLAN.currentGroup(),lang,'../'):'')+'</div>';
+    }
     if(id==='articles'){
       h+='<p>'+L('مقالات «القسم التربوي» في ركن الأهل صارت جزءًا من هذا الكتاب: كلُّ مقالٍ وُضع داخل الصفحة التي يخدمها (المشكلة أو الهدف)، فلا تُقرأ منفصلةً عن خطّتها. هذا فهرسها:','The Parents Corner articles are now part of this book: each one sits inside the page it serves (a problem or a goal). Here is their index:')+'</p></div></div>';
       h+='<div class="tgrid">'+ART.map(function(A,i){ var w=articleHome(i); if(!w) return ''; var info=itemInfo(w.r.split('/')[0],w.r.split('/')[1]);
@@ -535,6 +540,7 @@
     $('main').innerHTML=html; $('crumb').textContent=crumb;
     document.title=(crumb===L('دليل الأهل الشامل','Parents’ Guide')?'':crumb.split(' › ').pop()+' — ')+L('دليل الأهل الشامل','The Complete Parents’ Guide');
     wire(); markNav(hash); fillSlots($('main'));
+    var aph=$('apHost'); if(aph&&window.ANNUAL_PLAN) ANNUAL_PLAN.wire(aph,lang,'../',function(g){ try{ localStorage.setItem('mk-annual-group',g); }catch(e){} var y=window.scrollY; route(); window.scrollTo(0,y); });
     if(k!=='s'){ closeMenu(); var el=anchor&&document.getElementById(anchor); if(el) setTimeout(function(){ el.scrollIntoView({block:'start'}); },60); else window.scrollTo(0,0); }
   }
 
