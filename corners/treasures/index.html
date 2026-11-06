@@ -3,78 +3,13 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>فهرس البطاقات والقصص | Cards & Stories Index</title>
-<meta name="description" content="فهرس البطاقات والقصص — كلّ صفحةٍ في ركنها، وهنا فهرسها للأهل: بطاقات الأحاديث وأسماء الله الحسنى، معاني الأذكار، مواقف النبي ﷺ، قصص السيرة، المعالم الإسلامية والجولات الافتراضية — مجانًا للأطفال والأهل.">
-<link rel="icon" href="../../favicon.ico">
-<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&family=Nunito:wght@400;700;800;900&family=Amiri:wght@400;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="tr.css">
-<style>
-  .hub-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:1rem}
-  .hub-card{display:flex;gap:.8rem;align-items:center;background:#fff;border:2px solid var(--line);border-radius:20px;padding:1rem;text-decoration:none;color:var(--ink);box-shadow:var(--shadow);transition:transform .2s,border-color .2s}
-  .hub-card:hover,.hub-card:focus-visible{transform:translateY(-3px);border-color:var(--c);outline:none}
-  .hub-card .ic{flex:0 0 56px;height:56px;border-radius:16px;display:grid;place-items:center;font-size:1.9rem;background:color-mix(in srgb,var(--c) 14%,#fff)}
-  .hub-card .t{font-weight:900;font-size:1.05rem;line-height:1.4}
-  .hub-card .s{color:var(--muted);font-size:.84rem;line-height:1.5}
-  .hub-card .st{font-size:.75rem;font-weight:800;color:var(--c)}
-  .hub-h{font-size:1.1rem;font-weight:900;margin:1.6rem 0 .7rem;color:var(--ink);display:flex;gap:.4rem;align-items:center}
-  .hub-tip{background:#fff;border:1px dashed var(--line);border-radius:16px;padding:.8rem 1rem;color:var(--muted);font-size:.92rem;text-align:center;margin-top:1.2rem}
-</style>
+<title>ركن الأهل</title>
+<meta name="robots" content="noindex">
+<meta http-equiv="refresh" content="0; url=../little-district/pages/parents.html">
+<script>/* the old «فهرس البطاقات والقصص» was removed — every page lives in its own corner */
+location.replace('../little-district/pages/parents.html'+location.search);</script>
 </head>
-<body>
-<div id="tr-root"></div>
-<script>
-(function () {
-  /* An INDEX for parents: every card/story page, grouped, each tagged with the ONE corner it lives in.
-     Children reach these pages from their corners; this page is for finding & printing. */
-  var GROUPS = [
-    { h: { ar: 'أعرفُ ربّي', en: 'Knowing my Lord' }, home: { ar: 'في منارة العقيدة', en: 'In the Faith Minaret' }, href: '../faith-minaret/aqeeda.html', icon: '🌟', pages: [
-      { f: 'shubuhat.html', id: 'shubuhat', ic: '🛡️', c: '#2C5F8A', t: { ar: 'أسئلة صعبة وأجوبة مطمئنة', en: 'Hard Questions, Calm Answers' }, s: { ar: 'أشهر الشبهات والردّ عليها ببساطة ودقّة (مع الأهل)', en: 'Common doubts answered simply and accurately (with parents)' } },
-      { f: 'ubudiyah.html', id: 'ubudiyah', ic: '🤲', c: '#117A8B', t: { ar: 'العبودية وتعظيم الله', en: 'Servanthood & Glorifying Allah' }, s: { ar: 'كيف أكون عبدًا يحبّ الله ويعظّمه؟', en: 'How do I become a servant who loves and glorifies Allah?' } }
-    ]},
-    { h: { ar: 'أحبُّ ربّي بأسمائه', en: 'Loving my Lord through His Names' }, home: { ar: 'في ركن القلب السليم', en: 'In the Pure Heart corner' }, href: '../heroes-fortress/heart.html', icon: '💜', pages: [
-      { f: 'names-cards.html', id: 'names-cards', ic: '✨', c: '#6C3483', t: { ar: 'بطاقات أسماء الله الحسنى', en: 'Names of Allah Cards' }, s: { ar: 'اسمٌ ومعنى وأثرٌ في حياتي', en: 'A name, its meaning, and its effect on my life' } }
-    ]},
-    { h: { ar: 'كلام النبي ﷺ وسيرته', en: "The Prophet's ﷺ words & life" }, home: { ar: 'في ركن حُفّاظ السنة', en: 'In the Sunnah Keepers corner' }, href: 'sunnah.html', icon: '💚', pages: [
-      { f: 'sunnah.html', id: 'hadith-stories', ic: '🕌', c: '#1A9B7B', t: { ar: 'حُفّاظ السنة', en: 'Sunnah Keepers' }, s: { ar: 'الأربعون النووية · قصص السنة (١٠٠) · مواقف النبي ﷺ ', en: 'The Forty · 100 Sunnah stories · Moments of the Prophet ﷺ' } }
-    ]},
-    { h: { ar: 'عبادتي', en: 'My worship' }, home: { ar: 'في واحة العبادة', en: 'In the Worship Oasis' }, href: '../little-district/pages/ibada.html', icon: '🕌', pages: [
-      { f: 'adhkar.html', id: 'adhkar', ic: '📿', c: '#1F7A4D', t: { ar: 'معاني الأذكار والأدعية', en: 'Meanings of Adhkar & Duas' }, s: { ar: 'أفهمُ ما أقول فأحبُّ أن أقوله', en: 'I understand what I say, so I love saying it' } },
-      { f: 'eids.html', id: 'eids', ic: '🎉', c: '#D4A017', t: { ar: 'الأعياد في العبادات', en: 'Eids in Worship' }, s: { ar: 'عيد الفطر، عيد الأضحى، والجمعة عيدُ الأسبوع', en: 'Eid al-Fitr, Eid al-Adha, and Friday — the weekly Eid' } }
-    ]},
-    { h: { ar: 'أرضُ الإسلام وتاريخه', en: 'Lands & history of Islam' }, home: { ar: 'في حصن الأبطال', en: "In the Heroes' Fortress" }, href: '../heroes-fortress/fortress.html', icon: '🗺️', pages: [
-      { f: 'landmarks.html', id: 'landmarks', ic: '🕋', c: '#2980B9', t: { ar: 'المعالم الإسلامية والخرائط', en: 'Islamic Landmarks & Maps' }, s: { ar: 'صورٌ وخرائط لأعظم المساجد والمدن', en: 'Photos and maps of great mosques and cities' } },
-      { f: 'tours.html', id: 'tours', ic: '🧭', c: '#E67E22', t: { ar: 'جولات افتراضية في التاريخ', en: 'Virtual History Tours' }, s: { ar: 'سافر عبر الخريطة محطّةً بعد محطّة', en: 'Travel across the map, station by station' } }
-    ]},
-    { h: { ar: 'للأهل', en: 'For parents' }, home: { ar: 'في ركن الأهل', en: 'In the Parents corner' }, href: '../little-district/pages/parents.html', icon: '🏡', pages: [
-      { f: 'parents-kit.html', id: 'parents-kit', ic: '🎒', c: '#7A3FB0', t: { ar: 'حقيبة الأهل المجانية', en: 'Free Parents Kit' }, s: { ar: 'خطة أسبوعية، أوراق نشاط، ونصائح بلا إرهاق', en: 'Weekly plan, activity sheets, and calm tips' } }
-    ]}
-  ];
-  function count(id) { try { return (JSON.parse(localStorage.getItem('tr:' + id)) || []).length; } catch (e) { return 0; } }
-  window.TR_PAGE = {
-    id: 'hub', icon: '🗂️', color: '#1A9B7B',
-    back: { href: '../little-district/pages/parents.html', label: { ar: 'ركن الأهل', en: 'Parents' } },
-    title: { ar: 'فهرس البطاقات والقصص', en: 'Cards & Stories Index' },
-    intro: { ar: 'كلُّ صفحةٍ تعيش في ركنها الطبيعي، وهنا فهرسُها للأهل: ابحثوا واطبعوا مجّانًا. ويصل إليها الطفل من ركنها 💚', en: 'Every page lives in its natural corner — this is the index for parents: find and print for free. Children reach each page from its corner 💚' },
-    kidsHtml: {
-      ar: '', en: ''
-    },
-    onRender: function (TR) {
-      var el = document.querySelector('[data-panel="kids"]');
-      el.innerHTML = GROUPS.map(function (g) {
-        return '<h3 class="hub-h">' + g.icon + ' ' + TR.t(g.h) + ' <a href="' + g.href + '" style="font-size:.8rem;font-weight:800;color:var(--muted);margin-inline-start:auto">🏠 ' + TR.esc(TR.t(g.home)) + '</a></h3><div class="hub-grid">' + g.pages.map(function (p) {
-          var n = count(p.id);
-          return '<a class="hub-card" style="--c:' + p.c + '" href="' + p.f + '"><span class="ic">' + p.ic + '</span><span><span class="t">' + TR.esc(TR.t(p.t)) + '</span><br><span class="s">' + TR.esc(TR.t(p.s)) + '</span>' +
-            (n ? '<br><span class="st">⭐ ' + n + '</span>' : '') + '</span></a>';
-        }).join('') + '</div>';
-      }).join('') +
-      '<p class="hub-tip">🍃 ' + TR.tx('نصيحة: فعّل «الوضع الهادئ» من الزرّ في الأعلى إن كان طفلك يتشتّت بالحركة. وكلّ صفحة فيها تبويب «اطبع مجانًا».', 'Tip: switch on "calm mode" from the top button if your child gets distracted by motion. Every page has a "Print free" tab.') + '</p>';
-    }
-  };
-})();
-</script>
-<script src="tr.js"></script>
-<script defer src="../shared/mk-system.js"></script>
-<script defer src="../shared/mk-journeys.js"></script>
-<script defer src="../shared/mk-bag.js"></script>
+<body style="font-family:Tajawal,system-ui,sans-serif;background:#0A2540;color:#FEF5DC;text-align:center;padding:3rem 1rem">
+<p>نُقلت هذه الصفحة — <a style="color:#E8B530" href="../little-district/pages/parents.html">ركن الأهل</a></p>
 </body>
 </html>

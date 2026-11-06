@@ -20,7 +20,6 @@
   var SECTIONS = [
     { icon: '🏙️', ar: 'المدينة الرئيسية', en: 'City Home', href: 'index.html' },
     { icon: '📰', ar: 'نشرة الأسبوع', en: 'Weekly News', href: 'corners/news/index.html' },
-    { icon: '🗂️', ar: 'فهرس البطاقات والقصص', en: 'Cards & Stories Index', href: 'corners/treasures/index.html' },
     { icon: '📥', ar: 'ركن التنزيلات', en: 'Downloads', href: 'corners/shared/downloads.html' },
     { icon: '📚', ar: 'المكتبة المجانية', en: 'Free Library', href: 'corners/shared/store.html' },
     { icon: '👥', ar: 'مجتمع العائلات', en: 'Community', href: 'corners/shared/community.html' },

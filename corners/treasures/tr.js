@@ -123,8 +123,8 @@
   var filter = P.defaultFilter || 'all', curIdx = -1, curPage = 0, API_pageSound = function () {};   // defaultFilter: open on one group, not a wall of every card
 
   function header() {
-    var back = P.back ? P.back.href : isHub ? ROOT + 'index.html' : 'index.html';   // P.back: {href, label:{ar,en}} for pages that live under another hub
-    var backLbl = P.back ? t(P.back.label) : isHub ? tx('المدينة', 'City') : tx('الفهرس', 'Index');
+    var back = P.back ? P.back.href : ROOT + 'index.html';   // P.back: {href, label:{ar,en}} for pages that live under another hub
+    var backLbl = P.back ? t(P.back.label) : tx('المدينة', 'City');
     return '<header class="tr-top">' +
       '<a class="tr-back" href="' + back + '">' + (ar() ? '→' : '←') + ' <span class="lbl">' + backLbl + '</span></a>' +
       '<h1>' + esc(P.icon || '') + ' ' + esc(t(P.title)) + '</h1>' +

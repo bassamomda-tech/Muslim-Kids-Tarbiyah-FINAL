@@ -85,9 +85,6 @@ header{
   color:var(--cream);font-size:1.1rem;cursor:pointer;transition:.2s;
 }
 .about-btn:hover{background:rgba(212,160,23,.2)}
-/* «ركن الأهل» — always visible in the top bar (the big card lives in the ☰ menu) */
-.parents-btn{display:inline-flex;align-items:center;gap:.35rem;height:34px;padding:0 .8rem;border-radius:2rem;background:rgba(142,68,173,.28);border:1px solid rgba(212,160,23,.45);color:var(--cream);font:800 .8rem/1 inherit;font-family:inherit;text-decoration:none;white-space:nowrap;transition:.2s}
-.parents-btn:hover,.parents-btn:focus-visible{background:rgba(142,68,173,.5);outline:none}
 .sidebar-open-btn{
   display:flex;align-items:center;justify-content:center;
   width:34px;height:34px;border-radius:.65rem;background:
@@ -484,8 +481,7 @@ footer b{color:rgba(212,160,23,.55);font-weight:700}
   .brand{min-width:0;font-size:.98rem}
   .brand #hBrand{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
   .header-right{gap:.35rem;flex-shrink:0}
-  .login-icon .li-txt,.child-chip .cc-name,.parents-btn .pb-txt{display:none}
-  .parents-btn{width:34px;padding:0;justify-content:center}
+  .login-icon .li-txt,.child-chip .cc-name{display:none}
   .lang-btn{padding:.25rem .5rem}
 }
 @media(max-width:380px){ .about-btn{display:none} .brand-icon{width:1.7rem;height:1.7rem} }
@@ -517,7 +513,6 @@ try{if(localStorage.getItem('mk:calm')==='true'){document.documentElement.classL
       <button class="lang-btn" id="btnEn" onclick="setLang('en')">EN</button>
       <button class="lang-btn active" id="btnAr" onclick="setLang('ar')">عربي</button>
     </div>
-    <a class="parents-btn" id="parentsBtn" href="corners/little-district/pages/parents.html" title="ركن الأهل"><span aria-hidden="true">🏡</span><span class="pb-txt" id="parentsBtnTxt">ركن الأهل</span></a>
     <button class="about-btn" onclick="showAboutModal()" title="من نحن">🌟</button>
     <button class="sidebar-open-btn" onclick="toggleSidebar()">☰</button>
   </div>
@@ -1655,7 +1650,7 @@ function renderMap() {
   special.appendChild(makeSpecialCard(storiesCorner, 0));
   special.appendChild(makeSpecialCard(playCorner, 1));        // أنشطة أنوس + المسابقات + الورشة — one card
   map.appendChild(special);
-  // «ركن الأهل» — its own full-width card under «كوكب الإبداع» (also in the top bar and the ☰ menu)
+  // «ركن الأهل» — its own full-width card under «كوكب الإبداع» (also in the ☰ menu)
   const family = document.createElement('div');
   family.className = 'special-corners family-row';
   family.appendChild(makeSpecialCard(parentsCorner, 2));
@@ -1771,7 +1766,6 @@ function setLang(l) {
   document.documentElement.dir = l==='ar' ? 'rtl' : 'ltr';
   document.getElementById('btnAr').classList.toggle('active', l==='ar');
   document.getElementById('btnEn').classList.toggle('active', l==='en');
-  try { var pb = document.getElementById('parentsBtnTxt'), pa = document.getElementById('parentsBtn'); pb.textContent = l==='ar' ? 'ركن الأهل' : "Parents' Corner"; pa.title = pb.textContent; pa.href = 'corners/little-district/pages/parents.html?lang=' + l; } catch (e) {}
   const t = T[l];
   document.getElementById('hBrand').textContent = t.brand;
   document.getElementById('cityTitle').textContent = t.cityTitle;

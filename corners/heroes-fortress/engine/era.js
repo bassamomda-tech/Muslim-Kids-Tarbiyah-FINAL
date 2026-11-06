@@ -342,6 +342,16 @@
         <div class="la-grid">${tiles}</div>`;
       box.appendChild(card);
     }
+    /* Pure Heart: the 35 Names-of-Allah review cards (corners/treasures/names-cards.html) live here,
+       next to the «حبّ الله» stations — same learn-anous card style as the corner. */
+    if(eraId==='heart'){
+      const ar=lang==='ar', nc=document.createElement('section');
+      nc.className='learn-anous';
+      nc.innerHTML=`<div class="la-head"><div class="la-ic">✨</div><div class="la-tt"><h3>${ar?'بطاقاتُ أسماءِ الله الحسنى':'Names of Allah Cards'}</h3>
+          <p>${ar?'٣٥ بطاقةً للمراجعة: الاسمُ ومعناه وآيتُه وأثرُه في حياتي — بعد محطّات «حبّ الله»':'35 review cards: each Name, its meaning, its verse and its effect on my life — after the «Love of Allah» stations'}</p></div></div>
+        <div class="la-grid"><a class="la-tile" href="../treasures/names-cards.html?lang=${lang}"><span class="la-tile-ic">✨</span><span class="la-tile-nm">${ar?'افتح البطاقات':'Open the cards'}</span><span style="opacity:.6">←</span></a></div>`;
+      box.appendChild(nc);
+    }
     /* Pure Heart has its OWN medals hall (decoupled from the Fortress Hall of Heroes). */
     if(eraId==='heart'){
       const ar=lang==='ar';

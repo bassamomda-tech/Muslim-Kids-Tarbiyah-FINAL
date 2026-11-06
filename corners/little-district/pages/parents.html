@@ -903,17 +903,15 @@ function renderMurabbiFeature(){
       +'<div class="pg-chips">'+chip(base+'رحلة صلاح الدين الأيوبي.html','🎬',ar?'رحلة صلاح الدين (١٠٠ حلقة)':'Salahuddin journey (100 episodes)')
       +goals.map(function(x){ return chip(base+x[4]+'.html',x[1],ar?x[4]:x[3]); }).join('')+'</div></div>';
 }
-/* the free Parents Kit + the printable cards & stories index — they used to sit in a row
+/* the free Parents Kit — it used to sit in a row
    appended under EVERY tab; now they live here, in the Resources tab, as ordinary resource cards */
 function renderKitIndex(){
   var ar=lang==='ar', T='../../treasures/';
   var cards=[
     ['parents-kit.html','#1A9B7B',ar?'🎒 حقيبة الأهل المجانية':'🎒 Free Parents Kit',
-      ar?'جدول أسبوعي هادئ، وأسئلة حوار للعائلة، ومبادئ التعلّم الهادئ — اطبع ما تشاء.':'A calm weekly plan, family conversation questions and calm-learning principles — print what you need.'],
-    ['index.html','#B08A2E',ar?'🗂️ فهرس البطاقات والقصص للطباعة':'🗂️ Printable cards & stories index',
-      ar?'كلُّ صفحات البطاقات والقصص في الأركان، مجمّعةً حسب ركنها — ابحث واطبع مجّانًا.':'Every cards & stories page across the corners, grouped by its corner — search and print for free.']
+      ar?'جدول أسبوعي هادئ، وأسئلة حوار للعائلة، ومبادئ التعلّم الهادئ — اطبع ما تشاء.':'A calm weekly plan, family conversation questions and calm-learning principles — print what you need.']
   ];
-  return '<div class="res-cat"><div class="res-cat-head"><span class="rc-ic">🎒</span><h3>'+(ar?'حقيبة الأهل وفهرس البطاقات':'Parents Kit & cards index')+'</h3></div><div class="res-grid">'
+  return '<div class="res-cat"><div class="res-cat-head"><span class="rc-ic">🎒</span><h3>'+(ar?'حقيبة الأهل المجانية':'Free Parents Kit')+'</h3></div><div class="res-grid">'
     +cards.map(function(c){ return '<a class="res-card res-link" style="--rc:'+c[1]+'" href="'+T+c[0]+'?lang='+lang+'"><h4>'+c[2]+'</h4><p>'+c[3]+'</p><span class="res-dl">'+(ar?'افتح ←':'Open →')+'</span></a>'; }).join('')
     +'</div></div>';
 }
