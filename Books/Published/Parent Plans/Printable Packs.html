@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>المطبوعات التربوية | Printable Packs</title>
+<link rel="icon" href="../../../favicon.ico">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&family=Nunito:wght@400;600;700;800;900&display=swap">
+<link rel="stylesheet" href="../../../corners/little-district/pages/parents-printables.css">
+<style>
+  /* the packs themselves are built by parents-printables.js (single source, shared with the Parents Corner) */
+  *{box-sizing:border-box}
+  body{margin:0;background:#EFE8D6;font-family:'Tajawal','Nunito',sans-serif;color:#23303a}
+  html[dir=ltr] body{font-family:'Nunito','Tajawal',sans-serif}
+  .toolbar{position:sticky;top:0;z-index:5;display:flex;flex-wrap:wrap;gap:.5rem;align-items:center;justify-content:center;padding:.7rem 1rem;background:#0A2540;color:#FEF5DC}
+  .toolbar b{font-weight:900;color:#F5CC5A;margin-inline-end:auto}
+  .toolbar a,.toolbar button{border:1px solid rgba(245,204,90,.5);background:rgba(255,255,255,.08);color:#FEF5DC;border-radius:2rem;padding:.42rem .95rem;font:inherit;font-weight:800;font-size:.86rem;cursor:pointer;text-decoration:none}
+  .toolbar .prim{background:#D4A017;color:#0A2540;border-color:#D4A017}
+  .wrap{max-width:840px;margin:1.4rem auto 3rem;padding:0 16px}
+  .psh-paper{box-shadow:0 6px 30px rgba(10,37,64,.12)}
+  .packs{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:1rem}
+  .pk{display:flex;flex-direction:column;gap:.4rem;background:#fff;border:1px solid #e3d8bd;border-top:5px solid var(--pa);border-radius:1rem;padding:1.1rem;text-decoration:none;color:inherit}
+  .pk:hover{border-color:var(--pa)}
+  .pk .ic{font-size:2.1rem}.pk b{font-size:1.05rem;font-weight:900}.pk span{font-size:.86rem;color:#5a6470;line-height:1.6;flex:1}
+  .pk em{font-style:normal;font-weight:800;color:#0D6B54;font-size:.84rem}
+  h1{font-size:1.6rem;font-weight:900;color:#0A2540;margin:0 0 .4rem}
+  .lead{color:#5a6470;line-height:1.8;margin:0 0 1.2rem}
+  @media print{
+    @page{size:A4;margin:10mm}
+    body{background:#fff}.toolbar,.lead,h1{display:none!important}.wrap{margin:0;max-width:none;padding:0}
+    .psh-paper{box-shadow:none;border-radius:0;max-width:100%;padding:0}
+    .psh-sheet{break-after:page;page-break-after:always;break-inside:avoid;border-top:none!important;margin-top:0!important;padding-top:0!important}
+    .psh-sheet:last-child{break-after:auto;page-break-after:auto}
+  }
+</style>
+</head>
+<body>
+<div class="toolbar">
+  <b id="tbTitle"></b>
+  <a id="tbList" href="?"></a>
+  <a id="tbLib" href="../../../corners/shared/store.html#books"></a>
+  <button id="tbLang"></button>
+  <button class="prim" id="tbPrint" onclick="window.print()"></button>
+</div>
+<div class="wrap" id="wrap"></div>
+<script src="../../../corners/little-district/pages/parents-printables.js"></script>
+<script>
+(function(){
+  var qs=new URLSearchParams(location.search), lang=qs.get('lang');
+  try{ lang=lang||localStorage.getItem('bunyanLang'); }catch(e){}
+  if(lang!=='en') lang='ar';
+  var PP=window.PARENTS_PRINTABLES||{sets:[],build:{}};
+  function T(o){ return o?(lang==='ar'?o.ar:o.en):''; }
+  function N(n){ return lang==='ar'?String(n).replace(/[0-9]/g,function(d){return '٠١٢٣٤٥٦٧٨٩'[+d];}):String(n); }
+  function render(){
+    var ar=lang==='ar', id=qs.get('set'), s=PP.sets.filter(function(x){return x.id===id;})[0];
+    document.documentElement.lang=lang; document.documentElement.dir=ar?'rtl':'ltr';
+    document.getElementById('tbLang').textContent=ar?'EN':'عربي';
+    document.getElementById('tbList').textContent=ar?'🗂️ كل الحزم':'🗂️ All packs';
+    document.getElementById('tbList').href='?lang='+lang;
+    document.getElementById('tbLib').textContent=ar?'📚 المكتبة المجانية':'📚 Free library';
+    document.getElementById('tbLib').href='../../../corners/shared/store.html?lang='+lang+'#books';
+    document.getElementById('tbPrint').textContent=ar?'🖨️ طباعة / حفظ PDF':'🖨️ Print / Save PDF';
+    document.getElementById('tbPrint').style.display=s?'':'none';
+    var w=document.getElementById('wrap');
+    if(s&&PP.build[s.build]){
+      document.getElementById('tbTitle').textContent=s.icon+' '+T(s.title);
+      document.title=T(s.title)+(ar?' | المطبوعات التربوية':' | Printable Packs');
+      w.innerHTML='<div class="psh-paper">'+PP.build[s.build](ar)+'</div>';
+    } else {
+      document.getElementById('tbTitle').textContent=ar?'🖨️ المطبوعات التربوية':'🖨️ Printable Packs';
+      w.innerHTML='<h1>'+(ar?'المطبوعات التربوية':'Printable Packs')+'</h1><p class="lead">'+(ar?'حزمٌ كاملةٌ للطفل تُطبَع مجّانًا (صدقة جارية). اختر حزمةً ثم اضغط «طباعة».':'Complete packs for your child, free to print. Pick a pack, then press Print.')+'</p>'
+        +'<div class="packs">'+PP.sets.map(function(x){ return '<a class="pk" style="--pa:'+x.accent+'" href="?set='+x.id+'&lang='+lang+'"><span class="ic">'+x.icon+'</span><b>'+T(x.title)+'</b><span>'+T(x.blurb)+'</span><em>'+(ar?N(x.pages)+' صفحات ←':x.pages+' pages →')+'</em></a>'; }).join('')+'</div>';
+    }
+  }
+  document.getElementById('tbLang').onclick=function(){ lang=lang==='ar'?'en':'ar'; try{localStorage.setItem('bunyanLang',lang);}catch(e){} qs.set('lang',lang); history.replaceState(null,'','?'+qs.toString()); render(); };
+  render();
+})();
+</script>
+</body>
+</html>

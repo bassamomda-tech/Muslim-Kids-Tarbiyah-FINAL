@@ -334,6 +334,7 @@
 </style>
 <style id="__antiflash">html{background:#0A2540;color-scheme:dark}</style>
 <style id="__noshift">*,*::before,*::after{box-sizing:border-box}html,body{overflow-x:hidden;max-width:100%}</style>
+<link rel="stylesheet" href="parents-printables.css">
 <style id="printables-css">
 /* ══════════ Printables shop (متجر المطبوعات) ══════════ */
 .store-link{display:inline-flex;align-items:center;gap:.4rem;margin-top:.9rem;background:linear-gradient(135deg,var(--gold,#E8B530),#c79518);color:#10243d;border-radius:2rem;padding:.6rem 1.3rem;font-weight:900;font-size:.92rem;text-decoration:none;box-shadow:0 8px 22px rgba(232,181,48,.28)}
@@ -363,85 +364,13 @@ html[dir="rtl"] .shop-card{border-inline-start:1.5px solid var(--card-bd);border
 .pt-btn{border:none;border-radius:.9rem;padding:.6rem 1rem;font-weight:800;cursor:pointer;font-family:inherit}
 .pt-btn.print{background:var(--gold);color:#10243d}
 .pt-btn.close{background:#c0392b;color:#fff}
-.psh-paper{background:#fff;color:#23303a;max-width:780px;width:100%;margin:auto;border-radius:.8rem;padding:2rem 2.1rem;font-family:'Tajawal','Nunito',sans-serif}
-.psh-paper *{-webkit-print-color-adjust:exact;print-color-adjust:exact}
-.psh-head{text-align:center;border-bottom:2px solid #e6d9b3;padding-bottom:.7rem;margin-bottom:1rem}
-.psh-brand{font-size:.72rem;font-weight:800;letter-spacing:.5px;color:#9a7414}
-.psh-title{font-size:1.5rem;font-weight:900;color:#7a5a12;margin:.25rem 0 .1rem}
-.psh-sub{font-size:.92rem;color:#5a6470}
-.psh-foot{text-align:center;margin-top:1.3rem;padding-top:.7rem;border-top:1px dashed #cdbf98;font-size:.78rem;font-weight:700;color:#9a7414}
-.psh-tip{margin-top:1rem;background:#fbf5e3;border:1px dashed #d8c690;border-radius:.7rem;padding:.6rem .8rem;font-size:.83rem;color:#6a5a2a;line-height:1.65}
-.psh-slot{border:2px dashed #c2cdd6;border-radius:.7rem;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.4rem;color:#90a0ad;background:repeating-linear-gradient(45deg,#fafcfe,#fafcfe 10px,#f1f5f8 10px,#f1f5f8 20px)}
-.psh-slot-ic{font-size:1.6rem;opacity:.6}
-.psh-slot-tx{font-family:ui-monospace,monospace;font-size:.74rem;text-align:center;max-width:82%;line-height:1.5}
-.psh-act{margin:1rem 0}
-.psh-act-h{display:block;font-size:1rem;color:#3a4650;margin-bottom:.6rem}
-.psh-match{display:flex;justify-content:space-between;gap:2.4rem}
 .m-col{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:.7rem;flex:1}
 .m-col li{background:#f4f7fa;border:1px solid #dfe7ee;border-radius:.6rem;padding:.55rem .7rem;font-weight:700;font-size:.92rem;display:flex;align-items:center;gap:.4rem}
 .m-col-r li{justify-content:space-between}
 .m-ic{font-size:1.2rem}
 .m-dot{color:#b9c4cd;font-size:1.2rem}
-.psh-trace{font-size:2.6rem;font-weight:900;color:#dfe3e8;text-align:center;letter-spacing:6px;border:1px dashed #d4dae0;border-radius:.7rem;padding:.7rem;background:linear-gradient(#fff,#fbfdff)}
-.psh-stk-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:.7rem}
-.psh-stk{border:2px dashed #c9d3db;border-radius:1rem;background:var(--sc);color:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.25rem;padding:.9rem .4rem;min-height:92px;text-align:center}
-.psh-stk-ic{font-size:1.7rem}
-.psh-stk-tx{font-weight:900;font-size:.82rem;text-shadow:0 1px 2px rgba(0,0,0,.2)}
-.psh-cert{border:8px solid #d4a017;border-radius:.6rem;padding:1.8rem 1.6rem;text-align:center;background:linear-gradient(160deg,#fffdf5,#f7efd8)}
-.psh-cert-seal{font-size:3rem}
-.psh-cert-kick{font-size:.74rem;font-weight:800;color:#9a7414;letter-spacing:.5px}
-.psh-cert-title{font-size:1.5rem;font-weight:900;color:#7D3C98;margin:.3rem 0 .8rem}
-.psh-cert-lbl{font-size:.86rem;color:#6a5a2a}
-.psh-cert-state{font-size:.86rem;color:#6a5a2a;margin-top:.7rem}
-.psh-cert-line{border-bottom:2px dashed #c9a83a;margin:.45rem auto;max-width:80%}
-.psh-cert-line.sm{max-width:160px;margin:.3rem auto}
-.psh-cert-name{height:2rem;max-width:62%}
-.psh-cert-row{display:flex;align-items:flex-end;justify-content:space-between;gap:1rem;margin-top:1.2rem}
-.psh-cert-row span{font-size:.74rem;color:#8a6a1a;font-weight:700}
-.psh-cert-star{font-size:1.6rem}
-.psh-cert-foot{margin-top:1rem;font-weight:800;color:#8a6a1a;font-size:.9rem}
-.psh-plan{width:100%;border-collapse:collapse;text-align:center}
-.psh-plan th,.psh-plan td{border:1px solid #d7dee5;padding:.4rem .2rem;font-size:.82rem}
-.psh-plan th{background:#1F8A5B;color:#fff;font-weight:800}
-.psh-plan .h-name{background:#eef3f7;text-align:start;font-weight:800;color:#3a4650;white-space:nowrap;padding-inline:.5rem}
-.psh-plan th.h-name{background:#147049}
 .h-cell{color:#9aa6b0;font-size:1rem}
-.psh-month{display:flex;flex-wrap:wrap;gap:.35rem}
-.psh-month-d{width:30px;height:30px;border:1px solid #d7dee5;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.74rem;font-weight:700;color:#5a6470}
-.psh-hero-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
-.psh-hero{border:2px dashed #c9a83a;border-radius:1rem;padding:1rem;background:#fffdf6;display:flex;flex-direction:column;gap:.5rem}
-.psh-hero-top .psh-slot{min-height:110px}
-.psh-hero-name{font-weight:900;font-size:1.05rem;color:#7a5a12}
-.psh-hero-title{font-size:.8rem;color:#6a5a2a;font-weight:700}
-.psh-hero-facts{margin:0;padding-inline-start:1.1rem;display:flex;flex-direction:column;gap:.3rem}
-.psh-hero-facts li{font-size:.82rem;line-height:1.5;color:#3a4650}
-.psh-hero-lesson{font-size:.82rem;background:#f4ecd6;border-radius:.6rem;padding:.5rem .6rem;color:#5a4a1a;line-height:1.5}
 /* ---- multi-page printable packs ---- */
-.psh-sheet + .psh-sheet{margin-top:1.6rem;border-top:2px dashed #cdbf98;padding-top:1.6rem}
-.psh-trace-row{font-family:'Tajawal',sans-serif;font-size:2.1rem;font-weight:900;color:#e0e4e8;letter-spacing:7px;border-bottom:2px dashed #d4dae0;padding:.35rem .3rem;margin:.5rem 0;text-align:center}
-.psh-arabrow{display:flex;flex-wrap:wrap;gap:.4rem;justify-content:center;margin:.5rem 0}
-.psh-arabrow span{border:1px dashed #d4dae0;border-radius:.5rem;min-width:2.5rem;text-align:center;font-size:1.7rem;font-weight:900;color:#e0e4e8;padding:.15rem .35rem;font-family:'Tajawal',sans-serif}
-.psh-count{display:flex;align-items:center;gap:.8rem;border:1px solid #dfe7ee;border-radius:.6rem;padding:.5rem .8rem;margin:.5rem 0}
-.psh-count .emos{font-size:1.5rem;letter-spacing:3px;flex:1}
-.psh-count .cl{font-size:.85rem;font-weight:700;color:#5a6470}
-.psh-count .box{width:46px;height:36px;border:2px solid #c2cdd6;border-radius:.4rem;flex:0 0 auto}
-.psh-tf{display:flex;align-items:center;justify-content:space-between;gap:1rem;border:1px solid #dfe7ee;border-radius:.6rem;padding:.5rem .8rem;margin:.42rem 0;font-size:.92rem;font-weight:600;color:#3a4650}
-.psh-tf .tfb{display:flex;gap:.45rem;flex:0 0 auto}
-.psh-tf .tfb b{border:1.5px solid #c2cdd6;border-radius:.4rem;width:34px;height:30px;display:flex;align-items:center;justify-content:center;color:#aeb8c1;font-size:.95rem}
-.psh-sort{display:flex;gap:1rem;margin-top:.6rem}
-.psh-sort .col{flex:1;border:2px solid #dfe7ee;border-radius:.7rem;padding:.6rem;min-height:130px}
-.psh-sort .col h5{margin:0 0 .5rem;text-align:center;font-size:.95rem;color:#3a4650}
-.psh-bank{display:flex;flex-wrap:wrap;gap:.5rem;justify-content:center;margin:.7rem 0}
-.psh-bank b{background:#f4f7fa;border:1.5px dashed #c2cdd6;border-radius:1rem;padding:.28rem .8rem;font-size:.9rem;font-weight:700;color:#3a4650}
-.psh-scr{display:flex;align-items:center;gap:.8rem;border:1px solid #dfe7ee;border-radius:.6rem;padding:.5rem .8rem;margin:.5rem 0}
-.psh-scr .letters{flex:1;font-size:1.3rem;font-weight:900;letter-spacing:6px;color:#3a4650;font-family:'Tajawal',sans-serif}
-.psh-scr .ans{display:flex;gap:.3rem}
-.psh-scr .ans i{width:30px;height:34px;border:2px solid #c2cdd6;border-radius:.35rem}
-.psh-log{width:100%;border-collapse:collapse;text-align:center;margin-top:.4rem}
-.psh-log th,.psh-log td{border:1px solid #d7dee5;padding:.45rem .3rem;font-size:.82rem}
-.psh-log th{background:#2980B9;color:#fff;font-weight:800}
-.psh-log td{height:1.9rem}
-.psh-note-line{border-bottom:1.5px dashed #d4dae0;height:1.7rem;margin:.5rem 0}
 @media print{
   .shop-print-ov,.shop-print-ov *{visibility:visible}
   .shop-print-ov{position:absolute;inset:0;background:#fff;padding:0;display:block}
@@ -861,13 +790,18 @@ function openCert(j){
 
 /* ---- articles ---- */
 function renderArticles(){
-  document.getElementById('artGrid').innerHTML=D.articles.map((a,i)=>`
-    <div class="art-card" style="--c:${a.color}" onclick="openArticle(${i})">
+  /* the articles now live inside «دليل الأهل الشامل», each in the page it serves → open it there */
+  var AH=['g/allah@art0','p/screens@article','p/start@article','g/leader@art3','p/prayer@article','g/leader@art5','p/jealousy@article','p/responsibility@article','p/adab@article','p/gratitude@article','p/friends@article','p/badwords@article'];
+  var G='../../../parents-guide/index.html?lang='+lang+'#';
+  document.getElementById('artGrid').innerHTML=
+    '<a class="store-link" style="grid-column:1/-1;justify-self:center;margin:0 0 .4rem" href="'+G+'x/articles">'+(lang==='ar'?'📘 صارت هذه المقالات جزءًا من «دليل الأهل الشامل» — كلُّ مقالٍ في صفحة المشكلة أو الهدف الذي يخدمه':'📘 These articles are now part of “The Complete Parents’ Guide” — each inside the problem or goal page it serves')+'</a>'
+    +D.articles.map((a,i)=>`
+    <a class="art-card" style="--c:${a.color};text-decoration:none;color:inherit" href="${G}${AH[i]||'x/articles'}">
       <div class="art-ic">${a.icon}</div>
       <span class="art-tag">${tx(a.tag)}</span>
       <h3>${tx(a.title)}</h3>
-      <div class="art-read">${tx(a.read)}</div>
-    </div>`).join('');
+      <div class="art-read">${tx(a.read)} · ${lang==='ar'?'اقرأه في الدليل ←':'Read in the guide →'}</div>
+    </a>`).join('');
 }
 function openArticle(i){
   const a=D.articles[i];

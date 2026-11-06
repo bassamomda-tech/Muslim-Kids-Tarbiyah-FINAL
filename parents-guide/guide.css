@@ -272,3 +272,39 @@ mark{background:rgba(245,204,90,.6);color:inherit;border-radius:.15rem;padding:0
   .print-head{display:block;font-family:var(--sans);font-size:8.5pt;color:#8A8471;text-align:center;border-bottom:1px solid var(--line);margin-bottom:.6rem;padding-bottom:.3rem}
   a{color:inherit}
 }
+
+/* ───────── the book: cover, how-to, table of contents, imported chapters ───────── */
+.book-cover{background:linear-gradient(160deg,#0A2540,#12375A);color:#FEF5DC;border:none;border-radius:1.3rem;padding:2rem clamp(1.2rem,4vw,2.6rem);box-shadow:0 10px 34px rgba(10,37,64,.25)}
+.book-cover .kicker{color:#F5CC5A}
+.book-cover h1{color:#F5CC5A!important;font-size:clamp(1.9rem,4.4vw,2.9rem)!important}
+.book-cover p{color:rgba(254,245,220,.86)!important;max-width:52rem}
+.book-cover .cover-sub{font-family:var(--sans);font-weight:800;font-size:1.08rem;color:#FEF5DC;margin:-.2rem 0 .8rem}
+.book-cover .related a{background:#D4A017;color:#0A2540}
+.book-cover .related a.ghost{background:rgba(255,255,255,.1);color:#FEF5DC;border-color:rgba(245,204,90,.5)}
+.howto{display:grid;grid-template-columns:repeat(3,1fr);gap:.8rem}
+.how{display:flex;gap:.7rem;background:var(--card);border:1px solid var(--line);border-radius:1rem;padding:.9rem 1rem}
+.how>b{flex:none;width:2.1rem;height:2.1rem;border-radius:50%;background:var(--gold-lt);color:#0A2540;display:flex;align-items:center;justify-content:center;font-family:var(--sans);font-weight:900}
+.how h4{font-family:var(--sans);font-weight:900;color:var(--navy);font-size:.98rem}
+.how p{font-size:.86rem;color:var(--ink-soft);line-height:1.75}
+.toc{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1rem}
+.toc-part{background:var(--card);border:1px solid var(--line);border-top:5px solid var(--pc);border-radius:1rem;padding:1rem 1.1rem}
+.toc-part h3{display:flex;align-items:flex-start;gap:.5rem;font-family:var(--sans);font-weight:900;color:var(--pc);font-size:1.02rem;line-height:1.5}
+.toc-part h3 .toc-print{margin-inline-start:auto;font-size:.9rem;opacity:.7}
+.toc-part>p{font-size:.82rem;color:var(--ink-soft);line-height:1.7;margin:.25rem 0 .5rem}
+.toc-part ol{list-style:none;display:flex;flex-direction:column}
+.toc-part li a{display:flex;gap:.45rem;align-items:baseline;padding:.28rem 0;border-bottom:1px dotted var(--line);color:var(--ink);font-family:var(--sans);font-weight:700;font-size:.86rem;line-height:1.5}
+.toc-part li a:hover{color:var(--pc)}
+.toc-part li .no{flex:none;min-width:2.3rem;color:var(--pc);font-weight:900;font-size:.78rem}
+.toc-part li .ic{flex:none}
+.nav-part>button small{display:block;font-size:.66rem;color:rgba(254,245,220,.6);font-weight:800}
+.nav-part>button span:nth-child(2){line-height:1.35}
+.bk-from{font-family:var(--sans);font-size:.84rem;color:var(--ink-soft);margin-top:.35rem}
+.bk-slot{display:block;margin:0 auto 1.5rem;min-height:120px}
+.bk-loading,.bk-err{font-family:var(--sans);text-align:center;color:var(--ink-soft);padding:2rem;background:var(--card);border:1px dashed var(--line);border-radius:1rem}
+.lib-list{columns:2;column-gap:2rem;padding-inline-start:1.3rem;font-family:var(--sans);font-size:.92rem}
+.lib-list li{break-inside:avoid;padding:.15rem 0}
+.art-ix b{display:block}
+.tcard small.go{color:var(--green);font-weight:800;margin-top:.2rem}
+@media(max-width:900px){ .toc{grid-template-columns:1fr} .howto{grid-template-columns:1fr} }
+@media(max-width:600px){ .lib-list{columns:1} }
+@media print{ .book-cover{background:#fff;color:var(--ink);box-shadow:none} .book-cover h1{color:var(--navy)!important} .bk-slot{margin:0} .toc-print{display:none} }
