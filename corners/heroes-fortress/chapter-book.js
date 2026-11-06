@@ -18,6 +18,13 @@
       '<div class="pg-kind"><span class="ki">'+ic+'</span><span class="kt">'+kt+'</span></div></div>';
   }
 
+  /* multi-name stations: «ما الفرقُ بين هذه الأسماء؟» (data/name-diffs.js, loaded by the Names book only) */
+  function nameDiff(d){
+    var x=window.HISN&&HISN.nameDiffs&&d&&HISN.nameDiffs[d.id]; if(!x||!x.names||x.names.length<2) return '';
+    return '<div class="match" style="margin-top:8px"><h4>⚖️ ما الفرقُ بين هذه الأسماء؟ <span class="en lat">How do these Names differ?</span></h4><ul style="margin:0;padding-inline-start:18px">'+
+      x.names.map(function(n){return '<li><b>'+n.n.ar+'</b>: '+n.m.ar+'<span class="en lat">'+n.n.en+': '+n.m.en+'</span></li>';}).join('')+'</ul>'+
+      (x.diff?'<p style="margin:6px 0 0;font-weight:800">'+x.diff.ar+'<span class="en lat" style="display:block;font-weight:600">'+x.diff.en+'</span></p>':'')+'</div>';
+  }
   /* page 1 · STORY (who + facts + story) */
   function buildStory(it,col){
     var d=it.data, k=d.knowledge||{}, leaf=document.createElement('section'); leaf.className='leaf'; leaf.style.setProperty('--acc',col);
@@ -29,7 +36,8 @@
       (k.who?'<div class="logic-key" style="--acc:'+col+';margin-top:0;margin-bottom:14px;text-align:right">📜 '+R.clean(k.who.ar).slice(0,200)+'…</div>':'')+
       slot(R.sid(it,'hero'),300,'ضع الرسمة هنا — Drop art')+
       (story?'<div class="story">'+story+'</div>':'')+
-      (facts?'<div class="match" style="margin-top:8px"><h4>⭐ هل تعلم؟ <span class="en lat">Did you know?</span></h4><ul style="margin:0;padding-inline-start:18px">'+facts+'</ul></div>':'');
+      (facts?'<div class="match" style="margin-top:8px"><h4>⭐ هل تعلم؟ <span class="en lat">Did you know?</span></h4><ul style="margin:0;padding-inline-start:18px">'+facts+'</ul></div>':'')+
+      nameDiff(d);
     return leaf;
   }
 

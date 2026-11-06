@@ -197,6 +197,15 @@
     nav.innerHTML = `${prevBtn}<span class="stn-pos">${i+1} / ${list.length}</span>${nextBtn}`;
   }
 
+  /* «ما الفرقُ بين هذه الأسماء؟» — stations that group several Beautiful Names explain how each one
+     differs (data/name-diffs.js → HISN.nameDiffs[<station id>] = {names:[{n,m}], diff}). */
+  function nameDiff(){
+    const d = isName() && window.HISN && HISN.nameDiffs && HISN.nameDiffs[C.id];
+    if(!d || !d.names || d.names.length<2) return '';
+    return `<div class="room-title" style="font-size:.98rem"><span class="bar"></span>${lang==='ar'?'ما الفرقُ بين هذه الأسماء؟':'How do these Names differ?'}</div>
+      <div class="ndiff">${d.names.map((x,i)=>`<div class="ndiff-card" style="animation-delay:${.04+i*.05}s"><div class="ndiff-name">${x.n.ar}${lang==='ar'?'':`<span class="ndiff-tr">${x.n.en}</span>`}</div><p>${T(x.m)}</p></div>`).join('')}</div>
+      ${d.diff?`<div class="ndiff-sum"><span class="ndiff-ic">⚖️</span><p>${T(d.diff)}</p></div>`:''}`;
+  }
   /* ───────────── KNOWLEDGE ───────────── */
   function roomKnowledge(){
     if(isManzuma()) return roomManzuma();
@@ -216,6 +225,7 @@
       <div class="dyk"><span class="dyk-ic">💡</span><div><b>${lang==='ar'?'هل تعلم؟':'Did you know?'}</b><p>${T(k.didYouKnow)}</p></div></div>
       <div class="card"><p class="who">${T(k.who)}</p></div>
       <ul class="facts">${k.facts.map((f,i)=>`<li><span class="n">${i+1}</span><p>${T(f)}</p></li>`).join('')}</ul>
+      ${nameDiff()}
       ${cmdr}
       ${tl?`<div class="room-title" style="font-size:.98rem"><span class="bar"></span>${lang==='ar'?'رحلةُ حياته':'His life journey'}</div>${tl}`:''}
       <div class="ayah-card"><div class="ayah">${k.ayah.ar}</div><div class="ayah-ref">${T(k.ayah.ref)}</div></div>

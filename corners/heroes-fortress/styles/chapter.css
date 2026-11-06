@@ -711,3 +711,16 @@
   justify-content:center;font-family:'Fredoka',sans-serif;font-weight:800;font-size:1.1rem}
 .mix-result p{font-family:'Tajawal',sans-serif;font-weight:800;font-size:.95rem;line-height:1.45;text-shadow:0 1px 2px rgba(0,0,0,.18);text-wrap:pretty}
 [dir="ltr"] .mix-result p{font-family:'Nunito',sans-serif}
+
+/* «ما الفرقُ بين هذه الأسماء؟» — multi-name stations of «حبّ الله» */
+.ndiff{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:.6rem;margin:.2rem 0 .7rem}
+.ndiff-card{background:var(--paper);color:var(--ink);border-radius:1rem;padding:.8rem .95rem;border-top:4px solid var(--ec);
+  box-shadow:0 4px 14px rgba(0,0,0,.18);animation:cardUp .4s both}
+.ndiff-name{font-family:'Amiri',serif;font-weight:700;font-size:1.35rem;line-height:1.3;color:color-mix(in srgb,var(--ec) 75%,#000);margin-bottom:.25rem}
+.ndiff-tr{display:block;font-family:'Nunito','Tajawal',sans-serif;font-size:.72rem;font-weight:800;opacity:.7;letter-spacing:.02em}
+.ndiff-card p{font-size:.88rem;line-height:1.6}
+.ndiff-card p b{font-weight:900;color:color-mix(in srgb,var(--ec) 70%,#000)}
+.ndiff-sum{display:flex;gap:.6rem;align-items:flex-start;background:linear-gradient(135deg,color-mix(in srgb,var(--ec) 22%,transparent),color-mix(in srgb,var(--ec2) 14%,transparent));
+  border:1.5px solid var(--ec);border-radius:1rem;padding:.75rem .9rem;margin:0 0 .9rem}
+.ndiff-sum .ndiff-ic{font-size:1.3rem;flex-shrink:0}
+.ndiff-sum p{font-weight:800;font-size:.9rem;line-height:1.6}
