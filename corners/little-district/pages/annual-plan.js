@@ -309,8 +309,8 @@
       h+='</section>';
     });
     h+='<div class="ap-end">'+(l==='ar'
-      ?'<b>إذا فاتك شهر</b> فلا تقفز إلى الشهر التالي: أكمل المتأخّر بإيقاعٍ أخفّ، فالخطة سلسلةٌ يبني كلُّ شهرٍ فيها على ما قبله. وللتفصيل حسب العمر الدقيق (٤–٦، ٧–٩، ١٠–١٢) ارجع إلى «خارطة طريق المربّي» في الباب الخامس من دليل الأهل الشامل.'
-      :'<b>Missed a month?</b> Don’t jump ahead — finish it at a lighter pace; each month builds on the one before. For detail by exact age (4–6 · 7–9 · 10–12) see the “Parent Roadmap” in Part 5 of the Complete Parents’ Guide.')+'</div>';
+      ?'<b>إذا فاتك شهر</b> فلا تقفز إلى الشهر التالي: أكمل المتأخّر بإيقاعٍ أخفّ، فالخطة سلسلةٌ يبني كلُّ شهرٍ فيها على ما قبله. ولفهم ما يحتاجه طفلك في عمره بالتفصيل ارجع إلى «مراحل العمر» في الباب الثاني من دليل الأهل الشامل.'
+      :'<b>Missed a month?</b> Don’t jump ahead — finish it at a lighter pace; each month builds on the one before. For what your child needs at their exact age, see “Life stages” in Part 2 of the Complete Parents’ Guide.')+'</div>';
     return h+'</div>';
   }
   function wire(box,lang,root,onSwitch){

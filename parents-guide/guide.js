@@ -119,7 +119,7 @@
     'pp-st2':     {bk:'pp',from:147,to:200,icon:'🧸',t:{ar:'الخطة التفصيلية للطفولة المبكرة (٣–٦)',en:'Detailed plan 3–6'}},
     'pp-st3':     {bk:'pp',from:201,to:254,icon:'📿',t:{ar:'الخطة التفصيلية لمرحلة التمييز (٧–١١)',en:'Detailed plan 7–11'}},
     'pp-st4':     {bk:'pp',from:255,to:308,icon:'🦅',t:{ar:'الخطة التفصيلية للبلوغ والمراهقة (١٢+)',en:'Detailed plan 12+'}},
-    'pp-posters': {bk:'pp',from:309,to:315,skip:[310],icon:'🖼️',t:{ar:'لوحات البيت: الأذكار والصلاة والمسؤوليات والشاشات',en:'Home charts: adhkar, prayer, chores & screens'}},
+    'pp-posters': {bk:'pp',from:309,to:315,skip:[310],pages:true,icon:'🖼️',t:{ar:'لوحات البيت: الأذكار والصلاة والمسؤوليات والشاشات',en:'Home charts: adhkar, prayer, chores & screens'}},
     'cmp-base':   {bk:'cmp',from:1, to:3,  icon:'⚓',t:{ar:'ثوابتُ لا تتغيّر مع العمر، والوقتُ مع الأبناء',en:'What never changes with age — and time with children'}},
     'cmp-map':    {bk:'cmp',from:5, to:5,  icon:'🗺️',t:{ar:'مراحل العمر السبع في لمحة',en:'The seven life stages at a glance'}},
     'cmp-src':    {bk:'cmp',from:91,to:91, icon:'📜',t:{ar:'المصادر والمراجع',en:'Sources & references'}},
@@ -127,11 +127,11 @@
     'rm-t1':      {bk:'rm',from:5,  to:7,  icon:'🌱',t:{ar:'مسار البراعم (٤–٦): خطة سنة وسنتين',en:'Little Sprouts (4–6): 1- & 2-year plans'}},
     'rm-t2':      {bk:'rm',from:8,  to:10, icon:'🧱',t:{ar:'مسار البُناة (٧–٩): خطة سنة وسنتين',en:'Young Builders (7–9): 1- & 2-year plans'}},
     'rm-t3':      {bk:'rm',from:11, to:13, icon:'🛡️',t:{ar:'مسار الفرسان (١٠–١٢): خطة سنة وسنتين',en:'Knights (10–12): 1- & 2-year plans'}},
-    'rm-follow':  {bk:'rm',from:14, to:15, icon:'🎓',t:{ar:'متابعة الأركان العشرة وشهادة خرّيج المدينة',en:'Tracking the ten corners & the graduate certificate'}},
+    'rm-follow':  {bk:'rm',from:14, to:15, icon:'🎓',t:{ar:'لوحة متابعة الأركان العشرة وشهادة خرّيج المدينة',en:'The ten-corner tracking sheet & the graduate certificate'}},
     'qp-method':  {bk:'qp',from:1,  to:6,  icon:'📖',t:{ar:'خطة حفظ القرآن: الطريقة والخطط الخمس',en:'Quran memorization: the method & five plans'}},
     'qp-order':   {bk:'qp',from:7,  to:10, icon:'🔢',t:{ar:'ترتيب الحفظ وجدول المراجعة الثلاثي',en:'Memorization order & the 3-tier revision table'}},
     'qp-fix':     {bk:'qp',from:11, to:14, icon:'🩺',t:{ar:'مشكلات الحفظ وآدابه وشهادة الحافظ',en:'Hifdh problems, etiquette & certificate'}},
-    'hp':         {bk:'hp',from:0,  to:99, icon:'🏠',t:{ar:'بوسترات البيت المسلم — جاهزة للطباعة',en:'Muslim home posters — print-ready'}}
+    'hp':         {bk:'hp',from:0,  to:99, pages:true, icon:'🏠',t:{ar:'بوسترات البيت المسلم — جاهزة للطباعة',en:'Muslim home posters — print-ready'}}
   };
   CMP_ST.forEach(function(s,i){ CH['cmp-s'+(i+1)]={bk:'cmp',from:6+12*i,to:17+12*i,icon:s[0],t:{ar:'بوصلة المرحلة '+s[1]+': '+s[3],en:'Compass, stage '+s[2]+': '+s[4]}}; });
 
@@ -147,10 +147,10 @@
   var BOOK=[
     {key:'b1',ic:'🧭',c:'#A07810',t:{ar:'الباب الأول: أصولُ التربية — الفهمُ قبل العمل',en:'Part 1: Foundations — understanding before action'},
       d:{ar:'ما التربية؟ ولماذا المنهج النبوي؟ ركائزه وأساليبه، وما يُفسده الآباء، وإصلاح المربّي نفسه أولًا.',en:'What tarbiyah is, why the Prophetic method, its pillars & methods, what parents spoil — and fixing ourselves first.'},
-      items:[['m','mafhoom'],['b','pp-why'],['b','pp-pillars'],['b','pp-methods'],['b','pp-spoilers'],['m','nafs'],['m','marad'],['b','cmp-base']]},
+      items:[['m','mafhoom'],['b','pp-why'],['b','pp-pillars'],['b','pp-methods'],['b','pp-spoilers'],['m','nafs'],['m','marad'],['c','base']]},
     {key:'b2',ic:'🌱',c:'#1A9B7B',t:{ar:'الباب الثاني: مراحلُ العمر — ماذا يحتاج طفلي الآن؟',en:'Part 2: Life stages — what does my child need now?'},
       d:{ar:'من المهد إلى الرشد: لكل مرحلةٍ بوصلتُها (العلماء، علم النفس، الاحتياجات، الجدول اليومي) ثم خطّتُها النبوية التفصيلية.',en:'From the cradle to maturity: each stage’s compass (scholars, psychology, needs, daily plan) followed by its detailed Prophetic plan.'},
-      items:[['b','pp-frame'],['b','cmp-map'],['b','cmp-s1'],['b','pp-st1'],['b','cmp-s2'],['b','pp-st2'],['b','cmp-s3'],['b','cmp-s4'],['b','pp-st3'],['b','cmp-s5'],['b','cmp-s6'],['b','pp-st4'],['b','cmp-s7']]},
+      items:[['c','map'],['b','pp-frame'],['c','s1'],['b','pp-st1'],['c','s2'],['b','pp-st2'],['c','s3'],['c','s4'],['b','pp-st3'],['c','s5'],['c','s6'],['b','pp-st4'],['c','s7']]},
     {key:'b3',ic:'🏗️',c:'#2B5FA8',t:{ar:'الباب الثالث: بناءُ الشخصية المسلمة',en:'Part 3: Building the Muslim personality'},
       d:{ar:'الأبنية التسعة، والشخصية القوية، والقيادية، والمتحدّث البارع، وتحمّل المسؤولية.',en:'The nine buildings, a strong personality, leadership, public speaking and responsibility.'},
       items:[['b','pp-nine'],['b','pp-strong'],['b','pp-leader'],['b','pp-speaker'],['b','pp-resp']]},
@@ -158,8 +158,8 @@
       d:{ar:'الخطط العملية الثماني (الصلاة، حب الله، حب الرسول ﷺ…) ومعها خطة حفظ القرآن كاملة.',en:'The eight practical plans (prayer, love of Allah, love of the Prophet ﷺ…) plus the full Quran memorization plan.'},
       items:[['g','intro'],['g','salah'],['g','allah'],['g','rasul'],['g','hafiz'],['b','qp-method'],['b','qp-order'],['b','qp-fix'],['g','leader'],['g','adhkar'],['g','qudwa'],['g','akhlaq']]},
     {key:'b5',ic:'🗺️',c:'#6C3483',t:{ar:'الباب الخامس: خارطةُ الطريق والبرنامج اليومي',en:'Part 5: The roadmap & the daily program'},
-      d:{ar:'الخطة السنوية لاستخدام الموقع شهرًا بشهر، ومسار طفلك في المدينة لسنةٍ أو سنتين، وخطة اليوم والليلة، وبرنامج ٣٠/٩٠ يومًا، وقوائم المتابعة.',en:'Your child’s 1- or 2-year track through the city, the day-and-night plan, the 30/90-day program and checklists.'},
-      items:[['x','annual'],['b','rm-intro'],['b','rm-t1'],['b','rm-t2'],['b','rm-t3'],['b','rm-follow'],['m','khutta'],['m','barnamaj'],['m','jadawil']]},
+      d:{ar:'الخطة السنوية لاستخدام الموقع شهرًا بشهر لفئتي ٥–٧ و٨+، وخطة اليوم والليلة، وبرنامج ٣٠/٩٠ يومًا، وقوائم المتابعة.',en:'Your child’s 1- or 2-year track through the city, the day-and-night plan, the 30/90-day program and checklists.'},
+      items:[['x','annual'],['m','khutta'],['m','barnamaj'],['b','rm-follow'],['m','jadawil']]},
     {key:'b6',ic:'🧩',c:'#A33529',t:{ar:'الباب السادس: المشكلاتُ وحلولُها',en:'Part 6: Problems & solutions'},
       d:{ar:'كلُّ مشكلةٍ في صفحةٍ واحدة: الفهم، الأسباب، الرؤى الأربع، الأدلة، مواقف عملية، خطة العلاج، وقائمة متابعة.',en:'Each problem on one page: understanding, causes, four lenses, evidence, worked examples, the plan & a checklist.'},
       items:TOPICS.map(function(x){ return ['p',x.id]; }).concat([['m','insihab'],['m','halat']])},
@@ -168,7 +168,7 @@
       items:[['b','pp-games'],['b','pp-stories'],['b','pp-acts'],['b','hp'],['b','pp-posters'],['x','printables']]},
     {key:'b8',ic:'📎',c:'#5A6673',t:{ar:'الملاحق',en:'Appendices'},
       d:{ar:'فهرس مقالات القسم التربوي، ومكتبة الأهل للاستزادة، والمصادر والمراجع.',en:'Index of the articles, further reading, sources & references.'},
-      items:[['x','articles'],['x','library'],['b','cmp-src']]}
+      items:[['x','articles'],['x','library'],['c','src']]}
   ];
   /* resolve an item [kind,id] → {r,icon,title,c} */
   function itemInfo(k,id){
@@ -178,6 +178,7 @@
     if(k==='m'){ var s=msec(id); return s&&{r:'m/'+id,icon:s.icon,title:cleanTitle(s.title)}; }
     if(k==='b'){ var c=CH[id]; return c&&{r:'b/'+id,icon:c.icon,title:t(c.t)}; }
     if(k==='x'){ var x=XP[id]; return x&&{r:'x/'+id,icon:x.icon,title:t(x.t)}; }
+    if(k==='c'){ var cp=CPAGES[id]; return cp&&{r:'c/'+id,icon:cp.icon,title:t(cp.t)}; }
   }
   function partItems(P){ return P.items.map(function(it){ return itemInfo(it[0],it[1]); }).filter(Boolean); }
   function partOf(r){ for(var i=0;i<BOOK.length;i++){ if(partItems(BOOK[i]).some(function(x){return x.r===r;})) return BOOK[i]; } return null; }
@@ -223,6 +224,22 @@
     +'.toolbar,.no-print,.seg{display:none!important}.bk-zoom{transform-origin:top center}'
     +'.sheet,.poster{margin:0 auto 1.4rem!important}'
     +'@media print{.bk-zoom{zoom:1!important}.sheet,.poster{margin:0!important}}';
+  /* «flow» mode: the chapter reads as continuous sections of THIS book — no A4 frames, page
+     headers/footers, covers or dividers, and the guide's own typography (posters keep their pages) */
+  var FLOW_CSS='.bk-body{font-family:"Noto Naskh Arabic","Tajawal",serif!important;color:#22303E!important;font-size:16px!important;line-height:1.95!important}'
+    +'.bk-html[dir=ltr] .bk-body{font-family:"Nunito","Tajawal",sans-serif!important}'
+    +'.sheet{width:auto!important;max-width:none!important;min-height:0!important;height:auto!important;margin:0 0 1.4rem!important;padding:1.2rem 1.4rem!important;box-shadow:none!important;background:#FFFDF7!important;border:1px solid #E7DCC4!important;border-radius:1rem!important;overflow:visible!important}'
+    +'.sheet::before,.sheet::after{display:none!important}'
+    +'.flow,.sheet-body{padding:0!important;margin:0!important;min-height:0!important;height:auto!important;display:block!important}'
+    +'.pfoot,.ph-n,.ph-k,.ph-ic,.crest,.cname{display:none!important}'
+    +'.ph{display:block!important;background:none!important;border:none!important;border-bottom:2px solid #E7DCC4!important;padding:0 0 .45rem!important;margin:0 0 .9rem!important;color:#0A2540!important;box-shadow:none!important}'
+    +'.ph h2,.ph-tx h2{font-family:"Tajawal",sans-serif!important;font-weight:900!important;font-size:1.3rem!important;color:#0A2540!important;margin:0!important}'
+    +'.sheet.cover{display:none!important}'
+    +'.sheet.divider{background:linear-gradient(160deg,#0A2540,#12375A)!important;color:#FEF5DC!important;border:none!important;text-align:start!important}'
+    +'.sheet.divider *{color:#FEF5DC!important}.sheet.divider .d-k{display:none!important}.sheet.divider .d-ic{font-size:2rem!important;margin:0 0 .3rem!important}'
+    +'.sheet.divider h2{font-family:"Tajawal",sans-serif!important;color:#F5CC5A!important;font-size:1.35rem!important;margin:0 0 .4rem!important}'
+    +'.sheet.divider .flow{display:block!important;min-height:0!important}'
+    +'@media print{.sheet{border:none!important;padding:0!important;margin:0 0 1rem!important;break-inside:auto}.sheet.divider{background:none!important}.sheet.divider *{color:#0A2540!important}}';
   function fitShadow(host){
     var sr=host.shadowRoot; if(!sr) return; var z=sr.querySelector('.bk-zoom'); if(!z) return;
     z.style.zoom=1; var w=host.clientWidth, mx=0;
@@ -238,7 +255,7 @@
         var skip=C.skip||[], pages=bk.nodes.slice(C.from,C.to+1).filter(function(_,i){ return skip.indexOf(C.from+i)<0; });
         var sr=slot.shadowRoot||slot.attachShadow({mode:'open'});
         var dir=(B.arOnly||AR())?'rtl':'ltr';
-        sr.innerHTML='<style>'+bk.css+'\n'+SHADOW_EXTRA+'</style><div class="bk-html" dir="'+dir+'" lang="'+(B.arOnly?'ar':lang)+'"><div class="bk-body"><div class="bk-zoom">'+pages.join('')+'</div></div></div>';
+        sr.innerHTML='<style>'+bk.css+'\n'+SHADOW_EXTRA+(C.pages?'':FLOW_CSS)+'</style><div class="bk-html" dir="'+dir+'" lang="'+(B.arOnly?'ar':lang)+'"><div class="bk-body"><div class="bk-zoom">'+pages.join('')+'</div></div></div>';
         /* the Prophetic Plan's own «الباب …» labels follow the old book order → relabel them with this guide's part & chapter */
         if(C.bk==='pp'){ var P=partOf('b/'+slot.dataset.ch), pn=P?P.t.ar.split(':')[0]:'', no=chapNo('b/'+slot.dataset.ch).replace(/[0-9.]/g,function(d){ return d==='.'?'.':'٠١٢٣٤٥٦٧٨٩'[+d]; });
           Array.prototype.forEach.call(sr.querySelectorAll('.d-k,.ph-k'),function(e){ e.textContent=pn+' — '+no; });
@@ -257,9 +274,59 @@
   function chapterPage(id){
     var C=CH[id]; if(!C) return null; var B=BOOKSRC[C.bk], P=partOf('b/'+id);
     return '<div class="ihero" style="--acc:'+(P?P.c:'#0D6B54')+'"><span class="big">'+C.icon+'</span><div><div class="kicker">'+(P?t(P.t):'')+'</div><h1>'+t(C.t)+'</h1>'
-      +'<p class="bk-from">📘 '+L('من كتاب','From the book')+' «'+t(B.name)+'»'+(B.arOnly&&!AR()?' · <em>Available in Arabic</em>':'')
-      +' · <a class="no-print" href="'+B.url+'" target="_blank" rel="noopener">'+L('افتح الكتاب كاملًا ↗','Open the full book ↗')+'</a></p></div></div>'
+      +(B.arOnly&&!AR()?'<p class="sub"><em>Available in Arabic</em></p>':'')+'</div></div>'
       +'<div class="bk-slot" data-ch="'+id+'"><div class="bk-loading">'+L('⏳ جارٍ تحميل صفحات الفصل…','⏳ Loading the chapter pages…')+'</div></div>';
+  }
+
+  /* ══ «بوصلة التربية» woven natively into the book (data: TARBIYAH, read live) ══ */
+  var TB=window.TARBIYAH||{stages:[]};
+  function cst(id){ return TB.stages.filter(function(x){return x.id===id;})[0]; }
+  function lc(items){ return '<div class="lgrid">'+items.map(function(x){ return '<div class="lcard"><div class="t">'+x[0]+' '+x[1]+'</div><div class="d">'+x[2]+'</div></div>'; }).join('')+'</div>'; }
+  function ul(a){ return '<ul class="cmp-ul">'+a.map(function(x){ return '<li>'+t(x)+'</li>'; }).join('')+'</ul>'; }
+  var CPAGES={
+    base:{icon:'⚓',t:{ar:'ثوابتُ التربية: القاعدةُ النبوية، وأربعةٌ لا تتغيّر، والوقتُ مع الأبناء',en:'Constants: the Prophetic rule, four that never change, and time with children'}},
+    map: {icon:'🗺️',t:{ar:'مراحلُ العمر السبع في لمحة — وكيف تقرأ كلَّ مرحلة',en:'The seven life stages at a glance — and how to read each one'}},
+    src: {icon:'📜',t:{ar:'المصادر والمراجع',en:'Sources & references'}}
+  };
+  TB.stages.forEach(function(st){ CPAGES[st.id]={icon:st.ic,t:{ar:'المرحلة '+NUMA(st.age)+': '+st.nm.ar,en:'Stage '+st.age+': '+st.nm.en},st:st}; });
+  function NUMA(x){ return String(x).replace(/[0-9]/g,function(d){return '٠١٢٣٤٥٦٧٨٩'[+d];}); }
+  function cHero(id){ var C=CPAGES[id], P=partOf('c/'+id);
+    return '<div class="ihero" style="--acc:'+(C.st?C.st.c:(P?P.c:'#0D6B54'))+'"><span class="big">'+C.icon+'</span><div><div class="kicker">'+(P?t(P.t):'')+'</div><h1>'+t(C.t)+'</h1>'+(C.st?'<p class="sub">'+t(C.st.sub)+'</p>':'')+'</div></div>'; }
+  function compassPage(id){
+    var C=CPAGES[id]; if(!C||!TB.stages.length) return null;
+    var h=cHero(id), S=[];
+    if(id==='base'){
+      S.push(['rule','🤍',L('القاعدةُ النبويةُ الكبرى','The great Prophetic rule'),lc(TB.anchors.map(function(a){ return [a.ic,t(a.n),t(a.d)]; }))]);
+      S.push(['const','🧱',L('أربعةٌ لا تتغيّرُ مع العمر','Four that never change with age'),'<p class="lead">'+L('مهما تغيّرتِ المراحلُ تبقى هذه الأربعةُ أساسًا تحت كلِّ شيء — إن غابت انهار ما فوقها:','Whatever the stage, these four stay beneath everything — without them the rest collapses:')+'</p>'+lc(TB.constants.map(function(c){ return [c.ic,t(c.n),t(c.d)]; }))]);
+      var tp=TB.timePhilosophy; S.push(['time','🕰️',L('الوقتُ مع أطفالك — كميٌّ ونوعيّ','Time with your children — quantity & quality'),'<p class="lead">'+t(tp.intro)+'</p>'+lc(tp.laws.map(function(l){ return [l.ic,t(l.t),t(l.d)]; }))
+        +'<div class="ev"><div class="h">'+L('الدليل','Evidence')+'<span class="tag">'+t(tp.evidence.ref)+'</span></div><div class="x">'+t(tp.evidence.text)+'</div></div>']);
+    } else if(id==='map'){
+      S.push(['windows','🪟',L('كيف تقرأ فصلَ كلِّ مرحلة؟','How to read each stage chapter'),'<p class="lead">'+L('كلُّ مرحلةٍ في هذا الباب تُعرض من النوافذ نفسها، ثم تتبعها خطّتُها التفصيلية. اقرأ مرحلةَ طفلك الآن، وراجع التي قبلها لتستدرك، والتي بعدها لتستعدّ.','Each stage in this part is shown through the same windows, then followed by its detailed plan. Read your child’s stage now, the one before to catch up, and the one after to prepare.')+'</p>'+lc(TB.pillars.map(function(x){ return [x.ic,t(x.n),t(x.d)]; }))]);
+      S.push(['stages','🧭',L('المراحل السبع','The seven stages'),'<div class="tgrid">'+TB.stages.map(function(st){ return '<a class="tcard" style="--tc:'+st.c+'" href="#c/'+st.id+'"><span class="ti">'+st.ic+'</span><span><b>'+NUM(st.age)+' · '+t(st.nm)+'</b><small>'+t(st.sub)+'</small></span></a>'; }).join('')+'</div>']);
+    } else if(id==='src'){
+      S.push(['books','📚',L('أصولُ هذا الكتاب','The foundations of this book'),'<p class="lead">'+L('هذا الكتابُ خلاصةٌ تجمع بين الوحيِ وفهمِ المختصّين من علماءِ الشرعِ والتربيةِ وعلمِ النفس:','This book joins revelation with the understanding of scholars of Shari’ah, education and psychology:')+'</p>'+ul(TB.sources)]);
+      S.push(['note','⚖️',L('تنبيه','Note'),'<div class="tip">'+t(TB.disclaimer)+'</div><p class="closing-dua">'+t(TB.closingDua)+'</p>']);
+    } else {
+      var st=C.st;
+      S.push(['glance','👁️',L('المرحلةُ في لمحة','The stage at a glance'),'<p class="lead">'+t(st.intro)+'</p><div class="glance">'+st.glance.map(function(g){ return '<div class="gl"><div class="k">'+g.ic+' '+t(g.k)+'</div><div class="v">'+t(g.v)+'</div></div>'; }).join('')+'</div>']);
+      S.push(['views','🔭',L('نظرةُ العلماء ونظرةُ علم النفس','The scholars’ view & the psychology view'),'<div class="lenses"><div class="lens" style="--lc:#0D6B54"><h4>📿 '+L('نظرةُ العلماء','The scholars’ view')+'</h4>'+paras(st.scholar)+'</div><div class="lens" style="--lc:#6C4A9E"><h4>🧠 '+L('نظرةُ علم النفس','The psychology view')+'</h4>'+paras(st.psych)+'</div></div>']);
+      S.push(['voices','🎙️',L('أصواتُ المختصّين','Specialists’ voices'),'<div class="voices">'+st.specialists.map(function(v){ return '<blockquote class="voice">'+t(v.q)+'<cite>— '+t(v.by)+'</cite></blockquote>'; }).join('')+'</div>']);
+      S.push(['evidence','📜',L('من هَدي الكتاب والسنّة','From the Qur’an & Sunnah'),st.evidences.map(function(e){ var lbl=e.type==='ayah'?L('قرآن','Qur’an'):e.type==='hadith'?L('حديث','Hadith'):L('أثر','Report'); return '<div class="ev"><div class="h">'+lbl+'<span class="tag">'+t(e.ref)+'</span></div><div class="x">'+t(e.text)+'</div>'+(e.note?'<div class="note">'+t(e.note)+'</div>':'')+'</div>'; }).join('')]);
+      S.push(['reward','🌟',L('ثوابُ هذا العمل، والقيمُ التي تُغرس','The reward, and the values to plant'),lc(st.rewards.map(function(r){ return [r.ic,t(r.t),t(r.d)]; }))+'<h3>★ '+L('القيمُ التي تُغرس في هذه المرحلة','Values to plant now')+'</h3>'+ul(st.values)]);
+      S.push(['needs','⚖️',L('الاحتياجاتُ والمخاطر','Needs & risks'),'<div class="two-col"><div class="nbox ok"><h4>✓ '+L('الاحتياجات','Needs')+'</h4>'+ul(st.needs)+'</div><div class="nbox warn"><h4>⚠ '+L('المخاطر','Risks')+'</h4>'+ul(st.risks)+'</div></div><div class="tip">'+L('<b>القاعدة:</b> لبِّ الاحتياجاتِ تَقِ نفسَك أكثرَ المخاطر؛ فأغلبُ المشكلاتِ حاجةٌ لم تُلَبَّ.','<b>The rule:</b> meet the needs and you avoid most risks — most problems are an unmet need.')+'</div>']);
+      S.push(['day','🕰️',L('خريطةُ اليوم والأسبوع','The daily & weekly map'),'<div class="tip">⏱️ <b>'+L('جرعةُ الوقت: ','Time dose: ')+'</b>'+t(st.dose)+'</div><div class="tbl-wrap"><table><thead><tr><th>'+L('الوقت','When')+'</th><th>'+L('المدّة','Length')+'</th><th>'+L('النشاط','Activity')+'</th><th>'+L('مَن','Who')+'</th></tr></thead><tbody>'
+        +st.daily.map(function(d){ return '<tr><td class="asp">'+t(d.t)+'</td><td>'+t(d.dur)+'</td><td>'+t(d.act)+'</td><td>'+t(d.who)+'</td></tr>'; }).join('')+'</tbody></table></div><h3>📅 '+L('الإيقاعُ الأسبوعي','The weekly rhythm')+'</h3><div class="tbl-wrap"><table><tbody>'
+        +st.weekly.map(function(w){ return '<tr><td class="asp">'+t(w.d)+'</td><td>'+t(w.act)+'</td></tr>'; }).join('')+'</tbody></table></div>']);
+      S.push(['father','👨',L('دورُ الأب، وأنشطةٌ تفعلها معه','The father’s role & activities to do together'),'<p class="lead">'+t(st.fatherFocus)+'</p><div class="lgrid">'+st.activities.map(function(a){ return '<div class="lcard"><div class="t">'+a.ic+' '+t(a.t)+'</div><div class="d">'+t(a.how)+'</div><div class="d why">🎯 '+t(a.why)+'</div></div>'; }).join('')+'</div>']);
+      S.push(['examples','💡',L('مواقف عملية: افعل / تجنّب','Worked examples: do / avoid'),'<div class="exs">'+st.examples.map(function(e){ return '<div class="ex"><div class="eh">'+t(e.title)+'</div><div class="scene">'+t(e.scene)+'</div><div class="eg"><div class="do"><b>✅ '+L('افعل','Do')+'</b>'+t(e.do)+'</div><div class="dont"><b>🚫 '+L('تجنّب','Avoid')+'</b>'+t(e.dont)+'</div></div>'+(e.root?'<div class="root">🌱 '+t(e.root)+'</div>':'')+'</div>'; }).join('')+'</div>']);
+      S.push(['problems','🩹',L('مشكلاتُ هذه المرحلة وعلاجُها','This stage’s problems & their treatment'),st.problems.map(function(pr){ return '<div class="ex"><div class="eh">⚠ '+t(pr.p)+'</div><div class="scene"><b>'+L('السبب: ','Cause: ')+'</b>'+t(pr.why)+'</div><div class="eg"><div class="do"><b>📿 '+L('المنظورُ الشرعي','Islamic lens')+'</b>'+t(pr.islamic)+'</div><div class="do psy"><b>🧠 '+L('المنظورُ النفسي','Psychological lens')+'</b>'+t(pr.psych)+'</div></div><div class="steps">'+pr.steps.map(function(x,i){ return '<div class="st"><span class="sn">'+NUM(i+1)+'</span><div><div class="std">'+t(x)+'</div></div></div>'; }).join('')+'</div></div>'; }).join('')
+        +'<p class="hint">🧩 '+L('للمشكلات المفصّلة (العناد، الكذب، الغضب…) ارجع إلى الباب السادس.','For detailed problems (stubbornness, lying, anger…) see Part 6.')+' <a href="#p/start">'+L('الباب السادس ←','Part 6 →')+'</a></p>']);
+      S.push(['apply','🧭',L('طبّقها في الموقع والبيت','Apply it on the site & at home'),ul(st.practice.items)+'<p class="hint">🗺️ '+L('ولترتيب ذلك شهرًا بشهر داخل الموقع ارجع إلى ','To arrange this month by month on the site, see ')+'<a href="#x/annual">'+L('الخطة السنوية (الباب الخامس)','the annual plan (Part 5)')+'</a>.</p>']);
+      S.push(['checklist','✅',L('قائمةُ المحاسبة — هل أنجزتُ في هذه المرحلة؟','Accountability — have I done it at this stage?'),checklist('cmp-ck-'+st.id,st.checklist)+'<div class="ck-tools"><button data-reset="cmp-ck-'+st.id+'">'+L('إعادة تصفير القائمة','Reset list')+'</button></div>']);
+      S.push(['follow','🔄',L('المتابعةُ الدوريّة','Periodic follow-up'),'<div class="tbl-wrap"><table><tbody>'+st.followup.map(function(f){ return '<tr><td class="asp">'+t(f.period)+'</td><td>'+t(f.item)+'</td></tr>'; }).join('')+'</tbody></table></div>']);
+    }
+    if(S.length>3) h+='<nav class="jump">'+S.map(function(x){ return '<a href="#" data-jump="'+x[0]+'">'+x[1]+' '+x[2].split(/[—:،]/)[0]+'</a>'; }).join('')+'</nav>';
+    return h+S.map(function(x){ return blk(x[0],x[1],x[2],x[3]); }).join('');
   }
 
   /* where each article of «القسم التربوي» now lives */
@@ -303,7 +370,7 @@
   }
   function blk(id,ic,title,body,from){
     if(!body) return '';
-    return '<section class="blk" id="'+id+'"><h2><span>'+ic+'</span><span>'+title+'</span>'+(from?'<span class="from">'+from+'</span>':'')+'</h2>'+body+'</section>';
+    return '<section class="blk" id="'+id+'"><h2><span>'+ic+'</span><span>'+title+'</span></h2>'+body+'</section>';
   }
   var SRC={
     b:function(){ return L('مفاتيح السلوك','Keys to Behaviour'); },
@@ -322,10 +389,10 @@
     var used=[]; if(B)used.push(SRC.b()); if(P)used.push(SRC.p()); if(M)used.push(SRC.m()); if(A)used.push(SRC.a());
     var intro=B?t(B.intro):(P?t(P.blurb):'');
     var h='<div class="ihero" style="--acc:'+T.c+'"><span class="big">'+T.icon+'</span><div>'
-      +'<div class="kicker">'+t(PARTS.p.t)+'</div><h1>'+t(T.t)+'</h1>'
+      +'<div class="kicker">'+(partKicker('p/'+T.id)||t(PARTS.p.t))+'</div><h1>'+t(T.t)+'</h1>'
       +(B?'<div class="sub">'+t(B.sub)+'</div>':(T.sub?'<div class="sub">'+t(T.sub)+'</div>':''))
       +(intro&&T.special!=='start'?'<p>'+intro+'</p>':'')
-      +'<div class="srcs">'+used.map(function(s){return '<span class="src">📎 '+s+'</span>';}).join('')+'</div></div></div>';
+      +'</div></div>';
     if(B&&B.glance) h+='<div class="glance">'+B.glance.map(function(g){ return '<div class="gl"><div class="k">'+g.ic+' '+t(g.k)+'</div><div class="v">'+t(g.v)+'</div></div>'; }).join('')+'</div>';
 
     var S=[];   /* [id, icon, title, body, from] */
@@ -404,14 +471,14 @@
   /* ── goal plan page ────────────────────────────────── */
   function goalHTML(id){
     if(id==='intro'){
-      return '<div class="ihero" style="--acc:#0D6B54"><span class="big">🌟</span><div><div class="kicker">'+t(PARTS.g.t)+'</div><h1>'+L('قواعد ذهبية لكل الرحلات','Golden rules for all journeys')+'</h1>'
+      return '<div class="ihero" style="--acc:#0D6B54"><span class="big">🌟</span><div><div class="kicker">'+(partKicker('g/intro')||t(PARTS.g.t))+'</div><h1>'+L('قواعد ذهبية لكل الرحلات','Golden rules for all journeys')+'</h1>'
         +'<p>'+L('كل رحلة «لعبة» في يد الطفل… وهدف تربوي في يدكم. لكل هدف هنا: خطة حسب العمر، برنامج ٩٠ يومًا، جدول متابعة ٣٠ يومًا، أخطاء شائعة، ودوركم في رحلة الطفل.','Each journey is a game in the child’s hands… and a tarbiyah goal in yours.')+'</p></div></div>'
         +blk('rules','🌟',L('القواعد الذهبية','The golden rules'),arBlock(AP.intro.principles||''))
         +(AP.intro.note?blk('note','📝',L('ملاحظة','Note'),arBlock(AP.intro.note)):'')
         +blk('goals','🎯',L('الأهداف الثمانية','The eight goals'),'<div class="tgrid">'+AP.goals.map(function(g){ return '<a class="tcard" style="--tc:'+g.color+'" href="#g/'+g.id+'"><span class="ti">'+g.icon+'</span><span>'+g.title+'</span></a>'; }).join('')+'</div>');
     }
     var g=AP.goals.filter(function(x){return x.id===id;})[0]; if(!g) return null;
-    var h='<div class="ihero" style="--acc:'+g.color+'"><span class="big">'+g.icon+'</span><div><div class="kicker">'+t(PARTS.g.t)+'</div><h1>'+g.title+'</h1>'
+    var h='<div class="ihero" style="--acc:'+g.color+'"><span class="big">'+g.icon+'</span><div><div class="kicker">'+(partKicker('g/'+g.id)||t(PARTS.g.t))+'</div><h1>'+g.title+'</h1>'
       +(g.lead?'<p>'+g.lead+'</p>':'')+'<div class="related"><a href="'+g.journey+'">🎠 '+L('رحلة الطفل التفاعلية','The child’s interactive journey')+' ←</a></div></div></div>';
     h+='<div class="plan">'+arBlock(g.html)+'</div>';
     if(g.role) h+=blk('role','🏡',L('دوركم في رحلة الطفل','Your role in the child’s journey'),'<div class="role" style="--acc:'+g.color+'">'+arBlock(g.role)+'</div>');
@@ -424,7 +491,7 @@
   /* ── Murabbi section page ──────────────────────────── */
   function murabbiPage(id){
     var s=msec(id); if(!s||MURABBI_KEEP.indexOf(id)<0) return null;
-    return '<div class="ihero" style="--acc:'+((partOf('m/'+id)||{}).c||'#A07810')+'"><span class="big">'+s.icon+'</span><div><div class="kicker">'+(partKicker('m/'+id)||t(PARTS.m.t))+'</div><h1>'+cleanTitle(s.title)+'</h1><p class="bk-from">📘 '+L('من «مرجع المربي» — خلاصات «ألف باء التربية» للشيخ عبدالرحمن ذاكر الهاشمي','From the Murabbi reference — “Alif Ba of Tarbiyah” digests')+'</p></div></div>'
+    return '<div class="ihero" style="--acc:'+((partOf('m/'+id)||{}).c||'#A07810')+'"><span class="big">'+s.icon+'</span><div><div class="kicker">'+(partKicker('m/'+id)||t(PARTS.m.t))+'</div><h1>'+cleanTitle(s.title)+'</h1></div></div>'
       +'<section class="blk">'+arBlock(murabbiLinks(s.html))+'</section>';
   }
 
@@ -434,8 +501,8 @@
     var h='<div class="hero book-cover"><div class="kicker">'+L('تربية الطفل المسلم · ركن الأهل','Muslim Kids’ Tarbiyah · Parents Corner')+'</div>'
       +'<h1>'+L('دليل الأهل الشامل','The Complete Parents’ Guide')+'</h1>'
       +'<div class="cover-sub">'+L('كتابُ التربية للأسرة المسلمة — من الفهم إلى الخطة إلى العلاج','A tarbiyah book for the Muslim family — from understanding, to planning, to solutions')+'</div>'
-      +'<p>'+L('سلسلةٌ واحدةٌ مترابطة في ثمانية أبواب: نبدأ بأصول التربية وفهمها، ثم ما يحتاجه طفلُك في كل مرحلةٍ من عمره، ثم بناء شخصيّته، ثم خطط الأهداف العملية، ثم خارطة الطريق اليومية، ثم علاج المشكلات، ثم أدوات البيت — وفي آخره الملاحق. جمعنا فيه كتب ركن الأهل كلَّها («خطة التربية النبوية الشاملة»، «بوصلة التربية»، «خارطة طريق المربّي»، «خطة حفظ القرآن»، «مفاتيح السلوك»، «بوسترات البيت»)، و«مرجع المربي»، والبرامج، والتطبيقات العملية، ومقالات القسم التربوي، والمطبوعات — كلُّ جزءٍ في مكانه، بلا تكرار.',
-        'One connected series in eight parts: the foundations of tarbiyah, what your child needs at each age, building their personality, practical goal plans, the daily roadmap, solving problems, and home tools — then appendices. All the Parents Corner books (the Prophetic Tarbiyah Plan, the Tarbiyah Compass, the Parent Roadmap, the Quran Memorization Plan, Keys to Behaviour, Home Posters), the Murabbi reference, the programs, the practical plans, the articles and the printables — each in its place, without repetition.')+'</p>'
+      +'<p>'+L('ثمانيةُ أبوابٍ في سلسلةٍ واحدة: أصولُ التربية وفهمُها، ثم مراحلُ العمر من المهد إلى الرشد، ثم بناءُ شخصية الطفل، ثم خططُ الأهداف الإيمانية والعبادية والخلقية، ثم خارطةُ الطريق والبرنامجُ اليومي، ثم المشكلاتُ وحلولها، ثم أدواتُ البيت — وفي آخره الملاحق. على هَدي الكتاب والسنّة، مع فهم علماء التربية وعلم النفس.',
+        'Eight parts in one series: the foundations of tarbiyah, the life stages from cradle to maturity, building the child’s personality, the goal plans for faith, worship and character, the roadmap and daily program, problems and their solutions, and home tools — then appendices. Guided by the Qur’an and Sunnah, with the understanding of educators and psychologists.')+'</p>'
       +'<div class="related"><a href="#'+partItems(BOOK[0])[0].r+'">📖 '+L('ابدأ القراءة من الباب الأول','Start reading from Part 1')+'</a><a class="ghost" href="#toc">🗂️ '+L('الفهرس','Contents')+' ('+NUM(total)+' '+L('فصلًا','chapters')+')</a></div></div>';
     h+='<div class="h-sec">🧭 '+L('كيف تقرأ هذا الكتاب؟','How to read this book')+'</div><div class="howto">'
       +[[L('إن كنت تبدأ','Starting out'),L('اقرأ الباب الأول ثم مرحلة طفلك من الباب الثاني.','Read Part 1, then your child’s stage in Part 2.')],
@@ -446,11 +513,9 @@
       +BOOK.map(function(P,pi){ var its=partItems(P);
         return '<section class="toc-part" style="--pc:'+P.c+'"><h3><span>'+P.ic+'</span><span>'+t(P.t)+'</span><a class="toc-print no-print" href="#print/'+P.key+'" title="'+L('اطبع الباب كاملًا','Print the whole part')+'">🖨️</a></h3><p>'+t(P.d)+'</p><ol>'
           +its.map(function(x,i){ return '<li><a href="#'+x.r+'"><span class="no">'+NUM(pi+1)+'.'+NUM(i+1)+'</span><span class="ic">'+x.icon+'</span><span>'+x.title+'</span></a></li>'; }).join('')+'</ol></section>'; }).join('')+'</div>';
-    h+='<div class="h-sec">🧩 '+L('ما المشكلة التي تواجهك الآن؟','Which problem are you facing now?')+'</div><div class="tgrid">'
-      +TOPICS.map(function(x){ return '<a class="tcard" style="--tc:'+x.c+'" href="#p/'+x.id+'"><span class="ti">'+x.icon+'</span><span>'+t(x.t)+'</span></a>'; }).join('')+'</div>';
     h+='<div class="merge-note">'+L(
-      '<b>🧾 كيف جُمع الكتاب؟</b> لم يُنسخ أيُّ محتوى: كلُّ فصلٍ يُقرأ مباشرةً من ملفّه الأصلي، فأيُّ تصحيحٍ هناك يظهر هنا تلقائيًا. الكتب المطبوعة قُسِّمت إلى فصولها، ووُضع كلُّ فصلٍ في بابه: «ركائز التربية النبوية» في الأصول، و«بوصلة كل مرحلة» بجوار «خطتها التفصيلية» في مراحل العمر، و«خطة حفظ القرآن» بعد هدف «حافظ الدين»، وهكذا. وما تكرّر بين الكتب حُذف من أحدهما: منهج علاج السلوك ومبادئ التربية العامة تظهر مرّةً واحدة في «قبل أن تبدأ»، و«مفاتيح السلوك» مدموجٌ في صفحات المشكلات، ولوحة «قواعد بيتنا» تظهر مرّة واحدة في بوسترات البيت.',
-      '<b>🧾 How was the book assembled?</b> Nothing is copied: every chapter is read live from its original file. The printed books were cut into chapters and each placed in its part — the Prophetic pillars under Foundations, each stage’s Compass next to its detailed plan, the Quran plan right after the “Deen keeper” goal, and so on. Overlaps were kept once only: the behaviour method and general principles under “Before you start”, “Keys to Behaviour” inside the problem pages, and the “House rules” poster once in Home Posters.')+'</div>';
+      '<b>📖 عن هذا الكتاب:</b> كُتب ليُقرأ متسلسلًا كما يُقرأ أيُّ كتابٍ تربويّ: يبدأ بالفهم (ما التربية؟ ولماذا؟)، ثم بالطفل نفسه في كل مرحلةٍ من عمره، ثم بما نبنيه فيه، ثم بالخطط والبرنامج اليومي، ثم بعلاج ما يعترض الطريق من مشكلات، ثم بأدوات البيت. كلُّ موضوعٍ يُشرح في موضعٍ واحدٍ فقط، وما يحتاجه بابٌ من بابٍ آخر يُحال إليه برابط بدل تكراره. تقدّمك في القوائم والبرامج محفوظٌ على جهازك.',
+      '<b>📖 About this book:</b> it is meant to be read in order like any parenting book: understanding first (what tarbiyah is and why), then the child at each age, then what we build in them, then the plans and the daily program, then the problems along the way, then home tools. Each topic is explained in one place only; when another part needs it, it links instead of repeating. Your checklist and program progress is saved on this device.')+'</div>';
     var PDF={p:'المشكلات وحلولها.pdf',g:'خطط الأهداف العملية.pdf',m:'مرجع المربي.pdf'};
     h+='<div class="h-sec">🖨️ '+L('ملفات PDF جاهزة','Ready PDF files')+'</div>'
       +'<div class="parts">'+['p','g','m'].map(function(k){ var P=PARTS[k]; return '<div class="part-card" style="--pc:'+P.c+'"><span class="pi">📄</span><b>'+t(P.t)+'</b>'
@@ -469,7 +534,7 @@
     PARTS.g.items().forEach(function(x){ INDEX.push({r:'g/'+x.id,icon:x.icon,title:x.title,part:t(PARTS.g.t),txt:plain(goalHTML(x.id)||'')}); });
     PARTS.m.items().forEach(function(x){ INDEX.push({r:'m/'+x.id,icon:x.icon,title:x.title,part:t(PARTS.m.t),txt:plain(murabbiPage(x.id)||'')}); });
     /* book chapters & special pages: titles now, full text once their pages have loaded */
-    BOOK.forEach(function(P){ partItems(P).forEach(function(x){ var k=x.r.split('/')[0]; if(k!=='b'&&k!=='x') return;
+    BOOK.forEach(function(P){ partItems(P).forEach(function(x){ var k=x.r.split('/')[0]; if(k==='c'){ INDEX.push({r:x.r,icon:x.icon,title:x.title,part:t(P.t),txt:plain(compassPage(x.r.split('/')[1])||'')}); return; } if(k!=='b'&&k!=='x') return;
       var id=x.r.split('/')[1], C=CH[id], txt=x.title+' '+(k==='x'?plain(specialPage(id)||''):'');
       if(C){ var bk=BKTXT[C.bk+'|'+lang]; if(bk) txt+=' '+bk.slice(C.from,C.to+1).join(' '); }
       INDEX.push({r:x.r,icon:x.icon,title:x.title,part:t(P.t),txt:txt}); }); });
@@ -477,7 +542,7 @@
     INDEX.forEach(function(it){ var P=partOf(it.r); if(P) it.part=t(P.t); });
   }
   var BKTXT={};
-  function indexBooks(){ Object.keys(BOOKSRC).forEach(function(bk){ loadBook(bk).then(function(b){ BKTXT[bk+'|'+lang]=b.nodes.map(plain); INDEX=null; var m=/^#s\/(.+)/.exec(location.hash); if(m) route(); }); }); }
+  function indexBooks(){ var used={}; BOOK.forEach(function(P){ P.items.forEach(function(it){ if(it[0]==='b'&&CH[it[1]]) used[CH[it[1]].bk]=1; }); }); Object.keys(used).forEach(function(bk){ loadBook(bk).then(function(b){ BKTXT[bk+'|'+lang]=b.nodes.map(plain); INDEX=null; var m=/^#s\/(.+)/.exec(location.hash); if(m) route(); }); }); }
   function norm(s){ return s.replace(/[ً-ْـ]/g,'').replace(/[أإآ]/g,'ا').replace(/ة/g,'ه').replace(/ى/g,'ي').toLowerCase(); }
   function searchHTML(q){
     if(!INDEX) buildIndex();
@@ -496,6 +561,7 @@
     if(k==='m') return murabbiPage(id);
     if(k==='b') return chapterPage(id);
     if(k==='x') return specialPage(id);
+    if(k==='c') return compassPage(id);
     return null;
   }
   function printPartHTML(k){
@@ -525,7 +591,8 @@
     else if(k==='m'){ html=murabbiPage(id); if(html) crumb=t(PARTS.m.t); }
     else if(k==='b'){ html=chapterPage(id); }
     else if(k==='x'){ html=specialPage(id); }
-    if(html&&'pgmbx'.indexOf(k)>-1&&k){ var PP=partOf(hash), inf=null; FLAT.forEach(function(f){ if(f.r===hash) inf=f; }); if(PP&&inf) crumb=t(PP.t).split(':')[0]+' › '+chapNo(hash)+' '+inf.title; }
+    else if(k==='c'){ html=compassPage(id); }
+    if(html&&'pgmbxc'.indexOf(k)>-1&&k){ var PP=partOf(hash), inf=null; FLAT.forEach(function(f){ if(f.r===hash) inf=f; }); if(PP&&inf) crumb=t(PP.t).split(':')[0]+' › '+chapNo(hash)+' '+inf.title; }
     else if(k==='s'){ html=searchHTML(id); crumb=L('بحث','Search'); }
     else if(k==='print'){ html=printPartHTML(id); if(html) crumb=L('ملف موحّد للطباعة','Unified printable file'); }
     if(!html){ html=homeHTML(); k=''; }
