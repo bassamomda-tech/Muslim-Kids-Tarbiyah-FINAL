@@ -85,7 +85,7 @@ footer{text-align:center;color:#6C8A86;font-weight:700;font-size:.85rem;padding:
 <body data-screen-label="رحلة الأذكار والدعاء">
 
 <header class="hero">
-  <a class="back" href="index.html">↩️ العودة للمدينة</a>
+  <a class="back" href="corners/stories/little.html#hero-journeys">↩️ العودة لمكتبة الصغار</a>
   <h1>📿 رحلةُ الأذكارِ والدعاء</h1>
   <p>يا بطل! الذكرُ حصنُك، والدعاءُ سلاحُك، ولسانُك الرطبُ بذكرِ اللهِ كنزٌ لا ينفد… هيا نملأ اليومَ كلَّه نورًا! ✨</p>
   <div class="starbar">📿 <span id="stars">0</span> من <span id="total"></span> محطة</div>
@@ -381,5 +381,12 @@ function celebrate(){
 }
 renderMap();
 </script>
+<script>/* back button: return to the page the child came from (the kids' library, the parents corner, the guide…);
+   opened directly → the default above. */
+(function(){var a=document.querySelector('a.back');if(!a)return;try{var r=document.referrer?new URL(document.referrer):null;
+if(r&&r.origin===location.origin&&r.pathname!==location.pathname&&!/\u0631\u062d\u0644\u0629/.test(decodeURIComponent(r.pathname))){
+var t='↩️ رجوع',p=decodeURIComponent(r.pathname);
+if(/stories\/little\.html/.test(p))t='↩️ العودة لمكتبة الصغار';else if(/parents/.test(p))t='↩️ العودة لركن الأهل';else if(/store\.html/.test(p))t='↩️ العودة للمكتبة';else if(/\/index\.html$|\/$/.test(p))t='↩️ العودة للمدينة';
+a.href=r.href;a.textContent=t;}}catch(e){}})();</script>
 </body>
 </html>

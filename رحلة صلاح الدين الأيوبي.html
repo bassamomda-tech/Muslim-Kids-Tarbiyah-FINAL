@@ -327,5 +327,12 @@ function celebrate(){
 }
 renderLegend(); renderStages();
 </script>
+<script>/* back button: return to the page the child came from (the kids' library, the parents corner, the guide…);
+   opened directly → the default above. */
+(function(){var a=document.querySelector('a.back');if(!a)return;try{var r=document.referrer?new URL(document.referrer):null;
+if(r&&r.origin===location.origin&&r.pathname!==location.pathname&&!/\u0631\u062d\u0644\u0629/.test(decodeURIComponent(r.pathname))){
+var t='↩️ رجوع',p=decodeURIComponent(r.pathname);
+if(/stories\/little\.html/.test(p))t='↩️ العودة لمكتبة الصغار';else if(/parents/.test(p))t='↩️ العودة لركن الأهل';else if(/store\.html/.test(p))t='↩️ العودة للمكتبة';else if(/\/index\.html$|\/$/.test(p))t='↩️ العودة للمدينة';
+a.href=r.href;a.textContent=t;}}catch(e){}})();</script>
 </body>
 </html>
