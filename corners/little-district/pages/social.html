@@ -303,8 +303,8 @@
     {href:'good-bingo.html',     icon:'🏅', ar:'بنغو الصالحات', en:'Good Deeds Bingo'},
     {href:'honesty-pledge.html', icon:'✍️', ar:'تعهّد الصدق',   en:'Honesty Pledge'},
     {href:'what-if.html',        icon:'🤔', ar:'ماذا لو؟',        en:'What If?'},
-    {href:'paradise-post.html',  icon:'💌', ar:'بريد الجنة',     en:'Paradise Post'}
-  ];
+    {href:'gratitude.html',      icon:'💛', ar:'شجرة الشكر',     en:'Gratitude Tree'}
+  ];   /* = QUIZ_REG.social.rewards (quiz/quiz-registry.js) — the ONE list the test engine unlocks */
   var ANOUS='../../activities/activities/';
   function ldGet(k){ try{return localStorage.getItem('ld:'+k);}catch(e){return null;} }
   /* Corner evaluation = the 3-level TESTS (akhlaq + adab), 34 houses → max 340.
@@ -313,16 +313,19 @@
     var s={}; try{ s=JSON.parse(localStorage.getItem('mkQuiz')||'{}'); }catch(e){}
     var c=s.social||{};
     function avg(a){ return a.length? a.reduce(function(x,y){return x+y;},0)/a.length : null; }
+    /* SAME rule as quiz-engine: a journey = its BEST level (over the activities that level offers),
+       and the corner = the average of BOTH journeys (an untested journey counts 0) */
     function jScore(jid){
-      var j=c[jid]||{}, lv=['beginner','intermediate','advanced'].map(function(l){
+      var j=c[jid]||{}, per=(typeof j._nl==='number'&&j._nl>0)?j._nl:3, best=null;
+      ['beginner','intermediate','advanced'].forEach(function(l){
         var o=j[l]||{}, v=Object.keys(o).map(function(k){return o[k];});
-        return v.length? avg(v):null;
-      }).filter(function(x){return x!==null;});
-      return lv.length? avg(lv):null;
+        if(!v.length) return; var a=v.reduce(function(x,y){return x+y;},0)/per; if(best===null||a>best) best=a;
+      });
+      return best;
     }
     var ak=jScore('akhlaq'), ad=jScore('adab');
-    var parts=[ak,ad].filter(function(x){return x!==null;});
-    return parts.length? Math.round(avg(parts)) : 0;   // 0–100
+    if(ak===null && ad===null) return 0;
+    return Math.round(((ak||0)+(ad||0))/2);   // 0–100
   }
   function compute(){
     var total=34, max=340;            // 34 houses × 10
@@ -343,15 +346,10 @@
     }catch(e){}
     return {pct:pct, points:points, max:max, done:done, total:total, jDone:jDone, jCount:jCount, stDone:stDone, stTotal:stTotal};
   }
+  /* the test engine (quiz-engine.js) is the ONLY one that grants/revokes this unlock
+     (both journeys tested + ≥75%) — this card just shows its state */
   function ensureUnlock(pct){
-    try{
-      var u=JSON.parse(localStorage.getItem('mkUnlocked')||'{}');
-      if(pct>=75 && !u.social){
-        u.social=REWARDS.map(function(r){return {href:'activities/'+r.href,icon:r.icon,t:{ar:r.ar,en:r.en}};});
-        localStorage.setItem('mkUnlocked', JSON.stringify(u));
-      }
-      return !!u.social;
-    }catch(e){ return pct>=75; }
+    try{ return !!JSON.parse(localStorage.getItem('mkUnlocked')||'{}').social; }catch(e){ return false; }
   }
   function render(){
     var el=document.getElementById('districtScore'); if(!el) return;
@@ -402,6 +400,7 @@
     var body=document.getElementById('districtBody');
     if(body && window.MutationObserver){ new MutationObserver(function(){render();}).observe(body,{childList:true,subtree:false}); }
     window.addEventListener('focus', render);
+    window.addEventListener('mk-unlocks-changed', render);   // the test engine just granted/revoked the rewards
     document.querySelectorAll('.lang-toggle button').forEach(function(b){ b.addEventListener('click', function(){ setTimeout(render,80); }); });
   }
   if(document.readyState==='loading') document.addEventListener('DOMContentLoaded', boot); else boot();

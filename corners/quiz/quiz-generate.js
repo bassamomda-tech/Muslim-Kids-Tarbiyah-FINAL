@@ -70,11 +70,24 @@
 
   /* ════════ ACTIVITY BUILDERS ════════ */
 
+  /* pick up to n items whose LEFT and RIGHT sides are all different — two items with the
+     same answer (e.g. two hadiths both «متفق عليه») would make a match impossible to solve. */
+  function pickDistinct(items, getA, getB, n) {
+    const seenA = new Set(), seenB = new Set(), out = [];
+    for (const st of shuffle(items.slice())) {
+      const a = getA(st), b = getB(st); if (!a || !b) continue;
+      const ka = (a.ar || a.en || '').trim(), kb = (b.ar || b.en || '').trim();
+      if (!ka || !kb || seenA.has(ka) || seenB.has(kb)) continue;
+      seenA.add(ka); seenB.add(kb); out.push(st);
+      if (out.length >= n) break;
+    }
+    return out;
+  }
+
   /* MATCH: name ↔ meaning */
   function matchNameMeaning(S) {
-    const items = S.filter(st => A.cardName(st) && A.cardMeaning(st));
-    if (items.length < 3) return null;
-    const chosen = pick(items, Math.min(4, items.length));
+    const chosen = pickDistinct(S.filter(st => A.cardName(st) && A.cardMeaning(st)), A.cardName, A.cardMeaning, 4);
+    if (chosen.length < 3) return null;
     return {
       type: 'match', icon: '📇',
       title: { ar: 'صِل البطاقة بمعناها', en: 'Match the card to its meaning' },
@@ -85,9 +98,8 @@
 
   /* MATCH: title ↔ key */
   function matchTitleKey(S) {
-    const items = S.filter(st => A.title(st) && A.key(st));
-    if (items.length < 3) return null;
-    const chosen = pick(items, Math.min(4, items.length));
+    const chosen = pickDistinct(S.filter(st => A.title(st) && A.key(st)), A.title, A.key, 4);
+    if (chosen.length < 3) return null;
     return {
       type: 'match', icon: '🔑',
       title: { ar: 'صِل المحطة بمفتاحها', en: 'Match the station to its key' },
@@ -98,9 +110,8 @@
 
   /* MATCH: ayah snippet ↔ surah ref */
   function matchAyahRef(S) {
-    const items = S.filter(st => A.ayah(st) && A.ref(st));
-    if (items.length < 3) return matchTitleKey(S);
-    const chosen = pick(items, Math.min(4, items.length));
+    const chosen = pickDistinct(S.filter(st => A.ayah(st) && A.ref(st)), st => ({ ar: ayahSnippet(A.ayah(st)) }), A.ref, 4);
+    if (chosen.length < 3) return matchTitleKey(S);
     return {
       type: 'match', icon: '🌟',
       title: { ar: 'صِل الآية بسورتها', en: 'Match the ayah to its surah' },
@@ -192,7 +203,10 @@
         maze(S, n, mcqCreed, { title: { ar: 'متاهة الإتقان', en: 'Mastery Maze' }, prompt: { ar: 'اعبُر المتاهةَ بتمييزِ العبارةِ الصحيحةِ عند كلِّ باب', en: 'Cross the maze by identifying the correct statement at each door' } }),
       ];
     }
-    let out = acts.filter(Boolean);
+    /* the same game must not appear twice in one level (title-only stations used to give
+       «صِل المحطة بمفتاحها» three times) — keep the first of each, pad with different games below */
+    const seen = new Set();
+    let out = acts.filter(a => { if (!a) return false; const k = a.type + '|' + (a.title && a.title.ar); if (seen.has(k)) return false; seen.add(k); return true; });
     /* Guarantee a complete level (3 activities). Chapter-meta stations only carry
        title + key (name + hook), so truth/ayah/toolJob-based games yield null and
        a level can come up short. Pad with key-based mechanics that ALWAYS work on
@@ -205,7 +219,8 @@
         matchNameMeaning(S),
         mcqTruth(S, n),
       ];
-      for (const f of fillers) { if (out.length >= 3) break; if (f) out.push(f); }
+      for (const f of fillers) { if (out.length >= 3) break; if (!f) continue; const k = f.type + '|' + (f.title && f.title.ar); if (seen.has(k)) continue; seen.add(k); out.push(f); }
+      for (const f of fillers) { if (out.length >= 3) break; if (f) out.push(f); }   // last resort: allow a repeat rather than a short level
     }
     return out;
   }

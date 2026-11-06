@@ -28,19 +28,20 @@ HISN.rewards = {
     { href: 'activities/family-tree.html',         icon: '🌳', d: 2, t: { ar: 'شجرة العائلة النبوية', en: 'Prophetic Family Tree' } },
     { href: 'activities/hijri-timeline.html',      icon: '📜', d: 2, t: { ar: 'شريط الزمن الهجري',    en: 'Hijri Timeline' } },
   ],
+  /* heart & academy are decided by their corner TEST (quiz/quiz-registry.js) — same lists here */
   heart: [
-    { href: 'activities/memory-names.html',  icon: '📇', d: 2, t: { ar: 'ذاكرة الأسماء الحسنى', en: 'Memory of the Beautiful Names' } },
-    { href: 'activities/gratitude.html',     icon: '📔', d: 1, t: { ar: 'مفكرة الامتنان',       en: 'Gratitude Journal' } },
-    { href: 'activities/good-bingo.html',    icon: '🏅', d: 2, t: { ar: 'بنغو الصالحات',        en: 'Good Deeds Bingo' } },
-    { href: 'activities/akhlaq-bag.html',    icon: '🎒', d: 1, t: { ar: 'حقيبة الأخلاق',        en: 'The Akhlaq Bag' } },
-    { href: 'activities/honesty-pledge.html',icon: '✍️', d: 1, t: { ar: 'تعهّد الصدق',          en: 'Honesty Pledge' } },
+    { href: 'activities/memory-names.html', icon: '📇', d: 2, t: { ar: 'ذاكرة الأسماء الحسنى', en: 'Memory of the Names' } },
+    { href: 'activities/gratitude.html', icon: '💛', d: 1, t: { ar: 'شجرة الشكر', en: 'Gratitude Tree' } },
+    { href: 'activities/akhlaq-bag.html', icon: '🎒', d: 1, t: { ar: 'حقيبة الأخلاق', en: 'The Akhlaq Bag' } },
+    { href: 'activities/what-if.html', icon: '🤔', d: 3, t: { ar: 'ماذا لو؟', en: 'What If?' } },
+    { href: 'activities/good-bingo.html', icon: '🏅', d: 2, t: { ar: 'بنغو الصالحات', en: 'Good Deeds Bingo' } },
   ],
   academy: [
-    { href: 'activities/creature-lab.html',   icon: '🔬', d: 2, t: { ar: 'مختبر المخلوقات',  en: 'Creatures Lab' } },
-    { href: 'activities/star-telescope.html', icon: '🔭', d: 3, t: { ar: 'منظار النجوم',     en: 'Star Telescope' } },
-    { href: 'activities/carpet-designer.html',icon: '🎨', d: 2, t: { ar: 'مصمم السجادة',     en: 'Carpet Designer' } },
-    { href: 'activities/islamic-sudoku.html', icon: '🔢', d: 3, t: { ar: 'سودوكو إسلامي',    en: 'Islamic Sudoku' } },
-    { href: 'activities/word-search.html',    icon: '🔤', d: 2, t: { ar: 'شبكة البحث عن الكلمات', en: 'Word Search Grid' } },
+    { href: 'activities/anagram.html', icon: '🔤', d: 1, t: { ar: 'رتّبِ الحروف', en: 'Anagram' } },
+    { href: 'activities/riddles.html', icon: '🧩', d: 2, t: { ar: 'ألغازُ الأذكياء', en: 'Riddles' } },
+    { href: 'activities/number-cipher.html', icon: '🔢', d: 2, t: { ar: 'شيفرةُ الأرقام', en: 'Number Cipher' } },
+    { href: 'activities/smart-detective.html', icon: '🔎', d: 3, t: { ar: 'المُحقّقُ الذكي', en: 'Smart Detective' } },
+    { href: 'activities/carpet-designer.html', icon: '🎨', d: 3, t: { ar: 'مُصمّمُ الزخارف', en: 'Pattern Designer' } },
   ],
 };
 HISN.rewards.hisn = HISN.rewards.history;   // legacy alias

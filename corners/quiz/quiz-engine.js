@@ -178,10 +178,12 @@
   }
   /* chapter corners: build a station list from an era's map-meta nodes
      (name + one-line hook), flattening categorized eras (heroes/heart). */
-  function eraStations(eraId, catId) {
+  function eraStations(eraId, catId, allCats) {
     const H = window[ 'HISN' ]; const era = H && H.eras && H.eras[eraId];
     if (!era) return null;
-    let nodes = era.nodes;
+    /* allCats: the corner-wide exam spans EVERY section (heart's `nodes` is scoped to one
+       section for its certificate, so it must not limit the exam) */
+    let nodes = (allCats && era.categories) ? null : era.nodes;
     if ((!nodes || !nodes.length) && era.categories) {
       const cats = catId ? era.categories.filter(c => c.id === catId) : era.categories;
       nodes = cats.reduce((a, c) => a.concat((c.heroes || []).filter(Boolean)), []);
@@ -202,7 +204,7 @@
         if (all.length >= 4) return all.map((n, i) => Object.assign({}, n, { num: i + 1 }));
       }
       /* single-era corner (heart: one exam flattening all its categories) */
-      const s = eraStations(c.journey); if (s) return s;
+      const s = eraStations(c.journey, null, !!c.reg.allCategories); if (s) return s;
     }
     if (c && c.stationsGlobal) {
       const g = window[c.stationsGlobal]; const j = g && g[c.journey];

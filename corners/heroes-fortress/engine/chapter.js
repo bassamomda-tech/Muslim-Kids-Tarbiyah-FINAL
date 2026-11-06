@@ -706,8 +706,13 @@
     const a=C.activities[actIdx];
     ({quiz:bindQuiz,order:bindOrder,match:bindMatch,trueFalse:bindTF,whoAmI:bindWho}[a.type])(a,actIdx);
   }
+  /* solved games are remembered per station, so a child who finished them earlier isn't asked to replay */
+  const SOLVED_KEY = ()=> 'hisn-chsolved-'+C.id;
+  function loadSolved(){ try{ const o=JSON.parse(localStorage.getItem(SOLVED_KEY()))||{}; Object.keys(o).forEach(k=>{ if(o[k]) solved[k]=true; }); }catch(e){} }
+  function saveSolved(){ try{ localStorage.setItem(SOLVED_KEY(), JSON.stringify(solved)); }catch(e){} }
+  function gamesDone(){ const a=C.activities||[]; return a.filter((_,i)=>solved[i]).length; }
   function markSolved(idx){
-    if(solved[idx]) return; solved[idx]=true;
+    if(solved[idx]) return; solved[idx]=true; saveSolved();
     const chip=document.querySelector(`.act-chip[data-i="${idx}"]`); chip&&chip.classList.add('solved');
     const a=C.activities, count=a.filter((_,i)=>solved[i]).length;
     const msg=$('#actMsg'); if(msg) msg.textContent = count>=a.length ? (lang==='ar'?'🎉 أكملتَ كلَّ الألعاب! اذهبْ للكنوز':'🎉 All games done! Head to Treasures') : (lang==='ar'?'أحسنت! ✓':'Well done! ✓');
@@ -846,6 +851,14 @@
       else btn.onclick=back;
       return;
     }
+    const total=(C.activities||[]).length, done=gamesDone();
+    if(total && done<total){
+      // the medal is the prize for the station's games («ميدان الأبطال» / «الأنشطة») — finish them first
+      btn.classList.add('locked');
+      btn.textContent = lang==='ar' ? `🔒 أكمِلْ الألعابَ أوّلًا (${done}/${total}) — ثم اجمعِ الوسام` : `🔒 Finish the games first (${done}/${total}) — then collect the medal`;
+      btn.onclick=()=>go('activities');
+      return;
+    }
     btn.onclick=()=>{
       Progress.grant(C.id,{ stars:3, medal:{icon:C.icon, title:C.treasures.medal} });
       confetti(); xpBurst(); header();
@@ -897,6 +910,7 @@
   function init(){
     C = (HISN.chapters||{})[chId];
     if(!C){ document.body.innerHTML='<p style="padding:2rem;text-align:center">Chapter not found.</p>'; return; }
+    loadSolved();
     // Seerah event stations have no Knowledge tab — open straight on The Journey.
     if(isSeerahStation() && room==='knowledge') room='story';
     document.documentElement.style.setProperty('--ec', C.accent2);

@@ -164,7 +164,7 @@ window.QUIZ_REG = {
 
   /* ───────────── 💚 ركن القلب السليم (heart.html) ───────────── */
   heart: {
-    eraPage: 'heart', eraGlobal: 'HISN', defaultEra: 'heart',
+    eraPage: 'heart', eraGlobal: 'HISN', defaultEra: 'heart', allCategories: true,   // the exam spans all 5 sections (70 stations), not only «حبّ الرسول»
     title: { ar: 'ركن القلب السليم', en: 'The Pure Heart' }, icon: '💚',
     journeys: [
       { id: 'heart', icon: '💚', title: { ar: 'اختبار القلب السليم', en: 'Pure Heart Test' } },

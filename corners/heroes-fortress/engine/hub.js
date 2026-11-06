@@ -53,8 +53,12 @@
   function hall(){
     // Fortress hall shows history medals only — Pure Heart has its own hall.
     const isHeart = (window.HISN && HISN.isHeartMedal) ? HISN.isHeartMedal : (m=>m.era==='heart');
-    const earned = Progress.medals().filter(m=>!isHeart(m)).map(m=>({...m, won:true}));
-    const heroSlots = (HISN.eras.heroes ? HISN.eras.heroes.nodes : []).map(n=>({icon:'shield', title:n.name, won:Progress.isDone(n.id)}));
+    const heroNodes = HISN.eras.heroes ? HISN.eras.heroes.nodes : [];
+    const heroIds = new Set(heroNodes.map(n=>n.id));
+    // a hero's medal is already shown in its own slot below — don't list it twice
+    const earned = Progress.medals().filter(m=>!isHeart(m) && !heroIds.has(m.id)).map(m=>({...m, won:true}));
+    const heroSlots = heroNodes.map(n=>{ const m=Progress.medals().find(x=>x.id===n.id);
+      return {icon:(m&&m.icon)||'shield', title:(m&&m.title)||n.name, won:Progress.isDone(n.id)}; });
     const all = [...earned, ...heroSlots];
     $('#hallGrid').innerHTML = all.map(m=>`<div class="medal ${m.won?'won':'locked'}">
       <div class="ribbon">${m.won ? (window.ICONS[m.icon]||window.ICONS.shield) : window.lockSVG}</div>

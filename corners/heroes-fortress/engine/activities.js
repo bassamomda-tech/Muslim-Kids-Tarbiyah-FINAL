@@ -56,6 +56,8 @@
   function unlockedNow(){ try{ return !!(JSON.parse(localStorage.getItem('mkUnlocked')||'{}')[CORNER]); }catch(e){ return false; } }
   function refreshUnlock(){
     if(!CORNER || !(window.HISN && HISN.rewards && HISN.rewards[CORNER])) return false;
+    // academy & heart unlock through their corner TEST (quiz-engine) — the hall must not grant (or fight) that
+    if(CORNER!=='history' && CORNER!=='hisn') return false;
     const st=cornerStats(); if(st.total===0) return false;
     let u={}; try{ u=JSON.parse(localStorage.getItem('mkUnlocked')||'{}'); }catch(e){}
     if(st.pct>=75 && !u[CORNER]){ u[CORNER]=HISN.rewards[CORNER]; try{ localStorage.setItem('mkUnlocked',JSON.stringify(u)); }catch(e){} return true; }
@@ -71,7 +73,9 @@
         ? `<a class="acts-reward" href="${ANOUS_BASE}${r.href}"><span class="arw-ic">${r.icon}</span><span class="arw-t">${label}</span></a>`
         : `<div class="acts-reward lock"><span class="arw-ic">🔒</span><span class="arw-t">${label}</span></div>`;
     }).join('');
+    const viaTest = CORNER!=='history' && CORNER!=='hisn';
     const status = open ? (lang==='ar'?'مفتوحة ✓':'Unlocked ✓')
+                        : viaTest ? (lang==='ar'?'تُفتح باجتياز اختبارات الركن (٧٥٪)':'Unlock by passing the corner tests (75%)')
                         : (lang==='ar'?`تُفتح عند ٧٥٪ — ركنُك الآن ${Math.round(st.pct)}%`:`Unlock at 75% — corner ${Math.round(st.pct)}%`);
     return `<div class="acts-rewards ${open?'open':''}">
       <div class="arw-head"><span>🎁 ${lang==='ar'?'جوائزُ أنوس · ٥ أنشطة':'Anous rewards · 5 activities'}</span><span class="arw-status">${status}</span></div>

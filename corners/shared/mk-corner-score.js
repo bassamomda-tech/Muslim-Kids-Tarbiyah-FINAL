@@ -25,16 +25,20 @@
     return new Array(rest.length + 1).join('../') + 'corners/activities/activities/';
   }
   /* curated 5 Anous activities per corner (themed) */
+  /* SAME lists as the real unlock sources — quiz/quiz-registry.js (corners with a test) and
+     heroes-fortress/data/rewards.js (history: the Challenge Halls) — so the card never shows
+     different activities from the ones that actually open in Anous. */
   var REWARDS = {
-    aqeeda:  [['star-telescope.html','🔭','منظار النجوم','Star Telescope'],['creature-lab.html','🔬','مختبر المخلوقات','Creature Lab'],['rain-cycle.html','🌧️','دورة المطر','Rain Cycle'],['riddles.html','🧩','ألغاز الأذكياء','Riddles'],['smart-detective.html','🔎','المحقّق الذكي','Smart Detective']],
-    ibada:   [['wudu-order.html','🚿','ترتيب الوضوء','Wudu Order'],['prayer-tree.html','🌳','شجرة الصلاة','Prayer Tree'],['wheel-of-dhikr.html','📿','عجلة الذِّكر','Wheel of Dhikr'],['pillars-hero.html','🕋','بطل الأركان','Pillars Hero'],['traveler-bag.html','🎒','حقيبة المسافر','Traveler Bag']],
-    quran:   [['ayah-color.html','🎨','تلوين الآيات','Ayah Color'],['catch-madd.html','📏','اصطد المدّ','Catch the Madd'],['tashkeel-game.html','✏️','لعبة التشكيل','Tashkeel Game'],['word-trace.html','✒️','تتبّع الكلمة','Word Trace'],['smart-reciter.html','🎙️','القارئ الذكي','Smart Reciter']],
-    sport:   [['landsea.html','🏊','برّ وبحر','Land & Sea'],['thirty-second.html','⏱️','تحدّي ٣٠ ثانية','30-Second'],['spot-differences.html','🔍','اكتشف الفروق','Spot Differences'],['islamic-sudoku.html','🔢','سودوكو','Sudoku'],['water-save.html','💧','وفّر الماء','Save Water']],
-    academy: [['anagram.html','🔤','رتّب الحروف','Anagram'],['number-cipher.html','🔢','شيفرة الأرقام','Number Cipher'],['carpet-designer.html','🎨','مصمّم الزخارف','Pattern Designer'],['picture-crossword.html','🧩','كلمات متقاطعة','Crossword'],['word-search.html','🔎','بحث الكلمات','Word Search']],
-    quds:    [['landmarks-puzzle.html','🕌','أحجية المعالم','Landmarks Puzzle'],['prophet-map.html','🗺️','خريطة الأنبياء','Prophets Map'],['hijri-timeline.html','📜','الخطّ الزمني','Hijri Timeline'],['who-am-i.html','❓','مَن أنا؟','Who Am I?'],['landsea.html','🌍','برّ وبحر','Land & Sea']],
-    heart:   [['akhlaq-bag.html','🎒','حقيبة الأخلاق','Akhlaq Bag'],['good-bingo.html','🏅','بنغو الصالحات','Good Bingo'],['honesty-pledge.html','✍️','تعهّد الصدق','Honesty Pledge'],['what-if.html','🤔','ماذا لو؟','What If?'],['gratitude.html','💛','شجرة الشكر','Gratitude']],
-    history: [['prophet-quiz.html','📜','اختبار الأنبياء','Prophet Quiz'],['who-am-i.html','❓','مَن أنا؟','Who Am I?'],['hijri-timeline.html','🕰️','الخطّ الزمني','Hijri Timeline'],['landmarks-puzzle.html','🏰','أحجية المعالم','Landmarks Puzzle'],['picture-crossword.html','🧩','كلمات متقاطعة','Crossword']],
-    parents: [['paradise-post.html','💌','بريد الجنة','Paradise Post'],['build-mosque.html','🕌','ابنِ المسجد','Build the Mosque'],['family-tree.html','🌳','شجرة العائلة','Family Tree'],['nasheed-karaoke.html','🎤','كاريوكي الأناشيد','Nasheed Karaoke'],['puppet-theater.html','🎭','مسرح العرائس','Puppet Theater']],
+    academy: [["anagram.html", "🔤", "رتّبِ الحروف", "Anagram"], ["riddles.html", "🧩", "ألغازُ الأذكياء", "Riddles"], ["number-cipher.html", "🔢", "شيفرةُ الأرقام", "Number Cipher"], ["smart-detective.html", "🔎", "المُحقّقُ الذكي", "Smart Detective"], ["carpet-designer.html", "🎨", "مُصمّمُ الزخارف", "Pattern Designer"]],
+    aqeeda: [["memory-names.html", "📇", "ذاكرة الأسماء الحسنى", "Memory of the Beautiful Names"], ["creature-lab.html", "🔬", "مختبر المخلوقات", "Creatures Lab"], ["star-telescope.html", "🔭", "منظار النجوم", "Star Telescope"], ["prophet-quiz.html", "❓", "من هو النبي؟", "Who Is the Prophet?"], ["prophet-map.html", "🗺️", "خريطة الأنبياء", "Prophets' Map"]],
+    ibada: [["wudu-order.html", "💧", "ترتيب الوضوء", "Wudu Order"], ["prayer-tree.html", "🌳", "شجرة تتبع الصلاة", "Prayer Tracking Tree"], ["wheel-of-dhikr.html", "🎡", "عجلة الأذكار", "Wheel of Dhikr"], ["pillars-hero.html", "🦸", "بطل الأركان الخمسة", "Five Pillars Hero"], ["traveler-bag.html", "🧳", "حقيبة المسافر", "Traveler's Bag"]],
+    sport: [["honesty-pledge.html", "✍️", "تعهّد الصدق", "Honesty Pledge"], ["akhlaq-bag.html", "🎒", "حقيبة الأخلاق", "The Akhlaq Bag"], ["good-bingo.html", "🏅", "بنغو الصالحات", "Good Deeds Bingo"], ["what-if.html", "🤔", "ماذا لو؟", "What If?"], ["honesty-maze.html", "🌀", "متاهة الصدق", "Honesty Maze"]],
+    quds: [["landmarks-puzzle.html", "🧩", "أحجية المعالم", "Landmarks Puzzle"], ["hijri-timeline.html", "📜", "شريط الزمن الهجري", "Hijri Timeline"], ["family-tree.html", "🌳", "شجرة العائلة النبوية", "Prophetic Family Tree"], ["prophet-map.html", "🗺️", "خريطة الأنبياء", "Prophets' Map"], ["what-if.html", "🤔", "ماذا لو؟", "What If?"]],
+    social: [["akhlaq-bag.html", "🎒", "حقيبة الأخلاق", "Akhlaq Bag"], ["good-bingo.html", "🏅", "بنغو الصالحات", "Good Deeds Bingo"], ["honesty-pledge.html", "✍️", "تعهّد الصدق", "Honesty Pledge"], ["what-if.html", "🤔", "ماذا لو؟", "What If?"], ["gratitude.html", "💛", "شجرة الشكر", "Gratitude Tree"]],
+    quran: [["ayah-color.html", "🎨", "تلوين الآيات", "Color the Ayahs"], ["word-trace.html", "✍️", "تتبّع الكلمات", "Word Tracing"], ["tashkeel-game.html", "◌ً", "لعبة الحركات", "Tashkeel Game"], ["catch-madd.html", "🅰️", "صيد حروف المدّ", "Catch the Madd Letters"], ["smart-reciter.html", "🎙️", "المقرأة الذكية", "Smart Reciter"]],
+    heart: [["memory-names.html", "📇", "ذاكرة الأسماء الحسنى", "Memory of the Names"], ["gratitude.html", "💛", "شجرة الشكر", "Gratitude Tree"], ["akhlaq-bag.html", "🎒", "حقيبة الأخلاق", "The Akhlaq Bag"], ["what-if.html", "🤔", "ماذا لو؟", "What If?"], ["good-bingo.html", "🏅", "بنغو الصالحات", "Good Deeds Bingo"]],
+    history: [["prophet-quiz.html", "❓", "من هو النبي؟", "Who Is the Prophet?"], ["prophet-map.html", "🗺️", "خريطة الأنبياء", "Prophets' Map"], ["prophet-professions.html", "🛠️", "أصحاب المهن النبوية", "Prophets' Professions"], ["family-tree.html", "🌳", "شجرة العائلة النبوية", "Prophetic Family Tree"], ["hijri-timeline.html", "📜", "شريط الزمن الهجري", "Hijri Timeline"]],
+    parents: [['paradise-post.html','💌','بريد الجنة','Paradise Post'],['build-mosque.html','🕌','ابنِ المسجد','Build the Mosque'],['family-tree.html','🌳','شجرة العائلة','Family Tree'],['nasheed-karaoke.html','🎤','كاريوكي الأناشيد','Nasheed Karaoke'],['puppet-theater.html','🎭','مسرح العرائس','Puppet Theater']]
   };
 
   function injectStyle() {
@@ -215,10 +219,14 @@
         // self-heal: an unlock is valid only if the corner actually has a recorded
         // test score (mkQuiz). Stale unlocks with no score get dropped → stays locked.
         var q = {}; try { q = JSON.parse(localStorage.getItem('mkQuiz') || '{}'); } catch (e2) {}
-        if (q[CID]) { unlocked = true; }
+        // history (حصن الأبطال) is unlocked by its Challenge Halls (engine/activities.js), not by a test
+        if (q[CID] || CID === 'history') { unlocked = true; }
         else { delete u[CID]; try { localStorage.setItem('mkUnlocked', JSON.stringify(u)); } catch (e3) {} }
       }
     } catch (e) {}
+    // once unlocked, show EXACTLY what was unlocked (mkUnlocked[CID] holds the reward objects)
+    try { var uu = JSON.parse(localStorage.getItem('mkUnlocked') || '{}')[CID];
+      if (unlocked && Array.isArray(uu) && uu.length && uu[0].href) set = uu.map(function (r) { return [String(r.href).replace(/^activities\//, ''), r.icon, (r.t && r.t.ar) || '', (r.t && r.t.en) || '']; }); } catch (e4) {}
     var cells = set.map(function (r) {
       var label = '<span class="mkcs-rw-t">' + (A ? r[2] : r[3]) + '</span>';
       if (unlocked) return '<a class="mkcs-rw" href="' + bse + r[0] + '?lang=' + L + '"><span class="mkcs-rw-ic">' + r[1] + '</span>' + label + '</a>';
