@@ -1,4 +1,4 @@
-/* data/stories/fatima.js — Heroes · Fatima az-Zahra — sources: صور من حياة الصحابة (الباشا) · إسلام ويب · الدرر السنية · صحيح البخاري ومسلم */
+/* data/stories/fatima.js — Heroes · Fatima az-Zahra — sources: صور من حياة الصحابة (الباشا) · إسلام ويب · الدرر السنية · صحيح البخاري ومسلم · سنن أبي داود */
 window.HISN_STORIES = window.HISN_STORIES || {};
 HISN_STORIES.fatima = [
   { icon:'❤️', scene:'kaaba', character:'👧',
@@ -52,5 +52,57 @@ HISN_STORIES.fatima = [
     badge:{icon:'🌿',title:{ar:'وِسامُ القناعةِ والرضا',en:'Badge of Contentment & Acceptance'}},
     reflect:[ {ar:'هل تقنعُ بما عندَك وتشكرُ اللهَ بدلَ أن تطلبَ المزيد؟',en:'Are you content with what you have and thank Allah instead of asking for more?'}, {ar:'هل تُحافِظُ على أذكارِ النومِ التي علّمها النبيُّ ﷺ فاطمة؟',en:'Do you keep the bedtime remembrances the Prophet ﷺ taught Fatima?'} ],
     didYouKnow:[ {ar:'حديثُ تعليمِ النبيِّ ﷺ فاطمةَ وعليّاً أذكارَ النومِ ثابتٌ في صحيحِ البخاري ومسلم — المصدر: صحيح البخاري ومسلم',en:'The hadith of the Prophet ﷺ teaching Fatima and Ali the bedtime remembrances is established in Sahih al-Bukhari and Muslim — Source: Sahih al-Bukhari & Muslim'}, {ar:'كان النبيُّ ﷺ إذا قدِمَ من سفرٍ بدأَ بزيارةِ فاطمةَ قبلَ بيتِه — المصدر: سنن أبي داود',en:'When the Prophet ﷺ returned from a journey, he would begin by visiting Fatima before his own home — Source: Sunan Abi Dawud'} ],
+  },
+  { icon:'💗', scene:'madinah', character:'🤝',
+    title:{ ar:'«فاطمةُ بَضعةٌ منّي»', en:'"Fatima Is a Part of Me"' },
+    pages:[
+      { scene:'madinah', character:'🤝',
+        text:{ ar:'كانت <b>فاطمةُ</b> أشبهَ الناسِ بأبيها ﷺ في مِشيتِها وكلامِها وهدوئِها. تقول أمُّ المؤمنينَ عائشة: ما رأيتُ أحداً أشبهَ سَمْتاً وهَدْياً برسولِ اللهِ ﷺ من فاطمة. وكانت <b>إذا دخلتْ على أبيها قامَ إليها</b>، فأخذَ بيدِها <b>فقبّلها وأجلسها في مكانِه</b>! وكان إذا دخلَ عليها قامتْ إليه، فأخذتْ بيدِه فقبّلتْه وأجلستْه في مكانِها. يا له من حبٍّ واحترامٍ بين أبٍ وابنتِه!<br><br>وقال النبيُّ ﷺ عنها كلمةً تملأُ القلبَ حناناً: <b>«فاطمةُ بَضعةٌ منّي، فمن أغضبها أغضبني»</b>. و«البَضعة» هي <b>القطعةُ من الجسد</b>؛ كأنّه يقول: فاطمةُ جزءٌ منّي، ما يؤلمُها يؤلمُني، وما يُفرِحُها يُفرِحُني! فحبُّ فاطمةَ وإكرامُها من حبِّ النبيِّ ﷺ. وتعلّمنا من هذا البيتِ أنّ <b>البنتَ نعمةٌ عظيمة</b> تُكرَمُ ويُفرَحُ بها، وأنّ الأبناءَ يردّونَ حبَّ والديهم بالاحترامِ والبِرّ.',
+          en:'<b>Fatima</b> resembled her father ﷺ more than anyone, in her walk, speech, and calm. The Mother of the Believers A’isha said: I never saw anyone more like the Messenger of Allah ﷺ in manner and bearing than Fatima. <b>When she came in to her father, he stood up for her</b>, took her hand, <b>kissed her, and sat her in his own place</b>! And when he came in to her, she stood for him, took his hand, kissed him, and sat him in her place. What love and respect between a father and his daughter!<br><br>The Prophet ﷺ said of her words that fill the heart with tenderness: <b>"Fatima is a part of me; whoever angers her angers me."</b> "Bad’a" means <b>a piece of the body</b> — as if he said: Fatima is part of me; what hurts her hurts me, and what gladdens her gladdens me! So loving and honoring Fatima is part of loving the Prophet ﷺ. From this home we learn that <b>a daughter is a great blessing</b> to be honored and celebrated, and that children return their parents’ love with respect and kindness.' },
+        choice:{ q:{ar:'ماذا كان النبيُّ ﷺ يفعلُ إذا دخلتْ عليه فاطمة؟',en:'What did the Prophet ﷺ do when Fatima came in to him?'},
+          opts:[
+            { t:{ar:'يبقى جالساً ولا يلتفت',en:'He stayed seated and did not turn'},c:false,exp:{ar:'لا، بل كان يقومُ إليها فرحاً بها.',en:'No — he stood up for her, happy to see her.'} },
+            { t:{ar:'يقومُ إليها ويقبّلُها ويُجلِسُها في مكانِه',en:'He stood, kissed her, and sat her in his place'},c:true,exp:{ar:'أحسنت! هكذا كان يُكرِمُ ابنتَه الحبيبة.',en:'Well done! This is how he honored his beloved daughter.'} },
+            { t:{ar:'يطلبُ منها أن تخرج',en:'He asked her to leave'},c:false,exp:{ar:'لا، بل كان يُرحِّبُ بها أجملَ ترحيب.',en:'No — he welcomed her most warmly.'} },
+          ] } },
+    ],
+    quiz:[
+      { q:{ar:'ما معنى «بَضعةٌ منّي»؟',en:'What does "a part (bad’a) of me" mean?'},
+        opts:[ {t:{ar:'قطعةٌ من جسدي',en:'A piece of my body'},c:true}, {t:{ar:'بعيدةٌ عنّي',en:'Far from me'},c:false}, {t:{ar:'غريبةٌ عنّي',en:'A stranger to me'},c:false} ] },
+      { q:{ar:'من كانت أشبهَ الناسِ بالنبيِّ ﷺ في هديِه؟',en:'Who most resembled the Prophet ﷺ in his manner?'},
+        opts:[ {t:{ar:'فاطمة',en:'Fatima'},c:true}, {t:{ar:'أبو لهب',en:'Abu Lahab'},c:false}, {t:{ar:'لا أحد',en:'No one'},c:false} ] },
+      { q:{ar:'ماذا نتعلّمُ من هذه القصّة؟',en:'What do we learn from this story?'},
+        opts:[ {t:{ar:'البناتُ أقلُّ قيمةً',en:'Daughters are worth less'},c:false}, {t:{ar:'لا داعيَ لاحترامِ الوالدين',en:'No need to respect parents'},c:false}, {t:{ar:'إكرامُ البناتِ والاحترامُ المتبادلُ في الأسرة',en:'Honoring daughters and mutual respect in the family'},c:true} ] },
+    ],
+    moral:{ar:'البنتُ نعمةٌ تُكرَم، والحبُّ في الأسرةِ يظهرُ بالاحترامِ والترحيبِ والكلمةِ الحانية.',en:'A daughter is a blessing to honor, and love in the family shows in respect, welcome, and tender words.'},
+    badge:{icon:'💗',title:{ar:'وِسامُ البَضعةِ الحبيبة',en:'Badge of the Beloved Part'}},
+    reflect:[ {ar:'كيف تستقبلُ والديك حين يدخلانِ البيت؟',en:'How do you greet your parents when they come home?'}, {ar:'ما الذي يُفرِحُ أباك وأمَّك منك؟',en:'What do you do that makes your father and mother happy?'} ],
+    didYouKnow:[ {ar:'قولُه ﷺ «فاطمةُ بَضعةٌ منّي، فمن أغضبها أغضبني» رواه البخاري (٣٧١٤) — المصدر: صحيح البخاري',en:'His words "Fatima is a part of me; whoever angers her angers me" are narrated by al-Bukhari (3714) — Source: Sahih al-Bukhari'}, {ar:'قيامُه ﷺ لفاطمةَ وتقبيلُها وإجلاسُها في مكانِه رواه أبو داود (٥٢١٧) والترمذي وصحّحه الألباني — المصدر: سنن أبي داود',en:'His standing for Fatima, kissing her, and seating her in his place is narrated by Abu Dawud (5217) and at-Tirmidhi, graded sahih by al-Albani — Source: Sunan Abi Dawud'} ],
+  },
+  { icon:'🤫', scene:'night', character:'😢',
+    title:{ ar:'سرٌّ أبكاها ثمّ أضحكها', en:'A Secret That Made Her Cry, Then Smile' },
+    pages:[
+      { scene:'night', character:'😢',
+        text:{ ar:'في مرضِ النبيِّ ﷺ الأخير، جاءتْ <b>فاطمةُ</b> تمشي — ومِشيتُها كمِشيةِ أبيها تماماً — فقال: <b>«مرحباً بابنتي»</b>، وأجلسها بجانبِه، ثمّ <b>أسرَّ إليها حديثاً</b> في أذنِها، <b>فبكتْ</b>! ثمّ أسرَّ إليها حديثاً آخر، <b>فضحكتْ</b>! فتعجّبتْ عائشةُ وقالت: ما رأيتُ كاليومِ فرحاً أقربَ من حزن! فسألتْها: ماذا قال لكِ؟ فقالت فاطمةُ بأمانة: <b>«ما كنتُ لأُفشيَ سرَّ رسولِ اللهِ ﷺ»</b>.<br><br>وحفظتْ فاطمةُ السرَّ حتى تُوفِّيَ النبيُّ ﷺ، ثمّ أخبرتْ به: قال لها أوّلاً إنّ جبريلَ كان يُراجعُه القرآنَ كلَّ عامٍ مرّة، وإنّه راجعه هذا العامَ مرّتين، <b>ولا أراه إلّا قد حضرَ أجلي</b> — فبكتْ. ثمّ قال لها: <b>«أما ترضَينَ أن تكوني سيّدةَ نساءِ أهلِ الجنّة»</b>، وأخبرها أنّها <b>أوّلُ أهلِ بيتِه لحوقاً به</b> — فضحكتْ! فرحتْ أنّها ستلقى أباها قريباً في الجنّة. وفعلاً، لم تعِشْ بعده إلّا نحوَ ستّةِ أشهر. تعلّمنا فاطمةُ <b>حفظَ السرّ</b>، والصبرَ، وأنّ لقاءَ الأحبّةِ في الجنّةِ يُهوِّنُ كلَّ فراق.',
+          en:'In the Prophet’s ﷺ final illness, <b>Fatima</b> came walking — her walk exactly like her father’s — and he said: <b>"Welcome, my daughter,"</b> and sat her beside him. Then he <b>whispered something to her</b>, and <b>she wept</b>! Then he whispered something else, and <b>she laughed</b>! A’isha was amazed and said: I have never seen joy so close to sorrow as today! She asked her: What did he tell you? Fatima answered faithfully: <b>"I would never reveal the secret of the Messenger of Allah ﷺ."</b><br><br>Fatima kept the secret until the Prophet ﷺ passed away, then she told it: first he told her that Jibril used to review the Qur’an with him once every year, and this year he reviewed it twice, <b>"and I only see that my time has come"</b> — so she wept. Then he said: <b>"Are you not pleased to be the leader of the women of Paradise?"</b> and told her she would be <b>the first of his family to join him</b> — so she laughed! She was glad she would meet her father soon in Paradise. Indeed, she lived only about six months after him. Fatima teaches us <b>to keep a secret</b>, to be patient, and that meeting loved ones in Paradise eases every parting.' },
+        choice:{ q:{ar:'ماذا قالت فاطمةُ حين سألتْها عائشةُ عن السرّ؟',en:'What did Fatima say when A’isha asked about the secret?'},
+          opts:[
+            { t:{ar:'أخبرتْها بكلِّ شيءٍ فوراً',en:'She told her everything at once'},c:false,exp:{ar:'لا، بل حفظتِ السرَّ حتى وفاةِ النبيِّ ﷺ.',en:'No — she kept the secret until the Prophet ﷺ passed away.'} },
+            { t:{ar:'«ما كنتُ لأُفشيَ سرَّ رسولِ اللهِ ﷺ»',en:'"I would never reveal the secret of the Messenger of Allah ﷺ"'},c:true,exp:{ar:'أحسنت! كانت أمينةً تحفظُ السرّ.',en:'Well done! She was trustworthy and kept the secret.'} },
+            { t:{ar:'نشرتْه بين الناس',en:'She spread it among people'},c:false,exp:{ar:'لا، فحفظُ السرِّ أمانة.',en:'No — keeping a secret is a trust.'} },
+          ] } },
+    ],
+    quiz:[
+      { q:{ar:'لماذا بكتْ فاطمةُ في المرّةِ الأولى؟',en:'Why did Fatima cry the first time?'},
+        opts:[ {t:{ar:'لأنّ أحداً أخذَ لعبتَها',en:'Because someone took her toy'},c:false}, {t:{ar:'لأنّه أخبرها أنّ أجلَه قد قرُب',en:'Because he told her his death was near'},c:true}, {t:{ar:'لأنّها كانت جائعة',en:'Because she was hungry'},c:false} ] },
+      { q:{ar:'بماذا بشّرها النبيُّ ﷺ فضحكت؟',en:'What glad news made her laugh?'},
+        opts:[ {t:{ar:'أنّها سيّدةُ نساءِ أهلِ الجنّةِ وأوّلُ أهلِه لحوقاً به',en:'That she is the leader of the women of Paradise and first of his family to join him'},c:true}, {t:{ar:'بمالٍ كثير',en:'Great wealth'},c:false}, {t:{ar:'بسفرٍ جميل',en:'A nice trip'},c:false} ] },
+      { q:{ar:'ما الخُلُقُ الذي ظهرَ في فاطمة؟',en:'Which good manner did Fatima show?'},
+        opts:[ {t:{ar:'كشفُ الأسرار',en:'Revealing secrets'},c:false}, {t:{ar:'الغضب',en:'Anger'},c:false}, {t:{ar:'حفظُ السرِّ والأمانة',en:'Keeping secrets and trustworthiness'},c:true} ] },
+    ],
+    moral:{ar:'حفظُ السرِّ أمانة، والمؤمنُ يصبرُ على الفراقِ لأنّه يرجو لقاءَ أحبّتِه في الجنّة.',en:'Keeping a secret is a trust, and the believer is patient with parting because he hopes to meet his loved ones in Paradise.'},
+    badge:{icon:'🤫',title:{ar:'وِسامُ حافظةِ السرّ',en:'Badge of the Secret Keeper'}},
+    reflect:[ {ar:'إذا أخبرك صديقٌ بسرٍّ، هل تحفظُه؟',en:'If a friend tells you a secret, do you keep it?'}, {ar:'كيف يُهوِّنُ الإيمانُ بالجنّةِ علينا الحزن؟',en:'How does believing in Paradise ease our sadness?'} ],
+    didYouKnow:[ {ar:'حديثُ السرِّ الذي أبكى فاطمةَ ثمّ أضحكها رواه البخاري (٣٦٢٣، ٣٦٢٤) ومسلم (٢٤٥٠) — المصدر: صحيح البخاري ومسلم',en:'The hadith of the secret that made Fatima cry then laugh is narrated by al-Bukhari (3623, 3624) and Muslim (2450) — Source: Sahih al-Bukhari & Muslim'}, {ar:'تُوفِّيتْ فاطمةُ بعدَ النبيِّ ﷺ بنحوِ ستّةِ أشهر، فكانت أوّلَ أهلِه لحوقاً به كما أخبر — المصدر: صحيح البخاري',en:'Fatima passed away about six months after the Prophet ﷺ, the first of his family to join him as he foretold — Source: Sahih al-Bukhari'} ],
   },
 ];

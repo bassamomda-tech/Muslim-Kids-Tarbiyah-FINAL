@@ -1,4 +1,4 @@
-/* data/stories/uthman.js — Heroes · Uthman ibn Affan — sources: صور من حياة الصحابة (الباشا) · إسلام ويب · الدرر السنية */
+/* data/stories/uthman.js — Heroes · Uthman ibn Affan — sources: صور من حياة الصحابة (الباشا) · إسلام ويب · الدرر السنية · صحيح البخاري · صحيح مسلم · البداية والنهاية · سير أعلام النبلاء */
 window.HISN_STORIES = window.HISN_STORIES || {};
 HISN_STORIES.uthman = [
  {
@@ -718,6 +718,546 @@ HISN_STORIES.uthman = [
    {
     "ar": "استُشهِدَ عثمانُ والمصحفُ بين يديه يقرأُ فيه — المصدر: البداية والنهاية",
     "en": "Uthman was martyred with the Mushaf before him, reciting from it — Source: Al-Bidaya wa an-Nihaya"
+   }
+  ]
+ },
+ {
+  "icon": "🌸",
+  "scene": "madinah",
+  "character": "🕊️",
+  "title": {
+   "ar": "رجلٌ تستحيي منه الملائكة",
+   "en": "A Man the Angels Feel Shy Before"
+  },
+  "pages": [
+   {
+    "scene": "madinah",
+    "character": "🕊️",
+    "text": {
+     "ar": "كان النبيُّ ﷺ مضطجعاً في بيتِ <b>عائشةَ</b> رضي الله عنها، وقد انكشفَ شيءٌ من ساقيه وهو مرتاح. فاستأذنَ <b>أبو بكر</b> فأذِنَ له وهو على حالِه فتحدّثا، ثم استأذنَ <b>عمرُ</b> فأذِنَ له وهو كذلك فتحدّثوا. ثم استأذنَ <b>عثمان</b>، <b>فجلسَ النبيُّ ﷺ وسوّى ثيابَه</b>، ثم أذِنَ له فدخلَ فتحدّثوا.<br><br>فلمّا خرجوا سألتْه عائشةُ متعجّبة: دخلَ أبو بكرٍ فلم تتهيّأْ له، ثم دخلَ عمرُ فلم تتهيّأْ له، ثم دخلَ عثمانُ فجلستَ وسوّيتَ ثيابَك! فقال ﷺ: <b>«ألا أستحيي من رجلٍ تستحيي منه الملائكة؟»</b><br><br>كان عثمانُ <b>شديدَ الحياء</b> في كلامِه ولباسِه ومشيِه، حتى صار الحياءُ زينتَه. فأكرمَه اللهُ بأنْ <b>استحيتْ منه الملائكةُ الكرام</b>، وأكرمَه النبيُّ ﷺ بهذا الأدبِ الجميل. فالحياءُ خُلُقٌ يُحبُّه الله، ولا يأتي إلا بخير.",
+     "en": "The Prophet ﷺ was lying down in the house of <b>Aisha</b>, may Allah be pleased with her, relaxed, with part of his shins uncovered. <b>Abu Bakr</b> asked permission, and he let him in as he was and they talked. Then <b>Umar</b> asked permission and he let him in as he was and they talked. Then <b>Uthman</b> asked permission — and <b>the Prophet ﷺ sat up and arranged his clothes</b>, then let him in and they talked.<br><br>When they left, Aisha asked in surprise: Abu Bakr came in and you did not get ready for him, then Umar came in and you did not get ready for him, then Uthman came in and you sat up and arranged your clothes! He ﷺ said: <b>\"Should I not feel shy before a man whom the angels feel shy before?\"</b><br><br>Uthman was <b>deeply modest</b> in his speech, dress and walk, until modesty became his adornment. So Allah honoured him by making <b>the noble angels feel shy before him</b>, and the Prophet ﷺ honoured him with this beautiful courtesy. Modesty is a character Allah loves, and it brings nothing but good."
+    },
+    "choice": {
+     "q": {
+      "ar": "لماذا سوّى النبيُّ ﷺ ثيابَه حين دخلَ عثمان؟",
+      "en": "Why did the Prophet ﷺ arrange his clothes when Uthman came in?"
+     },
+     "opts": [
+      {
+       "t": {
+        "ar": "لأنّ عثمانَ كان شديدَ الحياءِ تستحيي منه الملائكة",
+        "en": "Because Uthman was so modest the angels felt shy before him"
+       },
+       "c": true,
+       "exp": {
+        "ar": "نعم! أكرمَ النبيُّ ﷺ حياءَ عثمانَ بالحياءِ منه.",
+        "en": "Yes! The Prophet ﷺ honoured Uthman's modesty by being modest before him."
+       }
+      },
+      {
+       "t": {
+        "ar": "لأنّه لا يحبُّ أبا بكرٍ وعمر",
+        "en": "Because he did not love Abu Bakr and Umar"
+       },
+       "c": false,
+       "exp": {
+        "ar": "لا! كان يحبُّهم جميعاً، لكنّ لكلِّ صاحبٍ خُلُقاً يُكرَمُ به.",
+        "en": "No! He loved them all — but each companion had a quality he was honoured for."
+       }
+      },
+      {
+       "t": {
+        "ar": "لأنّ عثمانَ كان غريباً عنه",
+        "en": "Because Uthman was a stranger to him"
+       },
+       "c": false,
+       "exp": {
+        "ar": "لا، بل كان عثمانُ صهرَه وحبيبَه.",
+        "en": "No — Uthman was his son-in-law and beloved companion."
+       }
+      }
+     ]
+    }
+   }
+  ],
+  "quiz": [
+   {
+    "q": {
+     "ar": "في بيتِ مَن كانت هذه القصّة؟",
+     "en": "In whose house did this story happen?"
+    },
+    "opts": [
+     {
+      "t": {
+       "ar": "بيتِ عثمان",
+       "en": "Uthman's house"
+      },
+      "c": false
+     },
+     {
+      "t": {
+       "ar": "بيتِ عائشة",
+       "en": "Aisha's house"
+      },
+      "c": true
+     },
+     {
+      "t": {
+       "ar": "بيتِ عمر",
+       "en": "Umar's house"
+      },
+      "c": false
+     }
+    ]
+   },
+   {
+    "q": {
+     "ar": "ماذا قال النبيُّ ﷺ عن عثمان؟",
+     "en": "What did the Prophet ﷺ say about Uthman?"
+    },
+    "opts": [
+     {
+      "t": {
+       "ar": "«ألا أستحيي من رجلٍ تستحيي منه الملائكة؟»",
+       "en": "\"Should I not feel shy before a man the angels feel shy before?\""
+      },
+      "c": true
+     },
+     {
+      "t": {
+       "ar": "«عثمانُ أقوى الصحابة»",
+       "en": "\"Uthman is the strongest companion\""
+      },
+      "c": false
+     },
+     {
+      "t": {
+       "ar": "«عثمانُ أسرعُ الناس»",
+       "en": "\"Uthman is the fastest of people\""
+      },
+      "c": false
+     }
+    ]
+   },
+   {
+    "q": {
+     "ar": "ما الخُلُقُ الذي اشتهرَ به عثمان؟",
+     "en": "What character was Uthman famous for?"
+    },
+    "opts": [
+     {
+      "t": {
+       "ar": "الغضب",
+       "en": "Anger"
+      },
+      "c": false
+     },
+     {
+      "t": {
+       "ar": "المزاح الكثير",
+       "en": "Joking a lot"
+      },
+      "c": false
+     },
+     {
+      "t": {
+       "ar": "الحياء",
+       "en": "Modesty"
+      },
+      "c": true
+     }
+    ]
+   }
+  ],
+  "moral": {
+   "ar": "الحياءُ زينةُ المؤمن، ومَن استحيا من الله ومن الناسِ أحبّه اللهُ وأكرمه.",
+   "en": "Modesty is the believer's adornment; whoever is modest before Allah and people, Allah loves and honours him."
+  },
+  "badge": {
+   "icon": "🌸",
+   "title": {
+    "ar": "وِسامُ الحياءِ الجميل",
+    "en": "Badge of Beautiful Modesty"
+   }
+  },
+  "reflect": [
+   {
+    "ar": "كيف يظهرُ الحياءُ في كلامِك ولباسِك؟",
+    "en": "How does modesty show in your speech and dress?"
+   },
+   {
+    "ar": "لماذا قال النبيُّ ﷺ إنّ الحياءَ لا يأتي إلا بخير؟",
+    "en": "Why did the Prophet ﷺ say modesty brings nothing but good?"
+   }
+  ],
+  "didYouKnow": [
+   {
+    "ar": "حديثُ «ألا أستحيي من رجلٍ تستحيي منه الملائكة» رواه مسلمٌ في صحيحه (٢٤٠١) عن عائشة",
+    "en": "The hadith \"Should I not feel shy before a man the angels feel shy before?\" is in Sahih Muslim (2401) from Aisha"
+   },
+   {
+    "ar": "قال النبيُّ ﷺ: «الحياءُ لا يأتي إلا بخير» — رواه البخاريّ (٦١١٧) ومسلم (٣٧)",
+    "en": "The Prophet ﷺ said: \"Modesty brings nothing but good\" — al-Bukhari (6117) and Muslim (37)"
+   }
+  ]
+ },
+ {
+  "icon": "✋",
+  "scene": "tree",
+  "character": "🌳",
+  "title": {
+   "ar": "«هذه يدُ عثمان»: بيعةُ الرضوان",
+   "en": "\"This Is Uthman's Hand\": The Pledge of Ridwan"
+  },
+  "pages": [
+   {
+    "scene": "tree",
+    "character": "🌳",
+    "text": {
+     "ar": "في السنةِ السادسةِ خرجَ النبيُّ ﷺ وأصحابُه يريدونَ العمرة، فمنعتهم قريشٌ عندَ <b>الحُدَيبية</b>. فأرادَ النبيُّ ﷺ أن يُرسِلَ رسولاً إلى مكّةَ يُكلِّمُ قريشاً، فاختارَ <b>عثمانَ</b>، لأنّه — كما قال ابنُ عمر — <b>لو كان أحدٌ أعزَّ ببطنِ مكّةَ من عثمانَ لبعثه مكانَه</b>. فذهبَ عثمانُ سفيراً أميناً.<br><br>وتأخّرَ عثمانُ في مكّة، فبايعَ الصحابةُ النبيَّ ﷺ <b>تحتَ الشجرة</b>، وهي <b>بيعةُ الرضوان</b>. وعثمانُ غائب! فماذا صنعَ النبيُّ ﷺ؟ <b>رفعَ يدَه اليمنى وقال: «هذه يدُ عثمان»</b>، ثم ضربَ بها على يدِه اليسرى وقال: «هذه لعثمان». فبايعَ عنه بنفسِه الشريفة!<br><br>ونزلَ قولُ الله: ﴿لَقَدْ رَضِيَ اللَّهُ عَنِ الْمُؤْمِنِينَ إِذْ يُبَايِعُونَكَ تَحْتَ الشَّجَرَةِ﴾، فكان عثمانُ معهم في الرضا والأجر. فأيُّ شرفٍ أعظمُ من أن تكونَ <b>يدُ النبيِّ ﷺ بدلاً من يدِك</b>!",
+     "en": "In the sixth year, the Prophet ﷺ and his companions set out for Umrah, but Quraysh blocked them at <b>al-Hudaybiya</b>. The Prophet ﷺ wanted to send a messenger into Makkah to speak with Quraysh, and he chose <b>Uthman</b> because — as Ibn Umar said — <b>had anyone been more honoured in Makkah than Uthman, he would have sent him instead</b>. So Uthman went as a trustworthy envoy.<br><br>Uthman was delayed in Makkah, and the companions pledged allegiance to the Prophet ﷺ <b>under the tree</b> — the <b>Pledge of Ridwan</b> — while Uthman was absent! What did the Prophet ﷺ do? <b>He raised his right hand and said: \"This is Uthman's hand,\"</b> then struck it on his left hand and said: \"This is for Uthman.\" He pledged on his behalf with his own blessed hand!<br><br>And Allah revealed: \"Allah was pleased with the believers when they pledged to you under the tree,\" so Uthman shared in that pleasure and reward. What honour could be greater than <b>the Prophet's ﷺ hand standing in place of your own</b>!"
+    },
+    "choice": {
+     "q": {
+      "ar": "لماذا اختارَ النبيُّ ﷺ عثمانَ سفيراً إلى مكّة؟",
+      "en": "Why did the Prophet ﷺ choose Uthman as envoy to Makkah?"
+     },
+     "opts": [
+      {
+       "t": {
+        "ar": "لأنّه أصغرُ الصحابة",
+        "en": "Because he was the youngest companion"
+       },
+       "c": false,
+       "exp": {
+        "ar": "لا، بل لمكانتِه وعزّتِه بين أهلِ مكّة.",
+        "en": "No — because of his standing and honour among the people of Makkah."
+       }
+      },
+      {
+       "t": {
+        "ar": "لأنّه كان عزيزاً مُكرَّماً عندَ أهلِ مكّة",
+        "en": "Because he was honoured and respected in Makkah"
+       },
+       "c": true,
+       "exp": {
+        "ar": "نعم! كانت لعثمانَ مكانةٌ في قومِه، فحملَ الرسالةَ بأمانة.",
+        "en": "Yes! Uthman had standing among his people, so he carried the message faithfully."
+       }
+      },
+      {
+       "t": {
+        "ar": "لأنّه لا يحبُّ العمرة",
+        "en": "Because he did not like Umrah"
+       },
+       "c": false,
+       "exp": {
+        "ar": "لا، بل خرجَ معهم مُعتمِراً، وذهبَ في مهمّةٍ للمسلمين.",
+        "en": "No — he came out for Umrah with them, and went on a mission for the Muslims."
+       }
+      }
+     ]
+    }
+   }
+  ],
+  "quiz": [
+   {
+    "q": {
+     "ar": "أين كانت بيعةُ الرضوان؟",
+     "en": "Where was the Pledge of Ridwan?"
+    },
+    "opts": [
+     {
+      "t": {
+       "ar": "تحتَ الشجرة",
+       "en": "Under the tree"
+      },
+      "c": true
+     },
+     {
+      "t": {
+       "ar": "داخلَ الكعبة",
+       "en": "Inside the Ka'ba"
+      },
+      "c": false
+     },
+     {
+      "t": {
+       "ar": "في غارِ حراء",
+       "en": "In the cave of Hira"
+      },
+      "c": false
+     }
+    ]
+   },
+   {
+    "q": {
+     "ar": "ماذا قال النبيُّ ﷺ عن يدِه اليمنى؟",
+     "en": "What did the Prophet ﷺ say about his right hand?"
+    },
+    "opts": [
+     {
+      "t": {
+       "ar": "«هذه يدُ أبي بكر»",
+       "en": "\"This is Abu Bakr's hand\""
+      },
+      "c": false
+     },
+     {
+      "t": {
+       "ar": "«هذه يدُ قريش»",
+       "en": "\"This is Quraysh's hand\""
+      },
+      "c": false
+     },
+     {
+      "t": {
+       "ar": "«هذه يدُ عثمان»",
+       "en": "\"This is Uthman's hand\""
+      },
+      "c": true
+     }
+    ]
+   },
+   {
+    "q": {
+     "ar": "أين كان عثمانُ وقتَ البيعة؟",
+     "en": "Where was Uthman at the time of the pledge?"
+    },
+    "opts": [
+     {
+      "t": {
+       "ar": "في المدينةِ نائماً",
+       "en": "Asleep in Madinah"
+      },
+      "c": false
+     },
+     {
+      "t": {
+       "ar": "في مكّةَ سفيراً للنبيِّ ﷺ",
+       "en": "In Makkah as the Prophet's ﷺ envoy"
+      },
+      "c": true
+     },
+     {
+      "t": {
+       "ar": "في الشام",
+       "en": "In Sham"
+      },
+      "c": false
+     }
+    ]
+   }
+  ],
+  "moral": {
+   "ar": "مَن خدمَ الإسلامَ بأمانةٍ حفِظَ اللهُ له أجرَه ولو غاب، والسفيرُ الأمينُ يحملُ الرسالةَ بصدق.",
+   "en": "Whoever serves Islam faithfully, Allah keeps his reward even when absent; a trustworthy envoy carries the message honestly."
+  },
+  "badge": {
+   "icon": "✋",
+   "title": {
+    "ar": "وِسامُ السفيرِ الأمين",
+    "en": "Badge of the Trustworthy Envoy"
+   }
+  },
+  "reflect": [
+   {
+    "ar": "هل تحملُ الرسائلَ والأماناتِ كما هي دونَ زيادةٍ أو نقص؟",
+    "en": "Do you deliver messages and trusts exactly, adding or removing nothing?"
+   },
+   {
+    "ar": "كيف تشعرُ لو دافعَ عنك صديقُك وأنتَ غائب؟",
+    "en": "How would you feel if a friend stood up for you while you were away?"
+   }
+  ],
+  "didYouKnow": [
+   {
+    "ar": "قولُ النبيِّ ﷺ «هذه يدُ عثمان» وقولُ ابنِ عمرَ في عِزّةِ عثمانَ بمكّة رواه البخاريّ (٣٦٩٨)",
+    "en": "The Prophet's ﷺ words \"This is Uthman's hand\" and Ibn Umar's remark on Uthman's honour in Makkah are in al-Bukhari (3698)"
+   },
+   {
+    "ar": "وفي الحديثِ نفسِه: غابَ عثمانُ عن بدرٍ ليُمرِّضَ زوجتَه رقيّةَ بنتَ النبيِّ ﷺ، فقال له: «إنّ لكَ أجرَ رجلٍ ممّن شهدَ بدراً وسهمَه» — رواه البخاريّ (٣٦٩٨)",
+    "en": "In the same hadith: Uthman missed Badr to nurse his wife Ruqayya, the Prophet's ﷺ daughter, and he told him: \"You have the reward of a man who fought at Badr, and his share\" — al-Bukhari (3698)"
+   }
+  ]
+ },
+ {
+  "icon": "💡",
+  "scene": "night",
+  "character": "✨",
+  "title": {
+   "ar": "لماذا سُمِّيَ «ذا النورين»؟",
+   "en": "Why Was He Called \"Possessor of the Two Lights\"?"
+  },
+  "pages": [
+   {
+    "scene": "night",
+    "character": "✨",
+    "text": {
+     "ar": "لـ<b>عثمانَ</b> لقبٌ جميلٌ يُنادى به: <b>«ذو النُّورَين»</b>، أي صاحبُ النورين. فما هذان النوران؟ تزوّجَ عثمانُ <b>رُقيّةَ بنتَ رسولِ اللهِ ﷺ</b>، وهاجرَ بها إلى الحبشةِ فراراً بدينِهما، ثم عادا إلى مكّةَ وهاجرا إلى المدينة. فلمّا خرجَ المسلمونَ إلى بدرٍ مرضتْ رقيّة، فأمرَ النبيُّ ﷺ عثمانَ أن يبقى يُمرِّضُها، فبقيَ بجانبِها حتى تُوفّيتْ رضي الله عنها.<br><br>حزِنَ عثمانُ حزناً شديداً، فزوّجَه النبيُّ ﷺ ابنتَه الأخرى <b>أمَّ كلثوم</b>، فعاشت معه حتى تُوفّيتْ في السنةِ التاسعة. فصارَ عثمانُ زوجاً لابنتَينِ من بناتِ النبيِّ ﷺ، فسمّاه الناسُ <b>«ذا النورين»</b>.<br><br>قال العلماء: <b>لا يُعرَفُ أحدٌ تزوّجَ ابنتَي نبيٍّ غيرُ عثمان</b>. وما كان النبيُّ ﷺ ليُزوِّجَ ابنتَيه إلا رجلاً يثقُ بدينِه وخُلُقِه وأمانتِه. فكان عثمانُ <b>زوجاً وفيّاً رحيماً</b>، وصهراً حبيباً لرسولِ اللهِ ﷺ.",
+     "en": "<b>Uthman</b> had a beautiful title: <b>\"Dhun-Nurayn\"</b> — the Possessor of the Two Lights. What were the two lights? Uthman married <b>Ruqayya, daughter of the Messenger of Allah ﷺ</b>, and emigrated with her to Abyssinia to protect their faith; then they returned to Makkah and emigrated to Madinah. When the Muslims set out for Badr, Ruqayya fell ill, and the Prophet ﷺ told Uthman to stay and nurse her. He stayed by her side until she passed away, may Allah be pleased with her.<br><br>Uthman grieved deeply, so the Prophet ﷺ married him to his other daughter, <b>Umm Kulthum</b>, who lived with him until she passed away in the ninth year. So Uthman was husband to two of the Prophet's ﷺ daughters, and people called him <b>\"Possessor of the Two Lights.\"</b><br><br>Scholars said: <b>no one is known to have married two daughters of a prophet except Uthman</b>. And the Prophet ﷺ would only give his daughters to a man whose faith, character and trustworthiness he trusted. Uthman was <b>a loyal, merciful husband</b> and a beloved son-in-law of the Messenger of Allah ﷺ."
+    },
+    "choice": {
+     "q": {
+      "ar": "ما «النوران» في لقبِ عثمان؟",
+      "en": "What are the \"two lights\" in Uthman's title?"
+     },
+     "opts": [
+      {
+       "t": {
+        "ar": "الشمسُ والقمر",
+        "en": "The sun and the moon"
+       },
+       "c": false,
+       "exp": {
+        "ar": "لا، بل هما ابنتا النبيِّ ﷺ اللتان تزوّجهما.",
+        "en": "No — they are the two daughters of the Prophet ﷺ he married."
+       }
+      },
+      {
+       "t": {
+        "ar": "مصباحانِ في بيتِه",
+        "en": "Two lamps in his house"
+       },
+       "c": false,
+       "exp": {
+        "ar": "لا، النوران هما رقيّةُ وأمُّ كلثوم بنتا النبيِّ ﷺ.",
+        "en": "No — the two lights are Ruqayya and Umm Kulthum, the Prophet's ﷺ daughters."
+       }
+      },
+      {
+       "t": {
+        "ar": "ابنتا النبيِّ ﷺ رقيّةُ وأمُّ كلثوم",
+        "en": "The Prophet's ﷺ daughters Ruqayya and Umm Kulthum"
+       },
+       "c": true,
+       "exp": {
+        "ar": "أحسنت! تزوّجَ عثمانُ ابنتَي النبيِّ ﷺ واحدةً بعدَ الأخرى.",
+        "en": "Well done! Uthman married the Prophet's ﷺ two daughters, one after the other."
+       }
+      }
+     ]
+    }
+   }
+  ],
+  "quiz": [
+   {
+    "q": {
+     "ar": "لماذا لم يشهدْ عثمانُ غزوةَ بدر؟",
+     "en": "Why did Uthman not attend Badr?"
+    },
+    "opts": [
+     {
+      "t": {
+       "ar": "لأنّه كان مسافراً للتجارة",
+       "en": "He was travelling for trade"
+      },
+      "c": false
+     },
+     {
+      "t": {
+       "ar": "لأنّه بقيَ يُمرِّضُ زوجتَه رقيّةَ بأمرِ النبيِّ ﷺ",
+       "en": "He stayed to nurse his wife Ruqayya by the Prophet's ﷺ order"
+      },
+      "c": true
+     },
+     {
+      "t": {
+       "ar": "لأنّه كان خائفاً",
+       "en": "He was afraid"
+      },
+      "c": false
+     }
+    ]
+   },
+   {
+    "q": {
+     "ar": "إلى أين هاجرَ عثمانُ ورقيّةُ أوّلاً؟",
+     "en": "Where did Uthman and Ruqayya first emigrate?"
+    },
+    "opts": [
+     {
+      "t": {
+       "ar": "إلى الحبشة",
+       "en": "To Abyssinia"
+      },
+      "c": true
+     },
+     {
+      "t": {
+       "ar": "إلى اليمن",
+       "en": "To Yemen"
+      },
+      "c": false
+     },
+     {
+      "t": {
+       "ar": "إلى العراق",
+       "en": "To Iraq"
+      },
+      "c": false
+     }
+    ]
+   },
+   {
+    "q": {
+     "ar": "ماذا قال العلماءُ عن عثمانَ في ذلك؟",
+     "en": "What did scholars say about Uthman in this?"
+    },
+    "opts": [
+     {
+      "t": {
+       "ar": "إنّه أكثرُ الناسِ أولاداً",
+       "en": "He had the most children"
+      },
+      "c": false
+     },
+     {
+      "t": {
+       "ar": "إنّه لم يتزوّج",
+       "en": "He never married"
+      },
+      "c": false
+     },
+     {
+      "t": {
+       "ar": "لا يُعرَفُ أحدٌ تزوّجَ ابنتَي نبيٍّ غيرُه",
+       "en": "No one else is known to have married two daughters of a prophet"
+      },
+      "c": true
+     }
+    ]
+   }
+  ],
+  "moral": {
+   "ar": "الوفاءُ والرحمةُ في البيتِ من أعظمِ الأخلاق، ومَن أحسنَ إلى أهلِه أكرمه الله.",
+   "en": "Loyalty and mercy at home are among the greatest manners; whoever is good to his family, Allah honours him."
+  },
+  "badge": {
+   "icon": "💡",
+   "title": {
+    "ar": "وِسامُ ذي النورين",
+    "en": "Badge of the Two Lights"
+   }
+  },
+  "reflect": [
+   {
+    "ar": "كيف تعتني بمن يمرضُ من أهلِك؟",
+    "en": "How do you care for a family member who is sick?"
+   },
+   {
+    "ar": "لماذا يُعدُّ الخُلُقُ الحسنُ أهمَّ صفةٍ في الإنسان؟",
+    "en": "Why is good character the most important quality in a person?"
+   }
+  ],
+  "didYouKnow": [
+   {
+    "ar": "قال ابنُ كثير: سُمّيَ عثمانُ ذا النورين لأنّه تزوّجَ ابنتَي رسولِ اللهِ ﷺ رقيّةَ ثم أمَّ كلثوم — المصدر: البداية والنهاية",
+    "en": "Ibn Kathir said Uthman was called Dhun-Nurayn because he married the Prophet's ﷺ daughters Ruqayya, then Umm Kulthum — Source: Al-Bidaya wa an-Nihaya"
+   },
+   {
+    "ar": "كان عثمانُ ورقيّةُ ممّن هاجروا إلى الحبشةِ في الهجرةِ الأولى — المصدر: سير أعلام النبلاء للذهبي",
+    "en": "Uthman and Ruqayya were among those who emigrated to Abyssinia in the first emigration — Source: Siyar A'lam an-Nubala by adh-Dhahabi"
    }
   ]
  }

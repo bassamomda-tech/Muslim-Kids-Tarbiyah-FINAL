@@ -1,4 +1,4 @@
-/* data/stories/abubakr.js — Heroes · Abu Bakr as-Siddiq — sources: صور من حياة الصحابة (الباشا) · إسلام ويب · الدرر السنية */
+/* data/stories/abubakr.js — Heroes · Abu Bakr as-Siddiq — sources: صور من حياة الصحابة (الباشا) · إسلام ويب · الدرر السنية · صحيح البخاري · صحيح مسلم · البداية والنهاية · الكامل لابن الأثير · سنن أبي داود */
 window.HISN_STORIES = window.HISN_STORIES || {};
 HISN_STORIES.abubakr = [
  {
@@ -1078,6 +1078,546 @@ HISN_STORIES.abubakr = [
    {
     "ar": "ذكرَ عبد الرحمن رأفت الباشا في «صُوَرٌ من حياةِ الصحابة» أنّ أبا بكرٍ كان أعلمَ قريشٍ بأنسابِها وأحبَّهم إلى الناس.",
     "en": "Abd ar-Rahman Ra'fat al-Basha noted in \"Suwar min Hayat as-Sahaba\" that Abu Bakr was the most knowledgeable of Quraysh in lineage and the most beloved to people."
+   }
+  ]
+ },
+ {
+  "icon": "🕯️",
+  "scene": "madinah",
+  "character": "📖",
+  "title": {
+   "ar": "«مَن كان يعبدُ محمّداً فإنّ محمّداً قد مات»",
+   "en": "\"Whoever Worshipped Muhammad, Muhammad Has Died\""
+  },
+  "pages": [
+   {
+    "scene": "madinah",
+    "character": "📖",
+    "text": {
+     "ar": "في يومِ الاثنين انتقلَ النبيُّ ﷺ إلى الرفيقِ الأعلى، فاضطربتِ المدينةُ وبكى الناس، ووقفَ <b>عمرُ</b> من شدّةِ الحزنِ يُكلّمُ الناسَ لا يُصدّقُ الخبر. وكان <b>أبو بكرٍ</b> في بيتِه بالسُّنْح، فأقبلَ على فرسِه، ودخلَ على النبيِّ ﷺ وهو مُغطّى ببُرْدٍ، فكشفَ عن وجهِه الشريف، ثم <b>أكبَّ عليه يُقبِّلُه ويبكي</b> وقال: «بأبي أنتَ وأمّي، طِبتَ حيّاً وميّتاً».<br><br>ثم خرجَ إلى الناسِ والحزنُ يملأُ قلبَه، لكنّه <b>ثبتَ ثباتَ الجبال</b>، فحمِدَ اللهَ وقال: <b>«ألا مَن كان يعبدُ محمّداً فإنّ محمّداً قد مات، ومَن كان يعبدُ اللهَ فإنّ اللهَ حيٌّ لا يموت»</b>، وتلا قولَ الله: ﴿وَمَا مُحَمَّدٌ إِلَّا رَسُولٌ قَدْ خَلَتْ مِنْ قَبْلِهِ الرُّسُلُ﴾.<br><br>قال ابنُ عبّاس: <b>كأنّ الناسَ لم يعلموا أنّ اللهَ أنزلَ هذه الآيةَ حتى تلاها أبو بكر</b>، فما سُمِعَ أحدٌ إلا يتلوها! وقال عمر: ما إن سمعتُه يتلوها حتى عرفتُ أنّه الحقّ فما حملتني رجلاي. هكذا أعادَ أبو بكرٍ القلوبَ إلى اللهِ الحيِّ الذي لا يموت.",
+     "en": "On a Monday the Prophet ﷺ passed on to the Highest Companion. Madinah was shaken and people wept; <b>Umar</b>, overwhelmed with grief, stood speaking to the people, unable to believe the news. <b>Abu Bakr</b> was at his home in as-Sunh. He came on his horse, went in to the Prophet ﷺ, who was covered with a cloak, uncovered his blessed face, then <b>bent over him, kissing him and weeping</b>, and said: \"May my father and mother be ransomed for you — you were pure in life and in death.\"<br><br>Then he went out to the people, his heart full of sorrow, yet he <b>stood as firm as a mountain</b>. He praised Allah and said: <b>\"Whoever worshipped Muhammad, Muhammad has died; and whoever worships Allah, Allah is Ever-Living and never dies.\"</b> Then he recited Allah's words: \"Muhammad is no more than a messenger; messengers have passed away before him.\"<br><br>Ibn Abbas said: <b>it was as if the people had not known Allah revealed this verse until Abu Bakr recited it</b> — then everyone was reciting it! Umar said: as soon as I heard him recite it, I knew it was the truth and my legs could no longer carry me. Thus Abu Bakr turned the hearts back to Allah, the Ever-Living who never dies."
+    },
+    "choice": {
+     "q": {
+      "ar": "لماذا هدأ الناسُ بعدَ كلمةِ أبي بكر؟",
+      "en": "Why did the people calm down after Abu Bakr's words?"
+     },
+     "opts": [
+      {
+       "t": {
+        "ar": "لأنّه أمرَهم بالسكوت",
+        "en": "Because he ordered them to be quiet"
+       },
+       "c": false,
+       "exp": {
+        "ar": "لا، بل ذكّرهم بحقيقةٍ من القرآنِ فاطمأنّت قلوبُهم.",
+        "en": "No — he reminded them of a truth from the Qur'an, and their hearts found rest."
+       }
+      },
+      {
+       "t": {
+        "ar": "لأنّه ذكّرهم أنّ اللهَ حيٌّ لا يموتُ وتلا عليهم آيةَ القرآن",
+        "en": "Because he reminded them Allah is Ever-Living and recited the Qur'an to them"
+       },
+       "c": true,
+       "exp": {
+        "ar": "أحسنت! عبادتُنا لله وحدَه، وهو الحيُّ الباقي، والقرآنُ يُثبّتُ القلوبَ عندَ المصائب.",
+        "en": "Well done! Our worship is for Allah alone, the Ever-Living, and the Qur'an steadies hearts in hardship."
+       }
+      },
+      {
+       "t": {
+        "ar": "لأنّه قال لهم إنّ الخبرَ غيرُ صحيح",
+        "en": "Because he told them the news was not true"
+       },
+       "c": false,
+       "exp": {
+        "ar": "لا، بل أكّدَ الخبرَ بصدقٍ وثبات، ثم ربطَ القلوبَ بالله.",
+        "en": "No — he confirmed the news truthfully and firmly, then tied hearts to Allah."
+       }
+      }
+     ]
+    }
+   }
+  ],
+  "quiz": [
+   {
+    "q": {
+     "ar": "ماذا فعلَ أبو بكرٍ أوّلاً حين دخلَ على النبيِّ ﷺ؟",
+     "en": "What did Abu Bakr do first when he went in to the Prophet ﷺ?"
+    },
+    "opts": [
+     {
+      "t": {
+       "ar": "خرجَ مسرعاً دونَ أن يراه",
+       "en": "He rushed out without seeing him"
+      },
+      "c": false
+     },
+     {
+      "t": {
+       "ar": "كشفَ عن وجهِه وقبّله وبكى",
+       "en": "He uncovered his face, kissed him and wept"
+      },
+      "c": true
+     },
+     {
+      "t": {
+       "ar": "نادى الناسَ ليدخلوا",
+       "en": "He called the people to come in"
+      },
+      "c": false
+     }
+    ]
+   },
+   {
+    "q": {
+     "ar": "أيُّ آيةٍ تلاها أبو بكرٍ على الناس؟",
+     "en": "Which verse did Abu Bakr recite to the people?"
+    },
+    "opts": [
+     {
+      "t": {
+       "ar": "﴿وَمَا مُحَمَّدٌ إِلَّا رَسُولٌ قَدْ خَلَتْ مِنْ قَبْلِهِ الرُّسُلُ﴾",
+       "en": "\"Muhammad is no more than a messenger; messengers have passed before him\""
+      },
+      "c": true
+     },
+     {
+      "t": {
+       "ar": "آيةَ الكرسي",
+       "en": "Ayat al-Kursi"
+      },
+      "c": false
+     },
+     {
+      "t": {
+       "ar": "سورةَ الفاتحة",
+       "en": "Surat al-Fatiha"
+      },
+      "c": false
+     }
+    ]
+   },
+   {
+    "q": {
+     "ar": "ماذا نتعلّمُ من ثباتِ أبي بكر؟",
+     "en": "What do we learn from Abu Bakr's firmness?"
+    },
+    "opts": [
+     {
+      "t": {
+       "ar": "أن نتركَ الصبرَ عندَ الحزن",
+       "en": "To give up patience when sad"
+      },
+      "c": false
+     },
+     {
+      "t": {
+       "ar": "أنّ الحزنَ عيبٌ لا يجوز",
+       "en": "That sadness is a shameful fault"
+      },
+      "c": false
+     },
+     {
+      "t": {
+       "ar": "أن نحزنَ ونصبرَ ونتعلّقَ باللهِ الحيِّ الذي لا يموت",
+       "en": "To grieve, be patient and cling to Allah, the Ever-Living"
+      },
+      "c": true
+     }
+    ]
+   }
+  ],
+  "moral": {
+   "ar": "عندَ المصيبةِ نحزنُ ونبكي، لكنّنا نثبتُ لأنّ عبادتَنا لله الحيِّ الذي لا يموت.",
+   "en": "In calamity we may grieve and weep, but we stay firm because we worship Allah, the Ever-Living who never dies."
+  },
+  "badge": {
+   "icon": "🕯️",
+   "title": {
+    "ar": "وِسامُ القلبِ الثابت",
+    "en": "Badge of the Steadfast Heart"
+   }
+  },
+  "reflect": [
+   {
+    "ar": "كيف تتصرّفُ حين يحزنُ مَن حولَك؟ هل تُذكّرُهم بالله؟",
+    "en": "How do you act when those around you are sad? Do you remind them of Allah?"
+   },
+   {
+    "ar": "لماذا كان القرآنُ أفضلَ ما يُثبّتُ القلوب؟",
+    "en": "Why is the Qur'an the best thing to steady hearts?"
+   }
+  ],
+  "didYouKnow": [
+   {
+    "ar": "قصّةُ دخولِ أبي بكرٍ على النبيِّ ﷺ وخطبتِه وتلاوتِه الآية رواها البخاريّ (١٢٤١، ١٢٤٢، ٣٦٦٧)",
+    "en": "The story of Abu Bakr going in to the Prophet ﷺ, his speech and his reciting the verse is in al-Bukhari (1241, 1242, 3667)"
+   },
+   {
+    "ar": "قولُ عمر: «فما تُقِلُّني رجلاي» حين سمعَ الآيةَ من أبي بكر — رواه البخاريّ (٤٤٥٤)",
+    "en": "Umar's words \"my legs could not carry me\" on hearing the verse from Abu Bakr — reported by al-Bukhari (4454)"
+   }
+  ]
+ },
+ {
+  "icon": "🚩",
+  "scene": "desert",
+  "character": "🐎",
+  "title": {
+   "ar": "إنفاذُ جيشِ أسامة",
+   "en": "Sending Out Usama's Army"
+  },
+  "pages": [
+   {
+    "scene": "desert",
+    "character": "🐎",
+    "text": {
+     "ar": "قبلَ وفاتِه ﷺ جهّزَ النبيُّ ﷺ جيشاً إلى أطرافِ الشام، وجعلَ أميرَه شابّاً صغيراً هو <b>أسامةُ بنُ زيد</b>. فلمّا تُوفّيَ النبيُّ ﷺ ارتدّتْ بعضُ قبائلِ العرب، فقال بعضُ الناسِ لأبي بكر: أبقِ الجيشَ في المدينةِ يحميها! فقال أبو بكرٍ بعزمٍ: <b>«لو خطفتني الكلابُ والذئابُ لأنفذتُه كما أمرَ به رسولُ اللهِ ﷺ، ولا أردُّ قضاءً قضى به رسولُ اللهِ ﷺ»</b>.<br><br>وخرجَ <b>الخليفةُ يمشي على قدميه</b> يودّعُ الجيش، وأسامةُ الشابُّ راكبٌ على فرسِه! فاستحيا أسامةُ وقال: «يا خليفةَ رسولِ الله، لَتركبنَّ أو لأنزلنّ!» فقال أبو بكر: <b>«واللهِ لا تنزلُ ولا أركب، وما عليَّ أن أُغبِّرَ قدميَّ في سبيلِ اللهِ ساعة»</b>. ثم استأذنَه بأدبٍ أن يتركَ له عمرَ ليعينَه، فأذنَ أسامة.<br><br>فمضى الجيشُ ورجعَ <b>سالماً منتصراً</b>، وقالتِ القبائلُ: لولا أنّ بالمسلمين قوّةً ما خرجَ مثلُ هذا الجيشِ من عندِهم! فكانت <b>طاعةُ أبي بكرٍ لأمرِ النبيِّ ﷺ</b> خيراً وبركةً على الأمّةِ كلِّها.",
+     "en": "Before he passed away ﷺ, the Prophet ﷺ prepared an army for the edges of Sham and made a young man its commander: <b>Usama ibn Zayd</b>. When the Prophet ﷺ died, some Arab tribes turned back from Islam, and some people said to Abu Bakr: keep the army in Madinah to protect it! Abu Bakr answered firmly: <b>\"Even if dogs and wolves snatched me away, I would send it as the Messenger of Allah ﷺ ordered — I will not undo a decision the Messenger of Allah ﷺ made.\"</b><br><br>And <b>the caliph walked on foot</b> to see the army off, while young Usama rode his horse! Usama felt shy and said: \"O successor of the Messenger of Allah, either you ride or I will dismount!\" Abu Bakr said: <b>\"By Allah, you will not dismount and I will not ride. What harm is it if I let my feet get dusty in the path of Allah for an hour?\"</b> Then he politely asked Usama's permission to leave Umar behind to help him, and Usama agreed.<br><br>The army went and returned <b>safe and victorious</b>, and the tribes said: if the Muslims were not strong, such an army would never have left them! So <b>Abu Bakr's obedience to the Prophet's ﷺ command</b> brought good and blessing to the whole Ummah."
+    },
+    "choice": {
+     "q": {
+      "ar": "لماذا أصرَّ أبو بكرٍ على إرسالِ الجيش؟",
+      "en": "Why did Abu Bakr insist on sending the army?"
+     },
+     "opts": [
+      {
+       "t": {
+        "ar": "لأنّه أرادَ أن يبتعدَ أسامةُ عن المدينة",
+        "en": "Because he wanted Usama away from Madinah"
+       },
+       "c": false,
+       "exp": {
+        "ar": "لا، بل كان يحبُّ أسامةَ ويُكرِمُه، ومشى في وداعِه.",
+        "en": "No — he loved and honoured Usama, and walked to see him off."
+       }
+      },
+      {
+       "t": {
+        "ar": "لأنّه لم يعلمْ بارتدادِ القبائل",
+        "en": "Because he did not know about the tribes"
+       },
+       "c": false,
+       "exp": {
+        "ar": "لا، بل علِمَ بالخطر، ومع ذلك قدّمَ أمرَ النبيِّ ﷺ.",
+        "en": "No — he knew the danger, and still put the Prophet's ﷺ command first."
+       }
+      },
+      {
+       "t": {
+        "ar": "لأنّه أمرٌ أمرَ به النبيُّ ﷺ فلا يردُّه",
+        "en": "Because it was the Prophet's ﷺ command and he would not undo it"
+       },
+       "c": true,
+       "exp": {
+        "ar": "نعم! طاعةُ النبيِّ ﷺ كانت عندَه فوقَ كلِّ خوف، فجعلَ اللهُ فيها البركة.",
+        "en": "Yes! Obeying the Prophet ﷺ came above every fear for him, and Allah put blessing in it."
+       }
+      }
+     ]
+    }
+   }
+  ],
+  "quiz": [
+   {
+    "q": {
+     "ar": "مَن كان أميرَ الجيش؟",
+     "en": "Who was the army's commander?"
+    },
+    "opts": [
+     {
+      "t": {
+       "ar": "أسامةُ بنُ زيد",
+       "en": "Usama ibn Zayd"
+      },
+      "c": true
+     },
+     {
+      "t": {
+       "ar": "أبو بكرٍ نفسُه",
+       "en": "Abu Bakr himself"
+      },
+      "c": false
+     },
+     {
+      "t": {
+       "ar": "خالدُ بنُ الوليد",
+       "en": "Khalid ibn al-Walid"
+      },
+      "c": false
+     }
+    ]
+   },
+   {
+    "q": {
+     "ar": "كيف ودّعَ أبو بكرٍ الجيش؟",
+     "en": "How did Abu Bakr see the army off?"
+    },
+    "opts": [
+     {
+      "t": {
+       "ar": "راكباً على فرسٍ عظيم",
+       "en": "Riding a great horse"
+      },
+      "c": false
+     },
+     {
+      "t": {
+       "ar": "ماشياً على قدميه وأسامةُ راكب",
+       "en": "Walking on foot while Usama rode"
+      },
+      "c": true
+     },
+     {
+      "t": {
+       "ar": "من نافذةِ بيتِه",
+       "en": "From his window"
+      },
+      "c": false
+     }
+    ]
+   },
+   {
+    "q": {
+     "ar": "ماذا قالتِ القبائلُ حين رأتِ الجيش؟",
+     "en": "What did the tribes say when they saw the army?"
+    },
+    "opts": [
+     {
+      "t": {
+       "ar": "المسلمونَ ضعفاء",
+       "en": "The Muslims are weak"
+      },
+      "c": false
+     },
+     {
+      "t": {
+       "ar": "لن نسمعَ بهم بعدَ اليوم",
+       "en": "We will never hear of them again"
+      },
+      "c": false
+     },
+     {
+      "t": {
+       "ar": "لولا أنّ بهم قوّةً ما خرجَ هذا الجيش",
+       "en": "If they were not strong, this army would not have gone out"
+      },
+      "c": true
+     }
+    ]
+   }
+  ],
+  "moral": {
+   "ar": "طاعةُ اللهِ ورسولِه ﷺ بركة، والقائدُ الحقُّ متواضعٌ يُكرِمُ الشبابَ ويحترمُ أمرَهم.",
+   "en": "Obeying Allah and His Messenger ﷺ brings blessing; a true leader is humble, honours the young and respects their command."
+  },
+  "badge": {
+   "icon": "🚩",
+   "title": {
+    "ar": "وِسامُ الطاعةِ والعزم",
+    "en": "Badge of Obedience and Resolve"
+   }
+  },
+  "reflect": [
+   {
+    "ar": "هل تُنفّذُ ما أمرَ به النبيُّ ﷺ حتى لو كان صعباً؟",
+    "en": "Do you carry out what the Prophet ﷺ commanded even when it is hard?"
+   },
+   {
+    "ar": "كيف تتواضعُ مع مَن هو أصغرُ منك؟",
+    "en": "How can you be humble with someone younger than you?"
+   }
+  ],
+  "didYouKnow": [
+   {
+    "ar": "كان أسامةُ بنُ زيدٍ حين أُمِّرَ على الجيشِ شابّاً دونَ العشرين من عمرِه — المصدر: البداية والنهاية لابن كثير",
+    "en": "Usama ibn Zayd was a young man under twenty when made commander — Source: Al-Bidaya wa an-Nihaya by Ibn Kathir"
+   },
+   {
+    "ar": "قولُ أبي بكر «وما عليَّ أن أُغبِّرَ قدميَّ في سبيلِ اللهِ ساعة» في وداعِ أسامة — المصدر: الكامل في التاريخ لابن الأثير",
+    "en": "Abu Bakr's words \"What harm if my feet get dusty in Allah's path for an hour\" when seeing Usama off — Source: Al-Kamil fi at-Tarikh by Ibn al-Athir"
+   }
+  ]
+ },
+ {
+  "icon": "🌅",
+  "scene": "mosque",
+  "character": "🤲",
+  "title": {
+   "ar": "«مَن أصبحَ منكم اليومَ صائماً؟»",
+   "en": "\"Who Among You Is Fasting Today?\""
+  },
+  "pages": [
+   {
+    "scene": "mosque",
+    "character": "🤲",
+    "text": {
+     "ar": "جلسَ النبيُّ ﷺ يوماً مع أصحابِه، فسألهم سؤالاً عجيباً: <b>«مَن أصبحَ منكم اليومَ صائماً؟»</b> فقال أبو بكر: <b>«أنا»</b>. فقال ﷺ: «فمَن تبِعَ منكم اليومَ جنازة؟» قال أبو بكر: «أنا». قال: «فمَن أطعمَ منكم اليومَ مسكيناً؟» قال أبو بكر: «أنا». قال: «فمَن عادَ منكم اليومَ مريضاً؟» قال أبو بكر: «أنا»!<br><br>أربعةُ أسئلة، وفي كلِّ مرّةٍ يقولُ أبو بكر: أنا! صامَ، وشيّعَ ميّتاً، وأطعمَ فقيراً، وزارَ مريضاً — <b>كلُّ ذلك في يومٍ واحد</b>! فقال رسولُ اللهِ ﷺ: <b>«ما اجتمعْنَ في امرئٍ إلا دخلَ الجنّة»</b>.<br><br>لم يكن أبو بكرٍ يعلمُ أنّه سيُسأَل، بل كان هذا <b>عادتَه في كلِّ يوم</b>: يملأُ يومَه بالخير بين عبادةٍ لله وإحسانٍ إلى الناس. فهكذا يكونُ السبّاقُ إلى الخيرات.",
+     "en": "One day the Prophet ﷺ sat with his companions and asked them a wonderful question: <b>\"Who among you woke up fasting today?\"</b> Abu Bakr said: <b>\"I did.\"</b> He ﷺ said: \"Who among you followed a funeral today?\" Abu Bakr said: \"I did.\" He said: \"Who among you fed a poor person today?\" Abu Bakr said: \"I did.\" He said: \"Who among you visited a sick person today?\" Abu Bakr said: \"I did!\"<br><br>Four questions, and each time Abu Bakr said: I did! He fasted, followed a funeral, fed a poor person and visited a sick one — <b>all of it in a single day</b>! The Messenger of Allah ﷺ said: <b>\"These never come together in a person except that he enters Paradise.\"</b><br><br>Abu Bakr did not know he would be asked; this was simply <b>his habit every day</b>: filling his day with good, between worship of Allah and kindness to people. That is what it means to race to good deeds."
+    },
+    "choice": {
+     "q": {
+      "ar": "ما الذي يجمعُ الأعمالَ الأربعةَ التي فعلها أبو بكر؟",
+      "en": "What do the four deeds Abu Bakr did have in common?"
+     },
+     "opts": [
+      {
+       "t": {
+        "ar": "كلُّها لعبِ ولهو",
+        "en": "They are all games and fun"
+       },
+       "c": false,
+       "exp": {
+        "ar": "لا، بل كلُّها طاعاتٌ عظيمة.",
+        "en": "No — they are all great acts of obedience."
+       }
+      },
+      {
+       "t": {
+        "ar": "كلُّها أعمالٌ صعبةٌ لا يقدرُ عليها الأطفال",
+        "en": "They are all too hard for children"
+       },
+       "c": false,
+       "exp": {
+        "ar": "لا! يستطيعُ الطفلُ أن يصومَ بعضَ اليوم، ويُطعِمَ، ويزورَ المريضَ مع أهلِه.",
+        "en": "No! A child can fast part of a day, feed someone, and visit the sick with family."
+       }
+      },
+      {
+       "t": {
+        "ar": "فيها عبادةٌ لله وإحسانٌ إلى الناس",
+        "en": "They join worship of Allah with kindness to people"
+       },
+       "c": true,
+       "exp": {
+        "ar": "أحسنت! الصيامُ عبادة، والجنازةُ والإطعامُ وعيادةُ المريضِ إحسانٌ إلى الناس.",
+        "en": "Well done! Fasting is worship, and funerals, feeding and visiting the sick are kindness to people."
+       }
+      }
+     ]
+    }
+   }
+  ],
+  "quiz": [
+   {
+    "q": {
+     "ar": "كم سؤالاً سألَ النبيُّ ﷺ أصحابَه؟",
+     "en": "How many questions did the Prophet ﷺ ask?"
+    },
+    "opts": [
+     {
+      "t": {
+       "ar": "أربعةَ أسئلة",
+       "en": "Four questions"
+      },
+      "c": true
+     },
+     {
+      "t": {
+       "ar": "سؤالاً واحداً",
+       "en": "One question"
+      },
+      "c": false
+     },
+     {
+      "t": {
+       "ar": "عشرةَ أسئلة",
+       "en": "Ten questions"
+      },
+      "c": false
+     }
+    ]
+   },
+   {
+    "q": {
+     "ar": "أيُّ هذه ليست من أعمالِ أبي بكرٍ في ذلك اليوم؟",
+     "en": "Which of these was NOT one of Abu Bakr's deeds that day?"
+    },
+    "opts": [
+     {
+      "t": {
+       "ar": "عيادةُ المريض",
+       "en": "Visiting the sick"
+      },
+      "c": false
+     },
+     {
+      "t": {
+       "ar": "السفرُ إلى الشام",
+       "en": "Travelling to Sham"
+      },
+      "c": true
+     },
+     {
+      "t": {
+       "ar": "إطعامُ المسكين",
+       "en": "Feeding the poor"
+      },
+      "c": false
+     }
+    ]
+   },
+   {
+    "q": {
+     "ar": "ماذا قال النبيُّ ﷺ عن مَن اجتمعت فيه هذه الأعمال؟",
+     "en": "What did the Prophet ﷺ say about one who does all these?"
+    },
+    "opts": [
+     {
+      "t": {
+       "ar": "يصيرُ غنيّاً",
+       "en": "He becomes rich"
+      },
+      "c": false
+     },
+     {
+      "t": {
+       "ar": "يصيرُ مشهوراً",
+       "en": "He becomes famous"
+      },
+      "c": false
+     },
+     {
+      "t": {
+       "ar": "يدخلُ الجنّة",
+       "en": "He enters Paradise"
+      },
+      "c": true
+     }
+    ]
+   }
+  ],
+  "moral": {
+   "ar": "اِملأْ يومَك بالخير: عبادةٌ لله وإحسانٌ إلى الناس، فالقليلُ الدائمُ يصنعُ أبطالاً.",
+   "en": "Fill your day with good — worship of Allah and kindness to people; small, steady deeds make heroes."
+  },
+  "badge": {
+   "icon": "🌅",
+   "title": {
+    "ar": "وِسامُ اليومِ المبارك",
+    "en": "Badge of the Blessed Day"
+   }
+  },
+  "reflect": [
+   {
+    "ar": "لو سألك أحدٌ اليوم: ماذا فعلتَ من الخير؟ فماذا تقول؟",
+    "en": "If someone asked you today what good you did, what would you say?"
+   },
+   {
+    "ar": "أيُّ عملٍ من الأربعةِ تستطيعُ أن تفعلَه هذا الأسبوع؟",
+    "en": "Which of the four deeds could you do this week?"
+   }
+  ],
+  "didYouKnow": [
+   {
+    "ar": "حديثُ «مَن أصبحَ منكم اليومَ صائماً؟» رواه مسلمٌ في صحيحه (١٠٢٨) عن أبي هريرة",
+    "en": "The hadith \"Who among you woke up fasting today?\" is reported by Muslim (1028) from Abu Hurayra"
+   },
+   {
+    "ar": "قال عمرُ يوماً: لا أسبقُه إلى شيءٍ أبداً، حين جاء أبو بكرٍ بمالِه كلِّه — رواه أبو داود (١٦٧٨) والترمذيّ وحسّنه",
+    "en": "Umar once said \"I will never beat him to anything\" when Abu Bakr brought all his wealth — reported by Abu Dawud (1678) and at-Tirmidhi, who graded it hasan"
    }
   ]
  }

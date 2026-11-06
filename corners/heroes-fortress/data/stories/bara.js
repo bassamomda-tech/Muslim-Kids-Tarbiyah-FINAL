@@ -1,4 +1,4 @@
-/* data/stories/bara.js — Heroes · Al-Bara' ibn Malik — sources: صور من حياة الصحابة (الباشا) · إسلام ويب · الدرر السنية · البداية والنهاية */
+/* data/stories/bara.js — Heroes · Al-Bara' ibn Malik — sources: صور من حياة الصحابة (الباشا) · إسلام ويب · الدرر السنية · البداية والنهاية · سير أعلام النبلاء · المستدرك للحاكم · سنن الترمذي */
 window.HISN_STORIES = window.HISN_STORIES || {};
 HISN_STORIES.bara = [
   { icon:'🔥', scene:'garden', character:'🛡️',
@@ -61,5 +61,185 @@ HISN_STORIES.bara = [
     badge:{icon:'⭐',title:{ar:'وِسامُ الدعوةِ المستجابة',en:'Badge of the Answered Prayer'}},
     reflect:[ {ar:'هل تصدُقُ مع اللهِ في نيّتِك ودعائِك؟',en:'Are you truthful with Allah in your intention and prayers?'}, {ar:'ما أعظمُ ما تتمنّى أن تطلبَه من الله؟',en:'What is the greatest thing you wish to ask of Allah?'} ],
     didYouKnow:[ {ar:'حديثُ «إنّ من عبادِ اللهِ من لو أقسمَ على اللهِ لأبرَّه» ذكرَ العلماءُ أنّ منهم البراءَ بنَ مالك — المصدر: صحيح مسلم',en:'Scholars noted that among those referred to in the hadith "if they swear by Allah, He fulfills it" is al-Bara\u2019 ibn Malik — Source: Sahih Muslim'}, {ar:'استُشهِدَ البراءُ يومَ تُستَرَ في فتوحِ فارسَ كما تمنّى — المصدر: البداية والنهاية',en:'Al-Bara\u2019 was martyred at Tustar during the conquest of Persia, as he had wished — Source: Al-Bidaya wa an-Nihaya'} ],
+  },
+  {
+    "icon": "🦁",
+    "scene": "desert",
+    "character": "🛡️",
+    "title": {
+      "ar": "لا تجعلوه أميراً على جيش!",
+      "en": "Do Not Make Him a Commander!"
+    },
+    "pages": [
+      {
+        "scene": "desert",
+        "character": "🛡️",
+        "text": {
+          "ar": "كان <b>البراءُ بنُ مالك</b> — أخو أنسِ بنِ مالك — من أشجعِ الناسِ وأشدِّهم إقداماً. لا يعرفُ التردّد، وإذا رأى الخطرَ <b>تقدّمَ إليه أوّلاً</b> وهو يبتغي رضا اللهِ والجنّة.<br><br>فيُروى أنّ أميرَ المؤمنينَ <b>عمرَ بنَ الخطّاب</b> كتبَ إلى قادةِ جيوشِه: <b>«لا تستعملوا البراءَ على جيشٍ من جيوشِ المسلمين، فإنّه مَهلكةٌ من المهالك، يُقدِمُ بهم»</b>. لم يكن ذلك ذمّاً للبراء، بل كان عمرُ <b>يعرفُ قدرَه ويعرفُ طبعَه</b>: البراءُ شجاعٌ يقتحمُ أصعبَ المواقفِ بنفسِه، والقائدُ يحتاجُ أن يحفظَ أرواحَ جنودِه ويُوازِنَ بين الإقدامِ والحذر.<br><br>فبقيَ البراءُ <b>جندياً بطلاً</b> في الصفِّ الأوّل، ولم يغضبْ ولم يطلبِ الإمارة، بل كان سعيداً بأن يخدمَ الإسلامَ من مكانِه. علّمنا عمرُ أنّ <b>لكلِّ إنسانٍ موهبةً تناسبُ عملاً معيّناً</b>، وعلّمنا البراءُ أنّ البطلَ لا يحتاجُ إلى منصبٍ ليكونَ عظيماً.",
+          "en": "<b>Al-Bara' ibn Malik</b> — brother of Anas ibn Malik — was among the bravest and boldest of people. He knew no hesitation; when he saw danger he <b>rushed toward it first</b>, seeking Allah's pleasure and Paradise.<br><br>It is narrated that the Commander of the Believers <b>'Umar ibn al-Khattab</b> wrote to his army leaders: <b>\"Do not appoint al-Bara' over any army of the Muslims, for he is a peril among perils — he would lead them headlong.\"</b> This was not blame of al-Bara'; 'Umar <b>knew his worth and his nature</b>: al-Bara' was a brave man who stormed the hardest places himself, while a commander must protect his soldiers' lives and balance boldness with caution.<br><br>So al-Bara' remained a <b>hero soldier</b> in the front row. He did not get angry or seek command; he was happy to serve Islam from his place. 'Umar taught us that <b>every person has a gift suited to a certain task</b>, and al-Bara' taught us that a hero needs no title to be great."
+        },
+        "choice": {
+          "q": {
+            "ar": "لماذا قال عمرُ: لا تجعلوا البراءَ أميراً؟",
+            "en": "Why did 'Umar say not to make al-Bara' a commander?"
+          },
+          "opts": [
+            {
+              "t": {
+                "ar": "لأنّه كان جباناً",
+                "en": "Because he was a coward"
+              },
+              "c": false,
+              "exp": {
+                "ar": "لا، بل كان من أشجعِ الناس!",
+                "en": "No — he was among the bravest of people!"
+              }
+            },
+            {
+              "t": {
+                "ar": "لأنّ شجاعتَه الشديدةَ تجعلُه يقتحمُ بالجيشِ المخاطر",
+                "en": "Because his great bravery would lead the army into danger"
+              },
+              "c": true,
+              "exp": {
+                "ar": "أحسنت! عرفَ عمرُ طبعَه، فجعله في المكانِ الذي يناسبُه.",
+                "en": "Well done! 'Umar knew his nature and put him where he fit best."
+              }
+            },
+            {
+              "t": {
+                "ar": "لأنّه لا يعرفُ القتال",
+                "en": "Because he could not fight"
+              },
+              "c": false,
+              "exp": {
+                "ar": "لا، بل كان بطلاً في الصفِّ الأوّل.",
+                "en": "No — he was a hero in the front row."
+              }
+            }
+          ]
+        }
+      }
+    ],
+    "quiz": [
+      {
+        "q": {
+          "ar": "البراءُ بنُ مالك هو أخو…",
+          "en": "Al-Bara' ibn Malik was the brother of…"
+        },
+        "opts": [
+          {
+            "t": {
+              "ar": "أنسِ بنِ مالك",
+              "en": "Anas ibn Malik"
+            },
+            "c": true
+          },
+          {
+            "t": {
+              "ar": "خالدِ بنِ الوليد",
+              "en": "Khalid ibn al-Walid"
+            },
+            "c": false
+          },
+          {
+            "t": {
+              "ar": "أبي هريرة",
+              "en": "Abu Hurayra"
+            },
+            "c": false
+          }
+        ]
+      },
+      {
+        "q": {
+          "ar": "ماذا فعلَ البراءُ حين لم يُجعَلْ أميراً؟",
+          "en": "What did al-Bara' do when he was not made a commander?"
+        },
+        "opts": [
+          {
+            "t": {
+              "ar": "غضبَ وتركَ الجيش",
+              "en": "He got angry and left the army"
+            },
+            "c": false
+          },
+          {
+            "t": {
+              "ar": "طالبَ بالإمارة",
+              "en": "He demanded command"
+            },
+            "c": false
+          },
+          {
+            "t": {
+              "ar": "بقيَ جندياً بطلاً راضياً",
+              "en": "He stayed a content hero soldier"
+            },
+            "c": true
+          }
+        ]
+      },
+      {
+        "q": {
+          "ar": "ما الدرسُ من موقفِ عمر؟",
+          "en": "What is the lesson from 'Umar's decision?"
+        },
+        "opts": [
+          {
+            "t": {
+              "ar": "لكلِّ إنسانٍ موهبةٌ تناسبُ عملاً معيّناً",
+              "en": "Every person has a gift suited to a certain task"
+            },
+            "c": true
+          },
+          {
+            "t": {
+              "ar": "الشجاعةُ عيب",
+              "en": "Bravery is a flaw"
+            },
+            "c": false
+          },
+          {
+            "t": {
+              "ar": "القائدُ لا يهتمُّ بجنودِه",
+              "en": "A leader does not care for his soldiers"
+            },
+            "c": false
+          }
+        ]
+      }
+    ],
+    "moral": {
+      "ar": "ضعْ كلَّ موهبةٍ في مكانِها، وكنْ بطلاً في موقعِك ولو لم تكنْ قائداً؛ فالعظمةُ في الإخلاصِ لا في المنصب.",
+      "en": "Put every talent in its right place, and be a hero where you stand even if you are not the leader — greatness is in sincerity, not in titles."
+    },
+    "badge": {
+      "icon": "🦁",
+      "title": {
+        "ar": "وِسامُ الإقدامِ الصادق",
+        "en": "Badge of True Boldness"
+      }
+    },
+    "reflect": [
+      {
+        "ar": "ما الموهبةُ التي أعطاك اللهُ إيّاها، وأين تنفعُ بها؟",
+        "en": "What gift has Allah given you, and where can you use it?"
+      },
+      {
+        "ar": "هل ترضى أن تعملَ بإتقانٍ ولو لم تكنْ رئيسَ الفريق؟",
+        "en": "Are you happy to work well even if you are not the team captain?"
+      }
+    ],
+    "didYouKnow": [
+      {
+        "ar": "كتابُ عمرَ في البراءِ ذكره الذهبيُّ في «سير أعلام النبلاء» بصيغةِ «قيل»، ورواه الحاكمُ في المستدرك عن ابنِ سيرين مرسلاً، ولذا نقولُ: «يُروى»",
+        "en": "'Umar's letter about al-Bara' is mentioned by adh-Dhahabi in Siyar A'lam an-Nubala' with the phrase \"it is said\", and al-Hakim narrates it from Ibn Sirin without a connected chain — so we say \"it is narrated\""
+      },
+      {
+        "ar": "قال النبيُّ ﷺ: «كم من أشعثَ أغبرَ ذي طِمرَين لا يُؤبَهُ له، لو أقسمَ على اللهِ لأبرَّه، منهم البراءُ بنُ مالك» — رواه الترمذي (٣٨٥٤) وصحّحه الألباني",
+        "en": "The Prophet ﷺ said: \"How many a dishevelled, dusty man in two worn garments whom no one notices — if he swore by Allah, He would fulfil it; among them is al-Bara' ibn Malik\" — at-Tirmidhi (3854), graded sahih by al-Albani"
+      }
+    ]
   },
 ];

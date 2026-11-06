@@ -1,4 +1,4 @@
-/* data/stories/alparslan.js — Leaders · Alp Arslan — sources: البداية والنهاية · سير أعلام النبلاء · إسلام ويب · الدرر السنية */
+/* data/stories/alparslan.js — Leaders · Alp Arslan — sources: البداية والنهاية · سير أعلام النبلاء · إسلام ويب · الدرر السنية · الكامل لابن الأثير */
 window.HISN_STORIES = window.HISN_STORIES || {};
 HISN_STORIES.alparslan = [
   { icon:'🤲', scene:'peaks', character:'🦁',
@@ -35,5 +35,40 @@ HISN_STORIES.alparslan = [
     badge:{icon:'🤲',title:{ar:'وِسامُ التوكّلِ والنصر',en:'Badge of Reliance & Victory'}},
     reflect:[ {ar:'هل تتوكّلُ على اللهِ بصدقٍ بعدَ أن تأخذَ بالأسباب؟',en:'Do you rely on Allah sincerely after taking your means?'}, {ar:'كيف تواجهُ موقفاً صعباً يبدو أكبرَ من قدرتِك؟',en:'How do you face a hard situation that seems bigger than your ability?'} ],
     didYouKnow:[ {ar:'معركةُ ملاذكردَ سنةَ ٤٦٣هـ فتحتْ أبوابَ آسيا الصغرى أمامَ المسلمين، وفيها أُسِرَ الإمبراطورُ البيزنطي — المصدر: البداية والنهاية',en:'The Battle of Manzikert in 463 AH opened the gates of Asia Minor to the Muslims, and in it the Byzantine emperor was captured — Source: Al-Bidaya wa an-Nihaya'}, {ar:'كان ألب أرسلانَ معروفاً بعدلِه وتقواه، ووزيرُه نظامُ الملكِ من أحكمِ الوزراء — المصدر: سير أعلام النبلاء',en:'Alp Arslan was known for his justice and piety, and his vizier Nizam al-Mulk was among the wisest viziers — Source: Siyar A\u2019lam an-Nubala\u2019'} ],
+  },
+  { icon:'🕊️', scene:'throne', character:'👑',
+    title:{ ar:'الإمبراطورُ الأسيرُ بين يدَي السلطان', en:'The Captive Emperor Before the Sultan' },
+    pages:[
+      { scene:'throne', character:'⛓️',
+        text:{ ar:'بعدَ أن نصرَ اللهُ المسلمينَ في ملاذكرد، جاءَ الجنودُ بأسيرٍ عجيب: إنّه <b>إمبراطورُ الرومِ نفسُه، أرمانوس</b>! الرجلُ الذي خرجَ بجيشٍ ضخمٍ يريدُ القضاءَ على المسلمين، يقفُ الآنَ ذليلاً بين يدَي <b>السلطانِ ألب أرسلان</b>.<br><br>نظرَ إليه السلطانُ وسأله: <b>«لو كنتُ أنا الأسيرَ بين يديك، ماذا كنتَ تفعلُ بي؟»</b> فأجابَ الإمبراطورُ بصراحة: <b>«كلَّ قبيح!»</b> — أي كنتُ سأُعامِلُك أسوأَ معاملة. ثمّ سأله السلطان: <b>«فما تظنُّ أنّي فاعلٌ بك؟»</b>',
+          en:'After Allah granted the Muslims victory at Manzikert, the soldiers brought an astonishing captive: <b>the Byzantine emperor himself, Romanos</b>! The man who had marched with a huge army to destroy the Muslims now stood humbled before <b>Sultan Alp Arslan</b>.<br><br>The sultan looked at him and asked, <b>"If I were the captive before you, what would you have done to me?"</b> The emperor answered frankly, <b>"Every ugly thing!"</b> — meaning he would have treated him in the worst way. Then the sultan asked him, <b>"So what do you think I will do with you?"</b>' },
+        choice:{ q:{ar:'ماذا قال الإمبراطورُ إنّه كان سيفعلُ لو أسرَ السلطان؟',en:'What did the emperor say he would have done had he captured the sultan?'},
+          opts:[
+            { t:{ar:'كان سيُكرِمُه',en:'He would have honoured him'},c:false,exp:{ar:'لا، بل قال: كلَّ قبيح.',en:'No — he said: every ugly thing.'} },
+            { t:{ar:'كان سيفعلُ به كلَّ قبيح',en:'He would have done every ugly thing to him'},c:true,exp:{ar:'نعم، وهنا ستظهرُ أخلاقُ السلطانِ المسلم.',en:'Yes — and here the Muslim sultan’s character will shine.'} },
+            { t:{ar:'كان سيُطلِقُه فوراً',en:'He would have freed him at once'},c:false,exp:{ar:'لا، بل اعترفَ بأنّه كان سيُسيءُ إليه.',en:'No — he admitted he would have harmed him.'} },
+          ] } },
+      { scene:'desert', character:'🕊️',
+        text:{ ar:'قال الإمبراطور: «إمّا أن تقتلَني، وإمّا أن تُشهِّرَ بي في بلادِك، وإمّا أن <b>تعفوَ عنّي وتأخذَ الفداءَ وتُعيدَني</b>». فقال ألب أرسلان: <b>«ما عزمتُ على غيرِ العفوِ والفداء»</b>!<br><br>فعفا عنه، وعقدَ معه <b>صلحاً</b>، وأكرمه، ثمّ أطلقه وأرسلَ معه من يوصِلُه إلى بلادِه آمناً. لقد كان قادراً على الانتقام، لكنّه اختارَ <b>العفوَ والكرم</b>. علّمنا ألب أرسلان أنّ <b>القوّةَ الحقيقيّةَ أن تعفوَ وأنت قادر</b>، وأنّ المسلمَ يُعامِلُ الناسَ بأخلاقِه هو، لا بأخلاقِهم.',
+          en:'The emperor said, "Either you kill me, or you parade me in disgrace through your lands, or you <b>pardon me, take a ransom, and send me back</b>." Alp Arslan said, <b>"I have resolved on nothing but pardon and ransom!"</b><br><br>So he pardoned him, made <b>a peace treaty</b> with him, treated him generously, then released him and sent men with him to escort him safely to his land. He was able to take revenge, but he chose <b>forgiveness and generosity</b>. Alp Arslan taught us that <b>true strength is to forgive when you are able</b>, and that a Muslim treats people with his own good character, not with theirs.' },
+        choice:{ q:{ar:'ماذا اختارَ ألب أرسلان أن يفعلَ بالإمبراطور؟',en:'What did Alp Arslan choose to do with the emperor?'},
+          opts:[
+            { t:{ar:'أن ينتقمَ منه',en:'To take revenge on him'},c:false,exp:{ar:'لا، بل عفا مع قدرتِه.',en:'No — he forgave despite being able.'} },
+            { t:{ar:'أن يُشهِّرَ به في البلاد',en:'To parade him through the lands'},c:false,exp:{ar:'لا، بل أكرمه وأطلقه.',en:'No — he honoured and released him.'} },
+            { t:{ar:'أن يعفوَ عنه ويُطلِقَه بعدَ الصلحِ والفداء',en:'To pardon him and free him after peace and ransom'},c:true,exp:{ar:'أحسنت! العفوُ عندَ المقدرةِ من أعظمِ الأخلاق.',en:'Well done! Forgiving when able is among the greatest of manners.'} },
+          ] } },
+    ],
+    quiz:[
+      { q:{ar:'من الأسيرُ الذي وقفَ بين يدَي ألب أرسلان؟',en:'Who was the captive who stood before Alp Arslan?'},
+        opts:[ {t:{ar:'إمبراطورُ الرومِ أرمانوس',en:'The Byzantine emperor Romanos'},c:true}, {t:{ar:'ملكُ القوط',en:'The Visigoth king'},c:false}, {t:{ar:'قائدُ المغول',en:'The Mongol commander'},c:false} ] },
+      { q:{ar:'ماذا قال ألب أرسلان بعدَ أن سمعَ الخياراتِ الثلاثة؟',en:'What did Alp Arslan say after hearing the three options?'},
+        opts:[ {t:{ar:'سأنتقمُ منك',en:'I will take revenge on you'},c:false}, {t:{ar:'ما عزمتُ على غيرِ العفوِ والفداء',en:'I resolved on nothing but pardon and ransom'},c:true}, {t:{ar:'ستبقى أسيراً للأبد',en:'You will stay captive forever'},c:false} ] },
+      { q:{ar:'ما الدرسُ الأهمُّ من هذه القصّة؟',en:'What is the most important lesson of this story?'},
+        opts:[ {t:{ar:'الانتقامُ حقٌّ دائماً',en:'Revenge is always right'},c:false}, {t:{ar:'القويُّ لا يعفو',en:'The strong never forgive'},c:false}, {t:{ar:'العفوُ عندَ المقدرةِ قوّةٌ حقيقيّة',en:'Forgiving when able is true strength'},c:true} ] },
+    ],
+    moral:{ar:'القوّةُ الحقيقيّةُ أن تعفوَ وأنت قادر، والمسلمُ يُعامِلُ الناسَ بأخلاقِه هو لا بأخلاقِهم.',en:'True strength is forgiving when you are able; a Muslim treats people with his own good character, not with theirs.'},
+    badge:{icon:'🕊️',title:{ar:'وِسامُ العفوِ عندَ المقدرة',en:'Badge of Forgiving When Able'}},
+    reflect:[ {ar:'لو أخطأَ في حقِّك صديقٌ ثمّ ندم، هل تعفو عنه؟',en:'If a friend wronged you and then regretted it, would you forgive him?'}, {ar:'لماذا يكونُ العفوُ أصعبَ وأعظمَ من الانتقام؟',en:'Why is forgiving harder and greater than revenge?'} ],
+    didYouKnow:[ {ar:'سألَ ألب أرسلانُ الإمبراطورَ الأسيرَ: ما كنتَ صانعاً بي؟ فقال: كلَّ قبيح، ثمّ عفا عنه وأخذَ الفداءَ وعقدَ معه الصلح — المصدر: الكامل في التاريخ لابن الأثير · البداية والنهاية',en:'Alp Arslan asked the captive emperor what he would have done to him; he said "every ugly thing", yet the sultan pardoned him, took a ransom and made peace — Source: Al-Kamil fi at-Tarikh (Ibn al-Athir) · Al-Bidaya wa an-Nihaya'}, {ar:'أطلقَ ألب أرسلانُ الإمبراطورَ بعدَ الصلح، وأحسنَ إليه، وبعثَ معه من يوصِلُه إلى مأمنِه — المصدر: البداية والنهاية لابن كثير',en:'Alp Arslan released the emperor after the peace, treated him well, and sent men to escort him to safety — Source: Al-Bidaya wa an-Nihaya (Ibn Kathir)'} ],
   },
 ];

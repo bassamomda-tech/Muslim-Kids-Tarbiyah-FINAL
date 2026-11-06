@@ -4,7 +4,7 @@
 window.HISN = window.HISN || {}; HISN.chapters = HISN.chapters || {};
 HISN.chapters.qadir = {
   id: 'qadir', era: 'heart', kind: 'name', icon: 'mountain',
-  name: { ar: 'القدير', en: 'The All-Powerful' },
+  name: { ar: 'القديرُ القادرُ المقتدر', en: 'The All-Powerful, the Able' },
   tag:  { ar: 'على كلِّ شيءٍ قدير', en: 'Powerful over all things' },
   accent: '#2E7D8A', accent2: '#4FA3B0',
   rooms: ['knowledge', 'story', 'memorize', 'activities', 'treasures'],
@@ -27,6 +27,7 @@ HISN.chapters.qadir = {
       { ar: 'يُحيي ويُميت، ويُعطي ويَمنع.', en: 'He gives life and death, gives and withholds.' },
       { ar: 'مَن عرفَ قدرةَ اللهِ لم يَخفْ إلا منه.', en: 'Whoever knows Allah’s power fears none but Him.' },
       { ar: 'لا نيأسُ أبداً، فاللهُ قادرٌ على كلِّ شيء.', en: 'We never despair — Allah is able to do all things.' },
+      { ar: 'ومن أسمائه <b>«القادر»</b> و<b>«المقتدر»</b>: قدرتُه تامّةٌ لا يُعجِزُه شيء، وفي الجنّة يكونُ المؤمنون <b>﴿عِندَ مَلِيكٍ مُّقْتَدِرٍ﴾</b> (القمر ٥٥).', en: 'Among His Names are <b>“Al-Qadir”</b> and <b>“Al-Muqtadir”</b>: His power is complete and nothing defeats Him. In Paradise the believers are <b>“in the presence of a Sovereign, Perfect in Ability”</b> (al-Qamar 55).' },
     ],
     ayah: { ar: '﴿ إِنَّ اللَّهَ عَلَىٰ كُلِّ شَيْءٍ قَدِيرٌ ﴾', ref: { ar: 'البقرة ٢٠', en: 'Al-Baqarah 20' } },
   },

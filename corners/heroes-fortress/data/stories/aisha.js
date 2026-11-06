@@ -1,4 +1,4 @@
-/* data/stories/aisha.js — Heroes · A'isha bint Abi Bakr — sources: صور من حياة الصحابة (الباشا) · إسلام ويب · الدرر السنية · صحيح البخاري ومسلم */
+/* data/stories/aisha.js — Heroes · A'isha bint Abi Bakr — sources: صور من حياة الصحابة (الباشا) · إسلام ويب · الدرر السنية · صحيح البخاري ومسلم · سنن أبي داود · مسند أحمد · سير أعلام النبلاء */
 window.HISN_STORIES = window.HISN_STORIES || {};
 HISN_STORIES.aisha = [
   { icon:'📚', scene:'mihrab', character:'🎓',
@@ -61,5 +61,57 @@ HISN_STORIES.aisha = [
     badge:{icon:'🛡️',title:{ar:'وِسامُ البراءةِ والصبر',en:'Badge of Innocence & Patience'}},
     reflect:[ {ar:'هل تتأكّدُ من الكلامِ قبلَ أن تنقلَه عن الناس؟',en:'Do you verify words before passing them on about people?'}, {ar:'كيف تصبرُ وتثقُ بالله إذا ظُلِمتَ؟',en:'How do you stay patient and trust Allah if you are wronged?'} ],
     didYouKnow:[ {ar:'حادثةُ الإفكِ وبراءةُ عائشةَ مفصّلةٌ في صحيحِ البخاري ونزلتْ فيها آياتٌ من سورةِ النور — المصدر: صحيح البخاري',en:'The incident of slander and A\u2019isha\u2019s innocence is detailed in Sahih al-Bukhari, and verses of Surat an-Nur were revealed about it — Source: Sahih al-Bukhari'}, {ar:'حذّرَ اللهُ في سورةِ النورِ من نشرِ الإشاعاتِ والخوضِ في أعراضِ الناس — المصدر: سورة النور',en:'In Surat an-Nur, Allah warned against spreading rumors and assailing people\u2019s honor — Source: Surat an-Nur'} ],
+  },
+  { icon:'🏃‍♀️', scene:'desert', character:'😄',
+    title:{ ar:'«هذه بتلك» — سباقٌ في الصحراء', en:'"This One for That One" — A Race in the Desert' },
+    pages:[
+      { scene:'desert', character:'😄',
+        text:{ ar:'خرجتْ <b>عائشةُ</b> مع النبيِّ ﷺ في سفرٍ من أسفارِه، وكانت يومئذٍ صغيرةً خفيفةَ الجسم. فقال النبيُّ ﷺ للناس: <b>«تقدّموا»</b>، فتقدّموا، ثمّ التفتَ إليها مبتسماً وقال: <b>«تعالَي حتى أُسابقَكِ!»</b>. فانطلقا يجريانِ في الصحراء، <b>فسبقتْه عائشةُ</b> على رِجلَيها! فسكتَ النبيُّ ﷺ ولم يقلْ شيئاً.<br><br>ومرّتِ السنون، وكبِرتْ عائشةُ وثقُلَ جسمُها ونسيتِ السباقَ الأوّل. فخرجتْ معه في سفرٍ آخر، فقال للناسِ مرّةً أخرى: «تقدّموا»، ثمّ قال: «تعالَي أُسابقْكِ». فتسابقا، <b>فسبقها النبيُّ ﷺ هذه المرّة</b>، فجعلَ يضحكُ ويقول: <b>«هذه بتلك!»</b> — أي: هذا الفوزُ مقابلَ فوزِكِ القديم! يا لَها من صورةٍ جميلة: أعظمُ رجلٍ في الدنيا، نبيُّ الأمّةِ وقائدُها، <b>يلاعبُ أهلَه ويمازحُهم ويُدخِلُ السرورَ عليهم</b>. فالبيتُ المسلمُ بيتُ رحمةٍ وفرحٍ ولطف.',
+          en:'<b>A’isha</b> went out with the Prophet ﷺ on one of his journeys, when she was young and light. The Prophet ﷺ told the people: <b>"Go on ahead,"</b> and they went ahead. Then he turned to her smiling and said: <b>"Come, let me race you!"</b> They ran across the desert, and <b>A’isha beat him</b> on foot! The Prophet ﷺ stayed quiet and said nothing.<br><br>Years passed; A’isha grew older and heavier and forgot the first race. She went with him on another journey, and again he told the people: "Go on ahead," then said: "Come, let me race you." They raced, and <b>this time the Prophet ﷺ won</b>. He began laughing and said: <b>"This one for that one!"</b> — this win for your old win! What a beautiful picture: the greatest man in the world, the Prophet and leader of the Ummah, <b>playing and joking with his family and bringing them joy</b>. A Muslim home is a home of mercy, joy, and gentleness.' },
+        choice:{ q:{ar:'ماذا قال النبيُّ ﷺ حين سبقَ عائشةَ في المرّةِ الثانية؟',en:'What did the Prophet ﷺ say when he beat A’isha the second time?'},
+          opts:[
+            { t:{ar:'«هذه بتلك»',en:'"This one for that one"'},c:true,exp:{ar:'نعم! كان يمازحُها ويذكّرُها بالسباقِ الأوّلِ ضاحكاً.',en:'Yes! He was joking and reminding her of the first race, laughing.'} },
+            { t:{ar:'«لا تُسابقيني أبداً»',en:'"Never race me again"'},c:false,exp:{ar:'لا، بل كان يحبُّ ملاعبتَها وإسعادَها.',en:'No — he loved playing with her and making her happy.'} },
+            { t:{ar:'لم يقلْ شيئاً',en:'He said nothing'},c:false,exp:{ar:'سكتَ في المرّةِ الأولى، أمّا الثانيةُ فضحكَ وقال: «هذه بتلك».',en:'He was silent the first time; the second time he laughed and said "This one for that one."'} },
+          ] } },
+    ],
+    quiz:[
+      { q:{ar:'من فازَ في السباقِ الأوّل؟',en:'Who won the first race?'},
+        opts:[ {t:{ar:'النبيُّ ﷺ',en:'The Prophet ﷺ'},c:false}, {t:{ar:'عائشة',en:'A’isha'},c:true}, {t:{ar:'لم يفزْ أحد',en:'No one won'},c:false} ] },
+      { q:{ar:'لماذا قال النبيُّ ﷺ للناسِ «تقدّموا»؟',en:'Why did the Prophet ﷺ tell the people "Go on ahead"?'},
+        opts:[ {t:{ar:'ليتسابقَ مع أهلِه وحدَهما',en:'To race with his wife on their own'},c:true}, {t:{ar:'ليعاقبَهم',en:'To punish them'},c:false}, {t:{ar:'ليرجعوا إلى المدينة',en:'So they would go back to Madinah'},c:false} ] },
+      { q:{ar:'ماذا نتعلّمُ من هذه القصّة؟',en:'What do we learn from this story?'},
+        opts:[ {t:{ar:'الجدُّ الدائمُ بلا ضحك',en:'Always serious, never laughing'},c:false}, {t:{ar:'اللعبُ عيبٌ على الكبار',en:'Play is shameful for adults'},c:false}, {t:{ar:'ملاطفةُ الأهلِ وإسعادُهم من هديِ النبيِّ ﷺ',en:'Being gentle with family and making them happy is the Prophet’s ﷺ way'},c:true} ] },
+    ],
+    moral:{ar:'كان النبيُّ ﷺ أرحمَ الناسِ بأهلِه، يلاعبُهم ويمازحُهم، فالبيتُ السعيدُ يُبنى باللطفِ والمرح.',en:'The Prophet ﷺ was the kindest of people to his family, playing and joking with them; a happy home is built with gentleness and fun.'},
+    badge:{icon:'🏃‍♀️',title:{ar:'وِسامُ البيتِ السعيد',en:'Badge of the Happy Home'}},
+    reflect:[ {ar:'متى لعبتَ آخرَ مرّةٍ مع أهلِك وأدخلتَ السرورَ عليهم؟',en:'When did you last play with your family and bring them joy?'}, {ar:'إذا خسرتَ في لعبةٍ، هل تبتسمُ وتتقبّلُ كما فعلتْ عائشة؟',en:'When you lose a game, do you smile and accept it as A’isha did?'} ],
+    didYouKnow:[ {ar:'حديثُ السباقِ رواه أبو داود (٢٥٧٨) وصحّحه الألباني، ورواه أحمد بزيادةِ «تقدّموا» — المصدر: سنن أبي داود ومسند أحمد',en:'The race hadith is narrated by Abu Dawud (2578), graded sahih by al-Albani, and by Ahmad with the addition "Go on ahead" — Source: Sunan Abi Dawud & Musnad Ahmad'}, {ar:'قال النبيُّ ﷺ: «خيرُكم خيرُكم لأهلِه، وأنا خيرُكم لأهلي» — المصدر: سنن الترمذي (٣٨٩٥)',en:'The Prophet ﷺ said: "The best of you is the best to his family, and I am the best of you to my family" — Source: Sunan at-Tirmidhi (3895)'} ],
+  },
+  { icon:'🪙', scene:'madinah', character:'🍞',
+    title:{ ar:'مئةُ ألفٍ في يومٍ وهي صائمة', en:'A Hundred Thousand in a Day — While Fasting' },
+    pages:[
+      { scene:'madinah', character:'🍞',
+        text:{ ar:'بعدَ وفاةِ النبيِّ ﷺ، أرسلَ <b>عبدُ الله بنُ الزبير</b> — ابنُ أختِها أسماء — إلى خالتِه <b>عائشةَ</b> مالاً عظيماً في <b>كيسَين كبيرَين</b>، فيهما أكثرُ من <b>مئةِ ألفِ درهم</b>! وكانت عائشةُ يومَها <b>صائمة</b>. فماذا فعلتْ بهذه الثروة؟ هل خبّأتْها؟ هل اشترتْ بها ثياباً وقصوراً؟<br><br>لا! دعتْ بطبقٍ، وجلستْ <b>تقسمُ المالَ بين الناسِ والفقراء</b> بيدِها، حتى غربتِ الشمسُ و<b>لم يبقَ عندها منه درهمٌ واحد</b>! فلمّا جاءَ وقتُ الإفطارِ قالت لجاريتِها: هاتي فطوري. فجاءتْها <b>بخبزٍ وزيت</b>! فقالت لها أمُّ ذرّةَ التي كانت تخدمُها: أما استطعتِ ممّا قسمتِ اليومَ أن تشتري لنا لحماً بدرهمٍ نُفطِرُ عليه؟ فقالت عائشةُ بكلِّ بساطة: <b>«لو كنتِ ذكّرتِني لفعلت»</b>. لقد نسيتْ نفسَها تماماً وهي تُفرِّحُ الناس! هكذا تعلّمتْ في بيتِ النبوّة: <b>الدنيا في اليدِ لا في القلب</b>.',
+          en:'After the Prophet’s ﷺ death, <b>Abdullah ibn az-Zubayr</b> — son of her sister Asma — sent his aunt <b>A’isha</b> a huge sum in <b>two large sacks</b>, more than <b>a hundred thousand dirhams</b>! A’isha was <b>fasting</b> that day. What did she do with this fortune? Hide it? Buy clothes and palaces?<br><br>No! She called for a tray and sat <b>dividing the money among the people and the poor</b> with her own hands, until the sun set and <b>not a single dirham of it was left</b>! When it was time to break her fast she told her maid: bring my iftar. She brought <b>bread and oil</b>! Umm Dharra, who served her, said: Could you not, from all you gave away today, have bought us meat for a dirham to break our fast with? A’isha said simply: <b>"Had you reminded me, I would have."</b> She had completely forgotten herself while making others happy! This is what she learned in the house of Prophethood: <b>the world in your hand, not in your heart</b>.' },
+        choice:{ q:{ar:'على ماذا أفطرتْ عائشةُ بعدَ أن قسمتِ المال؟',en:'What did A’isha break her fast with after giving away the money?'},
+          opts:[
+            { t:{ar:'على لحمٍ وحلوى',en:'Meat and sweets'},c:false,exp:{ar:'لا، لم يبقَ عندها شيءٌ تشتري به اللحم.',en:'No — nothing was left to buy meat with.'} },
+            { t:{ar:'على خبزٍ وزيت',en:'Bread and oil'},c:true,exp:{ar:'نعم! أعطتِ الناسَ كلَّ شيءٍ ورضيتْ بالقليل.',en:'Yes! She gave people everything and was content with little.'} },
+            { t:{ar:'لم تكنْ صائمة',en:'She was not fasting'},c:false,exp:{ar:'بل كانت صائمةً وهي تقسمُ المال.',en:'She was fasting while she divided the money.'} },
+          ] } },
+    ],
+    quiz:[
+      { q:{ar:'من أرسلَ المالَ إلى عائشة؟',en:'Who sent the money to A’isha?'},
+        opts:[ {t:{ar:'ابنُ أختِها عبدُ الله بنُ الزبير',en:'Her nephew Abdullah ibn az-Zubayr'},c:true}, {t:{ar:'تاجرٌ غريب',en:'A stranger merchant'},c:false}, {t:{ar:'ملكُ الروم',en:'The king of Rome'},c:false} ] },
+      { q:{ar:'كم بقيَ عند عائشةَ من المالِ عند المغرب؟',en:'How much money did A’isha have left at sunset?'},
+        opts:[ {t:{ar:'النصف',en:'Half'},c:false}, {t:{ar:'ولا درهمٌ واحد',en:'Not a single dirham'},c:true}, {t:{ar:'كلُّه',en:'All of it'},c:false} ] },
+      { q:{ar:'ماذا نتعلّمُ من عائشة؟',en:'What do we learn from A’isha?'},
+        opts:[ {t:{ar:'جمعُ المالِ هو الأهم',en:'Collecting money matters most'},c:false}, {t:{ar:'الصدقةُ تُنقِصُ الخير',en:'Charity lessens good'},c:false}, {t:{ar:'الكرمُ والزهدُ وتفريحُ المحتاجين',en:'Generosity, simplicity, and bringing joy to the needy'},c:true} ] },
+    ],
+    moral:{ar:'المؤمنُ يجعلُ المالَ في يدِه لا في قلبِه، ويفرحُ بإسعادِ الناسِ أكثرَ من فرحِه بنفسِه.',en:'The believer keeps wealth in his hand, not his heart, and is happier making others happy than pleasing himself.'},
+    badge:{icon:'🪙',title:{ar:'وِسامُ اليدِ السخيّة',en:'Badge of the Generous Hand'}},
+    reflect:[ {ar:'لو أُعطيتَ مالاً كثيراً اليوم، ماذا تفعلُ به؟',en:'If you were given a lot of money today, what would you do with it?'}, {ar:'هل تشاركُ ما تحبُّ من طعامٍ أو ألعابٍ مع غيرِك؟',en:'Do you share the food or toys you love with others?'} ],
+    didYouKnow:[ {ar:'قصّةُ قسمةِ عائشةَ للمالِ وهي صائمةٌ وفطرِها على خبزٍ وزيت — المصدر: سير أعلام النبلاء للذهبي (ترجمة عائشة)',en:'The story of A’isha dividing the money while fasting and breaking her fast on bread and oil — Source: Siyar A’lam an-Nubala by adh-Dhahabi (biography of A’isha)'}, {ar:'قال عروةُ بنُ الزبير: رأيتُ عائشةَ تتصدّقُ بسبعينَ ألفاً وإنّها لترقعُ جانبَ درعِها — المصدر: سير أعلام النبلاء',en:'Urwa ibn az-Zubayr said: I saw A’isha give away seventy thousand in charity while patching the side of her own garment — Source: Siyar A’lam an-Nubala'} ],
   },
 ];

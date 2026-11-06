@@ -1,4 +1,4 @@
-/* data/stories/awf.js — Heroes · Abdurrahman ibn Awf — sources: صور من حياة الصحابة (الباشا) · إسلام ويب · الدرر السنية · البداية والنهاية */
+/* data/stories/awf.js — Heroes · Abdurrahman ibn Awf — sources: صور من حياة الصحابة (الباشا) · إسلام ويب · الدرر السنية · البداية والنهاية · صحيح البخاري · صحيح مسلم */
 window.HISN_STORIES = window.HISN_STORIES || {};
 HISN_STORIES.awf = [
   { icon:'🤝', scene:'madinah', character:'💼',
@@ -52,5 +52,57 @@ HISN_STORIES.awf = [
     badge:{icon:'🐫',title:{ar:'وِسامُ القافلة',en:'Badge of the Caravan'}},
     reflect:[ {ar:'حين تنالُ نعمةً كبيرة، هل تتذكّرُ المحتاجين؟',en:'When you receive a great blessing, do you remember the needy?'}, {ar:'كيف تجعلُ ما تملكُه وسيلةً للخير؟',en:'How do you make what you own a means for good?'} ],
     didYouKnow:[ {ar:'رُوِيَ أنّ عبد الرحمنِ أوصى بمالٍ عظيمٍ في سبيلِ الله، وتصدّقَ في حياتِه بأموالٍ طائلةٍ على أمّهاتِ المؤمنين — المصدر: البداية والنهاية',en:'It is reported Abdurrahman bequeathed great wealth for Allah\'s sake and in his life gave vast sums to the Mothers of the Believers — Source: Al-Bidaya wa an-Nihaya'}, {ar:'مع غناه كان لا يتميّزُ عن عبيدِه في مجلسِه تواضعاً — المصدر: صور من حياة الصحابة',en:'Despite his wealth, he was so humble he could not be told apart from his servants in his gathering — Source: Suwar min Hayat as-Sahaba'} ],
+  },
+  { icon:'🕌', scene:'desert', character:'🌄',
+    title:{ ar:'النبيُّ ﷺ يُصلّي خلفَه', en:'The Prophet ﷺ Prays Behind Him' },
+    pages:[
+      { scene:'desert', character:'🌄',
+        text:{ ar:'في <b>غزوةِ تبوك</b> ذهبَ النبيُّ ﷺ قبلَ الفجرِ لقضاءِ حاجتِه، ومعه <b>المغيرةُ بنُ شعبة</b> يحملُ له الماء. فتوضّأ ومسحَ على خُفّيه، ثم رجعا، فإذا الناسُ قد <b>قدّموا عبدَ الرحمنِ بنَ عوفٍ يُصلّي بهم الفجر</b> لئلّا يخرجَ وقتُ الصلاة، وقد صلّى بهم ركعة!<br><br>أرادَ المغيرةُ أن يُنبّهَ عبدَ الرحمنِ ليتأخّرَ عن مكانِه، فقال النبيُّ ﷺ: <b>«دَعْه»</b>. ثم دخلَ النبيُّ ﷺ في الصفّ و<b>صلّى خلفَ عبدِ الرحمنِ الركعةَ الثانية</b>! فلمّا سلّمَ عبدُ الرحمن، قامَ النبيُّ ﷺ فأتمَّ الركعةَ التي فاتته، ففزعَ المسلمونَ وأكثروا التسبيح.<br><br>فلمّا قضى النبيُّ ﷺ صلاتَه أقبلَ عليهم وقال: <b>«أحسنتُم»</b> — أو قال: «قد أصبتُم» — يمدحُهم أنْ صلّوا الصلاةَ لوقتِها. فيا له من شرفٍ لعبدِ الرحمن: أن يكونَ <b>إماماً يُصلّي خلفَه رسولُ اللهِ ﷺ</b>!',
+          en:'During <b>the expedition of Tabuk</b>, the Prophet ﷺ went out before Fajr to relieve himself, with <b>al-Mughira ibn Shu\'ba</b> carrying water for him. He made wudu and wiped over his leather socks, then they returned — and found that the people had <b>put Abdurrahman ibn Awf forward to lead them in Fajr</b> so the prayer time would not pass, and he had already prayed one unit with them!<br><br>Al-Mughira wanted to alert Abdurrahman to step back, but the Prophet ﷺ said: <b>"Leave him."</b> Then the Prophet ﷺ joined the row and <b>prayed the second unit behind Abdurrahman</b>! When Abdurrahman ended the prayer, the Prophet ﷺ stood to complete the unit he had missed. The Muslims were alarmed and said SubhanAllah many times.<br><br>When the Prophet ﷺ finished his prayer, he turned to them and said: <b>"You did well"</b> — or "You were right" — praising them for praying on time. What an honour for Abdurrahman: to be <b>an imam behind whom the Messenger of Allah ﷺ prayed</b>!' },
+        choice:{ q:{ar:'لماذا مدحَ النبيُّ ﷺ الصحابةَ بقولِه «أحسنتُم»؟',en:'Why did the Prophet ﷺ praise the companions with "You did well"?'},
+          opts:[
+            { t:{ar:'لأنّهم صلّوا الصلاةَ في وقتِها',en:'Because they prayed the prayer on time'},c:true,exp:{ar:'نعم! الصلاةُ في وقتِها من أحبِّ الأعمالِ إلى الله.',en:'Yes! Praying on time is among the deeds most beloved to Allah.'} },
+            { t:{ar:'لأنّهم تركوا الصلاةَ حتى يرجع',en:'Because they left the prayer until he returned'},c:false,exp:{ar:'لا، بل لم يؤخّروها، وقدّموا عبدَ الرحمنِ ليصلّيَ بهم.',en:'No — they did not delay it; they put Abdurrahman forward to lead.'} },
+            { t:{ar:'لأنّهم صلّوا بسرعة',en:'Because they prayed quickly'},c:false,exp:{ar:'لا، المدحُ كان على المحافظةِ على الوقت.',en:'No — the praise was for keeping to the time.'} },
+          ] } },
+    ],
+    quiz:[
+      { q:{ar:'مَن صلّى إماماً بالناسِ في هذه القصّة؟',en:'Who led the people in prayer in this story?'},
+        opts:[ {t:{ar:'المغيرةُ بنُ شعبة',en:'Al-Mughira ibn Shu\'ba'},c:false}, {t:{ar:'عبدُ الرحمنِ بنُ عوف',en:'Abdurrahman ibn Awf'},c:true}, {t:{ar:'بلال',en:'Bilal'},c:false} ] },
+      { q:{ar:'ماذا قال النبيُّ ﷺ حين أرادَ المغيرةُ تنبيهَ عبدِ الرحمن؟',en:'What did the Prophet ﷺ say when al-Mughira wanted to alert Abdurrahman?'},
+        opts:[ {t:{ar:'«دَعْه»',en:'"Leave him"'},c:true}, {t:{ar:'«أوقِفْه»',en:'"Stop him"'},c:false}, {t:{ar:'«أعِدِ الصلاة»',en:'"Repeat the prayer"'},c:false} ] },
+      { q:{ar:'أيُّ صلاةٍ كانت؟',en:'Which prayer was it?'},
+        opts:[ {t:{ar:'العصر',en:'Asr'},c:false}, {t:{ar:'العشاء',en:'Isha'},c:false}, {t:{ar:'الفجر',en:'Fajr'},c:true} ] },
+    ],
+    moral:{ar:'المحافظةُ على الصلاةِ في وقتِها عملٌ يُحبُّه اللهُ ويمدحُه رسولُه ﷺ.',en:'Guarding the prayer on time is a deed Allah loves and His Messenger ﷺ praised.'},
+    badge:{icon:'🕌',title:{ar:'وِسامُ الإمامِ المؤتمَن',en:'Badge of the Trusted Imam'}},
+    reflect:[ {ar:'هل تُصلّي الصلاةَ في أوّلِ وقتِها؟',en:'Do you pray at the start of the prayer time?'}, {ar:'ماذا نتعلّمُ من تواضعِ النبيِّ ﷺ حين صلّى خلفَ أحدِ أصحابِه؟',en:'What do we learn from the Prophet\'s ﷺ humility in praying behind a companion?'} ],
+    didYouKnow:[ {ar:'قصّةُ صلاةِ النبيِّ ﷺ خلفَ عبدِ الرحمنِ بنِ عوفٍ في تبوك رواها مسلمٌ في صحيحه (٢٧٤) عن المغيرةِ بنِ شعبة',en:'The story of the Prophet ﷺ praying behind Abdurrahman ibn Awf at Tabuk is in Sahih Muslim (274) from al-Mughira ibn Shu\'ba'}, {ar:'وفي الحديثِ نفسِه أنّ النبيَّ ﷺ مسحَ على خُفّيه في ذلك السفر، وكانت تبوكُ في السنةِ التاسعة — رواه مسلم (٢٧٤)',en:'The same hadith mentions the Prophet ﷺ wiping over his leather socks on that journey; Tabuk was in the ninth year — Muslim (274)'} ],
+  },
+  { icon:'⚖️', scene:'mosque', character:'🤝',
+    title:{ ar:'زاهدٌ في الخلافةِ يومَ الشورى', en:'Turning Away from Leadership on the Day of Shura' },
+    pages:[
+      { scene:'mosque', character:'🤝',
+        text:{ ar:'لمّا طُعِنَ <b>عمرُ بنُ الخطّاب</b> جعلَ أمرَ الخلافةِ <b>شورى بين ستّةٍ</b> من كبارِ الصحابة، منهم <b>عبدُ الرحمنِ بنُ عوف</b>. فاجتمعوا، فقال عبدُ الرحمن: <b>«لستُ بالذي أُنافسُكم على هذا الأمر»</b> — أي لا أريدُ الخلافةَ لنفسي — ولكن إن شئتم اخترتُ لكم منكم. فرضوا جميعاً أن يكونَ هو مَن يختار، ثقةً بأمانتِه وعدلِه.<br><br>فقامَ عبدُ الرحمنِ بالمهمّةِ بأمانةٍ عجيبة: ظلَّ <b>ثلاثَ ليالٍ لا ينامُ إلا قليلاً</b>، يستشيرُ الناسَ ويسألُهم. وذكرَ ابنُ كثيرٍ أنّه سألَ الكبارَ والصغار، حتى سألَ <b>النساءَ في بيوتِهنّ، والصبيانَ في الكتاتيب، والمسافرينَ القادمين</b>، فوجدَ الناسَ لا يعدلونَ بعثمانَ أحداً.<br><br>ثم اجتمعَ الناسُ عندَ المنبرِ بعدَ صلاةِ الصبح، فبايعَ <b>عثمانَ</b>، فبايعه عليٌّ والمهاجرونَ والأنصارُ والمسلمون. كان يستطيعُ أن يطلبَ الخلافةَ لنفسِه، لكنّه <b>زهِدَ فيها</b> وحملَ الأمانةَ بإخلاص، فاجتمعتِ الأمّةُ ولم تتفرّق.',
+          en:'When <b>Umar ibn al-Khattab</b> was stabbed, he made the matter of the caliphate <b>a consultation among six</b> senior companions, among them <b>Abdurrahman ibn Awf</b>. They gathered, and Abdurrahman said: <b>"I am not one who will compete with you for this matter"</b> — meaning he did not want the caliphate for himself — but if you wish, I will choose for you from among you. They all agreed that he should choose, trusting his honesty and fairness.<br><br>Abdurrahman carried out the task with amazing trustworthiness: for <b>three nights he barely slept</b>, consulting and asking people. Ibn Kathir mentions he asked old and young — even <b>women in their homes, boys in their Qur\'an schools, and travellers arriving</b> — and found that people placed no one above Uthman.<br><br>Then, with the people gathered at the minbar after Fajr, he pledged allegiance to <b>Uthman</b>, and Ali, the Muhajirun, the Ansar and the Muslims pledged to him. He could have sought the caliphate for himself, but he <b>turned away from it</b> and carried the trust sincerely, so the Ummah stayed united.' },
+        choice:{ q:{ar:'لماذا رضيَ أهلُ الشورى أن يختارَ عبدُ الرحمنِ لهم؟',en:'Why did the council agree to let Abdurrahman choose for them?'},
+          opts:[
+            { t:{ar:'لأنّه كان أغنى الصحابة',en:'Because he was the richest companion'},c:false,exp:{ar:'لا، بل لأمانتِه وعدلِه وزهدِه في الأمرِ لنفسِه.',en:'No — because of his honesty, fairness and not wanting it for himself.'} },
+            { t:{ar:'لأنّه أخرجَ نفسَه منها وعُرِفَ بالأمانةِ والعدل',en:'Because he withdrew himself and was known for honesty and fairness'},c:true,exp:{ar:'نعم! مَن لا يطلبُ المنصبَ لنفسِه يثقُ الناسُ باختيارِه.',en:'Yes! People trust the choice of someone who does not seek the position himself.'} },
+            { t:{ar:'لأنّه أكبرُهم سنّاً فقط',en:'Only because he was the oldest'},c:false,exp:{ar:'لا، السببُ أمانتُه وتجرّدُه.',en:'No — the reason was his trustworthiness and selflessness.'} },
+          ] } },
+    ],
+    quiz:[
+      { q:{ar:'كم كان عددُ أهلِ الشورى؟',en:'How many were on the council?'},
+        opts:[ {t:{ar:'ثلاثة',en:'Three'},c:false}, {t:{ar:'عشرة',en:'Ten'},c:false}, {t:{ar:'ستّة',en:'Six'},c:true} ] },
+      { q:{ar:'مَن سألَ عبدُ الرحمنِ في مشاورتِه؟',en:'Whom did Abdurrahman ask in his consultation?'},
+        opts:[ {t:{ar:'الكبارَ والصغارَ حتى الصبيانَ والمسافرين',en:'Old and young, even boys and travellers'},c:true}, {t:{ar:'لم يسألْ أحداً',en:'He asked no one'},c:false}, {t:{ar:'أهلَ بيتِه فقط',en:'Only his family'},c:false} ] },
+      { q:{ar:'مَن بايعَ عبدُ الرحمنِ خليفةً؟',en:'Whom did Abdurrahman pledge to as caliph?'},
+        opts:[ {t:{ar:'نفسَه',en:'Himself'},c:false}, {t:{ar:'عثمانَ بنَ عفّان',en:'Uthman ibn Affan'},c:true}, {t:{ar:'ابنَه',en:'His son'},c:false} ] },
+    ],
+    moral:{ar:'مَن زهِدَ في المنصبِ وحملَ الأمانةَ بإخلاصٍ جمعَ اللهُ به القلوب.',en:'Whoever turns from position-seeking and carries the trust sincerely, Allah unites hearts through him.'},
+    badge:{icon:'⚖️',title:{ar:'وِسامُ الأمانةِ في الاختيار',en:'Badge of the Honest Choice'}},
+    reflect:[ {ar:'هل تستشيرُ غيرَك قبلَ أن تتّخذَ قراراً مهمّاً؟',en:'Do you consult others before making an important decision?'}, {ar:'كيف تختارُ قائدَ فريقِك في المدرسةِ بعدل؟',en:'How would you fairly choose your team leader at school?'} ],
+    didYouKnow:[ {ar:'قولُ عبدِ الرحمن «لستُ بالذي أُنافسُكم على هذا الأمر» وسهرُه ثلاثَ ليالٍ يستشيرُ الناس رواه البخاريّ (٧٢٠٧)',en:'Abdurrahman\'s words "I am not one to compete with you for this" and his three nights of consultation are in al-Bukhari (7207)'}, {ar:'ذكرَ ابنُ كثيرٍ أنّ عبدَ الرحمنِ سألَ حتى الصبيانَ في الكتاتيبِ والركبانَ القادمين — المصدر: البداية والنهاية',en:'Ibn Kathir mentions Abdurrahman asked even boys in Qur\'an schools and arriving riders — Source: Al-Bidaya wa an-Nihaya'} ],
   },
 ];

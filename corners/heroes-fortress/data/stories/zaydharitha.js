@@ -1,4 +1,4 @@
-/* data/stories/zaydharitha.js — Heroes · Zayd ibn Haritha — sources: صور من حياة الصحابة (الباشا) · إسلام ويب · الدرر السنية · البداية والنهاية */
+/* data/stories/zaydharitha.js — Heroes · Zayd ibn Haritha — sources: صور من حياة الصحابة (الباشا) · إسلام ويب · الدرر السنية · البداية والنهاية · صحيح البخاري ومسلم · تفسير القرطبي */
 window.HISN_STORIES = window.HISN_STORIES || {};
 HISN_STORIES.zaydharitha = [
   { icon:'❤️', scene:'madinah', character:'🤲',
@@ -61,5 +61,185 @@ HISN_STORIES.zaydharitha = [
     badge:{icon:'⚔️',title:{ar:'وِسامُ الثباتِ حتى النهاية',en:'Badge of Steadfastness to the End'}},
     reflect:[ {ar:'هل تثبُتُ على الحقِّ حين يكونُ صعباً؟',en:'Do you stand firm on the truth when it is hard?'}, {ar:'كيف تُظهِرُ وفاءَك لمبادئِك؟',en:'How do you show loyalty to your principles?'} ],
     didYouKnow:[ {ar:'بكى النبيُّ ﷺ على زيدٍ حين استُشهِدَ في مؤتةَ حزناً على حبيبِه — المصدر: البداية والنهاية',en:'The Prophet ﷺ wept for Zayd when he was martyred at Mu\u2019tah, grieving for his beloved — Source: Al-Bidaya wa an-Nihaya'}, {ar:'كانت مؤتةُ أوّلَ لقاءٍ كبيرٍ بين المسلمينَ والرومِ سنةَ ثمانٍ للهجرة — المصدر: الدرر السنية',en:'Mu\u2019tah was the first major encounter between the Muslims and the Romans, in the 8th year of Hijra — Source: ad-Durar as-Saniyya'} ],
+  },
+  {
+    "icon": "📖",
+    "scene": "mosque",
+    "character": "🌟",
+    "title": {
+      "ar": "اسمٌ يُتلى في القرآن",
+      "en": "A Name Recited in the Qur'an"
+    },
+    "pages": [
+      {
+        "scene": "mosque",
+        "character": "🌟",
+        "text": {
+          "ar": "كان الناسُ في مكّةَ والمدينةِ يُنادون <b>زيدَ بنَ حارثة</b> باسمِ <b>«زيدِ بنِ محمّد»</b>، لأنّ النبيَّ ﷺ تبنّاه وأحبَّه حبّاً شديداً. ثمّ أنزلَ اللهُ تعالى: <b>﴿ادْعُوهُمْ لِآبَائِهِمْ هُوَ أَقْسَطُ عِنْدَ اللَّهِ﴾</b>، فعادَ يُدعى «زيدَ بنَ حارثة» نسبةً إلى أبيه، طاعةً لأمرِ الله.<br><br>ربّما ظنَّ بعضُ الناسِ أنّ زيداً خسرَ شرفاً كبيراً! لكنّ اللهَ أكرمَه بشيءٍ أعظم: <b>ذكرَ اسمَه صريحاً في القرآنِ الكريم</b> في سورةِ الأحزاب (الآية ٣٧)، فصارَ <b>الصحابيَّ الوحيدَ الذي ذُكِرَ اسمُه في القرآن</b>! ووصفه اللهُ في الآيةِ نفسِها بأنّه <b>﴿لِلَّذِي أَنْعَمَ اللَّهُ عَلَيْهِ وَأَنْعَمْتَ عَلَيْهِ﴾</b> — أنعمَ اللهُ عليه بالإسلام، وأنعمَ عليه النبيُّ ﷺ بالعتقِ والمحبّة.<br><br>فكلّما قرأَ مسلمٌ سورةَ الأحزاب — في المشرقِ أو المغرب، اليومَ وإلى يومِ القيامة — <b>تلا اسمَ زيدٍ</b>. هكذا يُعوِّضُ اللهُ من أطاعه خيراً ممّا تركَه.",
+          "en": "People in Makkah and Madinah used to call <b>Zayd ibn Haritha</b> <b>\"Zayd ibn Muhammad\"</b>, because the Prophet ﷺ had adopted him and loved him dearly. Then Allah revealed: <b>\"Call them by their fathers; that is more just in the sight of Allah\"</b> (33:5), so he was called \"Zayd ibn Haritha\" after his father, in obedience to Allah's command.<br><br>Some might think Zayd lost a great honour! But Allah honoured him with something greater: <b>He mentioned his name clearly in the Noble Qur'an</b>, in Surat al-Ahzab (verse 37), making him <b>the only Companion named in the Qur'an</b>! In the same verse Allah described him as <b>\"the one on whom Allah bestowed favour and you bestowed favour\"</b> — Allah blessed him with Islam, and the Prophet ﷺ blessed him with freedom and love.<br><br>Whenever a Muslim recites Surat al-Ahzab — east or west, today and until the Day of Judgement — <b>he recites Zayd's name</b>. This is how Allah replaces what one gives up for Him with something better."
+        },
+        "choice": {
+          "q": {
+            "ar": "بماذا أكرمَ اللهُ زيداً بعدَ أن عادَ يُدعى «ابنَ حارثة»؟",
+            "en": "How did Allah honour Zayd after he was called \"son of Haritha\" again?"
+          },
+          "opts": [
+            {
+              "t": {
+                "ar": "أعطاه مالاً كثيراً",
+                "en": "He gave him much wealth"
+              },
+              "c": false,
+              "exp": {
+                "ar": "لا، بل أكرمه بما هو أعظمُ من المال.",
+                "en": "No — He honoured him with something greater than wealth."
+              }
+            },
+            {
+              "t": {
+                "ar": "جعلَه ملِكاً",
+                "en": "He made him a king"
+              },
+              "c": false,
+              "exp": {
+                "ar": "لا، بل أكرمَه بذكرِ اسمِه في القرآن.",
+                "en": "No — He honoured him by naming him in the Qur'an."
+              }
+            },
+            {
+              "t": {
+                "ar": "ذكرَ اسمَه في القرآنِ يُتلى إلى يومِ القيامة",
+                "en": "He mentioned his name in the Qur'an, recited until the Day of Judgement"
+              },
+              "c": true,
+              "exp": {
+                "ar": "أحسنت! زيدٌ هو الصحابيُّ الوحيدُ المذكورُ باسمِه في القرآن.",
+                "en": "Well done! Zayd is the only Companion mentioned by name in the Qur'an."
+              }
+            }
+          ]
+        }
+      }
+    ],
+    "quiz": [
+      {
+        "q": {
+          "ar": "في أيِّ سورةٍ ذُكِرَ اسمُ زيد؟",
+          "en": "In which surah is Zayd's name mentioned?"
+        },
+        "opts": [
+          {
+            "t": {
+              "ar": "سورةُ البقرة",
+              "en": "Surat al-Baqara"
+            },
+            "c": false
+          },
+          {
+            "t": {
+              "ar": "سورةُ الأحزاب",
+              "en": "Surat al-Ahzab"
+            },
+            "c": true
+          },
+          {
+            "t": {
+              "ar": "سورةُ يوسف",
+              "en": "Surat Yusuf"
+            },
+            "c": false
+          }
+        ]
+      },
+      {
+        "q": {
+          "ar": "بماذا كان الناسُ يُنادون زيداً أوّلاً؟",
+          "en": "What did people first call Zayd?"
+        },
+        "opts": [
+          {
+            "t": {
+              "ar": "زيدَ بنَ محمّد",
+              "en": "Zayd ibn Muhammad"
+            },
+            "c": true
+          },
+          {
+            "t": {
+              "ar": "زيدَ الخير",
+              "en": "Zayd al-Khayr"
+            },
+            "c": false
+          },
+          {
+            "t": {
+              "ar": "زيدَ بنَ عمرو",
+              "en": "Zayd ibn 'Amr"
+            },
+            "c": false
+          }
+        ]
+      },
+      {
+        "q": {
+          "ar": "ماذا أنعمَ النبيُّ ﷺ على زيد؟",
+          "en": "What favour did the Prophet ﷺ bestow on Zayd?"
+        },
+        "opts": [
+          {
+            "t": {
+              "ar": "أعطاه قصراً",
+              "en": "He gave him a palace"
+            },
+            "c": false
+          },
+          {
+            "t": {
+              "ar": "علّمه التجارة",
+              "en": "He taught him trade"
+            },
+            "c": false
+          },
+          {
+            "t": {
+              "ar": "أعتقَه وأحبَّه",
+              "en": "He freed him and loved him"
+            },
+            "c": true
+          }
+        ]
+      }
+    ],
+    "moral": {
+      "ar": "من تركَ شيئاً طاعةً لله عوّضه اللهُ خيراً منه، وأعظمُ الشرفِ أن يرضى اللهُ عنك.",
+      "en": "Whoever gives something up in obedience to Allah, Allah replaces it with better — and the greatest honour is Allah's pleasure with you."
+    },
+    "badge": {
+      "icon": "📖",
+      "title": {
+        "ar": "وِسامُ الاسمِ المذكور",
+        "en": "Badge of the Name Remembered"
+      }
+    },
+    "reflect": [
+      {
+        "ar": "هل تذكرُ شيئاً تركتَه طاعةً لله، فأعطاك اللهُ خيراً منه؟",
+        "en": "Can you remember something you gave up for Allah, and He gave you better?"
+      },
+      {
+        "ar": "اقرأْ آيةً من سورةِ الأحزاب مع والديك، وتذكّرْ قصّةَ زيد.",
+        "en": "Read a verse from Surat al-Ahzab with your parents, and remember Zayd's story."
+      }
+    ],
+    "didYouKnow": [
+      {
+        "ar": "قال ابنُ عمر: «ما كنّا ندعو زيدَ بنَ حارثةَ إلّا زيدَ بنَ محمّد حتى نزلَ القرآن: ﴿ادْعُوهُمْ لِآبَائِهِمْ﴾» — رواه البخاري (٤٧٨٢) ومسلم (٢٤٢٥)",
+        "en": "Ibn 'Umar said: \"We only used to call Zayd ibn Haritha 'Zayd ibn Muhammad' until the Qur'an was revealed: 'Call them by their fathers'\" — al-Bukhari (4782) and Muslim (2425)"
+      },
+      {
+        "ar": "ذكرَ العلماءُ كالسُّهيليِّ والقرطبيِّ أنّ زيداً هو الصحابيُّ الوحيدُ الذي سُمِّيَ في القرآن، وأنّ ذلك تعويضٌ له عن نسبتِه إلى النبيِّ ﷺ — المصدر: تفسير القرطبي (سورة الأحزاب)",
+        "en": "Scholars such as as-Suhayli and al-Qurtubi noted that Zayd is the only Companion named in the Qur'an, as compensation for losing his attribution to the Prophet ﷺ — Source: Tafsir al-Qurtubi (Surat al-Ahzab)"
+      }
+    ]
   },
 ];

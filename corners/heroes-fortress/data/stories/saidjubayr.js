@@ -1,4 +1,4 @@
-/* data/stories/saidjubayr.js — Successors · Sa'id ibn Jubayr — sources: صور من حياة التابعين · إسلام ويب · الدرر السنية · سير أعلام النبلاء */
+/* data/stories/saidjubayr.js — Successors · Sa'id ibn Jubayr — sources: صور من حياة التابعين · إسلام ويب · الدرر السنية · سير أعلام النبلاء · صحيح البخاري */
 window.HISN_STORIES = window.HISN_STORIES || {};
 HISN_STORIES.saidjubayr = [
   { icon:'📚', scene:'mosque', character:'📖',
@@ -52,5 +52,31 @@ HISN_STORIES.saidjubayr = [
     badge:{icon:'🪨',title:{ar:'وِسامُ العالمِ الشهيد',en:'Badge of the Martyred Scholar'}},
     reflect:[ {ar:'هل تثبُتُ على الحقِّ ولو واجهتَ من هو أقوى منك؟',en:'Do you hold to the truth even facing someone stronger than you?'}, {ar:'كيف تستمدُّ الشجاعةَ من خوفِك من اللهِ وحدَه؟',en:'How do you draw courage from fearing Allah alone?'} ],
     didYouKnow:[ {ar:'قصّةُ ثباتِ سعيدِ بنِ جبيرٍ أمامَ الحجّاجِ واستشهادِه مشهورةٌ عند أهلِ السير — المصدر: سير أعلام النبلاء',en:'The story of Sa\u2019id ibn Jubayr\u2019s steadfastness before al-Hajjaj and his martyrdom is famous among the biographers — Source: Siyar A\u2019lam an-Nubala\u2019'}, {ar:'رُوِيَ أنّ الحجّاجَ ماتَ بعدَ سعيدٍ بنحوِ خمسةَ عشرَ يوماً يُعذَّبُ بمرضٍ شديد — المصدر: البداية والنهاية',en:'It is reported al-Hajjaj died about fifteen days after Sa\u2019id, tormented by a severe illness — Source: Al-Bidaya wa an-Nihaya'} ],
+  },
+  { icon:'📖', scene:'kaaba', character:'🕋',
+    title:{ ar:'قلبٌ يعيشُ مع القرآن', en:'A Heart That Lived with the Qur’an' },
+    pages:[
+      { scene:'kaaba', character:'🕋',
+        text:{ ar:'كان <b>سعيدُ بنُ جبير</b> يحبُّ القرآنَ حبّاً عظيماً، يحفظُه ويفهمُه ويعيشُ معه ليلاً ونهاراً. وقد رُوِيَ عنه أنّه <b>دخلَ الكعبةَ المشرّفة</b>، فقامَ يُصلّي فيها، و<b>قرأَ القرآنَ كلَّه في ركعة</b>! وفي روايةٍ أخرى أنّه قال: «قرأتُ القرآنَ في ركعتَين في الكعبة». يا له من قلبٍ لا يشبعُ من كلامِ الله!<br><br>وكان سعيدٌ إذا قرأَ آياتِ الآخرةِ <b>بكى من خشيةِ الله</b>، ويُردِّدُ الآيةَ الواحدةَ مرّاتٍ يتدبّرُها. وكان في عامّةِ أيّامِه <b>يختمُ القرآنَ كلَّ ليلتَين</b>. لكنّ الإمامَ الذهبيَّ — وهو يروي هذه الأخبار — نبّهنا تنبيهاً مهمّاً: إنّ <b>السنّةَ ألّا يُختَمَ القرآنُ في أقلَّ من ثلاثة أيّام</b> كما أوصى النبيُّ ﷺ، ليفهمَه القارئُ ويتدبّرَه. فنتعلّمُ من سعيدٍ <b>حبَّ القرآنِ والشوقَ إليه</b>، ونتعلّمُ من النبيِّ ﷺ <b>الاعتدالَ والتدبّر</b>: قليلٌ تفهمُه وتداومُ عليه خيرٌ من كثيرٍ تتركُه.',
+          en:'<b>Sa’id ibn Jubayr</b> loved the Qur’an deeply — memorizing it, understanding it, and living with it night and day. It is reported that he <b>entered the noble Kaaba</b>, stood in prayer inside it, and <b>recited the whole Qur’an in a single rak’ah</b>! Another report says he said: "I recited the Qur’an in two rak’ahs inside the Kaaba." What a heart that never had enough of Allah’s words!<br><br>When Sa’id recited verses about the Hereafter, he <b>wept out of awe of Allah</b>, repeating a single verse many times to reflect on it. On most days he would <b>complete the Qur’an every two nights</b>. But Imam adh-Dhahabi — while reporting these accounts — gave us an important note: <b>the Sunnah is not to complete the Qur’an in less than three days</b>, as the Prophet ﷺ advised, so the reader understands and reflects. From Sa’id we learn <b>love and longing for the Qur’an</b>, and from the Prophet ﷺ we learn <b>balance and reflection</b>: a little you understand and keep up is better than a lot you abandon.' },
+        choice:{ q:{ar:'ما التنبيهُ الذي ذكره الإمامُ الذهبيُّ؟',en:'What note did Imam adh-Dhahabi give?'},
+          opts:[
+            { t:{ar:'أنّ السنّةَ ألّا يُختَمَ القرآنُ في أقلَّ من ثلاث',en:'That the Sunnah is not to complete the Qur’an in less than three days'},c:true,exp:{ar:'أحسنت! فالتدبّرُ والاعتدالُ من هديِ النبيِّ ﷺ.',en:'Well done! Reflection and balance are the Prophet’s ﷺ way.'} },
+            { t:{ar:'أنّ القرآنَ لا يُقرأُ أبداً',en:'That the Qur’an is never read'},c:false,exp:{ar:'لا، بل نقرؤه كلَّ يومٍ بتدبّر.',en:'No — we read it every day with reflection.'} },
+            { t:{ar:'أنّ السرعةَ أهمُّ من الفهم',en:'That speed matters more than understanding'},c:false,exp:{ar:'لا، بل الفهمُ والتدبّرُ أهمّ.',en:'No — understanding and reflection matter more.'} },
+          ] } },
+    ],
+    quiz:[
+      { q:{ar:'أين رُوِيَ أنّ سعيداً قرأَ القرآنَ كلَّه في صلاتِه؟',en:'Where is it reported that Sa’id recited the whole Qur’an in his prayer?'},
+        opts:[ {t:{ar:'في السوق',en:'In the market'},c:false}, {t:{ar:'داخلَ الكعبة',en:'Inside the Kaaba'},c:true}, {t:{ar:'في السفينة',en:'On a ship'},c:false} ] },
+      { q:{ar:'ماذا كان يفعلُ سعيدٌ إذا قرأَ آياتِ الآخرة؟',en:'What did Sa’id do when reciting verses about the Hereafter?'},
+        opts:[ {t:{ar:'يضحك',en:'He laughed'},c:false}, {t:{ar:'ينام',en:'He slept'},c:false}, {t:{ar:'يبكي ويُردِّدُ الآيةَ يتدبّرُها',en:'He wept and repeated the verse to reflect'},c:true} ] },
+      { q:{ar:'ما أفضلُ طريقةٍ لقراءةِ القرآنِ كما علّمنا النبيُّ ﷺ؟',en:'What is the best way to read the Qur’an as the Prophet ﷺ taught?'},
+        opts:[ {t:{ar:'بتدبّرٍ ومداومةٍ واعتدال',en:'With reflection, consistency, and balance'},c:true}, {t:{ar:'مرّةً في السنةِ فقط',en:'Only once a year'},c:false}, {t:{ar:'بسرعةٍ بلا فهم',en:'Fast with no understanding'},c:false} ] },
+    ],
+    moral:{ar:'حبُّ القرآنِ يملأُ القلبَ نوراً، وأحبُّ الأعمالِ إلى اللهِ أدومُها وإن قلّ، مع التدبّرِ والفهم.',en:'Love of the Qur’an fills the heart with light, and the deeds most beloved to Allah are the most consistent, even if small, with reflection and understanding.'},
+    badge:{icon:'📖',title:{ar:'وِسامُ صاحبِ القرآن',en:'Badge of the Qur’an Companion'}},
+    reflect:[ {ar:'كم آيةً تقرأُ كلَّ يوم؟ وهل تفهمُ معناها؟',en:'How many verses do you read each day? Do you understand their meaning?'}, {ar:'ما الآيةُ التي تحبُّ أن تُردِّدَها وتتدبّرَها؟',en:'Which verse do you love to repeat and reflect on?'} ],
+    didYouKnow:[ {ar:'خبرُ قراءةِ سعيدٍ القرآنَ في ركعةٍ (وفي روايةٍ ركعتين) داخلَ الكعبة، وتنبيهُ الذهبيِّ على السنّة — المصدر: سير أعلام النبلاء للذهبي',en:'The report of Sa’id reciting the Qur’an in one rak’ah (another report: two) inside the Kaaba, and adh-Dhahabi’s note on the Sunnah — Source: Siyar A’lam an-Nubala by adh-Dhahabi'}, {ar:'قال النبيُّ ﷺ لعبدِ اللهِ بنِ عمرو: «اقرأْه في سبعٍ ولا تزِدْ على ذلك» — المصدر: صحيح البخاري (٥٠٥٤)',en:'The Prophet ﷺ told Abdullah ibn Amr: "Recite it in seven days and do not go beyond that" — Source: Sahih al-Bukhari (5054)'} ],
   },
 ];

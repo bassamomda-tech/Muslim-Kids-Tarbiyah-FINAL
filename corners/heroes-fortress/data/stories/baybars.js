@@ -1,4 +1,4 @@
-/* data/stories/baybars.js — Leaders · Az-Zahir Baybars — sources: البداية والنهاية · إسلام ويب · الدرر السنية · كتب التاريخ */
+/* data/stories/baybars.js — Leaders · Az-Zahir Baybars — sources: البداية والنهاية · إسلام ويب · الدرر السنية · كتب التاريخ · السلوك للمقريزي */
 window.HISN_STORIES = window.HISN_STORIES || {};
 HISN_STORIES.baybars = [
   { icon:'💪', scene:'throne', character:'🦁',
@@ -52,5 +52,31 @@ HISN_STORIES.baybars = [
     badge:{icon:'🏗️',title:{ar:'وِسامُ الحمايةِ والبناء',en:'Badge of Protection & Building'}},
     reflect:[ {ar:'كيف توازِنُ بين حمايةِ ما تحبُّ وتطويرِه؟',en:'How do you balance protecting what you love with developing it?'}, {ar:'كيف تنفعُ من حولَك بعملٍ يبقى أثرُه؟',en:'How do you benefit those around you with work whose effect lasts?'} ],
     didYouKnow:[ {ar:'نظّمَ الظاهرُ بيبرس بريداً سريعاً (البريدَ السلطاني) ينقلُ الأخبارَ بين القاهرةِ ودمشقَ في نحوِ أربعةِ أيّام — المصدر: كتب التاريخ',en:'Az-Zahir Baybars organized a fast postal service carrying news between Cairo and Damascus in about four days — Source: history works'}, {ar:'اهتمَّ بيبرس بالعمرانِ فبنى المساجدَ والمدارسَ والقناطرَ وأصلحَ الطرق — المصدر: البداية والنهاية',en:'Baybars cared for building, constructing mosques, schools, aqueducts, and repairing roads — Source: Al-Bidaya wa an-Nihaya'} ],
+  },
+  { icon:'🕋', scene:'kaaba', character:'🪣',
+    title:{ ar:'السلطانُ يغسلُ الكعبةَ بيدِه', en:'The Sultan Washes the Kaaba With His Own Hands' },
+    pages:[
+      { scene:'kaaba', character:'🪣',
+        text:{ ar:'في سنةِ ٦٦٧هـ خرجَ <b>الظاهرُ بيبرس</b> إلى الحجّ. فزارَ المدينةَ المنوّرة، ثمّ أحرمَ ودخلَ مكّةَ في اليومِ الخامسِ من ذي الحجّة. وهناك لم يتصرّفْ كسلطانٍ عظيمٍ يحيطُ به الحرّاسُ والخدم، بل فعلَ شيئاً أدهشَ الناس!<br><br>لقد <b>غسلَ الكعبةَ المشرّفةَ بيدِه</b>، وكان <b>منفرداً بلا حراسة</b>، يطوفُ ويُصلّي ويسعى <b>بين الناسِ كواحدٍ منهم</b>. حتى إنّ بعضَ العامّةِ زاحموه وهم يحاولونَ النظرَ إلى الكعبة، فلم يغضبْ، بل كان <b>مسروراً</b> بذلك كلِّه. السلطانُ الذي كانتِ الجيوشُ ترهبُه، وقفَ أمامَ بيتِ اللهِ <b>عبداً متواضعاً</b> يخدمُه. علّمنا بيبرس أنّ <b>خدمةَ بيتِ اللهِ شرفٌ</b> يتسابقُ إليه الملوك، وأنّ الناسَ سواسيةٌ أمامَ الله.',
+          en:'In the year 667 AH, <b>az-Zahir Baybars</b> set out for Hajj. He visited Madinah, then entered ihram and came into Makkah on the fifth of Dhul-Hijjah. There he did not behave like a mighty sultan surrounded by guards and servants; he did something that amazed the people!<br><br>He <b>washed the noble Kaaba with his own hands</b>, and he was <b>alone, without guards</b>, circling, praying, and walking between Safa and Marwa <b>among the people as one of them</b>. Some common people even crowded him while trying to look at the Kaaba, yet he did not get angry; he was <b>happy</b> with all of it. The sultan whom armies feared stood before Allah’s House as <b>a humble servant</b> serving it. Baybars taught us that <b>serving Allah’s House is an honour</b> kings race toward, and that people are equal before Allah.' },
+        choice:{ q:{ar:'كيف كان بيبرس في مكّةَ أثناءَ حجِّه؟',en:'How was Baybars in Makkah during his Hajj?'},
+          opts:[
+            { t:{ar:'محاطاً بالحرّاسِ يُبعِدونَ الناس',en:'Surrounded by guards pushing people away'},c:false,exp:{ar:'لا، بل كان منفرداً بلا حراسة.',en:'No — he was alone without guards.'} },
+            { t:{ar:'متواضعاً بين الناس، وغسلَ الكعبةَ بيدِه',en:'Humble among the people, washing the Kaaba with his own hands'},c:true,exp:{ar:'أحسنت! أمامَ اللهِ كلُّنا عبادٌ سواسية.',en:'Well done! Before Allah we are all equal servants.'} },
+            { t:{ar:'غاضباً من زحامِ الناس',en:'Angry at the crowds'},c:false,exp:{ar:'لا، بل كان مسروراً.',en:'No — he was happy.'} },
+          ] } },
+    ],
+    quiz:[
+      { q:{ar:'في أيِّ سنةٍ حجَّ الظاهرُ بيبرس؟',en:'In which year did az-Zahir Baybars perform Hajj?'},
+        opts:[ {t:{ar:'٦٦٧هـ',en:'667 AH'},c:true}, {t:{ar:'١٧٩هـ',en:'179 AH'},c:false}, {t:{ar:'٤٦٣هـ',en:'463 AH'},c:false} ] },
+      { q:{ar:'ماذا فعلَ بيبرس بالكعبة؟',en:'What did Baybars do for the Kaaba?'},
+        opts:[ {t:{ar:'لم يقتربْ منها',en:'He did not go near it'},c:false}, {t:{ar:'أمرَ الخدمَ فقط',en:'He only ordered servants'},c:false}, {t:{ar:'غسلها بيدِه',en:'He washed it with his own hands'},c:true} ] },
+      { q:{ar:'كيف شعرَ بيبرس حين زاحمه الناس؟',en:'How did Baybars feel when people crowded him?'},
+        opts:[ {t:{ar:'غضبَ وعاقبهم',en:'He got angry and punished them'},c:false}, {t:{ar:'كان مسروراً',en:'He was happy'},c:true}, {t:{ar:'تركَ الحجّ',en:'He left the Hajj'},c:false} ] },
+    ],
+    moral:{ar:'خدمةُ بيتِ اللهِ شرفٌ عظيم، والمؤمنُ يتواضعُ في العبادةِ مهما علا منصبُه، فالناسُ أمامَ اللهِ سواسية.',en:'Serving Allah’s House is a great honour; a believer is humble in worship however high his rank, for people are equal before Allah.'},
+    badge:{icon:'🕋',title:{ar:'وِسامُ خادمِ البيت',en:'Badge of the Servant of the House'}},
+    reflect:[ {ar:'كيف تخدمُ مسجدَ حيِّك أو تُساعِدُ في نظافتِه؟',en:'How can you serve your local mosque or help keep it clean?'}, {ar:'لماذا ذهبَ بيبرس بلا حرّاس؟',en:'Why did Baybars go without guards?'} ],
+    didYouKnow:[ {ar:'حجَّ الظاهرُ بيبرس سنةَ ٦٦٧هـ، فغسلَ الكعبةَ بنفسِه منفرداً بلا حراسة، وكان يطوفُ ويسعى بين الناس — المصدر: الموسوعة التاريخية (الدرر السنية) · السلوك للمقريزي',en:'Az-Zahir Baybars performed Hajj in 667 AH, washed the Kaaba himself alone without guards, and circled and walked among the people — Source: The Historical Encyclopedia (Dorar as-Saniyya) · As-Suluk (al-Maqrizi)'}, {ar:'وذُكِرَ أيضاً أنّ بيبرس علّقَ كسوةَ الكعبةِ بيدِه في تلك الحجّة، وكان مسروراً بذلك — المصدر: الموسوعة التاريخية (الدرر السنية)',en:'It is also mentioned that Baybars hung the Kaaba\u2019s covering with his own hands on that Hajj, and was happy to do so — Source: The Historical Encyclopedia (Dorar as-Saniyya)'} ],
   },
 ];

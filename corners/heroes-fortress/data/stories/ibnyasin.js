@@ -1,4 +1,4 @@
-/* data/stories/ibnyasin.js — Leaders · Abdullah ibn Yasin — sources: البداية والنهاية · نفح الطيب · إسلام ويب · الدرر السنية */
+/* data/stories/ibnyasin.js — Leaders · Abdullah ibn Yasin — sources: البداية والنهاية · نفح الطيب · إسلام ويب · الدرر السنية · تاريخ ابن خلدون · البيان المغرب */
 window.HISN_STORIES = window.HISN_STORIES || {};
 HISN_STORIES.ibnyasin = [
   { icon:'🌱', scene:'mihrab', character:'📖',
@@ -35,5 +35,40 @@ HISN_STORIES.ibnyasin = [
     badge:{icon:'🌱',title:{ar:'وِسامُ البذرةِ المباركة',en:'Badge of the Blessed Seed'}},
     reflect:[ {ar:'هل تستهينُ بالأعمالِ الصغيرةِ أم تثقُ بأثرِها مع الإخلاص؟',en:'Do you belittle small deeds, or trust their impact with sincerity?'}, {ar:'كيف تنفعُ غيرَك بما تعلّمتَه من خير؟',en:'How do you benefit others with the good you have learned?'} ],
     didYouKnow:[ {ar:'كلمةُ «المرابطين» مأخوذةٌ من «الرباط»، وهو مكانُ العبادةِ والتعلّمِ والجهادِ الذي أسّسه ابنُ ياسين — المصدر: نفح الطيب',en:'The word "Almoravids" (al-Murabitun) comes from "ribat," the place of worship, learning, and struggle that Ibn Yasin founded — Source: Nafh at-Tib'}, {ar:'نشأتْ دولةُ المرابطينَ من حركةِ ابنِ ياسينَ ثمّ قادها يوسفُ بنُ تاشفينَ ووحّدَ المغربَ ونصرَ الأندلس — المصدر: البداية والنهاية',en:'The Almoravid state arose from Ibn Yasin\u2019s movement, then Yusuf ibn Tashfin led it, uniting the Maghrib and aiding Andalusia — Source: Al-Bidaya wa an-Nihaya'} ],
+  },
+  { icon:'🏝️', scene:'sea', character:'🧔',
+    title:{ ar:'رباطُ الجزيرةِ الصغير', en:'The Little Ribat on the Island' },
+    pages:[
+      { scene:'desert', character:'😔',
+        text:{ ar:'جاءَ <b>عبدُ اللهِ بنُ ياسين</b> مع الأميرِ <b>يحيى بنِ إبراهيم</b> إلى قبائلِ الصحراءِ ليُعلِّمَهم دينَهم. فأمرَهم بالصلاةِ وتركِ الظلمِ والمنكرات، وعلّمهم الحلالَ والحرام. لكنّ بعضَهم ثقلَ عليه الحقّ، فـ<b>خالفوه وأعرضوا عنه</b>، حتى أخرجوه من بينِهم!<br><br>كان يمكنُ أن ييأسَ ويعودَ إلى بلادِه ويقول: «لا فائدة!». لكنّه لم يفعلْ. بل قال في نفسِه: إن لم يقبلِ الناسُ الآن، فسأُعِدُّ <b>رجالاً صادقينَ قليلين</b>، يكونونَ بذرةً للخير. فانطلقَ مع نفرٍ قليلٍ ممّن صدّقوه.',
+          en:'<b>Abdullah ibn Yasin</b> came with the chief <b>Yahya ibn Ibrahim</b> to the desert tribes to teach them their religion. He commanded them to pray and to leave injustice and wrongdoing, and taught them the lawful and the forbidden. But some found the truth heavy, so they <b>opposed him and turned away</b>, until they drove him out from among them!<br><br>He could have despaired, gone home and said, "It is no use!" But he did not. He said to himself: if the people will not accept now, I will prepare <b>a few sincere men</b> who will be a seed of good. So he set off with a small band of those who believed him.' },
+        choice:{ q:{ar:'ماذا فعلَ ابنُ ياسين حين أعرضَ عنه قومٌ؟',en:'What did Ibn Yasin do when people turned away from him?'},
+          opts:[
+            { t:{ar:'لم ييأسْ وبدأَ بإعدادِ رجالٍ صادقين',en:'He did not despair and began preparing sincere men'},c:true,exp:{ar:'نعم! الداعيةُ الصادقُ لا يستسلم.',en:'Yes! A sincere caller to good does not give up.'} },
+            { t:{ar:'تركَ الدعوةَ إلى الأبد',en:'He gave up calling to good forever'},c:false,exp:{ar:'لا، بل ثبتَ وصبر.',en:'No — he stood firm and was patient.'} },
+            { t:{ar:'دعا عليهم بالهلاك',en:'He prayed for their destruction'},c:false,exp:{ar:'لا، بل أعدَّ رجالاً للخير.',en:'No — he prepared men for good.'} },
+          ] } },
+      { scene:'sea', character:'🏝️',
+        text:{ ar:'ذهبَ ابنُ ياسين بأصحابِه القليلينَ إلى <b>جزيرةٍ هادئةٍ في النهر</b> بعيداً عن الضجيج، وبنوا فيها <b>رباطاً</b> — مكاناً للعبادةِ وتعلّمِ القرآنِ والعلمِ والاستعدادِ للجهاد. كانوا يعيشونَ عيشةً بسيطة، يصلّونَ ويتعلّمونَ ويُربّونَ أنفسَهم على الصبرِ والطاعة.<br><br>وسمعَ الناسُ بخبرِ هؤلاءِ الصادقين، فأخذوا يأتونَ إليهم واحداً بعدَ واحد، حتى <b>بلغَ عددُهم نحوَ ألفِ رجل</b>! فسُمّوا <b>«المرابطين»</b> لملازمتِهم ذلك الرباط. ومن هذه الجزيرةِ الصغيرةِ خرجتْ دولةٌ عظيمة. علّمنا ابنُ ياسين أنّ <b>البدايةَ الصغيرةَ الصادقةَ</b> يُباركُها اللهُ فتصيرُ كبيرة.',
+          en:'Ibn Yasin went with his few companions to <b>a quiet island in the river</b>, far from the noise, and they built there <b>a ribat</b> — a place for worship, learning the Qur’an and knowledge, and preparing for jihad. They lived simply, praying, learning, and training themselves in patience and obedience.<br><br>People heard of these sincere men and began coming to them one after another, until <b>their number reached about a thousand men</b>! They were called <b>"al-Murabitun" (the Almoravids)</b> because they kept to that ribat. From this little island came a great state. Ibn Yasin taught us that <b>a small, sincere beginning</b> is blessed by Allah until it becomes great.' },
+        choice:{ q:{ar:'لماذا سُمّيَ أصحابُ ابنِ ياسينَ «المرابطين»؟',en:'Why were Ibn Yasin’s companions called "al-Murabitun"?'},
+          opts:[
+            { t:{ar:'لأنّهم كانوا يربطونَ الخيلَ فقط',en:'Because they only tied up horses'},c:false,exp:{ar:'لا، بل لملازمتِهم الرباط.',en:'No — because they kept to the ribat.'} },
+            { t:{ar:'لملازمتِهم الرباطَ للعبادةِ والعلم',en:'Because they kept to the ribat for worship and learning'},c:true,exp:{ar:'أحسنت! من الرباطِ جاءَ اسمُ المرابطين.',en:'Well done! The name came from the ribat.'} },
+            { t:{ar:'لأنّهم يسكنونَ المدن',en:'Because they lived in cities'},c:false,exp:{ar:'لا، بل كانوا في جزيرةٍ هادئة.',en:'No — they were on a quiet island.'} },
+          ] } },
+    ],
+    quiz:[
+      { q:{ar:'أين بنى ابنُ ياسين وأصحابُه رباطَهم؟',en:'Where did Ibn Yasin and his companions build their ribat?'},
+        opts:[ {t:{ar:'في قصرٍ كبير',en:'In a big palace'},c:false}, {t:{ar:'في سوقِ المدينة',en:'In the city market'},c:false}, {t:{ar:'في جزيرةٍ هادئةٍ في النهر',en:'On a quiet island in the river'},c:true} ] },
+      { q:{ar:'كم بلغَ عددُ أصحابِه في الرباطِ تقريباً؟',en:'About how many companions gathered at the ribat?'},
+        opts:[ {t:{ar:'نحوَ ألفِ رجل',en:'About a thousand men'},c:true}, {t:{ar:'رجلانِ فقط',en:'Only two men'},c:false}, {t:{ar:'مليونُ رجل',en:'A million men'},c:false} ] },
+      { q:{ar:'من الأميرُ الذي جاءَ بابنِ ياسينَ إلى الصحراء؟',en:'Which chief brought Ibn Yasin to the desert?'},
+        opts:[ {t:{ar:'يوسفُ بنُ تاشفين',en:'Yusuf ibn Tashfin'},c:false}, {t:{ar:'يحيى بنُ إبراهيم',en:'Yahya ibn Ibrahim'},c:true}, {t:{ar:'طارقُ بنُ زياد',en:'Tariq ibn Ziyad'},c:false} ] },
+    ],
+    moral:{ar:'لا تيأسْ إذا أعرضَ الناسُ عن الخير؛ ابدأْ بالقليلِ الصادق، فإنّ اللهَ يباركُ البداياتِ الصغيرةَ حتى تكبُر.',en:'Do not despair if people turn away from good; start with a sincere few, for Allah blesses small beginnings until they grow.'},
+    badge:{icon:'🏝️',title:{ar:'وِسامُ الرباطِ الصادق',en:'Badge of the Sincere Ribat'}},
+    reflect:[ {ar:'هل توقّفتَ يوماً عن عملٍ صالحٍ لأنّ أحداً لم يُعجَبْ به؟',en:'Have you ever stopped a good deed because someone did not like it?'}, {ar:'ما العملُ الصغيرُ الذي يمكنُ أن تبدأَه اليومَ ويكبرَ مع الأيّام؟',en:'What small good deed can you start today that may grow with time?'} ],
+    didYouKnow:[ {ar:'انحازَ ابنُ ياسينَ إلى جزيرةٍ في النهرِ وأقامَ بها رباطاً، فاجتمعَ إليه نحوُ ألفِ رجلٍ سمّاهمُ المرابطينَ لملازمتِهم رابطتَه — المصدر: تاريخ ابن خلدون · البيان المغرب لابن عذاري',en:'Ibn Yasin withdrew to an island in the river and set up a ribat there; about a thousand men gathered to him, and he named them al-Murabitun for keeping to his ribat — Source: Tarikh Ibn Khaldun · Al-Bayan al-Mughrib (Ibn Idhari)'}, {ar:'يُذكَرُ أنّ ابنَ ياسينَ قال لأصحابِه حين بلغوا ألفاً: «إنّ ألفاً لن تُغلَبَ من قِلّة» — المصدر: تاريخ ابن خلدون',en:'It is reported that when they reached a thousand, Ibn Yasin told his companions, "A thousand will not be defeated for being few" — Source: Tarikh Ibn Khaldun'} ],
   },
 ];

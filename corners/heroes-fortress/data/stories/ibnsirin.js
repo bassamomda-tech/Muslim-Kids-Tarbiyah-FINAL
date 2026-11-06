@@ -1,4 +1,4 @@
-/* data/stories/ibnsirin.js — Successors · Muhammad ibn Sirin — sources: صور من حياة التابعين · إسلام ويب · الدرر السنية · سير أعلام النبلاء */
+/* data/stories/ibnsirin.js — Successors · Muhammad ibn Sirin — sources: صور من حياة التابعين · إسلام ويب · الدرر السنية · سير أعلام النبلاء · حلية الأولياء */
 window.HISN_STORIES = window.HISN_STORIES || {};
 HISN_STORIES.ibnsirin = [
   { icon:'🛑', scene:'madinah', character:'⚖️',
@@ -52,5 +52,31 @@ HISN_STORIES.ibnsirin = [
     badge:{icon:'🌙',title:{ar:'وِسامُ البشاشةِ والخشية',en:'Badge of Cheer & Reverence'}},
     reflect:[ {ar:'هل تكونُ بشوشاً مع الناسِ خاشعاً في عبادتِك؟',en:'Are you cheerful with people and humble in your worship?'}, {ar:'كيف تجعلُ لك خلوةً مع اللهِ تذكرُه فيها؟',en:'How do you make a private time with Allah to remember Him?'} ],
     didYouKnow:[ {ar:'اشتُهِرَ عن ابنِ سيرين جمعُه بين المزاحِ اللطيفِ نهاراً والعبادةِ والبكاءِ ليلاً — المصدر: صور من حياة التابعين',en:'Ibn Sirin was known for combining gentle humor by day with worship and weeping by night — Source: Suwar min Hayat at-Tabi\u2019in'}, {ar:'كان ابنُ سيرين ثقةً ثبتاً في الحديث، يتحرّى الدقّةَ في النقلِ عن النبيِّ ﷺ — المصدر: سير أعلام النبلاء',en:'Ibn Sirin was a trustworthy, precise narrator who sought accuracy in transmitting from the Prophet ﷺ — Source: Siyar A\u2019lam an-Nubala\u2019'} ],
+  },
+  { icon:'🔒', scene:'night', character:'⛓️',
+    title:{ ar:'سجينُ الدَّينِ الذي لم يَخُنِ الأمانة', en:'The Debt Prisoner Who Would Not Betray a Trust' },
+    pages:[
+      { scene:'night', character:'⛓️',
+        text:{ ar:'تذكرُ قصّةَ الزيتِ الذي أراقه <b>محمدُ بنُ سيرين</b> ورعاً؟ لقد كان ثمنُه مالاً عظيماً اشتراه <b>بالدَّين</b>، فلمّا أراقه كلَّه لم يبقَ معه ما يسدُّ به دَينَه! فشكاه صاحبُ المال، <b>فحُبِسَ ابنُ سيرين في السجن</b> حتى يُوفِّيَ ما عليه. العالمُ الكبيرُ الورعُ صار سجيناً بسببِ ورعِه!<br><br>وكان السجّانُ يعرفُ صلاحَه ويُشفِقُ عليه، فقال له: <b>اذهبْ إلى أهلِك بالليل، فإذا أصبحتَ فارجعْ إلى السجن</b>. فرفضَ ابنُ سيرينَ وقال: <b>«لا واللهِ، لا أكونُ لك عوناً على خيانةِ السلطان»</b>! لم يقبلْ أن يخرجَ ولو ليلةً بغيرِ حقّ. ولم يلُمْ أحداً، بل حاسبَ نفسَه وقال: <b>«إنّي لأعرفُ الذنبَ الذي حُمِلَ عليَّ به الدَّين: قلتُ لرجلٍ منذ سنين: يا مُفلِس!»</b> — كلمةُ استهزاءٍ قالها قديماً، فرأى أنّ ما أصابه عقوبةٌ عليها. فقال أحدُ الصالحينَ لمّا سمعَ ذلك: قلّتْ ذنوبُهم فعرفوا من أين أُتُوا! علّمنا ابنُ سيرين <b>الأمانةَ حتى في السجن، ومحاسبةَ النفسِ بدلَ لومِ الناس</b>.',
+          en:'Remember the oil that <b>Muhammad ibn Sirin</b> poured away out of caution? Its price was a huge sum he had bought <b>on credit</b>; when he poured it all away, he had nothing left to pay his debt! The lender complained, and <b>Ibn Sirin was imprisoned</b> until he paid what he owed. The great, cautious scholar became a prisoner because of his caution!<br><br>The jailer knew his righteousness and pitied him, so he said: <b>Go to your family at night, and when morning comes return to the prison</b>. Ibn Sirin refused and said: <b>"No, by Allah, I will not help you betray the ruler’s trust!"</b> He would not leave even for one night without right. And he blamed no one; instead he held himself to account and said: <b>"I know the sin for which this debt came upon me: years ago I said to a man, ‘O bankrupt one!’"</b> — a mocking word he had said long ago, and he saw what befell him as its consequence. A righteous man who heard this said: Their sins were few, so they knew where their trials came from! Ibn Sirin teaches us <b>trustworthiness even in prison, and self-accounting instead of blaming people</b>.' },
+        choice:{ q:{ar:'لماذا رفضَ ابنُ سيرين أن يذهبَ إلى أهلِه ليلاً؟',en:'Why did Ibn Sirin refuse to go to his family at night?'},
+          opts:[
+            { t:{ar:'لأنّه لا يحبُّ أهلَه',en:'Because he did not love his family'},c:false,exp:{ar:'لا، بل كان يحبُّهم، لكنّه قدّمَ الأمانة.',en:'No — he loved them, but he put the trust first.'} },
+            { t:{ar:'لأنّه لم يُرِدْ أن يُعينَ السجّانَ على خيانةِ الأمانة',en:'Because he did not want to help the jailer betray his trust'},c:true,exp:{ar:'أحسنت! «لا أكونُ لك عوناً على خيانةِ السلطان».',en:'Well done! "I will not help you betray the ruler’s trust."'} },
+            { t:{ar:'لأنّ السجنَ كان مريحاً',en:'Because prison was comfortable'},c:false,exp:{ar:'لا، بل صبرَ على شدّتِه حفاظاً على الأمانة.',en:'No — he bore its hardship to keep the trust.'} },
+          ] } },
+    ],
+    quiz:[
+      { q:{ar:'لماذا حُبِسَ ابنُ سيرين؟',en:'Why was Ibn Sirin imprisoned?'},
+        opts:[ {t:{ar:'بسببِ دَينٍ لم يستطعْ سدادَه',en:'Because of a debt he could not pay'},c:true}, {t:{ar:'لأنّه سرق',en:'Because he stole'},c:false}, {t:{ar:'لأنّه ضربَ أحداً',en:'Because he hit someone'},c:false} ] },
+      { q:{ar:'ما الكلمةُ التي ظنَّ ابنُ سيرين أنّه عُوقِبَ بسببِها؟',en:'Which word did Ibn Sirin think he was punished for?'},
+        opts:[ {t:{ar:'«شكراً»',en:'"Thank you"'},c:false}, {t:{ar:'«السلامُ عليكم»',en:'"Peace be upon you"'},c:false}, {t:{ar:'«يا مُفلِس» قالها لرجلٍ يستهزئُ به',en:'"O bankrupt one," said mockingly to a man'},c:true} ] },
+      { q:{ar:'ماذا نتعلّمُ من ابنِ سيرين في السجن؟',en:'What do we learn from Ibn Sirin in prison?'},
+        opts:[ {t:{ar:'لومُ الناسِ دائماً',en:'Always blame others'},c:false}, {t:{ar:'الأمانةُ ومحاسبةُ النفس',en:'Trustworthiness and self-accounting'},c:true}, {t:{ar:'الهروبُ من المسؤوليّة',en:'Escaping responsibility'},c:false} ] },
+    ],
+    moral:{ar:'المؤمنُ أمينٌ في كلِّ حال، وإذا أصابه بلاءٌ حاسبَ نفسَه قبلَ أن يلومَ غيرَه، ولا يستهزئُ بأحد.',en:'The believer is trustworthy in every state; when trouble comes he checks himself before blaming others, and he mocks no one.'},
+    badge:{icon:'🔒',title:{ar:'وِسامُ الأمانةِ في الشدّة',en:'Badge of Trust in Hardship'}},
+    reflect:[ {ar:'هل قلتَ يوماً كلمةً تستهزئُ بها بأحد؟ كيف تُصلِحُ ذلك؟',en:'Have you ever said a mocking word to someone? How can you fix it?'}, {ar:'إذا أصابك أمرٌ صعب، هل تلومُ الناسَ أم تراجعُ نفسَك؟',en:'When something hard happens, do you blame people or review yourself?'} ],
+    didYouKnow:[ {ar:'قصّةُ حبسِ ابنِ سيرين في الدَّين ورفضِه الخروجَ ليلاً وقولِه «لا أكونُ لك عوناً على خيانةِ السلطان» — المصدر: سير أعلام النبلاء للذهبي',en:'The story of Ibn Sirin’s imprisonment for debt, his refusal to leave at night, and his words "I will not help you betray the ruler’s trust" — Source: Siyar A’lam an-Nubala by adh-Dhahabi'}, {ar:'قال أبو سليمان الداراني لمّا بلغه قولُ ابنِ سيرين: قلّتْ ذنوبُ القومِ فعرفوا من أين أُتُوا — المصدر: سير أعلام النبلاء وحلية الأولياء',en:'Abu Sulayman ad-Darani, on hearing Ibn Sirin’s words, said: Their sins were few, so they knew where their trials came from — Source: Siyar A’lam an-Nubala & Hilyat al-Awliya'} ],
   },
 ];

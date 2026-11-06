@@ -4,7 +4,7 @@
 window.HISN = window.HISN || {}; HISN.chapters = HISN.chapters || {};
 HISN.chapters.ghafur = {
   id: 'ghafur', era: 'heart', kind: 'name', icon: 'dove',
-  name: { ar: 'الغفورُ التوّاب', en: 'The Forgiving, Acceptor of Repentance' },
+  name: { ar: 'الغفورُ الغفّارُ التوّاب', en: 'The Forgiving, Acceptor of Repentance' },
   tag:  { ar: 'يَغفرُ ويَفرحُ بتوبتِك', en: 'He forgives & rejoices at your return' },
   accent: '#3E9A86', accent2: '#5FBFA8',
   rooms: ['knowledge', 'story', 'memorize', 'activities', 'treasures'],
@@ -27,6 +27,7 @@ HISN.chapters.ghafur = {
       { ar: 'لا يَيأسُ أحدٌ من رحمةِ الله مهما أخطأ.', en: 'No one despairs of Allah’s mercy, however much they err.' },
       { ar: 'التوبةُ: ندمٌ، واستغفار، وعزمٌ ألّا تعود.', en: 'Repentance is: regret, seeking forgiveness, and resolve not to return.' },
       { ar: 'مَن غفرَ للناسِ غفرَ اللهُ له.', en: 'Whoever forgives people, Allah forgives him.' },
+      { ar: 'ومن أسمائه <b>«الغفّار»</b>: يغفرُ كثيرًا، مرّةً بعد مرّة، كلّما رجعنا إليه: <b>﴿وَإِنِّي لَغَفَّارٌ لِّمَن تَابَ﴾</b> (طه ٨٢).', en: 'Another of His Names is <b>“Al-Ghaffar”</b>: He forgives again and again whenever we return to Him: <b>“And indeed I am Perpetually Forgiving to whoever repents”</b> (Ta-Ha 82).' },
     ],
     ayah: { ar: '﴿ وَإِنِّي لَغَفَّارٌ لِّمَن تَابَ وَآمَنَ وَعَمِلَ صَالِحًا ﴾', ref: { ar: 'طه ٨٢', en: 'Ta-Ha 82' } },
   },

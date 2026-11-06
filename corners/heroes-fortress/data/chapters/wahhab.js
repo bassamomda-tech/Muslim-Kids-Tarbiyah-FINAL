@@ -4,7 +4,7 @@
 window.HISN = window.HISN || {}; HISN.chapters = HISN.chapters || {};
 HISN.chapters.wahhab = {
   id: 'wahhab', era: 'heart', kind: 'name', icon: 'crown',
-  name: { ar: 'الوهّابُ الكريم', en: 'The Bestower, the Generous' },
+  name: { ar: 'الوهّابُ الكريمُ الأكرم', en: 'The Bestower, the Most Generous' },
   tag:  { ar: 'يُعطي بلا حسابٍ ولا مقابل', en: 'He gives without measure or return' },
   accent: '#C2912B', accent2: '#E0B255',
   rooms: ['knowledge', 'story', 'memorize', 'activities', 'treasures'],
@@ -27,6 +27,7 @@ HISN.chapters.wahhab = {
       { ar: 'يُحبُّ أن يُعطي ويَستحي أن يَرُدَّ الداعي.', en: 'He loves to give and is shy to turn away the one who calls.' },
       { ar: 'كلُّ ما تملكُ هِبةٌ من الوهّاب.', en: 'Everything you own is a gift from Al-Wahhab.' },
       { ar: 'مَن عرفَ كرمَ اللهِ كانَ كريماً مع الناس.', en: 'Whoever knows Allah’s generosity is generous with people.' },
+      { ar: 'ومن أسمائه <b>«الأكرم»</b>: لا أحدَ أكرمُ منه أبدًا! وفي أوّلِ ما نزل من القرآن: <b>﴿اقْرَأْ وَرَبُّكَ الْأَكْرَمُ﴾</b> (العلق ٣).', en: 'Another of His Names is <b>“Al-Akram”</b>, the Most Generous: no one is ever more generous than Him! Among the first verses revealed: <b>“Read, and your Lord is the Most Generous”</b> (al-‘Alaq 3).' },
     ],
     ayah: { ar: '﴿ رَبَّنَا لَا تُزِغْ قُلُوبَنَا … وَهَبْ لَنَا مِن لَّدُنكَ رَحْمَةً ۚ إِنَّكَ أَنتَ الْوَهَّابُ ﴾', ref: { ar: 'آل عمران ٨', en: 'Aal ‘Imran 8' } },
   },

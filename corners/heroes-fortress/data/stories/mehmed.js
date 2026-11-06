@@ -1,4 +1,4 @@
-/* data/stories/mehmed.js — Leaders · Mehmed the Conqueror — sources: البداية والنهاية · إسلام ويب · الدرر السنية · كتب التاريخ العثماني */
+/* data/stories/mehmed.js — Leaders · Mehmed the Conqueror — sources: البداية والنهاية · إسلام ويب · الدرر السنية · كتب التاريخ العثماني · الشقائق النعمانية */
 window.HISN_STORIES = window.HISN_STORIES || {};
 HISN_STORIES.mehmed = [
   { icon:'🚢', scene:'peaks', character:'⚓',
@@ -61,5 +61,31 @@ HISN_STORIES.mehmed = [
     badge:{icon:'📖',title:{ar:'وِسامُ القائدِ العالم',en:'Badge of the Scholar-Leader'}},
     reflect:[ {ar:'كيف تجمعُ بين القوّةِ والعلمِ في شخصيّتِك؟',en:'How do you combine strength and knowledge in your character?'}, {ar:'هل تبني وتُصلِحُ ما حولَك بعدَ أن تنجح؟',en:'Do you build and improve what is around you after you succeed?'} ],
     didYouKnow:[ {ar:'اهتمَّ محمدٌ الفاتحُ بالعمرانِ والعلمِ فبنى المدارسَ والمكتباتِ في إسطنبول — المصدر: كتب التاريخ العثماني',en:'Mehmed the Conqueror cared for building and knowledge, constructing schools and libraries in Istanbul — Source: Ottoman history works'}, {ar:'عاملَ الفاتحُ أهلَ القسطنطينيةِ بالعدلِ وأمّنهم على دينِهم وممتلكاتِهم — المصدر: البداية والنهاية',en:'The Conqueror treated the people of Constantinople justly, securing their faith and property — Source: Al-Bidaya wa an-Nihaya'} ],
+  },
+  { icon:'👳', scene:'mihrab', character:'📖',
+    title:{ ar:'المعلّمُ الذي صنعَ الفاتح', en:'The Teacher Who Shaped the Conqueror' },
+    pages:[
+      { scene:'mihrab', character:'👳',
+        text:{ ar:'وراءَ كلِّ بطلٍ عظيمٍ <b>معلّمٌ صالح</b>. وكان من أعظمِ معلّمي <b>محمدٍ الفاتح</b> الشيخُ العالمُ <b>آق شمس الدين</b>. علّمه منذ صِغَرِه القرآنَ والعلومَ، وغرسَ في قلبِه <b>حبَّ الجهادِ في سبيلِ الله والهمّةَ العالية</b>، وكان يُذكِّرُه أنّ النصرَ من عندِ اللهِ وحدَه.<br><br>وحين حاصرَ الفاتحُ القسطنطينيّةَ واشتدَّ الأمرُ، كان الشيخُ معه يدعو ويُصبِّرُ الجنودَ ويقوّي عزيمةَ السلطانِ الشابّ. فلمّا فُتِحتِ المدينة، أرادَ الفاتحُ من شدّةِ حبِّه لشيخِه أن <b>يتركَ أمورَ الحكمِ ويلزمَه</b> ليتعلّمَ منه ويتعبّدَ معه. فرفضَ الشيخُ وقال له ما معناه: <b>«إنّك إن فعلتَ تركتَ أمرَ الناسِ فضاعتْ مصالحُهم، فيحاسبُني اللهُ على ذلك»</b>. فبقيَ الفاتحُ في مكانِه يخدمُ أمّتَه، وظلَّ يُجِلُّ شيخَه ويحترمُه طوالَ حياتِه.',
+          en:'Behind every great hero is <b>a righteous teacher</b>. Among the greatest teachers of <b>Mehmed the Conqueror</b> was the scholar <b>Aq Shamsuddin</b>. From childhood he taught him the Qur’an and the sciences, planted in his heart <b>love of striving in Allah’s path and high resolve</b>, and kept reminding him that victory comes from Allah alone.<br><br>When Mehmed besieged Constantinople and things grew hard, the shaykh was with him, praying, encouraging the soldiers, and strengthening the young sultan’s resolve. After the city was opened, Mehmed, out of great love for his shaykh, wished to <b>leave the affairs of rule and stay by his side</b> to learn and worship with him. The shaykh refused and told him, in meaning, <b>"If you do that, you will leave the people’s affairs and their interests will be lost, and Allah will hold me to account for it."</b> So Mehmed stayed in his place serving his Ummah, and honoured and respected his shaykh all his life.' },
+        choice:{ q:{ar:'لماذا رفضَ آق شمس الدين أن يتركَ الفاتحُ الحكمَ ليلزمَه؟',en:'Why did Aq Shamsuddin refuse to let Mehmed leave rule to stay with him?'},
+          opts:[
+            { t:{ar:'لأنّه لا يُحِبُّ الفاتح',en:'Because he did not love Mehmed'},c:false,exp:{ar:'لا، بل كان يُحِبُّه ويريدُ له الخير.',en:'No — he loved him and wanted good for him.'} },
+            { t:{ar:'لأنّه مشغولٌ بالتجارة',en:'Because he was busy trading'},c:false,exp:{ar:'لا، بل خوفاً على مصالحِ الناس.',en:'No — out of concern for the people’s interests.'} },
+            { t:{ar:'حتى لا تضيعَ مصالحُ الناسِ التي هي أمانةٌ في عنقِ السلطان',en:'So the people’s interests, a trust on the sultan, would not be lost'},c:true,exp:{ar:'أحسنت! المعلّمُ الصادقُ يُرشِدُك إلى واجبِك.',en:'Well done! A true teacher guides you to your duty.'} },
+          ] } },
+    ],
+    quiz:[
+      { q:{ar:'من معلّمُ محمدٍ الفاتحِ في هذه القصّة؟',en:'Who is Mehmed’s teacher in this story?'},
+        opts:[ {t:{ar:'آق شمس الدين',en:'Aq Shamsuddin'},c:true}, {t:{ar:'ابنُ السمّاك',en:'Ibn as-Sammak'},c:false}, {t:{ar:'منذرُ بنُ سعيد',en:'Mundhir ibn Sa’id'},c:false} ] },
+      { q:{ar:'ماذا كان يفعلُ الشيخُ أثناءَ حصارِ القسطنطينيّة؟',en:'What did the shaykh do during the siege of Constantinople?'},
+        opts:[ {t:{ar:'ينامُ في قصرِه',en:'Slept in his palace'},c:false}, {t:{ar:'يدعو ويُصبِّرُ الجنودَ ويقوّي عزيمةَ السلطان',en:'Prayed, encouraged the soldiers, and strengthened the sultan’s resolve'},c:true}, {t:{ar:'يسافرُ بعيداً',en:'Travelled far away'},c:false} ] },
+      { q:{ar:'كيف عاملَ الفاتحُ شيخَه طوالَ حياتِه؟',en:'How did Mehmed treat his shaykh all his life?'},
+        opts:[ {t:{ar:'نسيَه',en:'He forgot him'},c:false}, {t:{ar:'غضبَ منه',en:'He was angry with him'},c:false}, {t:{ar:'أجلّه واحترمه',en:'He honoured and respected him'},c:true} ] },
+    ],
+    moral:{ar:'المعلّمُ الصالحُ كنزٌ يصنعُ الأبطال، ومن احترمَ معلّمَه وسمعَ نصيحتَه نفعه اللهُ ونفعَ به.',en:'A righteous teacher is a treasure that shapes heroes; whoever respects his teacher and heeds his advice, Allah benefits him and benefits others through him.'},
+    badge:{icon:'👳',title:{ar:'وِسامُ وفاءِ التلميذ',en:'Badge of the Loyal Student'}},
+    reflect:[ {ar:'من المعلّمُ الذي تعلّمتَ منه شيئاً لن تنساه؟',en:'Which teacher taught you something you will never forget?'}, {ar:'كيف تُظهِرُ احترامَك لمعلّمِك؟',en:'How do you show respect to your teacher?'} ],
+    didYouKnow:[ {ar:'كان آق شمس الدين (ت ٨٦٣هـ) من كبارِ علماءِ الدولةِ العثمانيّة، ولازمَ الفاتحَ في فتحِ القسطنطينيّة — المصدر: الشقائق النعمانية في علماء الدولة العثمانية لطاشكبري زاده',en:'Aq Shamsuddin (d. 863 AH) was one of the great scholars of the Ottoman state and accompanied Mehmed at the conquest of Constantinople — Source: Ash-Shaqa’iq an-Nu‘maniyya (Tashkoprizade)'}, {ar:'ذكرَ طاشكبري زاده أنّ الفاتحَ طلبَ أن يدخلَ في صحبةِ الشيخِ ويتفرّغَ للعبادة، فأبى الشيخُ خشيةَ أن تتعطّلَ أمورُ الدولة — المصدر: الشقائق النعمانية',en:'Tashkoprizade mentions that Mehmed asked to join the shaykh’s company and devote himself to worship, but the shaykh refused lest the state’s affairs be neglected — Source: Ash-Shaqa’iq an-Nu‘maniyya'} ],
   },
 ];

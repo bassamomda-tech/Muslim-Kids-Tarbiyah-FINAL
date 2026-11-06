@@ -1,4 +1,4 @@
-/* data/stories/saidzayd.js — Heroes · Sa'id ibn Zayd — sources: صور من حياة الصحابة (الباشا) · إسلام ويب · الدرر السنية · البداية والنهاية */
+/* data/stories/saidzayd.js — Heroes · Sa'id ibn Zayd — sources: صور من حياة الصحابة (الباشا) · إسلام ويب · الدرر السنية · البداية والنهاية · صحيح البخاري */
 window.HISN_STORIES = window.HISN_STORIES || {};
 HISN_STORIES.saidzayd = [
   { icon:'📖', scene:'madinah', character:'📜',
@@ -52,5 +52,31 @@ HISN_STORIES.saidzayd = [
     badge:{icon:'🤲',title:{ar:'وِسامُ الدعوةِ المستجابة',en:'Badge of the Answered Prayer'}},
     reflect:[ {ar:'إذا ظُلِمتَ، هل تلجأُ إلى اللهِ بالدعاء؟',en:'When wronged, do you turn to Allah in du\'a?'}, {ar:'هل تثقُ أنّ اللهَ ينصرُ الصادقين؟',en:'Do you trust that Allah supports the truthful?'} ],
     didYouKnow:[ {ar:'قصّةُ سعيدٍ وأَرْوى ودعوتُه عليها ثابتةٌ في صحيحِ مسلم — المصدر: صحيح مسلم',en:'The account of Sa\u2019id, Arwa, and his prayer against her is established in Sahih Muslim — Source: Sahih Muslim'}, {ar:'كان سعيدٌ يكرهُ أن يُمدَحَ أو يتقدّمَ، تواضعاً وزهداً — المصدر: صور من حياة الصحابة',en:'Sa\u2019id disliked being praised or put forward, out of humility and detachment — Source: Suwar min Hayat as-Sahaba'} ],
+  },
+  { icon:'🌟', scene:'kaaba', character:'🕋',
+    title:{ ar:'أبوه زيدُ بنُ عمرو: الموحِّدُ قبلَ البعثة', en:'His Father Zayd ibn Amr: Believing in One God Before Islam' },
+    pages:[
+      { scene:'kaaba', character:'🕋',
+        text:{ ar:'قبلَ أن يُبعَثَ النبيُّ ﷺ، كانت قريشٌ تعبدُ الأصنام، لكنّ رجلاً واحداً رفضَ ذلك: <b>زيدُ بنُ عمرِو بنِ نُفَيل</b>، والدُ <b>سعيدِ بنِ زيد</b>. كان يقفُ مُسنِداً ظهرَه إلى الكعبةِ ويقول: <b>«يا معشرَ قريش، واللهِ ما منكم على دينِ إبراهيمَ غيري»</b>. وكان يرفضُ أن يأكلَ ممّا ذُبِحَ للأصنام، ويقول: <b>الشاةُ خلقها الله، وأنزلَ لها من السماءِ الماء، وأنبتَ لها من الأرض، ثم تذبحونها على غيرِ اسمِ الله؟!</b><br><br>وكان رحيماً عجيباً: إذا أرادَ رجلٌ أن يدفنَ ابنتَه حيّةً — كما كان يفعلُ بعضُ أهلِ الجاهليّة — قال له: <b>«لا تقتلْها، أنا أكفيكَ مؤونتَها»</b>، فيأخذُها ويُربّيها، فإذا كبِرتْ قال لأبيها: إن شئتَ دفعتُها إليك، وإن شئتَ كفيتُك مؤونتَها. <b>أنقذَ بناتٍ كثيرات</b>!<br><br>وسافرَ إلى الشامِ يبحثُ عن الدينِ الحقّ، فدُلَّ على <b>دينِ إبراهيم: الحنيفيّة</b>، أن لا يعبدَ إلا اللهَ وحدَه، فرفعَ يديه وقال: <b>«اللّهُمّ إنّي أُشهِدُك أنّي على دينِ إبراهيم»</b>. ومات قبلَ البعثة، ثم أسلمَ ابنُه سعيدٌ وصار من <b>العشرةِ المبشّرينَ بالجنّة</b> — فكان ثمرةً طيّبةً لشجرةٍ طيّبة.',
+          en:'Before the Prophet ﷺ was sent, Quraysh worshipped idols — but one man refused: <b>Zayd ibn Amr ibn Nufayl</b>, father of <b>Sa\'id ibn Zayd</b>. He would stand with his back against the Ka\'ba and say: <b>"O people of Quraysh, by Allah, none of you follows the religion of Ibrahim except me."</b> He refused to eat what was slaughtered for idols, saying: <b>Allah created the sheep, sent down water for it from the sky and grew plants for it from the earth — then you slaughter it in a name other than Allah\'s?!</b><br><br>He was wonderfully merciful too: when a man wanted to bury his daughter alive — as some did in the days of ignorance — Zayd would say: <b>"Don\'t kill her; I will take care of her for you,"</b> and he would take her and raise her. When she grew up, he would tell her father: if you wish, I will hand her to you, or if you wish, I will keep caring for her. <b>He saved many girls!</b><br><br>He travelled to Sham seeking the true religion and was pointed to <b>the religion of Ibrahim, al-Hanifiyya</b>: worshipping none but Allah alone. He raised his hands and said: <b>"O Allah, I bear witness to You that I follow the religion of Ibrahim."</b> He died before the mission; then his son Sa\'id embraced Islam and became one of <b>the Ten Promised Paradise</b> — a good fruit of a good tree.' },
+        choice:{ q:{ar:'لماذا رفضَ زيدٌ أن يأكلَ ممّا ذُبِحَ للأصنام؟',en:'Why did Zayd refuse to eat what was slaughtered for idols?'},
+          opts:[
+            { t:{ar:'لأنّ اللهَ هو الذي خلقَ الشاةَ ورزقَها، فلا يُذبَحُ إلا باسمِه',en:'Because Allah created and provided for the sheep, so it should be slaughtered only in His name'},c:true,exp:{ar:'نعم! عرفَ بعقلِه وفطرتِه أنّ الخالقَ هو المستحقُّ للعبادة.',en:'Yes! With his mind and natural sense he knew the Creator alone deserves worship.'} },
+            { t:{ar:'لأنّه لا يحبُّ اللحم',en:'Because he did not like meat'},c:false,exp:{ar:'لا، بل رفضَه لأنّه ذُبِحَ لغيرِ الله.',en:'No — he refused it because it was slaughtered for other than Allah.'} },
+            { t:{ar:'لأنّه كان مريضاً',en:'Because he was ill'},c:false,exp:{ar:'لا، السببُ هو التوحيدُ ورفضُ الشرك.',en:'No — the reason was belief in One God and rejecting idolatry.'} },
+          ] } },
+    ],
+    quiz:[
+      { q:{ar:'ماذا كان زيدٌ يقولُ لقريشٍ عندَ الكعبة؟',en:'What did Zayd say to Quraysh at the Ka\'ba?'},
+        opts:[ {t:{ar:'«ما منكم على دينِ إبراهيمَ غيري»',en:'"None of you follows Ibrahim\'s religion except me"'},c:true}, {t:{ar:'«أنا ملكُ قريش»',en:'"I am the king of Quraysh"'},c:false}, {t:{ar:'«اعبدوا الأصنام»',en:'"Worship the idols"'},c:false} ] },
+      { q:{ar:'ماذا كان زيدٌ يفعلُ بالبناتِ اللاتي أرادَ آباؤهنّ دفنَهنّ؟',en:'What did Zayd do for girls whose fathers wanted to bury them?'},
+        opts:[ {t:{ar:'يتركُهنّ',en:'He left them'},c:false}, {t:{ar:'يُرسِلُهنّ إلى الشام',en:'He sent them to Sham'},c:false}, {t:{ar:'يأخذُهنّ ويُربّيهنّ',en:'He took them and raised them'},c:true} ] },
+      { q:{ar:'مَن ابنُ زيدِ بنِ عمرو؟',en:'Who was Zayd ibn Amr\'s son?'},
+        opts:[ {t:{ar:'سعيدُ بنُ زيد، من العشرةِ المبشّرين',en:'Sa\'id ibn Zayd, of the Ten Promised Paradise'},c:true}, {t:{ar:'زيدُ بنُ حارثة',en:'Zayd ibn Haritha'},c:false}, {t:{ar:'أبو جهل',en:'Abu Jahl'},c:false} ] },
+    ],
+    moral:{ar:'الفطرةُ السليمةُ تعرفُ أنّ اللهَ وحدَه يستحقُّ العبادة، والرحمةُ بالضعيفِ من أعظمِ الخير.',en:'A sound natural sense knows Allah alone deserves worship, and mercy to the weak is among the greatest good.'},
+    badge:{icon:'🌟',title:{ar:'وِسامُ الحنيفِ الباحث',en:'Badge of the Seeker of Truth'}},
+    reflect:[ {ar:'كيف تثبتُ على الحقِّ حتى لو كان كلُّ مَن حولَك على خطأ؟',en:'How do you hold to the truth even if everyone around you is wrong?'}, {ar:'زيدٌ أنقذَ البنات؛ فمَن الضعيفُ الذي تستطيعُ أن تساعدَه؟',en:'Zayd saved girls — who is someone weak that you can help?'} ],
+    didYouKnow:[ {ar:'خبرُ زيدِ بنِ عمرو وقولِه عندَ الكعبةِ وإحيائِه الموؤودة رواه البخاريّ (٣٨٢٨) عن أسماءَ بنتِ أبي بكر',en:'The account of Zayd ibn Amr at the Ka\'ba and saving buried girls is in al-Bukhari (3828), from Asma bint Abi Bakr'}, {ar:'رفضُ زيدٍ أكلَ ما ذُبِحَ للأصنامِ ورحلتُه إلى الشامِ بحثاً عن دينِ إبراهيم رواه البخاريّ (٣٨٢٦، ٣٨٢٧)',en:'Zayd\'s refusal to eat what was slaughtered to idols, and his journey to Sham seeking Ibrahim\'s religion, are in al-Bukhari (3826, 3827)'} ],
   },
 ];

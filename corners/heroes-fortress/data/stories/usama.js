@@ -1,4 +1,4 @@
-/* data/stories/usama.js — Heroes · Usama ibn Zayd — sources: صور من حياة الصحابة (الباشا) · إسلام ويب · الدرر السنية · البداية والنهاية */
+/* data/stories/usama.js — Heroes · Usama ibn Zayd — sources: صور من حياة الصحابة (الباشا) · إسلام ويب · الدرر السنية · البداية والنهاية · صحيح البخاري ومسلم */
 window.HISN_STORIES = window.HISN_STORIES || {};
 HISN_STORIES.usama = [
   { icon:'🫧', scene:'peaks', character:'⚔️',
@@ -52,5 +52,185 @@ HISN_STORIES.usama = [
     badge:{icon:'🏴',title:{ar:'وِسامُ القائدِ الشاب',en:'Badge of the Young Commander'}},
     reflect:[ {ar:'كيف تُثبِتُ أنّك أهلٌ للمسؤوليةِ رغمَ صِغَرِ سنِّك؟',en:'How do you prove you are fit for responsibility despite your youth?'}, {ar:'هل تتقنُ ما يُوكَلُ إليك حتى يثقَ بك الناس؟',en:'Do you master what is entrusted to you so people trust you?'} ],
     didYouKnow:[ {ar:'أصرَّ أبو بكرٍ على إنفاذِ جيشِ أسامةَ بعدَ وفاةِ النبيِّ ﷺ تنفيذاً لأمرِه — المصدر: البداية والنهاية',en:'Abu Bakr insisted on dispatching Usama\'s army after the Prophet\'s ﷺ death, fulfilling his command — Source: Al-Bidaya wa an-Nihaya'}, {ar:'رجعَ جيشُ أسامةَ منتصراً سالماً، وكان أوّلَ انتصارٍ في خلافةِ أبي بكر — المصدر: الدرر السنية',en:'Usama\'s army returned victorious and safe — the first victory of Abu Bakr\'s caliphate — Source: ad-Durar as-Saniyya'} ],
+  },
+  {
+    "icon": "⚖️",
+    "scene": "scales",
+    "character": "🧑",
+    "title": {
+      "ar": "العدلُ للجميع",
+      "en": "Justice for Everyone"
+    },
+    "pages": [
+      {
+        "scene": "scales",
+        "character": "🧑",
+        "text": {
+          "ar": "كان <b>أسامةُ بنُ زيد</b> يُلقَّبُ بـ<b>«حِبِّ رسولِ الله ﷺ»</b> لشدّةِ محبّةِ النبيِّ ﷺ له. وفي يومٍ من الأيّام سرقت امرأةٌ من قبيلةِ <b>بني مخزوم</b> — وهي قبيلةٌ شريفةٌ عظيمةٌ في قريش — فخافَ قومُها أن يُقامَ عليها حكمُ الله، وقالوا: من يُكلِّمُ رسولَ اللهِ ﷺ فيها؟ ثمّ قالوا: <b>ومن يجترئُ عليه إلّا أسامة، حِبُّ رسولِ الله ﷺ!</b><br><br>فكلّمَ أسامةُ النبيَّ ﷺ يطلبُ أن يعفوَ عنها. فتغيّرَ وجهُ النبيِّ ﷺ وقال: <b>«أتشفعُ في حدٍّ من حدودِ الله؟!»</b> فقال أسامة: استغفرْ لي يا رسولَ الله. ثمّ قامَ النبيُّ ﷺ فخطبَ الناسَ وقال: إنّما أهلكَ الأممَ قبلَكم أنّهم <b>كانوا إذا أخطأَ فيهم الشريفُ تركوه، وإذا أخطأَ الضعيفُ عاقبوه</b>. وأقسمَ ﷺ أنّه <b>لو فعلت ذلك ابنتُه فاطمةُ — وحاشاها — لأقامَ عليها الحكمَ نفسَه</b>.<br><br>تعلّمَ أسامةُ الدرسَ وتعلّمته الأمّةُ كلُّها: <b>القانونُ واحدٌ للغنيِّ والفقير، للقريبِ والبعيد</b>، ولا تنفعُ الواسطةُ في حقوقِ الله. وتابت المرأةُ بعدَ ذلك توبةً حسنة، وصارت تأتي السيّدةَ عائشةَ فترفعُ حاجتَها إلى النبيِّ ﷺ.",
+          "en": "<b>Usama ibn Zayd</b> was called <b>\"the beloved of the Messenger of Allah ﷺ\"</b> because of how much the Prophet ﷺ loved him. One day a woman from the tribe of <b>Banu Makhzum</b> — a noble, powerful clan of Quraysh — stole, and her people feared Allah's ruling would be applied to her. They said: Who will speak to the Messenger of Allah ﷺ about her? Then they said: <b>Who would dare except Usama, the beloved of the Messenger of Allah ﷺ!</b><br><br>So Usama spoke to the Prophet ﷺ, asking him to pardon her. The Prophet's ﷺ face changed and he said: <b>\"Do you intercede regarding one of the limits set by Allah?!\"</b> Usama said: Ask forgiveness for me, O Messenger of Allah. Then the Prophet ﷺ stood and addressed the people: What destroyed the nations before you was that <b>when a noble person among them did wrong they let him off, and when a weak person did wrong they punished him</b>. And he ﷺ swore that <b>even if his own daughter Fatima — and she was far from it — had done so, he would apply the same ruling to her</b>.<br><br>Usama learned the lesson, and so did the whole Ummah: <b>the law is one for rich and poor, near and far</b>, and favouritism has no place in Allah's rights. The woman later repented sincerely, and used to come to 'A'isha, who would convey her needs to the Prophet ﷺ."
+        },
+        "choice": {
+          "q": {
+            "ar": "ماذا علّمَ النبيُّ ﷺ أسامةَ والناسَ في هذه القصّة؟",
+            "en": "What did the Prophet ﷺ teach Usama and the people in this story?"
+          },
+          "opts": [
+            {
+              "t": {
+                "ar": "أنّ الحكمَ واحدٌ للشريفِ والضعيف",
+                "en": "That the ruling is the same for the noble and the weak"
+              },
+              "c": true,
+              "exp": {
+                "ar": "أحسنت! العدلُ للجميعِ بلا واسطةٍ ولا محاباة.",
+                "en": "Well done! Justice for all, without favouritism."
+              }
+            },
+            {
+              "t": {
+                "ar": "أنّ الأقوياءَ لا يُحاسَبون",
+                "en": "That the powerful are not held accountable"
+              },
+              "c": false,
+              "exp": {
+                "ar": "لا، بل هذا ما أهلكَ الأممَ السابقة.",
+                "en": "No — that is what destroyed earlier nations."
+              }
+            },
+            {
+              "t": {
+                "ar": "أنّ الواسطةَ تنفعُ دائماً",
+                "en": "That connections always help"
+              },
+              "c": false,
+              "exp": {
+                "ar": "لا، فالواسطةُ لا تنفعُ في حقوقِ الله.",
+                "en": "No — connections do not help in Allah's rights."
+              }
+            }
+          ]
+        }
+      }
+    ],
+    "quiz": [
+      {
+        "q": {
+          "ar": "بماذا كان يُلقَّبُ أسامة؟",
+          "en": "What was Usama's title?"
+        },
+        "opts": [
+          {
+            "t": {
+              "ar": "سيفُ الله",
+              "en": "The Sword of Allah"
+            },
+            "c": false
+          },
+          {
+            "t": {
+              "ar": "حِبُّ رسولِ الله ﷺ",
+              "en": "The beloved of the Messenger of Allah ﷺ"
+            },
+            "c": true
+          },
+          {
+            "t": {
+              "ar": "أمينُ الأمّة",
+              "en": "The trustee of the Ummah"
+            },
+            "c": false
+          }
+        ]
+      },
+      {
+        "q": {
+          "ar": "ماذا قال النبيُّ ﷺ لأسامةَ حين كلّمه؟",
+          "en": "What did the Prophet ﷺ say to Usama when he spoke to him?"
+        },
+        "opts": [
+          {
+            "t": {
+              "ar": "أحسنتَ يا أسامة",
+              "en": "Well done, Usama"
+            },
+            "c": false
+          },
+          {
+            "t": {
+              "ar": "اذهبْ والعبْ",
+              "en": "Go and play"
+            },
+            "c": false
+          },
+          {
+            "t": {
+              "ar": "أتشفعُ في حدٍّ من حدودِ الله؟",
+              "en": "Do you intercede regarding one of Allah's limits?"
+            },
+            "c": true
+          }
+        ]
+      },
+      {
+        "q": {
+          "ar": "ماذا أهلكَ الأممَ السابقةَ كما قال النبيُّ ﷺ؟",
+          "en": "What destroyed earlier nations, as the Prophet ﷺ said?"
+        },
+        "opts": [
+          {
+            "t": {
+              "ar": "تركُ الشريفِ ومعاقبةُ الضعيف",
+              "en": "Letting the noble off and punishing the weak"
+            },
+            "c": true
+          },
+          {
+            "t": {
+              "ar": "كثرةُ المطر",
+              "en": "Too much rain"
+            },
+            "c": false
+          },
+          {
+            "t": {
+              "ar": "قلّةُ الطعام",
+              "en": "Too little food"
+            },
+            "c": false
+          }
+        ]
+      }
+    ],
+    "moral": {
+      "ar": "العدلُ أساسُ الأمم: الحقُّ واحدٌ للجميع، ولا نُحابي أحداً لقرابتِه أو مكانتِه، حتى أحبَّ الناسِ إلينا.",
+      "en": "Justice is the foundation of nations: what is right is the same for all, and we favour no one for kinship or status — not even those we love most."
+    },
+    "badge": {
+      "icon": "⚖️",
+      "title": {
+        "ar": "وِسامُ العدلِ للجميع",
+        "en": "Badge of Justice for All"
+      }
+    },
+    "reflect": [
+      {
+        "ar": "هل تُعامِلُ صديقَك المقرّبَ وغيرَه بالعدلِ نفسِه في اللعب؟",
+        "en": "Do you treat your best friend and others with the same fairness in games?"
+      },
+      {
+        "ar": "لماذا يجبُ أن يكونَ القانونُ واحداً للجميع؟",
+        "en": "Why must the rules be the same for everyone?"
+      }
+    ],
+    "didYouKnow": [
+      {
+        "ar": "قصّةُ المرأةِ المخزوميّةِ وقولُه ﷺ لأسامة: «أتشفعُ في حدٍّ من حدودِ الله؟» رواها البخاري (٣٤٧٥) ومسلم (١٦٨٨)",
+        "en": "The story of the Makhzumi woman and his ﷺ words to Usama \"Do you intercede regarding one of Allah's limits?\" are in al-Bukhari (3475) and Muslim (1688)"
+      },
+      {
+        "ar": "ذكرت عائشةُ رضي الله عنها أنّ المرأةَ حسُنت توبتُها وتزوّجت، وكانت تأتيها فترفعُ حاجتَها إلى النبيِّ ﷺ — رواه البخاري (٢٦٤٨)",
+        "en": "'A'isha mentioned that the woman's repentance was good, she married, and would come to her to convey her needs to the Prophet ﷺ — al-Bukhari (2648)"
+      }
+    ]
   },
 ];

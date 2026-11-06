@@ -1,4 +1,4 @@
-/* data/stories/amribnas.js — Heroes · Amr ibn al-As — sources: صور من حياة الصحابة (الباشا) · إسلام ويب · الدرر السنية · البداية والنهاية */
+/* data/stories/amribnas.js — Heroes · Amr ibn al-As — sources: صور من حياة الصحابة (الباشا) · إسلام ويب · الدرر السنية · البداية والنهاية · سنن الترمذي · صحيح مسلم · سير أعلام النبلاء */
 window.HISN_STORIES = window.HISN_STORIES || {};
 HISN_STORIES.amribnas = [
   { icon:'🧭', scene:'kaaba', character:'🤝',
@@ -52,5 +52,365 @@ HISN_STORIES.amribnas = [
     badge:{icon:'🏛️',title:{ar:'وِسامُ البناءِ والعدل',en:'Badge of Building & Justice'}},
     reflect:[ {ar:'كيف تكونُ قائداً يبني ويُصلِحُ لا يهدِمُ ويُفسِد؟',en:'How can you be a leader who builds and improves, not destroys and corrupts?'}, {ar:'هل تعدلُ مع من تحت يدِك وتُحسِنُ إليهم؟',en:'Are you just and kind to those under your care?'} ],
     didYouKnow:[ {ar:'مسجدُ عمرِو بنِ العاصِ في الفُسطاطِ هو أوّلُ مسجدٍ بُنِيَ في مصرَ وإفريقيا، ولا يزالُ قائماً — المصدر: البداية والنهاية',en:'The Mosque of Amr ibn al-As in Fustat is the first mosque built in Egypt and Africa, and still stands — Source: Al-Bidaya wa an-Nihaya'}, {ar:'كتبَ عمرٌو إلى عمرَ يصفُ مصرَ وصفاً بديعاً يدلُّ على فصاحتِه وذكائِه — المصدر: صور من حياة الصحابة',en:'Amr wrote to Umar a wonderful description of Egypt, showing his eloquence and cleverness — Source: Suwar min Hayat as-Sahaba'} ],
+  },
+  {
+    "icon": "💎",
+    "scene": "kaaba",
+    "character": "🧔",
+    "title": {
+      "ar": "أسلمَ الناسُ وآمنَ عمرو",
+      "en": "The People Accepted Islam, and 'Amr Believed"
+    },
+    "pages": [
+      {
+        "scene": "kaaba",
+        "character": "🧔",
+        "text": {
+          "ar": "يومَ <b>فتحِ مكّة</b> دخلَ كثيرٌ من أهلِ مكّةَ في الإسلام، بعضُهم بعدَ أن رأى انتصارَ المسلمين. لكنّ <b>عمرَو بنَ العاص</b> كان قد سبقهم! فقد جاءَ إلى المدينةِ <b>قبلَ الفتح</b> باختيارِه، بعدَ تفكيرٍ طويلٍ واقتناعٍ عميق، والمسلمونَ يومئذٍ لم يدخلوا مكّةَ بعد.<br><br>فشهدَ له النبيُّ ﷺ بكلمةٍ عظيمة: <b>«أسلمَ الناسُ، وآمنَ عمرُو بنُ العاص»</b>. قال العلماء: فرّقَ النبيُّ ﷺ بين «أسلم» و«آمن»؛ فالإسلامُ قد يكونُ بالظاهر، أمّا <b>الإيمانُ فهو يقينُ القلب</b> — كأنّه يقول: عمرٌو جاءَ مؤمناً من قلبِه، راغباً لا مضطرّاً.<br><br>وقال ﷺ أيضاً: <b>«عمرُو بنُ العاصِ من صالحي قريش»</b>. فرِحَ عمرٌو بهذه الشهادة، وعاشَ يخدمُ الإسلامَ بعقلِه وحكمتِه. الدرسُ لنا: <b>اعبدِ اللهَ عن حبٍّ ويقين</b>، لا لأنّ الناسَ يفعلونَ ذلك فقط.",
+          "en": "On the day of <b>the conquest of Makkah</b>, many of its people entered Islam, some after seeing the Muslims' victory. But <b>'Amr ibn al-'As</b> had come before them! He went to Madinah <b>before the conquest</b> by his own choice, after long thought and deep conviction, while the Muslims had not yet entered Makkah.<br><br>So the Prophet ﷺ testified for him with a great word: <b>\"The people accepted Islam, and 'Amr ibn al-'As believed.\"</b> Scholars said: the Prophet ﷺ distinguished between \"accepted Islam\" and \"believed\"; Islam can be outward, while <b>faith is certainty in the heart</b> — as if to say: 'Amr came believing from his heart, willingly, not compelled.<br><br>He ﷺ also said: <b>\"'Amr ibn al-'As is among the righteous of Quraysh.\"</b> 'Amr rejoiced at this testimony and lived serving Islam with his intellect and wisdom. The lesson for us: <b>worship Allah out of love and certainty</b>, not only because others do."
+        },
+        "choice": {
+          "q": {
+            "ar": "ماذا قصدَ النبيُّ ﷺ بقولِه: «وآمنَ عمرو»؟",
+            "en": "What did the Prophet ﷺ mean by \"and 'Amr believed\"?"
+          },
+          "opts": [
+            {
+              "t": {
+                "ar": "أنّ عمراً أسلمَ خوفاً",
+                "en": "That 'Amr accepted Islam out of fear"
+              },
+              "c": false,
+              "exp": {
+                "ar": "لا، بل جاءَ راغباً مقتنعاً قبلَ الفتح.",
+                "en": "No — he came willingly and convinced, before the conquest."
+              }
+            },
+            {
+              "t": {
+                "ar": "أنّ إسلامَه كان عن يقينٍ في القلبِ ورغبة",
+                "en": "That his Islam came from certainty in the heart and desire"
+              },
+              "c": true,
+              "exp": {
+                "ar": "أحسنت! الإيمانُ يقينُ القلب.",
+                "en": "Well done! Faith is the heart's certainty."
+              }
+            },
+            {
+              "t": {
+                "ar": "أنّه لم يُسلِمْ",
+                "en": "That he did not accept Islam"
+              },
+              "c": false,
+              "exp": {
+                "ar": "لا، بل أسلمَ وآمن.",
+                "en": "No — he accepted Islam and believed."
+              }
+            }
+          ]
+        }
+      }
+    ],
+    "quiz": [
+      {
+        "q": {
+          "ar": "متى أسلمَ عمرُو بنُ العاص؟",
+          "en": "When did 'Amr ibn al-'As accept Islam?"
+        },
+        "opts": [
+          {
+            "t": {
+              "ar": "بعدَ وفاةِ النبيِّ ﷺ",
+              "en": "After the Prophet's ﷺ death"
+            },
+            "c": false
+          },
+          {
+            "t": {
+              "ar": "يومَ الفتح",
+              "en": "On the day of the conquest"
+            },
+            "c": false
+          },
+          {
+            "t": {
+              "ar": "قبلَ فتحِ مكّة",
+              "en": "Before the conquest of Makkah"
+            },
+            "c": true
+          }
+        ]
+      },
+      {
+        "q": {
+          "ar": "ما الفرقُ الذي أشارَ إليه الحديث؟",
+          "en": "What difference does the hadith point to?"
+        },
+        "opts": [
+          {
+            "t": {
+              "ar": "بين الإسلامِ الظاهرِ والإيمانِ في القلب",
+              "en": "Between outward Islam and faith in the heart"
+            },
+            "c": true
+          },
+          {
+            "t": {
+              "ar": "بين الغنيِّ والفقير",
+              "en": "Between rich and poor"
+            },
+            "c": false
+          },
+          {
+            "t": {
+              "ar": "بين مكّةَ والمدينة",
+              "en": "Between Makkah and Madinah"
+            },
+            "c": false
+          }
+        ]
+      },
+      {
+        "q": {
+          "ar": "ماذا قال النبيُّ ﷺ أيضاً عن عمرو؟",
+          "en": "What else did the Prophet ﷺ say about 'Amr?"
+        },
+        "opts": [
+          {
+            "t": {
+              "ar": "سيفُ الله",
+              "en": "The Sword of Allah"
+            },
+            "c": false
+          },
+          {
+            "t": {
+              "ar": "من صالحي قريش",
+              "en": "Among the righteous of Quraysh"
+            },
+            "c": true
+          },
+          {
+            "t": {
+              "ar": "حِبُّ رسولِ الله",
+              "en": "The beloved of Allah's Messenger"
+            },
+            "c": false
+          }
+        ]
+      }
+    ],
+    "moral": {
+      "ar": "الإيمانُ الحقُّ يقينٌ في القلبِ قبلَ أن يكونَ عملاً في الظاهر؛ فاعبدِ اللهَ عن حبٍّ واقتناع.",
+      "en": "True faith is certainty in the heart before it is an outward action — worship Allah out of love and conviction."
+    },
+    "badge": {
+      "icon": "💎",
+      "title": {
+        "ar": "وِسامُ الإيمانِ الصادق",
+        "en": "Badge of Sincere Faith"
+      }
+    },
+    "reflect": [
+      {
+        "ar": "لماذا تُصلّي؟ هل لأنّك تحبُّ اللهَ أم لأنّ الناسَ يُصلّون؟",
+        "en": "Why do you pray — because you love Allah, or because others pray?"
+      },
+      {
+        "ar": "كيف تُقوّي اليقينَ في قلبِك؟",
+        "en": "How can you strengthen certainty in your heart?"
+      }
+    ],
+    "didYouKnow": [
+      {
+        "ar": "حديثُ «أسلمَ الناسُ وآمنَ عمرُو بنُ العاص» رواه الترمذي (٣٨٤٤) وحسّنه الألبانيُّ والأرناؤوط، وقال الترمذيُّ إنّ في إسنادِه ضعفاً",
+        "en": "The hadith \"The people accepted Islam and 'Amr ibn al-'As believed\" is narrated by at-Tirmidhi (3844), graded hasan by al-Albani and al-Arna'ut, though at-Tirmidhi noted weakness in its chain"
+      },
+      {
+        "ar": "حديثُ «عمرُو بنُ العاصِ من صالحي قريش» رواه الترمذي (٣٨٤٥) وصحّحه الألباني",
+        "en": "The hadith \"'Amr ibn al-'As is among the righteous of Quraysh\" is narrated by at-Tirmidhi (3845), graded sahih by al-Albani"
+      }
+    ]
+  },
+  {
+    "icon": "🌙",
+    "scene": "night",
+    "character": "🧔",
+    "title": {
+      "ar": "دموعُ الوداعِ ووصيّةُ عمرو",
+      "en": "Farewell Tears and 'Amr's Advice"
+    },
+    "pages": [
+      {
+        "scene": "night",
+        "character": "🧔",
+        "text": {
+          "ar": "لمّا حضرَ <b>عمرَو بنَ العاص</b> الموتُ، <b>بكى طويلاً وحوّلَ وجهَه إلى الجدار</b>. فقال له ابنُه عبدُ الله: يا أبتاه، أما بشّرك رسولُ اللهِ ﷺ بكذا؟ فالتفتَ وقال: <b>«إنّ أفضلَ ما نُعِدُّ: شهادةُ أن لا إلهَ إلّا اللهُ وأنّ محمّداً رسولُ الله»</b>. ثمّ حكى أنّه عاشَ ثلاثةَ أحوال: كان قبلَ الإسلامِ <b>أشدَّ الناسِ بُغضاً</b> للنبيِّ ﷺ، ثمّ لمّا جعلَ اللهُ الإسلامَ في قلبِه صارَ النبيُّ ﷺ أحبَّ الناسِ إليه.<br><br>قال: <b>«وما كان أحدٌ أحبَّ إليَّ من رسولِ اللهِ ﷺ ولا أجلَّ في عيني منه، وما كنتُ أُطيقُ أن أملأَ عينيَّ منه إجلالاً له، ولو سُئِلتُ أن أصفَه ما أطقتُ»</b>! كان يحبُّه ويهابُه حتى لا يستطيعُ أن يُطيلَ النظرَ إليه. ثمّ قال متواضعاً: ثمّ تولّينا بعدَه أموراً <b>لا أدري ما حالي فيها</b>.<br><br>ثمّ أوصى: <b>«إذا أنا متُّ فلا تصحبْني نائحةٌ ولا نار»</b>، وأوصاهم أن يقفوا عندَ قبرِه بعدَ دفنِه قدرَ ما تُنحَرُ ناقةٌ ويُقسَمُ لحمُها، <b>«حتى أستأنسَ بكم، وأنظرَ ماذا أُراجِعُ به رسلَ ربّي»</b>. عاشَ عمرٌو قائداً عظيماً، وماتَ <b>خائفاً راجياً</b>، يُعِدُّ للقاءِ الله.",
+          "en": "When death came to <b>'Amr ibn al-'As</b>, he <b>wept for a long time and turned his face to the wall</b>. His son 'Abdullah said: Father, did the Messenger of Allah ﷺ not give you glad tidings of such-and-such? He turned and said: <b>\"The best thing we prepare is the testimony that there is no god but Allah and that Muhammad is the Messenger of Allah.\"</b> Then he told of three stages in his life: before Islam he had been <b>the person who most disliked</b> the Prophet ﷺ; then when Allah placed Islam in his heart, the Prophet ﷺ became the dearest of people to him.<br><br>He said: <b>\"No one was dearer to me than the Messenger of Allah ﷺ, nor greater in my eyes; I could not fill my eyes with him out of reverence, and if I were asked to describe him, I could not\"</b>! He loved and revered him so much he could not gaze long at him. Then he said humbly: after him we took charge of affairs <b>and I do not know how I stand in them</b>.<br><br>Then he advised: <b>\"When I die, let no wailing woman or fire accompany me,\"</b> and asked them to stand at his grave after burial for as long as it takes to slaughter a camel and divide its meat, <b>\"so that I may find comfort in you and see what answer I give to my Lord's messengers.\"</b> 'Amr lived a great leader and died <b>fearing and hoping</b>, preparing to meet Allah."
+        },
+        "choice": {
+          "q": {
+            "ar": "ما أفضلُ ما نُعِدُّه للقاءِ اللهِ كما قال عمرو؟",
+            "en": "What is the best thing to prepare for meeting Allah, as 'Amr said?"
+          },
+          "opts": [
+            {
+              "t": {
+                "ar": "المالُ والقصور",
+                "en": "Wealth and palaces"
+              },
+              "c": false,
+              "exp": {
+                "ar": "لا، فهذه تبقى في الدنيا.",
+                "en": "No — these stay behind in this world."
+              }
+            },
+            {
+              "t": {
+                "ar": "شهادةُ أن لا إلهَ إلّا اللهُ وأنّ محمّداً رسولُ الله",
+                "en": "The testimony that there is no god but Allah and Muhammad is His Messenger"
+              },
+              "c": true,
+              "exp": {
+                "ar": "أحسنت! التوحيدُ أعظمُ ما يُعِدُّه المؤمن.",
+                "en": "Well done! Tawhid is the greatest thing a believer prepares."
+              }
+            },
+            {
+              "t": {
+                "ar": "كثرةُ الأصدقاء",
+                "en": "Many friends"
+              },
+              "c": false,
+              "exp": {
+                "ar": "لا، بل الشهادةُ والعملُ الصالح.",
+                "en": "No — the testimony and righteous deeds."
+              }
+            }
+          ]
+        }
+      }
+    ],
+    "quiz": [
+      {
+        "q": {
+          "ar": "لماذا لم يكنْ عمرٌو يملأُ عينيه من النبيِّ ﷺ؟",
+          "en": "Why could 'Amr not fill his eyes with the Prophet ﷺ?"
+        },
+        "opts": [
+          {
+            "t": {
+              "ar": "لأنّه كان بعيداً",
+              "en": "Because he was far away"
+            },
+            "c": false
+          },
+          {
+            "t": {
+              "ar": "لأنّه لم يكنْ يراه",
+              "en": "Because he never saw him"
+            },
+            "c": false
+          },
+          {
+            "t": {
+              "ar": "إجلالاً وهيبةً له",
+              "en": "Out of reverence and awe"
+            },
+            "c": true
+          }
+        ]
+      },
+      {
+        "q": {
+          "ar": "ماذا أوصى عمرٌو ألّا يصحبَه بعدَ موتِه؟",
+          "en": "What did 'Amr ask not to accompany him after death?"
+        },
+        "opts": [
+          {
+            "t": {
+              "ar": "نائحةٌ ولا نار",
+              "en": "A wailing woman or fire"
+            },
+            "c": true
+          },
+          {
+            "t": {
+              "ar": "أبناؤه",
+              "en": "His sons"
+            },
+            "c": false
+          },
+          {
+            "t": {
+              "ar": "الماء",
+              "en": "Water"
+            },
+            "c": false
+          }
+        ]
+      },
+      {
+        "q": {
+          "ar": "ما الحالُ التي ماتَ عليها عمرو؟",
+          "en": "In what state did 'Amr die?"
+        },
+        "opts": [
+          {
+            "t": {
+              "ar": "مغروراً بأعمالِه",
+              "en": "Proud of his deeds"
+            },
+            "c": false
+          },
+          {
+            "t": {
+              "ar": "خائفاً راجياً يُعِدُّ للقاءِ الله",
+              "en": "Fearing and hoping, preparing to meet Allah"
+            },
+            "c": true
+          },
+          {
+            "t": {
+              "ar": "غافلاً",
+              "en": "Heedless"
+            },
+            "c": false
+          }
+        ]
+      }
+    ],
+    "moral": {
+      "ar": "أعظمُ ما نُعِدُّه للقاءِ اللهِ التوحيدُ والعملُ الصالح، والمؤمنُ يعيشُ بين الخوفِ والرجاء، ويُحبُّ النبيَّ ﷺ ويُجِلُّه.",
+      "en": "The greatest thing we prepare for meeting Allah is tawhid and good deeds; the believer lives between fear and hope, loving and revering the Prophet ﷺ."
+    },
+    "badge": {
+      "icon": "🌙",
+      "title": {
+        "ar": "وِسامُ حُسنِ الخاتمة",
+        "en": "Badge of a Good Ending"
+      }
+    },
+    "reflect": [
+      {
+        "ar": "كيف تُظهِرُ حبَّك واحترامَك للنبيِّ ﷺ في حياتِك؟",
+        "en": "How do you show love and respect for the Prophet ﷺ in your life?"
+      },
+      {
+        "ar": "ما العملُ الصالحُ الذي تريدُ أن تُكثِرَ منه استعداداً للقاءِ الله؟",
+        "en": "Which good deed do you want to do more of to prepare to meet Allah?"
+      }
+    ],
+    "didYouKnow": [
+      {
+        "ar": "قصّةُ بكاءِ عمرِو بنِ العاصِ عندَ موتِه ووصيّتِه رواها مسلم في صحيحه (١٢١)",
+        "en": "The story of 'Amr ibn al-'As weeping at death and his advice is narrated by Muslim in his Sahih (121)"
+      },
+      {
+        "ar": "توفّي عمرُو بنُ العاصِ بمصرَ سنةَ ٤٣هـ وهو والٍ عليها، ودُفِنَ بسفحِ المقطّم — المصدر: سير أعلام النبلاء",
+        "en": "'Amr ibn al-'As died in Egypt in 43 AH while its governor, and was buried at the foot of al-Muqattam — Source: Siyar A'lam an-Nubala'"
+      }
+    ]
   },
 ];

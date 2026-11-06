@@ -4,7 +4,7 @@
 window.HISN = window.HISN || {}; HISN.chapters = HISN.chapters || {};
 HISN.chapters.alim = {
   id: 'alim', era: 'heart', kind: 'name', icon: 'light',
-  name: { ar: 'العليم', en: 'The All-Knowing' },
+  name: { ar: 'العليمُ العالِم', en: 'The All-Knowing' },
   tag:  { ar: 'يَعلمُ السرَّ وما هو أخفى', en: 'He knows the secret and what is more hidden' },
   accent: '#7A4DA8', accent2: '#9A72CF',
   rooms: ['knowledge', 'story', 'memorize', 'activities', 'treasures'],
@@ -27,6 +27,7 @@ HISN.chapters.alim = {
       { ar: 'يعلمُ ما في قلبِك من نيّةٍ وشعور.', en: 'He knows the intentions and feelings in your heart.' },
       { ar: 'نحنُ لا نعلمُ إلا ما علّمَنا الله.', en: 'We know only what Allah has taught us.' },
       { ar: 'مَن أيقنَ أنّ اللهَ يعلمُ، استحى أن يُذنب.', en: 'Whoever is certain Allah knows feels shy to sin.' },
+      { ar: 'ومن أسمائه <b>«العالِم»</b>: يَعلمُ ما غابَ عنّا وما نراه: <b>﴿عَالِمُ الْغَيْبِ وَالشَّهَادَةِ﴾</b> (الرعد ٩).', en: 'Another of His Names is <b>“Al-‘Alim”</b>, the Knower: He knows what is hidden from us and what we see: <b>“Knower of the unseen and the seen”</b> (ar-Ra‘d 9).' },
     ],
     ayah: { ar: '﴿ إِنَّ اللَّهَ عَلِيمٌ بِذَاتِ الصُّدُورِ ﴾', ref: { ar: 'لقمان ٢٣', en: 'Luqman 23' } },
   },

@@ -1,4 +1,4 @@
-/* data/stories/qutayba.js — Leaders · Qutayba ibn Muslim — sources: البداية والنهاية · فتوح البلدان · إسلام ويب · الدرر السنية */
+/* data/stories/qutayba.js — Leaders · Qutayba ibn Muslim — sources: البداية والنهاية · فتوح البلدان · إسلام ويب · الدرر السنية · سير أعلام النبلاء · صفة الصفوة */
 window.HISN_STORIES = window.HISN_STORIES || {};
 HISN_STORIES.qutayba = [
   { icon:'🌍', scene:'peaks', character:'🐎',
@@ -52,5 +52,31 @@ HISN_STORIES.qutayba = [
     badge:{icon:'🕌',title:{ar:'وِسامُ الأثرِ الممتد',en:'Badge of the Lasting Impact'}},
     reflect:[ {ar:'كيف تزرعُ خيراً ينتفعُ به الناسُ بعدَك؟',en:'How do you plant good that people benefit from after you?'}, {ar:'هل تُفكِّرُ في الأثرِ البعيدِ لأعمالِك؟',en:'Do you think about the long-term impact of your deeds?'} ],
     didYouKnow:[ {ar:'الإمامُ البخاريُّ ومسلمٌ وكثيرٌ من أئمّةِ الحديثِ خرجوا من بلادِ ما وراءَ النهرِ بعدَ دخولِها الإسلام — المصدر: سير أعلام النبلاء',en:'Imam al-Bukhari, Muslim, and many imams of hadith came from Transoxiana after it embraced Islam — Source: Siyar A\u2019lam an-Nubala\u2019'}, {ar:'صارتْ سمرقندُ وبخارى من أجملِ مدنِ العالمِ الإسلاميِّ علماً وعمارةً لقرون — المصدر: البداية والنهاية',en:'Samarkand and Bukhara became among the most beautiful cities of the Muslim world in knowledge and architecture for centuries — Source: Al-Bidaya wa an-Nihaya'} ],
+  },
+  { icon:'☝️', scene:'night', character:'🤲',
+    title:{ ar:'إصبعٌ أحبُّ من مئةِ ألفِ سيف', en:'One Finger Dearer Than a Hundred Thousand Swords' },
+    pages:[
+      { scene:'night', character:'☝️',
+        text:{ ar:'وقفَ القائدُ <b>قتيبةُ بنُ مسلم</b> يوماً أمامَ جيشٍ كبيرٍ من الأعداء، فـ<b>هاله أمرُهم</b> وشعرَ بعظمِ الموقف. لم يسألْ عن عددِ الخيلِ ولا عن السيوف، بل سألَ سؤالاً عجيباً: <b>«أينَ محمدُ بنُ واسع؟»</b> — وكان محمدُ بنُ واسعٍ عالماً عابداً زاهداً من التابعين، خرجَ مع الجيش.<br><br>فقالوا له: هو ذاك في الميمنة، <b>متّكئٌ على قوسِه، يُحرِّكُ إصبعَه نحوَ السماء</b> يدعو الله. فقال قتيبةُ كلمةً خالدة: <b>«تلك الإصبعُ أحبُّ إليَّ من مئةِ ألفِ سيفٍ شهير، وشابٍّ طرير!»</b> لقد عرفَ القائدُ العظيمُ أنّ <b>النصرَ من عندِ الله</b>، وأنّ دعاءَ رجلٍ صالحٍ صادقٍ أقوى من جيوشٍ كثيرة. علّمنا قتيبةُ أن نأخذَ بالأسباب، ثمّ <b>نتوكّلَ على اللهِ وندعوه</b>، فهو وحدَه صاحبُ النصر.',
+          en:'One day the commander <b>Qutayba ibn Muslim</b> stood facing a large enemy army, and <b>their size alarmed him</b>; he felt how serious the moment was. He did not ask about the number of horses or swords, but asked a surprising question: <b>"Where is Muhammad ibn Wasi’?"</b> — Muhammad ibn Wasi’ was a learned, devout, abstinent man of the Tabi’un who had come out with the army.<br><br>They told him, "There he is on the right wing, <b>leaning on his bow, moving his finger toward the sky</b>," supplicating to Allah. Qutayba said an immortal word: <b>"That finger is dearer to me than a hundred thousand famous swords and youthful warriors!"</b> The great commander knew that <b>victory comes from Allah</b>, and that the supplication of one sincere, righteous man is stronger than many armies. Qutayba taught us to take the means, then <b>rely on Allah and call upon Him</b>, for He alone grants victory.' },
+        choice:{ q:{ar:'لماذا كانت إصبعُ محمدِ بنِ واسعٍ أحبَّ إلى قتيبة من السيوف؟',en:'Why was Muhammad ibn Wasi’s finger dearer to Qutayba than swords?'},
+          opts:[
+            { t:{ar:'لأنّه كان يرفعُها بالدعاءِ إلى الله، والنصرُ من عندِ الله',en:'Because he raised it in supplication to Allah, and victory is from Allah'},c:true,exp:{ar:'نعم! الدعاءُ سلاحُ المؤمن.',en:'Yes! Supplication is the believer’s weapon.'} },
+            { t:{ar:'لأنّها كانت تُشيرُ إلى الطريق',en:'Because it pointed the way'},c:false,exp:{ar:'لا، بل كان يدعو الله.',en:'No — he was supplicating to Allah.'} },
+            { t:{ar:'لأنّ قتيبةَ لا يحبُّ السيوف',en:'Because Qutayba disliked swords'},c:false,exp:{ar:'لا، بل لأنّه عرفَ قيمةَ الدعاء.',en:'No — because he knew the value of supplication.'} },
+          ] } },
+    ],
+    quiz:[
+      { q:{ar:'عمّن سألَ قتيبةُ حين رأى جيشَ الأعداء؟',en:'Whom did Qutayba ask about when he saw the enemy army?'},
+        opts:[ {t:{ar:'عن أقوى فارس',en:'The strongest horseman'},c:false}, {t:{ar:'عن محمدِ بنِ واسع',en:'Muhammad ibn Wasi’'},c:true}, {t:{ar:'عن عددِ الخيل',en:'The number of horses'},c:false} ] },
+      { q:{ar:'ماذا كان يفعلُ محمدُ بنُ واسع؟',en:'What was Muhammad ibn Wasi’ doing?'},
+        opts:[ {t:{ar:'كان نائماً',en:'He was asleep'},c:false}, {t:{ar:'كان يأكل',en:'He was eating'},c:false}, {t:{ar:'كان يدعو ويُحرِّكُ إصبعَه نحوَ السماء',en:'He was supplicating, moving his finger toward the sky'},c:true} ] },
+      { q:{ar:'ما الدرسُ من هذه القصّة؟',en:'What is the lesson of this story?'},
+        opts:[ {t:{ar:'نأخذُ بالأسبابِ ونتوكّلُ على اللهِ وندعوه',en:'We take the means, rely on Allah, and call upon Him'},c:true}, {t:{ar:'الدعاءُ لا ينفع',en:'Supplication is useless'},c:false}, {t:{ar:'السيوفُ وحدَها تكفي',en:'Swords alone are enough'},c:false} ] },
+    ],
+    moral:{ar:'خذْ بالأسبابِ ثمّ توكّلْ على اللهِ وادعُه، فإنّ دعاءَ المؤمنِ الصادقِ سلاحٌ عظيم، والنصرُ من عندِ اللهِ وحدَه.',en:'Take the means, then rely on Allah and call upon Him; the supplication of a sincere believer is a mighty weapon, and victory is from Allah alone.'},
+    badge:{icon:'☝️',title:{ar:'وِسامُ سلاحِ الدعاء',en:'Badge of the Weapon of Dua'}},
+    reflect:[ {ar:'هل تدعو اللهَ قبلَ أن تبدأَ اختباراً أو عملاً صعباً؟',en:'Do you make dua before starting a test or a hard task?'}, {ar:'لماذا قدّرَ القائدُ العالمَ العابدَ أكثرَ من آلافِ الجنود؟',en:'Why did the commander value the devout scholar more than thousands of soldiers?'} ],
+    didYouKnow:[ {ar:'قال قتيبةُ عن محمدِ بنِ واسعٍ وهو يرفعُ إصبعَه بالدعاء: «تلك الإصبعُ أحبُّ إليَّ من مئةِ ألفِ سيفٍ شهير وشابٍّ طرير» — المصدر: سير أعلام النبلاء للذهبي (ترجمة محمد بن واسع)',en:'Qutayba said of Muhammad ibn Wasi’ as he raised his finger in dua: "That finger is dearer to me than a hundred thousand famous swords and youthful warriors" — Source: Siyar A’lam an-Nubala’ (biography of Muhammad ibn Wasi’)'}, {ar:'محمدُ بنُ واسعٍ الأزديُّ البصريُّ (ت ١٢٣هـ تقريباً) من عُبّادِ التابعينَ وزهّادِهم — المصدر: سير أعلام النبلاء · صفة الصفوة لابن الجوزي',en:'Muhammad ibn Wasi’ al-Azdi of Basra (d. about 123 AH) was one of the devout and abstinent Tabi’un — Source: Siyar A’lam an-Nubala’ · Sifat as-Safwa (Ibn al-Jawzi)'} ],
   },
 ];

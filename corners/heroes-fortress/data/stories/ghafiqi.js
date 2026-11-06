@@ -1,4 +1,4 @@
-/* data/stories/ghafiqi.js — Leaders · Abdurrahman al-Ghafiqi — sources: البداية والنهاية · نفح الطيب · إسلام ويب · الدرر السنية */
+/* data/stories/ghafiqi.js — Leaders · Abdurrahman al-Ghafiqi — sources: البداية والنهاية · نفح الطيب · إسلام ويب · الدرر السنية · البيان المغرب · جذوة المقتبس · المعجب */
 window.HISN_STORIES = window.HISN_STORIES || {};
 HISN_STORIES.ghafiqi = [
   { icon:'⚖️', scene:'madinah', character:'🤝',
@@ -52,5 +52,31 @@ HISN_STORIES.ghafiqi = [
     badge:{icon:'🦁',title:{ar:'وِسامُ الثباتِ والشهادة',en:'Badge of Steadfastness & Martyrdom'}},
     reflect:[ {ar:'هل تثبُتُ على ما تؤمنُ به حتى في أصعبِ الظروف؟',en:'Do you stand firm on what you believe even in the hardest circumstances?'}, {ar:'كيف تكونُ قدوةً تقودُ غيرَك إلى الخيرِ بفعلِك؟',en:'How are you an example that leads others to good by your action?'} ],
     didYouKnow:[ {ar:'معركةُ بلاطِ الشهداء (تور/بواتييه) كانت أبعدَ توغّلٍ للمسلمينَ في غربِ أوروبا — المصدر: البداية والنهاية',en:'The Battle of Tours (Balat ash-Shuhada) was the Muslims\u2019 deepest advance into Western Europe — Source: Al-Bidaya wa an-Nihaya'}, {ar:'استُشهِدَ عبد الرحمن الغافقيُّ في المعركةِ، وأثنى المؤرّخونَ على صلاحِه وشجاعتِه — المصدر: نفح الطيب',en:'Abdurrahman al-Ghafiqi was martyred in the battle, and historians praised his righteousness and courage — Source: Nafh at-Tib'} ],
+  },
+  { icon:'🧭', scene:'desert', character:'🧔',
+    title:{ ar:'القائدُ الذي اختاره الجنود', en:'The Leader the Soldiers Chose' },
+    pages:[
+      { scene:'desert', character:'🧭',
+        text:{ ar:'يذكرُ المؤرّخونَ أنّ <b>عبدَ الرحمنِ الغافقي</b> كان من <b>التابعين</b>، وأنّه روى عن الصحابيِّ الجليلِ <b>عبدِ اللهِ بنِ عمر</b> رضيَ اللهُ عنهما. فتربّى على العلمِ والتقوى قبلَ أن يكونَ قائداً. وكان جندياً في جيشِ أميرِ الأندلسِ <b>السمحِ بنِ مالك</b>.<br><br>وفي سنةِ ١٠٢هـ استُشهِدَ الأميرُ السمحُ في أرضِ الفرنجة، فاضطربَ الجيشُ وخافَ الجنودُ وصاروا بلا قائد! فمن يجمعُ كلمتَهم؟ لم يتنازعوا، بل <b>اتّفقوا جميعاً على الغافقي</b> وقدّموه على أنفسِهم لِما عرفوا من <b>دينِه وحكمتِه وشجاعتِه</b>. فجمعَ الصفوفَ بهدوء، و<b>عادَ بالجيشِ سالماً</b> وحفظَ أرواحَ المسلمين. علّمنا الغافقيُّ أنّ <b>الثقةَ تُكسَبُ بالأخلاقِ والعلم</b>، وأنّ القائدَ الحكيمَ يحفظُ أرواحَ مَن معه.',
+          en:'Historians mention that <b>Abd ar-Rahman al-Ghafiqi</b> was one of the <b>Tabi’un</b>, and that he narrated from the noble Companion <b>Abdullah ibn Umar</b>, may Allah be pleased with them both. So he was raised on knowledge and piety before becoming a leader. He was a soldier in the army of the governor of Andalusia, <b>as-Samh ibn Malik</b>.<br><br>In the year 102 AH, as-Samh was martyred in the land of the Franks; the army was shaken, the soldiers were afraid, and they were left without a leader! Who would unite them? They did not quarrel; instead they <b>all agreed on al-Ghafiqi</b> and put him forward over themselves because of what they knew of <b>his religion, wisdom, and courage</b>. He calmly gathered the ranks and <b>brought the army back safely</b>, protecting the Muslims’ lives. Al-Ghafiqi taught us that <b>trust is earned through character and knowledge</b>, and that a wise leader protects the lives of those with him.' },
+        choice:{ q:{ar:'لماذا اختارَ الجنودُ الغافقيَّ قائداً لهم؟',en:'Why did the soldiers choose al-Ghafiqi as their leader?'},
+          opts:[
+            { t:{ar:'لأنّه كان أغناهم',en:'Because he was the richest'},c:false,exp:{ar:'لا، بل لدينِه وحكمتِه.',en:'No — for his religion and wisdom.'} },
+            { t:{ar:'لِما عرفوا من دينِه وحكمتِه وشجاعتِه',en:'For what they knew of his religion, wisdom, and courage'},c:true,exp:{ar:'نعم! الأخلاقُ تصنعُ الثقة.',en:'Yes! Good character builds trust.'} },
+            { t:{ar:'لأنّه طلبَ ذلك بالقوّة',en:'Because he demanded it by force'},c:false,exp:{ar:'لا، بل اختاروه برضاهم.',en:'No — they chose him willingly.'} },
+          ] } },
+    ],
+    quiz:[
+      { q:{ar:'عن أيِّ صحابيٍّ روى الغافقيُّ كما يذكرُ المؤرّخون؟',en:'Which Companion did al-Ghafiqi narrate from, as historians mention?'},
+        opts:[ {t:{ar:'عبدُ اللهِ بنُ عمر',en:'Abdullah ibn Umar'},c:true}, {t:{ar:'خالدُ بنُ الوليد',en:'Khalid ibn al-Walid'},c:false}, {t:{ar:'بلالُ بنُ رباح',en:'Bilal ibn Rabah'},c:false} ] },
+      { q:{ar:'من الأميرُ الذي استُشهِدَ سنةَ ١٠٢هـ؟',en:'Which governor was martyred in 102 AH?'},
+        opts:[ {t:{ar:'طارقُ بنُ زياد',en:'Tariq ibn Ziyad'},c:false}, {t:{ar:'موسى بنُ نُصَير',en:'Musa ibn Nusayr'},c:false}, {t:{ar:'السمحُ بنُ مالك',en:'As-Samh ibn Malik'},c:true} ] },
+      { q:{ar:'ماذا فعلَ الغافقيُّ بعدَ أن اختاره الجنود؟',en:'What did al-Ghafiqi do after the soldiers chose him?'},
+        opts:[ {t:{ar:'تركهم وحدَهم',en:'Left them alone'},c:false}, {t:{ar:'جمعَ الصفوفَ وعادَ بالجيشِ سالماً',en:'Gathered the ranks and brought the army back safely'},c:true}, {t:{ar:'تنازعَ معهم',en:'Quarrelled with them'},c:false} ] },
+    ],
+    moral:{ar:'الثقةُ تُكسَبُ بالعلمِ والأخلاقِ قبلَ المنصب، والقائدُ الحكيمُ يحفظُ أرواحَ مَن معه ويجمعُ كلمتَهم.',en:'Trust is earned through knowledge and character before position; a wise leader protects those with him and unites them.'},
+    badge:{icon:'🧭',title:{ar:'وِسامُ ثقةِ الجماعة',en:'Badge of the Group’s Trust'}},
+    reflect:[ {ar:'ما الصفاتُ التي تجعلُ أصدقاءَك يثقونَ بك؟',en:'Which qualities make your friends trust you?'}, {ar:'كيف تتصرّفُ بهدوءٍ إذا خافَ مَن حولَك؟',en:'How do you act calmly when those around you are afraid?'} ],
+    didYouKnow:[ {ar:'لمّا استُشهِدَ السمحُ بنُ مالكٍ سنةَ ١٠٢هـ قدّمَ أهلُ الأندلسِ عبدَ الرحمنِ الغافقيَّ على أنفسِهم — المصدر: البيان المغرب لابن عذاري · نفح الطيب',en:'When as-Samh ibn Malik was martyred in 102 AH, the people of Andalusia put Abd ar-Rahman al-Ghafiqi forward over themselves — Source: Al-Bayan al-Mughrib (Ibn Idhari) · Nafh at-Tib'}, {ar:'ذكرَ الحميديُّ أنّ عبدَ الرحمنِ الغافقيَّ يروي عن ابنِ عمر، فهو من التابعين — المصدر: جذوة المقتبس للحميدي · المعجب للمراكشي',en:'Al-Humaydi mentions that Abd ar-Rahman al-Ghafiqi narrated from Ibn Umar, making him one of the Tabi’un — Source: Jadhwat al-Muqtabis (al-Humaydi) · Al-Mu\u2019jib (al-Marrakushi)'} ],
   },
 ];

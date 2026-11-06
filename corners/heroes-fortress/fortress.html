@@ -15,7 +15,7 @@
 <style id="__antiflash">html{background:#0A2540;color-scheme:dark}</style>
 </head>
 <style>
-  #learnGrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:.7rem;padding:.4rem}
+  #learnGrid,#trGrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:.7rem;padding:.4rem}
   .learn-tile{display:flex;align-items:center;gap:.5rem;text-decoration:none;background:rgba(255,255,255,.06);border:1.5px solid var(--ec,#7E5BD0);border-radius:1rem;padding:.7rem .8rem;color:inherit;font-weight:800;font-family:'Tajawal',sans-serif;transition:transform .15s,background .2s}
   .learn-tile:hover{transform:translateY(-3px);background:rgba(126,91,208,.16)}
   .learn-tile .lt-ic{font-size:1.3rem;width:1.6rem;display:inline-flex;justify-content:center}
@@ -50,6 +50,15 @@
 
   <div class="section-lbl" id="secEras">مراحلُ الحصن</div>
   <nav class="gateways" id="gateways"></nav>
+
+  <!-- المعالم والجولات (كانت شريطًا أسفل الصفحة — صارت بلاطاتٍ بنفس أسلوب الحصن) -->
+  <div class="section-lbl"><span class="ar-only">المعالمُ والجولات</span><span class="en-only">Landmarks &amp; tours</span></div>
+  <nav id="trGrid">
+    <a class="learn-tile" href="../treasures/landmarks.html" style="--ec:#2980B9"><span class="lt-ic">🕋</span><span class="lt-nm"><span class="ar-only">المعالمُ والخرائط</span><span class="en-only">Landmarks &amp; Maps</span></span><span class="lt-ct" data-tr="landmarks" data-t="18">0/18</span></a>
+    <a class="learn-tile" href="../treasures/tours.html" style="--ec:#E67E22"><span class="lt-ic">🧭</span><span class="lt-nm"><span class="ar-only">جولاتٌ افتراضيّة</span><span class="en-only">Virtual Tours</span></span><span class="lt-ct" data-tr="tours" data-t="5">0/5</span></a>
+  </nav>
+  <script>/* same done/total counter as the fortress tiles — reads tr:<page> progress */
+  document.querySelectorAll('#trGrid .lt-ct[data-tr]').forEach(function(c){var t=+c.dataset.t,n=0;try{n=(JSON.parse(localStorage.getItem('tr:'+c.dataset.tr)||'[]')||[]).length;}catch(e){}n=Math.min(n,t);c.textContent=n+'/'+t;if(n>=t)c.classList.add('full');});</script>
 
   <!-- "تعلّم مع أنوس" hub launcher removed (owner request, Jun 2026):
        redundant — each era already surfaces its activities inside the era map. -->
@@ -95,6 +104,5 @@
 <script defer src="../shared/mk-train.js"></script>
 <script defer src="../shared/nav-fix.js"></script>
 <script src="../shared/mk-citynav.js"></script>
-<script defer src="../treasures/tr-links.js" data-links="landmarks,tours"></script>
 </body>
 </html>

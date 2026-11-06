@@ -1,4 +1,4 @@
-/* data/stories/khadija.js — Heroes · Khadija bint Khuwaylid — sources: صور من حياة الصحابة (الباشا) · إسلام ويب · الدرر السنية · صحيح البخاري ومسلم */
+/* data/stories/khadija.js — Heroes · Khadija bint Khuwaylid — sources: صور من حياة الصحابة (الباشا) · إسلام ويب · الدرر السنية · صحيح البخاري ومسلم · سنن النسائي الكبرى · فتح الباري */
 window.HISN_STORIES = window.HISN_STORIES || {};
 HISN_STORIES.khadija = [
   { icon:'🤝', scene:'night', character:'❤️',
@@ -52,5 +52,57 @@ HISN_STORIES.khadija = [
     badge:{icon:'🏠',title:{ar:'وِسامُ بيتِ الجنّة',en:'Badge of the House in Paradise'}},
     reflect:[ {ar:'هل تصبرُ وتُضحّي في سبيلِ الخيرِ كما فعلتْ خديجة؟',en:'Do you endure and sacrifice for the sake of good as Khadija did?'}, {ar:'كيف تُنفِقُ مما تحبُّ ابتغاءَ رضا الله؟',en:'How do you give from what you love, seeking Allah\u2019s pleasure?'} ],
     didYouKnow:[ {ar:'بشارةُ خديجةَ ببيتٍ في الجنّةِ ثابتةٌ في صحيحِ البخاري ومسلم — المصدر: صحيح البخاري ومسلم',en:'The tidings of Khadija\u2019s house in Paradise are established in Sahih al-Bukhari and Muslim — Source: Sahih al-Bukhari & Muslim'}, {ar:'كان النبيُّ ﷺ يُكرِمُ صديقاتِ خديجةَ بعدَ وفاتِها وفاءً لها — المصدر: صحيح مسلم',en:'The Prophet ﷺ would honor Khadija\u2019s friends after her death, in loyalty to her — Source: Sahih Muslim'} ],
+  },
+  { icon:'🕊️', scene:'peaks', character:'🍲',
+    title:{ ar:'سلامٌ من ربِّ العالمين', en:'Peace from the Lord of the Worlds' },
+    pages:[
+      { scene:'peaks', character:'🍲',
+        text:{ ar:'كانت <b>خديجةُ</b> تحبُّ النبيَّ ﷺ وتخدمُه بقلبٍ صادق. وذاتَ يومٍ خرجتْ إليه <b>تحملُ إناءً فيه طعامٌ وشراب</b>، عملٌ بسيطٌ من زوجةٍ وفيّةٍ لا يراه أحدٌ من الناس. لكنّ اللهَ كان يرى! فنزلَ <b>جبريلُ</b> عليه السلامُ وقال للنبيِّ ﷺ: <b>«يا رسولَ الله، هذه خديجةُ قد أتتْ معها إناءٌ فيه إدامٌ أو طعامٌ أو شراب، فإذا هي أتتْك فاقرأْ عليها السلامَ من ربِّها ومنّي»</b>.<br><br>تخيّلْ هذه اللحظة! ربُّ العالمينَ يُرسِلُ سلامَه إلى امرأةٍ تحملُ طبقَ طعام! فلمّا أخبرها النبيُّ ﷺ، لم تقلْ كلمةً متسرّعة، بل أجابتْ جواباً يدلُّ على علمٍ وفهمٍ عميق: <b>«إنّ اللهَ هو السلام، وعلى جبريلَ السلام، وعليك يا رسولَ اللهِ السلامُ ورحمةُ الله»</b>. لقد عرفتْ أنّ <b>«السلام» اسمٌ من أسماءِ الله</b>، فاللهُ لا يُدعى له بالسلامةِ لأنّه هو السلامُ ومنه السلام. فجمعتْ بين خدمةِ بيتِها وفقهِ قلبِها.',
+          en:'<b>Khadija</b> loved the Prophet ﷺ and served him with a sincere heart. One day she set out to him <b>carrying a vessel of food and drink</b> — a simple act from a loyal wife that no one saw. But Allah saw! <b>Jibril</b> came down and said to the Prophet ﷺ: <b>"O Messenger of Allah, here is Khadija coming with a vessel of food or drink. When she reaches you, convey to her greetings of peace from her Lord and from me."</b><br><br>Imagine that moment! The Lord of the worlds sends His peace to a woman carrying a dish of food! When the Prophet ﷺ told her, she did not answer hastily; she gave a reply full of knowledge and deep understanding: <b>"Allah is As-Salam (Peace), and upon Jibril be peace, and upon you, O Messenger of Allah, be peace and the mercy of Allah."</b> She knew that <b>"As-Salam" is one of Allah’s names</b>: Allah is not wished safety, for He is Peace and from Him comes peace. She joined serving her home with understanding in her heart.' },
+        choice:{ q:{ar:'لماذا قالتْ خديجةُ «إنّ اللهَ هو السلام» ولم تقلْ «وعليه السلام»؟',en:'Why did Khadija say "Allah is As-Salam" instead of "and upon Him be peace"?'},
+          opts:[
+            { t:{ar:'لأنّها نسيتِ الجوابَ الصحيح',en:'Because she forgot the right reply'},c:false,exp:{ar:'لا، بل كان جوابُها من أدقِّ الأجوبةِ وأفقهِها.',en:'No — her reply was one of the most precise and wise.'} },
+            { t:{ar:'لأنّ «السلام» اسمٌ من أسماءِ اللهِ وهو مصدرُ كلِّ سلام',en:'Because "As-Salam" is a name of Allah and the source of all peace'},c:true,exp:{ar:'أحسنت! فاللهُ هو السلامُ ومنه السلام، فأثنتْ عليه بما يليقُ به.',en:'Well done! Allah is Peace and from Him is peace, so she praised Him as befits Him.'} },
+            { t:{ar:'لأنّها لم تفرحْ بالسلام',en:'Because she was not happy with the greeting'},c:false,exp:{ar:'لا، بل فرحتْ وأجابتْ بأجملِ جواب.',en:'No — she rejoiced and answered in the best way.'} },
+          ] } },
+    ],
+    quiz:[
+      { q:{ar:'ماذا كانت خديجةُ تحملُ حين نزلَ جبريل؟',en:'What was Khadija carrying when Jibril came down?'},
+        opts:[ {t:{ar:'سيفاً',en:'A sword'},c:false}, {t:{ar:'كتاباً',en:'A book'},c:false}, {t:{ar:'إناءً فيه طعامٌ وشراب',en:'A vessel of food and drink'},c:true} ] },
+      { q:{ar:'ممّن جاءَ السلامُ إلى خديجة؟',en:'From whom did the greeting of peace come to Khadija?'},
+        opts:[ {t:{ar:'من ربِّها ومن جبريل',en:'From her Lord and from Jibril'},c:true}, {t:{ar:'من أهلِ مكّة',en:'From the people of Makkah'},c:false}, {t:{ar:'من التجّار',en:'From the merchants'},c:false} ] },
+      { q:{ar:'ماذا نتعلّمُ من هذه القصّة؟',en:'What do we learn from this story?'},
+        opts:[ {t:{ar:'الأعمالُ الصغيرةُ لا قيمةَ لها',en:'Small deeds have no value'},c:false}, {t:{ar:'اللهُ يرى العملَ الخفيَّ ويُكرِمُ أهلَه',en:'Allah sees the hidden deed and honors those who do it'},c:true}, {t:{ar:'لا حاجةَ لتعلّمِ أسماءِ الله',en:'No need to learn Allah’s names'},c:false} ] },
+    ],
+    moral:{ar:'اللهُ يرى الخدمةَ الصادقةَ ولو كانت طبقَ طعام، ومعرفةُ أسماءِ اللهِ تُزيِّنُ الكلام.',en:'Allah sees sincere service even if it is a dish of food, and knowing Allah’s names beautifies our words.'},
+    badge:{icon:'🕊️',title:{ar:'وِسامُ السلامِ من الرحمن',en:'Badge of Peace from the Most Merciful'}},
+    reflect:[ {ar:'ما عملٌ صغيرٌ تخدمُ به أهلَك ولا يراه إلّا الله؟',en:'What small deed do you do for your family that only Allah sees?'}, {ar:'هل تعرفُ معنى اسمِ الله «السلام»؟ كيف تعيشُ به؟',en:'Do you know the meaning of Allah’s name "As-Salam"? How do you live by it?'} ],
+    didYouKnow:[ {ar:'سلامُ اللهِ وجبريلَ على خديجةَ رواه البخاري (٣٨٢٠) ومسلم (٢٤٣٢) من حديث أبي هريرة — المصدر: صحيح البخاري ومسلم',en:'The greeting of Allah and Jibril to Khadija is narrated by al-Bukhari (3820) and Muslim (2432) from Abu Hurayra — Source: Sahih al-Bukhari & Muslim'}, {ar:'جوابُها «إنّ اللهَ هو السلام» رواه النسائي في السنن الكبرى من حديث أنس، واستدلَّ به ابنُ حجر على فقهِها — المصدر: فتح الباري لابن حجر',en:'Her reply "Allah is As-Salam" is narrated by an-Nasa’i in as-Sunan al-Kubra from Anas, and Ibn Hajar cited it as proof of her understanding — Source: Fath al-Bari by Ibn Hajar'} ],
+  },
+  { icon:'💞', scene:'madinah', character:'🐑',
+    title:{ ar:'«إنّي رُزِقتُ حبَّها»', en:'"I Was Blessed with Her Love"' },
+    pages:[
+      { scene:'madinah', character:'🐑',
+        text:{ ar:'ماتتْ <b>خديجةُ</b> قبلَ الهجرة، ومرّتِ السنون، لكنّ النبيَّ ﷺ <b>لم ينسَها أبداً</b>. كان إذا ذبحَ شاةً يقول: <b>«أرسِلوا بها إلى أصدقاءِ خديجة»</b>، يُكرِمُ صديقاتِها وفاءً لها. وذاتَ يومٍ سمعَ صوتَ <b>هالةَ</b> أختِ خديجةَ تستأذنُ عليه، فتذكّرَ استئذانَ خديجةَ لأنّ صوتَها يشبهُ صوتَها، فتأثّرَ وقال: «اللّهُمَّ هالة!».<br><br>وكانت أمُّ المؤمنينَ <b>عائشةُ</b> تقول بصدقٍ: ما غِرتُ على امرأةٍ ما غِرتُ على خديجة، وأنا لم أُدرِكْها! لكثرةِ ما كان النبيُّ ﷺ يذكرُها. فلمّا ذكرتْها عائشةُ يوماً، قال النبيُّ ﷺ كلمةً عظيمة: <b>«إنّي قد رُزِقتُ حبَّها»</b>. لم يقلْ: أحببتُها فقط، بل جعلَ حبَّها <b>رزقاً من الله</b>، نعمةً يشكرُ اللهَ عليها! وكان يقول عنها: «إنّها كانتْ وكانتْ، وكان لي منها ولد». هكذا يكونُ <b>الوفاءُ</b>: أن تذكرَ من أحسنَ إليك بالخيرِ ولو بعدَ رحيلِه.',
+          en:'<b>Khadija</b> died before the Hijra, and years passed — but the Prophet ﷺ <b>never forgot her</b>. Whenever he slaughtered a sheep he would say: <b>"Send some to Khadija’s friends,"</b> honoring her friends out of loyalty to her. One day he heard the voice of <b>Hala</b>, Khadija’s sister, asking permission to enter; it reminded him of Khadija’s way of asking, and he was moved and said: "O Allah, it is Hala!"<br><br>The Mother of the Believers <b>A’isha</b> said honestly: I never felt as protective-jealous of any woman as of Khadija — and I never even met her! — because the Prophet ﷺ mentioned her so often. When A’isha mentioned her one day, the Prophet ﷺ said a great word: <b>"I was blessed with her love."</b> He did not only say "I loved her" — he called her love <b>a provision from Allah</b>, a blessing to thank Allah for! He would say of her: "She was this and she was that, and I had children from her." This is <b>loyalty</b>: to remember with good those who were good to you, even after they are gone.' },
+        choice:{ q:{ar:'كيف أظهرَ النبيُّ ﷺ وفاءَه لخديجةَ بعدَ وفاتِها؟',en:'How did the Prophet ﷺ show loyalty to Khadija after her death?'},
+          opts:[
+            { t:{ar:'نسيَها وانشغلَ عنها',en:'He forgot her and got busy'},c:false,exp:{ar:'لا، بل بقيَ يذكرُها سنينَ طويلة.',en:'No — he kept remembering her for many years.'} },
+            { t:{ar:'لم يذكرْها أمامَ أحد',en:'He never mentioned her to anyone'},c:false,exp:{ar:'لا، بل كان يُكثِرُ ذكرَها بالخير.',en:'No — he mentioned her with good very often.'} },
+            { t:{ar:'كان يُكرِمُ صديقاتِها ويذكرُها بالخير',en:'He honored her friends and spoke well of her'},c:true,exp:{ar:'أحسنت! هذا هو الوفاءُ الحقيقي.',en:'Well done! That is true loyalty.'} },
+          ] } },
+    ],
+    quiz:[
+      { q:{ar:'ماذا كان النبيُّ ﷺ يفعلُ إذا ذبحَ شاة؟',en:'What did the Prophet ﷺ do when he slaughtered a sheep?'},
+        opts:[ {t:{ar:'يرسلُ منها إلى صديقاتِ خديجة',en:'He sent some to Khadija’s friends'},c:true}, {t:{ar:'يبيعُها في السوق',en:'He sold it in the market'},c:false}, {t:{ar:'يتركُها',en:'He left it'},c:false} ] },
+      { q:{ar:'ماذا قال النبيُّ ﷺ عن حبِّه لخديجة؟',en:'What did the Prophet ﷺ say about his love for Khadija?'},
+        opts:[ {t:{ar:'«لا أذكرُها»',en:'"I do not remember her"'},c:false}, {t:{ar:'«إنّي قد رُزِقتُ حبَّها»',en:'"I was blessed with her love"'},c:true}, {t:{ar:'«كانت امرأةً عاديّة»',en:'"She was an ordinary woman"'},c:false} ] },
+      { q:{ar:'من التي ذكّرَ صوتُها النبيَّ ﷺ بخديجة؟',en:'Whose voice reminded the Prophet ﷺ of Khadija?'},
+        opts:[ {t:{ar:'فاطمة',en:'Fatima'},c:false}, {t:{ar:'أمُّ سلمة',en:'Umm Salama'},c:false}, {t:{ar:'أختُها هالة',en:'Her sister Hala'},c:true} ] },
+    ],
+    moral:{ar:'الحبُّ الصادقُ رزقٌ من الله، والوفاءُ أن تذكرَ أهلَ الفضلِ بالخيرِ وتُكرِمَ أحبابَهم.',en:'True love is a provision from Allah, and loyalty is remembering the good people with good and honoring those they loved.'},
+    badge:{icon:'💞',title:{ar:'وِسامُ الوفاءِ الدائم',en:'Badge of Lasting Loyalty'}},
+    reflect:[ {ar:'من أحسنَ إليك في حياتِك؟ كيف تكونُ وفيّاً له؟',en:'Who has been good to you in your life? How can you be loyal to them?'}, {ar:'هل تشكرُ اللهَ على حبِّ أهلِك لك وحبِّك لهم؟',en:'Do you thank Allah for your family’s love for you and yours for them?'} ],
+    didYouKnow:[ {ar:'قولُه ﷺ «إنّي قد رُزِقتُ حبَّها» رواه مسلم (٢٤٣٥) عن عائشة — المصدر: صحيح مسلم',en:'His words "I was blessed with her love" are narrated by Muslim (2435) from A’isha — Source: Sahih Muslim'}, {ar:'قصّةُ صوتِ هالةَ أختِ خديجةَ وقولِه «إنّها كانتْ وكانتْ» في صحيحِ البخاري (٣٨١٨، ٣٨٢١) — المصدر: صحيح البخاري',en:'The story of Hala’s voice and his words "She was this and that" are in Sahih al-Bukhari (3818, 3821) — Source: Sahih al-Bukhari'} ],
   },
 ];

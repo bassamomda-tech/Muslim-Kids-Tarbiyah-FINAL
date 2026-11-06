@@ -136,7 +136,7 @@
     <div class="sec-h"><span class="si">📦</span><h2><span class="ar-only">موادُّ للتحميل</span><span class="en-only">Downloadable Materials</span></h2></div>
     <div class="grid" id="itemGrid"></div>
 
-    <div class="sec-h"><span class="si">📚</span><h2><span class="ar-only">الكتب — لكلِّ ركنٍ مجموعة مجّانية</span><span class="en-only">Books — a free set for every corner</span></h2></div>
+    <div class="sec-h" id="books"><span class="si">📚</span><h2><span class="ar-only">الكتب — لكلِّ ركنٍ مجموعة مجّانية</span><span class="en-only">Books — a free set for every corner</span></h2></div>
     <div id="bookGroups"></div>
 
     <div class="sec-h"><span class="si">💚</span><h2><span class="ar-only">طرقُ الدعم</span><span class="en-only">Ways to Support</span></h2></div>
@@ -216,8 +216,8 @@
   var lang=(window.MK&&MK.lang&&MK.lang())||localStorage.getItem('bunyanLang')||'ar';
   function txo(o){ return o?(lang==='ar'?o.ar:o.en):''; }
   var ITEMS=[
-    { id:'plans', icon:'🗓️', kind:'free', t:{ar:'حزمةُ الخطط التربوية (٦ برامج)',en:'Parenting Plans Pack (6 programs)'},
-      d:{ar:'برامجُ التعامل مع: العناد · الخوف · الغضب · الكذب · الصلاة · التشتّت — قابلةٌ للطباعة.',en:'Programs for: stubbornness, fear, anger, lying, prayer & focus — printable.'}, action:'plans' },
+    { id:'pguide', icon:'📘', kind:'free', t:{ar:'دليلُ الأهل الشامل — ٣ ملفات PDF',en:'The Complete Parents’ Guide — 3 PDFs'},
+      d:{ar:'المشكلاتُ وحلولها (١٥ موضوعًا، ومعها البرامج الستّة) · خططُ الأهداف الثمانية · مرجعُ المربي — في مكانٍ واحد.',en:'Problems & solutions (15 topics, incl. the 6 programs) · the 8 goal plans · the Murabbi reference — in one place.'}, action:'pguide' },
     { id:'certs', icon:'🏅', kind:'free', t:{ar:'شهاداتُ الإنجاز',en:'Achievement Certificates'},
       d:{ar:'شهاداتُ طفلِك من ركن التنزيلات، جاهزةٌ للطباعة والتأطير.',en:"Your child's certificates from the Downloads corner, ready to print & frame."}, action:'downloads' },
   ];
@@ -225,7 +225,8 @@
   // Complete, self-contained print-ready books (no extra inputs needed), divided by content.
   var AB='../../Books/Published/Activities/';
   var CB='../../Books/Published/';
-  // 11 bundles — one per corner (exact corner names). Empty corners stay listed for later.
+  var PG='../../parents-guide/';
+  // one bundle per corner + the goal journeys (exact corner names). Empty corners stay listed for later.
   var BOOKS=[
     { grp:{ar:'منارة العقيدة',en:'Faith Minaret'}, icon:'🕋', items:[
       {t:{ar:'قَصرُ المَلِكِ الواحِد — التوحيد',en:'City of Tawheed'}, p:CB+'Faith Minaret/Tawheed Book.html'},
@@ -355,6 +356,21 @@
       {t:{ar:'خطةُ حفظ القرآن',en:'Quran Memorization Plan'}, p:'../../Books/Published/Parent Plans/Quran Memorization Plan Book.html'},
       {t:{ar:'حلُّ المشكلاتِ السلوكيّة — دليلُ الأهل',en:'Solving Behaviour Problems — Parents\u2019 Guide'}, p:'../../Books/Published/Parent Plans/Behavior Solutions Guide Book.html'},
       {t:{ar:'بوسترات البيت المسلم — جاهزة للطباعة',en:'Muslim Home Posters — Print-Ready'}, p:'../../Books/Published/Parent Plans/Home Posters Book.html'},
+      {t:{ar:'دليلُ الأهل الشامل — النسخة التفاعلية',en:'The Complete Parents’ Guide — interactive'}, p:PG+'index.html'},
+      {t:{ar:'المشكلاتُ وحلولها — ١٥ موضوعًا (PDF)',en:'Problems & Solutions — 15 topics (PDF)'}, p:PG+'pdf/المشكلات وحلولها.pdf', pdf:true},
+      {t:{ar:'خططُ الأهداف العمليّة — ٨ خطط (PDF)',en:'Practical Goal Plans — 8 plans (PDF)'}, p:PG+'pdf/خطط الأهداف العملية.pdf', pdf:true},
+      {t:{ar:'مرجعُ المربي — ألف باء التربية (PDF)',en:'The Murabbi Reference (PDF)'}, p:PG+'pdf/مرجع المربي.pdf', pdf:true},
+    ]},
+    { grp:{ar:'رحلاتُ الأهداف — جزء الطفل',en:'Goal Journeys — the child’s part'}, icon:'🎠', items:[
+      {t:{ar:'رحلةُ أُحبُّ الصلاة',en:'I Love Salah'}, p:'../../رحلة أحب الصلاة.html'},
+      {t:{ar:'رحلةُ أُحبُّ الله',en:'I Love Allah'}, p:'../../رحلة أحب الله.html'},
+      {t:{ar:'رحلةُ أُحبُّ رسولَ الله ﷺ',en:'I Love the Prophet ﷺ'}, p:'../../رحلة أحب الرسول.html'},
+      {t:{ar:'رحلةُ حافظ الدين',en:'The Deen Keeper'}, p:'../../رحلة حافظ الدين.html'},
+      {t:{ar:'رحلةُ القائد الصغير',en:'The Little Leader'}, p:'../../رحلة القائد الصغير.html'},
+      {t:{ar:'رحلةُ الأذكار والدعاء',en:'Adhkar & Dua'}, p:'../../رحلة الأذكار والدعاء.html'},
+      {t:{ar:'رحلةُ القدوات — نجوم الصحابة',en:'Role Models — Star Companions'}, p:'../../رحلة القدوات.html'},
+      {t:{ar:'رحلةُ الأخلاق والآداب',en:'Manners & Morals'}, p:'../../رحلة الأخلاق والآداب.html'},
+      {t:{ar:'رحلةُ صلاح الدين الأيوبي — ١٠٠ حلقة',en:'The Salahuddin Journey — 100 episodes'}, p:'../../رحلة صلاح الدين الأيوبي.html'},
     ]},
     { grp:{ar:'ركن الأنشطة',en:'Activities Corner'}, icon:'🧩', items:[
       {t:{ar:'كتابُ التلوين — الأركان',en:'Corners Coloring Book'}, p:AB+'Corners Coloring Book.html'},
@@ -367,6 +383,7 @@
       {t:{ar:'تدريبُ كتابةِ الحروف الإنجليزية',en:'English Letters — Trace & Write'}, p:AB+'English-Letters-Trace-and-Write.pdf', pdf:true},
       {t:{ar:'تلوينُ الأرقام ١–٢٠',en:'Numbers 1–20 Colouring Book'}, p:AB+'Numbers-Colouring-Book-1-20.pdf', pdf:true},
       {t:{ar:'تدريبُ كتابةِ الأرقام ١–٢٠',en:'Numbers 1–20 — Trace & Write'}, p:AB+'Numbers-Trace-and-Write-1-20.pdf', pdf:true},
+      {t:{ar:'بطاقاتُ المستكشف — ورشة الصانع الصغير',en:'Explorer Cards — Little Maker Workshop'}, p:'../workshop/print-cards.html'},
     ]},
   ];
 
@@ -448,6 +465,7 @@
   function doAction(action,id){
     if(action==='downloads'){ location.href='downloads.html?lang='+lang; return; }
     if(action==='supp'){ supportFor(id); return; }
+    if(action==='pguide'){ location.href='../../parents-guide/index.html?lang='+lang; return; }
     if(action==='plans'){ printPlans(); return; }
     if(action==='weekly'){ printWeekly(); return; }
   }

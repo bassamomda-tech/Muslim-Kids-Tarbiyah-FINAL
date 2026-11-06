@@ -1,4 +1,4 @@
-/* data/stories/ummsalama.js — Heroes · Umm Salama — sources: صور من حياة الصحابة (الباشا) · إسلام ويب · الدرر السنية · صحيح البخاري ومسلم */
+/* data/stories/ummsalama.js — Heroes · Umm Salama — sources: صور من حياة الصحابة (الباشا) · إسلام ويب · الدرر السنية · صحيح البخاري ومسلم · سيرة ابن هشام (ابن إسحاق) · البداية والنهاية · الإصابة */
 window.HISN_STORIES = window.HISN_STORIES || {};
 HISN_STORIES.ummsalama = [
   { icon:'🤲', scene:'madinah', character:'😔',
@@ -52,5 +52,31 @@ HISN_STORIES.ummsalama = [
     badge:{icon:'💡',title:{ar:'وِسامُ الرأيِ السديد',en:'Badge of Sound Counsel'}},
     reflect:[ {ar:'هل تُعطي رأياً حكيماً يساعدُ من حولَك؟',en:'Do you give wise counsel that helps those around you?'}, {ar:'هل تكونُ قدوةً بالفعلِ لا بالكلامِ فقط؟',en:'Are you an example through action, not just words?'} ],
     didYouKnow:[ {ar:'قصّةُ مشورةِ أمِّ سلمةَ يومَ الحديبيةِ ثابتةٌ في صحيحِ البخاري — المصدر: صحيح البخاري',en:'The story of Umm Salama\u2019s counsel at Hudaybiyya is established in Sahih al-Bukhari — Source: Sahih al-Bukhari'}, {ar:'كان صلحُ الحديبيةِ فتحاً عظيماً نزلتْ فيه سورةُ الفتحِ رغمَ شدّةِ شروطِه — المصدر: البداية والنهاية',en:'The treaty of Hudaybiyya was a great victory, about which Surat al-Fath was revealed, despite its hard terms — Source: Al-Bidaya wa an-Nihaya'} ],
+  },
+  { icon:'🐪', scene:'camel', character:'👩‍👦',
+    title:{ ar:'رحلةُ الهجرةِ وحدَها', en:'The Hijra Journey Alone' },
+    pages:[
+      { scene:'camel', character:'👩‍👦',
+        text:{ ar:'أرادتْ <b>أمُّ سلمة</b> أن تهاجرَ مع زوجِها <b>أبي سلمة</b> وابنِهما الصغيرِ <b>سلمة</b> إلى المدينة. لكنّ قومَها منعوها وقالوا: لا نتركُكِ تذهبين معه! وجاءَ أهلُ زوجِها فأخذوا الطفلَ منها وتجاذبوه حتى آذَوه، فصارتِ العائلةُ <b>متفرّقةً في ثلاثةِ أماكن</b>: الزوجُ في المدينة، والطفلُ عند أهلِ أبيه، وهي وحدَها! فكانت تخرجُ كلَّ صباحٍ إلى <b>الأبطح</b> فتجلسُ <b>تبكي</b> حتى المساء، قرابةَ سنة.<br><br>حتى رقَّ لها رجلٌ من أقاربِها، فكلّمَ قومَها فتركوها، وردَّ أهلُ زوجِها إليها ابنَها. فركبتْ بعيرَها ووضعتْ طفلَها في حِجرِها، وخرجتْ <b>وحدَها ليس معها أحدٌ من خلقِ الله</b>، متوكّلةً على الله! فلمّا بلغتِ <b>التنعيم</b> لقيَها <b>عثمانُ بنُ طلحة</b> — ولم يكنْ قد أسلمَ بعد — فقال: إلى أين؟ قالت: إلى زوجي بالمدينة. قال: أوَما معكِ أحد؟ قالت: <b>لا واللهِ إلّا اللهُ وابني هذا</b>. فأخذَ بخِطامِ البعيرِ يقودُه، وكان إذا نزلوا <b>أناخَ البعيرَ ثمّ ابتعدَ عنها</b> إلى شجرة، فإذا أرادوا الرحيلَ قدّمَ البعيرَ ثمّ ابتعدَ حتى تركب. فلم يزلْ كذلك حتى بلغَ <b>قُباء</b> فقال: زوجُكِ في هذه القرية، ورجعَ إلى مكّة. فكانت تقول: <b>«ما رأيتُ صاحباً قطُّ كان أكرمَ من عثمانَ بنِ طلحة»</b>.',
+          en:'<b>Umm Salama</b> wanted to migrate to Madinah with her husband <b>Abu Salama</b> and their little son <b>Salama</b>. But her clan stopped her: We won’t let you go with him! Then her husband’s clan came and took the child from her, pulling at him until they hurt him. The family was <b>split in three places</b>: the husband in Madinah, the child with his father’s clan, and she alone! Every morning she went out to <b>al-Abtah</b> and sat <b>weeping</b> until evening, for nearly a year.<br><br>Then a relative took pity on her and spoke to her clan, and they let her go, and her husband’s clan gave her son back. She mounted her camel with her child in her lap and set out <b>alone, with no one of Allah’s creation with her</b>, relying on Allah! At <b>at-Tan’im</b> she met <b>Uthman ibn Talha</b> — not yet a Muslim — who asked: Where to? She said: To my husband in Madinah. He said: Is no one with you? She said: <b>"No, by Allah — only Allah and this son of mine."</b> He took the camel’s rope and led it. Whenever they stopped, he <b>made the camel kneel, then moved away from her</b> to a tree; when it was time to leave, he brought the camel and stepped away until she mounted. He kept on so until they reached <b>Quba</b>, where he said: Your husband is in this village — and went back to Makkah. She used to say: <b>"I never saw a companion more noble than Uthman ibn Talha."</b>' },
+        choice:{ q:{ar:'ماذا قالت أمُّ سلمةَ حين سُئلتْ: أما معكِ أحد؟',en:'What did Umm Salama say when asked: Is no one with you?'},
+          opts:[
+            { t:{ar:'«معي جيشٌ كبير»',en:'"A big army is with me"'},c:false,exp:{ar:'لا، كانت وحدَها مع طفلِها.',en:'No — she was alone with her child.'} },
+            { t:{ar:'«لا واللهِ إلّا اللهُ وابني هذا»',en:'"No, by Allah — only Allah and this son of mine"'},c:true,exp:{ar:'أحسنت! كانت متوكّلةً على اللهِ وحدَه.',en:'Well done! She relied on Allah alone.'} },
+            { t:{ar:'«سأرجعُ إلى مكّة»',en:'"I will go back to Makkah"'},c:false,exp:{ar:'لا، بل مضتْ في هجرتِها بشجاعة.',en:'No — she went on with her Hijra bravely.'} },
+          ] } },
+    ],
+    quiz:[
+      { q:{ar:'كم بقيتْ أمُّ سلمةَ تبكي في الأبطحِ تقريباً؟',en:'About how long did Umm Salama weep at al-Abtah?'},
+        opts:[ {t:{ar:'يوماً واحداً',en:'One day'},c:false}, {t:{ar:'قرابةَ سنة',en:'Nearly a year'},c:true}, {t:{ar:'ساعة',en:'An hour'},c:false} ] },
+      { q:{ar:'من رافقها من التنعيمِ إلى قُباء؟',en:'Who escorted her from at-Tan’im to Quba?'},
+        opts:[ {t:{ar:'عثمانُ بنُ طلحة',en:'Uthman ibn Talha'},c:true}, {t:{ar:'أبو جهل',en:'Abu Jahl'},c:false}, {t:{ar:'لم يرافقْها أحد',en:'No one escorted her'},c:false} ] },
+      { q:{ar:'ماذا نتعلّمُ من عثمانَ بنِ طلحةَ في هذه القصّة؟',en:'What do we learn from Uthman ibn Talha in this story?'},
+        opts:[ {t:{ar:'الكرمُ والمروءةُ وحفظُ حرمةِ المرأة',en:'Generosity, chivalry, and respecting a woman’s privacy'},c:true}, {t:{ar:'تركُ المحتاجِ وحدَه',en:'Leaving the needy alone'},c:false}, {t:{ar:'الكلامُ الكثيرُ مع الغرباء',en:'Talking a lot with strangers'},c:false} ] },
+    ],
+    moral:{ar:'من توكّلَ على اللهِ وصبرَ جمعَ اللهُ شملَه، والمروءةُ والكرمُ خُلُقٌ يحبُّه اللهُ والناس.',en:'Whoever relies on Allah and is patient, Allah reunites; and chivalry and nobility are manners loved by Allah and people.'},
+    badge:{icon:'🐪',title:{ar:'وِسامُ المهاجرةِ المتوكّلة',en:'Badge of the Trusting Emigrant'}},
+    reflect:[ {ar:'حين تشعرُ أنّك وحدَك، هل تتذكّرُ أنّ اللهَ معك؟',en:'When you feel alone, do you remember that Allah is with you?'}, {ar:'كيف تُساعدُ غيرَك وتحترمُه كما فعلَ عثمانُ بنُ طلحة؟',en:'How do you help and respect others as Uthman ibn Talha did?'} ],
+    didYouKnow:[ {ar:'روى ابنُ إسحاقَ قصّةَ هجرةِ أمِّ سلمةَ عنها بإسنادٍ حسن، ونقلها ابنُ هشامٍ وابنُ كثير — المصدر: سيرة ابن هشام والبداية والنهاية',en:'Ibn Ishaq narrated Umm Salama’s Hijra from her with a good (hasan) chain; Ibn Hisham and Ibn Kathir reported it — Source: Sirat Ibn Hisham & al-Bidaya wa an-Nihaya'}, {ar:'أسلمَ عثمانُ بنُ طلحةَ بعدَ الحديبية، وهو الذي دفعَ إليه النبيُّ ﷺ مفتاحَ الكعبةِ يومَ الفتح — المصدر: الإصابة لابن حجر',en:'Uthman ibn Talha embraced Islam after Hudaybiya, and he is the one to whom the Prophet ﷺ handed the key of the Kaaba on the day of the Conquest — Source: al-Isaba by Ibn Hajar'} ],
   },
 ];

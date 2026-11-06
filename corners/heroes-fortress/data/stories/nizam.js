@@ -1,4 +1,4 @@
-/* data/stories/nizam.js — Leaders · Nizam al-Mulk — sources: البداية والنهاية · سير أعلام النبلاء · إسلام ويب · الدرر السنية */
+/* data/stories/nizam.js — Leaders · Nizam al-Mulk — sources: البداية والنهاية · سير أعلام النبلاء · إسلام ويب · الدرر السنية · المنتظم لابن الجوزي */
 window.HISN_STORIES = window.HISN_STORIES || {};
 HISN_STORIES.nizam = [
   { icon:'🏫', scene:'mihrab', character:'📚',
@@ -52,5 +52,31 @@ HISN_STORIES.nizam = [
     badge:{icon:'⚖️',title:{ar:'وِسامُ الأمانةِ والتواضع',en:'Badge of Trust & Humility'}},
     reflect:[ {ar:'إذا تولّيتَ مسؤوليّةً، هل تؤدّيها بأمانةٍ وعدل؟',en:'If you take on a responsibility, do you fulfill it with trust and justice?'}, {ar:'هل تبقى متواضعاً مهما علا شأنُك؟',en:'Do you stay humble however high your standing?'} ],
     didYouKnow:[ {ar:'كان نظامُ الملكِ يُكثِرُ مجالسةَ العلماءِ والصالحينَ ويتأثّرُ بمواعظِهم — المصدر: سير أعلام النبلاء',en:'Nizam al-Mulk often sat with scholars and the righteous and was moved by their counsel — Source: Siyar A\u2019lam an-Nubala\u2019'}, {ar:'كتبَ نظامُ الملكِ كتابَ «سياست نامه» (سياسةَ المُلك) في حُسنِ الإدارةِ والعدل — المصدر: كتب التاريخ',en:'Nizam al-Mulk wrote the book "Siyasatnama" (The Book of Government) on good governance and justice — Source: history works'} ],
+  },
+  { icon:'🪞', scene:'mihrab', character:'🧓',
+    title:{ ar:'الوزيرُ الذي أحبَّ مَن يُهديه عيوبَه', en:'The Vizier Who Loved Those Who Showed Him His Faults' },
+    pages:[
+      { scene:'mihrab', character:'🪞',
+        text:{ ar:'كان يدخلُ على الوزيرِ <b>نظامِ الملك</b> كبارُ العلماء، فيُكرِمُهم جميعاً. لكنّ الناسَ لاحظوا شيئاً غريباً: إذا دخلَ عليه الشيخُ الزاهدُ <b>أبو عليٍّ الفارمذي</b>، <b>قامَ له وأجلسه في مكانِه</b> وجلسَ هو بين يدَيه! فتعجّبَ بعضُ الحاضرين، وسأله أحدُهم: لماذا تُقدِّمُه على غيرِه؟<br><br>فقال نظامُ الملكِ جواباً عجيباً: إنّ غيرَه إذا دخلوا عليّ <b>أثنَوا عليَّ بما ليس فيّ</b>، فيزيدُني ذلك عُجباً وكِبراً. أمّا هذا الشيخ، فإنّه <b>يذكرُ لي عيوبي وظلمي</b>، فينكسرُ قلبي وأرجعُ عن كثيرٍ ممّا أنا فيه! لقد عرفَ نظامُ الملكِ أنّ <b>الصديقَ الحقيقيَّ مَن يصدقُك</b> لا مَن يُصدِّقُك. علّمنا أنّ <b>النصيحةَ الصادقةَ أثمنُ من المديحِ الكاذب</b>.',
+          en:'Great scholars used to visit the vizier <b>Nizam al-Mulk</b>, and he honoured them all. But people noticed something strange: when the abstinent shaykh <b>Abu Ali al-Farmadhi</b> came in, Nizam al-Mulk <b>would stand for him, seat him in his own place</b>, and sit before him! Some of those present were surprised, and one asked him why he preferred him over others.<br><br>Nizam al-Mulk gave a remarkable answer: when the others come to me, <b>they praise me for what is not in me</b>, and that increases my vanity and pride. But this shaykh <b>mentions my faults and my wrongs to me</b>, so my heart is humbled and I turn back from much of what I am doing! Nizam al-Mulk knew that <b>a true friend tells you the truth</b>, rather than telling you what you want to hear. He taught us that <b>sincere advice is more precious than false praise</b>.' },
+        choice:{ q:{ar:'لماذا كان نظامُ الملكِ يُقدِّمُ الشيخَ الفارمذيَّ على غيرِه؟',en:'Why did Nizam al-Mulk give Shaykh al-Farmadhi precedence over others?'},
+          opts:[
+            { t:{ar:'لأنّه كان يمدحُه كثيراً',en:'Because he praised him a lot'},c:false,exp:{ar:'لا، بل لأنّه كان يذكرُ له عيوبَه.',en:'No — because he told him his faults.'} },
+            { t:{ar:'لأنّه كان غنيّاً',en:'Because he was rich'},c:false,exp:{ar:'لا، بل كان زاهداً ناصحاً.',en:'No — he was an abstinent adviser.'} },
+            { t:{ar:'لأنّه كان يذكرُ له عيوبَه فيرجعُ عنها',en:'Because he told him his faults so he would turn back from them'},c:true,exp:{ar:'أحسنت! مَن أهدى إليك عيوبَك فقد أحبَّك.',en:'Well done! Whoever shows you your faults truly cares for you.'} },
+          ] } },
+    ],
+    quiz:[
+      { q:{ar:'ماذا كان يفعلُ نظامُ الملكِ إذا دخلَ عليه الفارمذي؟',en:'What did Nizam al-Mulk do when al-Farmadhi came in?'},
+        opts:[ {t:{ar:'يقومُ له ويُجلِسُه في مكانِه',en:'He stood and seated him in his own place'},c:true}, {t:{ar:'يتجاهلُه',en:'He ignored him'},c:false}, {t:{ar:'يطردُه',en:'He sent him away'},c:false} ] },
+      { q:{ar:'ما الذي كان يزيدُ نظامَ الملكِ عُجباً وكِبراً؟',en:'What used to increase Nizam al-Mulk’s vanity and pride?'},
+        opts:[ {t:{ar:'الصلاة',en:'Prayer'},c:false}, {t:{ar:'المديحُ بما ليس فيه',en:'Praise for what was not in him'},c:true}, {t:{ar:'قراءةُ الكتب',en:'Reading books'},c:false} ] },
+      { q:{ar:'مَن الصديقُ الحقيقيُّ كما تعلّمنا القصّة؟',en:'Who is a true friend, as the story teaches?'},
+        opts:[ {t:{ar:'مَن يمدحُك دائماً',en:'One who always praises you'},c:false}, {t:{ar:'مَن يسكتُ عن أخطائِك',en:'One who keeps quiet about your mistakes'},c:false}, {t:{ar:'مَن يصدقُك وينصحُك بلطف',en:'One who tells you the truth and advises you kindly'},c:true} ] },
+    ],
+    moral:{ar:'النصيحةُ الصادقةُ أثمنُ من المديحِ الكاذب، ومَن أهدى إليك عيوبَك فهو صديقُك الحقيقيّ.',en:'Sincere advice is more precious than false praise; whoever shows you your faults is your true friend.'},
+    badge:{icon:'🪞',title:{ar:'وِسامُ مرآةِ الصدق',en:'Badge of the Honest Mirror'}},
+    reflect:[ {ar:'هل تفرحُ حين ينبّهُك صديقُك إلى خطأ، أم تغضب؟',en:'Are you glad when a friend points out a mistake, or do you get angry?'}, {ar:'كيف تنصحُ صديقَك بلطفٍ دونَ أن تجرحَه؟',en:'How can you advise a friend kindly without hurting him?'} ],
+    didYouKnow:[ {ar:'كان نظامُ الملكِ إذا دخلَ عليه أبو عليٍّ الفارمذيُّ قامَ له وأجلسه مكانَه، وقال: إنّه يذكرُ لي عيوبي وظلمي فأنكسرُ وأرجعُ عن كثيرٍ ممّا أنا فيه — المصدر: المنتظم لابن الجوزي · البداية والنهاية',en:'When Abu Ali al-Farmadhi came to Nizam al-Mulk, he stood and seated him in his place, saying: he tells me my faults and wrongs, so I am humbled and turn back from much of what I do — Source: Al-Muntazam (Ibn al-Jawzi) · Al-Bidaya wa an-Nihaya'}, {ar:'وصفَ الذهبيُّ نظامَ الملكِ بأنّه كان يُحِبُّ مَن يُبيِّنُ له عيوبَ نفسِه فينكسرُ ويبكي — المصدر: سير أعلام النبلاء للذهبي',en:'Adh-Dhahabi described Nizam al-Mulk as loving whoever showed him his own faults, so that he would be humbled and weep — Source: Siyar A’lam an-Nubala’ (adh-Dhahabi)'} ],
   },
 ];

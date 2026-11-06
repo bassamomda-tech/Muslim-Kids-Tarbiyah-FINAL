@@ -1,4 +1,4 @@
-/* data/stories/ibnqasim.js — Leaders · Muhammad ibn al-Qasim — sources: البداية والنهاية · فتوح البلدان · إسلام ويب · الدرر السنية */
+/* data/stories/ibnqasim.js — Leaders · Muhammad ibn al-Qasim — sources: البداية والنهاية · فتوح البلدان · إسلام ويب · الدرر السنية · الكامل لابن الأثير */
 window.HISN_STORIES = window.HISN_STORIES || {};
 HISN_STORIES.ibnqasim = [
   { icon:'❤️', scene:'desert', character:'🐎',
@@ -52,5 +52,31 @@ HISN_STORIES.ibnqasim = [
     badge:{icon:'⚖️',title:{ar:'وِسامُ العدلِ الشامل',en:'Badge of Universal Justice'}},
     reflect:[ {ar:'هل تعدلُ حتى مع من يخالفُك أو لا تحبُّه؟',en:'Are you just even with those who differ from you or whom you dislike?'}, {ar:'كيف تتركُ أثراً طيّباً يبقى في قلوبِ الناس؟',en:'How do you leave a good mark that remains in people\u2019s hearts?'} ],
     didYouKnow:[ {ar:'كان العدلُ مع أهلِ البلادِ المفتوحةِ سبباً رئيساً في انتشارِ الإسلامِ في كثيرٍ من البلدان — المصدر: فتوح البلدان',en:'Justice toward the people of conquered lands was a main reason for Islam\u2019s spread in many countries — Source: Futuh al-Buldan'}, {ar:'قال تعالى: ﴿ اعْدِلُوا هُوَ أَقْرَبُ لِلتَّقْوَىٰ ﴾ — المصدر: المائدة ٨',en:'Allah said: "Be just; that is nearer to righteousness" — Source: Al-Ma\u2019ida 8'} ],
+  },
+  { icon:'💔', scene:'desert', character:'🐪',
+    title:{ ar:'«أضاعوني وأيَّ فتىً أضاعوا»', en:'"They Lost Me — and What a Young Man They Lost"' },
+    pages:[
+      { scene:'desert', character:'😢',
+        text:{ ar:'كان <b>محمدُ بنُ القاسم</b> قائداً شابّاً، فتحَ بلادَ السندِ وأحبّه أهلُها لعدلِه. حتى قال فيه الشاعر: <b>«ساسَ الرجالَ لسبعَ عشرةَ حِجّةً ... يا قربَ ذلك سُؤدداً من مولدِ»</b> — أي قادَ الجيوشَ وعمرُه سبعَ عشرةَ سنة! لكن حين ماتَ الخليفةُ الوليد، جاءَ خليفةٌ جديدٌ فـ<b>عزله</b> وأمرَ بحملِه إلى العراق.<br><br>كان معه جيشٌ يحبُّه، لكنّه <b>لم يُثِرْ فتنةً ولم يرفعْ سيفاً على المسلمين</b>، بل استجابَ للأمرِ وسارَ مقيّداً، وهو يتمثّلُ بيتاً حزيناً: <b>«أضاعوني وأيَّ فتىً أضاعوا ... ليومِ كريهةٍ وسِدادِ ثغرِ»</b>. فلمّا وصلَ <b>سُجِنَ في واسطٍ ظلماً حتى توفّي</b> رحمه الله. وحين بلغَ الخبرُ أهلَ السند <b>بكَوا عليه</b> لأنّهم فقدوا القائدَ العادل. علّمنا ابنُ القاسمِ أنّ <b>حفظَ وحدةِ المسلمينَ أغلى من المنصب</b>، وأنّ الصبرَ على الظلمِ خيرٌ من إشعالِ الفتنة.',
+          en:'<b>Muhammad ibn al-Qasim</b> was a young commander who opened the land of Sind, and its people loved him for his justice. A poet even said of him: <b>"He led men at seventeen years of age — how close that leadership came to his birth!"</b> But when the caliph al-Walid died, a new caliph came and <b>dismissed him</b>, ordering him to be brought to Iraq.<br><br>He had an army that loved him, yet he <b>did not stir up strife or raise a sword against Muslims</b>; he obeyed the order and went in chains, quoting a sad verse: <b>"They lost me — and what a young man they lost, for a day of hardship and for guarding the frontier!"</b> When he arrived, <b>he was unjustly imprisoned in Wasit until he died</b>, may Allah have mercy on him. When the news reached the people of Sind, <b>they wept for him</b>, for they had lost a just leader. Ibn al-Qasim taught us that <b>keeping the Muslims united is worth more than any position</b>, and that patience under injustice is better than igniting strife.' },
+        choice:{ q:{ar:'ماذا فعلَ محمدُ بنُ القاسم حين عُزِل؟',en:'What did Muhammad ibn al-Qasim do when he was dismissed?'},
+          opts:[
+            { t:{ar:'جمعَ جيشَه وقاتلَ المسلمين',en:'Gathered his army and fought the Muslims'},c:false,exp:{ar:'لا، بل حفظَ وحدةَ المسلمين.',en:'No — he kept the Muslims united.'} },
+            { t:{ar:'استجابَ للأمرِ ولم يُثِرْ فتنة',en:'He obeyed the order and stirred no strife'},c:true,exp:{ar:'نعم! وحدةُ المسلمينَ أغلى من المنصب.',en:'Yes! Muslim unity is worth more than position.'} },
+            { t:{ar:'هربَ إلى بلادٍ بعيدة',en:'He fled to a faraway land'},c:false,exp:{ar:'لا، بل سارَ صابراً.',en:'No — he went patiently.'} },
+          ] } },
+    ],
+    quiz:[
+      { q:{ar:'كم كان عمرُ محمدِ بنِ القاسمِ حين قادَ الجيوشَ كما قال الشاعر؟',en:'How old was Muhammad ibn al-Qasim when he led armies, as the poet said?'},
+        opts:[ {t:{ar:'سبعَ عشرةَ سنة',en:'Seventeen years'},c:true}, {t:{ar:'خمسينَ سنة',en:'Fifty years'},c:false}, {t:{ar:'سبعَ سنوات',en:'Seven years'},c:false} ] },
+      { q:{ar:'في أيِّ مدينةٍ سُجِنَ محمدُ بنُ القاسم؟',en:'In which city was Muhammad ibn al-Qasim imprisoned?'},
+        opts:[ {t:{ar:'قرطبة',en:'Cordoba'},c:false}, {t:{ar:'سمرقند',en:'Samarkand'},c:false}, {t:{ar:'واسط',en:'Wasit'},c:true} ] },
+      { q:{ar:'كيف كان شعورُ أهلِ السندِ حين بلغهم خبرُه؟',en:'How did the people of Sind feel when they heard the news?'},
+        opts:[ {t:{ar:'فرحوا',en:'They rejoiced'},c:false}, {t:{ar:'بكَوا عليه',en:'They wept for him'},c:true}, {t:{ar:'لم يهتمّوا',en:'They did not care'},c:false} ] },
+    ],
+    moral:{ar:'حفظُ وحدةِ المسلمينَ أغلى من كلِّ منصب، والصبرُ على الظلمِ خيرٌ من إشعالِ الفتنة، والعدلُ يجعلُ الناسَ يحبّونك ولو كنتَ غريباً.',en:'Keeping Muslims united is worth more than any position; patience under injustice is better than igniting strife; and justice makes people love you even as a stranger.'},
+    badge:{icon:'💔',title:{ar:'وِسامُ الصبرِ وحفظِ الجماعة',en:'Badge of Patience & Unity'}},
+    reflect:[ {ar:'إذا ظُلِمتَ في أمرٍ صغير، كيف تتصرّفُ دونَ أن تُثيرَ مشكلةً أكبر؟',en:'If you were treated unfairly in a small matter, how would you act without causing a bigger problem?'}, {ar:'لماذا بكى أهلُ السندِ على قائدٍ جاءَ من بلادٍ بعيدة؟',en:'Why did the people of Sind weep for a leader from a faraway land?'} ],
+    didYouKnow:[ {ar:'لمّا عُزِلَ محمدُ بنُ القاسمِ حُمِلَ مقيّداً إلى العراقِ فتمثّلَ بقولِ الشاعر: «أضاعوني وأيَّ فتىً أضاعوا»، وحُبِسَ بواسطٍ حتى ماتَ، فبكاه أهلُ الهند — المصدر: فتوح البلدان للبلاذري · الكامل لابن الأثير',en:'When Muhammad ibn al-Qasim was dismissed he was carried in chains to Iraq, quoting the verse "They lost me — and what a young man they lost"; he was imprisoned in Wasit until he died, and the people of India wept for him — Source: Futuh al-Buldan (al-Baladhuri) · Al-Kamil (Ibn al-Athir)'}, {ar:'بيتُ «ساسَ الرجالَ لسبعَ عشرةَ حِجّة» قاله الشاعرُ حمزةُ بنُ بِيضٍ في محمدِ بنِ القاسم — المصدر: فتوح البلدان للبلاذري',en:'The verse "He led men at seventeen years of age" was said by the poet Hamza ibn Bid about Muhammad ibn al-Qasim — Source: Futuh al-Buldan (al-Baladhuri)'} ],
   },
 ];

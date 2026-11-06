@@ -4,7 +4,7 @@
 window.HISN = window.HISN || {}; HISN.chapters = HISN.chapters || {};
 HISN.chapters.shakur = {
   id: 'shakur', era: 'heart', kind: 'name', icon: 'gem',
-  name: { ar: 'الشكور', en: 'The Most Appreciative' },
+  name: { ar: 'الشكورُ الشاكر', en: 'The Most Appreciative, the Thankful' },
   tag:  { ar: 'يَشكرُ القليلَ ويُضاعِفُه', en: 'He rewards the little, multiplied' },
   accent: '#B07A2E', accent2: '#D29E50',
   rooms: ['knowledge', 'story', 'memorize', 'activities', 'treasures'],
@@ -27,6 +27,7 @@ HISN.chapters.shakur = {
       { ar: 'حتى الابتسامةُ في وجهِ أخيكَ صدقةٌ يَشكرُها الله.', en: 'Even a smile at your brother is a charity Allah appreciates.' },
       { ar: 'الشكرُ يَزيدُ النِّعَم: «لئن شكرتُم لأزيدنّكم».', en: 'Gratitude increases blessings: "If you give thanks, I will increase you."' },
       { ar: 'نَشكُرُ اللهَ بالقلبِ واللسانِ والعمل.', en: 'We thank Allah with the heart, tongue, and deeds.' },
+      { ar: 'ومن أسمائه <b>«الشاكر»</b>: يَشكرُ عملَك الصغيرَ ويُثيبُك عليه: <b>﴿وَكَانَ اللَّهُ شَاكِرًا عَلِيمًا﴾</b> (النساء ١٤٧).', en: 'Another of His Names is <b>“Ash-Shakir”</b>: He appreciates your small deed and rewards you for it: <b>“And Allah is ever Appreciative and Knowing”</b> (an-Nisa 147).' },
     ],
     ayah: { ar: '﴿ وَمَن تَطَوَّعَ خَيْرًا فَإِنَّ اللَّهَ شَاكِرٌ عَلِيمٌ ﴾', ref: { ar: 'البقرة ١٥٨', en: 'Al-Baqarah 158' } },
   },

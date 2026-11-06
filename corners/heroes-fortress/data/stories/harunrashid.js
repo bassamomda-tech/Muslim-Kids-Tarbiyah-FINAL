@@ -1,4 +1,4 @@
-/* data/stories/harunrashid.js — Leaders · Harun ar-Rashid — sources: البداية والنهاية · تاريخ الطبري · إسلام ويب · سير أعلام النبلاء */
+/* data/stories/harunrashid.js — Leaders · Harun ar-Rashid — sources: البداية والنهاية · تاريخ الطبري · إسلام ويب · سير أعلام النبلاء · تاريخ بغداد · تاريخ الخلفاء */
 window.HISN_STORIES = window.HISN_STORIES || {};
 HISN_STORIES.harunrashid = [
   { icon:'📚', scene:'throne', character:'👑',
@@ -52,5 +52,57 @@ HISN_STORIES.harunrashid = [
     badge:{icon:'🤲',title:{ar:'وِسامُ القوّةِ والخشية',en:'Badge of Power & Reverence'}},
     reflect:[ {ar:'حين تنالُ نجاحاً أو قوّة، هل تتذكّرُ فضلَ اللهِ عليك؟',en:'When you gain success or strength, do you remember Allah\u2019s favor upon you?'}, {ar:'كيف توازِنُ بين طموحِك في الدنيا وعبادتِك لله؟',en:'How do you balance worldly ambition with worship of Allah?'} ],
     didYouKnow:[ {ar:'رُوِيَ أنّ هارونَ الرشيدَ كان يُصلّي كلَّ يومٍ نوافلَ كثيرةً ويتصدّقُ بمالٍ كثير — المصدر: سير أعلام النبلاء',en:'It is reported Harun ar-Rashid prayed many voluntary prayers daily and gave much in charity — Source: Siyar A\u2019lam an-Nubala\u2019'}, {ar:'كان الرشيدُ يحبُّ مجالسةَ العلماءِ والوعّاظِ ويتأثّرُ بمواعظِهم كثيراً — المصدر: البداية والنهاية',en:'Ar-Rashid loved sitting with scholars and preachers and was deeply moved by their sermons — Source: Al-Bidaya wa an-Nihaya'} ],
+  },
+  { icon:'☁️', scene:'rain', character:'👑',
+    title:{ ar:'«أمطري حيثُ شئتِ».. ومُلكٌ بشربةِ ماء', en:'"Rain Wherever You Wish" — and a Kingdom Worth a Sip of Water' },
+    pages:[
+      { scene:'rain', character:'💧',
+        text:{ ar:'يُروى أنّ <b>هارونَ الرشيد</b> رأى سحابةً تمرُّ فوقَ بغدادَ ولا تُمطِر، فقال لها: <b>«أمطري حيثُ شئتِ، فإنّ خراجَكِ لي»</b> — أي: أينما نزلَ مطرُكِ فهو في أرضٍ من دولتي، وسيأتيني خيرُها! فقد كانت دولتُه تمتدُّ من بلادِ المغربِ إلى حدودِ الصين.<br><br>لكنّ هذا المُلكَ العظيمَ لم يكنْ عندَ الرشيدِ شيئاً كبيراً أمامَ الله. فقد دخلَ عليه الواعظُ <b>ابنُ السمّاك</b> يوماً، فطلبَ الرشيدُ ماءً ليشرب. فقال له ابنُ السمّاك: <b>«لو مُنِعتَ هذه الشربةَ، بكم كنتَ تشتريها؟»</b> قال: بنصفِ مُلكي. قال: <b>«فلو حُبِستْ في جسدِك فلم تخرجْ، بكم كنتَ تشتري خروجَها؟»</b> قال: بمُلكي كلِّه. فقال ابنُ السمّاك: <b>«إنّ مُلكاً قيمتُه شربةُ ماءٍ لجديرٌ ألّا يُتنافَسَ فيه!»</b> فبكى الرشيد. علّمنا أنّ كلَّ ما نملكُ نعمةٌ صغيرةٌ أمامَ نِعَمِ اللهِ التي لا نشعرُ بها.',
+          en:'It is told that <b>Harun ar-Rashid</b> saw a cloud passing over Baghdad without raining, and said to it, <b>"Rain wherever you wish, for your tax will come to me!"</b> — meaning wherever its rain fell, it would be in a land of his state and its harvest would reach him! His state stretched from North Africa to the borders of China.<br><br>But this great kingdom was not something big to ar-Rashid before Allah. One day the preacher <b>Ibn as-Sammak</b> came in to him, and ar-Rashid asked for water to drink. Ibn as-Sammak said, <b>"If this drink were denied you, how much would you pay for it?"</b> He said, "Half my kingdom." He said, <b>"And if it were held inside your body and would not come out, how much would you pay to release it?"</b> He said, "All my kingdom." Ibn as-Sammak said, <b>"A kingdom worth a sip of water deserves not to be competed for!"</b> And ar-Rashid wept. He taught us that all we own is small next to Allah’s blessings that we do not even notice.' },
+        choice:{ q:{ar:'ماذا تعلّمَ الرشيدُ من سؤالِ شربةِ الماء؟',en:'What did ar-Rashid learn from the question about the sip of water?'},
+          opts:[
+            { t:{ar:'أنّ الماءَ غالي الثمنِ في السوق',en:'That water is expensive in the market'},c:false,exp:{ar:'لا، بل أنّ نِعَمَ اللهِ أعظمُ من كلِّ مُلك.',en:'No — that Allah’s blessings are greater than any kingdom.'} },
+            { t:{ar:'أنّ نعمةً صغيرةً من اللهِ تساوي المُلكَ كلَّه',en:'That one small blessing from Allah is worth the whole kingdom'},c:true,exp:{ar:'أحسنت! فلنشكرِ اللهَ على نِعَمِه كلِّها.',en:'Well done! Let us thank Allah for all His blessings.'} },
+            { t:{ar:'أن يبيعَ مُلكَه',en:'To sell his kingdom'},c:false,exp:{ar:'لا، بل أن يتواضعَ ويشكر.',en:'No — to be humble and grateful.'} },
+          ] } },
+    ],
+    quiz:[
+      { q:{ar:'ماذا قال الرشيدُ للسحابةِ كما يُروى؟',en:'What is ar-Rashid said to have told the cloud?'},
+        opts:[ {t:{ar:'ابتعدي عن بغداد',en:'Go away from Baghdad'},c:false}, {t:{ar:'أمطري حيثُ شئتِ فإنّ خراجَكِ لي',en:'Rain wherever you wish, for your tax is mine'},c:true}, {t:{ar:'لا تُمطري أبداً',en:'Never rain'},c:false} ] },
+      { q:{ar:'من الواعظُ الذي سألَ الرشيدَ عن شربةِ الماء؟',en:'Which preacher asked ar-Rashid about the sip of water?'},
+        opts:[ {t:{ar:'ابنُ السمّاك',en:'Ibn as-Sammak'},c:true}, {t:{ar:'العزُّ بنُ عبدِ السلام',en:'Al-Izz ibn Abd as-Salam'},c:false}, {t:{ar:'آق شمس الدين',en:'Aq Shamsuddin'},c:false} ] },
+      { q:{ar:'ماذا فعلَ الرشيدُ حين سمعَ الموعظة؟',en:'What did ar-Rashid do when he heard the admonition?'},
+        opts:[ {t:{ar:'ضحكَ وسخر',en:'He laughed and mocked'},c:false}, {t:{ar:'طردَ الواعظ',en:'He expelled the preacher'},c:false}, {t:{ar:'بكى',en:'He wept'},c:true} ] },
+    ],
+    moral:{ar:'مهما ملكتَ من الدنيا فهو قليلٌ أمامَ نِعَمِ اللهِ عليك؛ فتواضعْ واشكرِ اللهَ على أصغرِ النِّعَم.',en:'However much of this world you own, it is little next to Allah’s blessings upon you; so be humble and thank Allah for the smallest blessing.'},
+    badge:{icon:'💧',title:{ar:'وِسامُ شُكرِ النِّعَم',en:'Badge of Gratitude for Blessings'}},
+    reflect:[ {ar:'ما النِّعَمُ الصغيرةُ التي تستعملُها كلَّ يومٍ ولا تشكرُ اللهَ عليها؟',en:'What small blessings do you use every day without thanking Allah for them?'}, {ar:'لماذا بكى الرشيدُ وهو أقوى ملوكِ زمانِه؟',en:'Why did ar-Rashid weep though he was the strongest king of his time?'} ],
+    didYouKnow:[ {ar:'قصّةُ ابنِ السمّاكِ مع الرشيدِ في شربةِ الماءِ ذكرها المؤرّخونَ في ترجمةِ الرشيد — المصدر: البداية والنهاية لابن كثير · تاريخ الخلفاء للسيوطي',en:'The story of Ibn as-Sammak and ar-Rashid about the sip of water is recorded by historians in ar-Rashid’s biography — Source: Al-Bidaya wa an-Nihaya (Ibn Kathir) · Tarikh al-Khulafa’ (as-Suyuti)'}, {ar:'قولُ الرشيدِ للسحابةِ كلمةٌ مشهورةٌ تتناقلُها الكتبُ والخطب، ولا تُعرَفُ لها روايةٌ مُسنَدةٌ في كتبِ التاريخِ الأولى، لذلك نقولُ: «يُروى» — المصدر: ملاحظة تحقيق',en:'Ar-Rashid’s words to the cloud are a famous saying passed on in books and sermons, but no chain of narration for it is known in the early history books, so we say "it is told" — Note on verification'} ],
+  },
+  { icon:'🕋', scene:'kaaba', character:'🚶',
+    title:{ ar:'الخليفةُ يمشي إلى عرفات', en:'The Caliph Walks to Arafat' },
+    pages:[
+      { scene:'kaaba', character:'🚶',
+        text:{ ar:'كان <b>هارونُ الرشيد</b> يُحِبُّ الحجَّ حبّاً عظيماً، وكان كما يقولُ المؤرّخونَ <b>يحجُّ عاماً ويغزو عاماً</b>. وفي سنةِ ١٧٩هـ اعتمرَ في رمضان، وبقيَ على إحرامِه حتى جاءَ وقتُ الحجّ، ثمّ فعلَ شيئاً عجيباً: <b>مشى على قدمَيه</b> من منزلِه بمكّةَ إلى عرفات! الخليفةُ الذي تحملُه الخيولُ والجمالُ أينما أراد، اختارَ أن يمشيَ تواضعاً لله، مع الناسِ وبينَ الناس.<br><br>وكان إذا حجَّ <b>أخذَ معه مئةً من الفقهاءِ وأبنائِهم</b> وتكفّلَ بنفقتِهم، فإن لم يحجَّ في عامٍ <b>أرسلَ ثلاثَمئةِ رجلٍ يحجّونَ على نفقتِه</b> بأحسنِ ما يكونُ من الزادِ والكسوة. علّمنا الرشيدُ أنّ <b>العبادةَ تحتاجُ قلباً متواضعاً</b>، وأنّ المؤمنَ يُحِبُّ أن يُشارِكَ غيرَه في الخير.',
+          en:'<b>Harun ar-Rashid</b> loved Hajj dearly, and, as historians say, he would <b>go on Hajj one year and on campaign the next</b>. In the year 179 AH he performed Umrah in Ramadan and stayed in ihram until the time of Hajj, then did something wonderful: he <b>walked on his own feet</b> from his lodging in Makkah to Arafat! The caliph whom horses and camels carried wherever he wished chose to walk in humility to Allah, with the people and among them.<br><br>When he went on Hajj he would <b>take a hundred jurists and their sons with him</b> and pay their expenses, and in a year when he did not go, <b>he sent three hundred men to perform Hajj at his expense</b>, with the best provisions and clothing. Ar-Rashid taught us that <b>worship needs a humble heart</b>, and that a believer loves to share good with others.' },
+        choice:{ q:{ar:'ماذا كان الرشيدُ يفعلُ في العامِ الذي لا يحجُّ فيه؟',en:'What did ar-Rashid do in a year he did not go on Hajj?'},
+          opts:[
+            { t:{ar:'يُرسِلُ ثلاثَمئةِ رجلٍ يحجّونَ على نفقتِه',en:'He sent three hundred men on Hajj at his expense'},c:true,exp:{ar:'نعم! وهكذا يُشارِكُ غيرَه في الأجر.',en:'Yes! That is how he shared the reward with others.'} },
+            { t:{ar:'ينسى الحجَّ تماماً',en:'He forgot Hajj completely'},c:false,exp:{ar:'لا، بل كان يُرسِلُ غيرَه.',en:'No — he sent others.'} },
+            { t:{ar:'يمنعُ الناسَ من الحجّ',en:'He stopped people from Hajj'},c:false,exp:{ar:'لا، بل كان يُعينُهم عليه.',en:'No — he helped them go.'} },
+          ] } },
+    ],
+    quiz:[
+      { q:{ar:'في أيِّ سنةٍ مشى الرشيدُ إلى عرفات؟',en:'In which year did ar-Rashid walk to Arafat?'},
+        opts:[ {t:{ar:'٦٥٨هـ',en:'658 AH'},c:false}, {t:{ar:'١٧٩هـ',en:'179 AH'},c:true}, {t:{ar:'٩٢هـ',en:'92 AH'},c:false} ] },
+      { q:{ar:'كم فقيهاً كان يأخذُ معه إذا حجّ؟',en:'How many jurists did he take with him on Hajj?'},
+        opts:[ {t:{ar:'واحداً',en:'One'},c:false}, {t:{ar:'عشرة',en:'Ten'},c:false}, {t:{ar:'مئةً من الفقهاءِ وأبنائِهم',en:'A hundred jurists and their sons'},c:true} ] },
+      { q:{ar:'لماذا مشى الرشيدُ ولم يركب؟',en:'Why did ar-Rashid walk instead of riding?'},
+        opts:[ {t:{ar:'تواضعاً لله',en:'Out of humility to Allah'},c:true}, {t:{ar:'لأنّه لا يملكُ دابّة',en:'Because he had no mount'},c:false}, {t:{ar:'ليسبقَ الناس',en:'To race ahead of people'},c:false} ] },
+    ],
+    moral:{ar:'العبادةُ تحتاجُ قلباً متواضعاً مهما علا مقامُك، والمؤمنُ يُحِبُّ أن يُعينَ غيرَه على الخير.',en:'Worship needs a humble heart however high your rank, and a believer loves to help others do good.'},
+    badge:{icon:'🕋',title:{ar:'وِسامُ الحاجِّ المتواضع',en:'Badge of the Humble Pilgrim'}},
+    reflect:[ {ar:'كيف تُظهِرُ تواضعَك لله في صلاتِك وعبادتِك؟',en:'How do you show humility to Allah in your prayer and worship?'}, {ar:'كيف يمكنُ أن تُعينَ غيرَك على عملٍ صالح؟',en:'How can you help someone else do a good deed?'} ],
+    didYouKnow:[ {ar:'في سنةِ ١٧٩هـ اعتمرَ الرشيدُ في رمضانَ ودامَ على إحرامِه إلى أن حجَّ ماشياً من بطنِ مكّة — المصدر: سير أعلام النبلاء للذهبي',en:'In 179 AH ar-Rashid performed Umrah in Ramadan and remained in ihram until he performed Hajj walking from the heart of Makkah — Source: Siyar A’lam an-Nubala’ (adh-Dhahabi)'}, {ar:'كان الرشيدُ إذا حجَّ أحجَّ معه مئةً من الفقهاءِ وأبنائِهم، وإذا لم يحجَّ أحجَّ ثلاثَمئةِ رجلٍ بالنفقةِ السابغة — المصدر: تاريخ بغداد للخطيب · سير أعلام النبلاء',en:'When ar-Rashid went on Hajj he took a hundred jurists and their sons; when he did not, he sent three hundred men with ample expenses — Source: Tarikh Baghdad (al-Khatib) · Siyar A’lam an-Nubala’'} ],
   },
 ];

@@ -1,4 +1,4 @@
-/* data/stories/suleiman.js — Leaders · Suleiman the Magnificent — sources: البداية والنهاية · إسلام ويب · الدرر السنية · كتب التاريخ العثماني */
+/* data/stories/suleiman.js — Leaders · Suleiman the Magnificent — sources: البداية والنهاية · إسلام ويب · الدرر السنية · كتب التاريخ العثماني · النقوش التأسيسية لأبواب القدس */
 window.HISN_STORIES = window.HISN_STORIES || {};
 HISN_STORIES.suleiman = [
   { icon:'⚖️', scene:'throne', character:'👑',
@@ -52,5 +52,31 @@ HISN_STORIES.suleiman = [
     badge:{icon:'🏛️',title:{ar:'وِسامُ باني الحضارة',en:'Badge of the Civilization-Builder'}},
     reflect:[ {ar:'ما الأثرُ الطيّبُ الذي تتمنّى أن تتركَه من بعدِك؟',en:'What good mark do you wish to leave behind you?'}, {ar:'كيف تبني وتُصلِحُ ما حولَك لينتفعَ غيرُك؟',en:'How do you build and improve around you so others benefit?'} ],
     didYouKnow:[ {ar:'بنى المهندسُ سنان باشا في العصرِ العثمانيِّ مئاتِ المساجدِ والمنشآتِ ومنها السليمانية — المصدر: كتب التاريخ العثماني',en:'The architect Sinan Pasha built hundreds of mosques and structures in the Ottoman era, including the Suleymaniye — Source: Ottoman history works'}, {ar:'ازدهرتِ العمارةُ والفنونُ والعلومُ ازدهاراً عظيماً في عصرِ سليمانَ القانوني — المصدر: كتب التاريخ',en:'Architecture, the arts, and the sciences flourished greatly in Suleiman the Magnificent\u2019s era — Source: history works'} ],
+  },
+  { icon:'🧱', scene:'mosque', character:'🕌',
+    title:{ ar:'سورُ القدسِ وأسبلةُ الماء', en:'The Walls of Jerusalem and the Water Fountains' },
+    pages:[
+      { scene:'mosque', character:'🧱',
+        text:{ ar:'كان <b>سليمانُ القانوني</b> يُحِبُّ <b>بيتَ المقدس</b> حبّاً عظيماً، فهو أولى القبلتينِ ومسرى النبيِّ ﷺ. وكانت أسوارُ المدينةِ قد تهدّمتْ منذ زمنٍ طويل، فصارتْ مكشوفةً لا تحميها حصون. فأمرَ سليمانُ بـ<b>بناءِ سورٍ عظيمٍ حولَ القدس</b>، فعملَ فيه البنّاؤونَ نحوَ <b>خمسِ سنوات</b> (من سنةِ ٩٤٣هـ تقريباً)، وجعلوا له أبواباً جميلةً ما زالَ الناسُ يدخلونَ منها إلى اليوم، مثلَ <b>بابِ العمودِ وبابِ الخليل</b>.<br><br>ولم ينسَ سليمانُ <b>عطشَ الناس</b>! فأصلحَ قنواتِ الماءِ التي تُوصِلُه إلى المدينة، وبنى فيها <b>أسبلةً</b> — وهي سقّاياتٌ يشربُ منها المارّةُ والزوّارُ مجّاناً — وجدّدَ زخارفَ <b>قبّةِ الصخرة</b> الخارجيّة. وما زالَ اسمُه مكتوباً على تلك الأبوابِ والأسبلة. علّمنا سليمانُ أنّ <b>خدمةَ المقدّساتِ وسقيَ الناسِ</b> من أجملِ ما يتركُه الإنسانُ بعدَه.',
+          en:'<b>Suleiman the Lawgiver</b> loved <b>Bayt al-Maqdis (Jerusalem)</b> dearly, for it is the first of the two qiblas and the place of the Prophet’s ﷺ Night Journey. The city’s walls had been ruined long before, leaving it exposed with no fortifications. So Suleiman ordered <b>a great wall built around Jerusalem</b>; the builders worked on it for about <b>five years</b> (from around 943 AH), and gave it beautiful gates through which people still enter today, such as <b>Damascus Gate and Jaffa Gate</b>.<br><br>And Suleiman did not forget <b>people’s thirst</b>! He repaired the water channels that bring water to the city and built <b>sabils</b> in it — fountains where passers-by and visitors drink for free — and renewed the outer decoration of the <b>Dome of the Rock</b>. His name is still inscribed on those gates and fountains. Suleiman taught us that <b>serving holy places and giving people water</b> are among the most beautiful things a person leaves behind.' },
+        choice:{ q:{ar:'ما الأسبلةُ التي بناها سليمانُ في القدس؟',en:'What were the sabils Suleiman built in Jerusalem?'},
+          opts:[
+            { t:{ar:'قصورٌ للأمراء',en:'Palaces for princes'},c:false,exp:{ar:'لا، بل سقّاياتٌ للناس.',en:'No — drinking fountains for people.'} },
+            { t:{ar:'أبراجٌ للحرب',en:'War towers'},c:false,exp:{ar:'لا، بل أماكنُ يشربُ منها الناس.',en:'No — places where people drink.'} },
+            { t:{ar:'سقّاياتٌ يشربُ منها الناسُ مجّاناً',en:'Fountains where people drink for free'},c:true,exp:{ar:'أحسنت! وسقيُ الماءِ من أفضلِ الصدقات.',en:'Well done! Giving water is among the best charities.'} },
+          ] } },
+    ],
+    quiz:[
+      { q:{ar:'ماذا بنى سليمانُ حولَ مدينةِ القدس؟',en:'What did Suleiman build around Jerusalem?'},
+        opts:[ {t:{ar:'سوراً عظيماً بأبوابٍ جميلة',en:'A great wall with beautiful gates'},c:true}, {t:{ar:'سوقاً كبيراً',en:'A big market'},c:false}, {t:{ar:'ميناءً للسفن',en:'A harbour for ships'},c:false} ] },
+      { q:{ar:'من أبوابِ سورِ القدسِ التي ما زالتْ قائمة:',en:'Among the gates of Jerusalem’s wall still standing is:'},
+        opts:[ {t:{ar:'بابُ زُويلة',en:'Bab Zuwayla'},c:false}, {t:{ar:'بابُ العمود',en:'Damascus Gate (Bab al-Amud)'},c:true}, {t:{ar:'بابُ السلام في بغداد',en:'Bab as-Salam in Baghdad'},c:false} ] },
+      { q:{ar:'كم سنةً تقريباً استمرَّ بناءُ السور؟',en:'About how many years did building the wall take?'},
+        opts:[ {t:{ar:'يوماً واحداً',en:'One day'},c:false}, {t:{ar:'مئةَ سنة',en:'A hundred years'},c:false}, {t:{ar:'نحوَ خمسِ سنوات',en:'About five years'},c:true} ] },
+    ],
+    moral:{ar:'خدمةُ المقدّساتِ وسقيُ الناسِ وحمايتُهم أعمالٌ يبقى أجرُها وأثرُها بعدَ صاحبِها قروناً.',en:'Serving holy places and giving people water and protection are deeds whose reward and trace remain for centuries after the doer.'},
+    badge:{icon:'🧱',title:{ar:'وِسامُ حارسِ القدس',en:'Badge of the Guardian of Jerusalem'}},
+    reflect:[ {ar:'كيف يمكنُ أن تسقيَ الناسَ الماءَ في حيِّك أو مدرستِك؟',en:'How could you give people water in your neighbourhood or school?'}, {ar:'ما العملُ الذي تُحِبُّ أن يبقى أثرُه بعدَك؟',en:'What deed would you like to leave a lasting trace after you?'} ],
+    didYouKnow:[ {ar:'بُنِيَ سورُ القدسِ الحاليُّ بأمرِ سليمانَ القانونيِّ بينَ سنتَي ٩٤٣ و٩٤٨هـ تقريباً (١٥٣٧–١٥٤١م)، وعلى أبوابِه نقوشٌ تحملُ اسمَه — المصدر: كتب التاريخ العثماني · النقوش التأسيسية على أبواب القدس',en:'Jerusalem’s present wall was built by order of Suleiman between about 943 and 948 AH (1537–1541 CE), and its gates bear inscriptions with his name — Source: Ottoman history works · the foundation inscriptions on Jerusalem’s gates'}, {ar:'بنى سليمانُ في القدسِ عدداً من الأسبلةِ وأصلحَ قنواتِ الماء، وجدّدَ تكسيةَ قبّةِ الصخرةِ بالقاشاني — المصدر: كتب التاريخ العثماني',en:'Suleiman built several sabils in Jerusalem, repaired its water channels, and renewed the Dome of the Rock’s tile facing — Source: Ottoman history works'} ],
   },
 ];

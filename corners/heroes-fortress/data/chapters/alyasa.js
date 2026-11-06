@@ -26,7 +26,7 @@ HISN.chapters.alyasa = {
       { when:{ar:'الصلاح',en:'Righteousness'}, what:{ar:'كان مِن الأخيارِ الصالحين.',en:'He was among the best, righteous ones.'} },
       { when:{ar:'الثناء',en:'Praise'}, what:{ar:'أثنى اللهُ عليه في كتابِه.',en:'Allah praised him in His Book.'} },
     ],
-    ayah: { ar: '﴿ وَإِسْمَاعِيلَ وَالْيَسَعَ وَذَا الْكِفْلِ ۖ وَكُلٌّ مِّنَ الْأَخْيَارِ ﴾', ref: { ar: 'ص ٤٨', en: 'Sad 48' } },
+    ayah: { ar: '﴿ وَاذْكُرْ إِسْمَاعِيلَ وَالْيَسَعَ وَذَا الْكِفْلِ ۖ وَكُلٌّ مِّنَ الْأَخْيَارِ ﴾', ref: { ar: 'ص ٤٨', en: 'Sad 48' } },
   },
 
   story: [

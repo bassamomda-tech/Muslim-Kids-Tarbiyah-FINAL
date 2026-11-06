@@ -1,4 +1,4 @@
-/* data/stories/talha.js — Heroes · Talha ibn Ubaydillah — sources: صور من حياة الصحابة (الباشا) · إسلام ويب · الدرر السنية · البداية والنهاية */
+/* data/stories/talha.js — Heroes · Talha ibn Ubaydillah — sources: صور من حياة الصحابة (الباشا) · إسلام ويب · الدرر السنية · البداية والنهاية · سنن الترمذي · صحيح البخاري · طبقات ابن سعد · سير أعلام النبلاء */
 window.HISN_STORIES = window.HISN_STORIES || {};
 HISN_STORIES.talha = [
   { icon:'🛡️', scene:'peaks', character:'⚔️',
@@ -52,5 +52,57 @@ HISN_STORIES.talha = [
     badge:{icon:'🎁',title:{ar:'وِسامُ طلحةِ الجود',en:'Badge of Talha\'s Bounty'}},
     reflect:[ {ar:'هل تُشارِكُ ما تحبُّ مع المحتاجين بفرح؟',en:'Do you joyfully share what you love with the needy?'}, {ar:'أين تضعُ المالَ — في يدِك أم في قلبِك؟',en:'Where do you place wealth — in your hand or in your heart?'} ],
     didYouKnow:[ {ar:'ذكرَ أهلُ السيرِ أنّ طلحةَ كان من أجودِ الصحابةِ يُنفِقُ أموالَه الطائلةَ في سبيلِ الله — المصدر: صور من حياة الصحابة',en:'The biographers noted Talha was among the most generous companions, spending his vast wealth for Allah\'s sake — Source: Suwar min Hayat as-Sahaba'}, {ar:'سمّاه بعضُ الصحابةِ «طلحةَ الفيّاض» لكثرةِ عطائِه وفيضِ كرمِه — المصدر: الدرر السنية',en:'Some companions called him "Talha the overflowing" for his abundant giving — Source: ad-Durar as-Saniyya'} ],
+  },
+  { icon:'🔔', scene:'desert', character:'🐫',
+    title:{ ar:'راهبُ بُصرى: «هل ظهرَ أحمد؟»', en:'The Monk of Busra: "Has Ahmad Appeared?"' },
+    pages:[
+      { scene:'desert', character:'🐫',
+        text:{ ar:'كان <b>طلحةُ بنُ عُبيدِ الله</b> شابّاً تاجراً من قريش، يسافرُ بالقوافلِ إلى الشام. ويُروى في كتبِ السِّيَر أنّه قال: حضرتُ سوقَ <b>بُصرى</b>، فإذا راهبٌ في صومعتِه يقول: سَلُوا أهلَ هذا الموسم: أفيهم أحدٌ من أهلِ الحرم؟ قلت: نعم، أنا. فقال: <b>«هل ظهرَ أحمدُ بعد؟»</b> قلت: ومَن أحمد؟ قال: ابنُ عبدِ اللهِ بنِ عبدِ المطّلب، هذا شهرُه الذي يخرجُ فيه، وهو <b>آخرُ الأنبياء</b>، مخرجُه من الحرم، ومُهاجَرُه إلى أرضٍ ذاتِ نخلٍ وحَرّة، <b>فإيّاكَ أن تُسبَقَ إليه</b>!<br><br>فوقعَ الكلامُ في قلبِ طلحة، فأسرعَ إلى مكّةَ يسأل: هل حدثَ شيء؟ قالوا: نعم، <b>محمّدُ بنُ عبدِ اللهِ الأمينُ</b> قد تنبّأ، وقد تبِعَه أبو بكر. فذهبَ طلحةُ إلى <b>أبي بكر</b>، فأخذه إلى النبيِّ ﷺ، فأسلمَ وأخبره بما قال الراهب، ففرحَ النبيُّ ﷺ بذلك.<br><br>فغضبَ بعضُ المشركين، وربطوا أبا بكرٍ وطلحةَ <b>في حبلٍ واحد</b>، فسُمّيا «القرينَين». لكنّ طلحةَ لم يتراجع، وكان من <b>السابقينَ الأوّلين</b> الذين أسلموا على يدِ أبي بكر. لم يُرِدْ أن يُسبَقَ إلى الخير، فسبقَ هو!',
+          en:'<b>Talha ibn Ubaydillah</b> was a young merchant of Quraysh who travelled with caravans to Sham. It is narrated in the biographies that he said: I was at the market of <b>Busra</b>, and a monk in his hermitage was saying: ask the people of this season — is anyone among them from the people of the Sanctuary? I said: yes, me. He said: <b>"Has Ahmad appeared yet?"</b> I said: who is Ahmad? He said: the son of Abdullah son of Abdul-Muttalib. This is the month in which he appears; he is <b>the last of the prophets</b>, he comes out of the Sanctuary and will emigrate to a land of palms and black stony ground — <b>so beware of letting others reach him before you</b>!<br><br>The words settled in Talha\'s heart. He hurried to Makkah and asked: has anything happened? They said: yes, <b>Muhammad ibn Abdullah, the Trustworthy</b>, has claimed prophethood, and Abu Bakr has followed him. Talha went to <b>Abu Bakr</b>, who took him to the Prophet ﷺ; he accepted Islam and told him what the monk said, and the Prophet ﷺ was glad.<br><br>Some idolaters grew angry and tied Abu Bakr and Talha <b>with one rope</b>, so they were called "the two bound together." But Talha did not turn back; he was among <b>the earliest Muslims</b> who accepted Islam through Abu Bakr. He did not want to be beaten to good — so he got there first!' },
+        choice:{ q:{ar:'ماذا فعلَ طلحةُ بعدَ أن سمعَ كلامَ الراهب؟',en:'What did Talha do after hearing the monk\'s words?'},
+          opts:[
+            { t:{ar:'نسيَه وأكملَ تجارتَه',en:'He forgot it and carried on trading'},c:false,exp:{ar:'لا، بل وقعَ في قلبِه وأسرعَ يبحثُ عن الحقّ.',en:'No — it settled in his heart and he hurried to seek the truth.'} },
+            { t:{ar:'ضحكَ من الراهب',en:'He laughed at the monk'},c:false,exp:{ar:'لا، بل أخذَ الكلامَ بجدٍّ وسألَ عنه في مكّة.',en:'No — he took it seriously and asked about it in Makkah.'} },
+            { t:{ar:'أسرعَ إلى مكّةَ يسألُ حتى وصلَ إلى النبيِّ ﷺ فأسلم',en:'He hurried to Makkah, asked, reached the Prophet ﷺ and accepted Islam'},c:true,exp:{ar:'أحسنت! مَن طلبَ الحقَّ بصدقٍ هداه اللهُ إليه.',en:'Well done! Whoever sincerely seeks the truth, Allah guides him to it.'} },
+          ] } },
+    ],
+    quiz:[
+      { q:{ar:'في أيِّ سوقٍ سمعَ طلحةُ كلامَ الراهب؟',en:'In which market did Talha hear the monk?'},
+        opts:[ {t:{ar:'سوقِ بُصرى في الشام',en:'The market of Busra in Sham'},c:true}, {t:{ar:'سوقِ عكاظ',en:'The market of Ukaz'},c:false}, {t:{ar:'سوقِ المدينة',en:'The market of Madinah'},c:false} ] },
+      { q:{ar:'على يدِ مَن أسلمَ طلحة؟',en:'Through whom did Talha accept Islam?'},
+        opts:[ {t:{ar:'عمرَ بنِ الخطّاب',en:'Umar ibn al-Khattab'},c:false}, {t:{ar:'أبي بكرٍ الصدّيق',en:'Abu Bakr as-Siddiq'},c:true}, {t:{ar:'الراهب',en:'The monk'},c:false} ] },
+      { q:{ar:'لماذا سُمّيَ أبو بكرٍ وطلحةُ «القرينَين»؟',en:'Why were Abu Bakr and Talha called "the two bound together"?'},
+        opts:[ {t:{ar:'لأنّهما توأمان',en:'Because they were twins'},c:false}, {t:{ar:'لأنّهما سافرا معاً',en:'Because they travelled together'},c:false}, {t:{ar:'لأنّ المشركينَ ربطوهما في حبلٍ واحد',en:'Because the idolaters tied them with one rope'},c:true} ] },
+    ],
+    moral:{ar:'مَن سمعَ الحقَّ فليسارعْ إليه ولا يتأخّر، فالسبقُ إلى الخيرِ شرفٌ عظيم.',en:'Whoever hears the truth should rush to it and not delay; being first to good is a great honour.'},
+    badge:{icon:'🔔',title:{ar:'وِسامُ السابقِ إلى النور',en:'Badge of Racing to the Light'}},
+    reflect:[ {ar:'حين تسمعُ نصيحةً صادقة، هل تعملُ بها سريعاً؟',en:'When you hear sincere advice, do you act on it quickly?'}, {ar:'مَن الصديقُ الذي يأخذُ بيدِك إلى الخير مثلَ أبي بكر؟',en:'Which friend takes you by the hand to good, like Abu Bakr?'} ],
+    didYouKnow:[ {ar:'خبرُ راهبِ بُصرى رواه ابنُ سعدٍ في «الطبقات» من طريقِ الواقديّ، وذكره الذهبيُّ في «سير أعلام النبلاء»، وقد تكلّمَ العلماءُ في إسناده، فنرويه بـ«يُروى»',en:'The account of the monk of Busra is narrated by Ibn Sa\'d in "at-Tabaqat" via al-Waqidi and cited by adh-Dhahabi in "Siyar A\'lam an-Nubala"; scholars spoke about its chain, so we tell it as "it is narrated"'}, {ar:'كان طلحةُ من الخمسةِ الذين أسلموا على يدِ أبي بكرٍ في أوّلِ الإسلام — المصدر: البداية والنهاية لابن كثير',en:'Talha was one of the five who accepted Islam through Abu Bakr in the earliest days — Source: Al-Bidaya wa an-Nihaya by Ibn Kathir'} ],
+  },
+  { icon:'🪨', scene:'peaks', character:'🛡️',
+    title:{ ar:'«أوجبَ طلحة»: سُلَّمٌ إلى الصخرة', en:'"Talha Has Earned It": A Step to the Rock' },
+    pages:[
+      { scene:'peaks', character:'🛡️',
+        text:{ ar:'في يومِ <b>أُحُد</b>، أرادَ النبيُّ ﷺ أن يصعدَ إلى <b>صخرةٍ</b> في الجبل. وكان على النبيِّ ﷺ يومَئذٍ <b>دِرعانِ</b> ثقيلتانِ من الحديد، فنهضَ إلى الصخرةِ فلم يستطعِ الصعود!<br><br>فماذا فعلَ <b>طلحة</b>؟ <b>جلسَ تحتَ النبيِّ ﷺ</b> وجعلَ ظهرَه سُلَّماً، فصعِدَ النبيُّ ﷺ عليه حتى استوى على الصخرة! وكان طلحةُ نفسُه مُثخَناً بالجراح، ويدُه قد شُلَّتْ وهو يقي بها النبيَّ ﷺ. فقال النبيُّ ﷺ: <b>«أوجبَ طلحة»</b> — أي وجبت له الجنّة!<br><br>لم يفكّرْ طلحةُ في جراحِه ولا في تعبِه، بل فكّرَ كيف <b>يخدمُ رسولَ اللهِ ﷺ</b> ويرفعُه إلى الأمان. فمَن خفّضَ نفسَه لخدمةِ الحقِّ رفعه اللهُ أعلى الدرجات.',
+          en:'On the day of <b>Uhud</b>, the Prophet ﷺ wanted to climb onto <b>a rock</b> on the mountain. That day the Prophet ﷺ was wearing <b>two heavy iron coats of armour</b>; he rose toward the rock but could not climb it!<br><br>What did <b>Talha</b> do? <b>He sat down beneath the Prophet ﷺ</b> and made his back a step, and the Prophet ﷺ climbed on him until he was up on the rock! Talha himself was covered in wounds, and his hand had been paralysed shielding the Prophet ﷺ. The Prophet ﷺ said: <b>"Talha has earned it"</b> — meaning Paradise is now his due!<br><br>Talha did not think of his wounds or his tiredness; he thought only of how to <b>serve the Messenger of Allah ﷺ</b> and lift him to safety. Whoever lowers himself to serve the truth, Allah raises him to the highest ranks.' },
+        choice:{ q:{ar:'ماذا يعني قولُ النبيِّ ﷺ «أوجبَ طلحة»؟',en:'What does the Prophet\'s ﷺ saying "Talha has earned it" mean?'},
+          opts:[
+            { t:{ar:'أنّ طلحةَ وجبَ عليه أن يرجع',en:'That Talha had to go back'},c:false,exp:{ar:'لا، بل معناه أنّه استحقَّ الجنّةَ بفعلِه.',en:'No — it means he earned Paradise by his deed.'} },
+            { t:{ar:'أنّ طلحةَ وجبت له الجنّة',en:'That Paradise became due to Talha'},c:true,exp:{ar:'أحسنت! هذه بشارةٌ عظيمةٌ لطلحة بخدمتِه للنبيِّ ﷺ.',en:'Well done! It was great good news for Talha for serving the Prophet ﷺ.'} },
+            { t:{ar:'أنّ طلحةَ أخطأ',en:'That Talha made a mistake'},c:false,exp:{ar:'لا! بل كان فعلُه من أعظمِ الوفاء.',en:'No! His action was among the greatest acts of loyalty.'} },
+          ] } },
+    ],
+    quiz:[
+      { q:{ar:'لماذا لم يستطعِ النبيُّ ﷺ صعودَ الصخرة؟',en:'Why could the Prophet ﷺ not climb the rock?'},
+        opts:[ {t:{ar:'لأنّ عليه دِرعَين ثقيلتين',en:'Because he wore two heavy coats of armour'},c:true}, {t:{ar:'لأنّ الصخرةَ كانت بعيدة',en:'Because the rock was far'},c:false}, {t:{ar:'لأنّه كان نائماً',en:'Because he was asleep'},c:false} ] },
+      { q:{ar:'ماذا فعلَ طلحةُ ليُساعدَ النبيَّ ﷺ؟',en:'What did Talha do to help the Prophet ﷺ?'},
+        opts:[ {t:{ar:'أحضرَ حبلاً',en:'He brought a rope'},c:false}, {t:{ar:'جلسَ تحتَه فصعِدَ عليه',en:'He sat beneath him and the Prophet ﷺ climbed on him'},c:true}, {t:{ar:'نادى الناسَ ليحملوه',en:'He called people to carry him'},c:false} ] },
+      { q:{ar:'ما حالُ يدِ طلحةَ يومَ أُحُد؟',en:'What happened to Talha\'s hand at Uhud?'},
+        opts:[ {t:{ar:'لم تُصَبْ بشيء',en:'It was not hurt at all'},c:false}, {t:{ar:'كُسِرَ خاتمُه فقط',en:'Only his ring broke'},c:false}, {t:{ar:'شُلَّتْ وهو يقي بها النبيَّ ﷺ',en:'It was paralysed shielding the Prophet ﷺ'},c:true} ] },
+    ],
+    moral:{ar:'خدمةُ الحقِّ بتواضعٍ وتضحيةٍ ترفعُ صاحبَها عندَ اللهِ أعلى الدرجات.',en:'Serving the truth with humility and sacrifice raises a person to the highest ranks with Allah.'},
+    badge:{icon:'🪨',title:{ar:'وِسامُ السُّلَّمِ الوفيّ',en:'Badge of the Loyal Step'}},
+    reflect:[ {ar:'كيف تساعدُ مَن يحتاجُ عوناً حتى لو كنتَ متعباً؟',en:'How can you help someone in need even when you are tired?'}, {ar:'ماذا يعني أن «تخفضَ نفسَك» لخدمةِ غيرِك؟',en:'What does it mean to "lower yourself" to serve others?'} ],
+    didYouKnow:[ {ar:'حديثُ «أوجبَ طلحة» رواه الترمذيّ (٣٧٣٨) عن الزبيرِ بنِ العوّام، وحسّنه العلماء',en:'The hadith "Talha has earned it" is reported by at-Tirmidhi (3738) from az-Zubayr ibn al-Awwam, and scholars graded it hasan'}, {ar:'قال قيسُ بنُ أبي حازم: رأيتُ يدَ طلحةَ شلّاءَ وقى بها النبيَّ ﷺ يومَ أُحُد — رواه البخاريّ (٣٧٢٤)',en:'Qays ibn Abi Hazim said: I saw Talha\'s hand paralysed; he shielded the Prophet ﷺ with it at Uhud — al-Bukhari (3724)'} ],
   },
 ];

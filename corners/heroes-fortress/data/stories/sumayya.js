@@ -1,4 +1,4 @@
-/* data/stories/sumayya.js — Heroes · Sumayya bint Khayyat — sources: صور من حياة الصحابة (الباشا) · إسلام ويب · الدرر السنية · البداية والنهاية */
+/* data/stories/sumayya.js — Heroes · Sumayya bint Khayyat — sources: صور من حياة الصحابة (الباشا) · إسلام ويب · الدرر السنية · البداية والنهاية · سنن النسائي وابن ماجه والترمذي · الإصابة */
 window.HISN_STORIES = window.HISN_STORIES || {};
 HISN_STORIES.sumayya = [
   { icon:'🪨', scene:'desert', character:'🤲',
@@ -35,5 +35,57 @@ HISN_STORIES.sumayya = [
     badge:{icon:'🪨',title:{ar:'وِسامُ الثباتِ العظيم',en:'Badge of Great Steadfastness'}},
     reflect:[ {ar:'كيف تتمسّكُ بما تؤمنُ به حين يضغطُ عليك الناس؟',en:'How do you hold to what you believe when people pressure you?'}, {ar:'هل تصبرُ على الأذى في سبيلِ ما هو حقّ؟',en:'Do you endure harm for the sake of what is right?'} ],
     didYouKnow:[ {ar:'سميّةُ بنتُ خيّاطٍ أوّلُ شهيدةٍ في الإسلام، قتلها أبو جهلٍ بسببِ ثباتِها على إيمانِها — المصدر: البداية والنهاية',en:'Sumayya bint Khayyat was the first martyr in Islam; Abu Jahl killed her for her steadfastness in faith — Source: Al-Bidaya wa an-Nihaya'}, {ar:'ابنُها عمّارُ بنُ ياسرٍ صارَ من كبارِ الصحابة، ونزلَ فيه قرآنٌ في الثباتِ على الإيمان — المصدر: النحل ١٠٦',en:'Her son Ammar ibn Yasir became a great companion, and Quran was revealed about him regarding steadfastness in faith — Source: An-Nahl 106'} ],
+  },
+  { icon:'🌳', scene:'tree', character:'👨‍👩‍👦',
+    title:{ ar:'«مُلِئَ عمّارٌ إيماناً إلى مُشاشِه»', en:'"Ammar Is Filled with Faith to His Bones"' },
+    pages:[
+      { scene:'tree', character:'👨‍👩‍👦',
+        text:{ ar:'كانت <b>سميّةُ</b> تعيشُ في مكّةَ مع زوجِها <b>ياسر</b> الذي جاءَ من اليمن، وابنِهما <b>عمّار</b>. لم تكنْ لهم قبيلةٌ قويّةٌ تحميهم، ولا مالٌ كثير، لكنّهم كانوا يملكونَ <b>أغلى كنز</b>: الإيمانَ بالله. فلمّا جاءَ الإسلامُ آمنتِ الأسرةُ كلُّها: الأبُ والأمُّ والابن! وكانت سميّةُ تُعلِّمُ ابنَها بأفعالِها قبلَ كلماتِها: <b>أن يثبتَ على الحقِّ مهما كان الثمن</b>.<br><br>وكبِرَ عمّارٌ، وظهرَ فيه أثرُ تربيةِ أمِّه الصابرة، حتى شهِدَ له النبيُّ ﷺ شهادةً عظيمةً فقال: <b>«إنّ عمّاراً مُلِئَ إيماناً إلى مُشاشِه»</b>. و«المُشاش» هي <b>رؤوسُ العظام</b>، كأنّ الإيمانَ امتلأَ في جسدِه كلِّه حتى أطرافِ عظامِه! وكان عمّارٌ إذا استأذنَ على النبيِّ ﷺ قال: <b>«ائذنوا له، مرحباً بالطيّبِ المطيَّب»</b>. فسميّةُ زرعتْ شجرةَ الإيمانِ في بيتِها، فأثمرتْ رجلاً من أعظمِ الصحابة. <b>الأمُّ الصالحةُ مدرسةٌ تصنعُ الرجال</b>.',
+          en:'<b>Sumayya</b> lived in Makkah with her husband <b>Yasir</b>, who had come from Yemen, and their son <b>Ammar</b>. They had no strong tribe to protect them and no great wealth, but they owned <b>the most precious treasure</b>: faith in Allah. When Islam came, the whole family believed — father, mother, and son! Sumayya taught her son by her actions before her words: <b>stand firm on the truth whatever the cost</b>.<br><br>Ammar grew up, and the mark of his patient mother’s upbringing showed in him, until the Prophet ﷺ gave him a great testimony: <b>"Ammar is filled with faith down to his mushash."</b> "Mushash" means <b>the ends of the bones</b> — as if faith filled his whole body to the tips of his bones! When Ammar asked permission to enter, the Prophet ﷺ would say: <b>"Let him in — welcome to the good and purified one."</b> Sumayya planted the tree of faith in her home, and it bore one of the greatest Companions. <b>A righteous mother is a school that raises heroes</b>.' },
+        choice:{ q:{ar:'ما معنى أنّ عمّاراً «مُلِئَ إيماناً إلى مُشاشِه»؟',en:'What does it mean that Ammar was "filled with faith to his mushash"?'},
+          opts:[
+            { t:{ar:'أنّه كان طويلاً',en:'That he was tall'},c:false,exp:{ar:'لا، المعنى عن الإيمانِ لا عن الطول.',en:'No — it is about faith, not height.'} },
+            { t:{ar:'أنّه كان غنيّاً',en:'That he was rich'},c:false,exp:{ar:'لا، كانت أسرتُه فقيرة، لكنّها غنيّةٌ بالإيمان.',en:'No — his family was poor but rich in faith.'} },
+            { t:{ar:'أنّ الإيمانَ ملأَ جسدَه كلَّه حتى أطرافِ عظامِه',en:'That faith filled his whole body to the tips of his bones'},c:true,exp:{ar:'أحسنت! وهذا من ثمرةِ تربيةِ أمِّه سميّة.',en:'Well done! And this was a fruit of his mother Sumayya’s upbringing.'} },
+          ] } },
+    ],
+    quiz:[
+      { q:{ar:'من هم أفرادُ أسرةِ سميّة؟',en:'Who were the members of Sumayya’s family?'},
+        opts:[ {t:{ar:'زوجُها ياسرٌ وابنُها عمّار',en:'Her husband Yasir and her son Ammar'},c:true}, {t:{ar:'أبو جهلٍ وأبو لهب',en:'Abu Jahl and Abu Lahab'},c:false}, {t:{ar:'لم يكنْ لها أسرة',en:'She had no family'},c:false} ] },
+      { q:{ar:'ما معنى «المُشاش»؟',en:'What does "mushash" mean?'},
+        opts:[ {t:{ar:'الشَّعر',en:'Hair'},c:false}, {t:{ar:'رؤوسُ العظام',en:'The ends of the bones'},c:true}, {t:{ar:'الثياب',en:'Clothes'},c:false} ] },
+      { q:{ar:'بماذا كان النبيُّ ﷺ يُرحِّبُ بعمّار؟',en:'How did the Prophet ﷺ welcome Ammar?'},
+        opts:[ {t:{ar:'«اذهبْ عنّا»',en:'"Go away from us"'},c:false}, {t:{ar:'لم يكنْ يُرحِّبُ به',en:'He did not welcome him'},c:false}, {t:{ar:'«مرحباً بالطيّبِ المطيَّب»',en:'"Welcome to the good and purified one"'},c:true} ] },
+    ],
+    moral:{ar:'الأمُّ الصالحةُ تزرعُ الإيمانَ في أبنائِها، فيُثمِرُ رجالاً يشهدُ لهم النبيُّ ﷺ بالخير.',en:'A righteous mother plants faith in her children, and it bears people whom the Prophet ﷺ testifies for.'},
+    badge:{icon:'🌳',title:{ar:'وِسامُ الأسرةِ المؤمنة',en:'Badge of the Believing Family'}},
+    reflect:[ {ar:'ماذا تعلّمتَ من أمِّك أو أبيك من الخيرِ بأفعالِهما؟',en:'What good have you learned from your mother or father through their actions?'}, {ar:'كيف تملأُ قلبَك بالإيمانِ كلَّ يوم؟',en:'How do you fill your heart with faith every day?'} ],
+    didYouKnow:[ {ar:'حديثُ «مُلِئَ عمّارٌ إيماناً إلى مُشاشِه» رواه النسائي (٥٠٠٧) وابنُ ماجه (١٤٧) وصحّحه الألباني — المصدر: سنن النسائي وابن ماجه',en:'The hadith "Ammar is filled with faith to his mushash" is narrated by an-Nasa’i (5007) and Ibn Majah (147), graded sahih by al-Albani — Source: Sunan an-Nasa’i & Ibn Majah'}, {ar:'قولُه ﷺ «مرحباً بالطيّبِ المطيَّب» لعمّارٍ رواه الترمذي (٣٧٩٨) وابنُ ماجه وصحّحه الألباني — المصدر: سنن الترمذي',en:'His words "Welcome to the good and purified one" to Ammar are narrated by at-Tirmidhi (3798) and Ibn Majah, graded sahih by al-Albani — Source: Sunan at-Tirmidhi'} ],
+  },
+  { icon:'🌟', scene:'desert', character:'💪',
+    title:{ ar:'أوّلُ شهيدةٍ: قلبٌ أقوى من الحديد', en:'The First Martyr: A Heart Stronger Than Iron' },
+    pages:[
+      { scene:'desert', character:'💪',
+        text:{ ar:'من هي <b>أوّلُ شهيدٍ في تاريخِ الإسلام كلِّه</b>؟ ليس فارساً قويّاً، ولا قائداً مشهوراً، بل <b>امرأةٌ ضعيفةُ الجسدِ اسمُها سميّة</b>! كانت <b>مولاةً</b> لرجلٍ من قريشٍ هو أبو حذيفةَ بنُ المغيرة، أي لم يكنْ لها نسبٌ قويٌّ ولا مكانةٌ في أعينِ الناس. لكنّ اللهَ لا ينظرُ إلى القوّةِ ولا إلى النسب، بل <b>ينظرُ إلى القلوب</b>.<br><br>كانت سميّةُ <b>من أوائلِ من أسلمَ</b>، وأعلنتْ إسلامَها في وقتٍ كان فيه الإعلانُ خطراً عظيماً. فلمّا عذّبها المشركونَ لم تَلِنْ، و<b>ثبتتْ حتى لقيتْ ربَّها</b> شهيدة. قال التابعيُّ الجليلُ <b>مجاهد</b>: <b>«أوّلُ شهيدٍ استُشهِدَ في الإسلامِ سميّةُ أمُّ عمّار»</b>. سبقتِ الرجالَ الأقوياءَ إلى هذا الشرف! <br><br>ويُروى أنّه لمّا قُتِلَ أبو جهلٍ يومَ بدر، قال النبيُّ ﷺ لعمّار: <b>«قتلَ اللهُ قاتلَ أمِّك»</b>. فاللهُ لا يُضيِّعُ صبرَ الصابرين، والظالمُ لا يفلتُ من عدلِ الله. علّمتنا سميّةُ أنّ <b>القوّةَ الحقيقيّةَ قوّةُ القلبِ بالإيمان</b>، لا قوّةُ العضلات.',
+          en:'Who is <b>the first martyr in the entire history of Islam</b>? Not a strong knight, nor a famous commander, but <b>a woman of weak body named Sumayya</b>! She was a <b>bondwoman (mawla)</b> of a man of Quraysh, Abu Hudhayfa ibn al-Mughira — she had no powerful lineage or status in people’s eyes. But Allah does not look at strength or lineage; <b>He looks at hearts</b>.<br><br>Sumayya was <b>among the very first to accept Islam</b>, and declared it at a time when declaring it was a great danger. When the idolaters tortured her she did not give in, and <b>stood firm until she met her Lord</b> as a martyr. The great Tabi’i <b>Mujahid</b> said: <b>"The first martyr in Islam was Sumayya, mother of Ammar."</b> She went ahead of strong men to this honor!<br><br>It is narrated that when Abu Jahl was killed at Badr, the Prophet ﷺ told Ammar: <b>"Allah has killed the one who killed your mother."</b> Allah never wastes the patience of the patient, and the oppressor does not escape Allah’s justice. Sumayya teaches us that <b>true strength is the strength of a heart with faith</b>, not the strength of muscles.' },
+        choice:{ q:{ar:'لماذا كانت سميّةُ قويّةً رغمَ ضعفِ جسدِها؟',en:'Why was Sumayya strong despite her weak body?'},
+          opts:[
+            { t:{ar:'لأنّ قلبَها كان مملوءاً بالإيمان',en:'Because her heart was full of faith'},c:true,exp:{ar:'نعم! القوّةُ الحقيقيّةُ قوّةُ القلبِ بالإيمان.',en:'Yes! True strength is the strength of a heart with faith.'} },
+            { t:{ar:'لأنّها كانت تحملُ سيفاً',en:'Because she carried a sword'},c:false,exp:{ar:'لا، لم تكنْ تملكُ سلاحاً، بل إيماناً.',en:'No — she had no weapon, only faith.'} },
+            { t:{ar:'لأنّ قبيلتَها كانت تحميها',en:'Because her tribe protected her'},c:false,exp:{ar:'لا، لم تكنْ لها قبيلةٌ تحميها.',en:'No — she had no tribe to protect her.'} },
+          ] } },
+    ],
+    quiz:[
+      { q:{ar:'من أوّلُ شهيدٍ في الإسلام؟',en:'Who was the first martyr in Islam?'},
+        opts:[ {t:{ar:'سميّةُ أمُّ عمّار',en:'Sumayya, mother of Ammar'},c:true}, {t:{ar:'رجلٌ من الروم',en:'A man from Rome'},c:false}, {t:{ar:'لا نعرف',en:'We do not know'},c:false} ] },
+      { q:{ar:'من قال: «أوّلُ شهيدٍ استُشهِدَ في الإسلامِ سميّة»؟',en:'Who said: "The first martyr in Islam was Sumayya"?'},
+        opts:[ {t:{ar:'أبو جهل',en:'Abu Jahl'},c:false}, {t:{ar:'التابعيُّ مجاهد',en:'The Tabi’i Mujahid'},c:true}, {t:{ar:'مسيلمة',en:'Musaylima'},c:false} ] },
+      { q:{ar:'إلى ماذا ينظرُ اللهُ في عبادِه؟',en:'What does Allah look at in His servants?'},
+        opts:[ {t:{ar:'إلى أموالِهم',en:'Their wealth'},c:false}, {t:{ar:'إلى أنسابِهم',en:'Their lineage'},c:false}, {t:{ar:'إلى قلوبِهم وأعمالِهم',en:'Their hearts and deeds'},c:true} ] },
+    ],
+    moral:{ar:'اللهُ ينظرُ إلى القلوبِ لا إلى الأجسامِ والأنساب، والإيمانُ يجعلُ الضعيفَ أقوى من الأقوياء.',en:'Allah looks at hearts, not bodies or lineage, and faith makes the weak stronger than the strong.'},
+    badge:{icon:'🌟',title:{ar:'وِسامُ القلبِ الحديدي',en:'Badge of the Iron Heart'}},
+    reflect:[ {ar:'هل تشعرُ أحياناً أنّك صغيرٌ أو ضعيف؟ كيف تُقوّي قلبَك بالإيمان؟',en:'Do you sometimes feel small or weak? How can you strengthen your heart with faith?'}, {ar:'هل تحكمُ على الناسِ بشكلِهم أم بأخلاقِهم؟',en:'Do you judge people by their looks or by their character?'} ],
+    didYouKnow:[ {ar:'قولُ مجاهد «أوّلُ شهيدٍ في الإسلامِ سميّة» صحّح ابنُ حجرٍ إسنادَه إليه — المصدر: الإصابة لابن حجر',en:'Mujahid’s saying "The first martyr in Islam was Sumayya" — Ibn Hajar graded its chain to him sahih — Source: al-Isaba by Ibn Hajar'}, {ar:'خبرُ «قتلَ اللهُ قاتلَ أمِّك» رواه ابنُ سعدٍ عن مجاهدٍ مرسَلاً، فهو يُروى ولم يُسنَدْ متّصلاً — المصدر: الإصابة لابن حجر',en:'The report "Allah has killed the one who killed your mother" was narrated by Ibn Sa’d from Mujahid as mursal (without a connected chain) — Source: al-Isaba by Ibn Hajar'} ],
   },
 ];

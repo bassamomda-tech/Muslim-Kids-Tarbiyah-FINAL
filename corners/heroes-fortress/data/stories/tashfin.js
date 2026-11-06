@@ -1,4 +1,4 @@
-/* data/stories/tashfin.js — Leaders · Yusuf ibn Tashfin — sources: البداية والنهاية · نفح الطيب · إسلام ويب · الدرر السنية */
+/* data/stories/tashfin.js — Leaders · Yusuf ibn Tashfin — sources: البداية والنهاية · نفح الطيب · إسلام ويب · الدرر السنية · وفيات الأعيان · البيان المغرب */
 window.HISN_STORIES = window.HISN_STORIES || {};
 HISN_STORIES.tashfin = [
   { icon:'🤝', scene:'desert', character:'🌊',
@@ -52,5 +52,31 @@ HISN_STORIES.tashfin = [
     badge:{icon:'⚔️',title:{ar:'وِسامُ نصرِ الزلّاقة',en:'Badge of the Victory of Zallaqa'}},
     reflect:[ {ar:'هل تبقى متواضعاً بعدَ أن تنجحَ أو تنتصر؟',en:'Do you stay humble after you succeed or win?'}, {ar:'كيف تعملُ الخيرَ بإخلاصٍ دون أن تطلبَ مقابلاً؟',en:'How do you do good sincerely without seeking a reward?'} ],
     didYouKnow:[ {ar:'معركةُ الزلّاقةِ سنةَ ٤٧٩هـ من أعظمِ انتصاراتِ المسلمينَ في الأندلسِ وأنقذتْها قروناً — المصدر: البداية والنهاية',en:'The Battle of Zallaqa in 479 AH was among the greatest Muslim victories in Andalusia and saved it for centuries — Source: Al-Bidaya wa an-Nihaya'}, {ar:'عُرِفَ عن يوسفِ بنِ تاشفينَ زهدُه الشديدُ وبساطةُ عيشِه رغمَ سعةِ مُلكِه — المصدر: نفح الطيب',en:'Yusuf ibn Tashfin was known for intense asceticism and simple living despite his vast rule — Source: Nafh at-Tib'} ],
+  },
+  { icon:'🧶', scene:'camel', character:'👳',
+    title:{ ar:'الأميرُ الذي لبسَ الصوف', en:'The Emir Who Wore Wool' },
+    pages:[
+      { scene:'camel', character:'🐪',
+        text:{ ar:'صارَ <b>يوسفُ بنُ تاشفين</b> أميراً على دولةٍ عظيمةٍ تمتدُّ من الصحراءِ إلى الأندلس، وبنى مدينةَ <b>مرّاكش</b> وجعلها عاصمتَه. وكانت تحتَ يدِه الأموالُ والقصورُ والجيوش، ويستطيعُ أن يعيشَ كما يعيشُ الملوكُ في الحريرِ والترف.<br><br>لكنّ المؤرّخينَ يذكرونَ أنّه كان <b>زاهداً عجيباً</b>: لا يلبسُ إلّا <b>الصوف</b>، وطعامُه <b>خبزُ الشعيرِ ولحومُ الإبلِ وألبانُها</b> — طعامُ أهلِ الصحراءِ البسيط الذي نشأَ عليه! لم تُغيِّرْه الإمارةُ، ولم تجعلْه يتكبّرُ على الناس. كان يعرفُ أنّ المالَ الذي بين يدَيه <b>أمانةٌ للمسلمين</b> لا للتفاخر. علّمنا يوسفُ أنّ <b>القلبَ الكبيرَ لا تُغيِّرُه الدنيا</b>، وأنّ البساطةَ عزٌّ لا نقص.',
+          en:'<b>Yusuf ibn Tashfin</b> became emir of a great state stretching from the desert to Andalusia, and he built the city of <b>Marrakesh</b> and made it his capital. Wealth, palaces, and armies were in his hands, and he could have lived as kings live, in silk and luxury.<br><br>But historians mention that he was <b>wonderfully abstinent</b>: he wore nothing but <b>wool</b>, and his food was <b>barley bread and camel meat and milk</b> — the simple food of the desert people he grew up among! Rule did not change him or make him arrogant toward people. He knew the wealth in his hands was <b>a trust for the Muslims</b>, not for showing off. Yusuf taught us that <b>a big heart is not changed by the world</b>, and that simplicity is honour, not a lack.' },
+        choice:{ q:{ar:'ماذا كان يلبسُ يوسفُ بنُ تاشفين وهو أمير؟',en:'What did Yusuf ibn Tashfin wear while he was emir?'},
+          opts:[
+            { t:{ar:'الحريرَ والذهب',en:'Silk and gold'},c:false,exp:{ar:'لا، بل كان زاهداً.',en:'No — he was abstinent.'} },
+            { t:{ar:'ثياباً جديدةً كلَّ يوم',en:'New clothes every day'},c:false,exp:{ar:'لا، بل كان يلبسُ الصوفَ البسيط.',en:'No — he wore simple wool.'} },
+            { t:{ar:'الصوفَ فقط',en:'Only wool'},c:true,exp:{ar:'نعم! لم تُغيِّرْه الإمارةُ عن بساطتِه.',en:'Yes! Rule did not change his simplicity.'} },
+          ] } },
+    ],
+    quiz:[
+      { q:{ar:'ما المدينةُ التي بناها يوسفُ بنُ تاشفين عاصمةً له؟',en:'Which city did Yusuf ibn Tashfin build as his capital?'},
+        opts:[ {t:{ar:'مرّاكش',en:'Marrakesh'},c:true}, {t:{ar:'قرطبة',en:'Cordoba'},c:false}, {t:{ar:'بغداد',en:'Baghdad'},c:false} ] },
+      { q:{ar:'ما الطعامُ الذي كان يأكلُه؟',en:'What food did he eat?'},
+        opts:[ {t:{ar:'الحلوى الفاخرةَ فقط',en:'Only fancy sweets'},c:false}, {t:{ar:'خبزَ الشعيرِ ولحومَ الإبلِ وألبانَها',en:'Barley bread and camel meat and milk'},c:true}, {t:{ar:'لا يأكلُ شيئاً',en:'Nothing at all'},c:false} ] },
+      { q:{ar:'كيف كان ينظرُ يوسفُ إلى المالِ الذي بين يدَيه؟',en:'How did Yusuf view the wealth in his hands?'},
+        opts:[ {t:{ar:'وسيلةً للتفاخر',en:'A means of showing off'},c:false}, {t:{ar:'ملكاً خاصّاً له',en:'His private property'},c:false}, {t:{ar:'أمانةً للمسلمين',en:'A trust for the Muslims'},c:true} ] },
+    ],
+    moral:{ar:'المنصبُ والمالُ لا يُغيِّرانِ القلبَ الصادق؛ فالبساطةُ والزهدُ عزٌّ، والمالُ العامُّ أمانة.',en:'Position and wealth do not change a sincere heart; simplicity and abstinence are honour, and public wealth is a trust.'},
+    badge:{icon:'🧶',title:{ar:'وِسامُ الزهدِ والبساطة',en:'Badge of Abstinence & Simplicity'}},
+    reflect:[ {ar:'هل تحتاجُ حقّاً كلَّ ما تطلبُه من ألعابٍ وأشياء؟',en:'Do you really need everything you ask for, toys and things?'}, {ar:'كيف يبقى الإنسانُ متواضعاً إذا صارَ غنيّاً أو مشهوراً؟',en:'How can a person stay humble if he becomes rich or famous?'} ],
+    didYouKnow:[ {ar:'كان يوسفُ بنُ تاشفينَ يلبسُ الصوفَ ولم يلبسْ غيرَه، وأكلُه الشعيرُ ولحومُ الإبلِ وألبانُها — المصدر: وفيات الأعيان لابن خلّكان',en:'Yusuf ibn Tashfin wore wool and nothing else, and his food was barley and camel meat and milk — Source: Wafayat al-A’yan (Ibn Khallikan)'}, {ar:'أسّسَ المرابطونَ مدينةَ مرّاكشَ نحوَ سنةِ ٤٥٤هـ، فصارتْ عاصمةَ دولتِهم — المصدر: وفيات الأعيان · البيان المغرب',en:'The Almoravids founded Marrakesh around 454 AH and it became their capital — Source: Wafayat al-A’yan · Al-Bayan al-Mughrib'} ],
   },
 ];

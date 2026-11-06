@@ -29,7 +29,7 @@ HISN.chapters.battuta = {
       { when:{ar:'الكتاب',en:'The Book'}, what:{ar:'كتبَ «الرحلة» يصفُ فيها ما رأى.',en:'He wrote "The Travels" describing what he saw.'} },
       { when:{ar:'الإرث',en:'Legacy'}, what:{ar:'صارَ كتابُه كنزاً لمعرفةِ العالمِ القديم.',en:'His book became a treasure for knowing the old world.'} },
     ],
-    ayah:{ ar:'﴿ فَسِيرُوا فِي الْأَرْضِ فَانظُرُوا كَيْفَ بَدَأَ الْخَلْقَ ﴾', ref:{ ar:'العنكبوت ٢٠', en:'Al-Ankabut 20' } },
+    ayah:{ ar:'﴿ قُلْ سِيرُوا فِي الْأَرْضِ فَانظُرُوا كَيْفَ بَدَأَ الْخَلْقَ ﴾', ref:{ ar:'العنكبوت ٢٠', en:'Al-Ankabut 20' } },
   },
 
   story:[
@@ -56,7 +56,7 @@ HISN.chapters.battuta = {
   ],
 
   memorize:{
-    ayah:{ ar:'﴿ فَسِيرُوا فِي الْأَرْضِ فَانظُرُوا كَيْفَ بَدَأَ الْخَلْقَ ﴾', ref:{ ar:'العنكبوت ٢٠', en:'Al-Ankabut 20' } },
+    ayah:{ ar:'﴿ قُلْ سِيرُوا فِي الْأَرْضِ فَانظُرُوا كَيْفَ بَدَأَ الْخَلْقَ ﴾', ref:{ ar:'العنكبوت ٢٠', en:'Al-Ankabut 20' } },
     dua:{ ar:'اللّهُمَّ أرني عجائبَ خلقِك في الأرضِ وزِدني علماً وفهماً', ref:{ ar:'من الدعاء', en:'A supplication' } },
     pledge:{ title:{ ar:'عهدُ البطل', en:"The Hero's Pledge" },
       lines:[

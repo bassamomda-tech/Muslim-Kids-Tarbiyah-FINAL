@@ -1,4 +1,4 @@
-/* data/stories/muadh.js — Heroes · Mu'adh ibn Jabal — sources: صور من حياة الصحابة (الباشا) · إسلام ويب · الدرر السنية */
+/* data/stories/muadh.js — Heroes · Mu'adh ibn Jabal — sources: صور من حياة الصحابة (الباشا) · إسلام ويب · الدرر السنية · سنن الترمذي وابن ماجه · سير أعلام النبلاء · حلية الأولياء */
 window.HISN_STORIES = window.HISN_STORIES || {};
 HISN_STORIES.muadh = [
  {
@@ -358,6 +358,366 @@ HISN_STORIES.muadh = [
    {
     "ar": "أوصى النبيُّ ﷺ معاذاً عندَ سفرِه لليمنِ بأن يبدأَ الناسَ بالتوحيدِ ثم الصلاةِ ثم الزكاة — المصدر: صحيح البخاري",
     "en": "The Prophet ﷺ advised Mu'adh on leaving for Yemen to start people with monotheism, then prayer, then zakah — Source: Sahih al-Bukhari"
+   }
+  ]
+ },
+ {
+  "icon": "📜",
+  "scene": "mosque",
+  "character": "🧑‍🏫",
+  "title": {
+   "ar": "أعلمُهم بالحلالِ والحرام",
+   "en": "The Most Knowledgeable of the Lawful and the Unlawful"
+  },
+  "pages": [
+   {
+    "scene": "mosque",
+    "character": "🧑‍🏫",
+    "text": {
+     "ar": "جلسَ النبيُّ ﷺ يوماً يذكرُ فضائلَ أصحابِه، فكان لكلِّ واحدٍ منهم ميزةٌ يتفوّقُ بها: فقال ﷺ: <b>«أرحمُ أمّتي بأمّتي أبو بكر، وأشدُّهم في أمرِ اللهِ عمر، وأصدقُهم حياءً عثمان…»</b> ثمّ قال: <b>«وأعلمُهم بالحلالِ والحرامِ معاذُ بنُ جبل»</b>.<br><br>يا لها من شهادة! <b>معاذٌ</b> كان شابّاً صغيرَ السنّ، لكنّه <b>أحبَّ العلمَ وفهِمَ دينَ الله</b> فهماً عميقاً، يعرفُ ما أحلَّ اللهُ وما حرّم، فيُعلِّمُه الناسَ برفقٍ ووضوح. ولهذا أرسله النبيُّ ﷺ معلّماً إلى اليمن، وكان الصحابةُ يرجعونَ إليه في المسائلِ الصعبة.<br><br>وفي الحديثِ نفسِه ذكرَ النبيُّ ﷺ مواهبَ أخرى: زيدُ بنُ ثابتٍ أعلمُهم بالفرائض، وأُبَيُّ بنُ كعبٍ أقرؤهم، وأبو عُبيدةَ أمينُ الأمّة. فـ<b>لكلٍّ موهبتُه</b>، والأمّةُ تقوى حين يُتقِنُ كلٌّ ما يُحسِنُه. ومعاذٌ علّمنا أنّ <b>الفقهَ في الدينِ</b> كنزٌ عظيم.",
+     "en": "One day the Prophet ﷺ spoke of his Companions' virtues, each with a gift in which he excelled. He ﷺ said: <b>\"The most merciful of my Ummah to my Ummah is Abu Bakr, the firmest in Allah's command is 'Umar, the most genuinely modest is 'Uthman…\"</b> then he said: <b>\"and the most knowledgeable of them about the lawful and the unlawful is Mu'adh ibn Jabal.\"</b><br><br>What a testimony! <b>Mu'adh</b> was a young man, but he <b>loved knowledge and understood Allah's religion</b> deeply, knowing what Allah made lawful and unlawful, and teaching it to people gently and clearly. That is why the Prophet ﷺ sent him as a teacher to Yemen, and the Companions turned to him in difficult questions.<br><br>In the same hadith the Prophet ﷺ mentioned other gifts: Zayd ibn Thabit knew inheritance best, Ubayy ibn Ka'b was the best reciter, and Abu 'Ubayda was the trustee of the Ummah. So <b>each has his gift</b>, and the Ummah grows strong when each masters what he is good at. Mu'adh taught us that <b>understanding the religion</b> is a great treasure."
+    },
+    "choice": {
+     "q": {
+      "ar": "بماذا وصفَ النبيُّ ﷺ معاذاً؟",
+      "en": "How did the Prophet ﷺ describe Mu'adh?"
+     },
+     "opts": [
+      {
+       "t": {
+        "ar": "أشدُّهم في أمرِ الله",
+        "en": "The firmest in Allah's command"
+       },
+       "c": false,
+       "exp": {
+        "ar": "لا، هذا وصفُ عمرَ رضي الله عنه.",
+        "en": "No — that describes 'Umar."
+       }
+      },
+      {
+       "t": {
+        "ar": "أعلمُهم بالحلالِ والحرام",
+        "en": "The most knowledgeable of the lawful and unlawful"
+       },
+       "c": true,
+       "exp": {
+        "ar": "أحسنت! كان معاذٌ فقيهاً عالماً بدينِ الله.",
+        "en": "Well done! Mu'adh was a jurist, learned in Allah's religion."
+       }
+      },
+      {
+       "t": {
+        "ar": "أقرؤهم للقرآن",
+        "en": "The best reciter of the Qur'an"
+       },
+       "c": false,
+       "exp": {
+        "ar": "لا، هذا وصفُ أُبَيِّ بنِ كعب.",
+        "en": "No — that describes Ubayy ibn Ka'b."
+       }
+      }
+     ]
+    }
+   }
+  ],
+  "quiz": [
+   {
+    "q": {
+     "ar": "من وصفه النبيُّ ﷺ بأنّه «أرحمُ أمّتي بأمّتي»؟",
+     "en": "Whom did the Prophet ﷺ call \"the most merciful of my Ummah to my Ummah\"?"
+    },
+    "opts": [
+     {
+      "t": {
+       "ar": "عمر",
+       "en": "'Umar"
+      },
+      "c": false
+     },
+     {
+      "t": {
+       "ar": "معاذ",
+       "en": "Mu'adh"
+      },
+      "c": false
+     },
+     {
+      "t": {
+       "ar": "أبو بكر",
+       "en": "Abu Bakr"
+      },
+      "c": true
+     }
+    ]
+   },
+   {
+    "q": {
+     "ar": "إلى أين أرسلَ النبيُّ ﷺ معاذاً معلّماً؟",
+     "en": "Where did the Prophet ﷺ send Mu'adh as a teacher?"
+    },
+    "opts": [
+     {
+      "t": {
+       "ar": "اليمن",
+       "en": "Yemen"
+      },
+      "c": true
+     },
+     {
+      "t": {
+       "ar": "مصر",
+       "en": "Egypt"
+      },
+      "c": false
+     },
+     {
+      "t": {
+       "ar": "الشام",
+       "en": "Syria"
+      },
+      "c": false
+     }
+    ]
+   },
+   {
+    "q": {
+     "ar": "ماذا نتعلّمُ من هذا الحديث؟",
+     "en": "What do we learn from this hadith?"
+    },
+    "opts": [
+     {
+      "t": {
+       "ar": "أنّ موهبةً واحدةً تكفي الجميع",
+       "en": "That one gift is enough for all"
+      },
+      "c": false
+     },
+     {
+      "t": {
+       "ar": "أنّ لكلِّ صحابيٍّ موهبةً تميّزَ بها",
+       "en": "That each Companion had a gift he excelled in"
+      },
+      "c": true
+     },
+     {
+      "t": {
+       "ar": "أنّ العلمَ غيرُ مهمّ",
+       "en": "That knowledge is unimportant"
+      },
+      "c": false
+     }
+    ]
+   }
+  ],
+  "moral": {
+   "ar": "تعلّمْ دينَك وافهمْ ما أحلَّ اللهُ وما حرّم؛ فالفقهُ نور، ولكلِّ إنسانٍ موهبةٌ يخدمُ بها أمّتَه.",
+   "en": "Learn your religion and understand what Allah made lawful and unlawful — understanding is light, and everyone has a gift to serve the Ummah."
+  },
+  "badge": {
+   "icon": "📜",
+   "title": {
+    "ar": "وِسامُ إمامِ العلماء",
+    "en": "Badge of the Leader of Scholars"
+   }
+  },
+  "reflect": [
+   {
+    "ar": "ما الموهبةُ التي تتميّزُ بها بين أصدقائك؟",
+    "en": "What gift makes you stand out among your friends?"
+   },
+   {
+    "ar": "اذكرْ شيئاً تعلّمتَ أنّه حلال، وشيئاً تعلّمتَ أنّه حرام.",
+    "en": "Name something you learned is lawful and something you learned is unlawful."
+   }
+  ],
+  "didYouKnow": [
+   {
+    "ar": "حديثُ «وأعلمُهم بالحلالِ والحرامِ معاذُ بنُ جبل» رواه الترمذي (٣٧٩١) وابنُ ماجه (١٥٤) وصحّحه الألباني",
+    "en": "The hadith \"and the most knowledgeable of them about the lawful and unlawful is Mu'adh ibn Jabal\" is narrated by at-Tirmidhi (3791) and Ibn Majah (154), graded sahih by al-Albani"
+   },
+   {
+    "ar": "قال النبيُّ ﷺ: «معاذٌ أمامَ العلماءِ يومَ القيامةِ برَتْوة» أي يتقدّمُهم بمسافة — رواه ابنُ سعدٍ وغيرُه وحسّنه الألباني في «السلسلة الصحيحة»",
+    "en": "The Prophet ﷺ said: \"Mu'adh will be ahead of the scholars on the Day of Resurrection by a stone's throw\" — narrated by Ibn Sa'd and others, graded hasan by al-Albani in as-Silsila as-Sahiha"
+   }
+  ]
+ },
+ {
+  "icon": "🕯️",
+  "scene": "night",
+  "character": "🧑‍🏫",
+  "title": {
+   "ar": "وصيّةُ الوداع",
+   "en": "The Farewell Advice"
+  },
+  "pages": [
+   {
+    "scene": "night",
+    "character": "🧑‍🏫",
+    "text": {
+     "ar": "لمّا حضرَ <b>معاذَ بنَ جبل</b> الموتُ في الشام، اجتمعَ حولَه تلاميذُه يبكون، وقالوا: <b>يا أبا عبدِ الرحمن، أوصِنا</b>. فقال: «أجلِسوني». فلمّا جلسَ قال: <b>«إنّ العلمَ والإيمانَ مكانَهما، من ابتغاهما وجدَهما»</b> — قالها ثلاثَ مرّات.<br><br>أرادَ أن يقولَ لهم: <b>لا تحزنوا أنّ العلمَ سيذهبُ بموتي!</b> العلمُ باقٍ لمن يطلبُه. ثمّ دلّهم على من يتعلّمونَ منهم فقال: <b>«التمِسوا العلمَ عندَ أربعة: أبي الدرداء، وسلمانَ الفارسي، وعبدِ اللهِ بنِ مسعود، وعبدِ اللهِ بنِ سَلام»</b>. ما أعظمَه! حتى في لحظاتِه الأخيرةِ كان <b>يُفكِّرُ في نفعِ الناس</b>.<br><br>ويُذكَرُ في سيرتِه أنّه قال عندَ موتِه: <b>«اللّهُمَّ إنّك تعلمُ أنّي لم أكنْ أُحِبُّ الدنيا وطولَ البقاءِ فيها لجريِ الأنهارِ ولا لغرسِ الشجر، ولكن لظمأِ الهواجر، ومكابدةِ الساعات، ومزاحمةِ العلماءِ بالرُّكَبِ عندَ حِلَقِ الذِّكر»</b> — أي كان يحبُّ الحياةَ ليصومَ في الحرّ ويقومَ الليلَ ويجلسَ مع العلماء.",
+     "en": "When death came to <b>Mu'adh ibn Jabal</b> in Syria, his students gathered around him weeping and said: <b>O Abu 'Abd ar-Rahman, advise us.</b> He said: \"Sit me up.\" When he sat up he said: <b>\"Knowledge and faith remain in their place — whoever seeks them will find them\"</b> — saying it three times.<br><br>He meant: <b>do not grieve that knowledge will vanish with my death!</b> Knowledge remains for whoever seeks it. Then he guided them to whom to learn from: <b>\"Seek knowledge from four: Abu ad-Darda', Salman al-Farisi, 'Abdullah ibn Mas'ud and 'Abdullah ibn Salam.\"</b> How great he was! Even in his final moments he was <b>thinking of benefiting people</b>.<br><br>His biography mentions that at his death he said: <b>\"O Allah, You know that I did not love this world and long life in it for flowing rivers or planting trees, but for thirst in the midday heat, enduring the hours, and crowding the scholars knee to knee in circles of remembrance\"</b> — he loved life to fast in the heat, pray at night and sit with scholars."
+    },
+    "choice": {
+     "q": {
+      "ar": "ماذا أوصى معاذٌ تلاميذَه قبلَ موتِه؟",
+      "en": "What did Mu'adh advise his students before his death?"
+     },
+     "opts": [
+      {
+       "t": {
+        "ar": "أن يتركوا طلبَ العلم",
+        "en": "To stop seeking knowledge"
+       },
+       "c": false,
+       "exp": {
+        "ar": "لا، بل قال: العلمُ باقٍ لمن طلبه.",
+        "en": "No — he said knowledge remains for whoever seeks it."
+       }
+      },
+      {
+       "t": {
+        "ar": "أن يجمعوا المال",
+        "en": "To gather wealth"
+       },
+       "c": false,
+       "exp": {
+        "ar": "لا، بل أوصاهم بالعلمِ والإيمان.",
+        "en": "No — he advised them about knowledge and faith."
+       }
+      },
+      {
+       "t": {
+        "ar": "أن يطلبوا العلمَ والإيمانَ، ودلّهم على أربعةٍ من العلماء",
+        "en": "To seek knowledge and faith, and he named four scholars"
+       },
+       "c": true,
+       "exp": {
+        "ar": "أحسنت! كان يُفكِّرُ في نفعِ الناسِ حتى آخرِ لحظة.",
+        "en": "Well done! He thought of benefiting people until his last moment."
+       }
+      }
+     ]
+    }
+   }
+  ],
+  "quiz": [
+   {
+    "q": {
+     "ar": "كم مرّةً قال معاذ: «إنّ العلمَ والإيمانَ مكانَهما»؟",
+     "en": "How many times did Mu'adh say \"Knowledge and faith remain in their place\"?"
+    },
+    "opts": [
+     {
+      "t": {
+       "ar": "ثلاثَ مرّات",
+       "en": "Three times"
+      },
+      "c": true
+     },
+     {
+      "t": {
+       "ar": "مرّةً واحدة",
+       "en": "Once"
+      },
+      "c": false
+     },
+     {
+      "t": {
+       "ar": "عشرَ مرّات",
+       "en": "Ten times"
+      },
+      "c": false
+     }
+    ]
+   },
+   {
+    "q": {
+     "ar": "أيُّ هؤلاءِ من الأربعةِ الذين دلَّ عليهم معاذ؟",
+     "en": "Which of these was among the four Mu'adh named?"
+    },
+    "opts": [
+     {
+      "t": {
+       "ar": "خالدُ بنُ الوليد",
+       "en": "Khalid ibn al-Walid"
+      },
+      "c": false
+     },
+     {
+      "t": {
+       "ar": "سلمانُ الفارسي",
+       "en": "Salman al-Farisi"
+      },
+      "c": true
+     },
+     {
+      "t": {
+       "ar": "عمرُو بنُ العاص",
+       "en": "'Amr ibn al-'As"
+      },
+      "c": false
+     }
+    ]
+   },
+   {
+    "q": {
+     "ar": "لماذا كان معاذٌ يحبُّ طولَ الحياة؟",
+     "en": "Why did Mu'adh love a long life?"
+    },
+    "opts": [
+     {
+      "t": {
+       "ar": "ليغرسَ الأشجارَ فقط",
+       "en": "Only to plant trees"
+      },
+      "c": false
+     },
+     {
+      "t": {
+       "ar": "ليجمعَ الذهب",
+       "en": "To collect gold"
+      },
+      "c": false
+     },
+     {
+      "t": {
+       "ar": "ليصومَ ويقومَ ويجلسَ مع العلماء",
+       "en": "To fast, pray at night and sit with scholars"
+      },
+      "c": true
+     }
+    ]
+   }
+  ],
+  "moral": {
+   "ar": "العلمُ والإيمانُ باقيانِ لمن طلبهما، فاغتنمْ عمرَك في الطاعةِ ومجالسةِ أهلِ العلم، وانفعِ الناسَ حتى آخرِ لحظة.",
+   "en": "Knowledge and faith remain for whoever seeks them — use your life for obedience and sitting with people of knowledge, and benefit others to the very end."
+  },
+  "badge": {
+   "icon": "🕯️",
+   "title": {
+    "ar": "وِسامُ الوصيّةِ الصادقة",
+    "en": "Badge of the Sincere Advice"
+   }
+  },
+  "reflect": [
+   {
+    "ar": "من هم المعلّمونَ الذين تحبُّ أن تتعلّمَ منهم؟",
+    "en": "Who are the teachers you love to learn from?"
+   },
+   {
+    "ar": "لماذا تحبُّ أن يطولَ عمرُك؟ ماذا تريدُ أن تفعلَ فيه؟",
+    "en": "Why would you like a long life? What do you want to do with it?"
+   }
+  ],
+  "didYouKnow": [
+   {
+    "ar": "وصيّةُ معاذٍ عندَ موتِه: «إنّ العلمَ والإيمانَ مكانَهما… التمِسوا العلمَ عندَ أربعة» رواها الترمذي (٣٨٠٤) وصحّحها الألباني",
+    "en": "Mu'adh's deathbed advice \"Knowledge and faith remain in their place… seek knowledge from four\" is narrated by at-Tirmidhi (3804), graded sahih by al-Albani"
+   },
+   {
+    "ar": "قولُه: «لظمأِ الهواجر ومكابدةِ الساعات ومزاحمةِ العلماءِ بالرُّكَب» ذكره الذهبيُّ في «سير أعلام النبلاء» وأبو نُعيمٍ في «حلية الأولياء»، وتوفّي معاذٌ في طاعونِ عَمَواسَ سنةَ ١٨هـ",
+    "en": "His words \"for thirst in the midday heat, enduring the hours, and crowding the scholars knee to knee\" are in Siyar A'lam an-Nubala' and Hilyat al-Awliya'; Mu'adh died in the plague of 'Amwas in 18 AH"
    }
   ]
  }

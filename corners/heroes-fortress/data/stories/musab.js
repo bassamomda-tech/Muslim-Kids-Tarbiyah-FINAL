@@ -1,4 +1,4 @@
-/* data/stories/musab.js — Heroes · Mus'ab ibn Umayr — sources: صور من حياة الصحابة (الباشا) · إسلام ويب · الدرر السنية */
+/* data/stories/musab.js — Heroes · Mus'ab ibn Umayr — sources: صور من حياة الصحابة (الباشا) · إسلام ويب · الدرر السنية · صحيح البخاري */
 window.HISN_STORIES = window.HISN_STORIES || {};
 HISN_STORIES.musab = [
  {
@@ -358,6 +358,186 @@ HISN_STORIES.musab = [
    {
     "ar": "كان مصعبٌ يُسمّى «المُقرئ» لأنّه علّمَ أهلَ المدينةِ القرآن — المصدر: إسلام ويب",
     "en": "Mus'ab was called \"the reciter\" because he taught Madinah's people the Quran — Source: islamweb.net"
+   }
+  ]
+ },
+ {
+  "icon": "🤍",
+  "scene": "peaks",
+  "character": "🤍",
+  "title": {
+   "ar": "بُردةٌ لا تكفي كفناً",
+   "en": "A Cloak Too Short for a Shroud"
+  },
+  "pages": [
+   {
+    "scene": "peaks",
+    "character": "⛰️",
+    "text": {
+     "ar": "هل تذكرُ <b>مصعباً</b>، أنعمَ شبابِ مكّة، صاحبَ أجملِ الثيابِ وأطيبِ العطر؟ لقد تركَ ذلك كلَّه لله، وعاشَ في المدينةِ معلّماً للقرآنِ وداعياً إلى الخير. وفي يومِ <b>أُحُد</b> حملَ رايةَ المسلمين، وثبتَ يدافعُ عن النبيِّ ﷺ حتى <b>استُشهِدَ</b> رضي الله عنه.<br><br>فلمّا أرادَ الصحابةُ أن يُكفِّنوه، لم يجدوا له إلا <b>بُردةً صغيرة</b>: إذا غطَّوا بها رأسَه ظهرتْ رجلاه، وإذا غطَّوا رجليه ظهرَ رأسُه! فأمرَهم النبيُّ ﷺ: <b>«غطُّوا رأسَه، واجعلوا على رجليه شيئاً من الإذخِر»</b> — وهو نباتٌ طيّبُ الرائحة. الشابُّ الذي كان يلبسُ الحريرَ في مكّة، لم يملكْ عند موتِه ما يكفي لكفنِه!<br><br>وبعدَ سنواتٍ، جيءَ إلى <b>عبدِ الرحمنِ بنِ عوف</b> بطعامٍ طيّبٍ وكان صائماً، فتذكّرَ مصعباً وبكى وقال: <b>«قُتِلَ مصعبُ بنُ عمير، وهو خيرٌ منّي، كُفِّنَ في بُردة»</b>، حتى تركَ الطعام. قال خبّابٌ رضي الله عنه: مات مصعبٌ <b>ولم يأخذْ من أجرِه في الدنيا شيئاً</b>، فأجرُه كلُّه محفوظٌ عند اللهِ في الآخرة.",
+     "en": "Do you remember <b>Mus'ab</b>, the most pampered youth of Makkah, owner of the finest clothes and sweetest perfume? He left all that for Allah and lived in Madinah teaching the Qur'an and calling to good. On the day of <b>Uhud</b> he carried the Muslims' banner and stood firm defending the Prophet ﷺ until he was <b>martyred</b>, may Allah be pleased with him.<br><br>When the Companions wanted to shroud him, they found only <b>a small cloak</b>: if they covered his head with it his feet showed, and if they covered his feet his head showed! The Prophet ﷺ told them: <b>\"Cover his head, and put some idhkhir over his feet\"</b> — a sweet-smelling plant. The young man who wore silk in Makkah did not own, at his death, enough for his shroud!<br><br>Years later, fine food was brought to <b>Abd al-Rahman ibn Awf</b> while he was fasting. He remembered Mus'ab and wept, saying: <b>\"Mus'ab ibn Umayr was killed — and he was better than me — and he was shrouded in a cloak,\"</b> until he left the food. Khabbab said: Mus'ab died <b>without taking any of his reward in this world</b>; his whole reward is kept with Allah in the Hereafter."
+    },
+    "choice": {
+     "q": {
+      "ar": "لماذا بكى عبدُ الرحمنِ بنُ عوفٍ حين تذكّرَ مصعباً؟",
+      "en": "Why did Abd al-Rahman ibn Awf weep remembering Mus'ab?"
+     },
+     "opts": [
+      {
+       "t": {
+        "ar": "لأنّه كان جائعاً جدّاً",
+        "en": "Because he was very hungry"
+       },
+       "c": false,
+       "exp": {
+        "ar": "لا، بل تركَ الطعامَ من شدّةِ تأثّرِه.",
+        "en": "No — he actually left the food, deeply moved."
+       }
+      },
+      {
+       "t": {
+        "ar": "لأنّ مصعباً خيرٌ منه ومات ولم يأخذْ من الدنيا شيئاً",
+        "en": "Because Mus'ab was better than him and died taking nothing of this world"
+       },
+       "c": true,
+       "exp": {
+        "ar": "نعم! خافَ أن تكونَ نعمُ الدنيا قد عُجِّلت له، وتمنّى أجرَ مصعبٍ المحفوظ.",
+        "en": "Yes! He worried his worldly blessings had been hastened to him, and longed for Mus'ab's preserved reward."
+       }
+      },
+      {
+       "t": {
+        "ar": "لأنّه نسيَ قصّته",
+        "en": "Because he had forgotten his story"
+       },
+       "c": false,
+       "exp": {
+        "ar": "لا، بل تذكّرها جيداً فبكى.",
+        "en": "No — he remembered it well, and that is why he wept."
+       }
+      }
+     ]
+    }
+   }
+  ],
+  "quiz": [
+   {
+    "q": {
+     "ar": "في أيِّ يومٍ استُشهِدَ مصعب؟",
+     "en": "On which day was Mus'ab martyred?"
+    },
+    "opts": [
+     {
+      "t": {
+       "ar": "يومَ بدر",
+       "en": "The day of Badr"
+      },
+      "c": false
+     },
+     {
+      "t": {
+       "ar": "يومَ أُحُد",
+       "en": "The day of Uhud"
+      },
+      "c": true
+     },
+     {
+      "t": {
+       "ar": "يومَ الخندق",
+       "en": "The day of the Trench"
+      },
+      "c": false
+     }
+    ]
+   },
+   {
+    "q": {
+     "ar": "بماذا أمرَ النبيُّ ﷺ أن تُغطّى رجلا مصعب؟",
+     "en": "What did the Prophet ﷺ order to cover Mus'ab's feet?"
+    },
+    "opts": [
+     {
+      "t": {
+       "ar": "بالإذخِر",
+       "en": "Idhkhir plants"
+      },
+      "c": true
+     },
+     {
+      "t": {
+       "ar": "بالحرير",
+       "en": "Silk"
+      },
+      "c": false
+     },
+     {
+      "t": {
+       "ar": "بالرمل",
+       "en": "Sand"
+      },
+      "c": false
+     }
+    ]
+   },
+   {
+    "q": {
+     "ar": "أين أجرُ مصعبٍ كلُّه؟",
+     "en": "Where is all of Mus'ab's reward?"
+    },
+    "opts": [
+     {
+      "t": {
+       "ar": "أخذه مالاً في الدنيا",
+       "en": "He took it as money in this world"
+      },
+      "c": false
+     },
+     {
+      "t": {
+       "ar": "ضاعَ",
+       "en": "It was lost"
+      },
+      "c": false
+     },
+     {
+      "t": {
+       "ar": "محفوظٌ عند اللهِ في الآخرة",
+       "en": "Kept with Allah in the Hereafter"
+      },
+      "c": true
+     }
+    ]
+   }
+  ],
+  "moral": {
+   "ar": "ما يبقى للإنسانِ ليس ثيابَه ولا مالَه، بل عملُه الصالحُ الذي يجدُه عند الله.",
+   "en": "What remains for a person is not his clothes or money but his good deeds, which he finds with Allah."
+  },
+  "badge": {
+   "icon": "🤍",
+   "title": {
+    "ar": "وِسامُ الأجرِ المحفوظ",
+    "en": "Badge of the Preserved Reward"
+   }
+  },
+  "reflect": [
+   {
+    "ar": "لو تركتَ شيئاً تحبُّه من أجلِ الله، ماذا يكون؟",
+    "en": "If you gave up something you love for Allah's sake, what would it be?"
+   },
+   {
+    "ar": "ما العملُ الصالحُ الذي تحبُّ أن تجدَه عند اللهِ يومَ القيامة؟",
+    "en": "What good deed would you love to find with Allah on the Day of Judgment?"
+   }
+  ],
+  "didYouKnow": [
+   {
+    "ar": "حديثُ كفنِ مصعبٍ والإذخِرِ رواه البخاريُّ (١٢٧٦) عن خبّابِ بنِ الأرتّ رضي الله عنه",
+    "en": "The hadith of Mus'ab's shroud and the idhkhir is narrated by al-Bukhari (1276) from Khabbab ibn al-Aratt"
+   },
+   {
+    "ar": "بكاءُ عبدِ الرحمنِ بنِ عوفٍ وتركُه الطعامَ حين تذكّرَ مصعباً رواه البخاري (١٢٧٤)",
+    "en": "Abd al-Rahman ibn Awf weeping and leaving his food remembering Mus'ab is narrated by al-Bukhari (1274)"
    }
   ]
  }

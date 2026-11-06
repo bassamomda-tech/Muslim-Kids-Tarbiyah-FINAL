@@ -1,4 +1,4 @@
-/* data/stories/nasir.js — Leaders · Abdurrahman an-Nasir — sources: البداية والنهاية · نفح الطيب · إسلام ويب · الدرر السنية */
+/* data/stories/nasir.js — Leaders · Abdurrahman an-Nasir — sources: البداية والنهاية · نفح الطيب · إسلام ويب · الدرر السنية · سير أعلام النبلاء */
 window.HISN_STORIES = window.HISN_STORIES || {};
 HISN_STORIES.nasir = [
   { icon:'💡', scene:'madinah', character:'🏙️',
@@ -52,5 +52,31 @@ HISN_STORIES.nasir = [
     badge:{icon:'📿',title:{ar:'وِسامُ طمأنينةِ القلب',en:'Badge of the Heart\u2019s Tranquility'}},
     reflect:[ {ar:'ما الذي يجعلُك سعيداً حقّاً في حياتِك؟',en:'What truly makes you happy in your life?'}, {ar:'هل تبحثُ عن السعادةِ في القربِ من اللهِ أم في الدنيا فقط؟',en:'Do you seek happiness in nearness to Allah or only in worldly things?'} ],
     didYouKnow:[ {ar:'ورقةُ الناصرِ في عددِ أيّامِ سرورِه (١٤ يوماً) مشهورةٌ في كتبِ التاريخِ كعبرةٍ بليغة — المصدر: نفح الطيب · البداية والنهاية',en:'An-Nasir\u2019s note counting his days of joy (14 days) is famous in history books as a profound lesson — Source: Nafh at-Tib · Al-Bidaya wa an-Nihaya'}, {ar:'قال تعالى: ﴿ أَلَا بِذِكْرِ اللَّهِ تَطْمَئِنُّ الْقُلُوبُ ﴾ — المصدر: الرعد ٢٨',en:'Allah said: "Verily, in the remembrance of Allah do hearts find rest" — Source: Ar-Ra\u2019d 28'} ],
+  },
+  { icon:'🏛️', scene:'throne', character:'👳',
+    title:{ ar:'القاضي والقُبّةُ الذهبيّة', en:'The Judge and the Golden Dome' },
+    pages:[
+      { scene:'throne', character:'😢',
+        text:{ ar:'بنى الخليفةُ <b>عبدُ الرحمنِ الناصر</b> مدينةَ <b>الزهراء</b> الرائعة، وجعلَ في أحدِ قصورِها <b>قُبّةً سقفُها مزخرفٌ بالذهبِ والفضّة</b> تلمعُ لمعاناً عجيباً. ثمّ جلسَ فيها مع كبارِ رجالِ دولتِه وسألهم: «هل رأيتم أو سمعتم أنّ ملِكاً قبلي فعلَ مثلَ هذا؟» فقالوا: لا والله، أنتَ الأوّل!<br><br>ودخلَ القاضي <b>منذرُ بنُ سعيدٍ البلّوطي</b>، فسأله الناصرُ السؤالَ نفسَه. فـ<b>دمعتْ عينا القاضي</b> وقال بصدق: «واللهِ ما ظننتُ يا أميرَ المؤمنينَ أنّ الشيطانَ يبلغُ منك هذا المبلغ!» ثمّ قرأَ قولَه تعالى: <b>﴿لَجَعَلْنَا لِمَنْ يَكْفُرُ بِالرَّحْمَٰنِ لِبُيُوتِهِمْ سُقُفًا مِنْ فِضَّةٍ﴾</b> — أي إنّ زينةَ الذهبِ والفضّةِ في الدنيا ليستْ علامةَ رضا الله. فـ<b>نكّسَ الناصرُ رأسَه طويلاً</b>، ثمّ شكرَ القاضيَ وأمرَ <b>بنقضِ سقفِ القُبّة</b>! علّمنا الناصرُ أنّ <b>العظيمَ حقّاً يقبلُ النصيحةَ ويرجعُ إلى الحقّ</b>.',
+          en:'The caliph <b>Abd ar-Rahman an-Nasir</b> built the magnificent city of <b>az-Zahra</b>, and in one of its palaces he made <b>a dome whose ceiling was decorated with gold and silver</b>, gleaming wonderfully. He sat in it with the great men of his state and asked them, "Have you seen or heard of any king before me who did the like?" They said, "No, by Allah, you are the first!"<br><br>Then the judge <b>Mundhir ibn Sa’id al-Balluti</b> came in, and an-Nasir asked him the same question. <b>The judge’s eyes filled with tears</b> and he said sincerely, "By Allah, O Commander of the Believers, I never thought Satan could reach this far with you!" Then he recited Allah’s words: <b>"We would have made for those who disbelieve in the Most Merciful, for their houses, ceilings of silver"</b> (az-Zukhruf 33) — meaning gold and silver adornment in this world is not a sign of Allah’s pleasure. <b>An-Nasir bowed his head for a long time</b>, then thanked the judge and ordered <b>the dome’s ceiling to be taken down</b>! An-Nasir taught us that <b>the truly great accept advice and return to what is right</b>.' },
+        choice:{ q:{ar:'ماذا فعلَ الناصرُ بعدَ نصيحةِ القاضي؟',en:'What did an-Nasir do after the judge’s advice?'},
+          opts:[
+            { t:{ar:'غضبَ وطردَ القاضي',en:'He got angry and expelled the judge'},c:false,exp:{ar:'لا، بل شكره وقبلَ نصيحتَه.',en:'No — he thanked him and accepted his advice.'} },
+            { t:{ar:'شكرَ القاضيَ وأمرَ بنقضِ السقفِ الذهبيّ',en:'He thanked the judge and ordered the golden ceiling removed'},c:true,exp:{ar:'أحسنت! الرجوعُ إلى الحقِّ فضيلة.',en:'Well done! Returning to the truth is a virtue.'} },
+            { t:{ar:'بنى قُبّةً أكبرَ منها',en:'He built an even bigger dome'},c:false,exp:{ar:'لا، بل رجعَ عن الإسراف.',en:'No — he turned back from extravagance.'} },
+          ] } },
+    ],
+    quiz:[
+      { q:{ar:'من القاضي الذي نصحَ الناصر؟',en:'Who was the judge who advised an-Nasir?'},
+        opts:[ {t:{ar:'منذرُ بنُ سعيدٍ البلّوطي',en:'Mundhir ibn Sa’id al-Balluti'},c:true}, {t:{ar:'العزُّ بنُ عبدِ السلام',en:'Al-Izz ibn Abd as-Salam'},c:false}, {t:{ar:'ابنُ شدّاد',en:'Ibn Shaddad'},c:false} ] },
+      { q:{ar:'بماذا كان سقفُ القُبّةِ مزخرفاً؟',en:'What was the dome’s ceiling decorated with?'},
+        opts:[ {t:{ar:'بالخشبِ البسيط',en:'Plain wood'},c:false}, {t:{ar:'بالطين',en:'Mud'},c:false}, {t:{ar:'بالذهبِ والفضّة',en:'Gold and silver'},c:true} ] },
+      { q:{ar:'من أيِّ سورةٍ الآيةُ التي قرأها القاضي؟',en:'Which surah is the verse the judge recited from?'},
+        opts:[ {t:{ar:'سورةُ الفاتحة',en:'Al-Fatiha'},c:false}, {t:{ar:'سورةُ الزُّخرف',en:'Az-Zukhruf'},c:true}, {t:{ar:'سورةُ الكهف',en:'Al-Kahf'},c:false} ] },
+    ],
+    moral:{ar:'النصيحةُ الصادقةُ هديّة، والعظيمُ حقّاً من يقبلُها ويرجعُ إلى الحقِّ مهما كان منصبُه.',en:'Sincere advice is a gift; the truly great person accepts it and returns to the truth whatever his position.'},
+    badge:{icon:'🏛️',title:{ar:'وِسامُ قبولِ النصيحة',en:'Badge of Accepting Advice'}},
+    reflect:[ {ar:'كيف تشعرُ حين ينصحُك أحد؟ وكيف ينبغي أن تتصرّف؟',en:'How do you feel when someone advises you? How should you respond?'}, {ar:'لماذا لم يُجامِلِ القاضي الخليفةَ كما فعلَ الآخرون؟',en:'Why did the judge not flatter the caliph like the others did?'} ],
+    didYouKnow:[ {ar:'أنكرَ القاضي منذرُ بنُ سعيدٍ على الناصرِ قُبّتَه المزخرفةَ بالذهبِ والفضّة، فنكّسَ رأسَه ثمّ أمرَ بنقضِ سقفِها — المصدر: سير أعلام النبلاء للذهبي · نفح الطيب',en:'The judge Mundhir ibn Sa’id objected to an-Nasir’s dome decorated with gold and silver; he bowed his head, then ordered its ceiling removed — Source: Siyar A’lam an-Nubala’ (adh-Dhahabi) · Nafh at-Tib'}, {ar:'قال تعالى: ﴿لَجَعَلْنَا لِمَنْ يَكْفُرُ بِالرَّحْمَٰنِ لِبُيُوتِهِمْ سُقُفًا مِنْ فِضَّةٍ﴾ — المصدر: الزخرف ٣٣',en:'Allah says: "We would have made for those who disbelieve in the Most Merciful, for their houses, ceilings of silver" — Source: az-Zukhruf 33'} ],
   },
 ];

@@ -902,7 +902,7 @@
     let s=''; for(let i=0;i<40;i++){ s+=`<i style="left:${Math.random()*100}%;top:${Math.random()*70}%;--d:${2+Math.random()*3}s;--dl:${-Math.random()*4}s"></i>`; }
     $('#stars').innerHTML=s;
     setLang(lang);
-    $('#guideLine').textContent=C.greeting?C.greeting[lang]:''; $('#guideName').textContent=HISN.guide.name[lang];
+    $('#guideLine').textContent=C.greeting?String(C.greeting[lang]).replace(/<[^>]+>/g,''):''; $('#guideName').textContent=HISN.guide.name[lang];
   }
 
   function boot(){

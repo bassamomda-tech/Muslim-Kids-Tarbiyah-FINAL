@@ -1,4 +1,4 @@
-/* data/stories/saadmuadh.js — Heroes · Sa'd ibn Mu'adh — sources: صور من حياة الصحابة (الباشا) · إسلام ويب · الدرر السنية · البداية والنهاية */
+/* data/stories/saadmuadh.js — Heroes · Sa'd ibn Mu'adh — sources: صور من حياة الصحابة (الباشا) · إسلام ويب · الدرر السنية · البداية والنهاية · صحيح البخاري · صحيح مسلم · سيرة ابن هشام */
 window.HISN_STORIES = window.HISN_STORIES || {};
 HISN_STORIES.saadmuadh = [
   { icon:'🤝', scene:'madinah', character:'🛡️',
@@ -53,4 +53,364 @@ HISN_STORIES.saadmuadh = [
     reflect:[ {ar:'سعدٌ تمنّى الشهادةَ في سبيلِ الله. ما أعظمُ ما تتمنّاه لآخرتِك؟',en:'Sa\u2019d wished for martyrdom for Allah. What is the greatest thing you wish for your Hereafter?'}, {ar:'كيف تجمعُ بين النصرةِ والعدلِ كما فعلَ سعد؟',en:'How do you combine devotion and justice as Sa\u2019d did?'} ],
     didYouKnow:[ {ar:'حديثُ «اهتزّ عرشُ الرحمنِ لموتِ سعدِ بنِ معاذ» رواه البخاريُّ ومسلم — المصدر: الدرر السنية',en:'The hadith "The Throne of the Most Merciful shook at the death of Sa\u2019d ibn Mu\u2019adh" is reported by al-Bukhari and Muslim — Source: ad-Durar as-Saniyya'}, {ar:'صحّ أنّ سبعينَ ألفاً من الملائكةِ نزلوا لتشييعِ جنازتِه — المصدر: صحيح ابن حبان',en:'It is authenticated that seventy thousand angels descended for his funeral — Source: Sahih Ibn Hibban'} ],
   },
+ {
+  "icon": "🌊",
+  "scene": "sea",
+  "character": "🗣️",
+  "title": {
+   "ar": "«لو استعرضتَ بنا هذا البحرَ لخضناه»",
+   "en": "\"If You Led Us Into This Sea, We Would Plunge In\""
+  },
+  "pages": [
+   {
+    "scene": "sea",
+    "character": "🌊",
+    "text": {
+     "ar": "قبلَ غزوةِ <b>بدر</b>، تغيّرَ الأمرُ فجأة: لم تعدْ قافلةَ تجارة، بل جيشاً كبيراً من قريش! فجمعَ النبيُّ ﷺ أصحابَه وقال: <b>«أشيروا عليَّ أيُّها الناس»</b>. تكلّمَ المهاجرونَ كلاماً حسناً، لكنّ النبيَّ ﷺ ظلّ يُكرِّرُ سؤالَه، فقد كان يريدُ أن يسمعَ رأيَ <b>الأنصار</b>، لأنّهم بايعوه على حمايتِه داخلَ المدينة.<br><br>ففهِمَ <b>سعدُ بنُ معاذ</b> سيّدُ الأوسِ ذلك، فقامَ وقال: <b>«لكأنّك تريدُنا يا رسولَ الله؟»</b> قال: أجل. فقالَ سعدٌ كلاماً خالداً: <b>«قد آمنّا بك وصدّقناك، وشهِدنا أنّ ما جئتَ به هو الحقّ... فامضِ يا رسولَ اللهِ لما أردت، فنحن معك. فوالذي بعثك بالحقّ، لو استعرضتَ بنا هذا البحرَ فخضتَه لخضناه معك، ما تخلّفَ منّا رجلٌ واحد»</b>.<br><br>ثمّ قال: <b>«إنّا لَصُبُرٌ في الحرب، صُدُقٌ في اللقاء، لعلّ اللهَ يُريكَ منّا ما تقرُّ به عينُك، فسِرْ بنا على بركةِ الله»</b>. ففرِحَ النبيُّ ﷺ بقولِه، وأشرقَ وجهُه. هذا هو <b>الوفاءُ بالعهد</b>: سعدٌ لم يبحثْ عن عذر، بل قدّمَ نفسَه وقومَه لنصرةِ الحقّ.",
+     "en": "Before the battle of <b>Badr</b>, things changed suddenly: it was no longer a trade caravan, but a large army from Quraysh! The Prophet ﷺ gathered his Companions and said: <b>\"Advise me, O people.\"</b> The Emigrants spoke well, but the Prophet ﷺ kept repeating his question — he wanted to hear from <b>the Ansar</b>, since they had pledged to protect him inside Madinah.<br><br><b>Sa'd ibn Mu'adh</b>, chief of the Aws, understood. He stood and said: <b>\"It seems you mean us, O Messenger of Allah?\"</b> He said: Yes. So Sa'd said timeless words: <b>\"We have believed in you and trusted you, and witnessed that what you brought is the truth... So go ahead, O Messenger of Allah, with what you intend, and we are with you. By the One who sent you with the truth, if you led us into this sea and plunged in, we would plunge in with you — not one man of us would stay behind.\"</b><br><br>Then he said: <b>\"We are patient in war and true in battle. Perhaps Allah will show you from us what delights your eyes, so lead us on with the blessing of Allah.\"</b> The Prophet ﷺ was glad at his words and his face lit up. This is <b>keeping one's promise</b>: Sa'd looked for no excuse, but offered himself and his people to support the truth."
+    },
+    "choice": {
+     "q": {
+      "ar": "لماذا كان النبيُّ ﷺ يُكرِّرُ «أشيروا عليّ»؟",
+      "en": "Why did the Prophet ﷺ keep repeating \"Advise me\"?"
+     },
+     "opts": [
+      {
+       "t": {
+        "ar": "لأنّه لم يسمعْ كلامَ المهاجرين",
+        "en": "Because he didn't hear the Emigrants"
+       },
+       "c": false,
+       "exp": {
+        "ar": "لا، بل سمعَه، لكنّه أرادَ رأيَ الأنصارِ أيضاً.",
+        "en": "No — he heard them, but he also wanted the Ansar's view."
+       }
+      },
+      {
+       "t": {
+        "ar": "لأنّه أرادَ أن يسمعَ رأيَ الأنصار",
+        "en": "Because he wanted to hear the Ansar's opinion"
+       },
+       "c": true,
+       "exp": {
+        "ar": "صحيح! والنبيُّ ﷺ يُعلِّمُنا الشورى واحترامَ رأيِ الناس.",
+        "en": "Correct! And the Prophet ﷺ teaches us consultation and respect for people's views."
+       }
+      },
+      {
+       "t": {
+        "ar": "لأنّه أرادَ الرجوعَ إلى المدينة",
+        "en": "Because he wanted to return to Madinah"
+       },
+       "c": false,
+       "exp": {
+        "ar": "لا، بل أرادَ أن يطمئنَّ إلى موقفِ أصحابِه.",
+        "en": "No — he wanted to be sure of his Companions' stance."
+       }
+      }
+     ]
+    }
+   }
+  ],
+  "quiz": [
+   {
+    "q": {
+     "ar": "مَن هو سعدُ بنُ معاذ؟",
+     "en": "Who was Sa'd ibn Mu'adh?"
+    },
+    "opts": [
+     {
+      "t": {
+       "ar": "سيّدُ الأوسِ من الأنصار",
+       "en": "Chief of the Aws of the Ansar"
+      },
+      "c": true
+     },
+     {
+      "t": {
+       "ar": "تاجرٌ من قريش",
+       "en": "A merchant of Quraysh"
+      },
+      "c": false
+     },
+     {
+      "t": {
+       "ar": "ملكُ الحبشة",
+       "en": "King of Abyssinia"
+      },
+      "c": false
+     }
+    ]
+   },
+   {
+    "q": {
+     "ar": "ماذا قال سعدٌ لو خاضَ النبيُّ ﷺ البحر؟",
+     "en": "What did Sa'd say if the Prophet ﷺ plunged into the sea?"
+    },
+    "opts": [
+     {
+      "t": {
+       "ar": "لانتظرناك على الشاطئ",
+       "en": "We would wait for you on the shore"
+      },
+      "c": false
+     },
+     {
+      "t": {
+       "ar": "لرجعنا إلى بيوتنا",
+       "en": "We would go home"
+      },
+      "c": false
+     },
+     {
+      "t": {
+       "ar": "لخضناه معك",
+       "en": "We would plunge in with you"
+      },
+      "c": true
+     }
+    ]
+   },
+   {
+    "q": {
+     "ar": "ما الصفةُ التي ظهرتْ في كلامِ سعد؟",
+     "en": "Which quality showed in Sa'd's words?"
+    },
+    "opts": [
+     {
+      "t": {
+       "ar": "الكسل",
+       "en": "Laziness"
+      },
+      "c": false
+     },
+     {
+      "t": {
+       "ar": "الوفاءُ بالعهد",
+       "en": "Keeping the promise"
+      },
+      "c": true
+     },
+     {
+      "t": {
+       "ar": "الخوف",
+       "en": "Fear"
+      },
+      "c": false
+     }
+    ]
+   }
+  ],
+  "moral": {
+   "ar": "المؤمنُ الصادقُ يفي بعهدِه ولا يبحثُ عن الأعذار، ويقفُ مع الحقِّ في السهلِ والصعب.",
+   "en": "The true believer keeps his promise without looking for excuses, standing with the truth in easy times and hard."
+  },
+  "badge": {
+   "icon": "🌊",
+   "title": {
+    "ar": "وِسامُ الوفاءِ بالعهد",
+    "en": "Badge of Keeping the Pledge"
+   }
+  },
+  "reflect": [
+   {
+    "ar": "هل وعدتَ أحداً بشيءٍ ثمّ وفيتَ به رغمَ صعوبتِه؟",
+    "en": "Have you promised someone something and kept it even when it was hard?"
+   },
+   {
+    "ar": "كيف تقفُ مع صديقِك حين يحتاجُك؟",
+    "en": "How do you stand by your friend when he needs you?"
+   }
+  ],
+  "didYouKnow": [
+   {
+    "ar": "كلمةُ سعدِ بنِ معاذٍ يومَ بدر رواها ابنُ إسحاقَ في السيرة — المصدر: سيرة ابن هشام، البداية والنهاية لابن كثير",
+    "en": "Sa'd ibn Mu'adh's words at Badr are reported by Ibn Ishaq — Sources: Sirat Ibn Hisham, al-Bidaya wa an-Nihaya by Ibn Kathir"
+   },
+   {
+    "ar": "وفي صحيحِ مسلمٍ (١٧٧٩) جاءتْ كلمةٌ قريبةٌ منها: «لو أمرتَنا أن نُخيضَها البحرَ لأخضناها» على لسانِ سعدِ بنِ عُبادةَ رضي الله عنه",
+    "en": "In Sahih Muslim (1779) similar words — \"If you ordered us to plunge them into the sea, we would\" — are reported from Sa'd ibn Ubada"
+   }
+  ]
+ },
+ {
+  "icon": "⚖️",
+  "scene": "scales",
+  "character": "⚖️",
+  "title": {
+   "ar": "حَكَمٌ عادلٌ لا يخافُ في اللهِ لومةَ لائم",
+   "en": "A Just Judge Who Feared No Blame for Allah's Sake"
+  },
+  "pages": [
+   {
+    "scene": "scales",
+    "character": "⚖️",
+    "text": {
+     "ar": "كان يهودُ <b>بني قُريظة</b> قد عاهدوا النبيَّ ﷺ ألّا يُعينوا عليه عدوّاً، لكنّهم <b>نقضوا العهدَ في أصعبِ وقت</b>: يومَ أحاطت الأحزابُ بالمدينة! فلمّا رحلت الأحزاب، حاصرهم المسلمون، فرضوا أن ينزلوا على <b>حُكمِ سعدِ بنِ معاذ</b>، لأنّه كان حليفَهم في الجاهليّة، فظنّوا أنّه سيُحابيهم.<br><br>وكان سعدٌ جريحاً من سهمٍ أصابه يومَ الخندق، فأرسلَ إليه النبيُّ ﷺ، فجاءَ على حمار. فلمّا اقتربَ قال النبيُّ ﷺ للأنصار: <b>«قوموا إلى سيّدِكم»</b>. وفي الطريقِ — كما يذكرُ أهلُ السِّيَر — كان بعضُ قومِه يقولون له: أحسِنْ إلى حلفائِك يا أبا عمرو! فقال سعدٌ كلمةً عظيمة: <b>«قد آنَ لسعدٍ ألّا تأخذَه في اللهِ لومةُ لائم»</b>.<br><br>فحكمَ سعدٌ فيهم بما يستحقُّه مَن خانَ العهدَ وأعانَ الأعداءَ في وقتِ الحرب، <b>بالعدلِ لا بالهوى</b>، ولم تَمِلْ به الصداقةُ القديمةُ ولا رجاءُ الناس. فقال النبيُّ ﷺ: <b>«قضيتَ بحُكمِ الله»</b>. لقد وثقَ به الجميع: النبيُّ ﷺ وقومُه وحتى خصومُه، لأنّ <b>القاضيَ العادلَ لا يُحابي أحداً</b>.",
+     "en": "The Jews of <b>Banu Qurayza</b> had made a pact with the Prophet ﷺ not to help any enemy against him, but they <b>broke the pact at the hardest time</b>: when the Confederates surrounded Madinah! After the Confederates left, the Muslims besieged them, and they agreed to accept <b>the judgment of Sa'd ibn Mu'adh</b>, because he had been their ally before Islam — they thought he would favor them.<br><br>Sa'd was wounded by an arrow from the day of the Trench. The Prophet ﷺ sent for him, and he came riding a donkey. As he drew near, the Prophet ﷺ told the Ansar: <b>\"Stand up for your chief.\"</b> On the way — as the biographers mention — some of his people kept saying: Be kind to your allies, Abu Amr! Sa'd replied with great words: <b>\"The time has come for Sa'd not to fear anyone's blame for the sake of Allah.\"</b><br><br>So Sa'd judged them by what those who betray a pact and help enemies in wartime deserve — <b>with justice, not personal feelings</b> — unmoved by old friendship or people's pleas. The Prophet ﷺ said: <b>\"You have judged with the judgment of Allah.\"</b> Everyone trusted him — the Prophet ﷺ, his people, even his opponents — because <b>a just judge favors no one</b>."
+    },
+    "choice": {
+     "q": {
+      "ar": "لماذا اختارَ بنو قريظةَ سعداً حَكَماً؟",
+      "en": "Why did Banu Qurayza choose Sa'd as judge?"
+     },
+     "opts": [
+      {
+       "t": {
+        "ar": "لأنّه كان حليفَهم قديماً فظنّوا أنّه سيُحابيهم",
+        "en": "He had been their old ally, so they thought he would favor them"
+       },
+       "c": true,
+       "exp": {
+        "ar": "صحيح! لكنّ سعداً حكمَ بالعدلِ لا بالصداقة.",
+        "en": "Correct! But Sa'd judged by justice, not friendship."
+       }
+      },
+      {
+       "t": {
+        "ar": "لأنّه كان لا يعرفُهم",
+        "en": "Because he didn't know them"
+       },
+       "c": false,
+       "exp": {
+        "ar": "لا، بل كان يعرفُهم جيّداً وكان حليفَهم.",
+        "en": "No — he knew them well and was their former ally."
+       }
+      },
+      {
+       "t": {
+        "ar": "لأنّه كان أصغرَ الصحابة",
+        "en": "Because he was the youngest Companion"
+       },
+       "c": false,
+       "exp": {
+        "ar": "لا، بل كان سيّدَ قومِه.",
+        "en": "No — he was the chief of his people."
+       }
+      }
+     ]
+    }
+   }
+  ],
+  "quiz": [
+   {
+    "q": {
+     "ar": "ماذا فعلَ بنو قريظةَ يومَ الأحزاب؟",
+     "en": "What did Banu Qurayza do during the Confederates' siege?"
+    },
+    "opts": [
+     {
+      "t": {
+       "ar": "نقضوا العهد",
+       "en": "Broke their pact"
+      },
+      "c": true
+     },
+     {
+      "t": {
+       "ar": "دافعوا عن المدينة",
+       "en": "Defended Madinah"
+      },
+      "c": false
+     },
+     {
+      "t": {
+       "ar": "أسلموا كلُّهم",
+       "en": "All became Muslim"
+      },
+      "c": false
+     }
+    ]
+   },
+   {
+    "q": {
+     "ar": "ماذا قال النبيُّ ﷺ للأنصارِ حين جاءَ سعد؟",
+     "en": "What did the Prophet ﷺ tell the Ansar when Sa'd came?"
+    },
+    "opts": [
+     {
+      "t": {
+       "ar": "اجلسوا مكانَكم",
+       "en": "Stay seated"
+      },
+      "c": false
+     },
+     {
+      "t": {
+       "ar": "قوموا إلى سيّدِكم",
+       "en": "Stand up for your chief"
+      },
+      "c": true
+     },
+     {
+      "t": {
+       "ar": "اذهبوا إلى بيوتِكم",
+       "en": "Go to your homes"
+      },
+      "c": false
+     }
+    ]
+   },
+   {
+    "q": {
+     "ar": "ماذا قال النبيُّ ﷺ عن حُكمِ سعد؟",
+     "en": "What did the Prophet ﷺ say about Sa'd's judgment?"
+    },
+    "opts": [
+     {
+      "t": {
+       "ar": "كان قاسياً",
+       "en": "It was harsh"
+      },
+      "c": false
+     },
+     {
+      "t": {
+       "ar": "كان خطأً",
+       "en": "It was a mistake"
+      },
+      "c": false
+     },
+     {
+      "t": {
+       "ar": "قضيتَ بحُكمِ الله",
+       "en": "You judged with Allah's judgment"
+      },
+      "c": true
+     }
+    ]
+   }
+  ],
+  "moral": {
+   "ar": "العدلُ لا يميلُ مع الصداقةِ ولا مع رجاءِ الناس، ومن حكمَ بالحقِّ وثقَ به الجميعُ ورضيَ اللهُ عنه.",
+   "en": "Justice does not bend for friendship or people's pleas; whoever judges by truth earns everyone's trust and Allah's pleasure."
+  },
+  "badge": {
+   "icon": "⚖️",
+   "title": {
+    "ar": "وِسامُ الحَكَمِ العادل",
+    "en": "Badge of the Just Judge"
+   }
+  },
+  "reflect": [
+   {
+    "ar": "إذا تخاصمَ صديقُك مع ولدٍ آخر وكان صديقُك مخطئاً، ماذا تقول؟",
+    "en": "If your friend quarrels with another child and your friend is wrong, what would you say?"
+   },
+   {
+    "ar": "لماذا يحبُّ الناسُ مَن يحكمُ بينهم بالعدل؟",
+    "en": "Why do people love someone who judges fairly between them?"
+   }
+  ],
+  "didYouKnow": [
+   {
+    "ar": "نزولُ بني قريظةَ على حُكمِ سعد، وقولُ النبيِّ ﷺ «قوموا إلى سيّدِكم» و«قضيتَ بحُكمِ الله» رواه البخاري (٣٠٤٣، ٤١٢١) ومسلم (١٧٦٨)",
+    "en": "Banu Qurayza accepting Sa'd's judgment, and the Prophet's ﷺ words \"Stand up for your chief\" and \"You have judged with Allah's judgment,\" are in al-Bukhari (3043, 4121) and Muslim (1768)"
+   },
+   {
+    "ar": "كلمةُ سعد «قد آنَ لسعدٍ ألّا تأخذَه في اللهِ لومةُ لائم» رواها ابنُ إسحاق — المصدر: سيرة ابن هشام، البداية والنهاية",
+    "en": "Sa'd's words \"The time has come for Sa'd not to fear anyone's blame for Allah's sake\" are reported by Ibn Ishaq — Sources: Sirat Ibn Hisham, al-Bidaya wa an-Nihaya"
+   }
+  ]
+ }
 ];

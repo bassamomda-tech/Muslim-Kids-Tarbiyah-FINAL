@@ -4,7 +4,7 @@
 window.HISN = window.HISN || {}; HISN.chapters = HISN.chapters || {};
 HISN.chapters.khaliq = {
   id: 'khaliq', era: 'heart', kind: 'name', icon: 'gem',
-  name: { ar: 'الخالقُ البارئُ المصوّر', en: 'The Creator & Fashioner' },
+  name: { ar: 'الخالقُ الخلّاقُ البارئُ المصوّر', en: 'The Creator & Fashioner' },
   tag:  { ar: 'خلقَ كلَّ شيءٍ فأبدعَه', en: 'He created all things, perfectly' },
   accent: '#3A6EA5', accent2: '#5A8EC5',
   rooms: ['knowledge', 'story', 'memorize', 'activities', 'treasures'],
@@ -27,6 +27,7 @@ HISN.chapters.khaliq = {
       { ar: 'كلُّ مخلوقٍ متقَنٌ ومصمَّمٌ ليعيشَ بطريقتِه.', en: 'Every creature is perfectly made and designed to live its way.' },
       { ar: 'نتفكّرُ في الخلقِ لِنعرفَ عظمةَ الخالق.', en: 'We reflect on creation to know the greatness of the Creator.' },
       { ar: 'جسمُك أمانةٌ من الخالق، فحافِظْ عليه.', en: 'Your body is a trust from the Creator — take care of it.' },
+      { ar: 'ومن أسمائه <b>«الخلّاق»</b>: كثيرُ الخَلقِ، يَخلُقُ كلَّ يومٍ ما لا نُحصيه! قال تعالى: <b>﴿إِنَّ رَبَّكَ هُوَ الْخَلَّاقُ الْعَلِيمُ﴾</b> (الحجر ٨٦).', en: 'Another of His Names is <b>“Al-Khallaq”</b>: He creates constantly, more than we can count! He said: <b>“Indeed your Lord is the Ever-Creating, the All-Knowing”</b> (al-Hijr 86).' },
     ],
     ayah: { ar: '﴿ هُوَ اللَّهُ الْخَالِقُ الْبَارِئُ الْمُصَوِّرُ ﴾', ref: { ar: 'الحشر ٢٤', en: 'Al-Hashr 24' } },
   },

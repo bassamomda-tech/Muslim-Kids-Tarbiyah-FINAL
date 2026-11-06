@@ -1,4 +1,4 @@
-/* data/stories/nusayba.js — Heroes · Nusayba bint Ka'b (Umm Ammara) — sources: صور من حياة الصحابة (الباشا) · إسلام ويب · الدرر السنية · البداية والنهاية */
+/* data/stories/nusayba.js — Heroes · Nusayba bint Ka'b (Umm Ammara) — sources: صور من حياة الصحابة (الباشا) · إسلام ويب · الدرر السنية · البداية والنهاية · سير أعلام النبلاء */
 window.HISN_STORIES = window.HISN_STORIES || {};
 HISN_STORIES.nusayba = [
   { icon:'🛡️', scene:'peaks', character:'⚔️',
@@ -61,5 +61,31 @@ HISN_STORIES.nusayba = [
     badge:{icon:'🤲',title:{ar:'وِسامُ بيتِ الأبطال',en:'Badge of the Household of Heroes'}},
     reflect:[ {ar:'كيف تجعلُ بيتَك بيتَ خيرٍ وإيمان؟',en:'How do you make your home a home of good and faith?'}, {ar:'كيف تُعينُ أهلَك على الخيرِ وتُشجّعُهم عليه؟',en:'How do you help your family toward good and encourage them in it?'} ],
     didYouKnow:[ {ar:'شهِدَ بيعةَ العقبةِ الثانيةِ امرأتانِ من الأنصارِ إحداهما نسيبةُ بنتُ كعب — المصدر: البداية والنهاية',en:'Two women of the Ansar witnessed the Second Pledge of Aqaba, one of them Nusayba bint Ka\u2019b — Source: Al-Bidaya wa an-Nihaya'}, {ar:'كان أبناءُ نسيبةَ وزوجُها من المجاهدينَ في سبيلِ الله، فكانت أمَّ بيتٍ من الأبطال — المصدر: صور من حياة الصحابة',en:'Nusayba\u2019s sons and husband were strivers for Allah\u2019s sake; she was the mother of a household of heroes — Source: Suwar min Hayat as-Sahaba'} ],
+  },
+  { icon:'💔', scene:'palm', character:'🤲',
+    title:{ ar:'أمٌّ صابرةٌ يومَ اليمامة', en:'A Patient Mother on the Day of Yamama' },
+    pages:[
+      { scene:'palm', character:'🤲',
+        text:{ ar:'بعدَ وفاةِ النبيِّ ﷺ، خرجَ في اليمامةِ كذّابٌ اسمُه <b>مسيلمة</b> يدّعي النبوّة. فوقعَ في يدِه <b>حبيبُ بنُ زيد</b>، ابنُ <b>نسيبة</b>، فقال له: أتشهدُ أنّ محمّداً رسولُ الله؟ قال: نعم. قال: أتشهدُ أنّي رسولُ الله؟ قال حبيب: <b>لا أسمع!</b> فقتله مسيلمةُ لأنّه ثبتَ على الحقّ. ووصلَ الخبرُ إلى أمِّه نسيبة، فكان قلبُها يتقطّعُ حزناً، لكنّها <b>صبرتْ واحتسبتْ</b> ابنَها عند الله، وفرِحتْ أنّه ماتَ ثابتاً على «محمّدٌ رسولُ الله».<br><br>ولمّا خرجَ جيشُ المسلمينَ إلى اليمامة، خرجتْ نسيبةُ — وهي امرأةٌ كبيرة — مع ابنِها الآخرِ <b>عبدِ الله</b>، لا تطلبُ ثأراً لنفسِها، بل نُصرةً للحقِّ الذي ماتَ عليه حبيب. وعادتْ من اليمامةِ وقد <b>قُطِعتْ يدُها</b> وأصابتْها جراحٌ كثيرة، وكان ابنُها عبدُ اللهِ ممّن ضربَ مسيلمةَ بسيفِه. ومع ذلك لم تشكُ ولم تندم! وكان <b>أبو بكرٍ الصدّيقُ</b> — وهو خليفةُ المسلمين — <b>يأتيها بنفسِه يسألُ عنها</b> ويطمئنُّ عليها، إكراماً لهذه الأمِّ العظيمة. علّمتنا نسيبةُ أنّ <b>الصبرَ عند المصيبةِ الأولى</b> هو الصبرُ الحقيقي.',
+          en:'After the Prophet ﷺ passed away, a liar named <b>Musaylima</b> appeared in Yamama claiming prophethood. <b>Habib ibn Zayd</b>, son of <b>Nusayba</b>, fell into his hands. He asked him: Do you testify that Muhammad is the Messenger of Allah? He said: Yes. Do you testify that I am the messenger of Allah? Habib said: <b>"I cannot hear!"</b> So Musaylima killed him because he held firm to the truth. When the news reached his mother Nusayba, her heart broke with grief — but she <b>was patient and sought reward</b> from Allah for her son, glad that he died firm on "Muhammad is the Messenger of Allah."<br><br>When the Muslim army set out for Yamama, Nusayba — now an older woman — went with her other son <b>Abdullah</b>, not seeking revenge for herself but to support the truth Habib died upon. She returned from Yamama with <b>her hand cut off</b> and many wounds, and her son Abdullah was among those who struck Musaylima with his sword. Yet she did not complain or regret! <b>Abu Bakr as-Siddiq</b> — Caliph of the Muslims — <b>would come himself to ask after her</b> and check on her, honoring this great mother. Nusayba teaches us that <b>patience at the first shock</b> is true patience.' },
+        choice:{ q:{ar:'كيف استقبلتْ نسيبةُ خبرَ استشهادِ ابنِها حبيب؟',en:'How did Nusayba receive the news of her son Habib’s martyrdom?'},
+          opts:[
+            { t:{ar:'صبرتْ واحتسبتْه عند الله',en:'She was patient and sought reward from Allah'},c:true,exp:{ar:'نعم! حزنَ قلبُها لكنّها صبرتْ ورضيتْ بقضاءِ الله.',en:'Yes! Her heart grieved, but she was patient and accepted Allah’s decree.'} },
+            { t:{ar:'تركتِ الإسلام',en:'She left Islam'},c:false,exp:{ar:'حاشاها! بل ازدادتْ ثباتاً.',en:'Never! She grew even firmer.'} },
+            { t:{ar:'لم تهتمَّ به',en:'She did not care'},c:false,exp:{ar:'لا، بل حزِنتْ حزنَ الأمّ، وصبرتْ صبرَ المؤمنة.',en:'No — she grieved as a mother and was patient as a believer.'} },
+          ] } },
+    ],
+    quiz:[
+      { q:{ar:'لماذا قتلَ مسيلمةُ حبيباً؟',en:'Why did Musaylima kill Habib?'},
+        opts:[ {t:{ar:'لأنّه سرقَ منه',en:'Because he stole from him'},c:false}, {t:{ar:'لأنّه رفضَ أن يشهدَ لمسيلمةَ بالنبوّة',en:'Because he refused to testify that Musaylima was a prophet'},c:true}, {t:{ar:'بلا سبب',en:'For no reason'},c:false} ] },
+      { q:{ar:'ماذا أصابَ نسيبةَ يومَ اليمامة؟',en:'What happened to Nusayba on the day of Yamama?'},
+        opts:[ {t:{ar:'لم يُصِبْها شيء',en:'Nothing happened to her'},c:false}, {t:{ar:'ربحتْ مالاً',en:'She won money'},c:false}, {t:{ar:'قُطِعتْ يدُها وجُرِحتْ جراحاً كثيرة',en:'Her hand was cut off and she had many wounds'},c:true} ] },
+      { q:{ar:'من كان يزورُها ويسألُ عنها بعدَ اليمامة؟',en:'Who used to visit her and ask after her after Yamama?'},
+        opts:[ {t:{ar:'الخليفةُ أبو بكرٍ الصدّيق',en:'The Caliph Abu Bakr as-Siddiq'},c:true}, {t:{ar:'مسيلمة',en:'Musaylima'},c:false}, {t:{ar:'لم يزرْها أحد',en:'No one visited her'},c:false} ] },
+    ],
+    moral:{ar:'الصبرُ عند المصيبةِ يرفعُ صاحبَه، ومن ثبتَ على الحقِّ أكرمه اللهُ والناس.',en:'Patience in calamity raises a person, and whoever stands firm on truth is honored by Allah and people.'},
+    badge:{icon:'💔',title:{ar:'وِسامُ الأمِّ المحتسبة',en:'Badge of the Patient Mother'}},
+    reflect:[ {ar:'ماذا تقولُ وتفعلُ حين يصيبُك شيءٌ يُحزِنُك؟',en:'What do you say and do when something saddens you?'}, {ar:'كيف تزورُ المريضَ أو المصابَ وتطمئنُّ عليه كما فعلَ أبو بكر؟',en:'How do you visit the sick or hurt and check on them as Abu Bakr did?'} ],
+    didYouKnow:[ {ar:'قال الذهبي: قُطِعتْ يدُها يومَ اليمامة، وجُرِحتْ سوى يدِها أحدَ عشرَ جرحاً، وكان أبو بكرٍ وهو خليفةٌ يأتيها يسألُ عنها — المصدر: سير أعلام النبلاء',en:'Adh-Dhahabi said: her hand was cut off at Yamama, she had eleven wounds besides, and Abu Bakr, while Caliph, would come to ask after her — Source: Siyar A’lam an-Nubala'}, {ar:'ثباتُ حبيبِ بنِ زيدٍ أمامَ مسيلمةَ ذكره ابنُ إسحاق، ونقله ابنُ هشامٍ وابنُ كثير — المصدر: البداية والنهاية',en:'Habib ibn Zayd’s steadfastness before Musaylima was reported by Ibn Ishaq and conveyed by Ibn Hisham and Ibn Kathir — Source: al-Bidaya wa an-Nihaya'} ],
   },
 ];

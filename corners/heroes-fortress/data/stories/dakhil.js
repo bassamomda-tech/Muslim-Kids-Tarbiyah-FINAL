@@ -1,4 +1,4 @@
-/* data/stories/dakhil.js — Leaders · Abdurrahman ad-Dakhil — sources: البداية والنهاية · نفح الطيب · إسلام ويب · الدرر السنية */
+/* data/stories/dakhil.js — Leaders · Abdurrahman ad-Dakhil — sources: البداية والنهاية · نفح الطيب · إسلام ويب · الدرر السنية · البيان المغرب */
 window.HISN_STORIES = window.HISN_STORIES || {};
 HISN_STORIES.dakhil = [
   { icon:'🏊', scene:'desert', character:'🦅',
@@ -52,5 +52,31 @@ HISN_STORIES.dakhil = [
     badge:{icon:'🏛️',title:{ar:'وِسامُ مؤسّسِ الحضارة',en:'Badge of the Civilization-Founder'}},
     reflect:[ {ar:'كيف تُحوِّلُ تحدّياً صعباً إلى فرصةٍ للنجاح؟',en:'How do you turn a hard challenge into an opportunity for success?'}, {ar:'هل تبني وتُصلِحُ بعدَ أن تتجاوزَ الصعاب؟',en:'Do you build and improve after overcoming difficulties?'} ],
     didYouKnow:[ {ar:'أسّسَ عبد الرحمن الداخلُ الدولةَ الأمويّةَ في الأندلسِ التي دامتْ نحوَ ثلاثةِ قرون — المصدر: نفح الطيب',en:'Abdurrahman ad-Dakhil founded the Umayyad state in Andalusia, which lasted about three centuries — Source: Nafh at-Tib'}, {ar:'بدأَ ببناءِ مسجدِ قرطبةَ الكبيرِ الذي صارَ من أعظمِ مساجدِ العالم — المصدر: البداية والنهاية',en:'He began building the Great Mosque of Cordoba, which became one of the world\u2019s greatest mosques — Source: Al-Bidaya wa an-Nihaya'} ],
+  },
+  { icon:'🌴', scene:'palm', character:'🦅',
+    title:{ ar:'نخلةُ الرُّصافةِ الغريبة', en:'The Lonely Palm of ar-Rusafa' },
+    pages:[
+      { scene:'palm', character:'🌴',
+        text:{ ar:'بعدَ أن استقرَّ <b>عبدُ الرحمنِ الداخل</b> في قرطبة، بنى قصراً وحديقةً سمّاها <b>«الرُّصافة»</b> على اسمِ قصرِ جدِّه هشامٍ في الشام. وكان يشتاقُ إلى بلادِه التي هربَ منها صغيراً، فجلبَ إليها من الشامِ <b>نخلاً وأشجاراً ونباتات</b> لتُذكِّرَه بوطنِه البعيد.<br><br>وفي يومٍ رأى نخلةً وحيدةً وسطَ الرُّصافة، بعيدةً عن أرضِ النخيل، فشعرَ أنّها تُشبِهُه، فقال شعراً حزيناً جميلاً: <b>«تبدّتْ لنا وسطَ الرُّصافةِ نخلةٌ ... تناءتْ بأرضِ الغربِ عن بلدِ النخلِ؛ فقلتُ: شبيهي في التغرّبِ والنوى ... وطولِ التنائي عن بَنيَّ وعن أهلي»</b>. لكنّه لم يقعدْ يبكي على ما فات، بل جعلَ من غُربتِه <b>بستاناً جديداً ودولةً جديدة</b>. علّمنا الداخلُ أنّ <b>الحنينَ لا يمنعُ البناء</b>، وأنّ المؤمنَ يزرعُ الخيرَ حيثما نزل.',
+          en:'After <b>Abd ar-Rahman ad-Dakhil</b> settled in Cordoba, he built a palace and garden he named <b>"ar-Rusafa"</b> after his grandfather Hisham’s palace in Syria. He longed for the homeland he had fled as a young man, so he brought <b>palms, trees, and plants</b> from Syria to remind him of his faraway home.<br><br>One day he saw a lone palm tree in the middle of ar-Rusafa, far from the land of palms, and felt it was like him, so he spoke beautiful, sad verses: <b>"A palm appeared to us in the midst of ar-Rusafa, far off in the land of the West from the country of palms. I said: you are like me in being a stranger far from home, long separated from my children and my family."</b> But he did not sit weeping over what was lost; he turned his exile into <b>a new garden and a new state</b>. Ad-Dakhil taught us that <b>longing does not stop building</b>, and that a believer plants good wherever he goes.' },
+        choice:{ q:{ar:'لماذا شبّهَ عبدُ الرحمنِ الداخلُ نفسَه بالنخلة؟',en:'Why did Abd ar-Rahman ad-Dakhil compare himself to the palm?'},
+          opts:[
+            { t:{ar:'لأنّهما غريبانِ بعيدانِ عن الوطن',en:'Because both were strangers far from home'},c:true,exp:{ar:'نعم! لكنّه حوّلَ غربتَه إلى بناءٍ وعمل.',en:'Yes! But he turned his exile into building and work.'} },
+            { t:{ar:'لأنّه طويلٌ مثلَها',en:'Because he was tall like it'},c:false,exp:{ar:'لا، بل لأنّها غريبةٌ مثلَه.',en:'No — because it was a stranger like him.'} },
+            { t:{ar:'لأنّه لا يحبُّ النخل',en:'Because he disliked palms'},c:false,exp:{ar:'لا، بل كان يحبُّها ويشتاقُ إلى بلادِها.',en:'No — he loved them and missed their land.'} },
+          ] } },
+    ],
+    quiz:[
+      { q:{ar:'ما اسمُ القصرِ والحديقةِ التي بناها الداخلُ في قرطبة؟',en:'What was the name of the palace and garden ad-Dakhil built in Cordoba?'},
+        opts:[ {t:{ar:'الزهراء',en:'Az-Zahra'},c:false}, {t:{ar:'الرُّصافة',en:'Ar-Rusafa'},c:true}, {t:{ar:'الحمراء',en:'Al-Hamra'},c:false} ] },
+      { q:{ar:'من أين جلبَ الداخلُ النخلَ والنباتات؟',en:'Where did ad-Dakhil bring the palms and plants from?'},
+        opts:[ {t:{ar:'من الصين',en:'From China'},c:false}, {t:{ar:'من فرنسا',en:'From France'},c:false}, {t:{ar:'من الشام',en:'From Syria'},c:true} ] },
+      { q:{ar:'ماذا فعلَ الداخلُ بحنينِه إلى وطنِه؟',en:'What did ad-Dakhil do with his longing for home?'},
+        opts:[ {t:{ar:'جعله دافعاً للبناءِ والزراعة',en:'He made it a drive to build and plant'},c:true}, {t:{ar:'تركَ كلَّ عمل',en:'He stopped all work'},c:false}, {t:{ar:'عادَ هارباً إلى الشام',en:'He fled back to Syria'},c:false} ] },
+    ],
+    moral:{ar:'الحنينُ إلى الأهلِ والوطنِ شعورٌ جميل، لكنّه لا يمنعُ المؤمنَ من أن يبنيَ ويزرعَ الخيرَ حيثما كان.',en:'Longing for family and home is a beautiful feeling, but it does not stop a believer from building and planting good wherever he is.'},
+    badge:{icon:'🌴',title:{ar:'وِسامُ الغريبِ الباني',en:'Badge of the Builder Far From Home'}},
+    reflect:[ {ar:'إذا انتقلتَ إلى مكانٍ جديد، كيف تجعلُه مكاناً جميلاً؟',en:'If you moved to a new place, how would you make it beautiful?'}, {ar:'ما الشيءُ الذي يُذكِّرُك بأهلِك وتحبُّه كثيراً؟',en:'What reminds you of your family that you love very much?'} ],
+    didYouKnow:[ {ar:'أبياتُ «تبدّتْ لنا وسطَ الرُّصافةِ نخلةٌ» لعبدِ الرحمنِ الداخلِ مشهورةٌ في كتبِ الأدبِ والتاريخِ الأندلسي — المصدر: نفح الطيب للمقّري',en:'The verses "A palm appeared to us in the midst of ar-Rusafa" by Abd ar-Rahman ad-Dakhil are famous in Andalusian literature and history — Source: Nafh at-Tib (al-Maqqari)'}, {ar:'لقّبه الخليفةُ العبّاسيُّ أبو جعفرٍ المنصورُ بـ«صقرِ قريش» إعجاباً بعزيمتِه رغمَ أنّه كان خصمَه — المصدر: نفح الطيب · البيان المغرب لابن عذاري',en:'The Abbasid caliph Abu Ja’far al-Mansur called him "the Falcon of Quraysh" out of admiration for his resolve, though he was his rival — Source: Nafh at-Tib · Al-Bayan al-Mughrib (Ibn Idhari)'} ],
   },
 ];

@@ -1,4 +1,4 @@
-/* data/stories/ibnabbas.js — Heroes · Abdullah ibn Abbas — sources: صور من حياة الصحابة (الباشا) · إسلام ويب · الدرر السنية */
+/* data/stories/ibnabbas.js — Heroes · Abdullah ibn Abbas — sources: صور من حياة الصحابة (الباشا) · إسلام ويب · الدرر السنية · صحيح البخاري · صحيح مسلم · سنن الترمذي · سنن الدارمي · سير أعلام النبلاء */
 window.HISN_STORIES = window.HISN_STORIES || {};
 HISN_STORIES.ibnabbas = [
  {
@@ -358,6 +358,546 @@ HISN_STORIES.ibnabbas = [
    {
     "ar": "جمعَ ابنُ عبّاسٍ علمَ التفسيرِ حتى صار أصلاً لكثيرٍ من كتبِ التفسيرِ بعدَه — المصدر: إسلام ويب",
     "en": "Ibn Abbas gathered the science of interpretation until he became a foundation for many later books of tafsir — Source: islamweb.net"
+   }
+  ]
+ },
+ {
+  "icon": "🐪",
+  "scene": "camel",
+  "character": "🐪",
+  "title": {
+   "ar": "«يا غلامُ، إنّي أُعلِّمُك كلمات»",
+   "en": "\"Young Boy, I Will Teach You Some Words\""
+  },
+  "pages": [
+   {
+    "scene": "camel",
+    "character": "👦",
+    "text": {
+     "ar": "كان <b>ابنُ عبّاس</b> صبيّاً صغيراً، ركبَ يوماً <b>خلفَ النبيِّ ﷺ</b> على الدابّة. فالتفتَ إليه النبيُّ ﷺ بحنان وقال: <b>«يا غلام، إنّي أُعلِّمُك كلمات»</b>. فأصغى ابنُ عبّاسٍ بكلِّ قلبِه، فهذه وصيّةٌ من رسولِ اللهِ ﷺ إليه وحدَه!<br><br>قال ﷺ: <b>«احفظِ اللهَ يحفظْك، احفظِ اللهَ تجدْه تُجاهَك، إذا سألتَ فاسألِ الله، وإذا استعنتَ فاستعنْ بالله»</b>. ثمّ قال: <b>«واعلمْ أنّ الأمّةَ لو اجتمعت على أن ينفعوك بشيءٍ لم ينفعوك إلا بشيءٍ قد كتبَه اللهُ لك، ولو اجتمعوا على أن يضرّوك بشيءٍ لم يضرّوك إلا بشيءٍ قد كتبَه اللهُ عليك، رُفِعتِ الأقلامُ وجفّتِ الصُّحُف»</b>.<br><br>ما معنى <b>«احفظِ الله»</b>؟ أن تحفظَ أوامرَه: تُصلّي، وتصدقُ، وتبتعدُ عمّا نهى عنه. فإذا فعلتَ ذلك <b>حفظَك اللهُ</b> ورعاك، ووجدتَه معك يُعينُك في كلِّ أمر. وإذا احتجتَ شيئاً فاطلبْه من الله أوّلاً، ولا تخفْ من الناس، فكلُّ شيءٍ بيدِ الله. حفظَ ابنُ عبّاسٍ هذه الكلماتِ طولَ عمرِه، وهي <b>وصيّةٌ لكلِّ طفلٍ مسلمٍ</b> إلى اليوم.",
+     "en": "<b>Ibn Abbas</b> was a little boy who one day rode <b>behind the Prophet ﷺ</b> on his mount. The Prophet ﷺ turned to him tenderly and said: <b>\"Young boy, I will teach you some words.\"</b> Ibn Abbas listened with all his heart — this was advice from the Messenger of Allah ﷺ to him alone!<br><br>He ﷺ said: <b>\"Be mindful of Allah and He will protect you. Be mindful of Allah and you will find Him before you. When you ask, ask Allah; when you seek help, seek help from Allah.\"</b> Then he said: <b>\"And know that if the whole nation gathered to benefit you with something, they could only benefit you with what Allah has written for you; and if they gathered to harm you with something, they could only harm you with what Allah has written against you. The pens have been lifted and the pages have dried.\"</b><br><br>What does <b>\"be mindful of Allah\"</b> mean? Keep His commands: pray, be truthful, and stay away from what He forbade. If you do, <b>Allah will protect you</b> and care for you, and you will find Him with you, helping in every matter. When you need something, ask Allah first and don't fear people — everything is in Allah's hand. Ibn Abbas kept these words all his life, and they remain <b>advice for every Muslim child</b> to this day."
+    },
+    "choice": {
+     "q": {
+      "ar": "ما معنى «احفظِ اللهَ يحفظْك»؟",
+      "en": "What does \"Be mindful of Allah and He will protect you\" mean?"
+     },
+     "opts": [
+      {
+       "t": {
+        "ar": "أن تحفظَ أوامرَ اللهِ فيحفظَك ويرعاك",
+        "en": "Keep Allah's commands and He will protect and care for you"
+       },
+       "c": true,
+       "exp": {
+        "ar": "أحسنت! من حفظَ حدودَ اللهِ حفظَه الله.",
+        "en": "Well done! Whoever guards Allah's limits, Allah guards him."
+       }
+      },
+      {
+       "t": {
+        "ar": "أن تحفظَ أسماءَ الناس",
+        "en": "Memorize people's names"
+       },
+       "c": false,
+       "exp": {
+        "ar": "لا، بل أن تحفظَ أوامرَ اللهِ ونواهيَه.",
+        "en": "No — it means keeping Allah's commands and prohibitions."
+       }
+      },
+      {
+       "t": {
+        "ar": "أن تبقى في البيتِ دائماً",
+        "en": "Always stay at home"
+       },
+       "c": false,
+       "exp": {
+        "ar": "لا، بل أن تطيعَ اللهَ أينما كنت.",
+        "en": "No — it means obeying Allah wherever you are."
+       }
+      }
+     ]
+    }
+   }
+  ],
+  "quiz": [
+   {
+    "q": {
+     "ar": "أين كان ابنُ عبّاسٍ حين سمعَ هذه الوصيّة؟",
+     "en": "Where was Ibn Abbas when he heard this advice?"
+    },
+    "opts": [
+     {
+      "t": {
+       "ar": "في السوق",
+       "en": "In the market"
+      },
+      "c": false
+     },
+     {
+      "t": {
+       "ar": "راكباً خلفَ النبيِّ ﷺ",
+       "en": "Riding behind the Prophet ﷺ"
+      },
+      "c": true
+     },
+     {
+      "t": {
+       "ar": "في البحر",
+       "en": "At sea"
+      },
+      "c": false
+     }
+    ]
+   },
+   {
+    "q": {
+     "ar": "إذا احتجتَ شيئاً، ممّن تطلبُه أوّلاً؟",
+     "en": "If you need something, whom do you ask first?"
+    },
+    "opts": [
+     {
+      "t": {
+       "ar": "من الله",
+       "en": "Allah"
+      },
+      "c": true
+     },
+     {
+      "t": {
+       "ar": "من أقوى الناس",
+       "en": "The strongest person"
+      },
+      "c": false
+     },
+     {
+      "t": {
+       "ar": "لا أطلبُ أبداً",
+       "en": "I never ask"
+      },
+      "c": false
+     }
+    ]
+   },
+   {
+    "q": {
+     "ar": "هل يستطيعُ الناسُ أن ينفعوك بشيءٍ لم يكتبْه الله؟",
+     "en": "Can people benefit you with something Allah has not written?"
+    },
+    "opts": [
+     {
+      "t": {
+       "ar": "نعم إذا اجتمعوا",
+       "en": "Yes, if they all gather"
+      },
+      "c": false
+     },
+     {
+      "t": {
+       "ar": "نعم إذا كانوا أغنياء",
+       "en": "Yes, if they are rich"
+      },
+      "c": false
+     },
+     {
+      "t": {
+       "ar": "لا، فكلُّ شيءٍ بيدِ الله",
+       "en": "No — everything is in Allah's hand"
+      },
+      "c": true
+     }
+    ]
+   }
+  ],
+  "moral": {
+   "ar": "من حفظَ اللهَ بطاعتِه حفظَه اللهُ ورعاه، والمؤمنُ يسألُ اللهَ ويستعينُ به ولا يخافُ إلا منه.",
+   "en": "Whoever is mindful of Allah through obedience, Allah protects and cares for him; the believer asks Allah, seeks His help, and fears none but Him."
+  },
+  "badge": {
+   "icon": "🐪",
+   "title": {
+    "ar": "وِسامُ الوصيّةِ المحفوظة",
+    "en": "Badge of the Treasured Advice"
+   }
+  },
+  "reflect": [
+   {
+    "ar": "كيف تحفظُ اللهَ في يومِك: في صلاتِك ولسانِك وعينيك؟",
+    "en": "How do you stay mindful of Allah in your day — in your prayer, tongue and eyes?"
+   },
+   {
+    "ar": "متى دعوتَ اللهَ في أمرٍ فيسّرَه لك؟",
+    "en": "When did you ask Allah for something and He made it easy for you?"
+   }
+  ],
+  "didYouKnow": [
+   {
+    "ar": "حديثُ «يا غلامُ إنّي أُعلِّمُك كلمات» رواه الترمذي (٢٥١٦) وقال: حسنٌ صحيح، وصحّحه الألباني",
+    "en": "The hadith \"Young boy, I will teach you some words\" is narrated by al-Tirmidhi (2516), who called it hasan sahih; al-Albani graded it authentic"
+   },
+   {
+    "ar": "جعلَ الإمامُ النوويُّ هذا الحديثَ من «الأربعين النوويّة» (الحديث ١٩) لعظيمِ قدرِه — المصدر: الأربعون النووية",
+    "en": "Imam al-Nawawi included this hadith in his \"Forty Hadith\" (no. 19) for its great value — Source: al-Arba'un an-Nawawiyya"
+   }
+  ]
+ },
+ {
+  "icon": "🚪",
+  "scene": "madinah",
+  "character": "🚪",
+  "title": {
+   "ar": "«كان هذا الفتى أعقلَ منّي»",
+   "en": "\"This Young Man Was Wiser Than Me\""
+  },
+  "pages": [
+   {
+    "scene": "madinah",
+    "character": "🌬️",
+    "text": {
+     "ar": "لمّا تُوفِّيَ النبيُّ ﷺ، قال <b>ابنُ عبّاسٍ</b> — وهو فتىً صغير — لصاحبٍ له من الأنصار: <b>«هلُمَّ فلنسألْ أصحابَ النبيِّ ﷺ، فإنّهم اليومَ كثير»</b>. فتعجّبَ الأنصاريُّ وقال: <b>عجباً لك يا ابنَ عبّاس! أترى الناسَ يحتاجونَ إليك وفي الناسِ من أصحابِ النبيِّ ﷺ مَن ترى؟!</b> وتركَ الأمرَ وانصرف.<br><br>أمّا ابنُ عبّاسٍ فلم ييأس، بل أقبلَ يسألُ الصحابة. كان إذا بلغه حديثٌ عند رجلٍ، ذهبَ إلى بابِه فوجدَه نائماً وقتَ القيلولة، فلا يُوقِظُه، بل <b>يتوسّدُ رداءَه على البابِ والريحُ تسفي عليه الترابَ</b> حتى يخرجَ الرجل! فيقولُ الصحابيُّ متعجّباً: يا ابنَ عمِّ رسولِ الله، ألا أرسلتَ إليَّ فآتيك؟ فيقول: <b>«لا، أنا أحقُّ أن آتيَك»</b>، فيسألُه عن الحديث.<br><br>ومرّت السنون، وكبرَ ابنُ عبّاسٍ وصار عالماً، فاجتمعَ الناسُ حولَه يسألونه. فرآه ذلك الأنصاريُّ والناسُ مِن حولِه، فقال كلمةً صادقة: <b>«كان هذا الفتى أعقلَ منّي!»</b> لقد فهمَ متأخّراً أنّ <b>الفرصةَ إذا ذهبت لا تعود</b>، وأنّ العلمَ يحتاجُ همّةً تبدأُ من الصغر ولا تنتظرُ الغد.",
+     "en": "When the Prophet ﷺ passed away, <b>Ibn Abbas</b> — still a young boy — said to an Ansari friend: <b>\"Come, let us ask the Prophet's ﷺ Companions, for today they are many.\"</b> The Ansari was surprised: <b>How strange you are, Ibn Abbas! Do you think people will ever need you, when among them are the Prophet's ﷺ Companions you see?!</b> He dropped the idea and went off.<br><br>But Ibn Abbas did not give up — he set about asking the Companions. When he heard that a man had a hadith, he would go to his door and, finding him napping at midday, would not wake him. Instead he would <b>rest his head on his cloak at the door while the wind blew dust over him</b> until the man came out! The Companion would say in surprise: Cousin of the Messenger of Allah, why didn't you send for me so I could come to you? He would say: <b>\"No — I am more obliged to come to you,\"</b> and ask him about the hadith.<br><br>Years passed. Ibn Abbas grew up and became a scholar, and people gathered around him with questions. That Ansari saw him with the people around him and said honestly: <b>\"This young man was wiser than me!\"</b> He understood too late that <b>a missed chance does not return</b>, and that knowledge needs a determination that starts young and doesn't wait for tomorrow."
+    },
+    "choice": {
+     "q": {
+      "ar": "لماذا قال الأنصاريُّ «كان هذا الفتى أعقلَ منّي»؟",
+      "en": "Why did the Ansari say \"This young man was wiser than me\"?"
+     },
+     "opts": [
+      {
+       "t": {
+        "ar": "لأنّ ابنَ عبّاسٍ كان أطولَ منه",
+        "en": "Because Ibn Abbas was taller"
+       },
+       "c": false,
+       "exp": {
+        "ar": "لا، بل لأنّه اغتنمَ الفرصةَ وطلبَ العلم.",
+        "en": "No — because he seized the chance and sought knowledge."
+       }
+      },
+      {
+       "t": {
+        "ar": "لأنّ ابنَ عبّاسٍ اغتنمَ الفرصةَ فصار عالماً",
+        "en": "Because Ibn Abbas seized the chance and became a scholar"
+       },
+       "c": true,
+       "exp": {
+        "ar": "صحيح! والأنصاريُّ فهمَ متأخّراً قيمةَ الوقت.",
+        "en": "Correct! The Ansari understood the value of time too late."
+       }
+      },
+      {
+       "t": {
+        "ar": "لأنّ ابنَ عبّاسٍ كان غنيّاً",
+        "en": "Because Ibn Abbas was rich"
+       },
+       "c": false,
+       "exp": {
+        "ar": "لا، فالعلمُ لا يُشترى بالمال بل بالهمّة.",
+        "en": "No — knowledge isn't bought with money but with determination."
+       }
+      }
+     ]
+    }
+   }
+  ],
+  "quiz": [
+   {
+    "q": {
+     "ar": "ماذا قال الأنصاريُّ لابنِ عبّاسٍ في البداية؟",
+     "en": "What did the Ansari tell Ibn Abbas at first?"
+    },
+    "opts": [
+     {
+      "t": {
+       "ar": "هيّا نذهبُ معاً فوراً",
+       "en": "Let's go together right away"
+      },
+      "c": false
+     },
+     {
+      "t": {
+       "ar": "أترى الناسَ يحتاجونَ إليك؟",
+       "en": "Do you think people will need you?"
+      },
+      "c": true
+     },
+     {
+      "t": {
+       "ar": "أنا أعلمُ منك",
+       "en": "I know more than you"
+      },
+      "c": false
+     }
+    ]
+   },
+   {
+    "q": {
+     "ar": "ماذا كان يفعلُ ابنُ عبّاسٍ إذا وجدَ الصحابيَّ نائماً؟",
+     "en": "What did Ibn Abbas do if he found the Companion asleep?"
+    },
+    "opts": [
+     {
+      "t": {
+       "ar": "ينتظرُ على بابِه حتى يخرج",
+       "en": "Waited at his door until he came out"
+      },
+      "c": true
+     },
+     {
+      "t": {
+       "ar": "يطرقُ البابَ بقوّة",
+       "en": "Knocked hard on the door"
+      },
+      "c": false
+     },
+     {
+      "t": {
+       "ar": "يرجعُ ولا يعود",
+       "en": "Went home and never returned"
+      },
+      "c": false
+     }
+    ]
+   },
+   {
+    "q": {
+     "ar": "ما الدرسُ الأهمُّ من القصّة؟",
+     "en": "What is the most important lesson of the story?"
+    },
+    "opts": [
+     {
+      "t": {
+       "ar": "أن نؤجّلَ التعلّمَ إلى الكِبَر",
+       "en": "To postpone learning until we're older"
+      },
+      "c": false
+     },
+     {
+      "t": {
+       "ar": "أن نتعلّمَ من الكتبِ فقط",
+       "en": "To learn only from books"
+      },
+      "c": false
+     },
+     {
+      "t": {
+       "ar": "أن نغتنمَ الفرصةَ ولا ننتظرَ الغد",
+       "en": "To seize the chance and not wait for tomorrow"
+      },
+      "c": true
+     }
+    ]
+   }
+  ],
+  "moral": {
+   "ar": "الفرصةُ إذا ذهبت لا تعود، فاغتنمْ صِغرَك ووقتَك في طلبِ العلمِ قبلَ أن تندم.",
+   "en": "A missed chance does not return — use your youth and time to seek knowledge before you regret it."
+  },
+  "badge": {
+   "icon": "🚪",
+   "title": {
+    "ar": "وِسامُ اغتنامِ الفرصة",
+    "en": "Badge of Seizing the Chance"
+   }
+  },
+  "reflect": [
+   {
+    "ar": "ما الشيءُ المفيدُ الذي تؤجّلُه دائماً؟ متى ستبدأُ به؟",
+    "en": "What useful thing do you keep postponing? When will you start it?"
+   },
+   {
+    "ar": "لو قال لك أحدٌ «أنت صغيرٌ على هذا»، ماذا تتعلّمُ من ابنِ عبّاس؟",
+    "en": "If someone told you \"you're too young for this,\" what would you learn from Ibn Abbas?"
+   }
+  ],
+  "didYouKnow": [
+   {
+    "ar": "قصّةُ ابنِ عبّاسٍ والفتى الأنصاريّ رواها الدارميُّ في مقدّمةِ سننِه (باب الرحلة في طلب العلم)، وصحّحها الحاكمُ على شرطِ البخاريّ — المصدر: سنن الدارمي، إسلام ويب",
+    "en": "The story of Ibn Abbas and the Ansari youth is narrated by al-Darimi in the introduction to his Sunan (chapter on travelling to seek knowledge), and al-Hakim graded it authentic on al-Bukhari's criteria — Sources: Sunan ad-Darimi, Islamweb"
+   },
+   {
+    "ar": "كان ابنُ عبّاسٍ عند وفاةِ النبيِّ ﷺ في نحوِ الثالثةَ عشرةَ من عمرِه — المصدر: سير أعلام النبلاء للذهبي",
+    "en": "Ibn Abbas was about thirteen years old when the Prophet ﷺ passed away — Source: Siyar A'lam an-Nubala' by al-Dhahabi"
+   }
+  ]
+ },
+ {
+  "icon": "🏳️",
+  "scene": "mihrab",
+  "character": "🏳️",
+  "title": {
+   "ar": "مع أشياخِ بدرٍ: سرُّ سورةِ النصر",
+   "en": "Among the Elders of Badr: The Secret of Surat an-Nasr"
+  },
+  "pages": [
+   {
+    "scene": "mihrab",
+    "character": "👴",
+    "text": {
+     "ar": "كان <b>عمرُ بنُ الخطّاب</b> يُدخِلُ الشابَّ <b>ابنَ عبّاسٍ</b> في مجلسِه مع <b>كبارِ الصحابةِ الذين شهدوا بدراً</b>! فوجدَ بعضُهم في نفسِه وقال: <b>لِمَ تُدخِلُ هذا الفتى معنا ولنا أبناءٌ مثلُه؟</b> فقال عمر: <b>«إنّه مَن قد علمتم»</b> — أي تعرفونَ علمَه وفضلَه.<br><br>فدعاهم عمرُ يوماً وأدخلَ ابنَ عبّاسٍ معهم، ليُريَهم علمَه. فسألهم: ما تقولونَ في قولِ اللهِ تعالى: <b>﴿ إِذَا جَاءَ نَصْرُ اللَّهِ وَالْفَتْحُ ﴾</b>؟ فقال بعضُهم: أُمِرنا أن نحمدَ اللهَ ونستغفرَه إذا نصرَنا وفتحَ علينا، وسكتَ بعضُهم. فقال عمر: أكذلك تقولُ يا ابنَ عبّاس؟ قال: لا. قال: فما تقول؟<br><br>قال ابنُ عبّاسٍ بأدبٍ وثقة: <b>هي إشارةٌ إلى قُربِ أجلِ رسولِ اللهِ ﷺ، أعلمَه اللهُ به</b>: إذا جاءَ النصرُ وفُتِحت مكّةُ ودخلَ الناسُ في الإسلامِ أفواجاً، فقد أتمَّ ﷺ رسالتَه، فليُكثِرْ من التسبيحِ والاستغفارِ استعداداً للقاءِ ربِّه. فقال عمر: <b>«ما أعلمُ منها إلا ما تقول»</b>. لقد فهمَ ابنُ عبّاسٍ ما وراءَ الكلمات، لأنّه <b>تدبّرَ القرآنَ بعمق</b>، وعرفَ عمرُ قدرَه فقدّمَه رغمَ صِغرِه.",
+     "en": "<b>Umar ibn al-Khattab</b> used to bring young <b>Ibn Abbas</b> into his gathering with <b>the senior Companions who had fought at Badr</b>! Some of them felt uneasy and said: <b>Why do you bring this boy in with us when we have sons his age?</b> Umar said: <b>\"He is who you know him to be\"</b> — you know his knowledge and merit.<br><br>One day Umar called them and brought Ibn Abbas in, to show them his knowledge. He asked: What do you say about Allah's words <b>﴿When the victory of Allah and the conquest come﴾</b>? Some said: We are commanded to praise Allah and seek His forgiveness when He grants us victory and conquest; others stayed silent. Umar said: Is that what you say, Ibn Abbas? He said: No. Umar said: Then what do you say?<br><br>Ibn Abbas said politely and confidently: <b>It is a sign that the Messenger of Allah's ﷺ time was near, which Allah informed him of</b>: when victory came, Makkah was opened and people entered Islam in crowds, he ﷺ had completed his mission, so he should glorify Allah and seek forgiveness much, preparing to meet his Lord. Umar said: <b>\"I know nothing of it except what you say.\"</b> Ibn Abbas understood what lay beneath the words because he <b>reflected deeply on the Qur'an</b> — and Umar recognized his worth and honored him despite his young age."
+    },
+    "choice": {
+     "q": {
+      "ar": "لماذا كان عمرُ يُدخِلُ ابنَ عبّاسٍ مع كبارِ الصحابة؟",
+      "en": "Why did Umar bring Ibn Abbas in with the senior Companions?"
+     },
+     "opts": [
+      {
+       "t": {
+        "ar": "لأنّه كان قريبَه فقط",
+        "en": "Only because he was a relative"
+       },
+       "c": false,
+       "exp": {
+        "ar": "لا، بل لعلمِه وفهمِه للقرآن.",
+        "en": "No — because of his knowledge and understanding of the Qur'an."
+       }
+      },
+      {
+       "t": {
+        "ar": "لعلمِه وفهمِه العميقِ للقرآن",
+        "en": "For his knowledge and deep understanding of the Qur'an"
+       },
+       "c": true,
+       "exp": {
+        "ar": "صحيح! والعلمُ يرفعُ صاحبَه ولو كان صغيراً.",
+        "en": "Correct! Knowledge raises its owner even if young."
+       }
+      },
+      {
+       "t": {
+        "ar": "ليُقدِّمَ لهم الطعام",
+        "en": "To serve them food"
+       },
+       "c": false,
+       "exp": {
+        "ar": "لا، بل ليستمعوا إلى علمِه.",
+        "en": "No — so they could hear his knowledge."
+       }
+      }
+     ]
+    }
+   }
+  ],
+  "quiz": [
+   {
+    "q": {
+     "ar": "عن أيِّ سورةٍ سألَ عمرُ الصحابة؟",
+     "en": "About which surah did Umar ask the Companions?"
+    },
+    "opts": [
+     {
+      "t": {
+       "ar": "سورةِ النصر",
+       "en": "An-Nasr"
+      },
+      "c": true
+     },
+     {
+      "t": {
+       "ar": "سورةِ الفيل",
+       "en": "Al-Fil"
+      },
+      "c": false
+     },
+     {
+      "t": {
+       "ar": "سورةِ الكوثر",
+       "en": "Al-Kawthar"
+      },
+      "c": false
+     }
+    ]
+   },
+   {
+    "q": {
+     "ar": "ماذا فهمَ ابنُ عبّاسٍ من السورة؟",
+     "en": "What did Ibn Abbas understand from the surah?"
+    },
+    "opts": [
+     {
+      "t": {
+       "ar": "أنّها عن التجارة",
+       "en": "That it's about trade"
+      },
+      "c": false
+     },
+     {
+      "t": {
+       "ar": "أنّها عن الأمطار",
+       "en": "That it's about rain"
+      },
+      "c": false
+     },
+     {
+      "t": {
+       "ar": "أنّها إشارةٌ إلى قُربِ أجلِ النبيِّ ﷺ",
+       "en": "That it signaled the Prophet's ﷺ time was near"
+      },
+      "c": true
+     }
+    ]
+   },
+   {
+    "q": {
+     "ar": "ماذا قال عمرُ بعدَ جوابِ ابنِ عبّاس؟",
+     "en": "What did Umar say after Ibn Abbas's answer?"
+    },
+    "opts": [
+     {
+      "t": {
+       "ar": "أخطأتَ يا بنيّ",
+       "en": "You're wrong, my son"
+      },
+      "c": false
+     },
+     {
+      "t": {
+       "ar": "«ما أعلمُ منها إلا ما تقول»",
+       "en": "\"I know nothing of it except what you say\""
+      },
+      "c": true
+     },
+     {
+      "t": {
+       "ar": "اسكتْ أمامَ الكبار",
+       "en": "Be quiet before your elders"
+      },
+      "c": false
+     }
+    ]
+   }
+  ],
+  "moral": {
+   "ar": "العلمُ وتدبّرُ القرآنِ يرفعانِ صاحبَهما ولو كان صغيراً، والقائدُ الحكيمُ يعرفُ قدرَ أهلِ العلمِ فيُقدِّمُهم.",
+   "en": "Knowledge and reflection on the Qur'an raise their owner even if young; the wise leader recognizes people of knowledge and honors them."
+  },
+  "badge": {
+   "icon": "🏳️",
+   "title": {
+    "ar": "وِسامُ الفهمِ العميق",
+    "en": "Badge of Deep Understanding"
+   }
+  },
+  "reflect": [
+   {
+    "ar": "هل تقرأُ السورةَ القصيرةَ وتسألُ عن معناها؟ جرّبْ مع سورةِ النصر!",
+    "en": "Do you read short surahs and ask about their meaning? Try it with Surat an-Nasr!"
+   },
+   {
+    "ar": "كيف تتكلّمُ بأدبٍ وثقةٍ أمامَ الكبار؟",
+    "en": "How do you speak politely and confidently before elders?"
+   }
+  ],
+  "didYouKnow": [
+   {
+    "ar": "قصّةُ عمرَ وابنِ عبّاسٍ وأشياخِ بدرٍ وسورةِ النصر رواها البخاري (٤٩٧٠)",
+    "en": "The story of Umar, Ibn Abbas, the elders of Badr and Surat an-Nasr is narrated by al-Bukhari (4970)"
+   },
+   {
+    "ar": "سورةُ النصرِ ثلاثُ آياتٍ فقط، وقيل إنّها من آخرِ ما نزلَ من القرآنِ سورةً كاملة — المصدر: صحيح مسلم (٣٠٢٤)، تفسير ابن كثير",
+    "en": "Surat an-Nasr is only three verses, and is said to be among the last complete surahs revealed — Sources: Sahih Muslim (3024), Tafsir Ibn Kathir"
    }
   ]
  }

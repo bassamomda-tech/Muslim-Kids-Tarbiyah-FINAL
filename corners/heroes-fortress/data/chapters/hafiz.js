@@ -4,7 +4,7 @@
 window.HISN = window.HISN || {}; HISN.chapters = HISN.chapters || {};
 HISN.chapters.hafiz = {
   id: 'hafiz', era: 'heart', kind: 'name', icon: 'shield',
-  name: { ar: 'الحفيظ', en: 'The Protector' },
+  name: { ar: 'الحفيظُ الحافظ', en: 'The Protector, the Guardian' },
   tag:  { ar: 'يَحفظُك ويَرعاك', en: 'He guards & watches over you' },
   accent: '#3C7D6E', accent2: '#5EA08F',
   rooms: ['knowledge', 'story', 'memorize', 'activities', 'treasures'],
@@ -27,6 +27,7 @@ HISN.chapters.hafiz = {
       { ar: 'يُحصي أعمالَك فلا تَضيعُ حسنةٌ ولا تُنسى.', en: 'He records your deeds — no good deed is lost or forgotten.' },
       { ar: '«احفَظِ اللهَ يَحفَظْك» — احفظْ أوامرَه يَحفظْك.', en: '"Guard Allah, and He will guard you" — keep His commands.' },
       { ar: 'أذكارُ الصباحِ والمساءِ حِصنٌ يَحفظُك.', en: 'Morning and evening remembrances are a fortress that guards you.' },
+      { ar: 'ومن أسمائه <b>«الحافظ»</b>: قال يعقوبُ عليه السلام: <b>﴿فَاللَّهُ خَيْرٌ حَافِظًا﴾</b> (يوسف ٦٤) — فلا حافظَ خيرٌ من الله.', en: 'Another of His Names is <b>“Al-Hafiz”</b>: Prophet Ya‘qub said: <b>“Allah is the best Guardian”</b> (Yusuf 64) — no protector is better than Allah.' },
     ],
     ayah: { ar: '﴿ فَاللَّهُ خَيْرٌ حَافِظًا ۖ وَهُوَ أَرْحَمُ الرَّاحِمِينَ ﴾', ref: { ar: 'يوسف ٦٤', en: 'Yusuf 64' } },
   },

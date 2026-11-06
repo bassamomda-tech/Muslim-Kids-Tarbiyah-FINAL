@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>صانع المهارات | Skills Maker</title>
-<meta name="description" content="صانع المهارات: رحلاتٌ لتعلّم مهاراتٍ حقيقية — التاجر الصغير، مستكشف التاريخ، العالِم، الطبيب، المهندس، المزارع، الصانع الصغير — مع مهمّاتٍ عملية وحلقات بودكاست.">
+<meta name="description" content="صانع المهارات: رحلاتٌ لتعلّم مهاراتٍ حقيقية — التاجر الصغير، مستكشف التاريخ، العالِم، الطبيب، المهندس، المزارع، الصانع الصغير، الفقيه، المبرمج، المتفكّر — مع مهمّاتٍ عملية وحلقات بودكاست.">
 <link rel="icon" href="../../favicon.ico">
 <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&family=Nunito:wght@400;700;800;900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../treasures/tr.css">
@@ -48,7 +48,13 @@
     { id: 'farmer',    ic: '🌱', c: '#27AE60', n: 8, t: { ar: 'المزارع الصغير', en: 'The Little Farmer' }, tag: { ar: 'البذرة · التربة · الحصاد', en: 'Seed · soil · harvest' },
       d: { ar: 'الله فالق الحبّ والنوى: ازرع بذرتك، واعتنِ بها، وسجّل نموّها، واجعلها صدقةً جارية.', en: 'Allah splits the seed and the date-stone: plant your seed, care for it, record its growth, make it ongoing charity.' } },
     { id: 'maker',     ic: '🧰', c: '#5E8C31', n: 10, t: { ar: 'الصانع الصغير', en: 'The Little Maker' }, tag: { ar: 'اصنع · اكتشف · ساعد', en: 'Make · discover · help' },
-      d: { ar: 'فانوسٌ لركن صلاتك، ومجسّم الكعبة، ودورة الماء، ومرصد القمر، وطبقك الأوّل، وصندوق صدقتك — اصنع بيديك وتعلّم.', en: 'A lantern for your prayer corner, a Kaaba model, the water cycle, a moon observatory, your first dish and a sadaqah box — make it and learn.' } }
+      d: { ar: 'فانوسٌ لركن صلاتك، ومجسّم الكعبة، ودورة الماء، ومرصد القمر، وطبقك الأوّل، وصندوق صدقتك — اصنع بيديك وتعلّم.', en: 'A lantern for your prayer corner, a Kaaba model, the water cycle, a moon observatory, your first dish and a sadaqah box — make it and learn.' } },
+    { id: 'faqih', ic: '⚖️', c: '#117A65', n: 8, t: { ar: 'الفقيه الصغير', en: 'The Little Faqih' }, tag: { ar: 'الفقه · القواعد · السؤال الصحيح', en: 'Fiqh · principles · asking rightly' },
+      d: { ar: 'ما هو الفقه؟ الأحكام الخمسة، و«إنما الأعمال بالنيات»، واليقين لا يزول بالشك، وتيسير الشريعة، والحلال والحرام — ثم كيف أسأل أهل العلم بأدب.', en: 'What is fiqh? The five rulings, “actions are by intentions”, certainty is not removed by doubt, the ease of the Shari‘ah, halal and haram — and how to ask scholars politely.' } },
+    { id: 'coder', ic: '💻', c: '#3949AB', n: 8, t: { ar: 'المبرمج الصغير', en: 'The Little Programmer' }, tag: { ar: 'الخوارزمية · التكرار · الإتقان', en: 'Algorithms · loops · excellence' },
+      d: { ar: 'من الخوارزمي إلى برنامجك الأوّل: خطواتٌ مرتّبة، وتكرارٌ وشروط، ومتغيّرات، وتصحيح الأخطاء بإتقان — ومبرمجٌ أمينٌ على الإنترنت.', en: 'From al-Khwarizmi to your first program: ordered steps, loops and conditions, variables, fixing bugs with excellence — and being a trustworthy coder online.' } },
+    { id: 'mutafakkir', ic: '🔭', c: '#7D3C98', n: 8, t: { ar: 'المتفكّر الصغير — معجزات القرآن', en: 'The Little Thinker — Miracles of the Qur’an' }, tag: { ar: 'التدبّر · التحدّي · آيات الكون', en: 'Reflection · the challenge · signs in the universe' },
+      d: { ar: 'كيف أتدبّر آية؟ تحدّي القرآن، وحفظه عبر القرون، وأخبارٌ صدقت، وآياتٌ في السماء والبحر والجبال — مع التفسير الصحيح دون مبالغة.', en: 'How do I reflect on a verse? The Qur’an’s challenge, its preservation across centuries, prophecies that came true, and signs in the sky, sea and mountains — with sound tafsir, no exaggeration.' } },
   ];
   function stars(id) { try { return (JSON.parse(localStorage.getItem('tr:skill-' + id)) || []).length; } catch (e) { return 0; } }
   window.TR_PAGE = {

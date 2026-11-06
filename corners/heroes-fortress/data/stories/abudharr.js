@@ -1,4 +1,4 @@
-/* data/stories/abudharr.js — Heroes · Abu Dharr al-Ghifari — sources: صور من حياة الصحابة (الباشا) · إسلام ويب · الدرر السنية · البداية والنهاية */
+/* data/stories/abudharr.js — Heroes · Abu Dharr al-Ghifari — sources: صور من حياة الصحابة (الباشا) · إسلام ويب · الدرر السنية · البداية والنهاية · صحيح مسلم · سيرة ابن هشام · المستدرك */
 window.HISN_STORIES = window.HISN_STORIES || {};
 HISN_STORIES.abudharr = [
   { icon:'🦅', scene:'kaaba', character:'🗣️',
@@ -62,4 +62,364 @@ HISN_STORIES.abudharr = [
     reflect:[ {ar:'هل أنت صادقٌ في كلِّ كلامِك كأبي ذر؟',en:'Are you truthful in all your speech like Abu Dharr?'}, {ar:'هل تقنعُ بما عندَك وتُعطي ما زاد للمحتاجين؟',en:'Are you content with what you have and give the extra to the needy?'} ],
     didYouKnow:[ {ar:'حديثُ «ما أظلّتِ الخضراءُ ولا أقلّتِ الغبراءُ أصدقَ من أبي ذر» رواه الترمذيُّ وغيرُه — المصدر: الدرر السنية',en:'The hadith "The sky has not shaded nor the earth carried anyone more truthful than Abu Dharr" is reported by at-Tirmidhi and others — Source: ad-Durar as-Saniyya'}, {ar:'تنبّأ النبيُّ ﷺ بأنّ أبا ذرٍّ يعيشُ وحدَه ويموتُ وحدَه، فكان كذلكَ في الرَّبَذَة — المصدر: البداية والنهاية',en:'The Prophet ﷺ foretold Abu Dharr would live alone and die alone — and so it was, in ar-Rabadha — Source: Al-Bidaya wa an-Nihaya'} ],
   },
+ {
+  "icon": "🤲",
+  "scene": "scales",
+  "character": "🤲",
+  "title": {
+   "ar": "«يا أبا ذرّ، إنّك ضعيفٌ وإنّها أمانة»",
+   "en": "\"Abu Dharr, You Are Weak, and It Is a Trust\""
+  },
+  "pages": [
+   {
+    "scene": "scales",
+    "character": "⚖️",
+    "text": {
+     "ar": "جاءَ <b>أبو ذرٍّ</b> يوماً إلى النبيِّ ﷺ وقال: <b>«يا رسولَ الله، ألا تستعملُني؟»</b> — أي: ألا تجعلُني أميراً أو والياً على عمل؟ كان أبو ذرٍّ صادقاً شجاعاً تقيّاً، يحبُّ أن يخدمَ الإسلام.<br><br>فضربَ النبيُّ ﷺ بيدِه على <b>منكبِه بحنان</b> وقال: <b>«يا أبا ذرّ، إنّك ضعيف، وإنّها أمانة، وإنّها يومَ القيامةِ خِزيٌ وندامة، إلّا مَن أخذَها بحقِّها وأدّى الذي عليه فيها»</b>. وفي روايةٍ قال له: <b>«إنّي أراكَ ضعيفاً، وإنّي أُحبُّ لك ما أُحبُّ لنفسي»</b>.<br><br>لم يقصدِ النبيُّ ﷺ أنّ أبا ذرٍّ ضعيفٌ في إيمانِه — فهو أصدقُ الناسِ لهجة! — بل أنّ <b>الإمارةَ تحتاجُ قدرةً خاصّةً</b> على إدارةِ الناسِ وأموالِهم، وليست هذه موهبةَ كلِّ أحد. فقبِلَ أبو ذرٍّ النصيحةَ برضا. تعلّمَ منها أنّ <b>المنصبَ ليس جائزةً بل مسؤوليّة</b>، وأنّ لكلِّ إنسانٍ مواهبَ يخدمُ بها دينَه، والصادقُ يعرفُ قدرَ نفسِه.",
+     "en": "One day <b>Abu Dharr</b> came to the Prophet ﷺ and said: <b>\"O Messenger of Allah, will you not appoint me?\"</b> — make me a governor or official over some task? Abu Dharr was truthful, brave and pious, and loved to serve Islam.<br><br>The Prophet ﷺ patted him <b>tenderly on the shoulder</b> and said: <b>\"O Abu Dharr, you are weak, and it is a trust, and on the Day of Judgment it is disgrace and regret — except for one who takes it rightfully and fulfills what is due in it.\"</b> In another narration he said: <b>\"I see you are weak, and I love for you what I love for myself.\"</b><br><br>The Prophet ﷺ did not mean Abu Dharr was weak in faith — he was the most truthful of people in speech! — but that <b>leadership needs a special ability</b> to manage people and their wealth, and not everyone has that gift. Abu Dharr accepted the advice willingly. He learned that <b>a position is not a prize but a responsibility</b>, that every person has talents to serve their religion, and that a truthful person knows himself."
+    },
+    "choice": {
+     "q": {
+      "ar": "لماذا لم يجعلِ النبيُّ ﷺ أبا ذرٍّ أميراً؟",
+      "en": "Why didn't the Prophet ﷺ make Abu Dharr a governor?"
+     },
+     "opts": [
+      {
+       "t": {
+        "ar": "لأنّه لا يحبُّه",
+        "en": "Because he didn't love him"
+       },
+       "c": false,
+       "exp": {
+        "ar": "لا، بل قال: «أُحبُّ لك ما أُحبُّ لنفسي».",
+        "en": "No — he said: \"I love for you what I love for myself.\""
+       }
+      },
+      {
+       "t": {
+        "ar": "لأنّ الإمارةَ أمانةٌ ثقيلةٌ تحتاجُ قدرةً خاصّة",
+        "en": "Because leadership is a heavy trust needing a special ability"
+       },
+       "c": true,
+       "exp": {
+        "ar": "صحيح! فنصحَه حبّاً له وخوفاً عليه.",
+        "en": "Correct! He advised him out of love and concern for him."
+       }
+      },
+      {
+       "t": {
+        "ar": "لأنّه كان ضعيفَ الإيمان",
+        "en": "Because his faith was weak"
+       },
+       "c": false,
+       "exp": {
+        "ar": "لا، بل كان من أصدقِ الصحابةِ وأتقاهم.",
+        "en": "No — he was among the most truthful and pious Companions."
+       }
+      }
+     ]
+    }
+   }
+  ],
+  "quiz": [
+   {
+    "q": {
+     "ar": "ماذا طلبَ أبو ذرٍّ من النبيِّ ﷺ؟",
+     "en": "What did Abu Dharr ask the Prophet ﷺ for?"
+    },
+    "opts": [
+     {
+      "t": {
+       "ar": "أن يجعلَه أميراً على عمل",
+       "en": "To be appointed over a task"
+      },
+      "c": true
+     },
+     {
+      "t": {
+       "ar": "مالاً كثيراً",
+       "en": "A lot of money"
+      },
+      "c": false
+     },
+     {
+      "t": {
+       "ar": "بيتاً كبيراً",
+       "en": "A big house"
+      },
+      "c": false
+     }
+    ]
+   },
+   {
+    "q": {
+     "ar": "ما الإمارةُ كما قال النبيُّ ﷺ؟",
+     "en": "What is leadership, as the Prophet ﷺ said?"
+    },
+    "opts": [
+     {
+      "t": {
+       "ar": "لعبةٌ سهلة",
+       "en": "An easy game"
+      },
+      "c": false
+     },
+     {
+      "t": {
+       "ar": "جائزةٌ للأقوياء",
+       "en": "A prize for the strong"
+      },
+      "c": false
+     },
+     {
+      "t": {
+       "ar": "أمانة",
+       "en": "A trust"
+      },
+      "c": true
+     }
+    ]
+   },
+   {
+    "q": {
+     "ar": "كيف تقبّلَ أبو ذرٍّ النصيحة؟",
+     "en": "How did Abu Dharr receive the advice?"
+    },
+    "opts": [
+     {
+      "t": {
+       "ar": "غضبَ وخاصمَ",
+       "en": "He got angry and argued"
+      },
+      "c": false
+     },
+     {
+      "t": {
+       "ar": "قبِلَها برضا",
+       "en": "He accepted it willingly"
+      },
+      "c": true
+     },
+     {
+      "t": {
+       "ar": "تركَ المدينة",
+       "en": "He left Madinah"
+      },
+      "c": false
+     }
+    ]
+   }
+  ],
+  "moral": {
+   "ar": "المنصبُ أمانةٌ ومسؤوليّةٌ لا جائزة، والناصحُ الصادقُ يُحبُّ لأخيه ما يُحبُّ لنفسِه.",
+   "en": "A position is a trust and responsibility, not a prize; the sincere adviser loves for his brother what he loves for himself."
+  },
+  "badge": {
+   "icon": "🤲",
+   "title": {
+    "ar": "وِسامُ حملِ الأمانة",
+    "en": "Badge of Bearing the Trust"
+   }
+  },
+  "reflect": [
+   {
+    "ar": "إذا اختاركَ المعلّمُ عريفاً للصفّ، كيف تحملُ هذه الأمانة؟",
+    "en": "If your teacher chose you as class monitor, how would you carry that trust?"
+   },
+   {
+    "ar": "هل قبلتَ نصيحةً من شخصٍ يحبُّك ولو لم تعجبْك في البداية؟",
+    "en": "Have you accepted advice from someone who loves you, even if you didn't like it at first?"
+   }
+  ],
+  "didYouKnow": [
+   {
+    "ar": "حديثُ «يا أبا ذرّ إنّك ضعيفٌ وإنّها أمانة» رواه مسلم (١٨٢٥)، ورواية «إنّي أُحبُّ لك ما أُحبُّ لنفسي» رواها مسلم (١٨٢٦)",
+    "en": "The hadith \"O Abu Dharr, you are weak and it is a trust\" is in Sahih Muslim (1825); the narration \"I love for you what I love for myself\" is in Muslim (1826)"
+   },
+   {
+    "ar": "قال الإمامُ النوويُّ: هذا الحديثُ أصلٌ عظيمٌ في اجتنابِ الولاياتِ لمن لا يقدرُ على القيامِ بها — المصدر: شرح النووي على صحيح مسلم",
+    "en": "Imam al-Nawawi said: this hadith is a great principle in avoiding positions of authority for one unable to fulfill them — Source: al-Nawawi's commentary on Sahih Muslim"
+   }
+  ]
+ },
+ {
+  "icon": "🚶",
+  "scene": "desert",
+  "character": "🚶",
+  "title": {
+   "ar": "«يمشي وحدَه»: أبو ذرٍّ في طريقِ تبوك",
+   "en": "\"He Walks Alone\": Abu Dharr on the Road to Tabuk"
+  },
+  "pages": [
+   {
+    "scene": "desert",
+    "character": "🏜️",
+    "text": {
+     "ar": "<b>يُروى</b> في كتبِ السيرةِ أنّ النبيَّ ﷺ لمّا خرجَ إلى <b>تبوكَ</b> في الحرِّ الشديدِ والسفرِ الطويل، تأخّرَ <b>أبو ذرٍّ</b> عن الجيش، لأنّ بعيرَه كان ضعيفاً هزيلاً لا يقدرُ على المشي! فلمّا رأى أبو ذرٍّ أنّ بعيرَه لن يلحقَ بالقوم، لم يرجعْ إلى بيتِه، بل <b>أخذَ متاعَه فحملَه على ظهرِه</b>، وانطلقَ ماشياً على قدمَيه يتبعُ أثرَ النبيِّ ﷺ في الصحراء.<br><br>ونزلَ النبيُّ ﷺ في بعضِ الطريق، فنظرَ رجلٌ من المسلمينَ فقال: يا رسولَ الله، هذا رجلٌ يمشي على الطريقِ وحدَه! فقال النبيُّ ﷺ: <b>«كُنْ أبا ذرّ»</b>. فلمّا اقتربَ الرجلُ وتأمّلوه قالوا: يا رسولَ الله، <b>هو واللهِ أبو ذرّ!</b><br><br>فقال النبيُّ ﷺ: <b>«رحمَ اللهُ أبا ذرّ، يمشي وحدَه، ويموتُ وحدَه، ويُبعَثُ وحدَه»</b>. وهذه القصّةُ — <b>وإن كان العلماءُ قد تكلّموا في إسنادِها</b> — تُذكَرُ لتُصوِّرَ لنا عزيمةَ أبي ذرّ: لم يجعلْ ضعفَ بعيرِه عذراً، بل مشى حتى لحقَ بالنبيِّ ﷺ. فالمؤمنُ <b>لا يبحثُ عن الأعذار</b> حين يُدعى إلى الخير.",
+     "en": "<b>It is narrated</b> in the books of Sira that when the Prophet ﷺ set out for <b>Tabuk</b> in fierce heat on a long journey, <b>Abu Dharr</b> fell behind the army because his camel was weak and thin and could not keep walking! When Abu Dharr saw his camel would never catch up, he did not go home. Instead he <b>took his belongings, carried them on his back</b>, and set off on foot, following the Prophet's ﷺ tracks through the desert.<br><br>The Prophet ﷺ stopped somewhere along the way, and a Muslim looked out and said: O Messenger of Allah, there is a man walking along the road alone! The Prophet ﷺ said: <b>\"Let it be Abu Dharr.\"</b> When the man came closer and they looked carefully, they said: O Messenger of Allah, <b>by Allah, it is Abu Dharr!</b><br><br>The Prophet ﷺ said: <b>\"May Allah have mercy on Abu Dharr: he walks alone, he will die alone, and he will be resurrected alone.\"</b> This story — <b>though scholars have spoken about its chain</b> — is told to picture Abu Dharr's determination: he did not make his weak camel an excuse, but walked until he caught up with the Prophet ﷺ. A believer <b>does not look for excuses</b> when called to good."
+    },
+    "choice": {
+     "q": {
+      "ar": "ماذا فعلَ أبو ذرٍّ حين ضعُفَ بعيرُه؟",
+      "en": "What did Abu Dharr do when his camel grew weak?"
+     },
+     "opts": [
+      {
+       "t": {
+        "ar": "رجعَ إلى بيتِه",
+        "en": "Went back home"
+       },
+       "c": false,
+       "exp": {
+        "ar": "لا، لم يجعلْ ضعفَ بعيرِه عذراً.",
+        "en": "No — he did not make his weak camel an excuse."
+       }
+      },
+      {
+       "t": {
+        "ar": "نامَ في الطريق",
+        "en": "Slept on the road"
+       },
+       "c": false,
+       "exp": {
+        "ar": "لا، بل واصلَ المسيرَ ماشياً.",
+        "en": "No — he kept going on foot."
+       }
+      },
+      {
+       "t": {
+        "ar": "حملَ متاعَه ومشى على قدمَيه",
+        "en": "Carried his belongings and walked on foot"
+       },
+       "c": true,
+       "exp": {
+        "ar": "أحسنت! هذه عزيمةُ المؤمنِ الذي لا يبحثُ عن الأعذار.",
+        "en": "Well done! This is the determination of a believer who seeks no excuses."
+       }
+      }
+     ]
+    }
+   }
+  ],
+  "quiz": [
+   {
+    "q": {
+     "ar": "إلى أيِّ غزوةٍ كان هذا الطريق؟",
+     "en": "Which expedition was this road to?"
+    },
+    "opts": [
+     {
+      "t": {
+       "ar": "تبوك",
+       "en": "Tabuk"
+      },
+      "c": true
+     },
+     {
+      "t": {
+       "ar": "بدر",
+       "en": "Badr"
+      },
+      "c": false
+     },
+     {
+      "t": {
+       "ar": "الخندق",
+       "en": "The Trench"
+      },
+      "c": false
+     }
+    ]
+   },
+   {
+    "q": {
+     "ar": "ماذا قال النبيُّ ﷺ حين رأوا رجلاً يمشي وحدَه؟",
+     "en": "What did the Prophet ﷺ say when they saw a man walking alone?"
+    },
+    "opts": [
+     {
+      "t": {
+       "ar": "لا تنتظروه",
+       "en": "Don't wait for him"
+      },
+      "c": false
+     },
+     {
+      "t": {
+       "ar": "«كُنْ أبا ذرّ»",
+       "en": "\"Let it be Abu Dharr\""
+      },
+      "c": true
+     },
+     {
+      "t": {
+       "ar": "ارجعوا إليه",
+       "en": "Go back to him"
+      },
+      "c": false
+     }
+    ]
+   },
+   {
+    "q": {
+     "ar": "ماذا نتعلّمُ من أبي ذرٍّ في هذه القصّة؟",
+     "en": "What do we learn from Abu Dharr in this story?"
+    },
+    "opts": [
+     {
+      "t": {
+       "ar": "أن نترك الخيرَ إذا صعُب",
+       "en": "To leave good deeds when they get hard"
+      },
+      "c": false
+     },
+     {
+      "t": {
+       "ar": "أن ننتظرَ غيرَنا دائماً",
+       "en": "To always wait for others"
+      },
+      "c": false
+     },
+     {
+      "t": {
+       "ar": "ألّا نبحثَ عن الأعذار",
+       "en": "Not to look for excuses"
+      },
+      "c": true
+     }
+    ]
+   }
+  ],
+  "moral": {
+   "ar": "المؤمنُ صاحبُ عزيمة: إذا تعطّلت وسيلتُه بحثَ عن طريقٍ آخرَ للخير، ولم يجعلِ الصعوبةَ عذراً.",
+   "en": "The believer is determined: if his means break down, he finds another way to do good, never making difficulty an excuse."
+  },
+  "badge": {
+   "icon": "🚶",
+   "title": {
+    "ar": "وِسامُ العزيمةِ بلا أعذار",
+    "en": "Badge of Determination Without Excuses"
+   }
+  },
+  "reflect": [
+   {
+    "ar": "متى تعطّلَ شيءٌ عندك فوجدتَ طريقةً أخرى لتُكمِلَ عملَك؟",
+    "en": "When did something break down and you found another way to finish your task?"
+   },
+   {
+    "ar": "ما العذرُ الذي تقولُه أحياناً لتتركَ عملاً طيّباً؟",
+    "en": "What excuse do you sometimes use to skip a good deed?"
+   }
+  ],
+  "didYouKnow": [
+   {
+    "ar": "قصّةُ «يمشي وحدَه» يرويها ابنُ إسحاقَ في السيرةِ والحاكمُ في المستدرك، وقد تكلّمَ العلماءُ في إسنادِها: ضعّفها الألبانيُّ (السلسلة الضعيفة ٥٥٣١) والأرناؤوطُ في تخريجِ سير أعلام النبلاء — المصدر: الدرر السنية",
+    "en": "The \"he walks alone\" story is reported by Ibn Ishaq in the Sira and al-Hakim in al-Mustadrak; scholars have spoken about its chain — al-Albani graded it weak (as-Silsila ad-Da'ifa 5531), as did al-Arna'ut in his notes on Siyar A'lam an-Nubala' — Source: Dorar as-Saniyya"
+   },
+   {
+    "ar": "غزوةُ تبوكَ كانت في السنةِ التاسعةِ للهجرة، في وقتِ حرٍّ شديدٍ وسفرٍ بعيد، وسمّاها اللهُ «ساعةَ العُسرة» — المصدر: البداية والنهاية",
+    "en": "The Tabuk expedition was in 9 AH, in fierce heat and over a long distance; Allah called it \"the hour of hardship\" — Source: al-Bidaya wa an-Nihaya"
+   }
+  ]
+ }
 ];

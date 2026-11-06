@@ -1,4 +1,4 @@
-/* data/stories/khawlani.js — Successors · Abu Muslim al-Khawlani — sources: صور من حياة التابعين · إسلام ويب · الدرر السنية · سير أعلام النبلاء */
+/* data/stories/khawlani.js — Successors · Abu Muslim al-Khawlani — sources: صور من حياة التابعين · إسلام ويب · الدرر السنية · سير أعلام النبلاء · حلية الأولياء · صحيح البخاري ومسلم */
 window.HISN_STORIES = window.HISN_STORIES || {};
 HISN_STORIES.khawlani = [
   { icon:'🔥', scene:'desert', character:'🛡️',
@@ -61,5 +61,31 @@ HISN_STORIES.khawlani = [
     badge:{icon:'🌿',title:{ar:'وِسامُ مجاهدةِ النفس',en:'Badge of Striving Against the Soul'}},
     reflect:[ {ar:'كيف تُحاسِبُ نفسَك وتُحفِّزُها على الخير؟',en:'How do you hold yourself to account and spur yourself to good?'}, {ar:'هل تُنافِسُ في فعلِ الطاعاتِ والأعمالِ الصالحة؟',en:'Do you compete in acts of obedience and good deeds?'} ],
     didYouKnow:[ {ar:'كان أبو مسلمٍ الخولانيُّ من أعظمِ عُبّادِ التابعينَ في الشام وأكثرِهم مجاهدةً للنفس — المصدر: صور من حياة التابعين',en:'Abu Muslim al-Khawlani was among the greatest worshippers of the successors in Sham and most striving against the self — Source: Suwar min Hayat at-Tabi\u2019in'}, {ar:'محاسبةُ النفسِ من صفاتِ المتّقينَ، قال عمر: «حاسِبوا أنفسَكم قبلَ أن تُحاسَبوا» — المصدر: أثرٌ عن عمر',en:'Self-accounting is a trait of the pious; Umar said: "Hold yourselves to account before you are held to account" — Source: a report from Umar'} ],
+  },
+  { icon:'🐑', scene:'throne', character:'🧑‍🌾',
+    title:{ ar:'«السلامُ عليك أيّها الأجير»', en:'"Peace Be Upon You, O Hired Worker"' },
+    pages:[
+      { scene:'throne', character:'🧑‍🌾',
+        text:{ ar:'يُروى أنّ <b>أبا مسلمٍ الخولانيَّ</b> دخلَ يوماً على أميرِ المؤمنينَ <b>معاويةَ بنِ أبي سفيان</b> رضي الله عنه في الشام، والناسُ صفوفٌ عن يمينِه وشمالِه. فوقفَ أبو مسلمٍ بينهم وقال: <b>«السلامُ عليك أيّها الأجير!»</b>. فتعجّبَ الحاضرونَ وقالوا: مَهْ! قلْ: أيّها الأمير! لكنّ <b>معاويةَ</b> قال بحلمٍ وحكمة: <b>«دعوه، فهو أعرفُ بما يقول، وعليك السلامُ يا أبا مسلم»</b>.<br><br>فما معنى «الأجير»؟ ضربَ أبو مسلمٍ مثلاً جميلاً: الحاكمُ مثلُ <b>راعٍ استأجره صاحبُ غنمٍ</b> ليرعاها؛ فإن أحسنَ رعايتَها حتى تكبرَ الصغيرةُ وتسمنَ الضعيفة، أعطاه أجرَه وزاده، وإن أضاعها غضبَ عليه. فالرعيّةُ أمانة، والحاكمُ <b>مسؤولٌ أمامَ اللهِ عنها</b>! ثمّ وعظه وحثّه على العدل. ما أجملَ هذا المشهد: <b>ناصحٌ صادقٌ لا يتملّق، وأميرٌ حليمٌ يقبلُ النصيحة</b>. علّمتنا القصّةُ أنّ <b>كلَّنا راعٍ وكلَّنا مسؤولٌ عن رعيّتِه</b>: في البيت، وفي الصفّ، ومع إخوتِنا الصغار.',
+          en:'It is narrated that <b>Abu Muslim al-Khawlani</b> once entered upon the Commander of the Believers <b>Mu’awiya ibn Abi Sufyan</b> (may Allah be pleased with him) in Syria, with people standing in rows to his right and left. Abu Muslim stood between them and said: <b>"Peace be upon you, O hired worker!"</b> Those present were startled: Stop! Say: O Amir! But <b>Mu’awiya</b> said with forbearance and wisdom: <b>"Leave him — he knows best what he is saying. And upon you be peace, O Abu Muslim."</b><br><br>What did "hired worker" mean? Abu Muslim gave a beautiful example: a ruler is like <b>a shepherd hired by the owner of a flock</b> to tend it; if he cares for it well until the little ones grow and the weak ones grow strong, the owner pays him and adds more; if he neglects it, the owner is angry with him. The people are a trust, and the ruler is <b>responsible before Allah for them</b>! Then he advised him and urged him to justice. What a beautiful scene: <b>a sincere adviser who does not flatter, and a forbearing ruler who accepts advice</b>. The story teaches us that <b>each of us is a shepherd, responsible for those in our care</b>: at home, in class, and with our little brothers and sisters.' },
+        choice:{ q:{ar:'ماذا قال معاويةُ حين اعترضَ الناسُ على أبي مسلم؟',en:'What did Mu’awiya say when people objected to Abu Muslim?'},
+          opts:[
+            { t:{ar:'«أخرِجوه»',en:'"Throw him out"'},c:false,exp:{ar:'لا، بل كان حليماً يقبلُ النصيحة.',en:'No — he was forbearing and accepted advice.'} },
+            { t:{ar:'لم يردَّ عليه السلام',en:'He did not return the greeting'},c:false,exp:{ar:'بل ردَّ: «وعليك السلامُ يا أبا مسلم».',en:'He replied: "And upon you be peace, O Abu Muslim."'} },
+            { t:{ar:'«دعوه، فهو أعرفُ بما يقول»',en:'"Leave him — he knows best what he is saying"'},c:true,exp:{ar:'أحسنت! حلمٌ وحكمةٌ من أميرٍ يقبلُ النصح.',en:'Well done! Forbearance and wisdom from a ruler who accepts advice.'} },
+          ] } },
+    ],
+    quiz:[
+      { q:{ar:'بماذا شبّهَ أبو مسلمٍ الحاكم؟',en:'What did Abu Muslim compare the ruler to?'},
+        opts:[ {t:{ar:'براعٍ استُؤجِرَ ليرعى الغنم',en:'A shepherd hired to tend sheep'},c:true}, {t:{ar:'بملكٍ لا يُسأل',en:'A king who is never questioned'},c:false}, {t:{ar:'بتاجرٍ في السوق',en:'A merchant in the market'},c:false} ] },
+      { q:{ar:'لماذا قال أبو مسلم «أيّها الأجير»؟',en:'Why did Abu Muslim say "O hired worker"?'},
+        opts:[ {t:{ar:'ليستهزئَ به',en:'To mock him'},c:false}, {t:{ar:'ليذكّرَه أنّ الرعيّةَ أمانةٌ وهو مسؤولٌ عنها',en:'To remind him the people are a trust he is responsible for'},c:true}, {t:{ar:'لأنّه لم يعرفْه',en:'Because he didn’t know him'},c:false} ] },
+      { q:{ar:'ماذا نتعلّمُ من هذه القصّة؟',en:'What do we learn from this story?'},
+        opts:[ {t:{ar:'التملّقُ للكبار',en:'Flattering important people'},c:false}, {t:{ar:'رفضُ النصيحة',en:'Rejecting advice'},c:false}, {t:{ar:'النصيحةُ الصادقةُ وقبولُها بحلم',en:'Sincere advice and accepting it with forbearance'},c:true} ] },
+    ],
+    moral:{ar:'كلُّنا راعٍ ومسؤولٌ عمّن يرعاه، والنصيحةُ الصادقةُ كنز، وقبولُها بحلمٍ من أخلاقِ الكبار.',en:'Each of us is a shepherd responsible for those in our care; sincere advice is a treasure, and accepting it with forbearance is a mark of greatness.'},
+    badge:{icon:'🐑',title:{ar:'وِسامُ الراعي الأمين',en:'Badge of the Trustworthy Shepherd'}},
+    reflect:[ {ar:'من الذين أنت مسؤولٌ عنهم: أخٌ صغير، أو نبتة، أو حيوانٌ أليف؟ كيف ترعاهم؟',en:'Who are you responsible for — a little sibling, a plant, a pet? How do you care for them?'}, {ar:'إذا نصحك أحدٌ بأدب، هل تقبلُ نصيحتَه؟',en:'If someone advises you politely, do you accept their advice?'} ],
+    didYouKnow:[ {ar:'دخولُ أبي مسلمٍ على معاويةَ وقولُه «أيّها الأجير» ذكره الذهبيُّ في السير بإسنادٍ فيه أبو بكرِ بنُ أبي مريم وهو ضعيف، ومثلُ الراعي في حلية الأولياء — فهو ممّا يُروى — المصدر: سير أعلام النبلاء وحلية الأولياء',en:'Abu Muslim’s entry upon Mu’awiya and his words "O hired worker" are cited by adh-Dhahabi with a chain including Abu Bakr ibn Abi Maryam, who is weak; the shepherd parable is in Hilyat al-Awliya — so it is a narrated report — Source: Siyar A’lam an-Nubala & Hilyat al-Awliya'}, {ar:'قال النبيُّ ﷺ: «كلُّكم راعٍ وكلُّكم مسؤولٌ عن رعيّتِه» — المصدر: صحيح البخاري (٨٩٣) ومسلم (١٨٢٩)',en:'The Prophet ﷺ said: "Each of you is a shepherd and each of you is responsible for his flock" — Source: Sahih al-Bukhari (893) & Muslim (1829)'} ],
   },
 ];

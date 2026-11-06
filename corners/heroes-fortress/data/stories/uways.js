@@ -1,4 +1,4 @@
-/* data/stories/uways.js — Successors · Uways al-Qarani — sources: صحيح مسلم · صور من حياة التابعين · إسلام ويب · الدرر السنية */
+/* data/stories/uways.js — Successors · Uways al-Qarani — sources: صحيح مسلم · صور من حياة التابعين · إسلام ويب · الدرر السنية · سير أعلام النبلاء */
 window.HISN_STORIES = window.HISN_STORIES || {};
 HISN_STORIES.uways = [
   { icon:'❤️', scene:'desert', character:'🤲',
@@ -52,5 +52,31 @@ HISN_STORIES.uways = [
     badge:{icon:'🤲',title:{ar:'وِسامُ المنزلةِ عند الله',en:'Badge of Rank With Allah'}},
     reflect:[ {ar:'هل تعملُ الخيرَ لله ولو لم يعرفْه أحد؟',en:'Do you do good for Allah even if no one knows?'}, {ar:'هل تطلبُ الدعاءَ من الصالحينَ وتدعو لإخوانِك؟',en:'Do you seek the prayer of the righteous and pray for your brothers?'} ],
     didYouKnow:[ {ar:'قصّةُ لقاءِ عمرَ بأويسٍ وطلبِ الاستغفارِ منه ثابتةٌ في صحيحِ مسلم — المصدر: صحيح مسلم',en:'The story of Umar meeting Uways and asking him for forgiveness is established in Sahih Muslim — Source: Sahih Muslim'}, {ar:'كان أويسٌ يتصدّقُ بفضلِ طعامِه ولباسِه ويعيشُ زاهداً متواضعاً — المصدر: صور من حياة التابعين',en:'Uways gave away his extra food and clothing in charity and lived ascetic and humble — Source: Suwar min Hayat at-Tabi\u2019in'} ],
+  },
+  { icon:'📜', scene:'madinah', character:'👵',
+    title:{ ar:'رجلٌ وصفه النبيُّ ﷺ ولم يرَه', en:'A Man the Prophet ﷺ Described but Never Saw' },
+    pages:[
+      { scene:'madinah', character:'👵',
+        text:{ ar:'جلسَ النبيُّ ﷺ مع أصحابِه في المدينة، فحدّثهم عن <b>رجلٍ لم يرَه أحدٌ منهم</b>، يعيشُ بعيداً في اليمن! وقال: <b>«إنّ خيرَ التابعينَ رجلٌ يُقالُ له أُوَيس»</b>. ثمّ وصفه وصفاً دقيقاً كأنّه أمامَه: يأتي مع جيوشِ أهلِ اليمن، من قبيلةِ <b>مُراد</b> ثمّ من <b>قَرَن</b>، <b>كان به بَرَصٌ فبرأَ منه إلّا موضعَ درهم</b>.<br><br>ثمّ ذكرَ النبيُّ ﷺ أهمَّ صفةٍ فيه، الصفةَ التي رفعتْه: <b>«له والدةٌ هو بها بَرّ»</b>. لم يقلْ: هو غنيٌّ أو مشهورٌ أو قائدٌ عظيم، بل قال: <b>بارٌّ بأمِّه</b>! ثمّ قال: <b>«لو أقسمَ على اللهِ لأبرَّه»</b> — أي لو حلفَ على اللهِ أن يحدثَ أمرٌ لحقّقه اللهُ إكراماً له! ثمّ التفتَ النبيُّ ﷺ إلى <b>عمر</b> وقال: <b>«فإنِ استطعتَ أن يستغفرَ لك فافعل»</b>. تخيّلْ: عمرُ الفاروق، من أعظمِ الصحابة، يُوصى بأن يطلبَ الدعاءَ من رجلٍ مجهولٍ في اليمن! كلُّ هذا الشرفِ بدأ من <b>بيتٍ صغيرٍ فيه أمٌّ كبيرة، وابنٌ يخدمُها بحبّ</b>.',
+          en:'The Prophet ﷺ sat with his Companions in Madinah and told them about <b>a man none of them had seen</b>, living far away in Yemen! He said: <b>"The best of the Tabi’in is a man called Uways."</b> Then he described him precisely, as if he stood before him: he will come with the reinforcements of the people of Yemen, from the tribe of <b>Murad</b>, then of <b>Qaran</b>; <b>he had a skin disease (leprosy) and was cured of it except for a spot the size of a dirham</b>.<br><br>Then the Prophet ﷺ mentioned his most important quality, the one that raised him: <b>"He has a mother to whom he is dutiful."</b> He did not say he was rich, famous, or a great leader — he said: <b>kind and dutiful to his mother</b>! Then he said: <b>"If he swore by Allah, Allah would fulfill it"</b> — Allah would honor his oath! Then the Prophet ﷺ turned to <b>Umar</b> and said: <b>"If you are able to have him ask forgiveness for you, then do so."</b> Imagine: Umar al-Faruq, one of the greatest Companions, advised to seek the prayer of an unknown man in Yemen! All this honor began in <b>a small home with an elderly mother and a son who served her with love</b>.' },
+        choice:{ q:{ar:'ما الصفةُ التي ذكرها النبيُّ ﷺ في أويسٍ ورفعتْه عند الله؟',en:'Which quality of Uways did the Prophet ﷺ mention that raised him with Allah?'},
+          opts:[
+            { t:{ar:'كثرةُ مالِه',en:'His great wealth'},c:false,exp:{ar:'لا، لم يذكرِ النبيُّ ﷺ مالَه.',en:'No — the Prophet ﷺ did not mention wealth.'} },
+            { t:{ar:'شهرتُه بين الناس',en:'His fame among people'},c:false,exp:{ar:'لا، بل كان مجهولاً لا يعرفُه أحد.',en:'No — he was unknown to people.'} },
+            { t:{ar:'بِرُّه بأمِّه',en:'His dutifulness to his mother'},c:true,exp:{ar:'أحسنت! «له والدةٌ هو بها بَرّ».',en:'Well done! "He has a mother to whom he is dutiful."'} },
+          ] } },
+    ],
+    quiz:[
+      { q:{ar:'من أين كان أويسٌ القرني؟',en:'Where was Uways al-Qarani from?'},
+        opts:[ {t:{ar:'من مكّة',en:'Makkah'},c:false}, {t:{ar:'من اليمن، من مُرادٍ ثمّ من قَرَن',en:'Yemen — from Murad, then Qaran'},c:true}, {t:{ar:'من الشام',en:'Syria'},c:false} ] },
+      { q:{ar:'ما العلامةُ التي في جسدِ أويس؟',en:'What sign was on Uways’s body?'},
+        opts:[ {t:{ar:'أثرُ بَرَصٍ بقدرِ درهم',en:'A spot of old skin disease the size of a dirham'},c:true}, {t:{ar:'جرحٌ في رأسِه',en:'A wound on his head'},c:false}, {t:{ar:'لا علامةَ فيه',en:'No sign at all'},c:false} ] },
+      { q:{ar:'ماذا أوصى النبيُّ ﷺ عمرَ أن يطلبَ من أويس؟',en:'What did the Prophet ﷺ advise Umar to ask of Uways?'},
+        opts:[ {t:{ar:'أن يعطيَه مالاً',en:'To give him money'},c:false}, {t:{ar:'أن يقاتلَ معه',en:'To fight with him'},c:false}, {t:{ar:'أن يستغفرَ له',en:'To ask forgiveness for him'},c:true} ] },
+    ],
+    moral:{ar:'بِرُّ الوالدةِ بابٌ عظيمٌ يرفعُ العبدَ عند الله، ولو كان مجهولاً بين الناس.',en:'Kindness to one’s mother is a great door that raises a servant with Allah, even if he is unknown among people.'},
+    badge:{icon:'📜',title:{ar:'وِسامُ الوصيّةِ النبويّة',en:'Badge of the Prophetic Mention'}},
+    reflect:[ {ar:'ما الشيءُ الذي تفعلُه لأمِّك كلَّ يومٍ لتكونَ بارّاً بها؟',en:'What do you do for your mother every day to be dutiful to her?'}, {ar:'لو وصفك أحدٌ بصفةٍ واحدة، ماذا تحبُّ أن تكون؟',en:'If someone described you with one quality, what would you like it to be?'} ],
+    didYouKnow:[ {ar:'وصفُ النبيِّ ﷺ لأويسٍ وقولُه «له والدةٌ هو بها بَرّ، لو أقسمَ على اللهِ لأبرَّه» رواه مسلم (٢٥٤٢) — المصدر: صحيح مسلم',en:'The Prophet’s ﷺ description of Uways, "He has a mother to whom he is dutiful; if he swore by Allah, Allah would fulfill it," is narrated by Muslim (2542) — Source: Sahih Muslim'}, {ar:'أويسٌ لم يرَ النبيَّ ﷺ، ولذلك عُدَّ من التابعين لا من الصحابة، مع أنّه عاشَ في زمنِه — المصدر: سير أعلام النبلاء',en:'Uways never saw the Prophet ﷺ, so he is counted among the Tabi’in, not the Companions, though he lived in his time — Source: Siyar A’lam an-Nubala'} ],
   },
 ];

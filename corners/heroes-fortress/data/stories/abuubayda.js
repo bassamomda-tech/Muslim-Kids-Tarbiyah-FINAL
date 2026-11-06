@@ -1,4 +1,4 @@
-/* data/stories/abuubayda.js — Heroes · Abu Ubayda ibn al-Jarrah — sources: صور من حياة الصحابة (الباشا) · إسلام ويب · الدرر السنية */
+/* data/stories/abuubayda.js — Heroes · Abu Ubayda ibn al-Jarrah — sources: صور من حياة الصحابة (الباشا) · إسلام ويب · الدرر السنية · صحيح البخاري · صحيح مسلم */
 window.HISN_STORIES = window.HISN_STORIES || {};
 HISN_STORIES.abuubayda = [
  {
@@ -358,6 +358,186 @@ HISN_STORIES.abuubayda = [
    {
     "ar": "قال عمر: «لو كان أبو عبيدةَ حيّاً لاستخلفتُه» لثقتِه بأمانتِه — المصدر: صور من حياة الصحابة",
     "en": "Umar said: \"If Abu Ubayda were alive I would appoint him my successor,\" for his trust in his integrity — Source: Suwar min Hayat as-Sahaba"
+   }
+  ]
+ },
+ {
+  "icon": "🐋",
+  "scene": "sea",
+  "character": "🐋",
+  "title": {
+   "ar": "سريّةُ الخَبَطِ والحوتُ العظيم",
+   "en": "The Leaf-Eaters' Troop and the Giant Whale"
+  },
+  "pages": [
+   {
+    "scene": "sea",
+    "character": "🌊",
+    "text": {
+     "ar": "أرسلَ النبيُّ ﷺ <b>ثلاثَمئةِ فارسٍ</b> إلى ساحلِ البحر، وجعلَ أميرَهم <b>أبا عبيدةَ بنَ الجرّاح</b>. طالَ بقاؤهم هناك حتى <b>فرغَ طعامُهم</b>، فجمعَ أبو عبيدةَ ما بقيَ من زادِ الجيشِ كلِّه في مكانٍ واحد، وصار يُوزِّعُه عليهم <b>بالعدلِ قليلاً قليلاً</b>، حتى لم يبقَ لكلِّ رجلٍ إلا <b>تمرةٌ واحدةٌ في اليوم</b>!<br><br>سُئلَ جابرٌ رضي الله عنه: كيف كانت تكفيكم تمرةٌ واحدة؟ فقال: <b>«كنّا نمصُّها كما يمصُّ الصبيُّ، ثمّ نشربُ عليها الماء، فتكفينا يومَنا إلى الليل»</b>. ثمّ فنيَ التمرُ، فصاروا يضربونَ ورقَ الشجرِ اليابسَ (<b>الخَبَط</b>) ويبلّونه بالماءِ ويأكلونه، فسُمّيَ جيشُهم <b>«جيشَ الخَبَط»</b>. ولم يتذمّروا، بل صبروا مع أميرِهم الذي جاعَ معهم ولم يُفضِّلْ نفسَه بشيء.<br><br>وفجأةً <b>ألقى البحرُ إليهم حوتاً عظيماً كالتلِّ</b> يُسمّى العَنبر! فأكلوا منه نصفَ شهرٍ حتى قويت أجسامُهم. وأخذَ أبو عبيدةَ <b>ضِلعاً من أضلاعِه فنصبَه</b>، ثمّ جاءَ بأطولِ رجلٍ على أطولِ بعيرٍ فمرَّ من تحتِه! فلمّا رجعوا إلى المدينةِ أخبروا النبيَّ ﷺ، فقال: <b>«هو رزقٌ أخرجَه اللهُ لكم، فهل معكم من لحمِه شيءٌ فتُطعِمونا؟»</b> فأرسلوا إليه منه فأكلَ ﷺ.",
+     "en": "The Prophet ﷺ sent <b>three hundred riders</b> to the seashore and made <b>Abu Ubayda ibn al-Jarrah</b> their leader. They stayed there so long that <b>their food ran out</b>. Abu Ubayda gathered all the army's remaining provisions in one place and began sharing them out <b>fairly, little by little</b>, until each man had only <b>one date a day</b>!<br><br>Jabir was asked: How could one date be enough for you? He said: <b>\"We would suck on it as a child sucks, then drink water after it, and it would last us the day until night.\"</b> Then the dates ran out, so they beat down dry tree leaves (<b>khabat</b>), soaked them in water and ate them — so their army was called <b>\"the Army of Khabat.\"</b> They did not complain; they were patient alongside a leader who went hungry with them and never favored himself.<br><br>Suddenly <b>the sea threw up a whale as huge as a hill</b>, called al-Anbar! They ate from it for half a month until their bodies grew strong again. Abu Ubayda took <b>one of its ribs and stood it upright</b>, then brought the tallest man on the tallest camel — and he passed right underneath it! When they returned to Madinah and told the Prophet ﷺ, he said: <b>\"It is provision Allah brought out for you. Do you have any of its meat to feed us?\"</b> They sent him some, and he ﷺ ate from it."
+    },
+    "choice": {
+     "q": {
+      "ar": "ماذا فعلَ أبو عبيدةَ حين قلَّ الطعام؟",
+      "en": "What did Abu Ubayda do when food ran short?"
+     },
+     "opts": [
+      {
+       "t": {
+        "ar": "أخذَ أكثرَه لنفسِه لأنّه الأمير",
+        "en": "Took most of it for himself as leader"
+       },
+       "c": false,
+       "exp": {
+        "ar": "لا، بل الأميرُ الصالحُ يجوعُ مع جنودِه ولا يُفضِّلُ نفسَه.",
+        "en": "No — a righteous leader goes hungry with his soldiers and never favors himself."
+       }
+      },
+      {
+       "t": {
+        "ar": "جمعَه ووزّعَه بالعدلِ على الجميع",
+        "en": "Gathered it and shared it fairly among everyone"
+       },
+       "c": true,
+       "exp": {
+        "ar": "أحسنت! العدلُ في القسمةِ جعلَ الجيشَ كلَّه يصبرُ معاً.",
+        "en": "Well done! Fair sharing helped the whole army stay patient together."
+       }
+      },
+      {
+       "t": {
+        "ar": "أمرَهم بالرجوعِ فوراً",
+        "en": "Ordered them to go back at once"
+       },
+       "c": false,
+       "exp": {
+        "ar": "لا، بل صبروا حتى رزقَهم اللهُ من حيثُ لا يحتسبون.",
+        "en": "No — they stayed patient until Allah provided for them from where they never expected."
+       }
+      }
+     ]
+    }
+   }
+  ],
+  "quiz": [
+   {
+    "q": {
+     "ar": "كم كان نصيبُ الرجلِ من التمرِ في آخرِ الأمر؟",
+     "en": "How many dates did each man get in the end?"
+    },
+    "opts": [
+     {
+      "t": {
+       "ar": "عشرُ تمرات",
+       "en": "Ten dates"
+      },
+      "c": false
+     },
+     {
+      "t": {
+       "ar": "صاعٌ كامل",
+       "en": "A full measure"
+      },
+      "c": false
+     },
+     {
+      "t": {
+       "ar": "تمرةٌ واحدةٌ في اليوم",
+       "en": "One date a day"
+      },
+      "c": true
+     }
+    ]
+   },
+   {
+    "q": {
+     "ar": "لماذا سُمّيَ «جيشَ الخَبَط»؟",
+     "en": "Why was it called \"the Army of Khabat\"?"
+    },
+    "opts": [
+     {
+      "t": {
+       "ar": "لأنّهم أكلوا ورقَ الشجر",
+       "en": "Because they ate tree leaves"
+      },
+      "c": true
+     },
+     {
+      "t": {
+       "ar": "لأنّهم صادوا السمك",
+       "en": "Because they caught fish"
+      },
+      "c": false
+     },
+     {
+      "t": {
+       "ar": "لأنّهم ركبوا السفن",
+       "en": "Because they rode ships"
+      },
+      "c": false
+     }
+    ]
+   },
+   {
+    "q": {
+     "ar": "ماذا قالَ النبيُّ ﷺ عن الحوت؟",
+     "en": "What did the Prophet ﷺ say about the whale?"
+    },
+    "opts": [
+     {
+      "t": {
+       "ar": "لا تأكلوا منه",
+       "en": "Do not eat from it"
+      },
+      "c": false
+     },
+     {
+      "t": {
+       "ar": "هو رزقٌ أخرجَه اللهُ لكم",
+       "en": "It is provision Allah brought out for you"
+      },
+      "c": true
+     },
+     {
+      "t": {
+       "ar": "كان صدفةً فقط",
+       "en": "It was only luck"
+      },
+      "c": false
+     }
+    ]
+   }
+  ],
+  "moral": {
+   "ar": "القائدُ الأمينُ يعدلُ بين الناسِ ويصبرُ معهم، ومن صبرَ وتوكّلَ على اللهِ رزقَه من حيثُ لا يحتسب.",
+   "en": "A trustworthy leader is fair and patient with his people; whoever is patient and relies on Allah, He provides for him from where he never expects."
+  },
+  "badge": {
+   "icon": "🐋",
+   "title": {
+    "ar": "وِسامُ العدلِ في الشدّة",
+    "en": "Badge of Fairness in Hardship"
+   }
+  },
+  "reflect": [
+   {
+    "ar": "إذا كان عندَك شيءٌ قليلٌ وإخوتُك معك، كيف تقسمُه بينكم؟",
+    "en": "If you have only a little and your siblings are with you, how would you share it?"
+   },
+   {
+    "ar": "متى صبرتَ على شيءٍ صعبٍ ثمّ جاءك الفرج؟",
+    "en": "When were you patient through something hard and then relief came?"
+   }
+  ],
+  "didYouKnow": [
+   {
+    "ar": "قصّةُ جيشِ الخَبَطِ والحوتِ رواها البخاريُّ (٤٣٦١) ومسلمٌ (١٩٣٥) عن جابرِ بنِ عبد الله رضي الله عنهما",
+    "en": "The story of the Army of Khabat and the whale is narrated by al-Bukhari (4361) and Muslim (1935) from Jabir ibn Abdullah"
+   },
+   {
+    "ar": "في روايةِ مسلم: جلسَ ثلاثةَ عشرَ رجلاً في تجويفِ عينِ الحوت! — المصدر: صحيح مسلم (١٩٣٥)",
+    "en": "In Muslim's narration, thirteen men sat inside the whale's eye socket! — Source: Sahih Muslim (1935)"
    }
   ]
  }

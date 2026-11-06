@@ -1,4 +1,4 @@
-/* data/stories/abudarda.js — Heroes · Abu ad-Darda' — sources: صور من حياة الصحابة (الباشا) · إسلام ويب · الدرر السنية · البداية والنهاية */
+/* data/stories/abudarda.js — Heroes · Abu ad-Darda' — sources: صور من حياة الصحابة (الباشا) · إسلام ويب · الدرر السنية · البداية والنهاية · الزهد للإمام أحمد · سير أعلام النبلاء */
 window.HISN_STORIES = window.HISN_STORIES || {};
 HISN_STORIES.abudarda = [
   { icon:'📚', scene:'mosque', character:'🕌',
@@ -52,5 +52,185 @@ HISN_STORIES.abudarda = [
     badge:{icon:'⚖️',title:{ar:'وِسامُ التوازن',en:'Badge of Balance'}},
     reflect:[ {ar:'هل توازِنُ بين عبادتِك وراحتِك ووقتِك مع أهلِك؟',en:'Do you balance your worship, rest, and time with your family?'}, {ar:'كيف تُعطي كلَّ واجبٍ في يومِك حقَّه؟',en:'How do you give each duty in your day its due?'} ],
     didYouKnow:[ {ar:'قصّةُ سلمانَ وأبي الدرداءِ في التوازنِ ثابتةٌ في صحيحِ البخاري — المصدر: صحيح البخاري',en:'The account of Salman and Abu ad-Darda\u2019 on balance is established in Sahih al-Bukhari — Source: Sahih al-Bukhari'}, {ar:'كان أبو الدرداءِ يحبُّ الحكمةَ ويقول: «تفكُّرُ ساعةٍ خيرٌ من قيامِ ليلة» — المصدر: الزهد',en:'Abu ad-Darda\u2019 loved wisdom and said: "An hour\'s reflection is better than a night\'s standing in prayer" — Source: az-Zuhd'} ],
+  },
+  {
+    "icon": "💧",
+    "scene": "sea",
+    "character": "🧔",
+    "title": {
+      "ar": "دموعٌ في يومِ النصر",
+      "en": "Tears on the Day of Victory"
+    },
+    "pages": [
+      {
+        "scene": "sea",
+        "character": "🧔",
+        "text": {
+          "ar": "في سنةِ ثمانٍ وعشرينَ للهجرة، ركبَ المسلمونَ البحرَ أوّلَ مرّةٍ إلى جزيرةِ <b>قبرص</b>، ففتحها اللهُ عليهم، وكان معهم الصحابيُّ الحكيمُ <b>أبو الدرداء</b>. فرِحَ الجنودُ بالنصر، وجيءَ بأهلِ الجزيرةِ وقد فُرِّقَ بينهم، فجعلوا يبكي بعضُهم إلى بعض.<br><br>فرأى التابعيُّ <b>جُبيرُ بنُ نُفير</b> أبا الدرداءِ <b>جالساً وحدَه يبكي</b>! فتعجّبَ وقال: يا أبا الدرداء، ما يُبكيك في يومٍ أعزَّ اللهُ فيه الإسلامَ وأهلَه؟ فقال كلمةً عظيمة: <b>«ويحَك يا جُبير! ما أهونَ الخلقَ على اللهِ إذا هم تركوا أمرَه! بينا هي أمّةٌ قاهرةٌ ظاهرةٌ لهم المُلك، تركوا أمرَ اللهِ فصاروا إلى ما ترى»</b>.<br><br>لم يكن أبو الدرداءِ <b>مغروراً بالنصر</b>، بل نظرَ بعينِ القلب: إنّ العزّةَ الحقيقيّةَ <b>بطاعةِ الله</b>، ومن تركَ أمرَ اللهِ ذلَّ ولو كان قويّاً. فبكى رحمةً لهم، وخوفاً على المسلمينَ أن يتركوا أمرَ اللهِ يوماً فيصيبَهم مثلُ ذلك. المؤمنُ الحكيمُ <b>يتواضعُ عندَ النصرِ ويعتبر</b>.",
+          "en": "In the year 28 AH, the Muslims sailed the sea for the first time to the island of <b>Cyprus</b>, and Allah granted them victory. With them was the wise Companion <b>Abu ad-Darda'</b>. The soldiers rejoiced, and the island's people were brought, separated from one another and weeping.<br><br>The Tabi'i <b>Jubayr ibn Nufayr</b> saw Abu ad-Darda' <b>sitting alone, weeping</b>! Amazed, he said: O Abu ad-Darda', what makes you weep on a day Allah has honoured Islam and its people? He said a great word: <b>\"Woe to you, Jubayr! How worthless creatures are to Allah when they abandon His command! They were a mighty, dominant nation with kingship — they abandoned Allah's command and came to what you see.\"</b><br><br>Abu ad-Darda' was <b>not proud in victory</b>; he looked with the eye of the heart: true honour is <b>in obeying Allah</b>, and whoever abandons Allah's command is humbled even if strong. He wept out of mercy for them, and out of fear that the Muslims might one day abandon Allah's command and suffer the same. The wise believer <b>is humble in victory and takes a lesson</b>."
+        },
+        "choice": {
+          "q": {
+            "ar": "لماذا بكى أبو الدرداءِ يومَ النصر؟",
+            "en": "Why did Abu ad-Darda' weep on the day of victory?"
+          },
+          "opts": [
+            {
+              "t": {
+                "ar": "لأنّه خافَ من البحر",
+                "en": "Because he feared the sea"
+              },
+              "c": false,
+              "exp": {
+                "ar": "لا، بل بكى اعتباراً بحالِ من تركَ أمرَ الله.",
+                "en": "No — he wept taking a lesson from those who left Allah's command."
+              }
+            },
+            {
+              "t": {
+                "ar": "لأنّه تذكّرَ أنّ من يتركُ أمرَ اللهِ يذِلّ، وخافَ على المسلمين",
+                "en": "Because he remembered that whoever leaves Allah's command is humbled, and he feared for the Muslims"
+              },
+              "c": true,
+              "exp": {
+                "ar": "أحسنت! العزّةُ بطاعةِ الله، والحكيمُ يعتبرُ ولا يغترّ.",
+                "en": "Well done! Honour is in obeying Allah; the wise take a lesson and are not deceived."
+              }
+            },
+            {
+              "t": {
+                "ar": "لأنّه لم يحصلْ على غنيمة",
+                "en": "Because he got no spoils"
+              },
+              "c": false,
+              "exp": {
+                "ar": "لا، فأبو الدرداءِ زاهدٌ لا يهتمُّ بالمال.",
+                "en": "No — Abu ad-Darda' was ascetic and cared little for wealth."
+              }
+            }
+          ]
+        }
+      }
+    ],
+    "quiz": [
+      {
+        "q": {
+          "ar": "أيُّ جزيرةٍ فتحها المسلمونَ في هذه القصّة؟",
+          "en": "Which island did the Muslims conquer in this story?"
+        },
+        "opts": [
+          {
+            "t": {
+              "ar": "صقلّية",
+              "en": "Sicily"
+            },
+            "c": false
+          },
+          {
+            "t": {
+              "ar": "قبرص",
+              "en": "Cyprus"
+            },
+            "c": true
+          },
+          {
+            "t": {
+              "ar": "كريت",
+              "en": "Crete"
+            },
+            "c": false
+          }
+        ]
+      },
+      {
+        "q": {
+          "ar": "من الذي سألَ أبا الدرداءِ عن بكائه؟",
+          "en": "Who asked Abu ad-Darda' why he was weeping?"
+        },
+        "opts": [
+          {
+            "t": {
+              "ar": "جُبيرُ بنُ نُفير",
+              "en": "Jubayr ibn Nufayr"
+            },
+            "c": true
+          },
+          {
+            "t": {
+              "ar": "سلمانُ الفارسي",
+              "en": "Salman al-Farisi"
+            },
+            "c": false
+          },
+          {
+            "t": {
+              "ar": "معاذُ بنُ جبل",
+              "en": "Mu'adh ibn Jabal"
+            },
+            "c": false
+          }
+        ]
+      },
+      {
+        "q": {
+          "ar": "ما سرُّ العزّةِ الحقيقيّةِ كما علّمنا أبو الدرداء؟",
+          "en": "What is the secret of true honour, as Abu ad-Darda' taught?"
+        },
+        "opts": [
+          {
+            "t": {
+              "ar": "كثرةُ المال",
+              "en": "Lots of money"
+            },
+            "c": false
+          },
+          {
+            "t": {
+              "ar": "كثرةُ الجنود",
+              "en": "Many soldiers"
+            },
+            "c": false
+          },
+          {
+            "t": {
+              "ar": "طاعةُ اللهِ والتمسّكُ بأمرِه",
+              "en": "Obeying Allah and holding to His command"
+            },
+            "c": true
+          }
+        ]
+      }
+    ],
+    "moral": {
+      "ar": "لا تغترَّ بالنجاحِ والقوّة؛ فالعزّةُ الحقيقيّةُ في طاعةِ الله، ومن تركَ أمرَ اللهِ هانَ ولو كان قويّاً.",
+      "en": "Do not be deceived by success and strength — true honour is in obeying Allah, and whoever abandons His command is humbled even if strong."
+    },
+    "badge": {
+      "icon": "💧",
+      "title": {
+        "ar": "وِسامُ القلبِ المعتبِر",
+        "en": "Badge of the Reflective Heart"
+      }
+    },
+    "reflect": [
+      {
+        "ar": "كيف تتصرّفُ حين تنجحُ أو تفوزُ في مسابقة؟ هل تتواضع؟",
+        "en": "How do you behave when you succeed or win a contest? Are you humble?"
+      },
+      {
+        "ar": "ما الأمرُ من أوامرِ اللهِ الذي تريدُ أن تتمسّكَ به أكثر؟",
+        "en": "Which of Allah's commands do you want to hold onto more firmly?"
+      }
+    ],
+    "didYouKnow": [
+      {
+        "ar": "قصّةُ بكاءِ أبي الدرداءِ يومَ فتحِ قبرص رواها الإمامُ أحمدُ في «الزهد» عن جُبير بن نُفير، وذكرها الذهبيُّ في «سير أعلام النبلاء» وابنُ كثيرٍ في «البداية والنهاية»",
+        "en": "The story of Abu ad-Darda' weeping on the conquest of Cyprus is narrated by Imam Ahmad in \"az-Zuhd\" from Jubayr ibn Nufayr, and mentioned by adh-Dhahabi in Siyar A'lam an-Nubala' and Ibn Kathir in al-Bidaya wa an-Nihaya"
+      },
+      {
+        "ar": "كان فتحُ قبرصَ سنةَ ٢٨هـ أوّلَ غزوةٍ بحريّةٍ للمسلمين، في خلافةِ عثمانَ رضي الله عنه — المصدر: البداية والنهاية",
+        "en": "The conquest of Cyprus in 28 AH was the Muslims' first sea expedition, in the caliphate of 'Uthman — Source: al-Bidaya wa an-Nihaya"
+      }
+    ]
   },
 ];

@@ -53,4 +53,184 @@ HISN_STORIES.ubayy = [
     reflect:[ {ar:'هل تُشارِكُ ما تعلّمتَه مع إخوانِك وأصحابِك؟',en:'Do you share what you learn with your brothers and friends?'}, {ar:'كيف تبقى متواضعاً كلّما زادَ علمُك؟',en:'How do you stay humble as your knowledge grows?'} ],
     didYouKnow:[ {ar:'أخذَ كثيرٌ من القُرّاءِ قراءتَهم بسندٍ يتّصلُ بأُبَيِّ بنِ كعبٍ عن النبيِّ ﷺ — المصدر: الدرر السنية',en:'Many reciters trace their recitation through a chain reaching Ubayy ibn Ka\u2019b from the Prophet ﷺ — Source: ad-Durar as-Saniyya'}, {ar:'كان عمرُ بنُ الخطّابِ يقول: «أُبَيٌّ سيّدُ المسلمين» تقديراً لعلمِه — المصدر: صحيح البخاري',en:'Umar ibn al-Khattab used to say: "Ubayy is the master of the Muslims," honoring his knowledge — Source: Sahih al-Bukhari'} ],
   },
+  {
+    "icon": "🌟",
+    "scene": "mosque",
+    "character": "📖",
+    "title": {
+      "ar": "ليَهنِكَ العلمُ أبا المنذر!",
+      "en": "May Knowledge Delight You, Abu al-Mundhir!"
+    },
+    "pages": [
+      {
+        "scene": "mosque",
+        "character": "📖",
+        "text": {
+          "ar": "سألَ النبيُّ ﷺ يوماً <b>أُبَيَّ بنَ كعب</b> سؤالاً كأنّه اختبار: <b>«يا أبا المنذر، أتدري أيُّ آيةٍ من كتابِ اللهِ معك أعظم؟»</b> فقال أُبَيٌّ بأدب: «اللهُ ورسولُه أعلم». فأعادَ النبيُّ ﷺ السؤال: «يا أبا المنذر، أتدري أيُّ آيةٍ من كتابِ اللهِ معك أعظم؟»<br><br>ففكّرَ أُبَيٌّ وأجاب: <b>﴿اللَّهُ لَا إِلَٰهَ إِلَّا هُوَ الْحَيُّ الْقَيُّومُ﴾</b> — إنّها <b>آيةُ الكرسي</b>! ففرِحَ النبيُّ ﷺ <b>وضربَ بيدِه على صدرِه</b> فرحاً به وقال: <b>«واللهِ ليَهنِكَ العلمُ أبا المنذر!»</b> — أي هنيئاً لك هذا العلم.<br><br>انظرْ إلى أدبِ أُبَيّ: في المرّةِ الأولى <b>ردَّ العلمَ إلى اللهِ ورسولِه</b>، فلمّا أُعيدَ السؤالُ عرفَ أنّ النبيَّ ﷺ يريدُ جوابَه فأجابَ بما يعلم. وآيةُ الكرسي أعظمُ آيةٍ لأنّها كلُّها <b>عن الله: أسمائِه وصفاتِه وعظمتِه</b>، ومن قرأها قبلَ النومِ لم يزلْ عليه من اللهِ حافظ.",
+          "en": "One day the Prophet ﷺ asked <b>Ubayy ibn Ka'b</b> a question like a test: <b>\"O Abu al-Mundhir, do you know which verse of Allah's Book that you have is the greatest?\"</b> Ubayy said politely: \"Allah and His Messenger know best.\" The Prophet ﷺ repeated: \"O Abu al-Mundhir, do you know which verse of Allah's Book that you have is the greatest?\"<br><br>Ubayy thought and answered: <b>\"Allah — there is no deity except Him, the Ever-Living, the Sustainer of existence\"</b> — it is <b>Ayat al-Kursi</b>! The Prophet ﷺ was delighted, <b>struck his chest with his hand</b> in joy and said: <b>\"By Allah, may knowledge delight you, Abu al-Mundhir!\"</b> — congratulations on this knowledge.<br><br>Look at Ubayy's manners: the first time he <b>referred knowledge to Allah and His Messenger</b>; when the question was repeated he understood the Prophet ﷺ wanted his answer, and replied with what he knew. Ayat al-Kursi is the greatest verse because it is all <b>about Allah: His names, attributes and majesty</b>, and whoever recites it before sleep has a guardian from Allah over him."
+        },
+        "choice": {
+          "q": {
+            "ar": "ما أعظمُ آيةٍ في كتابِ الله كما أجابَ أُبَيّ؟",
+            "en": "Which is the greatest verse in Allah's Book, as Ubayy answered?"
+          },
+          "opts": [
+            {
+              "t": {
+                "ar": "أوّلُ آيةٍ في سورةِ الفاتحة",
+                "en": "The first verse of al-Fatiha"
+              },
+              "c": false,
+              "exp": {
+                "ar": "لا، بل أجابَ بآيةِ الكرسي.",
+                "en": "No — he answered with Ayat al-Kursi."
+              }
+            },
+            {
+              "t": {
+                "ar": "آخرُ آيةٍ في القرآن",
+                "en": "The last verse of the Qur'an"
+              },
+              "c": false,
+              "exp": {
+                "ar": "لا، بل هي آيةُ الكرسي.",
+                "en": "No — it is Ayat al-Kursi."
+              }
+            },
+            {
+              "t": {
+                "ar": "آيةُ الكرسي",
+                "en": "Ayat al-Kursi"
+              },
+              "c": true,
+              "exp": {
+                "ar": "أحسنت! وفرِحَ النبيُّ ﷺ بجوابِه وقال: ليَهنِكَ العلم.",
+                "en": "Well done! The Prophet ﷺ rejoiced and said: may knowledge delight you."
+              }
+            }
+          ]
+        }
+      }
+    ],
+    "quiz": [
+      {
+        "q": {
+          "ar": "ماذا قال أُبَيٌّ في المرّةِ الأولى؟",
+          "en": "What did Ubayy say the first time?"
+        },
+        "opts": [
+          {
+            "t": {
+              "ar": "لا أعرفُ شيئاً",
+              "en": "I know nothing"
+            },
+            "c": false
+          },
+          {
+            "t": {
+              "ar": "اللهُ ورسولُه أعلم",
+              "en": "Allah and His Messenger know best"
+            },
+            "c": true
+          },
+          {
+            "t": {
+              "ar": "اسألْ غيري",
+              "en": "Ask someone else"
+            },
+            "c": false
+          }
+        ]
+      },
+      {
+        "q": {
+          "ar": "ماذا فعلَ النبيُّ ﷺ فرحاً بجوابِ أُبَيّ؟",
+          "en": "What did the Prophet ﷺ do in joy at Ubayy's answer?"
+        },
+        "opts": [
+          {
+            "t": {
+              "ar": "ضربَ بيدِه على صدرِه",
+              "en": "He struck his chest with his hand"
+            },
+            "c": true
+          },
+          {
+            "t": {
+              "ar": "أعطاه ذهباً",
+              "en": "He gave him gold"
+            },
+            "c": false
+          },
+          {
+            "t": {
+              "ar": "سكت",
+              "en": "He stayed silent"
+            },
+            "c": false
+          }
+        ]
+      },
+      {
+        "q": {
+          "ar": "ما كنيةُ أُبَيِّ بنِ كعب؟",
+          "en": "What was Ubayy ibn Ka'b's kunya?"
+        },
+        "opts": [
+          {
+            "t": {
+              "ar": "أبو هريرة",
+              "en": "Abu Hurayra"
+            },
+            "c": false
+          },
+          {
+            "t": {
+              "ar": "أبو بكر",
+              "en": "Abu Bakr"
+            },
+            "c": false
+          },
+          {
+            "t": {
+              "ar": "أبو المنذر",
+              "en": "Abu al-Mundhir"
+            },
+            "c": true
+          }
+        ]
+      }
+    ],
+    "moral": {
+      "ar": "تأدّبْ مع معلّمِك، وردَّ العلمَ إلى اللهِ حين لا تعرف، واحفظْ آيةَ الكرسيِّ واقرأها كلَّ ليلة.",
+      "en": "Be polite with your teacher, refer knowledge to Allah when unsure, and memorise Ayat al-Kursi and recite it every night."
+    },
+    "badge": {
+      "icon": "🌟",
+      "title": {
+        "ar": "وِسامُ آيةِ الكرسي",
+        "en": "Badge of Ayat al-Kursi"
+      }
+    },
+    "reflect": [
+      {
+        "ar": "هل تحفظُ آيةَ الكرسي؟ هل تقرؤها قبلَ النوم؟",
+        "en": "Do you know Ayat al-Kursi by heart? Do you recite it before sleep?"
+      },
+      {
+        "ar": "ماذا تقولُ بأدبٍ إذا سألك معلّمُك سؤالاً لا تعرفُ جوابَه؟",
+        "en": "What do you politely say when your teacher asks something you don't know?"
+      }
+    ],
+    "didYouKnow": [
+      {
+        "ar": "حديثُ «أيُّ آيةٍ من كتابِ اللهِ معك أعظم؟… ليَهنِكَ العلمُ أبا المنذر» رواه مسلم (٨١٠)",
+        "en": "The hadith \"Which verse of Allah's Book that you have is the greatest?… may knowledge delight you, Abu al-Mundhir\" is narrated by Muslim (810)"
+      },
+      {
+        "ar": "من قرأَ آيةَ الكرسيِّ إذا أوى إلى فراشِه لم يزلْ عليه من اللهِ حافظ، ولا يقربُه شيطانٌ حتى يُصبح — رواه البخاري (٢٣١١)",
+        "en": "Whoever recites Ayat al-Kursi when going to bed has a guardian from Allah, and no devil comes near him until morning — al-Bukhari (2311)"
+      }
+    ]
+  },
 ];

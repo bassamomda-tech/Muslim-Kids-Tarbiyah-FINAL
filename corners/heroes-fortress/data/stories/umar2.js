@@ -1,4 +1,4 @@
-/* data/stories/umar2.js — Successors · Umar ibn Abdulaziz — sources: صور من حياة التابعين · إسلام ويب · الدرر السنية · سير أعلام النبلاء */
+/* data/stories/umar2.js — Successors · Umar ibn Abdulaziz — sources: صور من حياة التابعين · إسلام ويب · الدرر السنية · سير أعلام النبلاء · البداية والنهاية · تاريخ الخلفاء للسيوطي */
 window.HISN_STORIES = window.HISN_STORIES || {};
 HISN_STORIES.umar2 = [
   { icon:'🕯️', scene:'throne', character:'👑',
@@ -52,5 +52,57 @@ HISN_STORIES.umar2 = [
     badge:{icon:'⚖️',title:{ar:'وِسامُ العدلِ المُصلِح',en:'Badge of Reforming Justice'}},
     reflect:[ {ar:'كيف تُصلِحُ ما حولَك بالعدلِ وحُسنِ التصرّف؟',en:'How do you reform what is around you through justice and good conduct?'}, {ar:'هل تتذكّرُ أنّك مسؤولٌ عمّا تحتَ يدِك؟',en:'Do you remember you are responsible for what is under your charge?'} ],
     didYouKnow:[ {ar:'رُوِيَ في عهدِ عمرَ بنِ عبد العزيزِ أنّ الزكاةَ كانت تُعرَضُ فلا تُوجَدُ يدٌ فقيرةٌ تأخذُها — المصدر: سير أعلام النبلاء',en:'In Umar ibn Abdulaziz\u2019s reign it is reported the zakat was offered but no poor hand was found to take it — Source: Siyar A\u2019lam an-Nubala\u2019'}, {ar:'يُعدُّ عمرُ بنُ عبد العزيزِ نموذجاً للحاكمِ العادلِ في تاريخِ الإسلام — المصدر: البداية والنهاية',en:'Umar ibn Abdulaziz is regarded as a model of the just ruler in Islamic history — Source: Al-Bidaya wa an-Nihaya'} ],
+  },
+  { icon:'🏠', scene:'scales', character:'⚖️',
+    title:{ ar:'العدلُ يبدأُ من البيت', en:'Justice Begins at Home' },
+    pages:[
+      { scene:'scales', character:'⚖️',
+        text:{ ar:'حين صارَ <b>عمرُ بنُ عبد العزيز</b> خليفة، كان كثيرٌ من الأمراءِ من أقاربِه قد أخذوا أراضيَ وأموالاً ليستْ من حقِّهم. فبمن بدأَ عمر؟ هل بدأَ بالناسِ البعيدين؟ لا! <b>بدأَ بنفسِه وأهلِ بيتِه</b>. فجمعَ أقاربَه، وأخذَ ما في أيديهم من الأموالِ التي أُخِذَتْ بغيرِ حقّ، و<b>سمّاها «مظالم»</b>، وردّها إلى بيتِ مالِ المسلمين. حتى أرضُ <b>فَدَك</b> التي كانت بيدِه هو، قال: <b>«أُشهِدُكم أنّي قد رددتُها على ما كانت عليه في عهدِ رسولِ الله ﷺ»</b>.<br><br>فغضبَ بعضُ أقاربِه، وذهبوا إلى <b>عمّتِه فاطمةَ بنتِ مروان</b> ليُكلِّمَه. فجاءتْه ليلاً، فأكرمها وأجلسها، ثمّ ضربَ لها مثلاً عجيباً: إنّ اللهَ بعثَ محمّداً ﷺ رحمةً، فتركَ للناسِ <b>نهراً يشربونَ منه جميعاً بالسويّة</b>، فلم يزلِ الناسُ يأخذونَ منه لأنفسِهم حتى كادَ يجفّ، <b>ولن يرضى أهلُه حتى يعودَ كما كان</b>. فقالتْ: حسبُك! ورجعتْ إلى قومِها فأخبرتْهم. لقد فهِمتْ أنّ عمرَ لن يتراجعَ عن الحقّ! علّمنا عمرُ أنّ <b>المصلحَ الصادقَ يبدأُ بنفسِه وأهلِه</b> قبلَ أن يطلبَ من الناس.',
+          en:'When <b>Umar ibn Abdulaziz</b> became Caliph, many princes among his relatives had taken lands and wealth that were not theirs by right. Where did Umar begin? With people far away? No! <b>He began with himself and his own family</b>. He gathered his relatives, took back what was in their hands that had been taken unjustly, <b>called it "injustices"</b>, and returned it to the Muslims’ treasury. Even the land of <b>Fadak</b>, which was in his own hands, he said: <b>"I call you to witness that I have returned it to how it was in the time of the Messenger of Allah ﷺ."</b><br><br>Some relatives were angry and went to <b>his aunt Fatima bint Marwan</b> so she would speak to him. She came at night; he honored her and seated her, then gave her a wonderful example: Allah sent Muhammad ﷺ as a mercy, and he left the people <b>a river from which they all drank equally</b>; people kept taking from it for themselves until it nearly dried up, <b>and its people will not be content until it returns as it was</b>. She said: Enough! and went back and told them. She understood Umar would not turn back from the truth! Umar teaches us that <b>a sincere reformer begins with himself and his family</b> before asking it of others.' },
+        choice:{ q:{ar:'بمن بدأَ عمرُ بنُ عبد العزيز حين ردَّ المظالم؟',en:'With whom did Umar ibn Abdulaziz begin when returning injustices?'},
+          opts:[
+            { t:{ar:'بالفقراء',en:'With the poor'},c:false,exp:{ar:'لا، الفقراءُ كانوا أصحابَ الحقّ لا الظالمين.',en:'No — the poor were the wronged, not the wrongdoers.'} },
+            { t:{ar:'بنفسِه وأهلِ بيتِه',en:'With himself and his own family'},c:true,exp:{ar:'أحسنت! المصلحُ الصادقُ يبدأُ بنفسِه.',en:'Well done! A sincere reformer begins with himself.'} },
+            { t:{ar:'بالأعداءِ فقط',en:'Only with enemies'},c:false,exp:{ar:'لا، بل بدأَ بأقربِ الناسِ إليه.',en:'No — he began with those closest to him.'} },
+          ] } },
+    ],
+    quiz:[
+      { q:{ar:'ماذا سمّى عمرُ الأموالَ التي أُخِذَتْ بغيرِ حقّ؟',en:'What did Umar call the wealth taken without right?'},
+        opts:[ {t:{ar:'هدايا',en:'Gifts'},c:false}, {t:{ar:'مظالم',en:'Injustices'},c:true}, {t:{ar:'غنائم',en:'Spoils'},c:false} ] },
+      { q:{ar:'بماذا شبّهَ عمرُ الحقَّ الذي تركه النبيُّ ﷺ للناس؟',en:'What did Umar compare the right the Prophet ﷺ left to people to?'},
+        opts:[ {t:{ar:'بنهرٍ يشربُ منه الجميعُ بالسويّة',en:'A river all drink from equally'},c:true}, {t:{ar:'بجبلٍ عالٍ',en:'A high mountain'},c:false}, {t:{ar:'بقصرٍ كبير',en:'A big palace'},c:false} ] },
+      { q:{ar:'ماذا نتعلّمُ من عمرَ في هذه القصّة؟',en:'What do we learn from Umar in this story?'},
+        opts:[ {t:{ar:'نُحاسبُ الناسَ وننسى أنفسَنا',en:'Hold others to account and forget ourselves'},c:false}, {t:{ar:'القرابةُ تُبيحُ الظلم',en:'Kinship permits injustice'},c:false}, {t:{ar:'الإصلاحُ يبدأُ بالنفسِ والأهل',en:'Reform begins with oneself and family'},c:true} ] },
+    ],
+    moral:{ar:'العدلُ الحقيقيُّ لا يُفرِّقُ بين قريبٍ وبعيد، والمصلحُ الصادقُ يبدأُ بنفسِه وأهلِه.',en:'True justice does not distinguish between near and far, and the sincere reformer begins with himself and his family.'},
+    badge:{icon:'🏠',title:{ar:'وِسامُ البدءِ بالنفس',en:'Badge of Starting with Oneself'}},
+    reflect:[ {ar:'هل تطلبُ من غيرِك شيئاً لا تفعلُه أنت؟',en:'Do you ask others to do something you don’t do yourself?'}, {ar:'إذا أخذتَ شيئاً ليس لك، كيف تردُّه؟',en:'If you took something that isn’t yours, how would you return it?'} ],
+    didYouKnow:[ {ar:'قال الليثُ بنُ سعد: بدأَ عمرُ بنُ عبد العزيزِ بأهلِ بيتِه، فأخذَ ما بأيديهم وسمّى أموالَهم مظالم — المصدر: سير أعلام النبلاء للذهبي',en:'Al-Layth ibn Sa’d said: Umar ibn Abdulaziz began with his own household, took what was in their hands, and called their wealth injustices — Source: Siyar A’lam an-Nubala by adh-Dhahabi'}, {ar:'ذكرَ ابنُ كثيرٍ أنّ عمرَ ردَّ المظالمَ كلَّها، وكان دخلُه قبلَ الخلافةِ كبيراً فتركه — المصدر: البداية والنهاية',en:'Ibn Kathir mentioned that Umar returned all the injustices, and that his income before the caliphate was large but he gave it up — Source: al-Bidaya wa an-Nihaya'} ],
+  },
+  { icon:'💍', scene:'throne', character:'👑',
+    title:{ ar:'زوجةٌ اختارتِ الحقَّ على الجواهر', en:'A Wife Who Chose Truth Over Jewels' },
+    pages:[
+      { scene:'throne', character:'👑',
+        text:{ ar:'كانت <b>فاطمةُ بنتُ عبد الملك</b>، زوجةُ <b>عمرَ بنِ عبد العزيز</b>، من أعرقِ نساءِ زمانِها: أبوها خليفة، وإخوتُها خلفاء، وزوجُها خليفة! وكان عندها <b>حُليٌّ وجواهرُ ثمينةٌ</b> أعطاها إيّاها أبوها، أُخِذَتْ من مالِ المسلمين. فلمّا وَلِيَ عمرُ الخلافةَ قال لها بلطفٍ وحزم: <b>اختاري: إمّا أن تردّي حُليَّكِ إلى بيتِ المال، وإمّا أن تأذني لي في فراقِك</b>، فإنّي أكرهُ أن أكونَ أنا وأنتِ وهو في بيتٍ واحد.<br><br>فماذا اختارتْ الأميرةُ؟ قالتْ بلا تردّد: <b>«بل أختارُك — واللهِ — عليه وعلى أضعافِه لو كانَ لي»</b>! وحُمِلَتِ الجواهرُ كلُّها إلى بيتِ مالِ المسلمين. ثمّ ماتَ عمر، وصارَ أخوها <b>يزيدُ</b> خليفة، فقال لها: إن شئتِ رددتُ عليكِ حُليَّكِ. فقالتْ كلمةً خالدة: <b>«ما كنتُ لأُطيعَه حيّاً وأعصيَه ميّتاً»</b>، ورفضتْ أن تأخذَه! لم تكنْ طاعتُها لزوجِها خوفاً منه، بل <b>إيماناً بالحقِّ الذي دعا إليه</b>. فالزوجةُ الصالحةُ شريكةٌ في الخير.',
+          en:'<b>Fatima bint Abdulmalik</b>, wife of <b>Umar ibn Abdulaziz</b>, was among the noblest women of her time: her father was a caliph, her brothers were caliphs, and her husband was a caliph! She owned <b>precious jewelry and gems</b> her father had given her, taken from the Muslims’ wealth. When Umar became Caliph he said to her gently but firmly: <b>Choose: either return your jewelry to the treasury, or allow me to part from you</b> — for I dislike that you, I, and it should be in one house.<br><br>What did the princess choose? She said without hesitation: <b>"Rather I choose you — by Allah — over it, and over many times more, if I had it!"</b> And all the jewels were carried to the Muslims’ treasury. Then Umar died, and her brother <b>Yazid</b> became Caliph. He said to her: If you wish, I will return your jewelry to you. She said an everlasting word: <b>"I would not obey him while alive and disobey him after his death,"</b> and refused to take it! Her obedience was not out of fear of her husband but <b>faith in the truth he called to</b>. A righteous wife is a partner in goodness.' },
+        choice:{ q:{ar:'ماذا اختارتْ فاطمةُ بنتُ عبد الملك؟',en:'What did Fatima bint Abdulmalik choose?'},
+          opts:[
+            { t:{ar:'اختارتِ الجواهرَ وتركتْ زوجَها',en:'She chose the jewels and left her husband'},c:false,exp:{ar:'لا، بل اختارتْ زوجَها والحقّ.',en:'No — she chose her husband and the truth.'} },
+            { t:{ar:'خبّأتِ الجواهر',en:'She hid the jewels'},c:false,exp:{ar:'لا، بل ردّتْها كلَّها إلى بيتِ المال.',en:'No — she returned all of it to the treasury.'} },
+            { t:{ar:'اختارتْ زوجَها وردّتِ الحُليَّ إلى بيتِ المال',en:'She chose her husband and returned the jewelry to the treasury'},c:true,exp:{ar:'أحسنت! «بل أختارُك عليه وعلى أضعافِه».',en:'Well done! "Rather I choose you over it and many times more."'} },
+          ] } },
+    ],
+    quiz:[
+      { q:{ar:'أين ذهبتْ جواهرُ فاطمة؟',en:'Where did Fatima’s jewels go?'},
+        opts:[ {t:{ar:'إلى بيتِ مالِ المسلمين',en:'To the Muslims’ treasury'},c:true}, {t:{ar:'إلى السوق',en:'To the market'},c:false}, {t:{ar:'إلى بلدٍ آخر',en:'To another country'},c:false} ] },
+      { q:{ar:'ماذا قالتْ لأخيها يزيدَ حين عرضَ عليها ردَّ الحُليّ؟',en:'What did she tell her brother Yazid when he offered to return the jewelry?'},
+        opts:[ {t:{ar:'«أعطني إيّاه فوراً»',en:'"Give it to me right away"'},c:false}, {t:{ar:'«ما كنتُ لأُطيعَه حيّاً وأعصيَه ميّتاً»',en:'"I would not obey him alive and disobey him dead"'},c:true}, {t:{ar:'«أريدُ أكثرَ منه»',en:'"I want more than that"'},c:false} ] },
+      { q:{ar:'ماذا نتعلّمُ من فاطمة؟',en:'What do we learn from Fatima?'},
+        opts:[ {t:{ar:'الزينةُ أهمُّ من الحقّ',en:'Adornment matters more than truth'},c:false}, {t:{ar:'الطاعةُ تنتهي بالموت',en:'Obedience ends with death'},c:false}, {t:{ar:'الثباتُ على الحقِّ والوفاءُ ولو بعدَ الرحيل',en:'Firmness on truth and loyalty even after a loved one is gone'},c:true} ] },
+    ],
+    moral:{ar:'الزوجةُ الصالحةُ تُعينُ على الحقّ، والوفاءُ للحقِّ لا ينتهي بموتِ من دعا إليه.',en:'A righteous wife helps toward the truth, and loyalty to truth does not end with the death of the one who called to it.'},
+    badge:{icon:'💍',title:{ar:'وِسامُ الوفاءِ للحقّ',en:'Badge of Loyalty to Truth'}},
+    reflect:[ {ar:'هل تتركُ شيئاً تحبُّه إذا عرفتَ أنّه ليس من حقِّك؟',en:'Would you give up something you love if you knew it wasn’t rightfully yours?'}, {ar:'كيف تُعينُ أهلَك على فعلِ الخير؟',en:'How do you help your family do good?'} ],
+    didYouKnow:[ {ar:'خبرُ تخييرِ عمرَ لزوجتِه وردِّها الحُليَّ إلى بيتِ المال، ورفضِها أخذَه بعدَ وفاتِه — المصدر: البداية والنهاية لابن كثير وتاريخ الخلفاء للسيوطي',en:'The story of Umar giving his wife the choice, her returning the jewelry to the treasury, and refusing it after his death — Source: al-Bidaya wa an-Nihaya by Ibn Kathir & Tarikh al-Khulafa by as-Suyuti'}, {ar:'ذكرتْ فاطمةُ بعدَ وفاةِ عمرَ أنّه ماتَ وما له قميصٌ غيرُ الذي عليه — المصدر: سير أعلام النبلاء',en:'After Umar\u2019s death, Fatima mentioned that he died owning no shirt other than the one he wore — Source: Siyar A\u2019lam an-Nubala'} ],
   },
 ];

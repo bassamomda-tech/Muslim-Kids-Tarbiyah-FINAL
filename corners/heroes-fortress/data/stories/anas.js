@@ -1,4 +1,4 @@
-/* data/stories/anas.js — Heroes · Anas ibn Malik — sources: صور من حياة الصحابة (الباشا) · إسلام ويب · الدرر السنية */
+/* data/stories/anas.js — Heroes · Anas ibn Malik — sources: صور من حياة الصحابة (الباشا) · إسلام ويب · الدرر السنية · صحيح مسلم · سنن أبي داود والترمذي · صحيح البخاري */
 window.HISN_STORIES = window.HISN_STORIES || {};
 HISN_STORIES.anas = [
  {
@@ -358,6 +358,366 @@ HISN_STORIES.anas = [
    {
     "ar": "روى أنسٌ أكثرَ من ألفي حديثٍ عن النبيِّ ﷺ — المصدر: إسلام ويب",
     "en": "Anas narrated over two thousand hadith from the Prophet ﷺ — Source: islamweb.net"
+   }
+  ]
+ },
+ {
+  "icon": "🤐",
+  "scene": "madinah",
+  "character": "👦",
+  "title": {
+   "ar": "سرُّ رسولِ اللهِ ﷺ",
+   "en": "The Secret of the Messenger of Allah ﷺ"
+  },
+  "pages": [
+   {
+    "scene": "madinah",
+    "character": "👦",
+    "text": {
+     "ar": "كان <b>أنسٌ</b> غلاماً صغيراً يلعبُ مع الصبيانِ في المدينة، فمرَّ بهم النبيُّ ﷺ <b>فسلَّمَ عليهم</b> — نعم، سلَّمَ على الأطفال! ثمّ أرسلَ أنساً في حاجةٍ له، فذهبَ أنسٌ وتأخّرَ عن البيت.<br><br>فلمّا رجعَ قالت له أمُّه <b>أمُّ سُليم</b>: ما الذي أخّرك؟ قال: أرسلني رسولُ اللهِ ﷺ في حاجة. قالت: وما حاجتُه؟ قال: <b>«إنّها سِرّ»</b>. فلم تغضبْ أمُّه ولم تُلِحَّ عليه، بل فرِحت بأمانةِ ابنِها وقالت: <b>«لا تُحدِّثَنَّ بسرِّ رسولِ اللهِ ﷺ أحداً»</b>.<br><br>وكبُرَ أنسٌ وعاشَ عمراً طويلاً، وبقيَ <b>حافظاً للسرِّ</b> طوالَ حياته، حتى قال لتلميذِه ثابت بعدَ سنينَ كثيرة: «واللهِ لو حدّثتُ به أحداً لحدّثتُك به يا ثابت». السرُّ <b>أمانة</b>، والأمينُ يحفظُها ولو سألَه أقربُ الناسِ إليه.",
+     "en": "<b>Anas</b> was a little boy playing with the children of Madinah when the Prophet ﷺ passed by and <b>greeted them with salam</b> — yes, he greeted the children! Then he sent Anas on an errand, and Anas came home late.<br><br>When he returned, his mother <b>Umm Sulaym</b> asked: What kept you? He said: The Messenger of Allah ﷺ sent me on an errand. She asked: What was it? He said: <b>\"It is a secret.\"</b> His mother did not get angry or insist; she was glad of her son's trustworthiness and said: <b>\"Do not tell the secret of the Messenger of Allah ﷺ to anyone.\"</b><br><br>Anas grew up and lived a long life, <b>keeping the secret</b> all his days, until he told his student Thabit many years later: \"By Allah, if I had told it to anyone, I would have told you, O Thabit.\" A secret is a <b>trust</b>, and the trustworthy keep it even when the closest people ask."
+    },
+    "choice": {
+     "q": {
+      "ar": "ماذا فعلَ أنسٌ حين سألته أمُّه عن حاجةِ النبيِّ ﷺ؟",
+      "en": "What did Anas do when his mother asked about the Prophet's ﷺ errand?"
+     },
+     "opts": [
+      {
+       "t": {
+        "ar": "أخبرَ بها أصدقاءَه",
+        "en": "He told his friends"
+       },
+       "c": false,
+       "exp": {
+        "ar": "لا، فقد حفظَ السرَّ ولم يُخبرْ به أحداً.",
+        "en": "No — he kept the secret and told no one."
+       }
+      },
+      {
+       "t": {
+        "ar": "قال: «إنّها سِرّ» وحفظَها",
+        "en": "He said \"It is a secret\" and kept it"
+       },
+       "c": true,
+       "exp": {
+        "ar": "أحسنت! حفظُ السرِّ أمانة، وقد شجّعته أمُّه على ذلك.",
+        "en": "Well done! Keeping a secret is a trust, and his mother encouraged him."
+       }
+      },
+      {
+       "t": {
+        "ar": "نسيَها",
+        "en": "He forgot it"
+       },
+       "c": false,
+       "exp": {
+        "ar": "لا، بل حفظَها طوالَ عمرِه.",
+        "en": "No — he kept it all his life."
+       }
+      }
+     ]
+    }
+   }
+  ],
+  "quiz": [
+   {
+    "q": {
+     "ar": "ماذا فعلَ النبيُّ ﷺ حين مرَّ بالصبيانِ يلعبون؟",
+     "en": "What did the Prophet ﷺ do when he passed the playing children?"
+    },
+    "opts": [
+     {
+      "t": {
+       "ar": "نهرَهم",
+       "en": "He scolded them"
+      },
+      "c": false
+     },
+     {
+      "t": {
+       "ar": "سلَّمَ عليهم",
+       "en": "He greeted them with salam"
+      },
+      "c": true
+     },
+     {
+      "t": {
+       "ar": "لم يلتفتْ إليهم",
+       "en": "He ignored them"
+      },
+      "c": false
+     }
+    ]
+   },
+   {
+    "q": {
+     "ar": "ماذا قالت أمُّ سُليمٍ لابنِها؟",
+     "en": "What did Umm Sulaym tell her son?"
+    },
+    "opts": [
+     {
+      "t": {
+       "ar": "أخبِرْني بكلِّ شيء",
+       "en": "Tell me everything"
+      },
+      "c": false
+     },
+     {
+      "t": {
+       "ar": "اكتبْه في ورقة",
+       "en": "Write it on paper"
+      },
+      "c": false
+     },
+     {
+      "t": {
+       "ar": "لا تُحدِّثنَّ بسرِّ رسولِ اللهِ ﷺ أحداً",
+       "en": "Do not tell the Messenger's ﷺ secret to anyone"
+      },
+      "c": true
+     }
+    ]
+   },
+   {
+    "q": {
+     "ar": "لمن قال أنسٌ: «لو حدّثتُ به أحداً لحدّثتُك»؟",
+     "en": "To whom did Anas say \"If I had told anyone, I would have told you\"?"
+    },
+    "opts": [
+     {
+      "t": {
+       "ar": "لتلميذِه ثابت",
+       "en": "His student Thabit"
+      },
+      "c": true
+     },
+     {
+      "t": {
+       "ar": "لأخيه",
+       "en": "His brother"
+      },
+      "c": false
+     },
+     {
+      "t": {
+       "ar": "لجارِه",
+       "en": "His neighbour"
+      },
+      "c": false
+     }
+    ]
+   }
+  ],
+  "moral": {
+   "ar": "السرُّ أمانةٌ عندك، فاحفظْه ولا تُفشِه، والأمُّ الصالحةُ تُعلِّمُ أبناءها الأمانة.",
+   "en": "A secret is a trust with you — keep it and do not spread it. A righteous mother teaches her children trustworthiness."
+  },
+  "badge": {
+   "icon": "🤐",
+   "title": {
+    "ar": "وِسامُ حافظِ السرّ",
+    "en": "Badge of the Secret Keeper"
+   }
+  },
+  "reflect": [
+   {
+    "ar": "هل حافظتَ مرّةً على سرٍّ ائتمنك عليه صديقُك؟",
+    "en": "Have you ever kept a secret a friend trusted you with?"
+   },
+   {
+    "ar": "كيف تُجيبُ بأدبٍ إذا سألك أحدٌ عن سرٍّ لا يحقُّ لك قولُه؟",
+    "en": "How do you politely answer when someone asks about a secret you may not tell?"
+   }
+  ],
+  "didYouKnow": [
+   {
+    "ar": "قصّةُ سرِّ أنسٍ وقولِ أمِّه: «لا تُحدِّثنَّ بسرِّ رسولِ اللهِ ﷺ أحداً» رواها مسلم (٢٤٨٢)، وأصلُها في البخاري (٦٢٨٩)",
+    "en": "The story of Anas's secret and his mother's words is narrated by Muslim (2482), and its origin is in al-Bukhari (6289)"
+   },
+   {
+    "ar": "السلامُ على الصبيانِ من سنّةِ النبيِّ ﷺ، وكان أنسٌ يفعلُه اقتداءً به — رواه البخاري (٦٢٤٧) ومسلم (٢١٦٨)",
+    "en": "Greeting children with salam is a Sunnah of the Prophet ﷺ, and Anas did it following him — narrated by al-Bukhari (6247) and Muslim (2168)"
+   }
+  ]
+ },
+ {
+  "icon": "😄",
+  "scene": "madinah",
+  "character": "👂",
+  "title": {
+   "ar": "يا ذا الأُذُنَين!",
+   "en": "O You of the Two Ears!"
+  },
+  "pages": [
+   {
+    "scene": "madinah",
+    "character": "👂",
+    "text": {
+     "ar": "كان النبيُّ ﷺ <b>يُمازحُ أنساً</b> ويُلاطفُه وهو صغير. فقال له مرّةً مبتسماً: <b>«يا ذا الأُذُنَين!»</b> — أي يا صاحبَ الأذنين! وهو مزاحٌ لطيفٌ وصادق، فكلُّنا لنا أذنان، ولعلّه يُشيرُ إلى أنّ أنساً <b>يسمعُ جيّداً ويَعي</b>. وكان ﷺ يقول: <b>«إنّي لا أقولُ إلّا حقّاً»</b> — حتى في مزاحِه.<br><br>وأرسله النبيُّ ﷺ يوماً في حاجة، فقال أنسٌ بلسانِه: «واللهِ لا أذهب!» — وفي قلبِه أنّه سيذهب. فخرجَ فمرَّ بصبيانٍ يلعبون في السوقِ فوقفَ معهم، فإذا بالنبيِّ ﷺ قد <b>أمسكَه من قفاه من خلفِه وهو يضحك</b>، وقال: <b>«يا أُنَيس، أذهبتَ حيث أمرتُك؟»</b> قال: نعم، أنا أذهبُ يا رسولَ الله!<br><br>وكان ﷺ يُلاعبُ أخاه الصغيرَ <b>أبا عُمَير</b> الذي كان له عصفورٌ صغيرٌ اسمُه «النُّغَير»، فيقول له: «يا أبا عُمَير، ما فعلَ النُّغَير؟». هكذا كان النبيُّ ﷺ <b>يُدخِلُ الفرحَ على قلوبِ الصغار</b> بمزاحٍ لطيفٍ لا كذبَ فيه ولا أذى.",
+     "en": "The Prophet ﷺ used to <b>joke with Anas</b> and be kind to him when he was small. Once he said to him with a smile: <b>\"O you of the two ears!\"</b> A gentle and truthful joke — we all have two ears — perhaps hinting that Anas <b>listened well and understood</b>. He ﷺ said: <b>\"I say nothing but the truth\"</b> — even in jest.<br><br>One day the Prophet ﷺ sent him on an errand, and Anas said with his tongue: \"By Allah, I won't go!\" — while in his heart he meant to go. He went out and passed boys playing in the market and stopped with them, and suddenly the Prophet ﷺ <b>took hold of the back of his neck from behind, laughing</b>, and said: <b>\"O little Anas, did you go where I told you?\"</b> He said: Yes, I am going, O Messenger of Allah!<br><br>He ﷺ also played with Anas's little brother <b>Abu 'Umayr</b>, who had a little bird called \"an-Nughayr\", saying: \"O Abu 'Umayr, what did the little bird do?\" Thus the Prophet ﷺ <b>brought joy to children's hearts</b> with gentle jokes free of lies or hurt."
+    },
+    "choice": {
+     "q": {
+      "ar": "كيف كان مزاحُ النبيِّ ﷺ مع الصغار؟",
+      "en": "How did the Prophet ﷺ joke with children?"
+     },
+     "opts": [
+      {
+       "t": {
+        "ar": "مزاحٌ فيه كذبٌ وسخرية",
+        "en": "Jokes with lies and mockery"
+       },
+       "c": false,
+       "exp": {
+        "ar": "لا، فهو ﷺ لا يقولُ إلّا حقّاً ولا يؤذي أحداً.",
+        "en": "No — he ﷺ said only the truth and hurt no one."
+       }
+      },
+      {
+       "t": {
+        "ar": "لم يكن يمزحُ أبداً",
+        "en": "He never joked"
+       },
+       "c": false,
+       "exp": {
+        "ar": "لا، بل كان يُلاطفُ الصغارَ ويُمازحُهم.",
+        "en": "No — he was playful and joked with children."
+       }
+      },
+      {
+       "t": {
+        "ar": "مزاحٌ لطيفٌ صادقٌ يُفرِحُ القلب",
+        "en": "Gentle, truthful jokes that gladden the heart"
+       },
+       "c": true,
+       "exp": {
+        "ar": "أحسنت! المزاحُ الصادقُ اللطيفُ من أخلاقِ النبيِّ ﷺ.",
+        "en": "Well done! Gentle, truthful joking is from the Prophet's ﷺ character."
+       }
+      }
+     ]
+    }
+   }
+  ],
+  "quiz": [
+   {
+    "q": {
+     "ar": "بماذا نادى النبيُّ ﷺ أنساً مازحاً؟",
+     "en": "What did the Prophet ﷺ playfully call Anas?"
+    },
+    "opts": [
+     {
+      "t": {
+       "ar": "يا ذا الأُذُنَين",
+       "en": "O you of the two ears"
+      },
+      "c": true
+     },
+     {
+      "t": {
+       "ar": "يا صغير",
+       "en": "O little one"
+      },
+      "c": false
+     },
+     {
+      "t": {
+       "ar": "يا كسول",
+       "en": "O lazy one"
+      },
+      "c": false
+     }
+    ]
+   },
+   {
+    "q": {
+     "ar": "ماذا وجدَ النبيُّ ﷺ أنساً يفعلُ في السوق؟",
+     "en": "What did the Prophet ﷺ find Anas doing in the market?"
+    },
+    "opts": [
+     {
+      "t": {
+       "ar": "يبيعُ ويشتري",
+       "en": "Buying and selling"
+      },
+      "c": false
+     },
+     {
+      "t": {
+       "ar": "واقفاً مع صبيانٍ يلعبون",
+       "en": "Standing with boys who were playing"
+      },
+      "c": true
+     },
+     {
+      "t": {
+       "ar": "نائماً",
+       "en": "Sleeping"
+      },
+      "c": false
+     }
+    ]
+   },
+   {
+    "q": {
+     "ar": "ما اسمُ عصفورِ أبي عُمَير؟",
+     "en": "What was the name of Abu 'Umayr's bird?"
+    },
+    "opts": [
+     {
+      "t": {
+       "ar": "الحمامة",
+       "en": "The dove"
+      },
+      "c": false
+     },
+     {
+      "t": {
+       "ar": "الصقر",
+       "en": "The falcon"
+      },
+      "c": false
+     },
+     {
+      "t": {
+       "ar": "النُّغَير",
+       "en": "An-Nughayr"
+      },
+      "c": true
+     }
+    ]
+   }
+  ],
+  "moral": {
+   "ar": "المزاحُ اللطيفُ الصادقُ يُدخِلُ السرورَ على القلوب، بشرطِ ألّا يكونَ فيه كذبٌ ولا سخريةٌ ولا أذى.",
+   "en": "Gentle, truthful joking brings joy to hearts — as long as it has no lies, mockery or hurt."
+  },
+  "badge": {
+   "icon": "😄",
+   "title": {
+    "ar": "وِسامُ البسمةِ الصادقة",
+    "en": "Badge of the Truthful Smile"
+   }
+  },
+  "reflect": [
+   {
+    "ar": "هل تمزحُ مع إخوتِك وأصدقائك بلطفٍ دونَ أن تجرحَ أحداً؟",
+    "en": "Do you joke with your siblings and friends kindly without hurting anyone?"
+   },
+   {
+    "ar": "لماذا لا يجوزُ الكذبُ حتى في المزاح؟",
+    "en": "Why is lying not allowed even when joking?"
+   }
+  ],
+  "didYouKnow": [
+   {
+    "ar": "حديثُ «يا ذا الأُذُنَين» رواه أبو داود (٥٠٠٢) والترمذي (١٩٩٢) وصحّحه الألباني، وحديثُ «يا أُنَيس» رواه مسلم (٢٣١٠)",
+    "en": "The hadith \"O you of the two ears\" is narrated by Abu Dawud (5002) and at-Tirmidhi (1992), graded sahih by al-Albani; the hadith \"O little Anas\" is in Muslim (2310)"
+   },
+   {
+    "ar": "حديثُ «يا أبا عُمَير، ما فعلَ النُّغَير» رواه البخاري (٦١٢٩)، وقولُه ﷺ «إنّي لا أقولُ إلّا حقّاً» رواه الترمذي (١٩٩٠) وصحّحه الألباني",
+    "en": "\"O Abu 'Umayr, what did the little bird do?\" is in al-Bukhari (6129); \"I say nothing but the truth\" is in at-Tirmidhi (1990), graded sahih by al-Albani"
    }
   ]
  }

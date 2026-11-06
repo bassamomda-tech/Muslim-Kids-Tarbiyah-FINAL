@@ -1,4 +1,4 @@
-/* data/stories/salman.js — Heroes · Salman al-Farisi — sources: صور من حياة الصحابة (الباشا) · إسلام ويب · الدرر السنية */
+/* data/stories/salman.js — Heroes · Salman al-Farisi — sources: صور من حياة الصحابة (الباشا) · إسلام ويب · الدرر السنية · صحيح البخاري · صحيح مسلم · مسند أحمد · سير أعلام النبلاء */
 window.HISN_STORIES = window.HISN_STORIES || {};
 HISN_STORIES.salman = [
  {
@@ -358,6 +358,546 @@ HISN_STORIES.salman = [
    {
     "ar": "تنازعَ المهاجرونَ والأنصارُ على سلمانَ كلٌّ يقول: منّا، فقال النبيُّ ﷺ: «سلمانُ منّا أهلَ البيت» — المصدر: صور من حياة الصحابة",
     "en": "The Muhajirun and Ansar each claimed Salman as their own, so the Prophet ﷺ said: \"Salman is one of us, the People of the House\" — Source: Suwar min Hayat as-Sahaba"
+   }
+  ]
+ },
+ {
+  "icon": "🌴",
+  "scene": "palm",
+  "character": "🌱",
+  "title": {
+   "ar": "ثلاثُمئةِ نخلةٍ غرسَها النبيُّ ﷺ بيدِه",
+   "en": "Three Hundred Palms Planted by the Prophet's ﷺ Hand"
+  },
+  "pages": [
+   {
+    "scene": "palm",
+    "character": "🌴",
+    "text": {
+     "ar": "وصلَ <b>سلمانُ</b> إلى المدينةِ بعدَ رحلتِه الطويلة، لكنّ قوماً ظالمينَ كانوا قد <b>باعوه عبداً</b> في الطريق! فلمّا رأى علاماتِ النبوّةِ في رسولِ الله ﷺ أسلمَ وفرِحَ فرحاً عظيماً. غير أنّ <b>الرِّقَّ</b> شغلَه عن الخروجِ مع المسلمينَ في بدرٍ وأُحُد. فقال له النبيُّ ﷺ: <b>«كاتِبْ يا سلمان»</b> — أي اتّفقْ مع سيّدِك على ثمنٍ تُحرِّرُ به نفسَك.<br><br>فاشترطَ عليه سيّدُه شرطاً صعباً: أن يغرسَ له <b>ثلاثَمئةِ نخلة</b>، وأن يدفعَ <b>أربعينَ أوقيّةً من الذهب</b>! فقال النبيُّ ﷺ لأصحابه: <b>«أعينوا أخاكم»</b>. فجاء كلُّ صحابيٍّ بما يقدر: هذا بثلاثينَ فسيلة، وهذا بعشرين، وهذا بعشر، حتى اجتمعت ثلاثُمئة. وقال النبيُّ ﷺ: احفرْ لها يا سلمان، فإذا فرغتَ فأخبرني <b>أكونُ أنا أضعُها بيدي</b>.<br><br>فجاءَ النبيُّ ﷺ وجعلَ يغرسُ الفسائلَ بيدِه الشريفة، قال سلمان: <b>«فوالذي نفسُ سلمانَ بيدِه ما ماتت منها فسيلةٌ واحدة!»</b> ثمّ جاءَ النبيَّ ﷺ قطعةٌ من ذهبٍ مثلُ بيضةِ الدجاجة، فأعطاها سلمانَ، فوفّى منها دينَه كاملاً، وصار <b>حُرّاً</b>! وكانت أوّلُ غزوةٍ شهدَها <b>الخندق</b>. هكذا تكونُ الأخوّة: يحملُ المسلمونَ همَّ أخيهم حتى يفرجَ اللهُ عنه.",
+     "en": "<b>Salman</b> reached Madinah after his long journey — but unjust men had <b>sold him as a slave</b> on the way! When he saw the signs of prophethood in the Messenger of Allah ﷺ, he embraced Islam with great joy. Yet <b>slavery</b> kept him from going out with the Muslims at Badr and Uhud. So the Prophet ﷺ told him: <b>\"Make a contract for your freedom, Salman\"</b> — agree with your master on a price to free yourself.<br><br>His master set a hard condition: to plant <b>three hundred palm trees</b> for him and pay <b>forty ounces of gold</b>! The Prophet ﷺ told his Companions: <b>\"Help your brother.\"</b> Each Companion brought what he could: one thirty saplings, another twenty, another ten, until there were three hundred. The Prophet ﷺ said: Dig the holes, Salman, and when you finish, tell me — <b>I will place them with my own hand</b>.<br><br>The Prophet ﷺ came and planted the saplings with his blessed hand. Salman said: <b>\"By the One in whose hand is Salman's soul, not a single sapling died!\"</b> Then a piece of gold like a hen's egg came to the Prophet ﷺ; he gave it to Salman, who paid off his whole debt and became <b>free</b>! The first battle he attended was <b>the Trench</b>. This is true brotherhood: Muslims carry their brother's burden until Allah grants him relief."
+    },
+    "choice": {
+     "q": {
+      "ar": "ماذا قالَ النبيُّ ﷺ لأصحابِه حين عرفَ شرطَ سيّدِ سلمان؟",
+      "en": "What did the Prophet ﷺ tell his Companions on learning the master's condition?"
+     },
+     "opts": [
+      {
+       "t": {
+        "ar": "هذا أمرٌ لا يعنيكم",
+        "en": "This is not your concern"
+       },
+       "c": false,
+       "exp": {
+        "ar": "لا، بل جعلَ همَّ سلمانَ همَّ الجميع.",
+        "en": "No — he made Salman's worry everyone's worry."
+       }
+      },
+      {
+       "t": {
+        "ar": "«أعينوا أخاكم»",
+        "en": "\"Help your brother\""
+       },
+       "c": true,
+       "exp": {
+        "ar": "صحيح! فاجتمعَ الصحابةُ حتى أتمّوا الثلاثَمئةِ نخلة.",
+        "en": "Correct! The Companions gathered until they completed the three hundred palms."
+       }
+      },
+      {
+       "t": {
+        "ar": "اصبرْ يا سلمانُ وحدَك",
+        "en": "Be patient alone, Salman"
+       },
+       "c": false,
+       "exp": {
+        "ar": "لا، فالمسلمونَ إخوةٌ يُعينُ بعضُهم بعضاً.",
+        "en": "No — Muslims are brothers who help one another."
+       }
+      }
+     ]
+    }
+   }
+  ],
+  "quiz": [
+   {
+    "q": {
+     "ar": "كم نخلةً اشترطَ سيّدُ سلمانَ؟",
+     "en": "How many palms did Salman's master demand?"
+    },
+    "opts": [
+     {
+      "t": {
+       "ar": "عشرَ نخلات",
+       "en": "Ten palms"
+      },
+      "c": false
+     },
+     {
+      "t": {
+       "ar": "مئةَ نخلة",
+       "en": "One hundred"
+      },
+      "c": false
+     },
+     {
+      "t": {
+       "ar": "ثلاثَمئةِ نخلة",
+       "en": "Three hundred"
+      },
+      "c": true
+     }
+    ]
+   },
+   {
+    "q": {
+     "ar": "مَن غرسَ الفسائلَ بيدِه؟",
+     "en": "Who planted the saplings with his own hand?"
+    },
+    "opts": [
+     {
+      "t": {
+       "ar": "النبيُّ ﷺ",
+       "en": "The Prophet ﷺ"
+      },
+      "c": true
+     },
+     {
+      "t": {
+       "ar": "سيّدُ سلمان",
+       "en": "Salman's master"
+      },
+      "c": false
+     },
+     {
+      "t": {
+       "ar": "تاجرٌ من الشام",
+       "en": "A merchant from Syria"
+      },
+      "c": false
+     }
+    ]
+   },
+   {
+    "q": {
+     "ar": "كم فسيلةً ماتت منها؟",
+     "en": "How many saplings died?"
+    },
+    "opts": [
+     {
+      "t": {
+       "ar": "نصفُها",
+       "en": "Half of them"
+      },
+      "c": false
+     },
+     {
+      "t": {
+       "ar": "ولا واحدة",
+       "en": "Not a single one"
+      },
+      "c": true
+     },
+     {
+      "t": {
+       "ar": "عشرون",
+       "en": "Twenty"
+      },
+      "c": false
+     }
+    ]
+   }
+  ],
+  "moral": {
+   "ar": "المسلمونَ إخوةٌ يحملُ بعضُهم همَّ بعض، ومن أعانَ أخاه أعانَه اللهُ وباركَ في عمله.",
+   "en": "Muslims are brothers who carry each other's burdens; whoever helps his brother, Allah helps him and blesses his work."
+  },
+  "badge": {
+   "icon": "🌱",
+   "title": {
+    "ar": "وِسامُ عونِ الأخ",
+    "en": "Badge of Helping a Brother"
+   }
+  },
+  "reflect": [
+   {
+    "ar": "هل يحتاجُ أحدُ أصدقائِك إلى مساعدةٍ تستطيعُ أن تقدّمَها؟",
+    "en": "Does one of your friends need help you could give?"
+   },
+   {
+    "ar": "لو اجتمعَ صفُّك على مساعدةِ زميل، ماذا تستطيعونَ أن تفعلوا؟",
+    "en": "If your whole class joined to help a classmate, what could you do?"
+   }
+  ],
+  "didYouKnow": [
+   {
+    "ar": "قصّةُ مكاتبةِ سلمانَ وغرسِ النخلِ رواها الإمامُ أحمد (٢٣٧٣٧) بإسنادٍ حسن، وقولُه ﷺ «أعينوا أخاكم» صحّحه الألبانيُّ (السلسلة الصحيحة ٨٩٤)",
+    "en": "The story of Salman's freedom contract and the palm planting is in Musnad Ahmad (23737) with a good (hasan) chain; the words \"Help your brother\" were graded authentic by al-Albani (as-Silsila as-Sahiha 894)"
+   },
+   {
+    "ar": "«الأوقيّة» وزنٌ قديمٌ للذهبِ والفضّة يساوي أربعينَ درهماً — المصدر: إسلام ويب",
+    "en": "An \"uqiyya\" (ounce) was an old weight for gold and silver equal to forty dirhams — Source: Islamweb"
+   }
+  ]
+ },
+ {
+  "icon": "✨",
+  "scene": "cosmos",
+  "character": "✨",
+  "title": {
+   "ar": "«لو كان الإيمانُ عند الثريّا»",
+   "en": "\"Even If Faith Were at the Pleiades\""
+  },
+  "pages": [
+   {
+    "scene": "cosmos",
+    "character": "🌌",
+    "text": {
+     "ar": "كان الصحابةُ جالسينَ عند النبيِّ ﷺ، فنزلت عليه <b>سورةُ الجمعة</b>، وفيها قولُه تعالى: <b>﴿ وَآخَرِينَ مِنْهُمْ لَمَّا يَلْحَقُوا بِهِمْ ۚ وَهُوَ الْعَزِيزُ الْحَكِيمُ ﴾</b> — أي إنّ الرسولَ ﷺ بُعِثَ أيضاً إلى أقوامٍ آخرينَ سيأتونَ بعدُ ويدخلونَ في الإسلام.<br><br>فسأله أبو هريرة: <b>مَن هم يا رسولَ الله؟</b> فلم يُجِبْه حتى سأل ثلاثَ مرّات. وكان بينهم <b>سلمانُ الفارسيّ</b>، فوضعَ النبيُّ ﷺ يدَه الشريفةَ على سلمانَ وقال: <b>«لو كان الإيمانُ عند الثريّا، لنالَه رجالٌ — أو رجلٌ — من هؤلاء»</b>. والثريّا مجموعةُ نجومٍ بعيدةٍ جدّاً في السماء!<br><br>أي: لو كان الإيمانُ بعيداً بُعدَ النجوم، لوصلَ إليه رجالٌ من قومِ سلمانَ بصدقِهم وطلبِهم. وقد صدقَ النبيُّ ﷺ، فقد خرجَ من بلادِ فارسَ <b>علماءُ عظماءُ</b> خدموا الإسلامَ والحديث. وسلمانُ نفسُه خيرُ مثال: <b>تركَ بلادَه وأهلَه، وقطعَ المسافاتِ حتى وصلَ إلى الإيمان</b>. فالإسلامُ لا يعرفُ لوناً ولا وطناً، والميزانُ صدقُ القلب.",
+     "en": "The Companions were sitting with the Prophet ﷺ when <b>Surat al-Jumu'a</b> was revealed to him, including the words: <b>﴿And others of them who have not yet joined them; and He is the Almighty, the Wise﴾</b> — meaning the Messenger ﷺ was also sent to other peoples who would come later and enter Islam.<br><br>Abu Hurayra asked: <b>Who are they, O Messenger of Allah?</b> He did not answer until he had asked three times. Among them sat <b>Salman al-Farisi</b>. The Prophet ﷺ placed his blessed hand on Salman and said: <b>\"Even if faith were at the Pleiades, men — or a man — from these people would reach it.\"</b> The Pleiades are a cluster of stars very far away in the sky!<br><br>That is: even if faith were as far as the stars, men from Salman's people would reach it through their sincerity and seeking. The Prophet ﷺ spoke the truth: from Persia came <b>great scholars</b> who served Islam and hadith. And Salman himself is the best example: <b>he left his land and family, crossing great distances until he reached faith</b>. Islam knows no color or homeland — the measure is a sincere heart."
+    },
+    "choice": {
+     "q": {
+      "ar": "على مَن وضعَ النبيُّ ﷺ يدَه وهو يتكلّم؟",
+      "en": "On whom did the Prophet ﷺ place his hand while speaking?"
+     },
+     "opts": [
+      {
+       "t": {
+        "ar": "على أبي هريرة",
+        "en": "On Abu Hurayra"
+       },
+       "c": false,
+       "exp": {
+        "ar": "لا، أبو هريرةَ هو الذي سأل.",
+        "en": "No — Abu Hurayra was the one who asked."
+       }
+      },
+      {
+       "t": {
+        "ar": "على بلال",
+        "en": "On Bilal"
+       },
+       "c": false,
+       "exp": {
+        "ar": "لا، بل على صحابيٍّ من بلادِ فارس.",
+        "en": "No — on a Companion from Persia."
+       }
+      },
+      {
+       "t": {
+        "ar": "على سلمانَ الفارسيّ",
+        "en": "On Salman al-Farisi"
+       },
+       "c": true,
+       "exp": {
+        "ar": "صحيح! إكراماً له ولقومِه الذين سيطلبونَ الإيمانَ بصدق.",
+        "en": "Correct! Honoring him and his people who would seek faith sincerely."
+       }
+      }
+     ]
+    }
+   }
+  ],
+  "quiz": [
+   {
+    "q": {
+     "ar": "ما هي الثريّا؟",
+     "en": "What are the Pleiades?"
+    },
+    "opts": [
+     {
+      "t": {
+       "ar": "مجموعةُ نجومٍ بعيدة",
+       "en": "A distant cluster of stars"
+      },
+      "c": true
+     },
+     {
+      "t": {
+       "ar": "جبلٌ في مكّة",
+       "en": "A mountain in Makkah"
+      },
+      "c": false
+     },
+     {
+      "t": {
+       "ar": "نهرٌ في فارس",
+       "en": "A river in Persia"
+      },
+      "c": false
+     }
+    ]
+   },
+   {
+    "q": {
+     "ar": "في أيِّ سورةٍ نزلت ﴿ وَآخَرِينَ مِنْهُمْ ﴾؟",
+     "en": "In which surah was ﴿And others of them﴾ revealed?"
+    },
+    "opts": [
+     {
+      "t": {
+       "ar": "سورةُ البقرة",
+       "en": "Al-Baqara"
+      },
+      "c": false
+     },
+     {
+      "t": {
+       "ar": "سورةُ الجمعة",
+       "en": "Al-Jumu'a"
+      },
+      "c": true
+     },
+     {
+      "t": {
+       "ar": "سورةُ الفاتحة",
+       "en": "Al-Fatiha"
+      },
+      "c": false
+     }
+    ]
+   },
+   {
+    "q": {
+     "ar": "ما الميزانُ عند اللهِ بين الناس؟",
+     "en": "What is the measure between people with Allah?"
+    },
+    "opts": [
+     {
+      "t": {
+       "ar": "البلدُ الذي وُلدوا فيه",
+       "en": "The country they were born in"
+      },
+      "c": false
+     },
+     {
+      "t": {
+       "ar": "لونُ البشرة",
+       "en": "Skin color"
+      },
+      "c": false
+     },
+     {
+      "t": {
+       "ar": "صدقُ القلبِ والإيمان",
+       "en": "Sincerity of heart and faith"
+      },
+      "c": true
+     }
+    ]
+   }
+  ],
+  "moral": {
+   "ar": "الإيمانُ لا يعرفُ وطناً ولا لوناً، ومن طلبَ الحقَّ بصدقٍ وصلَ إليه ولو كان بعيداً كالنجوم.",
+   "en": "Faith knows no homeland or color; whoever sincerely seeks the truth will reach it, even if it is as far as the stars."
+  },
+  "badge": {
+   "icon": "✨",
+   "title": {
+    "ar": "وِسامُ بلوغِ الثريّا",
+    "en": "Badge of Reaching the Stars"
+   }
+  },
+  "reflect": [
+   {
+    "ar": "ما الشيءُ الصعبُ الذي تريدُ أن تصلَ إليه بالصبرِ والجِدّ؟",
+    "en": "What hard goal do you want to reach with patience and effort?"
+   },
+   {
+    "ar": "هل لك أصدقاءُ مسلمونَ من بلادٍ أخرى؟ ماذا تعلّمتَ منهم؟",
+    "en": "Do you have Muslim friends from other countries? What have you learned from them?"
+   }
+  ],
+  "didYouKnow": [
+   {
+    "ar": "حديثُ «لو كان الإيمانُ عند الثريّا لنالَه رجالٌ أو رجلٌ من هؤلاء» رواه البخاري (٤٨٩٧) ومسلم (٢٥٤٦) عن أبي هريرة رضي الله عنه",
+    "en": "The hadith \"Even if faith were at the Pleiades, men or a man from these would reach it\" is narrated by al-Bukhari (4897) and Muslim (2546) from Abu Hurayra"
+   },
+   {
+    "ar": "الثريّا عنقودٌ من النجومِ يُرى بالعينِ في ليالي الشتاء، وكان العربُ يضربونَ به المثلَ في البُعد — المصدر: إسلام ويب",
+    "en": "The Pleiades are a star cluster visible to the eye on winter nights; the Arabs used it as an example of great distance — Source: Islamweb"
+   }
+  ]
+ },
+ {
+  "icon": "🎒",
+  "scene": "dwellings",
+  "character": "🎒",
+  "title": {
+   "ar": "الأميرُ الذي حملَ متاعَ رجلٍ لا يعرفُه",
+   "en": "The Governor Who Carried a Stranger's Load"
+  },
+  "pages": [
+   {
+    "scene": "dwellings",
+    "character": "🏘️",
+    "text": {
+     "ar": "في خلافةِ عمرَ بنِ الخطّاب، صار <b>سلمانُ الفارسيُّ أميراً على المدائن</b> — المدينةِ التي كانت عاصمةَ كسرى ملكِ الفرس! ومع ذلك بقيَ يلبسُ <b>ثياباً بسيطة</b>، ويأكلُ من عملِ يدِه: يشتري الخُوصَ (سعفَ النخل) بدرهم، فيصنعُ منه سِلالاً ويبيعُها، ويتصدّقُ بعطائه.<br><br>وفي يومٍ اشترى رجلٌ عَلَفاً من السوق، فرأى سلمانَ بثيابِه البسيطةِ ولم يعرفْه، فظنّه <b>حمّالاً</b> يحملُ للناسِ بالأجرة، فقال له: احملْ هذا! فحملَه سلمانُ <b>بلا كلمةِ اعتراض</b>، ومشى به. فمرّوا بقومٍ عرفوه، فقالوا للرجل: <b>هذا صاحبُ رسولِ اللهِ ﷺ!</b> هذا الأمير!<br><br>فارتبكَ الرجلُ وخجلَ، واعتذرَ وأرادَ أن يأخذَ الحِملَ عنه، وأرادَ القومُ أن يحملوه عنه، فأبى سلمانُ <b>حتى أوصلَه إلى البيت</b>! لم يغضبْ ولم يقلْ: أتعرفُ مَن أنا؟ بل رأى في خدمةِ الناسِ خيراً وأجراً. وكان سلمانُ يقول: <b>مَن تواضعَ في الدنيا رفعه الله</b>.",
+     "en": "During Umar ibn al-Khattab's caliphate, <b>Salman al-Farisi became governor of al-Mada'in</b> — the city that had been the capital of Khosrow, king of Persia! Yet he still wore <b>simple clothes</b> and ate from his own handiwork: he bought palm fronds for a dirham, wove baskets from them and sold them, giving his salary in charity.<br><br>One day a man bought animal fodder in the market. He saw Salman in his simple clothes and, not recognizing him, took him for <b>a porter</b> who carried loads for a fee. He said: Carry this! Salman carried it <b>without a word of objection</b> and walked on. They passed some people who knew him, and they told the man: <b>This is the Companion of the Messenger of Allah ﷺ!</b> This is the governor!<br><br>The man was flustered and ashamed. He apologized and tried to take the load back, and the people wanted to carry it for him — but Salman refused <b>until he had delivered it to the house</b>! He did not get angry or say \"Do you know who I am?\" He saw good and reward in serving people. Salman used to say: <b>whoever is humble in this world, Allah raises him</b>."
+    },
+    "choice": {
+     "q": {
+      "ar": "ماذا فعلَ سلمانُ حين عرفَ الرجلُ أنّه الأمير؟",
+      "en": "What did Salman do when the man learned he was the governor?"
+     },
+     "opts": [
+      {
+       "t": {
+        "ar": "أكملَ حتى أوصلَ الحِملَ إلى البيت",
+        "en": "Kept going until he delivered the load to the house"
+       },
+       "c": true,
+       "exp": {
+        "ar": "أحسنت! هذا هو التواضعُ الحقيقيُّ وحبُّ خدمةِ الناس.",
+        "en": "Well done! That is true humility and love of serving people."
+       }
+      },
+      {
+       "t": {
+        "ar": "رمى الحِملَ وغضب",
+        "en": "Threw down the load in anger"
+       },
+       "c": false,
+       "exp": {
+        "ar": "لا، بل لم يغضبْ أبداً.",
+        "en": "No — he did not get angry at all."
+       }
+      },
+      {
+       "t": {
+        "ar": "طلبَ من الرجلِ أجرةً كبيرة",
+        "en": "Demanded a large fee"
+       },
+       "c": false,
+       "exp": {
+        "ar": "لا، بل حملَه ابتغاءَ الأجرِ من الله.",
+        "en": "No — he carried it seeking reward from Allah."
+       }
+      }
+     ]
+    }
+   }
+  ],
+  "quiz": [
+   {
+    "q": {
+     "ar": "على أيِّ مدينةٍ كان سلمانُ أميراً؟",
+     "en": "Which city was Salman governor of?"
+    },
+    "opts": [
+     {
+      "t": {
+       "ar": "مكّة",
+       "en": "Makkah"
+      },
+      "c": false
+     },
+     {
+      "t": {
+       "ar": "المدائن",
+       "en": "Al-Mada'in"
+      },
+      "c": true
+     },
+     {
+      "t": {
+       "ar": "دمشق",
+       "en": "Damascus"
+      },
+      "c": false
+     }
+    ]
+   },
+   {
+    "q": {
+     "ar": "ماذا ظنَّ الرجلُ سلمانَ؟",
+     "en": "What did the man think Salman was?"
+    },
+    "opts": [
+     {
+      "t": {
+       "ar": "تاجراً غنيّاً",
+       "en": "A rich merchant"
+      },
+      "c": false
+     },
+     {
+      "t": {
+       "ar": "جنديّاً",
+       "en": "A soldier"
+      },
+      "c": false
+     },
+     {
+      "t": {
+       "ar": "حمّالاً بالأجرة",
+       "en": "A porter for hire"
+      },
+      "c": true
+     }
+    ]
+   },
+   {
+    "q": {
+     "ar": "كيف كان سلمانُ يكسبُ طعامَه؟",
+     "en": "How did Salman earn his food?"
+    },
+    "opts": [
+     {
+      "t": {
+       "ar": "من صنعِ السِّلالِ بيدِه",
+       "en": "By weaving baskets with his hands"
+      },
+      "c": true
+     },
+     {
+      "t": {
+       "ar": "من أموالِ الناس",
+       "en": "From people's money"
+      },
+      "c": false
+     },
+     {
+      "t": {
+       "ar": "من الصيد",
+       "en": "From hunting"
+      },
+      "c": false
+     }
+    ]
+   }
+  ],
+  "moral": {
+   "ar": "المنصبُ لا يرفعُ الإنسانَ، بل يرفعُه تواضعُه وخدمتُه للناس، ومن تواضعَ لله رفعه.",
+   "en": "A position does not raise a person — his humility and service to people do; whoever is humble for Allah, He raises."
+  },
+  "badge": {
+   "icon": "🎒",
+   "title": {
+    "ar": "وِسامُ الأميرِ المتواضع",
+    "en": "Badge of the Humble Governor"
+   }
+  },
+  "reflect": [
+   {
+    "ar": "هل ساعدتَ أحداً في حملِ شيءٍ ثقيلٍ دونَ أن يطلبَ منك؟",
+    "en": "Have you helped someone carry something heavy without being asked?"
+   },
+   {
+    "ar": "كيف تتصرّفُ إذا لم يعرفِ الناسُ قدرَك؟",
+    "en": "How do you behave when people don't know your worth?"
+   }
+  ],
+  "didYouKnow": [
+   {
+    "ar": "قصّةُ حملِ سلمانَ العلفَ للرجلِ الذي لم يعرفْه، وأنّه أبى أن يضعَه حتى بلغَ المنزل — المصدر: سير أعلام النبلاء للذهبي (ترجمة سلمان)",
+    "en": "The story of Salman carrying fodder for a man who didn't recognize him, refusing to put it down until he reached the house — Source: Siyar A'lam an-Nubala' by al-Dhahabi (biography of Salman)"
+   },
+   {
+    "ar": "كان عطاءُ سلمانَ خمسةَ آلاف، وكان أميراً على نحوِ ثلاثينَ ألفاً، فكان يتصدّقُ بعطائِه ويأكلُ من عملِ يدِه — المصدر: سير أعلام النبلاء",
+    "en": "Salman's salary was five thousand and he governed about thirty thousand people, yet he gave his salary in charity and ate from his handiwork — Source: Siyar A'lam an-Nubala'"
    }
   ]
  }
