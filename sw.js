@@ -3,7 +3,7 @@
    cache fallback when offline so the app opens. Static assets are
    cached on first use (stale-while-revalidate). This is intentionally
    light — it does NOT pre-cache the whole site (hundreds of books). */
-var CACHE = 'mkt-v7';
+var CACHE = 'mkt-v8';
 var CORE = [
   './',
   './index.html',

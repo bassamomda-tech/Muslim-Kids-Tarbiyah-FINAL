@@ -516,12 +516,10 @@
     h+='<div class="merge-note">'+L(
       '<b>📖 عن هذا الكتاب:</b> كُتب ليُقرأ متسلسلًا كما يُقرأ أيُّ كتابٍ تربويّ: يبدأ بالفهم (ما التربية؟ ولماذا؟)، ثم بالطفل نفسه في كل مرحلةٍ من عمره، ثم بما نبنيه فيه، ثم بالخطط والبرنامج اليومي، ثم بعلاج ما يعترض الطريق من مشكلات، ثم بأدوات البيت. كلُّ موضوعٍ يُشرح في موضعٍ واحدٍ فقط، وما يحتاجه بابٌ من بابٍ آخر يُحال إليه برابط بدل تكراره. تقدّمك في القوائم والبرامج محفوظٌ على جهازك.',
       '<b>📖 About this book:</b> it is meant to be read in order like any parenting book: understanding first (what tarbiyah is and why), then the child at each age, then what we build in them, then the plans and the daily program, then the problems along the way, then home tools. Each topic is explained in one place only; when another part needs it, it links instead of repeating. Your checklist and program progress is saved on this device.')+'</div>';
-    var PDF={p:'المشكلات وحلولها.pdf',g:'خطط الأهداف العملية.pdf',m:'مرجع المربي.pdf'};
-    h+='<div class="h-sec">🖨️ '+L('ملفات PDF جاهزة','Ready PDF files')+'</div>'
-      +'<div class="parts">'+['p','g','m'].map(function(k){ var P=PARTS[k]; return '<div class="part-card" style="--pc:'+P.c+'"><span class="pi">📄</span><b>'+t(P.t)+'</b>'
-        +'<span>'+L('ملفٌّ واحدٌ مرتّب لهذا الجزء.','One tidy file for this part.')+'</span>'
-        +'<div class="related"><a href="pdf/'+encodeURIComponent(PDF[k])+'" download>⬇ PDF</a></div></div>'; }).join('')
-      +'<div class="part-card" style="--pc:#0A2540"><span class="pi">🖨️</span><b>'+L('أيُّ بابٍ كاملًا','Any whole part')+'</b><span>'+L('اضغط 🖨️ بجوار أي باب في الفهرس ثم «طباعة ← حفظ PDF».','Tap 🖨️ beside any part in the contents, then Print → Save as PDF.')+'</span></div></div>';
+    var PDFN=['دليل الأهل ١ - أصول التربية','دليل الأهل ٢ - مراحل العمر','دليل الأهل ٣ - بناء الشخصية المسلمة','دليل الأهل ٤ - خطط الأهداف','دليل الأهل ٥ - خارطة الطريق والبرنامج اليومي','دليل الأهل ٦ - المشكلات وحلولها','دليل الأهل ٧ - أدوات البيت','دليل الأهل ٨ - الملاحق'];
+    h+='<div class="h-sec">🖨️ '+L('الكتاب بصيغة PDF — بابًا بابًا بالترتيب','The book as PDF — part by part, in order')+'</div>'
+      +'<div class="toc pdfs">'+BOOK.map(function(P,i){ return '<a class="tcard" style="--tc:'+P.c+'" href="pdf/'+encodeURIComponent(PDFN[i])+'.pdf" download><span class="ti">📄</span><span><b>'+t(P.t)+'</b><small>⬇ PDF</small></span></a>'; }).join('')+'</div>'
+      +'<p class="hint">'+L('أو اضغط 🖨️ بجوار أي باب في الفهرس لطباعته أو حفظه بنفسك.','Or tap 🖨️ beside any part in the contents to print or save it yourself.')+'</p>';
     return h;
   }
 
