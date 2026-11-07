@@ -181,8 +181,8 @@ window.HOUSES.haya = {
           text:{ ar:'قالَ النَّبيُّ ﷺ بِابتِسامَةٍ عَميقَة: <b>«أَلا أَستَحي مِن رَجُلٍ تَستَحي مِنهُ المَلائِكَة؟!»</b><br><br>تَوَقَّفَت عائِشَةُ رضي اللهُ عنها مَذهولَة. المَلائِكَة! تِلكَ المَخلوقاتُ النُّورانيَّةُ الطّاهِرَة — تَستَحي مِن عُثمانَ بنِ عَفَّان؟ هذا يَعني أنَّ حَياءَهُ بَلَغَ مِن العَظَمَةِ ما يُكرِمُهُ اللهُ بِهذهِ المَنزِلَةِ الرَّفيعَة!',
                  en:'The Prophet ﷺ said with a deep smile: <b>"Should I not feel shy before a man of whom the angels feel shy?!"</b><br><br>\'A\'ishah رضي الله عنها stopped in amazement. The angels! Those pure, luminous beings — feel shy before Uthman ibn \'Affan? This means his haya reached such greatness that Allah honored him with this lofty station!' } },
         { scene:'garden', character:'🌟',
-          text:{ ar:'مَن هو عُثمانُ رضي اللهُ عنه؟ رَجُلٌ جَمَعَ اللهُ فيه الثَّروَةَ والحَياء. أَنفَقَ جَيشَ العُسرَةِ بِنَفسِهِ. اشتَرى بِئرَ رومَةَ وجَعَلَها لِلمُسلِمينَ مَجّاناً. وزَّعَ الذَّهَبَ في سَبيلِ اللهِ، ثُمَّ يَستَحي مِن اللهِ كَأَنَّهُ لَم يَفعَل شَيئاً.<br><br>قالَ عَنهُ الذَّهَبيُّ في «سِيَرِ أَعلامِ النُّبَلاء»: <b>«كانَ عُثمانُ رضي اللهُ عنهُ مِن أَشَدِّ الصَّحابَةِ حَياءً وأَكثَرِهِم تَكَرُّماً»</b> — سير أعلام النبلاء، ج٢.',
-                 en:'Who is Uthman رضي الله عنه? A man in whom Allah combined wealth and haya. He personally funded the Army of Difficulty. He bought the well of Rumah and gave it free to the Muslims. He distributed gold for Allah\'s sake — then felt ashamed before Allah as if he had done nothing.<br><br>Al-Dhahabi wrote of him in "Siyar A\'lam al-Nubala\'": <b>"Uthman رضي الله عنه was among the most intensely modest of the Companions and the most generous"</b> — Siyar A\'lam al-Nubala\', vol.2.' } },
+          text:{ ar:'مَن هو عُثمانُ رضي اللهُ عنه؟ رَجُلٌ جَمَعَ اللهُ فيه الثَّروَةَ والحَياء. أَنفَقَ جَيشَ العُسرَةِ بِنَفسِهِ. اشتَرى بِئرَ رومَةَ وجَعَلَها لِلمُسلِمينَ مَجّاناً. وزَّعَ الذَّهَبَ في سَبيلِ اللهِ، ثُمَّ يَستَحي مِن اللهِ كَأَنَّهُ لَم يَفعَل شَيئاً.<br><br>ولِهذا وَصَفَهُ العُلَماءُ وأَهلُ السِّيَرِ بِأنَّهُ <b>كانَ مِن أَشَدِّ الصَّحابَةِ حَياءً وأَكثَرِهِم تَكَرُّماً</b>.',
+                 en:'Who is Uthman رضي الله عنه? A man in whom Allah combined wealth and haya. He personally funded the Army of Difficulty. He bought the well of Rumah and gave it free to the Muslims. He distributed gold for Allah\'s sake — then felt ashamed before Allah as if he had done nothing.<br><br>That is why scholars and biographers describe him as <b>among the most intensely modest of the Companions and the most generous</b>.' } },
         { scene:'night', character:'🌙',
           text:{ ar:'وَرَوى أَبو هُرَيرَةَ رضي اللهُ عنه أنَّ عُثمانَ كانَ إذا وَقَفَ على قَبرٍ بَكى حتى يَبُلَّ لِحيَتَهُ، وكانَ يَقول: «لَو أَنَّني بَينَ الجَنَّةِ والنّارِ لَم أَدرِ أَيُّهُما يُؤمَرُ بي». هذا هو الحَياءُ الحَقيقيُّ — أن تَستَحيَ مِن اللهِ حتى وأنتَ مِن خِيارِ الناس!<br><br><b>تَعَلَّمنا مِن عُثمانَ رضي اللهُ عنهُ أنَّ الحَياءَ لَيسَ لِلضُّعَفاء — بَل هو تاجُ الكِرامِ المُؤمِنين!</b>',
                  en:'Abu Hurayrah رضي الله عنه narrated that when Uthman stood by a grave he wept until his beard was wet, saying: "If I were between paradise and hell I would not know to which I would be commanded." This is true haya — to feel ashamed before Allah even while you are among the best of people!<br><br><b>We learned from Uthman رضي الله عنه that haya is not for the weak — it is the crown of noble believers!</b>' } },
@@ -200,7 +200,7 @@ window.HOUSES.haya = {
             { t:{ar:'لِأَنَّ المَلائِكَةَ تَستَحي مِن عُثمَان', en:'Because the angels feel shy before Uthman'}, c:true },
             { t:{ar:'لِأَنَّ عُثمانَ كانَ مَريضاً', en:'Because Uthman was unwell'}, c:false },
           ] },
-        { q:{ar:'ماذا قالَ الذَّهَبيُّ عن عُثمانَ في «سِيَر أَعلام النُّبَلاء»؟', en:'What did al-Dhahabi say about Uthman in "Siyar A\'lam al-Nubala\'"?'},
+        { q:{ar:'بِماذا وَصَفَ العُلَماءُ عُثمانَ رضي اللهُ عنه؟', en:'How do scholars describe Uthman رضي الله عنه?'},
           opts:[
             { t:{ar:'كانَ مِن أَشَدِّ الصَّحابَةِ شَجاعَة', en:'He was the bravest of the Companions'}, c:false },
             { t:{ar:'كانَ مِن أَشَدِّ الصَّحابَةِ حَياءً وأَكثَرِهِم تَكَرُّماً', en:'He was the most modest and most generous of Companions'}, c:true },
@@ -289,7 +289,7 @@ window.HOUSES.haya = {
         {ar:'هَل يُمكِنُ أن تَكونَ شُجاعاً وحَيِيّاً في نَفسِ الوَقت؟ كَيف؟', en:'Can you be brave and modest at the same time? How?'}
       ],
       didYouKnow: [
-        {ar:'حَديثُ «أَشَدَّ حَياءً مِن العَذراءِ في خِدرِها» رَواهُ أحمد، وهو مَذكورٌ في الصَّحيحَين مِن طُرُقٍ أُخرى — تَفصيلٌ كامِلٌ على islamweb.net/ar/article/185131', en:'The hadith "more modest than a virgin in her chamber" was narrated by Ahmad, and mentioned in the two Sahihs via other chains — full detail at islamweb.net/ar/article/185131'},
+        {ar:'حَديثُ «أَشَدَّ حَياءً مِن العَذراءِ في خِدرِها» رَواهُ البُخاريُّ (٣٥٦٢) ومُسلِمٌ (٢٣٢٠) عن أَبي سَعيدٍ الخُدريّ — تَفصيلٌ كامِلٌ على islamweb.net/ar/article/185131', en:'The hadith "more modest than a virgin in her chamber" was narrated by al-Bukhari (3562) and Muslim (2320) from Abu Sa\'id al-Khudri — full detail at islamweb.net/ar/article/185131'},
         {ar:'قالَ الإمامُ النَّوَوي: «مَعناهُ أنَّهُ ﷺ لَم يَكُن يَتَكَلَّمُ بِالشَّيءِ الَّذي يَكرَه لِحَيائِه، بَل يَتَغَيَّرُ وَجهُهُ فَنَفهَمُ كَراهِيَتَه». المَصدَر: islamweb.net/ar/article/237502', en:'Imam al-Nawawi said: "Its meaning is that he ﷺ would not speak of what he disliked out of haya — rather his face would change and we would understand his dislike." Source: islamweb.net/ar/article/237502'},
       ],
     },
@@ -358,7 +358,7 @@ window.HOUSES.haya = {
       ],
       didYouKnow: [
         {ar:'تَناوَلَ ابنُ القَيِّم الحَياءَ بِشَكلٍ مُعَمَّقٍ في «مَدارِج السّالِكين» — باب مَنزِلَةِ الحَياء. المَصدَر: islamweb.net/ar/library/content/119/325 (مَدارِج السّالِكين — ابنُ القَيِّم، باب الحَياء)', en:'Ibn al-Qayyim addressed haya in depth in "Madarij al-Salikeen" — the chapter on the station of haya. Source: islamweb.net/ar/library/content/119/325 (Madarij al-Salikeen — Ibn al-Qayyim, Bab al-Haya)'},
-        {ar:'قَسَّمَ ابنُ القَيِّم الحَياءَ إلى عَشَرَةِ أَقسامٍ مَوجودَةٍ في مَدارِج السّالِكين ج٢ — ومِنها: حَياءُ الجِناية، وحَياءُ التَّقصير، وحَياءُ الإِجلال، وحَياءُ العِبادَة والشُّكر. المَصدَر: islamweb.net/ar/fatwa/181925', en:'Ibn al-Qayyim divided haya into ten categories in Madarij al-Salikeen vol.2 — including: haya of wrongdoing, of shortcoming, of reverence, of worship and gratitude. Source: islamweb.net/ar/fatwa/181925'},
+        {ar:'قَسَّمَ ابنُ القَيِّم الحَياءَ إلى عَشَرَةِ أَقسامٍ مَوجودَةٍ في مَدارِج السّالِكين ج٢ — ومِنها: حَياءُ الجِناية، وحَياءُ التَّقصير، وحَياءُ الإِجلال، وحَياءُ الكَرَم، وحَياءُ العُبوديَّة. المَصدَر: islamweb.net/ar/fatwa/181925', en:'Ibn al-Qayyim divided haya into ten categories in Madarij al-Salikeen vol.2 — including: haya of wrongdoing, of shortcoming, of reverence, of generosity, of servitude. Source: islamweb.net/ar/fatwa/181925'},
       ],
     },
 

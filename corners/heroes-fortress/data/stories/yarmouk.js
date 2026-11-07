@@ -197,8 +197,8 @@ HISN_STORIES.yarmouk = [
   ],
   "didYouKnow": [
    {
-    "ar": "كانت اليرموكُ سنةَ ١٥هـ في خلافةِ عمر — المصدر: البداية والنهاية",
-    "en": "Yarmouk was in 15 AH under Umar — Source: Al-Bidaya wa an-Nihaya"
+    "ar": "كانت اليرموكُ سنةَ ١٥هـ في خلافةِ عمر على قولِ كثيرٍ من المؤرّخين، وقيل: سنةَ ١٣هـ في آخرِ خلافةِ أبي بكر — المصدر: البداية والنهاية",
+    "en": "Yarmouk was in 15 AH under Umar according to many historians; others say 13 AH at the end of Abu Bakr\u2019s caliphate — Source: Al-Bidaya wa an-Nihaya"
    },
    {
     "ar": "كان قادةُ جيوشِ المسلمينَ في الشامِ: أبا عبيدةَ وعمرَو بنَ العاصِ ويزيدَ بنَ أبي سفيانَ وشُرَحبيلَ بنَ حسنة — المصدر: تاريخ الطبري",
@@ -847,8 +847,8 @@ HISN_STORIES.yarmouk = [
     "scene": "mosque",
     "character": "✉️",
     "text": {
-     "ar": "في وسطِ المعركةِ جاءَ كتابٌ: الخليفةُ عمرُ <b>عزلَ خالداً</b> وجعلَ أبا عبيدةَ قائداً — لا لخطأٍ، بل خشيةَ أن يَفتتنَ الناسُ بخالد. فماذا فعل؟ <b>كتمَ الخبرَ</b> وأكملَ القتالَ حتى النصر، ثم سلّمَ القيادةَ راضياً وقال: «<b>أُقاتِلُ لله، لا لِعُمر</b>». وبعدها <b>فُتِحَ الشامُ كلُّه</b>!",
-     "en": "Mid-battle a letter came: Caliph Umar <b>dismissed Khalid</b> and made Abu Ubayda commander — not for a fault, but lest people be enchanted by Khalid. What did he do? He <b>hid the news</b>, finished the fight to victory, then handed over command contentedly, saying: «<b>I fight for Allah, not for Umar.</b>» After it, <b>all of Sham was opened</b>!"
+     "ar": "في وسطِ المعركةِ جاءَ كتابٌ: الخليفةُ عمرُ <b>عزلَ خالداً</b> وجعلَ أبا عبيدةَ قائداً — لا لخطأٍ، بل خشيةَ أن يَفتتنَ الناسُ بخالد. فماذا فعل؟ <b>كتمَ الخبرَ</b> وأكملَ القتالَ حتى النصر، ثم سلّمَ القيادةَ راضياً، ويُروى أنّه قال: «<b>أُقاتِلُ لله، لا لِعُمر</b>». وبعدها <b>فُتِحَ الشامُ كلُّه</b>!",
+     "en": "Mid-battle a letter came: Caliph Umar <b>dismissed Khalid</b> and made Abu Ubayda commander — not for a fault, but lest people be enchanted by Khalid. What did he do? He <b>hid the news</b>, finished the fight to victory, then handed over command contentedly; it is related that he said: «<b>I fight for Allah, not for Umar.</b>» After it, <b>all of Sham was opened</b>!"
     },
     "choice": {
      "q": {

@@ -377,7 +377,7 @@ window.HOUSES.striving = {
         {ar:'عُمَرُ كانَ يَسأَلُ نَفسَهُ كُلَّ لَيلَة: «هَل سَعَيتُ اليَوم؟» ما الَّذي تَستَطيعُ أَن تَسأَلَ نَفسَكَ اللَّيلَةَ قَبلَ النَّوم؟', en:'Umar would ask himself every night: "Did I strive today?" What can you ask yourself tonight before sleep?'},
       ],
       didYouKnow: [
-        {ar:'قالَ الإِمامُ الذَّهَبيُّ في سِيَرِ أَعلامِ النُّبَلاء عن عُمَرَ: «كانَ يَطوفُ اللَّيلَ ويُحمَلُ على ظَهرِهِ القِرَبُ والحَوائِجُ لِلمُحتاجين» — «المَصدَر: سِيَرُ أَعلامِ النُّبَلاء — الذَّهَبي — ج٥»', en:'Imam al-Dhahabi said in Siyar A\'lam al-Nubala about Umar: "He used to patrol the night, carrying on his back waterskins and provisions for those in need." — Source: Siyar A\'lam al-Nubala — Al-Dhahabi — Vol. 5'},
+        {ar:'تَذكُرُ كُتُبُ التّاريخِ والسِّيَرِ أنَّ عُمَرَ رضي الله عنه كانَ يَعُسُّ بِاللَّيل، ويَحمِلُ على ظَهرِهِ الحَوائِجَ لِلمُحتاجين — «المَصدَر: كُتُبُ التّاريخِ والسِّيَر»', en:'History and biography books mention that Umar رضي الله عنه used to patrol at night and carry provisions on his back for those in need — Source: books of history and biography'},
         {ar:'وَصَفَ الذَّهَبيُّ عُمَرَ بِأَنَّهُ كانَ «يَنامُ على الأَرضِ دونَ وِسادَة، ويَأكُلُ خُبزَ الشَّعيرِ بِدونِ إِدام» — مَع كَونِهِ خَليفَةً على مَملَكَةٍ شاسِعَة. «المَصدَر: سِيَرُ أَعلامِ النُّبَلاء — الذَّهَبي — ج٥»', en:'Al-Dhahabi described Umar as one who "slept on the ground without a pillow, and ate barley bread without any side dish" — even though he was the Caliph of a vast realm. Source: Siyar A\'lam al-Nubala — Al-Dhahabi — Vol. 5'},
       ],
     },

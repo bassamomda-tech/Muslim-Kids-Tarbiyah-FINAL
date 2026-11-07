@@ -195,7 +195,7 @@ window.QSTORIES.uzayr.certificate = {
     "en": "Awarded to the one who completed this Quran story"
   },
   "statement": {
-    "ar": "لِتدبُّرِه/تدبُّرِها <b>آيةَ العُزَير</b>: كيف أماتَه اللهُ مئةَ عامٍ ثم بعثَه، فازدادَ يقينًا بقُدرةِ اللهِ على البعث.",
-    "en": "For reflecting on <b>the sign of Uzayr</b>: how Allah caused him to die for a hundred years then revived him, increasing his certainty in Allah's power to resurrect."
+    "ar": "لِتدبُّرِه/تدبُّرِها <b>آيةَ الذي مرَّ على قرية</b> (قيل هو العُزَير): كيف أماتَه اللهُ مئةَ عامٍ ثم بعثَه، فازدادَ يقينًا بقُدرةِ اللهِ على البعث.",
+    "en": "For reflecting on <b>the sign of the man who passed by a town</b> (said to be Uzayr): how Allah caused him to die for a hundred years then revived him, increasing his certainty in Allah's power to resurrect."
   }
 };

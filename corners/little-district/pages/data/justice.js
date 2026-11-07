@@ -14,8 +14,8 @@ window.HOUSES.justice = {
   knowledge: {
     didYouKnow: {
       title: { ar:'هل تَعلَمُ أنَّ العَدلَ اسمٌ مِن أَسماءِ الله الحُسنى؟', en:'Did you know Justice is one of Allah\'s Beautiful Names?' },
-      sub:   { ar:'«إنَّ المُقسِطينَ عِندَ اللهِ على مَنابِرَ مِن نورٍ، عَن يَمينِ الرَّحمَن، وكِلتا يَدَيهِ يَمين، الَّذينَ يَعدِلونَ في حُكمِهِم وأَهليهِم وما وَلوا» — رواه مُسلِم ٤٧٢١',
-               en:'"The just will be on pulpits of light at the right hand of the Most Merciful — those who are fair in their judgements, their families, and all they oversee." — Sahih Muslim 4721' },
+      sub:   { ar:'«إنَّ المُقسِطينَ عِندَ اللهِ على مَنابِرَ مِن نورٍ، عَن يَمينِ الرَّحمَن، وكِلتا يَدَيهِ يَمين، الَّذينَ يَعدِلونَ في حُكمِهِم وأَهليهِم وما وَلوا» — رواه مُسلِم ١٨٢٧',
+               en:'"The just will be on pulpits of light at the right hand of the Most Merciful — those who are fair in their judgements, their families, and all they oversee." — Sahih Muslim 1827' },
     },
     definition: {
       linguistic: {
@@ -59,7 +59,7 @@ window.HOUSES.justice = {
     hadiths: [
       { text: { ar:'«إنَّ المُقسِطينَ عِندَ اللهِ على مَنابِرَ مِن نورٍ، عَن يَمينِ الرَّحمَن وكِلتا يَدَيهِ يَمين، الَّذينَ يَعدِلونَ في حُكمِهِم وأَهليهِم وما وَلوا»',
                 en:'"The just will be on pulpits of light at the right hand of the Most Merciful — those who are fair in their judgements, their families, and all they oversee."' },
-        source: { ar:'[رواه مسلم — حديث ٤٧٢١]', en:'[Sahih Muslim — 4721]' } },
+        source: { ar:'[رواه مسلم — حديث ١٨٢٧]', en:'[Sahih Muslim — 1827]' } },
       { text: { ar:'«إنَّما أَهلَكَ الَّذينَ مِن قَبلِكُم أَنَّهُم كانوا إذا سَرَقَ فيهِمُ الشَّريفُ تَرَكوه، وإذا سَرَقَ فيهِمُ الضَّعيفُ أَقاموا عَلَيهِ الحَدَّ»',
                 en:'"What destroyed those before you was that when a nobleman among them stole, they let him go; but when a weak person stole, they carried out the punishment."' },
         source: { ar:'[رواه البخاري — حديث ٦٧٨٧]', en:'[Sahih Al-Bukhari — 6787]' } },
@@ -491,7 +491,7 @@ window.HOUSES.justice = {
         {ar:'عُمَرُ بنُ عَبدِ العَزيزِ حَكَمَ سَنَتَينِ ونِصفاً لَكِنَّ أَثَرَهُ دامَ لِلأَبَد. كَيفَ يُمكِنُكَ أَنتَ أَن تَترُكَ أَثَراً عادِلاً في بَيتِكَ ومَدرَستِك؟', en:'\'Umar ibn \'Abd Al-\'Aziz ruled for two and a half years but his impact lasted forever. How can you leave a just impact in your home and school?'},
       ],
       didYouKnow: [
-        {ar:'عُمَرُ بنُ عَبدِ العَزيزِ هو أَحَدُ التّابِعينَ وخَليفَةُ الإسلام. قالَ عَنهُ الإمامُ الذَّهَبيُّ في سِيَرِ أَعلامِ النُّبَلاء ج٥: «مَلأَت عَدالَتُهُ الآفاقَ وأَوقَظَت في الأُمَّةِ رُوحَ الفاروق.» [سير أعلام النبلاء — ج٥]',en:'\'Umar ibn \'Abd Al-\'Aziz is one of the Tabi\'in and a Caliph of Islam. Imam Al-Dhahabi said of him in Siyar A\'lam An-Nubala, vol. 5: "His justice filled the horizons and awakened in the nation the spirit of Al-Faruq." [Siyar A\'lam An-Nubala — vol. 5]'},
+        {ar:'عُمَرُ بنُ عَبدِ العَزيزِ هو أَحَدُ التّابِعينَ وخَليفَةُ الإسلام. وقد مَلأَت عَدالَتُهُ الآفاق، حتى عَدَّهُ كَثيرٌ مِن العُلَماءِ خامِسَ الخُلَفاءِ الرّاشِدين. [سير أعلام النبلاء — ج٥]',en:'\'Umar ibn \'Abd Al-\'Aziz is one of the Tabi\'in and a Caliph of Islam. His justice filled the horizons, so that many scholars counted him as the fifth Rightly Guided Caliph. [Siyar A\'lam An-Nubala — vol. 5]'},
         {ar:'رُوِيَ أَنَّ الذِّئابَ في عَهدِهِ كانَت تَجلِسُ بِجانِبِ الغَنَمِ دونَ أَن تَعتَدي، حتَّى قالَ النَّاسُ: «أَمَّنَ عُمَرُ الذِّئابَ على الغَنَم!» وهو مَضرِبُ مَثَلٍ لِلعَدلِ الَّذي يُصلِحُ حتَّى الطَّبيعَة [المَصدَر: dorar.net — أَخلاق الخُلَفاء الرّاشِدِين].',en:'It is narrated that in his era wolves would sit beside sheep without attacking, until people said: "\'Umar made wolves safe around sheep!" It became a proverb for justice that reforms even nature. [Source: dorar.net — ethics of the Rightly Guided Caliphs]'},
       ],
     },
@@ -510,7 +510,7 @@ window.HOUSES.justice = {
     ],
     hadiths: [
       { text:{ar:'«إنَّ المُقسِطينَ عِندَ اللهِ على مَنابِرَ مِن نورٍ، عَن يَمينِ الرَّحمَن، الَّذينَ يَعدِلونَ في حُكمِهِم وأَهليهِم وما وَلوا»',en:'"The just will be on pulpits of light at the right hand of the Most Merciful — those who are fair in their judgements, their families, and all they oversee."'},
-        ref:{ar:'[رواه مسلم — حديث ٤٧٢١]', en:'[Sahih Muslim — 4721]'} },
+        ref:{ar:'[رواه مسلم — حديث ١٨٢٧]', en:'[Sahih Muslim — 1827]'} },
       { text:{ar:'«إنَّما أَهلَكَ الَّذينَ مِن قَبلِكُم أَنَّهُم كانوا إذا سَرَقَ فيهِمُ الشَّريفُ تَرَكوه، وإذا سَرَقَ فيهِمُ الضَّعيفُ أَقاموا عَلَيهِ الحَدَّ»',en:'"What destroyed those before you was that when a nobleman stole, they let him go; but when a weak person stole, they carried out the punishment."'},
         ref:{ar:'[رواه البخاري — حديث ٦٧٨٧]', en:'[Sahih Al-Bukhari — 6787]'} },
     ],

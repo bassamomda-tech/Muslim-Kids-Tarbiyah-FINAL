@@ -480,7 +480,7 @@ HISN_STORIES.nikopolis = [
     "scene": "globe",
     "character": "🕌",
     "text": {
-     "ar": "ويرى المؤرّخونَ أنّ نيكوبوليسَ كانت من <b>آخرِ الحملاتِ الصليبيّةِ الكبرى</b> في العصورِ الوسطى. وبعدَها ثبتَ حكمُ العثمانيّينَ في البلقانِ قروناً طويلة، وبقيتِ المساجدُ فيها عامرةً بالمصلّين، وبُنيتْ فيها المدارسُ والجسورُ والأسواق.<br><br>وكان بايزيدُ يحلمُ بفتحِ القسطنطينيّة، فلم يتحقّقْ ذلك على يديه، لكنّه تحقّقَ على يدِ حفيدِ حفيدِه <b>محمّدٍ الفاتح</b> سنةَ <b>٨٥٧ للهجرة</b> (١٤٥٣م). فالعملُ الصالحُ يُكملُه الأبناءُ والأحفاد، ولا يضيعُ تعبُ المخلصين.",
+     "ar": "ويرى المؤرّخونَ أنّ نيكوبوليسَ كانت من <b>آخرِ الحملاتِ الصليبيّةِ الكبرى</b> في العصورِ الوسطى. وبعدَها ثبتَ حكمُ العثمانيّينَ في البلقانِ قروناً طويلة، وبقيتِ المساجدُ فيها عامرةً بالمصلّين، وبُنيتْ فيها المدارسُ والجسورُ والأسواق.<br><br>وكان بايزيدُ يحلمُ بفتحِ القسطنطينيّة، فلم يتحقّقْ ذلك على يديه، لكنّه تحقّقَ على يدِ ابنِ حفيدِه <b>محمّدٍ الفاتح</b> سنةَ <b>٨٥٧ للهجرة</b> (١٤٥٣م). فالعملُ الصالحُ يُكملُه الأبناءُ والأحفاد، ولا يضيعُ تعبُ المخلصين.",
      "en": "Historians consider Nikopolis one of <b>the last great Crusades</b> of the Middle Ages. After it, Ottoman rule in the Balkans was firmly established for many centuries, and its mosques remained full of worshippers, while schools, bridges and markets were built there.<br><br>Bayezid dreamed of conquering Constantinople. It did not happen in his time, but it came true through his great-grandson <b>Muhammad al-Fatih</b> in <b>857 AH</b> (1453 CE). Good work is completed by children and grandchildren, and the effort of the sincere is never lost."
     }
    },

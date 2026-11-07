@@ -276,7 +276,7 @@ window.HOUSES.gratitude = {
         {ar:'كَيفَ يُمكِنُكَ أن تَستَخدِمَ مَوهِبَتَكَ أو وَقتَكَ الحُرَّ في شُكرِ الله؟', en:'How can you use your talent or free time to thank Allah?'},
       ],
       didYouKnow: [
-        {ar:'قِصَّةُ إبراهيمَ بنِ أَدهَم مَرويَّةٌ في «سِيَرِ أَعلامِ النُّبَلاء» لِلإمامِ الذَّهَبي — ج٧ ص٣٨٧. كانَ مَولودُهُ حَوالَيَ سَنَة ٨٠ هـ', en:'The story of Ibrahim ibn Adham is narrated in Siyar A\'lam al-Nubala\' by Imam al-Dhahabi — vol.7 p.387. He was born around 80 AH'},
+        {ar:'قِصَّةُ إبراهيمَ بنِ أَدهَم مَرويَّةٌ في «سِيَرِ أَعلامِ النُّبَلاء» لِلإمامِ الذَّهَبي — ج٧ ص٣٨٧. وُلِدَ — على ما يُذكَرُ — نَحوَ سَنَةِ ١٠٠هـ، وتُوُفِّيَ سَنَةَ ١٦٢هـ', en:'The story of Ibrahim ibn Adham is narrated in Siyar A\'lam al-Nubala\' by Imam al-Dhahabi — vol.7 p.387. He was reportedly born around 100 AH and died in 162 AH'},
         {ar:'قالَ الذَّهَبيُّ في سِيَرِه: «وقيلَ إنَّهُ كانَ مَلِكَ خُراسان ثُمَّ تَزَهَّد، ومَضى في طَلَبِ العِلمِ والعِبادَة، وكانَ مِن أَعيانِ الزُّهّادِ الثِّقات». سير أعلام النبلاء — ج٧ ص٣٨٧', en:'Al-Dhahabi said in Siyar: "It is said he was the king of Khurasan then lived ascetically, devoted to knowledge and worship, and was among the leading trusted ascetics." Siyar A\'lam al-Nubala\' — vol.7 p.387'},
       ],
     },

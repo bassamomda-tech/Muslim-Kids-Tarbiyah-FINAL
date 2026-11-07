@@ -25,8 +25,8 @@ HISN.chapters.farewell = {
    "en": "On the Farewell Pilgrimage, the Prophet addressed over a hundred thousand Muslims, and Allah completed the religion: Today I have perfected your religion for you."
   },
   "who": {
-   "ar": "في السنةِ العاشرةِ للهجرة، حجَّ النبيُّ ﷺ حجّتَه الوحيدةَ والأخيرة، فسُمِّيت <b>حجةَ الوداع</b>. اجتمعَ معه أكثرُ من <b>مئةِ ألفِ</b> مسلم. خطبَ فيهم <b>خطبةً عظيمة</b> على جبلِ عرفة، أوصاهم فيها بالتقوى، وحُرمةِ الدماءِ والأموال، وحُسنِ معاملةِ النساء، والأخوّةِ والمساواةِ بين الناس، والتمسّكِ بالقرآنِ والسنّة. ونزلَ قولُه تعالى: اليومَ أكملتُ لكم دينَكم. وبعدَها بأشهرٍ قليلةٍ انتقلَ ﷺ إلى الرفيقِ الأعلى.",
-   "en": "In the tenth year of Hijrah, the Prophet performed his only and final Hajj, called the Farewell Pilgrimage. Over a hundred thousand Muslims gathered with him. He delivered a great sermon at Mount Arafah, advising them to be mindful of Allah, the sanctity of life and wealth, kindness to women, brotherhood and equality among people, and to hold to the Quran and Sunnah. Then Allah revealed: Today I have perfected your religion for you. A few months later, he passed to the Highest Companion."
+   "ar": "في السنةِ العاشرةِ للهجرة، حجَّ النبيُّ ﷺ حجّتَه الوحيدةَ والأخيرة، فسُمِّيت <b>حجةَ الوداع</b>. اجتمعَ معه أكثرُ من <b>مئةِ ألفِ</b> مسلم. خطبَ فيهم <b>خطبةً عظيمة</b> في عرفة، أوصاهم فيها بالتقوى، وحُرمةِ الدماءِ والأموال، وحُسنِ معاملةِ النساء، والأخوّةِ والمساواةِ بين الناس، والتمسّكِ بالقرآنِ والسنّة. ونزلَ قولُه تعالى: اليومَ أكملتُ لكم دينَكم. وبعدَها بأشهرٍ قليلةٍ انتقلَ ﷺ إلى الرفيقِ الأعلى.",
+   "en": "In the tenth year of Hijrah, the Prophet performed his only and final Hajj, called the Farewell Pilgrimage. Over a hundred thousand Muslims gathered with him. He delivered a great sermon at Arafah, advising them to be mindful of Allah, the sanctity of life and wealth, kindness to women, brotherhood and equality among people, and to hold to the Quran and Sunnah. Then Allah revealed: Today I have perfected your religion for you. A few months later, he passed to the Highest Companion."
   },
   "facts": [
    {
@@ -77,8 +77,8 @@ HISN.chapters.farewell = {
      "en": "The Sermon"
     },
     "what": {
-     "ar": "أوصاهم على جبلِ عرفة.",
-     "en": "He advised them at Mount Arafah."
+     "ar": "أوصاهم في عرفة.",
+     "en": "He advised them at Arafah."
     }
    },
    {
@@ -121,8 +121,8 @@ HISN.chapters.farewell = {
   {
    "scene": "mount",
    "text": {
-    "ar": "وقفَ النبيُّ ﷺ على جبلِ <b>عرفة</b> وخطبَ خطبةً عظيمةً سمِعها الجموع. أوصاهم بـ<b>تقوى الله</b>، وقال إنّ دماءَهم وأموالَهم حرام، وأوصى بـ<b>النساءِ</b> خيراً، وقال: <b>لا فضلَ لعربيٍّ على أعجميٍّ إلا بالتقوى</b> — كلُّ الناسِ سواءٌ كأسنانِ المشط. وأوصى بالتمسّكِ بـ<b>القرآنِ والسنّة</b>.",
-    "en": "The Prophet stood on Mount Arafah and gave a great sermon heard by the crowds. He advised them to be mindful of Allah, said their blood and wealth are sacred, advised kindness to women, and said: No Arab is superior to a non-Arab except by piety — all people are equal like the teeth of a comb. He advised holding to the Quran and Sunnah."
+    "ar": "وقفَ النبيُّ ﷺ في <b>عرفة</b> وخطبَ خطبةً عظيمةً سمِعها الجموع. أوصاهم بـ<b>تقوى الله</b>، وقال إنّ دماءَهم وأموالَهم حرام، وأوصى بـ<b>النساءِ</b> خيراً، وقال: <b>لا فضلَ لعربيٍّ على أعجميٍّ إلا بالتقوى</b> — كلُّ الناسِ سواءٌ كأسنانِ المشط. وأوصى بالتمسّكِ بـ<b>القرآنِ والسنّة</b>.",
+    "en": "The Prophet stood at Arafah and gave a great sermon heard by the crowds. He advised them to be mindful of Allah, said their blood and wealth are sacred, advised kindness to women, and said: No Arab is superior to a non-Arab except by piety — all people are equal like the teeth of a comb. He advised holding to the Quran and Sunnah."
    },
    "choice": {
     "q": {

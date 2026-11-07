@@ -10,7 +10,7 @@
     crumbSection:{ ar: "على خطى القدوات", en: "In the Footsteps of Role Models" },
     crumbTitle:  { ar: "مكتبة بيت الحكمة", en: "House of Wisdom Library" },
     title:       { ar: "مكتبة بيت الحكمة", en: "The House of Wisdom Library" },
-    desc:        { ar: "بيت الحكمة في بغداد كان أعظم مكتبة في العالم! الكتب تناثرت على الطاولة — اختر كل كتابٍ وضعه على الرفّ المناسب لعلمه: الطب، الفلك، الرياضيات...", en: "The House of Wisdom in Baghdad was the world's greatest library! The books are scattered on the table — pick each book and place it on the right shelf for its field: medicine, astronomy, mathematics..." },
+    desc:        { ar: "بيت الحكمة في بغداد كان من أعظم مكتبات العالم في زمانه! الكتب تناثرت على الطاولة — اختر كل كتابٍ وضعه على الرفّ المناسب لعلمه: الطب، الفلك، الرياضيات...", en: "The House of Wisdom in Baghdad was one of the greatest libraries in the world in its time! The books are scattered on the table — pick each book and place it on the right shelf for its field: medicine, astronomy, mathematics..." },
     conveyorLabel:{ ar: "طاولة الكتب — اختر كتاباً ثم اضغط رفّه", en: "Book table — pick a book, then tap its shelf" },
     statSorted:  { ar: "كتب رتّبتها", en: "Books sorted" },
     statErrors:  { ar: "أخطاء", en: "Errors" },

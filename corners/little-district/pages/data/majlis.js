@@ -95,7 +95,7 @@ window.HOUSES.majlis = {
 
     /* ────────────────────────────────────────────────────────
        STORY 1 — النَّبيُّ ﷺ يُعَلِّمُ آدابَ المَجلِس
-       Source: صحيح البخاري — حديث ٦٠١٨، ٢٣٨٩ + islamweb.net/ar/article/173416
+       Source: صحيح البخاري — حديث ٦٠١٨، ٢٣٥٢ + islamweb.net/ar/article/173416
        ──────────────────────────────────────────────────────── */
     {
       icon:'🌙', scene:'mosque', character:'🧔',
@@ -159,7 +159,7 @@ window.HOUSES.majlis = {
         {ar:'هَل أَنصِتُ جَيِّداً حينَ يَتَكَلَّمُ غَيري، أم أَنتَظِرُ فَقَط دَوري؟', en:'Do I truly listen when others speak, or do I only wait for my turn?'},
       ],
       didYouKnow: [
-        {ar:'حَديثُ كَفّارَةِ المَجلِسِ رَواهُ التِّرمِذيُّ وصَحَّحَه. حَديثُ التَّيامُنِ رَواهُ البُخاريُّ — ٢٣٨٩. المَصدَر: islamweb.net/ar/article/173416', en:'The expiation hadith was narrated by Tirmidhi and declared sound. The priority hadith is Bukhari — 2389. Source: islamweb.net/ar/article/173416'},
+        {ar:'حَديثُ كَفّارَةِ المَجلِسِ رَواهُ التِّرمِذيُّ وصَحَّحَه. حَديثُ التَّيامُنِ رَواهُ البُخاريُّ — ٢٣٥٢. المَصدَر: islamweb.net/ar/article/173416', en:'The expiation hadith was narrated by Tirmidhi and declared sound. The priority hadith is Bukhari — 2352. Source: islamweb.net/ar/article/173416'},
         {ar:'«مَن كانَ يُؤمِنُ بِاللهِ واليَومِ الآخِرِ فَليَقُل خَيراً أَو لِيَصمُت» — رَواهُ البُخاريُّ ٦٠١٨. مِن أَجمَعِ كَلِمَةٍ في آدابِ اللِّسان. المَصدَر: dorar.net', en:'"Whoever believes in Allah and the Last Day let him say good or be silent" — Bukhari 6018. Among the most comprehensive statements on tongue manners. Source: dorar.net'},
       ],
     },
@@ -194,8 +194,8 @@ window.HOUSES.majlis = {
           text:{ ar:'تَعَلَّمَ مَن جَلَسَ في ذلكَ المَجلِسِ دَرساً لا يُنسى: الإِنصاتُ لَيسَ صَمتاً فارِغاً — بل هو كَرَمٌ وعَطاء. وكانَ عُمَرُ رضي الله عنه يَقولُ لِأَولادِه: «لَيسَ لِكَثيرِ الكَلامِ قَدرٌ عند النّاس — إنَّما يُقَدِّرُ النّاسُ مَن يَسمَعُهُم ويَفهَمُهُم!»<br><br>وقالَ كَلِمَةً خَلَّدَها التّاريخ: <b>«الأَدَبُ أَكرَمُ نَسَب — فَمَن لم يَرِثهُ مِن أَبيه فَليَكتَسِبهُ مِن نَفسِه!»</b> أي أنَّ حُسنَ الأَدَبِ عَمَلٌ يَوميٌّ تَصنَعُهُ بِنَفسِك، لِحَظَةً بِلَحظَة، مَجلِساً بَعدَ مَجلِس!',
                  en:'Those who sat in that gathering learned an unforgettable lesson: listening is not empty silence — it is generosity and giving. Umar رضي الله عنه would say to his children: "The one who talks much has no standing — people only value those who listen and understand them!"<br><br>He said words history immortalised: <b>"Manners are the noblest lineage — whoever did not inherit it from his father, let him acquire it from himself!"</b> Meaning good manners are a daily work you build yourself, moment by moment, gathering after gathering!' } },
         { scene:'mosque', character:'🎯',
-          text:{ ar:'وَرَوى الذَّهَبيُّ في سِيَرِ أَعلامِ النُّبَلاء: «كانَ عُمَرُ رضي الله عنه يَقول: تَعَلَّمتُ الأَدَبَ ثَلاثينَ سَنَة» — لأنَّ الأَدَبَ الحَقيقيَّ لا يَكتَمِلُ بِيَومٍ ولا عام. وكانَ يُؤدِّبُ مَن أَساءَ الأَدَبَ في مَجلِسِه بِرِفقٍ ودونَ إِحراج، ويَقول: «لا تَقطَع على أَخيكَ كَلامَهُ — فَإنَّكَ إذا قَطَعتَهُ قَطَعتَ خَيطَ أَفكارِه!»<br><br><b>وكَذلكَ أَنتَ — تَعَلَّم الأَدَبَ كُلَّ يَومٍ في كُلِّ مَجلِس، وسَتَرى كَيفَ يَفتَحُ اللهُ بِهِ قُلوبَ النّاسِ لَك!</b>',
-                 en:'Al-Dhahabi recorded in Siyar A\'lam Al-Nubala\': "Umar رضي الله عنه would say: I learned manners for thirty years" — for true manners are never completed in a day or a year. He would gently correct those who misbehaved in his gathering without embarrassing them, saying: "Do not cut off your brother\'s speech — when you cut it, you cut the thread of his thoughts!"<br><br><b>And so with you — learn manners every day in every gathering, and you will see how Allah opens people\'s hearts to you through it!</b>' } },
+          text:{ ar:'وقالَ الإمامُ <b>عَبدُ اللهِ بنُ المُبارَك</b> رَحِمَهُ الله: «طَلَبتُ الأَدَبَ ثَلاثينَ سَنَة، وطَلَبتُ العِلمَ عِشرينَ سَنَة» — لأنَّ الأَدَبَ الحَقيقيَّ لا يَكتَمِلُ بِيَومٍ ولا عام. وكانَ عُمَرُ يُؤدِّبُ مَن أَساءَ الأَدَبَ في مَجلِسِه بِرِفقٍ ودونَ إِحراج، ويُروى أنَّ مِن مَعاني كَلامِه: «لا تَقطَع على أَخيكَ كَلامَهُ — فَإنَّكَ إذا قَطَعتَهُ قَطَعتَ خَيطَ أَفكارِه!»<br><br><b>وكَذلكَ أَنتَ — تَعَلَّم الأَدَبَ كُلَّ يَومٍ في كُلِّ مَجلِس، وسَتَرى كَيفَ يَفتَحُ اللهُ بِهِ قُلوبَ النّاسِ لَك!</b>',
+                 en:'Imam <b>Abdullah ibn al-Mubarak</b> said: "I sought manners for thirty years, and sought knowledge for twenty years" — for true manners are never completed in a day or a year. Umar would gently correct those who misbehaved in his gathering without embarrassing them; it is related that his words carried the meaning: "Do not cut off your brother\'s speech — when you cut it, you cut the thread of his thoughts!"<br><br><b>And so with you — learn manners every day in every gathering, and you will see how Allah opens people\'s hearts to you through it!</b>' } },
         { scene:'garden', character:'🌟',
           text:{ ar:'وكانَت أَعظَمُ ثَمَرَةٍ لِأَدَبِ عُمَرَ رضي الله عنه في المَجالِسِ — أنَّ النّاسَ كانوا يَأتونَ إليه مِن أَطرافِ المَدينَةِ لِيُكَلِّموه. لم يَكُن مُجَرَّدَ أَمير، بل كانَ أَباً يَسمَعُ ويَهتَمُّ! قالَ عنه أَحَدُ الصَّحابَة: «كانَ إذا تَكَلَّمَ عندَه أَحَدٌ أَشعَرَهُ أنَّهُ أَغلى إِنسانٍ في الأَرض.»<br><br>وهذا هو سِرُّ القِيادَةِ الحَقيقيَّة — لَيسَت في الهَيبَةِ والقُوَّة فَقَط، بل في الإِنصاتِ والاهتِمام. <b>فَكُلُّ شَخصٍ تَسمَعُهُ جَيِّداً قَد فَتَحتَ قَلبَهُ بِلا مِفتاح!</b>',
                  en:'The greatest fruit of Umar\'s رضي الله عنه majlis manners was that people would come to him from all corners of the city to speak with him. He was not merely an Emir but a father who listened and cared! One Companion said of him: "When someone spoke in his presence, he made them feel they were the most precious person on earth."<br><br>This is the secret of true leadership — not only in awe and strength, but in listening and caring. <b>Every person you truly hear, you have opened their heart without a key!</b>' } },
@@ -207,7 +207,7 @@ window.HOUSES.majlis = {
             { t:{ar:'كانَ يُنصِتُ بِكُلِّ جَوارِحِه دونَ مُقاطَعَة', en:'He listened with his whole being without interrupting'}, c:true },
             { t:{ar:'كانَ يُعطي الجُلَساءَ هَدايا', en:'He gave sitters gifts'}, c:false },
           ] },
-        { q:{ar:'كَم سَنَةً قالَ عُمَرُ رضي الله عنه إنَّهُ تَعَلَّمَ الأَدَب؟', en:'How many years did Umar رضي الله عنه say he learned manners?'},
+        { q:{ar:'كَم سَنَةً قالَ ابنُ المُبارَكِ إنَّهُ طَلَبَ الأَدَب؟', en:'For how many years did Ibn al-Mubarak say he sought manners?'},
           opts:[
             { t:{ar:'عَشرَ سَنَوات', en:'Ten years'}, c:false },
             { t:{ar:'ثَلاثينَ سَنَة', en:'Thirty years'}, c:true },
@@ -302,7 +302,7 @@ window.HOUSES.majlis = {
 
     /* ────────────────────────────────────────────────────────
        STORY 4 — ابنُ مَسعود رضي الله عنه
-       Source: islamweb.net/ar/article/67824 + صحيح البخاري ٣٧٦٣
+       Source: islamweb.net/ar/article/67824 + سنن ابن ماجه ١٣٨
        ──────────────────────────────────────────────────────── */
     {
       icon:'🌿', scene:'garden', character:'👨',
@@ -324,8 +324,8 @@ window.HOUSES.majlis = {
               { t:{ar:'أَحكامَ الصَّلاة', en:'The rulings of prayer'}, c:false, exp:{ar:'الصَّلاةُ تَعَلَّمَها أيضاً، لكنَّ الأَدَبَ كانَ أَوَّلَ دَرسٍ وأَعمَقَه!', en:'He learned prayer too, but manners was the first and deepest lesson!'} },
             ] } },
         { scene:'mosque', character:'😇',
-          text:{ ar:'وَصَارَ ابنُ مَسعودٍ رضي الله عنه مِن أَكثَرِ الصَّحابَةِ لُزوماً لِمَجالِسِ النَّبيِّ ﷺ — حتّى ظَنَّ بَعضُهُم أنَّهُ مِن أَهلِ البَيت! كانَ يَجلِسُ ساكِتاً مُنصِتاً، عَيناهُ تَتَرَقَّبانِ كُلَّ حَرَكَةٍ وكُلَّ كَلِمَة.<br><br>وحينَ يَتَكَلَّمُ كانَ كَلامُهُ كَالذَّهَب — وَزيناً نَفيساً. قالَ عنه النَّبيُّ ﷺ: <b>«مَن أَرادَ أن يَقرَأَ القُرآنَ غَضّاً كما أُنزِلَ فَليَقرَأهُ على قِراءَةِ ابنِ مَسعود.»</b> رَواهُ البُخاريُّ — حديث ٣٧٦٣. وهذا الشَّرَفُ كُلُّهُ — بَعدَ أن كانَ مُجَرَّدَ راعي غَنَم!',
-                 en:'Ibn Mas\'ud رضي الله عنه became among the Companions most constant in the Prophet\'s ﷺ gatherings — until some thought he was from the household! He would sit mostly silent and attentive, his eyes watching every movement and every word.<br><br>When he spoke, his words were like gold — weighty and precious. The Prophet ﷺ said of him: <b>"Whoever wishes to recite the Quran fresh as it was revealed, let him recite upon the recitation of Ibn Mas\'ud."</b> Bukhari — hadith 3763. All this honour — after he had been merely a shepherd!' } },
+          text:{ ar:'وَصَارَ ابنُ مَسعودٍ رضي الله عنه مِن أَكثَرِ الصَّحابَةِ لُزوماً لِمَجالِسِ النَّبيِّ ﷺ — حتّى ظَنَّ بَعضُهُم أنَّهُ مِن أَهلِ البَيت! كانَ يَجلِسُ ساكِتاً مُنصِتاً، عَيناهُ تَتَرَقَّبانِ كُلَّ حَرَكَةٍ وكُلَّ كَلِمَة.<br><br>وحينَ يَتَكَلَّمُ كانَ كَلامُهُ كَالذَّهَب — وَزيناً نَفيساً. قالَ عنه النَّبيُّ ﷺ: <b>«مَن أَرادَ أن يَقرَأَ القُرآنَ غَضّاً كما أُنزِلَ فَليَقرَأهُ على قِراءَةِ ابنِ مَسعود.»</b> رَواهُ ابنُ ماجه (١٣٨) وأحمد، وصَحَّحَهُ الألباني. وهذا الشَّرَفُ كُلُّهُ — بَعدَ أن كانَ مُجَرَّدَ راعي غَنَم!',
+                 en:'Ibn Mas\'ud رضي الله عنه became among the Companions most constant in the Prophet\'s ﷺ gatherings — until some thought he was from the household! He would sit mostly silent and attentive, his eyes watching every movement and every word.<br><br>When he spoke, his words were like gold — weighty and precious. The Prophet ﷺ said of him: <b>"Whoever wishes to recite the Quran fresh as it was revealed, let him recite upon the recitation of Ibn Mas\'ud."</b> Narrated by Ibn Majah (138) and Ahmad; graded sahih by al-Albani. All this honour — after he had been merely a shepherd!' } },
         { scene:'madinah', character:'🌿',
           text:{ ar:'ويَرويها ابنُ مَسعودٍ رضي الله عنه بِنَفسِه وهو يَبكي: «لم يَكُن لي شَيءٌ أُقَدِّمُهُ لِلنَّبيِّ ﷺ — لا مالٌ ولا قَبيلَة. لكنَّهُ ﷺ عَلَّمَني أنَّ أَغلى ما تُقَدِّمُهُ في المَجلِسِ هو حُسنُ الأَدَبِ والإِنصات! فَمَن أَعطاكَ إِنصاتَهُ فَقَد أَعطاكَ رُوحَه!»<br><br>وكانَ يُعَلِّمُ تَلاميذَهُ: «اجلِسوا في مَجالِسِ العِلمِ بِأَدَب — فَإنَّ الأَدَبَ في المَجلِسِ أَفضَلُ مِن بَعضِ العِلمِ الَّذي يُسمَع! <b>وخَيرُ المَجالِسِ ما أَخرَجَكَ وأَنتَ أَحسَنُ مِمّا دَخَلتَ.</b>»',
                  en:'Ibn Mas\'ud رضي الله عنه narrates it himself, weeping: "I had nothing to offer the Prophet ﷺ — no wealth, no tribe. But he ﷺ taught me that the most precious thing you offer in a gathering is good manners and attentive listening! For whoever gives you their listening has given you their soul!"<br><br>He would teach his students: "Sit in gatherings of knowledge with manners — for manners in a gathering are better than some of the knowledge you hear! <b>The best of gatherings is the one from which you leave better than when you entered.</b>"' } },
@@ -370,7 +370,7 @@ window.HOUSES.majlis = {
       ],
       didYouKnow: [
         {ar:'قِصَّةُ إسلامِ ابنِ مَسعودٍ رضي الله عنه مَشهورَةٌ في كُتُبِ السِّيَر. المَصدَر: islamweb.net/ar/article/67824', en:'The story of Ibn Mas\'ud\'s رضي الله عنه Islam is famous in biography books. Source: islamweb.net/ar/article/67824'},
-        {ar:'قالَ النَّبيُّ ﷺ: «مَن أَرادَ أن يَقرَأَ القُرآنَ غَضّاً كما أُنزِلَ فَليَقرَأ على قِراءَةِ ابنِ أُمِّ عَبد» — رَواهُ البُخاريُّ ٣٧٦٣. المَصدَر: dorar.net', en:'The Prophet ﷺ said: "Whoever wishes to recite the Quran fresh as revealed, let him recite upon Ibn Umm Abd\'s recitation" — Bukhari 3763. Source: dorar.net'},
+        {ar:'قالَ النَّبيُّ ﷺ: «مَن أَرادَ أن يَقرَأَ القُرآنَ غَضّاً كما أُنزِلَ فَليَقرَأ على قِراءَةِ ابنِ أُمِّ عَبد» — رَواهُ ابنُ ماجه (١٣٨) وأحمد، وصَحَّحَهُ الألباني. المَصدَر: dorar.net', en:'The Prophet ﷺ said: "Whoever wishes to recite the Quran fresh as revealed, let him recite upon Ibn Umm Abd\'s recitation" — Ibn Majah (138) and Ahmad; graded sahih by al-Albani. Source: dorar.net'},
       ],
     },
   ],

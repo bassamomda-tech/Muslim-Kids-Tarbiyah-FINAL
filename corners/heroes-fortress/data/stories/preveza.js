@@ -605,8 +605,8 @@ HISN_STORIES.preveza = [
   ],
   "didYouKnow": [
    {
-    "ar": "سادَ المسلمونَ البحرَ المتوسّطَ نحوَ ٣ قرونٍ بعد بُروزة — المصدر: تاريخ الدولة العثمانية",
-    "en": "Muslims mastered the Mediterranean ~3 centuries after Preveza — Source: Ottoman history"
+    "ar": "ظلَّ العثمانيّونَ القوّةَ البحريّةَ الكبرى في البحرِ المتوسّطِ عقوداً طويلةً بعد بُروزة — المصدر: تاريخ الدولة العثمانية",
+    "en": "The Ottomans remained the leading naval power in the Mediterranean for long decades after Preveza — Source: Ottoman history"
    },
    {
     "ar": "توفّي خيرُ الدينِ بربروسُ في إسطنبولَ سنةَ ٩٥٣هـ/١٥٤٦م ودُفِنَ في بشكطاش — المصدر: تاريخ الدولة العلية العثمانية (محمد فريد بك)",

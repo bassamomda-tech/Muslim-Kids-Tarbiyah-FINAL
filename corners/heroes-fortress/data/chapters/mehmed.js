@@ -14,10 +14,10 @@ HISN.chapters.mehmed = {
   knowledge:{
     didYouKnow:{ ar:'سُئِلَ النبيُّ ﷺ: أيُّ المدينتينِ تُفتَحُ أوّلاً: القسطنطينيةُ أم رُوميّة؟ فقال: «مدينةُ هِرَقلَ تُفتَحُ أوّلاً» — يعني القسطنطينية (رواه أحمد وصحّحه الألباني)، فكان محمدٌ الفاتحُ مَن حقّقَ اللهُ على يدِه هذه البِشارة!',
       en:'The Prophet ﷺ was asked which city would be conquered first, Constantinople or Rome, and said: "The city of Heraclius will be conquered first" — meaning Constantinople (Ahmad, graded sahih by al-Albani) — and Mehmed the Conqueror was the one through whom Allah fulfilled this glad tiding!' },
-    who:{ ar:'هو <b>محمدُ بنُ مراد</b>، السلطانُ العثمانيُّ السابع، المعروفُ بـ<b>محمدٍ الفاتح</b>. تولّى الحكمَ شابّاً، وكان <b>عالماً يُتقِنُ عدّةَ لغاتٍ</b> ومحبّاً للعلمِ والعلماء. حقّقَ حلمَ المسلمينَ منذ ثمانِ مئةِ سنةٍ بـ<b>فتحِ القسطنطينية</b> (إسطنبول) سنةَ ٨٥٧هـ وهو في الثالثةِ والعشرين! استعدَّ بإعدادٍ عظيمٍ، وصنعَ مدافعَ ضخمة، ونقلَ سفنَه فوقَ الجبالِ بحيلةٍ عبقرية. كان <b>قويَّ العزيمةِ عظيمَ الإيمان</b>، فحقّقَ بشارةَ النبيِّ ﷺ ودخلَ التاريخَ فاتحاً عظيماً.',
-      en:'He is <b>Mehmed son of Murad</b>, the seventh Ottoman sultan, known as <b>Mehmed the Conqueror</b>. He took rule young and was a <b>scholar fluent in several languages</b> who loved knowledge and scholars. He fulfilled the Muslims\u2019 dream of eight hundred years by <b>conquering Constantinople</b> (Istanbul) in 857 AH at the age of twenty-three! He prepared magnificently, built huge cannons, and moved his ships over the mountains by a brilliant stratagem. He was <b>of strong resolve and great faith</b>, fulfilling the Prophet\u2019s ﷺ glad tiding and entering history as a great conqueror.' },
+    who:{ ar:'هو <b>محمدُ بنُ مراد</b>، السلطانُ العثمانيُّ السابع، المعروفُ بـ<b>محمدٍ الفاتح</b>. تولّى الحكمَ شابّاً، وكان <b>عالماً يُتقِنُ عدّةَ لغاتٍ</b> ومحبّاً للعلمِ والعلماء. حقّقَ حلمَ المسلمينَ منذ ثمانِ مئةِ سنةٍ بـ<b>فتحِ القسطنطينية</b> (إسطنبول) سنةَ ٨٥٧هـ وهو في الحاديةِ والعشرين! استعدَّ بإعدادٍ عظيمٍ، وصنعَ مدافعَ ضخمة، ونقلَ سفنَه فوقَ الجبالِ بحيلةٍ عبقرية. كان <b>قويَّ العزيمةِ عظيمَ الإيمان</b>، فحقّقَ بشارةَ النبيِّ ﷺ ودخلَ التاريخَ فاتحاً عظيماً.',
+      en:'He is <b>Mehmed son of Murad</b>, the seventh Ottoman sultan, known as <b>Mehmed the Conqueror</b>. He took rule young and was a <b>scholar fluent in several languages</b> who loved knowledge and scholars. He fulfilled the Muslims\u2019 dream of eight hundred years by <b>conquering Constantinople</b> (Istanbul) in 857 AH at the age of twenty-one! He prepared magnificently, built huge cannons, and moved his ships over the mountains by a brilliant stratagem. He was <b>of strong resolve and great faith</b>, fulfilling the Prophet\u2019s ﷺ glad tiding and entering history as a great conqueror.' },
     facts:[
-      { ar:'سلطانٌ عثمانيٌّ فتحَ القسطنطينيةَ وعمرُه ٢٣.', en:'An Ottoman sultan who conquered Constantinople at age 23.' },
+      { ar:'سلطانٌ عثمانيٌّ فتحَ القسطنطينيةَ وعمرُه ٢١.', en:'An Ottoman sultan who conquered Constantinople at age 21.' },
       { ar:'حقّقَ بشارةَ النبيِّ ﷺ بفتحِها.', en:'He fulfilled the Prophet\u2019s ﷺ glad tiding of its conquest.' },
       { ar:'عالمٌ يُتقِنُ عدّةَ لغاتٍ ويُحِبُّ العلم.', en:'A scholar fluent in several languages who loved knowledge.' },
       { ar:'نقلَ سفنَه فوقَ الجبالِ بحيلةٍ عبقرية.', en:'He moved his ships over the mountains by a brilliant stratagem.' },
@@ -36,8 +36,8 @@ HISN.chapters.mehmed = {
   story:[
     { title:{ ar:'فاتحُ القسطنطينية', en:'Conqueror of Constantinople' },
       pages:[
-        { scene:'peaks', text:{ ar:'كان <b>محمدٌ الفاتح</b> سلطاناً عثمانيّاً شابّاً عالماً قويَّ العزيمة. حقّقَ بشارةَ النبيِّ ﷺ بفتحِ القسطنطينيةَ وعمرُه ٢٣ سنة، بعدَ استعدادٍ عظيمٍ وحيلةٍ عبقريّةٍ بنقلِ السفنِ فوقَ الجبال. دخلَ التاريخَ فاتحاً عظيماً.',
-          en:'<b>Mehmed the Conqueror</b> was a young, scholarly Ottoman sultan of strong resolve. He fulfilled the Prophet\u2019s ﷺ glad tiding by conquering Constantinople at age 23, after magnificent preparation and a brilliant stratagem of moving ships over the mountains. He entered history as a great conqueror.' } } ] }
+        { scene:'peaks', text:{ ar:'كان <b>محمدٌ الفاتح</b> سلطاناً عثمانيّاً شابّاً عالماً قويَّ العزيمة. حقّقَ بشارةَ النبيِّ ﷺ بفتحِ القسطنطينيةَ وعمرُه ٢١ سنة، بعدَ استعدادٍ عظيمٍ وحيلةٍ عبقريّةٍ بنقلِ السفنِ فوقَ الجبال. دخلَ التاريخَ فاتحاً عظيماً.',
+          en:'<b>Mehmed the Conqueror</b> was a young, scholarly Ottoman sultan of strong resolve. He fulfilled the Prophet\u2019s ﷺ glad tiding by conquering Constantinople at age 21, after magnificent preparation and a brilliant stratagem of moving ships over the mountains. He entered history as a great conqueror.' } } ] }
   ],
 
   traits:[

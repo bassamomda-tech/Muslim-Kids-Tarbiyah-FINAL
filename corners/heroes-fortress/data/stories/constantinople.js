@@ -15,8 +15,8 @@ HISN_STORIES.constantinople = [
     "scene": "mosque",
     "character": "😮",
     "text": {
-     "ar": "قبلَ نحوِ <b>٨٠٠ سنة</b>، بشّرَ النبيُّ ﷺ بأنّ <b>القسطنطينيّة</b> ستُفتح وقال: «لَنِعمَ الأميرُ أميرُها، ولَنِعمَ الجيشُ ذلك الجيش». فبقيت هذه البشارةُ حلماً في قلوبِ المسلمين، يتسابقُ القادةُ على شرفِها جيلاً بعد جيل.",
-     "en": "About <b>800 years</b> earlier, the Prophet ﷺ foretold that <b>Constantinople</b> would be conquered and said: “What a blessed leader its leader, and what a blessed army that army.” This tiding stayed a dream in Muslim hearts, commanders racing for its honour generation after generation."
+     "ar": "قبلَ نحوِ <b>٨٠٠ سنة</b>، بشّرَ النبيُّ ﷺ بأنّ <b>القسطنطينيّة</b> ستُفتح، فلمّا سُئلَ: أيُّ المدينتين تُفتحُ أوّلاً، قسطنطينيّةُ أم رومية؟ قال: «مدينةُ هِرَقلَ تُفتحُ أوّلاً» (رواه أحمد، وصحّحه الألباني). فبقيت هذه البشارةُ حلماً في قلوبِ المسلمين، يتسابقُ القادةُ على شرفِها جيلاً بعد جيل.",
+     "en": "About <b>800 years</b> earlier, the Prophet ﷺ foretold that <b>Constantinople</b> would be conquered; asked which city would be conquered first, Constantinople or Rome, he said: “The city of Heraclius will be conquered first” (Ahmad, graded sahih by al-Albani). This tiding stayed a dream in Muslim hearts, commanders racing for its honour generation after generation."
     },
     "choice": {
      "q": {
@@ -117,21 +117,21 @@ HISN_STORIES.constantinople = [
    },
    {
     "q": {
-     "ar": "ماذا قال النبيُّ ﷺ عن جيشِها؟",
-     "en": "What did the Prophet ﷺ say of its army?"
+     "ar": "أيُّ المدينتين بشّرَ النبيُّ ﷺ أنّها تُفتحُ أوّلاً؟",
+     "en": "Which city did the Prophet ﷺ say would be conquered first?"
     },
     "opts": [
      {
       "t": {
-       "ar": "لَنِعمَ الجيشُ ذلك الجيش",
-       "en": "What a blessed army"
+       "ar": "مدينةُ هِرَقل (القسطنطينيّة)",
+       "en": "The city of Heraclius (Constantinople)"
       },
       "c": true
      },
      {
       "t": {
-       "ar": "جيشٌ ضعيف",
-       "en": "A weak army"
+       "ar": "مدينةُ رومية",
+       "en": "Rome"
       },
       "c": false
      },
@@ -431,8 +431,8 @@ HISN_STORIES.constantinople = [
     "scene": "ascend",
     "character": "⭐",
     "text": {
-     "ar": "تأمّلْ <b>ميزانَ القوى</b> والإعجاز: مدينةٌ بأسوارٍ ثلاثيّةٍ هي <b>أحصنُ أسوارِ الأرض</b>، صمدت ٨٠٠ سنةٍ وردّت كلَّ الجيوش، يحرسُها أسطولٌ وسلسلةٌ حديديّةٌ ضخمةٌ تغلِقُ مينائَها. صبرَ المسلمونَ في الحصارِ نحوَ خمسينَ يوماً يدعونَ ويقاتلون، حتى ابتكرَ الفاتحُ خطّةً عجيبة: <b>نقلَ السفنَ على البرِّ</b> فوقَ التِّلالِ ليلاً لِتدخلَ الميناءَ من خلفِ السلسلة! ثم أذِنَ اللهُ بالفتح، فدخلوا المدينةَ وتحقّقتْ <b>بشارةُ النبيِّ ﷺ</b> بعد ٨٠٠ سنة! فالعِبرةُ أنّ الإيمانَ والدعاءَ والإعدادَ يفتحُ ما عجزَ عنه الأوّلون. وأقامَ الفاتحُ <b>العدلَ وأمّنَ الناسَ</b> على دينِهم، فصارَ اسمُه «محمدٌ الفاتح».",
-     "en": "Ponder the <b>balance of power</b> and the miracle: a city with triple walls — <b>the strongest walls on earth</b> — which had stood 800 years and repelled every army, guarded by a fleet and a massive iron chain sealing its harbour. The Muslims persevered in the siege about fifty days, praying and fighting, until the Conqueror devised an astonishing plan: he <b>carried the ships overland</b> across the hills by night to slip into the harbour behind the chain! Then Allah permitted the conquest; they entered the city and <b>the Prophet’s ﷺ tiding</b> was fulfilled after 800 years! The lesson: faith, prayer, and preparation open what defeated all before. The Conqueror established <b>justice and secured people</b> in their faith, so his name became “Muhammad the Conqueror.”"
+     "ar": "تأمّلْ <b>ميزانَ القوى</b> والإعجاز: مدينةٌ بأسوارٍ ثلاثيّةٍ هي <b>أحصنُ أسوارِ الأرض</b>، صمدت ٨٠٠ سنةٍ أمامَ جيوشِ المسلمينَ وردّت جيوشاً كثيرة، يحرسُها أسطولٌ وسلسلةٌ حديديّةٌ ضخمةٌ تغلِقُ مينائَها. صبرَ المسلمونَ في الحصارِ نحوَ خمسينَ يوماً يدعونَ ويقاتلون، حتى ابتكرَ الفاتحُ خطّةً عجيبة: <b>نقلَ السفنَ على البرِّ</b> فوقَ التِّلالِ ليلاً لِتدخلَ الميناءَ من خلفِ السلسلة! ثم أذِنَ اللهُ بالفتح، فدخلوا المدينةَ وتحقّقتْ <b>بشارةُ النبيِّ ﷺ</b> بعد ٨٠٠ سنة! فالعِبرةُ أنّ الإيمانَ والدعاءَ والإعدادَ يفتحُ ما عجزَ عنه الأوّلون. وأقامَ الفاتحُ <b>العدلَ وأمّنَ الناسَ</b> على دينِهم، فصارَ اسمُه «محمدٌ الفاتح».",
+     "en": "Ponder the <b>balance of power</b> and the miracle: a city with triple walls — <b>the strongest walls on earth</b> — which had withstood Muslim armies for 800 years and repelled many armies, guarded by a fleet and a massive iron chain sealing its harbour. The Muslims persevered in the siege about fifty days, praying and fighting, until the Conqueror devised an astonishing plan: he <b>carried the ships overland</b> across the hills by night to slip into the harbour behind the chain! Then Allah permitted the conquest; they entered the city and <b>the Prophet’s ﷺ tiding</b> was fulfilled after 800 years! The lesson: faith, prayer, and preparation open what defeated all before. The Conqueror established <b>justice and secured people</b> in their faith, so his name became “Muhammad the Conqueror.”"
     },
     "choice": {
      "q": {

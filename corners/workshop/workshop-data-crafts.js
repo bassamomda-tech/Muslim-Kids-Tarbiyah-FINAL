@@ -109,8 +109,8 @@ window.WS.acts.push(
   ar:'صلصال البيت وفخّاره', en:'Homemade Clay Pottery',
   descAr:'اعجنْ صلصالَك من الدقيقِ والملحِ — وشكِّلْ منه ما تشاء.',
   descEn:'Knead your own flour-and-salt clay — and shape whatever you like.',
-  whyAr:'المصريونَ أقدمُ فخّارينَ في التاريخ — جرِّبْ حرفتَهم بعجينةٍ من مطبخِك.',
-  whyEn:'Egyptians are history\'s oldest potters — try their craft with dough from your kitchen.',
+  whyAr:'الفخّارُ من أقدمِ الحِرَفِ في التاريخ، وبرعَ فيه المصريونَ القدماء — جرِّبْ حرفتَهم بعجينةٍ من مطبخِك.',
+  whyEn:'Pottery is one of history\'s oldest crafts, and the ancient Egyptians mastered it — try their craft with dough from your kitchen.',
   tools:[{ic:'🌾',ar:'كوبانِ دقيق',en:'2 cups flour'},{ic:'🧂',ar:'كوبُ ملح',en:'1 cup salt'},{ic:'💧',ar:'ماءٌ وألوانُ طعام',en:'Water & food coloring'}],
   steps:[
     {ic:'🥣',ar:'اخلطِ الدقيقَ والملحَ ثم أضفِ الماءَ تدريجياً واعجن.',en:'Mix flour and salt, add water gradually, and knead.'},

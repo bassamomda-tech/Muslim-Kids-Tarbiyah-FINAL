@@ -8,17 +8,17 @@ HISN.chapters.firnas = {
   name:{ ar:'عباسُ بنُ فِرناس', en:'Abbas ibn Firnas' },
   tag:{ ar:'رائدُ الطيران', en:'Pioneer of flight' },
   accent:'#2E6E8E', accent2:'#4E8EAE',
-  greeting:{ ar:'أهلاً يا بطل! عباسُ بنُ فِرناسٍ رحمه الله عالمٌ أندلسيٌّ مخترعٌ مغامر، كان أوّلَ إنسانٍ في التاريخِ يحاولُ الطيرانَ بجناحينِ صنعَهما بيدِه! تعالَ نتعلّمْ من شجاعتِه وفضولِه وحبِّه للتجربة.',
-    en:'Hello, hero! Abbas ibn Firnas, an Andalusian inventor and adventurer who was the first human in history to attempt flight with wings he built himself! Come, let\'s learn from his courage, curiosity, and love of experimenting.' },
+  greeting:{ ar:'أهلاً يا بطل! عباسُ بنُ فِرناسٍ رحمه الله عالمٌ أندلسيٌّ مخترعٌ مغامر، كان من أوائلِ مَن حاولوا الطيرانَ في التاريخ بجناحينِ صنعَهما بيدِه! تعالَ نتعلّمْ من شجاعتِه وفضولِه وحبِّه للتجربة.',
+    en:'Hello, hero! Abbas ibn Firnas, an Andalusian inventor and adventurer who was one of the first people in history to attempt flight with wings he built himself! Come, let\'s learn from his courage, curiosity, and love of experimenting.' },
 
   knowledge:{
-    didYouKnow:{ ar:'قبلَ أكثرَ من ألفِ عام، صنعَ عباسُ بنُ فِرناسٍ جناحينِ من الريشِ والحرير، وقفزَ من مكانٍ مرتفعٍ وحلّقَ في الهواءِ لحظات — فكانَ أوّلَ إنسانٍ يحاولُ الطيرانَ بطريقةٍ مدروسة!',
-      en:'More than a thousand years ago, Abbas ibn Firnas built wings of feathers and silk, leaped from a height, and glided in the air for moments — becoming the first human to attempt flight in a studied way!' },
-    who:{ ar:'هو <b>عباسُ بنُ فِرناس</b>، عالمٌ ومخترعٌ مسلمٌ من <b>الأندلس</b> (قرطبة)، عاشَ قبلَ أكثرَ من ألفِ عام. كان <b>فضوليّاً مغامراً محبّاً للتجربة</b>. أشهرُ ما يُذكَرُ به أنّه <b>أوّلُ من حاولَ الطيران</b>: صنعَ جناحينِ كسَاهُما بالريشِ والحرير، وقفزَ من مكانٍ عالٍ فحلّقَ في الهواءِ مسافةً قبلَ أن يهبط. ولم يقفْ عند ذلك، بل اخترعَ <b>قبّةً تُحاكي السماءَ</b> بالنجومِ والغيومِ والبروقِ ليُريَ الناسَ حركةَ الفلك، وطوّرَ طريقةً لصناعةِ <b>الزجاجِ الصافي</b> من الرملِ والحجارة، وصنعَ <b>ساعةً مائيّةً</b> تُسمّى «الميقاتة». كان مثالاً للمخترعِ الذي لا يخافُ التجربةَ ولا ييأسُ من المحاولة.',
-      en:'He is <b>Abbas ibn Firnas</b>, a Muslim scholar and inventor from <b>al-Andalus</b> (Cordoba), who lived more than a thousand years ago. He was <b>curious, adventurous, and a lover of experimenting</b>. He is most famous for being the <b>first to attempt flight</b>: he built wings covered with feathers and silk, leaped from a height, and glided through the air for a distance before landing. He didn\'t stop there: he built a <b>dome that simulated the sky</b> with stars, clouds, and lightning to show people the motion of the heavens, developed a method to make <b>clear glass</b> from sand and stones, and made a <b>water clock</b> called "al-Miqata." He was a model of the inventor who fears no experiment and never despairs of trying.' },
+    didYouKnow:{ ar:'قبلَ أكثرَ من ألفِ عام، صنعَ عباسُ بنُ فِرناسٍ جناحينِ من الريشِ والحرير، وقفزَ من مكانٍ مرتفعٍ وحلّقَ في الهواءِ لحظات — فكانَ من أوائلِ مَن حاولوا الطيرانَ بطريقةٍ مدروسة!',
+      en:'More than a thousand years ago, Abbas ibn Firnas built wings of feathers and silk, leaped from a height, and glided in the air for moments — becoming one of the first to attempt flight in a studied way!' },
+    who:{ ar:'هو <b>عباسُ بنُ فِرناس</b>، عالمٌ ومخترعٌ مسلمٌ من <b>الأندلس</b> (قرطبة)، عاشَ قبلَ أكثرَ من ألفِ عام. كان <b>فضوليّاً مغامراً محبّاً للتجربة</b>. أشهرُ ما يُذكَرُ به أنّه <b>من أوائلِ من حاولوا الطيران</b>: صنعَ جناحينِ كسَاهُما بالريشِ والحرير، وقفزَ من مكانٍ عالٍ فحلّقَ في الهواءِ مسافةً قبلَ أن يهبط. ولم يقفْ عند ذلك، بل اخترعَ <b>قبّةً تُحاكي السماءَ</b> بالنجومِ والغيومِ والبروقِ ليُريَ الناسَ حركةَ الفلك، وطوّرَ طريقةً لصناعةِ <b>الزجاجِ الصافي</b> من الرملِ والحجارة، وصنعَ <b>ساعةً مائيّةً</b> تُسمّى «الميقاتة». كان مثالاً للمخترعِ الذي لا يخافُ التجربةَ ولا ييأسُ من المحاولة.',
+      en:'He is <b>Abbas ibn Firnas</b>, a Muslim scholar and inventor from <b>al-Andalus</b> (Cordoba), who lived more than a thousand years ago. He was <b>curious, adventurous, and a lover of experimenting</b>. He is most famous for being <b>one of the first to attempt flight</b>: he built wings covered with feathers and silk, leaped from a height, and glided through the air for a distance before landing. He didn\'t stop there: he built a <b>dome that simulated the sky</b> with stars, clouds, and lightning to show people the motion of the heavens, developed a method to make <b>clear glass</b> from sand and stones, and made a <b>water clock</b> called "al-Miqata." He was a model of the inventor who fears no experiment and never despairs of trying.' },
     facts:[
       { ar:'عالمٌ ومخترعٌ مسلمٌ من الأندلس (قرطبة).', en:'A Muslim scholar and inventor from al-Andalus (Cordoba).' },
-      { ar:'أوّلُ من حاولَ الطيرانَ بجناحينِ من ريشٍ وحرير.', en:'The first to attempt flight with wings of feathers and silk.' },
+      { ar:'من أوائلِ من حاولوا الطيرانَ بجناحينِ من ريشٍ وحرير.', en:'One of the first to attempt flight with wings of feathers and silk.' },
       { ar:'صنعَ قبّةً تُحاكي السماءَ بالنجومِ والغيوم.', en:'He built a dome simulating the sky with stars and clouds.' },
       { ar:'طوّرَ طريقةً لصناعةِ الزجاجِ الصافي.', en:'He developed a method for making clear glass.' },
       { ar:'صنعَ ساعةً مائيّةً تُسمّى «الميقاتة».', en:'He made a water clock called "al-Miqata."' },
@@ -82,7 +82,7 @@ HISN.chapters.firnas = {
       ] },
     { type:'trueFalse', title:{ar:'صحٌّ أم خطأ؟',en:'True or False?'},
       items:[
-        { statement:{ar:'كان أوّلَ من حاولَ الطيرانَ بجناحين.',en:'He was the first to attempt flight with wings.'}, t:true },
+        { statement:{ar:'كان من أوائلِ من حاولوا الطيرانَ بجناحين.',en:'He was one of the first to attempt flight with wings.'}, t:true },
         { statement:{ar:'صنعَ قبّةً تُحاكي السماءَ والنجوم.',en:'He built a dome simulating the sky and stars.'}, t:true },
         { statement:{ar:'كان يخافُ التجربةَ ولا يُحاول.',en:'He feared experimenting and never tried.'}, t:false },
         { statement:{ar:'طوّرَ طريقةً لصناعةِ الزجاجِ الصافي.',en:'He developed a method to make clear glass.'}, t:true },

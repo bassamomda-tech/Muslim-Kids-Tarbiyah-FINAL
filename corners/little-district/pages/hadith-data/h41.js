@@ -1,11 +1,11 @@
-/* الحديث ٤١ — اتّباع ما جاء به النبي ﷺ (رواه النووي) */
+/* الحديث ٤١ — اتّباع ما جاء به النبي ﷺ (ذكره النووي، وعزاه لكتاب الحجة) */
 window.HADITHS.h41 = {
   matn:{
     ar:'لَا يُؤْمِنُ أَحَدُكُمْ حَتَّى يَكُونَ هَوَاهُ تَبَعًا لِمَا جِئْتُ بِهِ.',
     en:'None of you truly believes until his desire follows what I have brought.'
   },
   narrator:{ar:'عبد الله بن عمرو بن العاص رضي الله عنهما',en:'Abdullah ibn Amr ibn al-As (RA)'},
-  source:{ar:'حديث حسن صحيح رويناه في كتاب الحجة',en:'Hasan sahih (narrated by an-Nawawi)'},
+  source:{ar:'حديث حسن صحيح رويناه في كتاب الحجة',en:'Hasan sahih, as an-Nawawi said (reported in Kitab al-Hujjah)'},
   explain:[{"ar":"ما هي علامةُ الإيمانِ الكامل؟ 💗 يُخبرنا النبيُّ ﷺ بسرٍّ جميل: <b>«لا يؤمنُ أحدُكم حتى يكونَ هواه تبعًا لما جئتُ به»</b>. أي أنَّ المؤمنَ الحقيقيَّ يجعلُ رغباتِه تتبعُ ما أمرَ به اللهُ ورسولُه ﷺ.","en":"What is the sign of complete faith? 💗 The Prophet ﷺ tells us a beautiful secret: <b>\"None of you truly believes until his desire follows what I brought.\"</b> The true believer makes his wishes follow what Allah and His Messenger ﷺ commanded."},{"ar":"ما معنى «الهوى»؟ 🧭 هو ما تشتهيه نفسُك وتريدُه. أحيانًا نريدُ أن نلعبَ بدلَ الصلاة، أو نكذبَ لننجوَ من عقاب. لكنَّ المؤمنَ القويَّ يُقدّمُ <b>أمرَ الله</b> على رغبتِه، فيُصلّي رغمَ حبِّه للّعب، ويصدُقُ رغمَ خوفِه. هذا هو الإيمانُ الحقيقي.","en":"What does \"desire\" mean? 🧭 It's what your soul craves and wants. Sometimes we want to play instead of pray, or lie to escape punishment. But the strong believer puts <b>Allah's command</b> before his desire, so he prays despite loving to play, and tells the truth despite his fear. This is true faith."},{"ar":"كيف أعيشُ هذا؟ عندما تتعارضُ رغبتي مع أمرِ الله، أختارُ أمرَ الله 📿. أنامُ مبكرًا لأصلّيَ الفجرَ رغمَ رغبتي في السهر، وأتركُ الكذبةَ رغمَ سهولتِها. كلّما قدّمتُ طاعةَ اللهِ على هواي، كبُرَ إيماني وصرتُ أقوى وأقربَ إلى الله. 💪","en":"How do I live this? When my desire conflicts with Allah's command, I choose Allah's command 📿. I sleep early to pray Fajr despite wanting to stay up, and I leave the lie despite how easy it is. Every time I put obeying Allah before my desire, my faith grows and I become stronger and closer to Allah. 💪"}],
   benefits:[
     {ar:'أجعلُ رغباتي تابعةً لأمرِ الله.',en:'I make my wishes follow Allah\u2019s command.'},

@@ -1468,8 +1468,8 @@ HISN_STORIES.musa = [
   ],
   "didYouKnow": [
    {
-    "ar": "ذَكَرَت المَوسوعَةُ القُرآنِيَّةُ أنَّ الخَضِرَ عَبدٌ صالِحٌ آتاهُ اللهُ رَحمَةً وعِلماً لَدُنيّاً — عِلمَ الغَيبِ الخاصّ — المَصدَر: quranpedia.net — الكهف ٦٥",
-    "en": "The Quranic Encyclopedia noted Al-Khidr was a righteous servant Allah gave mercy and special knowledge — knowledge of the unseen — Source: quranpedia.net — Al-Kahf 65"
+    "ar": "ذَكَرَت المَوسوعَةُ القُرآنِيَّةُ أنَّ الخَضِرَ عَبدٌ صالِحٌ آتاهُ اللهُ رَحمَةً وعِلماً لَدُنيّاً — أي أُموراً خاصّةً مِن الغَيبِ أَطلَعَهُ اللهُ عليها — المَصدَر: quranpedia.net — الكهف ٦٥",
+    "en": "The Quranic Encyclopedia noted Al-Khidr was a righteous servant Allah gave mercy and special knowledge — particular matters of the unseen that Allah disclosed to him — Source: quranpedia.net — Al-Kahf 65"
    },
    {
     "ar": "ذَكَرَ ابنُ كَثيرٍ أنَّ النَّبيَّ ﷺ قالَ: «رَحمَةُ اللهِ علينا وعلى موسى — لو صَبَرَ لَرَأى مِن العَجائِبِ أَكثَر» — المَصدَر: islamweb.net/ar/library/content/59/61",

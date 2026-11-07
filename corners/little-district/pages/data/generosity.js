@@ -130,8 +130,8 @@ window.HOUSES.generosity = {
         },
         { scene:'garden', character:'🌟',
           text:{
-            ar: 'انتَشَرَ خَبَرُ حاتِمٍ في القَبائِلِ كُلِّها — رَجُلٌ ذَبَحَ أَعَزَّ ما يَملِكُ لِإكرامِ ضُيوفِه! وقالَ الشُّعَراءُ في مَدحِه أَبياتاً لا تُنسى، ورَوى المُحَدِّثونَ قِصَصَهُ جيلاً بَعدَ جيل. وعِندَما سُئِلَ حاتِمٌ: «كَيفَ تُطيقُ هذا العَطاء؟» قالَ: «الكَريمُ يَشعُرُ بِسَعادَةٍ لا يَعرِفُها البَخيل — كُلَّما أَعطَيتُ ازدادَ قَلبي ثَراء!»',
-            en: 'News of Hatim spread across all the tribes — a man who slaughtered his most precious possession to honor his guests! Poets composed unforgettable verses in his praise, and narrators passed his stories from generation to generation. When Hatim was asked: "How can you bear to give so much?" he said: "The generous person feels a joy the miser will never know — every time I give, my heart grows richer!"'
+            ar: 'انتَشَرَ خَبَرُ حاتِمٍ في القَبائِلِ كُلِّها — رَجُلٌ ذَبَحَ أَعَزَّ ما يَملِكُ لِإكرامِ ضُيوفِه! وقالَ الشُّعَراءُ في مَدحِه أَبياتاً لا تُنسى، ورَوى الرُّواةُ والأُدَباءُ قِصَصَهُ جيلاً بَعدَ جيل. ولَو سُئِلَ حاتِمٌ: «كَيفَ تُطيقُ هذا العَطاء؟» لَكانَ جَوابُهُ بِلِسانِ حالِه: «الكَريمُ يَشعُرُ بِسَعادَةٍ لا يَعرِفُها البَخيل — كُلَّما أَعطَيتُ ازدادَ قَلبي ثَراء!»',
+            en: 'News of Hatim spread across all the tribes — a man who slaughtered his most precious possession to honor his guests! Poets composed unforgettable verses in his praise, and narrators passed his stories from generation to generation. Had Hatim been asked: "How can you bear to give so much?" his life would have answered: "The generous person feels a joy the miser will never know — every time I give, my heart grows richer!"'
           }
         },
         { scene:'madinah', character:'🏆',

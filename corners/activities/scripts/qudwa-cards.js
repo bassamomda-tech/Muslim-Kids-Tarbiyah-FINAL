@@ -45,7 +45,7 @@
       q: { ar: "ماذا كان يقول بلال تحت التعذيب؟", en: "What did Bilal say under torture?" },
       opts: [ { ar: "أحدٌ أحد", en: "Ahad, Ahad", ok: true }, { ar: "لا أعرف", en: "I don't know" }, { ar: "اتركوني", en: "Leave me" } ] },
     { emoji: "🛡", name: { ar: "خالد بن الوليد", en: "Khalid" }, title: { ar: "سيف الله المسلول", en: "The Drawn Sword of Allah" },
-      facts: [ { ar: "قائدٌ عبقري لم يُهزم في معركة", en: "A brilliant commander, never defeated in battle" }, { ar: "أسلم بعد الحديبية وأبلى بلاءً عظيماً", en: "Embraced Islam after Hudaybiyyah and excelled" } ],
+      facts: [ { ar: "قائدٌ عبقري لم تُعرَف له هزيمةٌ في معركةٍ قادها", en: "A brilliant commander, never known to lose a battle he led" }, { ar: "أسلم بعد الحديبية وأبلى بلاءً عظيماً", en: "Embraced Islam after Hudaybiyyah and excelled" } ],
       q: { ar: "بأي لقبٍ وصف النبيُّ ﷺ خالداً؟", en: "What title did the Prophet ﷺ give Khalid?" },
       opts: [ { ar: "سيف الله المسلول", en: "The Drawn Sword of Allah", ok: true }, { ar: "أمين الأمة", en: "Trustee of the Ummah" }, { ar: "حبر الأمة", en: "Scholar of the Ummah" } ] },
     { emoji: "🌍", name: { ar: "سلمان الفارسي", en: "Salman" }, title: { ar: "الباحث عن الحق", en: "The Seeker of Truth" },

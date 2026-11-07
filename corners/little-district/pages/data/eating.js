@@ -61,7 +61,7 @@ window.HOUSES.eating = {
     hadiths: [
       { text: { ar:'«يا غُلامُ، سَمِّ اللهَ، وكُل بِيَمينِكَ، وكُل مِمَّا يَليك، فما زالَت تِلكَ طُعمَتي بَعد»',
                 en:'"O boy — say the name of Allah, eat with your right hand, and eat from what is in front of you. That has been my way of eating ever since."' },
-        source: { ar:'[رواه البخاري — حديث ٥٠٦١، ومسلم — حديث ٢٠٢٢، عن عُمَرَ بنِ أَبي سَلَمَة]', en:'[Sahih Bukhari — 5061, Sahih Muslim — 2022, narrated by \'Umar ibn Abi Salamah]' } },
+        source: { ar:'[رواه البخاري — حديث ٥٣٧٦، ومسلم — حديث ٢٠٢٢، عن عُمَرَ بنِ أَبي سَلَمَة]', en:'[Sahih Bukhari — 5376, Sahih Muslim — 2022, narrated by \'Umar ibn Abi Salamah]' } },
       { text: { ar:'«ما عابَ النَّبيُّ ﷺ طَعاماً قَطُّ، إن اشتَهاهُ أَكَلَه وإلاَّ تَرَكَه»',
                 en:'"The Prophet ﷺ never criticised food at all. If he wanted it he ate it, and if not he left it."' },
         source: { ar:'[رواه البخاري — حديث ٣٥٦٣، ومسلم، عن أبي هُرَيرَة رضي الله عنه]', en:'[Sahih Bukhari — 3563, Sahih Muslim, narrated by Abu Hurayrah رضي الله عنه]' } },
@@ -92,7 +92,7 @@ window.HOUSES.eating = {
 
     /* ──────────────────────────────────────────────────────
        STORY 1 — عُمَرُ الصَّغيرُ وطَعامُ النَّبيِّ ﷺ
-       Source: Sahih Bukhari — hadith 5061; islamweb.net/ar/library
+       Source: Sahih Bukhari — hadith 5376; islamweb.net/ar/library
        Scene: madinah | Character: boy
        ────────────────────────────────────────────────────── */
     {
@@ -184,7 +184,7 @@ window.HOUSES.eating = {
         { ar:'لَو رَآكَ النَّبيُّ ﷺ تَأكُل الآن — هَل سَيَكونُ سَعيداً بِطَريقَتِك؟', en:'If the Prophet ﷺ saw you eating right now — would he be happy with your way?' },
       ],
       didYouKnow: [
-        { ar:'عُمَرُ بنُ أَبي سَلَمَة كانَ رَبيبَ النَّبيِّ ﷺ، وهو ابنُ أُمِّ سَلَمَةَ رضي الله عنها مِن زَوجِها السَّابِق. رَوى هذهِ القِصَّةَ بِنَفسِهِ في الصَّحيحَين — المَصدَر: صحيح البخاري، كتاب الأطعمة، حديث ٥٠٦١؛ وصحيح مسلم، حديث ٢٠٢٢.', en:'\'Umar ibn Abi Salamah was the Prophet\'s ﷺ stepson, the son of Umm Salamah رضي الله عنها from her previous husband. He narrated this story himself in both Sahihs — Source: Sahih Bukhari, Book of Foods, hadith 5061; Sahih Muslim, hadith 2022.' },
+        { ar:'عُمَرُ بنُ أَبي سَلَمَة كانَ رَبيبَ النَّبيِّ ﷺ، وهو ابنُ أُمِّ سَلَمَةَ رضي الله عنها مِن زَوجِها السَّابِق. رَوى هذهِ القِصَّةَ بِنَفسِهِ في الصَّحيحَين — المَصدَر: صحيح البخاري، كتاب الأطعمة، حديث ٥٣٧٦؛ وصحيح مسلم، حديث ٢٠٢٢.', en:'\'Umar ibn Abi Salamah was the Prophet\'s ﷺ stepson, the son of Umm Salamah رضي الله عنها from her previous husband. He narrated this story himself in both Sahihs — Source: Sahih Bukhari, Book of Foods, hadith 5376; Sahih Muslim, hadith 2022.' },
         { ar:'كَلِمَةُ «طُعمَتي» في نِهايَةِ الحَديثِ تَعني «طَريقَتي في الأَكل» — وهذا يُثبِتُ أنَّ الصَّحابَةَ الكِرامَ كانوا يُطَبِّقونَ تَعاليمَ النَّبيِّ ﷺ مَدى الحَياة — المَصدَر: إسلام ويب، كتاب الأطعمة، https://islamweb.net/ar/library/', en:'The word "tu\'mati" (my way of eating) at the end of the hadith means "my eating style" — proving that the noble Companions applied the Prophet\'s ﷺ teachings for life — Source: islamweb.net/ar/library/' },
       ],
     },
@@ -504,7 +504,7 @@ window.HOUSES.eating = {
       { text:{ar:'﴿ وَكُلُوا وَاشْرَبُوا وَلَا تُسْرِفُوا إِنَّهُ لَا يُحِبُّ الْمُسْرِفِينَ ﴾', en:'"Eat and drink, but do not be excessive. Indeed He does not love those who are excessive."'}, ref:{ar:'[سورة الأعراف: ٣١]', en:'[Surah Al-A\'raf: 31]'} },
     ],
     hadiths: [
-      { text:{ar:'«يا غُلامُ، سَمِّ اللهَ، وكُل بِيَمينِكَ، وكُل مِمَّا يَليك»', en:'"O boy — say the name of Allah, eat with your right hand, and eat from what is in front of you."'}, ref:{ar:'[رواه البخاري — ٥٠٦١، ومسلم — ٢٠٢٢]', en:'[Sahih Bukhari — 5061, Sahih Muslim — 2022]'} },
+      { text:{ar:'«يا غُلامُ، سَمِّ اللهَ، وكُل بِيَمينِكَ، وكُل مِمَّا يَليك»', en:'"O boy — say the name of Allah, eat with your right hand, and eat from what is in front of you."'}, ref:{ar:'[رواه البخاري — ٥٣٧٦، ومسلم — ٢٠٢٢]', en:'[Sahih Bukhari — 5376, Sahih Muslim — 2022]'} },
       { text:{ar:'«ما عابَ النَّبيُّ ﷺ طَعاماً قَطُّ، إن اشتَهاهُ أَكَلَهُ وإلاَّ تَرَكَه»', en:'"The Prophet ﷺ never criticised food at all. If he wanted it he ate it, and if not he left it."'}, ref:{ar:'[رواه البخاري — ٣٥٦٣، ومسلم — ٢٠٦٤]', en:'[Sahih Bukhari — 3563, Sahih Muslim — 2064]'} },
     ],
     pledge: {

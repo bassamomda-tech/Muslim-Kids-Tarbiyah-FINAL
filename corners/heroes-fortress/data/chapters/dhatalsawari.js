@@ -34,8 +34,8 @@ HISN.chapters.dhatalsawari = {
    "en": "The Muslims tied their ships to the Roman ships with ropes and grappling hooks until the fighting was as if on <b>solid ground</b>! For the many close-packed masts, it was named <b>\"the Battle of the Masts.\"</b>"
   },
   "who": {
-   "ar": "هي أوّلُ معركةٍ بحريّةٍ كبرى في الإسلام، وقعت سنةَ <b>٣١-٣٥هـ</b> في البحرِ المتوسّطِ قربَ سواحلِ الشام، في خلافةِ <b>عثمانَ بنِ عفّان</b>، بقيادةِ <b>عبدِ الله بنِ أبي السَّرْح</b>. جمعَ إمبراطورُ الرّومِ أسطولاً ضخماً من مئاتِ السفنِ لِسحقِ المسلمين. لكنّ المسلمينَ — وهم حديثو عهدٍ بالبحرِ — توكّلوا على اللهِ وقرؤوا القرآنَ ليلتَهم، ثم <b>ربطوا سفنَهم بسفنِ الرّوم</b> وقاتلوهم التحاماً. فنصرَهم اللهُ نصراً عظيماً، وكانت بدايةَ <b>قوّةِ المسلمينَ في البحار</b>.",
-   "en": "It is the first great naval battle in Islam, in <b>31–35 AH</b> in the Mediterranean near the coast of Sham, during the caliphate of <b>Uthman ibn Affan</b>, led by <b>Abdullah ibn Abi as-Sarh</b>. The Roman emperor gathered a vast fleet of hundreds of ships to crush the Muslims. But the Muslims — new to the sea — trusted Allah and recited Quran through the night, then <b>tied their ships to the Roman ships</b> and fought hand-to-hand. Allah granted a great victory, and it marked the beginning of <b>Muslim power at sea</b>."
+   "ar": "هي أوّلُ معركةٍ بحريّةٍ كبرى في الإسلام، وقعت سنةَ <b>٣٤هـ</b> (وقيل ٣١هـ) في البحرِ المتوسّطِ قبالةَ سواحلِ الأناضول، في خلافةِ <b>عثمانَ بنِ عفّان</b>، بقيادةِ <b>عبدِ الله بنِ أبي السَّرْح</b>. جمعَ إمبراطورُ الرّومِ أسطولاً ضخماً من مئاتِ السفنِ لِسحقِ المسلمين. لكنّ المسلمينَ — وهم حديثو عهدٍ بالبحرِ — توكّلوا على اللهِ وقرؤوا القرآنَ ليلتَهم، ثم <b>ربطوا سفنَهم بسفنِ الرّوم</b> وقاتلوهم التحاماً. فنصرَهم اللهُ نصراً عظيماً، وكانت بدايةَ <b>قوّةِ المسلمينَ في البحار</b>.",
+   "en": "It is the first great naval battle in Islam, in <b>34 AH</b> (some say 31 AH) in the Mediterranean off the coast of Anatolia, during the caliphate of <b>Uthman ibn Affan</b>, led by <b>Abdullah ibn Abi as-Sarh</b>. The Roman emperor gathered a vast fleet of hundreds of ships to crush the Muslims. But the Muslims — new to the sea — trusted Allah and recited Quran through the night, then <b>tied their ships to the Roman ships</b> and fought hand-to-hand. Allah granted a great victory, and it marked the beginning of <b>Muslim power at sea</b>."
   },
   "facts": [
    {
@@ -43,8 +43,8 @@ HISN.chapters.dhatalsawari = {
     "en": "The Muslims’ first great naval battle."
    },
    {
-    "ar": "كانت سنةَ ٣١-٣٥هـ في خلافةِ عثمان.",
-    "en": "In 31–35 AH, during Uthman’s caliphate."
+    "ar": "كانت سنةَ ٣٤هـ (وقيل ٣١هـ) في خلافةِ عثمان.",
+    "en": "In 34 AH (some say 31 AH), during Uthman’s caliphate."
    },
    {
     "ar": "قادَها عبدُ الله بنُ أبي السَّرْح.",

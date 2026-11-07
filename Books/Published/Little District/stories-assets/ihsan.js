@@ -191,35 +191,35 @@ window.HOUSES.ihsan = {
     /* STORY 2 */
     {
       icon:'🐕', scene:'desert', character:'👩',
-      title: { ar:'المَرأَةُ التي دَخَلَتِ الجَنَّةَ بِكَلب!', en:'The woman who entered Paradise for a dog!' },
+      title: { ar:'المَرأَةُ التي غَفَرَ اللهُ لَها بِسَبَبِ كَلب!', en:'The woman Allah forgave because of a dog!' },
       pages: [
         { scene:'desert', character:'👩',
-          text:{ ar:'في زَمَنِ بَني إسرائيل، كانَت هُناكَ امرأَةٌ فاجِرَة. كانَت تَعيشُ حَياةَ المَعاصي والذُّنوب.<br><br>في يَومٍ شَديدِ الحَرّ، خَرَجَت في الصَّحراء. الشَّمسُ تَحرِق، والعَطَشُ شَديد. وَجَدَت بِئراً فَنَزَلَت وشَرِبَت مِنها حتى ارتَوَت.',
-                 en:'In the time of Bani Israel lived a sinful woman — a life of wrongdoing.<br><br>One scorching day she went into the desert. The sun blazed, thirst intense. She found a well, descended, drank until satisfied.' } },
+          text:{ ar:'في زَمَنِ بَني إسرائيل، كانَت هُناكَ امرأَةٌ فاجِرَة. كانَت تَعيشُ حَياةَ المَعاصي والذُّنوب.<br><br>في يَومٍ شَديدِ الحَرّ، خَرَجَت في الصَّحراء. الشَّمسُ تَحرِق، والعَطَشُ شَديد. فَمَرَّت بِبِئرٍ عَميقَة.',
+                 en:'In the time of Bani Israel lived a sinful woman — a life of wrongdoing.<br><br>One scorching day she went into the desert. The sun blazed, thirst intense. She passed by a deep well.' } },
         { scene:'desert', character:'🐕',
-          text:{ ar:'عِندَما خَرَجَت مِنَ البِئر، رَأَت مَنظَراً مُؤَثِّراً!<br><br><b>كَلبٌ مِسكينٌ يَطوفُ حَولَ البِئر، لِسانُهُ يَتَدَلّى مِن شِدَّةِ العَطَش، يَلهَثُ ويَأكُلُ التُّرابَ مِن فَرطِ الظَّمَأ!</b><br><br>يُريدُ أَن يَنزِلَ إلى البِئر لَكِنَّهُ لا يَستَطيع. حاوَلَ مِراراً — لَكِنَّ البِئرَ عَميقَة!',
-                 en:'As she climbed out, she saw a moving sight!<br><br><b>A poor dog circling the well, tongue hanging from thirst, panting, eating dirt from desperate need!</b><br><br>He wanted to reach the well but couldn\u2019t. He tried again and again — too deep!' } },
+          text:{ ar:'عِندَما اقتَرَبَت مِنَ البِئر، رَأَت مَنظَراً مُؤَثِّراً!<br><br><b>كَلبٌ مِسكينٌ يَطوفُ حَولَ البِئر، لِسانُهُ يَتَدَلّى مِن شِدَّةِ العَطَش، يَلهَثُ ويَأكُلُ التُّرابَ مِن فَرطِ الظَّمَأ!</b><br><br>يُريدُ أَن يَنزِلَ إلى البِئر لَكِنَّهُ لا يَستَطيع. حاوَلَ مِراراً — لَكِنَّ البِئرَ عَميقَة!',
+                 en:'As she came near the well, she saw a moving sight!<br><br><b>A poor dog circling the well, tongue hanging from thirst, panting, eating dirt from desperate need!</b><br><br>He wanted to reach the well but couldn\u2019t. He tried again and again — too deep!' } },
         { scene:'desert', character:'💭',
-          text:{ ar:'نَظَرَتِ المَرأَةُ إلى الكَلب. شَيءٌ تَحَرَّكَ في قَلبِها!<br><br>«هذا الكَلبُ المِسكينُ… سَيَموتُ مِنَ العَطَش! لَقَد كانَ عَطَشي شَديداً — وعَطَشُهُ أَشَدّ!»<br><br>لم تَكُن صالِحَةً في حَياتِها — لَكِنَّ الرَّحمَةَ مازالَت في قَلبِها.',
-                 en:'She looked at the dog. Something stirred in her heart!<br><br>"This poor creature… will die of thirst! My thirst was terrible — his is worse!"<br><br>She wasn\u2019t righteous in life — but mercy remained in her heart.' },
+          text:{ ar:'نَظَرَتِ المَرأَةُ إلى الكَلب. شَيءٌ تَحَرَّكَ في قَلبِها!<br><br>«هذا الكَلبُ المِسكينُ… سَيَموتُ مِنَ العَطَش! والبِئرُ عَميقَةٌ لا يَبلُغُها!»<br><br>لم تَكُن صالِحَةً في حَياتِها — لَكِنَّ الرَّحمَةَ مازالَت في قَلبِها.',
+                 en:'She looked at the dog. Something stirred in her heart!<br><br>"This poor creature… will die of thirst! And the well is too deep for him!"<br><br>She wasn\u2019t righteous in life — but mercy remained in her heart.' },
           choice:{ q:{ar:'ماذا فَعَلَتِ المَرأَة؟',en:'What did the woman do?'},
             opts:[
               { t:{ar:'تَرَكَتِ الكَلبَ ومَشَت.',en:'Left the dog and walked away.'},c:false,exp:{ar:'لا — قَلبُها رَحِمَهُ!',en:'No — her heart had mercy!'} },
-              { t:{ar:'نَزَلَت وسَقَتِ الكَلبَ بِخُفِّها.',en:'Descended and gave the dog water in her shoe.'},c:true,exp:{ar:'نَعَم! هذا ما فَعَلَت — ورَحِمَها الله!',en:'Yes! That\u2019s what she did — and Allah had mercy on her!'} },
+              { t:{ar:'سَقَتِ الكَلبَ بِخُفِّها.',en:'Gave the dog water using her shoe.'},c:true,exp:{ar:'نَعَم! هذا ما فَعَلَت — ورَحِمَها الله!',en:'Yes! That\u2019s what she did — and Allah had mercy on her!'} },
               { t:{ar:'نادَت أَحَداً لِيُساعِد.',en:'Called someone to help.'},c:false,exp:{ar:'لا أَحَدَ في الصَّحراء — فَعَلَتهُ بِنَفسِها!',en:'No one in the desert — she did it herself!'} },
             ] } },
         { scene:'desert', character:'😊',
-          text:{ ar:'نَزَعَتِ المَرأَةُ خُفَّها — حِذاءَها الجِلدِيّ. نَزَلَت إلى البِئرِ مَرَّةً أُخرى بِصُعوبَة.<br><br>مَلَأَتِ الخُفَّ ماءً، ثُمَّ أَمسَكَتهُ بِفَمِها وصَعِدَت! كانَت رِحلَةً شاقَّة — لَكِنَّها لم تَستَسلِم.<br><br>وَضَعَتِ الخُفَّ أَمامَ الكَلب. شَرِبَ الكَلبُ حتى ارتَوى!',
-                 en:'She took off her shoe — her leather sock. She descended again with difficulty.<br><br>Filled the shoe with water, held it in her mouth, climbed back up! A hard journey — but she didn\u2019t give up.<br><br>She placed it before the dog. The dog drank until satisfied!' } },
+          text:{ ar:'نَزَعَتِ المَرأَةُ خُفَّها — حِذاءَها الجِلدِيّ — وَرَبَطَتهُ بِخِمارِها، ثُمَّ أَدلَتهُ في البِئر.<br><br>مَلَأَتِ الخُفَّ ماءً، ثُمَّ رَفَعَتهُ بِصُعوبَة! كانَ عَمَلاً شاقّاً — لَكِنَّها لم تَستَسلِم.<br><br>وَضَعَتِ الخُفَّ أَمامَ الكَلب. شَرِبَ الكَلبُ حتى ارتَوى!',
+                 en:'She took off her shoe — her leather sock — tied it to her headscarf, and lowered it into the well.<br><br>She filled the shoe with water and pulled it up with difficulty! Hard work — but she didn\u2019t give up.<br><br>She placed it before the dog. The dog drank until satisfied!' } },
         { scene:'garden', character:'✨',
-          text:{ ar:'اللهُ تَعالى نَظَرَ إلى قَلبِها — رَأى الرَّحمَةَ التي تَحَرَّكَت فيه!<br><br><b>فَشَكَرَ اللهُ لَها فِعلَها — وغَفَرَ لَها ذُنوبَها — وأَدخَلَها الجَنَّة!</b><br><br>قالَ النَّبيُّ ﷺ: «في كُلِّ كَبِدٍ رَطبَةٍ أَجرٌ!» — أي في الإحسانِ إلى كُلِّ حَيٍّ ثَواب!',
-                 en:'Allah looked into her heart — saw the mercy that stirred within!<br><br><b>So Allah thanked her for her deed — forgave all her sins — and admitted her to Paradise!</b><br><br>The Prophet ﷺ said: "For every living creature there is reward!" — meaning ihsan to every living being has reward!' } },
+          text:{ ar:'اللهُ تَعالى نَظَرَ إلى قَلبِها — رَأى الرَّحمَةَ التي تَحَرَّكَت فيه!<br><br><b>فَغَفَرَ اللهُ لَها ذُنوبَها بِرَحمَتِها لِلكَلب!</b><br><br>وقالَ النَّبيُّ ﷺ في حَديثٍ آخَر: «في كُلِّ كَبِدٍ رَطبَةٍ أَجرٌ!» — أي في الإحسانِ إلى كُلِّ حَيٍّ ثَواب!',
+                 en:'Allah looked into her heart — saw the mercy that stirred within!<br><br><b>So Allah forgave her sins for her mercy to the dog!</b><br><br>And the Prophet ﷺ said in another hadith: "For every living creature there is reward!" — meaning ihsan to every living being has reward!' } },
         { scene:'night', character:'🌟',
-          text:{ ar:'تَخَيَّل! امرأَةٌ عاصِيَة — دَخَلَتِ الجَنَّةَ بِسَبَبِ كَلب!<br><br>لَيسَ لأنَّها صامَت أو صَلَّت — بل لأنَّ قَلبَها رَحِمَ مَخلوقاً ضَعيفاً عَطشان.<br><br><b>هذا هو الإحسان! أَن تَرحَمَ كُلَّ حَيّ — حَتى الحَيَوانات!</b>',
-                 en:'Imagine! A sinful woman — entered Paradise because of a dog!<br><br>Not because she fasted or prayed — but because her heart had mercy on a weak, thirsty creature.<br><br><b>This is ihsan! To show mercy to every living being — even animals!</b>' } },
+          text:{ ar:'تَخَيَّل! امرأَةٌ عاصِيَة — غَفَرَ اللهُ لَها بِسَبَبِ كَلب!<br><br>لَيسَ لأنَّها صامَت أو صَلَّت — بل لأنَّ قَلبَها رَحِمَ مَخلوقاً ضَعيفاً عَطشان.<br><br><b>هذا هو الإحسان! أَن تَرحَمَ كُلَّ حَيّ — حَتى الحَيَوانات!</b>',
+                 en:'Imagine! A sinful woman — forgiven by Allah because of a dog!<br><br>Not because she fasted or prayed — but because her heart had mercy on a weak, thirsty creature.<br><br><b>This is ihsan! To show mercy to every living being — even animals!</b>' } },
       ],
       quiz: [
-        { q:{ar:'لماذا دَخَلَتِ المَرأَةُ الجَنَّة؟', en:'Why did the woman enter Paradise?'},
+        { q:{ar:'لماذا غَفَرَ اللهُ لِلمَرأَة؟', en:'Why did Allah forgive the woman?'},
           opts:[
             { t:{ar:'لأنَّها كانَت صالِحَة', en:'Because she was righteous'}, c:false },
             { t:{ar:'لأنَّها رَحِمَت كَلباً عَطشان', en:'Because she had mercy on a thirsty dog'}, c:true },
@@ -532,7 +532,7 @@ window.HOUSES.ihsan = {
           },
           { kind:'mcq', points:30,
             items: [
-              {q:{ar:'مَن دَخَلَتِ الجَنَّةَ بِكَلب؟',en:'Who entered Paradise for a dog?'},
+              {q:{ar:'مَن غَفَرَ اللهُ لَها بِسَبَبِ كَلب؟',en:'Who was forgiven by Allah because of a dog?'},
                 opts:[
                   {t:{ar:'امرأَةٌ رَحِمَت كَلباً عَطشان',en:'A woman who had mercy on a thirsty dog'},c:true},
                   {t:{ar:'رَجُلٌ رَبّى كَلباً',en:'A man who raised a dog'},c:false},
@@ -747,8 +747,8 @@ window.HOUSES.ihsan = {
   /* ───── CERTIFICATE TEXT ───── */
   certificate: {
     subtitle: { ar:'تُمنَحُ هذه الشَّهادة لِمَن أَتَمَّ رِحلَةَ بَيتِ الإحسان', en:'Awarded to those who completed the House of Ihsan' },
-    statement: { ar:'لإتقانِهِ/إتقانِها <b>الإحسانَ في العِبادَةِ والمُعامَلَةِ والإتقان</b> — اقتِداءً بِالنَّبيِّ ﷺ الذي عَلَّمَنا أَن نَعبُدَ اللهَ كَأَنَّنا نَراه، وتَأَسِّياً بِالمَرأَةِ التي رَحِمَت كَلباً فَدَخَلَتِ الجَنَّة.',
-                 en:'For mastering <b>ihsan in worship, dealings, and excellence</b> — following the Prophet ﷺ who taught us to worship as if we see Allah, and the woman who showed mercy to a dog and entered Paradise.' },
+    statement: { ar:'لإتقانِهِ/إتقانِها <b>الإحسانَ في العِبادَةِ والمُعامَلَةِ والإتقان</b> — اقتِداءً بِالنَّبيِّ ﷺ الذي عَلَّمَنا أَن نَعبُدَ اللهَ كَأَنَّنا نَراه، وتَأَسِّياً بِالمَرأَةِ التي رَحِمَت كَلباً فَغَفَرَ اللهُ لَها.',
+                 en:'For mastering <b>ihsan in worship, dealings, and excellence</b> — following the Prophet ﷺ who taught us to worship as if we see Allah, and the woman who showed mercy to a dog and was forgiven by Allah.' },
   },
 
 };

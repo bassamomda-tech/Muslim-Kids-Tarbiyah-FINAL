@@ -21,8 +21,8 @@ HISN.chapters.hudaybiyah = {
  },
  "knowledge": {
   "didYouKnow": {
-   "ar": "سمّى اللهُ صلحَ الحُديبيةِ «فتحاً مُبيناً» مع أنّ بعضَ شروطِه بدت صعبة، فأسلمَ في سنتينِ بعدَه أكثرُ مما أسلمَ في عشرين سنة.",
-   "en": "Allah called the Treaty of Hudaybiyyah a \"clear victory\" though some terms seemed hard; in the two years after it, more people embraced Islam than in the prior twenty."
+   "ar": "سمّى اللهُ صلحَ الحُديبيةِ «فتحاً مُبيناً» مع أنّ بعضَ شروطِه بدت صعبة، فأسلمَ في سنتينِ بعدَه مثلُ مَن أسلمَ قبلَه أو أكثر.",
+   "en": "Allah called the Treaty of Hudaybiyyah a \"clear victory\" though some terms seemed hard; in the two years after it, as many people embraced Islam as in all the years before it, or more."
   },
   "who": {
    "ar": "بعدَ بيعةِ الرِّضوان، تفاوضَ النبيُّ ﷺ مع قريشٍ على <b>صلحٍ</b> عندَ الحُديبية. كانت شروطُه تبدو في ظاهرِها صعبةً على المسلمين: يرجعونَ هذا العامَ بلا عُمرة، ويعتمرونَ العامَ القادم، وهُدنةٌ عشرَ سنين. غضِبَ بعضُ الصحابةِ لكنّ النبيَّ ﷺ قبِلَ بحكمتِه. فكان <b>فتحاً مُبيناً</b>: أمِنَ الناسُ وتعارفوا، فدخلَ في الإسلامِ خلقٌ كثيرٌ في سنتين. الحكمةُ والصبرُ خيرٌ من العَجَلة.",

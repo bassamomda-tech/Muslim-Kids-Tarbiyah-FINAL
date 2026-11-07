@@ -1192,8 +1192,8 @@ HISN_STORIES.yusuf = [
   ],
   "didYouKnow": [
    {
-    "ar": "ذَكَرَت المَوسوعَةُ القُرآنِيَّةُ أنَّ خُطَّةَ يوسُفَ الاقتِصاديَّةَ تُعتَبَرُ أَوَّلَ نِظامٍ لِلتَّخزينِ الاستِراتيجيِّ في التّاريخ — المَصدَر: quranpedia.net — يوسف ٤٧-٤٩",
-    "en": "The Quranic Encyclopedia noted Yusuf's economic plan is considered the first strategic storage system in history — Source: quranpedia.net — Yusuf 47-49"
+    "ar": "ذَكَرَت المَوسوعَةُ القُرآنِيَّةُ أنَّ خُطَّةَ يوسُفَ الاقتِصاديَّةَ مِن أَقدَمِ ما يُذكَرُ مِن أَنظِمَةِ التَّخزينِ الاستِراتيجيِّ في التّاريخ — المَصدَر: quranpedia.net — يوسف ٤٧-٤٩",
+    "en": "The Quranic Encyclopedia noted Yusuf's economic plan is among the oldest recorded strategic storage systems in history — Source: quranpedia.net — Yusuf 47-49"
    },
    {
     "ar": "ذَكَرَ إسلام ويب أنَّ يوسُفَ أَمَرَ بِتَخزينِ القَمحِ في سَنابِلِهِ لِحِفظِهِ مِن التَّلَف — حِكمَةٌ زِراعيَّةٌ سَبَقَت عَصرَه — المَصدَر: islamweb.net/ar/article/179335",

@@ -423,8 +423,8 @@ HISN_STORIES.mohacs = [
     "scene": "dwellings",
     "character": "🏰",
     "text": {
-     "ar": "بعدَ المعركةِ بأيّام، دخلَ سليمانُ مدينةَ <b>بودا</b> عاصمةَ المجر، ثمّ عادَ بجيشِه إلى بلادِه قبلَ أن يشتدَّ بردُ الشتاء. ولم تنتهِ القصّةُ هنا، فقد ضعفتْ مملكةُ المجرِ كثيراً بعدَ موهاكس، وتنازعَ على عرشِها أكثرُ من أمير.<br><br>وفي سنةِ ٩٤٨هـ (١٥٤١م) صارتْ بودا وما حولَها <b>ولايةً عثمانيّة</b>، وبقيتْ كذلك نحوَ <b>مئةٍ وخمسٍ وأربعينَ سنة</b>. وصارَ نهرُ الدانوبِ الذي يقسمُ المدينةَ يسمعُ صوتَ الأذانِ لأوّلِ مرّةٍ في تاريخِه.",
-     "en": "A few days after the battle, Suleiman entered <b>Buda</b>, the capital of Hungary, then led his army home before the winter cold grew harsh. But the story did not end there: the Kingdom of Hungary was greatly weakened after Mohacs, and more than one prince fought over its throne.<br><br>In 948 AH (1541 CE), Buda and the lands around it became an <b>Ottoman province</b>, and remained so for about <b>one hundred and forty-five years</b>. The Danube, which runs through the city, heard the call to prayer for the first time in its history."
+     "ar": "بعدَ المعركةِ بأيّام، دخلَ سليمانُ مدينةَ <b>بودا</b> عاصمةَ المجر، ثمّ عادَ بجيشِه إلى بلادِه قبلَ أن يشتدَّ بردُ الشتاء. ولم تنتهِ القصّةُ هنا، فقد ضعفتْ مملكةُ المجرِ كثيراً بعدَ موهاكس، وتنازعَ على عرشِها أكثرُ من أمير.<br><br>وفي سنةِ ٩٤٨هـ (١٥٤١م) صارتْ بودا وما حولَها <b>ولايةً عثمانيّة</b>، وبقيتْ كذلك نحوَ <b>مئةٍ وخمسٍ وأربعينَ سنة</b>. وصارَ صوتُ الأذانِ يُرفَعُ على ضفّتَي نهرِ الدانوبِ الذي يقسمُ المدينة.",
+     "en": "A few days after the battle, Suleiman entered <b>Buda</b>, the capital of Hungary, then led his army home before the winter cold grew harsh. But the story did not end there: the Kingdom of Hungary was greatly weakened after Mohacs, and more than one prince fought over its throne.<br><br>In 948 AH (1541 CE), Buda and the lands around it became an <b>Ottoman province</b>, and remained so for about <b>one hundred and forty-five years</b>. The call to prayer now rose on both banks of the Danube, which runs through the city."
     }
    },
    {

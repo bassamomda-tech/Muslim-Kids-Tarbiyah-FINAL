@@ -12,14 +12,14 @@ HISN.chapters.qutuz = {
     en:'Hello, hero! Sayfuddin Qutuz, a hero who halted the Mongol advance that swept the world, defeating them at the historic Battle of Ayn Jalut. Come, let\'s learn from his courage and sacrifice.' },
 
   knowledge:{
-    didYouKnow:{ ar:'كان المغولُ قد دمّروا بغدادَ وأرعبوا العالم، حتى قيلَ إنّهم لا يُهزَمون — فهزمهم قطز في عينِ جالوتَ سنةَ ٦٥٨هـ أوّلَ هزيمةٍ كبرى لهم!',
-      en:'The Mongols had destroyed Baghdad and terrified the world — it was said they could not be defeated. But Qutuz defeated them at Ayn Jalut in 658 AH, their first great defeat!' },
-    who:{ ar:'هو <b>سيفُ الدينِ قطز</b>، سلطانُ مصرَ من المماليك. جاءَ في زمنٍ عصيب: كان <b>المغولُ (التتار)</b> قد اجتاحوا العالمَ الإسلامي، ودمّروا <b>بغدادَ</b> وقتلوا أهلَها، وزحفوا نحوَ الشامِ ومصر، وأرعبوا الناسَ حتى ظنّوا أنّهم لا يُهزَمون. فوقفَ قطز بشجاعةٍ نادرة، ووحّدَ المسلمينَ وأعدَّ جيشاً، والتقى المغولَ في معركةِ <b>عينِ جالوت</b> سنةَ ٦٥٨هـ، فحقّقَ اللهُ على يدِه <b>أوّلَ هزيمةٍ كبرى للمغول</b> وأنقذَ العالمَ الإسلاميَّ من الدمار. كان مخلصاً شجاعاً، قال كلمتَه الشهيرة: «وا إسلاماه!». استُشهِدَ بعدَ النصرِ بقليل.',
-      en:'He is <b>Sayfuddin Qutuz</b>, the Mamluk sultan of Egypt. He came in a dire time: the <b>Mongols (Tatars)</b> had swept the Muslim world, destroyed <b>Baghdad</b> and killed its people, advanced toward Sham and Egypt, and terrified people until they thought the Mongols could not be defeated. Qutuz stood with rare courage, united the Muslims, prepared an army, and met the Mongols at the Battle of <b>Ayn Jalut</b> in 658 AH, where Allah granted at his hands <b>the Mongols\u2019 first great defeat</b> and saved the Muslim world from destruction. He was sincere and brave, crying his famous words: "Wa Islamah!" (O Islam!). He was martyred shortly after the victory.' },
+    didYouKnow:{ ar:'كان المغولُ قد دمّروا بغدادَ وأرعبوا العالم، حتى قيلَ إنّهم لا يُهزَمون — فهزمهم قطز في عينِ جالوتَ سنةَ ٦٥٨هـ هزيمةً كبرى أوقفت زحفَهم!',
+      en:'The Mongols had destroyed Baghdad and terrified the world — it was said they could not be defeated. But Qutuz defeated them at Ayn Jalut in 658 AH, a great defeat that stopped their advance!' },
+    who:{ ar:'هو <b>سيفُ الدينِ قطز</b>، سلطانُ مصرَ من المماليك. جاءَ في زمنٍ عصيب: كان <b>المغولُ (التتار)</b> قد اجتاحوا العالمَ الإسلامي، ودمّروا <b>بغدادَ</b> وقتلوا أهلَها، وزحفوا نحوَ الشامِ ومصر، وأرعبوا الناسَ حتى ظنّوا أنّهم لا يُهزَمون. فوقفَ قطز بشجاعةٍ نادرة، ووحّدَ المسلمينَ وأعدَّ جيشاً، والتقى المغولَ في معركةِ <b>عينِ جالوت</b> سنةَ ٦٥٨هـ، فحقّقَ اللهُ على يدِه <b>هزيمةً كبرى أوقفت زحفَ المغول</b> وأنقذَ العالمَ الإسلاميَّ من الدمار. كان مخلصاً شجاعاً، قال كلمتَه الشهيرة: «وا إسلاماه!». استُشهِدَ بعدَ النصرِ بقليل.',
+      en:'He is <b>Sayfuddin Qutuz</b>, the Mamluk sultan of Egypt. He came in a dire time: the <b>Mongols (Tatars)</b> had swept the Muslim world, destroyed <b>Baghdad</b> and killed its people, advanced toward Sham and Egypt, and terrified people until they thought the Mongols could not be defeated. Qutuz stood with rare courage, united the Muslims, prepared an army, and met the Mongols at the Battle of <b>Ayn Jalut</b> in 658 AH, where Allah granted at his hands <b>a great defeat that stopped the Mongols\u2019 advance</b> and saved the Muslim world from destruction. He was sincere and brave, crying his famous words: "Wa Islamah!" (O Islam!). He was martyred shortly after the victory.' },
     facts:[
       { ar:'سلطانٌ مملوكيٌّ أوقفَ زحفَ المغول.', en:'A Mamluk sultan who halted the Mongol advance.' },
       { ar:'انتصرَ في عينِ جالوتَ سنةَ ٦٥٨هـ.', en:'He triumphed at Ayn Jalut in 658 AH.' },
-      { ar:'حقّقَ أوّلَ هزيمةٍ كبرى للمغولِ في التاريخ.', en:'He inflicted the Mongols\u2019 first great defeat in history.' },
+      { ar:'حقّقَ هزيمةً كبرى للمغولِ أوقفت زحفَهم في التاريخ.', en:'He inflicted a great defeat that stopped the Mongols\u2019 advance.' },
       { ar:'وحّدَ المسلمينَ وأنقذَ العالمَ الإسلاميَّ من الدمار.', en:'He united Muslims and saved the Muslim world from destruction.' },
       { ar:'قال كلمتَه الشهيرة: «وا إسلاماه!».', en:'He cried his famous words: "Wa Islamah!"' },
     ],
@@ -27,7 +27,7 @@ HISN.chapters.qutuz = {
       { when:{ar:'الخطر',en:'The Danger'}, what:{ar:'اجتاحَ المغولُ العالمَ ودمّروا بغداد.',en:'The Mongols swept the world and destroyed Baghdad.'} },
       { when:{ar:'القيادة',en:'Leadership'}, what:{ar:'تولّى قطز ووحّدَ المسلمينَ وأعدَّ جيشاً.',en:'Qutuz took power, united Muslims, and prepared an army.'} },
       { when:{ar:'عينُ جالوت',en:'Ayn Jalut'}, what:{ar:'التقى المغولَ في عينِ جالوت.',en:'He met the Mongols at Ayn Jalut.'} },
-      { when:{ar:'النصر',en:'The Victory'}, what:{ar:'هزمهم أوّلَ هزيمةٍ كبرى لهم.',en:'He defeated them — their first great defeat.'} },
+      { when:{ar:'النصر',en:'The Victory'}, what:{ar:'هزمهم هزيمةً كبرى أوقفت زحفَهم.',en:'He defeated them — a great defeat that stopped their advance.'} },
       { when:{ar:'الشهادة',en:'Martyrdom'}, what:{ar:'استُشهِدَ بعدَ النصرِ بقليل.',en:'He was martyred shortly after the victory.'} },
     ],
     ayah:{ ar:'﴿ يَا أَيُّهَا الَّذِينَ آمَنُوا إِن تَنصُرُوا اللَّهَ يَنصُرْكُمْ ﴾', ref:{ ar:'محمد ٧', en:'Muhammad 7' } },
@@ -36,8 +36,8 @@ HISN.chapters.qutuz = {
   story:[
     { title:{ ar:'بطلُ عينِ جالوت', en:'Hero of Ayn Jalut' },
       pages:[
-        { scene:'peaks', text:{ ar:'كان <b>سيفُ الدينِ قطز</b> سلطاناً شجاعاً جاءَ في زمنٍ اجتاحَ فيه المغولُ العالمَ ودمّروا بغداد. وقفَ قطز بشجاعةٍ ووحّدَ المسلمينَ، والتقى المغولَ في عينِ جالوتَ فهزمهم أوّلَ هزيمةٍ كبرى لهم، وأنقذَ العالمَ الإسلاميَّ من الدمار.',
-          en:'<b>Sayfuddin Qutuz</b> was a brave sultan who came at a time when the Mongols swept the world and destroyed Baghdad. Qutuz stood with courage, united the Muslims, and met the Mongols at Ayn Jalut, defeating them — their first great defeat — and saving the Muslim world from destruction.' } } ] }
+        { scene:'peaks', text:{ ar:'كان <b>سيفُ الدينِ قطز</b> سلطاناً شجاعاً جاءَ في زمنٍ اجتاحَ فيه المغولُ العالمَ ودمّروا بغداد. وقفَ قطز بشجاعةٍ ووحّدَ المسلمينَ، والتقى المغولَ في عينِ جالوتَ فهزمهم هزيمةً كبرى أوقفت زحفَهم، وأنقذَ العالمَ الإسلاميَّ من الدمار.',
+          en:'<b>Sayfuddin Qutuz</b> was a brave sultan who came at a time when the Mongols swept the world and destroyed Baghdad. Qutuz stood with courage, united the Muslims, and met the Mongols at Ayn Jalut, defeating them — a great defeat that stopped their advance — and saving the Muslim world from destruction.' } } ] }
   ],
 
   traits:[
@@ -83,7 +83,7 @@ HISN.chapters.qutuz = {
     { type:'trueFalse', title:{ar:'صحٌّ أم خطأ؟',en:'True or False?'},
       items:[
         { statement:{ar:'قطز أوقفَ زحفَ المغولِ في عينِ جالوت.',en:'Qutuz halted the Mongol advance at Ayn Jalut.'}, t:true },
-        { statement:{ar:'كانتْ أوّلَ هزيمةٍ كبرى للمغول.',en:'It was the Mongols\u2019 first great defeat.'}, t:true },
+        { statement:{ar:'كانتْ هزيمةً كبرى أوقفت زحفَ المغول.',en:'It was a great defeat that stopped the Mongols\u2019 advance.'}, t:true },
         { statement:{ar:'استسلمَ قطز للمغولِ خوفاً.',en:'Qutuz surrendered to the Mongols out of fear.'}, t:false },
         { statement:{ar:'وحّدَ المسلمينَ وأنقذَ العالمَ الإسلامي.',en:'He united the Muslims and saved the Muslim world.'}, t:true },
       ] },

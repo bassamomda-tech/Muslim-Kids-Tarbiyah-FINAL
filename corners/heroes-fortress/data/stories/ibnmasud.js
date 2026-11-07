@@ -87,8 +87,8 @@ HISN_STORIES.ibnmasud = [
   "quiz": [
    {
     "q": {
-     "ar": "من أوّلُ من جهرَ بالقرآنِ أمامَ قريش؟",
-     "en": "Who was the first to recite the Quran aloud before Quraysh?"
+     "ar": "من أوّلُ من جهرَ بالقرآنِ أمامَ قريشٍ بعدَ النبيِّ ﷺ؟",
+     "en": "After the Prophet ﷺ, who was the first to recite the Quran aloud before Quraysh?"
     },
     "opts": [
      {

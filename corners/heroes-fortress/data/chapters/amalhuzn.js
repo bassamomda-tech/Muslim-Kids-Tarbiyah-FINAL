@@ -114,8 +114,8 @@ HISN.chapters.amalhuzn = {
   {
    "scene": "heart",
    "text": {
-    "ar": "بعدَ الحصار، توفّيَ عمُّ النبيِّ ﷺ <b>أبو طالب</b> الذي كان يحميه من أذى قريشٍ طَوالَ السنين. ثم بعدَه بأيّامٍ قليلة، توفّيت زوجتُه الحبيبةُ <b>خديجةُ</b> رضي الله عنها، أوّلُ من آمنَ به وسانده بمالِها ونفسِها. فحزِنَ النبيُّ ﷺ حزناً عظيماً على فِراقِهما.",
-    "en": "After the siege, the Prophet's ﷺ uncle <b>Abu Talib</b> — who had protected him from Quraysh's harm for years — passed away. Then a few days later, his beloved wife <b>Khadijah</b> passed away — the first to believe in him, who supported him with her wealth and herself. The Prophet ﷺ grieved immensely at losing them."
+    "ar": "بعدَ الحصار، توفّيَ عمُّ النبيِّ ﷺ <b>أبو طالب</b> الذي كان يحميه من أذى قريشٍ طَوالَ السنين. وفي العامِ نفسِه توفّيت زوجتُه الحبيبةُ <b>خديجةُ</b> رضي الله عنها، أوّلُ من آمنَ به وسانده بمالِها ونفسِها. فحزِنَ النبيُّ ﷺ حزناً عظيماً على فِراقِهما.",
+    "en": "After the siege, the Prophet's ﷺ uncle <b>Abu Talib</b> — who had protected him from Quraysh's harm for years — passed away. In that same year, his beloved wife <b>Khadijah</b> passed away — the first to believe in him, who supported him with her wealth and herself. The Prophet ﷺ grieved immensely at losing them."
    }
   },
   {

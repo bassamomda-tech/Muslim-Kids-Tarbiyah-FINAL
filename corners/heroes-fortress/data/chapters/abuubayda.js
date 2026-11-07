@@ -33,8 +33,8 @@ HISN.chapters.abuubayda = {
    "en": "The Prophet ﷺ said: \"Every nation has a trustee, and the trustee of this nation is Abu Ubayda ibn al-Jarrah.\""
   },
   "who": {
-   "ar": "هو <b>أبو عبيدةَ عامرُ بنُ الجرّاح</b> الفِهريُّ القُرشي، أحدُ <b>العشرةِ المبشّرينَ بالجنّة</b>. من السابقينَ إلى الإسلام، لقّبه النبيُّ ﷺ <b>«أمينَ هذه الأمّة»</b>. كان <b>قائداً عظيماً متواضعاً</b>، قادَ جيوشَ المسلمينَ في فتحِ الشام. عيّنه عمرُ قائداً أعلى، ومع ذلك بقيَ <b>زاهداً</b> بسيطاً، يخدمُ جنودَه ولا يتكبّر. كان مثالاً في الأمانةِ والطاعةِ والتواضع.",
-   "en": "He is <b>Abu Ubayda Amir ibn al-Jarrah</b> of the Fihr clan of Quraysh, one of the <b>Ten Promised Paradise</b>. Among the earliest to Islam, the Prophet ﷺ named him <b>\"the trustee of this nation.\"</b> He was a <b>great, humble commander</b> who led the Muslim armies in the conquest of Sham. Umar appointed him supreme commander, yet he remained <b>ascetic</b> and simple, serving his soldiers without arrogance. He was a model of trustworthiness, obedience, and humility."
+   "ar": "هو <b>أبو عبيدةَ عامرُ بنُ عبدِ اللهِ بنِ الجرّاح</b> الفِهريُّ القُرشي، أحدُ <b>العشرةِ المبشّرينَ بالجنّة</b>. من السابقينَ إلى الإسلام، لقّبه النبيُّ ﷺ <b>«أمينَ هذه الأمّة»</b>. كان <b>قائداً عظيماً متواضعاً</b>، قادَ جيوشَ المسلمينَ في فتحِ الشام. عيّنه عمرُ قائداً أعلى، ومع ذلك بقيَ <b>زاهداً</b> بسيطاً، يخدمُ جنودَه ولا يتكبّر. كان مثالاً في الأمانةِ والطاعةِ والتواضع.",
+   "en": "He is <b>Abu Ubayda Amir ibn Abdullah ibn al-Jarrah</b> of the Fihr clan of Quraysh, one of the <b>Ten Promised Paradise</b>. Among the earliest to Islam, the Prophet ﷺ named him <b>\"the trustee of this nation.\"</b> He was a <b>great, humble commander</b> who led the Muslim armies in the conquest of Sham. Umar appointed him supreme commander, yet he remained <b>ascetic</b> and simple, serving his soldiers without arrogance. He was a model of trustworthiness, obedience, and humility."
   },
   "facts": [
    {

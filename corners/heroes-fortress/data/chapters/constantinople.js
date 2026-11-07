@@ -24,8 +24,8 @@ HISN.chapters.constantinople = {
  "accent": "#7A5A2A",
  "accent2": "#A8843A",
  "greeting": {
-  "ar": "أهلاً يا بطل! بشّرَ النبيُّ ﷺ قبلَ ٨٠٠ سنةٍ بفتحِ القسطنطينيّة، ومدحَ قائدَها وجيشَها. وجاءَ الفتى محمدٌ الفاتحُ وحقّقَ البشارة بالإيمانِ والتخطيطِ والإصرار. تعالَ نتعلّمْ كيف تتحقّقُ الأحلامُ الكبيرة.",
-  "en": "Hello, hero! The Prophet ﷺ foretold the conquest of Constantinople 800 years earlier, and praised its commander and army. The young Muhammad the Conqueror came and fulfilled the glad tiding with faith, planning, and determination. Come, let's learn how great dreams come true."
+  "ar": "أهلاً يا بطل! بشّرَ النبيُّ ﷺ قبلَ ٨٠٠ سنةٍ بفتحِ القسطنطينيّة، ويُروى أنّه مدحَ قائدَها وجيشَها. وجاءَ الفتى محمدٌ الفاتحُ وحقّقَ البشارة بالإيمانِ والتخطيطِ والإصرار. تعالَ نتعلّمْ كيف تتحقّقُ الأحلامُ الكبيرة.",
+  "en": "Hello, hero! The Prophet ﷺ foretold the conquest of Constantinople 800 years earlier, and it is narrated that he praised its commander and army. The young Muhammad the Conqueror came and fulfilled the glad tiding with faith, planning, and determination. Come, let's learn how great dreams come true."
  },
  "knowledge": {
   "commander": {"name":{"ar":"محمدٌ الفاتح","en":"Muhammad the Conqueror"},"role":{"ar":"الفاتحُ الشاب","en":"The young conqueror"},"bio":{"ar":"سلطانٌ شابٌّ ربّاه أبوه على القرآنِ والعلمِ والفروسيّة. فتحَ القسطنطينيّةَ وعمرُه نحوُ ٢١ سنة، ونقلَ سفنَه فوقَ الجبالِ بذكاء، فحقّقَ بشارةَ النبيِّ ﷺ.","en":"A young sultan raised on the Quran, knowledge, and horsemanship. He conquered Constantinople at about 21, cleverly carrying his ships over the hills — fulfilling the Prophet’s ﷺ glad tiding."}},
@@ -66,8 +66,8 @@ HISN.chapters.constantinople = {
      "en": "The glad tiding"
     },
     "what": {
-     "ar": "بشّرَ النبيُّ ﷺ بفتحِها ومدحَ جيشَها.",
-     "en": "The Prophet ﷺ foretold its conquest and praised its army."
+     "ar": "بشّرَ النبيُّ ﷺ بفتحِها، ويُروى أنّه مدحَ جيشَها.",
+     "en": "The Prophet ﷺ foretold its conquest; it is narrated that he praised its army."
     }
    },
    {

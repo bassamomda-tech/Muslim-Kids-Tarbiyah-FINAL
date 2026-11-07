@@ -35,7 +35,7 @@ HISN.chapters.aynjalut = {
   },
   "who": {
    "ar": "هي المعركةُ التي أوقفَ اللهُ بها زحفَ <b>المغولِ (التتار)</b> سنةَ <b>٦٥٨هـ</b> في <b>عينِ جالوت</b> بفلسطين. كان المغولُ قد دمّروا بغدادَ ومدناً كثيرةً، وخافَهم الناسُ خوفاً شديداً. فجمعَ السلطانُ المملوكيُّ <b>سيفُ الدينِ قطز</b> المسلمينَ، ومعه <b>الظاهرُ بيبرس</b>، وخرجوا بإيمانٍ وعزيمة. وفي عينِ جالوتَ ثبتوا وصبروا، وصاحَ قطز «وا إسلاماه!»، فنصرَهم اللهُ وهُزِمَ المغولُ لأوّلِ مرّةٍ هزيمةً كبرى، فتوقّفَ زحفُهم نحوَ بلادِ الإسلام.",
-   "en": "It is the battle by which Allah halted the advance of the <b>Mongols (Tatars)</b> in <b>658 AH</b> at <b>Ayn Jalut</b> in Palestine. The Mongols had destroyed Baghdad and many cities, and people feared them intensely. The Mamluk sultan <b>Sayfuddin Qutuz</b> gathered the Muslims, with <b>az-Zahir Baybars</b>, and they went out with faith and resolve. At Ayn Jalut they stood firm and patient, and Qutuz cried \"O Islam!\" so Allah aided them and the Mongols were defeated for the first time — a great defeat that halted their advance into the lands of Islam."
+   "en": "It is the battle by which Allah halted the advance of the <b>Mongols (Tatars)</b> in <b>658 AH</b> at <b>Ayn Jalut</b> in Palestine. The Mongols had destroyed Baghdad and many cities, and people feared them intensely. The Mamluk sultan <b>Sayfuddin Qutuz</b> gathered the Muslims, with <b>az-Zahir Baybars</b>, and they went out with faith and resolve. At Ayn Jalut they stood firm and patient, and Qutuz cried \"O Islam!\" so Allah aided them and the Mongols suffered their first major defeat, which halted their advance into the lands of Islam."
   },
   "facts": [
    {
@@ -150,8 +150,8 @@ HISN.chapters.aynjalut = {
     {
      "scene": "ascend",
      "text": {
-      "ar": "فنصرَهمُ اللهُ نصراً عظيماً، و<b>هُزِمَ المغولُ لأوّلِ مرّةٍ</b> هزيمةً ساحقةً لم تتكرّر، وقُتِلَ قائدُهم «كتبغا»، ولاحقَ المسلمونَ فلولَهم وطردوهم من بلادِ الشام، وتوقّفَ زحفُهم إلى الأبدِ نحوَ بلادِ الإسلام. ولمّا انتهتِ المعركةُ نزلَ قطز عن فرسِه، وسجدَ للهِ شاكراً على التراب. تعلّمنا أنّ لا قوّةَ في الأرضِ تَغلِبُ إذا أرادَ اللهُ نصرَ المؤمنين، وأنّ الوحدةَ والإيمانَ يصنعانِ المعجزات.",
-      "en": "Allah granted them a mighty victory, and <b>the Mongols were defeated for the first time</b> — a crushing, unrepeated defeat; their commander “Kitbuga” was killed, the Muslims chased their remnants and drove them out of Sham, and their advance into the lands of Islam was halted forever. When the battle ended, Qutuz dismounted and prostrated to Allah in thanks upon the dust. We learn that no power on earth prevails when Allah wills to aid the believers, and that unity and faith work wonders."
+      "ar": "فنصرَهمُ اللهُ نصراً عظيماً، و<b>هُزِمَ المغولُ هزيمةً ساحقةً</b> كانت أوّلَ هزيمةٍ كبرى لهم، وقُتِلَ قائدُهم «كتبغا»، ولاحقَ المسلمونَ فلولَهم وطردوهم من بلادِ الشام، وتوقّفَ زحفُهم نحوَ مصرَ وبلادِ الإسلام. ولمّا انتهتِ المعركةُ نزلَ قطز عن فرسِه، وسجدَ للهِ شاكراً على التراب. تعلّمنا أنّ لا قوّةَ في الأرضِ تَغلِبُ إذا أرادَ اللهُ نصرَ المؤمنين، وأنّ الوحدةَ والإيمانَ يصنعانِ المعجزات.",
+      "en": "Allah granted them a mighty victory, and <b>the Mongols suffered a crushing defeat</b> — their first major defeat; their commander “Kitbuga” was killed, the Muslims chased their remnants and drove them out of Sham, and their advance toward Egypt and the lands of Islam was halted. When the battle ended, Qutuz dismounted and prostrated to Allah in thanks upon the dust. We learn that no power on earth prevails when Allah wills to aid the believers, and that unity and faith work wonders."
      }
     }
    ]
@@ -410,8 +410,8 @@ HISN.chapters.aynjalut = {
       "en": "The Mongols"
      },
      "b": {
-      "ar": "هُزِموا لأوّلِ مرّة",
-      "en": "Defeated for the first time"
+      "ar": "أوّلُ هزيمةٍ كبرى لهم",
+      "en": "Their first major defeat"
      }
     },
     {

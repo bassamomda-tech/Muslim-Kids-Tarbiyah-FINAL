@@ -771,8 +771,8 @@ window.HOUSES.sleep = {
       ],
       didYouKnow: [
         {
-          ar: 'حَديثُ نَفضِ الفِراشِ رَواهُ البُخاريُّ ٣٢٨٠ ومُسلِمٌ ٢٠١٢ عَن أَبي هُريرَةَ رضي الله عنه — المَصدَر: dorar.net',
-          en: 'The hadith of shaking out the bed was narrated by al-Bukhari 3280 and Muslim 2012 from Abu Hurayrah رضي الله عنه — Source: dorar.net',
+          ar: 'حَديثُ نَفضِ الفِراشِ رَواهُ البُخاريُّ ٦٣٢٠ ومُسلِمٌ ٢٧١٤ عَن أَبي هُريرَةَ رضي الله عنه، وحَديثُ إغلاقِ الأَبوابِ رَواهُ البُخاريُّ ٣٢٨٠ ومُسلِمٌ ٢٠١٢ عَن جابِرٍ رضي الله عنه — المَصدَر: dorar.net',
+          en: 'The hadith of shaking out the bed was narrated by al-Bukhari 6320 and Muslim 2714 from Abu Hurayrah رضي الله عنه, and the hadith of closing the doors by al-Bukhari 3280 and Muslim 2012 from Jabir رضي الله عنه — Source: dorar.net',
         },
         {
           ar: 'السَّيِّدَةُ عائِشَةُ رضي الله عنها هي أَكثَرُ النِّساءِ رِوايَةً لِلحَديثِ النَّبَوِيّ، وَكانَت مَصدَراً رَئيسِيّاً لِهَديِ النَّبيِّ ﷺ في حَياتِهِ الخاصَّة — المَصدَر: سير أعلام النبلاء للذهبي، ج٢',

@@ -295,8 +295,8 @@ window.HOUSES.knowledge = {
         {
           scene: 'madinah', character: '👦',
           text: {
-            ar: 'في مَدينَةِ بُخارى البَعيدَة — في أَعماقِ أَرضِ فارِسٍ حيثُ تَلمَعُ النُّجومُ في السَّماءِ الباردَة — وُلِدَ طِفلٌ يَتيمٌ اسمُهُ مُحَمَّدُ بنُ إِسماعيل البُخاري. نَشَأَ بِلا أَب، تَرَبَّتهُ أُمُّهُ وَحدَها.<br><br>لَكِنَّ اللهَ وَهَبَهُ قَلباً عَجيبا: <b>طَلَبَ الحَديثَ وَهو في التّاسِعَةِ مِن عُمُرِه!</b> كانَ يَجلِسُ في مَجالِسِ العُلَماءِ وَصَوتُهُ لا يَزالُ طَيِّفاً، يَحفَظُ الأَحاديثَ حَديثاً بَعدَ حَديث.',
-            en: 'In the distant city of Bukhara — deep in the land of Persia where stars gleam in the cold sky — was born a fatherless child named Muhammad ibn Isma\'il al-Bukhari. He grew up without a father, raised by his mother alone.<br><br>But Allah gave him a remarkable heart: <b>he sought hadith knowledge at the age of nine!</b> He sat in the circles of scholars while his voice was still tender, memorizing hadiths one after another.'
+            ar: 'في مَدينَةِ بُخارى البَعيدَة — في بِلادِ ما وَراءَ النَّهرِ حيثُ تَلمَعُ النُّجومُ في السَّماءِ الباردَة — وُلِدَ طِفلٌ يَتيمٌ اسمُهُ مُحَمَّدُ بنُ إِسماعيل البُخاري. نَشَأَ بِلا أَب، تَرَبَّتهُ أُمُّهُ وَحدَها.<br><br>لَكِنَّ اللهَ وَهَبَهُ قَلباً عَجيبا: <b>طَلَبَ الحَديثَ وَهو في التّاسِعَةِ مِن عُمُرِه!</b> كانَ يَجلِسُ في مَجالِسِ العُلَماءِ وَصَوتُهُ لا يَزالُ طَيِّفاً، يَحفَظُ الأَحاديثَ حَديثاً بَعدَ حَديث.',
+            en: 'In the distant city of Bukhara — in the lands beyond the Oxus river (Transoxiana) where stars gleam in the cold sky — was born a fatherless child named Muhammad ibn Isma\'il al-Bukhari. He grew up without a father, raised by his mother alone.<br><br>But Allah gave him a remarkable heart: <b>he sought hadith knowledge at the age of nine!</b> He sat in the circles of scholars while his voice was still tender, memorizing hadiths one after another.'
           }
         },
         {

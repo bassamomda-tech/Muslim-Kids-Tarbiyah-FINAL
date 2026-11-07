@@ -423,8 +423,8 @@ HISN_STORIES.aynjalut = [
     "scene": "ascend",
     "character": "⭐",
     "text": {
-     "ar": "ثبتَ المسلمونَ بقيادةِ قطزَ والبطلِ بيبرس، وهجموا بقوّةٍ وإيمان، فحدثَ ما لم يُصدّقْه العالم: <b>هُزِمَ المغولُ لأوّلِ مرّة</b>! انكسرَ جيشُهم الذي لا يُقهَر، وتوقّفَ زحفُهم المدمّرُ عند عينِ جالوت. أنقذَ اللهُ الإسلامَ على أيديهم.",
-     "en": "The Muslims stood firm under Qutuz and the hero Baybars, and attacked with strength and faith. Then the unbelievable happened: <b>the Mongols were defeated for the first time</b>! Their invincible army broke, and their destructive advance halted at Ayn Jalut. Allah saved Islam through them."
+     "ar": "ثبتَ المسلمونَ بقيادةِ قطزَ والبطلِ بيبرس، وهجموا بقوّةٍ وإيمان، فحدثَ ما لم يُصدّقْه العالم: <b>هُزِمَ المغولُ هزيمةً كبرى أوقفتْ زحفَهم</b>! انكسرَ جيشُهم الذي لا يُقهَر، وتوقّفَ زحفُهم المدمّرُ عند عينِ جالوت. أنقذَ اللهُ الإسلامَ على أيديهم.",
+     "en": "The Muslims stood firm under Qutuz and the hero Baybars, and attacked with strength and faith. Then the unbelievable happened: <b>the Mongols suffered a great defeat that stopped their advance</b>! Their invincible army broke, and their destructive advance halted at Ayn Jalut. Allah saved Islam through them."
     },
     "choice": {
      "q": {
@@ -434,8 +434,8 @@ HISN_STORIES.aynjalut = [
      "opts": [
       {
        "t": {
-        "ar": "هُزِموا لأوّلِ مرّةٍ وتوقّفَ زحفُهم",
-        "en": "Defeated for the first time; their advance halted"
+        "ar": "هُزِموا هزيمةً كبرى وتوقّفَ زحفُهم",
+        "en": "Suffered a great defeat; their advance halted"
        },
        "c": true,
        "exp": {

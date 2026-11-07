@@ -9,11 +9,11 @@ HISN.chapters.dakhil = {
   tag:{ ar:'صقرُ قريش', en:'The Falcon of Quraysh' },
   accent:'#7A3A2A', accent2:'#9A5A4A',
   greeting:{ ar:'أهلاً يا بطل! عبد الرحمن الداخلُ رحمه الله أميرٌ شابٌّ نجا من القتلِ وقطعَ الصحاري والبحارَ وحدَه، ثمّ أسّسَ دولةً عظيمةً في الأندلس. تعالَ نتعلّمْ من عزيمتِه وصبرِه.',
-    en:'Hello, hero! Abdurrahman ad-Dakhil, a young prince who escaped death, crossed deserts and seas alone, then founded a great state in Andalusia. Come, let\'s learn from his resolve and patience.' },
+    en:'Hello, hero! Abdurrahman ad-Dakhil, a young prince who escaped death, crossed deserts and seas with only his loyal freedman, then founded a great state in Andalusia. Come, let\'s learn from his resolve and patience.' },
 
   knowledge:{
-    didYouKnow:{ ar:'لُقِّبَ بـ«صقرِ قريش» لأنّه نجا وحيداً من القتلِ وأسّسَ دولةً قويّةً في الأندلسِ بعدَ رحلةِ مطاردةٍ طويلة، فأعجبَ به حتى أعداؤه.',
-      en:'He was called "the Falcon of Quraysh" because he escaped death alone and founded a strong state in Andalusia after a long chase — so impressive that even his enemies admired him.' },
+    didYouKnow:{ ar:'لُقِّبَ بـ«صقرِ قريش» لأنّه نجا من القتلِ مع مولاه بدر وأسّسَ دولةً قويّةً في الأندلسِ بعدَ رحلةِ مطاردةٍ طويلة، فأعجبَ به حتى أعداؤه.',
+      en:'He was called "the Falcon of Quraysh" because he escaped death with only his freedman Badr and founded a strong state in Andalusia after a long chase — so impressive that even his enemies admired him.' },
     who:{ ar:'هو <b>عبد الرحمن بنُ معاوية</b> الأمويّ، المعروفُ بـ<b>«الداخل»</b> لأنّه دخلَ الأندلسَ وأسّسَ فيها دولة. لمّا سقطتِ الدولةُ الأمويّةُ وطُورِدَ أهلُها، نجا عبد الرحمن وهو شابٌّ، فقطعَ <b>الصحاري وعبرَ نهرَ الفرات</b> هرباً من القتل، وسافرَ آلافَ الأميالِ حتى وصلَ <b>الأندلس</b>. هناك، بذكائِه وشجاعتِه وصبرِه، وحّدَ المسلمينَ وأسّسَ <b>دولةَ الأمويينَ في الأندلس</b> التي صارتْ من أعظمِ دولِ العالمِ علماً وحضارة. لُقِّبَ بـ<b>«صقرِ قريش»</b> لعبقريّتِه وعزيمتِه.',
       en:'He is <b>Abdurrahman ibn Mu\u2019awiya</b> the Umayyad, known as <b>"ad-Dakhil" (the Entrant)</b> because he entered Andalusia and founded a state there. When the Umayyad state fell and its people were hunted, Abdurrahman escaped as a young man, crossing <b>deserts and the Euphrates river</b> fleeing death, and traveled thousands of miles until he reached <b>Andalusia</b>. There, with his intelligence, courage, and patience, he united the Muslims and founded the <b>Umayyad state in Andalusia</b>, which became one of the greatest states in the world in knowledge and civilization. He was called <b>"the Falcon of Quraysh"</b> for his genius and resolve.' },
     facts:[

@@ -32,7 +32,7 @@
       country: { ar: "إندونيسيا", en: "Indonesia", flag: "🇮🇩" }, wrong: [ { ar: "فرنسا", en: "France", flag: "🇫🇷" }, { ar: "مصر", en: "Egypt", flag: "🇪🇬" }, { ar: "روسيا", en: "Russia", flag: "🇷🇺" } ] },
     { face: "🧒🏼", greet: "Selamün aleyküm", hint: { ar: "بلدٌ بين قارّتين، فيه مدينة إسطنبول ومسجد آيا صوفيا", en: "A country between two continents, home to Istanbul and Hagia Sophia" },
       country: { ar: "تركيا", en: "Turkey", flag: "🇹🇷" }, wrong: [ { ar: "الهند", en: "India", flag: "🇮🇳" }, { ar: "المكسيك", en: "Mexico", flag: "🇲🇽" }, { ar: "نيجيريا", en: "Nigeria", flag: "🇳🇬" } ] },
-    { face: "👧🏿", greet: "As-salāmu ʿalaykum", hint: { ar: "أكبر دولةٍ إسلاميةٍ في أفريقيا بعدد المسلمين، غرب القارّة", en: "Africa's largest Muslim population, in the west of the continent" },
+    { face: "👧🏿", greet: "As-salāmu ʿalaykum", hint: { ar: "من أكبر دول أفريقيا في عدد المسلمين، في غرب القارّة", en: "One of Africa's largest Muslim populations, in the west of the continent" },
       country: { ar: "نيجيريا", en: "Nigeria", flag: "🇳🇬" }, wrong: [ { ar: "الصين", en: "China", flag: "🇨🇳" }, { ar: "تركيا", en: "Turkey", flag: "🇹🇷" }, { ar: "إيطاليا", en: "Italy", flag: "🇮🇹" } ] },
     { face: "🧕🏻", greet: "السلام عليكم", hint: { ar: "بلدٌ فيه الحرمان الشريفان: مكة والمدينة", en: "The country of the two holy mosques: Makkah and Madinah" },
       country: { ar: "السعودية", en: "Saudi Arabia", flag: "🇸🇦" }, wrong: [ { ar: "ألمانيا", en: "Germany", flag: "🇩🇪" }, { ar: "إندونيسيا", en: "Indonesia", flag: "🇮🇩" }, { ar: "تايلاند", en: "Thailand", flag: "🇹🇭" } ] },

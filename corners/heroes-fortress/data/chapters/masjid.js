@@ -10,8 +10,8 @@ HISN.chapters.masjid = {
   "en": "The Prophet's Masjid"
  },
  "tag": {
-  "ar": "بناءُ أوّلِ مسجدٍ والمؤاخاة",
-  "en": "Building the first masjid & brotherhood"
+  "ar": "بناءُ المسجدِ النبويِّ والمؤاخاة",
+  "en": "Building the Prophet's Masjid & brotherhood"
  },
  "accent": "#3A8A7A",
  "accent2": "#5AAA9A",

@@ -28,7 +28,7 @@ HISN.chapters.yarmouk = {
   "en": "Hello, hero! At Yarmouk the Muslims faced the huge Byzantine army while being few. But they were patient and obeyed their commander Khalid, so Allah granted victory and Sham was opened. Come, let's learn the power of leadership and discipline."
  },
  "knowledge": {
-  "commander": {"name":{"ar":"خالدُ بنُ الوليد","en":"Khalid ibn al-Walid"},"role":{"ar":"سيفُ اللهِ المسلول","en":"The Drawn Sword of Allah"},"bio":{"ar":"قائدٌ عبقريٌّ لم يُهزَمْ في معركةٍ قطّ. نظّمَ الجيشَ في «كراديسَ» سريعةِ الحركة، ولمّا عُزِلَ في وسطِ المعركةِ كتمَ الخبرَ وقاتلَ جنديّاً، وقال: «أُقاتِلُ لله لا لِعُمر».","en":"A genius commander never defeated in battle. He organized the army into fast \"karadis\" units, and when dismissed mid-battle he hid the news and fought as a soldier, saying: \"I fight for Allah, not for Umar.\""}},
+  "commander": {"name":{"ar":"خالدُ بنُ الوليد","en":"Khalid ibn al-Walid"},"role":{"ar":"سيفُ اللهِ المسلول","en":"The Drawn Sword of Allah"},"bio":{"ar":"قائدٌ عبقريٌّ لم يُهزَمْ في معركةٍ قادَها. نظّمَ الجيشَ في «كراديسَ» سريعةِ الحركة، ولمّا عُزِلَ في وسطِ المعركةِ كتمَ الخبرَ وقاتلَ جنديّاً، وقال: «أُقاتِلُ لله لا لِعُمر».","en":"A genius commander never defeated in a battle he led. He organized the army into fast \"karadis\" units, and when dismissed mid-battle he hid the news and fought as a soldier, saying: \"I fight for Allah, not for Umar.\""}},
   "didYouKnow": {
    "ar": "لمّا جاءَ خبرُ <b>عزلِ خالدِ بنِ الوليد</b> أثناءَ المعركة، كَتمَه حتى لا يَنشغلَ الناسُ عن القتال، وقال: «أُقاتِلُ <b>لله</b> لا لِعُمر» — فالإخلاصُ أعظمُ من المنصب.",
    "en": "When news of <b>Khalid’s dismissal</b> arrived during the battle, he kept it secret so no one would be distracted, saying: \"I fight for <b>Allah</b>, not for Umar\" — sincerity is greater than any post."
@@ -136,8 +136,8 @@ HISN.chapters.yarmouk = {
     {
      "scene": "desert",
      "text": {
-      "ar": "فقامَ <b>خالدُ بنُ الوليد</b> — سيفُ اللهِ المسلولُ الذي ما انهزمَ في معركةٍ قطّ — فنظّمَ الجيشَ <b>كراديسَ</b> صغيرةً سريعةَ الحركة، وجعلَ على كلِّ كُردوسٍ قائداً، وألهبَ الحماسةَ في القلوب، وأحكمَ الخطّةَ بحيثُ جعلَ ظهورَ المسلمينَ إلى وادٍ عميقٍ حتّى لا يلتفّوا من خلف. وأوصى الجيشَ بالصبرِ والثبات. هذا هو <b>الأخذُ بالأسبابِ</b> مع حُسنِ القيادةِ والتوكّلِ على الله.",
-      "en": "Then <b>Khalid ibn al-Walid</b> — the Drawn Sword of Allah who was never defeated in any battle — arranged the army into small, fast-moving <b>units</b>, set a commander over each, kindled zeal in their hearts, and perfected the plan, placing the Muslims’ backs to a deep valley so none could be flanked from behind. He urged the army to patience and steadfastness. This is <b>taking the means</b> with good leadership and reliance upon Allah."
+      "ar": "فقامَ <b>خالدُ بنُ الوليد</b> — سيفُ اللهِ المسلولُ الذي لم يُهزَمْ في معركةٍ قادَها — فنظّمَ الجيشَ <b>كراديسَ</b> صغيرةً سريعةَ الحركة، وجعلَ على كلِّ كُردوسٍ قائداً، وألهبَ الحماسةَ في القلوب، وأحكمَ الخطّةَ بحيثُ جعلَ ظهورَ المسلمينَ إلى وادٍ عميقٍ حتّى لا يلتفّوا من خلف. وأوصى الجيشَ بالصبرِ والثبات. هذا هو <b>الأخذُ بالأسبابِ</b> مع حُسنِ القيادةِ والتوكّلِ على الله.",
+      "en": "Then <b>Khalid ibn al-Walid</b> — the Drawn Sword of Allah who was never defeated in a battle he led — arranged the army into small, fast-moving <b>units</b>, set a commander over each, kindled zeal in their hearts, and perfected the plan, placing the Muslims’ backs to a deep valley so none could be flanked from behind. He urged the army to patience and steadfastness. This is <b>taking the means</b> with good leadership and reliance upon Allah."
      }
     },
     {

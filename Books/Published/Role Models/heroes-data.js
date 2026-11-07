@@ -50,11 +50,11 @@
     { id:'khalid', key:'swords', c:'#C0392B', tint:'#fbe8e5', ic:['sword','banner','shield'],
       ar:{ name:'خالدُ بنُ الوليد', title:'سيفُ اللهِ المسلول',
         quality:'الشَّجاعة', qLabel:'تعلَّمْ منه',
-        saying:'لقّبه النبيُّ ﷺ بأنه «سيفٌ من سيوفِ الله» — قائدٌ شجاعٌ لم يُهزَمْ في معركة.',
+        saying:'لقّبه النبيُّ ﷺ بأنه «سيفٌ من سيوفِ الله» — قائدٌ شجاعٌ لم تُعرَفْ له هزيمةٌ في معركةٍ قادها.',
         icL:['الشجاعة','الراية','الحماية'] },
       en:{ name:'Khālid ibn al-Walīd', title:'The Drawn Sword of Allah',
         quality:'Courage', qLabel:'Learn from him',
-        saying:'The Prophet \uFDFA named him \u201ca sword among the swords of Allah\u201d \u2014 a brave commander, never defeated in battle.',
+        saying:'The Prophet \uFDFA named him \u201ca sword among the swords of Allah\u201d \u2014 a brave commander, never known to lose a battle he led.',
         icL:['Courage','The Banner','Protection'] } },
 
     { id:'khadijah', key:'kaaba', c:'#B43A6E', tint:'#f8e6ee', ic:['kaaba','heart','star'],

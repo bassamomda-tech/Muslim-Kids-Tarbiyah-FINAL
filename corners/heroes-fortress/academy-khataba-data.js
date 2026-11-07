@@ -43,7 +43,7 @@ window.KHATABA = {
       title:{ar:'طَلَعَ البَدْرُ عَلَيْنا',en:'Tala\'a al-Badru \'Alayna'},
       topic:{ar:'السيرة',en:'Seerah'},
       by:{ar:'نشيدٌ من التراث · استقبالُ النبي ﷺ',en:'Heritage nasheed · welcoming the Prophet ﷺ'},
-      about:{ar:'أقدمُ نشيدٍ في الإسلام، أنشدَه أهلُ المدينةِ فرحاً باستقبالِ النبيِّ ﷺ عند هجرتِه. يُعلِّمُ الطفلَ حبَّ النبيِّ ﷺ ويربطُه بأحداثِ السيرة.',en:'The oldest nasheed in Islam, sung by the people of Madinah in joy as they welcomed the Prophet ﷺ during his migration. It teaches the child love of the Prophet ﷺ and connects him to the seerah.'},
+      about:{ar:'من أقدمِ الأناشيدِ في الإسلام، يُروى أنّ أهلَ المدينةِ أنشدوه فرحاً باستقبالِ النبيِّ ﷺ (قيل: عند هجرتِه، وقيل: عند رجوعِه من تبوك). يُعلِّمُ الطفلَ حبَّ النبيِّ ﷺ ويربطُه بأحداثِ السيرة.',en:'One of the oldest nasheeds in Islam, reportedly sung by the people of Madinah in joy as they welcomed the Prophet ﷺ (some say on his migration, others on his return from Tabuk). It teaches the child love of the Prophet ﷺ and connects him to the seerah.'},
       verses:'طَلَعَ البَدْرُ عَلَيْنا\nمِنْ ثَنِيّاتِ الوَداعْ\nوَجَبَ الشُّكْرُ عَلَيْنا\nما دَعا للهِ داعْ',
       tips:[
         { icon:'😊', ar:'أنشِدها بفرحٍ وابتسامة؛ فهي نشيدُ فرحٍ واستقبال.',en:'Sing it with joy and a smile — it\'s a nasheed of joy and welcome.'},

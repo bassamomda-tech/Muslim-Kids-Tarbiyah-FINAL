@@ -80,7 +80,7 @@ window.COMPANIONS_LITTLE.abdurrahman = {
   pages:[
     { emoji:'🎁', text:'كُلَّمَا زَادَ مَالُ عَبْدِ الرَّحْمَن، زَادَ كَرَمُهُ وَعَطَاؤُه! فَلَمْ يَجْعَلِ الْمَالَ فِي قَلْبِه، بَلْ فِي يَدِه.',
       prompt:'A wealthy figure giving abundantly to the needy, wealth used for good, warm bright, no faces' },
-    { emoji:'🐪', text:'تَصَدَّقَ مَرَّةً بِقَافِلَةٍ كَامِلَةٍ مِنَ الْبَضَائِعِ (٧٠٠ بَعِير) عَلَى أَهْلِ الْمَدِينَة!',
+    { emoji:'🐪', text:'وَيُرْوَى أَنَّهُ تَصَدَّقَ مَرَّةً بِقَافِلَةٍ كَامِلَةٍ مِنَ الْبَضَائِعِ (٧٠٠ بَعِير) عَلَى أَهْلِ الْمَدِينَة!',
       prompt:'A great caravan of goods given away in charity, enormous generosity, warm radiant, no faces' },
     { emoji:'💰', text:'وَأَعْتَقَ الْعَبِيد، وَأَنْفَقَ فِي سَبِيلِ الله، وَأَوْصَى بِمَالٍ كَثِيرٍ لِلْفُقَرَاء.',
       prompt:'Coins and goods flowing to those in need, charity in many forms, warm compassionate, no faces' },

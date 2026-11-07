@@ -99,7 +99,7 @@ window.QURAN_QUIZ = {
       flip:{ claim:{ ar:'«عثمانُ غيّرَ كلماتِ القرآن»', en:'"Uthman changed the words of the Qur’an."' },
              bust:{ ar:'حاشاه! بل <b>جمعَ الناسَ على مصحفٍ واحدٍ</b> بلسانِ قريشٍ حفظاً للقرآنِ من الاختلاف', en:'He united people on one Mushaf — preserving the Qur’an, not changing it.' } } },
     { id:'c-ali', title:{ ar:'عليّ بن أبي طالب', en:'Ali' },
-      key:{ ar:'أوّلُ من أسلمَ من الصبيانِ وبابُ مدينةِ العلم', en:'First child to embrace Islam, a gate of knowledge' },
+      key:{ ar:'أوّلُ من أسلمَ من الصبيانِ ومن أعلمِ الصحابة', en:'First child to embrace Islam, and among the most learned Companions' },
       flip:{ claim:{ ar:'«عليٌّ نام في فراشِ النبيِّ خوفاً وهرباً»', en:'"Ali slept in the Prophet’s bed out of fear."' },
              bust:{ ar:'بل <b>فداءً وشجاعة</b>؛ نام في فراشِ النبيِّ ﷺ ليلةَ الهجرةِ ليُوهِمَ المشركين', en:'It was bravery and sacrifice on the night of Hijrah.' } } },
     { id:'c-zayd', title:{ ar:'زيد بن ثابت', en:'Zayd ibn Thabit' },

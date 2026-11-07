@@ -33,7 +33,7 @@ window.SURAHS.qadr = {
   ],
 
   about: {
-    intro: { ar:'سُورةُ <b>القَدر</b> تُخبِرُنا عن أعظمِ ليلةٍ في السَّنة: <b>ليلةِ القَدر</b> التي نزلَ فيها القُرآن، وهي خيرٌ من ألفِ شهر — أكثرَ من ثلاثينَ وثمانينَ سنةً من العبادة!', en:'<b>Al-Qadr</b> tells us of the greatest night of the year: <b>Laylat al-Qadr</b>, in which the Quran was sent down — a night better than a thousand months, more than eighty-three years of worship!' },
+    intro: { ar:'سُورةُ <b>القَدر</b> تُخبِرُنا عن أعظمِ ليلةٍ في السَّنة: <b>ليلةِ القَدر</b> التي نزلَ فيها القُرآن، وهي خيرٌ من ألفِ شهر — أكثرَ من ثلاثٍ وثمانينَ سنةً من العبادة!', en:'<b>Al-Qadr</b> tells us of the greatest night of the year: <b>Laylat al-Qadr</b>, in which the Quran was sent down — a night better than a thousand months, more than eighty-three years of worship!' },
     names: [
       { name:{ar:'القَدر', en:'Al-Qadr (Decree / Honour)'},
         why:{ar:'ليلةُ الشَّرَفِ والتَّقدير، يُقدِّرُ اللهُ فيها أمورَ العام.', en:'The night of honour and decree, in which Allah ordains the year’s affairs.'} },

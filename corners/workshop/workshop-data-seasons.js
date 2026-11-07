@@ -259,13 +259,13 @@ window.WS.acts.push(
 
 { id:'shawwal-moon', cat:'seasons', ic:'🌒', corner:'ibada', themes:['tafakkur','ilm'],
   ar:'ترصُّد هلال العيد', en:'Sighting the Eid Crescent',
-  descAr:'ليلةَ ٢٩ رمضان: اخرجْ مع العائلةِ لتحرّي هلالِ شوالَ بعينِك.',
-  descEn:'On Ramadan\'s 29th night, go out with the family to look for Shawwal\'s crescent yourself.',
+  descAr:'مساءَ يومِ ٢٩ رمضان: اخرجْ مع العائلةِ لتحرّي هلالِ شوالَ بعينِك.',
+  descEn:'On the evening of the 29th of Ramadan, go out with the family to look for Shawwal\'s crescent yourself.',
   whyAr:'«صوموا لرؤيتِه وأفطِروا لرؤيتِه» — كنْ من أهلِ التحرّي كما كان الصحابة.',
   whyEn:'"Fast at its sighting, break fast at its sighting" — join the moon-sighters like the companions.',
   tools:[{ic:'👀',ar:'عيونٌ صافية',en:'Sharp eyes'},{ic:'🧭',ar:'معرفةُ جهةِ الغرب',en:'Knowing which way is west'}],
   steps:[
-    {ic:'🌇',ar:'اصعدوا مكاناً مرتفعاً قبلَ المغربِ بقليلٍ ليلةَ ٢٩ رمضان.',en:'Climb somewhere high just before sunset on the 29th of Ramadan.'},
+    {ic:'🌇',ar:'اصعدوا مكاناً مرتفعاً قبلَ المغربِ بقليلٍ في يومِ ٢٩ رمضان.',en:'Climb somewhere high just before sunset on the 29th of Ramadan.'},
     {ic:'🧭',ar:'انظروا جهةَ الغربِ حيث غابتِ الشمسُ تماماً.',en:'Look west, right where the sun just set.'},
     {ic:'🌒',ar:'ابحثوا عن خيطٍ فضيٍّ رفيعٍ قربَ الأفق — هذا هو الهلال.',en:'Search for a thin silver thread near the horizon — that\'s the crescent.'},
     {ic:'🤲',ar:'رأيتُموه؟ قولوا دعاءَ الهلال: «اللهم أهلَّه علينا باليمنِ والإيمان».',en:'Spotted it? Say the crescent du\'a: "O Allah, bring it over us with blessing and faith".'},

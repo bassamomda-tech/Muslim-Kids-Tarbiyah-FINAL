@@ -255,7 +255,7 @@ HISN_STORIES.ibrahim = [
       {ar:'ما الفَرقُ بَينَ الشَّجاعَةِ في قَولِ الحَقِّ والتَّهَوُّرِ في المُواجَهَة؟', en:'What is the difference between courage in speaking truth and recklessness in confrontation?'},
     ],
     didYouKnow:[
-      {ar:'ذَكَرَ ابنُ كَثيرٍ أنَّ النُّمرودَ هو أَوَّلُ مُلوكِ الأَرضِ الَّذينَ مَلَكوا الأَرضَ كُلَّها — المَصدَر: islamweb.net/ar/library/content/59/28', en:'Ibn Kathir mentioned that Nimrod was the first of the kings who ruled the entire earth — Source: islamweb.net/ar/library/content/59/28'},
+      {ar:'نَقَلَ ابنُ كَثيرٍ عن أهلِ الأَخبارِ أنَّ المَلِكَ الَّذي حاجَّ إبراهيمَ يُقالُ لَهُ النُّمرود، وأنَّهُ — فيما يُروى — مِن المُلوكِ الَّذينَ مَلَكوا الأَرضَ — المَصدَر: islamweb.net/ar/library/content/59/28', en:'Ibn Kathir relayed from historians that the king who argued with Ibrahim is called Nimrod, and that — as narrated — he was one of the kings who ruled the earth — Source: islamweb.net/ar/library/content/59/28'},
       {ar:'ذَكَرَت المَوسوعَةُ القُرآنِيَّةُ أنَّ إبراهيمَ استَخدَمَ أُسلوبَ الانتِقالِ في المُحاجَّة — فَلَمّا تَلاعَبَ الخَصمُ بِالنُّقطَةِ الأولى انتَقَلَ لِحُجَّةٍ لا يُمكِنُ التَّلاعُبُ بِها — المَصدَر: quranpedia.net — البقرة ٢٥٨', en:'The Quranic Encyclopedia noted Ibrahim used the method of transition in debate — when the opponent manipulated the first point he moved to an unmanipulable proof — Source: quranpedia.net — Al-Baqarah 258'},
     ],
   },
@@ -511,7 +511,7 @@ HISN_STORIES.ibrahim = [
       {ar:'كَيفَ تَفهَمُ قَولَ إسماعيل «إن شاءَ الله» — وكَيفَ تُطَبِّقُها في حَياتِك؟', en:'How do you understand Ismail\'s saying "if Allah wills" — and how do you apply it in your life?'},
     ],
     didYouKnow:[
-      {ar:'ذَكَرَ ابنُ كَثيرٍ أنَّ الكَبشَ كانَ قد رَعى في الجَنَّةِ أَربَعينَ خَريفاً — وأنَّ قَرنَيهِ كانا مُعَلَّقَينِ بِالكَعبَةِ زَمَناً طَويلاً — المَصدَر: islamweb.net/ar/library/content/59/28', en:'Ibn Kathir mentioned the ram had grazed in Paradise for forty autumns — and its horns were hung on the Ka\'bah for a long time — Source: islamweb.net/ar/library/content/59/28'},
+      {ar:'ذَكَرَ ابنُ كَثيرٍ — فيما يُروى عن ابنِ عَبّاس — أنَّ الكَبشَ كانَ قد رَعى في الجَنَّةِ أَربَعينَ خَريفاً — وأنَّ قَرنَيهِ كانا مُعَلَّقَينِ بِالكَعبَةِ زَمَناً طَويلاً — المَصدَر: islamweb.net/ar/library/content/59/28', en:'Ibn Kathir mentioned — as narrated from Ibn Abbas — that the ram had grazed in Paradise for forty autumns — and its horns were hung on the Ka\'bah for a long time — Source: islamweb.net/ar/library/content/59/28'},
       {ar:'ذَكَرَت المَوسوعَةُ القُرآنِيَّةُ أنَّ «أَسلَما» جاءَت بِصيغَةِ المُثَنّى لأنَّ الطّاعَةَ كانَت مِن الاثنَينِ مَعاً — الأَبِ والابن — المَصدَر: quranpedia.net — الصافات ١٠٣', en:'The Quranic Encyclopedia noted "aslama" (submitted) came in dual form because obedience was from both together — father and son — Source: quranpedia.net — As-Saffat 103'},
     ],
   },
@@ -621,14 +621,14 @@ HISN_STORIES.ibrahim = [
       { scene:'garden', character:'🍖',
         text:{ ar:'لَم يَسأَلهُم: مَن أَنتُم؟ مِن أَينَ جِئتُم؟ ماذا تُريدون؟ بل <b>﴿ فَجَاءَ بِعِجْلٍ سَمِينٍ ﴾</b> — عِجلٌ كامِلٌ مَشوِيٌّ لِثَلاثَةِ ضُيوف! هذا الكَرَمُ الَّذي لا يَحسِبُ ولا يُقَتِّر!<br><br>' +
                '<b>﴿ فَقَرَّبَهُ إِلَيْهِمْ قَالَ أَلَا تَأْكُلُونَ ﴾</b> — قَدَّمَ الطَّعامَ بِنَفسِهِ ولَم يُرسِل خادِماً! لاحِظ أَدَبَهُ: لَم يَقُل «كُلوا!» بل <b>«أَلا تَأكُلون؟»</b> — عَرضٌ لَطيفٌ لا أَمر!<br><br>' +
-               'لَكِنَّ الضُّيوفَ لَم يَمُدّوا أَيدِيَهُم إلى الطَّعام! جَلَسوا والعِجلُ أَمامَهُم — لا يَأكُلون! <b>﴿ فَأَوْجَسَ مِنْهُمْ خِيفَةً ﴾</b> — أَحَسَّ إبراهيمُ بِخَوفٍ خَفيّ. لأنَّ العَرَبَ كانوا يَعرِفون: مَن لَم يَأكُل طَعامَكَ فَلَيسَ بِضَيفٍ آمِن!',
+               'لَكِنَّ الضُّيوفَ لَم يَمُدّوا أَيدِيَهُم إلى الطَّعام! جَلَسوا والعِجلُ أَمامَهُم — لا يَأكُلون! <b>﴿ فَأَوْجَسَ مِنْهُمْ خِيفَةً ﴾</b> — أَحَسَّ إبراهيمُ بِخَوفٍ خَفيّ. لأنَّ النّاسَ في ذلك الزَّمانِ كانوا يَعرِفون: مَن لَم يَأكُل طَعامَكَ فَلَيسَ بِضَيفٍ آمِن!',
                en:'He did not ask: who are you? Where are you from? What do you want? Rather <b>﴿ "He brought a roasted fattened calf" ﴾</b> — an entire roasted calf for three guests! This is generosity that neither counts nor withholds!<br><br>' +
                '<b>﴿ "He placed it before them and said: Will you not eat?" ﴾</b> — he served the food himself, sending no servant! Notice his etiquette: he did not say "Eat!" but <b>"Will you not eat?"</b> — a gentle offer, not a command!<br><br>' +
-               'But the guests did not extend their hands to the food! They sat with the calf before them — not eating! <b>﴿ "He felt apprehension toward them" ﴾</b> — Ibrahim sensed a hidden unease. Because Arabs knew: one who does not eat your food is not a safe guest!' },
+               'But the guests did not extend their hands to the food! They sat with the calf before them — not eating! <b>﴿ "He felt apprehension toward them" ﴾</b> — Ibrahim sensed a hidden unease. Because people of that time knew: one who does not eat your food is not a safe guest!' },
         choice:{ q:{ar:'لِماذا خافَ إبراهيمُ حينَ لَم يَأكُلِ الضُّيوف؟',en:'Why did Ibrahim feel afraid when the guests didn\'t eat?'},
           opts:[
-            { t:{ar:'لأنَّ الطَّعامَ كانَ سَيِّئاً.',en:'Because the food was bad.'},c:false,exp:{ar:'لا — الطَّعامُ كانَ عِجلاً سَميناً مَشوِيّاً! لَكِنَّ العُرفَ عِندَ العَرَبِ أنَّ مَن لا يَأكُلُ طَعامَكَ قد يَكونُ عَدُوّاً.',en:'No — the food was a fine roasted calf! But Arab custom held that one who won\'t eat your food may be an enemy.'} },
-            { t:{ar:'لأنَّ عُرفَ العَرَبِ أنَّ مَن لا يَأكُلُ طَعامَكَ لَيسَ بِضَيفٍ آمِن.',en:'Because Arab custom held that one who won\'t eat your food isn\'t a safe guest.'},c:true,exp:{ar:'نَعَم! لَكِنَّ الضُّيوفَ طَمأَنوه بِسُرعَة — فَهُم مَلائِكَةٌ لا يَأكُلون!',en:'Yes! But the guests quickly reassured him — they were angels who do not eat!'} },
+            { t:{ar:'لأنَّ الطَّعامَ كانَ سَيِّئاً.',en:'Because the food was bad.'},c:false,exp:{ar:'لا — الطَّعامُ كانَ عِجلاً سَميناً مَشوِيّاً! لَكِنَّ العُرفَ عِندَ النّاسِ قَديماً أنَّ مَن لا يَأكُلُ طَعامَكَ قد يَكونُ عَدُوّاً.',en:'No — the food was a fine roasted calf! But the custom of people in those days held that one who won\'t eat your food may be an enemy.'} },
+            { t:{ar:'لأنَّ العُرفَ قَديماً أنَّ مَن لا يَأكُلُ طَعامَكَ لَيسَ بِضَيفٍ آمِن.',en:'Because old custom held that one who won\'t eat your food isn\'t a safe guest.'},c:true,exp:{ar:'نَعَم! لَكِنَّ الضُّيوفَ طَمأَنوه بِسُرعَة — فَهُم مَلائِكَةٌ لا يَأكُلون!',en:'Yes! But the guests quickly reassured him — they were angels who do not eat!'} },
             { t:{ar:'لأنَّهُم كانوا كَثيرينَ جِدّاً.',en:'Because there were too many of them.'},c:false,exp:{ar:'لا — كانوا ثَلاثَةً فَقَط. خَوفُهُ كانَ بِسَبَبِ عَدَمِ أَكلِهِم!',en:'No — they were only three. His fear was because they didn\'t eat!'} },
           ] } },
       { scene:'garden', character:'✨',

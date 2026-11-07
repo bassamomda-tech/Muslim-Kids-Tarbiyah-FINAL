@@ -82,7 +82,7 @@ window.HOUSES.mercy = {
 
   /* ───── ROOM 2: Stories ─────
      Story 1 — النَّبيُّ ﷺ ورَحمَتُهُ بِالطِّفلِ والخادِم  | Source: islamweb.net/ar/
-     Story 2 — الرَّجُلُ والكَلبُ العَطشان                  | Source: dorar.net (Bukhari 3467)
+     Story 2 — الرَّجُلُ والكَلبُ العَطشان                  | Source: dorar.net (Bukhari 2363)
      Story 3 — عُمَرُ بنُ الخَطَّاب ورَحمَتُهُ بِالرَّعيَّة | Source: سير أعلام النبلاء — الذهبي ج٥ ص٢١٣
      Story 4 — ابنُ القَيِّم ورَحمَةُ القَلب                | Source: مدارج السالكين — ابن القيم — باب الرحمة
   */
@@ -225,7 +225,7 @@ window.HOUSES.mercy = {
         {ar:'لَماذا تَكونُ الأَعمالُ الصَّغيرَةُ أَحياناً أَعظَمَ عِندَ اللهِ مِن الأَعمالِ الكَبيرَة؟', en:'Why are small deeds sometimes greater in Allah\'s sight than grand ones?'},
       ],
       didYouKnow: [
-        {ar:'قِصَّةُ الرَّجُلِ والكَلبِ رَواها البُخاري ومُسلِم — حديث البُخاري ٣٤٦٧. المَصدَر: dorar.net/hadith/render/44394', en:'The story of the man and the dog was narrated by Bukhari and Muslim — Bukhari hadith 3467. Source: dorar.net/hadith/render/44394'},
+        {ar:'قِصَّةُ الرَّجُلِ والكَلبِ رَواها البُخاري ومُسلِم — حديث البُخاري ٢٣٦٣، ومُسلِم ٢٢٤٤. المَصدَر: dorar.net/hadith/render/44394', en:'The story of the man and the dog was narrated by Bukhari and Muslim — Bukhari hadith 2363, Muslim 2244. Source: dorar.net/hadith/render/44394'},
         {ar:'في رِوايَةٍ أُخرى غَفَرَ اللهُ لِامرَأَةٍ بَغِيٍّ سَقَت كَلباً — الرَّحمَةُ مَفتاحٌ لِلمَغفِرَة بِغَضِّ النَّظَرِ عن الذُّنوب. المَصدَر: dorar.net', en:'In another narration, Allah forgave an immoral woman who watered a dog — mercy is a key to forgiveness regardless of sins. Source: dorar.net'},
       ],
     },
@@ -263,8 +263,8 @@ window.HOUSES.mercy = {
           text:{ ar:'بَعدَ أن شَبِعَ الأَطفالُ ولَعِبوا، وَقَفَ عُمَرُ رضي الله عنه عِندَ بابِ البَيتِ ودُموعُهُ تَسيلُ بِهُدوءٍ في الظَّلام. قالَ بِصَوتٍ خافِت: «الحَمدُ لِلَّهِ! اليَومَ عَدَلتُ قَليلاً». فَقالَ لَهُ صاحِبُه: «يا أَميرَ المُؤمِنين، تَبكي؟!» قالَ عُمَرُ وهو يَمسَحُ دَمعَتَهُ: <b>«أَبكي لأَنَّني كِدتُ أَن أَكونَ سَبَبَ ضَياعِ هؤلاءِ الأَطفالِ بِغَفلَتي عنهم!»</b>',
                 en:'After the children had eaten and were playing, \'Umar stood at the house door, his tears flowing quietly in the darkness. He said in a soft voice: "Praise be to Allah! Today I have been a little just." His companion said: "O Commander of the Faithful, you are weeping?!" \'Umar said, wiping his tear: <b>"I weep because I nearly caused these children\'s destruction through my heedlessness of them!"</b>' } },
         { scene:'garden', character:'🌟',
-          text:{ ar:'كانَ هذا شَأنُ عُمَرَ كُلَّ لَيلَة. قالَ الذَّهَبيُّ في سِيَرِ أَعلامِ النُّبَلاء ج٥ ص٢١٣: «كانَ عُمَرُ يَطوفُ اللَّيلَ وَحدَه، ويَتَفَقَّدُ الأُسَرَ الجائِعَة، ويَحمِلُ الطَّعامَ بِيَدِه». خَليفَةٌ يَملِكُ نِصفَ العالَم، يَسيرُ في الظَّلامِ حامِلاً كيسَ الدَّقيق — لأَنَّ قَلبَهُ لا يُطيقُ أن يَنامَ وَجارٌ أو رَعِيَّةٌ جائِعَة! <b>الرَّحمَةُ الحَقيقيَّةُ لَيسَت كَلاماً يُقال — بل هي خُبزٌ يُقدَّم ودُموعُ رَحمَةٍ تَسيلُ في الظَّلام!</b>',
-                en:'This was \'Umar\'s nightly practice. Al-Dhahabi said in Siyar A\'lam al-Nubala vol. 5 p. 213: "\'Umar would patrol at night alone, checking on hungry families, carrying food with his own hands." A caliph who owned half the world, walking in the darkness carrying a flour sack — because his heart could not bear to sleep while any neighbor or subject was hungry! <b>True mercy is not words spoken — it is bread offered and tears of mercy flowing in the dark!</b>' } },
+          text:{ ar:'كانَ هذا شَأنُ عُمَرَ كُلَّ لَيلَة. وتَذكُرُ كُتُبُ التّاريخِ أنَّ عُمَرَ كانَ يَعُسُّ بِاللَّيلِ يَتَفَقَّدُ أَحوالَ رَعِيَّتِه، ويَحمِلُ الطَّعامَ إلى المُحتاجينَ بِنَفسِه. خَليفَةٌ يَملِكُ نِصفَ العالَم، يَسيرُ في الظَّلامِ حامِلاً كيسَ الدَّقيق — لأَنَّ قَلبَهُ لا يُطيقُ أن يَنامَ وَجارٌ أو رَعِيَّةٌ جائِعَة! <b>الرَّحمَةُ الحَقيقيَّةُ لَيسَت كَلاماً يُقال — بل هي خُبزٌ يُقدَّم ودُموعُ رَحمَةٍ تَسيلُ في الظَّلام!</b>',
+                en:'This was \'Umar\'s nightly practice. History books mention that \'Umar would patrol at night checking on his people, carrying food to the needy himself. A caliph who owned half the world, walking in the darkness carrying a flour sack — because his heart could not bear to sleep while any neighbor or subject was hungry! <b>True mercy is not words spoken — it is bread offered and tears of mercy flowing in the dark!</b>' } },
         { scene:'garden', character:'🌾',
           text:{ ar:'وقَد قالَ عُمَرُ رضي الله عنه مَقولَةً تَلخِّصُ فَلسَفَتَهُ في الرَّحمَة وهو يُخاطِبُ نَفسَه أَمامَ اللهِ: «اللَّهُمَّ إنَّني خِفتُ مَسؤولِيَّتي أَمامَكَ، فَأَرَدتُ أن أُؤَدِّيَها اليَوم قَبلَ الغَد!» كانَ عُمَرُ يَفهَمُ الرَّحمَةَ فَهماً عَميقاً: هي لَيسَت شُعوراً بالإشفاقِ فَحَسب، بل مَسؤوليَّةٌ يُحاسَبُ عليها كُلُّ قادِر. <b>الرَّحمَةُ في يَدِ الرَّجُلِ القَوِيِّ أَعظَمُ أَثَراً — لأنَّ القادِرَ حينَ يَختارُ الرَّحمَةَ يُعلِنُ قِيمَةً لا تُشترى.</b> كانَ عُمَرُ قَوِيّاً كَالجَبَل ورَحيماً كَالماء، وفي الجَمعِ بَينَهُما سِرُّ عَظَمَتِه.',
                 en:'Umar رضي الله عنه said words summarizing his philosophy of mercy, addressing himself before Allah: "O Allah, I feared my responsibility before You, so I wanted to fulfill it today before tomorrow!" ’Umar understood mercy with profound understanding: it is not just a feeling of compassion, but a responsibility for which every capable person is held accountable. <b>Mercy in the hand of a strong man has the greatest impact — for when the capable chooses mercy, he declares a value that cannot be bought.</b> ’Umar was strong as a mountain and merciful as water, and in combining them lay the secret of his greatness.' } },

@@ -1616,8 +1616,8 @@ HISN_STORIES.adam = [
   ],
   "didYouKnow": [
    {
-    "ar": "ذَكَرَت المَوسوعَةُ القُرآنِيَّةُ أنَّ هذهِ أَوَّلُ جَريمَةِ قَتلٍ في تاريخِ البَشَريَّة — وأنَّ القاتِلَ يَتَحَمَّلُ إثمَ كُلِّ مَن قَتَلَ بَعدَهُ ظُلماً — المَصدَر: quranpedia.net — المائدة ٢٧",
-    "en": "The Quranic Encyclopedia noted this was the first murder in human history — and the killer bears the sin of all who murder unjustly after him — Source: quranpedia.net — Al-Ma'idah 27"
+    "ar": "ذَكَرَت المَوسوعَةُ القُرآنِيَّةُ أنَّ هذهِ أَوَّلُ جَريمَةِ قَتلٍ في تاريخِ البَشَريَّة — وأنَّ القاتِلَ يَتَحَمَّلُ نَصيباً مِن إثمِ كُلِّ مَن قَتَلَ بَعدَهُ ظُلماً — المَصدَر: quranpedia.net — المائدة ٢٧",
+    "en": "The Quranic Encyclopedia noted this was the first murder in human history — and the killer bears a share of the sin of everyone who murders unjustly after him — Source: quranpedia.net — Al-Ma'idah 27"
    },
    {
     "ar": "ذَكَرَ إسلام ويب أنَّ الغُرابَ عَلَّمَ الإنسانَ دَفنَ المَوتى — فَالتَّعَلُّمُ مِن الطَّبيعَةِ سُنَّةٌ إلَهيَّة — المَصدَر: islamweb.net/ar/article/172498",

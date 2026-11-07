@@ -281,7 +281,7 @@ window.HOUSES.truth = {
         { ar:'لَو أَردتَ أن يُلَقِّبَكَ النَّاسُ بِلَقَبٍ حَسَن، ماذا تَفعَلُ اليَوم لِتَكسِبَه؟', en:'If you wanted people to give you a noble title, what would you do today to earn it?' },
       ],
       didYouKnow: [
-        { ar:'أَطلَقَ النَّبيُّ ﷺ على أبي بَكرٍ لَقَبَ «الصِّدِّيق» بَعدَ تَصديقِهِ لِخَبَرِ الإسراءِ والمِعراج. ذَكَرَهُ الذَّهَبيُّ في سير أعلام النبلاء، ج١، وقالَ: «وكانَ أَصدَقَ هذه الأُمَّة وأَوفاها». [سير أعلام النبلاء — الذهبي — ج١]', en:'The Prophet ﷺ gave Abu Bakr the title "Al-Siddiq" after his affirmation of the Night Journey. Al-Dhahabi mentioned this in Siyar A\'lam al-Nubala, Vol. 1, saying: "He was the most truthful of this nation and the most faithful." [Siyar A\'lam al-Nubala — al-Dhahabi — Vol. 1]' },
+        { ar:'أَطلَقَ النَّبيُّ ﷺ على أبي بَكرٍ لَقَبَ «الصِّدِّيق» بَعدَ تَصديقِهِ لِخَبَرِ الإسراءِ والمِعراج. وذَكَرَ الذَّهَبيُّ خَبَرَهُ في سير أعلام النبلاء. [سير أعلام النبلاء — الذهبي — ج١]', en:'The Prophet ﷺ gave Abu Bakr the title "Al-Siddiq" after his affirmation of the Night Journey. Al-Dhahabi mentioned this in Siyar A\'lam al-Nubala. [Siyar A\'lam al-Nubala — al-Dhahabi — Vol. 1]' },
         { ar:'كانَ أبو بَكرٍ أَوَّلَ مَن آمَنَ مِن الرِّجالِ الأَحرار، وكانَ تَصديقُهُ الفَوريُّ دَليلاً على أنَّ الصِّدقَ الحَقيقيَّ يَجعَلُ صاحِبَهُ يَرى الحَقَّ بِقَلبِه قَبلَ عَينِه. [سير أعلام النبلاء — الذهبي — ج١]', en:'Abu Bakr was the first free adult man to believe, and his immediate affirmation showed that true truthfulness makes its owner see the truth with his heart before his eyes. [Siyar A\'lam al-Nubala — al-Dhahabi — Vol. 1]' },
       ],
     },

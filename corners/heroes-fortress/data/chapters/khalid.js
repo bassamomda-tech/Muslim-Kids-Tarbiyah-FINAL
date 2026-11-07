@@ -24,8 +24,8 @@ HISN.chapters.khalid = {
  "accent": "#4A6A9A",
  "accent2": "#6A8ABA",
  "greeting": {
-  "ar": "أهلاً يا بطل! خالدُ بنُ الوليدِ رضي الله عنه القائدُ العظيمُ الذي لقّبه النبيُّ ﷺ «سيفَ الله»، ما هُزِمَ في معركةٍ قطّ. تعالَ نتعلّمْ من شجاعتِه وذكائِه وتواضعِه.",
-  "en": "Hello, hero! Khalid ibn al-Walid, the great commander the Prophet ﷺ named \"the Sword of Allah,\" never defeated in a single battle. Come, let's learn from his courage, intelligence, and humility."
+  "ar": "أهلاً يا بطل! خالدُ بنُ الوليدِ رضي الله عنه القائدُ العظيمُ الذي لقّبه النبيُّ ﷺ «سيفَ الله»، لم يُهزَمْ في معركةٍ قادَها. تعالَ نتعلّمْ من شجاعتِه وذكائِه وتواضعِه.",
+  "en": "Hello, hero! Khalid ibn al-Walid, the great commander the Prophet ﷺ named \"the Sword of Allah,\" never defeated in a battle he commanded. Come, let's learn from his courage, intelligence, and humility."
  },
  "knowledge": {
   "didYouKnow": {
@@ -54,8 +54,8 @@ HISN.chapters.khalid = {
     "en": "He led at Mu'tah, al-Yamamah, and the conquests of Iraq and Sham."
    },
    {
-    "ar": "ما هُزِمَ في معركةٍ قطّ، ومع ذلك تواضعَ للحق.",
-    "en": "He was never defeated in battle, yet humbled himself to the truth."
+    "ar": "لم يُهزَمْ في معركةٍ قادَها، ومع ذلك تواضعَ للحق.",
+    "en": "He was never defeated in a battle he commanded, yet humbled himself to the truth."
    }
   ],
   "timeline": [
@@ -337,8 +337,8 @@ HISN.chapters.khalid = {
    "items": [
     {
      "statement": {
-      "ar": "ما هُزِمَ خالدٌ في معركةٍ قطّ.",
-      "en": "Khalid was never defeated in any battle."
+      "ar": "لم يُهزَمْ خالدٌ في معركةٍ قادَها.",
+      "en": "Khalid was never defeated in a battle he commanded."
      },
      "t": true
     },
