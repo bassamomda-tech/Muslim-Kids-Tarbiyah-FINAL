@@ -642,13 +642,13 @@ HISN_STORIES.khalid = [
     "scene": "desert",
     "character": "🦅",
     "text": {
-     "ar": "قال خالد: فما زالَ رسولُ اللهِ ﷺ <b>يتبسّمُ إليّ</b> حتى وقفتُ عليه، فسلّمتُ عليه بالنبوّة، فقال ﷺ: <b>«الحمدُ للهِ الذي هداك، قد كنتُ أرى لك عقلاً رجوتُ ألّا يُسلِمَك إلّا إلى خير»</b>. وطلبَ خالدٌ أن يستغفرَ له عمّا مضى، فقال ﷺ: «الإسلامُ يَجُبُّ ما كان قبلَه»، ودعا له: <b>«اللّهُمَّ اغفرْ لخالدِ بنِ الوليد كلَّ ما أوضعَ فيه من صدٍّ عن سبيلِك»</b>.",
-     "en": "Khalid said: The Messenger of Allah ﷺ <b>kept smiling at me</b> until I stood before him and greeted him as Prophet, and he ﷺ said: <b>\"Praise be to Allah who guided you. I always saw in you a mind that I hoped would lead you only to good.\"</b> Khalid asked him to seek forgiveness for the past, and he ﷺ said: \"Islam wipes out what came before it,\" and prayed: <b>\"O Allah, forgive Khalid ibn al-Walid all the efforts he made in turning people from Your path.\"</b>"
+     "ar": "ووصلَ الثلاثةُ إلى المدينة، فاستقبلَهم رسولُ اللهِ ﷺ <b>فرِحاً بإسلامِهم</b>، وتذكرُ كتبُ السيرةِ أنّه ﷺ ظلَّ <b>يتبسّمُ</b> لخالدٍ حتى وقفَ بينَ يديه فأسلم. وكان صاحبُه عمرُو بنُ العاص خائفاً من ذنوبِه الماضية، فاشترطَ عندَ البيعةِ أن يُغفَرَ له، فقال له النبيُّ ﷺ كما في صحيحِ مسلم: <b>«أما علمتَ أنّ الإسلامَ يهدمُ ما كان قبلَه؟»</b>. فيا لها من بُشرى لخالدٍ ولكلِّ من رجعَ إلى الله: <b>الإسلامُ يمحو ما مضى</b>، ويبدأُ صاحبُه صفحةً بيضاء.",
+     "en": "The three reached Madinah, and the Messenger of Allah ﷺ welcomed them, <b>rejoicing at their Islam</b>; the books of Sirah mention that he ﷺ kept <b>smiling</b> at Khalid until he stood before him and accepted Islam. His companion 'Amr ibn al-'As was afraid of his past sins and asked, as he pledged allegiance, to be forgiven. The Prophet ﷺ said to him, as in Sahih Muslim: <b>\"Do you not know that Islam wipes out what came before it?\"</b> What glad tidings for Khalid and for everyone who returns to Allah: <b>Islam erases the past</b>, and its owner starts a clean page."
     },
     "choice": {
      "q": {
-      "ar": "ماذا قال النبيُّ ﷺ لخالدٍ حين أسلم؟",
-      "en": "What did the Prophet ﷺ say to Khalid when he accepted Islam?"
+      "ar": "كيف استقبلَ النبيُّ ﷺ خالداً وصاحبَيه حين جاؤوا مسلمين؟",
+      "en": "How did the Prophet ﷺ receive Khalid and his two companions when they came as Muslims?"
      },
      "opts": [
       {
@@ -658,19 +658,19 @@ HISN_STORIES.khalid = [
        },
        "c": false,
        "exp": {
-        "ar": "لا، بل استقبله بالتبسّمِ والحمدِ لله.",
-        "en": "No — he welcomed him with smiles and praise to Allah."
+        "ar": "لا، بل استقبلهم بالفرحِ والبُشرى.",
+        "en": "No — he welcomed them with joy and glad tidings."
        }
       },
       {
        "t": {
-        "ar": "الحمدُ للهِ الذي هداك، كنتُ أرى لك عقلاً",
-        "en": "Praise be to Allah who guided you; I saw in you a mind"
+        "ar": "فرِحَ بهم وبشّرَهم أنّ الإسلامَ يمحو ما قبلَه",
+        "en": "He rejoiced and told them Islam wipes out the past"
        },
        "c": true,
        "exp": {
-        "ar": "أحسنت! العقلُ السليمُ يقودُ صاحبَه إلى الحق.",
-        "en": "Well done! A sound mind leads its owner to the truth."
+        "ar": "أحسنت! بابُ التوبةِ مفتوح، والإسلامُ يمحو ما مضى.",
+        "en": "Well done! The door of repentance is open, and Islam erases the past."
        }
       },
       {

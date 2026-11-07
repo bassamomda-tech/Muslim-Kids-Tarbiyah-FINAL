@@ -5,8 +5,8 @@ HISN_STORIES.zaydthabit = [
     title:{ ar:'الغلامُ الذي تعلّمَ لغةً في نصفِ شهر', en:'The Boy Who Learned a Language in Half a Month' },
     pages:[
       { scene:'madinah', character:'👦',
-        text:{ ar:'كان <b>زيدُ بنُ ثابت</b> غلاماً صغيراً ذكيّاً، حفظَ سبعَ عشرةَ سورةً من القرآنِ قبلَ أن يبلغ! أرادَ أن يخرجَ مع النبيِّ ﷺ يومَ بدرٍ ليُقاتِل، لكنّ النبيَّ ﷺ ردَّه <b>لِصِغَرِ سنِّه</b>. حزِنَ زيد، لكنّه قرّرَ أن يخدمَ الإسلامَ بطريقةٍ أخرى: <b>بالعلمِ والقلم</b>!<br><br>وذاتَ يومٍ قال له النبيُّ ﷺ: «يا زيد، إنّي أكاتبُ أقواماً، وأخافُ أن يزيدوا فيها أو ينقصوا، <b>فتعلّمْ كتابةَ اليهود</b>». فأقبلَ زيدٌ على تعلُّمِها بجدٍّ واجتهاد، فأتقنها في <b>نحوِ نصفِ شهرٍ فقط</b>! فصار يكتبُ للنبيِّ ﷺ ويقرأُ له ما يأتيه. الذكاءُ مع الجدِّ يصنعُ العجائب.',
-          en:'<b>Zayd ibn Thabit</b> was a clever young boy who had memorized seventeen surahs of the Quran before reaching maturity! He wished to join the Prophet ﷺ at Badr to fight, but the Prophet ﷺ turned him back <b>for his young age</b>. Zayd was saddened, but resolved to serve Islam another way: <b>with knowledge and the pen</b>!<br><br>One day the Prophet ﷺ said to him: "Zayd, I correspond with certain peoples, and I fear they may add to or take from it — so <b>learn the writing of the Jews</b>." Zayd set about learning it with diligence and mastered it in <b>only about half a month</b>! He then wrote for the Prophet ﷺ and read to him what came. Cleverness with diligence works wonders.' },
+        text:{ ar:'كان <b>زيدُ بنُ ثابت</b> غلاماً صغيراً ذكيّاً، حفظَ سبعَ عشرةَ سورةً من القرآنِ قبلَ أن يبلغ! أرادَ أن يخرجَ مع النبيِّ ﷺ يومَ بدرٍ ليُقاتِل، لكنّ النبيَّ ﷺ ردَّه <b>لِصِغَرِ سنِّه</b>. حزِنَ زيد، لكنّه قرّرَ أن يخدمَ الإسلامَ بطريقةٍ أخرى: <b>بالعلمِ والقلم</b>!<br><br>وذاتَ يومٍ <b>أمرَه النبيُّ ﷺ أن يتعلّمَ كتابةَ اليهود</b>، وقال: «إنّي واللهِ ما آمَنُ يهودَ على كتابي» (رواه أبو داود والترمذي). فأقبلَ زيدٌ على تعلُّمِها بجدٍّ واجتهاد، فأتقنها في <b>نحوِ نصفِ شهرٍ فقط</b>! فصار يكتبُ للنبيِّ ﷺ ويقرأُ له ما يأتيه. الذكاءُ مع الجدِّ يصنعُ العجائب.',
+          en:'<b>Zayd ibn Thabit</b> was a clever young boy who had memorized seventeen surahs of the Quran before reaching maturity! He wished to join the Prophet ﷺ at Badr to fight, but the Prophet ﷺ turned him back <b>for his young age</b>. Zayd was saddened, but resolved to serve Islam another way: <b>with knowledge and the pen</b>!<br><br>One day the Prophet ﷺ <b>told him to learn the writing of the Jews</b>, saying: "By Allah, I do not trust the Jews with my letters" (Abu Dawud and at-Tirmidhi). Zayd set about learning it with diligence and mastered it in <b>only about half a month</b>! He then wrote for the Prophet ﷺ and read to him what came. Cleverness with diligence works wonders.' },
         choice:{ q:{ar:'كيف خدمَ زيدٌ الإسلامَ بعدما رُدَّ عن القتالِ لِصِغَرِه؟',en:'How did Zayd serve Islam after being turned from fighting for his youth?'},
           opts:[
             { t:{ar:'بالعلمِ والكتابةِ وخدمةِ النبيِّ ﷺ',en:'With knowledge, writing, and serving the Prophet ﷺ'},c:true,exp:{ar:'نعم! لكلِّ موهبةٍ بابٌ للخير — وزيدٌ خدمَ بالعلم.',en:'Yes! Every talent has a door to good — Zayd served with knowledge.'} },
@@ -90,8 +90,8 @@ HISN_STORIES.zaydthabit = [
     "scene": "madinah",
     "character": "👦",
     "title": {
-      "ar": "من الرَّدِّ إلى «نِعمَ الغلام»",
-      "en": "From Being Sent Back to \"What a Fine Boy\""
+      "ar": "من الرَّدِّ إلى كاتبِ الوحي",
+      "en": "From Being Sent Back to Scribe of the Revelation"
     },
     "pages": [
       {
@@ -106,8 +106,8 @@ HISN_STORIES.zaydthabit = [
         "scene": "madinah",
         "character": "👦",
         "text": {
-          "ar": "يومَ <b>بدر</b> اصطفَّ الفتيانُ أمامَ النبيِّ ﷺ، كلٌّ يتمنّى أن يُقبَلَ في الجيش، وكان بينهم <b>زيدُ بنُ ثابت</b> وعمرُه نحوُ ثلاثَ عشرةَ سنة. فنظرَ إليه النبيُّ ﷺ <b>فاستصغره وردَّه</b> رحمةً به لأنّه ما زالَ صغيراً.<br><br>لم ييأسْ زيد! بل شغلَ نفسَه بحفظِ القرآنِ وتعلُّمِ الكتابة، ينتظرُ اليومَ الذي يكبرُ فيه. وبعدَ سنواتٍ جاءَ يومُ <b>الخندق</b>، فقال زيد: <b>«أجازني رسولُ اللهِ ﷺ يومَ الخندق، وكساني قُبطيّة»</b> — أي قبِلَه وأهداه ثوباً أبيضَ جميلاً!<br><br>ويُروى أنّه كان <b>ينقلُ الترابَ مع المسلمين</b> وهم يحفرونَ الخندقَ حولَ المدينة، يعملُ بجدٍّ مثلَ الكبار، فقال عنه النبيُّ ﷺ: <b>«أما إنّه نِعمَ الغلام!»</b>. الرفضُ اليومَ ليس النهاية؛ <b>اصبرْ واستعدّ</b>، فسيأتي يومُك.",
-          "en": "On the day of <b>Badr</b>, the youths lined up before the Prophet ﷺ, each hoping to be accepted into the army. Among them was <b>Zayd ibn Thabit</b>, about thirteen years old. The Prophet ﷺ looked at him, <b>considered him too young and sent him back</b>, out of mercy, since he was still small.<br><br>Zayd did not give up! He busied himself memorising Qur'an and learning to write, waiting for the day he would be older. Years later came the day of <b>the Trench</b>, and Zayd said: <b>\"The Messenger of Allah ﷺ accepted me on the day of the Trench, and gave me a Coptic garment\"</b> — he accepted him and gifted him a fine white cloth!<br><br>It is narrated that he was <b>carrying earth with the Muslims</b> as they dug the trench around Madinah, working hard like the grown-ups, and the Prophet ﷺ said of him: <b>\"What a fine boy he is!\"</b> Being turned down today is not the end — <b>be patient and get ready</b>, and your day will come."
+          "ar": "يومَ <b>بدر</b> اصطفَّ الفتيانُ أمامَ النبيِّ ﷺ، كلٌّ يتمنّى أن يُقبَلَ في الجيش، وكان بينهم <b>زيدُ بنُ ثابت</b> وعمرُه نحوُ ثلاثَ عشرةَ سنة. فنظرَ إليه النبيُّ ﷺ <b>فاستصغره وردَّه</b> رحمةً به لأنّه ما زالَ صغيراً.<br><br>لم ييأسْ زيد! بل شغلَ نفسَه بحفظِ القرآنِ وتعلُّمِ الكتابة، ينتظرُ اليومَ الذي يكبرُ فيه. وبعدَ سنواتٍ جاءَ يومُ <b>الخندق</b>، فقال زيد: <b>«أجازني رسولُ اللهِ ﷺ يومَ الخندق، وكساني قُبطيّة»</b> — أي قبِلَه وأهداه ثوباً أبيضَ جميلاً!<br><br>ويُروى أنّه كان <b>ينقلُ الترابَ مع المسلمين</b> وهم يحفرونَ الخندقَ حولَ المدينة، يعملُ بجدٍّ مثلَ الكبار — فكان حقّاً <b>نِعمَ الغلام</b>! ولمّا كبرَ اختارَه أبو بكرٍ الصدّيقُ لجمعِ القرآنِ وقال له: <b>«إنّك رجلٌ شابٌّ عاقلٌ لا نتّهمُك»</b> (رواه البخاري). الرفضُ اليومَ ليس النهاية؛ <b>اصبرْ واستعدّ</b>، فسيأتي يومُك.",
+          "en": "On the day of <b>Badr</b>, the youths lined up before the Prophet ﷺ, each hoping to be accepted into the army. Among them was <b>Zayd ibn Thabit</b>, about thirteen years old. The Prophet ﷺ looked at him, <b>considered him too young and sent him back</b>, out of mercy, since he was still small.<br><br>Zayd did not give up! He busied himself memorising Qur'an and learning to write, waiting for the day he would be older. Years later came the day of <b>the Trench</b>, and Zayd said: <b>\"The Messenger of Allah ﷺ accepted me on the day of the Trench, and gave me a Coptic garment\"</b> — he accepted him and gifted him a fine white cloth!<br><br>It is narrated that he was <b>carrying earth with the Muslims</b> as they dug the trench around Madinah, working hard like the grown-ups — truly <b>a fine boy</b>! When he grew up, Abu Bakr as-Siddiq chose him to collect the Qur'an and told him: <b>\"You are a wise young man and we do not suspect you\"</b> (al-Bukhari). Being turned down today is not the end — <b>be patient and get ready</b>, and your day will come."
         },
         "choice": {
           "q": {
@@ -221,21 +221,21 @@ HISN_STORIES.zaydthabit = [
       },
       {
         "q": {
-          "ar": "ماذا يُروى أنّ النبيَّ ﷺ قال عن زيدٍ وهو ينقلُ التراب؟",
-          "en": "What is the Prophet ﷺ narrated to have said of Zayd carrying earth?"
+          "ar": "ماذا قال أبو بكرٍ لزيدٍ حين اختارَه لجمعِ القرآن؟",
+          "en": "What did Abu Bakr say to Zayd when he chose him to collect the Qur'an?"
         },
         "opts": [
           {
             "t": {
-              "ar": "ارجعْ إلى بيتِك",
-              "en": "Go back home"
+              "ar": "أنت لا تعرفُ الكتابة",
+              "en": "You cannot write"
             },
             "c": false
           },
           {
             "t": {
-              "ar": "أما إنّه نِعمَ الغلام",
-              "en": "What a fine boy he is"
+              "ar": "إنّك شابٌّ عاقلٌ لا نتّهمُك",
+              "en": "You are a wise young man and we do not suspect you"
             },
             "c": true
           },
@@ -276,8 +276,8 @@ HISN_STORIES.zaydthabit = [
         "en": "Zayd's words \"He accepted me on the day of the Trench and gave me a Coptic garment\" are in Siyar A'lam an-Nubala'; Ibn Hajar in al-Isaba mentions he was considered too young at Badr"
       },
       {
-        "ar": "خبرُ نقلِه الترابَ وقولِ النبيِّ ﷺ: «أما إنّه نِعمَ الغلام» رواه الواقديُّ ونقله المزّيُّ في «تهذيب الكمال» وابنُ عبدِ البرِّ في «الاستيعاب»، ولذا نقولُ فيه: «يُروى»",
-        "en": "The report of him carrying earth and the words \"What a fine boy he is\" comes via al-Waqidi, cited by al-Mizzi in Tahdhib al-Kamal and Ibn 'Abd al-Barr in al-Isti'ab — so we say \"it is narrated\""
+        "ar": "قولُ أبي بكرٍ لزيد: «إنّك رجلٌ شابٌّ عاقلٌ لا نتّهمُك» في صحيحِ البخاري (٤٩٨٦)، أمّا خبرُ نقلِه الترابَ يومَ الخندقِ فمن روايةِ الواقديّ، ولذا نقولُ فيه: «يُروى»",
+        "en": "Abu Bakr's words to Zayd \"You are a wise young man and we do not suspect you\" are in Sahih al-Bukhari (4986); the report of him carrying earth at the Trench comes via al-Waqidi — so we say \"it is narrated\""
       }
     ]
   },

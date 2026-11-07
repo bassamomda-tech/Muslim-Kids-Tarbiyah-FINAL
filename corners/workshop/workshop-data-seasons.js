@@ -119,7 +119,7 @@ window.WS.acts.push(
     {ic:'🤲',ar:'أخرجْ جزءَ الصدقةِ أولاً — فالبركةُ تبدأُ بالعطاء.',en:'Give the charity part first — blessing starts with giving.'}],
   little:{ar:'يلوِّنُ المغلفاتِ ويوزِّعُها على الأقارب.',en:'Little ones color the envelopes and hand them to relatives.'},
   big:{ar:'افتحْ «دفترَ عيدية»: سجِّلْ كم جاءك وأين ذهبَ كلُّ قرش.',en:'Open an "Eidiya ledger": log what came in and where every coin went.'},
-  wisdom:{ar:'«ما نقصَ مالٌ من صدقة» — رواه مسلم',en:'"Charity never decreases wealth" — Muslim'} },
+  wisdom:{ar:'«ما نقصتْ صدقةٌ من مال» — رواه مسلم',en:'"Charity never decreases wealth" — Muslim'} },
 
 { id:'hajj-track', cat:'seasons', ic:'🕋', corner:'aqeeda', themes:['ilm','laab'],
   ar:'رحلة الحاج الصغير', en:'The Little Pilgrim\'s Journey',
@@ -153,7 +153,7 @@ window.WS.acts.push(
     {ic:'🌳',ar:'يومَ العيد: شجرتُكم مكتملةُ الخضرة — صورةٌ عائليةٌ أمامَها!',en:'By Eid your tree is fully green — family photo in front of it!'}],
   little:{ar:'ورقةُ الصغيرِ اليومية: تكبيرةٌ يحفظُها أو حلوى يتصدقُ بها.',en:'Little ones\' daily leaf: a takbeer learned or a sweet given away.'},
   big:{ar:'صُمْ يومَ عرفةَ مع الكبارِ — ولو نصفَ يومٍ تدريباً.',en:'Fast Arafah day with the grown-ups — even half a day as training.'},
-  wisdom:{ar:'«ما من أيامٍ العملُ الصالحُ فيهنَّ أحبُّ إلى الله من هذه الأيامِ العشر» — رواه البخاري',en:'"No days are good deeds more beloved to Allah than these ten" — Bukhari'} },
+  wisdom:{ar:'«ما من أيامٍ العملُ الصالحُ فيهنَّ أحبُّ إلى الله من هذه الأيامِ العشر» — رواه أبو داود والترمذي',en:'"No days are good deeds more beloved to Allah than these ten" — Abu Dawud & Tirmidhi'} },
 
 { id:'adha-sheep', cat:'seasons', ic:'🐑', corner:'social', themes:['amal','laab'],
   ar:'خروف العيد القطني', en:'The Cotton Eid Sheep',

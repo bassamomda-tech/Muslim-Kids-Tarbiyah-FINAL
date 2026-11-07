@@ -180,7 +180,7 @@ window.DISTRICT_QUIZ = {
     "en": "Respect is only for adults"
    },
    "bust": {
-    "ar": "ﷺ: «ليس منّا من لم يوقّر كبيرَنا ويرحم صغيرَنا»",
+    "ar": "ﷺ: «ليس منّا من لم يرحمْ صغيرَنا ويوقّرْ كبيرَنا»",
     "en": "Respect both old and young"
    }
   }
@@ -433,8 +433,8 @@ window.DISTRICT_QUIZ = {
     "en": "Contentment keeps you poor"
    },
    "bust": {
-    "ar": "ﷺ: «القناعةُ كنزٌ لا يفنى»",
-    "en": "Contentment is a treasure that never ends"
+    "ar": "ﷺ: «ليس الغِنى عن كثرةِ العَرَض، ولكنّ الغِنى غِنى النفس»",
+    "en": "True richness is not having many things; true richness is a content heart"
    }
   }
  },

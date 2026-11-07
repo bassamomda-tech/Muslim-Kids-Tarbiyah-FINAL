@@ -15,7 +15,7 @@
     statBloomed: { ar: "أزهار متفتّحة", en: "Flowers bloomed" },
     statCare:    { ar: "أعمال عناية", en: "Care actions" },
     sideTitle:   { ar: "العطاء والزرع", en: "Giving and planting" },
-    sideQuote:   { ar: "«ما مِن مسلمٍ يغرس غرساً فيأكل منه إنسانٌ أو طيرٌ إلا كان له به صدقة»", en: "\"No Muslim plants a tree from which a human or bird eats but it is a charity for him\"" },
+    sideQuote:   { ar: "«ما مِن مسلمٍ يغرس غرساً أو يزرع زرعاً فيأكل منه طيرٌ أو إنسانٌ أو بهيمةٌ إلا كان له به صدقة»", en: "\"No Muslim plants a tree or sows a crop from which a bird, a person or an animal eats but it is a charity for him\"" },
     sideSrc:     { ar: "متفق عليه", en: "Agreed upon" },
     tip:         { ar: "انظر للرمز فوق كل نبتة لتعرف حاجتها: 💧 ماء، ☀️ شمس، ✂️ تقليم، 🐛 إزالة آفة. العناية المستمرة كالعمل الصالح — تنمو بالمداومة.", en: "Look at the icon above each plant to know its need: 💧 water, ☀️ sun, ✂️ pruning, 🐛 pest removal. Consistent care is like good deeds — it grows with perseverance." },
     winEyebrow:  { ar: "حديقةٌ مزهرة", en: "A blooming garden" },

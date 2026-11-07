@@ -154,8 +154,8 @@ window.HOUSES.knowledge = {
         {
           scene: 'night', character: '📖',
           text: {
-            ar: 'ذَهَبَ موسى عليه السلام وقَد امتَلَأَ قَلبُهُ بِنورٍ جَديد. كانَ كَليمَ اللهِ نَبيّاً عَظيماً، لكنَّهُ لم يَتَعالَ على طَلَبِ العِلم. <b>قَطَعَ مَسافاتٍ طَويلَة وَحَمَلَ سَمَكَةً في سَلَّةٍ، فَقَط لِيَتَعَلَّمَ مِن عَبدٍ صالِح!</b><br><br>وَقالَ النَّبيُّ ﷺ: «إنَّ موسى سَأَلَ رَبَّهُ عَن صاحِبِه الخِضر فَرَكِبا البَحر» — فَلا عُذرَ لَنا نَحنُ في التَّقصيرِ في طَلَبِ العِلم!',
-            en: 'Musa, peace be upon him, departed with his heart filled with new light. He was the one who spoke directly with Allah, a great prophet — yet he did not consider himself too elevated to seek knowledge. <b>He traveled great distances and carried a fish in a basket, simply to learn from a righteous servant!</b><br><br>The Prophet ﷺ narrated: "Musa asked his Lord about his companion Al-Khidr, so they sailed the sea together" — so we have no excuse for falling short in seeking knowledge!'
+            ar: 'ذَهَبَ موسى عليه السلام وقَد امتَلَأَ قَلبُهُ بِنورٍ جَديد. كانَ كَليمَ اللهِ نَبيّاً عَظيماً، لكنَّهُ لم يَتَعالَ على طَلَبِ العِلم. <b>قَطَعَ مَسافاتٍ طَويلَة وَحَمَلَ سَمَكَةً في سَلَّةٍ، فَقَط لِيَتَعَلَّمَ مِن عَبدٍ صالِح!</b><br><br>وَقَصَّ النَّبيُّ ﷺ قِصَّتَهُما ثُمَّ قال: «يَرحَمُ اللهُ موسى، لَوَدِدنا لَو صَبَرَ حَتّى يُقَصَّ عَلَينا مِن أَمرِهِما» (متفق عليه) — فَإذا رَحَلَ نَبِيٌّ عَظيمٌ لِيَتَعَلَّم، فَلا عُذرَ لَنا نَحنُ في التَّقصيرِ في طَلَبِ العِلم!',
+            en: 'Musa, peace be upon him, departed with his heart filled with new light. He was the one who spoke directly with Allah, a great prophet — yet he did not consider himself too elevated to seek knowledge. <b>He traveled great distances and carried a fish in a basket, simply to learn from a righteous servant!</b><br><br>The Prophet ﷺ told their story and then said: "May Allah have mercy on Musa! We wish he had been patient, so that more of their story would have been told to us" (Bukhari & Muslim) — if a great Prophet travelled to learn, we have no excuse for falling short in seeking knowledge!'
           }
         },
       ],

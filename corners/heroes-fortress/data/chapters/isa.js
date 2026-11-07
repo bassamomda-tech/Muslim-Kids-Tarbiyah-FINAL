@@ -78,7 +78,7 @@ HISN.chapters.isa = {
   ],
 
   memorize: {
-    hadith:{ ar:'«أنا أولى الناسِ بعيسى ابنِ مريمَ... والأنبياءُ إخوةٌ ودينُهم واحد»', en:"\"I am the nearest of people to Isa son of Maryam... the prophets are brothers and their religion is one.\"", ref:{ ar:'[رواه البخاري ٣٤٤٣]', en:'[Sahih al-Bukhari 3443]' } },
+    hadith:{ ar:'«أنا أولى الناسِ بعيسى ابنِ مريمَ في الدنيا والآخرة، والأنبياءُ إخوةٌ لِعَلّات، أمّهاتُهم شتّى ودينُهم واحد»', en:"\"I am the closest of people to Isa son of Maryam in this world and the Hereafter; the prophets are paternal brothers — their mothers differ, but their religion is one.\"", ref:{ ar:'[رواه البخاري ٣٤٤٣]', en:'[Sahih al-Bukhari 3443]' } },
     ayah: { ar: '﴿ إِنَّ اللَّهَ رَبِّي وَرَبُّكُمْ فَاعْبُدُوهُ ۚ هَٰذَا صِرَاطٌ مُّسْتَقِيمٌ ﴾', ref:{ ar:'مريم ٣٦', en:'Maryam 36' } },
     dua:  { ar: 'رَبَّنَا آمَنَّا بِمَا أَنزَلْتَ وَاتَّبَعْنَا الرَّسُولَ فَاكْتُبْنَا مَعَ الشَّاهِدِينَ', ref:{ ar:'آل عمران ٥٣', en:'Aal Imran 53' } },
     pledge: {

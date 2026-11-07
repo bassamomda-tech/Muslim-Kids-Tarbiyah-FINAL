@@ -373,7 +373,7 @@ window.HOUSES.altruism = {
       ],
       didYouKnow: [
         {ar:'قِصَّةُ المُؤاخاةِ بَينَ المُهاجِرينَ والأَنصارِ في صَحيحِ البُخاريّ. مَدَحَ اللهُ الأَنصارَ في سورَةِ الحَشرِ آيَة ٩ بِهذا الإيثار. المَصدَر: islamweb.net/ar/article/152170', en:'The                   story of the brotherhood between Muhajirin and Ansar is in Sahih al-Bukhari. Allah praised the Ansar in Surah Al-Hashr verse 9 for this altruism. Source: islamweb.net/ar/article/152170'},
-        {ar:'قالَ البُخاريُّ: «لَمَّا قَدِمَ المُهاجِرونَ المَدينَة، آخى رَسولُ اللهِ ﷺ بَينَ عَبدِ الرَّحمنِ بنِ عَوفٍ وسَعدِ بنِ الرَّبيع» — وقالَ سَعدٌ لِعَبدِ الرَّحمن: «اختَر أَيَّ مالَيَّ شِئتَ.» المَصدَر: صحيح البخاري — حديث ٣٧٨١', en:'Bukhari said: "When                   the Muhajirin came to Madinah, the Messenger of Allah ﷺ established brotherhood between Abd al-Rahman ibn Awf and Sa\'d ibn al-Rabi\'" — and Sa\'d said to Abd al-Rahman: "Choose whichever half of my wealth you wish." Source: Sahih Bukhari — hadith 3781'},
+        {ar:'في صَحيحِ البُخاريّ: «لَمّا قَدِموا المَدينَة، آخى رَسولُ اللهِ ﷺ بَينَ عَبدِ الرَّحمنِ وسَعدِ بنِ الرَّبيع» — وقالَ سَعدٌ لِعَبدِ الرَّحمن: «إنّي أكثَرُ الأنصارِ مالاً، فأَقسِمُ مالي نِصفَين». المَصدَر: صحيح البخاري — حديث ٣٧٨٠', en:'In Sahih al-Bukhari: "When they came to Madinah, the Messenger of Allah ﷺ established brotherhood between Abd al-Rahman and Sa\'d ibn al-Rabi\'" — and Sa\'d said to Abd al-Rahman: "I am the wealthiest of the Ansar, so I will divide my wealth into two halves (for you)." Source: Sahih Bukhari — hadith 3780'},
       ],
     },
 

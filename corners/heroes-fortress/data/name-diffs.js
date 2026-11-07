@@ -489,8 +489,8 @@ HISN.nameDiffs = {
    }
   ],
   "diff": {
-   "ar": "المعنيانِ متقاربان؛ فالعظيمُ تملأُ عظمتُه القلوبَ هيبةً، والكبيرُ يصغُرُ أمامَه كلُّ شيء، وذكرَ بعضُ العلماءِ أنّ الكبرياءَ أكملُ من العظمة — ولذلك نقولُ في الأذانِ والصلاة «اللهُ أكبر»، وفي الحديثِ القدسيّ: «الكبرياءُ ردائي، والعظمةُ إزاري» (رواه مسلم).",
-   "en": "The two are close: Al-‘Azim’s magnificence fills hearts with awe, while before Al-Kabir everything becomes small; some scholars note that “kibriya’” (greatness) is even more complete than “‘azama” (magnificence) — that is why we say “Allahu Akbar” in the adhan and prayer, and in the hadith qudsi: “Greatness is My cloak and magnificence is My garment” (Muslim)."
+   "ar": "المعنيانِ متقاربان؛ فالعظيمُ تملأُ عظمتُه القلوبَ هيبةً، والكبيرُ يصغُرُ أمامَه كلُّ شيء، وذكرَ بعضُ العلماءِ أنّ الكبرياءَ أكملُ من العظمة — ولذلك نقولُ في الأذانِ والصلاة «اللهُ أكبر»، وفي الحديثِ القدسيّ: «الكبرياءُ ردائي، والعظمةُ إزاري» (رواه أبو داود، وأصلُه في صحيح مسلم).",
+   "en": "The two are close: Al-‘Azim’s magnificence fills hearts with awe, while before Al-Kabir everything becomes small; some scholars note that “kibriya’” (greatness) is even more complete than “‘azama” (magnificence) — that is why we say “Allahu Akbar” in the adhan and prayer, and in the hadith qudsi: “Greatness is My cloak and magnificence is My garment” (Abu Dawud; its origin is in Sahih Muslim)."
   }
  },
  "hadi": {

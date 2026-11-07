@@ -156,8 +156,8 @@ window.HOUSES.humility = {
         },
         { scene:'mosque', character:'🌟',
           text:{
-            ar: 'كانَ الصَّحابَةُ رضي الله عنهم إذا جاءَ النَّبيُّ ﷺ بَعدَ غِيابٍ قاموا له إجلالاً، فَكانَ يَنهاهُم ويَقول: «لا تَقوموا كَما تَقومُ الأَعاجِمُ يُعَظِّمُ بَعضُهُم بَعضاً!» وقالَ: «مَن أَحَبَّ أَن يَتَمَثَّلَ له النّاسُ قِياماً فَليَتَبَوَّأ مَقعَدَهُ مِنَ النّار.»<br><br>رَفَضَ ﷺ أَن يُعامَلَ مُعامَلَةَ الكُبَراء، مَعَ أَنَّهُ سَيِّدُ الأَنبياءِ وأَشرَفُ الخَلقِ عند الله. <b>كُلَّما عَظُمَ الإنسانُ عند اللهِ ازدادَ تَواضُعاً للنّاس.</b><br><br>فَيا وَلَدي، إذا جَلَستَ في صَفِّكَ ولَم يَنتَبِه أَحَدٌ لَك، فَتَذَكَّر: النَّبيُّ ﷺ — سَيِّدُ البَشَر — كانَ يَجلِسُ بَينَ أَصحابِهِ مِثلَهُم تَماماً.',
-            en: 'When the Companions رضي الله عنهم would stand in honor as the Prophet ﷺ approached after an absence, he would forbid them saying: "Do not stand as the Persians stand, honoring one another!" And he said: "Whoever loves that people stand for him, let him take his seat in Hellfire."<br><br>He ﷺ refused to be treated as royalty, even though he was the master of all prophets and the most honored of creation before Allah. <b>The greater a person is before Allah, the more humble he becomes toward people.</b><br><br>So dear child — when you sit in your row and no one notices you, remember: the Prophet ﷺ — master of all mankind — sat among his Companions just like them.'
+            ar: 'كانَ النَّبيُّ ﷺ لا يُحِبُّ أَن يَقومَ النّاسُ له تَعظيماً كَما يُفعَلُ لِلمُلوك، وقالَ: «مَن أَحَبَّ أَن يَتَمَثَّلَ له الرِّجالُ قِياماً فَليَتَبَوَّأ مَقعَدَهُ مِنَ النّار.» (رواه أبو داود والترمذي)<br><br>رَفَضَ ﷺ أَن يُعامَلَ مُعامَلَةَ الكُبَراء، مَعَ أَنَّهُ سَيِّدُ الأَنبياءِ وأَشرَفُ الخَلقِ عند الله. <b>كُلَّما عَظُمَ الإنسانُ عند اللهِ ازدادَ تَواضُعاً للنّاس.</b><br><br>فَيا وَلَدي، إذا جَلَستَ في صَفِّكَ ولَم يَنتَبِه أَحَدٌ لَك، فَتَذَكَّر: النَّبيُّ ﷺ — سَيِّدُ البَشَر — كانَ يَجلِسُ بَينَ أَصحابِهِ مِثلَهُم تَماماً.',
+            en: 'The Prophet ﷺ did not like people to stand for him in glorification the way people stand for kings, and he said: "Whoever loves that men stand up for him, let him take his seat in Hellfire." (Abu Dawud & at-Tirmidhi)<br><br>He ﷺ refused to be treated as royalty, even though he was the master of all prophets and the most honored of creation before Allah. <b>The greater a person is before Allah, the more humble he becomes toward people.</b><br><br>So dear child — when you sit in your row and no one notices you, remember: the Prophet ﷺ — master of all mankind — sat among his Companions just like them.'
           }
         },
       ],
@@ -189,7 +189,7 @@ window.HOUSES.humility = {
       ],
       didYouKnow: [
         {ar:'هذه الوَقائِعُ مَرويَّةٌ عن عائِشَةَ رضي الله عنها في صَحيحِ البُخاري وسُنَنِ ابنِ حِبَّان، وقد تَناوَلَها الموقِعُ: islamweb.net/ar/article/227773 (خُلُقُ التَّواضُع).', en:'These narrations from Aisha رضي الله عنها are recorded in Sahih al-Bukhari and Sunan Ibn Hibban, and are discussed at: islamweb.net/ar/article/227773 (Character of Humility).'},
-        {ar:'كانَ النَّبيُّ ﷺ رَغمَ عُلُوِّ مَقامِهِ يَمنَعُ أَصحابَهُ مِن القِيامِ له قائِلاً: «لا تَقوموا كَما تَقومُ الأَعاجِم» — رواه أحمد وأبو داود.', en:'Despite his lofty rank, the Prophet ﷺ forbade Companions from standing for him saying: "Do not stand as the Persians stand" — narrated by Ahmad and Abu Dawud.'},
+        {ar:'كانَ النَّبيُّ ﷺ رَغمَ عُلُوِّ مَقامِهِ يَكرَهُ أَن يُقامَ له تَعظيماً، وقالَ: «مَن أَحَبَّ أَن يَتَمَثَّلَ له الرِّجالُ قِياماً فَليَتَبَوَّأ مَقعَدَهُ مِنَ النّار» — رواه أبو داود (٥٢٢٩) والترمذي (٢٧٥٥)، وصحّحه الألباني.', en:'Despite his lofty rank, the Prophet ﷺ disliked people standing for him in glorification, and said: "Whoever loves that men stand up for him, let him take his seat in Hellfire" — narrated by Abu Dawud (5229) and at-Tirmidhi (2755), graded sahih by al-Albani.'},
       ],
     },
 

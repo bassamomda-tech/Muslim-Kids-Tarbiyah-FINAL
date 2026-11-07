@@ -121,7 +121,7 @@ window.WS.acts.push(
     {ic:'💭',ar:'كلما سمعتَ أحداً يشرب تذكَّر: أجرُها يصبُّ في صحيفتِك الآن.',en:'Each time someone drinks, remember: the reward is landing in your record right now.'}],
   little:{ar:'يضعُ الأكوابَ ويقلبُها ويبشِّرُ البيتَ: «في ناسٍ شربوا!».',en:'Little ones set the cups and announce: "People drank today!"'},
   big:{ar:'وسِّعْها: وعاءُ ماءٍ للقططِ والطيورِ بجانبِ برّادِ الناس.',en:'Expand it: a water bowl for cats and birds beside the people\'s cooler.'},
-  wisdom:{ar:'«أفضلُ الصدقةِ سقيُ الماء» — رواه ابن ماجه',en:'"The best charity is giving water to drink" — Ibn Majah'} },
+  wisdom:{ar:'سُئل ﷺ: أيُّ الصدقةِ أفضل؟ قال: «سقيُ الماء» — رواه ابن ماجه',en:'He ﷺ was asked: which charity is best? He said: "Giving water to drink" — Ibn Majah'} },
 
 { id:'toy-give', cat:'khair', ic:'🧸', corner:'heart', themes:['amal'],
   ar:'قافلة الألعاب المسافرة', en:'The Traveling Toy Caravan',
@@ -172,7 +172,7 @@ window.WS.acts.push(
     {ic:'🤲',ar:'قبلَ النوم: اطلبْ منهما الدعاءَ لك — دعوةُ الأجدادِ كنز.',en:'Before bed: ask them to make du\'a for you — a grandparent\'s prayer is treasure.'}],
   little:{ar:'مهمتانِ حلوتان: توصيلُ النظارةِ وحكايةٌ في حضنِ جدته.',en:'Two sweet jobs: fetching the glasses and a story in grandma\'s lap.'},
   big:{ar:'سجِّلْ حكاياتِ جدِّك صوتاً أو كتابةً — أنتَ مؤرخُ العائلةِ الآن.',en:'Record grandpa\'s stories in audio or writing — you\'re the family historian now.'},
-  wisdom:{ar:'«ما أكرمَ شابٌّ شيخاً لسنِّه إلا قيَّضَ اللهُ له من يكرمُه عند سنِّه» — رواه الترمذي',en:'"No youth honors an elder but Allah appoints one to honor him in his old age" — Tirmidhi'} },
+  wisdom:{ar:'«ليس منّا من لم يرحمْ صغيرَنا ويوقّرْ كبيرَنا» — رواه الترمذي',en:'"He is not one of us who does not show mercy to our young and respect to our elders" — Tirmidhi'} },
 
 { id:'dua-list', cat:'khair', ic:'📜', corner:'ibada', themes:['amal','tafakkur'],
   ar:'قائمة دعائي للناس', en:'My Du\'a List for People',
@@ -195,7 +195,7 @@ window.WS.acts.push(
   ar:'تحدي إفشاء السلام', en:'The Salam-Spreading Challenge',
   descAr:'أسبوعٌ كامل: كنْ أنتَ البادئَ بالسلامِ على كلِّ مَن تلقاه.',
   descEn:'A full week: be the first to greet everyone you meet with salam.',
-  whyAr:'«أفشوا السلامَ بينكم تحابّوا» — كلمةٌ واحدةٌ تفتحُ القلوبَ قبلَ الأبواب.',
+  whyAr:'«أفشوا السلامَ بينكم» تتحابّوا — كلمةٌ واحدةٌ تفتحُ القلوبَ قبلَ الأبواب.',
   whyEn:'"Spread salam among you and you will love one another" — one word opens hearts before doors.',
   tools:[{ic:'😊',ar:'ابتسامةٌ جاهزةٌ دائماً',en:'An always-ready smile'},{ic:'📋',ar:'عدّادُ سلامٍ يومي',en:'A daily salam counter'}],
   steps:[

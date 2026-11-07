@@ -667,8 +667,8 @@ HISN_STORIES.badrbattle = [
     "scene": "desert",
     "character": "⚔️",
     "text": {
-     "ar": "فلمّا رأيا أبا جهلٍ على فرسِه، <b>انقضّا عليه كالصقرَين</b> وضرباه حتى صرعاه! هذانِ الغلامانِ الصغيرانِ أسقطا <b>فرعونَ هذه الأمّة</b> الذي عجزَ عنه الكبار. فقال النبيُّ ﷺ: «الحمدُ لله الذي أعزَّ دينَه ونصرَ عبدَه».",
-     "en": "When they saw Abu Jahl on his horse, <b>they swooped on him like two falcons</b> and struck him down! These two young boys felled <b>the Pharaoh of this nation</b> whom grown men could not reach. The Prophet ﷺ said: “Praise be to Allah who honoured His religion and aided His servant.”"
+     "ar": "فلمّا رأيا أبا جهلٍ على فرسِه، <b>انقضّا عليه كالصقرَين</b> وضرباه حتى صرعاه! هذانِ الغلامانِ الصغيرانِ أسقطا <b>فرعونَ هذه الأمّة</b> الذي عجزَ عنه الكبار.",
+     "en": "When they saw Abu Jahl on his horse, <b>they swooped on him like two falcons</b> and struck him down! These two young boys felled <b>the Pharaoh of this nation</b> whom grown men could not reach."
     },
     "choice": {
      "q": {

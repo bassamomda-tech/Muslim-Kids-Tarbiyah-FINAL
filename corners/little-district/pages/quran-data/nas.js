@@ -44,8 +44,8 @@ window.SURAHS.nas = {
         why:{ar:'الثانيةُ من المُعوِّذتَين.', en:'The second of the two refuge-surahs.'} },
     ],
     virtues: [
-      { text:{ar:'إحدى <b>المُعوِّذتَين</b> اللتَينِ قال فيهما ﷺ: «ما تعوَّذَ مُتعوِّذٌ بمِثلِهنَّ».', en:'One of the <b>two refuge-surahs</b> of which the Prophet ﷺ said: “No one seeks refuge with anything like them.”'},
-        source:{ar:'صحيح مسلم — ٨١٤', en:'Sahih Muslim — 814'} },
+      { text:{ar:'إحدى <b>المُعوِّذتَين</b> اللتَينِ قال فيهما ﷺ: «ما تعوَّذَ مُتعوِّذٌ بمِثلِهما».', en:'One of the <b>two refuge-surahs</b> of which the Prophet ﷺ said: “No one seeks refuge with anything like them.”'},
+        source:{ar:'سنن أبي داود — ١٤٦٣ (صحيح)', en:'Abu Dawud — 1463 (sahih)'} },
       { text:{ar:'من رُقيةِ النبيِّ ﷺ كلَّ ليلةٍ مع الإخلاصِ والفلق.', en:'Part of the Prophet’s ﷺ nightly self-protection with Al-Ikhlas and Al-Falaq.'},
         source:{ar:'صحيح البُخاري — ٥٠١٧', en:'Sahih al-Bukhari — 5017'} },
     ],

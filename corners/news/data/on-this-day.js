@@ -884,8 +884,8 @@ window.MK_OTD = { H: [
    "Aishah (may Allah be pleased with her) said: \"We set out with the Messenger of Allah ﷺ with five days left of Dhul-Qa'dah\" (Bukhari and Muslim), around the 25th, in 10 AH. It was his only Hajj."
   ],
   "lesson": [
-   "قال النبي ﷺ: «خذوا عني مناسككم»؛ نتعلم ديننا من سنّته.",
-   "The Prophet ﷺ said, \"Learn your rites from me.\" We learn our religion from his Sunnah."
+   "قال النبي ﷺ: «لِتأخذوا مناسكَكم» (رواه مسلم)؛ نتعلم ديننا من سنّته.",
+   "The Prophet ﷺ said, \"Take your rites (from me)\" (Muslim). We learn our religion from his Sunnah."
   ],
   "link": "corners/heroes-fortress/chapter.html?id=farewell",
   "ce": 632

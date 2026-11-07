@@ -27,7 +27,7 @@ window.TARBIYAH.stages.push({
   ],
   rewards:[
     {ic:'🕌', t:{ar:'صلاةٌ تُكتَب لك في ميزانه',en:'A prayer that weighs in your scale'}, d:{ar:'كلُّ صلاةٍ يصلّيها بعد أن علّمتَه إيّاها صدقةٌ جاريةٌ في صحيفتك.',en:'Every prayer he prays after you taught him is ongoing charity in your record.'}},
-    {ic:'📖', t:{ar:'تاجُ الوقارِ لمن علّمه القرآن',en:'The crown of honour for teaching Qur\u2019an'}, d:{ar:'«مَن قرأ القرآنَ وعمل به أُلبِس والداه تاجًا يومَ القيامة».',en:'\u201cWhoever recites & acts by the Qur\u2019an, his parents are crowned on Judgment Day.\u201d'}},
+    {ic:'📖', t:{ar:'خيرُ الناسِ مَن علّم القرآن',en:'The best of people teach the Qur\u2019an'}, d:{ar:'«خيرُكم مَن تعلّم القرآنَ وعلّمه» (رواه البخاري).',en:'\u201cThe best of you are those who learn the Qur\u2019an and teach it.\u201d (Bukhari)'}},
     {ic:'💪', t:{ar:'طفلٌ كفؤٌ يثق بنفسه',en:'A capable, self-confident child'}, d:{ar:'الإتقانُ والمسؤوليّةُ يبنيان ثقةً تحميه من الانكسارِ والتبعيّة.',en:'Mastery & responsibility build a confidence that shields him from collapse & dependency.'}},
   ],
   needs:[

@@ -174,8 +174,8 @@ HISN_STORIES.musab = [
   ],
   "didYouKnow": [
    {
-    "ar": "قال النبيُّ ﷺ حين رأى مصعباً بثوبٍ مرقّعٍ بعدَ نعيمِه: «لقد رأيتُ مصعباً وما بمكّةَ أنعمُ من أبويه» — المصدر: صور من حياة الصحابة",
-    "en": "The Prophet ﷺ said, seeing Mus'ab in a patched garment after his luxury: \"I have seen Mus'ab, and there were no parents in Makkah more giving to their son than his\" — Source: Suwar min Hayat as-Sahaba"
+    "ar": "تركَ مصعبٌ نعيمَ مكّةَ لله، حتى قال عبدُ الرحمنِ بنُ عوفٍ رضي الله عنه: «قُتِلَ مصعبُ بنُ عُمَيرٍ وهو خيرٌ منّي، كُفِّنَ في بُردةٍ إن غُطِّيَ رأسُه بدتْ رجلاه» — المصدر: صحيح البخاري (١٢٧٥)",
+    "en": "Mus'ab left the luxury of Makkah for Allah, so that 'Abd ar-Rahman ibn 'Awf said: \"Mus'ab ibn 'Umayr was killed, and he was better than me; he was shrouded in a cloak that, if it covered his head, his feet showed\" — Source: Sahih al-Bukhari (1275)"
    },
    {
     "ar": "أسلمَ مصعبٌ في دارِ الأرقمِ سرّاً خوفاً من أمِّه وقومِه — المصدر: البداية والنهاية",

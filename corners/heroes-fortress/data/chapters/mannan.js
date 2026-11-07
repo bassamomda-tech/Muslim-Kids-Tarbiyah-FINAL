@@ -14,8 +14,8 @@ HISN.chapters.mannan = {
   },
   knowledge: {
     didYouKnow: {
-      ar: 'سمعَ النبيُّ ﷺ رجلًا يدعو: «…<b>يا منّانُ، يا بديعَ السماواتِ والأرض</b>، يا ذا الجلالِ والإكرام…» فقال: «لقد دعا اللهَ باسمِه العظيم» (رواه أبو داود والنسائي، صحيح). وقال ﷺ: <b>«إنّ اللهَ محسنٌ يحبُّ الإحسان»</b> (رواه الطبراني وصحّحه الألباني).',
-      en: 'The Prophet ﷺ heard a man supplicating: "…<b>O Mannan, O Originator of the heavens and the earth</b>, O Possessor of Majesty and Honor…" and said: "He has called upon Allah by His great name" (Abu Dawud and an-Nasa’i, sahih). And he ﷺ said: <b>"Allah is Muhsin and loves ihsan (excellence)"</b> (at-Tabarani, graded sahih by al-Albani).',
+      ar: 'سمعَ النبيُّ ﷺ رجلًا يدعو: «…لا إلهَ إلّا أنتَ <b>المنّانُ، بديعُ السماواتِ والأرض</b>، يا ذا الجلالِ والإكرام…» فقال: «لقد دعا اللهَ باسمِه العظيم» (رواه أبو داود والنسائي، صحيح). وقال ﷺ: <b>«إنّ اللهَ محسنٌ يحبُّ الإحسان»</b> (رواه الطبراني وصحّحه الألباني).',
+      en: 'The Prophet ﷺ heard a man supplicating: "…there is no god but You, <b>al-Mannan, Originator of the heavens and the earth</b>, O Possessor of Majesty and Honor…" and said: "He has called upon Allah by His great name" (Abu Dawud and an-Nasa’i, sahih). And he ﷺ said: <b>"Allah is Muhsin and loves ihsan (excellence)"</b> (at-Tabarani, graded sahih by al-Albani).',
     },
     who: {
       ar: '«المنّانُ» هو <b>المتفضّلُ بعطاياه على عبادِه</b>، يُنعِمُ عليهم ابتداءً قبلَ أن يسألوه، ومِن أعظمِ مِنَنِه أن هدانا للإيمانِ وأرسلَ إلينا محمّدًا ﷺ. و«المحسِنُ» هو <b>الكثيرُ الإحسانِ والنفع</b>، الذي أحسنَ كلَّ شيءٍ خلقَه، ولا ينقطعُ إحسانُه عن خَلقِه، ويحبُّ من عبادِه أن يُحسِنوا. والاسمانِ يلتقيان: فمنُّ اللهِ <b>فضلٌ وعطاء</b>، وإحسانُه <b>إتقانٌ ورحمة</b>. أمّا نحن فلا نَمُنُّ على الناسِ بما أعطيناهم، لأنّ المنَّ بالعطيّةِ يُفسِدُ الصدقة، بل نُحسِنُ ونَسكُت، ونتقنُ أعمالَنا كلَّها.',

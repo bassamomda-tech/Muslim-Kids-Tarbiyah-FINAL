@@ -13,8 +13,8 @@ window.HOUSES.generosity = {
   /* ───── ROOM 1: Knowledge ───── */
   knowledge: {
     didYouKnow: {
-      title: { ar:'هل تَعلَمُ أنَّ الكَريمَ قَريبٌ مِن اللهِ والنّاسِ والجَنَّة؟', en:'Did you know the generous person is close to Allah, people, and Paradise?' },
-      sub:   { ar:'«الكَريمُ قَريبٌ مِن اللهِ، قَريبٌ مِن الجَنَّة، قَريبٌ مِن النّاسِ، بَعيدٌ مِن النَّار، والبَخيلُ بَعيدٌ مِن اللهِ، بَعيدٌ مِن الجَنَّة، بَعيدٌ مِن النَّاسِ» — رَواهُ التِّرمِذي', en:'"The generous person is close to Allah, close to Paradise, close to people, and far from the Fire — while the miser is far from Allah, far from Paradise, and far from people" — at-Tirmidhi' },
+      title: { ar:'هل تَعلَمُ أنَّ النَّبيَّ ﷺ كانَ أَجوَدَ النّاس؟', en:'Did you know the Prophet ﷺ was the most generous of people?' },
+      sub:   { ar:'«كانَ رَسولُ اللهِ ﷺ أَجوَدَ النّاسِ، وكانَ أَجوَدُ ما يَكونُ في رَمَضان» — رَواهُ البُخاري', en:'"The Messenger of Allah ﷺ was the most generous of people, and he was most generous in Ramadan" — al-Bukhari' },
     },
     definition: {
       linguistic: {
@@ -59,9 +59,9 @@ window.HOUSES.generosity = {
       { text: { ar:'«مَا مِن يَومٍ يُصبِحُ العِبادُ فيهِ إلّا وَمَلَكانِ يَنزِلانِ، فَيَقولُ أَحَدُهُما: اللَّهُمَّ أَعطِ مُنفِقاً خَلَفاً، ويَقولُ الآخَرُ: اللَّهُمَّ أَعطِ مُمسِكاً تَلَفاً»',
                 en:'"Every morning two angels descend, one saying: O Allah, give the one who spends a replacement — and the other saying: O Allah, give the one who withholds destruction."' },
         source: { ar:'[رواه البخاري — حديث ١٤٤٢]', en:'[Sahih al-Bukhari — 1442]' } },
-      { text: { ar:'«السَّخِيُّ قَريبٌ مِن اللهِ، قَريبٌ مِن الجَنَّة، قَريبٌ مِن النّاسِ، بَعيدٌ مِن النّارِ، والبَخيلُ بَعيدٌ مِن اللهِ، بَعيدٌ مِن الجَنَّة، بَعيدٌ مِن النّاس، قَريبٌ مِن النّار»',
-                en:'"The generous person is near to Allah, near to Paradise, near to people, and far from the Fire — while the miser is far from Allah, far from Paradise, far from people, and near the Fire."' },
-        source: { ar:'[رواه التِّرمِذي — حديث ١٩٦١]', en:'[at-Tirmidhi — 1961]' } },
+      { text: { ar:'«ما سُئِلَ رَسولُ اللهِ ﷺ شَيئاً قَطُّ فَقالَ: لا»',
+                en:'"The Messenger of Allah ﷺ was never asked for anything and said: No."' },
+        source: { ar:'[رواه مسلم — حديث ٢٣١١]', en:'[Sahih Muslim — 2311]' } },
     ],
     benefits: [
       { ar:'🌸 يُضاعِفُ اللهُ العَطاءَ سَبعَمِئَةِ ضِعف وأَكثَر',  en:'🌸 Allah multiplies giving seven-hundred times and more' },
@@ -450,9 +450,9 @@ window.HOUSES.generosity = {
       { text: { ar:'«مَا مِن يَومٍ يُصبِحُ العِبادُ فيهِ إلّا وَمَلَكانِ يَنزِلانِ فَيَقولُ أَحَدُهُما: اللَّهُمَّ أَعطِ مُنفِقاً خَلَفاً، ويَقولُ الآخَرُ: اللَّهُمَّ أَعطِ مُمسِكاً تَلَفاً»',
                 en:'"Every morning two angels descend — one says: O Allah, give the one who spends a replacement — the other says: O Allah, give the one who withholds destruction."' },
         ref: { ar:'[رواه البخاري — حديث ١٤٤٢]', en:'[Sahih al-Bukhari — 1442]' } },
-      { text: { ar:'«السَّخِيُّ قَريبٌ مِن اللهِ، قَريبٌ مِن الجَنَّة، قَريبٌ مِن النّاسِ، بَعيدٌ مِن النّار»',
-                en:'"The generous person is near to Allah, near to Paradise, near to people, and far from the Fire."' },
-        ref: { ar:'[رواه التِّرمِذي — حديث ١٩٦١]', en:'[at-Tirmidhi — 1961]' } },
+      { text: { ar:'«ما نَقَصَت صَدَقَةٌ مِن مال»',
+                en:'"Charity never decreases wealth."' },
+        ref: { ar:'[رواه مسلم — حديث ٢٥٨٨]', en:'[Sahih Muslim — 2588]' } },
     ],
     pledge: {
       title: { ar:'عَهدُ الكَرَم', en:'Pledge of Generosity' },
@@ -490,8 +490,8 @@ window.HOUSES.generosity = {
               { q:{ar:'الكَرَمُ يُنقِصُ المالَ ولا يُضاعِفُه', en:'Generosity decreases wealth and does not multiply it'}, t:false },
               { q:{ar:'صَدَقَةُ السِّرِّ أَعظَمُ أَجراً مِن صَدَقَةِ العَلَن', en:'Secret charity has a greater reward than public charity'}, t:true },
               { q:{ar:'الابتِسامَةُ في وَجهِ أَخيكَ صَدَقَة', en:'A smile in your brother\'s face is charity'}, t:true },
-              { q:{ar:'البَخيلُ قَريبٌ مِن الله', en:'The miser is close to Allah'}, t:false },
-              { q:{ar:'الكَريمُ قَريبٌ مِن الجَنَّةِ والنّاسِ والله', en:'The generous person is close to Paradise, people, and Allah'}, t:true },
+              { q:{ar:'كانَ النَّبيُّ ﷺ إذا سُئِلَ شَيئاً قالَ: لا', en:'When the Prophet ﷺ was asked for something, he would say no'}, t:false },
+              { q:{ar:'كانَ النَّبيُّ ﷺ أَجوَدَ النّاسِ، وأَجوَدَ ما يَكونُ في رَمَضان', en:'The Prophet ﷺ was the most generous of people, and most generous in Ramadan'}, t:true },
             ]
           },
           { kind:'mcq', points:30,

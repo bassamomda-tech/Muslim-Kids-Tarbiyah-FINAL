@@ -404,8 +404,8 @@ HISN_STORIES.salman = [
     "en": "Digging the trench was the first time the Arabs used it in war, and it was the reason for Madinah's salvation — Source: Al-Bidaya wa an-Nihaya"
    },
    {
-    "ar": "تنازعَ المهاجرونَ والأنصارُ على سلمانَ كلٌّ يقول: منّا، فقال النبيُّ ﷺ: «سلمانُ منّا أهلَ البيت» — المصدر: صور من حياة الصحابة",
-    "en": "The Muhajirun and Ansar each claimed Salman as their own, so the Prophet ﷺ said: \"Salman is one of us, the People of the House\" — Source: Suwar min Hayat as-Sahaba"
+    "ar": "وضعَ النبيُّ ﷺ يدَه على سلمانَ وقال: «لو كان الإيمانُ عند الثُّريّا لنالَه رجالٌ أو رجلٌ من هؤلاء» — المصدر: صحيح البخاري (٤٨٩٧)",
+    "en": "The Prophet ﷺ placed his hand on Salman and said: \"Even if faith were at the Pleiades, men — or a man — from these people would reach it\" — Source: Sahih al-Bukhari (4897)"
    }
   ]
  },

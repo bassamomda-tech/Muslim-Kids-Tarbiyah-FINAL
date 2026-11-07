@@ -17,7 +17,7 @@ window.HOUSES.eating = {
   knowledge: {
     didYouKnow: {
       title: { ar:'هل تَعلَمُ أنَّ آداب الطعام تَطرُدُ الشَّيطان؟', en:'Did you know that eating manners drive away Shaytaan?' },
-      sub:   { ar:'«إذا أَكَلَ أَحَدُكُم فَليُسَمِّ اللهَ، فَإِن نَسِيَ أن يُسَمِّيَ في أوَّلِه فَليَقُل: بِسمِ اللهِ في أوَّلِهِ وآخِرِه» — رواه أبو داود والتِّرمِذي', en:'"When one of you eats, let him say Bismillah. If he forgets at the start, let him say: In the name of Allah at its beginning and end." — Abu Dawud & Tirmidhi' },
+      sub:   { ar:'«إذا أَكَلَ أَحَدُكُم فَليَذكُرِ اسمَ اللهِ تَعالى، فَإِن نَسِيَ أن يَذكُرَ اسمَ اللهِ تَعالى في أوَّلِه فَليَقُل: بِسمِ اللهِ أوَّلَهُ وآخِرَه» — رواه أبو داود والتِّرمِذي', en:'"When one of you eats, let him say Bismillah. If he forgets at the start, let him say: In the name of Allah at its beginning and end." — Abu Dawud & Tirmidhi' },
     },
     definition: {
       linguistic: {
@@ -237,8 +237,8 @@ window.HOUSES.eating = {
         {
           scene:'mosque', character:'🧔',
           text: {
-            ar: 'قالَ النَّبيُّ ﷺ: «يا أبا هُرَيرَة! اذهَب إلى أهلِ الصُّفَّةِ فَادعُهُم لي». أهلُ الصُّفَّةِ كانوا أضيافَ الإسلام — فُقراءُ لا بُيوتَ لَهُم. وَساءَ أَبا هُرَيرَةَ هذا الأَمرُ في قَلبِه — كانَ جائِعاً جِدَّاً! لَكِنَّهُ لَم يَكُن مِن طَاعَةِ اللهِ ورَسولِهِ بُدّ. فَمَضى يُسرِعُ الخُطى إلى الصُّفَّة، ودَعا إِخوَتَهُ الفُقَراءَ جَميعاً، وجاؤوا يَزدَحِمونَ حتَّى مَلَأوا البَيت!',
-            en: 'The Prophet ﷺ said: "O Abu Hurayrah! Go to the People of the Suffah and call them to me." The People of the Suffah were the guests of Islam — the poor who had no homes. This request grieved Abu Hurayrah in his heart — he was so very hungry! But there was no escaping obedience to Allah and His Messenger. He hurried with quick steps to the Suffah, called all his poor brothers, and they came crowding in until the house was full!',
+            ar: 'قالَ النَّبيُّ ﷺ: «يا أبا هِرّ! الحَق إلى أهلِ الصُّفَّةِ فَادعُهُم لي» (رواه البخاري). أهلُ الصُّفَّةِ كانوا أضيافَ الإسلام — فُقراءُ لا بُيوتَ لَهُم. وَساءَ أَبا هُرَيرَةَ هذا الأَمرُ في قَلبِه — كانَ جائِعاً جِدَّاً! لَكِنَّهُ لَم يَكُن مِن طَاعَةِ اللهِ ورَسولِهِ بُدّ. فَمَضى يُسرِعُ الخُطى إلى الصُّفَّة، ودَعا إِخوَتَهُ الفُقَراءَ جَميعاً، وجاؤوا يَزدَحِمونَ حتَّى مَلَأوا البَيت!',
+            en: 'The Prophet ﷺ said: "O Abu Hirr! Go to the People of the Suffah and call them to me" (Bukhari). The People of the Suffah were the guests of Islam — the poor who had no homes. This request grieved Abu Hurayrah in his heart — he was so very hungry! But there was no escaping obedience to Allah and His Messenger. He hurried with quick steps to the Suffah, called all his poor brothers, and they came crowding in until the house was full!',
           }
         },
         {

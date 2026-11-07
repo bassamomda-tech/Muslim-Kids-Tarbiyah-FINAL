@@ -657,7 +657,7 @@ window.HOUSES.goodthink = {
             items: [
               { q:{ar:'ما الآيَةُ الَّتي تَأمُرُنا بِحُسنِ الظَّنِّ بِالمُؤمِنين؟', en:'Which verse commands us to think well of believers?'},
                 opts:[
-                  { t:{ar:'﴿لَوْلَا إِذْ سَمِعْتُمُوهُ ظَنَّ الْمُؤْمِنُونَ بِأَنفُسِهِمْ خَيْرًا﴾', en:'"Why did the believers not think well of each other?"'}, c:true },
+                  { t:{ar:'﴿لَوْلَا إِذْ سَمِعْتُمُوهُ ظَنَّ الْمُؤْمِنُونَ وَالْمُؤْمِنَاتُ بِأَنفُسِهِمْ خَيْرًا﴾', en:'"Why did the believers not think well of each other?"'}, c:true },
                   { t:{ar:'﴿إنَّ اللهَ مَعَ الصّابِرين﴾', en:'"Indeed Allah is with the patient"'}, c:false },
                   { t:{ar:'﴿وَاللهُ يَعلَمُ وأنتُم لا تَعلَمون﴾', en:'"Allah knows and you do not know"'}, c:false },
                 ] },

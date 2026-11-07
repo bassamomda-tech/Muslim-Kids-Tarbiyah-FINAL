@@ -39,8 +39,8 @@ window.SURAHS.falaq = {
         why:{ar:'إحدى المُعوِّذتَين اللتَينِ يُستعاذُ بهما.', en:'One of the two surahs of seeking refuge.'} },
     ],
     virtues: [
-      { text:{ar:'المُعوِّذتانِ <b>خيرُ ما يُتعوَّذُ به</b>؛ قال ﷺ: «ما تعوَّذَ المُتعوِّذونَ بمِثلِهنَّ».', en:'The two refuge-surahs are <b>the best protection one can seek</b>: “No one seeks refuge with anything like them.”'},
-        source:{ar:'صحيح مسلم — ٨١٤', en:'Sahih Muslim — 814'} },
+      { text:{ar:'المُعوِّذتانِ <b>خيرُ ما يُتعوَّذُ به</b>؛ قال ﷺ: «يا عُقبةُ، تعوَّذْ بهما، فما تعوَّذَ مُتعوِّذٌ بمِثلِهما».', en:'The two refuge-surahs are <b>the best protection one can seek</b>: “O ‘Uqbah, seek refuge with them, for no one has sought refuge with anything like them.”'},
+        source:{ar:'سنن أبي داود — ١٤٦٣ (وصحّحه الألباني)', en:'Sunan Abi Dawud — 1463 (graded sahih by al-Albani)'} },
       { text:{ar:'كان النبيُّ ﷺ يَقرؤهما كلَّ ليلةٍ ويَنفُثُ في كفَّيهِ ويَمسَحُ بهما جسدَه.', en:'The Prophet ﷺ recited them each night, blew into his palms, and wiped over his body.'},
         source:{ar:'صحيح البُخاري — ٥٠١٧', en:'Sahih al-Bukhari — 5017'} },
       { text:{ar:'أمرَ ﷺ عُقبةَ أن يَقرأهما <b>دُبُرَ كلِّ صلاة</b>.', en:'The Prophet ﷺ ordered ‘Uqbah to recite them <b>after every prayer</b>.'},

@@ -14,7 +14,7 @@
     statBuilt:   { ar: "القطع المركّبة", en: "Parts placed" },
     statMosques: { ar: "مساجد بنيتها", en: "Mosques built" },
     sideTitle:   { ar: "عمارة المساجد", en: "Mosque architecture" },
-    sideQuote:   { ar: "«مَن بنى مسجداً لله بنى الله له بيتاً في الجنة»", en: "\"Whoever builds a mosque for Allah, Allah builds for him a house in Paradise\"" },
+    sideQuote:   { ar: "«مَن بنى مسجداً لله بنى الله له في الجنة مثلَه»", en: "\"Whoever builds a mosque for Allah, Allah builds for him the like of it in Paradise\"" },
     sideSrc:     { ar: "متفق عليه", en: "Agreed upon" },
     tip:         { ar: "للمسجد أجزاء: القاعدة، وقاعة الصلاة، والمحراب (اتجاه القبلة)، والقبّة، والمئذنة التي يُرفع منها الأذان. كل مسجدٍ عمارةٌ من عمائر الإسلام.", en: "A mosque has parts: the base, prayer hall, mihrab (qibla direction), dome, and minaret from which the adhan is called. Each mosque is a landmark of Islam." },
     winEyebrow:  { ar: "اكتمل البناء", en: "Construction complete" },

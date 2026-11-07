@@ -248,8 +248,8 @@ HISN_STORIES.abudharr = [
   "scene": "desert",
   "character": "🚶",
   "title": {
-   "ar": "«يمشي وحدَه»: أبو ذرٍّ في طريقِ تبوك",
-   "en": "\"He Walks Alone\": Abu Dharr on the Road to Tabuk"
+   "ar": "أبو ذرٍّ في طريقِ تبوك",
+   "en": "Abu Dharr on the Road to Tabuk"
   },
   "pages": [
       {"scene":"desert","character":"☀️","text":{"ar":"كانت غزوةُ <b>تبوك</b> في السنةِ التاسعةِ للهجرة، في وقتٍ اشتدَّ فيه الحرُّ، وطابتْ فيه الثمار، والطريقُ إلى الشمالِ طويلٌ بعيد. وقد سمّى اللهُ تلك الأيّامَ <b>ساعةَ العُسرة</b>، فقال: <b>﴿ لَّقَد تَّابَ اللَّهُ عَلَى النَّبِيِّ وَالْمُهَاجِرِينَ وَالْأَنصَارِ الَّذِينَ اتَّبَعُوهُ فِي سَاعَةِ الْعُسْرَةِ ﴾</b>.<br><br>وكان الماءُ قليلاً والزادُ قليلاً، والناسُ يحبّونَ أن يبقَوا في ظلالِ بساتينِهم. وتخلّفَ المنافقونَ بالأعذارِ الكاذبة، أمّا المؤمنونَ الصادقونَ فخرجوا مع رسولِ اللهِ ﷺ رغمَ التعب.","en":"The expedition of <b>Tabuk</b> was in the ninth year after the Hijrah, at a time when the heat was intense, the fruit was ripe, and the road north was long and far. Allah called those days <b>“the hour of hardship,”</b> saying: <b>﴿ “Allah has turned in mercy to the Prophet, the Emigrants and the Ansar who followed him in the hour of hardship” ﴾</b>.<br><br>Water and provisions were scarce, and people would have loved to stay in the shade of their orchards. The hypocrites stayed behind with false excuses, but the truthful believers went out with the Messenger of Allah ﷺ despite the hardship."}},
@@ -257,8 +257,8 @@ HISN_STORIES.abudharr = [
     "scene": "desert",
     "character": "🏜️",
     "text": {
-     "ar": "<b>يُروى</b> في كتبِ السيرةِ أنّ النبيَّ ﷺ لمّا خرجَ إلى <b>تبوكَ</b> في الحرِّ الشديدِ والسفرِ الطويل، تأخّرَ <b>أبو ذرٍّ</b> عن الجيش، لأنّ بعيرَه كان ضعيفاً هزيلاً لا يقدرُ على المشي! فلمّا رأى أبو ذرٍّ أنّ بعيرَه لن يلحقَ بالقوم، لم يرجعْ إلى بيتِه، بل <b>أخذَ متاعَه فحملَه على ظهرِه</b>، وانطلقَ ماشياً على قدمَيه يتبعُ أثرَ النبيِّ ﷺ في الصحراء.<br><br>ونزلَ النبيُّ ﷺ في بعضِ الطريق، فنظرَ رجلٌ من المسلمينَ فقال: يا رسولَ الله، هذا رجلٌ يمشي على الطريقِ وحدَه! فقال النبيُّ ﷺ: <b>«كُنْ أبا ذرّ»</b>. فلمّا اقتربَ الرجلُ وتأمّلوه قالوا: يا رسولَ الله، <b>هو واللهِ أبو ذرّ!</b><br><br>فقال النبيُّ ﷺ: <b>«رحمَ اللهُ أبا ذرّ، يمشي وحدَه، ويموتُ وحدَه، ويُبعَثُ وحدَه»</b>. وهذه القصّةُ — <b>وإن كان العلماءُ قد تكلّموا في إسنادِها</b> — تُذكَرُ لتُصوِّرَ لنا عزيمةَ أبي ذرّ: لم يجعلْ ضعفَ بعيرِه عذراً، بل مشى حتى لحقَ بالنبيِّ ﷺ. فالمؤمنُ <b>لا يبحثُ عن الأعذار</b> حين يُدعى إلى الخير.",
-     "en": "<b>It is narrated</b> in the books of Sira that when the Prophet ﷺ set out for <b>Tabuk</b> in fierce heat on a long journey, <b>Abu Dharr</b> fell behind the army because his camel was weak and thin and could not keep walking! When Abu Dharr saw his camel would never catch up, he did not go home. Instead he <b>took his belongings, carried them on his back</b>, and set off on foot, following the Prophet's ﷺ tracks through the desert.<br><br>The Prophet ﷺ stopped somewhere along the way, and a Muslim looked out and said: O Messenger of Allah, there is a man walking along the road alone! The Prophet ﷺ said: <b>\"Let it be Abu Dharr.\"</b> When the man came closer and they looked carefully, they said: O Messenger of Allah, <b>by Allah, it is Abu Dharr!</b><br><br>The Prophet ﷺ said: <b>\"May Allah have mercy on Abu Dharr: he walks alone, he will die alone, and he will be resurrected alone.\"</b> This story — <b>though scholars have spoken about its chain</b> — is told to picture Abu Dharr's determination: he did not make his weak camel an excuse, but walked until he caught up with the Prophet ﷺ. A believer <b>does not look for excuses</b> when called to good."
+     "ar": "<b>يُروى</b> في كتبِ السيرةِ أنّ النبيَّ ﷺ لمّا خرجَ إلى <b>تبوكَ</b> في الحرِّ الشديدِ والسفرِ الطويل، تأخّرَ <b>أبو ذرٍّ</b> عن الجيش، لأنّ بعيرَه كان ضعيفاً هزيلاً لا يقدرُ على المشي! فلمّا رأى أبو ذرٍّ أنّ بعيرَه لن يلحقَ بالقوم، لم يرجعْ إلى بيتِه، بل <b>أخذَ متاعَه فحملَه على ظهرِه</b>، وانطلقَ ماشياً على قدمَيه يتبعُ أثرَ النبيِّ ﷺ في الصحراء.<br><br>ونزلَ النبيُّ ﷺ في بعضِ الطريق، فنظرَ رجلٌ من المسلمينَ فقال: يا رسولَ الله، هذا رجلٌ يمشي على الطريقِ وحدَه! فلمّا اقتربَ الرجلُ وتأمّلوه قالوا: يا رسولَ الله، <b>هو واللهِ أبو ذرّ!</b> لقد لحقَ بهم ماشياً في ذلك الحرِّ الشديد.<br><br>وهذه القصّةُ — <b>وإن كان العلماءُ قد ضعّفوا إسنادَها، فلا نَنسُبُ ما فيها من كلامٍ إلى النبيِّ ﷺ</b> — تُذكَرُ لتُصوِّرَ لنا عزيمةَ أبي ذرّ: لم يجعلْ ضعفَ بعيرِه عذراً، بل مشى حتى لحقَ بالنبيِّ ﷺ. فالمؤمنُ <b>لا يبحثُ عن الأعذار</b> حين يُدعى إلى الخير.",
+     "en": "<b>It is narrated</b> in the books of Sira that when the Prophet ﷺ set out for <b>Tabuk</b> in fierce heat on a long journey, <b>Abu Dharr</b> fell behind the army because his camel was weak and thin and could not keep walking! When Abu Dharr saw his camel would never catch up, he did not go home. Instead he <b>took his belongings, carried them on his back</b>, and set off on foot, following the Prophet's ﷺ tracks through the desert.<br><br>The Prophet ﷺ stopped somewhere along the way, and a Muslim looked out and said: O Messenger of Allah, there is a man walking along the road alone! When the man came closer and they looked carefully, they said: O Messenger of Allah, <b>by Allah, it is Abu Dharr!</b> He had caught up with them on foot in that fierce heat.<br><br>This story — <b>though scholars graded its chain weak, so we do not attribute the words in it to the Prophet ﷺ</b> — is told to picture Abu Dharr's determination: he did not make his weak camel an excuse, but walked until he caught up with the Prophet ﷺ. A believer <b>does not look for excuses</b> when called to good."
     },
     "choice": {
      "q": {
@@ -336,28 +336,28 @@ HISN_STORIES.abudharr = [
    },
    {
     "q": {
-     "ar": "ماذا قال النبيُّ ﷺ حين رأوا رجلاً يمشي وحدَه؟",
-     "en": "What did the Prophet ﷺ say when they saw a man walking alone?"
+     "ar": "مَن كان الرجلُ الذي رأوه يمشي وحدَه في الصحراء؟",
+     "en": "Who was the man they saw walking alone in the desert?"
     },
     "opts": [
      {
       "t": {
-       "ar": "لا تنتظروه",
-       "en": "Don't wait for him"
+       "ar": "أحدُ المنافقين",
+       "en": "One of the hypocrites"
       },
       "c": false
      },
      {
       "t": {
-       "ar": "«كُنْ أبا ذرّ»",
-       "en": "\"Let it be Abu Dharr\""
+       "ar": "أبو ذرّ",
+       "en": "Abu Dharr"
       },
       "c": true
      },
      {
       "t": {
-       "ar": "ارجعوا إليه",
-       "en": "Go back to him"
+       "ar": "رجلٌ من قريش",
+       "en": "A man from Quraysh"
       },
       "c": false
      }
@@ -416,8 +416,8 @@ HISN_STORIES.abudharr = [
   ],
   "didYouKnow": [
    {
-    "ar": "قصّةُ «يمشي وحدَه» يرويها ابنُ إسحاقَ في السيرةِ والحاكمُ في المستدرك، وقد تكلّمَ العلماءُ في إسنادِها: ضعّفها الألبانيُّ (السلسلة الضعيفة ٥٥٣١) والأرناؤوطُ في تخريجِ سير أعلام النبلاء — المصدر: الدرر السنية",
-    "en": "The \"he walks alone\" story is reported by Ibn Ishaq in the Sira and al-Hakim in al-Mustadrak; scholars have spoken about its chain — al-Albani graded it weak (as-Silsila ad-Da'ifa 5531), as did al-Arna'ut in his notes on Siyar A'lam an-Nubala' — Source: Dorar as-Saniyya"
+    "ar": "قصّةُ مشيِ أبي ذرٍّ وحدَه إلى تبوك يرويها ابنُ إسحاقَ في السيرةِ والحاكمُ في المستدرك، وقد تكلّمَ العلماءُ في إسنادِها: ضعّفها الألبانيُّ (السلسلة الضعيفة ٥٥٣١) والأرناؤوطُ في تخريجِ سير أعلام النبلاء — المصدر: الدرر السنية",
+    "en": "The story of Abu Dharr walking alone to Tabuk is reported by Ibn Ishaq in the Sira and al-Hakim in al-Mustadrak; scholars have spoken about its chain — al-Albani graded it weak (as-Silsila ad-Da'ifa 5531), as did al-Arna'ut in his notes on Siyar A'lam an-Nubala' — Source: Dorar as-Saniyya"
    },
    {
     "ar": "غزوةُ تبوكَ كانت في السنةِ التاسعةِ للهجرة، في وقتِ حرٍّ شديدٍ وسفرٍ بعيد، وسمّاها اللهُ «ساعةَ العُسرة» — المصدر: البداية والنهاية",

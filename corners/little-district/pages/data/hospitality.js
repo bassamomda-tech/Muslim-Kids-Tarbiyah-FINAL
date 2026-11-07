@@ -66,8 +66,8 @@ window.HOUSES.hospitality = {
       { text: { ar:'«طَعامُ الاثنَينِ كافِي الثَّلاثَة، وطَعامُ الثَّلاثَةِ كافِي الأَربَعَة»',
                 en:'"Food for two is enough for three, and food for three is enough for four."' },
         source: { ar:'[رواه البُخارِيُّ — حديث ٥٣٩٢]', en:'[Sahih Bukhari — 5392]' } },
-      { text: { ar:'«الضِّيافَةُ ثَلاثَةُ أَيّام، فَما زادَ فَهوَ صَدَقَة»',
-                en:'"Hospitality is three days; whatever exceeds that is charity."' },
+      { text: { ar:'«الضِّيافَةُ ثَلاثَةُ أَيّام، فَما بَعدَ ذلِكَ فَهوَ صَدَقَة»',
+                en:'"Hospitality is three days; whatever is after that is charity."' },
         source: { ar:'[رواه البُخارِيُّ — حديث ٦١٣٥]', en:'[Sahih Bukhari — 6135]' } },
     ],
     benefits: [
@@ -252,7 +252,7 @@ window.HOUSES.hospitality = {
       ],
       didYouKnow: [
         {ar:'هذهِ القِصَّةُ في صَحيحِ البُخاري — حديث ٣٧٩٨، عَن أَنَسِ بنِ مالِكٍ رضي الله عنه. وقَد نَزَلَت فيها الآيَةُ الكَريمَة مِن سورَةِ الحَشر. المَصدَر: islamweb.net/ar/article/235651', en:'This story is in Sahih Bukhari — hadith 3798, narrated by Anas ibn Malik رضي الله عنه. The noble verse from Surah Al-Hashr was revealed about this incident. Source: islamweb.net/ar/article/235651'},
-        {ar:'أبو طَلحَةَ رضي الله عنه هو زَيدُ بنُ سَهلٍ الأَنصاري — مِن أَعظَمِ الصَّحابَة كَرَماً وشَجاعَةً. قالَ عَنهُ النَّبيُّ ﷺ: «صَوتُ أبي طَلحَةَ في الجَيشِ خَيرٌ مِن أَلفِ رَجُل». المَصدَر: سير أعلام النبلاء — الذهبي — ج٢ ص٢٩٠', en:'Abu Talha رضي الله عنه was Zayd ibn Sahl al-Ansari — one of the greatest Companions in generosity and courage. The Prophet ﷺ said of him: "Abu Talha\'s voice in the army is better than a thousand men." Source: Siyar A\'lam an-Nubala\' — Al-Dhahabi — vol. 2 p. 290'}
+        {ar:'أبو طَلحَةَ رضي الله عنه هو زَيدُ بنُ سَهلٍ الأَنصاري — مِن أَعظَمِ الصَّحابَة كَرَماً وشَجاعَةً. قالَ عَنهُ النَّبيُّ ﷺ: «لَصَوتُ أبي طَلحَةَ في الجَيشِ خَيرٌ مِن فِئَة» (أي: مِن جَماعةٍ مِنَ المُقاتِلين). المَصدَر: مسند أحمد، وصَحَّحَهُ الأَلبانيّ — وانظُر: سير أعلام النبلاء — الذهبي', en:'Abu Talha رضي الله عنه was Zayd ibn Sahl al-Ansari — one of the greatest Companions in generosity and courage. The Prophet ﷺ said of him: "Abu Talha\'s voice in the army is better than a whole company (of fighters)." Source: Musnad Ahmad, authenticated by al-Albani — see also Siyar A\'lam an-Nubala\' — Al-Dhahabi'}
       ],
     },
 
@@ -401,7 +401,7 @@ window.HOUSES.hospitality = {
       didYouKnow: [
         {ar:'ذَكَرَ اللهُ مَحَبَّةَ الأَنصارِ لِلمُهاجِرينَ في القُرآنِ الكَريم بِقَولِهِ: ﴿ وَالَّذِينَ تَبَوَّءُوا الدَّارَ وَالْإِيمَانَ مِن قَبْلِهِمْ يُحِبُّونَ مَنْ هَاجَرَ إِلَيْهِمْ ﴾ [الحشر: ٩]. المَصدَر: dorar.net', en:'Allah mentioned the Ansar\'s love for the Migrants in the Quran: ﴿ "Those who had settled in Madinah and accepted faith before them, they love those who migrated to them" ﴾ [Al-Hashr: 9]. Source: dorar.net'},
         {ar:'آخى النَّبيُّ ﷺ بَينَ كُلِّ مُهاجِرٍ وأَنصاري — فَكانَت المُؤاخاةُ مِن أَعظَمِ أَسبابِ نَجاحِ الهِجرَة. المَصدَر: islamweb.net/ar/article/220939', en:'The Prophet ﷺ established brotherhood between every Migrant and an Ansari — this brotherhood was one of the greatest reasons for the Hijra\'s success. Source: islamweb.net/ar/article/220939'},
-        {ar:'قالَ النَّبيُّ ﷺ عَن الأَنصار: «لَو سَلَكَ النّاسُ وادِياً وسَلَكَ الأَنصارُ شِعباً لَسَلَكتُ شِعبَ الأَنصار» — هذا هو شُكرُهُ ﷺ لَهُم على كَرَمِهِم. المَصدَر: صحيح البخاري — حديث ٣٧٨٦', en:'The Prophet ﷺ said of the Ansar: "If people walked in a valley and the Ansar walked in a mountain pass, I would walk in the Ansar\'s mountain pass" — this was his ﷺ gratitude to them for their generosity. Source: Sahih Bukhari — hadith 3786'}
+        {ar:'قالَ النَّبيُّ ﷺ عَن الأَنصار: «لَو سَلَكَ النّاسُ وادِياً وسَلَكَ الأَنصارُ شِعباً لَسَلَكتُ شِعبَ الأَنصار» — هذا هو شُكرُهُ ﷺ لَهُم على كَرَمِهِم. المَصدَر: صحيح مسلم — حديث ١٠٥٩ (ونَحوُهُ في البخاري ٤٣٣٤)', en:'The Prophet ﷺ said of the Ansar: "If people walked in a valley and the Ansar walked in a mountain pass, I would walk in the Ansar\'s mountain pass" — this was his ﷺ gratitude to them for their generosity. Source: Sahih Muslim — hadith 1059 (similar in Bukhari 4334)'}
       ],
     },
   ],
@@ -418,9 +418,9 @@ window.HOUSES.hospitality = {
       { text: { ar:'﴿ فَرَاغَ إِلَى أَهْلِهِ فَجَاءَ بِعِجْلٍ سَمِينٍ ﴾',
                 en:'"He slipped away to his household and brought a fat roasted calf."' },
         ref: { ar:'[سورة الذاريات: ٢٦]', en:'[Surah Adh-Dhariyat: 26]' } },
-      { text: { ar:'﴿ وَإِن كَانُوا مِن قَبْلِهِ لَفِي ضَلَالٍ مُّبِينٍ * فَقَرَّبَهُ إِلَيْهِمْ قَالَ أَلَا تَأْكُلُونَ ﴾',
-                en:'"He brought it close to them and said: Will you not eat?"' },
-        ref: { ar:'[سورة الذاريات: ٢٧]', en:'[Surah Adh-Dhariyat: 27]' } },
+      { text: { ar:'﴿ فَرَاغَ إِلَىٰ أَهْلِهِ فَجَاءَ بِعِجْلٍ سَمِينٍ * فَقَرَّبَهُ إِلَيْهِمْ قَالَ أَلَا تَأْكُلُونَ ﴾',
+                en:'"Then he went quietly to his family and brought a fat calf, and placed it near them; he said: Will you not eat?"' },
+        ref: { ar:'[سورة الذاريات: ٢٦–٢٧]', en:'[Surah Adh-Dhariyat: 26–27]' } },
     ],
     hadiths: [
       { text: { ar:'«مَن كانَ يُؤمِنُ بِاللهِ واليَومِ الآخِرِ فَليُكرِم ضَيفَهُ»',
@@ -429,9 +429,9 @@ window.HOUSES.hospitality = {
       { text: { ar:'«طَعامُ الاثنَينِ كافِي الثَّلاثَة، وطَعامُ الثَّلاثَةِ كافِي الأَربَعَة»',
                 en:'"Food for two is enough for three, and food for three is enough for four."' },
         ref: { ar:'[رواه البُخاريُّ — حديث ٥٣٩٢]', en:'[Sahih Bukhari — 5392]' } },
-      { text: { ar:'«لا خَيرَ فيمَن لا يُضيف»',
-                en:'"There is no good in the one who does not offer hospitality."' },
-        ref: { ar:'[رواه أحمد — وصَحَّحَهُ الأَلبانيُّ]', en:'[Reported by Ahmad — authenticated by al-Albani]' } },
+      { text: { ar:'«أيُّ الإسلامِ خَير؟ قال: تُطعِمُ الطَّعام، وتَقرَأُ السَّلامَ على مَن عَرَفتَ ومَن لم تَعرِف»',
+                en:'"Which Islam is best? He said: That you feed people, and greet with salam those you know and those you do not know."' },
+        ref: { ar:'[متفق عليه — البخاري ١٢، مسلم ٣٩]', en:'[Bukhari 12 & Muslim 39]' } },
     ],
     pledge: {
       title: { ar:'عَهدُ الضِّيافَة', en:'Pledge of Hospitality' },

@@ -206,7 +206,7 @@ window.WS.acts.push(
     {ic:'🌴',ar:'اصبرْ: النخلةُ تكبرُ ببطء... لكنها تعيشُ مئةَ عام!',en:'Be patient: palms grow slowly... but live a hundred years!'}],
   little:{ar:'ينقعُ النوى ويفحصُ القطنَ باحثاً عن «الذيل الأبيض».',en:'Little ones soak pits and check the cotton for the "white tail".'},
   big:{ar:'اقرأْ: لماذا شبَّهَ النبيُّ ﷺ المؤمنَ بالنخلة؟ اكتبْ ٣ أوجهِ شبه.',en:'Read: why did the Prophet ﷺ liken the believer to a palm? List 3 parallels.'},
-  wisdom:{ar:'«مثلُ المؤمنِ كمثلِ النخلة» — متفق عليه',en:'"The believer is like the palm tree" — Agreed upon'} },
+  wisdom:{ar:'«إنَّ مِنَ الشَّجَرِ شَجَرةً لا يَسقُطُ وَرَقُها، وإنَّها مَثَلُ المُسلِم» — متفق عليه',en:'"Among the trees is a tree whose leaves do not fall, and it is like the Muslim" — Agreed upon'} },
 
 { id:'compost', cat:'garden', ic:'🍂', corner:'academy', themes:['ilm','amal'],
   ar:'مصنع السماد الصغير', en:'The Little Compost Factory',

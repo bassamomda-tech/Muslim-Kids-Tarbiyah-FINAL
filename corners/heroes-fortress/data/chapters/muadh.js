@@ -29,8 +29,8 @@ HISN.chapters.muadh = {
  },
  "knowledge": {
   "didYouKnow": {
-   "ar": "قال النبيُّ ﷺ: «أعلمُ أمّتي بالحلالِ والحرامِ معاذُ بنُ جبل» — وقال له: «يا معاذُ، إنّي أُحبُّك».",
-   "en": "The Prophet ﷺ said: \"The most knowledgeable of my nation in the lawful and unlawful is Mu'adh ibn Jabal,\" and told him: \"O Mu'adh, I love you.\""
+   "ar": "قال النبيُّ ﷺ: «أعلمُ أمّتي بالحلالِ والحرامِ معاذُ بنُ جبل» — وقال له: «يا معاذُ، واللهِ إنّي لأُحبُّك».",
+   "en": "The Prophet ﷺ said: \"The most knowledgeable of my nation in the lawful and unlawful is Mu'adh ibn Jabal,\" and told him: \"O Mu'adh, by Allah, I love you.\""
   },
   "who": {
    "ar": "هو <b>معاذُ بنُ جبل</b> الأنصاريُّ الخزرجي، أسلمَ شابّاً صغيراً في بيعةِ العقبة. كان <b>أعلمَ الأمّةِ بالحلالِ والحرام</b>، فقيهاً ذكيّاً. أحبَّه النبيُّ ﷺ وأرسله <b>معلّماً وقاضياً إلى اليمن</b>، وأوصاه بوصايا عظيمة. كان جواداً كريماً حسنَ الخُلُق، يُعلِّمُ الناسَ دينَهم بالحكمةِ واللين، ومن أئمّةِ العلمِ في الأمّة.",

@@ -77,7 +77,7 @@ HISN.chapters.ismail = {
   ],
 
   memorize: {
-    hadith:{ ar:'«مَن بنى مسجدًا لله بنى اللهُ له بيتًا في الجنّة»', en:"\"Whoever builds a mosque for Allah, Allah builds for him a house in Paradise.\"", ref:{ ar:'[رواه البخاري ٤٥٠، ومسلم ٥٣٣ · صحيح]', en:'[Bukhari 450 & Muslim 533 · sahih]' } },
+    hadith:{ ar:'«مَن بنى مسجدًا لله بنى اللهُ له في الجنّة مثلَه»', en:"\"Whoever builds a mosque for Allah, Allah builds for him the like of it in Paradise.\"", ref:{ ar:'[رواه البخاري ٤٥٠، ومسلم ٥٣٣ · صحيح]', en:'[Bukhari 450 & Muslim 533 · sahih]' } },
     ayah:{ ar:'﴿ رَبَّنَا تَقَبَّلْ مِنَّا ۖ إِنَّكَ أَنتَ السَّمِيعُ الْعَلِيمُ ﴾', ref:{ ar:'البقرة ١٢٧', en:'Al-Baqarah 127' } },
     dua: { ar:'رَبِّ هَبْ لِي مِنَ الصَّالِحِينَ', ref:{ ar:'دعاءُ إبراهيم — الصافّات ١٠٠', en:'Ibrahim\'s du\'a — As-Saffat 100' } },
     pledge:{

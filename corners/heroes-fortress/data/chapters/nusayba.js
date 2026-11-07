@@ -12,8 +12,8 @@ HISN.chapters.nusayba = {
     en:'Hello, hero! Nusayba bint Ka\u2019b (Umm Ammara), a brave woman who defended the Prophet ﷺ with her own body at Uhud when many fled. Come, let\'s learn from her courage and sacrifice.' },
 
   knowledge:{
-    didYouKnow:{ ar:'قال النبيُّ ﷺ يومَ أُحُد: «ما التفتُّ يميناً ولا شمالاً إلّا وأنا أراها تُقاتِلُ دوني» — يعني نسيبةَ بنتَ كعب.',
-      en:'On the day of Uhud the Prophet ﷺ said: "I did not turn right or left but I saw her fighting in my defense" — meaning Nusayba bint Ka\u2019b.' },
+    didYouKnow:{ ar:'يومَ أُحُد ثبتَتْ نسيبةُ بنتُ كعبٍ قريباً من النبيِّ ﷺ تدافعُ عنه حين تفرّقَ كثيرٌ من الناس، وجُرِحَتْ جراحاً كثيرة.',
+      en:'On the day of Uhud, Nusayba bint Ka\u2019b stood firm close to the Prophet ﷺ, defending him when many people scattered, and she was wounded many times.' },
     who:{ ar:'هي <b>نسيبةُ بنتُ كعب</b> الأنصاريّة، المعروفةُ بـ<b>أمِّ عمارة</b>. شهِدتْ <b>بيعةَ العقبة</b>، وخرجتْ يومَ <b>أُحُد</b> تسقي الجرحى وتداوي المصابين. فلمّا اشتدّ القتالُ وانكشفَ المسلمونَ عن النبيِّ ﷺ، <b>ثبتتْ نسيبةُ تُدافِعُ عنه بالسيفِ والقوس</b> حتى أصابها أكثرُ من اثنَي عشرَ جرحاً! حمتِ النبيَّ ﷺ بجسدِها، فأثنى عليها وعلى مكانتِها. شاركتْ بعدَ ذلك في عدّةِ مشاهدَ ومعاركَ منها <b>اليمامةُ</b> ضدَّ مسيلمةَ الكذّاب، فكانت من أشجعِ نساءِ الإسلام.',
       en:'She is <b>Nusayba bint Ka\u2019b</b> al-Ansariyya, known as <b>Umm Ammara</b>. She witnessed the <b>Pledge of Aqaba</b>, and went out on the day of <b>Uhud</b> giving water to the wounded and tending the injured. When the fighting intensified and the Muslims were drawn away from the Prophet ﷺ, <b>Nusayba stood firm defending him with sword and bow</b> until she took more than twelve wounds! She shielded the Prophet ﷺ with her body, and he praised her and her standing. She later took part in several battles, including <b>Yamama</b> against Musaylima the liar, becoming one of the bravest women of Islam.' },
     facts:[

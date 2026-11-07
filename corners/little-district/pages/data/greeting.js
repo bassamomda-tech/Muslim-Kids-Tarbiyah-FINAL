@@ -28,7 +28,7 @@
    ───────────────────────────────────────────────────────────────
    KEY HADITHS:
      «أَفشوا السَّلامَ بَينَكُم» — رواه مسلم ٥٤
-     «أَفضَلُ الإسلامِ أن تَقرَأَ السَّلامَ...» — رواه البخاري ١٢
+     «أَيُّ الإسلامِ خَير؟ قال: تُطعِمُ الطَّعامَ، وتَقرَأُ السَّلامَ...» — رواه البخاري ١٢
    ═══════════════════════════════════════════════════════════════ */
 
 window.HOUSES.greeting = {
@@ -95,8 +95,8 @@ window.HOUSES.greeting = {
       { text: { ar:'«لا تَدخُلونَ الجَنَّةَ حَتَّى تُؤمِنوا، ولا تُؤمِنوا حَتَّى تَحابُّوا، أَوَلا أَدُلُّكُم على شَيءٍ إذا فَعَلتُموهُ تَحابَبتُم؟ أَفشوا السَّلامَ بَينَكُم»',
                 en:'"You will not enter Paradise until you believe, and you will not believe until you love one another. Shall I tell you something that — if you do it — you will love one another? Spread peace among yourselves."' },
         source: { ar:'[رواه مسلم — حديث ٥٤]', en:'[Sahih Muslim — 54]' } },
-      { text: { ar:'«أَفضَلُ الإسلامِ أن تُطعِمَ الطَّعامَ وأن تَقرَأَ السَّلامَ على مَن عَرَفتَ وعَلى مَن لَم تَعرِف»',
-                en:'"The best of Islam is to feed others and to greet with salam those you know and those you do not know."' },
+      { text: { ar:'سُئِلَ النَّبيُّ ﷺ: أَيُّ الإسلامِ خَير؟ قال: «تُطعِمُ الطَّعامَ، وتَقرَأُ السَّلامَ على مَن عَرَفتَ ومَن لَم تَعرِف»',
+                en:'The Prophet ﷺ was asked: Which Islam is best? He said: "Feed others, and greet with salam those you know and those you do not know."' },
         source: { ar:'[رواه البخاري — حديث ١٢]', en:'[Sahih Bukhari — 12]' } },
     ],
     benefits: [
@@ -106,7 +106,7 @@ window.HOUSES.greeting = {
       { ar:'🛡️ يَمحو الأَحقادَ ويُزيلُ الشَّحناءَ ويُعيدُ الأُلفَةَ بَينَ المُتَخاصِمِين', en:'🛡️ It erases grudges, removes animosity, and restores affection between those who quarreled' },
       { ar:'🤲 يُعَلِّمُكَ التَّواضُعَ — مَن يَبدَأُ بالسَّلامِ أَقرَبُ إلى اللهِ وأَعلى مَنزِلَة', en:'🤲 It teaches humility — whoever starts with salam is closest to Allah and highest in rank' },
       { ar:'🌍 يُعَرِّفُكَ بِالغُرَباءِ ويَبنيَ جُسورًا بَينَ القُلوبِ التي لَم تَلتَقِ بَعد', en:'🌍 It introduces you to strangers and builds bridges between hearts that haven\'t yet met' },
-      { ar:'🏆 هوَ مِن أَفضَلِ الإسلامِ — «أَفضَلُ الإسلامِ أن تَقرَأَ السَّلامَ على مَن عَرَفتَ ومَن لَم تَعرِف»', en:'🏆 It is among the best of Islam — "The best of Islam is to give salam to those you know and those you don\'t know"' },
+      { ar:'🏆 هوَ مِن أَفضَلِ الإسلامِ — سُئِلَ النَّبيُّ ﷺ: أَيُّ الإسلامِ خَير؟ فَذَكَرَ: «وتَقرَأُ السَّلامَ على مَن عَرَفتَ ومَن لَم تَعرِف»', en:'🏆 It is among the best of Islam — asked which Islam is best, the Prophet ﷺ mentioned: "and give salam to those you know and those you don\'t know"' },
     ],
     obstacles: [
       { ar:'الكِبرياءُ والتَّعالي على الآخَرين — مَن يَرى نَفسَهُ أَكبَرَ لا يُبادِرُ بالسَّلام',     en:'Pride and looking down on others — whoever considers himself superior doesn\'t initiate salam' },
@@ -244,7 +244,7 @@ window.HOUSES.greeting = {
           choice:{ q:{ar:'لِماذا كانَ ابنُ عُمَر يُسَلِّمُ على مَن لا يَعرِفُهُم في السُّوق؟',en:'Why did Ibn \'Umar greet strangers in the market?'},
             opts:[
               { t:{ar:'لأنَّهُ كانَ يُريدُ أن يَشتَريَ مِنهُم',en:'Because he wanted to buy from them'},c:false,exp:{ar:'لا — بَل كانَ يَخرُجُ خُصوصًا مِن أَجلِ السَّلام لِلحُصولِ على الأَجر!',en:'No — he went out specifically for salam to gain its great reward!'} },
-              { t:{ar:'اتِّباعًا لِسُنَّةِ النَّبيِّ ﷺ وطَلَبًا للأَجر',en:'Following the Prophet\'s ﷺ sunnah and seeking its reward'},c:true,exp:{ar:'نَعَم! «أَفضَلُ الإسلامِ أن تَقرَأَ السَّلامَ على مَن عَرَفتَ ومَن لَم تَعرِف» — رواهُ البُخاري.',en:'Yes! "The best of Islam is to give salam to those you know and those you don\'t know" — Bukhari.'} },
+              { t:{ar:'اتِّباعًا لِسُنَّةِ النَّبيِّ ﷺ وطَلَبًا للأَجر',en:'Following the Prophet\'s ﷺ sunnah and seeking its reward'},c:true,exp:{ar:'نَعَم! سُئِلَ النَّبيُّ ﷺ: أَيُّ الإسلامِ خَير؟ فَذَكَرَ: «وتَقرَأُ السَّلامَ على مَن عَرَفتَ ومَن لَم تَعرِف» — رواهُ البُخاري.',en:'Yes! Asked which Islam is best, the Prophet ﷺ mentioned: "and give salam to those you know and those you don\'t know" — Bukhari.'} },
               { t:{ar:'لِيُبَيِّنَ أنَّهُ صَحابِيٌّ مَشهور',en:'To show that he is a famous companion'},c:false,exp:{ar:'لا — كانَ ابنُ عُمَر مِن أَكثَرِ الصَّحابَةِ تَواضُعًا ولَم يَكُن يُحِبُّ أن يَتَمَيَّز.',en:'No — Ibn \'Umar was among the most humble companions and did not like to stand out.'} },
             ] } },
         { scene:'madinah', character:'👴',
@@ -447,8 +447,8 @@ window.HOUSES.greeting = {
       { text: { ar:'«لا تَدخُلونَ الجَنَّةَ حَتَّى تُؤمِنوا، ولا تُؤمِنوا حَتَّى تَحابُّوا، أَوَلا أَدُلُّكُم على شَيءٍ إذا فَعَلتُموهُ تَحابَبتُم؟ أَفشوا السَّلامَ بَينَكُم»',
                 en:'"You will not enter Paradise until you believe, and you will not believe until you love one another. Shall I guide you to something — that if you do it — you will love one another? Spread salam between you."' },
         ref: { ar:'[رواه مسلم — حديث ٥٤]', en:'[Sahih Muslim — 54]' } },
-      { text: { ar:'«أَفضَلُ الإسلامِ أن تُطعِمَ الطَّعامَ وأن تَقرَأَ السَّلامَ على مَن عَرَفتَ وعَلى مَن لَم تَعرِف»',
-                en:'"The best of Islam is to feed others and to give salam to those you know and those you do not know."' },
+      { text: { ar:'سُئِلَ النَّبيُّ ﷺ: أَيُّ الإسلامِ خَير؟ قال: «تُطعِمُ الطَّعامَ، وتَقرَأُ السَّلامَ على مَن عَرَفتَ ومَن لَم تَعرِف»',
+                en:'The Prophet ﷺ was asked: Which Islam is best? He said: "Feed others, and give salam to those you know and those you do not know."' },
         ref: { ar:'[رواه البخاري — حديث ١٢]', en:'[Sahih Bukhari — 12]' } },
     ],
     pledge: {

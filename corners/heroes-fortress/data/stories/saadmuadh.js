@@ -242,8 +242,8 @@ HISN_STORIES.saadmuadh = [
     "scene": "peaks",
     "character": "🛡️",
     "text": {
-     "ar": "وبعدها حكمَ النبيُّ ﷺ أن يحكمَ سعدٌ في <b>بني قُريظةَ</b> الذين خانوا العهد، فحكمَ فيهم بالعدل، فقال النبيُّ ﷺ: <b>«لقد حكمتَ بحكمِ اللهِ من فوقِ سبعِ سماوات»</b>. ثمّ انفجرَ جُرحُه فماتَ شهيداً. فقال النبيُّ ﷺ: <b>«اهتزّ عرشُ الرحمنِ لموتِ سعدِ بنِ معاذ»</b>، وشيّعَ جنازتَه سبعونَ ألفَ مَلَك!",
-     "en": "Then the Prophet ﷺ appointed Sa’d to judge <b>Banu Qurayza</b> who had broken their pact, and he judged them with justice. The Prophet ﷺ said: <b>\"You have judged by the ruling of Allah from above the seven heavens.\"</b> Then his wound burst open and he died a martyr. The Prophet ﷺ said: <b>\"The Throne of the Most Merciful shook at the death of Sa’d ibn Mu’adh,\"</b> and seventy thousand angels attended his funeral!"
+     "ar": "وبعدها حكمَ النبيُّ ﷺ أن يحكمَ سعدٌ في <b>بني قُريظةَ</b> الذين خانوا العهد، فحكمَ فيهم بالعدل، فقال النبيُّ ﷺ: <b>«لقد حكمتَ فيهم بحكمِ الله»</b> (متفق عليه). ثمّ انفجرَ جُرحُه فماتَ شهيداً. فقال النبيُّ ﷺ: <b>«اهتزّ عرشُ الرحمنِ لموتِ سعدِ بنِ معاذ»</b>، وشيّعَ جنازتَه سبعونَ ألفَ مَلَك!",
+     "en": "Then the Prophet ﷺ appointed Sa’d to judge <b>Banu Qurayza</b> who had broken their pact, and he judged them with justice. The Prophet ﷺ said: <b>\"You have judged among them by the ruling of Allah\"</b> (Bukhari & Muslim). Then his wound burst open and he died a martyr. The Prophet ﷺ said: <b>\"The Throne of the Most Merciful shook at the death of Sa’d ibn Mu’adh,\"</b> and seventy thousand angels attended his funeral!"
     },
     "choice": {
      "q": {
@@ -342,8 +342,8 @@ HISN_STORIES.saadmuadh = [
     "opts": [
      {
       "t": {
-       "ar": "حكمُ اللهِ من فوقِ سبعِ سماوات",
-       "en": "Allah's ruling from above seven heavens"
+       "ar": "حكمَ فيهم بحكمِ الله",
+       "en": "He judged among them by Allah's ruling"
       },
       "c": true
      },

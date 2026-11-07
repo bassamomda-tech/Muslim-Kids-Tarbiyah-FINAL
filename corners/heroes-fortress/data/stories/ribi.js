@@ -412,8 +412,8 @@ HISN_STORIES.ribi = [
     "en": "Rib’i’s words \"Allah has sent us to bring whoever He wills from the worship of people to the worship of Allah\" are recorded by Ibn Kathir under the events of 14 AH — Source: al-Bidaya wa an-Nihaya"
    },
    {
-    "ar": "قال النبيُّ ﷺ: «مثلُ المؤمنينَ في توادِّهم وتراحمِهم وتعاطفِهم مثلُ الجسد» — المصدر: صحيح البخاري ومسلم",
-    "en": "The Prophet ﷺ said: \"The believers in their mutual love, mercy and compassion are like one body\" — Source: Sahih al-Bukhari & Muslim"
+    "ar": "قال النبيُّ ﷺ: «مثلُ المؤمنينَ في توادِّهم وتراحمِهم وتعاطفِهم مثلُ الجسد» — المصدر: صحيح مسلم (٢٥٨٦)",
+    "en": "The Prophet ﷺ said: \"The believers in their mutual love, mercy and compassion are like one body\" — Source: Sahih Muslim (2586)"
    }
   ]
  },

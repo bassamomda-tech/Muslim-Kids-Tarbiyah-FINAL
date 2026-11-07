@@ -25,8 +25,8 @@ HISN.chapters.public = {
    "en": "The Prophet ﷺ climbed Mount Safa and called the tribes of Quraysh to warn them, and they said: We have never known you to lie — for they knew his honesty."
   },
   "who": {
-   "ar": "بعدَ ثلاثِ سنوات، أمرَ اللهُ نبيَّه ﷺ أن <b>يجهرَ بالدعوة</b>. فصعدَ <b>جبلَ الصفا</b> ونادى قبائلَ قريش، وسألهم: «لو أخبرتُكم أنّ خيلاً وراءَ الجبلِ تريدُ أن تُغيرَ عليكم، أكنتم مُصدِّقيّ؟» قالوا: نعم، ما جرّبنا عليك كذباً. فدعاهم إلى <b>عبادةِ اللهِ وحدَه</b>. فآذاه قومُه وعلى رأسِهم عمُّه <b>أبو لهب</b>، لكنّه ﷺ صبرَ وثبت.",
-   "en": "After three years, Allah commanded His Prophet ﷺ to <b>call openly</b>. He climbed <b>Mount Safa</b> and called the tribes of Quraysh, asking: \"If I told you horsemen behind the mountain meant to attack you, would you believe me?\" They said: Yes, we have never known you to lie. He called them to <b>worship Allah alone</b>. His people harmed him, led by his uncle <b>Abu Lahab</b>, but he ﷺ was patient and steadfast."
+   "ar": "بعدَ ثلاثِ سنوات، أمرَ اللهُ نبيَّه ﷺ أن <b>يجهرَ بالدعوة</b>. فصعدَ <b>جبلَ الصفا</b> ونادى قبائلَ قريش، وسألهم: «أرأيتَكم لو أخبرتُكم أنّ خيلاً بالوادي تريدُ أن تُغيرَ عليكم، أكنتم مُصدِّقيّ؟» قالوا: نعم، ما جرّبنا عليك كذباً. فدعاهم إلى <b>عبادةِ اللهِ وحدَه</b>. فآذاه قومُه وعلى رأسِهم عمُّه <b>أبو لهب</b>، لكنّه ﷺ صبرَ وثبت.",
+   "en": "After three years, Allah commanded His Prophet ﷺ to <b>call openly</b>. He climbed <b>Mount Safa</b> and called the tribes of Quraysh, asking: \"Tell me, if I told you that horsemen in the valley meant to raid you, would you believe me?\" They said: Yes, we have never known you to lie. He called them to <b>worship Allah alone</b>. His people harmed him, led by his uncle <b>Abu Lahab</b>, but he ﷺ was patient and steadfast."
   },
   "facts": [
    {
@@ -121,8 +121,8 @@ HISN.chapters.public = {
   {
    "scene": "call",
    "text": {
-    "ar": "سألهم ﷺ: «لو أخبرتُكم أنّ خيلاً وراءَ هذا الجبلِ تريدُ أن تُهاجمَكم، أكنتم مُصدِّقيّ؟» قالوا جميعاً: <b>نعم، ما جرّبنا عليك إلا صدقاً</b>. فقال: «فإنّي نذيرٌ لكم بين يدي عذابٍ شديد — قولوا لا إله إلا الله تُفلِحوا». دعاهم إلى توحيدِ اللهِ وتركِ الأصنام.",
-    "en": "He ﷺ asked them: \"If I told you horsemen behind this mountain meant to attack you, would you believe me?\" They all said: <b>Yes, we have only ever known you to be truthful</b>. He said: \"Then I am a warner to you before a severe punishment — say there is no god but Allah and you will succeed.\" He called them to Allah's oneness and abandoning idols."
+    "ar": "سألهم ﷺ: «أرأيتَكم لو أخبرتُكم أنّ خيلاً بالوادي تريدُ أن تُغيرَ عليكم، أكنتم مُصدِّقيّ؟» قالوا جميعاً: <b>نعم، ما جرّبنا عليك إلا صدقاً</b>. فقال: «فإنّي نذيرٌ لكم بين يدي عذابٍ شديد». دعاهم إلى توحيدِ اللهِ وتركِ الأصنام.",
+    "en": "He ﷺ asked them: \"Tell me, if I told you that horsemen in the valley meant to raid you, would you believe me?\" They all said: <b>Yes, we have only ever known you to be truthful</b>. He said: \"Then I am a warner to you before a severe punishment.\" He called them to Allah's oneness and abandoning idols."
    },
    "choice": {
     "q": {

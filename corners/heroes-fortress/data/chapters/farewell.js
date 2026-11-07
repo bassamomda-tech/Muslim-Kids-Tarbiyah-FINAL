@@ -277,7 +277,7 @@ HISN.chapters.farewell = {
   },
   "hadith": {
    "ar": "«تركتُ فيكم ما إن تمسّكتم به لن تَضِلّوا بعدي: كتابَ اللهِ وسُنَّتي»",
-   "ref": { "ar": "[رواه مسلم ١٢١٨ والحاكم · صحيح]", "en": "[Muslim 1218 & al-Hakim · sahih]" }
+   "ref": { "ar": "[رواه الحاكم وصحّحه الألباني · وأصلُه في مسلم ١٢١٨ بلفظ «كتابَ الله»]", "en": "[al-Hakim, graded sahih by al-Albani · its origin is in Muslim 1218 with the words \"the Book of Allah\"]" }
   },
   "dua": {
    "ar": "اللّهُمَّ ثبّتني على دينِك واجعلني من المتّبعينَ لسنّةِ نبيِّك",

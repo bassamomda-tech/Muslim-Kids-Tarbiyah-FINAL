@@ -46,7 +46,7 @@ window.BEHAVIOR.problems.push({
   evidences:[
     {type:'hadith', text:{ar:'«إنّما الطاعةُ في المعروف».',en:'\u201cObedience is only in what is right.\u201d'}, ref:{ar:'متفق عليه',en:'Bukhari & Muslim'}, note:{ar:'نربّي على طاعةٍ واعيةٍ لا عمياء.',en:'We raise on conscious, not blind, obedience.'}},
     {type:'athar', text:{ar:'قال أنسٌ: خدمتُ النبيَّ ﷺ عشرَ سنينَ فما قال لي «أُفٍّ» قطّ، ولا «لِمَ فعلتَ؟» ولا «ألا فعلت؟».',en:'Anas said: I served the Prophet ﷺ ten years & he never said \u201cugh\u201d to me, nor \u201cwhy did you?\u201d nor \u201cwhy didn\u2019t you?\u201d'}, ref:{ar:'متفق عليه',en:'Bukhari & Muslim'}, note:{ar:'الطاعةُ تُنتزَع بالرفقِ لا بالقهر.',en:'Obedience is drawn by gentleness, not force.'}},
-    {type:'hadith', text:{ar:'«ما كان الرفقُ في شيءٍ إلّا زانه، وما نُزِع من شيءٍ إلّا شانه».',en:'\u201cGentleness is not in anything but it beautifies it, nor removed from anything but it disgraces it.\u201d'}, ref:{ar:'مسلم',en:'Muslim'}, note:{ar:'الرفقُ مفتاحُ القلوبِ والطاعة.',en:'Gentleness is the key to hearts & obedience.'}},
+    {type:'hadith', text:{ar:'«إنّ الرفقَ لا يكونُ في شيءٍ إلّا زانه، ولا يُنزَعُ من شيءٍ إلّا شانه».',en:'\u201cGentleness is not in anything but it beautifies it, nor removed from anything but it disgraces it.\u201d'}, ref:{ar:'مسلم',en:'Muslim'}, note:{ar:'الرفقُ مفتاحُ القلوبِ والطاعة.',en:'Gentleness is the key to hearts & obedience.'}},
   ],
   examples:[
     {title:{ar:'يتجاهل الأمرَ تمامًا',en:'He completely ignores the command'}, scene:{ar:'تطلب منه إغلاقَ التلفازِ من بعيدٍ خمسَ مرّاتٍ وهو لا يستجيب.',en:'You ask him to turn off the TV from afar five times & he doesn\u2019t respond.'},

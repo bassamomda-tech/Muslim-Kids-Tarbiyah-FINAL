@@ -196,8 +196,8 @@ HISN_STORIES.ikrima = [
   ],
   "didYouKnow": [
    {
-    "ar": "خبرُ عكرمةَ في البحرِ وقولُه «لئن لم يُنجني في البحرِ إلا الإخلاص...» — المصدر: سنن النسائي وسنن أبي داود (عن سعدِ بنِ أبي وقّاص)",
-    "en": "Ikrimah's story at sea and his words \"If nothing saves me at sea except sincere devotion...\" — Source: Sunan an-Nasa'i and Sunan Abi Dawud (from Sa'd ibn Abi Waqqas)"
+    "ar": "خبرُ عكرمةَ في البحرِ وقولُه «لئن لم يُنجِني من البحرِ إلا الإخلاص...» — المصدر: سنن النسائي وسنن أبي داود (عن سعدِ بنِ أبي وقّاص)",
+    "en": "Ikrimah's story at sea and his words \"If nothing saves me from the sea except sincere devotion...\" — Source: Sunan an-Nasa'i and Sunan Abi Dawud (from Sa'd ibn Abi Waqqas)"
    },
    {
     "ar": "آيةُ ﴿فَإِذَا رَكِبُوا فِي الْفُلْكِ دَعَوُا اللَّهَ مُخْلِصِينَ لَهُ الدِّينَ﴾ — المصدر: سورة العنكبوت ٦٥",
@@ -226,8 +226,8 @@ HISN_STORIES.ikrima = [
     "scene": "desert",
     "character": "🐪",
     "text": {
-     "ar": "كانت زوجةُ عكرمةَ <b>أمُّ حكيمٍ بنتُ الحارث</b> قد <b>أسلمت</b> يومَ فتحِ مكّة، وكانت تحبُّ زوجَها وتتمنّى له الهداية. فذهبت إلى النبيِّ ﷺ وقالت: يا رسولَ الله، قد هربَ عكرمةُ منك إلى اليمنِ خوفاً أن تقتلَه، <b>فأمِّنْه</b>. فقال ﷺ: <b>«هو آمِن»</b>.<br><br>فخرجت أمُّ حكيمٍ وحدَها في رحلةٍ طويلةٍ تبحثُ عن زوجِها حتى أدركته، فأخبرته بعفوِ النبيِّ ﷺ ودعته إلى الإسلام، فرجعَ معها. وقبلَ أن يصلَ قال النبيُّ ﷺ لأصحابِه: <b>«يأتيكم عكرمةُ مؤمناً مهاجراً، فلا تسبّوا أباه؛ فإنّ سبَّ الميّتِ يؤذي الحيَّ ولا يبلغُ الميّت»</b>. يا لرحمةِ النبيِّ ﷺ! لم يُرِدْ أن يُجرحَ قلبُ عكرمةَ بكلمةٍ عن أبيه.<br><br>ولمّا وصلَ عكرمةُ قامَ إليه النبيُّ ﷺ فرحاً به، فأسلمَ عكرمة. وقد قال النبيُّ ﷺ في حديثٍ صحيح: <b>«الإسلامُ يهدمُ ما كان قبلَه»</b>، فبدأ عكرمةُ صفحةً جديدةً بيضاء.",
-     "en": "Ikrimah's wife, <b>Umm Hakim bint al-Harith</b>, had <b>embraced Islam</b> on the day Makkah was opened. She loved her husband and hoped he would be guided. She went to the Prophet ﷺ and said: O Messenger of Allah, Ikrimah has fled from you to Yemen, fearing you will kill him — <b>grant him safety</b>. He ﷺ said: <b>\"He is safe.\"</b><br><br>Umm Hakim set out alone on a long journey searching for her husband until she reached him; she told him of the Prophet's ﷺ pardon and invited him to Islam, and he returned with her. Before he arrived, the Prophet ﷺ told his companions: <b>\"Ikrimah is coming to you as a believer and an emigrant, so do not insult his father, for insulting the dead hurts the living and does not reach the dead.\"</b> What mercy from the Prophet ﷺ! He did not want Ikrimah's heart wounded by a word about his father.<br><br>When Ikrimah arrived, the Prophet ﷺ rose to him joyfully, and Ikrimah embraced Islam. The Prophet ﷺ said in an authentic hadith: <b>\"Islam wipes out what came before it,\"</b> so Ikrimah began a fresh, white page."
+     "ar": "كانت زوجةُ عكرمةَ <b>أمُّ حكيمٍ بنتُ الحارث</b> قد <b>أسلمت</b> يومَ فتحِ مكّة، وكانت تحبُّ زوجَها وتتمنّى له الهداية. فذهبت إلى النبيِّ ﷺ وقالت: يا رسولَ الله، قد هربَ عكرمةُ منك إلى اليمنِ خوفاً أن تقتلَه، <b>فأمِّنْه</b>. فقال ﷺ: <b>«هو آمِن»</b>.<br><br>فخرجت أمُّ حكيمٍ وحدَها في رحلةٍ طويلةٍ تبحثُ عن زوجِها حتى أدركته، فأخبرته بعفوِ النبيِّ ﷺ ودعته إلى الإسلام، فرجعَ معها. وتذكرُ كتبُ السِّيرةِ أنّ النبيَّ ﷺ أوصى أصحابَه قبلَ وصولِه ألّا يذكروا أباه بسوء، فهو القائلُ ﷺ: <b>«لا تسبّوا الأمواتَ فتؤذوا الأحياء»</b> (رواه الترمذي). يا لرحمةِ النبيِّ ﷺ! لم يُرِدْ أن يُجرحَ قلبُ عكرمةَ بكلمةٍ عن أبيه.<br><br>ولمّا وصلَ عكرمةُ قامَ إليه النبيُّ ﷺ فرحاً به، فأسلمَ عكرمة. وقد قال النبيُّ ﷺ في حديثٍ صحيح: <b>«الإسلامُ يهدمُ ما كان قبلَه»</b>، فبدأ عكرمةُ صفحةً جديدةً بيضاء.",
+     "en": "Ikrimah's wife, <b>Umm Hakim bint al-Harith</b>, had <b>embraced Islam</b> on the day Makkah was opened. She loved her husband and hoped he would be guided. She went to the Prophet ﷺ and said: O Messenger of Allah, Ikrimah has fled from you to Yemen, fearing you will kill him — <b>grant him safety</b>. He ﷺ said: <b>\"He is safe.\"</b><br><br>Umm Hakim set out alone on a long journey searching for her husband until she reached him; she told him of the Prophet's ﷺ pardon and invited him to Islam, and he returned with her. The books of Sirah mention that before he arrived, the Prophet ﷺ told his companions not to speak ill of his father — for he ﷺ is the one who said: <b>\"Do not insult the dead, and so hurt the living\"</b> (Tirmidhi). What mercy from the Prophet ﷺ! He did not want Ikrimah's heart wounded by a word about his father.<br><br>When Ikrimah arrived, the Prophet ﷺ rose to him joyfully, and Ikrimah embraced Islam. The Prophet ﷺ said in an authentic hadith: <b>\"Islam wipes out what came before it,\"</b> so Ikrimah began a fresh, white page."
     },
     "choice": {
      "q": {
@@ -283,8 +283,8 @@ HISN_STORIES.ikrima = [
     "scene": "garden",
     "character": "🌸",
     "text": {
-     "ar": "في المدرسةِ والملعب، قد تسمعُ بعضَ الأطفالِ <b>يسخرونَ من آباءِ زملائِهم أو أمّهاتِهم</b>، أو يُعيِّرونَ أحداً بخطأٍ قديم. تذكّرْ حينئذٍ قولَ النبيِّ ﷺ: «لا تسبّوا أباه».<br><br>فلا تُشارِكْهم، بل قُلْ كلمةً طيّبة، وكُنْ أنتَ مثلَ <b>أمِّ حكيم</b> التي سعتْ لخيرِ غيرِها. وإذا تابَ صديقُك من خطأ، فلا تُذكِّرْه به أمامَ الناس، بل افرحْ بتوبتِه كما فرحَ النبيُّ ﷺ بعكرمة.",
-     "en": "At school and on the playground you may hear some children <b>mocking their classmates’ fathers or mothers</b>, or shaming someone for an old mistake. Remember then the Prophet’s ﷺ words: “Do not insult his father.”<br><br>Do not join them; say a kind word instead, and be like <b>Umm Hakim</b>, who worked for the good of others. And if your friend repents from a mistake, do not remind him of it in front of people — rejoice at his repentance, as the Prophet ﷺ rejoiced at Ikrima."
+     "ar": "في المدرسةِ والملعب، قد تسمعُ بعضَ الأطفالِ <b>يسخرونَ من آباءِ زملائِهم أو أمّهاتِهم</b>، أو يُعيِّرونَ أحداً بخطأٍ قديم. تذكّرْ حينئذٍ قولَ النبيِّ ﷺ: «لا تسبّوا الأمواتَ فتؤذوا الأحياء».<br><br>فلا تُشارِكْهم، بل قُلْ كلمةً طيّبة، وكُنْ أنتَ مثلَ <b>أمِّ حكيم</b> التي سعتْ لخيرِ غيرِها. وإذا تابَ صديقُك من خطأ، فلا تُذكِّرْه به أمامَ الناس، بل افرحْ بتوبتِه كما فرحَ النبيُّ ﷺ بعكرمة.",
+     "en": "At school and on the playground you may hear some children <b>mocking their classmates’ fathers or mothers</b>, or shaming someone for an old mistake. Remember then the Prophet’s ﷺ words: “Do not insult the dead, and so hurt the living.”<br><br>Do not join them; say a kind word instead, and be like <b>Umm Hakim</b>, who worked for the good of others. And if your friend repents from a mistake, do not remind him of it in front of people — rejoice at his repentance, as the Prophet ﷺ rejoiced at Ikrima."
     }
    }
   ],
@@ -404,8 +404,8 @@ HISN_STORIES.ikrima = [
     "en": "Umm Hakim's Islam, her request for Ikrimah's safety and her journey to him in Yemen — Source: al-Muwatta' and Siyar A'lam an-Nubala'"
    },
    {
-    "ar": "قولُ النبيِّ ﷺ «لا تسبّوا أباه، فإنّ سبَّ الميّتِ يؤذي الحيّ» رواه الحاكمُ في المستدرك وأهلُ السِّير — المصدر: المستدرك وسير أعلام النبلاء",
-    "en": "The Prophet's ﷺ words \"Do not insult his father, for insulting the dead hurts the living\" are reported by al-Hakim and the biographers — Source: al-Mustadrak and Siyar A'lam an-Nubala'"
+    "ar": "قولُ النبيِّ ﷺ «لا تسبّوا الأمواتَ فتؤذوا الأحياء» رواه الترمذيُّ وصحّحه الألباني، ووصيّتُه أصحابَه ألّا يذكروا أبا عكرمةَ بسوءٍ تذكرُها كتبُ السِّير — المصدر: جامع الترمذي (١٩٨٢) وسير أعلام النبلاء",
+    "en": "The Prophet's ﷺ words \"Do not insult the dead, and so hurt the living\" are narrated by at-Tirmidhi and graded sahih by al-Albani; his advice to the Companions not to speak ill of Ikrimah's father is mentioned in the Sirah books — Source: Jami' at-Tirmidhi (1982) and Siyar A'lam an-Nubala'"
    }
   ]
  },

@@ -78,7 +78,7 @@ HISN.chapters.adam = {
   ],
 
   memorize: {
-    hadith:{ ar:'«للهُ أفرحُ بتوبةِ عبدِه من أحدِكم بدابّتِه إذا وجدها بعد ضياعها»', en:"\"Allah rejoices more at the repentance of His servant than one of you who finds his lost mount in the desert.\"", ref:{ ar:'[رواه البخاري ٦٣٠٩، ومسلم ٢٧٤٧]', en:'[Bukhari 6309 & Muslim 2747]' } },
+    hadith:{ ar:'«اللهُ أفرحُ بتوبةِ عبدِه من أحدِكم سقطَ على بعيرِه وقد أضلَّه في أرضِ فلاة»', en:"\"Allah rejoices more at the repentance of His servant than one of you who comes upon his camel after losing it in the desert.\"", ref:{ ar:'[رواه البخاري ٦٣٠٩، ومسلم ٢٧٤٧]', en:'[Bukhari 6309 & Muslim 2747]' } },
     ayah: { ar: '﴿ رَبَّنَا ظَلَمْنَا أَنفُسَنَا وَإِن لَّمْ تَغْفِرْ لَنَا وَتَرْحَمْنَا لَنَكُونَنَّ مِنَ الْخَاسِرِينَ ﴾', ref:{ ar:'الأعراف ٢٣', en:'Al-A\'raf 23' } },
     dua:  { ar: 'رَبِّ اغْفِرْ لِي وَتُبْ عَلَيَّ إِنَّكَ أَنتَ التَّوَّابُ الرَّحِيمُ', ref:{ ar:'مِن دعاءِ التوبة', en:'A prayer of repentance' } },
     pledge: {

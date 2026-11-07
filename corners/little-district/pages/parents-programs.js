@@ -94,7 +94,7 @@ window.PARENTS_PROGRAMS = [
     understand:{ar:'نوباتُ الغضبِ شائعةٌ لأنّ دماغَ الطفلِ لم يكتمِل ضبطُه للانفعالات. العنفُ غالباً تعبيرٌ عاجزٌ عن مشاعرَ لا يعرفُ اسمَها. الحلُّ: تعليمُ التهدئةِ وتسميةِ المشاعرِ والبدائلِ الآمنة.',en:'Tantrums are common because the child\'s brain hasn\'t fully developed emotional control. Aggression is often a helpless expression of feelings he can\'t name. The solution: teaching calming, naming feelings, and safe alternatives.'},
     rooted:[
       {icon:'📖',ar:'القرآن: ﴿وَالْكَاظِمِينَ الْغَيْظَ﴾ — مدحَ اللهُ مَن يكظِمُ غضبَه.',en:'Qur\'an: "those who restrain anger" — Allah praised those who hold back their rage.'},
-      {icon:'🕌',ar:'السنّة: «إذا غضِبَ أحدُكم فليتوضّأ» و«فليجلِسْ» — أدواتٌ نبويّةٌ للتهدئة.',en:'Sunnah: "If one of you gets angry, let him make wudu / sit down" — prophetic calming tools.'},
+      {icon:'🕌',ar:'السنّة: الاستعاذةُ «أعوذُ باللهِ من الشيطانِ الرجيم»، و«إذا غضِبَ أحدُكم وهو قائمٌ فليجلِسْ» — أدواتٌ نبويّةٌ للتهدئة.',en:'Sunnah: seeking refuge "I seek refuge in Allah from the accursed Shaytan", and "If one of you gets angry while standing, let him sit down" — prophetic calming tools.'},
       {icon:'🔬',ar:'علمُ النفس: تسميةُ الشعورِ تُهدِّئُ الدماغَ؛ و«ركنُ التهدئة» يُعلِّمُ التنظيمَ الذاتي.',en:'Psychology: naming the feeling calms the brain; a "calm corner" teaches self-regulation.'},
     ],
     weeks:[

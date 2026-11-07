@@ -22,8 +22,8 @@ HISN_STORIES.uthman = [
     "scene": "desert",
     "character": "💧",
     "text": {
-     "ar": "لمّا هاجرَ المسلمونَ إلى المدينة، كان فيها <b>بئرٌ عذبةٌ</b> اسمُها <b>«رومة»</b> يملكُها رجلٌ يبيعُ ماءَها بالمالِ ويُغالي على الفقراء. فقال النبيُّ ﷺ: <b>«مَن يشتري بئرَ رومةَ فيجعلُها للمسلمينَ وله الجنّة؟»</b><br><br>فذهبَ <b>عثمانُ</b> واشترى البئرَ بمالِه الكثير، <b>وسبّلها للمسلمينَ جميعاً</b> يشربونَ منها مجّاناً، الغنيُّ والفقير! لم يُرِدْ ربحاً، بل أرادَ الجنّةَ ووجهَ الله. هكذا كان كرمُ عثمانَ ينفعُ الأمّةَ كلَّها.",
-     "en": "When the Muslims migrated to Madinah, there was a <b>sweet well</b> named <b>\"Ruma\"</b> owned by a man who sold its water and overcharged the poor. The Prophet ﷺ said: <b>\"Who will buy the Well of Ruma and make it for the Muslims, and Paradise is his?\"</b><br><br><b>Uthman</b> went and bought the well with his great wealth, and <b>made it free for all the Muslims</b> to drink from at no cost — rich and poor! He sought no profit, only Paradise and Allah's pleasure. Thus Uthman's generosity benefited the whole nation."
+     "ar": "لمّا هاجرَ المسلمونَ إلى المدينة، كان فيها <b>بئرٌ عذبةٌ</b> اسمُها <b>«رومة»</b> يملكُها رجلٌ يبيعُ ماءَها بالمالِ ويُغالي على الفقراء. فقال النبيُّ ﷺ: <b>«مَن يشتري بئرَ رومةَ فيجعلُ دلوَه مع دِلاءِ المسلمين، بخيرٍ له منها في الجنّة؟»</b><br><br>فذهبَ <b>عثمانُ</b> واشترى البئرَ بمالِه الكثير، <b>وسبّلها للمسلمينَ جميعاً</b> يشربونَ منها مجّاناً، الغنيُّ والفقير! لم يُرِدْ ربحاً، بل أرادَ الجنّةَ ووجهَ الله. هكذا كان كرمُ عثمانَ ينفعُ الأمّةَ كلَّها.",
+     "en": "When the Muslims migrated to Madinah, there was a <b>sweet well</b> named <b>\"Ruma\"</b> owned by a man who sold its water and overcharged the poor. The Prophet ﷺ said: <b>\"Who will buy the Well of Ruma and put his bucket in it along with the buckets of the Muslims, for something better than it in Paradise?\"</b><br><br><b>Uthman</b> went and bought the well with his great wealth, and <b>made it free for all the Muslims</b> to drink from at no cost — rich and poor! He sought no profit, only Paradise and Allah's pleasure. Thus Uthman's generosity benefited the whole nation."
     },
     "choice": {
      "q": {

@@ -132,8 +132,8 @@ window.HOUSES.sincerity = {
       title: { ar:'الثلاثةُ الأُوَلُ في النار!', en:'The first three in the Fire!' },
       pages: [
         { scene:'desert', character:'😨',
-          text:{ ar:'قالَ رَسولُ اللهِ ﷺ: <b>«إنَّ أَوَّلَ النَّاسِ يُقضَى عَلَيهِ يومَ القِيامةِ ثَلاثة»</b> — سَمِعَ الصَّحابةُ هذا الكَلامَ فَوَجَفَت قُلوبُهُم! مَن هُم؟ ظَنُّوا أنَّهُم الكُفّارُ وَالمُشرِكون.<br><br>لَكِنَّ النَّبيَّ ﷺ فاجَأَهُم بالجَواب: <b>«عالِمٌ وَمُجاهِدٌ وَغَنيّ!»</b>',
-                 en:'The Prophet ﷺ said: <b>"The first people to be judged on the Day of Resurrection will be three."</b> The Companions’ hearts trembled! Who are they? They thought: the disbelievers and polytheists.<br><br>But the Prophet ﷺ shocked them: <b>"A scholar, a warrior, and a wealthy man!"</b>' } },
+          text:{ ar:'قالَ رَسولُ اللهِ ﷺ: <b>«أَوَّلُ النَّاسِ يُقضَى لَهُم يومَ القِيامةِ ثَلاثة»</b> — سَمِعَ الصَّحابةُ هذا الكَلامَ فَوَجَفَت قُلوبُهُم! مَن هُم؟ ظَنُّوا أنَّهُم الكُفّارُ وَالمُشرِكون.<br><br>لَكِنَّ النَّبيَّ ﷺ فاجَأَهُم بالجَواب — وَمَعناه: <b>عالِمٌ وَمُجاهِدٌ وَغَنيّ!</b>',
+                 en:'The Prophet ﷺ said: <b>"The first people to be judged on the Day of Resurrection will be three."</b> The Companions’ hearts trembled! Who are they? They thought: the disbelievers and polytheists.<br><br>But the Prophet ﷺ shocked them — meaning: <b>a scholar, a warrior, and a wealthy man!</b>' } },
         { scene:'madinah', character:'😰',
           text:{ ar:'جَلَسَ الصَّحابةُ مَذهولين! كَيفَ يَكونُ هؤلاءِ الثَّلاثةُ — أَهلُ العِلمِ وَالجِهادِ وَالصَّدَقة — أَوَّلَ مَن تُسَعَّرُ بِهِمُ النار؟!<br><br>هؤلاءِ الذين يَظُنُّ النَّاسُ أنَّهُم من أَهلِ الجَنَّة! العالِمُ الذي يُعَلِّمُ النَّاس، وَالمُجاهِدُ الذي يُدافِعُ عن الإسلام، وَالغَنيُّ الذي يُنفِقُ في سَبيلِ الله!',
                  en:'The Companions sat stunned! How could these three — people of knowledge, jihad, and charity — be the first the Fire is kindled with?!<br><br>Those whom people think are among the people of Paradise! The scholar who teaches people, the warrior who defends Islam, and the wealthy man who spends in Allah’s way!' } },
@@ -230,8 +230,8 @@ window.HOUSES.sincerity = {
           text:{ ar:'جاءَ يَوماً إلى النَّبيِّ ﷺ لابِساً رِداءً مِن جِلدِ كَبش! فَنَظَرَ النَّبيُّ ﷺ إليهِ بِرَحمةٍ وَقال: <b>«انظُروا إلى هذا الرَّجُلِ الذي نَوَّرَ اللهُ قَلبَه! لَقَد رَأَيتُهُ بَينَ أَبَوَين يُغَذِّيانِهِ بأَطيَبِ الطَّعامِ وَالشَّراب، فَدَعاهُ حُبُّ اللهِ وَرَسولِهِ إلى ما تَرَون!»</b>',
                  en:'He came to the Prophet ﷺ one day wearing a sheepskin cloak! The Prophet ﷺ looked at him with mercy and said: <b>"Look at this man whose heart Allah illuminated! I saw him between parents who fed him the finest food and drink, but love of Allah and His Messenger led him to what you see!"</b>' } },
         { scene:'desert', character:'⚔️',
-          text:{ ar:'وَفي غَزوَةِ أُحُد، حَمَلَ مُصعَبٌ رايةَ المُسلمين. قاتَلَ وَدافَعَ عن النَّبيِّ ﷺ حتَّى استُشهِد.<br><br>لَمّا أَرادوا تَكفينَه لم يَجِدوا إلّا بُردةً قَصيرة — إن غَطَّوا رَأسَهُ ظَهَرَت قَدَماه، وَإن غَطَّوا قَدَمَيهِ ظَهَرَ رَأسُه! فَقالَ النَّبيُّ ﷺ: <b>«اجعَلوا البُردةَ على رَأسِه، وَاجعَلوا على قَدَمَيهِ الإذخِر.»</b>',
-                 en:'At the Battle of Uhud, Mus’ab carried the Muslims’ banner. He fought and defended the Prophet ﷺ until he was martyred.<br><br>When they wanted to shroud him, they found only a short cloak — if they covered his head, his feet showed; if they covered his feet, his head showed! The Prophet ﷺ said: <b>"Put the cloak on his head, and place grass on his feet."</b>' } },
+          text:{ ar:'وَفي غَزوَةِ أُحُد، حَمَلَ مُصعَبٌ رايةَ المُسلمين. قاتَلَ وَدافَعَ عن النَّبيِّ ﷺ حتَّى استُشهِد.<br><br>لَمّا أَرادوا تَكفينَه لم يَجِدوا إلّا بُردةً قَصيرة — إن غَطَّوا رَأسَهُ ظَهَرَت قَدَماه، وَإن غَطَّوا قَدَمَيهِ ظَهَرَ رَأسُه! فَقالَ النَّبيُّ ﷺ: <b>«غَطّوا بِها رَأسَه، وَاجعَلوا على رِجلَيهِ الإذخِر»</b> — رواه البخاري.',
+                 en:'At the Battle of Uhud, Mus’ab carried the Muslims’ banner. He fought and defended the Prophet ﷺ until he was martyred.<br><br>When they wanted to shroud him, they found only a short cloak — if they covered his head, his feet showed; if they covered his feet, his head showed! The Prophet ﷺ said: <b>"Cover his head with it, and put idhkhir grass over his feet"</b> — al-Bukhari.' } },
       ],
       quiz: [
         { q:{ar:'بِمَ كانَ مُصعَبُ بنُ عُمَيرٍ مَشهوراً في مَكَّة؟', en:'What was Mus’ab ibn ’Umair famous for in Makkah?'},
@@ -345,8 +345,8 @@ window.HOUSES.sincerity = {
       title: { ar:'أبو بَكرٍ — يُنفِقُ كُلَّ مالِه لله!', en:'Abu Bakr — spending all his wealth for Allah!' },
       pages: [
         { scene:'madinah', character:'😊',
-          text:{ ar:'جاءَ النَّبيُّ ﷺ ذاتَ يومٍ يَطلُبُ من الصَّحابةِ التَّبَرُّعَ لِجَيشِ المُسلمين في غَزوَةِ تَبوك. كانَت الحاجةُ شَديدة — وَالطَّريقُ طَويل!<br><br>قالَ ﷺ: <b>«مَن يُنفِقُ اليَومَ يَكونُ لَهُ أَجرٌ عَظيم!»</b>',
-                 en:'The Prophet ﷺ came one day asking the Companions to donate for the Muslim army in the Tabuk campaign. The need was dire — and the journey long!<br><br>He said ﷺ: <b>"Whoever spends today will have a great reward!"</b>' } },
+          text:{ ar:'جاءَ النَّبيُّ ﷺ ذاتَ يومٍ يَطلُبُ من الصَّحابةِ التَّبَرُّعَ لِجَيشِ المُسلمين في غَزوَةِ تَبوك. كانَت الحاجةُ شَديدة — وَالطَّريقُ طَويل!<br><br>وَقالَ ﷺ: <b>«مَن جَهَّزَ جَيشَ العُسرَةِ فَلَهُ الجَنَّة»</b> — رواه البخاري.',
+                 en:'The Prophet ﷺ came one day asking the Companions to donate for the Muslim army in the Tabuk campaign. The need was dire — and the journey long!<br><br>He ﷺ said: <b>"Whoever equips the army of hardship will have Paradise"</b> — al-Bukhari.' } },
         { scene:'madinah', character:'💰',
           text:{ ar:'فَقامَ عُمَرُ بنُ الخَطَّابِ رَضِيَ اللهُ عنه — وَأَحضَرَ <b>نِصفَ مالِه!</b> كانَ فَخوراً بِما فَعَل، وَقالَ في نَفسِه: «اليَومَ سَأَسبِقُ أبا بَكر!»<br><br>سَأَلَهُ النَّبيُّ ﷺ: «ماذا أَبقَيتَ لأَهلِك؟» قالَ عُمَر: <b>«أَبقَيتُ لَهُم نِصفَ مالي يا رَسولَ الله!»</b>',
                  en:'Umar ibn al-Khattab stood up — and brought <b>half his wealth!</b> He was proud of what he did and thought: "Today I’ll surpass Abu Bakr!"<br><br>The Prophet ﷺ asked: "What did you leave for your family?" Umar said: <b>"I left them half my wealth, O Messenger of Allah!"</b>' } },

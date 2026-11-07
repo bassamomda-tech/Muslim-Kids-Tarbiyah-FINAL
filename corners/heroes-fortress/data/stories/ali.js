@@ -1281,8 +1281,8 @@ HISN_STORIES.ali = [
     "en": "The hadith \"Shall I not teach you something better than what you asked?\" is in al-Bukhari (3705) and Muslim (2727) from Ali"
    },
    {
-    "ar": "قولُ عليٍّ «ما تركتُه منذُ سمعتُه من النبيِّ ﷺ» رواه البخاريّ (٥٣٦٢)",
-    "en": "Ali's words \"I have not left it since I heard it from the Prophet ﷺ\" are in al-Bukhari (5362)"
+    "ar": "قولُ عليٍّ «ما تركتُه منذُ سمعتُه من النبيِّ ﷺ» رواه مسلم (٢٧٢٧)، وفي البخاريّ (٥٣٦٢): «فما تركتُها بعدُ»",
+    "en": "Ali's words \"I have not left it since I heard it from the Prophet ﷺ\" are in Muslim (2727); al-Bukhari (5362) has \"I have not left them since\""
    }
   ]
  }

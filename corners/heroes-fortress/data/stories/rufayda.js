@@ -479,8 +479,8 @@ HISN_STORIES.rufayda = [
     "scene": "night",
     "character": "🩹",
     "text": {
-     "ar": "وقال النبيُّ ﷺ: <b>«عُودوا المريض، وأطعموا الجائع، وفُكّوا العاني»</b>. فكانت خيمةُ رُفيدةَ في المسجدِ تطبيقاً حيّاً لهذه الكلمات. ولهذا يذكرُها الناسُ إلى اليومِ قدوةً لكلِّ من يعملُ في رعايةِ المرضى: أن يكونَ رحيماً صبوراً مخلصاً، يرى في كلِّ مريضٍ <b>باباً إلى رضا الله</b>.",
-     "en": "The Prophet ﷺ said: <b>\"Visit the sick, feed the hungry, and free the captive.\"</b> Rufayda’s tent in the mosque was a living practice of these words. That is why people remember her to this day as a model for everyone who cares for the sick: to be merciful, patient and sincere, seeing in every patient <b>a door to Allah’s pleasure</b>."
+     "ar": "وقال النبيُّ ﷺ: <b>«أطعِموا الجائع، وعُودوا المريض، وفُكّوا العاني»</b>. فكانت خيمةُ رُفيدةَ في المسجدِ تطبيقاً حيّاً لهذه الكلمات. ولهذا يذكرُها الناسُ إلى اليومِ قدوةً لكلِّ من يعملُ في رعايةِ المرضى: أن يكونَ رحيماً صبوراً مخلصاً، يرى في كلِّ مريضٍ <b>باباً إلى رضا الله</b>.",
+     "en": "The Prophet ﷺ said: <b>\"Feed the hungry, visit the sick, and free the captive.\"</b> Rufayda’s tent in the mosque was a living practice of these words. That is why people remember her to this day as a model for everyone who cares for the sick: to be merciful, patient and sincere, seeing in every patient <b>a door to Allah’s pleasure</b>."
     }
    },
    {
@@ -503,14 +503,14 @@ HISN_STORIES.rufayda = [
   "quiz": [
    {
     "q": {
-     "ar": "أكملْ قولَ النبيِّ ﷺ: «عُودوا المريض، وأطعموا…»",
-     "en": "Complete the Prophet’s ﷺ words: \"Visit the sick, feed…\""
+     "ar": "أكملْ قولَ النبيِّ ﷺ: «أطعِموا الجائع، وعُودوا…»",
+     "en": "Complete the Prophet’s ﷺ words: \"Feed the hungry, visit…\""
     },
     "opts": [
      {
       "t": {
-       "ar": "الجائع",
-       "en": "the hungry"
+       "ar": "المريض",
+       "en": "the sick"
       },
       "c": true
      },

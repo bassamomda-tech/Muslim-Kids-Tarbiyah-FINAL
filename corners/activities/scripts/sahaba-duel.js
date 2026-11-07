@@ -18,7 +18,7 @@
     statRound:   { ar: "الجولة", en: "Round" },
     sideTitle:   { ar: "كيف نلعب؟", en: "How to play" },
     how:         { ar: "اجلسا متقابلَين والجهاز بينكما. تظهر نفس البطاقة لكلٍّ منكما بالمقلوب — أول من يضغط الإجابة الصحيحة يكسب!", en: "Sit facing each other with the device between you. The same card appears for each of you (one upside-down) — first to tap the correct answer wins!" },
-    tip:         { ar: "الصحابة رضي الله عنهم هم من رأوا النبي ﷺ وآمنوا به. قال ﷺ: «أصحابي كالنجوم بأيّهم اقتديتم اهتديتم».", en: "The Companions (may Allah be pleased with them) saw the Prophet ﷺ and believed. He ﷺ said: \"My Companions are like stars — whichever you follow, you'll be guided.\"" },
+    tip:         { ar: "الصحابة رضي الله عنهم هم من رأوا النبي ﷺ وآمنوا به. قال ﷺ: «خيرُ النّاسِ قَرني، ثُمَّ الّذين يَلونَهم» (متفق عليه).", en: "The Companions (may Allah be pleased with them) saw the Prophet ﷺ and believed. He ﷺ said: \"The best of people are my generation, then those who come after them\" (al-Bukhari & Muslim)." },
     winEyebrow:  { ar: "انتهت المباراة", en: "Match over" },
     winDone:     { ar: "انتهيت", en: "Done" },
     winReplay:   { ar: "مباراة جديدة", en: "New match" },

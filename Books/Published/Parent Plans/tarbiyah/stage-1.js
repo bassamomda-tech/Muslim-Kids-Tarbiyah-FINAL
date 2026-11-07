@@ -22,7 +22,7 @@ window.TARBIYAH.stages.push({
   ],
   evidences:[
     {type:'hadith', text:{ar:'«مَن لا يَرحمِ الناسَ لا يَرحمْه الله».',en:'\u201cHe who does not show mercy to people, Allah will not show mercy to him.\u201d'}, ref:{ar:'متفق عليه',en:'Bukhari & Muslim'}, note:{ar:'أصلُ المرحلة: الرحمةُ لا التكليف.',en:'The stage\u2019s root: mercy, not obligation.'}},
-    {type:'hadith', text:{ar:'«ما نَحَلَ والدٌ ولدًا من نَحْلٍ أفضلَ من أدبٍ حسن».',en:'\u201cNo father gives his child a gift better than good manners.\u201d'}, ref:{ar:'الترمذيّ',en:'Tirmidhi'}, note:{ar:'والأدبُ يبدأ بالقدوةِ والجوِّ لا بالأمر.',en:'And adab begins with example & atmosphere, not commands.'}},
+    {type:'hadith', text:{ar:'«كلُّ مولودٍ يولَدُ على الفطرة، فأبواه يهوِّدانِه أو ينصِّرانِه أو يمجِّسانِه».',en:'\u201cEvery child is born upon the fitrah; then his parents make him a Jew, a Christian or a Magian.\u201d'}, ref:{ar:'متفق عليه',en:'Bukhari & Muslim'}, note:{ar:'والأدبُ يبدأ بالقدوةِ والجوِّ لا بالأمر.',en:'And adab begins with example & atmosphere, not commands.'}},
     {type:'athar', text:{ar:'كان النبيُّ ﷺ يُصلّي فإذا سجد ركِب الحسنُ والحسينُ ظهرَه، فيُطيل السجودَ رفقًا بهما.',en:'The Prophet ﷺ would prolong his prostration when al-Hasan & al-Husayn climbed his back, out of gentleness to them.'}, ref:{ar:'النسائيّ',en:'al-Nasa\u2019i'}, note:{ar:'الرفقُ بالصغيرِ يُقدَّم حتى في العبادة.',en:'Gentleness to the small is honoured even within worship.'}},
   ],
   rewards:[

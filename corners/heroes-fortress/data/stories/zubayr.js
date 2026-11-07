@@ -408,7 +408,7 @@ HISN_STORIES.zubayr = [
   ],
   "didYouKnow": [
    {
-    "ar": "حديثُ «لكلِّ نبيٍّ حواريٌّ وحواريّي الزبير» رواه البخاريُّ ومسلم — المصدر: الدرر السنية",
+    "ar": "حديثُ «إنّ لكلِّ نبيٍّ حواريّاً، وحواريَّ الزبير» رواه البخاريُّ ومسلم — المصدر: الدرر السنية",
     "en": "The hadith \"Every prophet has a disciple, and my disciple is az-Zubayr\" is reported by al-Bukhari and Muslim — Source: ad-Durar as-Saniyya"
    },
    {

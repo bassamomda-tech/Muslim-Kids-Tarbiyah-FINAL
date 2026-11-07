@@ -22,8 +22,8 @@ window.TARBIYAH.stages.push({
   ],
   evidences:[
     {type:'hadith', text:{ar:'«يا غلامُ، سمِّ اللهَ، وكُل بيمينك، وكُل ممّا يليك».',en:'\u201cBoy, say Bismillah, eat with your right hand, and eat from what is near you.\u201d'}, ref:{ar:'متفق عليه',en:'Bukhari & Muslim'}, note:{ar:'التعليمُ في الموقفِ بكلماتٍ قليلةٍ لا بالخطبة.',en:'Teaching in the moment, with few words, not a sermon.'}},
-    {type:'hadith', text:{ar:'«مَن كان له صبيٌّ فليتصابَ له» — أي يلاعبه وينزل إلى مستواه.',en:'\u201cWhoever has a child, let him be childlike with him\u201d \u2014 play with him at his level.'}, ref:{ar:'حديثٌ حسن',en:'Hasan hadith'}, note:{ar:'اللعبُ مع الطفلِ سُنّةٌ لا تنازل.',en:'Playing with the child is sunnah, not beneath you.'}},
-    {type:'hadith', text:{ar:'«ما نَحَلَ والدٌ ولدًا من نَحْلٍ أفضلَ من أدبٍ حسن».',en:'\u201cNo father gives his child a gift better than good manners.\u201d'}, ref:{ar:'الترمذيّ',en:'Tirmidhi'}, note:{ar:'الأدبُ أعظمُ ميراثٍ تورِّثه في هذه السنّ.',en:'Good manners are the greatest inheritance at this age.'}},
+    {type:'hadith', text:{ar:'«يا أبا عُمَيرٍ، ما فعلَ النُّغَيرُ؟» — كان ﷺ يُمازحُ أخا أنسٍ الصغيرَ ويسألُه عن عصفورِه، فينزلُ إلى مستواه.',en:'\u201cO Abu \u2018Umayr, what happened to the little bird?\u201d \u2014 he \uFDFA joked with Anas\u2019s little brother and asked about his pet bird, coming down to his level.'}, ref:{ar:'متفق عليه',en:'Bukhari & Muslim'}, note:{ar:'اللعبُ مع الطفلِ سُنّةٌ لا تنازل.',en:'Playing with the child is sunnah, not beneath you.'}},
+    {type:'hadith', text:{ar:'«إنَّ مِن خِيارِكم أحسنَكم أخلاقًا».',en:'\u201cThe best of you are those with the best character.\u201d'}, ref:{ar:'متفق عليه',en:'Bukhari & Muslim'}, note:{ar:'الأدبُ أعظمُ ميراثٍ تورِّثه في هذه السنّ.',en:'Good manners are the greatest inheritance at this age.'}},
   ],
   rewards:[
     {ic:'🌱', t:{ar:'كلمةُ التوحيدِ أوّلَ ما يَنطِق',en:'Tawhid as his first speech'}, d:{ar:'مَن فتح على ولده بلا إله إلا الله غرس أصلَ الإيمانِ في فطرةٍ نقيّةٍ لم تتلوّث.',en:'Opening with tawhid plants faith\u2019s root in a pure, untainted fitrah.'}},

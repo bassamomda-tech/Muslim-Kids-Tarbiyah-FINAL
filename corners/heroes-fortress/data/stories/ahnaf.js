@@ -1,5 +1,5 @@
 /* data/stories/ahnaf.js — Heroes · Al-Ahnaf ibn Qays — sources: سير أعلام النبلاء (الذهبي) · تهذيب الكمال (المزي) · الاستيعاب · إتحاف السادة المتقين · صحيح البخاري ومسلم · إسلام ويب
-   ⚠️ القصة الثالثة: حديثُ «اللّهُمَّ اغفرْ للأحنف» في مسندِ أحمد من طريقِ عليِّ بنِ زيدِ بنِ جُدعان (ضعيف) — فهو بصيغةِ «يُروى». */
+   ⚠️ القصة الثالثة: حديثُ «اللّهُمَّ اغفرْ للأحنف» (أحمد، من طريقِ عليِّ بنِ زيدِ بنِ جُدعان) ضعيفُ الإسناد — فحُذِفَ من النصّ، وبقيَ خبرُ الأحنفِ بصيغةِ «يُروى». */
 window.HISN_STORIES = window.HISN_STORIES || {};
 HISN_STORIES.ahnaf = [
  {
@@ -431,8 +431,8 @@ HISN_STORIES.ahnaf = [
     "scene": "night",
     "character": "🕯️",
     "text": {
-     "ar": "<b>يُروى</b> — وفي إسنادِ هذا الخبرِ ضعفٌ تكلّمَ فيه العلماء — أنّ رسولاً من النبيِّ ﷺ جاءَ إلى قومِ الأحنفِ من بني سعدٍ يدعوهم إلى الإسلام، فقال الأحنفُ لقومِه: إنّه يدعو إلى خيرٍ ويأمرُ بالخير. فلمّا بلغَ ذلك النبيَّ ﷺ قال: <b>«اللّهُمَّ اغفرْ للأحنف»</b>، فكان الأحنفُ يقول: <b>«فما شيءٌ أرجى عندي من ذلك»</b>. رواه أحمدُ في مسندِه.",
-     "en": "<b>It is narrated</b> — and scholars discussed weakness in the chain of this report — that a messenger from the Prophet ﷺ came to al-Ahnaf’s people, Banu Sa’d, inviting them to Islam, and al-Ahnaf told his people: He calls to good and commands good. When this reached the Prophet ﷺ, he said: <b>\"O Allah, forgive al-Ahnaf,\"</b> and al-Ahnaf used to say: <b>\"Nothing gives me more hope than that.\"</b> Ahmad narrated it in his Musnad."
+     "ar": "<b>يُروى</b> — وفي إسنادِ هذا الخبرِ ضعفٌ تكلّمَ فيه العلماء — أنّ رسولاً من النبيِّ ﷺ جاءَ إلى قومِ الأحنفِ من بني سعدٍ يدعوهم إلى الإسلام، فقال الأحنفُ لقومِه: إنّه يدعو إلى خيرٍ ويأمرُ بالخير. فكانت كلمةُ خيرٍ قالها في وقتِها، فرحَ بها طوالَ حياتِه. فلا تستصغرْ كلمةَ حقٍّ تقولُها لأهلِك وأصحابِك.",
+     "en": "<b>It is narrated</b> — and scholars discussed weakness in the chain of this report — that a messenger from the Prophet ﷺ came to al-Ahnaf’s people, Banu Sa’d, inviting them to Islam, and al-Ahnaf told his people: He calls to good and commands good. It was a word of good said at the right time, and he rejoiced in it all his life. So never belittle a word of truth you say to your family and friends."
     }
    },
    {
@@ -613,8 +613,8 @@ HISN_STORIES.ahnaf = [
   ],
   "didYouKnow": [
    {
-    "ar": "حديثُ «اللّهُمَّ اغفرْ للأحنف» رواه أحمد، وفي إسنادِه عليُّ بنُ زيدِ بنِ جُدعان وقد ضعّفه أكثرُ النقّاد — المصدر: مسند أحمد وسير أعلام النبلاء",
-    "en": "\"O Allah, forgive al-Ahnaf\" was narrated by Ahmad; its chain includes Ali ibn Zayd ibn Jud’an, whom most critics weakened — Source: Musnad Ahmad & Siyar A’lam an-Nubala’"
+    "ar": "خبرُ دعوةِ قومِ الأحنفِ إلى الإسلام رواه أحمد، وفي إسنادِه عليُّ بنُ زيدِ بنِ جُدعان وقد ضعّفه أكثرُ النقّاد — فيُذكَرُ بصيغةِ «يُروى» — المصدر: مسند أحمد وسير أعلام النبلاء",
+    "en": "The report of the call to al-Ahnaf’s people was narrated by Ahmad (so it is told as \"it is narrated\"); its chain includes Ali ibn Zayd ibn Jud’an, whom most critics weakened — Source: Musnad Ahmad & Siyar A’lam an-Nubala’"
    },
    {
     "ar": "كان الأحنفُ يضعُ إصبعَه على المصباحِ ثم يقول: حَسّ — المصدر: سير أعلام النبلاء",

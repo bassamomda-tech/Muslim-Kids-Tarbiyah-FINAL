@@ -78,7 +78,7 @@ window.HOUSES.permission = {
     hadiths: [
       { text: { ar:'«الاستِئذانُ ثَلاث، فَإِن أُذِنَ لَكَ وإِلَّا فَارجِع»',
                 en:'"Permission is three times — if granted enter, otherwise go back."' },
-        source: { ar:'[رواه البخاري ومسلم — حديث البخاري ٦٢٤٥]', en:'[Sahih Bukhari 6245 & Sahih Muslim]' } },
+        source: { ar:'[رواه مسلم — حديث ٢١٥٣، ونَحوُهُ في البخاري ٦٢٤٥]', en:'[Sahih Muslim 2153; similar in Sahih Bukhari 6245]' } },
       { text: { ar:'«إنَّما جُعِلَ الاستِئذانُ مِن أَجلِ البَصَر»',
                 en:'"Permission was ordained only because of the gaze."' },
         source: { ar:'[رواه البخاري — حديث ٦٢٤١]', en:'[Sahih Bukhari — 6241]' } },
@@ -498,7 +498,7 @@ window.HOUSES.permission = {
     hadiths: [
       { text: { ar:'«الاستِئذانُ ثَلاث، فَإِن أُذِنَ لَكَ وإِلَّا فَارجِع»',
                 en:'"Permission is three times — if granted enter, otherwise go back."' },
-        ref: { ar:'[رواه البخاري — حديث ٦٢٤٥]', en:'[Sahih Bukhari — 6245]' } },
+        ref: { ar:'[رواه مسلم — حديث ٢١٥٣، ونَحوُهُ في البخاري ٦٢٤٥]', en:'[Sahih Muslim — 2153; similar in Sahih Bukhari 6245]' } },
       { text: { ar:'«إنَّما جُعِلَ الاستِئذانُ مِن أَجلِ البَصَر»',
                 en:'"Permission was ordained only because of the gaze."' },
         ref: { ar:'[رواه البخاري — حديث ٦٢٤١]', en:'[Sahih Bukhari — 6241]' } },

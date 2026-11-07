@@ -29,8 +29,8 @@ HISN.chapters.salman = {
  },
  "knowledge": {
   "didYouKnow": {
-   "ar": "قال النبيُّ ﷺ عن سلمان: «سلمانُ منّا أهلَ البيت» — تكريماً له لعلمِه وإيمانِه وحبِّه.",
-   "en": "The Prophet ﷺ said of Salman: \"Salman is one of us, the People of the House\" — honoring him for his knowledge, faith, and love."
+   "ar": "وضعَ النبيُّ ﷺ يدَه على سلمان وقال: «لو كان الإيمانُ عند الثُّريّا لنالَه رجالٌ من هؤلاء» (رواه البخاري ومسلم) — تكريماً له لعلمِه وإيمانِه وحبِّه.",
+   "en": "The Prophet ﷺ placed his hand on Salman and said: \"Even if faith were at the Pleiades, men from these people would reach it\" (al-Bukhari & Muslim) — honoring him for his knowledge, faith, and love."
   },
   "who": {
    "ar": "هو <b>سلمانُ الفارسي</b>، وُلد في بلادِ فارسَ في بيتٍ يعبدُ النار. بحثَ عن <b>الحقِّ</b> فتنقّلَ بين البلادِ والأديان، وخدمَ العلماءَ سنينَ طويلة، حتى عرفَ أنّ نبيّاً سيُبعَثُ في بلادِ العرب. رحلَ يبحثُ عنه، فبِيعَ في الطريقِ <b>عبداً</b>، حتى وصلَ المدينةَ ولقيَ النبيَّ ﷺ فأسلم. كان <b>عالماً حكيماً</b>، وهو صاحبُ فكرةِ <b>حفرِ الخندق</b> في غزوةِ الأحزاب.",
@@ -210,8 +210,8 @@ HISN.chapters.salman = {
     "en": "Brotherhood above lineage"
    },
    "body": {
-    "ar": "قال النبيُّ ﷺ: سلمانُ منّا أهلَ البيت. الإيمانُ يجمعُ القلوبَ مهما اختلفت البلاد.",
-    "en": "The Prophet ﷺ said: Salman is one of us. Faith unites hearts however different the lands."
+    "ar": "وضعَ النبيُّ ﷺ يدَه على سلمانَ الفارسيّ وقال: «لو كان الإيمانُ عند الثُّريّا لنالَه رجالٌ من هؤلاء». الإيمانُ يجمعُ القلوبَ مهما اختلفت البلاد.",
+    "en": "The Prophet ﷺ placed his hand on Salman the Persian and said: \"Even if faith were at the Pleiades, men from these people would reach it.\" Faith unites hearts however different the lands."
    },
    "apply": {
     "ar": "أُحبُّ إخواني المسلمينَ من كلِّ بلد.",
@@ -358,8 +358,8 @@ HISN.chapters.salman = {
     },
     {
      "statement": {
-      "ar": "قال النبيُّ ﷺ: سلمانُ منّا أهلَ البيت.",
-      "en": "The Prophet ﷺ said: Salman is one of us, the People of the House."
+      "ar": "وضعَ النبيُّ ﷺ يدَه على سلمانَ وقال: لو كان الإيمانُ عند الثريّا لنالَه رجالٌ من هؤلاء.",
+      "en": "The Prophet ﷺ placed his hand on Salman and said: Even if faith were at the Pleiades, men from these people would reach it."
      },
      "t": true
     }
@@ -404,12 +404,12 @@ HISN.chapters.salman = {
     },
     {
      "a": {
-      "ar": "أهلُ البيت",
-      "en": "People of the House"
+      "ar": "الثُّريّا",
+      "en": "The Pleiades"
      },
      "b": {
-      "ar": "وصفه النبيُّ ﷺ",
-      "en": "The Prophet ﷺ described him so"
+      "ar": "لو كان الإيمانُ عندها لنالَه قومُ سلمان",
+      "en": "Had faith been there, Salman's people would reach it"
      }
     }
    ]

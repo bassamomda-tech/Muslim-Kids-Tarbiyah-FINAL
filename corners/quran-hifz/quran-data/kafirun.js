@@ -47,7 +47,7 @@ window.SURAHS.kafirun = {
     virtues: [
       { text:{ar:'<b>تَعدِلُ رُبعَ القُرآن</b>؛ قال ﷺ: «قُل يا أيّها الكافِرون تَعدِلُ رُبعَ القُرآن».', en:'It <b>equals a quarter of the Quran</b>. The Prophet ﷺ said: “Qul ya ayyuha al-kafirun equals a quarter of the Quran.”'},
         source:{ar:'سُنن الترمذي — ٢٨9٣', en:'Jami‘ at-Tirmidhi — 2893'} },
-      { text:{ar:'هي <b>بَراءةٌ من الشِّرك</b>؛ قال ﷺ: «اقرَأْها عندَ مَنامِك فإنَّها بَراءةٌ من الشِّرك».', en:'It is <b>a disavowal of shirk</b>: “Recite it at bedtime, for it is a clearance from shirk.”'},
+      { text:{ar:'هي <b>بَراءةٌ من الشِّرك</b>؛ قال ﷺ لمن سألَه عمّا يقولُ عندَ نومِه: «اقرَأْ (قُل يا أيُّها الكافِرون) ثُمَّ نَمْ على خاتِمَتِها، فإنَّها بَراءةٌ من الشِّرك».', en:'It is <b>a disavowal of shirk</b>. To a man who asked what to say at bedtime he ﷺ said: “Recite ‘Say: O disbelievers’ and then sleep upon its ending, for it is a clearance from shirk.”'},
         source:{ar:'سُنن أبي داود ٥٠٥٥ والترمذي ٣٤٠٣', en:'Abu Dawud 5055 & Tirmidhi 3403'} },
     ],
     traits: [
