@@ -227,7 +227,7 @@ window.SKILLS.doctor = {
           ['h', 'رائع. وهل تعلم أنّ النبي صلّى الله عليه وسلّم قال: عائد المريض في مخرفة الجنّة حتى يرجع؟', 'Wonderful. Did you know the Prophet, peace be upon him, said: The one who visits a sick person is in the harvest of Paradise until he returns?'],
           ['k', 'يعني كأنّي أقطف من ثمار الجنّة؟ ما أجمل هذا!', 'So it is as if I am picking the fruits of Paradise? How beautiful!'],
           ['h', 'تمامًا. لكن اجعل الزيارة قصيرة حتى لا تتعب، واغسل يديك قبلها وبعدها.', 'Exactly. But keep the visit short so she does not get tired, and wash your hands before and after.'],
-          ['h', 'مهمّة اليوم: اصنع بطاقة شفاك الله لشخصٍ تحبّه، وزره أو اتّصل به مع أهلك. إلى اللقاء!', 'Today\'s mission: make a get-well card for someone you love, and visit or call them with your family. Goodbye for now!']
+          ['h', 'مهمّة اليوم: اصنع بطاقة شفاك الله لشخصٍ تحبّه، وَزُرْه أو اتّصل به مع أهلك. إلى اللقاء!', 'Today\'s mission: make a get-well card for someone you love, and visit or call them with your family. Goodbye for now!']
         ]
       }
     },
