@@ -58,6 +58,22 @@ HISN_STORIES.nuh = [
       }
      ]
     }
+   },
+   {
+    "scene": "rain",
+    "character": "🌧️",
+    "text": {
+     "ar": "ماذا كانَ نوحٌ يَقولُ لِقَومِه؟ كانَ يُرَغِّبُهُم في رَحمَةِ اللهِ ويَعِدُهُم بِالخَير: <b>﴿ فَقُلْتُ اسْتَغْفِرُوا رَبَّكُمْ إِنَّهُ كَانَ غَفَّارًا * يُرْسِلِ السَّمَاءَ عَلَيْكُم مِّدْرَارًا * وَيُمْدِدْكُم بِأَمْوَالٍ وَبَنِينَ وَيَجْعَل لَّكُمْ جَنَّاتٍ وَيَجْعَل لَّكُمْ أَنْهَارًا ﴾</b> — استَغفِروا، فَيَأتيكُمُ المَطَرُ والمالُ والأَولادُ والبَساتين!<br><br>فَماذا فَعَلوا؟ <b>﴿ جَعَلُوا أَصَابِعَهُمْ فِي آذَانِهِمْ وَاسْتَغْشَوْا ثِيَابَهُمْ وَأَصَرُّوا وَاسْتَكْبَرُوا اسْتِكْبَارًا ﴾</b> — وَضَعوا أَصابِعَهُم في آذانِهِم كَي لا يَسمَعوا، وغَطَّوا وُجوهَهُم بِثِيابِهِم كَي لا يَرَوه!",
+     "en": "What did Nuh say to his people? He encouraged them towards Allah’s mercy and promised them good: <b>﴿ \"I said: Ask forgiveness of your Lord — indeed He is ever Forgiving. * He will send rain upon you in abundance * and give you increase in wealth and children, and provide for you gardens and rivers\" ﴾</b> — seek forgiveness, and rain, wealth, children and gardens will come to you!<br><br>And what did they do? <b>﴿ \"They put their fingers in their ears, covered themselves with their garments, persisted, and were arrogant with great arrogance\" ﴾</b> — they stuck their fingers in their ears so as not to hear, and covered their faces with their clothes so as not to see him!"
+    }
+   },
+   {
+    "scene": "idols",
+    "character": "🗿",
+    "text": {
+     "ar": "وَوَقَفَ كُبَراءُ القَومِ يُحَذِّرونَ النّاسَ مِن نوح: <b>﴿ وَقَالُوا لَا تَذَرُنَّ آلِهَتَكُمْ وَلَا تَذَرُنَّ وَدًّا وَلَا سُوَاعًا وَلَا يَغُوثَ وَيَعُوقَ وَنَسْرًا ﴾</b>. وسَخِروا مِنَ المُؤمِنينَ الفُقَراءِ الَّذينَ اتَّبَعوه، وقالوا: <b>﴿ وَمَا نَرَاكَ اتَّبَعَكَ إِلَّا الَّذِينَ هُمْ أَرَاذِلُنَا بَادِيَ الرَّأْيِ ﴾</b>.<br><br>ومَعَ ذلكَ لَم يَتعَبْ نوحٌ ولَم يَيأَس قُروناً طَويلَة! والدَّرسُ لَنا: إذا نَصَحتَ صَديقاً فَلَم يَسمَع، فَلا تَغضَبْ ولا تَترُكْه — بَل <b>اصبِرْ</b>، وكَرِّرِ النَّصيحَةَ بِلُطف، وادعُ اللهَ لَه. فالهِدايَةُ بِيَدِ الله، وعَلَيكَ أن تُبَلِّغَ بِالحُسنى.",
+     "en": "The chiefs of the people stood up warning everyone against Nuh: <b>﴿ \"And they said: Never leave your gods, and never leave Wadd, nor Suwa, nor Yaghuth and Ya‘uq and Nasr\" ﴾</b>. They mocked the poor believers who followed him, saying: <b>﴿ \"We do not see you followed except by those who are the lowest of us, at first suggestion\" ﴾</b>.<br><br>Yet Nuh did not tire or despair for centuries! The lesson for us: if you advise a friend and he does not listen, don’t get angry or abandon him — <b>be patient</b>, repeat your advice kindly, and pray to Allah for him. Guidance is in Allah’s hand; your job is to convey it in the best way."
+    }
    }
   ],
   "quiz": [
@@ -191,6 +207,14 @@ HISN_STORIES.nuh = [
   },
   "pages": [
    {
+    "scene": "call",
+    "character": "🧔",
+    "text": {
+     "ar": "مَرَّت مِئاتُ السِّنين، ونوحٌ يَدعو ويَصبِر، والمُؤمِنونَ قَليلٌ لا يَزيدون. فَرَفَعَ نوحٌ يَدَيهِ يَشكو إلى رَبِّه: <b>﴿ قَالَ رَبِّ إِنَّ قَوْمِي كَذَّبُونِ ﴾</b> ثُمَّ جاءَهُ الخَبَرُ مِنَ السَّماء: <b>﴿ وَأُوحِيَ إِلَىٰ نُوحٍ أَنَّهُ لَن يُؤْمِنَ مِن قَوْمِكَ إِلَّا مَن قَدْ آمَنَ فَلَا تَبْتَئِسْ بِمَا كَانُوا يَفْعَلُونَ ﴾</b><br><br>انتَهى الأَمر! لَن يُؤمِنَ أَحَدٌ جَديد — فَلا تَحزَنْ يا نوح. لَقَد أَدَّيتَ الأَمانَةَ كامِلَة، وبَلَّغتَ الرِّسالَةَ لَيلاً ونَهاراً، سِرّاً وجَهراً. والآنَ جاءَ وَقتُ أَمرٍ آخَر.",
+     "en": "Hundreds of years passed, with Nuh calling and being patient, and the believers few and not increasing. Nuh raised his hands, complaining to his Lord: <b>﴿ \"He said: My Lord, my people have denied me\" ﴾</b> Then news came to him from the heavens: <b>﴿ \"And it was revealed to Nuh: None of your people will believe except those who have already believed, so do not be distressed by what they used to do\" ﴾</b><br><br>The matter was settled! No one new would believe — so do not grieve, O Nuh. You have fulfilled the trust completely and delivered the message night and day, in private and in public. Now the time had come for something else."
+    }
+   },
+   {
     "scene": "desert",
     "character": "🪚",
     "text": {
@@ -237,6 +261,14 @@ HISN_STORIES.nuh = [
        }
       }
      ]
+    }
+   },
+   {
+    "scene": "axe",
+    "character": "🔨",
+    "text": {
+     "ar": "وكانَتِ السَّفينَةُ مَصنوعَةً مِن أَلواحٍ ومَساميرَ قَوِيَّة: <b>﴿ وَحَمَلْنَاهُ عَلَىٰ ذَاتِ أَلْوَاحٍ وَدُسُرٍ ﴾</b>. وقالَ اللهُ لِنوحٍ وهُوَ يَبني: <b>﴿ وَلَا تُخَاطِبْنِي فِي الَّذِينَ ظَلَمُوا إِنَّهُم مُّغْرَقُونَ ﴾</b><br><br>تَخَيَّلْ نوحاً يَقطَعُ الخَشَبَ ويَدُقُّ المَساميرَ يَوماً بَعدَ يَوم، والنّاسُ يَضحَكونَ مِن حَولِه، وهُوَ ماضٍ لا يَلتَفِت، يَنتَظِرُ أَمرَ رَبِّهِ بِيَقين! والدَّرسُ لَك: إذا عَمِلتَ بِأَمرِ اللهِ فَسَخِرَ مِنكَ بَعضُ النّاس — حينَ تُصَلّي أو تَصدُقُ أو تَرفُضُ الغِشّ — فاثبُتْ مِثلَ نوح، فالعاقِبَةُ لِلمُتَّقين.",
+     "en": "The ship was made of planks and strong nails: <b>﴿ \"And We carried him on a vessel of planks and nails\" ﴾</b>. And Allah said to Nuh as he built: <b>﴿ \"And do not address Me concerning those who have wronged; indeed, they are to be drowned\" ﴾</b><br><br>Imagine Nuh cutting wood and hammering nails day after day, people laughing all around him, while he carried on without turning, awaiting his Lord’s command with certainty! The lesson for you: if you act on Allah’s command and some people mock you — when you pray, tell the truth, or refuse to cheat — stand firm like Nuh, for the best outcome belongs to the God-fearing."
     }
    }
   ],
@@ -420,11 +452,27 @@ HISN_STORIES.nuh = [
     }
    },
    {
+    "scene": "mountain",
+    "character": "⛰️",
+    "text": {
+     "ar": "كانَتِ السَّفينَةُ تَجري بَينَ أَمواجٍ عالِيَةٍ كَأَنَّها الجِبال: <b>﴿ وَهِيَ تَجْرِي بِهِمْ فِي مَوْجٍ كَالْجِبَالِ ﴾</b>. فَماذا أَجابَ الابنُ أَباه؟ <b>﴿ قَالَ سَآوِي إِلَىٰ جَبَلٍ يَعْصِمُنِي مِنَ الْمَاءِ ﴾</b> — ظَنَّ أنَّ جَبَلاً عالِياً سَيَحميهِ مِن أَمرِ الله!<br><br>فَقالَ لَهُ نوحٌ بِحُزنٍ وشَفَقَة: <b>﴿ لَا عَاصِمَ الْيَوْمَ مِنْ أَمْرِ اللَّهِ إِلَّا مَن رَّحِمَ ﴾</b> — يا بُنَيّ، لا جَبَلَ ولا حِصنَ يَحميكَ اليَوم، النَّجاةُ في رَحمَةِ اللهِ وَحدَها، والسَّفينَةُ أَمامَك!",
+     "en": "The ship sailed among waves as high as mountains: <b>﴿ \"And it sailed with them through waves like mountains\" ﴾</b>. What did the son answer his father? <b>﴿ \"He said: I will take refuge on a mountain to protect me from the water\" ﴾</b> — he thought a high mountain would protect him from Allah’s command!<br><br>Nuh said to him with sorrow and compassion: <b>﴿ \"There is no protector today from the decree of Allah, except for whom He gives mercy\" ﴾</b> — my son, no mountain and no fortress can protect you today; safety is in Allah’s mercy alone, and the ship is right before you!"
+    }
+   },
+   {
     "scene": "garden",
     "character": "💡",
     "text": {
      "ar": "<b>﴿ وَحَالَ بَيْنَهُمَا الْمَوْجُ فَكَانَ مِنَ الْمُغْرَقِينَ ﴾</b> — جاءَت مَوجَةٌ عَملاقَةٌ فَصَلَت بَينَهُما — فَغَرِقَ الابنُ! نادى نوحٌ رَبَّهُ: <b>﴿ رَبِّ إِنَّ ابْنِي مِنْ أَهْلِي ﴾</b> — يا رَبِّ إنَّهُ ابني!<br><br>فَقالَ اللهُ: <b>﴿ يَا نُوحُ إِنَّهُ لَيْسَ مِنْ أَهْلِكَ إِنَّهُ عَمَلٌ غَيْرُ صَالِحٍ ﴾</b> — يا نوح! الأَهلُ في الإسلامِ بِالإيمانِ لا بِالنَّسَب! ابنُكَ كَفَرَ فَلَيسَ مِن أَهلِك!<br><br><b>الدَّرس الخالِد:</b> الرّابِطَةُ الحَقيقيَّةُ بَينَ النّاسِ هي رابِطَةُ الإيمان — لا النَّسَب ولا الدَّم. وحتى ابنُ النَّبيِّ لا يَنجو بِنَسَبِ أَبيهِ إذا كَفَر!",
      "en": "<b>﴿ \"A wave came between them and he was among the drowned\" ﴾</b> — a giant wave separated them — the son drowned! Nuh called his Lord: <b>﴿ \"My Lord, my son is of my family\" ﴾</b> — O Lord, he is my son!<br><br>Allah said: <b>﴿ \"O Nuh, he is not of your family — his deeds were unrighteous\" ﴾</b> — O Nuh! Family in Islam is by faith not lineage! Your son disbelieved so he is not of your family!<br><br><b>The eternal lesson:</b> The true bond between people is the bond of faith — not lineage or blood. Even a prophet's son is not saved by his father's status if he disbelieves!"
+    }
+   },
+   {
+    "scene": "mihrab",
+    "character": "🤲",
+    "text": {
+     "ar": "فَماذا فَعَلَ نوحٌ حينَ سَمِعَ كَلامَ رَبِّه؟ هل جادَلَ أو غَضِب؟ لا! بَل تَواضَعَ واستَغفَرَ فَوراً: <b>﴿ قَالَ رَبِّ إِنِّي أَعُوذُ بِكَ أَنْ أَسْأَلَكَ مَا لَيْسَ لِي بِهِ عِلْمٌ وَإِلَّا تَغْفِرْ لِي وَتَرْحَمْنِي أَكُن مِّنَ الْخَاسِرِينَ ﴾</b><br><br>هذا هُوَ الأَدَبُ مَعَ الله: نُحِبُّ أَهلَنا ونَدعوهُم إلى الخَيرِ بِكُلِّ قُلوبِنا، لَكِنَّنا نَرضى بِحُكمِ اللهِ ونُسَلِّمُ لَه. فادعُ لِأَهلِكَ بِالهِدايَة، وكُن لَهُم قُدوَةً صالِحَة، فَقَد يَكونُ عَمَلُكَ سَبَباً في نَجاتِهِم.",
+     "en": "What did Nuh do when he heard his Lord’s words? Did he argue or get angry? No! He humbled himself and sought forgiveness at once: <b>﴿ \"He said: My Lord, I seek refuge in You from asking You that of which I have no knowledge. And unless You forgive me and have mercy upon me, I will be among the losers\" ﴾</b><br><br>This is good manners with Allah: we love our families and invite them to good with all our hearts, but we accept Allah’s judgement and submit to Him. So pray for your family to be guided, and be a good example for them — your deeds may be a reason for their salvation."
     }
    }
   ],
@@ -605,6 +653,22 @@ HISN_STORIES.nuh = [
        }
       }
      ]
+    }
+   },
+   {
+    "scene": "peaks",
+    "character": "🕊️",
+    "text": {
+     "ar": "وأَثنى اللهُ على نوحٍ في القُرآنِ ثَناءً عَظيماً، فَقال: <b>﴿ وَجَعَلْنَا ذُرِّيَّتَهُ هُمُ الْبَاقِينَ ﴾</b>، وقال: <b>﴿ سَلَامٌ عَلَىٰ نُوحٍ فِي الْعَالَمِينَ ﴾</b>. ووَصَفَهُ بِصِفَةٍ جَميلَة: <b>﴿ إِنَّهُ كَانَ عَبْدًا شَكُورًا ﴾</b> — كانَ يَشكُرُ اللهَ على كُلِّ نِعمَة.<br><br>وفي حَديثِ الشَّفاعَةِ في الصَّحيحَين، يَأتي النّاسُ يَومَ القِيامَةِ إلى نوحٍ فَيَقولون: <b>«أَنتَ أَوَّلُ الرُّسُلِ إلى أَهلِ الأَرض، وسَمّاكَ اللهُ عَبداً شَكوراً»</b>.",
+     "en": "Allah praised Nuh greatly in the Qur’an, saying: <b>﴿ \"And We made his descendants those remaining\" ﴾</b>, and: <b>﴿ \"Peace upon Nuh among the worlds\" ﴾</b>. And He described him with a beautiful quality: <b>﴿ \"Indeed, he was a grateful servant\" ﴾</b> — he thanked Allah for every blessing.<br><br>In the hadith of intercession in al-Bukhari and Muslim, people will come to Nuh on the Day of Resurrection and say: <b>\"You are the first of the messengers to the people of the earth, and Allah called you a grateful servant.\"</b>"
+    }
+   },
+   {
+    "scene": "boat",
+    "character": "🚢",
+    "text": {
+     "ar": "وجَعَلَ اللهُ قِصَّةَ السَّفينَةِ عِبرَةً لِلنّاسِ إلى يَومِ القِيامَة: <b>﴿ وَلَقَد تَّرَكْنَاهَا آيَةً فَهَلْ مِن مُّدَّكِرٍ ﴾</b>. فَما الَّذي نَتَذَكَّرُه؟ أنَّ الصَّبرَ يُثمِر، وأنَّ طاعَةَ اللهِ هي سَفينَةُ النَّجاة، وأنَّ الشُّكرَ يَحفَظُ النِّعَم.<br><br>وتَعَلَّمْ مِن نوحٍ دُعاءً جَميلاً تَدعو بِهِ كُلَّ يَوم: <b>﴿ رَّبِّ اغْفِرْ لِي وَلِوَالِدَيَّ وَلِمَن دَخَلَ بَيْتِيَ مُؤْمِنًا وَلِلْمُؤْمِنِينَ وَالْمُؤْمِنَاتِ ﴾</b> والشُّكرُ لَيسَ كَلِمَةً فَقَط، بَل أن تَستَعمِلَ نِعَمَ اللهِ في طاعَتِه: عَينَيكَ في القِراءَةِ النّافِعَة، ويَدَيكَ في مُساعَدَةِ أُمِّك، ولِسانَكَ في الكَلامِ الطَّيِّب. وقُلْ كُلَّ صَباح: الحَمدُ للهِ على نِعَمِه، لِتَكونَ مِثلَ نوحٍ عَبداً شَكوراً.",
+     "en": "Allah made the story of the ship a lesson for people until the Day of Resurrection: <b>﴿ \"And We left it as a sign, so is there anyone who will remember?\" ﴾</b>. What do we remember? That patience bears fruit, that obeying Allah is the ship of salvation, and that gratitude preserves blessings.<br><br>Learn from Nuh a beautiful prayer to say every day: <b>﴿ \"My Lord, forgive me and my parents and whoever enters my house a believer, and the believing men and believing women\" ﴾</b> Gratitude is not just a word; it means using Allah’s blessings in obeying Him: your eyes in useful reading, your hands in helping your mother, and your tongue in good words. And say every morning: Praise be to Allah for His blessings, so that you may be, like Nuh, a grateful servant."
     }
    }
   ],

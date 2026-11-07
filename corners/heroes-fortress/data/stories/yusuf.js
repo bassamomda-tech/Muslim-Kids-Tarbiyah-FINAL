@@ -476,6 +476,14 @@ HISN_STORIES.yusuf = [
     }
    },
    {
+    "scene": "camel",
+    "character": "🐪",
+    "text": {
+     "ar": "تَأَمَّل كَيفَ وَصَفَ القُرآنُ الَّذينَ باعوه: <b>﴿ وَكَانُوا فِيهِ مِنَ الزَّاهِدِينَ ﴾</b> — لَم يَعرِفوا قيمَتَهُ، فَباعوهُ بِأَرخَصِ ثَمَن! لَكِنَّ اللهَ كانَ يَعلَمُ قَدرَه، ويَسوقُهُ بِلُطفٍ إلى المَكانِ الَّذي أَرادَهُ لَه.<br><br>فَالبِئرُ كانَ طَريقاً إلى القافِلَة، والقافِلَةُ طَريقاً إلى مِصر، ومِصرُ طَريقاً إلى بَيتِ العَزيز! قالَ تَعالى: <b>﴿ وَكَذَٰلِكَ مَكَّنَّا لِيُوسُفَ فِي الْأَرْضِ وَلِنُعَلِّمَهُ مِنْ تَأْوِيلِ الْأَحَادِيثِ وَاللَّهُ غَالِبٌ عَلَىٰ أَمْرِهِ وَلَٰكِنَّ أَكْثَرَ النَّاسِ لَا يَعْلَمُونَ ﴾</b><br><br><b>الدَّرس:</b> ما يَراهُ النّاسُ ضَياعاً، قَد يَكونُ في تَدبيرِ اللهِ بِدايَةَ الخَير. فَلا تَحزَن إذا لَم يَعرِف النّاسُ قَدرَك — فَاللهُ يَعرِفُه.",
+     "en": "Look at how the Qur'an describes those who sold him: <b>﴿ \"and they had no interest in him\" ﴾</b> — they did not know his worth, so they sold him for the cheapest price! But Allah knew his worth, and was gently guiding him to the place He had chosen for him.<br><br>The well was the road to the caravan, the caravan the road to Egypt, and Egypt the road to the house of Al-Aziz! Allah says: <b>﴿ \"Thus We established Yusuf in the land, to teach him the interpretation of events. Allah has full power over His affair, but most people do not know\" ﴾</b><br><br><b>The lesson:</b> what people see as loss may, in Allah's plan, be the beginning of good. So don't be sad if people don't recognise your worth — Allah knows it."
+    }
+   },
+   {
     "scene": "garden",
     "character": "🌟",
     "text": {
@@ -861,6 +869,14 @@ HISN_STORIES.yusuf = [
    },
    {
     "scene": "night",
+    "character": "📖",
+    "text": {
+     "ar": "بَدَأَ يوسُفُ كَلامَهُ بِتَواضُع: <b>﴿ ذَٰلِكُمَا مِمَّا عَلَّمَنِي رَبِّي ﴾</b> — هذا العِلمُ لَيسَ مِن ذَكائي، بَل هو مِن فَضلِ رَبّي! ثُمَّ عَرَّفَهُما بِنَفسِهِ ودينِه: <b>﴿ وَاتَّبَعْتُ مِلَّةَ آبَائِي إِبْرَاهِيمَ وَإِسْحَاقَ وَيَعْقُوبَ ﴾</b> — أَنا مِن بَيتِ الأَنبياء، ودينُنا التَّوحيد! <b>﴿ مَا كَانَ لَنَا أَنْ نُشْرِكَ بِاللَّهِ مِنْ شَيْءٍ ﴾</b><br><br>تَأَمَّل أَدَبَه: نَسَبَ العِلمَ إلى الله، ولَم يَتَكَبَّر على مَن مَعَهُ في السِّجن، بَل كانَ يُحسِنُ إلَيهِم — ولِذلِكَ قالا لَه: <b>إنّا نَراكَ مِنَ المُحسِنين</b>.<br><br><b>الدَّرس:</b> الدَّعوَةُ تَبدَأُ بِالخُلُقِ الحَسَنِ قَبلَ الكَلام — فَالنّاسُ يَسمَعونَ لِمَن يُحسِنُ إلَيهِم! وابدَأ دائِماً بِأَهَمِّ الأُمور: تَعريفِ النّاسِ بِرَبِّهِم.",
+     "en": "Yusuf began his words humbly: <b>﴿ \"That is from what my Lord has taught me\" ﴾</b> — this knowledge isn't from my own cleverness, it is my Lord's gift! Then he told them who he was and what he believed: <b>﴿ \"And I follow the religion of my fathers, Ibrahim, Ishaq and Ya'qub\" ﴾</b> — I come from a house of prophets, and our religion is Tawhid! <b>﴿ \"It was never for us to associate anything with Allah\" ﴾</b><br><br>Notice his manners: he credited his knowledge to Allah, he did not look down on those in prison with him, but treated them kindly — which is why they told him: <b>we see you are of the doers of good</b>.<br><br><b>The lesson:</b> calling to Allah begins with good character before words — people listen to those who treat them well! And always begin with what matters most: helping people know their Lord."
+    }
+   },
+   {
+    "scene": "night",
     "character": "🧔",
     "text": {
      "ar": "قالَ يوسُفُ بِجُرأَةٍ في وَسَطِ السِّجن: <b>﴿ يَا صَاحِبَيِ السِّجْنِ أَأَرْبَابٌ مُّتَفَرِّقُونَ خَيْرٌ أَمِ اللَّهُ الْوَاحِدُ الْقَهَّارُ ﴾</b><br><br>ثُمَّ فَسَّرَ الرُّؤيَتَين: <b>السّاقي</b> سَيَخرُجُ ويَعودُ لِخِدمَةِ المَلِك. أَمّا <b>الخَبّاز</b> فَسَيُصلَبُ وتَأكُلُ الطَّيرُ مِن رَأسِه! وطَلَبَ يوسُفُ مِن السّاقي: <b>﴿ اذْكُرْنِي عِندَ رَبِّكَ ﴾</b> — اذكُرني عِندَ المَلِك!<br><br><b>﴿ فَأَنسَاهُ الشَّيْطَانُ ذِكْرَ رَبِّهِ فَلَبِثَ فِي السِّجْنِ بِضْعَ سِنِينَ ﴾</b> — نَسِيَ السّاقي! وبَقِيَ يوسُفُ في السَّجنِ سَنَواتٍ أُخرى! لَكِنَّ اللهَ كانَ يُدَبِّرُ الخُروجَ في الوَقتِ المُناسِبِ تَماماً.",
@@ -1045,6 +1061,14 @@ HISN_STORIES.yusuf = [
        }
       }
      ]
+    }
+   },
+   {
+    "scene": "night",
+    "character": "🙏",
+    "text": {
+     "ar": "جاءَ السّاقي إلى السِّجنِ مُسرِعاً، وقالَ بِاحتِرام: <b>﴿ يُوسُفُ أَيُّهَا الصِّدِّيقُ أَفْتِنَا ﴾</b> — يا كَثيرَ الصِّدق! لَقَد عَرَفَ الجَميعُ صِدقَ يوسُفَ وأَمانَتَه.<br><br>وتَأَمَّل عَظَمَةَ يوسُف: هذا الرَّجُلُ نَسِيَهُ سَنَواتٍ وهو في السِّجن، ومَعَ ذلِكَ لَم يُعاتِبهُ ولَم يَلُمه، ولَم يَقُل: لا أُفَسِّرُ حتّى تُخرِجوني! بَل أَجابَ فَوراً، وزادَهُم نَصيحَةً تُنقِذُ البِلادَ كُلَّها مِنَ الجوع.<br><br><b>الدَّرس:</b> المُؤمِنُ يَنفَعُ النّاسَ ولَو أَساؤوا إلَيه — ولا يَجعَلُ الخَيرَ مَشروطاً بِمَصلَحَتِه. وقَد أَثنى نَبيُّنا ﷺ على صَبرِ يوسُفَ الطَّويلِ فَقال: «<b>ولَو لَبِثتُ في السِّجنِ طولَ ما لَبِثَ يوسُفُ لَأَجَبتُ الدّاعيَ</b>».",
+     "en": "The cupbearer hurried to the prison and said respectfully: <b>﴿ \"Yusuf, O man of truth, explain to us\" ﴾</b> — O you who are so truthful! Everyone had come to know Yusuf's honesty and trustworthiness.<br><br>See how great Yusuf was: this man had forgotten him for years while he sat in prison, yet he didn't blame him or scold him, nor did he say, “I won't explain until you set me free!” He answered at once, and added advice that would save the whole land from hunger.<br><br><b>The lesson:</b> a believer benefits people even when they have wronged him — and never makes his good deeds conditional on his own gain. Our Prophet ﷺ praised Yusuf's long patience, saying: «<b>Had I stayed in prison as long as Yusuf stayed, I would have answered the caller.</b>»"
     }
    },
    {
@@ -1233,6 +1257,14 @@ HISN_STORIES.yusuf = [
        }
       }
      ]
+    }
+   },
+   {
+    "scene": "grain",
+    "character": "🌾",
+    "text": {
+     "ar": "ويُبَيِّنُ اللهُ لَنا سِرَّ هذا التَّمكين: <b>﴿ نُصِيبُ بِرَحْمَتِنَا مَنْ نَشَاءُ وَلَا نُضِيعُ أَجْرَ الْمُحْسِنِينَ ﴾</b> — كُلُّ صَبرٍ صَبَرَهُ يوسُف، وكُلُّ إحسانٍ قَدَّمَه، لَم يَضِع عِندَ الله! وكانَ يوسُفُ يَعدِلُ بَينَ النّاس، يُعطي كُلَّ قادِمٍ حَقَّهُ مِنَ الطَّعامِ بِلا ظُلم، ولِذلِكَ قالَ لِإخوَتِهِ حينَ جاؤوه: <b>﴿ أَلَا تَرَوْنَ أَنِّي أُوفِي الْكَيْلَ وَأَنَا خَيْرُ الْمُنْزِلِينَ ﴾</b><br><br>ثُمَّ يُذَكِّرُنا بِما هو أَعظَمُ مِن مُلكِ مِصرَ كُلِّه: <b>﴿ وَلَأَجْرُ الْآخِرَةِ خَيْرٌ لِلَّذِينَ آمَنُوا وَكَانُوا يَتَّقُونَ ﴾</b><br><br><b>الدَّرس:</b> لا تَستَعجِلِ الجَزاء. افعَلِ الخَيرَ واصبِر، فَقَد يُعطيكَ اللهُ في الدُّنيا ما يُفرِحُك، وما عِندَهُ في الآخِرَةِ خَيرٌ وأَبقى.",
+     "en": "Allah reveals to us the secret of this rise: <b>﴿ \"We bestow Our mercy on whom We will, and We do not let the reward of the doers of good be lost\" ﴾</b> — every patience Yusuf showed and every good he did was never lost with Allah! Yusuf was fair to everyone, giving each person who came his full share of food without injustice — which is why he told his brothers when they came: <b>﴿ \"Do you not see that I give full measure, and I am the best of hosts?\" ﴾</b><br><br>Then He reminds us of something greater than all the kingdom of Egypt: <b>﴿ \"And the reward of the Hereafter is better for those who believe and are mindful of Allah\" ﴾</b><br><br><b>The lesson:</b> don't rush the reward. Do good and be patient — Allah may give you in this world what makes you happy, and what is with Him in the Hereafter is better and more lasting."
     }
    },
    {

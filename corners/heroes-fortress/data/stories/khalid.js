@@ -11,6 +11,22 @@ HISN_STORIES.khalid = [
   },
   "pages": [
    {
+    "scene": "madinah",
+    "character": "✉️",
+    "text": {
+     "ar": "في السنةِ الثامنةِ للهجرة، أرسلَ النبيُّ ﷺ صحابيّاً اسمُه <b>الحارثُ بنُ عُمير</b> برسالةٍ إلى أميرِ بُصرى في الشام، فاعترضه أحدُ الأمراءِ الموالينَ للرومِ وقتله. وكان قتلُ الرسلِ أمراً خطيراً لا تفعلُه الأممُ المحترمة.<br><br>فجهّزَ النبيُّ ﷺ جيشاً من ثلاثةِ آلاف، وجعلَ عليهم <b>زيدَ بنَ حارثة</b>، وقال: إن أُصيبَ زيدٌ فجعفر، وإن أُصيبَ جعفرٌ فعبدُ اللهِ بنُ رواحة. وكان في الجيشِ رجلٌ أسلمَ قبلَ أشهرٍ قليلة فقط، يمشي جنديّاً بين الجنود، اسمُه <b>خالدُ بنُ الوليد</b>.",
+     "en": "In the eighth year after the Hijra, the Prophet ﷺ sent a Companion named <b>al-Harith ibn Umayr</b> with a letter to the ruler of Busra in Sham. One of the princes allied to the Romans intercepted him and killed him. Killing envoys was a grave crime that respectable nations never committed.<br><br>So the Prophet ﷺ prepared an army of three thousand and placed <b>Zayd ibn Haritha</b> in command, saying: If Zayd falls, then Jafar; and if Jafar falls, then Abdullah ibn Rawaha. In the army was a man who had embraced Islam only a few months earlier, marching as an ordinary soldier among the soldiers: <b>Khalid ibn al-Walid</b>."
+    }
+   },
+   {
+    "scene": "peaks",
+    "character": "🗣️",
+    "text": {
+     "ar": "سارَ الجيشُ حتى بلغَ أرضَ الشام، فجاءتهم الأخبارُ أنّ جموعاً عظيمةً من الرومِ والقبائلِ العربيّةِ المتحالفةِ معهم قد اجتمعتْ لقتالِهم. فتشاورَ المسلمون: هل نكتبُ إلى النبيِّ ﷺ نطلبُ المدد؟<br><br>فقامَ <b>عبدُ اللهِ بنُ رواحة</b> يُشجّعُهم، وممّا قال كما في سيرةِ ابنِ هشام: <b>«ما نقاتلُ الناسَ بعددٍ ولا قوّةٍ ولا كثرة، ما نقاتلُهم إلّا بهذا الدينِ الذي أكرمَنا اللهُ به»</b>. فقويتْ قلوبُهم، ومضَوا إلى <b>مؤتة</b> متوكّلينَ على الله.",
+     "en": "The army marched until it reached the land of Sham, where news came that enormous forces of Romans and their allied Arab tribes had gathered to fight them. The Muslims consulted one another: should we write to the Prophet ﷺ asking for reinforcements?<br><br>Then <b>Abdullah ibn Rawaha</b> stood to encourage them, and among his words, as in the Sira of Ibn Hisham: <b>“We do not fight people by numbers, strength or multitude; we fight them only with this religion with which Allah has honoured us.”</b> Their hearts grew strong, and they went on to <b>Mu’tah</b>, relying on Allah."
+    }
+   },
+   {
     "scene": "desert",
     "character": "⚔️",
     "text": {
@@ -57,6 +73,14 @@ HISN_STORIES.khalid = [
        }
       }
      ]
+    }
+   },
+   {
+    "scene": "night",
+    "character": "🌙",
+    "text": {
+     "ar": "وتذكرُ كتبُ المغازي أنّ خالداً استعملَ في الليلِ <b>خطّةً ذكيّة</b>: غيّرَ أماكنَ الكتائب، فجعلَ الميمنةَ ميسرة، والمقدّمةَ مؤخّرة، فلمّا أصبحَ الرومُ رأوا وجوهاً جديدةً فظنّوا أنّ المددَ قد جاءَ المسلمين، فهابوهم. ثم انسحبَ خالدٌ بالجيشِ شيئاً فشيئاً بنظامٍ وهدوء، فحفظَ أرواحَ المسلمين.<br><br>تعلّمنا مؤتةُ أنّ <b>الشجاعةَ لا تعني التهوّر</b>؛ فالقائدُ الحكيمُ يعرفُ متى يتقدّمُ ومتى يتراجعُ ليحفظَ مَن معه. وأنتَ إذا وقعتَ في مشكلة، فلا تتصرّفْ بغضب، بل فكّرْ بهدوءٍ وابحثْ عن أحسنِ مخرج، واستعنْ بالله.",
+     "en": "The books of the military campaigns mention that Khalid used <b>a clever plan</b> at night: he changed the positions of the battalions, making the right wing the left and the front the rear. In the morning the Romans saw new faces and thought reinforcements had reached the Muslims, and they grew wary. Then Khalid withdrew the army little by little, in order and calm, and saved the Muslims’ lives.<br><br>Mu’tah teaches us that <b>courage does not mean recklessness</b>: a wise leader knows when to advance and when to pull back to protect those with him. When you face a problem, do not act in anger — think calmly, look for the best way out, and seek Allah’s help."
     }
    }
   ],
@@ -191,6 +215,14 @@ HISN_STORIES.khalid = [
   },
   "pages": [
    {
+    "scene": "desert",
+    "character": "🐎",
+    "text": {
+     "ar": "بعدَ وفاةِ النبيِّ ﷺ، قادَ <b>خالدُ بنُ الوليد</b> جيوشَ المسلمينَ في خلافةِ <b>أبي بكرٍ الصدّيق</b>، فانتصرَ في معاركَ كثيرة، وعبرَ الصحراءَ من العراقِ إلى الشامِ في رحلةٍ شاقّةٍ مشهورة، وصار اسمُه يُخيفُ أعداءَ المسلمين.<br><br>ثم توفّيَ أبو بكرٍ رضي الله عنه، وتولّى الخلافةَ بعدَه <b>عمرُ بنُ الخطّاب</b>. وكان من أوّلِ قراراتِه أن جعلَ قيادةَ جيوشِ الشامِ إلى <b>أبي عبيدةَ بنِ الجرّاح</b>، الذي قال عنه النبيُّ ﷺ: <b>«أمينُ هذه الأمّة»</b>، كما في صحيحِ البخاري.",
+     "en": "After the Prophet’s ﷺ death, <b>Khalid ibn al-Walid</b> led the Muslim armies during the caliphate of <b>Abu Bakr as-Siddiq</b>. He won many battles and crossed the desert from Iraq to Sham in a famous, gruelling journey, until his very name struck fear into the enemies of the Muslims.<br><br>Then Abu Bakr passed away, and <b>Umar ibn al-Khattab</b> became caliph after him. Among his first decisions was to give command of the armies of Sham to <b>Abu Ubayda ibn al-Jarrah</b>, of whom the Prophet ﷺ said: <b>“The trustworthy one of this nation,”</b> as in Sahih al-Bukhari."
+    }
+   },
+   {
     "scene": "mosque",
     "character": "🤲",
     "text": {
@@ -237,6 +269,22 @@ HISN_STORIES.khalid = [
        }
       }
      ]
+    }
+   },
+   {
+    "scene": "pen",
+    "character": "📜",
+    "text": {
+     "ar": "وقد بيّنَ عمرُ سببَ قرارِه، فكتبَ إلى الناس، كما ذكرَ المؤرّخون، أنّه لم يعزلْ خالداً عن غضبٍ ولا خيانة، ولكنّ الناسَ <b>فُتِنوا به</b>، فأحبَّ أن يعلموا أنّ <b>اللهَ هو الذي يصنعُ النصر</b>.<br><br>وعملَ خالدٌ مع أبي عبيدةَ يداً بيد؛ يُشيرُ عليه برأيِه وخبرتِه، ويخرجُ حيثُ يُرسِلُه. لم يتنافسا على الكرسيّ، بل تعاونا على الخير، لأنّ كلاً منهما كان يريدُ رضا الله.",
+     "en": "Umar explained the reason for his decision. As historians mention, he wrote to the people that he had not dismissed Khalid out of anger or because of any betrayal, but people had become <b>dazzled by him</b>, and he wanted them to know that <b>it is Allah who grants victory</b>.<br><br>Khalid worked hand in hand with Abu Ubayda, advising him with his opinion and experience and going wherever he sent him. They did not compete for the seat of command; they cooperated in goodness, because each of them wanted Allah’s pleasure."
+    }
+   },
+   {
+    "scene": "camel",
+    "character": "🛡️",
+    "text": {
+     "ar": "وقد مدحَ النبيُّ ﷺ هذا النوعَ من الناسِ فقال في صحيحِ البخاري: <b>«طوبى لعبدٍ آخذٍ بعِنانِ فرسِه في سبيلِ الله… إن كان في الحراسةِ كان في الحراسة، وإن كان في الساقةِ كان في الساقة»</b>. أي إنّه يرضى بأيِّ مكانٍ يُوضَعُ فيه، في المقدّمةِ أو في المؤخّرة، ما دامَ يعملُ لله.<br><br>وأنتَ أيضاً: إذا لم يخترْك المعلّمُ قائداً للفريق، أو أُعطيَ دورُك لغيرك، فلا تغضبْ ولا تتركِ العمل. كن مثلَ خالد: <b>أخلصْ لله</b> في أيِّ مكانٍ كنتَ فيه، فاللهُ يرى عملَك ولا يُضيّعُه.",
+     "en": "The Prophet ﷺ praised this kind of person, saying in Sahih al-Bukhari: <b>“Glad tidings to a servant holding the reins of his horse in the path of Allah… if he is put on guard duty he stays on guard duty, and if he is put in the rear he stays in the rear.”</b> That is, he accepts whatever place he is given, at the front or at the back, as long as he is working for Allah.<br><br>You too: if your teacher does not choose you as team captain, or your role is given to someone else, do not get angry or quit. Be like Khalid: <b>be sincere to Allah</b> wherever you are placed, for Allah sees your work and never lets it go to waste."
     }
    }
   ],
@@ -371,11 +419,27 @@ HISN_STORIES.khalid = [
   },
   "pages": [
    {
+    "scene": "desert",
+    "character": "🐎",
+    "text": {
+     "ar": "قبلَ الإسلام، كان <b>خالدُ بنُ الوليد</b> من أمهرِ فرسانِ قريش، ابنَ سيّدٍ من ساداتِ <b>بني مخزوم</b>. وفي <b>غزوةِ أحد</b> كان يقودُ خيلَ المشركين ضدَّ المسلمين، فكان ذكاؤه الحربيُّ يومَها سبباً في أذى المسلمين.<br><br>ثم هداه اللهُ فأسلمَ قبلَ مؤتةَ بأشهرٍ قليلة. فالقوّةُ نفسُها، والذكاءُ نفسُه، صارا الآنَ <b>في خدمةِ الحقّ</b>. وكانت مؤتةُ أوّلَ معركةٍ كبيرةٍ يشهدُها خالدٌ مسلماً، فكيف عرفَ المسلمونَ بما فعل؟",
+     "en": "Before Islam, <b>Khalid ibn al-Walid</b> was one of the most skilled horsemen of Quraysh, the son of a chief of <b>Banu Makhzum</b>. At <b>the Battle of Uhud</b> he led the idolaters’ cavalry against the Muslims, and his military skill that day caused the Muslims harm.<br><br>Then Allah guided him and he embraced Islam just a few months before Mu’tah. The same strength and the same intelligence were now <b>in the service of the truth</b>. Mu’tah was the first great battle Khalid witnessed as a Muslim — so how did the Muslims learn what he had done?"
+    }
+   },
+   {
     "scene": "madinah",
     "character": "🦅",
     "text": {
-     "ar": "كان الجيشُ في <b>مؤتة</b> بعيداً جداً عن المدينة، ولم يكنْ هناك هاتفٌ ولا رسائلُ سريعة. لكنّ النبيَّ ﷺ وقفَ بين أصحابِه في المدينةِ <b>قبلَ أن يأتيَهم الخبر</b>، وأخبرهم بما يجري بوحيٍ من الله: «أخذَ الرايةَ زيدٌ فأُصيب، ثمّ أخذها جعفرٌ فأُصيب، ثمّ أخذها ابنُ رواحةَ فأُصيب» — <b>وعيناه ﷺ تذرفانِ بالدموع</b> حزناً على أحبابه.<br><br>ثمّ قال ﷺ: <b>«حتى أخذَ الرايةَ سيفٌ من سيوفِ الله، حتى فتحَ اللهُ عليهم»</b> — يقصدُ <b>خالدَ بنَ الوليد</b>! فكان هذا أوّلَ يومٍ يُعرَفُ فيه خالدٌ بهذا اللقبِ العظيم.<br><br>وفي يومٍ آخر كان الناسُ يمرّونَ بالنبيِّ ﷺ فيسألُ: «من هذا؟» فلمّا مرَّ خالدٌ قال: <b>«نِعمَ عبدُ اللهِ خالدُ بنُ الوليد، سيفٌ من سيوفِ الله»</b>. لاحِظْ أنّ النبيَّ ﷺ قال <b>«عبدُ الله»</b> قبلَ «سيف»! فالعبوديّةُ لله أوّلاً، والقوّةُ والشجاعةُ تأتي بعدَها في خدمةِ دينِه.",
-     "en": "The army at <b>Mu'ta</b> was very far from Madinah, with no phones or fast messages. Yet the Prophet ﷺ stood among his Companions in Madinah <b>before the news reached them</b>, and told them what was happening by revelation from Allah: \"Zayd took the banner and was struck down, then Ja'far took it and was struck down, then Ibn Rawaha took it and was struck down\" — <b>his ﷺ eyes flowing with tears</b> in grief for his loved ones.<br><br>Then he ﷺ said: <b>\"until a sword from the swords of Allah took the banner, and Allah granted them victory\"</b> — meaning <b>Khalid ibn al-Walid</b>! That was the first day Khalid became known by this great title.<br><br>On another day people were passing by the Prophet ﷺ and he would ask: \"Who is this?\" When Khalid passed he said: <b>\"What an excellent servant of Allah is Khalid ibn al-Walid — a sword from the swords of Allah.\"</b> Notice that the Prophet ﷺ said <b>\"servant of Allah\"</b> before \"sword\"! Servitude to Allah comes first, and strength and courage come after it, in service of His religion."
+     "ar": "كان الجيشُ في <b>مؤتة</b> بعيداً جداً عن المدينة، ولم يكنْ هناك هاتفٌ ولا رسائلُ سريعة. لكنّ النبيَّ ﷺ وقفَ بين أصحابِه في المدينةِ <b>قبلَ أن يأتيَهم الخبر</b>، وأخبرهم بما يجري بوحيٍ من الله: «أخذَ الرايةَ زيدٌ فأُصيب، ثمّ أخذها جعفرٌ فأُصيب، ثمّ أخذها ابنُ رواحةَ فأُصيب» — <b>وعيناه ﷺ تذرفانِ بالدموع</b> حزناً على أحبابه.<br><br>ثمّ قال ﷺ: <b>«حتى أخذَ الرايةَ سيفٌ من سيوفِ الله، حتى فتحَ اللهُ عليهم»</b> — يقصدُ <b>خالدَ بنَ الوليد</b>! فكان هذا أوّلَ يومٍ يُعرَفُ فيه خالدٌ بهذا اللقبِ العظيم.",
+     "en": "The army at <b>Mu'ta</b> was very far from Madinah, with no phones or fast messages. Yet the Prophet ﷺ stood among his Companions in Madinah <b>before the news reached them</b>, and told them what was happening by revelation from Allah: \"Zayd took the banner and was struck down, then Ja'far took it and was struck down, then Ibn Rawaha took it and was struck down\" — <b>his ﷺ eyes flowing with tears</b> in grief for his loved ones.<br><br>Then he ﷺ said: <b>\"until a sword from the swords of Allah took the banner, and Allah granted them victory\"</b> — meaning <b>Khalid ibn al-Walid</b>! That was the first day Khalid became known by this great title."
+    }
+   },
+   {
+    "scene": "madinah",
+    "character": "🦅",
+    "text": {
+     "ar": "وفي يومٍ آخر كان الناسُ يمرّونَ بالنبيِّ ﷺ فيسألُ: «من هذا؟» فلمّا مرَّ خالدٌ قال: <b>«نِعمَ عبدُ اللهِ خالدُ بنُ الوليد، سيفٌ من سيوفِ الله»</b>. لاحِظْ أنّ النبيَّ ﷺ قال <b>«عبدُ الله»</b> قبلَ «سيف»! فالعبوديّةُ لله أوّلاً، والقوّةُ والشجاعةُ تأتي بعدَها في خدمةِ دينِه.",
+     "en": "On another day people were passing by the Prophet ﷺ and he would ask: \"Who is this?\" When Khalid passed he said: <b>\"What an excellent servant of Allah is Khalid ibn al-Walid — a sword from the swords of Allah.\"</b> Notice that the Prophet ﷺ said <b>\"servant of Allah\"</b> before \"sword\"! Servitude to Allah comes first, and strength and courage come after it, in service of His religion."
     },
     "choice": {
      "q": {
@@ -417,6 +481,14 @@ HISN_STORIES.khalid = [
        }
       }
      ]
+    }
+   },
+   {
+    "scene": "sprout",
+    "character": "🌱",
+    "text": {
+     "ar": "لقبُ <b>«سيفِ الله»</b> لم يكن مدحاً للقوّةِ وحدَها، بل لأنّ خالداً جعلَ قوّتَه في طاعةِ الله. فالسيفُ في يدِ الظالمِ يؤذي، وفي يدِ العادلِ يحمي الضعفاء.<br><br>وكلُّ واحدٍ منّا عندَه موهبة: قد تكونُ سريعاً في الجري، أو ماهراً في الرسم، أو قويّاً في الحساب. فاسألْ نفسَك: كيف أجعلُ موهبتي <b>في خدمةِ الخير</b>؟ وتذكّرْ أنّ النبيَّ ﷺ بدأ بقولِه «عبدُ الله»، فكن عبداً لله أوّلاً، ثم كن بطلاً في موهبتِك.",
+     "en": "The title <b>“Sword of Allah”</b> was not praise for strength alone, but because Khalid put his strength in obedience to Allah. A sword in the hand of an oppressor harms, but in the hand of a just person it protects the weak.<br><br>Each of us has a talent: you may be fast at running, skilled at drawing, or strong at maths. Ask yourself: how can I put my talent <b>in the service of good</b>? And remember that the Prophet ﷺ began with “servant of Allah” — so be a servant of Allah first, then be a champion in your talent."
     }
    }
   ],
@@ -551,11 +623,27 @@ HISN_STORIES.khalid = [
   },
   "pages": [
    {
+    "scene": "peaks",
+    "character": "🐎",
+    "text": {
+     "ar": "كان <b>خالدُ بنُ الوليد</b> فارساً من فرسانِ قريش، وقاتلَ المسلمينَ في <b>أُحد</b>. وفي سنةِ <b>الحديبية</b> خرجَ النبيُّ ﷺ يريدُ العمرة، فأرسلتْ قريشٌ خالداً على رأسِ خيلٍ لتعترضَه، فسلكَ النبيُّ ﷺ طريقاً آخرَ، كما في صحيحِ البخاري.<br><br>ثم كُتِبَ الصلحُ بين النبيِّ ﷺ وقريش. وكان أخوه <b>الوليدُ بنُ الوليد</b> قد أسلم، فكتبَ إليه — كما يروي خالدٌ نفسُه — أنّ النبيَّ ﷺ سألَ عنه وتعجّبَ أن يبقى مثلُه بعيداً عن الإسلام. فبدأ خالدٌ يفكّر.",
+     "en": "<b>Khalid ibn al-Walid</b> was one of the horsemen of Quraysh, and he fought the Muslims at <b>Uhud</b>. In the year of <b>al-Hudaybiya</b>, when the Prophet ﷺ set out intending umrah, Quraysh sent Khalid at the head of a cavalry force to block him, and the Prophet ﷺ took a different route, as in Sahih al-Bukhari.<br><br>Then a peace treaty was written between the Prophet ﷺ and Quraysh. His brother <b>al-Walid ibn al-Walid</b> had already become Muslim, and he wrote to him — as Khalid himself narrates — that the Prophet ﷺ had asked about him, surprised that someone like him should remain far from Islam. And Khalid began to think."
+    }
+   },
+   {
     "scene": "desert",
     "character": "🦅",
     "text": {
-     "ar": "بعدَ <b>صلحِ الحديبية</b> بدأ <b>خالدُ بنُ الوليد</b> يُفكّرُ بعقلِه: «لقد شهدتُ هذه المواقفَ كلَّها ضدَّ محمّد، وفي كلِّ مرّةٍ أرى أنّي في غيرِ مكاني، وأنّ محمّداً سيظهر». فأدخلَ اللهُ <b>حبَّ الإسلامِ في قلبِه</b>، فعزمَ أن يذهبَ إلى المدينة.<br><br>فلقيَ صاحبَه <b>عثمانَ بنَ طلحة</b> فأخبره بما في نفسِه، فوافقه وخرجا معاً. وفي الطريقِ — عندَ مكانٍ يُسمّى <b>الهَدّة</b> — فوجئا بـ<b>عمرِو بنِ العاص</b>! فسألاه: إلى أين؟ قال: وأنتما إلى أين؟ فإذا <b>الثلاثةُ قد خرجوا لنفسِ الهدف</b>: أن يُسلِموا! فسارَ الثلاثةُ معاً حتى وصلوا المدينة.<br><br>قال خالد: فما زالَ رسولُ اللهِ ﷺ <b>يتبسّمُ إليّ</b> حتى وقفتُ عليه، فسلّمتُ عليه بالنبوّة، فقال ﷺ: <b>«الحمدُ للهِ الذي هداك، قد كنتُ أرى لك عقلاً رجوتُ ألّا يُسلِمَك إلّا إلى خير»</b>. وطلبَ خالدٌ أن يستغفرَ له عمّا مضى، فقال ﷺ: «الإسلامُ يَجُبُّ ما كان قبلَه»، ودعا له: <b>«اللّهُمَّ اغفرْ لخالدِ بنِ الوليد كلَّ ما أوضعَ فيه من صدٍّ عن سبيلِك»</b>.",
-     "en": "After <b>the Treaty of al-Hudaybiya</b>, <b>Khalid ibn al-Walid</b> began to think with his mind: \"I have witnessed all these encounters against Muhammad, and each time I see that I am in the wrong place, and that Muhammad will prevail.\" Allah placed <b>love of Islam in his heart</b>, and he resolved to go to Madinah.<br><br>He met his friend <b>'Uthman ibn Talha</b> and told him what was in his heart; he agreed, and they set out together. On the way — at a place called <b>al-Hadda</b> — they were surprised by <b>'Amr ibn al-'As</b>! They asked him: Where to? He said: And where are you two going? Lo, <b>all three had set out for the same goal</b>: to accept Islam! The three travelled together until they reached Madinah.<br><br>Khalid said: The Messenger of Allah ﷺ <b>kept smiling at me</b> until I stood before him and greeted him as Prophet, and he ﷺ said: <b>\"Praise be to Allah who guided you. I always saw in you a mind that I hoped would lead you only to good.\"</b> Khalid asked him to seek forgiveness for the past, and he ﷺ said: \"Islam wipes out what came before it,\" and prayed: <b>\"O Allah, forgive Khalid ibn al-Walid all the efforts he made in turning people from Your path.\"</b>"
+     "ar": "بعدَ <b>صلحِ الحديبية</b> بدأ <b>خالدُ بنُ الوليد</b> يُفكّرُ بعقلِه: «لقد شهدتُ هذه المواقفَ كلَّها ضدَّ محمّد، وفي كلِّ مرّةٍ أرى أنّي في غيرِ مكاني، وأنّ محمّداً سيظهر». فأدخلَ اللهُ <b>حبَّ الإسلامِ في قلبِه</b>، فعزمَ أن يذهبَ إلى المدينة.<br><br>فلقيَ صاحبَه <b>عثمانَ بنَ طلحة</b> فأخبره بما في نفسِه، فوافقه وخرجا معاً. وفي الطريقِ — عندَ مكانٍ يُسمّى <b>الهَدّة</b> — فوجئا بـ<b>عمرِو بنِ العاص</b>! فسألاه: إلى أين؟ قال: وأنتما إلى أين؟ فإذا <b>الثلاثةُ قد خرجوا لنفسِ الهدف</b>: أن يُسلِموا! فسارَ الثلاثةُ معاً حتى وصلوا المدينة.",
+     "en": "After <b>the Treaty of al-Hudaybiya</b>, <b>Khalid ibn al-Walid</b> began to think with his mind: \"I have witnessed all these encounters against Muhammad, and each time I see that I am in the wrong place, and that Muhammad will prevail.\" Allah placed <b>love of Islam in his heart</b>, and he resolved to go to Madinah.<br><br>He met his friend <b>'Uthman ibn Talha</b> and told him what was in his heart; he agreed, and they set out together. On the way — at a place called <b>al-Hadda</b> — they were surprised by <b>'Amr ibn al-'As</b>! They asked him: Where to? He said: And where are you two going? Lo, <b>all three had set out for the same goal</b>: to accept Islam! The three travelled together until they reached Madinah."
+    }
+   },
+   {
+    "scene": "desert",
+    "character": "🦅",
+    "text": {
+     "ar": "قال خالد: فما زالَ رسولُ اللهِ ﷺ <b>يتبسّمُ إليّ</b> حتى وقفتُ عليه، فسلّمتُ عليه بالنبوّة، فقال ﷺ: <b>«الحمدُ للهِ الذي هداك، قد كنتُ أرى لك عقلاً رجوتُ ألّا يُسلِمَك إلّا إلى خير»</b>. وطلبَ خالدٌ أن يستغفرَ له عمّا مضى، فقال ﷺ: «الإسلامُ يَجُبُّ ما كان قبلَه»، ودعا له: <b>«اللّهُمَّ اغفرْ لخالدِ بنِ الوليد كلَّ ما أوضعَ فيه من صدٍّ عن سبيلِك»</b>.",
+     "en": "Khalid said: The Messenger of Allah ﷺ <b>kept smiling at me</b> until I stood before him and greeted him as Prophet, and he ﷺ said: <b>\"Praise be to Allah who guided you. I always saw in you a mind that I hoped would lead you only to good.\"</b> Khalid asked him to seek forgiveness for the past, and he ﷺ said: \"Islam wipes out what came before it,\" and prayed: <b>\"O Allah, forgive Khalid ibn al-Walid all the efforts he made in turning people from Your path.\"</b>"
     },
     "choice": {
      "q": {
@@ -597,6 +685,14 @@ HISN_STORIES.khalid = [
        }
       }
      ]
+    }
+   },
+   {
+    "scene": "spring",
+    "character": "💧",
+    "text": {
+     "ar": "ما أعظمَ رحمةَ الله! رجلٌ قاتلَ المسلمينَ سنوات، فلمّا جاءَ تائباً استقبلَه النبيُّ ﷺ بالابتسامةِ والدعاء. وقد قال اللهُ تعالى: <b>﴿ قُلْ يَا عِبَادِيَ الَّذِينَ أَسْرَفُوا عَلَىٰ أَنْفُسِهِمْ لَا تَقْنَطُوا مِنْ رَحْمَةِ اللَّهِ ﴾</b>.<br><br>وتعلّمنا القصّةُ أن نُحسِنَ الظنَّ بالناس، وأنّ <b>العقلَ يقودُ إلى الحقّ</b> إذا استعملَه صاحبُه بصدق. فإذا أخطأتَ يوماً، فلا تيأس، بل ارجعْ إلى الله سريعاً، وإذا رجعَ إليك صديقٌ نادماً، فاستقبلْه بابتسامةٍ كما فعلَ النبيُّ ﷺ.",
+     "en": "How great is Allah’s mercy! A man fought the Muslims for years, and when he came repenting, the Prophet ﷺ welcomed him with a smile and a prayer. Allah says: <b>﴿ “Say: O My servants who have wronged yourselves, do not despair of Allah’s mercy.” ﴾</b><br><br>This story teaches us to think well of people, and that <b>the mind leads to the truth</b> when used honestly. If you make a mistake one day, do not despair — turn back to Allah quickly. And if a friend comes back to you regretful, welcome him with a smile, as the Prophet ﷺ did."
     }
    }
   ],
@@ -731,11 +827,27 @@ HISN_STORIES.khalid = [
   },
   "pages": [
    {
+    "scene": "peaks",
+    "character": "🛡️",
+    "text": {
+     "ar": "منذُ أسلمَ <b>خالدٌ</b> لم يتركِ الجهادَ في سبيلِ الله؛ شهدَ مع النبيِّ ﷺ فتحَ مكّةَ وحُنيناً، ثم قادَ الجيوشَ في خلافةِ أبي بكرٍ في العراقِ والشام، وكان من قادةِ يومِ <b>اليرموك</b> المشهور.<br><br>وبعدَ تلك السنواتِ الطويلةِ استقرَّ في مدينةِ <b>حمص</b> في الشام. وكان قلبُه ما يزالُ معلّقاً بالشهادة، يرجو أن يلقى اللهَ في ساحةِ الجهاد. ثم مرضَ مرضَه الأخير.",
+     "en": "From the day he embraced Islam, <b>Khalid</b> never left striving in the path of Allah. He was with the Prophet ﷺ at the conquest of Makkah and at Hunayn, then led armies in Iraq and Sham during Abu Bakr’s caliphate, and was among the commanders on the famous day of <b>Yarmouk</b>.<br><br>After those long years he settled in the city of <b>Hims</b> in Sham. His heart was still attached to martyrdom, hoping to meet Allah on the field of struggle. Then he fell into his final illness."
+    }
+   },
+   {
     "scene": "dwellings",
     "character": "🦅",
     "text": {
-     "ar": "عاشَ <b>خالدُ بنُ الوليد</b> حياتَه كلَّها في سبيلِ الله، يخرجُ من جهادٍ إلى جهاد، وكان يتمنّى أن يموتَ <b>شهيداً</b> في ساحةِ المعركة. لكنّ اللهَ قدّرَ له أن يموتَ <b>على فراشِه</b> في مدينةِ حمص.<br><br>فلمّا حضرته الوفاةُ <b>بكى</b> وقال: <b>«لقد شهدتُ كذا وكذا زحفاً، وما في جسدي شِبرٌ إلّا وفيه ضربةٌ بسيف، أو طعنةٌ برمح، أو رميةٌ بسهم، وها أنا ذا أموتُ على فراشي… فلا نامت أعينُ الجبناء!»</b> أرادَ أن يقول: انظروا! لم تقتلْني كلُّ هذه المعارك، لأنّ <b>الأجلَ بيدِ اللهِ وحدَه</b>؛ فالجبانُ الذي يهربُ خوفاً من الموتِ لا يُطيلُ عمرَه دقيقة!<br><br>ولمّا ماتَ لم يجدوا في تركتِه إلّا <b>فرسَه وسلاحَه وغلامَه</b>، وقد جعلَ سلاحَه <b>في سبيلِ الله</b>. فلمّا بلغَ ذلك عمرَ بنَ الخطّاب قال: <b>«رحمَ اللهُ أبا سليمان، كان على ما ظننّا به»</b>. والعلماءُ يقولون: إنّ من سألَ اللهَ الشهادةَ بصدقٍ بلّغه اللهُ منازلَ الشهداءِ وإن ماتَ على فراشِه.",
-     "en": "<b>Khalid ibn al-Walid</b> lived his whole life in the path of Allah, going from one struggle to the next, and he wished to die a <b>martyr</b> on the battlefield. But Allah decreed that he would die <b>on his bed</b> in the city of Homs.<br><br>When death came to him, he <b>wept</b> and said: <b>\"I have witnessed so many battles, and there is not a hand-span of my body without a sword blow, a spear thrust or an arrow wound — and here I am dying on my bed… so may the eyes of cowards never sleep!\"</b> He meant: look! All these battles did not kill me, because <b>the appointed time is in Allah's hand alone</b>; the coward who flees for fear of death does not lengthen his life by a minute!<br><br>When he died, nothing was found in his estate except <b>his horse, his weapons and his servant boy</b>; his weapons he had dedicated <b>to the path of Allah</b>. When this reached 'Umar ibn al-Khattab he said: <b>\"May Allah have mercy on Abu Sulayman; he was just as we thought of him.\"</b> Scholars say: whoever sincerely asks Allah for martyrdom, Allah brings him to the ranks of martyrs even if he dies on his bed."
+     "ar": "عاشَ <b>خالدُ بنُ الوليد</b> حياتَه كلَّها في سبيلِ الله، يخرجُ من جهادٍ إلى جهاد، وكان يتمنّى أن يموتَ <b>شهيداً</b> في ساحةِ المعركة. لكنّ اللهَ قدّرَ له أن يموتَ <b>على فراشِه</b> في مدينةِ حمص.<br><br>فلمّا حضرته الوفاةُ <b>بكى</b> وقال: <b>«لقد شهدتُ كذا وكذا زحفاً، وما في جسدي شِبرٌ إلّا وفيه ضربةٌ بسيف، أو طعنةٌ برمح، أو رميةٌ بسهم، وها أنا ذا أموتُ على فراشي… فلا نامت أعينُ الجبناء!»</b> أرادَ أن يقول: انظروا! لم تقتلْني كلُّ هذه المعارك، لأنّ <b>الأجلَ بيدِ اللهِ وحدَه</b>؛ فالجبانُ الذي يهربُ خوفاً من الموتِ لا يُطيلُ عمرَه دقيقة!",
+     "en": "<b>Khalid ibn al-Walid</b> lived his whole life in the path of Allah, going from one struggle to the next, and he wished to die a <b>martyr</b> on the battlefield. But Allah decreed that he would die <b>on his bed</b> in the city of Homs.<br><br>When death came to him, he <b>wept</b> and said: <b>\"I have witnessed so many battles, and there is not a hand-span of my body without a sword blow, a spear thrust or an arrow wound — and here I am dying on my bed… so may the eyes of cowards never sleep!\"</b> He meant: look! All these battles did not kill me, because <b>the appointed time is in Allah's hand alone</b>; the coward who flees for fear of death does not lengthen his life by a minute!"
+    }
+   },
+   {
+    "scene": "dwellings",
+    "character": "🦅",
+    "text": {
+     "ar": "ولمّا ماتَ لم يجدوا في تركتِه إلّا <b>فرسَه وسلاحَه وغلامَه</b>، وقد جعلَ سلاحَه <b>في سبيلِ الله</b>. فلمّا بلغَ ذلك عمرَ بنَ الخطّاب قال: <b>«رحمَ اللهُ أبا سليمان، كان على ما ظننّا به»</b>. والعلماءُ يقولون: إنّ من سألَ اللهَ الشهادةَ بصدقٍ بلّغه اللهُ منازلَ الشهداءِ وإن ماتَ على فراشِه.",
+     "en": "When he died, nothing was found in his estate except <b>his horse, his weapons and his servant boy</b>; his weapons he had dedicated <b>to the path of Allah</b>. When this reached 'Umar ibn al-Khattab he said: <b>\"May Allah have mercy on Abu Sulayman; he was just as we thought of him.\"</b> Scholars say: whoever sincerely asks Allah for martyrdom, Allah brings him to the ranks of martyrs even if he dies on his bed."
     },
     "choice": {
      "q": {
@@ -777,6 +889,14 @@ HISN_STORIES.khalid = [
        }
       }
      ]
+    }
+   },
+   {
+    "scene": "mountain",
+    "character": "🌄",
+    "text": {
+     "ar": "وقد شهدَ له النبيُّ ﷺ في حياتِه بهذا الكرم، فقال كما في صحيحِ البخاريِّ ومسلم: <b>«أمّا خالدٌ فإنّكم تظلمونَ خالداً، قد احتبسَ أدراعَه وأعتادَه في سبيلِ الله»</b> — أي أوقفَ دروعَه وعُدّتَه للجهاد.<br><br>وقال اللهُ تعالى: <b>﴿ وَمَا كَانَ لِنَفْسٍ أَنْ تَمُوتَ إِلَّا بِإِذْنِ اللَّهِ كِتَابًا مُؤَجَّلًا ﴾</b>. فلا تجعلِ الخوفَ يمنعُك من قولِ الحقِّ أو فعلِ الخير، فعمرُك بيدِ اللهِ وحدَه. وكن صادقاً في نيّتِك؛ فمن تمنّى الخيرَ بصدقٍ كتبَ اللهُ له أجرَه <b>ولو لم يبلغْه</b>.",
+     "en": "The Prophet ﷺ had testified to this generosity in his lifetime, saying, as in al-Bukhari and Muslim: <b>“As for Khalid, you are wronging Khalid: he has dedicated his armour and his equipment to the path of Allah”</b> — meaning he had set aside his armour and gear for jihad.<br><br>Allah says: <b>﴿ “No soul can die except by Allah’s permission, at a term appointed.” ﴾</b> So never let fear stop you from saying the truth or doing good, for your lifespan is in Allah’s hand alone. And be sincere in your intention: whoever truly wishes for good, Allah writes its reward for him <b>even if he never reaches it</b>."
     }
    }
   ],

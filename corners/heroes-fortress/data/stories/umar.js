@@ -10,6 +10,7 @@ HISN_STORIES.umar = [
    "en": "Umar's Islam: From Enemy to Supporter"
   },
   "pages": [
+      {"scene":"kaaba","character":"🕋","text":{"ar":"في <b>مكّة</b>، في السنواتِ الأولى من الدعوة، كان المسلمونَ قليلين، يُصلّونَ سرّاً ويخافونَ من أذى قريش. وكان <b>عمرُ بنُ الخطّاب</b> رجلاً قويّاً شديداً تهابُه قريش، وكان من أشدِّ الناسِ على المسلمين.<br><br>لكنّ النبيَّ ﷺ لم ييأسْ من هدايتِه، بل دعا ربَّه فقال: <b>«اللهمّ أعِزَّ الإسلامَ بأحبِّ هذين الرجلين إليك: بأبي جهلٍ أو بعمرَ بنِ الخطّاب»</b>، قال ابنُ عمر: وكان أحبَّهما إليه عمر — رواه الترمذي. فكانت الإجابةُ قريبة، من حيث لا يتوقّعُ أحد.","en":"In <b>Makkah</b>, in the early years of the call, the Muslims were few. They prayed in secret and feared the harm of Quraysh. <b>‘Umar ibn al-Khattab</b> was a strong, tough man whom Quraysh held in awe, and he was one of the harshest people against the Muslims.<br><br>But the Prophet ﷺ did not give up hope of his guidance. He called on his Lord, saying: <b>\"O Allah, strengthen Islam through whichever of these two men is more beloved to You: Abu Jahl or ‘Umar ibn al-Khattab.\"</b> Ibn ‘Umar said: and the more beloved of the two to Him was ‘Umar — reported by at-Tirmidhi. The answer was near, from where no one expected."}},
    {
     "scene": "madinah",
     "character": "⚔️",
@@ -58,8 +59,11 @@ HISN_STORIES.umar = [
       }
      ]
     }
-   }
-  ],
+   },
+      {"scene":"pen","character":"📜","text":{"ar":"وتذكرُ كتبُ السيرة أنّ أختَه قالت له: إنّك على غيرِ طهارة، و﴿لَّا يَمَسُّهُ إِلَّا الْمُطَهَّرُونَ﴾، فقامَ فاغتسل، ثم أخذَ الصحيفةَ فقرأَ أوّلَ <b>سورةِ طه</b>: ﴿طه ۝ مَا أَنزَلْنَا عَلَيْكَ الْقُرْآنَ لِتَشْقَىٰ﴾.<br><br>فلانَ قلبُه القاسي، وقال: <b>«ما أحسنَ هذا الكلامَ وأكرمَه!»</b> ثم سألَ عن مكانِ رسولِ اللهِ ﷺ، فدلّوه على <b>دارِ الأرقم</b> عند الصفا. فذهبَ إليه، ولكنْ هذه المرّةَ لا يحملُ في قلبِه غضباً، بل يحملُ شوقاً إلى الحقّ.","en":"The books of Seerah mention that his sister told him: you are not in a state of purity, and ﴿\"None touch it except the purified\"﴾. So he got up and washed, then took the sheet and read the beginning of <b>Surah Ta-Ha</b>: ﴿\"Ta, Ha. We have not sent down to you the Quran that you be distressed\"﴾.<br><br>His hard heart softened, and he said: <b>\"How beautiful and noble these words are!\"</b> Then he asked where the Messenger of Allah ﷺ was, and they directed him to <b>the house of al-Arqam</b> near as-Safa. He went to him, but this time he carried no anger in his heart, only a longing for the truth."}},
+      {"scene":"kaaba","character":"🤝","text":{"ar":"فلمّا دخلَ على النبيِّ ﷺ أعلنَ <b>شهادةَ أن لا إلهَ إلا اللهُ وأنّ محمّداً رسولُ الله</b>، فكبّرَ المسلمونَ فرحاً بإسلامِه. وصارَ الرجلُ الذي خرجَ يريدُ أذى النبيِّ ﷺ من أقوى أنصارِه.<br><br>وقال عبدُ اللهِ بنُ مسعود: <b>«ما زِلنا أعِزّةً منذُ أسلمَ عمر»</b> — رواه البخاري. وجهرَ المسلمونَ بالصلاةِ عند الكعبةِ بعد أن كانوا يُصلّونَ سرّاً. وهكذا استجابَ اللهُ دعاءَ نبيِّه ﷺ، فأعزَّ الإسلامَ بعمر.","en":"When he came in to the Prophet ﷺ, he declared <b>the testimony that there is no god but Allah and that Muhammad is the Messenger of Allah</b>, and the Muslims cried \"Allahu Akbar\" in joy at his Islam. The man who had set out to harm the Prophet ﷺ became one of his strongest supporters.<br><br>‘Abdullah ibn Mas’ud said: <b>\"We have been strong ever since ‘Umar accepted Islam\"</b> — reported by al-Bukhari. The Muslims began praying openly at the Ka’bah after having prayed in secret. In this way Allah answered His Prophet’s ﷺ prayer and strengthened Islam through ‘Umar."}},
+      {"scene":"sprout","character":"🧒","text":{"ar":"لقد تغيّرَ عمرُ في يومٍ واحد، من عدوٍّ للإسلامِ إلى بطلٍ من أبطالِه، لأنّه <b>سمعَ القرآنَ بقلبٍ مفتوح</b>. فلا تحتقرْ قوّةَ آيةٍ تقرؤها أو كلمةٍ طيّبةٍ تقولُها.<br><br>ولا تيأسْ من أحد: فالذي يُغضِبُك اليومَ قد يكونُ صديقَك الصالحَ غداً. ادعُ له بالهداية كما دعا النبيُّ ﷺ لعمر، وكُنْ أنتَ <b>ثابتاً على الحقِّ بأدب</b> كما ثبتت فاطمةُ أختُه، فإنّ القلوبَ بيدِ اللهِ يُقلِّبُها كيف يشاء.","en":"‘Umar changed in a single day, from an enemy of Islam into one of its heroes, because he <b>listened to the Quran with an open heart</b>. So never underestimate the power of a verse you recite or a kind word you say.<br><br>And don’t give up on anyone: the person who upsets you today may be your righteous friend tomorrow. Pray for his guidance as the Prophet ﷺ prayed for ‘Umar, and be <b>firm on the truth with good manners</b>, as his sister Fatimah was firm, for hearts are in Allah’s hand; He turns them as He wills."}}
+    ],
   "quiz": [
    {
     "q": {
@@ -190,6 +194,7 @@ HISN_STORIES.umar = [
    "en": "Umar's Justice: When Did You Enslave People?"
   },
   "pages": [
+      {"scene":"globe","character":"🗺️","text":{"ar":"في خلافةِ <b>عمرَ بنِ الخطّاب</b> فُتِحت <b>مصر</b> على يدِ القائدِ <b>عمرِو بنِ العاص</b>، فصارَ والياً عليها. وكان أهلُ مصرَ من <b>القِبط</b> قد صاروا أهلَ عهدٍ وذمّة، لهم حقوقٌ يجبُ على المسلمين حفظُها: أن تُصانَ دماؤهم وأموالُهم وكرامتُهم.<br><br>وقد حذّرَ النبيُّ ﷺ من ظلمِهم فقال: <b>«ألا مَن ظلمَ مُعاهَداً، أو انتقصَه، أو كلّفَه فوقَ طاقتِه، أو أخذَ منه شيئاً بغيرِ طِيبِ نفسٍ، فأنا حَجيجُه يومَ القيامة»</b> — رواه أبو داود. وكان عمرُ يعرفُ هذا الحديثَ ويخافُ أن يُظلَمَ أحدٌ في ولايتِه.","en":"During the caliphate of <b>‘Umar ibn al-Khattab</b>, <b>Egypt</b> was opened by the commander <b>‘Amr ibn al-‘As</b>, who became its governor. The <b>Copts</b> of Egypt had become people under covenant and protection, with rights that the Muslims had to safeguard: their lives, property and dignity were to be protected.<br><br>The Prophet ﷺ warned against wronging them, saying: <b>\"Beware! Whoever wrongs a person under covenant, belittles him, burdens him beyond his ability, or takes something from him without his consent, I will be his opponent on the Day of Resurrection\"</b> — reported by Abu Dawud. ‘Umar knew this hadith and feared that anyone would be wronged under his rule."}},
    {
     "scene": "mosque",
     "character": "⚖️",
@@ -238,8 +243,10 @@ HISN_STORIES.umar = [
       }
      ]
     }
-   }
-  ],
+   },
+      {"scene":"mosque","character":"📢","text":{"ar":"ولم يكن هذا الموقفُ غريباً على عمر؛ فقد روى أبو داود أنّه خطبَ الناسَ فقال: <b>«إنّي لم أبعثْ عمّالي ليضربوا أبشارَكم ولا ليأخذوا أموالَكم، فمن فُعِلَ به ذلك فليرفعْه إليَّ أُقِصَّه منه»</b>.<br><br>فقال <b>عمرُو بنُ العاص</b>: لو أنّ رجلاً أدّبَ بعضَ رعيّتِه أتُقِصُّه منه؟ فقال عمر: «إي والذي نفسي بيدِه أُقِصُّه منه». فكان الولاةُ يعلمونَ أنّ <b>منصبَهم لا يحميهم</b> إذا ظلموا، وأنّ أضعفَ الناسِ يستطيعُ أن يشكوَهم إلى أميرِ المؤمنين.","en":"This stance was nothing strange for ‘Umar. Abu Dawud reported that he addressed the people, saying: <b>\"I did not send my governors to beat your skins or take your wealth. Whoever has that done to him, let him raise it to me and I will take retribution for him.\"</b><br><br><b>‘Amr ibn al-‘As</b> said: \"If a man disciplined some of those under him, would you take retribution from him?\" ‘Umar said: \"Yes, by the One in whose Hand is my soul, I would take retribution from him.\" So the governors knew that <b>their position would not protect them</b> if they did wrong, and that the weakest person could complain about them to the Commander of the Believers."}},
+      {"scene":"scales","character":"⚖️","text":{"ar":"يأمرُنا اللهُ تعالى بالعدلِ مع كلِّ الناس، فيقول: ﴿يَا أَيُّهَا الَّذِينَ آمَنُوا كُونُوا قَوَّامِينَ بِالْقِسْطِ شُهَدَاءَ لِلَّهِ﴾. فالعدلُ لا يتغيّرُ بتغيّرِ اسمِ الإنسانِ أو دينِه أو منصبِ أبيه.<br><br>وأنتَ في مدرستِك وبيتِك قد ترى ظلماً صغيراً: طفلاً يُسخَرُ منه لأنّه غريب، أو لعبةً تُؤخَذُ من الأصغر. فكُنْ مع الحقّ، وقُلْ كلمةَ العدلِ بلطف، ولا تقُلْ أبداً «أنا ابنُ فلان»، فإنّ <b>الكرامةَ عند اللهِ بالتقوى</b> لا بالنسب.","en":"Allah commands us to be just with all people, saying: ﴿\"O you who have believed, be persistently standing firm in justice, witnesses for Allah\"﴾. Justice does not change with a person’s name, religion or father’s position.<br><br>At your school and at home you may see small injustices: a child mocked for being new, or a toy taken from the youngest. Stand with the truth, say the just word kindly, and never say \"I am the son of so-and-so,\" for <b>honour with Allah comes through piety</b>, not lineage."}}
+    ],
   "quiz": [
    {
     "q": {
@@ -370,6 +377,7 @@ HISN_STORIES.umar = [
    "en": "Umar's Night Patrol: The Pot of Stones"
   },
   "pages": [
+      {"scene":"madinah","character":"🏘️","text":{"ar":"لم يكن <b>عمرُ بنُ الخطّاب</b> أميراً يجلسُ في قصرٍ عالٍ ينتظرُ الأخبار، بل كان يسكنُ بيتاً بسيطاً في المدينة، ويمشي في أسواقِها، ويسألُ الناسَ عن حاجاتِهم.<br><br>وكان يعرفُ قولَ النبيِّ ﷺ: <b>«كلُّكم راعٍ، وكلُّكم مسؤولٌ عن رعيّتِه»</b> — رواه البخاريُّ ومسلم. فكان يخافُ أن يجوعَ أحدٌ أو يُظلَمَ وهو لا يدري، فإذا نامَ الناسُ خرجَ في ظلامِ الليلِ يطوفُ بين البيوتِ والخيام، ومعه خادمُه <b>أسلم</b>.","en":"<b>‘Umar ibn al-Khattab</b> was not a ruler who sat in a high palace waiting for news. He lived in a simple house in Madinah, walked through its markets, and asked people about their needs.<br><br>He knew the saying of the Prophet ﷺ: <b>\"Each of you is a shepherd, and each of you is responsible for his flock\"</b> — reported by al-Bukhari and Muslim. He feared that someone might go hungry or be wronged without his knowing. So when people slept, he went out in the dark of night, walking among the houses and tents, with his servant <b>Aslam</b>."}},
    {
     "scene": "night",
     "character": "🌙",
@@ -418,8 +426,10 @@ HISN_STORIES.umar = [
       }
      ]
     }
-   }
-  ],
+   },
+      {"scene":"fire","character":"🍲","text":{"ar":"وتذكرُ الرواية أنّ عمرَ جلسَ ينفخُ النارَ تحتَ القِدرِ بنفسِه، والدخانُ يتخلّلُ لحيتَه، حتى نضجَ الطعام، فأطعمَ الأطفالَ حتى شبعوا. ثم لم يقمْ مباشرة، بل جلسَ قريباً منهم حتى رآهم <b>يضحكونَ ويلعبون</b> ثم ناموا.<br><br>فقال لخادمِه أسلم: إنّ الجوعَ أسهرَهم وأبكاهم، فأحببتُ ألّا أنصرفَ حتى أرى ما رأيت. وقالت المرأةُ وهي لا تعرفُه: جزاكَ اللهُ خيراً، كنتَ أولى بهذا الأمرِ من أميرِ المؤمنين! وهي لا تعلمُ أنّه <b>أميرُ المؤمنينَ نفسُه</b>.","en":"The report mentions that ‘Umar sat blowing on the fire under the pot himself, the smoke passing through his beard, until the food was cooked, and he fed the children until they were full. Then he did not get up straight away; he sat near them until he saw them <b>laughing and playing</b>, and then they fell asleep.<br><br>He said to his servant Aslam: hunger had kept them awake and made them cry, so I wanted not to leave until I saw what I have seen. And the woman, not knowing who he was, said: May Allah reward you with good; you are more fit for this office than the Commander of the Believers! — not knowing that he was <b>the Commander of the Believers himself</b>."}},
+      {"scene":"sprout","character":"🧒","text":{"ar":"لم يكتفِ عمرُ بأن يُرسِلَ الطعامَ مع غيرِه، بل حملَه وطبخَه بنفسِه، لأنّه شعرَ أنّها <b>مسؤوليّتُه أمامَ الله</b>. ولم يغضبْ من المرأةِ حين شكتْه، بل أصلحَ الخطأ.<br><br>وأنتَ أيضاً «راعٍ» في مكانِك: مسؤولٌ عن أخيك الصغير، وعن قطّتِك، وعن نظافةِ غرفتِك، وعن صديقِك إذا حزن. تفقّدْ من حولَك، واسألْ عن حالِهم، ولا تقُلْ «ليسَ شأني»، فإنّ <b>الرحمةَ العمليّة</b> هي التي تُسعِدُ القلوب.","en":"‘Umar was not content to send the food with someone else; he carried it and cooked it himself, because he felt it was <b>his responsibility before Allah</b>. And he was not angry with the woman when she complained about him; instead he fixed the mistake.<br><br>You too are a \"shepherd\" in your own place: responsible for your little brother, your cat, keeping your room clean, and your friend when he is sad. Check on those around you, ask how they are, and don’t say \"it’s not my business,\" for <b>mercy put into action</b> is what makes hearts happy."}}
+    ],
   "quiz": [
    {
     "q": {
@@ -550,6 +560,7 @@ HISN_STORIES.umar = [
    "en": "The Opening of Jerusalem and Umar's Humility"
   },
   "pages": [
+      {"scene":"mosque","character":"🕌","text":{"ar":"<b>بيتُ المقدس</b> مدينةٌ مباركةٌ لها مكانةٌ عظيمةٌ في قلوبِ المسلمين: فيها <b>المسجدُ الأقصى</b>، قبلةُ المسلمينَ الأولى، وإليه أُسريَ بالنبيِّ ﷺ، قال تعالى: ﴿سُبْحَانَ الَّذِي أَسْرَىٰ بِعَبْدِهِ لَيْلًا مِّنَ الْمَسْجِدِ الْحَرَامِ إِلَى الْمَسْجِدِ الْأَقْصَى الَّذِي بَارَكْنَا حَوْلَهُ﴾.<br><br>وفي خلافةِ عمر حاصرَ جيشُ المسلمينَ بقيادةِ <b>أبي عبيدةَ بنِ الجرّاح</b> المدينةَ، وكانت أسوارُها عاليةً متينة. فلمّا طالَ الحصارُ رغبَ أهلُها في الصلح، لكنّهم اشترطوا شرطاً عجيباً: أن يأتيَ الخليفةُ بنفسِه.","en":"<b>Bayt al-Maqdis</b> (Jerusalem) is a blessed city with a great place in Muslims’ hearts: in it is <b>al-Masjid al-Aqsa</b>, the Muslims’ first qiblah, to which the Prophet ﷺ was taken by night. Allah says: ﴿\"Exalted is He who took His servant by night from al-Masjid al-Haram to al-Masjid al-Aqsa, whose surroundings We have blessed\"﴾.<br><br>During ‘Umar’s caliphate, the Muslim army under <b>Abu ‘Ubaydah ibn al-Jarrah</b> besieged the city, whose walls were high and strong. When the siege grew long, its people wanted a peace treaty, but they made a surprising condition: that the caliph himself should come."}},
    {
     "scene": "kaaba",
     "character": "🐫",
@@ -598,8 +609,10 @@ HISN_STORIES.umar = [
       }
      ]
     }
-   }
-  ],
+   },
+      {"scene":"camel","character":"🐫","text":{"ar":"وفي رحلتِه إلى الشام، تروي كتبُ الحديثِ أنّ عمرَ وصلَ إلى مخاضةِ ماء، فنزلَ عن ناقتِه، وخلعَ خُفَّيه ووضعَهما على عاتقِه، وأخذَ بزمامِ ناقتِه وخاضَ الماء. فقال له <b>أبو عبيدة</b>: لقد صنعتَ اليومَ صنيعاً عظيماً عند أهلِ هذه الأرض!<br><br>فقال عمر: <b>«إنّا كنّا أذلَّ قومٍ فأعزّنا اللهُ بالإسلام، فمهما نطلبِ العزَّ بغيرِ ما أعزّنا اللهُ به أذلّنا الله»</b> — رواه الحاكم. ثم كتبَ لأهلِ القدسِ عهداً يُؤمِّنُهم على أنفسِهم وكنائسِهم، وذهبَ إلى موضعِ المسجدِ الأقصى فأمرَ بتنظيفِه وبنى فيه مسجداً للمسلمين.","en":"On his journey to Sham, the hadith books report that ‘Umar came to a ford of water. He got down from his camel, took off his leather socks and put them on his shoulder, took his camel’s rein and waded through the water. <b>Abu ‘Ubaydah</b> said to him: you have done something today that is a big matter in the eyes of the people of this land!<br><br>‘Umar said: <b>\"We were the most humble of people, and Allah honoured us with Islam. Whenever we seek honour in anything other than what Allah honoured us with, Allah will humiliate us\"</b> — reported by al-Hakim. Then he wrote the people of Jerusalem a covenant guaranteeing their safety and their churches, and went to the site of al-Masjid al-Aqsa, ordered it cleaned, and built a mosque there for the Muslims."}},
+      {"scene":"sprout","character":"🧒","text":{"ar":"كان الناسُ ينتظرونَ ملِكاً بتاجٍ وحرسٍ وثيابٍ من حرير، فجاءَهم رجلٌ متواضعٌ يمشي على قدمَيه ويعدلُ مع خادمِه. فعرفوا أنّ <b>قوّةَ المسلمينَ في دينِهم</b> لا في زينتِهم.<br><br>وأنتَ لا تحتاجُ إلى ثيابٍ غاليةٍ أو هاتفٍ جديدٍ لتكونَ عزيزاً، بل عزّتُك في <b>صدقِك وصلاتِك وأخلاقِك</b>. فإذا أُعطيتَ دوراً في اللعب أو مكاناً في المقدّمة، فلا تتكبّرْ على غيرِك، وتذكّرْ عمرَ يقودُ البعيرَ وخادمُه راكب.","en":"People were expecting a king with a crown, guards and silk clothes, and there came to them a humble man walking on foot and taking turns fairly with his servant. They learned that <b>the strength of the Muslims lies in their religion</b>, not in their finery.<br><br>You don’t need expensive clothes or a new phone to be honoured; your honour lies in <b>your truthfulness, your prayer and your character</b>. When you are given a turn in a game or a place at the front, don’t look down on others, and remember ‘Umar leading the camel while his servant rode."}}
+    ],
   "quiz": [
    {
     "q": {
@@ -730,6 +743,7 @@ HISN_STORIES.umar = [
    "en": "Umar's Fear and Self-Reckoning"
   },
   "pages": [
+      {"scene":"garden","character":"🏰","text":{"ar":"كان <b>عمرُ بنُ الخطّاب</b> من العشرةِ المبشَّرينَ بالجنّة. وقد قال النبيُّ ﷺ إنّه رأى في الجنّةِ قصراً، فسألَ: لمن هذا؟ فقيل: <b>لعمر</b> — رواه البخاري.<br><br>رجلٌ بُشِّرَ بالجنّة، وفتحَ اللهُ على يدَيه البلاد، وعدلَ بين الناسِ حتى صارَ مضربَ المثل. قد يظنُّ الظانُّ أنّ مثلَه يعيشُ مطمئنّاً لا يخافُ شيئاً. لكنّ عمرَ كان على العكس: كلّما زادت نعمةُ اللهِ عليه زادَ خوفُه وحياؤه من ربِّه.","en":"<b>‘Umar ibn al-Khattab</b> was one of the ten given the glad tidings of Paradise. The Prophet ﷺ said that he saw a palace in Paradise and asked: whose is this? And he was told: <b>‘Umar’s</b> — reported by al-Bukhari.<br><br>A man given the glad tidings of Paradise, through whom Allah opened lands, and who was so just that he became a byword for justice. One might think someone like him lived at ease, fearing nothing. But ‘Umar was the opposite: the more Allah’s blessings on him increased, the more his fear and shyness before his Lord grew."}},
    {
     "scene": "mosque",
     "character": "🤲",
@@ -778,8 +792,10 @@ HISN_STORIES.umar = [
       }
      ]
     }
-   }
-  ],
+   },
+      {"scene":"night","character":"🌙","text":{"ar":"ولمّا جُرِحَ عمرُ في آخرِ حياتِه، جاءَه الناسُ يُثنونَ عليه ويذكرونَ صحبتَه لرسولِ اللهِ ﷺ وعدلَه في خلافتِه. فماذا قال؟ قال: <b>«ودِدتُ أنّ ذلك كَفافٌ لا عليَّ ولا لي»</b> — رواه البخاري.<br><br>وقال أيضاً كما في صحيحِ البخاري: <b>«واللهِ لو أنّ لي طِلاعَ الأرضِ ذهباً لافتديتُ به من عذابِ اللهِ قبل أن أراه»</b>. فلم يغترَّ بالمديح، بل بقيَ قلبُه معلّقاً بالله، يرجو رحمتَه ويخافُ عذابَه.","en":"When ‘Umar was wounded at the end of his life, people came to praise him, mentioning his companionship with the Messenger of Allah ﷺ and his justice as caliph. What did he say? He said: <b>\"I wish it would be just enough to balance out — neither against me nor for me\"</b> — reported by al-Bukhari.<br><br>He also said, as in Sahih al-Bukhari: <b>\"By Allah, if I had the earth’s fill of gold, I would ransom myself with it from the punishment of Allah before I see it.\"</b> He was not deceived by praise; his heart stayed attached to Allah, hoping for His mercy and fearing His punishment."}},
+      {"scene":"sprout","character":"🧒","text":{"ar":"وصفَ اللهُ المؤمنينَ فقال: ﴿وَالَّذِينَ يُؤْتُونَ مَا آتَوا وَّقُلُوبُهُمْ وَجِلَةٌ أَنَّهُمْ إِلَىٰ رَبِّهِمْ رَاجِعُونَ﴾، أي يعملونَ الخيرَ ويخافونَ ألّا يُقبَلَ منهم.<br><br>فجرِّبْ عادةَ عمر: قبلَ أن تنامَ اسألْ نفسَك بهدوء: ماذا فعلتُ اليومَ من خير؟ وهل أخطأتُ في حقِّ أحد؟ فإن وجدتَ خيراً فاحمدِ الله، وإن وجدتَ خطأً فاستغفِرْ واعتذِرْ غداً. هكذا يكبرُ <b>القلبُ الحيُّ</b> الذي يحبُّه الله.","en":"Allah described the believers, saying: ﴿\"And they who give what they give while their hearts are fearful because they will be returning to their Lord\"﴾ — they do good and fear that it may not be accepted from them.<br><br>So try ‘Umar’s habit: before you sleep, quietly ask yourself: what good did I do today? Did I wrong anyone? If you find good, praise Allah; if you find a mistake, ask forgiveness and apologise tomorrow. That is how <b>a living heart</b>, which Allah loves, grows."}}
+    ],
   "quiz": [
    {
     "q": {
@@ -910,6 +926,7 @@ HISN_STORIES.umar = [
    "en": "A Path Satan Will Not Walk"
   },
   "pages": [
+      {"scene":"madinah","character":"👕","text":{"ar":"كان النبيُّ ﷺ يُحبُّ عمرَ ويُثني على قوّةِ دينِه. فقد قال ﷺ: رأيتُ في المنامِ الناسَ يُعرَضونَ عليَّ وعليهم قُمُصٌ، منها ما يبلغُ الصدر، ومنها ما دونَ ذلك، <b>وعُرِضَ عليَّ عمرُ وعليه قميصٌ يجرُّه</b>. قالوا: فما أوّلتَه يا رسولَ الله؟ قال: <b>«الدِّين»</b> — رواه البخاري.<br><br>فكان دينُ عمرَ واسعاً قويّاً كذلك القميصِ الطويل، يحمي صاحبَه ويُغطّيه. ولهذا كان الشيطانُ يعرفُ أنّه لا طريقَ له إلى قلبِ هذا الرجل.","en":"The Prophet ﷺ loved ‘Umar and praised the strength of his faith. He ﷺ said: in a dream I saw people being shown to me wearing shirts, some reaching the chest and some shorter than that, <b>and ‘Umar was shown to me wearing a shirt that he dragged along</b>. They said: how did you interpret it, O Messenger of Allah? He said: <b>\"The religion\"</b> — reported by al-Bukhari.<br><br>‘Umar’s faith was broad and strong like that long shirt, protecting and covering its owner. That is why Satan knew he had no way into this man’s heart."}},
    {
     "scene": "madinah",
     "character": "🚪",
@@ -958,8 +975,9 @@ HISN_STORIES.umar = [
       }
      ]
     }
-   }
-  ],
+   },
+      {"scene":"sprout","character":"🧒","text":{"ar":"والشيطانُ لا يخافُ من عضلاتِ الإنسان، بل يخافُ من <b>قوّةِ إيمانِه وذِكرِه لله</b>. وقد أخبرَ النبيُّ ﷺ أنّه إذا نُودِيَ للصلاة <b>أدبرَ الشيطان</b> — رواه البخاريُّ ومسلم.<br><br>فاجعلْ لنفسِك حصوناً تحميك: أذكارَ الصباحِ والمساء، و«بسمِ الله» قبلَ الطعامِ والدخول، والمحافظةَ على الصلاة، والصدقَ حتى في المزاح. وكلّما وسوسَ لك الشيطانُ بمعصية فقُلْ: «أعوذُ باللهِ من الشيطانِ الرجيم»، واثبُتْ كما ثبتَ عمر، فإنّ الشيطانَ يهربُ من القلبِ القويّ.","en":"Satan is not afraid of a person’s muscles; he is afraid of <b>the strength of his faith and his remembrance of Allah</b>. The Prophet ﷺ told us that when the call to prayer is made, <b>Satan turns and flees</b> — reported by al-Bukhari and Muslim.<br><br>So build fortresses to protect yourself: the morning and evening adhkar, \"Bismillah\" before eating and entering, keeping up your prayers, and truthfulness even when joking. Whenever Satan whispers a sin to you, say: \"I seek refuge in Allah from Satan the accursed,\" and stand firm as ‘Umar did, for Satan flees from a strong heart."}}
+    ],
   "quiz": [
    {
     "q": {
@@ -1090,6 +1108,7 @@ HISN_STORIES.umar = [
    "en": "\"My Opinion Matched My Lord's in Three\""
   },
   "pages": [
+      {"scene":"madinah","character":"💡","text":{"ar":"كان <b>عمرُ</b> رضي الله عنه يُفكِّرُ كثيراً في مصلحةِ الإسلامِ والمسلمين، ويقولُ رأيَه بصدقٍ وشجاعة. وكان النبيُّ ﷺ يستشيرُه مع أبي بكرٍ في الأمورِ الكبيرة.<br><br>وقد شهدَ له النبيُّ ﷺ فقال: <b>«إنّ اللهَ جعلَ الحقَّ على لسانِ عمرَ وقلبِه»</b> — رواه الترمذي. ولهذا كان عمرُ إذا قالَ رأياً، نزلَ القرآنُ أحياناً بما يوافقُه، فيفرحُ الصحابةُ ويزدادونَ يقيناً بأنّ هذا الدينَ من عندِ الله.","en":"‘Umar (may Allah be pleased with him) thought a great deal about what was good for Islam and the Muslims, and he gave his opinion truthfully and bravely. The Prophet ﷺ would consult him, along with Abu Bakr, on big matters.<br><br>The Prophet ﷺ testified for him, saying: <b>\"Allah has placed the truth on ‘Umar’s tongue and in his heart\"</b> — reported by at-Tirmidhi. That is why, when ‘Umar gave an opinion, the Quran sometimes came down in agreement with it, and the Companions rejoiced and grew more certain that this religion is from Allah."}},
    {
     "scene": "kaaba",
     "character": "🕋",
@@ -1138,8 +1157,9 @@ HISN_STORIES.umar = [
       }
      ]
     }
-   }
-  ],
+   },
+      {"scene":"sprout","character":"🧒","text":{"ar":"ومن الآياتِ التي نزلت موافقةً لعمرَ في الحجاب قولُه تعالى: ﴿وَإِذَا سَأَلْتُمُوهُنَّ مَتَاعًا فَاسْأَلُوهُنَّ مِن وَرَاءِ حِجَابٍ﴾. فقد كان قلبُ عمرَ يغارُ على بيتِ النبيِّ ﷺ ويحرصُ على طهارتِه.<br><br>وأنتَ تستطيعُ أن تتعلّمَ من عمر: إذا رأيتَ فكرةً طيّبةً تنفعُ أسرتَك أو صفَّك، فاقترحْها بأدبٍ على والدَيك أو معلّمِك. وإذا قُبِلت فلا تتفاخر، بل قُلْ «الحمدُ لله»، وإذا لم تُقبَل فلا تغضب. فالفضلُ كلُّه لله، والرأيُ الصادقُ <b>نعمةٌ تُشكَر</b>.","en":"Among the verses revealed in agreement with ‘Umar about the hijab is Allah’s saying: ﴿\"And when you ask them for something, ask them from behind a partition\"﴾. ‘Umar’s heart was protective of the Prophet’s ﷺ household and keen on its purity.<br><br>You can learn from ‘Umar: when you see a good idea that would benefit your family or your class, suggest it politely to your parents or teacher. If it is accepted, don’t boast; say \"Alhamdulillah.\" If it is not accepted, don’t get angry. All favour belongs to Allah, and a sincere opinion is <b>a blessing to be thankful for</b>."}}
+    ],
   "quiz": [
    {
     "q": {
@@ -1318,8 +1338,10 @@ HISN_STORIES.umar = [
       }
      ]
     }
-   }
-  ],
+   },
+      {"scene":"rain","character":"🌧️","text":{"ar":"وفي صحيحِ البخاري أنّ عمرَ كان إذا قحطوا استسقى بالعبّاسِ بنِ عبدِ المطّلب، فقال: <b>«اللهمّ إنّا كنّا نتوسّلُ إليك بنبيِّنا فتسقينا، وإنّا نتوسّلُ إليك بعمِّ نبيِّنا فاسقِنا»</b>، قال: فيُسقَون.<br><br>فنزلَ المطرُ بعدَ طولِ انتظار، واخضرّتِ الأرضُ من جديد، ورجعَ أهلُ البوادي إلى ديارِهم. وكان عمرُ قد صبرَ مع الناسِ على الجوعِ شهوراً، فلمّا جاءَ الفرجُ <b>فرحَ معهم</b> كما حزنَ معهم.","en":"In Sahih al-Bukhari, when they suffered drought, ‘Umar would ask for rain through al-‘Abbas ibn ‘Abd al-Muttalib, saying: <b>\"O Allah, we used to seek closeness to You through our Prophet and You gave us rain; now we seek closeness to You through our Prophet’s uncle, so give us rain.\"</b> And they were given rain.<br><br>The rain fell after a long wait, the land became green again, and the people of the desert returned to their homes. ‘Umar had been patient with the people through months of hunger, and when relief came <b>he rejoiced with them</b> just as he had grieved with them."}},
+      {"scene":"sprout","character":"🧒","text":{"ar":"ما أسهلَ أن يقولَ القائدُ للناس «اصبروا» وهو يأكلُ أطيبَ الطعام! لكنّ عمرَ اختارَ أن <b>يشعرَ بما يشعرونَ به</b>، فكان صادقاً في كلامِه وفعلِه.<br><br>وأنتَ إذا رأيتَ صديقاً لا يملكُ طعاماً في المدرسة فشاركْه طعامَك، وإذا سمعتَ عن فقراءَ أو جائعينَ في أيِّ مكانٍ فادعُ لهم وتصدّقْ ولو بالقليل. ولا تُسرِفْ في الطعامِ وتتركْ بقاياه، فإنّ <b>النعمةَ تُحفَظُ بالشكر</b>، والقلبُ الرحيمُ يحسُّ بآلامِ الآخرين.","en":"How easy it is for a leader to tell people \"be patient\" while eating the finest food! But ‘Umar chose to <b>feel what they felt</b>, so he was true in both his words and his deeds.<br><br>If you see a friend at school with no food, share yours with him, and if you hear of poor or hungry people anywhere, pray for them and give charity, even a little. And don’t waste food and leave it uneaten, for <b>blessings are kept through gratitude</b>, and a merciful heart feels the pain of others."}}
+    ],
   "quiz": [
    {
     "q": {

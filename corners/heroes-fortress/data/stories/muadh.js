@@ -10,6 +10,7 @@ HISN_STORIES.muadh = [
    "en": "O Mu'adh, I Love You"
   },
   "pages": [
+      {"scene": "madinah", "character": "👦", "text": {"ar": "في <b>المدينة</b>، قبلَ أن يهاجرَ إليها النبيُّ ﷺ، كان هناك فتىً من قبيلةِ <b>الخزرج</b> اسمُه <b>معاذُ بنُ جبل</b>. سمعَ القرآنَ من <b>مصعبِ بنِ عمير</b> الذي أرسلَه النبيُّ ﷺ معلّماً، فأسلمَ وهو شابٌّ صغير، ثمّ خرجَ إلى مكّةَ فبايعَ النبيَّ ﷺ في <b>بيعةِ العقبة</b>.<br><br>ولمّا هاجرَ النبيُّ ﷺ إلى المدينة، لازمَه معاذٌ يتعلّمُ منه، وشهدَ معه <b>بدراً</b> وهو في نحوِ العشرين. وكان النبيُّ ﷺ يُقرِّبُه ويُعلِّمُه، وربّما أردفَه خلفَه على الدابّة، يسألُه ويُجيبُه، كما في صحيحِ البخاريِّ ومسلم.", "en": "In <b>Madinah</b>, before the Prophet ﷺ emigrated there, there was a young man of the <b>Khazraj</b> tribe named <b>Mu’adh ibn Jabal</b>. He heard the Quran from <b>Mus’ab ibn Umayr</b>, whom the Prophet ﷺ had sent as a teacher, and he accepted Islam as a youth. Then he travelled to Makkah and gave his pledge to the Prophet ﷺ at <b>the Pledge of Aqabah</b>.<br><br>When the Prophet ﷺ emigrated to Madinah, Mu’adh stayed close to him, learning from him, and took part in <b>Badr</b> at about twenty years old. The Prophet ﷺ kept him near and taught him, and sometimes let him ride behind him on his mount, asking him questions and answering him, as reported in Sahih al-Bukhari and Muslim."}},
    {
     "scene": "mosque",
     "character": "💚",
@@ -58,8 +59,9 @@ HISN_STORIES.muadh = [
       }
      ]
     }
-   }
-  ],
+   },
+      {"scene": "garden", "character": "💚", "text": {"ar": "وحفظَ معاذٌ هذه الوصيّة، وعلّمَها تلميذَه وقال له: إنّي أحبُّك، فقلْ هذا الدعاء. وصارَ كلُّ معلّمٍ يقولُها لتلميذِه جيلاً بعدَ جيل، حتى سمّاه العلماءُ <b>«الحديثَ المسلسلَ بالمحبّة»</b>!<br><br>وقد أرشدَنا النبيُّ ﷺ فقال: <b>«إذا أحبَّ الرجلُ أخاه فليُخبِرْه أنّه يُحبُّه»</b> كما في سننِ أبي داودَ والترمذي. فيا صديقي، قلْ لأمِّك وأبيك وأخيك وصديقِك الصالح: <b>إنّي أحبُّك في الله</b>. وإن قالها لك أحد، فقلْ له: أحبَّك الذي أحببتَني له. ولا تنسَ أن تقولَ بعدَ كلِّ صلاة: اللّهُمَّ أعنّي على ذكرِك وشكرِك وحُسنِ عبادتِك.", "en": "Mu’adh treasured this advice and taught it to his student, saying to him: I love you, so say this prayer. Every teacher then said it to his student, generation after generation, until scholars called it <b>\"the hadith passed down with love\"</b>!<br><br>The Prophet ﷺ guided us, saying: <b>\"When a man loves his brother, let him tell him that he loves him,\"</b> as reported in the Sunan of Abu Dawud and at-Tirmidhi. So, my friend, tell your mother, your father, your brother and your good friend: <b>I love you for the sake of Allah</b>. And if someone says it to you, answer: May the One for whose sake you love me, love you. And do not forget to say after every prayer: O Allah, help me to remember You, to thank You, and to worship You well."}},
+    ],
   "quiz": [
    {
     "q": {
@@ -190,6 +192,7 @@ HISN_STORIES.muadh = [
    "en": "The Judge of Yemen: By What Will You Judge?"
   },
   "pages": [
+      {"scene": "desert", "character": "🐪", "text": {"ar": "في أواخرِ حياةِ النبيِّ ﷺ، دخلَ كثيرٌ من أهلِ <b>اليمن</b> في الإسلام، واحتاجوا إلى من يُعلِّمُهم دينَهم. فاختارَ النبيُّ ﷺ لهذه المهمّةِ <b>معاذَ بنَ جبل</b> و<b>أبا موسى الأشعريّ</b>، وأوصاهما كما في الصحيحين: <b>«يسِّرا ولا تُعسِّرا، وبشِّرا ولا تُنفِّرا، وتطاوعا ولا تختلفا»</b>.<br><br>وخرجَ النبيُّ ﷺ يُودِّعُ معاذاً، فكان معاذٌ راكباً والنبيُّ ﷺ يمشي بجانبِه ويُوصيه. ثمّ أخبرَه أنّه لعلّه لا يلقاه بعدَ عامِه هذا، فبكى معاذٌ حزناً على فراقِ حبيبِه ﷺ، كما في مسندِ الإمامِ أحمد.", "en": "Towards the end of the Prophet’s ﷺ life, many people of <b>Yemen</b> entered Islam and needed someone to teach them their religion. The Prophet ﷺ chose <b>Mu’adh ibn Jabal</b> and <b>Abu Musa al-Ash’ari</b> for this mission and advised them, as reported in al-Bukhari and Muslim: <b>\"Make things easy, not hard; give glad tidings, do not drive people away; and cooperate, do not disagree.\"</b><br><br>The Prophet ﷺ went out to bid Mu’adh farewell: Mu’adh rode while the Prophet ﷺ walked beside him, advising him. Then he told him that he might not meet him again after that year, and Mu’adh wept with grief at parting from his beloved ﷺ, as reported in the Musnad of Imam Ahmad."}},
    {
     "scene": "globe",
     "character": "📜",
@@ -238,8 +241,9 @@ HISN_STORIES.muadh = [
       }
      ]
     }
-   }
-  ],
+   },
+      {"scene": "scales", "character": "⚖️", "text": {"ar": "ومن وصايا النبيِّ ﷺ لمعاذٍ كما في الصحيحين أن يبدأَ الناسَ بالتوحيد، ثمّ بالصلاة، ثمّ بالزكاة، وقال له: <b>«واتّقِ دعوةَ المظلوم، فإنّه ليس بينها وبينَ اللهِ حجاب»</b>. فذهبَ معاذٌ إلى اليمن، فعلّمَ الناسَ القرآنَ والصلاة، وقضى بينهم بالعدل، وبقيَ هناك حتى تُوفِّيَ النبيُّ ﷺ.<br><br>يا صديقي، القاضي العادلُ لا يحكمُ بهواه، بل يرجعُ إلى ما أنزلَ الله. وأنت حين يختلفُ أخوكَ وأختُك أمامَك، أو زميلانِ في الصفّ، فلا تنحزْ لمن تحبّ، بل اسمعْ من الطرفين، وقلِ الحقَّ، ولا تظلمْ أحداً، فإنّ <b>دعوةَ المظلومِ مستجابة</b>.", "en": "Among the Prophet’s ﷺ advice to Mu’adh, as reported in al-Bukhari and Muslim, was to begin by calling people to tawhid, then to prayer, then to zakah. And he told him: <b>\"Beware of the prayer of the wronged, for there is no barrier between it and Allah.\"</b> So Mu’adh went to Yemen, taught people the Quran and the prayer, judged between them with justice, and stayed there until the Prophet ﷺ passed away.<br><br>My friend, a just judge does not rule by his own desires but returns to what Allah has revealed. When your brother and sister argue in front of you, or two classmates, do not take the side of the one you like more. Listen to both, say what is true, and wrong no one — for <b>the prayer of the wronged is answered</b>."}},
+    ],
   "quiz": [
    {
     "q": {
@@ -370,6 +374,7 @@ HISN_STORIES.muadh = [
    "en": "The Most Knowledgeable of the Lawful and the Unlawful"
   },
   "pages": [
+      {"scene": "camel", "character": "🫏", "text": {"ar": "كان <b>معاذٌ</b> كثيرَ السؤالِ عن العلمِ النافع. ففي الصحيحين أنّه كان رديفَ النبيِّ ﷺ على حمار، فقال له: <b>«يا معاذ، أتدري ما حقُّ اللهِ على العباد؟»</b> قال: اللهُ ورسولُه أعلم. قال: <b>«أن يعبدوه ولا يُشركوا به شيئاً»</b>.<br><br>وسألَ معاذٌ النبيَّ ﷺ مرّةً عن عملٍ يُدخِلُه الجنّةَ ويُباعِدُه من النار، فقال له: <b>«لقد سألتَ عن عظيم، وإنّه ليسيرٌ على من يسّرَه اللهُ عليه»</b>، ثمّ علّمَه أركانَ الإسلامِ وأبوابَ الخير، كما في سننِ الترمذي. هكذا كان معاذٌ: يسألُ عمّا ينفع، ويحفظُ ما يسمع، ويعملُ بما يعلم.", "en": "<b>Mu’adh</b> was always asking about beneficial knowledge. In al-Bukhari and Muslim it is reported that he was riding behind the Prophet ﷺ on a donkey when the Prophet said to him: <b>\"O Mu’adh, do you know what Allah’s right over His servants is?\"</b> He said: Allah and His Messenger know best. He said: <b>\"That they worship Him and associate nothing with Him.\"</b><br><br>Once Mu’adh asked the Prophet ﷺ about a deed that would admit him to Paradise and keep him far from the Fire. He said: <b>\"You have asked about something great, yet it is easy for the one for whom Allah makes it easy,\"</b> and then taught him the pillars of Islam and the doors of goodness, as reported in Sunan at-Tirmidhi. That was Mu’adh: he asked about what benefits, memorised what he heard, and acted on what he knew."}},
    {
     "scene": "mosque",
     "character": "🧑‍🏫",
@@ -418,8 +423,9 @@ HISN_STORIES.muadh = [
       }
      ]
     }
-   }
-  ],
+   },
+      {"scene": "pen", "character": "✏️", "text": {"ar": "يا صديقي، كيف صارَ شابٌّ صغيرٌ <b>أعلمَ الصحابةِ بالحلالِ والحرام</b>؟ لم يكنْ ذلك بالصدفة، بل بالملازمةِ والسؤالِ والحفظِ والعمل. فقد كان يجلسُ قريباً من النبيِّ ﷺ، ولا يستحيي أن يسألَ عمّا لا يعرف.<br><br>وأنت أيضاً تستطيعُ أن تكتشفَ موهبتَك وتُنمّيَها: ربّما تُحبُّ الحفظ، أو الحساب، أو الكتابة، أو مساعدةَ الناس. اسألْ معلّمَك إذا لم تفهم، واكتبْ ما تتعلّمُه، وراجعْه. وتذكّرْ قولَ النبيِّ ﷺ كما في الصحيحين: <b>«مَن يُرِدِ اللهُ به خيراً يُفقِّهْه في الدين»</b>.", "en": "My friend, how did a young man become <b>the companion most knowledgeable about the lawful and the unlawful</b>? It was not by chance, but by staying close, asking, memorising and acting. He sat near the Prophet ﷺ and was never too shy to ask about what he did not know.<br><br>You too can discover your talent and grow it: perhaps you love memorising, or maths, or writing, or helping people. Ask your teacher when you don’t understand, write down what you learn, and review it. And remember the Prophet’s ﷺ words, reported in al-Bukhari and Muslim: <b>\"Whomever Allah wants good for, He gives him understanding of the religion.\"</b>"}},
+    ],
   "quiz": [
    {
     "q": {
@@ -550,6 +556,7 @@ HISN_STORIES.muadh = [
    "en": "The Farewell Advice"
   },
   "pages": [
+      {"scene": "dwellings", "character": "🏘️", "text": {"ar": "بعدَ وفاةِ النبيِّ ﷺ، أرسلَ الخليفةُ <b>عمرُ بنُ الخطّاب</b> معاذاً إلى <b>الشام</b> ليُعلّمَ أهلَها القرآنَ والفقه، لأنّ بلادَها اتّسعتْ ودخلَ فيها ناسٌ كثيرونَ في الإسلام. فصارَ له في المسجدِ حلقةٌ كبيرة، يجلسُ حولَه الشبابُ يسألونه، فإذا اختلفوا في شيءٍ رجعوا إليه.<br><br>ثمّ وقعَ في الشامِ سنةَ ثمانيَ عشرةَ للهجرة <b>طاعونُ عَمَواس</b>، وهو مرضٌ شديدٌ ماتَ فيه كثيرٌ من الناس، ومنهم القائدُ <b>أبو عُبيدةَ بنُ الجرّاح</b>. فتولّى معاذٌ أمرَ الناسِ بعدَه، وكان يُصبِّرُهم ويُذكِّرُهم بالله، حتى أصابَه المرضُ هو أيضاً.", "en": "After the Prophet ﷺ passed away, the caliph <b>Umar ibn al-Khattab</b> sent Mu’adh to <b>Syria</b> to teach its people the Quran and fiqh, because the land had grown and many people there had entered Islam. He had a large circle in the mosque, with young people sitting around him asking questions; whenever they disagreed about something, they came back to him.<br><br>Then, in the year 18 AH, <b>the plague of Amwas</b> struck Syria — a severe disease in which many people died, among them the commander <b>Abu Ubaydah ibn al-Jarrah</b>. Mu’adh took charge of the people after him, encouraging them to be patient and reminding them of Allah, until the illness struck him too."}},
    {
     "scene": "night",
     "character": "🧑‍🏫",
@@ -598,8 +605,9 @@ HISN_STORIES.muadh = [
       }
      ]
     }
-   }
-  ],
+   },
+      {"scene": "sprout", "character": "🌱", "text": {"ar": "وتُوفِّيَ <b>معاذٌ</b> رضي الله عنه وهو شابٌّ لم يبلغِ الأربعين، لكنّه تركَ علماً كثيراً حملَه تلاميذُه إلى الدنيا كلِّها. وقد ذهبَ جسدُه، وبقيَ أثرُه في كلِّ مَن تعلّمَ منه أو قرأَ أحاديثَه.<br><br>يا صديقي، تعلّمنا وصيّةُ معاذٍ أنّ العلمَ لا يذهبُ بذهابِ عالم، بل هو قريبٌ <b>لمن يطلبُه بصدق</b>. فاطلبِ العلمَ من أهلِه الموثوقين، واجعلْ حياتَك كلَّها في طاعةِ الله: صلاةٍ وصيامٍ وتعلُّم. فالعمرُ لا يُقاسُ بطولِه، بل بما نملؤُه به من الخير.", "en": "<b>Mu’adh</b>, may Allah be pleased with him, died as a young man not yet forty, yet he left behind much knowledge that his students carried across the world. His body passed away, but his influence remained in everyone who learned from him or read his narrations.<br><br>My friend, Mu’adh’s final advice teaches us that knowledge does not vanish when a scholar dies; it stays close to <b>whoever seeks it sincerely</b>. So seek knowledge from trustworthy people of knowledge, and make your whole life obedience to Allah: prayer, fasting and learning. A life is not measured by its length, but by the good we fill it with."}},
+    ],
   "quiz": [
    {
     "q": {

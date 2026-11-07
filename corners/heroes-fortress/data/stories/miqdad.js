@@ -10,6 +10,7 @@ HISN_STORIES.miqdad = [
    "en": "We Will Not Say As Musa’s People Said"
   },
   "pages": [
+      {"scene": "camel", "character": "🐪", "text": {"ar": "في شهرِ <b>رمضانَ</b> من السنةِ الثانيةِ للهجرة، خرجَ النبيُّ ﷺ مع نحوِ <b>ثلاثمئةٍ وبضعةَ عشرَ</b> رجلاً من أصحابِه، ليس معهم إلّا فرسانِ وسبعونَ بعيراً يتعاقبونَ على ركوبِها. كانوا يريدونَ قافلةَ قريشٍ التي يقودُها <b>أبو سفيان</b>، لكنّ القافلةَ نجتْ، وخرجتْ قريشٌ بجيشٍ كبيرٍ قرابةَ <b>ألفِ مقاتل</b>.<br><br>صارَ الأمرُ خطيراً: لم يخرجِ المسلمونَ لحربٍ كبيرة، وعدوُّهم أكثرُ منهم بثلاثِ مرّات. فاستشارَ النبيُّ ﷺ أصحابَه، فقامَ <b>أبو بكرٍ</b> فتكلّمَ وأحسن، ثمّ قامَ <b>عمرُ</b> فتكلّمَ وأحسن. ثمّ قامَ رجلٌ ثالث، فقالَ كلمةً بقيتْ في التاريخ. فماذا قال؟ ولماذا ذكرَ قومَ موسى؟", "en": "In the month of <b>Ramadan</b> in the second year after the Hijrah, the Prophet ﷺ set out with about <b>three hundred and ten-odd</b> of his companions. They had only two horses and seventy camels, which they took turns riding. They were heading for the Quraysh caravan led by <b>Abu Sufyan</b>, but the caravan escaped, and Quraysh marched out with a large army of nearly <b>a thousand fighters</b>.<br><br>The situation became serious: the Muslims had not come out for a major battle, and their enemy was three times their number. So the Prophet ﷺ consulted his companions. <b>Abu Bakr</b> stood and spoke well, then <b>Umar</b> stood and spoke well. Then a third man stood up and said words that history has never forgotten. What did he say — and why did he mention the people of Musa?"}},
    {
     "scene": "desert",
     "character": "😊",
@@ -58,8 +59,9 @@ HISN_STORIES.miqdad = [
       }
      ]
     }
-   }
-  ],
+   },
+      {"scene": "desert", "character": "🐎", "text": {"ar": "ثمّ قال النبيُّ ﷺ: «أشيروا عليَّ أيُّها الناس»، وكان يريدُ <b>الأنصار</b>. فقامَ سيّدُهم <b>سعدُ بنُ معاذ</b> فقال: «فوالذي بعثكَ بالحقّ، لو استعرضتَ بنا هذا البحرَ فخضتَه لخضناه معك». فسُرَّ النبيُّ ﷺ وقال: «سيروا وأبشِروا».<br><br>وفي السابعَ عشرَ من رمضان نصرَ اللهُ المسلمينَ يومَ <b>بدر</b> نصراً عظيماً، وكان المقدادُ أحدَ الفارسَينِ في جيشِ المسلمين. يا صديقي، الكلمةُ الطيّبةُ الصادقةُ في وقتِ الشدّةِ تُفرِحُ القلوبَ وتُقوّي العزائم. فإذا رأيتَ صديقاً أو أخاً في موقفٍ صعب، فقلْ له مثلَ المقداد: <b>أنا معك</b>، وكنْ وفيّاً بالفعلِ لا بالكلامِ وحدَه.", "en": "Then the Prophet ﷺ said: \"Advise me, O people,\" meaning the <b>Ansar</b>. Their leader <b>Sa’d ibn Mu’adh</b> stood and said: \"By the One who sent you with the truth, if you were to lead us into this sea and plunge into it, we would plunge into it with you.\" The Prophet ﷺ was delighted and said: \"Move on, and rejoice at good news.\"<br><br>On the seventeenth of Ramadan, Allah granted the Muslims a great victory on the day of <b>Badr</b>, and al-Miqdad was one of the two horsemen in the Muslim army. My friend, a good and sincere word at a hard moment gladdens hearts and strengthens resolve. When you see a friend or a brother in a difficult situation, tell him as al-Miqdad did: <b>I am with you</b> — and be loyal in deeds, not in words alone."}},
+    ],
   "quiz": [
    {
     "q": {
@@ -190,6 +192,7 @@ HISN_STORIES.miqdad = [
    "en": "The Night of the Milk"
   },
   "pages": [
+      {"scene": "madinah", "character": "🥵", "text": {"ar": "في الأيّامِ الأولى بعدَ الهجرة، كانت <b>المدينةُ</b> فقيرة، وكان المهاجرونَ قد تركوا بيوتَهم وأموالَهم في مكّة. وكان كثيرٌ من الصحابةِ يجدونَ بالكادِ ما يأكلون، ومنهم <b>المقدادُ بنُ الأسود</b> وصاحبانِ له.<br><br>يحكي المقدادُ كما في <b>صحيحِ مسلم</b> أنّهم أقبلوا وقد أُنهِكوا من شدّةِ الجوعِ والتعب، حتى ضعفَ سمعُهم وبصرُهم، فجعلوا يعرضونَ أنفسَهم على الصحابةِ ليستضيفوهم، فلم يجدوا أحداً عنده ما يكفيهم، لأنّ الجميعَ كانوا فقراءَ مثلَهم. فلم يبقَ لهم إلّا بابُ رسولِ الله ﷺ، أكرمِ الناسِ وأرحمِهم.", "en": "In the early days after the Hijrah, <b>Madinah</b> was poor, and the emigrants had left their homes and wealth behind in Makkah. Many companions could barely find food to eat — among them <b>al-Miqdad ibn al-Aswad</b> and two of his friends.<br><br>Al-Miqdad tells us, as recorded in <b>Sahih Muslim</b>, that they arrived so worn out by hunger and exhaustion that their hearing and sight had grown weak. They offered themselves as guests to the companions, but found no one who had enough to host them, because everyone was as poor as they were. Only one door remained: the door of Allah’s Messenger ﷺ, the most generous and merciful of people."}},
    {
     "scene": "night",
     "character": "🥛",
@@ -238,8 +241,9 @@ HISN_STORIES.miqdad = [
       }
      ]
     }
-   }
-  ],
+   },
+      {"scene": "night", "character": "😊", "text": {"ar": "تأمّلْ يا صديقي ماذا حدثَ في تلك الليلة: أخطأَ المقدادُ فشربَ نصيبَ النبيِّ ﷺ، لكنّه لم يكذبْ ولم يُخفِ ما فعل، بل <b>اعترفَ بخطئِه</b>. والنبيُّ ﷺ وهو جائعٌ لم يغضبْ ولم يُعاتِبْ أحداً، بل رفعَ يديه بالدعاءِ لمن يُطعِمُه.<br><br>فأكرمَ اللهُ الجميعَ بالبركة. فإذا أخطأتَ في حقِّ أحد فاعترفْ واعتذرْ، وإذا أخطأَ أحدٌ في حقِّك فقابلْه بالحِلمِ والدعاء. وتعلّمْ هذا الدعاءَ الجميلَ لمن يُطعِمُك: أمِّك وأبيك ومن يُضيّفُك: <b>«اللهمَّ أطعِمْ مَن أطعمني، واسقِ مَن سقاني»</b>.", "en": "Think, my friend, about what happened that night. Al-Miqdad made a mistake and drank the Prophet’s ﷺ share, but he did not lie or hide what he had done — he <b>admitted his mistake</b>. And the Prophet ﷺ, though hungry, did not get angry or blame anyone; instead he raised his hands in prayer for whoever would feed him.<br><br>So Allah honoured them all with blessing. If you wrong someone, admit it and apologise; and if someone wrongs you, meet it with gentleness and prayer. And learn this beautiful prayer for those who feed you — your mother, your father, and anyone who hosts you: <b>\"O Allah, feed the one who fed me, and give drink to the one who gave me drink.\"</b>"}},
+    ],
   "quiz": [
    {
     "q": {
@@ -370,6 +374,7 @@ HISN_STORIES.miqdad = [
    "en": "The Horseman Who Returned to His Father’s Name"
   },
   "pages": [
+      {"scene": "kaaba", "character": "🧔", "text": {"ar": "أصلُ <b>المقدادِ</b> من قبائلِ اليمن، ولذلك قيل له أيضاً «الكِنديّ». جاءَ إلى <b>مكّةَ</b> شابّاً غريباً، والغريبُ في مكّةَ يومئذٍ يحتاجُ إلى حليفٍ يحميه، فحالفَ رجلاً من قريش. ولمّا سمعَ بدعوةِ النبيِّ ﷺ أسرعَ إلى الإسلام، فكان من <b>أوائلِ من أعلنوا إسلامَهم</b> في وقتٍ كان فيه الإعلانُ يعني الأذى والخطر.<br><br>ثمّ هاجرَ إلى المدينة، وزوّجَه النبيُّ ﷺ ابنةَ عمِّه <b>ضُباعةَ بنتَ الزبيرِ بنِ عبدِ المطّلب</b>، كما في صحيحِ البخاري. فصارَ الغريبُ الذي لا قبيلةَ له قريباً من بيتِ النبوّة، لأنّ الإسلامَ يرفعُ الناسَ بالتقوى لا بالنسب.", "en": "<b>Al-Miqdad</b> came originally from the tribes of Yemen, which is why he was also called \"al-Kindi.\" He arrived in <b>Makkah</b> as a young stranger, and a stranger in Makkah in those days needed an ally to protect him, so he made an alliance with a man of Quraysh. When he heard the Prophet’s ﷺ call, he hurried to Islam and was among <b>the first to declare their Islam openly</b> — at a time when declaring it meant harm and danger.<br><br>Later he emigrated to Madinah, and the Prophet ﷺ married him to his cousin <b>Duba’ah bint az-Zubayr ibn Abd al-Muttalib</b>, as reported in Sahih al-Bukhari. So the stranger with no tribe became close to the household of the Prophet ﷺ, because Islam raises people by their piety, not their lineage."}},
    {
     "scene": "wind",
     "character": "🏷️",
@@ -418,8 +423,9 @@ HISN_STORIES.miqdad = [
       }
      ]
     }
-   }
-  ],
+   },
+      {"scene": "wind", "character": "🏇", "text": {"ar": "وقد حدثَ الأمرُ نفسُه مع <b>زيدِ بنِ حارثة</b> رضي الله عنه، فكان الناسُ يدعونَه «زيدَ بنَ محمد» حتى نزلتِ الآية، فصارَ يُدعى زيدَ بنَ حارثة، كما في صحيحِ البخاري.<br><br>وعاشَ المقدادُ فارساً في سبيلِ الله، فشهدَ <b>بدراً</b> وأُحُداً والمشاهدَ كلَّها مع رسولِ الله ﷺ، وكان بعدَ ذلك من القادةِ الذين أرسلَهم عمرُ مدداً لفتحِ <b>مصر</b>. وتُوفّيَ سنةَ ثلاثٍ وثلاثين ودُفِنَ في البقيع. يا صديقي، احترمْ اسمَ أبيك وعائلتِك، وكنْ مثلَ المقداد: <b>سريعاً إلى طاعةِ الله</b>، وقويّاً في جسدِك لتخدمَ دينَك وأهلَك.", "en": "The same thing happened with <b>Zayd ibn Harithah</b>, may Allah be pleased with him: people used to call him \"Zayd ibn Muhammad\" until the verse was revealed, after which he was called Zayd ibn Harithah, as reported in Sahih al-Bukhari.<br><br>Al-Miqdad lived as a horseman in the path of Allah. He took part in <b>Badr</b>, Uhud and every campaign with Allah’s Messenger ﷺ, and later he was among the leaders Umar sent as reinforcements for the conquest of <b>Egypt</b>. He died in the year 33 AH and was buried in al-Baqi’. My friend, respect your father’s name and your family, and be like al-Miqdad: <b>quick to obey Allah</b>, and strong in body so you can serve your faith and your family."}},
+    ],
   "quiz": [
    {
     "q": {

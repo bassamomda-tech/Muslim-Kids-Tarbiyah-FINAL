@@ -11,11 +11,27 @@ HISN_STORIES.saadwaqqas = [
   },
   "pages": [
    {
+    "scene": "kaaba",
+    "character": "🧑",
+    "text": {
+     "ar": "وُلِدَ <b>سعدُ بنُ أبي وقّاص</b> في مكّةَ في قبيلةِ <b>بني زُهرة</b>، وهم أخوالُ النبيِّ ﷺ، لأنّ أمَّ النبيِّ ﷺ <b>آمنةَ بنتَ وهب</b> كانت منهم. ولهذا أقبلَ سعدٌ يوماً فقال النبيُّ ﷺ: <b>«هذا خالي، فلْيُرِني امرؤٌ خالَه»</b>.<br><br>وكان سعدٌ شابّاً صغيراً حين دعاه <b>أبو بكرٍ الصدّيق</b> إلى الإسلام، فأسلمَ مبكّراً، وصار من <b>السابقينَ الأوّلين</b>. لكنّ إسلامَه جاءَ بامتحانٍ صعبٍ لم يكنْ يتوقّعُه — امتحانٍ من أقربِ الناسِ إلى قلبِه.",
+     "en": "<b>Sa’d ibn Abi Waqqas</b> was born in Makkah into the clan of <b>Banu Zuhra</b>, the maternal relatives of the Prophet ﷺ, because the Prophet’s ﷺ mother <b>Amina bint Wahb</b> came from them. That is why, when Sa’d came forward one day, the Prophet ﷺ said: <b>\"This is my maternal uncle — let anyone show me an uncle like him!\"</b><br><br>Sa’d was still a young man when <b>Abu Bakr as-Siddiq</b> invited him to Islam. He accepted early and became one of <b>the very first believers</b>. But his Islam brought a hard test he never expected — a test from the person closest to his heart."
+    }
+   },
+   {
     "scene": "madinah",
     "character": "🍽️",
     "text": {
-     "ar": "أسلمَ <b>سعدٌ</b> وهو شابٌّ صغير، وكان <b>باراً بأمِّه</b> يحبُّها كثيراً. فلمّا علِمت أمُّه بإسلامِه غضِبت، وأرادت أن تُرجِعه عن دينِه بطريقةٍ قاسية: <b>أقسمت ألّا تأكلَ ولا تشربَ حتى يكفرَ بمحمدٍ ﷺ</b>!<br><br>بقيت تجوعُ أياماً حتى ضعُفت، وكان سعدٌ يحبُّها ويحزنُ لحالِها، لكنّه ثبتَ على دينِه. قال لها بأدبٍ وحبّ: <b>«يا أمّاه، لو كانت لكِ مئةُ نفسٍ فخرجت نفساً نفساً، ما تركتُ ديني»</b>! فلمّا رأت ثباتَه، عادت إلى الطعام. هكذا جمعَ سعدٌ بين <b>بِرِّ أمِّه والثباتِ على الحق</b>. ونزلت آيةٌ تأمرُ ببِرِّ الوالدينِ وعدمِ طاعتِهما في الشرك.",
-     "en": "<b>Sa'd</b> embraced Islam as a young man and was <b>dutiful to his mother</b>, loving her greatly. When his mother learned of his Islam she became angry and wanted to turn him from his faith harshly: <b>she swore not to eat or drink until he rejected Muhammad ﷺ</b>!<br><br>She stayed hungry for days until she weakened, and Sa'd loved her and grieved at her state, yet he held to his faith. He said to her with manners and love: <b>\"O mother, if you had a hundred souls and they left one by one, I would not abandon my faith\"</b>! When she saw his firmness, she returned to eating. Thus Sa'd combined <b>honoring his mother and firmness on truth</b>. A verse was revealed commanding kindness to parents but not obeying them in associating partners with Allah."
+     "ar": "أسلمَ <b>سعدٌ</b> وهو شابٌّ صغير، وكان <b>باراً بأمِّه</b> يحبُّها كثيراً. فلمّا علِمت أمُّه بإسلامِه غضِبت، وأرادت أن تُرجِعه عن دينِه بطريقةٍ قاسية: <b>أقسمت ألّا تأكلَ ولا تشربَ حتى يكفرَ بمحمدٍ ﷺ</b>!",
+     "en": "<b>Sa'd</b> embraced Islam as a young man and was <b>dutiful to his mother</b>, loving her greatly. When his mother learned of his Islam she became angry and wanted to turn him from his faith harshly: <b>she swore not to eat or drink until he rejected Muhammad ﷺ</b>!"
+    }
+   },
+   {
+    "scene": "madinah",
+    "character": "🍽️",
+    "text": {
+     "ar": "بقيت تجوعُ أياماً حتى ضعُفت، وكان سعدٌ يحبُّها ويحزنُ لحالِها، لكنّه ثبتَ على دينِه. ويُروى أنّه قال لها بأدبٍ وحبّ: <b>«يا أمّاه، لو كانت لكِ مئةُ نفسٍ فخرجت نفساً نفساً، ما تركتُ ديني»</b>! فلمّا رأت ثباتَه، عادت إلى الطعام. هكذا جمعَ سعدٌ بين <b>بِرِّ أمِّه والثباتِ على الحق</b>. ونزلت آيةٌ تأمرُ ببِرِّ الوالدينِ وعدمِ طاعتِهما في الشرك.",
+     "en": "She stayed hungry for days until she weakened, and Sa'd loved her and grieved at her state, yet he held to his faith. It is reported that he said to her with manners and love: <b>\"O mother, if you had a hundred souls and they left one by one, I would not abandon my faith\"</b>! When she saw his firmness, she returned to eating. Thus Sa'd combined <b>honoring his mother and firmness on truth</b>. A verse was revealed commanding kindness to parents but not obeying them in associating partners with Allah."
     },
     "choice": {
      "q": {
@@ -57,6 +73,22 @@ HISN_STORIES.saadwaqqas = [
        }
       }
      ]
+    }
+   },
+   {
+    "scene": "night",
+    "character": "💧",
+    "text": {
+     "ar": "وقد روى <b>مسلمٌ</b> في صحيحِه هذه القصّةَ عن سعدٍ نفسِه، فقال: إنّ أمَّه حلفتْ ألّا تكلّمَه أبداً حتى يكفرَ بدينِه، وقالت له: <b>«زعمتَ أنّ اللهَ وصّاك بوالدَيك، وأنا أمُّك، وأنا آمرُك بهذا!»</b> قال سعد: فمكثتْ <b>ثلاثاً</b> حتى غُشيَ عليها من الجَهد، فقامَ ابنٌ لها يُقالُ له <b>عُمارة</b> فسقاها.<br><br>ونزلَ في ذلك قولُ اللهِ تعالى: ﴿ وَوَصَّيْنَا الْإِنْسَانَ بِوَالِدَيْهِ حُسْنًا ۖ وَإِنْ جَاهَدَاكَ لِتُشْرِكَ بِي مَا لَيْسَ لَكَ بِهِ عِلْمٌ فَلَا تُطِعْهُمَا ﴾، وفي سورةِ لقمانَ: ﴿ وَصَاحِبْهُمَا فِي الدُّنْيَا مَعْرُوفًا ﴾.",
+     "en": "<b>Muslim</b> reports this story in his Sahih from Sa’d himself. He said his mother swore never to speak to him until he gave up his faith, and she told him: <b>\"You claim that Allah has commanded you to be good to your parents — well, I am your mother, and I command you to do this!\"</b> Sa’d said: She stayed like that for <b>three days</b> until she fainted from exhaustion, and a son of hers named <b>Umara</b> got up and gave her water.<br><br>About this, Allah revealed: <b>\"We have commanded man to be good to his parents; but if they strive to make you associate with Me what you have no knowledge of, do not obey them,\"</b> and in Surat Luqman: <b>\"Yet keep them company in this world with kindness.\"</b>"
+    }
+   },
+   {
+    "scene": "sprout",
+    "character": "❤️",
+    "text": {
+     "ar": "فانظرْ إلى رحمةِ الله: حتى الوالدانِ اللذانِ يدعوانِ ابنَهما إلى الشركِ يبقى لهما حقُّ <b>المعروفِ والإحسان</b>. فلا طاعةَ لأحدٍ في معصيةِ الله، ومع ذلك يبقى المسلمُ مؤدّباً رحيماً، لا يرفعُ صوتَه ولا يقسو.<br><br>وأنت كذلك: أطِعْ والدَيك، واخدمْهما، وابتسمْ لهما، فبِرُّهما من أحبِّ الأعمالِ إلى الله. وإذا طلبَ منك أحدٌ — كائناً من كان — أمراً يُغضبُ الله، فقلْ «لا» بأدبٍ ولطف، كما فعلَ سعد، ثمّ عُدْ إلى إحسانِك وحبِّك.",
+     "en": "Look at Allah’s mercy: even parents who call their child to associate partners with Allah still keep their right to <b>kindness and good treatment</b>. No one is to be obeyed in disobeying Allah — yet the Muslim stays polite and gentle, never raising his voice or being harsh.<br><br>The same goes for you: obey your parents, serve them and smile at them, for being good to them is among the deeds Allah loves most. And if anyone — whoever they are — asks you to do something that angers Allah, say \"no\" politely and gently, as Sa’d did, and then go back to your kindness and love."
     }
    }
   ],
@@ -191,11 +223,27 @@ HISN_STORIES.saadwaqqas = [
   },
   "pages": [
    {
+    "scene": "madinah",
+    "character": "🦁",
+    "text": {
+     "ar": "لمّا اشتدَّ أمرُ الفُرسِ في العراق، أرادَ أميرُ المؤمنينَ <b>عمرُ بنُ الخطّاب</b> أن يخرجَ بنفسِه على رأسِ الجيش، فاستشارَ الصحابة، فأشاروا عليه أن يبقى في المدينةِ ويُرسلَ قائداً قويّاً. فقال <b>عبدُ الرحمنِ بنُ عوف</b>: قد وجدتُه! قال عمر: من هو؟ قال: <b>«الأسدُ في براثنِه: سعدُ بنُ مالك»</b> — وهو سعدُ بنُ أبي وقّاص.<br><br>فاختارَه عمرُ ووصّاه وصيّةً عظيمة، منها: <b>«إنّ اللهَ ليس بينه وبين أحدٍ نسبٌ إلّا طاعتُه»</b> — أي: لا يغترَّ أحدٌ بقرابتِه من النبيِّ ﷺ، فالكرامةُ عندَ اللهِ بالطاعة.",
+     "en": "When the Persian threat in Iraq grew serious, the Commander of the Believers <b>Umar ibn al-Khattab</b> wanted to lead the army himself. He consulted the Companions, and they advised him to stay in Madinah and send a strong commander. <b>Abd ar-Rahman ibn Awf</b> said: I have found him! Umar asked: Who is he? He said: <b>\"The lion with its claws out: Sa’d ibn Malik\"</b> — that is, Sa’d ibn Abi Waqqas.<br><br>Umar chose him and gave him great advice, including: <b>\"Between Allah and any person there is no family tie except obedience to Him\"</b> — meaning no one should be fooled by being related to the Prophet ﷺ; honour with Allah comes through obedience."
+    }
+   },
+   {
     "scene": "peaks",
     "character": "🏹",
     "text": {
-     "ar": "في خلافةِ عمر، أرسلَ سعداً قائداً لجيشِ المسلمينَ لمواجهةِ <b>إمبراطوريّةِ فارسَ</b> العظيمةِ في معركةِ <b>القادسيّة</b>. كان جيشُ فارسَ ضخماً ومعه <b>الفِيَلة</b> التي أفزعت خيلَ العرب!<br><br>كان سعدٌ مريضاً لا يستطيعُ الركوب، فقادَ المعركةَ من مكانٍ مرتفعٍ <b>بالتخطيطِ والدعاء</b>. صبرَ المسلمونَ أربعةَ أيّامٍ من القتالِ الشديد، ووجدوا حيلةً لإخافةِ الفِيَلة، فنصرَهمُ اللهُ نصراً عظيماً. <b>فتحَ اللهُ بلادَ فارسَ</b> على يدِ سعد، ودخلَ الإسلامُ تلك البلادَ العظيمة. علّمنا سعدٌ أنّ النصرَ <b>بالإيمانِ والتخطيطِ والصبرِ والدعاء</b>، لا بالعددِ وحدَه.",
-     "en": "During Umar's caliphate, he sent Sa'd as commander of the Muslim army to face the great <b>Persian Empire</b> at the battle of <b>al-Qadisiyya</b>. The Persian army was massive, with <b>elephants</b> that terrified the Arabs' horses!<br><br>Sa'd was ill and could not ride, so he led the battle from an elevated place <b>through planning and prayer</b>. The Muslims endured four days of intense fighting and found a trick to frighten the elephants, so Allah granted them a great victory. <b>Allah opened Persia</b> through Sa'd, and Islam entered those great lands. Sa'd taught us that victory comes <b>through faith, planning, patience, and prayer</b>, not numbers alone."
+     "ar": "في خلافةِ عمر، أرسلَ سعداً قائداً لجيشِ المسلمينَ لمواجهةِ <b>إمبراطوريّةِ فارسَ</b> العظيمةِ في معركةِ <b>القادسيّة</b>. كان جيشُ فارسَ ضخماً ومعه <b>الفِيَلة</b> التي أفزعت خيلَ العرب!",
+     "en": "During Umar's caliphate, he sent Sa'd as commander of the Muslim army to face the great <b>Persian Empire</b> at the battle of <b>al-Qadisiyya</b>. The Persian army was massive, with <b>elephants</b> that terrified the Arabs' horses!"
+    }
+   },
+   {
+    "scene": "peaks",
+    "character": "🏹",
+    "text": {
+     "ar": "كان سعدٌ مريضاً لا يستطيعُ الركوب، فقادَ المعركةَ من مكانٍ مرتفعٍ <b>بالتخطيطِ والدعاء</b>. صبرَ المسلمونَ أربعةَ أيّامٍ من القتالِ الشديد، ووجدوا حيلةً لإخافةِ الفِيَلة، فنصرَهمُ اللهُ نصراً عظيماً. <b>فتحَ اللهُ بلادَ فارسَ</b> على يدِ سعد، ودخلَ الإسلامُ تلك البلادَ العظيمة. علّمنا سعدٌ أنّ النصرَ <b>بالإيمانِ والتخطيطِ والصبرِ والدعاء</b>، لا بالعددِ وحدَه.",
+     "en": "Sa'd was ill and could not ride, so he led the battle from an elevated place <b>through planning and prayer</b>. The Muslims endured four days of intense fighting and found a trick to frighten the elephants, so Allah granted them a great victory. <b>Allah opened Persia</b> through Sa'd, and Islam entered those great lands. Sa'd taught us that victory comes <b>through faith, planning, patience, and prayer</b>, not numbers alone."
     },
     "choice": {
      "q": {
@@ -237,6 +285,22 @@ HISN_STORIES.saadwaqqas = [
        }
       }
      ]
+    }
+   },
+   {
+    "scene": "elephant",
+    "character": "🐘",
+    "text": {
+     "ar": "وكانت المعركةُ أيّاماً متتابعة، لكلِّ يومٍ اسمٌ في كتبِ التاريخ، منها <b>يومُ أرماث</b> و<b>يومُ أغواث</b> و<b>يومُ عِماس</b>. وفي اليومِ الثاني وصلَ مددٌ من الشامِ بقيادةِ البطلِ <b>القعقاعِ بنِ عمرو</b>، فقسّمَ رجالَه مجموعاتٍ صغيرةً تصلُ واحدةً بعدَ أخرى، ليظنَّ العدوُّ أنّ المددَ لا ينقطع، فقويتْ قلوبُ المسلمين.<br><br>وبعدَ القادسيّةِ تقدّمَ سعدٌ حتى فتحَ <b>المدائنَ</b> عاصمةَ كِسرى، فدخلَ قصرَه الأبيضَ العظيم، فلم يفرحْ فرحَ المتكبّرين، بل صلّى فيه شكراً لله، وقرأَ قولَه تعالى: ﴿ كَمْ تَرَكُوا مِنْ جَنَّاتٍ وَعُيُونٍ ﴾.",
+     "en": "The battle lasted several days in a row, and each day has a name in the history books, among them <b>the Day of Armath</b>, <b>the Day of Aghwath</b> and <b>the Day of Imas</b>. On the second day reinforcements arrived from Syria led by the hero <b>al-Qa’qa’ ibn Amr</b>. He split his men into small groups that arrived one after another, so the enemy would think the reinforcements never ended — and the Muslims’ hearts grew strong.<br><br>After al-Qadisiyya, Sa’d advanced until he opened <b>al-Mada’in</b>, the capital of Kisra. He entered the great White Palace — not rejoicing like the arrogant, but praying in it in thanks to Allah, and reciting His words: <b>\"How many gardens and springs they left behind!\"</b>"
+    }
+   },
+   {
+    "scene": "sprout",
+    "character": "🌱",
+    "text": {
+     "ar": "ثمّ بنى المسلمونَ مدينةَ <b>الكوفة</b> لتكونَ بيتاً لهم في العراق، وصارتْ بعدَ ذلك من أكبرِ مدنِ العلمِ في تاريخِ الإسلام.<br><br>لقد فهمَ سعدٌ أنّ النصرَ <b>نعمةٌ من الله</b> تحتاجُ إلى شكرٍ وتواضع، لا إلى غرورٍ وفخر. وهكذا أنت: إذا نجحتَ في امتحانٍ أو فزتَ في مسابقة، فقلْ «الحمدُ لله»، وتذكّرْ مَن ساعدك، ولا تتكبّرْ على أحد، واعلمْ أنّ <b>التخطيطَ والصبرَ والدعاءَ</b> أسبابٌ يُحبُّها الله.",
+     "en": "Then the Muslims built the city of <b>Kufa</b> as their home in Iraq, and it later became one of the greatest cities of learning in Islamic history.<br><br>Sa’d understood that victory is <b>a blessing from Allah</b> that calls for gratitude and humility, not pride and boasting. The same goes for you: when you pass a test or win a competition, say \"Alhamdulillah,\" remember who helped you, and don’t look down on anyone — and know that <b>planning, patience and prayer</b> are means that Allah loves."
     }
    }
   ],
@@ -371,11 +435,27 @@ HISN_STORIES.saadwaqqas = [
   },
   "pages": [
    {
+    "scene": "mountain",
+    "character": "🏹",
+    "text": {
+     "ar": "في السنةِ الثالثةِ من الهجرة، جاءتْ قريشٌ بجيشٍ كبيرٍ إلى جبلِ <b>أُحُد</b> قربَ المدينة. وفي أوّلِ المعركةِ انتصرَ المسلمون، لكنّ كثيراً من الرُّماةِ تركوا أماكنَهم فوقَ الجبلِ ونزلوا، فانقلبَ الأمر، وتفرّقَ كثيرٌ من الناسِ في شدّةِ المفاجأة.<br><br>وبقيتْ مجموعةٌ قليلةٌ من الصحابةِ حولَ النبيِّ ﷺ تحميه. قال <b>أبو عثمانَ النَّهْديّ</b>: لم يبقَ مع النبيِّ ﷺ في بعضِ تلك الأيّامِ التي قاتلَ فيهنّ غيرُ <b>طلحةَ</b> و<b>سعد</b> — يرويه عنهما. وكان سعدٌ يرمي بقوسِه سهماً بعدَ سهم.",
+     "en": "In the third year after the Hijra, Quraysh came with a large army to Mount <b>Uhud</b> near Madinah. At first the Muslims were winning, but many of the archers left their places on the hill and came down, and the battle turned; in the shock of it, many people scattered.<br><br>A small group of Companions stayed around the Prophet ﷺ to protect him. <b>Abu Uthman an-Nahdi</b> said — reporting it from the two of them — that on one of those days of fighting no one remained with the Prophet ﷺ except <b>Talha</b> and <b>Sa’d</b>. And Sa’d kept shooting his bow, arrow after arrow."
+    }
+   },
+   {
     "scene": "peaks",
     "character": "🎯",
     "text": {
-     "ar": "كان <b>سعدُ بنُ أبي وقّاص</b> من أمهرِ الرُّماةِ في العرب، لا يكادُ سهمُه يُخطئ. وفي يومِ <b>أُحُد</b> وقفَ قريباً من النبيِّ ﷺ يرمي المشركينَ ليحميه. فنثرَ النبيُّ ﷺ له <b>كِنانتَه</b> — وهي جُعبةُ السهام — وجعلَ يناوله ويقول: <b>«ارمِ فِداكَ أبي وأمّي»</b>!<br><br>و«فِداكَ أبي وأمّي» كلمةٌ تقولُها العربُ لمن تحبُّه كثيراً، أي: أفديكَ بأغلى الناسِ عندي. قال <b>عليُّ بنُ أبي طالب</b>: ما سمعتُ النبيَّ ﷺ جمعَ أبويه لأحدٍ إلا لسعد. فيا له من شرفٍ عظيم!<br><br>لم يحصلْ سعدٌ على هذا الشرفِ بالكلام، بل <b>بالمهارةِ والإتقانِ والشجاعة</b>؛ تدرّبَ على الرمي حتى صار بارعاً، ثم وضعَ مهارتَه في خدمةِ الحقّ. فتعلّمْ مهارةً نافعةً وأتقِنْها، واجعلْها في طاعةِ الله.",
-     "en": "<b>Sa'd ibn Abi Waqqas</b> was one of the most skilled archers among the Arabs; his arrow hardly ever missed. On the day of <b>Uhud</b> he stood near the Prophet ﷺ, shooting at the idolaters to protect him. The Prophet ﷺ emptied his <b>quiver</b> out for him, handing him arrows and saying: <b>\"Shoot — may my father and mother be ransomed for you!\"</b><br><br>\"May my father and mother be ransomed for you\" is something Arabs say to someone they love dearly — meaning: I would give the dearest people I have for you. <b>Ali ibn Abi Talib</b> said: I never heard the Prophet ﷺ name both his parents for anyone except Sa'd. What a great honour!<br><br>Sa'd did not earn this honour with talk, but with <b>skill, mastery and courage</b>: he trained at archery until he excelled, then put his skill in the service of the truth. So learn a useful skill, master it, and use it in obedience to Allah."
+     "ar": "كان <b>سعدُ بنُ أبي وقّاص</b> من أمهرِ الرُّماةِ في العرب، لا يكادُ سهمُه يُخطئ. وفي يومِ <b>أُحُد</b> وقفَ قريباً من النبيِّ ﷺ يرمي المشركينَ ليحميه. فنثرَ النبيُّ ﷺ له <b>كِنانتَه</b> — وهي جُعبةُ السهام — وجعلَ يناوله ويقول: <b>«ارمِ فِداكَ أبي وأمّي»</b>!<br><br>و«فِداكَ أبي وأمّي» كلمةٌ تقولُها العربُ لمن تحبُّه كثيراً، أي: أفديكَ بأغلى الناسِ عندي. قال <b>عليُّ بنُ أبي طالب</b>: ما سمعتُ النبيَّ ﷺ جمعَ أبويه لأحدٍ إلا لسعد. فيا له من شرفٍ عظيم!",
+     "en": "<b>Sa'd ibn Abi Waqqas</b> was one of the most skilled archers among the Arabs; his arrow hardly ever missed. On the day of <b>Uhud</b> he stood near the Prophet ﷺ, shooting at the idolaters to protect him. The Prophet ﷺ emptied his <b>quiver</b> out for him, handing him arrows and saying: <b>\"Shoot — may my father and mother be ransomed for you!\"</b><br><br>\"May my father and mother be ransomed for you\" is something Arabs say to someone they love dearly — meaning: I would give the dearest people I have for you. <b>Ali ibn Abi Talib</b> said: I never heard the Prophet ﷺ name both his parents for anyone except Sa'd. What a great honour!"
+    }
+   },
+   {
+    "scene": "peaks",
+    "character": "🎯",
+    "text": {
+     "ar": "لم يحصلْ سعدٌ على هذا الشرفِ بالكلام، بل <b>بالمهارةِ والإتقانِ والشجاعة</b>؛ تدرّبَ على الرمي حتى صار بارعاً، ثم وضعَ مهارتَه في خدمةِ الحقّ. فتعلّمْ مهارةً نافعةً وأتقِنْها، واجعلْها في طاعةِ الله.",
+     "en": "Sa'd did not earn this honour with talk, but with <b>skill, mastery and courage</b>: he trained at archery until he excelled, then put his skill in the service of the truth. So learn a useful skill, master it, and use it in obedience to Allah."
     },
     "choice": {
      "q": {
@@ -417,6 +497,14 @@ HISN_STORIES.saadwaqqas = [
        }
       }
      ]
+    }
+   },
+   {
+    "scene": "night",
+    "character": "🌙",
+    "text": {
+     "ar": "وكان سعدٌ يحبُّ أن يحرسَ النبيَّ ﷺ في الحربِ وفي السِّلم. فقد روتْ <b>عائشةُ</b> رضي الله عنها أنّ النبيَّ ﷺ سهرَ ليلةً لمّا قدمَ المدينة، فقال: <b>«ليتَ رجلاً صالحاً من أصحابي يحرسُني الليلة»</b>. قالت: فبينما نحن كذلك سمعنا صوتَ سلاح، فقال: <b>«مَن هذا؟»</b> فقال: <b>«أنا سعدُ بنُ أبي وقّاص، جئتُ لأحرسَك»</b>. فدعا له رسولُ اللهِ ﷺ ثمّ نام.<br><br>تخيّلْ فرحةَ سعدٍ وهو يرى النبيَّ ﷺ ينامُ مطمئنّاً لأنّه يحرسُه! لقد جعلَ قوّتَه ومهارتَه في خدمةِ مَن يحبّ، دونَ أن يطلبَ منه أحد.",
+     "en": "Sa’d loved to guard the Prophet ﷺ in war and in peace. <b>A’isha</b>, may Allah be pleased with her, reported that one night soon after arriving in Madinah the Prophet ﷺ could not sleep, and he said: <b>\"If only a righteous man from my Companions would guard me tonight.\"</b> She said: While we were like that, we heard the clatter of weapons. He asked: <b>\"Who is this?\"</b> He answered: <b>\"I am Sa’d ibn Abi Waqqas; I have come to guard you.\"</b> The Messenger of Allah ﷺ prayed for him and then slept.<br><br>Imagine Sa’d’s joy as he watched the Prophet ﷺ sleep peacefully because he was on guard! He put his strength and skill in the service of the one he loved, without anyone asking him to."
     }
    }
   ],
@@ -551,11 +639,27 @@ HISN_STORIES.saadwaqqas = [
   },
   "pages": [
    {
+    "scene": "kaaba",
+    "character": "🕋",
+    "text": {
+     "ar": "في السنواتِ الأولى بمكّة، كان المسلمونَ قليلين، يُصلّونَ سرّاً في الشِّعابِ والبيوتِ خوفاً من أذى قريش. وكان <b>سعدٌ</b> واحداً من هؤلاءِ الأوائلِ الذين صدّقوا النبيَّ ﷺ حينَ كذّبه أكثرُ الناس.<br><br>ثمّ أذِنَ اللهُ للمسلمينَ بالهجرةِ إلى المدينة، وبدأ النبيُّ ﷺ يُرسِلُ <b>السرايا</b> — وهي مجموعاتٌ صغيرةٌ من الفرسان — تراقبُ طرقَ قريشٍ وتحمي المدينة. وكانت سريّةُ <b>عُبيدةَ بنِ الحارث</b> من أوّلِ هذه السرايا، خرجَ فيها ستّونَ أو ثمانونَ راكباً من المهاجرين.",
+     "en": "In the early years in Makkah the Muslims were few, praying secretly in the mountain passes and in their homes for fear of Quraysh’s persecution. <b>Sa’d</b> was one of those first believers who trusted the Prophet ﷺ when most people called him a liar.<br><br>Then Allah permitted the Muslims to migrate to Madinah, and the Prophet ﷺ began sending out <b>expeditions</b> — small groups of riders — to watch Quraysh’s routes and protect the city. The expedition of <b>Ubayda ibn al-Harith</b> was one of the very first; sixty or eighty riders from the Emigrants went out in it."
+    }
+   },
+   {
     "scene": "desert",
     "character": "🏹",
     "text": {
-     "ar": "كان <b>سعدٌ</b> من أوائلِ مَن أسلم، حتى قال: <b>«لقد مكثتُ سبعةَ أيّامٍ وإنّي لثُلُثُ الإسلام»</b> — أي كان من أوّلِ ثلاثةِ رجالٍ في الإسلام! ولمّا هاجرَ المسلمونَ إلى المدينة، خرجتْ سريّةٌ بقيادةِ <b>عُبيدةَ بنِ الحارث</b>، وكان سعدٌ فيها، فلمّا لقوا المشركين <b>رمى سعدٌ أوّلَ سهمٍ رُميَ في سبيلِ الله</b>.<br><br>قال سعدٌ بعدَ سنين: <b>«إنّي لأوّلُ العربِ رمى بسهمٍ في سبيلِ الله»</b>. ثم ذكرَ كم كانت الأيّامُ الأولى صعبة، فقال: <b>«كنّا نغزو مع النبيِّ ﷺ وما لنا طعامٌ إلا ورقُ الشجر»</b>! من شدّةِ الجوعِ والفقر، ومع ذلك صبروا وثبتوا.<br><br>لم يكنْ عندَهم طعامٌ كثير، ولا راحة، لكنْ كان عندَهم <b>إيمانٌ عظيم</b> جعلهم يتحمّلونَ كلَّ شيء. ثم فتحَ اللهُ عليهم الدنيا، فلم يَنسَ سعدٌ تلك الأيّامَ الأولى. فالبداياتُ الصعبةُ مع الصبرِ تصنعُ النجاحَ العظيم.",
-     "en": "<b>Sa'd</b> was among the very first to embrace Islam; he said: <b>\"For seven days I was one third of Islam\"</b> — meaning he was among the first three men in Islam! After the Muslims emigrated to Madinah, a small expedition went out led by <b>Ubayda ibn al-Harith</b>, with Sa'd in it. When they met the idolaters, <b>Sa'd shot the first arrow ever shot in the path of Allah</b>.<br><br>Years later Sa'd said: <b>\"I was the first of the Arabs to shoot an arrow in the path of Allah.\"</b> Then he recalled how hard the early days were: <b>\"We used to go out with the Prophet ﷺ, and we had no food but the leaves of trees!\"</b> That was how hungry and poor they were — yet they were patient and stood firm.<br><br>They had little food and no comfort, but they had <b>great faith</b> that made them bear everything. Later Allah opened the world to them, but Sa'd never forgot those first days. Hard beginnings, met with patience, build great success."
+     "ar": "كان <b>سعدٌ</b> من أوائلِ مَن أسلم، حتى قال: <b>«لقد مكثتُ سبعةَ أيّامٍ وإنّي لثُلُثُ الإسلام»</b> — أي كان من أوّلِ ثلاثةِ رجالٍ في الإسلام! ولمّا هاجرَ المسلمونَ إلى المدينة، خرجتْ سريّةٌ بقيادةِ <b>عُبيدةَ بنِ الحارث</b>، وكان سعدٌ فيها، فلمّا لقوا المشركين <b>رمى سعدٌ أوّلَ سهمٍ رُميَ في سبيلِ الله</b>.",
+     "en": "<b>Sa'd</b> was among the very first to embrace Islam; he said: <b>\"For seven days I was one third of Islam\"</b> — meaning he was among the first three men in Islam! After the Muslims emigrated to Madinah, a small expedition went out led by <b>Ubayda ibn al-Harith</b>, with Sa'd in it. When they met the idolaters, <b>Sa'd shot the first arrow ever shot in the path of Allah</b>."
+    }
+   },
+   {
+    "scene": "desert",
+    "character": "🏹",
+    "text": {
+     "ar": "قال سعدٌ بعدَ سنين: <b>«إنّي لأوّلُ العربِ رمى بسهمٍ في سبيلِ الله»</b>. ثم ذكرَ كم كانت الأيّامُ الأولى صعبة، فقال: <b>«كنّا نغزو مع النبيِّ ﷺ وما لنا طعامٌ إلا ورقُ الشجر»</b>! من شدّةِ الجوعِ والفقر، ومع ذلك صبروا وثبتوا.<br><br>لم يكنْ عندَهم طعامٌ كثير، ولا راحة، لكنْ كان عندَهم <b>إيمانٌ عظيم</b> جعلهم يتحمّلونَ كلَّ شيء. ثم فتحَ اللهُ عليهم الدنيا، فلم يَنسَ سعدٌ تلك الأيّامَ الأولى. فالبداياتُ الصعبةُ مع الصبرِ تصنعُ النجاحَ العظيم.",
+     "en": "Years later Sa'd said: <b>\"I was the first of the Arabs to shoot an arrow in the path of Allah.\"</b> Then he recalled how hard the early days were: <b>\"We used to go out with the Prophet ﷺ, and we had no food but the leaves of trees!\"</b> That was how hungry and poor they were — yet they were patient and stood firm.<br><br>They had little food and no comfort, but they had <b>great faith</b> that made them bear everything. Later Allah opened the world to them, but Sa'd never forgot those first days. Hard beginnings, met with patience, build great success."
     },
     "choice": {
      "q": {
@@ -597,6 +701,14 @@ HISN_STORIES.saadwaqqas = [
        }
       }
      ]
+    }
+   },
+   {
+    "scene": "grain",
+    "character": "💰",
+    "text": {
+     "ar": "وعاشَ سعدٌ حتى صارَ غنيّاً، لكنّ المالَ لم يأخذْ قلبَه. ففي <b>حجّةِ الوداع</b> مرضَ مرضاً شديداً، فزاره النبيُّ ﷺ، فقال سعد: يا رسولَ الله، أفأتصدّقُ بثلثَي مالي؟ قال: لا. قال: فالشَّطر؟ قال: لا. ثمّ قال: <b>«الثلث، والثلثُ كثير، إنّك أن تذرَ ورثتَك أغنياءَ خيرٌ من أن تذرَهم عالةً يتكفّفونَ الناس»</b>.<br><br>وقال له ﷺ: <b>«وإنّك لن تُنفقَ نفقةً تبتغي بها وجهَ اللهِ إلّا أُجِرتَ بها، حتى ما تجعلُ في فِي امرأتِك»</b>. فتعلّمَ سعدٌ أنّ المالَ الحلالَ نعمة، وأنّ العطاءَ يكونُ بحكمةٍ واعتدال.",
+     "en": "Sa’d lived on until he became wealthy, but money never captured his heart. During <b>the Farewell Pilgrimage</b> he fell seriously ill, and the Prophet ﷺ visited him. Sa’d said: O Messenger of Allah, shall I give two-thirds of my wealth in charity? He said: No. Sa’d said: Then half? He said: No. Then he said: <b>\"A third — and a third is a lot. Leaving your heirs rich is better than leaving them poor, begging from people.\"</b><br><br>And he ﷺ told him: <b>\"You will never spend anything seeking Allah’s Face without being rewarded for it — even the morsel you put in your wife’s mouth.\"</b> So Sa’d learned that lawful wealth is a blessing, and that giving should be done with wisdom and balance."
     }
    }
   ],
@@ -732,10 +844,26 @@ HISN_STORIES.saadwaqqas = [
   "pages": [
    {
     "scene": "mosque",
+    "character": "🏛️",
+    "text": {
+     "ar": "بعدَ أن فتحَ اللهُ العراقَ على يدِ سعد، بنى المسلمونَ مدينةَ <b>الكوفة</b>، وجعلَ عمرُ سعداً أميراً عليها. وكان عمرُ بنُ الخطّابِ يراقبُ أمراءَه مراقبةً شديدة، ويسمعُ شكوى الناسِ فيهم، لأنّه كان يعلمُ أنّ الأميرَ مسؤولٌ أمامَ اللهِ عن رعيّتِه.<br><br>وقد قال النبيُّ ﷺ: <b>«كلُّكم راعٍ، وكلُّكم مسؤولٌ عن رعيّتِه»</b>. فكان عمرُ لا يتركُ شكوى بلا تحقيق، حتى لو كانت في صحابيٍّ كبيرٍ من <b>العشرةِ المبشّرينَ بالجنّة</b> مثلِ سعد.",
+     "en": "After Allah opened Iraq through Sa’d, the Muslims built the city of <b>Kufa</b>, and Umar made Sa’d its governor. Umar ibn al-Khattab kept a very close eye on his governors and listened to people’s complaints about them, because he knew a ruler is answerable to Allah for those in his care.<br><br>The Prophet ﷺ said: <b>\"Each of you is a shepherd, and each of you is responsible for his flock.\"</b> So Umar never left a complaint uninvestigated — even when it was about a great Companion, one of <b>the Ten promised Paradise</b>, like Sa’d."
+    }
+   },
+   {
+    "scene": "mosque",
     "character": "🤲",
     "text": {
-     "ar": "كان <b>سعدٌ</b> أميراً على <b>الكوفة</b> في خلافةِ عمر، فشكاه بعضُ أهلِها إلى عمر، حتى قالوا: <b>إنّه لا يُحسِنُ يُصلّي</b>! فأرسلَ إليه عمرُ فسأله، فقال سعد: <b>«أمّا أنا فواللهِ كنتُ أُصلّي بهم صلاةَ رسولِ اللهِ ﷺ ما أُنقِصُ منها»</b>، أُطيلُ في الأُولَيين وأُخفّفُ في الأُخرَيين. فقال عمر: <b>ذاك الظنُّ بك يا أبا إسحاق</b>.<br><br>ولم يكتفِ عمرُ بذلك، بل كان عادلاً، فأرسلَ رجالاً يسألونَ عن سعدٍ في كلِّ مساجدِ الكوفة، <b>فأثنى عليه الناسُ خيراً</b>، إلا رجلاً واحداً قام فقال كذباً: إنّ سعداً لا يخرجُ مع الجيش، ولا يقسمُ بالعدل، ولا يعدلُ في القضاء! فقال سعدٌ: <b>«اللّهُمّ إن كان عبدُك هذا كاذباً، قامَ رياءً وسُمعة، فأطِلْ عمرَه، وأطِلْ فقرَه، وعرِّضْه للفتن»</b>.<br><br>فاستجابَ اللهُ دعاءَ سعد! فعاشَ ذلك الرجلُ حتى صار <b>شيخاً كبيراً سقطَ حاجباه على عينيه</b> من الكِبَر، فقيراً مُبتلى، فإذا سُئلَ قال: «شيخٌ كبيرٌ مفتون، <b>أصابتني دعوةُ سعد</b>». فاحذرْ أن تتّهمَ أحداً بالكذب، فإنّ اللهَ يُدافِعُ عن الذين آمنوا.",
-     "en": "<b>Sa'd</b> was governor of <b>Kufa</b> in Umar's caliphate. Some of its people complained about him to Umar, even saying <b>he did not pray properly</b>! Umar sent for him and asked, and Sa'd said: <b>\"As for me, by Allah, I prayed with them the prayer of the Messenger of Allah ﷺ, taking nothing from it\"</b> — lengthening the first two units and shortening the last two. Umar said: <b>that is what we thought of you, Abu Ishaq.</b><br><br>Umar did not stop there; being just, he sent men to ask about Sa'd in every mosque of Kufa, and <b>the people praised him</b> — except one man who stood and said falsely: Sa'd does not go out with the army, does not divide fairly and does not judge justly! Sa'd said: <b>\"O Allah, if this servant of Yours is lying, standing up to show off, then lengthen his life, lengthen his poverty, and expose him to trials.\"</b><br><br>Allah answered Sa'd's prayer! That man lived until he became <b>a very old man whose eyebrows drooped over his eyes</b>, poor and afflicted; when asked, he would say: \"An old man tested — <b>Sa'd's prayer struck me</b>.\" So beware of falsely accusing anyone, for Allah defends those who believe."
+     "ar": "كان <b>سعدٌ</b> أميراً على <b>الكوفة</b> في خلافةِ عمر، فشكاه بعضُ أهلِها إلى عمر، حتى قالوا: <b>إنّه لا يُحسِنُ يُصلّي</b>! فأرسلَ إليه عمرُ فسأله، فقال سعد: <b>«أمّا أنا فواللهِ كنتُ أُصلّي بهم صلاةَ رسولِ اللهِ ﷺ ما أُنقِصُ منها»</b>، أُطيلُ في الأُولَيين وأُخفّفُ في الأُخرَيين. فقال عمر: <b>ذاك الظنُّ بك يا أبا إسحاق</b>.",
+     "en": "<b>Sa'd</b> was governor of <b>Kufa</b> in Umar's caliphate. Some of its people complained about him to Umar, even saying <b>he did not pray properly</b>! Umar sent for him and asked, and Sa'd said: <b>\"As for me, by Allah, I prayed with them the prayer of the Messenger of Allah ﷺ, taking nothing from it\"</b> — lengthening the first two units and shortening the last two. Umar said: <b>that is what we thought of you, Abu Ishaq.</b>"
+    }
+   },
+   {
+    "scene": "mosque",
+    "character": "🤲",
+    "text": {
+     "ar": "ولم يكتفِ عمرُ بذلك، بل كان عادلاً، فأرسلَ رجالاً يسألونَ عن سعدٍ في كلِّ مساجدِ الكوفة، <b>فأثنى عليه الناسُ خيراً</b>، إلا رجلاً واحداً قام فقال كذباً: إنّ سعداً لا يخرجُ مع الجيش، ولا يقسمُ بالعدل، ولا يعدلُ في القضاء! فقال سعدٌ: <b>«اللّهُمّ إن كان عبدُك هذا كاذباً، قامَ رياءً وسُمعة، فأطِلْ عمرَه، وأطِلْ فقرَه، وعرِّضْه للفتن»</b>.",
+     "en": "Umar did not stop there; being just, he sent men to ask about Sa'd in every mosque of Kufa, and <b>the people praised him</b> — except one man who stood and said falsely: Sa'd does not go out with the army, does not divide fairly and does not judge justly! Sa'd said: <b>\"O Allah, if this servant of Yours is lying, standing up to show off, then lengthen his life, lengthen his poverty, and expose him to trials.\"</b>"
     },
     "choice": {
      "q": {
@@ -777,6 +905,22 @@ HISN_STORIES.saadwaqqas = [
        }
       }
      ]
+    }
+   },
+   {
+    "scene": "mosque",
+    "character": "🤲",
+    "text": {
+     "ar": "فاستجابَ اللهُ دعاءَ سعد! فعاشَ ذلك الرجلُ حتى صار <b>شيخاً كبيراً سقطَ حاجباه على عينيه</b> من الكِبَر، فقيراً مُبتلى، فإذا سُئلَ قال: «شيخٌ كبيرٌ مفتون، <b>أصابتني دعوةُ سعد</b>». فاحذرْ أن تتّهمَ أحداً بالكذب، فإنّ اللهَ يُدافِعُ عن الذين آمنوا.",
+     "en": "Allah answered Sa'd's prayer! That man lived until he became <b>a very old man whose eyebrows drooped over his eyes</b>, poor and afflicted; when asked, he would say: \"An old man tested — <b>Sa'd's prayer struck me</b>.\" So beware of falsely accusing anyone, for Allah defends those who believe."
+    }
+   },
+   {
+    "scene": "scales",
+    "character": "⚖️",
+    "text": {
+     "ar": "وكان عمرُ قد عزلَ سعداً عن الكوفة، وجعلَ عليها <b>عمّارَ بنَ ياسر</b>. لكنّه لم ينسَ فضلَه؛ فلمّا طُعِنَ عمرُ في آخرِ حياتِه، جعلَ سعداً من <b>السِّتّةِ</b> الذين يُختارُ منهم الخليفة، وقال: <b>«فإن أصابتِ الإمرةُ سعداً فهو ذاك، وإلّا فليستعِنْ به أيُّكم ما أُمِّر، فإنّي لم أعزلْه عن عجزٍ ولا خيانة»</b>.<br><br>هكذا بقيَ اسمُ سعدٍ نظيفاً، وظهرَ الحقُّ في النهاية. فإذا اتّهمَك أحدٌ ظلماً فاصبرْ، وقُلِ الحقَّ بهدوء، وثِقْ بأنّ اللهَ يُظهِرُ الصدق.",
+     "en": "Umar had removed Sa’d from Kufa and appointed <b>Ammar ibn Yasir</b> over it. But he never forgot Sa’d’s merit. When Umar was stabbed at the end of his life, he named Sa’d among <b>the six</b> from whom the next caliph would be chosen, and said: <b>\"If the leadership goes to Sa’d, so be it; otherwise, whichever of you is made leader should seek his help, for I did not remove him for weakness or for dishonesty.\"</b><br><br>So Sa’d’s name stayed clean, and the truth came out in the end. If anyone accuses you unjustly, be patient, speak the truth calmly, and trust that Allah brings truthfulness to light."
     }
    }
   ],

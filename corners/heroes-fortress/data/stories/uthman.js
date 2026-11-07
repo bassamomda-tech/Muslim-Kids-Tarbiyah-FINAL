@@ -11,6 +11,14 @@ HISN_STORIES.uthman = [
   },
   "pages": [
    {
+    "scene": "madinah",
+    "character": "🏜️",
+    "text": {
+     "ar": "تركَ <b>المهاجرونَ</b> مكّةَ وبيوتَهم وأموالَهم، وجاؤوا إلى المدينةِ لا يملكونَ إلّا القليل. وكانت المدينةُ أرضاً حارّة، وأكثرُ آبارِها ماؤها ثقيلٌ ليس بالعذب، والماءُ هناك حياة: يشربُه الناس، وتشربُه الإبلُ والغنم، وتُسقى منه النخيل.<br><br>وكما ذكرَ عثمانُ نفسُه فيما رواه الترمذيّ: قدمَ النبيُّ ﷺ المدينةَ <b>وليس بها ماءٌ يُستعذَبُ غيرُ بئرِ رومة</b>. فكان الفقيرُ يقفُ عندها عطشانَ لا يجدُ ثمنَ الماء، والأمُّ تحملُ قِربتَها فارغةً إلى بيتِها. فكان لا بدَّ من رجلٍ كريمٍ يحلُّ هذه المشكلة.",
+     "en": "The <b>Muhajirun</b> left Makkah, their homes and their wealth, and came to Madinah owning very little. Madinah was a hot land, and the water of most of its wells was heavy and not sweet — and water there was life: people drank it, camels and sheep drank it, and the palm trees were watered with it.<br><br>As Uthman himself recalled in a report collected by at-Tirmidhi: the Prophet ﷺ came to Madinah <b>and there was no sweet water in it except the Well of Ruma</b>. A poor man would stand by it thirsty, unable to pay for water, and a mother would carry her waterskin home empty. Someone generous was needed to solve this problem."
+    }
+   },
+   {
     "scene": "desert",
     "character": "💧",
     "text": {
@@ -57,6 +65,22 @@ HISN_STORIES.uthman = [
        }
       }
      ]
+    }
+   },
+   {
+    "scene": "well",
+    "character": "🪣",
+    "text": {
+     "ar": "وفي روايةِ الترمذيّ أنّ النبيَّ ﷺ قال: مَن يشتري بئرَ رومةَ <b>فيجعلُ دلوَه مع دِلاءِ المسلمين</b> بخيرٍ له منها في الجنّة؟ فاشتراها عثمانُ <b>من صُلبِ مالِه</b>. أي أنّ عثمانَ — صاحبَ البئرِ نفسَه — صارَ يستقي منها كما يستقي أيُّ واحدٍ من الناس، لا فضلَ له على غيرِه!<br><br>ومرّتِ السنون، وجاءَ يومٌ حاصرَ فيه الخارجونَ عثمانَ في بيتِه، <b>ومنعوه أن يشربَ من بئرِ رومة</b> نفسِها! فذكّرَهم بأنّه هو الذي اشتراها للمسلمين. لكنّ أجرَها عند اللهِ لم يضِعْ، فالذي يُعطي لوجهِ اللهِ لا يخسرُ أبداً.",
+     "en": "In at-Tirmidhi's narration, the Prophet ﷺ said: Who will buy the Well of Ruma <b>and put his bucket in with the buckets of the Muslims</b>, for something better than it in Paradise? So Uthman bought it <b>from his own wealth</b>. That means Uthman — the owner of the well himself — drew water from it just like anyone else, with no privilege over others!<br><br>Years passed, and a day came when rebels besieged Uthman in his house and <b>prevented him from drinking from the Well of Ruma</b> itself! He reminded them that he was the one who had bought it for the Muslims. But its reward with Allah was never lost, for whoever gives for Allah's sake never loses."
+    }
+   },
+   {
+    "scene": "spring",
+    "character": "🌱",
+    "text": {
+     "ar": "قال النبيُّ ﷺ: <b>«إذا ماتَ الإنسانُ انقطعَ عنه عملُه إلّا من ثلاثة: إلّا من صدقةٍ جارية، أو علمٍ يُنتفَعُ به، أو ولدٍ صالحٍ يدعو له»</b>. وبئرُ رومةَ مثالٌ رائعٌ على <b>الصدقةِ الجارية</b>: كلُّ قطرةٍ شربَها إنسانٌ أو حيوانٌ منها كان لعثمانَ فيها أجر.<br><br>وأنت تستطيعُ أن تبدأَ صدقتَك الجاريةَ وأنت صغير: أن تضعَ إناءَ ماءٍ للطيورِ في الصيف، أو تُشاركَ في حفرِ بئرٍ مع عائلتِك، أو تُهديَ مصحفاً للمسجد. فالخيرُ الذي يبقى بعدك هو <b>أجملُ كنزٍ</b> تتركُه.",
+     "en": "The Prophet ﷺ said: <b>\"When a person dies, his deeds come to an end except for three: ongoing charity, knowledge that is benefited from, or a righteous child who prays for him.\"</b> The Well of Ruma is a wonderful example of <b>ongoing charity</b>: every drop that a person or animal drank from it brought Uthman reward.<br><br>You can start your own ongoing charity while you are young: put out a bowl of water for birds in summer, join your family in funding a well, or give a copy of the Qur'an to the mosque. The good that remains after you is <b>the most beautiful treasure</b> you can leave behind."
     }
    }
   ],
@@ -192,6 +216,14 @@ HISN_STORIES.uthman = [
   "pages": [
    {
     "scene": "desert",
+    "character": "☀️",
+    "text": {
+     "ar": "في السنةِ التاسعةِ للهجرة، وصلتْ إلى المدينةِ أخبارٌ بأنّ <b>الرومَ</b> يجمعونَ الجيوشَ في الشام. فقرّرَ النبيُّ ﷺ أن يخرجَ إليهم بنفسِه، وأخبرَ الناسَ بوجهتِه صراحةً لأنّ الطريقَ بعيدٌ والعدوَّ كثير. وكان الصيفُ شديدَ الحرّ، والثمارُ في المدينةِ قد طابتْ والظلالُ تدعو إلى الراحة.<br><br>وجاءَ بعضُ الفقراءِ من الصحابةِ يطلبونَ من النبيِّ ﷺ ما يركبونَ عليه، فلم يجدْ ما يحملُهم، فرجعوا <b>وأعينُهم تفيضُ من الدمع</b> حزناً أنْ لا يجدوا ما يُنفقون، كما وصفَهم اللهُ في سورةِ التوبة. فكان الجيشُ في حاجةٍ شديدةٍ إلى المال والإبل.",
+     "en": "In the ninth year after the Hijra, news reached Madinah that <b>the Byzantines</b> were gathering armies in Sham. The Prophet ﷺ decided to go out to them himself, and he told people his destination openly, because the road was long and the enemy numerous. The summer was fiercely hot, the fruit in Madinah had ripened, and the shade invited people to rest.<br><br>Some poor companions came asking the Prophet ﷺ for mounts to ride, but he could not find anything to carry them, so they went back <b>with their eyes overflowing with tears</b>, grieving that they had nothing to spend — as Allah describes them in Surat at-Tawba. The army was in great need of money and camels."
+    }
+   },
+   {
+    "scene": "desert",
     "character": "🎁",
     "text": {
      "ar": "حين أرادَ النبيُّ ﷺ الخروجَ لغزوةِ <b>تبوك</b>، كان الوقتُ حرّاً والمسلمونَ في <b>عُسرةٍ</b> شديدةٍ وقلّةِ مال، حتى سُمِّيَ «جيشَ العُسرة». فحثَّ النبيُّ ﷺ على الإنفاق.<br><br>فقامَ <b>عثمانُ</b> وجهّزَ <b>ثلاثَ مئةِ بعيرٍ بأحلاسِها وأقتابِها</b>، وأعطى مالاً كثيراً جدّاً. فقال النبيُّ ﷺ: <b>«ما ضرَّ عثمانَ ما عملَ بعدَ اليوم»</b> — أي غُفِرَ له بهذا الكرمِ العظيم. كان عثمانُ ينفقُ في الخيرِ كأنّه لا يخافُ الفقرَ أبداً، ثقةً برزقِ الله.",
@@ -237,6 +269,22 @@ HISN_STORIES.uthman = [
        }
       }
      ]
+    }
+   },
+   {
+    "scene": "madinah",
+    "character": "💰",
+    "text": {
+     "ar": "ويروي الصحابيُّ <b>عبدُ الرحمنِ بنُ سَمُرة</b> فيما أخرجَه الترمذيّ أنّ عثمانَ جاءَ أيضاً <b>بألفِ دينارٍ</b> في ثوبِه، فنثرَها في حِجرِ النبيِّ ﷺ. فجعلَ النبيُّ ﷺ يُقلّبُها بيدِه ويقول: <b>«ما ضرَّ عثمانَ ما عملَ بعدَ اليوم»</b>، يُردّدُها مرّتين.<br><br>وخرجَ الجيشُ — نحوَ ثلاثينَ ألفاً — حتى بلغَ تبوك، فلم يأتِ الرومُ للقتال، ورجعَ المسلمونَ وقد ظهرتْ قوّتُهم. وأثنى اللهُ على من خرجَ فقال: <b>﴿الَّذِينَ اتَّبَعُوهُ فِي سَاعَةِ الْعُسْرَةِ﴾</b>، وكان عثمانُ في مقدّمةِ من أعانَ في تلك الساعةِ الصعبة.",
+     "en": "The companion <b>Abd ar-Rahman ibn Samura</b> narrates, in a report collected by at-Tirmidhi, that Uthman also came with <b>a thousand dinars</b> in his garment and scattered them into the Prophet's ﷺ lap. The Prophet ﷺ began turning them over with his hand, saying: <b>\"Nothing Uthman does after today will harm him,\"</b> repeating it twice.<br><br>The army — about thirty thousand — marched until it reached Tabuk. The Byzantines did not come out to fight, and the Muslims returned with their strength made plain. Allah praised those who went, describing them as <b>﴿\"those who followed him in the hour of hardship\"﴾</b> — and Uthman was at the forefront of those who helped in that difficult hour."
+    }
+   },
+   {
+    "scene": "camel",
+    "character": "🤲",
+    "text": {
+     "ar": "ماذا نتعلّمُ من عثمان؟ أنّ <b>العطاءَ في وقتِ الشدّةِ</b> أعظمُ من العطاءِ في وقتِ الرخاء. فحين يكونُ الناسُ في حاجة، يظهرُ الكريمُ الحقيقيّ. ولم يكنْ عثمانُ يخافُ أن ينقصَ مالُه، لأنّه كان يعلمُ أنّ <b>الرزقَ بيدِ الله</b>، وأنّ الصدقةَ لا تُنقصُ المال.<br><br>وأنت حين يطلبُ معلّمُك المساعدةَ في مشروعٍ للخير، أو يحتاجُ زميلُك إلى قلمٍ أو طعام، كنْ أوّلَ من يُبادر. لا تنتظرْ أن يبدأَ غيرُك، فالسابقُ إلى الخيرِ له أجرُه وأجرُ من اقتدى به.",
+     "en": "What do we learn from Uthman? That <b>giving in a time of hardship</b> is greater than giving in a time of ease. When people are in need, the truly generous person shows himself. Uthman did not fear his wealth would shrink, because he knew that <b>provision is in Allah's hand</b>, and that charity never decreases wealth.<br><br>When your teacher asks for help with a good project, or a classmate needs a pen or some food, be the first to step forward. Don't wait for someone else to begin — the one who leads the way in good has his own reward and the reward of everyone who follows his example."
     }
    }
   ],
@@ -372,6 +420,22 @@ HISN_STORIES.uthman = [
   "pages": [
    {
     "scene": "mosque",
+    "character": "📜",
+    "text": {
+     "ar": "كان القرآنُ في زمنِ النبيِّ ﷺ محفوظاً في صدورِ الصحابة، ومكتوباً على الرِّقاعِ والعُسُبِ وقِطَعِ الجلد. فلمّا استُشهِدَ كثيرٌ من القرّاءِ في معركةِ <b>اليمامة</b>، خافَ <b>عمرُ</b> أن يذهبَ شيءٌ من القرآن، فأشارَ على الخليفةِ <b>أبي بكر</b> أن يجمعَه.<br><br>فاختارَ أبو بكرٍ الشابَّ <b>زيدَ بنَ ثابت</b>، كاتبَ الوحي، فقال زيدٌ كما في صحيحِ البخاريّ: <b>«فواللهِ لو كلّفوني نقلَ جبلٍ من الجبالِ ما كان أثقلَ عليّ ممّا أمرني به من جمعِ القرآن»</b>. فجمعَه بدقّةٍ عظيمة، وبقيتْ تلك الصحفُ عند أبي بكر، ثمّ عمر، ثمّ عند <b>حفصةَ</b> أمِّ المؤمنين.",
+     "en": "In the Prophet's ﷺ time, the Qur'an was preserved in the hearts of the companions and written on parchment, palm stalks and pieces of leather. When many of the reciters were martyred at the Battle of <b>al-Yamama</b>, <b>Umar</b> feared that part of the Qur'an might be lost, so he advised the caliph <b>Abu Bakr</b> to gather it.<br><br>Abu Bakr chose the young <b>Zayd ibn Thabit</b>, a scribe of the revelation. Zayd said, as in Sahih al-Bukhari: <b>\"By Allah, had they asked me to move one of the mountains, it would not have been heavier on me than what he ordered me to do in gathering the Qur'an.\"</b> He gathered it with great care, and those sheets stayed with Abu Bakr, then Umar, then with <b>Hafsa</b>, Mother of the Believers."
+    }
+   },
+   {
+    "scene": "mountain",
+    "character": "🐎",
+    "text": {
+     "ar": "وفي خلافةِ عثمان، رجعَ الصحابيُّ <b>حُذيفةُ بنُ اليمان</b> من غزوِ أرمينيةَ وأذربيجان، وقد أفزعَه اختلافُ الناسِ في القراءة، فقال لعثمان: <b>«يا أميرَ المؤمنين، أدركْ هذه الأمّةَ قبلَ أن يختلفوا في الكتابِ اختلافَ اليهودِ والنصارى»</b>.<br><br>فأرسلَ عثمانُ إلى حفصةَ يطلبُ الصحفَ التي جمعَها أبو بكر، وأمرَ زيداً ومعه <b>عبدُ اللهِ بنُ الزبير وسعيدُ بنُ العاص وعبدُ الرحمنِ بنُ الحارث</b> أن ينسخوها في المصاحف، وقال لهم: إذا اختلفتم أنتم وزيدٌ في شيءٍ فاكتبوه بلسانِ قريش، فإنّما نزلَ بلسانِهم.",
+     "en": "During Uthman's caliphate, the companion <b>Hudhayfa ibn al-Yaman</b> returned from the campaigns in Armenia and Azerbaijan, alarmed at how people differed in recitation. He said to Uthman: <b>\"O Commander of the Believers, rescue this nation before they differ over the Book as the Jews and Christians differed.\"</b><br><br>So Uthman sent to Hafsa asking for the sheets Abu Bakr had gathered, and ordered Zayd — together with <b>Abdullah ibn az-Zubayr, Sa'id ibn al-As and Abd ar-Rahman ibn al-Harith</b> — to copy them into volumes. He told them: If you and Zayd differ on anything, write it in the tongue of Quraysh, for it was revealed in their tongue."
+    }
+   },
+   {
+    "scene": "mosque",
     "character": "📖",
     "text": {
      "ar": "في خلافةِ عثمان، اتّسعت دولةُ الإسلامِ ودخلَ الناسُ من بلادٍ كثيرة، فبدأ بعضُهم يختلفونَ في <b>قراءةِ القرآن</b> باختلافِ لهجاتِهم، حتى خافَ الصحابةُ من الفُرقة.<br><br>فجمعَ عثمانُ كبارَ الصحابةِ وعلى رأسِهم <b>زيدُ بنُ ثابت</b>، وأمرَ بنسخِ القرآنِ في <b>مصحفٍ واحدٍ</b> على لغةِ قريش، ثم أرسلَ نُسَخاً منه إلى الأمصار. فحفِظَ اللهُ بعثمانَ <b>وحدةَ الأمّةِ على كتابٍ واحد</b> إلى يومِنا هذا. هذا المصحفُ الذي بين أيدينا اليومَ يُسمّى «المصحفَ العثماني».",
@@ -417,6 +481,14 @@ HISN_STORIES.uthman = [
        }
       }
      ]
+    }
+   },
+   {
+    "scene": "pen",
+    "character": "📖",
+    "text": {
+     "ar": "ثمّ ردَّ عثمانُ الصحفَ إلى حفصة، وأرسلَ إلى كلِّ بلدٍ مصحفاً ممّا نسخوا، فاجتمعَ المسلمونَ عليه، ورضيَ بذلك الصحابة. ويُروى عن <b>عليِّ بنِ أبي طالب</b> أنّه قال: لا تقولوا في عثمانَ إلّا خيراً، فما فعلَ الذي فعلَ في المصاحفِ إلّا عن مشورةٍ منّا.<br><br>وهكذا حقّقَ اللهُ وعدَه: <b>﴿إِنَّا نَحْنُ نَزَّلْنَا الذِّكْرَ وَإِنَّا لَهُ لَحَافِظُونَ﴾</b>. فكلّما فتحتَ مصحفَك، تذكّرْ أنّ صحابةً كراماً تعبوا في حفظِه لك، فاقرأْه بحبّ، واحفظْ منه ولو آيةً كلَّ يوم.",
+     "en": "Then Uthman returned the sheets to Hafsa and sent to every region a copy of what they had written, and the Muslims united upon it with the companions' approval. It is reported that <b>Ali ibn Abi Talib</b> said: Say nothing but good about Uthman, for what he did with the copies of the Qur'an he did only after consulting us.<br><br>And so Allah fulfilled His promise: <b>﴿\"Indeed, it is We who sent down the Reminder, and indeed, We will be its guardian\"﴾</b>. Whenever you open your copy of the Qur'an, remember that noble companions worked hard to preserve it for you — so read it with love, and memorize from it, even one verse a day."
     }
    }
   ],
@@ -551,6 +623,14 @@ HISN_STORIES.uthman = [
   },
   "pages": [
    {
+    "scene": "madinah",
+    "character": "🕌",
+    "text": {
+     "ar": "تولّى <b>عثمانُ بنُ عفّان</b> الخلافةَ بعدَ عمرَ بنِ الخطّاب، فحكمَ نحوَ اثنتي عشرةَ سنة، اتّسعتْ فيها بلادُ الإسلامِ شرقاً وغرباً، وكثُرَ الخيرُ والمال. وكان مع ذلك يعيشُ عيشةَ العابدِ الزاهد، رقيقَ القلب، كثيرَ البكاءِ من خشيةِ الله.<br><br>وكان النبيُّ ﷺ قد أخبرَ بأمرٍ سيحدثُ له؛ ففي صحيحِ البخاريّ عن <b>أبي موسى الأشعريّ</b> أنّ النبيَّ ﷺ كان في بستانٍ، فجاءَ أبو بكرٍ ثمّ عمرُ فبشّرَهما بالجنّة، ثمّ جاءَ عثمانُ فقال ﷺ: <b>«ائذنْ له وبشّرْه بالجنّةِ على بلوى تُصيبُه»</b>.",
+     "en": "<b>Uthman ibn Affan</b> became caliph after Umar ibn al-Khattab and ruled for about twelve years, during which the lands of Islam spread east and west, and goodness and wealth increased. Yet he lived the life of a devoted, simple worshipper — tender-hearted, often weeping out of awe of Allah.<br><br>The Prophet ﷺ had foretold something that would happen to him. In Sahih al-Bukhari, <b>Abu Musa al-Ash'ari</b> reports that the Prophet ﷺ was in a garden; Abu Bakr came, then Umar, and he gave each of them the glad tidings of Paradise. Then Uthman came, and he ﷺ said: <b>\"Let him in and give him the glad tidings of Paradise, along with a trial that will befall him.\"</b>"
+    }
+   },
+   {
     "scene": "night",
     "character": "📖",
     "text": {
@@ -597,6 +677,14 @@ HISN_STORIES.uthman = [
        }
       }
      ]
+    }
+   },
+   {
+    "scene": "night",
+    "character": "🌙",
+    "text": {
+     "ar": "وفي سنةِ ٣٥هـ جاءَ إلى المدينةِ قومٌ من الخارجينَ وحاصروا بيتَه أيّاماً، وهو شيخٌ كبيرٌ قد جاوزَ الثمانين. وكان قلبُه مطمئنّاً، فقد روى الترمذيُّ أنّه قال: <b>«إنّ رسولَ اللهِ ﷺ عهِدَ إليَّ عهداً، فأنا صابرٌ عليه»</b>. فصبرَ حتى استُشهِدَ مظلوماً، رضي الله عنه.<br><br>فما الدرسُ لنا؟ أنّ <b>الحياءَ والعبادةَ</b> يصنعانِ قلباً قويّاً عند الشدّة، وأنّ المسلمَ يُحبُّ حفظَ دماءِ إخوانِه أكثرَ من حبِّه لنفسِه؛ فقد كان عثمانُ قادراً على أن يأذنَ لأصحابِه بالقتال، لكنّه اختارَ الصبرَ حتى لا يُقتَلَ مسلمٌ بسببِه. وإذا ظلمَك أحدٌ فاصبرْ، واحتسبْ أجرَك عند الله، ولا تجعلْ غضبَك يقودُك إلى الظلم.",
+     "en": "In the year 35 AH, a group of rebels came to Madinah and besieged his house for days, while he was an old man past eighty. His heart was at peace, for at-Tirmidhi reports that he said: <b>\"The Messenger of Allah ﷺ made a covenant with me, and I am patiently holding to it.\"</b> He stayed patient until he was martyred unjustly, may Allah be pleased with him.<br><br>What is the lesson for us? That <b>modesty and worship</b> build a heart that is strong in hardship, and that a Muslim loves to protect his brothers' lives even more than he loves himself: Uthman could have allowed his companions to fight, but he chose patience so that no Muslim would be killed because of him. If someone wrongs you, be patient, hope for your reward from Allah, and never let your anger lead you into wrongdoing."
     }
    }
   ],
@@ -732,6 +820,14 @@ HISN_STORIES.uthman = [
   "pages": [
    {
     "scene": "madinah",
+    "character": "🌿",
+    "text": {
+     "ar": "كان <b>عثمانُ بنُ عفّان</b> من أوائلِ من أسلموا على يدِ أبي بكرٍ الصدّيق، وكان تاجراً غنيّاً كريماً، جميلَ الوجه، هادئَ الكلام. لكنّ أعظمَ ما اشتهرَ به بين الصحابةِ <b>الحياء</b>: لا يرفعُ صوتَه، ولا يقولُ كلمةً قبيحة، ويستحيي من اللهِ في السرِّ كما يستحيي في العلن.<br><br>وقد وصفَه النبيُّ ﷺ في حديثٍ رواه الترمذيُّ فقال: <b>«وأصدقُهم حياءً عثمان»</b>، أي أصدقُ أمّتي حياءً. فكان الصحابةُ يعرفونَ عثمانَ بهذا الخُلُق، وكانوا يُحبّونَه ويحترمونَه لأجلِه.",
+     "en": "<b>Uthman ibn Affan</b> was among the first to accept Islam through Abu Bakr as-Siddiq. He was a wealthy, generous merchant, handsome and calm in speech. But what he was most famous for among the companions was <b>modesty</b>: he never raised his voice or said an ugly word, and he was as shy before Allah in private as in public.<br><br>The Prophet ﷺ described him in a hadith reported by at-Tirmidhi, saying: <b>\"…and the most truly modest of them is Uthman\"</b> — that is, the most truly modest of my nation. The companions knew Uthman for this character, and loved and respected him because of it."
+    }
+   },
+   {
+    "scene": "madinah",
     "character": "🕊️",
     "text": {
      "ar": "كان النبيُّ ﷺ مضطجعاً في بيتِ <b>عائشةَ</b> رضي الله عنها، وقد انكشفَ شيءٌ من ساقيه وهو مرتاح. فاستأذنَ <b>أبو بكر</b> فأذِنَ له وهو على حالِه فتحدّثا، ثم استأذنَ <b>عمرُ</b> فأذِنَ له وهو كذلك فتحدّثوا. ثم استأذنَ <b>عثمان</b>، <b>فجلسَ النبيُّ ﷺ وسوّى ثيابَه</b>، ثم أذِنَ له فدخلَ فتحدّثوا.<br><br>فلمّا خرجوا سألتْه عائشةُ متعجّبة: دخلَ أبو بكرٍ فلم تتهيّأْ له، ثم دخلَ عمرُ فلم تتهيّأْ له، ثم دخلَ عثمانُ فجلستَ وسوّيتَ ثيابَك! فقال ﷺ: <b>«ألا أستحيي من رجلٍ تستحيي منه الملائكة؟»</b><br><br>كان عثمانُ <b>شديدَ الحياء</b> في كلامِه ولباسِه ومشيِه، حتى صار الحياءُ زينتَه. فأكرمَه اللهُ بأنْ <b>استحيتْ منه الملائكةُ الكرام</b>، وأكرمَه النبيُّ ﷺ بهذا الأدبِ الجميل. فالحياءُ خُلُقٌ يُحبُّه الله، ولا يأتي إلا بخير.",
@@ -777,6 +873,14 @@ HISN_STORIES.uthman = [
        }
       }
      ]
+    }
+   },
+   {
+    "scene": "sprout",
+    "character": "😊",
+    "text": {
+     "ar": "قال النبيُّ ﷺ: <b>«الحياءُ من الإيمان»</b>. والحياءُ ليس خجلاً يمنعُك من قولِ الحقِّ أو السؤالِ عن العلم، بل هو خُلُقٌ يمنعُك من القبيح: فلا تقولُ كلمةً سيّئة، ولا تفعلُ ما تخجلُ أن يراه اللهُ منك.<br><br>ويمكنُك أن تكونَ مثلَ عثمانَ اليوم: أن تتكلّمَ بأدبٍ مع والديك، وتخفضَ صوتَك مع الكبار، وتستأذنَ قبلَ أن تدخلَ الغرفة، وتلبسَ لباساً محترماً. فإذا فعلتَ ذلك أحبَّك الناس، والأهمُّ أنّه <b>يُحبُّك الله</b>.",
+     "en": "The Prophet ﷺ said: <b>\"Modesty is part of faith.\"</b> Modesty is not a shyness that stops you from speaking the truth or asking about knowledge — it is a character that holds you back from what is ugly: you don't say a bad word, and you don't do what you would be ashamed for Allah to see from you.<br><br>You can be like Uthman today: speak politely to your parents, lower your voice with elders, ask permission before entering a room, and dress respectfully. When you do this, people will love you — and most importantly, <b>Allah will love you</b>."
     }
    }
   ],
@@ -911,6 +1015,14 @@ HISN_STORIES.uthman = [
   },
   "pages": [
    {
+    "scene": "desert",
+    "character": "🐪",
+    "text": {
+     "ar": "رأى النبيُّ ﷺ في المنامِ أنّه يدخلُ المسجدَ الحرامَ مع أصحابِه آمنين، ورؤيا الأنبياءِ حقّ. فخرجَ ومعه نحوُ <b>ألفٍ وأربعمئةٍ</b> من أصحابِه في ذي القعدةِ من السنةِ السادسة، محرمينَ بالعمرة، يسوقونَ الهديَ أمامَهم، لا يحملونَ إلّا سيوفَ المسافرِ في أغمادِها.<br><br>كانوا مشتاقينَ إلى الكعبةِ بعدَ سنواتٍ من الهجرة، يُلبّونَ في الطريقِ بقلوبٍ فرِحة. لكنّ قريشاً سمعتْ بخروجِهم، فأقسمتْ ألّا يدخلوا مكّةَ ذلك العام، فنزلَ المسلمونَ عند ماءِ الحُدَيبيةِ قريباً من مكّة.",
+     "en": "The Prophet ﷺ saw in a dream that he was entering the Sacred Mosque with his companions in safety — and the dreams of prophets are true. So he set out with about <b>fourteen hundred</b> companions in Dhul-Qa'da of the sixth year, in the state of ihram for Umrah, driving their sacrificial animals before them and carrying only travelers' swords in their sheaths.<br><br>They longed for the Kaaba after years away since the Hijra, chanting the talbiya along the road with joyful hearts. But Quraysh heard they were coming and swore they would not enter Makkah that year, so the Muslims camped by the water of al-Hudaybiya, near Makkah."
+    }
+   },
+   {
     "scene": "tree",
     "character": "🌳",
     "text": {
@@ -957,6 +1069,14 @@ HISN_STORIES.uthman = [
        }
       }
      ]
+    }
+   },
+   {
+    "scene": "kaaba",
+    "character": "🕋",
+    "text": {
+     "ar": "ويذكرُ أهلُ السيرةِ أنّ قريشاً قالتْ لعثمانَ في مكّة: إن شئتَ أن تطوفَ بالبيتِ فطُفْ، فأبى أن يطوفَ حتى يطوفَ رسولُ اللهِ ﷺ. ولمّا تأخّرَ شاعَ بين المسلمينَ أنّه قُتِل، فكان ذلك سببَ البيعة. ثمّ رجعَ عثمانُ سالماً، وكُتِبَ <b>صلحُ الحُدَيبية</b> الذي سمّاه اللهُ <b>﴿فَتْحًا مُّبِينًا﴾</b>.<br><br>تعلّمْ من عثمانَ <b>الوفاءَ</b>: لم يقبلْ أن يسبقَ حبيبَه ﷺ إلى الكعبة، مع شوقِه إليها. وتعلّمْ من النبيِّ ﷺ كيف يذكرُ الغائبَ ولا ينساه. فإذا غابَ صديقُك عن نشاطٍ جميل، فاحفظْ له نصيبَه وتذكّرْه بالخير.",
+     "en": "The biographers mention that Quraysh said to Uthman in Makkah: If you wish to circle the House, go ahead — but he refused to circle it until the Messenger of Allah ﷺ did. When he was delayed, a rumor spread among the Muslims that he had been killed, and that was the reason for the pledge. Then Uthman returned safely, and <b>the Treaty of al-Hudaybiya</b> was written, which Allah called <b>﴿\"a clear victory\"﴾</b>.<br><br>Learn <b>loyalty</b> from Uthman: he would not go to the Kaaba ahead of his beloved Prophet ﷺ, despite how much he longed for it. And learn from the Prophet ﷺ how to remember someone who is absent and not forget him. If your friend misses a happy activity, save his share for him and speak well of him."
     }
    }
   ],
@@ -1091,6 +1211,14 @@ HISN_STORIES.uthman = [
   },
   "pages": [
    {
+    "scene": "kaaba",
+    "character": "💍",
+    "text": {
+     "ar": "كان <b>عثمانُ</b> من بني أُميّةَ من قريش، وأسلمَ مبكّراً على يدِ أبي بكرٍ الصدّيق، حين كان المسلمونَ قليلينَ مستضعفينَ في مكّة. ولم يمنعْه غناه ولا مكانةُ قومِه من أن يتبعَ الحقّ، فصبرَ على ما لقيَ من الأذى في سبيلِ الله.<br><br>وكان النبيُّ ﷺ يرى في عثمانَ <b>الدينَ والخُلُقَ والأمانة</b>، فزوّجَه ابنتَه <b>رُقيّة</b>، فكانا من أجملِ الأزواجِ وأحسنِهم عِشرة. ثمّ اشتدَّ أذى قريشٍ على المسلمين، فأذِنَ النبيُّ ﷺ لبعضِهم بالهجرةِ إلى الحبشة.",
+     "en": "<b>Uthman</b> was from Banu Umayya of Quraysh. He accepted Islam early through Abu Bakr as-Siddiq, when the Muslims were few and oppressed in Makkah. Neither his wealth nor his clan's standing stopped him from following the truth, and he bore patiently the harm he met in the path of Allah.<br><br>The Prophet ﷺ saw in Uthman <b>faith, good character and trustworthiness</b>, so he married him to his daughter <b>Ruqayya</b>, and they were among the most beautiful and kindest of couples. Then Quraysh's persecution of the Muslims grew harsher, and the Prophet ﷺ permitted some of them to emigrate to Abyssinia."
+    }
+   },
+   {
     "scene": "night",
     "character": "✨",
     "text": {
@@ -1137,6 +1265,14 @@ HISN_STORIES.uthman = [
        }
       }
      ]
+    }
+   },
+   {
+    "scene": "night",
+    "character": "💧",
+    "text": {
+     "ar": "ولمّا تُوفّيتْ أمُّ كلثومٍ حزِنَ النبيُّ ﷺ حزناً شديداً؛ يروي <b>أنسُ بنُ مالك</b> في صحيحِ البخاريّ: <b>شهِدْنا بنتَ رسولِ اللهِ ﷺ ورسولُ اللهِ ﷺ جالسٌ على القبر، فرأيتُ عينيه تدمعان</b>. وبقيَ عثمانُ وفيّاً لرسولِ الله ﷺ وقريباً منه طوالَ حياتِه.<br><br>علّمَنا عثمانُ أنّ البطولةَ ليست في المعاركِ فقط، بل في <b>الرحمةِ داخلَ البيت</b>: أن تُمرّضَ المريض، وتصبرَ على من تحب، وتكونَ وفيّاً لأهلك. فإذا مرضَ أخوك أو جدّتُك فاجلسْ بجانبِهم، فذلك من أعظمِ الخير.",
+     "en": "When Umm Kulthum passed away, the Prophet ﷺ grieved deeply. <b>Anas ibn Malik</b> narrates in Sahih al-Bukhari: <b>We attended the burial of the daughter of the Messenger of Allah ﷺ while the Messenger of Allah ﷺ sat by the grave, and I saw his eyes shedding tears.</b> Uthman remained loyal to the Messenger of Allah ﷺ and close to him all his life.<br><br>Uthman taught us that heroism is not only on the battlefield, but in <b>mercy inside the home</b>: nursing the sick, being patient with those you love, and being loyal to your family. If your brother or your grandmother falls ill, sit beside them — that is among the greatest of good deeds."
     }
    }
   ],

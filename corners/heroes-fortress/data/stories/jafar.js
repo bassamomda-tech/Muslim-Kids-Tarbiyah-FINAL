@@ -11,11 +11,35 @@ HISN_STORIES.jafar = [
   },
   "pages": [
    {
+    "scene": "desert",
+    "character": "🐪",
+    "text": {
+     "ar": "اشتدَّ أذى قريشٍ على المسلمينَ في <b>مكّة</b>، فأشارَ عليهم النبيُّ ﷺ أن يهاجروا إلى <b>الحبشة</b>، وقال لهم إنّ فيها ملكاً لا يُظلَمُ عندَه أحد. فخرجَ رجالٌ ونساءٌ يحملونَ دينَهم، وكان منهم <b>جعفرُ بنُ أبي طالب</b>، ابنُ عمِّ النبيِّ ﷺ، ومعه زوجتُه <b>أسماءُ بنتُ عُميس</b>.<br><br>عاشَ المسلمونَ هناك في أمانٍ يعبدونَ اللهَ بلا خوف. لكنّ قريشاً لم تتركْهم، فأرسلت رجلينِ ذكيّين: <b>عمرَو بنَ العاص</b> و<b>عبدَ اللهِ بنَ أبي ربيعة</b>، ومعهما هدايا كثيرةٌ من الجلود. فوزّعا الهدايا أوّلاً على كبارِ رجالِ الملك، وقالا: إنّ هؤلاءِ فتيانٌ سفهاءُ تركوا دينَ قومِهم، فأعيدوهم إلينا!",
+     "en": "The persecution by Quraysh grew harsh on the Muslims in <b>Makkah</b>, so the Prophet ﷺ advised them to emigrate to <b>Abyssinia</b>, telling them that there was a king there under whom no one was wronged. Men and women set out carrying their faith, among them <b>Jafar ibn Abi Talib</b>, the Prophet’s ﷺ cousin, with his wife <b>Asma bint Umays</b>.<br><br>The Muslims lived there in safety, worshipping Allah without fear. But Quraysh would not leave them alone. They sent two clever men, <b>Amr ibn al-As</b> and <b>Abdullah ibn Abi Rabi‘a</b>, with many gifts of fine leather. First they handed out gifts to the king’s chief men and said: These are foolish youths who left the religion of their people — send them back to us!"
+    }
+   },
+   {
+    "scene": "throne",
+    "character": "🗣️",
+    "text": {
+     "ar": "دعا النجاشيُّ المسلمينَ إلى مجلسِه، وجعلوا جعفراً يتكلّمُ عنهم. ومن كلامِه يومَها، كما حكتْ <b>أمُّ سلمة</b>: <b>«أيّها الملك، كنّا قوماً أهلَ جاهلية، نعبدُ الأصنام، ونأكلُ الميتة، ونأتي الفواحش، ونقطعُ الأرحام، ونُسيءُ الجوار، ويأكلُ القويُّ منّا الضعيف»</b>، حتى بعثَ اللهُ إلينا رسولاً نعرفُ نسبَه وصدقَه وأمانتَه، فدعانا إلى عبادةِ اللهِ وحدَه، وأمرَنا <b>بصدقِ الحديثِ وأداءِ الأمانةِ وصلةِ الرحمِ وحُسنِ الجوار</b>. فقال النجاشي: إنّ هذا والذي جاءَ به عيسى ليخرجُ من مِشكاةٍ واحدة.",
+     "en": "The Negus summoned the Muslims to his court, and they chose Jafar to speak for them. Among his words that day, as <b>Umm Salama</b> reported: <b>“O King, we were a people of ignorance: we worshipped idols, ate dead animals, did shameful deeds, cut off our relatives, mistreated our neighbours, and the strong among us devoured the weak.”</b> Then Allah sent us a messenger whose lineage, truthfulness and trustworthiness we knew. He called us to worship Allah alone, and commanded us <b>to speak the truth, keep trusts, be kind to relatives and good to neighbours</b>. The Negus said: This and what Jesus brought come from the very same lamp."
+    }
+   },
+   {
     "scene": "throne",
     "character": "📜",
     "text": {
-     "ar": "في الحبشة، أرسلت قريشٌ رجلينِ بالهدايا إلى <b>النجاشي</b> ليُسلِّمَهم المسلمين. فدعا النجاشيُّ المهاجرين، فتكلّمَ <b>جعفرٌ</b> عن الإسلامِ وقرأَ عليه صدراً من <b>سورةِ مريم</b>، فبكى النجاشيُّ حتى ابتلّتْ لحيتُه، ورفضَ أن يُسلِّمَهم.<br><br>فقال أحدُ الرجلين: سأُخبرُه غداً بما يقولونَ في <b>عيسى</b> فيغضب! وفي الغدِ سألهم النجاشيُّ: ماذا تقولونَ في عيسى ابنِ مريم؟ خافَ المسلمون، فالملكُ نصرانيّ! لكنّهم اتفقوا: <b>نقولُ ما قالَ اللهُ ورسولُه، كائناً في ذلك ما كان</b>.<br><br>فقال جعفرٌ بهدوء: نقولُ فيه ما جاءَ به نبيُّنا ﷺ: <b>هو عبدُ اللهِ ورسولُه وروحُه وكلمتُه ألقاها إلى مريمَ العذراءِ البتول</b>. فأخذَ النجاشيُّ عوداً صغيراً من الأرضِ وقال: واللهِ ما زادَ عيسى على ما قلتَ مقدارَ هذا العود! فأمِنَ المسلمونَ في بلادِه، لأنّ جعفراً <b>اختارَ الصدقَ ولو كان صعباً</b>.",
-     "en": "In Abyssinia, Quraysh sent two men with gifts to the <b>Negus</b> so he would hand over the Muslims. The Negus called the emigrants, and <b>Jafar</b> spoke about Islam and recited to him the opening of <b>Surat Maryam</b>. The Negus wept until his beard was wet, and refused to hand them over.<br><br>One of the two men said: Tomorrow I will tell him what they say about <b>Jesus</b>, and he will be angry! The next day the Negus asked: What do you say about Jesus, son of Mary? The Muslims were afraid — the king was a Christian! But they agreed: <b>we will say what Allah and His Messenger said, whatever happens</b>.<br><br>Jafar said calmly: We say about him what our Prophet ﷺ brought: <b>he is the servant of Allah, His messenger, a spirit from Him, and His word which He cast to Mary, the pure virgin</b>. The Negus picked up a small twig from the ground and said: By Allah, Jesus is not more than what you said by even this twig! The Muslims were safe in his land, because Jafar <b>chose the truth even when it was hard</b>."
+     "ar": "في الحبشة، أرسلت قريشٌ رجلينِ بالهدايا إلى <b>النجاشي</b> ليُسلِّمَهم المسلمين. فدعا النجاشيُّ المهاجرين، فتكلّمَ <b>جعفرٌ</b> عن الإسلامِ وقرأَ عليه صدراً من <b>سورةِ مريم</b>، فبكى النجاشيُّ حتى ابتلّتْ لحيتُه، ورفضَ أن يُسلِّمَهم.",
+     "en": "In Abyssinia, Quraysh sent two men with gifts to the <b>Negus</b> so he would hand over the Muslims. The Negus called the emigrants, and <b>Jafar</b> spoke about Islam and recited to him the opening of <b>Surat Maryam</b>. The Negus wept until his beard was wet, and refused to hand them over."
+    }
+   },
+   {
+    "scene": "throne",
+    "character": "📜",
+    "text": {
+     "ar": "فقال أحدُ الرجلين: سأُخبرُه غداً بما يقولونَ في <b>عيسى</b> فيغضب! وفي الغدِ سألهم النجاشيُّ: ماذا تقولونَ في عيسى ابنِ مريم؟ خافَ المسلمون، فالملكُ نصرانيّ! لكنّهم اتفقوا: <b>نقولُ ما قالَ اللهُ ورسولُه، كائناً في ذلك ما كان</b>.<br><br>فقال جعفرٌ بهدوء: نقولُ فيه ما جاءَ به نبيُّنا ﷺ: <b>هو عبدُ اللهِ ورسولُه وروحُه وكلمتُه ألقاها إلى مريمَ العذراءِ البتول</b>. فأخذَ النجاشيُّ عوداً صغيراً من الأرضِ وقال: واللهِ ما زادَ عيسى على ما قلتَ مقدارَ هذا العود! فأمِنَ المسلمونَ في بلادِه، لأنّ جعفراً <b>اختارَ الصدقَ ولو كان صعباً</b>.",
+     "en": "One of the two men said: Tomorrow I will tell him what they say about <b>Jesus</b>, and he will be angry! The next day the Negus asked: What do you say about Jesus, son of Mary? The Muslims were afraid — the king was a Christian! But they agreed: <b>we will say what Allah and His Messenger said, whatever happens</b>.<br><br>Jafar said calmly: We say about him what our Prophet ﷺ brought: <b>he is the servant of Allah, His messenger, a spirit from Him, and His word which He cast to Mary, the pure virgin</b>. The Negus picked up a small twig from the ground and said: By Allah, Jesus is not more than what you said by even this twig! The Muslims were safe in his land, because Jafar <b>chose the truth even when it was hard</b>."
     },
     "choice": {
      "q": {
@@ -57,6 +81,14 @@ HISN_STORIES.jafar = [
        }
       }
      ]
+    }
+   },
+   {
+    "scene": "throne",
+    "character": "🤝",
+    "text": {
+     "ar": "ثم قال النجاشيُّ لرجالِه: <b>ردّوا عليهما هداياهما، فلا حاجةَ لي بها</b>. فخرجَ رسولا قريشٍ من عندِه خائبَين، وقال للمسلمين: اذهبوا فأنتم آمنونَ في أرضي. قالت أمُّ سلمة: <b>فأقمنا عندَه بخيرِ دارٍ مع خيرِ جار</b>. وبقيَ جعفرٌ في الحبشةِ سنواتٍ طويلة، حتى قدِمَ على النبيِّ ﷺ عامَ فتحِ <b>خيبر</b>.<br><br>وأنت يا صديقي، قد يُطلَبُ منك يوماً أن تُغيّرَ الحقيقةَ لتُرضيَ صديقاً أو تهربَ من لوم. تذكّرْ جعفراً: لم يرفعْ صوتَه، ولم يُهِنْ أحداً، لكنّه <b>قالَ الحقَّ بأدبٍ وهدوء</b>، فحفظَه اللهُ وحفظَ إخوانَه. فالصدقُ مع الأدبِ يفتحُ القلوبَ المغلقة.",
+     "en": "Then the Negus told his men: <b>Return their gifts to them — I have no need of them.</b> The two envoys of Quraysh left him empty-handed, and he told the Muslims: Go, you are safe in my land. Umm Salama said: <b>We stayed with him in the best home, with the best neighbour.</b> Jafar remained in Abyssinia for many years, until he came to the Prophet ﷺ in the year of the conquest of <b>Khaybar</b>.<br><br>And you, my friend, may one day be asked to bend the truth to please a friend or escape blame. Remember Jafar: he did not raise his voice or insult anyone, yet he <b>spoke the truth politely and calmly</b>, and Allah protected him and his brothers. Truth with good manners opens even closed hearts."
     }
    }
   ],
@@ -191,11 +223,27 @@ HISN_STORIES.jafar = [
   },
   "pages": [
    {
+    "scene": "mosque",
+    "character": "🕌",
+    "text": {
+     "ar": "<b>جعفرُ بنُ أبي طالب</b> هو ابنُ عمِّ النبيِّ ﷺ وأخو <b>عليّ</b>، وكان من أوائلِ مَن أسلم. وفي مسجدِ النبيِّ ﷺ بالمدينةِ مكانٌ مُظلَّلٌ اسمُه <b>الصُّفّة</b>، يسكنُه فقراءُ المهاجرينَ الذين لا أهلَ لهم ولا مال، وكانوا يُسمَّونَ <b>أهلَ الصُّفّة</b>.<br><br>وكان <b>أبو هريرة</b> منهم، يلزمُ النبيَّ ﷺ ليتعلّمَ منه. وقد حكى في صحيحِ البخاريِّ أنّه كان يُلصِقُ بطنَه بالحصى من شدّةِ الجوع، وكان يسألُ الرجلَ عن آيةٍ وهو يعرفُها، لعلّه يأخذُه إلى بيتِه فيُطعمَه! في هذا الجوعِ الشديدِ ظهرَ قلبُ جعفرٍ الكبير.",
+     "en": "<b>Jafar ibn Abi Talib</b> was the Prophet’s ﷺ cousin and the brother of <b>Ali</b>, and one of the earliest to accept Islam. In the Prophet’s ﷺ mosque in Madinah there was a shaded place called <b>the Suffa</b>, where poor emigrants with no family or money lived. They were called <b>the People of the Suffa</b>.<br><br><b>Abu Hurayra</b> was one of them, staying close to the Prophet ﷺ to learn from him. He told, in Sahih al-Bukhari, that he used to press his stomach against the pebbles from severe hunger, and would ask a man about a verse he already knew, hoping the man would take him home and feed him! In this harsh hunger, Jafar’s big heart shone."
+    }
+   },
+   {
     "scene": "table",
     "character": "🍯",
     "text": {
-     "ar": "عاد <b>جعفرٌ</b> من الحبشةِ إلى المدينةِ مع <b>أهلِ السفينة</b>، ففرحَ به النبيُّ ﷺ. وكان في المسجدِ فقراءُ لا بيتَ لهم ولا طعام، فكان جعفرٌ يأخذُهم إلى بيتِه ويُطعمُهم ما عندَه.<br><br>يقولُ <b>أبو هريرة</b> رضي الله عنه: كان أخيرَ الناسِ للمساكينِ جعفرُ بنُ أبي طالب، كان يأخذُنا إلى بيتِه فيُطعمُنا ما فيه، حتى إن كان ليُخرِجُ إلينا <b>العُكّةَ</b> — وعاءَ العسلِ أو السمن — ليس فيها شيء، فنشقُّها فنلعقُ ما بقيَ فيها! لم يكن غنيّاً، لكنّه كان <b>يُعطي كلَّ ما عندَه</b>.<br><br>ولهذا الخُلُقِ الجميلِ قال له النبيُّ ﷺ يوماً: <b>«أشبهتَ خَلقي وخُلُقي»</b> — أي تُشبهُني في شكلي وفي أخلاقي. فما أعظمَها من شهادة! فالكرمُ والرحمةُ من أخلاقِ النبيِّ ﷺ، ومن أحبَّ أن يُشبهَه فليكنْ رحيماً بالضعفاء.",
-     "en": "<b>Jafar</b> returned from Abyssinia to Madinah with <b>the people of the ship</b>, and the Prophet ﷺ was delighted. In the mosque there were poor people with no home or food, so Jafar would take them to his house and feed them whatever he had.<br><br><b>Abu Hurayra</b> said: The best of people to the poor was Jafar ibn Abi Talib. He would take us to his house and feed us what was in it, until he would even bring out to us the <b>leather pot</b> — for honey or ghee — with nothing left in it, and we would split it open and lick what remained! He was not rich, but he <b>gave all he had</b>.<br><br>For this beautiful character the Prophet ﷺ once told him: <b>“You resemble me in my looks and my character.”</b> What a testimony! Generosity and mercy are the Prophet’s ﷺ manners, and whoever wants to resemble him should be merciful to the weak."
+     "ar": "عاد <b>جعفرٌ</b> من الحبشةِ إلى المدينةِ مع <b>أهلِ السفينة</b>، ففرحَ به النبيُّ ﷺ. وكان في المسجدِ فقراءُ لا بيتَ لهم ولا طعام، فكان جعفرٌ يأخذُهم إلى بيتِه ويُطعمُهم ما عندَه.<br><br>يقولُ <b>أبو هريرة</b> رضي الله عنه: كان أخيرَ الناسِ للمساكينِ جعفرُ بنُ أبي طالب، كان يأخذُنا إلى بيتِه فيُطعمُنا ما فيه، حتى إن كان ليُخرِجُ إلينا <b>العُكّةَ</b> — وعاءَ العسلِ أو السمن — ليس فيها شيء، فنشقُّها فنلعقُ ما بقيَ فيها! لم يكن غنيّاً، لكنّه كان <b>يُعطي كلَّ ما عندَه</b>.",
+     "en": "<b>Jafar</b> returned from Abyssinia to Madinah with <b>the people of the ship</b>, and the Prophet ﷺ was delighted. In the mosque there were poor people with no home or food, so Jafar would take them to his house and feed them whatever he had.<br><br><b>Abu Hurayra</b> said: The best of people to the poor was Jafar ibn Abi Talib. He would take us to his house and feed us what was in it, until he would even bring out to us the <b>leather pot</b> — for honey or ghee — with nothing left in it, and we would split it open and lick what remained! He was not rich, but he <b>gave all he had</b>."
+    }
+   },
+   {
+    "scene": "table",
+    "character": "🍯",
+    "text": {
+     "ar": "ولهذا الخُلُقِ الجميلِ قال له النبيُّ ﷺ يوماً: <b>«أشبهتَ خَلقي وخُلُقي»</b> — أي تُشبهُني في شكلي وفي أخلاقي. فما أعظمَها من شهادة! فالكرمُ والرحمةُ من أخلاقِ النبيِّ ﷺ، ومن أحبَّ أن يُشبهَه فليكنْ رحيماً بالضعفاء.<br><br>وقد قال له النبيُّ ﷺ هذه الكلمةَ في يومٍ اختلفَ فيه عليٌّ وجعفرٌ وزيدُ بنُ حارثةَ على مَن يكفلُ ابنةَ عمِّهم الصغيرةَ <b>ابنةَ حمزة</b>، فكلٌّ منهم يريدُ أن يرعاها! فقال لعليٍّ: «أنتَ منّي وأنا منك»، وقال لزيدٍ: «أنتَ أخونا ومولانا»، وقال لجعفرٍ: «أشبهتَ خَلقي وخُلُقي»، وقضى بها لخالتِها، وكانت زوجةَ جعفر.",
+     "en": "For this beautiful character the Prophet ﷺ once told him: <b>“You resemble me in my looks and my character.”</b> What a testimony! Generosity and mercy are the Prophet’s ﷺ manners, and whoever wants to resemble him should be merciful to the weak.<br><br>The Prophet ﷺ said this on a day when Ali, Jafar and Zayd ibn Haritha disagreed over who would look after their little cousin, <b>the daughter of Hamza</b> — each of them wanted to care for her! He told Ali: “You are from me and I am from you,” told Zayd: “You are our brother and our ally,” and told Jafar: “You resemble me in looks and character.” He gave her to her maternal aunt, who was Jafar’s wife."
     },
     "choice": {
      "q": {
@@ -237,6 +285,14 @@ HISN_STORIES.jafar = [
        }
       }
      ]
+    }
+   },
+   {
+    "scene": "grain",
+    "character": "🤲",
+    "text": {
+     "ar": "لهذا سمّاه أبو هريرةَ وأصحابُه <b>أبا المساكين</b>؛ فقد كان الفقراءُ يجدونَ عندَه بيتاً مفتوحاً وقلباً رحيماً. لم ينتظرْ جعفرٌ أن يصيرَ غنيّاً ليُعطي، بل أعطى من القليلِ الذي عندَه، حتى آخرِ لقمةٍ في العُكّة.<br><br>وقد قال النبيُّ ﷺ: <b>«اتّقوا النارَ ولو بشِقِّ تمرة»</b>، أي ولو بنصفِ تمرة! فأنت أيضاً تستطيعُ أن تكونَ كريماً: تُشاركُ زميلَك طعامَك، أو تُعطي من مصروفِك لمحتاج، أو تبتسمُ في وجهِ مَن هو وحيد. فالكرمُ ليس بكثرةِ المال، بل <b>بسَعةِ القلب</b>.",
+     "en": "That is why Abu Hurayra and his companions called him <b>the Father of the Poor</b>: the needy found in him an open house and a merciful heart. Jafar did not wait to become rich before giving; he gave from the little he had, down to the last lick in the pot.<br><br>The Prophet ﷺ said: <b>“Protect yourselves from the Fire, even with half a date.”</b> You too can be generous: share your lunch with a classmate, give some of your pocket money to someone in need, or smile at someone who is alone. Generosity is not about having lots of money, but about <b>having a big heart</b>."
     }
    }
   ],
@@ -371,11 +427,27 @@ HISN_STORIES.jafar = [
   },
   "pages": [
    {
+    "scene": "desert",
+    "character": "🚩",
+    "text": {
+     "ar": "في السنةِ الثامنةِ للهجرة، جهّزَ النبيُّ ﷺ جيشاً من <b>ثلاثةِ آلاف</b> مقاتلٍ إلى أرضِ الشام، إلى مكانٍ اسمُه <b>مؤتة</b> في الأردنِّ اليوم. وكان قد قُتِلَ رسولٌ أرسلَه النبيُّ ﷺ إلى تلك البلاد، فخرجَ الجيشُ يحمي كرامةَ المسلمين.<br><br>وقال النبيُّ ﷺ وهو يودّعُهم: <b>«إن قُتِلَ زيدٌ فجعفر، وإن قُتِلَ جعفرٌ فعبدُ اللهِ بنُ رواحة»</b>. فلمّا وصلوا وجدوا جيشاً للروم وحلفائِهم أكبرَ منهم بكثير. لكنّ المسلمينَ لم يرجعوا، بل توكّلوا على اللهِ وثبتوا.",
+     "en": "In the eighth year after the Hijra, the Prophet ﷺ prepared an army of <b>three thousand</b> fighters for the land of Sham, to a place called <b>Mu’tah</b>, in today’s Jordan. A messenger the Prophet ﷺ had sent to that region had been killed, so the army went out to defend the honour of the Muslims.<br><br>As he bid them farewell, the Prophet ﷺ said: <b>“If Zayd is killed, then Jafar; and if Jafar is killed, then Abdullah ibn Rawaha.”</b> When they arrived they found an army of the Romans and their allies far larger than theirs. But the Muslims did not turn back; they relied on Allah and stood firm."
+    }
+   },
+   {
     "scene": "birds",
     "character": "🕊️",
     "text": {
-     "ar": "خرجَ <b>جعفرٌ</b> مع جيشِ المسلمينَ إلى <b>مؤتة</b>، وكان النبيُّ ﷺ قد قال: أميرُكم زيد، فإن أُصيبَ فجعفر. وفي المدينةِ أخبرَ النبيُّ ﷺ الناسَ باستشهادِ أصحابِه قبلَ أن يصلَ الخبر، <b>وعيناه تذرفانِ بالدموع</b>، فقد كان يُحبُّ جعفراً حبّاً عظيماً.<br><br>قال <b>عبدُ اللهِ بنُ عمر</b>، وكان في ذلك الجيش: بحثنا عن جعفرٍ فوجدناه بين الشهداء، وفي جسدِه أكثرُ من تسعينَ جرحاً، <b>ليس منها شيءٌ في ظهرِه</b> — أي أنّه لم يهربْ أبداً، بل ثبتَ مُقبلاً.<br><br>ثم ذهبَ النبيُّ ﷺ إلى بيتِ جعفرٍ يُواسي أولادَه الصغار، وقال للناس: <b>«اصنعوا لآلِ جعفرٍ طعاماً، فقد أتاهم ما يشغلُهم»</b>. وأكرمَ اللهُ جعفراً بجناحينِ يطيرُ بهما في الجنّة، فكان ابنُ عمرَ إذا لقيَ ابنَه عبدَ اللهِ قال: <b>«السلامُ عليكَ يا ابنَ ذي الجناحين»</b>.",
-     "en": "<b>Jafar</b> went out with the Muslim army to <b>Mu’tah</b>; the Prophet ﷺ had said: Your leader is Zayd, and if he falls, then Jafar. In Madinah, the Prophet ﷺ told the people of his companions’ martyrdom before the news arrived, <b>his eyes flowing with tears</b>, for he loved Jafar dearly.<br><br><b>Abdullah ibn Umar</b>, who was in that army, said: We searched for Jafar and found him among the martyrs, with more than ninety wounds on his body, <b>none of them on his back</b> — meaning he never fled, but stood firm facing forward.<br><br>Then the Prophet ﷺ went to Jafar’s home to comfort his little children, and told the people: <b>“Prepare food for Jafar’s family, for something has come to them that keeps them busy.”</b> Allah honored Jafar with two wings to fly with in Paradise, so whenever Ibn Umar met his son Abdullah he said: <b>“Peace be upon you, son of the one with two wings.”</b>"
+     "ar": "خرجَ <b>جعفرٌ</b> مع جيشِ المسلمينَ إلى <b>مؤتة</b>، وكان النبيُّ ﷺ قد قال: أميرُكم زيد، فإن أُصيبَ فجعفر. وفي المدينةِ أخبرَ النبيُّ ﷺ الناسَ باستشهادِ أصحابِه قبلَ أن يصلَ الخبر، <b>وعيناه تذرفانِ بالدموع</b>، فقد كان يُحبُّ جعفراً حبّاً عظيماً.",
+     "en": "<b>Jafar</b> went out with the Muslim army to <b>Mu’tah</b>; the Prophet ﷺ had said: Your leader is Zayd, and if he falls, then Jafar. In Madinah, the Prophet ﷺ told the people of his companions’ martyrdom before the news arrived, <b>his eyes flowing with tears</b>, for he loved Jafar dearly."
+    }
+   },
+   {
+    "scene": "birds",
+    "character": "🕊️",
+    "text": {
+     "ar": "قال <b>عبدُ اللهِ بنُ عمر</b>، وكان في ذلك الجيش: بحثنا عن جعفرٍ فوجدناه بين الشهداء، وفي جسدِه أكثرُ من تسعينَ جرحاً، <b>ليس منها شيءٌ في ظهرِه</b> — أي أنّه لم يهربْ أبداً، بل ثبتَ مُقبلاً.<br><br>ثم ذهبَ النبيُّ ﷺ إلى بيتِ جعفرٍ يُواسي أولادَه الصغار، وقال للناس: <b>«اصنعوا لآلِ جعفرٍ طعاماً، فقد أتاهم ما يشغلُهم»</b>. وأكرمَ اللهُ جعفراً بجناحينِ يطيرُ بهما في الجنّة، فكان ابنُ عمرَ إذا لقيَ ابنَه عبدَ اللهِ قال: <b>«السلامُ عليكَ يا ابنَ ذي الجناحين»</b>.",
+     "en": "<b>Abdullah ibn Umar</b>, who was in that army, said: We searched for Jafar and found him among the martyrs, with more than ninety wounds on his body, <b>none of them on his back</b> — meaning he never fled, but stood firm facing forward.<br><br>Then the Prophet ﷺ went to Jafar’s home to comfort his little children, and told the people: <b>“Prepare food for Jafar’s family, for something has come to them that keeps them busy.”</b> Allah honored Jafar with two wings to fly with in Paradise, so whenever Ibn Umar met his son Abdullah he said: <b>“Peace be upon you, son of the one with two wings.”</b>"
     },
     "choice": {
      "q": {
@@ -417,6 +489,22 @@ HISN_STORIES.jafar = [
        }
       }
      ]
+    }
+   },
+   {
+    "scene": "dwellings",
+    "character": "🏡",
+    "text": {
+     "ar": "وفي صحيحِ البخاريِّ ما قاله النبيُّ ﷺ يومَها: <b>«أخذَ الرايةَ زيدٌ فأُصيب، ثم أخذَها جعفرٌ فأُصيب، ثم أخذَها ابنُ رواحةَ فأُصيب»</b>، ثم قال: حتى أخذَ الرايةَ <b>سيفٌ من سيوفِ الله</b> ففتحَ اللهُ عليهم — يعني <b>خالدَ بنَ الوليد</b>.<br><br>وكبرَ <b>عبدُ اللهِ بنُ جعفر</b> يتيماً، لكنّ المسلمينَ لم يتركوه وحدَه، وصار من أشهرِ الناسِ <b>بالكرمِ والجود</b> كأبيه. فالرحمةُ التي زرعَها جعفرٌ في قلوبِ الفقراءِ أثمرتْ في بيتِه من بعدِه.",
+     "en": "Sahih al-Bukhari records what the Prophet ﷺ said that day: <b>“Zayd took the banner and fell, then Jafar took it and fell, then Ibn Rawaha took it and fell.”</b> Then he said: until <b>one of the swords of Allah</b> took the banner, and Allah gave them victory — meaning <b>Khalid ibn al-Walid</b>.<br><br><b>Abdullah ibn Jafar</b> grew up an orphan, but the Muslims did not leave him alone, and he became one of the most famous people for <b>generosity</b>, like his father. The mercy Jafar had planted in the hearts of the poor bore fruit in his own home after him."
+    }
+   },
+   {
+    "scene": "birds",
+    "character": "🕊️",
+    "text": {
+     "ar": "تعلّمنا قصّةُ <b>ذي الجناحين</b> أمرين: أن نثبتَ على الخيرِ ولا نُديرَ ظهورَنا إذا صعبَ الطريق، وأن نقفَ مع كلِّ أسرةٍ حزينةٍ بالكلمةِ الطيّبةِ والطعامِ والزيارة.<br><br>فإذا رأيتَ صديقاً فقدَ عزيزاً، فلا تتركْه وحدَه، بل كن له كما كان النبيُّ ﷺ لأولادِ جعفر: زُرْه، وقل له كلمةً طيّبة، واحملْ إليه شيئاً يُفرحُه. وإذا صعبَ عليك فعلُ الخير، فتذكّرْ جعفراً الذي <b>ثبتَ مُقبلاً</b> حتى آخرِ لحظة.",
+     "en": "The story of <b>the One with Two Wings</b> teaches us two things: to stand firm on good and not turn our backs when the road gets hard, and to stand by every grieving family with kind words, food and visits.<br><br>If you see a friend who has lost someone dear, do not leave him alone — be for him as the Prophet ﷺ was for Jafar’s children: visit him, say a kind word, and bring him something that cheers him up. And when doing good feels hard, remember Jafar, who <b>stood firm facing forward</b> until the very last moment."
     }
    }
   ],

@@ -10,6 +10,7 @@ HISN_STORIES.ammar = [
    "en": "Welcome to the Good and Purified"
   },
   "pages": [
+      {"scene": "kaaba", "character": "👨‍👩‍👦", "text": {"ar": "جاءَ <b>ياسرٌ</b> والدُ عمّارٍ من اليمنِ إلى <b>مكّة</b>، فأقامَ فيها حليفاً لبني مخزوم، وتزوّجَ <b>سميّة</b>، فوُلدَ لهما <b>عمّار</b>. كانت أسرةً فقيرةً ضعيفة، ليس لها قبيلةٌ قويّةٌ تحميها في مكّة.<br><br>فلمّا سمعَ عمّارٌ بدعوةِ النبيِّ ﷺ ذهبَ إليه في <b>دارِ الأرقم</b>، حيث كان المسلمونَ الأوائلُ يجتمعونَ سرّاً، فأسلمَ هناك، ثمّ أسلمَ أبوه وأمُّه. فغضبتْ قريشٌ غضباً شديداً، وصبّتْ على هذه الأسرةِ الضعيفةِ ألواناً من العذابِ في حرِّ الشمس، فصبروا ولم يتركوا دينَهم.", "en": "<b>Yasir</b>, Ammar’s father, came from Yemen to <b>Makkah</b> and settled there as an ally of the clan of Makhzum. He married <b>Sumayya</b>, and they had a son, <b>Ammar</b>. It was a poor, weak family with no powerful tribe to protect it in Makkah.<br><br>When Ammar heard of the Prophet’s ﷺ call, he went to him at <b>Dar al-Arqam</b>, where the first Muslims met in secret, and embraced Islam there; then his father and mother embraced Islam too. Quraysh became furious and poured many kinds of torment on this weak family under the burning sun — but they were patient and did not leave their religion."}},
    {
     "scene": "madinah",
     "character": "😊",
@@ -58,7 +59,9 @@ HISN_STORIES.ammar = [
       }
      ]
     }
-   }
+   },
+      {"scene": "desert", "character": "🛡️", "text": {"ar": "وظلَّ هذا الإيمانُ يملأُ عمّاراً حتى كبرَ في السنّ. فقد شهدَ مع النبيِّ ﷺ <b>بدراً</b> والمشاهدَ كلَّها. ويذكرُ <b>عبدُ اللهِ بنُ عمر</b> أنّه رأى عمّاراً يومَ <b>اليمامة</b> واقفاً على صخرة، والقتالُ شديد، وهو ينادي المسلمين: <b>«يا معشرَ المسلمين، أمِنَ الجنّةِ تفرّون؟! أنا عمّارُ بنُ ياسر، هلمّوا إليّ!»</b> فثبتَ الناسُ حولَه.<br><br>لقد صار الشابُّ الذي عُذِّبَ ضعيفاً في مكّة بطلاً يُثبِّتُ القلوبَ في ساحاتِ الجهاد، لأنّ قلبَه كان مملوءاً بالإيمانِ لا بالخوف.", "en": "This faith kept filling Ammar even into old age. He was present with the Prophet ﷺ at <b>Badr</b> and at every battle. <b>Abdullah ibn Umar</b> reported that he saw Ammar on the day of <b>al-Yamama</b> standing on a rock while the fighting was fierce, calling out to the Muslims: <b>“O Muslims, are you running away from Paradise?! I am Ammar ibn Yasir — come to me!”</b> And the people stood firm around him.<br><br>The young man who was tortured as a weak person in Makkah became a hero who steadied hearts on the field of striving — because his heart was full of faith, not fear."}},
+      {"scene": "sprout", "character": "🌸", "text": {"ar": "سمّاه النبيُّ ﷺ <b>«الطيّبَ المطيَّب»</b>، والطيّبُ هو الطاهرُ النظيفُ في قلبِه ولسانِه وعملِه. واللهُ يحبُّ الطيّبين، وقد قال سبحانه: <b>﴿ إِلَيْهِ يَصْعَدُ الْكَلِمُ الطَّيِّبُ وَالْعَمَلُ الصَّالِحُ يَرْفَعُهُ ﴾</b>.<br><br>وأنتَ تستطيعُ أن تكونَ طيّباً مثلَ عمّار: تُطهِّرُ قلبَك من الحسدِ والكُره، وتُنظِّفُ لسانَك من الكلامِ القبيح، وتملأُ يومَك بالأعمالِ الصالحة. وإذا واجهتَ صعوبةً في دينِك فاصبرْ كما صبرَ عمّارٌ وأهلُه، فالإيمانُ الحقيقيُّ يزدادُ قوّةً مع الصبر.", "en": "The Prophet ﷺ called him <b>“the good and purified one.”</b> Being good means being pure and clean in heart, tongue and deeds. Allah loves good people, and He says: <b>﴿ “To Him ascends good speech, and righteous deeds raise it” ﴾</b>.<br><br>You can be good like Ammar: clean your heart of envy and hatred, clean your tongue of ugly words, and fill your day with good deeds. And if you face difficulty in practicing your religion, be patient as Ammar and his family were — true faith grows stronger with patience."}},
   ],
   "quiz": [
    {
@@ -190,6 +193,7 @@ HISN_STORIES.ammar = [
    "en": "Two Bricks, Not One"
   },
   "pages": [
+      {"scene": "camel", "character": "🐪", "text": {"ar": "دخلَ النبيُّ ﷺ <b>المدينةَ</b> راكباً ناقتَه، والأنصارُ يتسابقونَ إليه، كلٌّ يريدُ أن ينزلَ النبيُّ ﷺ عنده. فكان ﷺ يقول: دعوها فإنّها مأمورة. فبركتِ الناقةُ في أرضٍ كانت <b>ليتيمَين</b>، فاشتراها النبيُّ ﷺ ليبنيَ فيها المسجد.<br><br>كان البناءُ بسيطاً جدّاً: جدرانٌ من <b>اللَّبِن</b>، أي الطينِ المجفّف، وسقفٌ من <b>جريدِ النخل</b>، وأعمدةٌ من <b>جذوعِ النخل</b>. لكنّه صار أعظمَ مدرسةٍ في التاريخ، تخرّجَ منها الصحابةُ الذين حملوا الإسلامَ إلى العالم.", "en": "The Prophet ﷺ entered <b>Madinah</b> riding his she-camel, while the Ansar rushed toward him, each hoping the Prophet ﷺ would stay with him. He ﷺ said: Let her go, for she is under command. The camel knelt on a piece of land that belonged to <b>two orphans</b>, and the Prophet ﷺ bought it to build the mosque there.<br><br>The building was very simple: walls of <b>mud brick</b>, a roof of <b>palm branches</b>, and pillars of <b>palm trunks</b>. Yet it became the greatest school in history, from which the Companions graduated and carried Islam to the world."}},
    {
     "scene": "mosque",
     "character": "🧱",
@@ -238,7 +242,9 @@ HISN_STORIES.ammar = [
       }
      ]
     }
-   }
+   },
+      {"scene": "mosque", "character": "🕌", "text": {"ar": "لم يكنْ عمّارٌ يحملُ لبنتين ليتعبَ نفسَه أو ليتفاخرَ أمامَ الناس، بل لأنّه عرفَ قيمةَ هذا العمل. وقد قال النبيُّ ﷺ: <b>«مَن بنى مسجداً يبتغي به وجهَ اللهِ بنى اللهُ له مثلَه في الجنّة»</b> (متّفقٌ عليه).<br><br>وحبُّ عمّارٍ للمساجدِ لم يتوقّفْ عند هذا اليوم، فقد ذكرَ المؤرّخونَ أنّه أوّلُ مَن بنى مسجداً في بيتِه يُصلّي فيه. كان قلبُه معلّقاً ببيوتِ الله، يعملُ لها بيدَيه ويعمرُها بصلاتِه.", "en": "Ammar did not carry two bricks to tire himself out or to show off in front of people, but because he knew the value of this work. The Prophet ﷺ said: <b>“Whoever builds a mosque seeking the Face of Allah, Allah builds for him something like it in Paradise”</b> (agreed upon).<br><br>Ammar’s love for mosques did not stop on that day: historians mention that he was the first to build a prayer place in his own home. His heart was attached to the houses of Allah — he worked for them with his hands and filled them with his prayer."}},
+      {"scene": "sprout", "character": "🧱", "text": {"ar": "قد لا تبني مسجداً بيدَيك اليوم، لكنّك تستطيعُ أن تحملَ <b>«لبنتين»</b> في كلِّ خير: إذا رتّبَ أهلُك البيتَ فساعدْهم بحماس، وإذا نظّفَ الناسُ المسجدَ فكنْ أوّلَهم، وإذا طُلبَ منك عملٌ فأتقنْه وزِدْ عليه.<br><br>والنبيُّ ﷺ يحبُّ مَن يسبقُ إلى الخيرِ بنشاطٍ وفرح. وتذكّرْ أنّ التعبَ في طاعةِ اللهِ يزولُ سريعاً، ويبقى أجرُه، كما بقيَ لعمّارٍ شرفُ أن نفضَ النبيُّ ﷺ الترابَ عنه بيدِه.", "en": "You may not build a mosque with your hands today, but you can carry <b>“two bricks”</b> in every good deed: when your family tidies the house, help them eagerly; when people clean the mosque, be the first; and when you are given a task, do it well and add more.<br><br>The Prophet ﷺ loves those who hurry to good with energy and joy. Remember that tiredness in obeying Allah soon fades, while its reward remains — just as Ammar kept the honor of the Prophet ﷺ brushing the dust off him with his own hand."}},
   ],
   "quiz": [
    {
@@ -370,6 +376,7 @@ HISN_STORIES.ammar = [
    "en": "The Governor Who Carried His Own Fodder"
   },
   "pages": [
+      {"scene": "dwellings", "character": "🏘️", "text": {"ar": "اتّسعتْ بلادُ المسلمينَ في خلافةِ <b>عمر</b>، وبُنيتْ مدنٌ جديدةٌ في العراق، منها <b>الكوفة</b> التي سكنها كثيرٌ من المجاهدينَ وأسرِهم. فاحتاجتْ إلى أميرٍ يدبّرُ أمورَها، ومعلّمٍ يعلّمُ أهلَها القرآنَ والسنّة.<br><br>وكان عمرُ يختارُ ولاتَه بعنايةٍ شديدة، ويحاسبُهم على كلِّ صغيرةٍ وكبيرة، ولا يريدُ أميراً يتكبّرُ على الناسِ أو يعيشُ في الترف. فاختارَ لهذه المهمّةِ رجلاً عرفَ الفقرَ والصبرَ منذ صغرِه، ولم تغيّرْه الدنيا: <b>عمّارَ بنَ ياسر</b>.", "en": "The Muslim lands expanded during <b>Umar’s</b> caliphate, and new cities were built in Iraq, among them <b>Kufa</b>, where many of the fighters and their families settled. It needed a governor to manage its affairs and a teacher to teach its people the Qur’an and the Sunnah.<br><br>Umar chose his governors with great care and held them accountable for everything, small and large. He did not want a governor who looked down on people or lived in luxury. So for this task he chose a man who had known poverty and patience since childhood and whom the world had not changed: <b>Ammar ibn Yasir</b>."}},
    {
     "scene": "grain",
     "character": "🌾",
@@ -418,7 +425,8 @@ HISN_STORIES.ammar = [
       }
      ]
     }
-   }
+   },
+      {"scene": "sprout", "character": "🌾", "text": {"ar": "علّمَنا عمّارٌ أنّ الإنسانَ لا يكبرُ بالمنصبِ ولا باللقب، بل بأخلاقِه. وقد قال النبيُّ ﷺ: <b>«وما تواضعَ أحدٌ للهِ إلا رفعَه الله»</b> (رواه مسلم). فكلّما تواضعَ عمّارٌ ازدادَ حبُّ الناسِ له واحترامُهم.<br><br>وأنتَ إذا صرتَ رئيساً لفريقٍ في المدرسةِ أو مسؤولاً عن إخوتِك الصغار، فلا تأمرْ وتجلس، بل اعملْ معهم واحملْ نصيبَك بنفسِك. واحفظْ وصيّةَ عمّارٍ الثلاث: <b>أنصِفْ من نفسِك، وأفشِ السلام، وتصدّقْ ولو بالقليل</b>.", "en": "Ammar taught us that a person does not become great through a position or a title, but through good character. The Prophet ﷺ said: <b>“No one humbles himself for Allah except that Allah raises him”</b> (Muslim). The more humble Ammar was, the more people loved and respected him.<br><br>If you become the leader of a team at school or are put in charge of your younger siblings, do not just give orders and sit down — work with them and carry your own share. And remember Ammar’s three pieces of advice: <b>be fair even against yourself, spread the greeting of peace, and give charity even if it is little</b>."}},
   ],
   "quiz": [
    {

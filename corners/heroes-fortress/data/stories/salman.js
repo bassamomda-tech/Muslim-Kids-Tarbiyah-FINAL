@@ -11,6 +11,14 @@ HISN_STORIES.salman = [
   },
   "pages": [
    {
+    "scene": "fire",
+    "character": "🔥",
+    "text": {
+     "ar": "يحكي <b>سلمانُ</b> قصّتَه بنفسِه كما في «مسند أحمد»، فيقول إنّه كان رجلاً فارسيّاً من أهلِ <b>أصبهان</b>، من قريةٍ يُقالُ لها <b>«جَيّ»</b>، وكان أبوه سيّدَ القرية وكبيرَها.<br><br>وكان سلمانُ أحبَّ أولادِ أبيه إليه، حتى إنّه حبسَه في البيتِ كما تُحبَسُ الفتاةُ الصغيرة خوفاً عليه. واجتهدَ سلمانُ في دينِ قومِه حتى صارَ هو <b>الذي يوقدُ النار</b> ويحرسُها، لا يتركُها تنطفئُ ساعةً واحدة. لكنّ قلبَه الصافي لم يكن مطمئنّاً، وكان ينتظرُ شيئاً أعظمَ من نارٍ يصنعُها الناسُ بأيديهم.",
+     "en": "<b>Salman</b> tells his own story, as recorded in “Musnad Ahmad.” He says he was a Persian man from the people of <b>Isfahan</b>, from a village called <b>Jayy</b>, and his father was the chief and elder of the village.<br><br>Salman was the most beloved of his father's children, so much so that his father kept him inside the house, as a young girl is kept, out of fear for him. Salman worked hard in his people's religion until he became <b>the one who lit the fire</b> and guarded it, never letting it go out for even an hour. But his pure heart was not at peace; it was waiting for something greater than a fire people make with their own hands."
+    }
+   },
+   {
     "scene": "globe",
     "character": "🔥",
     "text": {
@@ -57,6 +65,22 @@ HISN_STORIES.salman = [
        }
       }
      ]
+    }
+   },
+   {
+    "scene": "desert",
+    "character": "🐪",
+    "text": {
+     "ar": "لم تكنِ الرحلةُ سهلة؛ فلمّا علمَ أبوه أنّه أُعجِبَ بدينِ النصارى، <b>قيّدَ رجليه بالحديد</b> وحبسَه! لكنّ سلمانَ أرسلَ إلى النصارى أن يخبروه إذا سافرت قافلةٌ إلى <b>الشام</b>، فلمّا جاءت فكَّ القيدَ وهربَ معهم.<br><br>وفي الشام، ثمّ في <b>المَوصل</b>، ثمّ في <b>نَصيبين</b>، ثمّ في <b>عَمّورية</b>، خدمَ سلمانُ رجالاً صالحين، يتعلّمُ منهم ويصبرُ معهم. وفي عمّوريةَ عملَ حتى صارَ له <b>بقراتٌ وغُنيمة</b>. وأخبره آخرُ العلماءِ أنّ هذا النبيَّ يهاجرُ إلى أرضٍ بين حرّتين — أي أرضينِ ذواتَي حجارةٍ سوداء — <b>بينهما نخل</b>.",
+     "en": "The journey was not easy. When his father learned that he admired the Christians' religion, he <b>chained his feet with iron</b> and locked him up! But Salman sent word to the Christians to tell him when a caravan was travelling to <b>Syria</b>. When one came, he freed himself from the chains and escaped with them.<br><br>In Syria, then in <b>Mosul</b>, then in <b>Nusaybin</b>, then in <b>Amorium</b>, Salman served righteous men, learning from them and staying patient with them. In Amorium he worked until he owned <b>some cows and a few sheep</b>. The last of those scholars told him that this prophet would migrate to a land between two lava fields — two stretches of black rock — <b>with palm trees between them</b>."
+    }
+   },
+   {
+    "scene": "sprout",
+    "character": "🔍",
+    "text": {
+     "ar": "تأمّلْ يا صغيري: تركَ سلمانُ بيتاً دافئاً وأباً غنيّاً، ومشى بلاداً بعدَ بلاد، وسنواتٍ بعدَ سنوات، لأنّه أرادَ <b>الحقَّ</b> ولم يرضَ بغيرِه. لم يقلْ: «هكذا وجدتُ أهلي»، بل سألَ وبحثَ وتعلّمَ وصبر.<br><br>وقد وعدَ اللهُ من يجتهدُ في طلبِ الهدايةِ أن يهديَه: ﴿وَالَّذِينَ جَاهَدُوا فِينَا لَنَهْدِيَنَّهُمْ سُبُلَنَا﴾. فإذا كان عندك سؤالٌ عن دينِك فاسألْ أهلَ العلم، واقرأْ، وادعُ اللهَ أن يدلَّك على الخير، فمن صدقَ في البحثِ عن النورِ أوصلَه اللهُ إليه.",
+     "en": "Think about it, young one: Salman left a warm home and a wealthy father and walked from land to land, year after year, because he wanted <b>the truth</b> and would accept nothing else. He did not say, “This is how I found my family”; he asked, searched, learned and was patient.<br><br>Allah promised to guide whoever strives to find guidance: ﴿And those who strive for Us — We will surely guide them to Our ways﴾. So if you have a question about your religion, ask people of knowledge, read, and ask Allah to lead you to good. Whoever is truthful in searching for the light, Allah brings him to it."
     }
    }
   ],
@@ -191,6 +215,14 @@ HISN_STORIES.salman = [
   },
   "pages": [
    {
+    "scene": "madinah",
+    "character": "🏘️",
+    "text": {
+     "ar": "في السنةِ <b>الخامسةِ للهجرة</b>، اجتمعت قريشٌ وغطفانُ وقبائلُ أخرى في جيشٍ كبيرٍ يبلغُ نحوَ <b>عشرةِ آلافِ مقاتل</b>، وساروا نحوَ المدينةِ يريدونَ القضاءَ على الإسلام. ولهذا سُمّيت هذه الغزوةُ <b>«الأحزاب»</b>.<br><br>وكانت المدينةُ محميّةً من بعضِ جهاتِها بالحِرارِ — وهي أرضٌ ذاتُ حجارةٍ سوداءَ يصعبُ المشيُ عليها — وبالبساتينِ والنخيلِ والبيوت. لكنّ <b>الجهةَ الشماليّةَ</b> كانت مكشوفةً يمكنُ أن تدخلَ منها الخيلُ والجيوش. فكيف يحمي المسلمونَ مدينتَهم وهم أقلُّ عدداً؟",
+     "en": "In the <b>fifth year after the Hijra</b>, Quraysh, Ghatafan and other tribes gathered a huge army of about <b>ten thousand fighters</b> and marched toward Madinah, wanting to destroy Islam. That is why this battle is called <b>“al-Ahzab” (the Confederates)</b>.<br><br>Madinah was protected on some sides by lava fields — land covered with black rocks that is hard to cross — and by orchards, palm groves and houses. But the <b>northern side</b> was open, and horses and armies could enter from it. How could the Muslims protect their city when they were fewer in number?"
+    }
+   },
+   {
     "scene": "mountain",
     "character": "⛏️",
     "text": {
@@ -237,6 +269,22 @@ HISN_STORIES.salman = [
        }
       }
      ]
+    }
+   },
+   {
+    "scene": "axe",
+    "character": "⛏️",
+    "text": {
+     "ar": "وعملَ النبيُّ ﷺ بيدِه مع أصحابِه في الحفر، يقولُ <b>البراءُ بنُ عازب</b>: رأيتُه ينقلُ الترابَ حتى غطّى الغبارُ جلدَ بطنِه (رواه البخاري). وكان الصحابةُ يحفرونَ في البردِ والجوع، وهم يُنشِدون، والنبيُّ ﷺ يجيبُهم: <b>«اللهمَّ لا عيشَ إلّا عيشُ الآخرة، فاغفرْ للأنصارِ والمهاجرة»</b> (رواه البخاري).<br><br>وكان سلمانُ قويّاً نشيطاً في الحفر، حتى اختلفَ فيه المهاجرونَ والأنصار، كلٌّ يقول: سلمانُ منّا!",
+     "en": "The Prophet ﷺ worked with his own hands alongside his Companions in the digging. <b>Al-Bara' ibn 'Azib</b> said: I saw him carrying earth until the dust covered the skin of his belly (al-Bukhari). The Companions dug in the cold and hunger, chanting verses, and the Prophet ﷺ answered them: <b>“O Allah, there is no life but the life of the Hereafter, so forgive the Ansar and the Muhajirun”</b> (al-Bukhari).<br><br>Salman was strong and energetic in the digging, so much so that the Muhajirun and the Ansar disagreed about him, each saying: Salman is one of us!"
+    }
+   },
+   {
+    "scene": "wind",
+    "character": "🌬️",
+    "text": {
+     "ar": "وذكّرَ اللهُ المؤمنينَ بهذه النعمةِ في سورةِ الأحزاب، فقال: ﴿فَأَرْسَلْنَا عَلَيْهِمْ رِيحًا وَجُنُودًا لَّمْ تَرَوْهَا﴾. فرجعت الأحزابُ خائبة، وقال النبيُّ ﷺ بعدَها: <b>«الآنَ نغزوهم ولا يغزونَنا»</b> (رواه البخاري).<br><br>والدرسُ لنا: النبيُّ ﷺ — وهو أعظمُ الخلق — <b>استشارَ أصحابَه</b> وأخذَ برأيِ رجلٍ جاءَ من بلادٍ بعيدة. فلا تحتقرْ فكرةً لأنّ صاحبَها صغيرٌ أو غريب، ولا تخجلْ أن تقترحَ فكرةً نافعةً في بيتِك أو صفِّك. والنصرُ من عندِ الله، لكنّنا نعملُ ونفكّرُ ونأخذُ بالأسباب.",
+     "en": "Allah reminded the believers of this blessing in Surat al-Ahzab, saying: ﴿So We sent against them a wind and armies you did not see﴾. The Confederates went back empty-handed, and afterwards the Prophet ﷺ said: <b>“Now we will go out to them, and they will not come out against us”</b> (al-Bukhari).<br><br>The lesson for us: the Prophet ﷺ — the greatest of creation — <b>consulted his Companions</b> and took the opinion of a man who had come from a faraway land. So never look down on an idea because the one who suggests it is young or a stranger, and don't be shy to suggest a useful idea at home or in class. Victory comes from Allah, but we work, think and take the means."
     }
    }
   ],
@@ -374,6 +422,14 @@ HISN_STORIES.salman = [
     "scene": "palm",
     "character": "🌴",
     "text": {
+     "ar": "خرجَ سلمانُ من عمّوريةَ مع تجّارٍ من قبيلةِ <b>كلب</b>، وأعطاهم بقراتِه وغنمَه ليحملوه إلى أرضِ العرب. فلمّا بلغوا <b>وادي القُرى</b> ظلموه وباعوه عبداً لرجلٍ يهوديّ، ثمّ اشتراه رجلٌ من بني قُريظةَ وحملَه إلى المدينة، فلمّا رأى نخلَها عرفَ أنّها الأرضُ الموعودة.<br><br>وبينما هو فوقَ نخلةٍ يعملُ لسيّدِه، جاءَ خبرُ وصولِ النبيِّ ﷺ إلى <b>قُباء</b>. فذهبَ إليه بطعامٍ على أنّه <b>صدقة</b>، فأمرَ أصحابَه فأكلوا ولم يأكلْ. ثمّ جاءَه بطعامٍ على أنّه <b>هديّة</b>، فأكلَ منه. ثمّ رأى <b>خاتمَ النبوّةِ</b> بين كتفيه، فأقبلَ عليه يقبّلُه ويبكي.",
+     "en": "Salman left Amorium with merchants from the tribe of <b>Kalb</b>, giving them his cows and sheep to carry him to the land of the Arabs. When they reached <b>Wadi al-Qura</b>, they wronged him and sold him as a slave to a Jewish man. Then a man from Banu Qurayza bought him and brought him to Madinah. When Salman saw its palm trees, he knew it was the promised land.<br><br>While he was atop a palm tree working for his master, news came that the Prophet ﷺ had arrived at <b>Quba'</b>. Salman went to him with food as <b>charity</b>; the Prophet ﷺ told his Companions to eat, and he did not eat. Then Salman brought food as a <b>gift</b>, and he ate from it. Then Salman saw <b>the Seal of Prophethood</b> between his shoulders, and he came forward kissing it and weeping."
+    }
+   },
+   {
+    "scene": "palm",
+    "character": "🌴",
+    "text": {
      "ar": "وصلَ <b>سلمانُ</b> إلى المدينةِ بعدَ رحلتِه الطويلة، لكنّ قوماً ظالمينَ كانوا قد <b>باعوه عبداً</b> في الطريق! فلمّا رأى علاماتِ النبوّةِ في رسولِ الله ﷺ أسلمَ وفرِحَ فرحاً عظيماً. غير أنّ <b>الرِّقَّ</b> شغلَه عن الخروجِ مع المسلمينَ في بدرٍ وأُحُد. فقال له النبيُّ ﷺ: <b>«كاتِبْ يا سلمان»</b> — أي اتّفقْ مع سيّدِك على ثمنٍ تُحرِّرُ به نفسَك.<br><br>فاشترطَ عليه سيّدُه شرطاً صعباً: أن يغرسَ له <b>ثلاثَمئةِ نخلة</b>، وأن يدفعَ <b>أربعينَ أوقيّةً من الذهب</b>! فقال النبيُّ ﷺ لأصحابه: <b>«أعينوا أخاكم»</b>. فجاء كلُّ صحابيٍّ بما يقدر: هذا بثلاثينَ فسيلة، وهذا بعشرين، وهذا بعشر، حتى اجتمعت ثلاثُمئة. وقال النبيُّ ﷺ: احفرْ لها يا سلمان، فإذا فرغتَ فأخبرني <b>أكونُ أنا أضعُها بيدي</b>.<br><br>فجاءَ النبيُّ ﷺ وجعلَ يغرسُ الفسائلَ بيدِه الشريفة، قال سلمان: <b>«فوالذي نفسُ سلمانَ بيدِه ما ماتت منها فسيلةٌ واحدة!»</b> ثمّ جاءَ النبيَّ ﷺ قطعةٌ من ذهبٍ مثلُ بيضةِ الدجاجة، فأعطاها سلمانَ، فوفّى منها دينَه كاملاً، وصار <b>حُرّاً</b>! وكانت أوّلُ غزوةٍ شهدَها <b>الخندق</b>. هكذا تكونُ الأخوّة: يحملُ المسلمونَ همَّ أخيهم حتى يفرجَ اللهُ عنه.",
      "en": "<b>Salman</b> reached Madinah after his long journey — but unjust men had <b>sold him as a slave</b> on the way! When he saw the signs of prophethood in the Messenger of Allah ﷺ, he embraced Islam with great joy. Yet <b>slavery</b> kept him from going out with the Muslims at Badr and Uhud. So the Prophet ﷺ told him: <b>\"Make a contract for your freedom, Salman\"</b> — agree with your master on a price to free yourself.<br><br>His master set a hard condition: to plant <b>three hundred palm trees</b> for him and pay <b>forty ounces of gold</b>! The Prophet ﷺ told his Companions: <b>\"Help your brother.\"</b> Each Companion brought what he could: one thirty saplings, another twenty, another ten, until there were three hundred. The Prophet ﷺ said: Dig the holes, Salman, and when you finish, tell me — <b>I will place them with my own hand</b>.<br><br>The Prophet ﷺ came and planted the saplings with his blessed hand. Salman said: <b>\"By the One in whose hand is Salman's soul, not a single sapling died!\"</b> Then a piece of gold like a hen's egg came to the Prophet ﷺ; he gave it to Salman, who paid off his whole debt and became <b>free</b>! The first battle he attended was <b>the Trench</b>. This is true brotherhood: Muslims carry their brother's burden until Allah grants him relief."
     },
@@ -417,6 +473,14 @@ HISN_STORIES.salman = [
        }
       }
      ]
+    }
+   },
+   {
+    "scene": "sprout",
+    "character": "🤲",
+    "text": {
+     "ar": "تأمّلْ هذا المشهد: النبيُّ ﷺ قائدُ الأمّة يحفرُ ويغرسُ بيدِه لِيُحرّرَ رجلاً فقيراً غريباً، والصحابةُ يتسابقونَ كلٌّ بما يستطيع، ولو بعشرِ فسائلَ صغيرة. لم يقلْ أحدٌ: «هذه مشكلةُ سلمانَ وحدَه».<br><br>وقد قالَ النبيُّ ﷺ: <b>«واللهُ في عونِ العبدِ ما كانَ العبدُ في عونِ أخيه»</b> (رواه مسلم). فإذا رأيتَ زميلاً يحتاجُ إلى مساعدةٍ في درسِه أو حملِ حقيبتِه، أو جاراً محتاجاً، فقدّمْ ما تستطيع، ولو كان قليلاً، فالقليلُ من الكثيرينَ يصنعُ شيئاً عظيماً.",
+     "en": "Picture this scene: the Prophet ﷺ, leader of the nation, digging and planting with his own hand to free a poor stranger, while the Companions race to help, each with what he can — even ten small saplings. No one said, “This is Salman's problem alone.”<br><br>The Prophet ﷺ said: <b>“Allah helps His servant as long as the servant is helping his brother”</b> (Muslim). So if you see a classmate who needs help with a lesson or carrying his bag, or a neighbor in need, offer what you can, even if it is little. A little from many people makes something great."
     }
    }
   ],
@@ -551,6 +615,14 @@ HISN_STORIES.salman = [
   },
   "pages": [
    {
+    "scene": "mosque",
+    "character": "📖",
+    "text": {
+     "ar": "في <b>سورةِ الجمعة</b> يذكرُ اللهُ نعمتَه العظيمةَ على العرب، فقد كانوا أمّيّين لا يقرؤونَ ولا يكتبون، فقال سبحانه: ﴿هُوَ الَّذِي بَعَثَ فِي الْأُمِّيِّينَ رَسُولًا مِّنْهُمْ﴾، يتلو عليهم آياتِه ويعلّمُهم الكتابَ والحكمة.<br><br>لكنّ رسالةَ النبيِّ ﷺ لم تكنْ للعربِ وحدَهم، بل للناسِ جميعاً، في زمانِه وبعدَ زمانِه. وفي يومٍ من الأيّام، كان الصحابةُ جلوساً في المسجدِ حولَ النبيِّ ﷺ، يسمعونَ الآياتِ وهي تنزلُ غضّةً طريّة، وفي المجلسِ رجلٌ جاءَ من أقصى الشرق.",
+     "en": "In <b>Surat al-Jumu'ah</b>, Allah mentions His great blessing upon the Arabs, who had been an unlettered people who did not read or write. He says: ﴿It is He who has sent among the unlettered a Messenger from themselves﴾, reciting His verses to them and teaching them the Book and wisdom.<br><br>But the Prophet's ﷺ message was not for the Arabs alone — it was for all people, in his time and after it. One day, the Companions were sitting in the mosque around the Prophet ﷺ, hearing the verses as they were freshly revealed, and in the gathering was a man who had come from the far East."
+    }
+   },
+   {
     "scene": "cosmos",
     "character": "🌌",
     "text": {
@@ -597,6 +669,14 @@ HISN_STORIES.salman = [
        }
       }
      ]
+    }
+   },
+   {
+    "scene": "pen",
+    "character": "🌏",
+    "text": {
+     "ar": "ومن بلادِ فارسَ وما حولَها جاءَ علماءُ كثيرونَ خدموا الإسلام، مثلُ الإمامِ <b>مسلمٍ</b> صاحبِ «الصحيح» من مدينةِ نيسابور، و<b>سيبويهِ</b> إمامِ النحوِ الذي كتبَ أشهرَ كتابٍ في قواعدِ اللغةِ العربيّة، وهو فارسيُّ الأصل.<br><br>فالإسلامُ يجمعُ الناسَ من كلِّ لونٍ ولغة، وقد قالَ اللهُ تعالى: ﴿إِنَّ أَكْرَمَكُمْ عِندَ اللَّهِ أَتْقَاكُمْ﴾. فإذا جاءَ إلى صفِّك زميلٌ من بلدٍ آخرَ أو يتكلّمُ لغةً أخرى، فرحّبْ به وأكرمْه، فلعلّه يكونُ عندَ اللهِ أعظمَ منّا جميعاً. ولا تيأسْ إن رأيتَ الخيرَ بعيداً، فالصادقُ يصلُ ولو كان الخيرُ عندَ الثريّا!",
+     "en": "From Persia and the lands around it came many scholars who served Islam, such as Imam <b>Muslim</b>, author of the “Sahih,” from the city of Nishapur, and <b>Sibawayh</b>, the master of grammar who wrote the most famous book on the rules of Arabic — and he was of Persian origin.<br><br>Islam gathers people of every color and language, and Allah says: ﴿Indeed, the most noble of you in the sight of Allah is the most righteous of you﴾. So if a classmate comes to your class from another country or speaking another language, welcome him and honor him — perhaps he is greater with Allah than all of us. And never despair if good seems far away: the sincere one reaches it, even if it were at the Pleiades!"
     }
    }
   ],
@@ -732,6 +812,14 @@ HISN_STORIES.salman = [
   "pages": [
    {
     "scene": "dwellings",
+    "character": "🏛️",
+    "text": {
+     "ar": "كانت <b>المدائنُ</b> على نهرِ دجلةَ في العراق عاصمةَ الفرس، وفيها <b>إيوانُ كسرى</b> العظيم بقبّتِه العالية. وفي خلافةِ عمرَ فتحها المسلمونَ بقيادةِ <b>سعدِ بنِ أبي وقّاص</b>، وكان سلمانُ في الجيش، يعرفُ لغةَ الفرسِ فيكلّمُهم بها ويدعوهم إلى الإسلام.<br><br>فيا للعجب! الفتى الذي خرجَ من بلادِ فارسَ هارباً يبحثُ عن الحقّ، رجعَ إليها بعدَ سنواتٍ طويلةٍ صحابيّاً من أصحابِ رسولِ اللهِ ﷺ، ثمّ صارَ <b>أميراً</b> على عاصمتِها. فكيف عاشَ هذا الأميرُ في المدينةِ التي كانت قصورُ الملوكِ فيها؟",
+     "en": "<b>Al-Mada'in</b>, on the Tigris River in Iraq, was the capital of the Persians, and in it stood the great <b>Arch of Khosrow</b> with its lofty vault. In Umar's caliphate the Muslims opened it under the command of <b>Sa'd ibn Abi Waqqas</b>. Salman was in the army; he knew the Persian language, so he spoke to them in it and invited them to Islam.<br><br>How amazing! The young man who had fled Persia searching for the truth returned to it after long years as a Companion of the Messenger of Allah ﷺ, and then became <b>governor</b> of its capital. So how did this governor live in the city of royal palaces?"
+    }
+   },
+   {
+    "scene": "dwellings",
     "character": "🏘️",
     "text": {
      "ar": "في خلافةِ عمرَ بنِ الخطّاب، صار <b>سلمانُ الفارسيُّ أميراً على المدائن</b> — المدينةِ التي كانت عاصمةَ كسرى ملكِ الفرس! ومع ذلك بقيَ يلبسُ <b>ثياباً بسيطة</b>، ويأكلُ من عملِ يدِه: يشتري الخُوصَ (سعفَ النخل) بدرهم، فيصنعُ منه سِلالاً ويبيعُها، ويتصدّقُ بعطائه.<br><br>وفي يومٍ اشترى رجلٌ عَلَفاً من السوق، فرأى سلمانَ بثيابِه البسيطةِ ولم يعرفْه، فظنّه <b>حمّالاً</b> يحملُ للناسِ بالأجرة، فقال له: احملْ هذا! فحملَه سلمانُ <b>بلا كلمةِ اعتراض</b>، ومشى به. فمرّوا بقومٍ عرفوه، فقالوا للرجل: <b>هذا صاحبُ رسولِ اللهِ ﷺ!</b> هذا الأمير!<br><br>فارتبكَ الرجلُ وخجلَ، واعتذرَ وأرادَ أن يأخذَ الحِملَ عنه، وأرادَ القومُ أن يحملوه عنه، فأبى سلمانُ <b>حتى أوصلَه إلى البيت</b>! لم يغضبْ ولم يقلْ: أتعرفُ مَن أنا؟ بل رأى في خدمةِ الناسِ خيراً وأجراً. وكان سلمانُ يقول: <b>مَن تواضعَ في الدنيا رفعه الله</b>.",
@@ -777,6 +865,14 @@ HISN_STORIES.salman = [
        }
       }
      ]
+    }
+   },
+   {
+    "scene": "sprout",
+    "character": "🌿",
+    "text": {
+     "ar": "لقد فهمَ سلمانُ أنّ الإمارةَ <b>خدمةٌ وأمانة</b>، لا تكبّرٌ على الناس. وقد قالَ النبيُّ ﷺ: <b>«وما تواضعَ أحدٌ للهِ إلّا رفعَه الله»</b> (رواه مسلم). فكلّما تواضعَ سلمانُ ازدادَ في قلوبِ الناسِ حبّاً واحتراماً.<br><br>وتوفّي سلمانُ في المدائنِ في خلافةِ عثمانَ رضي الله عنهما، وما يزالُ الناسُ يذكرونَ تواضعَه إلى اليوم. وأنتَ يا صغيري: إذا صرتَ رئيسَ فريقٍ أو عريفَ صفّ، فلا تتكبّرْ على أصحابِك، بل ساعدْهم واحملْ معهم، وتذكّرْ أنّ أعظمَ الناسِ أكثرُهم خدمةً لغيرِه.",
+     "en": "Salman understood that leadership is <b>service and a trust</b>, not looking down on people. The Prophet ﷺ said: <b>“No one humbles himself for Allah except that Allah raises him”</b> (Muslim). The more humble Salman was, the more love and respect he gained in people's hearts.<br><br>Salman died in al-Mada'in during the caliphate of Uthman, may Allah be pleased with them both, and people still remember his humility today. And you, young one: if you become a team captain or class monitor, don't be arrogant toward your friends. Help them and carry the load with them, and remember that the greatest of people are those who serve others the most."
     }
    }
   ],

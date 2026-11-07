@@ -4,6 +4,14 @@ HISN_STORIES.shurayh = [
   { icon:'🐎', scene:'scales', character:'⚖️',
     title:{ ar:'الفرسُ التي صنعتْ قاضياً', en:'The Horse That Made a Judge' },
     pages:[
+      {
+       "scene": "madinah",
+       "character": "🧔",
+       "text": {
+        "ar": "وُلِدَ <b>شُريحُ بنُ الحارثِ الكِنديُّ</b> في بلادِ <b>اليمن</b>، وأسلمَ في حياةِ النبيِّ ﷺ، لكنّه لم يلقَه ولم يرَه، فلم يكنْ من الصحابة، بل من كبارِ <b>التابعين</b>. ثمّ جاءَ بعدَ وفاةِ النبيِّ ﷺ إلى <b>المدينة</b>، وجالسَ الصحابةَ وتعلّمَ منهم القرآنَ والسنّة.<br><br>وكان شُريحٌ ذكيّاً سريعَ الفهم، هادئاً لا يتعجّل، يسمعُ الكلامَ كلَّه قبلَ أن يحكم. ولم يكنْ يعلمُ أنّ موقفاً صغيراً — بسببِ فرسٍ — سيجعلُ منه واحداً من أشهرِ القضاةِ في تاريخِ الإسلام!",
+        "en": "<b>Shurayh ibn al-Harith al-Kindi</b> was born in <b>Yemen</b>. He accepted Islam during the Prophet's ﷺ lifetime but never met or saw him, so he was not a Companion but one of the senior <b>Tabi'in</b> (Successors). After the Prophet ﷺ passed away, he came to <b>Madinah</b>, sat with the Companions, and learned the Quran and Sunnah from them.<br><br>Shurayh was intelligent and quick to understand, calm and never hasty; he listened to the whole matter before judging. He did not know that a small incident — over a horse — would make him one of the most famous judges in the history of Islam!"
+       }
+      },
       { scene:'scales', character:'🐎',
         text:{ ar:'في زمنِ أميرِ المؤمنين <b>عمرَ بنِ الخطّاب</b> رضي الله عنه، أرادَ عمرُ أن يشتريَ <b>فرساً</b> من رجل، فأخذها ليجرّبَها قبلَ أن يُتمَّ البيع، فركبها — فأصابَها عطبٌ وتضرّرت! فأرادَ عمرُ أن يردَّها، ورفضَ الرجلُ أن يأخذَها وهي مُصابة. فقال عمر: اجعلْ بيني وبينك رجلاً يحكمُ بيننا. فاختارَ الرجلُ <b>شُريحاً</b>.<br><br>جلسَ الخليفةُ العظيمُ والرجلُ العاديُّ أمامَ شُريحٍ سواءً بسواء. فسمعَ منهما، ثمّ قال لعمرَ بلا خوفٍ ولا مجاملة: <b>«خُذْ ما ابتعتَ، أو رُدَّ كما أخذت»</b> — أي: أخذتَها سليمةً، فإمّا أن تشتريَها، وإمّا أن تردَّها سليمةً كما كانت. هل غضِبَ عمر؟ لا! بل أعجبَه هذا العدلُ الجريء، فقال: وهل القضاءُ إلّا هكذا؟ ثمّ <b>بعثَه قاضياً على الكوفة</b>! فبدأتْ رحلةُ شُريحٍ مع القضاءِ التي استمرّتْ — كما قيل — <b>نحوَ ستّينَ سنة</b>.',
           en:'In the time of the Commander of the Faithful <b>Umar ibn al-Khattab</b>, Umar wanted to buy a <b>horse</b> from a man. He took it to try it before completing the sale, rode it — and it was injured! Umar wanted to return it, but the man refused to take it back injured. Umar said: Let a man judge between us. The man chose <b>Shurayh</b>.<br><br>The great caliph and the ordinary man sat before Shurayh as equals. He listened to both, then told Umar without fear or flattery: <b>"Take what you bought, or return it as you took it"</b> — you took it sound, so either buy it, or return it sound as it was. Was Umar angry? No! He admired this brave fairness and said: Is judging anything but this? Then he <b>sent him as judge of Kufa</b>! So began Shurayh’s journey as a judge, which lasted — as it is said — <b>about sixty years</b>.' },
@@ -13,6 +21,14 @@ HISN_STORIES.shurayh = [
             { t:{ar:'لأنّه مدحَه',en:'Because he praised him'},c:false,exp:{ar:'لا، بل لأنّه قال الحقَّ بلا مجاملة.',en:'No — because he spoke the truth without flattery.'} },
             { t:{ar:'لأنّه أعطاه الفرس',en:'Because he gave him the horse'},c:false,exp:{ar:'لا، بل لعدلِه وفهمِه.',en:'No — for his fairness and understanding.'} },
           ] } },
+      {
+       "scene": "mosque",
+       "character": "📜",
+       "text": {
+        "ar": "وكتبَ عمرُ إلى شُريحٍ يرسمُ له طريقَ القضاء: إذا جاءك أمرٌ في <b>كتابِ الله</b> فاقضِ به ولا يصرفْك عنه الرجال، فإن لم تجدْه في كتابِ الله فانظرْ في <b>سنّةِ رسولِ الله ﷺ</b>، فإن لم تجدْه فانظرْ فيما اجتمعَ عليه الناس، ثمّ اجتهدْ رأيَك. (رواه النسائيّ والدارميّ).<br><br>فجلسَ شُريحٌ في <b>الكوفة</b> يقضي بين الناسِ بهذا المنهجِ الواضح، لا يفرّقُ بين غنيٍّ وفقير، ولا بين أميرٍ وعامل. والدرسُ لنا: من يقولُ الحقَّ بأدبٍ ولو أمامَ الكبار، يرفعُه اللهُ ويحترمُه الناس. فإذا حكّموك بين أخويك أو صديقيك، فاسمعْ من الاثنينِ واحكمْ بالعدل.",
+        "en": "Umar wrote to Shurayh, laying out the path of judging for him: if a matter comes to you that is in <b>the Book of Allah</b>, judge by it and do not let people turn you away from it; if you do not find it in the Book of Allah, look in <b>the Sunnah of the Messenger of Allah ﷺ</b>; if you do not find it there, look at what the people have agreed upon; then use your own careful judgment. (Reported by an-Nasa'i and ad-Darimi.)<br><br>So Shurayh sat in <b>Kufa</b> judging between people by this clear method, making no difference between rich and poor, or between a governor and a worker. The lesson for us: whoever speaks the truth politely, even before the great, Allah raises him and people respect him. If you are asked to settle a matter between your siblings or friends, listen to both and judge fairly."
+       }
+      }
     ],
     quiz:[
       { q:{ar:'على ماذا اختلفَ عمرُ والرجل؟',en:'What did Umar and the man disagree about?'},
@@ -31,6 +47,14 @@ HISN_STORIES.shurayh = [
   { icon:'🛡️', scene:'mosque', character:'📜',
     title:{ ar:'درعُ أميرِ المؤمنين', en:'The Shield of the Commander of the Faithful' },
     pages:[
+      {
+       "scene": "dwellings",
+       "character": "🏛️",
+       "text": {
+        "ar": "مرّت السنوات، وصارَ <b>عليُّ بنُ أبي طالب</b> رضي الله عنه أميراً للمؤمنين، واتّخذَ <b>الكوفةَ</b> مقرّاً له. وكان شُريحٌ ما يزالُ قاضياً فيها، يعرفُه الناسُ بالعدلِ والفطنة، وقد أثنى عليه عليٌّ وأكرمَه.<br><br>وفي الإسلامِ قاعدةٌ عظيمة: الحاكمُ والمحكومُ أمامَ القضاءِ سواء، فلا يأخذُ أحدٌ شيئاً بقوّتِه أو منصبِه. وتُروى في ذلك قصّةٌ مشهورةٌ يحكيها الآباءُ لأبنائِهم منذ قرون، عن درعٍ ضاعت من أميرِ المؤمنين.",
+        "en": "Years passed, and <b>Ali ibn Abi Talib</b> became Commander of the Faithful and made <b>Kufa</b> his seat. Shurayh was still a judge there, known among people for justice and sharp insight, and Ali praised and honored him.<br><br>In Islam there is a great rule: the ruler and the ruled are equal before the court; no one takes anything by his strength or position. A famous story is told about this — one that parents have told their children for centuries — about a shield that the Commander of the Faithful lost."
+       }
+      },
       { scene:'mosque', character:'🛡️',
         text:{ ar:'<b>يُروى</b> — وهي قصّةٌ مشهورةٌ تكلّمَ العلماءُ في إسنادِها — أنّ أميرَ المؤمنين <b>عليَّ بنَ أبي طالب</b> رضي الله عنه فقدَ <b>درعاً</b> له، ثمّ رآها عند رجلٍ من <b>أهلِ الذمّة</b> (غيرِ المسلمين الذين يعيشون آمنينَ في بلادِ الإسلام). فقال عليّ: هذه درعي! فقال الرجل: بل درعي، وهي في يدي. وكان عليٌّ هو الخليفة، يستطيعُ أن يأخذَها بأمرِه، لكنّه قال: بيني وبينك <b>القاضي</b>. فذهبا إلى <b>شُريح</b>.<br><br>جلسَ الخليفةُ والرجلُ أمامَ القاضي سواءً. فقال شُريحٌ لعليّ: يا أميرَ المؤمنين، هل عندك <b>بيّنةٌ</b> (شهود)؟ فلمّا لم تكتملْ عنده البيّنةُ التي يقبلُها القاضي، <b>حكمَ شُريحٌ بالدرعِ للرجل</b>! فتعجّبَ الرجلُ وقال: أميرُ المؤمنين يذهبُ معي إلى قاضيه، وقاضيه يحكمُ عليه، فيرضى! <b>هذه أخلاقُ الأنبياء</b>. ثمّ اعترفَ أنّ الدرعَ لعليّ، و<b>أسلمَ</b>. فقال عليٌّ: أمّا إذ أسلمتَ فهي لك. ومهما قيلَ في إسنادِ هذه القصّة، فإنّ معناها ثابتٌ في دينِنا: <b>العدلُ للناسِ جميعاً</b>، مسلمِهم وغيرِ مسلمِهم.',
           en:'<b>It is reported</b> — a famous story whose chain of narration scholars have discussed — that the Commander of the Faithful <b>Ali ibn Abi Talib</b> lost a <b>shield (armor)</b> of his, then saw it with a man from the <b>dhimmis</b> (non-Muslims living safely in Muslim lands). Ali said: This is my shield! The man said: No, it is mine, and it is in my hand. Ali was the caliph and could have taken it by command, but he said: Let the <b>judge</b> decide between us. So they went to <b>Shurayh</b>.<br><br>The caliph and the man sat before the judge as equals. Shurayh said to Ali: O Commander of the Faithful, do you have <b>proof</b> (witnesses)? When Ali did not have the full proof the judge required, <b>Shurayh ruled the shield for the man</b>! The man was amazed and said: The Commander of the Faithful comes with me to his own judge, and his judge rules against him, and he accepts! <b>These are the manners of prophets.</b> Then he admitted the shield was Ali’s and <b>embraced Islam</b>. Ali said: Since you have become Muslim, it is yours. Whatever is said about this story’s chain, its meaning is firm in our religion: <b>justice is for all people</b>, Muslim and non-Muslim.' },
@@ -40,6 +64,14 @@ HISN_STORIES.shurayh = [
             { t:{ar:'لأنّه رأى عدلَ الإسلامِ حتى مع الخليفة',en:'Because he saw Islam’s justice even with the caliph'},c:true,exp:{ar:'نعم! العدلُ والأخلاقُ الحسنةُ أجملُ دعوةٍ إلى الإسلام.',en:'Yes! Justice and good character are the finest invitation to Islam.'} },
             { t:{ar:'ليأخذَ الدرع',en:'To get the shield'},c:false,exp:{ar:'لا، فقد كان القاضي حكمَ له بها أصلاً.',en:'No — the judge had already ruled it his.'} },
           ] } },
+      {
+       "scene": "scales",
+       "character": "⚖️",
+       "text": {
+        "ar": "لماذا طلبَ شُريحٌ <b>البيّنة</b> من أميرِ المؤمنين نفسِه؟ لأنّ النبيَّ ﷺ علّمنا قاعدةً عادلة، فقال: <b>«لو يُعطى الناسُ بدعواهم لادّعى رجالٌ أموالَ قومٍ ودماءَهم، ولكنّ اليمينَ على المدّعى عليه»</b> (رواه مسلم). فالكلامُ وحدَه لا يكفي، ولا بدّ من دليل، مهما كان قائلُه.<br><br>وأمرنا اللهُ أن نعدلَ حتى مع من نختلفُ معهم: ﴿اعْدِلُوا هُوَ أَقْرَبُ لِلتَّقْوَىٰ﴾. فإذا اختلفتَ مع زميلٍ على قلمٍ أو لعبة، فلا تأخذْها بالقوّة، بل تكلّما بهدوء، واحتكما إلى معلّمٍ عادل، وارضَ بالحكمِ ولو كان عليك.",
+        "en": "Why did Shurayh ask the Commander of the Faithful himself for <b>proof</b>? Because the Prophet ﷺ taught us a just rule: <b>“If people were given according to their claims, some men would claim the wealth and lives of others; but the oath is upon the one against whom the claim is made”</b> (Muslim). Words alone are not enough; there must be evidence, no matter who is speaking.<br><br>Allah commanded us to be just even with those we disagree with: ﴿Be just; that is nearer to righteousness﴾. So if you and a classmate disagree over a pen or a toy, do not take it by force. Talk calmly, go to a fair teacher to decide, and accept the ruling even if it goes against you."
+       }
+      }
     ],
     quiz:[
       { q:{ar:'إلى مَن ذهبَ عليٌّ والرجلُ ليحكمَ بينهما؟',en:'To whom did Ali and the man go for judgment?'},
@@ -58,6 +90,14 @@ HISN_STORIES.shurayh = [
   { icon:'👨‍👦', scene:'scales', character:'💙',
     title:{ ar:'اللهُ أعزُّ عليّ منك', en:'Allah Is Dearer to Me Than You' },
     pages:[
+      {
+       "scene": "mosque",
+       "character": "🧑‍⚖️",
+       "text": {
+        "ar": "كان مجلسُ <b>شُريحٍ</b> في الكوفةِ يمتلئُ بالناس: تاجرٌ يشكو شريكَه، وجارٌ يختلفُ مع جارِه، وامرأةٌ تطلبُ حقَّها. وكان شُريحٌ يسمعُ من الطرفين بصبر، ولا يُخيفُ أحداً ولا يُلقّنُه حُجّتَه.<br><br>وكان يعلمُ أنّ القضاءَ أمانةٌ ثقيلة؛ فقد قالَ النبيُّ ﷺ: <b>«القضاةُ ثلاثة: واحدٌ في الجنّة واثنانِ في النار؛ فأمّا الذي في الجنّةِ فرجلٌ عرفَ الحقَّ فقضى به»</b> (رواه أبو داود وصحّحه الألباني). فكان يخافُ اللهَ في كلِّ حكم، ولو كان صاحبُ القضيّةِ أقربَ الناسِ إليه. وفي يومٍ من الأيّام، جاءَه أقربُ الناسِ إليه فعلاً: ابنُه!",
+        "en": "Shurayh's court in Kufa was always full of people: a merchant complaining about his partner, a neighbor disagreeing with his neighbor, a woman seeking her right. Shurayh listened to both sides patiently; he never frightened anyone, nor fed anyone his argument.<br><br>He knew that judging is a heavy trust. The Prophet ﷺ said: <b>“Judges are three: one in Paradise and two in the Fire. As for the one in Paradise, he is a man who knew the truth and judged by it”</b> (Abu Dawud; graded authentic by al-Albani). So he feared Allah in every ruling, even if the person in the case was the closest of people to him. And one day, the closest person to him really did come: his own son!"
+       }
+      },
       { scene:'scales', character:'👦',
         text:{ ar:'جاءَ ابنُ <b>شُريحٍ</b> يوماً إلى أبيه وقال: يا أبتِ، بيني وبين قومٍ خصومة (خلاف)، فإن كان الحقُّ لي خاصمتُهم إليك، وإن كان لهم صالحتُهم. ثمّ قصَّ عليه القصّة. فقال له شُريح: <b>انطلقْ فخاصمْهم</b>. ففرِحَ الابنُ وظنَّ أنّ الحقَّ معه، وجاءَ بالقومِ إلى مجلسِ القضاء.<br><br>فلمّا سمعَ شُريحٌ من الطرفين، <b>حكمَ للقومِ على ابنِه</b>! فلمّا رجعا إلى البيت قال الابنُ معاتباً: يا أبتِ، لو لم أستشرْك ما لُمتُك، لكنّك فضحتَني! فقال شُريح: <b>«يا بُنيّ، واللهِ لأنتَ أحبُّ إليّ من مِلءِ الأرضِ من أمثالِهم، ولكنّ اللهَ أعزُّ عليّ منك»</b>. ثمّ شرحَ له: خشيتُ إن أخبرتُك أنّ الحقَّ لهم أن تُصالحَهم صُلحاً يُضيِّعُ عليهم بعضَ حقِّهم. فحفظَ شُريحٌ الحقَّ لأصحابِه كاملاً، ولو كان على أحبِّ الناسِ إليه. وهذا ما أمرنا به ربُّنا: ﴿ كُونُوا قَوَّامِينَ بِالْقِسْطِ شُهَدَاءَ لِلَّهِ وَلَوْ عَلَىٰ أَنْفُسِكُمْ أَوِ الْوَالِدَيْنِ وَالْأَقْرَبِينَ ﴾.',
           en:'One day the son of <b>Shurayh</b> came to his father and said: Father, I have a dispute with some people. If the right is mine, I will bring them to you for judgment; if it is theirs, I will settle with them. Then he told him the story. Shurayh said: <b>Go and bring your case against them.</b> The son was happy, thinking the right was his, and brought the people to court.<br><br>When Shurayh had heard both sides, <b>he ruled for the people against his son</b>! At home the son said, hurt: Father, had I not consulted you, I would not blame you — but you embarrassed me! Shurayh said: <b>"My son, by Allah, you are dearer to me than the earth full of people like them — but Allah is dearer to me than you."</b> Then he explained: I feared that if I told you the right was theirs, you would settle with them in a way that lost them part of their right. So Shurayh kept the full right for its owners, even against the one he loved most. This is what our Lord commands: "Stand firm for justice, as witnesses for Allah, even against yourselves, your parents, or your relatives." (An-Nisa 135)' },
@@ -67,6 +107,14 @@ HISN_STORIES.shurayh = [
             { t:{ar:'لأنّه نسي',en:'Because he forgot'},c:false,exp:{ar:'لا، بل كان قصدُه حفظَ الحقِّ كاملاً.',en:'No — his aim was to keep the right whole.'} },
             { t:{ar:'ليحفظَ حقَّ القومِ كاملاً فلا يضيعَ بالصلح',en:'To keep the people’s full right from being lost in a settlement'},c:true,exp:{ar:'نعم! العدلُ أن يصلَ الحقُّ كاملاً إلى صاحبِه.',en:'Yes! Justice means the full right reaches its owner.'} },
           ] } },
+      {
+       "scene": "dwellings",
+       "character": "❤️",
+       "text": {
+        "ar": "لم يكنْ شُريحٌ قاسياً على ابنِه، بل كان يحبُّه حبّاً شديداً كما قال. لكنّه علّمَه درساً لا يُنسى: أنّ <b>الحبَّ لا يجعلُنا نظلمُ الآخرين</b>، وأنّ رضا اللهِ أغلى من رضا أيِّ أحد. فالقاضي العادلُ يحفظُ حقَّ الغريبِ كما يحفظُ حقَّ القريب.<br><br>وأنتَ يا صغيري قد تقفُ يوماً بين أخيك وصديقِك، أو بين أختِك وجارتِك، فتميلُ نفسُك إلى من تحبّ. فتذكّرْ شُريحاً، وقلْ الحقَّ ولو على من تحبّ، فاللهُ يحبُّ العادلين، وقد قال: ﴿إِنَّ اللَّهَ يُحِبُّ الْمُقْسِطِينَ﴾.",
+        "en": "Shurayh was not harsh with his son — he loved him dearly, as he said. But he taught him an unforgettable lesson: that <b>love must never make us wrong others</b>, and that Allah's pleasure is more precious than anyone's pleasure. A just judge protects the stranger's right just as he protects the relative's.<br><br>You too, young one, may one day stand between your brother and your friend, or between your sister and your neighbor, and your heart will lean toward the one you love. Remember Shurayh, and say the truth even against those you love, for Allah loves the just, and He said: ﴿Indeed, Allah loves those who act justly﴾."
+       }
+      }
     ],
     quiz:[
       { q:{ar:'لمَن حكمَ شُريحٌ في خصومةِ ابنِه؟',en:'For whom did Shurayh rule in his son’s dispute?'},

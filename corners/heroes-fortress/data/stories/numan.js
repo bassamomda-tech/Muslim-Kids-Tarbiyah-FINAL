@@ -1,84 +1,616 @@
 /* data/stories/numan.js — Heroes · An-Nu'man ibn Muqarrin — sources: صحيح البخاري · مسند أحمد · تفسير الطبري · سير أعلام النبلاء · البداية والنهاية · إسلام ويب · الدرر السنية */
 window.HISN_STORIES = window.HISN_STORIES || {};
 HISN_STORIES.numan = [
-  { icon:'🌴', scene:'palm', character:'🐪',
-    title:{ ar:'وفدُ مُزَينةَ والتمرُ المبارك', en:'The Delegation of Muzayna and the Blessed Dates' },
-    pages:[
-      { scene:'palm', character:'🌴',
-        text:{ ar:'في السنواتِ الأولى بعد الهجرة، خرجَ من قبيلةِ <b>مُزَينة</b> وفدٌ كبيرٌ — <b>أربعُمئةِ رجل</b> — يقصدونَ المدينةَ ليلقَوا رسولَ اللهِ ﷺ. وكان بينهم شابٌّ اسمُه <b>النعمانُ بنُ مُقرِّن</b> مع إخوتِه. فأسلموا وبايعوا النبيَّ ﷺ، وفرحَ بهم فرحاً شديداً. يروي النعمانُ نفسُه — كما في مسندِ الإمامِ أحمد — أنّهم لمّا أرادوا الرجوعَ إلى بلادِهم قال النبيُّ ﷺ: <b>«يا عمرُ، زوِّدِ القوم»</b> (أعطِهم طعاماً للطريق). فقال عمر: ما عندي إلّا شيءٌ قليلٌ من التمر! فقال ﷺ: انطلقْ فزوِّدْهم.<br><br>فصعدَ بهم عمرُ إلى غرفةٍ فيها كومةٌ من التمر، فأخذَ كلُّ واحدٍ منهم حاجتَه — أربعُمئةِ رجل! — قال النعمان: فكنتُ في آخرِ القوم، فالتفتُّ فإذا التمرُ كما هو <b>لم ينقصْ منه شيء</b>! معجزةٌ من معجزاتِ النبيِّ ﷺ. ثمّ عاشَ النعمانُ وإخوتُه — وكانوا سبعةَ إخوةٍ صحابة — بيتاً مملوءاً بالإيمانِ ورقّةِ القلب، حتى قال مجاهدٌ إنّ فيهم نزلَ قولُه تعالى: ﴿ وَمِنَ الْأَعْرَابِ مَنْ يُؤْمِنُ بِاللَّهِ وَالْيَوْمِ الْآخِرِ وَيَتَّخِذُ مَا يُنْفِقُ قُرُبَاتٍ عِنْدَ اللَّهِ وَصَلَوَاتِ الرَّسُولِ ﴾.',
-          en:'In the early years after the Hijra, a large delegation set out from the tribe of <b>Muzayna</b> — <b>four hundred men</b> — heading to Madinah to meet the Messenger of Allah ﷺ. Among them was a young man named <b>an-Nu‘man ibn Muqarrin</b> with his brothers. They embraced Islam and pledged allegiance to the Prophet ﷺ, who rejoiced in them greatly. An-Nu‘man himself narrates — as in the Musnad of Imam Ahmad — that when they wanted to return home, the Prophet ﷺ said: <b>"O Umar, give the people provisions"</b> (food for the road). Umar said: I have only a little dates! He ﷺ said: Go and give them provisions.<br><br>Umar took them up to a room with a heap of dates, and each of them took what he needed — four hundred men! An-Nu‘man said: I was the last of them, and I turned and saw the dates as they were — <b>nothing had decreased</b>! A miracle of the Prophet ﷺ. Afterward an-Nu‘man and his brothers — seven brothers, all companions — lived as a house full of faith and tender hearts, so that Mujahid said about them was revealed: "And among the Bedouins are those who believe in Allah and the Last Day and consider what they spend as a means of nearness to Allah and of the Messenger’s prayers." (At-Tawba 99)' },
-        choice:{ q:{ar:'ماذا رأى النعمانُ حين التفتَ إلى التمر؟',en:'What did an-Nu‘man see when he turned to the dates?'},
-          opts:[
-            { t:{ar:'أنّ التمرَ نفِدَ كلُّه',en:'That all the dates were gone'},c:false,exp:{ar:'لا، بل بقيَ كما هو، معجزةً للنبيِّ ﷺ.',en:'No — it remained as it was, a miracle of the Prophet ﷺ.'} },
-            { t:{ar:'أنّ التمرَ لم ينقصْ منه شيء',en:'That nothing had decreased from the dates'},c:true,exp:{ar:'نعم! أخذَ أربعُمئةِ رجلٍ ولم ينقصْ — بركةُ النبيِّ ﷺ.',en:'Yes! Four hundred took and it did not decrease — the Prophet’s ﷺ blessing.'} },
-            { t:{ar:'أنّ عمرَ أخفى التمر',en:'That Umar hid the dates'},c:false,exp:{ar:'لا، بل أعطاهم كما أمرَه النبيُّ ﷺ.',en:'No — he gave as the Prophet ﷺ commanded.'} },
-          ] } },
-    ],
-    quiz:[
-      { q:{ar:'كم كان عددُ وفدِ مُزَينة؟',en:'How many were in the delegation of Muzayna?'},
-        opts:[ {t:{ar:'عشرةُ رجال',en:'Ten men'},c:false}, {t:{ar:'ألفُ رجل',en:'A thousand men'},c:false}, {t:{ar:'أربعُمئةِ رجل',en:'Four hundred men'},c:true} ] },
-      { q:{ar:'مَن أمرَه النبيُّ ﷺ أن يُزوّدَ الوفد؟',en:'Whom did the Prophet ﷺ tell to give the delegation provisions?'},
-        opts:[ {t:{ar:'عمرُ بنُ الخطّاب',en:'Umar ibn al-Khattab'},c:true}, {t:{ar:'بلال',en:'Bilal'},c:false}, {t:{ar:'أبو هريرة',en:'Abu Hurayra'},c:false} ] },
-      { q:{ar:'كم كان عددُ الإخوةِ من بني مُقرِّنٍ في هذه القصّة؟',en:'How many brothers of the sons of Muqarrin are mentioned?'},
-        opts:[ {t:{ar:'اثنان',en:'Two'},c:false}, {t:{ar:'سبعةُ إخوة',en:'Seven brothers'},c:true}, {t:{ar:'لا إخوةَ له',en:'He had no brothers'},c:false} ] },
-    ],
-    moral:{ar:'بركةُ اللهِ تجعلُ القليلَ كثيراً — والبيتُ الذي يتعاونُ على الإيمانِ يرفعُه الله.',en:'Allah’s blessing makes little plenty — and a home that helps each other in faith is raised by Allah.'},
-    badge:{icon:'🌴',title:{ar:'وِسامُ البركةِ والوفد',en:'Badge of Blessing & the Delegation'}},
-    reflect:[ {ar:'كيف تتعاونُ مع إخوتِك لتكونوا «بيتاً مؤمناً»؟',en:'How can you and your siblings work together to be a "house of faith"?'}, {ar:'هل رأيتَ البركةَ في شيءٍ قليلٍ تقاسمتَه مع غيرِك؟',en:'Have you seen blessing in something small you shared with others?'} ],
-    didYouKnow:[ {ar:'حديثُ النعمانِ في قدومِ أربعِمئةٍ من مُزَينةَ وتزويدِ عمرَ لهم من التمرِ الذي لم ينقص رواه أحمدُ والطبرانيّ — المصدر: مسند أحمد · مجمع الزوائد',en:'An-Nu‘man’s report of four hundred of Muzayna and Umar giving them dates that did not decrease is narrated by Ahmad and at-Tabarani — Source: Musnad Ahmad · Majma‘ az-Zawa’id'}, {ar:'قال مجاهد: هم بنو مُقرِّنٍ من مُزَينة — في تفسيرِ آيةِ التوبة ٩٩ — المصدر: تفسير الطبري',en:'Mujahid said: they are the sons of Muqarrin of Muzayna — on At-Tawba 99 — Source: Tafsir at-Tabari'} ],
+ {
+  "icon": "🌴",
+  "scene": "palm",
+  "character": "🐪",
+  "title": {
+   "ar": "وفدُ مُزَينةَ والتمرُ المبارك",
+   "en": "The Delegation of Muzayna and the Blessed Dates"
   },
-
-  { icon:'🌬️', scene:'wind', character:'📜',
-    title:{ ar:'حتى تهبَّ الرياح', en:'Until the Winds Blow' },
-    pages:[
-      { scene:'wind', character:'🌬️',
-        text:{ ar:'في خلافةِ <b>عمرَ بنِ الخطّاب</b> رضي الله عنه، جعلَ <b>النعمانَ</b> والياً على بلدةٍ اسمُها <b>كَسْكَر</b> في العراق، يجمعُ خراجَها (أموالَها). لكنّ قلبَ النعمانِ كان يحبُّ أن يكونَ في سبيلِ الله أكثرَ من الجلوسِ على كرسيِّ الوالي. فعرفَ عمرُ ذلك منه، فقال له — كما يذكرُ الذهبيّ — إنّه لن يستعملَه في جمعِ الأموال، بل في الجهادِ في سبيلِ الله، وجعلَه <b>أميراً على جيشِ المسلمين</b>.<br><br>ولم يكن النعمانُ قائداً يعتمدُ على رأيِه وحدَه، بل كان يحفظُ <b>سُنّةَ النبيِّ ﷺ</b> ويعملُ بها. فلمّا استعجلَه بعضُ أصحابِه أن يبدأَ القتالَ أوّلَ النهار، قال كما في <b>صحيح البخاري</b>: <b>«شهدتُ القتالَ مع رسولِ اللهِ ﷺ، كان إذا لم يُقاتلْ في أوّلِ النهار، انتظرَ حتى تهبَّ الأرواحُ (الرياح) وتحضرَ الصلوات»</b>. فانتظرَ كما كان النبيُّ ﷺ ينتظر — حين يبردُ الجوّ، وتهبُّ الرياح، ويدعو المسلمونَ في صلواتِهم. لقد كان النعمانُ يرى أنّ أحسنَ خطّةٍ هي <b>اتّباعُ ما فعلَه النبيُّ ﷺ</b>.',
-          en:'During the caliphate of <b>Umar ibn al-Khattab</b>, he made <b>an-Nu‘man</b> governor of a town called <b>Kaskar</b> in Iraq, collecting its revenues. But an-Nu‘man’s heart loved being in Allah’s path more than sitting in the governor’s seat. Umar knew this about him and told him — as adh-Dhahabi mentions — that he would not employ him in collecting money, but in striving in Allah’s path, and made him <b>commander of the Muslim army</b>.<br><br>An-Nu‘man was not a commander who relied on his own opinion alone; he kept the <b>Sunnah of the Prophet ﷺ</b> and acted on it. When some companions urged him to start fighting early in the day, he said, as in <b>Sahih al-Bukhari</b>: <b>"I witnessed battle with the Messenger of Allah ﷺ: if he did not fight at the start of the day, he would wait until the winds blew and the prayer times came."</b> So he waited as the Prophet ﷺ waited — when the air cools, the winds blow, and the Muslims supplicate in their prayers. An-Nu‘man saw that the best plan is <b>following what the Prophet ﷺ did</b>.' },
-        choice:{ q:{ar:'لماذا انتظرَ النعمانُ حتى تهبَّ الرياح؟',en:'Why did an-Nu‘man wait until the winds blew?'},
-          opts:[
-            { t:{ar:'لأنّه كان خائفاً',en:'Because he was afraid'},c:false,exp:{ar:'لا، بل اتّباعاً لسُنّةِ النبيِّ ﷺ.',en:'No — to follow the Sunnah of the Prophet ﷺ.'} },
-            { t:{ar:'اتّباعاً لما كان يفعلُه النبيُّ ﷺ',en:'To follow what the Prophet ﷺ used to do'},c:true,exp:{ar:'نعم! السُّنّةُ أحسنُ خطّةٍ في كلِّ أمر.',en:'Yes! The Sunnah is the best plan in every matter.'} },
-            { t:{ar:'لأنّه كان نائماً',en:'Because he was asleep'},c:false,exp:{ar:'لا، بل كان يعملُ بما حفظَه عن النبيِّ ﷺ.',en:'No — he acted on what he preserved from the Prophet ﷺ.'} },
-          ] } },
-    ],
-    quiz:[
-      { q:{ar:'على أيِّ بلدةٍ ولّى عمرُ النعمانَ أوّلاً؟',en:'Which town did Umar first make an-Nu‘man governor of?'},
-        opts:[ {t:{ar:'كَسْكَر',en:'Kaskar'},c:true}, {t:{ar:'مكّة',en:'Makkah'},c:false}, {t:{ar:'دمشق',en:'Damascus'},c:false} ] },
-      { q:{ar:'في أيِّ كتابٍ رُويَ حديثُ النعمانِ عن انتظارِ الرياح؟',en:'In which book is an-Nu‘man’s report about waiting for the winds?'},
-        opts:[ {t:{ar:'كتابِ ألفِ ليلة',en:'The Thousand and One Nights'},c:false}, {t:{ar:'صحيحِ البخاري',en:'Sahih al-Bukhari'},c:true}, {t:{ar:'ديوانِ شعر',en:'A poetry collection'},c:false} ] },
-      { q:{ar:'ما الذي أحبَّه النعمانُ أكثرَ من منصبِ الوالي؟',en:'What did an-Nu‘man love more than being governor?'},
-        opts:[ {t:{ar:'جمعَ الأموال',en:'Collecting money'},c:false}, {t:{ar:'الراحة',en:'Rest'},c:false}, {t:{ar:'أن يكونَ في سبيلِ الله',en:'Being in Allah’s path'},c:true} ] },
-    ],
-    moral:{ar:'أحسنُ الخططِ ما وافقَ سُنّةَ النبيِّ ﷺ — والمؤمنُ يحبُّ الخيرَ أكثرَ من المنصب.',en:'The best plan is the one that matches the Prophet’s ﷺ Sunnah — and a believer loves good more than position.'},
-    badge:{icon:'🌬️',title:{ar:'وِسامُ اتّباعِ السُّنّة',en:'Badge of Following the Sunnah'}},
-    reflect:[ {ar:'ما السُّنّةُ التي تحفظُها عن النبيِّ ﷺ وتعملُ بها كلَّ يوم؟',en:'Which Sunnah of the Prophet ﷺ do you know and practice every day?'}, {ar:'لو خُيّرتَ بين أن تكونَ «رئيسَ الفريق» أو أن تخدمَ الفريق، ماذا تختار؟',en:'If you had to choose between being "team captain" or serving the team, which would you pick?'} ],
-    didYouKnow:[ {ar:'قال النعمان: «شهدتُ القتالَ مع رسولِ اللهِ ﷺ، كان إذا لم يُقاتلْ في أوّلِ النهارِ انتظرَ حتى تهبَّ الأرواحُ وتحضرَ الصلوات» — المصدر: صحيح البخاري (كتاب الجزية)',en:'An-Nu‘man said: "I witnessed battle with the Messenger of Allah ﷺ; if he did not fight at the start of the day he waited until the winds blew and the prayers came" — Source: Sahih al-Bukhari (Book of Jizya)'}, {ar:'ذكرَ الذهبيُّ أنّ النعمانَ وليَ كَسْكَرَ لعمر، ثمّ صرفَه عمرُ ليجعلَه في الجهاد — المصدر: سير أعلام النبلاء',en:'Adh-Dhahabi mentions an-Nu‘man governed Kaskar for Umar, who then moved him to lead in jihad — Source: Siyar A‘lam an-Nubala’'} ],
+  "pages": [
+   {
+    "scene": "desert",
+    "character": "🐪",
+    "text": {
+     "ar": "كانت قبيلةُ <b>مُزَينة</b> تسكنُ في بلادٍ قريبةٍ من <b>المدينةِ المنوّرة</b>، أهلَ إبلٍ وغنمٍ ونخيل. ولمّا انتشرَ خبرُ النبيِّ ﷺ ودينِه الجديد، تحدّثَ رجالُها بينهم: ما هذا الدينُ الذي يدعو إلى عبادةِ اللهِ وحدَه، وإلى الصدقِ وصلةِ الرحم؟<br><br>ويذكرُ ابنُ سعدٍ في «الطبقات» أنّ وفدَ مُزَينةَ كان <b>أوّلَ وفدٍ</b> قدمَ على النبيِّ ﷺ من قبائلِ مُضَر. فتجهّزوا للسفر، وركبوا رواحلَهم، وساروا في الصحراءِ قاصدينَ المدينة، وقلوبُهم مشتاقةٌ إلى لقاءِ رسولِ الله ﷺ.",
+     "en": "The tribe of <b>Muzayna</b> lived in lands close to <b>Madinah</b> — people of camels, sheep and palm trees. When news spread of the Prophet ﷺ and his new religion, its men talked among themselves: What is this religion that calls to worshipping Allah alone, to truthfulness and to keeping family ties?<br><br>Ibn Sa’d mentions in \"at-Tabaqat\" that the delegation of Muzayna was <b>the first delegation</b> to come to the Prophet ﷺ from the tribes of Mudar. They prepared for the journey, mounted their camels and travelled through the desert towards Madinah, their hearts longing to meet the Messenger of Allah ﷺ."
+    }
+   },
+   {
+    "scene": "palm",
+    "character": "🌴",
+    "text": {
+     "ar": "في السنواتِ الأولى بعد الهجرة، خرجَ من قبيلةِ <b>مُزَينة</b> وفدٌ كبيرٌ — <b>أربعُمئةِ رجل</b> — يقصدونَ المدينةَ ليلقَوا رسولَ اللهِ ﷺ. وكان بينهم شابٌّ اسمُه <b>النعمانُ بنُ مُقرِّن</b> مع إخوتِه. فأسلموا وبايعوا النبيَّ ﷺ، وفرحَ بهم فرحاً شديداً. يروي النعمانُ نفسُه — كما في مسندِ الإمامِ أحمد — أنّهم لمّا أرادوا الرجوعَ إلى بلادِهم قال النبيُّ ﷺ: <b>«يا عمرُ، زوِّدِ القوم»</b> (أعطِهم طعاماً للطريق). فقال عمر: ما عندي إلّا شيءٌ قليلٌ من التمر! فقال ﷺ: انطلقْ فزوِّدْهم.",
+     "en": "In the early years after the Hijra, a large delegation set out from the tribe of <b>Muzayna</b> — <b>four hundred men</b> — heading to Madinah to meet the Messenger of Allah ﷺ. Among them was a young man named <b>an-Nu‘man ibn Muqarrin</b> with his brothers. They embraced Islam and pledged allegiance to the Prophet ﷺ, who rejoiced in them greatly. An-Nu‘man himself narrates — as in the Musnad of Imam Ahmad — that when they wanted to return home, the Prophet ﷺ said: <b>\"O Umar, give the people provisions\"</b> (food for the road). Umar said: I have only a little dates! He ﷺ said: Go and give them provisions."
+    }
+   },
+   {
+    "scene": "palm",
+    "character": "🌴",
+    "text": {
+     "ar": "فصعدَ بهم عمرُ إلى غرفةٍ فيها كومةٌ من التمر، فأخذَ كلُّ واحدٍ منهم حاجتَه — أربعُمئةِ رجل! — قال النعمان: فكنتُ في آخرِ القوم، فالتفتُّ فإذا التمرُ كما هو <b>لم ينقصْ منه شيء</b>! معجزةٌ من معجزاتِ النبيِّ ﷺ. ثمّ عاشَ النعمانُ وإخوتُه — وكانوا سبعةَ إخوةٍ صحابة — بيتاً مملوءاً بالإيمانِ ورقّةِ القلب، حتى قال مجاهدٌ إنّ فيهم نزلَ قولُه تعالى: ﴿ وَمِنَ الْأَعْرَابِ مَنْ يُؤْمِنُ بِاللَّهِ وَالْيَوْمِ الْآخِرِ وَيَتَّخِذُ مَا يُنْفِقُ قُرُبَاتٍ عِنْدَ اللَّهِ وَصَلَوَاتِ الرَّسُولِ ﴾.",
+     "en": "Umar took them up to a room with a heap of dates, and each of them took what he needed — four hundred men! An-Nu‘man said: I was the last of them, and I turned and saw the dates as they were — <b>nothing had decreased</b>! A miracle of the Prophet ﷺ. Afterward an-Nu‘man and his brothers — seven brothers, all companions — lived as a house full of faith and tender hearts, so that Mujahid said about them was revealed: \"And among the Bedouins are those who believe in Allah and the Last Day and consider what they spend as a means of nearness to Allah and of the Messenger’s prayers.\" (At-Tawba 99)"
+    },
+    "choice": {
+     "q": {
+      "ar": "ماذا رأى النعمانُ حين التفتَ إلى التمر؟",
+      "en": "What did an-Nu‘man see when he turned to the dates?"
+     },
+     "opts": [
+      {
+       "t": {
+        "ar": "أنّ التمرَ نفِدَ كلُّه",
+        "en": "That all the dates were gone"
+       },
+       "c": false,
+       "exp": {
+        "ar": "لا، بل بقيَ كما هو، معجزةً للنبيِّ ﷺ.",
+        "en": "No — it remained as it was, a miracle of the Prophet ﷺ."
+       }
+      },
+      {
+       "t": {
+        "ar": "أنّ التمرَ لم ينقصْ منه شيء",
+        "en": "That nothing had decreased from the dates"
+       },
+       "c": true,
+       "exp": {
+        "ar": "نعم! أخذَ أربعُمئةِ رجلٍ ولم ينقصْ — بركةُ النبيِّ ﷺ.",
+        "en": "Yes! Four hundred took and it did not decrease — the Prophet’s ﷺ blessing."
+       }
+      },
+      {
+       "t": {
+        "ar": "أنّ عمرَ أخفى التمر",
+        "en": "That Umar hid the dates"
+       },
+       "c": false,
+       "exp": {
+        "ar": "لا، بل أعطاهم كما أمرَه النبيُّ ﷺ.",
+        "en": "No — he gave as the Prophet ﷺ commanded."
+       }
+      }
+     ]
+    }
+   },
+   {
+    "scene": "dwellings",
+    "character": "🏠",
+    "text": {
+     "ar": "ويُروى عن الصحابيِّ <b>عبدِ اللهِ بنِ مسعود</b> أنّه قال: إنّ للإيمانِ بيوتاً، وإنّ <b>بيتَ بني مُقرِّن</b> من بيوتِ الإيمان. سبعةُ إخوةٍ صحبوا النبيَّ ﷺ، يتعاونونَ على الطاعة، ويتسابقونَ إلى الخير.<br><br>وانظرْ إلى البركة: تمرٌ قليلٌ في غرفةٍ صغيرة، يكفي أربعَمئةِ رجلٍ ولا ينقص! فالبركةُ من الله، وتنزلُ على مَن أطاعَه وأحسنَ النيّة. وأنتَ إذا شاركتَ طعامَك مع إخوتِك وأصدقائك، وسمّيتَ الله، بارَكَ اللهُ فيه. وحاوِلْ أن يكونَ بيتُكم «بيتاً من بيوتِ الإيمان»: تتعاونونَ فيه على الصلاةِ والقرآنِ وحُسنِ الخُلُق.",
+     "en": "It is reported that the Companion <b>Abdullah ibn Mas‘ud</b> said: Faith has its houses, and <b>the house of the sons of Muqarrin</b> is one of the houses of faith. Seven brothers who accompanied the Prophet ﷺ, helping one another in obedience and racing one another in good deeds.<br><br>Look at the blessing: a small amount of dates in a little room was enough for four hundred men and did not decrease! Blessing comes from Allah, and it descends on those who obey Him and have good intentions. When you share your food with your siblings and friends and say Bismillah, Allah puts blessing in it. Try to make your home \"one of the houses of faith\": a place where you help each other with prayer, the Qur’an and good manners."
+    }
+   }
+  ],
+  "quiz": [
+   {
+    "q": {
+     "ar": "كم كان عددُ وفدِ مُزَينة؟",
+     "en": "How many were in the delegation of Muzayna?"
+    },
+    "opts": [
+     {
+      "t": {
+       "ar": "عشرةُ رجال",
+       "en": "Ten men"
+      },
+      "c": false
+     },
+     {
+      "t": {
+       "ar": "ألفُ رجل",
+       "en": "A thousand men"
+      },
+      "c": false
+     },
+     {
+      "t": {
+       "ar": "أربعُمئةِ رجل",
+       "en": "Four hundred men"
+      },
+      "c": true
+     }
+    ]
+   },
+   {
+    "q": {
+     "ar": "مَن أمرَه النبيُّ ﷺ أن يُزوّدَ الوفد؟",
+     "en": "Whom did the Prophet ﷺ tell to give the delegation provisions?"
+    },
+    "opts": [
+     {
+      "t": {
+       "ar": "عمرُ بنُ الخطّاب",
+       "en": "Umar ibn al-Khattab"
+      },
+      "c": true
+     },
+     {
+      "t": {
+       "ar": "بلال",
+       "en": "Bilal"
+      },
+      "c": false
+     },
+     {
+      "t": {
+       "ar": "أبو هريرة",
+       "en": "Abu Hurayra"
+      },
+      "c": false
+     }
+    ]
+   },
+   {
+    "q": {
+     "ar": "كم كان عددُ الإخوةِ من بني مُقرِّنٍ في هذه القصّة؟",
+     "en": "How many brothers of the sons of Muqarrin are mentioned?"
+    },
+    "opts": [
+     {
+      "t": {
+       "ar": "اثنان",
+       "en": "Two"
+      },
+      "c": false
+     },
+     {
+      "t": {
+       "ar": "سبعةُ إخوة",
+       "en": "Seven brothers"
+      },
+      "c": true
+     },
+     {
+      "t": {
+       "ar": "لا إخوةَ له",
+       "en": "He had no brothers"
+      },
+      "c": false
+     }
+    ]
+   }
+  ],
+  "moral": {
+   "ar": "بركةُ اللهِ تجعلُ القليلَ كثيراً — والبيتُ الذي يتعاونُ على الإيمانِ يرفعُه الله.",
+   "en": "Allah’s blessing makes little plenty — and a home that helps each other in faith is raised by Allah."
   },
-
-  { icon:'🤲', scene:'madinah', character:'😢',
-    title:{ ar:'يومَ بكى عمر', en:'The Day Umar Wept' },
-    pages:[
-      { scene:'madinah', character:'🤲',
-        text:{ ar:'قبلَ أن يلتقيَ المسلمونَ بعدوِّهم، رفعَ <b>النعمانُ بنُ مُقرِّن</b> يديه إلى السماء — لا يطلبُ مالاً ولا شهرة — ودعا دعاءً صادقاً حفظه التاريخ: <b>«اللهمَّ ارزقِ النعمانَ الشهادةَ بنصرِ المسلمين، وافتحْ عليهم»</b>. انظرْ إلى ترتيبِ دعائِه: طلبَ <b>النصرَ لإخوانِه أوّلاً</b>، ثمّ الشهادةَ لنفسِه. فاستجابَ اللهُ دعاءَه كاملاً: نصرَ المسلمين، ونالَ النعمانُ الشهادة سنةَ ٢١هـ.<br><br>وفي <b>المدينة</b> كان أميرُ المؤمنين <b>عمرُ بنُ الخطّاب</b> ينتظرُ الأخبارَ بقلقٍ شديد. فجاءه رجلٌ اسمُه أبو عثمانَ بالخبر، فلمّا سمعَ عمرُ أنّ النعمانَ قد استُشهِد، <b>وضعَ يدَه على وجهِه يبكي</b> — كما يروي الذهبيّ. ووقفَ عمرُ على المنبرِ يُخبرُ الناسَ بموتِه، حتى قال سعيدُ بنُ المسيّب بعد سنين طويلة: «إنّي لأذكرُ يومَ نعى عمرُ النعمانَ بنَ مُقرِّنٍ على المنبر». بكى الخليفةُ القويُّ على أخيه في الله، لأنّه فقدَ رجلاً صادقاً من الذين قال اللهُ فيهم: ﴿ مِنَ الْمُؤْمِنِينَ رِجَالٌ صَدَقُوا مَا عَاهَدُوا اللَّهَ عَلَيْهِ ﴾.',
-          en:'Before the Muslims met their enemy, <b>an-Nu‘man ibn Muqarrin</b> raised his hands to the sky — asking for neither wealth nor fame — and made a sincere prayer that history preserved: <b>"O Allah, grant an-Nu‘man martyrdom with victory for the Muslims, and grant them opening."</b> Look at the order of his prayer: he asked <b>victory for his brothers first</b>, then martyrdom for himself. Allah answered his prayer fully: the Muslims were victorious, and an-Nu‘man attained martyrdom in 21 AH.<br><br>In <b>Madinah</b>, the Commander of the Faithful <b>Umar ibn al-Khattab</b> was waiting for news with great worry. A man named Abu Uthman came with the news, and when Umar heard that an-Nu‘man had been martyred, <b>he put his hand on his face and wept</b> — as adh-Dhahabi narrates. Umar stood on the pulpit to tell the people of his death, so that Sa‘id ibn al-Musayyib said many years later: "I still remember the day Umar announced the death of an-Nu‘man ibn Muqarrin from the pulpit." The strong caliph wept for his brother in Allah, for he had lost a truthful man of those about whom Allah said: "Among the believers are men who were true to what they promised Allah." (Al-Ahzab 23)' },
-        choice:{ q:{ar:'بماذا بدأَ النعمانُ دعاءَه؟',en:'What did an-Nu‘man put first in his prayer?'},
-          opts:[
-            { t:{ar:'بطلبِ المالِ لنفسِه',en:'Asking wealth for himself'},c:false,exp:{ar:'لا، لم يطلبْ مالاً ولا شهرة.',en:'No — he asked for neither wealth nor fame.'} },
-            { t:{ar:'بالدعاءِ على أصحابِه',en:'Praying against his companions'},c:false,exp:{ar:'لا، بل دعا لهم بالنصر.',en:'No — he prayed for their victory.'} },
-            { t:{ar:'بنصرِ المسلمينَ ثمّ الشهادةِ لنفسِه',en:'Victory for the Muslims, then martyrdom for himself'},c:true,exp:{ar:'نعم! قلبُه كان يحملُ همَّ إخوانِه قبلَ نفسِه.',en:'Yes! His heart carried his brothers’ concern before his own.'} },
-          ] } },
-    ],
-    quiz:[
-      { q:{ar:'ماذا فعلَ عمرُ حين بلغَه الخبر؟',en:'What did Umar do when the news reached him?'},
-        opts:[ {t:{ar:'وضعَ يدَه على وجهِه يبكي',en:'He put his hand on his face and wept'},c:true}, {t:{ar:'نامَ',en:'He slept'},c:false}, {t:{ar:'لم يهتمّ',en:'He did not care'},c:false} ] },
-      { q:{ar:'أين أخبرَ عمرُ الناسَ بموتِ النعمان؟',en:'Where did Umar tell the people of an-Nu‘man’s death?'},
-        opts:[ {t:{ar:'في السوق',en:'In the market'},c:false}, {t:{ar:'على المنبر',en:'On the pulpit'},c:true}, {t:{ar:'في رسالةٍ سرّيّة',en:'In a secret letter'},c:false} ] },
-      { q:{ar:'هل استجابَ اللهُ دعاءَ النعمان؟',en:'Did Allah answer an-Nu‘man’s prayer?'},
-        opts:[ {t:{ar:'لا',en:'No'},c:false}, {t:{ar:'استُجيبَ نصفُه فقط',en:'Only half of it'},c:false}, {t:{ar:'نعم، نصرَ المسلمينَ ونالَ الشهادة',en:'Yes — the Muslims won and he was martyred'},c:true} ] },
-    ],
-    moral:{ar:'الدعاءُ الصادقُ يبدأُ بالأمّةِ قبلَ النفس — والصادقونَ يبكيهم الصالحونَ ويحفظُ ذكرَهم التاريخ.',en:'Sincere prayer begins with the community before oneself — the righteous weep for the truthful, and history keeps their memory.'},
-    badge:{icon:'🤲',title:{ar:'وِسامُ الدعاءِ الصادق',en:'Badge of the Truthful Prayer'}},
-    reflect:[ {ar:'لماذا بكى عمرُ القويُّ على النعمان؟ ماذا يعني أن يكونَ لك أخٌ في الله؟',en:'Why did strong Umar weep for an-Nu‘man? What does it mean to have a brother in Allah?'}, {ar:'اكتبْ دعاءً تبدأُ فيه بإخوانِك المسلمينَ قبلَ نفسِك.',en:'Write a prayer that begins with your fellow Muslims before yourself.'} ],
-    didYouKnow:[ {ar:'كان دعاءُ النعمان: «اللهمَّ ارزقِ النعمانَ الشهادةَ بنصرِ المسلمين، وافتحْ عليهم» — المصدر: سير أعلام النبلاء',en:'An-Nu‘man’s prayer: "O Allah, grant an-Nu‘man martyrdom with victory for the Muslims, and grant them opening" — Source: Siyar A‘lam an-Nubala’'}, {ar:'قال أبو عثمان: أتيتُ عمرَ بنعيِ النعمان، فوضعَ يدَه على وجهِه يبكي — المصدر: سير أعلام النبلاء',en:'Abu Uthman said: I brought Umar the news of an-Nu‘man’s death, and he put his hand on his face and wept — Source: Siyar A‘lam an-Nubala’'} ],
+  "badge": {
+   "icon": "🌴",
+   "title": {
+    "ar": "وِسامُ البركةِ والوفد",
+    "en": "Badge of Blessing & the Delegation"
+   }
   },
+  "reflect": [
+   {
+    "ar": "كيف تتعاونُ مع إخوتِك لتكونوا «بيتاً مؤمناً»؟",
+    "en": "How can you and your siblings work together to be a \"house of faith\"?"
+   },
+   {
+    "ar": "هل رأيتَ البركةَ في شيءٍ قليلٍ تقاسمتَه مع غيرِك؟",
+    "en": "Have you seen blessing in something small you shared with others?"
+   }
+  ],
+  "didYouKnow": [
+   {
+    "ar": "حديثُ النعمانِ في قدومِ أربعِمئةٍ من مُزَينةَ وتزويدِ عمرَ لهم من التمرِ الذي لم ينقص رواه أحمدُ والطبرانيّ — المصدر: مسند أحمد · مجمع الزوائد",
+    "en": "An-Nu‘man’s report of four hundred of Muzayna and Umar giving them dates that did not decrease is narrated by Ahmad and at-Tabarani — Source: Musnad Ahmad · Majma‘ az-Zawa’id"
+   },
+   {
+    "ar": "قال مجاهد: هم بنو مُقرِّنٍ من مُزَينة — في تفسيرِ آيةِ التوبة ٩٩ — المصدر: تفسير الطبري",
+    "en": "Mujahid said: they are the sons of Muqarrin of Muzayna — on At-Tawba 99 — Source: Tafsir at-Tabari"
+   }
+  ]
+ },
+ {
+  "icon": "🌬️",
+  "scene": "wind",
+  "character": "📜",
+  "title": {
+   "ar": "حتى تهبَّ الرياح",
+   "en": "Until the Winds Blow"
+  },
+  "pages": [
+   {
+    "scene": "madinah",
+    "character": "🧔",
+    "text": {
+     "ar": "في سنةِ <b>٢١ للهجرة</b> جاءتِ الأخبارُ إلى <b>المدينة</b>: الفرسُ يجمعونَ جيشاً عظيماً عند <b>نهاوند</b>! فجمعَ أميرُ المؤمنينَ <b>عمرُ بنُ الخطّاب</b> الصحابةَ يستشيرُهم: مَن يقودُ جيشَ المسلمينَ في هذه المعركةِ الكبيرة؟<br><br>كان عمرُ يعرفُ الرجالَ جيّداً، ويريدُ قائداً شجاعاً تقيّاً، لا يحبُّ الدنيا ولا يطلبُ الإمارة، ويكونُ في مقدّمةِ الصفوفِ لا في آخرِها. فوقعَ اختيارُه على صحابيٍّ من <b>مُزَينة</b>، كان قد عرفَه منذ سنواتٍ طويلة.",
+     "en": "In <b>21 AH</b>, news reached <b>Madinah</b>: the Persians were gathering a huge army at <b>Nahawand</b>! The Commander of the Believers, <b>Umar ibn al-Khattab</b>, gathered the Companions to consult them: Who will lead the Muslim army in this great battle?<br><br>Umar knew men well. He wanted a brave and devout commander who did not love this world or seek leadership, and who would be at the front of the ranks, not at the back. His choice fell on a Companion from <b>Muzayna</b> whom he had known for many years."
+    }
+   },
+   {
+    "scene": "wind",
+    "character": "🌬️",
+    "text": {
+     "ar": "في خلافةِ <b>عمرَ بنِ الخطّاب</b> رضي الله عنه، جعلَ <b>النعمانَ</b> والياً على بلدةٍ اسمُها <b>كَسْكَر</b> في العراق، يجمعُ خراجَها (أموالَها). لكنّ قلبَ النعمانِ كان يحبُّ أن يكونَ في سبيلِ الله أكثرَ من الجلوسِ على كرسيِّ الوالي. فعرفَ عمرُ ذلك منه، فقال له — كما يذكرُ الذهبيّ — إنّه لن يستعملَه في جمعِ الأموال، بل في الجهادِ في سبيلِ الله، وجعلَه <b>أميراً على جيشِ المسلمين</b>.",
+     "en": "During the caliphate of <b>Umar ibn al-Khattab</b>, he made <b>an-Nu‘man</b> governor of a town called <b>Kaskar</b> in Iraq, collecting its revenues. But an-Nu‘man’s heart loved being in Allah’s path more than sitting in the governor’s seat. Umar knew this about him and told him — as adh-Dhahabi mentions — that he would not employ him in collecting money, but in striving in Allah’s path, and made him <b>commander of the Muslim army</b>."
+    }
+   },
+   {
+    "scene": "wind",
+    "character": "🌬️",
+    "text": {
+     "ar": "ولم يكن النعمانُ قائداً يعتمدُ على رأيِه وحدَه، بل كان يحفظُ <b>سُنّةَ النبيِّ ﷺ</b> ويعملُ بها. فلمّا استعجلَه بعضُ أصحابِه أن يبدأَ القتالَ أوّلَ النهار، قال كما في <b>صحيح البخاري</b>: <b>«شهدتُ القتالَ مع رسولِ اللهِ ﷺ، كان إذا لم يُقاتلْ في أوّلِ النهار، انتظرَ حتى تهبَّ الأرواحُ (الرياح) وتحضرَ الصلوات»</b>. فانتظرَ كما كان النبيُّ ﷺ ينتظر — حين يبردُ الجوّ، وتهبُّ الرياح، ويدعو المسلمونَ في صلواتِهم. لقد كان النعمانُ يرى أنّ أحسنَ خطّةٍ هي <b>اتّباعُ ما فعلَه النبيُّ ﷺ</b>.",
+     "en": "An-Nu‘man was not a commander who relied on his own opinion alone; he kept the <b>Sunnah of the Prophet ﷺ</b> and acted on it. When some companions urged him to start fighting early in the day, he said, as in <b>Sahih al-Bukhari</b>: <b>\"I witnessed battle with the Messenger of Allah ﷺ: if he did not fight at the start of the day, he would wait until the winds blew and the prayer times came.\"</b> So he waited as the Prophet ﷺ waited — when the air cools, the winds blow, and the Muslims supplicate in their prayers. An-Nu‘man saw that the best plan is <b>following what the Prophet ﷺ did</b>."
+    },
+    "choice": {
+     "q": {
+      "ar": "لماذا انتظرَ النعمانُ حتى تهبَّ الرياح؟",
+      "en": "Why did an-Nu‘man wait until the winds blew?"
+     },
+     "opts": [
+      {
+       "t": {
+        "ar": "لأنّه كان خائفاً",
+        "en": "Because he was afraid"
+       },
+       "c": false,
+       "exp": {
+        "ar": "لا، بل اتّباعاً لسُنّةِ النبيِّ ﷺ.",
+        "en": "No — to follow the Sunnah of the Prophet ﷺ."
+       }
+      },
+      {
+       "t": {
+        "ar": "اتّباعاً لما كان يفعلُه النبيُّ ﷺ",
+        "en": "To follow what the Prophet ﷺ used to do"
+       },
+       "c": true,
+       "exp": {
+        "ar": "نعم! السُّنّةُ أحسنُ خطّةٍ في كلِّ أمر.",
+        "en": "Yes! The Sunnah is the best plan in every matter."
+       }
+      },
+      {
+       "t": {
+        "ar": "لأنّه كان نائماً",
+        "en": "Because he was asleep"
+       },
+       "c": false,
+       "exp": {
+        "ar": "لا، بل كان يعملُ بما حفظَه عن النبيِّ ﷺ.",
+        "en": "No — he acted on what he preserved from the Prophet ﷺ."
+       }
+      }
+     ]
+    }
+   },
+   {
+    "scene": "pen",
+    "character": "📖",
+    "text": {
+     "ar": "قال النبيُّ ﷺ: <b>«فعليكم بسنّتي وسنّةِ الخلفاءِ الراشدينَ المهديّين»</b> (رواه أبو داود والترمذيّ). وقد فهمَ النعمانُ هذا جيّداً؛ فالقائدُ الذكيُّ لا يتركُ هديَ النبيِّ ﷺ ليتبعَ رأيَ نفسِه، حتى في ساعةِ القتال.<br><br>وأنتَ يا صديقي، تستطيعُ أن تتّبعَ السنّةَ في يومِك كلِّه: أن تبدأَ طعامَك باسمِ الله، وتأكلَ بيمينِك، وتبتسمَ في وجهِ أخيك، وتقولَ دعاءَ النومِ قبلَ أن تنام. كلُّ سنّةٍ تعملُ بها نورٌ في قلبِك وأجرٌ في ميزانِك.",
+     "en": "The Prophet ﷺ said: <b>\"Hold fast to my Sunnah and the Sunnah of the rightly guided caliphs.\"</b> (Abu Dawud and at-Tirmidhi) An-Nu‘man understood this well: a wise leader does not abandon the Prophet’s ﷺ guidance to follow his own opinion, even in the hour of battle.<br><br>And you, my friend, can follow the Sunnah all through your day: begin your food with Bismillah, eat with your right hand, smile at your brother, and say the sleeping du‘a before you sleep. Every Sunnah you act upon is a light in your heart and a reward on your scale."
+    }
+   }
+  ],
+  "quiz": [
+   {
+    "q": {
+     "ar": "على أيِّ بلدةٍ ولّى عمرُ النعمانَ أوّلاً؟",
+     "en": "Which town did Umar first make an-Nu‘man governor of?"
+    },
+    "opts": [
+     {
+      "t": {
+       "ar": "كَسْكَر",
+       "en": "Kaskar"
+      },
+      "c": true
+     },
+     {
+      "t": {
+       "ar": "مكّة",
+       "en": "Makkah"
+      },
+      "c": false
+     },
+     {
+      "t": {
+       "ar": "دمشق",
+       "en": "Damascus"
+      },
+      "c": false
+     }
+    ]
+   },
+   {
+    "q": {
+     "ar": "في أيِّ كتابٍ رُويَ حديثُ النعمانِ عن انتظارِ الرياح؟",
+     "en": "In which book is an-Nu‘man’s report about waiting for the winds?"
+    },
+    "opts": [
+     {
+      "t": {
+       "ar": "كتابِ ألفِ ليلة",
+       "en": "The Thousand and One Nights"
+      },
+      "c": false
+     },
+     {
+      "t": {
+       "ar": "صحيحِ البخاري",
+       "en": "Sahih al-Bukhari"
+      },
+      "c": true
+     },
+     {
+      "t": {
+       "ar": "ديوانِ شعر",
+       "en": "A poetry collection"
+      },
+      "c": false
+     }
+    ]
+   },
+   {
+    "q": {
+     "ar": "ما الذي أحبَّه النعمانُ أكثرَ من منصبِ الوالي؟",
+     "en": "What did an-Nu‘man love more than being governor?"
+    },
+    "opts": [
+     {
+      "t": {
+       "ar": "جمعَ الأموال",
+       "en": "Collecting money"
+      },
+      "c": false
+     },
+     {
+      "t": {
+       "ar": "الراحة",
+       "en": "Rest"
+      },
+      "c": false
+     },
+     {
+      "t": {
+       "ar": "أن يكونَ في سبيلِ الله",
+       "en": "Being in Allah’s path"
+      },
+      "c": true
+     }
+    ]
+   }
+  ],
+  "moral": {
+   "ar": "أحسنُ الخططِ ما وافقَ سُنّةَ النبيِّ ﷺ — والمؤمنُ يحبُّ الخيرَ أكثرَ من المنصب.",
+   "en": "The best plan is the one that matches the Prophet’s ﷺ Sunnah — and a believer loves good more than position."
+  },
+  "badge": {
+   "icon": "🌬️",
+   "title": {
+    "ar": "وِسامُ اتّباعِ السُّنّة",
+    "en": "Badge of Following the Sunnah"
+   }
+  },
+  "reflect": [
+   {
+    "ar": "ما السُّنّةُ التي تحفظُها عن النبيِّ ﷺ وتعملُ بها كلَّ يوم؟",
+    "en": "Which Sunnah of the Prophet ﷺ do you know and practice every day?"
+   },
+   {
+    "ar": "لو خُيّرتَ بين أن تكونَ «رئيسَ الفريق» أو أن تخدمَ الفريق، ماذا تختار؟",
+    "en": "If you had to choose between being \"team captain\" or serving the team, which would you pick?"
+   }
+  ],
+  "didYouKnow": [
+   {
+    "ar": "قال النعمان: «شهدتُ القتالَ مع رسولِ اللهِ ﷺ، كان إذا لم يُقاتلْ في أوّلِ النهارِ انتظرَ حتى تهبَّ الأرواحُ وتحضرَ الصلوات» — المصدر: صحيح البخاري (كتاب الجزية)",
+    "en": "An-Nu‘man said: \"I witnessed battle with the Messenger of Allah ﷺ; if he did not fight at the start of the day he waited until the winds blew and the prayers came\" — Source: Sahih al-Bukhari (Book of Jizya)"
+   },
+   {
+    "ar": "ذكرَ الذهبيُّ أنّ النعمانَ وليَ كَسْكَرَ لعمر، ثمّ صرفَه عمرُ ليجعلَه في الجهاد — المصدر: سير أعلام النبلاء",
+    "en": "Adh-Dhahabi mentions an-Nu‘man governed Kaskar for Umar, who then moved him to lead in jihad — Source: Siyar A‘lam an-Nubala’"
+   }
+  ]
+ },
+ {
+  "icon": "🤲",
+  "scene": "madinah",
+  "character": "😢",
+  "title": {
+   "ar": "يومَ بكى عمر",
+   "en": "The Day Umar Wept"
+  },
+  "pages": [
+   {
+    "scene": "mountain",
+    "character": "🚩",
+    "text": {
+     "ar": "وقفَ جيشُ المسلمينَ عند <b>نهاوند</b> بين الجبال، وأمامَهم جيشُ الفرسِ الكبير. وكان النعمانُ قد انتظرَ الوقتَ الذي كان النبيُّ ﷺ ينتظرُه، فلمّا مالتِ الشمسُ وهبّتِ الرياح، استعدَّ الناسُ للقاء.<br><br>والتفتَ القائدُ إلى جنودِه، فرأى وجوهاً صادقةً جاءتْ من المدينةِ والكوفةِ والبصرة، تركتْ بيوتَها وأهلَها في سبيلِ الله. لم يبقَ إلّا أمرٌ واحدٌ قبلَ أن يبدأَ القتال: <b>الدعاء</b>.",
+     "en": "The Muslim army stood at <b>Nahawand</b> among the mountains, with the great Persian army before them. An-Nu‘man had waited for the time the Prophet ﷺ used to wait for, and when the sun declined and the winds blew, the people made ready to meet the enemy.<br><br>The commander turned to his soldiers and saw sincere faces that had come from Madinah, Kufa and Basra, leaving their homes and families for the sake of Allah. Only one thing remained before the battle began: <b>du‘a</b>."
+    }
+   },
+   {
+    "scene": "madinah",
+    "character": "🤲",
+    "text": {
+     "ar": "قبلَ أن يلتقيَ المسلمونَ بعدوِّهم، رفعَ <b>النعمانُ بنُ مُقرِّن</b> يديه إلى السماء — لا يطلبُ مالاً ولا شهرة — ودعا دعاءً صادقاً حفظه التاريخ: <b>«اللهمَّ ارزقِ النعمانَ الشهادةَ بنصرِ المسلمين، وافتحْ عليهم»</b>. انظرْ إلى ترتيبِ دعائِه: طلبَ <b>النصرَ لإخوانِه أوّلاً</b>، ثمّ الشهادةَ لنفسِه. فاستجابَ اللهُ دعاءَه كاملاً: نصرَ المسلمين، ونالَ النعمانُ الشهادة سنةَ ٢١هـ.",
+     "en": "Before the Muslims met their enemy, <b>an-Nu‘man ibn Muqarrin</b> raised his hands to the sky — asking for neither wealth nor fame — and made a sincere prayer that history preserved: <b>\"O Allah, grant an-Nu‘man martyrdom with victory for the Muslims, and grant them opening.\"</b> Look at the order of his prayer: he asked <b>victory for his brothers first</b>, then martyrdom for himself. Allah answered his prayer fully: the Muslims were victorious, and an-Nu‘man attained martyrdom in 21 AH."
+    },
+    "choice": {
+     "q": {
+      "ar": "بماذا بدأَ النعمانُ دعاءَه؟",
+      "en": "What did an-Nu‘man put first in his prayer?"
+     },
+     "opts": [
+      {
+       "t": {
+        "ar": "بطلبِ المالِ لنفسِه",
+        "en": "Asking wealth for himself"
+       },
+       "c": false,
+       "exp": {
+        "ar": "لا، لم يطلبْ مالاً ولا شهرة.",
+        "en": "No — he asked for neither wealth nor fame."
+       }
+      },
+      {
+       "t": {
+        "ar": "بالدعاءِ على أصحابِه",
+        "en": "Praying against his companions"
+       },
+       "c": false,
+       "exp": {
+        "ar": "لا، بل دعا لهم بالنصر.",
+        "en": "No — he prayed for their victory."
+       }
+      },
+      {
+       "t": {
+        "ar": "بنصرِ المسلمينَ ثمّ الشهادةِ لنفسِه",
+        "en": "Victory for the Muslims, then martyrdom for himself"
+       },
+       "c": true,
+       "exp": {
+        "ar": "نعم! قلبُه كان يحملُ همَّ إخوانِه قبلَ نفسِه.",
+        "en": "Yes! His heart carried his brothers’ concern before his own."
+       }
+      }
+     ]
+    }
+   },
+   {
+    "scene": "madinah",
+    "character": "🤲",
+    "text": {
+     "ar": "وفي <b>المدينة</b> كان أميرُ المؤمنين <b>عمرُ بنُ الخطّاب</b> ينتظرُ الأخبارَ بقلقٍ شديد. فجاءه رجلٌ اسمُه أبو عثمانَ بالخبر، فلمّا سمعَ عمرُ أنّ النعمانَ قد استُشهِد، <b>وضعَ يدَه على وجهِه يبكي</b> — كما يروي الذهبيّ. ووقفَ عمرُ على المنبرِ يُخبرُ الناسَ بموتِه، حتى قال سعيدُ بنُ المسيّب بعد سنين طويلة: «إنّي لأذكرُ يومَ نعى عمرُ النعمانَ بنَ مُقرِّنٍ على المنبر». بكى الخليفةُ القويُّ على أخيه في الله، لأنّه فقدَ رجلاً صادقاً من الذين قال اللهُ فيهم: ﴿ مِنَ الْمُؤْمِنِينَ رِجَالٌ صَدَقُوا مَا عَاهَدُوا اللَّهَ عَلَيْهِ ﴾.",
+     "en": "In <b>Madinah</b>, the Commander of the Faithful <b>Umar ibn al-Khattab</b> was waiting for news with great worry. A man named Abu Uthman came with the news, and when Umar heard that an-Nu‘man had been martyred, <b>he put his hand on his face and wept</b> — as adh-Dhahabi narrates. Umar stood on the pulpit to tell the people of his death, so that Sa‘id ibn al-Musayyib said many years later: \"I still remember the day Umar announced the death of an-Nu‘man ibn Muqarrin from the pulpit.\" The strong caliph wept for his brother in Allah, for he had lost a truthful man of those about whom Allah said: \"Among the believers are men who were true to what they promised Allah.\" (Al-Ahzab 23)"
+    }
+   },
+   {
+    "scene": "night",
+    "character": "🤍",
+    "text": {
+     "ar": "تعلّمْ من النعمانِ أن تدعوَ لإخوانِك قبلَ نفسِك. قال النبيُّ ﷺ: <b>«دعوةُ المرءِ المسلمِ لأخيه بظهرِ الغيبِ مستجابة، عندَ رأسِه ملَكٌ موكَّل، كلّما دعا لأخيه بخيرٍ قال الملَكُ الموكَّلُ به: آمين، ولك بمِثل»</b> (رواه مسلم).<br><br>وتعلّمْ من عمرَ أن تحبَّ إخوانَك في الله، وأن تحزنَ لفراقِهم وتدعوَ لهم. فالليلةَ قبلَ أن تنام، ادعُ لأبيك وأمِّك، ولمعلّمِك، ولصديقِك، وللمسلمينَ في كلِّ مكان — وسيقولُ الملَكُ لك: <b>ولك بمِثل</b>!",
+     "en": "Learn from an-Nu‘man to pray for your brothers before yourself. The Prophet ﷺ said: <b>\"The prayer of a Muslim for his brother in his absence is answered. At his head is an angel appointed to him; whenever he prays for good for his brother, the appointed angel says: Ameen, and for you the same.\"</b> (Muslim)<br><br>And learn from Umar to love your brothers for the sake of Allah, to grieve when they part, and to pray for them. Tonight before you sleep, pray for your father and mother, your teacher, your friend, and the Muslims everywhere — and the angel will say to you: <b>And for you the same</b>!"
+    }
+   }
+  ],
+  "quiz": [
+   {
+    "q": {
+     "ar": "ماذا فعلَ عمرُ حين بلغَه الخبر؟",
+     "en": "What did Umar do when the news reached him?"
+    },
+    "opts": [
+     {
+      "t": {
+       "ar": "وضعَ يدَه على وجهِه يبكي",
+       "en": "He put his hand on his face and wept"
+      },
+      "c": true
+     },
+     {
+      "t": {
+       "ar": "نامَ",
+       "en": "He slept"
+      },
+      "c": false
+     },
+     {
+      "t": {
+       "ar": "لم يهتمّ",
+       "en": "He did not care"
+      },
+      "c": false
+     }
+    ]
+   },
+   {
+    "q": {
+     "ar": "أين أخبرَ عمرُ الناسَ بموتِ النعمان؟",
+     "en": "Where did Umar tell the people of an-Nu‘man’s death?"
+    },
+    "opts": [
+     {
+      "t": {
+       "ar": "في السوق",
+       "en": "In the market"
+      },
+      "c": false
+     },
+     {
+      "t": {
+       "ar": "على المنبر",
+       "en": "On the pulpit"
+      },
+      "c": true
+     },
+     {
+      "t": {
+       "ar": "في رسالةٍ سرّيّة",
+       "en": "In a secret letter"
+      },
+      "c": false
+     }
+    ]
+   },
+   {
+    "q": {
+     "ar": "هل استجابَ اللهُ دعاءَ النعمان؟",
+     "en": "Did Allah answer an-Nu‘man’s prayer?"
+    },
+    "opts": [
+     {
+      "t": {
+       "ar": "لا",
+       "en": "No"
+      },
+      "c": false
+     },
+     {
+      "t": {
+       "ar": "استُجيبَ نصفُه فقط",
+       "en": "Only half of it"
+      },
+      "c": false
+     },
+     {
+      "t": {
+       "ar": "نعم، نصرَ المسلمينَ ونالَ الشهادة",
+       "en": "Yes — the Muslims won and he was martyred"
+      },
+      "c": true
+     }
+    ]
+   }
+  ],
+  "moral": {
+   "ar": "الدعاءُ الصادقُ يبدأُ بالأمّةِ قبلَ النفس — والصادقونَ يبكيهم الصالحونَ ويحفظُ ذكرَهم التاريخ.",
+   "en": "Sincere prayer begins with the community before oneself — the righteous weep for the truthful, and history keeps their memory."
+  },
+  "badge": {
+   "icon": "🤲",
+   "title": {
+    "ar": "وِسامُ الدعاءِ الصادق",
+    "en": "Badge of the Truthful Prayer"
+   }
+  },
+  "reflect": [
+   {
+    "ar": "لماذا بكى عمرُ القويُّ على النعمان؟ ماذا يعني أن يكونَ لك أخٌ في الله؟",
+    "en": "Why did strong Umar weep for an-Nu‘man? What does it mean to have a brother in Allah?"
+   },
+   {
+    "ar": "اكتبْ دعاءً تبدأُ فيه بإخوانِك المسلمينَ قبلَ نفسِك.",
+    "en": "Write a prayer that begins with your fellow Muslims before yourself."
+   }
+  ],
+  "didYouKnow": [
+   {
+    "ar": "كان دعاءُ النعمان: «اللهمَّ ارزقِ النعمانَ الشهادةَ بنصرِ المسلمين، وافتحْ عليهم» — المصدر: سير أعلام النبلاء",
+    "en": "An-Nu‘man’s prayer: \"O Allah, grant an-Nu‘man martyrdom with victory for the Muslims, and grant them opening\" — Source: Siyar A‘lam an-Nubala’"
+   },
+   {
+    "ar": "قال أبو عثمان: أتيتُ عمرَ بنعيِ النعمان، فوضعَ يدَه على وجهِه يبكي — المصدر: سير أعلام النبلاء",
+    "en": "Abu Uthman said: I brought Umar the news of an-Nu‘man’s death, and he put his hand on his face and wept — Source: Siyar A‘lam an-Nubala’"
+   }
+  ]
+ }
 ];

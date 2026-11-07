@@ -12,6 +12,14 @@ HISN_STORIES.ibnrawaha = [
   "pages": [
    {
     "scene": "madinah",
+    "character": "🌴",
+    "text": {
+     "ar": "كان <b>عبدُ اللهِ بنُ رَواحة</b> رجلاً من <b>الأنصار</b>، من قبيلةِ الخزرجِ في المدينة. أسلمَ مبكّراً، وكان من <b>النقباءِ الاثنَي عشر</b> الذين بايعوا النبيَّ ﷺ في بيعةِ العقبةِ قبلَ الهجرة. وكان <b>شاعراً</b> فصيحاً، من الشعراءِ الذين يدافعونَ عن النبيِّ ﷺ بكلماتِهم، مع حسّانَ بنِ ثابتٍ وكعبِ بنِ مالك.<br><br>وفي السنةِ الخامسةِ للهجرة، اجتمعتْ قريشٌ وغطفانُ وقبائلُ أخرى في جيشٍ ضخمٍ يُسمّى <b>الأحزاب</b>، يريدونَ القضاءَ على المسلمينَ في المدينة. فاستشارَ النبيُّ ﷺ أصحابَه، فأشارَ <b>سلمانُ الفارسيُّ</b> بحفرِ خندقٍ يمنعُ خيولَ الأعداءِ من دخولِ المدينة.",
+     "en": "<b>Abdullah ibn Rawaha</b> was a man of the <b>Ansar</b>, from the tribe of Khazraj in Madinah. He accepted Islam early and was one of the <b>twelve leaders</b> who pledged allegiance to the Prophet ﷺ at the Pledge of Aqaba before the Hijra. He was an eloquent <b>poet</b>, one of the poets who defended the Prophet ﷺ with their words, together with Hassan ibn Thabit and Ka‘b ibn Malik.<br><br>In the fifth year after the Hijra, Quraysh, Ghatafan, and other tribes gathered in a huge army called <b>the Confederates</b> (al-Ahzab), wanting to destroy the Muslims in Madinah. The Prophet ﷺ consulted his companions, and <b>Salman al-Farisi</b> suggested digging a trench to stop the enemy’s horses from entering the city."
+    }
+   },
+   {
+    "scene": "madinah",
     "character": "⛏️",
     "text": {
      "ar": "جاءتِ الأحزابُ — جيوشٌ كثيرةٌ — لتهاجمَ المدينة، فأمرَ النبيُّ ﷺ بحفرِ <b>خندقٍ</b> عظيمٍ حولَها. كان الجوُّ <b>بارداً</b> والطعامُ قليلاً، والصحابةُ يحفرون بأيديهم وينقلون الترابَ على ظهورِهم. وكان النبيُّ ﷺ نفسُه يحملُ الترابَ معهم حتى غطّى الغبارُ بطنَه الشريف!<br><br>وفي وسطِ هذا التعب، كان النبيُّ ﷺ يرفعُ صوتَه بكلماتٍ من شعرِ <b>عبدِ الله بنِ رواحة</b>: <b>«اللهمّ لولا أنتَ ما اهتدينا، ولا تصدّقنا ولا صلّينا، فأنزلَنْ سكينةً علينا، وثبّتِ الأقدامَ إن لاقينا»</b>، ويمدُّ صوتَه في آخرِها. فكان الصحابةُ يردّدون معه، فيخفُّ عنهم التعبُ ويمتلئُ قلبُهم بالقوّة. كلماتُ شاعرٍ مؤمنٍ صارت <b>نشيداً يُثبِّتُ القلوب</b>!<br><br>تأمّلْ: لم تكنِ الكلماتُ مدحاً لأحدٍ ولا فخراً، بل كانت <b>شكراً لله</b> على الهداية، و<b>دعاءً</b> أن يُنزلَ السكينةَ ويثبّتَ الأقدام. هكذا يكونُ شعرُ المؤمن.",
@@ -57,6 +65,22 @@ HISN_STORIES.ibnrawaha = [
        }
       }
      ]
+    }
+   },
+   {
+    "scene": "desert",
+    "character": "⛏️",
+    "text": {
+     "ar": "وكان في أبياتِ ابنِ رواحةَ التي يرتجزُ بها النبيُّ ﷺ أيضاً: <b>«إنّ الأُلى قد بغَوا علينا، إذا أرادوا فتنةً أبَينا»</b>، أي: إنّ هؤلاءِ قد ظلمونا، وإذا أرادوا أن يفتنونا عن دينِنا رفضنا. والحديثُ في صحيحِ البخاري.<br><br>ويروي <b>أنسٌ</b> رضي الله عنه في الصحيح أنّ النبيَّ ﷺ خرجَ إلى الخندقِ في <b>غداةٍ باردة</b>، فرأى المهاجرينَ والأنصارَ يحفرونَ بأنفسِهم، ورأى ما بهم من الجوعِ والتعب، فقال: <b>«اللّهُمَّ إنّ العيشَ عيشُ الآخرة، فاغفرْ للأنصارِ والمهاجرة»</b>. فأجابوه: <b>«نحن الذين بايعوا محمّدا، على الجهادِ ما بقينا أبدا»</b>.",
+     "en": "Among the lines of Ibn Rawaha that the Prophet ﷺ chanted were also: <b>“These people have wronged us; when they wanted to turn us from our faith, we refused”</b>. This hadith is in Sahih al-Bukhari.<br><br><b>Anas</b>, may Allah be pleased with him, reports in the Sahih that the Prophet ﷺ went out to the trench on a <b>cold morning</b> and saw the Muhajirun and the Ansar digging with their own hands. He saw their hunger and tiredness and said: <b>“O Allah, the true life is the life of the Hereafter, so forgive the Ansar and the Muhajirun.”</b> And they answered him: <b>“We are the ones who pledged to Muhammad to strive for as long as we live.”</b>"
+    }
+   },
+   {
+    "scene": "sprout",
+    "character": "🎶",
+    "text": {
+     "ar": "وصمدَ الخندقُ أمامَ الأحزاب، ثمّ أرسلَ اللهُ عليهم <b>ريحاً شديدةً</b> وجنوداً لم يرَوها، فرجعوا خائبين دون أن يدخلوا المدينة. وكان من أسبابِ هذا الصبرِ تلك الكلماتُ التي ملأتِ القلوبَ يقيناً وهم يحفرون.<br><br>وأنت يا صديقي: إذا تعبتَ في عملٍ طويل، كمذاكرةٍ أو ترتيبِ البيتِ مع أهلِك، فاجعلْ لسانَك يذكرُ الله، وقلْ كلماتٍ طيّبةً تُشجِّعُ بها نفسَك ومَن معك. فالكلمةُ الحلوةُ <b>تُخفِّفُ التعبَ وتجمعُ القلوب</b>. وانظرْ إلى النبيِّ ﷺ: كان القائدَ، ومع ذلك حملَ الترابَ مع أصحابِه، ولم يجلسْ يأمرُهم فقط.",
+     "en": "The trench held firm against the Confederates, and then Allah sent upon them a <b>fierce wind</b> and soldiers they could not see, and they went back defeated without entering Madinah. One of the reasons for the believers’ patience was those words that filled their hearts with certainty while they dug.<br><br>And you, my friend: when you are tired from a long task — like studying, or tidying the house with your family — keep your tongue busy remembering Allah, and say kind words to encourage yourself and those with you. A sweet word <b>lightens tiredness and brings hearts together</b>. And look at the Prophet ﷺ: he was the leader, yet he carried earth with his companions instead of just sitting and giving orders."
     }
    }
   ],
@@ -191,6 +215,14 @@ HISN_STORIES.ibnrawaha = [
   },
   "pages": [
    {
+    "scene": "camel",
+    "character": "📜",
+    "text": {
+     "ar": "في السنةِ السادسةِ للهجرة خرجَ النبيُّ ﷺ وأصحابُه يريدونَ العمرة، فمنعتْهم قريشٌ عند <b>الحديبية</b>، ثمّ كتبوا صلحاً، ومن شروطِه أن يرجعَ المسلمونَ ذلك العام، ثمّ يأتوا في العامِ القادمِ فيعتمروا ويبقوا في مكّةَ <b>ثلاثةَ أيّام</b>.<br><br>فلمّا جاءَ العامُ السابع، خرجَ النبيُّ ﷺ ومعه أصحابُه، وكثيرٌ منهم لم يرَ مكّةَ منذ سنوات. وكانت قريشٌ قد قالت: يقدمُ عليكم قومٌ قد أضعفَتْهم <b>حُمّى يثرب</b>. فأمرَ النبيُّ ﷺ أصحابَه أن يُسرِعوا في مشيِهم في الطواف، ليُرُوا المشركينَ قوّتَهم. والحديثُ في صحيحِ البخاري.",
+     "en": "In the sixth year after the Hijra, the Prophet ﷺ and his companions set out to perform umrah, but Quraysh stopped them at <b>al-Hudaybiya</b>. Then they wrote a peace treaty, and one of its terms was that the Muslims would go back that year, and come the following year to perform umrah and stay in Makkah for <b>three days</b>.<br><br>When the seventh year came, the Prophet ﷺ set out with his companions, many of whom had not seen Makkah for years. Quraysh had said: a people are coming to you who have been weakened by the <b>fever of Yathrib</b>. So the Prophet ﷺ told his companions to walk briskly in tawaf, to show the idolaters their strength. This hadith is in Sahih al-Bukhari."
+    }
+   },
+   {
     "scene": "kaaba",
     "character": "✒️",
     "text": {
@@ -237,6 +269,22 @@ HISN_STORIES.ibnrawaha = [
        }
       }
      ]
+    }
+   },
+   {
+    "scene": "pen",
+    "character": "✒️",
+    "text": {
+     "ar": "والشعرُ كلامٌ، حسنُه حسن، وقبيحُه قبيح. وقد ذمَّ اللهُ في القرآنِ الشعراءَ الذين يقولونَ ما لا يفعلون، ثمّ استثنى المؤمنين فقال: <b>﴿ إِلَّا الَّذِينَ آمَنُوا وَعَمِلُوا الصَّالِحَاتِ وَذَكَرُوا اللَّهَ كَثِيرًا ﴾</b>. وكان ابنُ رواحةَ من هؤلاء.<br><br>وقالَ النبيُّ ﷺ: <b>«إنّ من الشعرِ حكمةً»</b> (رواه البخاري). فالكلمةُ الصادقةُ الجميلةُ قد تُقوّي قلوبَ المؤمنين، وتُبيِّنُ الحقَّ، وتهزُّ قلوبَ المعاندين أكثرَ من السيوفِ والسهام، كما قالَ النبيُّ ﷺ عن شعرِ ابنِ رواحة.",
+     "en": "Poetry is speech: its good is good and its bad is bad. In the Quran, Allah criticised the poets who say what they do not do, then made an exception for the believers: <b>﴿ “Except those who believe and do righteous deeds and remember Allah often” ﴾</b>. Ibn Rawaha was one of these.<br><br>And the Prophet ﷺ said: <b>“Indeed, some poetry is wisdom”</b> (al-Bukhari). A true and beautiful word can strengthen the hearts of believers, make the truth clear, and shake the hearts of stubborn people more than swords and arrows — just as the Prophet ﷺ said about Ibn Rawaha’s poetry."
+    }
+   },
+   {
+    "scene": "sprout",
+    "character": "💬",
+    "text": {
+     "ar": "وأنت يا صديقي: عندك اليومَ كلماتٌ كثيرة: في كلامِك مع أصحابِك، وفي ما تكتبُه في دفترِك، وفي رسائلِك. فاجعلْها مثلَ شعرِ ابنِ رواحة: <b>نظيفةً لا فُحشَ فيها</b>، صادقةً، تدافعُ عن الحقّ، وتُشجِّعُ الخير.<br><br>جرّبْ أن تكتبَ أبياتاً قصيرةً أو كلماتٍ جميلةً في حبِّ النبيِّ ﷺ، أو في شكرِ والديك، أو في وصفِ نعمِ اللهِ حولَك. وإذا سمعتَ أحداً يقولُ كلاماً قبيحاً فلا تُردِّدْه. فـ<b>الكلمةُ أمانة</b>، وقد تكونُ سبباً في رضا اللهِ أو في غضبِه.",
+     "en": "And you, my friend, have many words today: in the way you talk with your friends, in what you write in your notebook, and in your messages. Make them like Ibn Rawaha’s poetry: <b>clean, with nothing indecent</b>, truthful, defending what is right, and encouraging good.<br><br>Try writing a few short lines or beautiful words about your love for the Prophet ﷺ, or thanking your parents, or describing Allah’s blessings around you. And if you hear someone say something ugly, do not repeat it. <b>A word is a trust</b>, and it can be a cause of Allah’s pleasure or of His anger."
     }
    }
   ],
@@ -372,6 +420,14 @@ HISN_STORIES.ibnrawaha = [
   "pages": [
    {
     "scene": "desert",
+    "character": "🏳️",
+    "text": {
+     "ar": "في السنةِ الثامنةِ للهجرة، جهّزَ النبيُّ ﷺ جيشاً من نحوِ <b>ثلاثةِ آلافِ</b> مقاتلٍ إلى أرضِ الشام، بعد أن قُتِلَ رسولُه الحارثُ بنُ عُمَيرٍ الذي حملَ كتابَه إلى أميرِ بُصرى. وقالَ ﷺ كما في صحيحِ البخاري: <b>«إنْ قُتِلَ زيدٌ فجعفر، وإنْ قُتِلَ جعفرٌ فعبدُ اللهِ بنُ رواحة»</b>.<br><br>فلمّا وصلَ الجيشُ إلى أرضِ <b>مَعان</b>، بلغَهم أنّ الرومَ ومَن معهم من القبائلِ قد جمعوا جيشاً عظيماً يفوقُهم أضعافاً كثيرة. فتشاوروا: هل يكتبونَ إلى النبيِّ ﷺ يُخبرونَه ويطلبونَ المدد؟ فقامَ ابنُ رواحةَ يُذكِّرُهم بأنّهم لا يقاتلونَ بالعددِ والقوّة، بل بهذا الدين، وأنّها <b>إحدى الحُسنيَين: النصرُ أو الشهادة</b>. فمضَوا.",
+     "en": "In the eighth year after the Hijra, the Prophet ﷺ prepared an army of about <b>three thousand</b> fighters to go to the land of Sham, after his messenger al-Harith ibn Umayr, who had carried his letter to the ruler of Busra, was killed. The Prophet ﷺ said, as in Sahih al-Bukhari: <b>“If Zayd is killed, then Ja‘far; and if Ja‘far is killed, then Abdullah ibn Rawaha.”</b><br><br>When the army reached <b>Ma‘an</b>, news came that the Romans and the tribes with them had gathered a huge army many times larger than theirs. They consulted each other: should they write to the Prophet ﷺ to tell him and ask for reinforcements? Ibn Rawaha stood up and reminded them that they did not fight by numbers and strength, but by this religion, and that it would be <b>one of two good outcomes: victory or martyrdom</b>. So they went on."
+    }
+   },
+   {
+    "scene": "desert",
     "character": "🌟",
     "text": {
      "ar": "أرسلَ النبيُّ ﷺ جيشاً إلى <b>مؤتة</b>، وجعلَ القادةَ ثلاثة: زيداً، ثم جعفراً، ثم <b>عبدَ الله بنَ رواحة</b>. فلمّا ودّعه الناسُ <b>بكى</b> ابنُ رواحة، فسألوه: ما يُبكيك؟ قال: أمَا واللهِ ما بي حبُّ الدنيا، ولكنّي سمعتُ اللهَ يقول: ﴿ وَإِنْ مِنْكُمْ إِلَّا وَارِدُهَا ﴾ فلستُ أدري كيف لي بالنجاةِ بعدَ الورود. كان قلبُه مشغولاً بالآخرة.<br><br>ولمّا استُشهِدَ زيدٌ ثم جعفر، أخذَ ابنُ رواحةَ الرايةَ، فشعرَ بشيءٍ من <b>التردّد</b> في نفسِه — وهذا يحدثُ للبشر — فلم يستسلمْ له، بل جعلَ يخاطبُ نفسَه بشعرٍ معناه: <b>«أقسمتُ يا نفسُ لتنزلِنّه... ما لي أراكِ تكرهينَ الجنّة؟»</b> فثبتت نفسُه وتقدّم، حتى نالَ <b>الشهادة</b>.<br><br>وفي المدينة، أخبرَ النبيُّ ﷺ الناسَ بخبرِهم قبلَ أن يصلَ الخبرُ، <b>وعيناه تذرفان</b> بالدموع حبّاً لأصحابِه.",
@@ -417,6 +473,22 @@ HISN_STORIES.ibnrawaha = [
        }
       }
      ]
+    }
+   },
+   {
+    "scene": "madinah",
+    "character": "🤲",
+    "text": {
+     "ar": "وفي صحيحِ البخاري أنّ النبيَّ ﷺ قالَ للناسِ في المدينة: أخذَ الرايةَ زيدٌ فأُصيب، ثمّ أخذَها جعفرٌ فأُصيب، ثمّ أخذَها ابنُ رواحةَ فأُصيب، ثمّ أخذَها <b>خالدُ بنُ الوليد</b> من غيرِ إمرةٍ <b>ففُتِحَ له</b>. فنظّمَ خالدٌ الجيشَ بحكمة، ورجعَ بالمسلمينَ إلى المدينةِ سالمين.<br><br>لقد كان ابنُ رواحةَ يبكي عند الوداعِ خوفاً من الآخرة، لا خوفاً من الموت. ثمّ لمّا جاءتْ ساعةُ الثبات، تغلّبَ على تردّدِ نفسِه بكلماتِ الإيمان، فصدقَ ما عاهدَ اللهَ عليه.",
+     "en": "In Sahih al-Bukhari, the Prophet ﷺ told the people in Madinah: Zayd took the banner and was struck down, then Ja‘far took it and was struck down, then Ibn Rawaha took it and was struck down, then <b>Khalid ibn al-Walid</b> took it without being appointed, <b>and Allah granted him success</b>. Khalid reorganised the army wisely and brought the Muslims back to Madinah safely.<br><br>Ibn Rawaha had wept at the farewell out of fear of the Hereafter, not fear of death. Then when the moment to stand firm came, he overcame the hesitation in his soul with words of faith, and he was true to what he had promised Allah."
+    }
+   },
+   {
+    "scene": "sprout",
+    "character": "💪",
+    "text": {
+     "ar": "كلُّ إنسانٍ يشعرُ أحياناً بالخوفِ أو الكسلِ أو التردّد، حتى الصالحون. لكنّ المؤمنَ لا يتركُ هذه المشاعرَ تقودُه، بل <b>يُحادِثُ نفسَه</b> ويُذكِّرُها بالله والجنّة، كما فعلَ ابنُ رواحة.<br><br>وأنت يا صديقي: إذا كسلتَ عن صلاةِ الفجر، فقلْ لنفسِك: يا نفسُ، قومي، فالصلاةُ خيرٌ من النوم! وإذا خفتَ أن تقولَ الحقّ، فذكِّرْ نفسَك أنّ اللهَ معك. وإذا ترددتَ في عملِ خير، فلا تنتظرْ: ابدأْ الآن. فالشجاعُ ليس من لا يخاف، بل <b>من يغلبُ خوفَه بإيمانِه</b>.",
+     "en": "Everyone sometimes feels fear, laziness, or hesitation — even righteous people. But a believer does not let these feelings lead him: he <b>talks to his own soul</b> and reminds it of Allah and Paradise, just as Ibn Rawaha did.<br><br>And you, my friend: if you feel lazy about the Fajr prayer, say to yourself: O soul, get up — prayer is better than sleep! If you are afraid to say what is true, remind yourself that Allah is with you. And if you hesitate to do something good, do not wait: start now. A brave person is not someone who feels no fear, but <b>someone who overcomes his fear with his faith</b>."
     }
    }
   ],

@@ -1,117 +1,820 @@
 /* data/stories/aisha.js — Heroes · A'isha bint Abi Bakr — sources: صور من حياة الصحابة (الباشا) · إسلام ويب · الدرر السنية · صحيح البخاري ومسلم · سنن أبي داود · مسند أحمد · سير أعلام النبلاء */
 window.HISN_STORIES = window.HISN_STORIES || {};
 HISN_STORIES.aisha = [
-  { icon:'📚', scene:'mihrab', character:'🎓',
-    title:{ ar:'بحرُ العلمِ الذي رجعَ إليه الصحابة', en:'The Sea of Knowledge the Companions Turned To' },
-    pages:[
-      { scene:'mihrab', character:'📖',
-        text:{ ar:'نشأتْ <b>عائشةُ</b> في بيتِ النبوّةِ، فكانت تسمعُ من النبيِّ ﷺ وتسألُه وتحفظُ كلَّ ما تتعلّم. وكان اللهُ قد وهبها <b>ذاكرةً قويّةً وعقلاً ذكيّاً</b>، فحفظتْ أكثرَ من <b>ألفي حديثٍ</b> عن النبيِّ ﷺ بدقّةٍ عجيبة!<br><br>وبعدَ وفاةِ النبيِّ ﷺ، صارتْ عائشةُ <b>مرجعاً للأمّةِ كلِّها</b>. كان كبارُ الصحابةِ — حتى أبو هريرةَ وابنُ عبّاسٍ وعمر — يأتونَ إليها ليسألوها في الفقهِ والتفسيرِ والحديث. قال عنها أبو موسى الأشعري: «ما أشكلَ علينا — أصحابَ رسولِ الله ﷺ — حديثٌ قطُّ فسألنا عائشةَ إلّا وجدنا عندها منه علماً». كانت عالمةً بالفقهِ والقرآنِ والشِّعرِ وحتى الطب!',
-          en:'<b>A\u2019isha</b> grew up in the household of prophethood, listening to the Prophet ﷺ, asking him questions, and memorizing everything she learned. Allah had granted her <b>a strong memory and a sharp mind</b>, so she preserved more than <b>two thousand hadiths</b> from the Prophet ﷺ with astonishing precision!<br><br>After the Prophet\u2019s ﷺ death, A\u2019isha became <b>a reference for the entire nation</b>. Senior companions — even Abu Hurayra, Ibn Abbas, and Umar — would come to ask her about jurisprudence, exegesis, and hadith. Abu Musa al-Ash\u2019ari said of her: "Never did a hadith puzzle us — the companions of Allah\u2019s Messenger ﷺ — and we asked A\u2019isha, but we found that she had knowledge of it." She was learned in jurisprudence, the Quran, poetry, and even medicine!' },
-        choice:{ q:{ar:'لماذا كان الصحابةُ يرجعونَ إلى عائشةَ في العلم؟',en:'Why did the companions turn to A\u2019isha for knowledge?'},
-          opts:[
-            { t:{ar:'لأنّها كانت أعلمَهم بالحديثِ والفقه',en:'Because she was the most learned of them in hadith and jurisprudence'},c:true,exp:{ar:'نعم! العلمُ شرفٌ يرفعُ صاحبَه رجلاً كان أو امرأة.',en:'Yes! Knowledge is an honor that elevates a person, man or woman.'} },
-            { t:{ar:'لأنّها غنيّة',en:'Because she was wealthy'},c:false,exp:{ar:'لا، بل لعلمِها الواسعِ وفهمِها العميق.',en:'No — for her vast knowledge and deep understanding.'} },
-            { t:{ar:'بالصدفة',en:'By chance'},c:false,exp:{ar:'لا، بل لأنّها كانت بحرَ علم.',en:'No — because she was a sea of knowledge.'} },
-          ] } },
-    ],
-    quiz:[
-      { q:{ar:'أين نشأتْ عائشةُ فحملتِ العلمَ الكثير؟',en:'Where did A\u2019isha grow up and gain much knowledge?'},
-        opts:[ {t:{ar:'في بيتِ النبوّة',en:'In the household of prophethood'},c:true}, {t:{ar:'في الصحراء',en:'In the desert'},c:false}, {t:{ar:'في السوق',en:'In the market'},c:false} ] },
-      { q:{ar:'كم حديثاً حفظتْ تقريباً؟',en:'About how many hadiths did she preserve?'},
-        opts:[ {t:{ar:'أكثرَ من ألفي حديث',en:'More than two thousand'},c:true}, {t:{ar:'عشرة',en:'Ten'},c:false}, {t:{ar:'خمسين',en:'Fifty'},c:false} ] },
-      { q:{ar:'ماذا نتعلّمُ من علمِ عائشة؟',en:'What do we learn from A\u2019isha\u2019s knowledge?'},
-        opts:[ {t:{ar:'طلبُ العلمِ شرفٌ للرجالِ والنساء',en:'Seeking knowledge is an honor for men and women'},c:true}, {t:{ar:'العلمُ للرجالِ فقط',en:'Knowledge is for men only'},c:false}, {t:{ar:'لا قيمةَ للحفظ',en:'Memorization has no value'},c:false} ] },
-    ],
-    moral:{ar:'طلبُ العلمِ وحفظُه شرفٌ للرجالِ والنساء، ومَن أتقنَ العلمَ صار مرجعاً ينفعُ الأمّة.',en:'Seeking and preserving knowledge is an honor for men and women; whoever masters knowledge becomes a reference benefiting the nation.'},
-    badge:{icon:'📚',title:{ar:'وِسامُ بحرِ العلم',en:'Badge of the Sea of Knowledge'}},
-    reflect:[ {ar:'كيف تُقوّي ذاكرتَك وتحفظُ ما ينفعُك؟',en:'How do you strengthen your memory and retain what benefits you?'}, {ar:'هل تسألُ وتتعلّمُ حتى تفهمَ الأمرَ جيّداً؟',en:'Do you ask and learn until you truly understand?'} ],
-    didYouKnow:[ {ar:'عُدَّتْ عائشةُ من المكثرينَ في روايةِ الحديثِ، ومن أفقهِ الناسِ وأعلمِهم بالطبِّ والشِّعر — المصدر: سير أعلام النبلاء',en:'A\u2019isha was counted among the most prolific narrators of hadith and among the most learned in jurisprudence, medicine, and poetry — Source: Siyar A\u2019lam an-Nubala\u2019'}, {ar:'قال عطاء: كانت عائشةُ أفقهَ الناسِ وأحسنَهم رأياً في العامّة — المصدر: المستدرك',en:'Ata said: A\u2019isha was the most learned of people and the soundest in opinion among the public — Source: al-Mustadrak'} ],
+ {
+  "icon": "📚",
+  "scene": "mihrab",
+  "character": "🎓",
+  "title": {
+   "ar": "بحرُ العلمِ الذي رجعَ إليه الصحابة",
+   "en": "The Sea of Knowledge the Companions Turned To"
   },
-  { icon:'🛡️', scene:'night', character:'🤲',
-    title:{ ar:'براءةٌ من فوقِ سبعِ سماوات', en:'Innocence From Above Seven Heavens' },
-    pages:[
-      { scene:'night', character:'😔',
-        text:{ ar:'في إحدى الغزوات، تأخّرتْ <b>عائشةُ</b> عن الجيشِ من غيرِ قصدٍ حين ذهبتْ تبحثُ عن عِقدٍ ضاعَ منها، فعادتْ مع صحابيٍّ أمينٍ أوصلَها للمدينة. فاستغلَّ <b>المنافقون</b> هذا الأمرَ وبدؤوا ينشرونَ كلاماً كاذباً يطعنونَ في عائشةَ الطاهرة!<br><br>حزِنتْ عائشةُ حزناً شديداً وبكتْ حتى ظنّتْ أنّ دموعَها لا تنقطع، وهي بريئةٌ لا تعلمُ ذنباً. لكنّها قالت كلمةً عظيمةً تدلُّ على إيمانِها: <b>«واللهِ لا أجدُ لي ولكم مثلاً إلّا أبا يوسف حين قال: فصبرٌ جميل، واللهُ المستعانُ على ما تصفون»</b>. ووثقتْ أنّ اللهَ يعلمُ براءتَها.',
-          en:'On one expedition, <b>A\u2019isha</b> was unintentionally left behind by the army when she went to look for a necklace she had lost; she returned with a trustworthy companion who brought her to Madinah. The <b>hypocrites</b> exploited this and began spreading false words slandering the pure A\u2019isha!<br><br>A\u2019isha grieved deeply and wept until she thought her tears would never stop — innocent, knowing no wrong. But she spoke great words showing her faith: <b>"By Allah, I find no example for myself and you except the father of Yusuf when he said: \'So patience is most fitting, and Allah is the one sought for help against what you describe.\'"</b> She trusted that Allah knew her innocence.' },
-        choice:{ q:{ar:'كيف واجهتْ عائشةُ التهمةَ الكاذبة؟',en:'How did A\u2019isha face the false accusation?'},
-          opts:[
-            { t:{ar:'بالصبرِ الجميلِ والثقةِ بأنّ اللهَ يعلمُ براءتَها',en:'With beautiful patience and trust that Allah knew her innocence'},c:true,exp:{ar:'نعم! الصبرُ مع الثقةِ بالله بابُ الفرج.',en:'Yes! Patience with trust in Allah is a door to relief.'} },
-            { t:{ar:'باليأسِ والغضب',en:'With despair and anger'},c:false,exp:{ar:'لا، بل صبرتْ ووثقتْ بالله.',en:'No — she was patient and trusted Allah.'} },
-            { t:{ar:'بالكذبِ على الناس',en:'By lying to people'},c:false,exp:{ar:'لا، بل صبرتْ وهي صادقةٌ بريئة.',en:'No — she was patient, truthful, and innocent.'} },
-          ] } },
-      { scene:'mihrab', character:'🤲',
-        text:{ ar:'وبينما الناسُ في حيرةٍ والحزنُ يملأُ بيتَ النبيِّ ﷺ، نزلَ الوحيُ من السماء! أنزلَ اللهُ آياتٍ في سورةِ <b>النور</b> تُبرِّئُ عائشةَ تماماً وتُبيِّنُ كذبَ المنافقين: <b>﴿ إِنَّ الَّذِينَ جَاءُوا بِالْإِفْكِ عُصْبَةٌ مِّنكُمْ ﴾</b> ثمّ ﴿ أُولَٰئِكَ مُبَرَّءُونَ مِمَّا يَقُولُونَ ﴾.<br><br>أيُّ شرفٍ أعظمُ من هذا؟! <b>اللهُ ربُّ العالمينَ يُبرِّئُها من فوقِ سبعِ سماوات</b>، وتُتلى براءتُها في القرآنِ إلى يومِ القيامة! ففرِحتْ عائشةُ فرحاً عظيماً، وعلّمنا اللهُ أنّ الصبرَ على الظلمِ يعقبُه فرجٌ ونصر، وأنّ الحقَّ يظهرُ مهما حاولَ المبطلونَ إخفاءَه.',
-          en:'While people were perplexed and grief filled the Prophet\u2019s ﷺ home, revelation descended from the sky! Allah sent down verses in Surat <b>an-Nur</b> completely clearing A\u2019isha and exposing the hypocrites\u2019 lies: <b>"Indeed, those who came with the falsehood were a group among you,"</b> then "Those are declared innocent of what they say."<br><br>What honor is greater than this?! <b>Allah, Lord of the worlds, declares her innocence from above the seven heavens</b>, and her innocence is recited in the Quran until the Day of Resurrection! A\u2019isha rejoiced greatly, and Allah taught us that patience through injustice is followed by relief and victory, and that the truth appears however much the falsifiers try to hide it.' },
-        choice:{ q:{ar:'كيف ظهرتْ براءةُ عائشةَ في النهاية؟',en:'How was A\u2019isha\u2019s innocence ultimately shown?'},
-          opts:[
-            { t:{ar:'أنزلَ اللهُ قرآناً يُبرِّئُها من فوقِ سبعِ سماوات',en:'Allah revealed Quran clearing her from above seven heavens'},c:true,exp:{ar:'نعم! الحقُّ يظهرُ والصبرُ يعقبُه الفرج.',en:'Yes! Truth prevails and patience is followed by relief.'} },
-            { t:{ar:'بشهادةِ الناس',en:'By people\u2019s testimony'},c:false,exp:{ar:'لا، بل بوحيٍ من اللهِ في القرآن.',en:'No — by revelation from Allah in the Quran.'} },
-            { t:{ar:'لم تظهرْ',en:'It was never shown'},c:false,exp:{ar:'لا، بل برّأها اللهُ في القرآنِ الكريم.',en:'No — Allah cleared her in the Quran.'} },
-          ] } },
-    ],
-    quiz:[
-      { q:{ar:'من نشرَ الكلامَ الكاذبَ عن عائشة؟',en:'Who spread the false words about A\u2019isha?'},
-        opts:[ {t:{ar:'المنافقون',en:'The hypocrites'},c:true}, {t:{ar:'الصحابة',en:'The companions'},c:false}, {t:{ar:'أهلُها',en:'Her family'},c:false} ] },
-      { q:{ar:'في أيِّ سورةٍ نزلتْ براءتُها؟',en:'In which surah was her innocence revealed?'},
-        opts:[ {t:{ar:'سورةِ النور',en:'Surat an-Nur'},c:true}, {t:{ar:'سورةِ الفيل',en:'Surat al-Fil'},c:false}, {t:{ar:'سورةِ الكوثر',en:'Surat al-Kawthar'},c:false} ] },
-      { q:{ar:'ما الدرسُ من حادثةِ الإفك؟',en:'What is the lesson of this incident?'},
-        opts:[ {t:{ar:'الصبرُ على الظلمِ يعقبُه الفرج',en:'Patience through injustice is followed by relief'},c:true}, {t:{ar:'نشرُ الإشاعات',en:'Spreading rumors'},c:false}, {t:{ar:'اليأسُ من الله',en:'Despair of Allah'},c:false} ] },
-    ],
-    moral:{ar:'الصبرُ على الظلمِ يعقبُه الفرج، والحقُّ يظهرُ مهما حاولَ المبطلونَ إخفاءَه — فلا تنشرْ كلاماً لم تتأكّدْ منه.',en:'Patience through injustice is followed by relief, and truth appears however much falsifiers hide it — so never spread words you have not verified.'},
-    badge:{icon:'🛡️',title:{ar:'وِسامُ البراءةِ والصبر',en:'Badge of Innocence & Patience'}},
-    reflect:[ {ar:'هل تتأكّدُ من الكلامِ قبلَ أن تنقلَه عن الناس؟',en:'Do you verify words before passing them on about people?'}, {ar:'كيف تصبرُ وتثقُ بالله إذا ظُلِمتَ؟',en:'How do you stay patient and trust Allah if you are wronged?'} ],
-    didYouKnow:[ {ar:'حادثةُ الإفكِ وبراءةُ عائشةَ مفصّلةٌ في صحيحِ البخاري ونزلتْ فيها آياتٌ من سورةِ النور — المصدر: صحيح البخاري',en:'The incident of slander and A\u2019isha\u2019s innocence is detailed in Sahih al-Bukhari, and verses of Surat an-Nur were revealed about it — Source: Sahih al-Bukhari'}, {ar:'حذّرَ اللهُ في سورةِ النورِ من نشرِ الإشاعاتِ والخوضِ في أعراضِ الناس — المصدر: سورة النور',en:'In Surat an-Nur, Allah warned against spreading rumors and assailing people\u2019s honor — Source: Surat an-Nur'} ],
+  "pages": [
+   {
+    "scene": "dwellings",
+    "character": "🌸",
+    "text": {
+     "ar": "هي <b>عائشةُ بنتُ أبي بكرٍ الصدّيق</b>، وأمُّها <b>أمُّ رُومان</b>. وُلِدت في مكّةَ في بيتٍ مسلم، فلم تعرفْ في حياتِها إلّا الإسلام. ثمّ تزوّجها النبيُّ ﷺ، فانتقلت إلى بيتٍ صغيرٍ بجوارِ المسجدِ النبويّ في المدينة، صارت فيه <b>أمَّ المؤمنين</b>.<br><br>وكانت من أحبِّ الناسِ إلى النبيِّ ﷺ. ففي <b>صحيحِ البخاري</b> أنَّ عمرَو بنَ العاصِ سألَه: أيُّ الناسِ أحبُّ إليك؟ قال: <b>«عائشة»</b>. قال: فمن الرجال؟ قال: <b>«أبوها»</b>. في هذا البيتِ المملوءِ بالوحيِ والذِّكر، كبرت عائشةُ وكبرَ علمُها يوماً بعدَ يوم.",
+     "en": "She was <b>A'isha, daughter of Abu Bakr as-Siddiq</b>, and her mother was <b>Umm Ruman</b>. She was born in Makkah into a Muslim home, so she knew nothing in her life but Islam. Then the Prophet ﷺ married her, and she moved into a small room beside the Prophet's Mosque in Madinah, where she became <b>a Mother of the Believers</b>.<br><br>She was among the people most beloved to the Prophet ﷺ. In <b>Sahih al-Bukhari</b>, Amr ibn al-As asked him: \"Who is the most beloved of people to you?\" He said: <b>\"A'isha.\"</b> He asked: \"And among men?\" He said: <b>\"Her father.\"</b> In this home filled with revelation and remembrance of Allah, A'isha grew up, and her knowledge grew day by day."
+    }
+   },
+   {
+    "scene": "mihrab",
+    "character": "📖",
+    "text": {
+     "ar": "نشأتْ <b>عائشةُ</b> في بيتِ النبوّةِ، فكانت تسمعُ من النبيِّ ﷺ وتسألُه وتحفظُ كلَّ ما تتعلّم. وكان اللهُ قد وهبها <b>ذاكرةً قويّةً وعقلاً ذكيّاً</b>، فحفظتْ أكثرَ من <b>ألفي حديثٍ</b> عن النبيِّ ﷺ بدقّةٍ عجيبة!",
+     "en": "<b>A’isha</b> grew up in the household of prophethood, listening to the Prophet ﷺ, asking him questions, and memorizing everything she learned. Allah had granted her <b>a strong memory and a sharp mind</b>, so she preserved more than <b>two thousand hadiths</b> from the Prophet ﷺ with astonishing precision!"
+    }
+   },
+   {
+    "scene": "mihrab",
+    "character": "🎓",
+    "text": {
+     "ar": "وبعدَ وفاةِ النبيِّ ﷺ، صارتْ عائشةُ <b>مرجعاً للأمّةِ كلِّها</b>. كان كبارُ الصحابةِ — حتى أبو هريرةَ وابنُ عبّاسٍ وعمر — يأتونَ إليها ليسألوها في الفقهِ والتفسيرِ والحديث. قال عنها أبو موسى الأشعري: «ما أشكلَ علينا — أصحابَ رسولِ الله ﷺ — حديثٌ قطُّ فسألنا عائشةَ إلّا وجدنا عندها منه علماً». كانت عالمةً بالفقهِ والقرآنِ والشِّعرِ وحتى الطب!",
+     "en": "After the Prophet’s ﷺ death, A’isha became <b>a reference for the entire nation</b>. Senior companions — even Abu Hurayra, Ibn Abbas, and Umar — would come to ask her about jurisprudence, exegesis, and hadith. Abu Musa al-Ash’ari said of her: \"Never did a hadith puzzle us — the companions of Allah’s Messenger ﷺ — and we asked A’isha, but we found that she had knowledge of it.\" She was learned in jurisprudence, the Quran, poetry, and even medicine!"
+    },
+    "choice": {
+     "q": {
+      "ar": "لماذا كان الصحابةُ يرجعونَ إلى عائشةَ في العلم؟",
+      "en": "Why did the companions turn to A’isha for knowledge?"
+     },
+     "opts": [
+      {
+       "t": {
+        "ar": "لأنّها كانت أعلمَهم بالحديثِ والفقه",
+        "en": "Because she was the most learned of them in hadith and jurisprudence"
+       },
+       "c": true,
+       "exp": {
+        "ar": "نعم! العلمُ شرفٌ يرفعُ صاحبَه رجلاً كان أو امرأة.",
+        "en": "Yes! Knowledge is an honor that elevates a person, man or woman."
+       }
+      },
+      {
+       "t": {
+        "ar": "لأنّها غنيّة",
+        "en": "Because she was wealthy"
+       },
+       "c": false,
+       "exp": {
+        "ar": "لا، بل لعلمِها الواسعِ وفهمِها العميق.",
+        "en": "No — for her vast knowledge and deep understanding."
+       }
+      },
+      {
+       "t": {
+        "ar": "بالصدفة",
+        "en": "By chance"
+       },
+       "c": false,
+       "exp": {
+        "ar": "لا، بل لأنّها كانت بحرَ علم.",
+        "en": "No — because she was a sea of knowledge."
+       }
+      }
+     ]
+    }
+   },
+   {
+    "scene": "pen",
+    "character": "❓",
+    "text": {
+     "ar": "ما سرُّ علمِ عائشة؟ كان لها <b>عادةٌ ذكيّة</b> ذكرَها البخاريّ: كانت لا تسمعُ شيئاً لا تعرفُه إلّا <b>راجعت فيه حتى تعرفَه</b>. قال النبيُّ ﷺ مرّةً: «مَن حُوسِبَ عُذِّب»، فسألته عائشة: أوليسَ يقولُ اللهُ تعالى: <b>﴿فَسَوْفَ يُحَاسَبُ حِسَابًا يَسِيرًا﴾</b>؟ فقال: <b>«إنّما ذلكِ العَرْض»</b>.<br><br>وتعلّمَ منها كثيرٌ من التابعين، ومنهم ابنُ أختِها <b>عروةُ بنُ الزبير</b>. وأنت أيضاً: <b>لا تخجلْ من السؤال</b>، فالسؤالُ المهذَّبُ مفتاحُ العلم. اكتبْ ما تتعلّم، وراجعْه، واسألْ عمّا لم تفهم، وقد تصيرُ يوماً مرجعاً ينفعُ الناس.",
+     "en": "What was the secret of A'isha's knowledge? She had <b>a clever habit</b> that al-Bukhari mentions: whenever she heard something she did not understand, she <b>would ask about it again until she understood</b>. Once the Prophet ﷺ said: \"Whoever is brought to account will be punished,\" and A'isha asked him: \"But does Allah the Exalted not say: <b>'He will be judged with an easy account'</b>?\" He said: <b>\"That is only the presentation of deeds.\"</b><br><br>Many of the Successors learned from her, among them her nephew <b>Urwa ibn az-Zubayr</b>. And you too: <b>do not be shy to ask</b>, for a polite question is the key to knowledge. Write down what you learn, review it, ask about what you did not understand — and one day you may become a reference who benefits people."
+    }
+   }
+  ],
+  "quiz": [
+   {
+    "q": {
+     "ar": "أين نشأتْ عائشةُ فحملتِ العلمَ الكثير؟",
+     "en": "Where did A’isha grow up and gain much knowledge?"
+    },
+    "opts": [
+     {
+      "t": {
+       "ar": "في بيتِ النبوّة",
+       "en": "In the household of prophethood"
+      },
+      "c": true
+     },
+     {
+      "t": {
+       "ar": "في الصحراء",
+       "en": "In the desert"
+      },
+      "c": false
+     },
+     {
+      "t": {
+       "ar": "في السوق",
+       "en": "In the market"
+      },
+      "c": false
+     }
+    ]
+   },
+   {
+    "q": {
+     "ar": "كم حديثاً حفظتْ تقريباً؟",
+     "en": "About how many hadiths did she preserve?"
+    },
+    "opts": [
+     {
+      "t": {
+       "ar": "أكثرَ من ألفي حديث",
+       "en": "More than two thousand"
+      },
+      "c": true
+     },
+     {
+      "t": {
+       "ar": "عشرة",
+       "en": "Ten"
+      },
+      "c": false
+     },
+     {
+      "t": {
+       "ar": "خمسين",
+       "en": "Fifty"
+      },
+      "c": false
+     }
+    ]
+   },
+   {
+    "q": {
+     "ar": "ماذا نتعلّمُ من علمِ عائشة؟",
+     "en": "What do we learn from A’isha’s knowledge?"
+    },
+    "opts": [
+     {
+      "t": {
+       "ar": "طلبُ العلمِ شرفٌ للرجالِ والنساء",
+       "en": "Seeking knowledge is an honor for men and women"
+      },
+      "c": true
+     },
+     {
+      "t": {
+       "ar": "العلمُ للرجالِ فقط",
+       "en": "Knowledge is for men only"
+      },
+      "c": false
+     },
+     {
+      "t": {
+       "ar": "لا قيمةَ للحفظ",
+       "en": "Memorization has no value"
+      },
+      "c": false
+     }
+    ]
+   }
+  ],
+  "moral": {
+   "ar": "طلبُ العلمِ وحفظُه شرفٌ للرجالِ والنساء، ومَن أتقنَ العلمَ صار مرجعاً ينفعُ الأمّة.",
+   "en": "Seeking and preserving knowledge is an honor for men and women; whoever masters knowledge becomes a reference benefiting the nation."
   },
-  { icon:'🏃‍♀️', scene:'desert', character:'😄',
-    title:{ ar:'«هذه بتلك» — سباقٌ في الصحراء', en:'"This One for That One" — A Race in the Desert' },
-    pages:[
-      { scene:'desert', character:'😄',
-        text:{ ar:'خرجتْ <b>عائشةُ</b> مع النبيِّ ﷺ في سفرٍ من أسفارِه، وكانت يومئذٍ صغيرةً خفيفةَ الجسم. فقال النبيُّ ﷺ للناس: <b>«تقدّموا»</b>، فتقدّموا، ثمّ التفتَ إليها مبتسماً وقال: <b>«تعالَي حتى أُسابقَكِ!»</b>. فانطلقا يجريانِ في الصحراء، <b>فسبقتْه عائشةُ</b> على رِجلَيها! فسكتَ النبيُّ ﷺ ولم يقلْ شيئاً.<br><br>ومرّتِ السنون، وكبِرتْ عائشةُ وثقُلَ جسمُها ونسيتِ السباقَ الأوّل. فخرجتْ معه في سفرٍ آخر، فقال للناسِ مرّةً أخرى: «تقدّموا»، ثمّ قال: «تعالَي أُسابقْكِ». فتسابقا، <b>فسبقها النبيُّ ﷺ هذه المرّة</b>، فجعلَ يضحكُ ويقول: <b>«هذه بتلك!»</b> — أي: هذا الفوزُ مقابلَ فوزِكِ القديم! يا لَها من صورةٍ جميلة: أعظمُ رجلٍ في الدنيا، نبيُّ الأمّةِ وقائدُها، <b>يلاعبُ أهلَه ويمازحُهم ويُدخِلُ السرورَ عليهم</b>. فالبيتُ المسلمُ بيتُ رحمةٍ وفرحٍ ولطف.',
-          en:'<b>A’isha</b> went out with the Prophet ﷺ on one of his journeys, when she was young and light. The Prophet ﷺ told the people: <b>"Go on ahead,"</b> and they went ahead. Then he turned to her smiling and said: <b>"Come, let me race you!"</b> They ran across the desert, and <b>A’isha beat him</b> on foot! The Prophet ﷺ stayed quiet and said nothing.<br><br>Years passed; A’isha grew older and heavier and forgot the first race. She went with him on another journey, and again he told the people: "Go on ahead," then said: "Come, let me race you." They raced, and <b>this time the Prophet ﷺ won</b>. He began laughing and said: <b>"This one for that one!"</b> — this win for your old win! What a beautiful picture: the greatest man in the world, the Prophet and leader of the Ummah, <b>playing and joking with his family and bringing them joy</b>. A Muslim home is a home of mercy, joy, and gentleness.' },
-        choice:{ q:{ar:'ماذا قال النبيُّ ﷺ حين سبقَ عائشةَ في المرّةِ الثانية؟',en:'What did the Prophet ﷺ say when he beat A’isha the second time?'},
-          opts:[
-            { t:{ar:'«هذه بتلك»',en:'"This one for that one"'},c:true,exp:{ar:'نعم! كان يمازحُها ويذكّرُها بالسباقِ الأوّلِ ضاحكاً.',en:'Yes! He was joking and reminding her of the first race, laughing.'} },
-            { t:{ar:'«لا تُسابقيني أبداً»',en:'"Never race me again"'},c:false,exp:{ar:'لا، بل كان يحبُّ ملاعبتَها وإسعادَها.',en:'No — he loved playing with her and making her happy.'} },
-            { t:{ar:'لم يقلْ شيئاً',en:'He said nothing'},c:false,exp:{ar:'سكتَ في المرّةِ الأولى، أمّا الثانيةُ فضحكَ وقال: «هذه بتلك».',en:'He was silent the first time; the second time he laughed and said "This one for that one."'} },
-          ] } },
-    ],
-    quiz:[
-      { q:{ar:'من فازَ في السباقِ الأوّل؟',en:'Who won the first race?'},
-        opts:[ {t:{ar:'النبيُّ ﷺ',en:'The Prophet ﷺ'},c:false}, {t:{ar:'عائشة',en:'A’isha'},c:true}, {t:{ar:'لم يفزْ أحد',en:'No one won'},c:false} ] },
-      { q:{ar:'لماذا قال النبيُّ ﷺ للناسِ «تقدّموا»؟',en:'Why did the Prophet ﷺ tell the people "Go on ahead"?'},
-        opts:[ {t:{ar:'ليتسابقَ مع أهلِه وحدَهما',en:'To race with his wife on their own'},c:true}, {t:{ar:'ليعاقبَهم',en:'To punish them'},c:false}, {t:{ar:'ليرجعوا إلى المدينة',en:'So they would go back to Madinah'},c:false} ] },
-      { q:{ar:'ماذا نتعلّمُ من هذه القصّة؟',en:'What do we learn from this story?'},
-        opts:[ {t:{ar:'الجدُّ الدائمُ بلا ضحك',en:'Always serious, never laughing'},c:false}, {t:{ar:'اللعبُ عيبٌ على الكبار',en:'Play is shameful for adults'},c:false}, {t:{ar:'ملاطفةُ الأهلِ وإسعادُهم من هديِ النبيِّ ﷺ',en:'Being gentle with family and making them happy is the Prophet’s ﷺ way'},c:true} ] },
-    ],
-    moral:{ar:'كان النبيُّ ﷺ أرحمَ الناسِ بأهلِه، يلاعبُهم ويمازحُهم، فالبيتُ السعيدُ يُبنى باللطفِ والمرح.',en:'The Prophet ﷺ was the kindest of people to his family, playing and joking with them; a happy home is built with gentleness and fun.'},
-    badge:{icon:'🏃‍♀️',title:{ar:'وِسامُ البيتِ السعيد',en:'Badge of the Happy Home'}},
-    reflect:[ {ar:'متى لعبتَ آخرَ مرّةٍ مع أهلِك وأدخلتَ السرورَ عليهم؟',en:'When did you last play with your family and bring them joy?'}, {ar:'إذا خسرتَ في لعبةٍ، هل تبتسمُ وتتقبّلُ كما فعلتْ عائشة؟',en:'When you lose a game, do you smile and accept it as A’isha did?'} ],
-    didYouKnow:[ {ar:'حديثُ السباقِ رواه أبو داود (٢٥٧٨) وصحّحه الألباني، ورواه أحمد بزيادةِ «تقدّموا» — المصدر: سنن أبي داود ومسند أحمد',en:'The race hadith is narrated by Abu Dawud (2578), graded sahih by al-Albani, and by Ahmad with the addition "Go on ahead" — Source: Sunan Abi Dawud & Musnad Ahmad'}, {ar:'قال النبيُّ ﷺ: «خيرُكم خيرُكم لأهلِه، وأنا خيرُكم لأهلي» — المصدر: سنن الترمذي (٣٨٩٥)',en:'The Prophet ﷺ said: "The best of you is the best to his family, and I am the best of you to my family" — Source: Sunan at-Tirmidhi (3895)'} ],
+  "badge": {
+   "icon": "📚",
+   "title": {
+    "ar": "وِسامُ بحرِ العلم",
+    "en": "Badge of the Sea of Knowledge"
+   }
   },
-  { icon:'🪙', scene:'madinah', character:'🍞',
-    title:{ ar:'مئةُ ألفٍ في يومٍ وهي صائمة', en:'A Hundred Thousand in a Day — While Fasting' },
-    pages:[
-      { scene:'madinah', character:'🍞',
-        text:{ ar:'بعدَ وفاةِ النبيِّ ﷺ، أرسلَ <b>عبدُ الله بنُ الزبير</b> — ابنُ أختِها أسماء — إلى خالتِه <b>عائشةَ</b> مالاً عظيماً في <b>كيسَين كبيرَين</b>، فيهما أكثرُ من <b>مئةِ ألفِ درهم</b>! وكانت عائشةُ يومَها <b>صائمة</b>. فماذا فعلتْ بهذه الثروة؟ هل خبّأتْها؟ هل اشترتْ بها ثياباً وقصوراً؟<br><br>لا! دعتْ بطبقٍ، وجلستْ <b>تقسمُ المالَ بين الناسِ والفقراء</b> بيدِها، حتى غربتِ الشمسُ و<b>لم يبقَ عندها منه درهمٌ واحد</b>! فلمّا جاءَ وقتُ الإفطارِ قالت لجاريتِها: هاتي فطوري. فجاءتْها <b>بخبزٍ وزيت</b>! فقالت لها أمُّ ذرّةَ التي كانت تخدمُها: أما استطعتِ ممّا قسمتِ اليومَ أن تشتري لنا لحماً بدرهمٍ نُفطِرُ عليه؟ فقالت عائشةُ بكلِّ بساطة: <b>«لو كنتِ ذكّرتِني لفعلت»</b>. لقد نسيتْ نفسَها تماماً وهي تُفرِّحُ الناس! هكذا تعلّمتْ في بيتِ النبوّة: <b>الدنيا في اليدِ لا في القلب</b>.',
-          en:'After the Prophet’s ﷺ death, <b>Abdullah ibn az-Zubayr</b> — son of her sister Asma — sent his aunt <b>A’isha</b> a huge sum in <b>two large sacks</b>, more than <b>a hundred thousand dirhams</b>! A’isha was <b>fasting</b> that day. What did she do with this fortune? Hide it? Buy clothes and palaces?<br><br>No! She called for a tray and sat <b>dividing the money among the people and the poor</b> with her own hands, until the sun set and <b>not a single dirham of it was left</b>! When it was time to break her fast she told her maid: bring my iftar. She brought <b>bread and oil</b>! Umm Dharra, who served her, said: Could you not, from all you gave away today, have bought us meat for a dirham to break our fast with? A’isha said simply: <b>"Had you reminded me, I would have."</b> She had completely forgotten herself while making others happy! This is what she learned in the house of Prophethood: <b>the world in your hand, not in your heart</b>.' },
-        choice:{ q:{ar:'على ماذا أفطرتْ عائشةُ بعدَ أن قسمتِ المال؟',en:'What did A’isha break her fast with after giving away the money?'},
-          opts:[
-            { t:{ar:'على لحمٍ وحلوى',en:'Meat and sweets'},c:false,exp:{ar:'لا، لم يبقَ عندها شيءٌ تشتري به اللحم.',en:'No — nothing was left to buy meat with.'} },
-            { t:{ar:'على خبزٍ وزيت',en:'Bread and oil'},c:true,exp:{ar:'نعم! أعطتِ الناسَ كلَّ شيءٍ ورضيتْ بالقليل.',en:'Yes! She gave people everything and was content with little.'} },
-            { t:{ar:'لم تكنْ صائمة',en:'She was not fasting'},c:false,exp:{ar:'بل كانت صائمةً وهي تقسمُ المال.',en:'She was fasting while she divided the money.'} },
-          ] } },
-    ],
-    quiz:[
-      { q:{ar:'من أرسلَ المالَ إلى عائشة؟',en:'Who sent the money to A’isha?'},
-        opts:[ {t:{ar:'ابنُ أختِها عبدُ الله بنُ الزبير',en:'Her nephew Abdullah ibn az-Zubayr'},c:true}, {t:{ar:'تاجرٌ غريب',en:'A stranger merchant'},c:false}, {t:{ar:'ملكُ الروم',en:'The king of Rome'},c:false} ] },
-      { q:{ar:'كم بقيَ عند عائشةَ من المالِ عند المغرب؟',en:'How much money did A’isha have left at sunset?'},
-        opts:[ {t:{ar:'النصف',en:'Half'},c:false}, {t:{ar:'ولا درهمٌ واحد',en:'Not a single dirham'},c:true}, {t:{ar:'كلُّه',en:'All of it'},c:false} ] },
-      { q:{ar:'ماذا نتعلّمُ من عائشة؟',en:'What do we learn from A’isha?'},
-        opts:[ {t:{ar:'جمعُ المالِ هو الأهم',en:'Collecting money matters most'},c:false}, {t:{ar:'الصدقةُ تُنقِصُ الخير',en:'Charity lessens good'},c:false}, {t:{ar:'الكرمُ والزهدُ وتفريحُ المحتاجين',en:'Generosity, simplicity, and bringing joy to the needy'},c:true} ] },
-    ],
-    moral:{ar:'المؤمنُ يجعلُ المالَ في يدِه لا في قلبِه، ويفرحُ بإسعادِ الناسِ أكثرَ من فرحِه بنفسِه.',en:'The believer keeps wealth in his hand, not his heart, and is happier making others happy than pleasing himself.'},
-    badge:{icon:'🪙',title:{ar:'وِسامُ اليدِ السخيّة',en:'Badge of the Generous Hand'}},
-    reflect:[ {ar:'لو أُعطيتَ مالاً كثيراً اليوم، ماذا تفعلُ به؟',en:'If you were given a lot of money today, what would you do with it?'}, {ar:'هل تشاركُ ما تحبُّ من طعامٍ أو ألعابٍ مع غيرِك؟',en:'Do you share the food or toys you love with others?'} ],
-    didYouKnow:[ {ar:'قصّةُ قسمةِ عائشةَ للمالِ وهي صائمةٌ وفطرِها على خبزٍ وزيت — المصدر: سير أعلام النبلاء للذهبي (ترجمة عائشة)',en:'The story of A’isha dividing the money while fasting and breaking her fast on bread and oil — Source: Siyar A’lam an-Nubala by adh-Dhahabi (biography of A’isha)'}, {ar:'قال عروةُ بنُ الزبير: رأيتُ عائشةَ تتصدّقُ بسبعينَ ألفاً وإنّها لترقعُ جانبَ درعِها — المصدر: سير أعلام النبلاء',en:'Urwa ibn az-Zubayr said: I saw A’isha give away seventy thousand in charity while patching the side of her own garment — Source: Siyar A’lam an-Nubala'} ],
+  "reflect": [
+   {
+    "ar": "كيف تُقوّي ذاكرتَك وتحفظُ ما ينفعُك؟",
+    "en": "How do you strengthen your memory and retain what benefits you?"
+   },
+   {
+    "ar": "هل تسألُ وتتعلّمُ حتى تفهمَ الأمرَ جيّداً؟",
+    "en": "Do you ask and learn until you truly understand?"
+   }
+  ],
+  "didYouKnow": [
+   {
+    "ar": "عُدَّتْ عائشةُ من المكثرينَ في روايةِ الحديثِ، ومن أفقهِ الناسِ وأعلمِهم بالطبِّ والشِّعر — المصدر: سير أعلام النبلاء",
+    "en": "A’isha was counted among the most prolific narrators of hadith and among the most learned in jurisprudence, medicine, and poetry — Source: Siyar A’lam an-Nubala’"
+   },
+   {
+    "ar": "قال عطاء: كانت عائشةُ أفقهَ الناسِ وأحسنَهم رأياً في العامّة — المصدر: المستدرك",
+    "en": "Ata said: A’isha was the most learned of people and the soundest in opinion among the public — Source: al-Mustadrak"
+   }
+  ]
+ },
+ {
+  "icon": "🛡️",
+  "scene": "night",
+  "character": "🤲",
+  "title": {
+   "ar": "براءةٌ من فوقِ سبعِ سماوات",
+   "en": "Innocence From Above Seven Heavens"
   },
+  "pages": [
+   {
+    "scene": "night",
+    "character": "😔",
+    "text": {
+     "ar": "في إحدى الغزوات، تأخّرتْ <b>عائشةُ</b> عن الجيشِ من غيرِ قصدٍ حين ذهبتْ تبحثُ عن عِقدٍ ضاعَ منها، فعادتْ مع صحابيٍّ أمينٍ أوصلَها للمدينة. فاستغلَّ <b>المنافقون</b> هذا الأمرَ وبدؤوا ينشرونَ كلاماً كاذباً يطعنونَ في عائشةَ الطاهرة!<br><br>حزِنتْ عائشةُ حزناً شديداً وبكتْ حتى ظنّتْ أنّ دموعَها لا تنقطع، وهي بريئةٌ لا تعلمُ ذنباً. لكنّها قالت كلمةً عظيمةً تدلُّ على إيمانِها: <b>«واللهِ لا أجدُ لي ولكم مثلاً إلّا أبا يوسف حين قال: فصبرٌ جميل، واللهُ المستعانُ على ما تصفون»</b>. ووثقتْ أنّ اللهَ يعلمُ براءتَها.",
+     "en": "On one expedition, <b>A’isha</b> was unintentionally left behind by the army when she went to look for a necklace she had lost; she returned with a trustworthy companion who brought her to Madinah. The <b>hypocrites</b> exploited this and began spreading false words slandering the pure A’isha!<br><br>A’isha grieved deeply and wept until she thought her tears would never stop — innocent, knowing no wrong. But she spoke great words showing her faith: <b>\"By Allah, I find no example for myself and you except the father of Yusuf when he said: 'So patience is most fitting, and Allah is the one sought for help against what you describe.'\"</b> She trusted that Allah knew her innocence."
+    },
+    "choice": {
+     "q": {
+      "ar": "كيف واجهتْ عائشةُ التهمةَ الكاذبة؟",
+      "en": "How did A’isha face the false accusation?"
+     },
+     "opts": [
+      {
+       "t": {
+        "ar": "بالصبرِ الجميلِ والثقةِ بأنّ اللهَ يعلمُ براءتَها",
+        "en": "With beautiful patience and trust that Allah knew her innocence"
+       },
+       "c": true,
+       "exp": {
+        "ar": "نعم! الصبرُ مع الثقةِ بالله بابُ الفرج.",
+        "en": "Yes! Patience with trust in Allah is a door to relief."
+       }
+      },
+      {
+       "t": {
+        "ar": "باليأسِ والغضب",
+        "en": "With despair and anger"
+       },
+       "c": false,
+       "exp": {
+        "ar": "لا، بل صبرتْ ووثقتْ بالله.",
+        "en": "No — she was patient and trusted Allah."
+       }
+      },
+      {
+       "t": {
+        "ar": "بالكذبِ على الناس",
+        "en": "By lying to people"
+       },
+       "c": false,
+       "exp": {
+        "ar": "لا، بل صبرتْ وهي صادقةٌ بريئة.",
+        "en": "No — she was patient, truthful, and innocent."
+       }
+      }
+     ]
+    }
+   },
+   {
+    "scene": "madinah",
+    "character": "🗣️",
+    "text": {
+     "ar": "طالَ الأمرُ نحوَ شهر، ولم ينزلِ الوحي. فسألَ النبيُّ ﷺ مَن يعرفُ عائشةَ عن قرب. فسألَ خادمتَها <b>بَريرة</b>، فقالت كما في <b>صحيحِ البخاري</b>: ما رأيتُ عليها أمراً أعيبُه أكثرَ من أنّها <b>جاريةٌ حديثةُ السنّ تنامُ عن عجينِ أهلِها، فتأتي الداجنُ فتأكلُه</b>!<br><br>وسألَ <b>زينبَ بنتَ جحش</b>، فقالت: <b>«أحمي سمعي وبصري، واللهِ ما علمتُ إلّا خيراً»</b>. هكذا شهدَ لها مَن عاشَ معها: فتاةٌ صغيرةٌ طيّبة، كلُّ «عيبِها» أنّها تغفو فتأكلُ الشاةُ العجين!",
+     "en": "The matter dragged on for about a month, and no revelation came. So the Prophet ﷺ asked those who knew A'isha closely. He asked her maid <b>Barira</b>, who said, as recorded in <b>Sahih al-Bukhari</b>: I have never seen anything in her to criticise more than that <b>she is a young girl who falls asleep beside her family's dough, and the pet goat comes and eats it</b>!<br><br>He asked <b>Zaynab bint Jahsh</b>, who said: <b>\"I guard my hearing and my sight; by Allah, I know nothing but good.\"</b> This was the testimony of those who lived with her: a kind young girl whose only \"fault\" was dozing off so that the goat ate the dough!"
+    }
+   },
+   {
+    "scene": "mihrab",
+    "character": "🤲",
+    "text": {
+     "ar": "وبينما الناسُ في حيرةٍ والحزنُ يملأُ بيتَ النبيِّ ﷺ، نزلَ الوحيُ من السماء! أنزلَ اللهُ آياتٍ في سورةِ <b>النور</b> تُبرِّئُ عائشةَ تماماً وتُبيِّنُ كذبَ المنافقين: <b>﴿ إِنَّ الَّذِينَ جَاءُوا بِالْإِفْكِ عُصْبَةٌ مِّنكُمْ ﴾</b> ثمّ ﴿ أُولَٰئِكَ مُبَرَّءُونَ مِمَّا يَقُولُونَ ﴾.<br><br>أيُّ شرفٍ أعظمُ من هذا؟! <b>اللهُ ربُّ العالمينَ يُبرِّئُها من فوقِ سبعِ سماوات</b>، وتُتلى براءتُها في القرآنِ إلى يومِ القيامة! ففرِحتْ عائشةُ فرحاً عظيماً، وعلّمنا اللهُ أنّ الصبرَ على الظلمِ يعقبُه فرجٌ ونصر، وأنّ الحقَّ يظهرُ مهما حاولَ المبطلونَ إخفاءَه.",
+     "en": "While people were perplexed and grief filled the Prophet’s ﷺ home, revelation descended from the sky! Allah sent down verses in Surat <b>an-Nur</b> completely clearing A’isha and exposing the hypocrites’ lies: <b>\"Indeed, those who came with the falsehood were a group among you,\"</b> then \"Those are declared innocent of what they say.\"<br><br>What honor is greater than this?! <b>Allah, Lord of the worlds, declares her innocence from above the seven heavens</b>, and her innocence is recited in the Quran until the Day of Resurrection! A’isha rejoiced greatly, and Allah taught us that patience through injustice is followed by relief and victory, and that the truth appears however much the falsifiers try to hide it."
+    }
+   },
+   {
+    "scene": "mosque",
+    "character": "🤐",
+    "text": {
+     "ar": "علّمَ اللهُ المؤمنينَ في هذه الآياتِ درساً عظيماً: <b>﴿لَوْلَا إِذْ سَمِعْتُمُوهُ ظَنَّ الْمُؤْمِنُونَ وَالْمُؤْمِنَاتُ بِأَنْفُسِهِمْ خَيْرًا﴾</b>، وقال: <b>﴿وَتَحْسَبُونَهُ هَيِّنًا وَهُوَ عِنْدَ اللَّهِ عَظِيمٌ﴾</b>. وكان أبو بكرٍ قد حلفَ أن يقطعَ نفقتَه عن قريبٍ له تكلّمَ في ابنتِه، فنزلَ: <b>﴿وَلْيَعْفُوا وَلْيَصْفَحُوا ۗ أَلَا تُحِبُّونَ أَنْ يَغْفِرَ اللَّهُ لَكُمْ﴾</b>، فقال: بلى، وأعادَ إليه نفقتَه.<br><br>فإذا وصلتك رسالةٌ أو كلامٌ عن أحدٍ في المدرسةِ أو على الهاتف، فتوقّفْ: هل هو صحيح؟ هل يجوزُ نشرُه؟ <b>لا تكنْ ناقلاً للإشاعات</b>، وأحسنِ الظنَّ بالناس، واعفُ كما عفا الصدّيق.",
+     "en": "In these verses Allah taught the believers a great lesson: <b>\"Why, when you heard it, did not the believing men and believing women think good of one another?\"</b> And He said: <b>\"You thought it was insignificant, while it was, in the sight of Allah, tremendous.\"</b> Abu Bakr had sworn to stop supporting a relative who had spoken about his daughter, and then this was revealed: <b>\"Let them pardon and overlook. Would you not like Allah to forgive you?\"</b> He said, \"Yes indeed,\" and restored his support.<br><br>So when a message or some talk about someone reaches you at school or on a phone, stop: Is it true? Is it right to pass on? <b>Do not be a carrier of rumours</b>; think well of people, and forgive as as-Siddiq forgave."
+    }
+   }
+  ],
+  "quiz": [
+   {
+    "q": {
+     "ar": "من نشرَ الكلامَ الكاذبَ عن عائشة؟",
+     "en": "Who spread the false words about A’isha?"
+    },
+    "opts": [
+     {
+      "t": {
+       "ar": "المنافقون",
+       "en": "The hypocrites"
+      },
+      "c": true
+     },
+     {
+      "t": {
+       "ar": "الصحابة",
+       "en": "The companions"
+      },
+      "c": false
+     },
+     {
+      "t": {
+       "ar": "أهلُها",
+       "en": "Her family"
+      },
+      "c": false
+     }
+    ]
+   },
+   {
+    "q": {
+     "ar": "في أيِّ سورةٍ نزلتْ براءتُها؟",
+     "en": "In which surah was her innocence revealed?"
+    },
+    "opts": [
+     {
+      "t": {
+       "ar": "سورةِ النور",
+       "en": "Surat an-Nur"
+      },
+      "c": true
+     },
+     {
+      "t": {
+       "ar": "سورةِ الفيل",
+       "en": "Surat al-Fil"
+      },
+      "c": false
+     },
+     {
+      "t": {
+       "ar": "سورةِ الكوثر",
+       "en": "Surat al-Kawthar"
+      },
+      "c": false
+     }
+    ]
+   },
+   {
+    "q": {
+     "ar": "ما الدرسُ من حادثةِ الإفك؟",
+     "en": "What is the lesson of this incident?"
+    },
+    "opts": [
+     {
+      "t": {
+       "ar": "الصبرُ على الظلمِ يعقبُه الفرج",
+       "en": "Patience through injustice is followed by relief"
+      },
+      "c": true
+     },
+     {
+      "t": {
+       "ar": "نشرُ الإشاعات",
+       "en": "Spreading rumors"
+      },
+      "c": false
+     },
+     {
+      "t": {
+       "ar": "اليأسُ من الله",
+       "en": "Despair of Allah"
+      },
+      "c": false
+     }
+    ]
+   }
+  ],
+  "moral": {
+   "ar": "الصبرُ على الظلمِ يعقبُه الفرج، والحقُّ يظهرُ مهما حاولَ المبطلونَ إخفاءَه — فلا تنشرْ كلاماً لم تتأكّدْ منه.",
+   "en": "Patience through injustice is followed by relief, and truth appears however much falsifiers hide it — so never spread words you have not verified."
+  },
+  "badge": {
+   "icon": "🛡️",
+   "title": {
+    "ar": "وِسامُ البراءةِ والصبر",
+    "en": "Badge of Innocence & Patience"
+   }
+  },
+  "reflect": [
+   {
+    "ar": "هل تتأكّدُ من الكلامِ قبلَ أن تنقلَه عن الناس؟",
+    "en": "Do you verify words before passing them on about people?"
+   },
+   {
+    "ar": "كيف تصبرُ وتثقُ بالله إذا ظُلِمتَ؟",
+    "en": "How do you stay patient and trust Allah if you are wronged?"
+   }
+  ],
+  "didYouKnow": [
+   {
+    "ar": "حادثةُ الإفكِ وبراءةُ عائشةَ مفصّلةٌ في صحيحِ البخاري ونزلتْ فيها آياتٌ من سورةِ النور — المصدر: صحيح البخاري",
+    "en": "The incident of slander and A’isha’s innocence is detailed in Sahih al-Bukhari, and verses of Surat an-Nur were revealed about it — Source: Sahih al-Bukhari"
+   },
+   {
+    "ar": "حذّرَ اللهُ في سورةِ النورِ من نشرِ الإشاعاتِ والخوضِ في أعراضِ الناس — المصدر: سورة النور",
+    "en": "In Surat an-Nur, Allah warned against spreading rumors and assailing people’s honor — Source: Surat an-Nur"
+   }
+  ]
+ },
+ {
+  "icon": "🏃‍♀️",
+  "scene": "desert",
+  "character": "😄",
+  "title": {
+   "ar": "«هذه بتلك» — سباقٌ في الصحراء",
+   "en": "\"This One for That One\" — A Race in the Desert"
+  },
+  "pages": [
+   {
+    "scene": "dwellings",
+    "character": "🏠",
+    "text": {
+     "ar": "كيف كان النبيُّ ﷺ في بيتِه؟ سُئلت عائشةُ عن ذلك فقالت كما في <b>صحيحِ البخاري</b>: <b>«كان يكونُ في مِهنةِ أهلِه — تعني خدمةَ أهلِه — فإذا حضرتِ الصلاةُ خرجَ إلى الصلاة»</b>. لم يكن ﷺ قائداً متجهّماً في بيتِه، بل كان يساعدُ ويبتسمُ ويلاطف.<br><br>وفي يومِ عيدٍ كان الحبشةُ يلعبونَ بحرابِهم في المسجد، فسترَها النبيُّ ﷺ بردائِه وهي تنظرُ إليهم، ولم ينصرفْ حتى كانت هي التي ملّت وانصرفت. وفي إحدى رحلاتِه معها، كانت هناك مفاجأةٌ صغيرةٌ تنتظرُها.",
+     "en": "What was the Prophet ﷺ like at home? A'isha was asked about this and said, as recorded in <b>Sahih al-Bukhari</b>: <b>\"He used to busy himself serving his family, and when the time for prayer came he would go out to pray.\"</b> He ﷺ was not a stern commander at home; he helped, smiled and was gentle.<br><br>On a day of Eid, the Abyssinians were playing with their spears in the mosque, and the Prophet ﷺ screened her with his cloak while she watched them, and he did not leave until she herself grew tired and left. And on one of his journeys with her, a little surprise was waiting for her."
+    }
+   },
+   {
+    "scene": "desert",
+    "character": "😄",
+    "text": {
+     "ar": "خرجتْ <b>عائشةُ</b> مع النبيِّ ﷺ في سفرٍ من أسفارِه، وكانت يومئذٍ صغيرةً خفيفةَ الجسم. فقال النبيُّ ﷺ للناس: <b>«تقدّموا»</b>، فتقدّموا، ثمّ التفتَ إليها مبتسماً وقال: <b>«تعالَي حتى أُسابقَكِ!»</b>. فانطلقا يجريانِ في الصحراء، <b>فسبقتْه عائشةُ</b> على رِجلَيها! فسكتَ النبيُّ ﷺ ولم يقلْ شيئاً.",
+     "en": "<b>A’isha</b> went out with the Prophet ﷺ on one of his journeys, when she was young and light. The Prophet ﷺ told the people: <b>\"Go on ahead,\"</b> and they went ahead. Then he turned to her smiling and said: <b>\"Come, let me race you!\"</b> They ran across the desert, and <b>A’isha beat him</b> on foot! The Prophet ﷺ stayed quiet and said nothing."
+    }
+   },
+   {
+    "scene": "desert",
+    "character": "😄",
+    "text": {
+     "ar": "ومرّتِ السنون، وكبِرتْ عائشةُ وثقُلَ جسمُها ونسيتِ السباقَ الأوّل. فخرجتْ معه في سفرٍ آخر، فقال للناسِ مرّةً أخرى: «تقدّموا»، ثمّ قال: «تعالَي أُسابقْكِ». فتسابقا، <b>فسبقها النبيُّ ﷺ هذه المرّة</b>، فجعلَ يضحكُ ويقول: <b>«هذه بتلك!»</b> — أي: هذا الفوزُ مقابلَ فوزِكِ القديم! يا لَها من صورةٍ جميلة: أعظمُ رجلٍ في الدنيا، نبيُّ الأمّةِ وقائدُها، <b>يلاعبُ أهلَه ويمازحُهم ويُدخِلُ السرورَ عليهم</b>. فالبيتُ المسلمُ بيتُ رحمةٍ وفرحٍ ولطف.",
+     "en": "Years passed; A’isha grew older and heavier and forgot the first race. She went with him on another journey, and again he told the people: \"Go on ahead,\" then said: \"Come, let me race you.\" They raced, and <b>this time the Prophet ﷺ won</b>. He began laughing and said: <b>\"This one for that one!\"</b> — this win for your old win! What a beautiful picture: the greatest man in the world, the Prophet and leader of the Ummah, <b>playing and joking with his family and bringing them joy</b>. A Muslim home is a home of mercy, joy, and gentleness."
+    },
+    "choice": {
+     "q": {
+      "ar": "ماذا قال النبيُّ ﷺ حين سبقَ عائشةَ في المرّةِ الثانية؟",
+      "en": "What did the Prophet ﷺ say when he beat A’isha the second time?"
+     },
+     "opts": [
+      {
+       "t": {
+        "ar": "«هذه بتلك»",
+        "en": "\"This one for that one\""
+       },
+       "c": true,
+       "exp": {
+        "ar": "نعم! كان يمازحُها ويذكّرُها بالسباقِ الأوّلِ ضاحكاً.",
+        "en": "Yes! He was joking and reminding her of the first race, laughing."
+       }
+      },
+      {
+       "t": {
+        "ar": "«لا تُسابقيني أبداً»",
+        "en": "\"Never race me again\""
+       },
+       "c": false,
+       "exp": {
+        "ar": "لا، بل كان يحبُّ ملاعبتَها وإسعادَها.",
+        "en": "No — he loved playing with her and making her happy."
+       }
+      },
+      {
+       "t": {
+        "ar": "لم يقلْ شيئاً",
+        "en": "He said nothing"
+       },
+       "c": false,
+       "exp": {
+        "ar": "سكتَ في المرّةِ الأولى، أمّا الثانيةُ فضحكَ وقال: «هذه بتلك».",
+        "en": "He was silent the first time; the second time he laughed and said \"This one for that one.\""
+       }
+      }
+     ]
+    }
+   },
+   {
+    "scene": "garden",
+    "character": "🏃",
+    "text": {
+     "ar": "تأمّلْ هذه القصّة: النبيُّ ﷺ كان مشغولاً بأعظمِ مهمّةٍ في الدنيا، ومع ذلك وجدَ وقتاً <b>ليلعبَ مع أهلِه</b> ويضحكَ معهم. وتذكّرَ السباقَ الأوّلَ سنين طويلة، ليمازحَها به في السباقِ الثاني!<br><br>وفي بيتِكم أنتم: اللعبُ مع إخوتِك ووالديك <b>عبادةٌ جميلة</b> إذا نويتَ بها إدخالَ السرورِ عليهم. وإذا خسرتَ في سباقٍ أو لعبة، فابتسمْ وقلْ: «المرّةَ القادمةَ لي!»، وإذا فزتَ فلا تتكبّر، بل امزحْ بلطفٍ كما مزحَ النبيُّ ﷺ: <b>«هذه بتلك!»</b>",
+     "en": "Reflect on this story: the Prophet ﷺ was busy with the greatest mission in the world, yet he found time <b>to play with his family</b> and laugh with them. And he remembered the first race for many years, so that he could tease her about it in the second!<br><br>In your own home: playing with your brothers, sisters and parents is <b>a beautiful act of worship</b> when you intend to bring them joy. If you lose a race or a game, smile and say: \"Next time it's mine!\", and if you win, do not be proud — just joke gently as the Prophet ﷺ did: <b>\"This one for that one!\"</b>"
+    }
+   }
+  ],
+  "quiz": [
+   {
+    "q": {
+     "ar": "من فازَ في السباقِ الأوّل؟",
+     "en": "Who won the first race?"
+    },
+    "opts": [
+     {
+      "t": {
+       "ar": "النبيُّ ﷺ",
+       "en": "The Prophet ﷺ"
+      },
+      "c": false
+     },
+     {
+      "t": {
+       "ar": "عائشة",
+       "en": "A’isha"
+      },
+      "c": true
+     },
+     {
+      "t": {
+       "ar": "لم يفزْ أحد",
+       "en": "No one won"
+      },
+      "c": false
+     }
+    ]
+   },
+   {
+    "q": {
+     "ar": "لماذا قال النبيُّ ﷺ للناسِ «تقدّموا»؟",
+     "en": "Why did the Prophet ﷺ tell the people \"Go on ahead\"?"
+    },
+    "opts": [
+     {
+      "t": {
+       "ar": "ليتسابقَ مع أهلِه وحدَهما",
+       "en": "To race with his wife on their own"
+      },
+      "c": true
+     },
+     {
+      "t": {
+       "ar": "ليعاقبَهم",
+       "en": "To punish them"
+      },
+      "c": false
+     },
+     {
+      "t": {
+       "ar": "ليرجعوا إلى المدينة",
+       "en": "So they would go back to Madinah"
+      },
+      "c": false
+     }
+    ]
+   },
+   {
+    "q": {
+     "ar": "ماذا نتعلّمُ من هذه القصّة؟",
+     "en": "What do we learn from this story?"
+    },
+    "opts": [
+     {
+      "t": {
+       "ar": "الجدُّ الدائمُ بلا ضحك",
+       "en": "Always serious, never laughing"
+      },
+      "c": false
+     },
+     {
+      "t": {
+       "ar": "اللعبُ عيبٌ على الكبار",
+       "en": "Play is shameful for adults"
+      },
+      "c": false
+     },
+     {
+      "t": {
+       "ar": "ملاطفةُ الأهلِ وإسعادُهم من هديِ النبيِّ ﷺ",
+       "en": "Being gentle with family and making them happy is the Prophet’s ﷺ way"
+      },
+      "c": true
+     }
+    ]
+   }
+  ],
+  "moral": {
+   "ar": "كان النبيُّ ﷺ أرحمَ الناسِ بأهلِه، يلاعبُهم ويمازحُهم، فالبيتُ السعيدُ يُبنى باللطفِ والمرح.",
+   "en": "The Prophet ﷺ was the kindest of people to his family, playing and joking with them; a happy home is built with gentleness and fun."
+  },
+  "badge": {
+   "icon": "🏃‍♀️",
+   "title": {
+    "ar": "وِسامُ البيتِ السعيد",
+    "en": "Badge of the Happy Home"
+   }
+  },
+  "reflect": [
+   {
+    "ar": "متى لعبتَ آخرَ مرّةٍ مع أهلِك وأدخلتَ السرورَ عليهم؟",
+    "en": "When did you last play with your family and bring them joy?"
+   },
+   {
+    "ar": "إذا خسرتَ في لعبةٍ، هل تبتسمُ وتتقبّلُ كما فعلتْ عائشة؟",
+    "en": "When you lose a game, do you smile and accept it as A’isha did?"
+   }
+  ],
+  "didYouKnow": [
+   {
+    "ar": "حديثُ السباقِ رواه أبو داود (٢٥٧٨) وصحّحه الألباني، ورواه أحمد بزيادةِ «تقدّموا» — المصدر: سنن أبي داود ومسند أحمد",
+    "en": "The race hadith is narrated by Abu Dawud (2578), graded sahih by al-Albani, and by Ahmad with the addition \"Go on ahead\" — Source: Sunan Abi Dawud & Musnad Ahmad"
+   },
+   {
+    "ar": "قال النبيُّ ﷺ: «خيرُكم خيرُكم لأهلِه، وأنا خيرُكم لأهلي» — المصدر: سنن الترمذي (٣٨٩٥)",
+    "en": "The Prophet ﷺ said: \"The best of you is the best to his family, and I am the best of you to my family\" — Source: Sunan at-Tirmidhi (3895)"
+   }
+  ]
+ },
+ {
+  "icon": "🪙",
+  "scene": "madinah",
+  "character": "🍞",
+  "title": {
+   "ar": "مئةُ ألفٍ في يومٍ وهي صائمة",
+   "en": "A Hundred Thousand in a Day — While Fasting"
+  },
+  "pages": [
+   {
+    "scene": "dwellings",
+    "character": "🔥",
+    "text": {
+     "ar": "عاشت <b>عائشةُ</b> مع النبيِّ ﷺ حياةً بسيطةً جدّاً. قالت لابنِ أختِها عروةَ كما في <b>الصحيحين</b>: إنّا كنّا ننظرُ إلى الهلال، ثمّ الهلال، ثمّ الهلال — ثلاثةَ أهلّةٍ في شهرين — <b>وما أُوقِدَ في أبياتِ رسولِ اللهِ ﷺ نار</b>. فقال عروة: فما كان يُعيشُكم؟ قالت: <b>«الأسودان: التمرُ والماء»</b>.<br><br>تعلّمت في ذلك البيتِ أنَّ السعادةَ ليست في كثرةِ المال، وأنَّ المالَ الحقيقيَّ هو ما تُقدِّمُه لآخرتِك. فلمّا فُتِحت الدنيا على المسلمينَ بعدَ ذلك، وجاءَتها الأموال، لم يتغيّرْ قلبُها.",
+     "en": "<b>A'isha</b> lived a very simple life with the Prophet ﷺ. She told her nephew Urwa, as recorded in <b>al-Bukhari and Muslim</b>: we would see the new moon, then the new moon, then the new moon — three new moons in two months — <b>and no fire was lit in the houses of the Messenger of Allah ﷺ</b>. Urwa asked: \"Then what did you live on?\" She said: <b>\"The two black things: dates and water.\"</b><br><br>In that home she learned that happiness is not in having a lot of money, and that real wealth is what you send ahead for your Hereafter. So when, later, the world opened up to the Muslims and wealth came to her, her heart did not change."
+    }
+   },
+   {
+    "scene": "madinah",
+    "character": "🍞",
+    "text": {
+     "ar": "بعدَ وفاةِ النبيِّ ﷺ، أرسلَ <b>عبدُ الله بنُ الزبير</b> — ابنُ أختِها أسماء — إلى خالتِه <b>عائشةَ</b> مالاً عظيماً في <b>كيسَين كبيرَين</b>، فيهما أكثرُ من <b>مئةِ ألفِ درهم</b>! وكانت عائشةُ يومَها <b>صائمة</b>. فماذا فعلتْ بهذه الثروة؟ هل خبّأتْها؟ هل اشترتْ بها ثياباً وقصوراً؟",
+     "en": "After the Prophet’s ﷺ death, <b>Abdullah ibn az-Zubayr</b> — son of her sister Asma — sent his aunt <b>A’isha</b> a huge sum in <b>two large sacks</b>, more than <b>a hundred thousand dirhams</b>! A’isha was <b>fasting</b> that day. What did she do with this fortune? Hide it? Buy clothes and palaces?"
+    }
+   },
+   {
+    "scene": "madinah",
+    "character": "🫒",
+    "text": {
+     "ar": "لا! دعتْ بطبقٍ، وجلستْ <b>تقسمُ المالَ بين الناسِ والفقراء</b> بيدِها، حتى غربتِ الشمسُ و<b>لم يبقَ عندها منه درهمٌ واحد</b>! فلمّا جاءَ وقتُ الإفطارِ قالت لجاريتِها: هاتي فطوري. فجاءتْها <b>بخبزٍ وزيت</b>! فقالت لها أمُّ ذرّةَ التي كانت تخدمُها: أما استطعتِ ممّا قسمتِ اليومَ أن تشتري لنا لحماً بدرهمٍ نُفطِرُ عليه؟ فقالت عائشةُ بكلِّ بساطة: <b>«لو كنتِ ذكّرتِني لفعلت»</b>. لقد نسيتْ نفسَها تماماً وهي تُفرِّحُ الناس! هكذا تعلّمتْ في بيتِ النبوّة: <b>الدنيا في اليدِ لا في القلب</b>.",
+     "en": "No! She called for a tray and sat <b>dividing the money among the people and the poor</b> with her own hands, until the sun set and <b>not a single dirham of it was left</b>! When it was time to break her fast she told her maid: bring my iftar. She brought <b>bread and oil</b>! Umm Dharra, who served her, said: Could you not, from all you gave away today, have bought us meat for a dirham to break our fast with? A’isha said simply: <b>\"Had you reminded me, I would have.\"</b> She had completely forgotten herself while making others happy! This is what she learned in the house of Prophethood: <b>the world in your hand, not in your heart</b>."
+    },
+    "choice": {
+     "q": {
+      "ar": "على ماذا أفطرتْ عائشةُ بعدَ أن قسمتِ المال؟",
+      "en": "What did A’isha break her fast with after giving away the money?"
+     },
+     "opts": [
+      {
+       "t": {
+        "ar": "على لحمٍ وحلوى",
+        "en": "Meat and sweets"
+       },
+       "c": false,
+       "exp": {
+        "ar": "لا، لم يبقَ عندها شيءٌ تشتري به اللحم.",
+        "en": "No — nothing was left to buy meat with."
+       }
+      },
+      {
+       "t": {
+        "ar": "على خبزٍ وزيت",
+        "en": "Bread and oil"
+       },
+       "c": true,
+       "exp": {
+        "ar": "نعم! أعطتِ الناسَ كلَّ شيءٍ ورضيتْ بالقليل.",
+        "en": "Yes! She gave people everything and was content with little."
+       }
+      },
+      {
+       "t": {
+        "ar": "لم تكنْ صائمة",
+        "en": "She was not fasting"
+       },
+       "c": false,
+       "exp": {
+        "ar": "بل كانت صائمةً وهي تقسمُ المال.",
+        "en": "She was fasting while she divided the money."
+       }
+      }
+     ]
+    }
+   },
+   {
+    "scene": "grain",
+    "character": "🤲",
+    "text": {
+     "ar": "قال النبيُّ ﷺ كما في <b>صحيحِ مسلم</b>: <b>«ما نقصت صدقةٌ من مال»</b>. وقد مدحَ اللهُ الذين: <b>﴿وَيُطْعِمُونَ الطَّعَامَ عَلَىٰ حُبِّهِ مِسْكِينًا وَيَتِيمًا وَأَسِيرًا﴾</b>، ويقولون: <b>﴿إِنَّمَا نُطْعِمُكُمْ لِوَجْهِ اللَّهِ لَا نُرِيدُ مِنْكُمْ جَزَاءً وَلَا شُكُورًا﴾</b>.<br><br>لن يكونَ عندك مئةُ ألفِ درهم، لكن عندك مصروفُك، وألعابُك، وملابسُك التي صغُرت عليك. <b>اختَرْ شيئاً تحبُّه وأعطِه</b> لمن يحتاجُه، بفرحٍ ومن غيرِ أن تنتظرَ شكراً. وستشعرُ — كما شعرت عائشةُ — أنَّ فرحةَ العطاءِ أحلى من أيِّ طعام.",
+     "en": "The Prophet ﷺ said, as recorded in <b>Sahih Muslim</b>: <b>\"Charity never decreases wealth.\"</b> And Allah praised those who <b>\"give food, despite their love for it, to the poor, the orphan and the captive,\"</b> saying: <b>\"We feed you only for the sake of Allah; we want from you no reward and no thanks.\"</b><br><br>You will not have a hundred thousand dirhams, but you have your pocket money, your toys, and the clothes you have grown out of. <b>Choose something you love and give it</b> to someone who needs it, joyfully, without waiting for thanks. And you will feel — as A'isha felt — that the joy of giving is sweeter than any food."
+    }
+   }
+  ],
+  "quiz": [
+   {
+    "q": {
+     "ar": "من أرسلَ المالَ إلى عائشة؟",
+     "en": "Who sent the money to A’isha?"
+    },
+    "opts": [
+     {
+      "t": {
+       "ar": "ابنُ أختِها عبدُ الله بنُ الزبير",
+       "en": "Her nephew Abdullah ibn az-Zubayr"
+      },
+      "c": true
+     },
+     {
+      "t": {
+       "ar": "تاجرٌ غريب",
+       "en": "A stranger merchant"
+      },
+      "c": false
+     },
+     {
+      "t": {
+       "ar": "ملكُ الروم",
+       "en": "The king of Rome"
+      },
+      "c": false
+     }
+    ]
+   },
+   {
+    "q": {
+     "ar": "كم بقيَ عند عائشةَ من المالِ عند المغرب؟",
+     "en": "How much money did A’isha have left at sunset?"
+    },
+    "opts": [
+     {
+      "t": {
+       "ar": "النصف",
+       "en": "Half"
+      },
+      "c": false
+     },
+     {
+      "t": {
+       "ar": "ولا درهمٌ واحد",
+       "en": "Not a single dirham"
+      },
+      "c": true
+     },
+     {
+      "t": {
+       "ar": "كلُّه",
+       "en": "All of it"
+      },
+      "c": false
+     }
+    ]
+   },
+   {
+    "q": {
+     "ar": "ماذا نتعلّمُ من عائشة؟",
+     "en": "What do we learn from A’isha?"
+    },
+    "opts": [
+     {
+      "t": {
+       "ar": "جمعُ المالِ هو الأهم",
+       "en": "Collecting money matters most"
+      },
+      "c": false
+     },
+     {
+      "t": {
+       "ar": "الصدقةُ تُنقِصُ الخير",
+       "en": "Charity lessens good"
+      },
+      "c": false
+     },
+     {
+      "t": {
+       "ar": "الكرمُ والزهدُ وتفريحُ المحتاجين",
+       "en": "Generosity, simplicity, and bringing joy to the needy"
+      },
+      "c": true
+     }
+    ]
+   }
+  ],
+  "moral": {
+   "ar": "المؤمنُ يجعلُ المالَ في يدِه لا في قلبِه، ويفرحُ بإسعادِ الناسِ أكثرَ من فرحِه بنفسِه.",
+   "en": "The believer keeps wealth in his hand, not his heart, and is happier making others happy than pleasing himself."
+  },
+  "badge": {
+   "icon": "🪙",
+   "title": {
+    "ar": "وِسامُ اليدِ السخيّة",
+    "en": "Badge of the Generous Hand"
+   }
+  },
+  "reflect": [
+   {
+    "ar": "لو أُعطيتَ مالاً كثيراً اليوم، ماذا تفعلُ به؟",
+    "en": "If you were given a lot of money today, what would you do with it?"
+   },
+   {
+    "ar": "هل تشاركُ ما تحبُّ من طعامٍ أو ألعابٍ مع غيرِك؟",
+    "en": "Do you share the food or toys you love with others?"
+   }
+  ],
+  "didYouKnow": [
+   {
+    "ar": "قصّةُ قسمةِ عائشةَ للمالِ وهي صائمةٌ وفطرِها على خبزٍ وزيت — المصدر: سير أعلام النبلاء للذهبي (ترجمة عائشة)",
+    "en": "The story of A’isha dividing the money while fasting and breaking her fast on bread and oil — Source: Siyar A’lam an-Nubala by adh-Dhahabi (biography of A’isha)"
+   },
+   {
+    "ar": "قال عروةُ بنُ الزبير: رأيتُ عائشةَ تتصدّقُ بسبعينَ ألفاً وإنّها لترقعُ جانبَ درعِها — المصدر: سير أعلام النبلاء",
+    "en": "Urwa ibn az-Zubayr said: I saw A’isha give away seventy thousand in charity while patching the side of her own garment — Source: Siyar A’lam an-Nubala"
+   }
+  ]
+ }
 ];

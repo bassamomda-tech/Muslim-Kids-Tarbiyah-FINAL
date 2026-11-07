@@ -11,6 +11,14 @@ HISN_STORIES.hamza = [
   },
   "pages": [
    {
+    "scene": "kaaba",
+    "character": "🕋",
+    "text": {
+     "ar": "في السنواتِ الأولى من الدعوةِ في <b>مكّة</b>، كان المسلمونَ قليلينَ ضعفاء، يُؤذيهم المشركونَ ويسخرونَ منهم. وكان النبيُّ ﷺ يصبرُ على الأذى ويدعو الناسَ إلى عبادةِ اللهِ وحدَه.<br><br>وكان للنبيِّ ﷺ عمٌّ قويٌّ اسمُه <b>حمزةُ بنُ عبدِ المطّلب</b>، وكُنيتُه <b>أبو عُمارة</b>. كان يحبُّ الصيدَ، يخرجُ بقوسِه إلى البرّيّة، فإذا رجعَ بدأ بالطوافِ حولَ <b>الكعبة</b> قبلَ أن يدخلَ بيتَه، ثم يمرُّ على مجالسِ قريشٍ فيُسلّمُ عليهم. ولم يكن قد أسلمَ بعد.<br><br>وفي يومٍ من الأيّام مرَّ <b>أبو جهلٍ</b> بالنبيِّ ﷺ عند الصَّفا، فآذاه وشتمه بكلامٍ قبيح، والنبيُّ ﷺ ساكتٌ لا يردُّ عليه. وكانت امرأةٌ في بيتٍ قريبٍ تسمعُ ذلك كلَّه.",
+     "en": "In the first years of the call to Islam in <b>Makkah</b>, the Muslims were few and weak; the idol-worshippers harmed them and mocked them. The Prophet ﷺ bore the harm patiently and kept inviting people to worship Allah alone.<br><br>The Prophet ﷺ had a strong uncle named <b>Hamza ibn Abd al-Muttalib</b>, known as <b>Abu Umara</b>. He loved hunting and would go out into the wilderness with his bow. When he returned, he would first walk around the <b>Ka'bah</b> before going home, then pass by the gatherings of Quraysh and greet them. He had not yet become Muslim.<br><br>One day <b>Abu Jahl</b> passed by the Prophet ﷺ near as-Safa and abused him with ugly insults, while the Prophet ﷺ stayed silent and did not answer back. A woman in a nearby house heard it all."
+    }
+   },
+   {
     "scene": "madinah",
     "character": "🏹",
     "text": {
@@ -57,6 +65,22 @@ HISN_STORIES.hamza = [
        }
       }
      ]
+    }
+   },
+   {
+    "scene": "kaaba",
+    "character": "😠",
+    "text": {
+     "ar": "كان أبو جهلٍ جالساً مع قومِه عند الكعبةِ حين ضربه حمزة. فقامَ رجالٌ من قبيلتِه <b>بني مخزوم</b> ليُدافعوا عنه، فقال لهم أبو جهل: <b>«دَعُوا أبا عُمارة، فإنّي واللهِ قد سببتُ ابنَ أخيه سبّاً قبيحاً»</b>. لقد عرفَ أنّه هو الظالم!<br><br>ورجعَ حمزةُ إلى بيتِه يفكّر: لقد أعلنَ إسلامَه في لحظةِ غضب، فهل يبقى عليه؟ فذهبَ إلى رسولِ اللهِ ﷺ، فحدّثه النبيُّ ﷺ ووعظه، فشرحَ اللهُ صدرَه للإسلام، وصار إيمانُه يقيناً لا غضباً عابراً.<br><br>وعرفت قريشٌ أنّ رسولَ اللهِ ﷺ قد صار له <b>سندٌ قويٌّ</b> يحميه، وفرحَ المسلمونَ فرحاً عظيماً.",
+     "en": "Abu Jahl had been sitting with his people by the Ka'bah when Hamza struck him. Men from his clan, <b>Banu Makhzum</b>, rose to defend him, but Abu Jahl told them: <b>\"Leave Abu Umara alone, for by Allah I insulted his nephew with ugly insults.\"</b> He knew that he himself was the wrongdoer!<br><br>Hamza went home thinking: he had declared his Islam in a moment of anger — would he remain upon it? So he went to the Messenger of Allah ﷺ, who spoke with him and advised him, and Allah opened his heart to Islam. His faith became firm certainty, not a passing burst of anger.<br><br>Quraysh realized that the Messenger of Allah ﷺ now had <b>a strong supporter</b> to protect him, and the Muslims rejoiced greatly."
+    }
+   },
+   {
+    "scene": "kaaba",
+    "character": "🦁",
+    "text": {
+     "ar": "انظرْ يا بطل كيف بدأت القصّة: امرأةٌ لم تسكتْ عن الظلم، فأخبرت مَن يقدرُ على نصرةِ المظلوم. وحمزةُ لم يرضَ أن يُهانَ إنسانٌ صادقٌ أمينٌ وهو ساكت.<br><br>ثم انظرْ كيف أكملَ حمزةُ الطريق: لم يجعلْ غضبَه آخرَ القصّة، بل ذهبَ يسألُ ويتعلّمُ حتى ثبتَ الإيمانُ في قلبِه. فالغيرةُ على الحقِّ بدايةٌ جميلة، لكنّها تحتاجُ إلى <b>علمٍ وصبرٍ وثبات</b>.<br><br>وأنت اليوم: إذا رأيتَ أحداً يسخرُ من صديقٍ أو يؤذي ضعيفاً، فكنْ <b>نصيراً للحقّ</b> بالكلمةِ الطيّبة، وأخبرْ الكبارَ الذين يقدرونَ على المساعدة.",
+     "en": "Look, young hero, at how the story began: a woman who did not stay silent about injustice told someone able to help the wronged. And Hamza would not accept that a truthful, trustworthy man be insulted while he said nothing.<br><br>Then see how Hamza completed the path: he did not let his anger be the end of the story. He went to ask and to learn until faith settled firmly in his heart. Zeal for the truth is a beautiful beginning, but it needs <b>knowledge, patience and steadfastness</b>.<br><br>And you today: if you see someone mocking a friend or hurting someone weak, be <b>a supporter of the truth</b> with good words, and tell the grown-ups who are able to help."
     }
    }
   ],
@@ -192,6 +216,22 @@ HISN_STORIES.hamza = [
   "pages": [
    {
     "scene": "peaks",
+    "character": "🐎",
+    "text": {
+     "ar": "بعدَ <b>غزوةِ بدر</b> رجعت قريشٌ إلى مكّةَ حزينةً غاضبة، فقد قُتِلَ كثيرٌ من سادتِها. فأخذوا سنةً كاملةً يجمعونَ المالَ والرجال، وفي السنةِ الثالثةِ للهجرةِ خرجوا بجيشٍ كبيرٍ نحوَ المدينةِ يريدونَ الانتقام.<br><br>وكان <b>حمزةُ</b> يومَ بدرٍ من أشدِّ المسلمينَ على المشركين، فكانت قريشٌ تحقدُ عليه. وكان في مكّةَ رجلٌ اسمُه <b>جُبيرُ بنُ مُطعِم</b>، قُتِلَ عمُّه يومَ بدر، وكان له غلامٌ حبشيٌّ ماهرٌ في رميِ الحربةِ اسمُه <b>وحشيّ</b>. فقال له جُبير: إن قتلتَ حمزةَ فأنت حرّ.",
+     "en": "After the <b>Battle of Badr</b>, Quraysh returned to Makkah sad and furious, for many of their chiefs had been killed. They spent a whole year gathering money and men, and in the third year after the Hijra they marched with a large army towards Madinah seeking revenge.<br><br>At Badr, <b>Hamza</b> had been one of the fiercest Muslims against the idol-worshippers, so Quraysh held a deep grudge against him. In Makkah there was a man named <b>Jubayr ibn Mut'im</b>, whose uncle had been killed at Badr. He had an Abyssinian slave skilled at throwing the spear, named <b>Wahshi</b>. Jubayr told him: If you kill Hamza, you are free."
+    }
+   },
+   {
+    "scene": "peaks",
+    "character": "🛡️",
+    "text": {
+     "ar": "بدأت المعركة، وانطلقَ حمزةُ في الصفوفِ الأولى يقاتلُ بشجاعةٍ عجيبة، لا يتراجعُ ولا يخاف. لم يكن يقاتلُ من أجلِ غنيمةٍ أو شهرة، بل دفاعاً عن <b>رسولِ اللهِ ﷺ</b> وعن المدينةِ وأهلِها.<br><br>أمّا وحشيٌّ فلم يكن يريدُ شيئاً إلا حرّيّتَه؛ فاختبأَ خلفَ صخرةٍ ينتظرُ أن يمرَّ حمزةُ قريباً منه. كان حمزةُ ينظرُ أمامَه إلى الأعداءِ المقاتلين، ولم يكن يعلمُ أنّ رجلاً مختبئاً يتربّصُ به من بعيد.",
+     "en": "The battle began, and Hamza charged in the front ranks, fighting with amazing courage, never retreating and never afraid. He was not fighting for spoils or fame, but to defend <b>the Messenger of Allah ﷺ</b>, Madinah and its people.<br><br>As for Wahshi, he wanted nothing but his freedom. He hid behind a rock, waiting for Hamza to pass close by. Hamza was looking ahead at the enemy fighters in front of him, and did not know that a hidden man was lying in wait for him from a distance."
+    }
+   },
+   {
+    "scene": "peaks",
     "character": "⚔️",
     "text": {
      "ar": "في غزوةِ <b>أُحُد</b>، قاتلَ حمزةُ قتالَ الأبطال، يدافعُ عن النبيِّ ﷺ ويُفرِّقُ صفوفَ المشركين. كان <b>أسداً</b> لا يقفُ أمامَه أحد. لكنّ المشركينَ دبّروا له، فاستُشهِدَ رضي الله عنه في المعركة.<br><br>حزِنَ النبيُّ ﷺ على عمِّه حمزةَ حزناً شديداً، ووقفَ عليه وقال: <b>«لن أُصابَ بمثلِك أبداً»</b>. ولقّبه <b>«سيّدَ الشهداء»</b>. علّمنا حمزةُ أنّ <b>الموتَ في سبيلِ اللهِ حياة</b>، وأنّ الشهداءَ أحياءٌ عندَ ربِّهم يُرزَقون: ﴿ ولا تحسبنّ الذين قُتِلوا في سبيلِ اللهِ أمواتاً بل أحياء ﴾.",
@@ -237,6 +277,22 @@ HISN_STORIES.hamza = [
        }
       }
      ]
+    }
+   },
+   {
+    "scene": "madinah",
+    "character": "🤲",
+    "text": {
+     "ar": "ودُفِنَ حمزةُ رضي الله عنه مع شهداءِ أُحُدٍ عند الجبل، وما زالَ المسلمونَ يذكرونَه ويدعونَ له إلى اليوم.<br><br>وبعدَ سنواتٍ جاءَ <b>وحشيٌّ</b> إلى النبيِّ ﷺ مسلماً، فقَبِلَ النبيُّ ﷺ إسلامَه، فالإسلامُ يمحو ما كان قبلَه، لكنّه سأله: <b>«فهل تستطيعُ أن تُغيِّبَ وجهَك عنّي؟»</b> لأنّ رؤيتَه كانت تُذكّرُه بعمِّه الحبيب. فانظرْ إلى هذا القلبِ الرحيم: يعفو عن قاتلِ عمِّه، ويبقى إنساناً يحزنُ ويتألّم.<br><br>وأرادَ وحشيٌّ أن يُكفّرَ عمّا فعل، فخرجَ بعدَ وفاةِ النبيِّ ﷺ وقاتلَ <b>مُسيلمةَ الكذّاب</b> الذي ادّعى النبوّة، فقتلَه بالحربةِ نفسِها.",
+     "en": "Hamza was buried with the martyrs of Uhud by the mountain, and Muslims still remember him and pray for him to this day.<br><br>Years later, <b>Wahshi</b> came to the Prophet ﷺ as a Muslim. The Prophet ﷺ accepted his Islam, for Islam wipes away what came before it, but he asked him: <b>\"Can you keep your face away from me?\"</b> — because seeing him reminded him of his beloved uncle. Look at this merciful heart: he forgave the killer of his uncle, yet remained a human being who grieved and felt pain.<br><br>Wahshi wanted to make up for what he had done. After the Prophet's ﷺ death he went out and fought <b>Musaylima the Liar</b>, who had falsely claimed prophethood, and killed him with the very same spear."
+    }
+   },
+   {
+    "scene": "peaks",
+    "character": "🌟",
+    "text": {
+     "ar": "عاشَ حمزةُ في الإسلامِ سنواتٍ قليلة، لكنّه ملأها <b>نصرةً وشجاعةً وإخلاصاً</b>، فرفعَ اللهُ ذكرَه، وصار اسمُه يتردّدُ على ألسنةِ المسلمينَ قروناً بعدَ قرون.<br><br>ومن قصّتِه نتعلّمُ أمرين: أنّ <b>العمرَ يُقاسُ بالعملِ الصالحِ لا بعددِ السنين</b>، وأنّ بابَ التوبةِ مفتوحٌ لكلِّ مَن رجعَ إلى الله، حتى مَن أخطأَ خطأً كبيراً مثلَ وحشيّ.",
+     "en": "Hamza lived in Islam only a few years, but he filled them with <b>support for the truth, courage and sincerity</b>. So Allah raised his name, and it has been on Muslims' lips century after century.<br><br>From his story we learn two things: that <b>a life is measured by good deeds, not by the number of years</b>, and that the door of repentance is open to everyone who returns to Allah — even someone who made a huge mistake, like Wahshi."
     }
    }
   ],
@@ -372,6 +428,14 @@ HISN_STORIES.hamza = [
   "pages": [
    {
     "scene": "desert",
+    "character": "🐪",
+    "text": {
+     "ar": "في <b>رمضانَ</b> من السنةِ الثانيةِ للهجرة، خرجَ النبيُّ ﷺ مع أصحابِه، وكانوا <b>بضعةَ عشرَ وثلاثَمئة</b> رجل، معهم قليلٌ من الإبلِ والخيل. وخرجت قريشٌ بجيشٍ يقاربُ ألفَ مقاتل، معهم السلاحُ الكثيرُ والطعامُ والخيول.<br><br>نزلَ المسلمونَ عند ماءِ <b>بدر</b>، وقضى النبيُّ ﷺ الليلَ يدعو ربَّه ويستغيثُه ويرفعُ يديه إلى السماء، حتى سقطَ رداؤُه عن كتفَيه. وفي الصباحِ سوّى صفوفَ أصحابِه كما تُسوّى صفوفُ الصلاة.",
+     "en": "In <b>Ramadan</b> of the second year after the Hijra, the Prophet ﷺ set out with his companions, who numbered <b>a little over three hundred and ten</b> men, with only a few camels and horses. Quraysh came out with an army of nearly a thousand fighters, with plenty of weapons, food and horses.<br><br>The Muslims camped by the water of <b>Badr</b>. The Prophet ﷺ spent the night calling upon his Lord, begging for His help and raising his hands to the sky until his cloak slipped from his shoulders. In the morning he straightened the ranks of his companions just as the rows of prayer are straightened."
+    }
+   },
+   {
+    "scene": "desert",
     "character": "🦁",
     "text": {
      "ar": "في صباحِ يومِ <b>بدر</b>، وقفَ الجيشانِ متقابلَين. فخرجَ من صفِّ قريشٍ <b>ثلاثةٌ من أشدِّ فرسانِها</b>: عُتبةُ وشيبةُ ابنا ربيعة، والوليدُ بنُ عتبة، وطلبوا مَن يُبارزُهم. وكانت المبارزةُ عادةَ العربِ قبلَ القتال: يخرجُ الأبطالُ أوّلاً أمامَ الجميع.<br><br>فنادى النبيُّ ﷺ: <b>«قُمْ يا حمزة، قُمْ يا عليّ، قُمْ يا عُبيدةَ بنَ الحارث»</b>. فقامَ <b>حمزةُ</b> عمُّ النبيِّ ﷺ بلا تردّد، ومعه ابنُ أخيه عليٌّ وابنُ عمِّه عُبيدة. لم يقلْ حمزةُ: أنا كبيرٌ أو أنا عمُّ النبيّ، بل لبّى النداءَ في الحال، لأنّ <b>الشجاعَ يتقدّمُ حين يُدعى للحقّ</b>.<br><br>ونصرَ اللهُ الأبطالَ الثلاثة، وجُرِحَ عُبيدةُ رضي الله عنه جرحاً استُشهِدَ منه بعدَ ذلك. وأنزلَ اللهُ فيهم قرآناً يُتلى إلى يومِ القيامة: <b>﴿ هَٰذَانِ خَصْمَانِ اخْتَصَمُوا فِي رَبِّهِمْ ﴾</b> — كان أبو ذرٍّ يُقسِمُ أنّها نزلت فيهم. تخاصموا في اللهِ لا في مالٍ ولا في أرض: فريقٌ يدافعُ عن التوحيد، وفريقٌ يدافعُ عن الأصنام.",
@@ -417,6 +481,22 @@ HISN_STORIES.hamza = [
        }
       }
      ]
+    }
+   },
+   {
+    "scene": "desert",
+    "character": "🤝",
+    "text": {
+     "ar": "ويُروى أنّ ثلاثةً من شبابِ <b>الأنصار</b> خرجوا أوّلاً للمبارزة، فقال عُتبة: نريدُ أكفاءَنا من قومِنا. فلهذا نادى النبيُّ ﷺ أهلَ بيتِه، فقدّمَ أقربَ الناسِ إليه إلى أوّلِ الخطر.<br><br>ولمّا جُرِحَ عُبيدة، لم يتركه صاحباه، بل أسرعَ حمزةُ وعليٌّ إليه وحملاه إلى صفِّ المسلمين. ثم بدأت المعركة، ونصرَ اللهُ المؤمنينَ القليلينَ على الجيشِ الكبير، وسمّى اللهُ ذلك اليومَ <b>يومَ الفرقان</b> لأنّه فرّقَ فيه بين الحقِّ والباطل.",
+     "en": "It is reported that three young men of the <b>Ansar</b> went out first to the duel, but Utba said: We want our equals from our own people. That is why the Prophet ﷺ called on his own family — he sent those closest to him into the first danger.<br><br>When Ubayda was wounded, his two companions did not abandon him: Hamza and Ali rushed to him and carried him back to the Muslim ranks. Then the battle began, and Allah gave the few believers victory over the large army. Allah called that day <b>the Day of the Criterion</b>, because on it He separated truth from falsehood."
+    }
+   },
+   {
+    "scene": "desert",
+    "character": "🦁",
+    "text": {
+     "ar": "تعلّمْ يا بطل من حمزةَ ثلاثةَ دروس: الأوّل: أنّ <b>القائدَ الصادقَ يُقدّمُ أهلَه قبلَ غيرِهم</b> في وقتِ الخطر، كما فعلَ النبيُّ ﷺ. والثاني: أنّ الشجاعَ يلبّي النداءَ ولا يبحثُ عن الأعذار. والثالث: أنّ <b>الأخَ الحقيقيَّ لا يتركُ أخاه</b> وحيداً حين يُصاب.<br><br>فإذا طلبَ منك والداك أو معلّمُك عملاً نافعاً، فقلْ: «أنا لها»، وإذا رأيتَ صديقَك في ضيقٍ، فكنْ أوّلَ مَن يُسرعُ إليه.",
+     "en": "Learn three lessons from Hamza, young hero. First: <b>a truthful leader puts his own family forward before others</b> in times of danger, as the Prophet ﷺ did. Second: the brave answer the call and do not look for excuses. Third: <b>a true brother never leaves his brother alone</b> when he is hurt.<br><br>So when your parents or teacher ask you to do something useful, say: \"I'm on it!\" And when you see your friend in trouble, be the first to rush to his side."
     }
    }
   ],
@@ -551,6 +631,14 @@ HISN_STORIES.hamza = [
   },
   "pages": [
    {
+    "scene": "kaaba",
+    "character": "🏹",
+    "text": {
+     "ar": "وُلِدَ <b>حمزةُ</b> في مكّةَ في بيتِ <b>عبدِ المطّلب</b> سيّدِ قريش، وكان قريباً في السنِّ من النبيِّ ﷺ، فنشأا معاً كالأخوين، يلعبانِ في شِعابِ مكّةَ ويكبرانِ بين أهلِها.<br><br>وكان حمزةُ طويلاً قويَّ الجسم، يحبُّ الفروسيّةَ والصيد، يحملُ قوسَه ويخرجُ إلى الجبالِ والوديان، فعرفه الناسُ بالشجاعةِ والهيبة. وكان أهلُ مكّةَ يعرفونَ أنّه لا يرضى بالذلِّ ولا يسكتُ على الإهانة.<br><br>لكنّ هذه القوّةَ كلَّها كانت تنتظرُ شيئاً يُعطيها معنى، حتى جاءَ <b>الإسلام</b>.",
+     "en": "<b>Hamza</b> was born in Makkah in the house of <b>Abd al-Muttalib</b>, the chief of Quraysh. He was close in age to the Prophet ﷺ, so the two grew up together like brothers, playing in the mountain passes of Makkah and growing up among its people.<br><br>Hamza was tall and strong, loving horsemanship and hunting. He would carry his bow and go out to the mountains and valleys, and people knew him for his courage and dignity. The people of Makkah knew he would never accept humiliation or stay silent when insulted.<br><br>But all this strength was waiting for something to give it meaning — until <b>Islam</b> came."
+    }
+   },
+   {
     "scene": "peaks",
     "character": "🛡️",
     "text": {
@@ -597,6 +685,14 @@ HISN_STORIES.hamza = [
        }
       }
      ]
+    }
+   },
+   {
+    "scene": "madinah",
+    "character": "🚩",
+    "text": {
+     "ar": "ولمّا هاجرَ المسلمونَ إلى <b>المدينة</b>، كان حمزةُ من أوّلِ مَن حملَ الرايةَ في سبيلِ الله؛ إذ يذكرُ كثيرٌ من أهلِ السِّيَرِ أنّ أوّلَ رايةٍ عقدَها النبيُّ ﷺ في المدينةِ كانت لحمزة. ثم كان بطلاً يومَ بدر، وثبتَ يومَ أُحُدٍ حتى لقيَ اللهَ شهيداً.<br><br>وعلّمنا النبيُّ ﷺ ما هي القوّةُ الحقيقيّة فقال: <b>«ليسَ الشديدُ بالصُّرَعة، إنّما الشديدُ الذي يملكُ نفسَه عندَ الغضب»</b>. فالأسدُ الحقيقيُّ ليس مَن يغلبُ الناسَ بعضلاتِه، بل مَن يغلبُ غضبَه، ويضعُ قوّتَه في مكانِها الصحيح.<br><br>فكنْ أسداً يا بطل: قويّاً في الحقّ، رحيماً بالضعيف، هادئاً عند الغضب.",
+     "en": "When the Muslims emigrated to <b>Madinah</b>, Hamza was among the first to carry a banner for the sake of Allah: many biographers mention that the first banner the Prophet ﷺ tied in Madinah was for Hamza. Then he was a hero at Badr, and stood firm at Uhud until he met Allah as a martyr.<br><br>The Prophet ﷺ taught us what true strength is: <b>\"The strong one is not the one who wrestles others down; the strong one is he who controls himself when angry.\"</b> So the real lion is not the one who beats people with his muscles, but the one who defeats his anger and puts his strength in its right place.<br><br>So be a lion, young hero: strong for the truth, merciful to the weak, and calm when angry."
     }
    }
   ],

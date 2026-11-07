@@ -654,6 +654,22 @@ HISN_STORIES.isa = [
      "ar": "وعِندَها حَدَثَت المُعجِزَة! تَكَلَّمَ الرَّضيعُ عيسى في المَهد — رَضيعٌ لا يَتَجاوَزُ أَيّاماً — بِكَلامٍ أَذهَلَ الجَميع:<br><br><b>﴿ قَالَ إِنِّي عَبْدُ اللَّهِ آتَانِيَ الْكِتَابَ وَجَعَلَنِي نَبِيًّا * وَجَعَلَنِي مُبَارَكًا أَيْنَ مَا كُنتُ وَأَوْصَانِي بِالصَّلَاةِ وَالزَّكَاةِ مَا دُمْتُ حَيًّا * وَبَرًّا بِوَالِدَتِي وَلَمْ يَجْعَلْنِي جَبَّارًا شَقِيًّا * وَالسَّلَامُ عَلَيَّ يَوْمَ وُلِدتُّ وَيَوْمَ أَمُوتُ وَيَوْمَ أُبْعَثُ حَيًّا ﴾</b><br><br>أَوَّلُ كَلِمَةٍ قالَها: <b>«إنّي عَبدُ الله»</b> — لَستُ إلَهاً ولا ابنَ إلَه! أَنا عَبدُ الله! ثُمَّ ذَكَرَ نِعَمَ اللهِ عليهِ وأَوصى بِالصَّلاةِ والزَّكاةِ والبِرِّ بِالأُمّ!",
      "en": "Then the miracle happened! Baby Isa spoke from the cradle — an infant only days old — with words that stunned everyone:<br><br><b>﴿ \"He said: I am a servant of Allah. He gave me the Scripture and made me a prophet * He made me blessed wherever I am and enjoined upon me prayer and charity as long as I live * And dutiful to my mother, and He has not made me arrogant or wretched * Peace upon me the day I was born, the day I die, and the day I am raised alive\" ﴾</b><br><br>His first word: <b>\"I am a servant of Allah\"</b> — I am not a god nor son of a god! I am Allah's servant! Then he mentioned Allah's blessings on him and enjoined prayer, charity, and dutifulnesss to his mother!"
     }
+   },
+   {
+    "scene": "cradle",
+    "character": "😮",
+    "text": {
+     "ar": "سَكَتَ القَومُ مَذهولين! الرَّضيعُ الَّذي اتَّهَموا أُمَّهُ يَشهَدُ بِبَراءَتِها، ويُعلِنُ أنَّهُ <b>عَبدٌ للهِ ونَبيّ</b>. فَبَرَّأَ اللهُ مَريَمَ أَمامَ الجَميعِ بِكَلامِ ابنِها!<br><br>ثُمَّ قالَ اللهُ تَعالى بَعدَ هذهِ القِصَّة: <b>﴿ ذَٰلِكَ عِيسَى ابْنُ مَرْيَمَ ۚ قَوْلَ الْحَقِّ الَّذِي فِيهِ يَمْتَرُونَ * مَا كَانَ لِلَّهِ أَنْ يَتَّخِذَ مِنْ وَلَدٍ ۖ سُبْحَانَهُ ۚ إِذَا قَضَىٰ أَمْرًا فَإِنَّمَا يَقُولُ لَهُ كُنْ فَيَكُونُ ﴾</b> — هذا هو الحَقُّ في عيسى: عَبدٌ خَلَقَهُ اللهُ بِكَلِمَةِ «كُن»، ولَيسَ للهِ وَلَد!",
+     "en": "The people fell silent, stunned! The baby whose mother they had accused was testifying to her innocence, and declaring that he was <b>a servant of Allah and a prophet</b>. Allah cleared Maryam in front of everyone through her son’s words!<br><br>Then Allah the Exalted said after this story: <b>﴿ \"That is Isa, son of Maryam — the word of truth about which they dispute * It is not for Allah to take a son; exalted is He! When He decrees a matter, He only says to it, ‘Be,’ and it is\" ﴾</b> — this is the truth about Isa: a servant whom Allah created with the word “Be,” and Allah has no son!"
+    }
+   },
+   {
+    "scene": "nest",
+    "character": "🤱",
+    "text": {
+     "ar": "وأَخبَرَنا النَّبِيُّ ﷺ أنَّهُ <b>لَم يَتَكَلَّم في المَهدِ إلّا ثَلاثَة</b>، أَوَّلُهُم عيسى ابنُ مَريَم — رَواهُ البُخاريُّ ومُسلِم.<br><br>وتَأَمَّل: مِن بَينِ الكَلِماتِ القَليلَةِ الَّتي قالَها في المَهد: <b>«وبَرّاً بِوالِدَتي»</b>! نَبِيٌّ كَريمٌ يَفتَخِرُ بِأنَّ اللهَ جَعَلَهُ بارّاً بِأُمِّه! فَأَنتَ أَيضاً: أَطِع أُمَّك، وقَبِّل يَدَها، وأَعِنها في البَيت، وادعُ لَها في صَلاتِك — فَالبِرُّ بِالأُمِّ مِن أَخلاقِ الأَنبِياء!",
+     "en": "The Prophet ﷺ told us that <b>no one spoke in the cradle except three</b>, the first of them being Isa son of Maryam — narrated by al-Bukhari and Muslim.<br><br>And reflect: among the few words he said in the cradle were <b>\"and dutiful to my mother\"</b>! A noble prophet takes pride that Allah made him dutiful to his mother! So you too: obey your mother, kiss her hand, help her at home, and pray for her in your prayers — dutifulness to one’s mother is from the character of the prophets!"
+    }
    }
   ],
   "quiz": [
@@ -787,6 +803,14 @@ HISN_STORIES.isa = [
   },
   "pages": [
    {
+    "scene": "mihrab",
+    "character": "📜",
+    "text": {
+     "ar": "أَعَدَّ اللهُ عيسى لِلرِّسالَةِ مُنذُ صِغَرِه، فَعَلَّمَهُ العِلمَ والحِكمَة: <b>﴿ وَيُعَلِّمُهُ الْكِتَابَ وَالْحِكْمَةَ وَالتَّوْرَاةَ وَالْإِنْجِيلَ ﴾</b> — التَّوراةُ الَّتي نَزَلَت على موسى، والإِنجيلُ الَّذي أُنزِلَ عليه هو!<br><br>وكانَ بَنو إسرائيلَ في زَمانِهِ قَد ابتَعَدوا عن روحِ دينِهِم، وذَكَرَ المُفَسِّرونَ أنَّ <b>الطِّبَّ</b> كانَ مُنتَشِراً في عَصرِه، فَجاءَهُم عيسى بِآياتٍ يَعجِزُ عنها أَمهَرُ الأَطِبّاء — لِيَعلَموا أنَّها لَيسَت صَنعَةَ بَشَر، بل <b>مِن عِندِ الله!</b>",
+     "en": "Allah prepared Isa for the message from his early years, teaching him knowledge and wisdom: <b>﴿ \"And He will teach him the Book and wisdom and the Torah and the Injil\" ﴾</b> — the Torah revealed to Musa, and the Injil revealed to Isa himself!<br><br>The Children of Israel in his time had drifted from the spirit of their religion, and the commentators mention that <b>medicine</b> was widespread in his era. So Isa came to them with signs that the most skilled physicians could never match — so they would know these were not the work of a human being, but <b>from Allah!</b>"
+    }
+   },
+   {
     "scene": "garden",
     "character": "🕊️",
     "text": {
@@ -833,6 +857,22 @@ HISN_STORIES.isa = [
        }
       }
      ]
+    }
+   },
+   {
+    "scene": "rescue",
+    "character": "😔",
+    "text": {
+     "ar": "رَأى النّاسُ الأَعمى يُبصِر، والمَريضَ يُشفى، والطّينَ يَطير! فَماذا فَعَلوا؟ آمَنَ بَعضُهُم، وعانَدَ آخَرون فَقالوا: <b>﴿ إِنْ هَٰذَا إِلَّا سِحْرٌ مُبِينٌ ﴾</b> — ما هذا إلّا سِحرٌ واضِح!<br><br>لَكِنَّ عيسى لَم يَطلُب مِنهُم أن يَعبُدوه، بل دَعاهُم إلى عِبادَةِ اللهِ وَحدَه: <b>﴿ إِنَّ اللَّهَ رَبِّي وَرَبُّكُمْ فَاعْبُدُوهُ ۗ هَٰذَا صِرَاطٌ مُسْتَقِيمٌ ﴾</b> — المُعجِزاتُ كُلُّها كانَت تُشيرُ إلى طَريقٍ واحِد: <b>عِبادَةِ الله!</b>",
+     "en": "People saw the blind man seeing, the sick healed, and clay taking flight! So what did they do? Some believed, and others stubbornly said: <b>﴿ \"This is nothing but clear magic\" ﴾</b>!<br><br>But Isa never asked them to worship him; he called them to worship Allah alone: <b>﴿ \"Indeed, Allah is my Lord and your Lord, so worship Him. That is a straight path\" ﴾</b> — all the miracles pointed to one single path: <b>the worship of Allah!</b>"
+    }
+   },
+   {
+    "scene": "sprout",
+    "character": "🌟",
+    "text": {
+     "ar": "أَنتَ لا تَملِكُ مُعجِزاتِ عيسى، لَكِنَّ اللهَ أَعطاكَ <b>مَواهِبَ ونِعَماً</b>: عَقلاً تَتَعَلَّمُ بِه، ويَدَينِ تُساعِدُ بِهِما، ولِساناً تَقولُ بِهِ الكَلِمَةَ الطَّيِّبَة.<br><br>فَإذا نَجَحتَ في شَيءٍ فَقُل: <b>«هذا مِن فَضلِ رَبّي»</b>، ولا تَتَكَبَّر. واستَعمِل ما أَعطاكَ اللهُ في نَفعِ النّاس: زُر المَريض، وساعِد المُحتاج، وعَلِّم مَن لا يَعرِف. فَكُلُّ خَيرٍ تَفعَلُهُ إنَّما هو <b>بِإِذنِ الله</b>!",
+     "en": "You do not have Isa’s miracles, but Allah has given you <b>gifts and blessings</b>: a mind to learn with, two hands to help with, and a tongue to speak good words with.<br><br>So when you succeed at something, say: <b>\"This is from the bounty of my Lord,\"</b> and do not be arrogant. Use what Allah has given you to benefit people: visit the sick, help the needy, and teach those who do not know. Every good you do is only <b>by Allah’s permission</b>!"
     }
    }
   ],
@@ -967,6 +1007,14 @@ HISN_STORIES.isa = [
   },
   "pages": [
    {
+    "scene": "call",
+    "character": "🗣️",
+    "text": {
+     "ar": "ظَلَّ عيسى عليهِ السَّلامُ يَدعو بَني إسرائيلَ إلى عِبادَةِ اللهِ وَحدَه، ويُريهِمُ الآياتِ واحِدَةً بَعدَ أُخرى. لَكِنَّ كَثيراً مِنهُم أَعرَضوا، وخافَ الكُبَراءُ على مَكانَتِهِم وسُلطانِهِم.<br><br>وفي وَسَطِ هذا الإعراضِ، أَلقى اللهُ الإيمانَ في قُلوبِ نَفَرٍ صادِقين: <b>﴿ وَإِذْ أَوْحَيْتُ إِلَى الْحَوَارِيِّينَ أَنْ آمِنُوا بِي وَبِرَسُولِي قَالُوا آمَنَّا وَاشْهَدْ بِأَنَّنَا مُسْلِمُونَ ﴾</b> — اللهُ هو الَّذي هَداهُم وأَلهَمَهُم أن يُؤمِنوا!",
+     "en": "Isa, peace be upon him, kept calling the Children of Israel to worship Allah alone, showing them sign after sign. But many of them turned away, and their leaders feared for their status and power.<br><br>In the midst of this rejection, Allah placed faith in the hearts of a sincere few: <b>﴿ \"And when I inspired the Disciples: Believe in Me and in My messenger. They said: We have believed, so bear witness that we are Muslims\" ﴾</b> — it was Allah who guided them and inspired them to believe!"
+    }
+   },
+   {
     "scene": "mosque",
     "character": "🧔",
     "text": {
@@ -1013,6 +1061,22 @@ HISN_STORIES.isa = [
        }
       }
      ]
+    }
+   },
+   {
+    "scene": "mosque",
+    "character": "🤲",
+    "text": {
+     "ar": "ثُمَّ رَفَعَ الحَوارِيّونَ أَيدِيَهُم بِدُعاءٍ جَميل: <b>﴿ رَبَّنَا آمَنَّا بِمَا أَنْزَلْتَ وَاتَّبَعْنَا الرَّسُولَ فَاكْتُبْنَا مَعَ الشَّاهِدِينَ ﴾</b> — لَم يَكتَفوا بِالكَلام، بل اتَّبَعوا الرَّسولَ وطَلَبوا الثَّبات!<br><br>وكانَتِ النَّتيجَة: <b>﴿ فَآمَنَتْ طَائِفَةٌ مِنْ بَنِي إِسْرَائِيلَ وَكَفَرَتْ طَائِفَةٌ ۖ فَأَيَّدْنَا الَّذِينَ آمَنُوا عَلَىٰ عَدُوِّهِمْ فَأَصْبَحُوا ظَاهِرِينَ ﴾</b> — نَصَرَ اللهُ المُؤمِنينَ القَليلينَ على أَعدائِهِم!<br><br>ولِكُلِّ نَبِيٍّ أَنصار، وقَد قالَ نَبِيُّنا ﷺ: <b>«إنَّ لِكُلِّ نَبِيٍّ حَوارِيّاً، وحَوارِيَّ الزُّبَير»</b> — مُتَّفَقٌ عليه.",
+     "en": "Then the Disciples raised their hands with a beautiful supplication: <b>﴿ \"Our Lord, we have believed in what You revealed and have followed the messenger, so register us among the witnesses\" ﴾</b> — they did not stop at words; they followed the messenger and asked for steadfastness!<br><br>And the outcome: <b>﴿ \"A faction of the Children of Israel believed and a faction disbelieved. So We supported those who believed against their enemy, and they became dominant\" ﴾</b> — Allah gave the few believers victory over their enemies!<br><br>Every prophet has his helpers, and our Prophet ﷺ said: <b>\"Every prophet has a disciple, and my disciple is az-Zubayr\"</b> — agreed upon."
+    }
+   },
+   {
+    "scene": "sprout",
+    "character": "🙋",
+    "text": {
+     "ar": "نِداءُ عيسى ما زالَ يَصِلُ إلَينا: <b>مَن أَنصاري إلى الله؟</b> فَكَيفَ تَكونُ أَنتَ مِن أَنصارِ اللهِ اليَوم؟<br><br>حينَ تُحافِظُ على صَلاتِك، وتَصدُقُ في كَلامِك، وتُدافِعُ عن زَميلٍ يُظلَم، وتُعَلِّمُ صَديقَكَ آيَةً أو ذِكراً — فَأَنتَ <b>تَنصُرُ دينَ الله</b>! ولا تَقُل: أَنا صَغيرٌ وَحدي؛ فَالحَوارِيّونَ كانوا قِلَّة، ومَعَ ذلِكَ نَصَرَهُمُ اللهُ وجَعَلَ ذِكرَهُم في القُرآنِ إلى يَومِ القِيامَة!",
+     "en": "Isa’s call still reaches us: <b>Who are my helpers for Allah?</b> So how can you be one of Allah’s helpers today?<br><br>When you guard your prayer, speak truthfully, defend a classmate who is being wronged, and teach your friend a verse or a dhikr — you are <b>supporting Allah’s religion</b>! And do not say: I am small and alone. The Disciples were few, yet Allah gave them victory and made their mention part of the Quran until the Day of Resurrection!"
     }
    }
   ],
@@ -1202,6 +1266,22 @@ HISN_STORIES.isa = [
      "ar": "قالَ اللهُ: <b>﴿ إِنِّي مُنَزِّلُهَا عَلَيْكُمْ فَمَن يَكْفُرْ بَعْدُ مِنكُمْ فَإِنِّي أُعَذِّبُهُ عَذَابًا لَّا أُعَذِّبُهُ أَحَدًا مِّنَ الْعَالَمِينَ ﴾</b> — سَأُنَزِّلُها! لَكِنَّ مَن يَكفُرُ بَعدَها فَعَذابُهُ لَن يُشبِهَ عَذابَ أَيِّ أَحَدٍ في العالَمين!<br><br><b>الدُّروس:</b> الآياتُ نِعمَةٌ لَكِنَّها مَسؤوليَّة. مَن رَأى الحَقَّ واضِحاً ثُمَّ أَعرَضَ — عَذابُهُ أَشَدّ. لا تَطلُب آيَةً لِمُجَرَّدِ الفُضول — بل كُن مُستَعِدّاً لِلالتِزامِ بِما تَراه!<br><br>وهذهِ المائِدَةُ هي الَّتي سُمِّيَت بِها <b>سورَةُ المائِدَة</b> — أَطوَلُ سُوَرِ القُرآنِ الَّتي تَتَحَدَّثُ عن الأَحكام!",
      "en": "Allah said: <b>﴿ \"I will send it down to you, but whoever disbelieves after that — I will punish them with a punishment I have not inflicted on anyone in all worlds\" ﴾</b> — I will send it! But whoever disbelieves afterward, their punishment will be unlike anything anyone in all worlds has received!<br><br><b>The lessons:</b> Signs are blessings but also responsibilities. Whoever sees truth clearly then turns away — their punishment is more severe. Don't request a sign out of mere curiosity — be ready to commit to what you witness!<br><br>This table is what gave <b>Surah Al-Ma'idah</b> its name — the longest surah dealing with rulings!"
     }
+   },
+   {
+    "scene": "table",
+    "character": "🤲",
+    "text": {
+     "ar": "تَأَمَّل <b>أَدَبَ عيسى في الدُّعاء</b>! بَدَأَ بِنِداءِ رَبِّه: «اللَّهُمَّ رَبَّنا»، ثُمَّ طَلَبَ أن تَكونَ المائِدَةُ <b>عيداً وآيَة</b> — لا طَعاماً فَقَط — ثُمَّ خَتَمَ بِالثَّناءِ على اللهِ: «وأَنتَ خَيرُ الرّازِقين».<br><br>وذَكَرَ الإمامُ ابنُ كَثيرٍ أنَّ <b>جُمهورَ العُلَماءِ على أنَّ المائِدَةَ نَزَلَت</b> كَما وَعَدَ الله. أَمّا ما فيها مِن طَعامٍ بِالتَّفصيل، فَلَم يُخبِرنا بِهِ القُرآنُ ولا حَديثٌ صَحيح — فَنَقِفُ عِندَ ما أَخبَرَنا اللهُ بِه.",
+     "en": "Reflect on <b>Isa’s manners in supplication</b>! He began by calling on his Lord: \"O Allah, our Lord,\" then asked that the table be <b>a festival and a sign</b> — not just food — and then closed by praising Allah: \"and You are the best of providers.\"<br><br>Imam Ibn Kathir mentions that <b>the majority of scholars hold that the table did come down</b>, as Allah promised. As for exactly what food was on it, neither the Quran nor any authentic hadith tells us — so we stop at what Allah has told us."
+    }
+   },
+   {
+    "scene": "grain",
+    "character": "🍞",
+    "text": {
+     "ar": "كُلَّ يَومٍ تَجلِسُ إلى <b>مائِدَةٍ</b> فيها طَعامٌ رَزَقَكَ اللهُ إيّاه — مِن غَيرِ أن تَطلُبَ آيَةً ولا مُعجِزَة! فَهَل تَذكُرُ مَن رَزَقَك؟<br><br>قُل: <b>«بِسمِ الله»</b> قَبلَ الطَّعام، وكُل بِيَمينِكَ مِمّا يَليك، ولا تُسرِف ولا تَعِب طَعاماً، واحمَدِ اللهَ بَعدَه. فَقَد قالَ النَّبِيُّ ﷺ: <b>«إنَّ اللهَ لَيَرضى عَنِ العَبدِ أن يَأكُلَ الأَكلَةَ فَيَحمَدَهُ عليها»</b> — رَواهُ مُسلِم. فَمائِدَتُكَ اليَومَ نِعمَةٌ تَستَحِقُّ الشُّكر!",
+     "en": "Every day you sit at a <b>table</b> with food that Allah has provided for you — without asking for any sign or miracle! So do you remember who provided it?<br><br>Say <b>\"Bismillah\"</b> before eating, eat with your right hand from what is in front of you, do not waste or criticise food, and praise Allah afterwards. The Prophet ﷺ said: <b>\"Allah is pleased with the servant who eats a meal and praises Him for it\"</b> — narrated by Muslim. Your table today is a blessing that deserves thanks!"
+    }
    }
   ],
   "quiz": [
@@ -1389,6 +1469,22 @@ HISN_STORIES.isa = [
     "text": {
      "ar": "وقَبلَ الرَّفعِ قالَ اللهُ لِعيسى: <b>﴿ إِذْ قَالَ اللَّهُ يَا عِيسَىٰ إِنِّي مُتَوَفِّيكَ وَرَافِعُكَ إِلَيَّ وَمُطَهِّرُكَ مِنَ الَّذِينَ كَفَرُوا ﴾</b> — سَأَقبِضُكَ مِن الأَرضِ وأَرفَعُكَ إليّ وأُطَهِّرُكَ مِن كَيدِ الكافِرين!<br><br>وسَيَعودُ عيسى آخِرَ الزَّمانِ — يَنزِلُ مِن السَّماءِ ويَكسِرُ الصَّليبَ ويَقتُلُ الدَّجّالَ ويُقيمُ العَدل — ثُمَّ يَموتُ مَوتاً طَبيعيّاً ويُصَلّي عليهِ المُسلِمون.<br><br><b>خُلاصَةُ قِصَّةِ عيسى:</b> هو عَبدُ اللهِ ورَسولُه وكَلِمَتُهُ أَلقاها إلى مَريَمَ ورُوحٌ مِنه — لا إلَهٌ ولا ابنُ إلَه! والَّذينَ رَفَعوهُ فَوقَ مَقامِهِ ظَلَموهُ — كَما ظَلَمَهُ الَّذينَ كَذَّبوه!",
      "en": "Before the raising Allah said to Isa: <b>﴿ \"O Isa, I will take you and raise you to Myself and purify you from those who disbelieved\" ﴾</b> — I will take you from earth, raise you to Me, and cleanse you from the disbelievers' plots!<br><br>Isa will return at the end of time — descending from heaven to break the cross, kill the Dajjal, and establish justice — then he will die a natural death and Muslims will pray over him.<br><br><b>The essence of Isa's story:</b> He is Allah's servant and messenger, His word cast unto Maryam, and a spirit from Him — not a god nor son of a god! Those who raised him above his station wronged him — just as those who denied him wronged him!"
+    }
+   },
+   {
+    "scene": "scales",
+    "character": "⚖️",
+    "text": {
+     "ar": "وأَخبَرَنا القُرآنُ عن مَشهَدٍ عَظيمٍ يَومَ القِيامَة: يَسأَلُ اللهُ عيسى أَمامَ الخَلائِق: هل قُلتَ لِلنّاسِ اتَّخِذوني وأُمِّيَ إلَهَين؟ فَيُجيبُ عيسى مُتَبَرِّئاً: <b>﴿ مَا قُلْتُ لَهُمْ إِلَّا مَا أَمَرْتَنِي بِهِ أَنِ اعْبُدُوا اللَّهَ رَبِّي وَرَبَّكُمْ ﴾</b><br><br>فَعيسى نَفسُهُ سَيَشهَدُ أنَّهُ لَم يَدعُ إلّا إلى <b>التَّوحيد</b>. وقَد مَكَروا بِهِ لِيَقتُلوه، فَحَماهُ اللهُ ورَفَعَه: <b>﴿ وَمَكَرُوا وَمَكَرَ اللَّهُ ۖ وَاللَّهُ خَيْرُ الْمَاكِرِينَ ﴾</b>",
+     "en": "The Quran tells us of a tremendous scene on the Day of Resurrection: Allah will ask Isa before all creation whether he told people to take him and his mother as two gods. Isa will answer, disowning it: <b>﴿ \"I said to them nothing except what You commanded me: to worship Allah, my Lord and your Lord\" ﴾</b><br><br>So Isa himself will bear witness that he called to nothing but <b>Tawhid</b>. They plotted against him to kill him, but Allah protected him and raised him: <b>﴿ \"And they planned, and Allah planned. And Allah is the best of planners\" ﴾</b>"
+    }
+   },
+   {
+    "scene": "cosmos",
+    "character": "💚",
+    "text": {
+     "ar": "نَحنُ المُسلِمينَ <b>نُحِبُّ عيسى</b> عليهِ السَّلامُ ونُؤمِنُ بِه، ولا يَصِحُّ إيمانُ مَن كَفَرَ بِه. وقَد قالَ نَبِيُّنا ﷺ: <b>«أَنا أَولى النّاسِ بِعيسى ابنِ مَريَمَ في الدُّنيا والآخِرَة، والأَنبِياءُ إخوَةٌ لِعَلّات، أُمَّهاتُهُم شَتّى ودينُهُم واحِد»</b> — رَواهُ البُخاريّ.<br><br>ومِن قِصَّتِهِ نَتَعَلَّم: إذا كادَ لَكَ أَحَدٌ أو ظَلَمَك، فَلا تَخَف ولا تَيأَس — <b>اللهُ يَحفَظُ مَن يَتَّقيه</b>، وتَدبيرُهُ أَعظَمُ مِن كُلِّ مَكر. قُل: «حَسبِيَ اللهُ ونِعمَ الوَكيل»، واثبُت على الحَقّ!",
+     "en": "We Muslims <b>love Isa</b>, peace be upon him, and believe in him; no one’s faith is valid if he disbelieves in him. Our Prophet ﷺ said: <b>\"I am the closest of people to Isa son of Maryam in this world and the Hereafter, and the prophets are paternal brothers: their mothers are different, but their religion is one\"</b> — narrated by al-Bukhari.<br><br>And from his story we learn: if someone schemes against you or wrongs you, do not fear and do not despair — <b>Allah protects whoever is mindful of Him</b>, and His planning is greater than any plot. Say: \"Allah is sufficient for me, and He is the best Disposer of affairs,\" and stand firm on the truth!"
     }
    }
   ],

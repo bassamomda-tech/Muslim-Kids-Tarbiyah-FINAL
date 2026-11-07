@@ -10,6 +10,7 @@ HISN_STORIES.musab = [
    "en": "The Youth Who Gave Up Luxury"
   },
   "pages": [
+      {"scene": "kaaba", "character": "🧑", "text": {"ar": "في <b>مكّةَ</b>، قبلَ الهجرة، كانت قريشٌ تفتخرُ بأموالِها وتجارتِها، وكان من أشرافِها <b>بنو عبدِ الدار</b>، أصحابُ مفاتيحِ الكعبةِ ولواءِ الحرب. ومن هذا البيتِ الكريمِ كان فتىً اسمُه <b>مصعبُ بنُ عُمير</b>.<br><br>وفي تلك الأيّام بدأَ النبيُّ ﷺ يدعو الناسَ إلى عبادةِ اللهِ وحدَه، وكان يجتمعُ بأصحابِه سرّاً في <b>دارِ الأرقمِ بنِ أبي الأرقم</b> قربَ جبلِ الصفا، يُعلّمُهم القرآنَ بعيداً عن أعينِ قريش. وكان أكثرُ من أسلمَ يومئذٍ من الفقراءِ والضعفاء، لكنّ الإسلامَ دخلَ أيضاً قلوبَ شبابٍ من أغنى البيوت.", "en": "In <b>Makkah</b>, before the Hijrah, Quraysh took pride in their wealth and trade. Among their nobles were <b>Banu Abd ad-Dar</b>, keepers of the keys of the Ka’bah and the banner of war. From this honoured house came a young man named <b>Mus’ab ibn Umayr</b>.<br><br>In those days the Prophet ﷺ had begun calling people to worship Allah alone, and he met his companions in secret at <b>the house of al-Arqam ibn Abi al-Arqam</b> near Mount Safa, teaching them the Quran away from the eyes of Quraysh. Most of those who accepted Islam then were poor and weak, but Islam also entered the hearts of young men from the wealthiest homes."}},
    {
     "scene": "madinah",
     "character": "👕",
@@ -58,8 +59,9 @@ HISN_STORIES.musab = [
       }
      ]
     }
-   }
-  ],
+   },
+      {"scene": "boat", "character": "⛵", "text": {"ar": "وقد رآه <b>عثمانُ بنُ طلحة</b> يُصلّي، فأخبرَ أمَّه وقومَه، فكان ذلك سببَ حبسِه. ولمّا اشتدَّ الأذى على المسلمين، أذنَ لهم النبيُّ ﷺ بالهجرةِ إلى <b>الحبشة</b>، فهاجرَ مصعبٌ مع المهاجرين، ثمّ عادَ إلى مكّةَ وقد تغيّرَ حالُه: رقَّ جسمُه، وخشُنَ لباسُه، لكنّ قلبَه امتلأَ إيماناً. ويُروى أنّ النبيَّ ﷺ رآه في ثوبٍ مرقّع، فذكرَ ما كان فيه من النعيمِ قبلَ الإسلام.<br><br>يا صديقي، ليس العيبُ أن تلبسَ الجميلَ أو تملكَ المال، لكنّ مصعباً علّمنا أنّه إذا خُيِّرنا بين شيءٍ من الدنيا وبين طاعةِ الله، اخترنا <b>رضا الله</b> بقلبٍ راضٍ.", "en": "<b>Uthman ibn Talhah</b> saw him praying and told his mother and his people, and that was why he was imprisoned. When the persecution of the Muslims grew severe, the Prophet ﷺ allowed them to emigrate to <b>Abyssinia</b>, and Mus’ab emigrated with them. He later returned to Makkah changed: his body thinner and his clothes rough, but his heart full of faith. It is reported that the Prophet ﷺ saw him in a patched garment and remembered the luxury he had lived in before Islam.<br><br>My friend, there is nothing wrong with wearing nice clothes or having money. But Mus’ab taught us that if we must choose between something of this world and obeying Allah, we choose <b>Allah’s pleasure</b> with a contented heart."}},
+    ],
   "quiz": [
    {
     "q": {
@@ -190,6 +192,7 @@ HISN_STORIES.musab = [
    "en": "The First Ambassador and Teacher in Madinah"
   },
   "pages": [
+      {"scene": "night", "character": "🤝", "text": {"ar": "في موسمِ الحجّ، في السنةِ الثانيةَ عشرةَ من البعثة، جاءَ إلى مكّةَ <b>اثنا عشرَ رجلاً</b> من أهلِ يثرب، فلقُوا النبيَّ ﷺ ليلاً عند <b>العقبة</b>، وبايعوه على ألّا يُشركوا باللهِ شيئاً، ولا يسرقوا، ولا يكذبوا، ولا يعصوه في معروف.<br><br>فلمّا أرادوا الرجوعَ إلى بلادِهم، احتاجوا إلى من يُعلّمُهم القرآنَ ويُصلّي بهم، فقد كانت يثربُ بعيدةً عن مكّة، والإسلامُ فيها جديد. كانت مهمّةً صعبة: أن يذهبَ رجلٌ وحدَه إلى مدينةٍ غريبة، ليدعوَ قبائلَ كبيرةً إلى دينٍ جديد.", "en": "During the Hajj season, in the twelfth year of the Prophethood, <b>twelve men</b> from Yathrib came to Makkah and met the Prophet ﷺ at night at <b>al-Aqabah</b>. They pledged to him that they would not associate anything with Allah, would not steal, would not lie, and would not disobey him in what is right.<br><br>When they wanted to return home, they needed someone to teach them the Quran and lead them in prayer, for Yathrib was far from Makkah and Islam there was new. It was a difficult mission: one man going alone to a strange city to call great tribes to a new religion."}},
    {
     "scene": "mosque",
     "character": "📖",
@@ -238,8 +241,9 @@ HISN_STORIES.musab = [
       }
      ]
     }
-   }
-  ],
+   },
+      {"scene": "palm", "character": "🌴", "text": {"ar": "نزلَ مصعبٌ عند <b>أسعدَ بنِ زُرارة</b>. وجاءَه <b>أُسيدُ بنُ حُضير</b> يوماً غاضباً يحملُ حربتَه، فلم يغضبْ مصعب، بل قال له بهدوء: «أوَ تجلسُ فتسمع؟ فإن رضيتَ أمراً قبلتَه، وإن كرهتَه كففنا عنك ما تكره». فجلسَ أُسيد، وسمعَ القرآن، فأسلم. ثمّ جاءَ <b>سعدُ بنُ معاذ</b> فكان معه مثلُ ذلك.<br><br>وفي الموسمِ التالي عادَ مصعبٌ إلى مكّةَ ومعه أكثرُ من <b>سبعينَ</b> مسلماً من أهلِ المدينةِ بايعوا النبيَّ ﷺ. يا صديقي، الكلمةُ الهادئةُ أقوى من الصراخ، فإذا دعوتَ أحداً إلى الخير فادعُه <b>بلطفٍ واحترام</b>، واتركْه يسمعُ ويفكّر.", "en": "Mus’ab stayed with <b>As’ad ibn Zurarah</b>. One day <b>Usayd ibn Hudayr</b> came to him angry, carrying his spear. Mus’ab did not get angry; he said calmly: \"Will you sit and listen? If you like something, accept it; and if you dislike it, we will stop what you dislike.\" Usayd sat, listened to the Quran, and accepted Islam. Then <b>Sa’d ibn Mu’adh</b> came, and the same thing happened with him.<br><br>The following season Mus’ab returned to Makkah with more than <b>seventy</b> Muslims from Madinah, who pledged allegiance to the Prophet ﷺ. My friend, a calm word is stronger than shouting. When you invite someone to good, invite them <b>gently and respectfully</b>, and let them listen and think."}},
+    ],
   "quiz": [
    {
     "q": {
@@ -370,6 +374,7 @@ HISN_STORIES.musab = [
    "en": "A Cloak Too Short for a Shroud"
   },
   "pages": [
+      {"scene": "mountain", "character": "🚩", "text": {"ar": "في السنةِ الثالثةِ للهجرة، جاءتْ قريشٌ بجيشٍ كبيرٍ إلى جبلِ <b>أُحُد</b> قربَ المدينة. فخرجَ النبيُّ ﷺ بأصحابِه، ورتّبَ الصفوف، ووضعَ الرماةَ على الجبلِ الصغير. ثمّ دفعَ <b>اللواءَ</b> إلى <b>مصعبِ بنِ عمير</b>، وكان قومُه بنو عبدِ الدارِ هم أصحابَ اللواءِ في الجاهليّة.<br><br>فحملَ مصعبٌ الرايةَ عالياً، وكان حاملُ الرايةِ في المعركةِ أكثرَ الناسِ تعرّضاً للخطر، لأنّ الجيشَ كلَّه ينظرُ إليه. وكان مصعبٌ يشبهُ النبيَّ ﷺ في هيئتِه، فلمّا استُشهِد ظنَّ المشركُ الذي قتلَه أنّه قتلَ النبيَّ ﷺ، فصاحَ بذلك.", "en": "In the third year after the Hijrah, Quraysh came with a large army to Mount <b>Uhud</b> near Madinah. The Prophet ﷺ went out with his companions, arranged the ranks and placed the archers on the small hill. Then he handed <b>the banner</b> to <b>Mus’ab ibn Umayr</b>, whose clan, Banu Abd ad-Dar, had been the banner-bearers before Islam.<br><br>Mus’ab held the flag high. The flag-bearer was the most exposed person in a battle, because the whole army looked to him. Mus’ab resembled the Prophet ﷺ in appearance, so when he was martyred, the idolater who had killed him thought he had killed the Prophet ﷺ and shouted it out."}},
    {
     "scene": "peaks",
     "character": "⛰️",
@@ -418,8 +423,9 @@ HISN_STORIES.musab = [
       }
      ]
     }
-   }
-  ],
+   },
+      {"scene": "sprout", "character": "🌿", "text": {"ar": "وقد ذكرَ الصحابةُ أنّ قولَ اللهِ تعالى: ﴿مِنَ الْمُؤْمِنِينَ رِجَالٌ صَدَقُوا مَا عَاهَدُوا اللَّهَ عَلَيْهِ﴾ نزلَ في <b>أنسِ بنِ النضرِ</b> وأشباهِه من الصادقين، كما في صحيحِ البخاري. ومصعبٌ من أولئك الذين وفَوا بعهدِهم مع اللهِ حتى آخرِ لحظة.<br><br>يا صديقي، المالُ والثيابُ الجميلةُ تبقى في الدنيا، أمّا <b>العملُ الصالحُ</b> فيصحبُك إلى الآخرة. فلا تحزنْ إن لم تملكْ ما يملكُه غيرُك، واجعلْ همَّك أن تُرضيَ الله.", "en": "The companions mentioned that Allah’s words, <b>\"Among the believers are men who have been true to their covenant with Allah,\"</b> were revealed about <b>Anas ibn an-Nadr</b> and others like him among the truthful, as reported in Sahih al-Bukhari. Mus’ab was one of those who kept their covenant with Allah to the very last moment.<br><br>My friend, money and fine clothes stay behind in this world, but <b>good deeds</b> go with you to the Hereafter. So do not be sad if you do not own what others own; make your concern pleasing Allah."}},
+    ],
   "quiz": [
    {
     "q": {

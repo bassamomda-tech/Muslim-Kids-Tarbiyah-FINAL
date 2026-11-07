@@ -11,6 +11,14 @@ HISN_STORIES.yunus = [
   },
   "pages": [
    {
+    "scene": "call",
+    "character": "🧔",
+    "text": {
+     "ar": "<b>يونُسُ بنُ مَتّى</b> عليهِ السَّلامُ نَبيٌّ كَريمٌ مِن أَنبِياءِ الله، قالَ تَعالى عَنه: <b>﴿ وَإِنَّ يُونُسَ لَمِنَ الْمُرْسَلِينَ ﴾</b>. ويُسَمّيهِ القُرآنُ أَيضاً <b>ذا النّون</b> و<b>صاحِبَ الحوت</b>.<br><br>عاشَ قَومُهُ في مَدينَةٍ كَبيرَةٍ عامِرَةٍ بِالنّاسِ والأَسواقِ والبُيوت، لَكِنَّ قُلوبَهُم كانَت بَعيدَةً عَن رَبِّهِم، يَعبُدونَ غَيرَ اللهِ ويَترُكونَ الحَقّ. فَجاءَهُم يونُسُ بِرِسالَةٍ واضِحَة: اعبُدوا اللهَ وَحدَهُ لا شَريكَ لَه، وأَطيعوني لِتَنجوا في الدُّنيا والآخِرَة.<br><br>وقَد قالَ نَبيُّنا ﷺ: «<b>لا يَنبَغي لِعَبدٍ أن يَقولَ: أنا خَيرٌ مِن يونُسَ بنِ مَتّى</b>» — فَهو نَبيٌّ عَظيمُ القَدر.",
+     "en": "<b>Yunus son of Matta</b>, peace be upon him, was a noble prophet of Allah. Allah says of him: <b>﴿ \"And indeed Yunus was among the messengers\" ﴾</b>. The Qur'an also calls him <b>Dhun-Nun</b> and <b>the Companion of the Fish</b>.<br><br>His people lived in a large city full of people, markets and houses, but their hearts were far from their Lord: they worshipped other than Allah and turned away from the truth. Yunus brought them a clear message: worship Allah alone with no partner, and follow me so you are saved in this life and the next.<br><br>Our Prophet ﷺ said: «<b>No servant should say: I am better than Yunus son of Matta</b>» — for he is a prophet of great rank."
+    }
+   },
+   {
     "scene": "desert",
     "character": "🧔",
     "text": {
@@ -57,6 +65,22 @@ HISN_STORIES.yunus = [
        }
       }
      ]
+    }
+   },
+   {
+    "scene": "sea",
+    "character": "⛵",
+    "text": {
+     "ar": "خَرَجَ يونُسُ مِنَ المَدينَةِ حَتّى وَصَلَ إلى شاطِئِ البَحر، فَوَجَدَ سَفينَةً مُمتَلِئَةً بِالرُّكّابِ والمَتاع، فَرَكِبَها. قالَ تَعالى: <b>﴿ إِذْ أَبَقَ إِلَى الْفُلْكِ الْمَشْحُونِ ﴾</b>.<br><br>وكَلِمَةُ <b>«أَبَقَ»</b> تُقالُ لِلعَبدِ الَّذي يَهرُبُ مِن سَيِّدِه! فَيونُسُ عَبدٌ لِلَّه، وكانَ عَلَيهِ أن يَنتَظِرَ أَمرَ رَبِّهِ ولا يَترُكَ مَكانَه. و<b>«الفُلكُ المَشحون»</b> هو السَّفينَةُ المَملوءَةُ بِالنّاسِ والأَحمال — وهُناكَ، في عُرضِ البَحر، كانَ يَنتَظِرُهُ امتِحانٌ عَظيم.",
+     "en": "Yunus left the city until he reached the seashore, where he found a ship crowded with passengers and goods, and he boarded it. Allah says: <b>﴿ \"When he ran away to the laden ship\" ﴾</b>.<br><br>The word <b>“abaqa”</b> is used for a servant who runs away from his master! Yunus was a servant of Allah, and he should have waited for his Lord's command and not left his post. <b>“The laden ship”</b> is a vessel packed with people and cargo — and there, out at sea, a great test was waiting for him."
+    }
+   },
+   {
+    "scene": "sprout",
+    "character": "🌱",
+    "text": {
+     "ar": "وقَد عَلَّمَ اللهُ نَبيَّنا مُحَمَّداً ﷺ مِن هذِهِ القِصَّة، فَقالَ لَه: <b>﴿ فَاصْبِرْ لِحُكْمِ رَبِّكَ وَلَا تَكُنْ كَصَاحِبِ الْحُوتِ ﴾</b>. فَصَبَرَ النَّبيُّ ﷺ على قَومِهِ سَنَواتٍ طَويلَة، حَتّى دَخَلَ النّاسُ في دينِ اللهِ أَفواجاً.<br><br>وأَنتَ يا صَغيري: إذا نَصَحتَ أَخاكَ أو صَديقَكَ فَلَم يَسمَع، فَلا تَغضَب ولا تَيأَس. أَعِدِ النَّصيحَةَ بِلُطف، وادعُ لَهُ في سُجودِك، واصبِر — فَالقُلوبُ بِيَدِ اللهِ يُقَلِّبُها كَيفَ يَشاء.",
+     "en": "Allah taught our Prophet Muhammad ﷺ from this story, saying to him: <b>﴿ \"So be patient for the decision of your Lord, and do not be like the Companion of the Fish\" ﴾</b>. So the Prophet ﷺ was patient with his people for many long years, until people entered Allah's religion in crowds.<br><br>And you, little one: if you advise your brother or friend and he does not listen, don't get angry and don't give up. Advise him again gently, pray for him in your sujood, and be patient — for hearts are in Allah's hand, and He turns them as He wills."
     }
    }
   ],
@@ -246,6 +270,14 @@ HISN_STORIES.yunus = [
       }
      ]
     }
+   },
+   {
+    "scene": "fish",
+    "character": "📿",
+    "text": {
+     "ar": "لِماذا نَجّى اللهُ يونُس؟ يُخبِرُنا القُرآن: <b>﴿ فَلَوْلَا أَنَّهُ كَانَ مِنَ الْمُسَبِّحِينَ * لَلَبِثَ فِي بَطْنِهِ إِلَىٰ يَوْمِ يُبْعَثُونَ ﴾</b> — لَولا تَسبيحُهُ وذِكرُهُ لِلَّهِ لَبَقِيَ في بَطنِ الحوتِ إلى يَومِ القِيامَة!<br><br>ثُمَّ أَكرَمَهُ اللهُ بَعدَ التَّوبَة: <b>﴿ فَاجْتَبَاهُ رَبُّهُ فَجَعَلَهُ مِنَ الصَّالِحِينَ ﴾</b>.<br><br><b>الدَّرس:</b> اذكُرِ اللهَ في أَيّامِ الرّاحَةِ والفَرَح، يَذكُركَ اللهُ في أَيّامِ الشِّدَّة. واحفَظ دُعاءَ يونُسَ وقُلهُ كُلَّما ضاقَ صَدرُك، فَهو كَنزٌ مِن كُنوزِ المُؤمِن. وقَد أَخبَرَ النَّبيُّ ﷺ أنَّهُ ما دَعا بِهِ مُسلِمٌ في شَيءٍ قَطُّ إلّا استَجابَ اللهُ لَه.",
+     "en": "Why did Allah save Yunus? The Qur'an tells us: <b>﴿ \"Had he not been of those who glorify Allah, he would have remained in its belly until the Day they are resurrected\" ﴾</b> — had it not been for his tasbih and remembrance of Allah, he would have stayed in the whale's belly until the Day of Judgement!<br><br>Then Allah honoured him after his repentance: <b>﴿ \"So his Lord chose him and made him among the righteous\" ﴾</b>.<br><br><b>The lesson:</b> remember Allah in days of ease and joy, and Allah will remember you in days of hardship. Memorise Yunus's du'a and say it whenever your heart feels tight — it is one of the believer's treasures. The Prophet ﷺ told us that no Muslim ever calls with it for anything except that Allah answers him."
+    }
    }
   ],
   "quiz": [
@@ -425,6 +457,22 @@ HISN_STORIES.yunus = [
        }
       }
      ]
+    }
+   },
+   {
+    "scene": "garden",
+    "character": "🧔",
+    "text": {
+     "ar": "ولَمّا شُفِيَ يونُسُ وقَوِيَ تَحتَ ظِلِّ شَجَرَةِ اليَقطين، أَرسَلَهُ اللهُ إلى قَومِه، فَوَجَدَهُم قَد آمَنوا وتابوا! قالَ تَعالى: <b>﴿ وَأَرْسَلْنَاهُ إِلَىٰ مِائَةِ أَلْفٍ أَوْ يَزِيدُونَ * فَآمَنُوا فَمَتَّعْنَاهُمْ إِلَىٰ حِينٍ ﴾</b>.<br><br>تَخَيَّل فَرحَةَ يونُس! القَومُ الَّذينَ يَئِسَ مِنهُم صاروا مُؤمِنينَ يَعبُدونَ اللهَ وَحدَه، وعاشوا في خَيرٍ ونِعمَةٍ إلى أَن جاءَ أَجَلُهُم. لَقَد كانَ اللهُ أَرحَمَ بِهِم مِمّا ظَنّ!<br><br>ولَم يَكُن إيمانُهُم كَلاماً بِاللِّسانِ فَقَط، بَل <b>تَوبَةً صادِقَةً</b> مِنَ القَلب: تَرَكوا ما كانوا يَعبُدونَ مِن دونِ الله، ونَدِموا على تَكذيبِ نَبيِّهِم، ورَجَعوا إلى رَبِّهِم بِخُشوعٍ ورَجاء. فَعَلِمَ اللهُ صِدقَهُم فَكَشَفَ عَنهُمُ العَذاب.",
+     "en": "When Yunus had recovered and grown strong under the shade of the gourd plant, Allah sent him to his people — and he found that they had believed and repented! Allah says: <b>﴿ \"And We sent him to a hundred thousand or more, and they believed, so We gave them enjoyment for a time\" ﴾</b>.<br><br>Imagine Yunus's joy! The people he had despaired of had become believers worshipping Allah alone, and they lived in goodness and blessing until their appointed time came. Allah was more merciful to them than he had thought!<br><br>Their faith was not just words on the tongue, but <b>sincere repentance</b> from the heart: they abandoned what they had worshipped besides Allah, regretted denying their prophet, and returned to their Lord in humility and hope. Allah knew their sincerity, so He lifted the punishment from them."
+    }
+   },
+   {
+    "scene": "palm",
+    "character": "🍇",
+    "text": {
+     "ar": "وبَعدَ قُرونٍ طَويلَة، ذَهَبَ نَبيُّنا ﷺ إلى <b>الطّائِف</b> يَدعو أَهلَها، فَآذَوهُ ورَدّوه. فَجَلَسَ في بُستانٍ يَستَريح، فَجاءَهُ غُلامٌ اسمُهُ <b>عَدّاس</b> بِقِطفٍ مِنَ العِنَب، وأَخبَرَهُ أنَّهُ مِن أَهلِ <b>نِينَوى</b>. فَقالَ النَّبيُّ ﷺ: «<b>مِن قَريَةِ الرَّجُلِ الصّالِحِ يونُسَ بنِ مَتّى؟</b>» ثُمَّ قالَ: «ذاكَ أَخي، كانَ نَبيّاً وأنا نَبيّ»، فَأَكَبَّ عَدّاسٌ على النَّبيِّ ﷺ يُقَبِّلُ رَأسَهُ ويَدَيه.<br><br><b>الدَّرس:</b> لا تَيأَس مِن أَحَد، ولا مِن نَفسِك. فَبابُ التَّوبَةِ مَفتوح، واللهُ يَفرَحُ بِتَوبَةِ عَبدِهِ إذا رَجَعَ إلَيه.",
+     "en": "Many centuries later, our Prophet ﷺ went to <b>Ta'if</b> to call its people, and they harmed him and drove him away. He sat in an orchard to rest, and a young man named <b>Addas</b> brought him a bunch of grapes and told him he was from <b>Nineveh</b>. The Prophet ﷺ said: «<b>From the town of the righteous man, Yunus son of Matta?</b>» Then he said: “He is my brother; he was a prophet and I am a prophet.” Addas then bent over the Prophet ﷺ, kissing his head and hands.<br><br><b>The lesson:</b> never despair of anyone — or of yourself. The door of repentance is open, and Allah rejoices when His servant turns back to Him."
     }
    }
   ],

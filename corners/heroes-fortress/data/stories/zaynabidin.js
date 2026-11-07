@@ -4,6 +4,14 @@ HISN_STORIES.zaynabidin = [
   { icon:'🌙', scene:'night', character:'🤲',
     title:{ ar:'صاحبُ الجِرابِ في الليل', en:'The Man of the Sack in the Night' },
     pages:[
+      {
+       "scene": "madinah",
+       "character": "🧔",
+       "text": {
+        "ar": "هو <b>عليُّ بنُ الحسينِ بنِ عليِّ بنِ أبي طالب</b>، حفيدُ الحسينِ رضي اللهُ عنه، من أهلِ بيتِ النبيِّ ﷺ. وُلِدَ في المدينةِ ونشأَ فيها، وشهِدَ وهو شابٌّ مريضٌ أيّاماً صعبةً فقدَ فيها أباه وكثيراً من أهلِه، فصبرَ واحتسب.<br><br>وقد لقّبه الناسُ <b>«زينَ العابدين»</b> لكثرةِ عبادتِه وحُسنِ خُلُقِه. وكان العلماءُ يُحبّونه ويُثنونَ عليه، حتى قال الإمامُ <b>الزُّهريّ</b>: «<b>ما رأيتُ قُرَشيّاً أفضلَ من عليِّ بنِ الحسين</b>».",
+        "en": "He was <b>Ali ibn al-Husayn ibn Ali ibn Abi Talib</b>, grandson of al-Husayn, may Allah be pleased with him, from the family of the Prophet ﷺ. He was born and raised in Madinah, and as a sick young man he lived through hard days in which he lost his father and many of his family — and he was patient, seeking reward from Allah.<br><br>People gave him the title <b>“Zayn al-Abidin” — the adornment of the worshippers</b> — for his abundant worship and fine character. Scholars loved and praised him, so that Imam <b>az-Zuhri</b> said: «<b>I have never seen a man of Quraysh better than Ali ibn al-Husayn.</b>»"
+       }
+      },
       { scene:'night', character:'🌙',
         text:{ ar:'كان فقراءُ <b>المدينة</b> يعيشونَ على طعامٍ يأتيهم في جوفِ الليلِ من شخصٍ مجهول! كان رجلٌ يحملُ على ظهرِه <b>جِراباً مملوءاً بالطعام</b> ويطوفُ على بيوتِ الفقراءِ والأراملِ في الظلامِ، يضعُ الطعامَ عند أبوابِهم ثمّ يختفي قبلَ أن يعرفوه.<br><br>تساءلَ الفقراءُ طويلاً: مَن هذا الكريمُ الخفي؟ ظلَّ سرُّه مكتوماً سنينَ طويلة. حتى <b>ماتَ زينُ العابدين</b>، فانقطعَ الطعامُ عن بيوتِهم فجأة! وحين غسّلوه لدفنِه، وجدوا <b>أثراً أسودَ على ظهرِه</b> من حملِ الجِرابِ ليلاً إلى بيوتِ الفقراء طوالَ تلك السنين! حينها عرفوا: كان هو صاحبَ الجِراب! أخفى صدقتَه عن الناسِ ليكونَ أجرُه عند اللهِ خالصاً.',
           en:'The poor of <b>Madinah</b> lived on food that came to them in the dead of night from an unknown person! A man would carry on his back a <b>sack full of food</b> and go around the homes of the poor and widows in the dark, placing food at their doors then vanishing before they recognized him.<br><br>The poor long wondered: who is this hidden, generous one? His secret stayed hidden for many years. Until <b>Zayn al-Abidin died</b>, and the food suddenly stopped coming to their homes! When they washed him for burial, they found a <b>dark mark on his back</b> from carrying the sack at night to the homes of the poor all those years! Then they knew: he was the man of the sack! He hid his charity from people so his reward would be purely with Allah.' },
@@ -13,6 +21,22 @@ HISN_STORIES.zaynabidin = [
             { t:{ar:'لأنّه يخجلُ من الفقراء',en:'Because he was embarrassed by the poor'},c:false,exp:{ar:'لا، بل إخلاصاً وبُعداً عن الرياء.',en:'No — out of sincerity and avoiding showing off.'} },
             { t:{ar:'لأنّه لا يملكُ إلّا قليلاً',en:'Because he had only a little'},c:false,exp:{ar:'لا، بل أخفاها إخلاصاً لله.',en:'No — he hid it out of sincerity to Allah.'} },
           ] } },
+      {
+       "scene": "night",
+       "character": "🍞",
+       "text": {
+        "ar": "وذكرَ المؤرّخونَ أنّه كان يُنفِقُ على <b>مئةِ بيتٍ</b> من فقراءِ المدينة، وهم لا يعرفونَ مَن يُطعمُهم. وكان يحملُ الخبزَ على ظهرِه في الليلِ المظلم، ويقول: «<b>إنّ صدقةَ السرِّ تُطفئُ غضبَ الربّ</b>».<br><br>لقد فهمَ زينُ العابدينَ قولَ اللهِ تعالى: <b>﴿وَإِنْ تُخْفُوهَا وَتُؤْتُوهَا الْفُقَرَاءَ فَهُوَ خَيْرٌ لَكُمْ﴾</b>، فكان يحبُّ أن يكونَ عملُه بينه وبين ربِّه، لا يعلمُه أحد. فلم يكن يريدُ من الفقراءِ شكراً، ولا من الناسِ مدحاً.",
+        "en": "Historians mention that he provided for <b>a hundred households</b> among the poor of Madinah, who did not know who was feeding them. He would carry bread on his back in the dark of night, saying: «<b>Charity given in secret puts out the anger of the Lord.</b>»<br><br>Zayn al-Abidin understood Allah's words: <b>﴿But if you conceal it and give it to the poor, that is better for you﴾</b>. He loved his deeds to stay between him and his Lord, known to no one. He wanted no thanks from the poor and no praise from people."
+       }
+      },
+      {
+       "scene": "sprout",
+       "character": "🤫",
+       "text": {
+        "ar": "وأنت يا صغيري تستطيعُ أن يكونَ لك <b>«جِرابٌ»</b> صغيرٌ من الخيرِ الخفيّ! ضعْ بعضَ مصروفِك في صندوقِ الصدقةِ دون أن تُخبرَ أحداً، أو رتّبْ غرفةَ أخيك وهو غائب، أو ادعُ لصديقِك في سجودِك دون أن يعلم.<br><br>هذه الأعمالُ الصغيرةُ التي لا يراها إلّا الله، تكونُ عنده عظيمة. وتذكّرْ دائماً أنّ اللهَ يرى كلَّ شيء، وأنّه لا يُضيعُ أجرَ مَن أحسنَ عملاً.",
+        "en": "You too, little one, can have a small <b>“sack”</b> of hidden good! Put some of your pocket money in the charity box without telling anyone, tidy your brother's room while he's out, or pray for your friend in your sujood without him knowing.<br><br>These small deeds that no one sees but Allah are great in His sight. Always remember that Allah sees everything, and He never lets the reward of those who do good be lost."
+       }
+      }
     ],
     quiz:[
       { q:{ar:'ماذا كان يحملُ زينُ العابدينَ في الليل؟',en:'What did Zayn al-Abidin carry at night?'},
@@ -30,6 +54,14 @@ HISN_STORIES.zaynabidin = [
   { icon:'😌', scene:'madinah', character:'💧',
     title:{ ar:'الحلمُ الذي أطفأَ الغضب', en:'The Forbearance That Quenched Anger' },
     pages:[
+      {
+       "scene": "madinah",
+       "character": "🌿",
+       "text": {
+        "ar": "كان <b>زينُ العابدين</b> رجلاً عظيمَ المكانة: من أهلِ بيتِ النبيِّ ﷺ، ومن كبارِ علماءِ المدينة، يحترمُه الكبيرُ والصغير. وكان عنده خدمٌ ومَوالٍ كثيرون، كعادةِ الناسِ في ذلك الزمان.<br><br>وكثيرٌ من الناسِ إذا صارت لهم مكانةٌ تكبّروا، وغضبوا لأتفهِ خطأٍ ممّن يخدمُهم. أمّا زينُ العابدين فكان يقرأُ القرآنَ ويعملُ به، ويتذكّرُ أنّ اللهَ يحبُّ مَن يعفو عن الناس، فكان رحيماً بمن تحتَ يدِه.",
+        "en": "<b>Zayn al-Abidin</b> was a man of great standing: from the family of the Prophet ﷺ and one of the great scholars of Madinah, respected by young and old. He had many servants and freed slaves in his household, as was common in that time.<br><br>Many people, once they have status, become arrogant and get angry at the smallest mistake of those who serve them. But Zayn al-Abidin read the Qur'an and acted on it, remembering that Allah loves those who pardon people — so he was merciful to those under his care."
+       }
+      },
       { scene:'madinah', character:'💧',
         text:{ ar:'كان <b>زينُ العابدين</b> مثالاً في الحلمِ وكظمِ الغيظ. وذاتَ يومٍ أرادَ أن يتوضّأ، فجاءتْ خادمتُه تصبُّ عليه الماءَ من إبريق، فسقطَ الإبريقُ من يدِها <b>فأصابه وجرحَه</b>! فرفعَ رأسَه إليها غاضباً.<br><br>فقالتِ الخادمةُ بذكاءٍ تتلو قولَ الله: <b>﴿ وَالْكَاظِمِينَ الْغَيْظَ ﴾</b>، فقال زينُ العابدينَ فوراً: <b>«كظمتُ غيظي»</b>. فقالت: <b>﴿ وَالْعَافِينَ عَنِ النَّاسِ ﴾</b>، فقال: <b>«عفا اللهُ عنكِ»</b>. فقالت: <b>﴿ وَاللَّهُ يُحِبُّ الْمُحْسِنِينَ ﴾</b>، فقال: <b>«اذهبي فأنتِ حرّةٌ لوجهِ الله»</b>! لم يكتفِ بكظمِ غضبِه والعفوِ عنها، بل أعتقها وكافأها! هكذا كان زينُ العابدينَ يتعاملُ مع الآياتِ عملاً لا قولاً. علّمنا أنّ <b>الحلمَ والعفوَ من أجملِ الأخلاق</b>.',
           en:'<b>Zayn al-Abidin</b> was a model of forbearance and restraining anger. One day he wished to make wudu, and his servant came pouring water on him from a pitcher, but the pitcher fell from her hand and <b>struck and wounded him</b>! He raised his head to her in anger.<br><br>The servant cleverly recited Allah\u2019s words: <b>"And those who restrain anger,"</b> so Zayn al-Abidin immediately said: <b>"I have restrained my anger."</b> She said: <b>"And those who pardon people,"</b> he said: <b>"May Allah pardon you."</b> She said: <b>"And Allah loves the doers of good,"</b> he said: <b>"Go, for you are free for Allah\u2019s sake"</b>! He did not merely restrain his anger and pardon her — he freed and rewarded her! Thus Zayn al-Abidin dealt with the verses as action, not just words. He taught us that <b>forbearance and forgiveness are among the most beautiful of traits</b>.' },
@@ -39,6 +71,22 @@ HISN_STORIES.zaynabidin = [
             { t:{ar:'عاقبها بشدّة',en:'He punished her severely'},c:false,exp:{ar:'لا، بل كظمَ غيظَه وعفا وأحسنَ إليها.',en:'No — he restrained his anger, pardoned, and was kind to her.'} },
             { t:{ar:'طردها',en:'He drove her out'},c:false,exp:{ar:'لا، بل أعتقها وكافأها.',en:'No — he freed and rewarded her.'} },
           ] } },
+      {
+       "scene": "mosque",
+       "character": "🧥",
+       "text": {
+        "ar": "ويُروى أنّه خرجَ يوماً من المسجد، فلقيَه رجلٌ فسبَّه وشتمَه. فهمَّ غِلمانُه أن يردّوا عليه، فقال لهم: «مهلاً عن الرجل». ثم أقبلَ عليه وقال: «<b>ما سُتِرَ عنك من أمرِنا أكثر، ألكَ حاجةٌ نُعينُك عليها؟</b>».<br><br>فاستحيا الرجلُ استحياءً شديداً، فألقى إليه زينُ العابدينَ ثوباً كان عليه، وأمرَ له بمالٍ. فتحوّلَ الرجلُ من شاتمٍ إلى محبٍّ يُثني عليه! هكذا يُطفئُ الحلمُ نارَ العداوة، كما قال تعالى: <b>﴿وَالْكَاظِمِينَ الْغَيْظَ وَالْعَافِينَ عَنِ النَّاسِ وَاللَّهُ يُحِبُّ الْمُحْسِنِينَ﴾</b>.",
+        "en": "It is reported that one day he came out of the mosque and a man met him and insulted him. His servants were about to answer back, but he told them: “Leave the man alone.” Then he turned to him and said: «<b>What is hidden from you about us is even more. Do you have a need we can help you with?</b>»<br><br>The man was deeply ashamed, and Zayn al-Abidin gave him a garment he was wearing and ordered some money for him. The man turned from insulting him to loving and praising him! This is how forbearance puts out the fire of hostility, as Allah says: <b>﴿those who restrain anger and pardon people — and Allah loves the doers of good﴾</b>."
+       }
+      },
+      {
+       "scene": "sprout",
+       "character": "💧",
+       "text": {
+        "ar": "قال النبيُّ ﷺ: «<b>ليس الشديدُ بالصُّرَعة، إنّما الشديدُ الذي يملكُ نفسَه عند الغضب</b>». فالبطلُ الحقيقيُّ ليس مَن يغلبُ الناسَ بقوّتِه، بل مَن يغلبُ غضبَه.<br><br>فإذا كسرَ أخوك لعبتَك، أو أخطأَ عليك صديقُك، فتذكّرْ زينَ العابدين: اسكتْ قليلاً، وقلْ: <b>أعوذُ باللهِ من الشيطانِ الرجيم</b>، وتوضّأْ إن استطعت، ثم اعفُ وسامِح. وستجدُ في قلبِك راحةً لا يعرفُها الغاضبون.",
+        "en": "The Prophet ﷺ said: «<b>The strong one is not the one who wrestles others down; the strong one is he who controls himself when angry.</b>» The real hero is not the one who beats people with his strength, but the one who beats his own anger.<br><br>So when your brother breaks your toy, or a friend wrongs you, remember Zayn al-Abidin: be quiet for a moment, say <b>“I seek refuge with Allah from the accursed Shaytan”</b>, make wudu if you can, then pardon and forgive. You will find a peace in your heart that angry people never know."
+       }
+      }
     ],
     quiz:[
       { q:{ar:'بماذا ذكّرتِ الخادمةُ زينَ العابدين؟',en:'What did the servant remind Zayn al-Abidin of?'},
@@ -65,6 +113,22 @@ HISN_STORIES.zaynabidin = [
             { t:{ar:'لأنّه كان مريضاً',en:'Because he was ill'},c:false,exp:{ar:'لا، بل من شدّةِ خشيتِه لله.',en:'No — from the intensity of his awe of Allah.'} },
             { t:{ar:'لأنّ الجوَّ كان بارداً',en:'Because the weather was cold'},c:false,exp:{ar:'لا، بل لأنّه يناجي ربَّه العظيم.',en:'No — because he was speaking to his Mighty Lord.'} },
           ] } },
+      {
+       "scene": "kaaba",
+       "character": "🕋",
+       "text": {
+        "ar": "ولم يكن خشوعُه في الصلاةِ وحدَها. فيُروى أنّه لمّا أحرمَ للحجّ وأرادَ أن يقول: «<b>لبّيكَ اللهمّ لبّيك</b>»، تغيّرَ لونُه وارتجف، ولم يستطعْ أن يُكمِلَ من شدّةِ الهيبة. فسألوه عن ذلك، فقال: «<b>أخشى أن يُقالَ لي: لا لبّيك</b>».<br><br>كان يعرفُ أنّ التلبيةَ معناها: أنا مستجيبٌ لك يا ربّ، حاضرٌ لأمرِك. فكان يخافُ ألّا يكونَ صادقاً فيها كما ينبغي، مع أنّه من أعبدِ الناس!",
+        "en": "His humility before Allah was not only in prayer. It is reported that when he entered ihram for Hajj and wanted to say «<b>Labbayk, Allahumma labbayk — Here I am, O Allah, here I am</b>», his colour changed and he trembled, unable to finish out of awe. When they asked him about it, he said: «<b>I fear that I will be told: No, you are not welcome.</b>»<br><br>He knew that the talbiya means: I answer You, my Lord, and I am ready for Your command. So he feared he was not truly sincere in it as he should be — even though he was one of the most devoted worshippers of all!"
+       }
+      },
+      {
+       "scene": "sprout",
+       "character": "🌙",
+       "text": {
+        "ar": "قال اللهُ تعالى: <b>﴿قَدْ أَفْلَحَ الْمُؤْمِنُونَ * الَّذِينَ هُمْ فِي صَلَاتِهِمْ خَاشِعُونَ﴾</b>. والخشوعُ أن يحضرَ قلبُك مع جسدِك، فلا تكونُ الصلاةُ حركاتٍ سريعةً فقط.<br><br>جرّبْ يا صغيري في صلاتِك القادمة: توضّأْ بهدوء، وتذكّرْ أنّك ستقفُ أمامَ الله، وتمهّلْ في الركوعِ والسجود، وتأمّلْ معنى ما تقرأ، وادعُ اللهَ في سجودِك بما تحبّ. ستشعرُ أنّ الصلاةَ صارت أجملَ لحظاتِ يومِك.",
+        "en": "Allah says: <b>﴿Successful indeed are the believers — those who are humble in their prayer﴾</b>. Khushu' means your heart is present along with your body, so prayer is not just quick movements.<br><br>Try this in your next prayer, little one: make wudu calmly, remember that you are about to stand before Allah, take your time in ruku' and sujood, think about the meaning of what you recite, and ask Allah in your sujood for whatever you love. You'll feel that prayer has become the most beautiful moment of your day."
+       }
+      }
     ],
     quiz:[
       { q:{ar:'ماذا حدثَ وزينُ العابدينَ ساجد؟',en:'What happened while Zayn al-Abidin was prostrating?'},

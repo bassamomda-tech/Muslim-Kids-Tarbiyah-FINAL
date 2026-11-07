@@ -11,6 +11,14 @@ HISN_STORIES.ibnmasud = [
   },
   "pages": [
    {
+    "scene": "desert",
+    "character": "👤",
+    "text": {
+     "ar": "كان <b>عبدُ اللهِ بنُ مسعود</b> رجلاً من قبيلةِ <b>هُذَيل</b>، يعيشُ في مكّةَ غريباً، ليس له فيها قبيلةٌ قويّةٌ تدافعُ عنه، وكانت أمُّه تُعرَفُ بـ<b>أمِّ عبد</b>. وكان فقيراً يرعى الغنمَ لأحدِ سادةِ قريش.<br><br>فلمّا سمعَ بالإسلامِ أسلمَ مبكّراً جدّاً، حتى كان من <b>أوائلِ المسلمين</b>. وكانت قريشٌ يومئذٍ تُعذِّبُ المستضعفين، وتسخرُ من النبيِّ ﷺ وأصحابِه، وتمنعُ الناسَ من سماعِ القرآن، وتقولُ لهم: لا تسمعوا لهذا القرآن! فكان سماعُ القرآنِ عند الكعبةِ أمراً خطيراً لا يجرؤُ عليه إلا شجاع.",
+     "en": "<b>Abdullah ibn Mas‘ud</b> was a man from the tribe of <b>Hudhayl</b>, living in Makkah as an outsider, with no powerful clan there to defend him. His mother was known as <b>Umm Abd</b>. He was poor and herded sheep for one of the leaders of Quraysh.<br><br>When he heard about Islam he accepted it very early, and he was among the <b>first Muslims</b>. In those days Quraysh were torturing the weak, mocking the Prophet ﷺ and his companions, and stopping people from listening to the Quran, telling them: do not listen to this Quran! So reciting the Quran out loud at the Kaaba was a dangerous thing that only a brave person would dare to do."
+    }
+   },
+   {
     "scene": "kaaba",
     "character": "📖",
     "text": {
@@ -57,6 +65,22 @@ HISN_STORIES.ibnmasud = [
        }
       }
      ]
+    }
+   },
+   {
+    "scene": "kaaba",
+    "character": "🌅",
+    "text": {
+     "ar": "ويروي <b>ابنُ إسحاقَ</b> في السيرةِ تفاصيلَ هذا اليوم: قالَ الصحابةُ لابنِ مسعود: إنّا نخشاهم عليك، إنّما نريدُ رجلاً له عشيرةٌ تمنعُه منهم. فقال: <b>«دعوني، فإنّ اللهَ سيمنعُني»</b>.<br><br>فغدا في <b>وقتِ الضحى</b> حتى أتى المقامَ عند الكعبة، وقريشٌ جالسةٌ في أنديتِها، فقرأَ رافعاً صوتَه. فتأمّلوه وجعلوا يسألون: ماذا يقولُ ابنُ أمِّ عبد؟ ثمّ قالوا: إنّه ليتلو بعضَ ما جاءَ به محمّد! فقاموا إليه يضربونَه، وهو <b>يمضي في قراءتِه</b> ولا يتوقّف، حتى بلغَ منها ما شاءَ الله.",
+     "en": "<b>Ibn Ishaq</b> reports the details of that day in the Sira: the companions said to Ibn Mas‘ud: we fear for you from them — we want a man who has a clan to protect him. He said: <b>“Let me go, for Allah will protect me.”</b><br><br>So he went in the <b>late morning</b> until he reached the Maqam by the Kaaba, while Quraysh were sitting in their gatherings, and he recited in a loud voice. They stared at him and began asking: what is the son of Umm Abd saying? Then they said: he is reciting some of what Muhammad brought! So they rose and began to beat him, but he <b>kept on reciting</b> without stopping, until he had recited as much as Allah willed."
+    }
+   },
+   {
+    "scene": "sprout",
+    "character": "💪",
+    "text": {
+     "ar": "ثمّ رجعَ إلى أصحابِه وقد ظهرَ أثرُ الضربِ في وجهِه، فقالوا: هذا الذي خشينا عليك! فقال: <b>«ما كان أعداءُ اللهِ أهونَ عليَّ منهم الآن، ولئن شئتم لأُغادِيَنَّهم بمثلِها غداً»</b>. قالوا: حسبُك، قد أسمعتَهم ما يكرهون.<br><br>كان جسمُه نحيفاً ضعيفاً، لكنّ قلبَه كان مليئاً بالإيمان، فصارَ الخوفُ صغيراً في عينِه.<br><br>وأنت يا صديقي: لا تستحِ من دينِك، ولا تخجلْ أن تُصلّيَ أمامَ الناس، أو أن تقولَ «بسم الله» بصوتٍ واضح، أو أن تقرأَ القرآنَ بفخر. فالشجاعةُ الحقيقيّةُ <b>شجاعةُ القلب</b>، لا قوّةُ العضلات.",
+     "en": "Then he went back to his companions with the marks of the beating showing on his face. They said: this is what we feared for you! He said: <b>“The enemies of Allah have never seemed smaller to me than they do now, and if you wish, I will go to them again tomorrow and do the same.”</b> They said: that is enough — you have made them hear what they hate.<br><br>His body was thin and weak, but his heart was full of faith, so fear became small in his eyes.<br><br>And you, my friend: never be shy about your religion. Do not be embarrassed to pray in front of people, to say “Bismillah” clearly, or to recite the Quran with pride. True courage is <b>courage of the heart</b>, not the strength of muscles."
     }
    }
   ],
@@ -191,6 +215,14 @@ HISN_STORIES.ibnmasud = [
   },
   "pages": [
    {
+    "scene": "madinah",
+    "character": "👟",
+    "text": {
+     "ar": "كان <b>ابنُ مسعود</b> من أقربِ الناسِ إلى النبيِّ ﷺ. كان يخدمُه، ويحملُ <b>نعلَيه</b>، ويُهيّئُ له <b>وِسادَه وماءَ وضوئِه</b>، حتى عُرِفَ بين الصحابةِ بـ«صاحبِ النعلين والوسادِ والمِطهرة».<br><br>وكان يدخلُ بيتَ النبيِّ ﷺ كثيراً هو وأمُّه، حتى قالَ <b>أبو موسى الأشعريّ</b>: قدمتُ أنا وأخي من اليمن، فمكثنا حيناً وما نرى ابنَ مسعودٍ وأمَّه إلا من <b>أهلِ بيتِ النبيِّ ﷺ</b>، لكثرةِ دخولِهم عليه ولزومِهم له. والحديثُ في صحيحِ البخاري.<br><br>وبهذا القربِ صارَ يسمعُ القرآنَ من النبيِّ ﷺ ساعةَ ينزل.",
+     "en": "<b>Ibn Mas‘ud</b> was one of the people closest to the Prophet ﷺ. He served him, carried his <b>sandals</b>, and prepared his <b>pillow and the water for his wudu</b>, until he was known among the companions as “the keeper of the sandals, the pillow, and the water vessel.”<br><br>He and his mother went into the Prophet’s ﷺ house so often that <b>Abu Musa al-Ash‘ari</b> said: my brother and I came from Yemen, and for some time we thought Ibn Mas‘ud and his mother were part of the <b>Prophet’s ﷺ household</b>, because they went in to him so much and stayed so close to him. This hadith is in Sahih al-Bukhari.<br><br>Being so close, he heard the Quran from the Prophet ﷺ as soon as it was revealed."
+    }
+   },
+   {
     "scene": "mosque",
     "character": "📖",
     "text": {
@@ -237,6 +269,22 @@ HISN_STORIES.ibnmasud = [
        }
       }
      ]
+    }
+   },
+   {
+    "scene": "pen",
+    "character": "📖",
+    "text": {
+     "ar": "وقالَ ابنُ مسعودٍ كما في <b>صحيحِ البخاري</b>: <b>«أخذتُ من فِي رسولِ اللهِ ﷺ بضعاً وسبعين سورة»</b>، أي سمعَها من فمِه الشريفِ مباشرة. وقالَ أيضاً: لو أعلمُ أحداً أعلمَ منّي بكتابِ اللهِ تبلغُه الإبلُ لركبتُ إليه. فمع كلِّ علمِه كان مستعدّاً أن يسافرَ ليتعلّمَ المزيد!<br><br>وأمرَ النبيُّ ﷺ أصحابَه أن يأخذوا القرآنَ من أربعة، فبدأَ بـ<b>عبدِ اللهِ بنِ مسعود</b>، ثمّ ذكرَ سالماً مولى أبي حذيفة، وأُبَيَّ بنَ كعب، ومعاذَ بنَ جبل. والحديثُ في الصحيحين.",
+     "en": "Ibn Mas‘ud said, as reported in <b>Sahih al-Bukhari</b>: <b>“I took some seventy surahs directly from the mouth of the Messenger of Allah ﷺ”</b> — meaning he heard them straight from his blessed mouth. He also said: if I knew of anyone who knew the Book of Allah better than me, and camels could reach him, I would ride to him. With all his knowledge, he was still ready to travel to learn more!<br><br>The Prophet ﷺ told his companions to learn the Quran from four people, and he began with <b>Abdullah ibn Mas‘ud</b>, then mentioned Salim the freed slave of Abu Hudhayfa, Ubayy ibn Ka‘b, and Mu‘adh ibn Jabal. This hadith is in both Sahihs."
+    }
+   },
+   {
+    "scene": "mosque",
+    "character": "🌟",
+    "text": {
+     "ar": "وفي خلافةِ <b>عمرَ بنِ الخطّاب</b> أرسلَه إلى <b>الكوفة</b> معلّماً للناسِ ووزيراً لأميرِها، وكتبَ إلى أهلِها أنّه آثرَهم به على نفسِه، أي كان عمرُ يحتاجُه في المدينة، لكنّه قدّمَ حاجتَهم. فجلسَ ابنُ مسعودٍ يُعلِّمُ القرآنَ والفقه، حتى امتلأتِ الكوفةُ بالقرّاءِ والعلماء. ثمّ رجعَ إلى المدينةِ في آخرِ عمرِه، وتُوفّي فيها سنةَ <b>اثنتين وثلاثين للهجرة</b> تقريباً.<br><br>وأنت يا صديقي: اقتربْ من أهلِ القرآن، واجلسْ مع معلّمِك، واقرأْ عليه ليُصحِّحَ لك. واجعلْ لك كلَّ يومٍ صفحةً تقرؤُها وتفهمُ معناها، فالقرآنُ يرفعُ أهلَه كما رفعَ ابنَ مسعود.",
+     "en": "During the caliphate of <b>Umar ibn al-Khattab</b>, Umar sent him to <b>Kufa</b> as a teacher for the people and an adviser to its governor, and wrote to its people that he had preferred them over himself — Umar needed him in Madinah, but put their need first. So Ibn Mas‘ud sat teaching the Quran and fiqh until Kufa was filled with reciters and scholars. Late in his life he returned to Madinah, and he passed away there around the year <b>32 AH</b>.<br><br>And you, my friend: stay close to the people of the Quran, sit with your teacher, and recite to him so he can correct you. Make a page for yourself every day that you read and understand, for the Quran raises its people just as it raised Ibn Mas‘ud."
     }
    }
   ],
@@ -371,11 +419,19 @@ HISN_STORIES.ibnmasud = [
   },
   "pages": [
    {
+    "scene": "mountain",
+    "character": "🐑",
+    "text": {
+     "ar": "في أوّلِ الإسلام، وبين جبالِ مكّةَ الصخريّةِ وشِعابِها، كان غلامٌ نحيفٌ صغيرُ السنّ يمشي خلفَ قطيعٍ من الغنم. يخرجُ بها في الصباحِ إلى المراعي، ويحرسُها من الذئاب، ويرجعُ بها في المساء.<br><br>لم يكن هذا الغلامُ غنيّاً، ولم يكن من قبيلةٍ قويّة، ولم تكن الغنمُ غنمَه، بل كانت لسيّدِه <b>عُقبةَ بنِ أبي مُعَيط</b>، وهو من أشدِّ أعداءِ النبيِّ ﷺ. لكنّ هذا الغلامَ كان يملكُ كنزاً لا يُرى: <b>الأمانة</b>. ولم يكن يعلمُ أنّ يوماً عاديّاً من أيّامِ الرعي سيُغيّرُ حياتَه كلَّها.",
+     "en": "In the early days of Islam, among the rocky mountains and valleys of Makkah, a thin young boy walked behind a flock of sheep. He took them out in the morning to the pastures, guarded them from wolves, and brought them back in the evening.<br><br>This boy was not rich, he was not from a powerful tribe, and the sheep were not his — they belonged to his master <b>Uqba ibn Abi Mu‘ayt</b>, one of the fiercest enemies of the Prophet ﷺ. But this boy owned a treasure that could not be seen: <b>trustworthiness</b>. He did not know that an ordinary day of herding was about to change his whole life."
+    }
+   },
+   {
     "scene": "peaks",
     "character": "🥛",
     "text": {
-     "ar": "كان <b>عبدُ اللهِ بنُ مسعود</b> غلاماً صغيراً يرعى الغنمَ لرجلٍ من سادةِ قريشٍ اسمُه عُقبةُ بنُ أبي مُعَيط. وفي يومٍ مرَّ به <b>النبيُّ ﷺ وأبو بكر</b>، فقالا: <b>«يا غلام، هل عندك من لبنٍ تسقينا؟»</b><br><br>فقال الغلامُ الصغيرُ كلمةً عظيمة: <b>«إنّي مؤتمَن، ولستُ ساقيَكما»</b> — أي: هذه الغنمُ ليست لي، أنا أمينٌ عليها، فلا أُعطي منها شيئاً بغيرِ إذنِ صاحبِها! فأُعجِبَ النبيُّ ﷺ بأمانتِه، وقال: <b>«هل عندك من شاةٍ صغيرةٍ لم تَلِدْ بعد؟»</b> — وهي شاةٌ لا لبنَ فيها أصلاً. فجاءَه بها، فمسحَ النبيُّ ﷺ ضرعَها ودعا الله، <b>فامتلأَ الضرعُ لبناً!</b><br><br>فحلبَ النبيُّ ﷺ في صخرةٍ مجوّفة، فشربَ وشربَ أبو بكرٍ ثمّ سقى الغلام، ثمّ قال للضرع: <b>«اقلُصْ»</b> فرجعَ كما كان. فتعجّبَ ابنُ مسعود وجاءَ بعدَ ذلك يقول: علّمْني من هذا القول! فمسحَ النبيُّ ﷺ رأسَه وقال: <b>«إنّك غلامٌ مُعلَّم»</b>. وصدقَ ﷺ، فقد صار ابنُ مسعودٍ من <b>أعلمِ الصحابةِ بالقرآن</b>. وكانت البدايةُ: <b>الأمانة</b>.",
-     "en": "<b>Abdullah ibn Mas'ud</b> was a young boy who herded sheep for one of Quraysh's chiefs, Uqba ibn Abi Mu'ayt. One day <b>the Prophet ﷺ and Abu Bakr</b> passed by and said: <b>\"Young man, do you have any milk to give us to drink?\"</b><br><br>The little boy said great words: <b>\"I am entrusted, and I cannot give you to drink\"</b> — meaning: these sheep aren't mine, I am trusted with them, so I won't give any of them away without the owner's permission! The Prophet ﷺ admired his honesty and said: <b>\"Do you have a young ewe that has never given birth?\"</b> — a ewe with no milk at all. He brought it, and the Prophet ﷺ wiped its udder and prayed to Allah — <b>and the udder filled with milk!</b><br><br>The Prophet ﷺ milked it into a hollow rock; he drank, Abu Bakr drank, then he gave the boy to drink. Then he said to the udder: <b>\"Shrink back,\"</b> and it returned as it was. Amazed, Ibn Mas'ud later came and said: Teach me some of this speech! The Prophet ﷺ stroked his head and said: <b>\"You are a boy who will be taught.\"</b> And he ﷺ was right — Ibn Mas'ud became one of <b>the Companions most learned in the Qur'an</b>. And it all began with <b>honesty</b>."
+     "ar": "كان <b>عبدُ اللهِ بنُ مسعود</b> غلاماً صغيراً يرعى الغنمَ لرجلٍ من سادةِ قريشٍ اسمُه عُقبةُ بنُ أبي مُعَيط. وفي يومٍ مرَّ به <b>النبيُّ ﷺ وأبو بكر</b>، فقالا: <b>«يا غلام، هل عندك من لبنٍ تسقينا؟»</b><br><br>فقال الغلامُ الصغيرُ كلمةً عظيمة: <b>«إنّي مؤتمَن، ولستُ ساقيَكما»</b> — أي: هذه الغنمُ ليست لي، أنا أمينٌ عليها، فلا أُعطي منها شيئاً بغيرِ إذنِ صاحبِها! فأُعجِبَ النبيُّ ﷺ بأمانتِه، وقال: <b>«هل عندك من شاةٍ صغيرةٍ لم تَلِدْ بعد؟»</b> — وهي شاةٌ لا لبنَ فيها أصلاً. فجاءَه بها، فمسحَ النبيُّ ﷺ ضرعَها ودعا الله، <b>فامتلأَ الضرعُ لبناً!</b>",
+     "en": "<b>Abdullah ibn Mas'ud</b> was a young boy who herded sheep for one of Quraysh's chiefs, Uqba ibn Abi Mu'ayt. One day <b>the Prophet ﷺ and Abu Bakr</b> passed by and said: <b>\"Young man, do you have any milk to give us to drink?\"</b><br><br>The little boy said great words: <b>\"I am entrusted, and I cannot give you to drink\"</b> — meaning: these sheep aren't mine, I am trusted with them, so I won't give any of them away without the owner's permission! The Prophet ﷺ admired his honesty and said: <b>\"Do you have a young ewe that has never given birth?\"</b> — a ewe with no milk at all. He brought it, and the Prophet ﷺ wiped its udder and prayed to Allah — <b>and the udder filled with milk!</b>"
     },
     "choice": {
      "q": {
@@ -417,6 +473,30 @@ HISN_STORIES.ibnmasud = [
        }
       }
      ]
+    }
+   },
+   {
+    "scene": "peaks",
+    "character": "✨",
+    "text": {
+     "ar": "فحلبَ النبيُّ ﷺ في صخرةٍ مجوّفة، فشربَ وشربَ أبو بكرٍ ثمّ سقى الغلام، ثمّ قال للضرع: <b>«اقلُصْ»</b> فرجعَ كما كان. فتعجّبَ ابنُ مسعود وجاءَ بعدَ ذلك يقول: علّمْني من هذا القول! فمسحَ النبيُّ ﷺ رأسَه وقال: <b>«إنّك غلامٌ مُعلَّم»</b>. وصدقَ ﷺ، فقد صار ابنُ مسعودٍ من <b>أعلمِ الصحابةِ بالقرآن</b>. وكانت البدايةُ: <b>الأمانة</b>.",
+     "en": "The Prophet ﷺ milked it into a hollow rock; he drank, Abu Bakr drank, then he gave the boy to drink. Then he said to the udder: <b>\"Shrink back,\"</b> and it returned as it was. Amazed, Ibn Mas'ud later came and said: Teach me some of this speech! The Prophet ﷺ stroked his head and said: <b>\"You are a boy who will be taught.\"</b> And he ﷺ was right — Ibn Mas'ud became one of <b>the Companions most learned in the Qur'an</b>. And it all began with <b>honesty</b>."
+    }
+   },
+   {
+    "scene": "mosque",
+    "character": "💚",
+    "text": {
+     "ar": "فأسلمَ عبدُ اللهِ بنُ مسعود، ولزمَ النبيَّ ﷺ، وصارَ من خاصّةِ أصحابِه. وكانت تلك الدعوةُ «إنّك غلامٌ مُعلَّم» بدايةَ طريقٍ طويلٍ من العلم: أخذَ من فمِ النبيِّ ﷺ بضعاً وسبعين سورة، وصارَ من أوائلِ مَن يُرجَعُ إليهم في القرآن.<br><br>تأمّلْ يا صديقي: الغلامُ لم يكن يعرفُ مَن هذان الرجلان حين رفضَ أن يسقيَهما، ولم يكن أحدٌ يراه. ومع ذلك لم يأخذْ ما ليس له. فـ<b>الأمينُ أمينٌ في السرِّ والعلن</b>، حين يراه الناسُ وحين لا يراه إلا الله.",
+     "en": "Abdullah ibn Mas‘ud became Muslim, stayed close to the Prophet ﷺ, and became one of his closest companions. That du‘a — “You are a boy who will be taught” — was the start of a long road of knowledge: he took some seventy surahs from the Prophet’s ﷺ own mouth and became one of the first people others turned to for the Quran.<br><br>Think about it, my friend: the boy did not know who these two men were when he refused to give them milk, and no one was watching him. Even so, he did not take what was not his. <b>A trustworthy person is trustworthy in private and in public</b> — when people see him, and when no one sees him but Allah."
+    }
+   },
+   {
+    "scene": "sprout",
+    "character": "🔑",
+    "text": {
+     "ar": "وأنت أيضاً يُؤتمَنُ عليك أشياءُ كثيرة: قلمُ صديقِك الذي استعرتَه، وكتابُ المدرسة، وسرٌّ قالَه لك أخوك، وهاتفُ أبيك. فاحفظْها ولا تستعملْها إلا بإذنِ صاحبِها، وأرجعْها كما أخذتَها.<br><br>وقد جعلَ النبيُّ ﷺ خيانةَ الأمانةِ من علاماتِ المنافق، وجعلَ اللهُ حفظَ الأمانةِ من صفاتِ المؤمنين المفلحين. فكنْ مثلَ ذلك الراعي الصغير: إذا قيلَ لك «خذْ، لن يعرفَ أحد»، فقلْ بثقة: <b>«إنّي مؤتمَن»</b>. ولعلَّ اللهَ يفتحُ لك بأمانتِك أبواباً من الخيرِ لا تتخيّلُها.",
+     "en": "You too are trusted with many things: your friend’s pencil that you borrowed, your school book, a secret your brother told you, your father’s phone. Look after them, do not use them without the owner’s permission, and give them back as you took them.<br><br>The Prophet ﷺ made betraying a trust one of the signs of a hypocrite, and Allah made keeping trusts one of the qualities of the successful believers. So be like that little shepherd: if someone says to you “Take it, nobody will know,” say confidently: <b>“I have been trusted.”</b> Perhaps through your trustworthiness Allah will open doors of good for you that you cannot imagine."
     }
    }
   ],
@@ -551,6 +631,14 @@ HISN_STORIES.ibnmasud = [
   },
   "pages": [
    {
+    "scene": "palm",
+    "character": "🌿",
+    "text": {
+     "ar": "كان <b>عبدُ اللهِ بنُ مسعود</b> يخدمُ النبيَّ ﷺ ويحملُ له نعلَيه وسواكَه. والسواكُ عودٌ صغيرٌ يُنظّفُ به المسلمُ أسنانَه، وكان النبيُّ ﷺ يحبُّه كثيراً، ويستاكُ عند الوضوءِ والصلاةِ وإذا دخلَ بيتَه.<br><br>وكان أفضلُ السواكِ يُؤخَذُ من شجرِ <b>الأراك</b>، وهو شجرٌ أخضرُ ينبتُ في أرضِ الحجاز، أغصانُه طريّةٌ ورائحتُه طيّبة. فإذا احتاجَ النبيُّ ﷺ سواكاً، أسرعَ ابنُ مسعودٍ يقطعُه له بنفسِه. وكان ابنُ مسعودٍ قصيرَ القامة، خفيفَ الجسم، يصعدُ الشجرةَ بخفّة.",
+     "en": "<b>Abdullah ibn Mas‘ud</b> served the Prophet ﷺ and carried his sandals and his siwak for him. A siwak is a small stick a Muslim uses to clean his teeth, and the Prophet ﷺ loved it very much: he used it at wudu, at prayer, and when he entered his home.<br><br>The best siwak was taken from the <b>arak</b> tree, a green tree that grows in the land of the Hijaz, with soft branches and a pleasant smell. Whenever the Prophet ﷺ needed a siwak, Ibn Mas‘ud hurried to cut one for him himself. Ibn Mas‘ud was short and light, and he climbed the tree easily."
+    }
+   },
+   {
     "scene": "tree",
     "character": "⚖️",
     "text": {
@@ -597,6 +685,22 @@ HISN_STORIES.ibnmasud = [
        }
       }
      ]
+    }
+   },
+   {
+    "scene": "scales",
+    "character": "⚖️",
+    "text": {
+     "ar": "وهذا المعنى جاءَ في القرآنِ والسنّة. قالَ اللهُ تعالى: <b>﴿ يَا أَيُّهَا الَّذِينَ آمَنُوا لَا يَسْخَرْ قَوْمٌ مِّن قَوْمٍ عَسَىٰ أَن يَكُونُوا خَيْرًا مِّنْهُمْ ﴾</b>. وقالَ النبيُّ ﷺ: <b>«إنّ اللهَ لا ينظرُ إلى صورِكم وأموالِكم، ولكن ينظرُ إلى قلوبِكم وأعمالِكم»</b> (رواه مسلم).<br><br>فما الذي جعلَ ساقَي ابنِ مسعودٍ ثقيلتين؟ إنّها الأعمال: مشى بهما إلى الكعبةِ ليجهرَ بالقرآنِ أوّلَ مرّة، وسعى بهما في خدمةِ النبيِّ ﷺ، ووقفَ بهما في الصلاةِ الطويلة، وخرجَ بهما مع النبيِّ ﷺ في <b>بدرٍ</b> وما بعدَها.",
+     "en": "This meaning comes in the Quran and the Sunnah. Allah says: <b>﴿ “O you who believe, let not a people ridicule another people; perhaps they may be better than them” ﴾</b>. And the Prophet ﷺ said: <b>“Allah does not look at your appearance or your wealth, but He looks at your hearts and your deeds”</b> (Muslim).<br><br>So what made Ibn Mas‘ud’s legs so heavy? His deeds: with them he walked to the Kaaba to recite the Quran aloud for the first time, he hurried in serving the Prophet ﷺ, he stood in long prayers, and he went out with the Prophet ﷺ to <b>Badr</b> and the battles after it."
+    }
+   },
+   {
+    "scene": "sprout",
+    "character": "🤝",
+    "text": {
+     "ar": "وأنت يا صديقي: قد ترى في صفِّك طفلاً قصيراً، أو نحيفاً، أو يلبسُ نظّارةً، أو يتكلّمُ بطريقةٍ مختلفة. فلا تضحكْ منه، ولا تُقلِّدْه، ولا تُطلِقْ عليه لقباً يُحزِنُه. وإذا رأيتَ الآخرينَ يسخرونَ منه، فافعلْ كما فعلَ النبيُّ ﷺ: <b>دافعْ عنه</b>، وقلْ كلمةً طيّبة.<br><br>وإذا سخرَ منك أحدٌ لشكلِك، فلا تحزنْ، وتذكّرْ ابنَ مسعود: الناسُ ينظرونَ إلى الظاهر، لكنّ اللهَ ينظرُ إلى القلب. فاجعلْ قلبَك جميلاً بالإيمان، وأعمالَك جميلةً بالخير، تكنْ <b>ثقيلاً في الميزانِ عند الله</b>.",
+     "en": "And you, my friend: you may see a child in your class who is short, or thin, or wears glasses, or speaks in a different way. Do not laugh at him, do not imitate him, and do not call him a name that hurts him. If you see others mocking him, do what the Prophet ﷺ did: <b>stand up for him</b> and say a kind word.<br><br>And if someone mocks you for how you look, do not be sad — remember Ibn Mas‘ud: people look at the outside, but Allah looks at the heart. Make your heart beautiful with faith and your deeds beautiful with goodness, and you will be <b>heavy on the Scale with Allah</b>."
     }
    }
   ],
@@ -732,6 +836,14 @@ HISN_STORIES.ibnmasud = [
   "pages": [
    {
     "scene": "mosque",
+    "character": "🎙️",
+    "text": {
+     "ar": "كان <b>عبدُ اللهِ بنُ مسعود</b> من أحسنِ الصحابةِ قراءةً للقرآن، وقد أخذَ من فمِ النبيِّ ﷺ بضعاً وسبعين سورة، فكان يقرأُ بتمهّلٍ وخشوع. وكان النبيُّ ﷺ هو الذي ينزلُ عليه القرآن، يتلوه على الناس ويُعلِّمُهم إيّاه.<br><br>لكنّ النبيَّ ﷺ علّمَنا في هذه القصّةِ شيئاً جميلاً: أنّ لِـ<b>الاستماعِ إلى القرآن</b> لذّةً خاصّة، وأثراً في القلبِ قد يختلفُ عن أثرِ القراءة. فحين تستمعُ تتفرّغُ للتفكّرِ في المعاني، وتتركُ الكلماتِ تدخلُ إلى قلبِك. وفي يومٍ من الأيّام، التفتَ النبيُّ ﷺ إلى ابنِ مسعودٍ بطلبٍ عجيب.",
+     "en": "<b>Abdullah ibn Mas‘ud</b> was one of the best reciters of the Quran among the companions. He had taken some seventy surahs from the Prophet’s ﷺ own mouth, and he recited slowly and with humility. And it was the Prophet ﷺ to whom the Quran was revealed; he recited it to people and taught it to them.<br><br>But in this story the Prophet ﷺ taught us something beautiful: <b>listening to the Quran</b> has a special sweetness, and an effect on the heart that can be different from reciting it. When you listen, you are free to think about the meanings and let the words enter your heart. One day, the Prophet ﷺ turned to Ibn Mas‘ud with a surprising request."
+    }
+   },
+   {
+    "scene": "mosque",
     "character": "💧",
     "text": {
      "ar": "قال النبيُّ ﷺ يوماً لعبدِ اللهِ بنِ مسعود: <b>«اقرأْ عليّ»</b>. فتعجّبَ ابنُ مسعودٍ وقال بأدب: <b>«يا رسولَ الله، أقرأُ عليك وعليك أُنزِل؟!»</b> — أي كيف أقرأُ القرآنَ على مَن نزلَ عليه القرآن؟ فقال النبيُّ ﷺ: <b>«إنّي أُحبُّ أن أسمعَه من غيري»</b>.<br><br>فبدأ ابنُ مسعودٍ يقرأُ <b>سورةَ النساء</b> بصوتِه الخاشع، والنبيُّ ﷺ يستمعُ بقلبِه، حتى وصلَ إلى قولِه تعالى: <b>﴿ فَكَيْفَ إِذَا جِئْنَا مِنْ كُلِّ أُمَّةٍ بِشَهِيدٍ وَجِئْنَا بِكَ عَلَىٰ هَٰؤُلَاءِ شَهِيدًا ﴾</b>. فقال النبيُّ ﷺ: <b>«حسبُك الآن»</b>.<br><br>فالتفتَ ابنُ مسعودٍ إليه، فإذا <b>عيناه ﷺ تذرفان بالدموع</b>! لقد تأثّرَ النبيُّ ﷺ بمعنى الآية: يومَ القيامةِ يشهدُ كلُّ نبيٍّ على أمّتِه، ويشهدُ هو ﷺ على أمّتِه. هكذا كان النبيُّ ﷺ <b>يتدبّرُ القرآنَ ويبكي من خشيةِ الله</b>، وهكذا يكونُ الاستماعُ الحقّ: بالقلبِ لا بالأذنِ فقط.",
@@ -777,6 +889,14 @@ HISN_STORIES.ibnmasud = [
        }
       }
      ]
+    }
+   },
+   {
+    "scene": "sprout",
+    "character": "💧",
+    "text": {
+     "ar": "وفي هذه القصّةِ دروسٌ جميلة: أنّ النبيَّ ﷺ مع عظيمِ منزلتِه كان <b>متواضعاً</b>، يطلبُ من صاحبِه أن يقرأَ عليه، ويستمعُ إليه. وأنّ ابنَ مسعودٍ كان <b>مؤدّباً</b>، فاستأذنَ وتعجّبَ أوّلاً، ثمّ أطاعَ. وأنّ القرآنَ يُقرأُ <b>بتدبّرٍ</b> حتى يتأثّرَ القلبُ وتدمعَ العين.<br><br>وأنت يا صديقي: اطلبْ من أبيك أو أمّك أو معلّمِك أن يقرأَ عليك سورةً وأنت تستمع، أو استمعْ إلى قارئٍ حسنِ الصوت. وحين تمرُّ بآيةٍ عن الجنّةِ فاسألِ اللهَ من فضلِه، وحين تمرُّ بآيةٍ عن يومِ القيامةِ ففكّرْ: <b>ماذا أعددتُ لذلك اليوم؟</b>",
+     "en": "There are beautiful lessons in this story: the Prophet ﷺ, despite his great rank, was <b>humble</b> — he asked his companion to recite to him and listened to him. Ibn Mas‘ud was <b>polite</b>: he first showed his surprise and asked, then obeyed. And the Quran is meant to be recited <b>with reflection</b>, until the heart is moved and the eyes fill with tears.<br><br>And you, my friend: ask your father, your mother, or your teacher to recite a surah to you while you listen, or listen to a reciter with a beautiful voice. When you pass a verse about Paradise, ask Allah for His bounty; and when you pass a verse about the Day of Judgement, think: <b>what have I prepared for that Day?</b>"
     }
    }
   ],

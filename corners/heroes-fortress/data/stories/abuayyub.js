@@ -10,6 +10,7 @@ HISN_STORIES.abuayyub = [
    "en": "This Is My House and This Is My Door"
   },
   "pages": [
+      {"scene":"madinah","character":"🌴","text":{"ar":"كان <b>أبو أيوبَ الأنصاريّ</b>، واسمُه <b>خالدُ بنُ زيد</b>، رجلاً من بني النجّار في المدينة. أسلمَ مبكّراً، وكان من الأنصارِ الذين بايعوا النبيَّ ﷺ في <b>بيعةِ العقبة</b>، ووعدوه أن ينصروه إذا جاءَ إليهم.<br><br>فلمّا سمعَ أهلُ المدينةِ أنّ رسولَ اللهِ ﷺ خرجَ من مكّةَ مهاجراً، صاروا يخرجونَ <b>كلَّ صباحٍ</b> إلى أطرافِ المدينة ينتظرونه، فإذا اشتدَّ حرُّ الشمسِ رجعوا إلى بيوتِهم. وفي يومٍ من الأيّامِ صاحَ رجلٌ من فوقِ مكانٍ مرتفعٍ يُخبرُهم أنّ <b>الذي ينتظرونه قد جاء!</b> فخرجَ المسلمونَ يكبّرونَ فرحاً، وقلوبُهم تسبقُ أقدامَهم.","en":"<b>Abu Ayyub al-Ansari</b>, whose name was <b>Khalid ibn Zayd</b>, was a man of Banu an-Najjar in Madinah. He accepted Islam early and was among the Ansar who pledged allegiance to the Prophet ﷺ at <b>the Pledge of al-Aqaba</b>, promising to support him if he came to them.<br><br>When the people of Madinah heard that the Messenger of Allah ﷺ had left Makkah as an emigrant, they began going out <b>every morning</b> to the edge of the city to wait for him, returning home only when the sun grew too hot. Then one day a man shouted from a high place, telling them that <b>the one they were waiting for had come!</b> The Muslims rushed out saying Allahu Akbar with joy, their hearts racing ahead of their feet."}},
    {
     "scene": "camel",
     "character": "🚪",
@@ -58,8 +59,9 @@ HISN_STORIES.abuayyub = [
       }
      ]
     }
-   }
-  ],
+   },
+      {"scene":"mosque","character":"💡","text":{"ar":"وبالقربِ من بيتِ أبي أيوبَ كانت أرضٌ <b>لغلامينِ يتيمين</b>، فاشتراها النبيُّ ﷺ وبنى فيها <b>المسجدَ النبويّ</b>، وكان يعملُ بيدِه مع أصحابِه في حملِ الحجارةِ واللَّبِن. وطوالَ تلك الأيّامِ كان بيتُ أبي أيوبَ <b>بيتَ رسولِ الله ﷺ</b>.<br><br>فماذا نتعلّمُ من أبي أيوب؟<br><b>أوّلاً:</b> الكريمُ لا يتردّد؛ قال «هذه داري» قبلَ أن يفكّرَ في التعبِ والنفقة.<br><b>ثانياً:</b> الضيفُ نعمة، وإكرامُه بابٌ من أبوابِ الخير.<br><br>فإذا زارَكم ضيف، فكنْ أوّلَ من يرحّبُ به بابتسامة، ويقدّمُ له الماءَ ويُجلسُه في أحسنِ مكان.","en":"Near Abu Ayyub's house was a piece of land belonging to <b>two orphan boys</b>. The Prophet ﷺ bought it and built <b>the Prophet's Mosque</b> there, working with his own hands alongside his Companions, carrying stones and mud bricks. Throughout those days, Abu Ayyub's house was <b>the home of the Messenger of Allah ﷺ</b>.<br><br>So what do we learn from Abu Ayyub?<br><b>First:</b> a generous person does not hesitate; he said “This is my house” before thinking of the effort and the cost.<br><b>Second:</b> a guest is a blessing, and honoring him is one of the doors of goodness.<br><br>So when a guest visits your family, be the first to welcome him with a smile, offer him water and seat him in the best place."}}
+    ],
   "quiz": [
    {
     "q": {
@@ -190,6 +192,7 @@ HISN_STORIES.abuayyub = [
    "en": "I Will Not Be Above a Roof You Are Under"
   },
   "pages": [
+      {"scene":"dwellings","character":"🏺","text":{"ar":"عاشَ أبو أيوبَ وزوجتُه <b>أمُّ أيوب</b> أيّاماً لا تُنسى، فرسولُ اللهِ ﷺ يسكنُ في بيتِهما! كانا يفرحانِ بكلِّ لحظة، ويحرصانِ على راحتِه أشدَّ الحرص.<br><br>ويذكرُ <b>ابنُ هشامٍ في السيرة</b> عن أبي أيوبَ أنّ جرّةً فيها ماءٌ انكسرتْ مرّةً في الطابقِ الأعلى، فقامَ هو وأمُّ أيوبَ بقطيفةٍ لهما، ليس لهما غطاءٌ غيرُها، <b>يُنشّفانِ بها الماء</b>، خوفاً أن يتسرّبَ منه شيءٌ على رسولِ اللهِ ﷺ فيؤذيَه.<br><br>تخيّلْ! غطاؤهما الوحيدُ صارَ ممسحةً، لأنّ راحةَ النبيِّ ﷺ عندهما <b>أغلى من راحتِهما</b>.","en":"Abu Ayyub and his wife <b>Umm Ayyub</b> lived unforgettable days: the Messenger of Allah ﷺ was living in their home! They rejoiced in every moment and took the greatest care for his comfort.<br><br><b>Ibn Hisham reports in the Sirah</b> from Abu Ayyub that once a jar of water broke on the upper floor, so he and Umm Ayyub took a velvet cloth of theirs — the only cover they had — and <b>soaked up the water with it</b>, afraid that some of it would drip down onto the Messenger of Allah ﷺ and bother him.<br><br>Imagine! Their only blanket became a mop, because the Prophet's ﷺ comfort was <b>more precious to them than their own</b>."}},
    {
     "scene": "dwellings",
     "character": "🏡",
@@ -238,8 +241,9 @@ HISN_STORIES.abuayyub = [
       }
      ]
     }
-   }
-  ],
+   },
+      {"scene":"dwellings","character":"💡","text":{"ar":"ما أجملَ <b>أدبَ أبي أيوب</b>! لم يكن هناك قانونٌ يمنعُه من السكنِ في الأعلى، والنبيُّ ﷺ نفسُه اختارَ الأسفل. لكنّ قلبَه المحبَّ لم يرضَ أن يمشيَ فوقَ رأسِ رسولِ الله ﷺ.<br><br>فماذا نتعلّم؟ إنّ <b>الأدبَ يظهرُ في التفاصيلِ الصغيرة</b>: في طريقةِ الكلام، وفي المشي، وفي الجلوس. والمحبُّ الصادقُ يحبُّ ما يحبُّه حبيبُه، ويكرهُ ما يكرهُه.<br><br>فإذا أحببتَ النبيَّ ﷺ فتعلّمْ سُنّتَه واتّبعْها، وكنْ مؤدّباً مع والديك ومعلّميك: لا ترفعْ صوتَك فوقَ أصواتِهم، ولا تجلسْ قبلَهم، وقدِّمْهم في كلِّ خير.","en":"How beautiful was <b>Abu Ayyub's courtesy</b>! No rule stopped him from living upstairs, and the Prophet ﷺ himself had chosen the lower floor. But his loving heart could not accept walking above the head of the Messenger of Allah ﷺ.<br><br>So what do we learn? <b>Good manners show in small details</b>: in how we speak, how we walk and how we sit. A true lover loves what his beloved loves and dislikes what he dislikes.<br><br>So if you love the Prophet ﷺ, learn his Sunnah and follow it. And be courteous with your parents and teachers: do not raise your voice above theirs, do not sit down before them, and put them first in everything good."}}
+    ],
   "quiz": [
    {
     "q": {
@@ -370,6 +374,7 @@ HISN_STORIES.abuayyub = [
    "en": "The Old Man at the Walls of Constantinople"
   },
   "pages": [
+      {"scene":"desert","character":"⚔️","text":{"ar":"شهدَ <b>أبو أيوب</b> مع رسولِ اللهِ ﷺ <b>بدراً وأُحُداً والخندق</b> والمشاهدَ كلَّها، ولم يكن يحبُّ أن يتخلّفَ عن الخروجِ في سبيلِ الله. وبعدَ وفاةِ النبيِّ ﷺ بقيَ على عهدِه، يخرجُ مع جيوشِ المسلمينَ سنةً بعدَ سنة.<br><br>وكان المسلمونَ يحفظونَ بشارةً رواها <b>البخاريّ</b>: أنّ النبيَّ ﷺ قال: <b>«أوّلُ جيشٍ من أمّتي يغزونَ مدينةَ قيصرَ مغفورٌ لهم»</b>. فلمّا خرجَ جيشُ المسلمينَ في زمنِ <b>معاويةَ</b> رضي الله عنه إلى القسطنطينيّة، عاصمةِ الروم، كان أبو أيوبَ قد صارَ شيخاً كبيراً، لكنّه حملَ سلاحَه وخرجَ معهم.","en":"<b>Abu Ayyub</b> took part with the Messenger of Allah ﷺ in <b>Badr, Uhud, the Trench</b> and every battle, and he never liked to stay behind when Muslims went out in Allah's cause. After the Prophet ﷺ passed away he remained true to his promise, going out with the Muslim armies year after year.<br><br>The Muslims remembered good news reported by <b>al-Bukhari</b>: the Prophet ﷺ said, <b>“The first army of my Ummah to attack the city of Caesar will be forgiven.”</b> So when a Muslim army set out in the time of <b>Mu'awiya</b>, may Allah be pleased with him, toward Constantinople, the capital of the Romans, Abu Ayyub had become a very old man — yet he took up his weapon and went with them."}},
    {
     "scene": "peaks",
     "character": "🏰",
@@ -418,8 +423,9 @@ HISN_STORIES.abuayyub = [
       }
      ]
     }
-   }
-  ],
+   },
+      {"scene":"peaks","character":"💡","text":{"ar":"وبعدَ قرونٍ طويلة، لمّا فتحَ <b>السلطانُ محمّدٌ الفاتح</b> مدينةَ القسطنطينيّة سنةَ <b>١٤٥٣م</b>، بُنيَ مسجدٌ كبيرٌ قربَ قبرِ أبي أيوب، وما زالَ الحيُّ هناك يُسمّى باسمِه إلى اليومِ في مدينةِ <b>إسطنبول</b>.<br><br>فماذا نتعلّمُ من هذا الشيخِ البطل؟ إنّ <b>الهمّةَ العاليةَ لا تشيخ</b>، وإنّ المؤمنَ لا يبحثُ عن عذرٍ ليقعد، بل يبحثُ عن طريقٍ ليعمل. وإنّ القعودَ عن الخيرِ هو الخسارةُ الحقيقيّة.<br><br>وأنت لستَ صغيراً على الخير: تستطيعُ أن تصلّيَ، وتحفظَ، وتساعدَ أهلَك، وتنصحَ صديقَك. فلا تقلْ: سأبدأُ حين أكبر، بل ابدأِ اليوم.","en":"Many centuries later, when <b>Sultan Mehmed the Conqueror</b> conquered Constantinople in <b>1453</b>, a large mosque was built near Abu Ayyub's grave, and the district there is still named after him to this day in the city of <b>Istanbul</b>.<br><br>So what do we learn from this heroic old man? <b>High resolve never grows old</b>. A believer does not look for an excuse to sit back; he looks for a way to work. Sitting back from good is the real loss.<br><br>And you are not too young for good: you can pray, memorize, help your family and give good advice to your friend. So don't say “I'll start when I'm older” — start today."}}
+    ],
   "quiz": [
    {
     "q": {

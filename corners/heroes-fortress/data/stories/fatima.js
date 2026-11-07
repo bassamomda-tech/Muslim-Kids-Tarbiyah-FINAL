@@ -4,6 +4,14 @@ HISN_STORIES.fatima = [
   { icon:'❤️', scene:'kaaba', character:'👧',
     title:{ ar:'البنتُ التي دافعتْ عن أبيها', en:'The Daughter Who Defended Her Father' },
     pages:[
+      {
+       "scene": "dwellings",
+       "character": "🏠",
+       "text": {
+        "ar": "في بيتِ النبيِّ ﷺ وزوجتِه <b>خديجةَ</b> رضي الله عنها في مكّة، نشأتْ أربعُ بنات: زينبُ ورقيّةُ وأمُّ كلثوم، و<b>فاطمةُ</b> أصغرُهنّ. كانت فاطمةُ تُحِبُّ أباها حبّاً عظيماً، وتراه يخرجُ كلَّ يومٍ يدعو الناسَ إلى عبادةِ اللهِ وحدَه، فيعودُ أحياناً وقد آذاه قومُه بالكلامِ أو بالفعل.<br><br>كان أهلُ مكّةَ يعرفونَ محمداً ﷺ بالصادقِ الأمين، لكنّ كثيراً من كبارِ قريشٍ غضبوا حين دعاهم إلى تركِ الأصنام، فصاروا يستهزئونَ به ويؤذونَه، حتى وهو يُصلّي عندَ الكعبة.",
+        "en": "In the home of the Prophet ﷺ and his wife <b>Khadija</b>, may Allah be pleased with her, in Makkah, four daughters grew up: Zaynab, Ruqayya, Umm Kulthum, and <b>Fatima</b>, the youngest. Fatima loved her father dearly. She watched him go out every day calling people to worship Allah alone, and sometimes he came home after his people had hurt him with words or deeds.<br><br>The people of Makkah knew Muhammad ﷺ as the truthful and trustworthy one, but many of the chiefs of Quraysh were angered when he called them to leave the idols, and they began to mock and harm him — even while he was praying at the Ka'ba."
+       }
+      },
       { scene:'kaaba', character:'👧',
         text:{ ar:'كانت <b>فاطمةُ</b> صغيرةً حين كان أبوها النبيُّ ﷺ يدعو إلى الإسلامِ في مكّة. وذاتَ يومٍ بينما كان النبيُّ ﷺ ساجداً يُصلّي عندَ الكعبة، جاءَ بعضُ سفهاءِ قريشٍ وألقَوا على ظهرِه <b>فَرْثَ جزورٍ</b> (أوساخَ بهيمةٍ مذبوحة) استهزاءً وأذى، وضحكوا!<br><br>فمن الذي هبَّ لنصرتِه؟ <b>ابنتُه الصغيرةُ فاطمة</b>! جاءتْ مسرعةً، فأزالتِ الأذى عن ظهرِ أبيها بيديها الصغيرتين، و<b>واجهتْ أولئكَ الرجالَ وأنّبتْهم</b> رغمَ صِغَرِها! لم تخفْ ولم تتردّدْ في الدفاعِ عن أبيها وعن الحق. كانت بارّةً شجاعةً تُحِبُّ أباها حبّاً عظيماً.',
           en:'<b>Fatima</b> was young when her father the Prophet ﷺ called people to Islam in Makkah. One day, while the Prophet ﷺ was prostrating in prayer at the Ka\u2019ba, some foolish men of Quraysh threw onto his back the <b>filth of a slaughtered camel</b> in mockery and harm, and laughed!<br><br>Who rushed to his aid? <b>His young daughter Fatima</b>! She came hurrying, removed the filth from her father\u2019s back with her small hands, and <b>faced those men and rebuked them</b> despite her youth! She did not fear or hesitate to defend her father and the truth. She was devoted, brave, and loved her father dearly.' },
@@ -13,6 +21,22 @@ HISN_STORIES.fatima = [
             { t:{ar:'خافتْ وهربتْ',en:'She fled in fear'},c:false,exp:{ar:'لا، بل هبّتْ لنصرتِه فوراً.',en:'No — she rushed to his aid at once.'} },
             { t:{ar:'ضحكتْ معهم',en:'She laughed with them'},c:false,exp:{ar:'لا، بل أنّبتْهم ودافعتْ عن أبيها.',en:'No — she rebuked them and defended her father.'} },
           ] } },
+      {
+       "scene": "kaaba",
+       "character": "🤲",
+       "text": {
+        "ar": "وكان <b>عبدُ اللهِ بنُ مسعود</b> رضي الله عنه حاضراً يرى ما يحدث، لكنّه كان رجلاً ضعيفاً في مكّةَ لا قبيلةَ له تحميه، فقال بعد ذلك: <b>لو كانت لي منَعةٌ لطرحتُه عن ظهرِ رسولِ اللهِ ﷺ</b>. فكانت الصغيرةُ فاطمةُ هي التي فعلتْ ما لم يقدرْ عليه الكبار!<br><br>فلمّا أتمَّ النبيُّ ﷺ صلاتَه، رفعَ صوتَه ودعا على أولئك الظالمين بأسمائِهم. قال ابنُ مسعود: فلقد رأيتُ الذين سمّاهم صرعى يومَ <b>بدر</b>. فاللهُ يُمهِلُ الظالمَ ولا يُهمِلُه.",
+        "en": "<b>Abdullah ibn Mas'ud</b>, may Allah be pleased with him, was there watching, but he was a weak man in Makkah with no tribe to protect him. He said later: <b>If only I had had the strength, I would have thrown it off the back of the Messenger of Allah ﷺ</b>. So it was little Fatima who did what the grown men could not!<br><br>When the Prophet ﷺ finished his prayer, he raised his voice and supplicated against those wrongdoers by name. Ibn Mas'ud said: I saw the very men he named lying dead on the day of <b>Badr</b>. Allah gives the oppressor time, but He never forgets."
+       }
+      },
+      {
+       "scene": "madinah",
+       "character": "💡",
+       "text": {
+        "ar": "ماذا نتعلّمُ من فاطمةَ الصغيرة؟ أوّلاً: <b>البرُّ بالوالدين</b> ليس كلاماً فقط، بل فعلٌ ونصرةٌ ورحمة. فاطمةُ لم تقفْ تبكي، بل أسرعتْ تُزيلُ الأذى عن أبيها بيديها.<br><br>ثانياً: <b>الشجاعةُ لا تحتاجُ عُمراً كبيراً</b>؛ فالقلبُ المؤمنُ قويٌّ ولو كان صاحبُه صغيراً. وأنتَ يا صديقي، إذا رأيتَ أباك متعباً أو أمَّك مشغولةً، فأسرعْ إلى مساعدتِهما قبلَ أن يطلبا. وإذا رأيتَ أحداً يسخرُ من صديقٍ ضعيف، فدافعْ عنه بأدبٍ وحكمة، وقلْ كلمةَ الحقِّ ولا تخف.",
+        "en": "What do we learn from young Fatima? First: <b>being good to parents</b> is not just words — it is action, support, and mercy. Fatima did not stand there crying; she hurried to remove the harm from her father with her own hands.<br><br>Second: <b>courage does not need a grown-up age</b>; a believing heart is strong even when its owner is small. And you, my friend: if you see your father tired or your mother busy, hurry to help them before they ask. And if you see someone mocking a weaker friend, defend him politely and wisely — speak the truth and don't be afraid."
+       }
+      }
     ],
     quiz:[
       { q:{ar:'من دافعَ عن النبيِّ ﷺ عندَ الكعبة؟',en:'Who defended the Prophet ﷺ at the Ka\u2019ba?'},
@@ -30,6 +54,14 @@ HISN_STORIES.fatima = [
   { icon:'🌿', scene:'madinah', character:'🤲',
     title:{ ar:'القناعةُ والصبرُ في بيتِ الزهراء', en:'Contentment and Patience in Fatima\u2019s Home' },
     pages:[
+      {
+       "scene": "madinah",
+       "character": "💍",
+       "text": {
+        "ar": "لمّا كبرتْ <b>فاطمةُ</b> وهاجرتْ إلى المدينة، خطبَها <b>عليُّ بنُ أبي طالب</b> رضي الله عنه، فزوّجه النبيُّ ﷺ إيّاها. ولم يكنْ عليٌّ يملكُ مالاً كثيراً، فقال له النبيُّ ﷺ: <b>«أعطِها شيئاً»</b>، فلمّا قال: ما عندي شيء، قال: <b>«أين دِرعُك الحُطَميّة؟»</b> فكانت درعُه هي مهرَها.<br><br>بيتٌ صغيرٌ متواضع، وأثاثٌ قليلٌ بسيط، لكنّه كان مليئاً بالإيمانِ والمحبّة. كان عليٌّ يعملُ ويتعب، وكانت فاطمةُ تقومُ بأعمالِ البيتِ بنفسِها، والعملُ كثيرٌ شاقّ.",
+        "en": "When <b>Fatima</b> grew up and emigrated to Madinah, <b>Ali ibn Abi Talib</b>, may Allah be pleased with him, asked to marry her, and the Prophet ﷺ married her to him. Ali did not own much, so the Prophet ﷺ told him: <b>\"Give her something.\"</b> When he said, I have nothing, the Prophet ﷺ said: <b>\"Where is your Hutami armour?\"</b> So his armour became her dowry.<br><br>A small, humble house with a few simple belongings — but it was full of faith and love. Ali worked hard and grew tired, and Fatima did the housework herself, and the work was heavy and plentiful."
+       }
+      },
       { scene:'madinah', character:'🤲',
         text:{ ar:'تزوّجتْ <b>فاطمةُ</b> ابنَ عمِّها <b>عليَّ بنَ أبي طالب</b>، وكانا فقيرَين يعيشانِ حياةً بسيطة. كانت فاطمةُ — مع أنّها بنتُ النبيِّ ﷺ — <b>تطحنُ الحَبَّ بيدِها</b> حتى أثّرتِ الرّحى في يدِها، وتستقي الماءَ وتخدمُ بيتَها، دون أن تشكوَ أو تطلبَ الترف.<br><br>وفي مرّةٍ جاءتْ تطلبُ من أبيها خادماً يُعينُها، فلم يُعطِها — بل علّمها ما هو خيرٌ من الدنيا كلِّها! قال لها ولعليّ: <b>«ألا أُعلِّمُكما خيراً ممّا سألتُما؟ إذا أويتُما إلى فراشِكما فسبِّحا ثلاثاً وثلاثين، واحمَدا ثلاثاً وثلاثين، وكبِّرا أربعاً وثلاثين»</b>. فرضيتْ فاطمةُ وقنعتْ، لأنّها تعلمُ أنّ كنوزَ الآخرةِ خيرٌ من راحةِ الدنيا. كانت قدوةً في القناعةِ والصبرِ والرضا.',
           en:'<b>Fatima</b> married her cousin <b>Ali ibn Abi Talib</b>, and they were poor, living a simple life. Although she was the Prophet\u2019s ﷺ daughter, Fatima <b>ground grain with her own hand</b> until the millstone marked her hand, drew water, and served her home, without complaining or asking for luxury.<br><br>Once she came to ask her father for a servant to help her, but he did not give her one — instead he taught her something better than all the world! He told her and Ali: <b>"Shall I teach you something better than what you asked for? When you go to bed, say SubhanAllah thirty-three times, Alhamdulillah thirty-three times, and Allahu Akbar thirty-four times."</b> Fatima accepted and was content, knowing the treasures of the Hereafter are better than worldly comfort. She was a model of contentment, patience, and acceptance.' },
@@ -39,6 +71,14 @@ HISN_STORIES.fatima = [
             { t:{ar:'أعطاها مالاً كثيراً',en:'He gave her much wealth'},c:false,exp:{ar:'لا، بل علّمها ذكراً خيراً من الدنيا.',en:'No — he taught her a remembrance better than the world.'} },
             { t:{ar:'أعطاها قصراً',en:'He gave her a palace'},c:false,exp:{ar:'لا، بل علّمها ما ينفعُها في الآخرة.',en:'No — he taught her what benefits her in the Hereafter.'} },
           ] } },
+      {
+       "scene": "night",
+       "character": "🌙",
+       "text": {
+        "ar": "وتفاصيلُ القصّةِ في <b>الصحيحين</b> جميلة: ذهبتْ فاطمةُ إلى بيتِ أبيها فلم تجدْه، فأخبرتْ عائشةَ بحاجتِها. فلمّا جاءَ النبيُّ ﷺ أخبرتْه عائشة، فجاءَهما في الليلِ وقد أخذا مضاجعَهما، فذهبا ليقوما، فقال: <b>«على مكانِكما»</b>، وجلسَ بينهما حتى قال عليٌّ: وجدتُ بَرْدَ قدمَيه على صدري. ثمّ علّمهما هذا الذكر.<br><br>قال عليٌّ رضي الله عنه: ما تركتُه منذُ سمعتُه من النبيِّ ﷺ. فجرّبْ أنتَ الليلةَ قبلَ أن تنام: سبّحْ ثلاثاً وثلاثين، واحمدْ ثلاثاً وثلاثين، وكبّرْ أربعاً وثلاثين، وتذكّرْ أنّ <b>ذكرَ اللهِ قوّةٌ للقلب</b>، وأنّ القناعةَ كنزٌ لا يفنى.",
+        "en": "The details of the story in <b>al-Bukhari and Muslim</b> are beautiful: Fatima went to her father's house but did not find him, so she told A'isha what she needed. When the Prophet ﷺ came, A'isha told him, and he came to them at night after they had gone to bed. They began to get up, but he said: <b>\"Stay where you are,\"</b> and sat between them, until Ali said: I felt the coolness of his feet on my chest. Then he taught them this remembrance.<br><br>Ali, may Allah be pleased with him, said: I have never left it since I heard it from the Prophet ﷺ. Try it tonight before you sleep: say SubhanAllah thirty-three times, Alhamdulillah thirty-three times, and Allahu Akbar thirty-four times — and remember that <b>remembering Allah is strength for the heart</b>, and contentment is a treasure that never runs out."
+       }
+      }
     ],
     quiz:[
       { q:{ar:'من زوجُ فاطمةَ رضي الله عنها؟',en:'Who was Fatima\u2019s husband?'},
@@ -56,6 +96,14 @@ HISN_STORIES.fatima = [
   { icon:'💗', scene:'madinah', character:'🤝',
     title:{ ar:'«فاطمةُ بَضعةٌ منّي»', en:'"Fatima Is a Part of Me"' },
     pages:[
+      {
+       "scene": "garden",
+       "character": "🌸",
+       "text": {
+        "ar": "في المدينة، كان بيتُ <b>فاطمةَ</b> قريباً من بيتِ أبيها ﷺ، وكان يزورُها ويُحِبُّ ابنَيها <b>الحسنَ والحسين</b> حبّاً عظيماً، ويقولُ عنهما: <b>«هما ريحانتايَ من الدنيا»</b>. كان بيتُ فاطمةَ مكاناً يحبُّه النبيُّ ﷺ، يرتاحُ فيه قلبُه.<br><br>وكان الصحابةُ يعرفونَ مكانةَ فاطمةَ عندَ النبيِّ ﷺ، فيُحِبّونَها ويُكرِمونَها لأجلِه، ويرونَ في أخلاقِها صورةً من أخلاقِ أبيها.",
+        "en": "In Madinah, <b>Fatima</b>'s home was close to her father's ﷺ. He would visit her, and he loved her two sons <b>al-Hasan and al-Husayn</b> dearly, saying of them: <b>\"They are my two sweet basil flowers of this world.\"</b> Fatima's home was a place the Prophet ﷺ loved, where his heart found rest.<br><br>The Companions knew Fatima's place with the Prophet ﷺ, so they loved and honoured her for his sake, and saw in her manners a reflection of her father's."
+       }
+      },
       { scene:'madinah', character:'🤝',
         text:{ ar:'كانت <b>فاطمةُ</b> أشبهَ الناسِ بأبيها ﷺ في مِشيتِها وكلامِها وهدوئِها. تقول أمُّ المؤمنينَ عائشة: ما رأيتُ أحداً أشبهَ سَمْتاً وهَدْياً برسولِ اللهِ ﷺ من فاطمة. وكانت <b>إذا دخلتْ على أبيها قامَ إليها</b>، فأخذَ بيدِها <b>فقبّلها وأجلسها في مكانِه</b>! وكان إذا دخلَ عليها قامتْ إليه، فأخذتْ بيدِه فقبّلتْه وأجلستْه في مكانِها. يا له من حبٍّ واحترامٍ بين أبٍ وابنتِه!<br><br>وقال النبيُّ ﷺ عنها كلمةً تملأُ القلبَ حناناً: <b>«فاطمةُ بَضعةٌ منّي، فمن أغضبها أغضبني»</b>. و«البَضعة» هي <b>القطعةُ من الجسد</b>؛ كأنّه يقول: فاطمةُ جزءٌ منّي، ما يؤلمُها يؤلمُني، وما يُفرِحُها يُفرِحُني! فحبُّ فاطمةَ وإكرامُها من حبِّ النبيِّ ﷺ. وتعلّمنا من هذا البيتِ أنّ <b>البنتَ نعمةٌ عظيمة</b> تُكرَمُ ويُفرَحُ بها، وأنّ الأبناءَ يردّونَ حبَّ والديهم بالاحترامِ والبِرّ.',
           en:'<b>Fatima</b> resembled her father ﷺ more than anyone, in her walk, speech, and calm. The Mother of the Believers A’isha said: I never saw anyone more like the Messenger of Allah ﷺ in manner and bearing than Fatima. <b>When she came in to her father, he stood up for her</b>, took her hand, <b>kissed her, and sat her in his own place</b>! And when he came in to her, she stood for him, took his hand, kissed him, and sat him in her place. What love and respect between a father and his daughter!<br><br>The Prophet ﷺ said of her words that fill the heart with tenderness: <b>"Fatima is a part of me; whoever angers her angers me."</b> "Bad’a" means <b>a piece of the body</b> — as if he said: Fatima is part of me; what hurts her hurts me, and what gladdens her gladdens me! So loving and honoring Fatima is part of loving the Prophet ﷺ. From this home we learn that <b>a daughter is a great blessing</b> to be honored and celebrated, and that children return their parents’ love with respect and kindness.' },
@@ -65,6 +113,14 @@ HISN_STORIES.fatima = [
             { t:{ar:'يقومُ إليها ويقبّلُها ويُجلِسُها في مكانِه',en:'He stood, kissed her, and sat her in his place'},c:true,exp:{ar:'أحسنت! هكذا كان يُكرِمُ ابنتَه الحبيبة.',en:'Well done! This is how he honored his beloved daughter.'} },
             { t:{ar:'يطلبُ منها أن تخرج',en:'He asked her to leave'},c:false,exp:{ar:'لا، بل كان يُرحِّبُ بها أجملَ ترحيب.',en:'No — he welcomed her most warmly.'} },
           ] } },
+      {
+       "scene": "madinah",
+       "character": "💡",
+       "text": {
+        "ar": "فكيف تُطبِّقُ هذا في بيتِك؟ حين يدخلُ أبوك أو أمُّك أو جدُّك، قمْ لاستقبالِه بابتسامة، وسلِّمْ عليه، وقبِّلْ يدَه أو رأسَه، وأجلسْه في المكانِ المريح. وإن كانت لك أختٌ فأكرمْها ولا تُغضِبْها، فالنبيُّ ﷺ كان يفرحُ بابنتِه ويُكرِمُها.<br><br>هذه الأعمالُ الصغيرةُ تملأُ البيتَ <b>دفئاً ومحبّة</b>، وتجعلُ القلوبَ قريبةً بعضُها من بعض، كما كانت القلوبُ في بيتِ النبوّة. وتذكّرْ أنّ والديك يفرحانِ بكلمةٍ طيّبةٍ منك أكثرَ ممّا يفرحانِ بهديّةٍ غالية، وأنّ إدخالَ السرورِ عليهما من الأعمالِ التي يحبُّها الله.",
+        "en": "So how can you live this in your own home? When your father, mother, or grandparent comes in, stand to welcome them with a smile, greet them, kiss their hand or head, and seat them in the comfortable spot. And if you have a sister, honour her and don't upset her, for the Prophet ﷺ rejoiced in his daughter and honoured her.<br><br>These small deeds fill a home with <b>warmth and love</b>, and bring hearts close to one another, just as hearts were close in the Prophet's household. Remember that your parents are happier with a kind word from you than with an expensive gift, and that bringing them joy is a deed Allah loves."
+       }
+      }
     ],
     quiz:[
       { q:{ar:'ما معنى «بَضعةٌ منّي»؟',en:'What does "a part (bad’a) of me" mean?'},
@@ -82,6 +138,14 @@ HISN_STORIES.fatima = [
   { icon:'🤫', scene:'night', character:'😢',
     title:{ ar:'سرٌّ أبكاها ثمّ أضحكها', en:'A Secret That Made Her Cry, Then Smile' },
     pages:[
+      {
+       "scene": "mosque",
+       "character": "🕌",
+       "text": {
+        "ar": "في شهرِ <b>ربيعٍ الأوّل</b> من السنةِ الحاديةَ عشرةَ للهجرة، اشتدَّ المرضُ على النبيِّ ﷺ، فكان يُمرَّضُ في بيتِ أمِّ المؤمنينَ <b>عائشةَ</b> رضي الله عنها، بجوارِ المسجد. وكان الصحابةُ قلقينَ حزينين، يسألونَ عنه كلَّ يوم.<br><br>وكانت <b>فاطمةُ</b> تأتي لتزورَ أباها، وقلبُها يتألّمُ لما تراه من شدّةِ مرضِه. وفي يومٍ من تلك الأيّام كانت أزواجُه عندَه جميعاً، فأقبلتْ فاطمةُ...",
+        "en": "In the month of <b>Rabi' al-Awwal</b> in the eleventh year after the Hijra, the Prophet's ﷺ illness grew severe. He was nursed in the house of the Mother of the Believers <b>A'isha</b>, may Allah be pleased with her, beside the mosque. The Companions were worried and sad, asking about him every day.<br><br><b>Fatima</b> would come to visit her father, her heart aching at how ill he was. One of those days, while all his wives were with him, Fatima came in..."
+       }
+      },
       { scene:'night', character:'😢',
         text:{ ar:'في مرضِ النبيِّ ﷺ الأخير، جاءتْ <b>فاطمةُ</b> تمشي — ومِشيتُها كمِشيةِ أبيها تماماً — فقال: <b>«مرحباً بابنتي»</b>، وأجلسها بجانبِه، ثمّ <b>أسرَّ إليها حديثاً</b> في أذنِها، <b>فبكتْ</b>! ثمّ أسرَّ إليها حديثاً آخر، <b>فضحكتْ</b>! فتعجّبتْ عائشةُ وقالت: ما رأيتُ كاليومِ فرحاً أقربَ من حزن! فسألتْها: ماذا قال لكِ؟ فقالت فاطمةُ بأمانة: <b>«ما كنتُ لأُفشيَ سرَّ رسولِ اللهِ ﷺ»</b>.<br><br>وحفظتْ فاطمةُ السرَّ حتى تُوفِّيَ النبيُّ ﷺ، ثمّ أخبرتْ به: قال لها أوّلاً إنّ جبريلَ كان يُراجعُه القرآنَ كلَّ عامٍ مرّة، وإنّه راجعه هذا العامَ مرّتين، <b>ولا أراه إلّا قد حضرَ أجلي</b> — فبكتْ. ثمّ قال لها: <b>«أما ترضَينَ أن تكوني سيّدةَ نساءِ أهلِ الجنّة»</b>، وأخبرها أنّها <b>أوّلُ أهلِ بيتِه لحوقاً به</b> — فضحكتْ! فرحتْ أنّها ستلقى أباها قريباً في الجنّة. وفعلاً، لم تعِشْ بعده إلّا نحوَ ستّةِ أشهر. تعلّمنا فاطمةُ <b>حفظَ السرّ</b>، والصبرَ، وأنّ لقاءَ الأحبّةِ في الجنّةِ يُهوِّنُ كلَّ فراق.',
           en:'In the Prophet’s ﷺ final illness, <b>Fatima</b> came walking — her walk exactly like her father’s — and he said: <b>"Welcome, my daughter,"</b> and sat her beside him. Then he <b>whispered something to her</b>, and <b>she wept</b>! Then he whispered something else, and <b>she laughed</b>! A’isha was amazed and said: I have never seen joy so close to sorrow as today! She asked her: What did he tell you? Fatima answered faithfully: <b>"I would never reveal the secret of the Messenger of Allah ﷺ."</b><br><br>Fatima kept the secret until the Prophet ﷺ passed away, then she told it: first he told her that Jibril used to review the Qur’an with him once every year, and this year he reviewed it twice, <b>"and I only see that my time has come"</b> — so she wept. Then he said: <b>"Are you not pleased to be the leader of the women of Paradise?"</b> and told her she would be <b>the first of his family to join him</b> — so she laughed! She was glad she would meet her father soon in Paradise. Indeed, she lived only about six months after him. Fatima teaches us <b>to keep a secret</b>, to be patient, and that meeting loved ones in Paradise eases every parting.' },
@@ -91,6 +155,14 @@ HISN_STORIES.fatima = [
             { t:{ar:'«ما كنتُ لأُفشيَ سرَّ رسولِ اللهِ ﷺ»',en:'"I would never reveal the secret of the Messenger of Allah ﷺ"'},c:true,exp:{ar:'أحسنت! كانت أمينةً تحفظُ السرّ.',en:'Well done! She was trustworthy and kept the secret.'} },
             { t:{ar:'نشرتْه بين الناس',en:'She spread it among people'},c:false,exp:{ar:'لا، فحفظُ السرِّ أمانة.',en:'No — keeping a secret is a trust.'} },
           ] } },
+      {
+       "scene": "garden",
+       "character": "💡",
+       "text": {
+        "ar": "وتُوفِّيَتْ <b>فاطمةُ</b> رضي الله عنها بعدَ أبيها بستّةِ أشهر، فدفنَها زوجُها <b>عليٌّ</b> رضي الله عنه ليلاً، وصلّى عليها. فكانت أوّلَ أهلِ بيتِه لحوقاً به، كما بشّرَها ﷺ.<br><br>وأنتَ يا صديقي، إذا ائتمنَك صديقُك أو أحدُ أهلِك على سرٍّ، فاحفظْه كما حفظتْ فاطمة، ولا تُخبِرْ به أحداً، فـ<b>حفظُ السرِّ من الأمانة</b>. وإذا فارقتَ مَن تحبّ، فتذكّرْ أنّ المؤمنينَ يلتقونَ في الجنّةِ لقاءً لا فراقَ بعده.",
+        "en": "<b>Fatima</b>, may Allah be pleased with her, passed away six months after her father, and her husband <b>Ali</b>, may Allah be pleased with him, buried her at night and prayed over her. She was the first of his family to join him, just as he ﷺ had told her.<br><br>And you, my friend: if a friend or family member trusts you with a secret, keep it as Fatima did and tell no one, for <b>keeping a secret is part of trustworthiness</b>. And when you are parted from someone you love, remember that the believers will meet in Paradise, a meeting with no parting after it."
+       }
+      }
     ],
     quiz:[
       { q:{ar:'لماذا بكتْ فاطمةُ في المرّةِ الأولى؟',en:'Why did Fatima cry the first time?'},

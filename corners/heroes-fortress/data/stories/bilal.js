@@ -11,6 +11,14 @@ HISN_STORIES.bilal = [
   },
   "pages": [
    {
+    "scene": "kaaba",
+    "character": "🧑🏿",
+    "text": {
+     "ar": "في مكّةَ المكرّمة، قبلَ أكثرَ من أربعةَ عشرَ قرناً، عاشَ رجلٌ أسمرُ اللونِ طيّبُ القلبِ اسمُه <b>بلالُ بنُ رباح</b>، وأمُّه <b>حمامة</b>، وأصلُه من بلادِ <b>الحبشة</b>. لم يكنْ بلالٌ تاجراً غنيّاً ولا سيّداً من سادةِ قريش، بل كان عبداً يعملُ ليلَ نهارَ لسيّدِه.<br><br>وحين بدأَ النبيُّ ﷺ يدعو الناسَ إلى عبادةِ اللهِ وحدَه وتركِ الأصنام، سمعَ بلالٌ كلماتِ الحقِّ فدخلتْ قلبَه، فأسلمَ مبكّراً، وكان من <b>أوائلِ مَن أظهروا إسلامَهم</b> في مكّة؛ فقد قال عبدُ اللهِ بنُ مسعود: أوّلُ مَن أظهرَ إسلامَه سبعة، وذكرَ منهم بلالاً. لكنّ سادةَ مكّةَ لم يرضَوا أن يتركَ عبدٌ ضعيفٌ دينَ أسيادِه!",
+     "en": "In Makkah, more than fourteen centuries ago, there lived a dark-skinned, good-hearted man named <b>Bilal ibn Rabah</b>. His mother was <b>Hamama</b>, and his family came from <b>Abyssinia</b>. Bilal was no rich merchant and no chief of Quraysh; he was an enslaved man who worked night and day for his master.<br><br>When the Prophet ﷺ began calling people to worship Allah alone and leave the idols, Bilal heard the words of truth and they entered his heart. He accepted Islam early and was among <b>the first to openly declare their Islam</b> in Makkah: Abdullah ibn Mas'ud said that the first to declare their Islam openly were seven, and he named Bilal among them. But the chiefs of Makkah would not accept that a weak slave should leave the religion of his masters!"
+    }
+   },
+   {
     "scene": "desert",
     "character": "☀️",
     "text": {
@@ -57,6 +65,22 @@ HISN_STORIES.bilal = [
        }
       }
      ]
+    }
+   },
+   {
+    "scene": "desert",
+    "character": "🤝",
+    "text": {
+     "ar": "ولم يكتفِ المعذِّبونَ بذلك، بل كانوا يُسلِّمونَه إلى <b>الصبيان</b> يطوفونَ به في شِعابِ مكّةَ وطرقاتِها، وهو لا يزيدُ على قولِه: <b>«أحدٌ أحد»</b>. هانتْ عليه نفسُه في سبيلِ الله، فلم يعدْ يهمُّه الألمُ ما دامَ قلبُه مع ربِّه.<br><br>ثمّ جاءَ الفرج: اشتراه <b>أبو بكرٍ الصدّيق</b> رضي الله عنه بمالِه من سيّدِه، ثمّ <b>أعتقَه لوجهِ الله</b>، فصارَ بلالٌ حرّاً! وكان عمرُ بنُ الخطّابِ بعد ذلك يقولُ مُكرِماً لهما: <b>«أبو بكرٍ سيّدُنا، وأعتقَ سيّدَنا»</b> — يعني بلالاً. انظرْ كيف صارَ العبدُ المعذَّبُ سيّداً في قلوبِ المؤمنين!",
+     "en": "The torturers did not stop there: they would hand him over to <b>the boys</b>, who dragged him around the valleys and streets of Makkah, while he said nothing more than: <b>\"One, One!\"</b> His own comfort meant little to him for Allah's sake; the pain no longer mattered as long as his heart was with his Lord.<br><br>Then relief came: <b>Abu Bakr as-Siddiq</b>, may Allah be pleased with him, bought him from his master with his own money and <b>set him free for the sake of Allah</b>. Bilal was free! Later, Umar ibn al-Khattab would honour them both by saying: <b>\"Abu Bakr is our master, and he freed our master\"</b> — meaning Bilal. See how the tortured slave became a master in the hearts of the believers!"
+    }
+   },
+   {
+    "scene": "madinah",
+    "character": "💡",
+    "text": {
+     "ar": "ودارتِ الأيّام، فهاجرَ بلالٌ مع المسلمينَ إلى المدينة، وصارَ مؤذّنَ رسولِ اللهِ ﷺ، أمّا أميّةُ بنُ خلفٍ الذي عذّبه فقد قُتِلَ يومَ بدرٍ على كفرِه. فالظلمُ لا يدوم، والعاقبةُ للمتّقين.<br><br>وأنتَ يا صديقي، قد لا يضعُ أحدٌ على صدرِك صخرة، لكنّك قد تسمعُ مَن يسخرُ منك لأنّك تصلّي، أو لأنّك ترفضُ الكذبَ والغشّ. تذكّرْ حينها بلالاً وكلمتَه: <b>«أحدٌ أحد»</b>. كنْ ثابتاً على الحقِّ بأدبٍ وهدوء، واعلمْ أنّ <b>رضا اللهِ أغلى من رضا الناس</b>، وأنّ الصبرَ على الحقِّ يرفعُ صاحبَه في الدنيا والآخرة.",
+     "en": "The days turned. Bilal emigrated with the Muslims to Madinah and became the caller to prayer of the Messenger of Allah ﷺ, while Umayya ibn Khalaf, who had tortured him, was killed at Badr still rejecting the truth. Oppression does not last, and the good end belongs to the God-fearing.<br><br>And you, my friend: no one may put a rock on your chest, but you may hear someone mock you because you pray, or because you refuse to lie and cheat. Remember Bilal then, and his words: <b>\"One, One!\"</b> Stay firm on the truth, politely and calmly, and know that <b>Allah's pleasure is worth more than people's approval</b>, and that patience upon the truth raises a person in this life and the next."
     }
    }
   ],
@@ -191,6 +215,14 @@ HISN_STORIES.bilal = [
   },
   "pages": [
    {
+    "scene": "mosque",
+    "character": "💭",
+    "text": {
+     "ar": "بعدَ أن هاجرَ النبيُّ ﷺ وأصحابُه إلى <b>المدينة</b> وبنَوا المسجد، كان المسلمونَ يجتمعونَ للصلاةِ فيتحيّنونَ وقتَها، وليس هناك نداءٌ يجمعُهم. فتشاوروا: كيف نُعلِمُ الناسَ بدخولِ وقتِ الصلاة؟ قال بعضُهم: نتّخذُ ناقوساً، وقال آخرون: بوقاً. فلم يكنْ ذلك من هديِ المسلمين.<br><br>ثمّ رأى الصحابيُّ <b>عبدُ اللهِ بنُ زيد</b> في منامِه رجلاً يُعلِّمُه كلماتِ الأذان، فجاءَ إلى النبيِّ ﷺ فأخبرَه، فقال ﷺ: <b>«إنّها لرؤيا حقٍّ إن شاءَ الله»</b>، وأمرَه أن يُلقيَها على بلال، لأنّه <b>أندى منه صوتاً</b>. فوقفَ بلالٌ ورفعَ صوتَه الجميل: اللهُ أكبرُ، اللهُ أكبر...",
+     "en": "After the Prophet ﷺ and his Companions emigrated to <b>Madinah</b> and built the mosque, the Muslims would gather for prayer by guessing its time, with no call to bring them together. So they consulted: how should we tell people the prayer time has come? Some said: let us use a bell; others said: a horn. But that was not the way of the Muslims.<br><br>Then the Companion <b>Abdullah ibn Zayd</b> saw in a dream a man teaching him the words of the adhan. He came and told the Prophet ﷺ, who said: <b>\"It is a true dream, if Allah wills,\"</b> and told him to teach the words to Bilal, because Bilal's <b>voice was stronger and sweeter</b>. So Bilal stood and raised his beautiful voice: Allahu Akbar, Allahu Akbar..."
+    }
+   },
+   {
     "scene": "kaaba",
     "character": "📣",
     "text": {
@@ -237,6 +269,14 @@ HISN_STORIES.bilal = [
        }
       }
      ]
+    }
+   },
+   {
+    "scene": "kaaba",
+    "character": "💡",
+    "text": {
+     "ar": "كان صوتُ بلالٍ يرتفعُ في سماءِ المدينةِ في كلِّ وقتِ صلاة، فيتركُ الناسُ أعمالَهم ويُسرِعونَ إلى المسجدِ على كلماتِ التوحيد. وصارَ الأذانُ الذي حملَه بلالٌ أوّلاً يُرفَعُ اليومَ في كلِّ مدينةٍ وقريةٍ على وجهِ الأرض، في كلِّ ساعةٍ من ساعاتِ الليلِ والنهار!<br><br>والدرسُ لك: إنّ اللهَ لا ينظرُ إلى الصورِ والألوان، بل إلى القلوبِ والأعمال. فلا تحتقرْ أحداً لِلونِه أو فقرِه أو لهجتِه، فربّما كان أقربَ إلى اللهِ منك. وإذا سمعتَ الأذانَ فردِّدْ معه، وتذكّرْ ذلك الصوتَ الذي ارتفعَ فوقَ الكعبة، وقلْ في نفسِك: <b>أريدُ أن أكونَ ممّن يُجيبُ نداءَ الله</b>.",
+     "en": "Bilal's voice rose into the sky of Madinah at every prayer time, and people left their work and hurried to the mosque at the words of tawhid. The adhan that Bilal first carried is now raised in every city and village on earth, at every hour of the night and day!<br><br>The lesson for you: Allah does not look at appearances and colours, but at hearts and deeds. So never look down on anyone for their colour, their poverty, or their accent — they may be closer to Allah than you. When you hear the adhan, repeat it, remember the voice that rose atop the Kaaba, and say to yourself: <b>I want to be one of those who answer Allah's call</b>."
     }
    }
   ],
@@ -371,6 +411,14 @@ HISN_STORIES.bilal = [
   },
   "pages": [
    {
+    "scene": "mosque",
+    "character": "🌅",
+    "text": {
+     "ar": "في <b>المدينةِ المنوّرة</b>، كان النبيُّ ﷺ يُصلّي بأصحابِه الفجرَ في مسجدِه البسيط، الذي سقفُه من جريدِ النخل. وكان <b>بلالٌ</b> هو الذي يُنادي لهذه الصلاة، فيجتمعُ الناسُ في عتمةِ الصباح.<br><br>وكان النبيُّ ﷺ يُحِبُّ بلالاً ويُقرِّبُه، ويعرفُ صدقَه منذُ أيّامِ مكّةَ الصعبة. لم يكنْ بلالٌ من أصحابِ الأموالِ ولا من أصحابِ المناصب، لكنّه كان يحملُ قلباً عامراً بحبِّ اللهِ ورسولِه. وعندَ صلاةِ الفجرِ في يومٍ من الأيّام، سمعَ بلالٌ من النبيِّ ﷺ كلاماً لم يكنْ يتوقّعُه أبداً...",
+     "en": "In <b>Madinah</b>, the Prophet ﷺ led his Companions in the Fajr prayer in his simple mosque, whose roof was made of palm branches. It was <b>Bilal</b> who called people to this prayer, and they gathered in the dimness of early morning.<br><br>The Prophet ﷺ loved Bilal and kept him close, knowing his sincerity since the hard days of Makkah. Bilal was not a man of wealth or position, but he carried a heart full of love for Allah and His Messenger. And at the Fajr prayer one day, Bilal heard from the Prophet ﷺ words he never expected..."
+    }
+   },
+   {
     "scene": "garden",
     "character": "🌿",
     "text": {
@@ -417,6 +465,14 @@ HISN_STORIES.bilal = [
        }
       }
      ]
+    }
+   },
+   {
+    "scene": "spring",
+    "character": "💧",
+    "text": {
+     "ar": "فكيف تكونُ مثلَ بلالٍ اليوم؟ الأمرُ أسهلُ ممّا تظنّ! حين تتوضّأُ لصلاةِ الظهرِ أو العصر، صلِّ بعدَ الوضوءِ <b>ركعتينِ</b> خفيفتين بنيّةٍ صادقة. وإذا توضّأتَ قبلَ النوم، فصلِّ ما تيسّر.<br><br>واخترْ لنفسِك عملاً صغيراً واحداً تُحِبُّه: أن تقرأَ آيةً كلَّ يوم، أو تقولَ أذكارَ الصباح، أو تبتسمَ في وجهِ أمِّك، أو تتصدّقَ ولو بشيءٍ يسير — ثمّ <b>داوِمْ عليه</b> ولا تتركْه. فالقليلُ الدائمُ يكبرُ مع الأيّامِ حتى يصيرَ جبلاً من الحسنات، وقد يكونُ هو العملَ الذي يُبلِّغُك الجنّةَ برحمةِ الله.",
+     "en": "So how can you be like Bilal today? It is easier than you think! When you make wudu for Dhuhr or Asr, pray <b>two short rak'as</b> afterwards with a sincere intention. And when you make wudu before sleeping, pray whatever you can.<br><br>Choose for yourself one small deed you love: reading one verse a day, saying the morning remembrances, smiling at your mother, or giving a little in charity — then <b>keep it up</b> and never drop it. A small deed done constantly grows over the days into a mountain of good deeds, and it may be the very deed that brings you to Paradise by Allah's mercy."
     }
    }
   ],
@@ -551,6 +607,14 @@ HISN_STORIES.bilal = [
   },
   "pages": [
    {
+    "scene": "madinah",
+    "character": "🏠",
+    "text": {
+     "ar": "كان بيتُ النبيِّ ﷺ بيتاً بسيطاً، يمرُّ الشهرُ والشهرانِ لا يُوقَدُ فيه نارٌ للطبخ، وطعامُهم التمرُ والماء. ومع ذلك كان ﷺ أكرمَ الناس، ما سُئِلَ شيئاً قطُّ فقال: لا.<br><br>وكان <b>بلالٌ</b> قريباً من النبيِّ ﷺ، يخدمُه ويتولّى شيئاً من أمرِ نفقتِه؛ فإذا جاءَ محتاجٌ أو ضيف، قامَ بلالٌ يبحثُ له عن طعامٍ أو ثوب. ولذلك كان بلالٌ يفكّرُ دائماً في الضيوفِ الذين قد يأتونَ فجأة، ويحبُّ أن يكونَ عندَه ما يُكرِمُهم به.",
+     "en": "The Prophet's ﷺ home was simple: a month, even two, could pass without a cooking fire being lit in it, and their food was dates and water. Yet he ﷺ was the most generous of people; he was never asked for something and answered: No.<br><br><b>Bilal</b> was close to the Prophet ﷺ, serving him and looking after some of his household spending. When a needy person or a guest came, Bilal would go looking for food or clothing for him. That is why Bilal was always thinking about guests who might arrive suddenly, and liked to have something ready to honour them."
+    }
+   },
+   {
     "scene": "palm",
     "character": "🫘",
     "text": {
@@ -597,6 +661,14 @@ HISN_STORIES.bilal = [
        }
       }
      ]
+    }
+   },
+   {
+    "scene": "palm",
+    "character": "💡",
+    "text": {
+     "ar": "تأمّلْ هذا الدرسَ الجميل: لم يكنْ بلالٌ بخيلاً، بل كان يجمعُ التمرَ ليُكرِمَ به الضيوف. لكنّ النبيَّ ﷺ علّمه أن يكونَ قلبُه أكثرَ ثقةً بالله، فالرزّاقُ هو الله، وخزائنُه ملأى لا تنقص.<br><br>وأنتَ حين يكونُ معك طعامٌ أو حلوى أو ألعاب، وترى أخاك أو صديقَك يحتاجُ إليها، لا تقلْ: إن أعطيتُه نقصَ ما عندي! بل أعطِ بقلبٍ واثق، وتذكّرْ كلمةَ النبيِّ ﷺ لبلال: <b>«أنفِقْ بلالُ»</b>. وقد قال ﷺ: <b>«ما نقصتْ صدقةٌ من مال»</b>. فالعطاءُ يزيدُ القلبَ فرحاً والمالَ بركة.",
+     "en": "Think about this beautiful lesson: Bilal was not stingy — he was saving the dates to honour guests. But the Prophet ﷺ taught him to let his heart trust Allah even more, for Allah is the Provider and His treasures are full and never run low.<br><br>And you: when you have food, sweets, or toys, and you see your brother or friend in need of them, don't say: If I give, I'll have less! Give with a trusting heart, and remember the Prophet's ﷺ words to Bilal: <b>\"Spend, Bilal.\"</b> He ﷺ also said: <b>\"Charity never decreases wealth.\"</b> Giving fills the heart with joy and the wealth with blessing."
     }
    }
   ],

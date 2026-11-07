@@ -11,6 +11,14 @@ HISN_STORIES.ibnumar = [
   },
   "pages": [
    {
+    "scene": "madinah",
+    "character": "👦",
+    "text": {
+     "ar": "هو <b>عبدُ اللهِ بنُ عمرَ بنِ الخطّاب</b>، ابنُ الخليفةِ الثاني رضيَ اللهُ عنهما. أسلمَ صغيراً في <b>مكّة</b>، وهاجرَ إلى <b>المدينة</b> وهو غلامٌ لم يبلغْ بعد.<br><br>وكان قلبُه متعلّقاً بالخيرِ منذ صِغَرِه: فيومَ <b>أُحُد</b> عرضَ نفسَه على النبيِّ ﷺ ليخرجَ مع الجيشِ وهو ابنُ <b>أربعَ عشرةَ سنة</b>، فلم يُجِزْه لصغرِه. ثمّ عرضَ نفسَه يومَ <b>الخندق</b> وهو ابنُ <b>خمسَ عشرةَ</b> فأجازَه — كما رواه البخاريُّ ومسلم. فتىً صغيرٌ يتسابقُ إلى الطاعةِ كما يتسابقُ الكبار!",
+     "en": "He was <b>Abdullah ibn Umar ibn al-Khattab</b>, son of the second caliph, may Allah be pleased with them both. He accepted Islam as a child in <b>Makkah</b> and emigrated to <b>Madinah</b> while still a boy who had not yet come of age.<br><br>His heart was attached to goodness from his early years: on the day of <b>Uhud</b> he presented himself to the Prophet ﷺ to go out with the army when he was <b>fourteen</b>, but the Prophet did not allow him because he was too young. Then he presented himself on the day of <b>the Trench</b> at <b>fifteen</b>, and the Prophet allowed him — as narrated by al-Bukhari and Muslim. A young boy racing to obey Allah just as the grown men did!"
+    }
+   },
+   {
     "scene": "night",
     "character": "🌙",
     "text": {
@@ -57,6 +65,22 @@ HISN_STORIES.ibnumar = [
        }
       }
      ]
+    }
+   },
+   {
+    "scene": "night",
+    "character": "🤲",
+    "text": {
+     "ar": "ولم يكنْ ذلك حماساً ليومٍ أو يومين، بل صار عادةً طولَ حياتِه. يحكي مولاه <b>نافع</b> أنّ ابنَ عمرَ كان يُصلّي في الليل، ثمّ يقول: <b>«يا نافع، أَسْحَرْنا؟»</b> — أي هل جاءَ وقتُ السَّحَر؟ فإن قال: لا، عادَ إلى صلاتِه. فإذا قال: نعم، جلسَ <b>يستغفرُ اللهَ ويدعوه حتى يطلعَ الفجر</b>.<br><br>وصار ابنُ عمرَ من كبارِ علماءِ الصحابة، يروي الحديثَ بدقّةٍ وأمانة، ويُفتي الناسَ في المدينةِ ستّينَ سنةً بعدَ رسولِ اللهِ ﷺ.",
+     "en": "This was not a burst of excitement for a day or two; it became his habit for the rest of his life. His freed servant <b>Nafi‘</b> relates that Ibn Umar would pray at night and then ask: <b>“O Nafi‘, have we reached the time before dawn?”</b> If he said no, Ibn Umar went back to his prayer. If he said yes, he sat <b>asking Allah’s forgiveness and supplicating until dawn broke</b>.<br><br>Ibn Umar became one of the great scholars among the Companions, narrating hadith with precision and honesty and giving people religious rulings in Madinah for some sixty years after the Messenger of Allah ﷺ."
+    }
+   },
+   {
+    "scene": "mihrab",
+    "character": "🌟",
+    "text": {
+     "ar": "انظرْ كيف تلقّى ابنُ عمرَ <b>النصيحة</b>: لم يحزنْ ولم يغضب، بل فرحَ بها وعملَ بها فوراً. فإذا نصحَك أبوك أو أمُّك أو معلّمُك بكلمةِ خير، فاشكرْهم وابدأْ بها اليوم.<br><br>وقيامُ الليلِ ليس صعباً كما تظنّ: يمكنُك أن تُصلّيَ <b>ركعتينِ والوِترَ</b> قبلَ أن تنام، وتدعوَ اللهَ بما تحبّ. ابدأْ بالقليل وداوِمْ عليه، فقد قال رسولُ اللهِ ﷺ: <b>«أحبُّ الأعمالِ إلى اللهِ أدومُها وإن قلّ»</b> — متّفقٌ عليه. لعلّك يوماً تكونُ أنتَ أيضاً <b>«نِعمَ الرجل»</b>!",
+     "en": "Look at how Ibn Umar received <b>advice</b>: he was not upset or angry; he was glad of it and acted on it at once. So when your father, mother or teacher advises you with a good word, thank them and begin acting on it today.<br><br>Night prayer is not as hard as you think: you can pray <b>two rak‘ahs and the Witr</b> before you sleep, and ask Allah for whatever you love. Start small and keep it up, for the Messenger of Allah ﷺ said: <b>“The most beloved deeds to Allah are the most constant, even if they are few”</b> — agreed upon. Perhaps one day you too will be <b>“an excellent man”</b>!"
     }
    }
   ],
@@ -191,6 +215,14 @@ HISN_STORIES.ibnumar = [
   },
   "pages": [
    {
+    "scene": "palm",
+    "character": "👦",
+    "text": {
+     "ar": "عاشَ <b>عبدُ اللهِ بنُ عمر</b> قريباً من رسولِ اللهِ ﷺ منذ كان فتىً في المدينة، يراه يُصلّي ويتكلّمُ ويمشي ويُعامِلُ الناس، فامتلأَ قلبُه بحبِّه.<br><br>ومن أجملِ ما حفظَه منه أنّ النبيَّ ﷺ <b>أخذَ بمنكبِه</b> يوماً وقال له: <b>«كُنْ في الدنيا كأنّك غريبٌ أو عابرُ سبيل»</b> — رواه البخاري. فكانت هذه الكلمةُ مصباحاً في حياتِه، وكان ابنُ عمرَ يقول: <b>«إذا أمسيتَ فلا تنتظرِ الصباح، وإذا أصبحتَ فلا تنتظرِ المساء، وخُذْ من صحّتِك لمرضِك، ومن حياتِك لموتِك»</b>.",
+     "en": "<b>Abdullah ibn Umar</b> lived close to the Messenger of Allah ﷺ from the time he was a youth in Madinah. He watched him pray, speak, walk and deal with people, and his heart filled with love for him.<br><br>Among the most beautiful things he kept from him is that the Prophet ﷺ <b>took him by the shoulder</b> one day and said: <b>“Be in this world as though you were a stranger or a traveller passing by”</b> — narrated by al-Bukhari. These words became a lamp in his life, and Ibn Umar used to say: <b>“When evening comes, do not wait for the morning; when morning comes, do not wait for the evening. Take from your health for your sickness, and from your life for your death.”</b>"
+    }
+   },
+   {
     "scene": "tree",
     "character": "🌳",
     "text": {
@@ -237,6 +269,22 @@ HISN_STORIES.ibnumar = [
        }
       }
      ]
+    }
+   },
+   {
+    "scene": "mosque",
+    "character": "📖",
+    "text": {
+     "ar": "ولم يكنْ حبُّه للنبيِّ ﷺ في الأماكنِ فقط، بل في <b>كلامِه</b> أيضاً. فقد كان من أكثرِ الصحابةِ روايةً للحديث، لكنّه كان شديدَ الحذر: يروي الحديثَ كما سمعَه بلا زيادةٍ ولا نقصان، خوفاً أن يقولَ على رسولِ اللهِ ﷺ ما لم يقل.<br><br>وروى عنه مولاه <b>نافعٌ</b> علماً كثيراً، حتى صار حديثُ «مالكٍ عن نافعٍ عن ابنِ عمر» من أصحِّ الأسانيدِ عندَ العلماء. هكذا حفظَ اللهُ بابنِ عمرَ كثيراً من سُنّةِ نبيِّه ﷺ.",
+     "en": "His love for the Prophet ﷺ was not only for places but also for his <b>words</b>. He was among the Companions who narrated the most hadith, yet he was extremely careful: he narrated a hadith exactly as he had heard it, adding nothing and leaving nothing out, for fear of saying about the Messenger of Allah ﷺ what he had not said.<br><br>His freed servant <b>Nafi‘</b> narrated a great deal of knowledge from him, so that the chain “Malik from Nafi‘ from Ibn Umar” came to be counted by scholars among the most authentic chains of narration. In this way Allah preserved through Ibn Umar much of His Prophet’s ﷺ Sunnah."
+    }
+   },
+   {
+    "scene": "tree",
+    "character": "👣",
+    "text": {
+     "ar": "وأنتَ أيضاً تستطيعُ أن تسيرَ على <b>خُطى الحبيبِ ﷺ</b> في يومِك: حين تقولُ «بسمِ الله» وتأكلُ بيمينِك، وحين تبدأُ بلبسِ نعلِك اليمنى، وحين تُسلِّمُ على من عرفتَ ومن لم تعرف، وحين تبتسمُ في وجهِ أخيك.<br><br>كلُّ سُنّةٍ صغيرةٍ تفعلُها حبّاً له ﷺ هي خطوةٌ على طريقِه. واللهُ تعالى يقول: <b>﴿ قُلْ إِن كُنتُمْ تُحِبُّونَ اللَّهَ فَاتَّبِعُونِي يُحْبِبْكُمُ اللَّهُ ﴾</b>. فمن اتّبعَ نبيَّه أحبَّه الله.",
+     "en": "You too can walk in <b>the Beloved’s ﷺ footsteps</b> during your day: when you say “Bismillah” and eat with your right hand, when you put on your right shoe first, when you greet with salam those you know and those you do not, and when you smile in your brother’s face.<br><br>Every small Sunnah you do out of love for him ﷺ is a step on his path. Allah the Exalted says: <b>﴿ “Say: If you love Allah, then follow me — Allah will love you” ﴾</b>. Whoever follows his Prophet, Allah loves him."
     }
    }
   ],
@@ -371,6 +419,14 @@ HISN_STORIES.ibnumar = [
   },
   "pages": [
    {
+    "scene": "palm",
+    "character": "🌴",
+    "text": {
+     "ar": "في <b>المدينةِ المنوّرة</b> كان الصحابةُ إذا نزلتْ آيةٌ من القرآنِ سألوا أنفسَهم: كيف نعملُ بها الآن؟ ولمّا نزلتْ آيةُ البِرِّ والإنفاقِ ممّا نُحِبّ، قامَ <b>أبو طلحةَ</b> رضيَ اللهُ عنه إلى أحبِّ أموالِه، بستانِ <b>بَيْرُحاء</b>، فجعلَه صدقةً لله، كما في صحيحِ البخاري.<br><br>وفي هذا الجوِّ المليءِ بالمسارعةِ إلى الخير عاشَ <b>عبدُ اللهِ بنُ عمر</b>، فلم يكنْ يقرأُ الآيةَ ليحفظَها فقط، بل ليعملَ بها في بيتِه ومالِه.",
+     "en": "In <b>Madinah</b>, whenever a verse of the Quran was revealed, the Companions would ask themselves: how do we act on it right now? When the verse about righteousness and spending from what we love was revealed, <b>Abu Talha</b>, may Allah be pleased with him, went to his most beloved property, the orchard of <b>Bayruha’</b>, and made it a charity for Allah, as recorded in Sahih al-Bukhari.<br><br>In this atmosphere of racing towards good lived <b>Abdullah ibn Umar</b>. He did not read a verse only to memorize it, but to act on it in his home and his wealth."
+    }
+   },
+   {
     "scene": "garden",
     "character": "🎁",
     "text": {
@@ -417,6 +473,22 @@ HISN_STORIES.ibnumar = [
        }
       }
      ]
+    }
+   },
+   {
+    "scene": "camel",
+    "character": "🐪",
+    "text": {
+     "ar": "ويذكرُ أهلُ السِّيَرِ أنّ ابنَ عمرَ كان راكباً <b>ناقةً</b> أعجبتْه كثيراً، فلمّا شعرَ بإعجابِه بها نزلَ عنها وقال لنافع: أنزِلْ عنها رحلَها، واجعلْها في <b>الهَدْيِ</b> الذي يُذبَحُ للهِ في الحجّ. لم يتركْ قلبَه يتعلّقُ بشيءٍ أكثرَ من تعلّقِه بالله!<br><br>وكان كثيرَ <b>العِتق</b>، يُحرِّرُ العبيدَ ويُعطيهم حرّيّتَهم ابتغاءَ وجهِ الله، حتى صار ذلك من أشهرِ أخلاقِه. وماتَ في <b>مكّةَ</b> سنةَ <b>ثلاثٍ وسبعينَ للهجرة</b>، وهو من آخرِ الصحابةِ وفاةً فيها.",
+     "en": "Biographers mention that Ibn Umar was once riding a <b>she-camel</b> that he admired very much. When he felt how much he liked her, he got down and said to Nafi‘: Take her saddle off and put her among the <b>sacrificial animals</b> offered to Allah during Hajj. He would not let his heart become attached to anything more than to Allah!<br><br>He freed slaves very often, giving them their freedom seeking Allah’s pleasure, until this became one of his best-known traits. He died in <b>Makkah</b> in the year <b>73 AH</b>, among the last of the Companions to pass away there."
+    }
+   },
+   {
+    "scene": "garden",
+    "character": "🎁",
+    "text": {
+     "ar": "ما هو أحبُّ شيءٍ عندك؟ لعبةٌ جديدة؟ قطعةُ حلوى؟ وقتُك أمامَ الشاشة؟ ليس المطلوبُ أن تتخلّى عن كلِّ شيء، لكن جرّبْ مرّةً أن <b>تُعطيَ شيئاً تُحبُّه</b>: أن تُشارِكَ صديقَك لعبتَك المفضّلة، أو تتصدّقَ من مصروفِك، أو تُهديَ أخاك أجملَ أقلامِك.<br><br>ستشعرُ بفرحةٍ عجيبةٍ في قلبِك، لأنّ ما تُعطيه للهِ لا يضيع، بل تجدُه عندَه مضاعفاً. وكُنْ مثلَ ابنِ عمرَ في <b>حُسنِ الظنِّ بالناس</b>، فالكريمُ لا يُفتِّشُ عن نيّاتِ من يُحسِنُ إليهم.",
+     "en": "What is the most beloved thing you have? A new toy? A sweet? Your screen time? You are not asked to give up everything, but try just once to <b>give something you love</b>: share your favourite toy with a friend, give charity from your pocket money, or gift your brother your nicest pen.<br><br>You will feel a wonderful joy in your heart, because what you give for Allah is never lost — you will find it with Him multiplied. And be like Ibn Umar in <b>thinking well of people</b>: the generous person does not go digging into the intentions of those he is kind to."
     }
    }
   ],

@@ -4,6 +4,14 @@ HISN_STORIES.hudhayfa = [
   { icon:'🌬️', scene:'night', character:'🔎',
     title:{ ar:'رحلةُ الليلِ إلى معسكرِ الأحزاب', en:'The Night Journey to the Confederates\u2019 Camp' },
     pages:[
+      {
+       "scene": "madinah",
+       "character": "⛏️",
+       "text": {
+        "ar": "في السنةِ الخامسةِ للهجرة، اجتمعت قبائلُ كثيرةٌ من العربِ مع قريش، وجاؤوا بجيشٍ ضخمٍ يريدونَ القضاءَ على المسلمينَ في المدينة. فحفرَ المسلمونَ <b>خندقاً</b> عميقاً حولَ الجهةِ المكشوفةِ من المدينة، يعملونَ بأيديهم في البردِ والجوع، والنبيُّ ﷺ يحفرُ معهم ويحملُ الترابَ بنفسِه.<br><br>ووصلَ الأحزابُ فوجدوا الخندقَ أمامَهم، فنزلوا حولَه وحاصروا المدينةَ أيّاماً طويلة. قال اللهُ يصفُ تلك الأيّام: <b>﴿ وَإِذْ زَاغَتِ الْأَبْصَارُ وَبَلَغَتِ الْقُلُوبُ الْحَنَاجِرَ ﴾</b>.",
+        "en": "In the fifth year after the Hijra, many Arab tribes gathered with Quraysh and came with a huge army intending to finish off the Muslims in Madinah. The Muslims dug a deep <b>trench</b> along the exposed side of the city, working with their hands in cold and hunger, while the Prophet ﷺ dug alongside them and carried earth himself.<br><br>The Confederates arrived and found the trench in front of them, so they camped around it and besieged Madinah for many days. Allah describes those days: <b>﴿ And when eyes shifted in fear, and hearts reached the throats ﴾</b>."
+       }
+      },
       { scene:'wind', character:'🌬️',
         text:{ ar:'في غزوةِ <b>الأحزاب</b> حاصرتْ جيوشُ قريشٍ وحلفائِها المدينةَ، واشتدّ على المسلمينَ الجوعُ والبردُ والخوف. وفي ليلةٍ <b>شديدةِ البردِ عاصفةِ الريح</b>، أرادَ النبيُّ ﷺ أن يعرفَ ماذا يفعلُ العدو. فقال: «مَن يأتيني بخبرِ القومِ؟» — فسكتَ الجميعُ من شدّةِ البردِ والتعب!<br><br>فاختارَ النبيُّ ﷺ <b>حذيفةَ بنَ اليمان</b> وقال له: «قُمْ يا حذيفةُ فأتِني بخبرِ القوم». فقامَ حذيفةُ — ولم يستطعْ أن يعصيَ أمرَ النبيِّ ﷺ — ودخلَ في ظلامِ الليلِ نحوَ معسكرِ الأعداء، خائفاً لكنّه مطيع.',
           en:'At the Battle of the <b>Confederates</b>, the armies of Quraysh and their allies besieged Madinah, and hunger, cold, and fear pressed hard on the Muslims. On a <b>bitterly cold, windy night</b>, the Prophet ﷺ wished to know what the enemy was doing. He said: "Who will bring me news of the people?" — but everyone fell silent from the cold and exhaustion!<br><br>So the Prophet ﷺ chose <b>Hudhayfa ibn al-Yaman</b> and said: "Rise, Hudhayfa, and bring me news of the people." Hudhayfa rose — unable to disobey the Prophet\u2019s ﷺ command — and went into the darkness of night toward the enemy camp, afraid but obedient.' },
@@ -16,12 +24,15 @@ HISN_STORIES.hudhayfa = [
       { scene:'night', character:'🔎',
         text:{ ar:'تسلّلَ حذيفةُ بين صفوفِ الأعداءِ في الظلام، حتى دخلَ معسكرَهم وجلسَ بينهم كأنّه منهم! وكانتِ الريحُ الباردةُ قد قلبتْ قدورَهم وأطفأتْ نيرانَهم وأزعجتْهم. فسمِعَ زعيمَهم <b>أبا سفيان</b> يقول: «يا معشرَ قريش، إنّ الريحَ قد آذتنا، فارتحِلوا فإنّي مرتحل!» — فقرّروا الرحيلَ والانسحاب.<br><br>قال النبيُّ ﷺ لحذيفةَ قبلَها: «لا تُحدِثْ شيئاً حتى ترجعَ إليّ». فلم يقتلْ أحداً ولم يكشفْ نفسَه، بل <b>رجعَ بالخبرِ كاملاً</b>: لقد رحلَ الأعداء! فكان نصرُ اللهِ بريحٍ أرسلها على الأحزاب. علّمنا حذيفةُ الطاعةَ الدقيقةَ والأمانةَ في أداءِ المهمّة.',
           en:'Hudhayfa slipped between the enemy ranks in the dark until he entered their camp and sat among them as if one of them! The cold wind had overturned their pots, put out their fires, and distressed them. He heard their leader <b>Abu Sufyan</b> say: "O Quraysh, the wind has harmed us — depart, for I am departing!" — and they decided to withdraw.<br><br>The Prophet ﷺ had told Hudhayfa beforehand: "Do nothing until you return to me." So he killed no one and did not reveal himself, but <b>returned with the full news</b>: the enemy had left! Allah\u2019s victory came by a wind He sent against the Confederates. Hudhayfa taught us precise obedience and faithfulness in carrying out a mission.' },
-        choice:{ q:{ar:'لماذا لم يقتلْ حذيفةُ أحداً وهو بينهم؟',en:'Why did Hudhayfa kill no one while among them?'},
-          opts:[
-            { t:{ar:'لأنّ النبيَّ ﷺ أمره ألّا يُحدِثَ شيئاً حتى يرجع',en:'Because the Prophet ﷺ ordered him to do nothing until he returned'},c:true,exp:{ar:'نعم! الطاعةُ الدقيقةُ للأمرِ من تمامِ الأمانة.',en:'Yes! Precise obedience to the order is part of complete fidelity.'} },
-            { t:{ar:'لأنّه خاف',en:'Because he was afraid'},c:false,exp:{ar:'لا، بل التزاماً بأمرِ النبيِّ ﷺ.',en:'No — out of commitment to the Prophet\u2019s ﷺ command.'} },
-            { t:{ar:'لأنّه نسي',en:'Because he forgot'},c:false,exp:{ar:'لا، بل طاعةً تامّةً للتعليمات.',en:'No — full obedience to the instructions.'} },
-          ] } },
+      },
+      {
+       "scene": "fire",
+       "character": "🏹",
+       "text": {
+        "ar": "ويروي حذيفةُ نفسُه في <b>صحيحِ مسلم</b> أنّه رأى أبا سفيانَ يُدفئُ ظهرَه بالنار، فوضعَ سهماً في قوسِه يريدُ أن يرميَه، ثم تذكّرَ قولَ النبيِّ ﷺ له: <b>«ولا تَذعَرْهم عليّ»</b>، فأنزلَ القوس. قال: ولو رميتُه لأصبتُه!<br><br>وفي طريقِ الرجوع، كان يمشي كأنّه في مكانٍ دافئٍ من بركةِ دعاءِ النبيِّ ﷺ، فلمّا أخبرَه بالخبرِ عادَ إليه البرد، فغطّاه النبيُّ ﷺ بعباءةٍ كان يُصلّي فيها، فنامَ حتى الصباح، فأيقظه ﷺ مُداعباً: <b>«قُمْ يا نَومان»</b>.<br><br>فالبطلُ الحقيقيُّ ينفّذُ التعليماتِ كما هي، حتى حين يستطيعُ أن يفعلَ غيرَها.",
+        "en": "Hudhayfa himself narrates in <b>Sahih Muslim</b> that he saw Abu Sufyan warming his back by the fire. He placed an arrow in his bow intending to shoot him, then remembered the Prophet's ﷺ words to him: <b>\"And do not alarm them against me\"</b> — so he lowered the bow. He said: Had I shot him, I would have hit him!<br><br>On the way back he walked as if in a warm place, by the blessing of the Prophet's ﷺ prayer. When he delivered the news, the cold returned to him, so the Prophet ﷺ covered him with a cloak he used to pray in, and he slept till morning. Then he ﷺ woke him playfully: <b>\"Get up, sleepyhead!\"</b><br><br>The true hero carries out instructions exactly as given, even when he could do otherwise."
+       }
+      },
     ],
     quiz:[
       { q:{ar:'في أيِّ غزوةٍ أُرسِلَ حذيفةُ ليلاً؟',en:'In which battle was Hudhayfa sent out by night?'},
@@ -39,6 +50,14 @@ HISN_STORIES.hudhayfa = [
   { icon:'🤲', scene:'peaks', character:'❤️',
     title:{ ar:'عفوُ حذيفةَ عن قَتَلةِ أبيه', en:'Hudhayfa\u2019s Pardon of His Father\u2019s Killers' },
     pages:[
+      {
+       "scene": "desert",
+       "character": "🤝",
+       "text": {
+        "ar": "كان <b>اليمانُ</b> والدُ حذيفةَ رجلاً من قبيلةِ عبس، سكنَ المدينةَ وحالفَ الأنصار، فأسلمَ هو وابنُه حذيفة. وكان الأبُ وابنُه يحبّانِ رسولَ اللهِ ﷺ حبّاً عظيماً.<br><br>وقبلَ غزوةِ بدر، خرجا ليلحقا بالنبيِّ ﷺ، فأمسكهما كفّارُ قريشٍ ولم يتركوهما حتى <b>وعداهم ألّا يقاتلا معه</b>. فلمّا أخبرا النبيَّ ﷺ قال: <b>«نَفِي لهم بعهدِهم، ونستعينُ اللهَ عليهم»</b>. فلم يشهدا بدراً، وفاءً بوعدٍ أُعطيَ حتى للأعداء!<br><br>وجاءت غزوةُ أُحُد، فخرجَ الأبُ والابنُ معاً.",
+        "en": "<b>Al-Yaman</b>, Hudhayfa's father, was a man of the tribe of Abs who settled in Madinah and became an ally of the Ansar. He and his son Hudhayfa embraced Islam, and father and son loved the Messenger of Allah ﷺ dearly.<br><br>Before the Battle of Badr, the two set out to join the Prophet ﷺ, but the disbelievers of Quraysh caught them and would not release them until they <b>promised not to fight alongside him</b>. When they told the Prophet ﷺ, he said: <b>\"We will keep their covenant for them, and seek Allah's help against them.\"</b> So they did not take part in Badr, keeping a promise given even to enemies!<br><br>Then came the Battle of Uhud, and father and son went out together."
+       }
+      },
       { scene:'peaks', character:'❤️',
         text:{ ar:'يومَ <b>أُحُد</b> خرجَ أبو حذيفةَ — وهو الشيخُ <b>اليمان</b> — ليُقاتِلَ مع المسلمين. وفي حُمَّى المعركةِ واختلاطِ الصفوف، ظنَّه بعضُ المسلمينَ من العدوِّ فضربوه <b>بأسيافِهم خطأً</b> حتى قُتِل! وكان حذيفةُ يصيحُ: «إنّه أبي! أبي!» لكنّ ضجيجَ المعركةِ غطّى صوتَه.<br><br>فلمّا انتهتِ المعركةُ وعرفَ المسلمونَ خطأَهم حزِنوا حزناً شديداً. فماذا فعلَ حذيفة؟ لم يغضبْ ولم يطلبِ الثأر، بل قال: <b>«يغفرُ اللهُ لكم، وهو أرحمُ الراحمين»</b> وعفا عنهم، بل <b>تصدّقَ بديةِ أبيه</b> على المسلمين! فازدادَ حذيفةُ رفعةً عند النبيِّ ﷺ بهذا العفوِ العظيم.',
           en:'On the day of <b>Uhud</b>, Hudhayfa\u2019s father — the elder <b>al-Yaman</b> — went out to fight with the Muslims. In the heat of battle and the mingling of ranks, some Muslims mistook him for an enemy and struck him <b>with their swords by error</b> until he was killed! Hudhayfa was crying out: "He is my father! My father!" but the din of battle drowned his voice.<br><br>When the battle ended and the Muslims realized their mistake, they grieved deeply. What did Hudhayfa do? He did not become angry nor seek revenge, but said: <b>"May Allah forgive you, and He is the Most Merciful of the merciful,"</b> and pardoned them — and even <b>gave his father\u2019s blood-money in charity</b> to the Muslims! By this great pardon Hudhayfa rose higher in the Prophet\u2019s ﷺ esteem.' },
@@ -48,6 +67,14 @@ HISN_STORIES.hudhayfa = [
             { t:{ar:'طلبَ الثأرَ منهم',en:'He sought revenge against them'},c:false,exp:{ar:'لا، بل عفا ودعا لهم بالمغفرة.',en:'No — he forgave and prayed for their forgiveness.'} },
             { t:{ar:'تركَ الإسلام',en:'He left Islam'},c:false,exp:{ar:'لا، بل ازدادَ إيماناً وعفواً.',en:'No — he grew in faith and forgiveness.'} },
           ] } },
+      {
+       "scene": "sprout",
+       "character": "💚",
+       "text": {
+        "ar": "ويروي <b>البخاريُّ</b> هذه القصّة، ويقولُ عروةُ بنُ الزبيرِ بعدَها: فواللهِ ما زالت في حذيفةَ <b>بقيّةُ خيرٍ</b> حتى لقيَ الله. أي إنّ أثرَ ذلك العفوِ بقيَ في قلبِه طوالَ حياتِه، فصار قلبُه أنقى وأرحم.<br><br>قال اللهُ تعالى: <b>﴿ وَلْيَعْفُوا وَلْيَصْفَحُوا ۗ أَلَا تُحِبُّونَ أَنْ يَغْفِرَ اللَّهُ لَكُمْ ﴾</b>. فمَن عفا عن الناسِ عفا اللهُ عنه.<br><br>فإذا كسرَ أخوك لعبتَك دونَ قصد، أو أخطأَ صديقُك في حقِّك وهو لا يريد، فتذكّرْ حذيفة: قلْ له «سامحتُك»، فالعفوُ عند الخطأِ <b>قوّةٌ لا ضعف</b>.",
+        "en": "<b>Al-Bukhari</b> narrates this story, and Urwa ibn az-Zubayr says after it: By Allah, there remained in Hudhayfa <b>a lasting goodness</b> until he met Allah. That is, the effect of that pardon stayed in his heart all his life, making it purer and more merciful.<br><br>Allah the Exalted said: <b>﴿ And let them pardon and overlook. Would you not like that Allah should forgive you? ﴾</b> Whoever pardons people, Allah pardons him.<br><br>So if your brother breaks your toy by accident, or your friend wrongs you without meaning to, remember Hudhayfa: tell him \"I forgive you\" — pardon in the face of a mistake is <b>strength, not weakness</b>."
+       }
+      },
     ],
     quiz:[
       { q:{ar:'كيف قُتِلَ أبو حذيفةَ يومَ أُحُد؟',en:'How was Hudhayfa\u2019s father killed at Uhud?'},
@@ -71,6 +98,14 @@ HISN_STORIES.hudhayfa = [
       "en": "Keeper of the Messenger's ﷺ Secret"
     },
     "pages": [
+      {
+       "scene": "madinah",
+       "character": "🤫",
+       "text": {
+        "ar": "كان في المدينةِ أناسٌ يُسمَّونَ <b>المنافقين</b>: يقولونَ بألسنتِهم «نحن مسلمون»، ويُخفونَ في قلوبِهم الكفرَ والكيدَ للمسلمين. ولم يكن النبيُّ ﷺ يفضحُهم أمامَ الناس، بل كان يعاملُهم بظاهرِهم ويتركُ سرائرَهم إلى الله.<br><br>لكنّ النبيَّ ﷺ أطلعَ رجلاً واحداً على أسماءِ بعضِهم، رجلاً عرفَ فيه <b>الأمانةَ وكتمانَ السرّ</b>. فمَن هو هذا الرجل؟",
+        "en": "In Madinah there were people called <b>the hypocrites</b>: they said with their tongues \"We are Muslims\" while hiding disbelief and schemes against the Muslims in their hearts. The Prophet ﷺ did not expose them in front of people; he dealt with them by what they showed and left their secrets to Allah.<br><br>But the Prophet ﷺ let one man know the names of some of them — a man in whom he saw <b>trustworthiness and the ability to keep a secret</b>. Who was this man?"
+       }
+      },
       {
         "scene": "night",
         "character": "🧔",
@@ -119,6 +154,14 @@ HISN_STORIES.hudhayfa = [
             }
           ]
         }
+      },
+      {
+       "scene": "pen",
+       "character": "🔐",
+       "text": {
+        "ar": "وكان حذيفةُ يحفظُ أيضاً كثيراً ممّا أخبرَ به النبيُّ ﷺ عن <b>الفتنِ</b> التي ستأتي بعدَه. ففي الصحيحَين أنّ حذيفةَ قال: خطبنا النبيُّ ﷺ خطبةً ذكرَ فيها ما يكونُ إلى قيامِ الساعة، حفظَه مَن حفظَه ونسيَه مَن نسيَه. فكان الصحابةُ يرجعونَ إليه في ذلك.<br><br>وقال النبيُّ ﷺ: <b>«إذا حدّثَ الرجلُ بالحديثِ ثم التفتَ فهي أمانة»</b> — أي إذا أخبرك أحدٌ بشيءٍ وتلفّتَ حولَه خوفاً أن يسمعَه غيرُك، فكلامُه أمانةٌ عندك.<br><br>فإذا ائتمنك صديقُك على سرٍّ يا بطل، فاحفظْه كما حفظَ حذيفةُ سرَّ رسولِ اللهِ ﷺ، إلّا إذا كان فيه خطرٌ فأخبرْ والديك.",
+        "en": "Hudhayfa also preserved much of what the Prophet ﷺ foretold about the <b>trials</b> that would come after him. In the two Sahihs, Hudhayfa said: The Prophet ﷺ gave us a speech in which he mentioned what would happen until the Hour; whoever remembered it remembered it, and whoever forgot it forgot it. So the companions would turn to him about such matters.<br><br>The Prophet ﷺ said: <b>\"When a man tells something and then looks around, it is a trust\"</b> — that is, if someone tells you something and glances around fearing others will hear, his words are a trust with you.<br><br>So if your friend trusts you with a secret, young hero, keep it as Hudhayfa kept the secret of the Messenger of Allah ﷺ — unless it involves danger; then tell your parents."
+       }
       }
     ],
     "quiz": [
@@ -252,6 +295,14 @@ HISN_STORIES.hudhayfa = [
     },
     "pages": [
       {
+       "scene": "dwellings",
+       "character": "🏛️",
+       "text": {
+        "ar": "كانت <b>المدائنُ</b> على نهرِ دجلة عاصمةَ <b>كسرى</b> ملكِ الفرس، وفيها قصرُه العظيمُ ذو الإيوانِ العالي، الذي كان الناسُ يقفونَ أمامَه مندهشينَ من ضخامتِه. وكان ملوكُ الفرسِ يخرجونَ في مواكبَ من الذهبِ والحرير، والناسُ ينحنونَ لهم.<br><br>ثم فتحَ المسلمونَ المدائنَ في عهدِ عمرَ بنِ الخطّاب، بقيادةِ <b>سعدِ بنِ أبي وقّاص</b>، وكان حذيفةُ من المجاهدينَ في فتوحِ العراقِ وفارس. فلمّا احتاجت المدينةُ إلى أميرٍ عادل، اختارَه عمر.",
+        "en": "<b>Al-Mada'in</b>, on the Tigris, was the capital of <b>Kisra</b>, king of Persia. In it stood his great palace with its towering hall, before which people stood amazed at its size. The Persian kings rode out in processions of gold and silk, and people bowed down to them.<br><br>Then the Muslims conquered al-Mada'in in the time of Umar ibn al-Khattab, under the command of <b>Sa'd ibn Abi Waqqas</b>, and Hudhayfa was among the fighters in the conquests of Iraq and Persia. When the city needed a just governor, Umar chose him."
+       }
+      },
+      {
         "scene": "dwellings",
         "character": "🧔",
         "text": {
@@ -299,6 +350,14 @@ HISN_STORIES.hudhayfa = [
             }
           ]
         }
+      },
+      {
+       "scene": "mosque",
+       "character": "🌟",
+       "text": {
+        "ar": "وعاشَ حذيفةُ في المدائنِ يحكمُ بالعدل، حتى توفّي فيها سنةَ ٣٦هـ، ولم يجمعْ من الدنيا ما يجمعُه الأمراء. لقد رأى أهلُ المدائنِ الفرقَ بين ملكٍ يتكبّرُ على الناس، وأميرٍ مسلمٍ يأكلُ رغيفَه على حمارِه ويخدمُهم.<br><br>قال النبيُّ ﷺ: <b>«وما تواضعَ أحدٌ لله إلّا رفعَه الله»</b>. فحذيفةُ تواضعَ فرفعَ اللهُ ذكرَه، وبقيت قصّتُه تُروى بعدَ أن نُسيت أسماءُ كثيرٍ من الملوك.<br><br>وأنت يا بطل: إذا صرتَ قائداً لفريقِك أو رئيساً لصفِّك، فلا تتكبّرْ على زملائِك، بل كنْ أوّلَهم في الخدمةِ والعمل.",
+        "en": "Hudhayfa lived in al-Mada'in ruling with justice until he died there in 36 AH, without gathering the worldly wealth that rulers gather. The people of al-Mada'in saw the difference between a king who looked down on people and a Muslim governor who ate his loaf on his donkey and served them.<br><br>The Prophet ﷺ said: <b>\"No one humbles himself for Allah except that Allah raises him.\"</b> Hudhayfa was humble, so Allah raised his name, and his story is still told after the names of many kings have been forgotten.<br><br>And you, young hero: if you become captain of your team or head of your class, do not look down on your classmates — be the first of them in serving and working."
+       }
       }
     ],
     "quiz": [

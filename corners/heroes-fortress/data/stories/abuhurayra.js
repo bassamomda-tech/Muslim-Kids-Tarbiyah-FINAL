@@ -11,6 +11,14 @@ HISN_STORIES.abuhurayra = [
   },
   "pages": [
    {
+    "scene": "desert",
+    "character": "🐱",
+    "text": {
+     "ar": "في بلادِ <b>دَوْس</b> باليمن، عاشَ شابٌّ فقيرٌ يرعى الغنمَ لأهلِه. أسلمَ على يدِ زعيمِ قومِه <b>الطُّفَيلِ بنِ عمرٍو الدَّوسيّ</b>، ثمّ خرجَ مهاجراً إلى النبيِّ ﷺ، فوصلَ المدينةَ في <b>السنةِ السابعةِ للهجرة</b> والنبيُّ ﷺ في غزوةِ خيبر.<br><br>اسمُه في أشهرِ الأقوالِ <b>عبدُ الرحمنِ بنُ صَخْر</b>، لكنَّ الناسَ عرفوه بكنيةٍ لطيفة: <b>أبو هريرة</b>. ويُروى أنّه كانت له <b>هِرّةٌ صغيرةٌ</b> يلعبُ بها وهو يرعى الغنم، فكنَّوه بها. وكان النبيُّ ﷺ يناديه أحياناً تحبُّباً: <b>«أبا هِرّ»</b>.",
+     "en": "In the land of <b>Daws</b> in Yemen lived a poor young man who herded sheep for his family. He embraced Islam through the chief of his tribe, <b>at-Tufayl ibn Amr ad-Dawsi</b>, then set out as an emigrant to the Prophet ﷺ, reaching Madinah in <b>the seventh year after the Hijra</b>, while the Prophet ﷺ was at the expedition of Khaybar.<br><br>His name, according to the best-known opinion, was <b>Abd ar-Rahman ibn Sakhr</b>, but people knew him by a sweet nickname: <b>Abu Hurayra</b>, \"the father of the little cat\". It is reported that he had <b>a small kitten</b> he played with while herding sheep, so they named him after it. The Prophet ﷺ would sometimes call him affectionately <b>\"Abu Hirr\"</b>."
+    }
+   },
+   {
     "scene": "mosque",
     "character": "📖",
     "text": {
@@ -57,6 +65,22 @@ HISN_STORIES.abuhurayra = [
        }
       }
      ]
+    }
+   },
+   {
+    "scene": "mosque",
+    "character": "😵",
+    "text": {
+     "ar": "كان الجوعُ يشتدُّ عليه أحياناً حتى يسقطَ مغشيّاً عليه. قال أبو هريرة: <b>«لقد رأيتُني وإنّي لأَخِرُّ فيما بينَ منبرِ رسولِ اللهِ ﷺ إلى حُجرةِ عائشةَ مغشيّاً عليّ»</b>، فيظنُّ بعضُ المارّةِ أنَّ به جنوناً، <b>«وما بي من جنونٍ، ما بي إلّا الجوع»</b>.<br><br>ولمّا قال بعضُ الناس: أكثرَ أبو هريرةَ من الحديث! أجابَهم بصدق: إنَّ إخوانَنا من المهاجرينَ كان يشغلُهم <b>البيعُ في الأسواق</b>، وإخوانَنا من الأنصارِ كان يشغلُهم <b>العملُ في أموالِهم</b>، وكنتُ ألزمُ رسولَ اللهِ ﷺ، فأحضرُ ما لا يحضرون، وأحفظُ ما لا يحفظون.",
+     "en": "Hunger sometimes grew so hard on him that he fell down unconscious. Abu Hurayra said: <b>\"I saw myself collapsing between the pulpit of the Messenger of Allah ﷺ and Aisha's room, unconscious,\"</b> and some passers-by thought he had gone mad — <b>\"but there was no madness in me; it was only hunger.\"</b><br><br>When some people said, \"Abu Hurayra narrates so much!\", he answered honestly: our brothers among the Muhajirun were kept busy by <b>trading in the markets</b>, and our brothers among the Ansar were kept busy by <b>working on their property</b>, while I stayed close to the Messenger of Allah ﷺ, so I attended what they did not attend and memorised what they did not memorise."
+    }
+   },
+   {
+    "scene": "pen",
+    "character": "🌟",
+    "text": {
+     "ar": "لم يَضِعْ صبرُ أبي هريرةَ سُدى. فقد صارَ <b>أكثرَ الصحابةِ روايةً للحديث</b>، وروى عنه العلمَ مئاتٌ من التابعين، وولّاه عمرُ بنُ الخطّابِ رضي الله عنه على <b>البحرين</b>، ثمّ عاشَ في المدينةِ معلّماً للناسِ حتى تُوفّي سنةَ <b>سبعٍ وخمسين</b> للهجرةِ تقريباً.<br><br>وأنت اليوم لا تحتاجُ أن تربطَ حجراً على بطنِك لتتعلّم! يكفي أن تُطفئَ الشاشةَ قليلاً، وتجلسَ إلى كتابِك ومُعلّمِك بقلبٍ حاضر. <b>كلُّ ساعةٍ تصبرُ فيها على التعلّم</b> قد تصيرُ يوماً نوراً ينفعُك وينفعُ الناسَ من بعدِك.",
+     "en": "Abu Hurayra's patience was not wasted. He became <b>the Companion who narrated the most hadith</b>; hundreds of the Successors learned from him; Umar ibn al-Khattab, may Allah be pleased with him, appointed him governor of <b>Bahrain</b>; and he later lived in Madinah teaching people until he passed away around the year <b>57 AH</b>.<br><br>Today you do not need to tie a stone over your stomach in order to learn! It is enough to switch off the screen for a while and sit with your book and your teacher with an attentive heart. <b>Every hour you patiently spend learning</b> may one day become a light that benefits you and the people after you."
     }
    }
   ],
@@ -192,10 +216,26 @@ HISN_STORIES.abuhurayra = [
   "pages": [
    {
     "scene": "madinah",
+    "character": "🏠",
+    "text": {
+     "ar": "في بيتٍ متواضعٍ بالمدينة، كان <b>أبو هريرةَ</b> يعيشُ مع أمِّه. لم يكن له مالٌ كثيرٌ ولا أهلٌ قريبون، فكانت أمُّه أغلى ما عنده في الدنيا. كان يخدمُها ويحملُ همَّها، ويتمنّى من كلِّ قلبِه أن تشاركَه <b>نورَ الإسلام</b> الذي ملأَ قلبَه.<br><br>وكان كلّما دخلَ عليها قال لها: <b>«رحمكِ اللهُ كما ربّيتِني صغيراً»</b>، فتردُّ عليه: «وأنتَ يا بُنيّ، جزاكَ اللهُ خيراً ورضيَ عنك كما بررتَني كبيراً». هكذا كان البيتُ ممتلئاً بالحبِّ، لكنَّ قلبَ الأمِّ لم يكن قد انفتحَ للإيمانِ بعد.",
+     "en": "In a humble house in Madinah, <b>Abu Hurayra</b> lived with his mother. He had little wealth and no close family, so his mother was the dearest thing he had in this world. He served her, carried her worries, and wished with all his heart that she would share with him the <b>light of Islam</b> that filled his own heart.<br><br>Whenever he went in to see her he would say: <b>\"May Allah have mercy on you as you raised me when I was small,\"</b> and she would reply: \"And you, my son — may Allah reward you and be pleased with you as you have been dutiful to me when I am old.\" So the home was full of love, but the mother's heart had not yet opened to faith."
+    }
+   },
+   {
+    "scene": "madinah",
     "character": "🤲",
     "text": {
-     "ar": "كان <b>أبو هريرةَ</b> باراً بأمِّه يحبُّها حبّاً شديداً، لكنّها كانت مشركةً لم تُسلِمْ بعد. كان يدعوها إلى الإسلامِ برفقٍ فترفض، حتى قالت يوماً كلمةً سيّئةً في النبيِّ ﷺ، فحزِنَ أبو هريرةَ حزناً شديداً وبكى.<br><br>ذهبَ إلى النبيِّ ﷺ وطلبَ منه أن <b>يدعوَ لأمِّه بالهداية</b>. فدعا النبيُّ ﷺ: «اللّهُمَّ اهدِ أمَّ أبي هريرة». فرجعَ أبو هريرةَ فوجدَ أمَّه قد <b>اغتسلت وأعلنت إسلامَها</b>! ففرِحَ فرحاً عظيماً وبكى من السعادة. ثم دعا النبيَّ ﷺ أن يُحبِّبَه وأمَّه إلى المؤمنين، فاستجابَ الله. هكذا كان بِرُّ أبي هريرةَ بأمِّه سبباً في هدايتِها.",
-     "en": "<b>Abu Hurayra</b> was dutiful to his mother and loved her deeply, but she was a polytheist who had not yet embraced Islam. He would gently invite her to Islam and she would refuse, until one day she said something bad about the Prophet ﷺ. Abu Hurayra grieved intensely and wept.<br><br>He went to the Prophet ﷺ and asked him to <b>pray for his mother's guidance</b>. The Prophet ﷺ prayed: \"O Allah, guide the mother of Abu Hurayra.\" Abu Hurayra returned to find his mother had <b>performed ghusl and announced her Islam</b>! He rejoiced greatly and wept from happiness. Then he asked the Prophet ﷺ to make him and his mother beloved to the believers, and Allah answered. Thus Abu Hurayra's kindness to his mother was a cause of her guidance."
+     "ar": "كان <b>أبو هريرةَ</b> باراً بأمِّه يحبُّها حبّاً شديداً، لكنّها كانت مشركةً لم تُسلِمْ بعد. كان يدعوها إلى الإسلامِ برفقٍ فترفض، حتى قالت يوماً كلمةً سيّئةً في النبيِّ ﷺ، فحزِنَ أبو هريرةَ حزناً شديداً وبكى.",
+     "en": "<b>Abu Hurayra</b> was dutiful to his mother and loved her deeply, but she was a polytheist who had not yet embraced Islam. He would gently invite her to Islam and she would refuse, until one day she said something bad about the Prophet ﷺ. Abu Hurayra grieved intensely and wept."
+    }
+   },
+   {
+    "scene": "madinah",
+    "character": "🤲",
+    "text": {
+     "ar": "ذهبَ إلى النبيِّ ﷺ وطلبَ منه أن <b>يدعوَ لأمِّه بالهداية</b>. فدعا النبيُّ ﷺ: «اللّهُمَّ اهدِ أمَّ أبي هريرة». فرجعَ أبو هريرةَ فوجدَ أمَّه قد <b>اغتسلت وأعلنت إسلامَها</b>! ففرِحَ فرحاً عظيماً وبكى من السعادة. ثم دعا النبيَّ ﷺ أن يُحبِّبَه وأمَّه إلى المؤمنين، فاستجابَ الله. هكذا كان بِرُّ أبي هريرةَ بأمِّه سبباً في هدايتِها.",
+     "en": "He went to the Prophet ﷺ and asked him to <b>pray for his mother's guidance</b>. The Prophet ﷺ prayed: \"O Allah, guide the mother of Abu Hurayra.\" Abu Hurayra returned to find his mother had <b>performed ghusl and announced her Islam</b>! He rejoiced greatly and wept from happiness. Then he asked the Prophet ﷺ to make him and his mother beloved to the believers, and Allah answered. Thus Abu Hurayra's kindness to his mother was a cause of her guidance."
     },
     "choice": {
      "q": {
@@ -237,6 +277,22 @@ HISN_STORIES.abuhurayra = [
        }
       }
      ]
+    }
+   },
+   {
+    "scene": "madinah",
+    "character": "🚪",
+    "text": {
+     "ar": "وقد حكى أبو هريرةَ تفاصيلَ تلك اللحظةِ كما في <b>صحيحِ مسلم</b>: خرجَ مستبشراً بدعوةِ النبيِّ ﷺ، فلمّا وصلَ إلى البابِ وجدَه مُغلَقاً، فسمعت أمُّه وقعَ قدميه فقالت: <b>«مكانَك يا أبا هريرة»</b>، وسمعَ صوتَ الماء.<br><br>اغتسلت، ولبست ثوبَها، وأسرعت ففتحت البابَ وقالت: <b>«يا أبا هريرة، أشهدُ أن لا إلهَ إلّا الله، وأشهدُ أنَّ محمّداً عبدُه ورسولُه»</b>. فرجعَ إلى النبيِّ ﷺ يبكي من الفرح، فحمِدَ النبيُّ ﷺ اللهَ وقالَ خيراً. قال أبو هريرة بعدَها: <b>«فما خُلِقَ مؤمنٌ يسمعُ بي ولا يراني إلّا أحبَّني»</b>.",
+     "en": "Abu Hurayra later described that moment in detail, as recorded in <b>Sahih Muslim</b>: he went out full of hope because of the Prophet's ﷺ prayer, and when he reached the door he found it closed. His mother heard his footsteps and said: <b>\"Stay where you are, Abu Hurayra,\"</b> and he heard the sound of water.<br><br>She bathed, put on her garment, hurried to open the door and said: <b>\"O Abu Hurayra, I bear witness that there is no god but Allah, and I bear witness that Muhammad is His servant and Messenger.\"</b> He went back to the Prophet ﷺ weeping with joy, and the Prophet ﷺ praised Allah and said good words. Abu Hurayra said afterwards: <b>\"No believer has been created who hears of me or sees me without loving me.\"</b>"
+    }
+   },
+   {
+    "scene": "garden",
+    "character": "💚",
+    "text": {
+     "ar": "لم يغضبْ أبو هريرةَ من أمِّه ولم يهجرْها حين أسمعَته ما يكره، بل <b>بكى ودعا</b>، ولجأَ إلى مَن يُعينُه على الخير. وظلَّ يدعوها برفقٍ مرّةً بعدَ مرّة، ولم يَيأسْ من هدايتِها.<br><br>وأنت أيضاً، إن رأيتَ من أحدِ أهلِك تقصيراً، فلا تَقسُ عليه ولا تيأسْ منه. <b>ادعُ له في سجودِك</b>، وكلِّمْه بلطف، وكن أنت القدوةَ الطيّبةَ في البيت. فالقلوبُ بيدِ الله، والدعاءُ الصادقُ مع البِرِّ والرفقِ مفتاحٌ عظيمٌ من مفاتيحِ الهداية.",
+     "en": "Abu Hurayra did not get angry with his mother or abandon her when she said something hurtful; instead he <b>wept and prayed</b>, and turned to the one who could help him towards good. He kept inviting her gently, time after time, and never despaired of her guidance.<br><br>You too: if you see a shortcoming in someone in your family, do not be harsh with them or give up on them. <b>Pray for them in your sujud</b>, speak to them kindly, and be the good example at home. Hearts are in the hand of Allah, and sincere prayer joined with kindness and gentleness is one of the greatest keys to guidance."
     }
    }
   ],
@@ -371,11 +427,19 @@ HISN_STORIES.abuhurayra = [
   },
   "pages": [
    {
+    "scene": "madinah",
+    "character": "⏳",
+    "text": {
+     "ar": "وصلَ <b>أبو هريرةَ</b> إلى المدينةِ متأخّراً، بعدَ أن سبقَه كثيرٌ من الصحابةِ بسنواتٍ طويلة. فلم يصحبِ النبيَّ ﷺ إلّا نحوَ ثلاثِ سنين أو أربع. لكنّه قرّرَ أن يعوّضَ ما فاتَه بالحرصِ الشديد.<br><br>قال أبو هريرة كما في <b>صحيحِ البخاري</b>: <b>«صحبتُ رسولَ اللهِ ﷺ ثلاثَ سنين، لم أكن في سِنيَّ أحرصَ على أن أعيَ الحديثَ منّي فيهنّ»</b>. كان يجلسُ قريباً، ويسمعُ بانتباه، ويسألُ كثيراً. ومع ذلك كان يخشى أن تتفلّتَ منه الكلماتُ الغالية.",
+     "en": "<b>Abu Hurayra</b> reached Madinah late, after many Companions had been there for long years before him. He accompanied the Prophet ﷺ for only about three or four years. But he decided to make up for what he had missed with intense eagerness.<br><br>Abu Hurayra said, as recorded in <b>Sahih al-Bukhari</b>: <b>\"I accompanied the Messenger of Allah ﷺ for three years, and in no years of my life was I more eager to grasp the hadith than in those.\"</b> He sat close, listened carefully and asked a great deal. Even so, he feared that precious words might slip away from him."
+    }
+   },
+   {
     "scene": "mosque",
     "character": "🧕",
     "text": {
-     "ar": "كان <b>أبو هريرةَ</b> يجلسُ في مسجدِ النبيِّ ﷺ يسمعُ الأحاديثَ الكثيرة، لكنّه كان يخافُ أن ينسى بعضَها. فجاءَ إلى النبيِّ ﷺ وقال بصراحة: <b>«يا رسولَ الله، إنّي أسمعُ منك حديثاً كثيراً أنساه»</b>.<br><br>فقال له النبيُّ ﷺ: <b>«ابسُطْ رداءَك»</b>. فبسطَ أبو هريرةَ رداءَه (ثوبَه الذي يلبسُه فوقَ كتفيه) أمامَه. <b>فغرفَ النبيُّ ﷺ بيديه</b> كأنّه يضعُ فيه شيئاً، ثمّ قال: <b>«ضُمَّه»</b>. فضمَّ أبو هريرةَ الرداءَ إلى صدرِه.<br><br>قال أبو هريرة: <b>«فما نسيتُ شيئاً بعدَه!»</b> — ببركةِ دعاءِ النبيِّ ﷺ وفعلِه. فصار <b>أحفظَ الصحابةِ للحديث</b>، وحفِظَ للأمّةِ آلافَ الأحاديثِ التي نتعلّمُها اليوم. لقد كان صادقاً في <b>الاعترافِ بضعفِه</b>، وحريصاً على <b>طلبِ العون</b>، فأعطاه اللهُ ما طلب.",
-     "en": "<b>Abu Hurayra</b> used to sit in the Prophet's ﷺ mosque hearing many hadiths, but he feared forgetting some of them. So he came to the Prophet ﷺ and said honestly: <b>\"O Messenger of Allah, I hear many hadiths from you and I forget them.\"</b><br><br>The Prophet ﷺ said: <b>\"Spread out your cloak.\"</b> Abu Hurayra spread his cloak (the garment over his shoulders) in front of him. <b>The Prophet ﷺ scooped with his hands</b> as if placing something in it, then said: <b>\"Gather it.\"</b> Abu Hurayra gathered the cloak to his chest.<br><br>Abu Hurayra said: <b>\"After that I never forgot anything!\"</b> — by the blessing of the Prophet's ﷺ action and prayer. He became <b>the Companion who memorised the most hadith</b>, preserving thousands of hadiths we learn today. He was honest in <b>admitting his weakness</b> and eager to <b>ask for help</b>, and Allah gave him what he asked."
+     "ar": "كان <b>أبو هريرةَ</b> يجلسُ في مسجدِ النبيِّ ﷺ يسمعُ الأحاديثَ الكثيرة، لكنّه كان يخافُ أن ينسى بعضَها. فجاءَ إلى النبيِّ ﷺ وقال بصراحة: <b>«يا رسولَ الله، إنّي أسمعُ منك حديثاً كثيراً أنساه»</b>.<br><br>فقال له النبيُّ ﷺ: <b>«ابسُطْ رداءَك»</b>. فبسطَ أبو هريرةَ رداءَه (ثوبَه الذي يلبسُه فوقَ كتفيه) أمامَه. <b>فغرفَ النبيُّ ﷺ بيديه</b> كأنّه يضعُ فيه شيئاً، ثمّ قال: <b>«ضُمَّه»</b>. فضمَّ أبو هريرةَ الرداءَ إلى صدرِه.",
+     "en": "<b>Abu Hurayra</b> used to sit in the Prophet's ﷺ mosque hearing many hadiths, but he feared forgetting some of them. So he came to the Prophet ﷺ and said honestly: <b>\"O Messenger of Allah, I hear many hadiths from you and I forget them.\"</b><br><br>The Prophet ﷺ said: <b>\"Spread out your cloak.\"</b> Abu Hurayra spread his cloak (the garment over his shoulders) in front of him. <b>The Prophet ﷺ scooped with his hands</b> as if placing something in it, then said: <b>\"Gather it.\"</b> Abu Hurayra gathered the cloak to his chest."
     },
     "choice": {
      "q": {
@@ -417,6 +481,22 @@ HISN_STORIES.abuhurayra = [
        }
       }
      ]
+    }
+   },
+   {
+    "scene": "mosque",
+    "character": "🧠",
+    "text": {
+     "ar": "قال أبو هريرة: <b>«فما نسيتُ شيئاً بعدَه!»</b> — ببركةِ دعاءِ النبيِّ ﷺ وفعلِه. فصار <b>أحفظَ الصحابةِ للحديث</b>، وحفِظَ للأمّةِ آلافَ الأحاديثِ التي نتعلّمُها اليوم. لقد كان صادقاً في <b>الاعترافِ بضعفِه</b>، وحريصاً على <b>طلبِ العون</b>، فأعطاه اللهُ ما طلب.",
+     "en": "Abu Hurayra said: <b>\"After that I never forgot anything!\"</b> — by the blessing of the Prophet's ﷺ action and prayer. He became <b>the Companion who memorised the most hadith</b>, preserving thousands of hadiths we learn today. He was honest in <b>admitting his weakness</b> and eager to <b>ask for help</b>, and Allah gave him what he asked."
+    }
+   },
+   {
+    "scene": "pen",
+    "character": "📜",
+    "text": {
+     "ar": "ويُروى في كتبِ السِّيَرِ أنَّ <b>مروانَ بنَ الحكم</b> أرادَ أن يختبرَ حفظَه، فدعاه وسألَه عن أحاديثَ كثيرة، وأجلسَ كاتباً خلفَ السِّترِ يكتبُ ما يقول. فلمّا مضت سنةٌ دعاه وسألَه عنها مرّةً أخرى، فما زادَ ولا نقصَ ولا قدّمَ ولا أخّر!<br><br>وكان يقول: لولا آيةٌ في كتابِ اللهِ ما حدّثتُ حديثاً، ثمّ يتلو: <b>﴿إِنَّ الَّذِينَ يَكْتُمُونَ مَا أَنزَلْنَا مِنَ الْبَيِّنَاتِ وَالْهُدَىٰ﴾</b>. فالعلمُ أمانة، ومن تعلّمَ خيراً فليُعلِّمْه للناس. وأنت يا صغيري، <b>اطلبِ العونَ حين تحتاج</b>، وادعُ: «ربِّ زدني علماً»، وراجعْ ما تحفظُ حتى يثبت.",
+     "en": "It is reported in the biographies that <b>Marwan ibn al-Hakam</b> wanted to test his memory. He called him and asked him about many hadiths, while a scribe sat behind a curtain writing down what he said. A year later he called him again and asked about the same hadiths — and he added nothing, left nothing out, and did not change their order!<br><br>He used to say that were it not for a verse in the Book of Allah he would not have narrated a single hadith, then he would recite: <b>\"Indeed, those who conceal what We sent down of clear proofs and guidance…\"</b> Knowledge is a trust, and whoever learns something good should teach it to people. And you, little one: <b>ask for help when you need it</b>, pray \"My Lord, increase me in knowledge,\" and review what you memorise until it stays firm."
     }
    }
   ],
@@ -552,10 +632,26 @@ HISN_STORIES.abuhurayra = [
   "pages": [
    {
     "scene": "mosque",
+    "character": "🍽️",
+    "text": {
+     "ar": "كان <b>أهلُ الصُّفّةِ</b> فقراءَ يسكنونَ في طرفِ المسجدِ النبويّ. وصفَهم أبو هريرةَ فقال: <b>«أهلُ الصُّفّةِ أضيافُ الإسلام، لا يأوونَ على أهلٍ ولا مالٍ ولا على أحد»</b>. وكان النبيُّ ﷺ إذا أتته صدقةٌ بعثَ بها إليهم ولم يأكلْ منها شيئاً، وإذا أتته هديّةٌ أرسلَ إليهم وأكلَ منها وأشركَهم فيها.<br><br>وفي ذلك اليوم قعدَ أبو هريرةَ على طريقٍ يخرجُ منه الصحابة. فمرَّ <b>أبو بكرٍ</b> فسألَه عن آيةٍ من كتابِ الله، وما سألَه إلّا ليُطعِمَه، فمضى ولم ينتبه. ثمّ مرَّ <b>عمرُ</b> فسألَه كذلك، فمضى ولم ينتبه.",
+     "en": "The <b>People of as-Suffa</b> were poor Muslims who lived at one end of the Prophet's Mosque. Abu Hurayra described them, saying: <b>\"The People of as-Suffa are the guests of Islam; they have no family, no wealth and no one to turn to.\"</b> Whenever charity came to the Prophet ﷺ he would send it to them and eat none of it, and whenever a gift came to him he would send for them, eat from it and share it with them.<br><br>On that day Abu Hurayra sat by a road the Companions used. <b>Abu Bakr</b> passed by, and he asked him about a verse of the Book of Allah — asking only in the hope that he would feed him — but he went on without noticing. Then <b>Umar</b> passed, and he asked him the same way, and he too went on without noticing."
+    }
+   },
+   {
+    "scene": "mosque",
     "character": "🧕",
     "text": {
-     "ar": "اشتدَّ الجوعُ يوماً على <b>أبي هريرة</b> حتى كان يضعُ بطنَه على الأرضِ ويشدُّ الحجرَ عليه. فجلسَ على الطريق، فمرَّ النبيُّ ﷺ <b>فتبسّمَ حين رآه</b> وعرفَ ما في وجهِه، وقال: <b>«أبا هِرّ، الحقْ»</b>. فتبعه إلى بيتِه، فوجدَ النبيُّ ﷺ <b>قَدَحاً من لبن</b> أُهدِيَ إليه، فقال: «أبا هِرّ، الحقْ إلى أهلِ الصُّفّةِ فادعُهم لي».<br><br>حزِنَ أبو هريرةَ قليلاً وقال في نفسِه: <b>وما هذا اللبنُ في أهلِ الصُّفّة؟!</b> كنتُ أحقَّ أن أشربَ منه شربةً أتقوّى بها! لكنّه <b>أطاعَ النبيَّ ﷺ</b> ودعاهم. فقال له النبيُّ ﷺ: «خُذْ فأعطِهم». فجعلَ أبو هريرةَ يُعطي الرجلَ القدحَ فيشربُ حتى يَروى، ثمّ الذي بعدَه… <b>حتى شربوا جميعاً وشبعوا</b>!<br><br>ثمّ أخذَ النبيُّ ﷺ القدحَ وتبسّمَ وقال: <b>«بقيتُ أنا وأنت، اقعدْ فاشربْ»</b>. فشربَ، فقال: «اشربْ»، فشربَ… حتى قال أبو هريرة: <b>«لا والذي بعثكَ بالحقّ، ما أجدُ له مسلكاً!»</b> فشربَ النبيُّ ﷺ ما بقي. باركَ اللهُ في القليلِ حين <b>قُدِّمَ الآخرونَ أوّلاً</b>.",
-     "en": "One day hunger grew so hard on <b>Abu Hurayra</b> that he would press his stomach to the ground and tie a stone over it. He sat by the road, and the Prophet ﷺ passed by, <b>smiled when he saw him</b>, recognised what was on his face, and said: <b>\"Abu Hirr, come along.\"</b> He followed him home, where the Prophet ﷺ found <b>a cup of milk</b> given to him as a gift, and said: \"Abu Hirr, go to the people of as-Suffa and call them to me.\"<br><br>Abu Hurayra felt a little sad and thought: <b>What is this bit of milk among all the people of as-Suffa?!</b> I deserved a drink to strengthen myself! But he <b>obeyed the Prophet ﷺ</b> and called them. The Prophet ﷺ said: \"Take it and give it to them.\" So Abu Hurayra handed the cup to one man who drank until satisfied, then the next… <b>until all of them had drunk their fill</b>!<br><br>Then the Prophet ﷺ took the cup, smiled and said: <b>\"Only you and I remain — sit and drink.\"</b> He drank; he said \"Drink,\" and he drank… until Abu Hurayra said: <b>\"No, by the One who sent you with the truth, I find no more room for it!\"</b> Then the Prophet ﷺ drank what was left. Allah blessed the little when <b>others were served first</b>."
+     "ar": "اشتدَّ الجوعُ يوماً على <b>أبي هريرة</b> حتى كان يضعُ بطنَه على الأرضِ ويشدُّ الحجرَ عليه. فجلسَ على الطريق، فمرَّ النبيُّ ﷺ <b>فتبسّمَ حين رآه</b> وعرفَ ما في وجهِه، وقال: <b>«أبا هِرّ، الحقْ»</b>. فتبعه إلى بيتِه، فوجدَ النبيُّ ﷺ <b>قَدَحاً من لبن</b> أُهدِيَ إليه، فقال: «أبا هِرّ، الحقْ إلى أهلِ الصُّفّةِ فادعُهم لي».",
+     "en": "One day hunger grew so hard on <b>Abu Hurayra</b> that he would press his stomach to the ground and tie a stone over it. He sat by the road, and the Prophet ﷺ passed by, <b>smiled when he saw him</b>, recognised what was on his face, and said: <b>\"Abu Hirr, come along.\"</b> He followed him home, where the Prophet ﷺ found <b>a cup of milk</b> given to him as a gift, and said: \"Abu Hirr, go to the people of as-Suffa and call them to me.\""
+    }
+   },
+   {
+    "scene": "mosque",
+    "character": "🥛",
+    "text": {
+     "ar": "حزِنَ أبو هريرةَ قليلاً وقال في نفسِه: <b>وما هذا اللبنُ في أهلِ الصُّفّة؟!</b> كنتُ أحقَّ أن أشربَ منه شربةً أتقوّى بها! لكنّه <b>أطاعَ النبيَّ ﷺ</b> ودعاهم. فقال له النبيُّ ﷺ: «خُذْ فأعطِهم». فجعلَ أبو هريرةَ يُعطي الرجلَ القدحَ فيشربُ حتى يَروى، ثمّ الذي بعدَه… <b>حتى شربوا جميعاً وشبعوا</b>!",
+     "en": "Abu Hurayra felt a little sad and thought: <b>What is this bit of milk among all the people of as-Suffa?!</b> I deserved a drink to strengthen myself! But he <b>obeyed the Prophet ﷺ</b> and called them. The Prophet ﷺ said: \"Take it and give it to them.\" So Abu Hurayra handed the cup to one man who drank until satisfied, then the next… <b>until all of them had drunk their fill</b>!"
     },
     "choice": {
      "q": {
@@ -597,6 +693,22 @@ HISN_STORIES.abuhurayra = [
        }
       }
      ]
+    }
+   },
+   {
+    "scene": "mosque",
+    "character": "😊",
+    "text": {
+     "ar": "ثمّ أخذَ النبيُّ ﷺ القدحَ وتبسّمَ وقال: <b>«بقيتُ أنا وأنت، اقعدْ فاشربْ»</b>. فشربَ، فقال: «اشربْ»، فشربَ… حتى قال أبو هريرة: <b>«لا والذي بعثكَ بالحقّ، ما أجدُ له مسلكاً!»</b> فشربَ النبيُّ ﷺ ما بقي. باركَ اللهُ في القليلِ حين <b>قُدِّمَ الآخرونَ أوّلاً</b>.",
+     "en": "Then the Prophet ﷺ took the cup, smiled and said: <b>\"Only you and I remain — sit and drink.\"</b> He drank; he said \"Drink,\" and he drank… until Abu Hurayra said: <b>\"No, by the One who sent you with the truth, I find no more room for it!\"</b> Then the Prophet ﷺ drank what was left. Allah blessed the little when <b>others were served first</b>."
+    }
+   },
+   {
+    "scene": "table",
+    "character": "🤝",
+    "text": {
+     "ar": "تأمّلْ هذا المشهدَ الجميل: النبيُّ ﷺ هو صاحبُ الهديّة، ومع ذلك جعلَ <b>نفسَه آخرَ مَن يشرب</b>. وأبو هريرةَ أشدُّ الحاضرينَ جوعاً، ومع ذلك أطاعَ وصبرَ حتى شربَ الجميع. فلمّا جاءَ دورُه وجدَ في القدحِ ما يكفيه ويزيد!<br><br>وفي حياتِك أيضاً: حين تُوزِّعُ الحلوى على إخوتِك، أو تقسمُ الطعامَ مع أصدقائك، جرّبْ أن تبدأَ بهم قبلَ نفسِك. ستجدُ أنَّ <b>البركةَ مع الإيثار</b>، وأنَّ القلبَ الذي يُعطي يشبعُ قبلَ البطن، وأنَّ اللهَ لا يُضيِّعُ مَن أطاعَه.",
+     "en": "Reflect on this beautiful scene: the Prophet ﷺ owned the gift, yet he made <b>himself the last to drink</b>. And Abu Hurayra was the hungriest of all present, yet he obeyed and waited patiently until everyone had drunk. When his turn came, he found in the cup enough for him and more!<br><br>In your life too: when you share sweets with your brothers and sisters, or divide food with your friends, try starting with them before yourself. You will find that <b>blessing comes with putting others first</b>, that a giving heart is filled before the stomach, and that Allah never lets down those who obey Him."
     }
    }
   ],

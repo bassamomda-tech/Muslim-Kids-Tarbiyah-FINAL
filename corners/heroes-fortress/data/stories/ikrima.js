@@ -11,6 +11,14 @@ HISN_STORIES.ikrima = [
   },
   "pages": [
    {
+    "scene": "idols",
+    "character": "🧔",
+    "text": {
+     "ar": "كان <b>عكرمةُ</b> ابنَ <b>أبي جهل</b>، أشدِّ أعداءِ رسولِ اللهِ ﷺ في مكّة، ومن سادةِ قبيلةِ <b>بني مخزوم</b>. نشأَ فارساً قويّاً، لكنّه سارَ على طريقِ أبيه في عداوةِ الإسلام.<br><br>فقد قاتلَ المسلمينَ في <b>أُحُد</b> وكان على إحدى جهتَي خيلِ قريش، وجاءَ مع الأحزابِ يومَ <b>الخندق</b>. فلمّا جاءَ يومُ <b>فتحِ مكّة</b>، كان اسمُه بين قِلّةٍ من الذين اشتدَّ أذاهم للمسلمين، فلم يَرَ لنفسِه مكاناً في مكّة، وظنَّ أنّه لا نجاةَ له إلا بالهرب.",
+     "en": "<b>Ikrima</b> was the son of <b>Abu Jahl</b>, the fiercest enemy of the Messenger of Allah ﷺ in Makkah, and one of the chiefs of the tribe of <b>Banu Makhzum</b>. He grew up a strong horseman, but he followed his father’s path in hostility to Islam.<br><br>He fought the Muslims at <b>Uhud</b>, commanding one of the two wings of the Quraysh cavalry, and came with the Confederates on the day of <b>the Trench</b>. When the day of <b>the Conquest of Makkah</b> arrived, his name was among the few whose harm to the Muslims had been the most severe. He saw no place for himself in Makkah and thought his only escape was to flee."
+    }
+   },
+   {
     "scene": "sea",
     "character": "🌊",
     "text": {
@@ -57,6 +65,22 @@ HISN_STORIES.ikrima = [
        }
       }
      ]
+    }
+   },
+   {
+    "scene": "boat",
+    "character": "🌊",
+    "text": {
+     "ar": "وهدأتِ العاصفة، ونجّى اللهُ السفينةَ ومن فيها. وكانت تلك اللحظةُ في وسطِ الأمواجِ بدايةَ رجوعِ عكرمةَ إلى الحقّ؛ فقد عرفَ بقلبِه أنّ الأصنامَ لا تنفعُ ولا تضرّ، وأنّ <b>اللهَ وحدَه</b> هو الذي يسمعُ الدعاءَ ويكشفُ الكرب.<br><br>وفي الوقتِ نفسِه كانت زوجتُه <b>أمُّ حكيم</b> قد خرجتْ تبحثُ عنه، تحملُ له خبراً سعيداً من رسولِ اللهِ ﷺ — وتلك قصّةٌ أخرى جميلة. فاللهُ يهيّئُ للقلبِ الصادقِ طريقَ الهدايةِ من حيثُ لا يحتسب.",
+     "en": "The storm calmed, and Allah saved the ship and everyone on board. That moment amid the waves was the beginning of Ikrima’s return to the truth: he knew in his heart that idols bring neither benefit nor harm, and that <b>Allah alone</b> hears supplication and removes distress.<br><br>At that very time his wife <b>Umm Hakim</b> had set out to look for him, carrying happy news for him from the Messenger of Allah ﷺ — and that is another beautiful story. Allah prepares the path of guidance for a sincere heart from where it never expects."
+    }
+   },
+   {
+    "scene": "night",
+    "character": "🤲",
+    "text": {
+     "ar": "كثيرٌ من الناسِ يتذكّرونَ اللهَ في الشدّة، ثمّ ينسَونه إذا جاءتِ الراحة. أمّا المؤمنُ فيدعو ربَّه في <b>الشدّةِ والرخاءِ</b> معاً. وقد قال النبيُّ ﷺ لابنِ عبّاس: <b>«تعرَّفْ إلى اللهِ في الرخاءِ يعرفْك في الشدّة»</b> — رواه أحمد.<br><br>فإذا خفتَ من امتحان، أو مرضتَ، أو ضاعَ منك شيءٌ، فادعُ اللهَ بصدقٍ كما دعاه عكرمة. ولكنْ لا تنسَه حين تنجحُ وتفرحُ وتلعب؛ قُلْ: <b>«الحمدُ لله»</b>، وصلِّ في وقتِك، فاللهُ معك في كلِّ حال.",
+     "en": "Many people remember Allah in hardship, then forget Him when ease returns. The believer, however, calls on his Lord in <b>hardship and ease alike</b>. The Prophet ﷺ said to Ibn Abbas: <b>“Get to know Allah in times of ease, and He will know you in times of hardship”</b> — narrated by Ahmad.<br><br>So when you are afraid of a test, fall ill, or lose something, call on Allah sincerely as Ikrima did. But do not forget Him when you succeed, rejoice and play: say <b>“Al-hamdu lillah”</b> and pray on time, for Allah is with you in every situation."
     }
    }
   ],
@@ -191,6 +215,14 @@ HISN_STORIES.ikrima = [
   },
   "pages": [
    {
+    "scene": "kaaba",
+    "character": "👩",
+    "text": {
+     "ar": "يومَ <b>فتحِ مكّة</b> امتلأتْ شوارعُ المدينةِ بالناسِ يدخلونَ في دينِ اللهِ أفواجاً، بعد أن أعلنَ رسولُ اللهِ ﷺ العفوَ عن أهلِها. وكان بين النساءِ اللاتي أسلمنَ في ذلك اليوم امرأةٌ من بني مخزومٍ هي <b>أمُّ حكيمٍ بنتُ الحارثِ بنِ هشام</b>، ابنةُ عمِّ عكرمةَ وزوجتُه.<br><br>فرحتْ أمُّ حكيمٍ بنورِ الإسلام، لكنّ قلبَها كان مشغولاً: زوجُها هاربٌ في الطريقِ إلى اليمن، لا يدري أنّ بابَ العفوِ مفتوحٌ له. فقرّرتْ ألّا تنتظرَ، بل أن <b>تسعى لهدايتِه</b>.",
+     "en": "On the day of <b>the Conquest of Makkah</b>, the city’s streets filled with people entering Allah’s religion in crowds, after the Messenger of Allah ﷺ announced his pardon for its people. Among the women who accepted Islam that day was a woman of Banu Makhzum, <b>Umm Hakim bint al-Harith ibn Hisham</b>, Ikrima’s cousin and wife.<br><br>Umm Hakim rejoiced in the light of Islam, but her heart was troubled: her husband was a fugitive on the road to Yemen, not knowing that the door of pardon was open to him. So she decided not to wait, but to <b>work for his guidance</b>."
+    }
+   },
+   {
     "scene": "desert",
     "character": "🐪",
     "text": {
@@ -237,6 +269,22 @@ HISN_STORIES.ikrima = [
        }
       }
      ]
+    }
+   },
+   {
+    "scene": "mosque",
+    "character": "💚",
+    "text": {
+     "ar": "لقد حفظَ النبيُّ ﷺ مشاعرَ عكرمة، فلم يذكرْ له أباه بسوء، ولم يُعيِّرْه بماضيه. ويذكرُ أهلُ السِّيَرِ أنّ عكرمةَ طلبَ من النبيِّ ﷺ أن يستغفرَ له كلَّ عداوةٍ عاداه بها، فدعا له النبيُّ ﷺ بالمغفرة.<br><br>وكان هذا من خُلُقِ النبيِّ ﷺ الدائم، فقد قال: <b>«لا تسبّوا الأمواتَ فإنّهم قد أفضَوا إلى ما قدّموا»</b> — رواه البخاري. فالكلمةُ الجارحةُ لا تُصلِحُ شيئاً، أمّا الكلمةُ الرحيمةُ ففتحتْ قلبَ عكرمةَ للإسلامِ إلى الأبد.",
+     "en": "The Prophet ﷺ protected Ikrima’s feelings: he did not speak ill of his father to him, nor reproach him for his past. Biographers mention that Ikrima asked the Prophet ﷺ to seek forgiveness for him for every act of hostility he had shown him, and the Prophet ﷺ prayed for his forgiveness.<br><br>This was the Prophet’s ﷺ constant character. He said: <b>“Do not insult the dead, for they have reached what they sent ahead”</b> — narrated by al-Bukhari. A hurtful word mends nothing, but a merciful word opened Ikrima’s heart to Islam forever."
+    }
+   },
+   {
+    "scene": "garden",
+    "character": "🌸",
+    "text": {
+     "ar": "في المدرسةِ والملعب، قد تسمعُ بعضَ الأطفالِ <b>يسخرونَ من آباءِ زملائِهم أو أمّهاتِهم</b>، أو يُعيِّرونَ أحداً بخطأٍ قديم. تذكّرْ حينئذٍ قولَ النبيِّ ﷺ: «لا تسبّوا أباه».<br><br>فلا تُشارِكْهم، بل قُلْ كلمةً طيّبة، وكُنْ أنتَ مثلَ <b>أمِّ حكيم</b> التي سعتْ لخيرِ غيرِها. وإذا تابَ صديقُك من خطأ، فلا تُذكِّرْه به أمامَ الناس، بل افرحْ بتوبتِه كما فرحَ النبيُّ ﷺ بعكرمة.",
+     "en": "At school and on the playground you may hear some children <b>mocking their classmates’ fathers or mothers</b>, or shaming someone for an old mistake. Remember then the Prophet’s ﷺ words: “Do not insult his father.”<br><br>Do not join them; say a kind word instead, and be like <b>Umm Hakim</b>, who worked for the good of others. And if your friend repents from a mistake, do not remind him of it in front of people — rejoice at his repentance, as the Prophet ﷺ rejoiced at Ikrima."
     }
    }
   ],
@@ -417,6 +465,22 @@ HISN_STORIES.ikrima = [
        }
       }
      ]
+    }
+   },
+   {
+    "scene": "desert",
+    "character": "🐎",
+    "text": {
+     "ar": "وبعدَ وفاةِ رسولِ اللهِ ﷺ ارتدّتْ بعضُ القبائلِ عن الإسلام، فاختارَ الخليفةُ <b>أبو بكرٍ الصدّيق</b> عكرمةَ قائداً لأحدِ الجيوشِ التي خرجتْ تُعيدُ الناسَ إلى الدين، فسارَ إلى <b>عُمانَ</b> و<b>مَهْرة</b> واليمن.<br><br>ثمّ خرجَ إلى <b>الشام</b>، ويذكرُ المؤرّخونَ أنّه في يومِ <b>اليرموك</b> قال: قاتلتُ رسولَ اللهِ ﷺ في مواطنَ كثيرة، أفأفرُّ اليومَ؟! ودعا المسلمينَ إلى الثبات، فثبتَ معه جماعةٌ من الفرسان. وكان ذلك آخرَ مواقفِه، فلقيَ ربَّه شهيداً — واللهُ أعلم.",
+     "en": "After the death of the Messenger of Allah ﷺ, some tribes turned back from Islam. The caliph <b>Abu Bakr as-Siddiq</b> chose Ikrima to command one of the armies sent to bring people back to the religion, and he marched to <b>Oman</b>, <b>Mahra</b> and Yemen.<br><br>Then he went out to <b>Sham</b>. Historians mention that on the day of <b>Yarmuk</b> he said: I fought the Messenger of Allah ﷺ in many places — shall I flee today?! He called on the Muslims to stand firm, and a group of horsemen stood firm with him. That was his last stand, and he met his Lord as a martyr — and Allah knows best."
+    }
+   },
+   {
+    "scene": "sprout",
+    "character": "🌱",
+    "text": {
+     "ar": "قصّةُ عكرمةَ تقولُ لنا: <b>الماضي لا يحبسُك إذا صدقتَ في التوبة</b>. فقد كان عدوّاً، فصارَ قائداً من قادةِ الإسلام، وكان قلبُه قاسياً فصار يبكي عندَ كلامِ الله.<br><br>وأنتَ إذا أخطأتَ يوماً — كذبتَ أو أسأتَ إلى أحد — فلا تقلْ: انتهى الأمر! بل اعزمْ مثلَ عكرمةَ أن تفعلَ مكانَ كلِّ خطأٍ حسنة: اعتذرْ، وأصلِحْ، وأكثِرْ من الخير. واللهُ تعالى يقول: <b>﴿ إِنَّ الْحَسَنَاتِ يُذْهِبْنَ السَّيِّئَاتِ ﴾</b>.",
+     "en": "Ikrima’s story tells us: <b>your past does not imprison you if your repentance is sincere</b>. He was an enemy and became one of Islam’s commanders; his heart was hard and became one that wept at Allah’s words.<br><br>If you make a mistake one day — you lie or hurt someone — do not say: It’s over! Instead resolve, like Ikrima, to put a good deed in place of every mistake: apologise, put things right, and do much good. Allah the Exalted says: <b>﴿ “Indeed, good deeds wipe away bad deeds” ﴾</b>."
     }
    }
   ],

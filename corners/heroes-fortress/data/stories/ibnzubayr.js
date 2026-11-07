@@ -11,6 +11,14 @@ HISN_STORIES.ibnzubayr = [
   },
   "pages": [
    {
+    "scene": "desert",
+    "character": "🐪",
+    "text": {
+     "ar": "كانت <b>الهجرةُ</b> إلى المدينةِ رحلةً شاقّةً عبرَ الصحراء، تركَ فيها المسلمونَ بيوتَهم وأموالَهم في مكّة طاعةً لله. وكان من المهاجرينَ بيتٌ مباركٌ: الأبُ <b>الزبيرُ بنُ العوّام</b>، حَوارِيُّ رسولِ اللهِ ﷺ وابنُ عمّتِه، والأمُّ <b>أسماءُ بنتُ أبي بكرٍ الصدّيق</b>.<br><br>وقد خرجتْ أسماءُ مهاجرةً وهي <b>في آخرِ أيّامِ حملِها</b>، كما تحكي في صحيحِ البخاري. فلم يمنعْها التعبُ ولا ثِقَلُ الحملِ من أن تلحقَ برسولِ اللهِ ﷺ، صابرةً تحتسبُ كلَّ خطوةٍ عندَ الله.",
+     "en": "The <b>Hijra</b> to Madinah was a hard journey across the desert, in which the Muslims left their homes and wealth in Makkah in obedience to Allah. Among the emigrants was a blessed household: the father, <b>az-Zubayr ibn al-Awwam</b>, the special disciple of the Messenger of Allah ﷺ and his cousin, and the mother, <b>Asma’ bint Abi Bakr as-Siddiq</b>.<br><br>Asma’ set out as an emigrant <b>in the last days of her pregnancy</b>, as she herself relates in Sahih al-Bukhari. Neither tiredness nor the weight of her pregnancy kept her from joining the Messenger of Allah ﷺ; she was patient, counting every step as a deed before Allah."
+    }
+   },
+   {
     "scene": "cradle",
     "character": "🌴",
     "text": {
@@ -57,6 +65,22 @@ HISN_STORIES.ibnzubayr = [
        }
       }
      ]
+    }
+   },
+   {
+    "scene": "madinah",
+    "character": "👩",
+    "text": {
+     "ar": "ونشأَ عبدُ اللهِ محبوباً في بيتِ النبوّة. وكانت خالتُه <b>عائشةُ</b> أمُّ المؤمنينَ رضيَ اللهُ عنها تُحبُّه حبّاً شديداً، فلمّا طلبتْ من النبيِّ ﷺ أن يجعلَ لها <b>كُنيةً</b> كما لسائرِ النساء، قال لها: <b>«تَكَنَّيْ بابنِك عبدِ اللهِ بنِ الزبير»</b> — رواه أبو داود. فصارتْ تُدعى <b>«أمَّ عبدِ الله»</b>.<br><br>وهكذا اجتمعَ لهذا الطفلِ شرفٌ كبير: جدُّه <b>أبو بكرٍ الصدّيق</b>، وأبوه <b>الزبير</b>، وأمُّه <b>أسماء</b>، وخالتُه <b>عائشة</b>، وأوّلُ طعامٍ دخلَ جوفَه من يدِ رسولِ اللهِ ﷺ.",
+     "en": "Abdullah grew up beloved in the household of prophethood. His maternal aunt <b>Aisha</b>, Mother of the Believers, may Allah be pleased with her, loved him dearly. When she asked the Prophet ﷺ to give her a <b>kunya</b> (an honorary name) like other women had, he told her: <b>“Take your kunya from your son, Abdullah ibn az-Zubayr”</b> — narrated by Abu Dawud. So she came to be called <b>“Umm Abdullah”</b>.<br><br>So this child gathered great honour: his grandfather was <b>Abu Bakr as-Siddiq</b>, his father <b>az-Zubayr</b>, his mother <b>Asma’</b>, his aunt <b>Aisha</b> — and the first food that entered his body came from the hand of the Messenger of Allah ﷺ."
+    }
+   },
+   {
+    "scene": "nest",
+    "character": "🍼",
+    "text": {
+     "ar": "ومن هذه القصّةِ تعلّمَ المسلمونَ سُنّةً جميلة: إذا وُلِدَ طفلٌ <b>فرحوا به، وحنّكوه بتمرة، ودعَوا له بالبركة، واختاروا له اسماً حسناً</b> كما فعلَ رسولُ اللهِ ﷺ.<br><br>وأنتَ حين يُولَدُ في بيتِكم أخٌ أو أختٌ، أو في بيتِ جيرانِكم طفلٌ صغير، فكُنْ أوّلَ من يفرحُ ويُهنِّئ ويدعو: «باركَ اللهُ لكم في الموهوب». وتذكّرْ أنّ كلَّ واحدٍ منّا يستطيعُ أن يكونَ مثلَ عبدِ الله: <b>سببَ فرحٍ وبركةٍ</b> لمن حولَه.",
+     "en": "From this story the Muslims learned a beautiful Sunnah: when a child is born, <b>they rejoice, do tahnik with a date, pray for blessing upon him, and choose him a good name</b>, just as the Messenger of Allah ﷺ did.<br><br>When a baby brother or sister is born in your home, or a little child in your neighbours’ home, be the first to rejoice, congratulate them and pray: “May Allah bless you in the one He has given you.” And remember that each of us can be like Abdullah: <b>a source of joy and blessing</b> for those around us."
     }
    }
   ],
@@ -238,6 +262,22 @@ HISN_STORIES.ibnzubayr = [
       }
      ]
     }
+   },
+   {
+    "scene": "dwellings",
+    "character": "🪨",
+    "text": {
+     "ar": "ولمّا خرجَ أبو بكرٍ مع النبيِّ ﷺ حملَ معه مالَه كلَّه. فجاءَ جدُّها <b>أبو قُحافة</b> — وكان قد ذهبَ بصرُه — فقال: أظنُّه قد فجعَكم بمالِه! فأخذتْ أسماءُ <b>حجارةً</b> فوضعتْها في مكانِ المالِ في البيت، وغطّتْها بثوب، ثمّ أخذتْ بيدِه فوضعَها عليها، فاطمأنَّ الشيخ. وما فعلتْ ذلك إلا لتُسكِّنَ قلبَه — كما في سيرةِ ابنِ هشام.<br><br>وفي المدينةِ تزوّجتِ الزبيرَ وهو فقير، فكانت تعلِفُ فرسَه وتستقي الماء، و<b>تحملُ النوى على رأسِها</b> من أرضٍ بعيدة، كما تحكي هي في صحيحِ البخاري.",
+     "en": "When Abu Bakr left with the Prophet ﷺ, he took all his money with him. Her grandfather <b>Abu Quhafa</b>, who had lost his sight, came and said: I think he has left you in distress by taking his money! So Asma’ took some <b>stones</b>, placed them where the money used to be kept in the house, covered them with a cloth, then took his hand and laid it on them, and the old man was reassured. She did this only to calm his heart — as told in the Sira of Ibn Hisham.<br><br>In Madinah she was married to az-Zubayr while he was poor. She fed his horse, drew water, and <b>carried date stones on her head</b> from a distant plot of land, as she herself relates in Sahih al-Bukhari."
+    }
+   },
+   {
+    "scene": "nest",
+    "character": "🏡",
+    "text": {
+     "ar": "من هذه الأمِّ تعلّمَ عبدُ اللهِ <b>الشجاعةَ والصبرَ والكرم</b>، فلمّا كبرَ صار فارساً شجاعاً وعابداً كريماً. فالبيتُ هو المدرسةُ الأولى، والأمُّ هي المعلّمةُ الأولى.<br><br>انظرْ إلى أمِّك وأبيك: كم يتعبانِ من أجلِك كلَّ يوم! فاشكرْهما، وأعِنْهما في أعمالِ البيت، وتعلّمْ من صبرِهما. وإذا وعدتَ النبيَّ ﷺ في قلبِك أن تكونَ صالحاً كما بايعَه عبدُ اللهِ صغيراً، فابدأْ بـ<b>البِرِّ بوالدَيك</b>.",
+     "en": "From this mother Abdullah learned <b>courage, patience and generosity</b>, and when he grew up he became a brave horseman and a generous worshipper. The home is the first school, and the mother is the first teacher.<br><br>Look at your mother and father: how hard they work for you every day! Thank them, help them with the housework, and learn from their patience. And if you promise in your heart to be righteous, as little Abdullah pledged to the Prophet ﷺ, begin with <b>kindness to your parents</b>."
+    }
    }
   ],
   "quiz": [
@@ -371,6 +411,14 @@ HISN_STORIES.ibnzubayr = [
   },
   "pages": [
    {
+    "scene": "madinah",
+    "character": "👦",
+    "text": {
+     "ar": "ظهرتْ على <b>عبدِ اللهِ بنِ الزبير</b> منذ صغرِه علاماتُ القوّةِ والثبات. فقد روى البخاريُّ أنّه كان مع أبيه <b>الزبيرِ</b> في معركةِ <b>اليرموك</b> وهو ابنُ <b>عشرِ سنين</b>، فحملَه أبوه على فرسٍ وجعلَ معه رجلاً يحفظُه.<br><br>ويذكرُ أهلُ السِّيَرِ أنّ <b>عمرَ بنَ الخطّاب</b> مرَّ يوماً بصبيانٍ يلعبون، فهربوا هيبةً له إلا عبدَ الله، فسألَه عمرُ عن ذلك، فأجابَه بأدبٍ أنّه لم يُذنبْ فيخافَه، والطريقُ ليس ضيّقاً فيُوسِّعَ له. فكانت شجاعتُه مع الأدبِ منذ الطفولة.",
+     "en": "Signs of strength and steadiness appeared in <b>Abdullah ibn az-Zubayr</b> from a young age. Al-Bukhari narrates that he was with his father <b>az-Zubayr</b> at the Battle of <b>Yarmuk</b> when he was <b>ten years old</b>; his father set him on a horse and placed a man with him to look after him.<br><br>Biographers mention that <b>Umar ibn al-Khattab</b> once passed by some boys playing. They ran away in awe of him — all except Abdullah. When Umar asked him why, he answered politely that he had done nothing wrong to be afraid of, and the road was not too narrow to make way. So his courage came together with good manners from childhood."
+    }
+   },
+   {
     "scene": "kaaba",
     "character": "🕋",
     "text": {
@@ -417,6 +465,22 @@ HISN_STORIES.ibnzubayr = [
        }
       }
      ]
+    }
+   },
+   {
+    "scene": "kaaba",
+    "character": "🕋",
+    "text": {
+     "ar": "وكان رسولُ اللهِ ﷺ قد قالَ لعائشةَ رضيَ اللهُ عنها إنّه لولا أنّ قومَها حديثو عهدٍ بالكفر لأعادَ بناءَ <b>الكعبةِ</b> على <b>قواعدِ إبراهيمَ</b> عليه السلام، وجعلَ لها بابَين. فلمّا وَلِيَ ابنُ الزبيرِ أمرَ مكّة، وتصدّعتِ الكعبة، <b>أعادَ بناءَها</b> على ما أحبَّه النبيُّ ﷺ، كما في صحيحِ مسلم.<br><br>فكان حبُّه للمسجدِ ليس صلاةً فقط، بل <b>عنايةً ببيتِ اللهِ</b> وخدمةً له.",
+     "en": "The Messenger of Allah ﷺ had told Aisha, may Allah be pleased with her, that were it not that her people had only recently left disbelief, he would have rebuilt <b>the Kaaba</b> on <b>the foundations of Ibrahim</b>, peace be upon him, and given it two doors. When Ibn az-Zubayr came to govern Makkah and the Kaaba had become cracked and damaged, <b>he rebuilt it</b> the way the Prophet ﷺ had wished, as recorded in Sahih Muslim.<br><br>So his love for the mosque was not prayer alone, but <b>care for the House of Allah</b> and service to it."
+    }
+   },
+   {
+    "scene": "mosque",
+    "character": "🕊️",
+    "text": {
+     "ar": "هل تُحبُّ أن تكونَ <b>حمامةَ المسجد</b>؟ ابدأْ بأن تُبكِّرَ إلى الصلاة، وتدخلَ المسجدَ برجلِك اليمنى، وتُصلّيَ ركعتين قبلَ أن تجلس. وإذا وقفتَ في الصلاةِ فاسكُنْ واخشعْ، ولا تلتفتْ ولا تعبثْ بيديك، وتذكّرْ أنّك واقفٌ بين يدَيِ الله.<br><br>وساعِدْ في خدمةِ المسجد: رتِّبِ المصاحف، وحافظْ على نظافتِه، ولا تُزعجِ المصلّين. فالنبيُّ ﷺ ذكرَ من <b>السبعةِ الذين يُظِلُّهمُ اللهُ في ظلِّه</b>: <b>«ورجلٌ قلبُه معلّقٌ في المساجد»</b> — متّفقٌ عليه.",
+     "en": "Would you like to be <b>a dove of the mosque</b>? Start by coming early to prayer, entering the mosque with your right foot, and praying two rak‘ahs before you sit. When you stand in prayer, be still and humble; do not look around or fidget with your hands, and remember that you are standing before Allah.<br><br>And help serve the mosque: tidy the copies of the Quran, keep it clean, and do not disturb those praying. The Prophet ﷺ mentioned among <b>the seven whom Allah will shade in His shade</b>: <b>“a man whose heart is attached to the mosques”</b> — agreed upon."
     }
    }
   ],

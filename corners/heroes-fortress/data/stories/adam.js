@@ -256,11 +256,27 @@ HISN_STORIES.adam = [
     }
    },
    {
+    "scene": "fire",
+    "character": "🔥",
+    "text": {
+     "ar": "مَن هوَ إبليسُ أَصلاً؟ هل كانَ مِن المَلائِكَة؟ القُرآنُ يُجيبُ بِوُضوح: <b>﴿ إِلَّا إِبْلِيسَ كَانَ مِنَ الْجِنِّ فَفَسَقَ عَنْ أَمْرِ رَبِّهِ ﴾</b> — كانَ مِن <b>الجِنّ</b> المَخلوقينَ مِن نار، وكانَ يَعبُدُ اللهَ مَعَ المَلائِكَة، فَلَمّا جاءَ الامتِحانُ ظَهَرَ ما في قَلبِه!<br><br>المَلائِكَةُ سَجَدوا فَوراً بِلا سُؤالٍ ولا جِدال — لأنَّ طاعَةَ أَمرِ اللهِ عِندَهُم فَوقَ كُلِّ شَيء. أَمّا إبليسُ فَقاسَ بِعَقلِه: النّارُ أَفضَلُ مِن الطّين! فَجَعَلَ <b>رَأيَهُ فَوقَ أَمرِ رَبِّه</b> — وهذا بابُ كُلِّ ضَلال!",
+     "en": "Who was Iblis in the first place? Was he one of the angels? The Qur'an answers clearly: <b>\"…except Iblis. He was of the jinn and departed from the command of his Lord\"</b> — he was one of <b>the jinn</b>, created from fire, and he used to worship Allah alongside the angels. But when the test came, what was in his heart was revealed!<br><br>The angels bowed down at once, without question or argument — because obeying Allah's command came above everything for them. Iblis, however, reasoned with his own mind: fire is better than clay! He put <b>his own opinion above his Lord's command</b> — and that is the doorway to every misguidance!"
+    }
+   },
+   {
     "scene": "garden",
     "character": "💡",
     "text": {
      "ar": "طَرَدَ اللهُ إبليسَ مِن رَحمَتِه: <b>﴿ اخْرُجْ مِنْهَا فَإِنَّكَ رَجِيمٌ * وَإِنَّ عَلَيْكَ اللَّعْنَةَ إِلَىٰ يَوْمِ الدِّينِ ﴾</b><br><br>فَماذا فَعَلَ إبليس؟ لَم يَتُب! بل أَقسَمَ بِاللهِ: <b>﴿ لَأَقْعُدَنَّ لَهُمْ صِرَاطَكَ الْمُسْتَقِيمَ ﴾</b> — سَأَجلِسُ لَهُم في طَريقِ الهِدايَةِ وأُضِلُّهُم! مِن أَمامِهِم ومِن خَلفِهِم وعن أَيمانِهِم وعن شَمائِلِهِم!<br><br><b>الدَّرس:</b> الكِبرُ أَخطَرُ مِن كُلِّ ذَنب — لأنَّهُ يَمنَعُ صاحِبَهُ مِن التَّوبَة! آدَمُ أَخطَأَ وتابَ فَغُفِرَ لَه — إبليسُ تَكَبَّرَ فَلَم يَتُب فَلُعِنَ أَبَداً!",
      "en": "Allah expelled Iblis from His mercy: <b>﴿ \"Get out of here, for you are accursed * The curse upon you until the Day of Judgment\" ﴾</b><br><br>What did Iblis do? He didn't repent! He swore by Allah: <b>﴿ \"I will sit for them on Your straight path\" ﴾</b> — I will sit on the path of guidance and mislead them! From before them, behind them, their right, and their left!<br><br><b>The lesson:</b> Arrogance is more dangerous than any sin — because it prevents its owner from repenting! Adam sinned and repented and was forgiven — Iblis was arrogant and never repented, so he was cursed forever!"
+    }
+   },
+   {
+    "scene": "mountain",
+    "character": "🛡️",
+    "text": {
+     "ar": "طَلَبَ إبليسُ مُهلَةً: <b>﴿ قَالَ أَنْظِرْنِي إِلَىٰ يَوْمِ يُبْعَثُونَ ﴾</b> فَقالَ اللهُ: <b>﴿ قَالَ إِنَّكَ مِنَ الْمُنْظَرِينَ ﴾</b>. لَكِنَّ اللهَ طَمأَنَ المُؤمِنينَ بِوَعدٍ عَظيم: <b>﴿ إِنَّ عِبَادِي لَيْسَ لَكَ عَلَيْهِمْ سُلْطَانٌ إِلَّا مَنِ اتَّبَعَكَ مِنَ الْغَاوِينَ ﴾</b> — لا قُدرَةَ لَهُ على عِبادِ اللهِ الصّادِقين!<br><br>وقالَ النَّبيُّ ﷺ: <b>«لا يَدخُلُ الجَنَّةَ مَن كانَ في قَلبِهِ مِثقالُ ذَرَّةٍ مِن كِبر»</b>، وبَيَّنَ أنَّ الكِبرَ: <b>«بَطَرُ الحَقِّ وغَمطُ النّاس»</b> — رَدُّ الحَقِّ واحتِقارُ الآخَرين. <b>فَإذا قيلَ لَكَ الحَقّ فَاقبَلهُ</b>، ولا تَقُل أَبَداً: «أَنا أَفضَلُ مِنه»!",
+     "en": "Iblis asked for a delay: <b>\"Reprieve me until the Day they are resurrected,\"</b> and Allah said: <b>\"Indeed, you are of those reprieved.\"</b> But Allah reassured the believers with a great promise: <b>\"Indeed, My servants — no authority will you have over them, except those who follow you of the deviators\"</b> — he has no power over Allah's sincere servants!<br><br>The Prophet ﷺ said: <b>\"No one will enter Paradise who has an atom's weight of arrogance in his heart,\"</b> and he explained that arrogance is <b>\"rejecting the truth and looking down on people.\"</b> <b>So when you are told the truth, accept it</b>, and never say: \"I am better than him!\""
     }
    }
   ],
@@ -395,6 +411,14 @@ HISN_STORIES.adam = [
   },
   "pages": [
    {
+    "scene": "cosmos",
+    "character": "✨",
+    "text": {
+     "ar": "تَذَكَّر سُؤالَ المَلائِكَة: أَتَجعَلُ في الأَرضِ مَن يُفسِدُ فيها؟ فَقالَ اللهُ: إنّي أَعلَمُ ما لا تَعلَمون! والآنَ جاءَ وَقتُ أن يَظهَرَ <b>سِرُّ آدَم</b> أَمامَ الجَميع.<br><br>المَلائِكَةُ مَخلوقاتٌ عَظيمَةٌ مُطيعَة — لا يَعصونَ اللهَ أَبَداً. لَكِنَّ اللهَ أَعطى آدَمَ شَيئاً خاصّاً: <b>قُدرَةً على التَّعَلُّمِ والفَهم</b>، وأن يَعرِفَ الأَشياءَ بِأَسمائِها، ويُفَكِّرَ ويَكتَشِفَ ويَبني. وهذهِ القُدرَةُ هيَ ما يَحتاجُهُ مَن سَيَكونُ <b>خَليفَةً في الأَرض</b>!",
+     "en": "Remember the angels' question: Will You place on earth someone who will cause corruption there? And Allah said: I know what you do not know! Now the time had come for <b>Adam's secret</b> to be shown before everyone.<br><br>The angels are mighty, obedient creatures — they never disobey Allah. But Allah gave Adam something special: <b>the ability to learn and understand</b>, to know things by their names, and to think, discover and build. And this ability is exactly what is needed by the one who will be <b>a vicegerent on earth</b>!"
+    }
+   },
+   {
     "scene": "garden",
     "character": "🧠",
     "text": {
@@ -441,6 +465,22 @@ HISN_STORIES.adam = [
        }
       }
      ]
+    }
+   },
+   {
+    "scene": "garden",
+    "character": "👑",
+    "text": {
+     "ar": "قالَ اللهُ تَعالى: <b>﴿ قَالَ يَا آدَمُ أَنْبِئْهُمْ بِأَسْمَائِهِمْ فَلَمَّا أَنْبَأَهُمْ بِأَسْمَائِهِمْ قَالَ أَلَمْ أَقُلْ لَكُمْ إِنِّي أَعْلَمُ غَيْبَ السَّمَاوَاتِ وَالْأَرْضِ وَأَعْلَمُ مَا تُبْدُونَ وَمَا كُنْتُمْ تَكْتُمُونَ ﴾</b><br><br>وسَيَذكُرُ النّاسُ هذا الشَّرَفَ يَومَ القِيامَة! فَفي حَديثِ الشَّفاعَةِ في <b>صَحيحِ البُخاريّ</b> يَأتي النّاسُ إلى آدَمَ فَيَقولون: <b>«أَنتَ أَبو النّاس، خَلَقَكَ اللهُ بِيَدِه، وأَسجَدَ لَكَ مَلائِكَتَه، وعَلَّمَكَ أَسماءَ كُلِّ شَيء»</b>. العِلمُ إذاً تاجٌ وَضَعَهُ اللهُ على رَأسِ أَبينا آدَم!",
+     "en": "Allah the Exalted said: <b>\"He said: O Adam, inform them of their names. And when he had informed them of their names, He said: Did I not tell you that I know the unseen of the heavens and the earth, and I know what you reveal and what you have concealed?\"</b><br><br>And people will mention this honour on the Day of Resurrection! In the hadith of intercession in <b>Sahih al-Bukhari</b>, people come to Adam and say: <b>\"You are the father of mankind; Allah created you with His Hand, made His angels prostrate to you, and taught you the names of all things.\"</b> Knowledge, then, is a crown Allah placed on the head of our father Adam!"
+    }
+   },
+   {
+    "scene": "pen",
+    "character": "📚",
+    "text": {
+     "ar": "<b>الدُّروس:</b> كُلُّ عِلمٍ عِندَنا هوَ هِبَةٌ مِن الله: <b>﴿ عَلَّمَ الْإِنْسَانَ مَا لَمْ يَعْلَمْ ﴾</b>. ولِهذا أَمَرَ اللهُ نَبيَّهُ ﷺ أن يَدعو: <b>﴿ وَقُلْ رَبِّ زِدْنِي عِلْمًا ﴾</b> — فَادعُ بِها أَنتَ أَيضاً قَبلَ كُلِّ دَرس!<br><br>وتَعَلَّم أَدَبَ المَلائِكَة: حينَ لَم يَعرِفوا قالوا بِتَواضُع: «لا عِلمَ لَنا إلّا ما عَلَّمتَنا». فَلا تَخجَل أن تَقولَ: <b>«لا أَعرِف»</b> — ثُمَّ اسأَل وتَعَلَّم! فَالَّذي يَعتَرِفُ بِجَهلِهِ يَتَعَلَّم، والَّذي يَدَّعي العِلمَ يَبقى جاهِلاً!",
+     "en": "<b>The lessons:</b> every bit of knowledge we have is a gift from Allah: <b>\"He taught man that which he knew not.\"</b> That is why Allah commanded His Prophet ﷺ to pray: <b>\"And say: My Lord, increase me in knowledge\"</b> — so you too should say it before every lesson!<br><br>And learn the manners of the angels: when they did not know, they said humbly, \"We have no knowledge except what You have taught us.\" So do not be shy to say <b>\"I don't know\"</b> — then ask and learn! Whoever admits not knowing learns, and whoever pretends to know remains ignorant!"
     }
    }
   ],
@@ -576,6 +616,14 @@ HISN_STORIES.adam = [
   "pages": [
    {
     "scene": "garden",
+    "character": "🌿",
+    "text": {
+     "ar": "كانَ آدَمُ وَحيداً — لا أَحَدَ مِن جِنسِهِ يُكَلِّمُهُ ويَأنَسُ بِه. فَأَكرَمَهُ اللهُ بِنِعمَةٍ جَديدَة، قالَ تَعالى: <b>﴿ هُوَ الَّذِي خَلَقَكُمْ مِنْ نَفْسٍ وَاحِدَةٍ وَجَعَلَ مِنْهَا زَوْجَهَا لِيَسْكُنَ إِلَيْهَا ﴾</b><br><br>مِن نَفسٍ واحِدَةٍ جاءَ البَشَرُ كُلُّهُم — فَنَحنُ جَميعاً <b>إخوَةٌ مِن أَبٍ واحِدٍ وأُمٍّ واحِدَة</b>! ولِهذا أَوصى النَّبيُّ ﷺ بِالنِّساءِ خَيراً، وجَعَلَ بَيتَ الزَّوجَينِ <b>سَكَناً ورَحمَة</b> — كَما كانَ آدَمُ وحَوّاءُ أَوَّلَ أُسرَةٍ في الوُجود.",
+     "en": "Adam was alone — there was no one of his own kind to talk to him and keep him company. So Allah honoured him with a new blessing. The Exalted said: <b>\"It is He who created you from one soul and created from it its mate that he might dwell in tranquillity with her.\"</b><br><br>From one single soul came all of humanity — so we are all <b>brothers and sisters from one father and one mother</b>! That is why the Prophet ﷺ urged kindness to women, and made the home of a husband and wife <b>a place of tranquillity and mercy</b> — just as Adam and Hawwa were the very first family in existence."
+    }
+   },
+   {
+    "scene": "garden",
     "character": "🤝",
     "text": {
      "ar": "خَلَقَ اللهُ لِآدَمَ زَوجَتَهُ <b>حَوّاء</b> — لِيَسكُنَ إليها ويَأنَسَ بِها. ثُمَّ أَسكَنَهُما الجَنَّة — حَيثُ كُلُّ شَيءٍ مُباح: <b>﴿ وَكُلَا مِنْهَا رَغَدًا حَيْثُ شِئْتُمَا ﴾</b> — كُلا مِن كُلِّ مَكانٍ بِحُرِّيَّةٍ وسَعَة!<br><br>لَكِنَّ اللهَ وَضَعَ تَحذيراً واحِداً: <b>﴿ وَلَا تَقْرَبَا هَٰذِهِ الشَّجَرَةَ فَتَكُونَا مِنَ الظَّالِمِينَ ﴾</b> — لا تَقرَبا هذهِ الشَّجَرَة! ليسَ «لا تَأكُلا» فَقَط بل «لا تَقرَبا» — حتى لا تَقتَرِبا مِنها!<br><br>كُلُّ الجَنَّةِ مُباح — إلّا شَجَرَةً واحِدَة! امتِحانٌ بَسيطٌ في الظّاهِر — لَكِنَّهُ اختِبارٌ لِلطّاعَةِ والإرادَة!",
@@ -621,6 +669,22 @@ HISN_STORIES.adam = [
        }
       }
      ]
+    }
+   },
+   {
+    "scene": "spring",
+    "character": "💧",
+    "text": {
+     "ar": "وَصَفَ اللهُ لِآدَمَ نَعيمَ الجَنَّةِ فَقال: <b>﴿ إِنَّ لَكَ أَلَّا تَجُوعَ فِيهَا وَلَا تَعْرَىٰ ﴾ ﴿ وَأَنَّكَ لَا تَظْمَأُ فِيهَا وَلَا تَضْحَىٰ ﴾</b> — لا جوعَ ولا عُريَ ولا عَطَشَ ولا حَرَّ شَمس!<br><br>ولَم يَترُكهُما اللهُ بِلا تَحذيرٍ مِن العَدُوّ: <b>﴿ فَقُلْنَا يَا آدَمُ إِنَّ هَٰذَا عَدُوٌّ لَكَ وَلِزَوْجِكَ فَلَا يُخْرِجَنَّكُمَا مِنَ الْجَنَّةِ فَتَشْقَىٰ ﴾</b> — فَعَرَفا مَن هوَ عَدُوُّهُما مُنذُ البِدايَة! ولَم يُخبِرنا القُرآنُ بِنَوعِ الشَّجَرَة — لأنَّ المُهِمَّ هوَ <b>الطّاعَة</b> لا اسمُ الشَّجَرَة.",
+     "en": "Allah described to Adam the delights of Paradise: <b>\"Indeed, it is for you that you will not be hungry therein nor be unclothed. And indeed, you will not be thirsty therein or be hot from the sun\"</b> — no hunger, no nakedness, no thirst and no scorching sun!<br><br>And Allah did not leave them without a warning about their enemy: <b>\"So We said: O Adam, indeed this is an enemy to you and to your wife. Then let him not remove you from Paradise so you would suffer\"</b> — so they knew who their enemy was from the very beginning! The Qur'an did not tell us what kind of tree it was — because what matters is <b>obedience</b>, not the name of the tree."
+    }
+   },
+   {
+    "scene": "tree",
+    "character": "🚦",
+    "text": {
+     "ar": "<b>الدُّروس:</b> نِعَمُ اللهِ عَلَينا كَثيرَةٌ جِدّاً، والمَمنوعُ قَليلٌ جِدّاً — تَماماً كَالجَنَّة: كُلُّها مُباحَةٌ إلّا شَجَرَةً واحِدَة! فَلا تَنظُر إلى المَمنوعِ وتَنسَ آلافَ النِّعَم.<br><br>و«لا تَقرَبا» دَرسٌ لَكَ كُلَّ يَوم: إذا عَرَفتَ أنَّ لُعبَةً أو مَوقِعاً أو صُحبَةً تَجُرُّكَ إلى الخَطَأ — <b>فَابتَعِد عَنها مِن البِدايَة</b>! الَّذي يَقتَرِبُ مِن النّارِ يَحتَرِق، والَّذي يَبتَعِدُ عَنها يَسلَم.",
+     "en": "<b>The lessons:</b> Allah's blessings upon us are very many, and what is forbidden is very little — just like Paradise: all of it was allowed except one tree! So do not stare at the forbidden and forget thousands of blessings.<br><br>And \"do not approach\" is a lesson for you every day: if you know that a game, a website or a group of friends pulls you towards wrong — <b>stay away from it from the start</b>! Whoever goes near the fire gets burned, and whoever keeps away from it stays safe."
     }
    }
   ],
@@ -805,10 +869,26 @@ HISN_STORIES.adam = [
    },
    {
     "scene": "garden",
+    "character": "🍃",
+    "text": {
+     "ar": "انظُر كَيفَ سَمّى إبليسُ الشَّجَرَةَ المَمنوعَةَ بِاسمٍ جَميلٍ مُغرٍ: <b>﴿ فَوَسْوَسَ إِلَيْهِ الشَّيْطَانُ قَالَ يَا آدَمُ هَلْ أَدُلُّكَ عَلَىٰ شَجَرَةِ الْخُلْدِ وَمُلْكٍ لَا يَبْلَىٰ ﴾</b> — «شَجَرَةُ الخُلد»! و«مُلكٌ لا يَبلى»! كَذِبٌ في ثَوبٍ لامِع!<br><br>فَلَمّا أَكَلا جاءَ النِّداءُ مِن رَبِّهِما: <b>﴿ وَنَادَاهُمَا رَبُّهُمَا أَلَمْ أَنْهَكُمَا عَنْ تِلْكُمَا الشَّجَرَةِ وَأَقُلْ لَكُمَا إِنَّ الشَّيْطَانَ لَكُمَا عَدُوٌّ مُبِينٌ ﴾</b> — أَلَم أُحَذِّركُما؟ لَقَد كانَ التَّحذيرُ واضِحاً، لَكِنَّ الوَسوَسَةَ غَلَبَت لَحظَةً.",
+     "en": "See how Iblis gave the forbidden tree a beautiful, tempting name: <b>\"Then Satan whispered to him; he said: O Adam, shall I direct you to the tree of eternity and a kingdom that will not decay?\"</b> — \"the tree of eternity\"! \"A kingdom that never decays\"! A lie dressed in shiny clothes!<br><br>When they ate, the call came from their Lord: <b>\"And their Lord called to them: Did I not forbid you from that tree and tell you that Satan is to you a clear enemy?\"</b> — Did I not warn you? The warning had been clear, but the whispering won for a moment."
+    }
+   },
+   {
+    "scene": "garden",
     "character": "💡",
     "text": {
      "ar": "<b>﴿ وَعَصَىٰ آدَمُ رَبَّهُ فَغَوَىٰ ﴾</b> — عَصى آدَمُ! اعتَرَفَ القُرآنُ بِخَطَأِ آدَمَ بِوُضوح — لَكِنَّ الفَرقَ بَينَ آدَمَ وإبليس: <b>آدَمُ نَدِمَ فَوراً!</b><br><br><b>الدُّروس:</b> إبليسُ يَأتي بِلِباسِ النّاصِح — فَاحذَر مَن يُزَيِّنُ لَكَ المَعصيَة! والشَّهوَةُ تُعمي البَصيرَة — آدَمُ عَلِمَ الأَسماءَ كُلَّها ومَعَ ذلكَ وَقَعَ في الخَطَأ حينَ ضَعُفَ أَمامَ الإغراء!<br><br><b>لَكِنَّ القِصَّةَ لَم تَنتَهِ هُنا — بل بَدَأَت أَجمَلُ لَحَظاتِها: لَحظَةُ التَّوبَة!</b>",
      "en": "<b>﴿ \"And Adam disobeyed his Lord and erred\" ﴾</b> — Adam disobeyed! The Quran clearly acknowledged Adam's mistake — but the difference between Adam and Iblis: <b>Adam immediately regretted!</b><br><br><b>The lessons:</b> Iblis comes dressed as an advisor — beware whoever beautifies sin for you! Desire blinds insight — Adam knew all the names yet fell when weak before temptation!<br><br><b>But the story didn't end here — its most beautiful moments began: the moment of repentance!</b>"
+    }
+   },
+   {
+    "scene": "night",
+    "character": "🛡️",
+    "text": {
+     "ar": "<b>كَيفَ تَحمي نَفسَك؟</b> إبليسُ اليَومَ لا يَأتيكَ بِشَجَرَة — بل يَأتيكَ بِكَلامٍ لَطيف: «جَرِّب مَرَّةً واحِدَةً فَقَط»، «لَن يَعرِفَ أَحَد»، «الكُلُّ يَفعَلُ ذلِك»! هذهِ هيَ «شَجَرَةُ الخُلد» في زَمانِنا.<br><br>فَإذا سَمِعتَ في نَفسِكَ مِثلَ هذا الصَّوت، فَتَذَكَّر قِصَّةَ أَبيكَ آدَم، وقُل: <b>«أَعوذُ بِاللهِ مِن الشَّيطانِ الرَّجيم»</b>، وابتَعِد عن المَكان، واستَشِر مَن تَثِقُ بِهِ مِن أَهلِك. <b>العَدُوُّ المَعروفُ أَسهَلُ في المُواجَهَة!</b>",
+     "en": "<b>How do you protect yourself?</b> Iblis today does not come to you with a tree — he comes with soft words: \"Just try it once,\" \"No one will know,\" \"Everyone does it!\" That is the \"tree of eternity\" of our time.<br><br>So when you hear such a voice inside yourself, remember the story of your father Adam and say: <b>\"I seek refuge in Allah from Satan the outcast,\"</b> move away from the place, and talk to someone in your family you trust. <b>An enemy you recognise is easier to face!</b>"
     }
    }
   ],
@@ -998,6 +1078,22 @@ HISN_STORIES.adam = [
      "ar": "وتَلَقّى آدَمُ مِن رَبِّهِ كَلِمات: <b>﴿ فَتَلَقَّىٰ آدَمُ مِن رَّبِّهِ كَلِمَاتٍ فَتَابَ عَلَيْهِ إِنَّهُ هُوَ التَّوَّابُ الرَّحِيمُ ﴾</b> — عَلَّمَهُ اللهُ كَيفَ يَتوبُ فَتابَ عليه! اللهُ لَم يَكتَفِ بِقَبولِ التَّوبَةِ بل عَلَّمَهُ كَيفَ يَتوب!<br><br><b>هذهِ رِسالَةٌ لِكُلِّ إنسان:</b> لا يوجَدُ ذَنبٌ أَكبَرُ مِن رَحمَةِ الله! آدَمُ أَبو البَشَرِ أَخطَأَ — وتابَ — فَغُفِرَ لَه. فَلا تَيأَس مِن رَحمَةِ اللهِ مَهما كانَ ذَنبُك!<br><br><b>والفَرقُ الخالِد:</b> آدَمُ قالَ «ظَلَمنا أَنفُسَنا» فَغُفِرَ لَه — إبليسُ قالَ «أَنا خَيرٌ مِنه» فَلُعِنَ. التَّواضُعُ يَفتَحُ بابَ الرَّحمَةِ والكِبرُ يُغلِقُه!",
      "en": "Adam received words from his Lord: <b>﴿ \"Then Adam received from his Lord words, and He accepted his repentance. Indeed, He is the Accepting of Repentance, the Merciful\" ﴾</b> — Allah taught him how to repent and accepted his repentance! Allah didn't just accept but taught him how!<br><br><b>This is a message for every human:</b> No sin is greater than Allah's mercy! Adam, father of humanity, sinned — repented — and was forgiven. So never despair of Allah's mercy no matter your sin!<br><br><b>The eternal difference:</b> Adam said \"we wronged ourselves\" and was forgiven — Iblis said \"I am better than him\" and was cursed. Humility opens mercy's door and arrogance closes it!"
     }
+   },
+   {
+    "scene": "rain",
+    "character": "🌧️",
+    "text": {
+     "ar": "ولَم تَكُن التَّوبَةُ نِهايَةَ الحِكايَة، بل بِدايَةَ مَرتَبَةٍ أَعلى: <b>﴿ ثُمَّ اجْتَبَاهُ رَبُّهُ فَتَابَ عَلَيْهِ وَهَدَىٰ ﴾</b> — اختارَهُ اللهُ واصطَفاه، وجَعَلَهُ نَبيّاً يَهدي أَبناءَه!<br><br>وقالَ النَّبيُّ ﷺ في <b>صَحيحِ مُسلِم</b>: <b>«إنَّ اللهَ يَبسُطُ يَدَهُ بِاللَّيلِ لِيَتوبَ مُسيءُ النَّهار، ويَبسُطُ يَدَهُ بِالنَّهارِ لِيَتوبَ مُسيءُ اللَّيل، حتّى تَطلُعَ الشَّمسُ مِن مَغرِبِها»</b>. بابُ التَّوبَةِ مَفتوحٌ لَيلاً ونَهاراً — يَنتَظِرُ كُلَّ مَن أَخطَأَ!",
+     "en": "Repentance was not the end of the tale, but the beginning of a higher rank: <b>\"Then his Lord chose him and turned to him in forgiveness and guided him\"</b> — Allah chose and selected him, and made him a prophet who guided his children!<br><br>The Prophet ﷺ said, in <b>Sahih Muslim</b>: <b>\"Allah stretches out His Hand at night so that the one who did wrong in the day may repent, and He stretches out His Hand in the day so that the one who did wrong at night may repent — until the sun rises from the west.\"</b> The door of repentance is open night and day — waiting for everyone who has made a mistake!"
+    }
+   },
+   {
+    "scene": "sprout",
+    "character": "🌱",
+    "text": {
+     "ar": "<b>كَيفَ تَتوبُ مِثلَ آدَم؟</b> أَوَّلاً: <b>اعتَرِف</b> بِخَطَئِكَ ولا تَلُم غَيرَك. ثانياً: <b>اندَم</b> بِقَلبِكَ واترُك الخَطَأَ فَوراً. ثالِثاً: <b>اعزِم</b> ألّا تَعود. ورابِعاً: إن ظَلَمتَ أَحَداً <b>فَاعتَذِر لَهُ وأَعِد لَهُ حَقَّه</b>.<br><br>ثُمَّ ادعُ بِدُعاءِ أَبَوَيكَ: «رَبَّنا ظَلَمنا أَنفُسَنا…»، وثِق أنَّ اللهَ يُحِبُّ التَّوّابين. فَإذا كَسَرتَ شَيئاً في البَيت أو أَسَأتَ إلى أَخيك — لا تَختَبِئ ولا تُبَرِّر، بل <b>كُن شُجاعاً واعتَرِف</b>، فَهذا خُلُقُ أَبيكَ آدَم!",
+     "en": "<b>How do you repent like Adam?</b> First: <b>admit</b> your mistake and do not blame others. Second: <b>regret</b> it in your heart and stop the wrong at once. Third: <b>resolve</b> not to go back to it. And fourth: if you wronged someone, <b>apologise to them and give back their right</b>.<br><br>Then pray with the prayer of your first parents: \"Our Lord, we have wronged ourselves…\", and trust that Allah loves those who repent. If you break something at home or hurt your brother — do not hide and do not make excuses, but <b>be brave and admit it</b>, for that is the character of your father Adam!"
+    }
    }
   ],
   "quiz": [
@@ -1180,11 +1276,27 @@ HISN_STORIES.adam = [
     }
    },
    {
+    "scene": "dwellings",
+    "character": "🏡",
+    "text": {
+     "ar": "بَدَأَت الحَياةُ الجَديدَةُ على الأَرض — حَياةُ العَمَلِ والتَّعَبِ والزِّراعَةِ والبِناء. وأَخبَرَهُمُ اللهُ بِقانونِها: <b>﴿ قَالَ فِيهَا تَحْيَوْنَ وَفِيهَا تَمُوتُونَ وَمِنْهَا تُخْرَجُونَ ﴾</b> — هُنا الحَياة، وهُنا المَوت، ومِن هُنا البَعثُ يَومَ القِيامَة!<br><br>وقالَ النَّبيُّ ﷺ في <b>صَحيحِ مُسلِم</b>: <b>«خَيرُ يَومٍ طَلَعَت عَلَيهِ الشَّمسُ يَومُ الجُمُعَة: فيهِ خُلِقَ آدَم، وفيهِ أُدخِلَ الجَنَّة، وفيهِ أُخرِجَ مِنها»</b>. فَكُلَّما جاءَت الجُمُعَةُ تَذَكَّر قِصَّةَ أَبيكَ آدَم!",
+     "en": "A new life began on earth — a life of work and effort, of farming and building. And Allah told them its law: <b>\"He said: Therein you will live, and therein you will die, and from it you will be brought forth\"</b> — here is life, here is death, and from here comes the resurrection on the Day of Judgement!<br><br>The Prophet ﷺ said, in <b>Sahih Muslim</b>: <b>\"The best day on which the sun rises is Friday: on it Adam was created, on it he was admitted into Paradise, and on it he was sent out of it.\"</b> So every time Friday comes, remember the story of your father Adam!"
+    }
+   },
+   {
     "scene": "garden",
     "character": "💡",
     "text": {
      "ar": "<b>الدُّروس:</b> الأَرضُ لَيسَت مَنفىً بل مَيدانَ عَمَل — جِئنا لِنُعَمِّرَها ونَعبُدَ اللهَ فيها! والهِدايَةُ الإلَهيَّةُ مَوجودَةٌ دائِماً — اللهُ لا يَترُكُ عِبادَهُ بِلا نور!<br><br><b>﴿ قُلْنَا اهْبِطُوا مِنْهَا جَمِيعًا فَإِمَّا يَأْتِيَنَّكُم مِّنِّي هُدًى ﴾</b> — مَعَ كُلِّ هُبوطٍ هُناكَ هِدايَة! ومَعَ كُلِّ ابتِلاءٍ هُناكَ نور! هذا وَعدُ اللهِ الَّذي لا يَتَخَلَّف!",
      "en": "<b>The lessons:</b> Earth is not exile but a field of action — we came to build it and worship Allah in it! Divine guidance is always present — Allah never leaves His servants without light!<br><br><b>﴿ \"Go down from it all — when guidance comes to you from Me\" ﴾</b> — with every descent there is guidance! With every trial there is light! This is Allah's promise that never fails!"
+    }
+   },
+   {
+    "scene": "globe",
+    "character": "👨‍👩‍👧‍👦",
+    "text": {
+     "ar": "ثُمَّ نادى اللهُ <b>أَبناءَ آدَمَ</b> جَميعاً — ونَحنُ مِنهُم: <b>﴿ يَا بَنِي آدَمَ لَا يَفْتِنَنَّكُمُ الشَّيْطَانُ كَمَا أَخْرَجَ أَبَوَيْكُمْ مِنَ الْجَنَّةِ ﴾</b> — احذَروا العَدُوَّ القَديمَ نَفسَه!<br><br>وذَكَّرَنا بِنِعمَةِ اللِّباس: <b>﴿ وَلِبَاسُ التَّقْوَىٰ ذَٰلِكَ خَيْرٌ ﴾</b> — أَجمَلُ ثَوبٍ تَلبَسُهُ هوَ <b>تَقوى الله</b>! فَعِش على الأَرضِ عامِلاً نافِعاً، واتَّبِع هُدى الله، لِتَعودَ يَوماً إلى البَيتِ الأَوَّل: <b>الجَنَّة</b>!",
+     "en": "Then Allah called out to <b>all the children of Adam</b> — and we are among them: <b>\"O children of Adam, let not Satan tempt you as he removed your parents from Paradise\"</b> — beware of the very same old enemy!<br><br>And He reminded us of the blessing of clothing: <b>\"But the clothing of righteousness — that is best\"</b> — the most beautiful garment you can wear is <b>the fear of Allah</b>! So live on earth as a useful worker, follow Allah's guidance, and one day you may return to the first home: <b>Paradise</b>!"
     }
    }
   ],
@@ -1320,6 +1432,14 @@ HISN_STORIES.adam = [
   "pages": [
    {
     "scene": "desert",
+    "character": "📖",
+    "text": {
+     "ar": "يَبدَأُ القُرآنُ هذهِ القِصَّةَ بِقَولِه: <b>﴿ وَاتْلُ عَلَيْهِمْ نَبَأَ ابْنَيْ آدَمَ بِالْحَقِّ ﴾</b> — أي اقرَأ عَلَيهِم الخَبَرَ الصّادِقَ كَما وَقَع. كَبِرَ أَولادُ آدَمَ على الأَرض، وبَدَأَت أَوَّلُ أُسرَةٍ تَعيشُ امتِحانَ الحَياة.<br><br>كانَ الأَخَوانِ يَعيشانِ مَعاً، يَعرِفانِ اللهَ ويَسمَعانِ مِن أَبيهِما آدَمَ عن الجَنَّةِ وعن عَدُوِّهِما إبليس. لَكِنَّ القَلبَ إذا دَخَلَهُ <b>الحَسَد</b> ولَم يُطرَد، كَبُرَ حَتّى يُعمي صاحِبَه!",
+     "en": "The Qur'an begins this story by saying: <b>\"And recite to them the story of Adam's two sons, in truth\"</b> — that is, tell them the true account just as it happened. Adam's children grew up on earth, and the first family began living the test of life.<br><br>The two brothers lived together; they knew Allah and heard from their father Adam about Paradise and about their enemy Iblis. But when <b>envy</b> enters a heart and is not driven out, it grows until it blinds its owner!"
+    }
+   },
+   {
+    "scene": "desert",
     "character": "🧔",
     "text": {
      "ar": "وُلِدَ لِآدَمَ ابنان: <b>هابيل</b> — الطَّيِّبُ المُتَواضِع، و<b>قابيل</b> — الغَليظُ الحَسود. قَرَّبا قُرباناً لِلَّه — فَتَقَبَّلَ اللهُ قُربانَ هابيلَ ولَم يَتَقَبَّل قُربانَ قابيل!<br><br>اشتَعَلَ الحَسَدُ في قَلبِ قابيل: <b>﴿ لَأَقْتُلَنَّكَ ﴾!</b> فَأَجابَ هابيلُ بِهُدوءٍ عَجيب: <b>﴿ إِنَّمَا يَتَقَبَّلُ اللَّهُ مِنَ الْمُتَّقِينَ ﴾</b> — اللهُ يَقبَلُ مِن المُتَّقين! أَصلِح نَفسَكَ بَدَلَ أن تَقتُلَني!<br><br>ثُمَّ قالَ كَلِمَةً تَكشِفُ عَظَمَةَ إيمانِه: <b>﴿ لَئِن بَسَطتَ إِلَيَّ يَدَكَ لِتَقْتُلَنِي مَا أَنَا بِبَاسِطٍ يَدِيَ إِلَيْكَ لِأَقْتُلَكَ إِنِّي أَخَافُ اللَّهَ رَبَّ الْعَالَمِينَ ﴾</b> — حتى لو قَتَلتَني لَن أَقتُلَكَ — لأنّي أَخافُ اللهَ رَبَّ العالَمين!",
@@ -1373,6 +1493,14 @@ HISN_STORIES.adam = [
     "text": {
      "ar": "<b>﴿ فَطَوَّعَتْ لَهُ نَفْسُهُ قَتْلَ أَخِيهِ فَقَتَلَهُ فَأَصْبَحَ مِنَ الْخَاسِرِينَ ﴾</b> — سَهَّلَت لَهُ نَفسُهُ الأَمّارَةُ قَتلَ أَخيهِ فَقَتَلَه! أَوَّلُ دَمٍ يُسفَكُ على الأَرض!<br><br>ثُمَّ حارَ قابيل: ماذا يَفعَلُ بِجَسَدِ أَخيه؟ فَبَعَثَ اللهُ <b>غُراباً</b> يَبحَثُ في الأَرض — يَحفِرُ حُفرَةً ويَدفِنُ غُراباً آخَرَ مَيِّتاً! <b>﴿ قَالَ يَا وَيْلَتَا أَعَجَزْتُ أَنْ أَكُونَ مِثْلَ هَٰذَا الْغُرَابِ فَأُوَارِيَ سَوْءَةَ أَخِي ﴾</b> — يا وَيلَتي! أَعَجَزتُ عن أن أَكونَ كَهذا الغُراب! <b>فَأَصبَحَ مِن النّادِمين!</b><br><br>قالَ النَّبيُّ ﷺ: <b>«لا تُقتَلُ نَفسٌ ظُلماً إلّا كانَ على ابنِ آدَمَ الأَوَّلِ كِفلٌ مِن دَمِها — لأنَّهُ أَوَّلُ مَن سَنَّ القَتل»</b>",
      "en": "<b>﴿ \"His soul permitted him the murder of his brother, so he killed him and became among the losers\" ﴾</b> — his commanding soul made killing easy, so he killed him! The first blood ever shed on earth!<br><br>Then Qabil was confused: what to do with his brother's body? Allah sent a <b>crow</b> digging in the earth — scratching a hole and burying another dead crow! <b>﴿ \"He said: Woe to me! Am I unable to be like this crow and bury my brother's body?\" ﴾</b> — Woe to me! I couldn't even be like this crow! <b>He became among the regretful!</b><br><br>The Prophet ﷺ said: <b>\"No soul is killed unjustly except that a share of its blood is upon the first son of Adam — because he was the first to establish the practice of killing\"</b>"
+    }
+   },
+   {
+    "scene": "sprout",
+    "character": "💚",
+    "text": {
+     "ar": "بَعدَ هذهِ الجَريمَةِ الأولى قالَ اللهُ تَعالى: <b>﴿ مَنْ قَتَلَ نَفْسًا بِغَيْرِ نَفْسٍ أَوْ فَسَادٍ فِي الْأَرْضِ فَكَأَنَّمَا قَتَلَ النَّاسَ جَمِيعًا وَمَنْ أَحْيَاهَا فَكَأَنَّمَا أَحْيَا النَّاسَ جَمِيعًا ﴾</b> — حَياةُ كُلِّ إنسانٍ غالِيَةٌ عِندَ الله!<br><br>وقالَ النَّبيُّ ﷺ: <b>«لا تَحاسَدوا، ولا تَباغَضوا… وكونوا عِبادَ اللهِ إخواناً»</b>. فَإذا رَأَيتَ أَخاكَ أو صَديقَكَ نالَ شَيئاً جَميلاً، فَقُل: <b>«ما شاءَ الله، بارَكَ اللهُ لَه»</b>، واطلُب مِن اللهِ مِن فَضلِه. واطرُد الحَسَدَ مِن قَلبِكَ قَبلَ أن يَكبَر!",
+     "en": "After this first crime, Allah the Exalted said: <b>\"Whoever kills a soul unless for a soul or for corruption in the land — it is as if he had slain mankind entirely. And whoever saves one — it is as if he had saved mankind entirely\"</b> — every human life is precious to Allah!<br><br>The Prophet ﷺ said: <b>\"Do not envy one another, do not hate one another… and be, O servants of Allah, brothers.\"</b> So when you see your brother or your friend receive something lovely, say: <b>\"Ma sha' Allah, may Allah bless it for him,\"</b> and ask Allah from His bounty. Drive envy out of your heart before it grows!"
     }
    }
   ],

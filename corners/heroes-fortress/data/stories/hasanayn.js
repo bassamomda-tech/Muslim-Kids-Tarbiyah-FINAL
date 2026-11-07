@@ -11,6 +11,14 @@ HISN_STORIES.hasanayn = [
   },
   "pages": [
    {
+    "scene": "madinah",
+    "character": "👶",
+    "text": {
+     "ar": "في <b>المدينةِ المنوّرة</b>، في بيتٍ صغيرٍ قريبٍ من المسجد، كان يعيشُ <b>عليُّ بنُ أبي طالب</b> وزوجتُه <b>فاطمةُ</b> بنتُ رسولِ اللهِ ﷺ. وفي السنةِ الثالثةِ للهجرةِ وُلِدَ لهما <b>الحسن</b>، ثم وُلِدَ بعدَه بنحوِ سنةٍ أخوه <b>الحسين</b>.<br><br>فرحَ النبيُّ ﷺ بحفيدَيه فرحاً عظيماً، وذبحَ عن كلِّ واحدٍ منهما <b>كبشاً</b> عقيقةً شكراً لله. وكبرَ الحسنُ وهو <b>أشبهُ الناسِ برسولِ اللهِ ﷺ</b>، حتى إنّ <b>أبا بكرٍ</b> رآه يلعبُ مع الصبيانِ فحملَه على عاتقِه وقال: إنّه يشبهُ النبيَّ ﷺ ولا يشبهُ عليّاً، وعليٌّ يضحك.",
+     "en": "In <b>Madinah</b>, in a small house close to the mosque, lived <b>Ali ibn Abi Talib</b> and his wife <b>Fatima</b>, the daughter of the Messenger of Allah ﷺ. In the third year after the Hijra <b>al-Hasan</b> was born to them, and about a year later his brother <b>al-Husayn</b>.<br><br>The Prophet ﷺ rejoiced greatly at his two grandsons, and sacrificed <b>a ram</b> for each of them as an aqiqah, in thanks to Allah. Al-Hasan grew up <b>resembling the Messenger of Allah ﷺ more than anyone</b> — so much that <b>Abu Bakr</b> once saw him playing with the boys, lifted him onto his shoulder and said he resembled the Prophet ﷺ and not Ali, while Ali laughed."
+    }
+   },
+   {
     "scene": "garden",
     "character": "🌿",
     "text": {
@@ -57,6 +65,14 @@ HISN_STORIES.hasanayn = [
        }
       }
      ]
+    }
+   },
+   {
+    "scene": "mosque",
+    "character": "💞",
+    "text": {
+     "ar": "ولم تكن هذه الرحمةُ للحسنِ والحسينِ وحدَهما؛ فقد كان النبيُّ ﷺ يُصلّي وهو يحملُ حفيدتَه الصغيرةَ <b>أُمامةَ بنتَ زينب</b>، فإذا سجدَ وضعَها، وإذا قامَ حملَها. وكان إذا سمعَ بكاءَ طفلٍ في الصلاةِ خفّفَها رحمةً بأمِّه.<br><br>علّمنا النبيُّ ﷺ أنّ <b>الرحمةَ بالأطفالِ من الإيمان</b>، وأنّ القبلةَ والحضنَ والكلمةَ الحانيةَ ليست ضعفاً بل خُلُقُ الأنبياء.<br><br>فإذا كان عندك أخٌ صغيرٌ يا بطل، فالعبْ معه بلطف، واصبرْ عليه إذا أزعجك، وكنْ له كبيراً رحيماً كما كان النبيُّ ﷺ مع الحسنِ والحسين.",
+     "en": "This mercy was not only for al-Hasan and al-Husayn. The Prophet ﷺ would pray while carrying his little granddaughter <b>Umama, daughter of Zaynab</b>: when he prostrated he put her down, and when he stood he picked her up. And when he heard a baby crying during prayer, he would shorten it out of mercy for its mother.<br><br>The Prophet ﷺ taught us that <b>mercy to children is part of faith</b>, and that a kiss, a hug and a tender word are not weakness — they are the character of the prophets.<br><br>So if you have a little brother or sister, young hero, play with them gently, be patient when they annoy you, and be a merciful big one to them, as the Prophet ﷺ was with al-Hasan and al-Husayn."
     }
    }
   ],
@@ -192,6 +208,14 @@ HISN_STORIES.hasanayn = [
   "pages": [
    {
     "scene": "mosque",
+    "character": "🕌",
+    "text": {
+     "ar": "كان <b>المسجدُ النبويُّ</b> في المدينةِ بسيطاً جميلاً: جدرانُه من اللَّبِن، وسقفُه من جريدِ النخل، وأعمدتُه من جذوعِ النخل. وكان فيه <b>منبرٌ</b> من خشبٍ له درجاتٌ قليلة، يقفُ عليه النبيُّ ﷺ ليخطبَ الناسَ يومَ الجمعة.<br><br>وكان الصحابةُ يجلسونَ أمامَه صامتينَ كأنّ على رؤوسِهم الطير، يسمعونَ كلَّ كلمةٍ ويحفظونَها. وكان الأطفالُ يدخلونَ المسجدَ مع أهلِهم، فلم يكن النبيُّ ﷺ يطردُهم أو يقسو عليهم، بل كان يفرحُ بهم.",
+     "en": "<b>The Prophet's Mosque</b> in Madinah was simple and beautiful: its walls were of mud brick, its roof of palm fronds, and its pillars of palm trunks. It had a wooden <b>pulpit</b> with a few steps, on which the Prophet ﷺ stood to address the people on Friday.<br><br>The companions sat before him in silence, as if birds were perched on their heads, listening to every word and memorizing it. Children came into the mosque with their families, and the Prophet ﷺ did not drive them away or treat them harshly — he was glad to see them."
+    }
+   },
+   {
+    "scene": "mosque",
     "character": "👑",
     "text": {
      "ar": "كان النبيُّ ﷺ يخطبُ الناسَ يوماً على <b>المنبر</b>، فأقبلَ <b>الحسنُ والحسينُ</b> — وهما صغيران — عليهما قميصانِ أحمران، <b>يمشيان ويتعثّران</b>. فنزلَ النبيُّ ﷺ من المنبرِ فحملهما ووضعهما بين يدَيه، ثم قال: صدقَ اللهُ: ﴿ إِنَّمَا أَمْوَالُكُمْ وَأَوْلَادُكُمْ فِتْنَةٌ ﴾، نظرتُ إلى هذين الصبيَّين يمشيان ويعثُران فلم أصبرْ حتى قطعتُ حديثي ورفعتُهما.<br><br>وبشّرهما ﷺ بشارةً عظيمة فقال: <b>«الحسنُ والحسينُ سيّدا شبابِ أهلِ الجنّة»</b>، وقال: <b>«هما ريحانتايَ من الدنيا»</b> — والريحانةُ نبتةٌ طيّبةُ الرائحة، يشمُّها الإنسانُ فيفرح.<br><br>لكنّ الحبَّ لم يكن تدليلاً بلا تربية؛ فقد أخذَ الحسنُ وهو صغيرٌ <b>تمرةً من تمرِ الصدقة</b> ووضعها في فمِه، فقال له النبيُّ ﷺ: <b>«كخ كخ»</b> ليُخرجَها، ثم قال: <b>«أمَا شعرتَ أنّا لا نأكلُ الصدقة؟»</b>. هكذا جمعَ ﷺ بين <b>الحبِّ والتربية</b>.",
@@ -237,6 +261,14 @@ HISN_STORIES.hasanayn = [
        }
       }
      ]
+    }
+   },
+   {
+    "scene": "palm",
+    "character": "🌴",
+    "text": {
+     "ar": "ولماذا أخرجَ النبيُّ ﷺ التمرةَ من فمِ حفيدِه الحبيب؟ لأنّ <b>الصدقةَ لا تحلُّ للنبيِّ ﷺ ولا لأهلِ بيتِه</b>، بل هي حقٌّ للفقراءِ والمساكين. فعلّمَ الحسنَ وهو صغيرٌ أن يعرفَ الحلالَ من الحرام، وأن يحترمَ حقَّ غيرِه ولو كان تمرةً واحدة.<br><br>فانظرْ يا بطل: لم يضربْه ولم يصرخْ عليه، بل قالَ كلمةً لطيفةً يفهمُها الطفل، ثم شرحَ له السبب. وهكذا يُحبُّك والداك ويُعلّمانِك معاً.<br><br>فإذا نصحك أبوك أو أمُّك، فاعلمْ أنّ ذلك من حبِّهما لك، كما أحبَّ النبيُّ ﷺ ريحانتَيه.",
+     "en": "Why did the Prophet ﷺ take the date out of his beloved grandson's mouth? Because <b>charity is not permitted for the Prophet ﷺ or his household</b>; it is the right of the poor and needy. So he taught al-Hasan, while still small, to know the lawful from the unlawful, and to respect the rights of others — even if only a single date.<br><br>See, young hero: he did not hit him or shout at him. He said a gentle word a child could understand, then explained the reason. In the same way your parents love you and teach you at the same time.<br><br>So when your father or mother advises you, know that it comes from their love for you — just as the Prophet ﷺ loved his two sweet basils."
     }
    }
   ],
@@ -371,6 +403,14 @@ HISN_STORIES.hasanayn = [
   },
   "pages": [
    {
+    "scene": "madinah",
+    "character": "🌙",
+    "text": {
+     "ar": "توفّي النبيُّ ﷺ والحسنُ ما زالَ صغيراً، ثم لحقت به أمُّه <b>فاطمةُ</b> بعدَ أشهرٍ قليلة. فكبرَ الحسنُ في رعايةِ أبيه <b>عليٍّ</b>، يحبُّه الصحابةُ ويُكرمونَه لقرابتِه من رسولِ اللهِ ﷺ.<br><br>وكبرت معه تلك الكلمةُ التي قالها جدُّه على المنبر. ومرّت السنوات، وصار أبوه عليٌّ خليفةً للمسلمين، ثم استُشهِدَ سنةَ ٤٠هـ. فبايعَ أهلُ العراقِ الحسنَ خليفةً بعدَه، وكان أهلُ الشامِ مع <b>معاويةَ بنِ أبي سفيان</b>، وصار المسلمونَ جيشَين كبيرَين متقابلَين.",
+     "en": "The Prophet ﷺ passed away while al-Hasan was still young, and his mother <b>Fatima</b> followed him a few months later. Al-Hasan grew up in the care of his father <b>Ali</b>, loved and honoured by the companions for his closeness to the Messenger of Allah ﷺ.<br><br>The words his grandfather had spoken on the pulpit grew up with him. The years passed; his father Ali became caliph of the Muslims and was then martyred in 40 AH. The people of Iraq pledged allegiance to al-Hasan as caliph after him, while the people of Syria were with <b>Mu'awiya ibn Abi Sufyan</b>, and the Muslims became two large armies facing each other."
+    }
+   },
+   {
     "scene": "mosque",
     "character": "🕊️",
     "text": {
@@ -417,6 +457,14 @@ HISN_STORIES.hasanayn = [
        }
       }
      ]
+    }
+   },
+   {
+    "scene": "madinah",
+    "character": "🤝",
+    "text": {
+     "ar": "يروي <b>الحسنُ البصريُّ</b> في صحيحِ البخاريّ أنّ الحسنَ بنَ عليٍّ واجهَ معاويةَ بكتائبَ كأمثالِ الجبال، فأرسلَ إليه معاويةُ رجلَين من قريشٍ يعرضانِ عليه الصلح، فقَبِلَ الحسنُ الصلحَ وهو قويٌّ قادر، لا خائفٌ ولا عاجز.<br><br>ثم رجعَ إلى <b>المدينة</b>، فعاشَ فيها عابداً كريماً يُكرمُ الضيفَ ويُعطي الفقير، حتى توفّي ودُفِنَ في <b>البقيع</b>.<br><br>وقال النبيُّ ﷺ: <b>«أنا زعيمٌ ببيتٍ في رَبَضِ الجنّةِ لمَن تركَ المِراءَ وإن كان مُحِقّاً»</b>. فإذا اختلفتَ مع أخيك أو صديقِك يا بطل، فكنْ أنت الذي يبدأُ بالصلح.",
+     "en": "<b>Al-Hasan al-Basri</b> narrates in Sahih al-Bukhari that al-Hasan ibn Ali faced Mu'awiya with battalions like mountains. Mu'awiya sent him two men of Quraysh offering a peace agreement, and al-Hasan accepted peace while strong and able — not afraid and not helpless.<br><br>Then he returned to <b>Madinah</b>, where he lived as a devout and generous man, honouring guests and giving to the poor, until he passed away and was buried in <b>al-Baqi'</b>.<br><br>The Prophet ﷺ said: <b>\"I guarantee a house on the outskirts of Paradise for whoever gives up arguing, even if he is in the right.\"</b> So if you disagree with your brother or friend, young hero, be the one who makes peace first."
     }
    }
   ],

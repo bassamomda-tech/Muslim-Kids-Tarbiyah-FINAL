@@ -11,6 +11,14 @@ HISN_STORIES.sulayman = [
   },
   "pages": [
    {
+    "scene": "scales",
+    "character": "👶",
+    "text": {
+     "ar": "مُنذُ صِغَرِه ظَهَرَت حِكمَةُ <b>سُلَيمان</b>! حَدَّثَنا النَّبِيُّ ﷺ — كما في صَحيحِ البُخاريِّ ومُسلِم — أنَّ امرَأَتَينِ كانَ مَعَهُما ابناهُما، فَجاءَ الذِّئبُ فَذَهَبَ بِابنِ إحداهُما. فَقالَت كُلُّ واحِدَةٍ: إنَّما ذَهَبَ بِابنِكِ أَنتِ! فَتَحاكَمَتا إلى <b>داوُد</b> فَقَضى بِالوَلَدِ لِلكُبرى.<br><br>فَخَرَجَتا على سُلَيمانَ فَأَخبَرَتاه، فَقال: <b>«ائتوني بِالسِّكّينِ أَشُقُّهُ بَينَهُما»</b>! فَقالَتِ الصُّغرى: <b>«لا تَفعَل يَرحَمُكَ الله، هو ابنُها!»</b> فَعَرَفَ سُلَيمانُ أنَّ الأُمَّ الحَقيقِيَّةَ هي التي رَحِمَت وَلَدَها — فَقَضى بِهِ لِلصُّغرى! لَم يُرِد أن يُؤذِيَ الطِّفل، بل أَرادَ أن يَكشِفَ قَلبَ الأُمّ. وقالَ اللهُ تَعالى: <b>﴿ فَفَهَّمْنَاهَا سُلَيْمَانَ ۚ وَكُلًّا آتَيْنَا حُكْمًا وَعِلْمًا ﴾</b>.",
+     "en": "From a young age the wisdom of <b>Sulaiman</b> shone! The Prophet ﷺ told us — as in Sahih al-Bukhari and Muslim — that two women each had a son with them, and a wolf came and took the son of one of them. Each one said: It took your son, not mine! They brought the case to <b>Dawud</b>, and he ruled the child for the older woman.<br><br>Then they went to Sulaiman and told him. He said: <b>“Bring me a knife, and I will cut him in two between them!”</b> The younger woman cried: <b>“Don't do it, may Allah have mercy on you — he is her son!”</b> Sulaiman knew the real mother was the one whose heart was full of mercy for her child, so he ruled the child for the younger woman! He never meant to hurt the child; he wanted to reveal the mother's heart. Allah says: <b>﴿So We gave Sulaiman understanding of it, and to each We gave judgment and knowledge﴾</b>."
+    }
+   },
+   {
     "scene": "madinah",
     "character": "👑",
     "text": {
@@ -65,6 +73,14 @@ HISN_STORIES.sulayman = [
        }
       }
      ]
+    }
+   },
+   {
+    "scene": "wind",
+    "character": "🌬️",
+    "text": {
+     "ar": "ودَعا سُلَيمانُ رَبَّهُ دُعاءً عَجيباً: <b>﴿ رَبِّ اغْفِرْ لِي وَهَبْ لِي مُلْكًا لَا يَنْبَغِي لِأَحَدٍ مِنْ بَعْدِي ﴾</b> — فَبَدَأَ بِطَلَبِ المَغفِرَةِ قَبلَ المُلك! فَاستَجابَ اللهُ لَه: <b>﴿ فَسَخَّرْنَا لَهُ الرِّيحَ تَجْرِي بِأَمْرِهِ رُخَاءً حَيْثُ أَصَابَ ﴾</b> — ريحٌ لَيِّنَةٌ تَحمِلُهُ حَيثُ أَراد!<br><br>وفي صَحيحِ البُخاريِّ أنَّ النَّبِيَّ ﷺ أَمسَكَ عِفريتاً مِن الجِنِّ جاءَ يُفسِدُ عَلَيهِ صَلاتَه، فَأَرادَ أن يَربِطَهُ إلى سارِيَةٍ في المَسجِد — ثُمَّ تَذَكَّرَ دَعوَةَ <b>«أَخيهِ سُلَيمان»</b> فَتَرَكَه! ما أَجمَلَ أَدَبَ الأَنبِياءِ مَعَ بَعضِهِم! <b>الدَّرس:</b> اطلُبْ مِن اللهِ الخَيرَ الكَبير — وابدَأْ بِالاستِغفار!",
+     "en": "Sulaiman made an amazing supplication to his Lord: <b>﴿My Lord, forgive me and grant me a kingdom such as will not belong to anyone after me﴾</b> — he began by asking for forgiveness before asking for a kingdom! Allah answered him: <b>﴿So We subjected to him the wind, blowing gently by his command wherever he directed﴾</b> — a soft wind carrying him wherever he wished!<br><br>In Sahih al-Bukhari, the Prophet ﷺ caught a powerful jinn that came to spoil his prayer, and he wanted to tie it to a pillar of the mosque — then he remembered the supplication of <b>“my brother Sulaiman”</b> and let it go! How beautiful are the manners of the prophets with one another! <b>The lesson:</b> ask Allah for great good — and begin by seeking His forgiveness!"
     }
    }
   ],
@@ -199,6 +215,14 @@ HISN_STORIES.sulayman = [
   },
   "pages": [
    {
+    "scene": "peaks",
+    "character": "🛡️",
+    "text": {
+     "ar": "تَخَيَّلْ مَشهَداً لَم تَرَ الدُّنيا مِثلَه! قالَ اللهُ تَعالى: <b>﴿ وَحُشِرَ لِسُلَيْمَانَ جُنُودُهُ مِنَ الْجِنِّ وَالْإِنْسِ وَالطَّيْرِ فَهُمْ يُوزَعُونَ ﴾</b> — جُمِعَ لَهُ جَيشٌ مِن الإنسِ والجِنِّ والطَّير، و«يوزَعون» أي: يُرَتَّبونَ ويُنَظَّمون، فلا يَتَقَدَّمُ أَحَدٌ عن مَكانِه ولا يَتَأَخَّر!<br><br>صُفوفٌ مُنَظَّمَةٌ تَمشي على الأَرض، وطُيورٌ تُظَلِّلُ الجَيشَ مِن فَوق — ومَعَ كُلِّ هذهِ القُوَّة، كانَ قائِدُها نَبِيّاً رَحيماً يَسمَعُ صَوتَ أَصغَرِ مَخلوق! فَإلى أَينَ يَسيرُ هذا المَوكِبُ العَظيم؟",
+     "en": "Imagine a scene the world had never seen! Allah says: <b>﴿And gathered for Sulaiman were his soldiers of the jinn, men and birds, and they were marching in rows﴾</b> — an army of humans, jinn and birds was assembled for him, and “marching in rows” means arranged and organized, so no one stepped ahead of his place or fell behind!<br><br>Orderly ranks walking on the earth, birds shading the army from above — and with all this power, its leader was a merciful prophet who could hear the voice of the tiniest creature! So where was this great procession marching to?"
+    }
+   },
+   {
     "scene": "desert",
     "character": "🐜",
     "text": {
@@ -245,6 +269,22 @@ HISN_STORIES.sulayman = [
        }
       }
      ]
+    }
+   },
+   {
+    "scene": "ant",
+    "character": "🤲",
+    "text": {
+     "ar": "وماذا فَعَلَ المَلِكُ العَظيمُ حينَ سَمِعَ النَّملَة؟ هل تَكَبَّر؟ لا! بل رَفَعَ يَدَيهِ يَشكُرُ رَبَّه: <b>﴿ وَقَالَ رَبِّ أَوْزِعْنِي أَنْ أَشْكُرَ نِعْمَتَكَ الَّتِي أَنْعَمْتَ عَلَيَّ وَعَلَىٰ وَالِدَيَّ وَأَنْ أَعْمَلَ صَالِحًا تَرْضَاهُ وَأَدْخِلْنِي بِرَحْمَتِكَ فِي عِبَادِكَ الصَّالِحِينَ ﴾</b><br><br>وتَأَمَّلْ النَّملَةَ الصَّغيرَة: رَأَتِ الخَطَرَ فَلَم تَهرُبْ وَحدَها — بل <b>نَبَّهَت قَومَها</b>! مَسؤولِيَّةٌ وشَجاعَةٌ وحِكمَةٌ في جِسمٍ صَغير!",
+     "en": "And what did the great king do when he heard the ant? Did he become proud? No! He raised his hands thanking his Lord: <b>﴿And he said: My Lord, enable me to be grateful for Your favor which You have bestowed upon me and upon my parents, and to do righteousness that You approve, and admit me by Your mercy among Your righteous servants﴾</b><br><br>And look at the little ant: she saw the danger and did not run away alone — she <b>warned her people</b>! Responsibility, courage and wisdom in a tiny body!"
+    }
+   },
+   {
+    "scene": "garden",
+    "character": "🐜",
+    "text": {
+     "ar": "والنَّملُ أُمَّةٌ تُسَبِّحُ اللهَ! أَخبَرَنا النَّبِيُّ ﷺ — في صَحيحِ البُخاريِّ ومُسلِم — أنَّ نَبِيّاً مِن الأَنبِياءِ قَرَصَتهُ نَملَة، فَأَمَرَ بِقَريَةِ النَّملِ فَأُحرِقَت، فَأَوحى اللهُ إلَيه: <b>«أَنْ قَرَصَتكَ نَملَةٌ أَحرَقتَ أُمَّةً مِن الأُمَمِ تُسَبِّح!»</b> و<b>نَهى النَّبِيُّ ﷺ عن قَتلِ النَّملَةِ والنَّحلَةِ والهُدهُدِ والصُّرَد</b> (رَواهُ أبو داود).<br><br><b>الدَّرس:</b> إذا رَأَيتَ طابوراً مِن النَّملِ في الحَديقَة، فَلا تَدُسْهُ بِقَدَمِك! انتَبِهْ لِخُطُواتِك، وارحَمِ المَخلوقاتِ الصَّغيرَة — فَالقُوَّةُ الحَقيقِيَّةُ رَحمَةٌ ولُطف!",
+     "en": "Ants are a nation that glorifies Allah! The Prophet ﷺ told us — in Sahih al-Bukhari and Muslim — that one of the prophets was bitten by an ant, so he ordered the ants' colony to be burned. Allah revealed to him: <b>“Because one ant bit you, you burned a whole nation that glorifies Allah!”</b> And <b>the Prophet ﷺ forbade killing the ant, the bee, the hoopoe and the shrike</b> (Abu Dawud).<br><br><b>The lesson:</b> if you see a line of ants in the garden, don't step on it! Watch your steps and be merciful to small creatures — true strength is mercy and gentleness!"
     }
    }
   ],
@@ -379,6 +419,14 @@ HISN_STORIES.sulayman = [
   },
   "pages": [
    {
+    "scene": "birds",
+    "character": "👑",
+    "text": {
+     "ar": "كانَ سُلَيمانُ قائِداً يَتَفَقَّدُ جُنودَهُ بِنَفسِه — حتّى الطُّيور! قالَ تَعالى: <b>﴿ وَتَفَقَّدَ الطَّيْرَ فَقَالَ مَا لِيَ لَا أَرَى الْهُدْهُدَ أَمْ كَانَ مِنَ الْغَائِبِينَ ﴾</b> — طائِرٌ صَغيرٌ واحِدٌ بَينَ آلافِ الجُنود، لَكِنَّ سُلَيمانَ انتَبَهَ لِغِيابِه!<br><br>وكانَت هُناكَ في الجَنوب — في أَرضِ <b>اليَمَن</b> — مَملَكَةٌ غَنِيَّةٌ اسمُها <b>سَبَأ</b>، فيها البَساتينُ والزُّروعُ والقُصور. وكانَ الهُدهُدُ قد طارَ إلَيها. قالَ تَعالى: <b>﴿ فَمَكَثَ غَيْرَ بَعِيدٍ ﴾</b> — لَم يَغِبْ طَويلاً!",
+     "en": "Sulaiman was a leader who checked on his soldiers himself — even the birds! Allah says: <b>﴿And he inspected the birds and said: Why do I not see the hoopoe — or is he among the absent?﴾</b> One small bird among thousands of soldiers, yet Sulaiman noticed it was missing!<br><br>Far to the south — in the land of <b>Yemen</b> — there was a rich kingdom called <b>Saba' (Sheba)</b>, with orchards, crops and palaces. The hoopoe had flown there. Allah says: <b>﴿But he stayed not long﴾</b> — he was not away for long!"
+    }
+   },
+   {
     "scene": "desert",
     "character": "🐦",
     "text": {
@@ -425,6 +473,22 @@ HISN_STORIES.sulayman = [
        }
       }
      ]
+    }
+   },
+   {
+    "scene": "cosmos",
+    "character": "☀️",
+    "text": {
+     "ar": "وكانَ الهُدهُدُ غاضِباً لِلَّه: <b>﴿ وَجَدْتُهَا وَقَوْمَهَا يَسْجُدُونَ لِلشَّمْسِ مِنْ دُونِ اللَّهِ ﴾</b>! ثُمَّ قال: <b>﴿ أَلَّا يَسْجُدُوا لِلَّهِ الَّذِي يُخْرِجُ الْخَبْءَ فِي السَّمَاوَاتِ وَالْأَرْضِ ﴾</b> — كَيفَ لا يَسجُدونَ لِلَّهِ الذي يُخرِجُ المَخبوءَ مِن المَطَرِ والنَّبات؟!<br><br>فَهَل صَدَّقَهُ سُلَيمانُ فَوراً؟ لا! قال: <b>﴿ سَنَنْظُرُ أَصَدَقْتَ أَمْ كُنْتَ مِنَ الْكَاذِبِينَ ﴾</b> — ثُمَّ قال: <b>﴿ اذْهَبْ بِكِتَابِي هَٰذَا فَأَلْقِهْ إِلَيْهِمْ ثُمَّ تَوَلَّ عَنْهُمْ فَانْظُرْ مَاذَا يَرْجِعُونَ ﴾</b>",
+     "en": "The hoopoe was angry for Allah's sake: <b>﴿I found her and her people prostrating to the sun instead of Allah﴾</b>! Then he said: <b>﴿So they do not prostrate to Allah, who brings forth what is hidden in the heavens and the earth﴾</b> — how could they not bow to Allah who brings out what is hidden, like rain and plants?!<br><br>Did Sulaiman believe him at once? No! He said: <b>﴿We will see whether you were truthful or were among the liars﴾</b> — and then: <b>﴿Take this letter of mine and deliver it to them, then withdraw from them and see what they return﴾</b>"
+    }
+   },
+   {
+    "scene": "pen",
+    "character": "✉️",
+    "text": {
+     "ar": "<b>دَرسانِ عَظيمان!</b> الأَوَّل: <b>تَثَبَّتْ مِن الخَبَرِ قَبلَ أن تُصَدِّقَه</b>! هكذا فَعَلَ سُلَيمان، وهكذا أَمَرَنا الله: <b>﴿ يَا أَيُّهَا الَّذِينَ آمَنُوا إِنْ جَاءَكُمْ فَاسِقٌ بِنَبَإٍ فَتَبَيَّنُوا ﴾</b> — فَإذا وَصَلَتكَ رِسالَةٌ على الهاتِف أو سَمِعتَ كَلاماً عن صَديقِك، فَلا تَنشُرْهُ حتّى تَتَأَكَّد!<br><br>والثّاني: لا تَحتَقِرْ نَفسَك! طائِرٌ صَغيرٌ عَرَفَ ما لَم يَعرِفهُ المَلِكُ العَظيم — وكانَ سَبَباً في هِدايَةِ مَملَكَةٍ كامِلَة! وأَنتَ أيضاً — مَهما كُنتَ صَغيراً — قد تَكونُ سَبَباً في خَيرٍ عَظيم!",
+     "en": "<b>Two great lessons!</b> First: <b>verify news before you believe it</b>! That is what Sulaiman did, and that is what Allah commanded us: <b>﴿O you who believe, if a wicked person brings you news, verify it﴾</b> — so if a message reaches you on the phone, or you hear something said about your friend, don't spread it until you are sure!<br><br>Second: never look down on yourself! A small bird knew what the great king did not know — and became the reason a whole kingdom was guided! You too — however small you are — may become the reason for great good!"
     }
    }
   ],
@@ -559,6 +623,14 @@ HISN_STORIES.sulayman = [
   },
   "pages": [
    {
+    "scene": "throne",
+    "character": "👸",
+    "text": {
+     "ar": "وَصَلَتِ الرِّسالَةُ إلى المَلِكَة، فَجَمَعَت كِبارَ قَومِها وقالَت: <b>﴿ يَا أَيُّهَا الْمَلَأُ إِنِّي أُلْقِيَ إِلَيَّ كِتَابٌ كَرِيمٌ ﴾</b>! ثُمَّ استَشارَتهُم: <b>﴿ مَا كُنْتُ قَاطِعَةً أَمْرًا حَتَّىٰ تَشْهَدُونِ ﴾</b> — لا أَقطَعُ أَمراً دونَكُم!<br><br>فَقالوا مُفتَخِرين: <b>﴿ نَحْنُ أُولُو قُوَّةٍ وَأُولُو بَأْسٍ شَدِيدٍ ﴾</b>. لَكِنَّها كانَت حَكيمَةً لا تُحِبُّ الحَرب: <b>﴿ قَالَتْ إِنَّ الْمُلُوكَ إِذَا دَخَلُوا قَرْيَةً أَفْسَدُوهَا ﴾</b> — ثُمَّ قَرَّرَت أن تَختَبِرَه: <b>﴿ وَإِنِّي مُرْسِلَةٌ إِلَيْهِمْ بِهَدِيَّةٍ فَنَاظِرَةٌ بِمَ يَرْجِعُ الْمُرْسَلُونَ ﴾</b> — هل هو مَلِكٌ يُريدُ المال، أم نَبِيٌّ يَدعو إلى الله؟",
+     "en": "The letter reached the queen. She gathered the chiefs of her people and said: <b>﴿O chiefs, indeed a noble letter has been delivered to me﴾</b>! Then she consulted them: <b>﴿I would not decide a matter until you are present with me﴾</b> — I will not decide anything without you!<br><br>They answered proudly: <b>﴿We are people of strength and great military might﴾</b>. But she was wise and did not love war: <b>﴿She said: Indeed kings, when they enter a city, ruin it﴾</b> — and she decided to test him: <b>﴿I will send them a gift and see with what the messengers return﴾</b> — is he a king who wants money, or a prophet calling to Allah?"
+    }
+   },
+   {
     "scene": "madinah",
     "character": "👑",
     "text": {
@@ -605,6 +677,22 @@ HISN_STORIES.sulayman = [
        }
       }
      ]
+    }
+   },
+   {
+    "scene": "throne",
+    "character": "💎",
+    "text": {
+     "ar": "رَدَّ سُلَيمانُ الهَدِيَّةَ قائِلاً: <b>﴿ فَمَا آتَانِيَ اللَّهُ خَيْرٌ مِمَّا آتَاكُمْ ﴾</b>! ولَمّا رَأى العَرشَ مُستَقِرّاً عِندَه، لَم يَقُلْ «أنا القَوِيّ»، بل قال: <b>﴿ هَٰذَا مِنْ فَضْلِ رَبِّي لِيَبْلُوَنِي أَأَشْكُرُ أَمْ أَكْفُرُ ﴾</b>!<br><br>ولَمّا وَصَلَت بِلقيس، <b>﴿ قِيلَ لَهَا ادْخُلِي الصَّرْحَ ﴾</b> — قَصرٌ أَرضُهُ مِن زُجاجٍ صافٍ يَجري تَحتَهُ الماء، فَظَنَّتهُ ماءً عَميقاً! فَقالَ سُلَيمان: <b>﴿ إِنَّهُ صَرْحٌ مُمَرَّدٌ مِنْ قَوَارِيرَ ﴾</b> — أي قَصرٌ أَملَسُ مِن زُجاج! فَرَأَت عِلماً وقُوَّةً لا تَأتي إلّا مِن الله.",
+     "en": "Sulaiman returned the gift, saying: <b>﴿What Allah has given me is better than what He has given you﴾</b>! And when he saw the throne settled before him, he didn't say “I am the mighty one” — he said: <b>﴿This is from the favor of my Lord, to test me whether I will be grateful or ungrateful﴾</b>!<br><br>When Bilqis arrived, <b>﴿it was said to her: Enter the palace﴾</b> — a palace with a floor of clear glass with water flowing beneath it, and she thought it was deep water! Sulaiman said: <b>﴿Indeed, it is a palace made smooth with glass﴾</b> — a smooth palace of glass! She saw knowledge and power that could only come from Allah."
+    }
+   },
+   {
+    "scene": "sprout",
+    "character": "🌸",
+    "text": {
+     "ar": "<b>الدُّروس!</b> سُلَيمانُ لَم يَبِعْ دَعوَتَهُ بِالمال — فَالحَقُّ لا يُشتَرى! وشَكَرَ اللهَ عِندَ أَعظَمِ النِّعَم، ولَم يَتَكَبَّر. وبِلقيسُ كانَت <b>حَكيمَة</b>: استَشارَت، وكَرِهَتِ الحَرب، ولَمّا رَأَتِ الحَقَّ بِعَينَيها لَم تُعانِد — بل أَسلَمَت <b>«مَعَ سُلَيمان»</b> لِلَّهِ رَبِّ العالَمين!<br><br>وأَنتَ يا بَطَل: إذا أَعطاكَ أَحَدٌ هَدِيَّةً لِتَسكُتَ عن خَطَأ — فَارفُضْ بِلُطف! وإذا تَبَيَّنَ لَكَ أنَّكَ أَخطَأت — فَقُلْها بِشَجاعَة: <b>«أَخطَأتُ، والحَقُّ مَعَك»</b> — كما فَعَلَت بِلقيس!",
+     "en": "<b>The lessons!</b> Sulaiman did not sell his call for money — truth cannot be bought! He thanked Allah at the moment of the greatest blessing and was not arrogant. And Bilqis was <b>wise</b>: she consulted, she disliked war, and when she saw the truth with her own eyes she did not stubbornly refuse — she submitted <b>“with Sulaiman”</b> to Allah, Lord of the worlds!<br><br>And you, hero: if someone gives you a gift to keep quiet about a wrong — refuse it kindly! And if it becomes clear to you that you were wrong — say it bravely: <b>“I was wrong, and you are right”</b> — just as Bilqis did!"
     }
    }
   ],
@@ -739,6 +827,14 @@ HISN_STORIES.sulayman = [
   },
   "pages": [
    {
+    "scene": "mihrab",
+    "character": "🏗️",
+    "text": {
+     "ar": "عاشَ سُلَيمانُ حَياةً مَليئَةً بِالعَمَلِ لِلَّه. سَخَّرَ اللهُ لَهُ الجِنَّ يَعمَلونَ بَينَ يَدَيه: <b>﴿ يَعْمَلُونَ لَهُ مَا يَشَاءُ مِنْ مَحَارِيبَ وَتَمَاثِيلَ وَجِفَانٍ كَالْجَوَابِ وَقُدُورٍ رَاسِيَاتٍ ﴾</b> — مَحاريبَ لِلعِبادَة، وأَوانٍ عَظيمَةٍ كَالأَحواض، وقُدورٍ ثابِتَةٍ لا تَتَحَرَّك! وأَمَرَهُمُ الله: <b>﴿ اعْمَلُوا آلَ دَاوُودَ شُكْرًا ﴾</b>.<br><br>وأَخبَرَ النَّبِيُّ ﷺ أنَّ سُلَيمانَ لَمّا بَنى <b>بَيتَ المَقدِس</b> سَأَلَ اللهَ ثَلاثاً، مِنها: أنَّ مَن جاءَهُ لا يُريدُ إلّا الصَّلاةَ فيه، خَرَجَ مِن ذُنوبِهِ كَيَومِ وَلَدَتهُ أُمُّه (رَواهُ النَّسائيّ). فَما زالَ يَعمَلُ ويَعبُدُ حتّى جاءَهُ أَجَلُه!",
+     "en": "Sulaiman lived a life full of work for Allah. Allah subjected the jinn to work before him: <b>﴿They made for him whatever he willed of prayer niches, statues, bowls like reservoirs and fixed cauldrons﴾</b> — niches for worship, huge vessels like pools, and cooking pots so heavy they never moved! And Allah commanded them: <b>﴿Work, O family of Dawud, in gratitude﴾</b>.<br><br>The Prophet ﷺ told us that when Sulaiman built <b>Bayt al-Maqdis</b>, he asked Allah for three things, among them: that whoever comes to it wanting nothing but to pray there would leave free of his sins like the day his mother bore him (an-Nasa'i). He kept working and worshipping until his appointed time came!"
+    }
+   },
+   {
     "scene": "mosque",
     "character": "🧔",
     "text": {
@@ -785,6 +881,14 @@ HISN_STORIES.sulayman = [
        }
       }
      ]
+    }
+   },
+   {
+    "scene": "night",
+    "character": "🌙",
+    "text": {
+     "ar": "<b>الدُّروس!</b> كُلُّ مَخلوقٍ يَموت — حتّى المَلِكُ النَّبِيُّ العَظيم: <b>﴿ كُلُّ نَفْسٍ ذَائِقَةُ الْمَوْتِ ﴾</b>. ولا يَعلَمُ الغَيبَ إلّا الله: <b>﴿ قُلْ لَا يَعْلَمُ مَنْ فِي السَّمَاوَاتِ وَالْأَرْضِ الْغَيْبَ إِلَّا اللَّهُ ﴾</b> — لا الجِنُّ ولا السَّحَرَةُ ولا الذينَ يَدَّعونَ مَعرِفَةَ المُستَقبَل!<br><br>ولِهذا قالَ النَّبِيُّ ﷺ: <b>«مَن أَتى عَرّافاً فَسَأَلَهُ عن شَيءٍ لَم تُقبَلْ لَهُ صَلاةٌ أَربَعينَ لَيلَة»</b> (رَواهُ مُسلِم). فَلا تُصَدِّقْ مَن يَقرَأُ الحَظَّ أو الأَبراج — وتَوَكَّلْ على اللهِ وَحدَه، واعمَلْ صالِحاً كُلَّ يَوم، كما عاشَ سُلَيمانُ حتّى آخِرِ لَحظَة!",
+     "en": "<b>The lessons!</b> Every creature dies — even the great prophet-king: <b>﴿Every soul will taste death﴾</b>. And no one knows the unseen except Allah: <b>﴿Say: None in the heavens and the earth knows the unseen except Allah﴾</b> — not the jinn, nor magicians, nor those who claim to know the future!<br><br>That is why the Prophet ﷺ said: <b>“Whoever goes to a fortune-teller and asks him about anything, his prayer will not be accepted for forty nights”</b> (Muslim). So don't believe those who read fortunes or horoscopes — rely on Allah alone and do good deeds every day, just as Sulaiman lived until his very last moment!"
     }
    }
   ],

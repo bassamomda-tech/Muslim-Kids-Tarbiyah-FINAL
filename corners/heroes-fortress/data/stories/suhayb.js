@@ -58,6 +58,22 @@ HISN_STORIES.suhayb = [
       }
      ]
     }
+   },
+   {
+    "scene": "desert",
+    "character": "💪",
+    "text": {
+     "ar": "لكنّ طريقَ النورِ لم يكنْ سهلاً. فقد كان صهيبٌ غريباً في مكّة، ليس له قبيلةٌ تحميه، فلمّا أظهرَ إسلامَه آذاه المشركونَ أذىً شديداً. ويروي <b>عبدُ اللهِ بنُ مسعود</b> أنّ أوّلَ من أظهرَ إسلامَه سبعة، وذكرَ منهم: رسولَ اللهِ ﷺ، وأبا بكر، وعمّاراً وأمَّه سميّة، و<b>صهيباً</b>، وبلالاً، والمقداد (رواه ابن ماجه).<br><br>فصبرَ صهيبٌ وثبت، ولم يتركْ دينَه مهما اشتدَّ الأذى، لأنّه ذاقَ حلاوةَ الإيمانِ بعدَ سنواتِ الغربة.",
+     "en": "But the path of light was not easy. Suhayb was a stranger in Makkah with no tribe to protect him, so when he made his Islam public, the idol-worshippers harmed him severely. <b>Abdullah ibn Mas'ud</b> reported that the first to make their Islam public were seven, and he named among them: the Messenger of Allah ﷺ, Abu Bakr, Ammar and his mother Sumayya, <b>Suhayb</b>, Bilal and al-Miqdad (Ibn Majah).<br><br>Suhayb was patient and stood firm. He never left his religion however hard the harm became, because he had tasted the sweetness of faith after years of being a stranger."
+    }
+   },
+   {
+    "scene": "sprout",
+    "character": "🤝",
+    "text": {
+     "ar": "تأمّلْ كيف بدأتْ هدايةُ صهيب: سمعَ عن الحقِّ فذهبَ إليه بنفسِه، ووجدَ عند البابِ صديقاً يريدُ الخيرَ مثلَه، فدخلا معاً. والصديقُ الصالحُ كنزٌ عظيم، وقد قالَ النبيُّ ﷺ: <b>«المرءُ على دينِ خليلِه، فلينظرْ أحدُكم مَن يُخالِل»</b> (رواه أبو داود والترمذيّ وحسّنه).<br><br>فلا تقلْ: «ظروفي صعبة» أو «أنا بعيدٌ عن الخير»؛ فصهيبٌ خُطِفَ طفلاً ونشأَ في بلادٍ غريبة، ومع ذلك وصلَ إلى النور لأنّه بحثَ عنه. ابحثْ أنتَ أيضاً عن الخير، واخترْ أصدقاءَ يمشونَ معك إليه.",
+     "en": "Think about how Suhayb's guidance began: he heard about the truth and went to it himself, and at the door he found a friend who wanted good just like him, and they went in together. A righteous friend is a great treasure. The Prophet ﷺ said: <b>“A person is upon the religion of his close friend, so let each of you look at whom he befriends”</b> (Abu Dawud and at-Tirmidhi, who graded it hasan).<br><br>So never say: “My situation is hard” or “I'm far from good.” Suhayb was kidnapped as a child and grew up in a foreign land, yet he reached the light because he searched for it. You too — search for good, and choose friends who walk to it with you."
+    }
    }
   ],
   "quiz": [
@@ -191,6 +207,14 @@ HISN_STORIES.suhayb = [
   },
   "pages": [
    {
+    "scene": "madinah",
+    "character": "🍲",
+    "text": {
+     "ar": "في <b>المدينةِ المنوّرة</b> باركَ اللهُ لصهيبٍ في تجارتِه مرّةً أخرى، بعدَ أن تركَ مالَه كلَّه في مكّة. فلم يجمعْ مالَه ليُخزّنَه، بل جعلَ بيتَه مفتوحاً: يدخلُه الضيفُ فيأكل، ويأتيه الفقيرُ فيشبع، ويمرُّ به المسافرُ فيجدُ طعاماً وترحيباً.<br><br>وكان المسلمونَ يقرؤونَ في القرآنِ صفةَ الأبرار: ﴿وَيُطْعِمُونَ الطَّعَامَ عَلَىٰ حُبِّهِ مِسْكِينًا وَيَتِيمًا وَأَسِيرًا﴾، فكان صهيبٌ يحبُّ أن يكونَ منهم. لكنّ كثرةَ إطعامِه لفتت نظرَ أميرِ المؤمنين، فدارَ بينهما حوارٌ لطيف.",
+     "en": "In <b>Madinah</b>, Allah blessed Suhayb's trade once again, after he had left all his wealth in Makkah. He did not gather his money to store it; instead he kept his house open: a guest would enter and eat, a poor person would come and be filled, and a traveller would pass by and find food and a warm welcome.<br><br>The Muslims read in the Quran the description of the righteous: ﴿And they give food, despite their love for it, to the poor, the orphan and the captive﴾, and Suhayb loved to be among them. But his abundant feeding caught the attention of the Commander of the Believers, and a gentle conversation took place between them."
+    }
+   },
+   {
     "scene": "table",
     "character": "🍲",
     "text": {
@@ -237,6 +261,14 @@ HISN_STORIES.suhayb = [
        }
       }
      ]
+    }
+   },
+   {
+    "scene": "table",
+    "character": "😊",
+    "text": {
+     "ar": "في هذا الحوارِ درسانِ جميلان: الأوّلُ من <b>عمر</b>: فقد نصحَ صاحبَه بصراحةٍ ووجهاً لوجه، لا من وراءِ ظهرِه. والثاني من <b>صهيب</b>: فقد سمعَ النقدَ بهدوء، ولم يغضبْ، وأجابَ بالدليلِ من كلامِ النبيِّ ﷺ.<br><br>والحديثُ جمعَ بين إطعامِ الطعامِ وردِّ السلام، وقد قالَ النبيُّ ﷺ أيضاً: <b>«أوَلا أدلُّكم على شيءٍ إذا فعلتموه تحاببتم؟ أفشوا السلامَ بينكم»</b> (رواه مسلم). فشارِكْ طعامَك مع زملائِك، وسلّمْ على من عرفتَ ومن لم تعرف، وإذا انتقدَك أحدٌ فأجبْه بلطفٍ وبالدليل.",
+     "en": "There are two beautiful lessons in this conversation. The first is from <b>Umar</b>: he advised his companion frankly and face to face, not behind his back. The second is from <b>Suhayb</b>: he listened to the criticism calmly, did not get angry, and answered with evidence from the words of the Prophet ﷺ.<br><br>The hadith joined feeding others with returning greetings, and the Prophet ﷺ also said: <b>“Shall I not tell you of something which, if you do it, you will love one another? Spread the greeting of peace among yourselves”</b> (Muslim). So share your food with your classmates, greet those you know and those you don't, and if someone criticizes you, answer gently and with evidence."
     }
    }
   ],
@@ -371,6 +403,14 @@ HISN_STORIES.suhayb = [
   },
   "pages": [
    {
+    "scene": "desert",
+    "character": "🐪",
+    "text": {
+     "ar": "لمّا أرادَ <b>صهيبٌ</b> أن يهاجرَ إلى المدينة، منعه المشركونَ وقالوا: جئتَنا فقيراً حقيراً، فكثُرَ مالُك عندنا، ثمّ تريدُ أن تخرجَ بنفسِك ومالِك؟ فقال: أرأيتم إن جعلتُ لكم مالي، أتُخلّونَ سبيلي؟ قالوا: نعم. فدلّهم على مالِه، ومضى إلى رسولِ اللهِ ﷺ.<br><br>فلمّا بلغَ ذلك النبيَّ ﷺ قال: <b>«ربحَ صهيب، ربحَ صهيب»</b> (رواه ابن سعدٍ والحاكم). لقد باعَ الدنيا كلَّها ليشتريَ رضا الله، فكانت تجارتُه أربحَ تجارة!",
+     "en": "When <b>Suhayb</b> wanted to migrate to Madinah, the idol-worshippers stopped him and said: You came to us poor and lowly, your wealth grew among us, and now you want to leave with yourself and your money? He said: If I give you my wealth, will you let me go? They said: Yes. So he told them where his wealth was and went on to the Messenger of Allah ﷺ.<br><br>When the Prophet ﷺ heard of this, he said: <b>“Suhayb has profited! Suhayb has profited!”</b> (Ibn Sa'd and al-Hakim). He sold the whole world to buy Allah's pleasure — and his trade was the most profitable trade of all!"
+    }
+   },
+   {
     "scene": "sprout",
     "character": "🌱",
     "text": {
@@ -417,6 +457,14 @@ HISN_STORIES.suhayb = [
        }
       }
      ]
+    }
+   },
+   {
+    "scene": "sprout",
+    "character": "🌱",
+    "text": {
+     "ar": "والشكرُ ليس كلمةً فقط، بل عملٌ أيضاً: أن تحمدَ اللهَ بلسانِك، وأن تستعملَ نعمَه في طاعتِه. وقد وعدَ اللهُ الشاكرينَ بالزيادة فقال: ﴿لَئِن شَكَرْتُمْ لَأَزِيدَنَّكُمْ﴾. والصبرُ أيضاً ليس سكوتاً فقط، بل أن تحبسَ لسانَك عن الشكوى ويدَك عن الغضب، وأن تظنَّ بربِّك خيراً.<br><br>جرّبْ اليوم يا بطل: اكتبْ في ورقةٍ ثلاثَ نعمٍ تشكرُ اللهَ عليها، وشيئاً واحداً صعباً تصبرُ عليه. ستجدُ أنّ قلبَك صارَ مثلَ قلبِ صهيب: راضياً في كلِّ حال، لأنّ أمرَ المؤمنِ كلَّه خير.",
+     "en": "Gratitude is not only a word but also an action: to praise Allah with your tongue and to use His blessings in obeying Him. Allah promised the grateful an increase: ﴿If you are grateful, I will surely increase you﴾. And patience is not just being silent; it means holding your tongue from complaining and your hand from anger, and thinking well of your Lord.<br><br>Try it today, hero: write on a piece of paper three blessings you thank Allah for, and one hard thing you are being patient with. You will find your heart becoming like Suhayb's — content in every situation, because the believer's whole affair is good."
     }
    }
   ],

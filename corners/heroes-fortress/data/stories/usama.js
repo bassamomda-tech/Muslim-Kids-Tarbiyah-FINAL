@@ -4,6 +4,14 @@ HISN_STORIES.usama = [
   { icon:'🫧', scene:'peaks', character:'⚔️',
     title:{ ar:'هل شققتَ عن قلبِه؟', en:'Did You Open His Heart?' },
     pages:[
+      {
+       "scene": "madinah",
+       "character": "👦",
+       "text": {
+        "ar": "<b>أسامةُ بنُ زيد</b> وُلِدَ في الإسلام، أبوه <b>زيدُ بنُ حارثة</b> الذي ربّاه النبيُّ ﷺ في بيتِه، وأمُّه <b>أمُّ أيمن</b> التي حضنتِ النبيَّ ﷺ وهو صغير. وكان النبيُّ ﷺ يحبُّه حبّاً شديداً؛ يُجلسُه على فخذِه، ويُجلسُ الحسنَ على فخذِه الآخر، ثمّ يضمُّهما ويقول: <b>«اللهمَّ ارحمْهما فإنّي أرحمُهما»</b>.<br><br>كبُرَ أسامةُ شابّاً شجاعاً، فأرسلَه النبيُّ ﷺ في <b>سريّةٍ</b> إلى قومٍ من قبيلةِ جُهينةَ يُقالُ لهم <b>الحُرَقة</b>. فوصلَ المسلمونَ إليهم في الصباح، وهزموهم، وفرَّ رجالُهم في كلِّ اتّجاه، وكان مع أسامةَ رجلٌ من الأنصار.",
+        "en": "<b>Usama ibn Zayd</b> was born into Islam. His father was <b>Zayd ibn Haritha</b>, whom the Prophet ﷺ had raised in his own home, and his mother was <b>Umm Ayman</b>, who had cared for the Prophet ﷺ when he was little. The Prophet ﷺ loved him dearly: he would sit him on one thigh and al-Hasan on the other, then hug them both and say: <b>\"O Allah, have mercy on them, for I have mercy on them.\"</b><br><br>Usama grew into a brave young man, and the Prophet ﷺ sent him on an <b>expedition</b> to a branch of the tribe of Juhayna called <b>al-Huraqa</b>. The Muslims reached them in the morning and defeated them, and their men scattered in every direction. With Usama was a man of the Ansar."
+       }
+      },
       { scene:'peaks', character:'⚔️',
         text:{ ar:'في إحدى السرايا لحِقَ <b>أسامةُ</b> رجلاً من العدوِّ في القتال، فلمّا أدركه ورفعَ سيفَه قال الرجلُ فجأة: <b>«لا إله إلّا الله!»</b> لكنّ أسامةَ ظنَّ أنّه قالها خوفاً من السيفِ فقط، فضربه فقتله.<br><br>فلمّا رجعوا وبلغَ النبيَّ ﷺ الخبرُ تغيّرَ وجهُه وقال: <b>«يا أسامةُ، أقتلتَه بعدَ أن قال لا إله إلّا الله؟!»</b> فقال أسامة: يا رسولَ الله، إنّما قالها متعوّذاً من القتل! فقال النبيُّ ﷺ: <b>«أفلا شققتَ عن قلبِه حتى تعلمَ أقالها أم لا؟»</b> وكرّرها حتى تمنّى أسامةُ لو أنّه لم يكنْ أسلمَ إلّا ذلك اليوم — من شدّةِ ندمِه!',
           en:'On one expedition <b>Usama</b> pursued an enemy man in battle. When he reached him and raised his sword, the man suddenly said: <b>"There is no god but Allah!"</b> But Usama thought he said it only out of fear of the sword, so he struck and killed him.<br><br>When they returned and the news reached the Prophet ﷺ, his face changed and he said: <b>"O Usama, did you kill him after he said \'There is no god but Allah\'?!"</b> Usama said: O Messenger of Allah, he only said it to escape being killed! The Prophet ﷺ said: <b>"Did you open his heart to know whether he meant it or not?"</b> and repeated it until Usama wished he had only become Muslim that very day — from the depth of his regret!' },
@@ -13,6 +21,22 @@ HISN_STORIES.usama = [
             { t:{ar:'أن يقتلَ المزيد',en:'To kill more'},c:false,exp:{ar:'لا، بل عاتبه على الحكمِ على القلب.',en:'No — he rebuked him for judging the heart.'} },
             { t:{ar:'ألّا يقاتلَ أبداً',en:'Never to fight at all'},c:false,exp:{ar:'لا، بل ألّا يحكمَ على نيّةِ من نطقَ بالشهادة.',en:'No — not to judge the intention of one who declares faith.'} },
           ] } },
+      {
+       "scene": "mosque",
+       "character": "😔",
+       "text": {
+        "ar": "وفي روايةٍ في صحيحِ مسلم أنّ النبيَّ ﷺ جعلَ يقولُ له: <b>«فكيف تصنعُ بلا إلهَ إلّا الله إذا جاءتْ يومَ القيامة؟»</b> لا يزيدُه على ذلك. فتعلّمَ أسامةُ الدرسَ ولم ينسَه طوالَ حياتِه، حتى إنّه حين وقعتِ الفتنُ بين المسلمينَ بعدَ ذلك <b>امتنعَ عن قتالِ أيِّ مسلم</b>.<br><br>وكان الصحابيُّ الجليلُ <b>سعدُ بنُ أبي وقّاص</b> يقول: <b>«وأنا واللهِ لا أقتلُ مسلماً حتى يقتلَه ذو البُطين»</b> — يعني أسامة — لأنّ الجميعَ عرفوا أنّ أسامةَ صارَ أشدَّ الناسِ حذراً من دماءِ المسلمين بعد ذلك اليوم.",
+        "en": "In a narration in Sahih Muslim, the Prophet ﷺ kept saying to him: <b>\"What will you do with 'There is no god but Allah' when it comes on the Day of Resurrection?\"</b> — adding nothing more. Usama learned the lesson and never forgot it for the rest of his life; when civil strife later broke out among the Muslims, he <b>refused to fight any Muslim</b>.<br><br>The great companion <b>Sa'd ibn Abi Waqqas</b> used to say: <b>\"By Allah, I will not kill a Muslim until Dhul-Butayn kills him\"</b> — meaning Usama — because everyone knew that after that day Usama had become the most careful of people about the blood of Muslims."
+       }
+      },
+      {
+       "scene": "scales",
+       "character": "💭",
+       "text": {
+        "ar": "وهذا الدرسُ لنا جميعاً: نحن لا نرى ما في القلوب، واللهُ وحدَه يعلمُها. وقد قال النبيُّ ﷺ في موقفٍ آخر: <b>«إنّي لم أُومَرْ أن أُنقِّبَ عن قلوبِ الناس»</b>. فإذا قال لك صديقُك: «لم أقصدْ إيذاءك»، فصدّقْه وأحسنِ الظنَّ به، ولا تقلْ: «أنا أعرفُ ما في قلبك!».<br><br>وتعلّمْ من أسامةَ شيئاً آخر: حين أخطأَ لم يُكابرْ ولم يُبرّرْ طويلاً، بل ندِمَ ندماً صادقاً وغيّرَ سلوكَه طوالَ عمرِه. فالخطأُ يقعُ من الجميع، لكنّ البطلَ هو الذي <b>يتعلّمُ من خطئِه</b> ولا يعودُ إليه.",
+        "en": "This lesson is for all of us: we cannot see what is in hearts — Allah alone knows. On another occasion the Prophet ﷺ said: <b>\"I was not commanded to search into people's hearts.\"</b> So if your friend tells you, \"I didn't mean to hurt you,\" believe him and think well of him; don't say, \"I know what's in your heart!\"<br><br>And learn something else from Usama: when he made a mistake, he did not stubbornly argue or keep making excuses. He felt sincere regret and changed his behavior for the rest of his life. Everyone makes mistakes, but the hero is the one who <b>learns from his mistake</b> and does not return to it."
+       }
+      }
     ],
     quiz:[
       { q:{ar:'ماذا قال الرجلُ قبلَ أن يقتلَه أسامة؟',en:'What did the man say before Usama killed him?'},
@@ -30,6 +54,14 @@ HISN_STORIES.usama = [
   { icon:'🏴', scene:'madinah', character:'🐎',
     title:{ ar:'قائدٌ في الثامنةَ عشرة', en:'A Commander at Eighteen' },
     pages:[
+      {
+       "scene": "peaks",
+       "character": "🛡️",
+       "text": {
+        "ar": "قبلَ ذلك بسنواتٍ قليلة، كان <b>زيدُ بنُ حارثة</b> — والدُ أسامة — قائداً لجيشِ المسلمينَ في <b>غزوةِ مُؤتة</b> على حدودِ الشام، وهناك استُشهِدَ وهو يحملُ الراية. فلمّا أرادَ النبيُّ ﷺ أن يُرسلَ جيشاً جديداً إلى تلك الأرضِ نفسِها، اختارَ ابنَ الشهيدِ قائداً له.<br><br>وأمرَه أن يسيرَ بالخيلِ إلى أطرافِ <b>البلقاءِ</b> من أرضِ الشام. فعسكرَ الجيشُ في مكانٍ قربَ المدينةِ يُقالُ له <b>الجُرْف</b>، يستعدُّ للمسير. لكنّ النبيَّ ﷺ مرِضَ مرضَه الأخير، فتوقّفَ الجيشُ ينتظر، والقلوبُ قلقةٌ على رسولِ الله ﷺ.",
+        "en": "A few years earlier, <b>Zayd ibn Haritha</b> — Usama's father — had commanded the Muslim army at <b>the Battle of Mu'ta</b> on the borders of Sham, and there he was martyred while carrying the banner. So when the Prophet ﷺ wanted to send a new army to that same land, he chose the martyr's son as its commander.<br><br>He ordered him to lead the horsemen to the edges of <b>al-Balqa'</b> in the land of Sham. The army camped at a place near Madinah called <b>al-Jurf</b>, getting ready to march. But the Prophet ﷺ fell into his final illness, and the army paused and waited, hearts anxious for the Messenger of Allah ﷺ."
+       }
+      },
       { scene:'madinah', character:'🐎',
         text:{ ar:'في آخرِ حياةِ النبيِّ ﷺ جهّزَ جيشاً كبيراً لغزوِ الرومِ في الشام، وجعلَ قائدَه <b>أسامةَ بنَ زيد</b> وهو شابٌّ في نحوِ الثامنةَ عشرة! وكان في الجيشِ كبارُ المهاجرينَ والأنصار. فتكلّمَ بعضُ الناسِ مستغربين: كيف يُؤمَّرُ شابٌّ على الكبار؟<br><br>فغضِبَ النبيُّ ﷺ وخطبَ وقال: <b>«إن تطعنوا في إمارتِه فقد كنتم تطعنونَ في إمارةِ أبيه من قبل، وايمُ اللهِ إن كان لخليقاً للإمارة، وإنّ ابنَه من بعدِه لمن أحبِّ الناسِ إليّ»</b>. فعرفَ الناسُ أنّ العبرةَ <b>بالكفاءةِ والأمانةِ لا بالسنّ</b>.',
           en:'Near the end of his life the Prophet ﷺ prepared a great army to fight the Romans in Sham, and made its commander <b>Usama ibn Zayd</b> — a youth of about eighteen! The army included senior Muhajirun and Ansar. Some people spoke in surprise: how can a youth command the elders?<br><br>The Prophet ﷺ grew displeased and addressed them: <b>"If you criticize his command, you criticized his father\'s command before; and by Allah, he was worthy of command, and his son after him is among the dearest of people to me."</b> So the people understood that what matters is <b>ability and trustworthiness, not age</b>.' },
@@ -39,6 +71,22 @@ HISN_STORIES.usama = [
             { t:{ar:'محاباةً له فقط',en:'Out of favoritism only'},c:false,exp:{ar:'لا، بل لكفاءتِه وأهليّتِه للإمارة.',en:'No — for his ability and fitness to command.'} },
             { t:{ar:'لأنّه لا يوجدُ غيرُه',en:'Because there was no one else'},c:false,exp:{ar:'لا، بل كان في الجيشِ كبارُ الصحابة، لكنّه أهلٌ لها.',en:'No — the army had senior companions, but he was fit for it.'} },
           ] } },
+      {
+       "scene": "desert",
+       "character": "🚶",
+       "text": {
+        "ar": "ثمّ تُوفّيَ النبيُّ ﷺ، فاضطربتِ المدينة، وبدأتْ بعضُ القبائلِ ترتدّ. فأشارَ بعضُ الناسِ على الخليفةِ <b>أبي بكرٍ الصدّيق</b> أن يُبقيَ الجيشَ أو يُغيّرَ قائدَه بشيخٍ كبير. فرفضَ أبو بكرٍ بشدّة، وقال إنّه لا يحلُّ عقداً عقدَه رسولُ الله ﷺ.<br><br>وخرجَ أبو بكرٍ يُودّعُ الجيش، فكان <b>يمشي على قدميه وأسامةُ راكب</b>! فأرادَ أسامةُ أن ينزل، فأبى أبو بكرٍ وقال إنّه لا يضرُّه أن تغبرَّ قدماه ساعةً في سبيلِ الله. ثمّ استأذنَ أسامةَ — وهو الخليفة — أن يتركَ له <b>عمرَ بنَ الخطّاب</b> ليُعينَه في المدينة، فأذِنَ له.",
+        "en": "Then the Prophet ﷺ passed away. Madinah was shaken, and some tribes began to abandon Islam. Some people advised the caliph <b>Abu Bakr as-Siddiq</b> to keep the army at home, or to replace its commander with an older man. Abu Bakr firmly refused, saying he would not undo something the Messenger of Allah ﷺ had set in place.<br><br>Abu Bakr went out to see the army off — <b>walking on foot while Usama rode</b>! Usama wanted to dismount, but Abu Bakr refused, saying it would not harm him to have his feet dusty for an hour in the path of Allah. Then he — the caliph himself — asked Usama's permission to leave <b>Umar ibn al-Khattab</b> behind to help him in Madinah, and Usama agreed."
+       }
+      },
+      {
+       "scene": "madinah",
+       "character": "🏆",
+       "text": {
+        "ar": "سارَ أسامةُ بالجيشِ حتى بلغَ الأرضَ التي أُمِرَ بها، ثمّ <b>رجعَ سالماً منتصراً</b>. وكانت القبائلُ التي تفكّرُ في التمرّدِ تقول: لو لم يكنْ للمسلمينَ قوّةٌ ما أرسلوا مثلَ هذا الجيشِ في هذا الوقت! فكان خروجُه سبباً في هيبةِ المسلمين.<br><br>وبقيَ أسامةُ طوالَ حياتِه محترَماً عند الصحابة. فإذا وُكِّلتْ إليك مسؤوليةٌ وأنت صغير — قيادةُ فريقٍ أو ترتيبُ صفٍّ — فلا تقلْ: أنا صغير! بل <b>أتقنْها بأمانة</b>، واحترمِ الكبارَ واستشرْهم، كما فعلَ أسامة.",
+        "en": "Usama led the army until it reached the land he had been ordered to, and then <b>returned safe and victorious</b>. The tribes that had been thinking of rebelling said: If the Muslims had no strength, they would not have sent out an army like this at such a time! So his campaign gave the Muslims great respect.<br><br>Usama remained honored by the companions all his life. If you are given a responsibility while you are young — leading a team or organizing a class line — don't say, \"I'm too young!\" Instead, <b>do it well and faithfully</b>, and respect and consult your elders, as Usama did."
+       }
+      }
     ],
     quiz:[
       { q:{ar:'كم كان عمرُ أسامةَ حين قادَ الجيش؟',en:'How old was Usama when he led the army?'},
@@ -62,6 +110,14 @@ HISN_STORIES.usama = [
       "en": "Justice for Everyone"
     },
     "pages": [
+      {
+       "scene": "kaaba",
+       "character": "🕋",
+       "text": {
+        "ar": "وقعتْ هذه القصّةُ في <b>فتحِ مكّة</b>، في أيّامٍ عظيمةٍ دخلَ فيها الناسُ في دينِ اللهِ أفواجاً. وكانت قريشٌ قبيلةً تفتخرُ بأنسابِها، وكان لبعضِ بيوتِها مكانةٌ كبيرةٌ بين العرب، ومنها <b>بنو مخزوم</b>.<br><br>وفي الجاهليّةِ كان الشريفُ إذا أخطأَ وجدَ من يحميه، والضعيفُ إذا أخطأَ لم يجدْ أحداً. فجاءَ الإسلامُ ليهدمَ هذا الظلم. وكان أسامةُ — ابنُ زيدٍ الذي كان مولىً — قريباً جدّاً من قلبِ النبيِّ ﷺ، فظنَّ الناسُ أنّ شفاعتَه لا تُرَدّ.",
+        "en": "This story took place during <b>the Conquest of Makkah</b>, in great days when people were entering Allah's religion in crowds. Quraysh was a tribe proud of its lineages, and some of its houses had great standing among the Arabs — among them <b>Banu Makhzum</b>.<br><br>In the days of ignorance, a noble person who did wrong would find someone to protect him, while a weak person who did wrong would find no one. Islam came to tear down this injustice. Usama — son of Zayd, who had once been a freed servant — was very close to the Prophet's ﷺ heart, so people thought his intercession could not be turned down."
+       }
+      },
       {
         "scene": "scales",
         "character": "🧑",
@@ -110,6 +166,14 @@ HISN_STORIES.usama = [
             }
           ]
         }
+      },
+      {
+       "scene": "scales",
+       "character": "⚖️",
+       "text": {
+        "ar": "ما أجملَ موقفَ أسامة! حين صحّحَ له النبيُّ ﷺ خطأَه لم يغضبْ ولم يحزنْ على نفسِه، بل قال فوراً: <b>استغفرْ لي يا رسولَ الله</b>. فالمؤمنُ يقبلُ النصيحةَ ولو كان من أحبِّ الناسِ إلى معلّمِه.<br><br>واللهُ تعالى يقول: <b>﴿إِنَّ اللَّهَ يَأْمُرُ بِالْعَدْلِ وَالْإِحْسَانِ﴾</b>. فكنْ عادلاً في بيتِك ومدرستِك: لا تُحابِ صديقَك في اللعب، ولا تظلمْ من لا تعرفُه. وإذا كنتَ حَكَماً بين إخوتِك فاحكمْ بالحقِّ ولو على من تحب.",
+        "en": "How beautiful Usama's response was! When the Prophet ﷺ corrected his mistake, he did not get angry or sulk; he said at once: <b>Ask forgiveness for me, O Messenger of Allah.</b> A believer accepts advice even if he is one of his teacher's most beloved people.<br><br>Allah the Exalted says: <b>﴿\"Indeed, Allah commands justice and excellence\"﴾</b>. So be fair at home and at school: don't favor your friend in games, and don't wrong someone you don't know. And if you are the judge between your brothers and sisters, judge with what is right — even against someone you love."
+       }
       }
     ],
     "quiz": [

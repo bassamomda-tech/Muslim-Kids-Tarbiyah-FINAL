@@ -10,6 +10,7 @@ HISN_STORIES.ali = [
    "en": "The Night of Sacrifice: Sleeping in the Prophet's ﷺ Bed"
   },
   "pages": [
+      {"scene": "kaaba", "character": "🕋", "text": {"ar": "ثلاثةَ عشرَ عاماً والنبيُّ ﷺ يدعو قومَه في <b>مكّة</b> إلى عبادةِ اللهِ وحدَه، وقريشٌ تؤذيه وتؤذي أصحابَه. فلمّا أذنَ اللهُ للمسلمينَ بالهجرةِ إلى <b>المدينة</b>، خرجوا إليها سرّاً جماعةً بعد جماعة، وبقيَ النبيُّ ﷺ ينتظرُ إذنَ ربِّه، ومعه أبو بكرٍ وعليّ.<br><br>خافتْ قريشٌ أن يلحقَ النبيُّ ﷺ بأصحابِه فيقوى أمرُه، فاجتمعَ زعماؤها في <b>دارِ الندوة</b>، واتّفقوا على أن يختاروا من كلِّ قبيلةٍ شابّاً قويّاً، فيضربوه ضربةَ رجلٍ واحد، فيتفرّقَ دمُه في القبائل. لكنّ اللهَ أخبرَ نبيَّه بمكرِهم، وقال سبحانه: <b>﴿ وَيَمْكُرُونَ وَيَمْكُرُ اللَّهُ وَاللَّهُ خَيْرُ الْمَاكِرِينَ ﴾</b>.", "en": "For thirteen years the Prophet ﷺ called his people in <b>Makkah</b> to worship Allah alone, while Quraysh harmed him and his Companions. When Allah permitted the Muslims to emigrate to <b>Madinah</b>, they left secretly, group after group, and the Prophet ﷺ stayed behind waiting for his Lord’s permission, with Abu Bakr and Ali.<br><br>Quraysh feared the Prophet ﷺ would join his Companions and grow stronger. So their chiefs met in <b>Dar an-Nadwa</b> and agreed to pick a strong young man from every clan, so that they would all strike him at once and the blame would be spread among all the tribes. But Allah told His Prophet of their plot, and He says: <b>﴿ “They plan, and Allah plans, and Allah is the best of planners” ﴾</b>."}},
    {
     "scene": "night",
     "character": "🌙",
@@ -58,7 +59,9 @@ HISN_STORIES.ali = [
       }
      ]
     }
-   }
+   },
+      {"scene": "cave", "character": "🐪", "text": {"ar": "أمّا النبيُّ ﷺ فقد خرجَ من بيتِه والشبابُ على بابِه، فلم يرَوه، وهو يتلو من سورةِ يس: <b>﴿ وَجَعَلْنَا مِن بَيْنِ أَيْدِيهِمْ سَدًّا وَمِنْ خَلْفِهِمْ سَدًّا فَأَغْشَيْنَاهُمْ فَهُمْ لَا يُبْصِرُونَ ﴾</b>. ثمّ مضى مع صاحبِه <b>أبي بكر</b> إلى <b>غارِ ثور</b>، فاختبآ فيه ثلاثَ ليالٍ ثمّ سارا إلى المدينة.<br><br>وبقيَ عليٌّ في مكّةَ أيّاماً يردُّ إلى الناسِ الأماناتِ التي كانوا يحفظونها عند النبيِّ ﷺ، فقد كانوا يسمّونه <b>الأمين</b> حتى وهم يعادونه! ثمّ هاجرَ عليٌّ وحدَه، فلحقَ بالنبيِّ ﷺ في <b>قُباء</b>.", "en": "As for the Prophet ﷺ, he walked out of his house while the young men were at his door, and they did not see him, as he recited from Surah Ya-Sin: <b>﴿ “And We have put a barrier before them and a barrier behind them and covered them, so they do not see” ﴾</b>. Then he went with his companion <b>Abu Bakr</b> to <b>the Cave of Thawr</b>, where they hid for three nights before setting out for Madinah.<br><br>Ali stayed in Makkah for some days, returning to people the valuables they had left in the Prophet’s ﷺ safekeeping — for they called him <b>al-Amin, the Trustworthy</b>, even while they were his enemies! Then Ali emigrated on his own and joined the Prophet ﷺ at <b>Quba’</b>."}},
+      {"scene": "night", "character": "💚", "text": {"ar": "في تلك الليلةِ تعلّمنا من <b>عليٍّ</b> درسين عظيمين: الأوّلُ <b>الشجاعةُ والتضحيةُ</b> لأجلِ مَن نحبُّ في الله، فقد عرّضَ نفسَه للخطرِ ليسلمَ النبيُّ ﷺ. والثاني <b>الأمانة</b>، فقد بقيَ في مكّةَ الخطيرةِ ليردَّ أموالَ أعداءِ النبيِّ ﷺ إليهم كاملةً.<br><br>وأنتَ تستطيعُ أن تكونَ شجاعاً أميناً مثلَ عليّ: تقولُ الحقَّ ولو خفتَ، وتدافعُ عن المظلوم، وتردُّ ما استعرتَه من أصدقائِك كما أخذتَه، وتحفظُ السرَّ إذا اؤتُمنتَ عليه.", "en": "That night <b>Ali</b> taught us two great lessons. The first is <b>courage and sacrifice</b> for those we love for Allah’s sake: he put himself in danger so the Prophet ﷺ would be safe. The second is <b>trustworthiness</b>: he stayed in dangerous Makkah to give back, in full, the belongings of the Prophet’s ﷺ own enemies.<br><br>You too can be brave and trustworthy like Ali: speak the truth even when you are afraid, stand up for someone treated unfairly, return what you borrow from your friends just as you took it, and keep a secret when someone trusts you with it."}},
   ],
   "quiz": [
    {
@@ -190,6 +193,7 @@ HISN_STORIES.ali = [
    "en": "The Banner of Khaybar: He Loves Allah and His Messenger"
   },
   "pages": [
+      {"scene": "palm", "character": "🏰", "text": {"ar": "في السنةِ السابعةِ للهجرة، خرجَ النبيُّ ﷺ بجيشِه إلى <b>خيبر</b>، وهي أرضٌ واسعةٌ كثيرةُ النخيلِ شمالَ المدينة، فيها حصونٌ عاليةٌ قويّة. وكان بعضُ زعمائِها قد حرّضوا القبائلَ من قبلُ على غزوِ المدينةِ في <b>غزوةِ الأحزاب</b>، فصارتْ خيبرُ خطراً على المسلمين.<br><br>حاصرَ المسلمونَ الحصونَ حصناً بعد حصن، وصبروا على التعبِ وقلّةِ الزاد. وكان بعضُ الحصونِ شديداً صعباً، فطالَ الحصار، وكان الصحابةُ ينتظرونَ الفرجَ من الله.", "en": "In the seventh year after the Hijrah, the Prophet ﷺ marched with his army to <b>Khaybar</b>, a wide land full of palm trees north of Madinah, with tall, strong fortresses. Some of its leaders had earlier stirred up the tribes to attack Madinah in <b>the Battle of the Confederates</b>, so Khaybar had become a danger to the Muslims.<br><br>The Muslims besieged the fortresses one after another, patient through tiredness and little food. Some fortresses were very hard to take, so the siege went on, and the Companions waited for Allah’s help."}},
    {
     "scene": "desert",
     "character": "🚩",
@@ -238,7 +242,9 @@ HISN_STORIES.ali = [
       }
      ]
     }
-   }
+   },
+      {"scene": "desert", "character": "🗣️", "text": {"ar": "وقد بلغَ شوقُ الصحابةِ إلى هذا الشرفِ أنّ <b>عمرَ بنَ الخطّاب</b> قال: <b>«ما أحببتُ الإمارةَ إلا يومئذ»</b>. ولمّا أخذَ عليٌّ الرايةَ سألَ: يا رسولَ الله، أقاتلُهم حتى يكونوا مثلَنا؟ فقال النبيُّ ﷺ: <b>«انفُذْ على رِسْلِك حتى تنزلَ بساحتِهم، ثمّ ادعُهم إلى الإسلام... فواللهِ لأَنْ يهديَ اللهُ بك رجلاً واحداً خيرٌ لك من أن يكونَ لك حُمْرُ النَّعَم»</b>.<br><br>وحُمْرُ النَّعَمِ هي الإبلُ الحمراء، أغلى أموالِ العربِ في ذلك الزمان. فكانت الدعوةُ إلى الهدايةِ أحبَّ إلى النبيِّ ﷺ من النصرِ نفسِه.", "en": "The Companions longed so much for this honor that <b>Umar ibn al-Khattab</b> said: <b>“I never wished to be a leader except on that day.”</b> When Ali took the banner he asked: O Messenger of Allah, shall I fight them until they become like us? The Prophet ﷺ said: <b>“Go calmly until you reach their land, then invite them to Islam... By Allah, that Allah guides one man through you is better for you than owning red camels.”</b><br><br>Red camels were the most precious wealth of the Arabs at that time. So guiding people was dearer to the Prophet ﷺ than victory itself."}},
+      {"scene": "mosque", "character": "🚩", "text": {"ar": "لم ينلْ عليٌّ الرايةَ لأنّه الأقوى جسداً فقط، بل لأنّه <b>يحبُّ اللهَ ورسولَه</b>، ويحبُّه اللهُ ورسولُه. وهذه شهادةٌ من النبيِّ ﷺ أغلى من كلِّ كنوزِ الدنيا.<br><br>وأنتَ تستطيعُ أن تكونَ ممّن يحبُّهم اللهُ ورسولُه: بالصلاةِ في وقتِها، وطاعةِ والدَيك، والصدقِ والرحمة، واتّباعِ سنّةِ النبيِّ ﷺ. وتذكّرْ أنّ البطلَ الحقيقيَّ يريدُ <b>هدايةَ الناسِ لا هزيمتَهم</b>، وأنّ كلمةً طيّبةً تُقرّبُ صديقاً إلى الله قد تكونُ عند اللهِ أعظمَ من كنزٍ كبير.", "en": "Ali did not receive the banner only because he was physically strong, but because he <b>loved Allah and His Messenger</b>, and Allah and His Messenger loved him. That testimony from the Prophet ﷺ is worth more than all the treasures of this world.<br><br>You too can be among those whom Allah and His Messenger love: by praying on time, obeying your parents, being truthful and kind, and following the Sunnah of the Prophet ﷺ. And remember that a true hero wants <b>people to be guided, not defeated</b> — a kind word that brings a friend closer to Allah may be greater with Allah than a huge treasure."}},
   ],
   "quiz": [
    {
@@ -370,6 +376,7 @@ HISN_STORIES.ali = [
    "en": "The Gate of the City of Knowledge"
   },
   "pages": [
+      {"scene": "pen", "character": "✍️", "text": {"ar": "عاشَ عليٌّ قريباً من النبيِّ ﷺ سنواتٍ طويلة، يسمعُ القرآنَ ساعةَ نزولِه، ويرى كيف يصلّي النبيُّ ﷺ وكيف يحكمُ بين الناس. وكان من <b>كُتّابِ الوحي</b> الذين يكتبونَ الآياتِ حين تنزل.<br><br>ثمّ أرسلَه النبيُّ ﷺ إلى <b>اليمن</b> قاضياً وهو شابّ، فقال عليّ: يا رسولَ الله، تبعثُني وأنا حديثُ السنِّ ولا علمَ لي بالقضاء! فضربَ النبيُّ ﷺ بيدِه في صدرِه ودعا له: <b>«اللهمَّ اهدِ قلبَه وثبِّتْ لسانَه»</b>. قال عليّ: <b>فما شككتُ في قضاءٍ بين اثنين</b> (رواه أبو داود وغيره).", "en": "Ali lived close to the Prophet ﷺ for many years, hearing the Qur’an at the very moment it was revealed and watching how the Prophet ﷺ prayed and how he judged between people. He was one of the <b>scribes of revelation</b> who wrote down the verses as they came down.<br><br>Then the Prophet ﷺ sent him to <b>Yemen</b> as a judge while he was still young. Ali said: O Messenger of Allah, you are sending me while I am young and know nothing about judging! The Prophet ﷺ struck his chest with his hand and prayed: <b>“O Allah, guide his heart and make his tongue firm.”</b> Ali said: <b>After that I never doubted in judging between two people</b> (Abu Dawud and others)."}},
    {
     "scene": "mosque",
     "character": "📚",
@@ -418,7 +425,9 @@ HISN_STORIES.ali = [
       }
      ]
     }
-   }
+   },
+      {"scene": "mosque", "character": "🗣️", "text": {"ar": "وكان عليٌّ معلّماً حكيماً يعرفُ كيف يخاطبُ الناس. ومن كلامِه الذي رواه <b>البخاريّ</b>: <b>«حدِّثوا الناسَ بما يعرفون، أتحبّونَ أن يُكذَّبَ اللهُ ورسولُه؟»</b>، أي: كلِّموا كلَّ إنسانٍ بما يفهمُه عقلُه، حتى لا يُنكرَ الحقَّ لأنّه لم يفهمْه.<br><br>فكان العالِمُ الحقُّ عنده هو مَن ينفعُ الناسَ بعلمِه ويقرّبُهم إلى الله، لا مَن يُكثرُ الكلامَ ليُظهرَ نفسَه.", "en": "Ali was a wise teacher who knew how to speak to people. Among his words reported by <b>al-Bukhari</b>: <b>“Speak to people with what they can understand — would you like Allah and His Messenger to be denied?”</b> In other words: speak to each person in a way their mind can grasp, so they do not reject the truth simply because they did not understand it.<br><br>For him a true scholar was the one who benefits people with his knowledge and brings them closer to Allah, not the one who talks a lot to show off."}},
+      {"scene": "sprout", "character": "📖", "text": {"ar": "لم يُولدْ عليٌّ عالماً، بل <b>تعلّمَ</b>: لازمَ معلّمَه ﷺ، وسألَ عمّا لا يعرف، ودعا اللهَ أن يهديَ قلبَه. وهذه هي الطريقُ نفسُها لكلِّ طالبِ علمٍ اليوم.<br><br>فاجلسْ إلى مَن يعلّمُك الخيرَ بأدب، ولا تستحِ أن تسأل، وادعُ بما علّمَنا اللهُ في القرآن: <b>﴿ وَقُل رَّبِّ زِدْنِي عِلْمًا ﴾</b>. واجمعْ مثلَ عليٍّ بين <b>شجاعةِ القلبِ</b> و<b>نورِ العلم</b>، فالأمّةُ تحتاجُ أبطالاً يعرفونَ الحقَّ ويعملونَ به.", "en": "Ali was not born a scholar — he <b>learned</b>. He stayed close to his teacher ﷺ, asked about what he did not know, and prayed to Allah to guide his heart. That is the very same path for every student today.<br><br>So sit politely with those who teach you good things, do not be shy to ask, and pray as Allah taught us in the Qur’an: <b>﴿ “And say: My Lord, increase me in knowledge” ﴾</b>. Like Ali, combine <b>a brave heart</b> with <b>the light of knowledge</b> — the Ummah needs heroes who know the truth and act on it."}},
   ],
   "quiz": [
    {
@@ -550,6 +559,7 @@ HISN_STORIES.ali = [
    "en": "Ali's Simplicity and Justice as Caliph"
   },
   "pages": [
+      {"scene": "mosque", "character": "🕌", "text": {"ar": "بعدَ استشهادِ الخليفةِ <b>عثمانَ بنِ عفّان</b> رضي الله عنه، بايعَ المسلمونَ <b>عليَّ بنَ أبي طالب</b> خليفةً سنةَ خمسٍ وثلاثين للهجرة، في أيّامٍ صعبةٍ مليئةٍ بالفتن. ثمّ انتقلَ إلى <b>الكوفة</b> في العراقِ وجعلَها مقرّاً لخلافتِه.<br><br>صار عليٌّ أميرَ المؤمنين، تحتَ يدِه بلادٌ واسعةٌ وأموالٌ كثيرة، وكان يستطيعُ أن يعيشَ في قصرٍ ويأكلَ أطيبَ الطعام. لكنّه بقيَ كما عرفَه الناسُ منذُ صغرِه: يرى الخلافةَ <b>أمانةً ومسؤوليّةً</b> سيُسألُ عنها أمامَ الله، لا مُلكاً يتمتّعُ به.", "en": "After the martyrdom of the caliph <b>Uthman ibn Affan</b>, may Allah be pleased with him, the Muslims pledged allegiance to <b>Ali ibn Abi Talib</b> as caliph in the year 35 AH, in difficult days full of turmoil. He later moved to <b>Kufa</b> in Iraq and made it the seat of his caliphate.<br><br>Ali became the Commander of the Believers, with vast lands and great wealth under his authority. He could have lived in a palace and eaten the finest food. But he stayed just as people had known him since childhood: he saw the caliphate as <b>a trust and a responsibility</b> he would be questioned about before Allah, not a kingdom to enjoy."}},
    {
     "scene": "mosque",
     "character": "🧥",
@@ -598,7 +608,9 @@ HISN_STORIES.ali = [
       }
      ]
     }
-   }
+   },
+      {"scene": "scales", "character": "⚖️", "text": {"ar": "وتذكرُ كتبُ التاريخِ أنّ القاضيَ في تلك القصّةِ كان <b>شُرَيحاً</b>، وأنّ عليّاً جلسَ أمامَه مع خصمِه جلوسَ المتساويَين، لم يطلبْ مكاناً أعلى لأنّه الخليفة. ولمّا طلبَ القاضي شهوداً، لم يجدْ عليٌّ ما يكفي من البيّنةِ التي يقبلُها القضاء، فرضيَ بالحكمِ ولم يغضب.<br><br>فرأى الرجلُ أنّ أميرَ المؤمنينَ نفسَه يخضعُ لحكمِ الشرعِ كسائرِ الناس، فعرفَ أنّ هذا الدينَ حقّ. وهكذا يكونُ العدلُ أبلغَ من ألفِ خطبة.", "en": "History books mention that the judge in that story was <b>Shurayh</b>, and that Ali sat before him beside his opponent as an equal, without asking for a higher seat because he was the caliph. When the judge asked for witnesses, Ali did not have enough of the proof the court accepts, so he accepted the ruling without anger.<br><br>The man saw that the Commander of the Believers himself submitted to the law like everyone else, and he realized that this religion is the truth. Justice like this speaks louder than a thousand speeches."}},
+      {"scene": "sprout", "character": "🌿", "text": {"ar": "أمرَنا اللهُ أن نعدلَ حتى مع مَن لا نحبُّه، فقال سبحانه: <b>﴿ وَلَا يَجْرِمَنَّكُمْ شَنَآنُ قَوْمٍ عَلَىٰ أَلَّا تَعْدِلُوا اعْدِلُوا هُوَ أَقْرَبُ لِلتَّقْوَىٰ ﴾</b>. وقد عاشَ عليٌّ هذه الآيةَ في قصرِ الحكمِ وفي مجلسِ القضاء.<br><br>وأنتَ تستطيعُ أن تكونَ عادلاً في عالمِك الصغير: إذا اختلفَ أخواك فلا تنحزْ لمن تحبُّه أكثر، وإذا لعبتَ مع أصدقائِك فالتزمْ القواعدَ ولو خسرت، وإذا أخطأتَ فاعترفْ. واعلمْ أنّ <b>البساطةَ والعدلَ</b> يجعلانِ الناسَ يحبّونك ويثقونَ بك.", "en": "Allah commanded us to be fair even with those we dislike: <b>﴿ “Do not let hatred of a people lead you to be unjust. Be just: that is closer to righteousness” ﴾</b>. Ali lived this verse in the seat of government and in the courtroom.<br><br>You can be just in your own small world: when your siblings disagree, do not take the side of the one you like more; when you play with friends, keep to the rules even if you lose; and when you make a mistake, admit it. Know that <b>simplicity and fairness</b> make people love you and trust you."}},
   ],
   "quiz": [
    {
@@ -737,6 +749,7 @@ HISN_STORIES.ali = [
    "en": "The First Boy to Believe"
   },
   "pages": [
+      {"scene": "kaaba", "character": "👨‍👦", "text": {"ar": "كان <b>أبو طالب</b> عمَّ النبيِّ ﷺ، وهو الذي ربّاه بعد وفاةِ جدِّه عبدِ المطّلب، فأحبَّه حبّاً شديداً. وكان أبو طالبٍ سيّداً محترماً في قريش، لكنّه كان قليلَ المال.<br><br>ووُلدَ له ابنٌ سمّاه <b>عليّاً</b>، فهو ابنُ عمِّ النبيِّ ﷺ. وكبرَ النبيُّ ﷺ وتزوّجَ <b>خديجةَ</b> رضي الله عنها، وصار له بيتٌ في مكّة، فأرادَ أن يردَّ جميلَ عمِّه الذي ربّاه صغيراً.", "en": "<b>Abu Talib</b> was the Prophet’s ﷺ uncle. He raised him after the death of his grandfather Abd al-Muttalib and loved him dearly. Abu Talib was a respected chief in Quraysh, but he did not have much money.<br><br>He had a son he named <b>Ali</b>, so Ali was the Prophet’s ﷺ cousin. The Prophet ﷺ grew up and married <b>Khadijah</b>, may Allah be pleased with her, and had his own home in Makkah — and he wanted to repay the kindness of the uncle who had raised him as a child."}},
    {
     "scene": "desert",
     "character": "👦",
@@ -785,7 +798,8 @@ HISN_STORIES.ali = [
       }
      ]
     }
-   }
+   },
+      {"scene": "madinah", "character": "🌟", "text": {"ar": "كبرَ ذلك الصبيُّ على الإيمان، فلم يسجدْ لصنمٍ قطّ، وصار شابّاً شجاعاً عالماً. وزوّجَه النبيُّ ﷺ ابنتَه <b>فاطمة</b>، فكان من أولادِهما <b>الحسنُ والحسين</b>.<br><br>وبشّرَه النبيُّ ﷺ بالجنّة، فهو من <b>العشرةِ المبشَّرينَ بالجنّة</b>، ثمّ صار رابعَ الخلفاءِ الراشدين. فانظرْ كيف بدأتْ هذه الحياةُ العظيمةُ بقرارٍ صادقٍ من طفلٍ صغير: أن يتبعَ الحقَّ ويثبتَ عليه.", "en": "That boy grew up upon faith — he never once bowed to an idol — and became a brave and learned young man. The Prophet ﷺ married him to his daughter <b>Fatima</b>, and among their children were <b>al-Hasan and al-Husayn</b>.<br><br>The Prophet ﷺ gave him the good news of Paradise, so he is one of <b>the Ten promised Paradise</b>, and later he became the fourth of the Rightly Guided Caliphs. See how this great life began with one sincere decision by a small child: to follow the truth and hold on to it."}},
   ],
   "quiz": [
    {
@@ -917,6 +931,7 @@ HISN_STORIES.ali = [
    "en": "\"You Are to Me as Harun Was to Musa\""
   },
   "pages": [
+      {"scene": "desert", "character": "☀️", "text": {"ar": "في السنةِ التاسعةِ للهجرة، بلغَ المسلمينَ أنّ <b>الروم</b> يجمعونَ جيشاً على حدودِ الشام. فأعلنَ النبيُّ ﷺ الخروجَ إلى <b>تبوك</b>، وكانت الطريقُ بعيدةً، والحرُّ شديداً، وثمارُ المدينةِ قد طابت.<br><br>لذلك سُمّيَ ذلك الجيشُ <b>«جيشَ العُسْرة»</b>، أي جيشَ الشدّة. فتسابقَ الصحابةُ في الإنفاقِ لتجهيزِه، وجهّزَ <b>عثمانُ بنُ عفّان</b> رضي الله عنه جزءاً كبيراً منه. وكان كلُّ مؤمنٍ يتمنّى أن يكونَ في هذا الجيشِ مع رسولِ اللهِ ﷺ.", "en": "In the ninth year after the Hijrah, news reached the Muslims that <b>the Byzantines</b> were gathering an army on the borders of Syria. The Prophet ﷺ announced the march to <b>Tabuk</b>. The road was long, the heat was fierce, and the fruits of Madinah had just ripened.<br><br>That is why this army was called <b>“the Army of Hardship.”</b> The Companions competed in spending to equip it, and <b>Uthman ibn Affan</b>, may Allah be pleased with him, equipped a large part of it. Every believer wished to be in this army with the Messenger of Allah ﷺ."}},
    {
     "scene": "madinah",
     "character": "🌙",
@@ -965,7 +980,8 @@ HISN_STORIES.ali = [
       }
      ]
     }
-   }
+   },
+      {"scene": "mihrab", "character": "🤝", "text": {"ar": "وقد طلبَ موسى عليه السلام من ربِّه أن يجعلَ أخاه هارونَ عوناً له، فقال: <b>﴿ وَاجْعَل لِّي وَزِيرًا مِّنْ أَهْلِي ۝ هَارُونَ أَخِي ﴾</b>، فكان هارونُ قريبَه ومُعينَه وسَندَه. فحين شبّهَ النبيُّ ﷺ عليّاً بهارون، كان يخبرُه أنّه <b>قريبٌ منه، يثقُ به</b> ويتركُ عنده أغلى ما يملكُ: أهلَه.<br><br>وعادَ الجيشُ من تبوكَ سالماً، ولقيَه عليٌّ وأهلُ المدينةِ فرحين، وبقيتْ هذه الكلمةُ وساماً على صدرِ عليٍّ طوالَ حياتِه.", "en": "Musa (peace be upon him) asked his Lord to make his brother Harun a helper for him, saying: <b>﴿ “And appoint for me a helper from my family — Harun, my brother” ﴾</b>. So Harun was close to him, his helper and his support. When the Prophet ﷺ compared Ali to Harun, he was telling him that he was <b>close to him and trusted</b>, and that he was leaving with him what he valued most: his family.<br><br>The army returned safely from Tabuk, and Ali and the people of Madinah met it joyfully. That saying remained a medal on Ali’s chest for the rest of his life."}},
   ],
   "quiz": [
    {
@@ -1097,6 +1113,7 @@ HISN_STORIES.ali = [
    "en": "Glorifying Allah Before Sleep: Better Than a Servant"
   },
   "pages": [
+      {"scene": "dwellings", "character": "🏠", "text": {"ar": "كان بيتُ <b>عليٍّ وفاطمة</b> في المدينةِ بيتاً بسيطاً جدّاً، ليس فيه أثاثٌ كثيرٌ ولا خدم. وكان عليٌّ يعملُ بيدَيه ليكسبَ رزقَه، وفاطمةُ تقومُ بأعمالِ البيتِ كلِّها وحدَها: تطحنُ الحَبَّ، وتعجنُ، وتخبزُ، وتعتني بالبيت.<br><br>ومع هذا التعبِ كان بيتُهما مليئاً بالحبِّ والرضا، وكان النبيُّ ﷺ يزورُهما كثيراً، فهما من أحبِّ الناسِ إليه. وكانت فاطمةُ أشبهَ الناسِ بأبيها ﷺ في كلامِها ومِشيتِها.", "en": "The home of <b>Ali and Fatima</b> in Madinah was very simple, with little furniture and no servants. Ali worked with his hands to earn a living, and Fatima did all the housework herself: grinding the grain, kneading the dough, baking the bread and caring for the home.<br><br>Despite the hard work, their home was full of love and contentment. The Prophet ﷺ visited them often, for they were among the people dearest to him. And Fatima was the most like her father ﷺ in the way she spoke and walked."}},
    {
     "scene": "night",
     "character": "🌙",
@@ -1145,7 +1162,8 @@ HISN_STORIES.ali = [
       }
      ]
     }
-   }
+   },
+      {"scene": "night", "character": "📿", "text": {"ar": "وقد حافظَ عليٌّ على هذا الذِّكرِ طوالَ عمرِه، حتى في أصعبِ الأيّام. وفي <b>صحيحِ البخاريّ</b> أنّه سُئلَ: ولا ليلةَ صِفّين؟ فقال: <b>«ولا ليلةَ صِفّين»</b>، وهي ليلةٌ كان فيها في ساحةِ المعركةِ والهمومُ كثيرة.<br><br>والذِّكرُ يملأُ القلبَ راحةً كما قال اللهُ تعالى: <b>﴿ أَلَا بِذِكْرِ اللَّهِ تَطْمَئِنُّ الْقُلُوبُ ﴾</b>. فقبلَ أن تنامَ الليلة، خذْ دقيقتين فقط، وسبِّحْ واحمدْ وكبِّرْ كما علّمَ النبيُّ ﷺ ابنتَه، وعلِّمْ إخوتَك أيضاً، فتكونَ لك مثلُ أجورِهم.", "en": "Ali kept this remembrance all his life, even on the hardest days. In <b>Sahih al-Bukhari</b> he was asked: Not even on the night of Siffin? He said: <b>“Not even on the night of Siffin”</b> — a night when he was on the battlefield with many worries.<br><br>Remembrance fills the heart with peace, as Allah says: <b>﴿ “Surely, in the remembrance of Allah do hearts find rest” ﴾</b>. Before you sleep tonight, take just two minutes to say SubhanAllah, Alhamdulillah and Allahu Akbar as the Prophet ﷺ taught his daughter — and teach your brothers and sisters too, so you get a reward like theirs."}},
   ],
   "quiz": [
    {
