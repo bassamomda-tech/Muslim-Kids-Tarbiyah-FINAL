@@ -166,3 +166,6 @@
   #printArea .cert-actions{ display:none !important; }
   #printArea .cert-card{ box-shadow:none !important; margin:0 auto !important; max-width:680px; animation:none !important; }
 }
+
+/* readable text (2026-11): children's reading text no smaller than ~14px */
+.cert-locked .cl-sub{font-size:.92rem}

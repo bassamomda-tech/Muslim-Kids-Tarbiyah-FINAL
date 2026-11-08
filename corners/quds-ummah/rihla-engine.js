@@ -1,4 +1,5 @@
 /* mkvoice-loader */(function(){try{var cs=document.currentScript,src=(cs&&cs.src)||"";var m=src.match(/^(.*\/corners\/)/);var base=m?m[1]:"";if(base&&!window.MKVoice&&!document.querySelector("script[data-mkvoice]")){var s=document.createElement("script");s.src=base+"shared/voice-engine.js";s.setAttribute("data-mkvoice","1");document.head.appendChild(s);}}catch(e){}})();
+/* mk-station-lite loader */(function(){try{if(window.__mkStationLite||document.querySelector("script[data-mk-sl]"))return;var cs=document.currentScript,src=(cs&&cs.src)||"";var m=src.match(/^(.*\/corners\/)/);if(!m)return;var s=document.createElement("script");s.src=m[1]+"shared/mk-station-lite.js";s.setAttribute("data-mk-sl","1");document.head.appendChild(s);}catch(e){}})();
 /* ════ مُحَرِّكُ الرِّحلات — generic journey engine (Faith Minaret) ════
    Reads window.RIHLA_CFG = { stations, prefix, confetti, T:{...labels} }
    Same station schema as aman-stations.js, with `card` replacing

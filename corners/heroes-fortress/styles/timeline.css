@@ -83,3 +83,6 @@
 .tl-card.gate .tl-ic{background:linear-gradient(135deg,var(--gold-lt),var(--gold-dk))}
 .tl-card.gate .tl-num{background:var(--gold-dk);color:#fff}
 .tl-card.gate.done{border-style:solid;border-color:#7DB344}
+
+/* readable text (2026-11): children's reading text no smaller than ~14px */
+.tl-hook{font-size:.88rem;line-height:1.55}

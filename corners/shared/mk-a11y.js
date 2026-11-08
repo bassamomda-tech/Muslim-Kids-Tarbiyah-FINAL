@@ -171,3 +171,11 @@
   })();
 
 })();
+
+/* the shared top bar (mk-topbar.js) — pages normally include it themselves; this is the safety net */
+(function () {
+  if (window.__mkTopbar || document.querySelector('script[src*="mk-topbar.js"]')) return;
+  var me = document.querySelector('script[src*="mk-a11y.js"]'), s = document.createElement('script');
+  s.src = me ? me.src.replace(/mk-a11y\.js.*$/, 'mk-topbar.js') : 'mk-topbar.js'; s.async = true; s.onerror = function () {};
+  (document.head || document.documentElement).appendChild(s);
+})();

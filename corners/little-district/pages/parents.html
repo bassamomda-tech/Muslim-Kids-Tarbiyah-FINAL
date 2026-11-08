@@ -437,19 +437,82 @@ html[dir="rtl"] .shop-card{border-inline-start:1.5px solid var(--card-bd);border
     <p><span class="ar-only">رفيقُك في رحلة تربية جيلٍ واعٍ قويّ</span><span class="en-only">Your companion in raising an aware, strong generation</span></p>
   </div>
 
-  <div class="tabs">
+  <!-- ═══ START IN 3 STEPS (for a new parent) + grouped tabs — styles kept here, inside main ═══ -->
+  <style>
+    .p3-start{max-width:980px;margin:0 auto 1.6rem;background:linear-gradient(150deg,rgba(212,160,23,.16),rgba(142,68,173,.14));border:1.5px solid rgba(212,160,23,.45);border-radius:1.3rem;padding:1.1rem 1.1rem 1rem}
+    .p3-start h2{margin:0 0 .25rem;font-size:1.3rem;font-weight:900;color:var(--gold-lt)}
+    .p3-start .p3-sub{margin:0 0 .85rem;opacity:.8;font-size:.92rem}
+    .p3-steps{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.7rem}
+    .p3-step{display:flex;gap:.65rem;align-items:flex-start;width:100%;min-height:44px;height:100%;text-align:start;background:var(--card);border:1.5px solid var(--card-bd);border-radius:1rem;padding:.8rem .85rem;color:var(--text);font:inherit;cursor:pointer;text-decoration:none;transition:border-color .2s,transform .2s}
+    .p3-step:hover,.p3-step:focus-visible{border-color:var(--gold);transform:translateY(-2px)}
+    .p3-step:focus-visible{outline:3px solid var(--gold-lt);outline-offset:2px}
+    .p3-n{flex:0 0 auto;width:2rem;height:2rem;border-radius:50%;display:grid;place-items:center;background:var(--gold);color:#10243d;font-weight:900;font-size:1rem}
+    .p3-step.done .p3-n{background:#1FAE8C;color:#fff}
+    .p3-step b{display:block;font-weight:800;font-size:1rem;margin-bottom:.15rem}
+    .p3-step small{display:block;font-size:.82rem;opacity:.78;line-height:1.55}
+    .p3-step .p3-go{display:inline-block;margin-top:.35rem;font-size:.8rem;font-weight:800;color:var(--gold-lt)}
+    .tabs.tabs-grouped{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.8rem;max-width:980px;margin:0 auto 1.8rem}
+    .tab-group{border:1px solid var(--card-bd);background:rgba(255,255,255,.03);border-radius:1.1rem;padding:.6rem .7rem .75rem;margin:0;min-width:0}
+    .tab-group .tg-lbl{display:block;font-size:.8rem;font-weight:900;letter-spacing:.02em;color:var(--gold-lt);opacity:.9;margin:0 .2rem .5rem}
+    .tab-group .tg-row{display:flex;flex-wrap:wrap;gap:.5rem}
+    .tabs-grouped .tab{min-height:44px;padding:.55rem 1rem;font-size:.92rem}
+    #panel-guide,#panel-annual,#panel-schedule,#panel-track,#panel-controls{scroll-margin-top:84px}
+    @media(max-width:760px){
+      .p3-steps{grid-template-columns:1fr;gap:.5rem}
+      .p3-start{padding:.9rem .8rem .8rem}.p3-start .p3-sub{display:none}.p3-step{padding:.65rem .75rem}.p3-step .p3-go{display:none}
+      .tabs.tabs-grouped{grid-template-columns:1fr}
+      .tabs-grouped .tab{flex:1 1 auto;justify-content:center}
+    }
+    @media(prefers-reduced-motion:reduce){.p3-step{transition:none}.p3-step:hover{transform:none}}
+  </style>
+  <section class="p3-start" id="p3Start" aria-labelledby="p3StartT">
+    <h2 id="p3StartT"><span class="ar-only">🚀 ابدأ في ٣ خطوات</span><span class="en-only">🚀 Start in 3 steps</span></h2>
+    <p class="p3-sub"><span class="ar-only">جديدٌ هنا؟ هذه أسرع طريقة لتبدأ مع طفلك.</span><span class="en-only">New here? This is the quickest way to get going with your child.</span></p>
+    <ol class="p3-steps">
+      <li><a class="p3-step" id="p3Step1" href="../../shared/login.html" onclick="p3AddChild(event)"><span class="p3-n">1</span><span><b><span class="ar-only">أضف ملف طفلك</span><span class="en-only">Add your child's profile</span></b><small><span class="ar-only">اسمه وشخصيته، ليُحفَظ تقدّمه ونجومه.</span><span class="en-only">Name and character, so progress and stars are saved.</span></small><span class="p3-go"><span class="ar-only">إضافة طفل ←</span><span class="en-only">Add a child →</span></span></span></a></li>
+      <li><button type="button" class="p3-step" onclick="p3Go('annual')"><span class="p3-n">2</span><span><b><span class="ar-only">اختر خطة الشهر والأسبوع</span><span class="en-only">Pick this month's plan</span></b><small><span class="ar-only">الخطة السنوية تقول لك ماذا يفتح طفلك كلَّ شهر، و«منظّم اليوم» يرتّب أسبوعه.</span><span class="en-only">The Annual Plan shows what your child opens each month; the Day Planner arranges the week.</span></small><span class="p3-go"><span class="ar-only">افتح الخطة السنوية ←</span><span class="en-only">Open the Annual Plan →</span></span></span></button></li>
+      <li><button type="button" class="p3-step" onclick="p3Go('track')"><span class="p3-n">3</span><span><b><span class="ar-only">تابع التقدّم</span><span class="en-only">Follow the progress</span></b><small><span class="ar-only">نقاطٌ ورسومٌ وشهاداتُ إنجاز لكلّ ركن.</span><span class="en-only">Points, charts and certificates for every corner.</span></small><span class="p3-go"><span class="ar-only">افتح المتابعة ←</span><span class="en-only">Open Tracking →</span></span></span></button></li>
+    </ol>
+  </section>
+  <script>
+  function p3Go(id){
+    try{ showTab(id); }catch(e){}
+    var p=document.getElementById('panel-'+id); if(!p) return;
+    var calm=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
+    try{ p.scrollIntoView({behavior:calm?'auto':'smooth',block:'start'}); }catch(e){ p.scrollIntoView(); }
+  }
+  function p3AddChild(e){
+    if(e) e.preventDefault();
+    try{ if(window.MK&&MK.snapshotActive) MK.snapshotActive(); }catch(x){}
+    location.href='../../shared/login.html?lang='+(typeof lang!=='undefined'?lang:'ar');
+  }
+  /* mark step 1 done when a child profile already exists */
+  (function(){ function mark(){ try{ if(window.MK&&MK.profiles&&MK.profiles().length) document.getElementById('p3Step1').classList.add('done'); }catch(e){} }
+    if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',mark); else mark(); })();
+  </script>
+
+  <!-- tabs grouped visually (presentational only — every .tab and its onclick unchanged) -->
+  <div class="tabs tabs-grouped">
+    <div class="tab-group" role="group" aria-labelledby="tgStart"><span class="tg-lbl" id="tgStart"><span class="ar-only">للبداية</span><span class="en-only">Getting started</span></span><div class="tg-row">
     <button class="tab active" data-tab="guide" onclick="showTab('guide')"><span class="ti">📖</span><span class="ar-only">دليل الاستخدام</span><span class="en-only">Guide</span></button>
+    <button class="tab" data-tab="controls" onclick="showTab('controls')"><span class="ti">🔐</span><span class="ar-only">تحكّم الأهل</span><span class="en-only">Controls</span></button>
+    </div></div>
+    <div class="tab-group" role="group" aria-labelledby="tgPlans"><span class="tg-lbl" id="tgPlans"><span class="ar-only">برامج وخطط</span><span class="en-only">Plans &amp; programmes</span></span><div class="tg-row">
     <button class="tab" data-tab="annual" onclick="showTab('annual')"><span class="ti">🗺️</span><span class="ar-only">الخطة السنوية</span><span class="en-only">Annual Plan</span></button>
     <button class="tab" data-tab="programs" onclick="showTab('programs')"><span class="ti">📘</span><span class="ar-only">دليل الأهل الشامل</span><span class="en-only">Parents’ Guide</span></button>
     <button class="tab" data-tab="schedule" onclick="showTab('schedule')"><span class="ti">🗓️</span><span class="ar-only">منظّم اليوم</span><span class="en-only">Day Planner</span></button>
+    </div></div>
+    <div class="tab-group" role="group" aria-labelledby="tgTrack"><span class="tg-lbl" id="tgTrack"><span class="ar-only">متابعة</span><span class="en-only">Follow-up</span></span><div class="tg-row">
     <button class="tab" data-tab="track" onclick="showTab('track')"><span class="ti">📊</span><span class="ar-only">المتابعة والتقييم</span><span class="en-only">Tracking</span></button>
     <button class="tab" data-tab="behavior" onclick="showTab('behavior')"><span class="ti">⭐</span><span class="ar-only">نقاط السلوك</span><span class="en-only">Behaviour Points</span></button>
-    <button class="tab" data-tab="res" onclick="showTab('res')"><span class="ti">🗂️</span><span class="ar-only">المصادر التربوية</span><span class="en-only">Resources</span></button>
-    <button class="tab" data-tab="controls" onclick="showTab('controls')"><span class="ti">🔐</span><span class="ar-only">تحكّم الأهل</span><span class="en-only">Controls</span></button>
     <a class="tab tab-go" href="hasanat.html"><span class="ti">⚖️</span><span class="ar-only">حاسبة الحسنات</span><span class="en-only">Hasanat Calculator</span></a>
+    </div></div>
+    <div class="tab-group" role="group" aria-labelledby="tgLib"><span class="tg-lbl" id="tgLib"><span class="ar-only">مكتبة ومطبوعات ومجتمع</span><span class="en-only">Library, printables &amp; community</span></span><div class="tg-row">
+    <button class="tab" data-tab="res" onclick="showTab('res')"><span class="ti">🗂️</span><span class="ar-only">المصادر التربوية</span><span class="en-only">Resources</span></button>
     <a class="tab tab-go" href="../../shared/store.html#books" onclick="this.href='../../shared/store.html?lang='+lang+'#books'"><span class="ti">📚</span><span class="ar-only">المكتبة المجانية</span><span class="en-only">Free Library</span></a>
     <a class="tab tab-go" href="../../shared/downloads.html" onclick="this.href='../../shared/downloads.html?lang='+lang"><span class="ti">📥</span><span class="ar-only">ركن التنزيلات</span><span class="en-only">Downloads</span></a>
     <a class="tab tab-go" href="../../shared/community.html" onclick="this.href='../../shared/community.html?lang='+lang" data-community-badge><span class="ti">🏡</span><span class="ar-only">مجتمع العائلات</span><span class="en-only">Family Community</span></a>
+    </div></div>
   </div>
 
   <!-- PANEL 0 · GUIDE / HOW TO USE -->
@@ -482,7 +545,7 @@ html[dir="rtl"] .shop-card{border-inline-start:1.5px solid var(--card-bd);border
       <button class="gbtn go" style="margin-top:.6rem" onclick="event.stopPropagation();showTab('annual')"><span class="ar-only">🗺️ افتح الخطة السنوية</span><span class="en-only">🗺️ Open the Annual Plan</span></button></div>
     </div>
 
-    <h3 class="guide-h"><span class="ar-only">ابدأ في ٣ خطوات</span><span class="en-only">Start in 3 steps</span></h3>
+    <h3 class="guide-h"><span class="ar-only">رحلة طفلك في ٣ خطوات</span><span class="en-only">Your child’s journey in 3 steps</span></h3>
     <div class="guide-steps">
       <div class="gstep"><span class="gs-n">١</span><b><span class="ar-only">أنشِئ ملفّ طفلك</span><span class="en-only">Create a profile</span></b><p><span class="ar-only">من صفحة الدخول اكتب اسمه واختَر صورته. يمكنك إضافة أكثر من طفل.</span><span class="en-only">On the login page enter the child's name and pick an avatar. You can add several children.</span></p></div>
       <div class="gstep"><span class="gs-n">٢</span><b><span class="ar-only">اختَر ركناً</span><span class="en-only">Pick a corner</span></b><p><span class="ar-only">من خريطة المدينة 🗺️ اضغط أيّ ركنٍ ليبدأ رحلته ويُكمل محطّاته.</span><span class="en-only">From the city map 🗺️ tap any corner to begin a journey and complete its stations.</span></p></div>
@@ -1472,5 +1535,6 @@ function openCert(j){
 <script src="schedule.js"></script>
 <script defer src="../../shared/nav-fix.js"></script>
 <script src="../../shared/mk-notify.js"></script>
+<script src="../../shared/mk-topbar.js"></script>
 </body>
 </html>

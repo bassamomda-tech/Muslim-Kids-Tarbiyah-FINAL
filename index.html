@@ -1858,5 +1858,170 @@ document.addEventListener('keydown', e => { if (e.key==='Escape') { closeModalBt
 <script defer src="corners/news/data/on-this-day.js"></script>
 <script defer src="corners/news/news-core.js" onload="try{renderNews()}catch(e){}"></script>
 
+<!-- ═══ FIRST-VISIT WELCOME TOUR (3 coach-marks, shown once per device: localStorage 'mk:welcomed') ═══ -->
+<style>
+.mkw-layer{position:fixed;inset:0;z-index:2147483100;pointer-events:auto}
+.mkw-dim{position:fixed;inset:0;background:rgba(3,8,18,.62)}
+.mkw-layer.has-spot .mkw-dim{background:transparent}
+.mkw-spot{position:fixed;border-radius:1rem;box-shadow:0 0 0 9999px rgba(3,8,18,.62),0 0 0 3px var(--gold-lt,#F5CC5A),0 0 24px 6px rgba(245,204,90,.45);pointer-events:none;display:none;transition:top .3s,left .3s,width .3s,height .3s}
+.mkw-layer.has-spot .mkw-spot{display:block}
+.mkw-card{position:fixed;left:50%;transform:translateX(-50%);width:min(420px,calc(100vw - 32px));background:linear-gradient(160deg,#10294A,#0B1D36);color:#FEF5DC;border:1.5px solid rgba(212,160,23,.6);border-radius:1.25rem;padding:1rem 1rem .9rem;box-shadow:0 18px 50px rgba(0,0,0,.55);font-family:'Tajawal','Nunito',sans-serif;animation:mkwIn .35s ease-out}
+html[dir="ltr"] .mkw-card{font-family:'Nunito','Tajawal',sans-serif}
+.mkw-card.at-bottom{bottom:max(16px,env(safe-area-inset-bottom))}
+.mkw-card.at-top{top:16px}
+.mkw-head{display:flex;align-items:center;gap:.7rem;margin-bottom:.45rem}
+.mkw-who{flex:0 0 auto;width:3.2rem;height:3.2rem;border-radius:50%;display:grid;place-items:center;font-size:2.2rem;background:rgba(212,160,23,.14);border:1.5px solid rgba(212,160,23,.45);overflow:hidden}
+.mkw-who svg{width:100%;height:100%}
+.mkw-name{font-size:.78rem;font-weight:800;color:var(--gold-lt,#F5CC5A);opacity:.9}
+.mkw-title{font-size:1.15rem;font-weight:900;line-height:1.35;margin:0}
+.mkw-text{font-size:.95rem;line-height:1.7;margin:.15rem 0 .8rem;opacity:.92}
+.mkw-foot{display:flex;align-items:center;gap:.5rem;flex-wrap:wrap}
+.mkw-dots{display:flex;gap:.35rem;margin-inline-end:auto}
+.mkw-dots i{width:.55rem;height:.55rem;border-radius:50%;background:rgba(255,255,255,.25)}
+.mkw-dots i.on{background:var(--gold,#D4A017);width:1.3rem;border-radius:1rem}
+.mkw-btn{min-height:44px;min-width:44px;border-radius:2rem;padding:.55rem 1.1rem;font:inherit;font-weight:800;font-size:.95rem;cursor:pointer;border:1.5px solid transparent;text-decoration:none;display:inline-flex;align-items:center;justify-content:center}
+.mkw-skip{background:transparent;color:#FEF5DC;border-color:rgba(255,255,255,.25)}
+.mkw-next{background:linear-gradient(135deg,#F5CC5A,#D4A017);color:#10243d}
+.mkw-act{background:rgba(212,160,23,.14);color:#F5CC5A;border-color:rgba(212,160,23,.55)}
+.mkw-btn:focus-visible{outline:3px solid #F5CC5A;outline-offset:2px}
+@media(max-width:440px){.mkw-dots{display:none}.mkw-foot{justify-content:flex-end}.mkw-act{margin-inline-end:auto}.mkw-btn{padding:.55rem .95rem}}
+@keyframes mkwIn{from{opacity:0;transform:translate(-50%,12px)}to{opacity:1;transform:translate(-50%,0)}}
+@media(prefers-reduced-motion:reduce){.mkw-card{animation:none}.mkw-spot{transition:none}}
+html.calm .mkw-card{animation:none}html.calm .mkw-spot{transition:none}
+</style>
+<script>
+(function(){
+  var KEY='mk:welcomed';
+  function get(){ try{ return localStorage.getItem(KEY); }catch(e){ return '1'; } }
+  function set(){ try{ localStorage.setItem(KEY,'1'); }catch(e){} }
+  if(get()) return;
+  /* someone who already used the site (profiles / progress) is not a first-time visitor */
+  try{
+    if((window.MK && MK.profiles && MK.profiles().length) || localStorage.getItem('mk_last')){ set(); return; }
+  }catch(e){}
+  if(/[?&]notour\b/.test(location.search)) return;
+
+  function L(){ try{ return (typeof lang!=='undefined' && lang) || localStorage.getItem('bunyanLang') || 'ar'; }catch(e){ return 'ar'; } }
+  function reduced(){ return document.documentElement.classList.contains('calm') || (window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches); }
+  function visible(el){ if(!el) return false; var r=el.getBoundingClientRect(); return r.width>0 && r.height>0 && getComputedStyle(el).visibility!=='hidden'; }
+  function loginUrl(){ return 'corners/shared/login.html?lang='+L(); }
+
+  var STEPS=[
+    { who:'🧔', name:{ar:'المربي',en:'Al-Murabbi'},
+      title:{ar:'اختر شخصيتك وسجّل اسمك',en:'Pick your character & add your name'},
+      text:{ar:'من زرّ «الحساب» في الأعلى تختار شخصيتك وتكتب اسمك، فيُحفَظ تقدّمك ونجومك.',en:'Use the “Account” button at the top to pick your character and write your name — your progress and stars are saved.'},
+      act:{ar:'سجّل الآن',en:'Sign in now',href:loginUrl},
+      target:function(){ var c=document.getElementById('childChip'); if(visible(c)) return c; var l=document.getElementById('loginIcon'); return visible(l)?l:null; } },
+    { who:'🧕', name:{ar:'المربية',en:'Al-Murabbiyah'},
+      title:{ar:'اختر ركنًا وادخله',en:'Choose a corner and step inside'},
+      text:{ar:'كلُّ بطاقةٍ هنا ركنٌ في المدينة: قرآن، أخلاق، قصص، أنشطة… اضغط على أيّ ركنٍ لتبدأ رحلتك.',en:'Every card here is a corner of the city: Qur’an, manners, stories, activities… Tap any corner to begin your journey.'},
+      target:function(){ var m=document.getElementById('cityMap'); return (m && m.children.length && visible(m)) ? m : null; }, scroll:true },
+    { who:'🧔', name:{ar:'المربي',en:'Al-Murabbi'},
+      title:{ar:'اجمع النجوم في حقيبتك 🎒',en:'Collect stars in your bag 🎒'},
+      text:{ar:'كلّما أكملتَ محطّةً أو اختبارًا ربحتَ نجومًا وأوسمة، وتنتظرك شهاداتٌ جميلة. تجدها كلَّها في حقيبتك.',en:'Every station or quiz you finish earns stars and badges, and lovely certificates are waiting for you. You’ll find them all in your bag.'},
+      target:function(){ var c=document.getElementById('childChip'); return visible(c)?c:null; } }
+  ];
+
+  var i=0, layer, spot, card, tgt=null, prevFocus=null;
+
+  function place(){
+    if(!layer) return;
+    var pad=6, vw=window.innerWidth, vh=window.innerHeight;
+    if(tgt && visible(tgt)){
+      var r=tgt.getBoundingClientRect();
+      var top=Math.max(4,r.top-pad), left=Math.max(4,r.left-pad);
+      var bottom=Math.min(vh-4,r.bottom+pad), right=Math.min(vw-4,r.right+pad);
+      if(bottom-top<20 || right-left<20){ layer.classList.remove('has-spot'); }
+      else{
+        layer.classList.add('has-spot');
+        spot.style.top=top+'px'; spot.style.left=left+'px'; spot.style.width=(right-left)+'px'; spot.style.height=(bottom-top)+'px';
+      }
+      /* card goes to the half of the screen the target is NOT in */
+      var mid=(top+bottom)/2, toTop=mid>vh*0.55 && (bottom-top)<vh*0.5;
+      card.classList.toggle('at-top', toTop);
+      card.classList.toggle('at-bottom', !toTop);
+      /* a tall target (corner grid): keep only its top part lit above a bottom card */
+      if(!toTop){
+        var ch=card.offsetHeight+28, maxB=vh-ch;
+        if(bottom>maxB && maxB-top>60){ spot.style.height=(maxB-top)+'px'; }
+      }
+    } else {
+      layer.classList.remove('has-spot');
+      card.classList.remove('at-top'); card.classList.add('at-bottom');
+    }
+  }
+
+  function render(){
+    var s=STEPS[i], ar=L()==='ar', k=ar?'ar':'en';
+    tgt=null; try{ tgt=s.target(); }catch(e){ tgt=null; }
+    if(tgt && s.scroll){
+      var r=tgt.getBoundingClientRect(), y=window.pageYOffset+r.top-90;
+      window.scrollTo({top:Math.max(0,y),behavior:reduced()?'auto':'smooth'});
+    } else if(tgt){
+      var rr=tgt.getBoundingClientRect(); if(rr.top<0||rr.bottom>window.innerHeight) tgt.scrollIntoView({block:'center',behavior:reduced()?'auto':'smooth'});
+    }
+    var last=i===STEPS.length-1;
+    card.setAttribute('dir', ar?'rtl':'ltr');
+    card.innerHTML=
+      '<div class="mkw-head"><span class="mkw-who who" aria-hidden="true">'+s.who+'</span>'
+      +'<div><div class="mkw-name">'+s.name[k]+' · '+(ar?('الخطوة '+(i+1)+' من '+STEPS.length):('Step '+(i+1)+' of '+STEPS.length))+'</div>'
+      +'<h2 class="mkw-title" id="mkwTitle">'+s.title[k]+'</h2></div></div>'
+      +'<p class="mkw-text" id="mkwText">'+s.text[k]+'</p>'
+      +'<div class="mkw-foot"><div class="mkw-dots" aria-hidden="true">'+STEPS.map(function(_,j){return '<i class="'+(j===i?'on':'')+'"></i>';}).join('')+'</div>'
+      +(s.act?'<a class="mkw-btn mkw-act" id="mkwAct" href="'+s.act.href()+'">'+s.act[k]+'</a>':'')
+      +(last?'':'<button type="button" class="mkw-btn mkw-skip" id="mkwSkip">'+(ar?'تخطٍّ':'Skip')+'</button>')
+      +'<button type="button" class="mkw-btn mkw-next" id="mkwNext">'+(last?(ar?'هيّا نبدأ!':'Let’s go!'):(ar?'التالي':'Next'))+'</button></div>';
+    var sk=document.getElementById('mkwSkip'); if(sk) sk.onclick=close;
+    document.getElementById('mkwNext').onclick=next;
+    var a=document.getElementById('mkwAct'); if(a) a.onclick=function(){ set(); };
+    place();
+    setTimeout(place, reduced()?30:450);   // after smooth scroll settles
+    try{ document.getElementById('mkwNext').focus({preventScroll:true}); }catch(e){}
+  }
+  function next(){ if(i<STEPS.length-1){ i++; render(); } else close(); }
+  function close(){
+    set();
+    if(!layer) return;
+    window.removeEventListener('resize',place); window.removeEventListener('scroll',place,true);
+    document.removeEventListener('keydown',onKey,true);
+    layer.remove(); layer=null;
+    try{ if(prevFocus && prevFocus.focus) prevFocus.focus({preventScroll:true}); }catch(e){}
+  }
+  function onKey(e){
+    if(!layer) return;
+    if(e.key==='Escape'){ e.stopPropagation(); close(); }
+    else if(e.key==='Tab'){ /* keep focus inside the card */
+      var f=card.querySelectorAll('a,button'); if(!f.length) return;
+      var first=f[0], lastEl=f[f.length-1];
+      if(e.shiftKey && document.activeElement===first){ e.preventDefault(); lastEl.focus(); }
+      else if(!e.shiftKey && document.activeElement===lastEl){ e.preventDefault(); first.focus(); }
+    }
+  }
+  function open(){
+    if(get() || layer) return;
+    /* don't stack over another open dialog (about / lock / sidebar) */
+    var busy=document.querySelector('#lockOverlay.open,#modalOverlay.open,#aboutModalOverlay.open,#sidebarDrawer.open');
+    if(busy){ setTimeout(open,1500); return; }
+    try{
+      prevFocus=document.activeElement;
+      layer=document.createElement('div'); layer.className='mkw-layer'; layer.id='mkWelcome';
+      layer.setAttribute('role','dialog'); layer.setAttribute('aria-modal','true'); layer.setAttribute('aria-labelledby','mkwTitle'); layer.setAttribute('aria-describedby','mkwText');
+      layer.innerHTML='<div class="mkw-dim"></div><div class="mkw-spot"></div><div class="mkw-card at-bottom"></div>';
+      spot=layer.querySelector('.mkw-spot'); card=layer.querySelector('.mkw-card');
+      document.body.appendChild(layer);
+      window.addEventListener('resize',place); window.addEventListener('scroll',place,true);
+      document.addEventListener('keydown',onKey,true);
+      set();            // shown once, even if the visitor leaves mid-way
+      render();
+    }catch(e){ try{ if(layer) layer.remove(); }catch(x){} layer=null; set(); }
+  }
+  /* follow the page language when EN / عربي is pressed during the tour */
+  var _sl=window.setLang;
+  if(typeof _sl==='function'){ window.setLang=function(l){ var r=_sl.apply(this,arguments); if(layer) render(); return r; }; }
+  function boot(){ setTimeout(open, 900); }
+  if(document.readyState==='complete') boot(); else window.addEventListener('load', boot);
+})();
+</script>
+
 </body>
 </html>

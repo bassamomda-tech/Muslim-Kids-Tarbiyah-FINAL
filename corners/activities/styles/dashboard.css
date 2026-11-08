@@ -594,3 +594,8 @@
 
 /* decorative pseudo-elements must never create a sideways scroll */
 html, body { overflow-x: clip; }
+
+/* readable text (2026-11): children's reading text no smaller than ~14px */
+.ring-meta { font-size: 14.5px; }
+.section .sub { font-size: 14.5px; }
+.medals-hint { font-size: 14px; }

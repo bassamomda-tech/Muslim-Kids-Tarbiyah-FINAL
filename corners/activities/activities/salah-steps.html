@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>خطوات الصلاة · أنوس</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+
+<link rel="stylesheet" href="../styles/tokens.css" />
+<link rel="stylesheet" href="../styles/dashboard.css" />
+<link rel="stylesheet" href="../styles/wheel.css" />
+<link rel="stylesheet" href="../styles/kid-play.css" />
+</head>
+<body>
+
+<div class="bg-decor" aria-hidden="true"></div>
+
+<div class="activity-shell kp-shell">
+
+  <nav class="activity-nav">
+    <a class="back-link" href="../dashboard.html">
+      الرجوع للوحة الأنشطة
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg>
+    </a>
+    <div class="activity-crumb">
+      <span>العبادات والإيمان</span>
+      <span class="sep">/</span>
+      <span class="cur">خطوات الصلاة</span>
+    </div>
+    <div class="activity-actions">
+      <button class="icon-btn" id="reset-btn" title="إعادة الضبط" aria-label="إعادة الضبط">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 3-6.7L3 8"/><path d="M3 3v5h5"/></svg>
+      </button>
+    </div>
+  </nav>
+
+  <div class="activity-layout">
+
+    <section class="kp-panel">
+      <header class="wheel-header">
+        <span class="activity-tag">Activity · Tap to Order</span>
+        <h1 class="activity-title">خطوات الصلاة</h1>
+        <p class="activity-desc">هذه حركات ركعةٍ واحدة من الصلاة، لكنها مبعثرة. اضغط عليها بالترتيب من الأولى إلى الأخيرة، واستمع لما نقوله في كل حركة.</p>
+      </header>
+
+      <div class="kp-zone-label">الحركات المبعثرة</div>
+      <div class="salah-pool" id="salah-pool" aria-label="الحركات المبعثرة"></div>
+
+      <div class="kp-actions">
+        <button class="btn-ghost" id="shuffle-btn" type="button">خلط</button>
+      </div>
+
+      <div class="kp-zone-label">ترتيب الركعة</div>
+      <div class="salah-track" id="salah-track"></div>
+
+      <div class="kp-feedback" id="feedback" aria-live="polite">اضغط على الخطوة الأولى من الصلاة</div>
+
+      <div class="kp-stats">
+        <div class="wheel-stat">الخطوات المرتبة <strong id="stat-placed">0/7</strong></div>
+        <div class="wheel-stat">الأخطاء <strong id="stat-mistakes">0</strong></div>
+        <div class="wheel-stat">أقل أخطاء <strong id="stat-best">—</strong></div>
+        <button class="wheel-mute-toggle" id="mute-btn" aria-pressed="false" type="button">
+          <span class="mute-icon"></span>
+          <span class="mute-label">كتم الصوت</span>
+        </button>
+      </div>
+    </section>
+
+    <aside class="side-panel">
+      <div class="panel-card">
+        <div class="panel-head">
+          <h3>الحديث الشريف</h3>
+          <span class="pill">رواه البخاري</span>
+        </div>
+        <div class="hadith-card">
+          <div class="quote">«صَلُّوا كَمَا رَأَيْتُمُونِي أُصَلِّي»</div>
+          <span class="src">رواه البخاري<span class="hadith-grade ok">صحيح</span></span>
+        </div>
+      </div>
+
+      <div class="panel-card">
+        <div class="panel-head">
+          <h3>كيف ألعب؟</h3>
+          <span class="pill">7 خطوات</span>
+        </div>
+        <div class="tip-card">
+          <span class="tip-icon">!</span>
+          <span>اضغط على الحركة التي تأتي أولاً، ثم التي بعدها… حتى تكتمل الركعة. زر 🔊 يُسمِعك ما نقوله في الحركة.</span>
+        </div>
+        <div class="tip-card" style="margin-top:var(--s-3);">
+          <span class="tip-icon">★</span>
+          <span>في الركوع والسجود نقول التسبيح ثلاث مرات، ونقرأ الفاتحة كاملة في كل ركعة.</span>
+        </div>
+      </div>
+    </aside>
+  </div>
+</div>
+
+<div class="modal-backdrop" id="win-modal" role="dialog" aria-modal="true">
+  <div class="modal">
+    <button class="modal-close" data-close aria-label="إغلاق">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M6 6l12 12M18 6l-12 12"/></svg>
+    </button>
+    <div class="modal-deco" aria-hidden="true">
+      <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5 9-10"/></svg>
+    </div>
+    <div class="modal-eyebrow">رائع</div>
+    <h2 class="modal-title">رتّبتَ خطوات الركعة كاملة</h2>
+    <p class="modal-translit">الصلاة نورٌ وراحةٌ للقلب</p>
+    <div class="modal-meaning" style="text-align:center;">
+      <strong>عدد الأخطاء</strong><span id="win-mistakes">0</span>
+    </div>
+    <div class="modal-actions">
+      <button class="btn-ghost" data-close>انتهيت</button>
+      <button class="btn-primary" id="win-replay">جولة جديدة</button>
+    </div>
+  </div>
+</div>
+
+<div class="particles" id="particles" aria-hidden="true"></div>
+
+<script src="../scripts/activity-common.js"></script>
+<script src="../scripts/salah-steps.js"></script>
+<script>
+window.PAGE_DICT = {
+  "خطوات الصلاة": "Steps of Salah",
+  "هذه حركات ركعةٍ واحدة من الصلاة، لكنها مبعثرة. اضغط عليها بالترتيب من الأولى إلى الأخيرة، واستمع لما نقوله في كل حركة.": "These are the positions of one rak'ah of prayer, all mixed up. Tap them in order from first to last, and listen to what we say in each one.",
+  "الحركات المبعثرة": "Mixed-up positions",
+  "ترتيب الركعة": "Order of the rak'ah",
+  "خلط": "Shuffle",
+  "استمع": "Listen",
+  "اضغط على الخطوة الأولى من الصلاة": "Tap the first step of the prayer",
+  "ليست هذه الخطوة التالية — فكّر وحاول مرة أخرى": "That is not the next step — think and try again",
+  "أحسنت! خطوة صحيحة — ما الخطوة التالية؟": "Well done! Correct — what comes next?",
+  "ما شاء الله! رتّبت الركعة كاملة": "Masha'Allah! You ordered the whole rak'ah",
+  "الخطوات المرتبة": "Steps placed",
+  "الأخطاء": "Mistakes",
+  "أقل أخطاء": "Fewest mistakes",
+  "تكبيرة الإحرام": "Opening takbir",
+  "القيام وقراءة الفاتحة": "Standing & reciting al-Fatihah",
+  "الركوع": "Bowing (ruku')",
+  "الرفع من الركوع": "Rising from ruku'",
+  "السجود": "Prostration (sujud)",
+  "الجلسة بين السجدتين": "Sitting between the two prostrations",
+  "السجدة الثانية": "Second prostration",
+  "«صَلُّوا كَمَا رَأَيْتُمُونِي أُصَلِّي»": "“Pray as you have seen me pray.”",
+  "7 خطوات": "7 steps",
+  "اضغط على الحركة التي تأتي أولاً، ثم التي بعدها… حتى تكتمل الركعة. زر 🔊 يُسمِعك ما نقوله في الحركة.": "Tap the position that comes first, then the next… until the rak'ah is complete. The 🔊 button lets you hear what we say in it.",
+  "في الركوع والسجود نقول التسبيح ثلاث مرات، ونقرأ الفاتحة كاملة في كل ركعة.": "In ruku' and sujud we say the tasbih three times, and we recite the whole Fatihah in every rak'ah.",
+  "رائع": "Excellent",
+  "رتّبتَ خطوات الركعة كاملة": "You ordered the whole rak'ah",
+  "الصلاة نورٌ وراحةٌ للقلب": "Prayer is light and rest for the heart",
+  "عدد الأخطاء": "Mistakes",
+  "جولة جديدة": "New round"
+};
+</script>
+<script src="../scripts/i18n.js"></script>
+<script src="../../shared/nav-fix.js"></script>
+<script src="../../shared/mk-topbar.js"></script>
+</body>
+</html>

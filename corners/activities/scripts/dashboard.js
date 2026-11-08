@@ -188,7 +188,10 @@
     SECTIONS.forEach(s => { total += s.activities.length; s.activities.forEach(a => { if (isPlayed(a, P)) done++; }); });
     const playable = SECTIONS.reduce((acc, s) => acc + s.activities.filter(a => a.status !== "locked").length, 0);
     // a section medal = every activity in that section finished at least once
-    const medals = SECTIONS.map(s => ({ s, got: s.activities.every(a => isPlayed(a, P)), n: s.activities.filter(a => isPlayed(a, P)).length }));
+    // a medal once earned stays earned (anos_medals), even when new activities join its section
+    let kept = []; try { kept = JSON.parse(localStorage.getItem("anos_medals") || "[]") || []; } catch (e) {}
+    const keptIds = new Set(kept.map(m => m.id));
+    const medals = SECTIONS.map(s => ({ s, got: keptIds.has(s.id) || s.activities.every(a => isPlayed(a, P)), n: s.activities.filter(a => isPlayed(a, P)).length }));
     const week = playedThisWeek(P), GOAL = 4;
 
     document.getElementById("stat-playable").textContent = playable;
@@ -209,7 +212,7 @@
       const t = en && m.s.titleEn ? m.s.titleEn : m.s.title;
       return `<div class="badge-mini ${m.got ? "earned" : "locked"}" title="${t} — ${m.n}/${m.s.activities.length}">${m.got ? "★" : m.s.icon}</div>`;
     }).join("");
-    try { localStorage.setItem("anos_medals", JSON.stringify(medals.filter(m => m.got).map(m => ({ id: m.s.id, ar: m.s.title, en: m.s.titleEn || m.s.title })))); } catch (e) {}
+    try { const keep = kept.slice(); medals.forEach(m => { if (m.got && !keptIds.has(m.s.id)) keep.push({ id: m.s.id, ar: m.s.title, en: m.s.titleEn || m.s.title }); }); localStorage.setItem("anos_medals", JSON.stringify(keep)); } catch (e) {}
     const mc = document.getElementById("medals-count");
     if (mc) mc.textContent = medals.filter(m => m.got).length + " / " + medals.length;
   }

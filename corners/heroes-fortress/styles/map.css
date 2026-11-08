@@ -158,3 +158,6 @@
 .st.gate .st-name b{color:var(--gold-dk)}
 [data-theme="dusk"] .st.gate .st-name b,[data-theme="navy"] .st.gate .st-name b{color:#9A6E08}
 .st.gate .st-num{background:#2A9D4A}
+
+/* readable text (2026-11): children's reading text no smaller than ~14px */
+.aspect-hook{font-size:.88rem;line-height:1.55}

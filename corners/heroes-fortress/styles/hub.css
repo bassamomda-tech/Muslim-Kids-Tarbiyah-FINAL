@@ -83,3 +83,7 @@
   .gw-side{flex-basis:120px}
   .gw-main{padding:1.2rem 1.5rem}
 }
+
+/* readable text (2026-11): children's reading text no smaller than ~14px */
+.gw-sub{font-size:.88rem}
+.gw-blurb{font-size:.92rem;line-height:1.65}

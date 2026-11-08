@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>أصوات الحروف · أنوس</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+
+<link rel="stylesheet" href="../styles/tokens.css" />
+<link rel="stylesheet" href="../styles/dashboard.css" />
+<link rel="stylesheet" href="../styles/wheel.css" />
+<link rel="stylesheet" href="../styles/kid-play.css" />
+</head>
+<body>
+
+<div class="bg-decor" aria-hidden="true"></div>
+
+<div class="activity-shell kp-shell">
+
+  <nav class="activity-nav">
+    <a class="back-link" href="../dashboard.html">
+      الرجوع للوحة الأنشطة
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg>
+    </a>
+    <div class="activity-crumb">
+      <span>اللغة والمعرفة</span>
+      <span class="sep">/</span>
+      <span class="cur">أصوات الحروف</span>
+    </div>
+    <div class="activity-actions">
+      <button class="icon-btn" id="reset-btn" title="إعادة الضبط" aria-label="إعادة الضبط">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 3-6.7L3 8"/><path d="M3 3v5h5"/></svg>
+      </button>
+    </div>
+  </nav>
+
+  <div class="activity-layout">
+
+    <section class="kp-panel">
+      <header class="wheel-header">
+        <span class="activity-tag">Activity · Listen &amp; Pick</span>
+        <h1 class="activity-title">أصوات الحروف</h1>
+        <p class="activity-desc">اضغط على أي حرف لتسمع اسمه وكلمةً تبدأ به. ثم العب: اختر الصورة التي تبدأ بالحرف الظاهر.</p>
+      </header>
+
+      <div class="kp-zone-label">العب: أيّ صورة تبدأ بالحرف؟</div>
+      <div class="ls-quiz">
+        <div class="ls-target">
+          <span class="big" id="ls-target-letter">أ</span>
+          <button class="say-btn" id="ls-hear" type="button" aria-label="استمع للحرف">🔊</button>
+        </div>
+        <div class="ls-choices" id="ls-choices"></div>
+      </div>
+      <div class="kp-pips" id="ls-pips" aria-hidden="true"></div>
+      <div class="kp-feedback" id="feedback" aria-live="polite">أيّ صورة تبدأ بهذا الحرف؟</div>
+
+      <div class="kp-stats">
+        <div class="wheel-stat">الإجابات الصحيحة <strong id="stat-correct">0/8</strong></div>
+        <div class="wheel-stat">المحاولات الخاطئة <strong id="stat-mistakes">0</strong></div>
+        <button class="wheel-mute-toggle" id="mute-btn" aria-pressed="false" type="button">
+          <span class="mute-icon"></span>
+          <span class="mute-label">كتم الصوت</span>
+        </button>
+      </div>
+    </section>
+
+    <aside class="side-panel">
+      <div class="panel-card">
+        <div class="panel-head">
+          <h3>تعلّم الحروف</h3>
+          <span class="pill">اضغط واستمع</span>
+        </div>
+        <div class="ls-letters" id="ls-letters"></div>
+        <div class="ls-show" id="ls-show" aria-live="polite"></div>
+      </div>
+
+      <div class="panel-card">
+        <div class="panel-head">
+          <h3>كيف ألعب؟</h3>
+          <span class="pill">8 إجابات</span>
+        </div>
+        <div class="tip-card">
+          <span class="tip-icon">!</span>
+          <span>انظر إلى الحرف الكبير واضغط 🔊 لتسمعه، ثم اختر الصورة التي يبدأ اسمها بهذا الحرف. أجب 8 إجابات صحيحة لتفوز.</span>
+        </div>
+      </div>
+    </aside>
+  </div>
+</div>
+
+<div class="modal-backdrop" id="win-modal" role="dialog" aria-modal="true">
+  <div class="modal">
+    <button class="modal-close" data-close aria-label="إغلاق">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M6 6l12 12M18 6l-12 12"/></svg>
+    </button>
+    <div class="modal-deco" aria-hidden="true">
+      <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5 9-10"/></svg>
+    </div>
+    <div class="modal-eyebrow">رائع</div>
+    <h2 class="modal-title">أنت بطل الحروف!</h2>
+    <p class="modal-translit">عرفتَ 8 صور تبدأ بحروفها</p>
+    <div class="modal-meaning" style="text-align:center;">
+      <strong>المحاولات الخاطئة</strong><span id="win-mistakes">0</span>
+    </div>
+    <div class="modal-actions">
+      <button class="btn-ghost" data-close>انتهيت</button>
+      <button class="btn-primary" id="win-replay">جولة جديدة</button>
+    </div>
+  </div>
+</div>
+
+<div class="particles" id="particles" aria-hidden="true"></div>
+
+<script src="../scripts/activity-common.js"></script>
+<script src="../scripts/letter-sounds.js"></script>
+<script>
+window.PAGE_DICT = {
+  "أصوات الحروف": "Letter Sounds",
+  "اضغط على أي حرف لتسمع اسمه وكلمةً تبدأ به. ثم العب: اختر الصورة التي تبدأ بالحرف الظاهر.": "Tap any letter to hear its name and a word that starts with it. Then play: pick the picture that starts with the letter shown.",
+  "العب: أيّ صورة تبدأ بالحرف؟": "Play: which picture starts with the letter?",
+  "استمع للحرف": "Hear the letter",
+  "أيّ صورة تبدأ بهذا الحرف؟": "Which picture starts with this letter?",
+  "أحسنت! إجابة صحيحة": "Well done! That's right",
+  "ليست هذه — استمع للحرف وحاول مرة أخرى": "Not this one — listen to the letter and try again",
+  "ما شاء الله! عرفت الحروف": "Masha'Allah! You know your letters",
+  "الإجابات الصحيحة": "Correct answers",
+  "المحاولات الخاطئة": "Wrong tries",
+  "تعلّم الحروف": "Learn the letters",
+  "اضغط واستمع": "Tap & listen",
+  "8 إجابات": "8 answers",
+  "انظر إلى الحرف الكبير واضغط 🔊 لتسمعه، ثم اختر الصورة التي يبدأ اسمها بهذا الحرف. أجب 8 إجابات صحيحة لتفوز.": "Look at the big letter and press 🔊 to hear it, then pick the picture whose name starts with that letter. Get 8 right to win.",
+  "رائع": "Excellent",
+  "أنت بطل الحروف!": "You are a letter hero!",
+  "عرفتَ 8 صور تبدأ بحروفها": "You found 8 pictures that start with their letters",
+  "جولة جديدة": "New round"
+};
+</script>
+<script src="../scripts/i18n.js"></script>
+<script src="../../shared/nav-fix.js"></script>
+<script src="../../shared/mk-topbar.js"></script>
+</body>
+</html>

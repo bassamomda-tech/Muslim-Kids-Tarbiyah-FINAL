@@ -295,6 +295,7 @@
     document.head.appendChild(s);
   }
 
+  window.MKBagCollect = collect;   // the shared top bar (mk-topbar.js) shows the child's points from here
   function boot() {
     css(); build();
     injectCertSave();

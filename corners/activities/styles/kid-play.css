@@ -1,0 +1,289 @@
+/* ============================================================
+   KID PLAY — shared look for: خطوات الصلاة · أصوات الحروف · دعاء لكل موقف
+   (salah-steps.html, letter-sounds.html, dua-moments.html)
+   ============================================================ */
+
+.kp-panel {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--r-2xl);
+  padding: var(--s-8);
+  display: flex; flex-direction: column;
+  box-shadow: var(--shadow-card);
+  min-width: 0;
+}
+.kp-panel .activity-desc { max-width: 60ch; }
+
+html:not(.lang-en) .en-only { display: none !important; }
+html.lang-en .en-only { display: block; }
+html.lang-en span.en-only { display: inline; }
+html.lang-en .ar-only { display: none; }
+
+.kp-zone-label {
+  font-size: 13px; font-weight: 800; color: var(--ink-2);
+  margin: var(--s-5) 0 var(--s-3);
+  display: flex; align-items: center; gap: 10px;
+}
+.kp-zone-label::after { content: ""; flex: 1; height: 1px; background: var(--line); }
+
+.kp-shell .icon-btn { width: 44px; height: 44px; }
+.kp-shell .wheel-mute-toggle { min-height: 44px; }
+
+/* ---------- speak button ---------- */
+.say-btn {
+  min-width: 44px; min-height: 44px;
+  border-radius: 50%;
+  border: 2px solid var(--line);
+  background: var(--surface-2);
+  font-size: 20px; line-height: 1;
+  display: inline-grid; place-items: center;
+  cursor: pointer; flex-shrink: 0;
+  transition: transform .15s ease, background .15s ease;
+}
+.say-btn:hover { background: var(--butter); }
+.say-btn:active { transform: scale(.92); }
+.say-btn.speaking { background: var(--butter); border-color: var(--gold); }
+
+/* ---------- status / feedback ---------- */
+.kp-feedback {
+  min-height: 48px;
+  margin-top: var(--s-5);
+  padding: var(--s-3) var(--s-4);
+  border-radius: var(--r-md);
+  background: var(--bg-soft);
+  font-weight: 700; font-size: 15px; color: var(--ink-2);
+  display: flex; align-items: center; justify-content: center; text-align: center;
+}
+.kp-feedback.good { background: var(--brand-soft); color: var(--brand-ink); }
+.kp-feedback.oops { background: #FBE7E7; color: #9A3B3B; }
+
+.kp-stats {
+  display: flex; flex-wrap: wrap; gap: var(--s-3);
+  align-items: center; justify-content: space-between;
+  margin-top: var(--s-5); padding-top: var(--s-4);
+  border-top: 1px dashed var(--line);
+}
+.kp-stats .wheel-stat { min-width: 0; }
+.kp-pips { display: flex; flex-wrap: wrap; gap: 6px; justify-content: center; margin-top: var(--s-4); }
+.kp-pips span { width: 14px; height: 14px; border-radius: 50%; background: var(--bg-soft); border: 1px solid var(--line); transition: background .3s, transform .3s; }
+.kp-pips span.on { background: var(--brand); border-color: var(--brand); transform: scale(1.15); }
+
+.shake { animation: kp-shake .4s ease; }
+@keyframes kp-shake { 0%,100% { transform: translateX(0); } 25% { transform: translateX(-6px); } 75% { transform: translateX(6px); } }
+.pop { animation: kp-pop .4s cubic-bezier(.2,1.6,.4,1); }
+@keyframes kp-pop { 0% { transform: scale(.85); } 100% { transform: scale(1); } }
+
+.kp-actions { display: flex; flex-wrap: wrap; gap: var(--s-3); justify-content: center; margin-top: var(--s-4); }
+.kp-actions button { min-height: 48px; }
+
+/* ============================================================
+   1) خطوات الصلاة
+   ============================================================ */
+.salah-pool {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(150px, 100%), 1fr));
+  gap: var(--s-3);
+  padding: var(--s-4);
+  background: var(--bg-soft);
+  border: 2px dashed var(--line);
+  border-radius: var(--r-lg);
+  min-height: 90px;
+}
+.salah-pool:empty { display: flex; align-items: center; justify-content: center; }
+.salah-pool:empty::before { content: "✓"; font-size: 28px; color: var(--brand-ink); font-weight: 800; }
+
+.salah-card {
+  position: relative;
+  display: flex; flex-direction: column; align-items: center; gap: 6px;
+  background: var(--surface);
+  border: 2px solid var(--line);
+  border-radius: var(--r-md);
+  padding: var(--s-3) var(--s-2) var(--s-2);
+  min-width: 0;
+}
+.salah-card .pick {
+  all: unset; box-sizing: border-box;
+  display: flex; flex-direction: column; align-items: center; gap: 6px;
+  width: 100%; min-height: 44px; cursor: pointer; text-align: center;
+}
+.salah-card .pick:focus-visible { outline: 3px solid var(--gold); outline-offset: 3px; border-radius: 10px; }
+.salah-card:hover { border-color: var(--gold); }
+.salah-card .pose { width: 64px; height: 64px; color: var(--teal-ink); background: var(--teal); border-radius: 50%; padding: 6px; box-sizing: border-box; }
+.salah-card .pose svg { width: 100%; height: 100%; display: block; }
+.salah-card .s-name { font-weight: 800; font-size: 14px; color: var(--ink); line-height: 1.3; }
+.salah-card .s-say { font-size: 15px; color: var(--brand-ink); font-weight: 700; line-height: 1.7; }
+.salah-card .say-btn { min-width: 44px; min-height: 44px; font-size: 18px; }
+.salah-card.wrong { border-color: var(--rose); }
+
+.salah-track { display: flex; flex-direction: column; gap: var(--s-2); counter-reset: st; }
+.salah-slot {
+  display: grid;
+  grid-template-columns: 44px 56px minmax(0, 1fr) auto;
+  align-items: center; gap: var(--s-3);
+  min-height: 64px;
+  padding: var(--s-2) var(--s-3);
+  border: 2px dashed var(--line);
+  border-radius: var(--r-md);
+  background: var(--surface-2);
+}
+.salah-slot .num {
+  width: 40px; height: 40px; border-radius: 50%;
+  background: var(--bg-soft); color: var(--ink-2);
+  display: grid; place-items: center; font-weight: 800; font-family: var(--font-en);
+}
+.salah-slot.filled { border-style: solid; border-color: var(--brand); background: var(--brand-soft); }
+.salah-slot.filled .num { background: var(--brand); color: #fff; }
+.salah-slot.next { border-color: var(--gold); background: rgba(201,169,97,0.08); }
+.salah-slot .pose { width: 52px; height: 52px; color: var(--brand-ink); }
+.salah-slot .pose svg { width: 100%; height: 100%; display: block; }
+.salah-slot .txt { min-width: 0; }
+.salah-slot .s-name { font-weight: 800; font-size: 14px; }
+.salah-slot .s-say { font-size: 15px; color: var(--brand-ink); font-weight: 700; line-height: 1.7; overflow-wrap: anywhere; }
+.salah-slot .hint { color: var(--muted); font-size: 13px; font-weight: 600; }
+
+/* ============================================================
+   2) أصوات الحروف
+   ============================================================ */
+.ls-letters {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(64px, 1fr));
+  gap: var(--s-2);
+}
+.ls-letter {
+  min-height: 64px;
+  border-radius: var(--r-md);
+  border: 2px solid var(--line);
+  background: var(--surface-2);
+  font-family: var(--font-ar);
+  font-size: 32px; font-weight: 800; color: var(--ink);
+  cursor: pointer; line-height: 1;
+  display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 2px;
+  transition: transform .15s ease, background .15s ease, border-color .15s;
+}
+.ls-letter small { font-size: 18px; line-height: 1; }
+.ls-letter:hover { border-color: var(--gold); }
+.ls-letter:active { transform: scale(.94); }
+.ls-letter.heard { background: var(--sky); border-color: var(--sky-ink); }
+
+.ls-show {
+  margin-top: var(--s-4);
+  display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: var(--s-4);
+  padding: var(--s-4); border-radius: var(--r-lg);
+  background: var(--sky); color: var(--sky-ink);
+  min-height: 88px;
+}
+.ls-show .big { font-size: 56px; font-weight: 900; line-height: 1; }
+.ls-show .emo { font-size: 52px; line-height: 1; }
+.ls-show .w { font-size: 26px; font-weight: 800; }
+.ls-show .w small { display: block; font-size: 14px; font-family: var(--font-en); opacity: .8; }
+
+.ls-quiz {
+  margin-top: var(--s-2);
+  display: flex; flex-direction: column; align-items: center; gap: var(--s-4);
+  padding: var(--s-5); border-radius: var(--r-lg);
+  background: var(--butter);
+}
+.ls-target { display: flex; align-items: center; gap: var(--s-4); }
+.ls-target .big {
+  width: 110px; height: 110px; border-radius: 28px; background: #fff;
+  display: grid; place-items: center;
+  font-size: 72px; font-weight: 900; color: var(--butter-ink); line-height: 1;
+  box-shadow: var(--shadow-md);
+}
+.ls-choices { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--s-3); width: 100%; max-width: 480px; }
+.ls-choice {
+  min-height: 110px; border-radius: var(--r-lg);
+  border: 3px solid transparent; background: #fff;
+  font-size: 56px; line-height: 1; cursor: pointer;
+  display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 6px;
+  box-shadow: var(--shadow-sm);
+  transition: transform .15s ease, border-color .15s;
+}
+.ls-choice small { font-size: 15px; font-weight: 800; color: var(--ink-2); visibility: hidden; }
+.ls-choice.right { border-color: var(--brand); background: var(--brand-soft); }
+.ls-choice.right small { visibility: visible; }
+.ls-choice.no { border-color: var(--rose); opacity: .55; }
+.ls-choice:active { transform: scale(.95); }
+
+/* ============================================================
+   3) دعاء لكل موقف
+   ============================================================ */
+.dm-scenes { display: flex; flex-wrap: wrap; gap: 6px; justify-content: center; }
+.dm-chip {
+  width: 44px; height: 44px; border-radius: 12px;
+  display: grid; place-items: center; font-size: 22px;
+  background: var(--bg-soft); border: 2px solid var(--line);
+}
+.dm-chip.cur { border-color: var(--gold); background: var(--butter); }
+.dm-chip.ok { border-color: var(--brand); background: var(--brand-soft); }
+
+.dm-scene {
+  margin-top: var(--s-4);
+  display: flex; flex-direction: column; align-items: center; gap: var(--s-2);
+  padding: var(--s-5); border-radius: var(--r-lg);
+  background: linear-gradient(160deg, var(--teal), var(--sky));
+  text-align: center;
+}
+.dm-scene .emo { font-size: 64px; line-height: 1.1; }
+.dm-scene .q { font-size: 22px; font-weight: 800; color: var(--ink); }
+.dm-scene .q small { display: block; font-size: 14px; font-weight: 600; color: var(--ink-2); margin-top: 4px; }
+
+.dm-options { display: flex; flex-direction: column; gap: var(--s-3); margin-top: var(--s-4); }
+.dm-opt {
+  display: flex; align-items: center; gap: var(--s-3);
+  border: 2px solid var(--line); border-radius: var(--r-md);
+  background: var(--surface-2);
+  padding: var(--s-2) var(--s-3);
+  min-width: 0;
+}
+.dm-opt .pick {
+  all: unset; box-sizing: border-box; flex: 1; min-width: 0; min-height: 52px;
+  display: flex; flex-direction: column; justify-content: center; cursor: pointer;
+  font-family: var(--font-ar);
+}
+.dm-opt .pick:focus-visible { outline: 3px solid var(--gold); outline-offset: 3px; border-radius: 8px; }
+.dm-opt .dua { font-size: 19px; font-weight: 700; color: var(--ink); line-height: 1.9; overflow-wrap: anywhere; }
+.dm-opt .src { font-size: 12px; color: var(--muted); font-weight: 700; }
+.dm-opt .mean { font-size: 13px; color: var(--ink-2); font-family: var(--font-en); }
+.dm-opt:hover { border-color: var(--gold); }
+.dm-opt.right { border-color: var(--brand); background: var(--brand-soft); }
+.dm-opt.no { border-color: var(--rose); opacity: .6; }
+.dm-opt .src, .dm-opt .mean { display: none; }
+.dm-opt.right .src { display: block; }
+html.lang-en .dm-opt.right .mean { display: block; }
+
+.dua-list { display: flex; flex-direction: column; gap: var(--s-2); }
+.dua-row {
+  display: grid; grid-template-columns: 40px minmax(0, 1fr); gap: var(--s-3); align-items: start;
+  padding: var(--s-3); border-radius: var(--r-md); background: var(--bg-soft);
+}
+.dua-row .e { font-size: 26px; line-height: 1.2; text-align: center; }
+.dua-row b { display: block; font-size: 13px; }
+.dua-row .d { font-size: 15px; color: var(--brand-ink); font-weight: 700; line-height: 1.8; }
+.dua-row .s { font-size: 11px; color: var(--muted); font-weight: 600; }
+.dua-row.locked .d, .dua-row.locked .s { filter: blur(5px); user-select: none; }
+
+/* ============================================================
+   phones
+   ============================================================ */
+@media (max-width: 720px) {
+  .kp-shell.activity-shell { padding: var(--s-3) var(--s-4) var(--s-10); }
+  .kp-shell .activity-nav { flex-wrap: wrap; gap: var(--s-2); margin-bottom: var(--s-4); }
+  .kp-shell .activity-crumb { display: none; }
+  .kp-panel { padding: var(--s-5) var(--s-4); border-radius: var(--r-xl); }
+  .kp-shell .activity-layout { gap: var(--s-5); }
+  .kp-shell .side-panel .panel-card { padding: var(--s-4); }
+  .salah-pool { grid-template-columns: repeat(2, minmax(0, 1fr)); padding: var(--s-3); gap: var(--s-2); }
+  .salah-slot { grid-template-columns: 40px 44px minmax(0, 1fr); }
+  .salah-slot .say-btn { grid-column: 3; justify-self: start; }
+  .salah-slot .pose { width: 44px; height: 44px; }
+  .ls-letters { grid-template-columns: repeat(auto-fill, minmax(56px, 1fr)); }
+  .ls-letter { min-height: 58px; font-size: 28px; }
+  .ls-target .big { width: 92px; height: 92px; font-size: 60px; }
+  .ls-choice { min-height: 96px; font-size: 46px; }
+  .dm-opt .dua { font-size: 17px; }
+  .modal-backdrop .modal { padding: var(--s-6) var(--s-4); }
+  .modal-actions { flex-wrap: wrap; }
+}
+
+.kp-shell [hidden] { display: none !important; }

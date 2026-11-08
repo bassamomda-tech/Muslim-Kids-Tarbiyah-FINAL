@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>دعاء لكل موقف · أنوس</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+
+<link rel="stylesheet" href="../styles/tokens.css" />
+<link rel="stylesheet" href="../styles/dashboard.css" />
+<link rel="stylesheet" href="../styles/wheel.css" />
+<link rel="stylesheet" href="../styles/kid-play.css" />
+</head>
+<body>
+
+<div class="bg-decor" aria-hidden="true"></div>
+
+<div class="activity-shell kp-shell">
+
+  <nav class="activity-nav">
+    <a class="back-link" href="../dashboard.html">
+      الرجوع للوحة الأنشطة
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg>
+    </a>
+    <div class="activity-crumb">
+      <span>العبادات والإيمان</span>
+      <span class="sep">/</span>
+      <span class="cur">دعاء لكل موقف</span>
+    </div>
+    <div class="activity-actions">
+      <button class="icon-btn" id="reset-btn" title="إعادة الضبط" aria-label="إعادة الضبط">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 3-6.7L3 8"/><path d="M3 3v5h5"/></svg>
+      </button>
+    </div>
+  </nav>
+
+  <div class="activity-layout">
+
+    <section class="kp-panel">
+      <header class="wheel-header">
+        <span class="activity-tag">Activity · Match the Moment</span>
+        <h1 class="activity-title">دعاء لكل موقف</h1>
+        <p class="activity-desc">في يومنا مواقف كثيرة علّمنا النبي ﷺ لكلٍّ منها دعاءً. انظر إلى الموقف واختر دعاءه الصحيح، واضغط 🔊 لتسمعه.</p>
+      </header>
+
+      <div class="dm-scenes" id="dm-scenes" aria-hidden="true"></div>
+
+      <div class="dm-scene">
+        <span class="emo" id="dm-emo" aria-hidden="true">🍲</span>
+        <div class="q" id="dm-q">قبل أن آكل</div>
+      </div>
+
+      <div class="dm-options" id="dm-options"></div>
+
+      <div class="kp-feedback" id="feedback" aria-live="polite">اختر الدعاء المناسب لهذا الموقف</div>
+      <div class="kp-actions">
+        <button class="btn-primary" id="next-btn" type="button" hidden>الموقف التالي</button>
+      </div>
+
+      <div class="kp-stats">
+        <div class="wheel-stat">المواقف المطابقة <strong id="stat-matched">0/9</strong></div>
+        <div class="wheel-stat">المحاولات الخاطئة <strong id="stat-mistakes">0</strong></div>
+        <button class="wheel-mute-toggle" id="mute-btn" aria-pressed="false" type="button">
+          <span class="mute-icon"></span>
+          <span class="mute-label">كتم الصوت</span>
+        </button>
+      </div>
+    </section>
+
+    <aside class="side-panel">
+      <div class="panel-card">
+        <div class="panel-head">
+          <h3>دفتر أدعيتي</h3>
+          <span class="pill">9 أدعية</span>
+        </div>
+        <div class="dua-list" id="dua-list"></div>
+      </div>
+
+      <div class="panel-card">
+        <div class="panel-head">
+          <h3>كيف ألعب؟</h3>
+        </div>
+        <div class="tip-card">
+          <span class="tip-icon">!</span>
+          <span>كل دعاء تعرفه يُفتح في دفترك مع مصدره من كتب الحديث. احفظ دعاءً جديدًا كل يوم وقُله في موقفه.</span>
+        </div>
+      </div>
+    </aside>
+  </div>
+</div>
+
+<div class="modal-backdrop" id="win-modal" role="dialog" aria-modal="true">
+  <div class="modal">
+    <button class="modal-close" data-close aria-label="إغلاق">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M6 6l12 12M18 6l-12 12"/></svg>
+    </button>
+    <div class="modal-deco" aria-hidden="true">
+      <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5 9-10"/></svg>
+    </div>
+    <div class="modal-eyebrow">رائع</div>
+    <h2 class="modal-title">طابقتَ كل المواقف بأدعيتها</h2>
+    <p class="modal-translit">قُل الدعاء في وقته، يكن يومك كله ذكرًا لله</p>
+    <div class="modal-meaning" style="text-align:center;">
+      <strong>المحاولات الخاطئة</strong><span id="win-mistakes">0</span>
+    </div>
+    <div class="modal-actions">
+      <button class="btn-ghost" data-close>انتهيت</button>
+      <button class="btn-primary" id="win-replay">جولة جديدة</button>
+    </div>
+  </div>
+</div>
+
+<div class="particles" id="particles" aria-hidden="true"></div>
+
+<script src="../scripts/activity-common.js"></script>
+<script src="../scripts/dua-moments.js"></script>
+<script>
+window.PAGE_DICT = Object.assign({
+  "دعاء لكل موقف": "A Du'a for Every Moment",
+  "في يومنا مواقف كثيرة علّمنا النبي ﷺ لكلٍّ منها دعاءً. انظر إلى الموقف واختر دعاءه الصحيح، واضغط 🔊 لتسمعه.": "Our day is full of moments, and the Prophet ﷺ taught us a du'a for each. Look at the moment, pick its correct du'a, and press 🔊 to hear it.",
+  "اختر الدعاء المناسب لهذا الموقف": "Pick the du'a for this moment",
+  "أحسنت! هذا هو الدعاء الصحيح": "Well done! That is the right du'a",
+  "ليس هذا دعاء هذا الموقف — حاول مرة أخرى": "That is not this moment's du'a — try again",
+  "ما شاء الله! عرفت أدعية اليوم كلها": "Masha'Allah! You know all the du'as of the day",
+  "الموقف التالي": "Next moment",
+  "استمع": "Listen",
+  "المواقف المطابقة": "Moments matched",
+  "المحاولات الخاطئة": "Wrong tries",
+  "دفتر أدعيتي": "My du'a notebook",
+  "9 أدعية": "9 du'as",
+  "كل دعاء تعرفه يُفتح في دفترك مع مصدره من كتب الحديث. احفظ دعاءً جديدًا كل يوم وقُله في موقفه.": "Every du'a you get right opens in your notebook with its hadith source. Learn a new du'a every day and say it at its moment.",
+  "رائع": "Excellent",
+  "طابقتَ كل المواقف بأدعيتها": "You matched every moment with its du'a",
+  "قُل الدعاء في وقته، يكن يومك كله ذكرًا لله": "Say each du'a at its time, and your whole day becomes remembrance of Allah",
+  "جولة جديدة": "New round"
+}, window.DUA_DICT || {});
+</script>
+<script src="../scripts/i18n.js"></script>
+<script src="../../shared/nav-fix.js"></script>
+<script src="../../shared/mk-topbar.js"></script>
+</body>
+</html>

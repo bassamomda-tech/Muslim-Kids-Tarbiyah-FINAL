@@ -1,4 +1,5 @@
 /* mkvoice-loader */(function(){try{var cs=document.currentScript,src=(cs&&cs.src)||"";var m=src.match(/^(.*\/corners\/)/);var base=m?m[1]:"";if(base&&!window.MKVoice&&!document.querySelector("script[data-mkvoice]")){var s=document.createElement("script");s.src=base+"shared/voice-engine.js";s.setAttribute("data-mkvoice","1");document.head.appendChild(s);}}catch(e){}})();
+/* mk-station-lite loader */(function(){try{if(window.__mkStationLite||document.querySelector("script[data-mk-sl]"))return;var cs=document.currentScript,src=(cs&&cs.src)||"";var m=src.match(/^(.*\/corners\/)/);if(!m)return;var s=document.createElement("script");s.src=m[1]+"shared/mk-station-lite.js";s.setAttribute("data-mk-sl","1");document.head.appendChild(s);}catch(e){}})();
 /* ════════════════════════════════════════════════════════════════
    mk-tts.js — shared read-aloud (browser SpeechSynthesis) for story
    readers that use a per-journey app.js engine. Include AFTER the

@@ -22,6 +22,8 @@ const SECTIONS = [
       { n: 8,  t: "ساعي بريد الجنة", te: "Paradise Postman",     m: "Form Handling",        g: "mail",     d: 1, status: "normal", href: "activities/paradise-post.html" },
       { n: 9,  t: "من هو النبي؟", te: "Who Is the Prophet?",        m: "Quiz Engine",          g: "quiz",     d: 2, status: "normal", href: "activities/prophet-quiz.html" },
       { n: 10, t: "تحدي السنن المنسية", te: "Forgotten Sunnahs Challenge",   m: "Hidden Object Logic",  g: "sunnah",   d: 3, status: "normal", href: "activities/hidden-sunnahs.html" },
+      { n: 101, t: "خطوات الصلاة", te: "Steps of Salah",       m: "Tap to Order",         g: "kaaba",    d: 1, status: "normal", href: "activities/salah-steps.html" },
+      { n: 103, t: "دعاء لكل موقف", te: "A Du'a for Every Moment", m: "Scene Matching",  g: "lantern",  d: 1, status: "normal", href: "activities/dua-moments.html" },
     ],
   },
   {
@@ -41,6 +43,7 @@ const SECTIONS = [
       { n: 18, t: "الحروف المختبئة", te: "Hidden Letters",      m: "Opacity & Seek",      g: "hidden",      d: 2, status: "normal", href: "activities/hidden-letters.html" },
       { n: 19, t: "الفوارق الخمسة", te: "Spot the Differences",      m: "Compare & Detect",    g: "diff",        d: 2, status: "normal", href: "activities/spot-differences.html" },
       { n: 20, t: "اختبار المعلومات السريع", te: "Quick Knowledge Quiz", m: "Timer-based Quiz",   g: "timedquiz",   d: 3, status: "normal", href: "activities/timed-quiz.html" },
+      { n: 102, t: "أصوات الحروف", te: "Letter Sounds",        m: "Listen & Pick",       g: "speaker",     d: 1, status: "normal", href: "activities/letter-sounds.html" },
     ],
   },
   {

@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>الأطلس الإسلامي | The Islamic Atlas</title>
+<meta name="description" content="أطلس إسلامي مصوّر للأطفال: أعظم المساجد، القدس والأندلس، من حياة النبي ﷺ، السيوف والأدوات، الجامعات، العمارة، الخرائط والمخططات، أماكن القرآن والسنة، الغزوات والفتوحات — مع شرح وخريطة.">
+<link rel="icon" href="../../favicon.ico">
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&family=Nunito:wght@400;700;800;900&family=Amiri:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../treasures/tr.css">
+<style>
+  /* drawings (plans & maps) shown in place of a photo */
+  .atl-svg{background:#FFFDF7;border:2px solid var(--line);border-radius:18px;padding:.6rem;text-align:center}
+  .atl-svg svg{width:100%;height:auto;max-height:420px;display:block;margin:0 auto}
+  .atl-era{display:inline-block;margin-top:.35rem;font-size:.85rem;font-weight:800;color:var(--muted)}
+  .atl-note{font-size:.88rem;color:var(--muted);margin-top:.5rem}
+  /* the Muslim countries panel */
+  .cty-regions{display:flex;flex-direction:column;gap:.9rem;margin-top:1rem}
+  .cty-reg h4{margin:0 0 .45rem;font-size:1rem;font-weight:900;color:var(--ink,#1f2a2a)}
+  .cty-chips{display:flex;flex-wrap:wrap;gap:.45rem}
+  .cty-chip{display:inline-flex;align-items:center;gap:.35rem;min-height:44px;padding:0 .8rem;border-radius:999px;border:1.5px solid var(--line);background:#fff;font:inherit;font-weight:800;font-size:.9rem;cursor:pointer;color:inherit}
+  .cty-chip .fl{font-size:1.25rem}
+  .cty-chip[aria-pressed="true"]{border-color:var(--acc,#2E6DA4);background:var(--acc-soft,#EAF2FB)}
+  .cty-card{margin-top:1rem;border:2px solid var(--line);border-radius:18px;background:#FFFDF7;padding:1rem 1.1rem}
+  .cty-card .hd{display:flex;align-items:center;gap:.6rem;margin-bottom:.6rem}
+  .cty-card .hd .fl{font-size:2.6rem;line-height:1}
+  .cty-card .hd b{display:block;font-size:1.25rem;font-weight:900}
+  .cty-card .hd small{color:var(--muted);font-weight:700}
+  .cty-facts{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.5rem;margin:.4rem 0 .7rem}
+  @media(max-width:480px){.cty-facts{grid-template-columns:minmax(0,1fr)}}
+  .cty-facts div{background:#fff;border:1.5px solid var(--line);border-radius:12px;padding:.5rem .65rem;font-size:.95rem;line-height:1.5}
+  .cty-facts div i{display:block;font-style:normal;font-size:.78rem;font-weight:800;color:var(--muted)}
+  .cty-card p{margin:.35rem 0;line-height:1.75;font-size:1rem}
+  .cty-pin{font-size:22px;line-height:1;filter:drop-shadow(0 1px 2px rgba(0,0,0,.35))}
+</style>
+</head>
+<body>
+<script>(function(){try{var l=localStorage.getItem('bunyanLang');if(l==='en'){var h=document.documentElement;h.dir='ltr';h.lang='en';}}catch(e){}})();</script>
+<div id="tr-root"></div>
+<script src="../treasures/tr-map.js"></script>
+<!-- the atlas content: one file per section (each adds its cards to window.ATLAS) -->
+<script src="atlas-data/masajid.js"></script>
+<script src="atlas-data/masajid-hind.js"></script>
+<script src="atlas-data/quds.js"></script>
+<script src="atlas-data/andalus.js"></script>
+<script src="atlas-data/nabawi.js"></script>
+<script src="atlas-data/adawat.js"></script>
+<script src="atlas-data/jamiat.js"></script>
+<script src="atlas-data/imara.js"></script>
+<script src="atlas-data/kharait.js"></script>
+<script src="atlas-data/quran.js"></script>
+<script src="atlas-data/qilaa.js"></script>
+<script src="atlas-data/khilafat.js"></script>
+<script src="atlas-data/ghazawat.js"></script>
+<!-- the Muslim countries map (its own tab) -->
+<script src="atlas-data/countries.js"></script>
+<script>
+/* الأطلس الإسلامي — cards (photo or drawing, story, why it matters, map, quiz) on the Treasures engine (tr.js).
+   Photos: Wikimedia Commons; a missing photo falls back to the emoji. Drawings (plans/maps) are inline SVG. */
+(function () {
+  var SECTIONS = [
+    { id: 'masajid',  label: { ar: '🕌 أعظم المساجد', en: '🕌 Great mosques' } },
+    { id: 'quds',     label: { ar: '🫒 القدس وفلسطين', en: '🫒 Al-Quds & Palestine' } },
+    { id: 'andalus',  label: { ar: '🏰 الأندلس', en: '🏰 Al-Andalus' } },
+    { id: 'nabawi',   label: { ar: '🌙 من حياة النبي ﷺ', en: '🌙 From the Prophet’s ﷺ life' } },
+    { id: 'adawat',   label: { ar: '⚔️ السيوف والأدوات', en: '⚔️ Swords & tools' } },
+    { id: 'jamiat',   label: { ar: '🎓 الجامعات ودور العلم', en: '🎓 Universities & learning' } },
+    { id: 'imara',    label: { ar: '🏛️ فنّ العمارة', en: '🏛️ Architecture' } },
+    { id: 'kharait',  label: { ar: '🗺️ الخرائط والمخططات', en: '🗺️ Maps & plans' } },
+    { id: 'quran',    label: { ar: '📖 أماكن في القرآن والسنة', en: '📖 Places in the Quran & Sunnah' } },
+    { id: 'qilaa',    label: { ar: '🏯 القلاع الأثرية', en: '🏯 Historic castles' } },
+    { id: 'khilafat', label: { ar: '👑 آثار الخلافات والدول', en: '👑 Relics of the caliphates' } },
+    { id: 'ghazawat', label: { ar: '🐎 الغزوات والفتوحات', en: '🐎 Battles & conquests' } }
+  ];
+  var ORDER = {}; SECTIONS.forEach(function (s, k) { ORDER[s.id] = k; });
+  var D = (window.ATLAS || []).slice().sort(function (a, b) { return (ORDER[a.tag] || 0) - (ORDER[b.tag] || 0); });
+
+  function picture(d) {
+    if (d.svg) return { ar: '<div class="atl-svg">' + (d.svg.ar || d.svg) + '</div>', en: '<div class="atl-svg">' + (d.svg.en || d.svg.ar || d.svg) + '</div>' };
+    if (d.img) return { ar: TRMap.img(d.img, d.icon, d.title.ar) + (d.imgNote ? '<p class="atl-note">' + d.imgNote.ar + '</p>' : ''),
+                        en: TRMap.img(d.img, d.icon, d.title.en) + (d.imgNote ? '<p class="atl-note">' + d.imgNote.en + '</p>' : '') };
+    var none = '<div class="trm-fig noimg"><span class="trm-emoji">' + d.icon + '</span></div>';
+    return { ar: none, en: none };
+  }
+  var ITEMS = D.map(function (d, i) {
+    var where = d.lat != null;
+    var secs = [
+      { icon: '📜', h: { ar: 'قصّته', en: 'Its story' }, html: d.story },
+      { icon: d.svg ? '📐' : '📷', h: d.svg ? { ar: 'المخطّط', en: 'The plan' } : { ar: 'الصورة', en: 'Picture' }, html: picture(d) },
+      { icon: '💚', h: { ar: 'لماذا يهمّنا؟', en: 'Why does it matter to us?' }, html: d.love }
+    ];
+    if (where) secs.push({ icon: '🗺️', h: { ar: 'أين هو؟', en: 'Where is it?' }, html: {
+      ar: '<p>' + d.sub.ar + (d.era ? '<br><span class="atl-era">🕰️ ' + d.era.ar + '</span>' : '') + '</p><div class="tr-actions" style="justify-content:flex-start"><button class="tr-btn ghost" onclick="ATL.goMap(' + i + ')">🗺️ أرِني على الخريطة</button><a class="tr-btn ghost" target="_blank" rel="noopener" href="' + TRMap.osm(d.lat, d.lng, d.zoom || 14) + '">🔗 OpenStreetMap</a></div>',
+      en: '<p>' + d.sub.en + (d.era ? '<br><span class="atl-era">🕰️ ' + d.era.en + '</span>' : '') + '</p><div class="tr-actions" style="justify-content:flex-start"><button class="tr-btn ghost" onclick="ATL.goMap(' + i + ')">🗺️ Show me on the map</button><a class="tr-btn ghost" target="_blank" rel="noopener" href="' + TRMap.osm(d.lat, d.lng, d.zoom || 14) + '">🔗 OpenStreetMap</a></div>' } });
+    return { id: d.id, num: i + 1, icon: d.icon, tag: d.tag, lat: d.lat, lng: d.lng, title: d.title, sub: d.sub, back: d.back, sections: secs, quiz: d.quiz };
+  });
+  var PINS = ITEMS.map(function (it, i) { return { i: i, lat: it.lat, lng: it.lng }; }).filter(function (p) { return p.lat != null; });
+
+  /* ── the map panel (all pins; tap a pin to open its card) ── */
+  var map = null, markers = {}, pending = null, mapEl = null, TRref = null;
+  function popup(i) {
+    var it = ITEMS[i];
+    return '<b>' + it.icon + ' ' + TRref.esc(TRref.t(it.title)) + '</b><small>' + TRref.esc(TRref.t(it.sub)) + '</small><br><button class="trm-pop-btn" onclick="ATL.openCard(' + i + ')">' + TRref.tx('افتح البطاقة', 'Open the card') + '</button>';
+  }
+  function drawSketch(cur) {
+    TRMap.sketch(mapEl, PINS.map(function (p) { return ITEMS[p.i]; }), { current: cur, onPick: function (k) { ATL.openCard(PINS[k].i); }, offline: TRref.tx('خريطة مبسّطة — الخريطة التفاعلية تحتاج اتصالًا بالإنترنت', 'Simple sketch — the interactive map needs an internet connection') });
+  }
+  function initMap() {
+    if (map || !mapEl) { focus(); return; }
+    TRMap.load(function (ok) {
+      if (!mapEl || map) { focus(); return; }
+      if (!ok) { map = 'sketch'; drawSketch(null); return; }
+      map = TRMap.leaflet(mapEl);
+      PINS.forEach(function (p, n) { markers[p.i] = L.marker([p.lat, p.lng], { title: TRref.t(ITEMS[p.i].title), icon: TRMap.pin(n + 1) }).addTo(map).bindPopup(popup(p.i)); });
+      map.fitBounds(L.latLngBounds(PINS.map(function (p) { return [p.lat, p.lng]; })), { padding: [20, 20] });
+      setTimeout(function () { map.invalidateSize(); focus(); }, 60);
+    });
+  }
+  function focus() {
+    if (pending == null || !map) return;
+    var i = pending; pending = null;
+    if (map === 'sketch') { var k = PINS.findIndex(function (p) { return p.i === i; }); drawSketch(k < 0 ? null : k); return; }
+    if (!markers[i]) return;
+    map.invalidateSize();
+    var calm = document.documentElement.classList.contains('calm');
+    map[calm ? 'setView' : 'flyTo']([ITEMS[i].lat, ITEMS[i].lng], 13, calm ? {} : { duration: 1.6 });
+    markers[i].openPopup();
+  }
+  window.ATL = {
+    goMap: function (i) {
+      pending = i;
+      var c = document.getElementById('trClose'); if (c && document.getElementById('trView').classList.contains('open')) c.click();
+      var tab = document.querySelector('.tr-tab[data-tab="map"]'); if (tab) tab.click();
+      window.scrollTo(0, 0);
+      if (map) setTimeout(focus, 80);
+    },
+    openCard: function (i) { if (window.TR) TR.open(i); }
+  };
+
+  /* ── «الدول الإسلامية»: the 57 member states of the OIC on one map, with a card of facts for each ── */
+  var CTY = (function () {
+    var C = window.ATLAS_COUNTRIES || [], R = [
+      { id: 'arabia', ar: 'الجزيرة العربية والخليج', en: 'Arabia & the Gulf' }, { id: 'sham', ar: 'الشام والعراق', en: 'The Levant & Iraq' },
+      { id: 'nafrica', ar: 'مصر وشمال أفريقيا', en: 'Egypt & North Africa' }, { id: 'africa', ar: 'أفريقيا', en: 'Africa' },
+      { id: 'turk', ar: 'تركيا وآسيا الوسطى والقوقاز', en: 'Türkiye, Central Asia & Caucasus' }, { id: 'sasia', ar: 'جنوب آسيا وإيران', en: 'South Asia & Iran' },
+      { id: 'seasia', ar: 'جنوب شرق آسيا', en: 'Southeast Asia' }, { id: 'other', ar: 'أوروبا والأمريكتان', en: 'Europe & the Americas' }];
+    var T = null, el = null, map = null, mk = {}, cur = null;
+    function t(o) { return o ? T.t(o) : ''; }
+    function card(c) {
+      var A = T.ar(), f = function (ic, ar, en, v) { return v ? '<div><i>' + ic + ' ' + (A ? ar : en) + '</i>' + T.esc(t(v)) + '</div>' : ''; };
+      return '<div class="cty-card" id="ctyCard"><div class="hd"><span class="fl">' + c.flag + '</span><div><b>' + T.esc(t(c.name)) + '</b><small>' + T.esc(t((R.filter(function (r) { return r.id === c.region; })[0]) || {ar:'',en:''})) + '</small></div></div>' +
+        '<div class="cty-facts">' + f('🏛️', 'العاصمة', 'Capital', c.capital) + f('👥', 'السكان', 'Population', c.pop) + f('🕌', 'نسبة المسلمين', 'Muslims', c.muslims) + f('🗣️', 'اللغة', 'Language', c.lang) + '</div>' +
+        (c.landmark ? '<p>⭐ <b>' + (A ? 'من معالمها: ' : 'A landmark: ') + '</b>' + T.esc(t(c.landmark)) + '</p>' : '') +
+        (c.fact ? '<p>💡 ' + T.esc(t(c.fact)) + '</p>' : '') + '</div>';
+    }
+    function pick(id) {
+      var c = C.filter(function (x) { return x.id === id; })[0]; if (!c || !el) return; cur = id;
+      [].forEach.call(el.querySelectorAll('.cty-chip'), function (b) { b.setAttribute('aria-pressed', b.getAttribute('data-c') === id); });
+      var box = el.querySelector('#ctyOut'); box.innerHTML = card(c);
+      if (map && map !== 'sketch' && mk[id]) { map.setView([c.lat, c.lng], 4); mk[id].openPopup(); }
+      box.scrollIntoView({ behavior: document.documentElement.classList.contains('calm') ? 'auto' : 'smooth', block: 'nearest' });
+    }
+    function render(host, TR) {
+      T = TR; el = host; map = null; mk = {};
+      host.innerHTML = '<p style="text-align:center;font-weight:700">' + TR.tx('في العالم <b>٥٧ دولة</b> في منظمة التعاون الإسلامي، ويعيش المسلمون أيضًا في كلّ بلدٍ تقريبًا. اضغط على دولة لتتعرّف عليها 👇', 'There are <b>57 countries</b> in the Organisation of Islamic Cooperation — and Muslims live in almost every country. Tap a country to meet it 👇') + '</p>' +
+        '<div class="trm-map" id="ctyMap" style="height:360px"></div><div id="ctyOut"></div><div class="cty-regions">' +
+        R.map(function (r) {
+          var list = C.filter(function (c) { return c.region === r.id; }); if (!list.length) return '';
+          return '<div class="cty-reg"><h4>' + (TR.ar() ? r.ar : r.en) + ' (' + list.length + ')</h4><div class="cty-chips">' + list.map(function (c) {
+            return '<button class="cty-chip" data-c="' + c.id + '" aria-pressed="false"><span class="fl">' + c.flag + '</span>' + TR.esc(TR.t(c.name)) + '</button>';
+          }).join('') + '</div></div>';
+        }).join('') + '</div>' + TRMap.credit(TR.ar());
+      [].forEach.call(host.querySelectorAll('.cty-chip'), function (b) { b.onclick = function () { pick(b.getAttribute('data-c')); }; });
+      if (cur) pick(cur);
+    }
+    function init() {
+      if (map || !el) return;
+      var me = el.querySelector('#ctyMap'); if (!me) return;
+      TRMap.load(function (ok) {
+        if (map) return;
+        if (!ok) { map = 'sketch'; TRMap.sketch(me, C, { onPick: function (k) { pick(C[k].id); }, offline: T.tx('خريطة مبسّطة — الخريطة التفاعلية تحتاج اتصالًا بالإنترنت', 'Simple sketch — the interactive map needs an internet connection') }); return; }
+        map = TRMap.leaflet(me);
+        C.forEach(function (c) {
+          mk[c.id] = L.marker([c.lat, c.lng], { title: T.t(c.name), icon: L.divIcon({ className: '', html: '<div class="cty-pin">' + c.flag + '</div>', iconSize: [26, 26], iconAnchor: [13, 13] }) })
+            .addTo(map).bindPopup('<b>' + c.flag + ' ' + T.esc(T.t(c.name)) + '</b><small>' + T.esc(T.t(c.capital)) + '</small>').on('click', function () { pick(c.id); });
+        });
+        map.fitBounds(L.latLngBounds(C.map(function (c) { return [c.lat, c.lng]; })), { padding: [16, 16] });
+        setTimeout(function () { map.invalidateSize(); }, 60);
+      });
+    }
+    return { render: render, init: init };
+  })();
+
+  window.TR_PAGE = {
+    id: 'atlas', icon: '🌍',
+    title: { ar: 'الأطلس الإسلامي', en: 'The Islamic Atlas' },
+    intro: { ar: 'جولةٌ في أمّتنا وتاريخها: مساجدُ عظيمة، والقدس والأندلس، ومن حياة النبي ﷺ، وجامعاتٌ ومعمارٌ وخرائط، وأماكنُ ذكرها القرآن، وغزواتٌ وفتوحات. اختر قسمًا، اقلب البطاقة، ثم ابحث عنها على الخريطة 🗺️', en: 'A journey through our Ummah and its history: great mosques, Al-Quds and Al-Andalus, the Prophet’s ﷺ life, universities, architecture, maps, places named in the Quran, and great battles and conquests. Pick a section, flip a card, then find it on the map 🗺️' },
+    kind: 'cards',
+    back: { href: '../little-district/pages/quds.html', label: { ar: 'ركن القدس والأمة', en: 'Al-Quds & Ummah' } },
+    defaultFilter: 'masajid',
+    filters: SECTIONS,
+    items: ITEMS,
+    panels: [{ id: 'map', icon: '🗺️', label: { ar: 'خريطة الأطلس', en: 'Atlas map' }, render: function (el, TR) {
+      TRref = TR; map = null; markers = {};
+      el.innerHTML = '<div class="trm-map" id="atlMap" style="height:380px"></div><ul class="trm-list">' + PINS.map(function (p, n) {
+        var it = ITEMS[p.i];
+        return '<li><span class="n">' + (n + 1) + '</span><button onclick="ATL.openCard(' + p.i + ')">' + it.icon + ' ' + TR.esc(TR.t(it.title)) + '</button></li>';
+      }).join('') + '</ul>' + TRMap.credit(TR.ar());
+      mapEl = el.querySelector('#atlMap');
+    } }, { id: 'countries', icon: '🌐', label: { ar: 'الدول الإسلامية', en: 'Muslim countries' }, render: function (el, TR) { CTY.render(el, TR); } }],
+    onTab: function (tab) { if (tab === 'map') initMap(); if (tab === 'countries') CTY.init(); },
+    onRender: function (TR) {
+      TRref = TR;
+      var k = document.querySelector('[data-panel="kids"]');
+      if (k && !k.querySelector('.trm-credit')) k.insertAdjacentHTML('beforeend', TRMap.credit(TR.ar()));
+    },
+    parents: {
+      ar: '<h3>كيف نستفيد من الأطلس؟</h3><ul><li>اختاروا <b>قسمًا واحدًا كلّ أسبوع</b>، وبطاقةً أو بطاقتين كلّ يوم، واقرؤوا القصّة معًا.</li><li>ابحثوا عن المكان على الخريطة، واسألوا: كم يبعد عنّا؟ أيّ بحرٍ أو جبلٍ قريبٌ منه؟</li><li>اربطوا كلّ بطاقة بشعورِ الانتماء: «هذه أمّتُك، وهذا تاريخُك، وأنت تُكمل البناء».</li><li>عند بطاقات الغزوات ركّزوا على <b>الأخلاق والدروس</b> (الصبر، الطاعة، الرحمة بالأسرى، العدل بعد الفتح) لا على الحرب نفسها.</li><li>بطاقات «من حياة النبي ﷺ» تذكر ما صحّ في السنّة، وتنبّه إلى أنّ كثيرًا ممّا يُعرض في المتاحف <b>منسوبٌ</b> إليه ﷺ ولا يُقطع بصحّته.</li></ul>',
+      en: '<h3>How to use the atlas</h3><ul><li>Choose <b>one section a week</b> and one or two cards a day; read the story together.</li><li>Find each place on the map and ask: how far is it from us? Which sea or mountain is near it?</li><li>Link every card to belonging: “This is your Ummah, this is your history, and you will continue the building.”</li><li>With battle cards, focus on <b>character and lessons</b> (patience, obedience, mercy to captives, justice after victory), not on fighting itself.</li><li>Cards about the Prophet’s ﷺ belongings mention what is authentic in the Sunnah and note that many museum items are only <b>attributed</b> to him ﷺ and cannot be confirmed.</li></ul>'
+    },
+    worksheet: {
+      ar: '<h3>✏️ ورقة نشاط: مستكشفُ الأطلس</h3><p>البطاقة التي تعرّفتُ عليها:</p><div class="ws-line"></div><p>في أيّ مدينةٍ وبلدٍ تقع؟</p><div class="ws-line"></div><p>في أيّ زمنٍ كانت؟</p><div class="ws-line"></div><p>شيءٌ جعلني أفتخر بأمّتي:</p><div class="ws-line"></div><div class="ws-line"></div><p>ارسم المكانَ أو الشيءَ هنا:</p><div class="ws-box"></div>',
+      en: '<h3>✏️ Activity sheet: Atlas explorer</h3><p>The card I learned about:</p><div class="ws-line"></div><p>Which city and country is it in?</p><div class="ws-line"></div><p>Which time was it from?</p><div class="ws-line"></div><p>Something that made me proud of my Ummah:</p><div class="ws-line"></div><div class="ws-line"></div><p>Draw the place or thing here:</p><div class="ws-box"></div>'
+    }
+  };
+})();
+</script>
+<script src="../treasures/tr.js"></script>
+<script defer src="../shared/mk-system.js"></script>
+<script defer src="../shared/mk-journeys.js"></script>
+<script defer src="../shared/mk-bag.js"></script>
+<script src="../shared/mk-topbar.js"></script>
+</body>
+</html>

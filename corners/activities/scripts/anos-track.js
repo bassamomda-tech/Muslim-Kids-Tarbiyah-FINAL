@@ -46,8 +46,11 @@
       return { s: s, n: n, got: n === s.activities.length };
     });
   }
+  /* a medal once earned is KEPT: adding new activities to a section never takes a medal or its certificate away */
   function saveMedals(SECTIONS) {
-    var m = medals(SECTIONS).filter(function (x) { return x.got; }).map(function (x) { return { id: x.s.id, ar: x.s.title, en: x.s.titleEn || x.s.title }; });
+    var m = jget("anos_medals", []); if (!Array.isArray(m)) m = [];
+    var have = {}; m.forEach(function (x) { have[x.id] = 1; });
+    medals(SECTIONS).forEach(function (x) { if (x.got && !have[x.s.id]) { m.push({ id: x.s.id, ar: x.s.title, en: x.s.titleEn || x.s.title }); have[x.s.id] = 1; } });
     jset("anos_medals", m); return m;
   }
 
