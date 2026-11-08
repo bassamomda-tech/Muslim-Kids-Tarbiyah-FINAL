@@ -115,6 +115,8 @@
     intro: { ar: 'ثلاثون حلقة مع الأستاذ يوسف وكَرْمة في «قافلة الفقهاء»: نفهم معنى الفقه، ونزور مدن الأئمّة الأربعة ونسمع حكاياتهم وذكاءهم، ونتعلّم فقه العبادات والحياة بمتعة. في كل حلقة قصّة، ونشاط تفاعلي، ونشاط للبيت، ومسألة نحلّها!', en: 'Thirty episodes with Ustadh Yusuf and Karma in the Caravan of the Jurists: what fiqh is, the four imams and their stories, the fiqh of worship and daily life.' },
     filters: S.seasons.map(function (s) { return { id: 's' + s.n, label: { ar: s.title.replace(/^الموسم [^:]+: /, ''), en: 'Season ' + s.n } }; }),
     items: items,
+    panels: window.SeriesPodcast ? [SeriesPodcast.panel(S)] : null,
+    onTab: function (id) { if (id !== 'podcast' && window.SeriesPodcast) SeriesPodcast.stop(); },
     parents: { ar: '<h3>كيف تستعمل الحلقة مع طفلك؟</h3><ul><li>اقرأ القصة معه صفحةً صفحة، ثم العب النشاط التفاعلي.</li><li>نفّذا نشاط البيت معًا، ولا تعطه الحلّ مباشرة.</li><li>المسألة تُحلّ في البيت، ويناقشها المعلّم في الحصّة القادمة: المهمّ أن يعلّل الطفل رأيه بالدليل، ويسأل أهل العلم فيما لا يعرف.</li><li>المهامّ التي فيها تواصل أو إنترنت تتمّ بإشرافك، ودون مشاركة أيّ بيانات شخصية.</li></ul>' }
   };
 

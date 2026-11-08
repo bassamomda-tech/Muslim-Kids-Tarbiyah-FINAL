@@ -103,5 +103,48 @@
     }
   }, true);
 
-  window.SeriesPodcast = { mount: mount };
+  function stopAll() {
+    if (!cur) return;
+    cur.token++; cur.playing = false;
+    try { if (window.MKTTS) MKTTS.stop(); } catch (x) {} try { speechSynthesis.cancel(); } catch (x) {}
+  }
+
+  /* تبويب 🎧 البودكاست: قائمة الحلقات كلّها، وتُشغَّل الحلقة المختارة في المكان نفسه (مثل بودكاست صانع المهارات) */
+  function panel(S) {
+    var hosts = S.podcast_hosts || {};
+    return { id: 'podcast', icon: '🎧', label: { ar: 'البودكاست', en: 'Podcast' }, render: function (el, TR) {
+      var eps = (S.episodes || []).filter(function (e) { return e.podcast && e.podcast.lines && e.podcast.lines.length; });
+      el.innerHTML = '<p class="sp-intro">حلقات البودكاست كلّها في مكان واحد: اختر حلقة واضغط ▶، وتابِع الكلام على الشاشة. وتتوقّف الحلقة عند وقت النشاط حتى تضغط «تابِع».</p><div class="sp-one"></div>' +
+        '<div class="sp-eps">' + eps.map(function (e) {
+          var who = []; e.podcast.lines.forEach(function (l) { var h = hosts[l.s]; if (h && who.indexOf(h.icon + ' ' + h.name) < 0) who.push(h.icon + ' ' + h.name); });
+          return '<button class="sp-ep" data-ep="' + e.n + '"><span class="n">' + ar(e.n) + '</span><span class="t"><b>' + esc(e.title) + '</b><small>' +
+            esc(who.join(' · ')) + ' · ' + ar(e.podcast.lines.length) + ' مقطعًا</small></span><span class="go">🎧</span></button>';
+        }).join('') + '</div>';
+      var box = el.querySelector('.sp-one');
+      el.querySelectorAll('.sp-ep').forEach(function (b) {
+        b.onclick = function () {
+          stopAll();
+          el.querySelectorAll('.sp-ep').forEach(function (x) { x.classList.toggle('on', x === b); });
+          var e = eps.filter(function (x) { return String(x.n) === b.dataset.ep; })[0];
+          box.innerHTML = '<h3 class="sp-h">🎧 الحلقة ' + ar(e.n) + ': ' + esc(e.title) + '</h3><div></div>';
+          mount(box.lastChild, e, hosts);
+          try { box.scrollIntoView({ block: 'start', behavior: 'smooth' }); } catch (x) {}
+          var p = box.querySelector('[data-a="play"]'); if (p) p.click();
+        };
+      });
+    } };
+  }
+
+  var css = document.createElement('style');
+  css.textContent =
+    '.sp-intro{color:var(--muted);text-align:center;max-width:640px;margin:0 auto 1rem}' +
+    '.sp-eps{display:grid;gap:.55rem;max-width:720px;margin:0 auto}' +
+    '.sp-ep{display:flex;align-items:center;gap:.7rem;background:#fff;border:2px solid var(--line);border-radius:16px;padding:.65rem .9rem;text-align:start;font:inherit;color:var(--ink);cursor:pointer}' +
+    '.sp-ep:hover,.sp-ep:focus-visible,.sp-ep.on{border-color:var(--acc);outline:none}' +
+    '.sp-ep .n{flex:0 0 30px;height:30px;border-radius:50%;display:grid;place-items:center;background:var(--acc);color:#fff;font-weight:900;font-size:.85rem}' +
+    '.sp-ep .t{flex:1;display:flex;flex-direction:column;line-height:1.45}.sp-ep small{color:var(--muted)}.sp-ep .go{font-size:1.3rem}' +
+    '.sp-one{max-width:720px;margin:0 auto 1rem;scroll-margin-top:70px}.sp-one:empty{display:none}.sp-h{font-size:1.05rem;margin:0 0 .5rem}';
+  document.head.appendChild(css);
+
+  window.SeriesPodcast = { mount: mount, panel: panel, stop: stopAll };
 })();

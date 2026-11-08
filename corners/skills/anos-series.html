@@ -122,6 +122,8 @@
     intro: { ar: 'أهلًا! أنا أنوس، ومعي الببغاء فصيح 🦜 في ثلاثين حلقة نتعلّم فيها كتاب «ما لا يسع أطفال المسلمين جهله» كلّه: أسئلة وأجوبة، و«هل تعلم؟»، ولغز «مَن أنا؟»، ونشاط تفاعلي في كل حلقة!', en: 'Hi! I am Anos, with Fasih the parrot 🦜 — thirty episodes covering the whole book of what every Muslim child should know.' },
     filters: S.seasons.map(function (s) { return { id: 's' + s.n, label: { ar: s.title.replace(/^الموسم [^:]+: /, ''), en: 'Season ' + s.n } }; }),
     items: items,
+    panels: window.SeriesPodcast ? [SeriesPodcast.panel(S)] : null,
+    onTab: function (id) { if (id !== 'podcast' && window.SeriesPodcast) SeriesPodcast.stop(); },
     parents: { ar: '<h3>كيف تستعمل الحلقة مع طفلك؟</h3><ul><li>اقرأ القصة معه صفحةً صفحة، ثم العب النشاط التفاعلي.</li><li>نفّذا نشاط البيت معًا، ولا تعطه الحلّ مباشرة.</li><li>لغز «مَن أنا؟» يُحلّ في البيت، ويُكشف في الحلقة القادمة. وأسئلة الكتاب في كل حلقة مفتوحة للمراجعة: اسأل طفلك السؤال قبل أن يكشف الجواب.</li><li>المهامّ التي فيها تواصل أو إنترنت تتمّ بإشرافك، ودون مشاركة أيّ بيانات شخصية.</li></ul>' }
   };
 

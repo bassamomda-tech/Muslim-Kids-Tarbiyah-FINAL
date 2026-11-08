@@ -115,6 +115,8 @@
     intro: { ar: 'ثلاثون حلقة مع القبطان سالم ومريم: نفهم المال، ونتاجر بأمانة، ونعطي بسخاء، ثم نطلق مشروعنا الأوّل. في كل حلقة قصة، ونشاط تفاعلي، ونشاط للبيت، وملفّ قضية نحقّق فيه!', en: 'Thirty episodes with Captain Salim and Maryam: understanding money, honest trade, generous giving, and launching our first project.' },
     filters: S.seasons.map(function (s) { return { id: 's' + s.n, label: { ar: s.title.replace(/^الموسم [^:]+: /, ''), en: 'Season ' + s.n } }; }),
     items: items,
+    panels: window.SeriesPodcast ? [SeriesPodcast.panel(S)] : null,
+    onTab: function (id) { if (id !== 'podcast' && window.SeriesPodcast) SeriesPodcast.stop(); },
     parents: { ar: '<h3>كيف تستعمل الحلقة مع طفلك؟</h3><ul><li>اقرأ القصة معه صفحةً صفحة، ثم العب النشاط التفاعلي.</li><li>نفّذا نشاط البيت معًا، ولا تعطه الحلّ مباشرة.</li><li>ملفّ القضية يُحلّ في البيت، ويناقشه المعلّم في الحصّة القادمة: المهمّ أن يعلّل الطفل قراره بالأدلّة.</li><li>المهامّ التي فيها تواصل أو إنترنت تتمّ بإشرافك، ودون مشاركة أيّ بيانات شخصية.</li></ul>' }
   };
 
