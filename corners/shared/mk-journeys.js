@@ -46,10 +46,12 @@
     { id:'sk-doctor',    corner:'skills', total:8,  icon:'🩺', color:'#C0392B', doneKey:'tr:skill-doctor',    page:'corners/skills/doctor.html',    name:{ar:'الطبيب الصغير', en:'The Little Doctor'} },
     { id:'sk-engineer',  corner:'skills', total:8,  icon:'🏗️', color:'#E67E22', doneKey:'tr:skill-engineer',  page:'corners/skills/engineer.html',  name:{ar:'المهندس الصغير', en:'The Little Engineer'} },
     { id:'sk-maker',     corner:'skills', total:10, icon:'🧰', color:'#5E8C31', doneKey:'tr:skill-maker',     page:'corners/skills/maker.html',     name:{ar:'الصانع الصغير', en:'The Little Maker'} },
-    { id:'sk-faqih', corner:'skills', total:8, icon:'⚖️', color:'#117A65', doneKey:'tr:skill-faqih', page:'corners/skills/faqih.html', name:{ar:'الفقيه الصغير', en:'The Little Faqih'} },
-    { id:'sk-coder', corner:'skills', total:8, icon:'💻', color:'#3949AB', doneKey:'tr:skill-coder', page:'corners/skills/coder.html', name:{ar:'المبرمج الصغير', en:'The Little Programmer'} },
-    { id:'sk-mutafakkir', corner:'skills', total:8, icon:'🔭', color:'#7D3C98', doneKey:'tr:skill-mutafakkir', page:'corners/skills/mutafakkir.html', name:{ar:'المتفكّر الصغير', en:'The Little Thinker'} },
     { id:'sk-farmer',    corner:'skills', total:8,  icon:'🌱', color:'#27AE60', doneKey:'tr:skill-farmer',    page:'corners/skills/farmer.html',    name:{ar:'المزارع الصغير', en:'The Little Farmer'} },
+    { id:'sk-anos',      corner:'skills', total:30, icon:'🧒', color:'#7A3FB0', doneKey:'tr:skill-anos-series',    page:'corners/skills/anos-series.html',    name:{ar:'تعلّم مع أنوس', en:'Learn with Anos'} },
+    { id:'sk-money',     corner:'skills', total:30, icon:'⛵', color:'#22325A', doneKey:'tr:skill-money-series',   page:'corners/skills/money-series.html',   name:{ar:'رائد الأعمال الصغير', en:'The Little Entrepreneur'} },
+    { id:'sk-fiqh',      corner:'skills', total:30, icon:'🐪', color:'#1F6E52', doneKey:'tr:skill-fiqh-series',    page:'corners/skills/fiqh-series.html',    name:{ar:'المتفقّه الصغير', en:'The Little Faqih'} },
+    { id:'sk-akhlaq',    corner:'skills', total:30, icon:'🌙', color:'#C0563A', doneKey:'tr:skill-akhlaq-series',  page:'corners/skills/akhlaq-series.html',  name:{ar:'أخلاق الطفل المسلم', en:'The Muslim Child\'s Character'} },
+    { id:'sk-nasheed',   corner:'skills', total:30, icon:'🎵', color:'#2E86C1', doneKey:'tr:skill-nasheed-series', page:'corners/skills/nasheed-series.html', name:{ar:'أناشيد الطفل المسلم', en:'Nasheeds of the Muslim Child'} },
 
     /* ─── حيّنا الصغير · Our Little District (district engine: ld:) ─── */
     { id:'district', corner:'social', total:34, icon:'🏘️', color:'#D4A017', ldKey:true, page:'corners/little-district/pages/social.html', name:{ar:'بيوت الحيّ — الأخلاق والآداب', en:'District Houses — Manners & Etiquette'} },
