@@ -16,9 +16,12 @@
 
   /* what THIS child has really played (written by activity-common.js on every activity page) */
   function played() { try { return JSON.parse(localStorage.getItem("anos_played") || "{}") || {}; } catch (e) { return {}; } }
+  /* what THIS child has FINISHED (anos-track.js) — stars, medals and the streak count finished activities only.
+     Before the first finish is tracked on this device, earlier plays still count (nothing is taken away). */
+  function finished() { try { return localStorage.getItem("anos_done_v1") ? (JSON.parse(localStorage.getItem("anos_done") || "{}") || {}) : played(); } catch (e) { return {}; } }
   function days() { try { return JSON.parse(localStorage.getItem("anos_days") || "[]") || []; } catch (e) { return []; } }
   function actId(a) { return (a.href || "").split("/").pop().replace(/\.html$/i, ""); }
-  function isPlayed(a, P) { return !!(P || played())[actId(a)]; }
+  function isPlayed(a, P) { return !!(P || finished())[actId(a)]; }
   function streak() {   // days in a row up to today (or up to yesterday, so a streak isn't lost before today's play)
     const set = new Set(days()), d = new Date(); let n = 0;
     const key = (x) => x.getFullYear() + "-" + ("0" + (x.getMonth() + 1)).slice(-2) + "-" + ("0" + x.getDate()).slice(-2);
@@ -82,7 +85,7 @@
   function sectionHTML(sec, idx) {
     // حساب نسبة الإنجاز للقسم (افتراضياً للعرض)
     const total = sec.activities.length;
-    const P = played();
+    const P = finished();
     const completed = sec.activities.filter(a => isPlayed(a, P)).length;
     const pct = Math.round((completed / total) * 100);
     const en = L() === "en";
@@ -180,11 +183,11 @@
 
   /* تحديث الإحصائيات في الأعلى وبطاقة التقدم */
   function updateStats() {
-    const P = played(), en = L() === "en";
+    const P = finished(), en = L() === "en";
     let total = 0, done = 0;
     SECTIONS.forEach(s => { total += s.activities.length; s.activities.forEach(a => { if (isPlayed(a, P)) done++; }); });
     const playable = SECTIONS.reduce((acc, s) => acc + s.activities.filter(a => a.status !== "locked").length, 0);
-    // a section medal = every activity in that section played at least once
+    // a section medal = every activity in that section finished at least once
     const medals = SECTIONS.map(s => ({ s, got: s.activities.every(a => isPlayed(a, P)), n: s.activities.filter(a => isPlayed(a, P)).length }));
     const week = playedThisWeek(P), GOAL = 4;
 
@@ -200,7 +203,7 @@
     const meta = document.getElementById("progress-meta");
     if (meta) meta.innerHTML = week >= GOAL
       ? (en ? "<strong>Well done! 🏅</strong> You earned the “Little Achiever” badge this week — keep going!" : "<strong>أحسنت! 🏅</strong> نلتَ وسام «المثابر الصغير» هذا الأسبوع — واصل!")
-      : (en ? `<strong>${week} of ${GOAL} this week</strong> Play ${GOAL - week} more to earn the “Little Achiever” badge 🏅` : `<strong>${week} من ${GOAL} هذا الأسبوع</strong> العب ${GOAL - week} ${GOAL - week === 1 ? "نشاطًا" : "أنشطة"} أخرى لتنال وسام «المثابر الصغير» 🏅`);
+      : (en ? `<strong>${week} of ${GOAL} this week</strong> Finish ${GOAL - week} more to earn the “Little Achiever” badge 🏅` : `<strong>${week} من ${GOAL} هذا الأسبوع</strong> أنهِ ${GOAL - week} ${GOAL - week === 1 ? "نشاطًا" : "أنشطة"} أخرى لتنال وسام «المثابر الصغير» 🏅`);
     const row = document.getElementById("medals-row");
     if (row) row.innerHTML = medals.map(m => {
       const t = en && m.s.titleEn ? m.s.titleEn : m.s.title;

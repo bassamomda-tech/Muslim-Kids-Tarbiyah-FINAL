@@ -98,6 +98,7 @@
     try { if (window.MK_J && window.MK_JOURNEYS) { earnedCerts = 0; MK_JOURNEYS.forEach(function (j) { if (MK_J.completedOf(j) > 0) earnedCerts++; }); } } catch (e) {}
     try { var ca = JSON.parse(localStorage.getItem('comp_awards') || '[]'); if (Array.isArray(ca)) earnedCerts += ca.length; } catch (e) {}
     try { var am = JSON.parse(localStorage.getItem('anos_medals') || '[]'); if (Array.isArray(am)) earnedCerts += am.length; } catch (e) {}   // Anos section medals (bag.html shows them as certificates)
+    try { var aw = JSON.parse(localStorage.getItem('anos_weekly') || '[]'); if (Array.isArray(aw) && aw.length) earnedCerts += 1; } catch (e) {}   // the «المثابر الصغير» weekly badge (one card in bag.html)
     return { prof: prof, perCorner: perCorner, badges: badges, totalStations: totalStations, certs: earnedCerts, journeysDone: journeysDone, points: pts, stars: stars, rewards: rewardsCount() };
   }
 

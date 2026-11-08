@@ -62,10 +62,10 @@
   function css() {
     var s = document.createElement('style'); s.id = 'mkcn-css';
     s.textContent =
-      '#mkCityNav{position:fixed;inset-inline-start:14px;bottom:18px;z-index:2147482000;font-family:"Tajawal","Nunito",sans-serif;direction:' + (ar() ? 'rtl' : 'ltr') + '}' +
+      '#mkCityNav{position:fixed;left:14px;right:auto;bottom:18px;z-index:2147482000;font-family:"Tajawal","Nunito",sans-serif;direction:' + (ar() ? 'rtl' : 'ltr') + '}' +
       '.mkcn-btn{width:52px;height:52px;border-radius:50%;border:none;background:linear-gradient(140deg,#2980B9,#1c5f8c);color:#fff;cursor:pointer;box-shadow:0 10px 26px rgba(0,0,0,.45);display:grid;place-items:center}' +
       '.mkcn-btn:hover{filter:brightness(1.08)}.mkcn-ic{font-size:1.5rem}' +
-      '.mkcn-panel{position:absolute;inset-inline-start:0;bottom:calc(100% + 10px);width:250px;max-height:72vh;overflow-y:auto;background:#0e2c49;border:1.5px solid rgba(41,128,185,.5);border-radius:1.1rem;padding:.7rem;box-shadow:0 22px 54px rgba(0,0,0,.6);display:none}' +
+      '.mkcn-panel{position:absolute;left:0;right:auto;bottom:calc(100% + 10px);width:250px;max-height:72vh;overflow-y:auto;background:#0e2c49;border:1.5px solid rgba(41,128,185,.5);border-radius:1.1rem;padding:.7rem;box-shadow:0 22px 54px rgba(0,0,0,.6);display:none}' +
       '.mkcn-panel.open{display:block;animation:mkcnIn .16s ease}' +
       '@keyframes mkcnIn{from{opacity:0;transform:translateY(8px)}to{opacity:1}}' +
       '.mkcn-head{font-weight:900;color:#9fd0ff;font-size:.98rem;padding:.2rem .3rem .5rem}' +

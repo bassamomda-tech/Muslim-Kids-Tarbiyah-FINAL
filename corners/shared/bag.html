@@ -227,6 +227,11 @@
   /* competition certificates saved from ساحة المسابقات (plain key → active child's) */
   function esc(x){ return String(x==null?'':x).replace(/[&<>"']/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];}); }
   function anosMedals(){ try{ var l=JSON.parse(localStorage.getItem('anos_medals')||'[]'); return Array.isArray(l)?l:[]; }catch(e){ return []; } }
+  /* weeks in which the «المثابر الصغير» badge was earned (4 Anos activities finished in a week) */
+  function anosWeeks(){ try{ var l=JSON.parse(localStorage.getItem('anos_weekly')||'[]'); return Array.isArray(l)?l:[]; }catch(e){ return []; } }
+  /* boy / girl wording on certificates, from the profile picture; animals and stars get wording for both */
+  function kidG(){ var a=String((MK.activeProfile()||{}).avatar||''); if(/👧|🧕/.test(a)) return 'f'; if(/🧒|👦|👶/.test(a)) return 'm'; return ''; }
+  function G(m,f,n){ var g=kidG(); return g==='f'?f:g==='m'?m:n; }
   function compAwards(){ try{ var l=JSON.parse(localStorage.getItem('comp_awards')||'[]'); return Array.isArray(l)?l:[]; }catch(e){ return []; } }
 
   function applyLang(){
@@ -262,9 +267,9 @@
     }
     document.getElementById('ptsN').textContent=d.points;
     // Certificates stat must equal the actual certificate cards below.
-    var es=earned(), ca=compAwards(), am=anosMedals();
+    var es=earned(), ca=compAwards(), am=anosMedals(), aw=anosWeeks();
     document.getElementById('stBadges').textContent=d.badges;
-    document.getElementById('stCerts').textContent=es.length+ca.length+am.length;
+    document.getElementById('stCerts').textContent=es.length+ca.length+am.length+(aw.length?1:0);
     document.getElementById('stJourneys').textContent=d.journeysDone;
     document.getElementById('stRewards').textContent=d.rewards.length;
 
@@ -296,9 +301,13 @@
     var anosCards=am.map(function(m,i){
           return '<div class="card"><div class="c-ic">🧩</div>'
             +'<div class="c-t">'+(ar?('وسام قسم «'+esc(m.ar)+'»'):('Section medal: '+esc(m.en)))+'</div>'
-            +'<div class="c-s">'+(ar?'أنشطة أنوس · لعبتَ كلّ أنشطة القسم 🎉':"Anos' activities · every activity played 🎉")+'</div>'
+            +'<div class="c-s">'+(ar?'أنشطة أنوس · اكتملت كلُّ أنشطة القسم 🎉':"Anos' activities · every activity finished 🎉")+'</div>'
             +'<button class="btn" onclick="openAnosCert('+i+')">'+(ar?'🏅 عرض الشهادة':'🏅 View certificate')+'</button></div>';
         });
+    if(aw.length) anosCards.push('<div class="card"><div class="c-ic">🏅</div>'
+            +'<div class="c-t">'+(ar?'وسام «المثابر الصغير»':'“Little Achiever” badge')+(aw.length>1?' ×'+aw.length:'')+'</div>'
+            +'<div class="c-s">'+(ar?'أنشطة أنوس · ٤ أنشطة مكتملة في أسبوع':"Anos' activities · 4 finished in one week")+'</div>'
+            +'<button class="btn" onclick="openAnosWeekly()">'+(ar?'🏅 عرض الشهادة':'🏅 View certificate')+'</button></div>');
     var allCards=journeyCards.concat(compCards, anosCards);
     document.getElementById('certGrid').innerHTML = allCards.length
       ? '<div class="grid">'+allCards.join('')+'</div>'
@@ -350,13 +359,34 @@
   function openAnosCert(i){
     var ar=lang==='ar', m=anosMedals()[i]; if(!m) return;
     var nm=(MK.activeProfile()?MK.activeProfile().name:'')||localStorage.getItem('parentChildName')||(ar?'اسم الطفل':'Child Name');
+    var sec='<b>«'+esc(m.ar)+'»</b>';
     var stmt = ar
-      ? 'قد لَعِبَ كلَّ أنشطةِ قسمِ <b>«'+esc(m.ar)+'»</b> في أنشطةِ أنوس، فتعلَّمَ وهو يلعب. باركَ اللهُ فيه، وجعلَه قرّةَ عينٍ لوالديه. 🤲'
-      : 'played every activity in the <b>“'+esc(m.en)+'”</b> section of Anos\' activities — learning while playing. May Allah bless them and make them the coolness of their parents\' eyes. 🤲';
+      ? G('قد أتمَّ كلَّ أنشطةِ قسمِ '+sec+' في أنشطةِ أنوس، فتعلَّمَ وهو يلعب. باركَ اللهُ فيه، وجعلَه قرّةَ عينٍ لوالديه. 🤲',
+          'قد أتمَّتْ كلَّ أنشطةِ قسمِ '+sec+' في أنشطةِ أنوس، فتعلَّمَتْ وهي تلعب. باركَ اللهُ فيها، وجعلَها قرّةَ عينٍ لوالديها. 🤲',
+          'لإتمامِ كلِّ أنشطةِ قسمِ '+sec+' في أنشطةِ أنوس، تعلُّمًا ممتعًا باللعب. باركَ اللهُ في هذا الجهدِ الجميل، وجعلَه قرّةَ عينٍ للوالدين. 🤲')
+      : 'finished every activity in the <b>“'+esc(m.en)+'”</b> section of Anos\' activities — learning while playing. May Allah bless them and make them the coolness of their parents\' eyes. 🤲';
     document.getElementById('printPaper').innerHTML =
       '<div class="cert"><div class="seal">🧩</div>'
       +'<div class="kick">'+(ar?'تربية الطفل المسلم · حقيبتي':'Muslim Kids’ Tarbiyah · My Bag')+'</div>'
       +'<div class="title">'+(ar?'شهادة وسام القسم':'Section Medal Certificate')+'</div>'
+      +'<div class="name">'+esc(nm)+'</div>'
+      +'<div class="state">'+stmt+'</div>'
+      +'<div class="foot">🧩 '+(ar?'أنشطة أنوس':"Anos' Activities")+'</div></div>';
+    document.getElementById('printOv').classList.add('open');
+  }
+  function openAnosWeekly(){
+    var ar=lang==='ar', n=anosWeeks().length; if(!n) return;
+    var nm=(MK.activeProfile()?MK.activeProfile().name:'')||localStorage.getItem('parentChildName')||(ar?'اسم الطفل':'Child Name');
+    var times = n>1 ? (ar?(' — '+n+' أسابيع'):(' — '+n+' weeks')) : '';
+    var stmt = ar
+      ? G('قد أتمَّ أربعةَ أنشطةٍ أو أكثرَ من أنشطةِ أنوس في أسبوعٍ واحد'+times+'، فكان مثابرًا. باركَ اللهُ فيه. 🤲',
+          'قد أتمَّتْ أربعةَ أنشطةٍ أو أكثرَ من أنشطةِ أنوس في أسبوعٍ واحد'+times+'، فكانت مثابرة. باركَ اللهُ فيها. 🤲',
+          'لإتمامِ أربعةِ أنشطةٍ أو أكثرَ من أنشطةِ أنوس في أسبوعٍ واحد'+times+'، مثابرةً وجِدًّا. باركَ اللهُ في هذا الجهد. 🤲')
+      : 'finished four or more of Anos\' activities in one week'+times+' — a true little achiever. May Allah bless them. 🤲';
+    document.getElementById('printPaper').innerHTML =
+      '<div class="cert"><div class="seal">🏅</div>'
+      +'<div class="kick">'+(ar?'تربية الطفل المسلم · حقيبتي':'Muslim Kids’ Tarbiyah · My Bag')+'</div>'
+      +'<div class="title">'+(ar?'وسام «المثابر الصغير»':'“Little Achiever” Badge')+'</div>'
       +'<div class="name">'+esc(nm)+'</div>'
       +'<div class="state">'+stmt+'</div>'
       +'<div class="foot">🧩 '+(ar?'أنشطة أنوس':"Anos' Activities")+'</div></div>';

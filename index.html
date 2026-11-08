@@ -76,7 +76,7 @@ header{
 .brand-icon{width:2rem;height:2rem;display:block;animation:float 4s ease-in-out infinite}
 .header-right{display:flex;align-items:center;gap:.65rem}
 .lang-toggle{display:flex;border:1px solid rgba(212,160,23,.38);border-radius:2rem;overflow:hidden}
-.lang-btn{background:transparent;border:none;color:var(--cream);font-weight:700;padding:.25rem .7rem;font-size:.76rem;cursor:pointer;font-family:inherit;transition:.2s}
+.lang-btn{background:transparent;border:none;color:var(--cream);font-weight:700;padding:.4rem .8rem;min-height:34px;min-width:42px;font-size:.8rem;cursor:pointer;font-family:inherit;transition:.2s}
 .lang-btn.active{background:var(--gold);color:#060D1A}
 .about-btn{
   display:flex;align-items:center;justify-content:center;
@@ -217,6 +217,8 @@ header{
   display:grid;grid-template-columns:repeat(3,1fr);gap:.9rem;
   padding:0 1.1rem 1.5rem;max-width:1100px;margin:0 auto;
 }
+/* 3 cards per row: a single card left alone on the last row sits in the middle, not in a corner */
+@media(min-width:681px){ .city-map > .building:nth-child(3n+1):not(:has(~ .building)){grid-column:2} }
 
 /* ══════════════════════ BUILDING CARD ══════════════════════ */
 .building{
@@ -275,7 +277,7 @@ header{
 .b-enter-btn{
   display:inline-flex;align-items:center;gap:.3rem;
   margin-top:.55rem;background:var(--b-accent,var(--gold));color:#fff;
-  border:none;border-radius:2rem;padding:.26rem .82rem;font-size:.68rem;font-weight:800;
+  border:none;border-radius:2rem;padding:.5rem 1.05rem;min-height:40px;font-size:.8rem;font-weight:800;   /* big enough for small fingers */
   cursor:pointer;font-family:inherit;transition:.22s;position:relative;z-index:1;
   box-shadow:0 4px 10px rgba(0,0,0,.3);
 }
@@ -482,7 +484,7 @@ footer b{color:rgba(212,160,23,.55);font-weight:700}
   .brand #hBrand{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
   .header-right{gap:.35rem;flex-shrink:0}
   .login-icon .li-txt,.child-chip .cc-name{display:none}
-  .lang-btn{padding:.25rem .5rem}
+  .lang-btn{padding:.35rem .55rem;min-width:38px}
 }
 @media(max-width:380px){ .about-btn{display:none} .brand-icon{width:1.7rem;height:1.7rem} }
 </style>

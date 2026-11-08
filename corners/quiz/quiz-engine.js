@@ -383,6 +383,45 @@
 
   /* ════════ OVERLAY SHELL ════════ */
   let OV, SHEET, BODY;
+  /* ── joy: a soft chime for a right answer, a fanfare + confetti for a finished activity ── */
+  let AC = null;
+  function tone(f, t0, dur, g) {
+    try {
+      AC = AC || new (window.AudioContext || window.webkitAudioContext)();
+      const o = AC.createOscillator(), v = AC.createGain(), t = AC.currentTime + t0;
+      o.type = 'sine'; o.frequency.value = f; v.gain.setValueAtTime(0, t); v.gain.linearRampToValueAtTime(g || 0.07, t + 0.02); v.gain.exponentialRampToValueAtTime(0.0001, t + dur);
+      o.connect(v); v.connect(AC.destination); o.start(t); o.stop(t + dur + 0.05);
+    } catch (e) {}
+  }
+  function chime(ok) { if (ok) { tone(784, 0, 0.18); tone(1047, 0.09, 0.25); } else tone(330, 0, 0.22, 0.04); }
+  function fanfare() { [523, 659, 784, 1047].forEach((f, i) => tone(f, i * 0.12, 0.3, 0.07)); }
+  function confetti() {
+    if (!OV || window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    const c = document.createElement('canvas'), W = c.width = innerWidth, H = c.height = innerHeight, x = c.getContext('2d');
+    c.style.cssText = 'position:fixed;inset:0;pointer-events:none;z-index:2147483646';
+    OV.appendChild(c);
+    const cols = ['#D4A017', '#2E9E5B', '#2980B9', '#C94F6D', '#8E44AD', '#F5CC5A'];
+    const P = Array.from({ length: 110 }, () => ({ x: W / 2 + (Math.random() - .5) * 80, y: H * .35, vx: (Math.random() - .5) * 11, vy: -Math.random() * 11 - 3, r: Math.random() * 6 + 3, c: cols[Math.random() * cols.length | 0], a: Math.random() * 6 }));
+    let n = 0;
+    (function frame() {
+      x.clearRect(0, 0, W, H);
+      P.forEach(p => { p.vy += 0.32; p.x += p.vx; p.y += p.vy; p.a += 0.2; x.fillStyle = p.c; x.save(); x.translate(p.x, p.y); x.rotate(p.a); x.fillRect(-p.r / 2, -p.r / 2, p.r, p.r * .6); x.restore(); });
+      if (++n < 110) requestAnimationFrame(frame); else c.remove();
+    })();
+  }
+  /* any answer marked right/wrong in any question type → one chime per answer */
+  function watchAnswers() {
+    let pend = null;
+    new MutationObserver(list => {
+      list.forEach(m => {
+        const e = m.target; if (!e.classList) return;
+        const was = m.oldValue || '';
+        if (e.classList.contains('wrong') && !/\bwrong\b/.test(was)) pend = 'no';
+        else if (e.classList.contains('right') && !/\bright\b/.test(was) && pend !== 'no') pend = pend || 'ok';
+      });
+      if (pend) { const r = pend; setTimeout(() => { if (pend) { chime(pend === 'ok'); pend = null; } }, 30); }
+    }).observe(BODY, { subtree: true, attributes: true, attributeFilter: ['class'], attributeOldValue: true });
+  }
   function ensureOverlay() {
     if (OV) return;
     OV = document.createElement('div'); OV.className = 'mkq-ov';
@@ -391,6 +430,7 @@
       <div class="mkq-body" id="mkqBody"></div></div>`;
     document.body.appendChild(OV);
     SHEET = OV.querySelector('.mkq-sheet'); BODY = OV.querySelector('#mkqBody');
+    watchAnswers();
     OV.querySelector('#mkqX').onclick = () => {
       // mid-test, confirm before abandoning so a stray tap doesn't lose progress
       if (VIEW.mode === 'activity' && !VIEW.done) {
@@ -539,6 +579,7 @@
     };
     BODY.querySelector('#mkqHome').onclick = backHome;
     SHEET.scrollTop = 0; OV.scrollTop = 0;
+    if (!v.celebrated) { v.celebrated = true; if (v.pct >= PASS) { fanfare(); confetti(); } else tone(523, 0, 0.3, 0.05); }   // once, not again on a language switch
   }
 
   /* MCQ + MAZE share question rendering; maze adds a track.

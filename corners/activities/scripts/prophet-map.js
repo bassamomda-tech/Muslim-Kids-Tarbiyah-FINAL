@@ -201,6 +201,7 @@
       STORE.visited[p.id] = Date.now();
       STORE.lastIdx = i;
       Storage.set(STORAGE_KEY, STORE);
+      if (Object.keys(STORE.visited).length >= 5 && window.AnosTrack) window.AnosTrack.finish();   // 5 prophets visited = activity finished
       AudioBus.success();
       Particles.fire(60, { colors: ["#E0D5F2","#FFD9C2","#CDEBD7","#FFE9A8"] });
       renderMap();

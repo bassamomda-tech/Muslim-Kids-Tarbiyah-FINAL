@@ -159,6 +159,7 @@
       ts: Date.now(),
     });
     Storage.set(STORAGE_KEY, STORE);
+    if (STORE.byDay[currentDate].length >= 3 && window.AnosTrack) window.AnosTrack.finish();   // 3 blessings written = activity finished
     input.value = "";
     document.getElementById("add-btn").disabled = true;
     AudioBus.pop();

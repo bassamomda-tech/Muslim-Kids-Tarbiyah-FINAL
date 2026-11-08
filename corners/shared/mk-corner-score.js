@@ -76,7 +76,16 @@
       ".mkcs-rw:not(.lock):hover{transform:translateY(-3px);box-shadow:0 8px 20px rgba(150,110,20,.18)}" +
       ".mkcs-rw .mkcs-rw-ic{font-size:1.7rem}" +
       ".mkcs-rw .mkcs-rw-t{font-size:.72rem;font-weight:800;line-height:1.3}" +
-      ".mkcs-rw.lock{opacity:.55;border-style:dashed;background:#f6efe0;cursor:default}";
+      ".mkcs-rw.lock{opacity:.7;border-style:dashed;background:#f6efe0;cursor:default;position:relative}" +
+      ".mkcs-rw.lock .mkcs-rw-ic{filter:grayscale(.6)}" +
+      ".mkcs-lockb{position:absolute;top:.3rem;inset-inline-end:.35rem;font-size:.8rem}" +
+      /* first visit: a friendly 'start here' card instead of 0% and padlocks */
+      ".mkcs-start{display:flex;align-items:center;gap:1rem;flex-wrap:wrap}" +
+      ".mkcs-start .mkcs-big{font-size:2.6rem;flex:0 0 auto}" +
+      ".mkcs-start .mkcs-meta p{margin:.2rem 0 0;font-size:.95rem;line-height:1.7;color:#5a4a22;font-weight:600}" +
+      ".mkcs-go{flex:0 0 auto;display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:.6rem 1.3rem;border-radius:2rem;background:var(--rc,#D4A017);color:#fff;font-weight:900;font-size:1rem;text-decoration:none;box-shadow:0 6px 16px rgba(0,0,0,.15)}" +
+      ".mkcs-go:hover{transform:translateY(-2px)}" +
+      "@media(max-width:520px){.mkcs-go{width:100%}}";
     (document.head || document.documentElement).appendChild(s);
   }
 
@@ -191,6 +200,19 @@
         station: [stDoneV, stTotV], journey: [jDone, jCount], ts: Date.now() };
       localStorage.setItem('mk:cornerCard', JSON.stringify(snap));
     } catch (e) {}
+    if (!s.done && !medalDone && !jDone) {   // nothing done yet in this corner → invite the child to start
+      h.innerHTML =
+        '<div class="mkcs-card mkcs-start" style="--rc:' + (corner.color || '#D4A017') + '">' +
+          '<span class="mkcs-big">' + (corner.icon || '🌟') + '</span>' +
+          '<div class="mkcs-meta"><h3>' + (A ? ('هيّا نبدأ في ' + nm() + '! 🌟') : ("Let's start in " + nm() + '! 🌟')) + '</h3>' +
+            '<p>' + (A ? 'اختر أوّل محطة بالأسفل. كلُّ محطة تُنهيها تضيف نجومًا إلى حقيبتك 🎒، وعند اجتياز اختبار الركن تُفتح لك ألعابٌ من ركن أنوس 🎁'
+                       : 'Pick your first station below. Every station you finish adds stars to your bag 🎒, and passing the corner test opens games in Anos’ corner 🎁') + '</p></div>' +
+          '<a class="mkcs-go" href="#" id="mkcsGo">' + (A ? 'ابدأ أوّل محطة ←' : 'Start the first station →') + '</a>' +
+        '</div>';
+      var go = document.getElementById('mkcsGo');
+      if (go) go.onclick = function (e) { e.preventDefault(); var n = h.nextElementSibling; while (n && !n.offsetHeight) n = n.nextElementSibling; if (n) n.scrollIntoView({ behavior: 'smooth', block: 'start' }); };
+      return;
+    }
     var rewardHtml = renderRewards(s.pct);
     h.innerHTML =
       '<div class="mkcs-card">' +
@@ -230,11 +252,11 @@
     var cells = set.map(function (r) {
       var label = '<span class="mkcs-rw-t">' + (A ? r[2] : r[3]) + '</span>';
       if (unlocked) return '<a class="mkcs-rw" href="' + bse + r[0] + '?lang=' + L + '"><span class="mkcs-rw-ic">' + r[1] + '</span>' + label + '</a>';
-      return '<div class="mkcs-rw lock"><span class="mkcs-rw-ic">🔒</span>' + label + '</div>';
+      return '<div class="mkcs-rw lock"><span class="mkcs-lockb">🔒</span><span class="mkcs-rw-ic">' + r[1] + '</span>' + label + '</div>';
     }).join('');
     var status = unlocked
       ? '<span class="mkcs-status on">' + (A ? 'مفتوحة ✓' : 'Unlocked ✓') + '</span>'
-      : '<span class="mkcs-status off">' + (A ? 'تحتاج ٧٥٪ في الاختبارات' : 'Pass tests (75%)') + '</span>';
+      : '<span class="mkcs-status off">' + (A ? 'تُفتح عند اجتياز اختبار الركن (٧٥٪)' : 'Open when you pass the corner test (75%)') + '</span>';
     return '<div class="mkcs-rw-head"><span>' + (A ? '🎁 ٥ أنشطة من ركن أنوس' : '🎁 5 Anous activities') + '</span>' + status + '</div>' +
            '<div class="mkcs-rewards">' + cells + '</div>';
   }

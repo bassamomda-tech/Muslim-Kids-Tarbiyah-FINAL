@@ -158,9 +158,10 @@
     { tr:'eids',            ic:'🎉', n:{ar:'الأعياد في العبادات',en:'Eids in Worship'}, c:'#D4A017', t:10 },
     { tr:'landmarks',       ic:'🕋', n:{ar:'المعالم والخرائط',en:'Landmarks & Maps'}, c:'#2980B9', t:18 },
     { tr:'tours',           ic:'🧭', n:{ar:'جولات افتراضية',en:'Virtual Tours'}, c:'#E67E22', t:5 },
-    /* أنشطة أنوس: each of the 100 activities played at least once (written by corners/activities/scripts/anos-track.js) */
-    { id:'anos', ic:'🧩', n:{ar:'أنشطة أنوس (لعبتُها)',en:"Anos' activities played"}, h:'corners/activities/dashboard.html', c:'#C9A961', t:100,
-      get:function(){ var o=jget('anos_played',{})||{}; return Object.keys(o).length; } }
+    /* أنشطة أنوس: each of the 100 activities FINISHED at least once (corners/activities/scripts/anos-track.js);
+       until the first tracked finish on this device, earlier plays still count */
+    { id:'anos', ic:'🧩', n:{ar:'أنشطة أنوس (أنهيتُها)',en:"Anos' activities finished"}, h:'corners/activities/dashboard.html', c:'#C9A961', t:100,
+      get:function(){ var o=jget(LS.getItem('anos_done_v1')?'anos_done':'anos_played',{})||{}; return Object.keys(o).length; } }
   ];
   /* → [{id, icon, name, color, href, done, total}] ; total 0 = open-ended (Hifz stars) */
   function stars() {
@@ -287,6 +288,33 @@
       if (document.readyState === 'complete') setTimeout(save, 400); else window.addEventListener('load', function () { setTimeout(save, 400); });
       window.addEventListener('hashchange', save);
     } catch (e) {}
+  })();
+
+  /* ═══ Floating buttons (🎒 bag, 🏠 home, Aa, 🗺️ map, voice switch) step aside while a story, quiz,
+     certificate or any other full-screen window is open, so they never cover an answer or a page ═══ */
+  (function () {
+    if (window.__mkDockHide) return; window.__mkDockHide = true;
+    var DOCK = '#mkBag,#mkA11yBtn,#mkHomeBtn,#mkCityNav,#mkv-toggle';
+    function ensureCss() {
+      if (document.getElementById('mk-dock-css') || !document.head) return;
+      var st = document.createElement('style'); st.id = 'mk-dock-css';
+      st.textContent = 'body.mk-overlay #mkBag,body.mk-overlay #mkA11yBtn,body.mk-overlay #mkHomeBtn,body.mk-overlay #mkCityNav,body.mk-overlay #mkv-toggle{opacity:0!important;pointer-events:none!important;transition:opacity .15s}';
+      document.head.appendChild(st);
+    }
+    function overlayOpen() {
+      var W = innerWidth, H = innerHeight, list = document.querySelectorAll('.open,[open],.show,.active,.is-open');
+      for (var i = 0; i < list.length; i++) {
+        var e = list[i]; if (e.closest(DOCK)) continue;
+        var cs = getComputedStyle(e); if (cs.position !== 'fixed' || cs.display === 'none' || cs.visibility === 'hidden' || +cs.opacity === 0) continue;
+        var r = e.getBoundingClientRect(); if (r.width >= W * 0.6 && r.height >= H * 0.6) return true;   // a big fixed layer = a window is open
+      }
+      return false;
+    }
+    var queued = false;
+    function check() { queued = false; if (!document.body) return; ensureCss(); document.body.classList.toggle('mk-overlay', overlayOpen()); }
+    function soon() { if (!queued) { queued = true; setTimeout(check, 250); } }   // at most 4 checks a second, even on busy game pages
+    function start() { check(); new MutationObserver(soon).observe(document.body, { subtree: true, attributes: true, attributeFilter: ['class', 'open'], childList: true }); }
+    if (document.body) start(); else document.addEventListener('DOMContentLoaded', start);
   })();
 
   /* ═══ Modest character faces (mk-avatars.js): boys with a kufi, girls & women in hijab ═══ */

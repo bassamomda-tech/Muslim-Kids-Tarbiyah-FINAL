@@ -140,3 +140,34 @@
   }, 400);
   window.MKA11y = { apply: apply, open: function () { build(); toggle(); } };
 })();
+
+/* same as in mk-system.js (guarded, runs once): pages that load only mk-a11y.js get it too */
+(function () {
+  /* ═══ Floating buttons (🎒 bag, 🏠 home, Aa, 🗺️ map, voice switch) step aside while a story, quiz,
+     certificate or any other full-screen window is open, so they never cover an answer or a page ═══ */
+  (function () {
+    if (window.__mkDockHide) return; window.__mkDockHide = true;
+    var DOCK = '#mkBag,#mkA11yBtn,#mkHomeBtn,#mkCityNav,#mkv-toggle';
+    function ensureCss() {
+      if (document.getElementById('mk-dock-css') || !document.head) return;
+      var st = document.createElement('style'); st.id = 'mk-dock-css';
+      st.textContent = 'body.mk-overlay #mkBag,body.mk-overlay #mkA11yBtn,body.mk-overlay #mkHomeBtn,body.mk-overlay #mkCityNav,body.mk-overlay #mkv-toggle{opacity:0!important;pointer-events:none!important;transition:opacity .15s}';
+      document.head.appendChild(st);
+    }
+    function overlayOpen() {
+      var W = innerWidth, H = innerHeight, list = document.querySelectorAll('.open,[open],.show,.active,.is-open');
+      for (var i = 0; i < list.length; i++) {
+        var e = list[i]; if (e.closest(DOCK)) continue;
+        var cs = getComputedStyle(e); if (cs.position !== 'fixed' || cs.display === 'none' || cs.visibility === 'hidden' || +cs.opacity === 0) continue;
+        var r = e.getBoundingClientRect(); if (r.width >= W * 0.6 && r.height >= H * 0.6) return true;   // a big fixed layer = a window is open
+      }
+      return false;
+    }
+    var queued = false;
+    function check() { queued = false; if (!document.body) return; ensureCss(); document.body.classList.toggle('mk-overlay', overlayOpen()); }
+    function soon() { if (!queued) { queued = true; setTimeout(check, 250); } }   // at most 4 checks a second, even on busy game pages
+    function start() { check(); new MutationObserver(soon).observe(document.body, { subtree: true, attributes: true, attributeFilter: ['class', 'open'], childList: true }); }
+    if (document.body) start(); else document.addEventListener('DOMContentLoaded', start);
+  })();
+
+})();

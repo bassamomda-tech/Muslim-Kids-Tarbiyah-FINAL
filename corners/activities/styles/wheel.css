@@ -482,3 +482,6 @@
   [class$="-hud"] > * { min-width: 0; }
   [class$="-hud"] > div[style*="display:flex"] { grid-column: 1 / -1; flex-wrap: wrap; }
 }
+
+/* developer labels ("Activity 07 · Canvas Maze") are for the authors, not for children */
+.activity-tag { display: none !important; }

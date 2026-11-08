@@ -125,10 +125,13 @@ const Particles = (function () {
    Modal — فتح/إغلاق المودالات
    ============================================================ */
 const Modal = (function () {
+  /* the activity's own "well done" window = the child finished it → stars, medals, streak (anos-track.js) */
+  const FINISH = { "win-modal": 1, "done-modal": 1, "end-modal": 1, "bingo-modal": 1, "signed-modal": 1, "save-modal": 1 };
   function open(id) {
     const m = document.getElementById(id);
     if (!m) return;
     m.classList.add("open");
+    if (FINISH[id]) { if (window.AnosTrack) window.AnosTrack.finish(); else window.__anosPendingFinish = true; }
     document.addEventListener("keydown", escClose);
     m.addEventListener("click", backdropClick);
     function backdropClick(e) {
