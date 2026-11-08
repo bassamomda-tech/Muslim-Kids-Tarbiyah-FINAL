@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>صانع المهارات | Skills Maker</title>
-<meta name="description" content="صانع المهارات: رحلاتٌ لتعلّم مهاراتٍ حقيقية — التاجر الصغير، مستكشف التاريخ، العالِم، الطبيب، المهندس، المزارع، الصانع الصغير، الفقيه، المبرمج، المتفكّر — مع مهمّاتٍ عملية وحلقات بودكاست.">
+<meta name="description" content="صانع المهارات: رحلاتٌ لتعلّم مهاراتٍ حقيقية — التاجر الصغير، مستكشف التاريخ، العالِم، الطبيب، المهندس، المزارع، الصانع الصغير — مع مهمّاتٍ عملية وحلقات بودكاست.">
 <link rel="icon" href="../../favicon.ico">
 <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&family=Nunito:wght@400;700;800;900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../treasures/tr.css">
@@ -26,6 +26,8 @@
   .sk-how{background:#fff;border:1.5px dashed var(--line);border-radius:18px;padding:1rem 1.1rem;margin-top:1.2rem}
   .sk-how h3{color:var(--acc);font-size:1.02rem;margin-bottom:.4rem}
   .sk-how ol{padding-inline-start:1.3rem}
+  .sk-age{font-size:1.25rem;font-weight:900;color:var(--acc);margin:1.4rem 0 .7rem}
+  .sk-age:first-child{margin-top:.2rem}
   html.calm .sk-door{transition:none}
 </style>
 </head>
@@ -35,26 +37,30 @@
 /* صانع المهارات — hub of the skill journeys (each one: corners/skills/<id>.html + data/<id>.js) */
 (function () {
   var SK = [
-    { id: 'merchant',  ic: '🛍️', c: '#C0841A', n: 10, t: { ar: 'التاجر الصغير', en: 'The Little Merchant' }, tag: { ar: 'المال · المشروع · البيع بأمانة', en: 'Money · projects · honest trade' },
+    { id: 'nasheed-series', age: 'big', ic: '🎵', c: '#2E86C1', n: 30, t: { ar: 'أناشيد الطفل المسلم: متون ومنظومات', en: 'Nasheeds of the Muslim Child' }, tag: { ar: '٣٠ حلقة · ٨ سنوات فأكثر · حفظ بالإنشاد', en: '30 episodes · ages 8+ · memorise by chanting' },
+      d: { ar: 'نحفظ بالإنشاد بلا موسيقى: منظومة التوحيد والإيمان، وأحسن الأخلاق، والمنيرة، وتحفة الأطفال، والقواعد الفقهية للسعدي، وأناشيد جميلة — مع المعاني ونشاط تفاعلي في كل حلقة.', en: 'Memorise by chanting, without music: creed, manners, seerah, tajweed and fiqh poems, and classic nasheeds.' } },
+    { id: 'akhlaq-series', age: 'big', ic: '🌙', c: '#C0563A', n: 30, t: { ar: 'أخلاق الطفل المسلم: مسلسل «حيّ النور»', en: 'The Muslim Child\'s Character: the Neighbourhood of Light' }, tag: { ar: '٣٠ حلقة · ٨ سنوات فأكثر · الأخلاق والآداب', en: '30 episodes · ages 8+ · character and manners' },
+      d: { ar: 'مع الجدّة آمنة وعمر في «حيّ النور»: ثلاثون موقفًا من البيت والمدرسة والطريق والملعب، بملفّ قضية ومختبر قرار — ويغطّي بابَي الأخلاق والآداب من كتاب «ما لا يسع أطفال المسلمين جهله».', en: 'With Grandma Amina and Omar: thirty everyday situations with a case file and a decision lab, covering the character and manners chapters of the book.' } },
+    { id: 'anos-series', age: 'small', ic: '🧒', c: '#7A3FB0', n: 30, t: { ar: 'تعلّم مع أنوس: ما لا يسع الطفل المسلم جهله', en: 'Learn with Anos: what every Muslim child should know' }, tag: { ar: '٣٠ حلقة · ٥–٨ سنوات · الكتاب كاملًا', en: '30 episodes · ages 5–8 · the whole book' },
+      d: { ar: 'أنوس والببغاء فصيح يسألان ويجيبان عن أسئلة كتاب «ما لا يسع أطفال المسلمين جهله» كلّها: العقيدة والفقه والسيرة والتفسير والحديث والآداب والأخلاق والأذكار — مع «هل تعلم؟» ولغز «مَن أنا؟».', en: 'Anos and Fasih the parrot ask and answer every question in the book: creed, fiqh, seerah, tafsir, hadith, manners, character and adhkar.' } },
+    { id: 'fiqh-series', age: 'big', ic: '🐪', c: '#1F6E52', n: 30, t: { ar: 'المتفقّه الصغير: مسلسل «قافلة الفقهاء»', en: 'The Little Faqih: the Caravan of the Jurists' }, tag: { ar: '٣٠ حلقة · ٨ سنوات فأكثر · الفقه والأئمّة الأربعة', en: '30 episodes · ages 8+ · fiqh and the four imams' },
+      d: { ar: 'مسلسل من ٣٠ حلقة مع الأستاذ يوسف وكَرْمة: ما الفقه؟ وحكايات أبي حنيفة ومالك والشافعي وأحمد وذكاؤهم، وفقه العبادات والحياة، والقواعد الفقهية — مع نشاط تفاعلي ومسألة في كل حلقة.', en: 'A 30-episode series with Ustadh Yusuf and Karma: what fiqh is, the stories and wisdom of the four imams, the fiqh of worship and daily life, and legal maxims.' } },
+    { id: 'money-series', age: 'big', ic: '⛵', c: '#22325A', n: 30, t: { ar: 'رائد الأعمال الصغير: مسلسل «سفينة الأمانة»', en: 'The Little Entrepreneur: the Amanah Ship series' }, tag: { ar: '٣٠ حلقة · ٨ سنوات فأكثر · المال والتجارة والمشروع', en: '30 episodes · ages 8+ · money, trade, projects' },
+      d: { ar: 'مسلسل من ٣٠ حلقة مع القبطان سالم ومريم: في كل حلقة قصة، ونشاط تفاعلي، ونشاط للبيت، وملفّ قضية نحقّق فيه — حتى نطلق مشروعنا الأوّل.', en: 'A 30-episode series with Captain Salim and Maryam: a story, an interactive activity, a home activity and a case file in every episode — up to launching our first project.' } },
+    { id: 'merchant', age: 'small', ic: '🛍️', c: '#C0841A', n: 10, t: { ar: 'التاجر الصغير', en: 'The Little Merchant' }, tag: { ar: '٥–٨ سنوات · مدخل مبسّط للمال والبيع بأمانة', en: 'Ages 5–8 · a first look at money and honest trade' },
       d: { ar: 'ما هو المال؟ وكيف أبدأ مشروعي الأوّل؟ من المقايضة إلى «جزيرة الأعمال» — مع الرزّاق سبحانه، وفقه البيع، والزكاة والصدقة.', en: 'What is money, and how do I start my first project? From barter to "Business Island" — with ar-Razzaq, the fiqh of trade, zakat and sadaqah.' } },
-    { id: 'historian', ic: '🧭', c: '#8E5A2B', n: 8, t: { ar: 'مستكشف التاريخ', en: 'The History Explorer' }, tag: { ar: 'المصادر · الخرائط · المتحف', en: 'Sources · maps · museum' },
+    { id: 'historian', age: 'small', ic: '🧭', c: '#8E5A2B', n: 8, t: { ar: 'مستكشف التاريخ', en: 'The History Explorer' }, tag: { ar: '٥–٨ سنوات · المصادر · الخرائط · المتحف', en: 'Ages 5–8 · Sources · maps · museum' },
       d: { ar: 'كيف يعرف المؤرّخ ما حدث؟ الخطّ الزمني، والتثبّت من الأخبار، والإسناد، ومقابلة الأجداد — ثم متحف عائلتك.', en: 'How does a historian know what happened? Timelines, checking news, isnad, interviewing grandparents — then your family museum.' } },
-    { id: 'scientist', ic: '🔬', c: '#2E86C1', n: 8, t: { ar: 'العالِم الصغير', en: 'The Little Scientist' }, tag: { ar: 'الملاحظة · التجربة · النتيجة', en: 'Observe · test · conclude' },
+    { id: 'scientist', age: 'small', ic: '🔬', c: '#2E86C1', n: 8, t: { ar: 'العالِم الصغير', en: 'The Little Scientist' }, tag: { ar: '٥–٨ سنوات · الملاحظة · التجربة · النتيجة', en: 'Ages 5–8 · Observe · test · conclude' },
       d: { ar: 'تأمّل خلق الله، واسأل سؤالًا، وجرّب تجربةً عادلة، وسجّل النتائج كما فعل ابن الهيثم.', en: 'Reflect on Allah\'s creation, ask a question, run a fair test and record results — like Ibn al-Haytham.' } },
-    { id: 'doctor',    ic: '🩺', c: '#C0392B', n: 8, t: { ar: 'الطبيب الصغير', en: 'The Little Doctor' }, tag: { ar: 'جسمي · النظافة · الإسعاف', en: 'My body · hygiene · first aid' },
+    { id: 'doctor', age: 'small', ic: '🩺', c: '#C0392B', n: 8, t: { ar: 'الطبيب الصغير', en: 'The Little Doctor' }, tag: { ar: '٥–٨ سنوات · جسمي · النظافة · الإسعاف', en: 'Ages 5–8 · My body · hygiene · first aid' },
       d: { ar: 'جسمي العجيب، وغسل اليدين، والطعام الصحّي، وزيارة المريض، وماذا أفعل في الطوارئ — بأمانٍ ومع الكبار.', en: 'My amazing body, handwashing, healthy food, visiting the sick, and what to do in an emergency — safely, with adults.' } },
-    { id: 'engineer',  ic: '🏗️', c: '#E67E22', n: 8, t: { ar: 'المهندس الصغير', en: 'The Little Engineer' }, tag: { ar: 'فكّر · صمّم · ابنِ · حسّن', en: 'Think · design · build · improve' },
+    { id: 'engineer', age: 'small', ic: '🏗️', c: '#E67E22', n: 8, t: { ar: 'المهندس الصغير', en: 'The Little Engineer' }, tag: { ar: '٥–٨ سنوات · فكّر · صمّم · ابنِ · حسّن', en: 'Ages 5–8 · Think · design · build · improve' },
       d: { ar: 'مشكلةٌ حقيقية، وأفكارٌ كثيرة، ورسمٌ ومقاسات، ونموذجٌ نختبره ونحسّنه — بإتقانٍ كما يحبّ الله.', en: 'A real problem, many ideas, a sketch with measurements, a prototype we test and improve — with itqan, as Allah loves.' } },
-    { id: 'farmer',    ic: '🌱', c: '#27AE60', n: 8, t: { ar: 'المزارع الصغير', en: 'The Little Farmer' }, tag: { ar: 'البذرة · التربة · الحصاد', en: 'Seed · soil · harvest' },
+    { id: 'farmer', age: 'small', ic: '🌱', c: '#27AE60', n: 8, t: { ar: 'المزارع الصغير', en: 'The Little Farmer' }, tag: { ar: '٥–٨ سنوات · البذرة · التربة · الحصاد', en: 'Ages 5–8 · Seed · soil · harvest' },
       d: { ar: 'الله فالق الحبّ والنوى: ازرع بذرتك، واعتنِ بها، وسجّل نموّها، واجعلها صدقةً جارية.', en: 'Allah splits the seed and the date-stone: plant your seed, care for it, record its growth, make it ongoing charity.' } },
-    { id: 'maker',     ic: '🧰', c: '#5E8C31', n: 10, t: { ar: 'الصانع الصغير', en: 'The Little Maker' }, tag: { ar: 'اصنع · اكتشف · ساعد', en: 'Make · discover · help' },
-      d: { ar: 'فانوسٌ لركن صلاتك، ومجسّم الكعبة، ودورة الماء، ومرصد القمر، وطبقك الأوّل، وصندوق صدقتك — اصنع بيديك وتعلّم.', en: 'A lantern for your prayer corner, a Kaaba model, the water cycle, a moon observatory, your first dish and a sadaqah box — make it and learn.' } },
-    { id: 'faqih', ic: '⚖️', c: '#117A65', n: 8, t: { ar: 'الفقيه الصغير', en: 'The Little Faqih' }, tag: { ar: 'الفقه · القواعد · السؤال الصحيح', en: 'Fiqh · principles · asking rightly' },
-      d: { ar: 'ما هو الفقه؟ الأحكام الخمسة، و«إنما الأعمال بالنيات»، واليقين لا يزول بالشك، وتيسير الشريعة، والحلال والحرام — ثم كيف أسأل أهل العلم بأدب.', en: 'What is fiqh? The five rulings, “actions are by intentions”, certainty is not removed by doubt, the ease of the Shari‘ah, halal and haram — and how to ask scholars politely.' } },
-    { id: 'coder', ic: '💻', c: '#3949AB', n: 8, t: { ar: 'المبرمج الصغير', en: 'The Little Programmer' }, tag: { ar: 'الخوارزمية · التكرار · الإتقان', en: 'Algorithms · loops · excellence' },
-      d: { ar: 'من الخوارزمي إلى برنامجك الأوّل: خطواتٌ مرتّبة، وتكرارٌ وشروط، ومتغيّرات، وتصحيح الأخطاء بإتقان — ومبرمجٌ أمينٌ على الإنترنت.', en: 'From al-Khwarizmi to your first program: ordered steps, loops and conditions, variables, fixing bugs with excellence — and being a trustworthy coder online.' } },
-    { id: 'mutafakkir', ic: '🔭', c: '#7D3C98', n: 8, t: { ar: 'المتفكّر الصغير — معجزات القرآن', en: 'The Little Thinker — Miracles of the Qur’an' }, tag: { ar: 'التدبّر · التحدّي · آيات الكون', en: 'Reflection · the challenge · signs in the universe' },
-      d: { ar: 'كيف أتدبّر آية؟ تحدّي القرآن، وحفظه عبر القرون، وأخبارٌ صدقت، وآياتٌ في السماء والبحر والجبال — مع التفسير الصحيح دون مبالغة.', en: 'How do I reflect on a verse? The Qur’an’s challenge, its preservation across centuries, prophecies that came true, and signs in the sky, sea and mountains — with sound tafsir, no exaggeration.' } },
+    { id: 'maker', age: 'small', ic: '🧰', c: '#5E8C31', n: 10, t: { ar: 'الصانع الصغير', en: 'The Little Maker' }, tag: { ar: '٥–٨ سنوات · اصنع · اكتشف · ساعد', en: 'Ages 5–8 · Make · discover · help' },
+      d: { ar: 'فانوسٌ لركن صلاتك، ومجسّم الكعبة، ودورة الماء، ومرصد القمر، وطبقك الأوّل، وصندوق صدقتك — اصنع بيديك وتعلّم.', en: 'A lantern for your prayer corner, a Kaaba model, the water cycle, a moon observatory, your first dish and a sadaqah box — make it and learn.' } }
   ];
   function stars(id) { try { return (JSON.parse(localStorage.getItem('tr:skill-' + id)) || []).length; } catch (e) { return 0; } }
   window.TR_PAGE = {
@@ -65,7 +71,7 @@
     guide: { icon: '🧒', name: { ar: 'أنوس', en: 'Anos' }, say: { ar: 'أيّ مهارةٍ تحبّ أن تصنعها اليوم؟ اختر رحلةً واحدة، وأكمل محطّةً في كلّ مرّة — وفي آخر الرحلة شهادةٌ تنتظرك! 🏅', en: 'Which skill would you like to make today? Pick one journey and finish one station at a time — a certificate waits at the end! 🏅' } },
     onRender: function (TR) {
       var el = document.querySelector('[data-panel="kids"]');
-      el.innerHTML = '<div class="sk-grid">' + SK.map(function (s) {
+      function door(s) {
         var n = Math.min(stars(s.id), s.n), pct = Math.round(n / s.n * 100);
         return '<a class="sk-door" style="--c:' + s.c + '" href="' + s.id + '.html">' +
           '<span class="top"><span class="ic">' + s.ic + '</span><span><span class="t">' + TR.esc(TR.t(s.t)) + '</span><br><span class="tag">' + TR.esc(TR.t(s.tag)) + '</span></span></span>' +
@@ -73,7 +79,12 @@
           '<span class="meta"><span class="chip">🗺️ ' + s.n + ' ' + TR.tx('محطّات', 'stations') + '</span><span class="chip">🎯 ' + TR.tx('مهمّات عملية', 'real missions') + '</span><span class="chip">🎧 ' + s.n + ' ' + TR.tx('حلقات', 'episodes') + '</span></span>' +
           '<span class="bar"><span>' + n + ' / ' + s.n + '</span><span class="track"><span class="fill" style="width:' + pct + '%"></span></span><span>⭐</span></span>' +
           '<span class="go">' + TR.tx('ابدأ الرحلة ←', 'Start the journey →') + '</span></a>';
-      }).join('') + '</div>' +
+      }
+      function group(age, h) {
+        return '<h2 class="sk-age">' + h + '</h2><div class="sk-grid">' + SK.filter(function (s) { return s.age === age; }).map(door).join('') + '</div>';
+      }
+      el.innerHTML = group('small', '🧸 ' + TR.tx('للصغار: من ٥ إلى ٨ سنوات', 'Little ones: ages 5–8')) +
+        group('big', '🚀 ' + TR.tx('للكبار: فوق ٨ سنوات', 'Older children: ages 8+')) +
       '<div class="sk-how"><h3>🧭 ' + TR.tx('كيف تسير الرحلة؟', 'How does a journey work?') + '</h3><ol>' +
         '<li>' + TR.tx('اقرأ قصّة المحطّة صفحةً صفحة، أو استمع لها 🔊', 'Read the station story page by page, or listen 🔊') + '</li>' +
         '<li>' + TR.tx('تعرّف على الفكرة المهمّة، وصلتها بديننا 🌙', 'Learn the big idea and how it links to our deen 🌙') + '</li>' +

@@ -6,8 +6,8 @@ window.SKILLS.merchant = {
   id: 'merchant', icon: '🛍️', color: '#C0841A',
   title: ['التاجر الصغير', 'The Little Merchant'],
   intro: [
-    `رحلةٌ من عشر محطّات مع العمّ أمين وسلمى: نفهم المال، ونتعلّم تجارة المسلم الأمين، ثم تُطلق مشروعك الأوّل الحقيقيّ — وتلعب في جزيرة الأعمال!`,
-    `A ten-station journey with Uncle Amin and Salma: we understand money, learn how an honest Muslim trades, then you launch your very first real project — and play on Business Island!`
+    `رحلةٌ مبسّطة للصغار (٥–٨ سنوات) من عشر محطّات مع العمّ أمين وسلمى: نفهم المال، ونتعلّم تجارة المسلم الأمين، ثم تُطلق مشروعك الأوّل الحقيقيّ — وتلعب في جزيرة الأعمال!`,
+    `A simple ten-station journey for little ones (ages 5–8) with Uncle Amin and Salma: we understand money, learn how an honest Muslim trades, then you launch your very first real project — and play on Business Island!`
   ],
   mentor: {
     icon: '🧔', name: ['العمّ أمين', 'Uncle Amin'],
