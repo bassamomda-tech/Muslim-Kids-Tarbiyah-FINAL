@@ -80,7 +80,137 @@
     for(i=0;i<8;i++){var a=i*Math.PI/4;s+='<line x1="100" y1="100" x2="'+(cx+92*Math.cos(a)).toFixed(1)+'" y2="'+(cy+92*Math.sin(a)).toFixed(1)+'" stroke="#0A2540" stroke-width="0.6"/>';}
     return s+'<circle cx="100" cy="100" r="92" fill="none" stroke="#0A2540" stroke-width="1.3"/><circle cx="100" cy="100" r="60" fill="none" stroke="#0A2540" stroke-width="0.8"/></svg>';
   }
+  /* ---- themed line-art (printable, no external images): each corner gets its own
+     spot-the-difference scene (exactly 4 differences) and a craft that matches its title ---- */
+  var KEY='aqeeda';
+  var SK='stroke="#0A2540" fill="none" stroke-width="2"', SK1='stroke="#0A2540" fill="none" stroke-width="1.4"',
+      CUT='stroke="#0A2540" fill="none" stroke-width="2"', FOLD='stroke="#0A2540" fill="none" stroke-width="1.5" stroke-dasharray="6 5"';
+  function star(x,y,s){return '<text x="'+x+'" y="'+y+'" font-size="'+(s||18)+'" fill="#0A2540" text-anchor="middle">✦</text>';}
+  function moon(x,y,r){return '<path d="M'+x+' '+(y-r)+' A'+r+' '+r+' 0 1 0 '+x+' '+(y+r)+' A'+(r*1.2)+' '+(r*1.2)+' 0 0 1 '+x+' '+(y-r)+'Z" '+SK+'/>';}
+  function sun(x,y,r,rays){var s='<circle cx="'+x+'" cy="'+y+'" r="'+r+'" '+SK+'/>';if(rays)for(var i=0;i<8;i++){var a=i*Math.PI/4;s+='<line x1="'+(x+(r+5)*Math.cos(a)).toFixed(1)+'" y1="'+(y+(r+5)*Math.sin(a)).toFixed(1)+'" x2="'+(x+(r+13)*Math.cos(a)).toFixed(1)+'" y2="'+(y+(r+13)*Math.sin(a)).toFixed(1)+'" '+SK1+'/>';}return s;}
+  function arch(x,y,w,h){return '<path d="M'+x+' '+(y+h)+' V'+(y+w/2)+' A'+(w/2)+' '+(w/2)+' 0 0 1 '+(x+w)+' '+(y+w/2)+' V'+(y+h)+'" '+SK1+'/>';}
+  function flower(x,y){return '<line x1="'+x+'" y1="260" x2="'+x+'" y2="'+y+'" '+SK1+'/><circle cx="'+x+'" cy="'+(y-6)+'" r="6" '+SK1+'/>';}
+  function cloud(x,y){return '<path d="M'+x+' '+y+' a12 12 0 0 1 22 -8 a14 14 0 0 1 26 4 a10 10 0 0 1 2 20 h-46 a9 9 0 0 1 -4 -16Z" '+SK1+'/>';}
+  function bird(x,y){return '<path d="M'+(x-12)+' '+y+' q6 -8 12 0 q6 -8 12 0" '+SK1+'/>';}
+  var SCENES={
+    academy:function(d){ /* observatory and a study desk */
+      return '<rect x="40" y="170" width="110" height="90" '+SK+'/><path d="M40 170 A55 55 0 0 1 150 170" '+SK+'/>'+
+        (d?'':'<line x1="100" y1="130" x2="138" y2="98" stroke="#0A2540" stroke-width="7" stroke-linecap="round"/>')+
+        (d?'':'<rect x="85" y="222" width="20" height="38" '+SK1+'/>')+
+        '<rect x="210" y="215" width="120" height="8" '+SK+'/><line x1="220" y1="223" x2="220" y2="260" '+SK+'/><line x1="320" y1="223" x2="320" y2="260" '+SK+'/>'+
+        '<rect x="232" y="197" width="40" height="18" '+SK1+'/><circle cx="300" cy="198" r="14" '+SK1+'/><line x1="300" y1="212" x2="300" y2="215" '+SK1+'/>'+
+        (d?'<circle cx="300" cy="50" r="22" '+SK+'/>':moon(300,50,22))+star(200,45)+star(240,85)+(d?'':star(60,70));},
+    heart:function(d){ /* a tree whose crown is a heart, in a garden */
+      return '<rect x="168" y="170" width="24" height="90" '+SK+'/><path d="M180 178 C115 140 105 88 148 76 C167 71 178 84 180 95 C182 84 193 71 212 76 C255 88 245 140 180 178Z" '+SK+'/>'+
+        (d?'<circle cx="160" cy="110" r="6" '+SK1+'/><circle cx="200" cy="112" r="6" '+SK1+'/>':'<circle cx="160" cy="110" r="6" '+SK1+'/><circle cx="200" cy="112" r="6" '+SK1+'/><circle cx="180" cy="140" r="6" '+SK1+'/>')+
+        sun(60,60,20,!d)+flower(80,235)+flower(110,240)+(d?flower(270,238):'')+(d?'':bird(300,70))+bird(260,95);},
+    heroes:function(d){ /* a fortress with towers and a flag */
+      var m='M100 150 h20 v-14 h20 v14 h20 v-14 h20 v14 h20 v-14 h20 v14 h20 v-14 h20 v14';
+      return '<rect x="100" y="150" width="160" height="110" '+SK+'/><path d="'+m+'" '+SK+'/>'+
+        '<rect x="62" y="120" width="40" height="140" '+SK+'/><rect x="258" y="120" width="40" height="140" '+SK+'/>'+
+        '<path d="M62 120 v-12 h10 v12 m10 0 v-12 h10 v12 m10 0 v-12 h8 v12" '+SK1+'/><path d="M258 120 v-12 h10 v12 m10 0 v-12 h10 v12 m10 0 v-12 h8 v12" '+SK1+'/>'+
+        arch(165,215,30,45)+'<line x1="180" y1="136" x2="180" y2="80" '+SK+'/>'+(d?'':'<polygon points="180,80 214,90 180,100" '+SK+'/>')+
+        (d?'':'<rect x="74" y="160" width="16" height="22" '+SK1+'/>')+'<rect x="270" y="160" width="16" height="22" '+SK1+'/>'+
+        sun(320,50,18,false)+(d?bird(60,60):'')+(d?'':'<rect x="120" y="175" width="14" height="18" '+SK1+'/>');},
+    ibada:function(d){ /* a mosque with dome and minaret */
+      return '<rect x="100" y="170" width="150" height="90" '+SK+'/><path d="M128 170 A47 47 0 0 1 222 170" '+SK+'/>'+
+        '<line x1="175" y1="123" x2="175" y2="108" '+SK+'/>'+(d?'<circle cx="175" cy="102" r="6" '+SK1+'/>':moon(175,100,7))+
+        '<rect x="268" y="110" width="26" height="150" '+SK+'/><polygon points="268,110 281,82 294,110" '+SK+'/>'+
+        (d?'':'<line x1="262" y1="150" x2="300" y2="150" '+SK+'/>')+
+        (d?'<rect x="165" y="215" width="20" height="20" '+SK1+'/>':arch(160,215,30,45))+arch(118,200,18,30)+arch(214,200,18,30)+
+        moon(60,55,18)+star(110,40)+star(320,50)+(d?star(220,70):'');},
+    quds:function(d){ /* the Dome of the Rock with an olive tree */
+      var s='<rect x="110" y="190" width="140" height="70" '+SK+'/>';
+      for(var i=1;i<4;i++)s+='<line x1="'+(110+i*35)+'" y1="190" x2="'+(110+i*35)+'" y2="260" '+SK1+'/>';
+      s+=arch(120,205,15,30)+arch(155,205,15,30)+(d?'':arch(190,205,15,30))+arch(225,205,15,30);
+      s+='<rect x="140" y="170" width="80" height="20" '+SK+'/><path d="M140 170 C140 120 220 120 220 170" '+SK+'/><line x1="180" y1="132" x2="180" y2="114" '+SK+'/>'+(d?'':moon(180,108,6));
+      s+='<line x1="300" y1="260" x2="300" y2="200" '+SK+'/><circle cx="288" cy="190" r="13" '+SK1+'/><circle cx="312" cy="190" r="13" '+SK1+'/>'+(d?'':'<circle cx="300" cy="172" r="13" '+SK1+'/>');
+      s+=(d?'':'<path d="M60 260 C50 220 55 175 60 150 C65 175 70 220 60 260Z" '+SK1+'/>')+sun(70,55,18,false)+star(250,60);
+      return s;},
+    quran:function(d){ /* an open mushaf on a rehal stand, a lantern and a palm tree */
+      return '<line x1="130" y1="260" x2="230" y2="205" '+SK+'/><line x1="230" y1="260" x2="130" y2="205" '+SK+'/>'+
+        '<path d="M180 210 Q150 196 118 204 L118 176 Q150 166 180 182Z" '+SK+'/><path d="M180 210 Q210 196 242 204 L242 176 Q210 166 180 182Z" '+SK+'/>'+
+        (d?'':'<path d="M182 182 v34 l5 -6 l5 6 v-30" '+SK1+'/>')+
+        '<line x1="70" y1="0" x2="70" y2="40" '+SK1+'/><path d="M58 40 h24 l6 14 l-6 30 h-24 l-6 -30Z" '+SK+'/>'+(d?'':'<line x1="62" y1="62" x2="78" y2="62" '+SK1+'/>')+
+        '<path d="M300 260 C296 220 300 180 306 150" '+SK+'/><path d="M306 150 q-30 -10 -44 8 M306 150 q30 -12 44 6 M306 150 q-14 -24 -36 -26 M306 150 q16 -24 38 -24" '+SK1+'/>'+
+        (d?'<circle cx="304" cy="160" r="5" '+SK1+'/>':'<circle cx="300" cy="160" r="5" '+SK1+'/><circle cx="311" cy="161" r="5" '+SK1+'/>')+
+        star(150,60)+(d?star(220,40):'');},
+    social:function(d){ /* two neighbouring houses with a tree between them */
+      return '<rect x="40" y="180" width="90" height="80" '+SK+'/><polygon points="34,180 85,140 136,180" '+SK+'/><rect x="75" y="222" width="20" height="38" '+SK1+'/>'+
+        (d?'':'<rect x="50" y="195" width="18" height="16" '+SK1+'/>')+
+        '<rect x="220" y="170" width="100" height="90" '+SK+'/><polygon points="214,170 270,128 326,170" '+SK+'/><rect x="260" y="215" width="20" height="45" '+SK1+'/><rect x="232" y="188" width="18" height="16" '+SK1+'/>'+
+        (d?'<circle cx="300" cy="196" r="9" '+SK1+'/>':'<rect x="291" y="188" width="18" height="16" '+SK1+'/>')+
+        '<rect x="168" y="200" width="14" height="60" '+SK+'/><circle cx="175" cy="182" r="26" '+SK+'/>'+
+        sun(320,50,16,false)+(d?'':cloud(60,60))+(d?flower(105,240)+flower(115,244):flower(105,240));},
+    sport:function(d){ /* a football pitch with a goal, a ball and a corner flag */
+      var s='<path d="M210 260 V170 H330 V260" '+SK+'/>';
+      for(var i=1;i<(d?4:5);i++)s+='<line x1="'+(210+i*24)+'" y1="170" x2="'+(210+i*24)+'" y2="260" '+SK1+'/>';
+      s+='<line x1="210" y1="200" x2="330" y2="200" '+SK1+'/><line x1="210" y1="230" x2="330" y2="230" '+SK1+'/>';
+      s+=(d?'':'<circle cx="140" cy="244" r="16" '+SK+'/><polygon points="140,236 147,241 144,249 136,249 133,241" '+SK1+'/>');
+      s+='<line x1="40" y1="260" x2="40" y2="200" '+SK+'/>'+(d?'':'<polygon points="40,200 66,208 40,216" '+SK+'/>');
+      s+=sun(70,55,18,true)+(d?cloud(150,70):'');
+      return s;},
+    aqeeda:function(d){ /* Allah's creation: mountains, sea, sun, a tree and birds */
+      return '<polyline points="0,200 60,120 110,190 160,110 230,200" '+SK+'/>'+(d?'':'<polyline points="148,128 160,110 172,128" '+SK1+'/>')+
+        '<path d="M230 235 q15 -10 30 0 t30 0 t30 0 t30 0" '+SK1+'/>'+(d?'':'<path d="M240 250 q15 -10 30 0 t30 0 t30 0" '+SK1+'/>')+
+        sun(300,60,22,!d)+bird(200,60)+(d?'':bird(240,90))+
+        '<rect x="96" y="210" width="12" height="50" '+SK+'/><circle cx="102" cy="196" r="22" '+SK+'/>';}
+  };
+  function themedScene(diff){var f=SCENES[KEY];if(!f)return null;
+    return '<svg class="gsvg" width="360" height="300" viewBox="0 0 360 300"><rect width="360" height="300" fill="#fff"/>'+f(diff)+'<line x1="0" y1="260" x2="360" y2="260" stroke="#0A2540" stroke-width="2"/></svg>';}
+  var CRAFTS={
+    academy:function(){ /* paper astrolabe: a dial and a turning arm, joined with a paper fastener */
+      var s='<circle cx="220" cy="200" r="150" '+CUT+'/><circle cx="220" cy="38" r="14" '+CUT+'/><circle cx="220" cy="200" r="120" '+SK1+'/><circle cx="220" cy="200" r="62" '+SK1+'/>';
+      for(var i=0;i<24;i++){var a=i*Math.PI/12;s+='<line x1="'+(220+120*Math.cos(a)).toFixed(1)+'" y1="'+(200+120*Math.sin(a)).toFixed(1)+'" x2="'+(220+(i%2?132:142)*Math.cos(a)).toFixed(1)+'" y2="'+(200+(i%2?132:142)*Math.sin(a)).toFixed(1)+'" '+SK1+'/>';}
+      s+='<line x1="100" y1="200" x2="340" y2="200" '+SK1+'/><line x1="220" y1="80" x2="220" y2="320" '+SK1+'/><circle cx="220" cy="200" r="4" '+SK+'/>';
+      return s+'<rect x="70" y="385" width="300" height="24" rx="12" '+CUT+'/><circle cx="220" cy="397" r="4" '+SK+'/><polygon points="80,397 96,389 96,405" '+SK1+'/><polygon points="360,397 344,389 344,405" '+SK1+'/>';},
+    heart:function(){ /* a stand-up heart */
+      return '<path d="M220 330 C90 250 70 130 140 100 C180 85 210 110 220 135 C230 110 260 85 300 100 C370 130 350 250 220 330Z" '+CUT+'/>'+
+        '<path d="M220 285 C150 240 140 170 175 155 C195 148 212 162 220 175 C228 162 245 148 265 155 C300 170 290 240 220 285Z" '+SK1+'/>'+
+        '<path d="M175 318 V400 H265 V318" '+CUT+'/><line x1="175" y1="360" x2="265" y2="360" '+FOLD+'/><text x="220" y="230" font-size="30" text-anchor="middle">🤍</text>';},
+    heroes:function(){ /* a fortress with two towers and a flag */
+      var m='M120 180';for(var i=0;i<10;i++)m+=(i%2?' h20 v20':' h20 v-20');
+      return '<path d="'+m+'" '+CUT+'/><rect x="120" y="180" width="200" height="220" '+CUT+'/>'+
+        '<rect x="70" y="140" width="50" height="260" '+CUT+'/><rect x="320" y="140" width="50" height="260" '+CUT+'/>'+
+        '<path d="M70 140 v-16 h12 v16 m13 0 v-16 h12 v16 m13 0 v-16 h0" '+SK1+'/><path d="M320 140 v-16 h12 v16 m13 0 v-16 h12 v16" '+SK1+'/>'+
+        '<path d="M195 400 V330 A25 25 0 0 1 245 330 V400" '+SK+'/><line x1="220" y1="160" x2="220" y2="70" '+SK+'/><polygon points="220,70 270,84 220,98" '+CUT+'/>'+
+        '<rect x="83" y="190" width="24" height="30" '+SK1+'/><rect x="333" y="190" width="24" height="30" '+SK1+'/>'+
+        '<rect x="120" y="400" width="200" height="40" '+FOLD+'/><line x1="120" y1="180" x2="120" y2="400" '+FOLD+'/><line x1="320" y1="180" x2="320" y2="400" '+FOLD+'/>';},
+    ibada:function(){ /* a mosque with a dome and a minaret */
+      return '<rect x="110" y="230" width="190" height="170" '+CUT+'/><path d="M135 230 A70 70 0 0 1 275 230" '+CUT+'/><line x1="205" y1="162" x2="205" y2="140" '+SK+'/>'+moon(205,132,9)+
+        '<rect x="320" y="140" width="34" height="260" '+CUT+'/><polygon points="320,140 337,100 354,140" '+CUT+'/><line x1="314" y1="200" x2="360" y2="200" '+SK+'/>'+
+        '<path d="M185 400 V345 A20 20 0 0 1 225 345 V400" '+SK+'/><path d="M135 330 V300 A12 12 0 0 1 159 300 V330 M251 330 V300 A12 12 0 0 1 275 300 V330" '+SK1+'/>'+
+        '<rect x="110" y="400" width="244" height="40" '+FOLD+'/><rect x="60" y="250" width="50" height="140" '+FOLD+'/><line x1="300" y1="230" x2="300" y2="400" '+FOLD+'/>';},
+    quds:function(){ /* Dome of the Rock: an eight-sided wall strip, a drum and the golden dome */
+      var s='<path d="M130 200 C130 110 310 110 310 200" '+CUT+'/><line x1="220" y1="125" x2="220" y2="98" '+SK+'/>'+moon(220,90,8)+
+        '<rect x="150" y="200" width="140" height="30" '+CUT+'/><rect x="40" y="250" width="360" height="130" '+CUT+'/><rect x="400" y="250" width="26" height="130" '+FOLD+'/>';
+      for(var i=1;i<8;i++)s+='<line x1="'+(40+i*45)+'" y1="250" x2="'+(40+i*45)+'" y2="380" '+FOLD+'/>';
+      for(i=0;i<8;i++)s+='<path d="M'+(52+i*45)+' 350 V300 A10 10 0 0 1 '+(72+i*45)+' 300 V350" '+SK1+'/>';
+      return s+'<text x="220" y="175" font-size="22" text-anchor="middle">✨</text>';},
+    quran:function(){ /* a mushaf cover that folds at the spine, and a two-piece rehal stand */
+      var s='<rect x="60" y="80" width="320" height="230" '+CUT+'/><line x1="220" y1="80" x2="220" y2="310" '+FOLD+'/>'+
+        '<rect x="78" y="98" width="124" height="194" '+SK1+'/><rect x="238" y="98" width="124" height="194" '+SK1+'/>'+
+        '<rect x="280" y="175" width="40" height="40" '+SK1+'/><rect x="280" y="175" width="40" height="40" transform="rotate(45 300 195)" '+SK1+'/><circle cx="300" cy="195" r="9" '+SK1+'/>';
+      s+='<rect x="80" y="350" width="280" height="34" '+CUT+'/><line x1="220" y1="350" x2="220" y2="367" '+SK+'/>'+
+        '<rect x="80" y="410" width="280" height="34" '+CUT+'/><line x1="220" y1="444" x2="220" y2="427" '+SK+'/>';
+      return s;},
+    social:function(){ /* a neighbourhood house: front, side walls and roof */
+      return '<rect x="140" y="220" width="160" height="160" '+CUT+'/><polygon points="140,220 220,140 300,220" '+CUT+'/>'+
+        '<rect x="60" y="220" width="80" height="160" '+CUT+'/><rect x="300" y="220" width="80" height="160" '+CUT+'/>'+
+        '<line x1="140" y1="220" x2="140" y2="380" '+FOLD+'/><line x1="300" y1="220" x2="300" y2="380" '+FOLD+'/>'+
+        '<rect x="205" y="320" width="30" height="60" '+SK+'/><rect x="160" y="245" width="32" height="30" '+SK1+'/><rect x="248" y="245" width="32" height="30" '+SK1+'/>'+
+        '<rect x="80" y="260" width="40" height="34" '+SK1+'/><rect x="320" y="260" width="40" height="34" '+SK1+'/>'+
+        '<rect x="140" y="380" width="160" height="34" '+FOLD+'/><polygon points="140,220 220,140 300,220 300,226 220,146 140,226" '+FOLD+'/>';},
+    sport:function(){ /* a trophy cup on a stand, and a medal */
+      return '<path d="M140 90 H300 C300 185 262 228 220 232 C178 228 140 185 140 90Z" '+CUT+'/>'+
+        '<path d="M140 110 C92 110 92 175 152 182 M300 110 C348 110 348 175 288 182" '+CUT+'/>'+
+        '<rect x="205" y="232" width="30" height="48" '+CUT+'/><rect x="160" y="280" width="120" height="32" '+CUT+'/><rect x="160" y="312" width="120" height="40" '+FOLD+'/>'+
+        '<text x="220" y="170" font-size="34" text-anchor="middle">⭐</text>'+
+        '<path d="M300 370 L340 420 L380 370" '+CUT+'/><circle cx="340" cy="440" r="34" '+CUT+'/><circle cx="340" cy="440" r="24" '+SK1+'/><text x="340" y="448" font-size="20" text-anchor="middle">🏅</text>';}
+  };
+  function themedCraft(){var f=CRAFTS[KEY];return f?'<svg class="gsvg" width="440" height="500" viewBox="0 0 440 500" style="border:none">'+f()+'</svg>':null;}
   function scene(diff){
+    var t=themedScene(diff);if(t)return t;
     return '<svg class="gsvg" width="360" height="300" viewBox="0 0 360 300"><rect width="360" height="300" fill="#fff"/>'+
       '<circle cx="290" cy="60" r="30" fill="none" stroke="#0A2540" stroke-width="2"/>'+(diff?'<circle cx="280" cy="54" r="10" fill="none" stroke="#0A2540" stroke-width="1.5"/>':'')+
       '<rect x="160" y="100" width="44" height="160" fill="none" stroke="#0A2540" stroke-width="2"/>'+
