@@ -244,3 +244,6 @@
 .pp-btn:hover { background: var(--bg-soft); }
 .pp-btn.primary { background: var(--ink); color: #FBF6EC; border-color: var(--ink); }
 .pp-btn.danger { background: #FAD5D5; color: #7C3030; border-color: #B85555; }
+
+/* phone fix (2026-11): nothing may stick out past the screen edge */
+@media (max-width: 600px) { .pp-bin { grid-template-columns: repeat(4, minmax(0, 1fr)); } .pp-bin-cell { min-width: 0; } }

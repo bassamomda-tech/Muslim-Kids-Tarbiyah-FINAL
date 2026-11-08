@@ -198,3 +198,6 @@
   background: rgba(31,37,64,0.12);
 }
 .pt-day .day-pills .p.on { background: var(--lavender-ink); }
+
+/* phone fix (2026-11): nothing may stick out past the screen edge */
+@media (max-width: 600px) { .pt-week { grid-template-columns: repeat(7, minmax(0, 1fr)); gap: 3px; } .pt-day { min-width: 0; width: auto; } }

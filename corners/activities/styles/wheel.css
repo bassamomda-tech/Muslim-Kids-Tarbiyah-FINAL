@@ -55,12 +55,15 @@
    ============================================================ */
 .activity-layout {
   display: grid;
-  grid-template-columns: 1.35fr 1fr;
+  /* minmax(0, …): a wide board/canvas must not push the column past the screen
+     (on phones in RTL that overflow went off the left edge and could not be scrolled) */
+  grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr);
   gap: var(--s-8);
   flex-grow: 1;
 }
+.activity-layout > * { min-width: 0; }
 @media (max-width: 980px) {
-  .activity-layout { grid-template-columns: 1fr; }
+  .activity-layout { grid-template-columns: minmax(0, 1fr); }
 }
 
 /* ---------- اللوحة اليسرى (العجلة) ---------- */
@@ -468,4 +471,14 @@
   background: linear-gradient(90deg, var(--brand) 0%, var(--mint-ink) 100%);
   border-radius: var(--r-pill);
   transition: width 0.5s ease;
+}
+
+/* phone fix (2026-11): nothing may stick out past the screen edge */
+@media (max-width: 600px) {
+  .activity-nav { flex-wrap: wrap; gap: 8px; }
+  .activity-actions { flex-wrap: wrap; min-width: 0; }
+  /* the score boxes row (…-hud) in every activity: 2 per line on phones, never wider than the card */
+  [class$="-hud"] { grid-template-columns: repeat(2, minmax(0, 1fr)) !important; flex-wrap: wrap; }
+  [class$="-hud"] > * { min-width: 0; }
+  [class$="-hud"] > div[style*="display:flex"] { grid-column: 1 / -1; flex-wrap: wrap; }
 }

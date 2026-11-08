@@ -241,3 +241,6 @@
   box-shadow: inset 0 -3px 0 rgba(0,0,0,0.12);
 }
 .score-meter span.off { background: var(--bg-soft); box-shadow: none; }
+
+/* phone fix (2026-11): nothing may stick out past the screen edge */
+@media (max-width: 600px) { .quiz-hud { grid-template-columns: repeat(2, minmax(0, 1fr)); } }

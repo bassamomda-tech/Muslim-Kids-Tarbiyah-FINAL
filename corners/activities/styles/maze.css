@@ -192,3 +192,8 @@
   box-shadow: inset 0 -3px 0 rgba(0,0,0,0.1);
 }
 .honesty-meter span.off { background: var(--bg-soft); box-shadow: none; }
+
+/* phone fix (2026-11): nothing may stick out past the screen edge */
+.maze-arena { grid-template-columns: minmax(0, 1fr); min-width: 0; }
+#maze { display: block; max-width: 100%; height: auto; }
+@media (max-width: 600px) { .maze-hud { grid-template-columns: repeat(2, minmax(0, 1fr)); flex-wrap: wrap; } }

@@ -163,7 +163,7 @@
   /* ============ التصيير ============ */
   function renderGrid() {
     const g = document.getElementById("grid");
-    g.style.gridTemplateColumns = `repeat(${N}, 42px)`;
+    g.style.gridTemplateColumns = `repeat(${N}, minmax(0, 42px))`;   // shrinks on phones
     g.innerHTML = "";
     for (let r = 0; r < N; r++) {
       for (let c = 0; c < N; c++) {

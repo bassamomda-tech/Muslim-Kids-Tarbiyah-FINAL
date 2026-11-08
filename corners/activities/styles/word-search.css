@@ -180,3 +180,9 @@
   transform-origin: right center;
   z-index: 1;
 }
+
+/* phone fix (2026-11): nothing may stick out past the screen edge */
+@media (max-width: 600px) {
+  .ws-grid-wrap { min-width: 0; }
+  .ws-cell { width: auto; height: auto; aspect-ratio: 1 / 1; min-width: 0; font-size: clamp(13px, 4.2vw, 20px); border-radius: 7px; }
+}

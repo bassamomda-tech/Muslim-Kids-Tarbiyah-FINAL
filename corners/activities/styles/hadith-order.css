@@ -258,3 +258,6 @@
 }
 .h-prog-item.done .idx { background: var(--mint-ink); color: #fff; border-color: var(--mint-ink); }
 .h-prog-item.current .idx { background: var(--butter-ink); color: #fff; border-color: var(--butter-ink); }
+
+/* phone fix (2026-11): nothing may stick out past the screen edge */
+@media (max-width: 600px) { .hadith-controls { flex-wrap: wrap; } }

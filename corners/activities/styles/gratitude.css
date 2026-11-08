@@ -247,3 +247,6 @@
   background: rgba(31,37,64,0.15);
 }
 .gr-week .day .pips .p.on { background: var(--lavender-ink); }
+
+/* phone fix (2026-11): nothing may stick out past the screen edge */
+@media (max-width: 600px) { .gr-input-row { flex-wrap: wrap; } .gr-input-row input { min-width: 0; flex-basis: 100%; } }

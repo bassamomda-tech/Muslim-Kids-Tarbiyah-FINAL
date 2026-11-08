@@ -299,7 +299,7 @@
       chip.className = "prophet-chip";
       const result = roundResults[i];
       if (result) {
-        chip.classList.add(result.stars > 0 ? "solved" : "");
+        if (result.stars > 0) chip.classList.add("solved");   // add("") threw an error after a wrong answer
         chip.textContent = result.stars > 0
           ? `✓ ${p.name}`
           : (i < qIdx ? `· ${p.name}` : `؟`);

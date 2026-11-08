@@ -128,7 +128,8 @@
 
 /* ============ 88 خيمة القيادة (استراتيجية لاعبَين) ============ */
 .tn-board {
-  display: grid; grid-template-columns: repeat(7, 1fr); gap: 6px;
+  display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); gap: 6px;
+  width: 100%; box-sizing: border-box;   /* without a width the board shrank to a tiny square */
   max-width: 460px; margin: 0 auto var(--s-4);
 }
 .tn-cell {

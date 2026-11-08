@@ -113,6 +113,7 @@
 /* ============ 96 فسيفساء الأقصى (تركيب) ============ */
 .jg-board {
   display: grid; gap: 4px; margin: 0 auto var(--s-4);
+  width: 100%; box-sizing: border-box;   /* without a width the board shrank to a tiny square */
   max-width: 400px; aspect-ratio: 1;
   border: 2px solid var(--olive-ink); border-radius: var(--r-md); padding: 6px;
   background: var(--bg-soft);
@@ -202,6 +203,7 @@
 /* ============ 100 نسيج الأمة (لاعبان نسج) ============ */
 .wv-loom {
   display: grid; gap: 3px; margin: 0 auto var(--s-4);
+  width: 100%; box-sizing: border-box;   /* without a width the loom shrank to a tiny square */
   max-width: 420px;
   background: #C0B088; padding: 8px; border-radius: var(--r-md);
 }

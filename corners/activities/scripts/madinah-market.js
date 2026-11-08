@@ -96,6 +96,7 @@
 
   function choose(key) {
     const c = CUSTOMERS[idx];
+    if (!c) return;   // all customers served: old buttons must do nothing
     const ch = c[key];
     gold += ch.gold; trust += ch.trust;
     if (key === "honest") { honestCount++; AudioBus.chord([523, 659], 0.18); Particles.fire(16, { originY: "45%" }); }
