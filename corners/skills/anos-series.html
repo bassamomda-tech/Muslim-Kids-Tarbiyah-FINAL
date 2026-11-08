@@ -147,7 +147,17 @@
   TR_PAGE.onRender = function (TR) {
     if (!want) return;
     var i = items.map(function (x) { return x.num; }).indexOf(want); want = 0;
-    if (i >= 0) setTimeout(function () { TR.open(i); }, 50);
+    if (i < 0) return;
+    /* رمز QR في الدرس المكتوب يخصّ «النشاط التفاعلي»: نفتح الحلقة ونقفز مباشرة إلى النشاط */
+    setTimeout(function () {
+      TR.open(i);
+      (function skip(k) {
+        var b = document.getElementById('trPgNext');
+        if (b && k < 20) { b.click(); return setTimeout(function () { skip(k + 1); }, 20); }
+        var a = document.querySelector('#trView .ms-act'); a = a && (a.closest('.tr-sec') || a);
+        if (a) try { a.scrollIntoView({ block: 'start', behavior: 'smooth' }); } catch (e) {}
+      })(0);
+    }, 50);
   };
 })();
 </script>
