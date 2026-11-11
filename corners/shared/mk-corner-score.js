@@ -79,13 +79,16 @@
       ".mkcs-rw.lock{opacity:.7;border-style:dashed;background:#f6efe0;cursor:default;position:relative}" +
       ".mkcs-rw.lock .mkcs-rw-ic{filter:grayscale(.6)}" +
       ".mkcs-lockb{position:absolute;top:.3rem;inset-inline-end:.35rem;font-size:.8rem}" +
-      /* first visit: a friendly 'start here' card instead of 0% and padlocks */
-      ".mkcs-start{display:flex;align-items:center;gap:1rem;flex-wrap:wrap}" +
-      ".mkcs-start .mkcs-big{font-size:2.6rem;flex:0 0 auto}" +
-      ".mkcs-start .mkcs-meta p{margin:.2rem 0 0;font-size:.95rem;line-height:1.7;color:#5a4a22;font-weight:600}" +
-      ".mkcs-go{flex:0 0 auto;display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:.6rem 1.3rem;border-radius:2rem;background:var(--rc,#D4A017);color:#fff;font-weight:900;font-size:1rem;text-decoration:none;box-shadow:0 6px 16px rgba(0,0,0,.15)}" +
+      /* first visit: a slim, friendly 'start here' strip (not a full-screen card) so the corner's own
+         picture and character are what the child sees first */
+      ".mkcs-card.mkcs-start{display:flex;align-items:center;gap:.7rem;padding:.6rem .8rem;border-radius:1.1rem}" +
+      ".mkcs-start .mkcs-big{font-size:1.9rem;flex:0 0 auto;line-height:1}" +
+      ".mkcs-start .mkcs-meta{flex:1 1 auto;min-width:0}" +
+      ".mkcs-start .mkcs-meta h3{margin:0;font-size:1rem;line-height:1.4}" +
+      ".mkcs-start .mkcs-meta p{margin:.1rem 0 0;font-size:.85rem;line-height:1.5;color:#5a4a22;font-weight:700}" +
+      ".mkcs-go{flex:0 0 auto;display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:.5rem 1rem;border-radius:2rem;background:var(--rc,#D4A017);color:#fff;font-weight:900;font-size:.95rem;text-decoration:none;box-shadow:0 4px 12px rgba(0,0,0,.15);white-space:nowrap}" +
       ".mkcs-go:hover{transform:translateY(-2px)}" +
-      "@media(max-width:520px){.mkcs-go{width:100%}}";
+      "@media(max-width:420px){.mkcs-start .mkcs-big{display:none}}";
     (document.head || document.documentElement).appendChild(s);
   }
 
@@ -204,10 +207,9 @@
       h.innerHTML =
         '<div class="mkcs-card mkcs-start" style="--rc:' + (corner.color || '#D4A017') + '">' +
           '<span class="mkcs-big">' + (corner.icon || '🌟') + '</span>' +
-          '<div class="mkcs-meta"><h3>' + (A ? ('هيّا نبدأ في ' + nm() + '! 🌟') : ("Let's start in " + nm() + '! 🌟')) + '</h3>' +
-            '<p>' + (A ? 'اختر أوّل محطة بالأسفل. كلُّ محطة تُنهيها تضيف نجومًا إلى حقيبتك 🎒، وعند اجتياز اختبار الركن تُفتح لك ألعابٌ من ركن أنوس 🎁'
-                       : 'Pick your first station below. Every station you finish adds stars to your bag 🎒, and passing the corner test opens games in Anos’ corner 🎁') + '</p></div>' +
-          '<a class="mkcs-go" href="#" id="mkcsGo">' + (A ? 'ابدأ أوّل محطة ←' : 'Start the first station →') + '</a>' +
+          '<div class="mkcs-meta"><h3>' + (A ? 'هيّا نبدأ! 🌟' : "Let's start! 🌟") + '</h3>' +
+            '<p>' + (A ? 'كلُّ محطة تُنهيها = نجومٌ في حقيبتك 🎒' : 'Every station you finish = stars in your bag 🎒') + '</p></div>' +
+          '<a class="mkcs-go" href="#" id="mkcsGo">' + (A ? 'ابدأ ←' : 'Start →') + '</a>' +
         '</div>';
       var go = document.getElementById('mkcsGo');
       if (go) go.onclick = function (e) { e.preventDefault(); var n = h.nextElementSibling; while (n && !n.offsetHeight) n = n.nextElementSibling; if (n) n.scrollIntoView({ behavior: 'smooth', block: 'start' }); };

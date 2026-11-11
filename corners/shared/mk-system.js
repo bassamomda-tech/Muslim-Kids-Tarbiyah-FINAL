@@ -159,9 +159,9 @@
     { tr:'landmarks',       ic:'🕋', n:{ar:'المعالم والخرائط',en:'Landmarks & Maps'}, c:'#2980B9', t:18 },
     { tr:'tours',           ic:'🧭', n:{ar:'جولات افتراضية',en:'Virtual Tours'}, c:'#E67E22', t:5 },
     { tr:'atlas', h:'corners/quds-ummah/atlas.html', ic:'🌍', n:{ar:'الأطلس الإسلامي',en:'The Islamic Atlas'}, c:'#2E6DA4', t:95 },   // t = number of atlas cards (corners/quds-ummah/atlas-data)
-    /* أنشطة أنوس: each of the 103 activities FINISHED at least once (corners/activities/scripts/anos-track.js);
+    /* أنشطة أنوس: each of the 104 activities FINISHED at least once (corners/activities/scripts/anos-track.js);
        until the first tracked finish on this device, earlier plays still count */
-    { id:'anos', ic:'🧩', n:{ar:'أنشطة أنوس (أنهيتُها)',en:"Anos' activities finished"}, h:'corners/activities/dashboard.html', c:'#C9A961', t:103,
+    { id:'anos', ic:'🧩', n:{ar:'أنشطة أنوس (أنهيتُها)',en:"Anos' activities finished"}, h:'corners/activities/dashboard.html', c:'#C9A961', t:104,
       get:function(){ var o=jget(LS.getItem('anos_done_v1')?'anos_done':'anos_played',{})||{}; return Object.keys(o).length; } }
   ];
   /* → [{id, icon, name, color, href, done, total}] ; total 0 = open-ended (Hifz stars) */
@@ -295,11 +295,11 @@
      certificate or any other full-screen window is open, so they never cover an answer or a page ═══ */
   (function () {
     if (window.__mkDockHide) return; window.__mkDockHide = true;
-    var DOCK = '#mkBag,#mkA11yBtn,#mkHomeBtn,#mkCityNav,#mkv-toggle';
+    var DOCK = '#mkBag,#mkA11yBtn,#mkHomeBtn,#mkCityNav,#mkv-toggle,#mkDockBtn';
     function ensureCss() {
       if (document.getElementById('mk-dock-css') || !document.head) return;
       var st = document.createElement('style'); st.id = 'mk-dock-css';
-      st.textContent = 'body.mk-overlay #mkBag,body.mk-overlay #mkA11yBtn,body.mk-overlay #mkHomeBtn,body.mk-overlay #mkCityNav,body.mk-overlay #mkv-toggle{opacity:0!important;pointer-events:none!important;transition:opacity .15s}';
+      st.textContent = 'body.mk-overlay #mkBag,body.mk-overlay #mkA11yBtn,body.mk-overlay #mkHomeBtn,body.mk-overlay #mkCityNav,body.mk-overlay #mkv-toggle,body.mk-overlay #mkDockBtn{opacity:0!important;pointer-events:none!important;transition:opacity .15s}';
       document.head.appendChild(st);
     }
     function overlayOpen() {

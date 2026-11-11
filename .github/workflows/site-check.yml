@@ -1,0 +1,29 @@
+# Nightly health check of tarbiyahkids.uk — opens every page from the repository files and
+# fails (red ❌, with an email to the repository owner) if a page has a script error, asks for a
+# file that does not exist, or scrolls sideways on a phone. It never calls the voice server.
+# Run it any time from the «Actions» tab → «Site check» → «Run workflow».
+name: Site check
+on:
+  schedule:
+    - cron: '17 2 * * *'   # every night at 02:17 UTC
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths: ['**.html', '**.js', '**.css']
+permissions:
+  contents: read
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Install the test browser
+        run: |
+          npm install --no-save --no-package-lock playwright@1.47.2
+          npx playwright install --with-deps chromium
+      - name: Check every page
+        run: node tools/site-check/check.js

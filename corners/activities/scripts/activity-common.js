@@ -11,7 +11,7 @@
    ============================================================ */
 const AudioBus = (function () {
   let ctx = null;
-  let muted = false;
+  let muted = (function () { try { return (JSON.parse(localStorage.getItem("mk:a11y") || "{}") || {}).sfx === "off"; } catch (e) { return false; } })();   // «Aa» → sound effects off
 
   function get() {
     if (!ctx) ctx = new (window.AudioContext || window.webkitAudioContext)();

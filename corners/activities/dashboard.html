@@ -50,6 +50,18 @@
   </header>
 
   <!-- ============================================================
+       التبويبات الثلاثة: اليوم · أوسمتي · كلّ الأنشطة
+       ============================================================ -->
+  <nav class="dash-tabs" role="tablist" aria-label="أقسام اللوحة">
+    <button type="button" role="tab" id="tab-today" aria-controls="panel-today" aria-selected="true" data-tab="today"><span class="ti" aria-hidden="true">☀️</span><span class="tl">اليوم</span></button>
+    <button type="button" role="tab" id="tab-medals" aria-controls="panel-medals" aria-selected="false" tabindex="-1" data-tab="medals"><span class="ti" aria-hidden="true">🏅</span><span class="tl">أوسمتي</span></button>
+    <button type="button" role="tab" id="tab-all" aria-controls="panel-all" aria-selected="false" tabindex="-1" data-tab="all"><span class="ti" aria-hidden="true">🧩</span><span class="tl">كلّ الأنشطة</span></button>
+  </nav>
+
+  <!-- ===================== تبويب «اليوم» ===================== -->
+  <div class="dash-panel" role="tabpanel" id="panel-today" aria-labelledby="tab-today" data-panel="today" tabindex="-1">
+
+  <!-- ============================================================
        البطاقة الترحيبية + التقدم
        ============================================================ -->
   <section class="hero">
@@ -62,7 +74,7 @@
           ابدأ بعجلة الأذكار
           <svg class="arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M15 6l-6 6 6 6"/></svg>
         </a>
-        <a class="btn-ghost" href="#sections">
+        <a class="btn-ghost" href="#all">
           استكشف الأنشطة
         </a>
       </div>
@@ -71,7 +83,7 @@
     <aside class="progress-card">
       <div class="progress-head">
         <h3>تقدّمك</h3>
-        <span class="pct" id="progress-pct">0/103</span>
+        <span class="pct" id="progress-pct">0/104</span>
       </div>
 
       <div class="ring-row">
@@ -81,23 +93,57 @@
         <div class="ring-meta" id="progress-meta"></div>
       </div>
 
-      <div>
-        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px; font-size:13px;">
-          <strong>أوسمة الأقسام</strong>
-          <span id="medals-count" style="color:var(--muted); font-size:12px;">0 / 10</span>
-        </div>
-        <div class="badges-row" id="medals-row" style="flex-wrap:wrap"></div>
-        <p class="medals-hint" style="margin:8px 0 0;color:var(--muted);font-size:12px;line-height:1.5">العب كلّ أنشطة قسمٍ لتنال وسامه ⭐</p>
+      <div class="kid-stats" aria-label="إنجازاتي">
+        <div class="kid-stat"><span class="ks-ic" aria-hidden="true">⭐</span><b id="kid-stars">0</b><span class="ks-l">نجوم</span></div>
+        <div class="kid-stat"><span class="ks-ic" aria-hidden="true">🔥</span><b id="kid-streak">0</b><span class="ks-l">أيام متتالية</span></div>
+        <a class="kid-stat" href="#medals"><span class="ks-ic" aria-hidden="true">🏅</span><b id="kid-medals">0</b><span class="ks-l">أوسمة</span></a>
       </div>
     </aside>
   </section>
+
+  <section class="today-block" id="today-continue" hidden>
+    <h2 class="tb-title"><span aria-hidden="true">▶️</span> <span>تابِع اللعب</span></h2>
+    <div class="mini-list" id="continue-list"></div>
+  </section>
+
+  <section class="today-block" id="today-suggest">
+    <h2 class="tb-title"><span aria-hidden="true">✨</span> <span>جرّب اليوم</span></h2>
+    <div class="mini-list" id="suggest-list"></div>
+    <a class="tb-more" href="#all">كلّ الأنشطة ←</a>
+  </section>
+
+  </div><!-- /panel-today -->
+
+  <!-- ===================== تبويب «أوسمتي» ===================== -->
+  <div class="dash-panel" role="tabpanel" id="panel-medals" aria-labelledby="tab-medals" data-panel="medals" tabindex="-1" hidden>
+    <section class="medals-card">
+      <div class="mc-head">
+        <h2>أوسمة الأقسام</h2>
+        <span id="medals-count" class="mc-count">0 / 10</span>
+      </div>
+      <p class="medals-hint">العب كلّ أنشطة قسمٍ لتنال وسامه ⭐</p>
+      <div class="badges-row medals-grid" id="medals-row"></div>
+    </section>
+
+    <section class="medals-card">
+      <div class="mc-head"><h2>أوسمة المثابرة</h2></div>
+      <div class="award-row">
+        <div class="award" id="award-weekly"><span class="aw-ic" aria-hidden="true">🏅</span><div><strong>المثابر الصغير</strong><span id="award-weekly-txt"></span></div></div>
+        <div class="award" id="award-streak"><span class="aw-ic" aria-hidden="true">🔥</span><div><strong>أيامي المتتالية</strong><span id="award-streak-txt"></span></div></div>
+      </div>
+      <a class="tb-more certs-link" href="../shared/bag.html">🎒 شهاداتي في الحقيبة</a>
+    </section>
+  </div><!-- /panel-medals -->
+
+  <!-- ===================== تبويب «كلّ الأنشطة» ===================== -->
+  <div class="dash-panel" role="tabpanel" id="panel-all" aria-labelledby="tab-all" data-panel="all" tabindex="-1" hidden>
 
   <!-- ============================================================
        شريط التصفية + البحث
        ============================================================ -->
   <div class="filter-bar">
-    <div class="filter-tabs" role="tablist">
-      <button class="active" data-filter="all">الكل <span class="count">103</span></button>
+    <div class="filter-tabs" role="group" aria-label="الأقسام">
+      <button class="active" data-filter="all">الكل <span class="count">104</span></button>
       <button data-filter="worship">العبادات <span class="count">10</span></button>
       <button data-filter="language">اللغة <span class="count">10</span></button>
       <button data-filter="art">الفن <span class="count">10</span></button>
@@ -123,6 +169,8 @@
        الأقسام الخمسة + الأنشطة (تُولَّد ديناميكياً)
        ============================================================ -->
   <main id="sections" aria-live="polite"></main>
+
+  </div><!-- /panel-all -->
 
   <!-- ============================================================
        التذييل
@@ -174,7 +222,21 @@ window.PAGE_DICT = {
   "ابحث عن نشاط…": "Search for an activity…",
   "للوالدين": "For parents",
   "الخصوصية": "Privacy",
-  "حول المنصة": "About"
+  "حول المنصة": "About",
+  "أقسام اللوحة": "Dashboard tabs",
+  "اليوم": "Today",
+  "أوسمتي": "My medals",
+  "كلّ الأنشطة": "All activities",
+  "كلّ الأنشطة ←": "All activities →",
+  "إنجازاتي": "My achievements",
+  "نجوم": "stars",
+  "تابِع اللعب": "Keep playing",
+  "جرّب اليوم": "Try today",
+  "أوسمة المثابرة": "Effort badges",
+  "المثابر الصغير": "Little Achiever",
+  "🎒 شهاداتي في الحقيبة": "🎒 My certificates in the bag",
+  "أيامي المتتالية": "My day streak",
+  "الأقسام": "Sections"
 };
 </script>
 <script src="scripts/glyphs.js"></script>

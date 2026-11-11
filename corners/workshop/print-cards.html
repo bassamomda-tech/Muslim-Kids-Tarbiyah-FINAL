@@ -38,6 +38,8 @@ a{color:var(--dark)} a:hover{color:var(--green)}
 .moon-cell .d{font-weight:900;font-size:.78rem;color:var(--dark)}
 .moon-cell .circle{width:52px;height:52px;margin:.45rem auto 0;border:2px dashed #9AA87E;border-radius:50%}
 .moon-cell .w{font-size:.62rem;color:#5A6648;margin-top:.35rem;line-height:1.4}
+/* phones: the moon diary wraps (4 a row, smaller circles) instead of pushing the page sideways; print keeps 7 */
+@media screen and (max-width:600px){.moon-grid{grid-template-columns:repeat(4,minmax(0,1fr))}.moon-cell .circle{width:40px;height:40px}.card{padding:1rem .8rem;overflow-x:auto}.name-line{flex-wrap:wrap}.name-line .fill{min-width:70px}.safari-row{flex-wrap:wrap}.tally span{width:20px;height:20px}.week-tbl{font-size:.75rem}}
 
 /* safari */
 .safari-rows{display:flex;flex-direction:column;gap:.5rem}

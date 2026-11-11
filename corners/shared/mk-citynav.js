@@ -19,6 +19,9 @@
 
   var SECTIONS = [
     { icon: '🏙️', ar: 'المدينة الرئيسية', en: 'City Home', href: 'index.html' },
+    { icon: '☀️', ar: 'يومي — رحلة اليوم', en: 'My Day', href: 'corners/shared/my-day.html' },
+    { icon: '🌴', ar: 'بستان الذكر', en: 'Dhikr Garden', href: 'corners/shared/garden.html' },
+    { icon: '🧭', ar: 'رحلتي مع أنوس', en: 'My Journey', href: 'corners/shared/journey.html' },
     { icon: '📰', ar: 'نشرة الأسبوع', en: 'Weekly News', href: 'corners/news/index.html' },
     { icon: '📥', ar: 'ركن التنزيلات', en: 'Downloads', href: 'corners/shared/downloads.html' },
     { icon: '📚', ar: 'المكتبة المجانية', en: 'Free Library', href: 'corners/shared/store.html' },

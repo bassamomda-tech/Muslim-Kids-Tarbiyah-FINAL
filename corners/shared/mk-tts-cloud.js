@@ -212,11 +212,13 @@
     push(cur);
     return out;
   }
-  function playOne(url, my) {
+  function playOne(url, my, onTime) {
     return new Promise(function (res, rej) {
       if (my !== gen) return;
       audio = getPlayer() || new Audio();
       audio.onloadedmetadata = null;
+      /* read-along: report how far this clip has played (0..1) so a page can light up the words */
+      audio.ontimeupdate = onTime ? function () { try { if (audio.duration) onTime(Math.min(1, audio.currentTime / audio.duration)); } catch (e) {} } : null;
       audio.onended = function () { res(true); };
       audio.onerror = function () { rej(new Error('audio error')); };
       audio.src = url;
@@ -227,14 +229,16 @@
     if (!EP) return Promise.reject(new Error('no endpoint'));
     var parts = chunks(text || '');
     if (!parts.length) return Promise.resolve(true);
-    var i = 0;
+    var i = 0, total = parts.reduce(function (a, x) { return a + x.length; }, 0) || 1, before = [];
+    parts.reduce(function (a, x, j) { before[j] = a; return a + x.length; }, 0);
+    var prog = opt && typeof opt.onProgress === 'function' ? opt.onProgress : null;   // overall 0..1 across all pieces
     function next() {
       if (my !== gen) return new Promise(function () {});
       if (i >= parts.length) return Promise.resolve(true);
       var k = i++;
       var p = fetchUrl(parts[k], lang, opt);
       if (parts[k + 1]) fetchUrl(parts[k + 1], lang, opt).catch(function () {});   // prepare the next piece now
-      return p.then(function (url) { return playOne(url, my); }).then(next, function (e) {
+      return p.then(function (url) { return playOne(url, my, prog ? function (f) { prog((before[k] + f * parts[k].length) / total); } : null); }).then(next, function (e) {
         if (k === 0) throw e;                                       // nothing played yet: caller falls back
         return browserSay(parts.slice(k).join(' '), lang, my);      // cloud dropped mid-way: finish on device
       });
@@ -261,6 +265,57 @@
   window.MKTTS = { get enabled() { return !!EP; }, speak: speak, stop: stop, prefetch: prefetch,
                    verseRef: function (t) { return qvLoad().then(function () { var p = qvSplit('﴿' + t + '﴾'); return p && p[0].v; }); } };
 
+  /* ── Read-along: light up each word while the voice reads it ──────
+     MKReadAlong.play(el, text?, lang?) wraps the words of el in spans and follows the voice
+     (word position ≈ share of the text already spoken). A page can also set u.mkEl = el on a
+     SpeechSynthesisUtterance; the unifier below then reads it along the same way. */
+  var RA = { el: null, words: null, cum: null, total: 0 };
+  function raCss() {
+    if (document.getElementById('mkra-css')) return;
+    var st = document.createElement('style'); st.id = 'mkra-css';
+    st.textContent = '.mkra-w{border-radius:.35em;transition:background-color .12s,color .12s;padding:0 .04em}' +
+      '.mkra-w.on{background:#FDE68A;color:#3A2A00;box-shadow:0 0 0 .12em #FDE68A}' +
+      'html.calm .mkra-w{transition:none}';
+    (document.head || document.documentElement).appendChild(st);
+  }
+  function raWrap(el) {
+    if (!el) return [];
+    var have = el.querySelectorAll('.mkra-w'); if (have.length) return [].slice.call(have);
+    var walker = document.createTreeWalker(el, NodeFilter.SHOW_TEXT), nodes = [];
+    for (var n = walker.nextNode(); n; n = walker.nextNode()) if (n.nodeValue.trim()) nodes.push(n);
+    nodes.forEach(function (tn) {
+      var f = document.createDocumentFragment();
+      tn.nodeValue.split(/(\s+)/).forEach(function (w) {
+        if (!w) return;
+        if (/^\s+$/.test(w)) f.appendChild(document.createTextNode(w));
+        else { var sp = document.createElement('span'); sp.className = 'mkra-w'; sp.textContent = w; f.appendChild(sp); }
+      });
+      tn.parentNode.replaceChild(f, tn);
+    });
+    return [].slice.call(el.querySelectorAll('.mkra-w'));
+  }
+  function raClear() { if (RA.words) RA.words.forEach(function (w) { w.classList.remove('on'); }); RA.el = RA.words = null; }
+  function raStart(el) {
+    raClear(); raCss(); var words = raWrap(el); if (!words.length) return null;
+    var c = 0; RA.cum = words.map(function (w) { c += w.textContent.replace(/[^\p{L}\p{N}]/gu, '').length || 1; return c; });
+    RA.total = c; RA.el = el; RA.words = words; var last = -1;
+    return function (f) {
+      if (RA.el !== el) return;
+      var pos = f * RA.total, i = 0; while (i < RA.cum.length - 1 && RA.cum[i] < pos) i++;
+      if (i !== last) { if (last >= 0 && words[last]) words[last].classList.remove('on'); words[i].classList.add('on'); last = i; }
+    };
+  }
+  window.MKReadAlong = {
+    wrap: raWrap, clear: raClear,
+    play: function (el, text, lang) {
+      text = text || (el && el.textContent) || ''; var hl = null;
+      var pr = speak(text, lang || (/[\u0600-\u06FF]/.test(text) ? 'ar' : 'en'), { onProgress: function (f) { if (hl) hl(f); } });
+      hl = raStart(el);   // after speak(): it stops (and clears) whatever was playing before
+      return pr.then(function (r) { raClear(); return r; }, function (e) { raClear(); throw e; });
+    }
+  };
+  window.MKTTS.stop = function () { raClear(); return stop(); };
+
   /* ── Global voice unifier ───────────────────────────────────────
      Route EVERY browser speechSynthesis.speak call through the natural
      cloud voice, so all read-aloud features sound identical on every
@@ -280,14 +335,19 @@
       var txt = '';
       try { txt = (u && u.text) ? String(u.text) : ''; } catch (e) {}
       if (!txt) { return origSpeak(u); }
-      speak(txt, uLang(u)).then(function () {
+      var hl = null;
+      var pr = speak(txt, uLang(u), u && u.mkEl ? { onProgress: function (f) { if (hl) hl(f); } } : null);
+      try { if (u && u.mkEl) hl = raStart(u.mkEl); } catch (e) {}   // read-along when the page says which words are being read
+      pr.then(function () {
+        raClear();
         try { if (u && typeof u.onend === 'function') u.onend({ target: u }); } catch (e) {}
       }).catch(function () {
+        raClear();
         try { origSpeak(u); } catch (e) {}
       });
     };
     SS.cancel = function () {
-      try { stop(); } catch (e) {}
+      try { raClear(); stop(); } catch (e) {}
       try { return origCancel(); } catch (e) {}
     };
   }

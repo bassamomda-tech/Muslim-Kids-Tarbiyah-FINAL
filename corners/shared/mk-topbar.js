@@ -126,8 +126,20 @@
       '.mktb-mid .ic{font-size:1.55rem;flex:0 0 auto}' +
       '.mktb-mid .tt{min-width:0}' +
       '.mktb-mid b{display:block;font-size:1.05rem;font-weight:900;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}' +
+      /* phones: a long title wraps onto 2 short lines instead of being cut to «الأطلس…» */
+      /* big enough for small fingers (≥44px): the buttons the corners share, wherever they sit on the page */
+      '.feature-btn,.mkq-btn,.mkq-b-btn,.open-btn,.tr-chip,.tr-tab,.cb-tab,.back,.tb-back,.q-brand,.back-city,.icon-btn,.switch,.hub-sunnah,.cty-chip{min-height:44px!important;box-sizing:border-box}' +
+      'a.feature-btn,a.back,a.tb-back,a.q-brand,a.back-city,a.switch,a.cb-tab{display:inline-flex!important;align-items:center;justify-content:center}' +
+      '.lang-switch .lang-btn,.lang>button,.q-lang>button{min-height:40px!important;min-width:44px}' +
+      '.sidebar-close,#bpClose{position:relative}' +
+      '.sidebar-close::after,.guide-x::after,#bpClose::after{content:"";position:absolute;inset:-12px}' +   /* small ✕ with a big invisible touch area */
+      '.icon-btn{min-width:44px!important}' +
       '.mktb-mid small{display:block;font-size:.74rem;opacity:.75;font-weight:700;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}' +
       '.mktb-bag{background:linear-gradient(135deg,#F5CC5A,#D4A017);color:#1A1205!important;border:none}' +
+      /* small phones: the «back to the corner» button keeps only its arrow (the corner's name is already
+         written under the title), so the page title has room and is never cut to «الأطلس…» */
+      '@media(max-width:480px){#mktb .mktb-up .tx{display:none!important}.mktb-up{min-width:44px;padding:0 .5rem!important}.mktb-up .ic{font-size:1.4rem}' +
+        '.mktb-mid b{white-space:normal;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;line-height:1.15;font-size:.92rem}}' +
       '.mktb-lang{display:inline-flex;border-radius:999px;overflow:hidden;border:1.5px solid rgba(255,255,255,.25);flex:0 0 auto}' +
       '.mktb-lang button{min-height:40px;min-width:44px;padding:0 .55rem;border:none;background:transparent;color:#FEF5DC;font-weight:900;font-size:.84rem;cursor:pointer}' +
       '.mktb-lang button.on{background:var(--mktb-c);color:#fff}' +
@@ -148,7 +160,7 @@
     bar.dir = A ? 'rtl' : 'ltr';
     bar.innerHTML =
       '<a class="mktb-btn" href="' + ROOT + 'index.html" aria-label="' + (A ? 'المدينة' : 'City') + '"><span class="ic">🏠</span><span class="tx">' + (A ? 'المدينة' : 'City') + '</span></a>' +
-      (showUp ? '<a class="mktb-btn mktb-up" href="' + esc(up) + '"><span class="ic">' + (A ? '›' : '‹') + '</span><span class="tx">' + esc(backLabel() || (A ? 'رجوع' : 'Back')) + '</span></a>' : '') +
+      (showUp ? '<a class="mktb-btn mktb-up" href="' + esc(up) + '" aria-label="' + esc(backLabel() || (A ? 'رجوع' : 'Back')) + '" title="' + esc(backLabel() || (A ? 'رجوع' : 'Back')) + '"><span class="ic">' + (A ? '›' : '‹') + '</span><span class="tx">' + esc(backLabel() || (A ? 'رجوع' : 'Back')) + '</span></a>' : '') +
       '<div class="mktb-mid"><span class="ic" aria-hidden="true">' + C[0] + '</span><span class="tt"><b>' + esc(nm) + '</b>' + (nm !== cn ? '<small>' + esc(cn) + '</small>' : '') + '</span></div>' +
       '<a class="mktb-btn mktb-bag" href="' + ROOT + 'corners/shared/bag.html" aria-label="' + (A ? 'حقيبتي' : 'My bag') + '"><span class="ic">🎒</span>' + (pts != null ? '<span>' + pts + '</span>' : '<span class="tx">' + (A ? 'حقيبتي' : 'Bag') + '</span>') + '</a>' +
       (hasLang() ? '' : '<!--no-lang-->') + '<span class="mktb-lang"' + (hasLang() ? '' : ' hidden') + ' role="group" aria-label="Language"><button type="button" data-l="ar" class="' + (A ? 'on' : '') + '">عربي</button><button type="button" data-l="en" class="' + (!A ? 'on' : '') + '">EN</button></span>';

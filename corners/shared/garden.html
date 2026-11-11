@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="dark">
+<title>بستان الذكر | My Dhikr Garden</title>
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@500;700;800;900&family=Amiri:wght@700&family=Nunito:wght@600;800;900&display=swap" rel="stylesheet">
+<style>
+  :root{--bg1:#081E36;--bg2:#0E2E4E;--gold:#E8B530;--gold-lt:#F5CC5A;--ink:#FEF5DC;--muted:rgba(254,245,220,.7);--line:rgba(232,181,48,.28);--green:#2E9E5B}
+  *{box-sizing:border-box}
+  body{margin:0;font-family:'Tajawal','Nunito',sans-serif;color:var(--ink);min-height:100vh;background:radial-gradient(900px 520px at 50% -10%,rgba(46,158,91,.22),transparent 60%),linear-gradient(165deg,var(--bg1),var(--bg2))}
+  html[dir="ltr"] body{font-family:'Nunito','Tajawal',sans-serif}
+  .header{display:flex;align-items:center;justify-content:space-between;padding:.8rem 1rem}
+  .back-btn{background:var(--gold);color:#10243d;border-radius:2rem;padding:.5rem 1.1rem;font-weight:800;text-decoration:none;min-height:44px;display:inline-flex;align-items:center}
+  .lang{display:flex;border:1.5px solid var(--line);border-radius:2rem;overflow:hidden}
+  .lang button{background:transparent;border:none;color:var(--ink);font-weight:800;padding:0 .85rem;min-height:40px;font-size:.85rem;cursor:pointer;font-family:inherit}
+  .lang button.active{background:var(--gold);color:#10243d}
+  .wrap{max-width:760px;margin:0 auto;padding:.5rem 1rem 4rem;text-align:center}
+  h1{margin:.4rem 0 .2rem;font-size:1.9rem;font-weight:900;color:var(--gold-lt)}
+  .lead{margin:0 auto 1rem;max-width:560px;color:var(--muted);font-weight:700;line-height:1.7;font-size:1.02rem}
+  .hadith{margin:0 auto 1.2rem;max-width:600px;background:rgba(255,255,255,.06);border:1.5px solid var(--line);border-radius:1.2rem;padding:1rem 1.1rem;line-height:1.9}
+  .hadith q{display:block;font-family:'Amiri',serif;font-size:1.3rem;font-weight:700;quotes:none;color:#fff}
+  html[dir="ltr"] .hadith q{font-family:'Nunito',sans-serif;font-size:1.05rem}
+  .hadith small{display:block;margin-top:.3rem;color:var(--muted);font-weight:700}
+  .say{display:flex;flex-direction:column;align-items:center;gap:.6rem;margin:0 auto 1.2rem}
+  .say-btn{width:min(320px,90vw);min-height:120px;border:none;border-radius:1.6rem;background:linear-gradient(150deg,#3BB36D,#1F7A44);color:#fff;font:900 1.55rem/1.5 'Amiri','Tajawal',serif;box-shadow:0 10px 26px rgba(0,0,0,.35),inset 0 -5px 0 rgba(0,0,0,.18);cursor:pointer;padding:1rem;transition:transform .12s,filter .2s}
+  .say-btn:active{transform:scale(.97)}
+  .say-btn[disabled]{filter:saturate(.5) brightness(.85);cursor:default}
+  .say-btn small{display:block;font:800 .9rem 'Tajawal',sans-serif;opacity:.9}
+  .say-row{display:flex;gap:.5rem;flex-wrap:wrap;justify-content:center}
+  .chip{min-height:44px;padding:0 1rem;border-radius:999px;border:1.5px solid var(--line);background:rgba(255,255,255,.07);color:var(--ink);font:800 .95rem inherit;font-family:inherit;cursor:pointer}
+  .count{display:flex;gap:.6rem;justify-content:center;flex-wrap:wrap;margin:.4rem 0 1rem}
+  .count div{background:rgba(255,255,255,.06);border:1.5px solid var(--line);border-radius:1rem;padding:.55rem 1rem;min-width:120px}
+  .count b{display:block;font-size:1.6rem;color:var(--gold-lt)}
+  .count span{font-size:.9rem;font-weight:700;color:var(--muted)}
+  .garden{position:relative;margin:0 auto;max-width:640px;min-height:220px;border-radius:1.6rem;background:linear-gradient(180deg,#8FD3F4 0%,#CDEFD9 45%,#7BC67E 46%,#4E9F53 100%);box-shadow:inset 0 -8px 0 rgba(0,0,0,.12);padding:1rem .8rem 1.2rem;overflow:hidden}
+  .garden .sun{position:absolute;top:14px;inset-inline-start:18px;font-size:2rem}
+  .trees{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:center;gap:.15rem .25rem;padding-top:56px;min-height:160px}
+  .trees span{font-size:1.9rem;line-height:1;filter:drop-shadow(0 2px 1px rgba(0,0,0,.2))}
+  .trees span.new{animation:grow .7s ease-out}
+  @keyframes grow{from{transform:scale(.1) translateY(20px);opacity:0}to{transform:none;opacity:1}}
+  .more{margin-top:.6rem;color:#123;font-weight:900;font-size:1rem}
+  .empty{color:#1d4a2a;font-weight:800;padding-top:60px;font-size:1.05rem}
+  .note{margin:1.1rem auto 0;max-width:560px;color:var(--muted);font-size:.92rem;line-height:1.7;font-weight:600}
+  html.calm .trees span.new{animation:none}
+  /* «بستان العائلة»: every child's palms side by side — together, not a race */
+  .fam{margin:1.2rem auto 0;max-width:640px;background:rgba(255,255,255,.06);border:1.5px solid var(--line);border-radius:1.3rem;padding:1rem;text-align:start}
+  .fam h2{margin:0 0 .2rem;font-size:1.15rem;color:var(--gold-lt)}
+  .fam > p{margin:0 0 .7rem;color:var(--muted);font-weight:700}
+  .kid{display:flex;align-items:center;gap:.6rem;padding:.5rem .3rem;border-top:1px dashed var(--line)}
+  .kid .av{flex:0 0 40px;height:40px;border-radius:50%;display:grid;place-items:center;font-size:1.4rem;background:var(--c,#D4A017)}
+  .kid b{flex:0 0 auto;min-width:5em}
+  .kid .row{flex:1;min-width:0;font-size:1.1rem;line-height:1.2;word-break:break-all}
+  .fam .tot{margin-top:.6rem;text-align:center;font-weight:900;font-size:1.05rem}
+</style>
+<style id="__antiflash">html{background:#081E36;color-scheme:dark}</style>
+</head>
+<body>
+  <div class="header">
+    <a href="../../index.html" class="back-btn" id="backBtn">↩️ <span class="lng-ar">المدينة</span><span class="lng-en">City</span></a>
+    <div class="lang"><button data-lang="en">EN</button><button data-lang="ar" class="active">عربي</button></div>
+  </div>
+  <div class="wrap">
+    <h1 id="ttl"></h1>
+    <p class="lead" id="lead"></p>
+    <div class="hadith"><q id="hq"></q><small id="hs"></small></div>
+    <div class="say">
+      <button class="say-btn" id="sayBtn"><span id="sayTx">سُبْحَانَ اللَّهِ الْعَظِيمِ وَبِحَمْدِهِ</span><small id="sayHint"></small></button>
+      <div class="say-row"><button class="chip" id="listenBtn"></button></div>
+    </div>
+    <div class="count"><div><b id="nToday">0</b><span id="lToday"></span></div><div><b id="nAll">0</b><span id="lAll"></span></div></div>
+    <div class="garden" aria-live="polite"><span class="sun">☀️</span><div class="trees" id="trees"></div><div class="more" id="more"></div></div>
+    <section class="fam" id="fam" hidden></section>
+    <p class="note" id="note"></p>
+  </div>
+
+<script src="mk-system.js"></script>
+<script src="mk-bag.js"></script>
+<script src="mk-journey.js"></script>
+<script>
+(function () {
+  var LS = localStorage, lang = 'ar';
+  try { lang = LS.getItem('bunyanLang') === 'en' ? 'en' : 'ar'; } catch (e) {}
+  function T(a, e) { return lang === 'en' ? e : a; }
+  function N(n) { return lang === 'ar' ? MKJourney.arNum(n) : String(n); }
+  function jget(k, d) { try { var v = JSON.parse(LS.getItem(k)); return v == null ? d : v; } catch (e) { return d; } }
+  function jset(k, v) { try { LS.setItem(k, JSON.stringify(v)); } catch (e) {} }
+  var SHOW = 60;   // palms drawn; the rest are counted
+
+  function todayCount() { var t = jget('garden_today', {}); return t.d === MKJourney.dayKey() ? t.n : 0; }
+  function draw(fresh) {
+    var n = MKJourney.palms(), shown = Math.min(n, SHOW), html = '';
+    for (var i = 0; i < shown; i++) html += '<span' + (fresh && i === shown - 1 ? ' class="new"' : '') + '>🌴</span>';
+    document.getElementById('trees').innerHTML = n ? html : '<div class="empty">' + T('بستانك ينتظر أوّل نخلة 🌱', 'Your garden is waiting for its first palm 🌱') + '</div>';
+    document.getElementById('more').textContent = n > SHOW ? T('و' + N(n - SHOW) + ' نخلة أخرى في بستانك! 🌴', 'and ' + (n - SHOW) + ' more palms in your garden! 🌴') : '';
+    document.getElementById('nToday').textContent = N(todayCount());
+    document.getElementById('nAll').textContent = N(n);
+  }
+  function texts() {
+    document.documentElement.lang = lang; document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
+    document.querySelectorAll('.lng-ar').forEach(function (e) { e.style.display = lang === 'ar' ? '' : 'none'; });
+    document.querySelectorAll('.lng-en').forEach(function (e) { e.style.display = lang === 'en' ? '' : 'none'; });
+    document.querySelectorAll('.lang button').forEach(function (b) { b.classList.toggle('active', b.dataset.lang === lang); });
+    document.title = T('بستان الذكر', 'My Dhikr Garden');
+    document.getElementById('ttl').textContent = T('🌴 بستانُ الذِّكر', '🌴 My Dhikr Garden');
+    document.getElementById('lead').textContent = T('قُل الذِّكرَ بلسانك وقلبك، ثمّ اضغط الزرّ — فتُغرَس لك نخلةٌ في بستانك.', 'Say the dhikr with your tongue and your heart, then press the button — and a palm tree is planted in your garden.');
+    document.getElementById('hq').textContent = T('«مَن قالَ: سُبحانَ اللهِ العظيمِ وبحمدِه، غُرِسَتْ له نَخلةٌ في الجنّة»', '"Whoever says: SubhanAllahil-Azim wa bihamdihi (Glory be to Allah the Magnificent, and praise be to Him), a palm tree is planted for him in Paradise."');
+    document.getElementById('hs').textContent = T('رواه الترمذي (٣٤٦٤) وصحّحه الألباني', 'At-Tirmidhi (3464), graded sahih by al-Albani');
+    document.getElementById('sayHint').textContent = T('قُلها ثمّ اضغط', 'Say it, then press');
+    document.getElementById('listenBtn').textContent = T('🔊 اسمعها', '🔊 Listen');
+    document.getElementById('lToday').textContent = T('نخلة اليوم', 'palms today');
+    document.getElementById('lAll').textContent = T('نخلة في بستاني', 'palms in my garden');
+    document.getElementById('note').textContent = T('هذا البستانُ تذكيرٌ جميل؛ أمّا النخلُ الحقيقيّ ففي الجنّة، والله يعلمُ ما في قلبك. 💚', 'This garden is a lovely reminder — the real palm trees are in Paradise, and Allah knows what is in your heart. 💚');
+    draw(false); family();
+  }
+  /* the family garden: the active child's palms are live, the others come from their saved progress */
+  function family() {
+    var box = document.getElementById('fam'); if (!window.MK || !MK.profiles) return;
+    var list = MK.profiles(); if (list.length < 2) { box.hidden = true; return; }
+    var act = MK.activeId && MK.activeId(), total = 0;
+    var rows = list.map(function (p) {
+      var n = 0;
+      if (p.id === act) n = MKJourney.palms();
+      else { try { var b = JSON.parse(LS.getItem('mk:data:' + p.id) || '{}'); n = parseInt(JSON.parse(b.garden_palms || '0'), 10) || 0; } catch (e) {} }
+      total += n;
+      var trees = n ? (n > 12 ? '🌴'.repeat(12) + ' +' + N(n - 12) : '🌴'.repeat(n)) : '🌱';
+      return '<div class="kid"><span class="av" style="--c:' + (p.color || '#D4A017') + '">' + (p.avatar || '🧒') + '</span><b>' + String(p.name).replace(/[<>&"]/g, '') + '</b><span class="row">' + trees + '</span></div>';
+    }).join('');
+    box.innerHTML = '<h2>🏡 ' + T('بستانُ العائلة', 'The family garden') + '</h2><p>' + T('نخيلُ إخوتكم معًا في بستانٍ واحد — نتعاون ولا نتسابق 💚', 'All the brothers\' and sisters\' palms in one garden — we help each other, we don\'t race 💚') + '</p>' + rows +
+      '<div class="tot">' + T('في بستان العائلة ' + N(total) + ' نخلة 🌴', 'The family garden has ' + total + ' palms 🌴') + '</div>';
+    box.hidden = false;
+  }
+  var busy = false;
+  document.getElementById('sayBtn').onclick = function () {
+    if (busy) return; busy = true; var b = this; b.disabled = true;
+    jset('garden_palms', MKJourney.palms() + 1);
+    var t = jget('garden_today', {}); jset('garden_today', { d: MKJourney.dayKey(), n: (t.d === MKJourney.dayKey() ? t.n : 0) + 1 });
+    draw(true); family();
+    setTimeout(function () { busy = false; b.disabled = false; }, 1600);   // time to say it, not to tap-tap-tap
+  };
+  document.getElementById('listenBtn').onclick = function () {
+    var tx = 'سُبْحَانَ اللَّهِ الْعَظِيمِ وَبِحَمْدِهِ';
+    if (window.MKTTS && MKTTS.speak) MKTTS.speak(tx, 'ar').catch(function () { fallback(tx); }); else fallback(tx);
+  };
+  function fallback(tx) { try { var u = new SpeechSynthesisUtterance(tx); u.lang = 'ar'; speechSynthesis.cancel(); speechSynthesis.speak(u); } catch (e) {} }
+  document.querySelectorAll('.lang button').forEach(function (b) { b.onclick = function () { lang = b.dataset.lang; try { LS.setItem('bunyanLang', lang); } catch (e) {} texts(); }; });
+  if (window.setLang === undefined) window.setLang = function (l) { lang = l; try { LS.setItem('bunyanLang', l); } catch (e) {} texts(); };
+  texts();
+})();
+</script>
+<script src="mk-citynav.js"></script>
+<script src="mk-topbar.js"></script>
+</body>
+</html>

@@ -65,7 +65,7 @@ h1,h2,h3,h4,b,strong{font-family:'Tajawal','Fredoka',sans-serif;font-weight:800}
   background:linear-gradient(135deg,var(--accent2),var(--gold-dk));box-shadow:0 4px 14px var(--halo);flex-shrink:0}
 .brand-badge svg{width:24px;height:24px}
 .brand h1{font-size:clamp(.95rem,2.4vw,1.15rem);color:var(--fg);line-height:1.05}
-.brand p{font-size:.68rem;color:var(--gold-lt);font-family:'Amiri',serif}
+.brand p{font-size:.8rem;color:var(--gold-lt);font-family:'Tajawal',sans-serif;font-weight:700}
 .tb-right{margin-inline-start:auto;display:flex;align-items:center;gap:.55rem}
 .xp-wrap{min-width:88px}
 .xp-top{display:flex;justify-content:space-between;align-items:baseline}
@@ -89,9 +89,9 @@ h1,h2,h3,h4,b,strong{font-family:'Tajawal','Fredoka',sans-serif;font-weight:800}
   box-shadow:0 8px 22px rgba(0,0,0,.3);border:1px solid var(--accent2);position:relative;animation:bubbleIn .4s var(--ease-spring) both}
 [dir="ltr"] .guide-bubble{border-radius:1rem 1rem .2rem 1rem}
 @keyframes bubbleIn{from{opacity:0;transform:scale(.9) translateY(6px)}to{opacity:1;transform:scale(1) translateY(0)}}
-.guide-bubble b{display:block;font-size:.62rem;color:var(--accent);font-family:'Fredoka',sans-serif}
-.guide-bubble p{font-size:.78rem;line-height:1.45;font-family:'Amiri',serif}
-[dir="ltr"] .guide-bubble p{font-family:'Nunito',sans-serif;font-size:.74rem}
+.guide-bubble b{display:block;font-size:.78rem;color:var(--accent);font-family:'Fredoka',sans-serif}
+.guide-bubble p{font-size:.92rem;line-height:1.5;font-family:'Tajawal',sans-serif;font-weight:600}
+[dir="ltr"] .guide-bubble p{font-family:'Nunito',sans-serif;font-size:.88rem}
 .guide-x{position:absolute;top:-7px;inset-inline-end:-7px;width:20px;height:20px;border-radius:50%;background:var(--ink);color:var(--paper);
   font-size:.7rem;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 6px rgba(0,0,0,.3)}
 .guide.tuck .guide-bubble{display:none}

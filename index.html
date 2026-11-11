@@ -190,6 +190,18 @@ header{
 /* ══════════════════════ SECTION LABEL ══════════════════════ */
 .mk-continue{position:relative;z-index:6;display:flex;align-items:center;gap:.8rem;max-width:620px;margin:1rem auto .4rem;padding:.8rem 1rem;border-radius:1.2rem;text-decoration:none;color:#FEF5DC;background:linear-gradient(135deg,rgba(232,181,48,.22),rgba(26,155,123,.18));border:1.5px solid rgba(232,181,48,.55);box-shadow:0 10px 26px rgba(0,0,0,.25)}
 .mk-continue[hidden]{display:none}
+.mk-today{position:relative;z-index:6;display:flex;align-items:center;gap:.8rem;max-width:620px;margin:1.1rem auto .3rem;padding:.9rem 1rem;border-radius:1.3rem;text-decoration:none;color:#FEF5DC;background:linear-gradient(135deg,var(--tc,#1F7A44),rgba(10,37,64,.6));border:2px solid rgba(245,204,90,.7);box-shadow:0 12px 28px rgba(0,0,0,.3)}
+.mk-today[hidden]{display:none}
+.mk-today .ic{flex:0 0 58px;height:58px;border-radius:16px;display:grid;place-items:center;font-size:2rem;background:rgba(255,255,255,.14)}
+.mk-today .tx{flex:1;min-width:0;display:flex;flex-direction:column;line-height:1.45}
+.mk-today .k{font-size:.8rem;font-weight:800;color:#F5CC5A}
+.mk-today b{font-size:1.12rem;font-weight:900}
+.mk-today small{font-size:.85rem;opacity:.9;font-weight:700}
+.mk-today .dots{display:flex;gap:4px;margin-top:4px}
+.mk-today .dots i{width:14px;height:14px;border-radius:50%;background:rgba(255,255,255,.22)}
+.mk-today .dots i.on{background:#7CE0A3}
+.mk-today .go{flex:0 0 auto;background:#F5CC5A;color:#10243d;font-weight:900;border-radius:2rem;padding:.55rem 1rem;font-size:.95rem}
+@media(max-width:480px){.mk-today{margin:.9rem 14px .3rem}.mk-today .go{display:none}}
 .mk-news{position:relative;z-index:6;display:flex;align-items:center;gap:.7rem;max-width:620px;margin:.5rem auto .4rem;padding:.65rem 1rem;border-radius:1.1rem;text-decoration:none;color:#FEF5DC;background:rgba(31,111,139,.28);border:1.5px solid rgba(120,200,230,.45)}
 .mk-news[hidden]{display:none}
 .mk-news .ic{font-size:1.5rem}.mk-news .tx{flex:1;min-width:0;display:flex;flex-direction:column;line-height:1.4}
@@ -487,6 +499,12 @@ footer b{color:rgba(212,160,23,.55);font-weight:700}
   .lang-btn{padding:.35rem .55rem;min-width:38px}
 }
 @media(max-width:380px){ .about-btn{display:none} .brand-icon{width:1.7rem;height:1.7rem} }
+/* big enough for small fingers */
+.lang-btn{min-height:40px}
+.about-btn,.sidebar-open-btn{min-width:42px!important;min-height:42px!important}
+.ft-col a{padding:.62rem 0}
+.ft-soc{width:44px;height:44px}
+.modal-close{min-width:40px;min-height:40px}
 </style>
 <style id="__antiflash">html{background:#0A2540;color-scheme:dark}</style>
 <script>/* calm mode 🍃 (mk:calm) — set from the Treasures pages; stops the ticker and all motion */
@@ -605,6 +623,8 @@ try{if(localStorage.getItem('mk:calm')==='true'){document.documentElement.classL
 <!-- ═══ CHILD CHARACTERS PARADE ═══ -->
 <div class="chars-parade" id="charsParade"></div>
 
+<!-- ═══ «يومي» — today's 5-step journey + the season of the Hijri year (corners/shared/my-day.html) ═══ -->
+<a class="mk-today" id="mkToday" href="corners/shared/my-day.html" hidden></a>
 <!-- ═══ CONTINUE WHERE YOU STOPPED (mk_last, set by mk-system.js on every learning page) ═══ -->
 <a class="mk-continue" id="mkContinue" hidden></a>
 <!-- ═══ WEEKLY NEWS + ON THIS DAY (corners/news) ═══ -->
@@ -779,7 +799,7 @@ try{if(localStorage.getItem('mk:calm')==='true'){document.documentElement.classL
 <script defer src="corners/shared/mk-journeys.js" onload="try{if(window.refreshProgress)refreshProgress();}catch(e){}"></script>
 <style>
   .child-chip{display:flex;align-items:center;gap:.45rem;background:rgba(255,255,255,.08);border:1.5px solid rgba(212,160,23,.4);border-radius:2rem;padding:.28rem .8rem .28rem .35rem;cursor:pointer;font-family:inherit;color:var(--text,#FEF5DC);transition:border-color .2s,background .2s}
-  .login-icon{display:flex;align-items:center;gap:.4rem;background:rgba(255,255,255,.08);border:1.5px solid rgba(212,160,23,.4);border-radius:2rem;padding:.4rem .9rem;cursor:pointer;font-family:inherit;color:var(--text,#FEF5DC);font-weight:800;font-size:.84rem;transition:border-color .2s,background .2s}
+  .login-icon{min-height:42px;display:flex;align-items:center;gap:.4rem;background:rgba(255,255,255,.08);border:1.5px solid rgba(212,160,23,.4);border-radius:2rem;padding:.4rem .9rem;cursor:pointer;font-family:inherit;color:var(--text,#FEF5DC);font-weight:800;font-size:.84rem;transition:border-color .2s,background .2s}
   .login-icon:hover{border-color:#D4A017;background:rgba(212,160,23,.16)}
   .login-icon svg{display:block}
   .child-chip:hover{border-color:#D4A017;background:rgba(212,160,23,.16)}
@@ -2023,5 +2043,26 @@ html.calm .mkw-card{animation:none}html.calm .mkw-spot{transition:none}
 })();
 </script>
 
+<script src="corners/shared/mk-journey.js"></script>
+<script>
+/* «يومي» card: today's progress (5 steps), the child's level and the season of the Hijri year */
+(function () {
+  function paint() {
+    var el = document.getElementById('mkToday'); if (!el || !window.MKJourney) return;
+    var J = MKJourney, ar = J.lang() === 'ar', S = J.season(), td = J.today(), n = J.doneCount(td), lv = J.level();
+    var N = function (x) { return ar ? J.arNum(x) : String(x); };
+    el.style.setProperty('--tc', S ? S.c : '#1F7A44');
+    el.innerHTML = '<span class="ic">' + (S ? S.icon : '☀️') + '</span><span class="tx"><span class="k">' + (S ? (ar ? S.t.ar : S.t.en) : (ar ? '☀️ يومي — ' + J.hijriText() : '☀️ My Day — ' + J.hijriText())) + '</span>' +
+      '<b>' + (n >= 5 ? (ar ? 'أكملتَ رحلة اليوم! 🌟' : 'You finished today\'s journey! 🌟') : (ar ? 'رحلةُ اليوم: آية، حديث، دعاء، لعبة، وعمل طيّب' : "Today's journey: an ayah, a hadith, a du'a, a game and a good deed")) + '</b>' +
+      '<span class="dots">' + J.STEPS.map(function (s) { return '<i class="' + (td[s] ? 'on' : '') + '"></i>'; }).join('') + '</span>' +
+      '<small>' + lv.ic + ' ' + (ar ? 'أنت الآن ' + lv.name.ar + ' · ' + N(n) + ' من ٥ اليوم' : 'You are a ' + lv.name.en + ' · ' + n + ' of 5 today') + '</small></span>' +
+      '<span class="go">' + (ar ? (n ? 'تابِع ←' : 'ابدأ ←') : (n ? 'Continue →' : 'Start →')) + '</span>';
+    el.setAttribute('aria-label', ar ? 'يومي' : 'My Day'); el.hidden = false;
+  }
+  paint();
+  document.addEventListener('click', function (e) { if (e.target.closest('.lang-btn,[data-lang]')) setTimeout(paint, 80); });
+  window.addEventListener('pageshow', paint);
+})();
+</script>
 </body>
 </html>

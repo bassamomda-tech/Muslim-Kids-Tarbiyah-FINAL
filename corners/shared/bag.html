@@ -25,6 +25,12 @@
   .bag-hero{display:flex;align-items:center;gap:1.1rem;flex-wrap:wrap;background:linear-gradient(150deg,rgba(232,181,48,.16),rgba(255,255,255,.03));border:1.5px solid var(--line);border-radius:1.6rem;padding:1.3rem 1.4rem;margin-bottom:1.3rem}
   .bag-avi{width:84px;height:84px;border-radius:50%;display:grid;place-items:center;font-size:2.8rem;background:var(--avi-col,#D4A017);box-shadow:0 8px 22px rgba(0,0,0,.4);flex:0 0 auto}
   .bag-id{flex:1;min-width:160px}
+  .bag-welcome{display:flex;align-items:center;gap:.9rem;flex-wrap:wrap;margin:1rem 0;padding:1rem 1.1rem;border-radius:1.2rem;background:linear-gradient(135deg,rgba(245,204,90,.18),rgba(255,255,255,.05));border:1.5px dashed rgba(245,204,90,.55)}
+  .bag-welcome .bw-ic{font-size:2.4rem;line-height:1}
+  .bag-welcome .bw-tx{flex:1;min-width:180px}
+  .bag-welcome b{display:block;font-size:1.1rem;font-weight:900;color:var(--gold-lt,#F5CC5A)}
+  .bag-welcome p{margin:.2rem 0 0;font-size:.95rem;line-height:1.6;font-weight:600}
+  .bag-welcome a{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:0 1.2rem;border-radius:999px;background:linear-gradient(135deg,#F5CC5A,#D4A017);color:#1A1205;font-weight:900;text-decoration:none}
   .bag-id .hi{color:var(--muted);font-weight:700;font-size:.9rem}
   .bag-id h1{margin:.1rem 0 .5rem;font-size:1.9rem;font-weight:900}
   .bag-id .switch{display:inline-flex;align-items:center;gap:.35rem;background:rgba(255,255,255,.08);border:1px solid var(--line);color:var(--gold-lt);border-radius:2rem;padding:.32rem .9rem;font-size:.8rem;font-weight:800;text-decoration:none}
@@ -116,6 +122,9 @@
         <div class="ps">⭐ <span class="lng-ar">نقطة</span><span class="lng-en">points</span></div>
       </div>
     </div>
+
+    <!-- an empty bag invites instead of showing a row of zeros -->
+    <div class="bag-welcome" id="bagWelcome" hidden></div>
 
     <!-- STAT TILES -->
     <div class="stats">
@@ -266,6 +275,17 @@
       document.getElementById('bagName').textContent=ar?'ضيف':'Guest';
     }
     document.getElementById('ptsN').textContent=d.points;
+    // empty bag: a friendly first step instead of zeros
+    (function(){
+      var w=document.getElementById('bagWelcome'), empty=!d.points && !d.stars && !d.badges && !d.rewards.length && !d.journeysDone && !d.perCorner.length;
+      if(!d.prof){
+        w.innerHTML='<span class="bw-ic">🌱</span><div class="bw-tx"><b>'+(ar?'أهلًا بك! حقيبتك تنتظر أوّل كنز':'Welcome! Your bag is waiting for its first treasure')+'</b><p>'+(ar?'اصنع ملفّك باسمك وشخصيّتك، فتُحفظ نجومك وأوسمتك وشهاداتك هنا.':'Make your own profile with your name and character, so your stars, badges and certificates are kept here.')+'</p></div><a href="login.html?lang='+lang+'">'+(ar?'✨ اصنع ملفّي':'✨ Make my profile')+'</a>';
+        w.hidden=false;
+      } else if(empty){
+        w.innerHTML='<span class="bw-ic">⭐</span><div class="bw-tx"><b>'+(ar?('هيّا يا '+d.prof.name+'، لنجمع أوّل نجمة!'):("Let's earn your first star, "+d.prof.name+'!'))+'</b><p>'+(ar?'كلّ محطة أو نشاط تُنهيه يضع نجمةً في حقيبتك.':'Every station or activity you finish puts a star in your bag.')+'</p></div><a href="../activities/dashboard.html#today">'+(ar?'🎮 ابدأ نشاطًا':'🎮 Start an activity')+'</a>';
+        w.hidden=false;
+      } else w.hidden=true;
+    })();
     // Certificates stat must equal the actual certificate cards below.
     var es=earned(), ca=compAwards(), am=anosMedals(), aw=anosWeeks();
     document.getElementById('stBadges').textContent=d.badges;

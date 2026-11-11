@@ -127,7 +127,7 @@ window.StoryReader = (function () {
     utterance = u;
     try { speechSynthesis.speak(u); } catch (e) { done && done(); }
   }
-  function narrate(text, btn) {
+  function narrate(text, btn, el) {
     if (utterance && ((typeof speechSynthesis !== 'undefined' && speechSynthesis.speaking) || utterance === true)) { stopNarrate(); return; }
     stopNarrate();
     btn && btn.classList.add('playing');
@@ -135,7 +135,8 @@ window.StoryReader = (function () {
     // Prefer the natural cloud voice (same as every other corner); fall back to the browser voice.
     if (window.MKTTS && MKTTS.enabled) {
       utterance = true;
-      MKTTS.speak(text, state.lang).then(done).catch(() => browserNarrate(text, btn, done));
+      // read-along: the words of the page light up as they are read (mk-tts-cloud.js)
+      (el && window.MKReadAlong ? MKReadAlong.play(el, text, state.lang) : MKTTS.speak(text, state.lang)).then(done).catch(() => browserNarrate(text, btn, done));
       return;
     }
     browserNarrate(text, btn, done);
@@ -201,7 +202,7 @@ window.StoryReader = (function () {
 
     const text = el('div', 'sr-page-text', arEn(page.text, state.lang));
     body.appendChild(text);
-    narrateBtn.addEventListener('click', () => narrate(text.textContent, narrateBtn));
+    narrateBtn.addEventListener('click', () => narrate(text.textContent, narrateBtn, text));
 
     // Inline choice
     if (page.choice) {

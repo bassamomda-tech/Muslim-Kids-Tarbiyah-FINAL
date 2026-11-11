@@ -287,3 +287,23 @@ html.lang-en .dm-opt.right .mean { display: block; }
 }
 
 .kp-shell [hidden] { display: none !important; }
+
+/* ============================================================
+   أكتبُ حروفي (letter tracing)
+   ============================================================ */
+.lt-head { display: flex; align-items: center; justify-content: center; gap: var(--s-3); flex-wrap: wrap; margin: var(--s-2) 0; }
+.lt-name { font-size: 30px; font-weight: 900; color: var(--ink); }
+.lt-form-name { font-size: 15px; font-weight: 800; color: var(--muted); }
+.lt-forms { display: flex; gap: var(--s-2); justify-content: center; flex-wrap: wrap; margin-bottom: var(--s-3); }
+.lt-form { min-height: 56px; min-width: 78px; padding: 4px 10px; border-radius: var(--r-md); border: 2px solid var(--line); background: var(--surface-2); color: var(--ink); cursor: pointer; display: flex; flex-direction: column; align-items: center; justify-content: center; font-family: var(--font-ar); }
+.lt-form .g { font-size: 26px; font-weight: 800; line-height: 1.1; }
+.lt-form small { font-size: 11px; font-weight: 700; color: var(--muted); }
+.lt-form[aria-pressed="true"] { border-color: var(--gold); background: var(--butter); }
+.lt-form.done::after { content: "⭐"; font-size: 12px; }
+.lt-canvas { display: block; width: 100%; max-width: 560px; height: min(56vh, 360px); margin: 0 auto; border-radius: var(--r-lg); border: 2px dashed var(--line); touch-action: none; cursor: crosshair; background: #FFFDF6; }
+.lt-acts { display: flex; gap: var(--s-3); justify-content: center; margin: var(--s-3) 0; }
+.lt-acts button { min-height: 52px; min-width: 120px; font-size: 16px; }
+.lt-letters { display: grid; grid-template-columns: repeat(auto-fill, minmax(52px, 1fr)); gap: var(--s-2); }
+.lt-letter { min-height: 52px; border-radius: var(--r-md); border: 2px solid var(--line); background: var(--surface-2); font-family: var(--font-ar); font-size: 26px; font-weight: 800; color: var(--ink); cursor: pointer; position: relative; }
+.lt-letter[aria-pressed="true"] { border-color: var(--gold); background: var(--butter); }
+.lt-letter.done::after { content: "⭐"; position: absolute; top: -6px; inset-inline-end: -4px; font-size: 13px; }

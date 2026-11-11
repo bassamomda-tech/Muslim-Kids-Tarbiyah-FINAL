@@ -12,7 +12,7 @@
 .acts-tier{font-size:.66rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--ec2)}
 .acts-titles h2{font-size:clamp(1.4rem,4.6vw,2rem);color:var(--fg);line-height:1.08}
 .acts-titles h2 .acts-en{font-family:'Fredoka',sans-serif;font-weight:500;font-size:.58em;color:var(--fg-dim);margin-inline-start:.4rem}
-.acts-titles p{font-size:.82rem;color:var(--fg-dim);font-family:'Amiri',serif;margin-top:.15rem}
+.acts-titles p{font-size:.95rem;color:var(--fg-dim);font-family:'Tajawal',sans-serif;font-weight:600;margin-top:.15rem}
 [dir="ltr"] .acts-titles p{font-family:'Nunito',sans-serif}
 
 /* progress meter */
@@ -97,7 +97,7 @@
   box-shadow:0 12px 30px rgba(0,0,0,.25);animation:cardIn .5s var(--ease-out) both}
 .acts-finale .af-medal{font-size:2.6rem;animation:floaty 3s ease-in-out infinite}
 .acts-finale h3{font-size:1.2rem;color:var(--gold-lt);margin-top:.3rem}
-.acts-finale p{font-size:.84rem;color:var(--fg-dim);margin-top:.25rem;font-family:'Amiri',serif}
+.acts-finale p{font-size:.95rem;color:var(--fg-dim);margin-top:.25rem;font-family:'Tajawal',sans-serif;font-weight:600}
 [dir="ltr"] .acts-finale p{font-family:'Nunito',sans-serif}
 
 /* back-to-era footer */

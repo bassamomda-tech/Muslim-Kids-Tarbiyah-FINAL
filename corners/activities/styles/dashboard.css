@@ -599,3 +599,132 @@ html, body { overflow-x: clip; }
 .ring-meta { font-size: 14.5px; }
 .section .sub { font-size: 14.5px; }
 .medals-hint { font-size: 14px; }
+
+/* ============================================================
+   التبويبات الثلاثة (2026-11): اليوم · أوسمتي · كلّ الأنشطة
+   — a short page for children instead of one very long scroll
+   ============================================================ */
+.dash-tabs {
+  position: sticky; top: var(--mktb-h, 0px); z-index: 30;
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px;
+  max-width: 720px; margin: 0 auto var(--s-8);
+  padding: 6px;
+  background: rgba(255,255,255,0.92);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--line);
+  border-radius: 22px;
+  box-shadow: var(--shadow-md);
+}
+.dash-tabs [role="tab"] {
+  min-height: 56px; min-width: 0;
+  display: flex; align-items: center; justify-content: center; gap: 8px;
+  padding: 6px 10px;
+  border: 0; border-radius: 16px;
+  background: transparent; color: var(--ink-2, var(--ink));
+  font: 800 17px/1.15 var(--font-ar); cursor: pointer;
+  transition: background .18s ease, color .18s ease, transform .18s ease;
+  -webkit-tap-highlight-color: transparent;
+}
+.lang-en .dash-tabs [role="tab"] { font-family: var(--font-en); }
+.dash-tabs [role="tab"] .ti { font-size: 24px; line-height: 1; }
+.dash-tabs [role="tab"]:hover { background: var(--bg-soft); }
+.dash-tabs [role="tab"][aria-selected="true"] { background: var(--ink); color: #fff; box-shadow: 0 6px 14px rgba(31,37,64,.22); }
+.dash-tabs [role="tab"]:focus-visible { outline: 3px solid var(--gold); outline-offset: 2px; }
+.dash-panel[hidden] { display: none !important; }
+.dash-panel:focus { outline: none; }
+
+/* the shared top bar replaces .topbar — keep the gap above the tabs small */
+body.mktb-on .topbar.mktb-hidden + .dash-tabs { margin-top: 0; }
+
+/* stats inside the progress card (Today) */
+.kid-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; padding-top: var(--s-4); border-top: 1px dashed var(--line); }
+.kid-stat {
+  display: flex; flex-direction: column; align-items: center; gap: 2px;
+  padding: 10px 6px; border-radius: 16px; background: var(--bg-soft);
+  text-align: center; color: var(--ink); text-decoration: none;
+}
+a.kid-stat:hover { background: var(--butter); }
+.kid-stat .ks-ic { font-size: 22px; line-height: 1; }
+.kid-stat b { font-size: 24px; font-weight: 900; line-height: 1.1; }
+.kid-stat .ks-l { font-size: 14px; font-weight: 700; color: var(--muted); }
+
+/* Today: keep playing + suggestions */
+.today-block {
+  background: var(--surface); border: 1px solid var(--line); border-radius: var(--r-2xl, 28px);
+  padding: var(--s-5); margin-bottom: var(--s-6); box-shadow: var(--shadow-card);
+}
+.today-block[hidden] { display: none; }
+.tb-title { margin: 0 0 var(--s-4); font-size: 20px; font-weight: 800; display: flex; gap: 8px; align-items: center; }
+.mini-list { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 260px), 1fr)); gap: 10px; }
+.mini-act {
+  display: flex; align-items: center; gap: 12px; min-height: 64px;
+  padding: 8px 10px; border-radius: 18px; border: 1px solid var(--line);
+  background: var(--surface); color: var(--ink); text-decoration: none;
+  transition: transform .18s ease, box-shadow .18s ease;
+}
+.mini-act:hover { transform: translateY(-2px); box-shadow: var(--shadow-lg); }
+.mini-act .ma-thumb {
+  width: 52px; height: 52px; flex: 0 0 52px; border-radius: 14px;
+  background: var(--c, var(--bg-soft)); color: var(--ci, var(--ink));
+  display: grid; place-items: center; font-size: 24px;
+}
+.mini-act .ma-thumb svg { width: 34px; height: 34px; }
+.mini-act .ma-txt { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 2px; }
+.mini-act .ma-txt b { font-size: 16px; font-weight: 800; line-height: 1.25; }
+.mini-act .ma-txt small { font-size: 13px; color: var(--muted); font-weight: 600; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.mini-act .ma-go {
+  flex: 0 0 auto; padding: 8px 14px; border-radius: 999px;
+  background: var(--ci, var(--ink)); color: #fff; font-weight: 800; font-size: 14px;
+}
+.tb-more {
+  display: inline-flex; align-items: center; min-height: 48px; margin-top: var(--s-4);
+  padding: 0 20px; border-radius: 999px; background: var(--bg-soft); border: 1px solid var(--line);
+  font-weight: 800; font-size: 15px; color: var(--ink); text-decoration: none;
+}
+.tb-more:hover { background: var(--butter); }
+
+/* My medals */
+.medals-card {
+  background: var(--surface); border: 1px solid var(--line); border-radius: var(--r-2xl, 28px);
+  padding: var(--s-6); margin-bottom: var(--s-6); box-shadow: var(--shadow-card);
+}
+.mc-head { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+.mc-head h2 { margin: 0; font-size: 22px; font-weight: 800; }
+.mc-count { font-weight: 900; font-size: 20px; color: var(--brand-ink); }
+.medals-card .medals-hint { margin: 6px 0 var(--s-4); color: var(--muted); line-height: 1.5; }
+.medals-grid { grid-template-columns: repeat(5, 1fr); gap: 10px; }
+.medal-tile.badge-mini {
+  aspect-ratio: auto; min-height: 120px; padding: 12px 8px 10px;
+  display: flex; flex-direction: column; align-items: center; justify-content: flex-start; gap: 4px;
+  text-align: center; border-radius: 18px; font-size: 14px;
+}
+.medal-tile.locked::before { position: absolute; top: 8px; inset-inline-start: 8px; width: 12px; height: 12px; }
+.medal-tile .mt-ic { font-size: 30px; line-height: 1.1; }
+.medal-tile.earned .mt-ic { color: var(--butter-ink); }
+.medal-tile .mt-name { font-weight: 800; font-size: 14px; line-height: 1.25; color: var(--ink); }
+.medal-tile .mt-n { font-weight: 700; font-size: 13px; }
+.medal-tile .mt-bar { width: 80%; height: 6px; margin-top: auto; border-radius: 999px; background: rgba(31,37,64,.08); overflow: hidden; }
+.medal-tile .mt-bar > span { display: block; height: 100%; border-radius: inherit; background: var(--brand); }
+.medal-tile.earned .mt-bar > span { background: var(--butter-ink); }
+.award-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 240px), 1fr)); gap: 10px; margin-top: var(--s-4); }
+.award {
+  display: flex; align-items: center; gap: 12px; padding: 14px; border-radius: 18px;
+  background: var(--bg-soft); filter: grayscale(.6); opacity: .85;
+}
+.award.earned { background: var(--butter); filter: none; opacity: 1; }
+.award .aw-ic { font-size: 34px; line-height: 1; }
+.award strong { display: block; font-size: 17px; font-weight: 800; }
+.award span:not(.aw-ic) { font-size: 14px; color: var(--ink-2, var(--ink)); font-weight: 600; }
+
+@media (max-width: 720px) {
+  .dash-tabs { margin-bottom: var(--s-5); border-radius: 18px; gap: 4px; padding: 5px; }
+  .dash-tabs [role="tab"] { flex-direction: column; gap: 3px; min-height: 60px; font-size: 15px; padding: 6px 4px; }
+  .dash-tabs [role="tab"] .ti { font-size: 22px; }
+  .medals-grid { grid-template-columns: repeat(2, 1fr); }
+  .hero { margin-bottom: var(--s-5); gap: var(--s-4); }
+  .hero-card { padding: var(--s-5); }
+  .hero h1 { font-size: 26px; }
+  .hero p { font-size: 15px; margin-bottom: var(--s-4); }
+  .progress-card { padding: var(--s-5); gap: var(--s-4); }
+  .today-block { padding: var(--s-4); }
+}

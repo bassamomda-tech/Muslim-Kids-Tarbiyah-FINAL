@@ -420,6 +420,7 @@ html[dir="rtl"] .shop-card{border-inline-start:1.5px solid var(--card-bd);border
 .gpstep span span{font-size:.8rem;opacity:.78;line-height:1.6}
 </style>
 <script src="../../shared/voice-engine.js"></script>
+<script>window.MK_NO_GATE = true;   /* a page for parents: outside links open without the parent question */</script>
 </head>
 <body>
 <div class="header">
@@ -440,6 +441,9 @@ html[dir="rtl"] .shop-card{border-inline-start:1.5px solid var(--card-bd);border
   <!-- ═══ START IN 3 STEPS (for a new parent) + grouped tabs — styles kept here, inside main ═══ -->
   <style>
     .p3-start{max-width:980px;margin:0 auto 1.6rem;background:linear-gradient(150deg,rgba(212,160,23,.16),rgba(142,68,173,.14));border:1.5px solid rgba(212,160,23,.45);border-radius:1.3rem;padding:1.1rem 1.1rem 1rem}
+    .p3-more{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.7rem;margin-top:.7rem}
+    .p3-more .p3-n{background:rgba(255,255,255,.12);font-size:1.1rem}
+    @media(max-width:760px){.p3-more{grid-template-columns:1fr;gap:.5rem}}
     .p3-start h2{margin:0 0 .25rem;font-size:1.3rem;font-weight:900;color:var(--gold-lt)}
     .p3-start .p3-sub{margin:0 0 .85rem;opacity:.8;font-size:.92rem}
     .p3-steps{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.7rem}
@@ -473,6 +477,12 @@ html[dir="rtl"] .shop-card{border-inline-start:1.5px solid var(--card-bd);border
       <li><button type="button" class="p3-step" onclick="p3Go('annual')"><span class="p3-n">2</span><span><b><span class="ar-only">اختر خطة الشهر والأسبوع</span><span class="en-only">Pick this month's plan</span></b><small><span class="ar-only">الخطة السنوية تقول لك ماذا يفتح طفلك كلَّ شهر، و«منظّم اليوم» يرتّب أسبوعه.</span><span class="en-only">The Annual Plan shows what your child opens each month; the Day Planner arranges the week.</span></small><span class="p3-go"><span class="ar-only">افتح الخطة السنوية ←</span><span class="en-only">Open the Annual Plan →</span></span></span></button></li>
       <li><button type="button" class="p3-step" onclick="p3Go('track')"><span class="p3-n">3</span><span><b><span class="ar-only">تابع التقدّم</span><span class="en-only">Follow the progress</span></b><small><span class="ar-only">نقاطٌ ورسومٌ وشهاداتُ إنجاز لكلّ ركن.</span><span class="en-only">Points, charts and certificates for every corner.</span></small><span class="p3-go"><span class="ar-only">افتح المتابعة ←</span><span class="en-only">Open Tracking →</span></span></span></button></li>
     </ol>
+    <!-- Phase 8: the weekly report, focus (ADHD) options and privacy — one tap each -->
+    <div class="p3-more">
+      <a class="p3-step" href="../../shared/report.html"><span class="p3-n">📊</span><span><b><span class="ar-only">تقرير الأسبوع</span><span class="en-only">Weekly report</span></b><small><span class="ar-only">ماذا تعلّم طفلك هذا الأسبوع، وأعماله الطيّبة، وسؤالُ حوارٍ للعشاء.</span><span class="en-only">What your child learned this week, their good deeds, and a dinner-table question.</span></small></span></a>
+      <button type="button" class="p3-step" onclick="if(window.MKA11y)MKA11y.open()"><span class="p3-n">🎯</span><span><b><span class="ar-only">خيارات التركيز (ADHD)</span><span class="en-only">Focus options (ADHD)</span></b><small><span class="ar-only">وضع التركيز، مسطرة القراءة، استراحات الحركة، وإسكات المؤثرات.</span><span class="en-only">Focus mode, reading ruler, movement breaks and silent sound effects.</span></small></span></button>
+      <a class="p3-step" href="../../../privacy.html"><span class="p3-n">🔒</span><span><b><span class="ar-only">الخصوصية والأمان</span><span class="en-only">Privacy &amp; safety</span></b><small><span class="ar-only">ما يُحفَظ على الجهاز، وسؤالُ الأهل قبل أيّ رابطٍ خارجي.</span><span class="en-only">What is kept on the device, and the parent question before any outside link.</span></small></span></a>
+    </div>
   </section>
   <script>
   function p3Go(id){

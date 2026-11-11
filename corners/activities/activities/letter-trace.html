@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>أكتبُ حروفي · أنوس</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+
+<link rel="stylesheet" href="../styles/tokens.css" />
+<link rel="stylesheet" href="../styles/dashboard.css" />
+<link rel="stylesheet" href="../styles/wheel.css" />
+<link rel="stylesheet" href="../styles/kid-play.css" />
+</head>
+<body>
+
+<div class="bg-decor" aria-hidden="true"></div>
+
+<div class="activity-shell kp-shell">
+
+  <nav class="activity-nav">
+    <a class="back-link" href="../dashboard.html">
+      الرجوع للوحة الأنشطة
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg>
+    </a>
+    <div class="activity-crumb">
+      <span>اللغة والمعرفة</span>
+      <span class="sep">/</span>
+      <span class="cur">أكتبُ حروفي</span>
+    </div>
+    <div class="activity-actions">
+      <button class="icon-btn" id="reset-btn" title="إعادة الضبط" aria-label="إعادة الضبط">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 3-6.7L3 8"/><path d="M3 3v5h5"/></svg>
+      </button>
+    </div>
+  </nav>
+
+  <div class="activity-layout">
+
+    <section class="kp-panel">
+      <header class="wheel-header">
+        <span class="activity-tag">Activity · Trace</span>
+        <h1 class="activity-title">أكتبُ حروفي</h1>
+        <p class="activity-desc">اختر حرفًا، ثم امشِ بإصبعك على الحرف الفاتح. تعلّم كيف يُكتب وحده، وفي أوّل الكلمة، ووسطها، وآخرها.</p>
+      </header>
+
+      <div class="lt-head">
+        <span class="lt-name" id="lt-name">أَلِف</span>
+        <button class="say-btn" id="lt-hear" type="button" aria-label="استمع للحرف">🔊</button>
+        <span class="lt-form-name" id="lt-form-name">وحده</span>
+      </div>
+      <div class="lt-forms" id="lt-forms"></div>
+      <canvas class="lt-canvas" id="lt-canvas" aria-label="لوحة الكتابة"></canvas>
+      <div class="lt-acts">
+        <button class="btn-ghost" id="lt-clear" type="button">🧽 امسح</button>
+        <button class="btn-primary" id="lt-check" type="button">✅ انتهيت</button>
+      </div>
+      <div class="kp-feedback" id="feedback" aria-live="polite">تتبّع الحرف بإصبعك ✍️</div>
+
+      <div class="kp-stats">
+        <div class="wheel-stat">حروف كتبتها <strong id="stat-done">0/8</strong></div>
+        <div class="wheel-stat">محاولات أخرى <strong id="stat-tries">0</strong></div>
+        <button class="wheel-mute-toggle" id="mute-btn" aria-pressed="false" type="button">
+          <span class="mute-icon"></span>
+          <span class="mute-label">كتم الصوت</span>
+        </button>
+      </div>
+    </section>
+
+    <aside class="side-panel">
+      <div class="panel-card">
+        <div class="panel-head">
+          <h3>اختر حرفًا</h3>
+          <span class="pill">٢٨ حرفًا</span>
+        </div>
+        <div class="lt-letters" id="lt-letters"></div>
+      </div>
+      <div class="panel-card">
+        <div class="panel-head">
+          <h3>كيف ألعب؟</h3>
+          <span class="pill">8 حروف</span>
+        </div>
+        <div class="tip-card">
+          <span class="tip-icon">!</span>
+          <span>امشِ بإصبعك على الحرف الفاتح حتى تغطّيه كلَّه، ثم اضغط «انتهيت». اكتب 8 حروف لتفوز. بعض الحروف لا تتّصل بما بعدها، فلها شكلان فقط.</span>
+        </div>
+      </div>
+    </aside>
+  </div>
+</div>
+
+<div class="modal-backdrop" id="win-modal" role="dialog" aria-modal="true">
+  <div class="modal">
+    <button class="modal-close" data-close aria-label="إغلاق">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M6 6l12 12M18 6l-12 12"/></svg>
+    </button>
+    <div class="modal-deco" aria-hidden="true">
+      <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5 9-10"/></svg>
+    </div>
+    <div class="modal-eyebrow">ما شاء الله</div>
+    <h2 class="modal-title">أنت خطّاطٌ صغير!</h2>
+    <p class="modal-translit">كتبتَ 8 حروف بإصبعك</p>
+    <div class="modal-meaning" style="text-align:center;">
+      <strong>محاولات أخرى</strong><span id="win-tries">0</span>
+    </div>
+    <div class="modal-actions">
+      <button class="btn-ghost" data-close>انتهيت</button>
+      <button class="btn-primary" id="win-replay">جولة جديدة</button>
+    </div>
+  </div>
+</div>
+
+<div class="particles" id="particles" aria-hidden="true"></div>
+
+<script src="../scripts/activity-common.js"></script>
+<script src="../scripts/letter-trace.js"></script>
+<script>
+window.PAGE_DICT = {
+  "أكتبُ حروفي": "I Write My Letters",
+  "اختر حرفًا، ثم امشِ بإصبعك على الحرف الفاتح. تعلّم كيف يُكتب وحده، وفي أوّل الكلمة، ووسطها، وآخرها.": "Pick a letter, then walk your finger over the pale letter. Learn how it is written alone, at the start, in the middle and at the end of a word.",
+  "استمع للحرف": "Hear the letter",
+  "لوحة الكتابة": "Writing board",
+  "🧽 امسح": "🧽 Clear",
+  "✅ انتهيت": "✅ Done",
+  "تتبّع الحرف بإصبعك ✍️": "Trace the letter with your finger ✍️",
+  "حروف كتبتها": "Letters written",
+  "محاولات أخرى": "Extra tries",
+  "اختر حرفًا": "Pick a letter",
+  "٢٨ حرفًا": "28 letters",
+  "8 حروف": "8 letters",
+  "امشِ بإصبعك على الحرف الفاتح حتى تغطّيه كلَّه، ثم اضغط «انتهيت». اكتب 8 حروف لتفوز. بعض الحروف لا تتّصل بما بعدها، فلها شكلان فقط.": "Walk your finger over the pale letter until it is all covered, then press “Done”. Write 8 letters to win. Some letters never join the letter after them, so they have only two forms.",
+  "ما شاء الله": "Masha'Allah",
+  "أنت خطّاطٌ صغير!": "You are a little calligrapher!",
+  "كتبتَ 8 حروف بإصبعك": "You wrote 8 letters with your finger",
+  "جولة جديدة": "New round",
+  "انتهيت": "Done"
+};
+</script>
+<script src="../scripts/i18n.js"></script>
+<script src="../../shared/nav-fix.js"></script>
+<script src="../../shared/mk-topbar.js"></script>
+</body>
+</html>

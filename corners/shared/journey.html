@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="dark">
+<title>رحلتي مع أنوس | My Journey with Anos</title>
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@500;700;800;900&family=Amiri:wght@700&family=Nunito:wght@600;800;900&display=swap" rel="stylesheet">
+<style>
+  :root{--bg1:#081E36;--bg2:#0E2E4E;--gold:#E8B530;--gold-lt:#F5CC5A;--ink:#FEF5DC;--muted:rgba(254,245,220,.72);--card:rgba(255,255,255,.06);--line:rgba(232,181,48,.28);--ok:#2E9E5B}
+  *{box-sizing:border-box}
+  body{margin:0;font-family:'Tajawal','Nunito',sans-serif;color:var(--ink);min-height:100vh;background:radial-gradient(1000px 560px at 85% -10%,rgba(232,181,48,.16),transparent 60%),radial-gradient(800px 480px at 10% 5%,rgba(46,158,91,.18),transparent 60%),linear-gradient(165deg,var(--bg1),var(--bg2))}
+  html[dir="ltr"] body{font-family:'Nunito','Tajawal',sans-serif}
+  .header{display:flex;align-items:center;justify-content:space-between;padding:.8rem 1rem}
+  .back-btn{background:var(--gold);color:#10243d;border-radius:2rem;padding:.5rem 1.1rem;font-weight:800;text-decoration:none;min-height:44px;display:inline-flex;align-items:center}
+  .lang{display:flex;border:1.5px solid var(--line);border-radius:2rem;overflow:hidden}
+  .lang button{background:transparent;border:none;color:var(--ink);font-weight:800;padding:0 .85rem;min-height:40px;font-size:.85rem;cursor:pointer;font-family:inherit}
+  .lang button.active{background:var(--gold);color:#10243d}
+  .wrap{max-width:760px;margin:0 auto;padding:.3rem 1rem 4rem}
+  .hero{text-align:center;padding:.4rem 0 .2rem}
+  .hero h1{margin:.2rem 0;font-size:1.8rem;font-weight:900;color:var(--gold-lt)}
+  .hero p{margin:0 auto;max-width:560px;color:var(--muted);font-weight:700;line-height:1.7}
+  .lvl{display:flex;align-items:center;gap:.7rem;max-width:520px;margin:.9rem auto 0;background:var(--card);border:1.5px solid var(--line);border-radius:1.2rem;padding:.6rem .9rem;text-align:start}
+  .lvl .ic{font-size:2.2rem}
+  .lvl .tx{flex:1;min-width:0}
+  .lvl b{display:block;font-size:1.05rem}
+  .lvl small{display:block;color:var(--muted);font-weight:700;font-size:.88rem}
+  .bar{height:10px;border-radius:9px;background:rgba(255,255,255,.12);overflow:hidden;margin-top:.35rem}
+  .bar i{display:block;height:100%;background:linear-gradient(90deg,#3BB36D,var(--gold-lt));border-radius:9px}
+  .tabs{display:flex;gap:.5rem;justify-content:center;margin:1.1rem 0 .8rem}
+  .tabs button{min-height:52px;padding:0 1.2rem;border-radius:999px;border:1.5px solid var(--line);background:rgba(255,255,255,.06);color:var(--ink);font:900 1.02rem inherit;font-family:inherit;cursor:pointer}
+  .tabs button[aria-selected="true"]{background:linear-gradient(135deg,var(--gold-lt),#D4A017);color:#1A1205;border-color:transparent}
+  /* the map: a winding road with six lands */
+  .map{position:relative;margin:0 auto;max-width:520px;padding:10px 0 20px}
+  .map svg.road{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
+  .land{position:relative;display:flex;align-items:center;gap:.8rem;width:78%;min-height:96px;margin:0 0 26px;padding:.7rem .9rem;border-radius:1.4rem;border:2px solid var(--line);background:rgba(10,30,55,.86);color:var(--ink);text-align:start;font:inherit;cursor:pointer;box-shadow:0 8px 22px rgba(0,0,0,.28)}
+  .land:nth-of-type(odd){margin-inline-start:auto}
+  .land .ic{flex:0 0 64px;height:64px;border-radius:50%;display:grid;place-items:center;font-size:2rem;background:rgba(255,255,255,.08);border:2px solid var(--line)}
+  .land .tx{flex:1;min-width:0}
+  .land b{display:block;font-size:1.06rem;line-height:1.35}
+  .land small{display:block;color:var(--muted);font-weight:700;font-size:.86rem;margin-top:.15rem}
+  .land .st{flex:0 0 auto;font-size:.82rem;font-weight:900;padding:.3rem .6rem;border-radius:999px;background:rgba(255,255,255,.1)}
+  .land.read{border-color:rgba(46,158,91,.75)}
+  .land.read .ic{background:rgba(46,158,91,.3);border-color:rgba(46,158,91,.8)}
+  .land.read .st{background:var(--ok);color:#fff}
+  .land.new{border-color:var(--gold-lt);box-shadow:0 0 0 4px rgba(245,204,90,.2),0 8px 22px rgba(0,0,0,.3)}
+  .land.new .st{background:var(--gold-lt);color:#1A1205}
+  .land.lock{opacity:.62;cursor:pointer}
+  .land.lock .ic{filter:grayscale(.8)}
+  .here{position:absolute;top:-15px;inset-inline-end:14px;display:flex;align-items:center;gap:.25rem;background:#fff;color:#10243d;border-radius:999px;padding:.2rem .55rem .2rem .3rem;font-weight:900;font-size:.8rem;box-shadow:0 4px 12px rgba(0,0,0,.3)}
+  .here i{font-style:normal;font-size:1.2rem}
+  /* passport */
+  .pp{background:linear-gradient(160deg,#16405F,#0E2E4E);border:2px solid var(--line);border-radius:1.4rem;padding:1rem}
+  .pp-hd{display:flex;align-items:center;gap:.8rem;border-bottom:1.5px dashed var(--line);padding-bottom:.8rem;margin-bottom:.8rem}
+  .pp-hd .avi{width:58px;height:58px;border-radius:50%;display:grid;place-items:center;font-size:2rem;background:var(--avi,#D4A017)}
+  .pp-hd b{display:block;font-size:1.2rem}
+  .pp-hd small{color:var(--muted);font-weight:700}
+  .pp h3{margin:1rem 0 .5rem;font-size:1.02rem;font-weight:900;color:var(--gold-lt)}
+  .stamps{display:grid;grid-template-columns:repeat(auto-fill,minmax(100px,1fr));gap:.6rem}
+  .stamp{display:flex;flex-direction:column;align-items:center;gap:.25rem;text-align:center;font-weight:800;font-size:.8rem;line-height:1.3;color:var(--muted)}
+  .stamp .s{width:76px;height:76px;border-radius:50%;display:grid;place-items:center;font-size:2rem;border:3px dashed rgba(255,255,255,.22);background:rgba(255,255,255,.03);filter:grayscale(1);opacity:.55}
+  .stamp.on{color:var(--ink)}
+  .stamp.on .s{filter:none;opacity:1;border-style:double;border-width:5px;border-color:var(--sc,#E8B530);background:radial-gradient(circle,rgba(255,255,255,.14),rgba(255,255,255,.02));transform:rotate(-8deg)}
+  .stamp:nth-child(even).on .s{transform:rotate(7deg)}
+  .certs{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:.4rem}
+  .btn{min-height:48px;padding:0 1.1rem;border-radius:999px;border:1.5px solid var(--line);background:rgba(255,255,255,.08);color:var(--ink);font:900 1rem inherit;font-family:inherit;cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;gap:.35rem}
+  .btn.go{background:linear-gradient(135deg,#3BB36D,#1F7A44);border:none;color:#fff}
+  .btn.gold{background:linear-gradient(135deg,var(--gold-lt),#D4A017);border:none;color:#1A1205}
+  /* the story reader */
+  .ov{position:fixed;inset:0;z-index:5000;background:rgba(4,14,26,.9);display:none;align-items:center;justify-content:center;padding:14px}
+  .ov.open{display:flex}
+  .book{width:min(620px,100%);max-height:calc(100vh - 28px);overflow:auto;background:#FFF8EA;color:#2A2118;border-radius:1.5rem;padding:1.1rem 1.2rem 1.2rem;box-shadow:0 30px 70px rgba(0,0,0,.5)}
+  .book-hd{display:flex;align-items:center;gap:.6rem}
+  .book-hd .ic{font-size:2rem}
+  .book-hd .tt{flex:1}
+  .book-hd b{display:block;font-size:1.2rem;color:#7A4A12}
+  .book-hd small{color:#9A7038;font-weight:800}
+  .x{width:44px;height:44px;border-radius:50%;border:none;background:#EFE4CF;color:#5a4a22;font-size:1.1rem;font-weight:900;cursor:pointer}
+  .pg{min-height:150px;margin:.9rem 0;font-size:1.22rem;line-height:2.05;font-weight:600}
+  html[dir="ltr"] .pg{font-size:1.1rem;line-height:1.8}
+  html[data-age="young"] .pg{font-size:1.35rem}
+  .quote{background:#F3E6C8;border-radius:1rem;padding:.8rem 1rem;margin:.6rem 0;text-align:center}
+  .quote q{display:block;quotes:none;font-family:'Amiri',serif;font-size:1.35rem;line-height:2;font-weight:700;color:#5A3A0A}
+  html[dir="ltr"] .quote q{font-family:'Nunito',sans-serif;font-size:1.05rem}
+  .quote small{display:block;color:#8A6A2E;font-weight:800}
+  .lesson{background:#E4F4E9;border-radius:1rem;padding:.7rem .9rem;margin:.6rem 0;font-weight:800;line-height:1.7;color:#1F5A33}
+  .mission{display:flex;align-items:center;gap:.6rem;flex-wrap:wrap;background:#FFF0D1;border:2px dashed #E8B530;border-radius:1rem;padding:.7rem .9rem;margin:.6rem 0;font-weight:800;line-height:1.6}
+  .mission span{flex:1;min-width:180px}
+  .nav{display:flex;align-items:center;justify-content:space-between;gap:.5rem}
+  .nav .dots{display:flex;gap:5px}
+  .nav .dots i{width:10px;height:10px;border-radius:50%;background:#E4D3B0}
+  .nav .dots i.on{background:#C98A1A}
+  .nav button{min-height:48px;min-width:48px;padding:0 1rem;border-radius:999px;border:none;font:900 1rem inherit;font-family:inherit;cursor:pointer;background:#EFE4CF;color:#5a4a22}
+  .nav button.next{background:linear-gradient(135deg,#3BB36D,#1F7A44);color:#fff}
+  .nav button[disabled]{opacity:.35}
+  .say{background:#EFE4CF;border:none;border-radius:999px;min-height:44px;padding:0 .9rem;font:800 .92rem inherit;font-family:inherit;color:#5a4a22;cursor:pointer}
+  .lockmsg{text-align:center;padding:1rem .4rem}
+  .lockmsg .big{font-size:3rem}
+  .lockmsg ul{list-style:none;padding:0;margin:.8rem 0 0;display:grid;gap:.4rem;text-align:start}
+  .lockmsg li a{display:flex;align-items:center;gap:.5rem;min-height:48px;padding:.4rem .8rem;border-radius:.9rem;background:#F3E6C8;color:#5A3A0A;text-decoration:none;font-weight:800}
+  /* level-up */
+  .up{text-align:center}
+  .up .big{font-size:4rem}
+  .up b{display:block;font-size:1.45rem;color:#7A4A12;margin:.3rem 0}
+  /* certificate (screen preview + print) */
+  .cert{background:#FFFDF6;color:#2A2118;border:10px double #C98A1A;border-radius:12px;padding:1.4rem 1.2rem;text-align:center;font-family:'Tajawal','Nunito',sans-serif}
+  .cert .top{font-size:.95rem;font-weight:800;color:#8A6A2E}
+  .cert h2{margin:.4rem 0;font-size:1.8rem;color:#7A4A12}
+  .cert .lv{font-size:3.6rem;margin:.2rem 0}
+  .cert .nm{font-size:1.9rem;font-weight:900;margin:.3rem 0;color:#1F5A33}
+  .cert p{line-height:1.9;font-weight:700;margin:.4rem 0}
+  .cert q{display:block;quotes:none;font-family:'Amiri',serif;font-size:1.2rem;color:#5A3A0A;margin:.6rem 0}
+  .cert .dt{color:#8A6A2E;font-weight:800;font-size:.95rem}
+  @media print{
+    body{background:#fff!important}
+    body>*:not(#printArea){display:none!important}
+    #printArea{display:block!important;padding:10mm}
+    #printArea .cert{border-width:12px;min-height:180mm;display:flex;flex-direction:column;justify-content:center}
+  }
+  #printArea{display:none}
+  @media(max-width:480px){.land{width:92%}.land .ic{flex-basis:54px;height:54px;font-size:1.7rem}.hero h1{font-size:1.5rem}}
+</style>
+<style id="__antiflash">html{background:#081E36;color-scheme:dark}</style>
+</head>
+<body>
+  <div class="header">
+    <a href="../../index.html" class="back-btn" id="backBtn">↩️ <span class="lng-ar">المدينة</span><span class="lng-en">City</span></a>
+    <div class="lang"><button data-lang="en">EN</button><button data-lang="ar" class="active">عربي</button></div>
+  </div>
+  <main class="wrap" id="app"></main>
+  <div class="ov" id="ov" role="dialog" aria-modal="true"><div class="book" id="book"></div></div>
+  <div id="printArea"></div>
+
+<script src="mk-system.js"></script>
+<script src="mk-bag.js"></script>
+<script src="mk-journey.js"></script>
+<script src="journey-story.js"></script>
+<script>
+(function () {
+  var LS = localStorage, J = MKJourney, ST = window.MK_STORY || [], lang = 'ar', tab = 'map', cur = null, pg = 0;
+  try { lang = LS.getItem('bunyanLang') === 'en' ? 'en' : 'ar'; } catch (e) {}
+  try { if (/#passport/.test(location.hash)) tab = 'passport'; } catch (e) {}
+  function T(a, e) { return lang === 'en' ? e : a; }
+  function t(o) { return o ? (o[lang] || o.ar || '') : ''; }
+  function N(n) { return lang === 'ar' ? J.arNum(n) : String(n); }
+  function esc(s) { return String(s == null ? '' : s).replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); }
+  function root(p) { return '../../' + p; }
+  function prof() { return (window.MK && MK.activeProfile && MK.activeProfile()) || null; }
+
+  function say(text) {
+    if (window.MKTTS && MKTTS.speak) return MKTTS.speak(text, /[؀-ۿ]/.test(text) ? 'ar' : 'en').catch(function () { fb(text); });
+    fb(text);
+  }
+  function fb(text) { try { var u = new SpeechSynthesisUtterance(text.replace(/[﴿﴾«»]/g, '')); u.lang = /[؀-ۿ]/.test(text) ? 'ar' : 'en'; speechSynthesis.cancel(); speechSynthesis.speak(u); } catch (e) {} }
+
+  /* ── the map ── */
+  function mapHtml(best, lv) {
+    var read = J.readChapters(), p = prof();
+    var lands = ST.map(function (c) {
+      var open = c.lvl <= best.i, isRead = !!read[c.lvl], here = c.lvl === lv.i, L = J.LEVELS[c.lvl];
+      var cls = 'land' + (isRead ? ' read' : open ? ' new' : ' lock');
+      var st = isRead ? '✓ ' + T('قرأتُه', 'Read') : open ? T('جديد! 📖', 'New! 📖') : '🔒 ' + N(Math.max(0, L.at - lv.stars)) + ' ⭐';
+      return '<button class="' + cls + '" data-c="' + c.lvl + '">' + (here ? '<span class="here"><i>' + esc(p && p.avatar || '🧒') + '</i>' + T('أنت هنا', 'You are here') + '</span>' : '') +
+        '<span class="ic">' + (open ? c.icon : '🔒') + '</span><span class="tx"><b>' + esc(t(c.title)) + '</b><small>' + L.ic + ' ' + esc(t(L)) + ' · ' + esc(t(c.land)) + '</small></span><span class="st">' + st + '</span></button>';
+    }).join('');
+    return '<div class="map" id="map"><svg class="road" id="road" aria-hidden="true"></svg>' + lands + '</div>' +
+      (ST.length ? '' : '<p style="text-align:center">' + T('الحكاية قادمة قريبًا…', 'The story is coming soon…') + '</p>');
+  }
+  /* a dotted road joining the lands (drawn after layout, from the real card positions) */
+  function road() {
+    var m = document.getElementById('map'), svg = document.getElementById('road'); if (!m || !svg) return;
+    var mr = m.getBoundingClientRect(), pts = [].map.call(m.querySelectorAll('.land .ic'), function (e) { var r = e.getBoundingClientRect(); return [r.left - mr.left + r.width / 2, r.top - mr.top + r.height / 2]; });
+    if (pts.length < 2) { svg.innerHTML = ''; return; }
+    var d = 'M' + pts[0][0] + ' ' + pts[0][1];
+    for (var i = 1; i < pts.length; i++) { var a = pts[i - 1], b = pts[i], my = (a[1] + b[1]) / 2; d += ' C' + a[0] + ' ' + my + ' ' + b[0] + ' ' + my + ' ' + b[0] + ' ' + b[1]; }
+    svg.setAttribute('viewBox', '0 0 ' + mr.width + ' ' + mr.height);
+    svg.innerHTML = '<path d="' + d + '" fill="none" stroke="rgba(245,204,90,.45)" stroke-width="6" stroke-linecap="round" stroke-dasharray="2 14"/>';
+  }
+
+  /* ── the passport ── */
+  function passportHtml(best, lv) {
+    var p = prof(), read = J.readChapters(), full = J.fullDays(), palms = J.palms(), per = [];
+    try { if (window.MKBagCollect) per = MKBagCollect().perCorner || []; } catch (e) {}
+    function stamp(on, ic, label, col) { return '<div class="stamp' + (on ? ' on' : '') + '" style="--sc:' + (col || '#E8B530') + '"><span class="s">' + (on ? ic : '❔') + '</span>' + label + '</div>'; }
+    var html = '<div class="pp"><div class="pp-hd"><span class="avi" style="--avi:' + esc(p && p.color || '#D4A017') + '">' + esc(p && p.avatar || '🧒') + '</span><div><b>🛂 ' + T('جوازُ سفرِ ', 'Travel passport of ') + esc(p ? p.name : T('رفيق الرحلة', 'my travel friend')) + '</b><small>' + T('كلُّ ختمٍ خطوةٌ في رحلتك', 'Every stamp is a step on your journey') + '</small></div></div>';
+    html += '<h3>🌱 ' + T('درجاتُ رحلتي', 'My journey levels') + '</h3><div class="stamps">' + J.LEVELS.map(function (L, i) { return stamp(i <= best.i, L.ic, esc(t(L)), '#3BB36D'); }).join('') + '</div>';
+    html += '<h3>📖 ' + T('فصولُ حكاية أنوس', "Chapters of Anos's story") + '</h3><div class="stamps">' + ST.map(function (c) { return stamp(!!read[c.lvl], c.icon, esc(t(c.land)), '#C98A1A'); }).join('') + '</div>';
+    if (per.length) html += '<h3>🏙️ ' + T('أركانُ المدينة (ختمٌ عند ٢٥٪)', 'City corners (a stamp at 25%)') + '</h3><div class="stamps">' + per.map(function (c) { return stamp(c.pct >= 25, c.icon, esc(t(c.name)) + (c.pct ? ' · ' + N(c.pct) + '٪' : ''), c.color); }).join('') + '</div>';
+    html += '<h3>☀️ ' + T('أيّامي الكاملة في «يومي»', 'My full days in «My Day»') + '</h3><div class="stamps">' + [1, 7, 30, 100].map(function (n) { return stamp(full >= n, n >= 100 ? '🏆' : n >= 30 ? '🌙' : n >= 7 ? '⭐' : '☀️', T(N(n) + (n === 1 ? ' يوم' : n <= 10 ? ' أيام' : ' يومًا'), n + (n === 1 ? ' day' : ' days')), '#E8B530'); }).join('') + '</div>';
+    html += '<h3>🌴 ' + T('نخيلُ بستاني', 'Palms in my garden') + '</h3><div class="stamps">' + [10, 33, 100, 300].map(function (n) { return stamp(palms >= n, '🌴', T(N(n) + ' نخلة', n + ' palms'), '#2E9E5B'); }).join('') + '</div>';
+    html += '<h3>📜 ' + T('شهاداتُ الدرجات', 'Level certificates') + '</h3><div class="certs">' + J.LEVELS.slice(0, best.i + 1).map(function (L, i) { return '<button class="btn gold" data-cert="' + i + '">' + L.ic + ' ' + esc(t(L)) + '</button>'; }).join('') + '</div></div>';
+    return html;
+  }
+
+  function render() {
+    var lv = J.level(), best = J.bestLevel(), p = prof();
+    var html = '<section class="hero"><h1>🧭 ' + T('رحلتي مع أنوس', 'My Journey with Anos') + '</h1><p>' + T('﴿كَشَجَرَةٍ طَيِّبَةٍ أَصْلُهَا ثَابِتٌ وَفَرْعُهَا فِي السَّمَاءِ﴾ — كلُّ نجمةٍ تجمعها تُنمّي بذرتك، وكلُّ درجةٍ تفتح فصلًا جديدًا من الحكاية.', 'Like a good tree, firm at the root with branches in the sky — every star you earn helps your seed grow, and every level opens a new chapter of the story.') + '</p>' +
+      '<div class="lvl"><span class="ic">' + lv.ic + '</span><div class="tx"><b>' + T('أنت الآن: ', 'You are now: ') + esc(t(lv.name)) + ' · ' + N(lv.stars) + ' ⭐</b><small>' +
+      (lv.next ? T('بقي ' + N(Math.max(0, lv.next.at - lv.stars)) + ' نجمة لتصبح ' + lv.next.ar + ' ' + lv.next.ic + ' ويُفتح الفصل التالي', (lv.next.at - lv.stars) + ' more stars to become a ' + lv.next.en + ' ' + lv.next.ic + ' and open the next chapter') : T('أكملتَ الرحلة كلَّها — ما شاء الله!', 'You completed the whole journey — MashaAllah!')) +
+      '</small><div class="bar"><i style="width:' + lv.pct + '%"></i></div></div></div></section>' +
+      '<div class="tabs" role="tablist"><button role="tab" data-tab="map" aria-selected="' + (tab === 'map') + '">🗺️ ' + T('خريطة الرحلة', 'Journey map') + '</button><button role="tab" data-tab="passport" aria-selected="' + (tab === 'passport') + '">🛂 ' + T('جواز سفري', 'My passport') + '</button></div>' +
+      '<div role="tabpanel">' + (tab === 'map' ? mapHtml(best, lv) : passportHtml(best, lv)) + '</div>' +
+      '<div style="display:flex;gap:.5rem;justify-content:center;flex-wrap:wrap;margin-top:1.2rem"><a class="btn go" href="my-day.html">☀️ ' + T('يومي — اجمع نجوم اليوم', 'My Day — earn today\'s stars') + '</a><a class="btn" href="garden.html">🌴 ' + T('بستان الذكر', 'Dhikr garden') + '</a></div>';
+    var app = document.getElementById('app'); app.innerHTML = html;
+    app.querySelectorAll('[data-tab]').forEach(function (b) { b.onclick = function () { tab = b.getAttribute('data-tab'); try { history.replaceState(null, '', tab === 'passport' ? '#passport' : '#map'); } catch (e) {} render(); }; });
+    app.querySelectorAll('.land').forEach(function (b) { b.onclick = function () { openChapter(+b.getAttribute('data-c')); }; });
+    app.querySelectorAll('[data-cert]').forEach(function (b) { b.onclick = function () { cert(+b.getAttribute('data-cert')); }; });
+    requestAnimationFrame(road);
+    if (best.newly != null && ST[best.newly]) levelUp(best.newly);
+  }
+
+  /* ── reader ── */
+  function show(html) { var ov = document.getElementById('ov'); document.getElementById('book').innerHTML = html; ov.classList.add('open'); var x = ov.querySelector('.x'); if (x) x.onclick = close; }
+  function close() { document.getElementById('ov').classList.remove('open'); try { if (window.MKTTS) MKTTS.stop(); speechSynthesis.cancel(); } catch (e) {} render(); }
+  function openChapter(i) {
+    var c = ST.filter(function (x) { return x.lvl === i; })[0]; if (!c) return;
+    var best = J.bestLevel(), lv = J.level();
+    if (i > best.i) {
+      var L = J.LEVELS[i];
+      show('<div class="book-hd"><span class="ic">🔒</span><div class="tt"><b>' + esc(t(c.title)) + '</b><small>' + L.ic + ' ' + esc(t(L)) + '</small></div><button class="x" aria-label="' + T('إغلاق', 'Close') + '">✕</button></div>' +
+        '<div class="lockmsg"><div class="big">' + L.ic + '</div><p style="font-weight:800;font-size:1.1rem;line-height:1.8">' + T('يُفتح هذا الفصل حين تصبح «' + L.ar + '». بقي لك ' + N(Math.max(0, L.at - lv.stars)) + ' نجمة.', 'This chapter opens when you become a "' + L.en + '". You need ' + Math.max(0, L.at - lv.stars) + ' more stars.') + '</p>' +
+        '<b>' + T('كيف أجمع النجوم؟', 'How do I earn stars?') + '</b><ul>' +
+        '<li><a href="my-day.html">☀️ ' + T('أكمل خطوات «يومي» — نجمة لكلّ خطوة', 'Finish the steps of «My Day» — a star for each step') + '</a></li>' +
+        '<li><a href="../activities/dashboard.html#today">🎮 ' + T('أنهِ لعبةً من ركن أنوس', "Finish a game in Anos' corner") + '</a></li>' +
+        '<li><a href="../../index.html">🏙️ ' + T('أنهِ محطّاتٍ في أركان المدينة', 'Finish stations in the city corners') + '</a></li>' +
+        '<li><a href="garden.html">🌴 ' + T('ازرع نخيلًا في بستان الذكر', 'Plant palms in the dhikr garden') + '</a></li></ul></div>');
+      return;
+    }
+    cur = c; pg = 0; page();
+  }
+  function page() {
+    var c = cur, n = c.pages.length, last = pg >= n, body;
+    if (!last) body = '<div class="pg">' + esc(t(c.pages[pg])) + '</div>';
+    else body = '<div class="quote"><q>' + esc(t(c.quote)) + '</q><small>' + esc(t(c.quote.src)) + '</small></div>' +
+      '<div class="lesson">💡 ' + esc(t(c.lesson)) + '</div>' +
+      '<div class="mission"><span>🎯 <b>' + T('مهمّتك:', 'Your mission:') + '</b> ' + esc(t(c.mission)) + '</span>' + (c.mission.href ? '<a class="btn go" href="' + esc(root(c.mission.href)) + '">' + T('هيّا ←', "Let's go →") + '</a>' : '') + '</div>' +
+      '<div style="display:flex;gap:.5rem;flex-wrap:wrap;justify-content:center"><button class="btn gold" id="certBtn">📜 ' + T('شهادة درجة «' + J.LEVELS[c.lvl].ar + '»', 'My "' + J.LEVELS[c.lvl].en + '" certificate') + '</button></div>';
+    var dots = ''; for (var i = 0; i <= n; i++) dots += '<i class="' + (i === pg ? 'on' : '') + '"></i>';
+    show('<div class="book-hd"><span class="ic">' + c.icon + '</span><div class="tt"><b>' + esc(t(c.title)) + '</b><small>' + esc(t(c.land)) + '</small></div><button class="x" aria-label="' + T('إغلاق', 'Close') + '">✕</button></div>' + body +
+      '<div class="nav"><button class="prev" ' + (pg ? '' : 'disabled') + '>' + (lang === 'ar' ? '→' : '←') + '</button><button class="say">🔊 ' + T('اسمع', 'Listen') + '</button><span class="dots">' + dots + '</span>' +
+      '<button class="next">' + (last ? T('أنهيتُ الفصل ✓', 'Finish ✓') : (lang === 'ar' ? 'التالي ←' : 'Next →')) + '</button></div>');
+    var b = document.getElementById('book');
+    b.querySelector('.prev').onclick = function () { if (pg) { pg--; page(); } };
+    b.querySelector('.next').onclick = function () { if (last) { J.markRead(c.lvl); close(); } else { pg++; if (pg >= n) J.markRead(c.lvl); page(); } };
+    b.querySelector('.say').onclick = function () {
+      var pe = b.querySelector('.pg');   // read-along: each word lights up as Anos's story is read
+      if (!last && pe && window.MKReadAlong && window.MKTTS && MKTTS.enabled) MKReadAlong.play(pe, t(c.pages[pg]), lang).catch(function () { fb(t(c.pages[pg])); });
+      else say(last ? t(c.quote) + ' ' + t(c.lesson) : t(c.pages[pg]));
+    };
+    var cb = document.getElementById('certBtn'); if (cb) cb.onclick = function () { cert(c.lvl); };
+  }
+  function levelUp(i) {
+    var L = J.LEVELS[i], c = ST.filter(function (x) { return x.lvl === i; })[0];
+    show('<div class="book-hd"><span class="ic">🎉</span><div class="tt"><b>' + T('درجةٌ جديدة!', 'A new level!') + '</b></div><button class="x" aria-label="' + T('إغلاق', 'Close') + '">✕</button></div>' +
+      '<div class="up"><div class="big">' + L.ic + '</div><b>' + T('أصبحتَ «' + L.ar + '» — بارك الله فيك!', 'You became a "' + L.en + '" — may Allah bless you!') + '</b><p style="font-weight:700;line-height:1.8">' + T('فُتح لك فصلٌ جديد من رحلة أنوس: ', "A new chapter of Anos's journey is open: ") + '<b>' + esc(c ? t(c.title) : '') + '</b></p>' +
+      '<div style="display:flex;gap:.5rem;flex-wrap:wrap;justify-content:center"><button class="btn go" id="readNew">📖 ' + T('اقرأ الفصل', 'Read the chapter') + '</button><button class="btn gold" id="certNew">📜 ' + T('شهادتي', 'My certificate') + '</button></div></div>');
+    document.getElementById('readNew').onclick = function () { openChapter(i); };
+    document.getElementById('certNew').onclick = function () { cert(i); };
+  }
+  /* ── level certificate: preview, then print ── */
+  function cert(i) {
+    var L = J.LEVELS[i], p = prof(), best = J.bestLevel(), at = best.at && best.at[i];
+    var d = at ? new Date(at + 'T12:00') : new Date();
+    var html = '<div class="cert"><div class="top">' + T('تربية الطفل المسلم · رحلة أنوس', "Muslim Kids' Tarbiyah · Anos's Journey") + '</div><h2>' + T('شهادةُ درجة', 'Level Certificate') + '</h2><div class="lv">' + L.ic + '</div>' +
+      '<p>' + T('نشهد بكلّ فرحٍ أنّ', 'We are happy to certify that') + '</p><div class="nm">' + esc(p ? p.name : T('رفيق الرحلة', 'My travel friend')) + '</div>' +
+      '<p>' + T('وصلَ في رحلته إلى درجة «' + L.ar + '» ' + L.ic + '، بالتعلّم والذكر والعمل الطيّب.', 'has reached the level of "' + L.en + '" ' + L.ic + ' through learning, dhikr and good deeds.') + '</p>' +
+      '<q>﴿أَلَمْ تَرَ كَيْفَ ضَرَبَ اللَّهُ مَثَلًا كَلِمَةً طَيِّبَةً كَشَجَرَةٍ طَيِّبَةٍ﴾</q><div class="dt">' + esc(J.hijriText(J.hijri(d))) + ' · ' + esc(d.toLocaleDateString(lang === 'ar' ? 'ar-EG' : 'en-GB', { day: 'numeric', month: 'long', year: 'numeric' })) + '</div></div>';
+    show('<div class="book-hd"><span class="ic">📜</span><div class="tt"><b>' + T('شهادتي', 'My certificate') + '</b></div><button class="x" aria-label="' + T('إغلاق', 'Close') + '">✕</button></div>' + html +
+      '<div style="display:flex;justify-content:center;margin-top:.8rem"><button class="btn gold" id="printBtn">🖨️ ' + T('اطبع الشهادة', 'Print the certificate') + '</button></div>');
+    document.getElementById('printBtn').onclick = function () { document.getElementById('printArea').innerHTML = html; window.print(); };
+  }
+
+  function texts() {
+    document.documentElement.lang = lang; document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
+    document.querySelectorAll('.lng-ar').forEach(function (e) { e.style.display = lang === 'ar' ? '' : 'none'; });
+    document.querySelectorAll('.lng-en').forEach(function (e) { e.style.display = lang === 'en' ? '' : 'none'; });
+    document.querySelectorAll('.lang button').forEach(function (b) { b.classList.toggle('active', b.dataset.lang === lang); });
+    document.title = T('رحلتي مع أنوس', 'My Journey with Anos'); render();
+  }
+  document.querySelectorAll('.lang button').forEach(function (b) { b.onclick = function () { lang = b.dataset.lang; try { LS.setItem('bunyanLang', lang); } catch (e) {} texts(); }; });
+  window.setLang = function (l) { lang = l; try { LS.setItem('bunyanLang', l); } catch (e) {} texts(); };
+  document.getElementById('ov').addEventListener('click', function (e) { if (e.target.id === 'ov') close(); });
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && document.getElementById('ov').classList.contains('open')) close(); });
+  window.addEventListener('resize', function () { requestAnimationFrame(road); });
+  texts();
+})();
+</script>
+<script src="mk-citynav.js"></script>
+<script src="mk-topbar.js"></script>
+</body>
+</html>

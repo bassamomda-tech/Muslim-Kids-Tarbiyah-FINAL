@@ -252,49 +252,86 @@
 <!-- ═══ SCRIPTS ═══ -->
 <script src="assets/houses-art.js"></script>
 <script src="data/_index.js"></script>
-<!-- House data files — one per house, in district order.
-     (dua.js not yet authored — its house shows a placeholder.) -->
-<!-- akhlaq -->
-<script src="data/truth.js"></script>
-<script src="data/trust.js"></script>
-<script src="data/courage.js"></script>
-<script src="data/ihsan.js"></script>
-<script src="data/tongue.js"></script>
-<script src="data/pardon.js"></script>
-<script src="data/forbearance.js"></script>
-<script src="data/respect.js"></script>
-<script src="data/sincerity.js"></script>
-<script src="data/humility.js"></script>
-<script src="data/haya.js"></script>
-<script src="data/striving.js"></script>
-<script src="data/patience.js"></script>
-<script src="data/loyalty.js"></script>
-<script src="data/gratitude.js"></script>
-<script src="data/generosity.js"></script>
-<script src="data/knowledge.js"></script>
-<script src="data/chivalry.js"></script>
-<script src="data/contentment.js"></script>
-<script src="data/mercy.js"></script>
-<script src="data/justice.js"></script>
-<script src="data/altruism.js"></script>
-<script src="data/goodthink.js"></script>
-<script src="data/mastery.js"></script>
-<!-- adab -->
-<script src="data/greeting.js"></script>
-<script src="data/eating.js"></script>
-<script src="data/permission.js"></script>
-<script src="data/dua.js"></script>
-<script src="data/sleep.js"></script>
-<script src="data/hospitality.js"></script>
-<script src="data/bathroom.js"></script>
-<script src="data/masjid.js"></script>
-<script src="data/friendship.js"></script>
-<script src="data/majlis.js"></script>
+<!-- House data files (data/<slug>.js, ~100 KB each) are NOT loaded up-front any more:
+     each one is fetched on demand by loadHouse() (see the loader just after app.js),
+     so the hub's first screen stays light. -->
 <!-- Engine -->
 <script src="assets/activities.js"></script>
 <script src="assets/story-reader.js"></script>
 <script src="assets/render.js"></script>
 <script src="assets/app.js"></script>
+<script>
+/* ── Lazy house data: data/<slug>.js is injected only when that house is opened ──
+   The hub only needs to know that a house HAS data (no "Soon" badge) and its
+   activities.totalPoints (progress %), so each house starts as a tiny stub; the real
+   file replaces it (window.HOUSES.<slug> = {...}) the first time the house opens. */
+(function(){
+  var H = window.HOUSES, PTS = {};       // PTS: slug → totalPoints, only where ≠ 180 (all 34 houses are 180 today)
+  window.HOUSE_INDEX.forEach(function(h){
+    if(!H[h.slug]) H[h.slug] = { __stub:true, activities:{ totalPoints: PTS[h.slug] || 180 } };
+  });
+  function isReal(slug){ var d=H[slug]; return !!d && !d.__stub; }
+  var cache = {};
+  function loadHouse(slug){             // → Promise<house data>; injects the file once, caches the promise
+    if(isReal(slug)) return Promise.resolve(H[slug]);
+    if(cache[slug]) return cache[slug];
+    return cache[slug] = new Promise(function(resolve, reject){
+      var sc = document.createElement('script');
+      sc.src = 'data/' + encodeURIComponent(slug) + '.js';
+      sc.onload  = function(){ if(isReal(slug)) resolve(H[slug]); else { delete cache[slug]; reject(); } };
+      sc.onerror = function(){ delete cache[slug]; sc.remove(); reject(); };   // allow a retry later
+      document.head.appendChild(sc);
+    });
+  }
+  window.loadHouse = loadHouse;
+
+  /* small friendly loading pill — only if the file takes > 300 ms */
+  var pill = null, pillT = 0;
+  function loading(on){
+    clearTimeout(pillT);
+    if(!on){ if(pill) pill.style.display='none'; return; }
+    pillT = setTimeout(function(){
+      if(!pill){
+        pill = document.createElement('div');
+        pill.setAttribute('role','status');
+        pill.style.cssText = 'position:fixed;left:50%;top:45%;transform:translate(-50%,-50%);z-index:9999;background:#fff;color:#3A2A1A;'
+          + 'border-radius:999px;padding:.7rem 1.3rem;font:800 1rem Tajawal,Nunito,sans-serif;box-shadow:0 6px 24px rgba(0,0,0,.18)';
+        pill.innerHTML = '🏡 <span class="lng-ar">جارٍ فتحُ البيت…</span><span class="lng-en">Opening the house…</span>';
+        document.body.appendChild(pill);
+      }
+      pill.style.display = 'block';
+    }, 300);
+  }
+
+  /* Render.house(slug) is what every route calls (hub click, garden, prev/next, #hash deep link,
+     language switch) — render as before once the house's file is in. */
+  var origHouse = Render.house, wanted = null;
+  Render.house = function(slug){
+    wanted = slug;
+    if(isReal(slug) || !window.HOUSE_BY_SLUG[slug]){ loading(false); return origHouse.apply(this, arguments); }
+    var self = this, args = arguments;
+    loading(true);
+    loadHouse(slug).then(function(){
+      if(wanted !== slug) return;            // the child already moved to another house
+      loading(false); origHouse.apply(self, args);
+    }, function(){
+      if(wanted !== slug) return;
+      loading(false);
+      App.toast(document.documentElement.lang==='en' ? 'Could not open the house — please try again' : 'تعذّر فتحُ البيت — حاول مرّةً أخرى');
+      App.closeHouse();
+    });
+  };
+
+  /* The treasure bag lists stickers from every house the child earned in → load those files first. */
+  document.addEventListener('click', function(e){
+    if(!e.target.closest || !e.target.closest('#btnBackpack')) return;
+    var need = window.HOUSE_INDEX.filter(function(h){ return Store.get('stickers:'+h.slug) && !isReal(h.slug); });
+    if(!need.length) return;                 // all loaded → app.js opens the bag as usual
+    e.stopPropagation(); e.preventDefault();
+    Promise.all(need.map(function(h){ return loadHouse(h.slug).catch(function(){}); })).then(function(){ App.openBackpack(); });
+  }, true);
+})();
+</script>
 <script>
 /* ── حيّنا الصغير: final score header · syncs index bar · unlocks 5 Anous activities at ≥75% ── */
 (function(){

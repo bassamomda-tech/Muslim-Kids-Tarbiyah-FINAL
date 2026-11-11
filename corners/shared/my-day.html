@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="dark">
+<title>يومي | My Day</title>
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@500;700;800;900&family=Amiri:wght@700&family=Nunito:wght@600;800;900&display=swap" rel="stylesheet">
+<style>
+  :root{--bg1:#081E36;--bg2:#0E2E4E;--gold:#E8B530;--gold-lt:#F5CC5A;--ink:#FEF5DC;--muted:rgba(254,245,220,.72);--card:rgba(255,255,255,.06);--line:rgba(232,181,48,.28);--ok:#2E9E5B}
+  *{box-sizing:border-box}
+  body{margin:0;font-family:'Tajawal','Nunito',sans-serif;color:var(--ink);min-height:100vh;background:radial-gradient(1000px 560px at 85% -10%,rgba(232,181,48,.16),transparent 60%),radial-gradient(800px 480px at 10% 5%,rgba(46,158,91,.16),transparent 60%),linear-gradient(165deg,var(--bg1),var(--bg2))}
+  html[dir="ltr"] body{font-family:'Nunito','Tajawal',sans-serif}
+  .header{display:flex;align-items:center;justify-content:space-between;padding:.8rem 1rem}
+  .back-btn{background:var(--gold);color:#10243d;border-radius:2rem;padding:.5rem 1.1rem;font-weight:800;text-decoration:none;min-height:44px;display:inline-flex;align-items:center}
+  .lang{display:flex;border:1.5px solid var(--line);border-radius:2rem;overflow:hidden}
+  .lang button{background:transparent;border:none;color:var(--ink);font-weight:800;padding:0 .85rem;min-height:40px;font-size:.85rem;cursor:pointer;font-family:inherit}
+  .lang button.active{background:var(--gold);color:#10243d}
+  .wrap{max-width:760px;margin:0 auto;padding:.3rem 1rem 4rem}
+  /* hero */
+  .hero{display:flex;align-items:center;gap:.9rem;flex-wrap:wrap;background:linear-gradient(150deg,rgba(232,181,48,.18),rgba(255,255,255,.03));border:1.5px solid var(--line);border-radius:1.4rem;padding:1rem 1.1rem}
+  .hero .avi{width:64px;height:64px;border-radius:50%;display:grid;place-items:center;font-size:2.2rem;background:var(--avi,#D4A017);flex:0 0 auto}
+  .hero .who{flex:1;min-width:180px}
+  .hero h1{margin:0;font-size:1.45rem;font-weight:900}
+  .hero .date{margin-top:.15rem;color:var(--muted);font-weight:800;font-size:.95rem}
+  .lvl{display:flex;align-items:center;gap:.6rem;margin-top:.7rem;background:rgba(0,0,0,.18);border-radius:1rem;padding:.5rem .7rem}
+  .lvl .ic{font-size:1.8rem}
+  .lvl .tx{flex:1;min-width:0}
+  .lvl b{display:block;font-size:1rem}
+  .lvl small{display:block;color:var(--muted);font-weight:700;font-size:.85rem}
+  .bar{height:9px;border-radius:9px;background:rgba(255,255,255,.12);overflow:hidden;margin-top:.3rem}
+  .bar i{display:block;height:100%;background:linear-gradient(90deg,#3BB36D,var(--gold-lt));border-radius:9px}
+  /* season */
+  .season{display:flex;gap:.8rem;align-items:center;flex-wrap:wrap;margin-top:1rem;border-radius:1.3rem;padding:.9rem 1rem;background:linear-gradient(135deg,var(--sc,#2E6DA4),rgba(0,0,0,.25));border:1.5px solid rgba(255,255,255,.18)}
+  .season .si{font-size:2.2rem}
+  .season .st{flex:1;min-width:200px}
+  .season b{display:block;font-size:1.15rem;font-weight:900}
+  .season p{margin:.2rem 0 0;line-height:1.7;font-weight:600}
+  .season a{min-height:44px;display:inline-flex;align-items:center;padding:0 1rem;border-radius:999px;background:#fff;color:#10243d;font-weight:900;text-decoration:none}
+  /* age */
+  .age{margin-top:1rem;background:var(--card);border:1.5px dashed var(--gold-lt);border-radius:1.3rem;padding:1rem;text-align:center}
+  .age b{display:block;font-size:1.15rem;margin-bottom:.6rem}
+  .age .opts{display:flex;gap:.6rem;justify-content:center;flex-wrap:wrap}
+  .age button{min-height:64px;min-width:120px;border-radius:1.1rem;border:2px solid var(--line);background:rgba(255,255,255,.08);color:var(--ink);font:900 1.05rem inherit;font-family:inherit;cursor:pointer}
+  .age button span{display:block;font-size:1.6rem}
+  /* progress dots */
+  .prog{display:flex;align-items:center;justify-content:space-between;gap:.6rem;margin:1.2rem 0 .6rem;flex-wrap:wrap}
+  .prog h2{margin:0;font-size:1.2rem;font-weight:900}
+  .dots{display:flex;gap:.35rem}
+  .dots i{width:30px;height:30px;border-radius:50%;display:grid;place-items:center;background:rgba(255,255,255,.1);font-style:normal;font-size:1rem}
+  .dots i.on{background:var(--ok)}
+  /* steps */
+  .step{background:var(--card);border:1.5px solid var(--line);border-radius:1.3rem;margin-bottom:.8rem;overflow:hidden}
+  .step.done{border-color:rgba(46,158,91,.7);background:rgba(46,158,91,.1)}
+  .step-hd{display:flex;align-items:center;gap:.7rem;width:100%;min-height:64px;padding:.7rem 1rem;background:none;border:none;color:inherit;font:inherit;text-align:start;cursor:pointer}
+  .step-hd .n{width:40px;height:40px;border-radius:50%;display:grid;place-items:center;background:rgba(255,255,255,.1);font-size:1.3rem;flex:0 0 auto}
+  .step.done .step-hd .n{background:var(--ok)}
+  .step-hd b{flex:1;font-size:1.08rem;font-weight:900}
+  .step-hd small{color:var(--muted);font-weight:700;font-size:.85rem}
+  .step-bd{padding:0 1rem 1rem;display:none}
+  .step.open .step-bd{display:block}
+  .txt{font-family:'Amiri',serif;font-size:1.5rem;line-height:2.1;font-weight:700;text-align:center;margin:.3rem 0 .5rem;color:#fff}
+  .ref{display:block;text-align:center;color:var(--gold-lt);font-weight:800;font-size:.92rem;margin-top:-.3rem}
+  .mean{margin:.6rem 0 0;line-height:1.8;font-size:1.02rem;font-weight:600}
+  .kid{margin:.6rem 0 0;background:rgba(0,0,0,.18);border-radius:1rem;padding:.7rem .85rem;line-height:1.8;font-weight:700}
+  .kid::before{content:'💡 '}
+  .acts{display:flex;gap:.5rem;flex-wrap:wrap;justify-content:center;margin-top:.8rem}
+  .btn{min-height:48px;padding:0 1.1rem;border-radius:999px;border:1.5px solid var(--line);background:rgba(255,255,255,.08);color:var(--ink);font:900 1rem inherit;font-family:inherit;cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;gap:.35rem}
+  .btn.go{background:linear-gradient(135deg,#3BB36D,#1F7A44);border:none;color:#fff}
+  .btn.gold{background:linear-gradient(135deg,var(--gold-lt),#D4A017);border:none;color:#1A1205}
+  .deed{font-size:1.25rem;font-weight:900;text-align:center;line-height:1.7;margin:.4rem 0}
+  .deed span{display:block;font-size:2.6rem}
+  .hint{color:var(--muted);font-weight:700;font-size:.9rem;text-align:center;margin-top:.4rem}
+  /* finale */
+  .finale{display:none;margin-top:1rem;text-align:center;border-radius:1.4rem;padding:1.2rem;background:linear-gradient(150deg,rgba(46,158,91,.35),rgba(232,181,48,.2));border:1.5px solid rgba(46,158,91,.7)}
+  .finale.show{display:block}
+  .finale .big{font-size:3rem}
+  .finale b{display:block;font-size:1.35rem;margin:.2rem 0}
+  .more{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.7rem;margin-top:1.2rem}
+  .more a{display:flex;align-items:center;gap:.6rem;min-height:64px;padding:.7rem .9rem;border-radius:1.2rem;background:var(--card);border:1.5px solid var(--line);color:var(--ink);text-decoration:none;font-weight:900}
+  .more a span{font-size:1.7rem}
+  .ladder{margin-top:1.2rem;background:var(--card);border:1.5px solid var(--line);border-radius:1.3rem;padding:1rem}
+  .ladder h3{margin:0 0 .6rem;font-size:1.05rem}
+  .rungs{display:flex;gap:.4rem;flex-wrap:wrap;justify-content:center}
+  .rungs div{min-width:84px;text-align:center;padding:.5rem .3rem;border-radius:1rem;background:rgba(255,255,255,.05);opacity:.55;font-weight:800;font-size:.85rem}
+  .rungs div.on{opacity:1;background:rgba(232,181,48,.2);border:1.5px solid var(--gold-lt)}
+  .rungs div span{display:block;font-size:1.6rem}
+  .age-link{background:none;border:none;color:var(--gold-lt);font:800 .9rem inherit;font-family:inherit;text-decoration:underline;cursor:pointer;min-height:44px}
+  /* weekly quest + bedtime + milestone */
+  .quest,.night{margin-top:1rem;border-radius:1.3rem;padding:1rem;border:1.5px solid var(--line)}
+  .quest{background:linear-gradient(150deg,rgba(108,74,182,.28),rgba(255,255,255,.04))}
+  .night{background:linear-gradient(160deg,#1B2A52,#0E1A36);border-color:rgba(159,180,255,.35)}
+  .quest h3,.night h3{margin:0 0 .3rem;font-size:1.12rem;font-weight:900}
+  .quest .why{margin:.4rem 0 .7rem;background:rgba(0,0,0,.18);border-radius:.9rem;padding:.6rem .8rem;line-height:1.8;font-weight:700}
+  .quest .why small{display:block;color:var(--gold-lt);font-weight:800}
+  .qt{display:flex;align-items:center;gap:.6rem;width:100%;min-height:56px;margin:.35rem 0;padding:.5rem .8rem;border-radius:1rem;border:1.5px solid var(--line);background:rgba(255,255,255,.06);color:var(--ink);font:800 1rem inherit;font-family:inherit;text-align:start;cursor:pointer}
+  .qt .bx{flex:0 0 32px;height:32px;border-radius:50%;display:grid;place-items:center;background:rgba(255,255,255,.12);font-size:1rem}
+  .qt.on{border-color:rgba(46,158,91,.8);background:rgba(46,158,91,.18)}
+  .qt.on .bx{background:var(--ok)}
+  .qt.fam{border-style:dashed}
+  .night .dua{font-family:'Amiri',serif;font-size:1.5rem;text-align:center;line-height:2;margin:.4rem 0;color:#fff}
+  .moods{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.5rem;margin:.6rem 0}
+  .moods button{min-height:56px;border-radius:1rem;border:1.5px solid rgba(159,180,255,.35);background:rgba(255,255,255,.06);color:var(--ink);font:800 .95rem inherit;font-family:inherit;cursor:pointer}
+  .moods button.on{background:rgba(245,204,90,.25);border-color:var(--gold-lt)}
+  .ms{position:fixed;inset:0;z-index:5000;background:rgba(4,14,26,.88);display:flex;align-items:center;justify-content:center;padding:16px}
+  .ms .c{width:min(460px,100%);background:#FFF8EA;color:#2A2118;border-radius:24px;padding:22px;text-align:center}
+  .ms .big{font-size:4rem}.ms b{display:block;font-size:1.5rem;color:#7A4A12;margin:.3rem 0}.ms p{font-weight:700;line-height:1.8}
+  @media print{body>*:not(#msPrint){display:none!important}#msPrint{display:block!important}}
+  #msPrint{display:none}
+  /* the youngest: bigger and simpler */
+  html[data-age="young"] .txt{font-size:1.8rem}
+  html[data-age="young"] .mean{display:none}
+  html[data-age="young"] .kid{font-size:1.15rem}
+  @media(max-width:480px){.more{grid-template-columns:minmax(0,1fr)}.txt{font-size:1.35rem}}
+</style>
+<style id="__antiflash">html{background:#081E36;color-scheme:dark}</style>
+</head>
+<body>
+  <div class="header">
+    <a href="../../index.html" class="back-btn" id="backBtn">↩️ <span class="lng-ar">المدينة</span><span class="lng-en">City</span></a>
+    <div class="lang"><button data-lang="en">EN</button><button data-lang="ar" class="active">عربي</button></div>
+  </div>
+  <main class="wrap" id="app"></main>
+
+<script src="mk-system.js"></script>
+<script src="mk-bag.js"></script>
+<script src="mk-journey.js"></script>
+<script src="my-day-data.js"></script>
+<script src="week-quests.js"></script>
+<script src="../activities/scripts/activities-data.js"></script>
+<script>
+(function () {
+  var LS = localStorage, J = MKJourney, D = window.MK_DAY || { ayat: [], hadith: [], dua: [], deeds: [] }, lang = 'ar', open = null;
+  try { lang = LS.getItem('bunyanLang') === 'en' ? 'en' : 'ar'; } catch (e) {}
+  function T(a, e) { return lang === 'en' ? e : a; }
+  function t(o) { return o ? (o[lang] || o.ar || '') : ''; }
+  function N(n) { return lang === 'ar' ? J.arNum(n) : String(n); }
+  function esc(s) { return String(s == null ? '' : s).replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); }
+  function root(p) { return '../../' + p; }
+
+  /* today's picks: the same all day, a new one tomorrow (the youngest get the easy ones) */
+  function doy() { var d = new Date(), s = new Date(d.getFullYear(), 0, 0); return Math.floor((d - s) / 864e5) + d.getFullYear() * 7; }
+  function pick(list, salt) {
+    var L = J.age() === 'young' ? list.filter(function (x) { return x.young; }) : list; if (!L.length) L = list; if (!L.length) return null;
+    return L[(doy() + salt) % L.length];
+  }
+  /* today's game: one activity from Anos' corner, a different section each day */
+  function game() {
+    var S = window.SECTIONS || []; if (!S.length) return null;
+    var s = S[doy() % S.length], ag = J.age(), L = s.activities.filter(function (a) { return ag === 'young' ? (a.d || 1) <= 1 : ag === 'older' ? (a.d || 1) >= 2 : true; });
+    if (!L.length) L = s.activities;
+    var a = L[(doy() * 3) % L.length];
+    return { a: a, name: lang === 'en' ? (a.te || a.t) : a.t, href: '../activities/' + String(a.href || '').replace(/^\.?\//, ''), sec: s };
+  }
+  /* the play step is done when an activity was really FINISHED today (anos-track.js) */
+  function playedToday() {
+    try { var D0 = JSON.parse(LS.getItem('anos_done') || '{}'), st = new Date(); st.setHours(0, 0, 0, 0);
+      return Object.keys(D0).some(function (k) { return (D0[k][1] || 0) >= st.getTime(); }); } catch (e) { return false; }
+  }
+  function say(text) {
+    if (window.MKTTS && MKTTS.speak) return MKTTS.speak(text, lang === 'en' && !/[؀-ۿ]/.test(text) ? 'en' : 'ar').catch(function () { fb(text); });
+    fb(text);
+  }
+  function fb(text) { try { var u = new SpeechSynthesisUtterance(text.replace(/[﴿﴾«»]/g, '')); u.lang = /[؀-ۿ]/.test(text) ? 'ar' : 'en'; speechSynthesis.cancel(); speechSynthesis.speak(u); } catch (e) {} }
+
+  /* a small "⭐ +1" that floats up when a step is done */
+  function star() {
+    var el = document.createElement('div'); el.textContent = T('⭐ نجمة جديدة في رحلتك!', '⭐ A new star on your journey!');
+    el.style.cssText = 'position:fixed;left:50%;bottom:90px;transform:translateX(-50%);z-index:99999;background:#F5CC5A;color:#1A1205;font-weight:900;padding:.7rem 1.2rem;border-radius:999px;box-shadow:0 8px 22px rgba(0,0,0,.35);transition:opacity .4s,transform .4s';
+    document.body.appendChild(el); setTimeout(function () { el.style.opacity = '0'; el.style.transform = 'translate(-50%,-30px)'; }, 1400); setTimeout(function () { el.remove(); }, 1900);
+  }
+  /* 7 / 30 / 100 / 365 full days: a celebration once, with a certificate to print */
+  function milestone(m) {
+    J.milestoneSeen(m);
+    var prof = (window.MK && MK.activeProfile && MK.activeProfile()) || null, nm = prof ? prof.name : T('رفيق الرحلة', 'My travel friend');
+    var days = m <= 10 ? N(m) + ' أيام كاملة' : N(m) + ' يومًا كاملًا';   // Arabic counting: ٣–١٠ أيام، ١١+ يومًا
+    var ic = m >= 365 ? '🏆' : m >= 100 ? '🌟' : m >= 30 ? '🌙' : '⭐';
+    var cert = '<div style="border:10px double #C98A1A;border-radius:12px;padding:24px;text-align:center;font-family:Tajawal,Nunito,sans-serif;color:#2A2118;background:#FFFDF6"><div style="font-weight:800;color:#8A6A2E">' + T('تربية الطفل المسلم · يومي', "Muslim Kids' Tarbiyah · My Day") + '</div><div style="font-size:64px">' + ic + '</div><h2 style="margin:.2rem 0;color:#7A4A12">' + T(days + '!', m + ' full days!') + '</h2><div style="font-size:30px;font-weight:900;color:#1F5A33">' + esc(nm) + '</div><p style="font-weight:700;line-height:1.9">' + T('أكملَ رحلة «يومي» — آيةً وحديثًا ودعاءً ولعبةً وعملًا طيّبًا — ' + (m <= 10 ? N(m) + ' أيام' : N(m) + ' يومًا') + '. «أحبُّ الأعمالِ إلى الله أدومُها وإن قلّ» (متفق عليه).', 'completed the «My Day» journey — an ayah, a hadith, a du\'a, a game and a good deed — on ' + m + ' days. "The most beloved deeds to Allah are the most regular, even if small" (Bukhari & Muslim).') + '</p><div style="color:#8A6A2E;font-weight:800">' + esc(J.hijriText()) + '</div></div>';
+    var o = document.createElement('div'); o.className = 'ms'; o.setAttribute('role', 'dialog'); o.setAttribute('aria-modal', 'true');
+    o.innerHTML = '<div class="c"><div class="big">' + ic + '</div><b>' + T('ما شاء الله! ' + days, 'MashaAllah! ' + m + ' full days') + '</b><p>' + T('«أحبُّ الأعمالِ إلى الله أدومُها وإن قلّ» — والاستمرارُ هو سرّ النخلة الباسقة 🌴', '"The most beloved deeds to Allah are the most regular, even if small" — keeping going is the secret of the tall palm 🌴') + '</p>' +
+      '<button class="btn gold" id="msPrintBtn">🖨️ ' + T('اطبع شهادتي', 'Print my certificate') + '</button> <button class="btn" id="msClose" style="color:#5a4a22;background:#EFE4CF">' + T('رائع!', 'Wonderful!') + '</button></div>';
+    document.body.appendChild(o);
+    o.querySelector('#msClose').onclick = function () { o.remove(); };
+    o.querySelector('#msPrintBtn').onclick = function () { var pa = document.getElementById('msPrint'); if (!pa) { pa = document.createElement('div'); pa.id = 'msPrint'; document.body.appendChild(pa); } pa.innerHTML = cert; window.print(); };
+  }
+  function render() {
+    if (playedToday()) J.mark('play');
+    var prof = (window.MK && MK.activeProfile && MK.activeProfile()) || null, name = prof ? prof.name : T('يا بطل', 'champion');
+    var h = J.hijri(), S = J.season(), lv = J.level(), td = J.today(), done = J.doneCount(td), age = J.age();
+    var A = pick(D.ayat, 0), H = pick(D.hadith, 3), U = pick(D.dua, 7), G = pick(D.deeds, 11), P = game();
+    var hr = new Date().getHours(), hello = hr < 12 ? T('صباحُ الخير', 'Good morning') : (hr < 17 ? T('مساءُ النور', 'Good afternoon') : T('مساءُ الخير', 'Good evening'));
+    var greg = new Date().toLocaleDateString(lang === 'ar' ? 'ar-EG' : 'en-GB', { weekday: 'long', day: 'numeric', month: 'long' });
+
+    var html = '<section class="hero"><span class="avi" style="--avi:' + esc(prof && prof.color || '#D4A017') + '">' + esc(prof && prof.avatar || '🧒') + '</span><div class="who">' +
+      '<h1>' + hello + ' ' + (prof ? T('يا ', '') + esc(name) : name) + '! ☀️</h1><div class="date">' + esc(greg) + (h ? ' · ' + esc(J.hijriText(h)) : '') + '</div>' +
+      '<div class="lvl"><span class="ic">' + lv.ic + '</span><div class="tx"><b>' + T('أنت الآن: ', 'You are now: ') + t(lv.name) + '</b><small>' +
+      (lv.next ? T('بقي ' + N(Math.max(0, lv.next.at - lv.stars)) + ' نجمة لتصبح ' + lv.next.ar + ' ' + lv.next.ic, (lv.next.at - lv.stars) + ' more stars to become a ' + lv.next.en + ' ' + lv.next.ic) : T('وصلتَ إلى أعلى درجة — ما شاء الله!', 'You reached the top — MashaAllah!')) +
+      '</small><div class="bar"><i style="width:' + lv.pct + '%"></i></div></div></div></div></section>';
+
+    if (S) html += '<section class="season" style="--sc:' + S.c + '"><span class="si">' + S.icon + '</span><div class="st"><b>' + t(S.t) + '</b><p>' + esc(t(S.s)) + '</p></div>' +
+      (S.href ? '<a href="' + root(S.href) + '">' + t(S.go) + ' ←</a>' : '') + '</section>';
+
+    if (!age) html += '<section class="age"><b>' + T('كم عمرك؟ نختار لك ما يناسبك 😊', 'How old are you? We will choose what suits you 😊') + '</b><div class="opts">' +
+      J.AGES.map(function (a) { return '<button data-age="' + a.id + '"><span>' + a.ic + '</span>' + t(a) + '</button>'; }).join('') + '</div></section>';
+
+    var dots = J.STEPS.map(function (s) { return '<i class="' + (td[s] ? 'on' : '') + '">' + (td[s] ? '✓' : '') + '</i>'; }).join('');
+    html += '<div class="prog"><h2>' + T('رحلةُ اليوم: ' + N(done) + ' من ٥', "Today's journey: " + done + ' of 5') + '</h2><div class="dots">' + dots + '</div></div>';
+
+    function step(id, ic, ttl, sub, body) {
+      var d = !!td[id], o = open === id;
+      return '<section class="step' + (d ? ' done' : '') + (o ? ' open' : '') + '" data-s="' + id + '"><button class="step-hd" aria-expanded="' + o + '"><span class="n">' + (d ? '✓' : ic) + '</span><b>' + ttl + '</b><small>' + sub + '</small></button><div class="step-bd">' + body + '</div></section>';
+    }
+    function markBtn(id, label) { return td[id] ? '<span class="btn" style="border-color:rgba(46,158,91,.7)">✅ ' + T('تمّ — أحسنت!', 'Done — well done!') + '</span>' : '<button class="btn go" data-mark="' + id + '">' + label + '</button>'; }
+
+    if (A) html += step('ayah', '📖', T('آيةُ اليوم', "Today's ayah"), T('استمع واقرأ', 'Listen & read'),
+      '<div class="txt">' + esc(A.ar) + '</div><span class="ref">' + esc(t(A.ref)) + '</span>' + (lang === 'en' ? '<p class="mean">' + esc(A.en) + '</p>' : '') + '<div class="kid">' + esc(t(A.kid)) + '</div>' +
+      '<div class="acts"><button class="btn" data-say="ayah">🔊 ' + T('استمع للشيخ الحُصري', 'Listen (Sheikh al-Husary)') + '</button>' + markBtn('ayah', T('📖 قرأتُها', '📖 I read it')) + '</div>' +
+      '<div class="hint"><a href="../quran-hifz/index.html" style="color:var(--gold-lt);font-weight:800">🌱 ' + T('احفظ جزء عمّ مع الشيخ: استمع وكرّر في «حُفّاظ القرآن» ←', "Memorise Juz 'Amma with the Sheikh: listen & repeat in «Quran Huffaz» →") + '</a></div>');
+    if (H) html += step('hadith', '🌿', T('حديثُ اليوم', "Today's hadith"), T('من كلام النبي ﷺ', 'Words of the Prophet ﷺ'),
+      '<div class="txt" style="font-size:1.3rem">' + esc(H.ar) + '</div><span class="ref">' + esc(t(H.src)) + '</span>' + (lang === 'en' ? '<p class="mean">' + esc(H.en) + '</p>' : '') + '<div class="kid">' + esc(t(H.kid)) + '</div>' +
+      '<div class="acts"><button class="btn" data-say="hadith">🔊 ' + T('استمع', 'Listen') + '</button>' + markBtn('hadith', T('🌿 فهمتُه', '🌿 I understood it')) + '</div>');
+    if (U) html += step('dua', '🤲', T('دعاءُ اليوم', "Today's du'a"), esc(t(U.when)),
+      '<div class="txt" style="font-size:1.35rem">' + esc(U.ar) + '</div><span class="ref">' + esc(t(U.when)) + (U.src ? ' · ' + esc(t(U.src)) : '') + '</span>' + (lang === 'en' ? '<p class="mean">' + esc(U.en) + '</p>' : '') +
+      '<div class="acts"><button class="btn" data-say="dua">🔊 ' + T('استمع', 'Listen') + '</button>' + markBtn('dua', T('🤲 قلتُه', '🤲 I said it')) + '</div>');
+    if (P) html += step('play', '🎮', T('لعبةُ اليوم', "Today's game"), esc(P.name),
+      '<div class="deed"><span>🎮</span>' + esc(P.name) + '</div><div class="hint">' + T('أنهِ اللعبة لتكتمل هذه الخطوة — تُحسب أيّ لعبة تُنهيها اليوم.', 'Finish the game to complete this step — any game you finish today counts.') + '</div>' +
+      '<div class="acts">' + (td.play ? markBtn('play', '') : '<a class="btn go" href="' + esc(P.href) + '">▶️ ' + T('العب الآن', 'Play now') + '</a>') + '<a class="btn" href="../activities/dashboard.html#all">🧩 ' + T('لعبة أخرى', 'Another game') + '</a></div>');
+    if (G) html += step('deed', '💚', T('عملٌ طيّب اليوم', "Today's good deed"), T('في البيت أو المدرسة', 'At home or school'),
+      '<div class="deed"><span>' + esc(G.icon || '💚') + '</span>' + esc(t(G)) + '</div><div class="hint">' + T('افعلها في يومك الحقيقي، ثم عُد واضغط. الله يرى عملك الطيّب 💚', 'Do it in your real day, then come back and press. Allah sees your good deeds 💚') + '</div>' +
+      '<div class="acts">' + markBtn('deed', T('💚 فعلتُها', '💚 I did it')) + '</div>');
+
+    html += '<section class="finale' + (J.full(td) ? ' show' : '') + '"><div class="big">🌟</div><b>' + T('يومٌ كامل! بارك الله فيك', 'A full day! May Allah bless you') + '</b><div>' +
+      T('أيّامٌ متتالية: ' + N(J.streak()) + ' 🔥 · أيّامٌ كاملة: ' + N(J.fullDays()), 'Days in a row: ' + J.streak() + ' 🔥 · Full days: ' + J.fullDays()) + '</div></section>';
+
+    /* ── «مهمّة الأسبوع» ── */
+    var Qw = J.quest(), qd = J.questDone();
+    if (Qw) {
+      var qn = ['t0', 't1', 't2'].filter(function (k) { return qd[k]; }).length;
+      html += '<section class="quest"><h3>' + Qw.icon + ' ' + T('مهمّةُ الأسبوع: ', "This week's quest: ") + esc(t(Qw.title)) + ' — ' + N(qn) + '/' + N(3) + '</h3>' +
+        '<div class="why">' + esc(t(Qw.why)) + '<small>' + esc(t(Qw.why.src)) + '</small></div>' +
+        Qw.tasks.map(function (k, i) { var on = !!qd['t' + i]; return '<button class="qt' + (on ? ' on' : '') + '" data-q="t' + i + '"><span class="bx">' + (on ? '✓' : k.icon) + '</span>' + esc(t(k)) + '</button>'; }).join('') +
+        '<button class="qt fam' + (qd.fam ? ' on' : '') + '" data-q="fam"><span class="bx">' + (qd.fam ? '✓' : '🏠') + '</span>' + T('تحدّي العائلة: ', 'Family challenge: ') + esc(t(Qw.family)) + '</button>' +
+        (qn === 3 ? '<p style="text-align:center;font-weight:900;margin:.5rem 0 0">🏅 ' + T('أنجزتَ مهمّة الأسبوع — +٣ نجوم!', 'Quest complete — +3 stars!') + '</p>' : '') + '</section>';
+    }
+    /* ── «قبل النوم» (evening only) ── */
+    var hrN = new Date().getHours();
+    if (hrN >= 17 || hrN < 4) {
+      var nt = J.night(), MOODS = [['🤲', 'صلّيتُ وذكرتُ الله', 'I prayed and remembered Allah'], ['💚', 'ساعدتُ أحدًا', 'I helped someone'], ['📖', 'تعلّمتُ شيئًا جديدًا', 'I learned something new'], ['😊', 'قلتُ كلمةً طيّبة', 'I said a kind word']];
+      html += '<section class="night"><h3>🌙 ' + T('قبل النوم', 'Before sleep') + '</h3><p style="margin:.2rem 0;font-weight:700;line-height:1.7">' + T('ما أجملُ خيرٍ فعلتَه اليوم؟ احكِه لأحد والديك، واشكر الله عليه.', 'What was the best good thing you did today? Tell a parent about it and thank Allah.') + '</p>' +
+        '<div class="moods">' + MOODS.map(function (m, i) { return '<button data-night="' + i + '" class="' + (nt === i ? 'on' : '') + '">' + m[0] + ' ' + (lang === 'en' ? m[2] : m[1]) + '</button>'; }).join('') + '</div>' +
+        '<div class="dua">بِاسْمِكَ اللَّهُمَّ أَمُوتُ وَأَحْيَا</div><p style="text-align:center;margin:0;color:var(--muted);font-weight:700">' + T('دعاءُ النوم — رواه البخاري', 'The du\'a before sleep — al-Bukhari') + (lang === 'en' ? '<br>"In Your name, O Allah, I die and I live."' : '') + '</p>' +
+        '<div class="acts"><button class="btn" id="sayNight">🔊 ' + T('استمع', 'Listen') + '</button></div>' +
+        (nt != null ? '<p style="text-align:center;font-weight:900;margin:.6rem 0 0">' + T('🌙 تصبح على خير — نجمةٌ في رحلتك ⭐', '🌙 Good night — a star on your journey ⭐') + '</p>' : '') + '</section>';
+    }
+
+    html += '<div class="more"><a href="journey.html"><span>🧭</span>' + T('رحلتي مع أنوس', 'My journey with Anos') + '</a><a href="garden.html"><span>🌴</span>' + T('بستانُ الذِّكر — ' + N(J.palms()) + ' نخلة', 'Dhikr garden — ' + J.palms() + ' palms') + '</a>' +
+      '<a href="bag.html"><span>🎒</span>' + T('حقيبتي ونجومي', 'My bag & stars') + '</a></div>';
+
+    /* a level reached that the journey page has not celebrated yet → a new chapter of Anos's story is waiting */
+    var bst = {}; try { bst = JSON.parse(LS.getItem('journey_best') || '{}') || {}; } catch (e) {}
+    if (lv.i > (bst.i || 0)) html += '<a class="season" style="--sc:#C98A1A;text-decoration:none;color:inherit" href="journey.html"><span class="si">🎉</span><div class="st"><b>' + T('درجةٌ جديدة: ' + lv.name.ar + ' ' + lv.ic, 'A new level: ' + lv.name.en + ' ' + lv.ic) + '</b><p>' + T('فصلٌ جديد من رحلة أنوس ينتظرك!', "A new chapter of Anos's journey is waiting for you!") + '</p></div><span class="btn gold">📖 ' + T('اقرأه', 'Read it') + '</span></a>';
+    html += '<section class="ladder"><h3>🧭 ' + T('درجاتُ رحلتي', 'My journey levels') + ' — <a href="journey.html" style="color:var(--gold-lt)">' + T('خريطة الرحلة وجواز السفر ←', 'Journey map & passport →') + '</a></h3><div class="rungs">' +
+      J.LEVELS.map(function (L, i) { return '<div class="' + (i <= lv.i ? 'on' : '') + '"><span>' + L.ic + '</span>' + t(L) + '</div>'; }).join('') + '</div>' +
+      (age ? '<div style="text-align:center"><button class="age-link" id="ageAgain">' + T('العمر: ' + t(J.AGES.filter(function (a) { return a.id === age; })[0]) + ' — تغيير', 'Age: ' + t(J.AGES.filter(function (a) { return a.id === age; })[0]) + ' — change') + '</button></div>' : '') + '</section>';
+
+    var app = document.getElementById('app'); app.innerHTML = html;
+    app.querySelectorAll('.step-hd').forEach(function (b) { b.onclick = function () { var s = b.parentNode.getAttribute('data-s'); open = open === s ? null : s; render(); var el = document.querySelector('[data-s="' + s + '"]'); if (el && open) el.scrollIntoView({ block: 'nearest', behavior: 'smooth' }); }; });
+    app.querySelectorAll('[data-mark]').forEach(function (b) { b.onclick = function () {
+      var s = b.getAttribute('data-mark'); if (J.mark(s)) star();
+      var i = J.STEPS.indexOf(s), nx = J.STEPS.slice(i + 1).concat(J.STEPS.slice(0, i)).filter(function (x) { return !J.today()[x]; })[0];
+      open = nx || null; render(); if (J.full()) { var f = document.querySelector('.finale'); if (f) f.scrollIntoView({ behavior: 'smooth', block: 'center' }); } }; });
+    app.querySelectorAll('[data-say]').forEach(function (b) { b.onclick = function () { var k = b.getAttribute('data-say'), it = k === 'ayah' ? A : k === 'hadith' ? H : U; say(lang === 'en' && k !== 'ayah' ? it.en : it.ar); }; });
+    app.querySelectorAll('.age button').forEach(function (b) { b.onclick = function () { J.setAge(b.getAttribute('data-age')); render(); }; });
+    app.querySelectorAll('[data-q]').forEach(function (b) { b.onclick = function () { if (J.questTick(b.getAttribute('data-q'))) star(); render(); }; });
+    app.querySelectorAll('[data-night]').forEach(function (b) { b.onclick = function () { var first = J.night() == null; J.setNight(+b.getAttribute('data-night')); if (first) star(); render(); }; });
+    var sn = document.getElementById('sayNight'); if (sn) sn.onclick = function () { say('بِاسْمِكَ اللَّهُمَّ أَمُوتُ وَأَحْيَا'); };
+    var ms = J.milestoneDue(); if (ms) milestone(ms);
+    var ag = document.getElementById('ageAgain'); if (ag) ag.onclick = function () { try { LS.removeItem('journey_age'); } catch (e) {} document.documentElement.removeAttribute('data-age'); render(); window.scrollTo({ top: 0, behavior: 'smooth' }); };
+  }
+  function texts() {
+    document.documentElement.lang = lang; document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
+    document.querySelectorAll('.lng-ar').forEach(function (e) { e.style.display = lang === 'ar' ? '' : 'none'; });
+    document.querySelectorAll('.lng-en').forEach(function (e) { e.style.display = lang === 'en' ? '' : 'none'; });
+    document.querySelectorAll('.lang button').forEach(function (b) { b.classList.toggle('active', b.dataset.lang === lang); });
+    document.title = T('يومي', 'My Day'); render();
+  }
+  document.querySelectorAll('.lang button').forEach(function (b) { b.onclick = function () { lang = b.dataset.lang; try { LS.setItem('bunyanLang', lang); } catch (e) {} texts(); }; });
+  window.setLang = function (l) { lang = l; try { LS.setItem('bunyanLang', l); } catch (e) {} texts(); };
+  document.addEventListener('visibilitychange', function () { if (document.visibilityState === 'visible') render(); });   // back from a game → the play step ticks itself
+  /* first step open for a new day */
+  (function () { var td = J.today(); open = J.STEPS.filter(function (s) { return !td[s]; })[0] || null; })();
+  texts();
+})();
+</script>
+<script src="mk-citynav.js"></script>
+<script src="mk-topbar.js"></script>
+</body>
+</html>

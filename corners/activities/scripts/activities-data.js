@@ -44,6 +44,7 @@ const SECTIONS = [
       { n: 19, t: "الفوارق الخمسة", te: "Spot the Differences",      m: "Compare & Detect",    g: "diff",        d: 2, status: "normal", href: "activities/spot-differences.html" },
       { n: 20, t: "اختبار المعلومات السريع", te: "Quick Knowledge Quiz", m: "Timer-based Quiz",   g: "timedquiz",   d: 3, status: "normal", href: "activities/timed-quiz.html" },
       { n: 102, t: "أصوات الحروف", te: "Letter Sounds",        m: "Listen & Pick",       g: "speaker",     d: 1, status: "normal", href: "activities/letter-sounds.html" },
+      { n: 104, t: "أكتبُ حروفي", te: "I Write My Letters",     m: "Finger Tracing",      g: "speaker",     d: 1, status: "normal", href: "activities/letter-trace.html" },
     ],
   },
   {
