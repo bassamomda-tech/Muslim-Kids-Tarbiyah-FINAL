@@ -513,7 +513,10 @@ footer b{color:rgba(212,160,23,.55);font-weight:700}
 <script>
 /* two views of the site: the city (parent view, this page) and «عالم الجزر» (the game view).
    A device set to the game view opens the islands first; ?city=1 always shows the city. */
-try{ if(localStorage.getItem('mk:view')==='game' && !/[?&]city=1/.test(location.search)) location.replace('corners/shared/islands.html'); }catch(e){}
+/* game view opens first only when the site is opened fresh; coming back to this page from inside the site
+   (the home button, the browser's back button) always shows the city, so nobody is ever stuck in the islands */
+try{ var __in = document.referrer && document.referrer.indexOf(location.origin + '/') === 0, __nav = (performance.getEntriesByType && performance.getEntriesByType('navigation')[0] || {}).type;
+  if(localStorage.getItem('mk:view')==='game' && !__in && __nav !== 'back_forward' && !/[?&]city=1/.test(location.search)) location.replace('corners/shared/islands.html'); }catch(e){}
 </script>
 <style id="__antiflash">html{background:#0A2540;color-scheme:dark}</style>
 <script>/* calm mode 🍃 (mk:calm) — set from the Treasures pages; stops the ticker and all motion */
