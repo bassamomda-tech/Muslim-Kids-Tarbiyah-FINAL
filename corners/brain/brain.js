@@ -37,6 +37,7 @@
     { id: 'chess', icon: '♟️', c: '#6C4AB6', ar: 'الشطرنج', en: 'Chess', skAr: 'التخطيط والصبر', skEn: 'Strategy and patience' },
     { id: 'checkers', icon: '🔴', c: '#8A3B3B', ar: 'الداما', en: 'Checkers', skAr: 'الحساب والتخطيط', skEn: 'Counting moves and planning' },
     { id: 'blocks', icon: '🧱', c: '#C0762A', ar: 'البنّاء الصغير', en: 'Little Builder', skAr: 'التخيّل والبناء', skEn: 'Imagination and building' },
+    { id: 'bricks', icon: '🏗️', c: '#B5562A', ar: 'مكعّبات البناء 3D', en: 'Brick Builder 3D', skAr: 'ابنِ الكعبة والمساجد والحيوانات', skEn: 'Build the Kaaba, mosques and animals' },
     { id: 'tangram', icon: '🔷', c: '#1F7A6B', ar: 'لغز الأشكال', en: 'Tangram', skAr: 'الأشكال الهندسيّة', skEn: 'Shapes and geometry' },
     { id: 'slide', icon: '🔢', c: '#2E8B57', ar: 'لغز الترتيب', en: 'Sliding Puzzle', skAr: 'الترتيب وحلّ المشكلات', skEn: 'Ordering and problem solving' },
     { id: 'memory-seq', icon: '🎨', c: '#A8456E', ar: 'تذكَّر التتابع', en: 'Remember the Sequence', skAr: 'الذاكرة والتركيز', skEn: 'Memory and focus' },
