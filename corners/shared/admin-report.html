@@ -95,6 +95,7 @@
     </div>
     <div style="display:flex;align-items:center;gap:12px">
       <div class="who" id="who"></div>
+      <a class="btn-ghost" id="campBtn" href="../../camp/" style="display:none;text-decoration:none;border-radius:12px;font-size:14px;padding:11px 18px;white-space:nowrap;background:linear-gradient(135deg,#E8B530,#c79518);color:#10243d;border-color:transparent;font-weight:700">⛺ معسكر القادة</a>
       <button class="btn-ghost" id="refreshBtn" style="display:none" onclick="loadReport()">↻ تحديث</button>
       <button class="btn-ghost" id="signoutBtn" style="display:none" onclick="doSignOut()">خروج</button>
     </div>
@@ -146,14 +147,14 @@ try {
 
 function setStateFromUser(user){
   if(!user){ show('gate',true); show('loading',false); show('report',false);
-    show('refreshBtn',false); show('signoutBtn',false); $('who').textContent=''; return; }
+    show('refreshBtn',false); show('signoutBtn',false); show('campBtn',false); $('who').textContent=''; return; }
   $('who').innerHTML = 'مسجّل باسم <b>'+esc(user.email)+'</b>';
   if((user.email||'').toLowerCase() !== ADMIN_EMAIL){
-    show('gate',true); show('signoutBtn',true);
+    show('gate',true); show('signoutBtn',true); show('campBtn',false);
     $('gateErr').textContent = 'هذا الحساب ليس حساب المشرف. سجّل الخروج وادخل بحساب الإدارة.';
     return;
   }
-  show('gate',false); show('signoutBtn',true);
+  show('gate',false); show('signoutBtn',true); show('campBtn',true);
   loadReport();
 }
 
