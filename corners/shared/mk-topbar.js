@@ -239,3 +239,24 @@
   window.addEventListener('mk-earn', function () { finish(); });
   window.addEventListener('pagehide', function () { if (done) return; try { var g = flag(); if (g && g.k === f.k) { g.s = acc; SS.setItem('mk:station', JSON.stringify(g)); } } catch (e) {} });
 })();
+
+/* ── Game sounds on phones ─────────────────────────────────────────────────────────────────────────
+   The games make their sounds with Web Audio. On iPhone that audio (1) starts "suspended" until it is
+   resumed inside a tap, and (2) is silenced by the silent switch. Here every AudioContext the page
+   creates is resumed as soon as the child taps, and the page asks to play as media (like a video),
+   so the sounds work in silent mode too. Each game keeps its own mute button; the «Aa» panel can
+   still turn sound effects off. */
+(function () {
+  if (window.__mkAudioFix) return; window.__mkAudioFix = 1;
+  try { if (navigator.audioSession) navigator.audioSession.type = 'playback'; } catch (e) {}
+  var AC = window.AudioContext || window.webkitAudioContext; if (!AC) return;
+  var all = [];
+  function wake() { for (var i = 0; i < all.length; i++) { try { if (all[i].state !== 'running' && all[i].state !== 'closed') all[i].resume(); } catch (e) {} } }
+  try {
+    var MK = function (o) { var c = o ? new AC(o) : new AC(); all.push(c); try { if (c.state !== 'running') c.resume(); } catch (e) {} return c; };
+    MK.prototype = AC.prototype;
+    window.AudioContext = MK; if (window.webkitAudioContext) window.webkitAudioContext = MK;
+  } catch (e) {}
+  ['pointerdown', 'touchend', 'click', 'keydown'].forEach(function (ev) { window.addEventListener(ev, wake, { capture: true, passive: true }); });
+  document.addEventListener('visibilitychange', function () { if (!document.hidden) wake(); });
+})();

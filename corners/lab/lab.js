@@ -98,6 +98,8 @@
       document.title = T(def.title) + ' | ' + T({ ar: 'مختبر الاكتشاف', en: 'Discovery Lab' });
       host.innerHTML = '';
       var head = h('div', 'lab-head', '<span class="ic">' + (def.icon || meta.ic || '🧪') + '</span><div class="tx"><h1>' + esc(T(def.title)) + '</h1><p>' + esc(T(def.sub || meta.d)) + '</p></div>');
+      var M3 = { digestion: 'body&s=dig', heart: 'body&s=circ', breathing: 'body&s=resp', 'day-night': 'globe', atoms: 'atom', states: 'states', plant: 'plant', 'water-cycle': 'water', fractions: 'solids', times: 'solids' }[def.id];
+      if (M3) head.insertAdjacentHTML('beforeend', '<a class="btn gold" href="3d.html?m=' + M3 + '" style="margin-inline-start:auto;min-height:48px;white-space:nowrap">🧊 ' + esc(T({ ar: 'شاهدها 3D', en: 'See it in 3D' })) + '</a>');
       var tabs = h('div', 'lab-tabs'); tabs.setAttribute('role', 'tablist');
       [['guided', '🧭', { ar: 'موجَّه', en: 'Guided' }], ['explore', '🔍', { ar: 'استكشاف', en: 'Explore' }], ['challenge', '🎯', { ar: 'تحدٍّ', en: 'Challenge' }]].forEach(function (m) {
         var st = m[0] === 'explore' ? 0 : earnedStars(def.id, m[0]);

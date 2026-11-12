@@ -1,0 +1,10 @@
+earth-day.webp   — NASA Visible Earth "Blue Marble" (public domain), via the three-globe package examples (MIT).
+earth-night.webp — NASA Earth Observatory "Black Marble / Earth at Night" (public domain), via the three-globe package examples (MIT).
+moon.webp        — NASA Lunar Reconnaissance Orbiter surface map (public domain), via the globe.gl package examples (MIT).
+All three were resized and converted to WebP for this site.
+
+models/body.glb — Anatomy: BodyParts3D © The Database Center for Life Science (CC BY 4.0),
+  modified by open-anatomy-3d 0.1.0 (https://github.com/MervinR07/open-anatomy-3d, CC BY 4.0).
+  Further changed for this site: skin, all muscles and the reproductive organs were removed;
+  only bones, internal organs, vessels and nerves are kept. Not for diagnosis.
+vendor/ — three.js r160 (MIT): three.module.min.js, loaders/GLTFLoader.js, libs/meshopt_decoder.module.js, utils/BufferGeometryUtils.js

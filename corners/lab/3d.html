@@ -15,7 +15,7 @@
   .d3-wrap h1{margin:.2rem 0 .1rem;font-size:1.5rem;color:#FFE27A;text-align:center}
   .d3-lead{text-align:center;color:#BFD6EA;font-weight:700;line-height:1.7;margin:0 0 .7rem}
   .d3-tabs{display:grid;grid-template-columns:repeat(2,1fr);gap:.5rem;margin-bottom:.7rem}
-  @media(min-width:700px){.d3-tabs{grid-template-columns:repeat(4,1fr)}}
+  @media(min-width:700px){.d3-tabs{grid-template-columns:repeat(3,1fr)}}
   .d3-tabs button{min-height:56px;border-radius:1rem;border:2px solid rgba(255,255,255,.22);background:rgba(255,255,255,.06);color:#fff;font:900 .98rem 'Tajawal',sans-serif;cursor:pointer;padding:.3rem .5rem}
   .d3-tabs button[aria-pressed="true"]{background:#E8B530;color:#10243d;border-color:#E8B530}
   .d3-stage{position:relative;border-radius:1.3rem;overflow:hidden;border:2px solid rgba(255,255,255,.18);background:radial-gradient(circle at 50% 40%,#16365A,#050F1F);aspect-ratio:1/1;touch-action:none}
@@ -48,6 +48,7 @@
     <div class="d3-ctl" id="ctl"></div>
     <div class="d3-card" id="info" aria-live="polite"></div>
     <div class="d3-card" id="quiz"></div>
+    <p id="credit" dir="ltr" style="font-size:.72rem;color:#8FA9C2;text-align:center;margin:.8rem 0 0;line-height:1.6"></p>
   </main>
   <noscript><p style="text-align:center;padding:2rem">هذه الصفحة تحتاج إلى JavaScript. · This page needs JavaScript.</p></noscript>
 
@@ -55,6 +56,7 @@
 <script src="../shared/mk-system.js"></script>
 <script src="../shared/mk-bag.js"></script>
 <script src="../shared/mk-journey.js"></script>
+<script type="importmap">{ "imports": { "three": "./vendor/three.module.min.js" } }</script>
 <script type="module">
 /* «المختبر ثلاثيّ الأبعاد» — real 3D models (three.js r160, MIT, bundled in vendor/ — no CDN).
    The child turns the model with a finger (drag), zooms with two fingers or the wheel, and
@@ -62,6 +64,9 @@
    crystal · the solid shapes. Each has a short explanation and one question (→ 2 stars).
    Motion stops in calm / focus mode and when the tab is hidden. No network calls. */
 import * as THREE from './vendor/three.module.min.js';
+import { GLTFLoader } from './vendor/loaders/GLTFLoader.js';
+import { MeshoptDecoder } from './vendor/libs/meshopt_decoder.module.js';
+const BODY = {};   /* the anatomy model is downloaded once, then reused */
 
 const LS = localStorage; let lang = 'ar'; try { lang = LS.getItem('bunyanLang') === 'en' ? 'en' : 'ar'; } catch (e) {}
 const T = (a, e) => lang === 'en' ? e : a;
@@ -81,13 +86,14 @@ const key = new THREE.DirectionalLight(0xffffff, 1.5); key.position.set(4, 6, 8)
 const view = { yaw: 0.5, pitch: 0.35, dist: 9, min: 4, max: 22 };
 const ptr = new Map(); let pinch = 0, touched = 0, play = true, speed = 1, cur = null, labels = [];
 function applyView() { pivot.rotation.set(view.pitch, view.yaw, 0); camera.position.set(0, 0, view.dist); camera.lookAt(0, 0, 0); }
-canvas.addEventListener('pointerdown', e => { canvas.setPointerCapture(e.pointerId); ptr.set(e.pointerId, [e.clientX, e.clientY]); touched = performance.now(); canvas.style.cursor = 'grabbing'; });
+let downAt = null;
+canvas.addEventListener('pointerdown', e => { downAt = [e.clientX, e.clientY, performance.now()]; canvas.setPointerCapture(e.pointerId); ptr.set(e.pointerId, [e.clientX, e.clientY]); touched = performance.now(); canvas.style.cursor = 'grabbing'; });
 canvas.addEventListener('pointermove', e => {
   if (!ptr.has(e.pointerId)) return; const p = ptr.get(e.pointerId), dx = e.clientX - p[0], dy = e.clientY - p[1]; ptr.set(e.pointerId, [e.clientX, e.clientY]); touched = performance.now();
   if (ptr.size === 1) { view.yaw += dx * 0.01; view.pitch = Math.max(-1.3, Math.min(1.3, view.pitch + dy * 0.01)); }
   else if (ptr.size === 2) { const a = [...ptr.values()], d = Math.hypot(a[0][0] - a[1][0], a[0][1] - a[1][1]); if (pinch) view.dist = Math.max(view.min, Math.min(view.max, view.dist * pinch / d)); pinch = d; }
 });
-const up = e => { ptr.delete(e.pointerId); pinch = 0; canvas.style.cursor = 'grab'; };
+const up = e => { if (downAt && e.type === 'pointerup' && ptr.size === 1 && Math.hypot(e.clientX - downAt[0], e.clientY - downAt[1]) < 8 && performance.now() - downAt[2] < 500 && cur && cur.tap) cur.tap(e.clientX, e.clientY); downAt = null; ptr.delete(e.pointerId); pinch = 0; canvas.style.cursor = 'grab'; };
 canvas.addEventListener('pointerup', up); canvas.addEventListener('pointercancel', up);
 canvas.addEventListener('wheel', e => { e.preventDefault(); view.dist = Math.max(view.min, Math.min(view.max, view.dist * (e.deltaY > 0 ? 1.1 : 0.9))); touched = performance.now(); }, { passive: false });
 canvas.tabIndex = 0;
@@ -112,6 +118,319 @@ function clearModel() { while (pivot.children.length) pivot.remove(pivot.childre
 
 /* ── the four models ── */
 const MODELS = [
+  { id: 'globe', ic: '🌍', n: ['الليل والنهار', 'Day and night'], dist: 8.6,
+    opts: [['fajr', '🌅 الفجر', '🌅 Dawn'], ['dhuhr', '☀️ الظهر', '☀️ Noon'], ['asr', '🌤️ العصر', '🌤️ Afternoon'], ['maghrib', '🌇 المغرب', '🌇 Sunset'], ['night', '🌙 الليل', '🌙 Night']],
+    info: ['الشمس تضيء نصف الأرض فقط. والأرض تدور حول نفسها مرّةً كلّ يومٍ تقريبًا، فتنتقل مدينتنا من النصف المضيء (النهار) إلى النصف المظلم (الليل). اضغط على الأوقات لترى أين تكون المدينة المنوّرة.', 'The Sun lights only half of the Earth. The Earth spins about once a day, so our city moves from the lit half (day) to the dark half (night). Press the times to see where al-Madinah is.'],
+    q: ['لماذا يأتي الليل؟', 'Why does night come?'], o: [['لأنّ الأرض تدور فيصير مكاننا في الجهة البعيدة عن الشمس', 'Because the Earth spins and our place turns away from the Sun'], ['لأنّ الشمس تنطفئ', 'Because the Sun switches off'], ['لأنّ القمر يغطّي الشمس كلّ ليلة', 'Because the Moon covers the Sun every night']],
+    T: { fajr: 5.6, dhuhr: 12.3, asr: 15.6, maghrib: 18.2, night: 22 },
+    build(opt) {
+      key.visible = false;
+      const sunDir = new THREE.Vector3(-1, 0, 0.25).normalize();
+      const sun = new THREE.Mesh(new THREE.SphereGeometry(0.55, 32, 20), new THREE.MeshBasicMaterial({ color: 0xFFC93C })); sun.position.copy(sunDir).multiplyScalar(3.5); pivot.add(sun);
+      const glow = new THREE.Mesh(new THREE.SphereGeometry(0.85, 32, 20), new THREE.MeshBasicMaterial({ color: 0xFFE27A, transparent: true, opacity: 0.25, blending: THREE.AdditiveBlending, depthWrite: false })); glow.position.copy(sun.position); pivot.add(glow);
+      label(sun, 'الشمس', 'Sun');
+      const tl = new THREE.TextureLoader(), day = tl.load('img/earth-day.webp'), night = tl.load('img/earth-night.webp');
+      const sunW = sunDir.clone(), em = new THREE.ShaderMaterial({ uniforms: { dayT: { value: day }, nightT: { value: night }, sun: { value: sunW } },
+        vertexShader: 'varying vec2 vUv; varying vec3 vN; void main(){ vUv = uv; vN = normalize(mat3(modelMatrix) * normal); gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0); }',
+        fragmentShader: 'uniform sampler2D dayT; uniform sampler2D nightT; uniform vec3 sun; varying vec2 vUv; varying vec3 vN; void main(){ float d = dot(normalize(vN), sun); float m = smoothstep(-0.12, 0.12, d); vec3 dc = texture2D(dayT, vUv).rgb * (0.35 + 0.9 * max(d, 0.0)); vec3 nc = texture2D(nightT, vUv).rgb * 1.3 + vec3(0.01, 0.02, 0.05); gl_FragColor = vec4(mix(nc, dc, m), 1.0); }' });
+      const tilt = new THREE.Group(); tilt.rotation.z = 0.41; pivot.add(tilt);
+      const earth = new THREE.Mesh(new THREE.SphereGeometry(1.8, 96, 64), em); tilt.add(earth);
+      const atm = new THREE.Mesh(new THREE.SphereGeometry(1.88, 64, 40), new THREE.MeshBasicMaterial({ color: 0x6FB7FF, transparent: true, opacity: 0.12, blending: THREE.AdditiveBlending, depthWrite: false })); tilt.add(atm);
+      const axis = new THREE.Mesh(new THREE.CylinderGeometry(0.015, 0.015, 4.6, 8), new THREE.MeshBasicMaterial({ color: 0xffffff, transparent: true, opacity: 0.5 })); tilt.add(axis);
+      /* al-Madinah: lat 24.47 N, lon 39.61 E — a golden pin standing on the globe */
+      const lat = 24.47, lon = 39.61, u = (lon + 180) / 360, v = (90 - lat) / 180;
+      const nrm = new THREE.Vector3(-Math.cos(2 * Math.PI * u) * Math.sin(Math.PI * v), Math.cos(Math.PI * v), Math.sin(2 * Math.PI * u) * Math.sin(Math.PI * v));
+      const pin = new THREE.Group(); pin.position.copy(nrm).multiplyScalar(1.8); pin.quaternion.setFromUnitVectors(new THREE.Vector3(0, 1, 0), nrm); earth.add(pin);
+      const stem = new THREE.Mesh(new THREE.CylinderGeometry(0.02, 0.02, 0.35, 8), new THREE.MeshBasicMaterial({ color: 0xffffff })); stem.position.y = 0.17; pin.add(stem);
+      const head = new THREE.Mesh(new THREE.SphereGeometry(0.08, 16, 12), new THREE.MeshBasicMaterial({ color: 0xFFD23F })); head.position.y = 0.36; pin.add(head);
+      label(head, 'المدينة المنوّرة', 'al-Madinah');
+      const w = new THREE.Vector3(), solar = () => { head.getWorldPosition(w); pivot.worldToLocal(w); w.y = 0; const a = Math.atan2(w.z, w.x), b = Math.atan2(sunDir.z, sunDir.x); let d = b - a; while (d < 0) d += Math.PI * 2; return (12 + d * 12 / Math.PI) % 24; };
+      earth.rotation.y = this.rot || 0; scene.updateMatrixWorld(true);
+      let goal = null;
+      if (opt) {   /* the tilt makes the spin uneven, so search for the exact turn that brings the city to this time */
+        const r0 = earth.rotation.y, tgt = this.T[opt]; let best = r0, bd = 99;
+        for (let i = 0; i <= 1440; i++) { earth.rotation.y = r0 + i * Math.PI * 2 / 1440; earth.updateMatrixWorld(true); let d = Math.abs(solar() - tgt); d = Math.min(d, 24 - d); if (d < bd - 1e-9) { bd = d; best = earth.rotation.y; } if (d < 0.03) break; }
+        earth.rotation.y = r0; earth.updateMatrixWorld(true); goal = best;
+      }
+      const self = this, fmt = h => { const H = Math.floor(h), M = Math.floor((h - H) * 60 / 5) * 5; return N(H) + ':' + (M < 10 ? N(0) : '') + N(M); };
+      const name = h => h >= 4.8 && h < 6.3 ? T('وقت الفجر والشروق', 'dawn and sunrise') : h >= 6.3 && h < 11.8 ? T('صباح', 'morning') : h >= 11.8 && h < 13 ? T('الظهر — الشمس في أعلى السماء', 'noon — the Sun is highest') : h >= 13 && h < 17.6 ? T('العصر', 'afternoon') : h >= 17.6 && h < 19 ? T('المغرب — الشمس تغيب', 'sunset') : T('ليل', 'night');
+      return dt => {
+        if (goal != null) { const st = Math.min(goal - earth.rotation.y, dt * 1.6); earth.rotation.y += st; if (goal - earth.rotation.y < 1e-3) goal = null; }
+        else if (!opt) earth.rotation.y += dt * 0.05;   /* after a time is chosen the Earth waits there */
+        self.rot = earth.rotation.y % (Math.PI * 2); sunW.copy(sunDir).applyQuaternion(pivot.quaternion);
+        const h = solar(), lit = h >= 6 && h < 18.4;
+        const el = document.getElementById('gtime'); if (el) el.textContent = T('الوقت في المدينة المنوّرة: ', 'Time in al-Madinah: ') + fmt(h) + ' — ' + name(h) + (lit ? ' ☀️' : ' 🌙');
+      };
+    } },
+  { id: 'body', ic: '🫀', n: ['جسم الإنسان', 'The human body'], dist: 8,
+    /* REAL anatomy: BodyParts3D (© DBCLS, CC BY 4.0) via open-anatomy-3d (CC BY 4.0) — bones, organs and vessels only (no skin, no muscles, no reproductive organs). */
+    opts: [['dig', '🍞 الهضم', '🍞 Digestion'], ['resp', '🫁 التنفّس', '🫁 Breathing'], ['circ', '❤️ الدم والقلب', '❤️ Heart & blood'], ['urin', '💧 الكلى', '💧 Kidneys'], ['nerv', '🧠 الدماغ والأعصاب', '🧠 Brain & nerves'], ['bone', '🦴 الهيكل العظمي', '🦴 Skeleton']],
+    SYS: {
+      dig: ['tongue', 'teeth', 'salivary_glands', 'pharynx', 'esophagus', 'stomach', 'liver', 'gallbladder', 'pancreas', 'small_intestine', 'colon', 'appendix'],
+      resp: ['larynx', 'trachea', 'bronchi', 'lung_r', 'lung_l', 'diaphragm'],
+      circ: ['heart', 'coronary_arteries', 'aorta', 'vena_cava_superior', 'vena_cava_inferior', 'pulmonary_vessels', 'carotid_l', 'carotid_r', 'arteries_thorax', 'arteries_abdomen', 'arteries_head', 'arteries_arm_l', 'arteries_arm_r', 'arteries_pelvis', 'arteries_leg_l', 'arteries_leg_r', 'veins_thorax', 'veins_abdomen', 'veins_arm_l', 'veins_arm_r', 'veins_pelvis', 'veins_leg_l', 'veins_leg_r', 'spleen'],
+      urin: ['kidney_r', 'kidney_l', 'adrenal_r', 'adrenal_l', 'ureter_r', 'ureter_l', 'bladder'],
+      nerv: ['brain', 'cerebellum', 'brainstem', 'spinal_cord', 'cranial_nerves', 'eye_r', 'eye_l', 'pituitary'],
+      bone: ['skull', 'mandible', 'spine_cervical', 'spine_thoracic', 'spine_lumbar', 'ribs_r', 'ribs_l', 'sternum', 'clavicle_r', 'clavicle_l', 'scapula_r', 'scapula_l', 'humerus_r', 'humerus_l', 'forearm_r', 'forearm_l', 'hand_r', 'hand_l', 'pelvis', 'femur_r', 'femur_l', 'patella_r', 'patella_l', 'lower_leg_r', 'lower_leg_l', 'foot_r', 'foot_l']
+    },
+    /* the stops of each tour (the rest of the system is shown but not stopped at) */
+    TOUR: {
+      dig: ['teeth', 'tongue', 'salivary_glands', 'pharynx', 'esophagus', 'stomach', 'liver', 'gallbladder', 'pancreas', 'small_intestine', 'colon', 'appendix'],
+      resp: ['larynx', 'trachea', 'bronchi', 'lung_r', 'lung_l', 'diaphragm'],
+      circ: ['heart', 'coronary_arteries', 'aorta', 'vena_cava_superior', 'vena_cava_inferior', 'pulmonary_vessels', 'carotid_r', 'spleen'],
+      urin: ['kidney_r', 'adrenal_r', 'ureter_r', 'bladder'],
+      nerv: ['brain', 'cerebellum', 'brainstem', 'spinal_cord', 'cranial_nerves', 'pituitary', 'eye_r'],
+      bone: ['skull', 'mandible', 'spine_thoracic', 'ribs_r', 'sternum', 'clavicle_r', 'scapula_r', 'humerus_r', 'pelvis', 'femur_r', 'patella_r']
+    },
+    ORG: {
+      teeth: ['الأسنان', 'Teeth', 'تقطع الطعام وتطحنه حتى يصير قطعًا صغيرة يسهل بلعها وهضمها.', 'They cut and grind food into small pieces that are easy to swallow and digest.'],
+      tongue: ['اللسان', 'Tongue', 'عضلةٌ تقلّب الطعام في الفم وتدفعه للبلع، وفيها براعم التذوّق، ونتكلّم بها.', 'A muscle that turns food in the mouth and pushes it to be swallowed; it has the taste buds, and we speak with it.'],
+      salivary_glands: ['الغدد اللعابيّة', 'Salivary glands', 'تفرز اللعاب الذي يبلّل الطعام ويبدأ هضم النشويّات.', 'They make saliva, which wets the food and starts digesting starch.'],
+      pharynx: ['البلعوم', 'Pharynx (throat)', 'ممرٌّ خلف الفم والأنف يمرّ فيه الطعام إلى المريء والهواءُ إلى الحنجرة.', 'A passage behind the mouth and nose: food goes on to the oesophagus and air to the larynx.'],
+      esophagus: ['المريء', 'Oesophagus', 'أنبوبٌ عضليّ يدفع اللقمة إلى المعدة بانقباضاتٍ متتابعة.', 'A muscular tube that pushes each mouthful down to the stomach with waves of squeezing.'],
+      stomach: ['المعدة', 'Stomach', 'كيسٌ عضليّ يخلط الطعام بعصارةٍ حمضيّة ويبدأ هضم البروتينات.', 'A muscular bag that mixes food with acid juices and starts digesting proteins.'],
+      liver: ['الكبد', 'Liver', 'أكبر عضوٍ داخل الجسم: يصنع العصارة الصفراء التي تساعد على هضم الدهون، ويخزّن الغذاء، وينقّي الدم.', 'The largest organ inside the body: it makes bile to help digest fats, stores food and cleans the blood.'],
+      gallbladder: ['المرارة', 'Gallbladder', 'كيسٌ صغير تحت الكبد يخزّن العصارة الصفراء ويطلقها إلى الأمعاء عند الأكل.', 'A small bag under the liver that stores bile and releases it into the intestine when we eat.'],
+      pancreas: ['البنكرياس', 'Pancreas', 'يفرز عصارةً هاضمة إلى الأمعاء، ويفرز الإنسولين الذي ينظّم السكّر في الدم.', 'It sends digestive juice into the intestine and makes insulin, which controls sugar in the blood.'],
+      small_intestine: ['الأمعاء الدقيقة', 'Small intestine', 'يكتمل فيها الهضم ويُمتصّ الغذاء النافع إلى الدم. طولها عدّة أمتار وهي ملفوفة داخل البطن.', 'Digestion finishes here and the useful food passes into the blood. It is several metres long, coiled inside the belly.'],
+      colon: ['الأمعاء الغليظة', 'Large intestine', 'تمتصّ الماء والأملاح ممّا بقي، وتكوّن الفضلات التي يُخرجها الجسم.', 'It takes back water and salts from what is left and forms the waste the body gets rid of.'],
+      appendix: ['الزائدة الدوديّة', 'Appendix', 'أنبوبٌ صغير مغلق متّصل بأوّل الأمعاء الغليظة.', 'A small closed tube joined to the start of the large intestine.'],
+      larynx: ['الحنجرة', 'Larynx (voice box)', 'فيها الحبال الصوتيّة التي تهتزّ فنتكلّم، وتغلق طريق الهواء عند البلع.', 'It holds the vocal cords that vibrate when we speak, and it closes the airway when we swallow.'],
+      trachea: ['القصبة الهوائيّة', 'Trachea (windpipe)', 'أنبوبٌ تقوّيه حلقاتٌ من الغضروف، يوصل الهواء إلى الرئتين.', 'A tube held open by rings of cartilage that carries air to the lungs.'],
+      bronchi: ['الشُّعَب الهوائيّة', 'Bronchi', 'تتفرّع من القصبة إلى الرئتين ثم تتفرّع أكثر فأكثر كأغصان الشجرة.', 'They branch from the windpipe into the lungs and keep branching like the branches of a tree.'],
+      lung_r: ['الرئة اليمنى', 'Right lung', 'لها ثلاثة فصوص. في نهايات الشعب أكياسٌ هوائيّة صغيرة جدًّا ينتقل منها الأكسجين إلى الدم.', 'It has three lobes. At the ends of the airways are tiny air sacs where oxygen passes into the blood.'],
+      lung_l: ['الرئة اليسرى', 'Left lung', 'لها فصّان، وهي أصغر قليلًا من اليمنى لتترك مكانًا للقلب.', 'It has two lobes and is a little smaller than the right lung, leaving room for the heart.'],
+      diaphragm: ['الحجاب الحاجز', 'Diaphragm', 'عضلةٌ على شكل قبّة تحت الرئتين: إذا انقبضت نزلت فدخل الهواء (شهيق)، وإذا ارتخت خرج (زفير).', 'A dome-shaped muscle under the lungs: when it tightens it moves down and air comes in; when it relaxes air goes out.'],
+      heart: ['القلب', 'Heart', 'عضلةٌ بحجم قبضة صاحبها تقريبًا، فيها أربع حجرات، تضخّ الدم إلى الجسم كلّه دون توقّف.', 'A muscle about the size of its owner\'s fist, with four chambers, pumping blood to the whole body without stopping.'],
+      coronary_arteries: ['الشرايين التاجيّة', 'Coronary arteries', 'تلتفّ حول القلب وتغذّي عضلة القلب نفسها بالدم.', 'They wrap around the heart and bring blood to the heart muscle itself.'],
+      aorta: ['الأبهر', 'Aorta', 'أكبر شريانٍ في الجسم: يخرج من القلب ويحمل الدم الغنيّ بالأكسجين إلى الجسم.', 'The largest artery: it leaves the heart and carries oxygen-rich blood to the body.'],
+      vena_cava_superior: ['الوريد الأجوف العلويّ', 'Superior vena cava', 'يعيد الدم من الرأس والذراعين وأعلى الجسم إلى القلب.', 'It brings blood back to the heart from the head, arms and upper body.'],
+      vena_cava_inferior: ['الوريد الأجوف السفليّ', 'Inferior vena cava', 'يعيد الدم من البطن والرجلين إلى القلب.', 'It brings blood back to the heart from the belly and legs.'],
+      pulmonary_vessels: ['الأوعية الرئويّة', 'Pulmonary vessels', 'تنقل الدم بين القلب والرئتين: يذهب ليأخذ الأكسجين ويعود به.', 'They carry blood between the heart and the lungs: it goes to collect oxygen and comes back with it.'],
+      carotid_r: ['الشريان السُّباتيّ', 'Carotid artery', 'في الرقبة، يحمل الدم إلى الرأس والدماغ.', 'In the neck; it carries blood to the head and brain.'],
+      spleen: ['الطِّحال', 'Spleen', 'عضوٌ في أعلى البطن من اليسار، ينقّي الدم ويساعد في الدفاع عن الجسم.', 'An organ at the upper left of the belly that filters the blood and helps defend the body.'],
+      kidney_r: ['الكلية', 'Kidney', 'لنا كليتان خلف البطن، تنقّيان الدم من الفضلات وتصنعان البول.', 'We have two kidneys at the back of the belly; they clean waste from the blood and make urine.'],
+      adrenal_r: ['الغدّة الكظريّة', 'Adrenal gland', 'غدّةٌ صغيرة فوق كلّ كلية، تفرز هرموناتٍ منها الأدرينالين.', 'A small gland on top of each kidney that makes hormones such as adrenaline.'],
+      ureter_r: ['الحالب', 'Ureter', 'أنبوبٌ رفيع ينقل البول من الكلية إلى المثانة.', 'A thin tube that carries urine from the kidney to the bladder.'],
+      bladder: ['المثانة', 'Bladder', 'كيسٌ عضليّ يخزّن البول حتى نُخرجه.', 'A muscular bag that stores urine until we let it out.'],
+      brain: ['المخّ', 'Cerebrum', 'أكبر أجزاء الدماغ: به نفكّر ونتعلّم ونتذكّر، ونحسّ ونتحرّك.', 'The largest part of the brain: we think, learn, remember, feel and move with it.'],
+      cerebellum: ['المخيخ', 'Cerebellum', 'خلف الدماغ وتحته، يحفظ التوازن ويجعل الحركة متناسقة.', 'At the back and bottom of the brain; it keeps balance and makes movements smooth.'],
+      brainstem: ['جذع الدماغ', 'Brainstem', 'يصل الدماغ بالحبل الشوكيّ، وينظّم التنفّس ونبض القلب دون أن نفكّر فيهما.', 'It joins the brain to the spinal cord and runs breathing and the heartbeat without us thinking about them.'],
+      spinal_cord: ['الحبل الشوكيّ', 'Spinal cord', 'داخل العمود الفقريّ، ينقل الرسائل بين الدماغ وسائر الجسم.', 'Inside the backbone; it carries messages between the brain and the rest of the body.'],
+      cranial_nerves: ['الأعصاب القحفيّة', 'Cranial nerves', 'تخرج من الدماغ مباشرةً إلى العينين والأذنين والوجه وغيرها.', 'They come straight out of the brain to the eyes, ears, face and more.'],
+      pituitary: ['الغدّة النخاميّة', 'Pituitary gland', 'غدّةٌ صغيرة تحت الدماغ، تنظّم النموّ وكثيرًا من غدد الجسم.', 'A small gland under the brain that controls growth and many other glands.'],
+      eye_r: ['العين', 'Eye', 'تستقبل الضوء، والعصب البصريّ ينقل الصورة إلى الدماغ.', 'It takes in light, and the optic nerve carries the picture to the brain.'],
+      skull: ['الجمجمة', 'Skull', 'عظامٌ ملتحمة تحمي الدماغ.', 'Bones joined together that protect the brain.'],
+      mandible: ['الفكّ السفليّ', 'Lower jaw', 'العظم الوحيد في الرأس الذي يتحرّك، به نمضغ ونتكلّم.', 'The only bone of the head that moves; we chew and speak with it.'],
+      spine_thoracic: ['العمود الفقريّ', 'Backbone', 'فقراتٌ فوق بعضها تحمل الجسم وتحمي الحبل الشوكيّ في داخلها.', 'Vertebrae stacked on each other that hold the body up and protect the spinal cord inside.'],
+      ribs_r: ['الأضلاع', 'Ribs', 'اثنا عشر زوجًا تقريبًا عند أكثر الناس، تصنع قفصًا يحمي القلب والرئتين.', 'Usually twelve pairs, making a cage that protects the heart and lungs.'],
+      sternum: ['عظم القصّ', 'Breastbone', 'عظمٌ مسطّح في وسط الصدر تتّصل به الأضلاع من الأمام.', 'A flat bone in the middle of the chest that the ribs join at the front.'],
+      clavicle_r: ['الترقوة', 'Collarbone', 'عظمٌ يصل الكتف بالصدر.', 'A bone that joins the shoulder to the chest.'],
+      scapula_r: ['لوح الكتف', 'Shoulder blade', 'عظمٌ مسطّح في أعلى الظهر تتحرّك عليه الذراع.', 'A flat bone at the top of the back that the arm moves on.'],
+      humerus_r: ['عظم العضد', 'Upper arm bone', 'عظم الذراع بين الكتف والمرفق.', 'The arm bone between the shoulder and the elbow.'],
+      pelvis: ['الحوض', 'Pelvis', 'عظامٌ تحمل وزن الجسم العلويّ وتتّصل بها الرجلان.', 'Bones that carry the weight of the upper body and that the legs join.'],
+      femur_r: ['عظم الفخذ', 'Thigh bone', 'أطول عظام الجسم وأقواها.', 'The longest and strongest bone of the body.'],
+      patella_r: ['الرضفة', 'Kneecap', 'عظمٌ صغير يحمي مفصل الركبة من الأمام.', 'A small bone that protects the front of the knee joint.']
+    },
+    INFO: {
+      dig: ['جهاز الهضم: من الفم إلى الأمعاء. اضغط «العضو التالي» لتتبّع رحلة اللقمة، أو اضغط أيَّ عضوٍ ملوَّن.', 'The digestive system: from the mouth to the intestines. Press "Next organ" to follow the journey of a bite, or tap any coloured organ.'],
+      resp: ['جهاز التنفّس: يدخل الهواء من الأنف والفم إلى الرئتين، فيأخذ الدم الأكسجين ويُخرج ثاني أكسيد الكربون.', 'The breathing system: air goes from the nose and mouth to the lungs, where the blood takes in oxygen and gives out carbon dioxide.'],
+      circ: ['القلب والأوعية: الشرايين (أحمر) تحمل الدم من القلب، والأوردة (أزرق) تعيده إليه.', 'The heart and vessels: arteries (red) carry blood away from the heart, veins (blue) bring it back.'],
+      urin: ['الجهاز البوليّ: الكليتان تنقّيان الدم، والبول ينزل في الحالبين إلى المثانة.', 'The urinary system: the kidneys clean the blood, and urine goes down the ureters to the bladder.'],
+      nerv: ['الدماغ والأعصاب: الدماغ يقود الجسم، والحبل الشوكيّ والأعصاب تحمل رسائله.', 'The brain and nerves: the brain runs the body, and the spinal cord and nerves carry its messages.'],
+      bone: ['الهيكل العظميّ: يحمل الجسم ويحمي الأعضاء، وفي الكبير نحو ٢٠٦ عظمة.', 'The skeleton holds the body up and protects the organs; an adult has about 206 bones.']
+    },
+    info: ['هذا نموذجٌ تشريحيّ حقيقيّ مأخوذ من قاعدة بيانات طبّيّة (BodyParts3D)، يظهر فيه العظام والأعضاء الداخليّة والأوعية — دون الجلد والعضلات.', 'This is a real anatomical model from a medical database (BodyParts3D), showing the bones, internal organs and vessels — without the skin and muscles.'],
+    q: ['أين يُمتصّ معظم الغذاء النافع إلى الدم؟', 'Where does most of the useful food pass into the blood?'], o: [['في الأمعاء الدقيقة', 'In the small intestine'], ['في المريء', 'In the oesophagus'], ['في المثانة', 'In the bladder']],
+    build(opt) {
+      const self = this, sys = opt || 'dig', on = new Set(this.SYS[sys]), tour = this.TOUR[sys];
+      if (this.sys !== sys) { this.sys = sys; this.stop = -1; }
+      this.extra = T(this.INFO[sys][0], this.INFO[sys][1]);
+      const wrap = new THREE.Group(); pivot.add(wrap);
+      const hint = $('hint');
+      if (!BODY.p) {
+        BODY.p = new Promise((res, rej) => {
+          new GLTFLoader().setMeshoptDecoder(MeshoptDecoder).load('models/body.glb', g => res(g.scene), ev => { if (ev.total && cur && cur.id === 'body') hint.textContent = T('جارٍ تحميل الجسم… ', 'Loading the body… ') + N(Math.round(ev.loaded / ev.total * 100)) + '٪'; }, rej);
+        });
+      }
+      let parts = null, pick = null, picked = null;
+      const COL = { dig: 0xE8956B, resp: 0xF4A3B8, circ: 0xD83A4A, urin: 0xC7843A, nerv: 0xF2D16B, bone: 0xF3EAD3 };
+      const VEIN = /^(veins_|vena_cava)/;
+      BODY.p.then(scene0 => {
+        if (cur !== self || !wrap.parent) return;
+        hint.textContent = T('☝️ اسحب للتدوير · 🤏 إصبعان للتقريب · اضغط على عضو', '☝️ drag to turn · 🤏 two fingers to zoom · tap an organ');
+        const body = scene0.clone(true);
+        const box = new THREE.Box3().setFromObject(body), size = box.getSize(new THREE.Vector3()), mid = box.getCenter(new THREE.Vector3()), k = 6 / size.y;
+        body.position.set(-mid.x * k, -mid.y * k, -mid.z * k); body.scale.setScalar(k); wrap.add(body);
+        parts = {};
+        body.traverse(o => {
+          if (!o.isMesh) return; const key = o.name, isOn = on.has(key), isBone = self.SYS.bone.indexOf(key) >= 0;
+          const c = isOn ? (sys === 'circ' && VEIN.test(key) ? 0x3B6FD8 : sys === 'circ' && /^arteries_|^aorta|^carotid|^coronary/.test(key) ? 0xD83A4A : COL[sys]) : isBone ? 0xF3EAD3 : 0xB9C2CC;
+          o.material = new THREE.MeshStandardMaterial({ color: c, roughness: 0.6, metalness: 0.02, transparent: !isOn, opacity: isOn ? 1 : isBone ? 0.18 : 0.07, depthWrite: isOn });
+          o.renderOrder = isOn ? 0 : 1; o.userData.key = key; parts[key] = o;
+        });
+        pick = Object.values(parts).filter(m => on.has(m.userData.key));
+        const sb = new THREE.Box3(); pick.forEach(m => sb.expandByObject(m)); aimAt(sb, 1.25);
+        if (self.stop >= 0) focus(tour[self.stop]);
+      }).catch(() => { hint.textContent = T('تعذّر تحميل النموذج — تأكّد من الاتصال وأعد المحاولة.', 'Could not load the model — check the connection and try again.'); });
+      let goalPos = null, goalDist = null;
+      function aimAt(bx, pad) {
+        if (bx.isEmpty()) return; wrap.updateMatrixWorld(true);
+        const c = bx.getCenter(new THREE.Vector3()), sz = bx.getSize(new THREE.Vector3()); pivot.worldToLocal(c);
+        goalPos = wrap.position.clone().sub(c); goalDist = Math.max(2.2, Math.min(9, Math.max(sz.x, sz.y, sz.z) * 1.6 * pad + 1.2));
+      }
+      function focus(key) {
+        const d = self.ORG[key] || self.ORG[key.replace(/_l$/, '_r')] || (/^arteries_/.test(key) ? ['شرايين', 'Arteries', 'أوعيةٌ تحمل الدم من القلب إلى أعضاء الجسم.', 'Vessels that carry blood from the heart to the body.'] : /^veins_/.test(key) ? ['أوردة', 'Veins', 'أوعيةٌ تعيد الدم من أعضاء الجسم إلى القلب.', 'Vessels that bring blood back from the body to the heart.'] : /^spine_/.test(key) ? self.ORG.spine_thoracic : /^(forearm|hand|lower_leg|foot)_/.test(key) ? ['عظام الأطراف', 'Limb bones', 'عظامٌ متّصلة بمفاصل تجعلنا نمسك ونمشي ونجري.', 'Bones joined by joints that let us hold, walk and run.'] : null);
+        if (parts) Object.values(parts).forEach(m => { if (on.has(m.userData.key)) { m.material.emissive = new THREE.Color(m.userData.key === key || m.userData.key.replace(/_[lr]$/, '') === key.replace(/_[lr]$/, '') ? 0xFFE27A : 0x000000); m.material.emissiveIntensity = 0.5; } });
+        const box = $('organ'); if (box && d) box.innerHTML = '<b style="color:#FFE27A;font-size:1.1rem">' + T(d[0], d[1]) + '</b><br>' + T(d[2], d[3]);
+        picked = key;
+        if (parts && parts[key]) aimAt(new THREE.Box3().setFromObject(parts[key]), 1.6);
+      }
+      self.next = () => { self.stop = (self.stop + 1) % tour.length; focus(tour[self.stop]); };
+      self.tap = (x, y) => {
+        if (!pick) return; const r = canvas.getBoundingClientRect(), ray = new THREE.Raycaster();
+        ray.setFromCamera(new THREE.Vector2((x - r.left) / r.width * 2 - 1, -((y - r.top) / r.height) * 2 + 1), camera);
+        const hit = ray.intersectObjects(pick, false)[0]; if (!hit) return;
+        const key = hit.object.userData.key, i = tour.indexOf(key) >= 0 ? tour.indexOf(key) : tour.indexOf(key.replace(/_l$/, '_r'));
+        if (i >= 0) self.stop = i; focus(key);
+      };
+      return () => { if (goalPos) { wrap.position.lerp(goalPos, 0.12); view.dist += (goalDist - view.dist) * 0.12; if (wrap.position.distanceTo(goalPos) < 1e-3) goalPos = null; } };
+    } },
+  { id: 'plant', ic: '🌱', n: ['كيف يصنع النبات غذاءه', 'How a plant makes its food'], dist: 11,
+    opts: [['light', '☀️ الضوء', '☀️ Light'], ['water', '💧 الماء', '💧 Water'], ['air', '🌬️ الهواء', '🌬️ Air'], ['food', '🍬 الغذاء', '🍬 Food'], ['all', '🌿 كلّها معًا', '🌿 All together']],
+    STEP: {
+      light: ['الأوراق خضراء لأنّ فيها مادّة اليخضور (الكلوروفيل)، وهي تلتقط ضوء الشمس لتستعمل طاقته.', 'Leaves are green because they hold chlorophyll, which catches sunlight so the plant can use its energy.'],
+      water: ['الجذور تمتصّ الماء من التربة، فيصعد في أنابيب دقيقة داخل الساق (الخشب) حتى يصل إلى الأوراق.', 'The roots take in water from the soil; it climbs through tiny tubes inside the stem (the xylem) up to the leaves.'],
+      air: ['في الورقة ثقوبٌ صغيرة جدًّا اسمها الثغور: يدخل منها ثاني أكسيد الكربون (رمادي)، ويخرج منها الأكسجين (أبيض) الذي نتنفّسه.', 'Leaves have tiny holes called stomata: carbon dioxide (grey) goes in, and the oxygen we breathe (white) comes out.'],
+      food: ['بالضوء يصنع النبات من الماء وثاني أكسيد الكربون سكّرًا (أصفر) هو غذاؤه، فينتقل في أنابيب أخرى (اللحاء) إلى كلّ أجزائه.', 'With the light, the plant makes sugar (yellow) from water and carbon dioxide; this is its food, and other tubes (the phloem) carry it to every part.'],
+      all: ['ماء + ثاني أكسيد الكربون + ضوء الشمس ⟵ سكّر (غذاء) + أكسجين. هذه هي عملية البناء الضوئي.', 'Water + carbon dioxide + sunlight → sugar (food) + oxygen. This is photosynthesis.']
+    },
+    info: ['أدِر النبتة وانظر من كلّ جهة. الوعاء شفّاف لترى الجذور.', 'Turn the plant and look from every side. The pot is see-through so you can see the roots.'],
+    q: ['ماذا يُخرج النبات إلى الهواء وهو يصنع غذاءه؟', 'What does a plant give out to the air while making its food?'], o: [['الأكسجين', 'Oxygen'], ['ثاني أكسيد الكربون', 'Carbon dioxide'], ['الملح', 'Salt']],
+    build(opt) {
+      const g = new THREE.Group(); g.position.y = -0.2; pivot.add(g); const V = (x, y, z) => new THREE.Vector3(x, y, z), crv = p => new THREE.CatmullRomCurve3(p.map(a => V(a[0], a[1], a[2])));
+      const pot = new THREE.Mesh(new THREE.CylinderGeometry(1.15, 0.85, 1.5, 48, 1, true), mat(0xBFE6F5, { transparent: true, opacity: 0.22, side: THREE.DoubleSide, depthWrite: false })); pot.position.y = -2.0; g.add(pot);
+      const soil = new THREE.Mesh(new THREE.CylinderGeometry(1.1, 0.86, 1.3, 48), mat(0x6B4423, { transparent: true, opacity: 0.55, depthWrite: false })); soil.position.y = -2.08; g.add(soil);
+      const tube = (pts, r, c) => { const m = new THREE.Mesh(new THREE.TubeGeometry(crv(pts), 80, r, 10, false), mat(c)); g.add(m); return m; };
+      const ROOTS = [[[0, -1.4, 0], [0.05, -1.9, 0.05], [0, -2.5, 0]], [[0, -1.5, 0], [-0.45, -1.9, 0.1], [-0.6, -2.45, 0.2]], [[0, -1.5, 0], [0.45, -1.9, -0.1], [0.62, -2.4, -0.25]], [[0, -1.6, 0], [0.1, -2.0, 0.45], [0.2, -2.5, 0.6]], [[0, -1.6, 0], [-0.1, -2.1, -0.45], [-0.25, -2.55, -0.55]]];
+      ROOTS.forEach(r => tube(r, 0.035, 0xE9D6A8));
+      const STEM = [[0, -1.4, 0], [0.05, -0.4, 0], [-0.04, 0.6, 0], [0, 1.6, 0], [0.02, 2.3, 0]]; tube(STEM, 0.09, 0x3E8E41);
+      const LEAVES = [[0.0, 1, 0.5], [0.7, -1, 0.0], [1.35, 1, -0.6], [1.95, -1, 0.9], [2.3, 1, 0.2]];
+      const leafTips = [];
+      LEAVES.forEach(([y, side, yaw]) => {
+        const lf = new THREE.Group(); lf.position.set(0, y, 0); lf.rotation.y = yaw; g.add(lf);
+        const blade = new THREE.Mesh(new THREE.SphereGeometry(0.5, 32, 16), mat(0x4CAF50, { side: THREE.DoubleSide, roughness: 0.7 })); blade.scale.set(1.5, 0.08, 0.62); blade.position.set(side * 0.78, 0.12, 0); blade.rotation.z = side * 0.28; lf.add(blade);
+        const vein = new THREE.Mesh(new THREE.CylinderGeometry(0.015, 0.02, 1.4, 6), mat(0x2E6B2F)); vein.rotation.z = Math.PI / 2 - side * 0.28; vein.position.set(side * 0.72, 0.15, 0); lf.add(vein);
+        const tip = new THREE.Object3D(); tip.position.set(side * 0.85, 0.16, 0); lf.add(tip); leafTips.push(tip);
+      });
+      g.updateMatrixWorld(true);
+      const tipPos = leafTips.map(t => g.worldToLocal(t.getWorldPosition(V(0, 0, 0))));
+      const sun = new THREE.Mesh(new THREE.SphereGeometry(0.55, 32, 20), new THREE.MeshBasicMaterial({ color: 0xFFC93C })); sun.position.set(-2.8, 3.1, 0.5); g.add(sun);
+      label(sun, 'الشمس', 'Sun'); const lL = new THREE.Object3D(); lL.position.set(1.6, 1.5, 0); g.add(lL); label(lL, 'الأوراق', 'Leaves');
+      const lS = new THREE.Object3D(); lS.position.set(0.25, -0.6, 0); g.add(lS); label(lS, 'الساق', 'Stem'); const lR = new THREE.Object3D(); lR.position.set(0.9, -2.4, 0.3); g.add(lR); label(lR, 'الجذور', 'Roots');
+      const rays = new THREE.Group(); g.add(rays);
+      tipPos.forEach(p => { const a = sun.position.clone(), d = p.clone().sub(a), m = new THREE.Mesh(new THREE.CylinderGeometry(0.018, 0.018, d.length(), 6), new THREE.MeshBasicMaterial({ color: 0xFFE27A, transparent: true, opacity: 0.4 })); m.position.copy(a).addScaledVector(d, 0.5); m.quaternion.setFromUnitVectors(V(0, 1, 0), d.clone().normalize()); rays.add(m); });
+      /* particle streams: each dot runs along its own path again and again */
+      const streams = [];
+      function stream(paths, color, r, n, speed, tag) { const s = { dots: [], on: false, tag }; for (let i = 0; i < n; i++) { const c = paths[i % paths.length], d = ball(r, color, { emissive: color, emissiveIntensity: 0.35 }); d.userData = { c, u: i / n }; d.visible = false; g.add(d); s.dots.push(d); } s.speed = speed; streams.push(s); return s; }
+      const waterPaths = tipPos.map((p, i) => crv([ROOTS[i % ROOTS.length][2], ROOTS[i % ROOTS.length][1], [0, -1.4, 0], [0, p.y - 0.15, 0], [p.x * 0.5, p.y + 0.05, p.z * 0.5], [p.x, p.y, p.z]]));
+      const co2Paths = tipPos.map((p, i) => crv([[p.x * 3 + (i % 2 ? 1 : -1), p.y + 0.8, p.z * 3 + 1], [p.x * 1.8, p.y + 0.3, p.z * 1.8], [p.x, p.y, p.z]]));
+      const o2Paths = tipPos.map((p, i) => crv([[p.x, p.y, p.z], [p.x * 1.7, p.y + 0.6, p.z * 1.7], [p.x * 2.6 + (i % 2 ? -0.8 : 0.8), p.y + 1.7, p.z * 2.6]]));
+      const sugarPaths = tipPos.map((p, i) => crv([[p.x, p.y, p.z], [p.x * 0.5, p.y - 0.05, p.z * 0.5], [0, p.y - 0.2, 0.0], [0, -1.4, 0], ROOTS[(i + 2) % ROOTS.length][1], ROOTS[(i + 2) % ROOTS.length][2]]));
+      const W = stream(waterPaths, 0x3FA9F5, 0.06, 30, 0.22, 'water'), C = stream(co2Paths, 0x8A939C, 0.07, 20, 0.25, 'air'), O = stream(o2Paths, 0xF4FAFF, 0.07, 20, 0.25, 'air'), S = stream(sugarPaths, 0xFFD23F, 0.06, 25, 0.18, 'food');
+      const st = opt || 'light', show = { light: [], water: [W], air: [C, O], food: [S], all: [W, C, O, S] }[st];
+      streams.forEach(s => { s.on = show.indexOf(s) >= 0; s.dots.forEach(d => d.visible = s.on); });
+      rays.visible = st === 'light' || st === 'all' || st === 'food';
+      this.extra = T(this.STEP[st][0], this.STEP[st][1]);
+      return dt => {
+        streams.forEach(s => { if (!s.on) return; s.dots.forEach(d => { d.userData.u = (d.userData.u + dt * s.speed) % 1; d.position.copy(d.userData.c.getPoint(d.userData.u)); }); });
+        rays.children.forEach((m, i) => m.material.opacity = 0.22 + 0.18 * Math.sin(performance.now() / 300 + i));
+      };
+    } },
+  { id: 'water', ic: '🌧️', n: ['دورة الماء والمطر', 'The water cycle'], dist: 11,
+    opts: [['evap', '☀️ التبخّر', '☀️ Evaporation'], ['cond', '☁️ التكاثف', '☁️ Condensation'], ['rain', '🌧️ المطر', '🌧️ Rain'], ['flow', '🏞️ الجريان', '🏞️ Run-off'], ['all', '🔄 الدورة كاملة', '🔄 The whole cycle']],
+    STEP: {
+      evap: ['حرارة الشمس تُسخّن ماء البحر، فيتحوّل جزءٌ منه إلى بخار ماء لا نراه، ويصعد في الهواء. الملح يبقى في البحر، والبخار ماءٌ عذب.', 'The Sun warms the sea and some of the water turns into invisible water vapour that rises into the air. The salt stays in the sea; the vapour is fresh water.'],
+      cond: ['كلّما ارتفع البخار برد، فيتجمّع قطراتٍ صغيرة جدًّا تكوّن السحاب. والرياح تسوق السحاب فوق اليابسة.', 'As the vapour rises it cools and gathers into tiny droplets that make clouds. The wind drives the clouds over the land.'],
+      rain: ['تتجمّع القطرات وتكبر وتثقل، فتسقط مطرًا — أو ثلجًا في الأماكن الباردة.', 'The droplets join, grow and get heavy, so they fall as rain — or snow where it is cold.'],
+      flow: ['ماء المطر يجري في الأنهار، ويتسرّب جزءٌ منه في الأرض فيصير ماءً جوفيًّا، ثم يعود الماء إلى البحر لتبدأ الدورة من جديد.', 'Rainwater runs into rivers; some soaks into the ground as groundwater, and the water goes back to the sea for the cycle to start again.'],
+      all: ['تبخّر ⟵ تكاثف وسحاب ⟵ مطر ⟵ جريان إلى البحر… ثم تبدأ من جديد. والماء نفسه يدور على الأرض منذ زمنٍ بعيد.', 'Evaporation → condensation and clouds → rain → run-off to the sea… and round again. The same water has been going round the Earth for a very long time.']
+    },
+    info: ['أدِر المشهد. البحر على اليسار، والجبل على اليمين.', 'Turn the scene. The sea is on the left and the mountain on the right.'],
+    q: ['ما الذي يجعل ماء البحر يصعد إلى السماء؟', 'What makes sea water go up into the sky?'], o: [['حرارة الشمس فيتبخّر', 'The Sun\'s heat makes it evaporate'], ['الرياح تحمله وهو سائل', 'The wind lifts it as liquid'], ['الأسماك تقذفه', 'The fish splash it up']],
+    build(opt) {
+      const g = new THREE.Group(); g.position.y = -1.2; pivot.add(g); const V = (x, y, z) => new THREE.Vector3(x, y, z), crv = p => new THREE.CatmullRomCurve3(p.map(a => V(a[0], a[1], a[2])));
+      const sea = new THREE.Mesh(new THREE.BoxGeometry(5, 0.3, 5), mat(0x2E7DC2, { roughness: 0.25, metalness: 0.1 })); sea.position.set(-2.5, -0.15, 0); g.add(sea);
+      const land = new THREE.Mesh(new THREE.BoxGeometry(5, 0.5, 5), mat(0x5DA04A)); land.position.set(2.5, -0.05, 0); g.add(land);
+      const mtn = new THREE.Mesh(new THREE.ConeGeometry(1.6, 2.8, 7), mat(0x7D8A7A, { flatShading: true })); mtn.position.set(3.0, 1.6, -0.8); g.add(mtn);
+      const cap = new THREE.Mesh(new THREE.ConeGeometry(0.62, 1.05, 7), mat(0xFFFFFF, { flatShading: true })); cap.position.set(3.0, 2.48, -0.8); g.add(cap);
+      const riverC = crv([[2.4, 1.1, -0.2], [2.0, 0.45, 0.4], [1.2, 0.22, 0.9], [0.4, 0.22, 0.6], [-0.3, 0.05, 0.9]]);
+      g.add(new THREE.Mesh(new THREE.TubeGeometry(riverC, 80, 0.12, 8, false), mat(0x3FA9F5, { roughness: 0.2 })));
+      [[1.2, 1.6], [4.0, 1.4], [1.5, -1.6]].forEach(p => { const t = new THREE.Group(); t.position.set(p[0], 0.2, p[1]); const tr = new THREE.Mesh(new THREE.CylinderGeometry(0.06, 0.08, 0.5, 8), mat(0x8A5A2B)); tr.position.y = 0.25; t.add(tr); const cr = ball(0.32, 0x3E8E41); cr.position.y = 0.65; t.add(cr); g.add(t); });
+      const sun = new THREE.Mesh(new THREE.SphereGeometry(0.6, 32, 20), new THREE.MeshBasicMaterial({ color: 0xFFC93C })); sun.position.set(-4.2, 4.6, -1.5); g.add(sun); label(sun, 'الشمس', 'Sun');
+      const st = opt || 'evap';
+      const cloud = new THREE.Group(); g.add(cloud);
+      [[0, 0, 0, 0.6], [0.55, 0.1, 0.1, 0.5], [-0.55, 0.05, -0.1, 0.5], [0.2, 0.35, -0.1, 0.45], [-0.25, 0.3, 0.15, 0.42], [0.9, -0.05, -0.15, 0.36], [-0.9, -0.05, 0.1, 0.36]].forEach(c => { const b = ball(c[3], 0xFFFFFF, { roughness: 1 }); b.position.set(c[0], c[1], c[2]); cloud.add(b); });
+      const over = { evap: V(-2.4, 3.6, 0), cond: V(-1.2, 3.8, 0), rain: V(2.6, 4.2, -0.4), flow: V(2.6, 4.4, -0.4), all: V(-2.2, 3.8, 0) }[st];
+      cloud.position.copy(over); const big = { evap: 0.6, cond: 1.0, rain: 1.15, flow: 0.85, all: 0.9 }[st]; cloud.scale.setScalar(big);
+      const grey = st === 'rain' ? 0x9AA3AD : 0xFFFFFF; cloud.children.forEach(b => b.material.color.set(grey));
+      label(cloud, 'السحاب', 'Cloud'); const lS = new THREE.Object3D(); lS.position.set(-3, 0.3, 1.6); g.add(lS); label(lS, 'البحر', 'Sea'); const lR = new THREE.Object3D(); lR.position.set(1.0, 0.5, 1.1); g.add(lR); label(lR, 'النهر', 'River');
+      const vap = [], rain = [], flow = [];
+      for (let i = 0; i < 40; i++) { const d = ball(0.05, 0xE6F4FF, { transparent: true, opacity: 0.7 }); d.userData = { x: -4.4 + Math.random() * 3.8, z: -2 + Math.random() * 4, u: Math.random() }; g.add(d); vap.push(d); }
+      for (let i = 0; i < 70; i++) { const d = new THREE.Mesh(new THREE.CylinderGeometry(0.018, 0.018, 0.22, 5), new THREE.MeshBasicMaterial({ color: 0x8FD3FF })); d.userData = { x: (Math.random() - 0.5) * 2.2, z: (Math.random() - 0.5) * 1.2, u: Math.random() }; g.add(d); rain.push(d); }
+      for (let i = 0; i < 24; i++) { const d = ball(0.07, 0xBFE9FF, { emissive: 0x3FA9F5, emissiveIntensity: 0.4 }); d.userData = { u: i / 24 }; g.add(d); flow.push(d); }
+      const showV = st === 'evap' || st === 'cond' || st === 'all', showR = st === 'rain' || st === 'all', showF = st === 'flow' || st === 'all';
+      this.extra = T(this.STEP[st][0], this.STEP[st][1]);
+      let t = 0;
+      return dt => {
+        t += dt;
+        if (st === 'all') { const ph = (t * 0.12) % 1; cloud.position.lerpVectors(V(-2.2, 3.8, 0), V(2.6, 4.2, -0.4), ph < 0.5 ? ph * 2 : 1 - (ph - 0.5) * 2); }
+        else if (st === 'cond') cloud.scale.setScalar(Math.min(1.15, cloud.scale.x + dt * 0.03));
+        vap.forEach(d => { d.visible = showV; if (!showV) return; d.userData.u = (d.userData.u + dt * 0.25) % 1; const u = d.userData.u, tx = cloud.position.x + (d.userData.x + 2.5) * 0.25, tz = d.userData.z * 0.3; d.position.set(d.userData.x + (tx - d.userData.x) * u, 0.05 + u * (cloud.position.y - 0.4), d.userData.z + (tz - d.userData.z) * u); d.material.opacity = 0.75 * (1 - u * 0.6); });
+        rain.forEach(d => { d.visible = showR; if (!showR) return; d.userData.u = (d.userData.u + dt * 0.9) % 1; const top = cloud.position.y - 0.35, bot = 0.3; d.position.set(cloud.position.x + d.userData.x, top - (top - bot) * d.userData.u, cloud.position.z + d.userData.z); });
+        flow.forEach(d => { d.visible = showF; if (!showF) return; d.userData.u = (d.userData.u + dt * 0.12) % 1; d.position.copy(riverC.getPoint(d.userData.u)); d.position.y += 0.08; });
+      };
+    } },
+  { id: 'states', ic: '🧊', n: ['حالات المادّة', 'States of matter'], dist: 8,
+    opts: [['solid', '🧊 صلب — جليد', '🧊 Solid — ice'], ['liquid', '💧 سائل — ماء', '💧 Liquid — water'], ['gas', '♨️ غاز — بخار', '♨️ Gas — steam']],
+    STEP: {
+      solid: ['في الجليد الجزيئات مرتّبة ومتلاصقة، لا تتحرّك من مكانها، وإنّما تهتزّ قليلًا. لذلك له شكلٌ ثابت. (تحت الصفر°)', 'In ice the molecules are packed in order; they do not move from their places, they only jiggle a little. So ice keeps its shape. (below 0°)'],
+      liquid: ['بالحرارة تتحرّك الجزيئات أكثر فتنزلق فوق بعضها وهي قريبة، فيأخذ الماء شكل الإناء الذي هو فيه. (مثل ٢٥°)', 'With heat the molecules move more and slide past each other while staying close, so water takes the shape of its container. (about 25°)'],
+      gas: ['بحرارةٍ أكثر تتحرّك الجزيئات بسرعة كبيرة، وتتباعد، وتملأ المكان كلّه. الماء يغلي عند ١٠٠° تقريبًا عند سطح البحر.', 'With even more heat the molecules move very fast, spread out and fill all the space. Water boils at about 100° at sea level.']
+    },
+    info: ['هذه جزيئات ماء (كلّ كرة = جزيء). اختر الحالة وانظر كيف تتغيّر حركتها. الحرارة هي التي تغيّر حالة المادّة.', 'These are water molecules (each ball = one molecule). Choose a state and watch how they move. Heat is what changes the state of matter.'],
+    q: ['في أيّ حالةٍ تتحرّك الجزيئات أسرع؟', 'In which state do the molecules move fastest?'], o: [['الغاز', 'Gas'], ['الصلب', 'Solid'], ['السائل', 'Liquid']],
+    build(opt) {
+      const st = opt || 'solid', g = new THREE.Group(), V = (x, y, z) => new THREE.Vector3(x, y, z), H = 1.5; pivot.add(g);
+      const box = new THREE.LineSegments(new THREE.EdgesGeometry(new THREE.BoxGeometry(H * 2, H * 2, H * 2)), new THREE.LineBasicMaterial({ color: 0xBFE6F5 })); g.add(box);
+      const glass = new THREE.Mesh(new THREE.BoxGeometry(H * 2, H * 2, H * 2), mat(0xBFE6F5, { transparent: true, opacity: 0.06, depthWrite: false })); g.add(glass);
+      const flame = new THREE.Group(); flame.position.y = -H - 0.55; g.add(flame);
+      [[0, 0.6, 0xFF8A00], [0, 0.4, 0xFFD23F]].forEach(f => { const c = new THREE.Mesh(new THREE.ConeGeometry(0.28 * f[1] / 0.6, f[1], 16), new THREE.MeshBasicMaterial({ color: f[2], transparent: true, opacity: 0.85 })); c.position.y = f[1] / 2 - 0.3; flame.add(c); });
+      flame.visible = st !== 'solid'; flame.scale.setScalar(st === 'gas' ? 1.4 : 0.8);
+      const lb = new THREE.Object3D(); lb.position.y = -H - 0.9; g.add(lb); if (st !== 'solid') label(lb, st === 'gas' ? 'حرارة عالية' : 'حرارة', st === 'gas' ? 'high heat' : 'heat');
+      const prev = this.mols || null, mols = []; const n = 3, sp = 0.5, off = (n - 1) * sp / 2;
+      for (let i = 0; i < n; i++) for (let j = 0; j < n; j++) for (let k = 0; k < n; k++) {
+        const idx = mols.length, m = new THREE.Group(), o = ball(0.13, 0xE0503A); m.add(o);
+        [[0.12, -0.09], [-0.12, -0.09]].forEach(h => { const hy = ball(0.075, 0xF4F6F8); hy.position.set(h[0], h[1], 0); m.add(hy); });
+        const home = V(i * sp - off, j * sp - H + 0.2 + (st === 'solid' ? 0 : 0), k * sp - off);
+        m.userData = { home, v: V((Math.random() - 0.5), (Math.random() - 0.5), (Math.random() - 0.5)), ph: Math.random() * 7 };
+        m.position.copy(prev && prev[idx] ? prev[idx] : home); m.rotation.set(Math.random() * 6, Math.random() * 6, 0); g.add(m); mols.push(m);
+      }
+      this.mols = mols.map(m => m.position);
+      this.extra = T(this.STEP[st][0], this.STEP[st][1]);
+      const speed = { solid: 0, liquid: 0.7, gas: 2.6 }[st], top = st === 'liquid' ? -H + 1.35 : H - 0.15, lo = -H + 0.15;
+      return dt => {
+        mols.forEach(m => {
+          const u = m.userData; u.ph += dt * 6;
+          if (st === 'solid') { m.position.lerp(u.home, 0.08); m.position.x += Math.sin(u.ph) * 0.004; m.position.y += Math.cos(u.ph * 1.3) * 0.004; return; }
+          u.v.x += (Math.random() - 0.5) * dt * (st === 'liquid' ? 3 : 1); u.v.y += (Math.random() - 0.5) * dt * (st === 'liquid' ? 3 : 1) - (st === 'liquid' ? dt * 0.6 : 0); u.v.z += (Math.random() - 0.5) * dt * (st === 'liquid' ? 3 : 1);
+          u.v.setLength(speed); m.position.addScaledVector(u.v, dt);
+          ['x', 'z'].forEach(a => { if (m.position[a] > H - 0.15) { m.position[a] = H - 0.15; u.v[a] *= -1; } if (m.position[a] < -H + 0.15) { m.position[a] = -H + 0.15; u.v[a] *= -1; } });
+          if (m.position.y > top) { m.position.y = top; u.v.y = -Math.abs(u.v.y); } if (m.position.y < lo) { m.position.y = lo; u.v.y = Math.abs(u.v.y); }
+          m.rotation.x += dt * speed; m.rotation.y += dt * speed * 0.7;
+        });
+      };
+    } },
   { id: 'space', ic: '🌍', n: ['الشمس والأرض والقمر', 'Sun, Earth & Moon'], dist: 13,
     info: ['الأرض تدور حول نفسها فيأتي الليل والنهار، وتدور حول الشمس فتتعاقب الفصول، والقمر يدور حول الأرض. الأحجام والمسافات هنا مصغَّرة لنراها معًا.', 'The Earth spins, giving day and night; it travels round the Sun, giving the seasons; and the Moon travels round the Earth. Sizes and distances here are shrunk so we can see them together.'],
     q: ['ما الذي يصنع الليل والنهار؟', 'What makes day and night?'], o: [['دوران الأرض حول نفسها', 'The Earth spinning'], ['دوران القمر حول الأرض', 'The Moon going round the Earth'], ['اقتراب الشمس وابتعادها', 'The Sun coming closer and going away']],
@@ -123,9 +442,9 @@ const MODELS = [
       pivot.add(ring(6, 0x8FC2F5));
       const orbit = new THREE.Group(); pivot.add(orbit);
       const tilt = new THREE.Group(); tilt.position.x = 6; tilt.rotation.z = 0.41; orbit.add(tilt);
-      const earth = new THREE.Mesh(new THREE.SphereGeometry(0.7, 48, 32), new THREE.MeshStandardMaterial({ map: earthTexture(), roughness: 0.8 })); tilt.add(earth);
+      const earth = new THREE.Mesh(new THREE.SphereGeometry(0.7, 48, 32), new THREE.MeshStandardMaterial({ map: (() => { const t = new THREE.TextureLoader().load('img/earth-day.webp'); t.colorSpace = THREE.SRGBColorSpace; return t; })(), roughness: 0.85 })); tilt.add(earth);
       const mo = new THREE.Group(); mo.position.x = 6; orbit.add(mo); const mr = ring(1.5, 0xffffff); mo.add(mr);
-      const moon = ball(0.2, 0xC9CDD4, { roughness: 0.95 }); moon.position.x = 1.5; mo.add(moon);
+      const moon = new THREE.Mesh(new THREE.SphereGeometry(0.2, 32, 20), new THREE.MeshStandardMaterial({ map: (() => { const t = new THREE.TextureLoader().load('img/moon.webp'); t.colorSpace = THREE.SRGBColorSpace; return t; })(), roughness: 1 })); moon.position.x = 1.5; mo.add(moon);
       label(sun, 'الشمس', 'Sun'); label(earth, 'الأرض', 'Earth'); label(moon, 'القمر', 'Moon');
       return dt => { orbit.rotation.y += dt * 0.12; earth.rotation.y += dt * 1.6; mo.rotation.y += dt * 0.9; glow.scale.setScalar(1 + Math.sin(performance.now() / 600) * 0.03); };
     } },
@@ -181,8 +500,9 @@ const MODELS = [
 
 let tick = null, opt = null;
 function show(id, o) {
-  cur = MODELS.find(m => m.id === id) || MODELS[0]; opt = o || (cur.opts ? cur.opts[cur.id === 'atom' ? 2 : 0][0] : null);
-  clearModel(); cur.extra = ''; view.dist = cur.dist; view.yaw = 0.5; view.pitch = 0.35;
+  const same = cur && cur.id === id; cur = MODELS.find(m => m.id === id) || MODELS[0]; opt = o || (cur.opts && cur.id !== 'globe' ? cur.opts[cur.id === 'atom' ? 2 : 0][0] : null);
+  if (cur.id !== 'body') { cur.next = null; }
+  clearModel(); cur.extra = ''; if (!same) { view.dist = cur.dist; view.yaw = cur.id === 'body' ? 0 : cur.id === 'globe' ? -0.25 : 0.5; view.pitch = cur.id === 'body' ? 0.05 : cur.id === 'globe' ? 0.15 : 0.35; }
   tick = renderer ? cur.build(opt) : null;
   paint();
 }
@@ -192,16 +512,18 @@ function paint() {
   document.querySelectorAll('.lang button').forEach(b => b.classList.toggle('active', b.dataset.lang === lang));
   document.title = T('المختبر ثلاثيّ الأبعاد | مختبر الاكتشاف', 'The 3D Lab | Discovery Lab');
   $('ttl').textContent = '🧊 ' + T('المختبر ثلاثيّ الأبعاد', 'The 3D Lab');
-  $('lead').textContent = T('مجسّماتٌ حقيقيّة: أدِرها بإصبعك، وقرِّبها بإصبعين.', 'Real 3D models: turn them with a finger and zoom with two.');
+  $('lead').textContent = T('مجسّماتٌ حقيقيّة: أدِرها بإصبعك، وقرِّبها بإصبعين، واضغط على الأعضاء.', 'Real 3D models: turn them with a finger, zoom with two, and tap the organs.');
   $('hint').textContent = T('☝️ اسحب للتدوير · 🤏 إصبعان للتقريب', '☝️ drag to turn · 🤏 two fingers to zoom');
   canvas.setAttribute('aria-label', T(cur.n[0], cur.n[1]));
   $('tabs').innerHTML = MODELS.map(m => '<button type="button" data-m="' + m.id + '" aria-pressed="' + (m === cur) + '">' + m.ic + ' ' + T(m.n[0], m.n[1]) + '</button>').join('');
   $('tabs').querySelectorAll('button').forEach(b => b.onclick = () => show(b.dataset.m));
   $('ctl').innerHTML = (cur.opts ? cur.opts.map(o => '<button type="button" data-o="' + o[0] + '" aria-pressed="' + (o[0] === opt) + '">' + T(o[1], o[2]) + '</button>').join('') : '') +
-    '<button type="button" id="playBtn" aria-pressed="' + play + '">' + (play ? '⏸ ' + T('أوقِف الحركة', 'Pause') : '▶ ' + T('شغِّل الحركة', 'Play')) + '</button><button type="button" id="spdBtn">⏩ ' + T('السرعة ×', 'Speed ×') + N(speed) + '</button>';
+    (cur.id === 'body' ? '' : '<button type="button" id="playBtn" aria-pressed="' + play + '">' + (play ? '⏸ ' + T('أوقِف الحركة', 'Pause') : '▶ ' + T('شغِّل الحركة', 'Play')) + '</button><button type="button" id="spdBtn">⏩ ' + T('السرعة ×', 'Speed ×') + N(speed) + '</button>');
   $('ctl').querySelectorAll('[data-o]').forEach(b => b.onclick = () => show(cur.id, b.dataset.o));
-  $('playBtn').onclick = () => { play = !play; paint(); }; $('spdBtn').onclick = () => { speed = speed >= 4 ? 1 : speed * 2; paint(); };
-  $('info').innerHTML = '<h2>' + cur.ic + ' ' + T(cur.n[0], cur.n[1]) + '</h2>' + (cur.extra ? '<b style="color:#8BE0AC">' + cur.extra + '</b><br>' : '') + T(cur.info[0], cur.info[1]);
+  $('credit').textContent = cur.id === 'body' ? 'Anatomy: BodyParts3D © The Database Center for Life Science (CC BY 4.0), modified by open-anatomy-3d (CC BY 4.0) — bones, organs and vessels only. Not for diagnosis.' : '';
+  if ($('playBtn')) { $('playBtn').onclick = () => { play = !play; paint(); }; $('spdBtn').onclick = () => { speed = speed >= 4 ? 1 : speed * 2; paint(); }; }
+  $('info').innerHTML = '<h2>' + cur.ic + ' ' + T(cur.n[0], cur.n[1]) + '</h2>' + (cur.id === 'globe' ? '<b id="gtime" style="display:block;color:#FFE27A;font-size:1.05rem;margin-bottom:.3rem"></b>' : '') + (cur.id === 'body' ? '<div id="organ" style="min-height:3.4em;margin:.2rem 0 .5rem">' + T('اضغط «العضو التالي» أو اضغط على عضوٍ في الجسم.', 'Press "Next organ" or tap an organ on the body.') + '</div><button type="button" id="nextOrg" style="min-height:50px;width:100%;border-radius:999px;border:none;background:#E8B530;color:#10243d;font:900 1.05rem Tajawal,sans-serif;cursor:pointer;margin-bottom:.6rem">' + T('◀ العضو التالي', 'Next organ ▶') + '</button>' : '') + (cur.extra ? '<b style="color:#8BE0AC">' + cur.extra + '</b><br>' : '') + T(cur.info[0], cur.info[1]);
+  const no = $('nextOrg'); if (no) no.onclick = () => cur.next && cur.next();
   const J = window.MKJourney, done = J && J.earned('lab3d', cur.id), order = [0, 1, 2], r = cur.id.length % 3, ord = order.slice(r).concat(order.slice(0, r));
   $('quiz').innerHTML = '<h2>❓ ' + T(cur.q[0], cur.q[1]) + (done ? ' ✅' : '') + '</h2><div class="d3-q">' + ord.map(i => '<button type="button" data-a="' + i + '">' + T(cur.o[i][0], cur.o[i][1]) + '</button>').join('') + '</div><div class="d3-msg" id="qmsg" aria-live="polite"></div>';
   $('quiz').querySelectorAll('button').forEach(b => b.onclick = () => {
@@ -215,7 +537,7 @@ function loop(now) {
   requestAnimationFrame(loop); if (document.hidden || !renderer) return;
   const dt = Math.min(0.05, (now - last) / 1000); last = now;
   const moving = play && (!calm() || now - touched < 4000);
-  if (tick && moving) tick(dt * speed);
+  if (tick && (moving || (cur && cur.id === 'body'))) tick(dt * speed);
   applyView(); renderer.render(scene, camera);
   const w = stage.clientWidth, h = stage.clientHeight;
   labels.forEach(l => { l[0].getWorldPosition(v3); v3.project(camera); l[1].style.left = ((v3.x + 1) / 2 * w) + 'px'; l[1].style.top = ((1 - v3.y) / 2 * h) + 'px'; l[1].style.display = v3.z < 1 ? '' : 'none'; });
@@ -223,7 +545,7 @@ function loop(now) {
 document.querySelectorAll('.lang button').forEach(b => b.onclick = () => { lang = b.dataset.lang; try { LS.setItem('bunyanLang', lang); } catch (e) {} show(cur.id, opt); });
 window.setLang = l => { lang = l; try { LS.setItem('bunyanLang', l); } catch (e) {} show(cur.id, opt); };
 if (!renderer) { stage.innerHTML = '<div class="d3-fall">' + T('متصفّحك لا يدعم العرض ثلاثيّ الأبعاد. جرِّب متصفّحًا أحدث — وبقيّة تجارب المختبر تعمل كما هي.', 'Your browser cannot show 3D. Try a newer browser — the rest of the lab works as usual.') + '</div>'; }
-addEventListener('resize', resize); resize(); show('space'); requestAnimationFrame(loop);
+addEventListener('resize', resize); resize(); { const P = new URLSearchParams(location.search), m = P.get('m') || 'body'; show(m === 'digest' ? 'body' : m, P.get('s') || (m === 'digest' ? 'dig' : undefined)); } requestAnimationFrame(loop);
 window.__d3 = { view, MODELS, show, renderer: () => !!renderer };
 </script>
 <script src="../shared/mk-citynav.js"></script>
