@@ -51,7 +51,7 @@
       try {
         if (state === 2 && window.BookScenes) {
           var old = ctx.era !== 'now';
-          var r = BookScenes.render({ id: ctx.id, key: ctx.id, W: 720, acc: ctx.color || '#D4A017', noPeople: old, ban: BAN[old ? 'old' : 'now'], wt: { scene: 2 },
+          var r = BookScenes.render({ id: ctx.id, key: ctx.id + (ctx.kind || ''), W: ctx.W || 720, kind: ctx.kind,   /* kind:'color' = black outlines for colouring */ acc: ctx.color || '#D4A017', noPeople: old, ban: BAN[old ? 'old' : 'now'], wt: { scene: 2 },
             texts: { id: hintFor(ctx.emoji), title: plain(ctx.title), scene: plain(ctx.text) } });
           svg = r && r.svg || null;
         }

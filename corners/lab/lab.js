@@ -20,7 +20,8 @@
     { id: 'water',  ic: '💧', ar: 'الماء والطقس', en: 'Water & weather' },
     { id: 'matter', ic: '⚛️', ar: 'المادّة والكيمياء', en: 'Matter & chemistry' },
     { id: 'space',  ic: '🌙', ar: 'الفضاء', en: 'Space' },
-    { id: 'maths',  ic: '🔢', ar: 'الرياضيات', en: 'Maths' }
+    { id: 'maths',  ic: '🔢', ar: 'الرياضيات', en: 'Maths' },
+    { id: 'life',   ic: '🛒', ar: 'حياتي اليوميّة', en: 'Everyday life' }
   ];
   var LIST = [
     { id: 'digestion', s: 'body', ic: '🍞', c: '#B5651D', t: { ar: 'رحلة لقمة الطعام', en: 'The journey of a bite' }, d: { ar: 'اسحب اللقمة من الفم إلى الدم', en: 'Drag a bite from the mouth to the blood' } },
@@ -32,7 +33,11 @@
     { id: 'states', s: 'matter', ic: '🧊', c: '#117A8B', t: { ar: 'حالات المادّة', en: 'States of matter' }, d: { ar: 'سخِّن وبرِّد: جليد، ماء، بخار', en: 'Heat and cool: ice, water, steam' } },
     { id: 'day-night', s: 'space', ic: '🌍', c: '#1F4E8C', t: { ar: 'الليل والنهار وأطوار القمر', en: 'Day, night & the Moon\'s phases' }, d: { ar: 'أدِر الأرض وحرّك القمر حولها', en: 'Spin the Earth and move the Moon around it' } },
     { id: 'fractions', s: 'maths', ic: '🍕', c: '#C0562B', t: { ar: 'الكسور', en: 'Fractions' }, d: { ar: 'قطِّع وظلِّل وقارِن واجمع', en: 'Cut, shade, compare and add' } },
-    { id: 'times', s: 'maths', ic: '🧮', c: '#B8860B', t: { ar: 'جدول الضرب بالمصفوفات', en: 'Times tables with arrays' }, d: { ar: 'ابنِ صفوفًا وأعمدة وشاهد الناتج', en: 'Build rows and columns; see the product' } }
+    { id: 'times', s: 'maths', ic: '🧮', c: '#B8860B', t: { ar: 'جدول الضرب بالمصفوفات', en: 'Times tables with arrays' }, d: { ar: 'ابنِ صفوفًا وأعمدة وشاهد الناتج', en: 'Build rows and columns; see the product' } },
+    { id: '3d', s: 'space', ic: '🧊', c: '#6C4AB6', t: { ar: 'المختبر ثلاثيّ الأبعاد', en: 'The 3D Lab' }, d: { ar: 'مجسّماتٌ حقيقيّة تديرها بإصبعك', en: 'Real 3D models you turn with a finger' } },
+    { id: 'clock', s: 'life', ic: '🕐', c: '#1F4E8C', t: { ar: 'الوقت والساعة', en: 'Time and the clock' }, d: { ar: 'حرِّك العقربين واقرأ الوقت', en: 'Move the hands and read the time' } },
+    { id: 'scale', s: 'life', ic: '⚖️', c: '#B8860B', t: { ar: 'الوزن والميزان', en: 'Weight and the scale' }, d: { ar: 'وازِن الكفّتين بالأثقال', en: 'Balance the pans with weights' } },
+    { id: 'shop', s: 'life', ic: '🛒', c: '#2E8B57', t: { ar: 'البيع والشراء', en: 'Buying and selling' }, d: { ar: 'املأ السلّة واحسب الثمن والباقي', en: 'Fill the basket; work out price and change' } }
   ];
 
   function T(o) { if (o == null) return ''; if (typeof o !== 'object') return String(o); return lang === 'en' ? (o.en != null ? o.en : o.ar) : o.ar; }

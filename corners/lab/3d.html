@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="dark">
+<title>المختبر ثلاثيّ الأبعاد | مختبر الاكتشاف</title>
+<meta name="description" content="مجسّماتٌ حقيقيّة ثلاثيّة الأبعاد يديرها الطفل بإصبعه: الشمس والأرض والقمر، الذرّة، جزيء الماء وبلّورة الملح، والمجسّمات الهندسيّة. Real 3D models a child turns with a finger.">
+<link rel="icon" href="../../favicon.ico">
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@500;700;800;900&family=Amiri:wght@700&family=Nunito:wght@600;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="lab.css">
+<style id="__antiflash">html{background:#081E36;color-scheme:dark}</style>
+<style>
+  .d3-wrap{max-width:900px;margin:0 auto;padding:.4rem 1rem 5rem}
+  .d3-wrap h1{margin:.2rem 0 .1rem;font-size:1.5rem;color:#FFE27A;text-align:center}
+  .d3-lead{text-align:center;color:#BFD6EA;font-weight:700;line-height:1.7;margin:0 0 .7rem}
+  .d3-tabs{display:grid;grid-template-columns:repeat(2,1fr);gap:.5rem;margin-bottom:.7rem}
+  @media(min-width:700px){.d3-tabs{grid-template-columns:repeat(4,1fr)}}
+  .d3-tabs button{min-height:56px;border-radius:1rem;border:2px solid rgba(255,255,255,.22);background:rgba(255,255,255,.06);color:#fff;font:900 .98rem 'Tajawal',sans-serif;cursor:pointer;padding:.3rem .5rem}
+  .d3-tabs button[aria-pressed="true"]{background:#E8B530;color:#10243d;border-color:#E8B530}
+  .d3-stage{position:relative;border-radius:1.3rem;overflow:hidden;border:2px solid rgba(255,255,255,.18);background:radial-gradient(circle at 50% 40%,#16365A,#050F1F);aspect-ratio:1/1;touch-action:none}
+  @media(min-width:700px){.d3-stage{aspect-ratio:16/10}}
+  .d3-stage canvas{display:block;width:100%;height:100%;cursor:grab}
+  .d3-hint{position:absolute;inset-inline:0;bottom:.5rem;text-align:center;font-weight:800;font-size:.85rem;color:#BFD6EA;pointer-events:none}
+  .d3-lbl{position:absolute;transform:translate(-50%,-140%);background:rgba(8,30,54,.85);border:1px solid rgba(255,255,255,.3);color:#fff;font-weight:900;font-size:.78rem;padding:.1rem .45rem;border-radius:999px;pointer-events:none;white-space:nowrap}
+  .d3-ctl{display:flex;gap:.5rem;flex-wrap:wrap;justify-content:center;margin:.7rem 0}
+  .d3-ctl button{min-height:48px;padding:0 1rem;border-radius:999px;border:2px solid rgba(255,255,255,.22);background:rgba(255,255,255,.06);color:#fff;font:900 .95rem 'Tajawal',sans-serif;cursor:pointer}
+  .d3-ctl button[aria-pressed="true"]{background:#2E9E5B;border-color:#2E9E5B}
+  .d3-card{background:rgba(255,255,255,.06);border:1.5px solid rgba(255,255,255,.18);border-radius:1.1rem;padding:.8rem .9rem;margin-top:.6rem;color:#EAF3FB;font-weight:700;line-height:1.85}
+  .d3-card h2{margin:0 0 .2rem;font-size:1.1rem;color:#FFE27A}
+  .d3-q{display:grid;gap:.45rem;margin-top:.5rem}
+  .d3-q button{min-height:52px;border-radius:.9rem;border:2px solid rgba(255,255,255,.25);background:rgba(255,255,255,.07);color:#fff;font:900 1rem 'Tajawal',sans-serif;cursor:pointer;text-align:start;padding:.3rem .8rem}
+  .d3-q button.yes{background:#1F7A44;border-color:#3BB36D}.d3-q button.no{opacity:.55;border-color:#E0705A}
+  .d3-msg{min-height:1.6em;font-weight:900;color:#FFE27A;margin-top:.4rem}
+  .d3-fall{padding:2rem 1rem;text-align:center;color:#fff;font-weight:800;line-height:1.9}
+</style>
+</head>
+<body>
+  <div class="header">
+    <a href="index.html" class="back-btn" id="backBtn">↩️ <span class="lng-ar">المختبر</span><span class="lng-en" style="display:none">Lab</span></a>
+    <div class="lang"><button data-lang="en">EN</button><button data-lang="ar" class="active">عربي</button></div>
+  </div>
+  <main class="d3-wrap">
+    <h1 id="ttl"></h1>
+    <p class="d3-lead" id="lead"></p>
+    <div class="d3-tabs" id="tabs" role="group"></div>
+    <div class="d3-stage" id="stage"><canvas id="cv" role="img"></canvas><div class="d3-hint" id="hint"></div></div>
+    <div class="d3-ctl" id="ctl"></div>
+    <div class="d3-card" id="info" aria-live="polite"></div>
+    <div class="d3-card" id="quiz"></div>
+  </main>
+  <noscript><p style="text-align:center;padding:2rem">هذه الصفحة تحتاج إلى JavaScript. · This page needs JavaScript.</p></noscript>
+
+<script>window.MK_TOPBAR = { title: { ar: 'المختبر ثلاثيّ الأبعاد', en: 'The 3D Lab' }, up: { href: 'index.html', ar: 'مختبر الاكتشاف', en: 'Discovery Lab' } };</script>
+<script src="../shared/mk-system.js"></script>
+<script src="../shared/mk-bag.js"></script>
+<script src="../shared/mk-journey.js"></script>
+<script type="module">
+/* «المختبر ثلاثيّ الأبعاد» — real 3D models (three.js r160, MIT, bundled in vendor/ — no CDN).
+   The child turns the model with a finger (drag), zooms with two fingers or the wheel, and
+   switches parts on and off. Four models: Sun–Earth–Moon · the atom · water molecule & salt
+   crystal · the solid shapes. Each has a short explanation and one question (→ 2 stars).
+   Motion stops in calm / focus mode and when the tab is hidden. No network calls. */
+import * as THREE from './vendor/three.module.min.js';
+
+const LS = localStorage; let lang = 'ar'; try { lang = LS.getItem('bunyanLang') === 'en' ? 'en' : 'ar'; } catch (e) {}
+const T = (a, e) => lang === 'en' ? e : a;
+const N = n => lang === 'ar' ? String(n).replace(/\d/g, d => '٠١٢٣٤٥٦٧٨٩'[d]) : String(n);
+const $ = id => document.getElementById(id);
+const calm = () => document.documentElement.classList.contains('calm') || document.documentElement.classList.contains('a11y-focus') || matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+const stage = $('stage'), canvas = $('cv');
+let renderer;
+try { renderer = new THREE.WebGLRenderer({ canvas, antialias: true, alpha: true }); } catch (e) { renderer = null; }
+const scene = new THREE.Scene(), camera = new THREE.PerspectiveCamera(42, 1, 0.1, 200);
+const pivot = new THREE.Group(); scene.add(pivot);
+scene.add(new THREE.AmbientLight(0xffffff, 0.55));
+const key = new THREE.DirectionalLight(0xffffff, 1.5); key.position.set(4, 6, 8); scene.add(key);
+
+/* orbit by hand: yaw/pitch of the pivot, distance of the camera */
+const view = { yaw: 0.5, pitch: 0.35, dist: 9, min: 4, max: 22 };
+const ptr = new Map(); let pinch = 0, touched = 0, play = true, speed = 1, cur = null, labels = [];
+function applyView() { pivot.rotation.set(view.pitch, view.yaw, 0); camera.position.set(0, 0, view.dist); camera.lookAt(0, 0, 0); }
+canvas.addEventListener('pointerdown', e => { canvas.setPointerCapture(e.pointerId); ptr.set(e.pointerId, [e.clientX, e.clientY]); touched = performance.now(); canvas.style.cursor = 'grabbing'; });
+canvas.addEventListener('pointermove', e => {
+  if (!ptr.has(e.pointerId)) return; const p = ptr.get(e.pointerId), dx = e.clientX - p[0], dy = e.clientY - p[1]; ptr.set(e.pointerId, [e.clientX, e.clientY]); touched = performance.now();
+  if (ptr.size === 1) { view.yaw += dx * 0.01; view.pitch = Math.max(-1.3, Math.min(1.3, view.pitch + dy * 0.01)); }
+  else if (ptr.size === 2) { const a = [...ptr.values()], d = Math.hypot(a[0][0] - a[1][0], a[0][1] - a[1][1]); if (pinch) view.dist = Math.max(view.min, Math.min(view.max, view.dist * pinch / d)); pinch = d; }
+});
+const up = e => { ptr.delete(e.pointerId); pinch = 0; canvas.style.cursor = 'grab'; };
+canvas.addEventListener('pointerup', up); canvas.addEventListener('pointercancel', up);
+canvas.addEventListener('wheel', e => { e.preventDefault(); view.dist = Math.max(view.min, Math.min(view.max, view.dist * (e.deltaY > 0 ? 1.1 : 0.9))); touched = performance.now(); }, { passive: false });
+canvas.tabIndex = 0;
+canvas.addEventListener('keydown', e => { const k = e.key; if (k === 'ArrowLeft') view.yaw -= 0.15; else if (k === 'ArrowRight') view.yaw += 0.15; else if (k === 'ArrowUp') view.pitch -= 0.12; else if (k === 'ArrowDown') view.pitch += 0.12; else if (k === '+' || k === '=') view.dist *= 0.9; else if (k === '-') view.dist *= 1.1; else return; e.preventDefault(); touched = performance.now(); });
+
+/* helpers */
+const mat = (c, o) => new THREE.MeshStandardMaterial(Object.assign({ color: c, roughness: 0.55, metalness: 0.05 }, o || {}));
+const ball = (r, c, o) => new THREE.Mesh(new THREE.SphereGeometry(r, 40, 28), mat(c, o));
+function ring(r, c) { const g = new THREE.Mesh(new THREE.TorusGeometry(r, 0.012, 8, 120), new THREE.MeshBasicMaterial({ color: c, transparent: true, opacity: 0.55 })); g.rotation.x = Math.PI / 2; return g; }
+function stick(a, b, r, c) { const d = new THREE.Vector3().subVectors(b, a), m = new THREE.Mesh(new THREE.CylinderGeometry(r, r, d.length(), 16), mat(c)); m.position.copy(a).addScaledVector(d, 0.5); m.quaternion.setFromUnitVectors(new THREE.Vector3(0, 1, 0), d.clone().normalize()); return m; }
+function earthTexture() {
+  const c = document.createElement('canvas'); c.width = 512; c.height = 256; const x = c.getContext('2d');
+  x.fillStyle = '#1F6FB5'; x.fillRect(0, 0, 512, 256);
+  x.fillStyle = '#3FA35A';   /* simple land shapes — a globe a child recognises, not an accurate map */
+  [[120, 70, 46, 30], [140, 150, 26, 44], [270, 80, 30, 26], [285, 140, 26, 40], [350, 80, 70, 34], [400, 120, 30, 20], [440, 170, 26, 14], [70, 60, 30, 16]].forEach(b => { x.beginPath(); x.ellipse(b[0], b[1], b[2], b[3], 0, 0, 7); x.fill(); });
+  x.fillStyle = '#E9D9A6'; x.beginPath(); x.ellipse(290, 108, 34, 12, 0, 0, 7); x.fill(); x.beginPath(); x.ellipse(335, 112, 14, 10, 0, 0, 7); x.fill();
+  x.fillStyle = '#F4FAFF'; x.fillRect(0, 0, 512, 14); x.fillRect(0, 242, 512, 14);
+  const t = new THREE.CanvasTexture(c); t.colorSpace = THREE.SRGBColorSpace; return t;
+}
+function label(obj, ar, en) { const d = document.createElement('div'); d.className = 'd3-lbl'; d.textContent = T(ar, en); stage.appendChild(d); labels.push([obj, d]); }
+function clearModel() { while (pivot.children.length) pivot.remove(pivot.children[0]); labels.forEach(l => l[1].remove()); labels = []; key.visible = true; scene.children.filter(o => o.userData.tmp).forEach(o => scene.remove(o)); }
+
+/* ── the four models ── */
+const MODELS = [
+  { id: 'space', ic: '🌍', n: ['الشمس والأرض والقمر', 'Sun, Earth & Moon'], dist: 13,
+    info: ['الأرض تدور حول نفسها فيأتي الليل والنهار، وتدور حول الشمس فتتعاقب الفصول، والقمر يدور حول الأرض. الأحجام والمسافات هنا مصغَّرة لنراها معًا.', 'The Earth spins, giving day and night; it travels round the Sun, giving the seasons; and the Moon travels round the Earth. Sizes and distances here are shrunk so we can see them together.'],
+    q: ['ما الذي يصنع الليل والنهار؟', 'What makes day and night?'], o: [['دوران الأرض حول نفسها', 'The Earth spinning'], ['دوران القمر حول الأرض', 'The Moon going round the Earth'], ['اقتراب الشمس وابتعادها', 'The Sun coming closer and going away']],
+    build() {
+      key.visible = false;
+      const sun = new THREE.Mesh(new THREE.SphereGeometry(1.5, 40, 28), new THREE.MeshBasicMaterial({ color: 0xFFC93C })); pivot.add(sun);
+      const glow = new THREE.Mesh(new THREE.SphereGeometry(1.9, 32, 20), new THREE.MeshBasicMaterial({ color: 0xFFE27A, transparent: true, opacity: 0.22, blending: THREE.AdditiveBlending, depthWrite: false })); pivot.add(glow);
+      const light = new THREE.PointLight(0xffffff, 60, 0, 1.6); pivot.add(light);
+      pivot.add(ring(6, 0x8FC2F5));
+      const orbit = new THREE.Group(); pivot.add(orbit);
+      const tilt = new THREE.Group(); tilt.position.x = 6; tilt.rotation.z = 0.41; orbit.add(tilt);
+      const earth = new THREE.Mesh(new THREE.SphereGeometry(0.7, 48, 32), new THREE.MeshStandardMaterial({ map: earthTexture(), roughness: 0.8 })); tilt.add(earth);
+      const mo = new THREE.Group(); mo.position.x = 6; orbit.add(mo); const mr = ring(1.5, 0xffffff); mo.add(mr);
+      const moon = ball(0.2, 0xC9CDD4, { roughness: 0.95 }); moon.position.x = 1.5; mo.add(moon);
+      label(sun, 'الشمس', 'Sun'); label(earth, 'الأرض', 'Earth'); label(moon, 'القمر', 'Moon');
+      return dt => { orbit.rotation.y += dt * 0.12; earth.rotation.y += dt * 1.6; mo.rotation.y += dt * 0.9; glow.scale.setScalar(1 + Math.sin(performance.now() / 600) * 0.03); };
+    } },
+  { id: 'atom', ic: '⚛️', n: ['الذرّة', 'The atom'], dist: 9,
+    opts: [['H', 'هيدروجين', 'Hydrogen', 1, 0, [1]], ['He', 'هيليوم', 'Helium', 2, 2, [2]], ['C', 'كربون', 'Carbon', 6, 6, [2, 4]], ['O', 'أكسجين', 'Oxygen', 8, 8, [2, 6]]],
+    info: ['كلُّ شيءٍ حولنا مصنوعٌ من ذرّاتٍ صغيرةٍ جدًّا. في وسط الذرّة نواةٌ فيها بروتونات (حمراء) ونيوترونات (رماديّة)، وحولها إلكترونات (زرقاء) تتحرّك بسرعة. هذا نموذجٌ مبسَّط يساعدنا على التخيّل.', 'Everything around us is made of tiny atoms. In the middle is a nucleus with protons (red) and neutrons (grey); electrons (blue) move fast around it. This is a simplified model to help us imagine.'],
+    q: ['أين توجد البروتونات؟', 'Where are the protons?'], o: [['في النواة', 'In the nucleus'], ['تدور مع الإلكترونات', 'Circling with the electrons'], ['خارج الذرّة', 'Outside the atom']],
+    build(opt) {
+      const el = this.opts.find(o => o[0] === opt) || this.opts[2], nuc = new THREE.Group(); pivot.add(nuc);
+      const total = el[3] + el[4];
+      for (let i = 0; i < total; i++) { const b = ball(0.26, (i * 7) % total < el[3] ? 0xE0503A : 0x9AA3AD), a = i * 2.4, r = total === 1 ? 0 : 0.14 * Math.sqrt(i + 0.5) * 1.5; b.position.set(Math.cos(a) * r, (i % 3 - 1) * 0.16 * Math.min(1, total / 3), Math.sin(a) * r); nuc.add(b); }
+      const shells = [];
+      el[5].forEach((n, k) => { const g = new THREE.Group(), R = 1.7 + k * 1.3; g.rotation.x = k ? 0.9 : 0.35; g.rotation.z = k ? -0.5 : 0.3; g.add(ring(R, 0x7FD4FF)); for (let i = 0; i < n; i++) { const e = ball(0.13, 0x3FA9F5, { emissive: 0x1A6FB5, emissiveIntensity: 0.6 }), a = i / n * Math.PI * 2; e.position.set(Math.cos(a) * R, 0, Math.sin(a) * R); g.add(e); } pivot.add(g); shells.push(g); });
+      label(nuc, 'النواة', 'Nucleus');
+      this.extra = T(el[1], el[2]) + ' — ' + T(N(el[3]) + ' بروتون، ' + N(el[4]) + ' نيوترون، ' + N(el[3]) + ' إلكترون', el[3] + ' protons, ' + el[4] + ' neutrons, ' + el[3] + ' electrons');
+      return dt => { shells.forEach((g, k) => { g.rotation.y += dt * (1.6 - k * 0.5); }); nuc.rotation.y += dt * 0.3; };
+    } },
+  { id: 'mol', ic: '💧', n: ['جزيء الماء وبلّورة الملح', 'Water molecule & salt crystal'], dist: 9,
+    opts: [['h2o', 'جزيء الماء', 'Water molecule'], ['nacl', 'بلّورة الملح', 'Salt crystal']],
+    info: ['جزيء الماء: ذرّةُ أكسجين (حمراء) تمسك ذرّتَي هيدروجين (بيضاوين) على شكل زاوية. والملح: ذرّات الصوديوم (بنفسجيّة) والكلور (خضراء) مرتَّبةٌ في مكعّبٍ منتظم، ولهذا تبدو حبّة الملح مكعّبًا صغيرًا.', 'A water molecule: one oxygen atom (red) holds two hydrogen atoms (white) at an angle. Salt: sodium (purple) and chlorine (green) atoms are stacked in a regular cube — which is why a grain of salt looks like a tiny cube.'],
+    q: ['كم ذرّة هيدروجين في جزيء الماء؟', 'How many hydrogen atoms are in a water molecule?'], o: [['اثنتان', 'Two'], ['واحدة', 'One'], ['ثلاث', 'Three']],
+    build(opt) {
+      if (opt === 'nacl') {
+        const g = new THREE.Group(); pivot.add(g); const s = 1.1;
+        for (let x = -1; x <= 1; x++) for (let y = -1; y <= 1; y++) for (let z = -1; z <= 1; z++) {
+          const na = (x + y + z + 30) % 2 === 0, b = ball(na ? 0.3 : 0.42, na ? 0x9B7BE0 : 0x5CC97A); b.position.set(x * s, y * s, z * s); g.add(b);
+          [[1, 0, 0], [0, 1, 0], [0, 0, 1]].forEach(d => { if (x + d[0] <= 1 && y + d[1] <= 1 && z + d[2] <= 1) g.add(stick(new THREE.Vector3(x * s, y * s, z * s), new THREE.Vector3((x + d[0]) * s, (y + d[1]) * s, (z + d[2]) * s), 0.04, 0xBFC8D2)); });
+        }
+        this.extra = T('صوديوم (بنفسجيّ) + كلور (أخضر) = ملح الطعام', 'Sodium (purple) + chlorine (green) = table salt');
+        return dt => { g.rotation.y += dt * 0.25; };
+      }
+      const g = new THREE.Group(); pivot.add(g);
+      const O = ball(0.85, 0xE0503A); g.add(O);
+      const a = 104.5 / 2 * Math.PI / 180, d = 1.55, p1 = new THREE.Vector3(Math.sin(a) * d, -Math.cos(a) * d, 0), p2 = new THREE.Vector3(-Math.sin(a) * d, -Math.cos(a) * d, 0);
+      [p1, p2].forEach(p => { const h = ball(0.5, 0xF4F6F8); h.position.copy(p); g.add(h); g.add(stick(new THREE.Vector3(), p, 0.14, 0xBFC8D2)); });
+      g.position.y = 0.5; label(O, 'أكسجين', 'Oxygen');
+      this.extra = T('H₂O: ذرّتا هيدروجين + ذرّة أكسجين', 'H₂O: two hydrogen atoms + one oxygen atom');
+      return dt => { g.rotation.y += dt * 0.4; };
+    } },
+  { id: 'solids', ic: '🧊', n: ['المجسّمات الهندسيّة', 'Solid shapes'], dist: 8,
+    opts: [['cube', 'مكعّب', 'Cube', 6, 12, 8], ['pyr', 'هرم', 'Pyramid', 5, 8, 5], ['cyl', 'أسطوانة', 'Cylinder', 3, 2, 0], ['cone', 'مخروط', 'Cone', 2, 1, 1], ['sph', 'كرة', 'Sphere', 1, 0, 0]],
+    info: ['أدِر المجسَّم وعُدَّ: الأوجه هي السطوح، والأحرف هي الخطوط التي تلتقي عندها الأوجه، والرؤوس هي الزوايا المدبَّبة.', 'Turn the solid and count: faces are the surfaces, edges are the lines where faces meet, and vertices are the pointed corners.'],
+    q: ['كم وجهًا للمكعّب؟', 'How many faces does a cube have?'], o: [['ستّة', 'Six'], ['أربعة', 'Four'], ['ثمانية', 'Eight']],
+    build(opt) {
+      const o = this.opts.find(x => x[0] === opt) || this.opts[0], g = new THREE.Group(); pivot.add(g);
+      const geo = { cube: new THREE.BoxGeometry(2.6, 2.6, 2.6), pyr: new THREE.ConeGeometry(2, 2.8, 4), cyl: new THREE.CylinderGeometry(1.4, 1.4, 3, 48), cone: new THREE.ConeGeometry(1.6, 3, 48), sph: new THREE.SphereGeometry(1.8, 48, 32) }[o[0]];
+      const m = new THREE.Mesh(geo, mat({ cube: 0x4FA3E0, pyr: 0xE8B530, cyl: 0x3BB36D, cone: 0xE0705A, sph: 0x9B7BE0 }[o[0]], { flatShading: o[0] === 'cube' || o[0] === 'pyr' })); g.add(m);
+      if (o[0] === 'cube' || o[0] === 'pyr') g.add(new THREE.LineSegments(new THREE.EdgesGeometry(geo), new THREE.LineBasicMaterial({ color: 0xffffff })));
+      this.extra = T(o[1], o[2]) + ' — ' + T('الأوجه: ' + N(o[3]) + ' · الأحرف: ' + N(o[4]) + ' · الرؤوس: ' + N(o[5]), 'faces: ' + o[3] + ' · edges: ' + o[4] + ' · vertices: ' + o[5]);
+      return dt => { g.rotation.y += dt * 0.5; };
+    } }
+];
+
+let tick = null, opt = null;
+function show(id, o) {
+  cur = MODELS.find(m => m.id === id) || MODELS[0]; opt = o || (cur.opts ? cur.opts[cur.id === 'atom' ? 2 : 0][0] : null);
+  clearModel(); cur.extra = ''; view.dist = cur.dist; view.yaw = 0.5; view.pitch = 0.35;
+  tick = renderer ? cur.build(opt) : null;
+  paint();
+}
+function paint() {
+  document.documentElement.lang = lang; document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
+  document.querySelectorAll('.lng-ar').forEach(e => e.style.display = lang === 'ar' ? '' : 'none'); document.querySelectorAll('.lng-en').forEach(e => e.style.display = lang === 'en' ? '' : 'none');
+  document.querySelectorAll('.lang button').forEach(b => b.classList.toggle('active', b.dataset.lang === lang));
+  document.title = T('المختبر ثلاثيّ الأبعاد | مختبر الاكتشاف', 'The 3D Lab | Discovery Lab');
+  $('ttl').textContent = '🧊 ' + T('المختبر ثلاثيّ الأبعاد', 'The 3D Lab');
+  $('lead').textContent = T('مجسّماتٌ حقيقيّة: أدِرها بإصبعك، وقرِّبها بإصبعين.', 'Real 3D models: turn them with a finger and zoom with two.');
+  $('hint').textContent = T('☝️ اسحب للتدوير · 🤏 إصبعان للتقريب', '☝️ drag to turn · 🤏 two fingers to zoom');
+  canvas.setAttribute('aria-label', T(cur.n[0], cur.n[1]));
+  $('tabs').innerHTML = MODELS.map(m => '<button type="button" data-m="' + m.id + '" aria-pressed="' + (m === cur) + '">' + m.ic + ' ' + T(m.n[0], m.n[1]) + '</button>').join('');
+  $('tabs').querySelectorAll('button').forEach(b => b.onclick = () => show(b.dataset.m));
+  $('ctl').innerHTML = (cur.opts ? cur.opts.map(o => '<button type="button" data-o="' + o[0] + '" aria-pressed="' + (o[0] === opt) + '">' + T(o[1], o[2]) + '</button>').join('') : '') +
+    '<button type="button" id="playBtn" aria-pressed="' + play + '">' + (play ? '⏸ ' + T('أوقِف الحركة', 'Pause') : '▶ ' + T('شغِّل الحركة', 'Play')) + '</button><button type="button" id="spdBtn">⏩ ' + T('السرعة ×', 'Speed ×') + N(speed) + '</button>';
+  $('ctl').querySelectorAll('[data-o]').forEach(b => b.onclick = () => show(cur.id, b.dataset.o));
+  $('playBtn').onclick = () => { play = !play; paint(); }; $('spdBtn').onclick = () => { speed = speed >= 4 ? 1 : speed * 2; paint(); };
+  $('info').innerHTML = '<h2>' + cur.ic + ' ' + T(cur.n[0], cur.n[1]) + '</h2>' + (cur.extra ? '<b style="color:#8BE0AC">' + cur.extra + '</b><br>' : '') + T(cur.info[0], cur.info[1]);
+  const J = window.MKJourney, done = J && J.earned('lab3d', cur.id), order = [0, 1, 2], r = cur.id.length % 3, ord = order.slice(r).concat(order.slice(0, r));
+  $('quiz').innerHTML = '<h2>❓ ' + T(cur.q[0], cur.q[1]) + (done ? ' ✅' : '') + '</h2><div class="d3-q">' + ord.map(i => '<button type="button" data-a="' + i + '">' + T(cur.o[i][0], cur.o[i][1]) + '</button>').join('') + '</div><div class="d3-msg" id="qmsg" aria-live="polite"></div>';
+  $('quiz').querySelectorAll('button').forEach(b => b.onclick = () => {
+    if (b.dataset.a === '0') { b.className = 'yes'; const got = J ? J.earn('lab3d', cur.id, 2) : 0; $('qmsg').textContent = T('أحسنت!', 'Well done!') + (got ? ' +' + N(got) + ' ⭐' : ''); }
+    else { b.className = 'no'; b.disabled = true; $('qmsg').textContent = T('ليس هذا — أدِر المجسَّم وانظر ثم جرِّب.', 'Not this one — turn the model, look, and try again.'); }
+  });
+}
+function resize() { if (!renderer) return; const w = stage.clientWidth, h = stage.clientHeight; renderer.setPixelRatio(Math.min(devicePixelRatio || 1, 2)); renderer.setSize(w, h, false); camera.aspect = w / h; camera.updateProjectionMatrix(); }
+let last = performance.now(); const v3 = new THREE.Vector3();
+function loop(now) {
+  requestAnimationFrame(loop); if (document.hidden || !renderer) return;
+  const dt = Math.min(0.05, (now - last) / 1000); last = now;
+  const moving = play && (!calm() || now - touched < 4000);
+  if (tick && moving) tick(dt * speed);
+  applyView(); renderer.render(scene, camera);
+  const w = stage.clientWidth, h = stage.clientHeight;
+  labels.forEach(l => { l[0].getWorldPosition(v3); v3.project(camera); l[1].style.left = ((v3.x + 1) / 2 * w) + 'px'; l[1].style.top = ((1 - v3.y) / 2 * h) + 'px'; l[1].style.display = v3.z < 1 ? '' : 'none'; });
+}
+document.querySelectorAll('.lang button').forEach(b => b.onclick = () => { lang = b.dataset.lang; try { LS.setItem('bunyanLang', lang); } catch (e) {} show(cur.id, opt); });
+window.setLang = l => { lang = l; try { LS.setItem('bunyanLang', l); } catch (e) {} show(cur.id, opt); };
+if (!renderer) { stage.innerHTML = '<div class="d3-fall">' + T('متصفّحك لا يدعم العرض ثلاثيّ الأبعاد. جرِّب متصفّحًا أحدث — وبقيّة تجارب المختبر تعمل كما هي.', 'Your browser cannot show 3D. Try a newer browser — the rest of the lab works as usual.') + '</div>'; }
+addEventListener('resize', resize); resize(); show('space'); requestAnimationFrame(loop);
+window.__d3 = { view, MODELS, show, renderer: () => !!renderer };
+</script>
+<script src="../shared/mk-citynav.js"></script>
+<script src="../shared/mk-topbar.js"></script>
+</body>
+</html>

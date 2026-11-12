@@ -153,6 +153,14 @@
   .here{top:6px;z-index:2}
   .sea svg.route{z-index:0}.isl{z-index:1}
   @media(max-width:480px){.isl{width:88%}}
+  .nextgo{display:flex;align-items:center;gap:.7rem;width:100%;max-width:560px;margin:0 auto .7rem;padding:.6rem .8rem;border:none;border-radius:1.2rem;cursor:pointer;font:inherit;text-align:start;color:#1A1205;background:linear-gradient(135deg,#FFE9A8,#F5CC5A);box-shadow:0 5px 0 #B98A2A,0 12px 22px rgba(0,0,0,.3)}
+  .nextgo .ng-ic{flex:0 0 52px;height:52px;border-radius:50%;display:grid;place-items:center;font-size:1.7rem;background:var(--c);box-shadow:inset 0 -4px 0 rgba(0,0,0,.2)}
+  .nextgo .ng-tx{flex:1;min-width:0;display:flex;flex-direction:column;line-height:1.35}
+  .nextgo small{font-weight:900;font-size:.78rem;color:#7A4A12}.nextgo b{font-size:1.15rem;font-weight:900}.nextgo .ng-tx>span{font-weight:800;font-size:.86rem;color:#5a4a22}
+  .nextgo .ng-go{flex:0 0 44px;height:44px;border-radius:50%;display:grid;place-items:center;background:#1F7A44;color:#fff;font-size:1.1rem}
+  .isl.spot.daily{width:17%;aspect-ratio:1}.isl.spot.daily .boat{position:absolute;inset:0;display:grid;place-items:center;font-size:2rem;filter:drop-shadow(0 4px 4px rgba(0,0,0,.35))}
+  @media(prefers-reduced-motion:no-preference){.isl.spot.daily .boat{animation:bob 4s ease-in-out infinite}}
+  .world .chip2.daily{background:#E3F4FB;border-color:#4FA3E0}
   /* ── the painted world map: one picture of the whole sea; each island is a tap zone on it ── */
   .world{position:relative;max-width:560px;margin:.4rem auto 1.2rem;border-radius:1.5rem;box-shadow:0 18px 40px rgba(3,30,50,.5)}
   .world>img{display:block;width:100%;height:auto;border-radius:1.5rem}
@@ -237,6 +245,7 @@
       ['P', '🧩', 'أنشطة أنوس', "Anos' activities", R + 'activities/dashboard.html', 'ymo', 'نجمةٌ لكلّ لعبة تُنهيها', 'A star for each game you finish'],
       ['P', '✍️', 'أكتبُ حروفي', 'I write my letters', R + 'activities/activities/letter-trace.html', 'y', 'تتبّع الحرف بإصبعك', 'Trace the letter with your finger'],
       ['P', '🔤', 'أصوات الحروف', 'Letter sounds', R + 'activities/activities/letter-sounds.html', 'y', 'استمع واختر الصورة', 'Listen and pick the picture'],
+      ['D', '🖍️', 'كتب التلوين', 'Colouring books', 'coloring.html', 'ymo', 'آيةٌ أو حديثٌ ورسمٌ تلوّنه', 'An ayah or hadith with a drawing to colour'],
       ['D', '✂️', 'ورشة الأعمال اليدوية', 'Crafts workshop', R + 'workshop/workshop.html', 'ymo', 'اصنع بيديك', 'Make it with your hands'],
       ['P', '🏆', 'ساحة المسابقات', 'Competitions Arena', R + 'competitions/competitions.html', 'mo', 'تنافس وتعلّم', 'Compete and learn']] },
     { id: 'stories', at: 18, ic: '📚', c: '#C1663A', n: { ar: 'جزيرة الحكايات', en: 'Story Island' }, s: { ar: 'حكايةٌ قبل كلّ شيء', en: 'A story before everything' }, st: [
@@ -570,42 +579,80 @@
     var nx = nextI >= 0 ? ISLANDS[nextI] : null, lastOpen = nextI < 0 ? ISLANDS.length - 2 : nextI - 1; famNote(stars);
     var prevAt = lastOpen >= 0 ? need(ISLANDS[lastOpen]) : 0, pct = nx ? Math.max(4, Math.round((stars - prevAt) / Math.max(1, need(nx) - prevAt) * 100)) : 100;
     var ag = J.AGES.filter(function (a) { return a.id === ageId(); })[0];
-    var h = '<h1>🏝️ ' + T('عالمُ الجزر', 'Island World') + '</h1><p class="lead">' + T('اجمع النجوم بالقراءة واللعب والعمل الطيّب… وكلُّ جزيرةٍ تنتظر أن تفتحها!', 'Earn stars by reading, playing and doing good… every island is waiting for you to open it!') + '</p>' +
+    var h = '<h1>🏝️ ' + T('عالمُ الجزر', 'Island World') + '</h1><p class="lead">' + T('اضغط على جزيرةٍ، أتمم محطّاتها، واجمع النجوم لتفتح الجزيرة التالية.', 'Tap an island, finish its stations, and earn stars to open the next one.') + '</p>' +
       '<div class="hud"><span class="av" style="--c:' + esc(p && p.color || '#D4A017') + '">' + esc(p && p.avatar || '🧒') + '</span><div class="tx"><b>' + esc(p ? p.name : T('يا بطل', 'Champion')) + ' · ' + lv.ic + ' ' + esc(t(lv.name)) + '</b><small>' +
       (nx ? T('بقي ' + N(need(nx) - stars) + ' نجمة لتفتح «' + nx.n.ar + '»', (need(nx) - stars) + ' more stars to open "' + nx.n.en + '"') : T('فتحتَ كلَّ الجزر — ما شاء الله!', 'You opened every island — MashaAllah!')) + '</small><div class="bar"><i style="width:' + pct + '%"></i></div></div><span class="st">' + N(stars) + ' ⭐</span></div>' +
-      seaHtml() + mixHtml(stars, all) + '<div class="sea" id="sea">' + worldHtml(ISLANDS.map(function (I, i) {
+      nextHtml(stars, all) + '<div class="sea" id="sea">' + worldHtml(ISLANDS.map(function (I, i) {
         var open = all || stars >= need(I), isNext = i === nextI, isNew = open && I.at > 0 && sn.indexOf(I.id) < 0;
         var isLit = open && lit(I), hid = I.secret && !open, bdg = J.earned('badge', I.id) ? ' 🎖️' : '';
         var tagH = (open ? (isNew ? T('جديدة!', 'New!') : isLit ? '🏮 ' + T('مُضاءة', 'Lit') + bdg : QUEST[I.id] ? N(prog(I)) + '/' + N(goal(I)) + ' 🏮' : T('ادخل', 'Enter')) : hid ? '🗺️ ' + N(pieces()) + '/' + N(6) : N(need(I)) + ' ⭐'), cls = (open ? '' : ' lock') + (isLit ? ' lit' : '') + (isNext ? ' next' : '') + (isNew ? ' new' : ''), hereH = i === lastOpen ? '<span class="here">' + shipSvg(lv.i) + ' ' + T('أنت هنا', 'You are here') + '</span>' : '', P = POS[I.id];
         if (P) return '\u0001<button class="isl spot' + cls + '" data-i="' + i + '" style="left:' + P[0] + '%;top:' + P[1] + '%;--c:' + I.c + '" aria-label="' + esc(t(I.n)) + '">' + hereH + '<span class="veil"></span></button>\u0002<span class="chip2' + cls + '" data-i="' + i + '" style="left:' + P[0] + '%;top:' + (P[1] + 5.4) + '%" aria-hidden="true"><b>' + esc(t(I.n)) + '</b><span class="tag">' + tagH + '</span></span>';
         return '<button class="isl' + cls + '" data-i="' + i + '" style="--c:' + I.c + '">' + hereH +
           art(I, open, isLit, hid) + '<span class="plate"><span class="em">' + (open ? I.ic : hid ? '❔' : '🔒') + '</span><span class="tx"><b>' + esc(hid ? T('جزيرةٌ مجهولة', 'An unknown island') : t(I.n)) + '</b><small>' + esc(hid ? T('اجمع قطع الخريطة لتجدها', 'Gather the map pieces to find it') : t(I.s)) + '</small></span><span class="tag">' + tagH + '</span></span></button>';
-      })) + '</div>' + reviewHtml() +
-      '<div class="foot"><a class="pill" href="../../index.html?city=1">🏙️ ' + T('المدينة (الصفحة الرئيسية)', 'The city (home page)') + '</a><button class="pill" id="shipBtn">⛵ ' + T('سفينتي', 'My ship') + '</button><button class="pill" id="mapBtn">🗺️ ' + T('خريطة الكنز', 'Treasure map') + '</button><button class="pill" id="dreamBtn">🌟 ' + T('حلمي', 'My dream') + '</button><button class="pill" id="famBtn">🏠 ' + T('فانوس العائلة', 'Family lantern') + '</button><button class="pill" id="heroBtn">🤝 ' + T('رفاق الرحلة', 'Companions') + '</button><button class="pill" id="ageBtn">' + ag.ic + ' ' + T('عمري: ' + ag.ar, 'My age: ' + ag.en) + '</button><button class="pill" id="parentBtn2">🔐 ' + T('عرض الأهل', 'Parent view') + '</button><a class="pill" href="search.html">🔎 ' + T('ابحث', 'Search') + '</a><a class="pill" href="bag.html">🎒 ' + T('حقيبتي', 'My bag') + '</a>' + (all ? '<button class="pill" id="relock">🔒 ' + T('أعِد قفل الجزر', 'Lock islands again') + '</button>' : '<button class="pill" id="unlock">🔓 ' + T('افتح كلَّ الجزر (للأهل)', 'Open all islands (parents)') + '</button>') + '</div>';
+      }), stars, all) + '</div>' +
+      '<div class="foot"><a class="pill" href="../../index.html?city=1">🏙️ ' + T('المدينة', 'The city') + '</a><a class="pill" href="bag.html">🎒 ' + T('حقيبتي', 'My bag') + '</a><button class="pill" id="helpBtn">❓ ' + T('كيف ألعب؟', 'How do I play?') + '</button><button class="pill" id="moreBtn">🧰 ' + T('المزيد', 'More') + '</button><button class="pill" id="parentBtn2">🔐 ' + T('عرض الأهل', 'Parent view') + '</button></div>';
     var app = document.getElementById('app'); app.innerHTML = DEFS + h;
     app.querySelectorAll('.isl').forEach(function (b) { b.onclick = function () { openIsland(+b.getAttribute('data-i'), stars, all); }; });
-    var u = document.getElementById('unlock'); if (u) u.onclick = function () { var go = function () { try { LS.setItem('islands_open', '1'); } catch (e) {} render(); }; if (window.MKGate && MKGate.ask) MKGate.ask(go, T('فتحُ كلّ الجزر يأذن به أحد الوالدين', 'Opening every island needs a parent')); else go(); };
-    var ab = document.getElementById('ageBtn'); if (ab) ab.onclick = function () { askAge(false); };
-    [].forEach.call(app.querySelectorAll('.mx'), function (a) { a.addEventListener('click', function () { mark(a.getAttribute('data-k'), a.getAttribute('href')); }); });
-    [].forEach.call(app.querySelectorAll('.rv'), function (a) { a.addEventListener('click', function () { mark(a.getAttribute('data-k'), a.getAttribute('href')); }); });
-    document.getElementById('mapBtn').onclick = mapSheet; document.getElementById('dreamBtn').onclick = dreamSheet; document.getElementById('famBtn').onclick = function () { famSheet(false); };
-    var sb = document.getElementById('seaBtn'); if (sb) sb.onclick = function () { J.earn('sea', 'day', +sb.getAttribute('data-s') || 1, { daily: true }); render(); };
-    var wb = document.getElementById('windBtn'); if (wb) { var wn = 0; wb.onclick = function () { wn++; document.getElementById('windN').textContent = N(wn); if (wn >= 10) { J.earn('sea', 'day', 2, { daily: true }); render(); } }; }
-    document.getElementById('shipBtn').onclick = shipSheet; document.getElementById('heroBtn').onclick = heroesSheet;
+    document.getElementById('helpBtn').onclick = helpSheet; document.getElementById('moreBtn').onclick = moreSheet;
+    var gn = document.getElementById('goNext'); if (gn) gn.onclick = function () { openIsland(+gn.getAttribute('data-i'), stars, all); };
+    var ds = document.getElementById('dailySpot'); if (ds) ds.onclick = dailySheet;
     var pb2 = document.getElementById('parentBtn2'); if (pb2) pb2.onclick = toParent;
-    var r = document.getElementById('relock'); if (r) r.onclick = function () { try { LS.removeItem('islands_open'); } catch (e) {} render(); };
     requestAnimationFrame(route);
     /* a newly opened island is celebrated once */
     var fresh = ISLANDS.filter(function (I) { return I.at > 0 && (all || stars >= need(I)) && sn.indexOf(I.id) < 0; });
     if (!J.age()) { if (!document.getElementById('ov').classList.contains('open')) askAge(true); return; }
     if (won.length && !document.getElementById('ov').classList.contains('open')) return wonSheet(won[won.length - 1]);
-    if (fresh.length && !all && !document.getElementById('ov').classList.contains('open')) { fresh.forEach(function (I) { markSeen(I.id); }); celebrate(fresh[fresh.length - 1]); }
+    if (fresh.length && !all && !document.getElementById('ov').classList.contains('open')) { fresh.forEach(function (I) { markSeen(I.id); }); return celebrate(fresh[fresh.length - 1]); }
+    var hs = false; try { hs = LS.getItem('islands_help') === '1'; } catch (e) {}
+    if (!hs && !document.getElementById('ov').classList.contains('open')) { try { LS.setItem('islands_help', '1'); } catch (e) {} helpSheet(); }
+  }
+  /* ---- a simpler page: ONE clear next step on top, the daily extras inside one boat on the map, the rest under «More» ---- */
+  function nextIsland(stars, all) {
+    var open = ISLANDS.filter(function (I) { return !I.secret && !I.season && (all || stars >= need(I)); });
+    for (var i = 0; i < open.length; i++) if (QUEST[open[i].id] && !lit(open[i])) return open[i];
+    return open[open.length - 1] || ISLANDS[0];
+  }
+  function nextHtml(stars, all) {
+    var I = nextIsland(stars, all), g = goal(I), pr = Math.min(prog(I), g), done = lit(I);
+    return '<button class="nextgo" id="goNext" data-i="' + ISLANDS.indexOf(I) + '" style="--c:' + I.c + '"><span class="ng-ic">' + I.ic + '</span><span class="ng-tx"><small>' + T('خطوتك التالية', 'Your next step') + '</small><b>' + esc(t(I.n)) + '</b><span>' +
+      (done ? T('أضأتَها — جرّب محطّةً جديدة', 'It is lit — try a new station') : T('أتمم ' + N(g - pr) + ' محطّات لتُضيء الجزيرة', 'Finish ' + (g - pr) + ' stations to light the island')) + '</span></span><span class="ng-go">' + (lang === 'ar' ? '◀' : '▶') + '</span></button>';
+  }
+  function dailyCount(stars, all) { var m = mixToday(stars, all), n = m.filter(function (o) { return J.earnedToday('mix', o[1][0]); }).length + (J.earnedToday('sea', 'day') ? 1 : 0); return [n, m.length + 1]; }
+  function dailySpot(stars, all) {
+    var c = dailyCount(stars, all);
+    return '<button class="isl spot daily" id="dailySpot" style="left:17%;top:9.5%" aria-label="' + T('مهمّات اليوم', "Today's missions") + '"><span class="boat">⛵</span></button><span class="chip2 daily" style="left:17%;top:13.6%" aria-hidden="true"><b>🎒 ' + T('مهمّات اليوم', "Today's missions") + '</b><span class="tag">' + N(c[0]) + '/' + N(c[1]) + '</span></span>';
+  }
+  function dailySheet() {
+    var stars = J.totalStars(), all = openAll();
+    show('<div class="sh-hd" style="--c:#4FA3E0"><span class="ic">⛵</span><div><b>' + T('مهمّات اليوم', "Today's missions") + '</b><small>' + T('اختياريّة — نجومٌ إضافيّة كلَّ يوم', 'Optional — extra stars every day') + '</small></div><button class="x" aria-label="' + T('إغلاق', 'Close') + '">✕</button></div><div style="margin-top:.8rem">' + seaHtml() + mixHtml(stars, all) + reviewHtml() + '</div>');
+    var sh = document.getElementById('sheet');
+    [].forEach.call(sh.querySelectorAll('.mx,.rv'), function (a) { a.addEventListener('click', function () { mark(a.getAttribute('data-k'), a.getAttribute('href')); }); });
+    var sb = document.getElementById('seaBtn'); if (sb) sb.onclick = function () { J.earn('sea', 'day', +sb.getAttribute('data-s') || 1, { daily: true }); dailySheet(); };
+    var wb = document.getElementById('windBtn'); if (wb) { var wn = 0; wb.onclick = function () { wn++; document.getElementById('windN').textContent = N(wn); if (wn >= 10) { J.earn('sea', 'day', 2, { daily: true }); dailySheet(); } }; }
+  }
+  function helpSheet() {
+    var steps = [['🏝️', 'اضغط على جزيرةٍ مفتوحة', 'Tap an open island', 'الزرّ الكبير في الأعلى يدلّك دائمًا على خطوتك التالية.', 'The big button at the top always shows your next step.'],
+      ['▶', 'اختر محطّةً وأتمّها', 'Pick a station and finish it', 'اسمع أو اقرأ أو العب أو جرّب — ثم ارجع إلى الجزر لتأخذ نجمتك.', 'Listen, read, play or try — then come back to the islands for your star.'],
+      ['🏮', 'ثلاث محطّات تُضيء الجزيرة', 'Three stations light the island', 'وتكسب رفيقًا جديدًا ووسام الجزيرة.', 'And you win a new companion and the island badge.'],
+      ['⭐', 'النجوم تفتح الجزر المقفلة', 'Stars open the locked islands', 'الرقم تحت الجزيرة المقفلة هو عدد النجوم المطلوبة.', 'The number under a locked island is the stars it needs.'],
+      ['⛵', 'القارب = مهمّات اليوم', 'The boat = today\'s missions', 'اختياريّة: نجومٌ إضافيّة كلَّ يوم.', 'Optional: extra stars every day.']];
+    show('<div class="sh-hd" style="--c:#F5CC5A"><span class="ic">❓</span><div><b>' + T('كيف ألعب؟', 'How do I play?') + '</b></div><button class="x" aria-label="' + T('إغلاق', 'Close') + '">✕</button></div><div class="doors">' + steps.map(function (x, n) { return '<div class="door" style="cursor:default"><span class="di">' + x[0] + '</span><span>' + N(n + 1) + '. ' + esc(T(x[1], x[2])) + '<small>' + esc(T(x[3], x[4])) + '</small></span></div>'; }).join('') + '</div><div style="text-align:center;margin-top:.9rem"><button class="btn" id="helpOk">' + T('فهمت — هيّا!', 'Got it — let\'s go!') + '</button></div>');
+    document.getElementById('helpOk').onclick = close;
+  }
+  function moreSheet() {
+    var all = openAll(), ag = J.AGES.filter(function (a) { return a.id === ageId(); })[0];
+    var items = [['shipBtn', '⛵', 'سفينتي', 'My ship'], ['heroBtn', '🤝', 'رفاق الرحلة', 'Companions'], ['mapBtn', '🗺️', 'خريطة الكنز', 'Treasure map'], ['dreamBtn', '🌟', 'حلمي حين أكبر', 'My dream'], ['famBtn', '🏠', 'فانوس العائلة', 'Family lantern'], ['ageBtn', ag.ic, 'عمري: ' + ag.ar, 'My age: ' + ag.en], [all ? 'relock' : 'unlock', all ? '🔒' : '🔓', all ? 'أعِد قفل الجزر' : 'افتح كلَّ الجزر (للأهل)', all ? 'Lock islands again' : 'Open all islands (parents)']];
+    show('<div class="sh-hd" style="--c:#2E9E5B"><span class="ic">🧰</span><div><b>' + T('المزيد', 'More') + '</b></div><button class="x" aria-label="' + T('إغلاق', 'Close') + '">✕</button></div><div class="doors">' + items.map(function (x) { return '<button class="door" id="' + x[0] + '" style="width:100%;font:inherit;text-align:start;cursor:pointer"><span class="di">' + x[1] + '</span><span>' + esc(T(x[2], x[3])) + '</span><span class="go">' + (lang === 'ar' ? '←' : '→') + '</span></button>'; }).join('') + '<a class="door" href="search.html"><span class="di">🔎</span><span>' + T('ابحث في الموقع', 'Search the site') + '</span><span class="go">' + (lang === 'ar' ? '←' : '→') + '</span></a></div>');
+    var on = function (id, f) { var e = document.getElementById(id); if (e) e.onclick = f; };
+    on('shipBtn', shipSheet); on('heroBtn', heroesSheet); on('mapBtn', mapSheet); on('dreamBtn', dreamSheet); on('famBtn', function () { famSheet(false); }); on('ageBtn', function () { askAge(false); });
+    on('unlock', function () { var go = function () { try { LS.setItem('islands_open', '1'); } catch (e) {} close(); }; if (window.MKGate && MKGate.ask) MKGate.ask(go, T('فتحُ كلّ الجزر يأذن به أحد الوالدين', 'Opening every island needs a parent')); else go(); });
+    on('relock', function () { try { LS.removeItem('islands_open'); } catch (e) {} close(); });
   }
   /* islands that are on the painted map go inside it; the seasonal island stays above and the treasure island below */
-  function worldHtml(parts) {
+  function worldHtml(parts, stars, all) {
     var top = '', map = '', chips = '', bottom = '', seen = false;
     parts.forEach(function (p) { if (p.charAt(0) === '\u0001') { var q = p.slice(1).split('\u0002'); map += q[0]; chips += q[1] || ''; seen = true; } else if (seen) bottom += p; else top += p; });
-    return top + '<div class="world"><img src="img/islands-map.webp" width="768" height="1376" alt="' + T('خريطة عالم الجزر', 'The map of Island World') + '">' + map + chips + '</div>' + bottom;
+    return top + '<div class="world"><img src="img/islands-map.webp" width="768" height="1376" alt="' + T('خريطة عالم الجزر', 'The map of Island World') + '">' + map + dailySpot(stars, all) + chips + '</div>' + bottom;
   }
   function route() {
     var m = document.getElementById('sea'), svg = document.getElementById('route'); if (!m || !svg) return;

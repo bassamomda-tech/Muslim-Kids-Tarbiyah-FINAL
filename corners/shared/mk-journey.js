@@ -132,7 +132,7 @@
   ];
   function totalStars() {
     var bag = null;
-    try { if (window.MKBagCollect) { var c = window.MKBagCollect(); bag = (c.stars || 0) + (c.badges || 0) * 5; jset('journey_bagstars', bag); } } catch (e) {}
+    try { if (window.MKBagCollect) { var c = window.MKBagCollect(); bag = (c.stars || 0) + (c.badges || 0) * 5; try { if (window.MK && MK.stars) MK.stars().forEach(function (r) { if (/^isl-/.test(r.id)) bag -= r.done; }); } catch (e2) {}   /* island rows are already in purseStars() */ jset('journey_bagstars', bag); } } catch (e) {}
     if (bag == null) bag = parseInt(jget('journey_bagstars', 0), 10) || 0;   // pages without the bag (home) use the last count seen
     try { var D = jget('anos_done', {}) || {}; bag += Object.keys(D).length; } catch (e) {}
     return bag + dayStars() + Math.floor(palms() / 3) + questStars() + nights() + Object.keys(jget('review_log', {}) || {}).length + purseStars();

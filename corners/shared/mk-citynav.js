@@ -25,6 +25,7 @@
     { icon: '🌴', ar: 'بستان الذكر', en: 'Dhikr Garden', href: 'corners/shared/garden.html' },
     { icon: '🧭', ar: 'رحلتي مع أنوس', en: 'My Journey', href: 'corners/shared/journey.html' },
     { icon: '🎧', ar: 'أصوات الصغار', en: 'Little Voices', href: 'corners/shared/voices.html' },
+    { icon: '🖍️', ar: 'كتب التلوين', en: 'Colouring books', href: 'corners/shared/coloring.html' },
     { icon: '🔎', ar: 'ابحث في الموقع', en: 'Search the site', href: 'corners/shared/search.html' },
     { icon: '📰', ar: 'نشرة الأسبوع', en: 'Weekly News', href: 'corners/news/index.html' },
     { icon: '📥', ar: 'ركن التنزيلات', en: 'Downloads', href: 'corners/shared/downloads.html' },
