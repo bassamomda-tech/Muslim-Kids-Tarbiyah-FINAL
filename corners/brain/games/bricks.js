@@ -23,7 +23,7 @@ function ring(m, x0, y0, z0, w, h, d, c) { for (let y = y0; y < y0 + h; y++) for
 function sp(m, t, x, z, y, c, r, h) { m.sp.push({ t, x, z, y, c, r: r || 0.5, h: h || 1 }); }
 function minaret(m, x, z, top, c, tip) { box(m, x, 0, z, 1, top, 1, c); sp(m, 'cone', x + 0.5, z + 0.5, top, tip || c, 0.5, 1.3); sp(m, 'moon', x + 0.5, z + 0.5, top + 1.3 / H, 'y'); }
 
-const MODELS = [
+const MODELS0 = [
   { id: 'kaaba', ic: '🕋', ar: 'الكعبة المشرّفة', en: 'The Kaaba', plate: '#D9D6CF', build(m) {
       ring(m, 5, 0, 5, 6, 3, 6, 'k'); ring(m, 5, 3, 5, 6, 1, 6, 'y'); box(m, 5, 4, 5, 6, 1, 6, 'k');
       put(m, 7, 1, 10, 'y'); put(m, 8, 1, 10, 'y'); put(m, 7, 2, 10, 'y'); put(m, 8, 2, 10, 'y');
@@ -89,8 +89,44 @@ const MODELS = [
       sp(m, 'cone', 8, 8, 6, 'y', 0.9, 1.2); sp(m, 'moon', 8, 8, 6 + 1.2 / H, 'y');
     },
     fact: ['فانوس رمضان يزيّن البيوت والشوارع في شهر رمضان المبارك، شهرِ الصيام والقرآن. والنورُ الحقيقيّ في قلب المؤمن هو نورُ الإيمان.',
-      'The Ramadan lantern decorates homes and streets in the blessed month of Ramadan, the month of fasting and the Quran. The real light in a believer\'s heart is the light of faith.'] }
+      'The Ramadan lantern decorates homes and streets in the blessed month of Ramadan, the month of fasting and the Quran. The real light in a believer\'s heart is the light of faith.'] },
+  { id: 'haram', ic: '🕋', ar: 'المسجد الحرام', en: 'Al-Masjid al-Haram', plate: '#E6E3DA', build(m) {
+      box(m, 7, 0, 7, 2, 2, 2, 'k'); put(m, 7, 1, 8, 'y');
+      ring(m, 1, 0, 1, 14, 1, 14, 'w'); ring(m, 1, 1, 1, 14, 1, 14, 's');
+      [7, 8].forEach(x => { put(m, x, 0, 14, 'd'); put(m, x, 0, 1, 'd'); put(m, 1, 0, x, 'd'); put(m, 14, 0, x, 'd'); });
+      minaret(m, 0, 0, 6, 'w'); minaret(m, 15, 0, 6, 'w'); minaret(m, 0, 15, 6, 'w'); minaret(m, 15, 15, 6, 'w');
+    },
+    fact: ['المسجد الحرام في مكّة المكرّمة، وفي وسطه الكعبة المشرّفة. يطوف حولها الحجّاج والمعتمرون سبعةَ أشواط، والكعبةُ عن يسارهم. وهو أوّل المساجد الثلاثة التي تُشدّ إليها الرحال [رواه البخاري ١١٨٩ ومسلم ١٣٩٧]. (نموذج مبسّط)',
+      'Al-Masjid al-Haram is in Makkah, with the Kaaba in its centre. Pilgrims walk around it seven times, keeping the Kaaba on their left. It is the first of the three mosques people may travel specially to visit [al-Bukhari 1189, Muslim 1397]. (A simple model)'] },
+  { id: 'quba', ic: '🕌', ar: 'مسجد قُباء', en: 'Quba Mosque', plate: '#E9DDC0', build(m) {
+      ring(m, 3, 0, 4, 10, 2, 8, 'w'); put(m, 7, 0, 11, 'd'); put(m, 8, 0, 11, 'd'); put(m, 7, 1, 11, 'd'); put(m, 8, 1, 11, 'd');
+      box(m, 3, 2, 4, 10, 1, 8, 'w'); box(m, 7, 3, 7, 2, 1, 2, 'w');
+      sp(m, 'dome', 8, 8, 4, 'w', 1.4); sp(m, 'moon', 8, 8, 4 + 1.4 / H, 'y');
+      [[5, 6], [11, 6], [5, 10], [11, 10]].forEach(([x, z]) => sp(m, 'dome', x, z, 3, 'w', 0.75));
+      minaret(m, 2, 3, 6, 'w'); minaret(m, 13, 3, 6, 'w'); minaret(m, 2, 12, 6, 'w'); minaret(m, 13, 12, 6, 'w');
+    },
+    fact: ['مسجد قُباء في المدينة المنوّرة، أوّلُ مسجدٍ بناه النبيّ ﷺ حين وصل مهاجرًا. وكان النبيّ ﷺ يأتي مسجد قباء كلَّ سبتٍ ماشيًا وراكبًا [رواه البخاري ١١٩٣ ومسلم ١٣٩٩]. (نموذج مبسّط)',
+      'Quba Mosque in Madinah is the first mosque the Prophet ﷺ built when he arrived as a migrant. The Prophet ﷺ used to visit Quba every Saturday, walking or riding [al-Bukhari 1193, Muslim 1399]. (A simple model)'] },
+  { id: 'horse', ic: '🐎', ar: 'الحصان', en: 'The horse', plate: '#6DB55A', build(m) {
+      [[5, 6], [5, 8], [9, 6], [9, 8]].forEach(([x, z]) => { box(m, x, 0, z, 1, 1, 1, 'k'); box(m, x, 1, z, 1, 2, 1, 'n'); });
+      box(m, 5, 3, 6, 5, 2, 3, 'n'); box(m, 6, 5, 6, 2, 1, 3, 'r');
+      box(m, 10, 4, 7, 1, 2, 1, 'n'); box(m, 10, 6, 7, 2, 1, 1, 'n'); box(m, 11, 7, 7, 2, 1, 1, 'n');
+      box(m, 9, 5, 7, 1, 2, 1, 'k'); box(m, 4, 2, 7, 1, 2, 1, 'k');
+    },
+    fact: ['قال النبيّ ﷺ: «الخيلُ معقودٌ في نواصيها الخيرُ إلى يوم القيامة» [رواه البخاري ٢٨٤٩ ومسلم ١٨٧١]. والحصان حيوانٌ قويّ سريع، ورعايته والإحسانُ إليه من الرحمة.',
+      'The Prophet ﷺ said: "Goodness is tied to the forelocks of horses until the Day of Resurrection" [al-Bukhari 2849, Muslim 1871]. The horse is strong and fast, and caring for it kindly is part of mercy.'] },
+  { id: 'ship', ic: '⛵', ar: 'السفينة الشراعيّة', en: 'The sailing ship', plate: '#3E7CC4', build(m) {
+      box(m, 4, 0, 7, 8, 1, 2, 'n'); box(m, 3, 1, 6, 10, 1, 4, 'n'); put(m, 2, 1, 7, 'n'); put(m, 2, 1, 8, 'n'); put(m, 13, 1, 7, 'n'); put(m, 13, 1, 8, 'n');
+      box(m, 8, 2, 7, 1, 6, 1, 'd');
+      box(m, 4, 3, 7, 4, 1, 1, 'w'); box(m, 5, 4, 7, 3, 1, 1, 'w'); box(m, 6, 5, 7, 2, 1, 1, 'w'); put(m, 7, 6, 7, 'w');
+      put(m, 9, 7, 7, 'g');
+    },
+    fact: ['سخّر اللهُ لنا البحرَ لتجريَ فيه السفنُ بأمره (معنى ما في سورة الجاثية: ١٢). كان التجّار المسلمون يُبحرون بالسفن الشراعيّة إلى بلادٍ بعيدة، فيحملون البضائع، ويدعون إلى الإسلام بالصدق والأمانة.',
+      'Allah made the sea of service to us so that ships sail on it by His command (the meaning of al-Jathiyah 45:12). Muslim traders sailed to faraway lands in sailing ships, carrying goods and inviting people to Islam through honesty and trust.'] }
 ];
+
+const ORDER = ['kaaba', 'haram', 'nabawi', 'quba', 'dome', 'aqsa', 'palm', 'camel', 'horse', 'sheep', 'ship', 'lantern'];
+const MODELS = ORDER.map(id => MODELS0.find(m => m.id === id));
 
 /* split each layer into real bricks (biggest first, one colour per brick) and order the steps bottom-up */
 const SIZES = [[4, 2], [2, 4], [3, 2], [2, 3], [4, 1], [1, 4], [2, 2], [3, 1], [1, 3], [2, 1], [1, 2], [1, 1]];
@@ -370,8 +406,8 @@ Brain.game({
   id: 'bricks', levels: false,
   modes: [{ id: 'guide', ar: 'ابنِ النموذج', en: 'Build a model' }, { id: 'free', ar: 'بناء حرّ', en: 'Free build' }],
   how: {
-    ar: ['اختر نموذجًا: الكعبة، المسجد النبويّ، قبّة الصخرة، المسجد الأقصى، النخلة، الجمل، الخروف أو الفانوس.', 'المكان المضيء يُريك أين توضع القطعة التالية. اختر القطعةَ الصحيحة من الثلاث: عُدَّ النتوءات وانظر إلى اللون.', 'اسحب بإصبعك لتدير النموذج، وبإصبعين لتقرّبه.', 'في «بناء حرّ»: اختر الحجمَ واللون، ثمّ اضغط على اللوح أو على قطعةٍ لتبني فوقها أو بجانبها.'],
-    en: ['Pick a model: the Kaaba, the Prophet\'s Mosque, the Dome of the Rock, al-Aqsa, the palm tree, the camel, the sheep or the lantern.', 'The glowing spot shows where the next piece goes. Choose the right piece of the three: count the studs and look at the colour.', 'Drag with a finger to turn the model; use two fingers to zoom.', 'In "Free build": choose a size and colour, then tap the plate or a brick to build on top of it or next to it.']
+    ar: ['اختر نموذجًا: الكعبة، المسجد الحرام، المسجد النبويّ، مسجد قباء، قبّة الصخرة، المسجد الأقصى، النخلة، الجمل، الحصان، الخروف، السفينة أو الفانوس.', 'المكان المضيء يُريك أين توضع القطعة التالية. اختر القطعةَ الصحيحة من الثلاث: عُدَّ النتوءات وانظر إلى اللون.', 'اسحب بإصبعك لتدير النموذج، وبإصبعين لتقرّبه.', 'في «بناء حرّ»: اختر الحجمَ واللون، ثمّ اضغط على اللوح أو على قطعةٍ لتبني فوقها أو بجانبها.'],
+    en: ['Pick a model: the Kaaba, al-Masjid al-Haram, the Prophet\'s Mosque, Quba Mosque, the Dome of the Rock, al-Aqsa, the palm tree, the camel, the horse, the sheep, the ship or the lantern.', 'The glowing spot shows where the next piece goes. Choose the right piece of the three: count the studs and look at the colour.', 'Drag with a finger to turn the model; use two fingers to zoom.', 'In "Free build": choose a size and colour, then tap the plate or a brick to build on top of it or next to it.']
   },
   afterWin: { label: b => b.mode === 'free' ? b.T('🧱 أكمل البناء', '🧱 Keep building') : b.T('➡️ النموذج التالي', '➡️ Next model'), go: b => { if (b.mode === 'free') return; mi = (mi + 1) % MODELS.length; step = 0; B.store('mi', mi); b.over = false; buildGuide(); save(); } },
   init(b) { B = b; },

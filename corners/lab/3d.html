@@ -8,7 +8,7 @@
 <meta name="description" content="مجسّماتٌ حقيقيّة ثلاثيّة الأبعاد يديرها الطفل بإصبعه: الشمس والأرض والقمر، الذرّة، جزيء الماء وبلّورة الملح، والمجسّمات الهندسيّة. Real 3D models a child turns with a finger.">
 <link rel="icon" href="../../favicon.ico">
 <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@500;700;800;900&family=Amiri:wght@700&family=Nunito:wght@600;800;900&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="lab.css">
+<link rel="stylesheet" href="lab.css?v=20261113">
 <style id="__antiflash">html{background:#081E36;color-scheme:dark}</style>
 <style>
   .d3-wrap{max-width:900px;margin:0 auto;padding:.4rem 1rem 5rem}
@@ -430,6 +430,106 @@ const MODELS = [
           m.rotation.x += dt * speed; m.rotation.y += dt * speed * 0.7;
         });
       };
+    } },
+  { id: 'clock', ic: '🕐', n: ['داخل الساعة', 'Inside the clock'], dist: 8,
+    opts: [['now', '🕐 الوقت الآن', '🕐 The time now'], ['fast', '⏩ ساعةٌ في ثوانٍ', '⏩ An hour in seconds'], ['inside', '⚙️ داخل الساعة', '⚙️ Inside the clock']],
+    STEP: {
+      now: ['هذه ساعتك تُشير إلى الوقت الآن. العقرب القصير للساعات، والطويل للدقائق، والأحمر الرفيع للثواني.', 'This clock shows the time right now. The short hand shows hours, the long hand minutes, and the thin red hand seconds.'],
+      fast: ['شاهد: كلّما دار عقرب الدقائق دورةً كاملة (٦٠ دقيقة) تقدّم عقرب الساعات رقمًا واحدًا — أي ساعةً واحدة.', 'Watch: each time the minute hand goes all the way round (60 minutes), the hour hand moves on one number — one hour.'],
+      inside: ['داخل الساعة تروسٌ مسنّنة يدفع بعضُها بعضًا. الترس الكبير يدور ببطء والصغير بسرعة، وهكذا تتحرّك العقارب بسرعاتٍ مختلفة.', 'Inside the clock, toothed gears push one another. A big gear turns slowly and a small one fast — that is how the hands move at different speeds.']
+    },
+    info: ['أقسم اللهُ تعالى بالوقت فقال: ﴿وَٱلْعَصْرِ ۝ إِنَّ ٱلْإِنسَٰنَ لَفِى خُسْرٍ﴾ [العصر: ١–٢]. الوقتُ نعمة، والمسلم يحافظ على صلاته في وقتها.', 'Allah swears by time: "By time, indeed mankind is in loss" [al-Asr 103:1–2]. Time is a blessing, and a Muslim prays each prayer on time.'],
+    q: ['عندما يدور عقرب الدقائق دورةً كاملة، كم مضى من الوقت؟', 'When the minute hand goes all the way round once, how much time has passed?'], o: [['ساعة واحدة', 'One hour'], ['دقيقة واحدة', 'One minute'], ['يوم كامل', 'A whole day']],
+    build(opt) {
+      const st = opt || 'now', g = new THREE.Group(); pivot.add(g);
+      const c = document.createElement('canvas'); c.width = c.height = 512; const x = c.getContext('2d');
+      x.fillStyle = '#FFFBEF'; x.beginPath(); x.arc(256, 256, 256, 0, 7); x.fill();
+      x.strokeStyle = '#1F2A44'; for (let i = 0; i < 60; i++) { const a = i / 60 * Math.PI * 2, r1 = i % 5 ? 228 : 214; x.lineWidth = i % 5 ? 3 : 8; x.beginPath(); x.moveTo(256 + Math.sin(a) * r1, 256 - Math.cos(a) * r1); x.lineTo(256 + Math.sin(a) * 244, 256 - Math.cos(a) * 244); x.stroke(); }
+      x.fillStyle = '#1F2A44'; x.font = '900 58px Tajawal, Arial, sans-serif'; x.textAlign = 'center'; x.textBaseline = 'middle';
+      for (let h = 1; h <= 12; h++) { const a = h / 12 * Math.PI * 2; x.fillText(N(h), 256 + Math.sin(a) * 170, 262 - Math.cos(a) * 170); }
+      const tex = new THREE.CanvasTexture(c); tex.colorSpace = THREE.SRGBColorSpace;
+      const body = new THREE.Mesh(new THREE.CylinderGeometry(2.3, 2.3, 0.6, 72, 1, st === 'inside'), mat(0x1F4E8C, { side: THREE.DoubleSide })); body.rotation.x = Math.PI / 2; g.add(body);
+      const rim = new THREE.Mesh(new THREE.TorusGeometry(2.3, 0.1, 16, 96), mat(0xE3B23C, { metalness: 0.5, roughness: 0.3 })); rim.position.z = 0.32; g.add(rim);
+      const face = new THREE.Mesh(new THREE.CircleGeometry(2.22, 72), new THREE.MeshStandardMaterial({ map: tex, roughness: 0.7, transparent: st === 'inside', opacity: st === 'inside' ? 0.18 : 1, depthWrite: st !== 'inside' })); face.position.z = 0.315; g.add(face);
+      if (st !== 'inside') { const back = new THREE.Mesh(new THREE.CircleGeometry(2.3, 72), mat(0x1F4E8C)); back.position.z = -0.3; back.rotation.y = Math.PI; g.add(back); }
+      const stand = new THREE.Mesh(new THREE.BoxGeometry(2.2, 0.35, 1.2), mat(0x7A4B2A)); stand.position.y = -2.45; g.add(stand);
+      const hand = (len, w, col, z) => { const p = new THREE.Group(); const m = new THREE.Mesh(new THREE.BoxGeometry(w, len, 0.05), mat(col)); m.position.y = len / 2 - 0.15; p.add(m); p.position.z = z; g.add(p); return p; };
+      const hH = hand(1.15, 0.16, 0x1F2A44, 0.34), hM = hand(1.75, 0.1, 0x1F2A44, 0.38), hS = hand(1.9, 0.035, 0xD2453B, 0.42);
+      const cap = new THREE.Mesh(new THREE.CylinderGeometry(0.13, 0.13, 0.12, 24), mat(0xE3B23C, { metalness: 0.6 })); cap.rotation.x = Math.PI / 2; cap.position.z = 0.45; g.add(cap);
+      /* gears behind the face (seen in «inside») */
+      const gears = [];
+      function gear(r, teeth, col, gx, gy, sp) {
+        const ge = new THREE.Group(), m = mat(col, { metalness: 0.55, roughness: 0.35 });
+        const disc = new THREE.Mesh(new THREE.CylinderGeometry(r, r, 0.12, 40), m); disc.rotation.x = Math.PI / 2; ge.add(disc);
+        for (let i = 0; i < teeth; i++) { const a = i / teeth * Math.PI * 2, t = new THREE.Mesh(new THREE.BoxGeometry(0.14, 0.18, 0.12), m); t.position.set(Math.sin(a) * (r + 0.07), Math.cos(a) * (r + 0.07), 0); t.rotation.z = -a; ge.add(t); }
+        const hole = new THREE.Mesh(new THREE.CylinderGeometry(0.08, 0.08, 0.16, 16), mat(0x333333)); hole.rotation.x = Math.PI / 2; ge.add(hole);
+        ge.position.set(gx, gy, 0.05); g.add(ge); gears.push([ge, sp]); return ge;
+      }
+      gear(1.0, 24, 0xD9A441, 0, 0, 1); gear(0.5, 12, 0xC0C6CE, 1.5, 0, -2); gear(0.7, 16, 0xD9A441, 0.95, -1.2, 1.43); gear(0.35, 8, 0xC0C6CE, -1.25, 0.9, -2.86);
+      gears.forEach(a => a[0].visible = st === 'inside');
+      if (st === 'inside') { const o = new THREE.Object3D(); o.position.set(1.5, -0.7, 0.4); g.add(o); label(o, 'تروس', 'gears'); }
+      const tl = new THREE.Object3D(); tl.position.set(0, 2.85, 0); g.add(tl); label(tl, '', ''); const tdiv = labels[labels.length - 1][1];
+      let vt = (() => { const d = new Date(); return d.getHours() * 3600 + d.getMinutes() * 60 + d.getSeconds(); })();
+      this.extra = T(this.STEP[st][0], this.STEP[st][1]);
+      const set = s => {
+        const h = s / 3600 % 12, m = s / 60 % 60, sec = s % 60;
+        hH.rotation.z = -h / 12 * Math.PI * 2; hM.rotation.z = -m / 60 * Math.PI * 2; hS.rotation.z = -Math.floor(sec) / 60 * Math.PI * 2;
+        const H12 = Math.floor(h) || 12, M = Math.floor(m); tdiv.textContent = N(H12) + ':' + (M < 10 ? N(0) : '') + N(M);
+        gears.forEach(a => a[0].rotation.z = -s / 600 * a[1]);
+      };
+      set(vt);
+      return dt => { if (st === 'now') { const d = new Date(); vt = d.getHours() * 3600 + d.getMinutes() * 60 + d.getSeconds() + d.getMilliseconds() / 1000; } else vt += dt * 1200; set(vt); };
+    } },
+  { id: 'scale', ic: '⚖️', n: ['الميزان', 'The balance scale'], dist: 9,
+    opts: [['equal', '⚖️ متساويان', '⚖️ Equal'], ['heavy', '🏋️ أحدهما أثقل', '🏋️ One is heavier'], ['cotton', '☁️ قطن أم حديد؟', '☁️ Cotton or iron?']],
+    STEP: {
+      equal: ['في الكفّتين وزنان متساويان: ٢ كغ هنا، و١ كغ + ١ كغ هناك، فاستقام الميزان.', 'Both pans hold the same weight: 2 kg here, and 1 kg + 1 kg there — so the scale is level.'],
+      heavy: ['الكفّة الأثقل (٢ كغ) تنزل، والأخفّ (١ كغ) ترتفع. هكذا نعرف أيّهما أثقل.', 'The heavier pan (2 kg) goes down and the lighter one (1 kg) goes up. That is how we find which is heavier.'],
+      cotton: ['كيلو قطن وكيلو حديد: القطن كبيرُ الحجم، والحديد صغير — لكنّ وزنهما واحد، فاستقام الميزان! الحجمُ غيرُ الوزن.', 'A kilo of cotton and a kilo of iron: the cotton is big and the iron is small — but they weigh the same, so the scale is level! Size is not weight.']
+    },
+    info: ['قال الله تعالى: ﴿وَأَقِيمُوا الْوَزْنَ بِالْقِسْطِ وَلَا تُخْسِرُوا الْمِيزَانَ﴾ [الرحمن: ٩]. التاجر المسلم يزن بالعدل ولا يُنقص الميزان.', 'Allah says: "And establish weight in justice and do not make the balance deficient" [ar-Rahman 55:9]. A Muslim trader weighs fairly and never gives short measure.'],
+    q: ['أيّهما أثقل: كيلو قطن أم كيلو حديد؟', 'Which is heavier: a kilo of cotton or a kilo of iron?'], o: [['متساويان — كلاهما كيلو', 'The same — both are 1 kg'], ['الحديد', 'The iron'], ['القطن', 'The cotton']],
+    build(opt) {
+      const st = opt || 'equal', g = new THREE.Group(); g.position.y = -1.2; pivot.add(g);
+      const gold = mat(0xD9A441, { metalness: 0.55, roughness: 0.35 }), wood = mat(0x7A4B2A);
+      const base = new THREE.Mesh(new THREE.CylinderGeometry(1.1, 1.3, 0.35, 48), wood); base.position.y = -0.2; g.add(base);
+      const post = new THREE.Mesh(new THREE.CylinderGeometry(0.09, 0.12, 3.2, 20), gold); post.position.y = 1.6; g.add(post);
+      const beam = new THREE.Group(); beam.position.y = 3.25; g.add(beam);
+      beam.add(new THREE.Mesh(new THREE.BoxGeometry(4.6, 0.14, 0.18), gold));
+      const knob = ball(0.18, 0xE3B23C, { metalness: 0.6 }); beam.add(knob);
+      const needle = new THREE.Mesh(new THREE.ConeGeometry(0.07, 0.7, 12), mat(0xD2453B)); needle.position.y = 0.45; beam.add(needle);
+      const ends = [-2.2, 2.2], pans = [], chains = [];
+      ends.forEach(ex => {
+        const pan = new THREE.Group(); g.add(pan);
+        const dish = new THREE.Mesh(new THREE.CylinderGeometry(0.95, 0.7, 0.16, 40), gold); pan.add(dish);
+        pans.push(pan);
+        const lm = new THREE.LineBasicMaterial({ color: 0xE3B23C }); const geo = new THREE.BufferGeometry().setFromPoints([new THREE.Vector3(), new THREE.Vector3(), new THREE.Vector3(), new THREE.Vector3(), new THREE.Vector3(), new THREE.Vector3()]);
+        const ln = new THREE.LineSegments(geo, lm); g.add(ln); chains.push(ln);
+      });
+      const weight = (kg, x, z) => { const h = 0.32 + kg * 0.12, m = new THREE.Mesh(new THREE.CylinderGeometry(0.22 + kg * 0.06, 0.26 + kg * 0.06, h, 28), mat(0x5B6470, { metalness: 0.5, roughness: 0.4 })); m.position.set(x, 0.08 + h / 2, z); const t = new THREE.Mesh(new THREE.CylinderGeometry(0.06, 0.06, 0.14, 12), m.material); t.position.y = h / 2 + 0.07; m.add(t); return m; };
+      let L = 0, R = 0;
+      if (st === 'equal') { pans[0].add(weight(2, 0, 0)); pans[1].add(weight(1, -0.35, 0)); pans[1].add(weight(1, 0.35, 0)); L = 2; R = 2; }
+      else if (st === 'heavy') { pans[0].add(weight(2, 0, 0)); pans[1].add(weight(1, 0, 0)); L = 2; R = 1; }
+      else {
+        const cot = new THREE.Group(); [[0, 0.5, 0, 0.5], [0.35, 0.45, 0.2, 0.38], [-0.35, 0.45, -0.1, 0.4], [0.1, 0.85, -0.15, 0.36], [-0.15, 0.4, 0.35, 0.34], [0.25, 0.7, 0.3, 0.3]].forEach(b => { const s = ball(b[3], 0xFBFBF8, { roughness: 1 }); s.position.set(b[0], b[1], b[2]); cot.add(s); }); pans[0].add(cot);
+        const iron = new THREE.Mesh(new THREE.BoxGeometry(0.38, 0.22, 0.26), mat(0x3A3F47, { metalness: 0.7, roughness: 0.35 })); iron.position.y = 0.19; pans[1].add(iron); L = 1; R = 1;
+      }
+      const lbl = [[st === 'cotton' ? 'قطن ١ كغ' : N(L) + ' كغ', st === 'cotton' ? 'cotton 1 kg' : L + ' kg'], [st === 'cotton' ? 'حديد ١ كغ' : st === 'equal' ? N(1) + ' + ' + N(1) + ' كغ' : N(R) + ' كغ', st === 'cotton' ? 'iron 1 kg' : st === 'equal' ? '1 + 1 kg' : R + ' kg']];
+      pans.forEach((p, i) => { const o = new THREE.Object3D(); o.position.y = -0.55; p.add(o); label(o, lbl[i][0], lbl[i][1]); });
+      const target = Math.max(-0.32, Math.min(0.32, (L - R) * 0.22)); let ang = -target * 0.6, vel = 0;
+      this.extra = T(this.STEP[st][0], this.STEP[st][1]);
+      const v = new THREE.Vector3();
+      const place = () => {
+        beam.rotation.z = ang;
+        ends.forEach((ex, i) => {
+          v.set(ex * Math.cos(ang), 3.25 + ex * Math.sin(ang), 0); pans[i].position.set(v.x, v.y - 1.9, 0);
+          const a = chains[i].geometry.attributes.position, py = v.y - 1.9 + 0.08;
+          [[0.85, 0], [-0.42, 0.74], [-0.42, -0.74]].forEach((d, k) => { a.setXYZ(k * 2, v.x, v.y, 0); a.setXYZ(k * 2 + 1, v.x + d[0], py, d[1]); });
+          a.needsUpdate = true;
+        });
+      };
+      place();
+      return dt => { vel += (target - ang) * dt * 9 - vel * dt * 2.2; ang += vel * dt; place(); };
     } },
   { id: 'space', ic: '🌍', n: ['الشمس والأرض والقمر', 'Sun, Earth & Moon'], dist: 13,
     info: ['الأرض تدور حول نفسها فيأتي الليل والنهار، وتدور حول الشمس فتتعاقب الفصول، والقمر يدور حول الأرض. الأحجام والمسافات هنا مصغَّرة لنراها معًا.', 'The Earth spins, giving day and night; it travels round the Sun, giving the seasons; and the Moon travels round the Earth. Sizes and distances here are shrunk so we can see them together.'],

@@ -56,6 +56,7 @@
   <nav id="trGrid">
     <a class="learn-tile" href="../treasures/landmarks.html" style="--ec:#2980B9"><span class="lt-ic">🕋</span><span class="lt-nm"><span class="ar-only">المعالمُ والخرائط</span><span class="en-only">Landmarks &amp; Maps</span></span><span class="lt-ct" data-tr="landmarks" data-t="18">0/18</span></a>
     <a class="learn-tile" href="../treasures/tours.html" style="--ec:#E67E22"><span class="lt-ic">🧭</span><span class="lt-nm"><span class="ar-only">جولاتٌ افتراضيّة</span><span class="en-only">Virtual Tours</span></span><span class="lt-ct" data-tr="tours" data-t="5">0/5</span></a>
+    <a class="learn-tile" href="battles.html" style="--ec:#E0A82A"><span class="lt-ic">🗺️</span><span class="lt-nm"><span class="ar-only">خُطَط القادة</span><span class="en-only">The Commanders' Plans</span></span></a>
   </nav>
   <script>/* same done/total counter as the fortress tiles — reads tr:<page> progress */
   document.querySelectorAll('#trGrid .lt-ct[data-tr]').forEach(function(c){var t=+c.dataset.t,n=0;try{n=(JSON.parse(localStorage.getItem('tr:'+c.dataset.tr)||'[]')||[]).length;}catch(e){}n=Math.min(n,t);c.textContent=n+'/'+t;if(n>=t)c.classList.add('full');});</script>

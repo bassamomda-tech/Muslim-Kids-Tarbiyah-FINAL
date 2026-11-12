@@ -1414,5 +1414,9 @@ window.MK_SEARCH = [
 {t:{ar:"رحلة القائد الصغير",en:"The Little Leader journey"},d:{ar:"رحلة تربوية للأسرة",en:"A family tarbiyah journey"},u:"رحلة القائد الصغير.html",k:"journey",ic:"🚩"},
 {t:{ar:"رحلة القدوات",en:"The Role Models journey"},d:{ar:"رحلة تربوية للأسرة",en:"A family tarbiyah journey"},u:"رحلة القدوات.html",k:"journey",ic:"⭐"},
 {t:{ar:"رحلة حافظ الدين",en:"The Guardian of the Deen journey"},d:{ar:"رحلة تربوية للأسرة",en:"A family tarbiyah journey"},u:"رحلة حافظ الدين.html",k:"journey",ic:"📖"},
-{t:{ar:"رحلة صلاح الدين الأيوبي",en:"The Salahuddin al-Ayyubi journey"},d:{ar:"قصة محرر القدس في حلقات",en:"The story of the liberator of Al-Quds, in…"},u:"رحلة صلاح الدين الأيوبي.html",k:"journey",ic:"🎬"}
+{t:{ar:"رحلة صلاح الدين الأيوبي",en:"The Salahuddin al-Ayyubi journey"},d:{ar:"قصة محرر القدس في حلقات",en:"The story of the liberator of Al-Quds, in…"},u:"رحلة صلاح الدين الأيوبي.html",k:"journey",ic:"🎬"},
+{t:{ar:"مكعّبات البناء 3D",en:"Brick Builder 3D"},d:{ar:"ابنِ الكعبة والمساجد والحيوانات قطعةً قطعة",en:"Build the Kaaba, mosques and animals brick by brick"},u:"corners/brain/bricks.html",k:"page",ic:"🏗️"},
+{t:{ar:"خُطَط القادة",en:"The Commanders' Plans"},d:{ar:"بدر، الخندق، حطّين، عين جالوت، فتح القسطنطينية على خرائط",en:"Badr, the Trench, Hattin, Ayn Jalut, Constantinople on maps"},u:"corners/heroes-fortress/battles.html",k:"page",ic:"🗺️"},
+{t:{ar:"المختبر ثلاثيّ الأبعاد",en:"The 3D Lab"},d:{ar:"جسم الإنسان، الكرة الأرضيّة، الساعة، الميزان…",en:"The human body, the globe, the clock, the scale…"},u:"corners/lab/3d.html",k:"page",ic:"🧊"},
+{t:{ar:"بطاقات الاكتشاف",en:"Discovery Cards"},d:{ar:"حيوانات، طيور، نباتات، مهن، مواصلات",en:"Animals, birds, plants, jobs, transport"},u:"corners/lab/cards.html",k:"page",ic:"🗂️"}
 ];

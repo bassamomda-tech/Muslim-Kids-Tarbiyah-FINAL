@@ -421,6 +421,12 @@
     <priority>0.6</priority>
   </url>
   <url>
+    <loc>https://tarbiyahkids.uk/corners/heroes-fortress/battles.html</loc>
+    <lastmod>2026-11-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://tarbiyahkids.uk/corners/heroes-fortress/chapter.html</loc>
     <lastmod>2026-07-05</lastmod>
     <changefreq>weekly</changefreq>
@@ -767,6 +773,12 @@
     <lastmod>2026-11-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://tarbiyahkids.uk/corners/brain/bricks.html</loc>
+    <lastmod>2026-11-13</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
   </url>
   <url><loc>https://tarbiyahkids.uk/corners/shared/coloring.html</loc></url>
 </urlset>
