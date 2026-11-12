@@ -33,6 +33,16 @@ service firebase.storage {
       allow delete: if request.auth != null && (request.auth.uid == uid || isAdmin());
     }
 
+    // معسكر القادة: تسجيلات الأسرة الخاصة camp/{uid}/rec/{id}
+    // - لا يقرؤها ولا يكتبها إلا صاحب الحساب، وملفات صوت صغيرة فقط
+    match /camp/{uid}/rec/{file} {
+      allow read, delete: if request.auth != null && request.auth.uid == uid;
+      allow create, update: if request.auth != null
+        && request.auth.uid == uid
+        && request.resource.size < 20 * 1024 * 1024
+        && request.resource.contentType.matches('audio/.*');
+    }
+
     // Everything else is closed by default
     match /{allPaths=**} {
       allow read, write: if false;

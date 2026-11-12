@@ -143,6 +143,8 @@
   /* ── التوجيه والرسم ── */
   function route() { return (location.hash.replace(/^#\//, '') || 'home').split('?')[0]; }
   function render() {
+    var fl = (S.state.family || {}).lang;          // اللغة إعداد للأسرة كلها: تتبع ما في الحساب
+    if (fl) { lang = fl === 'en' ? 1 : 0; try { localStorage.setItem('camp-lang', fl); } catch (e) {} }
     setLang();
     var r = route(), st = S.state, hasKids = C.kids().length > 0;
     if (!hasKids || !(st.family || {}).pin) { app.innerHTML = setupView(); return; }
@@ -163,7 +165,10 @@
 
   /* ── الأحداث ── */
   var ACT = C.actions = {
-    lang: function () { lang = lang ? 0 : 1; localStorage.setItem('camp-lang', lang ? 'en' : 'ar'); render(); },
+    lang: function () {
+      lang = lang ? 0 : 1; localStorage.setItem('camp-lang', lang ? 'en' : 'ar');
+      if ((S.state.family || {}).pin) S.set(['family', 'lang'], lang ? 'en' : 'ar'); else render();
+    },
     who: function () { location.hash = '#/who'; if (route() === 'who') render(); },
     pick: function (el) { localStorage.setItem('camp-kid', el.dataset.id); location.hash = '#/home'; render(); },
     parent: function () { askPin(function () { location.hash = '#/parent'; render(); }); },
@@ -181,7 +186,7 @@
       if (!n) return toast(T('name'));
       var c = C.CITIES[+val('city') || 0], sat = new Date(); sat.setDate(sat.getDate() - ((sat.getDay() + 1) % 7));
       S.set(['kids'], kids);
-      S.set(['family'], { name: val('fname') || T('appName'), pin: C.pinHash(pin), city: { name: c[0], lat: c[1], lng: c[2] }, method: 'MWL', start: C.dkey(sat), starValue: 2, sadaqaPct: 20, causes: lang ? 'Our local mosque\nOrphans\nPalestine relief' : 'مسجد الحي\nكفالة يتيم\nإغاثة فلسطين' });
+      S.set(['family'], { name: val('fname') || T('appName'), pin: C.pinHash(pin), city: { name: c[0], lat: c[1], lng: c[2] }, method: 'MWL', lang: lang ? 'en' : 'ar', start: C.dkey(sat), starValue: 2, sadaqaPct: 20, causes: lang ? 'Our local mosque\nOrphans\nPalestine relief' : 'مسجد الحي\nكفالة يتيم\nإغاثة فلسطين' });
       location.hash = '#/who';
     },
     signin: function () { S.signIn(val('em'), val('pw')).catch(function (e) { toast(e.message); }); },

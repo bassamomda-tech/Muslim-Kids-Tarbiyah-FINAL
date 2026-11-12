@@ -6,7 +6,7 @@
   var LS = 'camp-state-v1';
   var S = C.S = { state: null, user: null, sync: 'local', listeners: [] };
 
-  function blank() { return { family: {}, kids: {}, log: {}, adj: {}, red: {}, bank: {}, pass: {}, goals: {}, prop: {} }; }
+  function blank() { return { family: {}, kids: {}, log: {}, adj: {}, red: {}, bank: {}, pass: {}, goals: {}, prop: {}, rec: {}, prefs: {} }; }
   function load() { try { return Object.assign(blank(), JSON.parse(localStorage.getItem(LS)) || {}); } catch (e) { return blank(); } }
   function persist() { try { localStorage.setItem(LS, JSON.stringify(S.state)); } catch (e) {} }
   S.state = load();
@@ -21,7 +21,7 @@
     if (val === undefined) delete cur[path[path.length - 1]]; else cur[path[path.length - 1]] = val;
   }
 
-  var db = null, ref = null, unsub = null;
+  var db = null, ref = null, unsub = null, bucket = null;
   function fail(e) { console.warn('camp sync', e && e.code, e && e.message); S.sync = 'error'; emit(); }
 
   /* تعديل قيمة عند مسار، محليًا ثم سحابيًا */
@@ -33,7 +33,17 @@
     setLocal(path, undefined); persist(); emit();
     if (ref) { var u = {}; u[path.join('.')] = firebase.firestore.FieldValue.delete(); ref.update(u).catch(fail); }
   };
-  S.wipe = function () { S.state = blank(); persist(); if (ref) ref.set(blank()).catch(fail); emit(); };
+  S.wipe = function () {
+    Object.keys(S.state.rec || {}).forEach(function (id) { S.fileDel(id); });
+    S.state = blank(); persist(); if (ref) ref.set(blank()).catch(fail); emit();
+  };
+
+  /* ── ملفات التسجيلات على Firebase Storage: camp/{uid}/rec/{id} ── */
+  function fref(id) { return bucket.ref('camp/' + S.user.uid + '/rec/' + id); }
+  S.canStore = function () { return !!(bucket && S.user); };
+  S.upload = function (id, blob) { return fref(id).put(blob, { contentType: blob.type || 'audio/webm' }); };
+  S.fileUrl = function (id) { return fref(id).getDownloadURL(); };
+  S.fileDel = function (id) { if (S.canStore()) fref(id).delete().catch(function () {}); };
 
   /* ── الحساب والمزامنة ── */
   function attach(user) {
@@ -59,6 +69,7 @@
       if (!window.firebase || !window.firebaseConfig) return;
       if (!firebase.apps.length) firebase.initializeApp(window.firebaseConfig);
       db = firebase.firestore();
+      try { if (firebase.storage) bucket = firebase.storage(); } catch (e) { console.warn('camp: storage unavailable', e); }
       firebase.auth().onAuthStateChanged(attach);
     } catch (e) { console.warn('camp: firebase unavailable', e); }
   };
@@ -118,7 +129,7 @@
   };
   C.pinHash = function (p) { var h = 7; p = 'camp:' + p; for (var i = 0; i < p.length; i++) { h = (h * 31 + p.charCodeAt(i)) | 0; } return 'p' + h; };
 
-  /* ── استوديو التسجيل: IndexedDB على هذا الجهاز فقط ── */
+  /* ── استوديو التسجيل: نسخة محلية في IndexedDB (تُرفع إلى السحابة عند تسجيل الدخول) ── */
   var idb = null;
   function odb() {
     return new Promise(function (res, rej) {
@@ -131,6 +142,7 @@
   function tx(mode, fn) { return odb().then(function (d) { return new Promise(function (res, rej) { var t = d.transaction('rec', mode), r = fn(t.objectStore('rec')); t.oncomplete = function () { res(r && r.result); }; t.onerror = function () { rej(t.error); }; }); }); }
   C.rec = {
     add: function (o) { return tx('readwrite', function (s) { return s.put(o); }); },
+    put: function (o) { return tx('readwrite', function (s) { return s.put(o); }); },
     all: function () { return tx('readonly', function (s) { return s.getAll(); }); },
     del: function (id) { return tx('readwrite', function (s) { return s.delete(id); }); }
   };

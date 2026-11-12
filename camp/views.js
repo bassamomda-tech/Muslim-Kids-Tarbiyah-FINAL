@@ -82,23 +82,26 @@
   function ensureIndex() { window.SURAHS = window.SURAHS || {}; return window.SURAH_INDEX ? Promise.resolve() : loadScript('../corners/quran-hifz/quran-data/index_data.js'); }
   function ensureSurah(slug) { return window.SURAHS[slug] ? Promise.resolve() : loadScript('../corners/quran-hifz/quran-data/' + slug + '.js'); }
   function pad(n) { return String(n).padStart(3, '0'); }
+  /* تفضيلات كل قائد (السورة، القارئ، التكرار) تُحفظ في الحساب فتتبعه على كل جهاز */
+  function pref(k, d) { var kid = h.curKid(), p = kid && (S.state.prefs || {})[kid.id]; return (p && p[k]) || localStorage.getItem('camp-' + k) || d; }
+  function setPref(k, v) { localStorage.setItem('camp-' + k, v); var kid = h.curKid(); if (kid) S.set(['prefs', kid.id, k], v); }
   function qPlay(i) {
     var idx = window.SURAH_INDEX.filter(function (s) { return s.slug === Q.slug; })[0], su = window.SURAHS[Q.slug];
     if (!su || i >= su.verses.length) { Q.playing = false; Q.i = -1; C.render(); return; }
     Q.i = i; Q.playing = true;
-    audio.src = 'https://everyayah.com/data/' + (localStorage.getItem('camp-reciter') || C.RECITERS[0][0]) + '/' + pad(idx.num) + pad(i + 1) + '.mp3';
+    audio.src = 'https://everyayah.com/data/' + pref('reciter', C.RECITERS[0][0]) + '/' + pad(idx.num) + pad(i + 1) + '.mp3';
     audio.play().catch(function () { toast('🔇'); });
     document.querySelectorAll('.verse').forEach(function (v, n) { v.classList.toggle('on', n === i); if (n === i) v.scrollIntoView({ block: 'nearest', behavior: 'smooth' }); });
   }
   audio.addEventListener('ended', function () {
-    var want = +(localStorage.getItem('camp-repeat') || 1);
+    var want = +pref('repeat', 1);
     if (++Q.rep < want) { audio.currentTime = 0; audio.play(); } else { Q.rep = 0; qPlay(Q.i + 1); }
   });
   function quranTab() {
     if (!window.SURAH_INDEX) { ensureIndex().then(C.render, function () { toast('⚠️'); }); return '<p class="muted">…</p>'; }
-    var lang = h.lang(), slug = Q.slug || localStorage.getItem('camp-surah') || 'fatihah'; Q.slug = slug;
+    var lang = h.lang(), slug = Q.slug || pref('surah', 'fatihah'); Q.slug = slug;
     if (!window.SURAHS[slug]) { ensureSurah(slug).then(C.render, function () { toast('⚠️'); }); }
-    var su = window.SURAHS[slug], rc = localStorage.getItem('camp-reciter') || C.RECITERS[0][0], rp = localStorage.getItem('camp-repeat') || '1';
+    var su = window.SURAHS[slug], rc = pref('reciter', C.RECITERS[0][0]), rp = String(pref('repeat', '1'));
     var opts = window.SURAH_INDEX.map(function (s) { return '<option value="' + s.slug + '"' + (s.slug === slug ? ' selected' : '') + '>' + s.num + ' · ' + (lang ? s.nameEn : s.nameAr) + '</option>'; }).join('');
     var recs = C.RECITERS.map(function (r) { return '<option value="' + r[0] + '"' + (r[0] === rc ? ' selected' : '') + '>' + L(r[1]) + '</option>'; }).join('');
     var reps = [1, 2, 3, 5, 10].map(function (n) { return '<option' + (String(n) === rp ? ' selected' : '') + ' value="' + n + '">' + N(n) + '×</option>'; }).join('');
@@ -110,9 +113,9 @@
   A.qverse = function (el) { Q.rep = 0; qPlay(+el.dataset.i); };
   document.addEventListener('change', function (e) {
     var k = e.target.dataset && e.target.dataset.chg; if (!k) return;
-    if (k === 'surah') { audio.pause(); Q = { slug: e.target.value, i: -1, rep: 0, playing: false }; localStorage.setItem('camp-surah', e.target.value); C.render(); }
-    if (k === 'reciter') localStorage.setItem('camp-reciter', e.target.value);
-    if (k === 'repeat') localStorage.setItem('camp-repeat', e.target.value);
+    if (k === 'surah') { audio.pause(); Q = { slug: e.target.value, i: -1, rep: 0, playing: false }; setPref('surah', e.target.value); C.render(); }
+    if (k === 'reciter') setPref('reciter', e.target.value);
+    if (k === 'repeat') setPref('repeat', e.target.value);
     if (k === 'rectype') view.recType = e.target.value;
   });
 
@@ -146,34 +149,67 @@
   A.plink = function (el) { h.askPin(function () { window.open(encodeURI(el.dataset.href), '_blank', 'noopener'); }); };
 
   /* استوديو القائد */
-  var rec = { mr: null, chunks: [], t0: 0, list: null, urls: {} };
-  function refreshRecs() { C.rec.all().then(function (l) { rec.list = l || []; if (location.hash.indexOf('radio') >= 0) C.render(); }, function () { rec.list = []; }); }
+  /* التسجيل يُحفظ محليًا أولًا ثم يُرفع إلى حساب الأسرة؛ القائمة في state.rec فتظهر على كل الأجهزة */
+  var rec = { mr: null, chunks: [], t0: 0, list: null, urls: {}, up: {}, want: {} };
+  function onRadio() { return location.hash.indexOf('radio') >= 0; }
+  function recon() {
+    if (!rec.list || !S.canStore() || S.sync !== 'on') return;
+    var cl = S.state.rec || {}, uid = S.user.uid;
+    rec.list.slice().forEach(function (r) {
+      if (cl[r.id]) return;
+      if (r.u === uid) {                       // رُفع من قبل ثم حُذف من جهاز آخر
+        rec.list.splice(rec.list.indexOf(r), 1); C.rec.del(r.id); return;
+      }
+      if (r.u || rec.up[r.id]) return;         // يخص حسابًا آخر، أو قيد الرفع
+      rec.up[r.id] = 1;
+      S.upload(r.id, r.blob).then(function () {
+        r.u = uid; C.rec.put(r); delete rec.up[r.id];
+        S.set(['rec', r.id], { k: r.k, type: r.type, t: r.t, dur: Math.round(r.dur), ct: r.blob.type || 'audio/webm' });
+      }, function (e) { console.warn('camp rec upload', e && e.code); rec.up[r.id] = 'err'; if (onRadio()) C.render(); });
+    });
+  }
+  function refreshRecs() { C.rec.all().then(function (l) { rec.list = l || []; recon(); if (onRadio()) C.render(); }, function () { rec.list = []; if (onRadio()) C.render(); }); }
+  S.on(recon);
+  function ext(ct) { return /mp4|aac|m4a/.test(ct || '') ? 'm4a' : /ogg/.test(ct || '') ? 'ogg' : 'webm'; }
   function studioTab(kid) {
     if (rec.list === null) { refreshRecs(); return '<p class="muted">…</p>'; }
-    var types = ['tilawa', 'adhan', 'khutba', 'story'], ty = view.recType || 'tilawa';
-    var mine = rec.list.filter(function (r) { return r.k === kid.id; }).sort(function (a, b) { return b.t - a.t; });
-    var rows = mine.map(function (r) {
-      if (!rec.urls[r.id]) rec.urls[r.id] = URL.createObjectURL(r.blob);
-      return '<div class="card" style="margin-bottom:.5rem"><div class="row"><b>' + T(r.type) + '</b><span class="muted">' + new Date(r.t).toLocaleDateString(h.lang() ? 'en-GB' : 'ar-EG') + ' · ' + N(Math.round(r.dur)) + (h.lang() ? 's' : 'ث') + '</span><button class="btn sm ghost sp" data-act="recDel" data-id="' + r.id + '">' + T('del') + '</button></div><audio controls src="' + rec.urls[r.id] + '" style="width:100%;margin-top:.4rem"></audio><a class="btn sm ghost" download="' + r.type + '-' + r.id + '.webm" href="' + rec.urls[r.id] + '">⬇ ' + T('download') + '</a></div>';
+    var types = ['tilawa', 'adhan', 'khutba', 'story'], ty = view.recType || 'tilawa', cl = S.state.rec || {}, local = {};
+    rec.list.forEach(function (r) { local[r.id] = r; });
+    var items = Object.keys(cl).filter(function (id) { return cl[id] && cl[id].k === kid.id; }).map(function (id) { return Object.assign({ id: id, cloud: true }, cl[id]); });
+    rec.list.forEach(function (r) { if (!cl[r.id] && r.k === kid.id) items.push({ id: r.id, k: r.k, type: r.type, t: r.t, dur: r.dur, ct: r.blob.type }); });
+    items.sort(function (a, b) { return b.t - a.t; });
+    var rows = items.map(function (r) {
+      if (!rec.urls[r.id]) {
+        if (local[r.id]) rec.urls[r.id] = URL.createObjectURL(local[r.id].blob);
+        else if (S.canStore() && !rec.want[r.id]) { rec.want[r.id] = 1; S.fileUrl(r.id).then(function (u) { rec.urls[r.id] = u; if (onRadio()) C.render(); }, function () { delete rec.want[r.id]; }); }
+      }
+      var u = rec.urls[r.id], st = r.cloud ? '☁️ ' + T('recCloud') : rec.up[r.id] === 'err' ? '⚠️ ' + T('recErr') : rec.up[r.id] ? '⏫ ' + T('recUp') : '📱 ' + T('recLocal');
+      return '<div class="card" style="margin-bottom:.5rem"><div class="row"><b>' + T(r.type) + '</b><span class="muted">' + new Date(r.t).toLocaleDateString(h.lang() ? 'en-GB' : 'ar-EG') + ' · ' + N(Math.round(r.dur)) + (h.lang() ? 's' : 'ث') + '</span><span class="pill' + (r.cloud ? ' g' : '') + '">' + st + '</span><button class="btn sm ghost sp" data-act="recDel" data-id="' + r.id + '">' + T('del') + '</button></div>' +
+        (u ? '<audio controls preload="none" src="' + esc(u) + '" style="width:100%;margin-top:.4rem"></audio><a class="btn sm ghost" target="_blank" rel="noopener" download="' + esc(r.type) + '-' + r.id + '.' + ext(r.ct) + '" href="' + esc(u) + '">⬇ ' + T('download') + '</a>' : '<p class="muted">…</p>') + '</div>';
     }).join('') || '<p class="muted">' + T('empty') + '</p>';
-    return '<div class="card"><p class="muted">🎙️ ' + T('recHint') + '</p><div class="row" style="margin-top:.5rem"><select data-chg="rectype" style="width:auto">' + types.map(function (x) { return '<option value="' + x + '"' + (x === ty ? ' selected' : '') + '>' + T(x) + '</option>'; }).join('') + '</select>' +
+    return '<div class="card"><p class="muted">🎙️ ' + T(S.canStore() ? 'recHint' : 'recHintLocal') + '</p><div class="row" style="margin-top:.5rem"><select data-chg="rectype" style="width:auto">' + types.map(function (x) { return '<option value="' + x + '"' + (x === ty ? ' selected' : '') + '>' + T(x) + '</option>'; }).join('') + '</select>' +
       (rec.mr ? '<span class="rec-dot"></span><button class="btn red" data-act="recStop">⏹ ' + T('recStop') + '</button>' : '<button class="btn gold" data-act="recStart">⏺ ' + T('record') + '</button>') + '</div></div><div style="margin-top:.8rem">' + rows + '</div>';
   }
   A.recStart = function () {
     if (!navigator.mediaDevices || !window.MediaRecorder) return toast('🎙️ ✕');
     navigator.mediaDevices.getUserMedia({ audio: true }).then(function (stream) {
-      rec.chunks = []; rec.t0 = Date.now(); rec.mr = new MediaRecorder(stream);
+      var mt = ['audio/mp4;codecs=mp4a.40.2', 'audio/mp4', 'audio/webm;codecs=opus', 'audio/webm'].filter(function (m) { try { return MediaRecorder.isTypeSupported(m); } catch (e) { return false; } })[0];   // mp4 أولًا: يعمل على كل الأجهزة
+      rec.chunks = []; rec.t0 = Date.now(); rec.mr = mt ? new MediaRecorder(stream, { mimeType: mt }) : new MediaRecorder(stream);
       rec.mr.ondataavailable = function (e) { if (e.data.size) rec.chunks.push(e.data); };
       rec.mr.onstop = function () {
         stream.getTracks().forEach(function (t) { t.stop(); });
-        var o = { id: C.uid(), k: h.curKid().id, type: view.recType || 'tilawa', t: Date.now(), dur: (Date.now() - rec.t0) / 1000, blob: new Blob(rec.chunks, { type: rec.mr.mimeType || 'audio/webm' }) };
+        var o = { id: C.uid(), k: h.curKid().id, type: view.recType || 'tilawa', t: Date.now(), dur: (Date.now() - rec.t0) / 1000, blob: new Blob(rec.chunks, { type: rec.mr.mimeType || mt || 'audio/webm' }) };
         rec.mr = null; C.rec.add(o).then(refreshRecs);
       };
       rec.mr.start(); C.render();
     }, function () { toast('🎙️ ✕'); });
   };
   A.recStop = function () { if (rec.mr) rec.mr.stop(); };
-  A.recDel = function (el) { C.rec.del(el.dataset.id).then(refreshRecs); };
+  A.recDel = function (el) {
+    var id = el.dataset.id;
+    if ((S.state.rec || {})[id]) { S.fileDel(id); S.del(['rec', id]); }
+    delete rec.urls[id]; C.rec.del(id).then(refreshRecs, refreshRecs);
+  };
 
   V.radio = function (kid) {
     var tab = view.radio || 'quran', tabs = [['quran', '📖'], ['adhkar', '📿'], ['stories', '📚'], ['recorder', '🎙️']];
