@@ -430,11 +430,11 @@
       '#mkGate .go{background:linear-gradient(135deg,#3BB36D,#1F7A44);color:#fff}#mkGate .no{background:#EFE4CF;color:#5a4a22}';
     document.head.appendChild(s);
   }
-  function gate(href, target) {
+  function gate(href, target, onPass, title) {
     css(); if (box) box.remove();
     var a = 6 + Math.floor(Math.random() * 4), b = 6 + Math.floor(Math.random() * 4), ar = lang() === 'ar';
     box = document.createElement('div'); box.id = 'mkGate'; box.setAttribute('role', 'dialog'); box.setAttribute('aria-modal', 'true'); box.dir = ar ? 'rtl' : 'ltr';
-    box.innerHTML = '<div class="c"><div class="ic">🔐</div><b>' + T('هذا الرابط يخرج من الموقع', 'This link leaves the website') + '</b>' +
+    box.innerHTML = '<div class="c"><div class="ic">🔐</div><b>' + (title || T('هذا الرابط يخرج من الموقع', 'This link leaves the website')) + '</b>' +
       '<p>' + T('اطلب من أحد والديك أن يجيب عن هذا السؤال:', 'Ask a parent to answer this question:') + '</p>' +
       '<div class="q" dir="ltr">' + N(a) + ' × ' + N(b) + ' = ?</div><input id="mkGateIn" inputmode="numeric" autocomplete="off" aria-label="' + T('الجواب', 'Answer') + '"><div class="er" id="mkGateEr"></div>' +
       '<button class="go" id="mkGateGo">' + T('متابعة', 'Continue') + '</button><button class="no" id="mkGateNo">' + T('رجوع', 'Go back') + '</button></div>';
@@ -443,7 +443,7 @@
     function close() { if (box) { box.remove(); box = null; } }
     function go() {
       var v = parseInt(String(inp.value).replace(/[٠-٩]/g, function (c) { return '٠١٢٣٤٥٦٧٨٩'.indexOf(c); }), 10);
-      if (v === a * b) { close(); if (target === '_self') location.href = href; else window.open(href, '_blank', 'noopener'); }
+      if (v === a * b) { close(); if (onPass) return onPass(); if (target === '_self') location.href = href; else window.open(href, '_blank', 'noopener'); }
       else { box.querySelector('#mkGateEr').textContent = T('ليست الإجابة الصحيحة', 'That is not the right answer'); inp.value = ''; }
     }
     box.querySelector('#mkGateGo').onclick = go; box.querySelector('#mkGateNo').onclick = close;
@@ -456,5 +456,5 @@
     e.preventDefault(); e.stopPropagation();
     gate(a.href, a.target === '_blank' ? '_blank' : '_self');
   }, true);
-  window.MKGate = { open: gate };
+  window.MKGate = { open: gate, ask: function (onPass, title) { gate(null, null, onPass, title); } };   // ask(): a parent question before something only a parent should allow
 })();

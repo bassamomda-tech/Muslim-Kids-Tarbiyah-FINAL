@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="dark">
+<title>وِردي من القرآن | My Quran Wird</title>
+<meta name="description" content="وِردٌ يوميّ من القرآن للأطفال: آياتٌ قليلة كلَّ يوم بتلاوة الشيخ الحُصري، ونجومٌ تفتح الجزر. A small daily Quran reading for children with Sheikh al-Husary's recitation.">
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@500;700;800;900&family=Amiri+Quran&family=Amiri:wght@700&family=Nunito:wght@600;800;900&display=swap" rel="stylesheet">
+<style>
+  :root{--bg1:#081E36;--bg2:#0E2E4E;--gold:#E8B530;--gold-lt:#F5CC5A;--ink:#FEF5DC;--muted:rgba(254,245,220,.72);--card:rgba(255,255,255,.06);--line:rgba(232,181,48,.28);--ok:#2E9E5B}
+  *{box-sizing:border-box}
+  body{margin:0;font-family:'Tajawal','Nunito',sans-serif;color:var(--ink);min-height:100vh;background:radial-gradient(900px 520px at 50% -10%,rgba(26,155,123,.25),transparent 60%),linear-gradient(165deg,var(--bg1),var(--bg2))}
+  html[dir="ltr"] body{font-family:'Nunito','Tajawal',sans-serif}
+  .header{display:flex;align-items:center;justify-content:space-between;padding:.8rem 1rem}
+  .back-btn{background:var(--gold);color:#10243d;border-radius:2rem;padding:.5rem 1.1rem;font-weight:800;text-decoration:none;min-height:44px;display:inline-flex;align-items:center}
+  .lang{display:flex;border:1.5px solid var(--line);border-radius:2rem;overflow:hidden}
+  .lang button{background:transparent;border:none;color:var(--ink);font-weight:800;padding:0 .85rem;min-height:40px;font-size:.85rem;cursor:pointer;font-family:inherit}
+  .lang button.active{background:var(--gold);color:#10243d}
+  .wrap{max-width:760px;margin:0 auto;padding:.3rem 1rem 5rem}
+  h1{margin:.3rem 0;font-size:1.8rem;color:var(--gold-lt);text-align:center}
+  .lead{margin:0 auto .8rem;max-width:600px;text-align:center;color:var(--muted);font-weight:700;line-height:1.8}
+  .stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.5rem;margin:.6rem 0}
+  .stats div{background:var(--card);border:1.5px solid var(--line);border-radius:1rem;padding:.6rem .3rem;text-align:center}
+  .stats b{display:block;font-size:1.5rem;color:var(--gold-lt)}
+  .stats span{font-size:.82rem;font-weight:700;color:var(--muted)}
+  .bar{height:10px;border-radius:9px;background:rgba(255,255,255,.12);overflow:hidden;margin:.3rem 0 1rem}
+  .bar i{display:block;height:100%;background:linear-gradient(90deg,#3BB36D,var(--gold-lt))}
+  .plan{background:var(--card);border:1.5px dashed var(--gold-lt);border-radius:1.2rem;padding:1rem;text-align:center;margin-bottom:1rem}
+  .plan b{display:block;font-size:1.1rem;margin-bottom:.6rem}
+  .opts{display:flex;gap:.5rem;justify-content:center;flex-wrap:wrap}
+  .opts button{min-height:60px;min-width:96px;border-radius:1rem;border:2px solid var(--line);background:rgba(255,255,255,.08);color:var(--ink);font:900 1rem 'Tajawal',sans-serif;cursor:pointer}
+  .opts button span{display:block;font-size:.78rem;font-weight:700;color:var(--muted)}
+  .opts button.on{background:rgba(245,204,90,.25);border-color:var(--gold-lt)}
+  .mushaf{background:#FFFDF4;color:#22201A;border-radius:1.3rem;padding:1rem 1rem 1.2rem;border:3px double #C98A1A;box-shadow:0 14px 34px rgba(0,0,0,.35)}
+  .sname{text-align:center;font-family:'Amiri',serif;font-weight:700;font-size:1.3rem;color:#7A4A12;border-bottom:1.5px solid #E6D3A6;padding-bottom:.4rem;margin:.6rem 0 .5rem}
+  .sname:first-child{margin-top:0}
+  .basm{text-align:center;font-family:'Amiri Quran','Amiri',serif;font-size:1.5rem;margin:.3rem 0 .5rem;color:#22201A}
+  .ay{display:block;width:100%;text-align:start;background:none;border:none;border-radius:.8rem;padding:.45rem .5rem;margin:.1rem 0;font-family:'Amiri Quran','Amiri',serif;font-size:1.75rem;line-height:2.25;color:#22201A;cursor:pointer}
+  html[data-age="young"] .ay{font-size:2.05rem}
+  .ay .num{display:inline-grid;place-items:center;min-width:1.7em;height:1.7em;margin-inline-start:.3em;border-radius:50%;border:1.5px solid #C98A1A;font:800 .5em 'Tajawal',sans-serif;color:#7A4A12;vertical-align:middle}
+  .ay.on{background:#FDE9A6}
+  .ay.read{color:#1F5A33}
+  .acts{display:flex;gap:.5rem;flex-wrap:wrap;justify-content:center;margin-top:1rem}
+  .btn{min-height:52px;padding:0 1.2rem;border-radius:999px;border:1.5px solid var(--line);background:rgba(255,255,255,.08);color:var(--ink);font:900 1rem 'Tajawal',sans-serif;cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;gap:.35rem}
+  .btn.go{background:linear-gradient(135deg,#3BB36D,#1F7A44);border:none;color:#fff;font-size:1.1rem;min-height:58px}
+  .btn.gold{background:linear-gradient(135deg,var(--gold-lt),#D4A017);border:none;color:#1A1205}
+  .done{margin-top:1rem;text-align:center;border-radius:1.3rem;padding:1.1rem;background:linear-gradient(150deg,rgba(46,158,91,.35),rgba(232,181,48,.2));border:1.5px solid rgba(46,158,91,.7)}
+  .done .big{font-size:3rem}.done b{display:block;font-size:1.3rem;margin:.2rem 0}
+  .note{color:var(--muted);font-size:.92rem;line-height:1.8;font-weight:600;text-align:center;margin-top:1rem}
+  .paper{margin-top:1rem;background:var(--card);border:1.5px solid var(--line);border-radius:1.2rem;padding:1rem;text-align:center}
+  @media(max-width:480px){.ay{font-size:1.55rem}}
+</style>
+<style id="__antiflash">html{background:#081E36;color-scheme:dark}</style>
+</head>
+<body>
+  <div class="header">
+    <a href="islands.html" class="back-btn">↩️ <span class="lng-ar">الجزر</span><span class="lng-en">Islands</span></a>
+    <div class="lang"><button data-lang="en">EN</button><button data-lang="ar" class="active">عربي</button></div>
+  </div>
+  <main class="wrap" id="app"></main>
+  <audio id="aud" preload="none"></audio>
+
+<script src="mk-system.js"></script>
+<script src="mk-bag.js"></script>
+<script src="mk-journey.js"></script>
+<script src="wird-data.js"></script>
+<script>
+/* «وِردي» — a small daily Quran reading. The text is the site's verified Uthmani text (wird-data.js);
+   the recitation is Sheikh al-Husary's (everyayah.com), one ayah at a time. Finishing today's wird gives
+   5 stars once a day (MKJourney.earn('wird','day')), which is what opens islands. */
+(function () {
+  var LS = localStorage, J = MKJourney, W = window.MK_WIRD || [], lang = 'ar', aud = document.getElementById('aud'), playing = -1, chain = false;
+  try { lang = LS.getItem('bunyanLang') === 'en' ? 'en' : 'ar'; } catch (e) {}
+  function T(a, e) { return lang === 'en' ? e : a; }
+  function N(n) { return lang === 'ar' ? J.arNum(n) : String(n); }
+  function esc(s) { return String(s == null ? '' : s).replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); }
+  function jget(k, d) { try { var v = JSON.parse(LS.getItem(k)); return v == null ? d : v; } catch (e) { return d; } }
+  function jset(k, v) { try { LS.setItem(k, JSON.stringify(v)); } catch (e) {} }
+  var TOTAL = W.reduce(function (s, r) { return s + r.ay.length; }, 0);
+  var PLANS = [[3, 'قصير', 'Short'], [5, 'مناسب', 'Just right'], [10, 'أكبر', 'Bigger'], [20, 'للكبار', 'For older']];
+
+  function st() { var s = jget('wird_state', null); if (!s || typeof s.pos !== 'number') s = { plan: 0, pos: 0, days: {}, khatma: 0 }; if (!s.days) s.days = {}; return s; }
+  function save(s) { jset('wird_state', s); }
+  function locate(pos) { var p = pos % TOTAL; for (var i = 0; i < W.length; i++) { if (p < W[i].ay.length) return [i, p]; p -= W[i].ay.length; } return [0, 0]; }
+  function portion(s) { var out = [], n = s.plan || 5; for (var k = 0; k < n; k++) { var L = locate(s.pos + k); out.push({ si: L[0], ai: L[1], pos: s.pos + k }); if (s.pos + k + 1 >= TOTAL * (s.khatma + 1)) break; } return out; }
+  function streak(s) { var n = 0, d = new Date(); if (!s.days[J.dayKey(d)]) d.setDate(d.getDate() - 1); while (s.days[J.dayKey(d)]) { n++; d.setDate(d.getDate() - 1); } return n; }
+  function pad(n) { return ('00' + n).slice(-3); }
+  function url(si, ai) { return 'https://everyayah.com/data/Husary_64kbps/' + pad(W[si].n) + pad(ai + 1) + '.mp3'; }
+
+  function render() {
+    var s = st(), today = J.dayKey(), doneToday = !!s.days[today], P = portion(s), stk = streak(s);
+    var h = '<h1>📖 ' + T('وِردي من القرآن', 'My Quran Wird') + '</h1><p class="lead">' + T('«اقرؤوا القرآنَ فإنّه يأتي يومَ القيامة شفيعًا لأصحابه» (رواه مسلم). آياتٌ قليلة كلَّ يوم… تصنع صاحبَ القرآن.', '"Recite the Quran, for it will come on the Day of Resurrection as an intercessor for its companions" (Muslim). A few ayat every day make a companion of the Quran.') + '</p>' +
+      '<div class="stats"><div><b>' + N(stk) + ' 🔥</b><span>' + T('أيّام متتالية', 'days in a row') + '</span></div><div><b>' + N(Object.keys(s.days).length) + '</b><span>' + T('يومًا قرأتُ وِردي', 'days of wird') + '</span></div><div><b>' + N(J.purseStars('wird')) + ' ⭐</b><span>' + T('نجوم الوِرد', 'wird stars') + '</span></div></div>' +
+      '<div class="bar" title="' + T('تقدّمي', 'My progress') + '"><i style="width:' + Math.min(100, (s.pos % TOTAL) / TOTAL * 100) + '%"></i></div>';
+    if (!s.plan) {
+      h += '<section class="plan"><b>' + T('كم آيةً تقرأ كلَّ يوم؟ (يختار الوالدان مع الطفل)', 'How many ayat a day? (parents choose with the child)') + '</b><div class="opts">' +
+        PLANS.map(function (p) { return '<button data-plan="' + p[0] + '">' + N(p[0]) + ' ' + T('آيات', 'ayat') + '<span>' + (lang === 'en' ? p[2] : p[1]) + '</span></button>'; }).join('') + '</div></section>';
+    } else {
+      var lastSi = -1;
+      h += '<section class="mushaf" id="mushaf">' + P.map(function (x, k) {
+        var head = '';
+        if (x.si !== lastSi) { lastSi = x.si; head = '<div class="sname">' + T('سورة ', 'Surah ') + esc(W[x.si].name) + '</div>' + (x.ai === 0 && W[x.si].n !== 1 && W[x.si].n !== 9 ? '<div class="basm">بِسْمِ ٱللَّهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ</div>' : ''); }
+        return head + '<button class="ay" data-k="' + k + '" aria-label="' + T('استمع للآية ', 'Listen to ayah ') + (x.ai + 1) + '">' + esc(W[x.si].ay[x.ai]) + '<span class="num">' + J.arNum(x.ai + 1) + '</span></button>';
+      }).join('') + '</section>' +
+        '<div class="acts"><button class="btn" id="playAll">🔊 ' + T('استمع للشيخ الحُصري', 'Listen (Sheikh al-Husary)') + '</button><button class="btn" id="stopAll">⏹ ' + T('أوقف', 'Stop') + '</button></div>' +
+        '<div class="acts">' + (doneToday ? '<button class="btn gold" id="more">📖 ' + T('أقرأ وِردًا إضافيًّا', 'Read some more') + '</button>' : '<button class="btn go" id="doneBtn">✅ ' + T('أتممتُ وِردي اليوم', 'I finished my wird today') + '</button>') + '</div>';
+      if (doneToday) h += '<section class="done"><div class="big">🌟</div><b>' + T('تقبّل الله! أتممتَ وِرد اليوم', 'May Allah accept it! Today\'s wird is done') + '</b><div>' + T('+٥ نجوم تقرّبك من الجزيرة التالية. عُد غدًا لوِردٍ جديد.', '+5 stars towards your next island. Come back tomorrow for a new wird.') + '</div><div class="acts"><a class="btn go" href="islands.html">🏝️ ' + T('إلى الجزر', 'To the islands') + '</a></div></section>';
+      h += '<section class="paper"><b>📗 ' + T('أقرأ من مصحفي الورقي؟', 'Reading from your own mushaf?') + '</b><p class="note" style="margin:.3rem 0 .6rem">' + T('إن قرأتَ وِردك من المصحف مع أحد والديك، اضغط هنا ليُحسَب لك اليوم.', 'If you read your wird from the mushaf with a parent, press here so today counts.') + '</p>' +
+        (doneToday ? '' : '<button class="btn" id="paperBtn">✅ ' + T('قرأتُ من مصحفي', 'I read from my mushaf') + '</button>') +
+        '<div style="margin-top:.6rem"><button class="btn" id="planBtn" style="min-height:44px;font-size:.9rem">⚙️ ' + T('الوِرد: ' + N(s.plan) + ' آيات — تغيير', 'Wird: ' + s.plan + ' ayat — change') + '</button></div></section>';
+    }
+    h += '<p class="note">' + T('نبدأ بـ «أعوذ بالله من الشيطان الرجيم»، ونقرأ بهدوءٍ وتدبّر. اضغط على أيّ آية لتسمعها.', 'We begin with "A\'udhu billahi min ash-shaytan ir-rajim", and read calmly and thoughtfully. Tap any ayah to hear it.') + '</p>';
+    var app = document.getElementById('app'); app.innerHTML = h;
+    app.querySelectorAll('[data-plan]').forEach(function (b) { b.onclick = function () { var s2 = st(); s2.plan = +b.getAttribute('data-plan'); save(s2); render(); }; });
+    app.querySelectorAll('.ay').forEach(function (b) { b.onclick = function () { chain = false; play(+b.getAttribute('data-k'), P); }; });
+    var pa = document.getElementById('playAll'); if (pa) pa.onclick = function () { chain = true; play(0, P); };
+    var sa = document.getElementById('stopAll'); if (sa) sa.onclick = stop;
+    var db = document.getElementById('doneBtn'); if (db) db.onclick = function () { finish(true); };
+    var pb = document.getElementById('paperBtn'); if (pb) pb.onclick = function () { finish(false); };
+    var mb = document.getElementById('more'); if (mb) mb.onclick = function () { var s3 = st(); advance(s3); save(s3); render(); window.scrollTo({ top: 0 }); };
+    var pl = document.getElementById('planBtn'); if (pl) pl.onclick = function () { var s4 = st(); s4.plan = 0; save(s4); render(); };
+  }
+  function advance(s) { var n = portion(s).length; s.pos += n; if (s.pos >= TOTAL * (s.khatma + 1)) s.khatma++; }
+  function finish(onSite) {
+    stop(); var s = st(), today = J.dayKey(); if (s.days[today]) return;
+    s.days[today] = onSite ? 1 : 2; if (onSite) advance(s);
+    var ks = Object.keys(s.days).sort(); while (ks.length > 400) delete s.days[ks.shift()];
+    save(s); J.earn('wird', 'day', 5, { daily: true });
+    var k = streak(s); if (k && k % 7 === 0) J.earn('wird', 'streak' + k, 5);   // a bonus every 7 days in a row
+    render(); var d = document.querySelector('.done'); if (d) d.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  }
+  function mark(k) { document.querySelectorAll('.ay').forEach(function (b) { b.classList.toggle('on', +b.getAttribute('data-k') === k); }); }
+  function play(k, P) {
+    if (!P[k]) return stop(); playing = k; mark(k);
+    try { if (window.MKTTS) MKTTS.stop(); } catch (e) {}
+    aud.src = url(P[k].si, P[k].ai);
+    aud.onended = function () { var b = document.querySelector('.ay[data-k="' + k + '"]'); if (b) b.classList.add('read'); if (chain && P[k + 1]) play(k + 1, P); else stop(); };
+    aud.onerror = function () { stop(); };
+    var pr = aud.play(); if (pr && pr.catch) pr.catch(function () { stop(); });
+  }
+  function stop() { chain = false; playing = -1; try { aud.pause(); } catch (e) {} mark(-1); }
+  function texts() {
+    document.documentElement.lang = lang; document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
+    document.querySelectorAll('.lng-ar').forEach(function (e) { e.style.display = lang === 'ar' ? '' : 'none'; });
+    document.querySelectorAll('.lng-en').forEach(function (e) { e.style.display = lang === 'en' ? '' : 'none'; });
+    document.querySelectorAll('.lang button').forEach(function (b) { b.classList.toggle('active', b.dataset.lang === lang); });
+    document.title = T('وِردي من القرآن', 'My Quran Wird'); render();
+  }
+  document.querySelectorAll('.lang button').forEach(function (b) { b.onclick = function () { lang = b.dataset.lang; try { LS.setItem('bunyanLang', lang); } catch (e) {} texts(); }; });
+  window.setLang = function (l) { lang = l; try { LS.setItem('bunyanLang', l); } catch (e) {} texts(); };
+  texts();
+})();
+</script>
+<script src="mk-citynav.js"></script>
+<script src="mk-topbar.js"></script>
+</body>
+</html>

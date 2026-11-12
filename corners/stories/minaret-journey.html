@@ -20,6 +20,12 @@
 /* a real illustration (if one is ever provided) keeps its natural frame and hides the drawn scene */
 .rd-pic.has-img{height:auto;aspect-ratio:16/10}
 .rd-pic.has-img .scene{display:none}
+/* a drawn picture of this very page (story-pics.js): the picture fills the frame, the emoji becomes a small badge */
+.rd-pic.has-pic{height:auto;aspect-ratio:12/5;background:#fff}
+.rd-pic.has-pic .scene{animation:picIn .5s both}
+.rd-pic.has-pic .ph{position:absolute;bottom:.45rem;inset-inline-start:.45rem;z-index:2;width:46px;height:46px;border-radius:50%;display:grid;place-items:center;font-size:1.5rem !important;line-height:1;background:rgba(255,255,255,.93);box-shadow:0 2px 8px rgba(0,0,0,.25);filter:none;animation:none !important}
+.rd-pic.no-emo .ph{display:none !important}
+@keyframes picIn{from{opacity:0;transform:scale(1.04)}to{opacity:1;transform:none}}
 .rd-pic img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:none;z-index:3}
 .rd-pic.night{background:linear-gradient(180deg,color-mix(in oklab,var(--sc) 45%,#141a3c) 0%,color-mix(in oklab,var(--sc) 55%,#3b3f7a) 100%)}
 .rd-pic .scene{position:absolute;inset:0;width:100%;height:100%;z-index:0;pointer-events:none}
@@ -139,6 +145,7 @@
 <script src="companions-little/journeys.js"></script>
 <script src="story-endings.js"></script>
 <script src="mini-games.js"></script>
+<script src="../shared/story-pics.js"></script>
 <!-- same warm FEMALE cloud voice as every other corner (loaded directly so the path never breaks) -->
 <script>
   window.MK_TTS_ENDPOINT = window.MK_TTS_ENDPOINT || 'https://narrate-ltyvjxcneq-uc.a.run.app';
@@ -305,7 +312,7 @@
     if(old) old.remove();
     pic.insertAdjacentHTML('afterbegin', sceneSVG(theme, !!flip));
     pic.classList.toggle('night', theme==='night');
-    pic.classList.remove('has-img');
+    pic.classList.remove('has-img'); pic.classList.remove('has-pic'); pic.classList.remove('no-emo');
     var ph=$('#rdPh'); ph.textContent = emoji;
     ph.style.animation='none'; void ph.offsetWidth; ph.style.animation='';
   }
@@ -333,6 +340,20 @@
     }else if(step.t==='page'){
       var p = step.p;
       setScene(p.emoji, null, step.i%2===1);
+      (function(story, pg, pp, n){
+        if(!window.MKStoryPic) return;
+        MKStoryPic.get({ id:'mj-'+src+'-'+jid+'-'+story.id+'-'+n, title:story.title, text:pp.text, emoji:pp.emoji, color:story.color }, function(svg){
+          var pic=$('#rdPic'); if(!svg || cur!==story || page!==pg || pic.classList.contains('has-img')) return;
+          var old=pic.querySelector('.scene'); if(old) old.remove();
+          pic.insertAdjacentHTML('afterbegin', svg);
+          var g=pic.querySelector('svg'); if(!g) return;
+          g.setAttribute('class','scene'); g.setAttribute('preserveAspectRatio','xMidYMid slice'); g.removeAttribute('width'); g.removeAttribute('height'); g.setAttribute('aria-hidden','true');
+          pic.classList.remove('night'); pic.classList.add('has-pic');
+          /* in stories of the prophets, the Seerah and the companions a person/face emoji is not kept on the picture */
+          var person = /[\u{1F466}-\u{1F478}\u{1F47C}\u{1F481}-\u{1F487}\u{1F574}\u{1F575}\u{1F57A}\u{1F600}-\u{1F64F}\u{1F926}\u{1F930}-\u{1F939}\u{1F9D1}-\u{1F9DF}\u{1F9B8}\u{1F9B9}]/u.test(pp.emoji) && !/[\u{1F64C}\u{1F64F}]/u.test(pp.emoji);
+          pic.classList.toggle('no-emo', person && /^(prophets|seerah|companions)$/.test(src));
+        });
+      })(cur, page, p, step.i);
       img.onload=function(){ img.style.display='block'; ph.style.display='none'; $('#rdPic').classList.add('has-img'); };
       img.onerror=function(){ img.style.display='none'; ph.style.display=''; $('#rdPic').classList.remove('has-img'); };
       img.src = imgPath(step.i);

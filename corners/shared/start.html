@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="dark">
+<title>رحلتي الأولى | My First Journey</title>
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@500;700;800;900&family=Amiri:wght@700&family=Nunito:wght@600;800;900&display=swap" rel="stylesheet">
+<style>
+  :root{--bg1:#081E36;--bg2:#0E2E4E;--gold:#E8B530;--gold-lt:#F5CC5A;--ink:#FEF5DC;--muted:rgba(254,245,220,.74);--line:rgba(232,181,48,.28);--green:#2E9E5B}
+  *{box-sizing:border-box}
+  html,body{max-width:100%;overflow-x:hidden}
+  body{margin:0;font-family:'Tajawal','Nunito',sans-serif;color:var(--ink);min-height:100vh;background:radial-gradient(900px 520px at 50% -10%,rgba(46,158,91,.2),transparent 60%),linear-gradient(165deg,var(--bg1),var(--bg2))}
+  html[dir="ltr"] body{font-family:'Nunito','Tajawal',sans-serif}
+  .header{display:flex;align-items:center;justify-content:space-between;padding:.8rem 1rem}
+  .back-btn{background:var(--gold);color:#10243d;border-radius:2rem;padding:.5rem 1.1rem;font-weight:800;text-decoration:none;min-height:44px;display:inline-flex;align-items:center}
+  .lang{display:flex;border:1.5px solid var(--line);border-radius:2rem;overflow:hidden}
+  .lang button{background:transparent;border:none;color:var(--ink);font-weight:800;padding:0 .85rem;min-height:40px;font-size:.85rem;cursor:pointer;font-family:inherit}
+  .lang button.active{background:var(--gold);color:#10243d}
+  .wrap{max-width:560px;margin:0 auto;padding:.4rem 1rem 5rem;text-align:center}
+  .kicker{margin:.2rem 0 .5rem;font-weight:900;color:var(--gold-lt);font-size:1.05rem}
+  /* progress: five dots, one per step */
+  .dots{list-style:none;display:flex;justify-content:center;align-items:center;gap:.55rem;margin:0 0 .3rem;padding:0}
+  .dots li{width:30px;height:30px;border-radius:50%;border:2.5px solid var(--line);background:rgba(255,255,255,.05);display:grid;place-items:center;font-size:.85rem;font-weight:900;color:var(--muted)}
+  .dots li.done{background:var(--green);border-color:var(--green);color:#fff}
+  .dots li.on{width:40px;height:40px;background:var(--gold);border-color:var(--gold-lt);color:#10243d;font-size:1.05rem;box-shadow:0 0 0 4px rgba(232,181,48,.22)}
+  .dots-tx{margin:0 0 .8rem;color:var(--muted);font-weight:800;font-size:.9rem}
+  .card{background:rgba(255,255,255,.06);border:1.5px solid var(--line);border-radius:1.6rem;padding:1.3rem 1.1rem 1.2rem;animation:in .25s ease-out}
+  @keyframes in{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+  .card h1{margin:.2rem 0 .5rem;font-size:1.7rem;font-weight:900;color:var(--gold-lt);line-height:1.5;overflow-wrap:anywhere}
+  .card h1:focus{outline:none}
+  .card p{margin:.45rem auto;max-width:460px;font-weight:700;line-height:1.9;font-size:1.12rem}
+  .card p.soft{color:var(--muted);font-size:.98rem}
+  .anos{width:104px;height:104px;margin:0 auto .3rem;border-radius:50%;display:grid;place-items:center;font-size:3.4rem;background:radial-gradient(circle at 50% 35%,#F7DC9E,#E8B530);box-shadow:0 8px 20px rgba(0,0,0,.3),inset 0 0 0 4px rgba(255,255,255,.25)}
+  .anos svg{width:84px;height:84px}
+  .anos-nm{font-weight:900;color:var(--gold-lt);margin-bottom:.3rem}
+  /* buttons */
+  .big{display:flex;align-items:center;justify-content:center;gap:.4rem;width:100%;min-height:62px;margin-top:1rem;padding:.5rem 1rem;border:none;border-radius:1.2rem;background:linear-gradient(150deg,#3BB36D,#1F7A44);color:#fff;font-family:inherit;font-weight:900;font-size:1.3rem;line-height:1.4;cursor:pointer;text-decoration:none;box-shadow:0 8px 20px rgba(0,0,0,.3),inset 0 -4px 0 rgba(0,0,0,.18)}
+  .big:active{transform:scale(.98)}
+  .big[disabled]{filter:saturate(.35) brightness(.8);cursor:default;box-shadow:none}
+  .big.gold{background:linear-gradient(135deg,var(--gold-lt),#D4A017);color:#1A1205}
+  .big.plain{background:rgba(255,255,255,.09);border:1.5px solid var(--line);color:var(--ink);box-shadow:none}
+  .big:focus-visible,.pick:focus-visible,.opt:focus-visible,.chip:focus-visible,.mini:focus-visible,.nm-in:focus-visible{outline:3px solid #fff;outline-offset:2px}
+  .minis{display:flex;justify-content:space-between;align-items:center;gap:.6rem;margin-top:.7rem;flex-wrap:wrap}
+  .mini{background:none;border:none;color:var(--muted);font-family:inherit;font-weight:800;font-size:.95rem;text-decoration:underline;cursor:pointer;min-height:44px;padding:0 .5rem}
+  .chip{min-height:56px;padding:0 1.2rem;border-radius:999px;border:1.5px solid var(--line);background:rgba(255,255,255,.08);color:var(--ink);font-family:inherit;font-weight:900;font-size:1.05rem;cursor:pointer}
+  /* step 2 */
+  .lbl{display:block;margin:1rem 0 .45rem;font-weight:800;color:var(--muted);font-size:.98rem}
+  .nm-in{width:100%;min-height:60px;border:2px solid var(--line);background:rgba(255,255,255,.08);color:var(--ink);border-radius:1.1rem;padding:.5rem 1rem;font-size:1.35rem;font-weight:800;font-family:inherit;text-align:center}
+  .nm-in:focus{border-color:var(--gold)}
+  .picker{display:flex;flex-wrap:wrap;gap:.45rem;justify-content:center}
+  .opt{width:50px;height:50px;border-radius:50%;border:3px solid transparent;background:rgba(255,255,255,.08);display:grid;place-items:center;font-size:1.6rem;cursor:pointer;padding:0;font-family:inherit;color:inherit}
+  .opt.sel{border-color:var(--gold);background:rgba(232,181,48,.22)}
+  .opt.col{width:44px;height:44px;font-size:0}
+  .opt.col.sel{border-color:#fff;box-shadow:0 0 0 3px var(--gold)}
+  .warn{min-height:1.6em;margin:.5rem 0 0;color:#FFD9A0;font-weight:800}
+  .me{width:96px;height:96px;margin:0 auto .4rem;border-radius:50%;display:grid;place-items:center;font-size:3rem;background:var(--c,#D4A017);box-shadow:0 8px 20px rgba(0,0,0,.3),inset 0 0 0 3px rgba(255,255,255,.2)}
+  /* step 3 */
+  .pick{display:flex;align-items:center;gap:.9rem;width:100%;min-height:76px;margin-top:.7rem;padding:.5rem 1.1rem;border-radius:1.2rem;border:2.5px solid var(--line);background:rgba(255,255,255,.07);color:var(--ink);font-family:inherit;font-weight:900;font-size:1.35rem;cursor:pointer;text-align:start}
+  .pick .ic{font-size:2.2rem}
+  .pick .ck{margin-inline-start:auto;font-size:1.3rem;visibility:hidden}
+  .pick.sel{border-color:var(--gold);background:rgba(232,181,48,.2)}
+  .pick.sel .ck{visibility:visible}
+  /* step 4 */
+  .dhikr{margin:.6rem 0 .3rem;font-family:'Amiri','Tajawal',serif;font-size:1.9rem;font-weight:700;line-height:1.9;color:#fff}
+  .hadith{margin:.7rem auto 0;background:rgba(255,255,255,.06);border:1.5px solid var(--line);border-radius:1.2rem;padding:.8rem 1rem;line-height:1.9}
+  .hadith q{display:block;font-family:'Amiri',serif;font-size:1.2rem;font-weight:700;quotes:none;color:#fff}
+  html[dir="ltr"] .hadith q{font-family:'Nunito',sans-serif;font-size:1rem}
+  .hadith small{display:block;margin-top:.3rem;color:var(--muted);font-weight:700}
+  .plot{position:relative;margin:.9rem auto 0;height:130px;border-radius:1.3rem;background:linear-gradient(180deg,#8FD3F4 0%,#CDEFD9 55%,#7BC67E 56%,#4E9F53 100%);display:flex;align-items:flex-end;justify-content:center;padding-bottom:16px;overflow:hidden}
+  .plot .sun{position:absolute;top:10px;inset-inline-start:16px;font-size:1.7rem}
+  .plot .tree{font-size:4.2rem;line-height:1;filter:drop-shadow(0 2px 1px rgba(0,0,0,.2))}
+  .plot .tree.seed{font-size:2rem}
+  .plot .tree.new{animation:grow .7s ease-out}
+  @keyframes grow{from{transform:scale(.1) translateY(20px);opacity:0}to{transform:none;opacity:1}}
+  /* step 5 */
+  .book{background:#FFF8EA;color:#2A2118;border-radius:1.3rem;padding:1rem 1.1rem;text-align:start;margin-top:.6rem}
+  .book .pg{min-height:150px;margin:0;font-size:1.22rem;line-height:2.05;font-weight:600;max-width:none}
+  html[dir="ltr"] .book .pg{font-size:1.1rem;line-height:1.8}
+  html[data-age="young"] .book .pg{font-size:1.35rem}
+  .book .quote{background:#F3E6C8;border-radius:1rem;padding:.8rem 1rem;text-align:center}
+  .book .quote q{display:block;quotes:none;font-family:'Amiri',serif;font-size:1.3rem;line-height:2;font-weight:700;color:#5A3A0A}
+  html[dir="ltr"] .book .quote q{font-family:'Nunito',sans-serif;font-size:1.05rem}
+  .book .quote small{display:block;color:#8A6A2E;font-weight:800}
+  .book .lesson{background:#E4F4E9;border-radius:1rem;padding:.7rem .9rem;margin-top:.6rem;font-weight:800;line-height:1.8;color:#1F5A33}
+  .book-nav{display:flex;align-items:center;justify-content:space-between;gap:.5rem;margin-top:.7rem}
+  .book-nav .cnt{font-weight:900;color:var(--muted)}
+  .chip[disabled]{opacity:.35;cursor:default}
+  /* step 6 */
+  .lv-ic{font-size:4.6rem;line-height:1.1}
+  .bar{height:18px;border-radius:999px;background:rgba(255,255,255,.12);overflow:hidden;margin:.8rem 0 .3rem;border:1px solid var(--line)}
+  .bar i{display:block;height:100%;min-width:10px;border-radius:999px;background:linear-gradient(90deg,#3BB36D,var(--gold-lt))}
+  .go{text-align:start;justify-content:flex-start;gap:.8rem}
+  .go .ic{font-size:1.8rem}
+  .go small{display:block;font-size:.85rem;font-weight:700;opacity:.9;line-height:1.5}
+  html.calm .card,html.calm .plot .tree.new{animation:none}
+  @media (prefers-reduced-motion:reduce){.card,.plot .tree.new{animation:none}}
+  @media(max-width:400px){.card{padding:1.1rem .85rem}.card h1{font-size:1.5rem}.dhikr{font-size:1.65rem}.opt{width:46px;height:46px}}
+</style>
+<style id="__antiflash">html{background:#081E36;color-scheme:dark}</style>
+</head>
+<body>
+  <div class="header">
+    <a href="../../index.html" class="back-btn" id="backBtn">↩️ <span class="lng-ar">المدينة</span><span class="lng-en">City</span></a>
+    <div class="lang"><button data-lang="en">EN</button><button data-lang="ar" class="active">عربي</button></div>
+  </div>
+  <main class="wrap">
+    <div class="kicker" id="kicker"></div>
+    <ol class="dots" id="dots"></ol>
+    <p class="dots-tx" id="dotsTx" aria-live="polite"></p>
+    <section class="card" id="card"></section>
+  </main>
+
+<script src="mk-system.js"></script>
+<script src="mk-bag.js"></script>
+<script src="mk-journey.js"></script>
+<script src="journey-story.js"></script>
+<script>
+/* «رحلتي الأولى» — a guided first ten minutes: one step on screen at a time.
+   State: start_step (1–6), start_pg (story page), start_palm, start_done — ordinary child keys. */
+(function () {
+  var LS = localStorage, J = window.MKJourney, CH = (window.MK_STORY || [])[0] || null, lang = 'ar';
+  try { lang = LS.getItem('bunyanLang') === 'en' ? 'en' : 'ar'; } catch (e) {}
+  /* the same choices as login.html */
+  var AVIS = ['🧒','👦','👧','🧕','👶','🦁','🐯','🦊','🐼','🦉','🐨','🐎','🐢','🦋','⭐','🌙','🚀','🌷'];
+  var COLS = ['#D4A017','#C0392B','#117A8B','#2E8B57','#6C3483','#E67E22','#2980B9','#1A9B7B','#D81B60','#5D4037'];
+  var DHIKR = 'سُبْحَانَ اللَّهِ الْعَظِيمِ وَبِحَمْدِهِ';
+  var STEPS = 5, FINISH = 6;
+
+  function T(a, e) { return lang === 'en' ? e : a; }
+  function t(o) { return o ? (o[lang] || o.ar || '') : ''; }
+  function N(n) { return lang === 'ar' ? J.arNum(n) : String(n); }
+  function esc(s) { return String(s == null ? '' : s).replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); }
+  function get(k) { try { return LS.getItem(k); } catch (e) { return null; } }
+  function set(k, v) { try { LS.setItem(k, v); } catch (e) {} }
+  function jget(k, d) { try { var v = JSON.parse(LS.getItem(k)); return v == null ? d : v; } catch (e) { return d; } }
+  function jset(k, v) { try { LS.setItem(k, JSON.stringify(v)); } catch (e) {} }
+  function $(id) { return document.getElementById(id); }
+  function prof() { return (window.MK && MK.activeProfile && MK.activeProfile()) || null; }
+  function arrow() { return lang === 'ar' ? ' ←' : ' →'; }
+
+  var step = parseInt(get('start_step'), 10); if (!(step >= 1 && step <= FINISH)) step = 1;
+  var pg = parseInt(get('start_pg'), 10) || 0;
+  var selAvi = AVIS[0], selCol = COLS[0], selAge = null, typed = '', warn = false, fresh = false;
+
+  /* ── voice ── */
+  function hush() { try { if (window.MKTTS && MKTTS.stop) MKTTS.stop(); } catch (e) {} try { speechSynthesis.cancel(); } catch (e) {} }
+  function fb(text, l) { try { var u = new SpeechSynthesisUtterance(String(text).replace(/[﴿﴾«»]/g, '')); u.lang = l || (/[؀-ۿ]/.test(text) ? 'ar' : 'en'); speechSynthesis.cancel(); speechSynthesis.speak(u); } catch (e) {} }
+  function say(text, l) {
+    l = l || (/[؀-ۿ]/.test(text) ? 'ar' : 'en');
+    try { if (window.MKTTS && MKTTS.speak) { MKTTS.speak(text, l).catch(function () { fb(text, l); }); return; } } catch (e) {}
+    fb(text, l);
+  }
+  function readAlong(el, text) {
+    try { if (el && window.MKReadAlong && MKReadAlong.play) { MKReadAlong.play(el, text, lang).catch(function () { fb(text, lang); }); return; } } catch (e) {}
+    say(text, lang);
+  }
+
+  /* ── moving between steps ── */
+  function go(n) {
+    hush(); step = Math.max(1, Math.min(FINISH, n)); set('start_step', String(step));
+    warn = false; fresh = false; render(true);
+  }
+  function nextOf(s) { return s === 1 && prof() ? 3 : s + 1; }           // a child we already know skips «who are you?»
+  function prevOf(s) { return s === 3 && prof() ? 1 : s - 1; }
+
+  function anos() {
+    var art = '🧭';   // Anos is the site's kufi boy (mk-avatars.js); the compass stands in until it loads
+    try { if (window.MKAvatar && MKAvatar.svg) art = MKAvatar.svg('boy', { c: '#FFFFFF', size: '84px' }); } catch (e) {}
+    return '<div class="anos no-ava" id="anosArt" aria-hidden="true">' + art + '</div><div class="anos-nm">' + T('أنوس', 'Anos') + '</div>';
+  }
+  function minis(noSkip) {
+    var h = '<div class="minis">';
+    h += step > 1 ? '<button class="mini" id="backStep">' + T('→ رجوع', '← Back') + '</button>' : '<span></span>';
+    if (!noSkip) h += '<button class="mini" id="skipStep">' + T('تخطّي هذه الخطوة', 'Skip this step') + '</button>';
+    return h + '</div>';
+  }
+
+  /* ── the six screens ── */
+  function s1() {
+    var p = prof();
+    return anos() +
+      '<h1 tabindex="-1">' + (p ? T('السلامُ عليكم يا ' + esc(p.name) + '! 👋', 'Assalamu alaikum, ' + esc(p.name) + '! 👋') : T('السلامُ عليكم! 👋', 'Assalamu alaikum! 👋')) + '</h1>' +
+      '<p>' + T('أنا أنوس، رفيقُ الرحلة في هذه المدينة.', 'I am Anos, your travel friend in this city.') + '</p>' +
+      '<p>' + T('رحلتُنا تبدأ ببذرةٍ صغيرة 🌱، وكلّما تعلّمنا خيرًا وعملنا به كبُرت، حتّى تصيرَ بإذن الله نخلةً باسقة 🌴.', 'Our journey starts with a tiny seed 🌱. Each time we learn something good and do it, it grows — until, by Allah\'s will, it becomes a tall palm 🌴.') + '</p>' +
+      '<p class="soft">' + T('خمسُ خطواتٍ قصيرة، خطوةً خطوة.', 'Five short steps, one at a time.') + '</p>' +
+      '<button class="big" id="nextStep">' + T('هيّا نبدأ', "Let's start") + arrow() + '</button>' + minis();
+  }
+  function s2() {
+    var p = prof();
+    if (p || !(window.MK && MK.addProfile)) {
+      return '<div class="me" style="--c:' + esc((p && p.color) || '#D4A017') + '">' + esc((p && p.avatar) || '🌟') + '</div>' +
+        '<h1 tabindex="-1">' + (p ? T('أهلًا وسهلًا يا ' + esc(p.name) + '! 🌟', 'Welcome, ' + esc(p.name) + '! 🌟') : T('أهلًا وسهلًا! 🌟', 'Welcome! 🌟')) + '</h1>' +
+        '<p>' + T('سعيدٌ بلقائك. نُكملُ رحلتَنا معًا.', 'So happy to meet you. Let us carry on together.') + '</p>' +
+        '<button class="big" id="nextStep">' + T('التالي', 'Next') + arrow() + '</button>' + minis();
+    }
+    return '<h1 tabindex="-1">' + T('ما اسمُك؟ 🙂', 'What is your name? 🙂') + '</h1>' +
+      '<label class="lbl" for="nmIn">' + T('الاسمُ الأوّل فقط', 'First name only') + '</label>' +
+      '<input class="nm-in" id="nmIn" maxlength="20" autocomplete="off" autocapitalize="words" enterkeyhint="done" placeholder="' + T('الاسمُ هنا', 'Name here') + '" value="' + esc(typed) + '">' +
+      '<span class="lbl" id="aviLbl">' + T('شخصيّتُك في الرحلة', 'Your character') + '</span>' +
+      '<div class="picker" id="aviPick" role="group" aria-labelledby="aviLbl">' + AVIS.map(function (a) { return '<button type="button" class="opt' + (a === selAvi ? ' sel' : '') + '" data-avi="' + a + '" aria-pressed="' + (a === selAvi) + '">' + a + '</button>'; }).join('') + '</div>' +
+      '<span class="lbl" id="colLbl">' + T('لونُك', 'Your colour') + '</span>' +
+      '<div class="picker" id="colPick" role="group" aria-labelledby="colLbl">' + COLS.map(function (c, i) { return '<button type="button" class="opt col' + (c === selCol ? ' sel' : '') + '" data-col="' + c + '" style="background:' + c + '" aria-pressed="' + (c === selCol) + '" aria-label="' + T('لون ', 'Colour ') + N(i + 1) + '"></button>'; }).join('') + '</div>' +
+      '<p class="warn" id="warn" role="status">' + (warn ? T('نحتاجُ إلى الاسم الأوّل أوّلًا 🙂', 'We need a first name first 🙂') : '') + '</p>' +
+      '<button class="big" id="nextStep">' + T('التالي', 'Next') + arrow() + '</button>' +
+      '<p class="soft">' + T('يُحفَظ الاسمُ على هذا الجهاز فقط.', 'The name is saved on this device only.') + '</p>' + minis();
+  }
+  function s3() {
+    if (selAge == null) selAge = J.age();
+    return '<h1 tabindex="-1">' + T('كم عمرُك؟ 🎂', 'How old are you? 🎂') + '</h1>' +
+      '<p class="soft">' + T('لنختارَ معًا ما يناسبُك.', 'So we can pick what suits you.') + '</p>' +
+      J.AGES.map(function (a) { return '<button type="button" class="pick' + (a.id === selAge ? ' sel' : '') + '" data-age="' + a.id + '" aria-pressed="' + (a.id === selAge) + '"><span class="ic">' + a.ic + '</span><span>' + esc(a[lang]) + '</span><span class="ck">✓</span></button>'; }).join('') +
+      '<button class="big" id="nextStep"' + (selAge ? '' : ' disabled') + '>' + T('التالي', 'Next') + arrow() + '</button>' + minis();
+  }
+  function s4() {
+    var planted = get('start_palm') === '1';
+    return '<h1 tabindex="-1">' + T('🌴 نخلتُك الأولى', '🌴 Your first palm') + '</h1>' +
+      '<p class="soft">' + (planted ? T('ما شاء الله! غُرِسَت أوّلُ نخلةٍ في بستانك.', 'Masha Allah! The first palm is planted in your garden.') : T('نقولُ هذا الذِّكرَ باللسان والقلب، ثمّ نضغطُ الزرّ الأخضر.', 'Say this dhikr with your tongue and your heart, then press the green button.')) + '</p>' +
+      '<div class="dhikr" lang="ar" dir="rtl">' + DHIKR + '</div>' +
+      '<button type="button" class="chip" id="listenBtn">' + T('🔊 استماع', '🔊 Listen') + '</button>' +
+      '<div class="plot" aria-live="polite"><span class="sun">☀️</span><span class="tree' + (planted ? (fresh ? ' new' : '') : ' seed') + '">' + (planted ? '🌴' : '🌱') + '</span></div>' +
+      '<div class="hadith"><q>' + T('«مَن قالَ: سُبحانَ اللهِ العظيمِ وبحمدِه، غُرِسَتْ له نَخلةٌ في الجنّة»', '"Whoever says: SubhanAllahil-Azim wa bihamdihi (Glory be to Allah the Magnificent, and praise be to Him), a palm tree is planted for him in Paradise."') + '</q>' +
+      '<small>' + T('رواه الترمذي (٣٤٦٤) وصحّحه الألباني', 'At-Tirmidhi (3464), graded sahih by al-Albani') + '</small></div>' +
+      (planted
+        ? '<p class="soft">' + T('هذا البستانُ تذكيرٌ جميل؛ أمّا النخلُ الحقيقيّ ففي الجنّة، والله يعلمُ ما في قلبك. 💚', 'This garden is a lovely reminder — the real palm trees are in Paradise, and Allah knows what is in your heart. 💚') + '</p>' +
+          '<button class="big" id="nextStep">' + T('التالي', 'Next') + arrow() + '</button>' + minis(true)
+        : '<button class="big" id="saidBtn">' + T('قلتُها ✓', 'I said it ✓') + '</button>' + minis());
+  }
+  function s5() {
+    if (!CH) return '<h1 tabindex="-1">📖</h1><button class="big" id="nextStep">' + T('التالي', 'Next') + arrow() + '</button>' + minis();
+    var n = CH.pages.length, last = pg >= n, body;
+    if (pg > n) pg = n;
+    if (!last) body = '<p class="pg" id="pgTx">' + esc(t(CH.pages[pg])) + '</p>';
+    else body = '<div class="quote"><q>' + esc(t(CH.quote)) + '</q><small>' + esc(t(CH.quote.src)) + '</small></div><div class="lesson">💡 ' + esc(t(CH.lesson)) + '</div>';
+    return '<h1 tabindex="-1">' + CH.icon + ' ' + esc(t(CH.title)) + '</h1>' +
+      '<p class="soft">' + T('الفصلُ الأوّل من حكاية أنوس', "The first chapter of Anos's story") + ' · ' + esc(t(CH.land)) + '</p>' +
+      '<div class="book">' + body + '</div>' +
+      '<div class="book-nav"><button type="button" class="chip" id="pgPrev"' + (pg ? '' : ' disabled') + ' aria-label="' + T('الصفحة السابقة', 'Previous page') + '">' + (lang === 'ar' ? '→' : '←') + '</button>' +
+      '<span class="cnt">' + T('صفحة ' + N(pg + 1) + ' من ' + N(n + 1), 'Page ' + (pg + 1) + ' of ' + (n + 1)) + '</span>' +
+      '<button type="button" class="chip" id="pgSay">' + T('🔊 استماع', '🔊 Listen') + '</button></div>' +
+      '<button class="big" id="nextStep">' + (last ? T('أنهيتُ الفصل ✓', 'I finished the chapter ✓') : T('الصفحة التالية', 'Next page') + arrow()) + '</button>' + minis();
+  }
+  function s6() {
+    var lv = J.level(), nm = lv.name, p = prof(), nx = lv.next;
+    return '<div class="lv-ic">' + lv.ic + '</div>' +
+      '<h1 tabindex="-1">' + T(lv.ic + ' أنت الآن «' + nm.ar + '»!', lv.ic + ' You are now a ' + nm.en + '!') + '</h1>' +
+      '<p>' + (p ? T('مباركٌ يا ' + esc(p.name) + '! بدأت رحلتُك، بارك الله فيك.', 'Well done, ' + esc(p.name) + '! Your journey has begun — may Allah bless you.') : T('مبارك! بدأت رحلتُك، بارك الله فيك.', 'Well done! Your journey has begun — may Allah bless you.')) + '</p>' +
+      '<div class="bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="' + lv.pct + '"><i style="width:' + lv.pct + '%"></i></div>' +
+      '<p class="soft">' + (nx ? T('⭐ ' + N(lv.stars) + ' من ' + N(nx.at) + ' — ثمّ ' + (lv.i ? 'تأتي درجةُ' : 'تصيرُ البذرةُ') + ' «' + nx.ar + '» ' + nx.ic, '⭐ ' + lv.stars + ' of ' + nx.at + ' — then comes "' + nx.en + '" ' + nx.ic) : '⭐ ' + N(lv.stars)) + '</p>' +
+      '<p style="margin-top:1rem">' + T('إلى أين الآن؟', 'Where to now?') + '</p>' +
+      '<a class="big go" href="my-day.html"><span class="ic">☀️</span><span>' + T('يومي', 'My Day') + '<small>' + T('خمسُ خطواتٍ صغيرة كلَّ يوم', 'Five small steps every day') + '</small></span></a>' +
+      '<a class="big go gold" href="journey.html"><span class="ic">🗺️</span><span>' + T('خريطةُ رحلتي', 'My journey map') + '<small>' + T('أين أنا، وما التالي', 'Where I am and what comes next') + '</small></span></a>' +
+      '<a class="big go plain" href="../../index.html"><span class="ic">🏙️</span><span>' + T('المدينة', 'The city') + '<small>' + T('كلُّ الأركان', 'All the corners') + '</small></span></a>' +
+      '<div class="minis"><span></span><button class="mini" id="again">' + T('🔁 إعادةُ الرحلة الأولى', '🔁 Do the first journey again') + '</button></div>';
+  }
+
+  function dots() {
+    var h = '';
+    for (var i = 1; i <= STEPS; i++) {
+      var done = i < step, on = i === step;
+      h += '<li class="' + (done ? 'done' : on ? 'on' : '') + '"' + (on ? ' aria-current="step"' : '') + '>' + (done ? '✓' : N(i)) + '</li>';
+    }
+    $('dots').innerHTML = h;
+    $('dots').setAttribute('aria-label', T('خطواتُ الرحلة', 'Journey steps'));
+    $('dotsTx').textContent = step > STEPS ? T('اكتملت الخطواتُ الخمس ✓', 'All five steps done ✓') : T('الخطوة ' + N(step) + ' من ' + N(STEPS), 'Step ' + step + ' of ' + STEPS);
+  }
+
+  function render(moved) {
+    document.documentElement.lang = lang; document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
+    document.querySelectorAll('.lng-ar').forEach(function (e) { e.style.display = lang === 'ar' ? '' : 'none'; });
+    document.querySelectorAll('.lng-en').forEach(function (e) { e.style.display = lang === 'en' ? '' : 'none'; });
+    document.querySelectorAll('.lang button').forEach(function (b) { b.classList.toggle('active', b.dataset.lang === lang); });
+    document.title = T('رحلتي الأولى', 'My First Journey');
+    $('kicker').textContent = T('🧭 رحلتي الأولى', '🧭 My first journey');
+    if (step === FINISH) set('start_done', '1');
+    dots();
+    var card = $('card');
+    card.innerHTML = [s1, s2, s3, s4, s5, s6][step - 1]();
+    card.setAttribute('data-step', step);
+    if (moved) { card.style.animation = 'none'; void card.offsetWidth; card.style.animation = ''; try { window.scrollTo(0, 0); } catch (e) {} var h = card.querySelector('h1'); if (h) try { h.focus({ preventScroll: true }); } catch (e) {} }
+    wire();
+  }
+
+  function wire() {
+    var card = $('card'), b;
+    function on(id, fn) { var e = $(id); if (e) e.onclick = fn; }
+    on('backStep', function () { if (step === 5 && pg > 0) { pg--; set('start_pg', String(pg)); hush(); render(true); } else go(prevOf(step)); });
+    on('skipStep', function () { go(nextOf(step)); });
+    on('again', function () { try { LS.removeItem('start_palm'); LS.removeItem('start_pg'); } catch (e) {} pg = 0; selAge = null; go(1); });
+    on('listenBtn', function () { say(DHIKR, 'ar'); });
+
+    if (step === 2) {
+      var inp = $('nmIn');
+      if (inp) {
+        inp.oninput = function () { typed = inp.value; if (warn && typed.trim()) { warn = false; $('warn').textContent = ''; } };
+        inp.onkeydown = function (e) { if (e.key === 'Enter') { e.preventDefault(); $('nextStep').click(); } };
+        card.querySelectorAll('[data-avi]').forEach(function (o) { o.onclick = function () { selAvi = o.dataset.avi; card.querySelectorAll('[data-avi]').forEach(function (x) { var s = x === o; x.classList.toggle('sel', s); x.setAttribute('aria-pressed', s); }); }; });
+        card.querySelectorAll('[data-col]').forEach(function (o) { o.onclick = function () { selCol = o.dataset.col; card.querySelectorAll('[data-col]').forEach(function (x) { var s = x === o; x.classList.toggle('sel', s); x.setAttribute('aria-pressed', s); }); }; });
+      }
+      on('nextStep', function () {
+        if (!inp) return go(3);
+        var name = inp.value.trim().split(/\s+/)[0] || '';          // first name only
+        if (!name) { warn = true; $('warn').textContent = T('نحتاجُ إلى الاسم الأوّل أوّلًا 🙂', 'We need a first name first 🙂'); inp.focus(); return; }
+        try { var p = MK.addProfile(name, selAvi, selCol); MK.setActive(p.id); } catch (e) {}   // as login.html does
+        typed = ''; go(3);                                          // (switching child clears the live keys, so the step is written after it)
+      });
+      return;
+    }
+    if (step === 3) {
+      card.querySelectorAll('.pick').forEach(function (o) {
+        o.onclick = function () {
+          selAge = o.dataset.age; J.setAge(selAge);
+          card.querySelectorAll('.pick').forEach(function (x) { var s = x === o; x.classList.toggle('sel', s); x.setAttribute('aria-pressed', s); });
+          $('nextStep').disabled = false;
+        };
+      });
+      on('nextStep', function () { if (selAge) { J.setAge(selAge); go(4); } });
+      return;
+    }
+    if (step === 4) {
+      on('saidBtn', function () {
+        if (get('start_palm') === '1') return;
+        /* the same storage the dhikr garden uses */
+        jset('garden_palms', J.palms() + 1);
+        var d = jget('garden_today', {}); jset('garden_today', { d: J.dayKey(), n: (d.d === J.dayKey() ? d.n : 0) + 1 });
+        set('start_palm', '1'); fresh = true; render(false);
+        var nx = $('nextStep'); if (nx) try { nx.focus({ preventScroll: true }); } catch (e) {}
+      });
+      on('nextStep', function () { go(5); });
+      return;
+    }
+    if (step === 5 && CH) {
+      var n = CH.pages.length;
+      on('pgPrev', function () { if (pg > 0) { pg--; set('start_pg', String(pg)); hush(); render(true); } });
+      on('pgSay', function () { if (pg < n) readAlong($('pgTx'), t(CH.pages[pg])); else say(t(CH.quote) + ' ' + t(CH.lesson), lang); });
+      on('nextStep', function () {
+        if (pg >= n) { J.markRead(0); go(FINISH); return; }
+        pg++; set('start_pg', String(pg)); hush(); render(true);
+      });
+      return;
+    }
+    on('nextStep', function () { go(nextOf(step)); });
+  }
+
+  function setLang(l) { lang = l === 'en' ? 'en' : 'ar'; set('bunyanLang', lang); hush(); render(false); }
+  document.querySelectorAll('.lang button').forEach(function (b) { b.onclick = function () { setLang(b.dataset.lang); }; });
+  window.setLang = setLang;
+
+  /* Anos's picture arrives with mk-avatars.js (loaded by mk-system.js a moment later) */
+  function upgradeAnos() { var a = $('anosArt'); if (a && !a.querySelector('svg') && window.MKAvatar && MKAvatar.svg) a.innerHTML = MKAvatar.svg('boy', { c: '#FFFFFF', size: '84px' }); }
+  window.addEventListener('load', function () { upgradeAnos(); setTimeout(upgradeAnos, 800); });
+
+  render(false);
+})();
+</script>
+<script src="mk-citynav.js"></script>
+<script src="mk-topbar.js"></script>
+</body>
+</html>

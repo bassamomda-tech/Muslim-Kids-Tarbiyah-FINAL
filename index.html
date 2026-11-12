@@ -505,12 +505,22 @@ footer b{color:rgba(212,160,23,.55);font-weight:700}
 .ft-col a{padding:.62rem 0}
 .ft-soc{width:44px;height:44px}
 .modal-close{min-width:40px;min-height:40px}
+/* the parents' code box exists only while its window is open — otherwise a phone can focus it and
+   pop the number keypad over the home page */
+#lockOverlay:not(.open){visibility:hidden!important}
+#lockOverlay:not(.open) input{display:none!important}
 </style>
+<script>
+/* two views of the site: the city (parent view, this page) and «عالم الجزر» (the game view).
+   A device set to the game view opens the islands first; ?city=1 always shows the city. */
+try{ if(localStorage.getItem('mk:view')==='game' && !/[?&]city=1/.test(location.search)) location.replace('corners/shared/islands.html'); }catch(e){}
+</script>
 <style id="__antiflash">html{background:#0A2540;color-scheme:dark}</style>
 <script>/* calm mode 🍃 (mk:calm) — set from the Treasures pages; stops the ticker and all motion */
 try{if(localStorage.getItem('mk:calm')==='true'){document.documentElement.classList.add('calm');document.write('<style>html.calm *,html.calm *::before,html.calm *::after{animation:none!important;transition:none!important}</style>');}}catch(e){}</script>
 </head>
 <body>
+<h1 style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);clip-path:inset(50%);white-space:nowrap">تربية الطفل المسلم — Muslim Kids' Tarbiyah: منصّة تعليمية إسلامية مجانية للأطفال (قرآن، سنّة، قصص، ألعاب)</h1>
 
 <!-- FIXED STARS -->
 <div class="stars-bg" id="starsBg"></div>
@@ -623,6 +633,10 @@ try{if(localStorage.getItem('mk:calm')==='true'){document.documentElement.classL
 <!-- ═══ CHILD CHARACTERS PARADE ═══ -->
 <div class="chars-parade" id="charsParade"></div>
 
+<!-- ═══ the game view: «عالم الجزر» ═══ -->
+<a class="mk-today" id="mkIslands" href="corners/shared/islands.html" style="--tc:#0F5C82" onclick="try{localStorage.setItem('mk:view','game')}catch(e){}">
+  <span class="ic">🏝️</span><span class="tx"><span class="k" data-ar="وضعُ اللعب للأطفال" data-en="Game mode for children">وضعُ اللعب للأطفال</span><b data-ar="عالمُ الجزر — اجمع النجوم وافتح الجزر" data-en="Island World — earn stars, open islands">عالمُ الجزر — اجمع النجوم وافتح الجزر</b><small data-ar="كلُّ ركنٍ جزيرة · الوِرد القرآني والألعاب تفتح الطريق" data-en="Every corner is an island · the Quran wird and games open the way">كلُّ ركنٍ جزيرة · الوِرد القرآني والألعاب تفتح الطريق</small></span><span class="go" data-ar="العب ←" data-en="Play →">العب ←</span>
+</a>
 <!-- ═══ «يومي» — today's 5-step journey + the season of the Hijri year (corners/shared/my-day.html) ═══ -->
 <a class="mk-today" id="mkToday" href="corners/shared/my-day.html" hidden></a>
 <!-- ═══ CONTINUE WHERE YOU STOPPED (mk_last, set by mk-system.js on every learning page) ═══ -->
@@ -902,8 +916,9 @@ function showExamGate(building){
   }
   document.getElementById('lockOverlay').classList.add('open');
   document.body.style.overflow='hidden';
-  if(hasPin) setTimeout(function(){ pinEl.focus(); }, 80);
+  if(hasPin && !_touch()) setTimeout(function(){ pinEl.focus(); }, 80);   /* phones: no keypad until the parent taps the box */
 }
+function _touch(){ try{ return matchMedia('(pointer: coarse)').matches; }catch(e){ return false; } }
 function tryEnterCorner(building){
   // Activities corner is gated by EXAMS (quizzes) — or by the parents' code.
   if(building && building.id==='activities' && !activitiesUnlocked()){
@@ -927,7 +942,7 @@ function tryEnterCorner(building){
     document.getElementById('lockPin').value = '';
     document.getElementById('lockOverlay').classList.add('open');
     document.body.style.overflow='hidden';
-    setTimeout(function(){ document.getElementById('lockPin').focus(); }, 80);
+    if(!_touch()) setTimeout(function(){ document.getElementById('lockPin').focus(); }, 80);
     return false;
   }
   return true;
@@ -2048,6 +2063,7 @@ html.calm .mkw-card{animation:none}html.calm .mkw-spot{transition:none}
 /* «يومي» card: today's progress (5 steps), the child's level and the season of the Hijri year */
 (function () {
   function paint() {
+    try { var en0 = localStorage.getItem('bunyanLang') === 'en'; [].forEach.call(document.querySelectorAll('#mkIslands [data-ar]'), function (x) { x.textContent = x.getAttribute(en0 ? 'data-en' : 'data-ar'); }); } catch (e) {}
     var el = document.getElementById('mkToday'); if (!el || !window.MKJourney) return;
     var J = MKJourney, ar = J.lang() === 'ar', S = J.season(), td = J.today(), n = J.doneCount(td), lv = J.level();
     var N = function (x) { return ar ? J.arNum(x) : String(x); };
@@ -2057,6 +2073,12 @@ html.calm .mkw-card{animation:none}html.calm .mkw-spot{transition:none}
       '<span class="dots">' + J.STEPS.map(function (s) { return '<i class="' + (td[s] ? 'on' : '') + '"></i>'; }).join('') + '</span>' +
       '<small>' + lv.ic + ' ' + (ar ? 'أنت الآن ' + lv.name.ar + ' · ' + N(n) + ' من ٥ اليوم' : 'You are a ' + lv.name.en + ' · ' + n + ' of 5 today') + '</small></span>' +
       '<span class="go">' + (ar ? (n ? 'تابِع ←' : 'ابدأ ←') : (n ? 'Continue →' : 'Start →')) + '</span>';
+    /* a brand-new child (no profile, first journey not done) is invited to «رحلتي الأولى» first */
+    var fresh = false; try { fresh = !localStorage.getItem('start_done') && !(JSON.parse(localStorage.getItem('mk:profiles') || '[]') || []).length; } catch (e) {}
+    if (fresh) {
+      el.href = 'corners/shared/start.html'; el.style.setProperty('--tc', '#1F7A44');
+      el.innerHTML = '<span class="ic">🌱</span><span class="tx"><span class="k">' + (ar ? 'جديدٌ هنا؟' : 'New here?') + '</span><b>' + (ar ? 'رحلتي الأولى مع أنوس' : 'My first journey with Anos') + '</b><small>' + (ar ? 'اختر شخصيّتك، وازرع أوّل نخلة، واقرأ أوّل حكاية' : 'Choose your character, plant your first palm and read the first story') + '</small></span><span class="go">' + (ar ? 'ابدأ ←' : 'Start →') + '</span>';
+    } else el.href = 'corners/shared/my-day.html';
     el.setAttribute('aria-label', ar ? 'يومي' : 'My Day'); el.hidden = false;
   }
   paint();

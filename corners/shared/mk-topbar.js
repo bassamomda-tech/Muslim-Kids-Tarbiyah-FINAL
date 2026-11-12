@@ -196,3 +196,46 @@
   }
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', boot); else boot();
 })();
+
+/* ── Island stations: a station counts as DONE when the child really spends time in it ──────────────
+   «عالم الجزر» (islands.html) writes  sessionStorage['mk:station'] = {k, n}  when a station is opened.
+   Here, on whatever page the child lands, we count ACTIVE seconds (tab visible + a touch, scroll, key
+   or playing audio in the last 30 s). After 60 active seconds — or at once when the page itself reports
+   a finished experiment/game/wird ('mk-earn') — the station is written to localStorage['station_log']
+   and a small card offers the way back to the islands. The islands page turns the log into stars. */
+(function () {
+  if (window.__mkStation) return; window.__mkStation = 1;
+  if (/\/islands\.html/.test(location.pathname)) return;
+  var SS, LS; try { SS = sessionStorage; LS = localStorage; } catch (e) { return; }
+  function flag() { try { return JSON.parse(SS.getItem('mk:station') || 'null'); } catch (e) { return null; } }
+  var f = flag(); if (!f || !f.k) return;
+  if (f.d && location.pathname.indexOf(f.d) !== 0) return;   // only pages of the station's own corner count
+  var NEED = 60, acc = +f.s || 0, last = Date.now(), done = false;
+  function touch() { last = Date.now(); }
+  ['pointerdown', 'keydown', 'scroll', 'touchstart'].forEach(function (ev) { window.addEventListener(ev, touch, { passive: true, capture: true }); });
+  function playing() { var m = document.querySelectorAll('audio,video'); for (var i = 0; i < m.length; i++) if (!m[i].paused && !m[i].ended) return true; try { if (window.speechSynthesis && speechSynthesis.speaking) return true; } catch (e) {} return false; }
+  function day() { var d = new Date(); return d.getFullYear() + '-' + ('0' + (d.getMonth() + 1)).slice(-2) + '-' + ('0' + d.getDate()).slice(-2); }
+  function finish() {
+    if (done) return; done = true; clearInterval(iv);
+    try { var L = JSON.parse(LS.getItem('station_log') || '{}') || {}; L[f.k] = day(); LS.setItem('station_log', JSON.stringify(L)); SS.removeItem('mk:station'); } catch (e) {}
+    card();
+  }
+  function card() {
+    var en = false; try { en = LS.getItem('bunyanLang') === 'en'; } catch (e) {}
+    var me = document.querySelector('script[src*="mk-topbar.js"]'), base = me ? me.src.replace(/mk-topbar\.js.*$/, '') : '';
+    var d = document.createElement('div'); d.setAttribute('role', 'status'); d.dir = en ? 'ltr' : 'rtl';
+    d.style.cssText = 'position:fixed;z-index:99990;inset-inline:12px;bottom:14px;max-width:440px;margin:0 auto;background:#0B3A5E;color:#FEF5DC;border:2px solid #F5CC5A;border-radius:18px;padding:12px 14px;display:flex;align-items:center;gap:10px;font:800 15px Tajawal,Nunito,sans-serif;box-shadow:0 10px 30px rgba(0,0,0,.4)';
+    d.innerHTML = '<span style="font-size:28px">⭐</span><span style="flex:1;line-height:1.5">' + (en ? 'Well done! This station is finished.' : 'أحسنت! أتممتَ هذه المحطّة.') + '</span>' +
+      '<a href="' + base + 'islands.html" style="background:#F5CC5A;color:#1A1205;border-radius:999px;padding:0 14px;min-height:44px;display:inline-flex;align-items:center;text-decoration:none;font-weight:900;white-space:nowrap">🏝️ ' + (en ? 'Islands' : 'الجزر') + '</a>' +
+      '<button type="button" aria-label="' + (en ? 'Close' : 'إغلاق') + '" style="width:44px;height:44px;border-radius:50%;border:none;background:rgba(255,255,255,.14);color:#FEF5DC;font-size:16px;font-weight:900;cursor:pointer">✕</button>';
+    d.querySelector('button').onclick = function () { d.remove(); };
+    (document.body || document.documentElement).appendChild(d);
+  }
+  var iv = setInterval(function () {
+    if (document.hidden) return;
+    if (Date.now() - last < 30000 || playing()) { acc++; if (acc % 5 === 0) { try { var g = flag(); if (g && g.k === f.k) { g.s = acc; SS.setItem('mk:station', JSON.stringify(g)); } } catch (e) {} } }
+    if (acc >= NEED) finish();
+  }, 1000);
+  window.addEventListener('mk-earn', function () { finish(); });
+  window.addEventListener('pagehide', function () { if (done) return; try { var g = flag(); if (g && g.k === f.k) { g.s = acc; SS.setItem('mk:station', JSON.stringify(g)); } } catch (e) {} });
+})();

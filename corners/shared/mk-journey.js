@@ -135,7 +135,7 @@
     try { if (window.MKBagCollect) { var c = window.MKBagCollect(); bag = (c.stars || 0) + (c.badges || 0) * 5; jset('journey_bagstars', bag); } } catch (e) {}
     if (bag == null) bag = parseInt(jget('journey_bagstars', 0), 10) || 0;   // pages without the bag (home) use the last count seen
     try { var D = jget('anos_done', {}) || {}; bag += Object.keys(D).length; } catch (e) {}
-    return bag + dayStars() + Math.floor(palms() / 3) + questStars() + nights();
+    return bag + dayStars() + Math.floor(palms() / 3) + questStars() + nights() + Object.keys(jget('review_log', {}) || {}).length + purseStars();
   }
   function level(n) {
     n = n == null ? totalStars() : n; var i = 0;
@@ -167,6 +167,25 @@
   function milestoneDue() { var seen = jget('myday_ms', []) || [], f = fullDays(); for (var i = MILESTONES.length - 1; i >= 0; i--) if (f >= MILESTONES[i] && seen.indexOf(MILESTONES[i]) < 0) return MILESTONES[i]; return null; }
   function milestoneSeen(m) { var seen = jget('myday_ms', []) || []; MILESTONES.forEach(function (x) { if (x <= m && seen.indexOf(x) < 0) seen.push(x); }); jset('myday_ms', seen); }
 
+  /* ── one points purse for the newer worlds (science lab, brain games, Quran wird, islands) ──
+     earn(kind, id, stars, {daily:true}) → stars actually added (0 if already earned).
+       daily:false (default) = once ever per id (e.g. finishing an experiment)
+       daily:true            = once per day per id (e.g. winning a brain game, reading the wird)
+     Stored per child in 'game_points': { "<kind>:<id>": [stars, lastDay, times] } */
+  function purse() { return jget('game_points', {}) || {}; }
+  function earn(kind, id, stars, opt) {
+    var P = purse(), k = kind + ':' + id, today = dayKey(), cur = P[k]; stars = Math.max(0, Math.min(20, +stars || 1));
+    if (cur && !(opt && opt.daily)) return 0;
+    if (cur && cur[1] === today) return 0;
+    P[k] = [(cur ? cur[0] : 0) + stars, today, (cur ? cur[2] : 0) + 1]; jset('game_points', P);
+    try { window.dispatchEvent(new CustomEvent('mk-earn', { detail: { kind: kind, id: id, stars: stars } })); } catch (e) {}
+    return stars;
+  }
+  function earned(kind, id) { var c = purse()[kind + ':' + id]; return c ? { stars: c[0], last: c[1], times: c[2] } : null; }
+  function earnedToday(kind, id) { var c = purse()[kind + ':' + id]; return !!(c && c[1] === dayKey()); }
+  function purseStars(kind) { var P = purse(), n = 0; Object.keys(P).forEach(function (k) { if (!kind || k.indexOf(kind + ':') === 0) n += P[k][0] || 0; }); return n; }
+  function purseCount(kind) { var P = purse(); return Object.keys(P).filter(function (k) { return k.indexOf(kind + ':') === 0; }).length; }
+
   /* chapters of «رحلة أنوس» the child has read, and the highest level ever reached (levels are never lost) */
   function readChapters() { return jget('journey_read', {}) || {}; }
   function markRead(lvl) { var r = readChapters(); r[lvl] = r[lvl] || dayKey(); jset('journey_read', r); }
@@ -185,6 +204,7 @@
     STEPS: STEPS, log: log, today: today, mark: mark, doneCount: doneCount, full: full, streak: streak, fullDays: fullDays, dayStars: dayStars,
     palms: palms, LEVELS: LEVELS, totalStars: totalStars, level: level, shared: shared, lang: lang,
     readChapters: readChapters, markRead: markRead, bestLevel: bestLevel,
+    earn: earn, earned: earned, earnedToday: earnedToday, purseStars: purseStars, purseCount: purseCount,
     weekKey: weekKey, quest: quest, questDone: questDone, questTick: questTick, questStars: questStars,
     night: night, setNight: setNight, nights: nights, MILESTONES: MILESTONES, milestoneDue: milestoneDue, milestoneSeen: milestoneSeen
   };

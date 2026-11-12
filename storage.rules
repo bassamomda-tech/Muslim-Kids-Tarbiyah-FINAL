@@ -19,6 +19,20 @@ service firebase.storage {
       allow delete: if request.auth != null && (request.auth.uid == uid || isAdmin());
     }
 
+    // «أصوات الصغار» recitations: recitations/{uid}/{file}
+    // - only the owner uploads, small audio only (under 3 MB ≈ one minute)
+    // - listing/reading through the rules is for the owner and the admin; everyone else listens
+    //   through the download link saved on the record, which is public only once the admin approves it
+    // - owner or admin can delete
+    match /recitations/{uid}/{file} {
+      allow read: if request.auth != null && (request.auth.uid == uid || isAdmin());
+      allow create: if request.auth != null
+        && request.auth.uid == uid
+        && request.resource.size < 3 * 1024 * 1024
+        && request.resource.contentType.matches('audio/.*');
+      allow delete: if request.auth != null && (request.auth.uid == uid || isAdmin());
+    }
+
     // Everything else is closed by default
     match /{allPaths=**} {
       allow read, write: if false;

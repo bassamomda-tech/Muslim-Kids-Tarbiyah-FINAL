@@ -302,6 +302,12 @@
     likeVideo: function (cid, vid) { return adapter.likeVideo ? adapter.likeVideo(cid, vid) : Promise.resolve(true); },
     deleteVideo: function (cid, vid, path) { return adapter.deleteVideo ? adapter.deleteVideo(cid, vid, path) : Promise.resolve(true); },
 
+    /* «أصوات الصغار» — children's recitations (cloud only; shown to everyone after admin approval) */
+    voiceUpload: function (blob, meta, onProgress) { return adapter.voiceUpload ? adapter.voiceUpload(blob, meta, onProgress) : Promise.reject(new Error('unsupported')); },
+    voiceList: function (which) { return adapter.voiceList ? adapter.voiceList(which) : Promise.resolve([]); },
+    voiceSetStatus: function (id, status) { return adapter.voiceSetStatus ? adapter.voiceSetStatus(id, status) : Promise.reject(new Error('unsupported')); },
+    voiceDelete: function (id, path) { return adapter.voiceDelete ? adapter.voiceDelete(id, path) : Promise.reject(new Error('unsupported')); },
+
     listPosts: function () { return adapter.listPosts(); },
     addPost: function (t, opts) { return adapter.addPost(t, opts); },
     likePost: function (id) { return adapter.likePost(id); },

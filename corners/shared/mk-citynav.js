@@ -19,9 +19,13 @@
 
   var SECTIONS = [
     { icon: '🏙️', ar: 'المدينة الرئيسية', en: 'City Home', href: 'index.html' },
+    { icon: '🏝️', ar: 'عالم الجزر (وضع اللعب)', en: 'Island World (game mode)', href: 'corners/shared/islands.html' },
+    { icon: '📖', ar: 'وِردي من القرآن', en: 'My Quran Wird', href: 'corners/shared/wird.html' },
     { icon: '☀️', ar: 'يومي — رحلة اليوم', en: 'My Day', href: 'corners/shared/my-day.html' },
     { icon: '🌴', ar: 'بستان الذكر', en: 'Dhikr Garden', href: 'corners/shared/garden.html' },
     { icon: '🧭', ar: 'رحلتي مع أنوس', en: 'My Journey', href: 'corners/shared/journey.html' },
+    { icon: '🎧', ar: 'أصوات الصغار', en: 'Little Voices', href: 'corners/shared/voices.html' },
+    { icon: '🔎', ar: 'ابحث في الموقع', en: 'Search the site', href: 'corners/shared/search.html' },
     { icon: '📰', ar: 'نشرة الأسبوع', en: 'Weekly News', href: 'corners/news/index.html' },
     { icon: '📥', ar: 'ركن التنزيلات', en: 'Downloads', href: 'corners/shared/downloads.html' },
     { icon: '📚', ar: 'المكتبة المجانية', en: 'Free Library', href: 'corners/shared/store.html' },

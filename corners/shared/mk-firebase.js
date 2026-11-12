@@ -305,6 +305,47 @@
       }).then(function () { return true; });
     },
 
+    /* ---------- «أصوات الصغار»: children's recitations, shown to everyone only after the admin approves ----------
+       recitations/{id}: uid, who, kid (first name), avatar, kind, ref, text, url, path, at, status ('pending'|'approved'), consent */
+    voiceUpload: function (blob, meta, onProgress) {
+      var uid = uidNow(); if (!uid) return Promise.reject(new Error('noauth'));
+      if (!storage) return Promise.reject(new Error('nostorage'));
+      meta = meta || {}; var u = window.MKAuth.user();
+      var type = (blob && blob.type) || 'audio/webm', ext = /mp4|aac|m4a/.test(type) ? 'm4a' : /ogg/.test(type) ? 'ogg' : 'webm';
+      var path = 'recitations/' + uid + '/' + now() + '.' + ext, ref = storage.ref().child(path);
+      var task = ref.put(blob, { contentType: type.split(';')[0] });
+      return new Promise(function (resolve, reject) {
+        task.on('state_changed',
+          function (snap) { if (onProgress) onProgress(Math.round(snap.bytesTransferred / snap.totalBytes * 100)); },
+          function (err) { reject(err); },
+          function () {
+            ref.getDownloadURL().then(function (url) {
+              return db.collection('recitations').add({
+                uid: uid, who: (u && u.name) || '', kid: String(meta.kid || '').slice(0, 30), avatar: String(meta.avatar || '🧒').slice(0, 8),
+                kind: String(meta.kind || 'ayah').slice(0, 12), ref: String(meta.ref || '').slice(0, 80), text: String(meta.text || '').slice(0, 400),
+                url: url, path: path, at: now(), status: 'pending', consent: true, consentAt: now()
+              });
+            }).then(function () { resolve(true); }).catch(reject);
+          });
+      });
+    },
+    voiceList: function (which) {
+      var q = db.collection('recitations'), uid = uidNow();
+      if (which === 'mine') { if (!uid) return Promise.resolve([]); q = q.where('uid', '==', uid); }
+      else q = q.where('status', '==', which === 'pending' ? 'pending' : 'approved');
+      return q.limit(150).get()
+        .then(function (qs) { var l = []; qs.forEach(function (d) { var x = d.data(); x.id = d.id; l.push(x); }); l.sort(function (a, b) { return (b.at || 0) - (a.at || 0); }); return l; })
+        .catch(function () { return []; });
+    },
+    voiceSetStatus: function (id, status) {
+      return db.collection('recitations').doc(id).update({ status: status === 'approved' ? 'approved' : 'pending', reviewedAt: now() }).then(function () { return true; });
+    },
+    voiceDelete: function (id, path) {
+      var p = Promise.resolve();
+      if (storage && path) p = storage.ref().child(path).delete().catch(function () {});
+      return p.then(function () { return db.collection('recitations').doc(id).delete(); }).then(function () { return true; });
+    },
+
     /* ---------- COMMUNITY: posts ---------- */
     getBlocked: function () {
       var uid = uidNow(); if (!uid) return Promise.resolve([]);

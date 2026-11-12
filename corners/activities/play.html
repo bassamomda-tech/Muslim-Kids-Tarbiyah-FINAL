@@ -34,6 +34,12 @@
     { href: R + 'activities/dashboard.html', ic: '🧩', c: '#C9A961',
       t: { ar: 'أنشطة أنوس', en: "Anos' Activities" }, tag: { ar: 'ألعابٌ وتحدّيات من كلّ الأركان', en: 'Games & challenges from every corner' },
       li: { ar: ['ألعابٌ تفاعلية تجمع ما تعلّمته في الأركان', 'اجمع النقاط والأوسمة وأنت تلعب'], en: ['Interactive games built on what you learned', 'Collect points and medals as you play'] } },
+    { href: R + 'lab/index.html', ic: '🔬', c: '#2E6DA4',
+      t: { ar: 'مختبر الاكتشاف', en: 'Discovery Lab' }, tag: { ar: 'الإبداع في التعلّم — علومٌ تفاعلية', en: 'Creative learning — interactive science' },
+      li: { ar: ['جسم الإنسان، النبات، المطر، الذرّات، الليل والنهار', 'جرِّب بيدك: حرِّك واسحب وشاهد ما يحدث'], en: ['The human body, plants, rain, atoms, day and night', 'Try it yourself: move, drag and watch what happens'] } },
+    { href: R + 'brain/index.html', ic: '♟️', c: '#6C4AB6',
+      t: { ar: 'نادي الأذكياء', en: 'Brain Club' }, tag: { ar: 'ألعاب ذكاءٍ وتفكير', en: 'Thinking games' },
+      li: { ar: ['شطرنج، إكس أو، أربعة في صفّ، الداما', 'البنّاء الصغير، التانغرام، المتاهة، برج الأقراص'], en: ['Chess, tic-tac-toe, four in a row, checkers', 'Little builder, tangram, maze, tower of discs'] } },
     { href: R + 'competitions/competitions.html', ic: '🏆', c: '#7A3FB0',
       t: { ar: 'ساحة المسابقات', en: 'Competitions Arena' }, tag: { ar: 'كوِّن اختبارك وتسابق', en: 'Build your quiz and race' },
       li: { ar: ['بنك أسئلة في العقيدة والقرآن والسيرة والعبادة والأخلاق', 'مؤقّت ونجوم وشهادة تميّز'], en: ['Questions on Aqeeda, Quran, Seerah, worship & manners', 'Timer, stars and a certificate'] } },
@@ -42,7 +48,7 @@
     id: 'play', icon: '🪐', color: '#7A3FB0',
     back: { href: '../../index.html', label: { ar: 'المدينة', en: 'City' } },
     title: { ar: 'كوكب الإبداع', en: 'Planet of Creativity' },
-    intro: { ar: 'أهلًا بك في كوكب الإبداع 🪐 تعلّم مهارةً واصنع بيديك، والعب، وتسابق — ثلاثة أبوابٍ في مكانٍ واحد. اختر واحدًا اليوم 🌟', en: 'Welcome to the Planet of Creativity 🪐 Learn a skill and make things, play, and compete — three doors in one place. Pick one today 🌟' },
+    intro: { ar: 'أهلًا بك في كوكب الإبداع 🪐 تعلّم مهارةً واصنع بيديك، والعب، وتسابق — أبوابٌ كثيرة في مكانٍ واحد. اختر واحدًا اليوم 🌟', en: 'Welcome to the Planet of Creativity 🪐 Learn a skill and make things, play, and compete — three doors in one place. Pick one today 🌟' },
     guide: { icon: '🧒', name: { ar: 'أنوس', en: 'Anos' }, say: { ar: 'أهلًا! أنا أنوس 👋 تعلّمتَ شيئًا جديدًا في الأركان؟ تعال نلعب به، أو نتسابق، أو نصنع شيئًا جميلًا!', en: "Hi! I'm Anos 👋 Learned something new in the corners? Let's play with it, race, or make something beautiful!" } },
     onRender: function (TR) {
       document.querySelector('[data-panel="kids"]').innerHTML = '<div class="pl-grid">' + DOORS.map(function (d) {

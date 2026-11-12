@@ -1,0 +1,692 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="dark">
+<title>عالم الجزر | Island World</title>
+<meta name="description" content="عالم الجزر: كلُّ ركنٍ جزيرة، تُفتَح بالنجوم التي يجمعها الطفل من الوِرد القرآني والأنشطة والألعاب. Island World: every corner is an island, opened with the stars a child earns.">
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@500;700;800;900&family=Nunito:wght@600;800;900&display=swap" rel="stylesheet">
+<style>
+  :root{--gold:#E8B530;--gold-lt:#F5CC5A;--ink:#FEF5DC;--muted:rgba(254,245,220,.78);--line:rgba(255,255,255,.28);--ok:#2E9E5B}
+  *{box-sizing:border-box}
+  body{margin:0;font-family:'Tajawal','Nunito',sans-serif;color:var(--ink);min-height:100vh;background:linear-gradient(180deg,#0B3A5E 0%,#0F5C82 38%,#1279A0 100%)}
+  html[dir="ltr"] body{font-family:'Nunito','Tajawal',sans-serif}
+  .header{display:flex;align-items:center;justify-content:space-between;gap:.5rem;padding:.8rem 1rem}
+  .pill{background:rgba(0,0,0,.25);border:1.5px solid var(--line);color:var(--ink);border-radius:2rem;padding:0 1rem;min-height:44px;display:inline-flex;align-items:center;gap:.35rem;font:800 .92rem 'Tajawal',sans-serif;text-decoration:none;cursor:pointer}
+  .lang{display:flex;border:1.5px solid var(--line);border-radius:2rem;overflow:hidden}
+  .lang button{background:transparent;border:none;color:var(--ink);font-weight:800;padding:0 .85rem;min-height:40px;font-size:.85rem;cursor:pointer;font-family:inherit}
+  .lang button.active{background:var(--gold);color:#10243d}
+  .wrap{max-width:720px;margin:0 auto;padding:.2rem 1rem 6rem}
+  .hud{position:sticky;top:var(--mktb-h,0px);z-index:20;display:flex;align-items:center;gap:.7rem;background:rgba(6,30,52,.92);border:1.5px solid var(--line);border-radius:1.2rem;padding:.6rem .8rem;margin:.4rem 0 1rem;backdrop-filter:blur(6px)}
+  .hud .av{flex:0 0 48px;height:48px;border-radius:50%;display:grid;place-items:center;font-size:1.7rem;background:var(--c,#D4A017)}
+  .hud .tx{flex:1;min-width:0}
+  .hud b{display:block;font-size:1.02rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .hud small{display:block;color:var(--muted);font-weight:700;font-size:.84rem}
+  .bar{height:9px;border-radius:9px;background:rgba(255,255,255,.16);overflow:hidden;margin-top:.3rem}
+  .bar i{display:block;height:100%;background:linear-gradient(90deg,#3BB36D,var(--gold-lt))}
+  .hud .st{flex:0 0 auto;background:linear-gradient(135deg,var(--gold-lt),#D4A017);color:#1A1205;font-weight:900;border-radius:999px;padding:.45rem .8rem;font-size:1.05rem}
+  h1{margin:.2rem 0 .1rem;font-size:1.7rem;text-align:center;color:#fff}
+  .lead{text-align:center;color:var(--muted);font-weight:700;line-height:1.7;margin:0 auto .6rem;max-width:560px}
+  /* the sea map */
+  .sea{position:relative;padding:6px 0 10px}
+  .sea svg.route{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
+  .isl{position:relative;display:flex;align-items:center;gap:.8rem;width:82%;min-height:104px;margin:0 0 30px;padding:.7rem .9rem;border-radius:46% 54% 48% 52% / 58% 52% 48% 42%;border:none;font:inherit;color:#1F2A2A;text-align:start;cursor:pointer;
+       background:radial-gradient(120% 130% at 30% 20%,#FFF3C4 0%,#F4D98A 46%,#D9B25C 100%);box-shadow:0 10px 0 -2px rgba(255,255,255,.22),0 16px 26px rgba(0,0,0,.3)}
+  .isl:nth-of-type(odd){margin-inline-start:auto}
+  .isl .ic{flex:0 0 66px;height:66px;border-radius:50%;display:grid;place-items:center;font-size:2.1rem;background:var(--c,#2E9E5B);box-shadow:inset 0 -5px 0 rgba(0,0,0,.18)}
+  .isl .tx{flex:1;min-width:0}
+  .isl b{display:block;font-size:1.08rem;font-weight:900;line-height:1.3}
+  .isl small{display:block;font-weight:800;font-size:.84rem;color:#5a4a22;margin-top:.1rem}
+  .isl .tag{flex:0 0 auto;font-size:.8rem;font-weight:900;padding:.3rem .6rem;border-radius:999px;background:rgba(255,255,255,.7);color:#1F5A33}
+  .isl.lock{filter:grayscale(.75) brightness(.82);cursor:pointer}
+  .isl.lock .tag{color:#7A4A12}
+  .isl.next{box-shadow:0 0 0 5px rgba(245,204,90,.55),0 16px 26px rgba(0,0,0,.3)}
+  .isl.new .tag{background:#F5CC5A;color:#1A1205}
+  .here{position:absolute;top:-14px;inset-inline-end:18px;background:#fff;color:#10243d;border-radius:999px;padding:.2rem .6rem;font-weight:900;font-size:.8rem;box-shadow:0 4px 12px rgba(0,0,0,.3)}
+  /* island sheet */
+  .ov{position:fixed;inset:0;z-index:5000;background:rgba(4,20,34,.86);display:none;align-items:flex-end;justify-content:center}
+  .ov.open{display:flex}
+  .sheet{width:min(640px,100%);max-height:88vh;overflow:auto;background:#FFF8EA;color:#2A2118;border-radius:1.6rem 1.6rem 0 0;padding:1rem 1.1rem 1.4rem}
+  @media(min-width:700px){.ov{align-items:center}.sheet{border-radius:1.6rem}}
+  .sh-hd{display:flex;align-items:center;gap:.7rem}
+  .sh-hd .ic{flex:0 0 58px;height:58px;border-radius:50%;display:grid;place-items:center;font-size:1.9rem;background:var(--c)}
+  .sh-hd b{display:block;font-size:1.25rem;color:#3A2A00}
+  .sh-hd small{color:#7A6A3A;font-weight:800}
+  .x{margin-inline-start:auto;width:44px;height:44px;border-radius:50%;border:none;background:#EFE4CF;color:#5a4a22;font-size:1.1rem;font-weight:900;cursor:pointer}
+  .doors{display:grid;gap:.5rem;margin-top:.8rem}
+  .door{display:flex;align-items:center;gap:.7rem;min-height:64px;padding:.6rem .8rem;border-radius:1.1rem;background:#fff;border:2px solid #EADBB5;color:#2A2118;text-decoration:none;font-weight:900}
+  .door .di{flex:0 0 44px;height:44px;border-radius:12px;display:grid;place-items:center;font-size:1.5rem;background:#F6EBCF}
+  .door small{display:block;font-weight:700;color:#7A6A3A;font-size:.85rem}
+  .door .go{margin-inline-start:auto;color:#1F7A44;font-size:1.2rem}
+  .lockmsg{text-align:center;padding:.6rem .2rem}
+  .lockmsg .big{font-size:3rem}
+  .lockmsg p{font-weight:800;font-size:1.08rem;line-height:1.8}
+  .earn{display:grid;gap:.45rem;margin-top:.6rem;text-align:start}
+  .earn a{display:flex;align-items:center;gap:.5rem;min-height:52px;padding:.4rem .8rem;border-radius:.9rem;background:#F3E6C8;color:#5A3A0A;text-decoration:none;font-weight:800}
+  .earn a b{margin-inline-start:auto;color:#1F7A44;white-space:nowrap}
+  .kd{display:table;font-size:.72rem;font-weight:900;color:#fff;background:var(--k,#555);border-radius:999px;padding:.08rem .55rem;margin-bottom:.15rem}
+  .chips{display:flex;gap:.4rem;flex-wrap:wrap;margin-top:.8rem}
+  .chip{min-height:44px;padding:0 .9rem;border-radius:999px;border:2px solid #EADBB5;background:#fff;color:#5a4a22;font:900 .9rem 'Tajawal',sans-serif;cursor:pointer}
+  .chip.on{background:var(--k,#3A2A00);border-color:var(--k,#3A2A00);color:#fff}
+  .mix{background:rgba(6,30,52,.78);border:1.5px solid var(--line);border-radius:1.3rem;padding:.8rem .8rem .9rem;margin:0 0 1.3rem}
+  .mix h2{margin:0 0 .15rem;font-size:1.15rem;color:var(--gold-lt)}
+  .mix p{margin:0 0 .6rem;color:var(--muted);font-weight:700;font-size:.9rem;line-height:1.6}
+  .mixg{display:grid;grid-template-columns:repeat(2,1fr);gap:.5rem}
+  @media(min-width:640px){.mixg{grid-template-columns:repeat(4,1fr)}}
+  .mx{display:flex;flex-direction:column;gap:.2rem;min-height:118px;padding:.6rem .65rem;border-radius:1rem;background:#FFF8EA;color:#2A2118;text-decoration:none;border-top:6px solid var(--k);position:relative}
+  .mx .e{font-size:1.7rem;line-height:1}
+  .mx b{font-size:.92rem;line-height:1.35;font-weight:900}
+  .mx small{font-weight:900;font-size:.76rem;color:var(--k)}
+  .mx .pt{position:absolute;top:.4rem;inset-inline-end:.5rem;font-size:.8rem;font-weight:900;color:#1F7A44}
+  .mx.done{opacity:.72}
+  .ages{display:grid;gap:.6rem;margin-top:.9rem}
+  .ageb{display:flex;align-items:center;gap:.8rem;min-height:74px;padding:.6rem 1rem;border-radius:1.2rem;border:3px solid #EADBB5;background:#fff;font:900 1.15rem 'Tajawal',sans-serif;color:#3A2A00;cursor:pointer;text-align:start}
+  .ageb.on{border-color:#1F7A44;background:#E9F7EE}
+  .ageb span{font-size:2.2rem}
+  .ageb small{display:block;font-weight:700;font-size:.85rem;color:#7A6A3A}
+  .door.ok{border-color:#9AD2AE;background:#F1FAF4}
+  .door .go.ok{color:#1F7A44;font-size:1.3rem}
+  .box{margin-top:.8rem;border-radius:1.1rem;padding:.75rem .85rem;background:#FBEFD2;border:2px solid #EADBB5}
+  .box h3{margin:0 0 .25rem;font-size:1rem;color:#3A2A00}
+  .box p{margin:0;font-weight:700;line-height:1.75;font-size:.95rem}
+  .lamps{font-size:1.5rem;letter-spacing:.2rem;margin-top:.3rem}
+  .lamps .off{filter:grayscale(1);opacity:.35}
+  .box.lit{background:#FFF3C4;border-color:#E8B530}
+  .box.deed{background:#EAF6EE;border-color:#B9DFC6}
+  .box.deed .btn{margin-top:.55rem}
+  .box.hero{background:#F1ECFA;border-color:#CFC2EC}
+  .box.hero .hi{float:inline-start;font-size:2.2rem;margin-inline-end:.6rem;line-height:1}
+  .box.hero em{display:block;margin-top:.35rem;font-style:normal;font-weight:900;color:#4B2E96}
+  .box.hero.shut{filter:grayscale(1);opacity:.7}
+  .isl.lit{box-shadow:0 0 0 4px rgba(255,236,150,.9),0 0 34px rgba(255,220,110,.75),0 16px 26px rgba(0,0,0,.3)}
+  .shipbig{display:block;margin:.4rem auto 0;width:min(240px,70%)}
+  .sw{display:flex;gap:.55rem;justify-content:center;flex-wrap:wrap;margin-top:.7rem}
+  .sw button{width:48px;height:48px;border-radius:50%;border:4px solid #fff;box-shadow:0 0 0 2px #C9B88A;cursor:pointer}
+  .sw button.on{box-shadow:0 0 0 4px #1F7A44}
+  .here svg{width:30px;height:24px;vertical-align:middle}
+  .here{background:#DDF1FA !important}
+  .mix .scroll{background:#FFF8EA;color:#2A2118;border-radius:1rem;padding:.7rem .8rem;margin:.2rem 0 .6rem}
+  .mix .scroll q{display:block;quotes:none;font-weight:900;font-size:1.08rem;line-height:1.9}
+  .mix .scroll small{display:block;color:#7A6A3A;font-weight:800;margin-top:.2rem}
+  .mix .okline{color:#BDF0CF;font-weight:900;margin:0}
+  .rv{display:flex;align-items:center;gap:.6rem;min-height:56px;padding:.45rem .7rem;border-radius:1rem;background:#FFF8EA;color:#2A2118;text-decoration:none;font-weight:900;margin-top:.45rem}
+  .rv span{font-size:1.5rem}.rv b{margin-inline-start:auto;color:#1F7A44;white-space:nowrap}
+  .box.why{background:#FFF8E1;border-color:#E8CF8A}.box.why q{display:block;quotes:none;font-weight:900;font-size:1.05rem;line-height:1.9;color:#3A2A00}
+  .box.why small{display:block;color:#7A6A3A;font-weight:800}
+  details.box summary{cursor:pointer;font-weight:900;color:#3A2A00;min-height:32px}
+  details.box p{margin-top:.4rem}
+  .qz{display:grid;gap:.55rem;margin-top:.8rem}
+  .qz button{min-height:58px;border-radius:1rem;border:2.5px solid #EADBB5;background:#fff;font:900 1.05rem 'Tajawal',sans-serif;color:#2A2118;cursor:pointer;padding:.4rem .8rem;text-align:start}
+  .qz button.no{border-color:#E0705A;background:#FCEDEA;opacity:.7}
+  .qz button.yes{border-color:#1F7A44;background:#E9F7EE}
+  .pieces{display:grid;grid-template-columns:repeat(3,1fr);gap:.4rem;margin:.8rem auto 0;max-width:300px}
+  .pieces span{aspect-ratio:1.2;border-radius:.7rem;display:grid;place-items:center;font-size:1.8rem;background:#E9DFC6;border:2px dashed #C9B88A}
+  .pieces span.got{background:#F4D98A;border:2px solid #B8860B}
+  .dr{display:grid;grid-template-columns:repeat(2,1fr);gap:.5rem;margin-top:.8rem}
+  .dr button{min-height:64px;border-radius:1rem;border:2.5px solid #EADBB5;background:#fff;font:900 1rem 'Tajawal',sans-serif;color:#2A2118;cursor:pointer}
+  .dr button.on{border-color:#B8860B;background:#FFF3C4}
+  .lant{display:block;margin:.6rem auto 0;width:130px}
+  .famrow{display:flex;align-items:center;gap:.5rem;font-weight:800;padding:.25rem 0}.famrow b{margin-inline-start:auto}
+  .inp{width:100%;min-height:48px;border-radius:.9rem;border:2px solid #EADBB5;padding:0 .8rem;font:800 1rem 'Tajawal',sans-serif;margin-top:.4rem}
+  .foot{display:flex;gap:.5rem;flex-wrap:wrap;justify-content:center;margin-top:1.2rem}
+  .up{text-align:center}.up .big{font-size:4rem}.up b{display:block;font-size:1.4rem;color:#7A4A12}
+  .btn{min-height:50px;padding:0 1.2rem;border-radius:999px;border:none;font:900 1rem 'Tajawal',sans-serif;cursor:pointer;background:linear-gradient(135deg,#3BB36D,#1F7A44);color:#fff;text-decoration:none;display:inline-flex;align-items:center;gap:.3rem}
+  /* ── 3D islands: each island is a drawn scene (sea ring, cliff, sand, grass, landmark) with a name plate ── */
+  body{background:radial-gradient(1200px 700px at 70% 12%,rgba(120,220,235,.28),transparent 60%),linear-gradient(180deg,#073352 0%,#0B5C86 34%,#0E86A8 68%,#14A3B8 100%)}
+  .sea{background-image:radial-gradient(60px 10px at 20% 12%,rgba(255,255,255,.14),transparent 70%),radial-gradient(80px 12px at 78% 30%,rgba(255,255,255,.12),transparent 70%),radial-gradient(70px 10px at 30% 55%,rgba(255,255,255,.12),transparent 70%),radial-gradient(90px 12px at 70% 78%,rgba(255,255,255,.12),transparent 70%),radial-gradient(60px 10px at 15% 92%,rgba(255,255,255,.12),transparent 70%)}
+  .isl{display:block;width:74%;max-width:400px;min-height:0;padding:0;margin:0 0 6px;background:none;box-shadow:none;border-radius:0;text-align:center;-webkit-tap-highlight-color:transparent}
+  .isl:nth-of-type(odd){margin-inline-start:auto}
+  .isl .art{display:block;width:100%;height:auto;filter:drop-shadow(0 18px 14px rgba(3,30,50,.45));transition:transform .25s}
+  .isl:hover .art,.isl:focus-visible .art{transform:translateY(-6px) scale(1.02)}
+  .isl:focus-visible{outline:none}.isl:focus-visible .plate{box-shadow:0 0 0 4px #fff,0 8px 18px rgba(0,0,0,.35)}
+  @media(prefers-reduced-motion:no-preference){.isl .art{animation:bob 6s ease-in-out infinite}.isl:nth-of-type(even) .art{animation-delay:-3s}}
+  @keyframes bob{0%,100%{translate:0 0}50%{translate:0 -5px}}
+  .isl .plate{position:relative;display:flex;align-items:center;gap:.55rem;margin:-34px auto 0;width:92%;padding:.5rem .7rem;border-radius:1rem;text-align:start;color:#2A1C08;
+    background:linear-gradient(180deg,#FFF6DC,#F1DCA6);border:2px solid #B98A45;box-shadow:0 4px 0 #8A6230,0 10px 18px rgba(0,0,0,.35)}
+  .isl .plate .em{flex:0 0 40px;height:40px;border-radius:50%;display:grid;place-items:center;font-size:1.35rem;background:var(--c,#2E9E5B);box-shadow:inset 0 -3px 0 rgba(0,0,0,.2)}
+  .isl.lock{filter:none}.isl.lock .art{filter:saturate(.25) brightness(.8) drop-shadow(0 18px 14px rgba(3,30,50,.45))}
+  .isl.lock .plate{background:linear-gradient(180deg,#E6E2D8,#C9C2B2);border-color:#8C8676;box-shadow:0 4px 0 #6E685A,0 10px 18px rgba(0,0,0,.35)}
+  .isl.next{box-shadow:none}.isl.next .plate{box-shadow:0 0 0 4px #F5CC5A,0 4px 0 #8A6230,0 10px 18px rgba(0,0,0,.35)}
+  .isl.lit{box-shadow:none}.isl.lit .art{filter:drop-shadow(0 0 16px rgba(255,226,120,.95)) drop-shadow(0 18px 14px rgba(3,30,50,.45))}
+  .isl .tag{background:#fff}
+  .here{top:6px;z-index:2}
+  .sea svg.route{z-index:0}.isl{z-index:1}
+  @media(max-width:480px){.isl{width:88%}}
+  /* ── the painted world map: one picture of the whole sea; each island is a tap zone on it ── */
+  .world{position:relative;max-width:560px;margin:.4rem auto 1.2rem;border-radius:1.5rem;box-shadow:0 18px 40px rgba(3,30,50,.5)}
+  .world>img{display:block;width:100%;height:auto;border-radius:1.5rem}
+  .isl.spot{position:absolute;transform:translate(-50%,-50%);width:26%;max-width:none;aspect-ratio:1/.92;margin:0;border-radius:50%;z-index:1}
+  .isl.spot:nth-of-type(odd){margin:0}
+  .isl.spot .veil{position:absolute;inset:4%;border-radius:50%;pointer-events:none}
+  .isl.spot.lock .veil{-webkit-backdrop-filter:grayscale(1) brightness(.72);backdrop-filter:grayscale(1) brightness(.72);background:radial-gradient(closest-side,rgba(255,255,255,.55),rgba(255,255,255,.28) 70%,rgba(255,255,255,0))}
+  .isl.spot.lock .veil::after{content:'🔒';position:absolute;left:50%;top:44%;transform:translate(-50%,-50%);width:32px;height:32px;border-radius:50%;display:grid;place-items:center;font-size:1rem;background:#fff;box-shadow:0 3px 10px rgba(0,0,0,.35)}
+  .isl.spot.lit .veil{background:radial-gradient(closest-side,rgba(255,236,150,.6),rgba(255,226,120,.28) 60%,rgba(255,226,120,0));mix-blend-mode:screen}
+  .isl.spot.next .veil{box-shadow:0 0 0 3px #F5CC5A,0 0 18px rgba(245,204,90,.9)}
+  @media(prefers-reduced-motion:no-preference){.isl.spot.next .veil{animation:ring 1.8s ease-in-out infinite}}
+  @keyframes ring{50%{box-shadow:0 0 0 6px rgba(245,204,90,.55),0 0 26px rgba(245,204,90,.9)}}
+  .world .chip2{position:absolute;z-index:3;pointer-events:none;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:1px;min-width:max-content;padding:.1rem .42rem .14rem;border-radius:.8rem;background:rgba(255,248,226,.96);border:1.5px solid #B98A45;box-shadow:0 3px 8px rgba(0,0,0,.35);color:#2A1C08;line-height:1.25}
+  .world .chip2 b{font-size:.68rem;font-weight:900;white-space:nowrap}
+  .world .chip2 .tag{font-size:.62rem;padding:0;background:none;color:#1F5A33;font-weight:900}
+  .world .chip2.lock{background:rgba(232,228,218,.96);border-color:#8C8676}.world .chip2.lock .tag{color:#7A4A12}
+  .world .chip2.new .tag{color:#B5651D}
+  .isl.spot .here{z-index:4;top:-12%;inset-inline-end:auto;left:50%;transform:translateX(-50%);white-space:nowrap;font-size:.68rem;padding:.12rem .45rem}
+  .isl.spot:focus-visible .veil{box-shadow:0 0 0 4px #fff}
+  @media(min-width:560px){.world .chip2 b{font-size:.88rem}.world .chip2 .tag{font-size:.76rem}}
+</style>
+<style id="__antiflash">html{background:#0B3A5E;color-scheme:dark}</style>
+</head>
+<body>
+  <div class="header">
+    <button class="pill" id="parentBtn" type="button">🔐 <span class="lng-ar">عرض الأهل</span><span class="lng-en">Parent view</span></button>
+    <div class="lang"><button data-lang="en">EN</button><button data-lang="ar" class="active">عربي</button></div>
+  </div>
+  <main class="wrap" id="app"></main>
+  <div class="ov" id="ov" role="dialog" aria-modal="true"><div class="sheet" id="sheet"></div></div>
+
+
+<script src="mk-system.js"></script>
+<script src="mk-bag.js"></script>
+<script src="mk-journey.js"></script>
+<script src="my-day-data.js"></script>
+<script src="islands-extra.js"></script>
+<script src="mk-voice.js"></script>
+<script>
+/* «عالم الجزر» — the GAME view of the whole site (the city home page is the PARENT view).
+   Every corner is an island on one sea route; an island opens when the child has enough stars, and stars
+   come from doing things: the Quran wird, «يومي», finishing games and stations, experiments, brain games,
+   dhikr. Nothing is ever lost; a parent can open every island (parent question) or go back to the city.
+   Device setting  mk:view = 'game' | 'parent'  decides which one the home page shows first. */
+(function () {
+  var LS = localStorage, J = MKJourney, lang = 'ar';
+  try { lang = LS.getItem('bunyanLang') === 'en' ? 'en' : 'ar'; } catch (e) {}
+  try { LS.setItem('mk:view', 'game'); } catch (e) {}
+  function T(a, e) { return lang === 'en' ? e : a; }
+  function t(o) { return o ? (o[lang] || o.ar || '') : ''; }
+  function N(n) { return lang === 'ar' ? J.arNum(n) : String(n); }
+  function esc(s) { return String(s == null ? '' : s).replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); }
+  var R = '../';   // from corners/shared/ to corners/
+  /* Every corner of the site is on the map. Each island holds STATIONS of mixed kinds, so a child
+     listens, reads, plays and does — not one kind only:
+       L 🎧 listen (podcasts, recitation) · R 📖 read (stories, cards) · P 🎮 play (games) · D 🔬 do (experiments, crafts, worship)
+     Station = [kind, icon, ar, en, href, ages, hintAr, hintEn] — ages: y = 4–6, m = 7–9, o = 10–12.
+     `at` = stars to open for ages 7–9; younger children need fewer, older ones more (see need()). */
+  var KIND = { L: ['🎧', 'استماع', 'Listen', '#6C4AB6'], R: ['📖', 'قراءة', 'Read', '#C1663A'], P: ['🎮', 'لعب', 'Play', '#2E9E5B'], D: ['🔬', 'تجربة وعمل', 'Do', '#2E6DA4'] };
+  var ISLANDS = [
+    { id: 'start', at: 0, ic: '⛵', c: '#3BB36D', n: { ar: 'مرفأ البداية', en: 'Starting Harbour' }, s: { ar: 'من هنا تبدأ كلُّ رحلة', en: 'Every journey starts here' }, st: [
+      ['D', '🌱', 'رحلتي الأولى مع أنوس', 'My first journey with Anos', 'start.html', 'ymo', 'اختر شخصيّتك وازرع أوّل نخلة', 'Choose your character, plant your first palm'],
+      ['D', '☀️', 'يومي', 'My Day', 'my-day.html', 'ymo', 'خمس خطوات = خمس نجوم كلَّ يوم', 'Five steps = five stars every day'],
+      ['R', '🧭', 'حكاية أنوس وجواز السفر', "Anos's story & passport", 'journey.html', 'ymo', 'فصلٌ جديد مع كلّ درجة', 'A new chapter with every level'],
+      ['P', '🎈', 'لعبةٌ سريعة مع أنوس', 'A quick game with Anos', R + 'activities/dashboard.html', 'ymo', 'اختر لعبةً وابدأ', 'Pick a game and start'],
+      ['L', '🎧', 'بودكاست أنوس', "Anos' podcast", R + 'skills/anos-series.html', 'ym', 'حلقاتٌ قصيرة تسمعها', 'Short episodes to listen to']] },
+    { id: 'quran', at: 0, ic: '📖', c: '#1A9B7B', n: { ar: 'جزيرة القرآن', en: 'Quran Island' }, s: { ar: 'وِردُك اليوميّ يفتح الجزر', en: 'Your daily wird opens islands' }, st: [
+      ['D', '📖', 'وِردي من القرآن', 'My Quran wird', 'wird.html', 'ymo', '+٥ نجوم كلَّ يوم', '+5 stars every day'],
+      ['L', '🌱', 'حُفّاظ القرآن: استمع وكرّر', 'Quran Huffaz: listen & repeat', R + 'quran-hifz/index.html', 'ymo', 'مع الشيخ الحُصري', 'With Sheikh al-Husary'],
+      ['R', '📜', 'حديقة السور القصيرة', 'Short surahs garden', R + 'little-district/pages/quran-surahs.html', 'ym', 'اقرأ واستمع وتدبّر', 'Read, listen, reflect'],
+      ['R', '🏛️', 'قصص القرآن', 'Quran stories', R + 'little-district/pages/quran-stories.html', 'mo', 'قصصٌ من كتاب الله', "Stories from Allah's Book"],
+      ['P', '🧩', 'اختبارات القرآن', 'Quran quizzes', R + 'little-district/pages/quran-tests.html', 'mo', 'اختبر ما حفظت', 'Test what you memorised'],
+      ['L', '🎙️', 'أصوات الصغار', 'Little Voices', 'voices.html', 'ymo', 'سجّل تلاوتك واستمع', 'Record your recitation']] },
+    { id: 'dhikr', at: 5, ic: '🌴', c: '#2E9E5B', n: { ar: 'واحة الذكر والعبادة', en: 'Oasis of Dhikr & Worship' }, s: { ar: 'نخلةٌ لكلّ تسبيحة', en: 'A palm for every tasbih' }, st: [
+      ['D', '🌴', 'بستان الذكر', 'Dhikr garden', 'garden.html', 'ymo', 'ازرع نخيلك', 'Plant your palms'],
+      ['P', '🧎', 'خطوات الصلاة', 'Steps of salah', R + 'activities/activities/salah-steps.html', 'ym', 'رتّب حركات الصلاة', 'Put the prayer in order'],
+      ['R', '🌙', 'واحة العبادة', 'Worship Oasis', R + 'little-district/pages/ibada.html', 'ymo', 'الوضوء والصلاة والصيام', 'Wudu, salah and fasting'],
+      ['R', '📿', 'معاني الأذكار والأدعية', 'Meanings of adhkar & du\'as', R + 'treasures/adhkar.html', 'mo', 'افهم ما تقول', 'Understand what you say'],
+      ['R', '🎉', 'الأعياد في الإسلام', 'The Eids in Islam', R + 'treasures/eids.html', 'ymo', 'الفطر والأضحى والجمعة', 'Fitr, Adha and Friday'],
+      ['L', '📿', 'سلسلة الفقه الصوتية', 'Fiqh audio series', R + 'skills/fiqh-series.html', 'o', 'أحكامٌ بلغةٍ سهلة', 'Rulings in simple words']] },
+    { id: 'games', at: 10, ic: '🧩', c: '#C9A961', n: { ar: 'جزيرة الألعاب', en: 'Games Island' }, s: { ar: 'أكثر من ١٠٠ لعبة', en: 'More than 100 games' }, st: [
+      ['P', '🧩', 'أنشطة أنوس', "Anos' activities", R + 'activities/dashboard.html', 'ymo', 'نجمةٌ لكلّ لعبة تُنهيها', 'A star for each game you finish'],
+      ['P', '✍️', 'أكتبُ حروفي', 'I write my letters', R + 'activities/activities/letter-trace.html', 'y', 'تتبّع الحرف بإصبعك', 'Trace the letter with your finger'],
+      ['P', '🔤', 'أصوات الحروف', 'Letter sounds', R + 'activities/activities/letter-sounds.html', 'y', 'استمع واختر الصورة', 'Listen and pick the picture'],
+      ['D', '✂️', 'ورشة الأعمال اليدوية', 'Crafts workshop', R + 'workshop/workshop.html', 'ymo', 'اصنع بيديك', 'Make it with your hands'],
+      ['P', '🏆', 'ساحة المسابقات', 'Competitions Arena', R + 'competitions/competitions.html', 'mo', 'تنافس وتعلّم', 'Compete and learn']] },
+    { id: 'stories', at: 18, ic: '📚', c: '#C1663A', n: { ar: 'جزيرة الحكايات', en: 'Story Island' }, s: { ar: 'حكايةٌ قبل كلّ شيء', en: 'A story before everything' }, st: [
+      ['R', '🧸', 'مكتبة القصص للصغار', 'Little Stories Library', R + 'stories/little.html', 'ym', 'حكاياتٌ تُقرأ لك كلمةً كلمة', 'Stories read to you word by word'],
+      ['R', '📚', 'قصص الكبار', 'Stories for older children', R + 'stories/big.html', 'mo', 'حكاياتٌ أطول', 'Longer stories'],
+      ['R', '📜', 'قصص السنّة', 'Sunnah stories', R + 'treasures/hadith-stories.html', 'mo', 'حديثٌ وقصّته', 'A hadith and its story'],
+      ['R', '🌙', 'مواقف النبي ﷺ', 'Moments of the Prophet ﷺ', R + 'treasures/prophet-moments.html', 'ymo', 'مع الأطفال والأهل والأصحاب', 'With children, family and companions'],
+      ['L', '🎶', 'سلسلة الأناشيد', 'Nasheed series', R + 'skills/nasheed-series.html', 'ymo', 'استمع وردّد', 'Listen and sing along']] },
+    { id: 'brain', at: 28, ic: '♟️', c: '#6C4AB6', n: { ar: 'جزيرة الأذكياء', en: 'Brain Island' }, s: { ar: 'فكّر وخطّط وجرّب', en: 'Think, plan and try' }, st: [
+      ['P', '🧱', 'البنّاء الصغير', 'Little Builder', R + 'brain/blocks.html', 'ym', 'ابنِ الصورة بالمكعّبات', 'Build the picture with blocks'],
+      ['P', '🎨', 'تذكَّر التتابع', 'Remember the sequence', R + 'brain/memory-seq.html', 'ym', 'درّب ذاكرتك', 'Train your memory'],
+      ['P', '🧭', 'المتاهة', 'The maze', R + 'brain/maze.html', 'ym', 'أوصل الكرة إلى المسجد', 'Reach the mosque'],
+      ['P', '⭕', 'إكس أو', 'Tic-tac-toe', R + 'brain/xo.html', 'ymo', 'ثلاثةٌ في صفّ', 'Three in a row'],
+      ['P', '🔷', 'لغز الأشكال', 'Tangram', R + 'brain/tangram.html', 'mo', 'املأ الشكل بالقطع', 'Fill the shape'],
+      ['P', '🟡', 'أربعة في صفّ', 'Four in a row', R + 'brain/four.html', 'mo', 'فكّر قبل أن تلعب', 'Think before you play'],
+      ['P', '♟️', 'الشطرنج', 'Chess', R + 'brain/chess.html', 'o', 'خطّط واصبر', 'Plan and be patient'],
+      ['P', '🧠', 'كلّ ألعاب الأذكياء', 'All brain games', R + 'brain/index.html', 'ymo', 'الداما، برج الأقراص…', 'Checkers, tower of discs…']] },
+    { id: 'lab', at: 40, ic: '🔬', c: '#2E6DA4', n: { ar: 'جزيرة الاكتشاف', en: 'Discovery Island' }, s: { ar: 'جرِّب بيدك وشاهد', en: 'Try it yourself and watch' }, st: [
+      ['D', '🌱', 'كيف يصنع النبات غذاءه؟', 'How a plant makes its food', R + 'lab/plant.html', 'ymo', 'أعطه ضوءًا وماءً', 'Give it light and water'],
+      ['D', '🌧️', 'دورة الماء والمطر', 'The water cycle and rain', R + 'lab/water-cycle.html', 'ymo', 'تحكّم بالشمس والرياح', 'Control the sun and wind'],
+      ['D', '🌍', 'الليل والنهار والقمر', 'Day, night and the moon', R + 'lab/day-night.html', 'ymo', 'أدِر الأرض بيدك', 'Turn the Earth yourself'],
+      ['D', '🍞', 'رحلة لقمة الطعام', 'The journey of a bite', R + 'lab/digestion.html', 'mo', 'من الفم إلى الدم', 'From mouth to blood'],
+      ['D', '❤️', 'القلب والدورة الدموية', 'The heart and blood', R + 'lab/heart.html', 'mo', 'اجعل القلب ينبض', 'Make the heart beat'],
+      ['D', '⚛️', 'الذرّات والروابط', 'Atoms and bonds', R + 'lab/atoms.html', 'o', 'انقل الإلكترون بيدك', 'Move the electron yourself'],
+      ['D', '🔬', 'كلّ التجارب', 'All experiments', R + 'lab/index.html', 'ymo', 'الكسور، حالات المادّة…', 'Fractions, states of matter…'],
+      ['L', '🩺', 'الطبيب الصغير (بودكاست)', 'Little Doctor (podcast)', R + 'skills/doctor.html', 'ym', 'رحلة مهارة مع حلقات', 'A skill journey with episodes'],
+      ['L', '🔭', 'العالِم الصغير (بودكاست)', 'Little Scientist (podcast)', R + 'skills/scientist.html', 'ymo', 'اسمع وجرّب', 'Listen and try']] },
+    { id: 'skills', at: 52, ic: '🛠️', c: '#7A3FB0', n: { ar: 'جزيرة المهارات', en: 'Skills Island' }, s: { ar: 'مهارةٌ حقيقية + بودكاست', en: 'A real skill + podcast' }, st: [
+      ['L', '🛒', 'التاجر الصغير', 'Little Merchant', R + 'skills/merchant.html', 'ym', 'بِع واشترِ بالأمانة', 'Buy and sell honestly'],
+      ['L', '🌾', 'المزارع الصغير', 'Little Farmer', R + 'skills/farmer.html', 'ym', 'ازرع وانتظر', 'Plant and wait'],
+      ['L', '🏗️', 'المهندس الصغير', 'Little Engineer', R + 'skills/engineer.html', 'mo', 'صمّم وابنِ', 'Design and build'],
+      ['L', '💻', 'المبرمج الصغير', 'Little Coder', R + 'skills/coder.html', 'o', 'فكّر كالحاسوب', 'Think like a computer'],
+      ['L', '💰', 'سلسلة المال', 'Money series', R + 'skills/money-series.html', 'o', 'ادّخر وأنفق بحكمة', 'Save and spend wisely'],
+      ['L', '💎', 'سلسلة الأخلاق', 'Akhlaq series', R + 'skills/akhlaq-series.html', 'mo', 'خُلُقٌ في كلّ حلقة', 'A good trait in every episode'],
+      ['D', '🛠️', 'كلّ المهارات', 'All skills', R + 'skills/index.html', 'ymo', 'اختر مهارتك', 'Choose your skill']] },
+    { id: 'aqeeda', at: 65, ic: '🕋', c: '#C0392B', n: { ar: 'منارة العقيدة', en: 'Faith Minaret' }, s: { ar: 'كيف عرفنا الله؟', en: 'How we know Allah' }, st: [
+      ['R', '✨', 'بطاقات أسماء الله الحسنى', "Cards of Allah's Names", R + 'treasures/names-cards.html', 'ymo', 'اسمٌ ومعناه وأثره', 'A name, its meaning and effect'],
+      ['R', '🔬', 'رحلة اليقين: عجائب المخلوقات', 'Certainty: wonders of creation', R + 'faith-minaret/yaqeen.html', 'ymo', 'انظر وتفكّر', 'Look and reflect'],
+      ['R', '🌅', 'كيف عرفنا الله؟', 'How we knew Allah', R + 'faith-minaret/maarifa.html', 'mo', 'براهين بسيطة', 'Simple proofs'],
+      ['R', '✨', 'جنود النور (الملائكة)', 'Soldiers of Light (angels)', R + 'faith-minaret/malaika.html', 'mo', 'نؤمن بهم ولا نصوّرهم', 'We believe in them'],
+      ['R', '🤲', 'العبودية وتعظيم الله', 'Servitude & honouring Allah', R + 'treasures/ubudiyah.html', 'mo', 'المحبّة والتوكّل والشكر', 'Love, trust and thanks'],
+      ['R', '🛡️', 'أجوبةٌ على الأسئلة الصعبة', 'Answers to hard questions', R + 'treasures/shubuhat.html', 'o', 'للعقول الكبيرة', 'For bigger minds'],
+      ['R', '🕋', 'كلّ رحلات المنارة', 'All minaret journeys', R + 'faith-minaret/aqeeda.html', 'ymo', 'عشر رحلات', 'Ten journeys']] },
+    { id: 'heroes', at: 85, ic: '🏰', c: '#E67E22', n: { ar: 'حصن الأبطال', en: "Heroes' Fortress" }, s: { ar: 'الأنبياء والسيرة والأبطال', en: 'Prophets, the Seerah and heroes' }, st: [
+      ['R', '🏰', 'حصن الأبطال', "Heroes' Fortress", R + 'heroes-fortress/fortress.html', 'ymo', 'اصعد عبر الزمن', 'Climb through time'],
+      ['R', '💚', 'ركن القلب السليم', 'Pure Heart Corner', R + 'heroes-fortress/heart.html', 'mo', 'أسماء الله وحبُّه', "Allah's names and His love"],
+      ['L', '🗺️', 'مستكشف التاريخ (بودكاست)', 'History Explorer (podcast)', R + 'skills/historian.html', 'ymo', 'حكايات من تاريخنا', 'Tales from our history'],
+      ['R', '🧭', 'جولاتٌ في التاريخ', 'Tours through history', R + 'treasures/tours.html', 'mo', 'الهجرة، بغداد، الأندلس', 'The Hijrah, Baghdad, Andalus']] },
+    { id: 'district', at: 110, ic: '🏘️', c: '#D4A017', n: { ar: 'حيّنا الصغير', en: 'Our Little District' }, s: { ar: 'بيوت الأخلاق والقوّة', en: 'Houses of character and strength' }, st: [
+      ['R', '🏘️', 'حيّنا الصغير', 'Our Little District', R + 'little-district/pages/social.html', 'ymo', '٣٤ بيتًا من الأخلاق', '34 houses of manners'],
+      ['D', '🏊', 'النادي الرياضي', 'Sports Club', R + 'little-district/pages/sport.html', 'ymo', 'قوّة الجسم وسنن الفطرة', 'A strong body and fitrah'],
+      ['D', '⚖️', 'ميزان الحسنات', 'Scale of good deeds', R + 'little-district/pages/hasanat.html', 'ymo', 'عملٌ طيّب كلَّ يوم', 'A good deed every day'],
+      ['R', '🤝', 'الفقيه الصغير', 'Little Faqih', R + 'skills/faqih.html', 'mo', 'افهم دينك', 'Understand your religion']] },
+    { id: 'ummah', at: 140, ic: '🕌', c: '#2E8B57', n: { ar: 'جزيرة القدس والأمّة', en: 'Al-Quds & Ummah Island' }, s: { ar: 'أمّةٌ واحدة', en: 'One Ummah' }, st: [
+      ['R', '🕌', 'ركن القدس والأمّة', 'Al-Quds & Ummah', R + 'little-district/pages/quds.html', 'ymo', 'رحلة الأقصى', 'The journey of al-Aqsa'],
+      ['R', '🌍', 'الأطلس الإسلامي', 'The Islamic Atlas', R + 'quds-ummah/atlas.html', 'ymo', 'مساجد وقلاع وخريطة الدول', 'Mosques, castles and countries'],
+      ['R', '🕋', 'المعالم الإسلامية', 'Islamic landmarks', R + 'treasures/landmarks.html', 'mo', 'صورٌ وخرائط', 'Photos and maps'],
+      ['R', '📰', 'نشرة الأسبوع', 'Weekly news', R + 'news/index.html', 'mo', 'حدث في مثل هذا اليوم', 'On this day']] },
+    { id: 'academy', at: 175, ic: '🔭', c: '#2980B9', n: { ar: 'أكاديمية المبدعين', en: "Innovators' Academy" }, s: { ar: 'علماءُ المسلمين ومخترعوهم', en: 'Muslim scientists and inventors' }, st: [
+      ['R', '🔭', 'أكاديمية المبدعين', "Innovators' Academy", R + 'heroes-fortress/academy.html', 'ymo', 'كن أنت المبدع', 'Be the innovator'],
+      ['R', '🧠', 'عقولٌ غيّرت العالم', 'Minds that changed the world', R + 'heroes-fortress/academy-minds.html', 'mo', 'علماءُ المسلمين', 'Muslim scholars and scientists'],
+      ['L', '🎤', 'الخطيب الصغير', 'Little Speaker', R + 'heroes-fortress/academy-khataba.html', 'o', 'تكلّم بثقة', 'Speak with confidence'],
+      ['D', '💡', 'المفكّر الصغير', 'Little Thinker', R + 'skills/mutafakkir.html', 'o', 'اسأل وابحث', 'Ask and explore'],
+      ['D', '🧰', 'الصانع الصغير', 'Little Maker', R + 'skills/maker.html', 'ymo', 'اخترع شيئًا نافعًا', 'Invent something useful']] }
+  ];
+  function openAll() { try { return LS.getItem('islands_open') === '1'; } catch (e) { return false; } }
+  function seen() { try { return JSON.parse(LS.getItem('islands_seen') || '[]') || []; } catch (e) { return []; } }
+  /* ---- age: decides which stations show, and how many stars an island costs ---- */
+  var AK = { young: 'y', mid: 'm', older: 'o' }, AMUL = { young: 0.6, mid: 1, older: 1.3 };
+  var AHINT = { young: ['حكاياتٌ تُقرأ لك، حروف، ألعاب سهلة', 'Stories read to you, letters, easy games'], mid: ['قصص، بودكاست، تجارب وألعاب ذكاء', 'Stories, podcasts, experiments, brain games'], older: ['سلاسل صوتية، شطرنج، علوم وأسئلة كبيرة', 'Audio series, chess, science and big questions'] };
+  function ageId() { return J.age() || 'mid'; }
+  function need(I) { if (I.secret) return pieces() >= 6 ? 0 : 1e9; return I.at ? Math.max(3, Math.round(I.at * AMUL[ageId()])) : 0; }
+  function stations(I) { var k = AK[ageId()]; return I.st.filter(function (x) { return x[5].indexOf(k) >= 0; }); }
+  function href(x) { return x[4]; }
+  function askAge(first) {
+    var cur = J.age();
+    show('<div class="sh-hd" style="--c:#E8B530"><span class="ic">🎂</span><div><b>' + T('كم عمرك؟', 'How old are you?') + '</b><small>' + T('لنختار لك ما يناسبك في كلّ جزيرة', 'So every island shows what suits you') + '</small></div>' + (first ? '' : '<button class="x" aria-label="' + T('إغلاق', 'Close') + '">✕</button>') + '</div><div class="ages">' +
+      J.AGES.map(function (a) { return '<button class="ageb' + (cur === a.id ? ' on' : '') + '" data-a="' + a.id + '"><span>' + a.ic + '</span><div>' + esc(lang === 'en' ? a.en : a.ar) + '<small>' + esc(T(AHINT[a.id][0], AHINT[a.id][1])) + '</small></div></button>'; }).join('') + '</div>');
+    [].forEach.call(document.querySelectorAll('.ageb'), function (b) { b.onclick = function () { J.setAge(b.getAttribute('data-a')); close(); }; });
+  }
+  /* ---- every island has a MISSION (finish 3 stations → the island is lit), one real-world DEED a parent
+     confirms, and a COMPANION: a scholar, scientist or builder of our history whose card is won with the
+     mission. No pictures of people — only the tool of their craft. ---- */
+  var QUEST = {
+    start: ['مرحبًا يا بحّار! قبل أن نُبحر نجهّز السفينة: أتمم ثلاث محطّات لنرفع الشراع.', 'Welcome, sailor! Before we sail we prepare the ship: finish three stations to raise the sail.', 'رتِّب سريرك وحقيبتك بنفسك اليوم.', 'Tidy your bed and your bag by yourself today.'],
+    quran: ['منارةُ هذه الجزيرة تُضاء بالقرآن. أتمم ثلاث محطّات ليراها كلُّ من في البحر.', 'This island\'s lighthouse is lit by the Quran. Finish three stations so every ship can see it.', 'اقرأ سورةً قصيرة على أحد والديك من حفظك.', 'Recite a short surah from memory to one of your parents.'],
+    dhikr: ['نخيلُ الواحة يشتاق إلى من يسقيه بالذكر. أتمم ثلاث محطّات لتخضرَّ الواحة.', 'The palms of the oasis are waiting for dhikr. Finish three stations and the oasis turns green.', 'قُل أذكار النوم الليلة مع أهلك.', 'Say the bedtime adhkar with your family tonight.'],
+    games: ['في هذه الجزيرة نتعلّم ونحن نلعب. أتمم ثلاث محطّات لتُضيء ساحة الألعاب.', 'On this island we learn while we play. Finish three stations to light the playground.', 'العب لعبةً مع أخيك أو صديقك، ودَعه هو يختار اللعبة.', 'Play a game with a sibling or friend — and let them choose it.'],
+    stories: ['حكّاءُ الجزيرة أضاع فانوسه! أتمم ثلاث محطّات لنُعيد النور إلى مجلس الحكايات.', 'The island\'s storyteller has lost his lantern! Finish three stations to bring the light back.', 'احكِ قصّةً سمعتَها هنا لأحد أفراد أسرتك.', 'Tell a story you heard here to someone in your family.'],
+    brain: ['أبوابُ هذه الجزيرة لا تُفتَح إلّا لمن يفكّر. أتمم ثلاث محطّات لتُضيء برج الأذكياء.', 'The doors here open only to thinkers. Finish three stations to light the tower.', 'علِّم أحدًا في البيت لعبةً تعلّمتَها.', 'Teach someone at home a game you learned.'],
+    lab: ['كلُّ شيءٍ حولنا آيةٌ تدلّ على الخالق. أتمم ثلاث محطّات ليُضيء المختبر.', 'Everything around us is a sign of the Creator. Finish three stations to light the lab.', 'ازرع بذرةَ عدسٍ أو فول في قطنٍ مبلّل وراقبها كلَّ يوم.', 'Plant a lentil or bean seed in wet cotton and watch it every day.'],
+    skills: ['المسلمُ القويّ يُتقن صنعةً تنفع الناس. أتمم ثلاث محطّات لتُضيء سوق المهارات.', 'A strong Muslim masters a skill that helps people. Finish three stations to light the market.', 'ساعِد في إعداد المائدة أو ترتيب المطبخ اليوم.', 'Help set the table or tidy the kitchen today.'],
+    aqeeda: ['المنارةُ تدلّ السفن على الطريق، والإيمانُ يدلّ القلوب. أتمم ثلاث محطّات لتُضيء المنارة.', 'A lighthouse guides ships; faith guides hearts. Finish three stations to light the minaret.', 'اخرج وانظر إلى السماء، واذكر ثلاث نِعَم واشكر الله عليها.', 'Go outside, look at the sky, name three blessings and thank Allah for them.'],
+    heroes: ['في هذا الحصن حكاياتُ من سبقونا بالخير. أتمم ثلاث محطّات لترفع الراية.', 'This fortress keeps the stories of those before us. Finish three stations to raise the banner.', 'قُل الحقَّ بلُطف، أو اعتذر لمن أخطأتَ في حقّه.', 'Speak the truth kindly — or say sorry to someone you wronged.'],
+    district: ['بيوتُ الحيّ تُضاء بالأخلاق الحسنة. أتمم ثلاث محطّات لتُنير الحيّ كلَّه.', 'The houses here are lit by good manners. Finish three stations to light the district.', 'زُر جارًا أو قريبًا، أو اتّصل به وسلِّم عليه.', 'Visit a neighbour or relative — or call and greet them.'],
+    ummah: ['المسلمون في كلّ الأرض إخوة. أتمم ثلاث محطّات لتُضيء قناديل الجزيرة.', 'Muslims everywhere are one family. Finish three stations to light the lanterns.', 'تصدَّق ولو بالقليل، وادعُ لإخوانك المسلمين.', 'Give a little in charity and make du\'a for Muslims everywhere.'],
+    academy: ['هنا يجتمع المخترعون والعلماء. أتمم ثلاث محطّات لتُضيء المرصد.', 'Inventors and scholars meet here. Finish three stations to light the observatory.', 'اصنع شيئًا نافعًا من أشياء قديمة في البيت.', 'Make something useful out of old things at home.']
+  };
+  var HERO = {
+    start: ['🧭', 'ابن بطّوطة', 'Ibn Battuta', 'رحّالةٌ من طنجة، سافر قرابة ثلاثين سنة في بلاد كثيرة وكتب ما رآه في رحلته.', 'A traveller from Tangier who journeyed for almost thirty years and wrote down what he saw.', 'تعلَّم شيئًا جديدًا كلَّ يوم.', 'Learn one new thing every day.'],
+    quran: ['📖', 'ابن الجزري', 'Ibn al-Jazari', 'إمامٌ في قراءة القرآن وتجويده، علَّم الناس كيف يُتقنون كلَّ حرف.', 'A great scholar of Quran recitation who taught people to perfect every letter.', 'اقرأ على مهل وأتقِن كلَّ حرف.', 'Read slowly and perfect every letter.'],
+    dhikr: ['📿', 'الإمام النووي', 'Imam al-Nawawi', 'عالِمٌ جمع كتاب «الأذكار» و«الأربعين النووية»، وكان لا يُضيّع وقته.', 'A scholar who gathered the books "al-Adhkar" and "The Forty Hadith", and never wasted his time.', 'احفظ وقتك واملأه بالخير.', 'Guard your time and fill it with good.'],
+    games: ['🔤', 'الخليل بن أحمد', 'Al-Khalil ibn Ahmad', 'صاحبُ أوّل معجمٍ عربيّ «العين»، واكتشف أوزان الشعر العربيّ.', 'He wrote the first Arabic dictionary, "al-Ayn", and discovered the metres of Arabic poetry.', 'ابحث عن النمط في كلّ شيء.', 'Look for the pattern in everything.'],
+    stories: ['📚', 'ابن كثير', 'Ibn Kathir', 'مفسّرٌ ومؤرّخ، كتب تفسيرًا للقرآن وكتاب «البداية والنهاية».', 'A scholar of tafsir and history, author of "al-Bidayah wa\'l-Nihayah".', 'انقُل الخبر كما هو بلا زيادة.', 'Tell things exactly as they happened.'],
+    brain: ['➗', 'الخوارزمي', 'Al-Khwarizmi', 'عالِمُ رياضياتٍ وضع أُسس علم الجبر، ومن اسمه جاءت كلمة «خوارزمية».', 'A mathematician who laid the foundations of algebra; the word "algorithm" comes from his name.', 'حُلَّ المسألة خطوةً خطوة.', 'Solve it one step at a time.'],
+    lab: ['🔦', 'ابن الهيثم', 'Ibn al-Haytham', 'درس الضوء والرؤية وكتب «المناظر»، وكان لا يقبل قولًا حتى يختبره بالتجربة.', 'He studied light and vision, wrote the "Book of Optics", and tested ideas by experiment.', 'جرِّب قبل أن تحكم.', 'Test it before you decide.'],
+    skills: ['⚙️', 'الجزري', 'Al-Jazari', 'مهندسٌ صنع ساعاتٍ وآلاتٍ تعمل بالماء، ووصف طريقة صنعها في كتابه.', 'An engineer who built water clocks and machines and explained how to make them in his book.', 'اصنع شيئًا ينفع الناس.', 'Make something that helps people.'],
+    aqeeda: ['🕯️', 'الإمام أحمد بن حنبل', 'Imam Ahmad ibn Hanbal', 'إمامٌ ثبت على الحقّ وصبر، وجمع أحاديث كثيرة في «المسند».', 'An imam who stood firm on the truth with patience and gathered many hadith in his "Musnad".', 'اثبُت على الحقّ بأدب.', 'Stand firm on the truth, with good manners.'],
+    heroes: ['🛡️', 'صلاح الدين الأيّوبي', 'Salah al-Din al-Ayyubi', 'قائدٌ استعاد القدس، وعُرف بعدله ورحمته.', 'A leader who regained Jerusalem and was known for his justice and mercy.', 'كُن قويًّا ورحيمًا معًا.', 'Be strong and merciful together.'],
+    district: ['🌿', 'الإمام مالك', 'Imam Malik', 'إمامُ المدينة وصاحب «الموطّأ»، وكان يُعظّم حديث رسول الله ﷺ.', 'The imam of Madinah and author of "al-Muwatta", who deeply honoured the Prophet\'s ﷺ words.', 'الأدبُ قبل العلم.', 'Manners come before knowledge.'],
+    ummah: ['🕌', 'المعمار سِنان', 'Mimar Sinan', 'معماريٌّ عثمانيّ بنى مساجد عظيمة، منها السليمانية والسليمية.', 'An Ottoman architect who built great mosques such as the Suleymaniye and the Selimiye.', 'أتقِن عملك حتى آخره.', 'Do your work with excellence to the end.'],
+    academy: ['🏛️', 'فاطمة الفهرية', 'Fatima al-Fihri', 'أنفقت مالها في بناء جامع القرويّين في فاس، فصار دارًا للعلم.', 'She spent her wealth building al-Qarawiyyin mosque in Fez, which became a home of learning.', 'أعطِ ليتعلّم غيرُك.', 'Give so that others can learn.']
+  };
+  function sid(I, x) { return I.id + ':' + x[4].replace(/^.*\//, '').replace(/\.html.*$/, ''); }
+  function isDone(I, x) { return !!J.earned('st', sid(I, x)); }
+  function goal(I) { return Math.min(3, stations(I).length); }
+  function prog(I) { return stations(I).filter(function (x) { return isDone(I, x); }).length; }
+  function lit(I) { return !!J.earned('mission', I.id); }
+  function slog() { try { return JSON.parse(LS.getItem('station_log') || '{}') || {}; } catch (e) { return {}; } }
+  function mark(k, h) { try { var d = new URL(h, location.href).pathname.replace(/[^\/]*$/, ''); sessionStorage.setItem('mk:station', JSON.stringify({ k: k, s: 0, d: d })); } catch (e) {} }
+  /* turn what the child really finished (station_log, written by the pages themselves) into stars;
+     returns the islands whose mission has just been completed */
+  function sync(stars, all) {
+    var L = slog(), today = J.dayKey(), fresh = [];
+    Object.keys(L).forEach(function (k) { var e = J.earned('st', k); if (!e) J.earn('st', k, 1); else if (L[k] === today && e.last !== today) J.earn('rev', k, 1, { daily: true }); });
+    var m = mixToday(stars, all), n = 0;
+    m.forEach(function (o) { if (L[sid(o[0], o[1])] === today) J.earn('mix', o[1][0], 1, { daily: true }); if (J.earnedToday('mix', o[1][0])) n++; });
+    if (m.length > 1 && n === m.length) J.earn('mix', 'all', 2, { daily: true });
+    ISLANDS.forEach(function (I) { if (QUEST[I.id] && !lit(I) && goal(I) > 0 && prog(I) >= goal(I) && J.earn('mission', I.id, 3)) fresh.push(I); });
+    return fresh;
+  }
+  /* ---- today's mix: one thing to hear, one to read, one to play, one to do — a different set each day ---- */
+  function mixToday(stars, all) {
+    var day = J.dayKey(), seed = 0, i; for (i = 0; i < day.length; i++) seed = (seed * 31 + day.charCodeAt(i)) % 100003;
+    var pool = { L: [], R: [], P: [], D: [] };
+    ISLANDS.forEach(function (I) { if (all || stars >= need(I)) stations(I).forEach(function (x) { pool[x[0]].push([I, x]); }); });
+    return ['L', 'R', 'P', 'D'].map(function (k, n) { var a = pool[k]; return a.length ? a[(seed + n * 7) % a.length] : null; }).filter(Boolean);
+  }
+  function mixHtml(stars, all) {
+    var m = mixToday(stars, all); if (!m.length) return '';
+    var done = m.filter(function (o) { return J.earnedToday('mix', o[1][0]); }).length;
+    return '<section class="mix"><h2>🎒 ' + T('مغامرة اليوم', "Today's adventure") + ' <span style="color:#fff;font-size:.9rem">' + N(done) + '/' + N(m.length) + '</span></h2><p>' + T('اسمع، واقرأ، والعب، وجرّب — نجمةٌ لكلّ واحدةٍ تُتمّها، ونجمتان هديّةً إن أتممتها كلَّها.', 'Listen, read, play and try — a star for each one you finish, and two bonus stars for all four.') + '</p><div class="mixg">' +
+      m.map(function (o) { var x = o[1], K = KIND[x[0]], d = J.earnedToday('mix', x[0]); return '<a class="mx' + (d ? ' done' : '') + '" data-k="' + esc(sid(o[0], x)) + '" href="' + esc(href(x)) + '" style="--k:' + K[3] + '"><span class="pt">' + (d ? '✅' : '+' + N(1) + ' ⭐') + '</span><span class="e">' + x[1] + '</span><small>' + K[0] + ' ' + T(K[1], K[2]) + '</small><b>' + esc(T(x[2], x[3])) + '</b></a>'; }).join('') + '</div></section>';
+  }
+  /* ---- extra adventure layer: secret + seasonal islands, sea events, review rounds, quiz, dream, family lantern ---- */
+  var X = window.MK_ISL || {}, DAY = window.MK_DAY || {};
+  ISLANDS.push({ id: 'treasure', secret: true, at: 0, ic: '💎', c: '#B8860B', n: { ar: 'جزيرة الكنز', en: 'Treasure Island' }, s: { ar: 'لمن جمع قطع الخريطة الستّ', en: 'For those who gathered the six map pieces' }, st: [
+    ['R', '🗼', 'رحلة المنارة (قصّة خاصّة)', 'The Minaret Journey (a special story)', R + 'stories/minaret-journey.html', 'ymo', 'حكايةٌ للمستكشفين', 'A story for explorers'],
+    ['D', '🖨️', 'بطاقاتٌ للطباعة', 'Printable cards', R + 'workshop/print-cards.html', 'ymo', 'اطبعها وعلِّقها في غرفتك', 'Print them for your room'],
+    ['R', '🏅', 'شهاداتي وجواز سفري', 'My certificates & passport', 'journey.html', 'ymo', 'اطبع شهادتك', 'Print your certificate']] });
+  var SEA = null; try { SEA = J.season(); } catch (e) {}
+  if (SEA && SEA.href && SEA.go) ISLANDS.unshift({ id: 'season-' + SEA.id, season: true, at: 0, ic: SEA.icon, c: SEA.c, n: SEA.t, s: { ar: 'جزيرةٌ تظهر في موسمها فقط', en: 'An island that appears only in its season' }, note: SEA.s, st: [
+    ['R', SEA.icon, SEA.go.ar, SEA.go.en, '../../' + SEA.href, 'ymo', 'زُرها قبل أن ترحل الجزيرة', 'Visit before the island sails away']] });
+  function stCount() { try { var P = JSON.parse(LS.getItem('game_points') || '{}') || {}, n = 0; Object.keys(P).forEach(function (k) { if (k.indexOf('st:') === 0) n++; }); return n; } catch (e) { return 0; } }
+  function pieces() { return Math.min(6, Math.floor(stCount() / 4)); }
+  function dseed() { var d = J.dayKey(), s = 0, i; for (i = 0; i < d.length; i++) s = (s * 31 + d.charCodeAt(i)) % 100003; return s; }
+  function daysAgo(day) { var a = new Date(day + 'T12:00:00'), b = new Date(J.dayKey() + 'T12:00:00'); return Math.round((b - a) / 864e5); }
+  /* a different small event on the sea every day */
+  function seaHtml() {
+    var s = dseed(), kind = s % 3, done = J.earnedToday('sea', 'day'), h = '<section class="mix">';
+    function btn(a, e, n) { return done ? '<p class="okline">✅ ' + T('أتممتَ حدث اليوم — عُد غدًا لحدثٍ جديد!', "Today's event is done — come back tomorrow!") + '</p>' : '<button class="btn" id="seaBtn" data-s="' + n + '">' + T(a, e) + ' · +' + N(n) + ' ⭐</button>'; }
+    if (kind === 0 && DAY.hadith && DAY.hadith.length) {
+      var H = DAY.hadith[s % DAY.hadith.length];
+      h += '<h2>🍾 ' + T('رسالةٌ في زجاجة', 'A message in a bottle') + '</h2><p>' + T('وجدتَ رسالةً تطفو على الماء، فيها حديثٌ نبويّ تحفظه اليوم:', 'You found a message floating on the water — a hadith to learn today:') + '</p><div class="scroll"><q>' + esc(H.ar) + '</q>' + (lang === 'en' ? '<q style="font-size:.95rem;font-weight:800">' + esc(H.en) + '</q>' : '') + '<small>' + esc(t(H.src)) + '</small></div>' + btn('حفظتُه', 'I learned it', 2);
+    } else if (kind === 2) {
+      h += '<h2>🌬️ ' + T('ريحٌ قويّة!', 'A strong wind!') + '</h2><p>' + T('البحّارُ المؤمن يذكر ربَّه فيطمئنّ قلبه. قل عشر مرّات: «سبحان الله وبحمده».', 'A believing sailor remembers Allah and his heart is calm. Say ten times: "SubhanAllahi wa bihamdih".') + '</p>' + (done ? btn() : '<button class="btn" id="windBtn">📿 ' + T('سبحان الله وبحمده', 'SubhanAllahi wa bihamdih') + ' · <span id="windN">' + N(0) + '</span>/' + N(10) + '</button>');
+    } else {
+      var V = (X.VISITS || [])[s % Math.max(1, (X.VISITS || []).length)]; if (!V) return '';
+      h += '<h2>' + V[0] + ' ' + T('سفينةٌ زائرة من ' + V[1], 'A visiting ship from ' + V[2]) + '</h2><p>' + esc(T(V[3], V[4])) + ' <a href="' + R + 'quds-ummah/atlas.html" style="color:var(--gold-lt);font-weight:900">' + T('شاهد الأطلس', 'See the atlas') + '</a></p>' + btn('مرحبًا بإخوتنا!', 'Welcome, brothers and sisters!', 1);
+    }
+    return h + '</section>';
+  }
+  /* stations finished 3+ days ago come back for a quick second visit */
+  function reviewDue() {
+    var out = [];
+    ISLANDS.forEach(function (I) { if (I.season) return; stations(I).forEach(function (x) { var k = sid(I, x), e = J.earned('st', k), r = J.earned('rev', k); if (e && daysAgo(e.last) >= 3 && (!r || daysAgo(r.last) >= 7)) out.push([I, x, daysAgo(e.last)]); }); });
+    out.sort(function (a, b) { return b[2] - a[2]; }); return out.slice(0, 2);
+  }
+  function reviewHtml() {
+    var d = reviewDue(); if (!d.length) return '';
+    return '<section class="mix"><h2>🔁 ' + T('هل تتذكّر؟', 'Do you remember?') + '</h2><p>' + T('زُر محطّةً قديمة مرّةً أخرى — ما نكرّره لا ننساه.', 'Visit an old station again — what we repeat, we remember.') + '</p>' + d.map(function (o) { return '<a class="rv" data-k="' + esc(sid(o[0], o[1])) + '" href="' + esc(href(o[1])) + '"><span>' + o[1][1] + '</span>' + esc(T(o[1][2], o[1][3])) + '<b>+' + N(1) + ' ⭐</b></a>'; }).join('') + '</section>';
+  }
+  function dream() { try { var d = LS.getItem('dream'); return (X.DREAMS || []).filter(function (o) { return o[0] === d; })[0] || null; } catch (e) { return null; } }
+  function onPath(x) { var d = dream(); return !!(d && new RegExp(d[4]).test(x[4])); }
+  function dreamSheet() {
+    var d = dream();
+    show('<div class="sh-hd" style="--c:#F5CC5A"><span class="ic">🌟</span><div><b>' + T('حين أكبر أريد أن أكون…', 'When I grow up I want to be…') + '</b><small>' + T('سنضع نجمةً على المحطّات التي توصلك', "We'll put a star on the stations that lead there") + '</small></div><button class="x" aria-label="' + T('إغلاق', 'Close') + '">✕</button></div><div class="dr">' +
+      (X.DREAMS || []).map(function (o) { return '<button data-d="' + o[0] + '" class="' + (d && d[0] === o[0] ? 'on' : '') + '">' + o[1] + ' ' + esc(T(o[2], o[3])) + '</button>'; }).join('') + '</div><p style="text-align:center;font-weight:700;color:#7A6A3A;margin:.7rem 0 0">' + T('وقبل كلّ شيء: عبدًا صالحًا يحبّه الله.', 'And before everything: a good servant whom Allah loves.') + '</p>');
+    [].forEach.call(document.querySelectorAll('.dr button'), function (b) { b.onclick = function () { try { LS.setItem('dream', b.getAttribute('data-d')); } catch (e) {} close(); }; });
+  }
+  function mapSheet() {
+    var n = pieces(), g = '';
+    for (var i = 0; i < 6; i++) g += '<span class="' + (i < n ? 'got' : '') + '">' + (i < n ? '🗺️' : '❔') + '</span>';
+    show('<div class="sh-hd" style="--c:#B8860B"><span class="ic">🗺️</span><div><b>' + T('خريطة الكنز', 'The treasure map') + '</b><small>' + N(n) + '/' + N(6) + '</small></div><button class="x" aria-label="' + T('إغلاق', 'Close') + '">✕</button></div><div class="pieces">' + g + '</div><p style="text-align:center;font-weight:800;line-height:1.8;margin:.7rem 0 0">' +
+      (n >= 6 ? T('اكتملت الخريطة! «جزيرة الكنز» ظهرت في آخر البحر.', 'The map is complete! Treasure Island has appeared at the end of the sea.') : T('كلُّ أربع محطّاتٍ تُتمّها تعطيك قطعةً من الخريطة. أتممتَ ' + N(stCount()) + ' محطّة.', 'Every four stations you finish give you a piece of the map. You have finished ' + stCount() + '.')) + '</p>');
+  }
+  function quizSheet(I, qi) {
+    var Q = (X.QUIZ || {})[I.id]; if (!Q) return;
+    if (qi >= Q.length) {
+      J.earn('badge', I.id, 2);
+      return show('<div class="sh-hd" style="--c:' + I.c + '"><span class="ic">🎖️</span><div><b>' + T('وسامُ «' + I.n.ar + '»', 'The badge of "' + I.n.en + '"') + '</b><small>+' + N(2) + ' ⭐</small></div><button class="x" aria-label="' + T('إغلاق', 'Close') + '">✕</button></div><div class="up"><div class="big">🎖️</div><b>' + T('أجبتَ عن الأسئلة كلِّها — ما شاء الله!', 'You answered every question — MashaAllah!') + '</b></div>');
+    }
+    var q = Q[qi], opts = [0, 1, 2], rot = (dseed() + qi + I.id.length) % 3; opts = opts.slice(rot).concat(opts.slice(0, rot));
+    show('<div class="sh-hd" style="--c:' + I.c + '"><span class="ic">❓</span><div><b>' + T('سؤال ' + N(qi + 1) + ' من ' + N(Q.length), 'Question ' + (qi + 1) + ' of ' + Q.length) + '</b><small>' + esc(t(I.n)) + '</small></div><button class="x" aria-label="' + T('إغلاق', 'Close') + '">✕</button></div><p style="font-weight:900;font-size:1.2rem;line-height:1.8;margin:.8rem 0 0">' + esc(T(q[0], q[1])) + '</p><div class="qz">' + opts.map(function (o) { return '<button data-o="' + o + '">' + esc(T(q[2][o], q[3][o])) + '</button>'; }).join('') + '</div><p id="qzMsg" style="font-weight:800;color:#B0452F;min-height:1.6em;margin:.5rem 0 0" aria-live="polite"></p>');
+    [].forEach.call(document.querySelectorAll('.qz button'), function (b) { b.onclick = function () {
+      if (b.getAttribute('data-o') === '0') { b.className = 'yes'; setTimeout(function () { quizSheet(I, qi + 1); }, 550); }
+      else { b.className = 'no'; b.disabled = true; document.getElementById('qzMsg').textContent = T('ليست هذه — فكّر وحاول مرّةً أخرى.', 'Not this one — think and try again.'); }
+    }; });
+  }
+  /* the family lantern: every child's stars on this device fill one lantern towards a reward the parents chose */
+  function fam() { try { return JSON.parse(LS.getItem('mk:famgoal') || 'null'); } catch (e) { return null; } }
+  function famStars() { try { return JSON.parse(LS.getItem('mk:famstars') || '{}') || {}; } catch (e) { return {}; } }
+  function famNote(stars) { try { var id = (window.MK && MK.activeId && MK.activeId()) || 'me', M = famStars(); M[id] = stars; LS.setItem('mk:famstars', JSON.stringify(M)); } catch (e) {} }
+  function famTotal() { var M = famStars(), ids = null, n = 0; try { if (window.MK && MK.profiles) ids = MK.profiles().map(function (p) { return p.id; }); } catch (e) {} Object.keys(M).forEach(function (k) { if (!ids || !ids.length || ids.indexOf(k) >= 0 || k === 'me') n += +M[k] || 0; }); return n; }
+  function lantern(pct) { var hh = Math.round(64 * pct / 100); return '<svg class="lant" viewBox="0 0 100 130" aria-hidden="true"><rect x="38" y="6" width="24" height="10" rx="3" fill="#8A5A2B"/><rect x="24" y="16" width="52" height="8" rx="3" fill="#B67A3C"/><rect x="28" y="24" width="44" height="68" rx="10" fill="#FFF8EA" stroke="#B67A3C" stroke-width="4"/><clipPath id="lc"><rect x="30" y="26" width="40" height="64" rx="8"/></clipPath><rect clip-path="url(#lc)" x="30" y="' + (90 - hh) + '" width="40" height="' + hh + '" fill="#F5CC5A"/><rect x="24" y="92" width="52" height="8" rx="3" fill="#B67A3C"/><rect x="34" y="100" width="32" height="8" rx="3" fill="#8A5A2B"/></svg>'; }
+  function famSheet(setup) {
+    var F = fam(), tot = famTotal(), M = famStars(), list = []; try { list = (window.MK && MK.profiles && MK.profiles()) || []; } catch (e) {}
+    var hd = '<div class="sh-hd" style="--c:#F5CC5A"><span class="ic">🏠</span><div><b>' + T('فانوسُ العائلة', 'The family lantern') + '</b><small>' + T('نتعاون ولا نتسابق', 'We work together, not against each other') + '</small></div><button class="x" aria-label="' + T('إغلاق', 'Close') + '">✕</button></div>';
+    if (setup) {
+      show(hd + '<p style="font-weight:800;line-height:1.8;margin:.7rem 0 0">' + T('اختر هدفًا ومكافأةً حقيقيّة للعائلة كلّها (نزهة، وجبة يحبّونها، زيارة…).', 'Choose a goal and a real reward for the whole family (an outing, a favourite meal, a visit…).') + '</p><div class="chips">' + [30, 60, 100, 200].map(function (g, i) { return '<button class="chip' + (i === 1 ? ' on' : '') + '" data-g="' + g + '">' + N(g) + ' ⭐</button>'; }).join('') + '</div><input class="inp" id="famR" maxlength="60" placeholder="' + T('المكافأة: مثلًا نزهةٌ في الحديقة', 'Reward: e.g. a picnic in the park') + '"><div style="text-align:center;margin-top:.8rem"><button class="btn" id="famSave">' + T('أشعِلوا الفانوس', 'Start the lantern') + '</button></div>');
+      var g = 60; [].forEach.call(document.querySelectorAll('#sheet .chip'), function (c) { c.onclick = function () { g = +c.getAttribute('data-g'); [].forEach.call(document.querySelectorAll('#sheet .chip'), function (o) { o.classList.toggle('on', o === c); }); }; });
+      document.getElementById('famSave').onclick = function () { var r = (document.getElementById('famR').value || '').trim(); try { LS.setItem('mk:famgoal', JSON.stringify({ goal: g, reward: r, base: famTotal() })); } catch (e) {} famSheet(false); };
+      return;
+    }
+    var got = F ? Math.max(0, tot - (F.base || 0)) : 0, pct = F ? Math.min(100, Math.round(got / F.goal * 100)) : 0;
+    show(hd + lantern(pct) + (F ? '<p style="text-align:center;font-weight:900;font-size:1.1rem;margin:.4rem 0 0">' + N(Math.min(got, F.goal)) + ' / ' + N(F.goal) + ' ⭐</p>' + (F.reward ? '<p style="text-align:center;font-weight:800;margin:.2rem 0 0">🎁 ' + esc(F.reward) + '</p>' : '') + (pct >= 100 ? '<p style="text-align:center;font-weight:900;color:#1F7A44;line-height:1.8;margin:.4rem 0 0">' + T('امتلأ الفانوس — بارك الله في عائلتكم! حان وقت المكافأة.', 'The lantern is full — may Allah bless your family! Time for the reward.') + '</p>' : '') : '<p style="text-align:center;font-weight:800;line-height:1.8;margin:.5rem 0 0">' + T('نجومُ كلّ الإخوة تملأ فانوسًا واحدًا. يضع أحد الوالدين الهدف والمكافأة.', "Every child's stars fill one lantern. A parent sets the goal and the reward.") + '</p>') +
+      (list.length > 1 ? '<div class="box">' + list.map(function (p) { return '<div class="famrow"><span>' + esc(p.avatar || '🧒') + '</span>' + esc(p.name) + '<b>' + N(+M[p.id] || 0) + ' ⭐</b></div>'; }).join('') + '</div>' : '') +
+      '<div style="text-align:center;margin-top:.8rem"><button class="btn" id="famSet">🔐 ' + (F ? T('هدفٌ جديد (للأهل)', 'New goal (parents)') : T('ضع الهدف (للأهل)', 'Set the goal (parents)')) + '</button></div>');
+    document.getElementById('famSet').onclick = function () { var go = function () { famSheet(true); }; if (window.MKGate && MKGate.ask) MKGate.ask(go, T('هدفُ العائلة يضعه أحد الوالدين', 'A parent sets the family goal')); else go(); };
+  }
+  window.addEventListener('mk-voice-recorded', function (e) { var d = e.detail || {}; if (d.kind === 'teach' && d.isl) J.earn('teach', d.isl, 2); });
+  /* ---- 3D island art: one drawn scene per island (no photos, nothing to download) ---- */
+  var DEFS = '<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>' +
+    '<linearGradient id="gRock" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#C79A62"/><stop offset=".55" stop-color="#8E6238"/><stop offset="1" stop-color="#5B3B1E"/></linearGradient>' +
+    '<radialGradient id="gSand" cx=".38" cy=".3" r=".8"><stop offset="0" stop-color="#FFF1C2"/><stop offset=".7" stop-color="#EBCB84"/><stop offset="1" stop-color="#C99F58"/></radialGradient>' +
+    '<radialGradient id="gGrass" cx=".35" cy=".25" r=".85"><stop offset="0" stop-color="#9BE07A"/><stop offset=".6" stop-color="#4FB25A"/><stop offset="1" stop-color="#2B7A3F"/></radialGradient>' +
+    '<radialGradient id="gSea" cx=".5" cy=".5" r=".5"><stop offset=".55" stop-color="#7FE3EE" stop-opacity=".85"/><stop offset=".8" stop-color="#3CC0D8" stop-opacity=".5"/><stop offset="1" stop-color="#3CC0D8" stop-opacity="0"/></radialGradient>' +
+    '<linearGradient id="gWall" x1="0" x2="1"><stop offset="0" stop-color="#FFF9EA"/><stop offset=".55" stop-color="#EADBB8"/><stop offset="1" stop-color="#B9A57A"/></linearGradient>' +
+    '<linearGradient id="gStone" x1="0" x2="1"><stop offset="0" stop-color="#E9E3D6"/><stop offset=".5" stop-color="#BDB4A2"/><stop offset="1" stop-color="#847B69"/></linearGradient>' +
+    '<radialGradient id="gGold" cx=".35" cy=".3" r=".8"><stop offset="0" stop-color="#FFF2A8"/><stop offset=".55" stop-color="#F0BE3A"/><stop offset="1" stop-color="#A9781A"/></radialGradient>' +
+    '<radialGradient id="gTeal" cx=".35" cy=".3" r=".8"><stop offset="0" stop-color="#9FF0DC"/><stop offset=".55" stop-color="#27A58B"/><stop offset="1" stop-color="#136652"/></radialGradient>' +
+    '<radialGradient id="gLeaf" cx=".35" cy=".3" r=".8"><stop offset="0" stop-color="#A8E88A"/><stop offset=".6" stop-color="#3F9D4C"/><stop offset="1" stop-color="#1F6431"/></radialGradient>' +
+    '<linearGradient id="gTrunk" x1="0" x2="1"><stop offset="0" stop-color="#B98552"/><stop offset="1" stop-color="#6B4423"/></linearGradient>' +
+    '<linearGradient id="gRoof" x1="0" x2="1"><stop offset="0" stop-color="#E88A5A"/><stop offset="1" stop-color="#A84A28"/></linearGradient>' +
+    '<radialGradient id="gGlow" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#FFF4B0" stop-opacity=".95"/><stop offset="1" stop-color="#FFE27A" stop-opacity="0"/></radialGradient>' +
+    '<linearGradient id="gMount" x1="0" x2="1"><stop offset="0" stop-color="#9AA7A0"/><stop offset="1" stop-color="#54615B"/></linearGradient>' +
+    '</defs></svg>';
+  function sh(x, y, r) { return '<ellipse cx="' + x + '" cy="' + y + '" rx="' + r + '" ry="' + (r * 0.3) + '" fill="#0B3A1E" opacity=".28"/>'; }
+  function palm(x, y, k) { k = k || 1; var h = 46 * k, tx = x + 6 * k, ty = y - h, f = '';
+    [[-26, -6], [-18, -20], [0, -26], [18, -20], [26, -6]].forEach(function (p) { f += '<path d="M' + tx + ' ' + ty + ' Q' + (tx + p[0] * k * .6) + ' ' + (ty + p[1] * k * .9 - 6 * k) + ' ' + (tx + p[0] * k) + ' ' + (ty + p[1] * k * .2 + 8 * k) + ' Q' + (tx + p[0] * k * .5) + ' ' + (ty + p[1] * k * .35) + ' ' + tx + ' ' + ty + ' Z" fill="url(#gLeaf)"/>'; });
+    return sh(x + 8 * k, y + 1, 14 * k) + '<path d="M' + (x - 3 * k) + ' ' + y + ' Q' + (x - 2 * k) + ' ' + (y - h * .5) + ' ' + (tx - 2 * k) + ' ' + ty + ' L' + (tx + 2 * k) + ' ' + ty + ' Q' + (x + 4 * k) + ' ' + (y - h * .5) + ' ' + (x + 4 * k) + ' ' + y + ' Z" fill="url(#gTrunk)"/>' + f + '<circle cx="' + (tx - 2 * k) + '" cy="' + (ty + 4 * k) + '" r="' + 2.6 * k + '" fill="#7A4A1E"/>'; }
+  function tree(x, y, k) { k = k || 1; return sh(x + 6 * k, y + 1, 16 * k) + '<rect x="' + (x - 3 * k) + '" y="' + (y - 22 * k) + '" width="' + 6 * k + '" height="' + 22 * k + '" fill="url(#gTrunk)"/><circle cx="' + (x - 9 * k) + '" cy="' + (y - 28 * k) + '" r="' + 12 * k + '" fill="url(#gLeaf)"/><circle cx="' + (x + 9 * k) + '" cy="' + (y - 27 * k) + '" r="' + 12 * k + '" fill="url(#gLeaf)"/><circle cx="' + x + '" cy="' + (y - 38 * k) + '" r="' + 14 * k + '" fill="url(#gLeaf)"/>'; }
+  function crescent(x, y, r) { return '<path d="M' + x + ' ' + (y - r) + ' a' + r + ' ' + r + ' 0 1 0 ' + r * .9 + ' ' + r * 1.4 + ' a' + r * .8 + ' ' + r * .8 + ' 0 1 1 ' + (-r * .9) + ' ' + (-r * 1.4) + ' Z" fill="#F0BE3A"/>'; }
+  function dome(x, y, w, g) { var h = w * .5; return sh(x + w * .25, y + 1, w * .7) + '<rect x="' + (x - w / 2) + '" y="' + (y - h) + '" width="' + w + '" height="' + h + '" fill="url(#gWall)"/><rect x="' + (x - 4) + '" y="' + (y - h * .6) + '" width="8" height="' + h * .6 + '" rx="4" fill="#6B4423"/>' +
+    '<path d="M' + (x - w * .42) + ' ' + (y - h) + ' a' + w * .42 + ' ' + w * .44 + ' 0 0 1 ' + w * .84 + ' 0 Z" fill="url(#' + (g || 'gTeal') + ')"/><rect x="' + (x - .8) + '" y="' + (y - h - w * .56) + '" width="1.6" height="' + w * .14 + '" fill="#A9781A"/>' + crescent(x - 1, y - h - w * .58, 3.2); }
+  function minaret(x, y, h, lit) { return sh(x + 5, y + 1, 9) + '<rect x="' + (x - 5) + '" y="' + (y - h) + '" width="10" height="' + h + '" fill="url(#gWall)"/><rect x="' + (x - 8) + '" y="' + (y - h * .7) + '" width="16" height="4" rx="1.5" fill="#B9A57A"/><rect x="' + (x - 7) + '" y="' + (y - h - 3) + '" width="14" height="4" rx="1.5" fill="#B9A57A"/>' +
+    (lit ? '<circle cx="' + x + '" cy="' + (y - h - 10) + '" r="20" fill="url(#gGlow)"/>' : '') + '<rect x="' + (x - 4) + '" y="' + (y - h - 12) + '" width="8" height="9" fill="' + (lit ? '#FFE27A' : '#D9CFB6') + '"/><path d="M' + (x - 6) + ' ' + (y - h - 12) + ' L' + x + ' ' + (y - h - 26) + ' L' + (x + 6) + ' ' + (y - h - 12) + ' Z" fill="url(#gTeal)"/>' + crescent(x - 1, y - h - 30, 3); }
+  function tower(x, y, w, h) { var c = ''; for (var i = 0; i < 3; i++) c += '<rect x="' + (x - w / 2 - 1 + i * (w + 2) / 3 + 1) + '" y="' + (y - h - 6) + '" width="' + ((w + 2) / 3 - 2.5) + '" height="6" fill="url(#gStone)"/>'; return sh(x + 5, y + 1, w * .8) + '<rect x="' + (x - w / 2) + '" y="' + (y - h) + '" width="' + w + '" height="' + h + '" fill="url(#gStone)"/>' + c + '<rect x="' + (x - 2) + '" y="' + (y - h * .7) + '" width="4" height="8" rx="2" fill="#3F382C"/>'; }
+  function house(x, y, w, c) { var h = w * .62; return sh(x + 5, y + 1, w * .7) + '<rect x="' + (x - w / 2) + '" y="' + (y - h) + '" width="' + w + '" height="' + h + '" fill="url(#gWall)"/><path d="M' + (x - w / 2 - 3) + ' ' + (y - h) + ' L' + x + ' ' + (y - h - w * .42) + ' L' + (x + w / 2 + 3) + ' ' + (y - h) + ' Z" fill="' + (c || 'url(#gRoof)') + '"/><rect x="' + (x - 3) + '" y="' + (y - h * .55) + '" width="6" height="' + h * .55 + '" rx="2" fill="#6B4423"/><rect x="' + (x + w * .2) + '" y="' + (y - h * .75) + '" width="5" height="5" fill="#8FD3EA"/>'; }
+  function tent(x, y, w, c1, c2) { var h = w * .8, s2 = ''; for (var i = 0; i < 5; i++) s2 += '<path d="M' + x + ' ' + (y - h) + ' L' + (x - w / 2 + i * w / 5) + ' ' + y + ' L' + (x - w / 2 + (i + 1) * w / 5) + ' ' + y + ' Z" fill="' + (i % 2 ? c2 : c1) + '"/>'; return sh(x + 6, y + 1, w * .65) + s2 + '<path d="M' + x + ' ' + (y - h) + ' L' + (x + w / 2) + ' ' + y + ' L' + (x + w * .1) + ' ' + y + ' Z" fill="#000" opacity=".13"/><rect x="' + (x - .8) + '" y="' + (y - h - 12) + '" width="1.6" height="12" fill="#6B4423"/><path d="M' + (x + .8) + ' ' + (y - h - 12) + ' l11 4 -11 4 Z" fill="#2E9E5B"/>'; }
+  function mount(x, y, w) { var h = w * .72; return sh(x + 10, y + 1, w * .6) + '<path d="M' + (x - w / 2) + ' ' + y + ' L' + (x - w * .06) + ' ' + (y - h) + ' L' + (x + w * .1) + ' ' + (y - h * .86) + ' L' + (x + w / 2) + ' ' + y + ' Z" fill="url(#gMount)"/><path d="M' + (x - w * .19) + ' ' + (y - h * .74) + ' L' + (x - w * .06) + ' ' + (y - h) + ' L' + (x + w * .1) + ' ' + (y - h * .86) + ' L' + (x + w * .16) + ' ' + (y - h * .7) + ' L' + (x + w * .04) + ' ' + (y - h * .62) + ' L' + (x - w * .06) + ' ' + (y - h * .72) + ' Z" fill="#fff"/><path d="M' + (x + w * .02) + ' ' + (y - h * .6) + ' q6 ' + h * .3 + ' -2 ' + h * .58 + '" fill="none" stroke="#BFEFFA" stroke-width="5" stroke-linecap="round"/>'; }
+  function scene(id, lit) {
+    var a = '';
+    if (id === 'start') a = palm(96, 96, .9) + house(150, 104, 30) + '<rect x="196" y="112" width="44" height="6" fill="#B98552"/><rect x="204" y="116" width="4" height="14" fill="#6B4423"/><rect x="228" y="116" width="4" height="14" fill="#6B4423"/><path d="M244 124 h34 l-7 10 h-20 Z" fill="#8A5A2B"/><rect x="259" y="96" width="2" height="28" fill="#5A3A1A"/><path d="M262 98 L278 121 H262 Z" fill="#fff"/>';
+    else if (id === 'quran') a = palm(88, 100, .7) + dome(160, 106, 62, 'gTeal') + minaret(214, 104, 44, lit) + minaret(106, 102, 34, lit);
+    else if (id === 'dhikr') a = '<ellipse cx="166" cy="102" rx="38" ry="12" fill="#5CCBE6"/><ellipse cx="158" cy="99" rx="16" ry="4" fill="#C9F3FB" opacity=".8"/>' + palm(104, 100, 1) + palm(214, 96, .9) + palm(150, 86, .75) + tent(232, 112, 30, '#FFF6DC', '#E0A040');
+    else if (id === 'games') a = tree(92, 102, .8) + tent(150, 108, 56, '#F2553D', '#FFF1C2') + tent(212, 104, 36, '#3B8BE0', '#FFF1C2') + '<circle cx="112" cy="112" r="6" fill="url(#gGold)"/>';
+    else if (id === 'stories') a = tree(120, 106, 1.5) + house(204, 108, 38) + '<circle cx="176" cy="92" r="14" fill="url(#gGlow)"/><rect x="173" y="88" width="6" height="9" rx="2" fill="#FFD75A" stroke="#8A5A2B" stroke-width="1"/>';
+    else if (id === 'brain') a = tower(120, 106, 26, 44) + tower(200, 106, 26, 44) + '<rect x="120" y="76" width="80" height="30" fill="url(#gStone)"/><path d="M150 106 v-16 a10 10 0 0 1 20 0 v16 Z" fill="#3F382C"/>' + tower(160, 78, 22, 30) + tree(240, 104, .6);
+    else if (id === 'lab') a = mount(128, 108, 96) + tree(206, 104, .8) + '<ellipse cx="150" cy="114" rx="24" ry="6" fill="#5CCBE6"/>' + palm(238, 106, .6);
+    else if (id === 'skills') a = house(112, 106, 40) + house(166, 110, 46, '#3B8BE0') + '<rect x="204" y="70" width="8" height="38" fill="url(#gStone)"/><circle cx="208" cy="62" r="7" fill="#fff" opacity=".7"/><circle cx="214" cy="52" r="5" fill="#fff" opacity=".5"/>' + house(226, 106, 30) + tree(84, 100, .6);
+    else if (id === 'aqeeda') a = palm(96, 102, .8) + dome(196, 108, 40, 'gTeal') + minaret(150, 106, 66, true);
+    else if (id === 'heroes') a = '<rect x="110" y="72" width="100" height="36" fill="url(#gStone)"/>' + tower(110, 108, 26, 52) + tower(210, 108, 26, 52) + '<path d="M148 108 v-18 a12 12 0 0 1 24 0 v18 Z" fill="#3F382C"/><rect x="159" y="40" width="2" height="32" fill="#5A3A1A"/><path d="M161 42 l18 6 -18 6 Z" fill="#2E9E5B"/>' + tree(246, 104, .6);
+    else if (id === 'district') a = tree(90, 102, .7) + house(124, 100, 30, '#3B8BE0') + house(160, 108, 38) + house(202, 100, 30, '#2E9E5B') + house(236, 110, 28) + palm(182, 88, .55);
+    else if (id === 'ummah') a = '<path d="M124 108 v-22 l12 -8 h48 l12 8 v22 Z" fill="url(#gWall)"/><rect x="124" y="86" width="72" height="5" fill="#3B8BE0"/><path d="M138 78 a22 24 0 0 1 44 0 Z" fill="url(#gGold)"/>' + crescent(159, 50, 3.4) + sh(170, 109, 44) + palm(96, 102, .8) + tree(232, 104, .7);
+    else if (id === 'academy') a = '<rect x="132" y="80" width="56" height="28" fill="url(#gWall)"/><path d="M134 80 a26 26 0 0 1 52 0 Z" fill="url(#gStone)"/><path d="M158 56 l10 -2 4 26 h-10 Z" fill="#3F382C"/><rect x="164" y="40" width="5" height="22" rx="2" transform="rotate(28 166 52)" fill="#6B7C8A"/>' + sh(168, 109, 34) + tree(96, 102, .8) + house(222, 106, 30, '#6C4AB6');
+    else if (id === 'treasure') a = palm(110, 100, 1.1) + '<rect x="150" y="90" width="44" height="22" rx="3" fill="#8A5A2B"/><path d="M150 92 a22 14 0 0 1 44 0 Z" fill="#B67A3C"/><rect x="150" y="96" width="44" height="4" fill="url(#gGold)"/><rect x="168" y="94" width="8" height="10" rx="2" fill="url(#gGold)"/><circle cx="172" cy="84" r="20" fill="url(#gGlow)"/>' + palm(226, 104, .7);
+    else a = palm(100, 100, .9) + '<circle cx="164" cy="74" r="30" fill="url(#gGlow)"/><path d="M164 52 a22 22 0 1 0 18 34 a17 17 0 1 1 -18 -34 Z" fill="url(#gGold)"/>' + tent(214, 110, 40, '#6C4AB6', '#FFF1C2');
+    return a;
+  }
+  function art(I, open, isLit, hid) {
+    var top = '<ellipse cx="160" cy="150" rx="158" ry="44" fill="url(#gSea)"/><ellipse cx="160" cy="162" rx="124" ry="20" fill="#062C45" opacity=".4"/><ellipse cx="160" cy="156" rx="142" ry="27" fill="none" stroke="#fff" stroke-opacity=".6" stroke-width="2.5" stroke-dasharray="26 18"/>' +
+      '<path d="M40 104 Q42 146 92 160 Q160 176 228 160 Q278 146 280 104 Z" fill="url(#gRock)"/><path d="M52 126 Q160 162 268 126 M70 144 Q160 170 250 144" fill="none" stroke="#3B2410" stroke-opacity=".28" stroke-width="2"/>' +
+      '<path d="M40 104 Q42 146 92 160 Q160 176 228 160 L228 150 Q160 164 92 150 Q48 138 40 104 Z" fill="#000" opacity=".1"/>' +
+      '<ellipse cx="160" cy="104" rx="120" ry="42" fill="url(#gSand)"/><ellipse cx="160" cy="100" rx="102" ry="33" fill="url(#gGrass)"/>';
+    var body = hid ? '<ellipse cx="160" cy="92" rx="84" ry="30" fill="#fff" opacity=".9"/><ellipse cx="112" cy="100" rx="52" ry="22" fill="#fff" opacity=".9"/><ellipse cx="212" cy="100" rx="56" ry="22" fill="#fff" opacity=".9"/><text x="160" y="106" text-anchor="middle" font-size="44" font-weight="900" fill="#7A8794">?</text>'
+      : scene(I.season ? 'season' : I.id, isLit) + (open ? '' : '<ellipse cx="120" cy="64" rx="48" ry="16" fill="#fff" opacity=".8"/><ellipse cx="206" cy="78" rx="54" ry="17" fill="#fff" opacity=".8"/><g transform="translate(142 78)"><rect x="0" y="14" width="36" height="28" rx="6" fill="#F0BE3A" stroke="#7A5A14" stroke-width="2"/><path d="M8 14 v-6 a10 10 0 0 1 20 0 v6" fill="none" stroke="#7A5A14" stroke-width="5"/><circle cx="18" cy="27" r="4" fill="#7A5A14"/></g>');
+    return '<svg class="art" viewBox="0 0 320 196" aria-hidden="true">' + top + body + '</svg>';
+  }
+  /* where each island sits on the painted map (img/islands-map.webp, 768×1376), as % of its width/height */
+  var POS = { start: [52.1, 10.2], quran: [74.2, 17.4], dhikr: [28.6, 26.2], games: [67.7, 32.7], stories: [26.0, 42.9], brain: [80.1, 42.9], lab: [23.4, 58.9], skills: [74.9, 56.7], aqeeda: [50.1, 65.4], heroes: [74.9, 73.4], district: [23.4, 79.9], ummah: [50.8, 85.0], academy: [78.1, 87.9] };
+  /* ---- the ship grows with the child's level; the sail colour is theirs to choose ---- */
+  var SAILS = ['#FFFFFF', '#F5CC5A', '#3BB36D', '#4FA3E0', '#E0705A', '#9B7BE0'];
+  function sail() { try { var c = LS.getItem('ship_sail'); return SAILS.indexOf(c) >= 0 ? c : SAILS[0]; } catch (e) { return SAILS[0]; } }
+  var SHIPN = [['قاربٌ صغير', 'Little boat'], ['قاربٌ بشراع', 'Sailing boat'], ['مركبٌ بشراعين', 'Two-sail boat'], ['سفينةٌ بثلاثة أشرعة', 'Three-sail ship'], ['سفينةٌ كبيرة براية', 'Great ship with a banner'], ['سفينةُ القبطان', "The captain's ship"]];
+  function shipSvg(lv, cls) {
+    var c = sail(), w = 34 + lv * 5, s = '<svg' + (cls ? ' class="' + cls + '"' : '') + ' viewBox="0 0 100 80" aria-hidden="true">';
+    s += '<path d="M' + (50 - w) + ' 54 H' + (50 + w) + ' L' + (50 + w - 12) + ' 70 H' + (50 - w + 12) + ' Z" fill="#8A5A2B"/><path d="M' + (50 - w) + ' 54 H' + (50 + w) + ' l-3 5 H' + (50 - w + 3) + ' Z" fill="#B67A3C"/>';
+    var masts = lv < 1 ? [] : lv < 2 ? [50] : lv < 3 ? [38, 62] : [28, 50, 72];
+    masts.forEach(function (x, i) { var h = masts.length === 3 && i === 1 ? 44 : 34; s += '<rect x="' + (x - 1) + '" y="' + (54 - h) + '" width="2" height="' + h + '" fill="#5A3A1A"/><path d="M' + (x + 2) + ' ' + (56 - h) + ' L' + (x + 2 + h * 0.42) + ' ' + (50) + ' H' + (x + 2) + ' Z" fill="' + c + '" stroke="#5A3A1A" stroke-width=".8"/>'; });
+    if (lv >= 4) s += '<path d="M51 8 l13 4 -13 4 Z" fill="#2E9E5B"/>';
+    if (lv >= 5) s += '<circle cx="' + (50 - w + 16) + '" cy="62" r="2.4" fill="#F5CC5A"/><circle cx="50" cy="62" r="2.4" fill="#F5CC5A"/><circle cx="' + (50 + w - 16) + '" cy="62" r="2.4" fill="#F5CC5A"/>';
+    return s + '<path d="M6 74 q8 -6 16 0 t16 0 t16 0 t16 0 t16 0 t16 0" fill="none" stroke="#BFE6F5" stroke-width="2.5" stroke-linecap="round"/></svg>';
+  }
+  function shipSheet() {
+    var lv = J.level(), nx = lv.next, c = sail();
+    show('<div class="sh-hd" style="--c:#4FA3E0"><span class="ic">⛵</span><div><b>' + T('سفينتي', 'My ship') + '</b><small>' + esc(T(SHIPN[lv.i][0], SHIPN[lv.i][1])) + '</small></div><button class="x" aria-label="' + T('إغلاق', 'Close') + '">✕</button></div>' +
+      '<div style="background:linear-gradient(180deg,#BFE6F5,#6DBBDD);border-radius:1.2rem;margin-top:.8rem;padding:.4rem">' + shipSvg(lv.i, 'shipbig') + '</div>' +
+      '<p style="text-align:center;font-weight:800;line-height:1.8;margin:.6rem 0 0">' + (nx ? T('تكبر سفينتك عند ' + N(nx.at) + ' نجمة — بقي ' + N(nx.at - lv.stars) + '.', 'Your ship grows at ' + nx.at + ' stars — ' + (nx.at - lv.stars) + ' to go.') : T('بلغتَ أكبر سفينة — ما شاء الله!', 'You have the greatest ship — MashaAllah!')) + '</p>' +
+      '<b style="display:block;text-align:center;margin-top:.5rem">' + T('اختر لون الشراع', 'Choose your sail colour') + '</b><div class="sw">' + SAILS.map(function (k) { return '<button type="button" data-c="' + k + '" class="' + (k === c ? 'on' : '') + '" style="background:' + k + '" aria-label="' + k + '"></button>'; }).join('') + '</div>');
+    [].forEach.call(document.querySelectorAll('.sw button'), function (b) { b.onclick = function () { try { LS.setItem('ship_sail', b.getAttribute('data-c')); } catch (e) {} shipSheet(); }; });
+  }
+  function heroBox(I, open) {
+    var H = HERO[I.id]; if (!H) return '';
+    if (!open) return '<div class="box hero shut"><span class="hi">❔</span><h3>' + T('رفيقُ هذه الجزيرة', "This island's companion") + '</h3><p>' + T('أتمم مهمّة الجزيرة لتتعرّف عليه وتأخذ بطاقته.', "Finish the island's mission to meet them and win their card.") + '</p></div>';
+    return '<div class="box hero"><span class="hi">' + H[0] + '</span><h3>' + esc(T(H[1], H[2])) + '</h3><p>' + esc(T(H[3], H[4])) + '</p><em>✨ ' + T('أقتدي به هذا الأسبوع: ', 'This week I copy: ') + esc(T(H[5], H[6])) + '</em></div>';
+  }
+  function heroesSheet() {
+    var got = ISLANDS.filter(lit).length;
+    show('<div class="sh-hd" style="--c:#9B7BE0"><span class="ic">🤝</span><div><b>' + T('رفاقُ الرحلة', 'Companions of the journey') + '</b><small>' + N(got) + '/' + N(ISLANDS.length) + '</small></div><button class="x" aria-label="' + T('إغلاق', 'Close') + '">✕</button></div>' + ISLANDS.map(function (I) { return heroBox(I, lit(I)).replace('<h3>', '<h3>' + I.ic + ' '); }).join(''));
+  }
+  function wonSheet(I) {
+    show('<div class="sh-hd" style="--c:' + I.c + '"><span class="ic">🏮</span><div><b>' + T('أضأتَ «' + I.n.ar + '»!', 'You lit "' + I.n.en + '"!') + '</b><small>+' + N(3) + ' ⭐</small></div><button class="x" aria-label="' + T('إغلاق', 'Close') + '">✕</button></div><p style="font-weight:800;line-height:1.8;margin:.7rem 0 0">' + T('أتممتَ مهمّة الجزيرة، وهذا رفيقٌ جديد ينضمّ إلى رحلتك:', "You finished the island's mission — a new companion joins your journey:") + '</p>' + heroBox(I, true));
+  }
+  function prof() { return (window.MK && MK.activeProfile && MK.activeProfile()) || null; }
+
+  function render() {
+    var stars = J.totalStars(), all = openAll(), won = sync(stars, all); if (won.length) stars = J.totalStars();
+    var p = prof(), lv = J.level(stars), sn = seen();
+    var nextI = -1; for (var i = 0; i < ISLANDS.length; i++) if (!all && !ISLANDS[i].secret && stars < need(ISLANDS[i])) { nextI = i; break; }
+    var nx = nextI >= 0 ? ISLANDS[nextI] : null, lastOpen = nextI < 0 ? ISLANDS.length - 2 : nextI - 1; famNote(stars);
+    var prevAt = lastOpen >= 0 ? need(ISLANDS[lastOpen]) : 0, pct = nx ? Math.max(4, Math.round((stars - prevAt) / Math.max(1, need(nx) - prevAt) * 100)) : 100;
+    var ag = J.AGES.filter(function (a) { return a.id === ageId(); })[0];
+    var h = '<h1>🏝️ ' + T('عالمُ الجزر', 'Island World') + '</h1><p class="lead">' + T('اجمع النجوم بالقراءة واللعب والعمل الطيّب… وكلُّ جزيرةٍ تنتظر أن تفتحها!', 'Earn stars by reading, playing and doing good… every island is waiting for you to open it!') + '</p>' +
+      '<div class="hud"><span class="av" style="--c:' + esc(p && p.color || '#D4A017') + '">' + esc(p && p.avatar || '🧒') + '</span><div class="tx"><b>' + esc(p ? p.name : T('يا بطل', 'Champion')) + ' · ' + lv.ic + ' ' + esc(t(lv.name)) + '</b><small>' +
+      (nx ? T('بقي ' + N(need(nx) - stars) + ' نجمة لتفتح «' + nx.n.ar + '»', (need(nx) - stars) + ' more stars to open "' + nx.n.en + '"') : T('فتحتَ كلَّ الجزر — ما شاء الله!', 'You opened every island — MashaAllah!')) + '</small><div class="bar"><i style="width:' + pct + '%"></i></div></div><span class="st">' + N(stars) + ' ⭐</span></div>' +
+      seaHtml() + mixHtml(stars, all) + '<div class="sea" id="sea">' + worldHtml(ISLANDS.map(function (I, i) {
+        var open = all || stars >= need(I), isNext = i === nextI, isNew = open && I.at > 0 && sn.indexOf(I.id) < 0;
+        var isLit = open && lit(I), hid = I.secret && !open, bdg = J.earned('badge', I.id) ? ' 🎖️' : '';
+        var tagH = (open ? (isNew ? T('جديدة!', 'New!') : isLit ? '🏮 ' + T('مُضاءة', 'Lit') + bdg : QUEST[I.id] ? N(prog(I)) + '/' + N(goal(I)) + ' 🏮' : T('ادخل', 'Enter')) : hid ? '🗺️ ' + N(pieces()) + '/' + N(6) : N(need(I)) + ' ⭐'), cls = (open ? '' : ' lock') + (isLit ? ' lit' : '') + (isNext ? ' next' : '') + (isNew ? ' new' : ''), hereH = i === lastOpen ? '<span class="here">' + shipSvg(lv.i) + ' ' + T('أنت هنا', 'You are here') + '</span>' : '', P = POS[I.id];
+        if (P) return '\u0001<button class="isl spot' + cls + '" data-i="' + i + '" style="left:' + P[0] + '%;top:' + P[1] + '%;--c:' + I.c + '" aria-label="' + esc(t(I.n)) + '">' + hereH + '<span class="veil"></span></button>\u0002<span class="chip2' + cls + '" data-i="' + i + '" style="left:' + P[0] + '%;top:' + (P[1] + 5.4) + '%" aria-hidden="true"><b>' + esc(t(I.n)) + '</b><span class="tag">' + tagH + '</span></span>';
+        return '<button class="isl' + cls + '" data-i="' + i + '" style="--c:' + I.c + '">' + hereH +
+          art(I, open, isLit, hid) + '<span class="plate"><span class="em">' + (open ? I.ic : hid ? '❔' : '🔒') + '</span><span class="tx"><b>' + esc(hid ? T('جزيرةٌ مجهولة', 'An unknown island') : t(I.n)) + '</b><small>' + esc(hid ? T('اجمع قطع الخريطة لتجدها', 'Gather the map pieces to find it') : t(I.s)) + '</small></span><span class="tag">' + tagH + '</span></span></button>';
+      })) + '</div>' + reviewHtml() +
+      '<div class="foot"><button class="pill" id="shipBtn">⛵ ' + T('سفينتي', 'My ship') + '</button><button class="pill" id="mapBtn">🗺️ ' + T('خريطة الكنز', 'Treasure map') + '</button><button class="pill" id="dreamBtn">🌟 ' + T('حلمي', 'My dream') + '</button><button class="pill" id="famBtn">🏠 ' + T('فانوس العائلة', 'Family lantern') + '</button><button class="pill" id="heroBtn">🤝 ' + T('رفاق الرحلة', 'Companions') + '</button><button class="pill" id="ageBtn">' + ag.ic + ' ' + T('عمري: ' + ag.ar, 'My age: ' + ag.en) + '</button><button class="pill" id="parentBtn2">🔐 ' + T('عرض الأهل', 'Parent view') + '</button><a class="pill" href="search.html">🔎 ' + T('ابحث', 'Search') + '</a><a class="pill" href="bag.html">🎒 ' + T('حقيبتي', 'My bag') + '</a>' + (all ? '<button class="pill" id="relock">🔒 ' + T('أعِد قفل الجزر', 'Lock islands again') + '</button>' : '<button class="pill" id="unlock">🔓 ' + T('افتح كلَّ الجزر (للأهل)', 'Open all islands (parents)') + '</button>') + '</div>';
+    var app = document.getElementById('app'); app.innerHTML = DEFS + h;
+    app.querySelectorAll('.isl').forEach(function (b) { b.onclick = function () { openIsland(+b.getAttribute('data-i'), stars, all); }; });
+    var u = document.getElementById('unlock'); if (u) u.onclick = function () { var go = function () { try { LS.setItem('islands_open', '1'); } catch (e) {} render(); }; if (window.MKGate && MKGate.ask) MKGate.ask(go, T('فتحُ كلّ الجزر يأذن به أحد الوالدين', 'Opening every island needs a parent')); else go(); };
+    var ab = document.getElementById('ageBtn'); if (ab) ab.onclick = function () { askAge(false); };
+    [].forEach.call(app.querySelectorAll('.mx'), function (a) { a.addEventListener('click', function () { mark(a.getAttribute('data-k'), a.getAttribute('href')); }); });
+    [].forEach.call(app.querySelectorAll('.rv'), function (a) { a.addEventListener('click', function () { mark(a.getAttribute('data-k'), a.getAttribute('href')); }); });
+    document.getElementById('mapBtn').onclick = mapSheet; document.getElementById('dreamBtn').onclick = dreamSheet; document.getElementById('famBtn').onclick = function () { famSheet(false); };
+    var sb = document.getElementById('seaBtn'); if (sb) sb.onclick = function () { J.earn('sea', 'day', +sb.getAttribute('data-s') || 1, { daily: true }); render(); };
+    var wb = document.getElementById('windBtn'); if (wb) { var wn = 0; wb.onclick = function () { wn++; document.getElementById('windN').textContent = N(wn); if (wn >= 10) { J.earn('sea', 'day', 2, { daily: true }); render(); } }; }
+    document.getElementById('shipBtn').onclick = shipSheet; document.getElementById('heroBtn').onclick = heroesSheet;
+    var pb2 = document.getElementById('parentBtn2'); if (pb2) pb2.onclick = toParent;
+    var r = document.getElementById('relock'); if (r) r.onclick = function () { try { LS.removeItem('islands_open'); } catch (e) {} render(); };
+    requestAnimationFrame(route);
+    /* a newly opened island is celebrated once */
+    var fresh = ISLANDS.filter(function (I) { return I.at > 0 && (all || stars >= need(I)) && sn.indexOf(I.id) < 0; });
+    if (!J.age()) { if (!document.getElementById('ov').classList.contains('open')) askAge(true); return; }
+    if (won.length && !document.getElementById('ov').classList.contains('open')) return wonSheet(won[won.length - 1]);
+    if (fresh.length && !all && !document.getElementById('ov').classList.contains('open')) { fresh.forEach(function (I) { markSeen(I.id); }); celebrate(fresh[fresh.length - 1]); }
+  }
+  /* islands that are on the painted map go inside it; the seasonal island stays above and the treasure island below */
+  function worldHtml(parts) {
+    var top = '', map = '', chips = '', bottom = '', seen = false;
+    parts.forEach(function (p) { if (p.charAt(0) === '\u0001') { var q = p.slice(1).split('\u0002'); map += q[0]; chips += q[1] || ''; seen = true; } else if (seen) bottom += p; else top += p; });
+    return top + '<div class="world"><img src="img/islands-map.webp" width="768" height="1376" alt="' + T('خريطة عالم الجزر', 'The map of Island World') + '">' + map + chips + '</div>' + bottom;
+  }
+  function route() {
+    var m = document.getElementById('sea'), svg = document.getElementById('route'); if (!m || !svg) return;
+    var mr = m.getBoundingClientRect(), pts = [].map.call(m.querySelectorAll('.isl .art'), function (e) { var r = e.getBoundingClientRect(); return [r.left - mr.left + r.width / 2, r.top - mr.top + r.height / 2]; });
+    if (pts.length < 2) return; var d = 'M' + pts[0][0] + ' ' + pts[0][1];
+    for (var i = 1; i < pts.length; i++) { var a = pts[i - 1], b = pts[i], my = (a[1] + b[1]) / 2; d += ' C' + a[0] + ' ' + my + ' ' + b[0] + ' ' + my + ' ' + b[0] + ' ' + b[1]; }
+    svg.setAttribute('viewBox', '0 0 ' + mr.width + ' ' + mr.height);
+    svg.innerHTML = '<path d="' + d + '" fill="none" stroke="rgba(255,255,255,.55)" stroke-width="5" stroke-linecap="round" stroke-dasharray="3 15"/>';
+  }
+  function show(html) { var ov = document.getElementById('ov'); document.getElementById('sheet').innerHTML = html; ov.classList.add('open'); var x = ov.querySelector('.x'); if (x) x.onclick = close; }
+  function close() { document.getElementById('ov').classList.remove('open'); render(); }
+  function closable() { return !!document.querySelector('#sheet .x'); }
+  function markSeen(id) { var s = seen(); if (s.indexOf(id) < 0) { s.push(id); try { LS.setItem('islands_seen', JSON.stringify(s)); } catch (e) {} } }
+  function head(I, sub) { return '<div class="sh-hd" style="--c:' + I.c + '"><span class="ic">' + I.ic + '</span><div><b>' + esc(t(I.n)) + '</b><small>' + esc(sub) + '</small></div><button class="x" aria-label="' + T('إغلاق', 'Close') + '">✕</button></div>'; }
+  function openIsland(i, stars, all) {
+    var I = ISLANDS[i];
+    var nd = need(I);
+    if (I.secret && !all && nd) return mapSheet();
+    if (!all && stars < nd) {
+      return show(head(I, T('مقفلة', 'Locked')) + '<div class="lockmsg"><div class="big">🔒</div><p>' + T('تُفتَح هذه الجزيرة عند ' + N(nd) + ' نجمة. معك ' + N(stars) + '، وبقي ' + N(nd - stars) + '.', 'This island opens at ' + nd + ' stars. You have ' + stars + ', ' + (nd - stars) + ' to go.') + '</p><b>' + T('أسرعُ الطرق لجمع النجوم:', 'The quickest ways to earn stars:') + '</b><div class="earn">' +
+        '<a href="wird.html">📖 ' + T('اقرأ وِردك من القرآن', 'Read your Quran wird') + '<b>+' + N(5) + ' ⭐</b></a>' +
+        '<a href="my-day.html">☀️ ' + T('أكمل خطوات «يومي»', 'Finish the «My Day» steps') + '<b>+' + N(5) + ' ⭐</b></a>' +
+        '<a href="' + R + 'activities/dashboard.html">🧩 ' + T('أنهِ لعبةً من أنشطة أنوس', "Finish one of Anos' games") + '<b>+' + N(1) + ' ⭐</b></a>' +
+        '<a href="garden.html">🌴 ' + T('ازرع ٣ نخلات في بستان الذكر', 'Plant 3 palms in the dhikr garden') + '<b>+' + N(1) + ' ⭐</b></a></div></div>');
+    }
+    markSeen(I.id);
+    var list = stations(I), kinds = ['L', 'R', 'P', 'D'].filter(function (k) { return list.some(function (x) { return x[0] === k; }); });
+    var Q = QUEST[I.id], g = goal(I), pr = Math.min(prog(I), g), isLit = lit(I), lamps = '';
+    for (var n = 0; n < g; n++) lamps += '<span class="' + (n < pr || isLit ? '' : 'off') + '">🏮</span>';
+    function doors(f) { return list.filter(function (x) { return !f || x[0] === f; }).map(function (x) { var K = KIND[x[0]], ok = isDone(I, x); return '<a class="door' + (ok ? ' ok' : '') + '" data-k="' + esc(sid(I, x)) + '" href="' + esc(href(x)) + '"><span class="di">' + x[1] + '</span><span><span class="kd" style="--k:' + K[3] + '">' + K[0] + ' ' + T(K[1], K[2]) + '</span>' + (onPath(x) ? '<span class="kd" style="--k:#B8860B">🌟 ' + T('طريق حلمك', 'Your dream path') + '</span>' : '') + esc(T(x[2], x[3])) + '<small>' + esc(T(x[6], x[7])) + '</small></span><span class="go' + (ok ? ' ok' : '') + '">' + (ok ? '✅' : lang === 'ar' ? '←' : '→') + '</span></a>'; }).join(''); }
+    function wire() { [].forEach.call(document.querySelectorAll('#doors .door'), function (a) { a.addEventListener('click', function () { mark(a.getAttribute('data-k'), a.getAttribute('href')); }); }); }
+    var deedDone = !!J.earned('deed', I.id);
+    show(head(I, t(I.s)) +
+      (Q ? '<div class="box' + (isLit ? ' lit' : '') + '"><h3>🧭 ' + T('مهمّة الجزيرة', 'Island mission') + '</h3><p>' + esc(isLit ? T('أضأتَ هذه الجزيرة — بارك الله فيك! كلُّ محطّةٍ جديدة تُتمّها تزيدك نجمة.', 'You lit this island — well done! Every new station you finish still earns a star.') : T(Q[0], Q[1])) + '</p><div class="lamps" aria-label="' + pr + '/' + g + '">' + lamps + '</div></div>' : '') +
+      (kinds.length > 1 ? '<div class="chips"><button class="chip on" data-f="">' + T('الكلّ', 'All') + '</button>' + kinds.map(function (k) { return '<button class="chip" data-f="' + k + '" style="--k:' + KIND[k][3] + '">' + KIND[k][0] + ' ' + T(KIND[k][1], KIND[k][2]) + '</button>'; }).join('') + '</div>' : '') + '<div class="doors" id="doors">' + doors('') + '</div>' +
+      (Q ? '<div class="box deed"><h3>🌍 ' + T('مهمّةٌ في الحياة', 'A real-life mission') + '</h3><p>' + esc(T(Q[2], Q[3])) + '</p>' + (deedDone ? '<p style="color:#1F7A44;font-weight:900;margin-top:.3rem">✅ ' + T('فعلتَها — تقبّل الله منك!', 'Done — may Allah accept it!') + '</p>' : '<button class="btn" id="deedBtn">✔ ' + T('فعلتُها', 'I did it') + ' · +' + N(5) + ' ⭐</button><p style="font-size:.82rem;color:#4a6a55;margin-top:.3rem">' + T('يؤكّدها أحد الوالدين.', 'A parent confirms it.') + '</p>') + '</div>' : '') +
+      heroBox(I, isLit) + extras(I, isLit));
+    wire();
+    var qb = document.getElementById('quizBtn'); if (qb) qb.onclick = function () { quizSheet(I, 0); };
+    var te = document.getElementById('teach'); if (te && window.MKVoiceRec) MKVoiceRec.mount(te, { title: T('سجّل شرحك', 'Record your explanation'), hint: T('تكلّم بهدوء كأنّك تشرح لصديقك.', 'Speak calmly, as if explaining to a friend.'), kind: 'teach', isl: I.id, ref: I.n.ar, text: T('أشرح ما تعلّمتُه في ' + I.n.ar, 'I explain what I learned on ' + I.n.en), lang: lang });
+    [].forEach.call(document.querySelectorAll('#sheet .chip'), function (c) { c.onclick = function () { [].forEach.call(document.querySelectorAll('#sheet .chip'), function (o) { o.classList.toggle('on', o === c); }); document.getElementById('doors').innerHTML = doors(c.getAttribute('data-f')); wire(); }; });
+    var db = document.getElementById('deedBtn'); if (db) db.onclick = function () { var go = function () { J.earn('deed', I.id, 5); openIsland(i, J.totalStars(), all); }; if (window.MKGate && MKGate.ask) MKGate.ask(go, T('هل أتمّ طفلك هذه المهمّة؟', 'Did your child do this mission?')); else go(); };
+  }
+  function extras(I, isLit) {
+    var h = '', W = (X.WHY || {})[I.id], P = (X.PARENT || {})[I.id], w = null;
+    if (I.note) h += '<div class="box lit"><p>' + esc(t(I.note)) + '</p></div>';
+    if (isLit && (X.QUIZ || {})[I.id]) h += '<div class="box"><h3>🎖️ ' + T('وسام الجزيرة', 'The island badge') + '</h3>' + (J.earned('badge', I.id) ? '<p style="color:#1F7A44;font-weight:900">✅ ' + T('نلتَ وسام هذه الجزيرة.', 'You earned this island\'s badge.') + '</p>' : '<p>' + T('ثلاثةُ أسئلةٍ سريعة عمّا تعلّمتَه هنا.', 'Three quick questions about what you learned here.') + '</p><button class="btn" id="quizBtn" style="margin-top:.5rem">' + T('ابدأ الأسئلة', 'Start the questions') + ' · +' + N(2) + ' ⭐</button>') + '</div>';
+    if (isLit) h += '<div class="box"><h3>🎙️ ' + T('علِّم غيرك', 'Teach it back') + (J.earned('teach', I.id) ? ' ✅' : ' · +' + N(2) + ' ⭐') + '</h3><p>' + T('اشرح بصوتك في نصف دقيقة شيئًا واحدًا تعلّمتَه في هذه الجزيرة — من يُعلِّم يتعلّم مرّتين.', 'In half a minute, explain one thing you learned on this island — whoever teaches learns twice.') + '</p><div id="teach" style="margin-top:.5rem"></div></div>';
+    if (W) { w = (DAY.hadith || []).concat(DAY.ayat || []).filter(function (o) { return o.id === W; })[0]; }
+    if (w) h += '<div class="box why"><h3>💡 ' + T('لماذا نتعلّم هذا؟', 'Why do we learn this?') + '</h3><q>' + esc(w.ar) + '</q>' + (lang === 'en' ? '<p>' + esc(w.en) + '</p>' : '') + '<small>' + esc(t(w.src || w.ref)) + '</small></div>';
+    if (P) h += '<details class="box"><summary>🏠 ' + T('للوالدين: سؤالٌ ونشاط', 'For parents: a question and an activity') + '</summary><p>💬 <b>' + T('اسأل طفلك: ', 'Ask your child: ') + '</b>' + esc(T(P[0], P[1])) + '</p><p>🤝 <b>' + T('افعلا معًا: ', 'Do together: ') + '</b>' + esc(T(P[2], P[3])) + '</p></details>';
+    return h;
+  }
+  function celebrate(I) {
+    markSeen(I.id);
+    show('<div class="sh-hd" style="--c:' + I.c + '"><span class="ic">🎉</span><div><b>' + T('جزيرةٌ جديدة!', 'A new island!') + '</b></div><button class="x" aria-label="' + T('إغلاق', 'Close') + '">✕</button></div>' +
+      '<div class="up"><div class="big">' + I.ic + '</div><b>' + T('فتحتَ «' + I.n.ar + '» — بارك الله فيك!', 'You opened "' + I.n.en + '" — may Allah bless you!') + '</b><p style="font-weight:700;line-height:1.8">' + esc(t(I.s)) + '</p><button class="btn" id="goNew">' + T('ادخل الجزيرة', 'Enter the island') + ' ' + (lang === 'ar' ? '←' : '→') + '</button></div>');
+    document.getElementById('goNew').onclick = function () { openIsland(ISLANDS.indexOf(I), J.totalStars(), openAll()); };
+  }
+  function toParent() {
+    var go = function () { try { LS.setItem('mk:view', 'parent'); } catch (e) {} location.href = '../../index.html'; };
+    if (window.MKGate && MKGate.ask) MKGate.ask(go, T('عرضُ الأهل يفتحه أحد الوالدين', 'The parent view is opened by a parent')); else go();
+  }
+  document.getElementById('parentBtn').onclick = toParent;
+  function texts() {
+    document.documentElement.lang = lang; document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
+    document.querySelectorAll('.lng-ar').forEach(function (e) { e.style.display = lang === 'ar' ? '' : 'none'; });
+    document.querySelectorAll('.lng-en').forEach(function (e) { e.style.display = lang === 'en' ? '' : 'none'; });
+    document.querySelectorAll('.lang button').forEach(function (b) { b.classList.toggle('active', b.dataset.lang === lang); });
+    document.title = T('عالم الجزر', 'Island World'); render();
+  }
+  document.querySelectorAll('.lang button').forEach(function (b) { b.onclick = function () { lang = b.dataset.lang; try { LS.setItem('bunyanLang', lang); } catch (e) {} texts(); }; });
+  window.setLang = function (l) { lang = l; try { LS.setItem('bunyanLang', l); } catch (e) {} texts(); };
+  document.getElementById('ov').addEventListener('click', function (e) { if (e.target.id === 'ov' && closable()) close(); });
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && document.getElementById('ov').classList.contains('open') && closable()) close(); });
+  window.addEventListener('resize', function () { requestAnimationFrame(route); });
+  window.addEventListener('pageshow', function () { render(); });
+  texts();
+})();
+</script>
+<script src="mk-citynav.js"></script>
+<script src="mk-topbar.js"></script>
+</body>
+</html>
