@@ -3,7 +3,7 @@
    and a «تعرَّف على القطع» mini-tutorial. Pieces are plain original SVG shapes (no crosses, no faces). */
 (function () {
   'use strict';
-  Brain.css(
+  Brain.css('.chclock{position:relative;max-width:520px;margin:0 auto .5rem;height:34px;border-radius:999px;background:rgba(255,255,255,.12);overflow:hidden;border:1.5px solid var(--line)}.chclock i{position:absolute;inset-block:0;inset-inline-start:0;width:100%;background:linear-gradient(90deg,#3BB36D,#F5CC5A);transition:width .1s linear}.chclock b{position:relative;display:block;text-align:center;line-height:31px;font-weight:900;color:#10243d}.chclock.warn i{background:linear-gradient(90deg,#E5574A,#F0963C)}.chclock.warn b{color:#fff}.chclock.off{visibility:hidden}' + 
     '.ch{display:grid;grid-template-columns:repeat(8,1fr);width:min(100%,520px);aspect-ratio:1;border-radius:10px;overflow:hidden;box-shadow:0 0 0 4px #5b3d17,0 10px 26px rgba(0,0,0,.4)}' +
     '.ch button{position:relative;border:none;padding:0;margin:0;cursor:pointer;display:grid;place-items:center;min-width:0;min-height:0;background:#F1DFB6;aspect-ratio:1}' +
     '.ch button.dk{background:#B98B4E}.ch button.last{background:#E9D36A}.ch button.dk.last{background:#C9A93D}' +
@@ -239,7 +239,9 @@
   function status() {
     if (B.over) return;
     var chk = inCheck(S) ? ' — ' + B.T('كِشّ! الملكُ في خطر', 'Check! The king is in danger') : '';
-    if (B.mode === 'two') B.status(B.T('دورُ ', 'Turn: ') + side(S.t === 'w') + chk);
+    var note = autoNote ? '⏰ ' + B.T('انتهى الوقت فلُعبت حركةٌ عن ', 'Time ran out, so a move was played for ') + autoNote + ' — ' : '';
+    if (B.mode === 'two') B.status(note + B.T('دورُ ', 'Turn: ') + side(S.t === 'w') + chk);
+    else if (note) B.status(note + (S.t === 'w' ? B.T('دورك (الأبيض)', 'Your turn (White)') + chk : B.T('الحاسوب يفكّر…', 'The computer is thinking…')));
     else B.status(S.t === 'w' ? B.T('دورك (الأبيض)', 'Your turn (White)') + chk : B.T('الحاسوب يفكّر…', 'The computer is thinking…'));
   }
   function render() {
@@ -263,9 +265,37 @@
     status();
   }
   function persist() { B.save({ fen: toFEN(S), last: last }); }
+  /* ⏱️ the move clock: 10 seconds for each human move so the game keeps moving; when it runs out the clock plays a simple move for that side */
+  var clk = 0, clkLeft = 0, CLK = 10, autoNote = '';
+  function clockOn() { var v = B.store('clock'); return v !== false; }
+  function stopClock() { clearInterval(clk); clk = 0; var c = document.getElementById('chClock'); if (c) c.classList.add('off'); }
+  function startClock() {
+    stopClock(); var c = document.getElementById('chClock');
+    if (!c || !clockOn() || B.over || busy || (B.mode === 'cpu' && S.t === 'b')) return;
+    clkLeft = CLK * 10; c.classList.remove('off', 'warn'); paintClock();
+    clk = setInterval(function () {
+      if (B.over || busy) return stopClock();
+      clkLeft--; paintClock();
+      if (clkLeft > 0 && clkLeft <= 30 && clkLeft % 10 === 0) B.beep('tap');
+      if (clkLeft <= 0) { stopClock(); timeUp(); }
+    }, 100);
+  }
+  function paintClock() {
+    var c = document.getElementById('chClock'); if (!c) return;
+    c.querySelector('i').style.width = (clkLeft / (CLK * 10) * 100) + '%';
+    c.querySelector('b').textContent = '⏱️ ' + B.N(Math.ceil(clkLeft / 10)) + (B.mode === 'two' ? ' — ' + side(S.t === 'w') : '');
+    c.classList.toggle('warn', clkLeft <= 30);
+  }
+  function timeUp() {
+    if (B.over || busy) return;
+    var m = promo ? promo.filter(function (q) { return q.pr === 'Q'; })[0] : think(S, 'easy');
+    promo = null; sel = -1; if (!m) return;
+    if (m.pr && !promo) m = legal(S).filter(function (q) { return q.f === m.f && q.t === m.t && q.pr === 'Q'; })[0] || m;
+    B.beep('bad'); var who = side(S.t === 'w'); doMove(m); autoNote = who; status();
+  }
   function ending() {
     var v = verdict(S, hist); if (v === 'play') return false;
-    B.over = true; render();
+    B.over = true; stopClock(); render();
     var whiteWon = S.t === 'b';
     timer = setTimeout(function () {
       if (v === 'mate') {
@@ -282,13 +312,14 @@
     return true;
   }
   function doMove(m) {
+    if (!(B.mode === 'cpu' && S.t === 'b')) autoNote = '';
     S = make(S, m); hist.push(S); last = { f: m.f, t: m.t }; sel = -1; moves = legal(S);
     B.beep(m.x ? 'good' : 'tap'); persist(); render();
     if (ending()) return;
-    if (B.mode === 'cpu' && S.t === 'b') cpuTurn();
+    if (B.mode === 'cpu' && S.t === 'b') cpuTurn(); else startClock();
   }
   function cpuTurn() {
-    busy = true; render();
+    busy = true; stopClock(); render();
     timer = setTimeout(function () {
       var m = think(S, B.level); busy = false;
       if (m) { if (m.pr) m = legal(S).filter(function (q) { return q.f === m.f && q.t === m.t && q.pr === 'Q'; })[0] || m; doMove(m); }
@@ -307,9 +338,9 @@
   function undo() {
     if (busy || hist.length < 2) return;
     hist.pop(); if (B.mode === 'cpu' && hist.length > 1 && hist[hist.length - 1].t === 'b') hist.pop();
-    S = hist[hist.length - 1]; last = null; sel = -1; promo = null; moves = legal(S); B.over = false; persist(); render();
+    S = hist[hist.length - 1]; last = null; sel = -1; promo = null; moves = legal(S); B.over = false; persist(); render(); startClock();
   }
-  function load(fen, lastMove) { clearTimeout(timer); busy = false; promo = null; S = fromFEN(fen); hist = [S]; sel = -1; last = lastMove || null; moves = legal(S); B.over = false; render(); }
+  function load(fen, lastMove) { clearTimeout(timer); busy = false; promo = null; S = fromFEN(fen); hist = [S]; sel = -1; last = lastMove || null; moves = legal(S); B.over = false; render(); setTimeout(startClock, 0); }
 
   /* ───────── «تعرَّف على القطع» ───────── */
   var TUT = {
@@ -337,6 +368,9 @@
   function extra() {
     B.extra.innerHTML = '<button class="bbtn" id="chUndo" type="button">' + B.T('↩ تراجع عن حركة', '↩ Undo a move') + '</button><button class="bbtn" id="chLearn" type="button" aria-expanded="' + tutOpen + '">' + B.T('🎓 تعرَّف على القطع', '🎓 Learn the pieces') + '</button>';
     document.getElementById('chUndo').onclick = undo;
+    var cb = document.createElement('button'); cb.className = 'bbtn'; cb.type = 'button'; cb.id = 'chClk';
+    var lab = function () { cb.textContent = clockOn() ? B.T('⏱️ مؤقّت ١٠ ثوانٍ: يعمل', '⏱️ 10-second clock: on') : B.T('⏱️ مؤقّت ١٠ ثوانٍ: متوقّف', '⏱️ 10-second clock: off'); cb.setAttribute('aria-pressed', String(clockOn())); };
+    cb.onclick = function () { B.store('clock', !clockOn()); lab(); if (clockOn()) startClock(); else stopClock(); }; lab(); B.extra.appendChild(cb);
     document.getElementById('chLearn').onclick = function () { tutOpen = !tutOpen; this.setAttribute('aria-expanded', String(tutOpen)); tutDraw(); if (tutOpen) document.getElementById('chTut').scrollIntoView({ block: 'nearest', behavior: B.calm() ? 'auto' : 'smooth' }); };
   }
   Brain.game({
@@ -347,7 +381,7 @@
       en: ['Tap your piece: dots show the squares it can go to. Then tap one of them.', 'The goal: trap the other king so it cannot escape — that is "checkmate".', 'Not sure how a piece moves? Tap "Learn the pieces" under the board.']
     },
     init: function (b) {
-      B = b; var h = '<div class="chwrap"><div class="bd ch">'; for (var i = 0; i < 64; i++) h += '<button type="button" data-i="' + i + '"></button>';
+      B = b; var h = '<div class="chclock off" id="chClock"><i></i><b></b></div><div class="chwrap"><div class="bd ch">'; for (var i = 0; i < 64; i++) h += '<button type="button" data-i="' + i + '"></button>';
       B.stage.innerHTML = h + '</div></div>';
       B.stage.querySelectorAll('.ch > button').forEach(function (x) { x.onclick = function () { tap(+x.dataset.i); }; });
       var t = document.createElement('section'); t.className = 'bpanel chtut'; t.id = 'chTut'; t.hidden = true; B.extra.parentNode.appendChild(t);

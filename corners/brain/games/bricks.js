@@ -264,8 +264,11 @@ function chips() {
   const done = doneList();
   const el = document.getElementById('bxChips'); if (!el) return;
   el.innerHTML = MODELS.map((m, i) => '<button type="button" data-i="' + i + '" class="' + (i === mi ? 'on' : '') + '" aria-pressed="' + (i === mi) + '">' + m.ic + ' ' + B.esc(B.T(m.ar, m.en)) + (done.indexOf(m.id) >= 0 ? ' ✅' : '') + '</button>').join('');
-  el.querySelectorAll('button').forEach(b => b.onclick = () => { if (+b.dataset.i === mi) return; B0.beep('tap'); mi = +b.dataset.i; step = 0; B.over = false; buildGuide(); save(); });
+  el.querySelectorAll('button').forEach(b => b.onclick = () => { if (+b.dataset.i === mi) return; B0.beep('tap'); mi = +b.dataset.i; B.store('mi', mi); openModel(); save(); });
 }
+/* a model the child already built opens complete (kept forever); «ابنِه من جديد» starts it again */
+let justBuilt = false;
+function openModel() { const def = MODELS[mi]; justBuilt = false; step = doneList().indexOf(def.id) >= 0 ? steps(def).length : 0; B.over = false; buildGuide(); }
 function save() { if (B.mode === 'guide') B.save({ mi, step }); else B.save({ free }); }
 function buildGuide(fresh) {
   const def = MODELS[mi], st = steps(def);
@@ -283,12 +286,14 @@ function next() {
   canvas.setAttribute('aria-label', B.T(def.ar, def.en));
   if (step >= st.length) {
     setGhost(null); tray.innerHTML = '';
-    if (!B.over) {
-      const d = doneList(); if (d.indexOf(def.id) < 0) { d.push(def.id); B.store('done', d); }
-      chips();
+    tray.innerHTML = '<button type="button" class="bxagain" id="bxAgain">🔄 ' + B.T('ابنِه من جديد', 'Build it again') + '</button>';
+    document.getElementById('bxAgain').onclick = () => { step = 0; justBuilt = false; B.over = false; buildGuide(); save(); };
+    const d = doneList(); if (d.indexOf(def.id) < 0) { d.push(def.id); B.store('done', d); chips(); }
+    if (justBuilt && !B.over) {
+      justBuilt = false;
       B.win({ stars: 2, title: B.T('بنيتَ ' + def.ar + '! ما شاء الله', 'You built ' + def.en + '! Masha\'Allah'), msg: B.T(def.fact[0], def.fact[1]) });
     }
-    B.status(B.T('🎉 اكتمل النموذج — أدِره بإصبعك وتأمّله!', '🎉 The model is complete — turn it with your finger and look!'));
+    B.status(B.T('🏛️ هذا النموذج في معرض مبانيك ✅ — أدِره بإصبعك وتأمّله! (' + B.N(doneList().length) + ' من ' + B.N(MODELS.length) + ')', '🏛️ This model is in your gallery ✅ — turn it and look! (' + doneList().length + ' of ' + MODELS.length + ')'));
     return;
   }
   const s = st[step]; setGhost(s);
@@ -312,7 +317,7 @@ function pick(i, btn) {
     return;
   }
   const s = steps(MODELS[mi])[step], mesh = pieceMesh(s); world.add(mesh); drop(mesh);
-  B0.beep('good'); step++; save(); next();
+  B0.beep('good'); step++; if (step >= steps(MODELS[mi]).length) justBuilt = true; save(); next();
 }
 
 /* ══════ free build ══════ */
@@ -376,9 +381,8 @@ function start(restoreState) {
     focusY = 2; view.dist = 28; freeDraw(); freeTools();
   } else {
     guideUI(); if (!initScene()) return; onTap = null;
-    if (restoreState && typeof restoreState.mi === 'number' && MODELS[restoreState.mi]) { mi = restoreState.mi; step = Math.max(0, Math.min(steps(MODELS[mi]).length, restoreState.step | 0)); }
-    else { const p = B.store('mi'); mi = typeof p === 'number' && MODELS[p] ? p : 0; step = 0; }
-    buildGuide();
+    if (restoreState && typeof restoreState.mi === 'number' && MODELS[restoreState.mi] && restoreState.step > 0) { mi = restoreState.mi; step = Math.max(0, Math.min(steps(MODELS[mi]).length, restoreState.step | 0)); buildGuide(); }
+    else { const p = restoreState && typeof restoreState.mi === 'number' ? restoreState.mi : B.store('mi'); mi = typeof p === 'number' && MODELS[p] ? p : 0; openModel(); }
   }
 }
 B0.css(`
@@ -392,6 +396,7 @@ B0.css(`
 .bxprog{height:10px;border-radius:99px;background:rgba(255,255,255,.12);margin:.6rem 0;overflow:hidden}.bxprog i{display:block;height:100%;width:0;background:linear-gradient(90deg,#3BB36D,var(--gold));transition:width .3s}
 .bxtray{display:grid;grid-template-columns:repeat(3,1fr);gap:.5rem}
 .bxtray button{min-height:96px;border-radius:16px;border:2px solid var(--line);background:rgba(255,255,255,.07);color:var(--ink);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.35rem;padding:.4rem;cursor:pointer;font:800 .82rem 'Tajawal','Nunito',sans-serif}
+.bxtray .bxagain{grid-column:1/-1;min-height:56px;flex-direction:row;font-size:1.05rem;background:linear-gradient(135deg,var(--gold-lt),#D4A017);color:#1A1205;border:none}
 .bxtray button:hover{border-color:var(--gold)}.bxtray button.no{animation:bxno .4s;border-color:var(--red)}
 @keyframes bxno{25%{transform:translateX(-5px)}75%{transform:translateX(5px)}}
 .bxfact{margin-top:.75rem;padding:.8rem 1rem;border-radius:16px;background:rgba(232,181,48,.1);border:1px solid var(--line);line-height:1.85}.bxfact b{color:var(--gold-lt);font-size:1.05rem}.bxfact p{margin:.3rem 0 0}
@@ -409,7 +414,7 @@ Brain.game({
     ar: ['اختر نموذجًا: الكعبة، المسجد الحرام، المسجد النبويّ، مسجد قباء، قبّة الصخرة، المسجد الأقصى، النخلة، الجمل، الحصان، الخروف، السفينة أو الفانوس.', 'المكان المضيء يُريك أين توضع القطعة التالية. اختر القطعةَ الصحيحة من الثلاث: عُدَّ النتوءات وانظر إلى اللون.', 'اسحب بإصبعك لتدير النموذج، وبإصبعين لتقرّبه.', 'في «بناء حرّ»: اختر الحجمَ واللون، ثمّ اضغط على اللوح أو على قطعةٍ لتبني فوقها أو بجانبها.'],
     en: ['Pick a model: the Kaaba, al-Masjid al-Haram, the Prophet\'s Mosque, Quba Mosque, the Dome of the Rock, al-Aqsa, the palm tree, the camel, the horse, the sheep, the ship or the lantern.', 'The glowing spot shows where the next piece goes. Choose the right piece of the three: count the studs and look at the colour.', 'Drag with a finger to turn the model; use two fingers to zoom.', 'In "Free build": choose a size and colour, then tap the plate or a brick to build on top of it or next to it.']
   },
-  afterWin: { label: b => b.mode === 'free' ? b.T('🧱 أكمل البناء', '🧱 Keep building') : b.T('➡️ النموذج التالي', '➡️ Next model'), go: b => { if (b.mode === 'free') return; mi = (mi + 1) % MODELS.length; step = 0; B.store('mi', mi); b.over = false; buildGuide(); save(); } },
+  afterWin: { label: b => b.mode === 'free' ? b.T('🧱 أكمل البناء', '🧱 Keep building') : b.T('➡️ النموذج التالي', '➡️ Next model'), go: b => { if (b.mode === 'free') return; mi = (mi + 1) % MODELS.length; B.store('mi', mi); openModel(); save(); } },
   init(b) { B = b; },
   newGame(b) { B = b; if (B.mode === 'guide' && ui === 'guide' && renderer && MODELS[mi]) { step = 0; B.over = false; buildGuide(); save(); return; } start(null); },
   restore(b, s) { B = b; if (!s) return false; start(s); return true; },

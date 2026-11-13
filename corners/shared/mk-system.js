@@ -155,6 +155,9 @@
       get:function(){ var P=jget('game_points',{})||{}; return Object.keys(P).filter(function(k){ return k.indexOf('mission:')===0; }).length; } },
     { id:'isl-badge', ic:'🎖️', n:{ar:'أوسمة الجزر',en:'Island badges'}, h:'corners/shared/islands.html', c:'#B8860B', t:13,
       get:function(){ var P=jget('game_points',{})||{}; return Object.keys(P).filter(function(k){ return k.indexOf('badge:')===0; }).length; } },
+    /* 🏗️ models built in «مكعّبات البناء 3D» (list kept by the Brain Club as brain_bricks_done) */
+    { id:'bricks', ic:'🏗️', n:{ar:'مبانيّ في مكعّبات البناء',en:'My brick buildings'}, h:'corners/brain/bricks.html', c:'#B5562A', t:12,
+      get:function(){ var d=jget('brain_bricks_done',[]); return Array.isArray(d)?d.length:0; } },
     { tr:'hadith-cards', h:'corners/little-district/pages/hadith.html', ic:'📇', n:{ar:'بطاقات الأربعين',en:'Forty Hadith Cards'}, c:'#2E8B57', t:42 },
     { tr:'hadith-stories', j:true, ic:'📖', n:{ar:'قصص السنة',en:'Sunnah Stories'}, c:'#C1663A', t:100 },
     { tr:'prophet-moments', j:true, ic:'🌙', n:{ar:'مواقف النبي ﷺ',en:'Moments of the Prophet ﷺ'}, c:'#2C5F8A', t:18 },
