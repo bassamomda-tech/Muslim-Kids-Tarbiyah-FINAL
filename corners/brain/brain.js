@@ -106,7 +106,7 @@
     root().innerHTML = head() + '<main class="bw hub"><h1 id="bTitle"></h1><p class="blead" id="bLead"></p><div class="btotal" id="bTotal"></div><div class="bgrid" id="bGrid"></div></main>';
     $('bBack').href = '../activities/play.html';
     function draw() {
-      $('bBack').innerHTML = '↩️ ' + T('كوكب الإبداع', 'Creativity Planet');
+      $('bBack').innerHTML = '↩️ ' + T('واحة المرح والتعلّم', 'Fun and Learning Oasis');
       $('bTitle').textContent = T('🧠 نادي الأذكياء', '🧠 Brain Club');
       $('bLead').textContent = T('ألعابٌ تُقوّي عقلك: فكِّر، وخطِّط، وجرِّب. العقلُ نعمةٌ من الله، فلنشكره بحُسن استعمالها.', 'Games that make your mind stronger: think, plan and try. The mind is a gift from Allah — we thank Him by using it well.');
       var g = todayMap(), sum = 0;

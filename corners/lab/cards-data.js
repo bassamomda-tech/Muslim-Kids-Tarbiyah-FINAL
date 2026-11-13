@@ -1,4 +1,4 @@
-/* cards-data.js — «بطاقات الاكتشاف» / Discovery Cards: the words a young child meets every day.
+/* cards-data.js — «بطاقات عالمي» / My World Cards: the words a young child meets every day.
    Each card: id, e (one emoji picture), ar/en (name), f (one short true fact), optional s (its sound), optional q.
    q:true only puts the small badge «ذُكِرَ في القرآن» on the card — no Quran or hadith text is ever quoted here.
    Rules for anyone adding cards: no person/face emoji (jobs use the TOOL), simple facts that are certainly true. */

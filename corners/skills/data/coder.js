@@ -36,7 +36,7 @@ window.SKILLS.coder = {
     '<h3>4) Bug hunter 🐞</h3><table border="1" cellpadding="8" style="border-collapse:collapse;width:100%"><tr><th>What happened?</th><th>Where was the bug?</th><th>How did I fix it?</th></tr><tr><td style="height:40px"></td><td></td><td></td></tr><tr><td style="height:40px"></td><td></td><td></td></tr></table>' +
     '<h3>5) The trustworthy coder’s promise</h3><ul><li>I never share my full name, address, school, photos or passwords with anyone online.</li><li>I tell Mum or Dad straight away if I see something that upsets me.</li><li>I never make anything that hurts or tricks people.</li><li>I keep to the screen time we agreed on.</li></ul><p>My signature: ......................</p>'
   ],
-  next: ['../activities/play.html', '🪐', 'كوكب الإبداع', 'Planet of Creativity', 'جرّب مهارة أخرى أو لعبة', 'Try another skill or a game'],
+  next: ['../activities/play.html', '🌴', 'واحة المرح والتعلّم', 'Fun and Learning Oasis', 'جرّب مهارة أخرى أو لعبة', 'Try another skill or a game'],
   stations: [
     /* ───────── 1 ───────── */
     {

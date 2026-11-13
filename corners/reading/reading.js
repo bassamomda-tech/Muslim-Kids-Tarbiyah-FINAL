@@ -63,7 +63,7 @@
   /* ════════ hub ════════ */
   function hub() {
     stopSpeak();
-    document.title = T('نادي القراءة | كوكب الإبداع', 'Reading Club | Planet of Creativity');
+    document.title = T('نادي القراءة | واحة المرح والتعلّم', 'Reading Club | Fun and Learning Oasis');
     var d = done(), stars = 0;
     ALL.forEach(function (a) { var e = window.MKJourney && MKJourney.earned ? MKJourney.earned('read', a.id) : null; if (e) stars += e.stars || 0; });
     var td = today();

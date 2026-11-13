@@ -1073,7 +1073,7 @@ const parentsCorner = {
 
 /* ONE home card for the three "doing" places (they keep their own pages) */
 const playCorner = {
-  id:'play',icon:'🪐',nameAr:'كوكب الإبداع',nameEn:'Planet of Creativity',
+  id:'play',icon:'🌴',nameAr:'واحة المرح والتعلّم',nameEn:'Fun and Learning Oasis',
   descAr:'نادي القراءة · صانع المهارات · مختبر الاكتشاف · نادي الأذكياء · المسابقات',
   descEn:"Reading Club · Skills Maker · Discovery Lab · Brain Club · Competitions",
   accent:'#7A3FB0',gradient:'linear-gradient(160deg,rgba(122,63,176,.24),transparent)',badge:'✨',progress:0,
@@ -1690,7 +1690,7 @@ function renderMap() {
   special.appendChild(makeSpecialCard(storiesCorner, 0));
   special.appendChild(makeSpecialCard(playCorner, 1));        // أنشطة أنوس + المسابقات + الورشة — one card
   map.appendChild(special);
-  // «ركن الأهل» — its own full-width card under «كوكب الإبداع» (also in the ☰ menu)
+  // «ركن الأهل» — its own full-width card under «واحة المرح والتعلّم» (also in the ☰ menu)
   const family = document.createElement('div');
   family.className = 'special-corners family-row';
   family.appendChild(makeSpecialCard(parentsCorner, 2));

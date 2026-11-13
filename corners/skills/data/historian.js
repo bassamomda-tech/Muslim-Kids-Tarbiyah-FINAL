@@ -59,7 +59,7 @@ window.SKILLS.historian = {
     '<tr><th>Question</th><th>Yes</th><th>No</th></tr><tr><td>Do I know who said or wrote this?</td><td></td><td></td></tr><tr><td>Were they there, or did they hear it from someone else?</td><td></td><td></td></tr>' +
     '<tr><td>Was it written at the time, or long after?</td><td></td><td></td></tr><tr><td>Is this person known for being truthful?</td><td></td><td></td></tr><tr><td>Does another source say the same thing?</td><td></td><td></td></tr><tr><td>Does it make sense, without exaggeration?</td><td></td><td></td></tr></table>'
   ],
-  next: ['../activities/play.html', '🪐', 'كوكب الإبداع', 'Planet of Creativity', 'جرّب مهارة أخرى أو لعبة', 'Try another skill or a game'],
+  next: ['../activities/play.html', '🌴', 'واحة المرح والتعلّم', 'Fun and Learning Oasis', 'جرّب مهارة أخرى أو لعبة', 'Try another skill or a game'],
   stations: [
     /* ── 1 ── */
     {

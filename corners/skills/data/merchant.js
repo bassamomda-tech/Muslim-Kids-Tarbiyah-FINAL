@@ -242,7 +242,7 @@ window.SKILLS.merchant = {
 <tr><td>❓ Why do we need one shared currency?</td><td>❓ Give an example of an honest offer.</td><td>❓ Where can you safely advertise your project?</td></tr>
 </table>`
   ],
-  next: ['../activities/play.html', '🪐', 'كوكب الإبداع', 'Planet of Creativity', 'جرّب مهارة أخرى أو لعبة', 'Try another skill or a game'],
+  next: ['../activities/play.html', '🌴', 'واحة المرح والتعلّم', 'Fun and Learning Oasis', 'جرّب مهارة أخرى أو لعبة', 'Try another skill or a game'],
   stations: [
 
     /* ───────── 1 · What is money? (goals 1, 3, 10) ───────── */

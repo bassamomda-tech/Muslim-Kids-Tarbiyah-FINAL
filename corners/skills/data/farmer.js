@@ -89,7 +89,7 @@ window.SKILLS.farmer = {
 </table>
 <p>☐ I planted my seed &nbsp; ☐ I kept my diary for 3 weeks &nbsp; ☐ I gave my plant to: ............</p>`
   ],
-  next: ['../activities/play.html', '🪐', 'كوكب الإبداع', 'Planet of Creativity', 'جرّب مهارة أخرى أو لعبة', 'Try another skill or a game'],
+  next: ['../activities/play.html', '🌴', 'واحة المرح والتعلّم', 'Fun and Learning Oasis', 'جرّب مهارة أخرى أو لعبة', 'Try another skill or a game'],
   stations: [
     /* ───────────── 1 ───────────── */
     {

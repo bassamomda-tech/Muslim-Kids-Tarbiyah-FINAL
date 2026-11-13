@@ -32,7 +32,7 @@ window.SKILLS.mutafakkir = {
     '<h3>3) Timeline: the news about the Romans</h3><div style="border:2px dashed #7D3C98;border-radius:12px;padding:1rem;text-align:center">The Romans defeated and the verses revealed (about 614–615 CE) → the Hijrah and the Romans\' victories begin (622 CE) → Badr and the news of the Romans\' victory (624 CE)<br>How many years passed from the revelation to the Romans\' victory? ........ Is that "a few" (3 to 9)? ........</div>' +
     '<h3>4) A page from my "Thinker\'s Notebook"</h3><table border="1" cellpadding="10" style="border-collapse:collapse;width:100%"><tr><td>✒️ The verse (in pen)</td><td style="width:60%"></td></tr><tr><td>📚 Its meaning in the tafsir</td><td></td></tr><tr><td>✏️ What I observe today (in pencil)</td><td></td></tr><tr><td>🎨 My drawing</td><td style="height:120px"></td></tr><tr><td>🤲 I say Subhan Allah, and I will...</td><td></td></tr></table><p>Remember: the Qur\'an is a book of guidance and a fixed truth. About what we observe we say "it fits with the verse", never "the verse is a scientific formula".</p>'
   ],
-  next: ['../activities/play.html', '🪐', 'كوكب الإبداع', 'Planet of Creativity', 'جرّب مهارة أخرى أو لعبة', 'Try another skill or a game'],
+  next: ['../activities/play.html', '🌴', 'واحة المرح والتعلّم', 'Fun and Learning Oasis', 'جرّب مهارة أخرى أو لعبة', 'Try another skill or a game'],
   stations: [
     /* ───────── 1 ───────── */
     {

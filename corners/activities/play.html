@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>كوكب الإبداع | Planet of Creativity</title>
-<meta name="description" content="كوكب الإبداع: صانع المهارات، وألعاب أنوس التفاعلية، وساحة المسابقات — في مكانٍ واحد.">
+<title>واحة المرح والتعلّم | Fun and Learning Oasis</title>
+<meta name="description" content="واحة المرح والتعلّم: صانع المهارات، وألعاب أنوس التفاعلية، وساحة المسابقات — في مكانٍ واحد.">
 <link rel="icon" href="../../favicon.ico">
 <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&family=Nunito:wght@400;700;800;900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../treasures/tr.css">
@@ -24,7 +24,7 @@
 <body>
 <div id="tr-root"></div>
 <script>
-/* كوكب الإبداع — ONE home-page door for the three "doing" places (they keep their own pages & progress). */
+/* واحة المرح والتعلّم — ONE home-page door for the three "doing" places (they keep their own pages & progress). */
 (function () {
   var R = '../';
   var DOORS = [
@@ -47,7 +47,7 @@
       t: { ar: 'مختبر الاكتشاف', en: 'Discovery Lab' }, tag: { ar: 'الإبداع في التعلّم — علومٌ تفاعلية', en: 'Creative learning — interactive science' },
       li: { ar: ['جسم الإنسان، النبات، المطر، الذرّات، الليل والنهار', 'جرِّب بيدك: حرِّك واسحب وشاهد ما يحدث'], en: ['The human body, plants, rain, atoms, day and night', 'Try it yourself: move, drag and watch what happens'] } },
     { href: R + 'lab/cards.html', ic: '🗂️', c: '#C9A961',
-      t: { ar: 'بطاقات الاكتشاف', en: 'Discovery Cards' }, tag: { ar: 'تعرّف على مخلوقات الله وعالمك', en: "Discover Allah's creation and your world" },
+      t: { ar: 'بطاقات عالمي', en: 'My World Cards' }, tag: { ar: 'تعرّف على مخلوقات الله وعالمك', en: "Discover Allah's creation and your world" },
       li: { ar: ['حيوانات، طيور، نباتات، مهن، مواصلات وأكثر', 'اقلب البطاقة والعب «ما هذا؟» و«أين الكلمة؟»'], en: ['Animals, birds, plants, jobs, transport and more', 'Flip the cards and play "What is it?" and "Where is the word?"'] } },
     { href: R + 'brain/index.html', ic: '♟️', c: '#6C4AB6',
       t: { ar: 'نادي الأذكياء', en: 'Brain Club' }, tag: { ar: 'ألعاب ذكاءٍ وتفكير', en: 'Thinking games' },
@@ -57,10 +57,10 @@
       li: { ar: ['بنك أسئلة في العقيدة والقرآن والسيرة والعبادة والأخلاق', 'مؤقّت ونجوم وشهادة تميّز'], en: ['Questions on Aqeeda, Quran, Seerah, worship & manners', 'Timer, stars and a certificate'] } },
   ];
   window.TR_PAGE = {
-    id: 'play', icon: '🪐', color: '#7A3FB0',
+    id: 'play', icon: '🌴', color: '#7A3FB0',
     back: { href: '../../index.html', label: { ar: 'المدينة', en: 'City' } },
-    title: { ar: 'كوكب الإبداع', en: 'Planet of Creativity' },
-    intro: { ar: 'أهلًا بك في كوكب الإبداع 🪐 تعلّم مهارةً واصنع بيديك، والعب، وتسابق — أبوابٌ كثيرة في مكانٍ واحد. اختر واحدًا اليوم 🌟', en: 'Welcome to the Planet of Creativity 🪐 Learn a skill and make things, play, and compete — three doors in one place. Pick one today 🌟' },
+    title: { ar: 'واحة المرح والتعلّم', en: 'Fun and Learning Oasis' },
+    intro: { ar: 'أهلًا بك في واحة المرح والتعلّم 🌴 تعلّم مهارةً واصنع بيديك، والعب، وتسابق — أبوابٌ كثيرة في مكانٍ واحد. اختر واحدًا اليوم 🌟', en: 'Welcome to the Fun and Learning Oasis 🌴 Learn a skill and make things, play, and compete — three doors in one place. Pick one today 🌟' },
     guide: { icon: '🧒', name: { ar: 'أنوس', en: 'Anos' }, say: { ar: 'أهلًا! أنا أنوس 👋 تعلّمتَ شيئًا جديدًا في الأركان؟ تعال نلعب به، أو نتسابق، أو نصنع شيئًا جميلًا!', en: "Hi! I'm Anos 👋 Learned something new in the corners? Let's play with it, race, or make something beautiful!" } },
     onRender: function (TR) {
       document.querySelector('[data-panel="kids"]').innerHTML = '<div class="pl-grid">' + DOORS.map(function (d) {

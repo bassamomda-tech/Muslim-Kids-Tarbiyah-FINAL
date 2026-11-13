@@ -51,7 +51,7 @@ window.SKILLS.engineer = {
     '<h2>🌉 The Bridge Challenge</h2><p>Two piles of books 20 cm apart and one sheet of paper. How many coins can your bridge hold?</p>' +
     '<table border="1" cellpadding="6" style="width:100%;border-collapse:collapse"><tr><th>Bridge shape</th><th>My guess (coins)</th><th>Result</th><th>Note</th></tr><tr><td>Flat sheet</td><td></td><td></td><td></td></tr><tr><td>Folded like a fan</td><td></td><td></td><td></td></tr><tr><td>Rolled into tubes</td><td></td><td></td><td></td></tr><tr><td>My own design</td><td></td><td></td><td></td></tr></table>'
   ],
-  next: ['../activities/play.html', '🪐', 'كوكب الإبداع', 'Planet of Creativity', 'جرّب مهارة أخرى أو لعبة', 'Try another skill or a game'],
+  next: ['../activities/play.html', '🌴', 'واحة المرح والتعلّم', 'Fun and Learning Oasis', 'جرّب مهارة أخرى أو لعبة', 'Try another skill or a game'],
   stations: [
     /* ───────── 1. Noticing a problem ───────── */
     {

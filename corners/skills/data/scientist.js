@@ -61,7 +61,7 @@ window.SKILLS.scientist = {
     '<tr><td>9</td><td style="height:24px"></td><td></td><td></td><td></td></tr><tr><td>8</td><td style="height:24px"></td><td></td><td></td><td></td></tr><tr><td>7</td><td style="height:24px"></td><td></td><td></td><td></td></tr><tr><td>6</td><td style="height:24px"></td><td></td><td></td><td></td></tr><tr><td>5</td><td style="height:24px"></td><td></td><td></td><td></td></tr><tr><td>4</td><td style="height:24px"></td><td></td><td></td><td></td></tr><tr><td>3</td><td style="height:24px"></td><td></td><td></td><td></td></tr><tr><td>2</td><td style="height:24px"></td><td></td><td></td><td></td></tr><tr><td>1</td><td style="height:24px"></td><td></td><td></td><td></td></tr>' +
     '<tr><td>0</td><td>.......</td><td>.......</td><td>.......</td><td>.......</td></tr></table>'
   ],
-  next: ['../activities/play.html', '🪐', 'كوكب الإبداع', 'Planet of Creativity', 'جرّب مهارة أخرى أو لعبة', 'Try another skill or a game'],
+  next: ['../activities/play.html', '🌴', 'واحة المرح والتعلّم', 'Fun and Learning Oasis', 'جرّب مهارة أخرى أو لعبة', 'Try another skill or a game'],
   stations: [
     /* ───────── 1 · observe ───────── */
     {

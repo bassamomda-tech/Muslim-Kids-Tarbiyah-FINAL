@@ -1,4 +1,4 @@
-/* cards.js — «بطاقات الاكتشاف» / Discovery Cards (data: cards-data.js → window.LAB_CARDS).
+/* cards.js — «بطاقات عالمي» / My World Cards (data: cards-data.js → window.LAB_CARDS).
    Hub of categories → a category has three tabs: browse the cards · «ما هذا؟» · «أين الكلمة؟».
    Seen cards: localStorage `lab_cards_seen` = {catId:[cardIds]}.
    Stars: finishing a game → MKJourney.earn('cards', '<catId>:what|where', 2, {daily:true}).
@@ -38,7 +38,7 @@
     document.querySelectorAll('.lng-ar').forEach(function (e) { e.style.display = lang === 'ar' ? '' : 'none'; });
     document.querySelectorAll('.lng-en').forEach(function (e) { e.style.display = lang === 'en' ? '' : 'none'; });
     document.querySelectorAll('.lang button').forEach(function (b) { b.classList.toggle('active', b.dataset.lang === lang); });
-    document.title = lang === 'en' ? 'Discovery Cards | Discovery Lab' : 'بطاقات الاكتشاف | مختبر الاكتشاف';
+    document.title = lang === 'en' ? 'My World Cards | Discovery Lab' : 'بطاقات عالمي | مختبر الاكتشاف';
   }
   function setLang(l) {
     lang = l === 'en' ? 'en' : 'ar';
@@ -59,7 +59,7 @@
         '<span class="pg"><i style="width:' + Math.round(s / n * 100) + '%"></i></span>' +
         '<small>' + N(s) + ' / ' + N(n) + (s >= n ? ' ✅' : '') + '</small></button>';
     });
-    return '<div class="hub-hero"><h1>🗂️ ' + T({ ar: 'بِطاقاتُ الاكْتِشاف', en: 'Discovery Cards' }) + '</h1>' +
+    return '<div class="hub-hero"><h1>🗂️ ' + T({ ar: 'بِطاقاتُ عالَمي', en: 'My World Cards' }) + '</h1>' +
       '<p>' + T({ ar: 'نَتَعَرَّفُ عَلى الأَشْياءِ مِنْ حَوْلِنا: اسْمُها بِالعَرَبِيَّةِ وَالإِنْجِليزِيَّة، وَمَعْلومَةٌ عَنْها، ثُمَّ نَلْعَب.', en: 'Let\'s get to know the things around us: their names in Arabic and English, a fact about each, and then a game.' }) + '</p>' +
       '<div class="hub-total">✨ ' + T({ ar: 'بِطاقاتٌ شاهَدْناها:', en: 'Cards seen:' }) + ' ' + N(seenN) + ' / ' + N(total) + '</div></div>' +
       '<div class="dc-cats">' + grid + '</div>';

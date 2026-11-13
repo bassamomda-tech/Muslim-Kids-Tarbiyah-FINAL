@@ -25,7 +25,7 @@
     social: ['🏘️', '#D4A017', 'حيّنا الصغير', 'Our Little District'], heart: ['💚', '#6C3483', 'ركن القلب السليم', 'Pure Heart Corner'],
     history: ['🏰', '#E67E22', 'حصن الأبطال', "Heroes' Fortress"], sport: ['🏊', '#27AE60', 'النادي الرياضي', 'Sports Club'],
     academy: ['🔭', '#2980B9', 'أكاديمية المبدعين', "Innovators' Academy"], quds: ['🕌', '#2E8B57', 'ركن القدس والأمة', 'Al-Quds & Ummah'],
-    stories: ['📚', '#C1663A', 'مكتبة القصص', 'Stories Library'], planet: ['🪐', '#7A3FB0', 'كوكب الإبداع', 'Planet of Creativity'],
+    stories: ['📚', '#C1663A', 'مكتبة القصص', 'Stories Library'], planet: ['🌴', '#7A3FB0', 'واحة المرح والتعلّم', 'Fun and Learning Oasis'],
     skills: ['🛠️', '#7A3FB0', 'صانع المهارات', 'Skills Maker'], competitions: ['🏆', '#7A3FB0', 'ساحة المسابقات', 'Competitions Arena'],
     anos: ['🧩', '#C9A961', 'أنشطة أنوس', "Anos' Activities"], news: ['📰', '#D4A017', 'نشرة الأسبوع', 'Weekly Bulletin'],
     parents: ['🏡', '#D4A017', 'ركن الأهل', "Parents' Corner"], family: ['🏡', '#D4A017', 'تربية الطفل المسلم', "Muslim Kids' Tarbiyah"]

@@ -32,7 +32,7 @@ window.SKILLS.faqih = {
     '<h3>3) My great principles (I write them in my own handwriting and draw next to them)</h3><ul><li>Matters are judged by their purposes: ......................</li><li>Certainty is not removed by doubt: ......................</li><li>Hardship brings ease: ......................</li><li>No harm and no harming back: ......................</li></ul>' +
     '<h3>4) My question notebook</h3><table border="1" cellpadding="10" style="border-collapse:collapse;width:100%"><tr><th>My question</th><th>Whom did I ask?</th><th>The answer</th><th>Source (verse/hadith/scholar)</th></tr><tr><td style="height:40px"></td><td></td><td></td><td></td></tr><tr><td style="height:40px"></td><td></td><td></td><td></td></tr><tr><td style="height:40px"></td><td></td><td></td><td></td></tr></table><p>Remember: if I don\'t know, I say "I don\'t know; I will ask", and I never speak about Allah\'s deen without knowledge.</p>'
   ],
-  next: ['../activities/play.html', '🪐', 'كوكب الإبداع', 'Planet of Creativity', 'جرّب مهارة أخرى أو لعبة', 'Try another skill or a game'],
+  next: ['../activities/play.html', '🌴', 'واحة المرح والتعلّم', 'Fun and Learning Oasis', 'جرّب مهارة أخرى أو لعبة', 'Try another skill or a game'],
   stations: [
     /* ───────── 1 ───────── */
     {

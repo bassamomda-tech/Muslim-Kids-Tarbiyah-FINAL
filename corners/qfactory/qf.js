@@ -307,7 +307,7 @@
   function home() {
     RUN++;
     if (!bankReady && pending().some(function (t) { return t.set && t.set.indexOf('bank-') === 0; })) loadBank(function () { if ($('qfParent')) home(); });
-    document.title = T('مصنع الأسئلة | كوكب الإبداع', 'Question Factory | Planet of Creativity');
+    document.title = T('مصنع الأسئلة | واحة المرح والتعلّم', 'Question Factory | Fun and Learning Oasis');
     var TABS = [['read', '📚', 'نادي القراءة', 'Reading Club'], ['bank', '🏆', 'بنك المسابقات', 'Quiz bank'], ['math', '🧮', 'حساب سريع', 'Quick maths'], ['mine', '✏️', 'مجموعاتي', 'My sets']];
     var h = '<section class="qf-hero"><div style="font-size:2.4rem">🏭</div><h1>' + T('مصنع الأسئلة', 'The Question Factory') + '</h1><p>' + T('اختر مجموعةَ أسئلة، ثم العب بها بالطريقة التي تحبّ — أو اصنع مجموعتك بنفسك وشاركها مع إخوتك وأصدقائك.', 'Pick a question set and play it the way you like — or make your own set and share it with siblings and friends.') + '</p></section>';
     h += taskBanner() + '<div class="qf-row" style="justify-content:center;margin:.3rem 0"><button type="button" class="qf-btn" id="qfParent">🔐 ' + T('للوالدين والمعلّمين: الواجبات والنتائج', 'Parents & teachers: tasks and results') + '</button></div>';

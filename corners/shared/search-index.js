@@ -1418,7 +1418,7 @@ window.MK_SEARCH = [
 {t:{ar:"مكعّبات البناء 3D",en:"Brick Builder 3D"},d:{ar:"ابنِ الكعبة والمساجد والحيوانات قطعةً قطعة",en:"Build the Kaaba, mosques and animals brick by brick"},u:"corners/brain/bricks.html",k:"page",ic:"🏗️"},
 {t:{ar:"خُطَط القادة",en:"The Commanders' Plans"},d:{ar:"بدر، الخندق، حطّين، عين جالوت، فتح القسطنطينية على خرائط",en:"Badr, the Trench, Hattin, Ayn Jalut, Constantinople on maps"},u:"corners/heroes-fortress/battles.html",k:"page",ic:"🗺️"},
 {t:{ar:"المختبر ثلاثيّ الأبعاد",en:"The 3D Lab"},d:{ar:"جسم الإنسان، الكرة الأرضيّة، الساعة، الميزان…",en:"The human body, the globe, the clock, the scale…"},u:"corners/lab/3d.html",k:"page",ic:"🧊"},
-{t:{ar:"بطاقات الاكتشاف",en:"Discovery Cards"},d:{ar:"حيوانات، طيور، نباتات، مهن، مواصلات",en:"Animals, birds, plants, jobs, transport"},u:"corners/lab/cards.html",k:"page",ic:"🗂️"},
+{t:{ar:"بطاقات عالمي",en:"My World Cards"},d:{ar:"حيوانات، طيور، نباتات، مهن، مواصلات",en:"Animals, birds, plants, jobs, transport"},u:"corners/lab/cards.html",k:"page",ic:"🗂️"},
 {t:{ar:"نادي القراءة",en:"Reading Club"},d:{ar:"مقالات في الشعر والتاريخ والعلوم والفضاء واللغة والقيادة والمال والصحّة",en:"Articles on poetry, history, science, space, Arabic, leadership, money and health"},u:"corners/reading/index.html",k:"page",ic:"📚"},
 {t:{ar:"مصنع الأسئلة",en:"Question Factory"},d:{ar:"مجموعة أسئلة واحدة وستّ ألعاب، واصنع أسئلتك بنفسك",en:"One question set, six games — make your own questions"},u:"corners/qfactory/index.html",k:"page",ic:"🏭"},
 {t:{ar:"سُلَّم القراءة",en:"Reading Ladder"},d:{ar:"الحروف والحركات والمدود والكلمات والجمل خطوةً خطوة",en:"Letters, vowels, words and sentences step by step"},u:"corners/reading/ladder.html",k:"page",ic:"🪜"},
