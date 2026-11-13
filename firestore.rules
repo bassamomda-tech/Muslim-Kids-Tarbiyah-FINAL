@@ -60,6 +60,32 @@ service cloud.firestore {
       allow read, write: if isOwner(uid);
     }
 
+    // ── Weekly contest («مسابقة الأسبوع») ──
+    // One official score per child per week: create-only (no update), the doc id must start with the user's uid,
+    // and the numbers must be in range (10 questions, max 200 points each).
+    match /league/{week}/scores/{id} {
+      allow read: if signedIn();
+      allow create: if signedIn()
+        && id.matches(request.auth.uid + '_.+')
+        && request.resource.data.uid == request.auth.uid
+        && request.resource.data.score is int && request.resource.data.score >= 0 && request.resource.data.score <= 2000
+        && request.resource.data.right is int && request.resource.data.right >= 0 && request.resource.data.right <= 10
+        && request.resource.data.div in ['small', 'big'];
+      allow update, delete: if isAdmin();
+    }
+    // Contest nicknames — typed by a parent, shown only after the admin approves them
+    match /nicknames/{id} {
+      allow get: if signedIn() && (resource == null || resource.data.status == 'approved' || resource.data.uid == request.auth.uid || isAdmin());
+      allow list: if isAdmin();
+      allow create, update: if isAdmin() || (signedIn()
+        && id.matches(request.auth.uid + '_.+')
+        && request.resource.data.uid == request.auth.uid
+        && request.resource.data.status == 'pending'
+        && request.resource.data.name is string
+        && request.resource.data.name.size() >= 3 && request.resource.data.name.size() <= 20);
+      allow delete: if isAdmin() || (signedIn() && resource.data.uid == request.auth.uid);
+    }
+
     // Community posts — all signed-in users read; author creates; likes update allowed
     match /posts/{id} {
       allow read:   if signedIn();

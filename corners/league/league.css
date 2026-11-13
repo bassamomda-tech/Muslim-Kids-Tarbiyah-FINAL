@@ -1,0 +1,17 @@
+/* «مسابقة الأسبوع» — on top of the Question Factory styles */
+.lg-week{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:.6rem;background:#fff;border-radius:18px;padding:.7rem .9rem;box-shadow:var(--shadow)}
+.lg-week small{display:block;color:var(--muted);font-weight:700}
+.lg-me{background:linear-gradient(135deg,#FFF6DD,#FFFBEF);border:2px solid #F0CF7A;border-radius:20px;padding:.8rem 1rem;margin-top:.7rem}
+.lg-who{font-weight:900;font-size:1.15rem}
+.lg-done{font-weight:800;color:#2E7D5B}
+.lg-start{font-size:1.15rem;min-height:58px;padding:0 1.6rem}
+.lg-board{margin-top:.6rem}
+.lg-list{list-style:none;margin:0;padding:0;display:grid;gap:.3rem}
+.lg-list li{display:grid;grid-template-columns:44px 1fr auto;align-items:center;gap:.5rem;background:#fff;border-radius:14px;padding:.45rem .7rem;font-weight:800;box-shadow:0 2px 0 #E1E9F5}
+.lg-list li.top{background:#FFFDF4}
+.lg-list li.me{outline:3px solid var(--blue);background:#EAF1FD}
+.lg-list .rk{font-size:1.25rem;text-align:center}
+.lg-list .sc{color:var(--blue);font-weight:900}
+.lg-list small{color:var(--muted)}
+.lg-cert-cta{background:#EAF7EE;border:2px solid #BFE3CB;border-radius:16px;padding:.7rem .9rem;margin-bottom:.6rem;font-weight:900;display:flex;flex-wrap:wrap;gap:.5rem;align-items:center;justify-content:space-between}
+.lg-score{background:#FFF3D6;border-radius:999px;padding:.1rem .7rem}

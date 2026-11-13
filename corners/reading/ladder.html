@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>سُلَّم القراءة | Reading Ladder — نادي القراءة</title>
+<meta name="description" content="سُلَّم القراءة: نتعلّم القراءة العربيّة خطوةً خطوة — الحروف، الحركات، المدود، السكون والتنوين، كلمات من ثلاثة أحرف، جمل قصيرة، و«ارمِ واقرأ». · The Reading Ladder: learn to read Arabic step by step.">
+<link rel="icon" href="../../favicon.ico">
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@500;700;800;900&family=Amiri:wght@400;700&family=Nunito:wght@600;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="reading.css?v=20261113">
+<style id="__antiflash">html{background:#FBF6EA}</style>
+<style>
+.ld-steps{display:grid;gap:.6rem;margin-top:.8rem}
+.ld-step{display:flex;align-items:center;gap:.8rem;background:#fff;border:2px solid var(--line);border-radius:20px;padding:.8rem 1rem;text-decoration:none;color:var(--ink);box-shadow:var(--shadow);cursor:pointer;text-align:start;font:inherit;width:100%}
+.ld-step .n{flex:0 0 46px;height:46px;border-radius:50%;display:grid;place-items:center;font-weight:900;font-size:1.2rem;background:#EEF2FA;color:var(--navy)}
+.ld-step.done .n{background:var(--green);color:#fff}
+.ld-step.lock{opacity:.5;cursor:default}
+.ld-step b{display:block;font-size:1.08rem}
+.ld-step small{color:var(--muted);font-weight:700}
+.ld-big{font-family:'Amiri',serif;font-size:clamp(3.4rem,16vw,5.4rem);line-height:1.3;text-align:center;margin:.2rem 0}
+.ld-em{font-size:clamp(3.4rem,15vw,5rem);text-align:center;line-height:1.2}
+.ld-q{font-weight:900;font-size:1.15rem;text-align:center;margin:.3rem 0 .7rem}
+.ld-opts{display:grid;grid-template-columns:repeat(3,1fr);gap:.5rem}
+.ld-opt{min-height:78px;border-radius:18px;border:2px solid var(--line);background:#fff;font-family:'Amiri','Tajawal',serif;font-size:1.9rem;font-weight:700;cursor:pointer;color:var(--ink)}
+.ld-opt.em{font-size:2.4rem;font-family:inherit}
+.ld-opt.txt{font-size:1.15rem;font-family:'Tajawal',sans-serif;font-weight:800}
+.ld-opt.yes{background:#DFF3E6;border-color:var(--green)}
+.ld-opt.no{background:#FBE5E0;border-color:var(--red)}
+.ld-die{width:150px;height:150px;margin:.6rem auto;border-radius:28px;background:#fff;border:3px solid var(--gold);display:grid;place-items:center;font-family:'Amiri',serif;font-size:2.4rem;box-shadow:var(--shadow)}
+.ld-die.roll{animation:ldRoll .6s}
+@keyframes ldRoll{30%{transform:rotate(25deg) scale(.9)}70%{transform:rotate(-20deg) scale(1.05)}}
+html.calm .ld-die.roll{animation:none}
+</style>
+</head>
+<body>
+  <div class="header rd-header">
+    <a href="index.html" class="back-btn" id="backBtn">↩️ <span class="lng-ar">نادي القراءة</span><span class="lng-en" style="display:none">Reading Club</span></a>
+    <div class="lang"><button data-lang="en" type="button">EN</button><button data-lang="ar" type="button" class="active">عربي</button></div>
+  </div>
+  <main id="ld" class="rd-wrap" aria-live="polite"></main>
+<script>window.MK_TOPBAR = { title: { ar: 'سُلَّم القراءة', en: 'Reading Ladder' }, up: { href: 'index.html', ar: 'نادي القراءة', en: 'Reading Club' } };</script>
+<script src="../shared/mk-system.js"></script>
+<script src="../shared/mk-bag.js"></script>
+<script src="../shared/mk-journey.js"></script>
+<script src="ladder.js?v=20261113"></script>
+<script src="../shared/mk-citynav.js"></script>
+<script src="../shared/mk-topbar.js"></script>
+</body>
+</html>
