@@ -73,6 +73,7 @@
 <script>window.MA_HERO = 'يا حافظ الأناشيد';</script>
 <script src="money-act.js"></script>
 <script src="series-podcast.js"></script>
+<script src="series-videos.js"></script>
 <script>
 /* «أناشيد الطفل المسلم» — ٣٠ حلقة. المحتوى من notes/nasheed-series عبر: SERIES_DIR=nasheed-series python3 tools/money/build.py */
 (function () {
@@ -94,6 +95,7 @@
       '<p>' + ar(isl.text || '') + '</p>';
     var c = e.case, h = e.home;
     var sections = [
+      window.seriesVideoSection ? seriesVideoSection('nasheed-series', e.n) : { html: { ar: '' } },
       { icon: '🎧', h: { ar: 'استمع إلى الحلقة (بودكاست)', en: 'Listen (podcast)' }, html: { ar: (e.podcast && e.podcast.lines && e.podcast.lines.length) ? '<div class="ms-pod" data-ep="' + e.n + '"></div>' : '' } },
       { icon: '📜', h: { ar: 'أبيات الحلقة', en: 'Verses' }, html: { ar: (e.verses || []).map(function (v) {
           return '<div class="ms-vs"><span>' + ar(v.n) + '</span>' + v.v.map(esc).join(' <i>⁂</i> ') + '</div>'; }).join('') } },
@@ -169,6 +171,5 @@
 <script defer src="../shared/mk-system.js"></script>
 <script defer src="../shared/mk-journeys.js"></script>
 <script defer src="../shared/mk-bag.js"></script>
-<script src="../shared/mk-topbar.js"></script>
 </body>
 </html>

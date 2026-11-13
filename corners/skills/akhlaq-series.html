@@ -71,6 +71,7 @@
 <script>window.MA_HERO = 'يا صاحب الخلق';</script>
 <script src="money-act.js"></script>
 <script src="series-podcast.js"></script>
+<script src="series-videos.js"></script>
 <script>
 /* «أخلاق الطفل المسلم» — ٣٠ حلقة. المحتوى مولَّد من notes/akhlaq-series/lessons وكتاب ساحة المسابقات عبر: SERIES_DIR=akhlaq-series python3 tools/money/build.py */
 (function () {
@@ -92,6 +93,7 @@
       '<p>' + ar(isl.text || '') + '</p>';
     var c = e.case, h = e.home;
     var sections = [
+      window.seriesVideoSection ? seriesVideoSection('akhlaq-series', e.n) : { html: { ar: '' } },
       { icon: '🎧', h: { ar: 'استمع إلى الحلقة (بودكاست)', en: 'Listen (podcast)' }, html: { ar: (e.podcast && e.podcast.lines && e.podcast.lines.length) ? '<div class="ms-pod" data-ep="' + e.n + '"></div>' : '' } },
       { icon: '📚', h: { ar: 'أسئلة الكتاب: اسأل نفسك ثم اكشف الجواب', en: 'Book questions' }, html: { ar: (e.qa || []).map(function (q) {
           return '<details class="ms-qa"><summary><b>' + ar(q.id) + '.</b> ' + esc(q.q) + '</summary><div>' + esc(q.a).replace(/\n/g, '<br>') + '</div></details>'; }).join('') } },
@@ -165,6 +167,5 @@
 <script defer src="../shared/mk-system.js"></script>
 <script defer src="../shared/mk-journeys.js"></script>
 <script defer src="../shared/mk-bag.js"></script>
-<script src="../shared/mk-topbar.js"></script>
 </body>
 </html>

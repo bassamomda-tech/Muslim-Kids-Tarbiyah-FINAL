@@ -67,6 +67,7 @@
 <script>window.MA_HERO = 'يا رائد الأعمال';</script>
 <script src="money-act.js"></script>
 <script src="series-podcast.js"></script>
+<script src="series-videos.js"></script>
 <script>
 /* مسلسل «رائد الأعمال الصغير» — ٣٠ حلقة. المحتوى مولَّد من notes/money-curriculum/lessons عبر tools/money/build.py */
 (function () {
@@ -88,6 +89,7 @@
       '<p>' + ar(isl.text || '') + '</p>';
     var c = e.case, h = e.home;
     var sections = [
+      window.seriesVideoSection ? seriesVideoSection('money-series', e.n) : { html: { ar: '' } },
       { icon: '🎧', h: { ar: 'استمع إلى الحلقة (بودكاست)', en: 'Listen (podcast)' }, html: { ar: (e.podcast && e.podcast.lines && e.podcast.lines.length) ? '<div class="ms-pod" data-ep="' + e.n + '"></div>' : '' } },
       { icon: '🎮', h: { ar: 'النشاط التفاعلي: ' + e.online.title, en: 'Interactive activity' }, html: { ar: '<p>' + esc(e.online.intro) + '</p><div class="ms-act" data-ep="' + e.n + '"></div>' } },
       { icon: '🌙', h: { ar: 'من نور الوحي', en: 'From the Revelation' }, html: { ar: islHtml } },
@@ -158,6 +160,5 @@
 <script defer src="../shared/mk-system.js"></script>
 <script defer src="../shared/mk-journeys.js"></script>
 <script defer src="../shared/mk-bag.js"></script>
-<script src="../shared/mk-topbar.js"></script>
 </body>
 </html>
