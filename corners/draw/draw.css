@@ -1,0 +1,52 @@
+/* «مرسمي» — My Art Studio: warm paper, big touch targets, phone-first */
+:root{--bg:#FFF7EC;--card:#fff;--ink:#2B2118;--muted:#7A6A58;--line:#F0DFC4;--acc:#E0703A;--green:#2E9E5B;--blue:#2F6FD6;--shadow:0 6px 18px rgba(120,70,20,.12)}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:'Tajawal','Nunito',sans-serif;line-height:1.6;overflow-x:hidden}
+button{font-family:inherit}
+:focus-visible{outline:3px solid var(--acc);outline-offset:2px}
+.dw-header{display:flex;justify-content:space-between;align-items:center;padding:.6rem 1rem}
+.back-btn{color:var(--acc);font-weight:800;text-decoration:none}
+.lang button{min-height:40px;border:1.5px solid var(--line);background:#fff;border-radius:999px;padding:0 .8rem;font-weight:800;cursor:pointer}
+.lang button.active{background:var(--acc);color:#fff;border-color:transparent}
+.dw-wrap{max-width:900px;margin:0 auto;padding:0 1rem 4rem}
+.dw-hero{text-align:center;padding:.6rem 0 .2rem}
+.dw-hero h1{margin:.1rem 0;font-size:clamp(1.6rem,5vw,2.1rem)}
+.dw-hero p{margin:.2rem auto;max-width:600px;color:var(--muted);font-weight:700}
+.dw-tabs{display:flex;gap:.4rem;justify-content:center;flex-wrap:wrap;margin:.6rem 0}
+.dw-tab{min-height:48px;padding:0 1.1rem;border-radius:999px;border:2px solid var(--line);background:#fff;font-weight:900;font-size:1rem;cursor:pointer;color:var(--ink)}
+.dw-tab[aria-pressed="true"]{background:var(--acc);color:#fff;border-color:transparent}
+.dw-row{display:flex;flex-wrap:wrap;gap:.4rem;align-items:center;justify-content:center;margin:.5rem 0}
+.dw-btn{min-height:46px;padding:0 1rem;border-radius:999px;border:1.5px solid var(--line);background:#fff;color:var(--ink);font-weight:900;cursor:pointer;display:inline-flex;align-items:center;gap:.3rem;font-size:.95rem;text-decoration:none}
+.dw-btn.main{background:var(--green);color:#fff;border-color:transparent}
+.dw-btn[aria-pressed="true"]{background:var(--ink);color:#fff;border-color:transparent}
+.dw-btn[disabled]{opacity:.45;cursor:default}
+.dw-sheet{background:var(--card);border-radius:22px;box-shadow:var(--shadow);padding:.8rem;border:2px solid var(--line)}
+.dw-pic{width:100%;border-radius:14px;overflow:hidden;background:#fff;touch-action:manipulation}
+.dw-pic svg{width:100%;height:auto;display:block}
+.dw-pic svg [data-fill]{cursor:pointer;transition:fill .25s}
+.dw-tx{font-family:'Amiri',serif;font-size:clamp(1.25rem,4.4vw,1.7rem);text-align:center;line-height:1.9;margin:.5rem 0 .1rem}
+.dw-src{text-align:center;color:var(--muted);font-weight:700;font-size:.9rem}
+.dw-pal{display:flex;flex-wrap:wrap;gap:.35rem;justify-content:center;margin:.6rem 0}
+.dw-pal button{width:40px;height:40px;border-radius:50%;border:3px solid #fff;box-shadow:0 0 0 1.5px var(--line);cursor:pointer;background:var(--c)}
+.dw-pal button[aria-pressed="true"]{box-shadow:0 0 0 3px var(--ink);transform:scale(1.08)}
+.dw-pal .rub{background:#fff;font-size:1.1rem}
+.dw-canvas-wrap{position:relative;width:100%;aspect-ratio:4/3;max-height:70vh;border-radius:16px;overflow:hidden;background:#fff;box-shadow:inset 0 0 0 2px var(--line)}
+.dw-canvas-wrap canvas{width:100%;height:100%;display:block;touch-action:none;cursor:crosshair}
+.dw-sizes{display:flex;gap:.35rem}
+.dw-sizes button{width:46px;height:46px;border-radius:12px;border:1.5px solid var(--line);background:#fff;cursor:pointer;display:grid;place-items:center}
+.dw-sizes button i{display:block;border-radius:50%;background:var(--ink)}
+.dw-sizes button[aria-pressed="true"]{border-color:var(--acc);box-shadow:0 0 0 2px var(--acc)}
+.dw-gal{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:.6rem;margin-top:.6rem}
+.dw-gal figure{margin:0;background:#fff;border-radius:16px;box-shadow:var(--shadow);overflow:hidden;cursor:pointer;border:2px solid var(--line)}
+.dw-gal img{width:100%;aspect-ratio:4/3;object-fit:contain;background:#fff;display:block}
+.dw-gal figcaption{font-size:.8rem;font-weight:800;color:var(--muted);padding:.3rem .5rem;text-align:center}
+.dw-empty{text-align:center;color:var(--muted);padding:2rem 1rem;font-weight:700}
+.dw-msg{text-align:center;font-weight:900;min-height:1.6em;color:var(--green)}
+.dw-view{position:fixed;inset:0;z-index:4000;background:rgba(30,20,10,.75);display:grid;place-items:center;padding:16px}
+.dw-view .c{background:#fff;border-radius:20px;padding:.8rem;max-width:720px;width:100%;max-height:92vh;overflow:auto}
+.dw-view img{width:100%;border-radius:12px;display:block}
+.dw-pick{display:flex;align-items:center;gap:.4rem;justify-content:center;flex-wrap:wrap}
+.dw-pick select{min-height:44px;border-radius:12px;border:1.5px solid var(--line);padding:0 .6rem;font:800 .95rem Tajawal,sans-serif;max-width:60vw}
+@media print{.dw-header,#mktb,.dw-tabs,.dw-row,.dw-pal,.dw-pick,.dw-hero p{display:none!important}.dw-sheet{box-shadow:none;border:none}}
+html.calm .dw-pic svg [data-fill]{transition:none}

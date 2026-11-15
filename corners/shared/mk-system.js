@@ -156,6 +156,9 @@
     { id:'isl-badge', ic:'🎖️', n:{ar:'أوسمة الجزر',en:'Island badges'}, h:'corners/shared/islands.html', c:'#B8860B', t:13,
       get:function(){ var P=jget('game_points',{})||{}; return Object.keys(P).filter(function(k){ return k.indexOf('badge:')===0; }).length; } },
     /* 🏗️ models built in «مكعّبات البناء 3D» (list kept by the Brain Club as brain_bricks_done) */
+    /* 🎨 drawings saved in «مرسمي» (the pictures stay in IndexedDB on the device; only the count is kept here) */
+    { id:'drawings', ic:'🎨', n:{ar:'رسوماتي في المرسم',en:'My drawings'}, h:'corners/draw/index.html', c:'#E0703A', t:0,
+      get:function(){ return parseInt(LS.getItem('draw_count'),10)||0; } },
     { id:'bricks', ic:'🏗️', n:{ar:'مبانيّ في مكعّبات البناء',en:'My brick buildings'}, h:'corners/brain/bricks.html', c:'#B5562A', t:12,
       get:function(){ var d=jget('brain_bricks_done',[]); return Array.isArray(d)?d.length:0; } },
     { tr:'hadith-cards', h:'corners/little-district/pages/hadith.html', ic:'📇', n:{ar:'بطاقات الأربعين',en:'Forty Hadith Cards'}, c:'#2E8B57', t:42 },

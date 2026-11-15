@@ -1422,5 +1422,6 @@ window.MK_SEARCH = [
 {t:{ar:"نادي القراءة",en:"Reading Club"},d:{ar:"مقالات في الشعر والتاريخ والعلوم والفضاء واللغة والقيادة والمال والصحّة",en:"Articles on poetry, history, science, space, Arabic, leadership, money and health"},u:"corners/reading/index.html",k:"page",ic:"📚"},
 {t:{ar:"مصنع الأسئلة",en:"Question Factory"},d:{ar:"مجموعة أسئلة واحدة وستّ ألعاب، واصنع أسئلتك بنفسك",en:"One question set, six games — make your own questions"},u:"corners/qfactory/index.html",k:"page",ic:"🏭"},
 {t:{ar:"سُلَّم القراءة",en:"Reading Ladder"},d:{ar:"الحروف والحركات والمدود والكلمات والجمل خطوةً خطوة",en:"Letters, vowels, words and sentences step by step"},u:"corners/reading/ladder.html",k:"page",ic:"🪜"},
-{t:{ar:"مسابقة الأسبوع",en:"Weekly Contest"},d:{ar:"عشرة أسئلة كلّ جمعة ولوحة شرف وشهادات للعشرة الأوائل",en:"Ten questions every Friday, a leaderboard and certificates"},u:"corners/league/index.html",k:"page",ic:"🏅"}
+{t:{ar:"مسابقة الأسبوع",en:"Weekly Contest"},d:{ar:"عشرة أسئلة كلّ جمعة ولوحة شرف وشهادات للعشرة الأوائل",en:"Ten questions every Friday, a leaderboard and certificates"},u:"corners/league/index.html",k:"page",ic:"🏅"},
+{t:{ar:"مرسمي",en:"My Art Studio"},d:{ar:"لوّن صفحات الآيات والأحاديث على الشاشة وارسم واحفظ رسوماتك",en:"Colour ayah and hadith pages on screen, draw and keep your drawings"},u:"corners/draw/index.html",k:"page",ic:"🎨"}
 ];

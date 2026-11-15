@@ -18,6 +18,7 @@
   .pl-door .tag{font-size:.76rem;font-weight:800;color:var(--c)}
   .pl-door ul{margin:.2rem 0 0;padding-inline-start:1.1rem;color:var(--muted);font-size:.9rem;line-height:1.7}
   .pl-door .go{align-self:flex-start;margin-top:.4rem;background:var(--c);color:#fff;border-radius:999px;padding:.4rem 1rem;font-weight:800;font-size:.88rem}
+  .pl-links{display:flex;flex-wrap:wrap;gap:.4rem;margin-top:.4rem}.pl-links .go{margin-top:0;text-decoration:none}.pl-multi:hover{transform:none}
   .pl-door.big{grid-column:1/-1;background:linear-gradient(135deg,#E6F4FF,#fff 60%);border-color:#9CC9EA}
   .pl-door.big .ic{font-size:2.4rem}
   html.calm .pl-door{transition:none}
@@ -39,12 +40,16 @@
     { href: R + 'activities/dashboard.html', ic: '🧩', c: '#C9A961',
       t: { ar: 'أنشطة أنوس', en: "Anos' Activities" }, tag: { ar: 'ألعابٌ وتحدّيات من كلّ الأركان', en: 'Games & challenges from every corner' },
       li: { ar: ['ألعابٌ تفاعلية تجمع ما تعلّمته في الأركان', 'اجمع النقاط والأوسمة وأنت تلعب'], en: ['Interactive games built on what you learned', 'Collect points and medals as you play'] } },
-    { href: R + 'league/index.html', ic: '🏅', c: '#C9962A',
-      t: { ar: 'مسابقة الأسبوع', en: 'Weekly Contest' }, tag: { ar: 'نتسابق مع أطفال الموقع كلّ جمعة', en: 'Compete with the site\'s children every Friday' },
-      li: { ar: ['عشرة أسئلة جديدة كلّ أسبوع ولوحة شرف', 'شهادة تميّز للعشرة الأوائل'], en: ['Ten new questions every week and a leaderboard', 'A certificate for the top ten'] } },
+    { href: R + 'league/index.html', ic: '🏆', c: '#C9962A',
+      links: [[R + 'league/index.html', '🏅', 'مسابقة الأسبوع', 'Weekly Contest'], [R + 'competitions/competitions.html', '🏆', 'ساحة المسابقات', 'Competitions Arena']],
+      t: { ar: 'المسابقات', en: 'Contests' }, tag: { ar: 'نتسابق في الخير ونفرح لإخوتنا', en: 'Race in goodness, be happy for each other' },
+      li: { ar: ['مسابقة الأسبوع: عشرة أسئلة كلّ جمعة مع كلّ أطفال الموقع، ولوحة شرف وشهادات', 'ساحة المسابقات: كوِّن اختبارك بالوقت والنجوم وشهادة تميّز'], en: ['Weekly contest: ten questions every Friday with all the site\'s children, a leaderboard and certificates', 'Competitions arena: build a timed quiz with stars and a certificate'] } },
     { href: R + 'reading/index.html', ic: '📚', c: '#1F3A5F',
       t: { ar: 'نادي القراءة', en: 'Reading Club' }, tag: { ar: 'نقرأ لنفهم، ونفكّر لنقود', en: 'Read to understand, think to lead' },
       li: { ar: ['شعر، تاريخ، علوم، فضاء، بلدان، لغتنا العربية، قيادة، مال، صحّة', 'كلمات جديدة وأسئلة فهم وسؤال «فكّر كقائد» — و«سُلَّم القراءة» للصغار'], en: ['Poetry, history, science, space, countries, Arabic, leadership, money, health', 'New words, questions, a "think like a leader" question — plus the Reading Ladder for little ones'] } },
+    { href: R + 'draw/index.html', ic: '🎨', c: '#E0703A',
+      t: { ar: 'مرسمي', en: 'My Art Studio' }, tag: { ar: 'لوّن وارسم واحفظ أعمالك', en: 'Colour, draw and keep your work' },
+      li: { ar: ['تلوين صفحاتٍ فيها آيةٌ أو حديث على الشاشة', 'لوحة رسمٍ حرّ ومعرض «رسوماتي»'], en: ['Colour ayah and hadith pages on screen', 'A free drawing board and a "My drawings" gallery'] } },
     { href: R + 'qfactory/index.html', ic: '🏭', c: '#2F6FD6',
       t: { ar: 'مصنع الأسئلة', en: 'Question Factory' }, tag: { ar: 'مجموعة أسئلة واحدة… وستّ ألعاب', en: 'One question set… six games' },
       li: { ar: ['سباق المراكب، رافعة البنّاء، حديقة القطرات، كنز البحر، عجلة النقاط، البطاقات', 'اصنع أسئلتك بنفسك وشاركها برابط'], en: ['Boat race, builder crane, drop garden, sea treasure, points wheel, flash cards', 'Make your own questions and share them with a link'] } },
@@ -57,9 +62,9 @@
     { href: R + 'brain/index.html', ic: '♟️', c: '#6C4AB6',
       t: { ar: 'نادي الأذكياء', en: 'Brain Club' }, tag: { ar: 'ألعاب ذكاءٍ وتفكير', en: 'Thinking games' },
       li: { ar: ['شطرنج، إكس أو، أربعة في صفّ، الداما', 'البنّاء الصغير، التانغرام، المتاهة، برج الأقراص'], en: ['Chess, tic-tac-toe, four in a row, checkers', 'Little builder, tangram, maze, tower of discs'] } },
-    { href: R + 'competitions/competitions.html', ic: '🏆', c: '#7A3FB0',
-      t: { ar: 'ساحة المسابقات', en: 'Competitions Arena' }, tag: { ar: 'كوِّن اختبارك وتسابق', en: 'Build your quiz and race' },
-      li: { ar: ['بنك أسئلة في العقيدة والقرآن والسيرة والعبادة والأخلاق', 'مؤقّت ونجوم وشهادة تميّز'], en: ['Questions on Aqeeda, Quran, Seerah, worship & manners', 'Timer, stars and a certificate'] } },
+    { href: R + 'workshop/workshop.html', ic: '✂️', c: '#B5562A',
+      t: { ar: 'ورشة الصانع الصغير', en: 'Little Maker\'s Workshop' }, tag: { ar: 'اصنع بيديك', en: 'Make it with your hands' },
+      li: { ar: ['أعمالٌ يدويّة وحِرَف وتجارب بسيطة', 'خطوةً خطوة مع رسوماتٍ توضيحيّة'], en: ['Crafts, handiwork and simple experiments', 'Step by step with diagrams'] } },
   ];
   window.TR_PAGE = {
     id: 'play', icon: '🌴', color: '#7A3FB0',
@@ -69,6 +74,9 @@
     guide: { icon: '🧒', name: { ar: 'أنوس', en: 'Anos' }, say: { ar: 'أهلًا! أنا أنوس 👋 تعلّمتَ شيئًا جديدًا في الأركان؟ تعال نلعب به، أو نتسابق، أو نصنع شيئًا جميلًا!', en: "Hi! I'm Anos 👋 Learned something new in the corners? Let's play with it, race, or make something beautiful!" } },
     onRender: function (TR) {
       document.querySelector('[data-panel="kids"]').innerHTML = '<div class="pl-grid">' + DOORS.map(function (d) {
+        if (d.links) return '<div class="pl-door pl-multi" style="--c:' + d.c + '"><span class="top"><span class="ic">' + d.ic + '</span><span><span class="t">' + TR.esc(TR.t(d.t)) + '</span><br><span class="tag">' + TR.esc(TR.t(d.tag)) + '</span></span></span>' +
+          '<ul>' + (TR.ar() ? d.li.ar : d.li.en).map(function (x) { return '<li>' + TR.esc(x) + '</li>'; }).join('') + '</ul><span class="pl-links">' +
+          d.links.map(function (l) { return '<a class="go" href="' + l[0] + '">' + l[1] + ' ' + TR.esc(TR.ar() ? l[2] : l[3]) + '</a>'; }).join('') + '</span></div>';
         return '<a class="pl-door' + (d.game ? ' big' : '') + '" style="--c:' + d.c + '" href="' + d.href + '"' + (d.game ? ' onclick="try{localStorage.setItem(\'mk:view\',\'game\')}catch(e){}"' : '') + '><span class="top"><span class="ic">' + d.ic + '</span><span><span class="t">' + TR.esc(TR.t(d.t)) + '</span><br><span class="tag">' + TR.esc(TR.t(d.tag)) + '</span></span></span>' +
           '<ul>' + (TR.ar() ? d.li.ar : d.li.en).map(function (x) { return '<li>' + TR.esc(x) + '</li>'; }).join('') + '</ul>' +
           '<span class="go">' + TR.tx('ادخل ←', 'Enter →') + '</span></a>';

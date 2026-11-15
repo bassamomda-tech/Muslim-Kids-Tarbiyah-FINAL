@@ -47,6 +47,7 @@
   <div class="bar"><div class="lang"><button data-lang="en">EN</button><button data-lang="ar" class="active">عربي</button></div></div>
   <h1 id="ttl"></h1>
   <p class="lead" id="lead"></p>
+  <p class="lead" style="margin-top:-.3rem"><a href="../draw/index.html" style="font-weight:900;color:#E0703A">🎨 <span class="lng-ar">لوّن على الشاشة في «مرسمي»</span><span class="lng-en" style="display:none">Colour on screen in "My Art Studio"</span></a></p>
   <div class="tabs" id="tabs"></div>
   <main class="pages" id="pages" aria-live="polite"></main>
 
@@ -68,6 +69,7 @@
   var BOOKS = [['ayat', '📖', 'آياتٌ ألوّنها', 'Ayat to colour'], ['hadith', '🕌', 'أحاديث ألوّنها', 'Hadith to colour']];
   function render() {
     document.documentElement.lang = lang; document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
+    document.querySelectorAll('.lng-ar').forEach(function (e) { e.style.display = lang === 'ar' ? '' : 'none'; }); document.querySelectorAll('.lng-en').forEach(function (e) { e.style.display = lang === 'en' ? '' : 'none'; });
     document.querySelectorAll('.lang button').forEach(function (b) { b.classList.toggle('active', b.dataset.lang === lang); });
     document.title = T('كتب التلوين', 'Colouring Books');
     document.getElementById('ttl').textContent = '🖍️ ' + T('كتب التلوين', 'Colouring Books');
