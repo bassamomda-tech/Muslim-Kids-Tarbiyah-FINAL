@@ -515,8 +515,7 @@ footer b{color:rgba(212,160,23,.55);font-weight:700}
    A device set to the game view opens the islands first; ?city=1 always shows the city. */
 /* game view opens first only when the site is opened fresh; coming back to this page from inside the site
    (the home button, the browser's back button) always shows the city, so nobody is ever stuck in the islands */
-try{ var __in = document.referrer && document.referrer.indexOf(location.origin + '/') === 0, __nav = (performance.getEntriesByType && performance.getEntriesByType('navigation')[0] || {}).type;
-  if(localStorage.getItem('mk:view')==='game' && !__in && __nav !== 'back_forward' && !/[?&]city=1/.test(location.search)) location.replace('corners/shared/islands.html'); }catch(e){}
+/* (turned off) «عالم الجزر» now lives inside «واحة المرح والتعلّم», so the site always opens on the home page */
 </script>
 <style id="__antiflash">html{background:#0A2540;color-scheme:dark}</style>
 <script>/* calm mode 🍃 (mk:calm) — set from the Treasures pages; stops the ticker and all motion */
@@ -636,10 +635,7 @@ try{if(localStorage.getItem('mk:calm')==='true'){document.documentElement.classL
 <!-- ═══ CHILD CHARACTERS PARADE ═══ -->
 <div class="chars-parade" id="charsParade"></div>
 
-<!-- ═══ the game view: «عالم الجزر» ═══ -->
-<a class="mk-today" id="mkIslands" href="corners/shared/islands.html" style="--tc:#0F5C82" onclick="try{localStorage.setItem('mk:view','game')}catch(e){}">
-  <span class="ic">🏝️</span><span class="tx"><span class="k" data-ar="وضعُ اللعب للأطفال" data-en="Game mode for children">وضعُ اللعب للأطفال</span><b data-ar="عالمُ الجزر — اجمع النجوم وافتح الجزر" data-en="Island World — earn stars, open islands">عالمُ الجزر — اجمع النجوم وافتح الجزر</b><small data-ar="كلُّ ركنٍ جزيرة · الوِرد القرآني والألعاب تفتح الطريق" data-en="Every corner is an island · the Quran wird and games open the way">كلُّ ركنٍ جزيرة · الوِرد القرآني والألعاب تفتح الطريق</small></span><span class="go" data-ar="العب ←" data-en="Play →">العب ←</span>
-</a>
+<!-- «عالم الجزر» now lives inside «واحة المرح والتعلّم» (corners/activities/play.html) -->
 <!-- ═══ «يومي» — today's 5-step journey + the season of the Hijri year (corners/shared/my-day.html) ═══ -->
 <a class="mk-today" id="mkToday" href="corners/shared/my-day.html" hidden></a>
 <!-- ═══ CONTINUE WHERE YOU STOPPED (mk_last, set by mk-system.js on every learning page) ═══ -->
@@ -1074,8 +1070,8 @@ const parentsCorner = {
 /* ONE home card for the three "doing" places (they keep their own pages) */
 const playCorner = {
   id:'play',icon:'🌴',nameAr:'واحة المرح والتعلّم',nameEn:'Fun and Learning Oasis',
-  descAr:'نادي القراءة · صانع المهارات · مختبر الاكتشاف · نادي الأذكياء · المسابقات',
-  descEn:"Reading Club · Skills Maker · Discovery Lab · Brain Club · Competitions",
+  descAr:'عالم الجزر · نادي القراءة · صانع المهارات · مختبر الاكتشاف · نادي الأذكياء · المسابقات',
+  descEn:"Island World · Reading Club · Skills Maker · Discovery Lab · Brain Club · Competitions",
   accent:'#7A3FB0',gradient:'linear-gradient(160deg,rgba(122,63,176,.24),transparent)',badge:'✨',progress:0,
   characters:[{charNameAr:'أنوس',charNameEn:'Anos',emoji:'🧒'}],
   featuresAr:[{icon:'🛠️',text:'صانع المهارات — رحلات التاجر والمؤرّخ والعالِم والطبيب والمهندس والمزارع والصانع الصغير، مع بودكاست'},{icon:'🧩',text:'أنشطة أنوس — ألعابٌ وتحدّيات من كلّ الأركان'},{icon:'🏆',text:'ساحة المسابقات — كوِّن اختبارك وتسابق واجمع النجوم'}],
@@ -2089,5 +2085,6 @@ html.calm .mkw-card{animation:none}html.calm .mkw-spot{transition:none}
   window.addEventListener('pageshow', paint);
 })();
 </script>
+<script defer src="corners/shared/mk-league-promo.js"></script>
 </body>
 </html>

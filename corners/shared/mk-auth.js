@@ -278,7 +278,8 @@
     register: function (d) { var s = this; return adapter.register(d).then(function (u) { s._user = u; emit(); return u; }); },
     login: function (d) { var s = this; return adapter.login(d).then(function (u) { s._user = u; emit(); return u; }); },
     logout: function () { var s = this; return adapter.logout().then(function () { s._user = null; emit(); return true; }); },
-    refresh: function () { var s = this; return adapter.current().then(function (u) { s._user = u; emit(); return u; }); },
+    /* a late answer from an adapter that has since been replaced (local → Firebase) must not overwrite the signed-in user */
+    refresh: function () { var s = this, a = adapter; return a.current().then(function (u) { if (a !== adapter) return s._user; s._user = u; emit(); return u; }); },
     updateProfile: function (p) { var s = this; return adapter.updateProfile(p).then(function (u) { s._user = u; emit(); return u; }); },
     user: function () { return this._user; },
 

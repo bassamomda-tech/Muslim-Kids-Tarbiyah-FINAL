@@ -17,17 +17,24 @@ service cloud.firestore {
       allow read, write: if isOwner(uid);
     }
 
-    // Community challenges — all signed-in users read; create & member-count updates allowed
+    // Community challenges — all signed-in users read. Only the admin can create an «official» one;
+    // the author (or admin) edits it; anyone else may only add 1 to the member count when joining.
     match /challenges/{id} {
       allow read: if signedIn();
-      allow create: if signedIn();
-      allow update: if signedIn();
+      allow create: if signedIn() && request.resource.data.byUid == request.auth.uid
+        && (isAdmin() || request.resource.data.get('official', false) == false);
+      allow update: if isAdmin()
+        || (signedIn() && resource.data.byUid == request.auth.uid
+            && !request.resource.data.diff(resource.data).affectedKeys().hasAny(['byUid', 'official', 'members']))
+        || (signedIn() && request.resource.data.diff(resource.data).affectedKeys().hasOnly(['members'])
+            && request.resource.data.members == resource.data.get('members', 0) + 1);
       allow delete: if signedIn() && (resource.data.byUid == request.auth.uid || isAdmin());
 
       // Discussion thread on a challenge — any family reads & posts; author or admin deletes
       match /comments/{cid} {
         allow read:   if signedIn();
-        allow create: if signedIn() && request.resource.data.uid == request.auth.uid;
+        allow create: if signedIn() && request.resource.data.uid == request.auth.uid
+          && (isAdmin() || request.resource.data.get('admin', false) == false);
         allow delete: if signedIn() && (resource.data.uid == request.auth.uid || isAdmin());
         allow update: if false;
       }
@@ -36,7 +43,8 @@ service cloud.firestore {
       match /videos/{vid} {
         allow read:   if signedIn();
         allow create: if signedIn() && request.resource.data.uid == request.auth.uid;
-        allow update: if signedIn();
+        allow update: if isAdmin() || (signedIn() && request.resource.data.diff(resource.data).affectedKeys().hasOnly(['likes'])
+          && request.resource.data.likes == resource.data.get('likes', 0) + 1);
         allow delete: if signedIn() && (resource.data.uid == request.auth.uid || isAdmin());
       }
     }
@@ -86,17 +94,21 @@ service cloud.firestore {
       allow delete: if isAdmin() || (signedIn() && resource.data.uid == request.auth.uid);
     }
 
-    // Community posts — all signed-in users read; author creates; likes update allowed
+    // Community posts — all signed-in users read; the author creates (only the admin may pin or mark «admin»);
+    // nobody edits someone else's post — others may only add 1 like
     match /posts/{id} {
       allow read:   if signedIn();
-      allow create: if signedIn() && request.resource.data.uid == request.auth.uid;
-      allow update: if signedIn();
+      allow create: if signedIn() && request.resource.data.uid == request.auth.uid
+        && (isAdmin() || (request.resource.data.get('admin', false) == false && request.resource.data.get('pinned', false) == false));
+      allow update: if isAdmin() || (signedIn() && request.resource.data.diff(resource.data).affectedKeys().hasOnly(['likes'])
+        && request.resource.data.likes == resource.data.get('likes', 0) + 1);
       allow delete: if signedIn() && (resource.data.uid == request.auth.uid || isAdmin());
 
       // Comments on a post — any signed-in family can read & add; owner or admin can delete
       match /comments/{cid} {
         allow read:   if signedIn();
-        allow create: if signedIn() && request.resource.data.uid == request.auth.uid;
+        allow create: if signedIn() && request.resource.data.uid == request.auth.uid
+          && (isAdmin() || request.resource.data.get('admin', false) == false);
         allow delete: if signedIn() && (resource.data.uid == request.auth.uid || isAdmin());
         allow update: if false;
       }

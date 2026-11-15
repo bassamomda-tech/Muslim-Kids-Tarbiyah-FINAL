@@ -18,6 +18,8 @@
   .pl-door .tag{font-size:.76rem;font-weight:800;color:var(--c)}
   .pl-door ul{margin:.2rem 0 0;padding-inline-start:1.1rem;color:var(--muted);font-size:.9rem;line-height:1.7}
   .pl-door .go{align-self:flex-start;margin-top:.4rem;background:var(--c);color:#fff;border-radius:999px;padding:.4rem 1rem;font-weight:800;font-size:.88rem}
+  .pl-door.big{grid-column:1/-1;background:linear-gradient(135deg,#E6F4FF,#fff 60%);border-color:#9CC9EA}
+  .pl-door.big .ic{font-size:2.4rem}
   html.calm .pl-door{transition:none}
 </style>
 </head>
@@ -28,6 +30,9 @@
 (function () {
   var R = '../';
   var DOORS = [
+    { href: R + 'shared/islands.html', ic: '🏝️', c: '#0F5C82', game: true,
+      t: { ar: 'عالم الجزر', en: 'Island World' }, tag: { ar: 'وضع اللعب: اجمع النجوم وافتح الجزر', en: 'Game mode: earn stars and open islands' },
+      li: { ar: ['كلّ ركنٍ جزيرة، وكلّ محطّةٍ نجمة', 'الوِرد القرآني والألعاب والقصص تفتح الطريق'], en: ['Every corner is an island, every station a star', 'The Quran wird, games and stories open the way'] } },
     { href: R + 'skills/index.html', ic: '🛠️', c: '#7A3FB0',
       t: { ar: 'صانع المهارات', en: 'Skills Maker' }, tag: { ar: 'رحلات لتعلّم مهاراتٍ حقيقية + بودكاست', en: 'Journeys to learn real skills + podcast' },
       li: { ar: ['التاجر · مستكشف التاريخ · العالِم · الطبيب · المهندس · المزارع · الصانع الصغير', 'مهمّةٌ عملية وحلقة بودكاست في كلّ محطّة'], en: ['Merchant · History explorer · Scientist · Doctor · Engineer · Farmer · Little Maker', 'A hands-on mission and a podcast episode at every station'] } },
@@ -64,7 +69,7 @@
     guide: { icon: '🧒', name: { ar: 'أنوس', en: 'Anos' }, say: { ar: 'أهلًا! أنا أنوس 👋 تعلّمتَ شيئًا جديدًا في الأركان؟ تعال نلعب به، أو نتسابق، أو نصنع شيئًا جميلًا!', en: "Hi! I'm Anos 👋 Learned something new in the corners? Let's play with it, race, or make something beautiful!" } },
     onRender: function (TR) {
       document.querySelector('[data-panel="kids"]').innerHTML = '<div class="pl-grid">' + DOORS.map(function (d) {
-        return '<a class="pl-door" style="--c:' + d.c + '" href="' + d.href + '"><span class="top"><span class="ic">' + d.ic + '</span><span><span class="t">' + TR.esc(TR.t(d.t)) + '</span><br><span class="tag">' + TR.esc(TR.t(d.tag)) + '</span></span></span>' +
+        return '<a class="pl-door' + (d.game ? ' big' : '') + '" style="--c:' + d.c + '" href="' + d.href + '"' + (d.game ? ' onclick="try{localStorage.setItem(\'mk:view\',\'game\')}catch(e){}"' : '') + '><span class="top"><span class="ic">' + d.ic + '</span><span><span class="t">' + TR.esc(TR.t(d.t)) + '</span><br><span class="tag">' + TR.esc(TR.t(d.tag)) + '</span></span></span>' +
           '<ul>' + (TR.ar() ? d.li.ar : d.li.en).map(function (x) { return '<li>' + TR.esc(x) + '</li>'; }).join('') + '</ul>' +
           '<span class="go">' + TR.tx('ادخل ←', 'Enter →') + '</span></a>';
       }).join('') + '</div>';

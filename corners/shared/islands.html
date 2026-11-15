@@ -595,7 +595,7 @@
         return '<button class="isl' + cls + '" data-i="' + i + '" style="--c:' + I.c + '">' + hereH +
           art(I, open, isLit, hid) + '<span class="plate"><span class="em">' + (open ? I.ic : hid ? '❔' : '🔒') + '</span><span class="tx"><b>' + esc(hid ? T('جزيرةٌ مجهولة', 'An unknown island') : t(I.n)) + '</b><small>' + esc(hid ? T('اجمع قطع الخريطة لتجدها', 'Gather the map pieces to find it') : t(I.s)) + '</small></span><span class="tag">' + tagH + '</span></span></button>';
       }), stars, all) + '</div>' +
-      '<div class="foot"><a class="pill" href="../../index.html?city=1">🏙️ ' + T('المدينة', 'The city') + '</a><a class="pill" href="bag.html">🎒 ' + T('حقيبتي', 'My bag') + '</a><button class="pill" id="helpBtn">❓ ' + T('كيف ألعب؟', 'How do I play?') + '</button><button class="pill" id="moreBtn">🧰 ' + T('المزيد', 'More') + '</button><button class="pill" id="parentBtn2">🔐 ' + T('عرض الأهل', 'Parent view') + '</button></div>';
+      '<div class="foot"><a class="pill" href="../activities/play.html">🌴 ' + T('الواحة', 'The oasis') + '</a><a class="pill" href="../../index.html?city=1">🏙️ ' + T('المدينة', 'The city') + '</a><a class="pill" href="bag.html">🎒 ' + T('حقيبتي', 'My bag') + '</a><button class="pill" id="helpBtn">❓ ' + T('كيف ألعب؟', 'How do I play?') + '</button><button class="pill" id="moreBtn">🧰 ' + T('المزيد', 'More') + '</button><button class="pill" id="parentBtn2">🔐 ' + T('عرض الأهل', 'Parent view') + '</button></div>';
     var app = document.getElementById('app'); app.innerHTML = DEFS + h;
     app.querySelectorAll('.isl').forEach(function (b) { b.onclick = function () { openIsland(+b.getAttribute('data-i'), stars, all); }; });
     document.getElementById('helpBtn').onclick = helpSheet; document.getElementById('moreBtn').onclick = moreSheet;
@@ -739,6 +739,8 @@
 })();
 </script>
 <script src="mk-citynav.js"></script>
+<script>window.MK_TOPBAR = window.MK_TOPBAR || { title: { ar: 'عالم الجزر', en: 'Island World' }, up: { href: '../activities/play.html', ar: 'واحة المرح والتعلّم', en: 'Fun and Learning Oasis' } };</script>
 <script src="mk-topbar.js"></script>
+<script defer src="mk-league-promo.js"></script>
 </body>
 </html>

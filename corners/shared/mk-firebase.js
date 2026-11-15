@@ -246,6 +246,7 @@
     listChallengeComments: function (cid) {
       return db.collection('challenges').doc(cid).collection('comments').orderBy('at', 'asc').limit(200).get()
         .then(function (qs) { var l = []; qs.forEach(function (d) { var x = d.data(); x.id = d.id; l.push(x); }); return l; })
+        .then(function (l) { return FirebaseAdapter.getBlocked().then(function (b) { return b && b.length ? l.filter(function (x) { return b.indexOf(x.uid) < 0 && b.indexOf(x.who) < 0; }) : l; }, function () { return l; }); })
         .catch(function () { return []; });
     },
     addChallengeComment: function (cid, text) {
@@ -264,6 +265,7 @@
     listVideos: function (cid) {
       return db.collection('challenges').doc(cid).collection('videos').orderBy('at', 'desc').limit(60).get()
         .then(function (qs) { var l = []; qs.forEach(function (d) { var x = d.data(); x.id = d.id; l.push(x); }); return l; })
+        .then(function (l) { return FirebaseAdapter.getBlocked().then(function (b) { return b && b.length ? l.filter(function (x) { return b.indexOf(x.uid) < 0 && b.indexOf(x.who) < 0; }) : l; }, function () { return l; }); })
         .catch(function () { return []; });
     },
     uploadVideo: function (cid, file, meta, onProgress) {
@@ -287,7 +289,8 @@
                 caption: String(meta.caption || '').slice(0, 200),
                 url: url, path: path, at: now(), likes: 0
               });
-            }).then(function () { resolve(true); }).catch(reject);
+            }).then(function () { return FirebaseAdapter.awardStars(25).catch(function () {}); })   /* the +25 ⭐ the page promises */
+              .then(function () { resolve(true); }).catch(reject);
           }
         );
       });
@@ -355,12 +358,16 @@
     },
     listPosts: function () {
       return this.getBlocked().then(function (blocked) {
-        return db.collection('posts').orderBy('at', 'desc').limit(100).get()
-          .then(function (qs) {
-            var list = []; qs.forEach(function (d) {
+        /* the newest 100 posts + every pinned admin post (so a pinned announcement never drops off the page) */
+        var pins = db.collection('posts').where('pinned', '==', true).limit(10).get().catch(function () { return null; });
+        return Promise.all([db.collection('posts').orderBy('at', 'desc').limit(100).get(), pins])
+          .then(function (r) {
+            var list = [], seen = {}, add = function (d) {
+              if (seen[d.id]) return; seen[d.id] = 1;
               var x = d.data(); x.id = d.id;
               if (blocked.indexOf(x.uid) < 0 && blocked.indexOf(x.who) < 0) list.push(x);
-            });
+            };
+            r[0].forEach(add); if (r[1]) r[1].forEach(add);
             list.sort(function (a, c) { return ((c.pinned ? 1 : 0) - (a.pinned ? 1 : 0)) || (c.at - a.at); });
             return list;
           });
@@ -407,7 +414,7 @@
       var u = window.MKAuth.user();
       return db.collection('reports').add({
         postId: id, reason: reason || '', by: uidNow() || '', byName: (u && u.name) || '', at: now()
-      }).then(function () { return true; }).catch(function () { return true; });
+      }).then(function () { return true; }).catch(function () { return false; });
     },
     blockUser: function (who, buid) {
       var uid = uidNow(); if (!uid) return Promise.reject(new Error('noauth'));
@@ -419,6 +426,7 @@
     listComments: function (postId) {
       return db.collection('posts').doc(postId).collection('comments').orderBy('at', 'asc').limit(200).get()
         .then(function (qs) { var list = []; qs.forEach(function (d) { var x = d.data(); x.id = d.id; list.push(x); }); return list; })
+        .then(function (l) { return FirebaseAdapter.getBlocked().then(function (b) { return b && b.length ? l.filter(function (x) { return b.indexOf(x.uid) < 0 && b.indexOf(x.who) < 0; }) : l; }, function () { return l; }); })
         .catch(function () { return []; });
     },
     addComment: function (postId, text) {
