@@ -137,6 +137,8 @@
 
   /* ───────── COLLECTIONS BAR ───────── */
   function renderCollections(){
+    /* 🎒 copy the earned stickers into the child's bag album (bag.html reads bag:album:*) */
+    try{ localStorage.setItem('bag:album:'+P, JSON.stringify({h:(location.pathname.split('/corners/')[1]||'')+location.search, n:(document.title||'').split(/[·|—]/)[0].trim(), ts:Date.now(), items:S.filter(s=>!s.locked&&done.has(s.id)&&s.badge).map(s=>({i:s.badge.icon,t:s.badge.title,c:s.badge.color}))})); }catch(e){}
     const da=doneActive(), totalActive=activeCount();
     $('#collStickers').innerHTML=`<div class="ci">${T.coll1.icon}</div><div class="ct">${t(T.coll1.title)}</div><div class="cn">${da} ${t(T.coll1.unit)}</div>`;
     $('#collNames').innerHTML=`<div class="ci">${T.coll2.icon}</div><div class="ct">${t(T.coll2.title)}</div><div class="cn">${da} ${t(T.coll2.unit)}</div>`;

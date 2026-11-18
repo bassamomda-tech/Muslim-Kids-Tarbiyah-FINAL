@@ -1,0 +1,85 @@
+/* «The Prayer Journey» — English stories 1–9 (mirrors stories-salah-long*.js).
+   Qur'an is paraphrased in meaning with its reference; hadith follow the
+   site's verified English where available, with sources. */
+window.STORIES_EN = window.STORIES_EN || {};
+Object.assign(window.STORIES_EN, {
+  'salah-1': { hero: 'Yusuf', t: 'Yusuf and the Royal Appointment', p: [
+    'Yusuf woke before dawn to a voice calling from far away: “Allahu Akbar… Allahu Akbar.” The room was still dark, and a cool breeze slipped in through the window. He rubbed his eyes, yawned, and wanted to snuggle back into his warm pillow.',
+    'His father came in quietly and switched on a small lamp. “Good morning, champion!” said Dad. “Come on, our appointment is nearly here.”',
+    'Pulling the blanket up, Yusuf asked, “What appointment, Dad? Why do we pray five times every day?”',
+    'Dad sat on the edge of the bed and smiled. “Imagine, Yusuf, that a great King — greater than all kings — sent you a letter saying: Come and speak to Me, and ask Me for whatever you wish. Would you stay in bed?”',
+    'Yusuf jumped up. “Of course not! I’d put on my best clothes and rush there before everyone else!”',
+    'Dad laughed. “Allah is the King of all kings, and He opens His door for us five times every day. That is the prayer! In Arabic, the word ṣalāh is close to ṣilah — a link, like a rope that connects you to Allah.”',
+    'Yusuf went quiet, thinking. Then he asked, “So prayer isn’t just movements we repeat?”',
+    'Dad said, “Not at all. Every Allahu Akbar and every sujud is a word of love you send to your Lord. Allah tells us in the Qur’an to establish the prayer so that we remember Him (Surah Ta-Ha, 14) — so that we stay close to Him.”',
+    'Yusuf hurried to make wudu, and the cool water woke up his whole face. Then he put on his clean white thobe and his kufi, and stood in front of his father, ready.',
+    'They walked out together into the quiet street. The lanterns were still glowing on the walls, the sparrows were starting to chirp on the wires, and the edge of the sky was turning gold.',
+    'Holding his father’s hand, Yusuf asked, “Dad, will Allah be waiting for us?” Dad said, “Allah sees us all the time, and He loves those who come to their appointment with longing.”',
+    'When the green dome of the mosque appeared ahead, Yusuf walked faster and said in his heart, full of joy, “I’m going to meet my Lord… and this is the most beautiful appointment of my day!” 🌟'],
+    talk: 'If a great king invited you, how would you get ready? And how do you get ready for your prayer?',
+    third: { type: 'img', src: 's01.png', cap: 'Yusuf and his father on the way to the mosque at Fajr.' } },
+
+  'salah-2': { hero: 'Maryam', t: 'Maryam and the Lamp of the Heart', p: [
+    'On a stormy winter night, Maryam was colouring her drawing at the table while her mother read beside her. Suddenly… the electricity went out! The whole house went dark, and the wind howled at the window.',
+    'Maryam grabbed her mother’s arm tightly. “Mum! I’m scared… I can’t see anything!”',
+    'In a calm voice, Mum said, “Don’t be afraid, my love, I’m right here.” She reached up to the shelf and took down a small oil lamp and a box of matches.',
+    'Mum struck a match, and a tiny flame appeared. Then she lit the lamp, and a warm golden light spread through the room. The cushions, the walls and Mum’s smile all appeared again.',
+    'Maryam breathed out with relief. “Alhamdulillah! The light took all my fear away.”',
+    'Mum said, “Did you see how light chases fear away? There is a light far more beautiful than this lamp. The Prophet ﷺ said: “And prayer is light.” (Sahih Muslim)”',
+    'Maryam was surprised. “Light? But I can’t see it when I pray!”',
+    'Mum said, “It is a light in the heart and on the face, and a light that will shine on our path on the Day of Judgment. Prayer was the dearest thing to the Prophet’s ﷺ heart. When he was tired, he would say to Bilal: “Give us rest with it, O Bilal” — meaning, call the prayer so that we can rest.”',
+    'Maryam thought for a moment, then said, “So prayer is like this lamp? Whenever my heart is tired or scared, I pray and it feels calm?”',
+    'Mum hugged her. “Exactly, my love. Prayer is not a heavy load — it is rest, an oasis in the middle of our day.”',
+    'Soon the electricity came back, but Maryam asked to keep the lamp burning. When the adhan for Isha was called, she prayed beside her mother, then sat quietly on her prayer mat for a moment.',
+    'Her heart felt calm and warm, as if a small light had been switched on inside it. Maryam whispered with a smile, “I’ve found my lamp… and I will never let it go out!” ✨'],
+    talk: 'When did you feel calm after praying? Tell your family about it.',
+    third: { type: 'img', src: 's02.png', cap: 'Maryam and her mother light the lamp, and the house fills with light.' } },
+
+  'salah-3': { hero: 'Anas', t: 'Anas and the Amazing River', p: [
+    'Anas came home from a football match in the field. His face was red from running, his clothes were covered in dust and his shoes were caked with mud. When his grandmother saw him at the door, she laughed. “Anas! You need a whole river to get clean!”',
+    'Anas laughed too. “A river, Grandma? A bucket of water is enough for me!”',
+    'Grandma took his hand and led him to the bank of the little river that flowed in front of their house. They sat on the soft grass. The water was clear and sparkling, little fish jumped in it, and ducks swam in a neat line.',
+    'Grandma said, “Listen, Anas, to a question the Prophet ﷺ asked his Companions: If a river flowed by the door of one of you, and he bathed in it five times every day, would any dirt remain on him?”',
+    'Anas answered quickly, “No! He’d be really clean, like these shiny pebbles in the water!”',
+    'Grandma said, “That is what the Companions answered: nothing would remain. Then he ﷺ said: That is like the five prayers — through them Allah wipes away sins. (Bukhari and Muslim)”',
+    'Anas went quiet and tossed a small pebble into the water. Then he lowered his head and said, “Grandma… today I shouted at my little brother because he took my ball. Will that stay in my heart?”',
+    'Grandma stroked his head gently. “Never lose hope, my dear. Pray your next prayer with a present heart, ask Allah for forgiveness, and say sorry to your brother. Prayer washes the heart the way a river washes the body.”',
+    'Anas ran back to the house and found his brother playing alone in the corner. He sat beside him and said, “I’m sorry, little brother… come on, let’s play ball together.” His brother gave him a huge smile.',
+    'Then Anas made wudu and prayed Asr calmly. In his sujud he said, “O Allah, forgive me,” and imagined his heart being washed with clear water, like the water of the river.',
+    'When he went back out to the bank, the sun was sparkling on the water. Anas said to his grandmother, “Grandma, I think my heart is shining now, just like this water!”',
+    'Grandma laughed. “And it’s like that every day: five prayers — five times your heart is washed. Do you see how great Allah’s mercy is?” 🌊'],
+    talk: 'Why did the Prophet ﷺ compare the five prayers to a river?',
+    third: { type: 'img', src: 's03.png', cap: 'Anas and his grandmother by the river in front of the house.' } },
+
+  'salah-4': { hero: 'Yusuf', t: 'Yusuf and the Tower of Blocks', p: [
+    'On a day off, Yusuf sat on the playroom carpet with a big pile of colourful blocks in front of him. “I’m going to build the tallest tower in the world!” he said excitedly.',
+    'He started building fast: a red block on a blue one, a green one on a yellow one… To reach the top quickly, he stacked the first blocks at the bottom crookedly, without paying attention.',
+    'The tower grew taller and taller, until it was even taller than Yusuf himself! And when he put the last block on the top… the tower wobbled, and then — CRASH! — it all fell to the floor.',
+    'Yusuf looked at the scattered blocks, and tears nearly came. His father came and knelt beside him. “It’s all right, champion,” said Dad. “Tell me: where was the problem?”',
+    'Yusuf said, “In the blocks at the bottom… they weren’t strong or straight.”',
+    'Dad said, “Well done. The foundation is the most important part of any building. Our deeds have a foundation too. Do you know what it is? The Prophet ﷺ said: The first of his deeds a servant is judged on, on the Day of Judgment, is his prayer; if it is good, he has succeeded and prospered. (at-Tirmidhi, authentic)”',
+    'Yusuf’s eyes opened wide. “The first question on the Day of Judgment is about prayer?!”',
+    'Dad answered, “Yes. It is the foundation that all our deeds are built on. If it is strong, the whole building stands firm. If it is weak, everything shakes… just like your tower.”',
+    'Yusuf asked, “And how do I make my prayer strong?” Dad said, “Pray it on time, and never leave a single prayer, however busy you are.”',
+    'Yusuf gathered the blocks again. This time he placed the first ones slowly and carefully, making sure each one was perfectly straight, while his father pointed at them and smiled.',
+    'Then he built on top of them, level after level… and the tower rose higher and higher, and it did not fall! Yusuf clapped with joy, and his father clapped with him.',
+    'At that moment the adhan for Dhuhr was called. Yusuf looked at his tower, then at his father, and said, “I’ll make my prayer strong like this foundation… let’s pray now, before anything else!” 🏗️'],
+    talk: 'What happens to a house if its foundation is weak? And what is the foundation of our deeds?',
+    third: { type: 'img', src: 's04.png', cap: 'Yusuf carefully builds the base of the tower while his father encourages him.' } },
+
+  'salah-5': { hero: 'Maryam', t: 'Maryam and the Big Tent', p: [
+    'At the weekend, the family went on a trip to the desert. The sand was golden, the dunes stretched out like calm waves, and a camel rested far away under a palm tree.',
+    'Dad took out a big tent. “Who will help me put up the tent?” he asked. Maryam’s hand shot up. “Me! Me!”',
+    'Mum spread out the colourful mat, and Maryam helped her father pull the ropes tight and fix the pegs in the sand. At last Dad raised a long pole in the middle of the tent, and the tent stood up tall and beautiful.',
+    'Maryam looked at the pole and asked, “Dad, why is there a long pole in the middle?”',
+    'Dad said, “Try tilting it a little… very gently!” Maryam tilted the pole a little, and the whole tent shook and nearly fell on them! She quickly put it back, laughing. “The pole holds up the whole tent!”',
+    'Dad said, “Well done, Maryam. The Prophet ﷺ said: The head of the matter is Islam, and its pillar is prayer. (at-Tirmidhi, authentic) So prayer is the pillar of our religion — as long as it stands, our religion stands.”',
+    'Maryam asked, “And if my friend says: My heart is good, I don’t need to pray?”',
+    'Dad said, “A good heart loves prayer and is drawn to it! Just as a tent cannot stand without its pole, faith cannot stand without prayer. It is the second pillar of Islam, after the two testimonies of faith.”',
+    'Mum brought dates and water and said, “Whoever truly loves Allah keeps their appointment with Him.” So the family prayed Maghrib together on the mat while the sun set behind the dunes.',
+    'At night the sky filled with stars. Maryam sat at the door of the tent looking at the steady pole, while the wind shook the tent a little and then let it go.',
+    'Maryam smiled and said to herself, “As long as the pole stands, the tent won’t fall… and as long as my prayer stands, my religion won’t fall.”',
+    'Before going to sleep, Maryam said to her father, “Tomorrow I’ll tell my brother that prayer is the pillar of our religion, and we’ll promise each other never to leave it.” ⛺'],
+    talk: 'What happens to a tent if its pole falls? And what is the pillar of the religion?',
+    third: { type: 'img', src: 's05.png', cap: 'Maryam helps her father pull the tent ropes tight.' } }
+});

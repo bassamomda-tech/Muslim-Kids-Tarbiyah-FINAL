@@ -135,6 +135,12 @@
       <div class="stat"><span class="si">⭐</span><b id="stStars">0</b><span><span class="lng-ar">نجوم</span><span class="lng-en">Stars</span></span></div>
     </div>
 
+    <!-- MEDALS & STICKERS — everything the child collected, from every corner -->
+    <div class="sec" id="albumSec">
+      <div class="sec-h"><span class="si">🎖️</span><h2><span class="lng-ar">أوسمتي وملصقاتي</span><span class="lng-en">My Medals &amp; Stickers</span></h2></div>
+      <div id="albumBox"></div>
+    </div>
+
     <!-- CORNER PROGRESS -->
     <div class="sec">
       <div class="sec-h"><span class="si">🏙️</span><h2><span class="lng-ar">تقدّمي في الأركان</span><span class="lng-en">My Progress</span></h2></div>
@@ -180,6 +186,7 @@
 
 <script defer src="mk-system.js"></script>
 <script defer src="mk-journeys.js"></script>
+<script defer src="mk-album.js"></script>
 <script>
   var lang = (window.MK&&MK.lang())||localStorage.getItem('bunyanLang')||'ar';
 
@@ -228,7 +235,9 @@
     var rew=rewardsList();
     var sr=(window.MK&&MK.stars)?MK.stars():[], stars=sr.reduce(function(a,r){return a+r.done;},0);
     var extra=sr.reduce(function(a,r){return a+(r.journey?0:r.done);},0);   // ⭐ 5 points each for stars that are not journey stations (those got 10 above) — same as mk-bag.js
-    var pts=stationPts+extra*5+(prof?bpsPoints(prof.id):0);
+    /* points the child earned inside the Heroes Fortress (story answers, finished stories, games) */
+    function hisnPts(){ try{ var e=(JSON.parse(localStorage.getItem('hisn-save')||'{}').points||{}).era||{}, n=0; for(var k in e) n+=(+e[k]||0); return n; }catch(x){ return 0; } }
+    var pts=stationPts+extra*5+(prof?bpsPoints(prof.id):0)+hisnPts();
     return { prof:prof, perCorner:perCorner, badges:badges, certs:certs, journeysDone:journeysDone, points:pts, rewards:rew, stars:stars, starRows:sr };
   }
 
@@ -256,6 +265,7 @@
 
   function render(){
     var ar=lang==='ar', d=collect();
+    (function al(n){ if(window.MKAlbum) MKAlbum.render(document.getElementById('albumBox'), lang); else if(n<40) setTimeout(function(){ al(n+1); },100); })(0);
     // ⭐ stars from every place — started ones first; untouched ones stay listed (calm invitation, no pressure)
     document.getElementById('starCount').textContent='⭐ '+d.stars;
     document.getElementById('stStars').textContent=d.stars;
@@ -329,9 +339,26 @@
             +'<div class="c-s">'+(ar?'أنشطة أنوس · ٤ أنشطة مكتملة في أسبوع':"Anos' activities · 4 finished in one week")+'</div>'
             +'<button class="btn" onclick="openAnosWeekly()">'+(ar?'🏅 عرض الشهادة':'🏅 View certificate')+'</button></div>');
     var allCards=journeyCards.concat(compCards, anosCards);
-    document.getElementById('certGrid').innerHTML = allCards.length
-      ? '<div class="grid">'+allCards.join('')+'</div>'
-      : '<div class="empty">'+(ar?'لا توجد شهادات بعد — أكمِل محطات في أي ركن أو تميّز في ساحة المسابقات لتظهر هنا. ✨':'No certificates yet — complete stations in any corner or excel in the Competitions Arena and they\'ll appear here. ✨')+'</div>';
+    function paintCerts(extra){
+      var cards=allCards.concat(extra||[]), n=totalCerts+(extra?extra.length:0);
+      document.getElementById('certCount').textContent = ar?(n+' شهادة'):(n+' certificates');
+      document.getElementById('stCerts').textContent = n+(aw.length?1:0);
+      document.getElementById('certGrid').innerHTML = cards.length
+        ? '<div class="grid">'+cards.join('')+'</div>'
+        : '<div class="empty">'+(ar?'لا توجد شهادات بعد — أكمِل محطات في أي ركن أو تميّز في ساحة المسابقات لتظهر هنا. ✨':'No certificates yet — complete stations in any corner or excel in the Competitions Arena and they\'ll appear here. ✨')+'</div>';
+    }
+    paintCerts();
+    /* + Heroes-Fortress era certificates (every station of an era complete) */
+    (function fc(k){ if(!window.MKAlbum){ if(k<40) setTimeout(function(){ fc(k+1); },100); return; }
+      MKAlbum.fortressCerts().then(function(list){ if(!list.length) return;
+        paintCerts(list.map(function(c){
+          return '<div class="card"><div class="c-ic">🏰</div>'
+            +'<div class="c-t">'+(ar?'شهادةُ المرحلة — ':'Era certificate — ')+esc(txo(c.title))+'</div>'
+            +'<div class="c-s">'+(ar?('حصن الأبطال · '+c.n+'/'+c.n+' · مكتملة 🎉'):('Heroes Fortress · '+c.n+'/'+c.n+' · complete 🎉'))+'</div>'
+            +'<a class="btn" href="'+c.link+'">'+(ar?'🏅 عرض الشهادة':'🏅 View certificate')+'</a></div>';
+        }));
+      });
+    })(0);
 
     // rewards
     document.getElementById('rewCount').textContent = ar?(d.rewards.length+' جائزة'):(d.rewards.length+' rewards');

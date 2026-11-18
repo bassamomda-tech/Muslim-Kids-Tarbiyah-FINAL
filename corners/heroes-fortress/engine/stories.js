@@ -74,7 +74,11 @@
 
   function openStory(i){
     const story = stories[i];
-    StoryReader.open(story, meta.accent || '#E67E22', lang, (type)=>{
+    StoryReader.open(story, meta.accent || '#E67E22', lang, (type, pts, key)=>{
+      let got = 0;
+      try{ const era = meta.era || 'prophets', before = Progress.eraPoints(era);
+        Progress.addPoints(era, 'chst:'+pid+':'+i+':'+(key||type), pts||10);
+        got = Progress.eraPoints(era) - before; }catch(e){}
       if(type === 'complete'){
         done[i] = 1; saveDone(done);
         renderCards(); renderTrack(); header();
@@ -84,6 +88,7 @@
           toast(lang==='ar'?'🎉 أكملتَ كلَّ قصص '+ (meta.name.ar) : '🎉 You finished every story!');
         }
       }
+      return got;
     });
   }
 

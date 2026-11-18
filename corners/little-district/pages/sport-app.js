@@ -123,6 +123,8 @@
 
   /* ───────── COLLECTIONS BAR ───────── */
   function renderCollections(){
+    /* 🎒 copy the earned stickers into the child's bag album (bag.html reads bag:album:*) */
+    try{ localStorage.setItem('bag:album:'+'sport-'+jid, JSON.stringify({h:(location.pathname.split('/corners/')[1]||'')+location.search, n:(meta&&meta.title&&meta.title.ar)||(document.title||'').split(/[·|—]/)[0].trim(), ts:Date.now(), items:S.filter(s=>done.has(s.id)).map(s=>({i:s.icon,t:s.title,c:s.color||(meta&&meta.color)}))})); }catch(e){}
     const n=doneCount(), tot=S.length||10;
     $('#collStickers').innerHTML=`<div class="ci">🎖️</div><div class="ct">${t('أوسِمةُ المَحطّات','Station Badges')}</div><div class="cn">${n} / ${tot}</div>`;
     $('#collKeys').innerHTML=`<div class="ci">🔑</div><div class="ct">${t('مَفاتيحُ البَطَل','Hero\'s Keys')}</div><div class="cn">${n} / ${tot}</div>`;

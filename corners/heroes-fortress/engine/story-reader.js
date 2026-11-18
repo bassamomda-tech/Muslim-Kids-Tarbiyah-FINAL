@@ -142,11 +142,17 @@ window.StoryReader = (function () {
     browserNarrate(text, btn, done);
   }
 
+  /* points: the page's onFinish may return how many NEW points were saved */
+  function earn(type, pts, key) {
+    if (!state.onFinish) return;
+    try { const g = state.onFinish(type, pts, key); if (typeof g === 'number' && g > 0) state.gained += g; } catch (e) {}
+  }
+
   /* ───── Open ───── */
   function open(story, hc, lang, onFinish) {
     state = {
       story, hc, lang, onFinish,
-      idx: 0, total: 0, choicesDone: {}, quizOk: false,
+      idx: 0, total: 0, choicesDone: {}, quizOk: false, gained: 0,
     };
     const reader = document.getElementById('storyReader');
     reader.querySelector('.sr-box').style.setProperty('--hc', hc);
@@ -224,7 +230,7 @@ window.StoryReader = (function () {
               c.appendChild(e);
             }
             // Award small point
-            if (state.onFinish) state.onFinish('choice', 5);
+            earn('choice', 5, 'c' + state.idx);
           } else {
             b.classList.add('bad');
             b.disabled = true;
@@ -288,7 +294,7 @@ window.StoryReader = (function () {
           if (opt.c) {
             b.classList.add('ok'); row.dataset.done='1'; correct++;
             answered++;
-            if (state.onFinish) state.onFinish('quiz', 8);
+            earn('quiz', 8, 'q' + i);
           } else {
             b.classList.add('bad'); b.disabled = true;
           }
@@ -347,8 +353,13 @@ window.StoryReader = (function () {
     home.addEventListener('click', close);
     foot.appendChild(home);
 
-    // Award completion-bonus once per story
-    if (state.onFinish) state.onFinish('complete', 10);
+    // Award completion-bonus once per story, then show what this story earned
+    earn('complete', 10, 'end');
+    const pts = el('div', '', state.gained > 0
+      ? (state.lang==='ar' ? `⭐ +${state.gained} نقطة أُضيفت إلى حقيبتك 🎒` : `⭐ +${state.gained} points added to your bag 🎒`)
+      : (state.lang==='ar' ? '⭐ نقاطُ هذه القصة محفوظةٌ في حقيبتك 🎒' : '⭐ This story’s points are already in your bag 🎒'));
+    pts.style.cssText = 'margin:.5rem auto 0;padding:.45rem .9rem;border-radius:999px;background:#FFF3C4;border:2px solid #F5C04A;color:#7A4E0A;font-weight:900;font-size:.9rem;text-align:center;width:max-content;max-width:100%';
+    end.appendChild(pts);
   }
 
   return { open, close };

@@ -1,0 +1,451 @@
+/* ═══ book2 — print-ready book layout (A4 for the website · 8.5×11 in with bleed for printers) ═══ */
+:root{--pw:210mm;--ph:297mm;--pad-t:13mm;--pad-s:14mm;--pad-b:15mm;--fs:13.6pt;--ink:#2B2118;--muted:#7A6A58;--paper:#FFFBF2;--line:#EADCC2;--acc:#1A9B7B}
+html.kdp{--pw:8.625in;--ph:11.25in;--pad-t:.72in;--pad-s:.74in;--pad-b:.78in}
+*{box-sizing:border-box}
+html,body{margin:0;background:#9b9184}
+body{font-family:'Tajawal','Nunito',sans-serif;color:var(--ink);-webkit-print-color-adjust:exact;print-color-adjust:exact}
+html[dir=ltr] body{font-family:'Nunito','Tajawal',sans-serif}
+#book{display:flex;flex-direction:column;align-items:center;gap:10mm;padding:16mm 0 30mm}
+.pg{width:var(--pw);height:var(--ph);background:var(--paper);position:relative;overflow:hidden;box-shadow:0 6px 30px rgba(0,0,0,.35);padding:var(--pad-t) var(--pad-s) var(--pad-b);display:flex;flex-direction:column}
+.pg.white{background:#fff}
+.pg .num{position:absolute;bottom:calc(var(--pad-b) * .38);left:0;right:0;text-align:center;font:800 10pt 'Tajawal',sans-serif;color:var(--muted)}
+.pg .num i{display:inline-block;min-width:9mm;padding:.6mm 2.4mm;border-radius:99px;background:var(--line);font-style:normal;color:var(--ink)}
+.pg .run{position:absolute;top:calc(var(--pad-t) * .42);left:var(--pad-s);right:var(--pad-s);display:flex;justify-content:space-between;font:800 8.5pt 'Tajawal',sans-serif;color:var(--muted);letter-spacing:.2px}
+.pg .run b{color:var(--pc,var(--acc))}
+svg{display:block;width:100%;height:auto}
+.scene{border-radius:5mm;overflow:hidden;box-shadow:0 2mm 6mm rgba(60,30,10,.18)}
+.pg.white .scene{box-shadow:none}
+
+/* ── cover ── */
+.cover{padding:0;background:#0F3B33;color:#fff}
+.cover .art{height:62%;position:relative}
+.cover .art svg{height:100%;width:100%;object-fit:cover}
+.cover .art::after{content:"";position:absolute;inset:auto 0 0 0;height:30%;background:linear-gradient(transparent,#0F3B33)}
+.cover .ttl{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:0 12mm 10mm;background:radial-gradient(circle at 50% 0,#17584C,#0F3B33 70%)}
+.cover .kick{font:800 12pt/1.6 Tajawal;color:#F5CC5A;letter-spacing:.5px;margin-bottom:5mm}
+.cover h1{font:700 52pt/1.75 'Amiri',serif;margin:0 0 1mm;padding-top:2mm;color:#FFF3C8;text-shadow:0 2px 0 #0a2a24}
+html[dir=ltr] .cover h1{font:900 44pt/1.1 'Nunito',sans-serif}
+.cover .sub{font:700 14pt/1.6 Tajawal;color:#E6F4EF;max-width:150mm}
+.cover .brand{margin-top:5mm;display:inline-flex;gap:2mm;align-items:center;font:900 11pt Tajawal;background:#F5CC5A;color:#0F3B33;border-radius:99px;padding:1.6mm 5mm}
+.cover .orn{width:60mm;height:3mm;margin:3mm auto;background:repeating-linear-gradient(90deg,#F5CC5A 0 3mm,transparent 3mm 6mm);border-radius:2mm;opacity:.8}
+.back{background:#0F3B33;color:#EAF5F1}
+.back h2{font:700 24pt/1.6 'Amiri',serif;color:#FFF3C8;margin:0 0 3mm;text-align:center}
+.back p{font:600 12pt/1.9 Tajawal;margin:0 0 3mm}
+.back .grid{display:grid;grid-template-columns:1fr 1fr;gap:3mm;margin:4mm 0}
+.back .grid .scene{box-shadow:none;border-radius:3mm}
+.back ul{font:700 11.5pt/1.9 Tajawal;margin:0;padding-inline-start:6mm}
+.back .site{margin-top:auto;text-align:center;font:900 13pt Tajawal;color:#F5CC5A}
+
+/* ── title / front matter ── */
+.title-pg{align-items:center;justify-content:center;text-align:center}
+.title-pg .bism{font:700 22pt 'Amiri',serif;color:var(--acc);margin-bottom:8mm}
+.title-pg h1{font:700 46pt/1.5 'Amiri',serif;margin:0;color:#0F3B33}
+html[dir=ltr] .title-pg h1{font:900 40pt Nunito}
+.title-pg .sub{font:700 14pt/1.7 Tajawal;color:var(--muted);max-width:140mm;margin:3mm auto 8mm}
+.title-pg .scene{width:120mm}
+.title-pg .pub{margin-top:10mm;font:800 11pt Tajawal;color:var(--muted)}
+.prose h2{font:900 21pt/1.5 Tajawal;margin:0 0 4mm;color:#0F3B33}
+.prose p,.prose li{font:600 12.4pt/1.95 Tajawal;margin:0 0 3mm}
+html[dir=ltr] .prose p,html[dir=ltr] .prose li{font-family:Nunito}
+.prose ul{padding-inline-start:6mm;margin:0 0 3mm}
+.prose .note{background:#F2F8F5;border-inline-start:2mm solid var(--acc);border-radius:3mm;padding:3mm 4mm}
+.toc h2{font:900 24pt/1.5 Tajawal;margin:0 0 6mm;color:#0F3B33;text-align:center}
+.toc .row{display:flex;align-items:center;gap:3mm;padding:2.6mm 0;border-bottom:.3mm dashed var(--line);font:800 13pt Tajawal}
+.toc .row .dot{width:7mm;height:7mm;border-radius:50%;background:var(--pc);flex:none}
+.toc .row .t{flex:1}.toc .row small{display:block;font:600 10pt Tajawal;color:var(--muted)}
+.toc .row .p{font:900 13pt Tajawal;color:var(--pc)}
+
+/* ── part opener ── */
+.opener{padding:0}
+.opener .art{height:58%}
+.opener .art svg{height:100%;width:100%}
+.opener .body{flex:1;padding:8mm var(--pad-s) var(--pad-b);display:flex;flex-direction:column;align-items:center;text-align:center;background:linear-gradient(var(--pcl),var(--paper) 60%)}
+.opener .pills{display:flex;gap:2mm;justify-content:center}
+.opener .partno{font:900 11pt/1.4 Tajawal;color:#fff;background:var(--pc);border-radius:99px;padding:1.4mm 5mm}
+.opener .partno.alt{background:#fff;color:var(--pc);border:.5mm solid var(--pc)}
+.opener h2{font:700 40pt/1.6 'Amiri',serif;margin:4mm 0 1mm;color:var(--pcd)}
+html[dir=ltr] .opener h2{font:900 34pt Nunito}
+.opener .tag{font:800 14pt/1.6 Tajawal;color:var(--pc);margin-bottom:4mm}
+.opener .guide{font:600 11.6pt/1.9 Tajawal;color:var(--ink);text-align:start;max-width:165mm}
+
+/* ── station: picture page ── */
+.pic .head{display:flex;align-items:center;gap:3mm;margin:2mm 0 3mm}
+.pic .badge{flex:none;width:16mm;height:16mm;border-radius:50%;background:var(--pc);color:#fff;display:grid;place-items:center;font:900 15pt Tajawal;box-shadow:0 0 0 1.2mm var(--pcl)}
+.pic .head .ch{font:800 9.5pt/1.5 Tajawal;color:var(--pc);margin-bottom:2mm}
+.pic h2{font:900 24pt/1.55 Tajawal;margin:0;color:var(--pcd)}
+html[dir=ltr] .pic h2{font:900 21pt/1.25 Nunito}
+.pic .simile{margin:5mm 0 0;font:800 14.5pt/1.7 Tajawal;text-align:center;color:var(--ink);padding:4mm 6mm;background:var(--pcl);border-radius:5mm;position:relative}
+.pic .simile::before{content:"";position:absolute;top:-3mm;inset-inline-start:14mm;border:3mm solid transparent;border-bottom-color:var(--pcl);border-top:0}
+.pic .task{margin-top:5mm;display:flex;gap:4mm;align-items:flex-start;border:.6mm solid var(--pc);border-radius:5mm;padding:4mm 5mm;background:#fff}
+.pic .task .box{flex:none;width:9mm;height:9mm;border:.7mm solid var(--pc);border-radius:2mm;margin-top:1mm}
+.pic .task b{display:block;font:900 11pt Tajawal;color:var(--pc);margin-bottom:1mm}
+.pic .task span{font:700 12.6pt/1.75 Tajawal}
+.pic .mine{flex:1;margin-top:5mm;display:flex;flex-direction:column;min-height:20mm}
+.pic .mine b{font:900 11pt Tajawal;color:var(--muted)}
+.pic .mine i{flex:1;max-height:11mm;border-bottom:.45mm solid #D9C9AB}
+.pic .key{margin-top:5mm;text-align:center;padding:4mm 6mm;border-radius:5mm;background:linear-gradient(135deg,var(--pc),var(--pcd));color:#fff;font:900 13.5pt/1.7 Tajawal}
+.pic .key small{display:block;font:800 9.5pt Tajawal;opacity:.85;margin-bottom:.6mm}
+
+/* ── station: learn page ── */
+.learn{font-size:var(--fs)}
+.learn .lh{display:flex;align-items:center;gap:2.5mm;margin:1mm 0 3mm;padding-bottom:2mm;border-bottom:.5mm solid var(--line)}
+.learn .lh .badge{width:10mm;height:10mm;border-radius:50%;background:var(--pc);color:#fff;display:grid;place-items:center;font:900 11pt Tajawal}
+.learn .lh h3{margin:0;font:900 14pt/1.6 Tajawal;color:var(--pcd)}
+.sec{margin-bottom:3.6mm}
+.sec>b.h{display:inline-flex;align-items:center;gap:1.6mm;font:900 .86em Tajawal;color:#fff;background:var(--pc);border-radius:99px;padding:.6mm 3.2mm;margin-bottom:1.6mm}
+.teach{font-weight:600;line-height:1.95;margin:0;text-align:justify}
+html[dir=ltr] .teach{font-family:Nunito}
+.teach b{color:var(--pcd)}
+.ev{border-radius:4mm;padding:3.6mm 4.4mm;background:#FFF7E3;border:.4mm solid #EBD49A}
+.ev .txt{font:700 1.32em/1.85 'Amiri',serif;color:#4A3208;text-align:center;direction:rtl}
+.ev .src{text-align:center;font:800 .78em Tajawal;color:#8A6A1E;margin-top:1mm}
+.ev .tr{font:600 .9em/1.7 Nunito;color:#5A4630;text-align:center;margin-top:1.5mm;direction:ltr}
+.ev .ex{font:600 .92em/1.85 Tajawal;margin-top:2mm;color:var(--ink)}
+.flip{display:grid;grid-template-columns:1fr;gap:2mm}
+.flip .no,.flip .yes{border-radius:4mm;padding:3mm 4mm;font-weight:600;line-height:1.85}
+.flip .no{background:#FDECEA;border:.4mm solid #F3B9B2}
+.flip .yes{background:#E9F7EF;border:.4mm solid #A9DDBE}
+.flip b.t{display:block;font:900 .82em Tajawal;margin-bottom:.6mm}
+.flip .no b.t{color:#B03A2E}.flip .yes b.t{color:#1E8449}
+
+/* ── colouring ── */
+.color-pg h2{font:900 20pt/1.7 Tajawal;margin:1mm 0 1mm;text-align:center}
+.color-pg .hint{text-align:center;font:700 11pt Tajawal;color:var(--muted);margin-bottom:4mm}
+.color-pg .scene{border-radius:4mm}
+.color-pg .draw{flex:1;margin-top:6mm;border:.7mm dashed #999;border-radius:5mm;position:relative}
+.color-pg .draw span{position:absolute;top:3mm;inset-inline-start:4mm;font:800 10.5pt Tajawal;color:#888}
+.color-pg .lines{margin-top:4mm}
+.color-pg .lines i{display:block;height:9mm;border-bottom:.4mm solid #bbb}
+
+/* ── activities ── */
+.act h2{font:900 21pt/1.7 Tajawal;margin:0 0 1mm;color:var(--pcd);text-align:center}
+.act .hint{text-align:center;font:700 11pt/1.7 Tajawal;color:var(--muted);margin-bottom:5mm}
+.tf .item{display:flex;gap:3mm;align-items:center;padding:3mm 0;border-bottom:.3mm dashed var(--line);font:700 12pt/1.7 Tajawal}
+.tf .item .n{flex:none;width:8mm;height:8mm;border-radius:50%;background:var(--pcl);display:grid;place-items:center;font:900 10pt Tajawal;color:var(--pcd)}
+.tf .item .q{flex:1}
+.tf .item .ch{flex:none;display:flex;gap:2mm;font:900 11pt Tajawal}
+.tf .item .ch span{border:.6mm solid var(--pc);border-radius:2mm;padding:.6mm 2.4mm;color:var(--pc)}
+.ws{display:flex;flex-direction:column;align-items:center;gap:6mm}
+.ws table{border-collapse:collapse;direction:rtl}
+.ws td{width:13mm;height:13mm;border:.4mm solid #C9B99A;text-align:center;font:800 17pt Tajawal;background:#fff}
+.ws .words{display:flex;flex-wrap:wrap;gap:2.4mm;justify-content:center;max-width:160mm}
+.ws .words span{font:900 12.5pt Tajawal;border:.5mm solid var(--pc);color:var(--pcd);border-radius:99px;padding:1mm 4mm}
+.trk table{width:100%;border-collapse:collapse;margin-top:2mm}
+.trk th,.trk td{border:.4mm solid #C9B99A;text-align:center;font:800 11pt Tajawal;height:12mm}
+.trk th{background:var(--pcl);color:var(--pcd)}
+.trk td.d{font:900 10.5pt Tajawal;background:#FFF7E3;width:22mm}
+.trk .circle{display:inline-block;width:7mm;height:7mm;border-radius:50%;border:.6mm solid var(--pc)}
+.month{display:grid;grid-template-columns:repeat(6,1fr);gap:3mm;margin-top:3mm}
+.month div{border:.5mm solid #C9B99A;border-radius:3mm;height:24mm;position:relative;background:#fff}
+.month div b{position:absolute;top:1.4mm;inset-inline-start:2mm;font:900 10pt Tajawal;color:var(--pcd)}
+.month div svg{position:absolute;bottom:2mm;left:50%;transform:translateX(-50%);width:10mm}
+.write .ln{height:11mm;border-bottom:.45mm solid #bbb;font:800 11pt Tajawal;color:var(--muted);display:flex;align-items:flex-end;padding-bottom:1mm}
+.order .step{display:flex;align-items:center;gap:4mm;padding:3mm;border:.5mm solid var(--line);border-radius:4mm;margin-bottom:3mm;background:#fff;font:800 13pt Tajawal}
+.order .step .box{flex:none;width:12mm;height:12mm;border:.7mm solid var(--pc);border-radius:3mm}
+.order .step .scene{width:40mm;flex:none;border-radius:2mm;box-shadow:none}
+.maze{display:flex;flex-direction:column;align-items:center}
+.maze svg{width:172mm}
+.ans h3{font:900 13pt Tajawal;color:var(--pcd);margin:4mm 0 1.5mm}
+.ans p{font:700 10.5pt/1.8 Tajawal;margin:0}
+.ans .ansbox{display:inline-block;vertical-align:top;margin-inline-end:8mm}
+.ans .ansbox table{direction:rtl}
+
+/* ── certificate ── */
+.cert{padding:12mm}
+.cert .frame{flex:1;border:2.2mm double #C9962A;border-radius:6mm;padding:10mm;display:flex;flex-direction:column;align-items:center;text-align:center;background:radial-gradient(circle at 50% 30%,#FFFDF5,#FBF0D6)}
+.cert h2{font:700 34pt/1.6 'Amiri',serif;color:#7A4E0A;margin:2mm 0}
+.cert .lbl{font:800 13pt Tajawal;color:var(--muted)}
+.cert .name{width:120mm;border-bottom:.6mm solid #7A4E0A;height:16mm;margin:3mm auto 5mm}
+.cert p{font:700 13pt/1.9 Tajawal;max-width:150mm}
+.cert .seal{margin-top:auto;display:flex;justify-content:space-between;width:100%;font:800 11pt Tajawal;color:var(--muted)}
+.cert .seal span{border-top:.4mm solid #bbb;padding-top:1.6mm;width:55mm}
+
+/* ── screen toolbar ── */
+.tb{position:sticky;top:0;z-index:9;display:flex;gap:2mm;justify-content:center;flex-wrap:wrap;padding:3mm;background:rgba(15,59,51,.94);backdrop-filter:blur(4px)}
+.tb button,.tb select{font:800 11pt Tajawal;border:none;border-radius:99px;padding:2mm 4.5mm;background:#fff;color:#0F3B33;cursor:pointer}
+.tb button.main{background:#F5CC5A}
+.tb .info{color:#E6F4EF;font:700 10pt Tajawal;align-self:center}
+#loading{position:fixed;inset:0;display:grid;place-items:center;background:#0F3B33;color:#fff;font:900 16pt Tajawal;z-index:20}
+
+@media print{
+  html,body{background:none}
+  .tb,#loading{display:none!important}
+  #book{display:block;padding:0}
+  .pg{box-shadow:none;page-break-after:always;break-after:page;margin:0}
+}
+@media screen and (max-width:900px){#book{zoom:.45}}
+
+/* ── story mode ── */
+.storyp .story-h{text-align:center;margin:1mm 0 3mm}
+.storyp .story-h .kick{display:inline-block;margin-bottom:1mm;font:900 9.5pt/1.5 Tajawal;color:#fff;background:var(--pc);border-radius:99px;padding:1mm 4.5mm}
+.storyp .story-h h1{font:700 28pt/1.9 Amiri,serif;color:var(--pcd);margin:5mm 0 0;padding-top:1mm}
+.storyp .story-h .hero{font:800 10.5pt/1.6 Tajawal;color:var(--muted)}
+.storyp .story{font-size:var(--fs);font-weight:600;line-height:2.1;text-align:justify;font-family:Tajawal,sans-serif}
+.storyp .story p{margin:0 0 2mm}
+.storyp .story q{quotes:none;font-weight:800;color:var(--pcd)}
+.storyp .story .dc{float:right;font:700 3em/1 Amiri,serif;color:var(--pc);margin:1.5mm 0 0 2.5mm}
+.storyp .key,.learn .key{margin-top:3mm;text-align:center;padding:4mm 6mm;border-radius:5mm;background:linear-gradient(135deg,var(--pc),var(--pcd));color:#fff;font:900 13pt/1.7 Tajawal}
+.storyp .key small{display:block;font:800 9.5pt Tajawal;opacity:.85}
+.learn .task{margin-top:3mm;display:flex;gap:4mm;align-items:flex-start;border:.6mm solid var(--pc);border-radius:5mm;padding:3mm 4mm;background:#fff}
+.learn .task .box{flex:none;width:8mm;height:8mm;border:.7mm solid var(--pc);border-radius:2mm;margin-top:1mm}
+.learn .task b{display:block;font:900 .82em Tajawal;color:var(--pc)}
+.learn .task span{font-weight:700;line-height:1.75}
+.learn .talk{margin-top:3mm;border:.6mm dashed var(--pc);border-radius:4mm;padding:2.6mm 4mm;font-weight:700;line-height:1.8}
+.learn .talk b{color:var(--pc)}
+.line-img img{width:100%;display:block;border:.6mm solid #111;border-radius:4mm}
+.sact .chips{display:flex;flex-wrap:wrap;gap:2.4mm;justify-content:center;margin:2mm 0 6mm}
+.sact .chips span{display:inline-flex;gap:2mm;align-items:center;border:.5mm solid var(--pc);border-radius:99px;padding:1.6mm 4mm;font:800 12pt Tajawal;background:#fff}
+.sact .chips b{width:7mm;height:7mm;border-radius:50%;background:var(--pc);color:#fff;display:grid;place-items:center;font:900 10pt Tajawal}
+.sact .bins{display:grid;gap:4mm;flex:1}
+.sact .bins div{border:.7mm dashed var(--pc);border-radius:5mm;padding:3mm;display:flex;flex-direction:column;min-height:90mm}
+.sact .bins b{text-align:center;font:900 14pt Tajawal;color:var(--pcd);border-bottom:.5mm solid var(--pcl);padding-bottom:2mm}
+.sact .match{display:grid;grid-template-columns:1fr 1fr;gap:22mm;margin-top:6mm}
+.sact .match>div{display:flex;flex-direction:column;gap:9mm}
+.sact .ml,.sact .mr{display:flex;align-items:center;gap:3mm;border:.5mm solid var(--pcl);background:#fff;border-radius:4mm;padding:3mm 4mm;font:800 12.5pt/1.7 Tajawal;min-height:22mm}
+.sact .ml span{flex:1;font-family:Amiri,serif;font-size:14pt}
+.sact .mr span{flex:1}
+.sact .ml i,.sact .mr i{flex:none;width:5mm;height:5mm;border-radius:50%;background:var(--pc)}
+.sact .mr b{color:var(--pc)}
+.sact .bricks{margin:4mm auto 0;width:150mm;display:flex;flex-direction:column;gap:3mm;align-items:center}
+.sact .roof{font-size:44pt;line-height:1}
+.sact .brow{display:flex;align-items:center;gap:2.4mm;width:100%}
+.sact .brow b{width:30mm;font:900 12pt Tajawal;color:var(--pcd)}
+.sact .brow i{width:24mm;height:14mm;border:.7mm solid #8B5A2B;border-radius:1.6mm;background:repeating-linear-gradient(0deg,#fff 0 6mm,#F7EBD3 6mm 7mm)}
+.sact .bfoot{margin-top:3mm;font:900 13pt Tajawal;color:var(--pc)}
+.sact .drawbig{flex:1;border:.8mm dashed #999;border-radius:6mm;position:relative;margin-top:2mm}
+.sact .dl{position:absolute;font:900 12pt Tajawal;color:#777;background:#fff;padding:1mm 3mm}
+.sact .dl0{top:4mm;left:50%;transform:translateX(-50%)}
+.sact .dl1{top:50%;left:4mm}
+.sact .dl2{bottom:6mm;left:50%;transform:translateX(-50%)}
+.sd .pair{display:flex;flex-direction:column;gap:4mm;align-items:center}
+.sd .pair img{width:138mm;border-radius:4mm;border:.6mm solid #3B2614;display:block}
+.sd .stars{text-align:center;font:900 20pt Tajawal;color:#D4A017;letter-spacing:3mm;margin-top:3mm}
+.sact .tf .item{padding:6mm 0;font-size:14.5pt}
+.sact .tf .item .n{width:10mm;height:10mm;font-size:12pt}
+.sact .tf .item .ch span{font-size:15pt;padding:1.5mm 4mm}
+.sact .order .step{font-size:15pt;padding:4mm}
+.sact .write .ln{height:16mm;font-size:13pt}
+
+/* ── parchment story page (standalone books) ── */
+.pg.parch{padding:0;background:radial-gradient(circle at 30% 20%,#EBCBA0,#D9AE7A 70%,#C99A63)}
+.parch .sheet{position:absolute;inset:9mm;background:linear-gradient(#FFFDF6,#FBF3E2);filter:drop-shadow(0 1.5mm 2mm rgba(90,50,10,.35))}
+.parch .plogo{position:absolute;top:12mm;left:13mm;z-index:3;width:21mm;height:21mm;border-radius:50%;background:#fff;box-shadow:0 1mm 2.5mm rgba(0,0,0,.25);padding:1.5mm}
+.parch .plogo img{width:100%;height:100%;border-radius:22%;display:block}
+.parch .ptxt{position:absolute;top:17mm;left:22mm;right:22mm;bottom:43%;z-index:2;display:flex;flex-direction:column}
+.parch h1{margin:0 18mm;text-align:center;font:700 28pt/1.9 'Aref Ruqaa',serif;color:#A8322B;padding-bottom:1mm}
+.parch .orn{display:flex;align-items:center;justify-content:center;gap:2mm;color:#A8322B;margin:3mm 0 2mm;font-size:10pt;line-height:1}
+.parch .orn i{width:22mm;height:.5mm;background:linear-gradient(90deg,transparent,#A8322B)}
+.parch .orn i:last-child{background:linear-gradient(90deg,#A8322B,transparent)}
+.parch .hero{text-align:center;font:800 10pt/1.6 Tajawal;color:#8A6A4A;margin-bottom:2mm}
+.parch .story{flex:1;overflow:hidden;font-size:var(--fs);line-height:1.95;font-weight:600;color:#2B2118;text-align:justify}
+.parch .story p{margin:0 0 1.4mm}
+.parch .story p:first-child::before{content:"✦ ";color:#E2A93B}
+.parch .story q{quotes:none;color:#B5532A;font-weight:800}
+.parch .part{position:absolute;left:0;right:0;bottom:0;height:43%;z-index:1}
+.parch .part img{width:100%;height:100%;object-fit:cover;object-position:50% 60%;display:block;-webkit-mask-image:linear-gradient(to bottom,transparent 0,#000 26%);mask-image:linear-gradient(to bottom,transparent 0,#000 26%)}
+.parch .pkey{position:absolute;left:34mm;right:34mm;bottom:11mm;z-index:3;margin:0;padding:2.4mm 5mm;font-size:11.5pt;opacity:.96;background:linear-gradient(135deg,#B6743F,#8E5228)}
+.parch .num{bottom:4mm;z-index:4}
+
+.parch .ptxt2{position:absolute;top:22mm;left:22mm;right:22mm;bottom:20mm;z-index:2;display:flex;flex-direction:column}
+.parch .lc2{flex:1;overflow:hidden;font-size:var(--fs);line-height:1.95;font-weight:600;color:#2B2118;text-align:justify}
+.parch .lc2 p{margin:0 0 1.4mm}
+.parch .lc2 q{quotes:none;color:#B5532A;font-weight:800}
+.parch .orn2{text-align:center;color:#C9962A;font-size:20pt;margin:3mm 0;line-height:1}
+.parch .pkey2{margin:0 12mm;text-align:center;padding:3mm 5mm;border-radius:4mm;background:linear-gradient(135deg,#B6743F,#8E5228);color:#FFF8EC;font:900 12.5pt/1.7 Tajawal}
+.parch .pkey2 small{display:block;font:800 9pt Tajawal;opacity:.85}
+.pg.pb{padding:0;background:radial-gradient(circle at 70% 80%,#EBCBA0,#D9AE7A 70%,#C99A63)}
+.parch .lc2 p:first-child::before{content:none}
+
+.toc .slist{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:repeat(17,auto);grid-auto-flow:column;column-gap:8mm;margin:2mm 0 3mm}
+.toc .row .t small{line-height:1.7;margin-top:.8mm}
+.toc .srow{display:flex;align-items:baseline;gap:2mm;padding:1.1mm 0;font:700 10.6pt/1.5 Tajawal;border-bottom:.25mm dotted var(--line)}
+.toc .srow b{flex:none;width:6.5mm;height:6.5mm;border-radius:50%;background:var(--pcl);color:var(--pcd);display:grid;place-items:center;font:900 8.5pt Tajawal}
+.toc .srow span{flex:none;max-width:68mm}
+.toc .srow i{flex:1;border-bottom:.3mm dotted #C9B99A;transform:translateY(-1mm)}
+.toc .srow em{font:900 10pt Tajawal;font-style:normal;color:var(--pcd)}
+.toc h2{margin-bottom:3mm}
+.toc .row{padding:1.8mm 0}
+
+/* ── special certificates (boys / girls) ── */
+.pg.cert2{padding:9mm;background:radial-gradient(circle at 50% 30%,#FFFBEA,#F6E6C2 70%,#E9CF98)}
+.cert2.girl{background:radial-gradient(circle at 50% 30%,#FFF8F6,#F6E0DF 70%,#E7C3C6)}
+.cert2 .cframe{position:relative;height:100%;border:2.6mm solid #C9962A;border-radius:6mm;padding:3mm;background:linear-gradient(135deg,#E9C56A,#B8862A)}
+.cert2.girl .cframe{border-color:#B9707C;background:linear-gradient(135deg,#E6A8B2,#A85C6A)}
+.cert2 .cin{position:relative;height:100%;border-radius:4mm;background:#FFFDF6;box-shadow:inset 0 0 0 1.2mm #F3E2B6,inset 0 0 0 2mm #C9962A;display:flex;flex-direction:column;align-items:center;text-align:center;padding:10mm 14mm 9mm;overflow:hidden}
+.cert2.girl .cin{box-shadow:inset 0 0 0 1.2mm #F6DCE0,inset 0 0 0 2mm #B9707C}
+.cert2 .cin::before{content:"";position:absolute;inset:0;opacity:.07;background-image:radial-gradient(circle at 10px 10px,#7A4E0A 1.5px,transparent 2px);background-size:22px 22px}
+.cert2 .cc{position:absolute;width:15mm;height:15mm}
+.cert2 .cc svg{width:100%;height:100%}
+.cert2 .tl{top:4mm;left:4mm}.cert2 .tr{top:4mm;right:4mm}.cert2 .bl{bottom:4mm;left:4mm}.cert2 .br{bottom:4mm;right:4mm}
+.cert2 .carch{position:relative;width:118mm;height:82mm;border-radius:59mm 59mm 4mm 4mm;overflow:hidden;border:2mm solid #C9962A;box-shadow:0 2mm 5mm rgba(90,50,10,.3)}
+.cert2.girl .carch{border-color:#B9707C}
+.cert2 .carch img{width:100%;height:100%;object-fit:cover;display:block}
+.cert2 .cbism{position:relative;font:700 15pt/1.8 Amiri,serif;color:#7A4E0A;margin-top:3mm}
+.cert2 h2{position:relative;margin:0;font:700 40pt/1.9 'Aref Ruqaa',serif;color:#A8322B}
+.cert2.girl h2{color:#9C3F5C}
+.cert2 .csub{position:relative;font:800 11.5pt/1.6 Tajawal;color:#8A6A4A;margin-top:-1mm}
+.cert2 .cto{position:relative;font:800 13pt/1.6 Tajawal;color:#2B2118;margin-top:4mm}
+.cert2 .cname{position:relative;width:125mm;height:15mm;border-bottom:.7mm dashed #7A4E0A;margin:1mm auto 3mm}
+.cert2 p{position:relative;font:700 13.4pt/2 Tajawal;color:#2B2118;margin:0;max-width:150mm}
+.cert2 .cayah{position:relative;margin-top:4mm;font:700 15pt/1.8 Amiri,serif;color:#12705C}
+.cert2.girl .cayah{color:#7A3E6A}
+.cert2 .cayah small{display:block;font:800 9pt Tajawal;color:#8A6A4A}
+.cert2 .cfoot{position:relative;margin-top:auto;width:calc(100% - 26mm);display:flex;justify-content:space-between;align-items:flex-end;font:800 10.5pt Tajawal;color:#7A6A58}
+.cert2 .cfoot span{width:50mm;border-top:.5mm solid #B9A27A;padding-top:1.6mm}
+.cert2 .cseal{width:27mm;height:27mm;border-radius:50%;background:radial-gradient(circle at 40% 35%,#F6D57A,#C9962A 70%,#9C6E1A);color:#5A3A08;display:grid;place-content:center;font:900 9.5pt/1.25 Tajawal;box-shadow:0 0 0 1.4mm #FFF3C8,0 0 0 2.2mm #C9962A,0 2mm 4mm rgba(0,0,0,.25)}
+.cert2.girl .cseal{background:radial-gradient(circle at 40% 35%,#F8C9D2,#C46F86 70%,#8E3E55);color:#fff;box-shadow:0 0 0 1.4mm #FFF0F3,0 0 0 2.2mm #B9707C,0 2mm 4mm rgba(0,0,0,.25)}
+.cert2 .cseal b{font-size:15pt;line-height:1}
+.cert2 .cstars{position:relative;margin-top:4mm;font-size:20pt;letter-spacing:3mm;color:#E2B04A}
+.cert2.girl .cstars{color:#D98AA0}
+
+/* ═══ front matter (curriculum-book style): cream page, white rounded card, tab + lettered folio ═══ */
+.pg.fm{--fmg:#E2A93B;--fmt:#2A8C86;--fmd:#2B2B48;background:#FBF1DC;padding:0}
+.pg.fm .fm-card{position:absolute;inset:16mm 11mm 19mm;background:#fff;border-radius:9mm 9mm 9mm 9mm;padding:9mm 10mm 8mm;display:flex;flex-direction:column;overflow:hidden;box-shadow:0 1mm 4mm rgba(150,110,40,.08)}
+.pg.fm.sl .fm-card{border-radius:9mm 26mm 9mm 9mm}.pg.fm.sr .fm-card{border-radius:26mm 9mm 9mm 9mm}
+.pg.fm .fm-tab{position:absolute;top:0;background:var(--fmg);color:#fff;font:800 10.5pt/1 'Baloo Bhaijaan 2',Tajawal;padding:3mm 5mm 2.6mm;border-radius:0 0 2.4mm 2.4mm;letter-spacing:.2px}
+.pg.fm.sl .fm-tab{right:11mm}.pg.fm.sr .fm-tab{left:11mm}
+.pg.fm .fm-foot{position:absolute;bottom:0;left:11mm;right:11mm;height:15mm;display:flex;align-items:center;gap:3mm;font:600 10pt Tajawal;color:#4A4036}
+.pg.fm.sr .fm-foot{flex-direction:row-reverse}
+.pg.fm .fm-no{background:var(--fmg);color:#fff;font:900 12pt/1 Tajawal;min-width:10mm;height:12mm;display:grid;place-items:center;border-radius:2mm 2mm 0 0;align-self:flex-end}
+.pg.fm .fm-sec{flex:1}.pg.fm.sr .fm-sec{text-align:left}
+.pg.fm .fm-logo{display:flex;align-items:center;gap:1.5mm;font:800 8.5pt Tajawal;color:#2B2118}.pg.fm .fm-logo img{width:6mm;height:6mm;border-radius:1.4mm}
+.fm-h{font:800 25pt/1.75 'Baloo Bhaijaan 2',Tajawal;color:var(--fmg);text-align:center;margin:0 0 4mm}
+.fm-h.teal{color:var(--fmt)}
+.fm-h3{font:800 14pt/1.5 'Baloo Bhaijaan 2',Tajawal;color:var(--fmt);text-align:center;margin:4mm 0 2mm}
+.fm-h4{font:800 13pt/1.6 Tajawal;color:var(--fmg);margin:3.2mm 0 1.4mm}
+.fm-p{font:500 11.2pt/1.95 Tajawal;margin:0 0 2.2mm;text-align:justify}
+.fm-p b{color:var(--fmd);font-weight:800}
+.fm-note{font:600 9.6pt/1.8 Tajawal;color:#6B5E4E;background:#F7F2E8;border-radius:3mm;padding:2.4mm 3.4mm;margin:2mm 0 0}
+.pg.fm .bism{font:700 17pt/1.6 Amiri,serif;color:#2B2118;text-align:center}.pg.fm .bism.sm{font-size:14pt;margin:-2mm 0 3mm}
+/* belongs-to */
+.fm-belong .fm-card{inset:14mm 12mm;border-radius:9mm;align-items:center;justify-content:center;text-align:center;gap:2mm}
+.fm-belong h1{font:800 46pt/1.75 'Baloo Bhaijaan 2',Tajawal;color:var(--fmg);margin:3mm 0 1mm}
+.fm-pill{background:var(--fmg);color:#fff;font:800 14pt/1 Tajawal;padding:3mm 8mm;border-radius:99px}
+.fm-tim{width:100mm;margin:6mm 0 4mm}.fm-tim img{width:100%;display:block}
+.fm-bh{font:800 17pt/1.75 'Baloo Bhaijaan 2',Tajawal;color:var(--fmg);margin:2mm 0 6mm}
+.fm-line{display:flex;align-items:flex-end;gap:3mm;width:125mm;margin:0 0 8mm;font:800 13pt Tajawal;color:var(--fmg)}.fm-line i{flex:1;border-bottom:.5mm solid #EBCB86;height:7mm}
+/* imprint */
+.fm-imp{display:flex;align-items:center;justify-content:center}
+.fm-impin{width:150mm;text-align:center;margin-top:30mm}
+.fm-implogo{width:20mm;height:20mm;border-radius:4mm;display:block;margin:0 auto 2mm}
+.fm-impname{font:800 13pt Tajawal;color:#2B2118;margin-bottom:5mm}
+.fm-impin p{font:500 10.4pt/1.9 Tajawal;margin:0 0 3.4mm;color:#2B2118}.fm-impin p.sm{font-size:9.4pt;color:#4A4036}.fm-impin p.it{font-style:normal;color:#7A6A58}
+.fm-impin p.site{font:800 11pt Nunito,sans-serif;direction:ltr;color:#2B2118}
+/* toc inside a card */
+.pg.fm.toc .fm-card{padding-top:7mm}.pg.fm.toc .row{font-size:12pt;padding:2mm 0}
+/* about */
+.fm-box{border-radius:4mm;padding:3.6mm 5mm;margin:0 0 3.6mm}
+.fm-box h3{font:800 15pt/1.5 'Baloo Bhaijaan 2',Tajawal;color:var(--fmt);margin:0 0 1mm}
+.fm-box p{font:500 11.4pt/1.85 Tajawal;margin:0}
+.fm-box.pink{background:#FBE7E9}.fm-box.cream{background:#FFF4DC}.fm-box.mint{background:#E8F3F1;flex:1}
+.fm-box ol{margin:2mm 0 0;padding-inline-start:7mm}.fm-box li{font:500 11.2pt/1.75 Tajawal;margin:0 0 1.6mm}
+/* values */
+.fm-ayah{background:#FBE9DB;border-radius:5mm;padding:4mm 6mm;text-align:center}
+.fm-ayah .a{font:700 25pt/1.6 Amiri,serif;color:#E08A2E}.fm-ayah .r{font:700 9.6pt Tajawal;color:#9A6A3A;margin:-1mm 0 1.4mm}
+.fm-ayah p{font:500 10.8pt/1.8 Tajawal;margin:0}
+.fm-vals{display:grid;grid-template-columns:repeat(4,1fr);gap:2.6mm;margin:1mm 0 4mm;position:relative}
+.fm-vals .c{grid-column:1/-1;justify-self:center;background:#BFE3DF;color:var(--fmt);font:800 15pt 'Baloo Bhaijaan 2',Tajawal;padding:2.4mm 10mm;border-radius:4mm;margin-bottom:1mm}
+.fm-vals .v{border-radius:3.6mm;padding:2.4mm 1.6mm;text-align:center;display:flex;flex-direction:column;gap:.6mm}
+.fm-vals .v b{font:800 11.2pt/1.4 Tajawal;color:#2B2B48}.fm-vals .v small{font:500 8.6pt/1.45 Tajawal;color:#4A4036}
+.fm-vals .v0,.fm-vals .v4{background:#D9D7E6}.fm-vals .v1,.fm-vals .v5{background:#F6D9DC}.fm-vals .v2,.fm-vals .v6{background:#F9E3B8}.fm-vals .v3,.fm-vals .v7{background:#CFE8E4}
+.fm-corners{background:#E8F3F1;border-radius:5mm;padding:3.4mm 4mm;display:flex;flex-direction:column}
+.fm-corners h3{font:800 14pt/1.5 'Baloo Bhaijaan 2',Tajawal;color:var(--fmt);text-align:center;margin:0 0 2.6mm}
+.fm-corners .g{display:grid;grid-template-columns:repeat(5,1fr);gap:2.2mm}
+.fm-corners .cn{border:.6mm solid var(--cc);border-radius:3mm;background:#fff;text-align:center;padding:1.8mm 1mm 1.6mm;display:flex;flex-direction:column;gap:.6mm;align-items:center}
+.fm-corners .cn span{font-size:16pt;line-height:1.2}.fm-corners .cn b{font:800 9pt/1.35 Tajawal;color:var(--cc)}
+.fm-corners .cn.on{background:var(--cc)}.fm-corners .cn.on b{color:#fff}
+.fm-corners p{font:800 10pt Tajawal;color:#117A8B;text-align:center;margin:2.4mm 0 0}
+/* why */
+.fm-aims{border:.6mm solid #EBCB86;border-radius:5mm;padding:3.4mm 4mm 2mm;margin:0 0 1mm}
+.fm-aims h3{font:800 13pt Tajawal;color:#2B2B48;text-align:center;margin:0 0 2.4mm}
+.fm-aims .ai{display:flex;align-items:center;gap:2.6mm;border-radius:3mm;padding:1.8mm 3mm;margin:0 0 1.8mm;color:#fff}
+.fm-aims .ai span{flex:none;width:7mm;height:7mm;border-radius:50%;background:rgba(255,255,255,.92);display:grid;place-items:center;font:900 10.5pt Tajawal}
+.fm-aims .ai p{margin:0;font:700 10.2pt/1.6 Tajawal}
+.fm-aims .ai0{background:#4B3F7A}.fm-aims .ai0 span{color:#4B3F7A}.fm-aims .ai1{background:#5FAFC0}.fm-aims .ai1 span{color:#3A8597}
+.fm-aims .ai2{background:#3E9F8E}.fm-aims .ai2 span{color:#2E7D70}.fm-aims .ai3{background:#E2A93B}.fm-aims .ai3 span{color:#B5801E}
+.fm-aims .ai4{background:#DC8A45}.fm-aims .ai4 span{color:#B0662A}
+.fm-ev{background:#FBE3EC;border-radius:4mm;padding:2.8mm 5mm;margin:0 0 2.2mm;text-align:center}
+.fm-ev .t{font:700 13pt/1.8 Amiri,serif;color:#5A2440}.fm-ev.ay .t{font-size:16pt;color:#B5532A}
+.fm-ev .r{font:700 9pt Tajawal;color:#8A5068}
+/* about this book: storytelling tips */
+.fm-tips{display:flex;align-items:stretch;margin:2mm 0 3mm}
+.fm-tips .bk{flex:none;width:44mm;background:#5B4C95;border-radius:2mm 4mm 4mm 2mm;border-inline-end:2.4mm solid #FBE7C0;display:grid;place-items:center;box-shadow:inset 0 0 0 2.4mm #6C5DA8}
+.fm-tips .bk span{font:800 14pt/1.4 'Baloo Bhaijaan 2',Tajawal;color:#F5C04A;text-align:center;padding:2mm}
+.fm-tips .rib{flex:1;display:flex;flex-direction:column;gap:1.4mm;justify-content:center}
+.fm-tips .t{color:#fff;font:700 9.8pt/1.5 Tajawal;padding:1.6mm 4mm;border-radius:0 99px 99px 0}
+html[dir=rtl] .fm-tips .t{border-radius:99px 0 0 99px}
+.fm-tips .t0{background:#4FB8D0}.fm-tips .t1{background:#3EAE9C}.fm-tips .t2{background:#EF9A4B}.fm-tips .t3{background:#E55A5A}.fm-tips .t4{background:#E57A9A}
+/* objectives table */
+.fm-tbl{width:100%;border-collapse:separate;border-spacing:0;border:.4mm solid #EBCB86;border-radius:3mm;overflow:hidden;font-family:Tajawal}
+.fm-tbl th{background:#FCEFD0;font:800 10pt Tajawal;color:#2B2118;text-align:start;padding:1.8mm 2.4mm;border-bottom:.4mm solid #EBCB86}
+.fm-tbl td{vertical-align:middle;padding:1.5mm 2.4mm;border-bottom:.3mm solid #F2E2BE;font:500 8.9pt/1.5 Tajawal}
+.fm-tbl tr:last-child td{border-bottom:0}
+.fm-tbl td+td,.fm-tbl th+th{border-inline-start:.3mm solid #F2E2BE}
+.fm-tbl td.l{width:40mm}.fm-tbl td.l small{display:block;font:600 8pt Tajawal;color:#7A6A58}.fm-tbl td.l b{font:800 10pt/1.45 Tajawal;color:#2B2B48}
+.fm-tbl ul{margin:0;padding-inline-start:4mm}.fm-tbl li{margin:0 0 .3mm}
+.fm-tbl td.kw{width:30mm}.fm-tbl td.kw span{display:block;font-weight:700;color:#2B2B48}
+/* welcome letter */
+.fm-letter{background:#CDEAF0}
+.fm-lt{position:absolute;top:13mm;left:22mm;right:22mm;background:#fff;border-radius:7mm;padding:7mm 9mm;box-shadow:2.4mm 2.4mm 0 #F5C04A}
+.fm-lt p{font:600 12.4pt/1.85 Tajawal;color:#22314A;margin:0 0 2.2mm}.fm-lt p.hi{font-weight:800}
+.fm-lt .who{display:flex;gap:2.4mm;align-items:baseline;font:700 20pt/1.3 'Aref Ruqaa',serif;margin-top:1mm}.fm-lt .who i{font-style:normal;color:#999}
+.fm-say{position:absolute;top:118mm;left:12mm;right:12mm;display:flex;justify-content:space-between;gap:3mm;z-index:2}
+.fm-say .b{background:#fff;border-radius:4mm;padding:2mm 3.4mm;font:700 10.4pt/1.5 Tajawal;color:#22314A;box-shadow:0 1mm 3mm rgba(0,0,0,.12)}
+.fm-say .b1{background:#FCE4EC}.fm-say .b2{background:#E6F4EA}
+.fm-limg{position:absolute;left:0;right:0;bottom:0;height:165mm;overflow:hidden}
+.fm-limg img{width:100%;height:100%;object-fit:cover;object-position:center 70%;display:block}
+/* special words */
+.fm-words .fm-card{inset:12mm}
+.fm-wh{align-self:center;background:#F5C04A;color:#fff;font:800 19pt/1.75 'Baloo Bhaijaan 2',Tajawal;padding:1.2mm 10mm;border-radius:99px;border:.8mm solid #E0A93A;margin-bottom:3mm}
+.fm-wl{font:600 12pt/1.8 Tajawal;margin:0 0 4mm;text-align:center}
+.fm-words .wq{display:flex;align-items:center;gap:3mm;margin:0 0 2mm}
+.fm-words .av{flex:none;width:12mm;height:12mm;border-radius:50%;background:var(--ac);color:#fff;display:grid;place-items:center;font:800 14pt Tajawal;box-shadow:0 0 0 1mm #fff,0 0 0 1.6mm var(--ac)}
+.fm-words .q{background:#E9F5F1;border-radius:3mm;padding:1.8mm 4mm;font:700 11pt/1.5 Tajawal;color:#22314A}
+.fm-words .wa{display:flex;align-items:stretch;gap:2.6mm;margin:0 0 4.4mm;padding-inline-start:20mm}
+.fm-words .wa .ar{background:#F9D9BE;border-radius:3mm;padding:1.8mm 5mm;font:700 15pt/1.5 Amiri,serif;color:#2B2118}
+.fm-words .wa .mn{background:#FCE9D9;border-radius:3mm;padding:1.8mm 4mm;font:600 10.4pt/1.6 Tajawal;color:#4A4036;display:flex;align-items:center}
+
+.fm-areas{background:#E8F3F1;border-radius:5mm;padding:3.4mm 4mm;margin:0 0 3.6mm}
+.fm-areas h3{font:800 14pt/1.5 'Baloo Bhaijaan 2',Tajawal;color:var(--fmt);text-align:center;margin:0 0 2.6mm}
+.fm-areas .g{display:grid;grid-template-columns:repeat(5,1fr);gap:2.4mm}
+.fm-areas .ar{border:.7mm solid var(--ac);border-radius:3mm;background:#fff;overflow:hidden;display:flex;flex-direction:column;align-items:center;text-align:center}
+.fm-areas .ar b{display:block;width:100%;background:var(--ac);color:#fff;font:800 9.6pt/1.4 Tajawal;padding:1.8mm 1mm;min-height:13mm;display:grid;place-items:center}
+.fm-areas .ar span{font-size:22pt;line-height:1.4;padding-top:1.6mm}.fm-areas .ar small{font:700 8.6pt Tajawal;color:#4A4036;padding:0 0 2mm}
+html.kdp .fm-tbl td{padding:1.1mm 2.2mm;font-size:8.5pt;line-height:1.45}
+html.kdp .fm-tbl td.l b{font-size:9.6pt}
+html.kdp .pg.fm .fm-card{inset:15mm 10mm 18mm}
+.fm-obj .fm-h{margin-bottom:1mm;margin-top:-2mm}
+
+/* ═══ English edition (left to right) ═══ */
+html[dir=ltr] .parch h1{font:800 25pt/1.35 'Fredoka','Nunito',sans-serif;color:#A8322B;padding-bottom:1mm}
+html[dir=ltr] .parch .story,html[dir=ltr] .parch .lc2{font-family:'Nunito',sans-serif;line-height:1.75;text-align:left}
+html[dir=ltr] .parch .hero{font-family:'Nunito',sans-serif}
+html[dir=ltr] .parch .plogo{left:auto;right:13mm}
+html[dir=ltr] .cert2 h2{font:800 30pt/1.4 'Fredoka','Nunito',sans-serif}
+html[dir=ltr] .cert2 .cbism{font:700 13pt/1.6 'Nunito',sans-serif}
+html[dir=ltr] .cert2 p,html[dir=ltr] .cert2 .cto,html[dir=ltr] .cert2 .csub,html[dir=ltr] .cert2 .cfoot,html[dir=ltr] .cert2 .cayah small{font-family:'Nunito',sans-serif}
+html[dir=ltr] .cert2 .cayah small{display:block;font-size:9pt;line-height:1.5;max-width:150mm;margin:1mm auto 0}
+html[dir=ltr] .cert2 .cseal{font-family:'Nunito',sans-serif;font-size:7.5pt;line-height:1.2}
+html[dir=ltr] .fm-h,html[dir=ltr] .fm-h3,html[dir=ltr] .fm-box h3,html[dir=ltr] .fm-corners h3,html[dir=ltr] .fm-areas h3,html[dir=ltr] .fm-belong h1,html[dir=ltr] .fm-bh,html[dir=ltr] .fm-wh,html[dir=ltr] .pg.fm .fm-tab{font-family:'Fredoka','Nunito',sans-serif}
+html[dir=ltr] .fm-belong h1{font-size:40pt;line-height:1.25}
+html[dir=ltr] .fm-p,html[dir=ltr] .fm-box p,html[dir=ltr] .fm-box li,html[dir=ltr] .fm-aims .ai p,html[dir=ltr] .fm-tbl td,html[dir=ltr] .fm-tbl th,html[dir=ltr] .fm-impin p,html[dir=ltr] .fm-lt p,html[dir=ltr] .fm-words .q,html[dir=ltr] .fm-words .wa .mn,html[dir=ltr] .fm-wl,html[dir=ltr] .fm-note,html[dir=ltr] .fm-tips .t,html[dir=ltr] .pg.fm .fm-foot,html[dir=ltr] .fm-vals .v b,html[dir=ltr] .fm-vals .v small,html[dir=ltr] .fm-corners .cn b,html[dir=ltr] .fm-areas .ar b,html[dir=ltr] .fm-areas .ar small{font-family:'Nunito',sans-serif}
+html[dir=ltr] .fm-p{text-align:left;font-size:10.6pt;line-height:1.75}
+html[dir=ltr] .fm-tbl td{font-size:8.4pt;line-height:1.4}
+html[dir=ltr] .fm-tips .t{border-radius:0 99px 99px 0}
+html[dir=ltr] .fm-lt .who{font:800 20pt/1.3 'Fredoka','Nunito',sans-serif}
+html[dir=ltr] .pg.fm.sl .fm-tab{right:auto;left:11mm}html[dir=ltr] .pg.fm.sr .fm-tab{left:auto;right:11mm}
+/* English learn pages: Latin text needs less leading than Arabic, so the page can keep a larger font */
+html[dir=ltr] .teach{line-height:1.6}
+html[dir=ltr] .ev .ex,html[dir=ltr] .flip .no,html[dir=ltr] .flip .yes{line-height:1.55;font-family:Nunito}
+html[dir=ltr] .ev .tr{line-height:1.5}
+html[dir=ltr] .learn .task span,html[dir=ltr] .learn .talk{line-height:1.55}
+html[dir=ltr] .fm-why2 .fm-p{font-size:10.2pt;line-height:1.65}
+/* English print size (8.5×11 is shorter than A4) */
+html.kdp[dir=ltr] .fm-why2 .fm-p{font-size:9.9pt;line-height:1.6}
+html.kdp[dir=ltr] .teach,html.kdp[dir=ltr] .ev .ex,html.kdp[dir=ltr] .flip .no,html.kdp[dir=ltr] .flip .yes,html.kdp[dir=ltr] .learn .task span,html.kdp[dir=ltr] .learn .talk{line-height:1.45}
+html.kdp[dir=ltr] .learn .sec{margin-bottom:2mm}
+
+.ev .evsep{height:0;border-top:.3mm dashed #EBD49A;margin:2mm 0}
+/* akhlaq book: portrait title picture, a fourth hero bubble */
+.fm-tim img{max-height:92mm;object-fit:contain}
+.fm-say .b3{background:#FFF1DE}

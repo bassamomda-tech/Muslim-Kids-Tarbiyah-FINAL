@@ -1,0 +1,102 @@
+/* nasheed-book.css — layout of the nasheed / mutoon books (A4, RTL) */
+@page { size: A4; margin: 0 }
+* { box-sizing: border-box }
+html, body { margin: 0; background: #E9E4DA; color: #22314A; font-family: 'Tajawal', sans-serif }
+#book { display: flex; flex-direction: column; align-items: center; gap: 8mm; padding: 8mm 0 }
+.pg { width: 210mm; height: 297mm; background: #FFFDF8; position: relative; overflow: hidden; padding: 16mm 15mm 18mm;
+  display: flex; flex-direction: column; box-shadow: 0 2mm 6mm rgba(0,0,0,.15); --pc: #1F8A5B; --pcl: #E6F4EC }
+@media print { #book { padding: 0; gap: 0; background: none } .pg { box-shadow: none; break-after: page } .tb { display: none } html, body { background: #fff } }
+.num { position: absolute; bottom: 7mm; left: 0; right: 0; text-align: center; font: 800 11pt Tajawal; color: #8A7F70 }
+.draft { position: absolute; top: 5mm; left: 6mm; font: 700 8.5pt Tajawal; padding: .6mm 2.4mm; border-radius: 99px }
+.draft.ok { background: #E3F5E9; color: #1E7A44 } .draft.check { background: #FFF3D6; color: #8A5A00 } .draft.todo { background: #FDE4E4; color: #A12A2A }
+
+/* placeholders for pictures */
+.ph { border: .7mm dashed #B9AE9C; border-radius: 4mm; background: repeating-linear-gradient(45deg, #F6F1E7 0 4mm, #FBF8F1 4mm 8mm);
+  display: grid; place-items: center; text-align: center; color: #8A7F70; font: 700 11pt Tajawal }
+.ph b { display: block; font: 900 14pt Tajawal; color: #6E6253 }
+
+/* cover / title */
+.cover { background: #0F3B33; color: #FFF3C8; padding: 0 }
+.cover .ph { height: 62%; border-radius: 0; border: 0; background: repeating-linear-gradient(45deg, #1C4D43 0 5mm, #174339 5mm 10mm); color: #CDE3DA }
+.cover .ph b { color: #FFF3C8 }
+.cover .t { flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 6mm 18mm }
+.cover .k { font: 800 13pt Tajawal; color: #F5CC5A } .cover h1 { font: 700 48pt/1.75 Amiri; margin: 2mm 0 } .cover .s { font: 700 14pt/1.7 Tajawal; color: #E6F4EF }
+.cover .br { margin-top: 5mm; background: #F5CC5A; color: #0F3B33; border-radius: 99px; padding: 1.5mm 6mm; font: 900 11.5pt Tajawal }
+.title-pg { align-items: center; text-align: center; justify-content: center; gap: 4mm }
+.bism { font: 700 18pt/1.8 Amiri; color: #0F3B33 }
+.title-pg h1 { font: 700 40pt/1.75 Amiri; margin: 0; color: #0F3B33 }
+.pill { display: inline-block; background: #F5CC5A; color: #0F3B33; border-radius: 99px; padding: 1.5mm 6mm; font: 900 12pt Tajawal }
+.line { width: 120mm; display: flex; gap: 3mm; align-items: flex-end; font: 800 13pt Tajawal } .line i { flex: 1; border-bottom: .5mm dotted #8A7F70; height: 7mm }
+
+/* prose pages */
+.prose h2, .toc h2 { font: 900 22pt/1.6 Tajawal; color: #0F3B33; text-align: center; margin: 0 0 4mm }
+.prose p, .prose li { font: 600 12.4pt/1.95 Tajawal; margin: 0 0 2.5mm } .prose ul { margin: 0 0 3mm; padding-inline-start: 6mm }
+.legend { display: grid; gap: 2mm; margin-top: 3mm } .legend span { font: 700 11pt Tajawal; padding: 1.5mm 3mm; border-radius: 2mm }
+.toc .prt { display: flex; align-items: center; gap: 3mm; margin: 3mm 0 1mm; font: 900 13.5pt Tajawal; color: var(--pc) }
+.toc .prt .d { width: 7mm; height: 7mm; border-radius: 50%; background: var(--pc) }
+.toc .rows { display: grid; grid-template-columns: 1fr 1fr; column-gap: 8mm }
+.toc .r { display: flex; gap: 2mm; align-items: baseline; font: 700 10.8pt/1.55 Tajawal; padding: .9mm 0; border-bottom: .25mm dotted #D8CDB8 }
+.toc .r b { flex: none; width: 6.5mm; height: 6.5mm; border-radius: 50%; background: var(--pcl); color: var(--pc); display: grid; place-items: center; font: 900 8.5pt Tajawal }
+.toc .r span { flex: 1 } .toc .r em { font: 900 10pt Tajawal; font-style: normal; color: var(--pc) }
+
+/* part opener */
+.opener { background: var(--pc); color: #fff; justify-content: center; align-items: center; text-align: center; gap: 4mm }
+.opener .ic { font-size: 54pt } .opener .no { background: #fff; color: var(--pc); border-radius: 99px; padding: 1.2mm 6mm; font: 900 13pt Tajawal }
+.opener h2 { font: 700 38pt/1.7 Amiri; margin: 0 } .opener .tg { font: 700 15pt/1.7 Tajawal; opacity: .95 }
+.opener ol { text-align: start; background: rgba(255,255,255,.14); border-radius: 5mm; padding: 5mm 12mm; font: 700 13pt/1.9 Tajawal; margin: 3mm 0 0 }
+
+/* lesson header */
+.lh { display: flex; align-items: center; gap: 3mm; margin-bottom: 3mm }
+.lh .badge { flex: none; width: 13mm; height: 13mm; border-radius: 50%; background: var(--pc); color: #fff; display: grid; place-items: center; font: 900 15pt Tajawal }
+.lh h2 { margin: 0; font: 700 21pt/1.6 Amiri; color: var(--pc) } .lh small { display: block; font: 800 10pt Tajawal; color: #8A7F70 }
+
+/* nasheed page */
+.nsh .ph { height: 92mm; flex: none }
+.verses { flex: 1; overflow: hidden; display: flex; flex-direction: column; justify-content: center; padding: 3mm 0; --fs: 17pt }
+.cp { display: grid; grid-template-columns: 1fr 1fr; column-gap: 8mm; font: 700 var(--fs)/2 Amiri; color: #1B2A40 }
+.cp span:first-child { text-align: right } .cp span:last-child { text-align: left }
+.ln { font: 700 var(--fs)/2 Amiri; text-align: center; color: #1B2A40 }
+.todo { border: .6mm solid #E9B4B4; background: #FFF6F6; border-radius: 4mm; padding: 5mm; font: 700 12pt/1.8 Tajawal; color: #A12A2A; text-align: center }
+.who { font: 700 10.5pt/1.6 Tajawal; color: #6E6253; text-align: center } .src { font: 600 9.5pt Tajawal; color: #8A7F70; text-align: center }
+.ladder { display: flex; gap: 2.5mm; justify-content: center; margin-top: 3mm }
+.ladder span { flex: 1; max-width: 42mm; border: .5mm solid var(--pc); border-radius: 3mm; padding: 1.6mm 2mm; font: 800 10pt Tajawal; color: var(--pc); display: flex; gap: 2mm; align-items: center }
+.ladder span i { width: 5mm; height: 5mm; border: .5mm solid var(--pc); border-radius: 1.2mm; flex: none }
+
+/* meaning page */
+.sec { margin-bottom: 4mm } .sec > b { display: inline-block; background: var(--pc); color: #fff; border-radius: 99px; padding: .8mm 4mm; font: 900 12pt Tajawal; margin-bottom: 2mm }
+.words { display: flex; flex-wrap: wrap; gap: 2.5mm } .words div { background: var(--pcl); border-radius: 3mm; padding: 2mm 3.5mm; font: 600 11.5pt/1.6 Tajawal }
+.words div b { color: var(--pc); font-weight: 900 }
+.mean { font: 600 13pt/1.95 Tajawal; margin: 0; padding-inline-start: 6mm }
+.ev { border: .6mm solid var(--pc); border-radius: 4mm; padding: 3.5mm 5mm; text-align: center; background: #fff }
+.ev .t { font: 700 15pt/1.95 Amiri; color: #1B2A40 } .ev .r { font: 700 10pt Tajawal; color: #8A7F70; margin-top: 1mm }
+.par { background: #F4EFE4; border-radius: 3mm; padding: 3mm 4mm; font: 600 10.5pt/1.8 Tajawal; color: #5C5245 }
+.task { display: flex; gap: 3mm; align-items: center; border: .6mm dashed var(--pc); border-radius: 4mm; padding: 3.5mm 4mm; font: 700 13pt/1.7 Tajawal }
+.task i { width: 9mm; height: 9mm; border: .6mm solid var(--pc); border-radius: 2mm; flex: none }
+.mine { margin-top: auto } .mine b { font: 800 11.5pt Tajawal; color: #6E6253 } .mine i { display: block; height: 10mm; border-bottom: .4mm dotted #A99E8C }
+
+/* activity page */
+.act h3 { font: 900 17pt/1.6 Tajawal; color: var(--pc); text-align: center; margin: 0 0 1mm } .act .hint { text-align: center; font: 600 11.5pt Tajawal; color: #6E6253; margin-bottom: 4mm }
+.act .ph.big { flex: 1 } .frame { flex: 1; border: .8mm solid var(--pc); border-radius: 6mm; background: #fff }
+.fill .cp { font-size: 15.5pt; margin-bottom: 2mm } .blank { display: inline-block; min-width: 28mm; border-bottom: .6mm solid var(--pc) }
+.bank { display: flex; flex-wrap: wrap; gap: 3mm; justify-content: center; margin: 5mm 0 } .bank span { border: .5mm solid var(--pc); border-radius: 99px; padding: 1.5mm 5mm; font: 800 13pt Amiri }
+.hand { flex: 1; display: grid; grid-template-columns: 70mm 1fr; gap: 6mm; align-items: center } .hand .h { font-size: 150pt; text-align: center; line-height: 1 }
+.hand ol { font: 800 15pt/2.4 Tajawal; margin: 0 } .hand li { border-bottom: .4mm dotted #A99E8C }
+.match { display: grid; grid-template-columns: 1fr 1fr; gap: 26mm; margin-top: 6mm } .match div { display: flex; flex-direction: column; gap: 7mm }
+.match span { border: .6mm solid var(--pc); border-radius: 3mm; padding: 3mm; font: 800 15pt Tajawal; text-align: center; position: relative }
+.order { display: grid; gap: 5mm; margin-top: 6mm } .order div { display: flex; gap: 4mm; align-items: center; font: 800 17pt Tajawal } .order i { width: 14mm; height: 14mm; border: .7mm solid var(--pc); border-radius: 3mm }
+
+/* end pages */
+.hk { border-inline-start: 2mm solid var(--pc); background: #fff; border-radius: 3mm; padding: 3mm 5mm; margin-bottom: 4mm }
+.hk .t { font: 700 16pt/1.9 Amiri } .hk .w { font: 800 10.5pt Tajawal; color: #8A7F70 }
+.lst div { display: flex; gap: 3mm; align-items: center; border-bottom: .3mm dotted #D8CDB8; padding: 3mm 0; font: 800 13pt Tajawal } .lst small { color: #8A7F70; font-weight: 700 } .lst .q { margin-inline-start: auto; width: 18mm; height: 18mm; border: .5mm dashed #B9AE9C; border-radius: 2mm; display: grid; place-items: center; font: 700 7pt Tajawal; color: #8A7F70 }
+.trk { display: grid; grid-template-columns: repeat(4, 1fr); gap: 3mm } .trk div { border: .5mm solid var(--pc); border-radius: 3mm; padding: 2mm; text-align: center; font: 700 9.5pt/1.5 Tajawal; min-height: 22mm } .trk b { display: block; font: 900 12pt Tajawal; color: var(--pc) } .trk i { font-style: normal; font-size: 13pt; letter-spacing: 1mm; color: #C9B99A }
+.ans h3 { font: 900 12pt Tajawal; color: var(--pc); margin: 3mm 0 1mm } .ans p { font: 600 11pt/1.8 Tajawal; margin: 0 }
+.cert { padding: 10mm } .cert .in { flex: 1; border: 2mm double #C9962A; border-radius: 6mm; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; gap: 4mm; padding: 10mm }
+.cert h2 { font: 700 30pt/1.7 Amiri; color: #7A4E0A; margin: 0 } .cert p { font: 700 13pt/1.9 Tajawal; max-width: 150mm } .cert .nm { width: 120mm; border-bottom: .6mm dotted #7A4E0A; height: 12mm }
+.cert .ft { display: flex; justify-content: space-between; width: 140mm; font: 800 11pt Tajawal; color: #7A4E0A }
+.tb { position: fixed; top: 3mm; left: 3mm; z-index: 9; display: flex; gap: 2mm } .tb button { font: 800 11pt Tajawal; border: 0; border-radius: 99px; padding: 2mm 5mm; background: #0F3B33; color: #fff; cursor: pointer }
+/* couplets: the two halves sit close together; long poems flow in two columns */
+.cp { grid-template-columns: auto auto; justify-content: center; column-gap: 12mm }
+.cp span:first-child, .cp span:last-child { text-align: center }
+.verses.two { display: block; column-count: 2; column-gap: 8mm; column-rule: .3mm dotted #D8CDB8; padding-top: 4mm }
+.verses.two .cp { break-inside: avoid; column-gap: 5mm; line-height: 1.85 }

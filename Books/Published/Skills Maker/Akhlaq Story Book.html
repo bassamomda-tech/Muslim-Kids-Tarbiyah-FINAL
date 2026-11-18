@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>أخلاق الطفل المسلم — قصص للأطفال</title>
+<meta name="description" content="كتابٌ مصوّر جاهز للطباعة: ٣٠ قصّةً في أخلاق الطفل المسلم مع يوسف ومريم وأنس ومحمد، بأدلّتها من القرآن والسنّة، مع صفحات تلوين ونشاطات.">
+<link rel="icon" href="../../../favicon.ico">
+<link href="https://fonts.googleapis.com/css2?family=Aref+Ruqaa:wght@700&family=Baloo+Bhaijaan+2:wght@700;800&family=Fredoka:wght@600;700&family=Tajawal:wght@500;600;700;800;900&family=Amiri:wght@400;700&family=Nunito:wght@600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../../corners/shared/book2/book2.css?v=20261117">
+</head>
+<body>
+<div id="loading">⏳ يُجهَّز الكتاب…</div>
+<main id="book"></main>
+<script src="../../../corners/shared/book2/art-core.js?v=20261115"></script>
+<script src="../../../corners/skills/data/akhlaq-series.js?v=20261117"></script>
+<script src="../../../corners/shared/book2/stories-akhlaq-1.js?v=20261117"></script>
+<script src="../../../corners/shared/book2/stories-akhlaq-2.js?v=20261117"></script>
+<script src="../../../corners/shared/book2/stories-akhlaq-3.js?v=20261117"></script>
+<script src="../../../corners/shared/book2/stories-akhlaq-4.js?v=20261117"></script>
+<script src="../../../corners/shared/book2/stories-akhlaq-5.js?v=20261117"></script>
+<script src="../../../corners/shared/book2/stories-akhlaq-6.js?v=20261117"></script>
+<script src="../../../corners/shared/book2/akhlaq-book-data.js?v=20261117"></script>
+<script src="../../../corners/shared/book2/fm-akhlaq.js?v=20261117"></script>
+<script>
+(function () {
+  window.STORIES = window.AKHLAQ_STORIES;
+  var ART_DIR = 'art/akhlaq/';
+  var AYAH = '﴿وَإِنَّكَ لَعَلَىٰ خُلُقٍ عَظِيمٍ﴾';
+  window.BOOK2 = {
+    kicker: { ar: 'قصصٌ مصوَّرة للأطفال · ٣–١٠ سنوات' },
+    title: { ar: 'أخلاقُ الطفلِ المسلم' },
+    sub: { ar: '٣٠ قصّةً مصوَّرةً مع يوسفَ ومريمَ وأنسٍ ومحمد — في البيتِ والمدرسةِ والطريقِ والمسجد' },
+    brand: { ar: 'تربية أطفال المسلمين' },
+    storyWord: { ar: 'القصّة ' },
+    girls: ['مريم'],
+    heroes: { ar: { 'يوسف': 'يوسف · ٩ سنوات', 'مريم': 'مريم · ٧ سنوات', 'أنس': 'أنس · ٥ سنوات', 'محمد': 'محمد · ٣ سنوات', 'الجميع': 'يوسف ومريم وأنس ومحمد' } },
+    coverImg: ART_DIR + 'cover.jpg',
+    fm: window.BOOK_FM_AKHLAQ,
+    parchment: true,
+    twoPage: true,
+    logo: '../../../assets/icon-192.png',
+    partImg: { akh1: ART_DIR + 'c02.jpg', akh2: ART_DIR + 'c12.jpg', akh3: ART_DIR + 'c24.jpg' },
+    titleImg: ART_DIR + 'heroes.jpg',
+    certPlain: true,
+    certs: [
+      { cls: 'boy', seal: 'بطلُ<br>الأخلاق', img: ART_DIR + 'c30.jpg', title: 'شهادةُ بطلِ الأخلاق', sub: 'تقديرًا لإتمامِ «أخلاقِ الطفلِ المسلم» — ٣٠ قصّة', to: 'تُمنَحُ هذه الشهادةُ للبطل:',
+        ayah: AYAH, ayahRef: 'سورة القلم · ٤',
+        text: 'الذي أتمَّ قصصَ الأخلاقِ الثلاثين، وتعلّمَ أنّ اللهَ يراه، وأنّ الصدقَ والأمانةَ والبرَّ والرحمةَ من أحبِّ الأعمالِ إلى الله. نسألُ اللهَ أن يهديَه لأحسنِ الأخلاق، وأن يجعلَه قرّةَ عينٍ لوالديه.' },
+      { cls: 'girl', seal: 'بطلةُ<br>الأخلاق', img: ART_DIR + 'c30.jpg', title: 'شهادةُ بطلةِ الأخلاق', sub: 'تقديرًا لإتمامِ «أخلاقِ الطفلِ المسلم» — ٣٠ قصّة', to: 'تُمنَحُ هذه الشهادةُ للبطلة:',
+        ayah: AYAH, ayahRef: 'سورة القلم · ٤',
+        text: 'التي أتمّت قصصَ الأخلاقِ الثلاثين، وتعلّمت أنّ اللهَ يراها، وأنّ الصدقَ والأمانةَ والحياءَ والرحمةَ من أحبِّ الأعمالِ إلى الله. نسألُ اللهَ أن يهديَها لأحسنِ الأخلاق، وأن يجعلَها قرّةَ عينٍ لوالديها.' }
+    ],
+    backImgs: [ART_DIR + 'c06.jpg', ART_DIR + 'c14.jpg', ART_DIR + 'c22.jpg', ART_DIR + 'c26.jpg'],
+    storyArt: ART_DIR,
+    openers: {}, scenes: {}, coloring: {}, words: {},
+    parts: window.AKHLAQ_BOOK,
+    activities: {
+      akh3: [{ t: 'spot', n: 4, a: ART_DIR + 'spotA.jpg', b: ART_DIR + 'spotB.jpg', key: ART_DIR + 'spotKey.jpg' }, 'tf']
+    },
+    blurb: { ar: 'مع يوسفَ ومريمَ وأنسٍ ومحمدٍ يعيشُ طفلُك ٣٠ قصّةً مصوَّرة في أخلاقِ المسلم: مراقبةُ الله، والصدقُ والأمانة، وبرُّ الوالدين وصلةُ الرحم، وحقُّ الجارِ والضيف، وآدابُ الطعامِ والسلامِ والطريقِ والمسجد، والحذرُ من الغضبِ والغيبةِ والغشّ. بعد كلِّ قصّةٍ: ما تعلّمه البطلُ بدليله من القرآن والسنّة الصحيحة، وصفحةُ تلوينٍ أو نشاط.' },
+    bullets: { ar: ['٣٠ قصّةً بصورٍ ملوّنة', 'أدلّةٌ من القرآنِ والسنّةِ الصحيحةِ بمصادرها', 'صفحاتُ تلوينٍ ونشاطاتٌ وأوجِد الفروق', 'شهادتا «بطل الأخلاق» و«بطلة الأخلاق»'] }
+  };
+})();
+</script>
+<script src="../../../corners/shared/book2/book2.js?v=20261117"></script>
+</body>
+</html>

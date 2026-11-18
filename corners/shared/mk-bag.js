@@ -90,7 +90,9 @@
     /* ⭐ stars from the Quran, Sunnah, cards & stories pages (MK.stars) — 5 points each */
     /* (stars that are also journey stations — surahs, the Forty, Sunnah pages — already earned 10 points above) */
     var stars = 0, extra = 0; try { if (window.MK && MK.stars) MK.stars().forEach(function (r) { stars += r.done; if (!r.journey) extra += r.done; }); } catch (e) {}
-    var pts = stationPts + extra * STAR_PTS + (prof ? bpsPoints(prof.id) : 0);
+    /* points the child earned inside the Heroes Fortress (story answers, finished stories, games) */
+    function hisnPts(){ try{ var e=(JSON.parse(localStorage.getItem('hisn-save')||'{}').points||{}).era||{}, n=0; for(var k in e) n+=(+e[k]||0); return n; }catch(x){ return 0; } }
+    var pts = stationPts + extra * STAR_PTS + (prof ? bpsPoints(prof.id) : 0) + hisnPts();
     // A certificate = a journey the child has actually earned (the same set shown
     // as downloadable cards in downloads.html / bag.html). Keep this stat equal to
     // that list so the number never disagrees with what's downloadable.

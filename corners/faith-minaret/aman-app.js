@@ -71,6 +71,8 @@
 
   /* ───────── COLLECTIONS BAR ───────── */
   function renderCollections(){
+    /* 🎒 copy the earned stickers into the child's bag album (bag.html reads bag:album:*) */
+    try{ localStorage.setItem('bag:album:'+'aman', JSON.stringify({h:(location.pathname.split('/corners/')[1]||'')+location.search, n:(document.title||'').split(/[·|—]/)[0].trim(), ts:Date.now(), items:S.filter(s=>!s.locked&&done.has(s.id)&&s.badge).map(s=>({i:s.badge.icon,t:s.badge.title,c:s.badge.color}))})); }catch(e){}
     const da=doneActive(), totalActive=activeCount();
     $('#collStickers').innerHTML=`<div class="ci">🎟️</div><div class="ct">${t('أوسِمةُ الأمان','Security Badges')}</div><div class="cn">${da} ${t('وِسام','badges')}</div>`;
     $('#collNames').innerHTML=`<div class="ci">🕋</div><div class="ct">${t('جِدارُ الأسماء','Names Wall')}</div><div class="cn">${da} ${t('اسم','names')}</div>`;

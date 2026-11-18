@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>واحة العبادة — الكتاب الكامل | Worship Oasis — The Complete Book</title>
+<meta name="description" content="كتابٌ مصوّر جاهز للطباعة: ٩٤ محطة في الصلاة والصيام والزكاة والحج والدعاء والأذكار، مع صفحات تلوين ونشاطات. · A print-ready illustrated book: 94 stations on prayer, fasting, charity, Hajj, du'a and dhikr, with colouring pages and activities.">
+<link rel="icon" href="../../../favicon.ico">
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@500;600;700;800;900&family=Amiri:wght@400;700&family=Nunito:wght@600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../../corners/shared/book2/book2.css?v=20261115">
+</head>
+<body>
+<div id="loading">⏳ يُجهَّز الكتاب… · Preparing the book…</div>
+<main id="book"></main>
+<script src="../../../corners/little-district/pages/data/ibada-meta.js"></script>
+<script src="../../../corners/little-district/pages/data/ibada-salah.js"></script>
+<script src="../../../corners/little-district/pages/data/ibada-fasting.js"></script>
+<script src="../../../corners/little-district/pages/data/ibada-zakah.js"></script>
+<script src="../../../corners/little-district/pages/data/ibada-hajj.js"></script>
+<script src="../../../corners/little-district/pages/data/ibada-dua.js"></script>
+<script src="../../../corners/little-district/pages/data/ibada-adhkar.js"></script>
+<script src="../../../corners/shared/book2/art-core.js?v=20261115"></script>
+<script src="../../../corners/shared/book2/art-figures.js?v=20261115"></script>
+<script src="../../../corners/shared/book2/art-props.js?v=20261115"></script>
+<script src="../../../corners/shared/book2/scenes-ibada.js?v=20261115"></script>
+<script src="../../../corners/shared/book2/stories-salah-1.js?v=20261115"></script>
+<script src="../../../corners/shared/book2/stories-salah-2.js?v=20261115"></script>
+<script src="../../../corners/shared/book2/stories-salah-3.js?v=20261115"></script>
+<script>
+(function () {
+  var J = window.IBADA_JOURNEYS, M = {};
+  window.IBADA_META.forEach(function (m) { M[m.id] = m; });
+  var COL = { salah: '#117A8B', fasting: '#8E44AD', zakah: '#27AE60', hajj: '#C0392B', dua: '#E67E22', adhkar: '#2980B9' };
+  var ORDER = ['salah', 'fasting', 'zakah', 'hajj', 'dua', 'adhkar'];
+  var DAYS = { ar: ['السبت', 'الأحد', 'الاثنين', 'الثلاثاء', 'الأربعاء', 'الخميس', 'الجمعة'], en: ['Sat', 'Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri'] };
+  function L() { return document.documentElement.lang === 'en' ? 'en' : 'ar'; }
+  function table(cols, rowsN) {
+    var l = L();
+    return '<div class="trk"><table><tr><th></th>' + cols[l].map(function (c) { return '<th>' + c + '</th>'; }).join('') + '</tr>' +
+      DAYS[l].map(function (d) { return '<tr><td class="d">' + d + '</td>' + cols[l].map(function () { return '<td><span class="circle"></span></td>'; }).join('') + '</tr>'; }).join('') + '</table></div>';
+  }
+  function lines(prompts) { return '<div class="write">' + prompts.map(function (p) { return '<div class="ln">' + p + '</div><div class="ln"></div>'; }).join('') + '</div>'; }
+  var HAJJ_STEPS = [['hajj-4', { ar: 'الإحرام ولبسُ ثيابه البيضاء', en: 'Ihram and its white clothes' }], ['hajj-6', { ar: 'الطّوافُ حول الكعبة', en: 'Tawaf around the Ka\'bah' }], ['hajj-7', { ar: 'السّعيُ بين الصّفا والمروة', en: 'Sa\'i between Safa and Marwah' }], ['hajj-8', { ar: 'الوقوفُ بعرفة', en: 'Standing at Arafah' }], ['hajj-9', { ar: 'رميُ الجمرات وفرحةُ العيد', en: 'Stoning the pillars and Eid joy' }]];
+  var SHUF = [3, 0, 4, 1, 2];
+
+  window.BOOK2 = {
+    kicker: { ar: 'تربية أطفال المسلمين · الكتاب الكامل', en: 'Muslim Kids\' Tarbiyah · The Complete Book' },
+    title: { ar: 'واحةُ العِبادة', en: 'The Worship Oasis' },
+    sub: { ar: 'رحلةٌ مصوَّرةٌ في الصّلاةِ والصّيامِ والزّكاةِ والحجِّ والدّعاءِ والأذكار — ٩٤ محطّة', en: 'An illustrated journey through prayer, fasting, charity, Hajj, du\'a and dhikr — 94 stations' },
+    brand: { ar: 'تربية أطفال المسلمين', en: 'Muslim Kids\' Tarbiyah' },
+    parents: {
+      ar: '<p>يجمع هذا الكتاب رحلاتِ «واحة العبادة» الستَّ من موقع <b>تربية أطفال المسلمين</b> في كتابٍ واحد: <b>٩٤ محطّة</b> في الصّلاة والصّيام والزّكاة والحجّ والدّعاء والأذكار.</p>' +
+        '<ul><li><b>صفحةُ الصّورة:</b> رسمةٌ تلخّص الفكرة، وتشبيهٌ يقرّبها، ومهمّةٌ عمليّةٌ لليوم، وخلاصةٌ في سطر.</li>' +
+        '<li><b>صفحةُ التعلّم:</b> شرحٌ مبسّط، ثمّ الدّليلُ من القرآن الكريم أو السّنّة الصّحيحة مع مصدره، ثمّ تصحيحُ فكرةٍ خاطئةٍ شائعة.</li>' +
+        '<li><b>في نهاية كلّ جزء:</b> صفحاتُ تلوين، و«صحّ أم خطأ»، وبحثٌ عن الكلمات، وجداولُ متابعة، ومتاهات — والحلولُ في آخر الكتاب.</li></ul>' +
+        '<p><b>طريقةٌ مقترحة:</b> محطّةٌ واحدةٌ كلّ يوم. اقرآها معًا، واسأل طفلك عمّا يراه في الصّورة، ثمّ اتّفقا على المهمّة، وضعا علامة ✓ حين تُنجَز. لا تستعجلوا؛ العبرةُ بأن تصير العبادةُ حبًّا وعادة.</p>' +
+        '<p class="note"><b>عن الرّسومات:</b> رُسمت الشّخصيّاتُ بلا ملامحِ وجهٍ وبلباسٍ محتشم، ولا نصوّر نبيًّا ولا صحابيًّا ولا مَلَكًا؛ فقصصُ الصّالحين نعبّر عنها بالأماكن والأشياء والنّور.</p>' +
+        '<p><b>للطّباعة:</b> مقاسُ A4 مناسبٌ للطّباعة المنزليّة. ويمكنكم طباعةُ جزءٍ واحدٍ في كلّ مرّة.</p>',
+      en: '<p>This book gathers the six «Worship Oasis» journeys from <b>Muslim Kids\' Tarbiyah</b> into one volume: <b>94 stations</b> on prayer, fasting, charity, Hajj, du\'a and dhikr.</p>' +
+        '<ul><li><b>The picture page:</b> an illustration of the idea, a simile that brings it close, a practical task for today and a one-line key idea.</li>' +
+        '<li><b>The learning page:</b> a simple explanation, then the evidence from the Qur\'an or authentic Sunnah with its source, then a common wrong idea put right.</li>' +
+        '<li><b>At the end of each part:</b> colouring pages, true-or-false, word searches, trackers and mazes — answers are at the back.</li></ul>' +
+        '<p><b>A suggested way:</b> one station a day. Read it together, ask your child what they see in the picture, agree on the task and tick it when it is done. There is no rush — the aim is for worship to become love and habit.</p>' +
+        '<p class="note"><b>About the pictures:</b> people are drawn faceless and modestly dressed, and no prophet, companion or angel is ever drawn — stories of the righteous are told through places, objects and light.</p>' +
+        '<p><b>Printing:</b> A4 suits home printers, and you can print one part at a time.</p>'
+    },
+    cover: window.IBADA_COVER,
+    coverImg: 'art/salah/cover.jpg',
+    partImg: { salah: 'art/salah/cover.jpg' },
+    titleImg: 'art/salah/s01.png',
+    certPlain: true,
+    backImgs: ['art/salah/spotA.jpg', 'art/salah/cover.jpg'],
+    storyArt: 'art/salah/',
+    titleArt: window.IBADA_SCENES['salah-7'],
+    certArt: { bg: 'vignette', color: '#C9962A', props: [{ t: 'lantern', x: 400, y: 430, s: 2 }] },
+    openers: window.IBADA_OPENERS,
+    scenes: window.IBADA_SCENES,
+    parts: ORDER.map(function (k) { return { key: k, data: J[k], title: M[k].title, tagline: M[k].tagline, color: COL[k] }; }),
+    coloring: {
+      salah: [],
+      fasting: ['fast-5', 'fast-7', 'fast-8'], zakah: ['zakah-1', 'zakah-4', 'zakah-9'],
+      hajj: ['hajj-1', 'hajj-4', 'hajj-8'], dua: ['dua-2', 'dua-7', 'dua-10'], adhkar: ['dhikr-5', 'dhikr-13', 'dhikr-17']
+    },
+    words: {
+      salah: { ar: ['صلاة', 'وضوء', 'قبلة', 'اذان', 'ركوع', 'سجود', 'تشهد', 'خشوع', 'مسجد', 'فجر'], en: ['PRAYER', 'WUDU', 'QIBLA', 'ADHAN', 'RUKU', 'SUJUD', 'MOSQUE', 'FAJR'] },
+      fasting: { ar: ['صيام', 'سحور', 'افطار', 'رمضان', 'الريان', 'صبر', 'قران', 'تمر', 'هلال', 'دعاء'], en: ['FASTING', 'SUHOOR', 'IFTAR', 'RAMADAN', 'PATIENCE', 'QURAN', 'DATES', 'MOON'] },
+      zakah: { ar: ['زكاة', 'صدقة', 'عطاء', 'فقير', 'بركة', 'خير', 'بئر', 'شجرة', 'نفقة', 'مال'], en: ['ZAKAH', 'CHARITY', 'GIVING', 'KINDNESS', 'WELL', 'TREE', 'SHARE'] },
+      hajj: { ar: ['حج', 'كعبة', 'احرام', 'تلبية', 'طواف', 'سعي', 'زمزم', 'عرفة', 'الصفا', 'المروة'], en: ['HAJJ', 'KABAH', 'IHRAM', 'TAWAF', 'ZAMZAM', 'ARAFAH', 'SAFA', 'MARWAH'] },
+      dua: { ar: ['دعاء', 'رجاء', 'سجود', 'والدين', 'اجابة', 'رحمة', 'يقين', 'امل', 'سماء', 'رب'], en: ['DUA', 'HOPE', 'PARENTS', 'MERCY', 'ANSWER', 'TRUST', 'SUJUD'] },
+      adhkar: { ar: ['ذكر', 'تسبيح', 'تحميد', 'تهليل', 'تكبير', 'استغفار', 'صباح', 'مساء', 'نوم', 'سكينة'], en: ['DHIKR', 'TASBIH', 'TAKBIR', 'MORNING', 'EVENING', 'SLEEP', 'PEACE'] }
+    },
+    activities: {
+      salah: [{ t: 'spot', a: 'art/salah/spotA.jpg', b: 'art/salah/spotB.jpg', key: 'art/salah/spotKey.jpg' }, 'tf'],
+      fasting: ['tf', 'ws',
+        { t: 'html', title: { ar: '🌙 تقويمُ رمضان', en: '🌙 My Ramadan calendar' }, hint: { ar: 'لوّن هلال كلّ يومٍ صُمتَه (أو جزءًا منه)، واكتب فيه خيرًا فعلتَه.', en: 'Colour the crescent for each day you fasted (or part of it) and write one good deed.' },
+          body: function (T, N) { var o = '<div class="month">'; for (var i = 1; i <= 30; i++) o += '<div><b>' + N(i) + '</b><svg viewBox="0 0 40 40"><path d="M26 6 a16 16 0 1 0 0 28 a12 12 0 1 1 0 -28z" fill="none" stroke="#8E44AD" stroke-width="2.5"/></svg></div>'; return o + '</div>'; } }],
+      zakah: ['tf', 'ws',
+        { t: 'html', title: { ar: '🎁 دفترُ عطائي', en: '🎁 My giving diary' }, hint: { ar: 'كلُّ معروفٍ صدقة: ابتسامة، مساعدة، كلمة طيّبة… اكتب ما قدّمتَه هذا الأسبوع.', en: 'Every good deed is charity — a smile, a helping hand, a kind word. Write what you gave this week.' },
+          body: function (T, N, sc) { return '<div style="width:110mm;margin:0 auto 4mm">' + sc(window.IBADA_SCENES['zakah-3'], true) + '</div>' + lines([1, 2, 3, 4, 5, 6].map(function (i) { return N(i) + ' — '; })); } }],
+      hajj: ['tf', 'ws',
+        { t: 'html', title: { ar: '🕋 رتّب خطوات الحجّ', en: '🕋 Put the Hajj steps in order' }, hint: { ar: 'اكتب الرّقم الصّحيح (١ إلى ٥) في المربّع بجانب كلّ صورة.', en: 'Write the right number (1 to 5) in the box beside each picture.' },
+          body: function (T, N, sc) { return '<div class="order">' + SHUF.map(function (i) { return '<div class="step"><span class="box"></span>' + sc(window.IBADA_SCENES[HAJJ_STEPS[i][0]], false) + '<span>' + T(HAJJ_STEPS[i][1]) + '</span></div>'; }).join('') + '</div>'; },
+          answer: function (T, N) { return SHUF.map(function (i) { return T(HAJJ_STEPS[i][1]) + ' = ' + N(i + 1); }).join(' · '); } },
+        { t: 'maze', hint: { ar: 'اتبع الطريق إلى الكعبة المشرّفة.', en: 'Follow the path to the Ka\'bah.' }, from: '👣', to: '🕋' }],
+      dua: ['tf', 'ws',
+        { t: 'html', title: { ar: '🤲 دفترُ دعواتي', en: '🤲 My du\'a notebook' }, hint: { ar: 'اكتب دعاءً لكلٍّ ممّن تحبّ، وادعُ به في سجودك.', en: 'Write a du\'a for each person you love, and say it in your sujud.' },
+          body: function (T) { return lines(L() === 'en' ? ['For my parents:', 'For my brothers and sisters:', 'For my friends:', 'For all Muslims:', 'For myself:'] : ['لوالديّ:', 'لإخوتي:', 'لأصدقائي:', 'للمسلمين:', 'لنفسي:']); } }],
+      adhkar: ['tf', 'ws',
+        { t: 'html', title: { ar: '📿 جدولُ أذكاري', en: '📿 My dhikr tracker' }, hint: { ar: 'لوّن الدائرة كلّما قلتَ أذكارك.', en: 'Colour a circle each time you say your adhkar.' },
+          body: function () { return table({ ar: ['الصّباح', 'المساء', 'بعد الصّلاة', 'قبل النّوم'], en: ['Morning', 'Evening', 'After prayer', 'Bedtime'] }); } }]
+    },
+    certTo: { ar: 'تُمنَح هذه الشّهادة لِـ:', en: 'This certificate is awarded to:' },
+    certText: { ar: 'تقديرًا لإتمام رحلات «واحة العبادة» السّتّ: الصّلاة والصّيام والزّكاة والحجّ والدّعاء والأذكار. نسأل الله أن يجعلها عبادةً حيّةً في القلب والعمل.', en: 'For completing the six journeys of the Worship Oasis: prayer, fasting, charity, Hajj, du\'a and dhikr. May Allah make them a living worship in the heart and in deeds.' },
+    certDate: { ar: 'التّاريخ', en: 'Date' }, certSign: { ar: 'توقيع وليّ الأمر', en: 'Parent\'s signature' },
+    blurb: { ar: 'كتابٌ مصوَّر يأخذ طفلك في ستِّ رحلاتٍ إلى قلب العبادة: لماذا نصلّي وكيف، وسرُّ الصّيام، وفرحةُ العطاء، ورحلةُ الحجّ الكبرى، وخيطُ الدّعاء، وكنوزُ الذّكر. كلُّ محطّةٍ فيها صورةٌ وتشبيه، ودليلٌ من القرآن أو السّنّة الصّحيحة بمصدره، وفكرةٌ خاطئةٌ تُصحَّح، ومهمّةٌ عمليّةٌ لليوم.', en: 'An illustrated book that takes your child on six journeys to the heart of worship: why and how we pray, the secret of fasting, the joy of giving, the great journey of Hajj, the thread of du\'a and the treasures of dhikr. Every station has a picture and a simile, evidence from the Qur\'an or authentic Sunnah with its source, a wrong idea put right, and a practical task for today.' },
+    bullets: { ar: ['قصّةٌ شائقةٌ لكلِّ محطّة، أبطالُها يوسفُ وأنسٌ ومريم', 'صفحاتُ تلوينٍ ونشاطاتٌ متنوّعةٌ دقيقة', 'جداولُ متابعةٍ للصّلاة', 'شهادةُ إتمامٍ في آخر الكتاب'], en: ['94 stations, each with its own picture', '21 colouring pages and varied activities', 'Trackers for prayer, Ramadan and adhkar', 'A certificate of completion at the end'] },
+    backArt: ['salah-7', 'fast-7', 'hajj-6', 'dua-10']
+  };
+})();
+</script>
+<script src="../../../corners/shared/book2/book2.js?v=20261115"></script>
+</body>
+</html>

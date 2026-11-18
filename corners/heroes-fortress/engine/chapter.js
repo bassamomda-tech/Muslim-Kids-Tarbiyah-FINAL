@@ -465,8 +465,11 @@
   }
   function bindStoryGrid(set){
     document.querySelectorAll('.psc').forEach(btn=>btn.onclick=()=>{
-      StoryReader.open(set[+btn.dataset.i], C.accent||'#E67E22', lang, (type)=>{
-        if(type==='complete'){ const d=chstDone(); d[+btn.dataset.i]=1; localStorage.setItem(CHST_KEY(),JSON.stringify(d)); render(); }
+      const si=+btn.dataset.i;
+      StoryReader.open(set[si], C.accent||'#E67E22', lang, (type,pts,key)=>{
+        const got = storyPoints(si, type, pts, key);
+        if(type==='complete'){ const d=chstDone(); d[si]=1; localStorage.setItem(CHST_KEY(),JSON.stringify(d)); render(); maybeEarnMedal(); }
+        return got;
       });
     });
   }
@@ -717,6 +720,7 @@
     const a=C.activities, count=a.filter((_,i)=>solved[i]).length;
     const msg=$('#actMsg'); if(msg) msg.textContent = count>=a.length ? (lang==='ar'?'🎉 أكملتَ كلَّ الألعاب! اذهبْ للكنوز':'🎉 All games done! Head to Treasures') : (lang==='ar'?'أحسنت! ✓':'Well done! ✓');
     const hint=document.querySelector('.act-hint'); if(hint) hint.textContent = lang==='ar'?`أكملِ الألعاب لتجمعَ كنزك (${count}/${a.length})`:`Finish the games to earn your treasure (${count}/${a.length})`;
+    if(count>=a.length) setTimeout(maybeEarnMedal, 600);
   }
 
   // quiz
@@ -814,6 +818,41 @@
     });
   }
 
+  /* every story answer + every finished story adds real points (saved once, never double) */
+  function storyPoints(si, type, pts, key){
+    try{
+      const era=(C&&C.era)||'prophets', before=Progress.eraPoints(era);
+      Progress.addPoints(era, 'chst:'+chId+':'+si+':'+(key||type), pts||PTS);
+      const got=Progress.eraPoints(era)-before; if(got>0) header(); return got;
+    }catch(e){ return 0; }
+  }
+  /* The medal (and with it the stickers) comes by itself once the station is
+     really finished — all its games, or all its stories — no hidden button to find. */
+  function stationFinished(){
+    const acts=C.activities||[], set=storySet();
+    const gamesOk = acts.length>0 && gamesDone()>=acts.length;
+    const storiesOk = !!(set && set.length && set.every((_,i)=>chstDone()[i]));
+    return gamesOk || storiesOk;
+  }
+  function maybeEarnMedal(){
+    if(!C || !C.treasures || Progress.isDone(C.id) || !stationFinished()) return false;
+    Progress.grant(C.id,{ stars:3, medal:{icon:C.icon, title:C.treasures.medal} });
+    confetti(); xpBurst(); header();
+    const n=(C.treasures.stickers||[]).length;
+    chToast(lang==='ar' ? `🏅 مبروك! حصلتَ على ${T(C.treasures.medal)}${n?` و${n} ملصقات`:''} — تجدها في الكنوز وحقيبتك 🎒`
+                       : `🏅 Congratulations! You earned ${T(C.treasures.medal)}${n?` and ${n} stickers`:''} — see Treasures and your bag 🎒`);
+    if(room==='treasures' || room==='activities') render();
+    return true;
+  }
+  let chToastEl;
+  function chToast(m){
+    if(!chToastEl){ chToastEl=document.createElement('div'); chToastEl.setAttribute('role','status');
+      chToastEl.style.cssText='position:fixed;left:50%;bottom:1.4rem;transform:translateX(-50%);z-index:9999;max-width:min(92vw,520px);padding:.8rem 1.1rem;border-radius:1rem;background:#1F8A5B;color:#fff;font-weight:900;font-size:1rem;line-height:1.6;text-align:center;box-shadow:0 10px 30px rgba(0,0,0,.35);transition:opacity .3s';
+      document.body.appendChild(chToastEl); }
+    chToastEl.textContent=m; chToastEl.style.opacity='1'; clearTimeout(chToastEl._t);
+    chToastEl._t=setTimeout(()=>{ chToastEl.style.opacity='0'; },5200);
+  }
+
   /* ───────────── TREASURES ───────────── */
   function roomTreasures(){
     const t=C.treasures, won=Progress.isDone(C.id);
@@ -852,7 +891,7 @@
       return;
     }
     const total=(C.activities||[]).length, done=gamesDone();
-    if(total && done<total){
+    if(total && done<total && !stationFinished()){
       // the medal is the prize for the station's games («ميدان الأبطال» / «الأنشطة») — finish them first
       btn.classList.add('locked');
       btn.textContent = lang==='ar' ? `🔒 أكمِلْ الألعابَ أوّلًا (${done}/${total}) — ثم اجمعِ الوسام` : `🔒 Finish the games first (${done}/${total}) — then collect the medal`;
@@ -927,6 +966,8 @@
     $('#stars').innerHTML=s;
     setLang(lang);
     $('#guideLine').textContent=C.greeting?String(C.greeting[lang]).replace(/<[^>]+>/g,''):''; $('#guideName').textContent=HISN.guide.name[lang];
+    // catch-up: a child who already finished this station before the medal became automatic
+    setTimeout(maybeEarnMedal, 900);
   }
 
   function boot(){
